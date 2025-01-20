@@ -215,12 +215,16 @@ bool FacePipelineEdit::extractor()
 
 bool FacePipelineEdit::writer()
 {
-    // All threads start with the same basic functions
-
-    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
-    stageStart(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None, thisQueue, nextQueue);
+    MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None);
     FacePipelinePackageBase* package = nullptr;
-    QElapsedTimer timer;
+
+    /* =========================================================================================
+     * Pipeline stage specific initialization code
+     *
+     * Use the block from here to MLPIPELINE_LOOP_START to initialize the stage.
+     * The code in this block is run once per stage initialization. The number of instances
+     * is at least 1. More instances are created by addMoreWorkers if needed.
+     */
 
     //--------------------------------------------------------------------------------
 
@@ -231,164 +235,144 @@ bool FacePipelineEdit::writer()
 
     thisQueue->setMaxDepth(100000);
 
-    while (!cancelled)
-    {
-        try
-        {
-            package = static_cast<FacePipelinePackageBase*>(dequeue(thisQueue));
+    MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
+    package                    = static_cast<FacePipelinePackageBase*>(mlpackage);
 
-            if (queueEndSignal() == package)
+    /* =========================================================================================
+     * Start pipeline stage specific loop
+     *
+     * All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
+     * This loop is run once per image.
+     */
+
+    {
+        switch (package->action)
+        {
+            case FacePipelinePackageBase::EditPipelineAction::Confirm:
             {
-                // end of queue signal
+                FaceTagsIface confirmedFace = utils.confirmName(package->face, package->tagId, package->face.region());
+                Identity identity           = utils.identityForTag(confirmedFace.tagId());
+
+                if (0 != package->features.rows)
+                {
+                    if (package->useForTraining)
+                    {
+                        idProvider->addTraining(identity, confirmedFace.hash(), package->features);
+                    }
+                    else
+                    {
+                        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): not using for training: " << package->info.filePath();
+                    }
+                }
+                else
+                {
+                    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): bad mat";
+                }
 
                 break;
             }
 
-            pipelinePerformanceStart(MLPipelineStage::Writer, timer);
-
-            //////////////////////////////////////////////////////////////////////////////////////////////
-            // start pipeline stage specific code
-
-            switch (package->action)
+            case FacePipelinePackageBase::EditPipelineAction::Remove:
             {
-                case FacePipelinePackageBase::EditPipelineAction::Confirm:
-                {
-                    FaceTagsIface confirmedFace = utils.confirmName(package->face, package->tagId, package->face.region());
-                    Identity identity           = utils.identityForTag(confirmedFace.tagId());
-
-                    if (0 != package->features.rows)
-                    {
-                        if (package->useForTraining)
-                        {
-                            idProvider->addTraining(identity, confirmedFace.hash(), package->features);
-                        }
-                        else
-                        {
-                            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): not using for training: " << package->info.filePath();
-                        }
-                    }
-                    else
-                    {
-                        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): bad mat";
-                    }
-
-                    break;
-                }
-
-                case FacePipelinePackageBase::EditPipelineAction::Remove:
-                {
-                    utils.removeFace(package->face);
-                    break;
-                }
-
-                case FacePipelinePackageBase::EditPipelineAction::EditTag:
-                {
-                    // Change Tag operation.
-
-                    utils.changeTag(package->face, package->tagId);
-
-                    break;
-                }
-
-                case FacePipelinePackageBase::EditPipelineAction::EditRegion:
-                {
-                    if (package->face.region() != package->region)
-                    {
-                        utils.changeRegion(package->face, package->region);
-                    }
-
-                    break;
-                }
-
-                case FacePipelinePackageBase::EditPipelineAction::AddManually:
-                {
-                    utils.addManually(utils.unconfirmedEntry(package->info.id(), package->tagId, package->region));
-                }
-
-                    // if      (package->face.isNull())
-                    // {
-                    //     // Add Manually.
-                    //
-                    //     FaceTagsIface newFace = utils.unconfirmedEntry(package->info.id(), package->face.assignedTagId, package->face.assignedRegion);
-                    //     utils.addManually(newFace);
-                    //     // add << FacePipelineFaceTagsIface(newFace);
-                    // }
-                    // else if (package->face.assignedRegion.isValid())
-                    // {
-                    //     add << FacePipelineFaceTagsIface();
-                    // }
+                utils.removeFace(package->face);
+                break;
             }
 
-            // update the tags
-
-            if (utils.normalTagChanged())
+            case FacePipelinePackageBase::EditPipelineAction::EditTag:
             {
-                MetadataHub hub;
-                hub.load(package->info);
+                // Change Tag operation.
 
-                ScanController::FileMetadataWrite writeScope(package->info);
-                writeScope.changed(hub.writeToMetadata(package->info, MetadataHub::WRITE_TAGS));
+                utils.changeTag(package->face, package->tagId);
+
+                break;
             }
 
-            // retrain the face classifier if the retrain flag is set
-
-            if (package->retrain)
+            case FacePipelinePackageBase::EditPipelineAction::EditRegion:
             {
-                FaceClassifier::instance()->retrain();
+                if (package->face.region() != package->region)
+                {
+                    utils.changeRegion(package->face, package->region);
+                }
+
+                break;
             }
 
-            // send a notification that the image was processed
-
-            notify(MLPipelineNotification::notifyProcessed,
-                   package->info.name(),
-                   CoreDbAccess().db()->getAlbumRelativePath(CoreDbAccess().db()->getItemAlbum(package->info.id())),
-                   package->faceRects.size(),
-                   package->thumbnail);
-
-            // delete the package
-
-            delete package;
-
-            if ((0 == queues[MLPipelineStage::Loader]->size()) && (0 == queues[MLPipelineStage::Extractor]->size()) && (0 == queues[MLPipelineStage::Writer]->size()))
+            case FacePipelinePackageBase::EditPipelineAction::AddManually:
             {
-                Q_EMIT progressValueChanged((float)1.0);
-                totalItemCount = 0;
-                Q_EMIT finished();
-            }
-            else
-            {
-                ++itemsProcessed;
-                Q_EMIT progressValueChanged((float)itemsProcessed/(float)totalItemCount);
+                utils.addManually(utils.unconfirmedEntry(package->info.id(), package->tagId, package->region));
             }
 
-            // end pipeline stage specific code
-            //////////////////////////////////////////////////////////////////////////////////////////////
-
-            pipelinePerformanceEnd(MLPipelineStage::Writer, timer);
+                // if      (package->face.isNull())
+                // {
+                //     // Add Manually.
+                //
+                //     FaceTagsIface newFace = utils.unconfirmedEntry(package->info.id(), package->face.assignedTagId, package->face.assignedRegion);
+                //     utils.addManually(newFace);
+                //     // add << FacePipelineFaceTagsIface(newFace);
+                // }
+                // else if (package->face.assignedRegion.isValid())
+                // {
+                //     add << FacePipelineFaceTagsIface();
+                // }
         }
 
-        catch (const std::exception& e)
+        // update the tags
+
+        if (utils.normalTagChanged())
         {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): unknown error. " << e.what() << " Restarting...";
+            MetadataHub hub;
+            hub.load(package->info);
+
+            ScanController::FileMetadataWrite writeScope(package->info);
+            writeScope.changed(hub.writeToMetadata(package->info, MetadataHub::WRITE_TAGS));
         }
 
-        catch (...)
+        // retrain the face classifier if the retrain flag is set
+
+        if (package->retrain)
         {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): unknown error. Restarting...";
-
-            if (package)
-            {
-                delete package;
-            }
+            FaceClassifier::instance()->retrain();
         }
+
+        // send a notification that the image was processed
+
+        notify(MLPipelineNotification::notifyProcessed,
+                package->info.name(),
+                CoreDbAccess().db()->getAlbumRelativePath(CoreDbAccess().db()->getItemAlbum(package->info.id())),
+                package->faceRects.size(),
+                package->thumbnail);
+
+        // delete the package
+
+        delete package;
+
+        if ((0 == queues[MLPipelineStage::Loader]->size()) && (0 == queues[MLPipelineStage::Extractor]->size()) && (0 == queues[MLPipelineStage::Writer]->size()))
+        {
+            Q_EMIT progressValueChanged((float)1.0);
+            totalItemCount = 0;
+            Q_EMIT finished();
+        }
+        else
+        {
+            ++itemsProcessed;
+            Q_EMIT progressValueChanged((float)itemsProcessed/(float)totalItemCount);
+        }
+
     }
 
-    //--------------------------------------------------------------------------------
-    // all threads end with the same basic functions
+    /* =========================================================================================
+     * End pipeline stage specific loop
+     */
 
-    stageEnd(MLPipelineStage::Writer, MLPipelineStage::None);
+    MLPIPELINE_LOOP_END(MLPipelineStage::Writer, "AutotagsPipelineObject::writer");
 
-    return true;
+    /* =========================================================================================
+     * Pipeline stage specific cleanup
+     *
+     * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
+     */
+
+    MLPIPELINE_STAGE_END(MLPipelineStage::Writer, MLPipelineStage::None);
 }
 
 void FacePipelineEdit::addMoreWorkers()
