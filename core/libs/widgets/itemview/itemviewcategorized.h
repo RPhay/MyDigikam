@@ -120,8 +120,8 @@ Q_SIGNALS:
      * For overlays: Like the respective parent class signals, but with additional info.
      * Do not change the mouse events.
      */
-    void clicked(const QMouseEvent* e, const QModelIndex& index);
-    void entered(const QMouseEvent* e, const QModelIndex& index);
+    void signalClicked(const QMouseEvent* e, const QModelIndex& index);
+    void signalEntered(const QMouseEvent* e, const QModelIndex& index);
 
     /**
      * While clicked() is emitted with a valid index, this corresponds to clicking on empty space

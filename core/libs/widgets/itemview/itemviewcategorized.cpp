@@ -434,7 +434,7 @@ void ItemViewCategorized::slotClicked(const QModelIndex& index)
 {
     if (d->currentMouseEvent)
     {
-        Q_EMIT clicked(d->currentMouseEvent, index);
+        Q_EMIT signalClicked(d->currentMouseEvent, index);
     }
 }
 
@@ -442,7 +442,7 @@ void ItemViewCategorized::slotEntered(const QModelIndex& index)
 {
     if (d->currentMouseEvent)
     {
-        Q_EMIT entered(d->currentMouseEvent, index);
+        Q_EMIT signalEntered(d->currentMouseEvent, index);
     }
 }
 

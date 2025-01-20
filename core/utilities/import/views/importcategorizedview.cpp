@@ -511,7 +511,7 @@ void ImportCategorizedView::updateGeometries()
 
 void ImportCategorizedView::slotDelayedEnter()
 {
-    // re-Q_EMIT entered() for index under mouse (after layout).
+    // re-emit entered() for index under mouse (after layout).
 
     QModelIndex mouseIndex = indexAt(mapFromGlobal(QCursor::pos()));
 
