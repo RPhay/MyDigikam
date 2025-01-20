@@ -150,7 +150,7 @@ void QuerySiteInfoGeneral::doWorkProcessReply()
     }
     else
     {
-        Q_EMIT result(generalinfo);
+        Q_EMIT signalResult(generalinfo);
 
         this->setError(Job::NoError);
     }

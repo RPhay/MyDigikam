@@ -162,7 +162,7 @@ void Parse::doWorkProcessReply()
 
         if (!reader.hasError())
         {
-            Q_EMIT result(text);
+            Q_EMIT signalResult(text);
         }
         else
         {

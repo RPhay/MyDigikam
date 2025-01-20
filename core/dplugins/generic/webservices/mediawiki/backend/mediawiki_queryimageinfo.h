@@ -142,7 +142,7 @@ Q_SIGNALS:
     * @brief Provides a list of imageinfos.
     * @param imageinfos a list of imageinfos
     */
-    void result(const QList<Imageinfo>& imageinfos);
+    void signalResult(const QList<Imageinfo>& imageinfos);
 
 private Q_SLOTS:
 

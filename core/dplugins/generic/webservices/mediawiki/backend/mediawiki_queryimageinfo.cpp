@@ -301,7 +301,7 @@ void QueryImageinfo::doWorkProcessReply()
 
         if (!reader.hasError())
         {
-            Q_EMIT result(imageinfos);
+            Q_EMIT signalResult(imageinfos);
 
             if (d->begin.isNull() || d->onlyOneSignal)
             {

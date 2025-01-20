@@ -74,7 +74,7 @@ Q_SIGNALS:
      * @brief Provide general info.
      * @param generalinfo the general info
      */
-    void result(const Generalinfo& generalinfo);
+    void signalResult(const Generalinfo& generalinfo);
 
 private Q_SLOTS:
 

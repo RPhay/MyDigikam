@@ -25,7 +25,6 @@
 
 #include "mediawiki_job.h"
 
-
 namespace MediaWiki
 {
 
@@ -75,7 +74,7 @@ public:
 
 Q_SIGNALS:
 
-    void result(const QString& text);
+    void signalResult(const QString& text);
 
 private Q_SLOTS:
 
