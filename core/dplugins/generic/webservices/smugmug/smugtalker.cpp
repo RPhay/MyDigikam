@@ -590,10 +590,12 @@ bool SmugTalker::addPhoto(const  QString& imgPath,
     if (!imgFile.open(QIODevice::ReadOnly))
     {
         Q_EMIT signalBusy(false);
+
         return false;
     }
 
     QByteArray imgData = imgFile.readAll();
+    Q_UNUSED(imgData);
     imgFile.close();
 
     SmugMPForm form;
@@ -610,7 +612,6 @@ bool SmugTalker::addPhoto(const  QString& imgPath,
 
     form.finish();
 
-    QString customHdr;
     QUrl url(d->uploadUrl);
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "url to upload " << url.url();
 
@@ -619,11 +620,11 @@ bool SmugTalker::addPhoto(const  QString& imgPath,
     QNetworkRequest netRequest(url);
     netRequest.setHeader(QNetworkRequest::ContentTypeHeader, form.contentType());
     netRequest.setHeader(QNetworkRequest::UserAgentHeader,   d->userAgent);
-    netRequest.setRawHeader("X-Smug-Caption", caption.toUtf8());
-    netRequest.setRawHeader("X-Smug-FileName", imgName.toUtf8());
-    netRequest.setRawHeader("X-Smug-AlbumUri", QString::fromLatin1("/api/v2/album/%1").arg(albumKey).toUtf8());
-    netRequest.setRawHeader("X-Smug-ResponseType", "JSON");
-    netRequest.setRawHeader("X-Smug-Version",   d->apiVersion.toLatin1());
+    netRequest.setRawHeader("X-Smug-Caption",       caption.toUtf8());
+    netRequest.setRawHeader("X-Smug-FileName",      imgName.toUtf8());
+    netRequest.setRawHeader("X-Smug-AlbumUri",      QString::fromLatin1("/api/v2/album/%1").arg(albumKey).toUtf8());
+    netRequest.setRawHeader("X-Smug-ResponseType",  "JSON");
+    netRequest.setRawHeader("X-Smug-Version",       d->apiVersion.toLatin1());
 
     d->reply = d->requestor->post(netRequest, reqParams, form.formData());
 

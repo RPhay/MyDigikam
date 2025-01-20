@@ -364,6 +364,7 @@ void TwWindow::slotNewAlbumRequest()
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "slotNewAlbumRequest:" << newAlbum.title;
         d->currentAlbumName = d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString();
         QString temp = d->currentAlbumName + newAlbum.title;
+        Q_UNUSED(temp);
 /*
         d->talker->createFolder(temp);
 */

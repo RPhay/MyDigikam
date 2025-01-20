@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName                   = QLatin1String("perspective Tool");
     const QString configDrawWhileMovingEntry        = QLatin1String("Draw While Moving");
     const QString configDrawGridEntry               = QLatin1String("Draw Grid");
@@ -192,7 +194,6 @@ void PerspectiveTool::slotColorGuideChanged()
 
 void PerspectiveTool::readSettings()
 {
-    QColor defaultGuideColor(Qt::red);
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(d->configGroupName);
 
