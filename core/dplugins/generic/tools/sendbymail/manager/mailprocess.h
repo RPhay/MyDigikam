@@ -45,7 +45,7 @@ Q_SIGNALS:
 
     void signalProgress(int);
     void signalMessage(QString, bool);
-    void signalDone(bool);
+    void signalComplete(bool);
 
 public Q_SLOTS:
 

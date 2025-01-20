@@ -44,7 +44,7 @@ public:
 Q_SIGNALS:
 
     void signalProgress(int);
-    void signalDone(bool);
+    void signalComplete(bool);
     void signalMessage(const QString&, bool);
 
 private Q_SLOTS:

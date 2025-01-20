@@ -57,7 +57,7 @@ int main(int argc, char** argv)
     encoder->prepareFrames(&settings);
     encoder->start();
 
-    QObject::connect(encoder, SIGNAL(signalDone(bool)),
+    QObject::connect(encoder, SIGNAL(signalComplete(bool)),
                      &app, SLOT(quit()));
 
     app.exec();

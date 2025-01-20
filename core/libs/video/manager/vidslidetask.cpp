@@ -201,7 +201,7 @@ void VidSlideTask::run()
 
     m_settings->outputFile = outFile;
 
-    Q_EMIT signalDone(!m_cancel);
+    Q_EMIT signalComplete(!m_cancel);
 }
 
 } // namespace Digikam

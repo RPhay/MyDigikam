@@ -151,7 +151,7 @@ void MailFinalPage::slotProcess()
     connect(d->processor, SIGNAL(signalMessage(QString,bool)),
             this, SLOT(slotMessage(QString,bool)));
 
-    connect(d->processor, SIGNAL(signalDone(bool)),
+    connect(d->processor, SIGNAL(signalComplete(bool)),
             this, SLOT(slotDone()));
 
     d->processor->firstStage();

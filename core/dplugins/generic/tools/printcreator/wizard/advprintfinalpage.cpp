@@ -159,7 +159,7 @@ void AdvPrintFinalPage::slotProcess()
     connect(d->printThread, SIGNAL(signalMessage(QString,bool)),
             this, SLOT(slotMessage(QString,bool)));
 
-    connect(d->printThread, SIGNAL(signalDone(bool)),
+    connect(d->printThread, SIGNAL(signalComplete(bool)),
             this, SLOT(slotPrint(bool)));
 
     d->printThread->preparePrint(d->settings, sizeIndex);
@@ -181,10 +181,10 @@ void AdvPrintFinalPage::slotPrint(bool b)
         return;
     }
 
-    disconnect(d->printThread, SIGNAL(signalDone(bool)),
+    disconnect(d->printThread, SIGNAL(signalComplete(bool)),
                this, SLOT(slotPrint(bool)));
 
-    connect(d->printThread, SIGNAL(signalDone(bool)),
+    connect(d->printThread, SIGNAL(signalComplete(bool)),
             this, SLOT(slotDone(bool)));
 
     d->printThread->print(d->settings);

@@ -89,7 +89,7 @@ void AdvPrintTask::run()
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Start prepare to print";
             preparePrint();
 
-            Q_EMIT signalDone(!m_cancel);
+            Q_EMIT signalComplete(!m_cancel);
 
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Prepare to print is done";
 
@@ -107,7 +107,7 @@ void AdvPrintTask::run()
             {
                 printPhotos();
 
-                Q_EMIT signalDone(!m_cancel);
+                Q_EMIT signalComplete(!m_cancel);
             }
             else
             {
@@ -118,7 +118,7 @@ void AdvPrintTask::run()
                     d->settings->gimpFiles << files;
                 }
 
-                Q_EMIT signalDone(!m_cancel && !files.isEmpty());
+                Q_EMIT signalComplete(!m_cancel && !files.isEmpty());
             }
 
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Print is done";

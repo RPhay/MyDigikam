@@ -57,7 +57,7 @@ public:
 Q_SIGNALS:
 
     void signalMessage(const QString&, bool);
-    void signalDone(bool);
+    void signalComplete(bool);
     void signalPreview(const QImage&);
 
 private:

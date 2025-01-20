@@ -75,7 +75,7 @@ void VidSlideThread::prepareFrames(VidSlideSettings* const settings)
     connect(t, SIGNAL(signalMessage(QString,bool)),
             this, SIGNAL(signalMessage(QString,bool)));
 
-    connect(t, SIGNAL(signalDone(bool)),
+    connect(t, SIGNAL(signalComplete(bool)),
             this, SLOT(slotEncodeFrames(bool)));
 
     collection.insert(t, 0);
@@ -87,7 +87,7 @@ void VidSlideThread::slotEncodeFrames(bool prepareDone)
 {
     if (!prepareDone)
     {
-        Q_EMIT signalDone(false);
+        Q_EMIT signalComplete(false);
 
         return;
     }
@@ -137,7 +137,7 @@ void VidSlideThread::slotEncodeDone(bool success, int exitCode)
         Q_EMIT signalMessage(i18n("Error while encoding frames!"), true);
     }
 
-    Q_EMIT signalDone(b);
+    Q_EMIT signalComplete(b);
 }
 
 QString VidSlideThread::encodingTraces() const

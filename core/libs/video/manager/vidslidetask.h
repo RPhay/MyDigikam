@@ -39,7 +39,7 @@ public:
 Q_SIGNALS:
 
     void signalMessage(const QString&, bool);
-    void signalDone(bool);
+    void signalComplete(bool);
 
 protected:
 

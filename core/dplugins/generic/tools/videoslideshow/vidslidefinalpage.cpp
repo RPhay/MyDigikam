@@ -64,6 +64,8 @@ public:
         }
     }
 
+public:
+
     DHistoryView*     progressView = nullptr;
     DProgressWdg*     progressBar  = nullptr;
     bool              complete     = false;
@@ -144,7 +146,7 @@ void VidSlideFinalPage::slotProcess()
     connect(d->encoder, SIGNAL(signalMessage(QString,bool)),
             this, SLOT(slotMessage(QString,bool)));
 
-    connect(d->encoder, SIGNAL(signalDone(bool)),
+    connect(d->encoder, SIGNAL(signalComplete(bool)),
             this, SLOT(slotDone(bool)));
 
     d->encoder->prepareFrames(d->settings);

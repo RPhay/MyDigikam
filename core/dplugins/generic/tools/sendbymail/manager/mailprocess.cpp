@@ -110,7 +110,7 @@ void MailProcess::firstStage()
 
         slotCancel();
 
-        Q_EMIT signalDone(false);
+        Q_EMIT signalComplete(false);
 
         return;
     }
@@ -652,7 +652,7 @@ void MailProcess::invokeMailAgentError(const QString& prog, const QStringList& a
 
     slotCleanUp();
 
-    Q_EMIT signalDone(false);
+    Q_EMIT signalComplete(false);
 }
 
 void MailProcess::invokeMailAgentDone(const QString& prog, const QStringList& args)
@@ -664,7 +664,7 @@ void MailProcess::invokeMailAgentDone(const QString& prog, const QStringList& ar
 
     Q_EMIT signalMessage(i18n("After having sent your images by email..."), false);
     Q_EMIT signalMessage(i18n("Press 'Finish' button to clean up temporary files"), false);
-    Q_EMIT signalDone(true);
+    Q_EMIT signalComplete(true);
 }
 
 void MailProcess::slotCleanUp()
