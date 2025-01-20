@@ -292,8 +292,8 @@ Q_SIGNALS:
     void signalContextMenuRequested();
     void signalXMLSaveItem(QXmlStreamWriter&, int);         // clazy:exclude=signal-with-return-value
     void signalXMLLoadImageElement(QXmlStreamReader&);      // clazy:exclude=signal-with-return-value
-    void signalXMLCustomElements(QXmlStreamWriter&);        // clazy:exclude=signal-with-return-value
-    void signalXMLCustomElements(QXmlStreamReader&);        // clazy:exclude=signal-with-return-value
+    void signalXMLCustomElementsToWrite(QXmlStreamWriter&); // clazy:exclude=signal-with-return-value
+    void signalXMLCustomElementsToRead(QXmlStreamReader&);  // clazy:exclude=signal-with-return-value
 
 public Q_SLOTS:
 

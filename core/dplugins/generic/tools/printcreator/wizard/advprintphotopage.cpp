@@ -202,13 +202,13 @@ AdvPrintPhotoPage::AdvPrintPhotoPage(QWizard* const wizard, const QString& title
     connect(d->photoUi->mPrintList, SIGNAL(signalXMLSaveItem(QXmlStreamWriter&,int)),
             this, SLOT(slotXMLSaveItem(QXmlStreamWriter&,int)));
 
-    connect(d->photoUi->mPrintList, SIGNAL(signalXMLCustomElements(QXmlStreamWriter&)),
+    connect(d->photoUi->mPrintList, SIGNAL(signalXMLCustomElementsToWrite(QXmlStreamWriter&)),
             this, SLOT(slotXMLCustomElement(QXmlStreamWriter&)));
 
     connect(d->photoUi->mPrintList, SIGNAL(signalXMLLoadImageElement(QXmlStreamReader&)),
             this, SLOT(slotXMLLoadElement(QXmlStreamReader&)));
 
-    connect(d->photoUi->mPrintList, SIGNAL(signalXMLCustomElements(QXmlStreamReader&)),
+    connect(d->photoUi->mPrintList, SIGNAL(signalXMLCustomElementsToRead(QXmlStreamReader&)),
             this, SLOT(slotXMLCustomElement(QXmlStreamReader&)));
 
     // -----------------------------------

@@ -25,6 +25,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                        hasThumb = false;       ///< True if thumbnails is a real photo thumbs
 
     int                         rating   = -1;          ///< Image Rating from host.

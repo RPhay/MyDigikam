@@ -25,6 +25,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                        allowRAW                = true;
     bool                        allowDuplicate          = false;
     bool                        controlButtonsEnabled   = true;
@@ -606,7 +608,7 @@ void DItemsList::slotLoadItems()
         {
             // unmanaged start element (it should be tools one)
 
-            Q_EMIT signalXMLCustomElements(xmlReader);
+            Q_EMIT signalXMLCustomElementsToRead(xmlReader);
         }
         else if (xmlReader.isEndElement() && (xmlReader.name() == QLatin1String("Images")))
         {
@@ -680,7 +682,7 @@ void DItemsList::slotSaveItems()
         ++it;
     }
 
-    Q_EMIT signalXMLCustomElements(xmlWriter);
+    Q_EMIT signalXMLCustomElementsToWrite(xmlWriter);
 
     xmlWriter.writeEndElement();  // Images
 
