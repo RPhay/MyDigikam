@@ -63,6 +63,8 @@ public:
     {
     }
 
+public:
+
     bool    stayAlwaysVisible   = false;
     bool    pixmapEnabled       = true;
     QPixmap pixmap;
@@ -78,7 +80,7 @@ AnimatedClearButton::AnimatedClearButton(QWidget* const parent)
             this, SLOT(update()));
 
     connect(d, SIGNAL(visibleChanged()),
-            this, SLOT(visibleChanged()));
+            this, SLOT(slotVisibleChanged()));
 }
 
 QSize AnimatedClearButton::sizeHint() const
@@ -91,13 +93,13 @@ QSize AnimatedClearButton::sizeHint() const
 void AnimatedClearButton::stayVisibleWhenAnimatedOut(bool stayVisible)
 {
     d->stayAlwaysVisible = stayVisible;
-    visibleChanged();
+    slotVisibleChanged();
 }
 
 void AnimatedClearButton::setShallBeShown(bool shown)
 {
     d->controller()->setShallBeShownDirectly(shown);
-    visibleChanged();
+    slotVisibleChanged();
 }
 
 void AnimatedClearButton::animateVisible(bool visible)
@@ -133,7 +135,7 @@ void AnimatedClearButton::slotPixmapEnabled(bool b)
     d->pixmapEnabled = b;
 }
 
-void AnimatedClearButton::updateAnimationSettings()
+void AnimatedClearButton::slotUpdateAnimationSettings()
 {
 }
 
@@ -160,7 +162,7 @@ void AnimatedClearButton::paintEvent(QPaintEvent* event)
     }
 }
 
-void AnimatedClearButton::visibleChanged()
+void AnimatedClearButton::slotVisibleChanged()
 {
     Q_EMIT visibleChanged(d->isVisible());
 
@@ -189,6 +191,8 @@ class Q_DECL_HIDDEN CustomStepsDoubleSpinBox::Private
 public:
 
     Private() = default;
+
+public:
 
     bool          beforeInitialValue    = true;
     QList<double> values;
@@ -357,6 +361,8 @@ class Q_DECL_HIDDEN CustomStepsIntSpinBox::Private
 public:
 
     Private() = default;
+
+public:
 
     bool       beforeInitialValue   = true;
     QList<int> values;

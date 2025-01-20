@@ -87,8 +87,8 @@ protected:
 
 protected Q_SLOTS:
 
-    void visibleChanged();
-    void updateAnimationSettings();
+    void slotVisibleChanged();
+    void slotUpdateAnimationSettings();
 
 private:
 
