@@ -59,7 +59,7 @@ CaptionEdit::CaptionEdit(QWidget* const parent)
     connect(d->altLangStrEdit, SIGNAL(signalSelectionChanged(QString)),
             this, SLOT(slotSelectionChanged(QString)));
 
-    connect(d->altLangStrEdit, SIGNAL(signalModified(QString,QString)),
+    connect(d->altLangStrEdit, SIGNAL(signalChanged(QString,QString)),
             this, SLOT(slotCaptionModified(QString,QString)));
 
     connect(d->altLangStrEdit, SIGNAL(signalValueAdded(QString,QString)),

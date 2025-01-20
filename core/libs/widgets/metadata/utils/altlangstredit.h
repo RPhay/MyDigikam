@@ -109,7 +109,7 @@ Q_SIGNALS:
     /**
      * Emitted when the user changes the text for the current language.
      */
-    void signalModified(const QString& lang, const QString& text);
+    void signalChanged(const QString& lang, const QString& text);
 
     /**
      * Emitted when the current language changed.

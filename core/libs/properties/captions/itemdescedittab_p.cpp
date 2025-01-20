@@ -30,7 +30,7 @@ ItemDescEditTab::Private::Private(ItemDescEditTab* const tab)
 
 void ItemDescEditTab::Private::setupConnections()
 {
-    QObject::connect(titleEdit, SIGNAL(signalModified(QString,QString)),
+    QObject::connect(titleEdit, SIGNAL(signalChanged(QString,QString)),
                      q, SLOT(slotTitleChanged()));
 
     QObject::connect(titleEdit, SIGNAL(signalValueAdded(QString,QString)),

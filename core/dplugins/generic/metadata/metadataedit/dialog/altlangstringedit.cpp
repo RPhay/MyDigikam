@@ -63,7 +63,7 @@ AltLangStringsEdit::AltLangStringsEdit(QWidget* const parent, const QString& tit
 
     // --------------------------------------------------------
 
-    connect(this, SIGNAL(signalModified(QString,QString)),
+    connect(this, SIGNAL(signalChanged(QString,QString)),
             this, SIGNAL(signalModified()));
 
     connect(this, SIGNAL(signalValueAdded(QString,QString)),

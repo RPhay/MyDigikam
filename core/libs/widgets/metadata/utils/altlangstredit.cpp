@@ -290,7 +290,7 @@ void AltLangStrEdit::slotTextChanged()
 
         d->values.insert(d->currentLanguage, editedText);
 
-        Q_EMIT signalModified(d->currentLanguage, editedText);
+        Q_EMIT signalChanged(d->currentLanguage, editedText);
     }
 }
 

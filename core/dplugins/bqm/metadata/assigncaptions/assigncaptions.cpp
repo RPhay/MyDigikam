@@ -114,7 +114,7 @@ void AssignCaptions::registerSettingsWidget()
     connect(d->setTitles, SIGNAL(toggled(bool)),
             d->titlesWidget, SLOT(slotEnabledInternalWidgets(bool)));
 
-    connect(d->titlesWidget, SIGNAL(signalModified(QString,QString)),
+    connect(d->titlesWidget, SIGNAL(signalChanged(QString,QString)),
             this, SLOT(slotSettingsChanged()));
 
     connect(d->titlesWidget, SIGNAL(signalValueAdded(QString,QString)),
