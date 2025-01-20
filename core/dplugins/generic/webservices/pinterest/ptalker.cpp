@@ -554,6 +554,8 @@ void PTalker::parseResponseCreateBoard(const QByteArray& data)
     {
         QJsonParseError err;
         QJsonDocument doc2 = QJsonDocument::fromJson(data, &err);
+        Q_UNUSED(doc2);
+
         Q_EMIT signalCreateBoardFailed(jsonObject[QLatin1String("message")].toString());
     }
     else

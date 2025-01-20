@@ -52,6 +52,8 @@ public:
 
     Private() = default;
 
+public:
+
     QWidget*               parent           = nullptr;
     State                  state            = PG_LOGOUT;
     QString                cookie;
@@ -344,6 +346,7 @@ void PiwigoTalker::slotFinished(QNetworkReply* reply)
         if      (state == PG_LOGIN)
         {
             Q_EMIT signalLoginFailed(reply->errorString());
+
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << reply->errorString();
         }
         else if (state == PG_GETVERSION)
@@ -448,7 +451,6 @@ void PiwigoTalker::slotFinished(QNetworkReply* reply)
 void PiwigoTalker::parseResponseLogin(const QByteArray& data)
 {
     QXmlStreamReader ts(data);
-    QString line;
     bool foundResponse = false;
     d->loggedIn        = false;
 
@@ -506,7 +508,6 @@ void PiwigoTalker::parseResponseLogin(const QByteArray& data)
 void PiwigoTalker::parseResponseGetVersion(const QByteArray& data)
 {
     QXmlStreamReader ts(data);
-    QString line;
     QRegularExpression verrx(QRegularExpression::anchoredPattern(QLatin1String(".*?(\\d+)\\.(\\d+).*")));
     verrx.setPatternOptions(QRegularExpression::DotMatchesEverythingOption);
 
@@ -558,7 +559,6 @@ void PiwigoTalker::parseResponseListAlbums(const QByteArray& data)
 {
     QString str        = QString::fromUtf8(data);
     QXmlStreamReader ts(data);
-    QString line;
     bool foundResponse = false;
     bool success       = false;
 
@@ -648,7 +648,6 @@ void PiwigoTalker::parseResponseDoesPhotoExist(const QByteArray& data)
 {
     QString str        = QString::fromUtf8(data);
     QXmlStreamReader ts(data);
-    QString line;
     bool foundResponse = false;
     bool success       = false;
 
@@ -745,9 +744,7 @@ void PiwigoTalker::parseResponseDoesPhotoExist(const QByteArray& data)
 
 void PiwigoTalker::parseResponseGetInfo(const QByteArray& data)
 {
-    QString str        = QString::fromUtf8(data);
     QXmlStreamReader ts(data);
-    QString line;
     bool foundResponse = false;
     bool success       = false;
     QList<int> categories;
@@ -830,9 +827,7 @@ void PiwigoTalker::parseResponseGetInfo(const QByteArray& data)
 
 void PiwigoTalker::parseResponseSetInfo(const QByteArray& data)
 {
-    QString str        = QString::fromUtf8(data);
     QXmlStreamReader ts(data);
-    QString line;
     bool foundResponse = false;
     bool success       = false;
 
@@ -916,9 +911,7 @@ void PiwigoTalker::addNextChunk()
 
 void PiwigoTalker::parseResponseAddPhotoChunk(const QByteArray& data)
 {
-    QString str        = QString::fromUtf8(data);
     QXmlStreamReader ts(data);
-    QString line;
     bool foundResponse = false;
     bool success       = false;
 
@@ -1002,9 +995,7 @@ void PiwigoTalker::addPhotoSummary()
 
 void PiwigoTalker::parseResponseAddPhotoSummary(const QByteArray& data)
 {
-    QString str        = QString::fromUtf8(data);
     QXmlStreamReader ts(data.mid(data.indexOf("<?xml")));
-    QString line;
     bool foundResponse = false;
     bool success       = false;
 
