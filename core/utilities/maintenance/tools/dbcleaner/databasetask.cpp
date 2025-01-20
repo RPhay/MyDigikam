@@ -109,13 +109,13 @@ void DatabaseTask::run()
 
                 // Signal that the database was vacuumed but failed the integrity check afterwards.
 
-                Q_EMIT signalFinished(true, false);
+                Q_EMIT signalFinishedWithFeedback(true, false);
             }
             else
             {
                 qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of core DB. Integrity check after vacuuming was positive.";
 
-                Q_EMIT signalFinished(true, true);
+                Q_EMIT signalFinishedWithFeedback(true, true);
             }
         }
         else
@@ -124,7 +124,7 @@ void DatabaseTask::run()
 
             // Signal that the integrity check failed and thus the vacuum was skipped
 
-            Q_EMIT signalFinished(false, false);
+            Q_EMIT signalFinishedWithFeedback(false, false);
         }
 
         QThread::sleep(1);
@@ -146,13 +146,13 @@ void DatabaseTask::run()
 
                     // Signal that the database was vacuumed but failed the integrity check afterwards.
 
-                    Q_EMIT signalFinished(true, false);
+                    Q_EMIT signalFinishedWithFeedback(true, false);
                 }
                 else
                 {
                     qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of thumbnails DB. Integrity check after vacuuming was positive.";
 
-                    Q_EMIT signalFinished(true, true);
+                    Q_EMIT signalFinishedWithFeedback(true, true);
                 }
             }
             else
@@ -161,14 +161,14 @@ void DatabaseTask::run()
 
                 // Signal that the integrity check failed and thus the vacuum was skipped
 
-                Q_EMIT signalFinished(false, false);
+                Q_EMIT signalFinishedWithFeedback(false, false);
             }
         }
         else
         {
             qCWarning(DIGIKAM_DATABASE_LOG) << "Thumbnails DB is not initialised. Will not vacuum.";
 
-            Q_EMIT signalFinished(false, false);
+            Q_EMIT signalFinishedWithFeedback(false, false);
         }
 
         QThread::sleep(1);
@@ -188,13 +188,13 @@ void DatabaseTask::run()
 
                 // Signal that the database was vacuumed but failed the integrity check afterwards.
 
-                Q_EMIT signalFinished(true, false);
+                Q_EMIT signalFinishedWithFeedback(true, false);
             }
             else
             {
                 qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of recognition DB. Integrity check after vacuuming was positive.";
 
-                Q_EMIT signalFinished(true, true);
+                Q_EMIT signalFinishedWithFeedback(true, true);
             }
         }
         else
@@ -203,7 +203,7 @@ void DatabaseTask::run()
 
             // Signal that the integrity check failed and thus the vacuum was skipped
 
-            Q_EMIT signalFinished(false, false);
+            Q_EMIT signalFinishedWithFeedback(false, false);
         }
 
         QThread::sleep(1);
@@ -225,13 +225,13 @@ void DatabaseTask::run()
 
                     // Signal that the database was vacuumed but failed the integrity check afterwards.
 
-                    Q_EMIT signalFinished(true, false);
+                    Q_EMIT signalFinishedWithFeedback(true, false);
                 }
                 else
                 {
                     qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of similarity DB. Integrity check after vacuuming was positive.";
 
-                    Q_EMIT signalFinished(true, true);
+                    Q_EMIT signalFinishedWithFeedback(true, true);
                 }
             }
             else
@@ -240,7 +240,7 @@ void DatabaseTask::run()
 
                 // Signal that the integrity check failed and thus the vacuum was skipped
 
-                Q_EMIT signalFinished(false, false);
+                Q_EMIT signalFinishedWithFeedback(false, false);
             }
         }
 

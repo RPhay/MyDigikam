@@ -345,7 +345,7 @@ void MaintenanceThread::shrinkDatabases()
     connect(t, SIGNAL(signalStarted()),
             this, SIGNAL(signalStarted()));
 
-    connect(t, SIGNAL(signalFinished(bool,bool)),
+    connect(t, SIGNAL(signalFinishedWithFeedback(bool,bool)),
             this, SIGNAL(signalFinished(bool,bool)));
 
     collection.insert(t, 0);

@@ -61,7 +61,7 @@ public:
 Q_SIGNALS:
 
     void signalFinished();
-    void signalFinished(bool done, bool errorFree);
+    void signalFinishedWithFeedback(bool done, bool errorFree);
 
     void signalData(const QList<qlonglong>& staleImageIds,
                     const QList<int>& staleThumbIds,
