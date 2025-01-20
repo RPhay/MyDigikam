@@ -142,7 +142,7 @@ cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$C
 cmake --build . --config RelWithDebInfo --target ext_breeze              -- -j$CPU_CORES
 
 # OpenCV with custom options
-cmake --build . --config RelWithDebInfo --target ext_opencv              -- -j$CPU_CORES
+# cmake --build . --config RelWithDebInfo --target ext_opencv              -- -j$CPU_CORES
 
 #################################################################################################
 

@@ -189,6 +189,7 @@ ${INSTALL_PREFIX}/bin/brew install \
              fftw \
              exiv2 \
              lensfun \
+             opencv \
              qt \
              qt-mariadb
 #             sane-backends
