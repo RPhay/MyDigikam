@@ -271,7 +271,10 @@ void PreviewLoadingTask::execute()
 
             convertQImageToDImg();
         }
-        else // Non-RAW images
+
+        // Non-RAW images or failed RAW image load
+
+        if (continueQuery() && m_img.isNull())
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Try to get preview from" << m_loadingDescription.filePath;
             qCDebug(DIGIKAM_GENERAL_LOG) << "Preview quality: " << m_loadingDescription.previewParameters.previewSettings.quality;
