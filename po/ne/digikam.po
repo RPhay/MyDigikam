@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 01:52+0000\n"
+"POT-Creation-Date: 2025-01-20 01:59+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -2947,38 +2947,39 @@ msgctxt "Advanced search images, access stored searches"
 msgid "Search"
 msgstr "खोजी:"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:101
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:103
 #, fuzzy, kde-format
 msgid "Open Tag Manager"
 msgstr "थप्नका लागि छवि चयन गर्नुहोस्"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:102
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:104
 #, fuzzy, kde-format
 msgid "No Tags"
 msgstr "ट्याग"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:103
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
 #, fuzzy, kde-format
 msgid "Existing Tags"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:139
 #, fuzzy, kde-format
 msgid "Auto-tag scan"
 msgstr "HSL समायोजन"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:141
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
 msgstr "<p>छवि प्रकार प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:271
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:296
 #, fuzzy, kde-format
 msgid "No Tags Album"
 msgstr "मेरो एल्बम"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:316
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:340
 #: core/libs/album/engine/album.cpp:554
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -11591,12 +11592,12 @@ msgstr ""
 msgid "Generate KML file"
 msgstr "%1 फाइल EXIT परिक्रमण गर्दैछ..."
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:304
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:307
 #, fuzzy, kde-format
 msgid "GeoNames"
 msgstr "नाम:"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:305
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:308
 #, kde-format
 msgid "OSM"
 msgstr ""
@@ -11755,7 +11756,7 @@ msgstr[1] ""
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:283
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:337
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:272
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:428
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:430
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:415
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:128
 #: core/libs/widgets/text/dplaintextedit.cpp:400
@@ -12248,7 +12249,7 @@ msgstr "फाइल सिर्जना मिति देखाउनुह
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:107
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:144
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:134
 #, fuzzy, kde-format
 msgid "Set creation date to today"
 msgstr "फाइल सिर्जना मिति देखाउनुहोस्"
@@ -12307,7 +12308,7 @@ msgstr "स्याचुरेसन"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:163
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:117
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:113
 #, fuzzy, kde-format
 msgid "Set digitization date to today"
 msgstr "टोन फिल्टर होइन"
@@ -13243,11 +13244,11 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:102
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:100
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:113
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:255
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:257
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:90
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:212
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:224
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:103
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:75
 #, fuzzy, kde-format
 msgid ""
@@ -13769,167 +13770,167 @@ msgstr ""
 msgid "Corel Draw [*.CDR]"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:148
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:150
 #, fuzzy, kde-format
 msgid "Destination:"
 msgstr "वर्णन"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:156
 #, fuzzy, kde-format
 msgid "Set here the envelope destination"
 msgstr "<p>यहाँ छविको ह्यु समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:155
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:157
 #, fuzzy, kde-format
 msgid ""
 "Enter the envelope destination. This field is limited to 1024 characters."
 msgstr "<p>फोटोग्राफर शीर्षक सेट गर्नुहोस् । यो फिल्ड 32 ASCII क्यारेक्टरमा सीमित हुन्छ ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:162
 #, kde-format
 msgid "U.N.O ID:"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:164
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:166
 #, fuzzy, kde-format
 msgid "Set here the Unique Name of Object identifier"
 msgstr "<p>फोटोग्राफर नाम सेट गर्नुहोस् । यो फिल्ड 32 ASCII क्यारेक्टरसम्म सीमित हुन्छ ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:165
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:167
 #, fuzzy, kde-format
 msgid ""
 "Set here the Unique Name of Object identifier. This field is limited to 80 "
 "characters."
 msgstr "<p>फोटोग्राफर नाम सेट गर्नुहोस् । यो फिल्ड 32 ASCII क्यारेक्टरसम्म सीमित हुन्छ ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:170
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:172
 #, kde-format
 msgid "Product ID:"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:174
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:176
 #, fuzzy, kde-format
 msgid "Set here the product identifier"
 msgstr "<p>यहाँ छविको व्यतिरेक समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:175
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:177
 #, fuzzy, kde-format
 msgid ""
 "Set here the product identifier. This field is limited to 32 characters."
 msgstr "<p>फोटोग्राफर शीर्षक सेट गर्नुहोस् । यो फिल्ड 32 ASCII क्यारेक्टरमा सीमित हुन्छ ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:180
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:182
 #, kde-format
 msgid "Service ID:"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:184
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:186
 #, fuzzy, kde-format
 msgid "Set here the service identifier"
 msgstr "<p>यहाँ काँटछाँटका लागि चयन चौडाइ सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:187
 #, fuzzy, kde-format
 msgid ""
 "Set here the service identifier. This field is limited to 10 characters."
 msgstr "<p>फोटोग्राफर शीर्षक सेट गर्नुहोस् । यो फिल्ड 32 ASCII क्यारेक्टरमा सीमित हुन्छ ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:190
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:192
 #, fuzzy, kde-format
 msgid "Envelope ID:"
 msgstr "IIM खाम"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:196
 #, fuzzy, kde-format
 msgid "Set here the envelope identifier"
 msgstr "<p>यहाँ छविको ह्यु समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:197
 #, fuzzy, kde-format
 msgid ""
 "Set here the envelope identifier. This field is limited to 8 characters."
 msgstr "<p>फोटोग्राफर शीर्षक सेट गर्नुहोस् । यो फिल्ड 32 ASCII क्यारेक्टरमा सीमित हुन्छ ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:200
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:202
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:170
 #, fuzzy, kde-format
 msgid "Priority:"
 msgstr "गुणस्तर:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:202
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:204
 #, fuzzy, kde-format
 msgctxt "priority for the envelope"
 msgid "0: None"
 msgstr "कुनै होइन"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:203
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:205
 #, fuzzy, kde-format
 msgctxt "priority for the envelope"
 msgid "1: High"
 msgstr "उचाइ:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:207
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:209
 #, fuzzy, kde-format
 msgctxt "priority for the envelope"
 msgid "5: Normal"
 msgstr "सामान्य"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:210
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:212
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "8: Low"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:211
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:213
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:181
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "9: User-defined"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:212
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:214
 #, fuzzy, kde-format
 msgid "Select here the envelope priority."
 msgstr "<p>यहाँ छविको ह्यु समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:216
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:218
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:82
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:163
 #, fuzzy, kde-format
 msgid "Format:"
 msgstr "छवि मिति"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:231
 #, fuzzy, kde-format
 msgid "Select here envelope file format."
 msgstr "<p>यहाँ छविको स्याचुरेसन समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:233
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:235
 #, kde-format
 msgid "Sent date:"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:234
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:236
 #, fuzzy, kde-format
 msgid "Sent time:"
 msgstr "टोन फिल्टर होइन"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:245
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:247
 #, kde-format
 msgid "Set envelope sent date to today"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:247
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:249
 #, fuzzy, kde-format
 msgid "Set here the date when the service sent the material."
 msgstr "<p>यहाँ छविको ह्यु समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:248
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:250
 #, fuzzy, kde-format
 msgid "Set here the time when the service sent the material."
 msgstr "<p>यहाँ छविको प्रकाश समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:249
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:251
 #, fuzzy, kde-format
 msgid "Set here the time zone when the service sent the material."
 msgstr "<p>यहाँ छविको ह्यु समायोजन सेट गर्नुहोस् ।"
@@ -13951,7 +13952,7 @@ msgid "Enter here a new keyword. This field is limited to 64 characters."
 msgstr "<p>फोटोग्राफर नाम सेट गर्नुहोस् । यो फिल्ड 32 ASCII क्यारेक्टरसम्म सीमित हुन्छ ।"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:105
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:105
 #, fuzzy, kde-format
 msgid "Digitization date"
 msgstr "टोन फिल्टर होइन"
@@ -13962,7 +13963,7 @@ msgid "Digitization time"
 msgstr "टोन फिल्टर होइन"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:119
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:115
 #, fuzzy, kde-format
 msgid "Set here the creation date of digital representation."
 msgstr "<p>यहाँ छविको स्याचुरेसन समायोजन सेट गर्नुहोस् ।"
@@ -13973,13 +13974,13 @@ msgid "Set here the creation time of digital representation."
 msgstr "<p>यहाँ छविको स्याचुरेसन समायोजन सेट गर्नुहोस् ।"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:123
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:117
 #, fuzzy, kde-format
 msgid "Set here the time zone of digital representation."
 msgstr "<p>यहाँ छविको ह्यु समायोजन सेट गर्नुहोस् ।"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:130
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:124
 #, fuzzy, kde-format
 msgid "Creation date"
 msgstr "टोन फिल्टर होइन"
@@ -13990,13 +13991,13 @@ msgid "Creation time"
 msgstr "टोन फिल्टर होइन"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:140
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:128
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:130
 #, fuzzy, kde-format
 msgid "Sync Exif creation date"
 msgstr "फाइल सिर्जना मिति देखाउनुहोस्"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:146
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:136
 #, fuzzy, kde-format
 msgid "Set here the creation date of intellectual content."
 msgstr "<p>यहाँ छविको स्याचुरेसन समायोजन सेट गर्नुहोस् ।"
@@ -14007,8 +14008,8 @@ msgid "Set here the creation time of intellectual content."
 msgstr "<p>यहाँ छविको स्याचुरेसन समायोजन सेट गर्नुहोस् ।"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:150
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:136
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:155
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:138
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:157
 #, fuzzy, kde-format
 msgid "Set here the time zone of intellectual content."
 msgstr "<p>यहाँ छविको स्याचुरेसन समायोजन सेट गर्नुहोस् ।"
@@ -14020,7 +14021,7 @@ msgstr "<p>यहाँ छविको व्यतिरेक समायो
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:162
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:125
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:162
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:164
 #: core/libs/template/templatepanel.cpp:217
 #: core/libs/template/templatepanel.cpp:281
 #: core/libs/template/templateviewer.cpp:132
@@ -14041,7 +14042,7 @@ msgid ""
 msgstr "<p>फोटोग्राफर शीर्षक सेट गर्नुहोस् । यो फिल्ड 32 ASCII क्यारेक्टरमा सीमित हुन्छ ।"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:172
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:169
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:171
 #: core/libs/template/templatepanel.cpp:227
 #: core/libs/template/templateviewer.cpp:134
 #, fuzzy, kde-format
@@ -14062,7 +14063,7 @@ msgstr "<p>फोटोग्राफर शीर्षक सेट गर्
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:182
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:130
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:178
 #: core/libs/template/templatepanel.cpp:237
 #: core/libs/template/templateviewer.cpp:136
 #: core/libs/template/templateviewer.cpp:158
@@ -14084,7 +14085,7 @@ msgstr "<p>फोटोग्राफर नाम सेट गर्नुह
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:192
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:135
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:183
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:185
 #: core/libs/template/templatepanel.cpp:247
 #: core/libs/template/templatepanel.cpp:291
 #: core/libs/template/templateviewer.cpp:138
@@ -14094,7 +14095,7 @@ msgid "Country:"
 msgstr "गणना:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:194
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:187
 #, fuzzy, kde-format
 msgid "Select here country name of content origin."
 msgstr "<p>यहाँ छविको व्यतिरेक समायोजन सेट गर्नुहोस् ।"
@@ -14277,51 +14278,51 @@ msgid ""
 "to 32 characters."
 msgstr "<p>फोटोग्राफर नाम सेट गर्नुहोस् । यो फिल्ड 32 ASCII क्यारेक्टरसम्म सीमित हुन्छ ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:65
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:67
 #, fuzzy, kde-format
 msgctxt "image title"
 msgid "Title:"
 msgstr "शीर्षक:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:68
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:70
 #, fuzzy, kde-format
 msgid "Set here the content title"
 msgstr "<p>यहाँ छविको व्यतिरेक समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:69
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:71
 #, fuzzy, kde-format
 msgid ""
 "Set here the shorthand reference of content. This field is limited to 64 "
 "characters."
 msgstr "<p>फोटोग्राफर नाम सेट गर्नुहोस् । यो फिल्ड 32 ASCII क्यारेक्टरसम्म सीमित हुन्छ ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:74
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:76
 #, fuzzy, kde-format
 msgid "Edit Status:"
 msgstr "तथ्याङ्क"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:79
 #, fuzzy, kde-format
 msgid "Set here the content status"
 msgstr "<p>मार्गदर्शन ड्यास-रेखा कोर्न प्रयोग गरिने रङ यहाँ सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:80
 #, fuzzy, kde-format
 msgid ""
 "Set here the title of content status. This field is limited to 64 characters."
 msgstr "<p>फोटोग्राफर शीर्षक सेट गर्नुहोस् । यो फिल्ड 32 ASCII क्यारेक्टरमा सीमित हुन्छ ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:85
 #, fuzzy, kde-format
 msgid "Job Identifier:"
 msgstr "परिचय"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:88
 #, fuzzy, kde-format
 msgid "Set here the job ID"
 msgstr "<p>मार्गदर्शन ड्यास-रेखा कोर्न प्रयोग गरिने रङ यहाँ सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:89
 #, fuzzy, kde-format
 msgid ""
 "Set here the string that identifies content that recurs. This field is "
@@ -14330,18 +14331,18 @@ msgstr ""
 "<p>तस्विरको पूर्वनिर्धारित प्रतिलिपि सूचना सेट गर्नुहोस् । यो फिल्ड 128 ASCII क्यारेक्टरमा "
 "सीमित हुन्छ ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:94
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:83
 #, fuzzy, kde-format
 msgid "Special Instructions:"
 msgstr "स्याचुरेसन:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:97
 #, fuzzy, kde-format
 msgid "Set here the content instructions"
 msgstr "<p>यहाँ छविको व्यतिरेक समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:98
 #, fuzzy, kde-format
 msgid ""
 "Enter the editorial usage instructions. This field is limited to 256 "
@@ -14628,32 +14629,32 @@ msgstr "फाइल गुण"
 msgid "Set here a new keyword"
 msgstr "<p>यहाँ अचल आकार अनुपात अभिमुखीकरण चयन गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:145
 #, fuzzy, kde-format
 msgid "Video date"
 msgstr "अडियो फाइल"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:151
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:153
 #, fuzzy, kde-format
 msgid "Set video date to today"
 msgstr "फाइल सिर्जना मिति देखाउनुहोस्"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:153
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:155
 #, fuzzy, kde-format
 msgid "Set here the video date of intellectual content."
 msgstr "<p>यहाँ छविको स्याचुरेसन समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:165
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:167
 #, fuzzy, kde-format
 msgid "Set here the content's city of origin."
 msgstr "<p>यहाँ छविको व्यतिरेक समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:172
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:174
 #, fuzzy, kde-format
 msgid "Set here the content's location within the city."
 msgstr "<p>यहाँ छविको व्यतिरेक समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:179
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:181
 #, fuzzy, kde-format
 msgid "Set here the content's Province or State of origin."
 msgstr "<p>यहाँ अचल आकार अनुपात अभिमुखीकरण चयन गर्नुहोस् ।"
@@ -14880,255 +14881,255 @@ msgctxt "@item: type code"
 msgid "Topic Set"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:135
 #, fuzzy, kde-format
 msgctxt "@option"
 msgid "Language:"
 msgstr "पूर्वनिर्धारित प्रोफाइल प्रयोग गर्नुहोस्"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:136
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select here the language of content."
 msgstr "<p>यहाँ छविको स्याचुरेसन समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:148
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:150
 #, fuzzy, kde-format
 msgctxt "@option"
 msgid "Priority:"
 msgstr "गुणस्तर:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:150
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:152
 #, fuzzy, kde-format
 msgctxt "@item: editorial urgency of content"
 msgid "0: None"
 msgstr "कुनै होइन"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:151
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:153
 #, fuzzy, kde-format
 msgctxt "@item: editorial urgency of content"
 msgid "1: High"
 msgstr "उचाइ:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:155
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:157
 #, fuzzy, kde-format
 msgctxt "@item: editorial urgency of content"
 msgid "5: Normal"
 msgstr "सामान्य"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:158
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:160
 #, kde-format
 msgctxt "@item: editorial urgency of content"
 msgid "8: Low"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:159
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:161
 #, kde-format
 msgctxt "@item: editorial urgency of content"
 msgid "9: User-defined"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:162
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "@info: Select here the editorial urgency of content."
 msgstr "<p>यहाँ छविको व्यतिरेक समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:164
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:166
 #, kde-format
 msgctxt "@option"
 msgid "Scene:"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:165
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:167
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select here the scene type of the content."
 msgstr "<p>यहाँ छविको ह्यु समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:179
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:181
 #, fuzzy, kde-format
 #| msgid "Type:"
 msgctxt "@option"
 msgid "Type:"
 msgstr "प्रकार:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:180
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:182
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select here the editorial type of the content."
 msgstr "<p>यहाँ छविको व्यतिरेक समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:197
 #, kde-format
 msgctxt "@option"
 msgid "Attribute:"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:200
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:202
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Set here the editorial attribute description"
 msgstr "<p>यहाँ छविको स्याचुरेसन समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:201
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:203
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Set here the editorial attribute description of the content."
 msgstr "<p>यहाँ छविको स्याचुरेसन समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:203
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:205
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select here the editorial attribute of the content."
 msgstr "<p>यहाँ छविको व्यतिरेक समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:204
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:206
 #, fuzzy, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Current"
 msgstr "गणना:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:207
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Analysis"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:206
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:208
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Archive material"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:207
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:209
 #, fuzzy, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Background"
 msgstr "विषयवस्तु पृष्ठभूमि रङ प्रयोग गर्नुहोस्"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:208
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:210
 #, fuzzy, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Feature"
 msgstr "प्रकृति"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:209
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:211
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Forecast"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:210
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:212
 #, fuzzy, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "History"
 msgstr "हिस्टोग्राम"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:211
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:213
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Obituary"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:212
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:214
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Opinion"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:213
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:215
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Polls & Surveys"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:216
 #, fuzzy, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Profile"
 msgstr "प्रोफाइल ID"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:217
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Results Listings & Table"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:216
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:218
 #, fuzzy, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Side bar & Supporting information"
 msgstr "टोन फिल्टर होइन"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:217
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:219
 #, fuzzy, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Summary"
 msgstr "सारांश"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:218
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:220
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Transcript & Verbatim"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:219
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:221
 #, fuzzy, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Interview"
 msgstr "पूर्वावलोकन अन्त्य गर्नुहोस्"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:220
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:222
 #, fuzzy, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "From the Scene"
 msgstr "विषयवस्तु लोडिङ"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:221
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:223
 #, fuzzy, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Retrospective"
 msgstr "प्रतिशत टायल:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:222
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:224
 #, fuzzy, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Statistics"
 msgstr "तथ्याङ्क"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:225
 #, fuzzy, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Update"
 msgstr "मिति:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:226
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Wrap-up"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:225
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:227
 #, fuzzy, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Press Release"
 msgstr "सानो थम्ब प्रक्रिया"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:231
 #, fuzzy, kde-format
 #| msgid "Resize Image"
 msgctxt "@option"
 msgid "Reference:"
 msgstr "छवि रिसाइज गर्नुहोस्"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:232
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:234
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Set here the content reference"
 msgstr "<p>यहाँ छविको व्यतिरेक समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:233
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:235
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Set here the original content transmission reference."
@@ -15315,7 +15316,7 @@ msgid "ExifTool reported an error"
 msgstr "%1 फाइलमा मेटाडाटा ट्याग सेट गर्दैछ..."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:93
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:472
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:474
 #, fuzzy, kde-format
 msgid "Success"
 msgstr "छिटो खोजी"
@@ -15693,81 +15694,81 @@ msgstr ""
 msgid "Printing Complete"
 msgstr "छवि मुद्रण गर्नुहोस्..."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:89
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:279
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:91
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:281
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "DNG Converter"
 msgstr "रूपान्तरण गर्नुहोस्"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:97
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:99
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "&Convert"
 msgstr "रूपान्तरण गर्नुहोस्"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:279
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:281
 #, kde-format
 msgid "The list does not contain any Raw files to process."
 msgstr ""
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:290
 #, fuzzy, kde-format
 msgid "DNG Converter"
 msgstr "रूपान्तरण गर्नुहोस्"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:418
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:420
 #, kde-format
 msgid "&Abort"
 msgstr "परित्याग गर्नुहोस्"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:419
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:421
 #, fuzzy, kde-format
 msgid "Abort the conversion of Raw files."
 msgstr "कलरस्पेस"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:423
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:425
 #, fuzzy, kde-format
 msgid "Con&vert"
 msgstr "रूपान्तरण गर्नुहोस्"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:424
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:426
 #, fuzzy, kde-format
 msgid "Start converting the Raw images using the current settings."
 msgstr "<p>यहाँ तपाईँले हालको खोजी सेटिङ प्रयोग गरेर एल्बम लाइब्रेरीमा वस्तु हेर्न सक्नुहुन्छ ।"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:448
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:450
 #, fuzzy, kde-format
 msgid "Failed to save image"
 msgstr "फाइल मुद्रण गर्न असफल: '%1'"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:459
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:461
 #, fuzzy, kde-format
 msgid "Failed to move sidecar"
 msgstr "\"%1\" छवि लोड गर्न असफल"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:465
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:467
 #, fuzzy, kde-format
 msgid "Failed to save image."
 msgstr "फाइल मुद्रण गर्न असफल: '%1'"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:497
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:499
 #, fuzzy, kde-format
 msgid "Process failed"
 msgstr "चलचित्र फाइल"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:503
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:505
 #, fuzzy, kde-format
 msgid "Process Canceled"
 msgstr "फाइल गुण"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:509
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:511
 #, fuzzy, kde-format
 #| msgid "<p>Linear"
 msgid "File not supported"
 msgstr "<p>लिनियर"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:515
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:517
 #, fuzzy, kde-format
 msgid "Internal error"
 msgstr "व्यतिरेक:"
@@ -16062,114 +16063,114 @@ msgid ""
 "noticeable when you need to blend areas of different primary colors together."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:169
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:173
 #, kde-format
 msgctxt "@title:column Saving checkbox"
 msgid "Include during Saving"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:170
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:174
 #, fuzzy, kde-format
 #| msgid "Output device"
 msgctxt "@title:column Output file name"
 msgid "Output"
 msgstr "निर्गत यन्त्र"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:171
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:175
 #, fuzzy, kde-format
 msgctxt "@title:column Source file names"
 msgid "Selected Inputs"
 msgstr "नयाँ वस्तु चयन गर्नुहोस्"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:197
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:201
 #, fuzzy, kde-format
 msgctxt "@item:inmenu"
 msgid "Remove item"
 msgstr "ट्याग हटाउनुहोस्"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:206
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:210
 #, fuzzy, kde-format
 msgctxt "@item:inmenu"
 msgid "Clear all"
 msgstr "केन्द्र"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:113
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:115
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Exposure Blending"
 msgstr "स्वत: प्रर्दशन"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:122
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:124
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "&Save"
 msgstr "यस रूपमा बचत गर्नुहोस्..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:124
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:126
 #, fuzzy, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Process and save selected items."
 msgstr "<p>छवि सम्पादक क्षेत्रमा प्रयोग गर्नका लागि पृष्ठभूमि रङ अनुकूलन गर्नुहोस् ।"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:128
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:130
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "&Preview"
 msgstr "पूर्वावलोकन अन्त्य गर्नुहोस्"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:130
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:132
 #, fuzzy, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Process a preview of bracketed images stack with current settings."
 msgstr "क्यामेराबाट %1 फाइल पुन: प्राप्त गर्न असफल"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:134
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:123
 #, fuzzy, kde-format
 msgctxt "@action: button"
 msgid "&Default"
 msgstr "पूर्वनिर्धारित प्रोफाइल प्रयोग गर्नुहोस्"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:138
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:126
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Revert current settings to default values."
 msgstr "<p>सबै फिल्टर परिमितिहरूलाई तिनीहरूको पूर्वनिर्धारित मानमा रिसेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:91
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Details..."
 msgstr "परिवार"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:160
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:162
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Enfuse Settings"
 msgstr "स्थानिय सेटिङ"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:172
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:174
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Save Result"
 msgstr "यस रूपमा बचत गर्नुहोस्..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:182
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:184
 #, fuzzy, kde-format
 msgctxt "@label: textbox"
 msgid "File Name Template: "
 msgstr "नयाँ छवि फाइलनाम"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:303
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:305
 #, fuzzy, kde-format
 #| msgid "Print Image..."
 msgctxt "@title:window"
 msgid "Enfuse Processing Messages"
 msgstr "छवि मुद्रण गर्नुहोस्..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:493
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:495
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1."
@@ -16251,7 +16252,7 @@ msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "अज्ञात"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:953
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:952
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -16323,14 +16324,14 @@ msgctxt "@title: group"
 msgid "Exposure Blending Binaries"
 msgstr "प्रर्दशन सूचक"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:52
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:54
 #, fuzzy, kde-format
 #| msgid "Print Image..."
 msgctxt "@title:window"
 msgid "Set Bracketed Images"
 msgstr "छवि मुद्रण गर्नुहोस्..."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:66
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:68
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16338,26 +16339,26 @@ msgid ""
 "conditions"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:67
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:69
 #, kde-format
 msgctxt "@info"
 msgid "At least 2 images from the same subject must be added to the stack."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:68
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:70
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:69
 #, kde-format
 msgctxt "@info"
 msgid "Do not mix images with different color depth."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:69
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:71
 #, kde-format
 msgctxt "@info"
 msgid "All images must have the same dimensions."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:75
 #, fuzzy, kde-format
 msgctxt "@title: column"
 msgid "Exposure (EV)"
@@ -16395,26 +16396,26 @@ msgctxt "@info"
 msgid "Press \"Finish\" button to fuse your items and make a pseudo HDR image."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:71
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:73
 #, fuzzy, kde-format
 #| msgid "Print Image..."
 msgctxt "@title: window"
 msgid "Pre-Processing Bracketed Images"
 msgstr "छवि मुद्रण गर्नुहोस्..."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:84
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:86
 #, fuzzy, kde-format
 msgctxt "@option: check"
 msgid "Align bracketed images"
 msgstr "छवि बचत गर्नुहोस्"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:131
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:133
 #, kde-format
 msgctxt "@info"
 msgid "Now, we will pre-process bracketed images before fusing them."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:132
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:134
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16422,7 +16423,7 @@ msgid ""
 "images. Alignment operations can take a while."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:133
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:135
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:187
 #, kde-format
 msgctxt "@info"
@@ -16431,21 +16432,21 @@ msgid ""
 "converted to 16-bit sRGB images with auto-gamma."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:134
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:136
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:192
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:146
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:148
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:144
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Pre-processing is in progress, please wait."
 msgstr "क्यामेराबाट जडान विच्छेदन गर्दैछ, कृपया प्रतिक्षा गर्नुहोस्..."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:147
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:149
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:170
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:145
 #, kde-format
@@ -18925,7 +18926,7 @@ msgstr "फाइल साइज देखाउनुहोस्"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:956
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:957
 #, kde-format
 msgid "cm"
 msgstr ""
@@ -18938,7 +18939,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:213
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:951
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:952
 #, fuzzy, kde-format
 #| msgid "Inches"
 msgid "inches"
@@ -19219,18 +19220,18 @@ msgctxt "@info layout page"
 msgid "Custom"
 msgstr "अनुकूल"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:126
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:128
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select your preferred print output."
 msgstr "<p>यहाँ छविको स्याचुरेसन समायोजन सेट गर्नुहोस् ।"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:496
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:498
 #, fuzzy, kde-format
 msgid "Add again"
 msgstr "क्यामेरा थप्नुहोस्..."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:510
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:512
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:370
@@ -19238,19 +19239,19 @@ msgstr "क्यामेरा थप्नुहोस्..."
 msgid "Remove"
 msgstr "ट्याग हटाउनुहोस्"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1114
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1115
 #, fuzzy, kde-format
 #| msgid "Custom"
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "अनुकूल"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1116
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1347
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1348
 #, fuzzy, kde-format
 #| msgid "Custom"
 msgid ""
@@ -20746,45 +20747,45 @@ msgstr "रङ गहिराइ:"
 msgid "Use Open&GL transitions"
 msgstr "Exif अभिमुखीकरण ट्याग सुधार गर्नुहोस्"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:69
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:70
 #, fuzzy, kde-format
 #| msgid "Orientation:"
 msgctxt "@title:window"
 msgid "Presentation"
 msgstr "अभिमुखीकरण"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:76
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:77
 #, fuzzy, kde-format
 msgctxt "@action: play presentation"
 msgid "Start"
 msgstr "तथ्याङ्क"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:77
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:78
 #, fuzzy, kde-format
 #| msgid "Orientation:"
 msgctxt "@info:tooltip"
 msgid "Start Presentation"
 msgstr "अभिमुखीकरण"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:88
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:89
 #, fuzzy, kde-format
 msgctxt "@title: main settings for the presentation"
 msgid "Main Settings"
 msgstr "सेटिङ"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:93
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:94
 #, fuzzy, kde-format
 msgctxt "@title: caption settings for the presentation"
 msgid "Caption"
 msgstr "दर:"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:100
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:101
 #, fuzzy, kde-format
 msgctxt "@title: soundtrack settings for the presentation"
 msgid "Soundtrack"
 msgstr "सेटिङ..."
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:107
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:108
 #, fuzzy, kde-format
 msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
@@ -21391,7 +21392,7 @@ msgstr "निर्यात"
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:429
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:430
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1197
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1198
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:467
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:719
@@ -22321,7 +22322,7 @@ msgstr "जडान असफल भयो"
 msgid "Failed to fetch list of photo sets."
 msgstr "फाइल मुद्रण गर्न असफल: '%1'"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1258
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1259
 #, fuzzy, kde-format
 msgid "Failed to query photo information"
 msgstr "फाइल/छवि सूचना"
@@ -51709,7 +51710,7 @@ msgid "Valley"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:390
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:149
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:151
 #, kde-format
 msgid "Terrain"
 msgstr ""
@@ -51821,7 +51822,7 @@ msgid "Coordinate"
 msgstr "%1 मा छवि फेला पर्यो"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:501
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:147
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:149
 #, kde-format
 msgid "Satellite"
 msgstr ""
@@ -54971,38 +54972,38 @@ msgstr "स्वत:"
 msgid "Maximum Tile Level"
 msgstr "फाइल साइज देखाउनुहोस्"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:146
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:148
 #, kde-format
 msgid "Roadmap"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:148
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:150
 #, kde-format
 msgid "Hybrid"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:167
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:169
 #, kde-format
 msgid "Show Map Type Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:172
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:174
 #, kde-format
 msgid "Show Navigation Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:177
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:179
 #, fuzzy, kde-format
 msgid "Show Scale Control"
 msgstr "व्यतिरेक बढाउनुहोस्"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:190
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:192
 #: core/utilities/setup/setupgeolocation.cpp:132
 #, kde-format
 msgid "Google Maps"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:368
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:370
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:437
 #, fuzzy, kde-format
 msgid "Float items"
@@ -55520,12 +55521,12 @@ msgstr "क्यामेराबाट %1 फाइल पुन: प्र�
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1047
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1055
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1079
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1078
 #, fuzzy, kde-format
 msgid "Failed to save tags to file."
 msgstr "फाइल मुद्रण गर्न असफल: '%1'"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1091
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1090
 #, fuzzy, kde-format
 msgid "Unable to save changes to file"
 msgstr "फाइल मुद्रण गर्न असफल: '%1'"
