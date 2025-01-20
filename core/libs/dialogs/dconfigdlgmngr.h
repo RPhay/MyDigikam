@@ -116,7 +116,7 @@ Q_SIGNALS:
      * contains the one or more modified setting.
      * @see settingsChanged()
      */
-    void settingsChanged(QWidget* widget);
+    void widgetSettingsChanged(QWidget* widget);
 
     /**
      * If retrieveSettings() was told to track changes then if
