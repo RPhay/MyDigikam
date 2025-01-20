@@ -47,14 +47,13 @@ public:
 public:
 
     AutotagsPipelinePackageBase()                                               = default;
-    explicit AutotagsPipelinePackageBase(qlonglong _imageId, const QString& _albumTitle = QString());
+    explicit AutotagsPipelinePackageBase(qlonglong _imageId);
 
     virtual ~AutotagsPipelinePackageBase() override                             = default;
 
 public:
 
     ItemInfo                info;
-    QString                 albumTitle;
     QImage                  thumbnail;
     DImg                    image;
     cv::Mat                 features;

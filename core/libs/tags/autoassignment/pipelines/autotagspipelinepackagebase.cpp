@@ -18,9 +18,8 @@
 namespace Digikam
 {
 
-AutotagsPipelinePackageBase::AutotagsPipelinePackageBase(qlonglong _imageId, const QString& _albumTitle)
-    : info(_imageId),
-      albumTitle(_albumTitle)
+AutotagsPipelinePackageBase::AutotagsPipelinePackageBase(qlonglong _imageId)
+    : info(_imageId)
 {
 }
 

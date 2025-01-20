@@ -225,8 +225,7 @@ bool AutotagsPipelineObject::finder()
                 {
                     ++totalItemCount;
                     filter << imageId;
-                    enqueue(nextQueue, new AutotagsPipelinePackageBase(imageId,
-                                               CoreDbAccess().db()->getAlbumRelativePath(album->id())));
+                    enqueue(nextQueue, new AutotagsPipelinePackageBase(imageId));
                 }
             }
         }
@@ -297,7 +296,7 @@ bool AutotagsPipelineObject::loader()
 
             notify(MLPipelineNotification::notifySkipped,
                     package->info.name(),
-                    package->albumTitle,
+                    package->info.relativePath(),
                     0,
                     package->thumbnailIcon);
 
@@ -606,6 +605,10 @@ bool AutotagsPipelineObject::writer()
 
         if (!displayTags.isEmpty())
         {
+            if (displayTags.size() > 4)
+            {
+                qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::writer: adding " << displayTags.size() << " tags to the image.";
+            }
             displayName += displayTags.join(QLatin1String(", "));
         }
 
@@ -613,7 +616,7 @@ bool AutotagsPipelineObject::writer()
 
         notify(MLPipelineNotification::notifyProcessed,
                displayName,
-               package->albumTitle,
+               package->info.relativePath(),
                1,
                package->thumbnailIcon);
 
