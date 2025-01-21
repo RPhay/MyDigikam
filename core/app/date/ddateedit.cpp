@@ -95,6 +95,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                readOnly                = false;
     bool                textChanged             = false;
     bool                discardNextMousePress   = false;
@@ -273,6 +275,7 @@ void DDateEdit::dateSelected(const QDate& date)
     if (this->assignDate(date))
     {
         updateView();
+
         Q_EMIT dateChanged(date);
 
         if (date.isValid())
@@ -287,6 +290,7 @@ void DDateEdit::dateEntered(const QDate& date)
     if (assignDate(date))
     {
         updateView();
+
         Q_EMIT dateChanged(date);
     }
 }
@@ -385,7 +389,7 @@ bool DDateEdit::eventFilter(QObject* object, QEvent* event)
 
             QKeyEvent* const keyEvent = dynamic_cast<QKeyEvent*>(event);
 
-            if (keyEvent->key() == Qt::Key_Return)
+            if (keyEvent && (keyEvent->key() == Qt::Key_Return))
             {
                 lineEnterPressed();
                 return true;
@@ -433,7 +437,7 @@ bool DDateEdit::eventFilter(QObject* object, QEvent* event)
             {
                 QMouseEvent* const mouseEvent = dynamic_cast<QMouseEvent*>(event);
 
-                if (!d->popup->rect().contains(mouseEvent->pos()))
+                if (mouseEvent && !d->popup->rect().contains(mouseEvent->pos()))
                 {
                     QPoint globalPos = d->popup->mapToGlobal(mouseEvent->pos());
 
