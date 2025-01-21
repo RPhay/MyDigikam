@@ -39,6 +39,8 @@ public:
 
     Private() = default;
 
+public:
+
     NPT_String                                                          urlRoot;
     NPT_String                                                          fileRoot;
     bool                                                                filterUnknownOut = false;
@@ -755,8 +757,11 @@ NPT_Result DLNAMediaServerDelegate::ServeFile(const NPT_HttpRequest&        requ
     NPT_DateTime  date;
     NPT_TimeStamp timestamp;
 
-    if (NPT_SUCCEEDED(PLT_UPnPMessageHelper::GetIfModifiedSince((NPT_HttpMessage&)request, date)) &&
-        !range_spec)
+    if (
+        NPT_SUCCEEDED(PLT_UPnPMessageHelper::GetIfModifiedSince(reinterpret_cast<NPT_HttpMessage&>(
+                                                                    const_cast<NPT_HttpRequest&>(request)), date)) &&
+        !range_spec
+       )
     {
         date.ToTimeStamp(timestamp);
 
