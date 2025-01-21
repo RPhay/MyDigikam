@@ -143,7 +143,8 @@ QList<int> AutotagsClassifierYolo::predictMulti(const QList<cv::Mat>& targets)  
         if (score > 1.0f)
         {
             // any score greater than 1.0 is invalid, and all scores are ignored
-            
+
+            qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsClassifierYolo::predictMulti: invalid score: " << score;
             return results;
         }
 

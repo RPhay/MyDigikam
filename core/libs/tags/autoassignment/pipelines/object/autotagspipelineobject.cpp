@@ -510,7 +510,6 @@ bool AutotagsPipelineObject::writer()
         bool        tagsChanged           = false;
         QStringList tagsPath;
         QStringList displayTags;
-        QString     tagName;
         QSet<int>   newIds;
 
         // in BQM mode we don't want to touch the source image tags
@@ -574,7 +573,7 @@ bool AutotagsPipelineObject::writer()
 
                         QString newTag = rootTag + trLang + QLatin1Char('/') + trOut;
                         tagsPath      << newTag;
-                        tagName        = trOut;
+                        displayTags   << trOut;
                         tagId          = tagsCache->getOrCreateTag(newTag);
                     }
                     else
@@ -585,7 +584,7 @@ bool AutotagsPipelineObject::writer()
                                                             << error;
                         QString newTag = rootTag + trLang + QLatin1Char('/') + tag;
                         tagsPath      << newTag;
-                        tagName        = tag;
+                        displayTags   << tag;
                         tagId          = tagsCache->getOrCreateTag(newTag);
                     }
                 }
@@ -596,7 +595,7 @@ bool AutotagsPipelineObject::writer()
 
                 QString newTag = rootTag + tag;
                 tagsPath      << newTag;
-                tagName        = tag;
+                displayTags   << tag;
                 tagId          = tagsCache->getOrCreateTag(newTag);
             }
 
@@ -606,7 +605,6 @@ bool AutotagsPipelineObject::writer()
 
                 package->info.setTag(tagId);
                 newIds << tagId;
-                displayTags << tagName;
                 tagsChanged = true;
             }
         }
