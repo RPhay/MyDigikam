@@ -138,9 +138,16 @@ QList<int> AutotagsClassifierYolo::predictMulti(const QList<cv::Mat>& targets)  
             score                 = classes_scores[class_id];
         }
 
-        // check the score. Below threshold or above 1.0 is not valid
+        // check the score
 
-        if (score < scoreThreshold || score > 1.0f)
+        if (score > 1.0f)
+        {
+            // any score greater than 1.0 is invalid, and all scores are ignored
+            
+            return results;
+        }
+
+        if (score < scoreThreshold)
             continue;
 
         cv::Rect box;
