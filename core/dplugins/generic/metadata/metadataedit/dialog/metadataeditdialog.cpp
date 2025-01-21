@@ -324,9 +324,9 @@ void MetadataEditDialog::slotItemChanged()
     d->tabXmp->slotItemChanged();
 
     setWindowTitle(i18nc("@title:window", "%1 (%2/%3) - Edit Metadata",
-        (*d->currItem).fileName(),
-        d->urls.indexOf(*(d->currItem))+1,
-        d->urls.count()));
+                   (*d->currItem).fileName(),
+                   d->urls.indexOf(*(d->currItem))+1,
+                   d->urls.count()));
 
     m_buttons->button(QDialogButtonBox::No)->setEnabled(*(d->currItem) != d->urls.last());
     m_buttons->button(QDialogButtonBox::Yes)->setEnabled(*(d->currItem) != d->urls.first());
@@ -340,6 +340,7 @@ bool MetadataEditDialog::eventFilter(QObject*, QEvent* e)
         QKeyEvent* const k = dynamic_cast<QKeyEvent*>(e);
 
         if      (
+                 k                                       &&
                  (k->modifiers() == Qt::ControlModifier) &&
                  ((k->key() == Qt::Key_Enter) || (k->key() == Qt::Key_Return))
                 )
@@ -354,6 +355,7 @@ bool MetadataEditDialog::eventFilter(QObject*, QEvent* e)
             return true;
         }
         else if (
+                 k                                     &&
                  (k->modifiers() == Qt::ShiftModifier) &&
                  ((k->key() == Qt::Key_Enter) || (k->key() == Qt::Key_Return))
                 )
