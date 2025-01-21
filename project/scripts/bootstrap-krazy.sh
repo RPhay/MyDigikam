@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# SPDX-FileCopyrightText: 2008-2025 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
+# Copy this script on root folder where are source code
+
+sudo apt install libsaxonhe-java libxml-perl libxml-libxml-perl libyaml-libyaml-perl libyaml-perl libjson-perl
+
+sudo ln -sf /usr/share/java              /opt/saxon
+sudo ln -sf /usr/share/java/Saxon-HE.jar /usr/share/java/saxon9he.jar
+
+sudo QMAKE=/opt/qt6/bin/qmake ./install.sh /opt/krazy
+
+
