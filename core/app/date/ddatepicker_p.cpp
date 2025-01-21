@@ -75,6 +75,7 @@ DatePickerYearSelector::DatePickerYearSelector(const QDate& currentDate, QWidget
 
 /*
     TODO: Find a way to get that from QLocale
+
     val->setRange(calendar->year(calendar->earliestValidDate()),
                   calendar->year(calendar->latestValidDate()));
 */
@@ -133,7 +134,7 @@ DDatePicker::Private::Private(DDatePicker* const qq)
 void DDatePicker::Private::fillWeeksCombo()
 {
     /**
-     * NOTE: every year can have a different number of weeks
+     * @note Every year can have a different number of weeks
      * it could be that we had 53,1..52 and now 1..53 which is the same number but different
      * so always fill with new values
      * We show all week numbers for all weeks between first day of year to last day of year

@@ -201,10 +201,13 @@ bool DDatePicker::eventFilter(QObject* o, QEvent* e)
         QKeyEvent* const k = dynamic_cast<QKeyEvent*>(e);
 
         if (
-            (k->key() == Qt::Key_PageUp)   ||
-            (k->key() == Qt::Key_PageDown) ||
-            (k->key() == Qt::Key_Up)       ||
-            (k->key() == Qt::Key_Down)
+            k &&
+            (
+             (k->key() == Qt::Key_PageUp)   ||
+             (k->key() == Qt::Key_PageDown) ||
+             (k->key() == Qt::Key_Up)       ||
+             (k->key() == Qt::Key_Down)
+            )
            )
         {
             QApplication::sendEvent(d->table, e);
@@ -456,6 +459,7 @@ void DDatePicker::lineEnterPressed()
     if (newDate.isValid())
     {
         Q_EMIT dateEntered(newDate);
+
         setDate(newDate);
         d->table->setFocus();
     }
