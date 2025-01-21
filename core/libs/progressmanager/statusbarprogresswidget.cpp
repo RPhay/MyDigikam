@@ -385,7 +385,13 @@ bool StatusbarProgressWidget::eventFilter(QObject*, QEvent* ev)
     {
         QMouseEvent* const e = dynamic_cast<QMouseEvent*>(ev);
 
-        if ((e->button() == Qt::LeftButton) && (d->mode != Private::None))
+        if (
+            e &&
+            (
+             (e->button() == Qt::LeftButton) &&
+             (d->mode     != Private::None)
+            )
+           )
         {
             // toggle view on left mouse button
             // Consensus seems to be that we should show/hide the fancy dialog when the user
