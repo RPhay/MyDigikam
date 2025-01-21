@@ -126,9 +126,6 @@ public:
     QCheckBox*                shrinkDatabases           = nullptr;
     QComboBox*                qualityScanMode           = nullptr;
     AutotagsScanWidget*       autotagsWidget            = nullptr;
-    // QComboBox*                autotagsScanMode          = nullptr;
-    // QComboBox*                autotagsTagMode           = nullptr;
-    // QComboBox*                objectDetectModel         = nullptr;
     QPushButton*              metadataSetup             = nullptr;
     ImageQualityConfSelector* qualitySelector           = nullptr;
     QComboBox*                syncDirection             = nullptr;
