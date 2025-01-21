@@ -117,7 +117,9 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
                         );
 
     aboutData.addAuthor ( ki18n("Michael Miller").toString(),
-                          ki18n("SFace and YuNet DNN models integration. Face Management improvements").toString(),
+                          ki18n("SFace and YuNet DNN models integrationin face workflow. "
+                                "Face Management and auto-tag AI improvements. "
+                                "AI red eyes detection").toString(),
                           QLatin1String("michael underscore miller at msn dot com"),
                           QLatin1String("https://www.linkedin.com/in/michaelamiller01/")
                         );
@@ -157,7 +159,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
 
     aboutData.addCredit ( ki18n("Phuoc Khanh LE").toString(),
                           ki18n("Rewrite Image Quality Sorter algorithms and Photo Focus Information Extraction, "
-                                "Aesthetic Detection to classify images using deep learning model,"
+                                "Aesthetic Detection to classify images using deep learning model, "
                                 "Slideshow and Presentation tools improvement").toString(),
                           QLatin1String("phuockhanhnk94 at gmail dot com "),
                           QLatin1String("https://www.linkedin.com/in/phuoc-khanh-le-476448169/")
