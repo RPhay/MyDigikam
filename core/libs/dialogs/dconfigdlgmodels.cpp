@@ -690,6 +690,7 @@ QModelIndex DConfigDlgWdgModel::index(const DConfigDlgWdgItem* item) const
 
 #else
 
+                       // cppcheck-suppress cstyleCast
                        (void*)pageItem
 
 #endif
