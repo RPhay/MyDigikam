@@ -432,16 +432,28 @@ void FacesEngine::slotShowOneDetected(const MLPipelinePackageNotify::Ptr& packag
     setThumbnail(package->thumbnail);
 
     QString lbl = i18n("Album: %1\n", package->path);
-    if (!package->processed)
+    lbl.append(i18n("Scanning: %1\n", package->name));
+    if (package->processed > 0)
     {
-        lbl.append(i18n("No faces found in %1", package->name));
+        if (package->processed == 1)
+        {
+            lbl.append(i18n("Found %1 face.", package->processed));
+        }
+        else
+        {
+            lbl.append(i18n("Found %1 faces.", package->processed));
+        }
+
+        if (!package->displayData.isEmpty())
+        {
+            lbl.append(QStringLiteral("  "));
+            lbl.append(i18n("Recognized: %1", package->displayData));
+        }
     }
-    else
-    {
-        lbl.append(i18np("Found 1 face in ", "Found %1 faces in ", package->processed));
-        lbl.append(package->name);
-        d->totalFacesFound += package->processed;
-    }
+    // else
+    // {
+    //     lbl.append(i18n("No faces found."));
+    // }
 
     setLabel(lbl);
     advance(1);

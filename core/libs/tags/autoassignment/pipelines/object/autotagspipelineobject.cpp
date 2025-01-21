@@ -297,6 +297,7 @@ bool AutotagsPipelineObject::loader()
             notify(MLPipelineNotification::notifySkipped,
                     package->info.name(),
                     package->info.relativePath(),
+                    QString(),
                     0,
                     package->thumbnailIcon);
 
@@ -490,11 +491,10 @@ bool AutotagsPipelineObject::writer()
      * is at least 1. More instances are created by addMoreWorkers if needed.
      */
 
-    MetadataHub         hub;
-    TagsCache* const    tagsCache   = TagsCache::instance();
-    const QString       rootTag     = QLatin1String("auto/");
-    const int           rootTagId   = tagsCache->getOrCreateTag(rootTag);
-
+    MetadataHub                hub;
+    TagsCache* const           tagsCache   = TagsCache::instance();
+    const QString              rootTag     = QLatin1String("auto/");
+    const int                  rootTagId   = tagsCache->getOrCreateTag(rootTag);
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
     package                    = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
@@ -633,30 +633,33 @@ bool AutotagsPipelineObject::writer()
             }
         }
 
-        // combine the image name with the tags for the notification
+        QString albumName;
 
-        QString displayName(package->info.name() + QStringLiteral("\n"));
-
-        if (!displayTags.isEmpty())
+        for (auto albumInfo : albumRoots)
         {
-            displayName += i18n("Found: ") + displayTags.join(QLatin1String(", "));
-
-            // TODO: remove debug output
-
-            if (displayTags.size() > 6)
+            if (package->info.albumRootId() == albumInfo.id)
             {
-                qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::writer: adding " << displayTags.size() << " tags to the image.";
-                qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::writer: " << package->info.relativePath() << "/" << displayName;
+                albumName = albumInfo.label;
+                break;
             }
         }
 
         // send a notification that the image was processed
 
         notify(MLPipelineNotification::notifyProcessed,
-               displayName,
-               package->info.relativePath(),
-               1,
+               package->info.name(),
+               albumName + package->info.relativePath(),
+               displayTags.join(QLatin1String(", ")),
+               displayTags.size(),
                package->thumbnailIcon);
+
+        // TODO: remove debug output
+
+        if (displayTags.size() > 6)
+        {
+            qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::writer: adding " << displayTags.size() << " tags to the image.";
+            qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::writer: " << package->info.relativePath() << "/" << albumName + package->info.relativePath();
+        }
 
         // delete the package
 

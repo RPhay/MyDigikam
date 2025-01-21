@@ -28,13 +28,15 @@
 #include "sharedqueue.h"
 #include "autotagspipelinepackagebase.h"
 #include "thumbnailloadthread.h"
+#include "coredb.h"
 
 namespace Digikam
 {
 
 AutotagsPipelineBase::AutotagsPipelineBase(const AutotagsScanSettings& _settings)
     : MLPipelineFoundation(),
-      settings            (_settings)
+      settings            (_settings),
+      albumRoots          (CoreDbAccess().db()->getAlbumRoots())
 {
 }
 
@@ -119,6 +121,7 @@ void AutotagsPipelineBase::bqmSendOne(QScopedPointer<DMetadata>& _bqmMeta,
 void AutotagsPipelineBase::notify(MLPipelineNotification notification,
                                   const QString& _name,
                                   const QString& _path,
+                                  const QString& _displayData,
                                   int _processed,
                                   const QImage& _thumbnail)
 {
@@ -129,12 +132,13 @@ void AutotagsPipelineBase::notify(MLPipelineNotification notification,
         bqmSemaphore.release();
     }
 
-    MLPipelineFoundation::notify(notification, _name, _path, _processed, _thumbnail);
+    MLPipelineFoundation::notify(notification, _name, _path, _displayData, _processed, _thumbnail);
 }
 
 void AutotagsPipelineBase::notify(MLPipelineNotification notification,
                                   const QString& _name,
                                   const QString& _path,
+                                  const QString& _displayData,
                                   int _processed,
                                   const DImg& _thumbnail)
 {
@@ -145,12 +149,13 @@ void AutotagsPipelineBase::notify(MLPipelineNotification notification,
         bqmSemaphore.release();
     }
 
-    MLPipelineFoundation::notify(notification, _name, _path, _processed, _thumbnail);
+    MLPipelineFoundation::notify(notification, _name, _path, _displayData, _processed, _thumbnail);
 }
 
 void AutotagsPipelineBase::notify(MLPipelineNotification notification,
                                   const QString& _name,
                                   const QString& _path,
+                                  const QString& _displayData,
                                   int _processed,
                                   const QIcon& _thumbnail)
 {
@@ -161,7 +166,7 @@ void AutotagsPipelineBase::notify(MLPipelineNotification notification,
         bqmSemaphore.release();
     }
 
-    MLPipelineFoundation::notify(notification, _name, _path, _processed, _thumbnail);
+    MLPipelineFoundation::notify(notification, _name, _path, _displayData, _processed, _thumbnail);
 }
 
 bool AutotagsPipelineBase::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackageFoundation* package)

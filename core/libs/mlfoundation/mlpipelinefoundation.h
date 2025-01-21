@@ -189,18 +189,21 @@ protected:
     virtual void notify(MLPipelineNotification notification,
                         const QString& _name,
                         const QString& _path,
+                        const QString& _displayData,
                         int _processed,
                         const QImage& _thumbnail);
 
     virtual void notify(MLPipelineNotification notification,
                         const QString& _name,
                         const QString& _path,
+                        const QString& _displayData,
                         int _processed,
                         const DImg& _thumbnail);
 
     virtual void notify(MLPipelineNotification notification,
                         const QString& _name,
                         const QString& _path,
+                        const QString& _displayData,
                         int _processed,
                         const QIcon& _thumbnail);
 

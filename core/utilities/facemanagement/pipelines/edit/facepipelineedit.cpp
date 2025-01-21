@@ -334,11 +334,23 @@ bool FacePipelineEdit::writer()
             FaceClassifier::instance()->retrain();
         }
 
+        QString albumName;
+
+        for (auto albumInfo : albumRoots)
+        {
+            if (package->info.albumRootId() == albumInfo.id)
+            {
+                albumName = albumInfo.label;
+                break;
+            }
+        }
+
         // send a notification that the image was processed
 
         notify(MLPipelineNotification::notifyProcessed,
                 package->info.name(),
-                CoreDbAccess().db()->getAlbumRelativePath(CoreDbAccess().db()->getItemAlbum(package->info.id())),
+                albumName = package->info.relativePath(),
+                QString(),
                 package->faceRects.size(),
                 package->thumbnail);
 

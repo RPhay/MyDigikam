@@ -259,7 +259,8 @@ bool FacePipelineDetectRecognize::loader()
             notify(MLPipelineNotification::notifySkipped,
                    package->info.name(),
                    package->info.relativePath(),
-                   package->faceRects.size(),
+                   QString(),
+                   0,
                    package->thumbnailIcon);
 
             // delete the package since it is not needed
@@ -526,9 +527,10 @@ bool FacePipelineDetectRecognize::writer()
      * is at least 1. More instances are created by addMoreWorkers if needed.
      */
 
-    IdentityProvider* const idProvider             = IdentityProvider::instance();
-    FaceUtils utils;
+    IdentityProvider* const    idProvider          = IdentityProvider::instance();
+    FaceUtils                  utils;
     ThumbnailLoadThread* const thumbnailLoadThread = ThumbnailLoadThread::defaultThread();
+    const QList<AlbumRootInfo> roots               = CoreDbAccess().db()->getAlbumRoots();
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
     package = static_cast<FacePipelinePackageBase*>(mlpackage);
@@ -577,7 +579,7 @@ bool FacePipelineDetectRecognize::writer()
 
         // create thumbnails and write the new face rects to the database
 
-        QString names = QLatin1String("\n");
+        QStringList names;
 
         if (package->faceRects.size())
         {
@@ -594,7 +596,7 @@ bool FacePipelineDetectRecognize::writer()
                 if (package->labelList[i] != -1)
                 {
                     Identity identity = idProvider->identity(package->labelList[i]);
-                    names += identity.attribute(QStringLiteral("name")) + QLatin1String(", ");
+                    names << identity.attribute(QStringLiteral("name"));
                     identities << identity;
                     databaseFaces << FaceTagsIface(FaceTagsIface::Type::UnconfirmedName,
                                                    package->info.id(),
@@ -627,11 +629,23 @@ bool FacePipelineDetectRecognize::writer()
                                           package->image.originalSize());
         }
 
+        QString albumName;
+
+        for (auto albumInfo : albumRoots)
+        {
+            if (package->info.albumRootId() == albumInfo.id)
+            {
+                albumName = albumInfo.label;
+                break;
+            }
+        }
+
         // send a notification that the image was processed
 
         notify(MLPipelineNotification::notifyProcessed,
-               package->info.name() + names,
-               package->info.relativePath(),
+               package->info.name(),
+               albumName + package->info.relativePath(),
+               names.join(QLatin1String(", ")),
                package->faceRects.size(),
                package->thumbnailIcon);
 

@@ -546,43 +546,46 @@ void MLPipelineFoundation::stageEnd(MLPipelineStage thisStage, MLPipelineStage n
 void MLPipelineFoundation::notify(MLPipelineNotification notification,
                                   const QString& _name,
                                   const QString& _path,
+                                  const QString& _displayData,
                                   int _processed,
                                   const QImage& _thumbnail)
 {
     if (!_thumbnail.isNull())
     {
-        notify(notification, _name, _path, _processed, DImg(_thumbnail));
+        notify(notification, _name, _path, _displayData, _processed, DImg(_thumbnail));
     }
     else
     {
-        notify(notification, _name, _path, _processed, QIcon());
+        notify(notification, _name, _path, _displayData, _processed, QIcon());
     }
 }
 
 void MLPipelineFoundation::notify(MLPipelineNotification notification,
                                   const QString& _name,
                                   const QString& _path, 
+                                  const QString& _displayData,
                                   int _processed,
                                   const DImg& _thumbnail)
 {
     if (!_thumbnail.isNull())
     {
-        notify(notification, _name, _path, _processed, QIcon(_thumbnail.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap()));
+        notify(notification, _name, _path, _displayData, _processed, QIcon(_thumbnail.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap()));
     }
     else
     {
-        notify(notification, _name, _path, _processed, QIcon());
+        notify(notification, _name, _path, _displayData, _processed, QIcon());
     }
 }
 
 void MLPipelineFoundation::notify(MLPipelineNotification notification,
                                   const QString& _name,
                                   const QString& _path,
+                                  const QString& _displayData,
                                   int _processed,
                                   const QIcon& _thumbnail)
 {
     MLPipelinePackageNotify::Ptr notify;
-    notify = new MLPipelinePackageNotify(_name, _path, _processed, _thumbnail);
+    notify = new MLPipelinePackageNotify(_name, _path, _displayData, _processed, _thumbnail);
 
     switch (notification)
     {

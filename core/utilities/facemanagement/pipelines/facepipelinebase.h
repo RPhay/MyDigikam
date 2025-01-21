@@ -81,13 +81,14 @@ public:
 
 protected:
 
-    DNNModelBase*       detectorModel       = nullptr;
-    double              blurThreshold       = 4.87f;
-    double              noiseThreshold1     = 3.7;
-    double              noiseThreshold2     = 1.89;
-    float               minThumbnailSize    = 0.33f;
+    DNNModelBase*               detectorModel       = nullptr;
+    double                      blurThreshold       = 4.87f;
+    double                      noiseThreshold1     = 3.7;
+    double                      noiseThreshold2     = 1.89;
+    float                       minThumbnailSize    = 0.33f;
 
-    FaceScanSettings    settings;
+    FaceScanSettings            settings;
+    const QList<AlbumRootInfo>  albumRoots;
 
 protected:
 

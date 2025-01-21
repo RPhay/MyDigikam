@@ -61,18 +61,21 @@ public:
     virtual void notify(MLPipelineNotification notification,
                         const QString& _name,
                         const QString& _path,
+                        const QString& _displayData,
                         int _processed,
                         const QImage& _thumbnail)                                   override;
 
     virtual void notify(MLPipelineNotification notification,
                         const QString& _name,
                         const QString& _path,
+                        const QString& _displayData,
                         int _processed,
                         const DImg& _thumbnail)                                     override;
 
     virtual void notify(MLPipelineNotification notification,
                         const QString& _name,
                         const QString& _path,
+                        const QString& _displayData,
                         int _processed,
                         const QIcon& _thumbnail)                                    override;
 protected:
@@ -80,6 +83,7 @@ protected:
     AutotagsScanSettings        settings;
     DNNModelNet*                model                   = nullptr;
     AutotagsClassifierBase*     autotagsClassifier      = nullptr;
+    const QList<AlbumRootInfo>  albumRoots;
 
     // Batch Queue Manager
     QScopedPointer<DMetadata>   bqmMeta;

@@ -205,11 +205,11 @@ bool FacePipelineRetrain::writer()
             //////////////////////////////////////////////////////////////////////////////////////////////
             // start pipeline stage specific code
 
-            QString displayName = package->info.name() + QStringLiteral("\n");
+            QString displayName;
             if (0 != package->features.rows)
             {
                 Identity identity = utils.identityForTag(package->face.tagId());
-                displayName += identity.attribute(QStringLiteral("name"));
+                displayName = identity.attribute(QStringLiteral("name"));
 
                 if (package->useForTraining)
                 {
@@ -225,12 +225,24 @@ bool FacePipelineRetrain::writer()
                 qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): bad mat";
             }
 
+            QString albumName;
+
+            for (auto albumInfo : albumRoots)
+            {
+                if (package->info.albumRootId() == albumInfo.id)
+                {
+                    albumName = albumInfo.label;
+                    break;
+                }
+            }
+
             // send a notification that the image was processed
 
             notify(MLPipelineNotification::notifyProcessed,
+                   package->info.name(),
+                   albumName + package->info.relativePath(),
                    displayName,
-                   package->info.relativePath(),
-                   1,
+                   (displayName.isEmpty() ? 0 : 1),
                    package->thumbnail);
 
             // delete the package

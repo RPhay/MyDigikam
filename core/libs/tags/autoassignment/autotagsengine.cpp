@@ -248,6 +248,17 @@ void AutotagsEngine::slotShowOneDetected(const MLPipelinePackageNotify::Ptr& pac
 
     QString lbl = i18n("Album: %1\n", package->path);
     lbl.append(i18n("Scanning: %1\n", package->name));
+    if (package->processed > 0)
+    {
+        if (package->processed == 1)
+        {
+            lbl.append(i18n("Found %1 object. Tag: %2", package->processed, package->displayData));
+        }
+        else
+        {
+            lbl.append(i18n("Found %1 objects. Tags: %2", package->processed, package->displayData));
+        }
+    }
 
     setLabel(lbl);
     advance(1);

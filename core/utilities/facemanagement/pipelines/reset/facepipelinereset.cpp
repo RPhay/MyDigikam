@@ -180,11 +180,23 @@ bool FacePipelineReset::writer()
 
         utils.markAsScanned(package->info, false);
 
+        QString albumName;
+
+        for (auto albumInfo : albumRoots)
+        {
+            if (package->info.albumRootId() == albumInfo.id)
+            {
+                albumName = albumInfo.label;
+                break;
+            }
+        }
+
         // send a notification that the image was processed
 
         notify(MLPipelineNotification::notifyProcessed,
                package->info.name(),
-               package->info.relativePath(),
+               albumName + package->info.relativePath(),
+               QString(),
                package->faceRects.size(),
                icon);
 

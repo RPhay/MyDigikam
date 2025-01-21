@@ -229,8 +229,9 @@ bool FacePipelineRecognize::classifier()
             // no suggested match found, so notify the user
 
             notify(MLPipelineNotification::notifyProcessed,
-                   package->info.name() + QStringLiteral("\n"),
+                   package->info.name(),
                    package->info.relativePath(),
+                   QString(),
                    0,
                    package->thumbnail);
 
@@ -279,30 +280,43 @@ bool FacePipelineRecognize::writer()
      * All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
      * This loop is run once per image.
      */
-
-    QString displayName = package->info.name() + QStringLiteral("\n");
-    int matches = 0;
-
-    if (-1 != package->label)
     {
-        Identity identity = idProvider->identity(package->label);
-        int tagId         = FaceTags::getOrCreateTagForIdentity(identity.attributesMap());
-        utils.changeSuggestedName(package->face, tagId);
-        displayName      += identity.attribute(QStringLiteral("name"));
-        ++matches;
+        QString displayName;
+        int matches = 0;
+
+        if (-1 != package->label)
+        {
+            Identity identity = idProvider->identity(package->label);
+            int tagId         = FaceTags::getOrCreateTagForIdentity(identity.attributesMap());
+            utils.changeSuggestedName(package->face, tagId);
+            displayName      += identity.attribute(QStringLiteral("name"));
+            matches           = 1;
+        }
+
+        QString albumName;
+
+        for (auto albumInfo : albumRoots)
+        {
+            if (package->info.albumRootId() == albumInfo.id)
+            {
+                albumName = albumInfo.label;
+                break;
+            }
+        }
+
+        // send a notification that the image was processed
+
+        notify(MLPipelineNotification::notifyProcessed,
+            package->info.name(),
+            albumName + package->info.relativePath(),
+            displayName,
+            matches,
+            package->thumbnail);
+
+        // delete the package
+
+        delete package;
     }
-
-    // send a notification that the image was processed
-
-    notify(MLPipelineNotification::notifyProcessed,
-           displayName,
-           package->info.relativePath(),
-           matches,
-           package->thumbnail);
-
-    // delete the package
-
-    delete package;
 
     /* =========================================================================================
      * End pipeline stage specific loop

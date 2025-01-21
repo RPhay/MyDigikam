@@ -20,11 +20,13 @@ namespace Digikam
 
 MLPipelinePackageNotify::MLPipelinePackageNotify(const QString& _name,
                                                  const QString& _path,
+                                                 const QString& _displayData,
                                                  int _processed,
                                                  const DImg& _thumbnail)
     : QSharedData(),
       name       (_name),
       path       (_path),
+      displayData(_displayData),
       processed  (_processed)
 {
     if (!_thumbnail.isNull())
@@ -35,11 +37,13 @@ MLPipelinePackageNotify::MLPipelinePackageNotify(const QString& _name,
 
 MLPipelinePackageNotify::MLPipelinePackageNotify(const QString& _name,
                                                  const QString& _path,
+                                                 const QString& _displayData,
                                                  int _processed,
                                                  const QIcon& _thumbnail)
     : QSharedData(),
       name       (_name),
       path       (_path),
+      displayData(_displayData),
       processed  (_processed),
       thumbnail  (_thumbnail)
 {

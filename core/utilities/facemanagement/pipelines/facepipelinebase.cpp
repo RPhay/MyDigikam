@@ -34,13 +34,15 @@
 #include "thumbnailloadthread.h"
 #include "dnnsfaceextractor.h"
 #include "dnnmodelmanager.h"
+#include "coredb.h"
 
 namespace Digikam
 {
 
 FacePipelineBase::FacePipelineBase(const FaceScanSettings& _settings)
     : MLPipelineFoundation(),
-      settings            (_settings)
+      settings            (_settings),
+      albumRoots          (CoreDbAccess().db()->getAlbumRoots())
 {
 }
 
@@ -282,7 +284,7 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName,
         {
             // send a notification that the file was skipped
 
-            notify(MLPipelineNotification::notifySkipped, package->info.name(), package->info.filePath(), 1, DImg());
+            notify(MLPipelineNotification::notifySkipped, package->info.name(), package->info.filePath(), QString(), 0, DImg());
 
             // delete the package since it is not needed
 
