@@ -490,8 +490,11 @@ bool AutotagsPipelineObject::writer()
      * is at least 1. More instances are created by addMoreWorkers if needed.
      */
 
-    const QString rootTag      = QLatin1String("auto/");
-    TagsCache* const tagsCache = TagsCache::instance();
+    MetadataHub         hub;
+    TagsCache* const    tagsCache   = TagsCache::instance();
+    const QString       rootTag     = QLatin1String("auto/");
+    const int           rootTagId   = tagsCache->getOrCreateTag(rootTag);
+
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
     package                    = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
@@ -504,33 +507,59 @@ bool AutotagsPipelineObject::writer()
      */
 
     {
-        bool tagsChanged           = false;
+        bool        tagsChanged           = false;
         QStringList tagsPath;
         QStringList displayTags;
-        const int rootTagId        = tagsCache->getOrCreateTag(rootTag);
+        QString     tagName;
+        QSet<int>   newIds;
 
-        // Clear auto-tags
+        // in BQM mode we don't want to touch the source image tags
 
-        const auto ids = package->info.tagIds();
-
-        if (!settings.bqmMode && (AutotagsScanSettings::TagMode::Replace == settings.tagMode))
+        if (!settings.bqmMode)
         {
+            // clear the metadata hub before reuse
+
+            hub.reset();
+            
+            // load the metadata info from the hub
+
+            hub.load(package->info);
+
+            const auto ids = package->info.tagIds();
+
             for (int tid : ids)
             {
                 if (tagsCache->parentTags(tid).contains(rootTagId))
                 {
-                    package->info.removeTag(tid);
-                    tagsChanged = true;
+                    if (AutotagsScanSettings::TagMode::Replace == settings.tagMode)
+                    {
+                        // clear existing tags when TagMode is replace
+
+                        // remove existing auto-tags
+
+                        package->info.removeTag(tid);
+                        tagsChanged = true;
+                    }
+                    else
+                    {
+                        // add existing tags to the tags list
+
+                        // create set of existing auto-tags
+
+                        displayTags << tagsCache->tagName(tid);
+                        newIds << tid;
+                    }
                 }
             }
         }
 
-        tagsPath.clear();
-        displayTags.clear();
+        // iterate over the list of found tags
 
         for (const auto& tag : std::as_const(package->tagList))
         {
             int tagId = -1;
+
+            // translate tag if requested
 
             if (!settings.languages.isEmpty())
             {
@@ -542,45 +571,55 @@ bool AutotagsPipelineObject::writer()
 
                     if (trRet)
                     {
+                        // translation found
+
                         QString newTag = rootTag + trLang + QLatin1Char('/') + trOut;
-                        tagsPath    << newTag;
-                        displayTags << trOut;
+                        tagsPath      << newTag;
+                        tagName        = trOut;
                         tagId          = tagsCache->getOrCreateTag(newTag);
                     }
                     else
                     {
+                        // tag could not be translated
+
                         qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Auto-Tags online translation error:"
                                                             << error;
                         QString newTag = rootTag + trLang + QLatin1Char('/') + tag;
-                        tagsPath    << newTag;
-                        displayTags << tag;
+                        tagsPath      << newTag;
+                        tagName        = tag;
                         tagId          = tagsCache->getOrCreateTag(newTag);
                     }
                 }
             }
             else
             {
+                // translation not requested, use default tag name
+
                 QString newTag = rootTag + tag;
-                tagsPath    << newTag;
-                displayTags << tag;
+                tagsPath      << newTag;
+                tagName        = tag;
                 tagId          = tagsCache->getOrCreateTag(newTag);
             }
 
-            if (!settings.bqmMode && (tagId != -1) && !package->info.tagIds().contains(tagId))
+            if (!settings.bqmMode && (tagId != -1) && !newIds.contains(tagId))
             {
+                // if new tag, add tag to image
+
                 package->info.setTag(tagId);
+                newIds << tagId;
+                displayTags << tagName;
                 tagsChanged = true;
             }
         }
 
-        // Write tags to the metadata too
+        // Write tags to the metadata
 
         if (!settings.bqmMode)
         {
+            // normal mode
+
             if (tagsChanged)
             {
-                MetadataHub hub;
-                hub.load(package->info);
 
                 ScanController::FileMetadataWrite writeScope(package->info);
                 writeScope.changed(hub.writeToMetadata(package->info, MetadataHub::WRITE_TAGS));
@@ -588,12 +627,10 @@ bool AutotagsPipelineObject::writer()
         }
         else
         {
+            // BQM mode
+
             if (tagsPath.size() > 0)
             {
-/*
-                QStringList oldTags = bqmMeta->getItemTagsPath();
-                oldTags.append(tagsPath);
-*/
                 bqmMeta->setItemTagsPath(tagsPath);
                 bqmMeta->save(bqmOutputUrl.toLocalFile());
             }
@@ -606,7 +643,10 @@ bool AutotagsPipelineObject::writer()
         if (!displayTags.isEmpty())
         {
             displayName += displayTags.join(QLatin1String(", "));
-            if (displayTags.size() > 4)
+
+            // TODO: remove debug output
+            
+            if (displayTags.size() > 6)
             {
                 qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::writer: adding " << displayTags.size() << " tags to the image.";
                 qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::writer: " << package->info.relativePath() << "/" << displayName;
