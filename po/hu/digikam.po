@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-20 01:59+0000\n"
+"POT-Creation-Date: 2025-01-21 01:52+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -869,7 +869,7 @@ msgstr "Megnyitás ..."
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:156
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
-#: core/showfoto/stackview/showfotostackviewlist.cpp:408
+#: core/showfoto/stackview/showfotostackviewlist.cpp:409
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open in File Manager"
@@ -2925,33 +2925,34 @@ msgstr "Térkép"
 msgid "Labels"
 msgstr "Címkék"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:122
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:109
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:118
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Arcok keresése a gyűjteményben"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:120
 #, fuzzy, kde-format
 #| msgid "Use this button to undo last drawing action on sketch."
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
 msgstr "Használja ezt a gombot az utolsó rajzolási művelet visszavonásához."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:167
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:169
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:213
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:223
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:233
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:243
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -8950,7 +8951,7 @@ msgstr ""
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:71
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:349
+#: core/utilities/maintenance/main/maintenancedlg.cpp:286
 #, kde-format
 msgid "Settings..."
 msgstr "Beállítások..."
@@ -10008,7 +10009,7 @@ msgstr ""
 "egérgombot."
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:103
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:103
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:105
 #: core/dplugins/editor/transform/shear/sheartool.cpp:102
 #, kde-format
 msgid "New width:"
@@ -10018,10 +10019,10 @@ msgstr "Új szélesség:"
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:108
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:322
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:323
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:104
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:108
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:234
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:106
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:110
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:235
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:236
 #: core/dplugins/editor/transform/shear/sheartool.cpp:103
 #: core/dplugins/editor/transform/shear/sheartool.cpp:107
 #: core/dplugins/editor/transform/shear/sheartool.cpp:305
@@ -10034,7 +10035,7 @@ msgid " px"
 msgstr " px"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:107
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:107
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:109
 #: core/dplugins/editor/transform/shear/sheartool.cpp:106
 #, kde-format
 msgid "New height:"
@@ -10137,7 +10138,7 @@ msgctxt "@action"
 msgid "Free Rotation Auto Adjust"
 msgstr "Szabad elforgatás automatikus beállítása"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:88
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:90
 #, kde-format
 msgid ""
 "This is the perspective transformation operation preview. You can use the "
@@ -10146,42 +10147,42 @@ msgstr ""
 "Ez a perspektivikus átalakítási művelet előnézete. A perspektíva a sarkok "
 "egérrel történő elmozgatásával módosítható."
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:114
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:116
 #, kde-format
 msgid "Angles (in degrees):"
 msgstr "Szög (fokokban):"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:115
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:117
 #, kde-format
 msgid "  Top left:"
 msgstr " Fent balra:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:117
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:119
 #, kde-format
 msgid "  Top right:"
 msgstr " Fent jobbra:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:119
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:121
 #, kde-format
 msgid "  Bottom left:"
 msgstr " Alul balra:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:121
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:123
 #, kde-format
 msgid "  Bottom right:"
 msgstr " Alul jobbra:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:127
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:129
 #, kde-format
 msgid "Draw preview while moving"
 msgstr "Előnézet rajzolás mogatáskor"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:128
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:130
 #, kde-format
 msgid "Draw grid"
 msgstr "Rácsozás rajzolása"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:129
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:131
 #, kde-format
 msgid "Inverse transformation"
 msgstr "Inverz átalakítás"
@@ -11114,7 +11115,7 @@ msgstr "Két térkép - vízszintes"
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
-#: core/utilities/searchwindow/searchutilities.cpp:637
+#: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
 msgid "OK"
 msgstr "OK"
@@ -11229,8 +11230,8 @@ msgstr "Változások mentése -"
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:175
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:393
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:401
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:370
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:740
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:373
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:741
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:429
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:438
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:476
@@ -17047,7 +17048,7 @@ msgstr "Html galéria létrehozása ..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:97
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:120
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:122
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:125
 #, kde-format
 msgid "Internal Error"
@@ -20083,32 +20084,32 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "Videó-diavetítés létrehozása ..."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:128
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:130
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:131
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:133
 #, kde-format
 msgid "%1 input images to process"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:181
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:184
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:186
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:191
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:194
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:196
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr ""
@@ -21687,9 +21688,9 @@ msgstr "Exportálás Boxba ..."
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1198
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:467
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:719
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:870
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1042
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:718
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:865
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1033
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:754
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:777
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:820
@@ -21812,7 +21813,7 @@ msgstr "Exportálás Boxba"
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:320
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:310
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:414
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:416
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:270
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:277
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:225
@@ -21844,7 +21845,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:379
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:381
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:410
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:385
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:386
 #, fuzzy, kde-format
 #| msgid "Login Failed"
 msgctxt "@title:window"
@@ -21920,14 +21921,14 @@ msgstr ""
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:245
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:370
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:382
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:386
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:387
 #, kde-format
 msgid "Authentication failed. Do you want to try again?"
 msgstr ""
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:269
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:481
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:228
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:230
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:283
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:747
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:783
@@ -23435,7 +23436,7 @@ msgctxt "@item:inlistbox"
 msgid "Create new gallery"
 msgstr ""
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:95
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:97
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Export to &Imageshack..."
@@ -23443,7 +23444,7 @@ msgctxt "@title:window"
 msgid "Export to ImageShack"
 msgstr "Exportálás a &Imageshackbe…"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:103
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:105
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:148
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:122
 #, fuzzy, kde-format
@@ -23452,7 +23453,7 @@ msgctxt "@action:button"
 msgid "Upload"
 msgstr "Feltöltés"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:104
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:106
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Image to Upload"
@@ -23460,27 +23461,27 @@ msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
 msgstr "Kép kijelölése feltöltéshez"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:232
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:234
 #, kde-format
 msgid "Image Shack Export"
 msgstr ""
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:261
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:263
 #, kde-format
 msgid "Authenticating..."
 msgstr ""
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:319
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:321
 #, kde-format
 msgid "Login failed: %1\n"
 msgstr ""
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:333
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:335
 #, kde-format
 msgid "Failed to get galleries list: %1\n"
 msgstr ""
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:415
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:417
 #, kde-format
 msgid ""
 "Failed to upload photo into ImageShack: %1\n"
@@ -24872,72 +24873,72 @@ msgctxt "@action"
 msgid "Export to &Piwigo..."
 msgstr "Exportálás a &Piwigoba…"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:325
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:327
 #, kde-format
 msgid "Check if %1 already exists"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:495
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:497
 #, kde-format
 msgid "Piwigo URL probably incorrect"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:502
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:504
 #, kde-format
 msgid "Incorrect username or password specified"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:551
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:740
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:552
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:739
 #, kde-format
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
 msgstr ""
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:628
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:712
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:788
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:863
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:711
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:785
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:858
 #, kde-format
 msgid "Invalid response received from remote Piwigo"
 msgstr ""
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:635
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:979
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:980
 #, kde-format
 msgid "Failed to list albums"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:686
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:685
 #, kde-format
 msgid "Photo '%1' already exists."
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:795
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:792
 #, kde-format
 msgid "Photo '%1' already exists in this album."
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:886
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:881
 #, kde-format
 msgid "Error : Cannot open photo: %1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:914
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:909
 #, kde-format
 msgid "Upload the chunk %1/%2 of %3"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:949
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:942
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1000
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:993
 #, kde-format
 msgid "Upload the metadata of %1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1035
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1026
 #, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr ""
@@ -25365,22 +25366,22 @@ msgstr "Importálás a &SmugMug alkalmazásból ..."
 msgid "Logging in to SmugMug service..."
 msgstr ""
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:676
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:677
 #, kde-format
 msgid "Login failed"
 msgstr ""
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:682
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:683
 #, kde-format
 msgid "Invalid user/nick/password"
 msgstr ""
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:688
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:689
 #, kde-format
 msgid "Invalid API key"
 msgstr ""
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:1083
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:1084
 #, kde-format
 msgid "Failed to list album template"
 msgstr ""
@@ -25663,8 +25664,8 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:403
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:408
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:404
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:409
 #, kde-format
 msgid ""
 "Twitter call failed:\n"
@@ -33175,63 +33176,63 @@ msgstr "Ablak bezárása"
 msgid "Cancel current operation"
 msgstr "Az aktuális művelet megszakítása"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:72
+#: core/libs/dplugins/widgets/ditemslist.cpp:74
 #, kde-format
 msgctxt "@info"
 msgid "Add new images to the list"
 msgstr ""
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:73
+#: core/libs/dplugins/widgets/ditemslist.cpp:75
 #, kde-format
 msgctxt "@info"
 msgid "Remove selected images from the list"
 msgstr ""
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:74
+#: core/libs/dplugins/widgets/ditemslist.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid "Move current selected image up in the list"
 msgstr ""
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:75
+#: core/libs/dplugins/widgets/ditemslist.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid "Move current selected image down in the list"
 msgstr ""
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:76
+#: core/libs/dplugins/widgets/ditemslist.cpp:78
 #, kde-format
 msgctxt "@info"
 msgid "Clear the list."
 msgstr ""
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:77
+#: core/libs/dplugins/widgets/ditemslist.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid "Load a saved list."
 msgstr ""
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:78
+#: core/libs/dplugins/widgets/ditemslist.cpp:80
 #, kde-format
 msgctxt "@info"
 msgid "Save the list."
 msgstr ""
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:554
+#: core/libs/dplugins/widgets/ditemslist.cpp:556
 #, fuzzy, kde-format
 #| msgid "Select GPX File to Load"
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "Válassza ki a betöltendő GPX-fájlt"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:555
-#: core/libs/dplugins/widgets/ditemslist.cpp:637
+#: core/libs/dplugins/widgets/ditemslist.cpp:557
+#: core/libs/dplugins/widgets/ditemslist.cpp:639
 #, kde-format
 msgctxt "@option"
 msgid "All Files (*)"
 msgstr ""
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:635
+#: core/libs/dplugins/widgets/ditemslist.cpp:637
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Image to Upload"
@@ -36428,18 +36429,6 @@ msgctxt "@label: no GPS coordinates"
 msgid "Undefined"
 msgstr "Meghatározatlan"
 
-#: core/libs/properties/history/itempropertieshistorytab.cpp:85
-#: core/libs/widgets/history/filtershistorywidget.cpp:79
-#, kde-format
-msgid "Used filters"
-msgstr "Használt szűrők"
-
-#: core/libs/properties/history/itempropertieshistorytab.cpp:121
-#: core/libs/widgets/history/filtershistorywidget.cpp:116
-#, kde-format
-msgid "Remove filter"
-msgstr "Szűrő eltávolítása"
-
 #: core/libs/properties/history/itempropertiesversionstab.cpp:64
 #, kde-format
 msgctxt "@title"
@@ -38232,40 +38221,36 @@ msgid "Search in"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
-#: core/utilities/maintenance/main/maintenancedlg.cpp:236
 #, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool automatically assigns tags to images by analyzing the image "
 "using a deep-learning neural network AI model.</b></p><p>The settings below "
-"determine the deep-learning AI model to use while parsing image contents to "
-"determine objects in the image. The AI neural network used in background "
-"will automatically generate tags describing the contents and store the "
-"results in the database.</p>"
+"configure the deep-learning AI model used for analyzing image contents to "
+"identify objects. The AI neural network will automatically generate "
+"descriptive tags for the image contents and store the results in the "
+"database.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:102
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging mode: "
 msgstr "Mérési mód:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
-#: core/utilities/maintenance/main/maintenancedlg.cpp:250
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
 #, fuzzy, kde-format
 #| msgid "Scan Images"
 msgid "Scan all"
 msgstr "Képek beolvasása"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
-#: core/utilities/maintenance/main/maintenancedlg.cpp:251
-#: core/utilities/maintenance/main/maintenancedlg.cpp:319
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Csak a nem hozzárendelt vizsgálata"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
-#: core/utilities/maintenance/main/maintenancedlg.cpp:253
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -38273,28 +38258,25 @@ msgid ""
 "only</b>: scan only the items with no assigned autotags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
-#: core/utilities/maintenance/main/maintenancedlg.cpp:257
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:114
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging tag mode: "
 msgstr "Mérési mód:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#: core/utilities/maintenance/main/maintenancedlg.cpp:262
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgid "Replace existing autotags"
 msgstr "Adatbázis frissítése"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
-#: core/utilities/maintenance/main/maintenancedlg.cpp:263
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgid "Update autotags"
 msgstr "Adatbázis frissítése"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:122
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -38303,33 +38285,29 @@ msgid ""
 "autotags found to the existing tags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#: core/utilities/maintenance/main/maintenancedlg.cpp:269
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:126
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Destination Folder:"
 msgid "Selection model: "
 msgstr "Cél mappa:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
-#: core/utilities/maintenance/main/maintenancedlg.cpp:274
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
-#: core/utilities/maintenance/main/maintenancedlg.cpp:275
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, kde-format
 msgid "ResNet-152"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#: core/utilities/maintenance/main/maintenancedlg.cpp:278
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -38346,15 +38324,14 @@ msgid ""
 "ImageNet dataset.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:143
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Face Accuracy"
 msgid "Object detection accuracy: "
 msgstr "Arc pontossága"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
-#: core/utilities/maintenance/main/maintenancedlg.cpp:292
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -38369,7 +38346,7 @@ msgstr ""
 "Állítsa be a sebességet vagy a pontosságot. Minél nagyobb az érték, annál "
 "pontosabb találatokat kap, de annál több időt is vesz igénybe."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -38377,7 +38354,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Munka minden processzormagon"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:155
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -38394,22 +38371,21 @@ msgstr ""
 "processzormagot ennek kíván szentelni, vagy a háttérben kívánja csak futni "
 "egyetlen magon."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Beállítások"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
-#: core/utilities/maintenance/main/maintenancedlg.cpp:296
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
 #, fuzzy, kde-format
 #| msgid "(renamed to %1)"
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "(átnevezve erre: '%1')"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
 #, fuzzy, kde-format
 #| msgid "(renamed to %1)"
 msgctxt "@title:tab"
@@ -41045,6 +41021,16 @@ msgstr "Nem sikerült betölteni a képet"
 msgid "Pan the image to a region"
 msgstr "Húzza a képet egy részlethez"
 
+#: core/libs/widgets/history/filtershistorywidget.cpp:79
+#, kde-format
+msgid "Used filters"
+msgstr "Használt szűrők"
+
+#: core/libs/widgets/history/filtershistorywidget.cpp:116
+#, kde-format
+msgid "Remove filter"
+msgstr "Szűrő eltávolítása"
+
 #: core/libs/widgets/history/versionswidget.cpp:80
 #, kde-format
 msgid "Show available versions in a list"
@@ -41748,7 +41734,7 @@ msgid "Gowtham Ashok"
 msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:216
-#: core/utilities/maintenance/main/maintenancedlg.cpp:327
+#: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, kde-format
 msgid "Image Quality Sorter"
@@ -50356,7 +50342,7 @@ msgctxt "@title"
 msgid "Unnamed"
 msgstr "Átnevezés"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:88
+#: core/showfoto/stackview/showfotostackviewlist.cpp:89
 #, fuzzy, kde-format
 #| msgctxt "@title: DPlugin properties"
 #| msgid "Name"
@@ -50364,42 +50350,42 @@ msgctxt "@title: item file name"
 msgid "Name"
 msgstr "Név"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:89
+#: core/showfoto/stackview/showfotostackviewlist.cpp:90
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "Méret"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:90
+#: core/showfoto/stackview/showfotostackviewlist.cpp:91
 #, fuzzy, kde-format
 #| msgid "Type"
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "Típus"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:91
+#: core/showfoto/stackview/showfotostackviewlist.cpp:92
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "Dátum"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:343
+#: core/showfoto/stackview/showfotostackviewlist.cpp:344
 #, fuzzy, kde-format
 #| msgid "Icon-View Options"
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "Ikon nézet beállítások"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:345
+#: core/showfoto/stackview/showfotostackviewlist.cpp:346
 #, fuzzy, kde-format
 #| msgid "Icon Size:"
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "Ikon mérete:"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:350
+#: core/showfoto/stackview/showfotostackviewlist.cpp:351
 #, fuzzy, kde-format
 #| msgid "Small (1 pixel)"
 #| msgid_plural "Small (%1 pixels)"
@@ -50407,7 +50393,7 @@ msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr "Kicsi (1 képpont)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:354
+#: core/showfoto/stackview/showfotostackviewlist.cpp:355
 #, fuzzy, kde-format
 #| msgid "Medium (1 pixel)"
 #| msgid_plural "Medium (%1 pixels)"
@@ -50415,7 +50401,7 @@ msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "Közepes (1 képpont)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:358
+#: core/showfoto/stackview/showfotostackviewlist.cpp:359
 #, fuzzy, kde-format
 #| msgid "Large (1 pixel)"
 #| msgid_plural "Large (%1 pixels)"
@@ -50423,7 +50409,7 @@ msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "Hatalmas (1 képpont)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:362
+#: core/showfoto/stackview/showfotostackviewlist.cpp:363
 #, fuzzy, kde-format
 #| msgid "Huge (1 pixel)"
 #| msgid_plural "Huge (%1 pixels)"
@@ -50431,28 +50417,28 @@ msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr "Óriási (1 képpont)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:401
+#: core/showfoto/stackview/showfotostackviewlist.cpp:402
 #, fuzzy, kde-format
 #| msgid "Add a Face Tag"
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr "Arc címke hozzáadása"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:415
+#: core/showfoto/stackview/showfotostackviewlist.cpp:416
 #, fuzzy, kde-format
 #| msgid "Clear All"
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "Minden törlése"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:423
+#: core/showfoto/stackview/showfotostackviewlist.cpp:424
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgctxt "@action: context menu"
 msgid "Remove Items"
 msgstr "Elemek eltávolítása"
 
-#: core/showfoto/stackview/showfotostackviewsidebar.cpp:212
+#: core/showfoto/stackview/showfotostackviewsidebar.cpp:213
 #, kde-format
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
@@ -60536,75 +60522,48 @@ msgstr ""
 msgid "Detect and recognize Faces"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:245
-#, fuzzy, kde-format
-#| msgid "Metering mode:"
-msgid "Auto-tagging scan mode: "
-msgstr "Mérési mód:"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:265
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>Replace existing autotags</b>: clear existing autotags and replace "
-"with the results of the scan.</p><p><b>Update autotags</b>: add new autotags "
-"found to the existing tags.</p>"
-msgstr ""
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:276
-#, kde-format
-msgid "ResNet152"
-msgstr ""
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:287
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Face Accuracy"
-msgid "Object Detection Accuracy: "
-msgstr "Arc pontossága"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:302
+#: core/utilities/maintenance/main/maintenancedlg.cpp:239
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Auto-tags Assignment"
 msgstr "Automatikus igazítás"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:313
+#: core/utilities/maintenance/main/maintenancedlg.cpp:250
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Vizsgálat módja: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:318
+#: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Minden törlése és vizsgálat újra"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:338
+#: core/utilities/maintenance/main/maintenancedlg.cpp:275
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Szinkronizálás irány: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:342
+#: core/utilities/maintenance/main/maintenancedlg.cpp:279
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Az adatbázisból a kép metaadataiba"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:343
+#: core/utilities/maintenance/main/maintenancedlg.cpp:280
 #, kde-format
 msgid "From image metadata to database"
 msgstr "A kép metaadataiból az adatbázisba"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:346
+#: core/utilities/maintenance/main/maintenancedlg.cpp:283
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:355
+#: core/utilities/maintenance/main/maintenancedlg.cpp:292
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Metaadatok és az adatbázis szinkronizálása"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:416
+#: core/utilities/maintenance/main/maintenancedlg.cpp:353
 #, fuzzy, kde-format
 #| msgctxt "@title: dialog"
 #| msgid "Warning"
@@ -60612,7 +60571,7 @@ msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Figyelmeztetés"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:417
+#: core/utilities/maintenance/main/maintenancedlg.cpp:354
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
@@ -60621,7 +60580,7 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -60630,7 +60589,7 @@ msgstr ""
 "Minden művelet kész.\n"
 "Időtartam: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Digikam karbantartás"
@@ -67062,6 +67021,17 @@ msgstr "Album elemek"
 #, kde-format
 msgid "Import Items"
 msgstr "Elemek importálása"
+
+#, fuzzy
+#~| msgid "Metering mode:"
+#~ msgid "Auto-tagging scan mode: "
+#~ msgstr "Mérési mód:"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Face Accuracy"
+#~ msgid "Object Detection Accuracy: "
+#~ msgstr "Arc pontossága"
 
 #~ msgid "Applying face changes"
 #~ msgstr "Arc változtatások alkalmazása"

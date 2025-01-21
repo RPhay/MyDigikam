@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-20 01:59+0000\n"
+"POT-Creation-Date: 2025-01-21 01:52+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -897,7 +897,7 @@ msgstr "เปิดด้วย..."
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:156
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
-#: core/showfoto/stackview/showfotostackviewlist.cpp:408
+#: core/showfoto/stackview/showfotostackviewlist.cpp:409
 #, fuzzy, kde-format
 #| msgid "Open in File Manager"
 msgctxt "@action: context menu"
@@ -3057,33 +3057,34 @@ msgstr ""
 msgid "Labels"
 msgstr "Lab"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:122
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:109
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:118
 #, fuzzy, kde-format
 msgid "Scan collection for faces"
 msgstr "ตรวจค้นคลังภาพของคุณ"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:120
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
 msgstr "ใช้ปุ่มนี้เพื่อทำการค้นหาในอัลบั้มที่เลือกไว้ เพื่อค้นหารายการต่าง ๆ ที่ซ้ำกัน"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:167
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:169
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:213
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:223
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:233
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:243
 #, fuzzy, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -9099,7 +9100,7 @@ msgstr "ใช้ระบบการจัดการสีสำหรับ
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:71
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:349
+#: core/utilities/maintenance/main/maintenancedlg.cpp:286
 #, kde-format
 msgid "Settings..."
 msgstr "ตั้งค่าต่าง ๆ ..."
@@ -10217,7 +10218,7 @@ msgstr ""
 "ปล่อยเมาส์ปุ่มซ้ายเพื่อตรึงตำแหน่งแนวเส้นประ"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:103
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:103
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:105
 #: core/dplugins/editor/transform/shear/sheartool.cpp:102
 #, kde-format
 msgid "New width:"
@@ -10227,10 +10228,10 @@ msgstr "ความกว้างใหม่:"
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:108
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:322
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:323
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:104
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:108
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:234
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:106
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:110
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:235
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:236
 #: core/dplugins/editor/transform/shear/sheartool.cpp:103
 #: core/dplugins/editor/transform/shear/sheartool.cpp:107
 #: core/dplugins/editor/transform/shear/sheartool.cpp:305
@@ -10243,7 +10244,7 @@ msgid " px"
 msgstr " พิกเซล"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:107
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:107
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:109
 #: core/dplugins/editor/transform/shear/sheartool.cpp:106
 #, kde-format
 msgid "New height:"
@@ -10351,7 +10352,7 @@ msgctxt "@action"
 msgid "Free Rotation Auto Adjust"
 msgstr "หมุนอิสระ"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:88
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:90
 #, kde-format
 msgid ""
 "This is the perspective transformation operation preview. You can use the "
@@ -10359,42 +10360,42 @@ msgid ""
 msgstr ""
 "นี่เป็นภาพตัวอย่างของการปรับแก้เพอร์สเปกทีฟ คุณสามารถใช้เมาส์เพื่อลากที่มุมเพื่อปรับเพอร์สเปกทีฟได้"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:114
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:116
 #, kde-format
 msgid "Angles (in degrees):"
 msgstr "มุม (หน่วยเป็นองศา):"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:115
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:117
 #, kde-format
 msgid "  Top left:"
 msgstr "  มุมบนด้านซ้าย:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:117
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:119
 #, kde-format
 msgid "  Top right:"
 msgstr "  มุมบนด้านขวา:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:119
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:121
 #, kde-format
 msgid "  Bottom left:"
 msgstr "  มุมล่างด้านซ้าย:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:121
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:123
 #, kde-format
 msgid "  Bottom right:"
 msgstr "  มุมล่างด้านขวา:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:127
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:129
 #, kde-format
 msgid "Draw preview while moving"
 msgstr "วาดภาพตัวอย่างขณะย้าย"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:128
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:130
 #, kde-format
 msgid "Draw grid"
 msgstr "วาดตารางกริด"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:129
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:131
 #, kde-format
 msgid "Inverse transformation"
 msgstr "การแปลงเป็นตรงกันข้าม"
@@ -11353,7 +11354,7 @@ msgstr "พลิกด้านแนวนอน"
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
-#: core/utilities/searchwindow/searchutilities.cpp:637
+#: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
 msgid "OK"
 msgstr ""
@@ -11471,8 +11472,8 @@ msgstr "บันทึกภาพ"
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:175
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:393
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:401
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:370
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:740
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:373
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:741
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:429
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:438
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:476
@@ -17640,7 +17641,7 @@ msgstr "จับภาพ..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:97
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:120
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:122
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:125
 #, fuzzy, kde-format
 msgid "Internal Error"
@@ -20771,33 +20772,33 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "กำหนดให้ใช้ป้ายกำกับนี้"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:128
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:130
 #, fuzzy, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr "จับภาพ..."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:131
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:133
 #, fuzzy, kde-format
 #| msgid "Custom process"
 msgid "%1 input images to process"
 msgstr "กำหนดการประมวลผลเอง"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:181
 #, fuzzy, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "นำเสนอภาพ"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:184
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:186
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:191
 #, fuzzy, kde-format
 msgid "Video Slideshow completed."
 msgstr "นำเสนอภาพ"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:194
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:196
 #, fuzzy, kde-format
 #| msgid "Open in Konqueror"
 msgid "Opening video stream in player..."
@@ -22435,9 +22436,9 @@ msgstr "ส่งออก"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1198
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:467
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:719
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:870
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1042
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:718
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:865
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1033
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:754
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:777
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:820
@@ -22557,7 +22558,7 @@ msgstr "ลำดับเริ่มต้น:"
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:320
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:310
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:414
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:416
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:270
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:277
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:225
@@ -22590,7 +22591,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:379
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:381
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:410
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:385
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:386
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Login Failed"
@@ -22661,14 +22662,14 @@ msgstr ""
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:245
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:370
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:382
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:386
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:387
 #, kde-format
 msgid "Authentication failed. Do you want to try again?"
 msgstr ""
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:269
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:481
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:228
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:230
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:283
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:747
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:783
@@ -24239,13 +24240,13 @@ msgctxt "@item:inlistbox"
 msgid "Create new gallery"
 msgstr "สร้างอัลบั้มใหม่"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:95
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:97
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Export to ImageShack"
 msgstr "ส่งออก"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:103
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:105
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:148
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:122
 #, fuzzy, kde-format
@@ -24253,39 +24254,39 @@ msgctxt "@action:button"
 msgid "Upload"
 msgstr "อัปโหลด..."
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:104
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:106
 #, fuzzy, kde-format
 #| msgid "A tool to convert to black and white."
 msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
 msgstr "เครื่องมือสำหรับเปลี่ยนแปลงเป็นภาพขาวดำ"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:232
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:234
 #, fuzzy, kde-format
 #| msgid "Image has no tags"
 msgid "Image Shack Export"
 msgstr "ไม่มีป้ายกำกับใด ๆ ในรูปภาพ"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:261
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:263
 #, fuzzy, kde-format
 #| msgid "Settings..."
 msgid "Authenticating..."
 msgstr "ตั้งค่าต่าง ๆ ..."
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:319
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:321
 #, fuzzy, kde-format
 #| msgctxt "date of last image modification"
 #| msgid "modified: %1"
 msgid "Login failed: %1\n"
 msgstr "แก้ไขเมื่อ : %1"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:333
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:335
 #, fuzzy, kde-format
 #| msgid "Failed to save file: %1"
 msgid "Failed to get galleries list: %1\n"
 msgstr "ลัมเหลวในการบันทึกแฟ้ม: %1"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:415
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:417
 #, fuzzy, kde-format
 msgid ""
 "Failed to upload photo into ImageShack: %1\n"
@@ -25766,75 +25767,75 @@ msgctxt "@action"
 msgid "Export to &Piwigo..."
 msgstr "ส่งออก"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:325
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:327
 #, fuzzy, kde-format
 msgid "Check if %1 already exists"
 msgstr "มีแฟ้มอยู่แล้ว"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:495
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:497
 #, kde-format
 msgid "Piwigo URL probably incorrect"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:502
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:504
 #, kde-format
 msgid "Incorrect username or password specified"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:551
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:740
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:552
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:739
 #, fuzzy, kde-format
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
 msgstr "ยังไม่รองรับกล้องที่ระบุ (\"%1\")"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:628
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:712
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:788
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:863
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:711
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:785
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:858
 #, kde-format
 msgid "Invalid response received from remote Piwigo"
 msgstr ""
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:635
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:979
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:980
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgid "Failed to list albums"
 msgstr "ล้มเหลวในการเปลี่ยนชื่ออัลบั้ม"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:686
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:685
 #, fuzzy, kde-format
 #| msgid "Tag name already exists"
 msgid "Photo '%1' already exists."
 msgstr "มีป้ายกำกับที่มีชื่อนี้อยู่แล้ว"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:795
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:792
 #, kde-format
 msgid "Photo '%1' already exists in this album."
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:886
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:881
 #, kde-format
 msgid "Error : Cannot open photo: %1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:914
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:909
 #, kde-format
 msgid "Upload the chunk %1/%2 of %3"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:949
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:942
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1000
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:993
 #, fuzzy, kde-format
 #| msgid "Print metadata"
 msgid "Upload the metadata of %1"
 msgstr "พิมพ์ข้อมูลกำกับภาพ"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1035
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1026
 #, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr ""
@@ -26276,23 +26277,23 @@ msgstr "นำเข้าภาพจากเครื่องสแกนภ
 msgid "Logging in to SmugMug service..."
 msgstr ""
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:676
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:677
 #, fuzzy, kde-format
 msgid "Login failed"
 msgstr "ค่าสัมพันธ์"
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:682
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:683
 #, kde-format
 msgid "Invalid user/nick/password"
 msgstr ""
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:688
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:689
 #, fuzzy, kde-format
 #| msgid "Invalid Profile"
 msgid "Invalid API key"
 msgstr "โพรไฟล์ไม่ถูกต้อง"
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:1083
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:1084
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgid "Failed to list album template"
@@ -26593,8 +26594,8 @@ msgstr ""
 "จะทำการกำหนดป้ายกำกับ '%2' ให้กับภาพ %1 ภาพ \n"
 "คุณต้องการจะทำต่อไปหรือไม่ ?"
 
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:403
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:408
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:404
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:409
 #, fuzzy, kde-format
 msgid ""
 "Twitter call failed:\n"
@@ -34645,70 +34646,70 @@ msgstr "ระยะใกล้"
 msgid "Cancel current operation"
 msgstr "ข้อมูลกล้อง"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:72
+#: core/libs/dplugins/widgets/ditemslist.cpp:74
 #, fuzzy, kde-format
 #| msgid "Add a new value to the list"
 msgctxt "@info"
 msgid "Add new images to the list"
 msgstr "เพิ่มค่าใหม่ไปยังรายการ"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:73
+#: core/libs/dplugins/widgets/ditemslist.cpp:75
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgctxt "@info"
 msgid "Remove selected images from the list"
 msgstr "ลบค่าที่เลือกไว้ออกจากรายการ"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:74
+#: core/libs/dplugins/widgets/ditemslist.cpp:76
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgctxt "@info"
 msgid "Move current selected image up in the list"
 msgstr "ลบค่าที่เลือกไว้ออกจากรายการ"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:75
+#: core/libs/dplugins/widgets/ditemslist.cpp:77
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgctxt "@info"
 msgid "Move current selected image down in the list"
 msgstr "ลบค่าที่เลือกไว้ออกจากรายการ"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:76
+#: core/libs/dplugins/widgets/ditemslist.cpp:78
 #, fuzzy, kde-format
 #| msgid "Clear List"
 msgctxt "@info"
 msgid "Clear the list."
 msgstr "ล้างรายการ"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:77
+#: core/libs/dplugins/widgets/ditemslist.cpp:79
 #, fuzzy, kde-format
 #| msgid "Load playlist"
 msgctxt "@info"
 msgid "Load a saved list."
 msgstr "โหลดรายการเล่น"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:78
+#: core/libs/dplugins/widgets/ditemslist.cpp:80
 #, fuzzy, kde-format
 #| msgid "Save theme"
 msgctxt "@info"
 msgid "Save the list."
 msgstr "บันทึกชุดตกแต่ง"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:554
+#: core/libs/dplugins/widgets/ditemslist.cpp:556
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "เลือกภาพที่จะทำการอัปโหลด"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:555
-#: core/libs/dplugins/widgets/ditemslist.cpp:637
+#: core/libs/dplugins/widgets/ditemslist.cpp:557
+#: core/libs/dplugins/widgets/ditemslist.cpp:639
 #, fuzzy, kde-format
 #| msgid "All Files"
 msgctxt "@option"
 msgid "All Files (*)"
 msgstr "แฟ้มทั้งหมด"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:635
+#: core/libs/dplugins/widgets/ditemslist.cpp:637
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"
@@ -37695,18 +37696,6 @@ msgctxt "@label: no GPS coordinates"
 msgid "Undefined"
 msgstr "ไม่ระบุ"
 
-#: core/libs/properties/history/itempropertieshistorytab.cpp:85
-#: core/libs/widgets/history/filtershistorywidget.cpp:79
-#, fuzzy, kde-format
-msgid "Used filters"
-msgstr "ใช้ฟิลเตอร์"
-
-#: core/libs/properties/history/itempropertieshistorytab.cpp:121
-#: core/libs/widgets/history/filtershistorywidget.cpp:116
-#, fuzzy, kde-format
-msgid "Remove filter"
-msgstr "เอารายการออก"
-
 #: core/libs/properties/history/itempropertiesversionstab.cpp:64
 #, fuzzy, kde-format
 msgctxt "@title"
@@ -39584,40 +39573,36 @@ msgid "Search in"
 msgstr "ค้นหาใน:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
-#: core/utilities/maintenance/main/maintenancedlg.cpp:236
 #, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool automatically assigns tags to images by analyzing the image "
 "using a deep-learning neural network AI model.</b></p><p>The settings below "
-"determine the deep-learning AI model to use while parsing image contents to "
-"determine objects in the image. The AI neural network used in background "
-"will automatically generate tags describing the contents and store the "
-"results in the database.</p>"
+"configure the deep-learning AI model used for analyzing image contents to "
+"identify objects. The AI neural network will automatically generate "
+"descriptive tags for the image contents and store the results in the "
+"database.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:102
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging mode: "
 msgstr "โหมดการวัดแสง:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
-#: core/utilities/maintenance/main/maintenancedlg.cpp:250
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
 #, fuzzy, kde-format
 #| msgid "Scan Image"
 msgid "Scan all"
 msgstr "สแกนภาพ"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
-#: core/utilities/maintenance/main/maintenancedlg.cpp:251
-#: core/utilities/maintenance/main/maintenancedlg.cpp:319
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
-#: core/utilities/maintenance/main/maintenancedlg.cpp:253
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39625,28 +39610,25 @@ msgid ""
 "only</b>: scan only the items with no assigned autotags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
-#: core/utilities/maintenance/main/maintenancedlg.cpp:257
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:114
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging tag mode: "
 msgstr "โหมดการวัดแสง:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#: core/utilities/maintenance/main/maintenancedlg.cpp:262
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgid "Replace existing autotags"
 msgstr "ปรับปรุงฐานข้อมูล"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
-#: core/utilities/maintenance/main/maintenancedlg.cpp:263
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgid "Update autotags"
 msgstr "ปรับปรุงฐานข้อมูล"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:122
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39655,32 +39637,28 @@ msgid ""
 "autotags found to the existing tags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#: core/utilities/maintenance/main/maintenancedlg.cpp:269
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:126
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgid "Selection model: "
 msgstr "ปลายทาง:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
-#: core/utilities/maintenance/main/maintenancedlg.cpp:274
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
-#: core/utilities/maintenance/main/maintenancedlg.cpp:275
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, kde-format
 msgid "ResNet-152"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#: core/utilities/maintenance/main/maintenancedlg.cpp:278
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39697,13 +39675,12 @@ msgid ""
 "ImageNet dataset.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:143
 #, fuzzy, kde-format
 msgid "Object detection accuracy: "
 msgstr "หมุนภาพ/พลิกภาพโดยอัตโนมัติ"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
-#: core/utilities/maintenance/main/maintenancedlg.cpp:292
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39712,7 +39689,7 @@ msgid ""
 "be recognized, but fewer objects will be recognized.\n"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -39720,7 +39697,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39729,7 +39706,7 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, fuzzy, kde-format
 #| msgid "Settings"
@@ -39737,15 +39714,14 @@ msgctxt "@title:tab"
 msgid "Settings"
 msgstr "ตั้งค่าต่าง ๆ"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
-#: core/utilities/maintenance/main/maintenancedlg.cpp:296
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
 #, fuzzy, kde-format
 #| msgid "Rating equal to %1."
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "ระดับความชื่นชอบเท่ากับ %1"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
 #, fuzzy, kde-format
 #| msgid "Rating equal to %1."
 msgctxt "@title:tab"
@@ -42455,6 +42431,16 @@ msgstr ""
 msgid "Pan the image to a region"
 msgstr "แพนภาพไปยังขอบเขตพื้นที่"
 
+#: core/libs/widgets/history/filtershistorywidget.cpp:79
+#, fuzzy, kde-format
+msgid "Used filters"
+msgstr "ใช้ฟิลเตอร์"
+
+#: core/libs/widgets/history/filtershistorywidget.cpp:116
+#, fuzzy, kde-format
+msgid "Remove filter"
+msgstr "เอารายการออก"
+
 #: core/libs/widgets/history/versionswidget.cpp:80
 #, kde-format
 msgid "Show available versions in a list"
@@ -43210,7 +43196,7 @@ msgid "Gowtham Ashok"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:216
-#: core/utilities/maintenance/main/maintenancedlg.cpp:327
+#: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, fuzzy, kde-format
 msgid "Image Quality Sorter"
@@ -52101,48 +52087,48 @@ msgctxt "@title"
 msgid "Unnamed"
 msgstr "เปลี่ยนชื่อ..."
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:88
+#: core/showfoto/stackview/showfotostackviewlist.cpp:89
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: item file name"
 msgid "Name"
 msgstr "ชื่อ"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:89
+#: core/showfoto/stackview/showfotostackviewlist.cpp:90
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "ขนาด"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:90
+#: core/showfoto/stackview/showfotostackviewlist.cpp:91
 #, fuzzy, kde-format
 #| msgid "Type"
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "ชนิด"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:91
+#: core/showfoto/stackview/showfotostackviewlist.cpp:92
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "วันที่"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:343
+#: core/showfoto/stackview/showfotostackviewlist.cpp:344
 #, fuzzy, kde-format
 #| msgid "Icon-View Options"
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "ตัวเลือกต่าง ๆ ของมุมมองไอคอน"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:345
+#: core/showfoto/stackview/showfotostackviewlist.cpp:346
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "ขนาด:"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:350
+#: core/showfoto/stackview/showfotostackviewlist.cpp:351
 #, fuzzy, kde-format
 #| msgid "Small (1 pixel)"
 #| msgid_plural "Small (%1 pixels)"
@@ -52150,7 +52136,7 @@ msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr "เล็ก (%1 พิกเซล)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:354
+#: core/showfoto/stackview/showfotostackviewlist.cpp:355
 #, fuzzy, kde-format
 #| msgid "Medium (1 pixel)"
 #| msgid_plural "Medium (%1 pixels)"
@@ -52158,7 +52144,7 @@ msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "ปานกลาง (%1 พิกเซล)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:358
+#: core/showfoto/stackview/showfotostackviewlist.cpp:359
 #, fuzzy, kde-format
 #| msgid "Large (1 pixel)"
 #| msgid_plural "Large (%1 pixels)"
@@ -52166,7 +52152,7 @@ msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "ใหญ่มาก (%1 พิกเซล)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:362
+#: core/showfoto/stackview/showfotostackviewlist.cpp:363
 #, fuzzy, kde-format
 #| msgid "Huge (1 pixel)"
 #| msgid_plural "Huge (%1 pixels)"
@@ -52174,26 +52160,26 @@ msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr "มหึมา (%1 พิกเซล)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:401
+#: core/showfoto/stackview/showfotostackviewlist.cpp:402
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr "เพิ่มป้ายกำกับใหม่..."
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:415
+#: core/showfoto/stackview/showfotostackviewlist.cpp:416
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "ล้างทั้งหมด"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:423
+#: core/showfoto/stackview/showfotostackviewlist.cpp:424
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgctxt "@action: context menu"
 msgid "Remove Items"
 msgstr "เอารายการต่าง ๆ ออก"
 
-#: core/showfoto/stackview/showfotostackviewsidebar.cpp:212
+#: core/showfoto/stackview/showfotostackviewsidebar.cpp:213
 #, kde-format
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
@@ -62520,80 +62506,55 @@ msgstr ""
 msgid "Detect and recognize Faces"
 msgstr "ปรับเทียบข้อมูล"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:245
-#, fuzzy, kde-format
-#| msgid "Metering mode:"
-msgid "Auto-tagging scan mode: "
-msgstr "โหมดการวัดแสง:"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:265
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>Replace existing autotags</b>: clear existing autotags and replace "
-"with the results of the scan.</p><p><b>Update autotags</b>: add new autotags "
-"found to the existing tags.</p>"
-msgstr ""
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:276
-#, kde-format
-msgid "ResNet152"
-msgstr ""
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:287
-#, fuzzy, kde-format
-msgid "Object Detection Accuracy: "
-msgstr "หมุนภาพ/พลิกภาพโดยอัตโนมัติ"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:302
+#: core/utilities/maintenance/main/maintenancedlg.cpp:239
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Auto-tags Assignment"
 msgstr "ปรับแก้อัตโนมัติ"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:313
+#: core/utilities/maintenance/main/maintenancedlg.cpp:250
 #, fuzzy, kde-format
 msgid "Scan Mode: "
 msgstr "รุ่น: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:318
+#: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:338
+#: core/utilities/maintenance/main/maintenancedlg.cpp:275
 #, fuzzy, kde-format
 msgid "Sync Direction: "
 msgstr "ปรับแก้ค่าสี HSL ให้ถูกต้อง"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:342
+#: core/utilities/maintenance/main/maintenancedlg.cpp:279
 #, fuzzy, kde-format
 msgid "From database to image metadata"
 msgstr "กำลังทำการปรับปรุงฐานข้อมูลจากข้อมูลกำกับของภาพ โปรดรอสักครู่..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:343
+#: core/utilities/maintenance/main/maintenancedlg.cpp:280
 #, fuzzy, kde-format
 msgid "From image metadata to database"
 msgstr "กำลังปรับเทียบข้อมูลกำกับภาพโดยใช้ข้อมูลจากฐานข้อมูล โปรดรอสักครู่..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:346
+#: core/utilities/maintenance/main/maintenancedlg.cpp:283
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:355
+#: core/utilities/maintenance/main/maintenancedlg.cpp:292
 #, fuzzy, kde-format
 msgid "Sync Metadata and Database"
 msgstr "กำลังปรับเทียบข้อมูลกำกับภาพโดยใช้ข้อมูลจากฐานข้อมูล โปรดรอสักครู่..."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:416
+#: core/utilities/maintenance/main/maintenancedlg.cpp:353
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "แจ้งเตือน"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:417
+#: core/utilities/maintenance/main/maintenancedlg.cpp:354
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
@@ -62602,14 +62563,14 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, fuzzy, kde-format
 msgid ""
 "All operations are done.\n"
 "Duration: %1"
 msgstr "กลับค่าการเรียงลำดับ"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
 #, fuzzy, kde-format
 msgid "digiKam Maintenance"
 msgstr "มุมหลัก:"
@@ -69323,6 +69284,15 @@ msgstr "รายการอัลบั้มต่าง ๆ"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "จัดเ&รียงรูปภาพ"
+
+#, fuzzy
+#~| msgid "Metering mode:"
+#~ msgid "Auto-tagging scan mode: "
+#~ msgstr "โหมดการวัดแสง:"
+
+#, fuzzy
+#~ msgid "Object Detection Accuracy: "
+#~ msgstr "หมุนภาพ/พลิกภาพโดยอัตโนมัติ"
 
 #, fuzzy
 #~ msgid "Applying face changes"

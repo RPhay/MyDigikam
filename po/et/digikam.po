@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-20 01:59+0000\n"
+"POT-Creation-Date: 2025-01-21 01:52+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -939,7 +939,7 @@ msgstr "Ava ..."
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:156
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
-#: core/showfoto/stackview/showfotostackviewlist.cpp:408
+#: core/showfoto/stackview/showfotostackviewlist.cpp:409
 #, fuzzy, kde-format
 #| msgid "Open in File Manager"
 msgctxt "@action: context menu"
@@ -3167,12 +3167,13 @@ msgstr "Kaart"
 msgid "Labels"
 msgstr "Pealdised"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:122
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:109
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:118
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Uuri kogu nägusid"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:120
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -3180,14 +3181,14 @@ msgid "Use this button to scan the selected albums for faces"
 msgstr ""
 "Selle nupuga saab topeltelementide leidmiseks läbi uurida valitud albumid."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:167
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:169
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:213
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:223
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -3196,7 +3197,7 @@ msgstr ""
 "Näotuvastusest loobuti, sest polnud ühtegi identiteeti, mida tuvastada. "
 "Palun lisa uusi identiteete."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:233
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:243
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -9885,7 +9886,7 @@ msgstr "Värvihalduse kasutamine trükkimisel"
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:71
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:349
+#: core/utilities/maintenance/main/maintenancedlg.cpp:286
 #, kde-format
 msgid "Settings..."
 msgstr "Seadistused ..."
@@ -11055,7 +11056,7 @@ msgstr ""
 "kohendada. Hiire vasakut nuppu vabastades saab punktiirjooned paika jätta."
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:103
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:103
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:105
 #: core/dplugins/editor/transform/shear/sheartool.cpp:102
 #, kde-format
 msgid "New width:"
@@ -11065,10 +11066,10 @@ msgstr "Uus laius:"
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:108
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:322
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:323
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:104
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:108
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:234
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:106
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:110
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:235
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:236
 #: core/dplugins/editor/transform/shear/sheartool.cpp:103
 #: core/dplugins/editor/transform/shear/sheartool.cpp:107
 #: core/dplugins/editor/transform/shear/sheartool.cpp:305
@@ -11081,7 +11082,7 @@ msgid " px"
 msgstr " pikslit"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:107
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:107
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:109
 #: core/dplugins/editor/transform/shear/sheartool.cpp:106
 #, kde-format
 msgid "New height:"
@@ -11192,7 +11193,7 @@ msgctxt "@action"
 msgid "Free Rotation Auto Adjust"
 msgstr "Vaba pööramise automaatne kohandamine"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:88
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:90
 #, kde-format
 msgid ""
 "This is the perspective transformation operation preview. You can use the "
@@ -11201,42 +11202,42 @@ msgstr ""
 "See on perspektiivi kohendamise eelvaatlus. Perspektiivi muutmiseks lohista "
 "hiirega pildi nurki."
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:114
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:116
 #, kde-format
 msgid "Angles (in degrees):"
 msgstr "Nurgad (kraadides):"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:115
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:117
 #, kde-format
 msgid "  Top left:"
 msgstr "  Ülemine vasak:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:117
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:119
 #, kde-format
 msgid "  Top right:"
 msgstr "  Ülemine parem:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:119
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:121
 #, kde-format
 msgid "  Bottom left:"
 msgstr "  Alumine vasak:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:121
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:123
 #, kde-format
 msgid "  Bottom right:"
 msgstr "  Alumine parem:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:127
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:129
 #, kde-format
 msgid "Draw preview while moving"
 msgstr "Eelvaatluse näitamine liigutamisel"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:128
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:130
 #, kde-format
 msgid "Draw grid"
 msgstr "Võrgustiku näitamine"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:129
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:131
 #, kde-format
 msgid "Inverse transformation"
 msgstr "Vastupidine teisendamine"
@@ -12206,7 +12207,7 @@ msgstr "Kaks kaarti kõrvuti"
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
-#: core/utilities/searchwindow/searchutilities.cpp:637
+#: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
 msgid "OK"
 msgstr "OK"
@@ -12334,8 +12335,8 @@ msgstr "Muudatuste salvestamine -"
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:175
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:393
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:401
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:370
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:740
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:373
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:741
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:429
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:438
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:476
@@ -18785,7 +18786,7 @@ msgstr "Loo HTML-galerii ..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:97
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:120
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:122
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:125
 #, kde-format
 msgid "Internal Error"
@@ -22136,32 +22137,32 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "Loo video-slaidiseanss ..."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:128
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:130
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr "Video-slaidiseansi genereerimise alustamine ..."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:131
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:133
 #, kde-format
 msgid "%1 input images to process"
 msgstr "%1 sisendpilti töödelda"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:181
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "Video-slaidiseanss pole valmis"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:184
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:186
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:191
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "Video-slaidiseanss on valmis"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:194
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:196
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "Videovoo avamine mängijas ..."
@@ -23786,9 +23787,9 @@ msgstr "Ekspordi &Boxi ..."
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1198
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:467
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:719
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:870
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1042
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:718
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:865
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1033
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:754
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:777
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:820
@@ -23912,7 +23913,7 @@ msgstr "Boxi eksport"
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:320
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:310
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:414
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:416
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:270
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:277
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:225
@@ -23951,7 +23952,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:379
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:381
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:410
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:385
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:386
 #, fuzzy, kde-format
 #| msgid "Login Failed"
 msgctxt "@title:window"
@@ -24040,14 +24041,14 @@ msgstr "Ühtegi pilti pole valitud. Palun vali pildid, mida üles laadida."
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:245
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:370
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:382
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:386
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:387
 #, kde-format
 msgid "Authentication failed. Do you want to try again?"
 msgstr "Autentimine nurjus. Kas proovida uuesti?"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:269
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:481
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:228
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:230
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:283
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:747
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:783
@@ -25692,14 +25693,14 @@ msgctxt "@item:inlistbox"
 msgid "Create new gallery"
 msgstr "Uue galerii loomine"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:95
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:97
 #, fuzzy, kde-format
 #| msgid "Export to ImageShack"
 msgctxt "@title:window"
 msgid "Export to ImageShack"
 msgstr "Eksport ImageShacki "
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:103
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:105
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:148
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:122
 #, fuzzy, kde-format
@@ -25708,34 +25709,34 @@ msgctxt "@action:button"
 msgid "Upload"
 msgstr "Laadi üles"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:104
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:106
 #, fuzzy, kde-format
 #| msgid "Start upload to ImageShack web service"
 msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
 msgstr "Üleslaadimise alustamine ImageShacki veebiteenusse"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:232
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:234
 #, kde-format
 msgid "Image Shack Export"
 msgstr "ImageShacki eksport"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:261
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:263
 #, kde-format
 msgid "Authenticating..."
 msgstr "Autentimine ..."
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:319
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:321
 #, kde-format
 msgid "Login failed: %1\n"
 msgstr "Sisselogimine nurjus: %1\n"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:333
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:335
 #, kde-format
 msgid "Failed to get galleries list: %1\n"
 msgstr "Galeriide loendi hankimine nurjus: %1\n"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:415
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:417
 #, kde-format
 msgid ""
 "Failed to upload photo into ImageShack: %1\n"
@@ -27352,73 +27353,73 @@ msgctxt "@action"
 msgid "Export to &Piwigo..."
 msgstr "Ekspordi &Piwigosse ..."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:325
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:327
 #, kde-format
 msgid "Check if %1 already exists"
 msgstr "Kontroll, kas %1 on juba olemas"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:495
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:497
 #, kde-format
 msgid "Piwigo URL probably incorrect"
 msgstr "Piwigo URL ei ole nähtavasti õige"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:502
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:504
 #, kde-format
 msgid "Incorrect username or password specified"
 msgstr "Anti vale kasutajanimi või parool"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:551
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:740
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:552
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:739
 #, fuzzy, kde-format
 #| msgid "Upload to Piwigo version < 2.4 is no longer supported"
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
 msgstr "Üleslaadimine Piwigo versiooni < 2.4 ei ole enam toetatud"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:628
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:712
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:788
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:863
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:711
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:785
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:858
 #, kde-format
 msgid "Invalid response received from remote Piwigo"
 msgstr "Piwigost saadi vigane vastus"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:635
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:979
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:980
 #, kde-format
 msgid "Failed to list albums"
 msgstr "Albumiloendi hankimine nurjus"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:686
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:685
 #, kde-format
 msgid "Photo '%1' already exists."
 msgstr "Foto \"%1\" on juba olemas."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:795
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:792
 #, kde-format
 msgid "Photo '%1' already exists in this album."
 msgstr "Foto \"%1\" on selles albumis juba olemas."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:886
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:881
 #, kde-format
 msgid "Error : Cannot open photo: %1"
 msgstr "Tõrge: Foto avamine nurjus: %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:914
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:909
 #, kde-format
 msgid "Upload the chunk %1/%2 of %3"
 msgstr "Tüki %1/%2 (kokku %3) üleslaadimine"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:949
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:942
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
 msgstr "Hoiatus: täissuuruses fotot ei saa üles laadida."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1000
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:993
 #, kde-format
 msgid "Upload the metadata of %1"
 msgstr "%1 metaandmete uuendamine"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1035
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1026
 #, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "Piwigost saadi vigane vastus (%1)"
@@ -27869,22 +27870,22 @@ msgstr "Impordi &SmugMugist ..."
 msgid "Logging in to SmugMug service..."
 msgstr "Sisselogimine SmugMugi teenusse ..."
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:676
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:677
 #, kde-format
 msgid "Login failed"
 msgstr "Sisselogimine nurjus"
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:682
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:683
 #, kde-format
 msgid "Invalid user/nick/password"
 msgstr "Vigane kasutajanimi/hüüdnimi/parool"
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:688
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:689
 #, kde-format
 msgid "Invalid API key"
 msgstr "Vigane API võti"
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:1083
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:1084
 #, kde-format
 msgid "Failed to list album template"
 msgstr "Albumimalli hankimine nurjus"
@@ -28188,8 +28189,8 @@ msgstr ""
 "%1\n"
 "Kas jätkata?"
 
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:403
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:408
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:404
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:409
 #, kde-format
 msgid ""
 "Twitter call failed:\n"
@@ -36582,71 +36583,71 @@ msgstr "Akna sulgemine"
 msgid "Cancel current operation"
 msgstr "Aktiivsest toimingust loobumine"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:72
+#: core/libs/dplugins/widgets/ditemslist.cpp:74
 #, fuzzy, kde-format
 #| msgid "Add new images to the list"
 msgctxt "@info"
 msgid "Add new images to the list"
 msgstr "Uute piltide lisamine nimekirja"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:73
+#: core/libs/dplugins/widgets/ditemslist.cpp:75
 #, fuzzy, kde-format
 #| msgid "Remove selected images from the list"
 msgctxt "@info"
 msgid "Remove selected images from the list"
 msgstr "Valitud piltide eemaldamine nimekirjast"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:74
+#: core/libs/dplugins/widgets/ditemslist.cpp:76
 #, fuzzy, kde-format
 #| msgid "Move current selected image up in the list"
 msgctxt "@info"
 msgid "Move current selected image up in the list"
 msgstr "Valitud pildi liigutamine nimekirjas ülespoole"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:75
+#: core/libs/dplugins/widgets/ditemslist.cpp:77
 #, fuzzy, kde-format
 #| msgid "Move current selected image down in the list"
 msgctxt "@info"
 msgid "Move current selected image down in the list"
 msgstr "Valitud pildi liigutamine nimekirjas allapoole"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:76
+#: core/libs/dplugins/widgets/ditemslist.cpp:78
 #, fuzzy, kde-format
 #| msgid "Clear the list."
 msgctxt "@info"
 msgid "Clear the list."
 msgstr "Nimekirja puhastamine."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:77
+#: core/libs/dplugins/widgets/ditemslist.cpp:79
 #, fuzzy, kde-format
 #| msgid "Load a saved list."
 msgctxt "@info"
 msgid "Load a saved list."
 msgstr "Salvestatud nimekirja laadimine."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:78
+#: core/libs/dplugins/widgets/ditemslist.cpp:80
 #, fuzzy, kde-format
 #| msgid "Save the list."
 msgctxt "@info"
 msgid "Save the list."
 msgstr "Nimekirja salvestamine."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:554
+#: core/libs/dplugins/widgets/ditemslist.cpp:556
 #, fuzzy, kde-format
 #| msgid "Select the image file list to load"
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "Laaditava pildifaililoendi valimine"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:555
-#: core/libs/dplugins/widgets/ditemslist.cpp:637
+#: core/libs/dplugins/widgets/ditemslist.cpp:557
+#: core/libs/dplugins/widgets/ditemslist.cpp:639
 #, fuzzy, kde-format
 #| msgid "All Files (*)"
 msgctxt "@option"
 msgid "All Files (*)"
 msgstr "Kõik failid (*)"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:635
+#: core/libs/dplugins/widgets/ditemslist.cpp:637
 #, fuzzy, kde-format
 #| msgid "Select the image file list to save"
 msgctxt "@title:window"
@@ -39852,18 +39853,6 @@ msgctxt "@label: no GPS coordinates"
 msgid "Undefined"
 msgstr "Määramata"
 
-#: core/libs/properties/history/itempropertieshistorytab.cpp:85
-#: core/libs/widgets/history/filtershistorywidget.cpp:79
-#, kde-format
-msgid "Used filters"
-msgstr "Kasutatud filtrid"
-
-#: core/libs/properties/history/itempropertieshistorytab.cpp:121
-#: core/libs/widgets/history/filtershistorywidget.cpp:116
-#, kde-format
-msgid "Remove filter"
-msgstr "Eemalda filter"
-
 #: core/libs/properties/history/itempropertiesversionstab.cpp:64
 #, fuzzy, kde-format
 #| msgid "Versions"
@@ -41785,40 +41774,36 @@ msgid "Search in"
 msgstr "Otsing asukohas"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
-#: core/utilities/maintenance/main/maintenancedlg.cpp:236
 #, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool automatically assigns tags to images by analyzing the image "
 "using a deep-learning neural network AI model.</b></p><p>The settings below "
-"determine the deep-learning AI model to use while parsing image contents to "
-"determine objects in the image. The AI neural network used in background "
-"will automatically generate tags describing the contents and store the "
-"results in the database.</p>"
+"configure the deep-learning AI model used for analyzing image contents to "
+"identify objects. The AI neural network will automatically generate "
+"descriptive tags for the image contents and store the results in the "
+"database.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:102
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging mode: "
 msgstr "Mõõterežiim:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
-#: core/utilities/maintenance/main/maintenancedlg.cpp:250
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
 #, fuzzy, kde-format
 #| msgid "Scan Images"
 msgid "Scan all"
 msgstr "Piltide skannimine"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
-#: core/utilities/maintenance/main/maintenancedlg.cpp:251
-#: core/utilities/maintenance/main/maintenancedlg.cpp:319
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Ainult omistama nägude uurimine"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
-#: core/utilities/maintenance/main/maintenancedlg.cpp:253
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -41826,28 +41811,25 @@ msgid ""
 "only</b>: scan only the items with no assigned autotags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
-#: core/utilities/maintenance/main/maintenancedlg.cpp:257
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:114
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging tag mode: "
 msgstr "Mõõterežiim:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#: core/utilities/maintenance/main/maintenancedlg.cpp:262
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
 #, fuzzy, kde-format
 #| msgid "Update only existing timestamps"
 msgid "Replace existing autotags"
 msgstr "Ainult olemasolevate ajatemplite uuendamine"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
-#: core/utilities/maintenance/main/maintenancedlg.cpp:263
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgid "Update autotags"
 msgstr "Uuenda andmebaasi"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:122
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -41856,32 +41838,28 @@ msgid ""
 "autotags found to the existing tags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#: core/utilities/maintenance/main/maintenancedlg.cpp:269
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:126
 #, fuzzy, kde-format
 #| msgid "Destination Folder:"
 msgid "Selection model: "
 msgstr "Sihtkataloog:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
-#: core/utilities/maintenance/main/maintenancedlg.cpp:274
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
-#: core/utilities/maintenance/main/maintenancedlg.cpp:275
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, kde-format
 msgid "ResNet-152"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#: core/utilities/maintenance/main/maintenancedlg.cpp:278
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -41898,15 +41876,14 @@ msgid ""
 "ImageNet dataset.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:143
 #, fuzzy, kde-format
 #| msgctxt "@groupbox"
 #| msgid "Face Accuracy"
 msgid "Object detection accuracy: "
 msgstr "Näo täpsus"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
-#: core/utilities/maintenance/main/maintenancedlg.cpp:292
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -41921,7 +41898,7 @@ msgstr ""
 "Kiiruse ja täpsuse vahekorra määramine. Mida suurem väärtus, seda täpsem on "
 "tulemus, aga seda kauem ka aega kulub."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -41929,7 +41906,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Kõigi protsessorituumade kasutamine"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:155
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -41946,22 +41923,21 @@ msgstr ""
 "Siin saab valida, kas kasutada kõiki süsteemi protsessorituumi\n"
 "või töötada taustal ainult ühe tuumaga."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Seadistused"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
-#: core/utilities/maintenance/main/maintenancedlg.cpp:296
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Liikumine asukohta %1"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@title:tab"
@@ -44957,6 +44933,16 @@ msgstr "Pildi laadimine nurjus"
 msgid "Pan the image to a region"
 msgstr "Lohista pilt piirkonnale"
 
+#: core/libs/widgets/history/filtershistorywidget.cpp:79
+#, kde-format
+msgid "Used filters"
+msgstr "Kasutatud filtrid"
+
+#: core/libs/widgets/history/filtershistorywidget.cpp:116
+#, kde-format
+msgid "Remove filter"
+msgstr "Eemalda filter"
+
 #: core/libs/widgets/history/versionswidget.cpp:80
 #, kde-format
 msgid "Show available versions in a list"
@@ -45772,7 +45758,7 @@ msgid "Gowtham Ashok"
 msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:216
-#: core/utilities/maintenance/main/maintenancedlg.cpp:327
+#: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, kde-format
 msgid "Image Quality Sorter"
@@ -54878,49 +54864,49 @@ msgctxt "@title"
 msgid "Unnamed"
 msgstr "Ümbernimetamine"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:88
+#: core/showfoto/stackview/showfotostackviewlist.cpp:89
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: item file name"
 msgid "Name"
 msgstr "Nimi"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:89
+#: core/showfoto/stackview/showfotostackviewlist.cpp:90
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "Suurus"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:90
+#: core/showfoto/stackview/showfotostackviewlist.cpp:91
 #, fuzzy, kde-format
 #| msgid "Type"
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "Tüüp"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:91
+#: core/showfoto/stackview/showfotostackviewlist.cpp:92
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "Kuupäev"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:343
+#: core/showfoto/stackview/showfotostackviewlist.cpp:344
 #, fuzzy, kde-format
 #| msgid "Icon-View Options"
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "Ikoonivaate valikud"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:345
+#: core/showfoto/stackview/showfotostackviewlist.cpp:346
 #, fuzzy, kde-format
 #| msgid "Icon Size:"
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "Ikooni suurus:"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:350
+#: core/showfoto/stackview/showfotostackviewlist.cpp:351
 #, fuzzy, kde-format
 #| msgctxt "Small (size)"
 #| msgid "Small (%1 x %2 pixels)"
@@ -54928,7 +54914,7 @@ msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr "Väike (%1 x %2 pikslit)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:354
+#: core/showfoto/stackview/showfotostackviewlist.cpp:355
 #, fuzzy, kde-format
 #| msgctxt "Medium (size)"
 #| msgid "Medium (%1 x %2 pixels)"
@@ -54936,7 +54922,7 @@ msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "Keskmine (%1 x %2 pikslit)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:358
+#: core/showfoto/stackview/showfotostackviewlist.cpp:359
 #, fuzzy, kde-format
 #| msgctxt "Large (size)"
 #| msgid "Large (%1 x %2 pixels)"
@@ -54944,7 +54930,7 @@ msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "Tohutu (%1 x %2 pikslit)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:362
+#: core/showfoto/stackview/showfotostackviewlist.cpp:363
 #, fuzzy, kde-format
 #| msgctxt "Huge (size)"
 #| msgid "Huge (%1 x %2 pixels)"
@@ -54952,28 +54938,28 @@ msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr "Hiiglaslik (%1 x %2 pikslit)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:401
+#: core/showfoto/stackview/showfotostackviewlist.cpp:402
 #, fuzzy, kde-format
 #| msgid "Add a Face Tag"
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr "Lisa näosilt..."
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:415
+#: core/showfoto/stackview/showfotostackviewlist.cpp:416
 #, fuzzy, kde-format
 #| msgid "Clear All"
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "Puhasta kõik"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:423
+#: core/showfoto/stackview/showfotostackviewlist.cpp:424
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgctxt "@action: context menu"
 msgid "Remove Items"
 msgstr "Eemalda elemendid"
 
-#: core/showfoto/stackview/showfotostackviewsidebar.cpp:212
+#: core/showfoto/stackview/showfotostackviewsidebar.cpp:213
 #, kde-format
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
@@ -65715,82 +65701,55 @@ msgstr ""
 msgid "Detect and recognize Faces"
 msgstr "Nägude tuvastamine ja äratundmine"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:245
-#, fuzzy, kde-format
-#| msgid "Metering mode:"
-msgid "Auto-tagging scan mode: "
-msgstr "Mõõterežiim:"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:265
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>Replace existing autotags</b>: clear existing autotags and replace "
-"with the results of the scan.</p><p><b>Update autotags</b>: add new autotags "
-"found to the existing tags.</p>"
-msgstr ""
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:276
-#, kde-format
-msgid "ResNet152"
-msgstr ""
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:287
-#, fuzzy, kde-format
-#| msgctxt "@groupbox"
-#| msgid "Face Accuracy"
-msgid "Object Detection Accuracy: "
-msgstr "Näo täpsus"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:302
+#: core/utilities/maintenance/main/maintenancedlg.cpp:239
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Auto-tags Assignment"
 msgstr "Automaatne kohandamine"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:313
+#: core/utilities/maintenance/main/maintenancedlg.cpp:250
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Uurimismudel: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:318
+#: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Kõigi puhastamine ja uus uurimine"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:338
+#: core/utilities/maintenance/main/maintenancedlg.cpp:275
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Sünkroonimise suund: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:342
+#: core/utilities/maintenance/main/maintenancedlg.cpp:279
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Andmebaasist piltide metaandmetesse"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:343
+#: core/utilities/maintenance/main/maintenancedlg.cpp:280
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Piltide metaandmetest andmebaasi"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:346
+#: core/utilities/maintenance/main/maintenancedlg.cpp:283
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Üksikasjade kontrollimine metatandmete seadistuste paneelilt: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:355
+#: core/utilities/maintenance/main/maintenancedlg.cpp:292
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Metaandmete ja andmebaasi sünkroonimine"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:416
+#: core/utilities/maintenance/main/maintenancedlg.cpp:353
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Hoiatus"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:417
+#: core/utilities/maintenance/main/maintenancedlg.cpp:354
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
@@ -65799,7 +65758,7 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -65808,7 +65767,7 @@ msgstr ""
 "Kõik toimingud on tehtud.\n"
 "Kestus: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKami hooldus"
@@ -72869,6 +72828,17 @@ msgstr "Albumielemendid"
 #, kde-format
 msgid "Import Items"
 msgstr "Impordi elemendid"
+
+#, fuzzy
+#~| msgid "Metering mode:"
+#~ msgid "Auto-tagging scan mode: "
+#~ msgstr "Mõõterežiim:"
+
+#, fuzzy
+#~| msgctxt "@groupbox"
+#~| msgid "Face Accuracy"
+#~ msgid "Object Detection Accuracy: "
+#~ msgstr "Näo täpsus"
 
 #~ msgid "Applying face changes"
 #~ msgstr "Näomuudatuste rakendamine"

@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-20 01:59+0000\n"
+"POT-Creation-Date: 2025-01-21 01:52+0000\n"
 "PO-Revision-Date: 2025-01-17 14:57+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -860,7 +860,7 @@ msgstr "Opna í myndvinnslu..."
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:156
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
-#: core/showfoto/stackview/showfotostackviewlist.cpp:408
+#: core/showfoto/stackview/showfotostackviewlist.cpp:409
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open in File Manager"
@@ -2903,18 +2903,19 @@ msgstr "Landakort"
 msgid "Labels"
 msgstr "Merkingar"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:122
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:109
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:118
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Skanna andlit í myndasafninu"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:120
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
 msgstr "Veldu þetta til að leita að andlitum í völdum albúmum"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:167
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:169
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -2924,7 +2925,7 @@ msgstr ""
 "nota þennan eiginleika, ættirðu að nýta þér hjálparreitinn neðst á vinstra "
 "hliðarspjaldinu."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:213
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:223
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -2933,7 +2934,7 @@ msgstr ""
 "Hætt var við andlitakennsl, því það voru engin andlitamerki til að miða við. "
 "Bættu við nýjum auðkennismerkjum."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:233
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:243
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -9043,7 +9044,7 @@ msgstr "Nota litastýringu við prentun"
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:71
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:349
+#: core/utilities/maintenance/main/maintenancedlg.cpp:286
 #, kde-format
 msgid "Settings..."
 msgstr "Stillingar..."
@@ -10191,7 +10192,7 @@ msgstr ""
 "línurnar."
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:103
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:103
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:105
 #: core/dplugins/editor/transform/shear/sheartool.cpp:102
 #, kde-format
 msgid "New width:"
@@ -10201,10 +10202,10 @@ msgstr "Ný breidd:"
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:108
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:322
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:323
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:104
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:108
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:234
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:106
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:110
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:235
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:236
 #: core/dplugins/editor/transform/shear/sheartool.cpp:103
 #: core/dplugins/editor/transform/shear/sheartool.cpp:107
 #: core/dplugins/editor/transform/shear/sheartool.cpp:305
@@ -10217,7 +10218,7 @@ msgid " px"
 msgstr " px"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:107
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:107
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:109
 #: core/dplugins/editor/transform/shear/sheartool.cpp:106
 #, kde-format
 msgid "New height:"
@@ -10320,7 +10321,7 @@ msgctxt "@action"
 msgid "Free Rotation Auto Adjust"
 msgstr "Frjáls snúningur - Sjálfvirk stilling"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:88
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:90
 #, kde-format
 msgid ""
 "This is the perspective transformation operation preview. You can use the "
@@ -10329,42 +10330,42 @@ msgstr ""
 "Þetta er forskoðun á breytingar sjónarhorns. Þú getur notað músina við að "
 "draga til kassana í  hornunum og breyta þannig sjónarhorni myndarinnar."
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:114
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:116
 #, kde-format
 msgid "Angles (in degrees):"
 msgstr "Horn (í gráðum):"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:115
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:117
 #, kde-format
 msgid "  Top left:"
 msgstr "  Efst til vinstri:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:117
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:119
 #, kde-format
 msgid "  Top right:"
 msgstr "  Efst til hægri:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:119
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:121
 #, kde-format
 msgid "  Bottom left:"
 msgstr "  Neðst til vinstri:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:121
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:123
 #, kde-format
 msgid "  Bottom right:"
 msgstr "  Neðst til hægri:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:127
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:129
 #, kde-format
 msgid "Draw preview while moving"
 msgstr "Birta forskoðun á meðan færslu stendur"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:128
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:130
 #, kde-format
 msgid "Draw grid"
 msgstr "Teikna möskva"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:129
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:131
 #, kde-format
 msgid "Inverse transformation"
 msgstr "Snúa við umbreytingu"
@@ -11310,7 +11311,7 @@ msgstr "Tvö landakort - efst og neðst"
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
-#: core/utilities/searchwindow/searchutilities.cpp:637
+#: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
 msgid "OK"
 msgstr "Í lagi"
@@ -11423,8 +11424,8 @@ msgstr "Vista breytingar -"
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:175
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:393
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:401
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:370
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:740
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:373
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:741
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:429
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:438
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:476
@@ -17361,7 +17362,7 @@ msgstr "Búa til HTML-myndasafn..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:97
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:120
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:122
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:125
 #, kde-format
 msgid "Internal Error"
@@ -20528,32 +20529,32 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "Búa til myndskeiða-skyggnusýningu..."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:128
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:130
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr "Ræsi gerð myndskeiða-skyggnusýningar..."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:131
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:133
 #, kde-format
 msgid "%1 input images to process"
 msgstr "%1 inntaksmyndir til að vinna með"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:181
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "Myndskeiða-skyggnusýningu er ekki lokið"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:184
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:186
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr "Skoðaðu rakningu myndmerkiskóðunar hér fyrir neðan"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:191
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "Myndskeiða-skyggnusýningu er lokið."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:194
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:196
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "Opna myndastreymi í spilara..."
@@ -22222,9 +22223,9 @@ msgstr "Flytja út á &Box..."
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1198
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:467
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:719
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:870
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1042
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:718
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:865
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1033
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:754
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:777
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:820
@@ -22338,7 +22339,7 @@ msgstr "Box-útflutningur"
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:320
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:310
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:414
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:416
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:270
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:277
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:225
@@ -22372,7 +22373,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:379
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:381
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:410
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:385
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:386
 #, kde-format
 msgctxt "@title:window"
 msgid "Login Failed"
@@ -22448,14 +22449,14 @@ msgstr "Engin mynd valin. Veldu hvaða myndir ætti að senda."
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:245
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:370
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:382
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:386
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:387
 #, kde-format
 msgid "Authentication failed. Do you want to try again?"
 msgstr "Auðkenning mistókst. Viltu reyna aftur?"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:269
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:481
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:228
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:230
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:283
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:747
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:783
@@ -23984,13 +23985,13 @@ msgctxt "@item:inlistbox"
 msgid "Create new gallery"
 msgstr "Búa til nýtt myndasafn"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:95
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to ImageShack"
 msgstr "Flytja út á Imageshack"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:103
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:105
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:148
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:122
 #, kde-format
@@ -23998,33 +23999,33 @@ msgctxt "@action:button"
 msgid "Upload"
 msgstr "Senda inn"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:104
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:106
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
 msgstr "Hefja sendingu á Imageshack vefþjónustu"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:232
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:234
 #, kde-format
 msgid "Image Shack Export"
 msgstr "Image Shack útflutningur"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:261
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:263
 #, kde-format
 msgid "Authenticating..."
 msgstr "Auðkenni..."
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:319
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:321
 #, kde-format
 msgid "Login failed: %1\n"
 msgstr "Innskráning mistókst: %1\n"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:333
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:335
 #, kde-format
 msgid "Failed to get galleries list: %1\n"
 msgstr "Það tókst ekki að sækja listann yfir söfn: %1\n"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:415
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:417
 #, kde-format
 msgid ""
 "Failed to upload photo into ImageShack: %1\n"
@@ -25448,72 +25449,72 @@ msgctxt "@action"
 msgid "Export to &Piwigo..."
 msgstr "Flytja út á &Piwigo..."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:325
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:327
 #, kde-format
 msgid "Check if %1 already exists"
 msgstr "Athuga hvort %1 er þegar til staðar"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:495
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:497
 #, kde-format
 msgid "Piwigo URL probably incorrect"
 msgstr "Slóðin á Piwigo myndasafnið er líklegast ekki rétt"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:502
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:504
 #, kde-format
 msgid "Incorrect username or password specified"
 msgstr "Rangt notandanafn eða lykilorð"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:551
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:740
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:552
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:739
 #, kde-format
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
 msgstr "Sending mynda á Piwigo-útgáfu eldri en 2.4 er ekki lengur stutt"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:628
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:712
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:788
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:863
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:711
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:785
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:858
 #, kde-format
 msgid "Invalid response received from remote Piwigo"
 msgstr "Ógild svörun fékkst frá Piwigo myndasafnsþjóni"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:635
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:979
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:980
 #, kde-format
 msgid "Failed to list albums"
 msgstr "Mistókst að gera albúmalista"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:686
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:685
 #, kde-format
 msgid "Photo '%1' already exists."
 msgstr "Myndin '%1' er þegar til staðar."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:795
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:792
 #, kde-format
 msgid "Photo '%1' already exists in this album."
 msgstr "Myndin '%1' er þegar til staðar í þessu albúmi."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:886
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:881
 #, kde-format
 msgid "Error : Cannot open photo: %1"
 msgstr "Villa: get ekki opnað ljósmynd: %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:914
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:909
 #, kde-format
 msgid "Upload the chunk %1/%2 of %3"
 msgstr "Senda gagnaböggulinn (chunk) %1/%2 af %3"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:949
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:942
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
 msgstr "Aðvörun: Ekki er hægt að senda mynd í fullri stærð."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1000
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:993
 #, kde-format
 msgid "Upload the metadata of %1"
 msgstr "Senda lýsigögn fyrir %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1035
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1026
 #, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "Ógild svörun fékkst frá fjartengdum Piwigo myndasafnsþjóni (%1)"
@@ -25941,22 +25942,22 @@ msgstr "Flytja inn frá &SmugMug..."
 msgid "Logging in to SmugMug service..."
 msgstr "Skrái inn í SmugMug þjónustu..."
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:676
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:677
 #, kde-format
 msgid "Login failed"
 msgstr "Innskráning mistókst"
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:682
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:683
 #, kde-format
 msgid "Invalid user/nick/password"
 msgstr "Ógildur notandi/gælunafn/lykilorð"
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:688
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:689
 #, kde-format
 msgid "Invalid API key"
 msgstr "Ógildur API-lykill"
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:1083
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:1084
 #, kde-format
 msgid "Failed to list album template"
 msgstr "Mistókst að telja upp sniðmát fyrir albúm"
@@ -26249,8 +26250,8 @@ msgstr ""
 "%1\n"
 "Viltu halda áfram?"
 
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:403
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:408
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:404
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:409
 #, kde-format
 msgid ""
 "Twitter call failed:\n"
@@ -34256,62 +34257,62 @@ msgstr "Loka glugga"
 msgid "Cancel current operation"
 msgstr "Hætta við þessa aðgerð"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:72
+#: core/libs/dplugins/widgets/ditemslist.cpp:74
 #, kde-format
 msgctxt "@info"
 msgid "Add new images to the list"
 msgstr "Bæta nýjum myndum við á listann"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:73
+#: core/libs/dplugins/widgets/ditemslist.cpp:75
 #, kde-format
 msgctxt "@info"
 msgid "Remove selected images from the list"
 msgstr "Fjarlægja valda mynd af listanum"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:74
+#: core/libs/dplugins/widgets/ditemslist.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid "Move current selected image up in the list"
 msgstr "Færa valda mynd upp á listanum"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:75
+#: core/libs/dplugins/widgets/ditemslist.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid "Move current selected image down in the list"
 msgstr "Færa valda mynd niður á listanum"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:76
+#: core/libs/dplugins/widgets/ditemslist.cpp:78
 #, kde-format
 msgctxt "@info"
 msgid "Clear the list."
 msgstr "Hreinsa listann."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:77
+#: core/libs/dplugins/widgets/ditemslist.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid "Load a saved list."
 msgstr "Hlaða inn vistuðum lista."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:78
+#: core/libs/dplugins/widgets/ditemslist.cpp:80
 #, kde-format
 msgctxt "@info"
 msgid "Save the list."
 msgstr "Vista listann."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:554
+#: core/libs/dplugins/widgets/ditemslist.cpp:556
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "Veldu myndskráalista til að hlaða inn"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:555
-#: core/libs/dplugins/widgets/ditemslist.cpp:637
+#: core/libs/dplugins/widgets/ditemslist.cpp:557
+#: core/libs/dplugins/widgets/ditemslist.cpp:639
 #, kde-format
 msgctxt "@option"
 msgid "All Files (*)"
 msgstr "Allar skrár (*)"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:635
+#: core/libs/dplugins/widgets/ditemslist.cpp:637
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"
@@ -37278,18 +37279,6 @@ msgctxt "@label: no GPS coordinates"
 msgid "Undefined"
 msgstr "Óskilgreint"
 
-#: core/libs/properties/history/itempropertieshistorytab.cpp:85
-#: core/libs/widgets/history/filtershistorywidget.cpp:79
-#, kde-format
-msgid "Used filters"
-msgstr "Síur í notkun"
-
-#: core/libs/properties/history/itempropertieshistorytab.cpp:121
-#: core/libs/widgets/history/filtershistorywidget.cpp:116
-#, kde-format
-msgid "Remove filter"
-msgstr "Fjarlægja síu"
-
 #: core/libs/properties/history/itempropertiesversionstab.cpp:64
 #, kde-format
 msgctxt "@title"
@@ -39204,16 +39193,23 @@ msgid "Search in"
 msgstr "Leita í"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
-#: core/utilities/maintenance/main/maintenancedlg.cpp:236
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "<p><b>This tool automatically assigns tags to images by analyzing the "
+#| "image using a deep-learning neural network AI model.</b></p><p>The "
+#| "settings below determine the deep-learning AI model to use while parsing "
+#| "image contents to determine objects in the image. The AI neural network "
+#| "used in background will automatically generate tags describing the "
+#| "contents and store the results in the database.</p>"
 msgctxt "@label"
 msgid ""
 "<p><b>This tool automatically assigns tags to images by analyzing the image "
 "using a deep-learning neural network AI model.</b></p><p>The settings below "
-"determine the deep-learning AI model to use while parsing image contents to "
-"determine objects in the image. The AI neural network used in background "
-"will automatically generate tags describing the contents and store the "
-"results in the database.</p>"
+"configure the deep-learning AI model used for analyzing image contents to "
+"identify objects. The AI neural network will automatically generate "
+"descriptive tags for the image contents and store the results in the "
+"database.</p>"
 msgstr ""
 "<p><b>Þetta verkfæri gerir kleift að úthluta merkjum sjálfvirkt á myndir út "
 "frá greiningu á myndefninu með vélnáms-tauganeti (deep-learning neural "
@@ -39222,26 +39218,23 @@ msgstr ""
 "ljósmyndanna. Vitlíkiskerfið sem keyrir í bakgrunni mun útbúa sjálfvirkt röð "
 "merkja til að lýsa myndefninu og geyma niðurstöðurnar í gagnagrunni.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:102
 #, kde-format
 msgid "Auto-tagging mode: "
 msgstr "Hamur sjálfvirkrar úthlutunar merkja:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
-#: core/utilities/maintenance/main/maintenancedlg.cpp:250
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
 #, kde-format
 msgid "Scan all"
 msgstr "Skanna allt"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
-#: core/utilities/maintenance/main/maintenancedlg.cpp:251
-#: core/utilities/maintenance/main/maintenancedlg.cpp:319
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Skanna einungis óúthlutað"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
-#: core/utilities/maintenance/main/maintenancedlg.cpp:253
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39252,25 +39245,22 @@ msgstr ""
 "einungis óúthlutað</b>: skanna einungis þau atriði sem hafa engin óúthlutuð "
 "merki.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
-#: core/utilities/maintenance/main/maintenancedlg.cpp:257
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:114
 #, kde-format
 msgid "Auto-tagging tag mode: "
 msgstr "Merkingahamur sjálfvirkrar úthlutunar merkja:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#: core/utilities/maintenance/main/maintenancedlg.cpp:262
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
 #, kde-format
 msgid "Replace existing autotags"
 msgstr "Skipta út fyrirliggjandi sjálfvirkum merkjum"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
-#: core/utilities/maintenance/main/maintenancedlg.cpp:263
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgid "Update autotags"
 msgstr "Uppfæra sjálfvirk merki"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:122
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39283,31 +39273,27 @@ msgstr ""
 "</p><p><b>Uppfæra sjálfvirk merki</b>: bæta öllum nýjum sjálfvirkum merkjum "
 "sem finnast við fyrirliggjandi merki.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#: core/utilities/maintenance/main/maintenancedlg.cpp:269
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:126
 #, kde-format
 msgid "Selection model: "
 msgstr "Valhamur:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
-#: core/utilities/maintenance/main/maintenancedlg.cpp:274
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr "YOLOv11 Nano"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
-#: core/utilities/maintenance/main/maintenancedlg.cpp:275
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr "YOLOv11 XLarge"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, kde-format
 msgid "ResNet-152"
 msgstr "ResNet-152"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#: core/utilities/maintenance/main/maintenancedlg.cpp:278
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39335,13 +39321,12 @@ msgstr ""
 "ResNet-152 er þjálfað til að þekkja 1.000 mismunandi hluti út frá ImageNet-"
 "gagnasafninu.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:143
 #, kde-format
 msgid "Object detection accuracy: "
 msgstr "Nákvæmni greiningar hluta: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
-#: core/utilities/maintenance/main/maintenancedlg.cpp:292
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39353,7 +39338,7 @@ msgstr ""
 "borin kennsl á\n"
 "hluti, en um leið þekkjast færri hlutir.\n"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -39361,7 +39346,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Vinna á öllum kjörnum örgjörva"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39373,21 +39358,20 @@ msgstr ""
 "Þú getur valið um að nota alla örgjörvakjarna kerfisins, eða\n"
 "látið vinnsluna fara fram í bakgrunni á aðeins einum kjarna."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Stillingar"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
-#: core/utilities/maintenance/main/maintenancedlg.cpp:296
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Þýða merki yfir á:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
@@ -42134,6 +42118,16 @@ msgstr "Get ekki opnað myndina"
 msgid "Pan the image to a region"
 msgstr "Hliðra mynd að svæði"
 
+#: core/libs/widgets/history/filtershistorywidget.cpp:79
+#, kde-format
+msgid "Used filters"
+msgstr "Síur í notkun"
+
+#: core/libs/widgets/history/filtershistorywidget.cpp:116
+#, kde-format
+msgid "Remove filter"
+msgstr "Fjarlægja síu"
+
 #: core/libs/widgets/history/versionswidget.cpp:80
 #, kde-format
 msgid "Show available versions in a list"
@@ -42890,7 +42884,7 @@ msgid "Gowtham Ashok"
 msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:216
-#: core/utilities/maintenance/main/maintenancedlg.cpp:327
+#: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, kde-format
 msgid "Image Quality Sorter"
@@ -50683,85 +50677,85 @@ msgctxt "@title"
 msgid "Unnamed"
 msgstr "Ónefnt"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:88
+#: core/showfoto/stackview/showfotostackviewlist.cpp:89
 #, kde-format
 msgctxt "@title: item file name"
 msgid "Name"
 msgstr "Heiti"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:89
+#: core/showfoto/stackview/showfotostackviewlist.cpp:90
 #, kde-format
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "Stærð"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:90
+#: core/showfoto/stackview/showfotostackviewlist.cpp:91
 #, kde-format
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "Tegund"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:91
+#: core/showfoto/stackview/showfotostackviewlist.cpp:92
 #, kde-format
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "Dagsetning"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:343
+#: core/showfoto/stackview/showfotostackviewlist.cpp:344
 #, kde-format
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "Staflasýn"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:345
+#: core/showfoto/stackview/showfotostackviewlist.cpp:346
 #, kde-format
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "Stærð táknmynda"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:350
+#: core/showfoto/stackview/showfotostackviewlist.cpp:351
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr "Lítil (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:354
+#: core/showfoto/stackview/showfotostackviewlist.cpp:355
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "Meðal (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:358
+#: core/showfoto/stackview/showfotostackviewlist.cpp:359
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "Stór (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:362
+#: core/showfoto/stackview/showfotostackviewlist.cpp:363
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr "Risastórt (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:401
+#: core/showfoto/stackview/showfotostackviewlist.cpp:402
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr "Bæta við sem eftirlæti"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:415
+#: core/showfoto/stackview/showfotostackviewlist.cpp:416
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "Hreinsa öll atriði"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:423
+#: core/showfoto/stackview/showfotostackviewlist.cpp:424
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Remove Items"
 msgstr "Fjarlægja atriði"
 
-#: core/showfoto/stackview/showfotostackviewsidebar.cpp:212
+#: core/showfoto/stackview/showfotostackviewsidebar.cpp:213
 #, kde-format
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
@@ -60882,81 +60876,53 @@ msgstr "Þetta mun hreinsa út öll greind og merkt andlit."
 msgid "Detect and recognize Faces"
 msgstr "Finna og þekkja andlit"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:245
-#, kde-format
-msgid "Auto-tagging scan mode: "
-msgstr "Skönnunarhamur sjálfvirkrar úthlutunar merkja:"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:265
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>Replace existing autotags</b>: clear existing autotags and replace "
-"with the results of the scan.</p><p><b>Update autotags</b>: add new autotags "
-"found to the existing tags.</p>"
-msgstr ""
-"<p><b>Skipta út fyrirliggjandi sjálfvirkum merkjum</b>: hreinsa út "
-"fyrirliggjandi sjálfvirk merki og skipta þeim út fyrir niðurstöður skönnunar."
-"</p><p><b>Uppfæra sjálfvirk merki</b>: bæta nýjum sjálfvirkum merkjum sem "
-"finnast við fyrirliggjandi merki.</p>"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:276
-#, kde-format
-msgid "ResNet152"
-msgstr "ResNet152"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:287
-#, kde-format
-msgid "Object Detection Accuracy: "
-msgstr "Nákvæmni greiningar hluta"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:302
+#: core/utilities/maintenance/main/maintenancedlg.cpp:239
 #, kde-format
 msgid "Auto-tags Assignment"
 msgstr "Sjálfvirk úthlutun merkja"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:313
+#: core/utilities/maintenance/main/maintenancedlg.cpp:250
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Skönnunarhamur"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:318
+#: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Hreinsa allt og endurskanna"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:338
+#: core/utilities/maintenance/main/maintenancedlg.cpp:275
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Stefna samræmingar: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:342
+#: core/utilities/maintenance/main/maintenancedlg.cpp:279
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Úr gagnagrunni yfir í lýsigögn mynda"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:343
+#: core/utilities/maintenance/main/maintenancedlg.cpp:280
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Úr lýsigögnum mynda yfir í gagnagrunn"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:346
+#: core/utilities/maintenance/main/maintenancedlg.cpp:283
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Skoða nánar á spjaldi fyrir uppsetningu lýsigagna: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:355
+#: core/utilities/maintenance/main/maintenancedlg.cpp:292
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Samræma lýsigögn og gagnagrunn"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:416
+#: core/utilities/maintenance/main/maintenancedlg.cpp:353
 #, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Aðvörun"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:417
+#: core/utilities/maintenance/main/maintenancedlg.cpp:354
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
@@ -60968,7 +60934,7 @@ msgstr ""
 "verður að bera kennsl á andlit."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -60977,7 +60943,7 @@ msgstr ""
 "Öllum aðgerðum er lokið.\n"
 "Tímalengd: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam viðhald"
@@ -67758,6 +67724,26 @@ msgstr "Atriði í albúmi"
 #, kde-format
 msgid "Import Items"
 msgstr "Flytja inn atriði"
+
+#~ msgid "Auto-tagging scan mode: "
+#~ msgstr "Skönnunarhamur sjálfvirkrar úthlutunar merkja:"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "<p><b>Replace existing autotags</b>: clear existing autotags and replace "
+#~ "with the results of the scan.</p><p><b>Update autotags</b>: add new "
+#~ "autotags found to the existing tags.</p>"
+#~ msgstr ""
+#~ "<p><b>Skipta út fyrirliggjandi sjálfvirkum merkjum</b>: hreinsa út "
+#~ "fyrirliggjandi sjálfvirk merki og skipta þeim út fyrir niðurstöður "
+#~ "skönnunar.</p><p><b>Uppfæra sjálfvirk merki</b>: bæta nýjum sjálfvirkum "
+#~ "merkjum sem finnast við fyrirliggjandi merki.</p>"
+
+#~ msgid "ResNet152"
+#~ msgstr "ResNet152"
+
+#~ msgid "Object Detection Accuracy: "
+#~ msgstr "Nákvæmni greiningar hluta"
 
 #~ msgid "Applying face changes"
 #~ msgstr "Virkja breytingar á andlitaupplýsingum"

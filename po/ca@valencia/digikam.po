@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-20 01:59+0000\n"
-"PO-Revision-Date: 2025-01-15 10:41+0100\n"
+"POT-Creation-Date: 2025-01-21 01:52+0000\n"
+"PO-Revision-Date: 2025-01-19 13:33+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -845,7 +845,7 @@ msgstr "Obri…"
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:156
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
-#: core/showfoto/stackview/showfotostackviewlist.cpp:408
+#: core/showfoto/stackview/showfotostackviewlist.cpp:409
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open in File Manager"
@@ -2903,19 +2903,20 @@ msgstr "Mapa"
 msgid "Labels"
 msgstr "Rètols"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:122
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:109
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:118
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Explora la col·lecció buscant cares"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:120
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
 msgstr ""
 "Utilitzeu este botó per a explorar els àlbums seleccionats per a buscar cares"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:167
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:169
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -2925,7 +2926,7 @@ msgstr ""
 "vegada que utilitzeu esta característica, considereu utilitzar el quadro "
 "d'ajuda en el quadro lateral esquerre inferior."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:213
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:223
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -2934,7 +2935,7 @@ msgstr ""
 "S'ha interromput el reconeixement de les cares, perquè no hi ha identitats "
 "per a reconéixer. Per favor, afegiu-hi identitats noves."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:233
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:243
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -9166,7 +9167,7 @@ msgstr "Utilitza la gestió del color per a imprimir"
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:71
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:349
+#: core/utilities/maintenance/main/maintenancedlg.cpp:286
 #, kde-format
 msgid "Settings..."
 msgstr "Configuració…"
@@ -10335,7 +10336,7 @@ msgstr ""
 "botó esquerre del ratolí per a fixar la posició de la línia de ratlles."
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:103
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:103
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:105
 #: core/dplugins/editor/transform/shear/sheartool.cpp:102
 #, kde-format
 msgid "New width:"
@@ -10345,10 +10346,10 @@ msgstr "Amplària nova:"
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:108
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:322
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:323
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:104
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:108
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:234
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:106
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:110
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:235
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:236
 #: core/dplugins/editor/transform/shear/sheartool.cpp:103
 #: core/dplugins/editor/transform/shear/sheartool.cpp:107
 #: core/dplugins/editor/transform/shear/sheartool.cpp:305
@@ -10361,7 +10362,7 @@ msgid " px"
 msgstr " px"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:107
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:107
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:109
 #: core/dplugins/editor/transform/shear/sheartool.cpp:106
 #, kde-format
 msgid "New height:"
@@ -10465,7 +10466,7 @@ msgctxt "@action"
 msgid "Free Rotation Auto Adjust"
 msgstr "Ajust automàtic del gir lliure"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:88
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:90
 #, kde-format
 msgid ""
 "This is the perspective transformation operation preview. You can use the "
@@ -10475,42 +10476,42 @@ msgstr ""
 "Podeu utilitzar el ratolí per a arrossegar el cantó fins on s'ajustarà "
 "l'àrea de transformació de la perspectiva."
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:114
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:116
 #, kde-format
 msgid "Angles (in degrees):"
 msgstr "Angles (en graus):"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:115
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:117
 #, kde-format
 msgid "  Top left:"
 msgstr "  Dalt esquerra:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:117
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:119
 #, kde-format
 msgid "  Top right:"
 msgstr "  Dalt dreta:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:119
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:121
 #, kde-format
 msgid "  Bottom left:"
 msgstr "  Baix esquerra:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:121
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:123
 #, kde-format
 msgid "  Bottom right:"
 msgstr "  Baix dreta:"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:127
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:129
 #, kde-format
 msgid "Draw preview while moving"
 msgstr "Vista prèvia del dibuix en moure'l"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:128
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:130
 #, kde-format
 msgid "Draw grid"
 msgstr "Dibuixa una quadrícula"
 
-#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:129
+#: core/dplugins/editor/transform/perspective/perspectivetool.cpp:131
 #, kde-format
 msgid "Inverse transformation"
 msgstr "Transformació inversa"
@@ -11468,7 +11469,7 @@ msgstr "Dos mapes - superior i inferior"
 #: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
-#: core/utilities/searchwindow/searchutilities.cpp:637
+#: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
 msgid "OK"
 msgstr "D'acord"
@@ -11581,8 +11582,8 @@ msgstr "Es guarden els canvis -"
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:175
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:393
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:401
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:370
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:740
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:373
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:741
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:429
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:438
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:476
@@ -17575,7 +17576,7 @@ msgstr "Crea una galeria HTML…"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:97
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:120
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:122
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:125
 #, kde-format
 msgid "Internal Error"
@@ -20773,32 +20774,32 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "Crea un vídeo de presentació de diapositives…"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:128
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:130
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr "S'està començant a generar el vídeo de la presentació de diapositives…"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:131
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:133
 #, kde-format
 msgid "%1 input images to process"
 msgstr "%1 imatges d'entrada que s'han de processar"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:181
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "El vídeo de la presentació de diapositives no està complet"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:184
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:186
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr "Vegeu la traça de codificació de vídeo davall"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:191
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "El vídeo de la presentació de diapositives està complet."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:194
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:196
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "S'està obrint el flux de vídeo en el reproductor…"
@@ -22504,9 +22505,9 @@ msgstr "Exporta cap a &Box…"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1198
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:467
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:719
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:870
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1042
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:718
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:865
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1033
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:754
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:777
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:820
@@ -22626,7 +22627,7 @@ msgstr "Exporta cap a Box"
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:320
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:310
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:414
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:416
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:270
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:277
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:225
@@ -22661,7 +22662,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:379
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:381
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:410
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:385
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:386
 #, kde-format
 msgctxt "@title:window"
 msgid "Login Failed"
@@ -22746,14 +22747,14 @@ msgstr ""
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:245
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:370
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:382
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:386
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:387
 #, kde-format
 msgid "Authentication failed. Do you want to try again?"
 msgstr "No s'ha pogut fer l'autenticació. Ho voleu tornar a provar?"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:269
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:481
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:228
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:230
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:283
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:747
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:783
@@ -24304,13 +24305,13 @@ msgctxt "@item:inlistbox"
 msgid "Create new gallery"
 msgstr "Crea una galeria nova"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:95
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to ImageShack"
 msgstr "Exporteu cap a ImageShack"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:103
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:105
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:148
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:122
 #, kde-format
@@ -24318,33 +24319,33 @@ msgctxt "@action:button"
 msgid "Upload"
 msgstr "Puja"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:104
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:106
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
 msgstr "Comença la pujada al servei web ImageShack"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:232
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:234
 #, kde-format
 msgid "Image Shack Export"
 msgstr "Exporta cap a ImageShack"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:261
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:263
 #, kde-format
 msgid "Authenticating..."
 msgstr "S'està autenticant…"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:319
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:321
 #, kde-format
 msgid "Login failed: %1\n"
 msgstr "No s'ha pogut fer l'inici de la sessió: %1\n"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:333
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:335
 #, kde-format
 msgid "Failed to get galleries list: %1\n"
 msgstr "No s'ha pogut obtindre la llista de galeries: %1\n"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:415
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:417
 #, kde-format
 msgid ""
 "Failed to upload photo into ImageShack: %1\n"
@@ -25774,72 +25775,72 @@ msgctxt "@action"
 msgid "Export to &Piwigo..."
 msgstr "Exporta cap a &Piwigo…"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:325
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:327
 #, kde-format
 msgid "Check if %1 already exists"
 msgstr "Verifica si ja existix %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:495
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:497
 #, kde-format
 msgid "Piwigo URL probably incorrect"
 msgstr "L'URL de Piwigo probablement és incorrecte"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:502
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:504
 #, kde-format
 msgid "Incorrect username or password specified"
 msgstr "S'han indicat un nom d'usuari o contrasenya incorrectes"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:551
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:740
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:552
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:739
 #, kde-format
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
 msgstr "La pujada a Piwigo versió inferior a la 2.4 ja no es troba admesa"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:628
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:712
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:788
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:863
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:711
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:785
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:858
 #, kde-format
 msgid "Invalid response received from remote Piwigo"
 msgstr "S'ha rebut una resposta no vàlida de Piwigo remot"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:635
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:979
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:980
 #, kde-format
 msgid "Failed to list albums"
 msgstr "No s'han pogut llistar els àlbums"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:686
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:685
 #, kde-format
 msgid "Photo '%1' already exists."
 msgstr "La fotografia «%1» ja existix."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:795
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:792
 #, kde-format
 msgid "Photo '%1' already exists in this album."
 msgstr "La fotografia «%1» ja existix en este àlbum."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:886
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:881
 #, kde-format
 msgid "Error : Cannot open photo: %1"
 msgstr "S'ha produït un error: No s'ha pogut obrir la fotografia: %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:914
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:909
 #, kde-format
 msgid "Upload the chunk %1/%2 of %3"
 msgstr "Puja el fragment %1/%2 de %3"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:949
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:942
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
 msgstr "Avís: No s'ha pogut pujar la mida completa de la fotografia."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1000
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:993
 #, kde-format
 msgid "Upload the metadata of %1"
 msgstr "Puja les metadades de %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1035
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1026
 #, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "S'ha rebut una resposta no vàlida des de Piwigo remot (%1)"
@@ -26272,22 +26273,22 @@ msgstr "Importa des de &SmugMug…"
 msgid "Logging in to SmugMug service..."
 msgstr "S'està iniciant la sessió al servei de SmugMug…"
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:676
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:677
 #, kde-format
 msgid "Login failed"
 msgstr "No s'ha pogut fer l'inici de la sessió"
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:682
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:683
 #, kde-format
 msgid "Invalid user/nick/password"
 msgstr "Usuari/sobrenom/contrasenya no vàlid"
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:688
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:689
 #, kde-format
 msgid "Invalid API key"
 msgstr "Clau de l'API no vàlida"
 
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:1083
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:1084
 #, kde-format
 msgid "Failed to list album template"
 msgstr "No s'han pogut llistar les plantilles dels àlbums"
@@ -26585,8 +26586,8 @@ msgstr ""
 "Voleu continuar?"
 
 # skip-rule: kct-dropdown
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:403
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:408
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:404
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:409
 #, kde-format
 msgid ""
 "Twitter call failed:\n"
@@ -34735,62 +34736,62 @@ msgstr "Tanca la finestra"
 msgid "Cancel current operation"
 msgstr "Cancel·la l'operació actual"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:72
+#: core/libs/dplugins/widgets/ditemslist.cpp:74
 #, kde-format
 msgctxt "@info"
 msgid "Add new images to the list"
 msgstr "Afig imatges noves a la llista"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:73
+#: core/libs/dplugins/widgets/ditemslist.cpp:75
 #, kde-format
 msgctxt "@info"
 msgid "Remove selected images from the list"
 msgstr "Elimina les imatges seleccionades de la llista"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:74
+#: core/libs/dplugins/widgets/ditemslist.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid "Move current selected image up in the list"
 msgstr "Mou la imatge seleccionada cap amunt en la llista"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:75
+#: core/libs/dplugins/widgets/ditemslist.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid "Move current selected image down in the list"
 msgstr "Mou la imatge seleccionada cap avall en la llista"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:76
+#: core/libs/dplugins/widgets/ditemslist.cpp:78
 #, kde-format
 msgctxt "@info"
 msgid "Clear the list."
 msgstr "Neteja la llista."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:77
+#: core/libs/dplugins/widgets/ditemslist.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid "Load a saved list."
 msgstr "Carrega una llista guardada."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:78
+#: core/libs/dplugins/widgets/ditemslist.cpp:80
 #, kde-format
 msgctxt "@info"
 msgid "Save the list."
 msgstr "Guarda la llista."
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:554
+#: core/libs/dplugins/widgets/ditemslist.cpp:556
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "Seleccioneu la llista de fitxers d'imatge que es carregarà"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:555
-#: core/libs/dplugins/widgets/ditemslist.cpp:637
+#: core/libs/dplugins/widgets/ditemslist.cpp:557
+#: core/libs/dplugins/widgets/ditemslist.cpp:639
 #, kde-format
 msgctxt "@option"
 msgid "All Files (*)"
 msgstr "Tots els fitxers (*)"
 
-#: core/libs/dplugins/widgets/ditemslist.cpp:635
+#: core/libs/dplugins/widgets/ditemslist.cpp:637
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"
@@ -37776,18 +37777,6 @@ msgctxt "@label: no GPS coordinates"
 msgid "Undefined"
 msgstr "Sense definir"
 
-#: core/libs/properties/history/itempropertieshistorytab.cpp:85
-#: core/libs/widgets/history/filtershistorywidget.cpp:79
-#, kde-format
-msgid "Used filters"
-msgstr "Filtres utilitzats"
-
-#: core/libs/properties/history/itempropertieshistorytab.cpp:121
-#: core/libs/widgets/history/filtershistorywidget.cpp:116
-#, kde-format
-msgid "Remove filter"
-msgstr "Elimina el filtre"
-
 #: core/libs/properties/history/itempropertiesversionstab.cpp:64
 #, kde-format
 msgctxt "@title"
@@ -39719,16 +39708,23 @@ msgid "Search in"
 msgstr "Busca a"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
-#: core/utilities/maintenance/main/maintenancedlg.cpp:236
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "<p><b>This tool automatically assigns tags to images by analyzing the "
+#| "image using a deep-learning neural network AI model.</b></p><p>The "
+#| "settings below determine the deep-learning AI model to use while parsing "
+#| "image contents to determine objects in the image. The AI neural network "
+#| "used in background will automatically generate tags describing the "
+#| "contents and store the results in the database.</p>"
 msgctxt "@label"
 msgid ""
 "<p><b>This tool automatically assigns tags to images by analyzing the image "
 "using a deep-learning neural network AI model.</b></p><p>The settings below "
-"determine the deep-learning AI model to use while parsing image contents to "
-"determine objects in the image. The AI neural network used in background "
-"will automatically generate tags describing the contents and store the "
-"results in the database.</p>"
+"configure the deep-learning AI model used for analyzing image contents to "
+"identify objects. The AI neural network will automatically generate "
+"descriptive tags for the image contents and store the results in the "
+"database.</p>"
 msgstr ""
 "<p><b>Esta eina assigna automàticament etiquetes a les imatges mitjançant "
 "l'anàlisi del contingut mitjançant un model d'IA de xarxa neuronal "
@@ -39739,26 +39735,23 @@ msgstr ""
 "d'etiquetes que descriuen el contingut i emmagatzemaran els resultats en la "
 "base de dades.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:102
 #, kde-format
 msgid "Auto-tagging mode: "
 msgstr "Mode d'etiquetatge automàtic: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
-#: core/utilities/maintenance/main/maintenancedlg.cpp:250
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
 #, kde-format
 msgid "Scan all"
 msgstr "Explora-ho tot"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
-#: core/utilities/maintenance/main/maintenancedlg.cpp:251
-#: core/utilities/maintenance/main/maintenancedlg.cpp:319
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Explora només els no assignats"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
-#: core/utilities/maintenance/main/maintenancedlg.cpp:253
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39769,25 +39762,22 @@ msgstr ""
 "l'etiquetatge.</p><p><b>Explora només els no assignats</b>: només explora "
 "els elements sense etiquetes automàtiques assignades.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
-#: core/utilities/maintenance/main/maintenancedlg.cpp:257
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:114
 #, kde-format
 msgid "Auto-tagging tag mode: "
 msgstr "Mode d'etiquetatge d'etiquetes automàtiques: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#: core/utilities/maintenance/main/maintenancedlg.cpp:262
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
 #, kde-format
 msgid "Replace existing autotags"
 msgstr "Substituïx les etiquetes automàtiques existents"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
-#: core/utilities/maintenance/main/maintenancedlg.cpp:263
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgid "Update autotags"
 msgstr "Actualitza les etiquetes automàtiques"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:122
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39800,31 +39790,27 @@ msgstr ""
 "l'exploració.</p><p><b>Actualitza les etiquetes automàtiques</b>: afig "
 "qualsevol nova etiqueta automàtica trobada a les etiquetes existents.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#: core/utilities/maintenance/main/maintenancedlg.cpp:269
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:126
 #, kde-format
 msgid "Selection model: "
 msgstr "Model de selecció: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
-#: core/utilities/maintenance/main/maintenancedlg.cpp:274
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr "YOLOv11 Nano"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
-#: core/utilities/maintenance/main/maintenancedlg.cpp:275
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr "YOLOv11 XLarge"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, kde-format
 msgid "ResNet-152"
 msgstr "ResNet-152"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#: core/utilities/maintenance/main/maintenancedlg.cpp:278
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39853,13 +39839,12 @@ msgstr ""
 "ResNet-152 s'ha entrenat per a reconéixer 1.000 objectes diferents "
 "utilitzant el conjunt de dades ImageNet.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:143
 #, kde-format
 msgid "Object detection accuracy: "
 msgstr "Precisió de la detecció d'objectes: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
-#: core/utilities/maintenance/main/maintenancedlg.cpp:292
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39871,7 +39856,7 @@ msgstr ""
 "valor, amb més precisió\n"
 "es detectaran els objectes, però es reconeixeran menys objectes.\n"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -39879,7 +39864,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Treballa amb tots els nuclis dels processadors"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39892,21 +39877,20 @@ msgstr ""
 "Podeu triar si voleu emprar tots els nuclis del processador del sistema\n"
 "o treballar en segon pla, amb només un nucli."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Configuració"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
-#: core/utilities/maintenance/main/maintenancedlg.cpp:296
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Traduïx les etiquetes a:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
@@ -42686,6 +42670,16 @@ msgstr "No s'ha pogut carregar la imatge"
 msgid "Pan the image to a region"
 msgstr "Desplaça la imatge a una regió"
 
+#: core/libs/widgets/history/filtershistorywidget.cpp:79
+#, kde-format
+msgid "Used filters"
+msgstr "Filtres utilitzats"
+
+#: core/libs/widgets/history/filtershistorywidget.cpp:116
+#, kde-format
+msgid "Remove filter"
+msgstr "Elimina el filtre"
+
 #: core/libs/widgets/history/versionswidget.cpp:80
 #, kde-format
 msgid "Show available versions in a list"
@@ -43451,7 +43445,7 @@ msgid "Gowtham Ashok"
 msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:216
-#: core/utilities/maintenance/main/maintenancedlg.cpp:327
+#: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, kde-format
 msgid "Image Quality Sorter"
@@ -51310,85 +51304,85 @@ msgctxt "@title"
 msgid "Unnamed"
 msgstr "Sense nom"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:88
+#: core/showfoto/stackview/showfotostackviewlist.cpp:89
 #, kde-format
 msgctxt "@title: item file name"
 msgid "Name"
 msgstr "Nom"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:89
+#: core/showfoto/stackview/showfotostackviewlist.cpp:90
 #, kde-format
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "Mida"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:90
+#: core/showfoto/stackview/showfotostackviewlist.cpp:91
 #, kde-format
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "Tipus"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:91
+#: core/showfoto/stackview/showfotostackviewlist.cpp:92
 #, kde-format
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "Data"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:343
+#: core/showfoto/stackview/showfotostackviewlist.cpp:344
 #, kde-format
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "Vista de pila"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:345
+#: core/showfoto/stackview/showfotostackviewlist.cpp:346
 #, kde-format
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "Mida de les icones"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:350
+#: core/showfoto/stackview/showfotostackviewlist.cpp:351
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr "Xicoteta (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:354
+#: core/showfoto/stackview/showfotostackviewlist.cpp:355
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "Mitjana (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:358
+#: core/showfoto/stackview/showfotostackviewlist.cpp:359
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "Gran (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:362
+#: core/showfoto/stackview/showfotostackviewlist.cpp:363
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr "Enorme (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:401
+#: core/showfoto/stackview/showfotostackviewlist.cpp:402
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr "Afig com a preferida"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:415
+#: core/showfoto/stackview/showfotostackviewlist.cpp:416
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "Neteja tots els elements"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:423
+#: core/showfoto/stackview/showfotostackviewlist.cpp:424
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Remove Items"
 msgstr "Elimina els elements"
 
-#: core/showfoto/stackview/showfotostackviewsidebar.cpp:212
+#: core/showfoto/stackview/showfotostackviewsidebar.cpp:213
 #, kde-format
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
@@ -60886,16 +60880,16 @@ msgstr ""
 "<p>Per a personalitzar el format de la data es poden utilitzar estes "
 "expressions:</p><p><b>d</b>: El dia com a nombre sense zero inicial (1 a "
 "31)</p><p><b>dd</b>: El dia com a nombre amb un zero inicial (01 a 31)</"
-"p><p><b>ddd</b>: El nom abreviat de dia localitzat (p. ex., «Dl» a «Dg»)</"
-"p><p><b>dddd</b>: El nom llarg de dia localitzat (p. ex., «Dilluns» a "
+"p><p><b>ddd</b>: El nom abreviat de dia traduït (p. ex., «Dl» a «Dg»)</"
+"p><p><b>dddd</b>: El nom llarg de dia traduït (p. ex., «Dilluns» a "
 "«Diumenge»)</p><p><b>M</b>: El mes com a nombre sense zero inicial (1 a 12)</"
 "p><p><b>MM</b>: El mes com a nombre amb zero inicial (01 a 12)</p><p><b>MMM</"
-"b>: El nom abreviat de mes localitzat (p. ex., «Gen» a «Des»)</p><p><b>MMMM</"
-"b>: El nom llarg de mes localitzat (p. ex., «Gener» a «Desembre»)</"
-"p><p><b>yy</b>: L'any com a nombre de 2 dígits (p. ex., 00 a 99)</"
-"p><p><b>yyyy</b>: L'any com a nombre de 4 dígits (p. ex., 2012)</p><p>Tots "
-"els altres caràcters d'entrada es tractaran com a text. Qualsevol seqüència "
-"de caràcters delimitada per cometes simples es tractaran com a text i no "
+"b>: El nom abreviat de mes traduït (p. ex., «Gen» a «Des»)</p><p><b>MMMM</"
+"b>: El nom llarg de mes traduït (p. ex., «Gener» a «Desembre»)</p><p><b>yy</"
+"b>: L'any com a nombre de 2 dígits (p. ex., 00 a 99)</p><p><b>yyyy</b>: "
+"L'any com a nombre de 4 dígits (p. ex., 2012)</p><p>Tots els altres "
+"caràcters d'entrada es tractaran com a text. Qualsevol seqüència de "
+"caràcters delimitada per cometes simples es tractaran com a text i no "
 "s'utilitzaran com una expressió. Exemples, si la data és 20 de juliol de "
 "1969:</p><p><b>dd.MM.yyyy</b>: 20.07.1969</p><p><b>ddd MMMM d yy</b>: Dg "
 "Juliol 20 69</p><p><b>'Fotografia presa' dddd</b>: Fotografia presa "
@@ -61591,81 +61585,53 @@ msgstr "Netejarà totes les cares detectades i etiquetades."
 msgid "Detect and recognize Faces"
 msgstr "Detecta i reconeix les cares"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:245
-#, kde-format
-msgid "Auto-tagging scan mode: "
-msgstr "Mode d'exploració de l'etiquetatge automàtic: "
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:265
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>Replace existing autotags</b>: clear existing autotags and replace "
-"with the results of the scan.</p><p><b>Update autotags</b>: add new autotags "
-"found to the existing tags.</p>"
-msgstr ""
-"<p><b>Substituïx les etiquetes automàtiques existents</b>: neteja les "
-"etiquetes automàtiques existents i les substituïx pels resultats de "
-"l'exploració.</p><p><b>Actualitza les etiquetes automàtiques</b>: afig les "
-"noves etiquetes automàtiques trobades a les etiquetes existents.</p>"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:276
-#, kde-format
-msgid "ResNet152"
-msgstr "ResNet152"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:287
-#, kde-format
-msgid "Object Detection Accuracy: "
-msgstr "Precisió de la detecció d'objectes: "
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:302
+#: core/utilities/maintenance/main/maintenancedlg.cpp:239
 #, kde-format
 msgid "Auto-tags Assignment"
 msgstr "Assignació automàtica d'etiquetes"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:313
+#: core/utilities/maintenance/main/maintenancedlg.cpp:250
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Mode d'exploració: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:318
+#: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Neteja-ho tot i torna a explorar"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:338
+#: core/utilities/maintenance/main/maintenancedlg.cpp:275
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Direcció de la sincronització: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:342
+#: core/utilities/maintenance/main/maintenancedlg.cpp:279
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Des de la base de dades a les metadades de la imatge"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:343
+#: core/utilities/maintenance/main/maintenancedlg.cpp:280
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Des de les metadades de la imatge a la base de dades"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:346
+#: core/utilities/maintenance/main/maintenancedlg.cpp:283
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Per a més detalls reviseu el quadro de configuració de les metadades: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:355
+#: core/utilities/maintenance/main/maintenancedlg.cpp:292
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Sincronitza les metadades i la base de dades"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:416
+#: core/utilities/maintenance/main/maintenancedlg.cpp:353
 #, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Avís"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:417
+#: core/utilities/maintenance/main/maintenancedlg.cpp:354
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
@@ -61677,7 +61643,7 @@ msgstr ""
 "cares desconegudes de nou abans que es puga reconéixer cap cara."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -61686,7 +61652,7 @@ msgstr ""
 "Han finalitzat totes les operacions.\n"
 "Duració: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Manteniment de digiKam"
@@ -68593,34 +68559,22 @@ msgstr "Elements d'àlbum"
 msgid "Import Items"
 msgstr "Importa els elements"
 
-#~ msgid "Applying face changes"
-#~ msgstr "S'estan aplicant els canvis de cares"
+#~ msgid "Auto-tagging scan mode: "
+#~ msgstr "Mode d'exploració de l'etiquetatge automàtic: "
 
-#~ msgid "Auto-tags for: %1\n"
-#~ msgstr "Etiquetatge automàtic per a: %1\n"
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "<p><b>Replace existing autotags</b>: clear existing autotags and replace "
+#~ "with the results of the scan.</p><p><b>Update autotags</b>: add new "
+#~ "autotags found to the existing tags.</p>"
+#~ msgstr ""
+#~ "<p><b>Substituïx les etiquetes automàtiques existents</b>: neteja les "
+#~ "etiquetes automàtiques existents i les substituïx pels resultats de "
+#~ "l'exploració.</p><p><b>Actualitza les etiquetes automàtiques</b>: afig "
+#~ "les noves etiquetes automàtiques trobades a les etiquetes existents.</p>"
 
-#~ msgid "Keywords: %1"
-#~ msgstr "Paraules clau: %1"
+#~ msgid "ResNet152"
+#~ msgstr "ResNet152"
 
-#~ msgid "Items scanned for auto-tags: %1"
-#~ msgstr "Elements explorats per a l'etiquetatge automàtic: %1"
-
-#~ msgid "Item scanned for auto-tags: %1"
-#~ msgstr "Element explorat per a l'etiquetatge automàtic: %1"
-
-#~ msgid "Faces processed: %1"
-#~ msgstr "Cares processades: %1"
-
-#~ msgid "Face processed: %1"
-#~ msgstr "Cara processada: %1"
-
-#~ msgid "Scanned for faces: %1\n"
-#~ msgstr "Cares explorades: %1\n"
-
-#~ msgid "No face"
-#~ msgstr "Cap cara"
-
-#~ msgid "1 face"
-#~ msgid_plural "%1 faces"
-#~ msgstr[0] "1 cara"
-#~ msgstr[1] "%1 cares"
+#~ msgid "Object Detection Accuracy: "
+#~ msgstr "Precisió de la detecció d'objectes: "
