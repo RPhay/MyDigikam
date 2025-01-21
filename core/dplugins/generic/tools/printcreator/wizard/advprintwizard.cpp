@@ -369,10 +369,13 @@ bool AdvPrintWizard::eventFilter(QObject* o, QEvent* e)
         QKeyEvent* const k = dynamic_cast<QKeyEvent*>(e);
 
         if (
-            (k->key() == Qt::Key_PageUp)   ||
-            (k->key() == Qt::Key_PageDown) ||
-            (k->key() == Qt::Key_Up)       ||
-            (k->key() == Qt::Key_Down)
+            k &&
+            (
+             (k->key() == Qt::Key_PageUp)   ||
+             (k->key() == Qt::Key_PageDown) ||
+             (k->key() == Qt::Key_Up)       ||
+             (k->key() == Qt::Key_Down)
+            )
            )
         {
             if (currentPage() == d->cropPage)

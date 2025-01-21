@@ -87,7 +87,7 @@ QList<DPluginAuthor> PrintCreatorPlugin::authors() const
                              i18n("Contributor"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2024"),
+                             QString::fromUtf8("(C) 2004-2025"),
                              i18n("Developer and Maintainer"))
             ;
 }

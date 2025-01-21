@@ -340,9 +340,11 @@ bool MetadataEditDialog::eventFilter(QObject*, QEvent* e)
         QKeyEvent* const k = dynamic_cast<QKeyEvent*>(e);
 
         if      (
-                 k                                       &&
-                 (k->modifiers() == Qt::ControlModifier) &&
-                 ((k->key() == Qt::Key_Enter) || (k->key() == Qt::Key_Return))
+                 k &&
+                 (
+                  (k->modifiers() == Qt::ControlModifier) &&
+                  ((k->key() == Qt::Key_Enter) || (k->key() == Qt::Key_Return))
+                 )
                 )
         {
             slotApply();
@@ -355,9 +357,11 @@ bool MetadataEditDialog::eventFilter(QObject*, QEvent* e)
             return true;
         }
         else if (
-                 k                                     &&
-                 (k->modifiers() == Qt::ShiftModifier) &&
-                 ((k->key() == Qt::Key_Enter) || (k->key() == Qt::Key_Return))
+                 k &&
+                 (
+                  (k->modifiers() == Qt::ShiftModifier) &&
+                  ((k->key() == Qt::Key_Enter) || (k->key() == Qt::Key_Return))
+                 )
                 )
         {
             slotApply();
