@@ -168,7 +168,7 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     QString libtiffver = QLatin1String(TIFFLIB_VERSION_STR);
     libtiffver.replace(QLatin1Char('\n'), QLatin1Char(' '));
     soft.append(QString::fromLatin1(" ( %1 )").arg(libtiffver));
-    TIFFSetField(tif, TIFFTAG_SOFTWARE, (const char*)soft.toLatin1().constData());
+    TIFFSetField(tif, TIFFTAG_SOFTWARE, const_cast<const char*>(soft.toLatin1().constData()));
 
     // NOTE: All others Exif tags will be written by Exiv2 (<= 0.18)
 
