@@ -397,11 +397,11 @@ bool DDateEdit::eventFilter(QObject* object, QEvent* event)
 
             int step = 0;
 
-            if      (keyEvent->key() == Qt::Key_Up)
+            if      (keyEvent && (keyEvent->key() == Qt::Key_Up))
             {
                 step = 1;
             }
-            else if (keyEvent->key() == Qt::Key_Down)
+            else if (keyEvent && (keyEvent->key() == Qt::Key_Down))
             {
                 step = -1;
             }
