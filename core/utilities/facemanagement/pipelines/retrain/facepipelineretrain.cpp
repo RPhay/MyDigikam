@@ -22,6 +22,10 @@
 #include <QElapsedTimer>
 #include <QRectF>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -168,14 +172,16 @@ bool FacePipelineRetrain::classifier()
 
 bool FacePipelineRetrain::writer()
 {
-    // All threads start with the same basic functions
-
-    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
-    stageStart(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None, thisQueue, nextQueue);
+    MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None);
     FacePipelinePackageBase* package = nullptr;
-    QElapsedTimer timer;
 
-    //--------------------------------------------------------------------------------
+    /* =========================================================================================
+     * Pipeline stage specific initialization code
+     *
+     * Use the block from here to MLPIPELINE_LOOP_START to initialize the stage.
+     * The code in this block is run once per stage initialization. The number of instances
+     * is at least 1. More instances are created by addMoreWorkers if needed.
+     */
 
     FaceUtils utils;
     IdentityProvider* const idProvider = IdentityProvider::instance();
@@ -185,25 +191,17 @@ bool FacePipelineRetrain::writer()
 
     idProvider->clearAllTraining();
 
-    while (!cancelled)
+    MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
+    package = static_cast<FacePipelinePackageBase*>(mlpackage);
+
+    /* =========================================================================================
+     * Start pipeline stage specific loop
+     *
+     * All code from here to MLPIPELINE_LOOP_END is in a try/catch block and loop.
+     * This loop is run once per image.
+     */
+
     {
-        package = nullptr;
-
-        try
-        {
-            package = static_cast<FacePipelinePackageBase*>(dequeue(thisQueue));
-
-            if (queueEndSignal() == package)
-            {
-                // end of queue signal
-
-                break;
-            }
-
-            timer.start();
-
-            //////////////////////////////////////////////////////////////////////////////////////////////
-            // start pipeline stage specific code
 
             QString displayName;
             if (0 != package->features.rows)
@@ -248,35 +246,25 @@ bool FacePipelineRetrain::writer()
             // delete the package
 
             delete package;
-        }
-
-        catch (const std::exception& e)
-        {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRetrain::writer(): unknown error. Restarting...";
-            std::cerr << e.what() << '\n';
-        }
-
-        catch (...)
-        {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRetrain::writer(): unknown error. Restarting...";
-
-            if (package)
-            {
-                delete package;
-            }
-        }
     }
+
+    /* =========================================================================================
+     * End pipeline stage specific loop
+     */
+
+    MLPIPELINE_LOOP_END(MLPipelineStage::Writer, "FacePipelineRetrain::writer");
+
+    /* =========================================================================================
+     * Pipeline stage specific cleanup
+     *
+     * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
+     */
 
     // retrain the classifier after all results have been processed
 
     FaceClassifier::instance()->retrain();
 
-    //--------------------------------------------------------------------------------
-    // all threads end with the same basic functions
-
-    stageEnd(MLPipelineStage::Writer, MLPipelineStage::None);
-
-    return true;
+    MLPIPELINE_STAGE_END(MLPipelineStage::Writer, MLPipelineStage::None);
 }
 
 void FacePipelineRetrain::addMoreWorkers()
