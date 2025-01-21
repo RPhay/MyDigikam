@@ -26,25 +26,27 @@ class DIGIKAM_GUI_EXPORT FaceClassifierBase : public MLClassifierFoundation
 {
 public:
 
-    FaceClassifierBase()                                        = default;
-    ~FaceClassifierBase()                                       = default;
+    FaceClassifierBase()                                                       = default;
+    ~FaceClassifierBase()                                             override = default;
 
     QList<int> predictMulti(const QList<cv::Mat>& targets)      const override
     {
         Q_UNUSED(targets);
+
         return QList<int>();
     }
 
     QList<int> predictMulti(const QList<cv::UMat>& targets)     const override
     {
         Q_UNUSED(targets);
+
         return QList<int>();
     }
 
 private:
 
     // Disable
-    FaceClassifierBase(const FaceClassifierBase&)               = delete;
+    FaceClassifierBase(const FaceClassifierBase&)                              = delete;
 };
 
 } // namespace Digikam
