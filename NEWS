@@ -26,7 +26,9 @@ FaceEngine:      Complete rewrite of the Face Classifier and Face Pipeline implm
                  8.5.0 used a custom made K Nearest Neighbor (KNN) classifier. In 8.6.0 we’re using an ensemble approach
                  using cross validating KNN and SVM classifiers from OpenCV with a single custom distance check.
                  It’s faster and more accurate.
-                 In addition, we added a minimum size check and a Fast Fourier Transform filter to stop small and blurry faces from being used for training the recognition model.
+                 In addition, we added a Face Image Quality Assessment (FIQA) which perform a minimum size check and
+                 a Fast Fourier Transform filter to stop small, blurry, and noisy faces from being used for training
+                 the recognition model.
                  The only thing we’re really reusing from 8.5.0 are the YuNet and SFace models themselves.
                  Removed old SSD and YOLOv3 DNN models.
 
