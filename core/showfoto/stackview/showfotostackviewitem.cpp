@@ -70,7 +70,6 @@ void ShowfotoStackViewItem::setInfo(const ShowfotoItemInfo& info)
         setText(ShowfotoStackViewList::FileType, QMimeDatabase().mimeTypeForFile(fileInfo).comment());
     }
 
-    QString localeFileSize = QLocale().toString(info.size);
     str                    = ItemPropertiesTab::humanReadableBytesCount(m_info.size);
     setText(ShowfotoStackViewList::FileSize, str);
     setData(ShowfotoStackViewList::FileSize, Qt::UserRole, info.size);

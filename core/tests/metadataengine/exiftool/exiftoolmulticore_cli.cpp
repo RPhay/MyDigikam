@@ -86,6 +86,7 @@ bool s_exifToolParseThreaded(const QString& file)
                                   it.key().section(QLatin1Char('.'), -1);
         QString tagType         = it.value()[1].toString();
         QString data            = it.value()[0].toString();
+        Q_UNUSED(tagType);
 
         if (data.size() > -section2)
         {

@@ -65,6 +65,8 @@ public:
 
     Private() = default;
 
+public:
+
     QString          tmpDir;
     QString          tmpPath;
     QString          login;
@@ -273,8 +275,6 @@ void MediaWikiWindow::slotStartTransfer()
 
     for (int i = 0 ; i < urls.size() ; ++i)
     {
-        QString url;
-
         if (d->widget->resize() || d->widget->removeMeta() || d->widget->removeGeo())
         {
             prepareImageForUpload(urls.at(i).toLocalFile());

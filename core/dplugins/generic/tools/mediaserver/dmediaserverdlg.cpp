@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                dirty           = false;
     DMediaServerMngr*   mngr            = DMediaServerMngr::instance();
     QPushButton*        srvButton       = nullptr;
@@ -144,7 +146,6 @@ DMediaServerDlg::DMediaServerDlg(QObject* const /*parent*/,
     explanation->setOpenExternalLinks(true);
     explanation->setWordWrap(true);
     explanation->setFrameStyle(QFrame::Box | QFrame::Plain);
-    QString txt;
 
     explanation->setText(i18nc("@info",
                                "The media server allows to share items through the local network "

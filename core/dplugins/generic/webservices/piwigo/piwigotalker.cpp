@@ -557,7 +557,6 @@ void PiwigoTalker::parseResponseGetVersion(const QByteArray& data)
 
 void PiwigoTalker::parseResponseListAlbums(const QByteArray& data)
 {
-    QString str        = QString::fromUtf8(data);
     QXmlStreamReader ts(data);
     bool foundResponse = false;
     bool success       = false;
@@ -646,7 +645,6 @@ void PiwigoTalker::parseResponseListAlbums(const QByteArray& data)
 
 void PiwigoTalker::parseResponseDoesPhotoExist(const QByteArray& data)
 {
-    QString str        = QString::fromUtf8(data);
     QXmlStreamReader ts(data);
     bool foundResponse = false;
     bool success       = false;

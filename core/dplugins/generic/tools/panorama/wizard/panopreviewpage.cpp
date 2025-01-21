@@ -54,6 +54,8 @@ public:
     {
     }
 
+public:
+
     QLabel*                title            = nullptr;
 
     DPreviewManager*       previewWidget    = nullptr;
@@ -320,8 +322,6 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
 {
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "SlotPanoAction (preview)";
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "\tstarting, success, canceled, action: " << ad.starting << ad.success << d->canceled << ad.action;
-
-    QString      text;
 
     QMutexLocker lock(&d->previewBusyMutex);
 

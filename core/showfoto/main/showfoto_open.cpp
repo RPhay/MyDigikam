@@ -138,8 +138,7 @@ void Showfoto::openFolder(const QUrl& url)
     // Parse image IO mime types registration to get files filter pattern.
 
     QString filter;
-    QStringList mimeTypes = supportedImageMimeTypes(QIODevice::ReadOnly, filter);
-    QString patterns      = filter.toLower();
+    QString patterns       = filter.toLower();
     patterns.append(QLatin1Char(' '));
     patterns.append(filter.toUpper());
 

@@ -129,8 +129,6 @@ QList<to> mapList(const QList<from>& l, const QMap<from,to>& map)
 
 void DImgHistoryGraphTest::testEditing()
 {
-    QDir imageDir(imagePath());
-
     /*
     orig
         1

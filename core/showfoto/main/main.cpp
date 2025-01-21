@@ -226,6 +226,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     KConfigGroup group        = config->group(QLatin1String("ImageViewer Settings"));
     QString iconTheme         = group.readEntry(QLatin1String("Icon Theme"), QString());
     QString colorTheme        = group.readEntry(QLatin1String("Theme"), QString::fromLatin1("Standard"));
+    Q_UNUSED(colorTheme);
 
     // See bug #438701
 

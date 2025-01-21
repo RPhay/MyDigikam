@@ -81,6 +81,7 @@ int main(int argc, char** argv)
         QString tagNameExifTool = it.key();
         QString tagType         = it.value()[1].toString();
         QString data            = it.value()[0].toString();
+        Q_UNUSED(tagType);
 
         if (data.size() > -section2)
         {

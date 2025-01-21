@@ -565,7 +565,6 @@ void ShowfotoStackViewFavoriteItemDlg::slotUpdateMetadata()
             QFileInfo inf(lvItem->url().toLocalFile());
             ShowfotoItemInfo iteminf = ShowfotoItemInfo::itemInfoFromFile(inf);
 
-            QString localeFileSize   = QLocale().toString(iteminf.size);
             QString str              = ItemPropertiesTab::humanReadableBytesCount(iteminf.size);
             lvItem->setText(DItemsListView::User1, str);
             lvItem->setData(DItemsListView::User1, Qt::UserRole, iteminf.size);

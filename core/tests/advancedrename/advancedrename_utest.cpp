@@ -1154,8 +1154,6 @@ void AdvancedRenameTest::testRangeModifier_data()
     QTest::addColumn<QString>("parseString");
     QTest::addColumn<QString>("result");
 
-    QDateTime curdate = QDateTime::currentDateTime();
-
     QTest::newRow("[file]{range:1}")
             << "[file]{range:1}"
             << "a.jpg";
@@ -1209,8 +1207,6 @@ void AdvancedRenameTest::testDefaultValueModifier_data()
 {
     QTest::addColumn<QString>("parseString");
     QTest::addColumn<QString>("result");
-
-    QDateTime curdate = QDateTime::currentDateTime();
 
     QTest::newRow("[meta:Iptc.Application2.Keywords]_[file]")
             << "[meta:Iptc.Application2.Keywords]{default:\"Unknown\"}_[file]"

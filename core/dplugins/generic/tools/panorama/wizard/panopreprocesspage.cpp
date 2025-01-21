@@ -58,6 +58,8 @@ public:
 
     Private() = default;
 
+public:
+
     int             progressCount           = 0;
     QLabel*         progressLabel           = nullptr;
     QTimer*         progressTimer           = nullptr;
@@ -252,7 +254,6 @@ void PanoPreProcessPage::slotPanoAction(const DigikamGenericPanoramaPlugin::Pano
 {
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "SlotPanoAction (preprocessing)";
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "starting, success, canceled, action: " << ad.starting << ad.success << d->canceled << ad.action;
-    QString text;
 
     QMutexLocker lock(&d->progressMutex);
 

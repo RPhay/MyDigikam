@@ -34,7 +34,6 @@ int main(int argc, char** argv)
 
     ExifToolParser* const parser = new ExifToolParser(qApp);
     ExifToolParser::ExifToolData parsed;
-    QStringList lst;
 
     if (parser->tagsDatabase())
     {

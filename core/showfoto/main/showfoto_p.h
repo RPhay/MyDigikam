@@ -121,6 +121,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                              validIccPath              = true;
 
     int                               itemsNb                   = 0;
