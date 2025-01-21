@@ -546,7 +546,6 @@ bool AutotagsPipelineObject::writer()
 
                         // create set of existing auto-tags
 
-                        displayTags << tagsCache->tagName(tid);
                         newIds << tid;
                     }
                 }
@@ -642,10 +641,10 @@ bool AutotagsPipelineObject::writer()
 
         if (!displayTags.isEmpty())
         {
-            displayName += displayTags.join(QLatin1String(", "));
+            displayName += i18n("Found: ") + displayTags.join(QLatin1String(", "));
 
             // TODO: remove debug output
-            
+
             if (displayTags.size() > 6)
             {
                 qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::writer: adding " << displayTags.size() << " tags to the image.";
