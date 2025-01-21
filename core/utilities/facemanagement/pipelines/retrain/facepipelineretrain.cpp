@@ -202,50 +202,49 @@ bool FacePipelineRetrain::writer()
      */
 
     {
+        QString displayName;
+        if (0 != package->features.rows)
+        {
+            Identity identity = utils.identityForTag(package->face.tagId());
+            displayName = identity.attribute(QStringLiteral("name"));
 
-            QString displayName;
-            if (0 != package->features.rows)
+            if (package->useForTraining)
             {
-                Identity identity = utils.identityForTag(package->face.tagId());
-                displayName = identity.attribute(QStringLiteral("name"));
-
-                if (package->useForTraining)
-                {
-                    idProvider->addTraining(identity, package->face.hash(), package->features);
-                }
-                else
-                {
-                    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): not using for training: " << package->info.filePath();
-                }
+                idProvider->addTraining(identity, package->face.hash(), package->features);
             }
             else
             {
-                qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): bad mat";
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): not using for training: " << package->info.filePath();
             }
+        }
+        else
+        {
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): bad mat";
+        }
 
-            QString albumName;
+        QString albumName;
 
-            for (auto albumInfo : albumRoots)
+        for (auto albumInfo : albumRoots)
+        {
+            if (package->info.albumRootId() == albumInfo.id)
             {
-                if (package->info.albumRootId() == albumInfo.id)
-                {
-                    albumName = albumInfo.label;
-                    break;
-                }
+                albumName = albumInfo.label;
+                break;
             }
+        }
 
-            // send a notification that the image was processed
+        // send a notification that the image was processed
 
-            notify(MLPipelineNotification::notifyProcessed,
-                   package->info.name(),
-                   albumName + package->info.relativePath(),
-                   displayName,
-                   (displayName.isEmpty() ? 0 : 1),
-                   package->thumbnail);
+        notify(MLPipelineNotification::notifyProcessed,
+                package->info.name(),
+                albumName + package->info.relativePath(),
+                displayName,
+                (displayName.isEmpty() ? 0 : 1),
+                package->thumbnail);
 
-            // delete the package
+        // delete the package
 
-            delete package;
+        delete package;
     }
 
     /* =========================================================================================
