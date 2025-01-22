@@ -202,6 +202,7 @@ bool FacePipelineEdit::start()
 bool FacePipelineEdit::loader()
 {
     return commonFaceThumbnailLoader(QStringLiteral("FacePipelineEdit"),
+                                     QThread::NormalPriority,
                                      MLPipelineStage::Loader,
                                      MLPipelineStage::Extractor);
 }
@@ -209,6 +210,7 @@ bool FacePipelineEdit::loader()
 bool FacePipelineEdit::extractor()
 {
     return commonFaceThumbnailExtractor(QStringLiteral("FacePipelineEdit"),
+                                        QThread::NormalPriority,
                                         MLPipelineStage::Extractor,
                                         MLPipelineStage::Writer,
                                         true);
@@ -216,7 +218,7 @@ bool FacePipelineEdit::extractor()
 
 bool FacePipelineEdit::writer()
 {
-    MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None);
+    MLPIPELINE_STAGE_START(QThread::NormalPriority, MLPipelineStage::Writer, MLPipelineStage::None);
     FacePipelinePackageBase* package = nullptr;
 
     /* =========================================================================================

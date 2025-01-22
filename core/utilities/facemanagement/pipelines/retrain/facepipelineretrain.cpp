@@ -154,6 +154,7 @@ bool FacePipelineRetrain::finder()
 bool FacePipelineRetrain::loader()
 {
     return commonFaceThumbnailLoader(QStringLiteral("FacePipelineRetrain"),
+                                     QThread::LowPriority,
                                      MLPipelineStage::Loader,
                                      MLPipelineStage::Extractor);
 }
@@ -161,6 +162,7 @@ bool FacePipelineRetrain::loader()
 bool FacePipelineRetrain::extractor()
 {
     return commonFaceThumbnailExtractor(QStringLiteral("FacePipelineRetrain"),
+                                        QThread::LowPriority,
                                         MLPipelineStage::Extractor,
                                         MLPipelineStage::Writer,
                                         true);

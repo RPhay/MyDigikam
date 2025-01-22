@@ -172,6 +172,7 @@ bool FacePipelineRecognize::finder()
 bool FacePipelineRecognize::loader()
 {
     return commonFaceThumbnailLoader(QStringLiteral("FacePipelineRecognize"),
+                                     QThread::LowPriority,
                                      MLPipelineStage::Loader,
                                      MLPipelineStage::Extractor);
 }
@@ -179,6 +180,7 @@ bool FacePipelineRecognize::loader()
 bool FacePipelineRecognize::extractor()
 {
     return commonFaceThumbnailExtractor(QStringLiteral("FacePipelineRecognize"),
+                                        QThread::LowPriority,
                                         MLPipelineStage::Extractor,
                                         MLPipelineStage::Classifier);
 }

@@ -232,10 +232,11 @@ bool FacePipelineBase::useForTraining(const cv::Rect origSize, const cv::Mat& cv
 }
 
 bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName,
+                                                 QThread::Priority stagePriority,
                                                  MLPipelineStage thisStage,
                                                  MLPipelineStage nextStage)
 {
-    MLPIPELINE_STAGE_START(QThread::LowPriority, thisStage, nextStage);
+    MLPIPELINE_STAGE_START(stagePriority, thisStage, nextStage);
     FacePipelinePackageBase* package = nullptr;
 
     /* =========================================================================================
@@ -315,11 +316,12 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName,
 }
 
 bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
+                                                    QThread::Priority stagePriority,
                                                     MLPipelineStage thisStage,
                                                     MLPipelineStage nextStage,
                                                     bool trainingQualityCheck)
 {
-    MLPIPELINE_STAGE_START(QThread::LowPriority, thisStage, nextStage);
+    MLPIPELINE_STAGE_START(stagePriority, thisStage, nextStage);
     FacePipelinePackageBase* package = nullptr;
 
     /* =========================================================================================

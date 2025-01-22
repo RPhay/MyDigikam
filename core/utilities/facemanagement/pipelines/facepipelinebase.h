@@ -97,10 +97,12 @@ protected:
     bool useForTraining(const cv::Rect origSize, const cv::Mat& image);
 
     bool commonFaceThumbnailLoader(const QString& pipelineName,
+                                   QThread::Priority stagePriority,
                                    MLPipelineFoundation::MLPipelineStage thisStage,
                                    MLPipelineFoundation::MLPipelineStage nextStage);
 
     bool commonFaceThumbnailExtractor(const QString& pipelineName,
+                                      QThread::Priority stagePriority,
                                       MLPipelineFoundation::MLPipelineStage thisStage,
                                       MLPipelineFoundation::MLPipelineStage nextStage,
                                       bool trainingQualityCheck = false);
