@@ -31,6 +31,7 @@
 #include "dimg.h"
 #include "coredb.h"
 #include "albummanager.h"
+#include "collectionmanager.h"
 #include "coredbaccess.h"
 #include "tagscache.h"
 #include "picklabelwidget.h"
@@ -174,8 +175,10 @@ void ImageQualitySorter::slotStart()
 
 void ImageQualitySorter::slotAdvance(const ItemInfo& inf, const QImage& img, int pick)
 {
-    QString lbl = i18n("Image Quality for: %1\n", inf.name());
-    lbl.append(i18n("Path: %1\n", inf.relativePath()));
+    QString album = CollectionManager::instance()->albumRootLabel(inf.albumRootId());
+
+    QString lbl = i18n("Image Quality: %1\n", inf.name());
+    lbl.append(i18n("Album: %1\n", album + inf.relativePath()));
     lbl.append(i18n("Pick Label: %1", PickLabelWidget::labelPickName((PickLabel)pick)));
     setLabel(lbl);
 

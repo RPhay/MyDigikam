@@ -29,6 +29,7 @@
 
 #include "digikam_debug.h"
 #include "albummanager.h"
+#include "collectionmanager.h"
 #include "itemlister.h"
 #include "dnotificationwrapper.h"
 #include "dnotificationwidget.h"
@@ -163,8 +164,10 @@ void DuplicatesFinder::slotDuplicatesProgress(int percentage, const ItemInfo& in
 {
     setThumbnail(QIcon::fromTheme(QLatin1String("search")));
 
-    QString lbl = i18n("Duplicates for: %1\n", inf.name());
-    lbl.append(i18n("Path: %1\n", inf.relativePath()));
+    QString album = CollectionManager::instance()->albumRootLabel(inf.albumRootId());
+
+    QString lbl = i18n("Finding Duplicates: %1\n", inf.name());
+    lbl.append(i18n("Album: %1\n", album + inf.relativePath()));
 
     if (!duplicates)
     {

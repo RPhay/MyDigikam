@@ -246,8 +246,8 @@ void AutotagsEngine::slotShowOneDetected(const MLPipelinePackageNotify::Ptr& pac
 {
     setThumbnail(package->thumbnail);
 
-    QString lbl = i18n("Album: %1\n", package->path);
-    lbl.append(i18n("Scanning: %1\n", package->name));
+    QString lbl = i18n("Object Scanning: %1\n", package->name);
+    lbl.append(i18n("Album: %1\n", package->path));
     if (package->processed > 0)
     {
         if (package->processed == 1)

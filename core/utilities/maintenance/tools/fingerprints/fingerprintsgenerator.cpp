@@ -33,6 +33,7 @@
 #include "dimg.h"
 #include "coredb.h"
 #include "albummanager.h"
+#include "collectionmanager.h"
 #include "coredbaccess.h"
 #include "maintenancethread.h"
 #include "dnotificationwidget.h"
@@ -152,8 +153,10 @@ void FingerPrintsGenerator::slotStart()
 
 void FingerPrintsGenerator::slotAdvance(const ItemInfo& inf, const QImage& img)
 {
-    QString lbl = i18n("Rebuild Fingerprint for: %1\n", inf.name());
-    lbl.append(i18n("Path: %1", inf.relativePath()));
+    QString album = CollectionManager::instance()->albumRootLabel(inf.albumRootId());
+
+    QString lbl = i18n("Rebuild Fingerprint: %1\n", inf.name());
+    lbl.append(i18n("Album: %1", album + inf.relativePath()));
     setLabel(lbl);
     setThumbnail(QIcon(QPixmap::fromImage(img)));
     advance(1);

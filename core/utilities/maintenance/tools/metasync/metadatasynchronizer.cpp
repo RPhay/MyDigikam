@@ -28,6 +28,7 @@
 // Local includes
 
 #include "albummanager.h"
+#include "collectionmanager.h"
 #include "iteminfojob.h"
 #include "maintenancethread.h"
 
@@ -211,8 +212,10 @@ void MetadataSynchronizer::parseList()
 
 void MetadataSynchronizer::slotAdvance(const ItemInfo& inf)
 {
-    QString lbl = i18n("Metadata Sync for: %1\n", inf.name());
-    lbl.append(i18n("Path: %1", inf.relativePath()));
+    QString album = CollectionManager::instance()->albumRootLabel(inf.albumRootId());
+
+    QString lbl = i18n("Metadata Sync: %1\n", inf.name());
+    lbl.append(i18n("Album: %1\n", album + inf.relativePath()));
     setLabel(lbl);
     advance(1);
 }

@@ -31,7 +31,7 @@
 #include "digikam_debug.h"
 #include "digikam_opencv.h"
 #include "sharedqueue.h"
-#include "albummanager.h"
+#include "collectionmanager.h"
 #include "album.h"
 #include "iteminfo.h"
 #include "coredb.h"
@@ -223,7 +223,7 @@ bool FacePipelineRetrain::writer()
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): bad mat";
         }
 
-        QString albumName = AlbumManager::instance()->findAlbum(package->info.albumId())->title();;
+        QString albumName = CollectionManager::instance()->albumRootLabel(package->info.albumRootId());
 
         // send a notification that the image was processed
 

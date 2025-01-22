@@ -32,6 +32,7 @@
 
 #include "coredb.h"
 #include "coredbalbuminfo.h"
+#include "collectionmanager.h"
 #include "albummanager.h"
 #include "applicationsettings.h"
 #include "coredbaccess.h"
@@ -218,8 +219,10 @@ void ThumbsGenerator::slotStart()
 
 void ThumbsGenerator::slotAdvance(const ItemInfo& inf, const QImage& img)
 {
-    QString lbl = i18n("Thumbnail for: %1\n", inf.name());
-    lbl.append(i18n("Path: %1", inf.relativePath()));
+    QString album = CollectionManager::instance()->albumRootLabel(inf.albumRootId());
+    
+    QString lbl = i18n("Thumbnail: %1\n", inf.name());
+    lbl.append(i18n("Album: %1\n", album + inf.relativePath()));
     setLabel(lbl);
     setThumbnail(QPixmap::fromImage(img));
     advance(1);

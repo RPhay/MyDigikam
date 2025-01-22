@@ -177,8 +177,8 @@ void NewItemsFinder::slotTotalFilesToScan(int t)
 
 void NewItemsFinder::slotStartScanningAlbum(const QString& albumRoot, const QString& album)
 {
-    QString lbl = i18n("Scanning from: %1\n", albumRoot);
-    lbl.append(i18n("Album: %1", album));
+    QString lbl = i18n("Scanning: %1\n", album);
+    lbl.append(i18n("Album Root: %1", albumRoot));
     setLabel(lbl);
 }
 
