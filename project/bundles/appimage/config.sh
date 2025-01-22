@@ -67,17 +67,17 @@ if [[ $DK_QTVERSION == 5 ]] ; then
     # Absolute path where are compiled all tarballs
     BUILDING_DIR="/b/$DK_VERSION"
 
+    # KDE KF6 frameworks version.
+    # See official release here: https://download.kde.org/stable/frameworks/
+    DK_KDE_VERSION="5.116"
+
     # KDE Plasma version.
     # See official release here: https://download.kde.org/stable/plasma/
-    DK_KDE_VERSION="5.116"
+    DK_KP_VERSION="5.27.12"
 
     # KDE Application version.
     # See official release here: https://download.kde.org/stable/release-service/
-    DK_KP_VERSION="5.27.12"
-
-    # KDE KF6 frameworks version.
-    # See official release here: https://download.kde.org/stable/frameworks/
-    DK_KA_VERSION="24.12.1"
+    DK_KA_VERSION="24.05.1"
 
     DK_UPLOADDIR="/srv/archives/files/digikam/legacy"
 
