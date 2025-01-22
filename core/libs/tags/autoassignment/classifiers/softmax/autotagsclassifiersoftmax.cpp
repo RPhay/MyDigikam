@@ -33,7 +33,7 @@ AutotagsClassifierSoftmax::AutotagsClassifierSoftmax(float _threshold, const QSt
 
 int AutotagsClassifierSoftmax::predict(const cv::Mat& target) const
 {
-    assert(target.rows == 1);
+    Q_ASSERT(target.rows == 1);
 
     float* input = reinterpret_cast<float*>(target.data);
     float m      = -INFINITY;
