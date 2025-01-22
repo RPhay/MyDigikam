@@ -13,71 +13,35 @@
 
 set(PREFIX_ext_ffmpeg "${EXTPREFIX}")
 
-if (APPLE)
-
-    set(FFmpeg_Conf --prefix=${PREFIX_ext_ffmpeg}
-                    --extra-libs=-lstdc++
-                    --disable-doc
-                    --disable-debug
-                    --disable-programs
-                    --disable-outdevs
-                    --enable-shared
-                    --enable-gpl
-                    --enable-version3
-                    --enable-nonfree
-                    --enable-runtime-cpudetect
-#                    --enable-libopencore-amrnb
-#                    --enable-libopencore-amrwb
-                    --enable-libfdk-aac
-#                    --enable-libmp3lame
-                    --enable-libspeex
-#                    --enable-libtheora
-                    --enable-libvorbis
-                    --enable-libx264
-                    --enable-libx265
-                    --enable-libaom
-#                    --enable-libxvid
-                    --enable-libvpx
-                    --enable-libopus
-#                    --enable-librtmp
-                    --enable-libfreetype
-                    --enable-libass
-                    --enable-opengl
-    )
-
-else()
-
-    set(FFmpeg_Conf --prefix=${PREFIX_ext_ffmpeg}
-                    --extra-libs=-lstdc++
-                    --disable-doc
-                    --disable-debug
-                    --disable-programs
-                    --disable-outdevs
-                    --enable-shared
-                    --enable-gpl
-                    --enable-version3
-                    --enable-nonfree
-                    --enable-runtime-cpudetect
-                    --enable-libopencore-amrnb
-                    --enable-libopencore-amrwb
-                    --enable-libfdk-aac
-                    --enable-libmp3lame
-                    --enable-libspeex
-                    --enable-libtheora
-                    --enable-libvorbis
-                    --enable-libx264
-                    --enable-libx265
-                    --enable-libaom
-                    --enable-libxvid
-                    --enable-libvpx
-                    --enable-libopus
-                    --enable-librtmp
-                    --enable-libfreetype
-                    --enable-libass
-                    --enable-opengl
-    )
-
-endif()
+set(FFmpeg_Conf --prefix=${PREFIX_ext_ffmpeg}
+                --extra-libs=-lstdc++
+                --disable-doc
+                --disable-debug
+                --disable-programs
+                --disable-outdevs
+                --enable-shared
+                --enable-gpl
+                --enable-version3
+                --enable-nonfree
+                --enable-runtime-cpudetect
+                --enable-libopencore-amrnb
+                --enable-libopencore-amrwb
+                --enable-libfdk-aac
+                --enable-libmp3lame
+                --enable-libspeex
+                --enable-libtheora
+                --enable-libvorbis
+                --enable-libx264
+                --enable-libx265
+                --enable-libaom
+                --enable-libxvid
+                --enable-libvpx
+                --enable-libopus
+                --enable-librtmp
+                --enable-libfreetype
+                --enable-libass
+                --enable-opengl
+)
 
 ExternalProject_Add(ext_ffmpeg
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}

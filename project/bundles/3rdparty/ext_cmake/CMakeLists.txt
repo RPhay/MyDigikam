@@ -4,14 +4,13 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-#
 
 SET(EXTPREFIX_cmake "${EXTPREFIX}")
 
 ExternalProject_Add(ext_cmake
 
     GIT_REPOSITORY https://gitlab.kitware.com/cmake/cmake.git
-    GIT_TAG v3.30.4
+    GIT_TAG v3.31.4
 
     INSTALL_DIR ${EXTPREFIX_cmake}
 
