@@ -5,7 +5,7 @@
 # Run Krazy static analyzer on whole digiKam source code.
 # https://github.com/Krazy-collection/krazy
 #
-# Production revision: 0b3a02537d4c56135bd81cd5e4f436fcea7da657
+# Production revision: master
 # Production patch   : ./krazy.patch
 #
 # Dependencies:
@@ -81,6 +81,7 @@ krazy2all --export xml \
           --priority all \
           --verbose \
           --check-set kde5,foss \
+          --extra null,contractions \
           --exclude qclasses,license \
           --exclude-types qml,python,qdoc,perl \
           --topdir ../../ \

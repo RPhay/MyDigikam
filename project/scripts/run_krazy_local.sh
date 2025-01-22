@@ -6,7 +6,7 @@
 #
 # Script to run single check on current directory
 
-FILES=$(find * .)
+FILES=$(find * . -type f)
 
 echo "FILES=$FILES"
 
@@ -21,5 +21,11 @@ echo "FILES=$FILES"
 #krazy2 --check cpp $FILES
 #krazy2 --check typedefs $FILES
 #krazy2 --check insecurenet $FILES
+#krazy2 --check spelling $FILES
 
-krazy2 --check spelling $FILES
+#krazy2 --check copyright-reuse $FILES
+#krazy2 --check defines $FILES
+#krazy2 --check multiclasses $FILES
+#krazy2 --check null $FILES
+#krazy2 --check contractions $FILES
+krazy2 --check crud $FILES
