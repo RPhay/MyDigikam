@@ -166,7 +166,7 @@ double FacePipelineBase::detectBlur(const cv::Mat& cvGrayImage) const
     cv::dft(orgFFT, invFFT, cv::DFT_INVERSE | cv::DFT_REAL_OUTPUT);
 
     invFFT = cv::abs(invFFT);
-    cv::minMaxLoc(invFFT, &minVal, &maxVal, NULL, NULL);
+    cv::minMaxLoc(invFFT, &minVal, &maxVal);
     
     //check for impossible values
 
