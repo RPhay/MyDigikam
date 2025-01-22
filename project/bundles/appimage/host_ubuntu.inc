@@ -199,7 +199,6 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libmount-dev"
                    "curl"
                    "libicu-dev"
-                   "libyuv-dev"
                    "icu-devtools"
                    "flite1-dev"
                    "libxshmfence-dev"
@@ -231,6 +230,7 @@ else
 
     optional_packages_qt6=(
                            "libgcrypt20-dev"
+                           "libyuv-dev"
                           )
 
     for pkg in ${optional_packages_qt6[@]}; do
