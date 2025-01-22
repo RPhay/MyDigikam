@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 01:52+0000\n"
+"POT-Creation-Date: 2025-01-22 01:51+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -17,19 +17,19 @@ msgstr ""
 "X-Crowdin-File: /kf5-trunk/messages/digikam/digikam.pot\n"
 "X-Crowdin-File-ID: 4777\n"
 
-#: core/app/date/ddateedit.cpp:492
+#: core/app/date/ddateedit.cpp:496
 #, kde-format
 msgctxt "@item: date keyword"
 msgid "tomorrow"
 msgstr "明天"
 
-#: core/app/date/ddateedit.cpp:493
+#: core/app/date/ddateedit.cpp:497
 #, kde-format
 msgctxt "@item: date keyword"
 msgid "today"
 msgstr "今天"
 
-#: core/app/date/ddateedit.cpp:494
+#: core/app/date/ddateedit.cpp:498
 #, kde-format
 msgctxt "@item: date keyword"
 msgid "yesterday"
@@ -75,13 +75,13 @@ msgstr "选择年份"
 msgid "Select the current day"
 msgstr "选择今天"
 
-#: core/app/date/ddatepicker.cpp:570
+#: core/app/date/ddatepicker.cpp:574
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "关闭"
 
-#: core/app/date/ddatepicker_p.cpp:159
+#: core/app/date/ddatepicker_p.cpp:160
 #, kde-format
 msgid "Week %1"
 msgstr "第 %1 周"
@@ -16155,7 +16155,7 @@ msgid "Revert current settings to default values."
 msgstr "重置当前设置为默认值。"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:91
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:93
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
@@ -16442,7 +16442,7 @@ msgstr ""
 "处理，这将需要一段时间。"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:135
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:187
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:189
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16453,29 +16453,29 @@ msgstr ""
 "像。"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:136
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:192
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:194
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
 msgstr "点击“下一步”按钮开始预处理。"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:148
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:144
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:146
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing is in progress, please wait."
 msgstr "正在处理，请稍候。"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:149
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:170
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:145
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:172
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid "This can take a while..."
 msgstr "这可能需要一段时间..."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:206
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:289
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing has failed."
@@ -16489,7 +16489,7 @@ msgstr "请检查您的包围 (阶段) 曝光图像堆栈..."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:208
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:311
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:290
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:291
 #, kde-format
 msgctxt "@info"
 msgid "See processing messages below."
@@ -17167,20 +17167,20 @@ msgstr "路径选择"
 msgid "Generating jAlbum"
 msgstr "正在生成 jAlbum 相册"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:75
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "Share Files With DLNA Media Server"
 msgstr "使用 DLNA 媒体服务器共享文件"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:132
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:134
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:68
 #, kde-format
 msgctxt "@option"
 msgid "Start Server at Startup"
 msgstr "启动时启动服务器"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:133
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:135
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17188,7 +17188,7 @@ msgid ""
 "automatically"
 msgstr "勾选此项后，在应用程序启动的同时将自动启动 DLNA 服务器"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:151
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17204,9 +17204,9 @@ msgstr ""
 "\n"
 "提示：根据网络的特性和配置，在客户端设备上发现服务器的延迟可能需要一段时间。"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:208
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:283
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:296
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:209
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:284
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:297
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:64
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:77
 #, kde-format
@@ -17214,7 +17214,7 @@ msgctxt "@title:window"
 msgid "Media Server Contents"
 msgstr "媒体服务器内容"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:209
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:210
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17222,14 +17222,14 @@ msgid ""
 "server with this contents?"
 msgstr "要分享的项目列表已更改。您想要立即以此内容启动媒体服务器吗？"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:246
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:247
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:25
 #, kde-format
 msgctxt "@label"
 msgid "Server is running"
 msgstr "服务器正在运行"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:247
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:248
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:26
 #, kde-format
 msgctxt "@info"
@@ -17237,7 +17237,7 @@ msgid "1 album shared"
 msgid_plural "%1 albums shared"
 msgstr[0] "已分享 %1 个相册"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:249
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:250
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:28
 #, kde-format
 msgctxt "@info"
@@ -17245,56 +17245,56 @@ msgid "1 item shared"
 msgid_plural "%1 items shared"
 msgstr[0] "已分享 %1 个项目"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:250
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:251
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:29
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr "停止"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:257
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:258
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:37
 #, kde-format
 msgctxt "@label"
 msgid "Server is not running"
 msgstr "服务器尚未运行"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:261
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:262
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:41
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr "启动"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:284
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:285
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "There is no collection to share with the current selection..."
 msgstr "当前选择状态下没有要共享的相册集合..."
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:297
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:298
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:78
 #, kde-format
 msgctxt "@info"
 msgid "There is no item to share with the current selection..."
 msgstr "当前选择状态下没有要共享的项目..."
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:302
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:303
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:83
 #, kde-format
 msgctxt "@info"
 msgid "Shared Items"
 msgstr "已共享项目"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:322
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:323
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "Starting Media Server"
 msgstr "正在启动媒体服务器"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:323
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:324
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:106
 #, kde-format
 msgctxt "@info"
@@ -17586,17 +17586,17 @@ msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:99
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
-#: core/libs/widgets/mainview/daboutdata.cpp:107
+#: core/libs/widgets/mainview/daboutdata.cpp:110
 #: core/libs/widgets/mainview/daboutdata.cpp:128
 #: core/libs/widgets/mainview/daboutdata.cpp:134
-#: core/libs/widgets/mainview/daboutdata.cpp:296
-#: core/libs/widgets/mainview/daboutdata.cpp:313
-#: core/libs/widgets/mainview/daboutdata.cpp:319
-#: core/libs/widgets/mainview/daboutdata.cpp:325
-#: core/libs/widgets/mainview/daboutdata.cpp:335
-#: core/libs/widgets/mainview/daboutdata.cpp:363
-#: core/libs/widgets/mainview/daboutdata.cpp:369
-#: core/libs/widgets/mainview/daboutdata.cpp:380
+#: core/libs/widgets/mainview/daboutdata.cpp:301
+#: core/libs/widgets/mainview/daboutdata.cpp:318
+#: core/libs/widgets/mainview/daboutdata.cpp:324
+#: core/libs/widgets/mainview/daboutdata.cpp:330
+#: core/libs/widgets/mainview/daboutdata.cpp:340
+#: core/libs/widgets/mainview/daboutdata.cpp:368
+#: core/libs/widgets/mainview/daboutdata.cpp:374
+#: core/libs/widgets/mainview/daboutdata.cpp:385
 #: core/utilities/geolocation/engine/plugins/PluginInterface.h:46
 #, kde-format
 msgid "Developer"
@@ -18418,25 +18418,25 @@ msgctxt "@label"
 msgid "Error"
 msgstr "错误"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:81
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:83
 #, kde-format
 msgctxt "@title: window"
 msgid "Optimization"
 msgstr "优化"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:95
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:97
 #, kde-format
 msgctxt "@option: check"
 msgid "Level horizon"
 msgstr "校平地平线"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:99
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Detect the horizon and adapt the project to make it horizontal."
 msgstr "检测地平线并对其进行校平，确保投影结果为水平。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:100
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -18445,20 +18445,20 @@ msgid ""
 msgstr ""
 "“校平地平线”：检测地平线并对其进行校平，确保全景图的最终投影结果为水平。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:169
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:171
 #, kde-format
 msgctxt "@info"
 msgid "Optimization is in progress, please wait."
 msgstr "正在进行优化，请稍候。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:203
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:205
 #, kde-format
 msgctxt "@info"
 msgid ""
 "The optimization step according to your settings is ready to be performed."
 msgstr "已准备好执行您设置的优化步骤。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:204
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18466,13 +18466,13 @@ msgid ""
 "automatic projection selection and size."
 msgstr "此步骤可以包括校平地平线、自动调整投影选区和大小等。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:206
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:208
 #, kde-format
 msgctxt "@info"
 msgid "To perform this operation, the \"%1\" program will be used."
 msgstr "将使用“%1”程序执行此操作。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:208
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:210
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to run the optimization."
@@ -18484,19 +18484,19 @@ msgctxt "@info"
 msgid "Optimization has failed."
 msgstr "无法完成优化。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:83
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:85
 #, kde-format
 msgctxt "@title: window"
 msgid "Pre-Processing Images"
 msgstr "预处理图像"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:99
 #, kde-format
 msgctxt "@option: check"
 msgid "Detect moving skies"
 msgstr "检测天空动态"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:99
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:101
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -18504,7 +18504,7 @@ msgid ""
 "images due to moving clouds."
 msgstr "自动检测云彩移动情况以防止在图像之间发生匹配错误。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:101
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:103
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -18516,13 +18516,13 @@ msgstr ""
 "“检测天空动态”：勾选此项后，在控制点的选择和匹配过程中将丢弃所有可能与云彩有"
 "关的控制点。这将有助于防止移动的云彩干扰控制点匹配过程。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:186
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:188
 #, kde-format
 msgctxt "@info"
 msgid "Now, we will pre-process images before stitching them."
 msgstr "现在我们将在拼接图像之前对它们进行预处理。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:189
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:191
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18532,29 +18532,29 @@ msgstr ""
 "预处理过程还包括对某些控制点进行计算以匹配图像的重叠区域，这需要使用“%1”程"
 "序。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:79
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:81
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>预览和后期处理</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:129
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:131
 #, kde-format
 msgid "Processing Panorama Preview..."
 msgstr "正在处理全景图预览..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:210
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:212
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>全景图后期处理</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:216
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:218
 #, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "全景图后期处理"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:298
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:300
 #, kde-format
 msgid "Preview Processing Cancelled."
 msgstr "预览处理已取消。"
@@ -21494,9 +21494,9 @@ msgstr "导出到 Box(&B)..."
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1198
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:467
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:718
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:865
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1033
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:863
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1031
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:754
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:777
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:820
@@ -21525,7 +21525,7 @@ msgstr "导出到 Box"
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:117
 #: core/dplugins/generic/webservices/google/gswindow.cpp:129
 #: core/dplugins/generic/webservices/google/gswindow.cpp:176
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:97
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:99
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:77
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:77
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:266
@@ -24444,13 +24444,13 @@ msgctxt "@item"
 msgid "Upload Settings"
 msgstr "上传设置"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:95
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to MediaWiki"
 msgstr "导出到 MediaWiki"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:98
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:100
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to MediaWiki"
@@ -24692,56 +24692,56 @@ msgid "Incorrect username or password specified"
 msgstr "指定的用户名或密码错误"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:552
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:739
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:737
 #, kde-format
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
 msgstr "不再支持上传到 Piwigo 2.4 以下的版本"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:628
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:711
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:785
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:858
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:627
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:709
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:783
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:856
 #, kde-format
 msgid "Invalid response received from remote Piwigo"
 msgstr "收到来自远程 Piwigo 的无效响应"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:635
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:634
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:980
 #, kde-format
 msgid "Failed to list albums"
 msgstr "无法列出相册"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:685
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:683
 #, kde-format
 msgid "Photo '%1' already exists."
 msgstr "照片“%1”已存在。"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:792
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:790
 #, kde-format
 msgid "Photo '%1' already exists in this album."
 msgstr "照片“%1”已存在于此相册中。"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:881
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:879
 #, kde-format
 msgid "Error : Cannot open photo: %1"
 msgstr "错误：无法打开照片：%1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:909
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:907
 #, kde-format
 msgid "Upload the chunk %1/%2 of %3"
 msgstr "上传数据块 %1/%2，总计 %3"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:942
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:940
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
 msgstr "注意：无法上传完整尺寸的照片。"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:993
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:991
 #, kde-format
 msgid "Upload the metadata of %1"
 msgstr "上传 %1 的元数据"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1026
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1024
 #, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "从远程 Piwigo 服务收到无效的响应 (%1)"
@@ -25645,7 +25645,7 @@ msgstr "在线服务设置"
 msgid "Export by Web Service"
 msgstr "导出到在线服务"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:232
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -25654,12 +25654,12 @@ msgstr ""
 "使用 ART 导入RAW 图像时出错。\n"
 "请关闭此对话框，并使用内建的导入工具加载 RAW 图像"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:246
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:248
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "ART RAW 转换"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:297
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -25668,7 +25668,7 @@ msgstr ""
 "使用 DarkTable 导入RAW 图像时出错。\n"
 "请关闭此对话框，并使用内建的导入工具加载 RAW 图像"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:311
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:313
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "DarkTable RAW 转换"
@@ -25854,7 +25854,7 @@ msgstr "使用默认值"
 msgid "Use general Raw decoding settings to load this image in editor."
 msgstr "使用常规 RAW 解码设置将此图像加载到图像编辑器。"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:231
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -25863,12 +25863,12 @@ msgstr ""
 "使用 RawTherapee 导入RAW 图像时出错。\n"
 "请关闭此对话框，并使用内建的导入工具加载 RAW 图像"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:245
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:247
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "RawTherapee RAW 转换"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:227
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:229
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -25877,7 +25877,7 @@ msgstr ""
 "使用 UFRaw 导入RAW 图像时出错。\n"
 "请关闭此对话框，并使用内建的导入工具加载 RAW 图像"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:243
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:245
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW 转换"
@@ -35809,12 +35809,12 @@ msgstr "打开处理进度详情对话框"
 msgid "No active process"
 msgstr "无处理中的任务"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:410
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:416
 #, kde-format
 msgid "Hide detailed progress window"
 msgstr "隐藏处理进度详情对话框"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:416
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:422
 #, kde-format
 msgid "Show detailed progress window"
 msgstr "隐藏处理进度详情对话框"
@@ -36706,7 +36706,7 @@ msgid "Map"
 msgstr "地图"
 
 #: core/libs/properties/itempropertiessidebar.cpp:232
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:579
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:578
 #: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, kde-format
 msgctxt "@info: item properties"
@@ -38022,9 +38022,20 @@ msgid "Album: %1\n"
 msgstr "相册：%1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #, kde-format
 msgid "Scanning: %1\n"
 msgstr "正在扫描：%1\n"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:255
+#, kde-format
+msgid "Found %1 object. Tag: %2"
+msgstr ""
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:259
+#, kde-format
+msgid "Found %1 objects. Tags: %2"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
@@ -38034,15 +38045,7 @@ msgid "Search in"
 msgstr "扫描范围"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p><b>This tool automatically assigns tags to images by analyzing the "
-#| "image using a deep-learning neural network AI model.</b></p><p>The "
-#| "settings below determine the deep-learning AI model to use while parsing "
-#| "image contents to determine objects in the image. The AI neural network "
-#| "used in background will automatically generate tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool automatically assigns tags to images by analyzing the image "
@@ -38052,10 +38055,6 @@ msgid ""
 "descriptive tags for the image contents and store the results in the "
 "database.</p>"
 msgstr ""
-"<p><b>用于自动为图像分配标签的工具，基于深度学习神经网络的 AI 模型进行分析。"
-"</b></p><p>您可以从下列选项中选取一种深度学习 AI 模型，它将被用于解析图像内容"
-"以确定它包含的对象。选定的 AI 神经网络模型会在后台自动生成能够反映图像内容的"
-"标签，并将结果存储到数据库中。</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:102
 #, kde-format
@@ -41295,25 +41294,25 @@ msgstr[0] ""
 "正在应用操作到\n"
 "“%1”张所选图像"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:405
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:406
 #, kde-format
 msgctxt "date of last image modification"
 msgid "Mod.: %1"
 msgstr "修改于：%1"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:421
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:422
 #: core/showfoto/main/showfoto.cpp:267
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
-#: core/utilities/import/items/itemviewimportdelegate.cpp:367
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
+#: core/utilities/import/items/itemviewimportdelegate.cpp:368
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3M 像素)"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:426
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:446
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:320
-#: core/utilities/import/items/itemviewimportdelegate.cpp:372
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:427
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:447
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
+#: core/utilities/import/items/itemviewimportdelegate.cpp:373
 #, kde-format
 msgctxt "unknown image resolution"
 msgid "Unknown"
@@ -41357,571 +41356,295 @@ msgstr "KDE 社区软件项目"
 msgid "(c) 2001-2025, digiKam developers team"
 msgstr "(c) 2001-2025, digiKam developers team"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:76
-#, kde-format
-msgid "Caulier Gilles"
-msgstr "Caulier Gilles"
-
 #: core/libs/widgets/mainview/daboutdata.cpp:77
 #, kde-format
 msgid "Coordinator, Developer, and Mentoring"
 msgstr "协调人员、开发人员、开发者导师"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:82
-#, kde-format
-msgid "Maik Qualmann"
-msgstr "Maik Qualmann"
-
 #: core/libs/widgets/mainview/daboutdata.cpp:83
-#: core/libs/widgets/mainview/daboutdata.cpp:89
-#: core/libs/widgets/mainview/daboutdata.cpp:95
-#: core/libs/widgets/mainview/daboutdata.cpp:101
+#: core/libs/widgets/mainview/daboutdata.cpp:98
+#: core/libs/widgets/mainview/daboutdata.cpp:104
 #, kde-format
 msgid "Developer and Mentoring"
 msgstr "开发人员、开发者导师"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:88
-#, kde-format
-msgid "Marcel Wiesweg"
-msgstr "Marcel Wiesweg"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:94
-#, kde-format
-msgid "Mohamed Anwer"
-msgstr "Mohamed Anwer"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:100
-#, kde-format
-msgid "Michael G. Hansen"
-msgstr "Michael G. Hansen"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:106
-#, kde-format
-msgid "Teemu Rytilahti"
-msgstr "Teemu Rytilahti"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:112
-#, kde-format
-msgid "Thanh Trung Dinh"
-msgstr "Thanh Trung Dinh"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:113
-#, kde-format
+#: core/libs/widgets/mainview/daboutdata.cpp:89
+#, fuzzy, kde-format
+#| msgid "SFace and YuNet DNN models integration. Face Management improvements"
 msgid ""
-"Mentoring, Port web-service tools to OAuth, factoring web service tools, and "
-"port faces recognition engine to OpenCV neural network"
+"SFace and YuNet DNN models integration\n"
+"in face workflow.\n"
+"Face Management and auto-tag AI improvements.\n"
+"AI red eyes detection"
+msgstr "集成 SFace 和 YuNet 深度神经网络模型。改进人脸管理功能。"
+
+#: core/libs/widgets/mainview/daboutdata.cpp:116
+#, fuzzy, kde-format
+#| msgid ""
+#| "Mentoring, Port web-service tools to OAuth, factoring web service tools, "
+#| "and port faces recognition engine to OpenCV neural network"
+msgid ""
+"Mentoring, Port web-service tools to OAuth,\n"
+"factoring web service tools,\n"
+"and port faces recognition engine\n"
+"to OpenCV neural network"
 msgstr ""
 "开发者导师、移植网络服务工具到 OAuth、编写网络服务工具、移植人脸识别引擎到 "
 "OpenCV 神经网络"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:119
-#, kde-format
-msgid "Michael Miller"
-msgstr "Michael Miller"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:120
-#, kde-format
-msgid "SFace and YuNet DNN models integration. Face Management improvements"
-msgstr "集成 SFace 和 YuNet 深度神经网络模型。改进人脸管理功能。"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:127
-#, kde-format
-msgid "Matthias Welwarsky"
-msgstr "Matthias Welwarsky"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:133
-#, kde-format
-msgid "Julien Narboux"
-msgstr "Julien Narboux"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:139
-#, kde-format
-msgid "Mario Frank"
-msgstr "Mario Frank"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:140
 #, kde-format
 msgid "Advanced Searches Tool Improvements"
 msgstr "高级搜索工具改进"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:144
-#, kde-format
-msgid "Nicolas Lécureuil"
-msgstr "Nicolas Lécureuil"
-
 #: core/libs/widgets/mainview/daboutdata.cpp:145
 #, kde-format
 msgid "Releases Manager"
 msgstr "软件发布管理人员"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:152
-#, kde-format
-msgid "Anjani Kumar"
-msgstr "Anjani Kumar"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:153
 #, kde-format
 msgid "Port to Qt6,"
 msgstr "移植到 Qt6"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:158
-#, kde-format
-msgid "Phuoc Khanh LE"
-msgstr "Phuoc Khanh LE"
-
 #: core/libs/widgets/mainview/daboutdata.cpp:159
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Rewrite Image Quality Sorter algorithms and Photo Focus Information "
+#| "Extraction, Aesthetic Detection to classify images using deep learning "
+#| "model,Slideshow and Presentation tools improvement"
 msgid ""
-"Rewrite Image Quality Sorter algorithms and Photo Focus Information "
-"Extraction, Aesthetic Detection to classify images using deep learning model,"
+"Rewrite Image Quality Sorter algorithms\n"
+"and Photo Focus Information Extraction.\n"
+"Aesthetic Detection to classify images\n"
+"using deep learning model.\n"
 "Slideshow and Presentation tools improvement"
 msgstr ""
 "重写图像品质分类算法和照片焦点信息提取功能、美感检测使用深度学习模型来判断图"
 "像的美感好坏、幻灯片和演示工具改进"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:166
-#, kde-format
-msgid "Quốc Hưng Trần"
-msgstr "Quốc Hưng Trần"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:167
-#, kde-format
+#: core/libs/widgets/mainview/daboutdata.cpp:169
+#, fuzzy, kde-format
+#| msgid ""
+#| "MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
 msgid ""
-"MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
+"MJPEGStream plugin,\n"
+"OCR text Converter plugin,\n"
+"auto-tags assignment engine"
 msgstr "MJPEGStream 插件、OCR 文本转换插件、自动标签作业引擎"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:172
-#, kde-format
-msgid "Minh Nghĩa Duong"
-msgstr "Minh Nghĩa Duong"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:173
-#, kde-format
+#: core/libs/widgets/mainview/daboutdata.cpp:177
+#, fuzzy, kde-format
+#| msgid ""
+#| "Clustering support and improvement for Face Engine, Port Slideshow tool "
+#| "to plugins interface"
 msgid ""
-"Clustering support and improvement for Face Engine, Port Slideshow tool to "
-"plugins interface"
+"Face workflow Clustering support,\n"
+"improvement for Face Engine,\n"
+"Port Slideshow tool to plugins interface"
 msgstr "集群支持和人脸识别引擎改进、移植幻灯片工具到插件界面"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:179
-#, kde-format
-msgid "Kartik Ramesh"
-msgstr "Kartik Ramesh"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:180
+#: core/libs/widgets/mainview/daboutdata.cpp:185
 #, kde-format
 msgid "Face management workflow improvements"
 msgstr "人脸识别工作流程改进"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:185
-#, kde-format
-msgid "Ahmed Fathi"
-msgstr "Ahmed Fathi"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:186
-#, kde-format
-msgid "UPNP/DLNA export tool, and Healing clone tool for image editor"
+#: core/libs/widgets/mainview/daboutdata.cpp:191
+#, fuzzy, kde-format
+#| msgid "UPNP/DLNA export tool, and Healing clone tool for image editor"
+msgid ""
+"UPNP/DLNA export tool\n"
+"and Healing clone tool for image editor"
 msgstr "UPnP/DLNA 导出工具、图像编辑器的仿制图章工具"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:191
-#, kde-format
-msgid "Veaceslav Munteanu"
-msgstr "Veaceslav Munteanu"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:192
+#: core/libs/widgets/mainview/daboutdata.cpp:197
 #, kde-format
 msgid "Tags Manager"
 msgstr "标签管理器"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:197
-#, kde-format
-msgid "Tarek Talaat"
-msgstr "Tarek Talaat"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:198
+#: core/libs/widgets/mainview/daboutdata.cpp:203
 #, kde-format
 msgid "New OneDrive, Pinterrest, and Box export tools"
 msgstr "新版 OneDrive、Pinterrest和Box 导出工具"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:203
-#, kde-format
-msgid "Yingjie Liu"
-msgstr "Yingjie Liu"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:204
-#, kde-format
-msgid "Face-engine improvements and manual icon-view sort"
+#: core/libs/widgets/mainview/daboutdata.cpp:209
+#, fuzzy, kde-format
+#| msgid "Face-engine improvements and manual icon-view sort"
+msgid ""
+"Face-engine improvements\n"
+"and manual icon-view sort"
 msgstr "人脸识别引擎改进和图标视图手动排序"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:209
-#, kde-format
-msgid "Yiou Wang"
-msgstr "Yiou Wang"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:210
+#: core/libs/widgets/mainview/daboutdata.cpp:215
 #, kde-format
 msgid "Model/View Port of Image Editor Canvas"
 msgstr "图像编辑器视图的模型/视图移植"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:215
-#, kde-format
-msgid "Gowtham Ashok"
-msgstr "Gowtham Ashok"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:216
+#: core/libs/widgets/mainview/daboutdata.cpp:221
 #: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "图像品质分类器"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:221
-#, kde-format
-msgid "Aditya Bhatt"
-msgstr "Aditya Bhatt"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:222
+#: core/libs/widgets/mainview/daboutdata.cpp:227
 #, kde-format
 msgid "Face Detection"
 msgstr "人脸检测"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:227
-#, kde-format
-msgid "Martin Klapetek"
-msgstr "Martin Klapetek"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:228
+#: core/libs/widgets/mainview/daboutdata.cpp:233
 #, kde-format
 msgid "Non-destructive image editing"
 msgstr "非破坏性图像编辑"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:233
-#, kde-format
-msgid "Gabriel Voicu"
-msgstr "Gabriel Voicu"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:234
+#: core/libs/widgets/mainview/daboutdata.cpp:239
 #, kde-format
 msgid "Reverse Geo-Coding"
 msgstr "反向地理编码"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:239
-#, kde-format
-msgid "Mahesh Hegde"
-msgstr "Mahesh Hegde"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:240
+#: core/libs/widgets/mainview/daboutdata.cpp:245
 #, kde-format
 msgid "Face Recognition"
 msgstr "人脸识别"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:245
-#, kde-format
-msgid "Pankaj Kumar"
-msgstr "Pankaj Kumar"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:246
+#: core/libs/widgets/mainview/daboutdata.cpp:251
 #, kde-format
 msgid "Multi-core Support in Batch Queue Manager and Mentoring"
 msgstr "批处理管理器多核心支持、开发者导师"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:251
-#, kde-format
-msgid "Smit Mehta"
-msgstr "Smit Mehta"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:252
-#, kde-format
-msgid "UPnP / DLNA Export tool and Mentoring"
+#: core/libs/widgets/mainview/daboutdata.cpp:257
+#, fuzzy, kde-format
+#| msgid "UPnP / DLNA Export tool and Mentoring"
+msgid "UPnP/DLNA Export tool and Mentoring"
 msgstr "UPnP/DLNA导出工具、开发者导师"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:257
-#, kde-format
-msgid "Islam Wazery"
-msgstr "Islam Wazery"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:258
+#: core/libs/widgets/mainview/daboutdata.cpp:263
 #, kde-format
 msgid "Model/View port of Import Tool and Mentoring"
 msgstr "导入工具的模型和视图移植、开发者导师"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:263
-#, kde-format
-msgid "Abhinav Badola"
-msgstr "Abhinav Badola"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:264
+#: core/libs/widgets/mainview/daboutdata.cpp:269
 #, kde-format
 msgid "Video Metadata Support and Mentoring"
 msgstr "视频元数据支持、开发者导师"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:269
-#, kde-format
-msgid "Benjamin Girault"
-msgstr "Benjamin Girault"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:270
+#: core/libs/widgets/mainview/daboutdata.cpp:275
 #, kde-format
 msgid "Panorama Tool and Mentoring"
 msgstr "全景图工具、开发者导师"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:275
-#, kde-format
-msgid "Victor Dodon"
-msgstr "Victor Dodon"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:276
+#: core/libs/widgets/mainview/daboutdata.cpp:281
 #, kde-format
 msgid "XML based GUI port of tools"
 msgstr "移植工具到基于 XML 的界面"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:281
-#, kde-format
-msgid "Sayantan Datta"
-msgstr "Sayantan Datta"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:282
+#: core/libs/widgets/mainview/daboutdata.cpp:287
 #, kde-format
 msgid "Auto Noise Reduction"
 msgstr "自动降噪工具"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:289
-#, kde-format
-msgid "Ananta Palani"
-msgstr "Ananta Palani"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:290
+#: core/libs/widgets/mainview/daboutdata.cpp:295
 #, kde-format
 msgid "Windows Port and Release Manager"
 msgstr "Windows 移植和软件发行管理人员"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:295
-#, kde-format
-msgid "Andi Clemens"
-msgstr "Andi Clemens"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:300
-#, kde-format
-msgid "Patrick Spendrin"
-msgstr "Patrick Spendrin"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:301
+#: core/libs/widgets/mainview/daboutdata.cpp:306
 #, kde-format
 msgid "Developer and Windows port"
 msgstr "开发人员、Windows 移植"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:306
-#, kde-format
-msgid "Francesco Riosa"
-msgstr "Francesco Riosa"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:307
+#: core/libs/widgets/mainview/daboutdata.cpp:312
 #, kde-format
 msgid "LCMS2 library port"
 msgstr "LCMS2 程序库移植"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:312
-#, kde-format
-msgid "Johannes Wienke"
-msgstr "Johannes Wienke"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:318
-#, kde-format
-msgid "Julien Pontabry"
-msgstr "Julien Pontabry"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:324
-#, kde-format
-msgid "Arnd Baecker"
-msgstr "Arnd Baecker"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:329
-#, kde-format
-msgid "Francisco J. Cruz"
-msgstr "Francisco J. Cruz"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:330
+#: core/libs/widgets/mainview/daboutdata.cpp:335
 #: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid "Color Management"
 msgstr "色彩管理"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:334
-#, kde-format
-msgid "Pieter Edelman"
-msgstr "Pieter Edelman"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:340
-#, kde-format
-msgid "Holger Foerster"
-msgstr "Holger Foerster"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:341
+#: core/libs/widgets/mainview/daboutdata.cpp:346
 #, kde-format
 msgid "MySQL interface"
 msgstr "MySQL 界面"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:345
-#, kde-format
-msgid "Risto Saukonpaa"
-msgstr "Risto Saukonpaa"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:346
+#: core/libs/widgets/mainview/daboutdata.cpp:351
 #, kde-format
 msgid "Design, icons, logo, banner, mockup, beta tester"
 msgstr "设计、图标、徽标、横幅、开发模型、beta 版本测试人员"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:350
-#, kde-format
-msgid "Mikolaj Machowski"
-msgstr "Mikolaj Machowski"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:351
-#: core/libs/widgets/mainview/daboutdata.cpp:357
+#: core/libs/widgets/mainview/daboutdata.cpp:356
+#: core/libs/widgets/mainview/daboutdata.cpp:362
 #, kde-format
 msgid "Bug reports and patches"
 msgstr "程序缺陷报告和补丁"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:356
-#, kde-format
-msgid "Achim Bohnet"
-msgstr "Achim Bohnet"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:362
-#, kde-format
-msgid "Luka Renko"
-msgstr "Luka Renko"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:368
-#, kde-format
-msgid "Angelo Naselli"
-msgstr "Angelo Naselli"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:374
-#, kde-format
-msgid "Fabien Salvi"
-msgstr "Fabien Salvi"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:375
+#: core/libs/widgets/mainview/daboutdata.cpp:380
 #, kde-format
 msgid "Webmaster"
 msgstr "网站管理员"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:379
-#, kde-format
-msgid "Todd Shoemaker"
-msgstr "Todd Shoemaker"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:384
-#, kde-format
-msgid "Gerhard Kulzer"
-msgstr "Gerhard Kulzer"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:385
+#: core/libs/widgets/mainview/daboutdata.cpp:390
 #, kde-format
 msgid "Handbook writer, alpha tester, webmaster"
 msgstr "使用手册作者、alpha 版本测试人员、网站管理员"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:390
-#, kde-format
-msgid "Oliver Doerr"
-msgstr "Oliver Doerr"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:391
 #: core/libs/widgets/mainview/daboutdata.cpp:396
+#: core/libs/widgets/mainview/daboutdata.cpp:401
 #, kde-format
 msgid "Beta tester"
 msgstr "Beta 版本测试人员"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:395
-#, kde-format
-msgid "Charles Bouveyron"
-msgstr "Charles Bouveyron"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:400
-#, kde-format
-msgid "Richard Taylor"
-msgstr "Richard Taylor"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:401
+#: core/libs/widgets/mainview/daboutdata.cpp:406
 #, kde-format
 msgid "Feedback and patches. Handbook writer"
 msgstr "意见反馈、补丁、使用手册"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:405
-#, kde-format
-msgid "Hans Karlsson"
-msgstr "Hans Karlsson"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:406
+#: core/libs/widgets/mainview/daboutdata.cpp:411
 #, kde-format
 msgid "digiKam website banner and application icons"
 msgstr "digiKam 网站横幅、应用程序图标"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:410
-#, kde-format
-msgid "Aaron Seigo"
-msgstr "Aaron Seigo"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:411
-#, kde-format
-msgid "Various usability fixes and general application polishing"
+#: core/libs/widgets/mainview/daboutdata.cpp:416
+#, fuzzy, kde-format
+#| msgid "Various usability fixes and general application polishing"
+msgid ""
+"Various usability fixes\n"
+"and general application polishing"
 msgstr "各种可用性问题修复、常规应用程序打磨"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:416
-#, kde-format
-msgid "Yves Chaufour"
-msgstr "Yves Chaufour"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:417
+#: core/libs/widgets/mainview/daboutdata.cpp:422
 #, kde-format
 msgid "digiKam website, Feedback"
 msgstr "digiKam 网站、意见反馈"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:421
-#, kde-format
-msgid "Tung Nguyen"
-msgstr "Tung Nguyen"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:422
+#: core/libs/widgets/mainview/daboutdata.cpp:427
 #, kde-format
 msgid "Bug reports, feedback and icons"
 msgstr "程序缺陷报告、意见反馈、图标"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:428
-#, kde-format
-msgid "Renchi Raju"
-msgstr "Renchi Raju"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:429
+#: core/libs/widgets/mainview/daboutdata.cpp:434
 #, kde-format
 msgid "Developer (2001-2005)"
 msgstr "开发人员 (2001-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:434
-#, kde-format
-msgid "Joern Ahrens"
-msgstr "Joern Ahrens"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:435
-#: core/libs/widgets/mainview/daboutdata.cpp:441
+#: core/libs/widgets/mainview/daboutdata.cpp:440
+#: core/libs/widgets/mainview/daboutdata.cpp:446
 #, kde-format
 msgid "Developer (2004-2005)"
 msgstr "开发人员 (2004-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:440
-#, kde-format
-msgid "Tom Albers"
-msgstr "Tom Albers"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:446
-#, kde-format
-msgid "Ralf Holzer"
-msgstr "Ralf Holzer"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:447
+#: core/libs/widgets/mainview/daboutdata.cpp:452
 #, kde-format
 msgid "Developer (2004)"
 msgstr "开发者 (2004)"
+
+#: core/libs/widgets/mainview/daboutdata.cpp:457
+#, fuzzy, kde-format
+#| msgid "Developer and Mentoring"
+msgid "Developer and Mentoring (2005-2012)"
+msgstr "开发人员、开发者导师"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:87
 #, kde-format
@@ -48145,18 +47868,18 @@ msgctxt "@title:window"
 msgid "Open Images from Folder"
 msgstr "从文件夹打开图像"
 
-#: core/showfoto/main/showfoto_open.cpp:303
+#: core/showfoto/main/showfoto_open.cpp:302
 #, kde-format
 msgid "There is no item to process."
 msgstr "没有要处理的项目。"
 
-#: core/showfoto/main/showfoto_open.cpp:325
+#: core/showfoto/main/showfoto_open.cpp:324
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Loading File"
 msgstr "加载文件时出错"
 
-#: core/showfoto/main/showfoto_open.cpp:326
+#: core/showfoto/main/showfoto_open.cpp:325
 #, kde-format
 msgid ""
 "Failed to load file: \"%1\"\n"
@@ -49171,37 +48894,37 @@ msgid "%1 file"
 msgid_plural "%1 files"
 msgstr[0] "%1 个文件"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:665
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:664
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "新建收藏图集项目"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:669
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:668
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "编辑收藏图集项目"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:676
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:675
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "新建收藏图集文件夹"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:680
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:679
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "编辑收藏图集文件夹"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:737
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:736
 #, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "无法计算平均日期"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:738
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:737
 #, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."
@@ -49380,8 +49103,8 @@ msgctxt "@action"
 msgid "C&ancel"
 msgstr "取消(&A)"
 
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:253
-#: core/utilities/import/items/itemviewimportdelegate.cpp:320
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:254
+#: core/utilities/import/items/itemviewimportdelegate.cpp:321
 #, kde-format
 msgctxt "date of image creation"
 msgid "created: %1"
@@ -50473,27 +50196,27 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "取消"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:95
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
 #, kde-format
 msgid "Confirming face"
 msgstr "正在确认人脸"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:110
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
 #, kde-format
 msgid "Removing face"
 msgstr "正在移除人脸"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:124
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
 #, kde-format
 msgid "Editing face tag"
 msgstr "正在编辑人脸标签"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:145
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
 #, kde-format
 msgid "Editing face region"
 msgstr "正在编辑人脸区域"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:166
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
 #, kde-format
 msgid "Manually adding face"
 msgstr "正在手动添加人脸"
@@ -59521,16 +59244,26 @@ msgstr "已找到人脸：%1"
 msgid "Face found: %1"
 msgstr "已找到人脸：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
-#, kde-format
-msgid "No faces found in %1"
-msgstr "没有在 %1 中发现人脸"
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
+#, fuzzy, kde-format
+#| msgid "Found 1 face in "
+#| msgid_plural "Found %1 faces in "
+msgid "Found %1 face."
+msgstr "找到 %1 张人脸，位于 "
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
-#, kde-format
-msgid "Found 1 face in "
-msgid_plural "Found %1 faces in "
-msgstr[0] "找到 %1 张人脸，位于 "
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:444
+#, fuzzy, kde-format
+#| msgid "Found 1 face in "
+#| msgid_plural "Found %1 faces in "
+msgid "Found %1 faces."
+msgstr "找到 %1 张人脸，位于 "
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:450
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Icon Size: %1"
+msgid "Recognized: %1"
+msgstr "图标大小：%1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
@@ -65777,21 +65510,194 @@ msgstr "相册视图项目"
 msgid "Import Items"
 msgstr "导入视图项目"
 
-#~ msgid "Auto-tagging scan mode: "
-#~ msgstr "自动分配标签扫描模式："
+#~ msgid "Caulier Gilles"
+#~ msgstr "Caulier Gilles"
 
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "<p><b>Replace existing autotags</b>: clear existing autotags and replace "
-#~ "with the results of the scan.</p><p><b>Update autotags</b>: add new "
-#~ "autotags found to the existing tags.</p>"
-#~ msgstr ""
-#~ "<p><b>替换已有自动标签</b>：清除已有的自动标签并将它们替换为扫描发现的新自"
-#~ "动标签。</p><p><b>附加到已有自动标签</b>：将扫描发现的新自动标签附加到已有"
-#~ "的自动标签中。</p>"
+#~ msgid "Maik Qualmann"
+#~ msgstr "Maik Qualmann"
 
-#~ msgid "ResNet152"
-#~ msgstr "ResNet152"
+#~ msgid "Marcel Wiesweg"
+#~ msgstr "Marcel Wiesweg"
 
-#~ msgid "Object Detection Accuracy: "
-#~ msgstr "对象检测精度："
+#~ msgid "Mohamed Anwer"
+#~ msgstr "Mohamed Anwer"
+
+#~ msgid "Michael G. Hansen"
+#~ msgstr "Michael G. Hansen"
+
+#~ msgid "Teemu Rytilahti"
+#~ msgstr "Teemu Rytilahti"
+
+#~ msgid "Thanh Trung Dinh"
+#~ msgstr "Thanh Trung Dinh"
+
+#~ msgid "Michael Miller"
+#~ msgstr "Michael Miller"
+
+#~ msgid "Matthias Welwarsky"
+#~ msgstr "Matthias Welwarsky"
+
+#~ msgid "Julien Narboux"
+#~ msgstr "Julien Narboux"
+
+#~ msgid "Mario Frank"
+#~ msgstr "Mario Frank"
+
+#~ msgid "Nicolas Lécureuil"
+#~ msgstr "Nicolas Lécureuil"
+
+#~ msgid "Anjani Kumar"
+#~ msgstr "Anjani Kumar"
+
+#~ msgid "Phuoc Khanh LE"
+#~ msgstr "Phuoc Khanh LE"
+
+#~ msgid "Quốc Hưng Trần"
+#~ msgstr "Quốc Hưng Trần"
+
+#~ msgid "Minh Nghĩa Duong"
+#~ msgstr "Minh Nghĩa Duong"
+
+#~ msgid "Kartik Ramesh"
+#~ msgstr "Kartik Ramesh"
+
+#~ msgid "Ahmed Fathi"
+#~ msgstr "Ahmed Fathi"
+
+#~ msgid "Veaceslav Munteanu"
+#~ msgstr "Veaceslav Munteanu"
+
+#~ msgid "Tarek Talaat"
+#~ msgstr "Tarek Talaat"
+
+#~ msgid "Yingjie Liu"
+#~ msgstr "Yingjie Liu"
+
+#~ msgid "Yiou Wang"
+#~ msgstr "Yiou Wang"
+
+#~ msgid "Gowtham Ashok"
+#~ msgstr "Gowtham Ashok"
+
+#~ msgid "Aditya Bhatt"
+#~ msgstr "Aditya Bhatt"
+
+#~ msgid "Martin Klapetek"
+#~ msgstr "Martin Klapetek"
+
+#~ msgid "Gabriel Voicu"
+#~ msgstr "Gabriel Voicu"
+
+#~ msgid "Mahesh Hegde"
+#~ msgstr "Mahesh Hegde"
+
+#~ msgid "Pankaj Kumar"
+#~ msgstr "Pankaj Kumar"
+
+#~ msgid "Smit Mehta"
+#~ msgstr "Smit Mehta"
+
+#~ msgid "Islam Wazery"
+#~ msgstr "Islam Wazery"
+
+#~ msgid "Abhinav Badola"
+#~ msgstr "Abhinav Badola"
+
+#~ msgid "Benjamin Girault"
+#~ msgstr "Benjamin Girault"
+
+#~ msgid "Victor Dodon"
+#~ msgstr "Victor Dodon"
+
+#~ msgid "Sayantan Datta"
+#~ msgstr "Sayantan Datta"
+
+#~ msgid "Ananta Palani"
+#~ msgstr "Ananta Palani"
+
+#~ msgid "Andi Clemens"
+#~ msgstr "Andi Clemens"
+
+#~ msgid "Patrick Spendrin"
+#~ msgstr "Patrick Spendrin"
+
+#~ msgid "Francesco Riosa"
+#~ msgstr "Francesco Riosa"
+
+#~ msgid "Johannes Wienke"
+#~ msgstr "Johannes Wienke"
+
+#~ msgid "Julien Pontabry"
+#~ msgstr "Julien Pontabry"
+
+#~ msgid "Arnd Baecker"
+#~ msgstr "Arnd Baecker"
+
+#~ msgid "Francisco J. Cruz"
+#~ msgstr "Francisco J. Cruz"
+
+#~ msgid "Pieter Edelman"
+#~ msgstr "Pieter Edelman"
+
+#~ msgid "Holger Foerster"
+#~ msgstr "Holger Foerster"
+
+#~ msgid "Risto Saukonpaa"
+#~ msgstr "Risto Saukonpaa"
+
+#~ msgid "Mikolaj Machowski"
+#~ msgstr "Mikolaj Machowski"
+
+#~ msgid "Achim Bohnet"
+#~ msgstr "Achim Bohnet"
+
+#~ msgid "Luka Renko"
+#~ msgstr "Luka Renko"
+
+#~ msgid "Angelo Naselli"
+#~ msgstr "Angelo Naselli"
+
+#~ msgid "Fabien Salvi"
+#~ msgstr "Fabien Salvi"
+
+#~ msgid "Todd Shoemaker"
+#~ msgstr "Todd Shoemaker"
+
+#~ msgid "Gerhard Kulzer"
+#~ msgstr "Gerhard Kulzer"
+
+#~ msgid "Oliver Doerr"
+#~ msgstr "Oliver Doerr"
+
+#~ msgid "Charles Bouveyron"
+#~ msgstr "Charles Bouveyron"
+
+#~ msgid "Richard Taylor"
+#~ msgstr "Richard Taylor"
+
+#~ msgid "Hans Karlsson"
+#~ msgstr "Hans Karlsson"
+
+#~ msgid "Aaron Seigo"
+#~ msgstr "Aaron Seigo"
+
+#~ msgid "Yves Chaufour"
+#~ msgstr "Yves Chaufour"
+
+#~ msgid "Tung Nguyen"
+#~ msgstr "Tung Nguyen"
+
+#~ msgid "Renchi Raju"
+#~ msgstr "Renchi Raju"
+
+#~ msgid "Joern Ahrens"
+#~ msgstr "Joern Ahrens"
+
+#~ msgid "Tom Albers"
+#~ msgstr "Tom Albers"
+
+#~ msgid "Ralf Holzer"
+#~ msgstr "Ralf Holzer"
+
+#~ msgid "No faces found in %1"
+#~ msgstr "没有在 %1 中发现人脸"

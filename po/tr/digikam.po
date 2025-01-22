@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 01:52+0000\n"
-"PO-Revision-Date: 2025-01-15 12:11+0300\n"
+"POT-Creation-Date: 2025-01-22 01:51+0000\n"
+"PO-Revision-Date: 2025-01-21 10:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -62,19 +62,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 25.03.70\n"
 
-#: core/app/date/ddateedit.cpp:492
+#: core/app/date/ddateedit.cpp:496
 #, kde-format
 msgctxt "@item: date keyword"
 msgid "tomorrow"
 msgstr "yarın"
 
-#: core/app/date/ddateedit.cpp:493
+#: core/app/date/ddateedit.cpp:497
 #, kde-format
 msgctxt "@item: date keyword"
 msgid "today"
 msgstr "bugün"
 
-#: core/app/date/ddateedit.cpp:494
+#: core/app/date/ddateedit.cpp:498
 #, kde-format
 msgctxt "@item: date keyword"
 msgid "yesterday"
@@ -120,13 +120,13 @@ msgstr "Bir yıl seç"
 msgid "Select the current day"
 msgstr "Geçerli tarihi seç"
 
-#: core/app/date/ddatepicker.cpp:570
+#: core/app/date/ddatepicker.cpp:574
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "Kapat"
 
-#: core/app/date/ddatepicker_p.cpp:159
+#: core/app/date/ddatepicker_p.cpp:160
 #, kde-format
 msgid "Week %1"
 msgstr "%1. hafta"
@@ -16802,7 +16802,7 @@ msgid "Revert current settings to default values."
 msgstr "Geçerli ayarları öntanımlı değerlere geri döndürün."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:91
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:93
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
@@ -17104,7 +17104,7 @@ msgstr ""
 "yapılması gerekir. Hizalama işlemleri biraz zaman alabilir."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:135
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:187
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:189
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17115,29 +17115,29 @@ msgstr ""
 "görseller, otomatik gama ile 16 bit sRGB görsellere dönüştürülecek."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:136
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:192
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:194
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
 msgstr "Ön işlemeyi başlatmak için “Sonraki” düğmesine basın."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:148
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:144
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:146
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing is in progress, please wait."
 msgstr "Ön işleme sürüyor, lütfen bekleyin."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:149
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:170
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:145
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:172
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid "This can take a while..."
 msgstr "Bu biraz vakit alabilir…"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:206
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:289
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing has failed."
@@ -17151,7 +17151,7 @@ msgstr "Lütfen basamaklı görsel yığınınızı denetleyin…"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:208
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:311
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:290
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:291
 #, kde-format
 msgctxt "@info"
 msgid "See processing messages below."
@@ -17837,20 +17837,20 @@ msgstr "Yollar Seçimi"
 msgid "Generating jAlbum"
 msgstr "jAlbum Üretiliyor"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:75
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "Share Files With DLNA Media Server"
 msgstr "DLNA Ortam Sunucusuyla Dosyalar Paylaş"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:132
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:134
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:68
 #, kde-format
 msgctxt "@option"
 msgid "Start Server at Startup"
 msgstr "Sunucuyu Başlangıçta Başlat"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:133
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:135
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17860,7 +17860,7 @@ msgstr ""
 "DLNA sunucusunu uygulama başlatımında kendiliğinden açmak için bu seçeneği "
 "ayarla"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:151
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17879,9 +17879,9 @@ msgstr ""
 "Not: Ağın özelliklerine ve yapılandırmasına bağlı olarak istemci "
 "aygıtlarında sunucuyu bulma gecikmesi biraz zaman alabilir."
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:208
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:283
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:296
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:209
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:284
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:297
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:64
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:77
 #, kde-format
@@ -17889,7 +17889,7 @@ msgctxt "@title:window"
 msgid "Media Server Contents"
 msgstr "Ortam Sunucusu İçeriği"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:209
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:210
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17899,14 +17899,14 @@ msgstr ""
 "Paylaşılacak ögelerin listesi değişti. Şimdi bu içeriğe sahip ortam "
 "sunucusunu başlatmak istiyor musunuz?"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:246
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:247
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:25
 #, kde-format
 msgctxt "@label"
 msgid "Server is running"
 msgstr "Sunucu çalışıyor"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:247
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:248
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:26
 #, kde-format
 msgctxt "@info"
@@ -17915,7 +17915,7 @@ msgid_plural "%1 albums shared"
 msgstr[0] "1 albüm paylaşıldı"
 msgstr[1] "%1 albüm paylaşıldı"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:249
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:250
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:28
 #, kde-format
 msgctxt "@info"
@@ -17924,56 +17924,56 @@ msgid_plural "%1 items shared"
 msgstr[0] "1 öge paylaşıldı"
 msgstr[1] "%1 öge paylaşıldı"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:250
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:251
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:29
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr "Durdur"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:257
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:258
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:37
 #, kde-format
 msgctxt "@label"
 msgid "Server is not running"
 msgstr "Sunucu çalışmıyor"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:261
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:262
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:41
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr "Başlat"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:284
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:285
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "There is no collection to share with the current selection..."
 msgstr "Geçerli seçimle paylaşılacak hiçbir koleksiyon yok…"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:297
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:298
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:78
 #, kde-format
 msgctxt "@info"
 msgid "There is no item to share with the current selection..."
 msgstr "Geçerli seçimle paylaşılacak herhangi bir öge yok…"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:302
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:303
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:83
 #, kde-format
 msgctxt "@info"
 msgid "Shared Items"
 msgstr "Paylaşılan Ögeler"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:322
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:323
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "Starting Media Server"
 msgstr "Ortam Sunucusunu Başlatılıyor"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:323
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:324
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:106
 #, kde-format
 msgctxt "@info"
@@ -18284,17 +18284,17 @@ msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:99
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
-#: core/libs/widgets/mainview/daboutdata.cpp:107
+#: core/libs/widgets/mainview/daboutdata.cpp:110
 #: core/libs/widgets/mainview/daboutdata.cpp:128
 #: core/libs/widgets/mainview/daboutdata.cpp:134
-#: core/libs/widgets/mainview/daboutdata.cpp:296
-#: core/libs/widgets/mainview/daboutdata.cpp:313
-#: core/libs/widgets/mainview/daboutdata.cpp:319
-#: core/libs/widgets/mainview/daboutdata.cpp:325
-#: core/libs/widgets/mainview/daboutdata.cpp:335
-#: core/libs/widgets/mainview/daboutdata.cpp:363
-#: core/libs/widgets/mainview/daboutdata.cpp:369
-#: core/libs/widgets/mainview/daboutdata.cpp:380
+#: core/libs/widgets/mainview/daboutdata.cpp:301
+#: core/libs/widgets/mainview/daboutdata.cpp:318
+#: core/libs/widgets/mainview/daboutdata.cpp:324
+#: core/libs/widgets/mainview/daboutdata.cpp:330
+#: core/libs/widgets/mainview/daboutdata.cpp:340
+#: core/libs/widgets/mainview/daboutdata.cpp:368
+#: core/libs/widgets/mainview/daboutdata.cpp:374
+#: core/libs/widgets/mainview/daboutdata.cpp:385
 #: core/utilities/geolocation/engine/plugins/PluginInterface.h:46
 #, kde-format
 msgid "Developer"
@@ -19157,26 +19157,26 @@ msgctxt "@label"
 msgid "Error"
 msgstr "Hata"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:81
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:83
 #, kde-format
 msgctxt "@title: window"
 msgid "Optimization"
 msgstr "Eniyileme"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:95
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:97
 #, kde-format
 msgctxt "@option: check"
 msgid "Level horizon"
 msgstr "Ufku hizala"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:99
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Detect the horizon and adapt the project to make it horizontal."
 msgstr ""
 "Ufku algılayın ve onu bir hizada yatay yapacak biçimde projeyi uyarlayın."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:100
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19186,20 +19186,20 @@ msgstr ""
 "“Ufku hizala”: Ufku algılayın ve projeksiyonu, algılanan ufuk son panoramada "
 "yatay bir çizgi olacak şekilde uyarlayın"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:169
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:171
 #, kde-format
 msgctxt "@info"
 msgid "Optimization is in progress, please wait."
 msgstr "Eniyileme sürüyor, lütfen bekleyin."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:203
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:205
 #, kde-format
 msgctxt "@info"
 msgid ""
 "The optimization step according to your settings is ready to be performed."
 msgstr "Ayarlarınıza göre eniyileme adımı gerçekleştirilmeye hazır."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:204
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19209,13 +19209,13 @@ msgstr ""
 "Bu adım, ufkun kendiliğinden hizalanmasını ve ayrıca kendiliğinden "
 "projeksiyon seçimini ve boyutunu içerebilir."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:206
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:208
 #, kde-format
 msgctxt "@info"
 msgid "To perform this operation, the \"%1\" program will be used."
 msgstr "Bu işlemi gerçekleştirmek için “%1” programı kullanılacak."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:208
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:210
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to run the optimization."
@@ -19227,19 +19227,19 @@ msgctxt "@info"
 msgid "Optimization has failed."
 msgstr "Eniyileme başarısız oldu."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:83
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:85
 #, kde-format
 msgctxt "@title: window"
 msgid "Pre-Processing Images"
 msgstr "Görseller Ön İşleniyor"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:99
 #, kde-format
 msgctxt "@option: check"
 msgid "Detect moving skies"
 msgstr "Hareket eden gökyüzünü algıla"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:99
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:101
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19249,7 +19249,7 @@ msgstr ""
 "Hareket eden bulutlar nedeniyle görseller arasında yanlış anahtar noktaların "
 "eşleşmesini önlemek için bulutların kendiliğinden algılanması."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:101
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:103
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19263,14 +19263,14 @@ msgstr ""
 "noktaları atar. Bu, hareketli bulutların kontrol noktaları eşleştirme "
 "sürecini değiştirmesini önlemek için kullanışlıdır."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:186
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:188
 #, kde-format
 msgctxt "@info"
 msgid "Now, we will pre-process images before stitching them."
 msgstr ""
 "Şimdi, görselleri birbirine dikmeden önce onların ön işlemelerini yapacağız."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:189
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:191
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19281,29 +19281,29 @@ msgstr ""
 "denetim noktalarının hesaplanmasını da içerir. Bu amaçla “%1” programı "
 "kullanılacaktır."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:79
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:81
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>Önizleme ve Son İşlemesi</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:129
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:131
 #, kde-format
 msgid "Processing Panorama Preview..."
 msgstr "Panorama önizlemesi işleniyor…"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:210
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:212
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>Panorama Son İşlemesi</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:216
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:218
 #, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "Panorama Son İşlemesi"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:298
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:300
 #, kde-format
 msgid "Preview Processing Cancelled."
 msgstr "Önizleme işlemesi iptal edildi."
@@ -22321,9 +22321,9 @@ msgstr "&Box’a Dışa Aktar…"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1198
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:467
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:718
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:865
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1033
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:863
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1031
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:754
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:777
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:820
@@ -22352,7 +22352,7 @@ msgstr "Box’a Dışa Aktar"
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:117
 #: core/dplugins/generic/webservices/google/gswindow.cpp:129
 #: core/dplugins/generic/webservices/google/gswindow.cpp:176
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:97
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:99
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:77
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:77
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:266
@@ -25329,13 +25329,13 @@ msgctxt "@item"
 msgid "Upload Settings"
 msgstr "Karşıya Yükleme Ayarları"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:95
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to MediaWiki"
 msgstr "MediaWiki’ye Dışa Aktar"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:98
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:100
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to MediaWiki"
@@ -25582,57 +25582,57 @@ msgid "Incorrect username or password specified"
 msgstr "Geçersiz kullanıcı adı veya parola belirtildi"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:552
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:739
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:737
 #, kde-format
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
 msgstr ""
 "Piwigo 2.4’e kadar olan sürümler için karşıya yükleme artık desteklenmiyor"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:628
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:711
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:785
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:858
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:627
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:709
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:783
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:856
 #, kde-format
 msgid "Invalid response received from remote Piwigo"
 msgstr "Uzak Piwigo’dan geçersiz yanıt alındı"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:635
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:634
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:980
 #, kde-format
 msgid "Failed to list albums"
 msgstr "Albümler listelenemedi"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:685
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:683
 #, kde-format
 msgid "Photo '%1' already exists."
 msgstr "“%1” fotoğrafı halihazırda var."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:792
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:790
 #, kde-format
 msgid "Photo '%1' already exists in this album."
 msgstr "“%1” fotoğrafı bu albümde halihazırda var."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:881
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:879
 #, kde-format
 msgid "Error : Cannot open photo: %1"
 msgstr "Hata: Fotoğraf açılamıyor: %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:909
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:907
 #, kde-format
 msgid "Upload the chunk %1/%2 of %3"
 msgstr "%3 dosyasının %1/%2 parçası karşıya yükleniyor…"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:942
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:940
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
 msgstr "Uyarı: Tam boyutlu fotoğraf yüklenemiyor."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:993
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:991
 #, kde-format
 msgid "Upload the metadata of %1"
 msgstr "%1 üst verisi yükleniyor…"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1026
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1024
 #, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "Uzak Piwigo’dan geçersiz yanıt alındı (%1)"
@@ -26547,7 +26547,7 @@ msgstr "Web Hizmeti Ayarları"
 msgid "Export by Web Service"
 msgstr "Web Hizmeti ile Dışa Aktar"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:232
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -26557,12 +26557,12 @@ msgstr ""
 "RAW görseli yerel içe aktarma aracıyla yüklemek için bu iletişim kutusunu "
 "kapatın"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:246
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:248
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "ART RAW Dönüştürme"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:297
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26572,7 +26572,7 @@ msgstr ""
 "RAW görseli yerel içe aktarma aracıyla yüklemek için bu iletişim kutusunu "
 "kapatın"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:311
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:313
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "DarkTable RAW Dönüştürme"
@@ -26761,7 +26761,7 @@ msgstr ""
 "Bu görseli düzenleyicide yüklemek için genel RAW kod çözme ayarlarını "
 "kullanın."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:231
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -26771,12 +26771,12 @@ msgstr ""
 "RAW görseli yerel içe aktarma aracıyla yüklemek için bu iletişim kutusunu "
 "kapatın"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:245
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:247
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "RawTherapee RAW Dönüştürme"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:227
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:229
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -26786,7 +26786,7 @@ msgstr ""
 "RAW görseli yerel içe aktarma aracıyla yüklemek için bu iletişim kutusunu "
 "kapatın"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:243
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:245
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW Dönüştürme"
@@ -37026,12 +37026,12 @@ msgstr "Ayrıntılı ilerleme iletişim kutusunu aç"
 msgid "No active process"
 msgstr "Etkin süreç yok"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:410
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:416
 #, kde-format
 msgid "Hide detailed progress window"
 msgstr "Ayrıntılı süreç penceresini gizle"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:416
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:422
 #, kde-format
 msgid "Show detailed progress window"
 msgstr "Ayrıntılı işlem penceresini göster"
@@ -37935,7 +37935,7 @@ msgid "Map"
 msgstr "Harita"
 
 #: core/libs/properties/itempropertiessidebar.cpp:232
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:579
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:578
 #: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, kde-format
 msgctxt "@info: item properties"
@@ -39302,9 +39302,20 @@ msgid "Album: %1\n"
 msgstr "Albüm: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #, kde-format
 msgid "Scanning: %1\n"
 msgstr "Taranıyor: %1\n"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:255
+#, kde-format
+msgid "Found %1 object. Tag: %2"
+msgstr ""
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:259
+#, kde-format
+msgid "Found %1 objects. Tags: %2"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
@@ -39314,15 +39325,7 @@ msgid "Search in"
 msgstr "Arama Konumu"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p><b>This tool automatically assigns tags to images by analyzing the "
-#| "image using a deep-learning neural network AI model.</b></p><p>The "
-#| "settings below determine the deep-learning AI model to use while parsing "
-#| "image contents to determine objects in the image. The AI neural network "
-#| "used in background will automatically generate tags describing the "
-#| "contents and store the results in the database.</p>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "<p><b>This tool automatically assigns tags to images by analyzing the image "
@@ -39334,11 +39337,10 @@ msgid ""
 msgstr ""
 "<p><b>Bu araç, bir derin öğrenme sinir ağı yapay zeka modeli kullanarak "
 "görseli çözümler ve görsellere kendiliğinden künyeler atar.</b></"
-"p><p>Aşağıdaki ayarlar, görseldeki nesneleri belirlemek için görsel "
-"içeriğini ayrıştırırken kullanılacak derin öğrenme yapay zeka modelini "
-"belirler. Arka planda kullanılan yapay zeka sinir ağı, içeriği açıklayan "
-"etiketleri kendiliğinden oluşturacak ve sonuçları veritabanında "
-"saklayacaktır.</p>"
+"p><p>Aşağıdaki ayarlar, nesneleri tanımlamak üzere görsel içeriklerini "
+"çözümlemek için kullanılan derin öğrenme yapay zeka modelini yapılandırır. "
+"Yapay zeka sinir ağı, görsel içerikleri için kendiliğinden açıklayıcı "
+"künyeler oluşturacak ve sonuçları veritabanında saklayacaktır.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:102
 #, kde-format
@@ -42705,25 +42707,25 @@ msgstr[1] ""
 "İşlem, %1 seçili\n"
 "resme uygulanıyor"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:405
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:406
 #, kde-format
 msgctxt "date of last image modification"
 msgid "Mod.: %1"
 msgstr "Kip: %1"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:421
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:422
 #: core/showfoto/main/showfoto.cpp:267
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
-#: core/utilities/import/items/itemviewimportdelegate.cpp:367
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
+#: core/utilities/import/items/itemviewimportdelegate.cpp:368
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1 × %2 (%3 Mpks)"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:426
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:446
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:320
-#: core/utilities/import/items/itemviewimportdelegate.cpp:372
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:427
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:447
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
+#: core/utilities/import/items/itemviewimportdelegate.cpp:373
 #, kde-format
 msgctxt "unknown image resolution"
 msgid "Unknown"
@@ -42768,125 +42770,70 @@ msgstr "Bir KDE projesi"
 msgid "(c) 2001-2025, digiKam developers team"
 msgstr "© 2002–2025, digiKam geliştiricileri takımı"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:76
-#, kde-format
-msgid "Caulier Gilles"
-msgstr "Caulier Gilles"
-
 #: core/libs/widgets/mainview/daboutdata.cpp:77
 #, kde-format
 msgid "Coordinator, Developer, and Mentoring"
 msgstr "Koordinatör, geliştirici ve danışmanlık"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:82
-#, kde-format
-msgid "Maik Qualmann"
-msgstr "Maik Qualmann"
-
 #: core/libs/widgets/mainview/daboutdata.cpp:83
-#: core/libs/widgets/mainview/daboutdata.cpp:89
-#: core/libs/widgets/mainview/daboutdata.cpp:95
-#: core/libs/widgets/mainview/daboutdata.cpp:101
+#: core/libs/widgets/mainview/daboutdata.cpp:98
+#: core/libs/widgets/mainview/daboutdata.cpp:104
 #, kde-format
 msgid "Developer and Mentoring"
 msgstr "Geliştirici ve danışmanlık"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:88
-#, kde-format
-msgid "Marcel Wiesweg"
-msgstr "Marcel Wiesweg"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:94
-#, kde-format
-msgid "Mohamed Anwer"
-msgstr "Mohamed Anwer"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:100
-#, kde-format
-msgid "Michael G. Hansen"
-msgstr "Michael G. Hansen"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:106
-#, kde-format
-msgid "Teemu Rytilahti"
-msgstr "Teemu Rytilahti"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:112
-#, kde-format
-msgid "Thanh Trung Dinh"
-msgstr "Thanh Trung Dinh"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:113
-#, kde-format
+#: core/libs/widgets/mainview/daboutdata.cpp:89
+#, fuzzy, kde-format
+#| msgid "SFace and YuNet DNN models integration. Face Management improvements"
 msgid ""
-"Mentoring, Port web-service tools to OAuth, factoring web service tools, and "
-"port faces recognition engine to OpenCV neural network"
+"SFace and YuNet DNN models integration\n"
+"in face workflow.\n"
+"Face Management and auto-tag AI improvements.\n"
+"AI red eyes detection"
+msgstr ""
+"SFace ve YuNet DNN modelleri tümleştirmesi. Yüz yönetimi iyileştirmeleri"
+
+#: core/libs/widgets/mainview/daboutdata.cpp:116
+#, fuzzy, kde-format
+#| msgid ""
+#| "Mentoring, Port web-service tools to OAuth, factoring web service tools, "
+#| "and port faces recognition engine to OpenCV neural network"
+msgid ""
+"Mentoring, Port web-service tools to OAuth,\n"
+"factoring web service tools,\n"
+"and port faces recognition engine\n"
+"to OpenCV neural network"
 msgstr ""
 "Danışmanlık, web hizmeti araçlarını OAuth’a taşıma, web hizmeti araçlarını "
 "yeniden organize edilmesi ve yüz tanıma işletkesini OpenCV sinirsel ağına "
 "taşıma"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:119
-#, kde-format
-msgid "Michael Miller"
-msgstr "Michael Miller"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:120
-#, kde-format
-msgid "SFace and YuNet DNN models integration. Face Management improvements"
-msgstr ""
-"SFace ve YuNet DNN modelleri tümleştirmesi. Yüz yönetimi iyileştirmeleri"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:127
-#, kde-format
-msgid "Matthias Welwarsky"
-msgstr "Matthias Welwarsky"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:133
-#, kde-format
-msgid "Julien Narboux"
-msgstr "Julien Narboux"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:139
-#, kde-format
-msgid "Mario Frank"
-msgstr "Mario Frank"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:140
 #, kde-format
 msgid "Advanced Searches Tool Improvements"
 msgstr "Gelişmiş aramalar aracı iyileştirmeleri"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:144
-#, kde-format
-msgid "Nicolas Lécureuil"
-msgstr "Nicolas Lécureuil"
-
 #: core/libs/widgets/mainview/daboutdata.cpp:145
 #, kde-format
 msgid "Releases Manager"
 msgstr "Yayımlama yöneticisi"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:152
-#, kde-format
-msgid "Anjani Kumar"
-msgstr "Anjani Kumar"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:153
 #, kde-format
 msgid "Port to Qt6,"
 msgstr "Qt6 geçişi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:158
-#, kde-format
-msgid "Phuoc Khanh LE"
-msgstr "Phuoc Khanh LE"
-
 #: core/libs/widgets/mainview/daboutdata.cpp:159
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Rewrite Image Quality Sorter algorithms and Photo Focus Information "
+#| "Extraction, Aesthetic Detection to classify images using deep learning "
+#| "model,Slideshow and Presentation tools improvement"
 msgid ""
-"Rewrite Image Quality Sorter algorithms and Photo Focus Information "
-"Extraction, Aesthetic Detection to classify images using deep learning model,"
+"Rewrite Image Quality Sorter algorithms\n"
+"and Photo Focus Information Extraction.\n"
+"Aesthetic Detection to classify images\n"
+"using deep learning model.\n"
 "Slideshow and Presentation tools improvement"
 msgstr ""
 "Görsel Kalitesi Sıralayıcısı algoritmalarını ve Fotoğraf Odak Bilgisi "
@@ -42894,454 +42841,233 @@ msgstr ""
 "görselleri sınıflandırmak için Estetik Algılama ve Slayt Gösterisi/Sunum "
 "araçları iyileştirmeleri"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:166
-#, kde-format
-msgid "Quốc Hưng Trần"
-msgstr "Quốc Hưng Trần"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:167
-#, kde-format
+#: core/libs/widgets/mainview/daboutdata.cpp:169
+#, fuzzy, kde-format
+#| msgid ""
+#| "MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
 msgid ""
-"MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
+"MJPEGStream plugin,\n"
+"OCR text Converter plugin,\n"
+"auto-tags assignment engine"
 msgstr ""
 "MJPEGStream eklentisi, OCR metin dönüştürücüsü eklentisi, kendiliğinden "
 "künye atama işletkesi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:172
-#, kde-format
-msgid "Minh Nghĩa Duong"
-msgstr "Minh Nghĩa Duong"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:173
-#, kde-format
+#: core/libs/widgets/mainview/daboutdata.cpp:177
+#, fuzzy, kde-format
+#| msgid ""
+#| "Clustering support and improvement for Face Engine, Port Slideshow tool "
+#| "to plugins interface"
 msgid ""
-"Clustering support and improvement for Face Engine, Port Slideshow tool to "
-"plugins interface"
+"Face workflow Clustering support,\n"
+"improvement for Face Engine,\n"
+"Port Slideshow tool to plugins interface"
 msgstr ""
 "Yüz İşletkesi için kümeleme desteği ve iyileştirmeleri, eklentiler arayüzü "
 "için slayt gösterisi aktarma desteği"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:179
-#, kde-format
-msgid "Kartik Ramesh"
-msgstr "Kartik Ramesh"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:180
+#: core/libs/widgets/mainview/daboutdata.cpp:185
 #, kde-format
 msgid "Face management workflow improvements"
 msgstr "Yüz yönetimi iş akışı iyileştirmeleri"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:185
-#, kde-format
-msgid "Ahmed Fathi"
-msgstr "Ahmed Fathi"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:186
-#, kde-format
-msgid "UPNP/DLNA export tool, and Healing clone tool for image editor"
+#: core/libs/widgets/mainview/daboutdata.cpp:191
+#, fuzzy, kde-format
+#| msgid "UPNP/DLNA export tool, and Healing clone tool for image editor"
+msgid ""
+"UPNP/DLNA export tool\n"
+"and Healing clone tool for image editor"
 msgstr ""
 "UPNP/DLNA dışa aktarma aracı ve görsel düzenleyicisi için iyileştirme klonu"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:191
-#, kde-format
-msgid "Veaceslav Munteanu"
-msgstr "Veaceslav Munteanu"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:192
+#: core/libs/widgets/mainview/daboutdata.cpp:197
 #, kde-format
 msgid "Tags Manager"
 msgstr "Künyeler Yöneticisi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:197
-#, kde-format
-msgid "Tarek Talaat"
-msgstr "Tarek Talaat"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:198
+#: core/libs/widgets/mainview/daboutdata.cpp:203
 #, kde-format
 msgid "New OneDrive, Pinterrest, and Box export tools"
 msgstr "Yeni OneDrive, Pinterest ve Box dışa aktarma araçları"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:203
-#, kde-format
-msgid "Yingjie Liu"
-msgstr "Yingjie Liu"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:204
-#, kde-format
-msgid "Face-engine improvements and manual icon-view sort"
+#: core/libs/widgets/mainview/daboutdata.cpp:209
+#, fuzzy, kde-format
+#| msgid "Face-engine improvements and manual icon-view sort"
+msgid ""
+"Face-engine improvements\n"
+"and manual icon-view sort"
 msgstr "Yüz işletkesi iyileştirmeleri ve elle simge görüntüleme sıralaması"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:209
-#, kde-format
-msgid "Yiou Wang"
-msgstr "Yiou Wang"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:210
+#: core/libs/widgets/mainview/daboutdata.cpp:215
 #, kde-format
 msgid "Model/View Port of Image Editor Canvas"
 msgstr "Görsel düzenleyicisi tuvalinin model/görüntü geçişi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:215
-#, kde-format
-msgid "Gowtham Ashok"
-msgstr "Gowtham Ashok"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:216
+#: core/libs/widgets/mainview/daboutdata.cpp:221
 #: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Görsel Kalitesi Sıralayıcısı"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:221
-#, kde-format
-msgid "Aditya Bhatt"
-msgstr "Aditya Bhatt"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:222
+#: core/libs/widgets/mainview/daboutdata.cpp:227
 #, kde-format
 msgid "Face Detection"
 msgstr "Yüz Algılama"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:227
-#, kde-format
-msgid "Martin Klapetek"
-msgstr "Martin Klapetek"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:228
+#: core/libs/widgets/mainview/daboutdata.cpp:233
 #, kde-format
 msgid "Non-destructive image editing"
 msgstr "Yıkıcı olmayan görsel düzenleme"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:233
-#, kde-format
-msgid "Gabriel Voicu"
-msgstr "Gabriel Voicu"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:234
+#: core/libs/widgets/mainview/daboutdata.cpp:239
 #, kde-format
 msgid "Reverse Geo-Coding"
 msgstr "Coğrafi Kodlamayı Tersine Döndür"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:239
-#, kde-format
-msgid "Mahesh Hegde"
-msgstr "Mahesh Hegde"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:240
+#: core/libs/widgets/mainview/daboutdata.cpp:245
 #, kde-format
 msgid "Face Recognition"
 msgstr "Yüz Tanıma"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:245
-#, kde-format
-msgid "Pankaj Kumar"
-msgstr "Pankaj Kumar"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:246
+#: core/libs/widgets/mainview/daboutdata.cpp:251
 #, kde-format
 msgid "Multi-core Support in Batch Queue Manager and Mentoring"
 msgstr "Toplu kuyruk yöneticisinde birden çok çekirdek desteği ve danışmanlık"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:251
-#, kde-format
-msgid "Smit Mehta"
-msgstr "Smit Mehta"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:252
-#, kde-format
-msgid "UPnP / DLNA Export tool and Mentoring"
+#: core/libs/widgets/mainview/daboutdata.cpp:257
+#, fuzzy, kde-format
+#| msgid "UPnP / DLNA Export tool and Mentoring"
+msgid "UPnP/DLNA Export tool and Mentoring"
 msgstr "UPnP/DLNA dışa aktarma aracı ve danışmanlığı"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:257
-#, kde-format
-msgid "Islam Wazery"
-msgstr "Islam Wazery"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:258
+#: core/libs/widgets/mainview/daboutdata.cpp:263
 #, kde-format
 msgid "Model/View port of Import Tool and Mentoring"
 msgstr "İçe aktarma aracının model/görünüm geçişi ve danışmanlık"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:263
-#, kde-format
-msgid "Abhinav Badola"
-msgstr "Abhinav Badola"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:264
+#: core/libs/widgets/mainview/daboutdata.cpp:269
 #, kde-format
 msgid "Video Metadata Support and Mentoring"
 msgstr "Video üst veri desteği ve danışmanlık"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:269
-#, kde-format
-msgid "Benjamin Girault"
-msgstr "Benjamin Girault"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:270
+#: core/libs/widgets/mainview/daboutdata.cpp:275
 #, kde-format
 msgid "Panorama Tool and Mentoring"
 msgstr "Panorama aracı ve danışmanlık"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:275
-#, kde-format
-msgid "Victor Dodon"
-msgstr "Victor Dodon"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:276
+#: core/libs/widgets/mainview/daboutdata.cpp:281
 #, kde-format
 msgid "XML based GUI port of tools"
 msgstr "Araçların XML tabanlı arayüz geçişleri"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:281
-#, kde-format
-msgid "Sayantan Datta"
-msgstr "Sayantan Datta"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:282
+#: core/libs/widgets/mainview/daboutdata.cpp:287
 #, kde-format
 msgid "Auto Noise Reduction"
 msgstr "Kendiliğinden Gürültü Azaltma"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:289
-#, kde-format
-msgid "Ananta Palani"
-msgstr "Ananta Palani"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:290
+#: core/libs/widgets/mainview/daboutdata.cpp:295
 #, kde-format
 msgid "Windows Port and Release Manager"
 msgstr "Windows Sürümü ve Yayım Yöneticisi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:295
-#, kde-format
-msgid "Andi Clemens"
-msgstr "Andi Clemens"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:300
-#, kde-format
-msgid "Patrick Spendrin"
-msgstr "Patrick Spendrin"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:301
+#: core/libs/widgets/mainview/daboutdata.cpp:306
 #, kde-format
 msgid "Developer and Windows port"
 msgstr "Geliştirici ve Windows geçişi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:306
-#, kde-format
-msgid "Francesco Riosa"
-msgstr "Francesco Riosa"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:307
+#: core/libs/widgets/mainview/daboutdata.cpp:312
 #, kde-format
 msgid "LCMS2 library port"
 msgstr "LCMS2 kitaplığı geçişi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:312
-#, kde-format
-msgid "Johannes Wienke"
-msgstr "Johannes Wienke"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:318
-#, kde-format
-msgid "Julien Pontabry"
-msgstr "Julien Pontabry"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:324
-#, kde-format
-msgid "Arnd Baecker"
-msgstr "Arnd Baecker"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:329
-#, kde-format
-msgid "Francisco J. Cruz"
-msgstr "Francisco J. Cruz"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:330
+#: core/libs/widgets/mainview/daboutdata.cpp:335
 #: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid "Color Management"
 msgstr "Renk Yönetimi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:334
-#, kde-format
-msgid "Pieter Edelman"
-msgstr "Pieter Edelman"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:340
-#, kde-format
-msgid "Holger Foerster"
-msgstr "Holger Foerster"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:341
+#: core/libs/widgets/mainview/daboutdata.cpp:346
 #, kde-format
 msgid "MySQL interface"
 msgstr "MySQL arayüzü"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:345
-#, kde-format
-msgid "Risto Saukonpaa"
-msgstr "Risto Saukonpaa"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:346
+#: core/libs/widgets/mainview/daboutdata.cpp:351
 #, kde-format
 msgid "Design, icons, logo, banner, mockup, beta tester"
 msgstr "Tasarım, simgeler, logo, afiş, maket, beta sınayıcısı"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:350
-#, kde-format
-msgid "Mikolaj Machowski"
-msgstr "Mikolaj Machowski"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:351
-#: core/libs/widgets/mainview/daboutdata.cpp:357
+#: core/libs/widgets/mainview/daboutdata.cpp:356
+#: core/libs/widgets/mainview/daboutdata.cpp:362
 #, kde-format
 msgid "Bug reports and patches"
 msgstr "Hata raporları ve yamalar"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:356
-#, kde-format
-msgid "Achim Bohnet"
-msgstr "Achim Bohnet"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:362
-#, kde-format
-msgid "Luka Renko"
-msgstr "Luka Renko"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:368
-#, kde-format
-msgid "Angelo Naselli"
-msgstr "Angelo Naselli"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:374
-#, kde-format
-msgid "Fabien Salvi"
-msgstr "Fabien Salvi"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:375
+#: core/libs/widgets/mainview/daboutdata.cpp:380
 #, kde-format
 msgid "Webmaster"
 msgstr "Webmaster"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:379
-#, kde-format
-msgid "Todd Shoemaker"
-msgstr "Todd Shoemaker"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:384
-#, kde-format
-msgid "Gerhard Kulzer"
-msgstr "Gerhard Kulzer"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:385
+#: core/libs/widgets/mainview/daboutdata.cpp:390
 #, kde-format
 msgid "Handbook writer, alpha tester, webmaster"
 msgstr "El kitabı yazarı, alfa sınayıcısı, web uzmanı"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:390
-#, kde-format
-msgid "Oliver Doerr"
-msgstr "Oliver Doerr"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:391
 #: core/libs/widgets/mainview/daboutdata.cpp:396
+#: core/libs/widgets/mainview/daboutdata.cpp:401
 #, kde-format
 msgid "Beta tester"
 msgstr "Beta testçisi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:395
-#, kde-format
-msgid "Charles Bouveyron"
-msgstr "Charles Bouveyron"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:400
-#, kde-format
-msgid "Richard Taylor"
-msgstr "Richard Taylor"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:401
+#: core/libs/widgets/mainview/daboutdata.cpp:406
 #, kde-format
 msgid "Feedback and patches. Handbook writer"
 msgstr "Geri bildirimler ve yamalar. El kitabı yazarı"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:405
-#, kde-format
-msgid "Hans Karlsson"
-msgstr "Hans Karlsson"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:406
+#: core/libs/widgets/mainview/daboutdata.cpp:411
 #, kde-format
 msgid "digiKam website banner and application icons"
 msgstr "digiKam internet sitesi büyük başlık ve uygulama simgeleri"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:410
-#, kde-format
-msgid "Aaron Seigo"
-msgstr "Aaron Seigo"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:411
-#, kde-format
-msgid "Various usability fixes and general application polishing"
+#: core/libs/widgets/mainview/daboutdata.cpp:416
+#, fuzzy, kde-format
+#| msgid "Various usability fixes and general application polishing"
+msgid ""
+"Various usability fixes\n"
+"and general application polishing"
 msgstr "Muhtelif kullanışlılık düzeltmeleri ve genel uygulama güzelleştirme"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:416
-#, kde-format
-msgid "Yves Chaufour"
-msgstr "Yves Chaufour"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:417
+#: core/libs/widgets/mainview/daboutdata.cpp:422
 #, kde-format
 msgid "digiKam website, Feedback"
 msgstr "digiKam internet sitesi, geri bildirim"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:421
-#, kde-format
-msgid "Tung Nguyen"
-msgstr "Tung Nguyen"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:422
+#: core/libs/widgets/mainview/daboutdata.cpp:427
 #, kde-format
 msgid "Bug reports, feedback and icons"
 msgstr "Hata raporları, geri bildirim ve simgeler"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:428
-#, kde-format
-msgid "Renchi Raju"
-msgstr "Renchi Raju"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:429
+#: core/libs/widgets/mainview/daboutdata.cpp:434
 #, kde-format
 msgid "Developer (2001-2005)"
 msgstr "Geliştirici (2001–2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:434
-#, kde-format
-msgid "Joern Ahrens"
-msgstr "Joern Ahrens"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:435
-#: core/libs/widgets/mainview/daboutdata.cpp:441
+#: core/libs/widgets/mainview/daboutdata.cpp:440
+#: core/libs/widgets/mainview/daboutdata.cpp:446
 #, kde-format
 msgid "Developer (2004-2005)"
 msgstr "Geliştirici (2004–2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:440
-#, kde-format
-msgid "Tom Albers"
-msgstr "Tom Albers"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:446
-#, kde-format
-msgid "Ralf Holzer"
-msgstr "Ralf Holzer"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:447
+#: core/libs/widgets/mainview/daboutdata.cpp:452
 #, kde-format
 msgid "Developer (2004)"
 msgstr "Geliştirici (2004)"
+
+#: core/libs/widgets/mainview/daboutdata.cpp:457
+#, fuzzy, kde-format
+#| msgid "Developer and Mentoring"
+msgid "Developer and Mentoring (2005-2012)"
+msgstr "Geliştirici ve danışmanlık"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:87
 #, kde-format
@@ -49586,18 +49312,18 @@ msgctxt "@title:window"
 msgid "Open Images from Folder"
 msgstr "Klasörden Görseller Aç"
 
-#: core/showfoto/main/showfoto_open.cpp:303
+#: core/showfoto/main/showfoto_open.cpp:302
 #, kde-format
 msgid "There is no item to process."
 msgstr "İşlenecek öge yok."
 
-#: core/showfoto/main/showfoto_open.cpp:325
+#: core/showfoto/main/showfoto_open.cpp:324
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Loading File"
 msgstr "Dosya Yüklerken Hata"
 
-#: core/showfoto/main/showfoto_open.cpp:326
+#: core/showfoto/main/showfoto_open.cpp:325
 #, kde-format
 msgid ""
 "Failed to load file: \"%1\"\n"
@@ -50677,37 +50403,37 @@ msgid_plural "%1 files"
 msgstr[0] "%1 dosya"
 msgstr[1] "%1 dosya"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:665
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:664
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "Yeni Sık Kullanılan Öge"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:669
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:668
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "Sık Kullanılan Ögeyi Düzenle"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:676
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:675
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "Yeni Sık Kullanılan Klasör"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:680
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:679
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "Sık Kullanılan Klasörü Düzenle"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:737
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:736
 #, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "Ortalama Hesaplanamadı"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:738
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:737
 #, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."
@@ -50887,8 +50613,8 @@ msgctxt "@action"
 msgid "C&ancel"
 msgstr "İ&ptal"
 
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:253
-#: core/utilities/import/items/itemviewimportdelegate.cpp:320
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:254
+#: core/utilities/import/items/itemviewimportdelegate.cpp:321
 #, kde-format
 msgctxt "date of image creation"
 msgid "created: %1"
@@ -52014,27 +51740,27 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "İptal"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:95
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
 #, kde-format
 msgid "Confirming face"
 msgstr "Yüz onaylanıyor"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:110
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
 #, kde-format
 msgid "Removing face"
 msgstr "Yüz kaldırılıyor"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:124
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
 #, kde-format
 msgid "Editing face tag"
 msgstr "Yüz künyesi düzenleniyor"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:145
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
 #, kde-format
 msgid "Editing face region"
 msgstr "Yüz bölgesi düzenleniyor"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:166
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
 #, kde-format
 msgid "Manually adding face"
 msgstr "Yüz elle ekleniyor"
@@ -61291,17 +61017,26 @@ msgstr "Bulunan yüzler: %1"
 msgid "Face found: %1"
 msgstr "Bulunan yüz: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
-#, kde-format
-msgid "No faces found in %1"
-msgstr "%1 içinde yüz bulunamadı"
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
+#, fuzzy, kde-format
+#| msgid "Found 1 face in "
+#| msgid_plural "Found %1 faces in "
+msgid "Found %1 face."
+msgstr "Şurada 1 yüz bulundu: "
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
-#, kde-format
-msgid "Found 1 face in "
-msgid_plural "Found %1 faces in "
-msgstr[0] "Şurada 1 yüz bulundu: "
-msgstr[1] "Şurada %1 yüz bulundu: "
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:444
+#, fuzzy, kde-format
+#| msgid "Found 1 face in "
+#| msgid_plural "Found %1 faces in "
+msgid "Found %1 faces."
+msgstr "Şurada 1 yüz bulundu: "
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:450
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Icon Size: %1"
+msgid "Recognized: %1"
+msgstr "Simge boyutu: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
@@ -67893,6 +67628,198 @@ msgstr "Albüm Ögeleri"
 #, kde-format
 msgid "Import Items"
 msgstr "İçe Aktarılan Ögeler"
+
+#~ msgid "Caulier Gilles"
+#~ msgstr "Caulier Gilles"
+
+#~ msgid "Maik Qualmann"
+#~ msgstr "Maik Qualmann"
+
+#~ msgid "Marcel Wiesweg"
+#~ msgstr "Marcel Wiesweg"
+
+#~ msgid "Mohamed Anwer"
+#~ msgstr "Mohamed Anwer"
+
+#~ msgid "Michael G. Hansen"
+#~ msgstr "Michael G. Hansen"
+
+#~ msgid "Teemu Rytilahti"
+#~ msgstr "Teemu Rytilahti"
+
+#~ msgid "Thanh Trung Dinh"
+#~ msgstr "Thanh Trung Dinh"
+
+#~ msgid "Michael Miller"
+#~ msgstr "Michael Miller"
+
+#~ msgid "Matthias Welwarsky"
+#~ msgstr "Matthias Welwarsky"
+
+#~ msgid "Julien Narboux"
+#~ msgstr "Julien Narboux"
+
+#~ msgid "Mario Frank"
+#~ msgstr "Mario Frank"
+
+#~ msgid "Nicolas Lécureuil"
+#~ msgstr "Nicolas Lécureuil"
+
+#~ msgid "Anjani Kumar"
+#~ msgstr "Anjani Kumar"
+
+#~ msgid "Phuoc Khanh LE"
+#~ msgstr "Phuoc Khanh LE"
+
+#~ msgid "Quốc Hưng Trần"
+#~ msgstr "Quốc Hưng Trần"
+
+#~ msgid "Minh Nghĩa Duong"
+#~ msgstr "Minh Nghĩa Duong"
+
+#~ msgid "Kartik Ramesh"
+#~ msgstr "Kartik Ramesh"
+
+#~ msgid "Ahmed Fathi"
+#~ msgstr "Ahmed Fathi"
+
+#~ msgid "Veaceslav Munteanu"
+#~ msgstr "Veaceslav Munteanu"
+
+#~ msgid "Tarek Talaat"
+#~ msgstr "Tarek Talaat"
+
+#~ msgid "Yingjie Liu"
+#~ msgstr "Yingjie Liu"
+
+#~ msgid "Yiou Wang"
+#~ msgstr "Yiou Wang"
+
+#~ msgid "Gowtham Ashok"
+#~ msgstr "Gowtham Ashok"
+
+#~ msgid "Aditya Bhatt"
+#~ msgstr "Aditya Bhatt"
+
+#~ msgid "Martin Klapetek"
+#~ msgstr "Martin Klapetek"
+
+#~ msgid "Gabriel Voicu"
+#~ msgstr "Gabriel Voicu"
+
+#~ msgid "Mahesh Hegde"
+#~ msgstr "Mahesh Hegde"
+
+#~ msgid "Pankaj Kumar"
+#~ msgstr "Pankaj Kumar"
+
+#~ msgid "Smit Mehta"
+#~ msgstr "Smit Mehta"
+
+#~ msgid "Islam Wazery"
+#~ msgstr "Islam Wazery"
+
+#~ msgid "Abhinav Badola"
+#~ msgstr "Abhinav Badola"
+
+#~ msgid "Benjamin Girault"
+#~ msgstr "Benjamin Girault"
+
+#~ msgid "Victor Dodon"
+#~ msgstr "Victor Dodon"
+
+#~ msgid "Sayantan Datta"
+#~ msgstr "Sayantan Datta"
+
+#~ msgid "Ananta Palani"
+#~ msgstr "Ananta Palani"
+
+#~ msgid "Andi Clemens"
+#~ msgstr "Andi Clemens"
+
+#~ msgid "Patrick Spendrin"
+#~ msgstr "Patrick Spendrin"
+
+#~ msgid "Francesco Riosa"
+#~ msgstr "Francesco Riosa"
+
+#~ msgid "Johannes Wienke"
+#~ msgstr "Johannes Wienke"
+
+#~ msgid "Julien Pontabry"
+#~ msgstr "Julien Pontabry"
+
+#~ msgid "Arnd Baecker"
+#~ msgstr "Arnd Baecker"
+
+#~ msgid "Francisco J. Cruz"
+#~ msgstr "Francisco J. Cruz"
+
+#~ msgid "Pieter Edelman"
+#~ msgstr "Pieter Edelman"
+
+#~ msgid "Holger Foerster"
+#~ msgstr "Holger Foerster"
+
+#~ msgid "Risto Saukonpaa"
+#~ msgstr "Risto Saukonpaa"
+
+#~ msgid "Mikolaj Machowski"
+#~ msgstr "Mikolaj Machowski"
+
+#~ msgid "Achim Bohnet"
+#~ msgstr "Achim Bohnet"
+
+#~ msgid "Luka Renko"
+#~ msgstr "Luka Renko"
+
+#~ msgid "Angelo Naselli"
+#~ msgstr "Angelo Naselli"
+
+#~ msgid "Fabien Salvi"
+#~ msgstr "Fabien Salvi"
+
+#~ msgid "Todd Shoemaker"
+#~ msgstr "Todd Shoemaker"
+
+#~ msgid "Gerhard Kulzer"
+#~ msgstr "Gerhard Kulzer"
+
+#~ msgid "Oliver Doerr"
+#~ msgstr "Oliver Doerr"
+
+#~ msgid "Charles Bouveyron"
+#~ msgstr "Charles Bouveyron"
+
+#~ msgid "Richard Taylor"
+#~ msgstr "Richard Taylor"
+
+#~ msgid "Hans Karlsson"
+#~ msgstr "Hans Karlsson"
+
+#~ msgid "Aaron Seigo"
+#~ msgstr "Aaron Seigo"
+
+#~ msgid "Yves Chaufour"
+#~ msgstr "Yves Chaufour"
+
+#~ msgid "Tung Nguyen"
+#~ msgstr "Tung Nguyen"
+
+#~ msgid "Renchi Raju"
+#~ msgstr "Renchi Raju"
+
+#~ msgid "Joern Ahrens"
+#~ msgstr "Joern Ahrens"
+
+#~ msgid "Tom Albers"
+#~ msgstr "Tom Albers"
+
+#~ msgid "Ralf Holzer"
+#~ msgstr "Ralf Holzer"
+
+#~ msgid "No faces found in %1"
+#~ msgstr "%1 içinde yüz bulunamadı"
 
 #~ msgid "Auto-tagging scan mode: "
 #~ msgstr "Kendiliğinden künyeleme tarama kipi: "

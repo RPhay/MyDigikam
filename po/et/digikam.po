@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-21 01:52+0000\n"
+"POT-Creation-Date: 2025-01-22 01:51+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -47,21 +47,21 @@ msgstr ""
 "X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: core/app/date/ddateedit.cpp:492
+#: core/app/date/ddateedit.cpp:496
 #, fuzzy, kde-format
 #| msgid "tomorrow"
 msgctxt "@item: date keyword"
 msgid "tomorrow"
 msgstr "homme"
 
-#: core/app/date/ddateedit.cpp:493
+#: core/app/date/ddateedit.cpp:497
 #, fuzzy, kde-format
 #| msgid "today"
 msgctxt "@item: date keyword"
 msgid "today"
 msgstr "täna"
 
-#: core/app/date/ddateedit.cpp:494
+#: core/app/date/ddateedit.cpp:498
 #, fuzzy, kde-format
 #| msgid "yesterday"
 msgctxt "@item: date keyword"
@@ -108,13 +108,13 @@ msgstr "Aasta valimine"
 msgid "Select the current day"
 msgstr "Tänase päeva valimine"
 
-#: core/app/date/ddatepicker.cpp:570
+#: core/app/date/ddatepicker.cpp:574
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "Sulge"
 
-#: core/app/date/ddatepicker_p.cpp:159
+#: core/app/date/ddatepicker_p.cpp:160
 #, kde-format
 msgid "Week %1"
 msgstr "%1. nädal"
@@ -18070,7 +18070,7 @@ msgid "Revert current settings to default values."
 msgstr "Kehtivate seadistuste lähtestamine vaikeväärtustele."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:91
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:93
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
@@ -18389,7 +18389,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:135
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:187
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:189
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18398,14 +18398,14 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:136
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:192
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:194
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:148
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:144
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:146
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgctxt "@info"
@@ -18413,15 +18413,15 @@ msgid "Pre-processing is in progress, please wait."
 msgstr "Seadet tuvastatakse, palun oota..."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:149
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:170
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:145
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:172
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid "This can take a while..."
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:206
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:289
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:290
 #, fuzzy, kde-format
 #| msgid "Processing Failed"
 msgctxt "@info"
@@ -18437,7 +18437,7 @@ msgstr "Palun kontrolli oma andmeid ja proovi uuesti."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:208
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:311
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:290
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:291
 #, fuzzy, kde-format
 #| msgid "Preview single images"
 msgctxt "@info"
@@ -19193,7 +19193,7 @@ msgstr "Asukohtade valimine"
 msgid "Generating jAlbum"
 msgstr "jAlbumi genereerimine"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:75
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:77
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Share Files with DLNA Media Server"
@@ -19201,7 +19201,7 @@ msgctxt "@title:window"
 msgid "Share Files With DLNA Media Server"
 msgstr "Failide jagamine DLNA meediaserveriga"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:132
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:134
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:68
 #, fuzzy, kde-format
 #| msgid "Start Server at Startup"
@@ -19209,7 +19209,7 @@ msgctxt "@option"
 msgid "Start Server at Startup"
 msgstr "Serveri käivitamine rakenduse käivitamisel"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:133
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:135
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to turn-on the DLNA server at application start-up "
@@ -19222,7 +19222,7 @@ msgstr ""
 "Sisselülitamisel pannakse DLNA server rakenduse käivitamisel automaatselt "
 "tööle"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:151
 #, fuzzy, kde-format
 #| msgid ""
 #| "The media server permit to share items through the local network using <a "
@@ -19249,9 +19249,9 @@ msgstr ""
 "omadustest ja seadistusest võib serveri avastamine klientseadmetes võtta "
 "omajagu aega."
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:208
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:283
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:296
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:209
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:284
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:297
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:64
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:77
 #, fuzzy, kde-format
@@ -19260,7 +19260,7 @@ msgctxt "@title:window"
 msgid "Media Server Contents"
 msgstr "Meediaserveri sisu"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:209
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:210
 #, fuzzy, kde-format
 #| msgid ""
 #| "The items list to share has changed. Do you want to start now the media "
@@ -19273,7 +19273,7 @@ msgstr ""
 "Jagatavate elementide loend on muutunud. Kas käivitada meediaserver nüüd "
 "selle sisuga?"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:246
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:247
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:25
 #, fuzzy, kde-format
 #| msgid "Server is running"
@@ -19281,7 +19281,7 @@ msgctxt "@label"
 msgid "Server is running"
 msgstr "Server töötab"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:247
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:248
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:26
 #, fuzzy, kde-format
 #| msgid "1 album shared"
@@ -19292,7 +19292,7 @@ msgid_plural "%1 albums shared"
 msgstr[0] "1 jagatud album"
 msgstr[1] "%1 jagatud albumit"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:249
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:250
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:28
 #, fuzzy, kde-format
 #| msgid "1 item shared"
@@ -19303,7 +19303,7 @@ msgid_plural "%1 items shared"
 msgstr[0] "1 jagatud element"
 msgstr[1] "%1 jagatud elementi"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:250
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:251
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:29
 #, fuzzy, kde-format
 #| msgid "Stop"
@@ -19311,7 +19311,7 @@ msgctxt "@action: button"
 msgid "Stop"
 msgstr "Peata"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:257
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:258
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:37
 #, fuzzy, kde-format
 #| msgid "Server is not running"
@@ -19319,7 +19319,7 @@ msgctxt "@label"
 msgid "Server is not running"
 msgstr "Server ei tööta"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:261
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:262
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:41
 #, fuzzy, kde-format
 #| msgid "Start"
@@ -19327,7 +19327,7 @@ msgctxt "@action: button"
 msgid "Start"
 msgstr "Käivita"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:284
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:285
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:65
 #, fuzzy, kde-format
 #| msgid "There is no collection to share with the current selection..."
@@ -19335,7 +19335,7 @@ msgctxt "@info"
 msgid "There is no collection to share with the current selection..."
 msgstr "Praeguses valikus ei ole ühtegi kogu, mida jagada ..."
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:297
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:298
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:78
 #, fuzzy, kde-format
 #| msgid "There is no item to share with the current selection..."
@@ -19343,7 +19343,7 @@ msgctxt "@info"
 msgid "There is no item to share with the current selection..."
 msgstr "Praeguses valikus ei ole ühtegi elementi, mida jagada ..."
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:302
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:303
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:83
 #, fuzzy, kde-format
 #| msgid "Shared Items"
@@ -19351,7 +19351,7 @@ msgctxt "@info"
 msgid "Shared Items"
 msgstr "Jagatud elemendid"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:322
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:323
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
 #, fuzzy, kde-format
 #| msgid "Starting Media Server"
@@ -19359,7 +19359,7 @@ msgctxt "@title:window"
 msgid "Starting Media Server"
 msgstr "Meediaserveri käivitamine"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:323
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:324
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:106
 #, fuzzy, kde-format
 #| msgid "An error occurs while to start Media Server..."
@@ -19689,17 +19689,17 @@ msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:99
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
-#: core/libs/widgets/mainview/daboutdata.cpp:107
+#: core/libs/widgets/mainview/daboutdata.cpp:110
 #: core/libs/widgets/mainview/daboutdata.cpp:128
 #: core/libs/widgets/mainview/daboutdata.cpp:134
-#: core/libs/widgets/mainview/daboutdata.cpp:296
-#: core/libs/widgets/mainview/daboutdata.cpp:313
-#: core/libs/widgets/mainview/daboutdata.cpp:319
-#: core/libs/widgets/mainview/daboutdata.cpp:325
-#: core/libs/widgets/mainview/daboutdata.cpp:335
-#: core/libs/widgets/mainview/daboutdata.cpp:363
-#: core/libs/widgets/mainview/daboutdata.cpp:369
-#: core/libs/widgets/mainview/daboutdata.cpp:380
+#: core/libs/widgets/mainview/daboutdata.cpp:301
+#: core/libs/widgets/mainview/daboutdata.cpp:318
+#: core/libs/widgets/mainview/daboutdata.cpp:324
+#: core/libs/widgets/mainview/daboutdata.cpp:330
+#: core/libs/widgets/mainview/daboutdata.cpp:340
+#: core/libs/widgets/mainview/daboutdata.cpp:368
+#: core/libs/widgets/mainview/daboutdata.cpp:374
+#: core/libs/widgets/mainview/daboutdata.cpp:385
 #: core/utilities/geolocation/engine/plugins/PluginInterface.h:46
 #, kde-format
 msgid "Developer"
@@ -20645,7 +20645,7 @@ msgctxt "@label"
 msgid "Error"
 msgstr "Tõrge"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:81
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:83
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "<b>Optimization</b>"
@@ -20653,7 +20653,7 @@ msgctxt "@title: window"
 msgid "Optimization"
 msgstr "<b>Optimeerimine</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:95
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:97
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Level horizon"
@@ -20661,7 +20661,7 @@ msgctxt "@option: check"
 msgid "Level horizon"
 msgstr "Horisondi ühtlustamine"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:99
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Detect the horizon and adapt the project to make it horizontal."
@@ -20669,7 +20669,7 @@ msgctxt "@info: tooltip"
 msgid "Detect the horizon and adapt the project to make it horizontal."
 msgstr "Horisondi tuvastamine ja projekti kohandamine, et see oleks rõhtne."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:100
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -20683,21 +20683,21 @@ msgstr ""
 "<b>Horisondi ühtlustamine</b>: horisondi tuvastamine ja projektsiooni "
 "kohandamine, et tuvastatud horisont oleks lõplikul panoraamil rõhtne joon."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:169
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:171
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgctxt "@info"
 msgid "Optimization is in progress, please wait."
 msgstr "Seadet tuvastatakse, palun oota..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:203
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:205
 #, kde-format
 msgctxt "@info"
 msgid ""
 "The optimization step according to your settings is ready to be performed."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:204
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -20705,13 +20705,13 @@ msgid ""
 "automatic projection selection and size."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:206
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:208
 #, kde-format
 msgctxt "@info"
 msgid "To perform this operation, the \"%1\" program will be used."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:208
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:210
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to run the optimization."
@@ -20724,7 +20724,7 @@ msgctxt "@info"
 msgid "Optimization has failed."
 msgstr "Autentimine nurjus"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:83
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:85
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "<b>Pre-Processing Images</b>"
@@ -20732,7 +20732,7 @@ msgctxt "@title: window"
 msgid "Pre-Processing Images"
 msgstr "<b>Piltide eeltöötlemine</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:99
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Detect moving skies"
@@ -20740,7 +20740,7 @@ msgctxt "@option: check"
 msgid "Detect moving skies"
 msgstr "Taevase liikumise tuvastamine"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:99
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:101
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -20754,7 +20754,7 @@ msgstr ""
 "Pilvede automaatne tuvastamine, et vältida liikuvate pilvede tõttu valede "
 "võtmepunktide sobitamist eri piltide vahel."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:101
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:103
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -20774,13 +20774,13 @@ msgstr ""
 "kõik punktid, mis võivad olla seotud pilvedega. See aitab vältida liikuvate "
 "pilvede segavat mõju kontrollpunktide sobitamisel."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:186
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:188
 #, kde-format
 msgctxt "@info"
 msgid "Now, we will pre-process images before stitching them."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:189
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:191
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -20788,29 +20788,29 @@ msgid ""
 "overlaps between images. For that purpose, the \"%1\" program will be used."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:79
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:81
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>Eelvaatlus ja järeltöötlus</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:129
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:131
 #, kde-format
 msgid "Processing Panorama Preview..."
 msgstr "Panoraami eelvaatluse töötlemine ..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:210
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:212
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>Panoraami järeltöötlus</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:216
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:218
 #, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "Panoraami järeltöötlemine"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:298
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:300
 #, kde-format
 msgid "Preview Processing Cancelled."
 msgstr "Eelvaatluse töötlemine katkestati."
@@ -23787,9 +23787,9 @@ msgstr "Ekspordi &Boxi ..."
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1198
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:467
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:718
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:865
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1033
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:863
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1031
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:754
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:777
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:820
@@ -23819,7 +23819,7 @@ msgstr "Eksport Boxi"
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:117
 #: core/dplugins/generic/webservices/google/gswindow.cpp:129
 #: core/dplugins/generic/webservices/google/gswindow.cpp:176
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:97
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:99
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:77
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:77
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:266
@@ -27085,14 +27085,14 @@ msgctxt "@item"
 msgid "Upload Settings"
 msgstr "Üleslaadimise seadistused"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:95
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:97
 #, fuzzy, kde-format
 #| msgid "Export to MediaWiki"
 msgctxt "@title:window"
 msgid "Export to MediaWiki"
 msgstr "Eksport MediaWikisse "
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:98
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:100
 #, fuzzy, kde-format
 #| msgid "Start upload to MediaWiki"
 msgctxt "@info:tooltip, button"
@@ -27369,57 +27369,57 @@ msgid "Incorrect username or password specified"
 msgstr "Anti vale kasutajanimi või parool"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:552
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:739
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:737
 #, fuzzy, kde-format
 #| msgid "Upload to Piwigo version < 2.4 is no longer supported"
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
 msgstr "Üleslaadimine Piwigo versiooni < 2.4 ei ole enam toetatud"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:628
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:711
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:785
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:858
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:627
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:709
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:783
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:856
 #, kde-format
 msgid "Invalid response received from remote Piwigo"
 msgstr "Piwigost saadi vigane vastus"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:635
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:634
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:980
 #, kde-format
 msgid "Failed to list albums"
 msgstr "Albumiloendi hankimine nurjus"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:685
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:683
 #, kde-format
 msgid "Photo '%1' already exists."
 msgstr "Foto \"%1\" on juba olemas."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:792
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:790
 #, kde-format
 msgid "Photo '%1' already exists in this album."
 msgstr "Foto \"%1\" on selles albumis juba olemas."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:881
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:879
 #, kde-format
 msgid "Error : Cannot open photo: %1"
 msgstr "Tõrge: Foto avamine nurjus: %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:909
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:907
 #, kde-format
 msgid "Upload the chunk %1/%2 of %3"
 msgstr "Tüki %1/%2 (kokku %3) üleslaadimine"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:942
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:940
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
 msgstr "Hoiatus: täissuuruses fotot ei saa üles laadida."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:993
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:991
 #, kde-format
 msgid "Upload the metadata of %1"
 msgstr "%1 metaandmete uuendamine"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1026
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1024
 #, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "Piwigost saadi vigane vastus (%1)"
@@ -28372,7 +28372,7 @@ msgstr "Veebiteenuse seadistused"
 msgid "Export by Web Service"
 msgstr "Veebiteenuse eksport"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:232
 #, fuzzy, kde-format
 #| msgid ""
 #| "Error to import RAW image with UFRaw\n"
@@ -28384,13 +28384,13 @@ msgstr ""
 "Tõrge toorpildi importimisel UFRaw abil\n"
 "Sulge see dialoog ja laadi toorpilt loomupärase imporditööriistaga"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:246
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:248
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "ART Raw Conversion"
 msgstr "Toorpildi teisendus"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:297
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -28399,7 +28399,7 @@ msgstr ""
 "Tõrge toorpildi importimisel DarkTable'i abil\n"
 "Sulge see dialoog ja laadi toorpilt loomupärase imporditööriistaga"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:311
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:313
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "DarkTable Raw Conversion"
@@ -28590,7 +28590,7 @@ msgstr ""
 "Üldiste toorpildi dekodeerimise seadistuste kasutamine pildi laadimiseks "
 "redaktoris."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:231
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -28599,13 +28599,13 @@ msgstr ""
 "Tõrge toorpildi importimisel RawTherapee abil\n"
 "Sulge see dialoog ja laadi toorpilt loomupärase imporditööriistaga"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:245
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:247
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "RawTherapee Raw Conversion"
 msgstr "Toorpildi teisendus"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:227
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:229
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -28614,7 +28614,7 @@ msgstr ""
 "Tõrge toorpildi importimisel UFRaw abil\n"
 "Sulge see dialoog ja laadi toorpilt loomupärase imporditööriistaga"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:243
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:245
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "UFRaw Raw Conversion"
@@ -39423,12 +39423,12 @@ msgstr "Ava üksikasjalik edenemisdialoog"
 msgid "No active process"
 msgstr "Aktiivseid protsesse pole"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:410
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:416
 #, kde-format
 msgid "Hide detailed progress window"
 msgstr "Peida üksikasjalik edenemisdialoog"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:416
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:422
 #, kde-format
 msgid "Show detailed progress window"
 msgstr "Näita üksikasjalikku edenemisdialoogi"
@@ -40464,7 +40464,7 @@ msgid "Map"
 msgstr "Kaart"
 
 #: core/libs/properties/itempropertiessidebar.cpp:232
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:579
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:578
 #: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, fuzzy, kde-format
 #| msgid "RAW Image"
@@ -41760,11 +41760,22 @@ msgid "Album: %1\n"
 msgstr "Album \"%1\""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scanning: %1\n"
 msgstr "Otsing albumites:"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:255
+#, kde-format
+msgid "Found %1 object. Tag: %2"
+msgstr ""
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:259
+#, kde-format
+msgid "Found %1 objects. Tags: %2"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
@@ -45477,25 +45488,25 @@ msgid_plural ""
 msgstr[0] "<i>Toimingu rakendamine <br/>valitud pildile</i>"
 msgstr[1] "<i>Toimingu rakendamine <br/><b>%1</b> valitud pildile</i>"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:405
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:406
 #, kde-format
 msgctxt "date of last image modification"
 msgid "Mod.: %1"
 msgstr "Muudetud: %1"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:421
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:422
 #: core/showfoto/main/showfoto.cpp:267
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
-#: core/utilities/import/items/itemviewimportdelegate.cpp:367
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
+#: core/utilities/import/items/itemviewimportdelegate.cpp:368
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:426
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:446
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:320
-#: core/utilities/import/items/itemviewimportdelegate.cpp:372
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:427
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:447
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
+#: core/utilities/import/items/itemviewimportdelegate.cpp:373
 #, kde-format
 msgctxt "unknown image resolution"
 msgid "Unknown"
@@ -45542,577 +45553,286 @@ msgstr "KDE kogukonna projekt"
 msgid "(c) 2001-2025, digiKam developers team"
 msgstr "(c) 2002-2020: digiKami arendajate meeskond"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:76
-#, kde-format
-msgid "Caulier Gilles"
-msgstr "Caulier Gilles"
-
 #: core/libs/widgets/mainview/daboutdata.cpp:77
 #, kde-format
 msgid "Coordinator, Developer, and Mentoring"
 msgstr "Koordinaator, arendaja ja mentor"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:82
-#, kde-format
-msgid "Maik Qualmann"
-msgstr "Maik Qualmann"
-
 #: core/libs/widgets/mainview/daboutdata.cpp:83
-#: core/libs/widgets/mainview/daboutdata.cpp:89
-#: core/libs/widgets/mainview/daboutdata.cpp:95
-#: core/libs/widgets/mainview/daboutdata.cpp:101
+#: core/libs/widgets/mainview/daboutdata.cpp:98
+#: core/libs/widgets/mainview/daboutdata.cpp:104
 #, kde-format
 msgid "Developer and Mentoring"
 msgstr "Arendaja ja mentor"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:88
+#: core/libs/widgets/mainview/daboutdata.cpp:89
 #, kde-format
-msgid "Marcel Wiesweg"
-msgstr "Marcel Wiesweg"
+msgid ""
+"SFace and YuNet DNN models integration\n"
+"in face workflow.\n"
+"Face Management and auto-tag AI improvements.\n"
+"AI red eyes detection"
+msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:94
-#, kde-format
-msgid "Mohamed Anwer"
-msgstr "Mohamed Anwer"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:100
-#, kde-format
-msgid "Michael G. Hansen"
-msgstr "Michael G. Hansen"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:106
-#, kde-format
-msgid "Teemu Rytilahti"
-msgstr "Teemu Rytilahti"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:112
-#, kde-format
-msgid "Thanh Trung Dinh"
-msgstr "Thanh Trung Dinh"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:113
+#: core/libs/widgets/mainview/daboutdata.cpp:116
 #, fuzzy, kde-format
 #| msgid ""
 #| "Port web-service tools to OAuth, factoring web service tools, and port "
 #| "faces recognition engine to OpenCV neural network"
 msgid ""
-"Mentoring, Port web-service tools to OAuth, factoring web service tools, and "
-"port faces recognition engine to OpenCV neural network"
+"Mentoring, Port web-service tools to OAuth,\n"
+"factoring web service tools,\n"
+"and port faces recognition engine\n"
+"to OpenCV neural network"
 msgstr ""
 "Veebiteenuste tööriistade portimine OAuth'i peale, veebiteenuste tööriistade "
 "sisemise kujunduse viimistlemine, näotuvastuse mootori portimine OpenCV "
 "Neural Networki peale"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:119
-#, fuzzy, kde-format
-#| msgid "Channel Mixer"
-msgid "Michael Miller"
-msgstr "Kanalite mikser"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:120
-#, kde-format
-msgid "SFace and YuNet DNN models integration. Face Management improvements"
-msgstr ""
-
-#: core/libs/widgets/mainview/daboutdata.cpp:127
-#, kde-format
-msgid "Matthias Welwarsky"
-msgstr "Matthias Welwarsky"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:133
-#, kde-format
-msgid "Julien Narboux"
-msgstr "Julien Narboux"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:139
-#, kde-format
-msgid "Mario Frank"
-msgstr "Mario Frank"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:140
 #, kde-format
 msgid "Advanced Searches Tool Improvements"
 msgstr "Täiustatud otsingutööriista arendamine"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:144
-#, kde-format
-msgid "Nicolas Lécureuil"
-msgstr "Nicolas Lécureuil"
-
 #: core/libs/widgets/mainview/daboutdata.cpp:145
 #, kde-format
 msgid "Releases Manager"
 msgstr "Väljalasete korraldaja"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:152
-#, fuzzy, kde-format
-#| msgid "Pankaj Kumar"
-msgid "Anjani Kumar"
-msgstr "Pankaj Kumar"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:153
 #, kde-format
 msgid "Port to Qt6,"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:158
-#, kde-format
-msgid "Phuoc Khanh LE"
-msgstr ""
-
 #: core/libs/widgets/mainview/daboutdata.cpp:159
 #, kde-format
 msgid ""
-"Rewrite Image Quality Sorter algorithms and Photo Focus Information "
-"Extraction, Aesthetic Detection to classify images using deep learning model,"
+"Rewrite Image Quality Sorter algorithms\n"
+"and Photo Focus Information Extraction.\n"
+"Aesthetic Detection to classify images\n"
+"using deep learning model.\n"
 "Slideshow and Presentation tools improvement"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:166
-#, kde-format
-msgid "Quốc Hưng Trần"
-msgstr ""
-
-#: core/libs/widgets/mainview/daboutdata.cpp:167
+#: core/libs/widgets/mainview/daboutdata.cpp:169
 #, kde-format
 msgid ""
-"MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
+"MJPEGStream plugin,\n"
+"OCR text Converter plugin,\n"
+"auto-tags assignment engine"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:172
-#, kde-format
-msgid "Minh Nghĩa Duong"
-msgstr "Minh Nghĩa Duong"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:173
+#: core/libs/widgets/mainview/daboutdata.cpp:177
 #, fuzzy, kde-format
 #| msgid "Port Slideshow tool to plugins interface"
 msgid ""
-"Clustering support and improvement for Face Engine, Port Slideshow tool to "
-"plugins interface"
+"Face workflow Clustering support,\n"
+"improvement for Face Engine,\n"
+"Port Slideshow tool to plugins interface"
 msgstr "Slaidiseansi tööriista portimine pluginaliidese peale"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:179
-#, kde-format
-msgid "Kartik Ramesh"
-msgstr ""
-
-#: core/libs/widgets/mainview/daboutdata.cpp:180
+#: core/libs/widgets/mainview/daboutdata.cpp:185
 #, kde-format
 msgid "Face management workflow improvements"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:185
-#, kde-format
-msgid "Ahmed Fathi"
-msgstr "Ahmed Fathi"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:186
-#, kde-format
-msgid "UPNP/DLNA export tool, and Healing clone tool for image editor"
+#: core/libs/widgets/mainview/daboutdata.cpp:191
+#, fuzzy, kde-format
+#| msgid "UPNP/DLNA export tool, and Healing clone tool for image editor"
+msgid ""
+"UPNP/DLNA export tool\n"
+"and Healing clone tool for image editor"
 msgstr "UPNP/DLNA eksporditööriist ja pildiredaktori raviklooni tööriist"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:191
-#, kde-format
-msgid "Veaceslav Munteanu"
-msgstr "Veaceslav Munteanu"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:192
+#: core/libs/widgets/mainview/daboutdata.cpp:197
 #, kde-format
 msgid "Tags Manager"
 msgstr "Siltide haldus"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:197
-#, kde-format
-msgid "Tarek Talaat"
-msgstr "Tarek Talaat"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:198
+#: core/libs/widgets/mainview/daboutdata.cpp:203
 #, kde-format
 msgid "New OneDrive, Pinterrest, and Box export tools"
 msgstr "Uued OneDrive'i, Pinteresti ja Boxi eksporditööriistad"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:203
-#, kde-format
-msgid "Yingjie Liu"
-msgstr "Yingjie Liu"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:204
-#, kde-format
-msgid "Face-engine improvements and manual icon-view sort"
+#: core/libs/widgets/mainview/daboutdata.cpp:209
+#, fuzzy, kde-format
+#| msgid "Face-engine improvements and manual icon-view sort"
+msgid ""
+"Face-engine improvements\n"
+"and manual icon-view sort"
 msgstr "Näomootori parandamine ja ikoonivaate käsitsi sortimine"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:209
-#, kde-format
-msgid "Yiou Wang"
-msgstr "Yiou Wang"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:210
+#: core/libs/widgets/mainview/daboutdata.cpp:215
 #, kde-format
 msgid "Model/View Port of Image Editor Canvas"
 msgstr "Pildiredaktori lõuendi portimine mudeli/vaate raamistikku"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:215
-#, kde-format
-msgid "Gowtham Ashok"
-msgstr "Gowtham Ashok"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:216
+#: core/libs/widgets/mainview/daboutdata.cpp:221
 #: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Pildikvaliteedi sortija"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:221
-#, kde-format
-msgid "Aditya Bhatt"
-msgstr "Aditya Bhatt"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:222
+#: core/libs/widgets/mainview/daboutdata.cpp:227
 #, kde-format
 msgid "Face Detection"
 msgstr "Näotuvastus"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:227
-#, kde-format
-msgid "Martin Klapetek"
-msgstr "Martin Klapetek"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:228
+#: core/libs/widgets/mainview/daboutdata.cpp:233
 #, kde-format
 msgid "Non-destructive image editing"
 msgstr "Kadusid vältiv piltide redigeerimine"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:233
-#, kde-format
-msgid "Gabriel Voicu"
-msgstr "Gabriel Voicu"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:234
+#: core/libs/widgets/mainview/daboutdata.cpp:239
 #, kde-format
 msgid "Reverse Geo-Coding"
 msgstr "Tagurpidi geokodeerimine"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:239
-#, kde-format
-msgid "Mahesh Hegde"
-msgstr "Mahesh Hegde"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:240
+#: core/libs/widgets/mainview/daboutdata.cpp:245
 #, kde-format
 msgid "Face Recognition"
 msgstr "Näotuvastus"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:245
-#, kde-format
-msgid "Pankaj Kumar"
-msgstr "Pankaj Kumar"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:246
+#: core/libs/widgets/mainview/daboutdata.cpp:251
 #, kde-format
 msgid "Multi-core Support in Batch Queue Manager and Mentoring"
 msgstr "Mitme tuuma toetus hulgijärjekorrahalduris ja mentor"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:251
-#, kde-format
-msgid "Smit Mehta"
-msgstr "Smit Mehta"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:252
-#, kde-format
-msgid "UPnP / DLNA Export tool and Mentoring"
+#: core/libs/widgets/mainview/daboutdata.cpp:257
+#, fuzzy, kde-format
+#| msgid "UPnP / DLNA Export tool and Mentoring"
+msgid "UPnP/DLNA Export tool and Mentoring"
 msgstr "UPnP/DLNA eksporditööriist ja mentor"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:257
-#, kde-format
-msgid "Islam Wazery"
-msgstr "Islam Wazery"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:258
+#: core/libs/widgets/mainview/daboutdata.cpp:263
 #, kde-format
 msgid "Model/View port of Import Tool and Mentoring"
 msgstr "Imporditööriista portimine mudeli/vaate raamistikku ja mentor"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:263
-#, kde-format
-msgid "Abhinav Badola"
-msgstr "Abhinav Badola"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:264
+#: core/libs/widgets/mainview/daboutdata.cpp:269
 #, kde-format
 msgid "Video Metadata Support and Mentoring"
 msgstr "Video metaandmete toetus ja mentor"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:269
-#, kde-format
-msgid "Benjamin Girault"
-msgstr "Benjamin Girault"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:270
+#: core/libs/widgets/mainview/daboutdata.cpp:275
 #, kde-format
 msgid "Panorama Tool and Mentoring"
 msgstr "Panorama tööriist ja mentor"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:275
-#, kde-format
-msgid "Victor Dodon"
-msgstr "Victor Dodon"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:276
+#: core/libs/widgets/mainview/daboutdata.cpp:281
 #, kde-format
 msgid "XML based GUI port of tools"
 msgstr "Tööriistade graafilise kasutajaliidese XML-põhine portimine"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:281
-#, kde-format
-msgid "Sayantan Datta"
-msgstr "Sayantan Datta"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:282
+#: core/libs/widgets/mainview/daboutdata.cpp:287
 #, kde-format
 msgid "Auto Noise Reduction"
 msgstr "Automaatne müra vähendus"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:289
-#, kde-format
-msgid "Ananta Palani"
-msgstr "Ananta Palani"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:290
+#: core/libs/widgets/mainview/daboutdata.cpp:295
 #, kde-format
 msgid "Windows Port and Release Manager"
 msgstr "Port Windowsi peale ja väljalasete korraldaja"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:295
-#, kde-format
-msgid "Andi Clemens"
-msgstr "Andi Clemens"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:300
-#, kde-format
-msgid "Patrick Spendrin"
-msgstr "Patrick Spendrin"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:301
+#: core/libs/widgets/mainview/daboutdata.cpp:306
 #, kde-format
 msgid "Developer and Windows port"
 msgstr "Arendaja ja Windowsi port"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:306
-#, kde-format
-msgid "Francesco Riosa"
-msgstr "Francesco Riosa"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:307
+#: core/libs/widgets/mainview/daboutdata.cpp:312
 #, kde-format
 msgid "LCMS2 library port"
 msgstr "LCMS2 teegi port"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:312
-#, kde-format
-msgid "Johannes Wienke"
-msgstr "Johannes Wienke"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:318
-#, kde-format
-msgid "Julien Pontabry"
-msgstr "Julien Pontabry"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:324
-#, kde-format
-msgid "Arnd Baecker"
-msgstr "Arnd Baecker"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:329
-#, kde-format
-msgid "Francisco J. Cruz"
-msgstr "Francisco J. Cruz"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:330
+#: core/libs/widgets/mainview/daboutdata.cpp:335
 #: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid "Color Management"
 msgstr "Värvihaldus"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:334
-#, kde-format
-msgid "Pieter Edelman"
-msgstr "Pieter Edelman"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:340
-#, kde-format
-msgid "Holger Foerster"
-msgstr "Holger Foerster"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:341
+#: core/libs/widgets/mainview/daboutdata.cpp:346
 #, kde-format
 msgid "MySQL interface"
 msgstr "MySQL-i liides"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:345
-#, kde-format
-msgid "Risto Saukonpaa"
-msgstr "Risto Saukonpaa"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:346
+#: core/libs/widgets/mainview/daboutdata.cpp:351
 #, kde-format
 msgid "Design, icons, logo, banner, mockup, beta tester"
 msgstr "Kujundus, ikoonid, logo, tiitelkuva. beetatestija"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:350
-#, kde-format
-msgid "Mikolaj Machowski"
-msgstr "Mikolaj Machowski"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:351
-#: core/libs/widgets/mainview/daboutdata.cpp:357
+#: core/libs/widgets/mainview/daboutdata.cpp:356
+#: core/libs/widgets/mainview/daboutdata.cpp:362
 #, kde-format
 msgid "Bug reports and patches"
 msgstr "Veateated ja paigad"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:356
-#, kde-format
-msgid "Achim Bohnet"
-msgstr "Achim Bohnet"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:362
-#, kde-format
-msgid "Luka Renko"
-msgstr "Luka Renko"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:368
-#, kde-format
-msgid "Angelo Naselli"
-msgstr "Angelo Naselli"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:374
-#, kde-format
-msgid "Fabien Salvi"
-msgstr "Fabien Salvi"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:375
+#: core/libs/widgets/mainview/daboutdata.cpp:380
 #, kde-format
 msgid "Webmaster"
 msgstr "Veebimeister"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:379
-#, kde-format
-msgid "Todd Shoemaker"
-msgstr "Todd Shoemaker"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:384
-#, kde-format
-msgid "Gerhard Kulzer"
-msgstr "Gerhard Kulzer"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:385
+#: core/libs/widgets/mainview/daboutdata.cpp:390
 #, kde-format
 msgid "Handbook writer, alpha tester, webmaster"
 msgstr "Käsiraamatu kirjutaja, alfatestija, veebimeister"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:390
-#, kde-format
-msgid "Oliver Doerr"
-msgstr "Oliver Doerr"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:391
 #: core/libs/widgets/mainview/daboutdata.cpp:396
+#: core/libs/widgets/mainview/daboutdata.cpp:401
 #, kde-format
 msgid "Beta tester"
 msgstr "Beetatestija"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:395
-#, kde-format
-msgid "Charles Bouveyron"
-msgstr "Charles Bouveyron"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:400
-#, kde-format
-msgid "Richard Taylor"
-msgstr "Richard Taylor"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:401
+#: core/libs/widgets/mainview/daboutdata.cpp:406
 #, kde-format
 msgid "Feedback and patches. Handbook writer"
 msgstr "Tagasiside ja paigad. Käsiraamatu autor"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:405
-#, kde-format
-msgid "Hans Karlsson"
-msgstr "Hans Karlsson"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:406
+#: core/libs/widgets/mainview/daboutdata.cpp:411
 #, kde-format
 msgid "digiKam website banner and application icons"
 msgstr "DigiKami veebilehekülje reklaam ja rakenduse ikoonid"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:410
-#, kde-format
-msgid "Aaron Seigo"
-msgstr "Aaron Seigo"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:411
-#, kde-format
-msgid "Various usability fixes and general application polishing"
+#: core/libs/widgets/mainview/daboutdata.cpp:416
+#, fuzzy, kde-format
+#| msgid "Various usability fixes and general application polishing"
+msgid ""
+"Various usability fixes\n"
+"and general application polishing"
 msgstr "Mitmesugused kasutamishõlbustused ja üldlihvi andmine"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:416
-#, kde-format
-msgid "Yves Chaufour"
-msgstr "Yves Chaufour"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:417
+#: core/libs/widgets/mainview/daboutdata.cpp:422
 #, kde-format
 msgid "digiKam website, Feedback"
 msgstr "DigiKami veebilehekülg, tagasiside"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:421
-#, kde-format
-msgid "Tung Nguyen"
-msgstr "Tung Nguyen"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:422
+#: core/libs/widgets/mainview/daboutdata.cpp:427
 #, kde-format
 msgid "Bug reports, feedback and icons"
 msgstr "Veateated, tagasiside ja ikoonid"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:428
-#, kde-format
-msgid "Renchi Raju"
-msgstr "Renchi Raju"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:429
+#: core/libs/widgets/mainview/daboutdata.cpp:434
 #, fuzzy, kde-format
 #| msgid "Developer (2002-2005)"
 msgid "Developer (2001-2005)"
 msgstr "Arendaja (2002-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:434
-#, kde-format
-msgid "Joern Ahrens"
-msgstr "Joern Ahrens"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:435
-#: core/libs/widgets/mainview/daboutdata.cpp:441
+#: core/libs/widgets/mainview/daboutdata.cpp:440
+#: core/libs/widgets/mainview/daboutdata.cpp:446
 #, kde-format
 msgid "Developer (2004-2005)"
 msgstr "Arendaja (2004-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:440
-#, kde-format
-msgid "Tom Albers"
-msgstr "Tom Albers"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:446
-#, kde-format
-msgid "Ralf Holzer"
-msgstr "Ralf Holzer"
-
-#: core/libs/widgets/mainview/daboutdata.cpp:447
+#: core/libs/widgets/mainview/daboutdata.cpp:452
 #, kde-format
 msgid "Developer (2004)"
 msgstr "Arendaja (2004)"
+
+#: core/libs/widgets/mainview/daboutdata.cpp:457
+#, fuzzy, kde-format
+#| msgid "Developer and Mentoring"
+msgid "Developer and Mentoring (2005-2012)"
+msgstr "Arendaja ja mentor"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:87
 #, fuzzy, kde-format
@@ -53577,20 +53297,20 @@ msgctxt "@title:window"
 msgid "Open Images from Folder"
 msgstr "Piltide avamine kataloogist"
 
-#: core/showfoto/main/showfoto_open.cpp:303
+#: core/showfoto/main/showfoto_open.cpp:302
 #, fuzzy, kde-format
 #| msgid "There is no dropped item to process."
 msgid "There is no item to process."
 msgstr "Pole enam midagi töödelda."
 
-#: core/showfoto/main/showfoto_open.cpp:325
+#: core/showfoto/main/showfoto_open.cpp:324
 #, fuzzy, kde-format
 #| msgid "Error Loading File"
 msgctxt "@title:window"
 msgid "Error Loading File"
 msgstr "Tõrge faili laadimisel"
 
-#: core/showfoto/main/showfoto_open.cpp:326
+#: core/showfoto/main/showfoto_open.cpp:325
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to load file: %1\n"
@@ -54724,42 +54444,42 @@ msgid_plural "%1 files"
 msgstr[0] "GPX-fail:"
 msgstr[1] "GPX-fail:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:665
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:664
 #, fuzzy, kde-format
 #| msgid "New Features"
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "Uued omadused"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:669
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:668
 #, fuzzy, kde-format
 #| msgid "Edit Tag Title"
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "Muuda sildi pealkirja"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:676
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:675
 #, fuzzy, kde-format
 #| msgid "New Features"
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "Uued omadused"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:680
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:679
 #, fuzzy, kde-format
 #| msgid "Edit Tag Title"
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "Muuda sildi pealkirja"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:737
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:736
 #, fuzzy, kde-format
 #| msgid "Could Not Calculate Average"
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "Keskmise arvutamine nurjus"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:738
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:737
 #, fuzzy, kde-format
 #| msgid "Could not calculate date average for this album."
 msgctxt "@info: favorite item properties"
@@ -54972,8 +54692,8 @@ msgctxt "@action"
 msgid "C&ancel"
 msgstr "K&atkesta"
 
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:253
-#: core/utilities/import/items/itemviewimportdelegate.cpp:320
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:254
+#: core/utilities/import/items/itemviewimportdelegate.cpp:321
 #, kde-format
 msgctxt "date of image creation"
 msgid "created: %1"
@@ -56114,32 +55834,32 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Loobu"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:95
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
 #, fuzzy, kde-format
 #| msgid "Confirm Restore"
 msgid "Confirming face"
 msgstr "Taastamise kinnitus"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:110
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
 #, fuzzy, kde-format
 #| msgid "Remove face tag?"
 #| msgid_plural "Remove face tags?"
 msgid "Removing face"
 msgstr "Kas eemaldada näosilt?"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:124
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Editing face tag"
 msgstr "Nägude andmebaasi uuendamine."
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:145
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "Eemalda see silt"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:166
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
 #, fuzzy, kde-format
 #| msgid "By Manual and Name"
 msgid "Manually adding face"
@@ -66021,18 +65741,22 @@ msgstr "Leiti pildid asukohas %1"
 msgid "Face found: %1"
 msgstr "Leiti pildid asukohas %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
 #, fuzzy, kde-format
-#| msgid "Images found in %1"
-msgid "No faces found in %1"
-msgstr "Leiti pildid asukohas %1"
+#| msgid "No flash"
+msgid "Found %1 face."
+msgstr "Välku ei kasutatud"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:444
 #, kde-format
-msgid "Found 1 face in "
-msgid_plural "Found %1 faces in "
-msgstr[0] ""
-msgstr[1] ""
+msgid "Found %1 faces."
+msgstr ""
+
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:450
+#, fuzzy, kde-format
+#| msgid "Icon Size:"
+msgid "Recognized: %1"
+msgstr "Ikooni suurus:"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
 #, kde-format
@@ -72829,6 +72553,195 @@ msgstr "Albumielemendid"
 msgid "Import Items"
 msgstr "Impordi elemendid"
 
+#~ msgid "Caulier Gilles"
+#~ msgstr "Caulier Gilles"
+
+#~ msgid "Maik Qualmann"
+#~ msgstr "Maik Qualmann"
+
+#~ msgid "Marcel Wiesweg"
+#~ msgstr "Marcel Wiesweg"
+
+#~ msgid "Mohamed Anwer"
+#~ msgstr "Mohamed Anwer"
+
+#~ msgid "Michael G. Hansen"
+#~ msgstr "Michael G. Hansen"
+
+#~ msgid "Teemu Rytilahti"
+#~ msgstr "Teemu Rytilahti"
+
+#~ msgid "Thanh Trung Dinh"
+#~ msgstr "Thanh Trung Dinh"
+
+#, fuzzy
+#~| msgid "Channel Mixer"
+#~ msgid "Michael Miller"
+#~ msgstr "Kanalite mikser"
+
+#~ msgid "Matthias Welwarsky"
+#~ msgstr "Matthias Welwarsky"
+
+#~ msgid "Julien Narboux"
+#~ msgstr "Julien Narboux"
+
+#~ msgid "Mario Frank"
+#~ msgstr "Mario Frank"
+
+#~ msgid "Nicolas Lécureuil"
+#~ msgstr "Nicolas Lécureuil"
+
+#, fuzzy
+#~| msgid "Pankaj Kumar"
+#~ msgid "Anjani Kumar"
+#~ msgstr "Pankaj Kumar"
+
+#~ msgid "Minh Nghĩa Duong"
+#~ msgstr "Minh Nghĩa Duong"
+
+#~ msgid "Ahmed Fathi"
+#~ msgstr "Ahmed Fathi"
+
+#~ msgid "Veaceslav Munteanu"
+#~ msgstr "Veaceslav Munteanu"
+
+#~ msgid "Tarek Talaat"
+#~ msgstr "Tarek Talaat"
+
+#~ msgid "Yingjie Liu"
+#~ msgstr "Yingjie Liu"
+
+#~ msgid "Yiou Wang"
+#~ msgstr "Yiou Wang"
+
+#~ msgid "Gowtham Ashok"
+#~ msgstr "Gowtham Ashok"
+
+#~ msgid "Aditya Bhatt"
+#~ msgstr "Aditya Bhatt"
+
+#~ msgid "Martin Klapetek"
+#~ msgstr "Martin Klapetek"
+
+#~ msgid "Gabriel Voicu"
+#~ msgstr "Gabriel Voicu"
+
+#~ msgid "Mahesh Hegde"
+#~ msgstr "Mahesh Hegde"
+
+#~ msgid "Pankaj Kumar"
+#~ msgstr "Pankaj Kumar"
+
+#~ msgid "Smit Mehta"
+#~ msgstr "Smit Mehta"
+
+#~ msgid "Islam Wazery"
+#~ msgstr "Islam Wazery"
+
+#~ msgid "Abhinav Badola"
+#~ msgstr "Abhinav Badola"
+
+#~ msgid "Benjamin Girault"
+#~ msgstr "Benjamin Girault"
+
+#~ msgid "Victor Dodon"
+#~ msgstr "Victor Dodon"
+
+#~ msgid "Sayantan Datta"
+#~ msgstr "Sayantan Datta"
+
+#~ msgid "Ananta Palani"
+#~ msgstr "Ananta Palani"
+
+#~ msgid "Andi Clemens"
+#~ msgstr "Andi Clemens"
+
+#~ msgid "Patrick Spendrin"
+#~ msgstr "Patrick Spendrin"
+
+#~ msgid "Francesco Riosa"
+#~ msgstr "Francesco Riosa"
+
+#~ msgid "Johannes Wienke"
+#~ msgstr "Johannes Wienke"
+
+#~ msgid "Julien Pontabry"
+#~ msgstr "Julien Pontabry"
+
+#~ msgid "Arnd Baecker"
+#~ msgstr "Arnd Baecker"
+
+#~ msgid "Francisco J. Cruz"
+#~ msgstr "Francisco J. Cruz"
+
+#~ msgid "Pieter Edelman"
+#~ msgstr "Pieter Edelman"
+
+#~ msgid "Holger Foerster"
+#~ msgstr "Holger Foerster"
+
+#~ msgid "Risto Saukonpaa"
+#~ msgstr "Risto Saukonpaa"
+
+#~ msgid "Mikolaj Machowski"
+#~ msgstr "Mikolaj Machowski"
+
+#~ msgid "Achim Bohnet"
+#~ msgstr "Achim Bohnet"
+
+#~ msgid "Luka Renko"
+#~ msgstr "Luka Renko"
+
+#~ msgid "Angelo Naselli"
+#~ msgstr "Angelo Naselli"
+
+#~ msgid "Fabien Salvi"
+#~ msgstr "Fabien Salvi"
+
+#~ msgid "Todd Shoemaker"
+#~ msgstr "Todd Shoemaker"
+
+#~ msgid "Gerhard Kulzer"
+#~ msgstr "Gerhard Kulzer"
+
+#~ msgid "Oliver Doerr"
+#~ msgstr "Oliver Doerr"
+
+#~ msgid "Charles Bouveyron"
+#~ msgstr "Charles Bouveyron"
+
+#~ msgid "Richard Taylor"
+#~ msgstr "Richard Taylor"
+
+#~ msgid "Hans Karlsson"
+#~ msgstr "Hans Karlsson"
+
+#~ msgid "Aaron Seigo"
+#~ msgstr "Aaron Seigo"
+
+#~ msgid "Yves Chaufour"
+#~ msgstr "Yves Chaufour"
+
+#~ msgid "Tung Nguyen"
+#~ msgstr "Tung Nguyen"
+
+#~ msgid "Renchi Raju"
+#~ msgstr "Renchi Raju"
+
+#~ msgid "Joern Ahrens"
+#~ msgstr "Joern Ahrens"
+
+#~ msgid "Tom Albers"
+#~ msgstr "Tom Albers"
+
+#~ msgid "Ralf Holzer"
+#~ msgstr "Ralf Holzer"
+
+#, fuzzy
+#~| msgid "Images found in %1"
+#~ msgid "No faces found in %1"
+#~ msgstr "Leiti pildid asukohas %1"
+
 #, fuzzy
 #~| msgid "Metering mode:"
 #~ msgid "Auto-tagging scan mode: "
@@ -72885,13 +72798,6 @@ msgstr "Impordi elemendid"
 #~| msgid "No flash"
 #~ msgid "No face"
 #~ msgstr "Välku ei kasutatud"
-
-#, fuzzy
-#~| msgid "No flash"
-#~ msgid "1 face"
-#~ msgid_plural "%1 faces"
-#~ msgstr[0] "Välku ei kasutatud"
-#~ msgstr[1] "Välku ei kasutatud"
 
 #, fuzzy
 #~| msgctxt "@label"
