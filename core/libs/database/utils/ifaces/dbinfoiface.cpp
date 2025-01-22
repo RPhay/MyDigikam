@@ -521,7 +521,7 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
     }
     else
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Database Info is NULL for" << url;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Database Info is null for" << url;
     }
 
     return map;
