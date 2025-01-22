@@ -263,7 +263,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     // Necessary to open native open with dialog on windows
 
-    CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+    CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);        // krazy:exclude=null
 
 #endif
 
