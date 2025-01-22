@@ -81,7 +81,7 @@ krazy2all --export xml \
           --priority all \
           --verbose \
           --check-set kde5,foss \
-          --extra null,contractions \
+          --extra null,contractions,defines,license-reuse,copyright-reuse,qmacros,tipsandthis \
           --exclude qclasses,license \
           --exclude-types qml,python,qdoc,perl \
           --topdir ../../ \
