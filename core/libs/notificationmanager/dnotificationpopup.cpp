@@ -283,7 +283,7 @@ public:
 
 DNotificationPopup::DNotificationPopup(QWidget* const parent, Qt::WindowFlags f)
     : QFrame(nullptr, f ? f : POPUP_FLAGS),
-      d     (new Private(this, parent ? parent->effectiveWinId() : 0L))
+      d     (new Private(this, parent ? parent->effectiveWinId() : 0L))     // krazy:exclude=null
 {
 }
 

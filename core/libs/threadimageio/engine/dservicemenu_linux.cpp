@@ -427,7 +427,7 @@ QIcon DServiceMenu::getIconFromService(const DServiceInfo& sinfo)
     if (icon.isNull())
     {
         QString execPath    = DFileOperations::findExecutable(sinfo.icon);
-        HINSTANCE hInstance = GetModuleHandle(NULL);
+        HINSTANCE hInstance = GetModuleHandle(NULL);                               // krazy:exclude=null
         HICON hicon         = ExtractIconW(hInstance, (LPCWSTR)execPath.utf16(), 0);
         QPixmap exePixmap   = QPixmap::fromImage(QImage::fromHICON(hicon));
 
