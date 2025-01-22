@@ -684,7 +684,7 @@ DImg* EditorCore::getImg() const
     }
     else
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "d->image is NULL";
+        qCWarning(DIGIKAM_GENERAL_LOG) << "d->image is null";
         return nullptr;
     }
 }
@@ -783,7 +783,7 @@ void EditorCore::putIccProfile(const IccProfile& profile)
 {
     if (d->image.isNull())
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "d->image is NULL";
+        qCWarning(DIGIKAM_GENERAL_LOG) << "d->image is null";
         return;
     }
 /*
