@@ -73,15 +73,19 @@ if [[ $DK_QTVERSION == 5 ]] ; then
 
     # KDE Application version.
     # See official release here: https://download.kde.org/stable/release-service/
-    DK_KP_VERSION="5.27.11"
+    DK_KP_VERSION="5.27.12"
 
     # KDE KF6 frameworks version.
     # See official release here: https://download.kde.org/stable/frameworks/
-    DK_KA_VERSION="24.05.1"
+    DK_KA_VERSION="24.12.1"
 
     DK_UPLOADDIR="/srv/archives/files/digikam/legacy"
 
 else
+
+    # KDE KF6 frameworks version.
+    # See official release here: https://download.kde.org/stable/frameworks/
+    DK_KDE_VERSION="v6.10.0"
 
     # KDE Plasma version.
     # See official release here: https://download.kde.org/stable/plasma/
@@ -90,10 +94,6 @@ else
     # KDE Application version.
     # See official release here: https://download.kde.org/stable/release-service/
     DK_KA_VERSION="v24.12.1"
-
-    # KDE KF6 frameworks version.
-    # See official release here: https://download.kde.org/stable/frameworks/
-    DK_KDE_VERSION="v6.10.0"
 
     # Absolute path where are downloaded all tarballs to compile.
     DOWNLOAD_DIR="/mnt/data/d"
