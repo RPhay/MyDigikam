@@ -31,6 +31,7 @@
 #include "digikam_debug.h"
 #include "digikam_opencv.h"
 #include "sharedqueue.h"
+#include "albummanager.h"
 #include "album.h"
 #include "iteminfo.h"
 #include "coredb.h"
@@ -334,16 +335,7 @@ bool FacePipelineEdit::writer()
             FaceClassifier::instance()->retrain();
         }
 
-        QString albumName;
-
-        for (auto albumInfo : albumRoots)
-        {
-            if (package->info.albumRootId() == albumInfo.id)
-            {
-                albumName = albumInfo.label;
-                break;
-            }
-        }
+        QString albumName = AlbumManager::instance()->findAlbum(package->info.albumId())->title();;
 
         // send a notification that the image was processed
 

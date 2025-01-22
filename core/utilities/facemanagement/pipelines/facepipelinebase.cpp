@@ -41,8 +41,7 @@ namespace Digikam
 
 FacePipelineBase::FacePipelineBase(const FaceScanSettings& _settings)
     : MLPipelineFoundation(),
-      settings            (_settings),
-      albumRoots          (CoreDbAccess().db()->getAlbumRoots())
+      settings            (_settings)
 {
 }
 

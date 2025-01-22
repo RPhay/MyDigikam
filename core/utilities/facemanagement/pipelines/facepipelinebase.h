@@ -88,7 +88,6 @@ protected:
     float                       minThumbnailSize    = 0.33f;
 
     FaceScanSettings            settings;
-    const QList<AlbumRootInfo>  albumRoots;
 
 protected:
 
