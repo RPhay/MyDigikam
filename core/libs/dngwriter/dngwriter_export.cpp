@@ -86,8 +86,10 @@ int DNGWriter::Private::exportTarget(DNGWriterHost& host,
             previewImage.Reset(render.Render());
         }
 
-        bool useCompressedPreview = ((negative->RawLossyCompressedImage() != NULL) ||
-                                     (previewIndex > 0));
+        bool useCompressedPreview = (
+                                     (negative->RawLossyCompressedImage() != nullptr) ||
+                                     (previewIndex > 0)
+                                    );
 
         AutoPtr<dng_preview> preview(useCompressedPreview ? (dng_preview*) new dng_jpeg_preview
                                                           : (dng_preview*) new dng_image_preview);
