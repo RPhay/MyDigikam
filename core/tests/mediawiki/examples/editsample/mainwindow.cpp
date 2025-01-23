@@ -31,7 +31,8 @@ MainWindow::~MainWindow()
     delete mwIface;
 }
 
-//Load page
+// Load page
+
 void MainWindow::slot_pushButton2_clicked()
 {
     mwIface = new Iface(QUrl(this->ui->mWikiEdit->text()));
@@ -55,7 +56,7 @@ void MainWindow::revisionHandle(const QList<Revision>& revisions)
     if (revisions.isEmpty())
     {
         QMessageBox popup;
-        popup.setText(QLatin1String("This page doesn't exist."));
+        popup.setText(QLatin1String("This page does not exist."));
         popup.exec();
 
         return;
@@ -107,7 +108,7 @@ void MainWindow::editError(KJob* job)
     }
     else
     {
-        errorMessage = QLatin1String("The Wiki page can't be modified.");
+        errorMessage = QLatin1String("The Wiki page can not be modified.");
     }
 
     QMessageBox popup;
@@ -120,7 +121,7 @@ void MainWindow::revisionError(KJob* job)
     if (job->error() != 0)
     {
         QMessageBox popup;
-        popup.setText(QLatin1String("The Wiki page can't be loaded."));
+        popup.setText(QLatin1String("The Wiki page can not be loaded."));
         popup.exec();
     }
 }
