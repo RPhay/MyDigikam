@@ -137,7 +137,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
 #ifdef Q_OS_WIN
 
-    HANDLE fd = CreateFileW((LPCWSTR)filePath.utf16(), GENERIC_READ, 0, NULL, OPEN_EXISTING, 0, 0);
+    HANDLE fd = CreateFileW((LPCWSTR)filePath.utf16(), GENERIC_READ, 0, NULL, OPEN_EXISTING, 0, 0);     // krazy:exclude=null
 
     if (fd == INVALID_HANDLE_VALUE)
     {

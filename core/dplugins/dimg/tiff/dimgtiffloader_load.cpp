@@ -50,7 +50,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
 #ifdef Q_OS_WIN
 
-    TIFFSetWarningHandler(NULL);
+    TIFFSetWarningHandler(NULL);        // krazy:exclude=null
 
 #else
 
