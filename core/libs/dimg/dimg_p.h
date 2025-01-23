@@ -79,17 +79,23 @@ extern "C"
 #include "dimgloaderobserver.h"
 #include "randomnumbergenerator.h"
 
+typedef uint64_t ullong;    // krazy:exclude=typedefs
+typedef int64_t  llong;     // krazy:exclude=typedefs
+
+namespace Digikam
+{
+
 /**
  * Lanczos kernel is precomputed in a table with this resolution
  * The value below seems to be enough for HQ upscaling up to eight times
  */
-#define LANCZOS_TABLE_RES  256
+static const int LANCZOS_TABLE_RES = 256;
 
 /**
  * A support of 3 gives an overall sharper looking image, but
  * it is a) slower b) gives more sharpening artifacts
  */
-#define LANCZOS_SUPPORT    2
+static const int LANCZOS_SUPPORT   = 2;
 
 /**
  * Define this to use a floating-point implementation of Lanczos interpolation.
@@ -101,17 +107,11 @@ extern "C"
 
 #ifdef LANCZOS_DATA_FLOAT
 #   define LANCZOS_DATA_TYPE float
-#   define LANCZOS_DATA_ONE 1.0
+    static const float LANCZOS_DATA_ONE = 1.0F;
 #else
 #   define LANCZOS_DATA_TYPE int
-#   define LANCZOS_DATA_ONE 4096
+    static const int LANCZOS_DATA_ONE   = 4096;
 #endif
-
-typedef uint64_t ullong;    // krazy:exclude=typedefs
-typedef int64_t  llong;     // krazy:exclude=typedefs
-
-namespace Digikam
-{
 
 class DIGIKAM_EXPORT DImg::Private : public QSharedData
 {
