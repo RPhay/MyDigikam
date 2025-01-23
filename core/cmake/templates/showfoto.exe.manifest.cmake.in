@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ * ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2024-03-20
+ * Description : Windows manisfest for Showfoto
+ *
+ * SPDX-FileCopyrightText: 2024-2025 by Maik Qualmann <metzpinguin at gmail dot com>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * ============================================================
+ -->
 <assembly manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1">
   <assemblyIdentity type="win32" name="showfoto" version="${DIGIKAM_MAJOR_VERSION}.${DIGIKAM_MINOR_VERSION}.${DIGIKAM_PATCH_VERSION}.0"/>
   <application>
