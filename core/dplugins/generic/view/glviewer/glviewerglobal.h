@@ -18,12 +18,15 @@
 // Uncomment this line to enable performance checks.
 //#define PERFORMANCE_ANALYSIS
 
-/// Images cache settings. Keep in mind that one cache entry takes 20MB for a 5mpix pic
-#define CACHESIZE 4
-#define EMPTY     99999
-
 namespace DigikamGenericGLViewerPlugin
 {
+
+/**
+ * Images cache settings. Keep in mind that one cache entry takes 20MB for a 5mpix pic.
+ */
+static const int CACHESIZE = 4;
+
+static const int EMPTY     = 99999;
 
 enum OGLstate
 {
