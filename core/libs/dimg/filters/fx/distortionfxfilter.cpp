@@ -17,8 +17,6 @@
  *
  * ============================================================ */
 
-#define ANGLE_RATIO 0.017453292519943295769236907685
-
 #include "distortionfxfilter.h"
 
 // C++ includes
@@ -48,6 +46,8 @@ class Q_DECL_HIDDEN DistortionFXFilter::Private
 public:
 
     Private() = default;
+
+public:
 
     bool                   antiAlias     = true;
 
@@ -241,6 +241,7 @@ void DistortionFXFilter::fisheyeMultithreaded(const Args& prm)
         tw = lfXScale * (double)(w - nHalfW);
 
         // we find the distance from the center
+
         lfRadius = qSqrt(th * th + tw * tw);
 
         if (lfRadius < lfRadMax)
@@ -1046,20 +1047,20 @@ void DistortionFXFilter::blockWaves(DImg* orgImage, DImg* destImage,
 
 void DistortionFXFilter::circularWavesMultithreaded(const Args& prm)
 {
-    int Width       = prm.orgImage->width();
-    int Height      = prm.orgImage->height();
-    uchar* data     = prm.orgImage->bits();
-    bool sixteenBit = prm.orgImage->sixteenBit();
-    int bytesDepth  = prm.orgImage->bytesDepth();
-    uchar* pResBits = prm.destImage->bits();
+    int Width                 = prm.orgImage->width();
+    int Height                = prm.orgImage->height();
+    uchar* data               = prm.orgImage->bits();
+    bool sixteenBit           = prm.orgImage->sixteenBit();
+    int bytesDepth            = prm.orgImage->bytesDepth();
+    uchar* pResBits           = prm.destImage->bits();
 
     double nh, nw;
-
     double lfRadius, lfRadMax;
-    double lfNewAmp     = prm.Amplitude;
-    double lfFreqAngle  = prm.Frequency * ANGLE_RATIO;
-    double phase        = prm.Phase     * ANGLE_RATIO;
-    lfRadMax            = qSqrt(Height * Height + Width * Width);
+    const  double ANGLE_RATIO = 0.017453292519943295769236907685;
+    double lfNewAmp           = prm.Amplitude;
+    double lfFreqAngle        = prm.Frequency * ANGLE_RATIO;
+    double phase              = prm.Phase     * ANGLE_RATIO;
+    lfRadMax                  = qSqrt(Height * Height + Width * Width);
 
     for (int w = prm.start; runningFlag() && (w < prm.stop); ++w)
     {

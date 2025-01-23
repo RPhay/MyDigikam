@@ -36,7 +36,7 @@ public:
 
     enum DistortionFXTypes
     {
-        FishEye=0,
+        FishEye = 0,
         Twirl,
         CilindricalHor,
         CilindricalVert,
@@ -61,6 +61,8 @@ private:
     public:
 
         Args() = default;
+
+    public:
 
         int    start        = 0;
         int    stop         = 0;
@@ -91,8 +93,8 @@ private:
 public:
 
     explicit DistortionFXFilter(QObject* const parent = nullptr);
-    explicit DistortionFXFilter(DImg* const orgImage, QObject* const parent = nullptr, int effectType=0,
-                                int level=0, int iteration=0, bool antialiasing=true);
+    explicit DistortionFXFilter(DImg* const orgImage, QObject* const parent = nullptr, int effectType = 0,
+                                int level = 0, int iteration = 0, bool antialiasing = true);
 
     ~DistortionFXFilter()                                                     override;
 
