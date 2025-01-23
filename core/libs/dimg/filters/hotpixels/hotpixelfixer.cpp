@@ -36,16 +36,16 @@
 #   endif
 #endif
 
+namespace Digikam
+{
+
 #ifndef DBL_MIN
-#   define DBL_MIN 1e-37
+    static const double DBL_MIN = 1e-37;
 #endif
 
 #ifndef DBL_MAX
-#   define DBL_MAX 1e37
+    static const double DBL_MAX = 1e37;
 #endif
-
-namespace Digikam
-{
 
 HotPixelFixer::HotPixelFixer(QObject* const parent)
     : DImgThreadedFilter(parent)
