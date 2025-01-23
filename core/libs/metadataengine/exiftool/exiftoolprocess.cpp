@@ -255,9 +255,9 @@ int ExifToolProcess::command(const QByteArrayList& args, Action ac)
 
     const int cmdId = d->nextCmdId;
 
-    if (d->nextCmdId++ >= CMD_ID_MAX)
+    if (d->nextCmdId++ >= ExifToolProcess::Private::CMD_ID_MAX)
     {
-        d->nextCmdId = CMD_ID_MIN;
+        d->nextCmdId = ExifToolProcess::Private::CMD_ID_MIN;
     }
 
     // String representation of d->cmdId with leading zero -> constant size: 10 char

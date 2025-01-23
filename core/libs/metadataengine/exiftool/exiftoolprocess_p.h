@@ -41,9 +41,6 @@
 #include "digikam_globals.h"
 #include "metaenginesettings.h"
 
-#define CMD_ID_MIN 1
-#define CMD_ID_MAX 2000000000
-
 namespace Digikam
 {
 
@@ -78,6 +75,9 @@ public Q_SLOTS:
     void slotExecNextCmd();
 
 public:
+
+    static const int                   CMD_ID_MIN = 1;
+    static const int                   CMD_ID_MAX = 2000000000;
 
     ExifToolProcess*                   pp                   = nullptr;
     QString                            etExePath;
