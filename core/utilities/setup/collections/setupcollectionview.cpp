@@ -14,8 +14,6 @@
  *
  * ============================================================ */
 
-#define INTERNALID 65535
-
 #include "setupcollectionview.h"
 
 // Qt includes

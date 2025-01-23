@@ -125,13 +125,6 @@ public:
     QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())         const override;
     QModelIndex parent(const QModelIndex& index)                                              const override;
 
-/*
-    virtual Qt::DropActions supportedDropActions() const;
-    virtual QStringList mimeTypes() const;
-    virtual bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex& parent);
-    virtual QMimeData * mimeData(const QModelIndexList& indexes) const;
-*/
-
 Q_SIGNALS:
 
     /// Emitted when all collections were loaded and the model reset in loadCollections
@@ -212,6 +205,10 @@ protected:
 private Q_SLOTS:
 
     void slotHelp();
+
+private:
+
+    static const int INTERNALID = 65535;
 };
 
 // -----------------------------------------------------------------------
