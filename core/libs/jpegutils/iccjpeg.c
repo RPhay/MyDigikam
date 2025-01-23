@@ -31,13 +31,13 @@
  * Decoders should use the marker sequence numbers to reassemble the profile,
  * rather than assuming that the APP2 markers appear in the correct sequence.
  */
-#define ICC_MARKER                (JPEG_APP0 + 2)    /* JPEG marker code for ICC          */
-#define ICC_OVERHEAD_LEN          14                 /* size of non-profile data in APP2  */
-#define MAX_BYTES_IN_MARKER       65533              /* maximum data len of a JPEG marker */
-#define MAX_DATA_BYTES_IN_MARKER  (MAX_BYTES_IN_MARKER - ICC_OVERHEAD_LEN)
+#define ICC_MARKER                              (JPEG_APP0 + 2)    /* JPEG marker code for ICC          */
+static const unsigned int ICC_OVERHEAD_LEN    = 14;                /* size of non-profile data in APP2  */
+static const unsigned int MAX_BYTES_IN_MARKER = 65533;             /* maximum data len of a JPEG marker */
+#define MAX_DATA_BYTES_IN_MARKER                (MAX_BYTES_IN_MARKER - ICC_OVERHEAD_LEN)
 
 /**
- * This routine writes the given ICC profile data into a JPEG file.
+ * @brief This routine writes the given ICC profile data into a JPEG file.
  * It *must* be called AFTER calling jpeg_start_compress() and BEFORE
  * the first call to jpeg_write_scanlines().
  * (This ordering ensures that the APP2 marker(s) will appear after the
@@ -113,7 +113,7 @@ void write_icc_profile(j_compress_ptr cinfo,
 }
 
 /**
- * Prepare for reading an ICC profile
+ * @brief Prepare for reading an ICC profile
  */
 void setup_read_icc_profile (j_decompress_ptr cinfo)
 {
@@ -123,7 +123,7 @@ void setup_read_icc_profile (j_decompress_ptr cinfo)
 }
 
 /**
- * Handy subroutine to test whether a saved marker is an ICC profile marker.
+ * @brief Handy subroutine to test whether a saved marker is an ICC profile marker.
  */
 static boolean marker_is_icc (jpeg_saved_marker_ptr marker)
 {
@@ -148,21 +148,21 @@ static boolean marker_is_icc (jpeg_saved_marker_ptr marker)
 }
 
 /**
- * See if there was an ICC profile in the JPEG file being read;
+ * @brief See if there was an ICC profile in the JPEG file being read;
  * if so, reassemble and return the profile data.
  *
- * TRUE is returned if an ICC profile was found, FALSE if not.
+ * @return TRUE if an ICC profile was found, FALSE if not.
  * If TRUE is returned, *icc_data_ptr is set to point to the
  * returned data, and *icc_data_len is set to its length.
  *
- * IMPORTANT: the data at **icc_data_ptr has been allocated with malloc()
+ * @important the data at **icc_data_ptr has been allocated with malloc()
  * and must be freed by the caller with free() when the caller no longer
  * needs it.  (Alternatively, we could write this routine to use the
  * IJG library's memory allocator, so that the data would be freed implicitly
  * at jpeg_finish_decompress() time.  But it seems likely that many apps
  * will prefer to have the data stick around after decompression finishes.)
  *
- * NOTE: if the file contains invalid ICC APP2 markers, we just silently
+ * @note if the file contains invalid ICC APP2 markers, we just silently
  * return FALSE.  You might want to issue an error message instead.
  */
 boolean read_icc_profile(j_decompress_ptr cinfo,
@@ -175,7 +175,7 @@ boolean read_icc_profile(j_decompress_ptr cinfo,
     JOCTET* icc_data          = NULL;
     unsigned int total_length = 0;
 
-#define MAX_SEQ_NO  255 /* sufficient since marker numbers are bytes */
+    const int MAX_SEQ_NO      = 255;        /* sufficient since marker numbers are bytes */
 
     char marker_present[MAX_SEQ_NO+1];      /* 1 if marker found               */
     unsigned int data_length[MAX_SEQ_NO+1]; /* size of profile data in marker  */

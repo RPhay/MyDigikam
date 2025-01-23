@@ -14,9 +14,9 @@
  * ============================================================ */
 
 /**
- * Notes from Little CMS project (www.littlecms.com)
+ * @note Description provided from Little CMS project (www.littlecms.com)
  *
- * This file provides code to read and write International Color Consortium
+ * @brief This file provides code to read and write International Color Consortium
  * (ICC) device profiles embedded in JFIF JPEG image files.  The ICC has
  * defined a standard format for including such data in JPEG "APP2" markers.
  * The code given here does not know anything about the internal structure
@@ -39,7 +39,7 @@
 #include "digikam_export.h"
 
 /**
- * This routine writes the given ICC profile data into a JPEG file.
+ * @brief This routine writes the given ICC profile data into a JPEG file.
  * It *must* be called AFTER calling jpeg_start_compress() and BEFORE
  * the first call to jpeg_write_scanlines().
  * (This ordering ensures that the APP2 marker(s) will appear after the
@@ -50,7 +50,9 @@ DIGIKAM_EXPORT extern void write_icc_profile JPP((j_compress_ptr cinfo,
                                                  unsigned int icc_data_len));
 
 /**
- * Reading a JPEG file that may contain an ICC profile requires two steps:
+ * @brief Prepare for reading an ICC profile
+ *
+ * @note Reading a JPEG file that may contain an ICC profile requires two steps:
  *
  * 1. After jpeg_create_decompress() but before jpeg_read_header(),
  *    call setup_read_icc_profile().  This routine tells the IJG library
@@ -59,21 +61,17 @@ DIGIKAM_EXPORT extern void write_icc_profile JPP((j_compress_ptr cinfo,
  * 2. After jpeg_read_header(), call read_icc_profile() to find out
  *    whether there was a profile and obtain it if so.
  */
-
-/**
- * Prepare for reading an ICC profile
- */
 DIGIKAM_EXPORT extern void setup_read_icc_profile JPP((j_decompress_ptr cinfo));
 
 /**
- * See if there was an ICC profile in the JPEG file being read;
+ * @brief See if there was an ICC profile in the JPEG file being read;
  * if so, reassemble and return the profile data.
  *
- * TRUE is returned if an ICC profile was found, FALSE if not.
+ * @return TRUE if an ICC profile was found, FALSE if not.
  * If TRUE is returned, *icc_data_ptr is set to point to the
  * returned data, and *icc_data_len is set to its length.
  *
- * IMPORTANT: the data at **icc_data_ptr has been allocated with malloc()
+ * @important The data at **icc_data_ptr has been allocated with malloc()
  * and must be freed by the caller with free() when the caller no longer
  * needs it.  (Alternatively, we could write this routine to use the
  * IJG library's memory allocator, so that the data would be freed implicitly
