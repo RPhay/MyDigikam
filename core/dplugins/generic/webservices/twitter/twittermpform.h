@@ -25,12 +25,12 @@
 
 #include "wstoolutils.h"
 
-#define MAX_MEDIA_SIZE 1048576
-
 using namespace Digikam;
 
 namespace DigikamGenericTwitterPlugin
 {
+
+static const int MAX_MEDIA_SIZE = 1048576;
 
 class TwMPForm
 {
