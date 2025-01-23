@@ -25,15 +25,13 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 checksCPUCores
 
 ORIG_WD="`pwd`"
-REPORT_DIR="${ORIG_WD}/report.cppcheck"
-WEBSITE_DIR="${ORIG_WD}/site"
+REPORT_DIR="$PWD/report.cppcheck"
 
 # Get active git branches to create report description string
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
 echo "CppCheck Static Analyzer task name: $TITLE"
 
 rm -fr $REPORT_DIR
-rm -fr $WEBSITE_DIR
 
 # Print the skipped directories taken from the config file.
 

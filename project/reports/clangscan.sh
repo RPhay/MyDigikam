@@ -49,8 +49,7 @@ fi
 echo "Found SCAN_BUILD tool: $SCAN_BUILD_BIN"
 
 ORIG_WD="`pwd`"
-REPORT_DIR="${ORIG_WD}/report.scan"
-WEBSITE_DIR="${ORIG_WD}/site"
+REPORT_DIR="$PWD/report.scan"
 
 # Get active git branches to create report description string
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
@@ -59,7 +58,6 @@ echo "Clang Scan Static Analyzer task name: $TITLE"
 # Clean up and prepare to scan.
 
 rm -fr $REPORT_DIR
-rm -fr $WEBSITE_DIR
 
 cd ../..
 
