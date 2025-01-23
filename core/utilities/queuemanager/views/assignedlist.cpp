@@ -12,8 +12,6 @@
  *
  * ============================================================ */
 
-#define ICONSIZE 32
-
 #include "assignedlist.h"
 
 // Qt includes

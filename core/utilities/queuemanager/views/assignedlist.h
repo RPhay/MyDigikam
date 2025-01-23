@@ -122,6 +122,10 @@ private:
     void dragEnterEvent(QDragEnterEvent*)                                override;
     void dragMoveEvent(QDragMoveEvent*)                                  override;
     void dropEvent(QDropEvent*)                                          override;
+
+private:
+
+    static const int ICONSIZE = 32;
 };
 
 } // namespace Digikam
