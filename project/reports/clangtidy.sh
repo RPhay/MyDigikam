@@ -36,8 +36,7 @@ fi
 echo "Found CLANG-TIDY tool: $CLANG_TIDY_BIN"
 
 ORIG_WD="`pwd`"
-REPORT_DIR="${ORIG_WD}/report.tidy"
-WEBSITE_DIR="${ORIG_WD}/site"
+REPORT_DIR="$PWD/report.tidy"
 
 # Get active git branches to create report description string
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
@@ -46,7 +45,6 @@ echo "Clang Tidy Static Analyzer task name: $TITLE"
 # Clean up and prepare to scan.
 
 rm -fr $REPORT_DIR
-rm -fr $WEBSITE_DIR
 
 mkdir -p $REPORT_DIR
 
