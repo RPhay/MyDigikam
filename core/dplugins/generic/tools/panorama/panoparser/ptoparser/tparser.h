@@ -14,14 +14,16 @@
 
 #pragma once
 
+// krazy:excludeall=defines
+
 /**
  * Maximum size for an input token
  */
-#define PARSER_MAX_LINE 1000
+#define PARSER_MAX_LINE                     1000
 #define PT_TOKEN_MAX_LEN PARSER_MAX_LINE
 
-#define PANO_PARSER_MAX_PROJECTION_PARMS 10
-#define PANO_PARSER_MAX_MASK_POINTS 20
+#define PANO_PARSER_MAX_PROJECTION_PARMS    10
+#define PANO_PARSER_MAX_MASK_POINTS         20
 
 /**
  * Data structure where the entire input file will be read
@@ -35,11 +37,11 @@
 #define TRUE  1
 #endif
 
-#define PANO_PARSER_COEF_COUNT 7
-#define PANO_PARSER_RESP_CURVE_COEF_COUNT 5
-#define PANO_PARSER_VIGN_COEF_COUNT 6
-#define PANO_TRANSLATION_COEF_COUNT 3
-#define PANO_PROJECTION_COEF_COUNT 2
+#define PANO_PARSER_COEF_COUNT              7
+#define PANO_PARSER_RESP_CURVE_COEF_COUNT   5
+#define PANO_PARSER_VIGN_COEF_COUNT         6
+#define PANO_TRANSLATION_COEF_COUNT         3
+#define PANO_PROJECTION_COEF_COUNT          2
 
 typedef struct
 {
