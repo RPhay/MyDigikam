@@ -13,9 +13,6 @@
  *
  * ============================================================ */
 
-#define SQ2PI   2.50662827463100024161235523934010416269302368164062
-#define Epsilon 1.0e-12
-
 #include "charcoalfilter.h"
 
 // C++ includes
@@ -48,9 +45,12 @@ public:
 
 public:
 
-    double pencil           = 5.0;
-    double smooth           = 10.0;
-    int    globalProgress   = 0;
+    const double SQ2PI          = 2.50662827463100024161235523934010416269302368164062;
+    const double Epsilon        = 1.0e-12;
+
+    double pencil               = 5.0;
+    double smooth               = 10.0;
+    int    globalProgress       = 0;
 
     QMutex lock;
 };
@@ -290,7 +290,7 @@ bool CharcoalFilter::convolveImage(const unsigned int order, const double* kerne
         normalize += kernel[i];
     }
 
-    if (fabs(normalize) <= Epsilon)
+    if (fabs(normalize) <= d->Epsilon)
     {
         normalize = 1.0;
     }
@@ -356,11 +356,11 @@ int CharcoalFilter::getOptimalKernelWidth(double radius, double sigma)
 
         for (u = (-kernelWidth / 2) ; u <= (kernelWidth / 2) ; ++u)
         {
-            normalize += exp(-((double) u * u) / (2.0 * sigma * sigma)) / (SQ2PI * sigma);
+            normalize += exp(-((double) u * u) / (2.0 * sigma * sigma)) / (d->SQ2PI * sigma);
         }
 
         u     = kernelWidth / 2;
-        value = exp(-((double) u * u) / (2.0 * sigma * sigma)) / (SQ2PI * sigma) / normalize;
+        value = exp(-((double) u * u) / (2.0 * sigma * sigma)) / (d->SQ2PI * sigma) / normalize;
 
         if ((long)(65535 * value) <= 0)
         {
