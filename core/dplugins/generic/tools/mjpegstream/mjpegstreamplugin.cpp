@@ -99,7 +99,7 @@ QList<DPluginAuthor> MjpegStreamPlugin::authors() const
                              i18n("Developer"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2021-2024"),
+                             QString::fromUtf8("(C) 2021-2025"),
                              i18n("Developer and Maintainer"))
             ;
 }

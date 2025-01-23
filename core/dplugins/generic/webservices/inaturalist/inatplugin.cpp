@@ -84,7 +84,7 @@ QList<DPluginAuthor> INatPlugin::authors() const
     return QList<DPluginAuthor>()
            << DPluginAuthor(QString::fromUtf8("Joerg Lohse"),
                             QString::fromUtf8("joergmlpts at gmail dot com"),
-                            QString::fromUtf8("(C) 2021-2022"));
+                            QString::fromUtf8("(C) 2021-2025"));
 }
 
 void INatPlugin::setup(QObject* const parent)

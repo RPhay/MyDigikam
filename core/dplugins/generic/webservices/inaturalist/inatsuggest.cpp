@@ -73,6 +73,8 @@ public:
 
     Private() = default;
 
+public:
+
     TaxonEdit*                    editor            = nullptr;
     INatTalker*                   talker            = nullptr;
     QTreeWidget*                  popup             = nullptr;
@@ -254,7 +256,7 @@ void SuggestTaxonCompletion::showCompletion(const Completions& choices)
         Q_ASSERT(choices.m_fromVision);
 
         auto item          = new QTreeWidgetItem(d->popup);
-        taxon2Item(taxon, item, i18n("We're pretty sure it's in this %1.",
+        taxon2Item(taxon, item, i18n("We are pretty sure it is in this %1.",
                                      localizedTaxonomicRank(taxon.rank())));
     }
 

@@ -112,7 +112,7 @@ bool MjpegServer::Private::open(const QString& address, int port)
                                           : QHostAddress(address),
                         port))
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Error : couldn't listen with server"
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Error : could not listen with server"
                                        << server->serverAddress()
                                        << "to port" << server->serverPort() << "!";
         close();

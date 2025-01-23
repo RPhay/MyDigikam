@@ -59,7 +59,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->albumSelectors          = new AlbumSelectors(i18nc("@label", "Process items from:"),
                                                     d->configGroupName, options, AlbumSelectors::AlbumType::All, true);
     d->useLastSettings         = new QCheckBox(i18nc("@option:check", "Use the last saved active tools and settings"), options);
-    d->useMutiCoreCPU          = new QCheckBox(i18nc("@option:check", "Work on all processor cores (when it's possible)"), options);
+    d->useMutiCoreCPU          = new QCheckBox(i18nc("@option:check", "Work on all processor cores (when it is possible)"), options);
 
     d->expanderBox->insertItem(
                                Private::Options,

@@ -56,6 +56,8 @@ public:
         }
     }
 
+public:
+
     QSpinBox*          framesVal    = nullptr;
     QComboBox*         typeVal      = nullptr;
     QComboBox*         bitrateVal   = nullptr;
@@ -85,7 +87,7 @@ VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title
     framesLabel->setText(i18n("Number of Frames by Image:"));
     d->framesVal              = new QSpinBox(main);
     d->framesVal->setRange(1, 15000);
-    d->framesVal->setToolTip(i18n("This value repeat one image in the sequence.\nWhile creating timelapse; it's usual to use 1.\n"
+    d->framesVal->setToolTip(i18n("This value repeat one image in the sequence.\nWhile creating timelapse; it is usual to use 1.\n"
                                   "Typically, the number of frames will determine\nthe time to show the same frame in the video.\n"
                                   "The result will depend of the number of frames\nper second used to encode the media."));
     framesLabel->setBuddy(d->framesVal);
