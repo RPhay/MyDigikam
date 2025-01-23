@@ -12,16 +12,6 @@
  *
  * ============================================================ */
 
-/**
- * Map RGB to intensity
- */
-#define LEVELS_RGB_INTENSITY_RED    0.30
-#define LEVELS_RGB_INTENSITY_GREEN  0.59
-#define LEVELS_RGB_INTENSITY_BLUE   0.11
-#define LEVELS_RGB_INTENSITY(r,g,b) ((r) * LEVELS_RGB_INTENSITY_RED   + \
-                                     (g) * LEVELS_RGB_INTENSITY_GREEN + \
-                                     (b) * LEVELS_RGB_INTENSITY_BLUE)
-
 #include "imagelevels.h"
 
 // Qt includes
@@ -45,6 +35,16 @@
 
 namespace Digikam
 {
+
+/**
+ * Map RGB to intensity
+ */
+static const float LEVELS_RGB_INTENSITY_RED   = 0.30F;
+static const float LEVELS_RGB_INTENSITY_GREEN = 0.59;
+static const float LEVELS_RGB_INTENSITY_BLUE  = 0.11;
+#define LEVELS_RGB_INTENSITY(r,g,b) ((r) * LEVELS_RGB_INTENSITY_RED   + \
+                                     (g) * LEVELS_RGB_INTENSITY_GREEN + \
+                                     (b) * LEVELS_RGB_INTENSITY_BLUE)
 
 class Q_DECL_HIDDEN ImageLevels::Private
 {
