@@ -126,7 +126,7 @@ BUGFIXES:
 080 ==> 498879 - Unable to load DNG image - "image cannot be loaded".
 081 ==> 469805 - No Subfolders in Albums from External Drives During Face Recognition, and Inefficient Rescan Process.
 082 ==> 498910 - In "Search in" menu for face detection/recognition only one collection/album/root directory shows subfolders.
-083 ==>
+083 ==> 499074 - Created video filename on import is wrong (date/time).
 084 ==>
 085 ==>
 086 ==>

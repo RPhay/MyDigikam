@@ -1485,23 +1485,29 @@ void ImportUI::slotDownloaded(const QString& folder, const QString& file, const 
 {
     if (status == CamItemInfo::DownloadedYes)
     {
+        QDateTime creationDate;
         QFileInfo tempInfo(temp);
-        QUrl downloadUrl       = QUrl::fromLocalFile(tempInfo.path());
-        QScopedPointer<DMetadata> metadata(new DMetadata(temp));
-        QDateTime creationDate = metadata->getItemDateTime();
+        QScopedPointer<DMetadata> metadata(new DMetadata);
+        QUrl downloadUrl = QUrl::fromLocalFile(tempInfo.path());
+
+        if (metadata->load(temp, true))
+        {
+            creationDate = metadata->getItemDateTime();
+
+            if (creationDate.isValid())
+            {
+                creationDate.setTime(creationDate.time().addMSecs(metadata->getMSecsInfo()));
+            }
+        }
 
         if (!creationDate.isValid())
         {
-            creationDate = tempInfo.birthTime();
+            creationDate = asDateTimeUTC(tempInfo.birthTime());
 
             if (!creationDate.isValid())
             {
-                creationDate = tempInfo.lastModified();
+                creationDate = asDateTimeUTC(tempInfo.lastModified());
             }
-        }
-        else
-        {
-            creationDate.setTime(creationDate.time().addMSecs(metadata->getMSecsInfo()));
         }
 
         if (!createSubAlbums(downloadUrl, tempInfo.suffix(), creationDate))
