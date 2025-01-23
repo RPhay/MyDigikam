@@ -50,7 +50,7 @@ int DNGWriter::Private::backupRaw(DNGWriterHost& host,
         offsets.push_back(offset);
 
         QByteArray originalDataBlock;
-        originalDataBlock.resize(CHUNK);
+        originalDataBlock.resize(DNGWriter::Private::CHUNK);
 
         QTemporaryFile compressedFile;
 
@@ -65,7 +65,7 @@ int DNGWriter::Private::backupRaw(DNGWriterHost& host,
 
         for (quint32 block = 0 ; block < forkBlocks ; ++block)
         {
-            int originalBlockLength = originalDataStream.readRawData(originalDataBlock.data(), CHUNK);
+            int originalBlockLength = originalDataStream.readRawData(originalDataBlock.data(), DNGWriter::Private::CHUNK);
 
             QByteArray compressedDataBlock = qCompress((const uchar*)originalDataBlock.data(), originalBlockLength, -1);
             compressedDataBlock.remove(0, 4);   // removes qCompress own header

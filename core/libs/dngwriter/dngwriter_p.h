@@ -71,8 +71,6 @@
 #include "exiftoolparser.h"
 #include "exiftoolprocess.h"
 
-#define CHUNK 65536
-
 namespace Digikam
 {
 
@@ -171,6 +169,8 @@ private:
                          DMetadata* const meta);
 
 public:
+
+    static const int    CHUNK                       = 65536;
 
     DNGWriter*          parent                      = nullptr;  ///< Parent class instance.
     DNGBayerPattern     bayerPattern                = Unknown;

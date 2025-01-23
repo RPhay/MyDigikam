@@ -41,10 +41,10 @@
 
 #include "digikam_debug.h"
 
-#define CHUNK 65536
-
 int main(int argc, char** argv)
 {
+    const int CHUNK = 65536;
+
     try
     {
         QCoreApplication app(argc, argv);
