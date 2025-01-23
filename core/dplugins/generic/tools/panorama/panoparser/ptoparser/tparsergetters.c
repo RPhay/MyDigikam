@@ -21,6 +21,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+// clazy:excludeall=qmacros
+
 int panoScriptGetImagesCount(const pt_script* const script)
 {
     assert(script != NULL);
