@@ -621,7 +621,7 @@ bool AlbumManager::mergeTAlbum(TAlbum* album, TAlbum* destAlbum, bool dialog, QS
                           album->title(), destAlbum->title()),
                      QMessageBox::Yes | QMessageBox::No,
                      qApp->activeWindow());
-            QCheckBox* const chkBox      = new QCheckBox(i18n("Don't ask again at this session"), msgBox);
+            QCheckBox* const chkBox      = new QCheckBox(i18n("Do not ask again at this session"), msgBox);
             msgBox->setCheckBox(chkBox);
 
             result = msgBox->exec();
@@ -1135,7 +1135,7 @@ void AlbumManager::askUserForWriteChangedTAlbumToFiles(const QList<qlonglong>& i
                           imageIds.count()),
                      QMessageBox::Yes | QMessageBox::No,
                      qApp->activeWindow());
-            QCheckBox* const chkBox      = new QCheckBox(i18n("Don't ask again at this session"), msgBox);
+            QCheckBox* const chkBox      = new QCheckBox(i18n("Do not ask again at this session"), msgBox);
             msgBox->setCheckBox(chkBox);
 
             result = msgBox->exec();

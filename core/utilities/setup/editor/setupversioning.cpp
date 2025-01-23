@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     QTabWidget*    tab                  = nullptr;
 
     QWidget*       nonDestructivePanel  = nullptr;
@@ -458,7 +460,7 @@ void SetupVersioning::losslessFormatToolTip(QString& formatHelp,
 
                              "<item>"
                              "<emphasis strong='true'>JPEG</emphasis>: "
-                             "It's the most commonly used file format, but it employs lossy compression, "
+                             "It is the most commonly used file format, but it employs lossy compression, "
                              "which means that with each saving operation some image information will be irreversibly lost. "
                              "JPEG offers a good compression rate, resulting in smaller files. "
                              "</item>"
@@ -491,7 +493,7 @@ void SetupVersioning::losslessFormatToolTip(QString& formatHelp,
     formatHelp.append(xi18nc("@info:whatsthis",
                              "<item>"
                              "<emphasis strong='true'>JPEG-2000</emphasis>: "
-                             "It's similar to PGF. Loading or saving is slower, the compression rate is better, "
+                             "It is similar to PGF. Loading or saving is slower, the compression rate is better, "
                              "and the format more widely supported, though still not comparable "
                              "to the tradition formats JPEG, PNG or TIFF. "
                              "</item>"));
@@ -514,7 +516,7 @@ void SetupVersioning::losslessFormatToolTip(QString& formatHelp,
         formatHelp.append(xi18nc("@info:whatsthis",
                                  "<item>"
                                  "<emphasis strong='true'>JPEG-XL</emphasis>: "
-                                 "It's a royalty-free raster-graphics file format that supports lossless compression. "
+                                 "It is a royalty-free raster-graphics file format that supports lossless compression. "
                                  "It is designed to outperform existing raster formats and thus to become their universal replacement. "
                                  "</item>"));
     }
@@ -524,7 +526,7 @@ void SetupVersioning::losslessFormatToolTip(QString& formatHelp,
         formatHelp.append(xi18nc("@info:whatsthis",
                                  "<item>"
                                  "<emphasis strong='true'>WEBP</emphasis>: "
-                                 "It's an image file format that Google has developed as a replacement for JPEG, PNG, and GIF file "
+                                 "It is an image file format that Google has developed as a replacement for JPEG, PNG, and GIF file "
                                  "formats. Files are smaller for the same quality, or of higher quality for the same size. "
                                  "It supports both lossy and lossless compression"
                                  "</item>"));

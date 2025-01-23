@@ -406,7 +406,7 @@ bool SetupMisc::checkSettings()
         int result = QMessageBox::warning(this, qApp->applicationName(),
                                           i18n("Check for new version option will verify the pre-releases.\n"
                                                "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
-                                               "It's not recommended to use pre-release in production as bugs can remain,\n"
+                                               "It is not recommended to use pre-release in production as bugs can remain,\n"
                                                "unless you know what you are doing.\n"
                                                "Do you want to continue?"),
                                                 QMessageBox::Yes | QMessageBox::No);

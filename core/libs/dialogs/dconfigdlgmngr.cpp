@@ -341,7 +341,7 @@ bool DConfigDlgMngr::parseChildren(const QWidget* widget, bool trackChanges)
                         }
                         else
                         {
-                           qCWarning(DIGIKAM_GENERAL_LOG) << "Don't know how to monitor widget '"
+                           qCWarning(DIGIKAM_GENERAL_LOG) << "Do not know how to monitor widget '"
                                                           << childWidget->metaObject()->className()
                                                           << "' for changes!";
                         }

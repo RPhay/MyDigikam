@@ -289,7 +289,7 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
                                "<p>Press <b>Download</b> to get the file...</p>"
                                "<p>Note: from Setup/Misc panel, you can switch to check for weekly pre-release.<br/>"
                                "Pre-release versions are dedicated to test quickly new features.<br/>"
-                               "It's not recommended to use pre-releases in production as bugs can remain,<br/>"
+                               "It is not recommended to use pre-releases in production as bugs can remain,<br/>"
                                "unless you know what you are doing.</p>"
                                "<p>Press <b>Configure</b> if you want to customize update options from setup dialog.</p>",
                                qApp->applicationName(),

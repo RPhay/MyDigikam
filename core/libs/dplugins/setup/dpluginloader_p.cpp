@@ -248,7 +248,7 @@ void DPluginLoader::Private::loadPlugins()
 
             if (!isPlugin)
             {
-                qCWarning(DIGIKAM_GENERAL_LOG) << "Ignoring the following plugin since it couldn't be loaded:"
+                qCWarning(DIGIKAM_GENERAL_LOG) << "Ignoring the following plugin since it could not be loaded:"
                                                << path;
 
                 qCDebug(DIGIKAM_GENERAL_LOG) << "External plugin failure:" << path
@@ -260,7 +260,7 @@ void DPluginLoader::Private::loadPlugins()
         }
         else
         {
-            qCWarning(DIGIKAM_GENERAL_LOG) << "Ignoring to load the following file since it doesn't look like "
+            qCWarning(DIGIKAM_GENERAL_LOG) << "Ignoring to load the following file since it does not look like "
                                               "a valid digiKam external plugin:" << path << Qt::endl
                                            << "Reason:" << loader->errorString();
             delete loader;
