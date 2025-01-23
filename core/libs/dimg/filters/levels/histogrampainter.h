@@ -30,9 +30,9 @@ namespace Digikam
 {
 
 /**
- * A class that paints a histogram on a QPixmap.
+ * @brief A class that paints a histogram on a QPixmap.
  *
- * Warning: before first usage of the render method, you must call initFrom()
+ * @important Before first usage of the render method, you must call initFrom()
  * to initialize the painter.
  */
 class HistogramPainter : public QObject
@@ -42,19 +42,19 @@ class HistogramPainter : public QObject
 public:
 
     /**
-     * Constructor.
+     * @brief Constructor.
      *
      * @param parent the parent for Qt's destruction mechanism
      */
     explicit HistogramPainter(QObject* const parent);
 
     /**
-     * Destructor.
+     * @brief Destructor.
      */
     ~HistogramPainter() override;
 
     /**
-     * Set the histogram to paint with the next call to render.
+     * @brief Set the histogram to paint with the next call to render.
      *
      * @param histogram an existing pointer to a histogram to paint on next call
      *                  to render. The histogram must still exist at that call.
@@ -62,21 +62,21 @@ public:
     void setHistogram(ImageHistogram* const histogram);
 
     /**
-     * Set the scale to paint the histogram with.
+     * @brief Set the scale to paint the histogram with.
      *
      * @param scale scal to paint histogram with
      */
     void setScale(HistogramScale scale);
 
     /**
-     * Set the channel type to render with the next call to render.
+     * @brief Set the channel type to render with the next call to render.
      *
      * @param channelType channel type to render
      */
     void setChannelType(ChannelType channelType);
 
     /**
-     * Decide whether to highlight a specified selection in the histogram or
+     * @brief Decide whether to highlight a specified selection in the histogram or
      * not. The selection must be defined with setHighlightSelection.
      *
      * @param highlightSelection if true, a selection will be highlighted
@@ -84,7 +84,7 @@ public:
     void setHighlightSelection(bool highlightSelection);
 
     /**
-     * Sets the selection to highlight.
+     * @brief Sets the selection to highlight.
      *
      * @param selectionMin 0 <= value <= 1, percent of the histogram width to
      *                     start highlighting as percent. Ensure that this value
@@ -96,7 +96,7 @@ public:
     void setSelection(double selectionMin, double selectionMax);
 
     /**
-     * Decide whether to render a separation of the histogram in x direction.
+     * @brief Decide whether to render a separation of the histogram in x direction.
      *
      * @param renderXGrid if true, a separation at some significant value in
      *                    x direction is rendered.
@@ -104,7 +104,7 @@ public:
     void setRenderXGrid(bool renderXGrid);
 
     /**
-     * Starts rendering a guide that indicates where in the histogram a
+     * @brief Starts rendering a guide that indicates where in the histogram a
      * specified color can be found.
      *
      * @param color the color to highlight in the histogram
@@ -112,12 +112,12 @@ public:
     void enableHistogramGuideByColor(const DColor& color);
 
     /**
-     * Disables the rendering of the color guide.
+     * @brief Disables the rendering of the color guide.
      */
     void disableHistogramGuide();
 
     /**
-     * Stores a widget that is used to initialize the painter used in the next
+     * @brief Stores a widget that is used to initialize the painter used in the next
      * call to render. Therefore you must ensure that this widget will not be
      * destroyed as long as you want to use the render method without a new call
      * to this method!!!
@@ -127,7 +127,7 @@ public:
     void initFrom(QWidget* const widget);
 
     /**
-     * Renders the given histogram on the pixmap. The whole size of the pixmap
+     * @brief Renders the given histogram on the pixmap. The whole size of the pixmap
      * is used for the histogram.
      *
      * You must ensure that once before using this method a call to initFrom was

@@ -32,12 +32,12 @@
 
 #include "digikam_debug.h"
 
-#define HISTOGRAM_CALC_CUTOFF_MIN    0.1
-#define HISTOGRAM_CALC_CUTOFF_MAX    0.9
-#define HISTOGRAM_CALC_CUTOFF_HEIGHT 0.8
-
 namespace Digikam
 {
+
+static const float HISTOGRAM_CALC_CUTOFF_MIN    = 0.1F;
+static const float HISTOGRAM_CALC_CUTOFF_MAX    = 0.9F;
+static const float HISTOGRAM_CALC_CUTOFF_HEIGHT = 0.8F;
 
 class Q_DECL_HIDDEN HistogramPainter::Private
 {
