@@ -127,7 +127,7 @@ BUGFIXES:
 081 ==> 469805 - No Subfolders in Albums from External Drives During Face Recognition, and Inefficient Rescan Process.
 082 ==> 498910 - In "Search in" menu for face detection/recognition only one collection/album/root directory shows subfolders.
 083 ==> 499074 - Created video filename on import is wrong (date/time).
-084 ==>
+084 ==> 491390 - Videos not sorted into albums created by date when importing.
 085 ==>
 086 ==>
 087 ==>
