@@ -43,11 +43,6 @@ class QDate;
 #define MIN3(a, b, c)  (qMin(qMin(a,b),c))
 
 /**
- * Degrees to radian conversion coeff (PI/180). To optimize computation.
- */
-#define DEG2RAD 0.017453292519943
-
-/**
  * Macro to use right return type with qHash(), changed with new Qt6 API.
  */
 #if QT_VERSION < QT_VERSION_CHECK(6,0,0)
@@ -58,6 +53,11 @@ class QDate;
 
 namespace Digikam
 {
+
+/**
+ * Degrees to radian conversion coeff (PI/180). To optimize computation.
+ */
+static const double DEG2RAD         = 0.017453292519943;
 
 /**
  * Field value limits for all digiKam-specific fields (not EXIF/IPTC fields)
@@ -288,7 +288,7 @@ DIGIKAM_EXPORT QDateTime asDateTimeLocal(const QDateTime& dt);
 /**
  * Open online handbook at the section/chapter/reference page.
  *
- * if section and chapter and reference are empty, fromt page is open.  (https://en.wikipedia.org/wiki/Matrix_(protocol)#Bridges)
+ * if section and chapter and reference are empty, front page is open.  (https://en.wikipedia.org/wiki/Matrix_(protocol)#Bridges)
  * if only chapter and reference are empty, section page is open.       (as: https://docs.digikam.org/en/main_window.html)
  * if only reference is empty, chapter from section page is open.       (as: https://docs.digikam.org/en/main_window/people_view.html)
  * else reference at chapter from section page is open.                 (as: https://docs.digikam.org/en/main_window/people_view.html#face-recognition)
