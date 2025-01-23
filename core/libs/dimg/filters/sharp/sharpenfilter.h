@@ -99,8 +99,11 @@ private:
 
 private:
 
-    double m_radius = 0.0;
-    double m_sigma  = 1.0;
+    double m_radius      = 0.0;
+    double m_sigma       = 1.0;
+
+    const double SQ2PI   = 2.50662827463100024161235523934010416269302368164062;
+    const double Epsilon = 1.0e-12;
 };
 
 } // namespace Digikam
