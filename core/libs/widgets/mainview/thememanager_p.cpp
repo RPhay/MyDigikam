@@ -34,10 +34,10 @@ public:
 
 public:
 
-    qreal h;
-    qreal c;
-    qreal y;
-    qreal a;
+    qreal h = 0.0;
+    qreal c = 0.0;
+    qreal y = 0.0;
+    qreal a = 1.0;
 
 private:
 
@@ -287,19 +287,20 @@ QColor overlayColors(const QColor& base, const QColor& paint,
 
 // ------------------------------------------------------------------------------
 
-#define HCY_REC 709 // use 709 for now
+// use 709 for now
+#define HCY_REC 709     // krazy:exclude=defines
 
 #if   HCY_REC == 601
 
-static const qreal yc[3] = {0.299,   0.587,  0.114  };
+static const qreal yc[3] = { 0.299,   0.587,  0.114   };
 
 #elif HCY_REC == 709
 
-static const qreal yc[3] = {0.2126,  0.7152, 0.0722 };
+static const qreal yc[3] = { 0.2126,  0.7152, 0.0722  };
 
 #else // use Qt values
 
-static const qreal yc[3] = {0.34375, 0.5,    0.15625};
+static const qreal yc[3] = { 0.34375, 0.5,    0.15625 };
 
 #endif
 
