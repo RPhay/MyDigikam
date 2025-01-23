@@ -14,19 +14,6 @@
  *
  * ============================================================ */
 
-#define OPACITY  0.7
-#define RCOL     0xAA
-#define GCOL     0xAA
-#define BCOL     0xAA
-
-#define MINRANGE 0
-
-// Golden number (1+sqrt(5))/2
-#define PHI      1.61803398874989479F
-// 1/PHI
-#define INVPHI   0.61803398874989479F
-// DIN A sqrt(2)
-#define DINA     1.41421356237309504F
 
 #include "ratiocropwidget.h"
 
@@ -57,8 +44,22 @@
 #include "digikam_debug.h"
 #include "dimg.h"
 
+#define RCOL     0xAA
+#define GCOL     0xAA
+#define BCOL     0xAA
+
 namespace DigikamEditorRatioCropToolPlugin
 {
+
+static const double  OPACITY    = 0.7;
+static const int     MINRANGE   = 0;
+
+// Golden number (1+sqrt(5))/2
+static const double  PHI        = 1.61803398874989479;
+// 1/PHI
+static const double  INVPHI     = 0.61803398874989479;
+// DIN A sqrt(2)
+static const double  DINA       = 1.41421356237309504;
 
 class Q_DECL_HIDDEN RatioCropWidget::Private
 {
@@ -76,6 +77,8 @@ public:
 public:
 
     Private() = default;
+
+public:
 
     // Golden guide types.
 
