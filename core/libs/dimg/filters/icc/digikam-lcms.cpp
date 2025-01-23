@@ -35,7 +35,8 @@
 
 #include "digikam_debug.h"
 
-//--------------------------------------------------------------------------------
+namespace Digikam
+{
 
 void _l2tol1MAT3(MAT3* const l2, MAT3* const l1)
 {
@@ -83,7 +84,7 @@ void _l2cmsMAT3tol1LPMAT3(cmsMAT3* const l2, LPMAT3 l1)
 static const float MATRIX_DET_TOLERANCE = 0.0001F;
 
 /**
- * Compute chromatic adaptation matrix using Chad as cone matrix
+ * @brief Compute chromatic adaptation matrix using Chad as cone matrix.
  */
 static cmsBool ComputeChromaticAdaptation(cmsMAT3* const Conversion,
                                           const cmsCIEXYZ* const SourceWhitePoint,
@@ -118,9 +119,9 @@ static cmsBool ComputeChromaticAdaptation(cmsMAT3* const Conversion,
 
     // Build matrix
 
-    _cmsVEC3init(&Cone.v[0], ConeDestRGB.n[0]/ConeSourceRGB.n[0], 0.0,                                   0.0                                );
-    _cmsVEC3init(&Cone.v[1], 0.0,                                 ConeDestRGB.n[1]/ConeSourceRGB.n[1],   0.0                                );
-    _cmsVEC3init(&Cone.v[2], 0.0,                                 0.0,                                   ConeDestRGB.n[2]/ConeSourceRGB.n[2]);
+    _cmsVEC3init(&Cone.v[0], ConeDestRGB.n[0] / ConeSourceRGB.n[0], 0.0,                                     0.0                                  );
+    _cmsVEC3init(&Cone.v[1], 0.0,                                   ConeDestRGB.n[1] / ConeSourceRGB.n[1],   0.0                                  );
+    _cmsVEC3init(&Cone.v[2], 0.0,                                   0.0,                                     ConeDestRGB.n[2] / ConeSourceRGB.n[2]);
 
     // Normalize
 
@@ -131,7 +132,7 @@ static cmsBool ComputeChromaticAdaptation(cmsMAT3* const Conversion,
 }
 
 /**
- * Returns the final chromatic adaptation from illuminant FromIll to Illuminant ToIll
+ * @return The final chromatic adaptation from illuminant FromIll to Illuminant ToIll
  * The cone matrix can be specified in ConeMatrix. If NULL, Bradford is assumed
  */
 cmsBool _cmsAdaptationMatrix(cmsMAT3* const r, const cmsMAT3* ConeMatrix, const cmsCIEXYZ* const FromIll, const cmsCIEXYZ* const ToIll)
@@ -154,7 +155,7 @@ cmsBool _cmsAdaptationMatrix(cmsMAT3* const r, const cmsMAT3* ConeMatrix, const 
 }
 
 /**
- * Same as anterior, but assuming D50 destination. White point is given in xyY
+ * @brief Same as anterior, but assuming D50 destination. White point is given in xyY
  */
 static cmsBool _cmsAdaptMatrixToD50(cmsMAT3* const r, const cmsCIExyY* const SourceWhitePt)
 {
@@ -176,18 +177,18 @@ static cmsBool _cmsAdaptMatrixToD50(cmsMAT3* const r, const cmsCIExyY* const Sou
 }
 
 /**
- * Build a White point, primary chromas transfer matrix from RGB to CIE XYZ
+ * @brief Build a White point, primary chromas transfer matrix from RGB to CIE XYZ
  * This is just an approximation, I am not handling all the non-linear
  * aspects of the RGB to XYZ process, and assuming that the gamma correction
  * has transitive property in the transformation chain.
  *
- * the algorithm:
+ * The algorithm:
  *
- *            - First I build the absolute conversion matrix using
- *              primaries in XYZ. This matrix is next inverted
- *            - Then I evaluate the source white point across this matrix
- *              obtaining the coefficients of the transformation
- *            - Then, I apply these coefficients to the original matrix
+ *     - First I build the absolute conversion matrix using
+ *       primaries in XYZ. This matrix is next inverted.
+ *     - Then I evaluate the source white point across this matrix
+ *       obtaining the coefficients of the transformation.
+ *     - Then, I apply these coefficients to the original matrix.
  */
 cmsBool _cmsBuildRGB2XYZtransferMatrix(cmsMAT3* const r, const cmsCIExyY* const WhitePt, const cmsCIExyYTRIPLE* const Primrs)
 {
@@ -244,7 +245,7 @@ cmsBool _cmsBuildRGB2XYZtransferMatrix(cmsMAT3* const r, const cmsCIExyY* const 
 ///////////////////////////////////////////////////////////////////////
 
 /**
- * Same as anterior, but assuming D50 source. White point is given in xyY
+ * @brief Same as anterior, but assuming D50 source. White point is given in xyY
  */
 static cmsBool cmsAdaptMatrixFromD50(cmsMAT3* const r, const cmsCIExyY* const DestWhitePt)
 {
@@ -492,10 +493,10 @@ int dkCmsTakeRenderingIntent(cmsHPROFILE hProfile)
 }
 
 /**
- * White Point & Primary chromas handling
- * Returns the final chromatic adaptation from illuminant FromIll to Illuminant ToIll
+ * @brief White Point & Primary chromas handling
+ * @return The final chromatic adaptation from illuminant FromIll to Illuminant ToIll
  * The cone matrix can be specified in ConeMatrix.
- * If NULL, assuming D50 source. White point is given in xyY
+ * If null, assuming D50 source. White point is given in xyY
  */
 LCMSBOOL dkCmsAdaptMatrixFromD50(LPMAT3 r, LPcmsCIExyY DestWhitePt)
 {
@@ -703,3 +704,5 @@ void dkCmsXYZ2xyY(LPcmsCIExyY Dest, const cmsCIEXYZ* const Source)
 {
     cmsXYZ2xyY(static_cast<cmsCIExyY*>(Dest), Source);
 }
+
+} // namespace Digikam

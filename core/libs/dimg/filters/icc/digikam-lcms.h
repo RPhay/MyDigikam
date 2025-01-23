@@ -45,8 +45,6 @@
 #   pragma clang diagnostic pop
 #endif
 
-static const int LCMS_DESC_MAX = 512;
-
 #if !defined FAR
 #   define FAR
 #endif
@@ -54,6 +52,11 @@ static const int LCMS_DESC_MAX = 512;
 #define LCMS_ERROR_SHOW                  1
 #define cmsFLAGS_NOTPRECALC              0x0100
 #define cmsFLAGS_WHITEBLACKCOMPENSATION  0x2000
+
+namespace Digikam
+{
+
+static const int LCMS_DESC_MAX = 512;
 
 typedef int            LCMSBOOL;
 typedef unsigned char  BYTE,     *LPBYTE;
@@ -255,3 +258,5 @@ DIGIKAM_EXPORT LCMSBOOL                dkCmsIsTag(cmsHPROFILE hProfile, icTagSig
 DIGIKAM_EXPORT cmsHPROFILE             dkCmsOpenProfileFromFile(const char* const ICCProfile, const char* const sAccess);
 
 DIGIKAM_EXPORT void                    dkCmsXYZ2xyY(LPcmsCIExyY Dest, const cmsCIEXYZ* const Source);
+
+} // namespace Digikam
