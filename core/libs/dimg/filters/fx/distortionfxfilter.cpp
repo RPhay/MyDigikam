@@ -1047,20 +1047,20 @@ void DistortionFXFilter::blockWaves(DImg* orgImage, DImg* destImage,
 
 void DistortionFXFilter::circularWavesMultithreaded(const Args& prm)
 {
-    int Width                 = prm.orgImage->width();
-    int Height                = prm.orgImage->height();
-    uchar* data               = prm.orgImage->bits();
-    bool sixteenBit           = prm.orgImage->sixteenBit();
-    int bytesDepth            = prm.orgImage->bytesDepth();
-    uchar* pResBits           = prm.destImage->bits();
+    int Width                = prm.orgImage->width();
+    int Height               = prm.orgImage->height();
+    uchar* data              = prm.orgImage->bits();
+    bool sixteenBit          = prm.orgImage->sixteenBit();
+    int bytesDepth           = prm.orgImage->bytesDepth();
+    uchar* pResBits          = prm.destImage->bits();
 
     double nh, nw;
     double lfRadius, lfRadMax;
-    const  double ANGLE_RATIO = 0.017453292519943295769236907685;
-    double lfNewAmp           = prm.Amplitude;
-    double lfFreqAngle        = prm.Frequency * ANGLE_RATIO;
-    double phase              = prm.Phase     * ANGLE_RATIO;
-    lfRadMax                  = qSqrt(Height * Height + Width * Width);
+    const double ANGLE_RATIO = 0.017453292519943295769236907685;
+    double lfNewAmp          = prm.Amplitude;
+    double lfFreqAngle       = prm.Frequency * ANGLE_RATIO;
+    double phase             = prm.Phase     * ANGLE_RATIO;
+    lfRadMax                 = qSqrt(Height * Height + Width * Width);
 
     for (int w = prm.start; runningFlag() && (w < prm.stop); ++w)
     {

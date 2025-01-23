@@ -16,8 +16,6 @@
  *
  * ============================================================ */
 
-#define ANGLE_RATIO  0.017453292519943295769236907685
-
 #include "blurfxfilter.h"
 
 // C++ includes
@@ -342,6 +340,8 @@ void BlurFXFilter::radialBlurMultithreaded(const Args& prm)
 
     DColor color;
     int offset;
+
+    const double ANGLE_RATIO = 0.017453292519943295769236907685;
 
     QScopedArrayPointer<double> nMultArray(new double[prm.Distance * 2 + 1] { 0.0 });
 

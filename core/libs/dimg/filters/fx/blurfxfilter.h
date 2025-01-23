@@ -52,67 +52,44 @@ public:
 
 private:
 
-    struct Q_DECL_HIDDEN Args
+    class Q_DECL_HIDDEN Args
     {
-        explicit Args()
-          : start        (0),
-            stop         (0),
-            h            (0),
-            w            (0),
-            orgImage     (nullptr),
-            destImage    (nullptr),
-            X            (0),
-            Y            (0),
-            Distance     (0),
-            nCount       (0),
-            lpXArray     (nullptr),
-            lpYArray     (nullptr),
-            BlendRadius  (0),
-            bInversed    (0),
-            layer1       (nullptr),
-            layer2       (nullptr),
-            layer3       (nullptr),
-            layer4       (nullptr),
-            SizeW        (0),
-            SizeH        (0),
-            StrengthRange(0),
-            Radius       (0),
-            Kernel       (nullptr),
-            arrMult      (nullptr),
-            pBlur        (nullptr)
-        {
-        }
+    public:
 
-        uint   start;
-        uint   stop;
-        uint   h;
-        uint   w;
-        DImg*  orgImage;
-        DImg*  destImage;
-        int    X;
-        int    Y;
-        int    Distance;
+        Args() = default;
 
-        int    nCount;
-        int*   lpXArray;
-        int*   lpYArray;
+    public:
 
-        int    BlendRadius;
-        bool   bInversed;
+        uint   start            = 0;
+        uint   stop             = 0;
+        uint   h                = 0;
+        uint   w                = 0;
+        DImg*  orgImage         = nullptr;
+        DImg*  destImage        = nullptr;
+        int    X                = 0;
+        int    Y                = 0;
+        int    Distance         = 0;
 
-        uchar* layer1;
-        uchar* layer2;
-        uchar* layer3;
-        uchar* layer4;
+        int    nCount           = 0;
+        int*   lpXArray         = nullptr;
+        int*   lpYArray         = nullptr;
 
-        int    SizeW;
-        int    SizeH;
+        int    BlendRadius      = 0;
+        bool   bInversed        = 0;
 
-        int    StrengthRange;
-        int    Radius;
-        int*   Kernel;
-        int**  arrMult;
-        uchar* pBlur;
+        uchar* layer1           = nullptr;
+        uchar* layer2           = nullptr;
+        uchar* layer3           = nullptr;
+        uchar* layer4           = nullptr;
+
+        int    SizeW            = 0;
+        int    SizeH            = 0;
+
+        int    StrengthRange    = 0;
+        int    Radius           = 0;
+        int*   Kernel           = nullptr;
+        int**  arrMult          = nullptr;
+        uchar* pBlur            = nullptr;
     };
 
 public:
