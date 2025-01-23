@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-22 01:51+0000\n"
+"POT-Creation-Date: 2025-01-23 01:50+0000\n"
 "PO-Revision-Date: 2024-11-23 12:48+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -39120,18 +39120,22 @@ msgid "Item scanned for objects: %1\n"
 msgstr "Item scanned for faces: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:249
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
+#, fuzzy, kde-format
+#| msgid "Scanning from: %1\n"
+msgid "Object Scanning: %1\n"
+msgstr "Scanning from: %1\n"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
 #, fuzzy, kde-format
 #| msgid "Album: %1"
 msgid "Album: %1\n"
 msgstr "Album: %1"
-
-#: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
-#, fuzzy, kde-format
-#| msgid "Scanning from: %1\n"
-msgid "Scanning: %1\n"
-msgstr "Scanning from: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:255
 #, kde-format
@@ -42742,7 +42746,7 @@ msgstr "Model/View Port of Image Editor Canvas"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:221
 #: core/utilities/maintenance/main/maintenancedlg.cpp:264
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:101
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Image Quality Sorter"
@@ -60701,13 +60705,15 @@ msgid "Find new items"
 msgstr "Find new items"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
-#, kde-format
-msgid "Scanning from: %1\n"
+#, fuzzy, kde-format
+#| msgid "Scanning from: %1\n"
+msgid "Scanning: %1\n"
 msgstr "Scanning from: %1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
-#, kde-format
-msgid "Album: %1"
+#, fuzzy, kde-format
+#| msgid "Album: %1"
+msgid "Album Root: %1"
 msgstr "Album: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
@@ -60729,29 +60735,25 @@ msgstr "Items scanned for cataloguing: %1"
 msgid "Item scanned for cataloging: %1"
 msgstr "Item scanned for cataloguing: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:108
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Find duplicates items"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:166
-#, kde-format
-msgid "Duplicates for: %1\n"
-msgstr "Duplicates for: %1\n"
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:169
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Find duplicates"
+msgid "Finding Duplicates: %1\n"
+msgstr "Find duplicates"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, kde-format
-msgid "Path: %1\n"
-msgstr "Path: %1\n"
-
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:174
 #, fuzzy, kde-format
 #| msgid "No duplicate"
 msgid "No duplicate item"
 msgstr "No duplicate"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:178
 #, fuzzy, kde-format
 #| msgid "1 duplicate"
 #| msgid_plural "%1 duplicates"
@@ -60760,22 +60762,22 @@ msgid_plural "%1 duplicate items"
 msgstr[0] "1 duplicate"
 msgstr[1] "%1 duplicates"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:206
 #, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "Items scanned for duplicates: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:207
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:210
 #, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "Item scanned for duplicates: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:212
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:215
 #, kde-format
 msgid "Duplicates found: %1"
 msgstr "Duplicates found: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:216
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:219
 #, kde-format
 msgid "Duplicate found: %1"
 msgstr "Duplicate found: %1"
@@ -60835,6 +60837,12 @@ msgstr "Images found in %1"
 msgid "Face found: %1"
 msgstr "Images found in %1"
 
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
+#, fuzzy, kde-format
+#| msgid "Scanning from: %1\n"
+msgid "Face Scanning: %1\n"
+msgstr "Scanning from: %1\n"
+
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
 #, fuzzy, kde-format
 #| msgid "1 face"
@@ -60854,65 +60862,64 @@ msgstr ""
 msgid "Recognized: %1"
 msgstr "Icon Size: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:95
 #, kde-format
 msgid "Finger-prints"
 msgstr "Finger-prints"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:155
-#, kde-format
-msgid "Rebuild Fingerprint for: %1\n"
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
+#, fuzzy, kde-format
+#| msgid "Rebuild Fingerprint for: %1\n"
+msgid "Rebuild Fingerprint: %1\n"
 msgstr "Rebuild Fingerprint for: %1\n"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:156
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:234
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:215
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:222
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
 #, kde-format
-msgid "Path: %1"
-msgstr "Path: %1"
+msgid "Album: %1"
+msgstr "Album: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:170
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:173
 #, kde-format
 msgid "Items scanned for fingerprint: %1"
 msgstr "Items scanned for fingerprint: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:174
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:177
 #, kde-format
 msgid "Item scanned for fingerprint: %1"
 msgstr "Item scanned for fingerprint: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:177
-#, kde-format
-msgid "Image Quality for: %1\n"
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
+#, fuzzy, kde-format
+#| msgid "Image Quality for: %1\n"
+msgid "Image Quality: %1\n"
 msgstr "Image Quality for: %1\n"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:182
 #, kde-format
 msgid "Pick Label: %1"
 msgstr "Pick Label: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:194
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:197
 #, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "Items scanned for quality: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:198
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:201
 #, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "Item scanned for quality: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:185
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:186
 #, kde-format
 msgid "Remove all faces from image"
 msgstr "Remove all faces from image"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:190
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:191
 #, kde-format
 msgid "Remove all tags from image"
 msgstr "Remove all tags from image"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:206
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:207
 #, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
@@ -60921,7 +60928,7 @@ msgstr ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:211
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:212
 #, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
@@ -60930,82 +60937,85 @@ msgstr ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:233
-#, kde-format
-msgid "Clear Metadata for: %1\n"
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
+#, fuzzy, kde-format
+#| msgid "Clear Metadata for: %1\n"
+msgid "Clear Metadata: %1\n"
 msgstr "Clear Metadata for: %1\n"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:247
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
 #, kde-format
 msgid "Items scanned to remove faces: %1"
 msgstr "Items scanned to remove faces: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:251
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:254
 #, kde-format
 msgid "Item scanned to remove faces: %1"
 msgstr "Item scanned to remove faces: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:260
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:263
 #, kde-format
 msgid "Items scanned to remove tags: %1"
 msgstr "Items scanned to remove tags: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:264
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:267
 #, kde-format
 msgid "Item scanned to remove tags: %1"
 msgstr "Item scanned to remove tags: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:192
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Synchronising image metadata with database"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:196
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:197
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr "Updating database from image metadata"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:214
-#, kde-format
-msgid "Metadata Sync for: %1\n"
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
+#, fuzzy, kde-format
+#| msgid "Metadata Sync for: %1\n"
+msgid "Metadata Sync: %1\n"
 msgstr "Metadata Sync for: %1\n"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:228
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
 #, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
 msgstr "Items scanned to synchronise metadata with database: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:232
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:235
 #, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
 msgstr "Item scanned to synchronise metadata with database: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:241
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:244
 #, kde-format
 msgid "Items scanned to update database with metadata: %1"
 msgstr "Items scanned to update database with metadata: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:245
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:248
 #, kde-format
 msgid "Item scanned to update database with metadata: %1"
 msgstr "Item scanned to update database with metadata: %1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:119
 #, kde-format
 msgid "Generate Thumbnails"
 msgstr "Generate Thumbnails"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
-#, kde-format
-msgid "Thumbnail for: %1\n"
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
+#, fuzzy, kde-format
+#| msgid "Thumbnail for: %1\n"
+msgid "Thumbnail: %1\n"
 msgstr "Thumbnail for: %1\n"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
 #, kde-format
 msgid "Items scanned for thumbnails: %1"
 msgstr "Items scanned for thumbnails: %1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:243
 #, kde-format
 msgid "Item scanned for thumbnails: %1"
 msgstr "Item scanned for thumbnails: %1"
@@ -67370,6 +67380,18 @@ msgstr "Album Items"
 #, kde-format
 msgid "Import Items"
 msgstr "Import Items"
+
+#~ msgid "Scanning from: %1\n"
+#~ msgstr "Scanning from: %1\n"
+
+#~ msgid "Duplicates for: %1\n"
+#~ msgstr "Duplicates for: %1\n"
+
+#~ msgid "Path: %1\n"
+#~ msgstr "Path: %1\n"
+
+#~ msgid "Path: %1"
+#~ msgstr "Path: %1"
 
 #~ msgid "Caulier Gilles"
 #~ msgstr "Caulier Gilles"

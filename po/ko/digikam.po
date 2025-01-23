@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-22 01:51+0000\n"
+"POT-Creation-Date: 2025-01-23 01:50+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -39752,17 +39752,21 @@ msgid "Item scanned for objects: %1\n"
 msgstr "찾기:"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:249
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
+#, fuzzy, kde-format
+msgid "Object Scanning: %1\n"
+msgstr "찾기:"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
 msgid "Album: %1\n"
 msgstr "\"%1\" 앨범"
-
-#: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
-#, fuzzy, kde-format
-msgid "Scanning: %1\n"
-msgstr "찾기:"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:255
 #, kde-format
@@ -43334,7 +43338,7 @@ msgstr "이미지 편집기 캔버스의 모델/뷰 이식"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:221
 #: core/utilities/maintenance/main/maintenancedlg.cpp:264
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:101
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "이미지 품질 정렬 도구"
@@ -62317,13 +62321,13 @@ msgstr "선택 반전"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
 #, fuzzy, kde-format
-msgid "Scanning from: %1\n"
+msgid "Scanning: %1\n"
 msgstr "찾기:"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
-msgid "Album: %1"
+msgid "Album Root: %1"
 msgstr "\"%1\" 앨범"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
@@ -62343,33 +62347,26 @@ msgstr "찾기:"
 msgid "Item scanned for cataloging: %1"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:108
 #, kde-format
 msgid "Find duplicates items"
 msgstr ""
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:166
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:169
 #, fuzzy, kde-format
-#| msgctxt "Find Duplicates Tab"
-#| msgid "Duplicates"
-msgid "Duplicates for: %1\n"
-msgstr "중복"
+#| msgctxt "@action"
+#| msgid "Find duplicates"
+msgid "Finding Duplicates: %1\n"
+msgstr "중복 항목 찾기"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, fuzzy, kde-format
-#| msgid "#Sat: %1"
-msgid "Path: %1\n"
-msgstr "위성 개수: %1"
-
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:174
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Find duplicates"
 msgid "No duplicate item"
 msgstr "중복 항목 찾기"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:178
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Find duplicates"
@@ -62377,24 +62374,24 @@ msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
 msgstr[0] "중복 항목 찾기"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:206
 #, fuzzy, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:207
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:210
 #, fuzzy, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:212
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:215
 #, fuzzy, kde-format
 #| msgctxt "Find Duplicates Tab"
 #| msgid "Duplicates"
 msgid "Duplicates found: %1"
 msgstr "중복"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:216
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:219
 #, fuzzy, kde-format
 #| msgctxt "Find Duplicates Tab"
 #| msgid "Duplicates"
@@ -62457,6 +62454,11 @@ msgstr "%1에서 찾은 이미지"
 msgid "Face found: %1"
 msgstr "%1에서 찾은 이미지"
 
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
+#, fuzzy, kde-format
+msgid "Face Scanning: %1\n"
+msgstr "찾기:"
+
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
@@ -62475,72 +62477,69 @@ msgstr ""
 msgid "Recognized: %1"
 msgstr "아이콘 크기:"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:95
 #, kde-format
 msgid "Finger-prints"
 msgstr ""
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:155
-#, kde-format
-msgid "Rebuild Fingerprint for: %1\n"
-msgstr ""
-
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:156
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:234
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:215
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:222
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
 #, fuzzy, kde-format
-#| msgid "#Sat: %1"
-msgid "Path: %1"
-msgstr "위성 개수: %1"
+msgid "Rebuild Fingerprint: %1\n"
+msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:170
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
+#, fuzzy, kde-format
+#| msgid "Album \"%1\""
+msgid "Album: %1"
+msgstr "\"%1\" 앨범"
+
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:173
 #, fuzzy, kde-format
 msgid "Items scanned for fingerprint: %1"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:174
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:177
 #, fuzzy, kde-format
 msgid "Item scanned for fingerprint: %1"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:177
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Pluralized"
 #| msgid "Image Quality Sort"
 #| msgid_plural "Image Quality Sort"
-msgid "Image Quality for: %1\n"
+msgid "Image Quality: %1\n"
 msgstr "이미지 품질 정렬"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:182
 #, fuzzy, kde-format
 #| msgid "Pick Label: %1"
 msgid "Pick Label: %1"
 msgstr "레이블 선택: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:194
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:197
 #, fuzzy, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:198
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:201
 #, fuzzy, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:185
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:186
 #, fuzzy, kde-format
 #| msgid "Remove Tag from Images"
 msgid "Remove all faces from image"
 msgstr "이미지에서 태그 삭제"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:190
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:191
 #, fuzzy, kde-format
 #| msgid "Remove Tag from Images"
 msgid "Remove all tags from image"
 msgstr "이미지에서 태그 삭제"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:206
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:207
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to upload image %1\n"
@@ -62552,7 +62551,7 @@ msgstr ""
 "이미지 %1을(를) 업로드할 수 없습니다.\n"
 "계속 진행하시겠습니까?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:211
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:212
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to upload image %1\n"
@@ -62564,86 +62563,86 @@ msgstr ""
 "이미지 %1을(를) 업로드할 수 없습니다.\n"
 "계속 진행하시겠습니까?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:233
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
 #, fuzzy, kde-format
 #| msgid "Set as Tag Thumbnail"
-msgid "Clear Metadata for: %1\n"
+msgid "Clear Metadata: %1\n"
 msgstr "태그 미리 보기 그림으로 지정하기"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:247
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
 #, fuzzy, kde-format
 msgid "Items scanned to remove faces: %1"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:251
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:254
 #, fuzzy, kde-format
 msgid "Item scanned to remove faces: %1"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:260
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:263
 #, fuzzy, kde-format
 msgid "Items scanned to remove tags: %1"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:264
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:267
 #, fuzzy, kde-format
 msgid "Item scanned to remove tags: %1"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:192
 #, fuzzy, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:196
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:197
 #, fuzzy, kde-format
 msgid "Updating database from image metadata"
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:214
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
 #, fuzzy, kde-format
 #| msgid "Set as Tag Thumbnail"
-msgid "Metadata Sync for: %1\n"
+msgid "Metadata Sync: %1\n"
 msgstr "태그 미리 보기 그림으로 지정하기"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:228
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
 #, fuzzy, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:232
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:235
 #, fuzzy, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:241
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:244
 #, fuzzy, kde-format
 msgid "Items scanned to update database with metadata: %1"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:245
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:248
 #, fuzzy, kde-format
 msgid "Item scanned to update database with metadata: %1"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:119
 #, fuzzy, kde-format
 #| msgid "Thumbnails"
 msgid "Generate Thumbnails"
 msgstr "축소판"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
 #, fuzzy, kde-format
 #| msgid "Thumbnail Properties:"
-msgid "Thumbnail for: %1\n"
+msgid "Thumbnail: %1\n"
 msgstr "섬네일 속성:"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
 #, fuzzy, kde-format
 msgid "Items scanned for thumbnails: %1"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:243
 #, fuzzy, kde-format
 msgid "Item scanned for thumbnails: %1"
 msgstr "찾기:"
@@ -68650,6 +68649,26 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "최근 태그"
+
+#, fuzzy
+#~ msgid "Scanning from: %1\n"
+#~ msgstr "찾기:"
+
+#, fuzzy
+#~| msgctxt "Find Duplicates Tab"
+#~| msgid "Duplicates"
+#~ msgid "Duplicates for: %1\n"
+#~ msgstr "중복"
+
+#, fuzzy
+#~| msgid "#Sat: %1"
+#~ msgid "Path: %1\n"
+#~ msgstr "위성 개수: %1"
+
+#, fuzzy
+#~| msgid "#Sat: %1"
+#~ msgid "Path: %1"
+#~ msgstr "위성 개수: %1"
 
 #~ msgid "Caulier Gilles"
 #~ msgstr "Caulier Gilles"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-22 01:51+0000\n"
+"POT-Creation-Date: 2025-01-23 01:50+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -37965,18 +37965,22 @@ msgid "Item scanned for objects: %1\n"
 msgstr "रँग"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:249
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
+#, fuzzy, kde-format
+#| msgid "Colors"
+msgid "Object Scanning: %1\n"
+msgstr "रँग"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
 #, fuzzy, kde-format
 #| msgid "Options"
 msgid "Album: %1\n"
 msgstr "विकल्प"
-
-#: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
-#, fuzzy, kde-format
-#| msgid "Colors"
-msgid "Scanning: %1\n"
-msgstr "रँग"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:255
 #, kde-format
@@ -41388,7 +41392,7 @@ msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:221
 #: core/utilities/maintenance/main/maintenancedlg.cpp:264
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:101
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr ""
@@ -59210,13 +59214,13 @@ msgstr ""
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
 #, fuzzy, kde-format
 #| msgid "Colors"
-msgid "Scanning from: %1\n"
+msgid "Scanning: %1\n"
 msgstr "रँग"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
 #, fuzzy, kde-format
 #| msgid "Options"
-msgid "Album: %1"
+msgid "Album Root: %1"
 msgstr "विकल्प"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
@@ -59239,30 +59243,24 @@ msgstr "रँग"
 msgid "Item scanned for cataloging: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:108
 #, kde-format
 msgid "Find duplicates items"
 msgstr ""
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:166
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:169
 #, fuzzy, kde-format
 #| msgid "Remove item"
-msgid "Duplicates for: %1\n"
+msgid "Finding Duplicates: %1\n"
 msgstr "मद हटाबू"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, kde-format
-msgid "Path: %1\n"
-msgstr ""
-
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:174
 #, fuzzy, kde-format
 #| msgid "Remove item"
 msgid "No duplicate item"
 msgstr "मद हटाबू"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:178
 #, fuzzy, kde-format
 #| msgid "Remove item"
 msgid "1 duplicate item"
@@ -59270,25 +59268,25 @@ msgid_plural "%1 duplicate items"
 msgstr[0] "मद हटाबू"
 msgstr[1] "मद हटाबू"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:206
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Items scanned for duplicates: %1\n"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:207
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:210
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Item scanned for duplicates: %1\n"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:212
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:215
 #, fuzzy, kde-format
 #| msgid "Remove item"
 msgid "Duplicates found: %1"
 msgstr "मद हटाबू"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:216
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:219
 #, fuzzy, kde-format
 #| msgid "Remove item"
 msgid "Duplicate found: %1"
@@ -59354,6 +59352,12 @@ msgstr "मद हटाबू"
 msgid "Face found: %1"
 msgstr "मद हटाबू"
 
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
+#, fuzzy, kde-format
+#| msgid "Colors"
+msgid "Face Scanning: %1\n"
+msgstr "रँग"
+
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
 #, kde-format
 msgid "Found %1 face."
@@ -59370,171 +59374,172 @@ msgstr ""
 msgid "Recognized: %1"
 msgstr "पृष्ठ आकार:"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:95
 #, kde-format
 msgid "Finger-prints"
 msgstr ""
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:155
-#, kde-format
-msgid "Rebuild Fingerprint for: %1\n"
-msgstr ""
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
+#, fuzzy, kde-format
+#| msgid "Colors"
+msgid "Rebuild Fingerprint: %1\n"
+msgstr "रँग"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:156
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:234
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:215
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:222
-#, kde-format
-msgid "Path: %1"
-msgstr ""
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
+#, fuzzy, kde-format
+#| msgid "Options"
+msgid "Album: %1"
+msgstr "विकल्प"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:170
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:173
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Items scanned for fingerprint: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:174
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:177
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Item scanned for fingerprint: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:177
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
 #, fuzzy, kde-format
 #| msgid "Caption"
-msgid "Image Quality for: %1\n"
+msgid "Image Quality: %1\n"
 msgstr "अनुशीर्षक"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:182
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Pick Label: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:194
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:197
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Items scanned for quality: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:198
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:201
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Item scanned for quality: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:185
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:186
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Remove all faces from image"
 msgstr "जमावट"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:190
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:191
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Remove all tags from image"
 msgstr "जमावट"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:206
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:207
 #, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:211
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:212
 #, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:233
-#, kde-format
-msgid "Clear Metadata for: %1\n"
-msgstr ""
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
+#, fuzzy, kde-format
+#| msgid "Remove item"
+msgid "Clear Metadata: %1\n"
+msgstr "मद हटाबू"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:247
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Items scanned to remove faces: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:251
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:254
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Item scanned to remove faces: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:260
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:263
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Items scanned to remove tags: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:264
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:267
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Item scanned to remove tags: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:192
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr ""
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:196
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:197
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr ""
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:214
-#, kde-format
-msgid "Metadata Sync for: %1\n"
-msgstr ""
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
+#, fuzzy, kde-format
+#| msgid "Remove item"
+msgid "Metadata Sync: %1\n"
+msgstr "मद हटाबू"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:228
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Items scanned to synchronize metadata with database: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:232
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:235
 #, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
 msgstr ""
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:241
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:244
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Items scanned to update database with metadata: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:245
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:248
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Item scanned to update database with metadata: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:119
 #, kde-format
 msgid "Generate Thumbnails"
 msgstr ""
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
 #, fuzzy, kde-format
 #| msgid "Settings"
-msgid "Thumbnail for: %1\n"
+msgid "Thumbnail: %1\n"
 msgstr "जमावट"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Items scanned for thumbnails: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:243
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Item scanned for thumbnails: %1"
@@ -65458,6 +65463,16 @@ msgstr ""
 #, kde-format
 msgid "Import Items"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Colors"
+#~ msgid "Scanning from: %1\n"
+#~ msgstr "रँग"
+
+#, fuzzy
+#~| msgid "Remove item"
+#~ msgid "Duplicates for: %1\n"
+#~ msgstr "मद हटाबू"
 
 #, fuzzy
 #~| msgid "Settings"

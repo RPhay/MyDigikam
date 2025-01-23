@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-22 01:51+0000\n"
+"POT-Creation-Date: 2025-01-23 01:50+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -38192,17 +38192,21 @@ msgid "Item scanned for objects: %1\n"
 msgstr "Tìm kiếm:"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:249
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
+#, fuzzy, kde-format
+msgid "Object Scanning: %1\n"
+msgstr "Tìm kiếm:"
+
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
 msgid "Album: %1\n"
 msgstr "Tập « %1 »"
-
-#: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
-#, fuzzy, kde-format
-msgid "Scanning: %1\n"
-msgstr "Tìm kiếm:"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:255
 #, kde-format
@@ -41696,7 +41700,7 @@ msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:221
 #: core/utilities/maintenance/main/maintenancedlg.cpp:264
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:100
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:101
 #, fuzzy, kde-format
 msgid "Image Quality Sorter"
 msgstr "Bộ sửa ảnh"
@@ -59619,13 +59623,13 @@ msgstr "Theo tập hợp"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
 #, fuzzy, kde-format
-msgid "Scanning from: %1\n"
+msgid "Scanning: %1\n"
 msgstr "Tìm kiếm:"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
-msgid "Album: %1"
+msgid "Album Root: %1"
 msgstr "Tập « %1 »"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
@@ -59645,49 +59649,43 @@ msgstr "Tìm kiếm:"
 msgid "Item scanned for cataloging: %1"
 msgstr "Tìm kiếm:"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:107
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:108
 #, fuzzy, kde-format
 msgid "Find duplicates items"
 msgstr "Vẽ biếm hoạ"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:166
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:169
 #, fuzzy, kde-format
-msgid "Duplicates for: %1\n"
-msgstr "Ngày"
+msgid "Finding Duplicates: %1\n"
+msgstr "Vẽ biếm hoạ"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:167
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:178
-#, fuzzy, kde-format
-msgid "Path: %1\n"
-msgstr "Thẻ: %1"
-
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:171
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:174
 #, fuzzy, kde-format
 msgid "No duplicate item"
 msgstr "Vẽ biếm hoạ"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:175
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:178
 #, fuzzy, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
 msgstr[0] "Vẽ biếm hoạ"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:203
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:206
 #, fuzzy, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "Tìm kiếm:"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:207
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:210
 #, fuzzy, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "Tìm kiếm:"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:212
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:215
 #, fuzzy, kde-format
 msgid "Duplicates found: %1"
 msgstr "Ngày"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:216
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:219
 #, fuzzy, kde-format
 msgid "Duplicate found: %1"
 msgstr "Ngày"
@@ -59748,6 +59746,11 @@ msgstr "Ảnh được tìm trong %1"
 msgid "Face found: %1"
 msgstr "Ảnh được tìm trong %1"
 
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
+#, fuzzy, kde-format
+msgid "Face Scanning: %1\n"
+msgstr "Tìm kiếm:"
+
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
 #, fuzzy, kde-format
 msgid "Found %1 face."
@@ -59763,65 +59766,63 @@ msgstr ""
 msgid "Recognized: %1"
 msgstr "Cỡ :"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:94
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:95
 #, fuzzy, kde-format
 msgid "Finger-prints"
 msgstr "<b>Tiến trình cập nhật cơ sở dữ liệu ảnh mẫu đã chạy xong</b>"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:155
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
 #, fuzzy, kde-format
-msgid "Rebuild Fingerprint for: %1\n"
+msgid "Rebuild Fingerprint: %1\n"
 msgstr "Xây dựng lạ mọi ảnh mẫu..."
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:156
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:234
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:215
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:222
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
 #, fuzzy, kde-format
-msgid "Path: %1"
-msgstr "Thẻ: %1"
+#| msgid "Album \"%1\""
+msgid "Album: %1"
+msgstr "Tập « %1 »"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:170
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:173
 #, fuzzy, kde-format
 msgid "Items scanned for fingerprint: %1"
 msgstr "Tìm kiếm:"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:174
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:177
 #, fuzzy, kde-format
 msgid "Item scanned for fingerprint: %1"
 msgstr "Tìm kiếm:"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:177
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
 #, fuzzy, kde-format
-msgid "Image Quality for: %1\n"
+msgid "Image Quality: %1\n"
 msgstr "Bộ sửa ảnh"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:179
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:182
 #, fuzzy, kde-format
 msgid "Pick Label: %1"
 msgstr "Điểm ảnh:"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:194
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:197
 #, fuzzy, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "Tìm kiếm:"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:198
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:201
 #, fuzzy, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "Tìm kiếm:"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:185
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:186
 #, fuzzy, kde-format
 msgid "Remove all faces from image"
 msgstr "Đọc siêu dữ liệu từ tệp vào cơ sở dữ liệu"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:190
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:191
 #, fuzzy, kde-format
 msgid "Remove all tags from image"
 msgstr "Đọc siêu dữ liệu từ tệp vào cơ sở dữ liệu"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:206
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:207
 #, fuzzy, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
@@ -59830,7 +59831,7 @@ msgstr ""
 "Thẻ « %1 » có một thẻ phụ. Xoá thẻ này thì cũng xoá thẻ phụ đó. Bạn có chắc "
 "muốn tiếp tục không?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:211
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:212
 #, fuzzy, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
@@ -59839,82 +59840,82 @@ msgstr ""
 "Thẻ « %1 » có một thẻ phụ. Xoá thẻ này thì cũng xoá thẻ phụ đó. Bạn có chắc "
 "muốn tiếp tục không?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:233
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
 #, fuzzy, kde-format
-msgid "Clear Metadata for: %1\n"
+msgid "Clear Metadata: %1\n"
 msgstr "Lọc nhiễu :"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:247
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
 #, fuzzy, kde-format
 msgid "Items scanned to remove faces: %1"
 msgstr "Tìm kiếm:"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:251
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:254
 #, fuzzy, kde-format
 msgid "Item scanned to remove faces: %1"
 msgstr "Tìm kiếm:"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:260
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:263
 #, fuzzy, kde-format
 msgid "Items scanned to remove tags: %1"
 msgstr "Tìm kiếm:"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:264
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:267
 #, fuzzy, kde-format
 msgid "Item scanned to remove tags: %1"
 msgstr "Tìm kiếm:"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:192
 #, fuzzy, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Đang đồng bộ hoá siêu dữ liệu của ảnh với cơ sở dữ liệu. Hãy đợi..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:196
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:197
 #, fuzzy, kde-format
 msgid "Updating database from image metadata"
 msgstr "<b>Đang cập nhật cơ sở dữ liệu ảnh mẫu. Hãy đợi...</b>"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:214
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
 #, fuzzy, kde-format
-msgid "Metadata Sync for: %1\n"
+msgid "Metadata Sync: %1\n"
 msgstr "Lọc nhiễu :"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:228
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
 #, fuzzy, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
 msgstr "Đang đồng bộ hoá siêu dữ liệu của ảnh với cơ sở dữ liệu. Hãy đợi..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:232
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:235
 #, fuzzy, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
 msgstr "Đang đồng bộ hoá siêu dữ liệu của ảnh với cơ sở dữ liệu. Hãy đợi..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:241
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:244
 #, fuzzy, kde-format
 msgid "Items scanned to update database with metadata: %1"
 msgstr "Tìm kiếm:"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:245
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:248
 #, fuzzy, kde-format
 msgid "Item scanned to update database with metadata: %1"
 msgstr "Tìm kiếm:"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:118
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:119
 #, fuzzy, kde-format
 msgid "Generate Thumbnails"
 msgstr "Hiện các ảnh mẫu"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:221
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
 #, fuzzy, kde-format
-msgid "Thumbnail for: %1\n"
+msgid "Thumbnail: %1\n"
 msgstr "Thuộc tính"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:236
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
 #, fuzzy, kde-format
 msgid "Items scanned for thumbnails: %1"
 msgstr "Tìm kiếm:"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:240
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:243
 #, fuzzy, kde-format
 msgid "Item scanned for thumbnails: %1"
 msgstr "Tìm kiếm:"
@@ -65878,6 +65879,22 @@ msgstr "Tập"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Sắp xếp ảnh"
+
+#, fuzzy
+#~ msgid "Scanning from: %1\n"
+#~ msgstr "Tìm kiếm:"
+
+#, fuzzy
+#~ msgid "Duplicates for: %1\n"
+#~ msgstr "Ngày"
+
+#, fuzzy
+#~ msgid "Path: %1\n"
+#~ msgstr "Thẻ: %1"
+
+#, fuzzy
+#~ msgid "Path: %1"
+#~ msgstr "Thẻ: %1"
 
 #~ msgid "Caulier Gilles"
 #~ msgstr "Caulier Gilles"
