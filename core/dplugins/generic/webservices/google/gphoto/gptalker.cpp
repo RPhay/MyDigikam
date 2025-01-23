@@ -54,10 +54,10 @@
 
 using namespace Digikam;
 
-#define NB_MAX_ITEM_UPLOAD 50
-
 namespace DigikamGenericGoogleServicesPlugin
 {
+
+static const int NB_MAX_ITEM_UPLOAD = 50;
 
 static bool gphotoLessThan(const GSFolder& p1, const GSFolder& p2)
 {
