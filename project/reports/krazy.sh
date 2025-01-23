@@ -60,13 +60,13 @@ fi
 export PATH=$PATH:/opt/krazy/bin
 
 ORIG_WD="`pwd`"
-REPORT_DIR="$PWD/report.krazy"
+REPORT_DIR="report.krazy"
 
 # Get active git branches to create report description string
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
 echo "Krazy Static Analyzer task name: $TITLE"
 
-rm -fr $REPORT_DIR
+rm -fr $ORIG_WD/$REPORT_DIR
 
 # Compute static analyzer output as XML
 TITLE_EXT=$TITLE+"
@@ -94,7 +94,7 @@ sed -i "s/repo-rev value=\"unknown\"/repo-rev value=\"$(parseGitBranch)$(parseGi
 DROP_PATH=$(echo $ORIG_WD | rev | cut -d'/' -f3- | rev | sed 's_/_\\/_g')
 sed -i "s/$DROP_PATH//g" ./report.krazy.xml
 
-mkdir -p $REPORT_DIR
+mkdir -p $ORIG_WD/$REPORT_DIR
 
 # Process XML file to generate HTML
 
@@ -107,12 +107,13 @@ java -jar /opt/saxon/saxon9he.jar \
      component= \
      submodule=digikam
 
-cp ./krazy/style.css $REPORT_DIR/
+cp ./krazy/style.css $ORIG_WD/$REPORT_DIR/
 
 if [[ $1 != "--nowebupdate" ]] ; then
 
+    cd $ORIG_WD
     updateOnlineReport "krazy" $REPORT_DIR $TITLE $(parseGitBranch)
 
 fi
 
-cd $ORIG_DIR
+cd $ORIG_WD

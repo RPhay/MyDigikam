@@ -41,7 +41,7 @@ fi
 checksCPUCores
 
 ORIG_WD="`pwd`"
-REPORT_DIR="$PWD/report.clazy"
+REPORT_DIR="report.clazy"
 
 # Get active git branches to create report description string
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
@@ -52,8 +52,8 @@ echo "CHECKERS CONFIGURATION:    $CLAZY_CHECKS"
 
 # Clean up and prepare to scan.
 
-rm -fr $REPORT_DIR
-mkdir -p $REPORT_DIR
+rm -fr $ORIG_WD/$REPORT_DIR
+mkdir -p $ORIG_WD/$REPORT_DIR
 
 cd ../..
 
@@ -100,21 +100,22 @@ $CMAKE_BINARY -G "Unix Makefiles" . \
       -Wno-dev \
       ..
 
-make -j$CPU_CORES 2> ${REPORT_DIR}/trace.log
+make -j$CPU_CORES 2> ${ORIG_WD}/${REPORT_DIR}/trace.log
 
 cd $ORIG_WD
 
-python3 ./clazy_visualizer.py $REPORT_DIR/trace.log
+python3 ./clazy_visualizer.py $ORIG_WD/$REPORT_DIR/trace.log
 
-rm -f $REPORT_DIR/trace.log
-mv clazy.html $REPORT_DIR/index.html
+rm -f $ORIG_WD/$REPORT_DIR/trace.log
+mv clazy.html $ORIG_WD/$REPORT_DIR/index.html
 
 if [[ $1 != "--nowebupdate" ]] ; then
 
+    cd $ORIG_WD
     updateOnlineReport "clazy" $REPORT_DIR $TITLE $(parseGitBranch)
 
 fi
 
-cd $ORIG_DIR
+cd $ORIG_WD
 
 rm -fr ../../build.clazy

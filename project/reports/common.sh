@@ -38,7 +38,7 @@ function updateOnlineReport()
     DK_UPLOADURL="digikam@tinami.kde.org"
     DK_UPLOADDIR="/srv/archives/files/digikam/reports/"
 
-    echo -e "---------- Create archive of static analyzer report\n"
+    echo -e "---------- Create archive '$1_$4' of static analyzer report from directory '$2'\n"
 
     XZ_OPT=-9 tar cJf $1_$4.tar.xv $2
 

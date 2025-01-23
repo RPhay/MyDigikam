@@ -49,7 +49,7 @@ fi
 echo "Found SCAN_BUILD tool: $SCAN_BUILD_BIN"
 
 ORIG_WD="`pwd`"
-REPORT_DIR="$PWD/report.scan"
+REPORT_DIR="report.scan"
 
 # Get active git branches to create report description string
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
@@ -57,7 +57,7 @@ echo "Clang Scan Static Analyzer task name: $TITLE"
 
 # Clean up and prepare to scan.
 
-rm -fr $REPORT_DIR
+rm -fr $ORIG_WD/$REPORT_DIR
 
 cd ../..
 
@@ -115,7 +115,7 @@ for DROP_ITEM in $IGNORE_DIRS ; do
 
 done
 
-$SCAN_BUILD_BIN -o $REPORT_DIR \
+$SCAN_BUILD_BIN -o $ORIG_WD/$REPORT_DIR \
            -v \
            -k \
            -no-failure-reports \
@@ -127,15 +127,16 @@ $SCAN_BUILD_BIN -o $REPORT_DIR \
 
 cd $ORIG_WD
 
-SCAN_BUILD_DIR=$(find ${REPORT_DIR} -maxdepth 1 -not -empty -not -name `basename ${REPORT_DIR}`)
+SCAN_BUILD_DIR=$(find ${$ORIG_WD/REPORT_DIR} -maxdepth 1 -not -empty -not -name `basename ${$ORIG_WD/REPORT_DIR}`)
 echo "Clang Report $TITLE is located to $SCAN_BUILD_DIR"
 
 if [[ $1 != "--nowebupdate" ]] ; then
 
+    cd $ORIG_WD
     updateOnlineReport "clang" $REPORT_DIR $TITLE $(parseGitBranch)
 
 fi
 
-cd $ORIG_DIR
+cd $ORIG_WD
 
 rm -fr ../../build.scan
