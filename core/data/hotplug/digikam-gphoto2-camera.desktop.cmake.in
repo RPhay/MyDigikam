@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2003-2025 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
 [Desktop Action digiKam Detect and Download]
 Exec=@digikamhelperdir@/digikam-camera detect %u
 Icon=digikam
