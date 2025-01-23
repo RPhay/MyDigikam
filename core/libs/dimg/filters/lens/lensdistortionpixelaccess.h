@@ -15,12 +15,6 @@
 
 #pragma once
 
-#define LensDistortionPixelAccessRegions 20
-#define LensDistortionPixelAccessWidth   40
-#define LensDistortionPixelAccessHeight  20
-#define LensDistortionPixelAccessXOffset 3
-#define LensDistortionPixelAccessYOffset 3
-
 // Local includes
 
 #include "dimg.h"
@@ -28,6 +22,12 @@
 
 namespace Digikam
 {
+
+static const int LensDistortionPixelAccessRegions = 20;
+static const int LensDistortionPixelAccessWidth   = 40;
+static const int LensDistortionPixelAccessHeight  = 20;
+static const int LensDistortionPixelAccessXOffset = 3;
+static const int LensDistortionPixelAccessYOffset = 3;
 
 /**
  * LensDistortionPixelAccess class: solving the eternal problem: random, cubic-interpolated,
