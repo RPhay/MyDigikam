@@ -119,6 +119,10 @@ private:
     FacePipelineBase(QObject* const)                     = delete;
     FacePipelineBase(const FacePipelineBase&)            = delete;
     FacePipelineBase& operator=(const FacePipelineBase&) = delete;
+
+private:
+
+    static const int BLOCK = 20;
 };
 
 } // namespace Digikam

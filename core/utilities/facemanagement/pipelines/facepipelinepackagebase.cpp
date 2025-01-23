@@ -26,7 +26,6 @@ FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId)
 FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId, const FaceTagsIface& _face)
     : info(_imageId),
       face(_face)
-      
 {
 }
 

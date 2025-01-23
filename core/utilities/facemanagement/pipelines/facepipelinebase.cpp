@@ -60,7 +60,7 @@ double FacePipelineBase::detectNoise1(const cv::Mat& cvGrayImage) const
 
     // calculate the difference between the original and blurred image
 
-    cv::Mat noise = cvGrayImage - blurred;
+    cv::Mat noise     = cvGrayImage - blurred;
 
     // calculate the standard deviation of the noise
 
@@ -74,31 +74,27 @@ double FacePipelineBase::detectNoise1(const cv::Mat& cvGrayImage) const
 
 double FacePipelineBase::detectNoise2(const cv::Mat& cvGrayImage) const
 {
-
-    int H = cvGrayImage.rows;
-    int W = cvGrayImage.cols;
-
-    cv::Mat M = (cv::Mat_<double>(3, 3) << 1, -2, 1,
-                                           -2, 4, -2,
-                                           1, -2, 1);
+    int H        = cvGrayImage.rows;
+    int W        = cvGrayImage.cols;
+    cv::Mat M    = (cv::Mat_<double>(3, 3) <<  1, -2,  1,
+                                              -2,  4, -2,
+                                               1, -2,  1);
 
     cv::Mat convolved;
     cv::filter2D(cvGrayImage, convolved, CV_64F, M);
 
     double sigma = cv::sum(cv::abs(convolved))[0];
-    sigma = sigma * std::sqrt(0.5 * M_PI) / (6 * (W - 2) * (H - 2));
+    sigma        = sigma * std::sqrt(0.5 * M_PI) / (6 * (W - 2) * (H - 2));
 
     return sigma;
 }
-
-#define BLOCK 20
 
 double FacePipelineBase::detectBlur(const cv::Mat& cvGrayImage) const
 {
     // Use a Fast Fourier Transform to detect blurriness
 
-    int cx = cvGrayImage.cols/2;
-    int cy = cvGrayImage.rows/2;
+    int cx = cvGrayImage.cols / 2;
+    int cy = cvGrayImage.rows / 2;
 
     // Convert the image to a flat float
 
@@ -113,9 +109,9 @@ double FacePipelineBase::detectBlur(const cv::Mat& cvGrayImage) const
     // center low frequencies in the middle
     // by shuffling the quadrants.
 
-    cv::Mat q0(fourierTransform, cv::Rect(0, 0, cx, cy));       // Top-Left - Create a ROI per quadrant
-    cv::Mat q1(fourierTransform, cv::Rect(cx, 0, cx, cy));      // Top-Right
-    cv::Mat q2(fourierTransform, cv::Rect(0, cy, cx, cy));      // Bottom-Left
+    cv::Mat q0(fourierTransform, cv::Rect(0,  0,  cx, cy));     // Top-Left - Create a ROI per quadrant
+    cv::Mat q1(fourierTransform, cv::Rect(cx, 0,  cx, cy));     // Top-Right
+    cv::Mat q2(fourierTransform, cv::Rect(0,  cy, cx, cy));     // Bottom-Left
     cv::Mat q3(fourierTransform, cv::Rect(cx, cy, cx, cy));     // Bottom-Right
 
     // swap quadrants (Top-Left with Bottom-Right)
@@ -140,9 +136,9 @@ double FacePipelineBase::detectBlur(const cv::Mat& cvGrayImage) const
 
     cv::Mat orgFFT;
     fourierTransform.copyTo(orgFFT);
-    cv::Mat p0(orgFFT, cv::Rect(0, 0, cx, cy));       // Top-Left - Create a ROI per quadrant
-    cv::Mat p1(orgFFT, cv::Rect(cx, 0, cx, cy));      // Top-Right
-    cv::Mat p2(orgFFT, cv::Rect(0, cy, cx, cy));      // Bottom-Left
+    cv::Mat p0(orgFFT, cv::Rect(0,  0,  cx, cy));     // Top-Left - Create a ROI per quadrant
+    cv::Mat p1(orgFFT, cv::Rect(cx, 0,  cx, cy));     // Top-Right
+    cv::Mat p2(orgFFT, cv::Rect(0,  cy, cx, cy));     // Bottom-Left
     cv::Mat p3(orgFFT, cv::Rect(cx, cy, cx, cy));     // Bottom-Right
 
     // swap quadrant (Top-Left with Bottom-Right)
@@ -161,58 +157,59 @@ double FacePipelineBase::detectBlur(const cv::Mat& cvGrayImage) const
 
     cv::Mat invFFT;
     cv::Mat logFFT;
-    double minVal,maxVal;
+    double minVal = 0.0, maxVal = 0.0;
 
     cv::dft(orgFFT, invFFT, cv::DFT_INVERSE | cv::DFT_REAL_OUTPUT);
 
     invFFT = cv::abs(invFFT);
     cv::minMaxLoc(invFFT, &minVal, &maxVal);
-    
+
     //check for impossible values
 
-    if(maxVal <= 0.0)
+    if (maxVal <= 0.0)
     {
         return 1;
     }
 
-    cv::log(invFFT,logFFT);
+    cv::log(invFFT, logFFT);
     logFFT *= 20;
 
     cv::Scalar result = cv::mean(logFFT);
 
     return result.val[0];
-    
 }
 
 bool FacePipelineBase::useForTraining(const cv::Rect origSize, const cv::Mat& cvImage)
 {
     if (!detectorModel)
     {
-        detectorModel = DNNModelManager::instance()->getModel(QStringLiteral("yunet"), DNNModelUsage::DNNUsageFaceDetection);        
+        detectorModel = DNNModelManager::instance()->getModel(QStringLiteral("yunet"),
+                                                              DNNModelUsage::DNNUsageFaceDetection);
     }
 
     // thumbnail must be at least minThumbnailSize of the size the detector expects
 
-    if (detectorModel->info.imageSize * minThumbnailSize > origSize.width ||
-        detectorModel->info.imageSize * minThumbnailSize > origSize.height)
+    if (
+        ((detectorModel->info.imageSize * minThumbnailSize) > origSize.width) ||
+        ((detectorModel->info.imageSize * minThumbnailSize) > origSize.height)
+       )
     {
         return false;
     }
 
     // convert to grayscale for use in noise and blur detection
-    
+
     cv::Mat cvGrayImage;
     cv::cvtColor(cvImage, cvGrayImage, cv::COLOR_RGB2GRAY);
 
     // use a Gaussian filter to check for noisy images
 
     double noise1 = detectNoise1(cvGrayImage);
-
     double noise2 = detectNoise2(cvGrayImage);
 
     // check if image is too noisy
 
-    if (noise1 > noiseThreshold1 || noise2 > noiseThreshold2)
+    if ((noise1 > noiseThreshold1) || (noise2 > noiseThreshold2))
     {
         return false;
     }
@@ -300,9 +297,9 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName,
 
     /* =========================================================================================
      * Pipeline stage specific cleanup
-     * 
+     *
      * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
-     */ 
+     */
 
     catcher->setActive(false);
 
@@ -379,9 +376,9 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
 
     /* =========================================================================================
      * Pipeline stage specific cleanup
-     * 
+     *
      * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
-     */ 
+     */
 
     MLPIPELINE_STAGE_END(thisStage, nextStage);
 }
@@ -392,7 +389,8 @@ bool FacePipelineBase::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackageFoun
     {
         // calculate the package size.  Only big items need to be checked
 
-        package->size = static_cast<FacePipelinePackageBase*>(package)->image.size().width() * static_cast<FacePipelinePackageBase*>(package)->image.size().height() * 4;
+        package->size = static_cast<FacePipelinePackageBase*>(package)->image.size().width()  *
+                        static_cast<FacePipelinePackageBase*>(package)->image.size().height() * 4;
     }
 
     return MLPipelineFoundation::enqueue(thisQueue, package);
