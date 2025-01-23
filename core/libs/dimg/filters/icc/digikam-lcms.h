@@ -45,7 +45,7 @@
 #   pragma clang diagnostic pop
 #endif
 
-#define LCMS_DESC_MAX                    512
+static const int LCMS_DESC_MAX = 512;
 
 #if !defined FAR
 #   define FAR

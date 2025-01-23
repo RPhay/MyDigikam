@@ -80,7 +80,7 @@ void _l2cmsMAT3tol1LPMAT3(cmsMAT3* const l2, LPMAT3 l1)
 
 //--------------------------------------------------------------------------------
 
-#define MATRIX_DET_TOLERANCE    0.0001
+static const float MATRIX_DET_TOLERANCE = 0.0001F;
 
 /**
  * Compute chromatic adaptation matrix using Chad as cone matrix
