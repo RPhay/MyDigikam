@@ -18,15 +18,6 @@
  *
  * ============================================================ */
 
-/// Denominator for relative quantities.
-#define DENOM (DENOM_SQRT * DENOM_SQRT)
-
-/// Square root of denominator for relative quantities.
-#define DENOM_SQRT 10000
-
-/// Convert relative to absolute numbers. Care must be taken not to overflow integers.
-#define REL_TO_ABS(n,m) \
-    ((((n) / DENOM_SQRT) * (m) + ((n) % DENOM_SQRT) * (m) / DENOM_SQRT) / DENOM_SQRT)
 
 #include "blackframeparser.h"
 
@@ -44,6 +35,16 @@
 
 namespace Digikam
 {
+
+/// Square root of denominator for relative quantities.
+static const int DENOM_SQRT = 10000;
+
+/// Denominator for relative quantities.
+#define DENOM (DENOM_SQRT * DENOM_SQRT)
+
+/// Convert relative to absolute numbers. Care must be taken not to overflow integers.
+#define REL_TO_ABS(n,m) \
+    ((((n) / DENOM_SQRT) * (m) + ((n) % DENOM_SQRT) * (m) / DENOM_SQRT) / DENOM_SQRT)
 
 class Q_DECL_HIDDEN BlackFrameParser::Private
 {
