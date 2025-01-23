@@ -112,7 +112,7 @@ void DOnlineTranslator::translate(const QString& text,
             if (d->libreUrl.isEmpty())
             {
                 resetData(ParametersError,
-                        i18n("%1 URL can't be empty.",
+                        i18n("%1 URL cannot be empty.",
                              QString::fromUtf8(QMetaEnum::fromType<Engine>().valueToKey(engine))));
 
                 Q_EMIT signalFinished();
@@ -129,7 +129,7 @@ void DOnlineTranslator::translate(const QString& text,
             if (d->lingvaUrl.isEmpty())
             {
                 resetData(ParametersError,
-                        i18n("%1 URL can't be empty.",
+                        i18n("%1 URL cannot be empty.",
                              QString::fromUtf8(QMetaEnum::fromType<Engine>().valueToKey(engine))));
 
                 Q_EMIT signalFinished();
@@ -212,7 +212,7 @@ void DOnlineTranslator::detectLanguage(const QString& text, Engine engine)
             if (d->libreUrl.isEmpty())
             {
                 resetData(ParametersError,
-                        i18n("%1 URL can't be empty.",
+                        i18n("%1 URL cannot be empty.",
                              QString::fromUtf8(QMetaEnum::fromType<Engine>().valueToKey(engine))));
 
                 Q_EMIT signalFinished();
@@ -229,7 +229,7 @@ void DOnlineTranslator::detectLanguage(const QString& text, Engine engine)
             if (d->lingvaUrl.isEmpty())
             {
                 resetData(ParametersError,
-                        i18n("%1 URL can't be empty.",
+                        i18n("%1 URL cannot be empty.",
                              QString::fromUtf8(QMetaEnum::fromType<Engine>().valueToKey(engine))));
 
                 Q_EMIT signalFinished();

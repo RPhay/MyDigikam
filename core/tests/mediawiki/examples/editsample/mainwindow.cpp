@@ -108,7 +108,7 @@ void MainWindow::editError(KJob* job)
     }
     else
     {
-        errorMessage = QLatin1String("The Wiki page can not be modified.");
+        errorMessage = QLatin1String("The Wiki page cannot be modified.");
     }
 
     QMessageBox popup;
@@ -121,7 +121,7 @@ void MainWindow::revisionError(KJob* job)
     if (job->error() != 0)
     {
         QMessageBox popup;
-        popup.setText(QLatin1String("The Wiki page can not be loaded."));
+        popup.setText(QLatin1String("The Wiki page cannot be loaded."));
         popup.exec();
     }
 }
