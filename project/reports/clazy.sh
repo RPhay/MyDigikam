@@ -41,8 +41,7 @@ fi
 checksCPUCores
 
 ORIG_WD="`pwd`"
-REPORT_DIR="${ORIG_WD}/report.clazy"
-WEBSITE_DIR="${ORIG_WD}/site"
+REPORT_DIR="$PWD/report.clazy"
 
 # Get active git branches to create report description string
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
@@ -54,7 +53,6 @@ echo "CHECKERS CONFIGURATION:    $CLAZY_CHECKS"
 # Clean up and prepare to scan.
 
 rm -fr $REPORT_DIR
-rm -fr $WEBSITE_DIR
 mkdir -p $REPORT_DIR
 
 cd ../..
