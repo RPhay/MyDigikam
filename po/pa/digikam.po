@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-23 01:50+0000\n"
+"POT-Creation-Date: 2025-01-24 01:54+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -1128,8 +1128,8 @@ msgstr "%1 (%2)"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:168
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:204
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:170
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:206
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
@@ -1273,7 +1273,7 @@ msgid " fps"
 msgstr " fps"
 
 #: core/app/items/utils/tooltipfiller.cpp:395
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:158
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:160
 #, kde-format
 msgid "Video Codec:"
 msgstr "ਵੀਡੀਓ Codec:"
@@ -7377,7 +7377,7 @@ msgid ""
 "<para>This plugin allows users to load and save image using Libpgf codec.</"
 "para><para>The Progressive Graphics File (PGF) is an efficient image file "
 "format, that is based on a fast, discrete wavelet transform with progressive "
-"coding features. PGF can be used for lossless and lossy compression. It's "
+"coding features. PGF can be used for lossless and lossy compression. It is "
 "most suitable for natural images. PGF can be used as a very efficient and "
 "fast replacement of JPEG-2000.</para><para>See <a href='https://en.wikipedia."
 "org/wiki/Progressive_Graphics_File'>Progressive Graphics File documentation</"
@@ -9031,7 +9031,7 @@ msgid "Restoration..."
 msgstr "ਰੀ-ਸਟੋਰੇਸ਼ਨ..."
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:270
-#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:85
+#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:82
 #, kde-format
 msgid "Sharpen"
 msgstr "ਉਘੜਵਾਂ"
@@ -16299,7 +16299,7 @@ msgstr "Raw ਫਾਇਲਾਂ"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:284
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:286
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgid "Target File"
@@ -17496,7 +17496,7 @@ msgstr "ਵੇਰਵਾ:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:269
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:271
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:275
 #, fuzzy, kde-format
 msgctxt "@title:window"
@@ -19875,13 +19875,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "<p>ਸਤ੍ਰਿਪਤਾ ਲਈ ਮੁੱਲ ਇੱਥੇ ਦਿਓ।"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:96
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:264
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:266
 #, fuzzy, kde-format
 msgid "Destination folder:"
 msgstr "ਵੇਰਵਾ:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:270
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:276
 #, fuzzy, kde-format
 #| msgid "Output device"
@@ -20556,49 +20556,49 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:112
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:114
 #, fuzzy, kde-format
 #| msgid "LibLqr"
 msgid "Media Container Format:"
 msgstr "LibLqr"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:115
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:117
 #, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:120
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:122
 #, fuzzy, kde-format
 #| msgid "Open in File Manager"
 msgid "Open in Player:"
 msgstr "ਫਾਇਲ ਮੈਨੇਜਰ ਵਿੱਚ ਖੋਲ੍ਹੋ"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:158
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:160
 #, fuzzy, kde-format
 #| msgid "Output device"
 msgid "Output"
 msgstr "ਆਉਟਪੁੱਟ ਜੰਤਰ"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:166
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:168
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:171
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:173
 #, kde-format
 msgid "Equalization Strength:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:175
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:177
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:180
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:182
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -20607,100 +20607,100 @@ msgid ""
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:192
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:194
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "Frames Normalization"
 msgstr "ਚਿੱਤਰ ਜਾਣਕਾਰੀ"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:202
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:204
 #, fuzzy, kde-format
 #| msgid "Soundtrack:"
 msgid "Soundtrack File:"
 msgstr "ਸਾਊਂਡਟਰੈਕ :"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:208
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:210
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "ਆਡੀਓ ਫਾਇਲਾਂ"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:211
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:213
 #, fuzzy, kde-format
 #| msgid "Soundtrack:"
 msgid "Soundtrack Duration:"
 msgstr "ਸਾਊਂਡਟਰੈਕ :"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:217
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:219
 #, fuzzy, kde-format
 #| msgid "Open a preview"
 msgid "Soundtrack Preview:"
 msgstr "ਝਲਕ ਖੋਲ੍ਹੋ"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:224
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:226
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Leave this setting empty if you don't want a soundtrack to the "
+"be trimmed. Leave this setting empty if you do not want a soundtrack to the "
 "media.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:245
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:247
 #, fuzzy, kde-format
 msgid "Audio Track"
 msgstr "ਆਡੀਓ ਫਾਇਲਾਂ"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:254
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:256
 #, fuzzy, kde-format
 msgid "On Screen Display"
 msgstr "ਫੀ-ਸਦੀ:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:274
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:276
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:85
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:87
 #, kde-format
 msgid "Number of Frames by Image:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:88
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:90
 #, kde-format
 msgid ""
 "This value repeat one image in the sequence.\n"
-"While creating timelapse; it's usual to use 1.\n"
+"While creating timelapse; it is usual to use 1.\n"
 "Typically, the number of frames will determine\n"
 "the time to show the same frame in the video.\n"
 "The result will depend of the number of frames\n"
 "per second used to encode the media."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:97
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:99
 #, fuzzy, kde-format
 #| msgid "Standard"
 msgid "Video Standard:"
 msgstr "ਸਟੈਂਡਰਡ"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:118
 #, fuzzy, kde-format
 #| msgid "Video Codec:"
 msgid "Video Type:"
 msgstr "ਵੀਡੀਓ Codec:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:139
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:141
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate:"
 msgid "Video Bit Rate:"
 msgstr "ਆਡੀਓ ਬਿੱਟ ਰੇਟ:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:165
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:167
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:185
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:187
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -20709,13 +20709,13 @@ msgid ""
 "</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:201
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:203
 #, fuzzy, kde-format
 #| msgid "Or Between Tags"
 msgid "Transition Between Images"
 msgstr "ਜਾਂ ਟੈਗਾਂ 'ਚ"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:221
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:223
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -20723,7 +20723,7 @@ msgid ""
 "slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:302
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:304
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""
@@ -24205,25 +24205,25 @@ msgctxt "@action"
 msgid "Export to &iNaturalist..."
 msgstr "ਐਕਸਪੋਰਟ ਟੂਲ"
 
-#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:257
+#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:259
 #, kde-format
-msgid "We're pretty sure it's in this %1."
+msgid "We are pretty sure it is in this %1."
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:267
-#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:272
+#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:269
+#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:274
 #, fuzzy, kde-format
 #| msgid "Find Similar"
 msgid "Visually Similar"
 msgstr "ਰਲਦੇ ਲੱਭੋ"
 
-#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:268
-#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:276
+#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:270
+#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:278
 #, kde-format
 msgid "Seen Nearby"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:289
+#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:291
 #, fuzzy, kde-format
 #| msgid "Invalid Profile"
 msgid "invalid name"
@@ -27279,7 +27279,7 @@ msgstr "ਕੀ ਤੁਸੀਂ ਆਪਣੀ ਭੰਡਾਰ ਲਿਸਟ ਤੋ�
 #: core/libs/album/manager/albummanager_talbum.cpp:1138
 #, fuzzy, kde-format
 #| msgid "Do not ask again"
-msgid "Don't ask again at this session"
+msgid "Do not ask again at this session"
 msgstr "ਮੁੜ ਨਾ ਪੁੱਛੋ"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:700
@@ -31366,7 +31366,7 @@ msgstr "ਦਿੱਤਾ ਕੈਮਰਾ (\"%1\") ਸਹਾਇਕ ਨਹੀਂ �
 msgid "Blur Filter"
 msgstr "ਬਲਰ ਫਿਲਟਰ"
 
-#: core/libs/dimg/filters/fx/blurfxfilter.cpp:84
+#: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
 #, fuzzy, kde-format
 msgid "Blur FX Filter"
 msgstr "ਲਾਲ ਫਿਲਟਰ"
@@ -36598,7 +36598,7 @@ msgid ""
 "%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
 "<b>Download</b> to get the file...</p><p>Note: from Setup/Misc panel, you "
 "can switch to check for weekly pre-release.<br/>Pre-release versions are "
-"dedicated to test quickly new features.<br/>It's not recommended to use pre-"
+"dedicated to test quickly new features.<br/>It is not recommended to use pre-"
 "releases in production as bugs can remain,<br/>unless you know what you are "
 "doing.</p><p>Press <b>Configure</b> if you want to customize update options "
 "from setup dialog.</p>"
@@ -37124,7 +37124,7 @@ msgid "Description"
 msgstr "ਵੇਰਵਾ"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1975
+#: core/utilities/import/main/importui.cpp:1981
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -42978,7 +42978,7 @@ msgstr "ਥੰਮਨੇਲਬਾਰ ਵੇਖੋ"
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr "ਪੂਰੀ ਸਕਰੀਨ ਢੰਗ 'ਚ ਟੂਲਬਾਰ ਓਹਲੇ(&i)"
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1322
+#: core/libs/widgets/mainview/thememanager_p.cpp:1323
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"
@@ -48369,7 +48369,7 @@ msgstr "ਦਿੱਤਾ ਕੈਮਰਾ (\"%1\") ਸਹਾਇਕ ਨਹੀਂ �
 #: core/libs/widgets/text/donlinetranslator.cpp:232
 #, fuzzy, kde-format
 #| msgid "Tag name cannot be empty"
-msgid "%1 URL can't be empty."
+msgid "%1 URL cannot be empty."
 msgstr "ਟੈਗ ਨਾਂ ਖਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ ਹੈ"
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
@@ -50304,97 +50304,97 @@ msgctxt "@title:tab"
 msgid "ExifTool"
 msgstr "ਟੂਲ(&T)"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:122
+#: core/showfoto/setup/showfotosetupmisc.cpp:124
 #, kde-format
 msgid "Thumbbar, Folder-View, and Stack-View Items Sort Order"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:126
+#: core/showfoto/setup/showfotosetupmisc.cpp:128
 #, kde-format
 msgid "Sort images by:"
 msgstr "ਚਿੱਤਰ ਲੜੀਬੱਧ ਕਰੋ:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:128
+#: core/showfoto/setup/showfotosetupmisc.cpp:130
 #, kde-format
 msgctxt "sort images by date"
 msgid "Date"
 msgstr "ਮਿਤੀ"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:129
+#: core/showfoto/setup/showfotosetupmisc.cpp:131
 #, kde-format
 msgctxt "sort images by name"
 msgid "Name"
 msgstr "ਨਾਂ"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:130
+#: core/showfoto/setup/showfotosetupmisc.cpp:132
 #, kde-format
 msgctxt "sort images by size"
 msgid "File Size"
 msgstr "ਫਾਇਲ ਸਾਈਜ਼"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:131
+#: core/showfoto/setup/showfotosetupmisc.cpp:133
 #, kde-format
 msgid ""
 "Here, select whether newly-loaded images are sorted by their date, name, or "
 "size on disk."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:134
+#: core/showfoto/setup/showfotosetupmisc.cpp:136
 #, kde-format
 msgid "Reverse ordering"
 msgstr "ਉਲਟ ਕ੍ਰਮ"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:135
+#: core/showfoto/setup/showfotosetupmisc.cpp:137
 #, kde-format
 msgid ""
 "If this option is enabled, newly-loaded images will be sorted in descending "
 "order."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:144
+#: core/showfoto/setup/showfotosetupmisc.cpp:146
 #, fuzzy, kde-format
 msgid "Thumbbar Items"
 msgstr "ਚਿੱਤਰ ਲੜੀਬੱਧ(&S)"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:147
+#: core/showfoto/setup/showfotosetupmisc.cpp:149
 #, fuzzy, kde-format
 msgid "&Show image Format"
 msgstr "ਚਿੱਤਰ ਫਾਰਮੈਟ ਵੇਖਾਓ"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:148
+#: core/showfoto/setup/showfotosetupmisc.cpp:150
 #: core/utilities/setup/camera/setupcamera.cpp:437
 #, fuzzy, kde-format
 msgid "Set this option to show image format over image thumbnail."
 msgstr "ਚਿੱਤਰ ਥੰਮਨੇਲ ਹੇਠਾਂ ਫਾਇਲ ਨਾਂ ਵੇਖਾਉਣ ਲਈ ਇਹ ਚੋਣ ਦਿਓ।"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:149
+#: core/showfoto/setup/showfotosetupmisc.cpp:151
 #, fuzzy, kde-format
 msgid "&Show Geolocation Indicator"
 msgstr "ਭੂਗੋਲੀ-ਟਿਕਾਣਾ ਫਿਲਟਰ"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:150
+#: core/showfoto/setup/showfotosetupmisc.cpp:152
 #: core/utilities/setup/camera/setupcamera.cpp:440
 #, fuzzy, kde-format
 msgid "Set this option to indicate if image has geolocation information."
 msgstr "ਤਸਵੀਰ ਟਿੱਪਣੀਆਂ ਵੇਖਾਉਣ ਲਈ ਇਹ ਚੋਣ ਕਰੋ।"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:151
+#: core/showfoto/setup/showfotosetupmisc.cpp:153
 #: core/utilities/setup/misc/setupmisc.cpp:93
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:152
+#: core/showfoto/setup/showfotosetupmisc.cpp:154
 #, kde-format
 msgid "Store thumbnails on disk for faster reuse"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:153
+#: core/showfoto/setup/showfotosetupmisc.cpp:155
 #, kde-format
 msgid "Disable this option if you do not want thumbnails to be cached on disk."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:163
+#: core/showfoto/setup/showfotosetupmisc.cpp:165
 #: core/utilities/setup/misc/setupmisc.cpp:115
 #, fuzzy, kde-format
 #| msgctxt "@title:group"
@@ -50402,7 +50402,7 @@ msgstr ""
 msgid "Updates"
 msgstr "ਅੱਪਡੇਟ"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:167
+#: core/showfoto/setup/showfotosetupmisc.cpp:169
 #: core/utilities/setup/misc/setupmisc.cpp:119
 #, fuzzy, kde-format
 #| msgctxt ""
@@ -50412,20 +50412,20 @@ msgstr "ਅੱਪਡੇਟ"
 msgid "Check for new version:"
 msgstr "...ਨਵੇਂ ਵਰਜਨ ਵਜੋਂ ਸੰਭਾਲੋ"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:169
+#: core/showfoto/setup/showfotosetupmisc.cpp:171
 #: core/utilities/setup/misc/setupmisc.cpp:121
 #, fuzzy, kde-format
 #| msgid "Only For Active Tab"
 msgid "Only For Stable Releases"
 msgstr "ਐਕਟਿਵ ਟੈਬ ਲਈ ਹੀ"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:170
+#: core/showfoto/setup/showfotosetupmisc.cpp:172
 #: core/utilities/setup/misc/setupmisc.cpp:122
 #, kde-format
 msgid "Weekly Pre-Releases"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:171
+#: core/showfoto/setup/showfotosetupmisc.cpp:173
 #: core/utilities/setup/misc/setupmisc.cpp:123
 #, kde-format
 msgid ""
@@ -50436,13 +50436,13 @@ msgid ""
 "and are not recommended to use in production as bugs can remain."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:176
+#: core/showfoto/setup/showfotosetupmisc.cpp:178
 #: core/utilities/setup/misc/setupmisc.cpp:128
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:177
+#: core/showfoto/setup/showfotosetupmisc.cpp:179
 #: core/utilities/setup/misc/setupmisc.cpp:129
 #, kde-format
 msgid ""
@@ -50452,13 +50452,13 @@ msgid ""
 "debugger."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:182
+#: core/showfoto/setup/showfotosetupmisc.cpp:184
 #: core/utilities/setup/misc/setupmisc.cpp:134
 #, kde-format
 msgid "Last check: %1"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:183
+#: core/showfoto/setup/showfotosetupmisc.cpp:185
 #: core/utilities/setup/misc/setupmisc.cpp:135
 #, fuzzy, kde-format
 #| msgctxt ""
@@ -50468,7 +50468,7 @@ msgstr ""
 msgid "Check now..."
 msgstr "...ਨਵੇਂ ਵਰਜਨ ਵਜੋਂ ਸੰਭਾਲੋ"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:211
+#: core/showfoto/setup/showfotosetupmisc.cpp:213
 #: core/utilities/setup/misc/setupmisc.cpp:191
 #, fuzzy, kde-format
 #| msgid "Behavior"
@@ -50476,66 +50476,66 @@ msgctxt "@title:tab"
 msgid "Behaviour"
 msgstr "ਰਵੱਈਆ"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:218
+#: core/showfoto/setup/showfotosetupmisc.cpp:220
 #: core/utilities/setup/misc/setupmisc.cpp:198
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "ਸ਼ੁਰੂ ਵੇਲੇ ਸਵਾਗਤੀ ਸਕਰੀਨ ਵੇਖਾਓ(&S)"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:219
+#: core/showfoto/setup/showfotosetupmisc.cpp:221
 #, fuzzy, kde-format
 #| msgid "Move selected images into a new album."
 msgid "Use native file dialogs from the system"
 msgstr "ਚੁਣੇ ਚਿੱਤਰ ਨਵੀਂ ਐਲਬਮ ਵਿੱਚ ਭੇਜੋ।"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:222
+#: core/showfoto/setup/showfotosetupmisc.cpp:224
 #: core/utilities/setup/misc/setupmisc.cpp:203
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:224
+#: core/showfoto/setup/showfotosetupmisc.cpp:226
 #: core/utilities/setup/misc/setupmisc.cpp:205
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "ਐਕਟਿਵ ਟੈਬ ਲਈ ਹੀ"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:225
+#: core/showfoto/setup/showfotosetupmisc.cpp:227
 #: core/utilities/setup/misc/setupmisc.cpp:206
 #, kde-format
 msgid "For All Tabs"
 msgstr "ਸਭ ਟੈਬਾਂ ਲਈ"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:226
+#: core/showfoto/setup/showfotosetupmisc.cpp:228
 #, fuzzy, kde-format
 msgid "Set this option to configure how sidebars tab title are visible."
 msgstr "ਚਿੱਤਰ ਥੰਮਨੇਲ ਹੇਠਾਂ ਫਾਇਲ ਆਕਾਰ ਵੇਖਾਉਣ ਲਈ ਇਹ ਚੋਣ ਦਿਓ।"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:229
+#: core/showfoto/setup/showfotosetupmisc.cpp:231
 #: core/utilities/setup/misc/setupmisc.cpp:211
 #, kde-format
 msgid "Widget style:"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:231
+#: core/showfoto/setup/showfotosetupmisc.cpp:233
 #: core/utilities/setup/misc/setupmisc.cpp:213
 #, fuzzy, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr "ਐਲਬਮ ਭੰਡਾਰ ਵੇਖਾਉਣ ਲਈ ਇਹ ਚੋਣ ਕਰੋ।"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:255
+#: core/showfoto/setup/showfotosetupmisc.cpp:257
 #: core/utilities/setup/misc/setupmisc.cpp:236
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:257
+#: core/showfoto/setup/showfotosetupmisc.cpp:259
 #: core/utilities/setup/misc/setupmisc.cpp:238
 #, fuzzy, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "ਐਲਬਮ ਭੰਡਾਰ ਵੇਖਾਉਣ ਲਈ ਇਹ ਚੋਣ ਕਰੋ।"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:261
+#: core/showfoto/setup/showfotosetupmisc.cpp:263
 #: core/utilities/setup/misc/setupmisc.cpp:242
 #, fuzzy, kde-format
 #| msgid "Kuwait"
@@ -50543,69 +50543,69 @@ msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "ਕੁਵੈਤ"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:262
+#: core/showfoto/setup/showfotosetupmisc.cpp:264
 #: core/utilities/setup/misc/setupmisc.cpp:243
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:263
+#: core/showfoto/setup/showfotosetupmisc.cpp:265
 #: core/utilities/setup/misc/setupmisc.cpp:244
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:264
+#: core/showfoto/setup/showfotosetupmisc.cpp:266
 #: core/utilities/setup/misc/setupmisc.cpp:245
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:265
+#: core/showfoto/setup/showfotosetupmisc.cpp:267
 #: core/utilities/setup/misc/setupmisc.cpp:246
 #, fuzzy, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "ਦੂਰੀ:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:266
+#: core/showfoto/setup/showfotosetupmisc.cpp:268
 #: core/utilities/setup/misc/setupmisc.cpp:247
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:267
+#: core/showfoto/setup/showfotosetupmisc.cpp:269
 #: core/utilities/setup/misc/setupmisc.cpp:248
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:292
+#: core/showfoto/setup/showfotosetupmisc.cpp:294
 #: core/utilities/setup/misc/setupmisc.cpp:272
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:299
+#: core/showfoto/setup/showfotosetupmisc.cpp:301
 #: core/utilities/setup/misc/setupmisc.cpp:279
 #, fuzzy, kde-format
 #| msgid "Sublocation:"
 msgid "Application font:"
 msgstr "ਅਧੀਨ-ਟਿਕਾਣਾ:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:300
+#: core/showfoto/setup/showfotosetupmisc.cpp:302
 #: core/utilities/setup/misc/setupmisc.cpp:280
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in tooltips."
 msgid "Select here the font used to display text in whole application."
 msgstr "ਟੂਲ-ਟਿੱਪ ਵਿੱਚ ਟੈਕਸਟ ਵੇਖਾਉਣ ਵਾਸਤੇ ਵਰਤਣ ਲਈ ਫੋਂਟ ਇੱਥੇ ਚੁਣੋ।"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:314
+#: core/showfoto/setup/showfotosetupmisc.cpp:316
 #: core/utilities/setup/misc/setupmisc.cpp:295
 #, fuzzy, kde-format
 #| msgid "Reference:"
@@ -50613,14 +50613,14 @@ msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "ਹਵਾਲਾ:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:322
+#: core/showfoto/setup/showfotosetupmisc.cpp:324
 #: core/utilities/setup/misc/setupmisc.cpp:362
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:328
+#: core/showfoto/setup/showfotosetupmisc.cpp:330
 #: core/utilities/setup/misc/setupmisc.cpp:368
 #, fuzzy, kde-format
 #| msgid "Normalize"
@@ -50628,7 +50628,7 @@ msgctxt "@title:tab"
 msgid "Localize"
 msgstr "ਇਕਸਾਰ"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:334
+#: core/showfoto/setup/showfotosetupmisc.cpp:336
 #: core/utilities/setup/misc/setupmisc.cpp:374
 #, fuzzy, kde-format
 #| msgid "System Font"
@@ -50636,13 +50636,13 @@ msgctxt "@title:tab"
 msgid "System"
 msgstr "ਸਿਸਟਮ ਫੋਂਟ"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:368
+#: core/showfoto/setup/showfotosetupmisc.cpp:370
 #: core/utilities/setup/misc/setupmisc.cpp:407
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
 "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
-"It's not recommended to use pre-release in production as bugs can remain,\n"
+"It is not recommended to use pre-release in production as bugs can remain,\n"
 "unless you know what you are doing.\n"
 "Do you want to continue?"
 msgstr ""
@@ -52688,7 +52688,7 @@ msgid ""
 "in the background or faces in large group photos.</p><p>If you want to "
 "detect all faces in one pass, select <b>Extra Small</b> faces and set the "
 "detection accuracy to 2. Unfortunately, this will create a significant "
-"number of false-positives. It's recommended to set a detection accuracy of "
+"number of false-positives. It is recommended to set a detection accuracy of "
 "6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
@@ -59610,7 +59610,7 @@ msgstr "ਫਾਇਲ \"%1\" ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ 
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2492
+#: core/utilities/import/main/importui.cpp:2498
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to download <filename>%1</filename>"
@@ -60424,19 +60424,19 @@ msgid ""
 "device is not available. Please select another destination album."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1521
+#: core/utilities/import/main/importui.cpp:1527
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "ਫਾਇਲ \"%1\" ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
-#: core/utilities/import/main/importui.cpp:1528
+#: core/utilities/import/main/importui.cpp:1534
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "ਫਾਇਲ \"%1\" ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
-#: core/utilities/import/main/importui.cpp:1972
+#: core/utilities/import/main/importui.cpp:1978
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60445,7 +60445,7 @@ msgid ""
 "and try again."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1983
+#: core/utilities/import/main/importui.cpp:1989
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60462,20 +60462,20 @@ msgstr[1] ""
 "ਇਹ %1 ਤਸਵੀਰਾਂ ਹਟਾਉਣ ਦੀ ਤਿਆਰ ਹੈ। ਹਟਾਈਆਂ ਫਾਇਲਾਂ ਮੁੜ ਕੇ ਮਿਲਣ ਨਹੀਂ ਗਈਆਂ। ਕੀ ਤੁਸੀਂ ਜਾਰੀ "
 "ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/utilities/import/main/importui.cpp:1993
+#: core/utilities/import/main/importui.cpp:1999
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "ਚੇਤਾਵਨੀ"
 
-#: core/utilities/import/main/importui.cpp:2037
+#: core/utilities/import/main/importui.cpp:2043
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "ਘੱਟ ਡਿਸਕ ਥਾਂ"
 
-#: core/utilities/import/main/importui.cpp:2038
+#: core/utilities/import/main/importui.cpp:2044
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60493,8 +60493,8 @@ msgstr ""
 "ਲੋੜੀਦੀ ਡਿਸਕ ਥਾਂ: %1\n"
 "ਉਪਲੱਬਧ ਖਾਲੀ ਥਾਂ: %2"
 
-#: core/utilities/import/main/importui.cpp:2306
-#: core/utilities/import/main/importui.cpp:2332
+#: core/utilities/import/main/importui.cpp:2312
+#: core/utilities/import/main/importui.cpp:2338
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -60502,7 +60502,7 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/utilities/import/main/importui.cpp:2325
+#: core/utilities/import/main/importui.cpp:2331
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -60510,7 +60510,7 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%3 ਵਿੱਚ %2)"
 
-#: core/utilities/import/main/importui.cpp:2342
+#: core/utilities/import/main/importui.cpp:2348
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -60518,25 +60518,25 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 ਆਈਟਮ ਚੁਣੀ"
 msgstr[1] "%2/%1 ਆਈਟਮਾਂ ਚੁਣੀਆਂ"
 
-#: core/utilities/import/main/importui.cpp:2427
+#: core/utilities/import/main/importui.cpp:2433
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "ਫਾਇਲ \"%1\" ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
-#: core/utilities/import/main/importui.cpp:2449
+#: core/utilities/import/main/importui.cpp:2455
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Rename file to <filename>%1</filename>"
 msgstr "ਫਾਇਲ \"%1\" ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
-#: core/utilities/import/main/importui.cpp:2472
+#: core/utilities/import/main/importui.cpp:2478
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "ਫਾਇਲ \"%1\" ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
-#: core/utilities/import/main/importui.cpp:2549
+#: core/utilities/import/main/importui.cpp:2555
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -60544,19 +60544,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2557
+#: core/utilities/import/main/importui.cpp:2563
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "ਡਾਊਨਲੋਡ: "
 
-#: core/utilities/import/main/importui.cpp:2583
+#: core/utilities/import/main/importui.cpp:2589
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "%2 ਫੋਲਡਰ 'ਚ ਇਸੇ ਨਾਂ (%1) ਫਾਇਲ ਪਹਿਲਾਂ ਵੀ ਮੌਜੂਦ ਹੈ"
 
-#: core/utilities/import/main/importui.cpp:2596
+#: core/utilities/import/main/importui.cpp:2602
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -60633,28 +60633,28 @@ msgid "New image format:"
 msgstr "ਨਵਾਂ ਚਿੱਤਰ ਫਾਰਮੈਟ:"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:82
-#: core/utilities/setup/editor/setupversioning.cpp:129
+#: core/utilities/setup/editor/setupversioning.cpp:131
 #, kde-format
 msgctxt "@label:listbox"
 msgid "PNG"
 msgstr "PNG"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:83
-#: core/utilities/setup/editor/setupversioning.cpp:128
+#: core/utilities/setup/editor/setupversioning.cpp:130
 #, kde-format
 msgctxt "@label:listbox"
 msgid "TIFF"
 msgstr "TIFF"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:84
-#: core/utilities/setup/editor/setupversioning.cpp:130
+#: core/utilities/setup/editor/setupversioning.cpp:132
 #, kde-format
 msgctxt "@label:listbox"
 msgid "PGF"
 msgstr "PGF"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:88
-#: core/utilities/setup/editor/setupversioning.cpp:134
+#: core/utilities/setup/editor/setupversioning.cpp:136
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "JPEG 2000"
@@ -60663,14 +60663,14 @@ msgid "JPEG-2000"
 msgstr "JPEG 2000"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:94
-#: core/utilities/setup/editor/setupversioning.cpp:140
+#: core/utilities/setup/editor/setupversioning.cpp:142
 #, kde-format
 msgctxt "@label:listbox"
 msgid "HEIF"
 msgstr ""
 
 #: core/utilities/import/widgets/advancedsettings.cpp:102
-#: core/utilities/setup/editor/setupversioning.cpp:148
+#: core/utilities/setup/editor/setupversioning.cpp:150
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "JPEG"
@@ -60679,14 +60679,14 @@ msgid "JPEG-XL"
 msgstr "JPEG"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:109
-#: core/utilities/setup/editor/setupversioning.cpp:155
+#: core/utilities/setup/editor/setupversioning.cpp:157
 #, kde-format
 msgctxt "@label:listbox"
 msgid "WEBP"
 msgstr ""
 
 #: core/utilities/import/widgets/advancedsettings.cpp:116
-#: core/utilities/setup/editor/setupversioning.cpp:162
+#: core/utilities/setup/editor/setupversioning.cpp:164
 #, kde-format
 msgctxt "@label:listbox"
 msgid "AVIF"
@@ -61289,7 +61289,7 @@ msgstr ""
 #| msgctxt "@option:check"
 #| msgid "Work on all processor cores"
 msgctxt "@option:check"
-msgid "Work on all processor cores (when it's possible)"
+msgid "Work on all processor cores (when it is possible)"
 msgstr "ਸਭ ਪ੍ਰੋਸੈਸਰ ਕੋਰਾਂ ਨਾਲ ਕੰਮ ਕਰੋ"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:68
@@ -62232,7 +62232,7 @@ msgctxt "@label"
 msgid "No setting available"
 msgstr "ਕੋਈ ਸੈਟਿੰਗ ਉਪਲੱਬਧ ਨਹੀਂ"
 
-#: core/utilities/queuemanager/views/assignedlist.cpp:108
+#: core/utilities/queuemanager/views/assignedlist.cpp:106
 #, fuzzy, kde-format
 msgid "This is the list of batch tools assigned."
 msgstr "ਇਹ ਉਹਨਾਂ ਆਈਟਮਾਂ ਦੀ ਲਿਸਟ ਹੈ, ਜਿੰਨ੍ਹਾਂ ਨੂੰ ਹਟਾਇਆ ਜਾਣਾ ਹੈ।"
@@ -64830,60 +64830,60 @@ msgstr ""
 "<p>ਇਹ ਇਕਸਟੈਨਸ਼ਨ ਵਾਲੀਆਂ ਫਾਇਲਾਂ ਨੂੰ ਮੂਵੀ ਫਾਇਲਾਂ ਵਜੋਂ ਪਛਾਣਿਆ ਜਾਵੇਗਾ ਅਤੇ ਡਾਟਾਬੇਸ ਵਿੱਚ ਸ਼ਾਮਲ "
 "ਕੀਤਾ ਜਾਵੇਗਾ:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:109
+#: core/utilities/setup/collections/setupcollectionview.cpp:107
 #, fuzzy, kde-format
 #| msgid "Creates a new empty Album in the collection."
 msgctxt "@info:tooltip"
 msgid "Append a path to the collection."
 msgstr "ਭੰਡਾਰ ਵਿੱਚ ਨਵੀਂ ਖਾਲੀ ਐਲਬਮ ਬਣਾਉ।"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:121
+#: core/utilities/setup/collections/setupcollectionview.cpp:119
 #, fuzzy, kde-format
 #| msgid "Creates a new empty Album in the collection."
 msgctxt "@info:tooltip"
 msgid "Updates the path of the collection."
 msgstr "ਭੰਡਾਰ ਵਿੱਚ ਨਵੀਂ ਖਾਲੀ ਐਲਬਮ ਬਣਾਉ।"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:133
+#: core/utilities/setup/collections/setupcollectionview.cpp:131
 #, fuzzy, kde-format
 #| msgid "Remove collection"
 msgctxt "@info:tooltip"
 msgid "Removes the collection from digiKam."
 msgstr "ਭੰਡਾਰ ਹਟਾਓ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:631
+#: core/utilities/setup/collections/setupcollectionview.cpp:629
 #, fuzzy, kde-format
 msgid "It was not possible to add a collection for the following paths:"
 msgstr "ਇੱਕ ਭੰਡਾਰ ਨੂੰ ਹੇਠ ਦਿੱਤੇ ਪਾਥ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਨਾ ਸੰਭਵ ਨਹੀਂ ਹੈ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:659
-#: core/utilities/setup/collections/setupcollectionview.cpp:1507
+#: core/utilities/setup/collections/setupcollectionview.cpp:657
+#: core/utilities/setup/collections/setupcollectionview.cpp:1505
 #, fuzzy, kde-format
 #| msgid "Choose the folder containing your collection"
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr "ਤੁਹਾਡਾ ਭੰਡਾਰ ਰੱਖਣ ਵਾਲਾ ਫੋਲਡਰ ਚੁਣੋ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:698
+#: core/utilities/setup/collections/setupcollectionview.cpp:696
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "ਭੰਡਾਰ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਸਮੱਸਿਆ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:699
+#: core/utilities/setup/collections/setupcollectionview.cpp:697
 #, fuzzy, kde-format
 msgid "A collection with the path \"%1\" already exists."
 msgstr "ਫਾਇਲ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:862
+#: core/utilities/setup/collections/setupcollectionview.cpp:860
 #, fuzzy, kde-format
 #| msgid "Remove Collection?"
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "ਭੰਡਾਰ ਹਟਾਉਣਾ?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:863
+#: core/utilities/setup/collections/setupcollectionview.cpp:861
 #, fuzzy, kde-format
 #| msgid ""
 #| "Do you want to remove the collection \"%1\" from your list of collections?"
@@ -64891,151 +64891,151 @@ msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr "ਕੀ ਤੁਸੀਂ ਆਪਣੀ ਭੰਡਾਰ ਲਿਸਟ ਤੋਂ \"%1\" ਭੰਡਾਰ ਨੂੰ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:870
+#: core/utilities/setup/collections/setupcollectionview.cpp:868
 #, fuzzy, kde-format
 #| msgid "Remove Collection?"
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "ਭੰਡਾਰ ਹਟਾਉਣਾ?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:871
+#: core/utilities/setup/collections/setupcollectionview.cpp:869
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr "ਕੀ ਤੁਸੀਂ ਆਪਣੀ ਭੰਡਾਰ ਲਿਸਟ ਤੋਂ \"%1\" ਭੰਡਾਰ ਨੂੰ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:936
-#: core/utilities/setup/collections/setupcollectionview.cpp:1726
+#: core/utilities/setup/collections/setupcollectionview.cpp:934
+#: core/utilities/setup/collections/setupcollectionview.cpp:1724
 #, kde-format
 msgid "Local Collections"
 msgstr "ਲੋਕਲ ਭੰਡਾਰ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:941
-#: core/utilities/setup/collections/setupcollectionview.cpp:1727
+#: core/utilities/setup/collections/setupcollectionview.cpp:939
+#: core/utilities/setup/collections/setupcollectionview.cpp:1725
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "ਹਟਾਉਣਯੋਗ ਮੀਡਿਆ ਉੱਤੇ ਭੰਡਾਰ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:946
-#: core/utilities/setup/collections/setupcollectionview.cpp:1728
+#: core/utilities/setup/collections/setupcollectionview.cpp:944
+#: core/utilities/setup/collections/setupcollectionview.cpp:1726
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "ਨੈੱਟਵਰਕ ਸਾਂਝ ਉੱਤੇ ਭੰਡਾਰ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:983
+#: core/utilities/setup/collections/setupcollectionview.cpp:981
 #, kde-format
 msgid "Add Collection"
 msgstr "ਭੰਡਾਰ ਸ਼ਾਮਲ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1033
+#: core/utilities/setup/collections/setupcollectionview.cpp:1031
 #, kde-format
 msgid "Col. %1"
 msgstr "ਭੰਡਾਰ %1"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1129
+#: core/utilities/setup/collections/setupcollectionview.cpp:1127
 #, kde-format
 msgid "This collection is currently not available."
 msgstr "ਇਹ ਭੰਡਾਰ ਹਾਲੇ ਉਪਲੱਬਧ ਨਹੀਂ ਹੈ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1134
+#: core/utilities/setup/collections/setupcollectionview.cpp:1132
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr "ਕੋਈ ਸਮੱਸਿਆ ਨਹੀਂ ਲੱਭੀ, ਇਹ ਭੰਡਾਰ ਨਾਲ ਮੌਜਾਂ ਕਰੋ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1139
+#: core/utilities/setup/collections/setupcollectionview.cpp:1137
 #, kde-format
 msgid "This collection is hidden."
 msgstr "ਇਹ ਭੰਡਾਰ ਲੁਕਵਾਂ ਹੈ।"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1158
+#: core/utilities/setup/collections/setupcollectionview.cpp:1156
 #, kde-format
 msgid "Append network path"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1186
+#: core/utilities/setup/collections/setupcollectionview.cpp:1184
 #, fuzzy, kde-format
 #| msgid "Add Collection"
 msgid "Update collection"
 msgstr "ਭੰਡਾਰ ਸ਼ਾਮਲ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1214
+#: core/utilities/setup/collections/setupcollectionview.cpp:1212
 #, kde-format
 msgid "Remove collection"
 msgstr "ਭੰਡਾਰ ਹਟਾਓ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1249
+#: core/utilities/setup/collections/setupcollectionview.cpp:1247
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "ਨਾਂ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1254
+#: core/utilities/setup/collections/setupcollectionview.cpp:1252
 #, fuzzy, kde-format
 #| msgid "Path"
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "ਮਾਰਗ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1259
+#: core/utilities/setup/collections/setupcollectionview.cpp:1257
 #, fuzzy, kde-format
 #| msgid "Status"
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "ਹਾਲਤ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1557
+#: core/utilities/setup/collections/setupcollectionview.cpp:1555
 #, fuzzy, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "ਫੋਲਡਰ \"%1\" ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ ਇੱਕ ਭੰਡਾਰ ਮੌਜੂਦ ਹੈ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1595
+#: core/utilities/setup/collections/setupcollectionview.cpp:1593
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "ਭੰਡਾਰ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਸਮੱਸਿਆ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1600
+#: core/utilities/setup/collections/setupcollectionview.cpp:1598
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr "ਭੰਡਾਰ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਸਮੱਸਿਆ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1617
+#: core/utilities/setup/collections/setupcollectionview.cpp:1615
 #, fuzzy, kde-format
 #| msgid "Adding Collection"
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "ਭੰਡਾਰ ਸ਼ਾਮਲ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1621
+#: core/utilities/setup/collections/setupcollectionview.cpp:1619
 #, fuzzy, kde-format
 #| msgid "Add Collection"
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "ਭੰਡਾਰ ਸ਼ਾਮਲ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1629
+#: core/utilities/setup/collections/setupcollectionview.cpp:1627
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "ਤੁਹਾਡਾ ਨਵਾਂ ਭੰਡਾਰ ਇਸੇ ਨਾਂ ਨਾਲ ਬਣਾਇਆ ਜਾਵੇਗਾ:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1633
+#: core/utilities/setup/collections/setupcollectionview.cpp:1631
 #, fuzzy, kde-format
 #| msgid "Your new collection will be created with this name:"
 msgid "Your collection will be updated to this name:"
 msgstr "ਤੁਹਾਡਾ ਨਵਾਂ ਭੰਡਾਰ ਇਸੇ ਨਾਂ ਨਾਲ ਬਣਾਇਆ ਜਾਵੇਗਾ:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1716
+#: core/utilities/setup/collections/setupcollectionview.cpp:1714
 #, fuzzy, kde-format
 #| msgid "Select a year"
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "ਸਾਲ ਚੁਣੋ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1720
+#: core/utilities/setup/collections/setupcollectionview.cpp:1718
 #, fuzzy, kde-format
 #| msgid "Your new collection will be created with this name:"
 msgid "Your collection will use this category:"
@@ -65353,19 +65353,19 @@ msgctxt "@title:tab"
 msgid "RAW Default Settings"
 msgstr "ਡਿਫਾਲਟ ਸੈਟਿੰਗ"
 
-#: core/utilities/setup/editor/setupversioning.cpp:94
+#: core/utilities/setup/editor/setupversioning.cpp:96
 #, kde-format
 msgctxt "@title"
 msgid "Enable Non-Destructive Editing and Versioning"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:96
+#: core/utilities/setup/editor/setupversioning.cpp:98
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enable support for non-destructive editing and image versioning"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:98
+#: core/utilities/setup/editor/setupversioning.cpp:100
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -65375,31 +65375,31 @@ msgid ""
 "and can be accessed later.</para>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:108
+#: core/utilities/setup/editor/setupversioning.cpp:110
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information on non-destructive editing and file versioning"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:117
+#: core/utilities/setup/editor/setupversioning.cpp:119
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Workspace File Format"
 msgstr "ਫਾਇਲ ਫਾਰਮੈਟ"
 
-#: core/utilities/setup/editor/setupversioning.cpp:122
+#: core/utilities/setup/editor/setupversioning.cpp:124
 #, kde-format
 msgctxt "@label"
 msgid "Save files as"
 msgstr "ਫਾਇਲਾਂ ਇੰਝ ਸੰਭਾਲੋ"
 
-#: core/utilities/setup/editor/setupversioning.cpp:127
+#: core/utilities/setup/editor/setupversioning.cpp:129
 #, kde-format
 msgctxt "@label:listbox"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/utilities/setup/editor/setupversioning.cpp:169
+#: core/utilities/setup/editor/setupversioning.cpp:171
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -65409,31 +65409,31 @@ msgid ""
 "<interface>Format Options</interface> tab.</para>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:179
+#: core/utilities/setup/editor/setupversioning.cpp:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information on available image file formats"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:196
+#: core/utilities/setup/editor/setupversioning.cpp:198
 #, kde-format
 msgctxt "@label"
 msgid "When closing the editor"
 msgstr "ਜਦੋਂ ਐਡੀਟਰ ਬੰਦ ਕਰਨਾ ਹੋਵੇ"
 
-#: core/utilities/setup/editor/setupversioning.cpp:199
+#: core/utilities/setup/editor/setupversioning.cpp:201
 #, kde-format
 msgctxt "@option:radio"
 msgid "Always ask to save changes"
 msgstr "ਬਦਲਾਅ ਸੰਭਾਲਣ ਲਈ ਹਮੇਸ਼ਾ ਪੁੱਛੋ"
 
-#: core/utilities/setup/editor/setupversioning.cpp:200
+#: core/utilities/setup/editor/setupversioning.cpp:202
 #, kde-format
 msgctxt "@option:radio"
 msgid "Save changes automatically"
 msgstr "ਬਦਲਾਅ ਆਟੋਮੈਟਿਕ ਸੰਭਾਲੋ"
 
-#: core/utilities/setup/editor/setupversioning.cpp:232
+#: core/utilities/setup/editor/setupversioning.cpp:234
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -65449,38 +65449,38 @@ msgid ""
 "</para>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:247
+#: core/utilities/setup/editor/setupversioning.cpp:249
 #, kde-format
 msgctxt "@label"
 msgid "Keep a snapshot of an edited image"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:251
-#: core/utilities/setup/editor/setupversioning.cpp:297
+#: core/utilities/setup/editor/setupversioning.cpp:253
+#: core/utilities/setup/editor/setupversioning.cpp:299
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get an explanation for these options"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:253
+#: core/utilities/setup/editor/setupversioning.cpp:255
 #, kde-format
 msgctxt "@option:check"
 msgid "After converting from a RAW image"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:254
+#: core/utilities/setup/editor/setupversioning.cpp:256
 #, kde-format
 msgctxt "@option:check"
 msgid "After each editing session"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:255
+#: core/utilities/setup/editor/setupversioning.cpp:257
 #, kde-format
 msgctxt "@option:check"
 msgid "After each step that is not completely reproducible"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:282
+#: core/utilities/setup/editor/setupversioning.cpp:284
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -65493,29 +65493,29 @@ msgid ""
 "images.</para>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:290
+#: core/utilities/setup/editor/setupversioning.cpp:292
 #, kde-format
 msgctxt "@label"
 msgid "In main view"
 msgstr "ਮੁੱਖ ਝਲਕ ਵਿੱਚ"
 
-#: core/utilities/setup/editor/setupversioning.cpp:299
+#: core/utilities/setup/editor/setupversioning.cpp:301
 #, kde-format
 msgctxt "@option:check"
 msgid "Always show original images"
 msgstr "ਹਮੇਸ਼ਾ ਅਸਲੀ ਚਿੱਤਰ ਵੇਖੋ"
 
-#: core/utilities/setup/editor/setupversioning.cpp:300
+#: core/utilities/setup/editor/setupversioning.cpp:302
 #, kde-format
 msgctxt "@option:check"
 msgid "Always show intermediate snapshots"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:459
+#: core/utilities/setup/editor/setupversioning.cpp:461
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
-"<item><emphasis strong='true'>JPEG</emphasis>: It's the most commonly used "
+"<item><emphasis strong='true'>JPEG</emphasis>: It is the most commonly used "
 "file format, but it employs lossy compression, which means that with each "
 "saving operation some image information will be irreversibly lost. JPEG "
 "offers a good compression rate, resulting in smaller files. </"
@@ -65532,17 +65532,17 @@ msgid ""
 "publish them on the web. </item>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:492
+#: core/utilities/setup/editor/setupversioning.cpp:494
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
-"<item><emphasis strong='true'>JPEG-2000</emphasis>: It's similar to PGF. "
+"<item><emphasis strong='true'>JPEG-2000</emphasis>: It is similar to PGF. "
 "Loading or saving is slower, the compression rate is better, and the format "
 "more widely supported, though still not comparable to the tradition formats "
 "JPEG, PNG or TIFF. </item>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:504
+#: core/utilities/setup/editor/setupversioning.cpp:506
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -65552,27 +65552,27 @@ msgid ""
 "quality JPEG. </item>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:515
+#: core/utilities/setup/editor/setupversioning.cpp:517
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
-"<item><emphasis strong='true'>JPEG-XL</emphasis>: It's a royalty-free raster-"
-"graphics file format that supports lossless compression. It is designed to "
-"outperform existing raster formats and thus to become their universal "
-"replacement. </item>"
+"<item><emphasis strong='true'>JPEG-XL</emphasis>: It is a royalty-free "
+"raster-graphics file format that supports lossless compression. It is "
+"designed to outperform existing raster formats and thus to become their "
+"universal replacement. </item>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:525
+#: core/utilities/setup/editor/setupversioning.cpp:527
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
-"<item><emphasis strong='true'>WEBP</emphasis>: It's an image file format "
+"<item><emphasis strong='true'>WEBP</emphasis>: It is an image file format "
 "that Google has developed as a replacement for JPEG, PNG, and GIF file "
 "formats. Files are smaller for the same quality, or of higher quality for "
 "the same size. It supports both lossy and lossless compression</item>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:536
+#: core/utilities/setup/editor/setupversioning.cpp:538
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""

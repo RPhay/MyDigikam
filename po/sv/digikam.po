@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-23 01:50+0000\n"
+"POT-Creation-Date: 2025-01-24 01:54+0000\n"
 "PO-Revision-Date: 2025-01-22 16:22+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1061,8 +1061,8 @@ msgstr "%1 (%2)"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:168
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:204
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:170
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:206
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
@@ -1206,7 +1206,7 @@ msgid " fps"
 msgstr " bilder/s"
 
 #: core/app/items/utils/tooltipfiller.cpp:395
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:158
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:160
 #, kde-format
 msgid "Video Codec:"
 msgstr "Videokodare:"
@@ -7286,13 +7286,24 @@ msgid "An image loader based on Libpgf codec"
 msgstr "En bildinläsare baserad på Libpgf-kodare"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:78
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para>This plugin allows users to load and save image using Libpgf codec."
+#| "</para><para>The Progressive Graphics File (PGF) is an efficient image "
+#| "file format, that is based on a fast, discrete wavelet transform with "
+#| "progressive coding features. PGF can be used for lossless and lossy "
+#| "compression. It's most suitable for natural images. PGF can be used as a "
+#| "very efficient and fast replacement of JPEG-2000.</para><para>See <a "
+#| "href='https://en.wikipedia.org/wiki/"
+#| "Progressive_Graphics_File'>Progressive Graphics File documentation</a> "
+#| "for details.</para>"
 msgctxt "@info"
 msgid ""
 "<para>This plugin allows users to load and save image using Libpgf codec.</"
 "para><para>The Progressive Graphics File (PGF) is an efficient image file "
 "format, that is based on a fast, discrete wavelet transform with progressive "
-"coding features. PGF can be used for lossless and lossy compression. It's "
+"coding features. PGF can be used for lossless and lossy compression. It is "
 "most suitable for natural images. PGF can be used as a very efficient and "
 "fast replacement of JPEG-2000.</para><para>See <a href='https://en.wikipedia."
 "org/wiki/Progressive_Graphics_File'>Progressive Graphics File documentation</"
@@ -9016,7 +9027,7 @@ msgid "Restoration..."
 msgstr "Restaurering..."
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:270
-#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:85
+#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:82
 #, kde-format
 msgid "Sharpen"
 msgstr "Skärpa"
@@ -16370,7 +16381,7 @@ msgstr "Obehandlad fil"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:284
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:286
 #, kde-format
 msgid "Target File"
 msgstr "Målfil"
@@ -17554,7 +17565,7 @@ msgstr "Målkatalog:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:269
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:271
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:275
 #, kde-format
 msgctxt "@title:window"
@@ -19962,13 +19973,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "Välj önskat format för att exportera utskrift som bild."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:96
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:264
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:266
 #, kde-format
 msgid "Destination folder:"
 msgstr "Målkatalog:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:270
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:276
 #, kde-format
 msgid "Output Destination Path"
@@ -20640,12 +20651,12 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "FFmpeg binärfil"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:112
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:114
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Mediebehållarens format:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:115
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:117
 #, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
@@ -20654,27 +20665,27 @@ msgstr ""
 "Kontrollen gör det möjligt att välja format på mediebehållaren som "
 "innehåller videoströmmen och ljudspåret."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:120
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:122
 #, kde-format
 msgid "Open in Player:"
 msgstr "Öppna i spelare:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:158
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:160
 #, kde-format
 msgid "Output"
 msgstr "Utdata"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:166
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:168
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr "Utjämna videoljusstyrka"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:171
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:173
 #, kde-format
 msgid "Equalization Strength:"
 msgstr "Utjämningsstyrka:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:175
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:177
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
@@ -20683,7 +20694,7 @@ msgstr ""
 "Bestämmer utjämningens styrka. Att ställa in alternativet till noll gör "
 "ingenting alls."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:180
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:182
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -20697,69 +20708,81 @@ msgstr ""
 "möjligt. Det är användbart för att t.ex. matcha exponeringar från en "
 "fördröjd tidssekvens.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:192
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:194
 #, kde-format
 msgid "Frames Normalization"
 msgstr "Normalisering av bildrutor"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:202
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:204
 #, kde-format
 msgid "Soundtrack File:"
 msgstr "Ljudspårets fil:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:208
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:210
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "Välj ljudspår"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:211
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:213
 #, kde-format
 msgid "Soundtrack Duration:"
 msgstr "Ljudspårets längd:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:217
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:219
 #, kde-format
 msgid "Soundtrack Preview:"
 msgstr "Förhandsgranskning av ljudspår:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:224
-#, kde-format
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:226
+#, fuzzy, kde-format
+#| msgid ""
+#| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
+#| "will be played in loop. If the audio length is largest than video, it "
+#| "will be trimmed. Leave this setting empty if you don't want a soundtrack "
+#| "to the media.</i>"
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Leave this setting empty if you don't want a soundtrack to the "
+"be trimmed. Leave this setting empty if you do not want a soundtrack to the "
 "media.</i>"
 msgstr ""
 "<i>Anmärkningar om ljudspår: Om ljudlängden är mindre än videolängden "
 "upprepas den. Om ljudlängden är större än videolängden trimmas den. Lämna "
 "inställningen tom om du inte vill ha ett ljudspår till media.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:245
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:247
 #, kde-format
 msgid "Audio Track"
 msgstr "Ljudspår"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:254
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:256
 #, kde-format
 msgid "On Screen Display"
 msgstr "Visning på skärmen"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:274
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:276
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "Videons utdatafilnamn genereras automatiskt."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:85
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:87
 #, kde-format
 msgid "Number of Frames by Image:"
 msgstr "Antal bildrutor per bild:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:88
-#, kde-format
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:90
+#, fuzzy, kde-format
+#| msgid ""
+#| "This value repeat one image in the sequence.\n"
+#| "While creating timelapse; it's usual to use 1.\n"
+#| "Typically, the number of frames will determine\n"
+#| "the time to show the same frame in the video.\n"
+#| "The result will depend of the number of frames\n"
+#| "per second used to encode the media."
 msgid ""
 "This value repeat one image in the sequence.\n"
-"While creating timelapse; it's usual to use 1.\n"
+"While creating timelapse; it is usual to use 1.\n"
 "Typically, the number of frames will determine\n"
 "the time to show the same frame in the video.\n"
 "The result will depend of the number of frames\n"
@@ -20772,27 +20795,27 @@ msgstr ""
 "Resultatet beror på antalet bildrutor per\n"
 "sekund som används för att koda media."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:97
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:99
 #, kde-format
 msgid "Video Standard:"
 msgstr "Videostandard:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:118
 #, kde-format
 msgid "Video Type:"
 msgstr "Videotyp:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:139
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:141
 #, kde-format
 msgid "Video Bit Rate:"
 msgstr "Videobithastighet:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:165
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:167
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr "Effekt när bilder visas"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:185
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:187
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -20804,12 +20827,12 @@ msgstr ""
 "visas. Effektens längd följer antal bildramar som används för att återge "
 "bilden i videoströmmen. För fördröjd tid, lämna inställningen som Ingen.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:201
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:203
 #, kde-format
 msgid "Transition Between Images"
 msgstr "Övergång mellan bilder"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:221
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:223
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -20820,7 +20843,7 @@ msgstr ""
 "effekter kan längden bero på slumpmässiga värden och kan ändras medan "
 "bildspelet pågår. För fördröjd tid, lämna inställningen som Ingen.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:302
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:304
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr "Längd: %1 sekunder per objekt, totalt %2 sekunder (utan övergångar)"
@@ -24264,24 +24287,25 @@ msgctxt "@action"
 msgid "Export to &iNaturalist..."
 msgstr "Exportera till &iNaturalist..."
 
-#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:257
-#, kde-format
-msgid "We're pretty sure it's in this %1."
+#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:259
+#, fuzzy, kde-format
+#| msgid "We're pretty sure it's in this %1."
+msgid "We are pretty sure it is in this %1."
 msgstr "Vi är ganska säkra på att den finns i %1."
 
-#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:267
-#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:272
+#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:269
+#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:274
 #, kde-format
 msgid "Visually Similar"
 msgstr "Visuellt liknande"
 
-#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:268
-#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:276
+#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:270
+#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:278
 #, kde-format
 msgid "Seen Nearby"
 msgstr "Hittad i närheten"
 
-#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:289
+#: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:291
 #, kde-format
 msgid "invalid name"
 msgstr "Ogiltigt namn"
@@ -27302,8 +27326,9 @@ msgstr "Vill du sammanfoga etiketten '%1' med '%2'?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:624
 #: core/libs/album/manager/albummanager_talbum.cpp:1138
-#, kde-format
-msgid "Don't ask again at this session"
+#, fuzzy, kde-format
+#| msgid "Don't ask again at this session"
+msgid "Do not ask again at this session"
 msgstr "Fråga inte igen under sessionen"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:700
@@ -31508,7 +31533,7 @@ msgstr "Filtrets identifierare eller version stöds inte."
 msgid "Blur Filter"
 msgstr "Suddighetsfilter"
 
-#: core/libs/dimg/filters/fx/blurfxfilter.cpp:84
+#: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
 #, kde-format
 msgid "Blur FX Filter"
 msgstr "Suddighetseffektfilter"
@@ -36687,13 +36712,22 @@ msgstr ""
 "inställningsdialogrutan.</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:287
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version "
+#| "<i>%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
+#| "<b>Download</b> to get the file...</p><p>Note: from Setup/Misc panel, you "
+#| "can switch to check for weekly pre-release.<br/>Pre-release versions are "
+#| "dedicated to test quickly new features.<br/>It's not recommended to use "
+#| "pre-releases in production as bugs can remain,<br/>unless you know what "
+#| "you are doing.</p><p>Press <b>Configure</b> if you want to customize "
+#| "update options from setup dialog.</p>"
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
 "%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
 "<b>Download</b> to get the file...</p><p>Note: from Setup/Misc panel, you "
 "can switch to check for weekly pre-release.<br/>Pre-release versions are "
-"dedicated to test quickly new features.<br/>It's not recommended to use pre-"
+"dedicated to test quickly new features.<br/>It is not recommended to use pre-"
 "releases in production as bugs can remain,<br/>unless you know what you are "
 "doing.</p><p>Press <b>Configure</b> if you want to customize update options "
 "from setup dialog.</p>"
@@ -37240,7 +37274,7 @@ msgid "Description"
 msgstr "Beskrivning"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1975
+#: core/utilities/import/main/importui.cpp:1981
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -43157,7 +43191,7 @@ msgstr "Dölj st&atusrad"
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr "Dölj statusrad när fönstret byter till fullskärmsläge."
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1322
+#: core/libs/widgets/mainview/thememanager_p.cpp:1323
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"
@@ -47662,8 +47696,9 @@ msgstr "Valt språk för användargränssnitt %1 stöds inte för %2"
 #: core/libs/widgets/text/donlinetranslator.cpp:132
 #: core/libs/widgets/text/donlinetranslator.cpp:215
 #: core/libs/widgets/text/donlinetranslator.cpp:232
-#, kde-format
-msgid "%1 URL can't be empty."
+#, fuzzy, kde-format
+#| msgid "%1 URL can't be empty."
+msgid "%1 URL cannot be empty."
 msgstr "Webbadressen %1 kan inte vara tom."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
@@ -49517,36 +49552,36 @@ msgctxt "@title:tab"
 msgid "ExifTool"
 msgstr "ExifTool"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:122
+#: core/showfoto/setup/showfotosetupmisc.cpp:124
 #, kde-format
 msgid "Thumbbar, Folder-View, and Stack-View Items Sort Order"
 msgstr ""
 "Miniatyrbildsradens, katalogvyns och trädvyns sorteringsordning för objekt"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:126
+#: core/showfoto/setup/showfotosetupmisc.cpp:128
 #, kde-format
 msgid "Sort images by:"
 msgstr "Sortera bilder enligt:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:128
+#: core/showfoto/setup/showfotosetupmisc.cpp:130
 #, kde-format
 msgctxt "sort images by date"
 msgid "Date"
 msgstr "Datum"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:129
+#: core/showfoto/setup/showfotosetupmisc.cpp:131
 #, kde-format
 msgctxt "sort images by name"
 msgid "Name"
 msgstr "Namn"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:130
+#: core/showfoto/setup/showfotosetupmisc.cpp:132
 #, kde-format
 msgctxt "sort images by size"
 msgid "File Size"
 msgstr "Filstorlek"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:131
+#: core/showfoto/setup/showfotosetupmisc.cpp:133
 #, kde-format
 msgid ""
 "Here, select whether newly-loaded images are sorted by their date, name, or "
@@ -49555,12 +49590,12 @@ msgstr ""
 "Välj här om nyinlästa bilder sorteras enligt fildatum, namn eller storlek på "
 "hårddisken."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:134
+#: core/showfoto/setup/showfotosetupmisc.cpp:136
 #, kde-format
 msgid "Reverse ordering"
 msgstr "Omvänd ordning"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:135
+#: core/showfoto/setup/showfotosetupmisc.cpp:137
 #, kde-format
 msgid ""
 "If this option is enabled, newly-loaded images will be sorted in descending "
@@ -49568,28 +49603,28 @@ msgid ""
 msgstr ""
 "Om alternativet är markerat, sorteras nyinlästa bilder i fallande ordning."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:144
+#: core/showfoto/setup/showfotosetupmisc.cpp:146
 #, kde-format
 msgid "Thumbbar Items"
 msgstr "Miniatyrbildsradens objekt"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:147
+#: core/showfoto/setup/showfotosetupmisc.cpp:149
 #, kde-format
 msgid "&Show image Format"
 msgstr "Vi&sa bildformat"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:148
+#: core/showfoto/setup/showfotosetupmisc.cpp:150
 #: core/utilities/setup/camera/setupcamera.cpp:437
 #, kde-format
 msgid "Set this option to show image format over image thumbnail."
 msgstr "Aktivera alternativet för att visa bildformat ovanför miniatyrbilden."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:149
+#: core/showfoto/setup/showfotosetupmisc.cpp:151
 #, kde-format
 msgid "&Show Geolocation Indicator"
 msgstr "Vi&sa geografisk lokaliseringsindikering"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:150
+#: core/showfoto/setup/showfotosetupmisc.cpp:152
 #: core/utilities/setup/camera/setupcamera.cpp:440
 #, kde-format
 msgid "Set this option to indicate if image has geolocation information."
@@ -49597,49 +49632,49 @@ msgstr ""
 "Aktivera alternativet för att ange att bilden har geografisk "
 "lokaliseringsinformation."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:151
+#: core/showfoto/setup/showfotosetupmisc.cpp:153
 #: core/utilities/setup/misc/setupmisc.cpp:93
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr "Panorera aktuellt objekt till miniatyrbildsradens mitt"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:152
+#: core/showfoto/setup/showfotosetupmisc.cpp:154
 #, kde-format
 msgid "Store thumbnails on disk for faster reuse"
 msgstr "Lagra miniatyrbilder på disk för snabbare återanvändning"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:153
+#: core/showfoto/setup/showfotosetupmisc.cpp:155
 #, kde-format
 msgid "Disable this option if you do not want thumbnails to be cached on disk."
 msgstr ""
 "Inaktivera alternativet om du inte vill att miniatyrbilder ska lagras på "
 "disk."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:163
+#: core/showfoto/setup/showfotosetupmisc.cpp:165
 #: core/utilities/setup/misc/setupmisc.cpp:115
 #, kde-format
 msgid "Updates"
 msgstr "Uppdateringar"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:167
+#: core/showfoto/setup/showfotosetupmisc.cpp:169
 #: core/utilities/setup/misc/setupmisc.cpp:119
 #, kde-format
 msgid "Check for new version:"
 msgstr "Sök efter ny version för:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:169
+#: core/showfoto/setup/showfotosetupmisc.cpp:171
 #: core/utilities/setup/misc/setupmisc.cpp:121
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr "Bara stabila utgåvor"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:170
+#: core/showfoto/setup/showfotosetupmisc.cpp:172
 #: core/utilities/setup/misc/setupmisc.cpp:122
 #, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "Veckovisa förutgåvor"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:171
+#: core/showfoto/setup/showfotosetupmisc.cpp:173
 #: core/utilities/setup/misc/setupmisc.cpp:123
 #, kde-format
 msgid ""
@@ -49656,13 +49691,13 @@ msgstr ""
 "\"Förutgåvor\" görs veckovis för att snabbt prova nya funktioner och\n"
 "rekommenderas inte för användning i produktion eftersom fel kan finnas kvar."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:176
+#: core/showfoto/setup/showfotosetupmisc.cpp:178
 #: core/utilities/setup/misc/setupmisc.cpp:128
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr "Använd version med avlusningssymboler"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:177
+#: core/showfoto/setup/showfotosetupmisc.cpp:179
 #: core/utilities/setup/misc/setupmisc.cpp:129
 #, kde-format
 msgid ""
@@ -49676,189 +49711,196 @@ msgstr ""
 "Versionen är större, men kan hjälpa utvecklare att spåra felaktigheter med "
 "en avlusare."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:182
+#: core/showfoto/setup/showfotosetupmisc.cpp:184
 #: core/utilities/setup/misc/setupmisc.cpp:134
 #, kde-format
 msgid "Last check: %1"
 msgstr "Senaste kontroll: %1"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:183
+#: core/showfoto/setup/showfotosetupmisc.cpp:185
 #: core/utilities/setup/misc/setupmisc.cpp:135
 #, kde-format
 msgid "Check now..."
 msgstr "Kontrollera nu..."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:211
+#: core/showfoto/setup/showfotosetupmisc.cpp:213
 #: core/utilities/setup/misc/setupmisc.cpp:191
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behaviour"
 msgstr "Beteende"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:218
+#: core/showfoto/setup/showfotosetupmisc.cpp:220
 #: core/utilities/setup/misc/setupmisc.cpp:198
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "Visa &startskärm"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:219
+#: core/showfoto/setup/showfotosetupmisc.cpp:221
 #, kde-format
 msgid "Use native file dialogs from the system"
 msgstr "Använd systemets inbyggda fildialogrutor"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:222
+#: core/showfoto/setup/showfotosetupmisc.cpp:224
 #: core/utilities/setup/misc/setupmisc.cpp:203
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "Sidoradens flikrubrik:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:224
+#: core/showfoto/setup/showfotosetupmisc.cpp:226
 #: core/utilities/setup/misc/setupmisc.cpp:205
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "Bara för aktiv flik"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:225
+#: core/showfoto/setup/showfotosetupmisc.cpp:227
 #: core/utilities/setup/misc/setupmisc.cpp:206
 #, kde-format
 msgid "For All Tabs"
 msgstr "För alla flikar"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:226
+#: core/showfoto/setup/showfotosetupmisc.cpp:228
 #, kde-format
 msgid "Set this option to configure how sidebars tab title are visible."
 msgstr ""
 "Använd alternativet för att ställa in hur sidoradernas flikrubriker är "
 "synliga."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:229
+#: core/showfoto/setup/showfotosetupmisc.cpp:231
 #: core/utilities/setup/misc/setupmisc.cpp:211
 #, kde-format
 msgid "Widget style:"
 msgstr "Grafisk komponentstil:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:231
+#: core/showfoto/setup/showfotosetupmisc.cpp:233
 #: core/utilities/setup/misc/setupmisc.cpp:213
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr ""
 "Aktivera alternativet för att välja fönsterdekorationer och standardutseende."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:255
+#: core/showfoto/setup/showfotosetupmisc.cpp:257
 #: core/utilities/setup/misc/setupmisc.cpp:236
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "Ikontema (ändras efter omstart):"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:257
+#: core/showfoto/setup/showfotosetupmisc.cpp:259
 #: core/utilities/setup/misc/setupmisc.cpp:238
 #, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "Ställ in alternativet för att välja standardikontema."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:261
+#: core/showfoto/setup/showfotosetupmisc.cpp:263
 #: core/utilities/setup/misc/setupmisc.cpp:242
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:262
+#: core/showfoto/setup/showfotosetupmisc.cpp:264
 #: core/utilities/setup/misc/setupmisc.cpp:243
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Breeze"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:263
+#: core/showfoto/setup/showfotosetupmisc.cpp:265
 #: core/utilities/setup/misc/setupmisc.cpp:244
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Breeze mörk"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:264
+#: core/showfoto/setup/showfotosetupmisc.cpp:266
 #: core/utilities/setup/misc/setupmisc.cpp:245
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:265
+#: core/showfoto/setup/showfotosetupmisc.cpp:267
 #: core/utilities/setup/misc/setupmisc.cpp:246
 #, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Ambiance"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:266
+#: core/showfoto/setup/showfotosetupmisc.cpp:268
 #: core/utilities/setup/misc/setupmisc.cpp:247
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "Mänskligheten"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:267
+#: core/showfoto/setup/showfotosetupmisc.cpp:269
 #: core/utilities/setup/misc/setupmisc.cpp:248
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oxygen"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:292
+#: core/showfoto/setup/showfotosetupmisc.cpp:294
 #: core/utilities/setup/misc/setupmisc.cpp:272
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "Använd systemets ikontema"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:299
+#: core/showfoto/setup/showfotosetupmisc.cpp:301
 #: core/utilities/setup/misc/setupmisc.cpp:279
 #, kde-format
 msgid "Application font:"
 msgstr "Programteckensnitt:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:300
+#: core/showfoto/setup/showfotosetupmisc.cpp:302
 #: core/utilities/setup/misc/setupmisc.cpp:280
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr ""
 "Ställ in teckensnittet som används för att visa text i hela programmet här."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:314
+#: core/showfoto/setup/showfotosetupmisc.cpp:316
 #: core/utilities/setup/misc/setupmisc.cpp:295
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Utseende"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:322
+#: core/showfoto/setup/showfotosetupmisc.cpp:324
 #: core/utilities/setup/misc/setupmisc.cpp:362
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Stavningskontroll"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:328
+#: core/showfoto/setup/showfotosetupmisc.cpp:330
 #: core/utilities/setup/misc/setupmisc.cpp:368
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Landsanpassa"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:334
+#: core/showfoto/setup/showfotosetupmisc.cpp:336
 #: core/utilities/setup/misc/setupmisc.cpp:374
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "System"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:368
+#: core/showfoto/setup/showfotosetupmisc.cpp:370
 #: core/utilities/setup/misc/setupmisc.cpp:407
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check for new version option will verify the pre-releases.\n"
+#| "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
+#| "It's not recommended to use pre-release in production as bugs can "
+#| "remain,\n"
+#| "unless you know what you are doing.\n"
+#| "Do you want to continue?"
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
 "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
-"It's not recommended to use pre-release in production as bugs can remain,\n"
+"It is not recommended to use pre-release in production as bugs can remain,\n"
 "unless you know what you are doing.\n"
 "Do you want to continue?"
 msgstr ""
@@ -51885,7 +51927,23 @@ msgid "Extra Large"
 msgstr "Extra stor"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p>Selecting <b>Extra Small</b> means the model will detect small "
+#| "background faces in addition to medium and larger faces. Selecting "
+#| "<b>Small Faces</b> increases the sensitivity of the model by tuning the "
+#| "model parameters. It will also increase the probability of false-"
+#| "positives, and it will increase detection time.</p><p>Selecting <b>Large</"
+#| "b> or <b>Extra Large</b> will eliminate small background faces from being "
+#| "detected. It is much faster and will reduce the number of false-"
+#| "positives, but will not detect small faces in the background or faces in "
+#| "large group photos.</p><p>If you want to detect all faces in one pass, "
+#| "select <b>Extra Small</b> faces and set the detection accuracy to 2. "
+#| "Unfortunately, this will create a significant number of false-positives. "
+#| "It's recommended to set a detection accuracy of 6-8 and face size of "
+#| "<b>Medium</b> or <b>Large</b> for normal use.</p><p>This setting applies "
+#| "only to YuNet.</p>"
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
@@ -51898,7 +51956,7 @@ msgid ""
 "in the background or faces in large group photos.</p><p>If you want to "
 "detect all faces in one pass, select <b>Extra Small</b> faces and set the "
 "detection accuracy to 2. Unfortunately, this will create a significant "
-"number of false-positives. It's recommended to set a detection accuracy of "
+"number of false-positives. It is recommended to set a detection accuracy of "
 "6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
@@ -58790,7 +58848,7 @@ msgstr "Misslyckades hämta metadata för <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2492
+#: core/utilities/import/main/importui.cpp:2498
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Misslyckades ladda ner <filename>%1</filename>"
@@ -59608,17 +59666,17 @@ msgstr ""
 "Samlingen vald som målalbum att ladda ner från kameraenheten är inte "
 "tillgänglig. Välj ett annat målalbum."
 
-#: core/utilities/import/main/importui.cpp:1521
+#: core/utilities/import/main/importui.cpp:1527
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Misslyckades flytta associerad fil för <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1528
+#: core/utilities/import/main/importui.cpp:1534
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Misslyckades flytta fil för <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1972
+#: core/utilities/import/main/importui.cpp:1978
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59630,7 +59688,7 @@ msgstr ""
 "inte att tas bort. Om du verkligen vill ta bort objekten, lås då först upp "
 "dem, och försök igen."
 
-#: core/utilities/import/main/importui.cpp:1983
+#: core/utilities/import/main/importui.cpp:1989
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59650,19 +59708,19 @@ msgstr[1] ""
 "Borttagna filer kan inte återställas.\n"
 "Är du säker?"
 
-#: core/utilities/import/main/importui.cpp:1993
+#: core/utilities/import/main/importui.cpp:1999
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Varning"
 
-#: core/utilities/import/main/importui.cpp:2037
+#: core/utilities/import/main/importui.cpp:2043
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Otillräckligt diskutrymme"
 
-#: core/utilities/import/main/importui.cpp:2038
+#: core/utilities/import/main/importui.cpp:2044
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59682,8 +59740,8 @@ msgstr ""
 "\n"
 "Försök ändå?"
 
-#: core/utilities/import/main/importui.cpp:2306
-#: core/utilities/import/main/importui.cpp:2332
+#: core/utilities/import/main/importui.cpp:2312
+#: core/utilities/import/main/importui.cpp:2338
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -59691,13 +59749,13 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Inget objekt markerat (%1 objekt)"
 msgstr[1] "Inga objekt markerat (%1 objekt)"
 
-#: core/utilities/import/main/importui.cpp:2325
+#: core/utilities/import/main/importui.cpp:2331
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "\"%1\" (%2 av %3)"
 
-#: core/utilities/import/main/importui.cpp:2342
+#: core/utilities/import/main/importui.cpp:2348
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -59705,22 +59763,22 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 objekt markerat"
 msgstr[1] "%2/%1 objekt markerade"
 
-#: core/utilities/import/main/importui.cpp:2427
+#: core/utilities/import/main/importui.cpp:2433
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Hoppade över filen <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2449
+#: core/utilities/import/main/importui.cpp:2455
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Byt namn på fil till <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2472
+#: core/utilities/import/main/importui.cpp:2478
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Misslyckades spara associerad fil för <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2549
+#: core/utilities/import/main/importui.cpp:2555
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -59730,19 +59788,19 @@ msgstr ""
 "Nerladdning av bilder är klar. Kameran kan nu kopplas bort medan bilderna "
 "roteras automatiskt"
 
-#: core/utilities/import/main/importui.cpp:2557
+#: core/utilities/import/main/importui.cpp:2563
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Nerladdning av bilder klar"
 
-#: core/utilities/import/main/importui.cpp:2583
+#: core/utilities/import/main/importui.cpp:2589
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Ett fil med samma namn (\"%1\") finns redan i katalogen \"%2\"."
 
-#: core/utilities/import/main/importui.cpp:2596
+#: core/utilities/import/main/importui.cpp:2602
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -59814,56 +59872,56 @@ msgid "New image format:"
 msgstr "Nytt bildformat:"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:82
-#: core/utilities/setup/editor/setupversioning.cpp:129
+#: core/utilities/setup/editor/setupversioning.cpp:131
 #, kde-format
 msgctxt "@label:listbox"
 msgid "PNG"
 msgstr "PNG"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:83
-#: core/utilities/setup/editor/setupversioning.cpp:128
+#: core/utilities/setup/editor/setupversioning.cpp:130
 #, kde-format
 msgctxt "@label:listbox"
 msgid "TIFF"
 msgstr "TIFF"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:84
-#: core/utilities/setup/editor/setupversioning.cpp:130
+#: core/utilities/setup/editor/setupversioning.cpp:132
 #, kde-format
 msgctxt "@label:listbox"
 msgid "PGF"
 msgstr "PGF"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:88
-#: core/utilities/setup/editor/setupversioning.cpp:134
+#: core/utilities/setup/editor/setupversioning.cpp:136
 #, kde-format
 msgctxt "@label:listbox"
 msgid "JPEG-2000"
 msgstr "JPEG-2000"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:94
-#: core/utilities/setup/editor/setupversioning.cpp:140
+#: core/utilities/setup/editor/setupversioning.cpp:142
 #, kde-format
 msgctxt "@label:listbox"
 msgid "HEIF"
 msgstr "HEIF"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:102
-#: core/utilities/setup/editor/setupversioning.cpp:148
+#: core/utilities/setup/editor/setupversioning.cpp:150
 #, kde-format
 msgctxt "@label:listbox"
 msgid "JPEG-XL"
 msgstr "JPEG-XL"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:109
-#: core/utilities/setup/editor/setupversioning.cpp:155
+#: core/utilities/setup/editor/setupversioning.cpp:157
 #, kde-format
 msgctxt "@label:listbox"
 msgid "WEBP"
 msgstr "WEBP"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:116
-#: core/utilities/setup/editor/setupversioning.cpp:162
+#: core/utilities/setup/editor/setupversioning.cpp:164
 #, kde-format
 msgctxt "@label:listbox"
 msgid "AVIF"
@@ -60507,9 +60565,11 @@ msgid "Use the last saved active tools and settings"
 msgstr "Använd senast sparade aktiva verktyg och inställningar"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:62
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Work on all processor cores (when it's possible)"
 msgctxt "@option:check"
-msgid "Work on all processor cores (when it's possible)"
+msgid "Work on all processor cores (when it is possible)"
 msgstr "Använd alla processorkärnor (om möjligt)"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:68
@@ -61442,7 +61502,7 @@ msgctxt "@label"
 msgid "No setting available"
 msgstr "Ingen inställning tillgänglig"
 
-#: core/utilities/queuemanager/views/assignedlist.cpp:108
+#: core/utilities/queuemanager/views/assignedlist.cpp:106
 #, kde-format
 msgid "This is the list of batch tools assigned."
 msgstr "Det här är listan med tilldelade bakgrundsverktyg."
@@ -64078,194 +64138,194 @@ msgstr ""
 "<p>Kataloger som börjar med en punkt ignoreras normalt.<br/> <code>%1</"
 "code></p>"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:109
+#: core/utilities/setup/collections/setupcollectionview.cpp:107
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Append a path to the collection."
 msgstr "Lägg till en sökväg i samlingen."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:121
+#: core/utilities/setup/collections/setupcollectionview.cpp:119
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Updates the path of the collection."
 msgstr "Uppdaterar samlingens sökväg."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:133
+#: core/utilities/setup/collections/setupcollectionview.cpp:131
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Removes the collection from digiKam."
 msgstr "Ta bort samlingen från Digikam."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:631
+#: core/utilities/setup/collections/setupcollectionview.cpp:629
 #, kde-format
 msgid "It was not possible to add a collection for the following paths:"
 msgstr "Det var inte möjligt att lägga till en samling för följande sökvägar:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:659
-#: core/utilities/setup/collections/setupcollectionview.cpp:1507
+#: core/utilities/setup/collections/setupcollectionview.cpp:657
+#: core/utilities/setup/collections/setupcollectionview.cpp:1505
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr "Välj katalogen som innehåller samlingen"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:698
+#: core/utilities/setup/collections/setupcollectionview.cpp:696
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "Problem vid tillägg av samling"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:699
+#: core/utilities/setup/collections/setupcollectionview.cpp:697
 #, kde-format
 msgid "A collection with the path \"%1\" already exists."
 msgstr "En samling med sökvägen \"%1\" finns redan."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:862
+#: core/utilities/setup/collections/setupcollectionview.cpp:860
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "Tag bort sökväg från samlingen?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:863
+#: core/utilities/setup/collections/setupcollectionview.cpp:861
 #, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr "Vill du ta bort den tillagda sökvägen \"%1\" från samlingen \"%2\"?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:870
+#: core/utilities/setup/collections/setupcollectionview.cpp:868
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "Ta bort samling?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:871
+#: core/utilities/setup/collections/setupcollectionview.cpp:869
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr "Vill du ta bort samlingen \"%1\" från samlingslistan?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:936
-#: core/utilities/setup/collections/setupcollectionview.cpp:1726
+#: core/utilities/setup/collections/setupcollectionview.cpp:934
+#: core/utilities/setup/collections/setupcollectionview.cpp:1724
 #, kde-format
 msgid "Local Collections"
 msgstr "Lokala samlingar"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:941
-#: core/utilities/setup/collections/setupcollectionview.cpp:1727
+#: core/utilities/setup/collections/setupcollectionview.cpp:939
+#: core/utilities/setup/collections/setupcollectionview.cpp:1725
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Samlingar på flyttbara media"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:946
-#: core/utilities/setup/collections/setupcollectionview.cpp:1728
+#: core/utilities/setup/collections/setupcollectionview.cpp:944
+#: core/utilities/setup/collections/setupcollectionview.cpp:1726
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Samlingar på delade nätverkskataloger"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:983
+#: core/utilities/setup/collections/setupcollectionview.cpp:981
 #, kde-format
 msgid "Add Collection"
 msgstr "Lägg till samling"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1033
+#: core/utilities/setup/collections/setupcollectionview.cpp:1031
 #, kde-format
 msgid "Col. %1"
 msgstr "Sam. %1"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1129
+#: core/utilities/setup/collections/setupcollectionview.cpp:1127
 #, kde-format
 msgid "This collection is currently not available."
 msgstr "Samlingen är för närvarande inte tillgänglig."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1134
+#: core/utilities/setup/collections/setupcollectionview.cpp:1132
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr "Inga problem hittades, njut av den här samlingen."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1139
+#: core/utilities/setup/collections/setupcollectionview.cpp:1137
 #, kde-format
 msgid "This collection is hidden."
 msgstr "Samlingen är dold."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1158
+#: core/utilities/setup/collections/setupcollectionview.cpp:1156
 #, kde-format
 msgid "Append network path"
 msgstr "Lägg till nätverkssökväg sist"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1186
+#: core/utilities/setup/collections/setupcollectionview.cpp:1184
 #, kde-format
 msgid "Update collection"
 msgstr "Uppdatera samling"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1214
+#: core/utilities/setup/collections/setupcollectionview.cpp:1212
 #, kde-format
 msgid "Remove collection"
 msgstr "Ta bort samling"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1249
+#: core/utilities/setup/collections/setupcollectionview.cpp:1247
 #, kde-format
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "Namn"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1254
+#: core/utilities/setup/collections/setupcollectionview.cpp:1252
 #, kde-format
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "Sökväg"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1259
+#: core/utilities/setup/collections/setupcollectionview.cpp:1257
 #, kde-format
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "Status"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1557
+#: core/utilities/setup/collections/setupcollectionview.cpp:1555
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr ""
 "Du har tidigare lagt till en samling som redan innehåller sökvägen \"%1\"."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1595
+#: core/utilities/setup/collections/setupcollectionview.cpp:1593
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Problem vid tillägg av samling"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1600
+#: core/utilities/setup/collections/setupcollectionview.cpp:1598
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr "Problem vid uppdatering av samlingen"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1617
+#: core/utilities/setup/collections/setupcollectionview.cpp:1615
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Lägger till samling"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1621
+#: core/utilities/setup/collections/setupcollectionview.cpp:1619
 #, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "Uppdatera samling"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1629
+#: core/utilities/setup/collections/setupcollectionview.cpp:1627
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "Den nya samlingen kommer att skapas med detta namn:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1633
+#: core/utilities/setup/collections/setupcollectionview.cpp:1631
 #, kde-format
 msgid "Your collection will be updated to this name:"
 msgstr "Samlingen uppdateras med det här namnet:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1716
+#: core/utilities/setup/collections/setupcollectionview.cpp:1714
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Välj kategori"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1720
+#: core/utilities/setup/collections/setupcollectionview.cpp:1718
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr "Samlingen kommer att använda följande kategori:"
@@ -64614,19 +64674,19 @@ msgctxt "@title:tab"
 msgid "RAW Default Settings"
 msgstr "Standardinställningar för obehandlade filer"
 
-#: core/utilities/setup/editor/setupversioning.cpp:94
+#: core/utilities/setup/editor/setupversioning.cpp:96
 #, kde-format
 msgctxt "@title"
 msgid "Enable Non-Destructive Editing and Versioning"
 msgstr "Aktivera icke-destruktiv redigering och versionshantering"
 
-#: core/utilities/setup/editor/setupversioning.cpp:96
+#: core/utilities/setup/editor/setupversioning.cpp:98
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enable support for non-destructive editing and image versioning"
 msgstr "Aktivera stöd för icke-destruktiv redigering och bildversionshantering"
 
-#: core/utilities/setup/editor/setupversioning.cpp:98
+#: core/utilities/setup/editor/setupversioning.cpp:100
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -64640,32 +64700,32 @@ msgstr ""
 "alltid bevaras.</para> <para>Alla steg i redigeringshistoriken sparas och "
 "kan senare kommas åt.</para>"
 
-#: core/utilities/setup/editor/setupversioning.cpp:108
+#: core/utilities/setup/editor/setupversioning.cpp:110
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information on non-destructive editing and file versioning"
 msgstr ""
 "Hämta information om icke-destruktiv redigering och filversionshantering"
 
-#: core/utilities/setup/editor/setupversioning.cpp:117
+#: core/utilities/setup/editor/setupversioning.cpp:119
 #, kde-format
 msgctxt "@title:group"
 msgid "Workspace File Format"
 msgstr "Arbetsytans filformat"
 
-#: core/utilities/setup/editor/setupversioning.cpp:122
+#: core/utilities/setup/editor/setupversioning.cpp:124
 #, kde-format
 msgctxt "@label"
 msgid "Save files as"
 msgstr "Spara filer som"
 
-#: core/utilities/setup/editor/setupversioning.cpp:127
+#: core/utilities/setup/editor/setupversioning.cpp:129
 #, kde-format
 msgctxt "@label:listbox"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/utilities/setup/editor/setupversioning.cpp:169
+#: core/utilities/setup/editor/setupversioning.cpp:171
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -64679,31 +64739,31 @@ msgstr ""
 "Formatspecifika alternativ, som komprimeringsinställningar, kan ställas in "
 "under fliken <interface>Formatalternativ</interface>.</para>"
 
-#: core/utilities/setup/editor/setupversioning.cpp:179
+#: core/utilities/setup/editor/setupversioning.cpp:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information on available image file formats"
 msgstr "Hämta information om tillgängliga filformat"
 
-#: core/utilities/setup/editor/setupversioning.cpp:196
+#: core/utilities/setup/editor/setupversioning.cpp:198
 #, kde-format
 msgctxt "@label"
 msgid "When closing the editor"
 msgstr "När editorn stängs"
 
-#: core/utilities/setup/editor/setupversioning.cpp:199
+#: core/utilities/setup/editor/setupversioning.cpp:201
 #, kde-format
 msgctxt "@option:radio"
 msgid "Always ask to save changes"
 msgstr "Fråga alltid för att spara ändringar"
 
-#: core/utilities/setup/editor/setupversioning.cpp:200
+#: core/utilities/setup/editor/setupversioning.cpp:202
 #, kde-format
 msgctxt "@option:radio"
 msgid "Save changes automatically"
 msgstr "Spara ändringar automatiskt"
 
-#: core/utilities/setup/editor/setupversioning.cpp:232
+#: core/utilities/setup/editor/setupversioning.cpp:234
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -64728,38 +64788,38 @@ msgstr ""
 "praktist om du vill bevara arbetssteg för senare åtkomst, till exempel om "
 "några redigeringssteg inte kan upprepas automatiskt.</para>"
 
-#: core/utilities/setup/editor/setupversioning.cpp:247
+#: core/utilities/setup/editor/setupversioning.cpp:249
 #, kde-format
 msgctxt "@label"
 msgid "Keep a snapshot of an edited image"
 msgstr "Spara en avbild av en redigerad bild"
 
-#: core/utilities/setup/editor/setupversioning.cpp:251
-#: core/utilities/setup/editor/setupversioning.cpp:297
+#: core/utilities/setup/editor/setupversioning.cpp:253
+#: core/utilities/setup/editor/setupversioning.cpp:299
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get an explanation for these options"
 msgstr "Hämta en förklaring av dessa alternativ"
 
-#: core/utilities/setup/editor/setupversioning.cpp:253
+#: core/utilities/setup/editor/setupversioning.cpp:255
 #, kde-format
 msgctxt "@option:check"
 msgid "After converting from a RAW image"
 msgstr "Efter konvertering från en obehandlad bild"
 
-#: core/utilities/setup/editor/setupversioning.cpp:254
+#: core/utilities/setup/editor/setupversioning.cpp:256
 #, kde-format
 msgctxt "@option:check"
 msgid "After each editing session"
 msgstr "Efter varje redigeringssession"
 
-#: core/utilities/setup/editor/setupversioning.cpp:255
+#: core/utilities/setup/editor/setupversioning.cpp:257
 #, kde-format
 msgctxt "@option:check"
 msgid "After each step that is not completely reproducible"
 msgstr "Efter varje steg som inte är fullständigt reproducerbart"
 
-#: core/utilities/setup/editor/setupversioning.cpp:282
+#: core/utilities/setup/editor/setupversioning.cpp:284
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -64779,29 +64839,46 @@ msgstr ""
 "bildversionshantering för första gången, fungerar den bara för nysparade "
 "bilder.</para>"
 
-#: core/utilities/setup/editor/setupversioning.cpp:290
+#: core/utilities/setup/editor/setupversioning.cpp:292
 #, kde-format
 msgctxt "@label"
 msgid "In main view"
 msgstr "I huvudfönstret"
 
-#: core/utilities/setup/editor/setupversioning.cpp:299
+#: core/utilities/setup/editor/setupversioning.cpp:301
 #, kde-format
 msgctxt "@option:check"
 msgid "Always show original images"
 msgstr "Visa alltid originalbilder"
 
-#: core/utilities/setup/editor/setupversioning.cpp:300
+#: core/utilities/setup/editor/setupversioning.cpp:302
 #, kde-format
 msgctxt "@option:check"
 msgid "Always show intermediate snapshots"
 msgstr "Visa alltid mellanliggande bilder"
 
-#: core/utilities/setup/editor/setupversioning.cpp:459
-#, kde-kuit-format
+#: core/utilities/setup/editor/setupversioning.cpp:461
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:whatsthis"
+#| msgid ""
+#| "<item><emphasis strong='true'>JPEG</emphasis>: It's the most commonly "
+#| "used file format, but it employs lossy compression, which means that with "
+#| "each saving operation some image information will be irreversibly lost. "
+#| "JPEG offers a good compression rate, resulting in smaller files. </"
+#| "item><item><emphasis strong='true'>PNG</emphasis>: A widely used format "
+#| "employing lossless compression. The files, though, will be larger because "
+#| "PNG does not achieve very good compression rates.</item><item><emphasis "
+#| "strong='true'>TIFF</emphasis>: A commonly used format, usually "
+#| "uncompressed or with modest lossless compression. Resulting files will be "
+#| "large, but without quality loss due to compression. </"
+#| "item><item><emphasis strong='true'>PGF</emphasis>: This is a technically "
+#| "superior file format offering good compression rates with either lossy or "
+#| "lossless compression. But it is not yet widely used and supported, so "
+#| "your friends may not directly be able to open these files, and you may "
+#| "not be able to directly publish them on the web. </item>"
 msgctxt "@info:whatsthis"
 msgid ""
-"<item><emphasis strong='true'>JPEG</emphasis>: It's the most commonly used "
+"<item><emphasis strong='true'>JPEG</emphasis>: It is the most commonly used "
 "file format, but it employs lossy compression, which means that with each "
 "saving operation some image information will be irreversibly lost. JPEG "
 "offers a good compression rate, resulting in smaller files. </"
@@ -64833,11 +64910,17 @@ msgstr ""
 "filerna direkt, och du kanske inte kan publicera dem direkt på webben. </"
 "item>"
 
-#: core/utilities/setup/editor/setupversioning.cpp:492
-#, kde-kuit-format
+#: core/utilities/setup/editor/setupversioning.cpp:494
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:whatsthis"
+#| msgid ""
+#| "<item><emphasis strong='true'>JPEG-2000</emphasis>: It's similar to PGF. "
+#| "Loading or saving is slower, the compression rate is better, and the "
+#| "format more widely supported, though still not comparable to the "
+#| "tradition formats JPEG, PNG or TIFF. </item>"
 msgctxt "@info:whatsthis"
 msgid ""
-"<item><emphasis strong='true'>JPEG-2000</emphasis>: It's similar to PGF. "
+"<item><emphasis strong='true'>JPEG-2000</emphasis>: It is similar to PGF. "
 "Loading or saving is slower, the compression rate is better, and the format "
 "more widely supported, though still not comparable to the tradition formats "
 "JPEG, PNG or TIFF. </item>"
@@ -64847,7 +64930,7 @@ msgstr ""
 "har bättre stöd, men är fortfarande inte i nivå med de traditionella "
 "filformaten JPEG, PNG eller TIFF. </item>"
 
-#: core/utilities/setup/editor/setupversioning.cpp:504
+#: core/utilities/setup/editor/setupversioning.cpp:506
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -64861,25 +64944,37 @@ msgstr ""
 "som använder kodaren HEVC (H.265) kräver mindre lagringsutrymme än en JPEG-"
 "bild med motsvarande kvalitet. </item>"
 
-#: core/utilities/setup/editor/setupversioning.cpp:515
-#, kde-kuit-format
+#: core/utilities/setup/editor/setupversioning.cpp:517
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:whatsthis"
+#| msgid ""
+#| "<item><emphasis strong='true'>JPEG-XL</emphasis>: It's a royalty-free "
+#| "raster-graphics file format that supports lossless compression. It is "
+#| "designed to outperform existing raster formats and thus to become their "
+#| "universal replacement. </item>"
 msgctxt "@info:whatsthis"
 msgid ""
-"<item><emphasis strong='true'>JPEG-XL</emphasis>: It's a royalty-free raster-"
-"graphics file format that supports lossless compression. It is designed to "
-"outperform existing raster formats and thus to become their universal "
-"replacement. </item>"
+"<item><emphasis strong='true'>JPEG-XL</emphasis>: It is a royalty-free "
+"raster-graphics file format that supports lossless compression. It is "
+"designed to outperform existing raster formats and thus to become their "
+"universal replacement. </item>"
 msgstr ""
 "<item><emphasis strong='true'>JPEG-XL</emphasis>: Det är ett rastrerat "
 "grafikfilformat utan avgift som både stöder destruktiv och förlustfri "
 "datakomprimering. Det är konstruerat för att överträffa befintliga "
 "rastrerade format och därmed bli deras allmänna ersättning. </item>"
 
-#: core/utilities/setup/editor/setupversioning.cpp:525
-#, kde-kuit-format
+#: core/utilities/setup/editor/setupversioning.cpp:527
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:whatsthis"
+#| msgid ""
+#| "<item><emphasis strong='true'>WEBP</emphasis>: It's an image file format "
+#| "that Google has developed as a replacement for JPEG, PNG, and GIF file "
+#| "formats. Files are smaller for the same quality, or of higher quality for "
+#| "the same size. It supports both lossy and lossless compression</item>"
 msgctxt "@info:whatsthis"
 msgid ""
-"<item><emphasis strong='true'>WEBP</emphasis>: It's an image file format "
+"<item><emphasis strong='true'>WEBP</emphasis>: It is an image file format "
 "that Google has developed as a replacement for JPEG, PNG, and GIF file "
 "formats. Files are smaller for the same quality, or of higher quality for "
 "the same size. It supports both lossy and lossless compression</item>"
@@ -64889,7 +64984,7 @@ msgstr ""
 "Filer är mindre vid samma kvalitet, eller av högre kvalitet vid samma "
 "storlek. Det stöder både destruktiv och förlustfri komprimering.</item>"
 
-#: core/utilities/setup/editor/setupversioning.cpp:536
+#: core/utilities/setup/editor/setupversioning.cpp:538
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
