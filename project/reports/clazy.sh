@@ -19,6 +19,8 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
 . ./common.sh
 
+StartScript
+
 # Analyzer configuration.
 . ../../.clazy
 
@@ -119,3 +121,5 @@ fi
 cd $ORIG_WD
 
 rm -fr ../../build.clazy
+
+TerminateScript

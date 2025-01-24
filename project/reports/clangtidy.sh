@@ -17,6 +17,7 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
 . ./common.sh
 
+StartScript
 checksCPUCores
 
 # Check run-time dependencies
@@ -68,3 +69,4 @@ cd $ORIG_DIR
 
 rm -fr ../../build.tidy
 
+TerminateScript

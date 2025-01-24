@@ -22,6 +22,7 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 # Analyzer configuration.
 . ../../.cppcheck
 
+StartScript
 checksCPUCores
 
 ORIG_WD="`pwd`"
@@ -85,3 +86,4 @@ fi
 
 cd $ORIG_WD
 
+TerminateScript

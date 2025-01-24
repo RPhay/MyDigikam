@@ -67,3 +67,24 @@ function checksCPUCores()
 
     echo "CPU Cores to use : $CPU_CORES"
 }
+
+########################################################################
+# For time execution measurement ; startup
+StartScript()
+{
+
+BEGIN_SCRIPT=$(date +"%s")
+
+}
+
+########################################################################
+# For time execution measurement : shutdown
+TerminateScript()
+{
+
+TERMIN_SCRIPT=$(date +"%s")
+difftimelps=$(($TERMIN_SCRIPT-$BEGIN_SCRIPT))
+echo "Elaspsed time for script execution : $(($difftimelps / 3600 )) hours $((($difftimelps % 3600) / 60)) minutes $(($difftimelps % 60)) seconds"
+
+}
+

@@ -22,6 +22,7 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 # Analyzer configuration.
 . ../../.scan-build
 
+StartScript
 checksCPUCores
 
 # Check run-time dependencies
@@ -140,3 +141,5 @@ fi
 cd $ORIG_WD
 
 rm -fr ../../build.scan
+
+TerminateScript

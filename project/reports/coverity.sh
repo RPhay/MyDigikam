@@ -26,6 +26,7 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
 . ./common.sh
 
+StartScript
 checksCPUCores
 
 ORIG_WD="`pwd`"
@@ -175,3 +176,5 @@ else
     echo "Failed to upload tarball 'myproject.tgz' to Coverity Scan [$RVAL]"
 
 fi
+
+TerminateScript

@@ -27,6 +27,7 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
 . ./common.sh
 
+StartScript
 checksCPUCores
 
 # Check run-time dependencies
@@ -117,3 +118,5 @@ if [[ $1 != "--nowebupdate" ]] ; then
 fi
 
 cd $ORIG_WD
+
+TerminateScript
