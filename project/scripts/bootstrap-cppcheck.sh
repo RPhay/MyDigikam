@@ -24,12 +24,29 @@ export Options='-DANALYZE_MEMORY=OFF \
                 -DANALYZE_DATAFLOW=OFF \
                 -DWARNINGS_ARE_ERRORS=OFF \
                 -DENABLE_CHECK_INTERNAL=OFF \
-                -DENABLE_OSS_FUZZ=ON \
+                -DBUILD_CORE_DLL=OFF \
+                -DBUILD_TESTS=OFF \
+                -DREGISTER_TESTS=OFF \
+                -DDISABLE_DMAKE=OFF \
+                -DBUILD_MANPAGE=OFF \
+                -DBUILD_CLI=ON \
                 -DBUILD_GUI=OFF \
                 -DWITH_QCHART=OFF \
-                -DHAVE_RULES=OFF \
-                -DUSE_Z3=OFF \
-                -DBUILD_TESTS=OFF \
+                -DUSE_QT6=OFF \
+                -DREGISTER_GUI_TESTS=OFF \
+                -DBUILD_ONLINE_HELP=OFF \
+                -DHAVE_RULES=ON \
+                -DUSE_BUNDLED_TINYXML2=ON \
+                -DCPPCHK_GLIBCXX_DEBUG=OFF \
+                -DDISALLOW_THREAD_EXECUTOR=OFF \
+                -DUSE_BOOST=OFF \
+                -DUSE_BOOST_INT128=OFF \
+                -DUSE_LIBCXX=OFF \
+                -DDISABLE_CRTDBG_MAP_ALLOC=OFF \
+                -DNO_UNIX_SIGNAL_HANDLING=OFF \
+                -DNO_UNIX_BACKTRACE_SUPPORT=OFF \
+                -DNO_WINDOWS_SEH=OFF \
+                -DFILESDIR=OFF \
                 '
 
 cmake -G "$MAKEFILES_TYPE" . \
