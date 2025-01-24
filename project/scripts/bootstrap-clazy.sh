@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# SPDX-FileCopyrightText: 2008-2025 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2008-2024 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -22,7 +22,7 @@ export Options='-DCLAZY_AST_MATCHERS_CRASH_WORKAROUND=ON \
                 -DAPPIMAGE_HACK=OFF \
                 -DCLAZY_MAN_PAGE=OFF'
 
-cmake -G "$MAKEFILES_TYPE" . \
+/opt/qt6/bin/cmake -G "$MAKEFILES_TYPE" . \
       -DCMAKE_INSTALL_PREFIX=/opt/clazy \
       -Wno-dev \
       $Options \
