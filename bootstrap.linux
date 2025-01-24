@@ -47,6 +47,7 @@ elif [ -d /opt/qt5 ] ; then
 fi
 
 export exiv2_DIR=/opt/qt6/lib/cmake
+export OpenCV_DIR=/opt/qt6/lib/cmake
 
 command -v $QTPATHS >/dev/null 2>&1 || { echo >&2 "This script require $QTPATHS CLI tool from Qt project but it's not installed. Aborting."; exit 1; }
 
