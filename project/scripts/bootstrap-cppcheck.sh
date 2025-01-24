@@ -35,7 +35,7 @@ export Options='-DANALYZE_MEMORY=OFF \
                 -DUSE_QT6=OFF \
                 -DREGISTER_GUI_TESTS=OFF \
                 -DBUILD_ONLINE_HELP=OFF \
-                -DHAVE_RULES=ON \
+                -DHAVE_RULES=OFF \
                 -DUSE_BUNDLED_TINYXML2=ON \
                 -DCPPCHK_GLIBCXX_DEBUG=OFF \
                 -DDISALLOW_THREAD_EXECUTOR=OFF \
@@ -49,8 +49,8 @@ export Options='-DANALYZE_MEMORY=OFF \
                 -DFILESDIR=OFF \
                 '
 
-cmake -G "$MAKEFILES_TYPE" . \
-      -DCMAKE_INSTALL_PREFIX=/usr \
+/opt/qt6/bin/cmake -G "$MAKEFILES_TYPE" . \
+      -DCMAKE_INSTALL_PREFIX=/opt/cppcheck \
       -Wno-dev \
       $Options \
       ..
