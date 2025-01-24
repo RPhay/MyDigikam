@@ -358,7 +358,7 @@ bool UMSCamera::getMetadata(const QString& folder, const QString& itemName, DMet
     {
         // If no thumbnail sidecar file available, try to load image metadata for files.
 
-        ret = meta.load(fi.filePath());
+        ret = meta.load(fi.filePath(), true);
     }
 
     return ret;
