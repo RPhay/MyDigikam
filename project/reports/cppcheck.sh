@@ -69,6 +69,8 @@ cppcheck -j$CPU_CORES \
          $INCLUDE_DIRS \
          ../../core
 
+echo "Generating HTML reports..."
+
 cppcheck-htmlreport --file=report.cppcheck.xml \
                     --report-dir=$ORIG_WD/$REPORT_DIR \
                     --source-dir=. \
