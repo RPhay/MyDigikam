@@ -41,11 +41,8 @@ const QString DAboutData::digiKamSloganFormated()
     return i18nc("This is the slogan formatted string displayed in splashscreen. "
                  "Please translate using short words else the slogan can be truncated.",
                  "<qt><font color=\"white\">"
-                 "<b>Professional</b> Photo <b>Management</b> with the Power of <b>Open Source</b>"
-                 "</font><font color=\"gray\"><br/>"
-                 "<i>%1</i>"
-                 "</font></qt>",
-                 digiKamFamily()
+                 "<b>Professional</b> Photo <b>Management</b><br/>with the Power of <b>Open Source</b>"
+                 "</font></qt>"
                 );
 }
 

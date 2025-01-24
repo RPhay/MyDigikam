@@ -38,10 +38,11 @@ namespace Digikam
 
 class Q_DECL_HIDDEN DSplashScreen::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     int     state               = 0;
     int     progressBarSize     = 3;
@@ -190,16 +191,16 @@ void DSplashScreen::drawContents(QPainter* p)
 
     QFontMetrics fontMt(fnt);
     QRect r2 = fontMt.boundingRect(rect(), 0, d->version);
-    r2.moveTopLeft(QPoint(width()-r2.width()-10, r.y()));
+    r2.moveTopLeft(QPoint(width() - r2.width() - 10, r.y()));
     p->setPen(d->versionColor);
     p->drawText(r2, d->version);
 
     // -- Draw slogan and family ----------------------------------------------
 
-    // NOTE: splashscreen size is 469*288 pixels
+    // NOTE: splashscreen size is 500*307 pixels
 
     r = rect();
-    r.setCoords(r.x() + 190, r.y() + 215, r.x() + 462, r.y() + 315);
+    r.setCoords(r.x() + 207, r.y() + 234, r.x() + 497, r.y() + 277);
     p->translate(r.x(), r.y());
     QTextDocument slogan;
     slogan.setDefaultTextOption(QTextOption(Qt::AlignVCenter));
