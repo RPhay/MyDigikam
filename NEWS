@@ -8,6 +8,7 @@ Video:           Update internal QtAVPlayer to last 20250107 upstream (Qt5 only)
 Bundles:         Update to last ExifTool version 13.12.
 Bundles:         Linux AppImage Qt6 uses last Qt 6.8.1, KDE frameworks 6.10.0 and OPenCV 4.11.0.
 Bundles:         Linux AppImage Qt5 uses last Qt 5.15.16 and OPenCV 4.11.0.
+Bundles:         G'Mic-Qt BQM and Image Editor updated to last version 3.4.2.
 Setup:           Add new GPU hardware support options for decoding video with FFmpeg backend (Qt6 only).
 
 FaceEngine:      Complete rewrite of the Face Classifier and Face Pipeline implmentations.
