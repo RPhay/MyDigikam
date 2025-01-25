@@ -27,10 +27,16 @@ checksCPUCores
 
 ORIG_WD="`pwd`"
 REPORT_DIR="report.cppcheck"
+CPPCHECK_CACHE_DIR="$HOME/.cppcheck_cache"
 
 # Get active git branches to create report description string
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
 echo "CppCheck Static Analyzer task name: $TITLE"
+
+if [ ! -d "$CPPCHECK_CACHE_DIR" ]; then
+    mkdir "$CPPCHECK_CACHE_DIR"
+fi
+
 
 rm -fr $ORIG_WD/$REPORT_DIR
 
@@ -49,6 +55,7 @@ done
 echo "Cppcheck defines     : $CPPCHECK_DEFINES"
 echo "Cppcheck options     : $CPPCHECK_OPTIONS"
 echo "Cppcheck suppressions: $CPPCHECK_SUPPRESSIONS"
+echo "Cppcheck cache dir   : $CPPCHECK_CACHE_DIR"
 
 # List sub-dirs with headers to append as cppcheck includes paths
 HDIRS=$(find ../../core -name '*.h' -printf '%h\n' | sort -u)
@@ -64,6 +71,7 @@ cppcheck -j$CPU_CORES \
          --enable=all \
          --inconclusive \
          --check-level=exhaustive \
+         --cppcheck-build-dir=$CPPCHECK_CACHE_DIR \
          $CPPCHECK_SUPPRESSIONS \
          --xml-version=2 \
          --output-file=report.cppcheck.xml \
@@ -71,7 +79,7 @@ cppcheck -j$CPU_CORES \
          $INCLUDE_DIRS \
          ../../core
 
-echo "Generating HTML reports..."
+echo "Generating Cppcheck HTML reports..."
 
 cppcheck-htmlreport --file=report.cppcheck.xml \
                     --report-dir=$ORIG_WD/$REPORT_DIR \
