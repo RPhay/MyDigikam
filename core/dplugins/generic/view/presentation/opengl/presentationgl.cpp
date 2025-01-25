@@ -99,7 +99,7 @@ public:
 
     int                               i                 = 0;
     int                               dir               = 0;
-    float                             points[40][40][3] = { { { 0.0 } } };
+    double                            points[40][40][3] = { { { 0.0 } } };
 
     PresentationCtrlWidget*           slideCtrlWidget   = nullptr;
 
@@ -1442,9 +1442,9 @@ void PresentationGL::effectFlutter()
         {
             for (int y = 0 ; y < 40 ; ++y)
             {
-                d->points[x][y][0] = (float) (x / 20.0f - 1.0f);
-                d->points[x][y][1] = (float) (y / 20.0f - 1.0f);
-                d->points[x][y][2] = (float) sin((x / 20.0f - 1.0f) * 3.141592654 * 2.0f) / 5.0;
+                d->points[x][y][0] = (x / 20.0) - 1.0;
+                d->points[x][y][1] = (y / 20.0) - 1.0;
+                d->points[x][y][2] = sin((x / 20.0 - 1.0) * M_PI * 2.0) / 5.0;
             }
         }
     }
@@ -1471,36 +1471,36 @@ void PresentationGL::effectFlutter()
 
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    float rotate = 60.0 / 100.0 * (float)d->i;
+    double rotate = 60.0 / 100.0 * (double)d->i;
     glRotatef(rotate, 1.0f, 0.0f, 0.0f);
-    float scale  = 1.0 / 100.0 * (100.0 - (float)d->i);
+    double scale  = 1.0 / 100.0 * (100.0 - (double)d->i);
     glScalef(scale, scale, scale);
-    glTranslatef(1.0 / 100.0*(float)d->i, 1.0 / 100.0*(float)d->i, 0.0);
+    glTranslatef(1.0 / 100.0*(double)d->i, 1.0 / 100.0*(double)d->i, 0.0);
     glBindTexture(GL_TEXTURE_2D, ta);
 
     glBegin(GL_QUADS);
     {
         glColor4f(1.0, 1.0, 1.0, 1.0);
 
-        float float_x, float_y, float_xb, float_yb;
+        double float_x, float_y, float_xb, float_yb;
         int x, y;
 
         for (x = 0 ; x < 39 ; ++x)
         {
             for (y = 0 ; y < 39 ; ++y)
             {
-                float_x  = (float) x / 40.0f;
-                float_y  = (float) y / 40.0f;
-                float_xb = (float) (x + 1) / 40.0f;
-                float_yb = (float) (y + 1) / 40.0f;
+                float_x  = (double) x / 40.0;
+                float_y  = (double) y / 40.0;
+                float_xb = (double) (x + 1) / 40.0;
+                float_yb = (double) (y + 1) / 40.0;
                 glTexCoord2f(float_x, float_y);
-                glVertex3f(d->points[x][y][0], d->points[x][y][1], d->points[x][y][2]);
+                glVertex3f(d->points[x    ][y    ][0], d->points[x][y][1], d->points[x][y][2]);
                 glTexCoord2f(float_x, float_yb);
-                glVertex3f(d->points[x][y + 1][0], d->points[x][y + 1][1], d->points[x][y + 1][2]);
+                glVertex3f(d->points[x    ][y + 1][0], d->points[x][y + 1][1], d->points[x][y + 1][2]);
                 glTexCoord2f(float_xb, float_yb);
                 glVertex3f(d->points[x + 1][y + 1][0], d->points[x + 1][y + 1][1], d->points[x + 1][y + 1][2]);
                 glTexCoord2f(float_xb, float_y);
-                glVertex3f(d->points[x + 1][y][0], d->points[x + 1][y][1], d->points[x + 1][y][2]);
+                glVertex3f(d->points[x + 1][y    ][0], d->points[x + 1][y][1], d->points[x + 1][y][2]);
             }
         }
     }
@@ -1511,15 +1511,13 @@ void PresentationGL::effectFlutter()
 
     if ((d->i % 2) == 0)
     {
+        double hold = 0.0;
 
-        float hold;
-        int x, y;
-
-        for (y = 0 ; y < 40 ; ++y)
+        for (int y = 0 ; y < 40 ; ++y)
         {
             hold = d->points[0][y][2];
 
-            for (x = 0 ; x < 39 ; ++x)
+            for (int x = 0 ; x < 39 ; ++x)
             {
                 d->points[x][y][2] = d->points[x + 1][y][2];
             }
