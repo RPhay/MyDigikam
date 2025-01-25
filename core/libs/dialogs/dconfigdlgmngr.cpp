@@ -82,7 +82,7 @@ DConfigDlgMngr::DConfigDlgMngr(QWidget* const parent, KConfigSkeleton* const con
 {
     d->conf   = conf;
     d->dialog = parent;
-    init(true);
+    this->init(true);
 }
 
 DConfigDlgMngr::~DConfigDlgMngr()
