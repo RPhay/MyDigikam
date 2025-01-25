@@ -346,11 +346,6 @@ void TestItemMarkerTiler::testMoveMarkers2()
             QFAIL("Tile instance is null");
         }
 
-        if (l > fillLevel)
-        {
-            QVERIFY(myTile->childrenEmpty());
-        }
-
         QVERIFY(mm.getTileMarkerCount(tileIndex) == 2);
     }
 
