@@ -62,6 +62,7 @@ cppcheck -j$CPU_CORES \
          --verbose \
          $CPPCHECK_OPTIONS \
          --enable=all \
+         --inconclusive \
          --check-level=exhaustive \
          $CPPCHECK_SUPPRESSIONS \
          --xml-version=2 \
