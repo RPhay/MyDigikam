@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-24 01:54+0000\n"
+"POT-Creation-Date: 2025-01-25 01:56+0000\n"
 "PO-Revision-Date: 2024-11-28 20:24+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -18488,17 +18488,17 @@ msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:99
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
-#: core/libs/widgets/mainview/daboutdata.cpp:110
-#: core/libs/widgets/mainview/daboutdata.cpp:128
-#: core/libs/widgets/mainview/daboutdata.cpp:134
-#: core/libs/widgets/mainview/daboutdata.cpp:301
-#: core/libs/widgets/mainview/daboutdata.cpp:318
-#: core/libs/widgets/mainview/daboutdata.cpp:324
-#: core/libs/widgets/mainview/daboutdata.cpp:330
-#: core/libs/widgets/mainview/daboutdata.cpp:340
-#: core/libs/widgets/mainview/daboutdata.cpp:368
-#: core/libs/widgets/mainview/daboutdata.cpp:374
-#: core/libs/widgets/mainview/daboutdata.cpp:385
+#: core/libs/widgets/mainview/daboutdata.cpp:107
+#: core/libs/widgets/mainview/daboutdata.cpp:125
+#: core/libs/widgets/mainview/daboutdata.cpp:131
+#: core/libs/widgets/mainview/daboutdata.cpp:298
+#: core/libs/widgets/mainview/daboutdata.cpp:315
+#: core/libs/widgets/mainview/daboutdata.cpp:321
+#: core/libs/widgets/mainview/daboutdata.cpp:327
+#: core/libs/widgets/mainview/daboutdata.cpp:337
+#: core/libs/widgets/mainview/daboutdata.cpp:365
+#: core/libs/widgets/mainview/daboutdata.cpp:371
+#: core/libs/widgets/mainview/daboutdata.cpp:382
 #: core/utilities/geolocation/engine/plugins/PluginInterface.h:46
 #, kde-format
 msgid "Developer"
@@ -43322,48 +43322,54 @@ msgid "Show Thumbbar"
 msgstr "Показване на слотовете"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "This is the slogan formatted string displayed in splashscreen. Please "
+#| "translate using short words else the slogan can be truncated."
+#| msgid ""
+#| "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> "
+#| "with the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>"
+#| "%1</i></font></qt>"
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
 msgid ""
-"<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> with "
-"the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>%1</i></"
-"font></qt>"
+"<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b><br/"
+">with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
 "<qt><font color=\"white\"><b>Професионална</b> обработка на <b>снимки</b> "
 "със силата на <b>Отворения код</b></font><font color=\"gray\"><br/><i>%1</"
 "i></font></qt>"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:54
+#: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
 msgid "Professional Photo Management with the Power of Open Source"
 msgstr "Професионално обработване на снимки със силата на Отворения код"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:59
+#: core/libs/widgets/mainview/daboutdata.cpp:56
 #, kde-format
 msgid "A KDE Family Project"
 msgstr "Проект на семейството на KDE"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:64
+#: core/libs/widgets/mainview/daboutdata.cpp:61
 #, fuzzy, kde-format
 #| msgid "(c) 2001-2024, digiKam developers team"
 msgid "(c) 2001-2025, digiKam developers team"
 msgstr "(c) 2001-2024, digiKam developers team"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:77
+#: core/libs/widgets/mainview/daboutdata.cpp:74
 #, kde-format
 msgid "Coordinator, Developer, and Mentoring"
 msgstr "Координатор, разработка и напътствия"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:83
-#: core/libs/widgets/mainview/daboutdata.cpp:98
-#: core/libs/widgets/mainview/daboutdata.cpp:104
+#: core/libs/widgets/mainview/daboutdata.cpp:80
+#: core/libs/widgets/mainview/daboutdata.cpp:95
+#: core/libs/widgets/mainview/daboutdata.cpp:101
 #, kde-format
 msgid "Developer and Mentoring"
 msgstr "Разработка и напътствия"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:89
+#: core/libs/widgets/mainview/daboutdata.cpp:86
 #, fuzzy, kde-format
 #| msgid "SFace and YuNet DNN models integration. Face Management improvements"
 msgid ""
@@ -43374,7 +43380,7 @@ msgid ""
 msgstr ""
 "Интеграция на SFace и YuNet DNN модели. Подобрения в управлението на лица"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:116
+#: core/libs/widgets/mainview/daboutdata.cpp:113
 #, fuzzy, kde-format
 #| msgid ""
 #| "Mentoring, Port web-service tools to OAuth, factoring web service tools, "
@@ -43389,22 +43395,22 @@ msgstr ""
 "инструменти за уеб услуги ипорт за лицево разпознаване към невронната мрежа "
 "OpenCV"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:140
+#: core/libs/widgets/mainview/daboutdata.cpp:137
 #, kde-format
 msgid "Advanced Searches Tool Improvements"
 msgstr "Подобрения на инструмента за разширени търсения"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:145
+#: core/libs/widgets/mainview/daboutdata.cpp:142
 #, kde-format
 msgid "Releases Manager"
 msgstr "Мениджър на версиите"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:153
+#: core/libs/widgets/mainview/daboutdata.cpp:150
 #, kde-format
 msgid "Port to Qt6,"
 msgstr "Порт към Qt6,"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:159
+#: core/libs/widgets/mainview/daboutdata.cpp:156
 #, fuzzy, kde-format
 #| msgid ""
 #| "Rewrite Image Quality Sorter algorithms and Photo Focus Information "
@@ -43422,7 +43428,7 @@ msgstr ""
 "класифициране на изображенията с помощта на модел за дълбоко обучение, "
 "подобряване на инструментите за слайдшоу и презентация"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:169
+#: core/libs/widgets/mainview/daboutdata.cpp:166
 #, fuzzy, kde-format
 #| msgid ""
 #| "MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
@@ -43434,7 +43440,7 @@ msgstr ""
 "Плъгин за MJPEGStream, плъгин за конвертиране на текст OCR, енджин за "
 "поставяне на автоматични тагове"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:177
+#: core/libs/widgets/mainview/daboutdata.cpp:174
 #, fuzzy, kde-format
 #| msgid ""
 #| "Clustering support and improvement for Face Engine, Port Slideshow tool "
@@ -43447,12 +43453,12 @@ msgstr ""
 "Поддръжка и подобрение на клъстерирането за Face Engine, Пренасяне на "
 "инструмента за слайдшоу в интерфейса на приставките"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:185
+#: core/libs/widgets/mainview/daboutdata.cpp:182
 #, kde-format
 msgid "Face management workflow improvements"
 msgstr "Подобрения на работния процес за управление на лица"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:191
+#: core/libs/widgets/mainview/daboutdata.cpp:188
 #, fuzzy, kde-format
 #| msgid "UPNP/DLNA export tool, and Healing clone tool for image editor"
 msgid ""
@@ -43462,17 +43468,17 @@ msgstr ""
 "Инструмент за експортиране на UPNP/DLNA и инструмент за подобряване на копие "
 "за редактори на изображения"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:197
+#: core/libs/widgets/mainview/daboutdata.cpp:194
 #, kde-format
 msgid "Tags Manager"
 msgstr "Управление на тагове"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:203
+#: core/libs/widgets/mainview/daboutdata.cpp:200
 #, kde-format
 msgid "New OneDrive, Pinterrest, and Box export tools"
 msgstr "Нови инструменти за експортиране в OneDrive, Pinterrest и Box"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:209
+#: core/libs/widgets/mainview/daboutdata.cpp:206
 #, fuzzy, kde-format
 #| msgid "Face-engine improvements and manual icon-view sort"
 msgid ""
@@ -43481,139 +43487,139 @@ msgid ""
 msgstr ""
 "Подобрения на механизма за разпознаване на лица и ръчно сортиране на икони"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:215
+#: core/libs/widgets/mainview/daboutdata.cpp:212
 #, kde-format
 msgid "Model/View Port of Image Editor Canvas"
 msgstr "Порт на модела/изгледа на платното на редактора на изображения"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:221
+#: core/libs/widgets/mainview/daboutdata.cpp:218
 #: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:101
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Сортиране на качеството на изображението"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:227
+#: core/libs/widgets/mainview/daboutdata.cpp:224
 #, kde-format
 msgid "Face Detection"
 msgstr "Откриване на лица"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:233
+#: core/libs/widgets/mainview/daboutdata.cpp:230
 #, kde-format
 msgid "Non-destructive image editing"
 msgstr "Недеструктивно редактиране на изображения"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:239
+#: core/libs/widgets/mainview/daboutdata.cpp:236
 #, kde-format
 msgid "Reverse Geo-Coding"
 msgstr "Обратно геокодиране"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:245
+#: core/libs/widgets/mainview/daboutdata.cpp:242
 #, kde-format
 msgid "Face Recognition"
 msgstr "Разпознаване на лица"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:251
+#: core/libs/widgets/mainview/daboutdata.cpp:248
 #, kde-format
 msgid "Multi-core Support in Batch Queue Manager and Mentoring"
 msgstr ""
 "Мултипроцесорна поддръжка от мениджъра за пакетна обработка и напътствия"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:257
+#: core/libs/widgets/mainview/daboutdata.cpp:254
 #, fuzzy, kde-format
 #| msgid "UPnP / DLNA Export tool and Mentoring"
 msgid "UPnP/DLNA Export tool and Mentoring"
 msgstr "Инструмент за експортиранe на UPnP / DLNA и напътствия"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:263
+#: core/libs/widgets/mainview/daboutdata.cpp:260
 #, kde-format
 msgid "Model/View port of Import Tool and Mentoring"
 msgstr "Порт на Модел/Изглед на инструмент за импортиране и напътствия"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:269
+#: core/libs/widgets/mainview/daboutdata.cpp:266
 #, kde-format
 msgid "Video Metadata Support and Mentoring"
 msgstr "Поддръка на видео метаданни и напътствия"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:275
+#: core/libs/widgets/mainview/daboutdata.cpp:272
 #, kde-format
 msgid "Panorama Tool and Mentoring"
 msgstr "Инструмент за панорами и напътствия"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:281
+#: core/libs/widgets/mainview/daboutdata.cpp:278
 #, kde-format
 msgid "XML based GUI port of tools"
 msgstr "Пренасяне на инструменти с графичен интерфейс, базиран на XML"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:287
+#: core/libs/widgets/mainview/daboutdata.cpp:284
 #, kde-format
 msgid "Auto Noise Reduction"
 msgstr "Автоматично намаляване на шума"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:295
+#: core/libs/widgets/mainview/daboutdata.cpp:292
 #, kde-format
 msgid "Windows Port and Release Manager"
 msgstr "Мениджър на портове и издания за Windows"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:306
+#: core/libs/widgets/mainview/daboutdata.cpp:303
 #, kde-format
 msgid "Developer and Windows port"
 msgstr "Порт за разработчици и Windows"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:312
+#: core/libs/widgets/mainview/daboutdata.cpp:309
 #, kde-format
 msgid "LCMS2 library port"
 msgstr "LCMS2 library port"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:335
+#: core/libs/widgets/mainview/daboutdata.cpp:332
 #: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid "Color Management"
 msgstr "Управление на цветовете"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:346
+#: core/libs/widgets/mainview/daboutdata.cpp:343
 #, kde-format
 msgid "MySQL interface"
 msgstr "Интерфейс на MySQL"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:351
+#: core/libs/widgets/mainview/daboutdata.cpp:348
 #, kde-format
 msgid "Design, icons, logo, banner, mockup, beta tester"
 msgstr "Дизайн, икони, лого, банер, макет, бета тестер"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:356
-#: core/libs/widgets/mainview/daboutdata.cpp:362
+#: core/libs/widgets/mainview/daboutdata.cpp:353
+#: core/libs/widgets/mainview/daboutdata.cpp:359
 #, kde-format
 msgid "Bug reports and patches"
 msgstr "Съобщаване за грешки и поправки"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:380
+#: core/libs/widgets/mainview/daboutdata.cpp:377
 #, kde-format
 msgid "Webmaster"
 msgstr "Поддръжка на сайта"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:390
+#: core/libs/widgets/mainview/daboutdata.cpp:387
 #, kde-format
 msgid "Handbook writer, alpha tester, webmaster"
 msgstr "Автор на ръководство, алфа тестер, уебмастър"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:396
-#: core/libs/widgets/mainview/daboutdata.cpp:401
+#: core/libs/widgets/mainview/daboutdata.cpp:393
+#: core/libs/widgets/mainview/daboutdata.cpp:398
 #, kde-format
 msgid "Beta tester"
 msgstr "Бета-тестове"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:406
+#: core/libs/widgets/mainview/daboutdata.cpp:403
 #, kde-format
 msgid "Feedback and patches. Handbook writer"
 msgstr "Обратна връзка и поправки, автор на наръчника"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:411
+#: core/libs/widgets/mainview/daboutdata.cpp:408
 #, kde-format
 msgid "digiKam website banner and application icons"
 msgstr "Банер за интернет-сайта на digiKam и икони за програмата"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:416
+#: core/libs/widgets/mainview/daboutdata.cpp:413
 #, fuzzy, kde-format
 #| msgid "Various usability fixes and general application polishing"
 msgid ""
@@ -43623,33 +43629,33 @@ msgstr ""
 "Различни поправки за използваемост на интерфейса и общо подобряване на "
 "програмата"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:422
+#: core/libs/widgets/mainview/daboutdata.cpp:419
 #, kde-format
 msgid "digiKam website, Feedback"
 msgstr "Интернет-сайт на digiKam, обратна връзка"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:427
+#: core/libs/widgets/mainview/daboutdata.cpp:424
 #, kde-format
 msgid "Bug reports, feedback and icons"
 msgstr "Съобщаване за грешки и обратна връзка"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:434
+#: core/libs/widgets/mainview/daboutdata.cpp:431
 #, kde-format
 msgid "Developer (2001-2005)"
 msgstr "Разработчик (2001-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:440
-#: core/libs/widgets/mainview/daboutdata.cpp:446
+#: core/libs/widgets/mainview/daboutdata.cpp:437
+#: core/libs/widgets/mainview/daboutdata.cpp:443
 #, kde-format
 msgid "Developer (2004-2005)"
 msgstr "Разработчик (2004-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:452
+#: core/libs/widgets/mainview/daboutdata.cpp:449
 #, kde-format
 msgid "Developer (2004)"
 msgstr "Разработчик (2004)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:457
+#: core/libs/widgets/mainview/daboutdata.cpp:454
 #, fuzzy, kde-format
 #| msgid "Developer and Mentoring"
 msgid "Developer and Mentoring (2005-2012)"

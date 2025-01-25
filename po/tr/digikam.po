@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-24 01:54+0000\n"
-"PO-Revision-Date: 2025-01-23 12:31+0300\n"
+"POT-Creation-Date: 2025-01-25 01:56+0000\n"
+"PO-Revision-Date: 2025-01-24 16:41+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -7289,18 +7289,7 @@ msgid "An image loader based on Libpgf codec"
 msgstr "Libpgf kodlayıcısı temelli bir görsel yükleyicisi"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:78
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This plugin allows users to load and save image using Libpgf codec."
-#| "</para><para>The Progressive Graphics File (PGF) is an efficient image "
-#| "file format, that is based on a fast, discrete wavelet transform with "
-#| "progressive coding features. PGF can be used for lossless and lossy "
-#| "compression. It's most suitable for natural images. PGF can be used as a "
-#| "very efficient and fast replacement of JPEG-2000.</para><para>See <a "
-#| "href='https://en.wikipedia.org/wiki/"
-#| "Progressive_Graphics_File'>Progressive Graphics File documentation</a> "
-#| "for details.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This plugin allows users to load and save image using Libpgf codec.</"
@@ -18295,17 +18284,17 @@ msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:99
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
-#: core/libs/widgets/mainview/daboutdata.cpp:110
-#: core/libs/widgets/mainview/daboutdata.cpp:128
-#: core/libs/widgets/mainview/daboutdata.cpp:134
-#: core/libs/widgets/mainview/daboutdata.cpp:301
-#: core/libs/widgets/mainview/daboutdata.cpp:318
-#: core/libs/widgets/mainview/daboutdata.cpp:324
-#: core/libs/widgets/mainview/daboutdata.cpp:330
-#: core/libs/widgets/mainview/daboutdata.cpp:340
-#: core/libs/widgets/mainview/daboutdata.cpp:368
-#: core/libs/widgets/mainview/daboutdata.cpp:374
-#: core/libs/widgets/mainview/daboutdata.cpp:385
+#: core/libs/widgets/mainview/daboutdata.cpp:107
+#: core/libs/widgets/mainview/daboutdata.cpp:125
+#: core/libs/widgets/mainview/daboutdata.cpp:131
+#: core/libs/widgets/mainview/daboutdata.cpp:298
+#: core/libs/widgets/mainview/daboutdata.cpp:315
+#: core/libs/widgets/mainview/daboutdata.cpp:321
+#: core/libs/widgets/mainview/daboutdata.cpp:327
+#: core/libs/widgets/mainview/daboutdata.cpp:337
+#: core/libs/widgets/mainview/daboutdata.cpp:365
+#: core/libs/widgets/mainview/daboutdata.cpp:371
+#: core/libs/widgets/mainview/daboutdata.cpp:382
 #: core/utilities/geolocation/engine/plugins/PluginInterface.h:46
 #, kde-format
 msgid "Developer"
@@ -20781,12 +20770,7 @@ msgid "Soundtrack Preview:"
 msgstr "Film müziği önizlemesi:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:226
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-#| "will be played in loop. If the audio length is largest than video, it "
-#| "will be trimmed. Leave this setting empty if you don't want a soundtrack "
-#| "to the media.</i>"
+#, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
@@ -20818,14 +20802,7 @@ msgid "Number of Frames by Image:"
 msgstr "Görsel başına kare sayısı:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:90
-#, fuzzy, kde-format
-#| msgid ""
-#| "This value repeat one image in the sequence.\n"
-#| "While creating timelapse; it's usual to use 1.\n"
-#| "Typically, the number of frames will determine\n"
-#| "the time to show the same frame in the video.\n"
-#| "The result will depend of the number of frames\n"
-#| "per second used to encode the media."
+#, kde-format
 msgid ""
 "This value repeat one image in the sequence.\n"
 "While creating timelapse; it is usual to use 1.\n"
@@ -24347,8 +24324,7 @@ msgid "Export to &iNaturalist..."
 msgstr "&iNaturalist’e Dışa Aktar…"
 
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:259
-#, fuzzy, kde-format
-#| msgid "We're pretty sure it's in this %1."
+#, kde-format
 msgid "We are pretty sure it is in this %1."
 msgstr "Bunun %1 içinde olduğundan bayağı eminiz."
 
@@ -27385,8 +27361,7 @@ msgstr "“%1” künyesini “%2” içine birleştirmek istiyor musunuz?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:624
 #: core/libs/album/manager/albummanager_talbum.cpp:1138
-#, fuzzy, kde-format
-#| msgid "Don't ask again at this session"
+#, kde-format
 msgid "Do not ask again at this session"
 msgstr "Bu oturumda bir daha sorma"
 
@@ -36763,16 +36738,7 @@ msgstr ""
 "istiyorsanız <b>Yapılandır</b> düğmesine basın.</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:287
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version "
-#| "<i>%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
-#| "<b>Download</b> to get the file...</p><p>Note: from Setup/Misc panel, you "
-#| "can switch to check for weekly pre-release.<br/>Pre-release versions are "
-#| "dedicated to test quickly new features.<br/>It's not recommended to use "
-#| "pre-releases in production as bugs can remain,<br/>unless you know what "
-#| "you are doing.</p><p>Press <b>Configure</b> if you want to customize "
-#| "update options from setup dialog.</p>"
+#, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
 "%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
@@ -42780,47 +42746,53 @@ msgid "Show Thumbbar"
 msgstr "Küçük Görsel Çubuğunu Göster"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "This is the slogan formatted string displayed in splashscreen. Please "
+#| "translate using short words else the slogan can be truncated."
+#| msgid ""
+#| "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> "
+#| "with the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>"
+#| "%1</i></font></qt>"
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
 msgid ""
-"<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> with "
-"the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>%1</i></"
-"font></qt>"
+"<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b><br/"
+">with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
 "<qt><font color=\"white\"><b>Açık kaynağın</b> gücüyle <b>profesyonel</b> "
 "fotoğraf <b>yönetimi</b></font><font color=\"gray\"><br/><i>%1</i></font></"
 "qt>"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:54
+#: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
 msgid "Professional Photo Management with the Power of Open Source"
 msgstr "Açık kaynağın gücüyle profesyonel fotoğraf yönetimi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:59
+#: core/libs/widgets/mainview/daboutdata.cpp:56
 #, kde-format
 msgid "A KDE Family Project"
 msgstr "Bir KDE projesi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:64
+#: core/libs/widgets/mainview/daboutdata.cpp:61
 #, kde-format
 msgid "(c) 2001-2025, digiKam developers team"
 msgstr "© 2002–2025, digiKam geliştiricileri takımı"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:77
+#: core/libs/widgets/mainview/daboutdata.cpp:74
 #, kde-format
 msgid "Coordinator, Developer, and Mentoring"
 msgstr "Koordinatör, geliştirici ve danışmanlık"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:83
-#: core/libs/widgets/mainview/daboutdata.cpp:98
-#: core/libs/widgets/mainview/daboutdata.cpp:104
+#: core/libs/widgets/mainview/daboutdata.cpp:80
+#: core/libs/widgets/mainview/daboutdata.cpp:95
+#: core/libs/widgets/mainview/daboutdata.cpp:101
 #, kde-format
 msgid "Developer and Mentoring"
 msgstr "Geliştirici ve danışmanlık"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:89
+#: core/libs/widgets/mainview/daboutdata.cpp:86
 #, kde-format
 msgid ""
 "SFace and YuNet DNN models integration\n"
@@ -42834,7 +42806,7 @@ msgstr ""
 "yapay zeka iyileştirmeleri.\n"
 "Yapay zeka ile kırmızı göz algılaması."
 
-#: core/libs/widgets/mainview/daboutdata.cpp:116
+#: core/libs/widgets/mainview/daboutdata.cpp:113
 #, kde-format
 msgid ""
 "Mentoring, Port web-service tools to OAuth,\n"
@@ -42847,22 +42819,22 @@ msgstr ""
 "ve yüz tanıma işletkesini OpenCV sinirsel ağına\n"
 "taşıma"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:140
+#: core/libs/widgets/mainview/daboutdata.cpp:137
 #, kde-format
 msgid "Advanced Searches Tool Improvements"
 msgstr "Gelişmiş aramalar aracı iyileştirmeleri"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:145
+#: core/libs/widgets/mainview/daboutdata.cpp:142
 #, kde-format
 msgid "Releases Manager"
 msgstr "Yayımlama yöneticisi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:153
+#: core/libs/widgets/mainview/daboutdata.cpp:150
 #, kde-format
 msgid "Port to Qt6,"
 msgstr "Qt6 geçişi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:159
+#: core/libs/widgets/mainview/daboutdata.cpp:156
 #, kde-format
 msgid ""
 "Rewrite Image Quality Sorter algorithms\n"
@@ -42877,7 +42849,7 @@ msgstr ""
 "sınıflandırmak için Estetik Algılama ve Slayt\n"
 "Gösterisi/Sunum araçları iyileştirmeleri"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:169
+#: core/libs/widgets/mainview/daboutdata.cpp:166
 #, kde-format
 msgid ""
 "MJPEGStream plugin,\n"
@@ -42888,7 +42860,7 @@ msgstr ""
 "dönüştürücüsü eklentisi, kendiliğinden\n"
 "künye atama işletkesi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:177
+#: core/libs/widgets/mainview/daboutdata.cpp:174
 #, kde-format
 msgid ""
 "Face workflow Clustering support,\n"
@@ -42899,12 +42871,12 @@ msgstr ""
 "iyileştirmeleri, eklentiler arayüzü\n"
 "için slayt gösterisi aktarma desteği"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:185
+#: core/libs/widgets/mainview/daboutdata.cpp:182
 #, kde-format
 msgid "Face management workflow improvements"
 msgstr "Yüz yönetimi iş akışı iyileştirmeleri"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:191
+#: core/libs/widgets/mainview/daboutdata.cpp:188
 #, kde-format
 msgid ""
 "UPNP/DLNA export tool\n"
@@ -42913,17 +42885,17 @@ msgstr ""
 "UPNP/DLNA dışa aktarma aracı ve görsel\n"
 "düzenleyicisi için iyileştirme klonu"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:197
+#: core/libs/widgets/mainview/daboutdata.cpp:194
 #, kde-format
 msgid "Tags Manager"
 msgstr "Künyeler Yöneticisi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:203
+#: core/libs/widgets/mainview/daboutdata.cpp:200
 #, kde-format
 msgid "New OneDrive, Pinterrest, and Box export tools"
 msgstr "Yeni OneDrive, Pinterest ve Box dışa aktarma araçları"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:209
+#: core/libs/widgets/mainview/daboutdata.cpp:206
 #, kde-format
 msgid ""
 "Face-engine improvements\n"
@@ -42932,137 +42904,137 @@ msgstr ""
 "Yüz işletkesi iyileştirmeleri ve\n"
 "elle simge görüntüleme sıralaması"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:215
+#: core/libs/widgets/mainview/daboutdata.cpp:212
 #, kde-format
 msgid "Model/View Port of Image Editor Canvas"
 msgstr "Görsel düzenleyicisi tuvalinin model/görüntü geçişi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:221
+#: core/libs/widgets/mainview/daboutdata.cpp:218
 #: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:101
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Görsel Kalitesi Sıralayıcısı"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:227
+#: core/libs/widgets/mainview/daboutdata.cpp:224
 #, kde-format
 msgid "Face Detection"
 msgstr "Yüz Algılama"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:233
+#: core/libs/widgets/mainview/daboutdata.cpp:230
 #, kde-format
 msgid "Non-destructive image editing"
 msgstr "Yıkıcı olmayan görsel düzenleme"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:239
+#: core/libs/widgets/mainview/daboutdata.cpp:236
 #, kde-format
 msgid "Reverse Geo-Coding"
 msgstr "Coğrafi Kodlamayı Tersine Döndür"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:245
+#: core/libs/widgets/mainview/daboutdata.cpp:242
 #, kde-format
 msgid "Face Recognition"
 msgstr "Yüz Tanıma"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:251
+#: core/libs/widgets/mainview/daboutdata.cpp:248
 #, kde-format
 msgid "Multi-core Support in Batch Queue Manager and Mentoring"
 msgstr "Toplu kuyruk yöneticisinde birden çok çekirdek desteği ve danışmanlık"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:257
+#: core/libs/widgets/mainview/daboutdata.cpp:254
 #, kde-format
 msgid "UPnP/DLNA Export tool and Mentoring"
 msgstr "UPnP/DLNA dışa aktarma aracı ve danışmanlığı"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:263
+#: core/libs/widgets/mainview/daboutdata.cpp:260
 #, kde-format
 msgid "Model/View port of Import Tool and Mentoring"
 msgstr "İçe aktarma aracının model/görünüm geçişi ve danışmanlık"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:269
+#: core/libs/widgets/mainview/daboutdata.cpp:266
 #, kde-format
 msgid "Video Metadata Support and Mentoring"
 msgstr "Video üst veri desteği ve danışmanlık"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:275
+#: core/libs/widgets/mainview/daboutdata.cpp:272
 #, kde-format
 msgid "Panorama Tool and Mentoring"
 msgstr "Panorama aracı ve danışmanlık"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:281
+#: core/libs/widgets/mainview/daboutdata.cpp:278
 #, kde-format
 msgid "XML based GUI port of tools"
 msgstr "Araçların XML tabanlı arayüz geçişleri"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:287
+#: core/libs/widgets/mainview/daboutdata.cpp:284
 #, kde-format
 msgid "Auto Noise Reduction"
 msgstr "Kendiliğinden Gürültü Azaltma"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:295
+#: core/libs/widgets/mainview/daboutdata.cpp:292
 #, kde-format
 msgid "Windows Port and Release Manager"
 msgstr "Windows Sürümü ve Yayım Yöneticisi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:306
+#: core/libs/widgets/mainview/daboutdata.cpp:303
 #, kde-format
 msgid "Developer and Windows port"
 msgstr "Geliştirici ve Windows geçişi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:312
+#: core/libs/widgets/mainview/daboutdata.cpp:309
 #, kde-format
 msgid "LCMS2 library port"
 msgstr "LCMS2 kitaplığı geçişi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:335
+#: core/libs/widgets/mainview/daboutdata.cpp:332
 #: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid "Color Management"
 msgstr "Renk Yönetimi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:346
+#: core/libs/widgets/mainview/daboutdata.cpp:343
 #, kde-format
 msgid "MySQL interface"
 msgstr "MySQL arayüzü"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:351
+#: core/libs/widgets/mainview/daboutdata.cpp:348
 #, kde-format
 msgid "Design, icons, logo, banner, mockup, beta tester"
 msgstr "Tasarım, simgeler, logo, afiş, maket, beta sınayıcısı"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:356
-#: core/libs/widgets/mainview/daboutdata.cpp:362
+#: core/libs/widgets/mainview/daboutdata.cpp:353
+#: core/libs/widgets/mainview/daboutdata.cpp:359
 #, kde-format
 msgid "Bug reports and patches"
 msgstr "Hata raporları ve yamalar"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:380
+#: core/libs/widgets/mainview/daboutdata.cpp:377
 #, kde-format
 msgid "Webmaster"
 msgstr "Webmaster"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:390
+#: core/libs/widgets/mainview/daboutdata.cpp:387
 #, kde-format
 msgid "Handbook writer, alpha tester, webmaster"
 msgstr "El kitabı yazarı, alfa sınayıcısı, web uzmanı"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:396
-#: core/libs/widgets/mainview/daboutdata.cpp:401
+#: core/libs/widgets/mainview/daboutdata.cpp:393
+#: core/libs/widgets/mainview/daboutdata.cpp:398
 #, kde-format
 msgid "Beta tester"
 msgstr "Beta testçisi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:406
+#: core/libs/widgets/mainview/daboutdata.cpp:403
 #, kde-format
 msgid "Feedback and patches. Handbook writer"
 msgstr "Geri bildirimler ve yamalar. El kitabı yazarı"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:411
+#: core/libs/widgets/mainview/daboutdata.cpp:408
 #, kde-format
 msgid "digiKam website banner and application icons"
 msgstr "digiKam internet sitesi büyük başlık ve uygulama simgeleri"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:416
+#: core/libs/widgets/mainview/daboutdata.cpp:413
 #, kde-format
 msgid ""
 "Various usability fixes\n"
@@ -43071,33 +43043,33 @@ msgstr ""
 "Muhtelif kullanışlılık düzeltmeleri ve\n"
 "genel uygulama güzelleştirme"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:422
+#: core/libs/widgets/mainview/daboutdata.cpp:419
 #, kde-format
 msgid "digiKam website, Feedback"
 msgstr "digiKam internet sitesi, geri bildirim"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:427
+#: core/libs/widgets/mainview/daboutdata.cpp:424
 #, kde-format
 msgid "Bug reports, feedback and icons"
 msgstr "Hata raporları, geri bildirim ve simgeler"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:434
+#: core/libs/widgets/mainview/daboutdata.cpp:431
 #, kde-format
 msgid "Developer (2001-2005)"
 msgstr "Geliştirici (2001–2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:440
-#: core/libs/widgets/mainview/daboutdata.cpp:446
+#: core/libs/widgets/mainview/daboutdata.cpp:437
+#: core/libs/widgets/mainview/daboutdata.cpp:443
 #, kde-format
 msgid "Developer (2004-2005)"
 msgstr "Geliştirici (2004–2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:452
+#: core/libs/widgets/mainview/daboutdata.cpp:449
 #, kde-format
 msgid "Developer (2004)"
 msgstr "Geliştirici (2004)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:457
+#: core/libs/widgets/mainview/daboutdata.cpp:454
 #, kde-format
 msgid "Developer and Mentoring (2005-2012)"
 msgstr "Geliştirici ve danışmanlık"
@@ -47751,8 +47723,7 @@ msgstr "Seçili kullanıcı arayüzü dili %1, %2 için desteklenmiyor"
 #: core/libs/widgets/text/donlinetranslator.cpp:132
 #: core/libs/widgets/text/donlinetranslator.cpp:215
 #: core/libs/widgets/text/donlinetranslator.cpp:232
-#, fuzzy, kde-format
-#| msgid "%1 URL can't be empty."
+#, kde-format
 msgid "%1 URL cannot be empty."
 msgstr "%1 URL’si boş bırakılamaz."
 
@@ -49949,14 +49920,7 @@ msgstr "Sistem"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:370
 #: core/utilities/setup/misc/setupmisc.cpp:407
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check for new version option will verify the pre-releases.\n"
-#| "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
-#| "It's not recommended to use pre-release in production as bugs can "
-#| "remain,\n"
-#| "unless you know what you are doing.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
 "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
@@ -51993,23 +51957,7 @@ msgid "Extra Large"
 msgstr "Ekstra büyük"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p>Selecting <b>Extra Small</b> means the model will detect small "
-#| "background faces in addition to medium and larger faces. Selecting "
-#| "<b>Small Faces</b> increases the sensitivity of the model by tuning the "
-#| "model parameters. It will also increase the probability of false-"
-#| "positives, and it will increase detection time.</p><p>Selecting <b>Large</"
-#| "b> or <b>Extra Large</b> will eliminate small background faces from being "
-#| "detected. It is much faster and will reduce the number of false-"
-#| "positives, but will not detect small faces in the background or faces in "
-#| "large group photos.</p><p>If you want to detect all faces in one pass, "
-#| "select <b>Extra Small</b> faces and set the detection accuracy to 2. "
-#| "Unfortunately, this will create a significant number of false-positives. "
-#| "It's recommended to set a detection accuracy of 6-8 and face size of "
-#| "<b>Medium</b> or <b>Large</b> for normal use.</p><p>This setting applies "
-#| "only to YuNet.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
@@ -60628,9 +60576,7 @@ msgid "Use the last saved active tools and settings"
 msgstr "Son kaydedilen etkin araçları ve ayarları kullan"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores (when it's possible)"
+#, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it is possible)"
 msgstr "Tüm işlemci çekirdeklerinde çalış (olabildiğince)"
@@ -64935,24 +64881,7 @@ msgid "Always show intermediate snapshots"
 msgstr "Ara anlık görüntüleri her zaman göster"
 
 #: core/utilities/setup/editor/setupversioning.cpp:461
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG</emphasis>: It's the most commonly "
-#| "used file format, but it employs lossy compression, which means that with "
-#| "each saving operation some image information will be irreversibly lost. "
-#| "JPEG offers a good compression rate, resulting in smaller files. </"
-#| "item><item><emphasis strong='true'>PNG</emphasis>: A widely used format "
-#| "employing lossless compression. The files, though, will be larger because "
-#| "PNG does not achieve very good compression rates.</item><item><emphasis "
-#| "strong='true'>TIFF</emphasis>: A commonly used format, usually "
-#| "uncompressed or with modest lossless compression. Resulting files will be "
-#| "large, but without quality loss due to compression. </"
-#| "item><item><emphasis strong='true'>PGF</emphasis>: This is a technically "
-#| "superior file format offering good compression rates with either lossy or "
-#| "lossless compression. But it is not yet widely used and supported, so "
-#| "your friends may not directly be able to open these files, and you may "
-#| "not be able to directly publish them on the web. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG</emphasis>: It is the most commonly used "
@@ -64989,13 +64918,7 @@ msgstr ""
 "yayınlayamayabilirsiniz.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:494
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG-2000</emphasis>: It's similar to PGF. "
-#| "Loading or saving is slower, the compression rate is better, and the "
-#| "format more widely supported, though still not comparable to the "
-#| "tradition formats JPEG, PNG or TIFF. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-2000</emphasis>: It is similar to PGF. "
@@ -65023,13 +64946,7 @@ msgstr ""
 "kalitedeki JPEG’den daha az depolama alanı gerektirir. </item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:517
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG-XL</emphasis>: It's a royalty-free "
-#| "raster-graphics file format that supports lossless compression. It is "
-#| "designed to outperform existing raster formats and thus to become their "
-#| "universal replacement. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-XL</emphasis>: It is a royalty-free "
@@ -65043,13 +64960,7 @@ msgstr ""
 "alternatifi olacak şekilde tasarlanmıştır. </item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:527
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>WEBP</emphasis>: It's an image file format "
-#| "that Google has developed as a replacement for JPEG, PNG, and GIF file "
-#| "formats. Files are smaller for the same quality, or of higher quality for "
-#| "the same size. It supports both lossy and lossless compression</item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>WEBP</emphasis>: It is an image file format "

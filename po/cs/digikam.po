@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-24 01:54+0000\n"
+"POT-Creation-Date: 2025-01-25 01:56+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -17583,17 +17583,17 @@ msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:99
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
-#: core/libs/widgets/mainview/daboutdata.cpp:110
-#: core/libs/widgets/mainview/daboutdata.cpp:128
-#: core/libs/widgets/mainview/daboutdata.cpp:134
-#: core/libs/widgets/mainview/daboutdata.cpp:301
-#: core/libs/widgets/mainview/daboutdata.cpp:318
-#: core/libs/widgets/mainview/daboutdata.cpp:324
-#: core/libs/widgets/mainview/daboutdata.cpp:330
-#: core/libs/widgets/mainview/daboutdata.cpp:340
-#: core/libs/widgets/mainview/daboutdata.cpp:368
-#: core/libs/widgets/mainview/daboutdata.cpp:374
-#: core/libs/widgets/mainview/daboutdata.cpp:385
+#: core/libs/widgets/mainview/daboutdata.cpp:107
+#: core/libs/widgets/mainview/daboutdata.cpp:125
+#: core/libs/widgets/mainview/daboutdata.cpp:131
+#: core/libs/widgets/mainview/daboutdata.cpp:298
+#: core/libs/widgets/mainview/daboutdata.cpp:315
+#: core/libs/widgets/mainview/daboutdata.cpp:321
+#: core/libs/widgets/mainview/daboutdata.cpp:327
+#: core/libs/widgets/mainview/daboutdata.cpp:337
+#: core/libs/widgets/mainview/daboutdata.cpp:365
+#: core/libs/widgets/mainview/daboutdata.cpp:371
+#: core/libs/widgets/mainview/daboutdata.cpp:382
 #: core/utilities/geolocation/engine/plugins/PluginInterface.h:46
 #, kde-format
 msgid "Developer"
@@ -41476,48 +41476,54 @@ msgid "Show Thumbbar"
 msgstr "Zobrazit panel náhledů"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "This is the slogan formatted string displayed in splashscreen. Please "
+#| "translate using short words else the slogan can be truncated."
+#| msgid ""
+#| "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> "
+#| "with the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>"
+#| "%1</i></font></qt>"
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
 msgid ""
-"<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> with "
-"the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>%1</i></"
-"font></qt>"
+"<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b><br/"
+">with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
 "<qt><font color=\"white\"><b>Profesionální</b> <b>správa</b> fotografií "
 "pomocí <b>Otevřeného software</b></font><font color=\"gray\"><br/><i>%1</i></"
 "font></qt>"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:54
+#: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
 msgid "Professional Photo Management with the Power of Open Source"
 msgstr "Profesionální správa fotografií pomocí svobodného software"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:59
+#: core/libs/widgets/mainview/daboutdata.cpp:56
 #, kde-format
 msgid "A KDE Family Project"
 msgstr "Projekt z rodiny KDE"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:64
+#: core/libs/widgets/mainview/daboutdata.cpp:61
 #, fuzzy, kde-format
 #| msgid "(c) 2001-2024, digiKam developers team"
 msgid "(c) 2001-2025, digiKam developers team"
 msgstr "(c) 2001-2024, team vývojářů digiKam"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:77
+#: core/libs/widgets/mainview/daboutdata.cpp:74
 #, kde-format
 msgid "Coordinator, Developer, and Mentoring"
 msgstr "Koordinátor, vývojář a mentorování"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:83
-#: core/libs/widgets/mainview/daboutdata.cpp:98
-#: core/libs/widgets/mainview/daboutdata.cpp:104
+#: core/libs/widgets/mainview/daboutdata.cpp:80
+#: core/libs/widgets/mainview/daboutdata.cpp:95
+#: core/libs/widgets/mainview/daboutdata.cpp:101
 #, kde-format
 msgid "Developer and Mentoring"
 msgstr "Vývojář a mentorování"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:89
+#: core/libs/widgets/mainview/daboutdata.cpp:86
 #, kde-format
 msgid ""
 "SFace and YuNet DNN models integration\n"
@@ -41526,7 +41532,7 @@ msgid ""
 "AI red eyes detection"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:116
+#: core/libs/widgets/mainview/daboutdata.cpp:113
 #, kde-format
 msgid ""
 "Mentoring, Port web-service tools to OAuth,\n"
@@ -41535,22 +41541,22 @@ msgid ""
 "to OpenCV neural network"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:140
+#: core/libs/widgets/mainview/daboutdata.cpp:137
 #, kde-format
 msgid "Advanced Searches Tool Improvements"
 msgstr "Vylepšení nástroje Pokročilé hledání"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:145
+#: core/libs/widgets/mainview/daboutdata.cpp:142
 #, kde-format
 msgid "Releases Manager"
 msgstr "Správce vydání"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:153
+#: core/libs/widgets/mainview/daboutdata.cpp:150
 #, kde-format
 msgid "Port to Qt6,"
 msgstr "Portování na Qt6"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:159
+#: core/libs/widgets/mainview/daboutdata.cpp:156
 #, kde-format
 msgid ""
 "Rewrite Image Quality Sorter algorithms\n"
@@ -41560,7 +41566,7 @@ msgid ""
 "Slideshow and Presentation tools improvement"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:169
+#: core/libs/widgets/mainview/daboutdata.cpp:166
 #, kde-format
 msgid ""
 "MJPEGStream plugin,\n"
@@ -41568,7 +41574,7 @@ msgid ""
 "auto-tags assignment engine"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:177
+#: core/libs/widgets/mainview/daboutdata.cpp:174
 #, kde-format
 msgid ""
 "Face workflow Clustering support,\n"
@@ -41576,12 +41582,12 @@ msgid ""
 "Port Slideshow tool to plugins interface"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:185
+#: core/libs/widgets/mainview/daboutdata.cpp:182
 #, kde-format
 msgid "Face management workflow improvements"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:191
+#: core/libs/widgets/mainview/daboutdata.cpp:188
 #, fuzzy, kde-format
 #| msgid "UPnP / DLNA Export tool and Mentoring"
 msgid ""
@@ -41589,155 +41595,155 @@ msgid ""
 "and Healing clone tool for image editor"
 msgstr "Nástroj UPnP / DLNA Export a mentorování"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:197
+#: core/libs/widgets/mainview/daboutdata.cpp:194
 #, kde-format
 msgid "Tags Manager"
 msgstr "Správce značek"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:203
+#: core/libs/widgets/mainview/daboutdata.cpp:200
 #, kde-format
 msgid "New OneDrive, Pinterrest, and Box export tools"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:209
+#: core/libs/widgets/mainview/daboutdata.cpp:206
 #, kde-format
 msgid ""
 "Face-engine improvements\n"
 "and manual icon-view sort"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:215
+#: core/libs/widgets/mainview/daboutdata.cpp:212
 #, kde-format
 msgid "Model/View Port of Image Editor Canvas"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:221
+#: core/libs/widgets/mainview/daboutdata.cpp:218
 #: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:101
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Seřazovač kvality obrázků"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:227
+#: core/libs/widgets/mainview/daboutdata.cpp:224
 #, kde-format
 msgid "Face Detection"
 msgstr "Detekce obličeje"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:233
+#: core/libs/widgets/mainview/daboutdata.cpp:230
 #, kde-format
 msgid "Non-destructive image editing"
 msgstr "Nedestruktivní úpravy obrázku"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:239
+#: core/libs/widgets/mainview/daboutdata.cpp:236
 #, kde-format
 msgid "Reverse Geo-Coding"
 msgstr "Reverzní geolokace"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:245
+#: core/libs/widgets/mainview/daboutdata.cpp:242
 #, kde-format
 msgid "Face Recognition"
 msgstr "Detekce obličeje"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:251
+#: core/libs/widgets/mainview/daboutdata.cpp:248
 #, kde-format
 msgid "Multi-core Support in Batch Queue Manager and Mentoring"
 msgstr "Podpora více jader u Správce dávkového zpracování a mentorování"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:257
+#: core/libs/widgets/mainview/daboutdata.cpp:254
 #, fuzzy, kde-format
 #| msgid "UPnP / DLNA Export tool and Mentoring"
 msgid "UPnP/DLNA Export tool and Mentoring"
 msgstr "Nástroj UPnP / DLNA Export a mentorování"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:263
+#: core/libs/widgets/mainview/daboutdata.cpp:260
 #, kde-format
 msgid "Model/View port of Import Tool and Mentoring"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:269
+#: core/libs/widgets/mainview/daboutdata.cpp:266
 #, kde-format
 msgid "Video Metadata Support and Mentoring"
 msgstr "Podpora video metadat a mentorování"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:275
+#: core/libs/widgets/mainview/daboutdata.cpp:272
 #, kde-format
 msgid "Panorama Tool and Mentoring"
 msgstr "Nástroj Panorama a mentorování"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:281
+#: core/libs/widgets/mainview/daboutdata.cpp:278
 #, kde-format
 msgid "XML based GUI port of tools"
 msgstr "Port nástrojů GUI založený na XML"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:287
+#: core/libs/widgets/mainview/daboutdata.cpp:284
 #, kde-format
 msgid "Auto Noise Reduction"
 msgstr "Automatické potlačení šumu"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:295
+#: core/libs/widgets/mainview/daboutdata.cpp:292
 #, kde-format
 msgid "Windows Port and Release Manager"
 msgstr "Port na Windows a Release Manager"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:306
+#: core/libs/widgets/mainview/daboutdata.cpp:303
 #, kde-format
 msgid "Developer and Windows port"
 msgstr "Vývojář a správce portu na Windows"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:312
+#: core/libs/widgets/mainview/daboutdata.cpp:309
 #, kde-format
 msgid "LCMS2 library port"
 msgstr "Port knihovny LCMS2"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:335
+#: core/libs/widgets/mainview/daboutdata.cpp:332
 #: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid "Color Management"
 msgstr "Správa barev"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:346
+#: core/libs/widgets/mainview/daboutdata.cpp:343
 #, kde-format
 msgid "MySQL interface"
 msgstr "Rozhraní MySQL"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:351
+#: core/libs/widgets/mainview/daboutdata.cpp:348
 #, kde-format
 msgid "Design, icons, logo, banner, mockup, beta tester"
 msgstr "Návrh, ikony, logo, banner, nápady, beta testování"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:356
-#: core/libs/widgets/mainview/daboutdata.cpp:362
+#: core/libs/widgets/mainview/daboutdata.cpp:353
+#: core/libs/widgets/mainview/daboutdata.cpp:359
 #, kde-format
 msgid "Bug reports and patches"
 msgstr "Hlášení chyb a opravy"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:380
+#: core/libs/widgets/mainview/daboutdata.cpp:377
 #, kde-format
 msgid "Webmaster"
 msgstr "Správce webu"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:390
+#: core/libs/widgets/mainview/daboutdata.cpp:387
 #, kde-format
 msgid "Handbook writer, alpha tester, webmaster"
 msgstr "Autor příručky, testování alfa-verze, správce webu"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:396
-#: core/libs/widgets/mainview/daboutdata.cpp:401
+#: core/libs/widgets/mainview/daboutdata.cpp:393
+#: core/libs/widgets/mainview/daboutdata.cpp:398
 #, kde-format
 msgid "Beta tester"
 msgstr "Beta tester"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:406
+#: core/libs/widgets/mainview/daboutdata.cpp:403
 #, kde-format
 msgid "Feedback and patches. Handbook writer"
 msgstr "Zpětná vazba a opravy. Autor příručky"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:411
+#: core/libs/widgets/mainview/daboutdata.cpp:408
 #, kde-format
 msgid "digiKam website banner and application icons"
 msgstr "banner digiKam a ikony aplikace"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:416
+#: core/libs/widgets/mainview/daboutdata.cpp:413
 #, fuzzy, kde-format
 #| msgid "Various usability fixes and general application polishing"
 msgid ""
@@ -41745,33 +41751,33 @@ msgid ""
 "and general application polishing"
 msgstr "Různé opravy a vylepšení"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:422
+#: core/libs/widgets/mainview/daboutdata.cpp:419
 #, kde-format
 msgid "digiKam website, Feedback"
 msgstr "Stránky digiKam, zpětná vazba"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:427
+#: core/libs/widgets/mainview/daboutdata.cpp:424
 #, kde-format
 msgid "Bug reports, feedback and icons"
 msgstr "Hlášení chyb, opravy a ikony"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:434
+#: core/libs/widgets/mainview/daboutdata.cpp:431
 #, kde-format
 msgid "Developer (2001-2005)"
 msgstr "Vývojář (2001-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:440
-#: core/libs/widgets/mainview/daboutdata.cpp:446
+#: core/libs/widgets/mainview/daboutdata.cpp:437
+#: core/libs/widgets/mainview/daboutdata.cpp:443
 #, kde-format
 msgid "Developer (2004-2005)"
 msgstr "Vývojář (2004-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:452
+#: core/libs/widgets/mainview/daboutdata.cpp:449
 #, kde-format
 msgid "Developer (2004)"
 msgstr "Vývojář (2004)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:457
+#: core/libs/widgets/mainview/daboutdata.cpp:454
 #, fuzzy, kde-format
 #| msgid "Developer and Mentoring"
 msgid "Developer and Mentoring (2005-2012)"

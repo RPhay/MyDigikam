@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-24 01:54+0000\n"
+"POT-Creation-Date: 2025-01-25 01:56+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -6999,18 +6999,7 @@ msgid "An image loader based on Libpgf codec"
 msgstr "基于 Libpgf 编解码器的图像加载程序"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:78
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This plugin allows users to load and save image using Libpgf codec."
-#| "</para><para>The Progressive Graphics File (PGF) is an efficient image "
-#| "file format, that is based on a fast, discrete wavelet transform with "
-#| "progressive coding features. PGF can be used for lossless and lossy "
-#| "compression. It's most suitable for natural images. PGF can be used as a "
-#| "very efficient and fast replacement of JPEG-2000.</para><para>See <a "
-#| "href='https://en.wikipedia.org/wiki/"
-#| "Progressive_Graphics_File'>Progressive Graphics File documentation</a> "
-#| "for details.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This plugin allows users to load and save image using Libpgf codec.</"
@@ -7022,12 +7011,6 @@ msgid ""
 "org/wiki/Progressive_Graphics_File'>Progressive Graphics File documentation</"
 "a> for details.</para>"
 msgstr ""
-"<para>用于通过 Ligpgf 编解码器程序库加载和保存图像的插件。</para><para>渐进式"
-"图形文件 (PGF) 是一种高效的图像文件格式，它基于一种快速的离散小波变换算法，并"
-"带有渐进编码功能。PGF 支持使用无损和有损压缩方式。它最适合用于自然图像。PGF "
-"可作为 JPEG-2000 的一种高效且快速的替代方案。</para><para>详情请参见 <a "
-"href='https://en.wikipedia.org/wiki/Progressive_Graphics_File'>PGF 格式的介绍"
-"文档</a>。</para>"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:106
 #, kde-format
@@ -17597,17 +17580,17 @@ msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:99
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
-#: core/libs/widgets/mainview/daboutdata.cpp:110
-#: core/libs/widgets/mainview/daboutdata.cpp:128
-#: core/libs/widgets/mainview/daboutdata.cpp:134
-#: core/libs/widgets/mainview/daboutdata.cpp:301
-#: core/libs/widgets/mainview/daboutdata.cpp:318
-#: core/libs/widgets/mainview/daboutdata.cpp:324
-#: core/libs/widgets/mainview/daboutdata.cpp:330
-#: core/libs/widgets/mainview/daboutdata.cpp:340
-#: core/libs/widgets/mainview/daboutdata.cpp:368
-#: core/libs/widgets/mainview/daboutdata.cpp:374
-#: core/libs/widgets/mainview/daboutdata.cpp:385
+#: core/libs/widgets/mainview/daboutdata.cpp:107
+#: core/libs/widgets/mainview/daboutdata.cpp:125
+#: core/libs/widgets/mainview/daboutdata.cpp:131
+#: core/libs/widgets/mainview/daboutdata.cpp:298
+#: core/libs/widgets/mainview/daboutdata.cpp:315
+#: core/libs/widgets/mainview/daboutdata.cpp:321
+#: core/libs/widgets/mainview/daboutdata.cpp:327
+#: core/libs/widgets/mainview/daboutdata.cpp:337
+#: core/libs/widgets/mainview/daboutdata.cpp:365
+#: core/libs/widgets/mainview/daboutdata.cpp:371
+#: core/libs/widgets/mainview/daboutdata.cpp:382
 #: core/utilities/geolocation/engine/plugins/PluginInterface.h:46
 #, kde-format
 msgid "Developer"
@@ -19991,20 +19974,13 @@ msgid "Soundtrack Preview:"
 msgstr "音轨预览："
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:226
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-#| "will be played in loop. If the audio length is largest than video, it "
-#| "will be trimmed. Leave this setting empty if you don't want a soundtrack "
-#| "to the media.</i>"
+#, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
 "be trimmed. Leave this setting empty if you do not want a soundtrack to the "
 "media.</i>"
 msgstr ""
-"<i>关于音轨的提示：如果音频长度短于视频长度，则音频会循环播放。如果音频长度长"
-"于视频长度，则音频将被截断。如果您不想在视频中包含音轨，请将此选项留空。</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:247
 #, kde-format
@@ -20027,14 +20003,7 @@ msgid "Number of Frames by Image:"
 msgstr "图像停留帧数："
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:90
-#, fuzzy, kde-format
-#| msgid ""
-#| "This value repeat one image in the sequence.\n"
-#| "While creating timelapse; it's usual to use 1.\n"
-#| "Typically, the number of frames will determine\n"
-#| "the time to show the same frame in the video.\n"
-#| "The result will depend of the number of frames\n"
-#| "per second used to encode the media."
+#, kde-format
 msgid ""
 "This value repeat one image in the sequence.\n"
 "While creating timelapse; it is usual to use 1.\n"
@@ -20043,10 +20012,6 @@ msgid ""
 "The result will depend of the number of frames\n"
 "per second used to encode the media."
 msgstr ""
-"此值用于控制图像在帧序列中停留的帧数。\n"
-"创建延时序列时一般设置为 1。典型情况下，\n"
-"此帧数将决定某一帧在视频中显示的时间。\n"
-"最终效果取决于编码媒体时使用的每秒帧数。"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:99
 #, kde-format
@@ -23476,10 +23441,9 @@ msgid "Export to &iNaturalist..."
 msgstr "导出到 &iNaturalist..."
 
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:259
-#, fuzzy, kde-format
-#| msgid "We're pretty sure it's in this %1."
+#, kde-format
 msgid "We are pretty sure it is in this %1."
-msgstr "我们非常确定它属于此%1。"
+msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:269
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:274
@@ -26446,10 +26410,9 @@ msgstr "您想要将“%1”标签合并到“%2”标签吗？"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:624
 #: core/libs/album/manager/albummanager_talbum.cpp:1138
-#, fuzzy, kde-format
-#| msgid "Don't ask again at this session"
+#, kde-format
 msgid "Do not ask again at this session"
-msgstr "不要在此次使用过程中再次询问"
+msgstr ""
 
 #: core/libs/album/manager/albummanager_talbum.cpp:700
 #, kde-format
@@ -35549,16 +35512,7 @@ msgstr ""
 "话框中配置更新选项。</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:287
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version "
-#| "<i>%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
-#| "<b>Download</b> to get the file...</p><p>Note: from Setup/Misc panel, you "
-#| "can switch to check for weekly pre-release.<br/>Pre-release versions are "
-#| "dedicated to test quickly new features.<br/>It's not recommended to use "
-#| "pre-releases in production as bugs can remain,<br/>unless you know what "
-#| "you are doing.</p><p>Press <b>Configure</b> if you want to customize "
-#| "update options from setup dialog.</p>"
+#, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
 "%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
@@ -35569,12 +35523,6 @@ msgid ""
 "doing.</p><p>Press <b>Configure</b> if you want to customize update options "
 "from setup dialog.</p>"
 msgstr ""
-"<p>当前使用的 <b>%1</b> 稳定版本为 <i>%2</i></p><p>最新的稳定版本为 <i>%3</"
-"i>，已上传到<a href='%4'>此软件仓库</a>。</p><p>请点击<b>下载</b>获取安装程"
-"序。</p><p>提示：在配置/其他页面您可以设置更新程序检查每周测试版本的更新。"
-"<br/>测试版本用于对正在开发的新功能进行前期测试。<br/>测试版本可能存在尚未修"
-"复的严重缺陷，不建议用于生产用途。<br/>请在了解具体情况和风险自担的前提下使用"
-"测试版本。</p><p>点击 <b>配置</b>可在设置对话框中配置更新选项。</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:315
 #, kde-format
@@ -38052,7 +38000,7 @@ msgstr "已扫描对象的项目：%1\n"
 #: core/libs/tags/autoassignment/autotagsengine.cpp:249
 #, kde-format
 msgid "Object Scanning: %1\n"
-msgstr ""
+msgstr "正在扫描对象：%1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
@@ -41371,46 +41319,52 @@ msgid "Show Thumbbar"
 msgstr "显示缩略图栏"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "This is the slogan formatted string displayed in splashscreen. Please "
+#| "translate using short words else the slogan can be truncated."
+#| msgid ""
+#| "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> "
+#| "with the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>"
+#| "%1</i></font></qt>"
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
 msgid ""
-"<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> with "
-"the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>%1</i></"
-"font></qt>"
+"<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b><br/"
+">with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
 "<qt><font color=\"white\"><b>自由开源的专业照片管理工具</b></font><font "
 "color=\"gray\"><br/><b>%1</b></font></qt>"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:54
+#: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
 msgid "Professional Photo Management with the Power of Open Source"
 msgstr "自由开源的专业照片管理工具"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:59
+#: core/libs/widgets/mainview/daboutdata.cpp:56
 #, kde-format
 msgid "A KDE Family Project"
 msgstr "KDE 社区软件项目"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:64
+#: core/libs/widgets/mainview/daboutdata.cpp:61
 #, kde-format
 msgid "(c) 2001-2025, digiKam developers team"
 msgstr "(c) 2001-2025, digiKam developers team"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:77
+#: core/libs/widgets/mainview/daboutdata.cpp:74
 #, kde-format
 msgid "Coordinator, Developer, and Mentoring"
 msgstr "协调人员、开发人员、开发者导师"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:83
-#: core/libs/widgets/mainview/daboutdata.cpp:98
-#: core/libs/widgets/mainview/daboutdata.cpp:104
+#: core/libs/widgets/mainview/daboutdata.cpp:80
+#: core/libs/widgets/mainview/daboutdata.cpp:95
+#: core/libs/widgets/mainview/daboutdata.cpp:101
 #, kde-format
 msgid "Developer and Mentoring"
 msgstr "开发人员、开发者导师"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:89
+#: core/libs/widgets/mainview/daboutdata.cpp:86
 #, kde-format
 msgid ""
 "SFace and YuNet DNN models integration\n"
@@ -41423,7 +41377,7 @@ msgstr ""
 "人脸管理和自动标签的 AI 改进。\n"
 "AI 红颜检测"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:116
+#: core/libs/widgets/mainview/daboutdata.cpp:113
 #, kde-format
 msgid ""
 "Mentoring, Port web-service tools to OAuth,\n"
@@ -41436,22 +41390,22 @@ msgstr ""
 "移植人脸识别引擎\n"
 "到 OpenCV 神经网络"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:140
+#: core/libs/widgets/mainview/daboutdata.cpp:137
 #, kde-format
 msgid "Advanced Searches Tool Improvements"
 msgstr "高级搜索工具改进"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:145
+#: core/libs/widgets/mainview/daboutdata.cpp:142
 #, kde-format
 msgid "Releases Manager"
 msgstr "软件发布管理人员"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:153
+#: core/libs/widgets/mainview/daboutdata.cpp:150
 #, kde-format
 msgid "Port to Qt6,"
 msgstr "移植到 Qt6"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:159
+#: core/libs/widgets/mainview/daboutdata.cpp:156
 #, kde-format
 msgid ""
 "Rewrite Image Quality Sorter algorithms\n"
@@ -41466,7 +41420,7 @@ msgstr ""
 "来判断图像的美感好坏、\n"
 "幻灯片和演示工具改进"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:169
+#: core/libs/widgets/mainview/daboutdata.cpp:166
 #, kde-format
 msgid ""
 "MJPEGStream plugin,\n"
@@ -41477,7 +41431,7 @@ msgstr ""
 "OCR 文本转换插件、\n"
 "自动标签作业引擎"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:177
+#: core/libs/widgets/mainview/daboutdata.cpp:174
 #, kde-format
 msgid ""
 "Face workflow Clustering support,\n"
@@ -41488,12 +41442,12 @@ msgstr ""
 "和人脸识别引擎改进、\n"
 "移植幻灯片工具到插件界面"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:185
+#: core/libs/widgets/mainview/daboutdata.cpp:182
 #, kde-format
 msgid "Face management workflow improvements"
 msgstr "人脸识别工作流程改进"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:191
+#: core/libs/widgets/mainview/daboutdata.cpp:188
 #, kde-format
 msgid ""
 "UPNP/DLNA export tool\n"
@@ -41502,17 +41456,17 @@ msgstr ""
 "UPnP/DLNA 导出工具、\n"
 "图像编辑器的仿制图章工具"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:197
+#: core/libs/widgets/mainview/daboutdata.cpp:194
 #, kde-format
 msgid "Tags Manager"
 msgstr "标签管理器"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:203
+#: core/libs/widgets/mainview/daboutdata.cpp:200
 #, kde-format
 msgid "New OneDrive, Pinterrest, and Box export tools"
 msgstr "新版 OneDrive、Pinterrest和Box 导出工具"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:209
+#: core/libs/widgets/mainview/daboutdata.cpp:206
 #, kde-format
 msgid ""
 "Face-engine improvements\n"
@@ -41521,137 +41475,137 @@ msgstr ""
 "人脸识别引擎改进\n"
 "和图标视图手动排序"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:215
+#: core/libs/widgets/mainview/daboutdata.cpp:212
 #, kde-format
 msgid "Model/View Port of Image Editor Canvas"
 msgstr "图像编辑器视图的模型/视图移植"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:221
+#: core/libs/widgets/mainview/daboutdata.cpp:218
 #: core/utilities/maintenance/main/maintenancedlg.cpp:264
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:101
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "图像品质分类器"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:227
+#: core/libs/widgets/mainview/daboutdata.cpp:224
 #, kde-format
 msgid "Face Detection"
 msgstr "人脸检测"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:233
+#: core/libs/widgets/mainview/daboutdata.cpp:230
 #, kde-format
 msgid "Non-destructive image editing"
 msgstr "非破坏性图像编辑"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:239
+#: core/libs/widgets/mainview/daboutdata.cpp:236
 #, kde-format
 msgid "Reverse Geo-Coding"
 msgstr "反向地理编码"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:245
+#: core/libs/widgets/mainview/daboutdata.cpp:242
 #, kde-format
 msgid "Face Recognition"
 msgstr "人脸识别"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:251
+#: core/libs/widgets/mainview/daboutdata.cpp:248
 #, kde-format
 msgid "Multi-core Support in Batch Queue Manager and Mentoring"
 msgstr "批处理管理器多核心支持、开发者导师"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:257
+#: core/libs/widgets/mainview/daboutdata.cpp:254
 #, kde-format
 msgid "UPnP/DLNA Export tool and Mentoring"
 msgstr "UPnP / DLNA 导出工具以及指导"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:263
+#: core/libs/widgets/mainview/daboutdata.cpp:260
 #, kde-format
 msgid "Model/View port of Import Tool and Mentoring"
 msgstr "导入工具的模型和视图移植、开发者导师"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:269
+#: core/libs/widgets/mainview/daboutdata.cpp:266
 #, kde-format
 msgid "Video Metadata Support and Mentoring"
 msgstr "视频元数据支持、开发者导师"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:275
+#: core/libs/widgets/mainview/daboutdata.cpp:272
 #, kde-format
 msgid "Panorama Tool and Mentoring"
 msgstr "全景图工具、开发者导师"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:281
+#: core/libs/widgets/mainview/daboutdata.cpp:278
 #, kde-format
 msgid "XML based GUI port of tools"
 msgstr "移植工具到基于 XML 的界面"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:287
+#: core/libs/widgets/mainview/daboutdata.cpp:284
 #, kde-format
 msgid "Auto Noise Reduction"
 msgstr "自动降噪工具"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:295
+#: core/libs/widgets/mainview/daboutdata.cpp:292
 #, kde-format
 msgid "Windows Port and Release Manager"
 msgstr "Windows 移植和软件发行管理人员"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:306
+#: core/libs/widgets/mainview/daboutdata.cpp:303
 #, kde-format
 msgid "Developer and Windows port"
 msgstr "开发人员、Windows 移植"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:312
+#: core/libs/widgets/mainview/daboutdata.cpp:309
 #, kde-format
 msgid "LCMS2 library port"
 msgstr "LCMS2 程序库移植"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:335
+#: core/libs/widgets/mainview/daboutdata.cpp:332
 #: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid "Color Management"
 msgstr "色彩管理"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:346
+#: core/libs/widgets/mainview/daboutdata.cpp:343
 #, kde-format
 msgid "MySQL interface"
 msgstr "MySQL 界面"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:351
+#: core/libs/widgets/mainview/daboutdata.cpp:348
 #, kde-format
 msgid "Design, icons, logo, banner, mockup, beta tester"
 msgstr "设计、图标、徽标、横幅、开发模型、beta 版本测试人员"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:356
-#: core/libs/widgets/mainview/daboutdata.cpp:362
+#: core/libs/widgets/mainview/daboutdata.cpp:353
+#: core/libs/widgets/mainview/daboutdata.cpp:359
 #, kde-format
 msgid "Bug reports and patches"
 msgstr "程序缺陷报告和补丁"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:380
+#: core/libs/widgets/mainview/daboutdata.cpp:377
 #, kde-format
 msgid "Webmaster"
 msgstr "网站管理员"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:390
+#: core/libs/widgets/mainview/daboutdata.cpp:387
 #, kde-format
 msgid "Handbook writer, alpha tester, webmaster"
 msgstr "使用手册作者、alpha 版本测试人员、网站管理员"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:396
-#: core/libs/widgets/mainview/daboutdata.cpp:401
+#: core/libs/widgets/mainview/daboutdata.cpp:393
+#: core/libs/widgets/mainview/daboutdata.cpp:398
 #, kde-format
 msgid "Beta tester"
 msgstr "Beta 版本测试人员"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:406
+#: core/libs/widgets/mainview/daboutdata.cpp:403
 #, kde-format
 msgid "Feedback and patches. Handbook writer"
 msgstr "意见反馈、补丁、使用手册"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:411
+#: core/libs/widgets/mainview/daboutdata.cpp:408
 #, kde-format
 msgid "digiKam website banner and application icons"
 msgstr "digiKam 网站横幅、应用程序图标"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:416
+#: core/libs/widgets/mainview/daboutdata.cpp:413
 #, kde-format
 msgid ""
 "Various usability fixes\n"
@@ -41660,33 +41614,33 @@ msgstr ""
 "各种可用性修正\n"
 "和常规应用程序美化"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:422
+#: core/libs/widgets/mainview/daboutdata.cpp:419
 #, kde-format
 msgid "digiKam website, Feedback"
 msgstr "digiKam 网站、意见反馈"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:427
+#: core/libs/widgets/mainview/daboutdata.cpp:424
 #, kde-format
 msgid "Bug reports, feedback and icons"
 msgstr "程序缺陷报告、意见反馈、图标"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:434
+#: core/libs/widgets/mainview/daboutdata.cpp:431
 #, kde-format
 msgid "Developer (2001-2005)"
 msgstr "开发人员 (2001-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:440
-#: core/libs/widgets/mainview/daboutdata.cpp:446
+#: core/libs/widgets/mainview/daboutdata.cpp:437
+#: core/libs/widgets/mainview/daboutdata.cpp:443
 #, kde-format
 msgid "Developer (2004-2005)"
 msgstr "开发人员 (2004-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:452
+#: core/libs/widgets/mainview/daboutdata.cpp:449
 #, kde-format
 msgid "Developer (2004)"
 msgstr "开发者 (2004)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:457
+#: core/libs/widgets/mainview/daboutdata.cpp:454
 #, kde-format
 msgid "Developer and Mentoring (2005-2012)"
 msgstr "开发者和开发者导师 (2005-2012)"
@@ -46334,10 +46288,9 @@ msgstr "选定的界面语言 %1 不支持 %2"
 #: core/libs/widgets/text/donlinetranslator.cpp:132
 #: core/libs/widgets/text/donlinetranslator.cpp:215
 #: core/libs/widgets/text/donlinetranslator.cpp:232
-#, fuzzy, kde-format
-#| msgid "%1 URL can't be empty."
+#, kde-format
 msgid "%1 URL cannot be empty."
-msgstr "%1 URL 不能为空。"
+msgstr ""
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
 #, kde-format
@@ -48476,14 +48429,7 @@ msgstr "系统"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:370
 #: core/utilities/setup/misc/setupmisc.cpp:407
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check for new version option will verify the pre-releases.\n"
-#| "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
-#| "It's not recommended to use pre-release in production as bugs can "
-#| "remain,\n"
-#| "unless you know what you are doing.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
 "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
@@ -48491,12 +48437,6 @@ msgid ""
 "unless you know what you are doing.\n"
 "Do you want to continue?"
 msgstr ""
-"检查新版软件选项将验证测试版本。\n"
-"测试版本每周发布，用于对正在开发的新功能进行前期测试。\n"
-"测试版本可能存在尚未修复的严重缺陷，不建议用于生产用途。\n"
-"请在了解具体情况和风险自担的前提下使用测试版本。\n"
-"\n"
-"您想要继续更新吗？"
 
 #: core/showfoto/setup/showfotosetupplugins.cpp:62
 #, kde-format
@@ -50458,23 +50398,7 @@ msgid "Extra Large"
 msgstr "超大"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p>Selecting <b>Extra Small</b> means the model will detect small "
-#| "background faces in addition to medium and larger faces. Selecting "
-#| "<b>Small Faces</b> increases the sensitivity of the model by tuning the "
-#| "model parameters. It will also increase the probability of false-"
-#| "positives, and it will increase detection time.</p><p>Selecting <b>Large</"
-#| "b> or <b>Extra Large</b> will eliminate small background faces from being "
-#| "detected. It is much faster and will reduce the number of false-"
-#| "positives, but will not detect small faces in the background or faces in "
-#| "large group photos.</p><p>If you want to detect all faces in one pass, "
-#| "select <b>Extra Small</b> faces and set the detection accuracy to 2. "
-#| "Unfortunately, this will create a significant number of false-positives. "
-#| "It's recommended to set a detection accuracy of 6-8 and face size of "
-#| "<b>Medium</b> or <b>Large</b> for normal use.</p><p>This setting applies "
-#| "only to YuNet.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
@@ -50491,14 +50415,6 @@ msgid ""
 "6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
-"<p>选择 <b>超小</b> 时模型将在中、大人脸的基础上额外检测到背景中的超小人脸。"
-"选择 <b>小</b> 时将通过调整模型的参数来提高灵敏度，但错误命中的概率更高，且检"
-"测所需时间更长。</p><p>选择 <b>大</b> 或者 <b>超大</b> 时将不检测背景中的超小"
-"人脸，速度更快，错误命中的概率更低，但也会造成大型群体照片中的人脸无法被检测"
-"到。</p><p>如果您想要一次性把所有人脸全部检测到，可以选择 <b>超小</b> 并将检"
-"测精度设置为 2，但是此精度容易导致大量的错误命中。在通常使用情况下，建议将检"
-"测精度设置为 6 - 8，并将人脸大小设置为 <b>中</b> 或者 <b>大</b>。</p><p>此设"
-"置仅适用于 YuNet。</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
 #, kde-format
@@ -58877,12 +58793,10 @@ msgid "Use the last saved active tools and settings"
 msgstr "使用上次保存的活动工具和设置"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores (when it's possible)"
+#, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it is possible)"
-msgstr "使用所有处理器核心 (如果可能)"
+msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:68
 #, kde-format
@@ -59195,7 +59109,7 @@ msgstr "正在扫描：%1\n"
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
 #, kde-format
 msgid "Album Root: %1"
-msgstr ""
+msgstr "相册根目录：%1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
 #, kde-format
@@ -59224,7 +59138,7 @@ msgstr "查找重复项目"
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:169
 #, kde-format
 msgid "Finding Duplicates: %1\n"
-msgstr ""
+msgstr "正在查找重复项：%1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:174
 #, kde-format
@@ -59312,7 +59226,7 @@ msgstr "已找到人脸：%1"
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
 #, kde-format
 msgid "Face Scanning: %1\n"
-msgstr ""
+msgstr "正在扫描人脸：%1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
 #, kde-format
@@ -59337,7 +59251,7 @@ msgstr "图像指纹"
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
 #, kde-format
 msgid "Rebuild Fingerprint: %1\n"
-msgstr ""
+msgstr "重建文件指纹：%1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
 #, kde-format
@@ -59357,7 +59271,7 @@ msgstr "已扫描指纹的项目：%1"
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
 #, kde-format
 msgid "Image Quality: %1\n"
-msgstr ""
+msgstr "图像品质：%1\n"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:182
 #, kde-format
@@ -59405,7 +59319,7 @@ msgstr ""
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
 #, kde-format
 msgid "Clear Metadata: %1\n"
-msgstr ""
+msgstr "清除元数据：%1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
 #, kde-format
@@ -59440,7 +59354,7 @@ msgstr "正在从图像更新数据库元数据"
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
 #, kde-format
 msgid "Metadata Sync: %1\n"
-msgstr ""
+msgstr "元数据同步：%1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
 #, kde-format
@@ -59470,7 +59384,7 @@ msgstr "生成缩略图"
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
 #, kde-format
 msgid "Thumbnail: %1\n"
-msgstr ""
+msgstr "缩略图：%1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
 #, kde-format
@@ -62988,24 +62902,7 @@ msgid "Always show intermediate snapshots"
 msgstr "总是显示过程快照图像"
 
 #: core/utilities/setup/editor/setupversioning.cpp:461
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG</emphasis>: It's the most commonly "
-#| "used file format, but it employs lossy compression, which means that with "
-#| "each saving operation some image information will be irreversibly lost. "
-#| "JPEG offers a good compression rate, resulting in smaller files. </"
-#| "item><item><emphasis strong='true'>PNG</emphasis>: A widely used format "
-#| "employing lossless compression. The files, though, will be larger because "
-#| "PNG does not achieve very good compression rates.</item><item><emphasis "
-#| "strong='true'>TIFF</emphasis>: A commonly used format, usually "
-#| "uncompressed or with modest lossless compression. Resulting files will be "
-#| "large, but without quality loss due to compression. </"
-#| "item><item><emphasis strong='true'>PGF</emphasis>: This is a technically "
-#| "superior file format offering good compression rates with either lossy or "
-#| "lossless compression. But it is not yet widely used and supported, so "
-#| "your friends may not directly be able to open these files, and you may "
-#| "not be able to directly publish them on the web. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG</emphasis>: It is the most commonly used "
@@ -63024,25 +62921,9 @@ msgid ""
 "directly be able to open these files, and you may not be able to directly "
 "publish them on the web. </item>"
 msgstr ""
-"<item><emphasis strong='true'>JPEG</emphasis>：JPEG 是最为常见的文件格式，但"
-"它使用有损压缩，每次保存操作都会导致图像画质劣化。JPEG 的压缩率较高，生成的文"
-"件较小。</item><item><emphasis strong='true'>PNG</emphasis>：PNG 是一种常见的"
-"无损压缩文件格式。它的压缩率较低，生成的文件较大。</item><item><emphasis "
-"strong='true'>TIFF</emphasis>：TIFF 是一种常见文件格式，通常不对图像进行压"
-"缩，或者仅进行少许压缩。它生成的文件较大，但不会因为压缩而牺牲画质。</"
-"item><item><emphasis strong='true'>PGF</emphasis>：PGF 是一种技术更加先进的文"
-"件格式，它无论在有损还是无损模式下均能提供更高的压缩率。但它尚未被广泛使用，"
-"因此其他人可能无法直接打开这种文件，许多网站也不能上传并发布这种格式的图像。"
-"</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:494
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG-2000</emphasis>: It's similar to PGF. "
-#| "Loading or saving is slower, the compression rate is better, and the "
-#| "format more widely supported, though still not comparable to the "
-#| "tradition formats JPEG, PNG or TIFF. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-2000</emphasis>: It is similar to PGF. "
@@ -63050,9 +62931,6 @@ msgid ""
 "more widely supported, though still not comparable to the tradition formats "
 "JPEG, PNG or TIFF. </item>"
 msgstr ""
-"<item><emphasis strong='true'>JPEG-2000</emphasis>：JPEG-2000 与 PGF 类似，但"
-"支持的软件和网站更多一些。尽管如此，它的普及程度依然不及 JPEG、PNG 和 TIFF 等"
-"传统格式。它的压缩率更好，但加载和保存速度更慢。</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:506
 #, kde-kuit-format
@@ -63069,13 +62947,7 @@ msgstr ""
 "item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:517
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG-XL</emphasis>: It's a royalty-free "
-#| "raster-graphics file format that supports lossless compression. It is "
-#| "designed to outperform existing raster formats and thus to become their "
-#| "universal replacement. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-XL</emphasis>: It is a royalty-free "
@@ -63083,18 +62955,9 @@ msgid ""
 "designed to outperform existing raster formats and thus to become their "
 "universal replacement. </item>"
 msgstr ""
-"<item><emphasis strong='true'>JPEG-XL</emphasis>：JPEG-XL 是一种无版权使用费"
-"的栅格图像格式，它同时支持有损和无损压缩。它的设计理念是提供优于现有栅格图像"
-"格式的表现，从而成为它们的通用替代格式。</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:527
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>WEBP</emphasis>: It's an image file format "
-#| "that Google has developed as a replacement for JPEG, PNG, and GIF file "
-#| "formats. Files are smaller for the same quality, or of higher quality for "
-#| "the same size. It supports both lossy and lossless compression</item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>WEBP</emphasis>: It is an image file format "
@@ -63102,10 +62965,6 @@ msgid ""
 "formats. Files are smaller for the same quality, or of higher quality for "
 "the same size. It supports both lossy and lossless compression</item>"
 msgstr ""
-"<item><emphasis strong='true'>WEBP</emphasis>：WEBP 是 Google 为取代 JPEG、"
-"PNG 和 GIF 等格式而开发的图像文件格式。在相同画质下，WEBP 格式的文件要小于传"
-"统格式；在文件大小相同时，WEBP 的画质要好于传统格式。它同时支持有损和无损压缩"
-"模式。</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:538
 #, kde-kuit-format
