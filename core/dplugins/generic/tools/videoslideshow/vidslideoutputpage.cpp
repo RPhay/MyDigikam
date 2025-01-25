@@ -224,7 +224,7 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     QLabel* const audioNote     = new QLabel(audioBox);
     audioNote->setWordWrap(true);
     audioNote->setText(i18n("<i>Notes about soundtrack: if the audio length is smaller than video, it will be "
-                            "played in loop. If the audio length is largest than video, it will be trimmed. "
+                            "played in loop. If the audio length is larger than video, it will be trimmed. "
                             "Leave this setting empty if you do not want a soundtrack to the media.</i>"));
 
     audioGrid->addWidget(audioLabel,      0, 0, 1, 1);
