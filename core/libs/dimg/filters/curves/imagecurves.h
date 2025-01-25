@@ -162,7 +162,7 @@ public:
 private:
 
     void curvesPlotCurve(int channel, int p1, int p2, int p3, int p4);
-    void curvesCRCompose(CRMatrix a, CRMatrix b, CRMatrix ab);
+    void curvesCRCompose(const CRMatrix a, const CRMatrix b, CRMatrix ab);
     void freeLutData();
 
 private:

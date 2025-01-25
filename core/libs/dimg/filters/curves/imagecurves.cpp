@@ -611,7 +611,7 @@ void ImageCurves::curvesPlotCurve(int channel, int p1, int p2, int p3, int p4)
     }
 }
 
-void ImageCurves::curvesCRCompose(CRMatrix a, CRMatrix b, CRMatrix ab)
+void ImageCurves::curvesCRCompose(const CRMatrix a, const CRMatrix b, CRMatrix ab)
 {
     int i, j;
 
