@@ -30,7 +30,7 @@ AbstractCountingAlbumTreeView::AbstractCountingAlbumTreeView(QWidget* const pare
 {
     if (flags & CreateDefaultFilterModel)
     {
-        setAlbumFilterModel(new AlbumFilterModel(this));
+        this->setAlbumFilterModel(new AlbumFilterModel(this));
     }
 
     if (!(flags & AlwaysShowInclusiveCounts))
