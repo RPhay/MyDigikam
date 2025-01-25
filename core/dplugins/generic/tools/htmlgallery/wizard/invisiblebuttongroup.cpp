@@ -35,6 +35,8 @@ public:
 
     Private() = default;
 
+public:
+
     QButtonGroup* group = nullptr;
 };
 
@@ -59,7 +61,7 @@ InvisibleButtonGroup::InvisibleButtonGroup(QWidget* const parent)
 
 #endif
 
-    const QString name = QString::fromLatin1(metaObject()->className());
+    const QString name = QString::fromLatin1(this->metaObject()->className());
 
     if (!DConfigDlgMngr::propertyMap()->contains(name))
     {
