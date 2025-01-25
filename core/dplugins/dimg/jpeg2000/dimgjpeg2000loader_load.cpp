@@ -21,6 +21,10 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 {
     readMetadata(filePath);
 
+#ifndef __clang_analyzer__
+
+    // Disable false-positive memory leak reported by scan-build with file stream.
+
 #ifdef Q_OS_WIN
 
     FILE* const file = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
@@ -110,6 +114,9 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
         return false;
     }
 
+    // NOTE: at this point, libjasper takes owner to the file descriptor and it's no need to
+    // call fclose() anymore else a double free corruption appears.
+
     int fmt   = jas_image_strtofmt(QByteArray("jp2").data());
 
 #if defined JAS_VERSION_MAJOR && JAS_VERSION_MAJOR >= 3
@@ -138,6 +145,8 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
     }
 
     jas_stream_close(jp2_stream);
+
+#endif // __clang_analyzer__
 
     // some pseudo-progress
 

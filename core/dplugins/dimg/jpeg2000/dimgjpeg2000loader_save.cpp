@@ -20,6 +20,10 @@ namespace DigikamJPEG2000DImgPlugin
 bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const observer)
 {
 
+#ifndef __clang_analyzer__
+
+    // Disable false-positive memory leak reported by scan-build with file stream.
+
 #ifdef Q_OS_WIN
 
     FILE* const file = _wfopen((const wchar_t*)filePath.utf16(), L"wb");
@@ -69,6 +73,9 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
         return false;
     }
 
+    // NOTE: at this point, libjasper takes owner to the file descriptor and it's no need to
+    // call fclose() anymore else a double free corruption appears.
+
     number_components = imageHasAlpha() ? 4 : 3;
 
     for (i = 0 ; i < (long)number_components ; ++i)
@@ -82,6 +89,8 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
         component_info[i].prec   = imageBitsDepth();
         component_info[i].sgnd   = false;
     }
+
+#endif // __clang_analyzer__
 
     jp2_image = jas_image_create(number_components, component_info, JAS_CLRSPC_UNKNOWN);
 
