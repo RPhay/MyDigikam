@@ -285,7 +285,7 @@ private:
      *
      * @return The map of image ids and scores which fulfill the restrictions, if any.
      */
-    QMap<qlonglong, double> searchDatabase(Haar::SignatureData* const data,
+    QMap<qlonglong, double> searchDatabase(const Haar::SignatureData* const data,
                                            SketchType type,
                                            const QList<int>& targetAlbums,
                                            DuplicatesSearchRestrictions searchResultRestriction = None,

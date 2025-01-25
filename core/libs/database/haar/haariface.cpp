@@ -462,7 +462,7 @@ bool HaarIface::fulfillsRestrictions(qlonglong imageId, int albumId,
     }
 }
 
-QMap<qlonglong, double> HaarIface::searchDatabase(Haar::SignatureData* const querySig,
+QMap<qlonglong, double> HaarIface::searchDatabase(const Haar::SignatureData* const querySig,
                                                   SketchType type, const QList<int>& targetAlbums,
                                                   DuplicatesSearchRestrictions searchResultRestriction,
                                                   qlonglong originalImageId,
