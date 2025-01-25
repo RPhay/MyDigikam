@@ -19,6 +19,7 @@
 #include "haariface_p.h"
 
 #define ENABLE_DEBUG_DUPLICATES 0
+
 #if ENABLE_DEBUG_DUPLICATES
 #   define DEBUG_DUPLICATES(x) qCDebug(DIGIKAM_DATABASE_LOG) << x;
 #else
@@ -477,7 +478,7 @@ QMap<qlonglong, double> HaarIface::searchDatabase(Haar::SignatureData* const que
     queryMapY.fill(querySig->sig[0]);
     queryMapI.fill(querySig->sig[1]);
     queryMapQ.fill(querySig->sig[2]);
-    std::reference_wrapper<Haar::SignatureMap> queryMaps[3] = { queryMapY, queryMapI, queryMapQ };
+    const std::reference_wrapper<Haar::SignatureMap> queryMaps[3] = { queryMapY, queryMapI, queryMapQ };
 
     // Map imageid -> score. Lowest score is best.
     // any newly inserted value will be initialized with a score of 0, as required
