@@ -50,7 +50,6 @@ if [ ! -d "$CPPCHECK_CACHE_DIR" ]; then
     mkdir "$CPPCHECK_CACHE_DIR"
 fi
 
-
 rm -fr $ORIG_WD/$REPORT_DIR
 
 # Print the skipped directories taken from the config file.
