@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 01:56+0000\n"
+"POT-Creation-Date: 2025-01-26 01:52+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -7011,6 +7011,12 @@ msgid ""
 "org/wiki/Progressive_Graphics_File'>Progressive Graphics File documentation</"
 "a> for details.</para>"
 msgstr ""
+"<para>用于通过 Ligpgf 编解码器程序库加载和保存图像的插件。</para><para>渐进式"
+"图形文件 (PGF) 是一种高效的图像文件格式，它基于一种快速的离散小波变换算法，并"
+"带有渐进编码功能。PGF 支持使用无损和有损压缩方式。它最适合用于自然图像。PGF "
+"可作为 JPEG-2000 的一种高效且快速的替代方案。</para><para>详情请参见 <a "
+"href='https://en.wikipedia.org/wiki/Progressive_Graphics_File'>PGF 格式的介绍"
+"文档</a>。</para>"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:106
 #, kde-format
@@ -19974,13 +19980,20 @@ msgid "Soundtrack Preview:"
 msgstr "音轨预览："
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:226
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
+#| "will be played in loop. If the audio length is largest than video, it "
+#| "will be trimmed. Leave this setting empty if you do not want a soundtrack "
+#| "to the media.</i>"
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-"will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Leave this setting empty if you do not want a soundtrack to the "
+"will be played in loop. If the audio length is larger than video, it will be "
+"trimmed. Leave this setting empty if you do not want a soundtrack to the "
 "media.</i>"
 msgstr ""
+"<i>关于音轨的提示：如果音频长度短于视频长度，则音频会循环播放。如果音频长度长"
+"于视频长度，则音频将被截断。如果您不想在视频中包含音轨，请将此选项留空。</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:247
 #, kde-format
@@ -20012,6 +20025,10 @@ msgid ""
 "The result will depend of the number of frames\n"
 "per second used to encode the media."
 msgstr ""
+"此值用于控制图像在帧序列中停留的帧数。\n"
+"创建延时序列时一般设置为 1。典型情况下，\n"
+"此帧数将决定某一帧在视频中显示的时间。\n"
+"最终效果取决于编码媒体时使用的每秒帧数。"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:99
 #, kde-format
@@ -23443,7 +23460,7 @@ msgstr "导出到 &iNaturalist..."
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:259
 #, kde-format
 msgid "We are pretty sure it is in this %1."
-msgstr ""
+msgstr "我们非常确定它属于此 %1。"
 
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:269
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:274
@@ -26412,7 +26429,7 @@ msgstr "您想要将“%1”标签合并到“%2”标签吗？"
 #: core/libs/album/manager/albummanager_talbum.cpp:1138
 #, kde-format
 msgid "Do not ask again at this session"
-msgstr ""
+msgstr "不要在此会话中再次询问"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:700
 #, kde-format
@@ -31016,7 +31033,7 @@ msgstr "序列号："
 msgid "Hot Pixels:"
 msgstr "热像素："
 
-#: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:73
+#: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:69
 #, kde-format
 msgid "Hot Pixels Tool"
 msgstr "热像素修复工具"
@@ -35523,6 +35540,12 @@ msgid ""
 "doing.</p><p>Press <b>Configure</b> if you want to customize update options "
 "from setup dialog.</p>"
 msgstr ""
+"<p>当前使用的 <b>%1</b> 稳定版本为 <i>%2</i></p><p>最新的稳定版本为 <i>%3</"
+"i>，已上传到<a href='%4'>此软件仓库</a>。</p><p>请点击<b>下载</b>获取安装程"
+"序。</p><p>提示：在配置/其他页面您可以设置更新程序检查每周测试版本的更新。"
+"<br/>测试版本用于对正在开发的新功能进行前期测试。<br/>测试版本可能存在尚未修"
+"复的严重缺陷，不建议用于生产用途。<br/>请在了解具体情况和风险自担的前提下使用"
+"测试版本。</p><p>点击 <b>配置</b>可在设置对话框中配置更新选项。</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:315
 #, kde-format
@@ -41319,14 +41342,7 @@ msgid "Show Thumbbar"
 msgstr "显示缩略图栏"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the slogan formatted string displayed in splashscreen. Please "
-#| "translate using short words else the slogan can be truncated."
-#| msgid ""
-#| "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> "
-#| "with the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>"
-#| "%1</i></font></qt>"
+#, kde-format
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
@@ -41334,8 +41350,6 @@ msgid ""
 "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b><br/"
 ">with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
-"<qt><font color=\"white\"><b>自由开源的专业照片管理工具</b></font><font "
-"color=\"gray\"><br/><b>%1</b></font></qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
@@ -46290,7 +46304,7 @@ msgstr "选定的界面语言 %1 不支持 %2"
 #: core/libs/widgets/text/donlinetranslator.cpp:232
 #, kde-format
 msgid "%1 URL cannot be empty."
-msgstr ""
+msgstr "%1 URL 不能为空。"
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
 #, kde-format
@@ -48437,6 +48451,12 @@ msgid ""
 "unless you know what you are doing.\n"
 "Do you want to continue?"
 msgstr ""
+"检查新版软件选项将验证测试版本。\n"
+"测试版本每周发布，用于对正在开发的新功能进行前期测试。\n"
+"测试版本可能存在尚未修复的严重缺陷，不建议用于生产用途。\n"
+"请在了解具体情况和风险自担的前提下使用测试版本。\n"
+"\n"
+"您想要继续更新吗？"
 
 #: core/showfoto/setup/showfotosetupplugins.cpp:62
 #, kde-format
@@ -50415,6 +50435,14 @@ msgid ""
 "6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
+"<p>选择 <b>超小</b> 时模型将在中、大人脸的基础上额外检测到背景中的超小人脸。"
+"选择 <b>小</b> 时将通过调整模型的参数来提高灵敏度，但错误命中的概率更高，且检"
+"测所需时间更长。</p><p>选择 <b>大</b> 或者 <b>超大</b> 时将不检测背景中的超小"
+"人脸，速度更快，错误命中的概率更低，但也会造成大型群体照片中的人脸无法被检测"
+"到。</p><p>如果您想要一次性把所有人脸全部检测到，可以选择 <b>超小</b> 并将检"
+"测精度设置为 2，但是此精度容易导致大量的错误命中。在通常使用情况下，建议将检"
+"测精度设置为 6 - 8，并将人脸大小设置为 <b>中</b> 或者 <b>大</b>。</p><p>此设"
+"置仅适用于 YuNet。</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
 #, kde-format
@@ -58796,7 +58824,7 @@ msgstr "使用上次保存的活动工具和设置"
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it is possible)"
-msgstr ""
+msgstr "使用所有处理器核心 (如果可能)"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:68
 #, kde-format
@@ -62921,6 +62949,16 @@ msgid ""
 "directly be able to open these files, and you may not be able to directly "
 "publish them on the web. </item>"
 msgstr ""
+"<item><emphasis strong='true'>JPEG</emphasis>：JPEG 是最为常见的文件格式，但"
+"它使用有损压缩，每次保存操作都会导致图像画质劣化。JPEG 的压缩率较高，生成的文"
+"件较小。</item><item><emphasis strong='true'>PNG</emphasis>：PNG 是一种常见的"
+"无损压缩文件格式。它的压缩率较低，生成的文件较大。</item><item><emphasis "
+"strong='true'>TIFF</emphasis>：TIFF 是一种常见文件格式，通常不对图像进行压"
+"缩，或者仅进行少许压缩。它生成的文件较大，但不会因为压缩而牺牲画质。</"
+"item><item><emphasis strong='true'>PGF</emphasis>：PGF 是一种技术更加先进的文"
+"件格式，它无论在有损还是无损模式下均能提供更高的压缩率。但它尚未被广泛使用，"
+"因此其他人可能无法直接打开这种文件，许多网站也不能上传并发布这种格式的图像。"
+"</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:494
 #, kde-kuit-format
@@ -62931,6 +62969,9 @@ msgid ""
 "more widely supported, though still not comparable to the tradition formats "
 "JPEG, PNG or TIFF. </item>"
 msgstr ""
+"<item><emphasis strong='true'>JPEG-2000</emphasis>：JPEG-2000 与 PGF 类似，但"
+"支持的软件和网站更多一些。尽管如此，它的普及程度依然不及 JPEG、PNG 和 TIFF 等"
+"传统格式。它的压缩率更好，但加载和保存速度更慢。</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:506
 #, kde-kuit-format
@@ -62955,6 +62996,9 @@ msgid ""
 "designed to outperform existing raster formats and thus to become their "
 "universal replacement. </item>"
 msgstr ""
+"<item><emphasis strong='true'>JPEG-XL</emphasis>：JPEG-XL 是一种无版权使用费"
+"的栅格图像格式，它同时支持有损和无损压缩。它的设计理念是提供优于现有栅格图像"
+"格式的表现，从而成为它们的通用替代格式。</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:527
 #, kde-kuit-format
@@ -62965,6 +63009,10 @@ msgid ""
 "formats. Files are smaller for the same quality, or of higher quality for "
 "the same size. It supports both lossy and lossless compression</item>"
 msgstr ""
+"<item><emphasis strong='true'>WEBP</emphasis>：WEBP 是 Google 为取代 JPEG、"
+"PNG 和 GIF 等格式而开发的图像文件格式。在相同画质下，WEBP 格式的文件要小于传"
+"统格式；在文件大小相同时，WEBP 的画质要好于传统格式。它同时支持有损和无损压缩"
+"模式。</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:538
 #, kde-kuit-format

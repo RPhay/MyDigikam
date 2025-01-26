@@ -43,8 +43,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 01:56+0000\n"
-"PO-Revision-Date: 2025-01-22 16:22+0100\n"
+"POT-Creation-Date: 2025-01-26 01:52+0000\n"
+"PO-Revision-Date: 2025-01-25 08:44+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -7286,18 +7286,7 @@ msgid "An image loader based on Libpgf codec"
 msgstr "En bildinläsare baserad på Libpgf-kodare"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:78
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This plugin allows users to load and save image using Libpgf codec."
-#| "</para><para>The Progressive Graphics File (PGF) is an efficient image "
-#| "file format, that is based on a fast, discrete wavelet transform with "
-#| "progressive coding features. PGF can be used for lossless and lossy "
-#| "compression. It's most suitable for natural images. PGF can be used as a "
-#| "very efficient and fast replacement of JPEG-2000.</para><para>See <a "
-#| "href='https://en.wikipedia.org/wiki/"
-#| "Progressive_Graphics_File'>Progressive Graphics File documentation</a> "
-#| "for details.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This plugin allows users to load and save image using Libpgf codec.</"
@@ -20739,12 +20728,12 @@ msgstr "Förhandsgranskning av ljudspår:"
 #| msgid ""
 #| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 #| "will be played in loop. If the audio length is largest than video, it "
-#| "will be trimmed. Leave this setting empty if you don't want a soundtrack "
+#| "will be trimmed. Leave this setting empty if you do not want a soundtrack "
 #| "to the media.</i>"
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-"will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Leave this setting empty if you do not want a soundtrack to the "
+"will be played in loop. If the audio length is larger than video, it will be "
+"trimmed. Leave this setting empty if you do not want a soundtrack to the "
 "media.</i>"
 msgstr ""
 "<i>Anmärkningar om ljudspår: Om ljudlängden är mindre än videolängden "
@@ -20772,14 +20761,7 @@ msgid "Number of Frames by Image:"
 msgstr "Antal bildrutor per bild:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:90
-#, fuzzy, kde-format
-#| msgid ""
-#| "This value repeat one image in the sequence.\n"
-#| "While creating timelapse; it's usual to use 1.\n"
-#| "Typically, the number of frames will determine\n"
-#| "the time to show the same frame in the video.\n"
-#| "The result will depend of the number of frames\n"
-#| "per second used to encode the media."
+#, kde-format
 msgid ""
 "This value repeat one image in the sequence.\n"
 "While creating timelapse; it is usual to use 1.\n"
@@ -24288,8 +24270,7 @@ msgid "Export to &iNaturalist..."
 msgstr "Exportera till &iNaturalist..."
 
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:259
-#, fuzzy, kde-format
-#| msgid "We're pretty sure it's in this %1."
+#, kde-format
 msgid "We are pretty sure it is in this %1."
 msgstr "Vi är ganska säkra på att den finns i %1."
 
@@ -27326,8 +27307,7 @@ msgstr "Vill du sammanfoga etiketten '%1' med '%2'?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:624
 #: core/libs/album/manager/albummanager_talbum.cpp:1138
-#, fuzzy, kde-format
-#| msgid "Don't ask again at this session"
+#, kde-format
 msgid "Do not ask again at this session"
 msgstr "Fråga inte igen under sessionen"
 
@@ -32096,7 +32076,7 @@ msgstr "Serienummer:"
 msgid "Hot Pixels:"
 msgstr "Heta bildpunkter:"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:73
+#: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:69
 #, kde-format
 msgid "Hot Pixels Tool"
 msgstr "Verktyg för heta bildpunkter"
@@ -36712,16 +36692,7 @@ msgstr ""
 "inställningsdialogrutan.</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:287
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version "
-#| "<i>%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
-#| "<b>Download</b> to get the file...</p><p>Note: from Setup/Misc panel, you "
-#| "can switch to check for weekly pre-release.<br/>Pre-release versions are "
-#| "dedicated to test quickly new features.<br/>It's not recommended to use "
-#| "pre-releases in production as bugs can remain,<br/>unless you know what "
-#| "you are doing.</p><p>Press <b>Configure</b> if you want to customize "
-#| "update options from setup dialog.</p>"
+#, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
 "%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
@@ -39276,10 +39247,9 @@ msgid "Item scanned for objects: %1\n"
 msgstr "Objekt genomsökt efter objekt: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:249
-#, fuzzy, kde-format
-#| msgid "Scanning: %1\n"
+#, kde-format
 msgid "Object Scanning: %1\n"
-msgstr "Söker: %1\n"
+msgstr "Objektsökning: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
@@ -42727,14 +42697,7 @@ msgid "Show Thumbbar"
 msgstr "Visa miniatyrbildsrad"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the slogan formatted string displayed in splashscreen. Please "
-#| "translate using short words else the slogan can be truncated."
-#| msgid ""
-#| "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> "
-#| "with the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>"
-#| "%1</i></font></qt>"
+#, kde-format
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
@@ -42742,9 +42705,8 @@ msgid ""
 "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b><br/"
 ">with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
-"<qt><font color=\"white\"><b>Professionell</b> <b>fotohantering</b> med "
-"kraftfull <b>öppen källkod</b></font><font color=\"gray\"><br/><i>%1</i></"
-"font></qt>"
+"<qt><font color=\"white\"><b>Professionell</b> <b>fotohantering</b><br/>med "
+"kraftfull <b>öppen källkod</b></font></qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
@@ -47702,8 +47664,7 @@ msgstr "Valt språk för användargränssnitt %1 stöds inte för %2"
 #: core/libs/widgets/text/donlinetranslator.cpp:132
 #: core/libs/widgets/text/donlinetranslator.cpp:215
 #: core/libs/widgets/text/donlinetranslator.cpp:232
-#, fuzzy, kde-format
-#| msgid "%1 URL can't be empty."
+#, kde-format
 msgid "%1 URL cannot be empty."
 msgstr "Webbadressen %1 kan inte vara tom."
 
@@ -49895,14 +49856,7 @@ msgstr "System"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:370
 #: core/utilities/setup/misc/setupmisc.cpp:407
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check for new version option will verify the pre-releases.\n"
-#| "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
-#| "It's not recommended to use pre-release in production as bugs can "
-#| "remain,\n"
-#| "unless you know what you are doing.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
 "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
@@ -51933,23 +51887,7 @@ msgid "Extra Large"
 msgstr "Extra stor"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p>Selecting <b>Extra Small</b> means the model will detect small "
-#| "background faces in addition to medium and larger faces. Selecting "
-#| "<b>Small Faces</b> increases the sensitivity of the model by tuning the "
-#| "model parameters. It will also increase the probability of false-"
-#| "positives, and it will increase detection time.</p><p>Selecting <b>Large</"
-#| "b> or <b>Extra Large</b> will eliminate small background faces from being "
-#| "detected. It is much faster and will reduce the number of false-"
-#| "positives, but will not detect small faces in the background or faces in "
-#| "large group photos.</p><p>If you want to detect all faces in one pass, "
-#| "select <b>Extra Small</b> faces and set the detection accuracy to 2. "
-#| "Unfortunately, this will create a significant number of false-positives. "
-#| "It's recommended to set a detection accuracy of 6-8 and face size of "
-#| "<b>Medium</b> or <b>Large</b> for normal use.</p><p>This setting applies "
-#| "only to YuNet.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
@@ -60571,9 +60509,7 @@ msgid "Use the last saved active tools and settings"
 msgstr "Använd senast sparade aktiva verktyg och inställningar"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores (when it's possible)"
+#, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it is possible)"
 msgstr "Använd alla processorkärnor (om möjligt)"
@@ -60893,10 +60829,9 @@ msgid "Scanning: %1\n"
 msgstr "Söker: %1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
-#, fuzzy, kde-format
-#| msgid "Album: %1"
+#, kde-format
 msgid "Album Root: %1"
-msgstr "Album: %1"
+msgstr "Albumrot: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
 #, kde-format
@@ -60923,11 +60858,9 @@ msgid "Find duplicates items"
 msgstr "Sök duplicerade objekt"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "Finding Duplicates: %1\n"
-msgstr "Sök duplikat"
+msgstr "Söker efter dubbletter: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:174
 #, kde-format
@@ -61014,10 +60947,9 @@ msgid "Face found: %1"
 msgstr "Hittat ansikte: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
-#, fuzzy, kde-format
-#| msgid "Scanning: %1\n"
+#, kde-format
 msgid "Face Scanning: %1\n"
-msgstr "Söker: %1\n"
+msgstr "Ansiktssökning: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
 #, kde-format
@@ -61040,10 +60972,9 @@ msgid "Finger-prints"
 msgstr "Fingeravtryck"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
-#, fuzzy, kde-format
-#| msgid "Rebuild Fingerprint for: %1\n"
+#, kde-format
 msgid "Rebuild Fingerprint: %1\n"
-msgstr "Återskapa fingeravtryck för: %1\n"
+msgstr "Återskapa fingeravtryck: %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
 #, kde-format
@@ -61061,10 +60992,9 @@ msgid "Item scanned for fingerprint: %1"
 msgstr "Objekt genomsökt efter fingeravtryck: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
-#, fuzzy, kde-format
-#| msgid "Image Quality for: %1\n"
+#, kde-format
 msgid "Image Quality: %1\n"
-msgstr "Bildkvalitet för: %1\n"
+msgstr "Bildkvalitet: %1\n"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:182
 #, kde-format
@@ -61110,10 +61040,9 @@ msgstr ""
 "Vill du fortsätta?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
-#, fuzzy, kde-format
-#| msgid "Clear Metadata for: %1\n"
+#, kde-format
 msgid "Clear Metadata: %1\n"
-msgstr "Rensa metadata för: %1\n"
+msgstr "Rensa metadata: %1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
 #, kde-format
@@ -61146,10 +61075,9 @@ msgid "Updating database from image metadata"
 msgstr "Uppdaterar databasen från bildernas metadata"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
-#, fuzzy, kde-format
-#| msgid "Metadata Sync for: %1\n"
+#, kde-format
 msgid "Metadata Sync: %1\n"
-msgstr "Synkronisering av metadata för: %1\n"
+msgstr "Synkronisering av metadata: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
 #, kde-format
@@ -61177,10 +61105,9 @@ msgid "Generate Thumbnails"
 msgstr "Skapa miniatyrbilder"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
-#, fuzzy, kde-format
-#| msgid "Thumbnail for: %1\n"
+#, kde-format
 msgid "Thumbnail: %1\n"
-msgstr "Miniatyrbilder för: %1\n"
+msgstr "Miniatyrbild: %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
 #, kde-format
@@ -64864,24 +64791,7 @@ msgid "Always show intermediate snapshots"
 msgstr "Visa alltid mellanliggande bilder"
 
 #: core/utilities/setup/editor/setupversioning.cpp:461
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG</emphasis>: It's the most commonly "
-#| "used file format, but it employs lossy compression, which means that with "
-#| "each saving operation some image information will be irreversibly lost. "
-#| "JPEG offers a good compression rate, resulting in smaller files. </"
-#| "item><item><emphasis strong='true'>PNG</emphasis>: A widely used format "
-#| "employing lossless compression. The files, though, will be larger because "
-#| "PNG does not achieve very good compression rates.</item><item><emphasis "
-#| "strong='true'>TIFF</emphasis>: A commonly used format, usually "
-#| "uncompressed or with modest lossless compression. Resulting files will be "
-#| "large, but without quality loss due to compression. </"
-#| "item><item><emphasis strong='true'>PGF</emphasis>: This is a technically "
-#| "superior file format offering good compression rates with either lossy or "
-#| "lossless compression. But it is not yet widely used and supported, so "
-#| "your friends may not directly be able to open these files, and you may "
-#| "not be able to directly publish them on the web. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG</emphasis>: It is the most commonly used "
@@ -64917,13 +64827,7 @@ msgstr ""
 "item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:494
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG-2000</emphasis>: It's similar to PGF. "
-#| "Loading or saving is slower, the compression rate is better, and the "
-#| "format more widely supported, though still not comparable to the "
-#| "tradition formats JPEG, PNG or TIFF. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-2000</emphasis>: It is similar to PGF. "
@@ -64951,13 +64855,7 @@ msgstr ""
 "bild med motsvarande kvalitet. </item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:517
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG-XL</emphasis>: It's a royalty-free "
-#| "raster-graphics file format that supports lossless compression. It is "
-#| "designed to outperform existing raster formats and thus to become their "
-#| "universal replacement. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-XL</emphasis>: It is a royalty-free "
@@ -64971,13 +64869,7 @@ msgstr ""
 "rastrerade format och därmed bli deras allmänna ersättning. </item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:527
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>WEBP</emphasis>: It's an image file format "
-#| "that Google has developed as a replacement for JPEG, PNG, and GIF file "
-#| "formats. Files are smaller for the same quality, or of higher quality for "
-#| "the same size. It supports both lossy and lossless compression</item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>WEBP</emphasis>: It is an image file format "

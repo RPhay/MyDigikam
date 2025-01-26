@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 01:56+0000\n"
-"PO-Revision-Date: 2025-01-23 16:50+0100\n"
+"POT-Creation-Date: 2025-01-26 01:52+0000\n"
+"PO-Revision-Date: 2025-01-24 11:18+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -21160,8 +21160,8 @@ msgstr "Aperçu de la piste audio :"
 #| "to the media.</i>"
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-"will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Leave this setting empty if you do not want a soundtrack to the "
+"will be played in loop. If the audio length is larger than video, it will be "
+"trimmed. Leave this setting empty if you do not want a soundtrack to the "
 "media.</i>"
 msgstr ""
 "<i> Notes sur la bande son : si la longueur audio est plus petite que celle "
@@ -32721,7 +32721,7 @@ msgstr "Numéro de série :"
 msgid "Hot Pixels:"
 msgstr "Pixels chauds :"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:73
+#: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:69
 #, kde-format
 msgid "Hot Pixels Tool"
 msgstr "Outil Pixels chauds"
@@ -40009,10 +40009,9 @@ msgid "Item scanned for objects: %1\n"
 msgstr "Élément analysé à la recherche d'objets : %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:249
-#, fuzzy, kde-format
-#| msgid "Scanning: %1\n"
+#, kde-format
 msgid "Object Scanning: %1\n"
-msgstr "Analyse : %1\n"
+msgstr "Analyse d'objets : %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
@@ -61932,10 +61931,9 @@ msgid "Scanning: %1\n"
 msgstr "Analyse : %1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
-#, fuzzy, kde-format
-#| msgid "Album: %1"
+#, kde-format
 msgid "Album Root: %1"
-msgstr "Album : %1"
+msgstr "Racine de l'album : %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
 #, kde-format
@@ -61962,11 +61960,9 @@ msgid "Find duplicates items"
 msgstr "Chercher des éléments en double"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "Finding Duplicates: %1\n"
-msgstr "Rechercher les doublons"
+msgstr "Recherche de doublons : %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:174
 #, kde-format
@@ -62053,10 +62049,9 @@ msgid "Face found: %1"
 msgstr "Visage trouvé : %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
-#, fuzzy, kde-format
-#| msgid "Scanning: %1\n"
+#, kde-format
 msgid "Face Scanning: %1\n"
-msgstr "Analyse : %1\n"
+msgstr "Reconnaissance faciale : %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
 #, kde-format
@@ -62079,10 +62074,9 @@ msgid "Finger-prints"
 msgstr "Empreintes digitales"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
-#, fuzzy, kde-format
-#| msgid "Rebuild Fingerprint for: %1\n"
+#, kde-format
 msgid "Rebuild Fingerprint: %1\n"
-msgstr "Reconstruire l'empreinte digitale pour : %1\n"
+msgstr "Reconstruire l'empreinte digitale : %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
 #, kde-format
@@ -62100,10 +62094,9 @@ msgid "Item scanned for fingerprint: %1"
 msgstr "Élément analysé à la recherche d'empreintes digitales : %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
-#, fuzzy, kde-format
-#| msgid "Image Quality for: %1\n"
+#, kde-format
 msgid "Image Quality: %1\n"
-msgstr "Qualité de l'image pour : %1\n"
+msgstr "Qualité de l'image : %1\n"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:182
 #, kde-format
@@ -62149,10 +62142,9 @@ msgstr ""
 "Voulez-vous vraiment continuer ?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
-#, fuzzy, kde-format
-#| msgid "Clear Metadata for: %1\n"
+#, kde-format
 msgid "Clear Metadata: %1\n"
-msgstr "Effacer les métadonnées pour : %1\n"
+msgstr "Effacer les métadonnées : %1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
 #, kde-format
@@ -62185,10 +62177,9 @@ msgid "Updating database from image metadata"
 msgstr "Mise à jour de la base de données à partir des métadonnées des images"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
-#, fuzzy, kde-format
-#| msgid "Metadata Sync for: %1\n"
+#, kde-format
 msgid "Metadata Sync: %1\n"
-msgstr "Synchronisation des métadonnées pour : %1\n"
+msgstr "Synchronisation des métadonnées : %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
 #, kde-format
@@ -62224,10 +62215,9 @@ msgid "Generate Thumbnails"
 msgstr "Générer les vignettes"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
-#, fuzzy, kde-format
-#| msgid "Thumbnail for: %1\n"
+#, kde-format
 msgid "Thumbnail: %1\n"
-msgstr "Vignette pour : %1\n"
+msgstr "Vignette : %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
 #, kde-format

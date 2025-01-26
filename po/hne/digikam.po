@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 01:56+0000\n"
+"POT-Creation-Date: 2025-01-26 01:52+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -20163,8 +20163,8 @@ msgstr "एलबम नाम देखाव"
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-"will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Leave this setting empty if you do not want a soundtrack to the "
+"will be played in loop. If the audio length is larger than video, it will be "
+"trimmed. Leave this setting empty if you do not want a soundtrack to the "
 "media.</i>"
 msgstr ""
 
@@ -31147,7 +31147,7 @@ msgstr "संख्या:"
 msgid "Hot Pixels:"
 msgstr "हाट पिक्सल्स"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:73
+#: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:69
 #, fuzzy, kde-format
 msgid "Hot Pixels Tool"
 msgstr "हाट पिक्सल्स"

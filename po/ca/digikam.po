@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 01:56+0000\n"
-"PO-Revision-Date: 2025-01-24 09:12+0100\n"
+"POT-Creation-Date: 2025-01-26 01:52+0000\n"
+"PO-Revision-Date: 2025-01-25 15:59+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -20948,11 +20948,16 @@ msgid "Soundtrack Preview:"
 msgstr "Vista prèvia de la pista de so:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:226
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
+#| "will be played in loop. If the audio length is largest than video, it "
+#| "will be trimmed. Leave this setting empty if you do not want a soundtrack "
+#| "to the media.</i>"
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-"will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Leave this setting empty if you do not want a soundtrack to the "
+"will be played in loop. If the audio length is larger than video, it will be "
+"trimmed. Leave this setting empty if you do not want a soundtrack to the "
 "media.</i>"
 msgstr ""
 "<i>Notes sobre la pista de so: si la longitud de l'àudio és menor que el "
@@ -32455,7 +32460,7 @@ msgstr "Número de sèrie:"
 msgid "Hot Pixels:"
 msgstr "Píxels cremats:"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:73
+#: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:69
 #, kde-format
 msgid "Hot Pixels Tool"
 msgstr "Eina per als píxels cremats"
@@ -43206,14 +43211,7 @@ msgid "Show Thumbbar"
 msgstr "Mostra la barra de miniatures"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the slogan formatted string displayed in splashscreen. Please "
-#| "translate using short words else the slogan can be truncated."
-#| msgid ""
-#| "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> "
-#| "with the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>"
-#| "%1</i></font></qt>"
+#, kde-format
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
@@ -43222,8 +43220,7 @@ msgid ""
 ">with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
 "<qt><font color=\"white\"><b>Gestió</b> <b>professional</b> de les "
-"fotografies amb la potència del <b>programari lliure</b></font><font color="
-"\"gray\"><br/><i>%1</i></font></qt>"
+"fotografies amb la potència del <b>programari lliure</b></font></qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
@@ -52401,7 +52398,7 @@ msgstr ""
 "i intentarà el reconeixement de totes les imatges trobades als àlbums "
 "seleccionats a la pestanya «Cerca a».</p><p><b>Només reconeix les cares</b> "
 "intentarà fer coincidir les cares desconegudes amb les cares confirmades "
-"sense explorar cares noves de les imatges. <b>1"
+"sense explorar cares noves de les imatges.</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:112
 #, kde-format

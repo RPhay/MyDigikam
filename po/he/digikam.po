@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 01:56+0000\n"
-"PO-Revision-Date: 2024-04-01 00:18+0300\n"
+"POT-Creation-Date: 2025-01-26 01:52+0000\n"
+"PO-Revision-Date: 2025-01-25 14:39+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -84,7 +84,7 @@ msgstr "התחילו בתמונה נוכחית"
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr "&סיגרה"
+msgstr "&סגירה"
 
 #: core/app/date/ddatepicker_p.cpp:160
 #, kde-format
@@ -194,7 +194,7 @@ msgstr "%1 %2"
 #: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:80
 #, kde-format
 msgid "&Move Here"
-msgstr "העבי&רו לכאן"
+msgstr "העב&רה לכאן"
 
 #: core/app/dragdrop/albumdragdrop.cpp:90
 #: core/app/dragdrop/albumdragdrop.cpp:227
@@ -203,7 +203,7 @@ msgstr "העבי&רו לכאן"
 #: core/app/dragdrop/itemdragdrop.cpp:150
 #, kde-format
 msgid "&Copy Here"
-msgstr "העתיקו לכאן"
+msgstr "העת&קה לכאן"
 
 #: core/app/dragdrop/albumdragdrop.cpp:92
 #: core/app/dragdrop/albumdragdrop.cpp:171
@@ -223,7 +223,7 @@ msgstr "&ביטול"
 #: core/app/dragdrop/albumdragdrop.cpp:232
 #, kde-format
 msgid "Set as Album Thumbnail"
-msgstr "קביעת צלמית לאלבום"
+msgstr "הגדרה כסמל לאלבום"
 
 #: core/app/dragdrop/albumdragdrop.cpp:288
 #: core/app/dragdrop/itemdragdrop.cpp:771
@@ -324,7 +324,7 @@ msgstr "העבי&רו לכאן"
 #: core/app/dragdrop/tagdragdrop.cpp:231 core/app/dragdrop/tagdragdrop.cpp:393
 #, kde-format
 msgid "Set as Tag Thumbnail"
-msgstr "קביעת תווית תצוגה מקדימה"
+msgstr "הגדרת תווית תצוגה מקדימה"
 
 #: core/app/dragdrop/tagdragdrop.cpp:276
 #, kde-format
@@ -997,7 +997,7 @@ msgstr ""
 #: core/utilities/imageeditor/main/imagewindow.cpp:1177
 #, kde-format
 msgid "Album \"%1\""
-msgstr "אלבום \"%1\""
+msgstr "אלבום „%1”"
 
 #: core/app/items/utils/tooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:60
@@ -1073,14 +1073,14 @@ msgstr "לא ידוע"
 #, kde-format
 msgctxt "width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
-msgstr "%1x%2 (%3Mpx)"
+msgstr "%1×%2 (%3 מגה פיקסלים)"
 
 #: core/app/items/utils/tooltipfiller.cpp:115
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:102
 #: core/utilities/import/items/importtooltipfiller.cpp:98
 #, kde-format
 msgid "Dimensions:"
-msgstr "מימדים:"
+msgstr "ממדים:"
 
 #: core/app/items/utils/tooltipfiller.cpp:123
 #, fuzzy, kde-format
@@ -1099,7 +1099,7 @@ msgstr "יחס:"
 #: core/utilities/import/items/importtooltipfiller.cpp:116
 #, kde-format
 msgid "Photograph Properties"
-msgstr "מאפייני התצלום"
+msgstr "מאפייני הצילום"
 
 #: core/app/items/utils/tooltipfiller.cpp:162
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:180
@@ -1131,7 +1131,7 @@ msgstr "נוצר:"
 #: core/utilities/import/items/importtooltipfiller.cpp:178
 #, kde-format
 msgid "Aperture/Focal:"
-msgstr "מוקד/מיפתח:"
+msgstr "מוקד/מפתח:"
 
 #: core/app/items/utils/tooltipfiller.cpp:238
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:201
@@ -1169,7 +1169,7 @@ msgstr "מבזק:"
 #: core/utilities/import/items/importtooltipfiller.cpp:216
 #, kde-format
 msgid "White Balance:"
-msgstr "איזון לובן:"
+msgstr "איזון לבן:"
 
 #: core/app/items/utils/tooltipfiller.cpp:319
 #: core/utilities/searchwindow/searchgroup.cpp:113
@@ -1234,7 +1234,7 @@ msgstr "&כותרת:"
 #, kde-format
 msgctxt "caption of the file"
 msgid "Caption:"
-msgstr "כיתובית:"
+msgstr "כתובית:"
 
 #: core/app/items/utils/tooltipfiller.cpp:505
 #, kde-format
@@ -1249,7 +1249,7 @@ msgstr "עדשה:"
 #: core/app/items/utils/tooltipfiller.cpp:583
 #, kde-format
 msgid "Album Properties"
-msgstr "מאפייני אוסף-תמונות"
+msgstr "מאפייני אלבום"
 
 #: core/app/items/utils/tooltipfiller.cpp:587
 #: core/app/items/utils/tooltipfiller.cpp:668
@@ -1268,7 +1268,7 @@ msgstr "פריטים:"
 #: core/app/items/utils/tooltipfiller.cpp:599
 #, kde-format
 msgid "Collection:"
-msgstr "אגד:"
+msgstr "אוסף:"
 
 #: core/app/items/utils/tooltipfiller.cpp:620
 #, kde-format
@@ -1339,7 +1339,7 @@ msgstr "<i>לא זמין</i>"
 #: core/app/main/digikamapp.cpp:77
 #, kde-format
 msgid "Initializing..."
-msgstr "אתחול..."
+msgstr "אתחול…"
 
 #: core/app/main/digikamapp.cpp:158 core/showfoto/main/showfoto.cpp:110
 #, fuzzy, kde-format
@@ -1437,7 +1437,7 @@ msgstr[1] "%1/%2 תמונות נבחרו"
 #: core/app/main/digikamapp.cpp:800
 #, kde-format
 msgid " (%1 of %2)"
-msgstr " (%1 of %2)"
+msgstr " (%1 מתוך %2)"
 
 #: core/app/main/digikamapp.cpp:814
 #, fuzzy, kde-format
@@ -1490,7 +1490,7 @@ msgstr "מצלמות"
 #: core/app/main/digikamapp_camera.cpp:68
 #, kde-format
 msgid "USB Storage Devices"
-msgstr "אמצעי אחסון מסוג USB"
+msgstr "אמצעי אחסון בחיבור USB"
 
 #: core/app/main/digikamapp_camera.cpp:70
 #, kde-format
@@ -1500,12 +1500,12 @@ msgstr "קוראי כרטיסי זיכרון"
 #: core/app/main/digikamapp_camera.cpp:79
 #, kde-format
 msgid "Add Images..."
-msgstr "הוספת תמונות..."
+msgstr "הוספת תמונות…"
 
 #: core/app/main/digikamapp_camera.cpp:80
 #, kde-format
 msgid "Adds new items to an Album."
-msgstr "הוספת פריטים חדשים לאוסף-תמונות."
+msgstr "הוספת פריטים חדשים לאלבום."
 
 #: core/app/main/digikamapp_camera.cpp:87
 #, kde-format
@@ -1520,7 +1520,7 @@ msgstr ""
 #: core/app/main/digikamapp_camera.cpp:229
 #, kde-format
 msgid "Images found in %1"
-msgstr "תמונות נמצאו ב- %1"
+msgstr "נמצאו תמונות ב־%1"
 
 #: core/app/main/digikamapp_config.cpp:117
 #: core/showfoto/main/showfoto_config.cpp:196
@@ -2489,17 +2489,17 @@ msgstr "טעינת ערכות-תצוגה"
 #: core/app/main/digikamapp_solid.cpp:287
 #, kde-format
 msgid "CompactFlash Card Reader"
-msgstr "קורא כרטיסי קומפאקט-פלאש"
+msgstr "קורא כרטיסי CF"
 
 #: core/app/main/digikamapp_solid.cpp:293
 #, kde-format
 msgid "Memory Stick Reader"
-msgstr "קורא מקלות-זיכרון"
+msgstr "קורא מקלות זיכרון"
 
 #: core/app/main/digikamapp_solid.cpp:299
 #, kde-format
 msgid "SmartMedia Card Reader"
-msgstr "קוראי כרטיסי זיכרון-חכמים"
+msgstr "קוראי כרטיסי זיכרון חכמים"
 
 #: core/app/main/digikamapp_solid.cpp:305
 #, kde-format
@@ -19732,8 +19732,8 @@ msgstr "אחזור תצוגה-מקדימה של תמונה..."
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-"will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Leave this setting empty if you do not want a soundtrack to the "
+"will be played in loop. If the audio length is larger than video, it will be "
+"trimmed. Leave this setting empty if you do not want a soundtrack to the "
 "media.</i>"
 msgstr ""
 
@@ -30534,7 +30534,7 @@ msgstr "מספר:"
 msgid "Hot Pixels:"
 msgstr "נקודות:"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:73
+#: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:69
 #, fuzzy, kde-format
 msgid "Hot Pixels Tool"
 msgstr "נקודות:"

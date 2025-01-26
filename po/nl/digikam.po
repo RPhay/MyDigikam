@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 01:56+0000\n"
-"PO-Revision-Date: 2025-01-24 11:48+0100\n"
+"POT-Creation-Date: 2025-01-26 01:52+0000\n"
+"PO-Revision-Date: 2025-01-25 16:48+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -20976,11 +20976,16 @@ msgid "Soundtrack Preview:"
 msgstr "Soundtrack voorspelen:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:226
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
+#| "will be played in loop. If the audio length is largest than video, it "
+#| "will be trimmed. Leave this setting empty if you do not want a soundtrack "
+#| "to the media.</i>"
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-"will be played in loop. If the audio length is largest than video, it will "
-"be trimmed. Leave this setting empty if you do not want a soundtrack to the "
+"will be played in loop. If the audio length is larger than video, it will be "
+"trimmed. Leave this setting empty if you do not want a soundtrack to the "
 "media.</i>"
 msgstr ""
 "<i>Opmerkingen over de soundtrack: als de audiolengte kleiner is dan de "
@@ -32439,7 +32444,7 @@ msgstr "Serienummer:"
 msgid "Hot Pixels:"
 msgstr "Hotpixels:"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:73
+#: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:69
 #, kde-format
 msgid "Hot Pixels Tool"
 msgstr "Hulpmiddel voor hotpixels"
@@ -43136,14 +43141,7 @@ msgid "Show Thumbbar"
 msgstr "Miniaturenbalk tonen"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the slogan formatted string displayed in splashscreen. Please "
-#| "translate using short words else the slogan can be truncated."
-#| msgid ""
-#| "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> "
-#| "with the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>"
-#| "%1</i></font></qt>"
+#, kde-format
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
@@ -43151,9 +43149,8 @@ msgid ""
 "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b><br/"
 ">with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
-"<qt><font color=\"white\"><b>Professioneel</b> foto<b>beheer</b> met de "
-"kracht van <b>open-source</b></font><font color=\"gray\"><br/><br/><i>%1</"
-"i></font></qt>"
+"<qt><font color=\"white\"><b>Professioneel</b> foto<b>beheer</b><br/>met de "
+"kracht van <b>open-source</b></font></qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
