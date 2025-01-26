@@ -119,34 +119,34 @@ void ImportFilterComboBox::defaultFilters(FilterList* const filters)
 {
     if (filters->count() == 0)
     {
-        Filter* f       = new Filter;
-        f->name         = i18nc("@item:inlistbox", "All Files");
-        filters->append(f);
+        Filter* const f1 = new Filter;
+        f1->name         = i18nc("@item:inlistbox", "All Files");
+        filters->append(f1);
 
-        f               = new Filter;
-        f->name         = i18nc("@item:inlistbox", "Only New Files");
-        f->onlyNew      = true;
-        filters->append(f);
+        Filter* const f2 = new Filter;
+        f2->name         = i18nc("@item:inlistbox", "Only New Files");
+        f2->onlyNew      = true;
+        filters->append(f2);
 
-        f               = new Filter;
-        f->name         = i18nc("@item:inlistbox", "Raw Files");
-        f->mimeFilter   = QLatin1String("image/x-nikon-nef;image/x-fuji-raf;image/x-adobe-dng;"
-                                        "image/x-panasonic-raw;image/x-olympus-orf;image/x-kodak-dcr;"
-                                        "image/x-kodak-k25;image/x-sony-arw;image/x-minolta-mrw;"
-                                        "image/x-kodak-kdc;image/x-sigma-x3f;image/x-sony-srf;"
-                                        "image/x-pentax-pef;image/x-panasonic-raw2;image/x-canon-crw;"
-                                        "image/x-sony-sr2;image/x-canon-cr2");
-        filters->append(f);
+        Filter* const f3 = new Filter;
+        f3->name         = i18nc("@item:inlistbox", "Raw Files");
+        f3->mimeFilter   = QLatin1String("image/x-nikon-nef;image/x-fuji-raf;image/x-adobe-dng;"
+                                         "image/x-panasonic-raw;image/x-olympus-orf;image/x-kodak-dcr;"
+                                         "image/x-kodak-k25;image/x-sony-arw;image/x-minolta-mrw;"
+                                         "image/x-kodak-kdc;image/x-sigma-x3f;image/x-sony-srf;"
+                                         "image/x-pentax-pef;image/x-panasonic-raw2;image/x-canon-crw;"
+                                         "image/x-sony-sr2;image/x-canon-cr2");
+        filters->append(f3);
 
-        f               = new Filter;
-        f->name         = i18nc("@item:inlistbox", "JPG/TIFF Files");
-        f->mimeFilter   = QLatin1String("image/jpeg;image/tiff");
-        filters->append(f);
+        Filter* const f4 = new Filter;
+        f4->name         = i18nc("@item:inlistbox", "JPG/TIFF Files");
+        f4->mimeFilter   = QLatin1String("image/jpeg;image/tiff");
+        filters->append(f4);
 
-        f               = new Filter;
-        f->name         = i18nc("@item:inlistbox", "Video Files");
-        f->mimeFilter   = QLatin1String("video/quicktime;video/mp4;video/x-msvideo;video/mpeg");
-        filters->append(f);
+        Filter* const f5 = new Filter;
+        f5->name         = i18nc("@item:inlistbox", "Video Files");
+        f5->mimeFilter   = QLatin1String("video/quicktime;video/mp4;video/x-msvideo;video/mpeg");
+        filters->append(f5);
     }
 }
 
