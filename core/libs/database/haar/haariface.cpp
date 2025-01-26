@@ -264,7 +264,7 @@ QMap<qlonglong, double> HaarIface::bestMatchesForSignature(const QString& signat
     return result;
 }
 
-QMultiMap<double, qlonglong> HaarIface::bestMatches(Haar::SignatureData* const querySig,
+QMultiMap<double, qlonglong> HaarIface::bestMatches(const Haar::SignatureData* const querySig,
                                                     int numberOfResults,
                                                     const QList<int>& targetAlbums,
                                                     SketchType type)

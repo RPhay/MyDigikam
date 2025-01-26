@@ -248,7 +248,7 @@ private:
      */
     static QMap<QString, QString> writeSAlbumQueries(const DuplicatesResultsMap& searchResults);
 
-    QMultiMap<double, qlonglong> bestMatches(Haar::SignatureData* const data,
+    QMultiMap<double, qlonglong> bestMatches(const Haar::SignatureData* const data,
                                              int numberOfResults,
                                              const QList<int>& targetAlbums,
                                              SketchType type);
