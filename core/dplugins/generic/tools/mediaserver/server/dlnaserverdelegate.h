@@ -134,7 +134,9 @@ protected:
 
 private:
 
-    Q_DISABLE_COPY(DLNAMediaServerDelegate)
+    // Disable
+    DLNAMediaServerDelegate(const DLNAMediaServerDelegate&)            = delete;
+    DLNAMediaServerDelegate& operator=(const DLNAMediaServerDelegate&) = delete;
 };
 
 } // namespace DigikamGenericMediaServerPlugin
