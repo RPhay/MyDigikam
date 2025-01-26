@@ -53,6 +53,8 @@ public:
 
     Private() = default;
 
+public:
+
     QButtonGroup* migrateBehavior = nullptr;
     QRadioButton* migrate         = nullptr;
     QRadioButton* createnew       = nullptr;
@@ -271,9 +273,12 @@ bool MigrateFromDigikam4Page::checkForMigration()
 
     return (!migration.locateLocal("config", QLatin1String("digikamrc")).isEmpty());
 
-#endif
+#else
 
     return false;
+
+#endif
+
 }
 
 } // namespace Digikam
