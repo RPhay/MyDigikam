@@ -40,7 +40,7 @@ fi
 
 ORIG_WD="`pwd`"
 REPORT_DIR="report.cppcheck"
-CPPCHECK_CACHE_DIR="$HOME/.cppcheck_cache"
+CPPCHECK_CACHE_DIR="$HOME/.cppcheck_cache/digiKam"
 
 # Get active git branches to create report description string
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
