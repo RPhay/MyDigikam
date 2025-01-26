@@ -34,7 +34,7 @@ public:
 
     ImageQualityContainer();
     ImageQualityContainer(const ImageQualityContainer& other);
-    ~ImageQualityContainer();
+    ~ImageQualityContainer() = default;
 
     ImageQualityContainer& operator=(const ImageQualityContainer& other);
 

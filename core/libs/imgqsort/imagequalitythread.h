@@ -48,10 +48,10 @@ public:
 
 private:
 
-    AbstractDetector*     m_detector;
-    ImageQualityCalculator* m_calculator;
+    AbstractDetector*       m_detector   = nullptr;
+    ImageQualityCalculator* m_calculator = nullptr;
     cv::Mat                 m_image;
-    float                   m_weight;
+    float                   m_weight     = 0.0F;
 };
 
 // -------------------------------------------------------------------------------------------
@@ -77,7 +77,7 @@ public:
 
 private:
 
-    ImageQualityCalculator*    m_calculator;
+    ImageQualityCalculator*    m_calculator = nullptr;
     QList<ImageQualityThread*> m_threads;
 };
 

@@ -78,13 +78,17 @@ public:
 
     Private() = default;
 
+public:
+
     int   size_filter = 4;
 
     float alpha       = 18.0F;
     float beta        = 7.0F;
 };
 
-// Main noise detection
+/**
+ * Main noise detection
+ */
 NoiseDetector::NoiseDetector()
     :  AbstractDetector(),
        d               (new Private)

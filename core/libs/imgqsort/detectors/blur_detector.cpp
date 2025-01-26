@@ -34,6 +34,8 @@ public:
 
     Private() = default;
 
+public:
+
     float                               min_abs                 = 1.0F;
     float                               ordre_log_filter        = 30.0F;
     float                               sigma_smooth_image      = 5.0F;

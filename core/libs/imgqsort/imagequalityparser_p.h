@@ -29,6 +29,11 @@
 #include <QTextStream>
 #include <QFile>
 #include <QImage>
+#include <QScopedPointer>
+#include <QThread>
+#include <QThreadPool>
+#include <QFuture>
+#include <QtConcurrent>              // krazy:exclude=includes
 
 // Local includes
 
@@ -38,6 +43,12 @@
 #include "nrfilter.h"
 #include "nrestimate.h"
 #include "exposurecontainer.h"
+#include "noise_detector.h"
+#include "exposure_detector.h"
+#include "compression_detector.h"
+#include "blur_detector.h"
+#include "aesthetic_detector.h"
+#include "imagequalitythread.h"
 #include "imagequalitycalculator.h"
 
 // To switch on/off log trace file.
@@ -61,6 +72,8 @@ public:
     {
         delete calculator;
     }
+
+public:
 
     DImg                    image;                  ///< original image
 

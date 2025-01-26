@@ -57,6 +57,8 @@ public:
 
     Private() = default;
 
+public:
+
     QCheckBox*    detectBlur            = nullptr;
     QCheckBox*    detectNoise           = nullptr;
     QCheckBox*    detectCompression     = nullptr;
@@ -92,7 +94,6 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing         = layoutSpacing();
-
 
     DHBox* const hlay1        = new DHBox(this);
 

@@ -82,10 +82,6 @@ ImageQualityContainer& ImageQualityContainer::operator=(const ImageQualityContai
     return *this;
 }
 
-ImageQualityContainer::~ImageQualityContainer()
-{
-}
-
 void ImageQualityContainer::readFromConfig()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();

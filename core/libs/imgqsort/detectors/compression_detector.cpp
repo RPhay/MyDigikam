@@ -34,6 +34,8 @@ public:
 
     Private() = default;
 
+public:
+
     int   threshold_edges_block = 2;
     float weight_edges_block    = 120.0F;
 
@@ -88,10 +90,12 @@ float CompressionDetector::detect(const cv::Mat& image) const
         int nb_pixels_mono_color = cv::countNonZero(mono_color_map);
         int nb_pixels_normal     = image.total() - nb_pixels_edge_block - nb_pixels_edge_block;
 
-        float res                = static_cast<float>((nb_pixels_mono_color * d->weight_mono_color +
+        float res                = static_cast<float>(
+                                                      (nb_pixels_mono_color * d->weight_mono_color +
                                                        nb_pixels_edge_block * d->threshold_edges_block) /
                                                       (nb_pixels_mono_color * d->weight_mono_color +
-                                                       nb_pixels_edge_block * d->threshold_edges_block + nb_pixels_normal));
+                                                       nb_pixels_edge_block * d->threshold_edges_block + nb_pixels_normal)
+                                                     );
 
         return res;
     }

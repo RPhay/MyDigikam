@@ -16,28 +16,6 @@
 
 #include "imagequalityparser_p.h"
 
-// C++ includes
-
-#include <thread>
-#include <memory>
-
-// Qt includes
-
-#include <QScopedPointer>
-#include <QThread>
-#include <QThreadPool>
-#include <QFuture>
-#include <QtConcurrent>              // krazy:exclude=includes
-
-// Local includes
-
-#include "noise_detector.h"
-#include "exposure_detector.h"
-#include "compression_detector.h"
-#include "blur_detector.h"
-#include "aesthetic_detector.h"
-#include "imagequalitythread.h"
-
 namespace Digikam
 {
 
@@ -219,8 +197,10 @@ void ImageQualityParser::startAnalyse()
 
                 return;
             }
-            else if (((int)finalQuality > d->imq.rejectedThreshold) &&     // cppcheck-suppress knownConditionTrueFalse
-                     ((int)finalQuality <= d->imq.acceptedThreshold))
+            else if (
+                     ((int)finalQuality >  d->imq.rejectedThreshold) &&     // cppcheck-suppress knownConditionTrueFalse
+                     ((int)finalQuality <= d->imq.acceptedThreshold)
+                    )
             {
                 if (d->imq.mediumQPending)
                 {

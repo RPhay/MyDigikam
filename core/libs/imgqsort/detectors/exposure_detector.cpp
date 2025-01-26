@@ -35,6 +35,8 @@ public:
 
     Private() = default;
 
+public:
+
     int threshold_overexposed       = 245;
     int threshold_demi_overexposed  = 235;
     int threshold_underexposed      = 15;

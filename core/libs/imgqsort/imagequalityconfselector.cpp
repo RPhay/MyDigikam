@@ -45,6 +45,8 @@ public:
 
     Private() = default;
 
+public:
+
     QButtonGroup*         selButtonGroup = nullptr;
     QRadioButton*         selDefault     = nullptr;
     QRadioButton*         selCustom      = nullptr;

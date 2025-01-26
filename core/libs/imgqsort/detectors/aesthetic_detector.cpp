@@ -35,10 +35,6 @@ AestheticDetector::AestheticDetector()
 {
 }
 
-AestheticDetector::~AestheticDetector()
-{
-}
-
 float AestheticDetector::detect(const cv::Mat& image) const
 {
     try

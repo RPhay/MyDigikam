@@ -33,8 +33,8 @@ AbstractDetector::AbstractDetector(QObject* const parent)
 }
 
 /**
- * NOTE: Maybe this function will move to read_image() of imagequalityparser
- * in case all detectors of IQS use cv::Mat
+ * @note Maybe this function will move to read_image() of imagequalityparser
+ * in case all detectors of IQS use cv::Mat.
  */
 cv::Mat AbstractDetector::prepareForDetection(const DImg& inputImage)
 {
