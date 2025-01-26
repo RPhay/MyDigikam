@@ -32,7 +32,7 @@ namespace Digikam
 /**
  * @brief A class that paints a histogram on a QPixmap.
  *
- * @important Before first usage of the render method, you must call initFrom()
+ * @note Before first usage of the render method, you must call initFrom()
  * to initialize the painter.
  */
 class HistogramPainter : public QObject
