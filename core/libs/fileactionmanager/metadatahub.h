@@ -285,7 +285,9 @@ private:
 
 private:
 
-    Q_DISABLE_COPY(MetadataHub)
+    // Disable
+    MetadataHub(const MetadataHub&)            = delete;
+    MetadataHub& operator=(const MetadataHub&) = delete;
 };
 
 } // namespace Digikam
