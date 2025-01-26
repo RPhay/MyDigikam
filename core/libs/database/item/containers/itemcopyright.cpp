@@ -69,10 +69,11 @@ ItemCopyright::ItemCopyright(qlonglong imageid)
 {
 }
 
+// cppcheck-suppress missingMemberCopy
 ItemCopyright::ItemCopyright(const ItemCopyright& other)
     : m_id(other.m_id)
 {
-    // the cache is only short-lived, to keep complexity low
+    // NOTE: the m_cache instance is only short-lived, to keep complexity low. No need to copy.
 }
 
 ItemCopyright::~ItemCopyright()

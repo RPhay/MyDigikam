@@ -76,7 +76,7 @@ for INCLUDE_PATH in $HDIRS ; do
     INCLUDE_DIRS+="-I $INCLUDE_PATH/ "
 done
 
-/opt/cppcheck/bin/cppcheck \
+gdb --ex=r --args /opt/cppcheck/bin/cppcheck \
          -j$CPU_CORES \
          $CPPCHECK_DEFINES \
          --verbose \
