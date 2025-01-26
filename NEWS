@@ -130,7 +130,7 @@ BUGFIXES:
 083 ==> 499074 - Created video filename on import is wrong (date/time).
 084 ==> 491390 - Videos not sorted into albums created by date when importing.
 085 ==> 498663 - digiKam exits with error message after a few seconds.
-086 ==>
+086 ==> 463760 - Names are not clickable.
 087 ==>
 088 ==>
 089 ==>
