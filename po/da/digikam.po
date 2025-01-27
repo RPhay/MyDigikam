@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 01:52+0000\n"
+"POT-Creation-Date: 2025-01-27 01:57+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -9511,7 +9511,7 @@ msgid "Use Color Management for Printing"
 msgstr "Anvend farvehåndtering til udskrivning"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
-#: core/libs/imgqsort/imagequalityconfselector.cpp:71
+#: core/libs/imgqsort/imagequalityconfselector.cpp:73
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
 #: core/utilities/maintenance/main/maintenancedlg.cpp:286
 #, kde-format
@@ -37068,40 +37068,40 @@ msgstr "Ryd alt"
 msgid "Select All"
 msgstr "Vælg alle"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:67
+#: core/libs/imgqsort/imagequalityconfselector.cpp:69
 #, fuzzy, kde-format
 #| msgid "Revert to default settings"
 msgctxt "@option:radio"
 msgid "Use default settings"
 msgstr "Vend tilbage til standardindstillinger"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:68
+#: core/libs/imgqsort/imagequalityconfselector.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:75
+#: core/libs/imgqsort/imagequalityconfselector.cpp:77
 #, fuzzy, kde-format
 #| msgid "Use custom definition"
 msgctxt "@option:radio"
 msgid "Use custom settings"
 msgstr "Brug egen definition"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:76
+#: core/libs/imgqsort/imagequalityconfselector.cpp:78
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:99
+#: core/libs/imgqsort/imagequalitysettings.cpp:100
 #, fuzzy, kde-format
 #| msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgstr "Tildel \"afvist\"-etiket til billeder af lav kvalitet"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:100
+#: core/libs/imgqsort/imagequalitysettings.cpp:101
 #, fuzzy, kde-format
 #| msgid ""
 #| "Low quality images detected by blur, noise, and compression analysis will "
@@ -37114,14 +37114,14 @@ msgstr ""
 "Billeder af lav kvalitet detekteret via analyse af sløring, støj og "
 "komprimering vil blive tildelt afvist-etiket."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:112
+#: core/libs/imgqsort/imagequalitysettings.cpp:113
 #, fuzzy, kde-format
 #| msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgstr "Tildel \"Udestående\"-etiket til billeder af mellem kvalitet"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:113
+#: core/libs/imgqsort/imagequalitysettings.cpp:114
 #, fuzzy, kde-format
 #| msgid ""
 #| "Medium quality images detected by blur, noise, and compression analysis "
@@ -37134,14 +37134,14 @@ msgstr ""
 "Billeder af mellem kvalitet detekteret via analyse af sløring, støj og "
 "komprimering vil blive tildelt udestående-etiket."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:125
+#: core/libs/imgqsort/imagequalitysettings.cpp:126
 #, fuzzy, kde-format
 #| msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgstr "Tildel \"godkendt\"-etiket til billeder af høj kvalitet"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:126
+#: core/libs/imgqsort/imagequalitysettings.cpp:127
 #, fuzzy, kde-format
 #| msgid ""
 #| "High quality images detected by blur, noise, and compression analysis "
@@ -37154,13 +37154,13 @@ msgstr ""
 "Billeder af høj kvalitet detekteret via analyse af sløring, støj og "
 "komprimering vil blive tildelt godkendt-etiket."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:139
+#: core/libs/imgqsort/imagequalitysettings.cpp:140
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:141
+#: core/libs/imgqsort/imagequalitysettings.cpp:142
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37168,13 +37168,13 @@ msgid ""
 "The aesthetic detection engine use deep learning model to classify images"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:146
+#: core/libs/imgqsort/imagequalitysettings.cpp:147
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:148
+#: core/libs/imgqsort/imagequalitysettings.cpp:149
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37182,128 +37182,128 @@ msgid ""
 "exposure, and compression)."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:159
+#: core/libs/imgqsort/imagequalitysettings.cpp:160
 #, fuzzy, kde-format
 #| msgid "Rejected threshold:"
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Tærskel for afvisning:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:164
+#: core/libs/imgqsort/imagequalitysettings.cpp:165
 #, fuzzy, kde-format
 #| msgid "Threshold below which all pictures are assigned Rejected Label"
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr "Tærskel hvorunder alle billeder tildeles afvist-etiketten"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:166
+#: core/libs/imgqsort/imagequalitysettings.cpp:167
 #, fuzzy, kde-format
 #| msgid "Pending threshold:"
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Tærskel for udestående:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:171
+#: core/libs/imgqsort/imagequalitysettings.cpp:172
 #, fuzzy, kde-format
 #| msgid "Threshold below which all pictures are assigned Pending Label"
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr "Tærskel hvorunder alle billeder tildeles udestående-etiketten"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:173
+#: core/libs/imgqsort/imagequalitysettings.cpp:174
 #, fuzzy, kde-format
 #| msgid "Accepted threshold:"
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Tærskel for godkendt:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:178
+#: core/libs/imgqsort/imagequalitysettings.cpp:179
 #, fuzzy, kde-format
 #| msgid "Threshold above which all pictures are assigned Accepted Label"
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr "Tærskel hvorunder alle billeder tildeles godkendt-etiketten"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:180
+#: core/libs/imgqsort/imagequalitysettings.cpp:181
 #, fuzzy, kde-format
 #| msgid "Detect Blur"
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Detektér sløring"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:181
+#: core/libs/imgqsort/imagequalitysettings.cpp:182
 #, fuzzy, kde-format
 #| msgid "Detect the amount of blur in the images passed to it"
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "Detektér mængden af sløring i de billeder der sendes til den"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:183
-#: core/libs/imgqsort/imagequalitysettings.cpp:193
-#: core/libs/imgqsort/imagequalitysettings.cpp:203
+#: core/libs/imgqsort/imagequalitysettings.cpp:184
+#: core/libs/imgqsort/imagequalitysettings.cpp:194
+#: core/libs/imgqsort/imagequalitysettings.cpp:204
 #, fuzzy, kde-format
 #| msgid "Height:"
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Højde:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:188
+#: core/libs/imgqsort/imagequalitysettings.cpp:189
 #, fuzzy, kde-format
 #| msgid "Weight to assign to Blur Algorithm"
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Vægtning der skal tildeles sløringsalgoritmen"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:190
+#: core/libs/imgqsort/imagequalitysettings.cpp:191
 #, fuzzy, kde-format
 #| msgid "Detect Noise"
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Detektér støj"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:191
+#: core/libs/imgqsort/imagequalitysettings.cpp:192
 #, fuzzy, kde-format
 #| msgid "Detect the amount of noise in the images passed to it"
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Detektér mængden af støj i de billeder der sendes til den"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:198
+#: core/libs/imgqsort/imagequalitysettings.cpp:199
 #, fuzzy, kde-format
 #| msgid "Weight to assign to Noise Algorithm"
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Vægtning der skal tildeles støjalgoritmen"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:200
+#: core/libs/imgqsort/imagequalitysettings.cpp:201
 #, fuzzy, kde-format
 #| msgid "Detect Compression"
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Detektér komprimering"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:201
+#: core/libs/imgqsort/imagequalitysettings.cpp:202
 #, fuzzy, kde-format
 #| msgid "Detect the amount of compression in the images passed to it"
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Detektér mængden af komprimering i de billeder der sendes til den"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:208
+#: core/libs/imgqsort/imagequalitysettings.cpp:209
 #, fuzzy, kde-format
 #| msgid "Weight to assign to Compression Algorithm"
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Vægtning der skal tildeles komprimeringsalgoritmen"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:210
+#: core/libs/imgqsort/imagequalitysettings.cpp:211
 #, fuzzy, kde-format
 #| msgid "Detect Overexposure"
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Detektér overeksponering"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:211
+#: core/libs/imgqsort/imagequalitysettings.cpp:212
 #, fuzzy, kde-format
 #| msgid "Detect if the images are overexposed"
 msgctxt "@info:tooltip"
@@ -55929,12 +55929,12 @@ msgstr ""
 "<qt><p><i>Bemærk:</i> Registrering af information i filernes metadata kan "
 "gøre operationer i fotohåndteringen langsommere.</p></qt>"
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:62
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:64
 #, kde-format
 msgid "Migration from digiKam 4"
 msgstr ""
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:70
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:72
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Migrate configuration and metadata from digiKam 4</b></h1></"
@@ -55948,12 +55948,12 @@ msgid ""
 "and databases before proceeding.</p></qt>"
 msgstr ""
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:87
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:89
 #, kde-format
 msgid "Migrate configuration from digiKam 4"
 msgstr ""
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:96
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:98
 #, fuzzy, kde-format
 #| msgid "Database Migration..."
 msgid "Create a new configuration"

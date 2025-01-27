@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 01:52+0000\n"
+"POT-Creation-Date: 2025-01-27 01:57+0000\n"
 "PO-Revision-Date: 2024-08-24 11:18+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -9184,7 +9184,7 @@ msgid "Use Color Management for Printing"
 msgstr "Użyj zarządzania barwami dla drukowania"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
-#: core/libs/imgqsort/imagequalityconfselector.cpp:71
+#: core/libs/imgqsort/imagequalityconfselector.cpp:73
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
 #: core/utilities/maintenance/main/maintenancedlg.cpp:286
 #, kde-format
@@ -35281,13 +35281,13 @@ msgstr "Wyczyść wszystko"
 msgid "Select All"
 msgstr "Zaznacz wszystko"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:67
+#: core/libs/imgqsort/imagequalityconfselector.cpp:69
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use default settings"
 msgstr "Użyj ustawień domyślnych"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:68
+#: core/libs/imgqsort/imagequalityconfselector.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
@@ -35295,13 +35295,13 @@ msgstr ""
 "Użyj domyślnych parametrów szeregowania po jakości ustawionych w oknie "
 "ustawień."
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:75
+#: core/libs/imgqsort/imagequalityconfselector.cpp:77
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use custom settings"
 msgstr "Użyj własnych ustawień"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:76
+#: core/libs/imgqsort/imagequalityconfselector.cpp:78
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
@@ -35309,13 +35309,13 @@ msgstr ""
 "Używaj własnych parametrów do szeregowania po jakości, zamiast tych "
 "domyślnych."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:99
+#: core/libs/imgqsort/imagequalitysettings.cpp:100
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgstr "Przypisz etykietę 'Odrzucone' dla zdjęć o niskiej jakości"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:100
+#: core/libs/imgqsort/imagequalitysettings.cpp:101
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35325,13 +35325,13 @@ msgstr ""
 "Obrazy o niskiej jakości wykryte przez analizę rozmycia, szumu i kompresji "
 "będą miały przypisaną etykietę 'odrzucone'."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:112
+#: core/libs/imgqsort/imagequalitysettings.cpp:113
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgstr "Przypisz etykietę 'Oczekujące' dla zdjęć o średniej jakości"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:113
+#: core/libs/imgqsort/imagequalitysettings.cpp:114
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35341,13 +35341,13 @@ msgstr ""
 "Obrazy o średniej jakości wykryte przez analizę rozmycia, szumu i kompresji "
 "będą miały przypisaną etykietę 'oczekujące'."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:125
+#: core/libs/imgqsort/imagequalitysettings.cpp:126
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgstr "Przypisz etykietę 'Przyjęte' dla zdjęć o wysokiej jakości"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:126
+#: core/libs/imgqsort/imagequalitysettings.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35357,13 +35357,13 @@ msgstr ""
 "Obrazy o wysokiej jakości wykryte przez analizę rozmycia, szumu i kompresji "
 "będą miały przypisaną etykietę 'przyjęte'."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:139
+#: core/libs/imgqsort/imagequalitysettings.cpp:140
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
 msgstr "Wykryj estetykę obrazu, używając głębokiego uczenia się"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:141
+#: core/libs/imgqsort/imagequalitysettings.cpp:142
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35374,13 +35374,13 @@ msgstr ""
 "Silnik wykrywania estetyki używa modelu głębokiego uczenia do klasyfikowania "
 "obrazów"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:146
+#: core/libs/imgqsort/imagequalitysettings.cpp:147
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr "Wykryj jakość przy użyciu podstawowych współczynników"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:148
+#: core/libs/imgqsort/imagequalitysettings.cpp:149
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35390,13 +35390,13 @@ msgstr ""
 "Wykryj, czy obraz sabotuje na podstawie czterech podstawowych czynników "
 "(rozmycie, szum, naświetlenie i poziom spakowania)."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:159
+#: core/libs/imgqsort/imagequalitysettings.cpp:160
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Próg odrzucenia:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:164
+#: core/libs/imgqsort/imagequalitysettings.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
@@ -35404,13 +35404,13 @@ msgstr ""
 "Próg, poniżej którego wszystkie zdjęcia będą miały przypisaną "
 "etykietę 'odrzucone'"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:166
+#: core/libs/imgqsort/imagequalitysettings.cpp:167
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Próg oczekiwania:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:171
+#: core/libs/imgqsort/imagequalitysettings.cpp:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
@@ -35418,13 +35418,13 @@ msgstr ""
 "Próg, poniżej którego wszystkie zdjęcia będą miały przypisaną "
 "etykietę 'oczekujące'"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:173
+#: core/libs/imgqsort/imagequalitysettings.cpp:174
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Próg przyjęcia:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:178
+#: core/libs/imgqsort/imagequalitysettings.cpp:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
@@ -35432,75 +35432,75 @@ msgstr ""
 "Próg, powyżej którego wszystkie zdjęcia będą miały przypisaną "
 "etykietę 'przyjęte'"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:180
+#: core/libs/imgqsort/imagequalitysettings.cpp:181
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Wykryj rozmycie"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:181
+#: core/libs/imgqsort/imagequalitysettings.cpp:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "Wykryj ilość rozmycia w przekazywanych obrazach"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:183
-#: core/libs/imgqsort/imagequalitysettings.cpp:193
-#: core/libs/imgqsort/imagequalitysettings.cpp:203
+#: core/libs/imgqsort/imagequalitysettings.cpp:184
+#: core/libs/imgqsort/imagequalitysettings.cpp:194
+#: core/libs/imgqsort/imagequalitysettings.cpp:204
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Waga:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:188
+#: core/libs/imgqsort/imagequalitysettings.cpp:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Waga przypisana do algorytmu rozmycia"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:190
+#: core/libs/imgqsort/imagequalitysettings.cpp:191
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Wykryj szum"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:191
+#: core/libs/imgqsort/imagequalitysettings.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Wykryj ilość szumu w przekazywanych obrazach"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:198
+#: core/libs/imgqsort/imagequalitysettings.cpp:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Waga przypisana do algorytmu szumu"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:200
+#: core/libs/imgqsort/imagequalitysettings.cpp:201
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Wykryj kompresję"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:201
+#: core/libs/imgqsort/imagequalitysettings.cpp:202
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Wykryj ilość kompresji w przekazywanych obrazach"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:208
+#: core/libs/imgqsort/imagequalitysettings.cpp:209
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Waga przypisana do algorytmu kompresji"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:210
+#: core/libs/imgqsort/imagequalitysettings.cpp:211
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Wykryj niedoświetlenie i prześwietlenie"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:211
+#: core/libs/imgqsort/imagequalitysettings.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
@@ -52449,12 +52449,12 @@ msgstr ""
 "<qt><p><i>Uwaga:</i> zapisywanie szczegółów w metadanych plików może "
 "spowolnić działania związane z zarządzaniem zdjęciami.</p></qt>"
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:62
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:64
 #, kde-format
 msgid "Migration from digiKam 4"
 msgstr "Przenosiny z digiKam 4"
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:70
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:72
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Migrate configuration and metadata from digiKam 4</b></h1></"
@@ -52477,12 +52477,12 @@ msgstr ""
 "</p><p>W obu przypadkach zaleca się dokonanie kopii zapasowej plików "
 "ustawień i bazy danych przed kontynuowaniem.</p></qt>"
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:87
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:89
 #, kde-format
 msgid "Migrate configuration from digiKam 4"
 msgstr "Przenieś ustawienia z digiKam 4"
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:96
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:98
 #, kde-format
 msgid "Create a new configuration"
 msgstr "Utwórz nowe ustawienia"

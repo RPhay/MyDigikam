@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 01:52+0000\n"
+"POT-Creation-Date: 2025-01-27 01:57+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -8715,7 +8715,7 @@ msgid "Use Color Management for Printing"
 msgstr "对打印流程进行色彩管理"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
-#: core/libs/imgqsort/imagequalityconfselector.cpp:71
+#: core/libs/imgqsort/imagequalityconfselector.cpp:73
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
 #: core/utilities/maintenance/main/maintenancedlg.cpp:286
 #, kde-format
@@ -19980,20 +19980,13 @@ msgid "Soundtrack Preview:"
 msgstr "音轨预览："
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:226
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-#| "will be played in loop. If the audio length is largest than video, it "
-#| "will be trimmed. Leave this setting empty if you do not want a soundtrack "
-#| "to the media.</i>"
+#, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is larger than video, it will be "
 "trimmed. Leave this setting empty if you do not want a soundtrack to the "
 "media.</i>"
 msgstr ""
-"<i>关于音轨的提示：如果音频长度短于视频长度，则音频会循环播放。如果音频长度长"
-"于视频长度，则音频将被截断。如果您不想在视频中包含音轨，请将此选项留空。</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:247
 #, kde-format
@@ -33908,37 +33901,37 @@ msgstr "全部清除"
 msgid "Select All"
 msgstr "全部选中"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:67
+#: core/libs/imgqsort/imagequalityconfselector.cpp:69
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use default settings"
 msgstr "使用默认设置"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:68
+#: core/libs/imgqsort/imagequalityconfselector.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
 msgstr "使用在设置对话框中配置的默认品质分类参数。"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:75
+#: core/libs/imgqsort/imagequalityconfselector.cpp:77
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use custom settings"
 msgstr "使用自定义设置"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:76
+#: core/libs/imgqsort/imagequalityconfselector.cpp:78
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
 msgstr "使用自定义品质分类参数来执行品质分类，而不是默认参数。"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:99
+#: core/libs/imgqsort/imagequalitysettings.cpp:100
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgstr "指定“否决”标记到低品质图像"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:100
+#: core/libs/imgqsort/imagequalitysettings.cpp:101
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33946,13 +33939,13 @@ msgid ""
 "assigned to Rejected label."
 msgstr "通过模糊、噪点、压缩分析得到的低画质图像将被指定“否决”标记。"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:112
+#: core/libs/imgqsort/imagequalitysettings.cpp:113
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgstr "指定“待定”标记到中品质图像"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:113
+#: core/libs/imgqsort/imagequalitysettings.cpp:114
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33960,13 +33953,13 @@ msgid ""
 "be assigned to Pending label."
 msgstr "通过模糊、噪点、压缩分析得到的中画质图像将被指定“待定”标记。"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:125
+#: core/libs/imgqsort/imagequalitysettings.cpp:126
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgstr "指定“接受”标记到高品质图像"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:126
+#: core/libs/imgqsort/imagequalitysettings.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33974,13 +33967,13 @@ msgid ""
 "be assigned to Accepted label."
 msgstr "通过模糊、噪点、压缩分析得到的高画质图像将被指定“接受”标记。"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:139
+#: core/libs/imgqsort/imagequalitysettings.cpp:140
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
 msgstr "使用深度学习检测图像美感"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:141
+#: core/libs/imgqsort/imagequalitysettings.cpp:142
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33990,13 +33983,13 @@ msgstr ""
 "检测图像是否具有美感。\n"
 "美感检测引擎使用深度学习模型来对图像进行分类"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:146
+#: core/libs/imgqsort/imagequalitysettings.cpp:147
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr "使用基本因素检测图像品质"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:148
+#: core/libs/imgqsort/imagequalitysettings.cpp:149
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34004,111 +33997,111 @@ msgid ""
 "exposure, and compression)."
 msgstr "检测图像的四项基本品质因素 (模糊、噪点、曝光、压缩)。"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:159
+#: core/libs/imgqsort/imagequalitysettings.cpp:160
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "否决阈值："
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:164
+#: core/libs/imgqsort/imagequalitysettings.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr "低于此阈值的所有图像将被指定“否决”标记。"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:166
+#: core/libs/imgqsort/imagequalitysettings.cpp:167
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "待定阈值："
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:171
+#: core/libs/imgqsort/imagequalitysettings.cpp:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr "低于此阈值的所有图像将被指定“待定”标记。"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:173
+#: core/libs/imgqsort/imagequalitysettings.cpp:174
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "接受阈值："
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:178
+#: core/libs/imgqsort/imagequalitysettings.cpp:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr "高于此阈值的所有图像将被指定“接受”标记。"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:180
+#: core/libs/imgqsort/imagequalitysettings.cpp:181
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "检测模糊"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:181
+#: core/libs/imgqsort/imagequalitysettings.cpp:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "检测图像的模糊程度。"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:183
-#: core/libs/imgqsort/imagequalitysettings.cpp:193
-#: core/libs/imgqsort/imagequalitysettings.cpp:203
+#: core/libs/imgqsort/imagequalitysettings.cpp:184
+#: core/libs/imgqsort/imagequalitysettings.cpp:194
+#: core/libs/imgqsort/imagequalitysettings.cpp:204
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "权重："
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:188
+#: core/libs/imgqsort/imagequalitysettings.cpp:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "模糊检测算法的权重"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:190
+#: core/libs/imgqsort/imagequalitysettings.cpp:191
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "检测噪点"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:191
+#: core/libs/imgqsort/imagequalitysettings.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "检测图像的噪点数量。"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:198
+#: core/libs/imgqsort/imagequalitysettings.cpp:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "噪点检测算法的权重"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:200
+#: core/libs/imgqsort/imagequalitysettings.cpp:201
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "检测压缩"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:201
+#: core/libs/imgqsort/imagequalitysettings.cpp:202
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "检测图像的压缩级别。"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:208
+#: core/libs/imgqsort/imagequalitysettings.cpp:209
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "压缩检测算法的权重"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:210
+#: core/libs/imgqsort/imagequalitysettings.cpp:211
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "检测曝光不足/过度"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:211
+#: core/libs/imgqsort/imagequalitysettings.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
@@ -41350,6 +41343,8 @@ msgid ""
 "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b><br/"
 ">with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
+"<qt><font color=\"white\"><b>自由开源</b>的<br/><b>专业</b>照片<b>管理工具</"
+"b></font></qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
@@ -50604,12 +50599,12 @@ msgid ""
 msgstr ""
 "<qt><p><b>提示：</b>将元数据写入文件会拖慢照片管理操作的速度。</p></qt>"
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:62
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:64
 #, kde-format
 msgid "Migration from digiKam 4"
 msgstr "digiKam 4 升级迁移"
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:70
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:72
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Migrate configuration and metadata from digiKam 4</b></h1></"
@@ -50629,12 +50624,12 @@ msgstr ""
 "的标签等元数据将会丢失，因为它们只存在于 digiKam 4 的数据库中。</p><p>无论您"
 "选择了何种方案，请务必在继续操作之前备份所有文件和数据库。</p></qt>"
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:87
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:89
 #, kde-format
 msgid "Migrate configuration from digiKam 4"
 msgstr "迁移 digiKam 4 配置文件"
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:96
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:98
 #, kde-format
 msgid "Create a new configuration"
 msgstr "创建全新配置文件"
