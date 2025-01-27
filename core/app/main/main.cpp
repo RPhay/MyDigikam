@@ -450,10 +450,10 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     //
     // Right now this is the easiest and cleanest fix for the described problem, but we might re-think the
     // solution later on, just in case there are better ways to do it.
-/*
+
     QObject::connect(digikam, SIGNAL(destroyed(QObject*)),
                      &app, SLOT(quit()));
-*/
+
     digikam->restoreSession();
     digikam->show();
 
@@ -504,6 +504,8 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
 #   endif
 #endif
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "End...";
 
     return ret;
 }
