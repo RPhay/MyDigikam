@@ -93,6 +93,8 @@ CPPCHECK_SUPPRESSIONS="\
 --suppress=unusedVariable \
 --suppress=unusedStructMember \
 --suppress=unusedPrivateFunction \
+--suppress=unusedFunction \
+--suppress=functionStatic \
 --suppress=unknownMacro \
 --suppress=unmatchedSuppression \
 --suppress=unassignedVariable \
@@ -102,5 +104,3 @@ CPPCHECK_SUPPRESSIONS="\
 --suppress=constVariablePointer \
 --suppress=useStlAlgorithm \
 "
-
-#--suppress=shadowFunction \
