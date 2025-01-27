@@ -67,10 +67,6 @@ public:
 
 public:
 
-    QTabWidget*       tabWidget                         = nullptr;
-
-    // ---
-
     AlbumSelectors*   albumSelectors                    = nullptr;
 
     // ---
