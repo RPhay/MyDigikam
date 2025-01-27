@@ -33,7 +33,9 @@
 #include "digikam_export.h"
 
 #ifdef HAVE_DBUS
+
 class QDBusArgument;
+
 #endif
 
 namespace Digikam
@@ -251,13 +253,13 @@ template<typename FieldName> class FieldMetaInfo
 DECLARE_FIELDMETAINFO(Images)
 DECLARE_FIELDMETAINFO(ItemInformation)
 DECLARE_FIELDMETAINFO(ImageMetadata)
-DECLARE_FIELDMETAINFO(ItemComments)
+DECLARE_FIELDMETAINFO(ItemComments)             // cppcheck-suppress passedByValue
 DECLARE_FIELDMETAINFO(ItemPositions)
 DECLARE_FIELDMETAINFO(ImageHistoryInfo)
 DECLARE_FIELDMETAINFO(VideoMetadata)
 
 /**
- * You can iterate over each of the Enumerations defined above:
+ * @note You can iterate over each of the Enumerations defined above:
  * ImagesIterator, ImageMetadataIterator etc.
  * for (ImagesIterator it ; !it.atEnd() ; ++it) {...}
  */
@@ -289,13 +291,13 @@ private:
 };
 
 /**
- * An iterator that iterates only over the flags which are set
+ * @brief An iterator that iterates only over the flags which are set
  */
 template<typename FieldName> class DatabaseFieldsEnumIteratorSetOnly
 {
 public:
 
-    explicit DatabaseFieldsEnumIteratorSetOnly(const FieldName setValues)
+    explicit DatabaseFieldsEnumIteratorSetOnly(const FieldName setValues)   // cppcheck-suppress passedByValue
       : i     (),
         values(setValues)
     {
@@ -347,7 +349,7 @@ DATABASEFIELDS_ENUM_ITERATOR(ItemComments)
 DATABASEFIELDS_ENUM_ITERATOR(ImageHistoryInfo)
 
 /**
- * For your custom enum, you need to use the CustomEnum class.
+ * @note For your custom enum, you need to use the CustomEnum class.
  * You need to do an explicit cast.
  */
 enum CustomEnumFlags
@@ -369,7 +371,7 @@ Q_DECLARE_FLAGS(CustomEnum, CustomEnumFlags)
     inline Flag get##Flag() const           { return variable;               }
 
 /**
- * This class provides a set of all DatabaseFields enums,
+ * @brief This class provides a set of all DatabaseFields enums,
  * without resorting to a QSet.
  */
 class Set
@@ -415,8 +417,10 @@ public:
                (videoMetadata    & other.videoMetadata);
     }
 
-    // overloading operator|= creates ambiguity with the database fields'
-    // operator|=, therefore we give it another name.
+    /**
+     * @note overloading operator|= creates ambiguity with the database fields'
+     * operator|=, therefore we give it another name.
+     */
     inline Set& setFields(const Set& otherSet)
     {
         images           |= otherSet.images;
@@ -462,9 +466,11 @@ public:
     }
 
 #ifdef HAVE_DBUS
+
     // databasechangesets.cpp
     Set& operator<<(const QDBusArgument& argument);
     const Set& operator>>(QDBusArgument& argument) const;
+
 #endif
 
 private:
@@ -507,7 +513,7 @@ private:
     int count(const Key& key) const                            { return QHash<unsigned int, T>::count(method(key));               }
 
 /**
- * This class provides a hash on all DatabaseFields enums,
+ * @brief This class provides a hash on all DatabaseFields enums,
  * allowing to use the enum values as independent keys.
  * You can use the class like a normal QHash with the value type defined
  * by you, and as keys the members of the DatabaseFields enums.
@@ -521,8 +527,10 @@ class Hash : public QHash<unsigned int, T>
 {
 public:
 
-    // We use the upper 6 bits to distinguish the enums, and give the lower 26 bits to the flags.
-    // So we can store up to 64 enums, with 26 flags each.
+    /**
+     * @note We use the upper 6 bits to distinguish the enums, and give the lower 26 bits to the flags.
+     * So we can store up to 64 enums, with 26 flags each.
+     */
     static inline unsigned int uniqueKey(Images f)
     {
         return (unsigned int)f;
@@ -538,7 +546,7 @@ public:
         return (unsigned int)f | (unsigned int)(2 << 26);
     }
 
-    static inline unsigned int uniqueKey(ItemComments f)
+    static inline unsigned int uniqueKey(ItemComments f)        // cppcheck-suppress passedByValue
     {
         return (unsigned int)f | (unsigned int)(3 << 26);
     }
