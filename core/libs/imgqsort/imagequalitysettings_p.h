@@ -34,10 +34,14 @@
 
 // KDE includes
 
+#include <kconfiggroup.h>
 #include <klocalizedstring.h>
 
 // Local includes
 
+#include "albummodel.h"
+#include "albumselectors.h"
+#include "albummanager.h"
 #include "dlayoutbox.h"
 #include "picklabelwidget.h"
 #include "dnuminput.h"
@@ -61,35 +65,41 @@ public:
 
 public:
 
-    QWidget*      rulesWidget           = nullptr;
-    QWidget*      basicView             = nullptr;
+    const QString                             configName            = QLatin1String("Image Quality Settings");
 
-    QCheckBox*    detectBlur            = nullptr;
-    QCheckBox*    detectNoise           = nullptr;
-    QCheckBox*    detectCompression     = nullptr;
-    QCheckBox*    detectExposure        = nullptr;
+    AlbumSelectors*                           albumSelectors        = nullptr;
 
-    QButtonGroup* detectButtonGroup     = nullptr;
-    QRadioButton* detectAesthetic       = nullptr;
-    QRadioButton* detectBasicFactors    = nullptr;
+    QWidget*                                  rulesWidget           = nullptr;
+    QWidget*                                  basicView             = nullptr;
 
-    QCheckBox*    setRejected           = nullptr;
-    QCheckBox*    setPending            = nullptr;
-    QCheckBox*    setAccepted           = nullptr;
+    QCheckBox*                                detectBlur            = nullptr;
+    QCheckBox*                                detectNoise           = nullptr;
+    QCheckBox*                                detectCompression     = nullptr;
+    QCheckBox*                                detectExposure        = nullptr;
 
-    QLabel*       lbl2                  = nullptr;
-    QLabel*       lbl3                  = nullptr;
-    QLabel*       lbl4                  = nullptr;
-    QLabel*       lbl5                  = nullptr;
-    QLabel*       lbl6                  = nullptr;
-    QLabel*       lbl7                  = nullptr;
+    QButtonGroup*                             detectButtonGroup     = nullptr;
+    QRadioButton*                             detectAesthetic       = nullptr;
+    QRadioButton*                             detectBasicFactors    = nullptr;
 
-    DIntNumInput* setRejectedThreshold  = nullptr;
-    DIntNumInput* setPendingThreshold   = nullptr;
-    DIntNumInput* setAcceptedThreshold  = nullptr;
-    DIntNumInput* setBlurWeight         = nullptr;
-    DIntNumInput* setNoiseWeight        = nullptr;
-    DIntNumInput* setCompressionWeight  = nullptr;
+    QCheckBox*                                setRejected           = nullptr;
+    QCheckBox*                                setPending            = nullptr;
+    QCheckBox*                                setAccepted           = nullptr;
+
+    QLabel*                                   lbl2                  = nullptr;
+    QLabel*                                   lbl3                  = nullptr;
+    QLabel*                                   lbl4                  = nullptr;
+    QLabel*                                   lbl5                  = nullptr;
+    QLabel*                                   lbl6                  = nullptr;
+    QLabel*                                   lbl7                  = nullptr;
+
+    DIntNumInput*                             setRejectedThreshold  = nullptr;
+    DIntNumInput*                             setPendingThreshold   = nullptr;
+    DIntNumInput*                             setAcceptedThreshold  = nullptr;
+    DIntNumInput*                             setBlurWeight         = nullptr;
+    DIntNumInput*                             setNoiseWeight        = nullptr;
+    DIntNumInput*                             setCompressionWeight  = nullptr;
+
+    ImageQualitySettings::SettingsDisplayMode displayMode           = ImageQualitySettings::SettingsDisplayMode::Normal;
 };
 
 } // namespace Digikam

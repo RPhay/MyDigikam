@@ -63,7 +63,7 @@ SetupImageQualitySorter::SetupImageQualitySorter(QWidget* const parent)
     explanation->setWordWrap(true);
     explanation->setTextFormat(Qt::RichText);
 
-    d->settingsWidget = new ImageQualitySettings(vbox);
+    d->settingsWidget = new ImageQualitySettings(ImageQualitySettings::Maintenance, vbox);
 
     setWidget(vbox);
     setWidgetResizable(true);

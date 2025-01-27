@@ -28,7 +28,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ImageQualityConfSelector : public QWidget
+class DIGIKAM_GUI_EXPORT ImageQualityConfSelector : public QWidget
 {
     Q_OBJECT
 

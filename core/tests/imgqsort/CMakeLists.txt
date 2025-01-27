@@ -28,6 +28,7 @@ macro(IMGQSORT_BUILD_STANDALONE)
     target_link_libraries(${_target}
 
                           digikamcore
+                          digikamgui
 
                           ${COMMON_TEST_LINK}
     )
@@ -71,6 +72,7 @@ macro(IMGQSORT_BUILD_UNITTEST)
                   libimgqsorttest
 
                   digikamcore
+                  digikamgui
 
                   ${COMMON_TEST_LINK}
     )
@@ -98,5 +100,6 @@ endmacro()
 
 # target_link_libraries(${_target}
 #                         digikamcore
+#                         digikamgui
 #                         ${COMMON_TEST_LINK}
 # )

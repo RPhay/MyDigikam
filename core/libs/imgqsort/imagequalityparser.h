@@ -27,7 +27,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ImageQualityParser : public QObject
+class DIGIKAM_GUI_EXPORT ImageQualityParser : public QObject
 {
     Q_OBJECT
 

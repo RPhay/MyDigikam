@@ -35,10 +35,10 @@ include_directories(
     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-# Used by digikamcore
-add_library(core_imgqsort_obj OBJECT ${libimgqsort_SRCS})
+# Used by digikamgui
+add_library(gui_imgqsort_obj OBJECT ${libimgqsort_SRCS})
 
-target_compile_definitions(core_imgqsort_obj
+target_compile_definitions(gui_imgqsort_obj
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

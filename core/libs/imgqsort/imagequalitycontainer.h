@@ -22,13 +22,14 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "album.h"
 
 class KConfigGroup;
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ImageQualityContainer
+class DIGIKAM_GUI_EXPORT ImageQualityContainer
 {
 public:
 
@@ -47,23 +48,26 @@ public:
 
 public:
 
-    bool detectBlur;            ///< Enable image blur detection.
-    bool detectNoise;           ///< Enable image noise detection.
-    bool detectCompression;     ///< Enable image compression detection.
-    bool detectExposure;        ///< Enable image over and under exposure detection.
-    bool detectAesthetic;       ///< Enable image aesthetic detection.
 
-    bool lowQRejected;          ///< Assign Rejected property to low quality.
-    bool mediumQPending;        ///< Assign Pending property to medium quality.
-    bool highQAccepted;         ///< Assign Accepted property to high quality.
+    AlbumList albums;                ///< Albums to scan.
 
-    int  rejectedThreshold;     ///< Item rejection threshold.
-    int  pendingThreshold;      ///< Item pending threshold.
-    int  acceptedThreshold;     ///< Item accepted threshold.
-    int  blurWeight;            ///< Item blur level.
-    int  noiseWeight;           ///< Item noise level.
-    int  compressionWeight;     ///< Item compression level.
-    int  exposureWeight;        ///< Item exposure level.
+    bool      detectBlur;            ///< Enable image blur detection.
+    bool      detectNoise;           ///< Enable image noise detection.
+    bool      detectCompression;     ///< Enable image compression detection.
+    bool      detectExposure;        ///< Enable image over and under exposure detection.
+    bool      detectAesthetic;       ///< Enable image aesthetic detection.
+
+    bool      lowQRejected;          ///< Assign Rejected property to low quality.
+    bool      mediumQPending;        ///< Assign Pending property to medium quality.
+    bool      highQAccepted;         ///< Assign Accepted property to high quality.
+
+    int       rejectedThreshold;     ///< Item rejection threshold.
+    int       pendingThreshold;      ///< Item pending threshold.
+    int       acceptedThreshold;     ///< Item accepted threshold.
+    int       blurWeight;            ///< Item blur level.
+    int       noiseWeight;           ///< Item noise level.
+    int       compressionWeight;     ///< Item compression level.
+    int       exposureWeight;        ///< Item exposure level.
 };
 
 //! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.

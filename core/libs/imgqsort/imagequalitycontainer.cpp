@@ -43,7 +43,8 @@ ImageQualityContainer::ImageQualityContainer()
 }
 
 ImageQualityContainer::ImageQualityContainer(const ImageQualityContainer& other)
-    : detectBlur        (other.detectBlur),
+    : albums            (other.albums),
+      detectBlur        (other.detectBlur),
       detectNoise       (other.detectNoise),
       detectCompression (other.detectCompression),
       detectExposure    (other.detectExposure),

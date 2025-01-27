@@ -19,11 +19,48 @@
 namespace Digikam
 {
 
-ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
+ImageQualitySettings::ImageQualitySettings(SettingsDisplayMode _displayMode, QWidget* const parent)
     : QTabWidget       (parent),
+      StateSavingObject(this),
       d                (new Private)
 {
+    d->displayMode = _displayMode;
+    setObjectName(d->configName);
+    setupUi();
+}
+
+ImageQualitySettings::~ImageQualitySettings()
+{
+    delete d;
+}
+
+void ImageQualitySettings::doLoadState()
+{
+    KConfigGroup group = getConfigGroup();
+    d->albumSelectors->loadState();
+
+    readSettings(group);
+}
+
+void ImageQualitySettings::doSaveState()
+{
+    KConfigGroup group       = getConfigGroup();
+    d->albumSelectors->saveState();
+
+    applySettings(group);
+}
+
+void ImageQualitySettings::setupUi()
+{
     const int spacing         = layoutSpacing();
+
+    // --- Album tab --------------------------------------------------------------------------------------
+
+    d->albumSelectors         = new AlbumSelectors(QString(), d->configName,
+                                                   this, AlbumSelectors::AlbumType::All, true);
+    addTab(d->albumSelectors, i18nc("@title:tab", "Search in"));
+
+    // ---- Rules tab ---------------------------------------------------------------
 
     d->rulesWidget            = new QWidget(this);
 
@@ -98,7 +135,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
     addTab(d->rulesWidget, i18nc("@title:tab", "Rules"));
 
-    // ------------------------------------------------------------------------------
+    // --- Basic Factors tab --------------------------------------------------------
 
     d->basicView              = new QWidget(this);
     QGridLayout* const grid1  = new QGridLayout(d->basicView);
@@ -260,13 +297,15 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
 #endif
 
+    if (d->displayMode != SettingsDisplayMode::Normal)
+    {
+        setTabVisible(0, false);
+        setCurrentIndex(1);
+    }
+
     slotDisableOptionViews();
 }
 
-ImageQualitySettings::~ImageQualitySettings()
-{
-    delete d;
-}
 
 void ImageQualitySettings::applySettings()
 {

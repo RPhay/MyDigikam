@@ -24,19 +24,32 @@
 
 #include "digikam_export.h"
 #include "imagequalitycontainer.h"
+#include "statesavingobject.h"
 
 class KConfigGroup;
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ImageQualitySettings : public QTabWidget
+class DIGIKAM_GUI_EXPORT ImageQualitySettings : public QTabWidget,
+                                            public StateSavingObject
 {
     Q_OBJECT
 
 public:
 
-    explicit ImageQualitySettings(QWidget* const parent = nullptr);
+    enum SettingsDisplayMode
+    {
+        Normal,
+        Maintenance,
+        BQM
+    };
+    Q_ENUM(SettingsDisplayMode)
+
+public:
+
+    explicit ImageQualitySettings(SettingsDisplayMode _displayMode,
+                                  QWidget* const parent = nullptr);
     ~ImageQualitySettings()                                 override;
 
     void applySettings();
@@ -54,6 +67,15 @@ public:
 Q_SIGNALS:
 
     void signalSettingsChanged();
+
+protected:
+
+    void doLoadState()                                    override;
+    void doSaveState()                                    override;
+
+private:
+
+    void setupUi();
 
 private Q_SLOTS:
 

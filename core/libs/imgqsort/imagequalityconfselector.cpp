@@ -60,8 +60,7 @@ ImageQualityConfSelector::ImageQualityConfSelector(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    const int spacing         = layoutSpacing();
-
+    const int spacing       = layoutSpacing();
 
     d->selButtonGroup       = new QButtonGroup(this);
     d->selButtonGroup->setExclusive(true);
@@ -81,7 +80,7 @@ ImageQualityConfSelector::ImageQualityConfSelector(QWidget* const parent)
     d->selButtonGroup->addButton(d->selCustom, CustomSettings);
     d->selDefault->setChecked(true);
 
-    d->customView           = new ImageQualitySettings(this);
+    d->customView           = new ImageQualitySettings(ImageQualitySettings::Maintenance, this);
 
     QGridLayout* const glay = new QGridLayout(this);
     glay->addWidget(d->selDefault,         0, 0, 1, 1);
