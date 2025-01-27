@@ -52,6 +52,7 @@ export Options='-DANALYZE_MEMORY=OFF \
 /opt/qt6/bin/cmake -G "$MAKEFILES_TYPE" . \
       -DCMAKE_INSTALL_PREFIX=/opt/cppcheck \
       -Wno-dev \
+      -DCMAKE_BUILD_TYPE=Release \
       $Options \
       ..
 
