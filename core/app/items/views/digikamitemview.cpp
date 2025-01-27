@@ -444,6 +444,10 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
         }
     }
 
+    itemAlbumModel()->removeIndexes(sourceIndexes);
+    qApp->processEvents();
+    clearSelection();
+
     if (infos.size() > 1)
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "DigikamItemView::confirmFaces(): INFO: more than 1 face confirmed";
@@ -451,13 +455,8 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
-        // d->editPipeline.confirm(infos[i], faces[i], tagId);
-        d->newEditPipeline->confirmFace(infos[i], faces[i], tagId, i == (infos.size()-1));
+        d->newEditPipeline->confirmFace(infos[i], faces[i], tagId, i == (infos.size() - 1));
     }
-
-    itemAlbumModel()->removeIndexes(sourceIndexes);
-
-    clearSelection();
 }
 
 void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
@@ -476,15 +475,14 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
         }
     }
 
+    itemAlbumModel()->removeIndexes(sourceIndexes);
+    qApp->processEvents();
+    clearSelection();
+
     for (int i = 0 ; i < infos.size() ; ++i)
     {
-        // d->editPipeline.remove(infos[i], faces[i]);
         d->newEditPipeline->removeFace(infos[i], faces[i]);
     }
-
-    itemAlbumModel()->removeIndexes(sourceIndexes);
-
-    clearSelection();
 }
 
 void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
@@ -503,17 +501,15 @@ void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
         }
     }
 
+    itemAlbumModel()->removeIndexes(sourceIndexes);
+    qApp->processEvents();
+    clearSelection();
+
     for (int i = 0 ; i < infos.size() ; ++i)
     {
-        // d->editPipeline.editTag(infos[i], faces[i],
-        //                         FaceTags::unknownPersonTagId());
         d->newEditPipeline->editTag(infos[i], faces[i],
-                                FaceTags::unknownPersonTagId());
+                                    FaceTags::unknownPersonTagId());
     }
-
-    itemAlbumModel()->removeIndexes(sourceIndexes);
-
-    clearSelection();
 }
 
 void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
@@ -532,34 +528,31 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
         }
     }
 
+    itemAlbumModel()->removeIndexes(sourceIndexes);
+    qApp->processEvents();
+    clearSelection();
+
     for (int i = 0 ; i < infos.size() ; ++i)
     {
         if      (FaceTags::isTheUnknownPerson(faces[i].tagId()))
         {
             // Reject signal was sent from an Unknown Face. Mark as Ignored.
 
-            // d->editPipeline.editTag(infos[i], faces[i], FaceTags::ignoredPersonTagId());
             d->newEditPipeline->editTag(infos[i], faces[i], FaceTags::ignoredPersonTagId());
         }
         else if (FaceTags::isTheIgnoredPerson(faces[i].tagId()))
         {
             // Reject signal was sent from an Ignored Face. Remove face.
 
-            // d->editPipeline.remove(infos[i], faces[i]);
             d->newEditPipeline->removeFace(infos[i], faces[i]);
         }
         else
         {
             // Reject face suggestion. Mark as Unknown.
 
-            // d->editPipeline.editTag(infos[i], faces[i], FaceTags::unknownPersonTagId());
             d->newEditPipeline->editTag(infos[i], faces[i], FaceTags::unknownPersonTagId());
         }
     }
-
-    itemAlbumModel()->removeIndexes(sourceIndexes);
-
-    clearSelection();
 }
 
 void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
@@ -578,17 +571,15 @@ void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
         }
     }
 
+    itemAlbumModel()->removeIndexes(sourceIndexes);
+    qApp->processEvents();
+    clearSelection();
+
     for (int i = 0 ; i < infos.size() ; ++i)
     {
-        // d->editPipeline.editTag(infos[i], faces[i],
-        //                         FaceTags::ignoredPersonTagId());
         d->newEditPipeline->editTag(infos[i], faces[i],
-                                FaceTags::ignoredPersonTagId());
+                                    FaceTags::ignoredPersonTagId());
     }
-
-    itemAlbumModel()->removeIndexes(sourceIndexes);
-
-    clearSelection();
 }
 
 QList<int> DigikamItemView::getFaceIds(const QList<QModelIndex>& indexes) const
