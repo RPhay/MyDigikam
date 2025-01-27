@@ -79,7 +79,6 @@ done
 /opt/cppcheck/bin/cppcheck \
          -j$CPU_CORES \
          $CPPCHECK_DEFINES \
-         --verbose \
          $CPPCHECK_OPTIONS \
          --enable=all \
          --inconclusive \
