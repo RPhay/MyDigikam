@@ -53,6 +53,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configMonochromeEntry         = QLatin1String("Monochrome");
     const QString configPreserveLuminosityEntry = QLatin1String("PreserveLuminosity");
     const QString configRedRedGainEntry         = QLatin1String("RedRedGain");
@@ -268,6 +270,7 @@ void MixerSettings::slotResetCurrentChannel()
     }
 
     updateSettingsWidgets();
+
     Q_EMIT signalSettingsChanged();
 }
 
@@ -311,6 +314,7 @@ void MixerSettings::slotGainsChanged()
     }
 
     updateTotalPercents();
+
     Q_EMIT signalSettingsChanged();
 }
 
@@ -513,7 +517,8 @@ void MixerSettings::loadSettings()
     FILE*          fp = nullptr;
     MixerContainer settings;
 
-    loadGainsFileUrl = DFileDialog::getOpenFileUrl(qApp->activeWindow(), i18nc("@title:window", "Select Gimp Gains Mixer File to Load"),
+    loadGainsFileUrl = DFileDialog::getOpenFileUrl(qApp->activeWindow(),
+                                                   i18nc("@title:window", "Select Gimp Gains Mixer File to Load"),
                                                    QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
                                                    QLatin1String("*"));
 
@@ -534,9 +539,9 @@ void MixerSettings::loadSettings()
 
     if (fp)
     {
-        char buf1[1024];
-        char buf2[1024];
-        char buf3[1024];
+        char buf1[1024] = { 0 };
+        char buf2[1024] = { 0 };
+        char buf3[1024] = { 0 };
 
         buf1[0] = '\0';
 
