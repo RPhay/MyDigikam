@@ -47,7 +47,7 @@ TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
 echo "CppCheck Static Analyzer task name: $TITLE"
 
 if [ ! -d "$CPPCHECK_CACHE_DIR" ]; then
-    mkdir "$CPPCHECK_CACHE_DIR"
+    mkdir -p "$CPPCHECK_CACHE_DIR"
 fi
 
 rm -fr $ORIG_WD/$REPORT_DIR
@@ -76,7 +76,7 @@ for INCLUDE_PATH in $HDIRS ; do
     INCLUDE_DIRS+="-I $INCLUDE_PATH/ "
 done
 
-gdb --ex=r --args /opt/cppcheck/bin/cppcheck \
+/opt/cppcheck/bin/cppcheck \
          -j$CPU_CORES \
          $CPPCHECK_DEFINES \
          --verbose \
