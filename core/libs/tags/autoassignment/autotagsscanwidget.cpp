@@ -46,7 +46,8 @@ void AutotagsScanWidget::doLoadState()
     int tagTagMode              = d->tagMode->findData(group.readEntry(d->configTagMode, (int)prm.tagMode));
     d->tagMode->setCurrentIndex(tagTagMode);
 
-    int objectDetectModel       = d->objectDetectModel->findData(group.readEntry(d->configObjectDetectModel,   (int)prm.objectDetectModel));
+    int objectDetectModel       = d->objectDetectModel->findData(group.readEntry(d->configObjectDetectModel,
+                                                                 (int)prm.objectDetectModel));
     d->objectDetectModel->setCurrentIndex(objectDetectModel);
 
     d->accuracyInput->setValue(group.readEntry(d->configObjectDetectAccuracy, prm.uiConfidenceThreshold));
@@ -54,7 +55,7 @@ void AutotagsScanWidget::doLoadState()
     d->useFullCpuButton->setChecked(group.readEntry(d->configObjectDetectAccuracy, prm.useFullCpu));
 
     d->trSelectorList->clearLanguages();
-    const auto lgs     = group.readEntry(d->configLanguages,                                    prm.languages);
+    const auto lgs              = group.readEntry(d->configLanguages, prm.languages);
 
     for (const QString& lg : lgs)
     {
