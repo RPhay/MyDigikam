@@ -416,6 +416,7 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
         return;
     }
 
+    QModelIndex          next;
     QList<ItemInfo>      infos;
     QList<FaceTagsIface> faces;
     QList<QModelIndex>   sourceIndexes;
@@ -444,9 +445,21 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
         }
     }
 
+    if (!indexes.isEmpty() && indexes.constLast().isValid())
+    {
+        next = itemSortFilterModel()->index(indexes.constLast().row(), 0, QModelIndex());
+    }
+
     itemAlbumModel()->removeIndexes(sourceIndexes);
-    qApp->processEvents();
+
+    if (next.isValid())
+    {
+        setCurrentIndex(next);
+        scrollTo(next);
+    }
+
     clearSelection();
+    qApp->processEvents();
 
     if (infos.size() > 1)
     {
@@ -461,6 +474,7 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
 
 void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
 {
+    QModelIndex     next;
     QList<ItemInfo> infos;
     QList<FaceTagsIface> faces;
     QList<QModelIndex> sourceIndexes;
@@ -475,9 +489,21 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
         }
     }
 
+    if (!indexes.isEmpty() && indexes.constLast().isValid())
+    {
+        next = itemSortFilterModel()->index(indexes.constLast().row(), 0, QModelIndex());
+    }
+
     itemAlbumModel()->removeIndexes(sourceIndexes);
-    qApp->processEvents();
+
+    if (next.isValid())
+    {
+        setCurrentIndex(next);
+        scrollTo(next);
+    }
+
     clearSelection();
+    qApp->processEvents();
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
@@ -487,6 +513,7 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
 
 void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
 {
+    QModelIndex     next;
     QList<ItemInfo> infos;
     QList<FaceTagsIface> faces;
     QList<QModelIndex> sourceIndexes;
@@ -501,9 +528,21 @@ void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
         }
     }
 
+    if (!indexes.isEmpty() && indexes.constLast().isValid())
+    {
+        next = itemSortFilterModel()->index(indexes.constLast().row(), 0, QModelIndex());
+    }
+
     itemAlbumModel()->removeIndexes(sourceIndexes);
-    qApp->processEvents();
+
+    if (next.isValid())
+    {
+        setCurrentIndex(next);
+        scrollTo(next);
+    }
+
     clearSelection();
+    qApp->processEvents();
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
@@ -514,6 +553,7 @@ void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
 
 void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
 {
+    QModelIndex     next;
     QList<ItemInfo> infos;
     QList<FaceTagsIface> faces;
     QList<QModelIndex> sourceIndexes;
@@ -528,9 +568,21 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
         }
     }
 
+    if (!indexes.isEmpty() && indexes.constLast().isValid())
+    {
+        next = itemSortFilterModel()->index(indexes.constLast().row(), 0, QModelIndex());
+    }
+
     itemAlbumModel()->removeIndexes(sourceIndexes);
-    qApp->processEvents();
+
+    if (next.isValid())
+    {
+        setCurrentIndex(next);
+        scrollTo(next);
+    }
+
     clearSelection();
+    qApp->processEvents();
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
@@ -557,6 +609,7 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
 
 void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
 {
+    QModelIndex     next;
     QList<ItemInfo> infos;
     QList<FaceTagsIface> faces;
     QList<QModelIndex> sourceIndexes;
@@ -571,9 +624,21 @@ void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
         }
     }
 
+    if (!indexes.isEmpty() && indexes.constLast().isValid())
+    {
+        next = itemSortFilterModel()->index(indexes.constLast().row(), 0, QModelIndex());
+    }
+
     itemAlbumModel()->removeIndexes(sourceIndexes);
-    qApp->processEvents();
+
+    if (next.isValid())
+    {
+        setCurrentIndex(next);
+        scrollTo(next);
+    }
+
     clearSelection();
+    qApp->processEvents();
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
