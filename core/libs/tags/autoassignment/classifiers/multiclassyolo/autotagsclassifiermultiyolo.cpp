@@ -98,6 +98,14 @@ QList<int> AutotagsClassifierYolo::predictMulti(const QList<cv::Mat>& targets)  
     {
         // YOLOv8 and YOLOv11 require reshaping the output
 
+        // check we have a valid cv::Mat
+
+        if (targets[0].size[1] - 4  != predefinedClasses.size())
+        {
+            qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsClassifierYolo::predictMulti: Invalid cv::Mat size";
+            return results;
+        }
+
         cv::Mat newOut;
         std::vector<int> shape = { targets[0].size[1], targets[0].size[2] };
         newOut                 = targets[0].reshape(1, shape);
