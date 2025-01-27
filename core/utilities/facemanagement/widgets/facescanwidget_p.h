@@ -71,10 +71,6 @@ public:
 
 public:
 
-    QTabWidget*       tabWidget                         = nullptr;
-
-    // ---
-
     QWidget*          workflowWidget                    = nullptr;
 
     SqueezedComboBox* alreadyScannedBox                 = nullptr;

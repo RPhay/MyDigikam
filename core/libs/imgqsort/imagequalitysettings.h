@@ -18,7 +18,7 @@
 
 // Qt includes
 
-#include <QWidget>
+#include <QTabWidget>
 
 // Local includes
 
@@ -30,7 +30,7 @@ class KConfigGroup;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ImageQualitySettings : public QWidget
+class DIGIKAM_EXPORT ImageQualitySettings : public QTabWidget
 {
     Q_OBJECT
 
