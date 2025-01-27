@@ -56,14 +56,13 @@ QList<cv::Mat> toImages(const QStringList& paths)
 
 // --------------------------------------------------------------------------------------------------
 
-class Q_DECL_HIDDEN OpenCVSideBySideDisplay
+class Q_DECL_HIDDEN OpenCVSideBySideDisplayAlign
 {
 public:
 
-    explicit OpenCVSideBySideDisplay(int rows, int uiSize = 200)
-        : bigImage(cv::Mat::zeros(uiSize * rows, 2 * uiSize, CV_8UC3)),
-          uiSize(uiSize),
-          currentRow(0)
+    explicit OpenCVSideBySideDisplayAlign(int rows, int uiSize = 200)
+        : bigImage  (cv::Mat::zeros(uiSize * rows, 2 * uiSize, CV_8UC3)),
+          uiSize    (uiSize)
     {
     }
 
@@ -108,7 +107,7 @@ public:
 
     cv::Mat   bigImage;
     const int uiSize;
-    int       currentRow;
+    int       currentRow = 0;
 };
 
 // --------------------------------------------------------------------------------------------------
@@ -132,7 +131,7 @@ int main(int argc, char** argv)
     FunnelReal funnel;
     qCDebug(DIGIKAM_TESTS_LOG) << "Setup of Aligner took " << timer.restart();
 
-    OpenCVSideBySideDisplay display(images.size());
+    OpenCVSideBySideDisplayAlign display(images.size());
 
     for (const cv::Mat& image : std::as_const(images))
     {
