@@ -266,14 +266,17 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName,
      */
 
     {
-        catcher->thread()->find(ItemInfo::thumbnailIdentifier(package->face.imageId()), package->face.region().toRect());
+        catcher->thread()->find(ItemInfo::thumbnailIdentifier(package->face.imageId()),
+                                                              package->face.region().toRect());
         catcher->enqueue();
         QList<QImage> images = catcher->waitForThumbnails();
 
         if (images.size() && !images[0].isNull())
         {
             package->thumbnail     = images[0];
-            package->thumbnailIcon = QIcon(DImg(package->thumbnail).smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap());
+            package->thumbnailIcon = QIcon(DImg(package->thumbnail).smoothScale(48,
+                                                                                48,
+                                                                                Qt::KeepAspectRatio).convertToPixmap());
 
             enqueue(nextQueue, package);
         }
@@ -281,7 +284,12 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName,
         {
             // send a notification that the file was skipped
 
-            notify(MLPipelineNotification::notifySkipped, package->info.name(), package->info.filePath(), QString(), 0, DImg());
+            notify(MLPipelineNotification::notifySkipped,
+                   package->info.name(),
+                   package->info.filePath(),
+                   QString(),
+                   0,
+                   DImg());
 
             // delete the package since it is not needed
 
@@ -302,7 +310,6 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName,
      */
 
     catcher->setActive(false);
-
     catcher->thread()->stopAllTasks();
     catcher->cancel();
 
@@ -353,7 +360,14 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
 
         // create a cv::Mat image from the QImage and move it to the GPU with a cv::UMat
 
-        cv::UMat cvUImage = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC3, inputImage.scanLine(0), inputImage.bytesPerLine()).getUMat(cv::ACCESS_FAST);
+        cv::UMat cvUImage = cv::Mat(
+                                    inputImage.height(),
+                                    inputImage.width(),
+                                    CV_8UC3,
+                                    inputImage.scanLine(0),
+                                    inputImage.bytesPerLine()
+                                   )
+                                   .getUMat(cv::ACCESS_FAST);
 
         // extract the face features
 

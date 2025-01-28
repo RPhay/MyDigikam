@@ -54,10 +54,6 @@ FacePipelineRetrain::FacePipelineRetrain(const FaceScanSettings& _settings)
 {
 }
 
-FacePipelineRetrain::~FacePipelineRetrain()
-{
-}
-
 bool FacePipelineRetrain::start()
 {
     QVariantMap params;
@@ -89,7 +85,8 @@ bool FacePipelineRetrain::finder()
 {
     // All threads start with the same basic functions
 
-    MLPipelineQueue* thisQueue = nullptr, *nextQueue = nullptr;
+    MLPipelineQueue* thisQueue = nullptr;
+    MLPipelineQueue* nextQueue = nullptr;
     stageStart(QThread::LowPriority, MLPipelineStage::Finder, MLPipelineStage::Loader, thisQueue, nextQueue);
     QElapsedTimer timer;
 
@@ -113,7 +110,9 @@ bool FacePipelineRetrain::finder()
 
         if (!album->isTrashAlbum())
         {
-            QList<qlonglong> imageIds = CoreDbAccess().db()->getImageIds(album->id(), DatabaseItem::Status::Visible, true);
+            QList<qlonglong> imageIds = CoreDbAccess().db()->getImageIds(album->id(),
+                                                                         DatabaseItem::Status::Visible,
+                                                                         true);
 
             if (!moreCpu)
             {
@@ -195,7 +194,7 @@ bool FacePipelineRetrain::writer()
     idProvider->clearAllTraining();
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
-    package = static_cast<FacePipelinePackageBase*>(mlpackage);
+    package                            = static_cast<FacePipelinePackageBase*>(mlpackage);
 
     /* =========================================================================================
      * Start pipeline stage specific loop
@@ -206,10 +205,11 @@ bool FacePipelineRetrain::writer()
 
     {
         QString displayName;
+
         if (0 != package->features.rows)
         {
             Identity identity = utils.identityForTag(package->face.tagId());
-            displayName = identity.attribute(QStringLiteral("name"));
+            displayName       = identity.attribute(QStringLiteral("name"));
 
             if (package->useForTraining)
             {
@@ -230,11 +230,11 @@ bool FacePipelineRetrain::writer()
         // send a notification that the image was processed
 
         notify(MLPipelineNotification::notifyProcessed,
-                package->info.name(),
-                albumName + package->info.relativePath(),
-                displayName,
-                (displayName.isEmpty() ? 0 : 1),
-                package->thumbnail);
+               package->info.name(),
+               albumName + package->info.relativePath(),
+               displayName,
+               (displayName.isEmpty() ? 0 : 1),
+               package->thumbnail);
 
         // delete the package
 

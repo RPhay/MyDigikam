@@ -30,7 +30,7 @@ class FacePipelineReset : public FacePipelineBase
 public:
 
     explicit FacePipelineReset(const FaceScanSettings& _settings);
-    ~FacePipelineReset()                                        override;
+    ~FacePipelineReset()                                        override = default;
 
 public:
 
@@ -71,7 +71,6 @@ private:
     FacePipelineReset(QObject* const)                           = delete;
     FacePipelineReset(const FacePipelineReset&)                 = delete;
     FacePipelineReset& operator=(const FacePipelineReset&)      = delete;
-
 };
 
 } // namespace Digikam
