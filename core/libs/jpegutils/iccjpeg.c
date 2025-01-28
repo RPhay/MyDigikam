@@ -32,8 +32,8 @@
  * rather than assuming that the APP2 markers appear in the correct sequence.
  */
 #define ICC_MARKER                              (JPEG_APP0 + 2)    /* JPEG marker code for ICC          */
-static const unsigned int ICC_OVERHEAD_LEN    = 14;                /* size of non-profile data in APP2  */
-static const unsigned int MAX_BYTES_IN_MARKER = 65533;             /* maximum data len of a JPEG marker */
+#define ICC_OVERHEAD_LEN                        14                 /* size of non-profile data in APP2  */
+#define MAX_BYTES_IN_MARKER                     65533              /* maximum data len of a JPEG marker */
 #define MAX_DATA_BYTES_IN_MARKER                (MAX_BYTES_IN_MARKER - ICC_OVERHEAD_LEN)
 
 /**
