@@ -25,7 +25,7 @@
 
 // Local includes
 
-#include "imagequalitysettings.h"
+#include "imagequalitywidget.h"
 #include "dlayoutbox.h"
 
 namespace Digikam
@@ -37,7 +37,9 @@ public:
 
     Private() = default;
 
-    ImageQualitySettings* settingsWidget = nullptr;
+public:
+
+    ImageQualityWidget* settingsWidget = nullptr;
 };
 
 // --------------------------------------------------------
@@ -63,7 +65,7 @@ SetupImageQualitySorter::SetupImageQualitySorter(QWidget* const parent)
     explanation->setWordWrap(true);
     explanation->setTextFormat(Qt::RichText);
 
-    d->settingsWidget = new ImageQualitySettings(ImageQualitySettings::Maintenance, vbox);
+    d->settingsWidget = new ImageQualityWidget(ImageQualityWidget::Maintenance, vbox);
 
     setWidget(vbox);
     setWidgetResizable(true);

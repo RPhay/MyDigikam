@@ -34,7 +34,7 @@
 
 #include "digikam_globals.h"
 #include "dlayoutbox.h"
-#include "imagequalitysettings.h"
+#include "imagequalitywidget.h"
 
 namespace Digikam
 {
@@ -53,7 +53,7 @@ public:
 
     QPushButton*          qualitySetup   = nullptr;
 
-    ImageQualitySettings* customView     = nullptr;
+    ImageQualityWidget*   customView     = nullptr;
 };
 
 ImageQualityConfSelector::ImageQualityConfSelector(QWidget* const parent)
@@ -80,7 +80,7 @@ ImageQualityConfSelector::ImageQualityConfSelector(QWidget* const parent)
     d->selButtonGroup->addButton(d->selCustom, CustomSettings);
     d->selDefault->setChecked(true);
 
-    d->customView           = new ImageQualitySettings(ImageQualitySettings::Maintenance, this);
+    d->customView           = new ImageQualityWidget(ImageQualityWidget::Maintenance, this);
 
     QGridLayout* const glay = new QGridLayout(this);
     glay->addWidget(d->selDefault,         0, 0, 1, 1);

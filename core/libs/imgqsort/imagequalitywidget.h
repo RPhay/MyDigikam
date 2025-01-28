@@ -31,8 +31,8 @@ class KConfigGroup;
 namespace Digikam
 {
 
-class DIGIKAM_GUI_EXPORT ImageQualitySettings : public QTabWidget,
-                                            public StateSavingObject
+class DIGIKAM_GUI_EXPORT ImageQualityWidget : public QTabWidget,
+                                              public StateSavingObject
 {
     Q_OBJECT
 
@@ -48,9 +48,9 @@ public:
 
 public:
 
-    explicit ImageQualitySettings(SettingsDisplayMode _displayMode,
-                                  QWidget* const parent = nullptr);
-    ~ImageQualitySettings()                                 override;
+    explicit ImageQualityWidget(SettingsDisplayMode _displayMode,
+                                QWidget* const parent = nullptr);
+    ~ImageQualityWidget()                                 override;
 
     void applySettings();
     void applySettings(KConfigGroup&);

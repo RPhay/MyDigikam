@@ -14,12 +14,12 @@
  *
  * ============================================================ */
 
-#include "imagequalitysettings_p.h"
+#include "imagequalitywidget_p.h"
 
 namespace Digikam
 {
 
-ImageQualitySettings::ImageQualitySettings(SettingsDisplayMode _displayMode, QWidget* const parent)
+ImageQualityWidget::ImageQualityWidget(SettingsDisplayMode _displayMode, QWidget* const parent)
     : QTabWidget       (parent),
       StateSavingObject(this),
       d                (new Private)
@@ -29,12 +29,12 @@ ImageQualitySettings::ImageQualitySettings(SettingsDisplayMode _displayMode, QWi
     setupUi();
 }
 
-ImageQualitySettings::~ImageQualitySettings()
+ImageQualityWidget::~ImageQualityWidget()
 {
     delete d;
 }
 
-void ImageQualitySettings::doLoadState()
+void ImageQualityWidget::doLoadState()
 {
     KConfigGroup group = getConfigGroup();
     d->albumSelectors->loadState();
@@ -42,7 +42,7 @@ void ImageQualitySettings::doLoadState()
     readSettings(group);
 }
 
-void ImageQualitySettings::doSaveState()
+void ImageQualityWidget::doSaveState()
 {
     KConfigGroup group       = getConfigGroup();
     d->albumSelectors->saveState();
@@ -50,7 +50,7 @@ void ImageQualitySettings::doSaveState()
     applySettings(group);
 }
 
-void ImageQualitySettings::setupUi()
+void ImageQualityWidget::setupUi()
 {
     const int spacing         = layoutSpacing();
 
@@ -288,12 +288,12 @@ void ImageQualitySettings::setupUi()
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
 
     connect(d->detectButtonGroup, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::idClicked),
-            this, &ImageQualitySettings::slotDisableOptionViews);
+            this, &ImageQualityWidget::slotDisableOptionViews);
 
 #else
 
     connect(d->detectButtonGroup, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
-            this, &ImageQualitySettings::slotDisableOptionViews);
+            this, &ImageQualityWidget::slotDisableOptionViews);
 
 #endif
 
@@ -306,33 +306,33 @@ void ImageQualitySettings::setupUi()
     slotDisableOptionViews();
 }
 
-void ImageQualitySettings::applySettings()
+void ImageQualityWidget::applySettings()
 {
     ImageQualityContainer imq = getImageQualityContainer();
     imq.writeToConfig();
 }
 
-void ImageQualitySettings::applySettings(KConfigGroup& group)
+void ImageQualityWidget::applySettings(KConfigGroup& group)
 {
     ImageQualityContainer imq = getImageQualityContainer();
     imq.writeToConfig(group);
 }
 
-void ImageQualitySettings::readSettings()
+void ImageQualityWidget::readSettings()
 {
     ImageQualityContainer imq;
     imq.readFromConfig();
     setImageQualityContainer(imq);
 }
 
-void ImageQualitySettings::readSettings(const KConfigGroup& group)
+void ImageQualityWidget::readSettings(const KConfigGroup& group)
 {
     ImageQualityContainer imq;
     imq.readFromConfig(group);
     setImageQualityContainer(imq);
 }
 
-void ImageQualitySettings::setImageQualityContainer(const ImageQualityContainer& imq)
+void ImageQualityWidget::setImageQualityContainer(const ImageQualityContainer& imq)
 {
     d->detectBlur->setChecked(imq.detectBlur);
     d->detectNoise->setChecked(imq.detectNoise);
@@ -368,7 +368,7 @@ void ImageQualitySettings::setImageQualityContainer(const ImageQualityContainer&
     slotDisableOptionViews();
 }
 
-ImageQualityContainer ImageQualitySettings::getImageQualityContainer() const
+ImageQualityContainer ImageQualityWidget::getImageQualityContainer() const
 {
     ImageQualityContainer imq;
 
@@ -396,7 +396,7 @@ ImageQualityContainer ImageQualitySettings::getImageQualityContainer() const
     return imq;
 }
 
-void ImageQualitySettings::slotDisableOptionViews()
+void ImageQualityWidget::slotDisableOptionViews()
 {
     d->basicView->setEnabled(d->detectBasicFactors->isChecked());
 
@@ -410,7 +410,7 @@ void ImageQualitySettings::slotDisableOptionViews()
     Q_EMIT signalSettingsChanged();
 }
 
-void ImageQualitySettings::resetToDefault()
+void ImageQualityWidget::resetToDefault()
 {
     blockSignals(true);
 
@@ -420,7 +420,7 @@ void ImageQualitySettings::resetToDefault()
     blockSignals(false);
 }
 
-ImageQualityContainer ImageQualitySettings::defaultSettings() const
+ImageQualityContainer ImageQualityWidget::defaultSettings() const
 {
     ImageQualityContainer prm;
 
@@ -429,4 +429,4 @@ ImageQualityContainer ImageQualitySettings::defaultSettings() const
 
 } // namespace Digikam
 
-#include "moc_imagequalitysettings.cpp"
+#include "moc_imagequalitywidget.cpp"
