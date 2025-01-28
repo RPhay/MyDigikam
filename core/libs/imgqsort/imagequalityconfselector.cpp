@@ -135,12 +135,12 @@ void ImageQualityConfSelector::setSettingsSelected(SettingsType type)
 
 ImageQualitySettings ImageQualityConfSelector::customSettings() const
 {
-    return d->customView->getImageQualitySettings();
+    return d->customView->settings();
 }
 
 void ImageQualityConfSelector::setCustomSettings(const ImageQualitySettings& settings)
 {
-    d->customView->setImageQualitySettings(settings);
+    d->customView->setSettings(settings);
 }
 
 void ImageQualityConfSelector::slotSelectionChanged()

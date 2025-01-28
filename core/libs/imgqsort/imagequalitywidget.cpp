@@ -308,13 +308,13 @@ void ImageQualityWidget::setupUi()
 
 void ImageQualityWidget::applySettings()
 {
-    ImageQualitySettings imq = getImageQualitySettings();
+    ImageQualitySettings imq = settings();
     imq.writeToConfig();
 }
 
 void ImageQualityWidget::applySettings(KConfigGroup& group)
 {
-    ImageQualitySettings imq = getImageQualitySettings();
+    ImageQualitySettings imq = settings();
     imq.writeToConfig(group);
 }
 
@@ -322,17 +322,17 @@ void ImageQualityWidget::readSettings()
 {
     ImageQualitySettings imq;
     imq.readFromConfig();
-    setImageQualitySettings(imq);
+    setSettings(imq);
 }
 
 void ImageQualityWidget::readSettings(const KConfigGroup& group)
 {
     ImageQualitySettings imq;
     imq.readFromConfig(group);
-    setImageQualitySettings(imq);
+    setSettings(imq);
 }
 
-void ImageQualityWidget::setImageQualitySettings(const ImageQualitySettings& imq)
+void ImageQualityWidget::setSettings(const ImageQualitySettings& imq)
 {
     d->detectBlur->setChecked(imq.detectBlur);
     d->detectNoise->setChecked(imq.detectNoise);
@@ -368,7 +368,7 @@ void ImageQualityWidget::setImageQualitySettings(const ImageQualitySettings& imq
     slotDisableOptionViews();
 }
 
-ImageQualitySettings ImageQualityWidget::getImageQualitySettings() const
+ImageQualitySettings ImageQualityWidget::settings() const
 {
     ImageQualitySettings imq;
 
@@ -415,7 +415,7 @@ void ImageQualityWidget::resetToDefault()
     blockSignals(true);
 
     ImageQualitySettings prm;
-    setImageQualitySettings(prm);
+    setSettings(prm);
 
     blockSignals(false);
 }

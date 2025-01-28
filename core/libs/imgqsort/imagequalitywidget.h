@@ -58,8 +58,8 @@ public:
     void readSettings();
     void readSettings(const KConfigGroup&);
 
-    ImageQualitySettings getImageQualitySettings() const;
-    void setImageQualitySettings(const ImageQualitySettings& imq);
+    ImageQualitySettings settings() const;
+    void setSettings(const ImageQualitySettings& imq);
 
     ImageQualitySettings defaultSettings()          const;
     void resetToDefault();
