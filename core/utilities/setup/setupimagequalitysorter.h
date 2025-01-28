@@ -21,7 +21,7 @@
 
 // Locals includes
 
-#include "imagequalitycontainer.h"
+#include "imagequalitysettings.h"
 
 namespace Digikam
 {
@@ -36,7 +36,7 @@ public:
     ~SetupImageQualitySorter()                              override;
 
     void applySettings();
-    ImageQualityContainer getImageQualityContainer() const;
+    ImageQualitySettings getImageQualitySettings() const;
 
 private:
 

@@ -33,11 +33,11 @@ class DIGIKAM_GUI_EXPORT FaceScanSettings
 public:
 
     /**
-     * Different possible tasks processed while scanning operation.
+     * @brief Different possible tasks processed while scanning operation.
      */
     enum ScanTask
     {
-        // Detect,                 ///< Detect faces only.
+        // Detect,              ///< Detect faces only.
         DetectAndRecognize,     ///< Detect and recognize faces only.
         RecognizeMarkedFaces,   ///< Recognize already marked faces only.
         RetrainAll,             ///< Retrain faces only.
@@ -48,12 +48,12 @@ public:
     Q_ENUM(ScanTask)
 
     /**
-     * To detect and recognize.
+     * @brief To detect and recognize.
      */
     enum AlreadyScannedHandling
     {
         Skip,                   ///< Skip faces from images already scanned.
-        // Merge,                  ///< Merge faces from images already scanned.
+     // Merge,                  ///< Merge faces from images already scanned.
         Rescan,                 ///< Rescan faces from images already scanned.
         ClearAll,               ///< Clear all faces data from images already scanned. Clear identities and training data from FacesDb
         RecognizeOnly           ///< Recognize faces from images already scanned.
@@ -61,7 +61,7 @@ public:
     Q_ENUM(AlreadyScannedHandling)
 
     /**
-     * Face detection AI models.
+     * @brief Face detection AI models.
      */
     enum FaceDetectionModel
     {
@@ -72,7 +72,7 @@ public:
     Q_ENUM(FaceDetectionModel)
 
     /**
-     * Face detection size.
+     * @brief Face detection size.
      */
     enum FaceDetectionSize
     {
@@ -85,7 +85,7 @@ public:
     Q_ENUM(FaceDetectionSize)
 
     /**
-     * Face recognition AI models.
+     * @brief Face recognition AI models.
      */
     enum FaceRecognitionModel
     {

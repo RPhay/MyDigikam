@@ -33,7 +33,7 @@ class DIGIKAM_EXPORT Identity
 public:
 
     /**
-     * Wraps a face recognition Identity.
+     * @brief Wraps a face recognition Identity.
      * An identity refers to a natural person.
      * There is an internal id which is used the FacesEngine storage,
      * and a number of attributes which map the identity to the outside.
@@ -57,20 +57,20 @@ public:
     bool operator==(const Identity& other)      const;
 
     /**
-     * Id value accessor.
+     * @brief Id value accessor.
      */
     int  id()                                   const;
     void setId(int id);
 
     /**
-     * Attribute value accessor.
+     * @brief Attribute value accessor.
      */
     QString attribute(const QString& att)       const;
     void    setAttribute(const QString& att,
                          const QString& val);
 
     /**
-     * Attributes map accessor.
+     * @brief Attributes map accessor.
      */
     QMultiMap<QString, QString> attributesMap() const;
     void setAttributesMap(const QMultiMap<QString, QString>& attributes);

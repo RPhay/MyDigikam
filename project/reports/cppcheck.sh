@@ -83,6 +83,7 @@ done
          --enable=all \
          --inconclusive \
          --check-level=exhaustive \
+         --max-ctu-depth=4 \
          --cppcheck-build-dir=$CPPCHECK_CACHE_DIR \
          $CPPCHECK_SUPPRESSIONS \
          --xml-version=2 \

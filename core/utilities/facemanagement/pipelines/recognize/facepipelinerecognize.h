@@ -30,7 +30,7 @@ class FacePipelineRecognize : public FacePipelineBase
 public:
 
     explicit FacePipelineRecognize(const FaceScanSettings& _settings);
-    ~FacePipelineRecognize()                                    override;
+    ~FacePipelineRecognize()                                    override = default;
 
 public:
 

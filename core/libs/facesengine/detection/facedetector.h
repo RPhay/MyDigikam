@@ -36,7 +36,7 @@ class DIGIKAM_EXPORT FaceDetector
 public:
 
     /**
-     * Provides face detection, that means the process of selecting
+     * @brief Provides face detection, that means the process of selecting
      * those regions of a full image which contain face.
      *
      * This class provides shallow copying
@@ -54,29 +54,29 @@ public:
     FaceDetector& operator=(const FaceDetector& other);
 
     /**
-     * Scan an image for faces. Return a list with regions possibly
+     * @brief Scan an image for faces. Return a list with regions possibly
      * containing faces.
      * If the image has been downscaled anywhere in the process,
      * provide the original size of the image as this may be of importance in the detection process.
      *
-     * Found faces are returned in relative coordinates.
+     * @return Found faces are returned in relative coordinates.
      */
     QList<QRectF> detectFaces(const QImage& image, const QSize& originalSize = QSize());
 
     /**
-     * Scan an image for faces. Return a list with regions possibly
+     * @brief Scan an image for faces. Return a list with regions possibly
      * containing faces.
      * If the image has been downscaled anywhere in the process,
      * provide the original size of the image as this may be of importance in the detection process.
      *
-     * Found faces are returned in relative coordinates.
+     * @return Found faces are returned in relative coordinates.
      */
     QList<QRectF> detectFaces(const DImg& image, const QSize& originalSize = QSize());
 
     QList<QRectF> detectFaces(const QString& imagePath);
 
     /**
-     * Tunes backend parameters.
+     * @brief Tunes backend parameters.
      * Available parameters:
      *
      * "speed"       vs. "accuracy",    0..1, float
@@ -91,7 +91,7 @@ public:
     QVariantMap parameters()                                        const;
 
     /**
-     * Returns the recommended size if you want to scale images for detection.
+     * @return the recommended size if you want to scale images for detection.
      * Larger images can be passed, but may be downscaled.
      */
     int recommendedImageSize(const QSize& availableSize = QSize())  const;

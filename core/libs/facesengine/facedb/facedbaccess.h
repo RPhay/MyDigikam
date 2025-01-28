@@ -36,7 +36,7 @@ class DIGIKAM_GUI_EXPORT FaceDbAccess
 public:
 
     /**
-     * This class is written in analogy to CoreDbAccess
+     * @brief This class is written in analogy to CoreDbAccess
      * (some features stripped off).
      * For documentation, see coredbaccess.h
      */
@@ -48,7 +48,7 @@ public:
     const QString& lastError()  const;
 
     /**
-     * Set the "last error" message. This method is not for public use.
+     * @brief Set the "last error" message. This method is not for public use.
      */
     void setLastError(const QString& error);
 
@@ -85,7 +85,7 @@ class FaceDbAccessUnlock
 public:
 
     /**
-     * Acquire an object of this class if you want to assure
+     * @brief Acquire an object of this class if you want to assure
      * that the FaceDbAccess is _not_ held during the lifetime of the object.
      * At creation, the lock is obtained shortly, then all locks are released.
      * At destruction, all locks are acquired again.

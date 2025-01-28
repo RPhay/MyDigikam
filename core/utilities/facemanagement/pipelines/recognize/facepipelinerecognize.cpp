@@ -52,10 +52,6 @@ FacePipelineRecognize::FacePipelineRecognize(const FaceScanSettings& _settings)
 {
 }
 
-FacePipelineRecognize::~FacePipelineRecognize()
-{
-}
-
 bool FacePipelineRecognize::start()
 {
     QVariantMap params;
@@ -111,7 +107,9 @@ bool FacePipelineRecognize::finder()
         {
             // get the image IDs for the album
 
-            QList<qlonglong> imageIds = CoreDbAccess().db()->getImageIds(album->id(), DatabaseItem::Status::Visible, true);
+            QList<qlonglong> imageIds = CoreDbAccess().db()->getImageIds(album->id(),
+                                                                         DatabaseItem::Status::Visible,
+                                                                         true);
 
             // quick check if we should add threads.
 
@@ -202,7 +200,7 @@ bool FacePipelineRecognize::classifier()
     classifier->setParameters(settings);
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Classifier, thisQueue);
-    package = static_cast<FacePipelinePackageBase*>(mlpackage);
+    package                          = static_cast<FacePipelinePackageBase*>(mlpackage);
 
     /* =========================================================================================
      * Start pipeline stage specific loop
@@ -275,7 +273,7 @@ bool FacePipelineRecognize::writer()
     IdentityProvider* const idProvider = IdentityProvider::instance();
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
-    package = static_cast<FacePipelinePackageBase*>(mlpackage);
+    package                            = static_cast<FacePipelinePackageBase*>(mlpackage);
 
     /* =========================================================================================
      * Start pipeline stage specific loop
@@ -301,11 +299,11 @@ bool FacePipelineRecognize::writer()
         // send a notification that the image was processed
 
         notify(MLPipelineNotification::notifyProcessed,
-            package->info.name(),
-            albumName + package->info.relativePath(),
-            displayName,
-            matches,
-            package->thumbnail);
+               package->info.name(),
+               albumName + package->info.relativePath(),
+               displayName,
+               matches,
+               package->thumbnail);
 
         // delete the package
 

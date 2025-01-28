@@ -16,7 +16,7 @@
 
 #pragma once
 
-#include "imagequalitysettings.h"
+#include "imagequalitywidget.h"
 
 // Qt includes
 
@@ -49,7 +49,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN ImageQualitySettings::Private
+class Q_DECL_HIDDEN ImageQualityWidget::Private
 {
 public:
 
@@ -99,7 +99,7 @@ public:
     DIntNumInput*                             setNoiseWeight        = nullptr;
     DIntNumInput*                             setCompressionWeight  = nullptr;
 
-    ImageQualitySettings::SettingsDisplayMode displayMode           = ImageQualitySettings::SettingsDisplayMode::Normal;
+    ImageQualityWidget::SettingsDisplayMode displayMode             = ImageQualityWidget::SettingsDisplayMode::Normal;
 };
 
 } // namespace Digikam

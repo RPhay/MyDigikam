@@ -32,8 +32,8 @@ class DIGIKAM_EXPORT SharedQueue
 {
 public:
 
-    SharedQueue()                   = default;
-    ~SharedQueue()                  = default;
+    SharedQueue()  = default;
+    ~SharedQueue() = default;
 
 public:
 

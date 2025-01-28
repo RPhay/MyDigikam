@@ -70,8 +70,8 @@ const QString DNNModelBase::getModelPath() const
 
 const QPair<int, int> DNNModelBase::getBackendAndTarget() const
 {
-    int backend_id       = cv::dnn::DNN_BACKEND_DEFAULT;
-    int target_id        = cv::dnn::DNN_TARGET_CPU;
+    int backend_id = cv::dnn::DNN_BACKEND_DEFAULT;
+    int target_id  = cv::dnn::DNN_TARGET_CPU;
 
     // query OpenCV for capabilities. Return best match.
 
@@ -81,8 +81,8 @@ const QPair<int, int> DNNModelBase::getBackendAndTarget() const
         {
             // use OpenCL if available
 
-            backend_id       = cv::dnn::DNN_BACKEND_OPENCV;
-            target_id        = cv::dnn::DNN_TARGET_OPENCL;
+            backend_id = cv::dnn::DNN_BACKEND_OPENCV;
+            target_id  = cv::dnn::DNN_TARGET_OPENCL;
 
             qCDebug(DIGIKAM_DNNMODELMNGR_LOG) << "Using OpenCV backend and OpenCL target";
         }
@@ -101,25 +101,25 @@ const QPair<int, int> DNNModelBase::getBackendAndTarget() const
     {
         qCDebug(DIGIKAM_DNNMODELMNGR_LOG) << "DNNModelBase::getBackendAndTarget: error checking OpenCL capabilities. ";
     }
-    
+
     const std::map<std::string, int> str2backend
     {
-        { "default", cv::dnn::DNN_BACKEND_DEFAULT          },
-        { "halide",  cv::dnn::DNN_BACKEND_HALIDE           },
-        { "ie",      cv::dnn::DNN_BACKEND_INFERENCE_ENGINE },
-        { "opencv",  cv::dnn::DNN_BACKEND_OPENCV           },
-        { "cuda",    cv::dnn::DNN_BACKEND_CUDA             }
+        { "default",     cv::dnn::DNN_BACKEND_DEFAULT          },
+        { "halide",      cv::dnn::DNN_BACKEND_HALIDE           },
+        { "ie",          cv::dnn::DNN_BACKEND_INFERENCE_ENGINE },
+        { "opencv",      cv::dnn::DNN_BACKEND_OPENCV           },
+        { "cuda",        cv::dnn::DNN_BACKEND_CUDA             }
     };
 
     const std::map<std::string, int> str2target
     {
-        { "cpu",         cv::dnn::DNN_TARGET_CPU           },
-        { "opencl",      cv::dnn::DNN_TARGET_OPENCL        },
-        { "myriad",      cv::dnn::DNN_TARGET_MYRIAD        },
-        { "vulkan",      cv::dnn::DNN_TARGET_VULKAN        },
-        { "opencl_fp16", cv::dnn::DNN_TARGET_OPENCL_FP16   },
-        { "cuda",        cv::dnn::DNN_TARGET_CUDA          },
-        { "cuda_fp16",   cv::dnn::DNN_TARGET_CUDA_FP16     }
+        { "cpu",         cv::dnn::DNN_TARGET_CPU               },
+        { "opencl",      cv::dnn::DNN_TARGET_OPENCL            },
+        { "myriad",      cv::dnn::DNN_TARGET_MYRIAD            },
+        { "vulkan",      cv::dnn::DNN_TARGET_VULKAN            },
+        { "opencl_fp16", cv::dnn::DNN_TARGET_OPENCL_FP16       },
+        { "cuda",        cv::dnn::DNN_TARGET_CUDA              },
+        { "cuda_fp16",   cv::dnn::DNN_TARGET_CUDA_FP16         }
     };
 
     // Env vars for testing combinations.

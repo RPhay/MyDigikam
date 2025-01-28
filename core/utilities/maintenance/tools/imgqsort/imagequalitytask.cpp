@@ -19,7 +19,7 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "imagequalitycontainer.h"
+#include "imagequalitysettings.h"
 #include "imagequalityparser.h"
 #include "previewloadthread.h"
 #include "maintenancedata.h"
@@ -39,7 +39,7 @@ public:
 
 public:
 
-    ImageQualityContainer quality;
+    ImageQualitySettings quality;
     ImageQualityParser*   imgqsort  = nullptr;
 
     MaintenanceData*      data      = nullptr;
@@ -61,7 +61,7 @@ ImageQualityTask::~ImageQualityTask()
     delete d;
 }
 
-void ImageQualityTask::setQuality(const ImageQualityContainer& quality)
+void ImageQualityTask::setQuality(const ImageQualitySettings& quality)
 {
     d->quality = quality;
 }

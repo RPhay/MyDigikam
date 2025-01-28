@@ -70,7 +70,7 @@ bool FacePipelineDetectRecognize::start()
 
     try
     {
-        faceDetector = new DNNFaceDetectorYuNet;
+        faceDetector  = new DNNFaceDetectorYuNet;
         faceExtractor = static_cast<DNNModelSFace*>(DNNModelManager::instance()->getModel(QStringLiteral("sface"),
                                                                                           DNNModelUsage::DNNUsageFaceRecognition));
         faceExtractor->getNet();
@@ -315,7 +315,12 @@ bool FacePipelineDetectRecognize::extractor()
 
         // copy the image to a cv::UMat
 
-        cv::UMat cvUImage = QtOpenCVImg::image2Mat(package->image, CV_8UC3, QtOpenCVImg::MatColorOrder::MCO_RGB).getUMat(cv::ACCESS_RW);
+        cv::UMat cvUImage       = QtOpenCVImg::image2Mat(
+                                                         package->image,
+                                                         CV_8UC3,
+                                                         QtOpenCVImg::MatColorOrder::MCO_RGB
+                                                        )
+                                                        .getUMat(cv::ACCESS_RW);
 
         // resize the image if needed. Only resize if the image is larger than the input size of the detector
 
@@ -342,7 +347,7 @@ bool FacePipelineDetectRecognize::extractor()
 
         if (udetectionResults.rows > 0)
         {
-            cv::Mat detectionResults = udetectionResults.getMat(cv::ACCESS_READ);
+            cv::Mat detectionResults   = udetectionResults.getMat(cv::ACCESS_READ);
 
             // get list of previously confirmed faces
 
@@ -350,7 +355,7 @@ bool FacePipelineDetectRecognize::extractor()
 
             // get list of previously ignored faces
 
-            faces += utils.ignoredFaceTagsIfaces(package->info.id());
+            faces                     += utils.ignoredFaceTagsIfaces(package->info.id());
 
             QList<QRectF> faceFRects;
 
@@ -400,8 +405,9 @@ bool FacePipelineDetectRecognize::extractor()
 
                 if (!found)
                 {
-                    cv::UMat ualignedFace, uface_features;
-                    cv::Mat face_features;
+                    cv::UMat ualignedFace;
+                    cv::UMat uface_features;
+                    cv::Mat  face_features;
 
                     // extract the face vectors (features) for classification
 
@@ -446,10 +452,9 @@ bool FacePipelineDetectRecognize::extractor()
 
     /* =========================================================================================
      * Pipeline stage specific cleanup
-     * 
+     *
      * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
-     */ 
-
+     */
 
     MLPIPELINE_STAGE_END(MLPipelineStage::Extractor, MLPipelineStage::Classifier);
 }
@@ -532,9 +537,10 @@ bool FacePipelineDetectRecognize::writer()
     FaceUtils                  utils;
     ThumbnailLoadThread* const thumbnailLoadThread = ThumbnailLoadThread::defaultThread();
     const QList<AlbumRootInfo> roots               = CoreDbAccess().db()->getAlbumRoots();
+    Q_UNUSED(roots);
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
-    package = static_cast<FacePipelinePackageBase*>(mlpackage);
+    package                                        = static_cast<FacePipelinePackageBase*>(mlpackage);
 
     /* =========================================================================================
      * Start pipeline stage specific loop
@@ -589,9 +595,9 @@ bool FacePipelineDetectRecognize::writer()
 
             for (int i = 0 ; i < package->faceRects.size() ; ++i)
             {
-                QRect faceRect(std::round(package->image.width() * package->faceRects[i].x()),
+                QRect faceRect(std::round(package->image.width()  * package->faceRects[i].x()),
                                std::round(package->image.height() * package->faceRects[i].y()),
-                               std::round(package->image.width() * package->faceRects[i].width()),
+                               std::round(package->image.width()  * package->faceRects[i].width()),
                                std::round(package->image.height() * package->faceRects[i].height()));
 
                 if (package->labelList[i] != -1)
@@ -666,7 +672,7 @@ void FacePipelineDetectRecognize::addMoreWorkers()
     /* =========================================================================================
      * Use the performanceProfile metrics to find the slowest stages
      * and add more workers to those stages.
-     * 
+     *
      * For the Face detection and recognition pipeline, the loader is the
      * slowest stage so add 3 more loaders, 2 more extractors, and 1 more classifier.
      */

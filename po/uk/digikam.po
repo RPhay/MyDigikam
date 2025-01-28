@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-27 01:57+0000\n"
+"POT-Creation-Date: 2025-01-28 01:55+0000\n"
 "PO-Revision-Date: 2025-01-26 08:39+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -9250,7 +9250,7 @@ msgid "Use Color Management for Printing"
 msgstr "Використовувати керування кольорами для друку"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
-#: core/libs/imgqsort/imagequalityconfselector.cpp:73
+#: core/libs/imgqsort/imagequalityconfselector.cpp:72
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
 #: core/utilities/maintenance/main/maintenancedlg.cpp:286
 #, kde-format
@@ -31256,37 +31256,37 @@ msgstr "Фільтр інфрачервоних"
 msgid "Channel Mixer Tool"
 msgstr "Змішувач каналів"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:100
+#: core/libs/dimg/filters/bw/mixersettings.cpp:102
 #, kde-format
 msgctxt "@label"
 msgid "Output Channel:"
 msgstr "Вихідний канал:"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:102
+#: core/libs/dimg/filters/bw/mixersettings.cpp:104
 #, kde-format
 msgctxt "@item: color"
 msgid "Red"
 msgstr "Червоний"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:103
+#: core/libs/dimg/filters/bw/mixersettings.cpp:105
 #, kde-format
 msgctxt "@item: color"
 msgid "Green"
 msgstr "Зелений"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:104
+#: core/libs/dimg/filters/bw/mixersettings.cpp:106
 #, kde-format
 msgctxt "@item: color"
 msgid "Blue"
 msgstr "Синій"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:106
+#: core/libs/dimg/filters/bw/mixersettings.cpp:108
 #, kde-format
 msgctxt "@label: color"
 msgid "Red (%):"
 msgstr "Червоний (у %):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:111
+#: core/libs/dimg/filters/bw/mixersettings.cpp:113
 #, kde-format
 msgctxt "@info"
 msgid "Select the red color gain, as a percentage, for the current channel."
@@ -31294,13 +31294,13 @@ msgstr ""
 "Тут ви можете вибрати приріст червоного кольору у відсотках для поточного "
 "каналу."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:114
+#: core/libs/dimg/filters/bw/mixersettings.cpp:116
 #, kde-format
 msgctxt "@label: color"
 msgid "Green (%):"
 msgstr "Зелений (у %):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:119
+#: core/libs/dimg/filters/bw/mixersettings.cpp:121
 #, kde-format
 msgctxt "@info"
 msgid "Select the green color gain, as a percentage, for the current channel."
@@ -31308,13 +31308,13 @@ msgstr ""
 "Тут ви можете вибрати приріст зеленого кольору у відсотках для поточного "
 "каналу."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:122
+#: core/libs/dimg/filters/bw/mixersettings.cpp:124
 #, kde-format
 msgctxt "@label: color"
 msgid "Blue (%):"
 msgstr "Синій (у %):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:127
+#: core/libs/dimg/filters/bw/mixersettings.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Select the blue color gain, as a percentage, for the current channel."
@@ -31322,39 +31322,39 @@ msgstr ""
 "Тут ви можете вибрати приріст синього кольору у відсотках для поточного "
 "каналу."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:132
+#: core/libs/dimg/filters/bw/mixersettings.cpp:134
 #, kde-format
 msgctxt "@option"
 msgid "&Reset"
 msgstr "&Скинути"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:134
+#: core/libs/dimg/filters/bw/mixersettings.cpp:136
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Reset color channels' gains settings from the currently selected channel."
 msgstr "Скинути параметри приростів каналів кольорів для вибраного каналу."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:142
+#: core/libs/dimg/filters/bw/mixersettings.cpp:144
 #, kde-format
 msgctxt "@option"
 msgid "Preserve luminosity"
 msgstr "Зберігати яскравість світла"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:143
+#: core/libs/dimg/filters/bw/mixersettings.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Enable this option is you want preserve the image luminosity."
 msgstr ""
 "Позначте цей пункт, якщо ви бажаєте зберегти яскравість світла зображення."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:148
+#: core/libs/dimg/filters/bw/mixersettings.cpp:150
 #, kde-format
 msgctxt "@option: color"
 msgid "Monochrome"
 msgstr "Чорно-біле"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:150
+#: core/libs/dimg/filters/bw/mixersettings.cpp:152
 #, kde-format
 msgctxt "@info: help"
 msgid ""
@@ -31372,32 +31372,32 @@ msgstr ""
 "Зауваження: у цьому режимі на гістограмі буде показано лише значення "
 "освітленості."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:321
+#: core/libs/dimg/filters/bw/mixersettings.cpp:325
 #, kde-format
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
 msgstr "Загалом: %1 (у %)"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:516
+#: core/libs/dimg/filters/bw/mixersettings.cpp:521
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "Виберіть файл приростів змішувача Gimp для завантаження"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:596
+#: core/libs/dimg/filters/bw/mixersettings.cpp:601
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
 msgstr ""
 "Не вдалося завантажити параметри з текстового файла приростів змішувача."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:606
+#: core/libs/dimg/filters/bw/mixersettings.cpp:611
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "Файл приростів змішувача Gimp, який слід зберегти"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:685
+#: core/libs/dimg/filters/bw/mixersettings.cpp:690
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the Gains Mixer text file."
@@ -35604,13 +35604,13 @@ msgstr "Спорожнити все"
 msgid "Select All"
 msgstr "Вибрати все"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:69
+#: core/libs/imgqsort/imagequalityconfselector.cpp:68
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use default settings"
 msgstr "Використовувати типові параметри"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:70
+#: core/libs/imgqsort/imagequalityconfselector.cpp:69
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
@@ -35618,13 +35618,13 @@ msgstr ""
 "Використовувати типові параметри упорядковування за якістю, які налаштовано "
 "у вікні параметрів програми."
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:77
+#: core/libs/imgqsort/imagequalityconfselector.cpp:76
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use custom settings"
 msgstr "Використовувати нетипові параметри"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:78
+#: core/libs/imgqsort/imagequalityconfselector.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
@@ -35632,13 +35632,21 @@ msgstr ""
 "Використовувати нетипові параметри для виконання упорядковування за якістю, "
 "замість типових параметрів."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:100
+#: core/libs/imgqsort/imagequalitysettings.cpp:61
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:86
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
+#, kde-format
+msgctxt "@title:tab"
+msgid "Search in"
+msgstr "Місця для пошуку"
+
+#: core/libs/imgqsort/imagequalitysettings.cpp:69
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgstr "Призначати мітку «Відкинуто» до низькоякісних зображень"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:101
+#: core/libs/imgqsort/imagequalitysettings.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35648,13 +35656,13 @@ msgstr ""
 "Зображенням низької якості, які буде виявлено у результаті аналізу "
 "розмивання, шуму та рівня стиснення, буде призначено мітку «Відкинуто»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:113
+#: core/libs/imgqsort/imagequalitysettings.cpp:82
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgstr "Призначати мітку «Потребує обробки» до зображень середньої якості"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:114
+#: core/libs/imgqsort/imagequalitysettings.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35665,13 +35673,13 @@ msgstr ""
 "розмивання, шуму та рівня стиснення, буде призначено мітку «Потребує "
 "обробки»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:126
+#: core/libs/imgqsort/imagequalitysettings.cpp:95
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgstr "Призначати мітку «Прийнято» високоякісним зображенням"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:127
+#: core/libs/imgqsort/imagequalitysettings.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35681,13 +35689,13 @@ msgstr ""
 "Зображенням високої якості, які буде виявлено у результаті аналізу "
 "розмивання, шуму та рівня стиснення, буде призначено мітку «Прийнято»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:140
+#: core/libs/imgqsort/imagequalitysettings.cpp:109
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
 msgstr "Виявити естетичні зображення за допомогою глибинного навчання"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:142
+#: core/libs/imgqsort/imagequalitysettings.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35698,13 +35706,13 @@ msgstr ""
 "Рушій визначення естетичності використовує для класифікації зображень модель "
 "глибинного навчання"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:147
+#: core/libs/imgqsort/imagequalitysettings.cpp:116
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr "Визначити якість на основі базових факторів"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:149
+#: core/libs/imgqsort/imagequalitysettings.cpp:118
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35714,13 +35722,19 @@ msgstr ""
 "Виявити, чи є зображення зіпсованим чотирма базовими факторами (розмиттям, "
 "шумом, неправильним експонуванням та стисканням)."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:160
+#: core/libs/imgqsort/imagequalitysettings.cpp:136
+#, kde-format
+msgctxt "@title:tab"
+msgid "Rules"
+msgstr ""
+
+#: core/libs/imgqsort/imagequalitysettings.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Порогове значення відкидання:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:165
+#: core/libs/imgqsort/imagequalitysettings.cpp:148
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
@@ -35728,13 +35742,13 @@ msgstr ""
 "Порогове значення оцінки. Усім зображенням з нижчою оцінкою буде призначено "
 "мітку «Відкинуто»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:167
+#: core/libs/imgqsort/imagequalitysettings.cpp:150
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Порогове значення потреби у обробці:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:172
+#: core/libs/imgqsort/imagequalitysettings.cpp:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
@@ -35742,13 +35756,13 @@ msgstr ""
 "Порогове значення оцінки. Усім зображенням з нижчою оцінкою буде призначено "
 "мітку «Потребує обробки»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:174
+#: core/libs/imgqsort/imagequalitysettings.cpp:157
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Порогове значення прийняття:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:179
+#: core/libs/imgqsort/imagequalitysettings.cpp:162
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
@@ -35756,79 +35770,86 @@ msgstr ""
 "Порогове значення оцінки. Зображенням з вищою оцінкою буде призначено мітку "
 "«Прийнято»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:181
+#: core/libs/imgqsort/imagequalitysettings.cpp:164
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Виявляти розмивання"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:182
+#: core/libs/imgqsort/imagequalitysettings.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "Виявляти рівень розмивання на переданих зображеннях"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:184
-#: core/libs/imgqsort/imagequalitysettings.cpp:194
-#: core/libs/imgqsort/imagequalitysettings.cpp:204
+#: core/libs/imgqsort/imagequalitysettings.cpp:167
+#: core/libs/imgqsort/imagequalitysettings.cpp:177
+#: core/libs/imgqsort/imagequalitysettings.cpp:187
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Вага:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:189
+#: core/libs/imgqsort/imagequalitysettings.cpp:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Значення ваги, яке буде використано для оцінки розмиття."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:191
+#: core/libs/imgqsort/imagequalitysettings.cpp:174
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Виявляти шум"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:192
+#: core/libs/imgqsort/imagequalitysettings.cpp:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Виявляти рівень цифрового шуму на переданих зображеннях"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:199
+#: core/libs/imgqsort/imagequalitysettings.cpp:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Значення ваги, яке буде використано для оцінки стиснення."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:201
+#: core/libs/imgqsort/imagequalitysettings.cpp:184
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Виявляти стиснення"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:202
+#: core/libs/imgqsort/imagequalitysettings.cpp:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Виявляти рівень стискання переданих зображень"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:209
+#: core/libs/imgqsort/imagequalitysettings.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Значення ваги, яке буде використано для оцінки стиснення."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:211
+#: core/libs/imgqsort/imagequalitysettings.cpp:194
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Виявляти надмірне і недостатнє експонування"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:212
+#: core/libs/imgqsort/imagequalitysettings.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Визначати, чи є зображення недоекспонованими або переекспонованими"
+
+#: core/libs/imgqsort/imagequalitysettings.cpp:225
+#, fuzzy, kde-format
+#| msgid "Sparsity Factor: "
+msgctxt "@title:tab"
+msgid "Basic Factors"
+msgstr "Коефіцієнт роздільності: "
 
 #: core/libs/iojobs/iojob.cpp:64
 #, kde-format
@@ -39877,14 +39898,7 @@ msgstr "Знайдено %1 об'єкт. Мітка: %2"
 msgid "Found %1 objects. Tags: %2"
 msgstr "Знайдено %1 об'єктів. Мітки: %2"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
-#, kde-format
-msgctxt "@title:tab"
-msgid "Search in"
-msgstr "Місця для пошуку"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -39903,23 +39917,23 @@ msgstr ""
 "Буде використано нейронну мережу ШІ для автоматичного створення міток, що "
 "описують вміст зображення, а отримані мітки буде збережено до бази даних.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:102
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
 #, kde-format
 msgid "Auto-tagging mode: "
 msgstr "Режим автоміток:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
 #, kde-format
 msgid "Scan all"
 msgstr "Сканувати усі"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Шукати лише у записах без призначень"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39930,22 +39944,22 @@ msgstr ""
 "усіх елементів.</p><p><b>Шукати лише у записах без призначень</b>: шукати "
 "лише у записах без призначених автоміток.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:114
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #, kde-format
 msgid "Auto-tagging tag mode: "
 msgstr "Режим автоміток: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgid "Replace existing autotags"
 msgstr "Замінити наявні автомітки"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #, kde-format
 msgid "Update autotags"
 msgstr "Оновити автомітки"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:122
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39957,27 +39971,27 @@ msgstr ""
 "результатами сканування.</p><p><b>Оновити автомітки</b>: додати усі нові "
 "автомітки до наявних міток.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:126
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, kde-format
 msgid "Selection model: "
 msgstr "Модель вибору:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr "YOLOv11 Nano"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr "YOLOv11 XLarge"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
 #, kde-format
 msgid "ResNet-152"
 msgstr "ResNet-152"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40006,12 +40020,12 @@ msgstr ""
 "навчено розпізнавати до 1000 різних об'єктів з використанням набору даних "
 "ImageNet.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:143
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
 #, kde-format
 msgid "Object detection accuracy: "
 msgstr "Точність виявлення об'єктів: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40023,7 +40037,7 @@ msgstr ""
 "розпізнаватимуться об'єкти,\n"
 "але тим менше буде розпізнано об'єктів.\n"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -40031,7 +40045,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Використовувати всі ядра процесора"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:155
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40045,20 +40059,20 @@ msgstr ""
 "у системі або працювати у фоновому режимі, використовуючи лише одне ядро "
 "процесора."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Параметри"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Перекласти мітки такою мовою:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"

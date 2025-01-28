@@ -36,7 +36,7 @@ namespace Digikam
 MLPipelineFoundation::MLPipelineFoundation()
     : QObject()
 {
-    threadPool      = new QThreadPool(this);
+    threadPool = new QThreadPool(this);
     threadPool->setMaxThreadCount(qMax(8, QThread::idealThreadCount()*2));
 
     connect(this, &MLPipelineFoundation::signalAddMoreWorkers,
@@ -71,10 +71,10 @@ bool MLPipelineFoundation::start()
 void MLPipelineFoundation::cancel()
 {
     /**
-     * worker threads can be in 1 of 3 states when cancel is called
-     * 1. waiting for a new package
-     * 2. processing a package
-     * 3. waiting to push a package
+     * @note worker threads can be in 1 of 3 states when cancel is called
+     *   1. waiting for a new package
+     *   2. processing a package
+     *   3. waiting to push a package
      *
      * handle all 3 cases so the worker thread sees the cancel signal
      */
@@ -552,11 +552,21 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification,
 {
     if (!_thumbnail.isNull())
     {
-        notify(notification, _name, _path, _displayData, _processed, DImg(_thumbnail));
+        notify(notification,
+               _name,
+               _path,
+               _displayData,
+               _processed,
+               DImg(_thumbnail));
     }
     else
     {
-        notify(notification, _name, _path, _displayData, _processed, QIcon());
+        notify(notification,
+               _name,
+               _path,
+               _displayData,
+               _processed,
+               QIcon());
     }
 }
 
@@ -569,11 +579,21 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification,
 {
     if (!_thumbnail.isNull())
     {
-        notify(notification, _name, _path, _displayData, _processed, QIcon(_thumbnail.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap()));
+        notify(notification,
+               _name,
+               _path,
+               _displayData,
+               _processed,
+               QIcon(_thumbnail.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap()));
     }
     else
     {
-        notify(notification, _name, _path, _displayData, _processed, QIcon());
+        notify(notification,
+               _name,
+               _path,
+               _displayData,
+               _processed,
+               QIcon());
     }
 }
 

@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-27 01:57+0000\n"
+"POT-Creation-Date: 2025-01-28 01:55+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -9884,7 +9884,7 @@ msgid "Use Color Management for Printing"
 msgstr "Värvihalduse kasutamine trükkimisel"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
-#: core/libs/imgqsort/imagequalityconfselector.cpp:73
+#: core/libs/imgqsort/imagequalityconfselector.cpp:72
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
 #: core/utilities/maintenance/main/maintenancedlg.cpp:286
 #, kde-format
@@ -32804,56 +32804,56 @@ msgstr "Infrapunafilter"
 msgid "Channel Mixer Tool"
 msgstr "Kanalite mikseri tööriist"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:100
+#: core/libs/dimg/filters/bw/mixersettings.cpp:102
 #, fuzzy, kde-format
 #| msgid "Output Channel:"
 msgctxt "@label"
 msgid "Output Channel:"
 msgstr "Väljundkanal:"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:102
+#: core/libs/dimg/filters/bw/mixersettings.cpp:104
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@item: color"
 msgid "Red"
 msgstr "Punane"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:103
+#: core/libs/dimg/filters/bw/mixersettings.cpp:105
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@item: color"
 msgid "Green"
 msgstr "Roheline"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:104
+#: core/libs/dimg/filters/bw/mixersettings.cpp:106
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@item: color"
 msgid "Blue"
 msgstr "Sinine"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:106
+#: core/libs/dimg/filters/bw/mixersettings.cpp:108
 #, fuzzy, kde-format
 #| msgid "Red (%):"
 msgctxt "@label: color"
 msgid "Red (%):"
 msgstr "Punane (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:111
+#: core/libs/dimg/filters/bw/mixersettings.cpp:113
 #, fuzzy, kde-format
 #| msgid "Select the red color gain, as a percentage, for the current channel."
 msgctxt "@info"
 msgid "Select the red color gain, as a percentage, for the current channel."
 msgstr "Vali siin antud kanali punase värvi kasv protsentides."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:114
+#: core/libs/dimg/filters/bw/mixersettings.cpp:116
 #, fuzzy, kde-format
 #| msgid "Green (%):"
 msgctxt "@label: color"
 msgid "Green (%):"
 msgstr "Roheline (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:119
+#: core/libs/dimg/filters/bw/mixersettings.cpp:121
 #, fuzzy, kde-format
 #| msgid ""
 #| "Select the green color gain, as a percentage, for the current channel."
@@ -32861,14 +32861,14 @@ msgctxt "@info"
 msgid "Select the green color gain, as a percentage, for the current channel."
 msgstr "Vali siin antud kanali rohelise värvi kasv protsentides."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:122
+#: core/libs/dimg/filters/bw/mixersettings.cpp:124
 #, fuzzy, kde-format
 #| msgid "Blue (%):"
 msgctxt "@label: color"
 msgid "Blue (%):"
 msgstr "Sinine (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:127
+#: core/libs/dimg/filters/bw/mixersettings.cpp:129
 #, fuzzy, kde-format
 #| msgid ""
 #| "Select the blue color gain, as a percentage, for the current channel."
@@ -32876,14 +32876,14 @@ msgctxt "@info"
 msgid "Select the blue color gain, as a percentage, for the current channel."
 msgstr "Vali siin antud kanali sinise värvi kasv protsentides."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:132
+#: core/libs/dimg/filters/bw/mixersettings.cpp:134
 #, fuzzy, kde-format
 #| msgid "&Reset"
 msgctxt "@option"
 msgid "&Reset"
 msgstr "Vaikevää&rtused"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:134
+#: core/libs/dimg/filters/bw/mixersettings.cpp:136
 #, fuzzy, kde-format
 #| msgid ""
 #| "Reset color channels' gains settings from the currently selected channel."
@@ -32892,28 +32892,28 @@ msgid ""
 "Reset color channels' gains settings from the currently selected channel."
 msgstr "Lähtestab kõik antud värvikanali kasvuseadistused."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:142
+#: core/libs/dimg/filters/bw/mixersettings.cpp:144
 #, fuzzy, kde-format
 #| msgid "Preserve luminosity"
 msgctxt "@option"
 msgid "Preserve luminosity"
 msgstr "Helenduse säilitamine"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:143
+#: core/libs/dimg/filters/bw/mixersettings.cpp:145
 #, fuzzy, kde-format
 #| msgid "Enable this option is you want preserve the image luminosity."
 msgctxt "@info"
 msgid "Enable this option is you want preserve the image luminosity."
 msgstr "Sisselülitamisel säilitatakse pildi helendus."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:148
+#: core/libs/dimg/filters/bw/mixersettings.cpp:150
 #, fuzzy, kde-format
 #| msgid "Monochrome"
 msgctxt "@option: color"
 msgid "Monochrome"
 msgstr "Ühevärviline"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:150
+#: core/libs/dimg/filters/bw/mixersettings.cpp:152
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Use <b>Monochrome</b> mode to convert color picture to Black and White:"
@@ -32942,35 +32942,35 @@ msgstr ""
 "p><p><u>Tähelepanu:</u> selles režiimis näitab histogramm ainult heleduse "
 "väärtusi.</p>"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:321
+#: core/libs/dimg/filters/bw/mixersettings.cpp:325
 #, fuzzy, kde-format
 #| msgid "Total: %1 (%)"
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
 msgstr "Kokku: %1 (%)"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:516
+#: core/libs/dimg/filters/bw/mixersettings.cpp:521
 #, fuzzy, kde-format
 #| msgid "Select Gimp Gains Mixer File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "GIMP-i kasvuseadistustefaili laadimine"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:596
+#: core/libs/dimg/filters/bw/mixersettings.cpp:601
 #, fuzzy, kde-format
 #| msgid "Cannot load settings from the Gains Mixer text file."
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
 msgstr "Seadistuste laadimine kasvuseadistuste failist nurjus."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:606
+#: core/libs/dimg/filters/bw/mixersettings.cpp:611
 #, fuzzy, kde-format
 #| msgid "Gimp Gains Mixer File to Save"
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "GIMP-i kasvuseadistuste faili salvestamine"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:685
+#: core/libs/dimg/filters/bw/mixersettings.cpp:690
 #, fuzzy, kde-format
 #| msgid "Cannot save settings to the Gains Mixer text file."
 msgctxt "@info"
@@ -37338,40 +37338,48 @@ msgstr "Puhasta kõik"
 msgid "Select All"
 msgstr "Vali kõik"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:69
+#: core/libs/imgqsort/imagequalityconfselector.cpp:68
 #, fuzzy, kde-format
 #| msgid "Revert to default settings"
 msgctxt "@option:radio"
 msgid "Use default settings"
 msgstr "Vaikeseadistuste taastamine"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:70
+#: core/libs/imgqsort/imagequalityconfselector.cpp:69
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:77
+#: core/libs/imgqsort/imagequalityconfselector.cpp:76
 #, fuzzy, kde-format
 #| msgid "Use custom definition"
 msgctxt "@option:radio"
 msgid "Use custom settings"
 msgstr "Kohandatud definitsiooni kasutamine"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:78
+#: core/libs/imgqsort/imagequalityconfselector.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:100
+#: core/libs/imgqsort/imagequalitysettings.cpp:61
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:86
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
+#, kde-format
+msgctxt "@title:tab"
+msgid "Search in"
+msgstr "Otsing asukohas"
+
+#: core/libs/imgqsort/imagequalitysettings.cpp:69
 #, fuzzy, kde-format
 #| msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgstr "Kesise kvaliteediga piltidele pealdise \"Tagasi lükatud\" omistamine"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:101
+#: core/libs/imgqsort/imagequalitysettings.cpp:70
 #, fuzzy, kde-format
 #| msgid ""
 #| "Low quality images detected by blur, noise, and compression analysis will "
@@ -37384,14 +37392,14 @@ msgstr ""
 "Kesise kvaliteediga piltidele, mis tuvastati hägu, müra ja tihendust "
 "analüüsides, omistatakse pealdis \"Tagasi lükatud\"."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:113
+#: core/libs/imgqsort/imagequalitysettings.cpp:82
 #, fuzzy, kde-format
 #| msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgstr "Keskmise kvaliteediga piltidele pealdise \"Ootel\" omistamine"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:114
+#: core/libs/imgqsort/imagequalitysettings.cpp:83
 #, fuzzy, kde-format
 #| msgid ""
 #| "Medium quality images detected by blur, noise, and compression analysis "
@@ -37404,14 +37412,14 @@ msgstr ""
 "Keskmise kvaliteediga piltidele, mis tuvastati hägu, müra ja tihendust "
 "analüüsides, omistatakse pealdis \"Ootel\"."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:126
+#: core/libs/imgqsort/imagequalitysettings.cpp:95
 #, fuzzy, kde-format
 #| msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgstr "Kõrge kvaliteediga piltidele pealdise \"Vastu võetud\" omistamine"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:127
+#: core/libs/imgqsort/imagequalitysettings.cpp:96
 #, fuzzy, kde-format
 #| msgid ""
 #| "High quality images detected by blur, noise, and compression analysis "
@@ -37424,13 +37432,13 @@ msgstr ""
 "Kõrge kvaliteediga piltidele, mis tuvastati hägu, müra ja tihendust "
 "analüüsides, omistatakse pealdis \"Vastu võetud\"."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:140
+#: core/libs/imgqsort/imagequalitysettings.cpp:109
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:142
+#: core/libs/imgqsort/imagequalitysettings.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37438,13 +37446,13 @@ msgid ""
 "The aesthetic detection engine use deep learning model to classify images"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:147
+#: core/libs/imgqsort/imagequalitysettings.cpp:116
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:149
+#: core/libs/imgqsort/imagequalitysettings.cpp:118
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37452,14 +37460,20 @@ msgid ""
 "exposure, and compression)."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:160
+#: core/libs/imgqsort/imagequalitysettings.cpp:136
+#, kde-format
+msgctxt "@title:tab"
+msgid "Rules"
+msgstr ""
+
+#: core/libs/imgqsort/imagequalitysettings.cpp:143
 #, fuzzy, kde-format
 #| msgid "Rejected threshold:"
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Tagasilükkamise lävi:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:165
+#: core/libs/imgqsort/imagequalitysettings.cpp:148
 #, fuzzy, kde-format
 #| msgid "Threshold below which all pictures are assigned Rejected Label"
 msgctxt "@info:tooltip"
@@ -37467,28 +37481,28 @@ msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr ""
 "Lävi, mille alla jäävatele piltidele omistatakse pealdis \"Tagasi lükatud\""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:167
+#: core/libs/imgqsort/imagequalitysettings.cpp:150
 #, fuzzy, kde-format
 #| msgid "Pending threshold:"
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Ootelejätmise lävi:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:172
+#: core/libs/imgqsort/imagequalitysettings.cpp:155
 #, fuzzy, kde-format
 #| msgid "Threshold below which all pictures are assigned Pending Label"
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr "Lävi, mille alla jäävatele piltidele omistatakse pealdis \"Ootel\""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:174
+#: core/libs/imgqsort/imagequalitysettings.cpp:157
 #, fuzzy, kde-format
 #| msgid "Accepted threshold:"
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Vastuvõtmise lävi:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:179
+#: core/libs/imgqsort/imagequalitysettings.cpp:162
 #, fuzzy, kde-format
 #| msgid "Threshold above which all pictures are assigned Accepted Label"
 msgctxt "@info:tooltip"
@@ -37496,89 +37510,96 @@ msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr ""
 "Lävi, millest üle jäävatele piltidele omistatakse pealdis \"Vastu võetud\""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:181
+#: core/libs/imgqsort/imagequalitysettings.cpp:164
 #, fuzzy, kde-format
 #| msgid "Detect Blur"
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Hägu tuvastamine"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:182
+#: core/libs/imgqsort/imagequalitysettings.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:184
-#: core/libs/imgqsort/imagequalitysettings.cpp:194
-#: core/libs/imgqsort/imagequalitysettings.cpp:204
+#: core/libs/imgqsort/imagequalitysettings.cpp:167
+#: core/libs/imgqsort/imagequalitysettings.cpp:177
+#: core/libs/imgqsort/imagequalitysettings.cpp:187
 #, fuzzy, kde-format
 #| msgid "Height:"
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Kõrgus:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:189
+#: core/libs/imgqsort/imagequalitysettings.cpp:172
 #, fuzzy, kde-format
 #| msgid "Weight to assign to Blur Algorithm"
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Hägualgoritmile omistatud kaal"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:191
+#: core/libs/imgqsort/imagequalitysettings.cpp:174
 #, fuzzy, kde-format
 #| msgid "Detect Noise"
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Müra tuvastamine"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:192
+#: core/libs/imgqsort/imagequalitysettings.cpp:175
 #, fuzzy, kde-format
 #| msgid "Customize the background color to use in the image editor area."
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Siin saab kohendada pildiredaktori taustavärvi."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:199
+#: core/libs/imgqsort/imagequalitysettings.cpp:182
 #, fuzzy, kde-format
 #| msgid "Weight to assign to Noise Algorithm"
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Müraalgoritmile omistatud kaal"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:201
+#: core/libs/imgqsort/imagequalitysettings.cpp:184
 #, fuzzy, kde-format
 #| msgid "Detect Compression"
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Tihenduse tuvastamine"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:202
+#: core/libs/imgqsort/imagequalitysettings.cpp:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:209
+#: core/libs/imgqsort/imagequalitysettings.cpp:192
 #, fuzzy, kde-format
 #| msgid "Weight to assign to Compression Algorithm"
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Tihendusalgoritmile omistatud kaal"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:211
+#: core/libs/imgqsort/imagequalitysettings.cpp:194
 #, fuzzy, kde-format
 #| msgid "Detect Under and Over Exposure"
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Ala- ja ülesärituse tuvastamine"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:212
+#: core/libs/imgqsort/imagequalitysettings.cpp:195
 #, fuzzy, kde-format
 #| msgid "Detect if the images are under-exposed or over-exposed"
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Tuvastamine, kas pildid on ala- või ülesäritatud"
+
+#: core/libs/imgqsort/imagequalitysettings.cpp:225
+#, fuzzy, kde-format
+#| msgid "Separator:"
+msgctxt "@title:tab"
+msgid "Basic Factors"
+msgstr "Eraldaja:"
 
 #: core/libs/iojobs/iojob.cpp:64
 #, kde-format
@@ -41781,14 +41802,7 @@ msgstr ""
 msgid "Found %1 objects. Tags: %2"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
-#, kde-format
-msgctxt "@title:tab"
-msgid "Search in"
-msgstr "Otsing asukohas"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -41800,25 +41814,25 @@ msgid ""
 "database.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:102
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging mode: "
 msgstr "Mõõterežiim:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
 #, fuzzy, kde-format
 #| msgid "Scan Images"
 msgid "Scan all"
 msgstr "Piltide skannimine"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Ainult omistama nägude uurimine"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -41826,25 +41840,25 @@ msgid ""
 "only</b>: scan only the items with no assigned autotags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:114
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging tag mode: "
 msgstr "Mõõterežiim:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, fuzzy, kde-format
 #| msgid "Update only existing timestamps"
 msgid "Replace existing autotags"
 msgstr "Ainult olemasolevate ajatemplite uuendamine"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgid "Update autotags"
 msgstr "Uuenda andmebaasi"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:122
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -41853,28 +41867,28 @@ msgid ""
 "autotags found to the existing tags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:126
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, fuzzy, kde-format
 #| msgid "Destination Folder:"
 msgid "Selection model: "
 msgstr "Sihtkataloog:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
 #, kde-format
 msgid "ResNet-152"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -41891,14 +41905,14 @@ msgid ""
 "ImageNet dataset.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:143
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
 #, fuzzy, kde-format
 #| msgctxt "@groupbox"
 #| msgid "Face Accuracy"
 msgid "Object detection accuracy: "
 msgstr "Näo täpsus"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -41913,7 +41927,7 @@ msgstr ""
 "Kiiruse ja täpsuse vahekorra määramine. Mida suurem väärtus, seda täpsem on "
 "tulemus, aga seda kauem ka aega kulub."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -41921,7 +41935,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Kõigi protsessorituumade kasutamine"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:155
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -41938,21 +41952,21 @@ msgstr ""
 "Siin saab valida, kas kasutada kõiki süsteemi protsessorituumi\n"
 "või töötada taustal ainult ühe tuumaga."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Seadistused"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Liikumine asukohta %1"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@title:tab"

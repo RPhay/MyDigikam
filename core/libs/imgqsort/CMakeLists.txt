@@ -10,8 +10,8 @@ APPLY_COMMON_POLICIES()
 kde_enable_exceptions()
 
 set(libimgqsort_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/imagequalitycontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/imagequalitysettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/imagequalitywidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/imagequalityconfselector.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/imagequalityparser.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/imagequalitycalculator.cpp

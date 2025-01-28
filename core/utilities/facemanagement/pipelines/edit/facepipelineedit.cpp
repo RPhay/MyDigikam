@@ -49,7 +49,6 @@
 
 namespace Digikam
 {
-// -----------------------------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN FacePipelineEditCreator
 {
@@ -68,10 +67,6 @@ FacePipelineEdit::FacePipelineEdit()
     debugConfirmTimer.start();
 }
 
-FacePipelineEdit::~FacePipelineEdit()
-{
-}
-
 FacePipelineEdit* FacePipelineEdit::instance()
 {
     return &FacePipelineEditCreator->object;
@@ -86,10 +81,17 @@ FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info,
     {
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::confirmFace(): INFO: more than 1 face confirmed in less than 0.25 seconds";
     }
+
     debugConfirmTimer.restart();
 
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Loader);
-    FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, tagId, face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::Confirm, retrain);
+    FacePipelinePackageBase* const package = new FacePipelinePackageBase(info,
+                                                                         face,
+                                                                         tagId,
+                                                                         face.region(),
+                                                                         DImg(),
+                                                                         FacePipelinePackageBase::EditPipelineAction::Confirm,
+                                                                         retrain);
 
     ++totalItemCount;
     Q_EMIT scheduled();
@@ -104,9 +106,16 @@ void FacePipelineEdit::removeFace(const ItemInfo& info,
                                   const FaceTagsIface& face)
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
-    FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, face.tagId(), face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::Remove, face.isConfirmedName());
+    FacePipelinePackageBase* const package = new FacePipelinePackageBase(info,
+                                                                         face,
+                                                                         face.tagId(),
+                                                                         face.region(),
+                                                                         DImg(),
+                                                                         FacePipelinePackageBase::EditPipelineAction::Remove,
+                                                                         face.isConfirmedName());
 
     ++totalItemCount;
+
     Q_EMIT scheduled();
     Q_EMIT started(i18n("Removing face"));
 
@@ -118,9 +127,16 @@ FaceTagsIface FacePipelineEdit::editTag(const ItemInfo& info,
                                         int newTagId)
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
-    FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, newTagId, face.region(), DImg(), FacePipelinePackageBase::EditPipelineAction::EditTag, face.isConfirmedName());
+    FacePipelinePackageBase* const package = new FacePipelinePackageBase(info,
+                                                                         face,
+                                                                         newTagId,
+                                                                         face.region(),
+                                                                         DImg(),
+                                                                         FacePipelinePackageBase::EditPipelineAction::EditTag,
+                                                                         face.isConfirmedName());
 
     ++totalItemCount;
+
     Q_EMIT scheduled();
     Q_EMIT started(i18n("Editing face tag"));
 
@@ -139,9 +155,16 @@ FaceTagsIface FacePipelineEdit::editRegion(const ItemInfo& info,
                                            bool retrain)
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
-    FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, face.tagId(), region, image, FacePipelinePackageBase::EditPipelineAction::EditRegion, retrain);
+    FacePipelinePackageBase* const package = new FacePipelinePackageBase(info,
+                                                                         face,
+                                                                         face.tagId(),
+                                                                         region,
+                                                                         image,
+                                                                         FacePipelinePackageBase::EditPipelineAction::EditRegion,
+                                                                         retrain);
 
     ++totalItemCount;
+
     Q_EMIT scheduled();
     Q_EMIT started(i18n("Editing face region"));
 
@@ -160,9 +183,16 @@ FaceTagsIface FacePipelineEdit::addManually(const ItemInfo& info,
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
     FaceTagsIface face                     = FaceTagsEditor::unconfirmedEntry(info.id(), -1, region);
-    FacePipelinePackageBase* const package = new FacePipelinePackageBase(info, face, face.tagId(), face.region(), image, FacePipelinePackageBase::EditPipelineAction::AddManually, retrain);
+    FacePipelinePackageBase* const package = new FacePipelinePackageBase(info,
+                                                                         face,
+                                                                         face.tagId(),
+                                                                         face.region(),
+                                                                         image,
+                                                                         FacePipelinePackageBase::EditPipelineAction::AddManually,
+                                                                         retrain);
 
     ++totalItemCount;
+
     Q_EMIT scheduled();
     Q_EMIT started(i18n("Manually adding face"));
 
@@ -264,7 +294,8 @@ bool FacePipelineEdit::writer()
                     }
                     else
                     {
-                        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): not using for training: " << package->info.filePath();
+                        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): not using for training: "
+                                                         << package->info.filePath();
                     }
                 }
                 else
@@ -342,28 +373,34 @@ bool FacePipelineEdit::writer()
         // send a notification that the image was processed
 
         notify(MLPipelineNotification::notifyProcessed,
-                package->info.name(),
-                albumName = package->info.relativePath(),
-                QString(),
-                package->faceRects.size(),
-                package->thumbnail);
+               package->info.name(),
+               albumName = package->info.relativePath(),
+               QString(),
+               package->faceRects.size(),
+               package->thumbnail);
 
         // delete the package
 
         delete package;
 
-        if ((0 == queues[MLPipelineStage::Loader]->size()) && (0 == queues[MLPipelineStage::Extractor]->size()) && (0 == queues[MLPipelineStage::Writer]->size()))
+        if (
+            (0 == queues[MLPipelineStage::Loader]->size())    &&
+            (0 == queues[MLPipelineStage::Extractor]->size()) &&
+            (0 == queues[MLPipelineStage::Writer]->size())
+           )
         {
             Q_EMIT progressValueChanged((float)1.0);
+
             totalItemCount = 0;
+
             Q_EMIT finished();
         }
         else
         {
             ++itemsProcessed;
+
             Q_EMIT progressValueChanged((float)itemsProcessed/(float)totalItemCount);
         }
-
     }
 
     /* =========================================================================================

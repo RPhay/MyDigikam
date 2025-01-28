@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-27 01:57+0000\n"
+"POT-Creation-Date: 2025-01-28 01:55+0000\n"
 "PO-Revision-Date: 2024-08-24 11:18+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -9184,7 +9184,7 @@ msgid "Use Color Management for Printing"
 msgstr "Użyj zarządzania barwami dla drukowania"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
-#: core/libs/imgqsort/imagequalityconfselector.cpp:73
+#: core/libs/imgqsort/imagequalityconfselector.cpp:72
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
 #: core/utilities/maintenance/main/maintenancedlg.cpp:286
 #, kde-format
@@ -30991,74 +30991,74 @@ msgstr "Filtr podczerwieni"
 msgid "Channel Mixer Tool"
 msgstr "Narzędzie mieszani kanałów"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:100
+#: core/libs/dimg/filters/bw/mixersettings.cpp:102
 #, kde-format
 msgctxt "@label"
 msgid "Output Channel:"
 msgstr "Kanał wyjściowy:"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:102
+#: core/libs/dimg/filters/bw/mixersettings.cpp:104
 #, kde-format
 msgctxt "@item: color"
 msgid "Red"
 msgstr "Czerwony"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:103
+#: core/libs/dimg/filters/bw/mixersettings.cpp:105
 #, kde-format
 msgctxt "@item: color"
 msgid "Green"
 msgstr "Zielony"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:104
+#: core/libs/dimg/filters/bw/mixersettings.cpp:106
 #, kde-format
 msgctxt "@item: color"
 msgid "Blue"
 msgstr "Niebieski"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:106
+#: core/libs/dimg/filters/bw/mixersettings.cpp:108
 #, kde-format
 msgctxt "@label: color"
 msgid "Red (%):"
 msgstr "Czerwony (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:111
+#: core/libs/dimg/filters/bw/mixersettings.cpp:113
 #, kde-format
 msgctxt "@info"
 msgid "Select the red color gain, as a percentage, for the current channel."
 msgstr "Wybierz procentowe wzmocnienie koloru czerwonego dla bieżącego kanału."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:114
+#: core/libs/dimg/filters/bw/mixersettings.cpp:116
 #, kde-format
 msgctxt "@label: color"
 msgid "Green (%):"
 msgstr "Zielony (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:119
+#: core/libs/dimg/filters/bw/mixersettings.cpp:121
 #, kde-format
 msgctxt "@info"
 msgid "Select the green color gain, as a percentage, for the current channel."
 msgstr "Wybierz procentowe wzmocnienie koloru zielonego dla bieżącego kanału."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:122
+#: core/libs/dimg/filters/bw/mixersettings.cpp:124
 #, kde-format
 msgctxt "@label: color"
 msgid "Blue (%):"
 msgstr "Niebieski (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:127
+#: core/libs/dimg/filters/bw/mixersettings.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Select the blue color gain, as a percentage, for the current channel."
 msgstr ""
 "Wybierz procentowe wzmocnienie koloru niebieskiego dla bieżącego kanału."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:132
+#: core/libs/dimg/filters/bw/mixersettings.cpp:134
 #, kde-format
 msgctxt "@option"
 msgid "&Reset"
 msgstr "Wyze&ruj"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:134
+#: core/libs/dimg/filters/bw/mixersettings.cpp:136
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -31067,25 +31067,25 @@ msgstr ""
 "Przywraca wartości domyślne ustawień wzmocnienia kanałów barw na podstawie "
 "aktualnie wybranego kanału."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:142
+#: core/libs/dimg/filters/bw/mixersettings.cpp:144
 #, kde-format
 msgctxt "@option"
 msgid "Preserve luminosity"
 msgstr "Zachowaj jasność"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:143
+#: core/libs/dimg/filters/bw/mixersettings.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Enable this option is you want preserve the image luminosity."
 msgstr "Zaznacz to pole jeżeli chcesz zachować jasność obrazu."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:148
+#: core/libs/dimg/filters/bw/mixersettings.cpp:150
 #, kde-format
 msgctxt "@option: color"
 msgid "Monochrome"
 msgstr "Monochromatyczny"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:150
+#: core/libs/dimg/filters/bw/mixersettings.cpp:152
 #, kde-format
 msgctxt "@info: help"
 msgid ""
@@ -31102,31 +31102,31 @@ msgstr ""
 "\"Niebieski kanał\" wpływa na szum zdjęcia.\n"
 "Zauważ: w tym trybie, histogram wyświetli tylko wartości jasności."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:321
+#: core/libs/dimg/filters/bw/mixersettings.cpp:325
 #, kde-format
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
 msgstr "Łącznie: %1 (%)"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:516
+#: core/libs/dimg/filters/bw/mixersettings.cpp:521
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "Wybierz plik wzmocnień miksera programu Gimp do wczytania"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:596
+#: core/libs/dimg/filters/bw/mixersettings.cpp:601
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
 msgstr "Nie można wczytać ustawień z tekstowego pliku wzmocnień miksera."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:606
+#: core/libs/dimg/filters/bw/mixersettings.cpp:611
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "Plik wzmocnień miksera programu Gimp do zapisania"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:685
+#: core/libs/dimg/filters/bw/mixersettings.cpp:690
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the Gains Mixer text file."
@@ -35281,13 +35281,13 @@ msgstr "Wyczyść wszystko"
 msgid "Select All"
 msgstr "Zaznacz wszystko"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:69
+#: core/libs/imgqsort/imagequalityconfselector.cpp:68
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use default settings"
 msgstr "Użyj ustawień domyślnych"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:70
+#: core/libs/imgqsort/imagequalityconfselector.cpp:69
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
@@ -35295,13 +35295,13 @@ msgstr ""
 "Użyj domyślnych parametrów szeregowania po jakości ustawionych w oknie "
 "ustawień."
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:77
+#: core/libs/imgqsort/imagequalityconfselector.cpp:76
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use custom settings"
 msgstr "Użyj własnych ustawień"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:78
+#: core/libs/imgqsort/imagequalityconfselector.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
@@ -35309,13 +35309,21 @@ msgstr ""
 "Używaj własnych parametrów do szeregowania po jakości, zamiast tych "
 "domyślnych."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:100
+#: core/libs/imgqsort/imagequalitysettings.cpp:61
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:86
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
+#, kde-format
+msgctxt "@title:tab"
+msgid "Search in"
+msgstr "Poszukaj w"
+
+#: core/libs/imgqsort/imagequalitysettings.cpp:69
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgstr "Przypisz etykietę 'Odrzucone' dla zdjęć o niskiej jakości"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:101
+#: core/libs/imgqsort/imagequalitysettings.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35325,13 +35333,13 @@ msgstr ""
 "Obrazy o niskiej jakości wykryte przez analizę rozmycia, szumu i kompresji "
 "będą miały przypisaną etykietę 'odrzucone'."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:113
+#: core/libs/imgqsort/imagequalitysettings.cpp:82
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgstr "Przypisz etykietę 'Oczekujące' dla zdjęć o średniej jakości"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:114
+#: core/libs/imgqsort/imagequalitysettings.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35341,13 +35349,13 @@ msgstr ""
 "Obrazy o średniej jakości wykryte przez analizę rozmycia, szumu i kompresji "
 "będą miały przypisaną etykietę 'oczekujące'."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:126
+#: core/libs/imgqsort/imagequalitysettings.cpp:95
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgstr "Przypisz etykietę 'Przyjęte' dla zdjęć o wysokiej jakości"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:127
+#: core/libs/imgqsort/imagequalitysettings.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35357,13 +35365,13 @@ msgstr ""
 "Obrazy o wysokiej jakości wykryte przez analizę rozmycia, szumu i kompresji "
 "będą miały przypisaną etykietę 'przyjęte'."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:140
+#: core/libs/imgqsort/imagequalitysettings.cpp:109
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
 msgstr "Wykryj estetykę obrazu, używając głębokiego uczenia się"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:142
+#: core/libs/imgqsort/imagequalitysettings.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35374,13 +35382,13 @@ msgstr ""
 "Silnik wykrywania estetyki używa modelu głębokiego uczenia do klasyfikowania "
 "obrazów"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:147
+#: core/libs/imgqsort/imagequalitysettings.cpp:116
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr "Wykryj jakość przy użyciu podstawowych współczynników"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:149
+#: core/libs/imgqsort/imagequalitysettings.cpp:118
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35390,13 +35398,19 @@ msgstr ""
 "Wykryj, czy obraz sabotuje na podstawie czterech podstawowych czynników "
 "(rozmycie, szum, naświetlenie i poziom spakowania)."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:160
+#: core/libs/imgqsort/imagequalitysettings.cpp:136
+#, kde-format
+msgctxt "@title:tab"
+msgid "Rules"
+msgstr ""
+
+#: core/libs/imgqsort/imagequalitysettings.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Próg odrzucenia:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:165
+#: core/libs/imgqsort/imagequalitysettings.cpp:148
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
@@ -35404,13 +35418,13 @@ msgstr ""
 "Próg, poniżej którego wszystkie zdjęcia będą miały przypisaną "
 "etykietę 'odrzucone'"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:167
+#: core/libs/imgqsort/imagequalitysettings.cpp:150
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Próg oczekiwania:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:172
+#: core/libs/imgqsort/imagequalitysettings.cpp:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
@@ -35418,13 +35432,13 @@ msgstr ""
 "Próg, poniżej którego wszystkie zdjęcia będą miały przypisaną "
 "etykietę 'oczekujące'"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:174
+#: core/libs/imgqsort/imagequalitysettings.cpp:157
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Próg przyjęcia:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:179
+#: core/libs/imgqsort/imagequalitysettings.cpp:162
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
@@ -35432,79 +35446,86 @@ msgstr ""
 "Próg, powyżej którego wszystkie zdjęcia będą miały przypisaną "
 "etykietę 'przyjęte'"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:181
+#: core/libs/imgqsort/imagequalitysettings.cpp:164
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Wykryj rozmycie"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:182
+#: core/libs/imgqsort/imagequalitysettings.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "Wykryj ilość rozmycia w przekazywanych obrazach"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:184
-#: core/libs/imgqsort/imagequalitysettings.cpp:194
-#: core/libs/imgqsort/imagequalitysettings.cpp:204
+#: core/libs/imgqsort/imagequalitysettings.cpp:167
+#: core/libs/imgqsort/imagequalitysettings.cpp:177
+#: core/libs/imgqsort/imagequalitysettings.cpp:187
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Waga:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:189
+#: core/libs/imgqsort/imagequalitysettings.cpp:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Waga przypisana do algorytmu rozmycia"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:191
+#: core/libs/imgqsort/imagequalitysettings.cpp:174
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Wykryj szum"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:192
+#: core/libs/imgqsort/imagequalitysettings.cpp:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Wykryj ilość szumu w przekazywanych obrazach"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:199
+#: core/libs/imgqsort/imagequalitysettings.cpp:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Waga przypisana do algorytmu szumu"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:201
+#: core/libs/imgqsort/imagequalitysettings.cpp:184
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Wykryj kompresję"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:202
+#: core/libs/imgqsort/imagequalitysettings.cpp:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Wykryj ilość kompresji w przekazywanych obrazach"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:209
+#: core/libs/imgqsort/imagequalitysettings.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Waga przypisana do algorytmu kompresji"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:211
+#: core/libs/imgqsort/imagequalitysettings.cpp:194
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Wykryj niedoświetlenie i prześwietlenie"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:212
+#: core/libs/imgqsort/imagequalitysettings.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Wykryj czy obrazy są niedoświetlony czy prześwietlone"
+
+#: core/libs/imgqsort/imagequalitysettings.cpp:225
+#, fuzzy, kde-format
+#| msgid "Sparsity Factor: "
+msgctxt "@title:tab"
+msgid "Basic Factors"
+msgstr "Współczynnik rzadkości: "
 
 #: core/libs/iojobs/iojob.cpp:64
 #, kde-format
@@ -39536,14 +39557,7 @@ msgstr ""
 msgid "Found %1 objects. Tags: %2"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
-#, kde-format
-msgctxt "@title:tab"
-msgid "Search in"
-msgstr "Poszukaj w"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid ""
@@ -39569,24 +39583,24 @@ msgstr ""
 "sieć neuronowasama utworzy szereg znaczników, opisujących treść i zachowa je "
 "w bazie danych.</p> "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:102
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
 #, kde-format
 msgid "Auto-tagging mode: "
 msgstr "Tryb samoprzypisywania znaczników: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
 #, fuzzy, kde-format
 #| msgid "Scan Images"
 msgid "Scan all"
 msgstr "Skanuj obraz"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Przeszukaj tylko nieprzypisane"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -39603,25 +39617,25 @@ msgstr ""
 "p><p><b>Przeszukaj tylko te bez przypisania</b>: przeszukaj tylko te rzeczy, "
 "które nie mają przypisanego żadnego znacznika.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:114
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #, fuzzy, kde-format
 #| msgid "Auto-tagging mode: "
 msgid "Auto-tagging tag mode: "
 msgstr "Tryb samoprzypisywania znaczników: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, fuzzy, kde-format
 #| msgid "Update only existing timestamps"
 msgid "Replace existing autotags"
 msgstr "Uaktualnij tylko istniejące znaczniki czasu"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #, fuzzy, kde-format
 #| msgid "Updates"
 msgid "Update autotags"
 msgstr "Uaktualnienia"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:122
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39630,30 +39644,30 @@ msgid ""
 "autotags found to the existing tags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:126
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, kde-format
 msgid "Selection model: "
 msgstr "Model zaznaczania: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #, fuzzy, kde-format
 #| msgid "YOLOv5 Nano"
 msgid "YOLOv11 Nano"
 msgstr "YOLOv5 Nano"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, fuzzy, kde-format
 #| msgid "YOLOv5 XLarge"
 msgid "YOLOv11 XLarge"
 msgstr "YOLOv5 XLarge"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
 #, fuzzy, kde-format
 #| msgid "ResNet50"
 msgid "ResNet-152"
 msgstr "ResNet50"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39670,14 +39684,14 @@ msgid ""
 "ImageNet dataset.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:143
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Face Accuracy"
 msgid "Object detection accuracy: "
 msgstr "Dokładność twarzy"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -39697,7 +39711,7 @@ msgstr ""
 "(tylko twarze, które są bardzo podobne do wstępnie oznaczonych twarzy "
 "zostaną rozpoznane)"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -39705,7 +39719,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Pracuj na wszystkich rdzeniach"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:155
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -39723,20 +39737,20 @@ msgstr ""
 "systemie,\n"
 "lub zlecić pracę w tle tylko na jednym rdzeniu."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Przetłumacz znaczniki na:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Translate to:"

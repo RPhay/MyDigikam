@@ -33,7 +33,7 @@ class FacePipelineEdit : public FacePipelineBase
 public:
 
     explicit FacePipelineEdit();
-    ~FacePipelineEdit()                                         override;
+    ~FacePipelineEdit()                                         override = default;
 
     static FacePipelineEdit* instance();
 

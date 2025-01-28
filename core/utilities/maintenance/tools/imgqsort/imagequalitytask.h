@@ -28,7 +28,7 @@
 namespace Digikam
 {
 
-class ImageQualityContainer;
+class ImageQualitySettings;
 class MaintenanceData;
 class ItemInfo;
 
@@ -41,7 +41,7 @@ public:
     explicit ImageQualityTask();
     ~ImageQualityTask()     override;
 
-    void setQuality(const ImageQualityContainer& quality);
+    void setQuality(const ImageQualitySettings& quality);
     void setMaintenanceData(MaintenanceData* const data = nullptr);
 
 Q_SIGNALS:

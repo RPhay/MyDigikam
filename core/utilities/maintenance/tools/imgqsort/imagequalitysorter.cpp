@@ -50,7 +50,7 @@ public:
 
     QualityScanMode       mode      = ImageQualitySorter::NonAssignedItems;
 
-    ImageQualityContainer quality;
+    ImageQualitySettings quality;
 
     QStringList           allPicturesPath;
 
@@ -61,7 +61,7 @@ public:
 
 ImageQualitySorter::ImageQualitySorter(QualityScanMode mode,
                                        const AlbumList& list,
-                                       const ImageQualityContainer& quality,
+                                       const ImageQualitySettings& quality,
                                        ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("ImageQualitySorter"), parent),
       d              (new Private)

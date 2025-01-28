@@ -30,7 +30,7 @@ class FacePipelineRetrain : public FacePipelineBase
 public:
 
     explicit FacePipelineRetrain(const FaceScanSettings& _settings);
-    ~FacePipelineRetrain()                                      override;
+    ~FacePipelineRetrain()                                      override = default;
 
     bool start()                                                override;
 

@@ -43,14 +43,14 @@ public:
     // ---------- public members ----------
 
     /**
-     * input:  uiThreshold is the slider value from the UI.
-     * return: float threshold to be used by processing (FaceDetector, FaceRecognizer, etc...).
+     * @param uiThreshold is the slider value from the UI.
+     * @return float threshold to be used by processing (FaceDetector, FaceRecognizer, etc...).
      */
     float                       getThreshold(int uiThreshold = DNN_MODEL_THRESHOLD_NOT_SET)    const;
     DownloadInfo                getDownloadInformation()                const;
 
     /**
-     * Return path to the model, or null string if path cannot be found.
+     * @return path to the model, or null string if path cannot be found.
      */
     const QString               getModelPath()                          const;
 

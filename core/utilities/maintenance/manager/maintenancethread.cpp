@@ -27,7 +27,7 @@
 #include "metadatasynctask.h"
 #include "fingerprintstask.h"
 #include "imagequalitytask.h"
-#include "imagequalitycontainer.h"
+#include "imagequalitysettings.h"
 #include "databasetask.h"
 #include "maintenancedata.h"
 #include "imagequalityparser.h"
@@ -191,7 +191,7 @@ void MaintenanceThread::generateFingerprints(const QList<qlonglong>& itemIds, bo
 //     appendJobs(collection);
 // }
 
-void MaintenanceThread::sortByImageQuality(const QStringList& paths, const ImageQualityContainer& quality)
+void MaintenanceThread::sortByImageQuality(const QStringList& paths, const ImageQualitySettings& quality)
 {
     ActionJobCollection collection;
 

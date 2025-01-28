@@ -186,11 +186,16 @@ void DNNModelManager::loadConfig()
 
             // Create version.
 
-            QStringList versionParts = d->settings->value(QLatin1String("MinVersion")).toString().toLower().split(QLatin1String("."));
+            QStringList versionParts = d->settings->value(QLatin1String("MinVersion"))
+                                                          .toString()
+                                                          .toLower()
+                                                          .split(QLatin1String("."));
 
             if (3 == versionParts.size())
             {
-                info.minVersion = QVersionNumber(versionParts[0].toInt(), versionParts[1].toInt(), versionParts[2].toInt());
+                info.minVersion = QVersionNumber(versionParts[0].toInt(),
+                                                 versionParts[1].toInt(),
+                                                 versionParts[2].toInt());
             }
 
             // Loader type.
@@ -203,7 +208,9 @@ void DNNModelManager::loadConfig()
 
             if (3 == mvtsParts.size())
             {
-                info.meanValToSubtract = cv::Scalar(mvtsParts[0].toFloat(), mvtsParts[1].toFloat(), mvtsParts[2].toFloat());
+                info.meanValToSubtract = cv::Scalar(mvtsParts[0].toFloat(),
+                                                    mvtsParts[1].toFloat(),
+                                                    mvtsParts[2].toFloat());
             }
 
             // Create the model.
@@ -260,13 +267,13 @@ void DNNModelManager::getSettings()
 
         // Get from bundle.
 
-        QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                 QLatin1String("digikam/dnnmodels/dnnmodels.conf"),
-                                                 QStandardPaths::LocateFile);
+        QString appPath      = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                      QLatin1String("digikam/dnnmodels/dnnmodels.conf"),
+                                                      QStandardPaths::LocateFile);
 
         // Env var for tuning model settings.
 
-        QString dnnModelConf    = QString::fromLocal8Bit(qgetenv("DIGIKAM_DNN_MODEL_CONF"));
+        QString dnnModelConf = QString::fromLocal8Bit(qgetenv("DIGIKAM_DNN_MODEL_CONF"));
 
         if (0 < dnnModelConf.length())
         {
@@ -275,7 +282,7 @@ void DNNModelManager::getSettings()
 
         if (!appPath.isEmpty())
         {
-            d->settings     = new QSettings(appPath, QSettings::IniFormat, this);
+            d->settings = new QSettings(appPath, QSettings::IniFormat, this);
         }
     }
 }

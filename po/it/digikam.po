@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-27 01:57+0000\n"
-"PO-Revision-Date: 2025-01-07 12:50+0100\n"
+"POT-Creation-Date: 2025-01-28 01:55+0000\n"
+"PO-Revision-Date: 2025-01-25 18:06+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -2978,18 +2978,17 @@ msgstr "Tag esistenti"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:139
-#, fuzzy, kde-format
-#| msgid "Auto-tags Assignment"
+#, kde-format
 msgid "Auto-tag scan"
-msgstr "Assegnazione tag automatici"
+msgstr "Analisi tag automatici"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for faces"
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
-msgstr "Usa questo pulsante per cercare volti negli album selezionati"
+msgstr ""
+"Usa questo pulsante per cercare oggetti a cui attribuire tag automatici "
+"negli album selezionati"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:296
 #, kde-format
@@ -6319,27 +6318,21 @@ msgid "Assign Tags"
 msgstr "Assegna i tag"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign tags automatically to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically assign tags to images"
 msgstr "Strumento per assegnare automaticamente tag alle immagini"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:68
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool will assign keyword hierarchies "
-#| "metadata values to images automatically using deep-learning engine.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will automatically assign keyword "
 "hierarchies metadata values to images using AI deep-learning models.</para>"
 msgstr ""
-"<para>Questo strumento del gestore elaborazione in serie assegnerà alle "
-"immagini metadati relativi alle gerarchie delle parole chiave in modo "
-"automatico, utilizzando il motore di apprendimento profondo.</para>"
+"<para>Questo strumento del Gestore elaborazione in serie assegnerà in modo "
+"automatico valori di metadati relativi alle gerarchie di parole chiave alle "
+"immagini, utilizzando dei modelli di apprendimento profondo IA.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, kde-format
@@ -7359,18 +7352,7 @@ msgid "An image loader based on Libpgf codec"
 msgstr "Un caricatore di immagini basato sul codificatore Libpgf"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:78
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This plugin allows users to load and save image using Libpgf codec."
-#| "</para><para>The Progressive Graphics File (PGF) is an efficient image "
-#| "file format, that is based on a fast, discrete wavelet transform with "
-#| "progressive coding features. PGF can be used for lossless and lossy "
-#| "compression. It's most suitable for natural images. PGF can be used as a "
-#| "very efficient and fast replacement of JPEG-2000.</para><para>See <a "
-#| "href='https://en.wikipedia.org/wiki/"
-#| "Progressive_Graphics_File'>Progressive Graphics File documentation</a> "
-#| "for details.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This plugin allows users to load and save image using Libpgf codec.</"
@@ -9232,7 +9214,7 @@ msgid "Use Color Management for Printing"
 msgstr "Usa la gestione dei colori per la stampa"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
-#: core/libs/imgqsort/imagequalityconfselector.cpp:73
+#: core/libs/imgqsort/imagequalityconfselector.cpp:72
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
 #: core/utilities/maintenance/main/maintenancedlg.cpp:286
 #, kde-format
@@ -21059,14 +21041,7 @@ msgid "Number of Frames by Image:"
 msgstr "Numero di fotogrammi per immagine:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:90
-#, fuzzy, kde-format
-#| msgid ""
-#| "This value repeat one image in the sequence.\n"
-#| "While creating timelapse; it's usual to use 1.\n"
-#| "Typically, the number of frames will determine\n"
-#| "the time to show the same frame in the video.\n"
-#| "The result will depend of the number of frames\n"
-#| "per second used to encode the media."
+#, kde-format
 msgid ""
 "This value repeat one image in the sequence.\n"
 "While creating timelapse; it is usual to use 1.\n"
@@ -21078,7 +21053,7 @@ msgstr ""
 "Questo valore ripete una immagine nella sequenza.\n"
 "Durante la creazione del timelapse in genere usa 1.\n"
 "Tipicamente il numero di fotogrammi determina il\n"
-" tempo di visualizzazione dello stesso fotogramma nel\n"
+"tempo di visualizzazione dello stesso fotogramma nel\n"
 "video. Il risultato dipenderà dal numero di fotogrammi\n"
 "per secondo utilizzati per codificare il file multimediale."
 
@@ -24599,10 +24574,9 @@ msgstr "Esporta in &iNaturalist..."
 
 # VM: credo che il segnaposto si riferisca alla categoria.
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:259
-#, fuzzy, kde-format
-#| msgid "We're pretty sure it's in this %1."
+#, kde-format
 msgid "We are pretty sure it is in this %1."
-msgstr "Siamo assolutamente certi che si trovi in questa/o %1."
+msgstr "Siamo assolutamente certi che si trovi in questa %1."
 
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:269
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:274
@@ -27655,8 +27629,7 @@ msgstr "Vuoi unire il tag «%1» nel tag «%2»?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:624
 #: core/libs/album/manager/albummanager_talbum.cpp:1138
-#, fuzzy, kde-format
-#| msgid "Don't ask again at this session"
+#, kde-format
 msgid "Do not ask again at this session"
 msgstr "Non chiederlo più per questa sessione"
 
@@ -31184,37 +31157,37 @@ msgstr "Filtro Pellicola infrarossa"
 msgid "Channel Mixer Tool"
 msgstr "Strumento Miscelatore dei canali"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:100
+#: core/libs/dimg/filters/bw/mixersettings.cpp:102
 #, kde-format
 msgctxt "@label"
 msgid "Output Channel:"
 msgstr "Canale di uscita:"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:102
+#: core/libs/dimg/filters/bw/mixersettings.cpp:104
 #, kde-format
 msgctxt "@item: color"
 msgid "Red"
 msgstr "Rosso"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:103
+#: core/libs/dimg/filters/bw/mixersettings.cpp:105
 #, kde-format
 msgctxt "@item: color"
 msgid "Green"
 msgstr "Verde"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:104
+#: core/libs/dimg/filters/bw/mixersettings.cpp:106
 #, kde-format
 msgctxt "@item: color"
 msgid "Blue"
 msgstr "Blu"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:106
+#: core/libs/dimg/filters/bw/mixersettings.cpp:108
 #, kde-format
 msgctxt "@label: color"
 msgid "Red (%):"
 msgstr "Rosso (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:111
+#: core/libs/dimg/filters/bw/mixersettings.cpp:113
 #, kde-format
 msgctxt "@info"
 msgid "Select the red color gain, as a percentage, for the current channel."
@@ -31222,13 +31195,13 @@ msgstr ""
 "Seleziona qui il guadagno del colore rosso in percentuale per il canale "
 "attuale."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:114
+#: core/libs/dimg/filters/bw/mixersettings.cpp:116
 #, kde-format
 msgctxt "@label: color"
 msgid "Green (%):"
 msgstr "Verde (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:119
+#: core/libs/dimg/filters/bw/mixersettings.cpp:121
 #, kde-format
 msgctxt "@info"
 msgid "Select the green color gain, as a percentage, for the current channel."
@@ -31236,13 +31209,13 @@ msgstr ""
 "Seleziona qui il guadagno del colore verde in percentuale per il canale "
 "attuale."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:122
+#: core/libs/dimg/filters/bw/mixersettings.cpp:124
 #, kde-format
 msgctxt "@label: color"
 msgid "Blue (%):"
 msgstr "Blu (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:127
+#: core/libs/dimg/filters/bw/mixersettings.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Select the blue color gain, as a percentage, for the current channel."
@@ -31250,13 +31223,13 @@ msgstr ""
 "Seleziona qui il guadagno del colore blu in percentuale per il canale "
 "attuale."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:132
+#: core/libs/dimg/filters/bw/mixersettings.cpp:134
 #, kde-format
 msgctxt "@option"
 msgid "&Reset"
 msgstr "Azze&ra"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:134
+#: core/libs/dimg/filters/bw/mixersettings.cpp:136
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -31265,26 +31238,26 @@ msgstr ""
 "Azzera le impostazioni dei guadagni dei canali dei colori per il canale "
 "attualmente selezionato."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:142
+#: core/libs/dimg/filters/bw/mixersettings.cpp:144
 #, kde-format
 msgctxt "@option"
 msgid "Preserve luminosity"
 msgstr "Mantieni la luminosità"
 
 # mantenere?
-#: core/libs/dimg/filters/bw/mixersettings.cpp:143
+#: core/libs/dimg/filters/bw/mixersettings.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Enable this option is you want preserve the image luminosity."
 msgstr "Abilita questa opzione se vuoi mantenere la luminosità dell'immagine."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:148
+#: core/libs/dimg/filters/bw/mixersettings.cpp:150
 #, kde-format
 msgctxt "@option: color"
 msgid "Monochrome"
 msgstr "Monocromatico"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:150
+#: core/libs/dimg/filters/bw/mixersettings.cpp:152
 #, kde-format
 msgctxt "@info: help"
 msgid ""
@@ -31300,19 +31273,19 @@ msgstr ""
 "Il «canale del blu» influenza il rumore della foto.\n"
 "Nota: in questa modalità, l'istogramma mostrerà solo i valori di luminosità."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:321
+#: core/libs/dimg/filters/bw/mixersettings.cpp:325
 #, kde-format
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
 msgstr "Totale: %1 (%)"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:516
+#: core/libs/dimg/filters/bw/mixersettings.cpp:521
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "Seleziona file del miscelatore dei guadagni di Gimp da caricare"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:596
+#: core/libs/dimg/filters/bw/mixersettings.cpp:601
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
@@ -31320,13 +31293,13 @@ msgstr ""
 "Impossibile caricare le impostazioni dal file di testo del miscelatore dei "
 "guadagni."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:606
+#: core/libs/dimg/filters/bw/mixersettings.cpp:611
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "File del miscelatore dei guadagni di Gimp da salvare"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:685
+#: core/libs/dimg/filters/bw/mixersettings.cpp:690
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the Gains Mixer text file."
@@ -33039,17 +33012,17 @@ msgstr "(metadati non disponibili)"
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:725
 #, kde-format
 msgid "(no match found)"
-msgstr "(non ho trovato corrispondenze)"
+msgstr "(nessuna corrispondenza)"
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:732
 #, kde-format
 msgid "(partial match found)"
-msgstr "(ho trovato una corrispondenza parziale)"
+msgstr "(corrispondenza parziale)"
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:739
 #, kde-format
 msgid "(exact match found)"
-msgstr "(ho trovato una corrispondenza esatta)"
+msgstr "(corrispondenza esatta)"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:125
 #, kde-format
@@ -35534,13 +35507,13 @@ msgstr "Azzera tutto"
 msgid "Select All"
 msgstr "Seleziona tutto"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:69
+#: core/libs/imgqsort/imagequalityconfselector.cpp:68
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use default settings"
 msgstr "Usa le impostazioni predefinite"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:70
+#: core/libs/imgqsort/imagequalityconfselector.cpp:69
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
@@ -35548,13 +35521,13 @@ msgstr ""
 "Usa i parametri predefiniti di ordinamento per qualità configurati nella "
 "finestra di dialogo di configurazione."
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:77
+#: core/libs/imgqsort/imagequalityconfselector.cpp:76
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use custom settings"
 msgstr "Usa le impostazioni personalizzate"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:78
+#: core/libs/imgqsort/imagequalityconfselector.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
@@ -35562,13 +35535,21 @@ msgstr ""
 "Usa i parametri personalizzati per eseguire l'ordinamento per qualità "
 "anziché quello predefinito."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:100
+#: core/libs/imgqsort/imagequalitysettings.cpp:61
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:86
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
+#, kde-format
+msgctxt "@title:tab"
+msgid "Search in"
+msgstr "Ricerca in"
+
+#: core/libs/imgqsort/imagequalitysettings.cpp:69
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgstr "Assegna l'etichetta «Rifiutata» alle immagini di bassa qualità"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:101
+#: core/libs/imgqsort/imagequalitysettings.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35578,13 +35559,13 @@ msgstr ""
 "Alle immagini di bassa qualità rilevate dall'analisi di sfocatura, rumore e "
 "compressione verrà assegnata l'etichetta «Rifiutata»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:113
+#: core/libs/imgqsort/imagequalitysettings.cpp:82
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgstr "Assegna l'etichetta «In sospeso» alle immagini di media qualità"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:114
+#: core/libs/imgqsort/imagequalitysettings.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35594,13 +35575,13 @@ msgstr ""
 "Alle immagini di media qualità rilevate dall'analisi di sfocatura, rumore e "
 "compressione verrà assegnata l'etichetta «In sospeso»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:126
+#: core/libs/imgqsort/imagequalitysettings.cpp:95
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgstr "Assegna l'etichetta «Accettata» alle immagini di alta qualità"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:127
+#: core/libs/imgqsort/imagequalitysettings.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35610,13 +35591,13 @@ msgstr ""
 "Alle immagini di alta qualità rilevate dall'analisi di sfocatura, rumore e "
 "compressione verrà assegnata l'etichetta «Accettata»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:140
+#: core/libs/imgqsort/imagequalitysettings.cpp:109
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
 msgstr "Rileva immagine estetica utilizzando l'apprendimento profondo"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:142
+#: core/libs/imgqsort/imagequalitysettings.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35627,13 +35608,13 @@ msgstr ""
 "Il motore di rilevamento estetico utilizza il modello di apprendimento "
 "profondo per classificare le immagini"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:147
+#: core/libs/imgqsort/imagequalitysettings.cpp:116
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr "Rileva la qualità usando i fattori di base"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:149
+#: core/libs/imgqsort/imagequalitysettings.cpp:118
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35643,98 +35624,104 @@ msgstr ""
 "Rileva se l'immagine viene compromessa da quattro fattori di base "
 "(sfocatura, rumore, esposizione e compressione)."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:160
+#: core/libs/imgqsort/imagequalitysettings.cpp:136
+#, kde-format
+msgctxt "@title:tab"
+msgid "Rules"
+msgstr ""
+
+#: core/libs/imgqsort/imagequalitysettings.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Soglia «Rifiutata»:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:165
+#: core/libs/imgqsort/imagequalitysettings.cpp:148
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr ""
 "Soglia sotto cui a tutte le immagini viene assegnata l'etichetta «Rifiutata»"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:167
+#: core/libs/imgqsort/imagequalitysettings.cpp:150
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Soglia «In sospeso»:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:172
+#: core/libs/imgqsort/imagequalitysettings.cpp:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr ""
 "Soglia sotto cui a tutte le immagini viene assegnata l'etichetta «In sospeso»"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:174
+#: core/libs/imgqsort/imagequalitysettings.cpp:157
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Soglia «Accettata»:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:179
+#: core/libs/imgqsort/imagequalitysettings.cpp:162
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr ""
 "Soglia sotto cui a tutte le immagini viene assegnata l'etichetta «Accettata»"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:181
+#: core/libs/imgqsort/imagequalitysettings.cpp:164
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Rileva sfocatura"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:182
+#: core/libs/imgqsort/imagequalitysettings.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr ""
 "Rileva la quantità di sfocatura nelle immagini analizzate da questa opzione"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:184
-#: core/libs/imgqsort/imagequalitysettings.cpp:194
-#: core/libs/imgqsort/imagequalitysettings.cpp:204
+#: core/libs/imgqsort/imagequalitysettings.cpp:167
+#: core/libs/imgqsort/imagequalitysettings.cpp:177
+#: core/libs/imgqsort/imagequalitysettings.cpp:187
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Peso:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:189
+#: core/libs/imgqsort/imagequalitysettings.cpp:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Peso da assegnare all'algoritmo della sfocatura"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:191
+#: core/libs/imgqsort/imagequalitysettings.cpp:174
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Rileva rumore"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:192
+#: core/libs/imgqsort/imagequalitysettings.cpp:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr ""
 "Rileva la quantità di rumore nelle immagini analizzate da questa opzione"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:199
+#: core/libs/imgqsort/imagequalitysettings.cpp:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Peso da assegnare all'algoritmo del rumore"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:201
+#: core/libs/imgqsort/imagequalitysettings.cpp:184
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Rileva compressione"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:202
+#: core/libs/imgqsort/imagequalitysettings.cpp:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
@@ -35742,23 +35729,30 @@ msgstr ""
 "Rileva la quantità di compressione nelle immagini analizzate da questa "
 "opzione"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:209
+#: core/libs/imgqsort/imagequalitysettings.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Peso da assegnare all'algoritmo della compressione"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:211
+#: core/libs/imgqsort/imagequalitysettings.cpp:194
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Rileva sotto e sovraesposizione"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:212
+#: core/libs/imgqsort/imagequalitysettings.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Rileva se le immagini sono sottoesposte o sovraesposte"
+
+#: core/libs/imgqsort/imagequalitysettings.cpp:225
+#, fuzzy, kde-format
+#| msgid "Sparsity Factor: "
+msgctxt "@title:tab"
+msgid "Basic Factors"
+msgstr "Fattore di scarsità: "
 
 #: core/libs/iojobs/iojob.cpp:64
 #, kde-format
@@ -37187,16 +37181,7 @@ msgstr ""
 "configurazione.</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:287
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version "
-#| "<i>%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
-#| "<b>Download</b> to get the file...</p><p>Note: from Setup/Misc panel, you "
-#| "can switch to check for weekly pre-release.<br/>Pre-release versions are "
-#| "dedicated to test quickly new features.<br/>It's not recommended to use "
-#| "pre-releases in production as bugs can remain,<br/>unless you know what "
-#| "you are doing.</p><p>Press <b>Configure</b> if you want to customize "
-#| "update options from setup dialog.</p>"
+#, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
 "%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
@@ -39744,40 +39729,34 @@ msgid "Autotags Assignment"
 msgstr "Assegnazione di tag automatici"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:117
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scan for objects in album: %1"
-msgstr "Analisi dei volti nell'album: %1"
+msgstr "Cerca oggetti nell'album: %1"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:121
-#, fuzzy, kde-format
-#| msgid "Scan for faces in %1 albums"
+#, kde-format
 msgid "Scan for objects in %1 albums"
-msgstr "Analisi dei volti in %1 album"
+msgstr "Cerca oggetti in %1 album"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:202
-#, fuzzy, kde-format
-#| msgid "Error starting face detection."
+#, kde-format
 msgid "Error starting object detection."
-msgstr "Errore di avvio del rilevamento facciale."
+msgstr "Errore di avvio del rilevamento oggetti."
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:217
-#, fuzzy, kde-format
-#| msgid "Items scanned for faces: %1\n"
+#, kde-format
 msgid "Items scanned for objects: %1\n"
-msgstr "Elementi analizzati per i volti: %1\n"
+msgstr "Elementi analizzati per gli oggetti: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:221
-#, fuzzy, kde-format
-#| msgid "Item scanned for faces: %1\n"
+#, kde-format
 msgid "Item scanned for objects: %1\n"
-msgstr "Elemento analizzato per i volti: %1\n"
+msgstr "Elemento analizzato per gli oggetti: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:249
-#, fuzzy, kde-format
-#| msgid "Scanning from: %1\n"
+#, kde-format
 msgid "Object Scanning: %1\n"
-msgstr "Analisi da: %1\n"
+msgstr "Analisi degli oggetti in corso: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
@@ -39786,38 +39765,22 @@ msgstr "Analisi da: %1\n"
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
-#, fuzzy, kde-format
-#| msgid "Album: %1"
+#, kde-format
 msgid "Album: %1\n"
-msgstr "Album: %1"
+msgstr "Album: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:255
 #, kde-format
 msgid "Found %1 object. Tag: %2"
-msgstr ""
+msgstr "Trovato %1 oggetto. Tag: %2"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:259
 #, kde-format
 msgid "Found %1 objects. Tags: %2"
-msgstr ""
+msgstr "Trovati %1 oggetti. Tag: %2"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
 #, kde-format
-msgctxt "@title:tab"
-msgid "Search in"
-msgstr "Ricerca in"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "<p><b>This tool allows to assign automatically tags to images by contents "
-#| "analysis using deep-learning neural network.</b></p><p>The settings below "
-#| "determine the deep-learning model to use while parsing image contents to "
-#| "determine the subjects of the photography. The neural network used in "
-#| "background will generate automatically a serie of tags describing the "
-#| "contents and store the results in the database.</p>"
 msgctxt "@label"
 msgid ""
 "<p><b>This tool automatically assigns tags to images by analyzing the image "
@@ -39827,68 +39790,57 @@ msgid ""
 "descriptive tags for the image contents and store the results in the "
 "database.</p>"
 msgstr ""
-"<p><b>Questo strumento permette di assegnare automaticamente tag alle "
-"immagini basandosi sull'analisi del contenuto tramite l'utilizzo della rete "
-"neurale di apprendimento profondo.</b></p><p>Le impostazioni sotto riportate "
-"determinano il modello di apprendimento profondo da utilizzare mentre si "
-"analizza il contenuto delle immagini per l'individuazione dei soggetti della "
-"fotografia. La rete neurale utilizzata in sottofondo genererà "
-"automaticamente una serie di tag che descrivono il contenuto e memorizzerà i "
-"risultati all'interno della banca dati.</p>"
+"<p><b>Questo strumento assegna automaticamente tag alle immagini analizzando "
+"l'immagine tramite un modello IA di rete neurale di apprendimento profondo.</"
+"b></p><p>Le impostazioni sotto riportate configurano il modello IA di "
+"apprendimento profondo utilizzato per analizzare il contenuto delle immagini "
+"e identificare gli oggetti. La rete neurale IA genererà automaticamente dei "
+"tag descrittivi per il contenuto delle immagini e memorizzerà i risultati "
+"all'interno della banca dati.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:102
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
 #, kde-format
 msgid "Auto-tagging mode: "
 msgstr "Modalità tag automatici: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Scan all images"
-msgid "Scan all"
-msgstr "Analizza tutte le immagini"
-
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#, kde-format
+msgid "Scan all"
+msgstr "Analizza tutto"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Esegui un'analisi solo dei non assegnati"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Clean all and re-assign</b>: clean all tags already assigned and re-"
-#| "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan "
-#| "only the items with no assigned tag.</p>"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-assigned "
 "only</b>: scan only the items with no assigned autotags.</p>"
 msgstr ""
-"<p><b>Pulisci tutto e riassegna</b>: elimina tutti i tag già assegnati e "
-"rianalizza tutti gli elementi da zero.</p><p><b>Esegui un'analisi solo dei "
-"non assegnati</b>: analizza solamente gli elementi con tag non assegnati.</p>"
+"<p><b>Analizza tutto</b>: rianalizza tutti gli elementi alla ricerca di tag."
+"</p><p><b>Esegui un'analisi solo dei non assegnati</b>: analizza solamente "
+"gli elementi con tag automatici non assegnati.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:114
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
+#, kde-format
 msgid "Auto-tagging tag mode: "
-msgstr "Modalità tag automatici: "
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
-#, fuzzy, kde-format
-#| msgid "Update only existing timestamps"
-msgid "Replace existing autotags"
-msgstr "Aggiorna solo date e ore esistenti"
+msgstr "Modalità attribuzione tag automatici: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#, fuzzy, kde-format
-#| msgid "Upgrade Database"
-msgid "Update autotags"
-msgstr "Aggiorna la banca dati"
+#, kde-format
+msgid "Replace existing autotags"
+msgstr "Sostituisci solo i tag automatici esistenti"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:122
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
+#, kde-format
+msgid "Update autotags"
+msgstr "Aggiorna i tag automatici"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39896,31 +39848,32 @@ msgid ""
 "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
 "autotags found to the existing tags.</p>"
 msgstr ""
+"<p><b>Sostituisci solo i tag automatici esistenti</b>: pulisce i tag "
+"automatici esistenti e li sostituisce con il risultato dell'analisi.</"
+"p><p><b>Aggiorna i tag automatici</b>: aggiunge qualsiasi tag automatico "
+"nuovo individuato ai tag esistenti.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:126
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, kde-format
 msgid "Selection model: "
 msgstr "Modello di selezione: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
-#, fuzzy, kde-format
-#| msgid "YOLOv5 Nano"
-msgid "YOLOv11 Nano"
-msgstr "YOLOv5 Nano"
-
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "YOLOv5 XLarge"
-msgid "YOLOv11 XLarge"
-msgstr "YOLOv5 XLarge"
+#, kde-format
+msgid "YOLOv11 Nano"
+msgstr "YOLOv11 Nano"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
-#, fuzzy, kde-format
-#| msgid "ResNet50"
-msgid "ResNet-152"
-msgstr "ResNet50"
+#, kde-format
+msgid "YOLOv11 XLarge"
+msgstr "YOLOv11 XLarge"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
+#, kde-format
+msgid "ResNet-152"
+msgstr "ResNet-152"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39936,21 +39889,26 @@ msgid ""
 "ResNet-152 was trained to recognize 1,000 different objects using the "
 "ImageNet dataset.</p>"
 msgstr ""
+"<p><b>YOLOv11 Nano</b>: rete neurale piccola e leggera, che offre una "
+"velocità eccezionale ma può perdere l'identificazione di più oggetti nelle "
+"immagini. YOLO può individuare oggetti multipli in un'immagine ed è "
+"addestrato per riconoscere 80 oggetti differenti tramite l'insieme di dati "
+"COCO.</p><p><b>YOLOv11 XLarge</b>: rete neurale grande e robusta, che offre "
+"buona accuratezza. Rileva più oggetti rispetto a YOLOv11 Nano, ma è più "
+"lento. YOLO è in grado di rilevare oggetti multipli in un'immagine ed è "
+"addestrato per riconoscere 80 oggetti differenti tramite l'insieme di dati "
+"COCO.</p><p><b>ResNet-152</b>: rete neurale complicata, grande e avanzata. "
+"Rileva un singolo oggetto in un'immagine con alta precisione. ResNet-152 è "
+"stato addestrato per riconoscere 1.000 oggetti differenti tramite l'insieme "
+"di dati ImageNet.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Face Accuracy"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
+#, kde-format
 msgid "Object detection accuracy: "
-msgstr "Accuratezza volto"
+msgstr "Accuratezza rilevamento oggetti: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be detected, but less faces will be detected."
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -39959,9 +39917,9 @@ msgid ""
 msgstr ""
 "Regola la sensibilità rispetto alla specificità: più alto è il valore, più "
 "accuratamente\n"
-"saranno individuati i volti, ma ne saranno individuati di meno."
+"saranno riconosciuti gli oggetti, ma ne saranno riconosciuti di meno.\n"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -39969,38 +39927,33 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Lavora con tutti i core del processore"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:155
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Object detection and auto-tagging are time-consuming tasks.\n"
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"Il rilevamento e il riconoscimento facciale sono processi che richiedono "
-"tempo.\n"
+"Il rilevamento degli oggetti e l'assegnazione di tag automatici sono "
+"processi che richiedono tempo.\n"
 "Puoi scegliere se impiegare tutti i core del tuo processore\n"
 "o lavorare sullo sfondo usando un solo core."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Traduci tag in:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
@@ -43281,14 +43234,7 @@ msgid "Show Thumbbar"
 msgstr "Mostra la barra delle miniature"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the slogan formatted string displayed in splashscreen. Please "
-#| "translate using short words else the slogan can be truncated."
-#| msgid ""
-#| "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> "
-#| "with the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>"
-#| "%1</i></font></qt>"
+#, kde-format
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
@@ -43296,9 +43242,8 @@ msgid ""
 "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b><br/"
 ">with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
-"<qt><font color=\"white\"><b>Gestione professionale</b> delle foto con la "
-"forza del <b>software libero</b></font><font color=\"gray\"><br/><i>%1</i></"
-"font></qt>"
+"<qt><font color=\"white\"><b>Gestione professionale</b> delle foto<br/> con "
+"la forza del <b>software libero</b></font></qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
@@ -43329,31 +43274,30 @@ msgid "Developer and Mentoring"
 msgstr "Sviluppatore principale e mentore"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:86
-#, fuzzy, kde-format
-#| msgid "SFace and YuNet DNN models integration. Face Management improvements"
+#, kde-format
 msgid ""
 "SFace and YuNet DNN models integration\n"
 "in face workflow.\n"
 "Face Management and auto-tag AI improvements.\n"
 "AI red eyes detection"
 msgstr ""
-"Integrazione dei modelli SFace e YuNet DNN. Miglioramenti alla gestione dei "
-"volti"
+"Integrazione dei modelli SFace e YuNet DNN\n"
+"nel flusso di lavoro sui volti.\n"
+"Miglioramenti IA sulla gestione dei volti e i tag automatici.\n"
+"Rilevamento IA degli occhi rossi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:113
-#, fuzzy, kde-format
-#| msgid ""
-#| "Mentoring, Port web-service tools to OAuth, factoring web service tools, "
-#| "and port faces recognition engine to OpenCV neural network"
+#, kde-format
 msgid ""
 "Mentoring, Port web-service tools to OAuth,\n"
 "factoring web service tools,\n"
 "and port faces recognition engine\n"
 "to OpenCV neural network"
 msgstr ""
-"Mentore, conversione degli strumenti web-service a OAuth e loro "
-"progettazione, conversione del motore di riconoscimento facciale alla rete "
-"neurale OpenCV"
+"Mentore, conversione degli strumenti web-service a OAuth,\n"
+"e loro progettazione,\n"
+"conversione del motore di riconoscimento facciale\n"
+"alla rete neurale OpenCV"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:137
 #, kde-format
@@ -43371,11 +43315,7 @@ msgid "Port to Qt6,"
 msgstr "Conversione a Qt6,"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:156
-#, fuzzy, kde-format
-#| msgid ""
-#| "Rewrite Image Quality Sorter algorithms and Photo Focus Information "
-#| "Extraction, Aesthetic Detection to classify images using deep learning "
-#| "model,Slideshow and Presentation tools improvement"
+#, kde-format
 msgid ""
 "Rewrite Image Quality Sorter algorithms\n"
 "and Photo Focus Information Extraction.\n"
@@ -43383,34 +43323,32 @@ msgid ""
 "using deep learning model.\n"
 "Slideshow and Presentation tools improvement"
 msgstr ""
-"Riscrittura degli algoritmi dell'Ordinatore qualità delle immagini e "
-"dell'Estrazione delle informazioni sul fuoco delle fotografie, Rilevamento "
-"estetica per classificare le immagini utilizzando il modello di "
-"apprendimento profondo, miglioramenti agli strumenti per le presentazioni"
+"Riscrittura degli algoritmi dell'Ordinatore qualità delle immagini\n"
+"e dell'Estrazione delle informazioni sul fuoco delle fotografie.\n"
+"Rilevamento estetica per classificare le immagini utilizzando\n"
+"il modello di apprendimento profondo, miglioramenti agli strumenti per le "
+"presentazioni"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
+#, kde-format
 msgid ""
 "MJPEGStream plugin,\n"
 "OCR text Converter plugin,\n"
 "auto-tags assignment engine"
 msgstr ""
-"Estensione MJPEGStream, Estensione Convertitore di testo OCR, motore di "
-"assegnazione di tag automatici"
+"Estensione MJPEGStream,\n"
+"Estensione Convertitore di testo OCR,\n"
+"motore di assegnazione di tag automatici"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:174
-#, fuzzy, kde-format
-#| msgid ""
-#| "Clustering support and improvement for Face Engine, Port Slideshow tool "
-#| "to plugins interface"
+#, kde-format
 msgid ""
 "Face workflow Clustering support,\n"
 "improvement for Face Engine,\n"
 "Port Slideshow tool to plugins interface"
 msgstr ""
-"Supporto cluster e miglioramento del motore di riconoscimento facciale, "
+"Supporto cluster del flusso di lavoro sui volti,\n"
+"miglioramento del motore di riconoscimento facciale,\n"
 "conversione dello strumento Presentazione all'interfaccia delle estensioni"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:182
@@ -43419,14 +43357,13 @@ msgid "Face management workflow improvements"
 msgstr "Migliorie del flusso di lavoro per la gestione dei volti"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:188
-#, fuzzy, kde-format
-#| msgid "UPNP/DLNA export tool, and Healing clone tool for image editor"
+#, kde-format
 msgid ""
 "UPNP/DLNA export tool\n"
 "and Healing clone tool for image editor"
 msgstr ""
-"Strumento di esportazione UPnP / DLNA e strumento Riparazione clone per "
-"l'editor delle immagini"
+"Strumento di esportazione UPnP/DLNA\n"
+"e strumento Riparazione clone per l'editor delle immagini"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:194
 #, kde-format
@@ -43439,14 +43376,13 @@ msgid "New OneDrive, Pinterrest, and Box export tools"
 msgstr "Nuovi strumenti di esportazione OneDrive, Pinterest e Box"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:206
-#, fuzzy, kde-format
-#| msgid "Face-engine improvements and manual icon-view sort"
+#, kde-format
 msgid ""
 "Face-engine improvements\n"
 "and manual icon-view sort"
 msgstr ""
-"Miglioramenti al motore per il riconoscimento facciale e ordinamento manuale "
-"della vista icone"
+"Miglioramenti al motore dei volti\n"
+"e ordinamento manuale della vista icone"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:212
 #, kde-format
@@ -43486,10 +43422,9 @@ msgid "Multi-core Support in Batch Queue Manager and Mentoring"
 msgstr "Supporto CPU multi-core nel Gestore elaborazione in serie e mentore"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:254
-#, fuzzy, kde-format
-#| msgid "UPnP / DLNA Export tool and Mentoring"
+#, kde-format
 msgid "UPnP/DLNA Export tool and Mentoring"
-msgstr "Strumento di esportazione UPnP / DLNA e mentore"
+msgstr "Strumento di esportazione UPnP/DLNA e mentore"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:260
 #, kde-format
@@ -43580,12 +43515,13 @@ msgid "digiKam website banner and application icons"
 msgstr "Intestazione del sito Web di digiKam e icone dell'applicazione"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:413
-#, fuzzy, kde-format
-#| msgid "Various usability fixes and general application polishing"
+#, kde-format
 msgid ""
 "Various usability fixes\n"
 "and general application polishing"
-msgstr "Varie correzioni di usabilità e rifinitura generale dell'applicazione"
+msgstr ""
+"Varie correzioni di usabilità\n"
+"e rifinitura generale dell'applicazione"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:419
 #, kde-format
@@ -43614,10 +43550,9 @@ msgid "Developer (2004)"
 msgstr "Sviluppatore (2004)"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:454
-#, fuzzy, kde-format
-#| msgid "Developer and Mentoring"
+#, kde-format
 msgid "Developer and Mentoring (2005-2012)"
-msgstr "Sviluppatore principale e mentore"
+msgstr "Sviluppatore principale e mentore (2005-2012)"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:87
 #, kde-format
@@ -48271,8 +48206,7 @@ msgstr "La lingua di interfaccia selezionata %1 non è supportata per %2"
 #: core/libs/widgets/text/donlinetranslator.cpp:132
 #: core/libs/widgets/text/donlinetranslator.cpp:215
 #: core/libs/widgets/text/donlinetranslator.cpp:232
-#, fuzzy, kde-format
-#| msgid "%1 URL can't be empty."
+#, kde-format
 msgid "%1 URL cannot be empty."
 msgstr "L'URL %1 non può essere vuoto."
 
@@ -50483,14 +50417,7 @@ msgstr "Sistema"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:370
 #: core/utilities/setup/misc/setupmisc.cpp:407
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check for new version option will verify the pre-releases.\n"
-#| "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
-#| "It's not recommended to use pre-release in production as bugs can "
-#| "remain,\n"
-#| "unless you know what you are doing.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
 "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
@@ -52477,6 +52404,13 @@ msgid ""
 "p><p><b>Recognize faces only</b> will try to match unknown faces with "
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
+"<p><b>Analizza nuove immagini</b> analizza i volti e tenta il riconoscimento "
+"nelle nuove immagini trovate negli album selezionati nella scheda «Cerca in»."
+"</p><p><b>Analizza tutte le immagini</b> analizza i volti e tenta il "
+"riconoscimento per tutte le immagini trovate negli album selezionati nella "
+"scheda «Cerca in».</p><p><b>Riconosci solo i volti</b> tenta di trovare "
+"corrispondenze dei volti sconosciuti con quelli confermati, senza analizzare "
+"nuovi volti nelle immagini.</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:112
 #, kde-format
@@ -52545,23 +52479,7 @@ msgid "Extra Large"
 msgstr "Molto grande"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p>Selecting <b>Extra Small</b> means the model will detect small "
-#| "background faces in addition to medium and larger faces. Selecting "
-#| "<b>Small Faces</b> increases the sensitivity of the model by tuning the "
-#| "model parameters. It will also increase the probability of false-"
-#| "positives, and it will increase detection time.</p><p>Selecting <b>Large</"
-#| "b> or <b>Extra Large</b> will eliminate small background faces from being "
-#| "detected. It is much faster and will reduce the number of false-"
-#| "positives, but will not detect small faces in the background or faces in "
-#| "large group photos.</p><p>If you want to detect all faces in one pass, "
-#| "select <b>Extra Small</b> faces and set the detection accuracy to 2. "
-#| "Unfortunately, this will create a significant number of false-positives. "
-#| "It's recommended to set a detection accuracy of 6-8 and face size of "
-#| "<b>Medium</b> or <b>Large</b> for normal use.</p><p>This setting applies "
-#| "only to YuNet.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
@@ -61229,9 +61147,7 @@ msgid "Use the last saved active tools and settings"
 msgstr "Usa le ultime impostazioni salvate e gli ultimi strumenti attivi "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores (when it's possible)"
+#, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it is possible)"
 msgstr "Lavora con tutti i core del processore (quando possibile)"
@@ -61550,16 +61466,14 @@ msgid "Find new items"
 msgstr "Trova nuovi elementi"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
-#, fuzzy, kde-format
-#| msgid "Scanning from: %1\n"
+#, kde-format
 msgid "Scanning: %1\n"
-msgstr "Analisi da: %1\n"
+msgstr "Analisi in corso: %1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
-#, fuzzy, kde-format
-#| msgid "Album: %1"
+#, kde-format
 msgid "Album Root: %1"
-msgstr "Album: %1"
+msgstr "Radice dell'album: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
 #, kde-format
@@ -61586,11 +61500,9 @@ msgid "Find duplicates items"
 msgstr "Trova elementi duplicati"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "Finding Duplicates: %1\n"
-msgstr "Trova duplicati"
+msgstr "Ricerca duplicati in corso: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:174
 #, kde-format
@@ -61677,29 +61589,24 @@ msgid "Face found: %1"
 msgstr "Volto trovato: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
-#, fuzzy, kde-format
-#| msgid "Scanning from: %1\n"
+#, kde-format
 msgid "Face Scanning: %1\n"
-msgstr "Analisi da: %1\n"
+msgstr "Analisi dei volti in corso: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
-#, fuzzy, kde-format
-#| msgid "1 face"
-#| msgid_plural "%1 faces"
+#, kde-format
 msgid "Found %1 face."
-msgstr "Un volto"
+msgstr "Trovato %1 volto."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:444
 #, kde-format
 msgid "Found %1 faces."
-msgstr ""
+msgstr "Trovati %1 volti."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:450
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Icon Size: %1"
+#, kde-format
 msgid "Recognized: %1"
-msgstr "Dimensione icona: %1"
+msgstr "Riconosciuti: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:95
 #, kde-format
@@ -61707,10 +61614,9 @@ msgid "Finger-prints"
 msgstr "Codici di controllo"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
-#, fuzzy, kde-format
-#| msgid "Rebuild Fingerprint for: %1\n"
+#, kde-format
 msgid "Rebuild Fingerprint: %1\n"
-msgstr "Ricalcola il codice di controllo per: %1\n"
+msgstr "Ricalcola il codice di controllo: %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
 #, kde-format
@@ -61728,10 +61634,9 @@ msgid "Item scanned for fingerprint: %1"
 msgstr "Elemento analizzato per il codice di controllo: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
-#, fuzzy, kde-format
-#| msgid "Image Quality for: %1\n"
+#, kde-format
 msgid "Image Quality: %1\n"
-msgstr "Qualità immagine per: %1\n"
+msgstr "Qualità immagine: %1\n"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:182
 #, kde-format
@@ -61777,10 +61682,9 @@ msgstr ""
 "Vuoi continuare?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
-#, fuzzy, kde-format
-#| msgid "Clear Metadata for: %1\n"
+#, kde-format
 msgid "Clear Metadata: %1\n"
-msgstr "Pulisci metadati per: %1\n"
+msgstr "Pulisci metadati: %1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
 #, kde-format
@@ -61813,10 +61717,9 @@ msgid "Updating database from image metadata"
 msgstr "Aggiornamento della banca dati dai metadati delle immagini"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
-#, fuzzy, kde-format
-#| msgid "Metadata Sync for: %1\n"
+#, kde-format
 msgid "Metadata Sync: %1\n"
-msgstr "Sincronizzazione metadati per: %1\n"
+msgstr "Sincronizzazione metadati: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
 #, kde-format
@@ -61844,10 +61747,9 @@ msgid "Generate Thumbnails"
 msgstr "Genera miniature"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
-#, fuzzy, kde-format
-#| msgid "Thumbnail for: %1\n"
+#, kde-format
 msgid "Thumbnail: %1\n"
-msgstr "Miniatura per: %1\n"
+msgstr "Miniatura: %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
 #, kde-format
@@ -65587,24 +65489,7 @@ msgid "Always show intermediate snapshots"
 msgstr "Mostra sempre le istantanee intermedie"
 
 #: core/utilities/setup/editor/setupversioning.cpp:461
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG</emphasis>: It's the most commonly "
-#| "used file format, but it employs lossy compression, which means that with "
-#| "each saving operation some image information will be irreversibly lost. "
-#| "JPEG offers a good compression rate, resulting in smaller files. </"
-#| "item><item><emphasis strong='true'>PNG</emphasis>: A widely used format "
-#| "employing lossless compression. The files, though, will be larger because "
-#| "PNG does not achieve very good compression rates.</item><item><emphasis "
-#| "strong='true'>TIFF</emphasis>: A commonly used format, usually "
-#| "uncompressed or with modest lossless compression. Resulting files will be "
-#| "large, but without quality loss due to compression. </"
-#| "item><item><emphasis strong='true'>PGF</emphasis>: This is a technically "
-#| "superior file format offering good compression rates with either lossy or "
-#| "lossless compression. But it is not yet widely used and supported, so "
-#| "your friends may not directly be able to open these files, and you may "
-#| "not be able to directly publish them on the web. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG</emphasis>: It is the most commonly used "
@@ -65641,13 +65526,7 @@ msgstr ""
 "questo formato.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:494
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG-2000</emphasis>: It's similar to PGF. "
-#| "Loading or saving is slower, the compression rate is better, and the "
-#| "format more widely supported, though still not comparable to the "
-#| "tradition formats JPEG, PNG or TIFF. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-2000</emphasis>: It is similar to PGF. "
@@ -65675,13 +65554,7 @@ msgstr ""
 "della sua equivalente, in termini di qualità, JPEG. </item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:517
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG-XL</emphasis>: It's a royalty-free "
-#| "raster-graphics file format that supports lossless compression. It is "
-#| "designed to outperform existing raster formats and thus to become their "
-#| "universal replacement. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-XL</emphasis>: It is a royalty-free "
@@ -65695,13 +65568,7 @@ msgstr ""
 "circolazione e, dunque, per diventare il loro sostituto.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:527
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>WEBP</emphasis>: It's an image file format "
-#| "that Google has developed as a replacement for JPEG, PNG, and GIF file "
-#| "formats. Files are smaller for the same quality, or of higher quality for "
-#| "the same size. It supports both lossy and lossless compression</item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>WEBP</emphasis>: It is an image file format "

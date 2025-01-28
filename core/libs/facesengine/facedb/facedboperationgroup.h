@@ -20,7 +20,7 @@ namespace Digikam
 class FaceDbAccess;
 
 /**
- * When you intend to execute a number of write operations to the database,
+ * @brief When you intend to execute a number of write operations to the database,
  * group them while holding a FaceDbOperationGroup.
  * For some database systems (SQLite), keeping a transaction across write operations
  * occurring in short time results in enormous speedup (800x).
@@ -31,19 +31,19 @@ class FaceDbOperationGroup
 public:
 
     /**
-     * Retrieve a FaceDbAccess object each time when constructing and destructing.
+     * @brief Retrieve a FaceDbAccess object each time when constructing and destructing.
      */
     FaceDbOperationGroup();
 
     /**
-     * Use an existing FaceDbAccess object, which must live as long as this object exists.
+     * @brief Use an existing FaceDbAccess object, which must live as long as this object exists.
      */
     explicit FaceDbOperationGroup(FaceDbAccess* const dbAccess);
 
     ~FaceDbOperationGroup();
 
     /**
-     * This will - if a transaction is held - commit the transaction and acquire a new one.
+     * @brief This will - if a transaction is held - commit the transaction and acquire a new one.
      * This may improve concurrent access.
      */
     void lift();
@@ -51,12 +51,12 @@ public:
     void setMaximumTime(int msecs);
 
     /**
-     * Resets to 0 the time used by allowLift().
+     * @brief Resets to 0 the time used by allowLift().
      */
     void resetTime();
 
     /**
-     * Allows to lift(). The transaction will be lifted if the time set by setMaximumTime()
+     * @brief Allows to lift(). The transaction will be lifted if the time set by setMaximumTime()
      * has expired.
      */
     void allowLift();

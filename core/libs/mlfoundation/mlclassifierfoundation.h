@@ -44,7 +44,7 @@ public:
     virtual int predict(const cv::UMat& target)                     const       = 0;
 
     virtual QList<int> predictMulti(const QList<cv::Mat>& targets)  const       = 0;
-    virtual QList<int> predictMulti(const QList<cv::UMat>& targets)  const       = 0;
+    virtual QList<int> predictMulti(const QList<cv::UMat>& targets)  const      = 0;
 
     virtual bool retrain()                                                      = 0;
 

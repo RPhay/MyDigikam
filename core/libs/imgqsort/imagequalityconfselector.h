@@ -23,7 +23,7 @@
 // Local includes
 
 #include "digikam_export.h"
-#include "imagequalitycontainer.h"
+#include "imagequalitysettings.h"
 
 namespace Digikam
 {
@@ -48,8 +48,8 @@ public:
     SettingsType          settingsSelected()                      const;
     void                  setSettingsSelected(SettingsType type);
 
-    ImageQualityContainer customSettings()                        const;
-    void setCustomSettings(const ImageQualityContainer& settings);
+    ImageQualitySettings customSettings()                        const;
+    void setCustomSettings(const ImageQualitySettings& settings);
 
 Q_SIGNALS:
 

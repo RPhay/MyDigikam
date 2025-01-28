@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 28/08/2021
- * Description : Image Quality Parser - Blur basic factor detection
+ * Description : Image Quality Parser - Blur detection basic factor
  *
  * SPDX-FileCopyrightText: 2021-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
@@ -29,7 +29,6 @@ namespace Digikam
 
 class Q_DECL_HIDDEN BlurDetector::Private
 {
-
 public:
 
     Private() = default;
@@ -61,7 +60,7 @@ BlurDetector::BlurDetector(const DImg& image)
     : AbstractDetector(),
       d               (new Private)
 {
-    QScopedPointer<FocusPointsExtractor> const extractor (new FocusPointsExtractor(nullptr, image.originalFilePath()));
+    QScopedPointer<FocusPointsExtractor> const extractor(new FocusPointsExtractor(nullptr, image.originalFilePath()));
 
     d->af_points         = extractor->get_af_points(FocusPoint::TypePoint::Selected);
     d->have_focus_region = !d->af_points.isEmpty();

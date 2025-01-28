@@ -53,10 +53,6 @@ FacePipelineReset::FacePipelineReset(const FaceScanSettings& _settings)
 {
 }
 
-FacePipelineReset::~FacePipelineReset()
-{
-}
-
 bool FacePipelineReset::start()
 {
     {
@@ -102,7 +98,9 @@ bool FacePipelineReset::finder()
 
         if (!album->isTrashAlbum())
         {
-            QList<qlonglong> imageIds = CoreDbAccess().db()->getImageIds(album->id(), DatabaseItem::Status::Visible, true);
+            QList<qlonglong> imageIds = CoreDbAccess().db()->getImageIds(album->id(),
+                                                                         DatabaseItem::Status::Visible,
+                                                                         true);
 
             if (!moreCpu)
             {
@@ -205,9 +203,9 @@ bool FacePipelineReset::writer()
 
     /* =========================================================================================
      * Pipeline stage specific cleanup
-     * 
+     *
      * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
-     */ 
+     */
 
     // retrain the classifier after all results have been processed
 

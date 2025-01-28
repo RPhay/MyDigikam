@@ -32,7 +32,7 @@ class QImage;
 namespace Digikam
 {
 
-class ImageQualityContainer;
+class ImageQualitySettings;
 class MaintenanceData;
 
 
@@ -52,7 +52,7 @@ public:
     void generateThumbs(const QStringList& paths);
     void generateFingerprints(const QList<qlonglong>& itemIds, bool rebuildAll);
     // void generateTags(const QStringList& paths, int modelType, const QStringList& langs);
-    void sortByImageQuality(const QStringList& paths, const ImageQualityContainer& quality);
+    void sortByImageQuality(const QStringList& paths, const ImageQualitySettings& quality);
 
     void computeDatabaseJunk(bool thumbsDb = false, bool facesDb = false, bool similarityDb = false);
     void cleanCoreDb(const QList<qlonglong>& imageIds);

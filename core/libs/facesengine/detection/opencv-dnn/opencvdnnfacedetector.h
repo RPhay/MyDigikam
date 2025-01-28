@@ -57,7 +57,7 @@ public:
     std::vector<cv::Rect> cvDetectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize);
 
     /**
-     * Returns the image size (one dimension).
+     * @return the image size (one dimension).
      * recommended for face detection. If the image is considerably larger, it will be rescaled automatically.
      */
     static int recommendedImageSizeForDetection();

@@ -20,7 +20,7 @@ namespace Digikam
 {
 
 ImageQualityParser::ImageQualityParser(const DImg& image,
-                                       const ImageQualityContainer& settings,
+                                       const ImageQualitySettings& settings,
                                        PickLabel* const label)
     : d(new Private)
 {

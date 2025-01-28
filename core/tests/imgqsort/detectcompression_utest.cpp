@@ -26,7 +26,7 @@
 // Local includes
 
 #include "digikam_globals.h"
-#include "imagequalitycontainer.h"
+#include "imagequalitysettings.h"
 #include "dpluginloader.h"
 #include "digikam_debug.h"
 

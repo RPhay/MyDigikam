@@ -39,7 +39,7 @@
 #include "dmetadata.h"
 #include "dpluginbqm.h"
 #include "imagequalityconfselector.h"
-#include "imagequalitycontainer.h"
+#include "imagequalitysettings.h"
 #include "imagequalityparser.h"
 #include "dlayoutbox.h"
 #include "previewloadthread.h"
@@ -53,6 +53,8 @@ class Q_DECL_HIDDEN QualitySort::Private
 public:
 
     Private() = default;
+
+public:
 
     ImageQualityConfSelector* qualitySelector   = nullptr;
     ImageQualityParser*       imgqsort          = nullptr;
@@ -111,7 +113,7 @@ void QualitySort::slotQualitySetup()
 BatchToolSettings QualitySort::defaultSettings()
 {
     BatchToolSettings settings;
-    ImageQualityContainer prm;
+    ImageQualitySettings prm;
 
     settings.insert(QLatin1String("SettingsSelected"),                  ImageQualityConfSelector::GlobalSettings);
     settings.insert(QLatin1String("CustomSettingsDetectBlur"),          prm.detectBlur);
@@ -137,7 +139,7 @@ void QualitySort::slotAssignSettings2Widget()
 {
     d->changeSettings = false;
 
-    ImageQualityContainer prm;
+    ImageQualitySettings prm;
 
     d->qualitySelector->setSettingsSelected((ImageQualityConfSelector::SettingsType)
                                             settings().value(QLatin1String("SettingsSelected")).toInt());
@@ -168,7 +170,7 @@ void QualitySort::slotSettingsChanged()
     if (d->changeSettings)
     {
         BatchToolSettings settings;
-        ImageQualityContainer prm = d->qualitySelector->customSettings();
+        ImageQualitySettings prm = d->qualitySelector->customSettings();
 
         settings.insert(QLatin1String("SettingsSelected"),                  d->qualitySelector->settingsSelected());
         settings.insert(QLatin1String("CustomSettingsDetectBlur"),          prm.detectBlur);
@@ -216,7 +218,7 @@ bool QualitySort::toolOperations()
 
     ImageQualityConfSelector::SettingsType type = (ImageQualityConfSelector::SettingsType)
                                                   settings().value(QLatin1String("SettingsSelected")).toInt();
-    ImageQualityContainer prm;
+    ImageQualitySettings prm;
 
     if (type == ImageQualityConfSelector::GlobalSettings)
     {

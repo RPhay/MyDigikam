@@ -25,7 +25,7 @@
 #include "album.h"
 #include "facescansettings.h"
 #include "haariface.h"
-#include "imagequalitycontainer.h"
+#include "imagequalitysettings.h"
 #include "metadatasynchronizer.h"
 #include "imagequalitysorter.h"
 #include "autotagsscansettings.h"
@@ -115,7 +115,7 @@ public:
     int                                     qualitySettingsSelected = ImageQualityConfSelector::GlobalSettings;
 
     /// Image Quality Sorting Settings.
-    ImageQualityContainer                   quality;
+    ImageQualitySettings                   quality;
 
     /// Sync metadata and DB.
     bool                                    metadataSync            = false;
