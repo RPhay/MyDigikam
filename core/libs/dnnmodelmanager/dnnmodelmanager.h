@@ -36,18 +36,18 @@ class DIGIKAM_EXPORT DNNModelManager : public QObject
 public:
 
     /**
-     * Global instance of internal model manager.
+     * @brief Global instance of internal model manager.
      * All accessor methods are thread-safe.
      */
     static DNNModelManager* instance();
 
     /**
-     * Used by the filesdownload to get a stream containing the files and information to download.
+     * @brief Used by the filesdownload to get a stream containing the files and information to download.
      */
     const QList<DownloadInfo>& getDownloadInformation(DNNModelUsage usage);
 
     /**
-     * Retrieve a DNNModelBase pointer by name.
+     * @brief Retrieve a DNNModelBase pointer by name.
      * This will load and create the model on first use.
      * It will also find the best OpenCV Target and Backend for the model
      * based on computer capabilities.
@@ -75,7 +75,7 @@ private:
     };
 
     /**
-     * Read the configuration file.  The configuration is a .ini-style .conf hardcoded in dnnmodelmanager.cpp and
+     * @brief Read the configuration file.  The configuration is a .ini-style .conf hardcoded in dnnmodelmanager.cpp and
      * bundled with digiKam, but could be downloaded from the Internet.
      */
     void loadConfig();      ///<  Load the Model map, but don't create the cv::dnn::Net objects yet.
