@@ -419,8 +419,9 @@ for app in $DLL_FILES ; do
 done
 
 FFMPEG_DLL_FILES="\
-`find  $VCPKG_INSTALL_PREFIX/tools/ffmpeg -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/tools/ffmpeg||'` \
-`find  $VCPKG_INSTALL_PREFIX/tools/ffmpeg -name "*.DLL" -type f | sed 's|$VCPKG_INSTALL_PREFIX/tools/ffmpeg||'` \
+`find  $VCPKG_INSTALL_PREFIX/tools/ffmpeg   -name "*.dll"        -type f | sed 's|$VCPKG_INSTALL_PREFIX/tools/ffmpeg||'` \
+`find  $VCPKG_INSTALL_PREFIX/tools/ffmpeg   -name "*.DLL"        -type f | sed 's|$VCPKG_INSTALL_PREFIX/tools/ffmpeg||'` \
+`find  $VCPKG_INSTALL_PREFIX/tools/x264/bin -name "libx264*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/tools/x264/bin||'` \
 "
 
 for ffmpegdll in $FFMPEG_DLL_FILES ; do
