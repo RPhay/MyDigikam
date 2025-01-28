@@ -49,8 +49,4 @@ MLPipelinePackageNotify::MLPipelinePackageNotify(const QString& _name,
 {
 }
 
-MLPipelinePackageNotify::~MLPipelinePackageNotify()
-{
-}
-
 } // namesapce Digikam
