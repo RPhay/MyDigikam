@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-27 01:57+0000\n"
-"PO-Revision-Date: 2025-01-25 11:10+0100\n"
+"POT-Creation-Date: 2025-01-28 01:55+0000\n"
+"PO-Revision-Date: 2025-01-26 18:07+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -7444,18 +7444,7 @@ msgid "An image loader based on Libpgf codec"
 msgstr "Un chargeur d'images reposant sur le codec « Libpgf »."
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:78
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This plugin allows users to load and save image using Libpgf codec."
-#| "</para><para>The Progressive Graphics File (PGF) is an efficient image "
-#| "file format, that is based on a fast, discrete wavelet transform with "
-#| "progressive coding features. PGF can be used for lossless and lossy "
-#| "compression. It's most suitable for natural images. PGF can be used as a "
-#| "very efficient and fast replacement of JPEG-2000.</para><para>See <a "
-#| "href='https://en.wikipedia.org/wiki/"
-#| "Progressive_Graphics_File'>Progressive Graphics File documentation</a> "
-#| "for details.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This plugin allows users to load and save image using Libpgf codec.</"
@@ -7471,9 +7460,9 @@ msgstr ""
 "des images en utilisant le codec « libpgf ».</para><para>Le format "
 "« Progressive Graphics File » (PGF) est un puissant format de fichier "
 "d'images, reposant sur une transformation rapide et discrète en ondelettes "
-"avec des fonctionnalités progressives d'encodage. Le format « PGF » peut "
-"être utilisé pour des compressions avec ou sans perte. Il est le plus adapté "
-"pour les images naturelles. Il peut être utilisé comme une solution de "
+"avec des fonctionnalités d'encodage progressif. Le format « PGF » peut être "
+"utilisé pour des compressions avec ou sans perte. Il est le plus adapté pour "
+"les images naturelles. Il peut être utilisé comme une solution de "
 "remplacement très efficace et très rapide du format « JPEG-2000 ».</"
 "para><para>Veuillez consulter la documentation du format <a href='https://fr."
 "wikipedia.org/wiki/Progressive_Graphics_File'> « Progressive Graphics File » "
@@ -9314,7 +9303,7 @@ msgid "Use Color Management for Printing"
 msgstr "Utiliser le gestionnaire de couleurs pour l'impression"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
-#: core/libs/imgqsort/imagequalityconfselector.cpp:73
+#: core/libs/imgqsort/imagequalityconfselector.cpp:72
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
 #: core/utilities/maintenance/main/maintenancedlg.cpp:286
 #, kde-format
@@ -21190,14 +21179,7 @@ msgid "Number of Frames by Image:"
 msgstr "Nombre de trames par image :"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:90
-#, fuzzy, kde-format
-#| msgid ""
-#| "This value repeat one image in the sequence.\n"
-#| "While creating timelapse; it's usual to use 1.\n"
-#| "Typically, the number of frames will determine\n"
-#| "the time to show the same frame in the video.\n"
-#| "The result will depend of the number of frames\n"
-#| "per second used to encode the media."
+#, kde-format
 msgid ""
 "This value repeat one image in the sequence.\n"
 "While creating timelapse; it is usual to use 1.\n"
@@ -21207,10 +21189,11 @@ msgid ""
 "per second used to encode the media."
 msgstr ""
 "Cette valeur répète une image dans la séquence. \n"
-"Lors de la création d'une animation hyper-accélérée (timelapse), \n"
-"il est habituel d'utiliser la valeur 1. \n"
-"En règle générale, le nombre de trames déterminera le temps d'affichage\n"
-" de la même trame dans la vidéo. Le résultat dépendra du nombre de trames \n"
+"Lors de la création d'une animation hyper-accélérée (timelapse), il est "
+"habituel d'utiliser la valeur 1. \n"
+"En règle générale, le nombre de trames déterminera le temps\n"
+" d'affichage de la même trame dans la vidéo. \n"
+"Le résultat dépendra du nombre de trames \n"
 "par seconde utilisé pour encoder le média."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:99
@@ -31390,37 +31373,37 @@ msgstr "Filtre infrarouge"
 msgid "Channel Mixer Tool"
 msgstr "Outil Mélangeur de canaux"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:100
+#: core/libs/dimg/filters/bw/mixersettings.cpp:102
 #, kde-format
 msgctxt "@label"
 msgid "Output Channel:"
 msgstr "Canal de sortie :"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:102
+#: core/libs/dimg/filters/bw/mixersettings.cpp:104
 #, kde-format
 msgctxt "@item: color"
 msgid "Red"
 msgstr "Rouge"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:103
+#: core/libs/dimg/filters/bw/mixersettings.cpp:105
 #, kde-format
 msgctxt "@item: color"
 msgid "Green"
 msgstr "Vert"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:104
+#: core/libs/dimg/filters/bw/mixersettings.cpp:106
 #, kde-format
 msgctxt "@item: color"
 msgid "Blue"
 msgstr "Bleu"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:106
+#: core/libs/dimg/filters/bw/mixersettings.cpp:108
 #, kde-format
 msgctxt "@label: color"
 msgid "Red (%):"
 msgstr "Rouge (%) :"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:111
+#: core/libs/dimg/filters/bw/mixersettings.cpp:113
 #, kde-format
 msgctxt "@info"
 msgid "Select the red color gain, as a percentage, for the current channel."
@@ -31428,13 +31411,13 @@ msgstr ""
 "Choisissez ici le gain, exprimé en pourcentage, pour la couleur rouge, "
 "applicable au canal actuel."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:114
+#: core/libs/dimg/filters/bw/mixersettings.cpp:116
 #, kde-format
 msgctxt "@label: color"
 msgid "Green (%):"
 msgstr "Vert (%) :"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:119
+#: core/libs/dimg/filters/bw/mixersettings.cpp:121
 #, kde-format
 msgctxt "@info"
 msgid "Select the green color gain, as a percentage, for the current channel."
@@ -31442,13 +31425,13 @@ msgstr ""
 "Choisissez ici le gain, exprimé en pourcentage, pour la couleur verte, "
 "applicable au canal actuel."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:122
+#: core/libs/dimg/filters/bw/mixersettings.cpp:124
 #, kde-format
 msgctxt "@label: color"
 msgid "Blue (%):"
 msgstr "Bleu (%) :"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:127
+#: core/libs/dimg/filters/bw/mixersettings.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Select the blue color gain, as a percentage, for the current channel."
@@ -31456,13 +31439,13 @@ msgstr ""
 "Choisissez ici le gain, exprimé en pourcentage, pour la couleur bleue, "
 "applicable au canal actuel."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:132
+#: core/libs/dimg/filters/bw/mixersettings.cpp:134
 #, kde-format
 msgctxt "@option"
 msgid "&Reset"
 msgstr "&Réinitialiser"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:134
+#: core/libs/dimg/filters/bw/mixersettings.cpp:136
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -31471,26 +31454,26 @@ msgstr ""
 "Réinitialisez les paramètres de gain des canaux de couleurs à partir du "
 "canal actuellement sélectionné."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:142
+#: core/libs/dimg/filters/bw/mixersettings.cpp:144
 #, kde-format
 msgctxt "@option"
 msgid "Preserve luminosity"
 msgstr "Préserver la luminosité"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:143
+#: core/libs/dimg/filters/bw/mixersettings.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Enable this option is you want preserve the image luminosity."
 msgstr ""
 "Sélectionnez cette option si vous voulez préserver la luminosité de l'image."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:148
+#: core/libs/dimg/filters/bw/mixersettings.cpp:150
 #, kde-format
 msgctxt "@option: color"
 msgid "Monochrome"
 msgstr "Monochrome"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:150
+#: core/libs/dimg/filters/bw/mixersettings.cpp:152
 #, kde-format
 msgctxt "@info: help"
 msgid ""
@@ -31507,19 +31490,19 @@ msgstr ""
 "Le « canal bleu » affecte le bruit de la photographie. Remarque : dans ce "
 "mode, l'histogramme affichera uniquement les valeurs de luminosité."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:321
+#: core/libs/dimg/filters/bw/mixersettings.cpp:325
 #, kde-format
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
 msgstr "Total : %1 (%)"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:516
+#: core/libs/dimg/filters/bw/mixersettings.cpp:521
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "Sélectionnez le fichier « GIMP » de mélangeur de gains à charger"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:596
+#: core/libs/dimg/filters/bw/mixersettings.cpp:601
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
@@ -31527,13 +31510,13 @@ msgstr ""
 "Impossible de charger les paramètres à partir du fichier texte de mélangeur "
 "de gain."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:606
+#: core/libs/dimg/filters/bw/mixersettings.cpp:611
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "Fichier « GIMP » de mélangeur de gains à enregistrer"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:685
+#: core/libs/dimg/filters/bw/mixersettings.cpp:690
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the Gains Mixer text file."
@@ -35759,13 +35742,13 @@ msgstr "Tout effacer"
 msgid "Select All"
 msgstr "Tout sélectionner"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:69
+#: core/libs/imgqsort/imagequalityconfselector.cpp:68
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use default settings"
 msgstr "Utiliser la configuration par défaut"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:70
+#: core/libs/imgqsort/imagequalityconfselector.cpp:69
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
@@ -35773,13 +35756,13 @@ msgstr ""
 "Utiliser les paramètres par défaut de tri selon la qualité, configurés dans "
 "la boîte de dialogue de configuration."
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:77
+#: core/libs/imgqsort/imagequalityconfselector.cpp:76
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use custom settings"
 msgstr "Utiliser une configuration personnalisée"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:78
+#: core/libs/imgqsort/imagequalityconfselector.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
@@ -35787,13 +35770,21 @@ msgstr ""
 "Utiliser des paramètres personnalisés pour la réalisation d'un tri selon la "
 "qualité plutôt qu'avec les paramètres par défaut."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:100
+#: core/libs/imgqsort/imagequalitysettings.cpp:61
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:86
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
+#, kde-format
+msgctxt "@title:tab"
+msgid "Search in"
+msgstr "Chercher dans"
+
+#: core/libs/imgqsort/imagequalitysettings.cpp:69
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgstr "Attribuer un libellé « Rejeté » aux images de faible qualité"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:101
+#: core/libs/imgqsort/imagequalitysettings.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35803,13 +35794,13 @@ msgstr ""
 "Les images détectées de mauvaise qualité par l'analyse du flou, du bruit et "
 "de la compression seront affectées au libellé « Rejeté »"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:113
+#: core/libs/imgqsort/imagequalitysettings.cpp:82
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgstr "Attribuer un libellé « En attente » aux images de qualité moyenne"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:114
+#: core/libs/imgqsort/imagequalitysettings.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35819,13 +35810,13 @@ msgstr ""
 "Les images de qualité moyenne détectées par l'analyse du flou, du bruit et "
 "de la compression seront affectées au libellé « En attente »"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:126
+#: core/libs/imgqsort/imagequalitysettings.cpp:95
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgstr "Attribuer un libellé « Accepté » aux images de haute qualité"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:127
+#: core/libs/imgqsort/imagequalitysettings.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35835,13 +35826,13 @@ msgstr ""
 "Les images détectées de haute qualité par l'analyse du flou, du bruit et de "
 "la compression seront affectées au libellé « Accepté »"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:140
+#: core/libs/imgqsort/imagequalitysettings.cpp:109
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
 msgstr "Détecter une image esthétique en utilisant un apprentissage profond"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:142
+#: core/libs/imgqsort/imagequalitysettings.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35852,13 +35843,13 @@ msgstr ""
 "Le moteur de reconnaissance esthétique utilise un modèle d'apprentissage "
 "profond pour classer les images."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:147
+#: core/libs/imgqsort/imagequalitysettings.cpp:116
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr "Détecter la qualité par utilisation des facteurs basiques"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:149
+#: core/libs/imgqsort/imagequalitysettings.cpp:118
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35868,116 +35859,129 @@ msgstr ""
 "Détecter si l'image est sabotée par quatre facteurs de base (flou, bruit, "
 "exposition et compression)."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:160
+#: core/libs/imgqsort/imagequalitysettings.cpp:136
+#, kde-format
+msgctxt "@title:tab"
+msgid "Rules"
+msgstr ""
+
+#: core/libs/imgqsort/imagequalitysettings.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Seuil de rejet :"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:165
+#: core/libs/imgqsort/imagequalitysettings.cpp:148
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr "Seuil en dessous duquel toutes les images auront un libellé « Rejeté »"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:167
+#: core/libs/imgqsort/imagequalitysettings.cpp:150
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Seuil d'attente :"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:172
+#: core/libs/imgqsort/imagequalitysettings.cpp:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr ""
 "Seuil en dessous duquel toutes les images auront un libellé « En attente »"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:174
+#: core/libs/imgqsort/imagequalitysettings.cpp:157
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Seuil d'acceptation :"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:179
+#: core/libs/imgqsort/imagequalitysettings.cpp:162
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr "Seuil en dessus duquel toutes les images auront un libellé « Accepté »"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:181
+#: core/libs/imgqsort/imagequalitysettings.cpp:164
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Détecter le flou"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:182
+#: core/libs/imgqsort/imagequalitysettings.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "Détecter le niveau de flou dans les images lui étant soumises"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:184
-#: core/libs/imgqsort/imagequalitysettings.cpp:194
-#: core/libs/imgqsort/imagequalitysettings.cpp:204
+#: core/libs/imgqsort/imagequalitysettings.cpp:167
+#: core/libs/imgqsort/imagequalitysettings.cpp:177
+#: core/libs/imgqsort/imagequalitysettings.cpp:187
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Poids :"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:189
+#: core/libs/imgqsort/imagequalitysettings.cpp:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Poids accordé à l'algorithme de flou"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:191
+#: core/libs/imgqsort/imagequalitysettings.cpp:174
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Détecter le bruit"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:192
+#: core/libs/imgqsort/imagequalitysettings.cpp:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Détecter le niveau de bruit dans les images lui étant soumises"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:199
+#: core/libs/imgqsort/imagequalitysettings.cpp:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Poids accordé à l'algorithme de bruit"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:201
+#: core/libs/imgqsort/imagequalitysettings.cpp:184
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Détecter la compression"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:202
+#: core/libs/imgqsort/imagequalitysettings.cpp:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Détecter le niveau de compression dans les images lui étant soumises"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:209
+#: core/libs/imgqsort/imagequalitysettings.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Poids accordé à l'algorithme de compression"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:211
+#: core/libs/imgqsort/imagequalitysettings.cpp:194
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Détecter la sur-exposition ou la sous-exposition"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:212
+#: core/libs/imgqsort/imagequalitysettings.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Détecter si les images sont sur-exposées ou sous-exposées"
+
+#: core/libs/imgqsort/imagequalitysettings.cpp:225
+#, fuzzy, kde-format
+#| msgid "Sparsity Factor: "
+msgctxt "@title:tab"
+msgid "Basic Factors"
+msgstr "Facteur de vacuité : "
 
 #: core/libs/iojobs/iojob.cpp:64
 #, kde-format
@@ -37412,16 +37416,7 @@ msgstr ""
 "de paramétrage.</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:287
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version "
-#| "<i>%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
-#| "<b>Download</b> to get the file...</p><p>Note: from Setup/Misc panel, you "
-#| "can switch to check for weekly pre-release.<br/>Pre-release versions are "
-#| "dedicated to test quickly new features.<br/>It's not recommended to use "
-#| "pre-releases in production as bugs can remain,<br/>unless you know what "
-#| "you are doing.</p><p>Press <b>Configure</b> if you want to customize "
-#| "update options from setup dialog.</p>"
+#, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
 "%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
@@ -37432,17 +37427,17 @@ msgid ""
 "doing.</p><p>Press <b>Configure</b> if you want to customize update options "
 "from setup dialog.</p>"
 msgstr ""
-"<p>La version courante stable <b>%1</b> est <i>%2</i></p>.<p>La nouvelle "
-"version stable <i>%3</i> est disponible sur le <a href='%4'>dépôt</a>.</"
+"<p>La version courante stable <b>%1</b> est <i>%2.</i></p><p>La nouvelle "
+"version stable <i>%3</i> est disponible sur ce <a href='%4'>dépôt</a>.</"
 "p><p>Veuillez appuyer sur <b> « Téléchargement » </b> pour obtenir le "
 "fichier…</p><p>Remarque : à partir du panneau Paramètres / Divers, vous "
 "pouvez basculer pour vérifier les préversions hebdomadaires.<br/>Les "
-"préversions sont dédiées aux tests de nouvelles fonctionnalités. <br/>Il est "
-"déconseillé de les utiliser dans un environnement de production, puisque "
-"vous pouvez être confronté à des bogues, sauf si vous<br/> savez ce que vous "
-"faites.</p><p>Veuillez appuyer sur <b> « Configurer » </b> si vous voulez "
-"afficher les options de mise à jour à partir de la boîte de dialogue de "
-"paramétrage.</p>"
+"préversions sont dédiées aux tests rapides de nouvelles fonctionnalités. <br/"
+">Il est déconseillé de les utiliser dans un environnement de production, "
+"puisque vous pouvez être confronté à des bogues, sauf si vous<br/> savez ce "
+"que vous faites.</p><p>Veuillez appuyer sur <b> « Configurer » </b> si vous "
+"voulez personnaliser les options de mise à jour à partir de la boîte de "
+"dialogue de configuration.</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:315
 #, kde-format
@@ -40032,14 +40027,7 @@ msgstr "Objet %1 trouvé. Étiquette : %2"
 msgid "Found %1 objects. Tags: %2"
 msgstr "%1 objets trouvés. Étiquettes : %2"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:85
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
-#, kde-format
-msgctxt "@title:tab"
-msgid "Search in"
-msgstr "Chercher dans"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:94
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -40058,23 +40046,23 @@ msgstr ""
 "étiquettes décrivant le contenu et enregistrera les résultats dans la base "
 "de données. </p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:102
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
 #, kde-format
 msgid "Auto-tagging mode: "
 msgstr "Mode d'étiquetage automatique :"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
 #, kde-format
 msgid "Scan all"
 msgstr "Tout analyser"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Analyser seulement ce qui n'est pas affecté"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40085,22 +40073,22 @@ msgstr ""
 "recherche d'étiquettes.</p><p><b>analyse uniquement des éléments n'ayant "
 "aucune étiquette automatique associée.</p>."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:114
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #, kde-format
 msgid "Auto-tagging tag mode: "
 msgstr "Mode d'étiquetage automatique :"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgid "Replace existing autotags"
 msgstr "Remplacer les étiquettes automatiques existantes"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #, kde-format
 msgid "Update autotags"
 msgstr "Mettre à jour les étiquettes automatiques"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:122
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40114,27 +40102,27 @@ msgstr ""
 "toutes les nouvelles étiquettes automatiques trouvées à la place des "
 "étiquettes existantes.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:126
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, kde-format
 msgid "Selection model: "
 msgstr "Modèle de sélection :"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr "YOLOv11 Nano"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr "YOLOv11 XLarge"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
 #, kde-format
 msgid "ResNet-152"
 msgstr "ResNet-152"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40164,12 +40152,12 @@ msgstr ""
 "ResNet-152 a été entraîné pour reconnaître 1 000 objets différents en "
 "utilisant l’ensemble de données « ImageNet ». </p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:143
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
 #, kde-format
 msgid "Object detection accuracy: "
 msgstr "Précision de détection des objets :"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40181,7 +40169,7 @@ msgstr ""
 "élevée, plus la reconnaissance des objets\n"
 "sera précise mais moins de visages seront reconnus.\n"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -40189,7 +40177,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Travailler sur tous les cœurs de processeurs"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:155
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40203,20 +40191,20 @@ msgstr ""
 "présents \n"
 "sur votre système ou travailler en tâche de fond uniquement sur un seul cœur."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Configuration"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Traduire les étiquettes vers :"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
@@ -43535,14 +43523,7 @@ msgid "Show Thumbbar"
 msgstr "Afficher la barre de vignettes"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the slogan formatted string displayed in splashscreen. Please "
-#| "translate using short words else the slogan can be truncated."
-#| msgid ""
-#| "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> "
-#| "with the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>"
-#| "%1</i></font></qt>"
+#, kde-format
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
@@ -43550,9 +43531,9 @@ msgid ""
 "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b><br/"
 ">with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
-"<qt><font color=\"white\"><b>Gérez</b> vos <b>photographies</b> comme <b>un "
-"professionnel</b> grâce à la puissance de l'<b>Open Source</b></font><font "
-"color=\"gray\"><br/><i>%1</i></font></qt>"
+"<qt><font color=\"white\"><b>Gestion professionnelle</b> de "
+"<b>photographies</b><br/> avec la puissances des<b>logiciels « Open Source » "
+"</b></font></qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
@@ -50759,14 +50740,7 @@ msgstr "Système"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:370
 #: core/utilities/setup/misc/setupmisc.cpp:407
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check for new version option will verify the pre-releases.\n"
-#| "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
-#| "It's not recommended to use pre-release in production as bugs can "
-#| "remain,\n"
-#| "unless you know what you are doing.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
 "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
@@ -50774,13 +50748,13 @@ msgid ""
 "unless you know what you are doing.\n"
 "Do you want to continue?"
 msgstr ""
-"L'option de vérification pour une nouvelle version vérifiera les "
+"L'option de vérification d'existence d'une nouvelle version vérifiera les "
 "préversions.\n"
 "Les « préversions » sont proposées de façon hebdomadaire pour effectuer "
 "rapidement des tests sur les nouvelles fonctionnalités.\n"
 "Il est déconseillé d'utiliser les préversions dans un environnement de "
-"production, puisque vous pouvez être confronté à des bogues, sauf si vous "
-"savez ce que vous faites.\n"
+"production, puisque vous pouvez être confronté à des bogues, \n"
+"sauf si vous savez ce que vous faites.\n"
 "Voulez-vous vraiment continuer ?"
 
 #: core/showfoto/setup/showfotosetupplugins.cpp:62
@@ -52834,23 +52808,7 @@ msgid "Extra Large"
 msgstr "Extrêmement grand"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p>Selecting <b>Extra Small</b> means the model will detect small "
-#| "background faces in addition to medium and larger faces. Selecting "
-#| "<b>Small Faces</b> increases the sensitivity of the model by tuning the "
-#| "model parameters. It will also increase the probability of false-"
-#| "positives, and it will increase detection time.</p><p>Selecting <b>Large</"
-#| "b> or <b>Extra Large</b> will eliminate small background faces from being "
-#| "detected. It is much faster and will reduce the number of false-"
-#| "positives, but will not detect small faces in the background or faces in "
-#| "large group photos.</p><p>If you want to detect all faces in one pass, "
-#| "select <b>Extra Small</b> faces and set the detection accuracy to 2. "
-#| "Unfortunately, this will create a significant number of false-positives. "
-#| "It's recommended to set a detection accuracy of 6-8 and face size of "
-#| "<b>Medium</b> or <b>Large</b> for normal use.</p><p>This setting applies "
-#| "only to YuNet.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
@@ -65985,24 +65943,7 @@ msgid "Always show intermediate snapshots"
 msgstr "Toujours afficher les instantanés intermédiaires"
 
 #: core/utilities/setup/editor/setupversioning.cpp:461
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG</emphasis>: It's the most commonly "
-#| "used file format, but it employs lossy compression, which means that with "
-#| "each saving operation some image information will be irreversibly lost. "
-#| "JPEG offers a good compression rate, resulting in smaller files. </"
-#| "item><item><emphasis strong='true'>PNG</emphasis>: A widely used format "
-#| "employing lossless compression. The files, though, will be larger because "
-#| "PNG does not achieve very good compression rates.</item><item><emphasis "
-#| "strong='true'>TIFF</emphasis>: A commonly used format, usually "
-#| "uncompressed or with modest lossless compression. Resulting files will be "
-#| "large, but without quality loss due to compression. </"
-#| "item><item><emphasis strong='true'>PGF</emphasis>: This is a technically "
-#| "superior file format offering good compression rates with either lossy or "
-#| "lossless compression. But it is not yet widely used and supported, so "
-#| "your friends may not directly be able to open these files, and you may "
-#| "not be able to directly publish them on the web. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG</emphasis>: It is the most commonly used "
@@ -66024,10 +65965,10 @@ msgstr ""
 "<item><emphasis strong='true'>JPEG</emphasis> : c'est le format de fichier "
 "le plus couramment utilisé. Cependant, il utilise une compression avec "
 "perte, ce qui signifie qu'à chaque opération d'enregistrement, certaines "
-"informations de l'image seront irréversiblement perdues. Le format « JPEG » "
-"offre un bon taux de compression, permettant d'obtenir des fichiers plus "
-"petits. </item><item><emphasis strong='true'>PNG</emphasis> : c'est un "
-"format largement utilisé employant la compression sans perte. Les fichiers, "
+"informations de l'image seront irréversiblement perdues. Ce format offre un "
+"bon taux de compression, permettant d'obtenir des fichiers de petite taille. "
+"</item><item><emphasis strong='true'>PNG</emphasis> : c'est un format "
+"largement utilisé employant la compression sans perte. Les fichiers, "
 "cependant, seront plus volumineux car le format ne propose pas de très bons "
 "taux de compression.</item><item><emphasis strong='true'>TIFF</emphasis> : "
 "c'est un format couramment utilisé, généralement non compressé ou avec une "
@@ -66040,13 +65981,7 @@ msgstr ""
 "ne pourrez peut-être pas directement les publier sur le Internet. </item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:494
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG-2000</emphasis>: It's similar to PGF. "
-#| "Loading or saving is slower, the compression rate is better, and the "
-#| "format more widely supported, though still not comparable to the "
-#| "tradition formats JPEG, PNG or TIFF. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-2000</emphasis>: It is similar to PGF. "
@@ -66055,10 +65990,10 @@ msgid ""
 "JPEG, PNG or TIFF. </item>"
 msgstr ""
 "<item><emphasis strong='true'>JPEG-2000</emphasis> : il est similaire au "
-"format « PGF ». Le chargement ou l'enregistrement est plus lent, le taux de "
-"compression est meilleur et le format est plus largement pris en charge. "
+"format « PGF ». Le chargement ou l'enregistrement sont plus lents, le taux "
+"de compression est meilleur et le format est plus largement pris en charge. "
 "Cependant, il n'est toujours pas encore comparable aux formats traditionnels "
-"« JPEG », « PNG » ou « TIFF ». </item>"
+"« JPEG », « PNG » ou « TIFF ».</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:506
 #, kde-kuit-format
@@ -66076,13 +66011,7 @@ msgstr ""
 "au format « JPEG » de qualité équivalente. </item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:517
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG-XL</emphasis>: It's a royalty-free "
-#| "raster-graphics file format that supports lossless compression. It is "
-#| "designed to outperform existing raster formats and thus to become their "
-#| "universal replacement. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-XL</emphasis>: It is a royalty-free "
@@ -66093,16 +66022,10 @@ msgstr ""
 "<item><emphasis strong='true'>JPEG-XL</emphasis> : il s'agit d'un format de "
 "fichier matriciel libre de droits, pouvant prendre en charge la compression "
 "sans perte. Il est conçu pour être beaucoup plus performant que les formats "
-"matriciels existants et ainsi devenir leur remplacement universel. </item>"
+"matriciels existants et ainsi devenir leur remplaçant universel.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:527
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>WEBP</emphasis>: It's an image file format "
-#| "that Google has developed as a replacement for JPEG, PNG, and GIF file "
-#| "formats. Files are smaller for the same quality, or of higher quality for "
-#| "the same size. It supports both lossy and lossless compression</item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>WEBP</emphasis>: It is an image file format "
@@ -66112,9 +66035,9 @@ msgid ""
 msgstr ""
 "<item><emphasis strong='true'>WebP</emphasis> : il s'agit d'un format de "
 "fichier d'image que Google a développé en remplacement des formats de "
-"fichiers « JPEG », « PNG » et « GIF ». Les fichiers sont plus petits pour la "
-"même qualité ou de meilleure qualité pour la même taille. Il prend en charge "
-"la compression, à la fois, avec et sans perte.</item>"
+"fichiers « JPEG », « PNG » et « GIF ». Les fichiers sont plus petits en "
+"taille pour la même qualité ou de meilleure qualité pour la même taille. Il "
+"prend en charge la compression, à la fois, avec et sans perte.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:538
 #, kde-kuit-format
