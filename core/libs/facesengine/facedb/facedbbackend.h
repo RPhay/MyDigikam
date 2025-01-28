@@ -37,7 +37,7 @@ public:
     ~FaceDbBackend() override;
 
     /**
-     * Initialize the database schema to the current version,
+     * @brief Initialize the database schema to the current version,
      * carry out upgrades if necessary.
      * Shall only be called from the thread that called open().
      */

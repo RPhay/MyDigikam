@@ -50,12 +50,12 @@ public:
     QString setting(const QString& keyword)                                     const;
 
     /**
-     * Returns true if the integrity of the database is preserved.
+     * @return true if the integrity of the database is preserved.
      */
     bool integrityCheck();
 
     /**
-     * Shrinks the database.
+     * @brief Shrinks the database.
      */
     void vacuum();
 
