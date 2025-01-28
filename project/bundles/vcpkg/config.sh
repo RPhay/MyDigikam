@@ -26,7 +26,6 @@ BUILDING_DIR="/e/b"
 VCPKG_TRIPLET="x64-windows"
 
 VCPKG_COMMON_OPTIONS=(
-"--debug"
 "--disable-metrics"
 "--no-print-usage"
 "--triplet ${VCPKG_TRIPLET}"
