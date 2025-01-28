@@ -306,7 +306,6 @@ void ImageQualitySettings::setupUi()
     slotDisableOptionViews();
 }
 
-
 void ImageQualitySettings::applySettings()
 {
     ImageQualityContainer imq = getImageQualityContainer();
@@ -372,6 +371,12 @@ void ImageQualitySettings::setImageQualityContainer(const ImageQualityContainer&
 ImageQualityContainer ImageQualitySettings::getImageQualityContainer() const
 {
     ImageQualityContainer imq;
+
+    if (d->displayMode == SettingsDisplayMode::Normal)
+    {
+        imq.albums      = d->albumSelectors->selectedAlbumsAndTags();
+        imq.wholeAlbums = d->albumSelectors->wholeAlbumsChecked();
+    }
 
     imq.detectBlur        = d->detectBlur->isChecked();
     imq.detectNoise       = d->detectNoise->isChecked();

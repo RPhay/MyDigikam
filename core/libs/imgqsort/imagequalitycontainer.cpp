@@ -23,25 +23,6 @@
 namespace Digikam
 {
 
-ImageQualityContainer::ImageQualityContainer()
-    : detectBlur        (true),
-      detectNoise       (true),
-      detectCompression (true),
-      detectExposure    (true),
-      detectAesthetic   (true),
-      lowQRejected      (true),
-      mediumQPending    (true),
-      highQAccepted     (true),
-      rejectedThreshold (10),
-      pendingThreshold  (40),
-      acceptedThreshold (60),
-      blurWeight        (100),
-      noiseWeight       (100),
-      compressionWeight (100),
-      exposureWeight    (100)
-{
-}
-
 ImageQualityContainer::ImageQualityContainer(const ImageQualityContainer& other)
     : albums            (other.albums),
       detectBlur        (other.detectBlur),
