@@ -8,6 +8,9 @@
 
 #export VERBOSE=1
 
+export CC=/usr/bin/clang
+export CXX=/usr/bin/clang++
+
 # We will work on command line using MinGW compiler
 export MAKEFILES_TYPE='Unix Makefiles'
 

@@ -63,397 +63,397 @@ const QString DAboutData::copyright()
 
 const QUrl DAboutData::webProjectUrl()
 {
-    return QUrl(QLatin1String("https://www.digikam.org"));
+    return QUrl(QString::fromUtf8("https://www.digikam.org"));
 }
 
 void DAboutData::authorsRegistration(KAboutData& aboutData)
 {
     // -- Core team --------------------------------------------------------------
 
-    aboutData.addAuthor ( QLatin1String("Caulier Gilles"),
+    aboutData.addAuthor ( QString::fromUtf8("Caulier Gilles"),
                           i18n("Coordinator, Developer, and Mentoring"),
-                          QLatin1String("caulier dot gilles at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/gilles-caulier/")
+                          QString::fromUtf8("caulier dot gilles at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/gilles-caulier/")
                         );
 
-    aboutData.addAuthor ( QLatin1String("Maik Qualmann"),
+    aboutData.addAuthor ( QString::fromUtf8("Maik Qualmann"),
                           i18n("Developer and Mentoring"),
-                          QLatin1String("metzpinguin at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/maik-qualmann-2b266717b/")
+                          QString::fromUtf8("metzpinguin at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/maik-qualmann-2b266717b/")
                         );
 
-    aboutData.addAuthor ( QLatin1String("Michael Miller"),
+    aboutData.addAuthor ( QString::fromUtf8("Michael Miller"),
                           i18n("SFace and YuNet DNN models integration\n"
                                "in face workflow.\n"
                                "Face Management and auto-tag AI improvements.\n"
                                "AI red eyes detection"),
-                          QLatin1String("michael underscore miller at msn dot com"),
-                          QLatin1String("https://www.linkedin.com/in/michaelamiller01/")
+                          QString::fromUtf8("michael underscore miller at msn dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/michaelamiller01/")
                         );
 
-    aboutData.addAuthor ( QLatin1String("Mohamed Anwer"),                                       // krazy:exclude=spelling
+    aboutData.addAuthor ( QString::fromUtf8("Mohamed Anwer"),                                       // krazy:exclude=spelling
                           i18n("Developer and Mentoring"),
-                          QLatin1String("mohammed dot ahmed dot anwer at gmail dot com"),       // krazy:exclude=spelling
-                          QLatin1String("https://www.linkedin.com/in/mohamedanwer/")
+                          QString::fromUtf8("mohammed dot ahmed dot anwer at gmail dot com"),       // krazy:exclude=spelling
+                          QString::fromUtf8("https://www.linkedin.com/in/mohamedanwer/")
                         );
 
-    aboutData.addAuthor ( QLatin1String("Michael G. Hansen"),
+    aboutData.addAuthor ( QString::fromUtf8("Michael G. Hansen"),
                           i18n("Developer and Mentoring"),
-                          QLatin1String("mike at mghansen dot de"),
-                          QLatin1String("http://www.mghansen.de")                               // krazy:exclude=insecurenet
+                          QString::fromUtf8("mike at mghansen dot de"),
+                          QString::fromUtf8("http://www.mghansen.de")                               // krazy:exclude=insecurenet
                         );
 
-    aboutData.addAuthor ( QLatin1String("Teemu Rytilahti"),
+    aboutData.addAuthor ( QString::fromUtf8("Teemu Rytilahti"),
                           i18n("Developer"),
-                          QLatin1String("tpr at iki dot fi"),
-                          QLatin1String("https://www.linkedin.com/in/teemurytilahti/")
+                          QString::fromUtf8("tpr at iki dot fi"),
+                          QString::fromUtf8("https://www.linkedin.com/in/teemurytilahti/")
                         );
 
-    aboutData.addAuthor ( QLatin1String("Thanh Trung Dinh"),
+    aboutData.addAuthor ( QString::fromUtf8("Thanh Trung Dinh"),
                           i18n("Mentoring, Port web-service tools to OAuth,\n"
                                "factoring web service tools,\n"
                                "and port faces recognition engine\n"
                                "to OpenCV neural network"),
-                          QLatin1String("dinhthanhtrung1996 at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/thanhtrungdinh/")
+                          QString::fromUtf8("dinhthanhtrung1996 at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/thanhtrungdinh/")
                         );
 
 
     // -- Contributors -----------------------------------------------------------
 
-    aboutData.addAuthor ( QLatin1String("Matthias Welwarsky"),
+    aboutData.addAuthor ( QString::fromUtf8("Matthias Welwarsky"),
                           i18n("Developer"),
-                          QLatin1String("matze at welwarsky dot de"),
-                          QLatin1String("https://www.linkedin.com/in/matthiaswelwarsky/")
+                          QString::fromUtf8("matze at welwarsky dot de"),
+                          QString::fromUtf8("https://www.linkedin.com/in/matthiaswelwarsky/")
                         );
 
-    aboutData.addAuthor ( QLatin1String("Julien Narboux"),
+    aboutData.addAuthor ( QString::fromUtf8("Julien Narboux"),
                           i18n("Developer"),
-                          QLatin1String("Julien at narboux dot fr"),
-                          QLatin1String("https://www.linkedin.com/in/julien-narboux-17566610/")
+                          QString::fromUtf8("Julien at narboux dot fr"),
+                          QString::fromUtf8("https://www.linkedin.com/in/julien-narboux-17566610/")
                         );
 
-    aboutData.addAuthor ( QLatin1String("Mario Frank"),
+    aboutData.addAuthor ( QString::fromUtf8("Mario Frank"),
                           i18n("Advanced Searches Tool Improvements"),
-                          QLatin1String("mario.frank@uni-potsdam.de")
+                          QString::fromUtf8("mario.frank@uni-potsdam.de")
                         );
 
-    aboutData.addAuthor ( QLatin1String("Nicolas Lécureuil"),
+    aboutData.addAuthor ( QString::fromUtf8("Nicolas Lécureuil"),
                           i18n("Releases Manager"),
-                          QLatin1String("neoclust dot kde at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/nicolaslecureuil/")
+                          QString::fromUtf8("neoclust dot kde at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/nicolaslecureuil/")
                         );
 
     // -- Students ---------------------------------------------------------------
 
-    aboutData.addCredit ( QLatin1String("Anjani Kumar"),
+    aboutData.addCredit ( QString::fromUtf8("Anjani Kumar"),
                           i18n("Port to Qt6,"),
-                          QLatin1String("anjanik012 at gmail dot com "),
-                          QLatin1String("https://www.linkedin.com/in/anjanik012/")
+                          QString::fromUtf8("anjanik012 at gmail dot com "),
+                          QString::fromUtf8("https://www.linkedin.com/in/anjanik012/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Phuoc Khanh LE"),
+    aboutData.addCredit ( QString::fromUtf8("Phuoc Khanh LE"),
                           i18n("Rewrite Image Quality Sorter algorithms\n"
                                "and Photo Focus Information Extraction.\n"
                                "Aesthetic Detection to classify images\n"
                                "using deep learning model.\n"
                                "Slideshow and Presentation tools improvement"),
-                          QLatin1String("phuockhanhnk94 at gmail dot com "),
-                          QLatin1String("https://www.linkedin.com/in/phuoc-khanh-le-476448169/")
+                          QString::fromUtf8("phuockhanhnk94 at gmail dot com "),
+                          QString::fromUtf8("https://www.linkedin.com/in/phuoc-khanh-le-476448169/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Quốc Hưng Trần"),
+    aboutData.addCredit ( QString::fromUtf8("Quốc Hưng Trần"),
                           i18n("MJPEGStream plugin,\n"
                                "OCR text Converter plugin,\n"
                                "auto-tags assignment engine"),
-                          QLatin1String("quochungtran1999 at gmail dot com "),
-                          QLatin1String("https://www.linkedin.com/in/qu%E1%BB%91c-h%C6%B0ng-tr%E1%BA%A7n-92a504163/")
+                          QString::fromUtf8("quochungtran1999 at gmail dot com "),
+                          QString::fromUtf8("https://www.linkedin.com/in/qu%E1%BB%91c-h%C6%B0ng-tr%E1%BA%A7n-92a504163/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Minh Nghĩa Duong"),
+    aboutData.addCredit ( QString::fromUtf8("Minh Nghĩa Duong"),
                           i18n("Face workflow Clustering support,\n"
                                "improvement for Face Engine,\n"
                                "Port Slideshow tool to plugins interface"),
-                          QLatin1String("minhnghiaduong997 at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/minh-nghia-duong-2b5bbb15a/")
+                          QString::fromUtf8("minhnghiaduong997 at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/minh-nghia-duong-2b5bbb15a/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Kartik Ramesh"),
+    aboutData.addCredit ( QString::fromUtf8("Kartik Ramesh"),
                           i18n("Face management workflow improvements"),
-                          QLatin1String("kartikx2000 at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/kartikxramesh/")
+                          QString::fromUtf8("kartikx2000 at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/kartikxramesh/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Ahmed Fathi"),
+    aboutData.addCredit ( QString::fromUtf8("Ahmed Fathi"),
                           i18n("UPNP/DLNA export tool\nand Healing clone tool for image editor"),
-                          QLatin1String("ahmed dot fathi dot abdelmageed at gmail dot com"),
-                          QLatin1String("https://ahmedfathishabanblog.wordpress.com/")
+                          QString::fromUtf8("ahmed dot fathi dot abdelmageed at gmail dot com"),
+                          QString::fromUtf8("https://ahmedfathishabanblog.wordpress.com/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Veaceslav Munteanu"),
+    aboutData.addCredit ( QString::fromUtf8("Veaceslav Munteanu"),
                           i18n("Tags Manager"),
-                          QLatin1String("veaceslav dot munteanu90 at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/veaceslav-munteanu-4370a063/")
+                          QString::fromUtf8("veaceslav dot munteanu90 at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/veaceslav-munteanu-4370a063/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Tarek Talaat"),
+    aboutData.addCredit ( QString::fromUtf8("Tarek Talaat"),
                           i18n("New OneDrive, Pinterrest, and Box export tools"),
-                          QLatin1String("tarektalaat93 at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/tarek-talaat-9bb5b1a6/")
+                          QString::fromUtf8("tarektalaat93 at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/tarek-talaat-9bb5b1a6/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Yingjie Liu"),
+    aboutData.addCredit ( QString::fromUtf8("Yingjie Liu"),
                           i18n("Face-engine improvements\nand manual icon-view sort"),
-                          QLatin1String("yingjiewudi at gmail dot com"),
-                          QLatin1String("https://yjwudi.github.io")
+                          QString::fromUtf8("yingjiewudi at gmail dot com"),
+                          QString::fromUtf8("https://yjwudi.github.io")
                         );
 
-    aboutData.addCredit ( QLatin1String("Yiou Wang"),
+    aboutData.addCredit ( QString::fromUtf8("Yiou Wang"),
                           i18n("Model/View Port of Image Editor Canvas"),
-                          QLatin1String("geow812 at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/yiouwang/")
+                          QString::fromUtf8("geow812 at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/yiouwang/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Gowtham Ashok"),
+    aboutData.addCredit ( QString::fromUtf8("Gowtham Ashok"),
                           i18n("Image Quality Sorter"),
-                          QLatin1String("gwty93 at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/gowtham-ashok/")
+                          QString::fromUtf8("gwty93 at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/gowtham-ashok/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Aditya Bhatt"),
+    aboutData.addCredit ( QString::fromUtf8("Aditya Bhatt"),
                           i18n("Face Detection"),
-                          QLatin1String("aditya at bhatts dot org"),
-                          QLatin1String("https://www.linkedin.com/in/adityabhatt/")
+                          QString::fromUtf8("aditya at bhatts dot org"),
+                          QString::fromUtf8("https://www.linkedin.com/in/adityabhatt/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Martin Klapetek"),
+    aboutData.addCredit ( QString::fromUtf8("Martin Klapetek"),
                           i18n("Non-destructive image editing"),
-                          QLatin1String("martin dot klapetek at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/mck182/")
+                          QString::fromUtf8("martin dot klapetek at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/mck182/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Gabriel Voicu"),
+    aboutData.addCredit ( QString::fromUtf8("Gabriel Voicu"),
                           i18n("Reverse Geo-Coding"),
-                          QLatin1String("ping dot gabi at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/gabriel-voicu-958b8327/")
+                          QString::fromUtf8("ping dot gabi at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/gabriel-voicu-958b8327/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Mahesh Hegde"),
+    aboutData.addCredit ( QString::fromUtf8("Mahesh Hegde"),
                           i18n("Face Recognition"),
-                          QLatin1String("maheshmhegade at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/maheshmhegade/")
+                          QString::fromUtf8("maheshmhegade at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/maheshmhegade/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Pankaj Kumar"),
+    aboutData.addCredit ( QString::fromUtf8("Pankaj Kumar"),
                           i18n("Multi-core Support in Batch Queue Manager and Mentoring"),
-                          QLatin1String("me at panks dot me"),
-                          QLatin1String("https://www.linkedin.com/in/panks42/")
+                          QString::fromUtf8("me at panks dot me"),
+                          QString::fromUtf8("https://www.linkedin.com/in/panks42/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Smit Mehta"),
+    aboutData.addCredit ( QString::fromUtf8("Smit Mehta"),
                           i18n("UPnP/DLNA Export tool and Mentoring"),
-                          QLatin1String("smit dot tmeh at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/smit-mehta-45b82640/")
+                          QString::fromUtf8("smit dot tmeh at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/smit-mehta-45b82640/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Islam Wazery"),
+    aboutData.addCredit ( QString::fromUtf8("Islam Wazery"),
                           i18n("Model/View port of Import Tool and Mentoring"),
-                          QLatin1String("wazery at ubuntu dot com"),
-                          QLatin1String("https://www.linkedin.com/in/wazery/")
+                          QString::fromUtf8("wazery at ubuntu dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/wazery/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Abhinav Badola"),
+    aboutData.addCredit ( QString::fromUtf8("Abhinav Badola"),
                           i18n("Video Metadata Support and Mentoring"),
-                          QLatin1String("mail dot abu dot to at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/abhinav-badola-86085424/")
+                          QString::fromUtf8("mail dot abu dot to at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/abhinav-badola-86085424/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Benjamin Girault"),
+    aboutData.addCredit ( QString::fromUtf8("Benjamin Girault"),
                           i18n("Panorama Tool and Mentoring"),
-                          QLatin1String("benjamin dot girault at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/benjamingirault/")
+                          QString::fromUtf8("benjamin dot girault at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/benjamingirault/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Victor Dodon"),
+    aboutData.addCredit ( QString::fromUtf8("Victor Dodon"),
                           i18n("XML based GUI port of tools"),
-                          QLatin1String("dodonvictor at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/dodonvictor/")
+                          QString::fromUtf8("dodonvictor at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/dodonvictor/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Sayantan Datta"),
+    aboutData.addCredit ( QString::fromUtf8("Sayantan Datta"),
                           i18n("Auto Noise Reduction"),
-                          QLatin1String("sayantan dot knz at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/stndta/")
+                          QString::fromUtf8("sayantan dot knz at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/stndta/")
                         );
 
     // -- Former contributors ----------------------------------------------------
 
-    aboutData.addAuthor ( QLatin1String("Ananta Palani"),
+    aboutData.addAuthor ( QString::fromUtf8("Ananta Palani"),
                           i18n("Windows Port and Release Manager"),
-                          QLatin1String("anantapalani at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/anantapalani/")
+                          QString::fromUtf8("anantapalani at gmail dot com"),
+                          QString::fromUtf8("https://www.linkedin.com/in/anantapalani/")
                         );
 
-    aboutData.addAuthor ( QLatin1String("Andi Clemens"),
+    aboutData.addAuthor ( QString::fromUtf8("Andi Clemens"),
                           i18n("Developer"),
-                          QLatin1String("andi dot clemens at gmail dot com")
+                          QString::fromUtf8("andi dot clemens at gmail dot com")
                         );
 
-    aboutData.addAuthor ( QLatin1String("Patrick Spendrin"),
+    aboutData.addAuthor ( QString::fromUtf8("Patrick Spendrin"),
                           i18n("Developer and Windows port"),
-                          QLatin1String("patrick_spendrin at gmx dot de"),
-                          QLatin1String("https://www.linkedin.com/in/patrickspendrin/")
+                          QString::fromUtf8("patrick_spendrin at gmx dot de"),
+                          QString::fromUtf8("https://www.linkedin.com/in/patrickspendrin/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Francesco Riosa"),
+    aboutData.addCredit ( QString::fromUtf8("Francesco Riosa"),
                           i18n("LCMS2 library port"),
-                          QLatin1String("francesco plus kde at pnpitalia dot it"),
-                          QLatin1String("https://www.linkedin.com/in/vivogentoo/")
+                          QString::fromUtf8("francesco plus kde at pnpitalia dot it"),
+                          QString::fromUtf8("https://www.linkedin.com/in/vivogentoo/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Johannes Wienke"),
+    aboutData.addCredit ( QString::fromUtf8("Johannes Wienke"),
                           i18n("Developer"),
-                          QLatin1String("languitar at semipol dot de"),
-                          QLatin1String("https://www.facebook.com/languitar")
+                          QString::fromUtf8("languitar at semipol dot de"),
+                          QString::fromUtf8("https://www.facebook.com/languitar")
                         );
 
-    aboutData.addAuthor ( QLatin1String("Julien Pontabry"),
+    aboutData.addAuthor ( QString::fromUtf8("Julien Pontabry"),
                           i18n("Developer"),
-                          QLatin1String("julien dot pontabry at ulp dot u-strasbg dot fr"),
-                          QLatin1String("https://www.linkedin.com/in/julien-pontabry-b784a247/")
+                          QString::fromUtf8("julien dot pontabry at ulp dot u-strasbg dot fr"),
+                          QString::fromUtf8("https://www.linkedin.com/in/julien-pontabry-b784a247/")
                         );
 
-    aboutData.addAuthor ( QLatin1String("Arnd Baecker"),
+    aboutData.addAuthor ( QString::fromUtf8("Arnd Baecker"),
                           i18n("Developer"),
-                          QLatin1String("arnd dot baecker at web dot de")
+                          QString::fromUtf8("arnd dot baecker at web dot de")
                         );
 
-    aboutData.addAuthor ( QLatin1String("Francisco J. Cruz"),
+    aboutData.addAuthor ( QString::fromUtf8("Francisco J. Cruz"),
                           i18n("Color Management"),
-                          QLatin1String("fj dot cruz at supercable dot es")
+                          QString::fromUtf8("fj dot cruz at supercable dot es")
                         );
 
-    aboutData.addCredit ( QLatin1String("Pieter Edelman"),
+    aboutData.addCredit ( QString::fromUtf8("Pieter Edelman"),
                           i18n("Developer"),
-                          QLatin1String("p dot edelman at gmx dot net"),
-                          QLatin1String("https://www.facebook.com/pieter.edelman")
+                          QString::fromUtf8("p dot edelman at gmx dot net"),
+                          QString::fromUtf8("https://www.facebook.com/pieter.edelman")
                         );
 
-    aboutData.addCredit ( QLatin1String("Holger Foerster"),
+    aboutData.addCredit ( QString::fromUtf8("Holger Foerster"),
                           i18n("MySQL interface"),
-                          QLatin1String("hamsi2k at freenet dot de")
+                          QString::fromUtf8("hamsi2k at freenet dot de")
                         );
 
-    aboutData.addCredit ( QLatin1String("Risto Saukonpaa"),
+    aboutData.addCredit ( QString::fromUtf8("Risto Saukonpaa"),
                           i18n("Design, icons, logo, banner, mockup, beta tester"),
-                          QLatin1String("paristo at gmail dot com")
+                          QString::fromUtf8("paristo at gmail dot com")
                         );
 
-    aboutData.addCredit ( QLatin1String("Mikolaj Machowski"),
+    aboutData.addCredit ( QString::fromUtf8("Mikolaj Machowski"),
                           i18n("Bug reports and patches"),
-                          QLatin1String("mikmach at wp dot pl"),
-                          QLatin1String("https://www.facebook.com/mikolaj.machowski")
+                          QString::fromUtf8("mikmach at wp dot pl"),
+                          QString::fromUtf8("https://www.facebook.com/mikolaj.machowski")
                         );
 
-    aboutData.addCredit ( QLatin1String("Achim Bohnet"),
+    aboutData.addCredit ( QString::fromUtf8("Achim Bohnet"),
                           i18n("Bug reports and patches"),
-                          QLatin1String("ach at mpe dot mpg dot de"),
-                          QLatin1String("https://www.facebook.com/achim.bohnet")
+                          QString::fromUtf8("ach at mpe dot mpg dot de"),
+                          QString::fromUtf8("https://www.facebook.com/achim.bohnet")
                         );
 
-    aboutData.addCredit ( QLatin1String("Luka Renko"),
+    aboutData.addCredit ( QString::fromUtf8("Luka Renko"),
                           i18n("Developer"),
-                          QLatin1String("lure at kubuntu dot org"),
-                          QLatin1String("https://www.facebook.com/luka.renko")
+                          QString::fromUtf8("lure at kubuntu dot org"),
+                          QString::fromUtf8("https://www.facebook.com/luka.renko")
                         );
 
-    aboutData.addCredit ( QLatin1String("Angelo Naselli"),
+    aboutData.addCredit ( QString::fromUtf8("Angelo Naselli"),
                           i18n("Developer"),
-                          QLatin1String("a dot naselli at libero dot it"),
-                          QLatin1String("https://www.linkedin.com/in/angelo-naselli-11199028/")
+                          QString::fromUtf8("a dot naselli at libero dot it"),
+                          QString::fromUtf8("https://www.linkedin.com/in/angelo-naselli-11199028/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Fabien Salvi"),
+    aboutData.addCredit ( QString::fromUtf8("Fabien Salvi"),
                           i18n("Webmaster"),
-                          QLatin1String("fabien dot ubuntu at gmail dot com")
+                          QString::fromUtf8("fabien dot ubuntu at gmail dot com")
                         );
 
-    aboutData.addCredit ( QLatin1String("Todd Shoemaker"),
+    aboutData.addCredit ( QString::fromUtf8("Todd Shoemaker"),
                           i18n("Developer"),
-                          QLatin1String("todd at theshoemakers dot net")
+                          QString::fromUtf8("todd at theshoemakers dot net")
                         );
 
-    aboutData.addCredit ( QLatin1String("Gerhard Kulzer"),
+    aboutData.addCredit ( QString::fromUtf8("Gerhard Kulzer"),
                           i18n("Handbook writer, alpha tester, webmaster"),
-                          QLatin1String("gerhard at kulzer dot net"),
-                          QLatin1String("https://www.linkedin.com/in/gerhard-kulzer-8931301/")
+                          QString::fromUtf8("gerhard at kulzer dot net"),
+                          QString::fromUtf8("https://www.linkedin.com/in/gerhard-kulzer-8931301/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Oliver Doerr"),
+    aboutData.addCredit ( QString::fromUtf8("Oliver Doerr"),
                           i18n("Beta tester"),
-                          QLatin1String("oliver at doerr-privat dot de")
+                          QString::fromUtf8("oliver at doerr-privat dot de")
                         );
 
-    aboutData.addCredit ( QLatin1String("Charles Bouveyron"),
+    aboutData.addCredit ( QString::fromUtf8("Charles Bouveyron"),
                           i18n("Beta tester"),
-                          QLatin1String("c dot bouveyron at tuxfamily dot org")
+                          QString::fromUtf8("c dot bouveyron at tuxfamily dot org")
                         );
 
-    aboutData.addCredit ( QLatin1String("Richard Taylor"),
+    aboutData.addCredit ( QString::fromUtf8("Richard Taylor"),
                           i18n("Feedback and patches. Handbook writer"),
-                          QLatin1String("rjt-digicam at thegrindstone dot me dot uk")
+                          QString::fromUtf8("rjt-digicam at thegrindstone dot me dot uk")
                         );
 
-    aboutData.addCredit ( QLatin1String("Hans Karlsson"),
+    aboutData.addCredit ( QString::fromUtf8("Hans Karlsson"),
                           i18n("digiKam website banner and application icons"),
-                          QLatin1String("karlsson dot h at home dot se")
+                          QString::fromUtf8("karlsson dot h at home dot se")
                         );
 
-    aboutData.addCredit ( QLatin1String("Aaron Seigo"),
+    aboutData.addCredit ( QString::fromUtf8("Aaron Seigo"),
                           i18n("Various usability fixes\nand general application polishing"),
-                          QLatin1String("aseigo at kde dot org"),
-                          QLatin1String("https://www.linkedin.com/in/aaronseigo/")
+                          QString::fromUtf8("aseigo at kde dot org"),
+                          QString::fromUtf8("https://www.linkedin.com/in/aaronseigo/")
                         );
 
-    aboutData.addCredit ( QLatin1String("Yves Chaufour"),
+    aboutData.addCredit ( QString::fromUtf8("Yves Chaufour"),
                           i18n("digiKam website, Feedback"),
-                          QLatin1String("yves dot chaufour at wanadoo dot fr")
+                          QString::fromUtf8("yves dot chaufour at wanadoo dot fr")
                         );
 
-    aboutData.addCredit ( QLatin1String("Tung Nguyen"),
+    aboutData.addCredit ( QString::fromUtf8("Tung Nguyen"),
                           i18n("Bug reports, feedback and icons"),
-                          QLatin1String("ntung at free dot fr")
+                          QString::fromUtf8("ntung at free dot fr")
                         );
 
     // -- Former Members ---------------------------------------------------------
 
-    aboutData.addAuthor ( QLatin1String("Renchi Raju"),
+    aboutData.addAuthor ( QString::fromUtf8("Renchi Raju"),
                           i18n("Developer (2001-2005)"),
-                          QLatin1String("renchi dot raju at gmail dot com"),
-                          QLatin1String("https://www.facebook.com/renchi.raju")
+                          QString::fromUtf8("renchi dot raju at gmail dot com"),
+                          QString::fromUtf8("https://www.facebook.com/renchi.raju")
                         );
 
-    aboutData.addAuthor ( QLatin1String("Joern Ahrens"),
+    aboutData.addAuthor ( QString::fromUtf8("Joern Ahrens"),
                           i18n("Developer (2004-2005)"),
-                          QLatin1String("kde at jokele dot de"),
-                          QLatin1String("http://www.jokele.de/")        // krazy:exclude=insecurenet
+                          QString::fromUtf8("kde at jokele dot de"),
+                          QString::fromUtf8("http://www.jokele.de/")        // krazy:exclude=insecurenet
                         );
 
-    aboutData.addAuthor ( QLatin1String("Tom Albers"),
+    aboutData.addAuthor ( QString::fromUtf8("Tom Albers"),
                           i18n("Developer (2004-2005)"),
-                          QLatin1String("tomalbers at kde dot nl"),
-                          QLatin1String("https://www.linkedin.com/in/tom-a-676a58157/")
+                          QString::fromUtf8("tomalbers at kde dot nl"),
+                          QString::fromUtf8("https://www.linkedin.com/in/tom-a-676a58157/")
                         );
 
-    aboutData.addAuthor ( QLatin1String("Ralf Holzer"),
+    aboutData.addAuthor ( QString::fromUtf8("Ralf Holzer"),
                           i18n("Developer (2004)"),
-                          QLatin1String("kde at ralfhoelzer dot com")
+                          QString::fromUtf8("kde at ralfhoelzer dot com")
                         );
 
-    aboutData.addAuthor ( QLatin1String("Marcel Wiesweg"),
+    aboutData.addAuthor ( QString::fromUtf8("Marcel Wiesweg"),
                           i18n("Developer and Mentoring (2005-2012)"),
-                          QLatin1String("marcel dot wiesweg at gmx dot de"),
-                          QLatin1String("https://www.facebook.com/marcel.wiesweg")
+                          QString::fromUtf8("marcel dot wiesweg at gmx dot de"),
+                          QString::fromUtf8("https://www.facebook.com/marcel.wiesweg")
                         );
 }
 
