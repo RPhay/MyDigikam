@@ -24,7 +24,8 @@ namespace Digikam
 {
 
 ImageQualitySettings::ImageQualitySettings(const ImageQualitySettings& other)
-    : albums            (other.albums),
+    : wholeAlbums       (other.wholeAlbums),
+      albums            (other.albums),
       detectBlur        (other.detectBlur),
       detectNoise       (other.detectNoise),
       detectCompression (other.detectCompression),
@@ -45,6 +46,8 @@ ImageQualitySettings::ImageQualitySettings(const ImageQualitySettings& other)
 
 ImageQualitySettings& ImageQualitySettings::operator=(const ImageQualitySettings& other)
 {
+    wholeAlbums        = other.wholeAlbums;
+    albums             = other.albums;
     detectBlur         = other.detectBlur;
     detectNoise        = other.detectNoise;
     detectCompression  = other.detectCompression;
@@ -119,6 +122,8 @@ void ImageQualitySettings::writeToConfig(KConfigGroup& group)
 QDebug operator<<(QDebug dbg, const ImageQualitySettings& s)
 {
     dbg.nospace()                                                   << Qt::endl;
+    dbg.nospace() << "Whole Albums       :" << s.wholeAlbums        << Qt::endl;
+    dbg.nospace() << "Albums             :" << s.albums             << Qt::endl;
     dbg.nospace() << "DetectBlur         :" << s.detectBlur         << Qt::endl;
     dbg.nospace() << "DetectNoise        :" << s.detectNoise        << Qt::endl;
     dbg.nospace() << "DetectCompression  :" << s.detectCompression  << Qt::endl;
