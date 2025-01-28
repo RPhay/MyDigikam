@@ -37,7 +37,7 @@ void ItemIconView::slotImageQualitySorter()
 
     SetupImageQualitySorter* const settingWidgets = new SetupImageQualitySorter();
 
-    ImageQualityContainer settings                = settingWidgets->getImageQualityContainer();
+    ImageQualitySettings settings                 = settingWidgets->getImageQualitySettings();
 
     MaintenanceThread* const thread               = new MaintenanceThread(this);
 

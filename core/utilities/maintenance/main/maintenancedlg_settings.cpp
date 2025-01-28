@@ -71,7 +71,7 @@ MaintenanceSettings MaintenanceDlg::settings() const
 
     if (prm.qualitySettingsSelected == ImageQualityConfSelector::GlobalSettings)
     {
-        ImageQualityContainer imgq;
+        ImageQualitySettings imgq;
         imgq.readFromConfig();
         prm.quality                         = imgq;
     }
@@ -145,7 +145,7 @@ void MaintenanceDlg::readSettings()
         d->qualitySelector->setSettingsSelected(
             (ImageQualityConfSelector::SettingsType)group.readEntry(d->configQualitySettingsSelected,           prm.qualitySettingsSelected));
 
-        ImageQualityContainer imq;
+        ImageQualitySettings imq;
         imq.readFromConfig(group);
         d->qualitySelector->setCustomSettings(imq);
 
@@ -195,7 +195,7 @@ void MaintenanceDlg::writeSettings()
         group.writeEntry(d->configQualityScanMode,              prm.qualityScanMode);
         group.writeEntry(d->configQualitySettingsSelected,      prm.qualitySettingsSelected);
 
-        ImageQualityContainer imq = d->qualitySelector->customSettings();
+        ImageQualitySettings imq = d->qualitySelector->customSettings();
         imq.writeToConfig(group);
 
         group.writeEntry(d->configMetadataSync,               prm.metadataSync);

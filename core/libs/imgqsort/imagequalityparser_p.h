@@ -77,7 +77,7 @@ public:
 
     DImg                    image;                  ///< original image
 
-    ImageQualityContainer   imq;
+    ImageQualitySettings   imq;
 
     ImageQualityCalculator* calculator = nullptr;
 

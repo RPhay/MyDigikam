@@ -27,7 +27,7 @@
 #include "imgqsorttest_shared.h"
 #include "digikam_globals.h"
 #include "digikam_debug.h"
-#include "imagequalitycontainer.h"
+#include "imagequalitysettings.h"
 #include "exiftoolparser.h"
 #include "dpluginloader.h"
 #include "dtestdatadir.h"

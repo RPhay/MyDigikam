@@ -23,7 +23,7 @@
 // Local includes
 
 #include "digikam_export.h"
-#include "imagequalitycontainer.h"
+#include "imagequalitysettings.h"
 #include "statesavingobject.h"
 
 class KConfigGroup;
@@ -58,10 +58,10 @@ public:
     void readSettings();
     void readSettings(const KConfigGroup&);
 
-    ImageQualityContainer getImageQualityContainer() const;
-    void setImageQualityContainer(const ImageQualityContainer& imq);
+    ImageQualitySettings getImageQualitySettings() const;
+    void setImageQualitySettings(const ImageQualitySettings& imq);
 
-    ImageQualityContainer defaultSettings()          const;
+    ImageQualitySettings defaultSettings()          const;
     void resetToDefault();
 
 Q_SIGNALS:

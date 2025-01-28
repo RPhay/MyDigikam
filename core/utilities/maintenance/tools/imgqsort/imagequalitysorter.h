@@ -24,7 +24,7 @@
 
 #include "album.h"
 #include "maintenancetool.h"
-#include "imagequalitycontainer.h"
+#include "imagequalitysettings.h"
 
 class QImage;
 
@@ -52,7 +52,7 @@ public:
      */
     explicit ImageQualitySorter(QualityScanMode mode,
                                 const AlbumList& list = AlbumList(),
-                                const ImageQualityContainer& quality = ImageQualityContainer(),
+                                const ImageQualitySettings& quality = ImageQualitySettings(),
                                 ProgressItem* const parent = nullptr);
     ~ImageQualitySorter() override;
 

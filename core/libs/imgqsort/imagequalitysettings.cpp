@@ -13,7 +13,7 @@
  *
  * ============================================================ */
 
-#include "imagequalitycontainer.h"
+#include "imagequalitysettings.h"
 
 // KDE includes
 
@@ -23,7 +23,7 @@
 namespace Digikam
 {
 
-ImageQualityContainer::ImageQualityContainer(const ImageQualityContainer& other)
+ImageQualitySettings::ImageQualitySettings(const ImageQualitySettings& other)
     : albums            (other.albums),
       detectBlur        (other.detectBlur),
       detectNoise       (other.detectNoise),
@@ -43,7 +43,7 @@ ImageQualityContainer::ImageQualityContainer(const ImageQualityContainer& other)
 {
 }
 
-ImageQualityContainer& ImageQualityContainer::operator=(const ImageQualityContainer& other)
+ImageQualitySettings& ImageQualitySettings::operator=(const ImageQualitySettings& other)
 {
     detectBlur         = other.detectBlur;
     detectNoise        = other.detectNoise;
@@ -64,14 +64,14 @@ ImageQualityContainer& ImageQualityContainer::operator=(const ImageQualityContai
     return *this;
 }
 
-void ImageQualityContainer::readFromConfig()
+void ImageQualitySettings::readFromConfig()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Image Quality Settings"));
     readFromConfig(group);
 }
 
-void ImageQualityContainer::readFromConfig(const KConfigGroup& group)
+void ImageQualitySettings::readFromConfig(const KConfigGroup& group)
 {
     detectBlur                = group.readEntry("Detect Blur",        true);
     detectNoise               = group.readEntry("Detect Noise",       true);
@@ -90,14 +90,14 @@ void ImageQualityContainer::readFromConfig(const KConfigGroup& group)
     exposureWeight            = group.readEntry("Exposure Weight",    100);
 }
 
-void ImageQualityContainer::writeToConfig()
+void ImageQualitySettings::writeToConfig()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Image Quality Settings"));
     writeToConfig(group);
 }
 
-void ImageQualityContainer::writeToConfig(KConfigGroup& group)
+void ImageQualitySettings::writeToConfig(KConfigGroup& group)
 {
     group.writeEntry("Detect Blur",         detectBlur);
     group.writeEntry("Detect Noise",        detectNoise);
@@ -116,7 +116,7 @@ void ImageQualityContainer::writeToConfig(KConfigGroup& group)
     group.writeEntry("Exposure Weight",     exposureWeight);
 }
 
-QDebug operator<<(QDebug dbg, const ImageQualityContainer& s)
+QDebug operator<<(QDebug dbg, const ImageQualitySettings& s)
 {
     dbg.nospace()                                                   << Qt::endl;
     dbg.nospace() << "DetectBlur         :" << s.detectBlur         << Qt::endl;

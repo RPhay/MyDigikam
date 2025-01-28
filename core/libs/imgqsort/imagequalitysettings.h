@@ -29,15 +29,15 @@ class KConfigGroup;
 namespace Digikam
 {
 
-class DIGIKAM_GUI_EXPORT ImageQualityContainer
+class DIGIKAM_GUI_EXPORT ImageQualitySettings
 {
 public:
 
-    ImageQualityContainer()  = default;
-    ImageQualityContainer(const ImageQualityContainer& other);
-    ~ImageQualityContainer() = default;
+    ImageQualitySettings()  = default;
+    ImageQualitySettings(const ImageQualitySettings& other);
+    ~ImageQualitySettings() = default;
 
-    ImageQualityContainer& operator=(const ImageQualityContainer& other);
+    ImageQualitySettings& operator=(const ImageQualitySettings& other);
 
 public:
 
@@ -71,6 +71,6 @@ public:
 };
 
 //! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.
-DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const ImageQualityContainer& s);
+DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const ImageQualitySettings& s);
 
 } // namespace Digikam

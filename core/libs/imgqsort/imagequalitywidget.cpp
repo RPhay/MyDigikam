@@ -308,31 +308,31 @@ void ImageQualityWidget::setupUi()
 
 void ImageQualityWidget::applySettings()
 {
-    ImageQualityContainer imq = getImageQualityContainer();
+    ImageQualitySettings imq = getImageQualitySettings();
     imq.writeToConfig();
 }
 
 void ImageQualityWidget::applySettings(KConfigGroup& group)
 {
-    ImageQualityContainer imq = getImageQualityContainer();
+    ImageQualitySettings imq = getImageQualitySettings();
     imq.writeToConfig(group);
 }
 
 void ImageQualityWidget::readSettings()
 {
-    ImageQualityContainer imq;
+    ImageQualitySettings imq;
     imq.readFromConfig();
-    setImageQualityContainer(imq);
+    setImageQualitySettings(imq);
 }
 
 void ImageQualityWidget::readSettings(const KConfigGroup& group)
 {
-    ImageQualityContainer imq;
+    ImageQualitySettings imq;
     imq.readFromConfig(group);
-    setImageQualityContainer(imq);
+    setImageQualitySettings(imq);
 }
 
-void ImageQualityWidget::setImageQualityContainer(const ImageQualityContainer& imq)
+void ImageQualityWidget::setImageQualitySettings(const ImageQualitySettings& imq)
 {
     d->detectBlur->setChecked(imq.detectBlur);
     d->detectNoise->setChecked(imq.detectNoise);
@@ -368,9 +368,9 @@ void ImageQualityWidget::setImageQualityContainer(const ImageQualityContainer& i
     slotDisableOptionViews();
 }
 
-ImageQualityContainer ImageQualityWidget::getImageQualityContainer() const
+ImageQualitySettings ImageQualityWidget::getImageQualitySettings() const
 {
-    ImageQualityContainer imq;
+    ImageQualitySettings imq;
 
     if (d->displayMode == SettingsDisplayMode::Normal)
     {
@@ -414,15 +414,15 @@ void ImageQualityWidget::resetToDefault()
 {
     blockSignals(true);
 
-    ImageQualityContainer prm;
-    setImageQualityContainer(prm);
+    ImageQualitySettings prm;
+    setImageQualitySettings(prm);
 
     blockSignals(false);
 }
 
-ImageQualityContainer ImageQualityWidget::defaultSettings() const
+ImageQualitySettings ImageQualityWidget::defaultSettings() const
 {
-    ImageQualityContainer prm;
+    ImageQualitySettings prm;
 
     return prm;
 }
