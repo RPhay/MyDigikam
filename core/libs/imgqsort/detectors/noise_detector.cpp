@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 28/08/2021
- * Description : Image Quality Parser - Noise basic factor detection
+ * Description : Image Quality Parser - Noise detection basic factor
  *
  * SPDX-FileCopyrightText: 2021-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
@@ -87,7 +87,7 @@ public:
 };
 
 /**
- * Main noise detection
+ * @brief Main noise detection
  */
 NoiseDetector::NoiseDetector()
     :  AbstractDetector(),
@@ -299,7 +299,7 @@ float NoiseDetector::mean_mat(const cv::Mat& mat) const
 }
 
 /**
- * Normalize result to interval [0 - 1]
+ * @brief Normalize result to interval [0 - 1]
  */
 float NoiseDetector::normalize(const float number) const
 {
