@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-28 01:55+0000\n"
+"POT-Creation-Date: 2025-01-29 01:53+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -35685,7 +35685,7 @@ msgstr ""
 "Usar parâmetros personalizados para efectuar uma ordenação por qualidade "
 "diferente da predefinida."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:61
+#: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:86
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
 #, kde-format
@@ -35693,13 +35693,13 @@ msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Procurar em"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:69
+#: core/libs/imgqsort/imagequalitywidget.cpp:69
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgstr "Atribuir a Legenda 'Rejeitado' às Imagens de Baixa Qualidade"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:70
+#: core/libs/imgqsort/imagequalitywidget.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35709,13 +35709,13 @@ msgstr ""
 "As imagens com baixa qualidade, detectadas pela análise de borrão, ruído e "
 "compressão, serão atribuídas à legenda Rejeitado."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:82
+#: core/libs/imgqsort/imagequalitywidget.cpp:82
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgstr "Atribuir a Legenda 'Pendente' às Imagens de Qualidade Média"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:83
+#: core/libs/imgqsort/imagequalitywidget.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35725,13 +35725,13 @@ msgstr ""
 "As imagens com qualidade média, detectadas pela análise de borrão, ruído e "
 "compressão, serão atribuídas à legenda Pendente."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:95
+#: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgstr "Atribuir a Legenda 'Aceite' às Imagens de Qualidade Alta"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:96
+#: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35741,13 +35741,13 @@ msgstr ""
 "As imagens com qualidade alta, detectadas pela análise de borrão, ruído e "
 "compressão, serão atribuídas à legenda Aceite."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:109
+#: core/libs/imgqsort/imagequalitywidget.cpp:109
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
 msgstr "Detectar uma Imagem Estética por Aprendizagem"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:111
+#: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35758,13 +35758,13 @@ msgstr ""
 "O motor de detecção da estética usa um modelo de aprendizagem para "
 "classificar as imagens"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:116
+#: core/libs/imgqsort/imagequalitywidget.cpp:116
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr "Detectar a Qualidade com os Factores Básicos"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:118
+#: core/libs/imgqsort/imagequalitywidget.cpp:118
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35774,123 +35774,123 @@ msgstr ""
 "Detecta se a imagem foi sabotada segundo quatro factores básicos (borrão, "
 "ruído, exposição e compressão)."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:136
+#: core/libs/imgqsort/imagequalitywidget.cpp:136
 #, kde-format
 msgctxt "@title:tab"
 msgid "Rules"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:143
+#: core/libs/imgqsort/imagequalitywidget.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Limiar de rejeição:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:148
+#: core/libs/imgqsort/imagequalitywidget.cpp:148
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr "O limite abaixo do qual todas as imagens terão a legenda 'Rejeitada'"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:150
+#: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Limiar de pendente:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:155
+#: core/libs/imgqsort/imagequalitywidget.cpp:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr "O limite abaixo do qual todas as imagens terão a legenda 'Pendente'"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:157
+#: core/libs/imgqsort/imagequalitywidget.cpp:157
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Limiar de aceitação:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:162
+#: core/libs/imgqsort/imagequalitywidget.cpp:162
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr "O limite acima do qual todas as imagens terão a legenda 'Aceite'"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:164
+#: core/libs/imgqsort/imagequalitywidget.cpp:164
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Detectar o Borrão"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:165
+#: core/libs/imgqsort/imagequalitywidget.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "Detectar a quantidade de borrão nas imagens passadas a ele"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:167
-#: core/libs/imgqsort/imagequalitysettings.cpp:177
-#: core/libs/imgqsort/imagequalitysettings.cpp:187
+#: core/libs/imgqsort/imagequalitywidget.cpp:167
+#: core/libs/imgqsort/imagequalitywidget.cpp:177
+#: core/libs/imgqsort/imagequalitywidget.cpp:187
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Peso:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:172
+#: core/libs/imgqsort/imagequalitywidget.cpp:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Peso a atribuir ao algoritmo de borrão"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:174
+#: core/libs/imgqsort/imagequalitywidget.cpp:174
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Detectar o Ruído"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:175
+#: core/libs/imgqsort/imagequalitywidget.cpp:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Seleccione aqui a quantidade de ruído nas imagens passadas a ele"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:182
+#: core/libs/imgqsort/imagequalitywidget.cpp:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Peso a atribuir ao algoritmo de ruído"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:184
+#: core/libs/imgqsort/imagequalitywidget.cpp:184
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Detectar a Compressão"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:185
+#: core/libs/imgqsort/imagequalitywidget.cpp:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Detectar a quantidade de compressão nas imagens passadas a ele"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:192
+#: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Peso a atribuir ao algoritmo de compressão"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:194
+#: core/libs/imgqsort/imagequalitywidget.cpp:194
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Detectar a Sub- e Sobre-Exposição"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:195
+#: core/libs/imgqsort/imagequalitywidget.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Detectar se as imagens estiverem sub- ou sobre-expostas"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:225
+#: core/libs/imgqsort/imagequalitywidget.cpp:225
 #, fuzzy, kde-format
 #| msgid "Sparsity Factor: "
 msgctxt "@title:tab"
@@ -52413,34 +52413,34 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:98
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "Confirmed"
 msgid "Confirming face"
 msgstr "Confirmada"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:120
 #, fuzzy, kde-format
 #| msgid "Remove face tag?"
 #| msgid_plural "Remove face tags?"
 msgid "Removing face"
 msgstr "Remover a marca de cara?"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
 #, fuzzy, kde-format
 #| msgid "Updating faces database"
 msgid "Editing face tag"
 msgstr "A actualizar a base de dados das caras"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:169
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Remove this face region"
 msgid "Editing face region"
 msgstr "Remover resta região da cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:197
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Manual and Name"
@@ -68451,7 +68451,7 @@ msgstr ""
 "icc/</li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>No seu "
 "sistema, estes locais existem e são pesquisados:<ul><li>%1</li></ul>"
 
-#: core/utilities/setup/setupimagequalitysorter.cpp:51
+#: core/utilities/setup/setupimagequalitysorter.cpp:53
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -68478,7 +68478,7 @@ msgstr ""
 "solução completa, não precisa de grandes parametrizações, o que torna esta "
 "funcionalidade mais simples de usar."
 
-#: core/utilities/setup/setupimagequalitysorter.cpp:61
+#: core/utilities/setup/setupimagequalitysorter.cpp:63
 #, kde-format
 msgctxt "@label"
 msgid "aesthetic image quality"

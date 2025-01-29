@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-28 01:55+0000\n"
-"PO-Revision-Date: 2025-01-26 08:39+0200\n"
+"POT-Creation-Date: 2025-01-29 01:53+0000\n"
+"PO-Revision-Date: 2025-01-28 08:47+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -35632,7 +35632,7 @@ msgstr ""
 "Використовувати нетипові параметри для виконання упорядковування за якістю, "
 "замість типових параметрів."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:61
+#: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:86
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
 #, kde-format
@@ -35640,13 +35640,13 @@ msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Місця для пошуку"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:69
+#: core/libs/imgqsort/imagequalitywidget.cpp:69
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgstr "Призначати мітку «Відкинуто» до низькоякісних зображень"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:70
+#: core/libs/imgqsort/imagequalitywidget.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35656,13 +35656,13 @@ msgstr ""
 "Зображенням низької якості, які буде виявлено у результаті аналізу "
 "розмивання, шуму та рівня стиснення, буде призначено мітку «Відкинуто»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:82
+#: core/libs/imgqsort/imagequalitywidget.cpp:82
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgstr "Призначати мітку «Потребує обробки» до зображень середньої якості"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:83
+#: core/libs/imgqsort/imagequalitywidget.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35673,13 +35673,13 @@ msgstr ""
 "розмивання, шуму та рівня стиснення, буде призначено мітку «Потребує "
 "обробки»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:95
+#: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgstr "Призначати мітку «Прийнято» високоякісним зображенням"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:96
+#: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35689,13 +35689,13 @@ msgstr ""
 "Зображенням високої якості, які буде виявлено у результаті аналізу "
 "розмивання, шуму та рівня стиснення, буде призначено мітку «Прийнято»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:109
+#: core/libs/imgqsort/imagequalitywidget.cpp:109
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
 msgstr "Виявити естетичні зображення за допомогою глибинного навчання"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:111
+#: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35706,13 +35706,13 @@ msgstr ""
 "Рушій визначення естетичності використовує для класифікації зображень модель "
 "глибинного навчання"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:116
+#: core/libs/imgqsort/imagequalitywidget.cpp:116
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr "Визначити якість на основі базових факторів"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:118
+#: core/libs/imgqsort/imagequalitywidget.cpp:118
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35722,19 +35722,19 @@ msgstr ""
 "Виявити, чи є зображення зіпсованим чотирма базовими факторами (розмиттям, "
 "шумом, неправильним експонуванням та стисканням)."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:136
+#: core/libs/imgqsort/imagequalitywidget.cpp:136
 #, kde-format
 msgctxt "@title:tab"
 msgid "Rules"
-msgstr ""
+msgstr "Правила"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:143
+#: core/libs/imgqsort/imagequalitywidget.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Порогове значення відкидання:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:148
+#: core/libs/imgqsort/imagequalitywidget.cpp:148
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
@@ -35742,13 +35742,13 @@ msgstr ""
 "Порогове значення оцінки. Усім зображенням з нижчою оцінкою буде призначено "
 "мітку «Відкинуто»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:150
+#: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Порогове значення потреби у обробці:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:155
+#: core/libs/imgqsort/imagequalitywidget.cpp:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
@@ -35756,13 +35756,13 @@ msgstr ""
 "Порогове значення оцінки. Усім зображенням з нижчою оцінкою буде призначено "
 "мітку «Потребує обробки»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:157
+#: core/libs/imgqsort/imagequalitywidget.cpp:157
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Порогове значення прийняття:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:162
+#: core/libs/imgqsort/imagequalitywidget.cpp:162
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
@@ -35770,86 +35770,85 @@ msgstr ""
 "Порогове значення оцінки. Зображенням з вищою оцінкою буде призначено мітку "
 "«Прийнято»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:164
+#: core/libs/imgqsort/imagequalitywidget.cpp:164
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Виявляти розмивання"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:165
+#: core/libs/imgqsort/imagequalitywidget.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "Виявляти рівень розмивання на переданих зображеннях"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:167
-#: core/libs/imgqsort/imagequalitysettings.cpp:177
-#: core/libs/imgqsort/imagequalitysettings.cpp:187
+#: core/libs/imgqsort/imagequalitywidget.cpp:167
+#: core/libs/imgqsort/imagequalitywidget.cpp:177
+#: core/libs/imgqsort/imagequalitywidget.cpp:187
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Вага:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:172
+#: core/libs/imgqsort/imagequalitywidget.cpp:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Значення ваги, яке буде використано для оцінки розмиття."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:174
+#: core/libs/imgqsort/imagequalitywidget.cpp:174
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Виявляти шум"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:175
+#: core/libs/imgqsort/imagequalitywidget.cpp:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Виявляти рівень цифрового шуму на переданих зображеннях"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:182
+#: core/libs/imgqsort/imagequalitywidget.cpp:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Значення ваги, яке буде використано для оцінки стиснення."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:184
+#: core/libs/imgqsort/imagequalitywidget.cpp:184
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Виявляти стиснення"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:185
+#: core/libs/imgqsort/imagequalitywidget.cpp:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Виявляти рівень стискання переданих зображень"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:192
+#: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Значення ваги, яке буде використано для оцінки стиснення."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:194
+#: core/libs/imgqsort/imagequalitywidget.cpp:194
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Виявляти надмірне і недостатнє експонування"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:195
+#: core/libs/imgqsort/imagequalitywidget.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Визначати, чи є зображення недоекспонованими або переекспонованими"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:225
-#, fuzzy, kde-format
-#| msgid "Sparsity Factor: "
+#: core/libs/imgqsort/imagequalitywidget.cpp:225
+#, kde-format
 msgctxt "@title:tab"
 msgid "Basic Factors"
-msgstr "Коефіцієнт роздільності: "
+msgstr "Базові фактори"
 
 #: core/libs/iojobs/iojob.cpp:64
 #, kde-format
@@ -52433,27 +52432,27 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:98
 #, kde-format
 msgid "Confirming face"
 msgstr "Підтвердження обличчя"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:120
 #, kde-format
 msgid "Removing face"
 msgstr "Вилучення обличчя"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
 #, kde-format
 msgid "Editing face tag"
 msgstr "Редагування мітки обличчя"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:169
 #, kde-format
 msgid "Editing face region"
 msgstr "Редагування області обличчя"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:197
 #, kde-format
 msgid "Manually adding face"
 msgstr "Додавання обличчя вручну"
@@ -67976,7 +67975,7 @@ msgstr ""
 "share/icc/</li><li>~/.color/icc/</li></ul>У вашій системі вже вказано такі "
 "шляхи для пошуку:<ul><li>%1</li></ul>"
 
-#: core/utilities/setup/setupimagequalitysorter.cpp:51
+#: core/utilities/setup/setupimagequalitysorter.cpp:53
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -68004,7 +68003,7 @@ msgstr ""
 "навчання є наскрізним рішенням, йому не потрібні додаткові параметри, а це "
 "спрощує користування відповідною можливістю."
 
-#: core/utilities/setup/setupimagequalitysorter.cpp:61
+#: core/utilities/setup/setupimagequalitysorter.cpp:63
 #, kde-format
 msgctxt "@label"
 msgid "aesthetic image quality"

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-28 01:55+0000\n"
-"PO-Revision-Date: 2025-01-22 14:52+0100\n"
+"POT-Creation-Date: 2025-01-29 01:53+0000\n"
+"PO-Revision-Date: 2025-01-28 10:23+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -7322,18 +7322,7 @@ msgid "An image loader based on Libpgf codec"
 msgstr "Un carregador d'imatges basat en el còdec Libpgf"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:78
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This plugin allows users to load and save image using Libpgf codec."
-#| "</para><para>The Progressive Graphics File (PGF) is an efficient image "
-#| "file format, that is based on a fast, discrete wavelet transform with "
-#| "progressive coding features. PGF can be used for lossless and lossy "
-#| "compression. It's most suitable for natural images. PGF can be used as a "
-#| "very efficient and fast replacement of JPEG-2000.</para><para>See <a "
-#| "href='https://en.wikipedia.org/wiki/"
-#| "Progressive_Graphics_File'>Progressive Graphics File documentation</a> "
-#| "for details.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This plugin allows users to load and save image using Libpgf codec.</"
@@ -20938,12 +20927,7 @@ msgid "Soundtrack Preview:"
 msgstr "Vista prèvia de la pista de so:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:226
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-#| "will be played in loop. If the audio length is largest than video, it "
-#| "will be trimmed. Leave this setting empty if you don't want a soundtrack "
-#| "to the media.</i>"
+#, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is larger than video, it will be "
@@ -20952,7 +20936,7 @@ msgid ""
 msgstr ""
 "<i>Notes sobre la pista de so: si la llargària de l'àudio és menor que el "
 "vídeo, es reproduirà en bucle. Si la llargària de l'àudio és més gran que el "
-"vídeo, es retallarà. Deixeu buit este paràmetre ai no voleu cap pista "
+"vídeo, es retallarà. Deixeu buit este paràmetre si no voleu cap pista "
 "d'àudio a l'element multimèdia.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:247
@@ -20976,14 +20960,7 @@ msgid "Number of Frames by Image:"
 msgstr "Nombre de fotogrames per imatge:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:90
-#, fuzzy, kde-format
-#| msgid ""
-#| "This value repeat one image in the sequence.\n"
-#| "While creating timelapse; it's usual to use 1.\n"
-#| "Typically, the number of frames will determine\n"
-#| "the time to show the same frame in the video.\n"
-#| "The result will depend of the number of frames\n"
-#| "per second used to encode the media."
+#, kde-format
 msgid ""
 "This value repeat one image in the sequence.\n"
 "While creating timelapse; it is usual to use 1.\n"
@@ -24549,8 +24526,7 @@ msgid "Export to &iNaturalist..."
 msgstr "Exporta cap a &iNaturalist…"
 
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:259
-#, fuzzy, kde-format
-#| msgid "We're pretty sure it's in this %1."
+#, kde-format
 msgid "We are pretty sure it is in this %1."
 msgstr "Estem força segurs de què hi ha en este %1."
 
@@ -27605,8 +27581,7 @@ msgstr "Voleu fusionar l'etiqueta «%1» dins l'etiqueta «%2»?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:624
 #: core/libs/album/manager/albummanager_talbum.cpp:1138
-#, fuzzy, kde-format
-#| msgid "Don't ask again at this session"
+#, kde-format
 msgid "Do not ask again at this session"
 msgstr "No ho tornes a preguntar en esta sessió"
 
@@ -35516,7 +35491,7 @@ msgstr ""
 "Utilitza paràmetres personalitzats per a realitzar l'ordenació de qualitat "
 "en lloc dels predeterminats."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:61
+#: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:86
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
 #, kde-format
@@ -35524,13 +35499,13 @@ msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Busca a"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:69
+#: core/libs/imgqsort/imagequalitywidget.cpp:69
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgstr "Assigna l'etiqueta «Rebutjada» a les imatges de qualitat baixa"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:70
+#: core/libs/imgqsort/imagequalitywidget.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35540,13 +35515,13 @@ msgstr ""
 "Les imatges de qualitat baixa detectades per a l'anàlisi de difuminat, "
 "soroll i compressió se'ls assignarà l'etiqueta «Rebutjada»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:82
+#: core/libs/imgqsort/imagequalitywidget.cpp:82
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgstr "Assigna l'etiqueta «Pendent» a les imatges de qualitat mitjana"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:83
+#: core/libs/imgqsort/imagequalitywidget.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35556,13 +35531,13 @@ msgstr ""
 "Les imatges de qualitat mitjana detectades per a l'anàlisi de difuminat, "
 "soroll i compressió se'ls assignarà l'etiqueta «Pendent»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:95
+#: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgstr "Assigna l'etiqueta «Acceptada» a les imatges de qualitat alta"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:96
+#: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35572,13 +35547,13 @@ msgstr ""
 "Les imatges de qualitat alta detectades per a l'anàlisi de difuminat, soroll "
 "i compressió se'ls assignarà l'etiqueta «Acceptada»."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:109
+#: core/libs/imgqsort/imagequalitywidget.cpp:109
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
 msgstr "Detecta una imatge estètica utilitzant l'aprenentatge profund"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:111
+#: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35589,13 +35564,13 @@ msgstr ""
 "El motor de detecció estètica utilitza un model d'aprenentatge profund per a "
 "classificar les imatges"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:116
+#: core/libs/imgqsort/imagequalitywidget.cpp:116
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr "Detecta la qualitat emprant factors bàsics"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:118
+#: core/libs/imgqsort/imagequalitywidget.cpp:118
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35605,19 +35580,19 @@ msgstr ""
 "Detecta si la imatge està alterada segons quatre factors bàsics (difuminat, "
 "soroll, exposició i compressió)."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:136
+#: core/libs/imgqsort/imagequalitywidget.cpp:136
 #, kde-format
 msgctxt "@title:tab"
 msgid "Rules"
-msgstr ""
+msgstr "Regles"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:143
+#: core/libs/imgqsort/imagequalitywidget.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Llindar de rebuig:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:148
+#: core/libs/imgqsort/imagequalitywidget.cpp:148
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
@@ -35625,26 +35600,26 @@ msgstr ""
 "Llindar davall el qual totes les imatges se'ls assignarà l'etiqueta "
 "«Rebutjada»"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:150
+#: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Llindar de pendent:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:155
+#: core/libs/imgqsort/imagequalitywidget.cpp:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr ""
 "Llindar davall el qual totes les imatges se'ls assignarà l'etiqueta «Pendent»"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:157
+#: core/libs/imgqsort/imagequalitywidget.cpp:157
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Llindar d'acceptació:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:162
+#: core/libs/imgqsort/imagequalitywidget.cpp:162
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
@@ -35652,86 +35627,85 @@ msgstr ""
 "Llindar sobre el qual totes les imatges se'ls assignarà l'etiqueta "
 "«Acceptada»"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:164
+#: core/libs/imgqsort/imagequalitywidget.cpp:164
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Detecta el difuminat"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:165
+#: core/libs/imgqsort/imagequalitywidget.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "Detecta la quantitat de difuminat en les imatges"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:167
-#: core/libs/imgqsort/imagequalitysettings.cpp:177
-#: core/libs/imgqsort/imagequalitysettings.cpp:187
+#: core/libs/imgqsort/imagequalitywidget.cpp:167
+#: core/libs/imgqsort/imagequalitywidget.cpp:177
+#: core/libs/imgqsort/imagequalitywidget.cpp:187
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Ponderació:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:172
+#: core/libs/imgqsort/imagequalitywidget.cpp:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Ponderació assignada a l'algorisme de difuminat"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:174
+#: core/libs/imgqsort/imagequalitywidget.cpp:174
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Detecta el soroll"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:175
+#: core/libs/imgqsort/imagequalitywidget.cpp:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Detecta la quantitat de soroll en les imatges"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:182
+#: core/libs/imgqsort/imagequalitywidget.cpp:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Ponderació assignada a l'algorisme de soroll"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:184
+#: core/libs/imgqsort/imagequalitywidget.cpp:184
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Detecta la compressió"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:185
+#: core/libs/imgqsort/imagequalitywidget.cpp:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Detecta la quantitat de compressió en les imatges"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:192
+#: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Ponderació assignada a l'algorisme de compressió"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:194
+#: core/libs/imgqsort/imagequalitywidget.cpp:194
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Detecta la subexposició i la sobreexposició"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:195
+#: core/libs/imgqsort/imagequalitywidget.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Detecta si les imatges estan subexposades o sobreexposades"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:225
-#, fuzzy, kde-format
-#| msgid "Sparsity Factor: "
+#: core/libs/imgqsort/imagequalitywidget.cpp:225
+#, kde-format
 msgctxt "@title:tab"
 msgid "Basic Factors"
-msgstr "Factor de dispersió: "
+msgstr "Factors bàsics"
 
 #: core/libs/iojobs/iojob.cpp:64
 #, kde-format
@@ -37166,16 +37140,7 @@ msgstr ""
 "opcions d'actualització en el diàleg de configuració.</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:287
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version "
-#| "<i>%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
-#| "<b>Download</b> to get the file...</p><p>Note: from Setup/Misc panel, you "
-#| "can switch to check for weekly pre-release.<br/>Pre-release versions are "
-#| "dedicated to test quickly new features.<br/>It's not recommended to use "
-#| "pre-releases in production as bugs can remain,<br/>unless you know what "
-#| "you are doing.</p><p>Press <b>Configure</b> if you want to customize "
-#| "update options from setup dialog.</p>"
+#, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
 "%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
@@ -39745,10 +39710,9 @@ msgid "Item scanned for objects: %1\n"
 msgstr "Element explorat buscant objectes: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:249
-#, fuzzy, kde-format
-#| msgid "Scanning: %1\n"
+#, kde-format
 msgid "Object Scanning: %1\n"
-msgstr "Exploració: %1\n"
+msgstr "Exploreu objectes: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
@@ -43249,14 +43213,7 @@ msgid "Show Thumbbar"
 msgstr "Mostra la barra de miniatures"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the slogan formatted string displayed in splashscreen. Please "
-#| "translate using short words else the slogan can be truncated."
-#| msgid ""
-#| "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> "
-#| "with the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>"
-#| "%1</i></font></qt>"
+#, kde-format
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
@@ -43265,8 +43222,7 @@ msgid ""
 ">with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
 "<qt><font color=\"white\"><b>Gestió</b> <b>professional</b> de les "
-"fotografies amb la potència del <b>programari lliure</b></font><font color="
-"\"gray\"><br/><i>%1</i></font></qt>"
+"fotografies amb la potència del <b>programari lliure</b></font></qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
@@ -48241,8 +48197,7 @@ msgstr "L'idioma seleccionat de la IU %1 no està implementat a %2"
 #: core/libs/widgets/text/donlinetranslator.cpp:132
 #: core/libs/widgets/text/donlinetranslator.cpp:215
 #: core/libs/widgets/text/donlinetranslator.cpp:232
-#, fuzzy, kde-format
-#| msgid "%1 URL can't be empty."
+#, kde-format
 msgid "%1 URL cannot be empty."
 msgstr "L'URL de %1 no pot estar buit."
 
@@ -50464,14 +50419,7 @@ msgstr "Sistema"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:370
 #: core/utilities/setup/misc/setupmisc.cpp:407
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check for new version option will verify the pre-releases.\n"
-#| "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
-#| "It's not recommended to use pre-release in production as bugs can "
-#| "remain,\n"
-#| "unless you know what you are doing.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
 "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
@@ -52319,27 +52267,27 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:96
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:98
 #, kde-format
 msgid "Confirming face"
 msgstr "Confirmeu de cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:111
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:120
 #, kde-format
 msgid "Removing face"
 msgstr "Eliminació de cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
 #, kde-format
 msgid "Editing face tag"
 msgstr "Editeu l'etiqueta de cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:146
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:169
 #, kde-format
 msgid "Editing face region"
 msgstr "Edició de regió de cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:167
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:197
 #, kde-format
 msgid "Manually adding face"
 msgstr "Addició de cara manualment"
@@ -52464,7 +52412,7 @@ msgstr ""
 "i intentarà el reconeixement de totes les imatges trobades als àlbums "
 "seleccionats a la pestanya «Busca a».</p><p><b>Només reconeix les cares</b> "
 "intentarà fer coincidir les cares desconegudes amb les cares confirmades "
-"sense explorar cares noves de les imatges. <b>1"
+"sense explorar cares noves de les imatges.</p>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:112
 #, kde-format
@@ -52533,23 +52481,7 @@ msgid "Extra Large"
 msgstr "Molt gran"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p>Selecting <b>Extra Small</b> means the model will detect small "
-#| "background faces in addition to medium and larger faces. Selecting "
-#| "<b>Small Faces</b> increases the sensitivity of the model by tuning the "
-#| "model parameters. It will also increase the probability of false-"
-#| "positives, and it will increase detection time.</p><p>Selecting <b>Large</"
-#| "b> or <b>Extra Large</b> will eliminate small background faces from being "
-#| "detected. It is much faster and will reduce the number of false-"
-#| "positives, but will not detect small faces in the background or faces in "
-#| "large group photos.</p><p>If you want to detect all faces in one pass, "
-#| "select <b>Extra Small</b> faces and set the detection accuracy to 2. "
-#| "Unfortunately, this will create a significant number of false-positives. "
-#| "It's recommended to set a detection accuracy of 6-8 and face size of "
-#| "<b>Medium</b> or <b>Large</b> for normal use.</p><p>This setting applies "
-#| "only to YuNet.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
@@ -61233,9 +61165,7 @@ msgid "Use the last saved active tools and settings"
 msgstr "Utilitza les últimes eines i opcions de configuració guardades"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores (when it's possible)"
+#, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it is possible)"
 msgstr "Treballa amb tots els nuclis dels processadors (quan siga possible)"
@@ -61558,10 +61488,9 @@ msgid "Scanning: %1\n"
 msgstr "Exploració: %1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
-#, fuzzy, kde-format
-#| msgid "Album: %1"
+#, kde-format
 msgid "Album Root: %1"
-msgstr "Àlbum: %1"
+msgstr "Àlbum arrel: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
 #, kde-format
@@ -61588,11 +61517,9 @@ msgid "Find duplicates items"
 msgstr "Busca els elements duplicats"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "Finding Duplicates: %1\n"
-msgstr "Busca els duplicats"
+msgstr "Busca de duplicats: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:174
 #, kde-format
@@ -61679,10 +61606,9 @@ msgid "Face found: %1"
 msgstr "Cara trobada: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
-#, fuzzy, kde-format
-#| msgid "Scanning: %1\n"
+#, kde-format
 msgid "Face Scanning: %1\n"
-msgstr "Exploració: %1\n"
+msgstr "Exploració de cares: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
 #, kde-format
@@ -61705,10 +61631,9 @@ msgid "Finger-prints"
 msgstr "Empremtes digitals"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
-#, fuzzy, kde-format
-#| msgid "Rebuild Fingerprint for: %1\n"
+#, kde-format
 msgid "Rebuild Fingerprint: %1\n"
-msgstr "S'ha reconstruït l'empremta digital per a: %1\n"
+msgstr "Reconstrucció d'empremtes digitals: %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
 #, kde-format
@@ -61726,10 +61651,9 @@ msgid "Item scanned for fingerprint: %1"
 msgstr "Element explorat buscant empremtes digitals: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
-#, fuzzy, kde-format
-#| msgid "Image Quality for: %1\n"
+#, kde-format
 msgid "Image Quality: %1\n"
-msgstr "Qualitat de la imatge per: %1\n"
+msgstr "Qualitat de les imatges: %1\n"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:182
 #, kde-format
@@ -61775,10 +61699,9 @@ msgstr ""
 "Voleu continuar?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
-#, fuzzy, kde-format
-#| msgid "Clear Metadata for: %1\n"
+#, kde-format
 msgid "Clear Metadata: %1\n"
-msgstr "Neteja les metadades per a: %1\n"
+msgstr "Neteja de les metadades: %1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
 #, kde-format
@@ -61812,10 +61735,9 @@ msgid "Updating database from image metadata"
 msgstr "S'està actualitzant la base de dades amb les metadades de les imatges"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
-#, fuzzy, kde-format
-#| msgid "Metadata Sync for: %1\n"
+#, kde-format
 msgid "Metadata Sync: %1\n"
-msgstr "Sincronitzeu de metadades per a: %1\n"
+msgstr "Sincronitzeu les metadades: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
 #, kde-format
@@ -61847,10 +61769,9 @@ msgid "Generate Thumbnails"
 msgstr "Genera les miniatures"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
-#, fuzzy, kde-format
-#| msgid "Thumbnail for: %1\n"
+#, kde-format
 msgid "Thumbnail: %1\n"
-msgstr "Miniatura per a: %1\n"
+msgstr "Miniatura: %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
 #, kde-format
@@ -65589,24 +65510,7 @@ msgid "Always show intermediate snapshots"
 msgstr "Mostra sempre les captures intermèdies"
 
 #: core/utilities/setup/editor/setupversioning.cpp:461
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG</emphasis>: It's the most commonly "
-#| "used file format, but it employs lossy compression, which means that with "
-#| "each saving operation some image information will be irreversibly lost. "
-#| "JPEG offers a good compression rate, resulting in smaller files. </"
-#| "item><item><emphasis strong='true'>PNG</emphasis>: A widely used format "
-#| "employing lossless compression. The files, though, will be larger because "
-#| "PNG does not achieve very good compression rates.</item><item><emphasis "
-#| "strong='true'>TIFF</emphasis>: A commonly used format, usually "
-#| "uncompressed or with modest lossless compression. Resulting files will be "
-#| "large, but without quality loss due to compression. </"
-#| "item><item><emphasis strong='true'>PGF</emphasis>: This is a technically "
-#| "superior file format offering good compression rates with either lossy or "
-#| "lossless compression. But it is not yet widely used and supported, so "
-#| "your friends may not directly be able to open these files, and you may "
-#| "not be able to directly publish them on the web. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG</emphasis>: It is the most commonly used "
@@ -65642,13 +65546,7 @@ msgstr ""
 "obrir directament estos fitxers, i no podreu publicar-los en la web.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:494
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG-2000</emphasis>: It's similar to PGF. "
-#| "Loading or saving is slower, the compression rate is better, and the "
-#| "format more widely supported, though still not comparable to the "
-#| "tradition formats JPEG, PNG or TIFF. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-2000</emphasis>: It is similar to PGF. "
@@ -65676,13 +65574,7 @@ msgstr ""
 "d'emmagatzematge que JPEG de qualitat equivalent. </item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:517
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG-XL</emphasis>: It's a royalty-free "
-#| "raster-graphics file format that supports lossless compression. It is "
-#| "designed to outperform existing raster formats and thus to become their "
-#| "universal replacement. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-XL</emphasis>: It is a royalty-free "
@@ -65696,13 +65588,7 @@ msgstr ""
 "se en la seua substitució universal. </item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:527
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>WEBP</emphasis>: It's an image file format "
-#| "that Google has developed as a replacement for JPEG, PNG, and GIF file "
-#| "formats. Files are smaller for the same quality, or of higher quality for "
-#| "the same size. It supports both lossy and lossless compression</item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>WEBP</emphasis>: It is an image file format "
@@ -67876,7 +67762,7 @@ msgstr ""
 "estos camins existixen al vostre sistema i s'han explorat:<ul><li>%1</li></"
 "ul>"
 
-#: core/utilities/setup/setupimagequalitysorter.cpp:51
+#: core/utilities/setup/setupimagequalitysorter.cpp:53
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -67904,7 +67790,7 @@ msgstr ""
 "no requerix una parametrització extrema, i fa que esta característica siga "
 "més fàcil d'utilitzar."
 
-#: core/utilities/setup/setupimagequalitysorter.cpp:61
+#: core/utilities/setup/setupimagequalitysorter.cpp:63
 #, kde-format
 msgctxt "@label"
 msgid "aesthetic image quality"
@@ -68403,19 +68289,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgid "Scanning from: %1\n"
-#~ msgstr "S'està explorant des de: %1\n"
-
-#~ msgid "Duplicates for: %1\n"
-#~ msgstr "Duplicats de: %1\n"
-
-# Nre.= Abreviatura de nombre (sinònim de quantitat)
-# skip-rule: t-pu_sp
-#~ msgid "Path: %1\n"
-#~ msgstr "Camí: %1\n"
-
-# Nre.= Abreviatura de nombre (sinònim de quantitat)
-# skip-rule: t-pu_sp
-#~ msgid "Path: %1"
-#~ msgstr "Camí: %1"
