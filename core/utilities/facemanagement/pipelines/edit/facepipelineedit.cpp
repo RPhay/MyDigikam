@@ -57,7 +57,7 @@ public:
     FacePipelineEdit object;
 };
 
-Q_GLOBAL_STATIC(FacePipelineEditCreator, FacePipelineEditCreator)
+Q_GLOBAL_STATIC(FacePipelineEditCreator, facePipelineEditCreator)
 
 // -----------------------------------------------------------------------------------------------
 
@@ -69,7 +69,7 @@ FacePipelineEdit::FacePipelineEdit()
 
 FacePipelineEdit* FacePipelineEdit::instance()
 {
-    return &FacePipelineEditCreator->object;
+    return &facePipelineEditCreator->object;
 }
 
 FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info,
