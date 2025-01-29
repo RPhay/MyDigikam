@@ -246,7 +246,7 @@ bool FaceDbSchemaUpdater::createDatabase()
     if (createTables() && createIndices() && createTriggers() && populateDbSettings())
     {
         d->currentVersion         = schemaVersion();
-        d->currentRequiredVersion = 6;
+        d->currentRequiredVersion = 5;
 
         return true;
     }
@@ -319,7 +319,7 @@ bool FaceDbSchemaUpdater::updateV2ToV6()
     }
 
     d->currentVersion         = schemaVersion();
-    d->currentRequiredVersion = 6;
+    d->currentRequiredVersion = 5;
 
     return true;
 }
@@ -346,7 +346,7 @@ bool FaceDbSchemaUpdater::updateV4ToV6()
     }
 
     d->currentVersion         = schemaVersion();
-    d->currentRequiredVersion = 6;
+    d->currentRequiredVersion = 5;
 
     return true;
 }
@@ -361,7 +361,7 @@ bool FaceDbSchemaUpdater::updateV5ToV6()
     }
 
     d->currentVersion         = schemaVersion();
-    d->currentRequiredVersion = 6;
+    d->currentRequiredVersion = 5;
 
     return true;
 }
