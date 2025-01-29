@@ -455,7 +455,6 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
     if (next.isValid())
     {
         setCurrentIndex(next);
-        scrollTo(next);
     }
 
     clearSelection();
@@ -499,7 +498,6 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
     if (next.isValid())
     {
         setCurrentIndex(next);
-        scrollTo(next);
     }
 
     clearSelection();
@@ -538,7 +536,6 @@ void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
     if (next.isValid())
     {
         setCurrentIndex(next);
-        scrollTo(next);
     }
 
     clearSelection();
@@ -578,7 +575,6 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
     if (next.isValid())
     {
         setCurrentIndex(next);
-        scrollTo(next);
     }
 
     clearSelection();
@@ -634,7 +630,6 @@ void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
     if (next.isValid())
     {
         setCurrentIndex(next);
-        scrollTo(next);
     }
 
     clearSelection();
