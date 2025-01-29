@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2010-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael dot miller at msn dot com>
  * SPDX-FileCopyrightText: 2020      by Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -49,9 +50,10 @@ private:
     bool createTriggers();
     bool populateDbSettings();
     bool updateV1ToV2();
-    bool updateV2ToV5();
-    bool updateV3ToV5();
-    bool updateV4ToV5();
+    bool updateV2ToV6();
+    bool updateV3ToV6();
+    bool updateV4ToV6();
+    bool updateV5ToV6();
 
 private:
 

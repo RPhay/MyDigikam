@@ -579,16 +579,14 @@
                 </statement>
             </dbaction>
 
-            <dbaction name="PopulateFaceSettings" mode="transaction">
-                <statement mode="plain">INSERT INTO Settings (keyword, value) VALUES ('TrainingVersion', '8.6.0');
-                </statement>
-                <statement mode="plain">INSERT INTO Settings (keyword, value) VALUES ('ExtractorModel', 'SFace');
-                </statement>
-            </dbaction>
-
             <dbaction name="RenameFaceDBFaceMatrices_contextcolumn_V5" mode="transaction">
                 <statement mode="plain">ALTER TABLE FaceMatrices
                                         RENAME COLUMN `context` TO removeHash;
+                </statement>
+            </dbaction>
+
+            <dbaction name="DropKDTreeTable_v6" mode="transaction">
+                <statement mode="plain">DROP TABLE IF EXISTS KDTree;
                 </statement>
             </dbaction>
 
@@ -1708,16 +1706,14 @@
                 </statement>
             </dbaction>
 
-            <dbaction name="PopulateFaceSettings" mode="transaction">
-                <statement mode="plain">INSERT INTO Settings (keyword, value) VALUES ('TrainingVersion', '8.6.0');
-                </statement>
-                <statement mode="plain">INSERT INTO Settings (keyword, value) VALUES ('ExtractorModel', 'SFace');
-                </statement>
-            </dbaction>
-
             <dbaction name="RenameFaceDBFaceMatrices_contextcolumn_V5" mode="transaction">
                 <statement mode="plain">ALTER TABLE FaceMatrices
                                         RENAME COLUMN `context` TO removeHash;
+                </statement>
+            </dbaction>
+
+            <dbaction name="DropKDTreeTable_v6" mode="transaction">
+                <statement mode="plain">DROP TABLE IF EXISTS KDTree;
                 </statement>
             </dbaction>
 

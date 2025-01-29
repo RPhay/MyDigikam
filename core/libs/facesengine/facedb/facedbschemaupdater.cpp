@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2010-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael dot miller at msn dot com>
  * SPDX-FileCopyrightText: 2020      by Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -33,7 +34,7 @@ namespace Digikam
 
 int FaceDbSchemaUpdater::schemaVersion()
 {
-    return 5;
+    return 6;
 }
 
 // -------------------------------------------------------------------------------------
@@ -218,17 +219,22 @@ bool FaceDbSchemaUpdater::makeUpdates()
 
         else if (d->currentVersion == 2)
         {
-            updateV2ToV5();
+            updateV2ToV6();
         }
 
         else if (d->currentVersion == 3)
         {
-            updateV3ToV5();
+            updateV3ToV6();
         }
 
         else if (d->currentVersion == 4)
         {
-            updateV4ToV5();
+            updateV4ToV6();
+        }
+
+        else if (d->currentVersion == 5)
+        {
+            updateV5ToV6();
         }
     }
 
@@ -240,7 +246,7 @@ bool FaceDbSchemaUpdater::createDatabase()
     if (createTables() && createIndices() && createTriggers() && populateDbSettings())
     {
         d->currentVersion         = schemaVersion();
-        d->currentRequiredVersion = 4;
+        d->currentRequiredVersion = 6;
 
         return true;
     }
@@ -296,18 +302,11 @@ bool FaceDbSchemaUpdater::updateV1ToV2()
     return true;
 }
 
-bool FaceDbSchemaUpdater::updateV2ToV5()
+bool FaceDbSchemaUpdater::updateV2ToV6()
 {
     if (!(d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices")))))
     {
         qCDebug(DIGIKAM_FACEDB_LOG) << "fail to recreate FaceMatrices table";
-
-        return false;
-    }
-
-    if (!(d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBKDTree")))))
-    {
-        qCDebug(DIGIKAM_FACEDB_LOG) << "fail to create KDTree table";
 
         return false;
     }
@@ -319,20 +318,18 @@ bool FaceDbSchemaUpdater::updateV2ToV5()
         return false;
     }
 
-    d->currentVersion         = 5;
-    d->currentRequiredVersion = 4;
-
-    // TODO: retrain recognized identities.
+    d->currentVersion         = schemaVersion();
+    d->currentRequiredVersion = 6;
 
     return true;
 }
 
-bool FaceDbSchemaUpdater::updateV3ToV5()
+bool FaceDbSchemaUpdater::updateV3ToV6()
 {
-    return updateV2ToV5();
+    return updateV2ToV6();
 }
 
-bool FaceDbSchemaUpdater::updateV4ToV5()
+bool FaceDbSchemaUpdater::updateV4ToV6()
 {
     if (!(d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("RenameFaceDBFaceMatrices_contextcolumn_V5")))))
     {
@@ -348,8 +345,23 @@ bool FaceDbSchemaUpdater::updateV4ToV5()
         return false;
     }
 
-    d->currentVersion         = 5;
-    d->currentRequiredVersion = 4;
+    d->currentVersion         = schemaVersion();
+    d->currentRequiredVersion = 6;
+
+    return true;
+}
+
+bool FaceDbSchemaUpdater::updateV5ToV6()
+{
+    if (!(d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("DropKDTreeTable_v6")))))
+    {
+        qCDebug(DIGIKAM_FACEDB_LOG) << "fail to drop KDTree table";
+
+        return false;
+    }
+
+    d->currentVersion         = schemaVersion();
+    d->currentRequiredVersion = 6;
 
     return true;
 }

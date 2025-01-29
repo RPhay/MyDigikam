@@ -97,7 +97,7 @@ DK_QTVERSION="6"
 # If you want to package current implementation from git, use "master" as tag.
 #DK_VERSION=v8.5.0
 DK_VERSION=master
-#DK_VERSION="work/michmill/retrain-at-startup"
+#DK_VERSION="work/michmill/remove-kdtree-table"
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
 #DK_SUBVER="-01"
