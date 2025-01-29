@@ -81,7 +81,6 @@ done
          $CPPCHECK_DEFINES \
          $CPPCHECK_OPTIONS \
          --enable=all \
-         --inconclusive \
          --check-level=exhaustive \
          --max-ctu-depth=4 \
          --cppcheck-build-dir=$CPPCHECK_CACHE_DIR \
