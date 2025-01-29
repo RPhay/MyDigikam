@@ -85,19 +85,17 @@ bool FacePipelineRetrain::start()
 
 bool FacePipelineRetrain::finder()
 {
-    // All threads start with the same basic functions
+    MLPIPELINE_FINDER_START(MLPipelineStage::Loader);
 
-    MLPipelineQueue* thisQueue = nullptr;
-    MLPipelineQueue* nextQueue = nullptr;
-    stageStart(QThread::LowPriority, MLPipelineStage::Finder, MLPipelineStage::Loader, thisQueue, nextQueue);
-    QElapsedTimer timer;
-
-    //--------------------------------------------------------------------------------
+    /* =========================================================================================
+     * Pipeline finder specific initialization code
+     *
+     * Use the block from here to MLPIPELINE_FINDER_END to find the IDs images to process.
+     * The code in this block is run once per stage initialization. The number of instances
+     * is always 1.
+     */
 
     FaceUtils utils;
-    bool moreCpu = false;
-
-    timer.start();
 
     // get the IDs to process
 
@@ -140,16 +138,13 @@ bool FacePipelineRetrain::finder()
         }
     }
 
-    Q_EMIT signalUpdateItemCount(totalItemCount);
+    /* =========================================================================================
+     * Pipeline finder specific cleanup
+     *
+     * Use the block from here to MLPIPELINE_FINDER_END to clean up any resources used by the stage.
+     */
 
-    pipelinePerformanceEnd(MLPipelineStage::Finder, totalItemCount, timer);
-
-    //--------------------------------------------------------------------------------
-    // all threads end with the same basic functions
-
-    stageEnd(MLPipelineStage::Finder, MLPipelineStage::Loader);
-
-    return true;
+    MLPIPELINE_FINDER_END(MLPipelineStage::Loader);
 }
 
 bool FacePipelineRetrain::loader()
