@@ -13,6 +13,8 @@
  * ============================================================ */
 
 #include "digikamapp_p.h"
+#include "facetrainingupgradedlg.h"
+#include "peoplesidebarwidget.h"
 
 namespace Digikam
 {
@@ -185,6 +187,31 @@ void DigikamApp::slotDatabaseMigration()
 {
     DatabaseMigrationDialog dlg(this);
     (void)dlg.exec();
+}
+
+void DigikamApp::checkFaceTrainingVersion()
+{
+    if (IdentityProvider::instance()->checkRetrainingRequired())
+    {
+        FaceTrainingUpgradeDlg dlg(this);
+
+        if (dlg.exec() == QDialog::Accepted)
+        {
+            FaceScanSettings settings;
+
+            settings.wholeAlbums            = true;
+            settings.useFullCpu             = true;
+            settings.albums                 = AlbumManager::instance()->allPAlbums();
+            settings.detectModel            = ApplicationSettings::instance()->getFaceDetectionModel();
+            settings.detectSize             = ApplicationSettings::instance()->getFaceDetectionSize();
+            settings.detectAccuracy         = ApplicationSettings::instance()->getFaceDetectionAccuracy();
+            settings.recognizeModel         = FaceScanSettings::FaceRecognitionModel::SFace;
+            settings.recognizeAccuracy      = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
+            settings.task                   = FaceScanSettings::ScanTask::RetrainAll;
+
+            PeopleSideBarWidget::doFaceScan(settings);
+        }
+    }
 }
 
 } // namespace Digikam

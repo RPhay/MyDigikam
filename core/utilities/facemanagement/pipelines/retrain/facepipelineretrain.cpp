@@ -39,6 +39,8 @@
 #include "dimg.h"
 #include "previewloadthread.h"
 #include "faceutils.h"
+#include "facedbaccess.h"
+#include "facedb.h"
 #include "facepipelinepackagebase.h"
 #include "thumbnailloadthread.h"
 #include "identityprovider.h"
@@ -192,6 +194,7 @@ bool FacePipelineRetrain::writer()
     // we start looping through the results from the pipeline
 
     idProvider->clearAllTraining();
+    FaceDbAccess().db()->setTrainingVersionInfo(IdentityProvider::FaceTrainingVersion, IdentityProvider::ExtractorModel);
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
     package                            = static_cast<FacePipelinePackageBase*>(mlpackage);

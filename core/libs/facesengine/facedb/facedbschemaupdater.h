@@ -47,6 +47,7 @@ private:
     bool createTables();
     bool createIndices();
     bool createTriggers();
+    bool populateDbSettings();
     bool updateV1ToV2();
     bool updateV2ToV5();
     bool updateV3ToV5();

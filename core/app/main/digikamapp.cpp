@@ -249,6 +249,8 @@ DigikamApp::DigikamApp()
     setAutoSaveSettings(configGroupName(), true);
 
     setupSelectToolsAction();
+
+    checkFaceTrainingVersion();
 }
 
 DigikamApp::~DigikamApp()

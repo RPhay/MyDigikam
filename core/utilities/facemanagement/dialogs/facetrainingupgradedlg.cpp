@@ -13,7 +13,7 @@
  *
  * ============================================================ */
 
-#include "recognitionmodelchange.h"
+#include "facetrainingupgradedlg.h"
 
 // Qt includes
 
@@ -36,7 +36,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN ChangeFaceRecognitionModelDlg::Private
+class Q_DECL_HIDDEN FaceTrainingUpgradeDlg::Private
 {
 public:
 
@@ -54,45 +54,19 @@ public:
     QPushButton*            cancelButton        = nullptr;
 };
 
-ChangeFaceRecognitionModelDlg::ChangeFaceRecognitionModelDlg(QWidget* const parent,
-                                                             FaceScanSettings::FaceRecognitionModel newModel)
+FaceTrainingUpgradeDlg::FaceTrainingUpgradeDlg(QWidget* const parent)
     : QDialog(parent),
       d(new Private)
 {
     setModal(true);
-    setWindowTitle(i18nc("@title:window", "Facial Recognition Model"));
+    setWindowTitle(i18nc("@title:window", "Facial Recognition Database"));
 
-    // const int spacing   = layoutSpacing();
-
-    QString newModelString;
-
-    // Use a switch instead of if/else to allow for other models in the future.
-
-    switch (newModel)
-    {
-        case FaceScanSettings::FaceRecognitionModel::OpenFace:
-        {
-            newModelString   = i18n("OpenFace");
-            break;
-        }
-
-        case FaceScanSettings::FaceRecognitionModel::SFace:
-        {
-            newModelString   = i18n("SFace");
-            break;
-        }
-    }
-
-    QString messageString = i18ncp("@info",
-                                   "You are about to change the face recognition model. This process can take several"
-                                   " minutes or more depending on the size of your library and the speed of your computer."
-                                   " SFace is the preferred model. Do not use any facial detection or recognition features"
-                                   " during the process.\n\nAre you sure you want to continue?",
-                                   "You are about to change the face recognition model to %1. This process can take several"
-                                   " minutes or more depending on the size of your library and the speed of your computer."
-                                   " SFace is the preferred model. Do not use any facial detection or recognition features"
-                                   " during the process.\n\nAre you sure you want to continue?",
-                                   newModelString);
+    QString messageString = i18nc("@info",
+                                  "Your face recognition database is outdated and requires retraining. "
+                                  "This process might take anywhere from a few seconds to several minutes. "
+                                  "Facial recognition will not be reliable until retraining is finished."
+                                  "Retraining will run in the backaground and you can continue to use digiKam. "
+                                  "\n\nDo you want to retrain your database now?");
 
     d->page             = new QWidget(this);
     d->verticalLayout   = new QVBoxLayout(d->page);
@@ -124,21 +98,21 @@ ChangeFaceRecognitionModelDlg::ChangeFaceRecognitionModelDlg(QWidget* const pare
             this, SLOT(slotCancel()));
 }
 
-ChangeFaceRecognitionModelDlg::~ChangeFaceRecognitionModelDlg()
+FaceTrainingUpgradeDlg::~FaceTrainingUpgradeDlg()
 {
     delete d;
 }
 
-void ChangeFaceRecognitionModelDlg::slotStart()
+void FaceTrainingUpgradeDlg::slotStart()
 {
     accept();
 }
 
-void ChangeFaceRecognitionModelDlg::slotCancel()
+void FaceTrainingUpgradeDlg::slotCancel()
 {
     reject();
 }
 
 } // namespace Digikam
 
-#include "moc_recognitionmodelchange.cpp"
+#include "moc_facetrainingupgradedlg.cpp"

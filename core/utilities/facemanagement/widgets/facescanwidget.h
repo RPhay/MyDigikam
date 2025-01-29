@@ -51,17 +51,8 @@ private:
     void setupUi();
     void setupConnections();
 
-Q_SIGNALS:
-
-/*
-    void signalRebuildFaceTraining();
-*/
-
 private Q_SLOTS:
 
-/*
-    void slotRebuildFaceTraining():
-*/
     void slotPrepareForDetect(bool status);
     void slotPrepareForRecognize(bool status);
     void slotDetectAccuracyChanged();

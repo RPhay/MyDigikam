@@ -120,6 +120,16 @@ public:
      */
     void clearDNNTraining(const QList<int>& identities);
 
+    /**
+     * @brief get the digiKam version and extactor model the DB was trained with.
+     */
+    void getTrainingVersionInfo(QString& version, QString& model)                      const;
+
+    /**
+     * @brief set the digiKam version and extractor model the DB was trained with.
+     */
+    void setTrainingVersionInfo(const QString& version, const QString& model);
+
 private:
 
     // Disable

@@ -15,7 +15,6 @@
  * ============================================================ */
 
 #include "facescanwidget_p.h"
-#include "recognitionmodelchange.h"
 #include "peoplesidebarwidget.h"
 
 namespace Digikam

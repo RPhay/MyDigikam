@@ -111,4 +111,16 @@ void FaceDb::clearDNNTraining(const QList<int>& identities)
     }
 }
 
+void FaceDb::getTrainingVersionInfo(QString& version, QString& model) const
+{
+    version = setting(QStringLiteral("TrainingVersion"));
+    model = setting(QStringLiteral("ExtractorModel"));
+}
+
+void FaceDb::setTrainingVersionInfo(const QString& version, const QString& model)
+{
+    setSetting(QStringLiteral("TrainingVersion"), version);
+    setSetting(QStringLiteral("ExtractorModel"), model);
+}
+
 } // namespace Digikam

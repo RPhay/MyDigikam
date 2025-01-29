@@ -9,7 +9,6 @@ APPLY_COMMON_POLICIES()
 
 set(libfacemanagement_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/database/faceutils.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/recognitionmodelchange.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/faceitem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/facegroup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/facegroup_p.cpp
@@ -26,6 +25,9 @@ set(libfacemanagement_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/pipelines/retrain/facepipelineretrain.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/pipelines/detectrecognize/facepipelinedetectrecognize.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/pipelines/reset/facepipelinereset.cpp
+
+    # dialogs
+    ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/facetrainingupgradedlg.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Sql,INTERFACE_INCLUDE_DIRECTORIES>

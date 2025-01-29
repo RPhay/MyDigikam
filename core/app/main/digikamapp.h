@@ -163,6 +163,7 @@ private:
 private:
 
     void setupSelectToolsAction();
+    void checkFaceTrainingVersion();
 
 private Q_SLOTS:
 

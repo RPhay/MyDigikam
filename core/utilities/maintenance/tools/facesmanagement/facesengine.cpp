@@ -204,6 +204,8 @@ void FacesEngine::slotStart()
 {
     MaintenanceTool::slotStart();
 
+    d->totalFacesFound = 0;
+
     setThumbnail(QIcon::fromTheme(QLatin1String("edit-image-face-detect")).pixmap(48));
 
     // Set label depending on settings.
@@ -454,6 +456,8 @@ void FacesEngine::slotShowOneDetected(const MLPipelinePackageNotify::Ptr& packag
     // {
     //     lbl.append(i18n("No faces found."));
     // }
+
+    d->totalFacesFound += package->processed;
 
     setLabel(lbl);
     advance(1);

@@ -30,6 +30,8 @@ public:
 
     static IdentityProvider* instance();
 
+    bool checkRetrainingRequired() const;
+
     /**
      * Checks the integrity and returns true if everything is fine.
      */
@@ -112,6 +114,9 @@ public:
      * checks if the id exists in the recognition DB
      */
     bool isValidId(int label)                                               const;
+
+    static QString FaceTrainingVersion;
+    static QString ExtractorModel;
 
 protected:
 

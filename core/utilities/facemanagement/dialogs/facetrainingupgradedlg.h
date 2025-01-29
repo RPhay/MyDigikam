@@ -28,21 +28,17 @@
 namespace Digikam
 {
 
-class ChangeFaceRecognitionModelDlg : public QDialog
+class FaceTrainingUpgradeDlg : public QDialog
 {
     Q_OBJECT
 
 public:
 
-    explicit ChangeFaceRecognitionModelDlg(QWidget* const parent,
-                                           FaceScanSettings::FaceRecognitionModel newModel);
+    explicit FaceTrainingUpgradeDlg(QWidget* const parent);
 
-    ~ChangeFaceRecognitionModelDlg()       override;
+    ~FaceTrainingUpgradeDlg()       override;
 
 private:
-
-    // Disable
-    explicit ChangeFaceRecognitionModelDlg(QWidget* const parent)    = delete;
 
 private Q_SLOTS:
 

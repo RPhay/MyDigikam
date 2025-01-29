@@ -44,6 +44,8 @@ namespace Digikam
 {
 
 IdentityProvider::Private* IdentityProvider::d = nullptr;
+QString IdentityProvider::FaceTrainingVersion  = QLatin1String("8.6.0");
+QString IdentityProvider::ExtractorModel       = QLatin1String("SFace");
 
 class Q_DECL_HIDDEN IdentityProvider::Private
 {
@@ -184,6 +186,47 @@ bool IdentityProvider::initialize()
 */
     return true;
 }
+
+bool IdentityProvider::checkRetrainingRequired() const
+{
+    if (!d || !d->dbAvailable)
+    {
+        // don't use this if we're not initialized
+
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider not initialized or database not available";
+        QException().raise();
+    }
+
+    // return false if we don't have any identities in the database
+
+    if (d->identityCache.isEmpty())
+    {
+        // write the current version to the database
+
+        FaceDbAccess().db()->setTrainingVersionInfo(IdentityProvider::FaceTrainingVersion, IdentityProvider::ExtractorModel);
+        return false;
+    }
+
+    // Check if the face training version is up-to-date.
+    
+    QString version;
+    QString model;
+
+    FaceDbAccess().db()->getTrainingVersionInfo(version, model);
+
+    if (IdentityProvider::FaceTrainingVersion == version &&
+        IdentityProvider::ExtractorModel == model)
+    {
+        // retraining not needed
+
+        return false;
+    }
+
+    // retraining needed
+
+    return true;
+}
+
 
 bool IdentityProvider::integrityCheck()
 {

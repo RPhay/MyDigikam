@@ -26,6 +26,7 @@
 #include "dbenginebackend.h"
 #include "facedbaccess.h"
 #include "facedb.h"
+#include "identityprovider.h"
 
 namespace Digikam
 {
@@ -236,7 +237,7 @@ bool FaceDbSchemaUpdater::makeUpdates()
 
 bool FaceDbSchemaUpdater::createDatabase()
 {
-    if (createTables() && createIndices() && createTriggers())
+    if (createTables() && createIndices() && createTriggers() && populateDbSettings())
     {
         d->currentVersion         = schemaVersion();
         d->currentRequiredVersion = 4;
@@ -256,8 +257,7 @@ bool FaceDbSchemaUpdater::createTables()
 
     return (
                d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDB")))             &&
-               d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices"))) &&
-               d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBKDTree")))
+               d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices")))
            );
 }
 
@@ -269,6 +269,14 @@ bool FaceDbSchemaUpdater::createIndices()
 bool FaceDbSchemaUpdater::createTriggers()
 {
     return d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceTriggers")));
+}
+
+bool FaceDbSchemaUpdater::populateDbSettings()
+{
+    d->dbAccess->db()->setSetting(QLatin1String("TrainingVersion"), IdentityProvider::FaceTrainingVersion);
+    d->dbAccess->db()->setSetting(QLatin1String("ExtractorModel"), IdentityProvider::ExtractorModel);
+
+    return true;
 }
 
 bool FaceDbSchemaUpdater::updateV1ToV2()
@@ -342,8 +350,6 @@ bool FaceDbSchemaUpdater::updateV4ToV5()
 
     d->currentVersion         = 5;
     d->currentRequiredVersion = 4;
-
-    // TODO: retrain recognized identities.
 
     return true;
 }
