@@ -51,16 +51,12 @@ class Q_DECL_HIDDEN IdentityProvider::Private
 {
 public:
 
-    int                             ref                     = 1;
     bool                            dbAvailable             = false;
     int                             seedMax                 = 0;
 
     QHash<int, Identity>            identityCache;
 
     QReadWriteLock                  trainingLock;
-/*
-    QMutex                          trainingMutex;
-*/
     RecognitionTrainingUpdateQueue  removeQueue;
     QThreadPool*                    removeThreadPool        = nullptr;
     QFuture<bool>                   removeThreadResult;
@@ -83,10 +79,14 @@ IdentityProvider::IdentityProvider()
     {
         d = new Private;
 
+        // initialize the database
+
         if (!initialize())
         {
             QException().raise();
         }
+
+        // Create a thread pool for the training remover.
 
         d->removeThreadPool = new QThreadPool();
 
@@ -120,30 +120,29 @@ IdentityProvider::IdentityProvider()
                                                  );
 
     }
-    else
-    {
-        ++(d->ref);
-    }
 }
 
 IdentityProvider::~IdentityProvider()
 {
-    --(d->ref);
+    // Signal the remove thread to terminate.
 
-    if (d->ref == 0)
+    d->removeQueue.push(d->removeQueue.endSignal());
+
+    // Wait for the remove thread to finish.
+
+    while (d->removeThreadResult.isRunning())
     {
-        d->removeQueue.push(d->removeQueue.endSignal());
-
-        while (d->removeThreadResult.isRunning())
-        {
-            QThread::msleep(10);
-        }
-
-        delete d->removeThreadPool;
-
-        delete d;
-        d = nullptr;
+        QThread::msleep(10);
     }
+
+    // Clean up the thread pool.
+
+    delete d->removeThreadPool;
+
+    // final cleanup
+
+    delete d;
+    d = nullptr;
 }
 
 IdentityProvider* IdentityProvider::instance()
@@ -153,27 +152,25 @@ IdentityProvider* IdentityProvider::instance()
 
 bool IdentityProvider::initialize()
 {
+    // Initialize the database.
+
     DbEngineParameters params   = CoreDbAccess::parameters().faceParameters();
     params.setFaceDatabasePath(CoreDbAccess::parameters().faceParameters().getFaceDatabaseNameOrDir());
     FaceDbAccess::setParameters(params, FaceScanSettings::FaceRecognitionModel::SFace);
 
+    // Check if the database is available.
+
     d->dbAvailable              = FaceDbAccess::checkReadyForUse(nullptr);
+
+    // do an integrity check
 
     if (!d->dbAvailable || !integrityCheck())
     {
         return false;
     }
 
-/*
-    // check for seed identities
+    // load the identities
 
-    Identity id = FaceDbAccess().db()->identity(1);
-
-    if (id.attributesMap().isEmpty())
-    {
-        addSeedTraining();
-    }
-*/
     const auto ids = FaceDbAccess().db()->identities();
 
     for (const Identity& identity : ids)
@@ -181,12 +178,6 @@ bool IdentityProvider::initialize()
         d->identityCache[identity.id()] = identity;
     }
 
-/*
-    QMultiMap<QString, QString> attributes;
-    attributes.insert(QLatin1String("name"), QLatin1String("digiKam seed identity MAX"));
-    id         = findIdentity(attributes);
-    d->seedMax = id.id();
-*/
     return true;
 }
 
@@ -200,7 +191,7 @@ bool IdentityProvider::checkRetrainingRequired() const
         QException().raise();
     }
 
-    // return false if we don't have any identities in the database
+    // return false if there are no identities in the database
 
     if (d && d->identityCache.isEmpty())
     {
@@ -264,8 +255,10 @@ void IdentityProvider::vacuum()
 
 // -----------------------------------------------------------------------
 
-QList<Identity> IdentityProvider::allIdentities() const
+const QList<Identity> IdentityProvider::allIdentities() const
 {
+    // Return a copy of the identity cache.
+
     if (!d || !d->dbAvailable)
     {
         return QList<Identity>();

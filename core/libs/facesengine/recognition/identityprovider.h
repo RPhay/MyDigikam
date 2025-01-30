@@ -49,8 +49,11 @@ public:
     /**
      * @return all identities known to the database
      */
-    QList<Identity> allIdentities()                                         const;
+    const QList<Identity> allIdentities()                                   const;
 
+    /**
+     * @brief retrieves the identity with the given id.
+     */
     Identity        identity(int id)                                        const;
 
     /**
@@ -78,13 +81,6 @@ public:
      * to identityCache, but not into the recognition database.
      */
     Identity addIdentityDebug(const QMultiMap<QString, QString>& attributes);
-
-    // /**
-    //  * @brief Adds or sets, resp., the attributes of an identity.
-    //  */
-    // void addIdentityAttributes(int id, const QMultiMap<QString, QString>& attributes);
-    // void addIdentityAttribute(int id, const QString& attribute, const QString& value);
-    // void setIdentityAttributes(int id, const QMultiMap<QString, QString>& attributes);
 
     /**
      * @brief Deletes an identity from the database.
@@ -121,6 +117,9 @@ public:
 
 protected:
 
+    /**
+     * @brief Initializes the identity provider.
+     */
     bool initialize();
 
     /**
@@ -128,12 +127,17 @@ protected:
      */
     cv::Ptr<cv::ml::TrainData> getTrainingData()                            const;
 
+    /**
+     * @brief add a face matrice to the recognition database
+     */
     bool addIdentityFace(const Identity& identity, QString& hash, cv::Mat embedding);
+
+    /**
+     * @brief delete a face matrice from the recognition database
+     */
     bool deleteIdentityFace(const Identity& identity, QString& hash);
 
 private:
-
-    void addSeedTraining();
 
     bool identityContains(const Identity& identity,
                           const QString& attribute,
