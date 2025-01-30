@@ -56,7 +56,7 @@ public:
 
 FaceTrainingUpgradeDlg::FaceTrainingUpgradeDlg(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setModal(true);
     setWindowTitle(i18nc("@title:window", "Facial Recognition Database"));

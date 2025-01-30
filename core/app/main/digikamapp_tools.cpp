@@ -178,24 +178,24 @@ void DigikamApp::slotDetectFaces()
     settings.alreadyScannedHandling = FaceScanSettings::Skip;
     settings.infos                  = newImages;
 
-    // FacesDetector* const tool       = new FacesDetector(settings);
-    FacesEngine* const tool       = new FacesEngine(settings);
+    FacesEngine* const tool         = new FacesEngine(settings);
     tool->start();
 }
 
 void DigikamApp::slotDatabaseMigration()
 {
-    DatabaseMigrationDialog dlg(this);
-    (void)dlg.exec();
+    QPointer<DatabaseMigrationDialog> dlg = new DatabaseMigrationDialog(this);
+    (void)dlg->exec();
+    delete dlg;
 }
 
 void DigikamApp::checkFaceTrainingVersion()
 {
     if (IdentityProvider::instance()->checkRetrainingRequired())
     {
-        FaceTrainingUpgradeDlg dlg(this);
+        QPointer<FaceTrainingUpgradeDlg> dlg = new FaceTrainingUpgradeDlg(this);
 
-        if (dlg.exec() == QDialog::Accepted)
+        if (dlg->exec() == QDialog::Accepted)
         {
             FaceScanSettings settings;
 
@@ -211,6 +211,8 @@ void DigikamApp::checkFaceTrainingVersion()
 
             PeopleSideBarWidget::doFaceScan(settings);
         }
+
+        delete dlg;
     }
 }
 
