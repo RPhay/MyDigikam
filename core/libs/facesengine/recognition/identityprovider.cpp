@@ -75,6 +75,8 @@ public:
 
 Q_GLOBAL_STATIC(IdentityProviderCreator, identityProviderCreator)
 
+// ---------------------------------------------------------------------------
+
 IdentityProvider::IdentityProvider()
 {
     if (!d)
@@ -118,7 +120,6 @@ IdentityProvider::IdentityProvider()
                                                  );
 
     }
-
     else
     {
         ++(d->ref);
@@ -181,7 +182,7 @@ bool IdentityProvider::initialize()
 /*
     QMultiMap<QString, QString> attributes;
     attributes.insert(QLatin1String("name"), QLatin1String("digiKam seed identity MAX"));
-    id = findIdentity(attributes);
+    id         = findIdentity(attributes);
     d->seedMax = id.id();
 */
     return true;
@@ -199,7 +200,7 @@ bool IdentityProvider::checkRetrainingRequired() const
 
     // return false if we don't have any identities in the database
 
-    if (d->identityCache.isEmpty())
+    if (d && d->identityCache.isEmpty())
     {
         // write the current version to the database
 
@@ -208,14 +209,16 @@ bool IdentityProvider::checkRetrainingRequired() const
     }
 
     // Check if the face training version is up-to-date.
-    
+
     QString version;
     QString model;
 
     FaceDbAccess().db()->getTrainingVersionInfo(version, model);
 
-    if (IdentityProvider::FaceTrainingVersion == version &&
-        IdentityProvider::ExtractorModel == model)
+    if (
+        (IdentityProvider::FaceTrainingVersion == version) &&
+        (IdentityProvider::ExtractorModel      == model)
+       )
     {
         // retraining not needed
 
@@ -226,7 +229,6 @@ bool IdentityProvider::checkRetrainingRequired() const
 
     return true;
 }
-
 
 bool IdentityProvider::integrityCheck()
 {
@@ -370,7 +372,7 @@ Identity IdentityProvider::findIdentity(const QMultiMap<QString, QString>& attri
             (it.key() == QLatin1String("uuid"))     ||
             (it.key() == QLatin1String("fullName")) ||
             (it.key() == QLatin1String("name"))
-        )
+           )
         {
             continue;
         }
@@ -541,9 +543,9 @@ int IdentityProvider::addTraining(const Identity& identity, const QString& hash,
 
 bool IdentityProvider::isValidId(int label) const
 {
-    /*
-        return ((label > d->seedMax) && d->identityCache.contains(label));
-    */
+/*
+    return ((label > d->seedMax) && d->identityCache.contains(label));
+*/
     return (d->identityCache.contains(label));
 }
 
@@ -552,7 +554,7 @@ bool IdentityProvider::isValidId(int label) const
 // private methods
 
 /**
- * NOTE: Takes care that there may be multiple values of attribute in identity's attributes.
+ * @note Takes care that there may be multiple values of attribute in identity's attributes.
  */
 bool IdentityProvider::identityContains(const Identity& identity,
                                         const QString&  attribute,
@@ -599,7 +601,7 @@ Identity IdentityProvider::findByAttribute(const QString& attribute,
 }
 
 /**
- * NOTE: Takes care that there may be multiple values of attribute in valueMap.
+ * @note Takes care that there may be multiple values of attribute in valueMap.
  */
 Identity IdentityProvider::findByAttributes(const QString& attribute,
                                             const QMultiMap<QString, QString>& valueMap) const
@@ -608,7 +610,7 @@ Identity IdentityProvider::findByAttributes(const QString& attribute,
 
     d->trainingLock.lockForRead();
 
-    for (; (it != valueMap.end()) && (it.key() == attribute) ; ++it)
+    for ( ; (it != valueMap.end()) && (it.key() == attribute) ; ++it)
     {
         for (const Identity& identity : std::as_const(d->identityCache))
         {

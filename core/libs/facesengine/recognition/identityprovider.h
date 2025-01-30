@@ -29,112 +29,109 @@ class DIGIKAM_GUI_EXPORT IdentityProvider
 public:
 
     static IdentityProvider* instance();
+    static QString FaceTrainingVersion;
+    static QString ExtractorModel;
+
+public:
 
     bool checkRetrainingRequired() const;
 
     /**
-     * Checks the integrity and returns true if everything is fine.
+     * @brief Checks the integrity and returns true if everything is fine.
      */
     bool integrityCheck();
 
     /**
-     * Shrinks the database.
+     * @brief Shrinks the database.
      */
     void vacuum();
 
     /**
-     * Returns all identities known to the database
+     * @return all identities known to the database
      */
     QList<Identity> allIdentities()                                         const;
 
     Identity        identity(int id)                                        const;
 
     /**
-     * Finds the first identity with matching attribute - value.
-     * Returns a null identity if no match is found or attribute is empty.
+     * @brief Finds the first identity with matching attribute - value.
+     * @return a null identity if no match is found or attribute is empty.
      */
     Identity findIdentity(const QString& attribute, const QString& value)   const;
 
     /**
-     * Finds the identity matching the given attributes.
+     * @brief Finds the identity matching the given attributes.
      * Attributes are first checked with knowledge of their meaning.
      * Secondly, all unknown attributes are used.
-     * Returns a null Identity if no match is possible or the map is empty.
+     * @return a null Identity if no match is possible or the map is empty.
      */
     Identity findIdentity(const QMultiMap<QString, QString>& attributes)    const;
 
     /**
-     * Adds a new identity with the specified attributes.
+     * @brief Adds a new identity with the specified attributes.
      * Please note that a UUID is automatically generated.
      */
     Identity addIdentity(const QMultiMap<QString, QString>& attributes);
 
     /**
-     * This is the debug version of addIdentity, so the identity is only added
+     * @brief This is the debug version of addIdentity, so the identity is only added
      * to identityCache, but not into the recognition database.
      */
     Identity addIdentityDebug(const QMultiMap<QString, QString>& attributes);
 
     // /**
-    //  * Adds or sets, resp., the attributes of an identity.
+    //  * @brief Adds or sets, resp., the attributes of an identity.
     //  */
     // void addIdentityAttributes(int id, const QMultiMap<QString, QString>& attributes);
     // void addIdentityAttribute(int id, const QString& attribute, const QString& value);
     // void setIdentityAttributes(int id, const QMultiMap<QString, QString>& attributes);
 
     /**
-     * Deletes an identity from the database.
+     * @brief Deletes an identity from the database.
      */
     void deleteIdentity(const Identity& identityToBeDeleted);
 
     /**
-     * Deletes a list of identities from the database.
+     * @brief Deletes a list of identities from the database.
      */
     void deleteIdentities(QList<Identity> identitiesToBeDeleted);
 
     /**
-     * Deletes the training image for the given hash,
+     * @brief Deletes the training image for the given hash,
      * leaving the identity as such in the database.
      */
     bool clearTraining(const QString& hash);
 
     /**
-     * clears all identites and face training
+     * @brief Clears all identites and face training
      * from the recognition DB
      */
     void clearAllTraining();
 
     /**
-     * add the face features and hash to the recognition DB
-     * returns the ID of the new row
+     * @brief Add the face features and hash to the recognition DB
+     * @return the ID of the new row
      */
     int addTraining(const Identity& identity, const QString& hash, const cv::Mat& feature);
 
     /**
-     * checks if the id exists in the recognition DB
+     * @brief Checks if the id exists in the recognition DB
      */
     bool isValidId(int label)                                               const;
-
-    static QString FaceTrainingVersion;
-    static QString ExtractorModel;
 
 protected:
 
     bool initialize();
 
     /**
-     * Deletes a list of identities from the database.
+     * @brief Deletes a list of identities from the database.
      */
     cv::Ptr<cv::ml::TrainData> getTrainingData()                            const;
 
     bool addIdentityFace(const Identity& identity, QString& hash, cv::Mat embedding);
     bool deleteIdentityFace(const Identity& identity, QString& hash);
 
-
 private:
-
-    IdentityProvider();
-    ~IdentityProvider();
 
     void addSeedTraining();
 
@@ -150,13 +147,16 @@ private:
 
     bool trainingRemoveConcurrent();
 
-    class Private;
-    static Private* d;
-
 private:
+
+    IdentityProvider();
+    ~IdentityProvider();
 
     // Disable
     IdentityProvider(const IdentityProvider&)                     = delete;
+
+    class Private;
+    static Private* d;
 
 private:
 
