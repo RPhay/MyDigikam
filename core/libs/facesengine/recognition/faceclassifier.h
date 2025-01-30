@@ -29,8 +29,11 @@ public:
 
     static FaceClassifier* instance();
 
-    /* Tunes backend parameters.
+    /**
+     * @brief Tunes backend parameters.
+     *
      * Available parameters:
+     *
      * "accuracy", synonymous: "threshold", range: 0-1, type: float
      * Determines recognition threshold, 0->accept very insecure recognitions, 1-> be very sure about a recognition.
      *

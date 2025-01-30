@@ -151,7 +151,7 @@ float DNNSFaceExtractor::getThreshold(int uiThreshold) const
         return d->model->getThreshold(uiThreshold);
     }
 
-    return 0.0f;
+    return 0.0F;
 }
 
 cv::Mat DNNSFaceExtractor::alignFace(const cv::Mat& inputImage) const
@@ -196,7 +196,6 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
         int newHeight           = (int)(resizeFactor * faceImage.rows);
         cv::resize(faceImage, paddedFace, cv::Size(newWidth, newHeight));
     }
-
     else
     {
         paddedFace = faceImage.clone();
@@ -205,7 +204,7 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
     // Add a border so there is room to rotate the image during alignment.
 
     cv::Mat borderFace;
-    
+
     cv::copyMakeBorder(paddedFace, borderFace,
                        60, 60,
                        60, 60,
@@ -221,7 +220,7 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
             d->model->modelLoaded           &&
             d->detectorModel                &&
             d->detectorModel->modelLoaded
-        )
+           )
         {
             QMutexLocker detectorLock(&d->detectorModel->mutex);
 
@@ -312,7 +311,6 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
         int newHeight           = (int)(resizeFactor * faceImage.rows);
         cv::resize(faceImage, paddedFace, cv::Size(newWidth, newHeight));
     }
-
     else
     {
         paddedFace = faceImage.clone();
@@ -321,7 +319,7 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
     // Add a border so there is room to rotate the image during alignment.
 
     cv::UMat borderFace;
-    
+
     cv::copyMakeBorder(paddedFace, borderFace,
                        60, 60,
                        60, 60,
@@ -337,7 +335,7 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
             d->model->modelLoaded           &&
             d->detectorModel                &&
             d->detectorModel->modelLoaded
-        )
+           )
         {
             QMutexLocker detectorLock(&d->detectorModel->mutex);
 
@@ -398,7 +396,7 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
     }
 
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Finish computing face embedding in "
-                                << timer.elapsed() << " ms";
+                                     << timer.elapsed() << " ms";
 
     return normalized_descriptors;
 }

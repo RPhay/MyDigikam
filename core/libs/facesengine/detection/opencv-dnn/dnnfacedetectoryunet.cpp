@@ -114,6 +114,7 @@ bool DNNFaceDetectorYuNet::loadModels()
     else
     {
         qCWarning(DIGIKAM_FACEDB_LOG) << "Face detection model: YuNet not loaded";
+
         return false;
     }
 
@@ -157,17 +158,18 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
         {
             // ...
         }
+
         catch (const std::string& ex)
         {
             // ...
         }
+
         catch (...)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "Face detection encountered a critical error. Reloading model...";
             loadModels();
         }
     }
-
     else
     {
         qCWarning(DIGIKAM_FACEDB_LOG) << "Face detection model: YuNet not loaded. Processed 0 images.";
@@ -215,17 +217,18 @@ cv::UMat DNNFaceDetectorYuNet::callModel(const cv::UMat& inputImage)
         {
             // ...
         }
+
         catch (const std::string& ex)
         {
             // ...
         }
+
         catch (...)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "Face detection encountered a critical error. Reloading model...";
             loadModels();
         }
     }
-
     else
     {
         qCWarning(DIGIKAM_FACEDB_LOG) << "Face detection model: YuNet not loaded. Processed 0 images.";
@@ -288,11 +291,10 @@ void DNNFaceDetectorYuNet::setFaceDetectionSize(FaceScanSettings::FaceDetectionS
     try
     {
         inputImageSize = cv::Size(
-                             faceenum2size.at(faceSize),
-                             faceenum2size.at(faceSize)
-                         );
+                                  faceenum2size.at(faceSize),
+                                  faceenum2size.at(faceSize)
+                                 );
     }
-
     catch (const std::exception& e)
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet face size error:" << e.what() << '\n';

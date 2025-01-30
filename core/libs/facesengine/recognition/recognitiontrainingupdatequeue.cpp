@@ -50,6 +50,7 @@ QString RecognitionTrainingUpdateQueue::pop_front()
 {
     QString result(queue.front());
     queue.pop_front();
+
     return result;
 }
 

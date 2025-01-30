@@ -17,8 +17,6 @@
 
 #include "facedb_p.h"
 
-// Local includes
-
 namespace Digikam
 {
 
@@ -90,7 +88,6 @@ cv::Ptr<cv::ml::TrainData> FaceDb::trainData() const
     {
         return nullptr;
     }
-
     else
     {
         return cv::ml::TrainData::create(feature, cv::ml::ROW_SAMPLE, label);
@@ -114,7 +111,7 @@ void FaceDb::clearDNNTraining(const QList<int>& identities)
 void FaceDb::getTrainingVersionInfo(QString& version, QString& model) const
 {
     version = setting(QStringLiteral("TrainingVersion"));
-    model = setting(QStringLiteral("ExtractorModel"));
+    model   = setting(QStringLiteral("ExtractorModel"));
 }
 
 void FaceDb::setTrainingVersionInfo(const QString& version, const QString& model)

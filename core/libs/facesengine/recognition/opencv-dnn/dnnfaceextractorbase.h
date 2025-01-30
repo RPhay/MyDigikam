@@ -45,12 +45,12 @@ public:
 public:
 
     /**
-     * Read pretrained neural network for face recognition.
+     * @brief Read pretrained neural network for face recognition.
      */
     virtual bool loadModels()                                                       = 0;
 
     /**
-     * cover the UI threshold to a float using the conversion
+     * @brief Cover the UI threshold to a float using the conversion
      * factor built into the model
      */
     virtual float getThreshold(int uiThreshold = DNN_MODEL_THRESHOLD_NOT_SET) const = 0;
@@ -62,14 +62,14 @@ public:
     virtual cv::Mat getFaceEmbedding(const cv::UMat& faceImage)                     = 0;
 
     /**
-     * Calculate different between 2 vectors.
+     * @brief Calculate different between 2 vectors.
      */
     static double cosineDistance(const std::vector<float>& v1, const std::vector<float>& v2);
     static double L2squareDistance(const std::vector<float>& v1, const std::vector<float>& v2);
     static double L2squareNormDistance(const std::vector<float>& v1, const std::vector<float>& v2);
 
     /**
-     * Convert face embedding between different formats.
+     * @brief Convert face embedding between different formats.
      */
     static cv::Mat              vectortomat(const std::vector<float>& vector);
     static QJsonArray           encodeVector(const std::vector<float>& vector);

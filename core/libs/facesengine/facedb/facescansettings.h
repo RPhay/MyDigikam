@@ -42,8 +42,8 @@ public:
         RecognizeMarkedFaces,   ///< Recognize already marked faces only.
         RetrainAll,             ///< Retrain faces only.
         Reset
-        // BenchmarkDetection,     ///< Bench performances of detect faces.
-        // BenchmarkRecognition    ///< Bench performance of recognize faces.
+    //  BenchmarkDetection,     ///< Bench performances of detect faces.
+    //  BenchmarkRecognition    ///< Bench performance of recognize faces.
     };
     Q_ENUM(ScanTask)
 
@@ -53,7 +53,7 @@ public:
     enum AlreadyScannedHandling
     {
         Skip,                   ///< Skip faces from images already scanned.
-     // Merge,                  ///< Merge faces from images already scanned.
+    //  Merge,                  ///< Merge faces from images already scanned.
         Rescan,                 ///< Rescan faces from images already scanned.
         ClearAll,               ///< Clear all faces data from images already scanned. Clear identities and training data from FacesDb
         RecognizeOnly           ///< Recognize faces from images already scanned.

@@ -86,7 +86,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
     int type               = (inputImage.sixteenBit() ? CV_16UC4 : CV_8UC4);
     cv::Mat cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
 
-    // DImg is always 4 channel.  convert to 3 channel RGB
+    // DImg is always 4 channel. Convert to 3 channel RGB
 
     cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2RGB);
 
@@ -101,7 +101,6 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
     {
         return prepareForDetectionYuNet(cvImage, paddedSize);
     }
-
     else
     {
         return prepareForDetection(cvImage, paddedSize);
@@ -282,25 +281,25 @@ QList<QRect> OpenCVDNNFaceDetector::detectFaces(const cv::Mat& inputImage,
 
     QList<QRect> results;
 
-    /*
-        cv::Mat imageTest = inputImage.clone();
-    */
+/*
+    cv::Mat imageTest = inputImage.clone();
+*/
     for (const cv::Rect& bbox : detectedBboxes)
     {
         QRect rect(bbox.x, bbox.y, bbox.width, bbox.height);
         results << rect;
-        /*
-                qCDebug(DIGIKAM_FACESENGINE_LOG) << rect;
-                cv::rectangle(imageTest, cv::Rect(bbox.x + paddedSize.width,
-                                                  bbox.y + paddedSize.height,
-                                                  bbox.width, bbox.height), cv::Scalar(0, 128, 0));
-        */
+/*
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << rect;
+        cv::rectangle(imageTest, cv::Rect(bbox.x + paddedSize.width,
+                                          bbox.y + paddedSize.height,
+                                          bbox.width, bbox.height), cv::Scalar(0, 128, 0));
+*/
     }
 
-    /*
-        cv::imshow("image", imageTest);
-        cv::waitKey(0);
-    */
+/*
+    cv::imshow("image", imageTest);
+    cv::waitKey(0);
+*/
     return results;
 }
 

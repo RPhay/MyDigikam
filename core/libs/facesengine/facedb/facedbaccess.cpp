@@ -77,7 +77,7 @@ public:
 
     explicit FaceDbAccessMutexLocker(FaceDbAccessStaticPriv* const dd)
         : QMutexLocker(&dd->lock.mutex),
-          d(dd)
+          d           (dd)
     {
         d->lock.lockCount++;
     }

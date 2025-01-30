@@ -37,9 +37,9 @@ float DNNFaceDetectorBase::nmsThreshold           = 0.4F;
 DNNFaceDetectorBase::DNNFaceDetectorBase(float scale,
                                          const cv::Scalar& val,
                                          const cv::Size& inputImgSize)
-    : scaleFactor(scale),
+    : scaleFactor      (scale),
       meanValToSubtract(val),
-      inputImageSize(inputImgSize)
+      inputImageSize   (inputImgSize)
 {
 }
 
@@ -85,9 +85,9 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
     if (
         (left   >= (int)cv::min(borderLeft * 0.9,                       borderLeft   - 0.1 * width))      &&
         (right  <= (int)cv::max(borderRight  + 0.1 * paddedSize.width,  borderRight  + 0.1 * width))      &&
-        (top    >= (int)cv::min(borderTop * 0.9,                        borderTop    - 0.1 * height))     &&
+        (top    >= (int)cv::min(borderTop  * 0.9,                       borderTop    - 0.1 * height))     &&
         (bottom <= (int)cv::max(borderBottom + 0.1 * paddedSize.height, borderBottom + 0.1 * height))
-    )
+       )
     {
         goodBoxes.push_back(bbox);
         goodConfidences.push_back(confidence);
@@ -97,13 +97,13 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
     }
 
     else if (
-        (right  >  left)                           &&
-        (right  >= (borderLeft   + 0.75 * width))    &&
-        (left   <= (borderRight  - 0.75 * width))    &&
-        (bottom >  top)                            &&
-        (bottom >= (borderRight  + 0.75 * height))   &&
-        (top    <= (borderBottom - 0.75 * height))
-    )
+             (right  >  left)                             &&
+             (right  >= (borderLeft   + 0.75 * width))    &&
+             (left   <= (borderRight  - 0.75 * width))    &&
+             (bottom >  top)                              &&
+             (bottom >= (borderRight  + 0.75 * height))   &&
+             (top    <= (borderBottom - 0.75 * height))
+            )
     {
         doubtBoxes.push_back(bbox);
         doubtConfidences.push_back(confidence);

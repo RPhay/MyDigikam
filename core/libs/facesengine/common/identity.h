@@ -37,10 +37,12 @@ public:
      * An identity refers to a natural person.
      * There is an internal id which is used the FacesEngine storage,
      * and a number of attributes which map the identity to the outside.
+     *
      * Prespecified attributes:
+     *
      * "fullName"   The full name as on the ID card, e.g. "Peter Brown"
      * "name"       The person's name without further specification, e.g. "Peter" or "Dad"
-     * "uuid"        A UUID that is assigned to each new identity at creation.
+     * "uuid"       A UUID that is assigned to each new identity at creation.
      *
      * For fullName and name, multiple values are allowed.
      *

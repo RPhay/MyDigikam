@@ -85,6 +85,8 @@ public:
 
 Q_GLOBAL_STATIC(FaceClassifierCreator, faceClassifierCreator)
 
+// -----------------------------------------------------------
+
 FaceClassifier::FaceClassifier()
     : FaceClassifierBase()
 {
@@ -130,7 +132,7 @@ void FaceClassifier::setParameters(const FaceScanSettings& parameters)
 
     // set the threshold for the model in case we can't get it from the model
 
-    threshold         = 0.5;
+    threshold         = 0.5F;
 
     try
     {
@@ -325,7 +327,6 @@ bool FaceClassifier::loadTrainingData()
         d->knnClassifier    = knn;
         d->svmClassifier    = svm;
         d->identityFeatures = identityFeatures;
-
         d->ready            = true;
 
         d->trainingLock.unlock();
@@ -384,7 +385,7 @@ int FaceClassifier::predict(const cv::UMat& target) const
     return predict(matTarget);
 }
 
-int FaceClassifier::predictFullSearch(const cv::Mat& target)    const
+int FaceClassifier::predictFullSearch(const cv::Mat& target)const
 {
     QElapsedTimer timer;
     timer.start();
@@ -397,7 +398,7 @@ int FaceClassifier::predictFullSearch(const cv::Mat& target)    const
     return label;
 }
 
-int FaceClassifier::predictClassifier(const cv::Mat& target)    const
+int FaceClassifier::predictClassifier(const cv::Mat& target) const
 {
     int     label                      = -1;
     int     badLabel1                  = -1;
@@ -465,7 +466,7 @@ int FaceClassifier::predictClassifier(const cv::Mat& target)    const
     {
         // find the absolute nearest neighbor
 
-        float distance = 10000.0;
+        float distance = 10000.0F;
 
         for (int i = 0 ; i < knn_neighbors.cols ; ++i)
         {
@@ -576,7 +577,7 @@ int FaceClassifier::listSearch(const cv::Mat& target, const QMap<int, QList<cv::
 
         for (const cv::Mat& feature : std::as_const(value))
         {
-            float distance = 10000.0;
+            float distance = 10000.0F;
 
             // TODO: add a feature compare for OpenFace if we decide to keep it
 
@@ -604,7 +605,7 @@ bool FaceClassifier::featureSFaceCompare(const cv::Mat& target, const cv::Mat& s
     // norm_l1 is almost always < 1 for a good match. We add .1 of d->recognizeThreshold for extra verification
     // to avoid false negatives.
 
-    float l1Threshold = 1.0 + (threshold / 10.0);
+    float l1Threshold      = 1.0F + (threshold / 10.0F);
 
     // NOTE: both cosine distance and l1 distance can help to avoid errors with similarity prediction.
 

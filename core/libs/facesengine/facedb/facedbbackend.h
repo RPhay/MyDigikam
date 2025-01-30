@@ -34,7 +34,7 @@ public:
 
     explicit FaceDbBackend(DbEngineLocking* const locking,
                            const QString& backendName = QLatin1String("faceDatabase-"));
-    ~FaceDbBackend() override;
+    ~FaceDbBackend() override = default;
 
     /**
      * @brief Initialize the database schema to the current version,

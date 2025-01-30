@@ -28,10 +28,6 @@ FaceDbBackend::FaceDbBackend(DbEngineLocking* const locking, const QString& back
 {
 }
 
-FaceDbBackend::~FaceDbBackend()
-{
-}
-
 bool FaceDbBackend::initSchema(FaceDbSchemaUpdater* const updater)
 {
     Q_D(BdEngineBackend);
