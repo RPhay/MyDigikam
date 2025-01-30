@@ -202,7 +202,7 @@ void DigikamApp::checkFaceTrainingVersion()
             settings.wholeAlbums            = true;
             settings.useFullCpu             = true;
             settings.albums                 = AlbumManager::instance()->allPAlbums();
-            settings.detectModel            = ApplicationSettings::instance()->getFaceDetectionModel();
+            settings.detectModel            = FaceScanSettings::FaceDetectionModel::YuNet;
             settings.detectSize             = ApplicationSettings::instance()->getFaceDetectionSize();
             settings.detectAccuracy         = ApplicationSettings::instance()->getFaceDetectionAccuracy();
             settings.recognizeModel         = FaceScanSettings::FaceRecognitionModel::SFace;

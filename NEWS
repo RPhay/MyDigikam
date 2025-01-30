@@ -134,7 +134,7 @@ BUGFIXES:
 085 ==> 498663 - digiKam exits with error message after a few seconds.
 086 ==> 463760 - Names are not clickable.
 087 ==> 499156 - YOLOv11 let digiKam crash.
-088 ==>
+088 ==> 499305 - Check at startup if FaceDB needs retrained box crash digikam if apply
 089 ==>
 090 ==>
 091 ==>
