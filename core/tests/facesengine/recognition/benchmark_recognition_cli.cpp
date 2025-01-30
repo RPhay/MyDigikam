@@ -58,7 +58,7 @@ public:
 public:
 
     QCommandLineParser* m_parser    = nullptr;
-    float               m_error     = -1.0;
+    float               m_error     = -1.0F;
     int                 m_trainSize = 0;
     int                 m_testSize  = 0;
 
@@ -89,8 +89,9 @@ private:
 
 // --------------------------------------------------------
 
-// NOTE: dnn face detector can be parallelized but it takes longer than a single thread.
-
+/**
+ * @note DBB face detector can be parallelized but it takes longer than a single thread.
+ */
 class ParallelDetector: public cv::ParallelLoopBody
 {
 public:
@@ -99,8 +100,8 @@ public:
                      const QList<QImage*>& images,
                      QVector<QList<QRectF> >& rects)
         : m_detector(detector),
-          m_images(images),
-          m_rects(rects)
+          m_images  (images),
+          m_rects   (rects)
     {
         m_rects.resize(images.size());
     }
@@ -160,18 +161,18 @@ void Benchmark::registerTrainingSet()
 
     QElapsedTimer timer;
     timer.start();
-    /*
-        QMap<QString, QString> attributes;
-        attributes[QLatin1String("fullName")] = m_trainSet.begin().key();
+/*
+    QMap<QString, QString> attributes;
+    attributes[QLatin1String("fullName")] = m_trainSet.begin().key();
 
-        Identity newIdentity = m_recognizer->addIdentity(attributes);
+    Identity newIdentity = m_recognizer->addIdentity(attributes);
 
-        qCDebug(DIGIKAM_TESTS_LOG) << "add new identity to database" << newIdentity.id();
+    qCDebug(DIGIKAM_TESTS_LOG) << "add new identity to database" << newIdentity.id();
 
-        m_recognizer->train(newIdentity, m_trainSet.begin().value(), QLatin1String("train face classifier"));
+    m_recognizer->train(newIdentity, m_trainSet.begin().value(), QLatin1String("train face classifier"));
 
-        m_trainSize += m_trainSet.begin().value().size();
-    */
+    m_trainSize += m_trainSet.begin().value().size();
+*/
 
     for (QHash<QString, QList<QImage*> >::iterator iter  = m_trainSet.begin();
          iter != m_trainSet.end();
@@ -217,17 +218,17 @@ void Benchmark::verifyTestSet()
     QElapsedTimer timer;
     timer.start();
 
-    for (QHash<QString, QList<QImage*> >::iterator iter  = m_testSet.begin();
-         iter != m_testSet.end();
+    for (QHash<QString, QList<QImage*> >::iterator iter  = m_testSet.begin() ;
+         iter != m_testSet.end() ;
          ++iter)
     {
         QList<Identity> predictions = m_recognizer->recognizeFaces(iter.value());
 
         for (int i = 0 ; i < predictions.size() ; ++i)
         {
-            /*
-                        Identity prediction = m_recognizer->identity(ids[i]);
-            */
+/*
+            Identity prediction = m_recognizer->identity(ids[i]);
+*/
             if (predictions[i].isNull())
             {
                 if (m_trainSet.contains(iter.key()))
@@ -305,7 +306,6 @@ QList<QImage*> Benchmark::detect(const QList<QImage*>& images) const
         {
             croppedFaces << nullptr;
         }
-
         else
         {
             QRect rect                = FaceDetector::toAbsoluteRect(faces[i][0], images[i]->size());
@@ -350,9 +350,9 @@ bool Benchmark::preprocess(QImage* faceImg, cv::Mat& face) const
         {
             croppedFace = croppedFace.convertToFormat(QImage::Format_RGB888);
             face        = cv::Mat(croppedFace.height(), croppedFace.width(), CV_8UC3, croppedFace.scanLine(0), croppedFace.bytesPerLine());
-            /*
-                        cvtColor(cvImageWrapper, cvImage, CV_RGB2GRAY);
-            */
+/*
+            cvtColor(cvImageWrapper, cvImage, CV_RGB2GRAY);
+*/
             break;
         }
     }
@@ -394,47 +394,47 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
             std::swap(*(it++), *(it1));
         }
 
-        /*
-                QString faceDir = QLatin1String("./cropped_face/");
-        */
-        /*
-                QList<QImage*> images;
+/*
+        QString faceDir = QLatin1String("./cropped_face/");
+*/
+/*
+        QList<QImage*> images;
 
-                for (int i = 0 ; i < filesInfo.size() ; ++i)
+        for (int i = 0 ; i < filesInfo.size() ; ++i)
+        {
+            images << new QImage(filesInfo[i].absoluteFilePath());
+        }
+
+        QList<QImage*> croppedFaces = detect(images);
+
+        // split train/test.
+
+        for (int i = 0 ; i < croppedFaces.size() ; ++i)
+        {
+            if (croppedFaces[i])
+            {
+                croppedFaces[i]->save(faceDir + label + QLatin1String("_") +
+                                      QString::number(i) + QLatin1String(".png"), "PNG");
+            }
+
+            if (i < (filesInfo.size() * splitRatio))
+            {
+                if (croppedFaces[i] && !croppedFaces[i]->isNull())
                 {
-                    images << new QImage(filesInfo[i].absoluteFilePath());
+                    m_trainSet[label].append(croppedFaces[i]);
+                    ++nbData;
                 }
-
-                QList<QImage*> croppedFaces = detect(images);
-
-                // split train/test.
-
-                for (int i = 0 ; i < croppedFaces.size() ; ++i)
+            }
+            else
+            {
+                if (croppedFaces[i] && !croppedFaces[i]->isNull())
                 {
-                    if (croppedFaces[i])
-                    {
-                        croppedFaces[i]->save(faceDir + label + QLatin1String("_") +
-                                              QString::number(i) + QLatin1String(".png"), "PNG");
-                    }
-
-                    if (i < (filesInfo.size() * splitRatio))
-                    {
-                        if (croppedFaces[i] && !croppedFaces[i]->isNull())
-                        {
-                            m_trainSet[label].append(croppedFaces[i]);
-                            ++nbData;
-                        }
-                    }
-                    else
-                    {
-                        if (croppedFaces[i] && !croppedFaces[i]->isNull())
-                        {
-                            m_testSet[label].append(croppedFaces[i]);
-                            ++nbData;
-                        }
-                    }
+                    m_testSet[label].append(croppedFaces[i]);
+                    ++nbData;
                 }
-        */
+            }
+        }
+*/
         for (int j = 0 ; j < filesInfo.size() ; ++j)
         {
             QImage img(filesInfo[j].absoluteFilePath());
@@ -445,9 +445,9 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
 
             if (croppedFace)
             {
-                /*
-                                croppedFace->save(faceDir + label + QLatin1String("_") + QString::number(i) + QLatin1String(".png"), "PNG");
-                */
+/*
+                croppedFace->save(faceDir + label + QLatin1String("_") + QString::number(i) + QLatin1String(".png"), "PNG");
+*/
             }
 
             if (j < (filesInfo.size() * splitRatio))
@@ -458,7 +458,6 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
                     ++nbData;
                 }
             }
-
             else
             {
                 if (croppedFace && !croppedFace->isNull())
@@ -523,19 +522,19 @@ void Benchmark::saveData()
             if (! img->isNull())
             {
                 cv::Mat face;
-                /*
-                                if (preprocess(img, face))
-                                {
+/*
+                if (preprocess(img, face))
+                {
 
-                                    Identity newIdentity = m_recognizer->newIdentity(face);
+                    Identity newIdentity = m_recognizer->newIdentity(face);
 
-                                    QJsonObject identityJson;
-                                    identityJson[QLatin1String("id")] = i;
-                                    identityJson[QLatin1String("faceembedding")] = QJsonDocument::fromJson(newIdentity.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
+                    QJsonObject identityJson;
+                    identityJson[QLatin1String("id")] = i;
+                    identityJson[QLatin1String("faceembedding")] = QJsonDocument::fromJson(newIdentity.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
 
-                                    faceEmbeddingArray.append(identityJson);
-                                }
-                */
+                    faceEmbeddingArray.append(identityJson);
+                }
+*/
             }
         }
     }
@@ -582,9 +581,9 @@ void Benchmark::testWriteDb()
     {
         QJsonObject object               = data[i].toObject();
         std::vector<float> faceEmbedding = DNNFaceExtractorBase::decodeVector(object[QLatin1String("faceembedding")].toArray());
-        /*
-                m_recognizer->insertData(DNNFaceExtractor::vectortomat(faceEmbedding), object[QLatin1String("id")].toInt());
-        */
+/*
+        m_recognizer->insertData(DNNFaceExtractor::vectortomat(faceEmbedding), object[QLatin1String("id")].toInt());
+*/
     }
 
     qCDebug(DIGIKAM_TESTS_LOG) << "write face embedding to spatial database with average"
@@ -621,15 +620,15 @@ void Benchmark::verifyKNearestDb()
         int label                        = object[QLatin1String("id")].toInt();
 
         QMap<double, QVector<int> > closestNeighbors
-        /*
-                    = m_recognizer->getClosestNodes(DNNFaceExtractor::vectortomat(faceEmbedding), 1.0, 5)
-        */
+/*
+            = m_recognizer->getClosestNodes(DNNFaceExtractor::vectortomat(faceEmbedding), 1.0, 5)
+*/
         ;
 
         QMap<int, QVector<double> > votingGroups;
 
-        for (QMap<double, QVector<int> >::const_iterator iter  = closestNeighbors.cbegin();
-             iter != closestNeighbors.cend();
+        for (QMap<double, QVector<int> >::const_iterator iter  = closestNeighbors.cbegin() ;
+             iter != closestNeighbors.cend() ;
              ++iter)
         {
             for (int j = 0 ; j < iter.value().size() ; ++j)
@@ -641,8 +640,8 @@ void Benchmark::verifyKNearestDb()
         double maxScore = 0;
         int prediction  = -1;
 
-        for (QMap<int, QVector<double> >::const_iterator group  = votingGroups.cbegin();
-             group != votingGroups.cend();
+        for (QMap<int, QVector<double> >::const_iterator group  = votingGroups.cbegin() ;
+             group != votingGroups.cend() ;
              ++group)
         {
             double score = 0;
@@ -679,7 +678,7 @@ QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
     QCommandLineParser* const parser = new QCommandLineParser();
     parser->addOption(QCommandLineOption(QLatin1String("dataset"), QLatin1String("Data set folder"), QLatin1String("path relative to data folder")));
-    parser->addOption(QCommandLineOption(QLatin1String("split"), QLatin1String("Split ratio"), QLatin1String("split ratio of training data")));
+    parser->addOption(QCommandLineOption(QLatin1String("split"),   QLatin1String("Split ratio"),     QLatin1String("split ratio of training data")));
     parser->addHelpOption();
     parser->process(app);
 
@@ -694,11 +693,11 @@ int main(int argc, char** argv)
 
     Benchmark benchmark;
     benchmark.m_parser = parseOptions(app);
-    /*
-        benchmark.saveData();
-        benchmark.testWriteDb();
-        benchmark.verifyKNearestDb();
-    */
+/*
+    benchmark.saveData();
+    benchmark.testWriteDb();
+    benchmark.verifyKNearestDb();
+*/
     benchmark.fetchData();
     benchmark.registerTrainingSet();
     benchmark.verifyTestSet();
