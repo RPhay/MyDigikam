@@ -64,8 +64,8 @@ FaceTrainingUpgradeDlg::FaceTrainingUpgradeDlg(QWidget* const parent)
     QString messageString = i18nc("@info",
                                   "Your face recognition database is outdated and requires retraining. "
                                   "This process might take anywhere from a few seconds to several minutes. "
-                                  "Facial recognition will not be reliable until retraining is finished."
-                                  "Retraining will run in the backaground and you can continue to use digiKam. "
+                                  "Facial recognition will not be reliable until retraining is finished. "
+                                  "Retraining will run in the background and you can continue to use digiKam. "
                                   "\n\nDo you want to retrain your database now?");
 
     d->page             = new QWidget(this);
