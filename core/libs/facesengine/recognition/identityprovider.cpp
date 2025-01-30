@@ -139,6 +139,8 @@ IdentityProvider::~IdentityProvider()
             QThread::msleep(10);
         }
 
+        delete d->removeThreadPool;
+
         delete d;
         d = nullptr;
     }
