@@ -567,12 +567,12 @@ void Benchmark::testWriteDb()
         return;
     }
 
-    QByteArray saveData = dataFile.readAll();
+    QByteArray sdata = dataFile.readAll();
     dataFile.close();
 
-    QJsonDocument loadDoc(QJsonDocument::fromJson(saveData));
+    QJsonDocument loadDoc(QJsonDocument::fromJson(sdata));
 
-    QJsonArray data     = loadDoc.array();
+    QJsonArray data  = loadDoc.array();
 
     QElapsedTimer timer;
     timer.start();
@@ -602,13 +602,13 @@ void Benchmark::verifyKNearestDb()
         return;
     }
 
-    QByteArray saveData = dataFile.readAll();
+    QByteArray sdata = dataFile.readAll();
     dataFile.close();
 
-    QJsonDocument loadDoc(QJsonDocument::fromJson(saveData));
+    QJsonDocument loadDoc(QJsonDocument::fromJson(sdata));
 
-    QJsonArray data = loadDoc.array();
-    int nbCorrect   = 0;
+    QJsonArray data  = loadDoc.array();
+    int nbCorrect    = 0;
 
     QElapsedTimer timer;
     timer.start();
