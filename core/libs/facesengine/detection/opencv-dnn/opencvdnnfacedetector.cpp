@@ -38,18 +38,6 @@ OpenCVDNNFaceDetector::OpenCVDNNFaceDetector(DetectorNNModel model)
 {
     switch (m_modelType)
     {
-        case DetectorNNModel::DNNDetectorSSD:
-        {
-            // m_inferenceEngine = new DNNFaceDetectorSSD;
-            break;
-        }
-
-        case DetectorNNModel::DNNDetectorYOLOv3:
-        {
-            // m_inferenceEngine = new DNNFaceDetectorYOLO;
-            break;
-        }
-
         case DetectorNNModel::DNNDetectorYuNet:
         {
             m_inferenceEngine = new DNNFaceDetectorYuNet;
