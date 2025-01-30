@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-29 01:53+0000\n"
+"POT-Creation-Date: 2025-01-30 01:53+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1396,7 +1396,7 @@ msgstr "กำลังอ่านฐานข้อมูล"
 msgid "Loading albums..."
 msgstr "กำลังวิเคราะห์อัลบั้มทั้งหมด"
 
-#: core/app/main/digikamapp.cpp:367
+#: core/app/main/digikamapp.cpp:369
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1407,7 +1407,7 @@ msgstr ""
 "ให้เลือกที่ปุ่ม \"ใช่\" หากไม่ต้องการ ให้เลือกที่ปุ่ม \"ไม่ใช่\" ในกรณีนี้ คุณสมบัติ \"การจัดการระบบสี"
 "\" จะถูกปิดการทำงาน จนกว่าคุณจะแก้ปัญหานี้ให้เรียบร้อยเสียก่อน</p>"
 
-#: core/app/main/digikamapp.cpp:423
+#: core/app/main/digikamapp.cpp:425
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1416,25 +1416,25 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:709 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:711 core/app/views/stack/trashview.cpp:509
 #, fuzzy, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/app/main/digikamapp.cpp:715
+#: core/app/main/digikamapp.cpp:717
 #, fuzzy, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/app/main/digikamapp.cpp:720
+#: core/app/main/digikamapp.cpp:722
 #, fuzzy, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/app/main/digikamapp.cpp:731
+#: core/app/main/digikamapp.cpp:733
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1442,7 +1442,7 @@ msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "เลือกไว้ %2/%1 รายการ"
 
-#: core/app/main/digikamapp.cpp:744
+#: core/app/main/digikamapp.cpp:746
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1450,13 +1450,13 @@ msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "เลือกไว้ %2/%1 รายการ"
 
-#: core/app/main/digikamapp.cpp:752
+#: core/app/main/digikamapp.cpp:754
 #, fuzzy, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/app/main/digikamapp.cpp:760
+#: core/app/main/digikamapp.cpp:762
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1464,29 +1464,29 @@ msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "เลือกไว้ %2/%1 รายการ"
 
-#: core/app/main/digikamapp.cpp:769
+#: core/app/main/digikamapp.cpp:771
 #, fuzzy, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/app/main/digikamapp.cpp:800
+#: core/app/main/digikamapp.cpp:802
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (ภาพที่ %1 จาก %2 ภาพ)"
 
-#: core/app/main/digikamapp.cpp:814
+#: core/app/main/digikamapp.cpp:816
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr " (ภาพที่ %1 จาก %2 ภาพ)"
 
-#: core/app/main/digikamapp.cpp:818
+#: core/app/main/digikamapp.cpp:820
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:829
+#: core/app/main/digikamapp.cpp:831
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1494,7 +1494,7 @@ msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 รายการ"
 
-#: core/app/main/digikamapp.cpp:881
+#: core/app/main/digikamapp.cpp:883
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -1502,7 +1502,7 @@ msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "เขียนข้อมูลกำกับไปยังภาพต่าง ๆ ที่เลือกไว้"
 
-#: core/app/main/digikamapp.cpp:883
+#: core/app/main/digikamapp.cpp:885
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Image"
 #| msgid_plural "Reread Metadata From Selected Images"
@@ -2664,14 +2664,14 @@ msgstr "อุปกรณ์ที่ระบุ (\"%1\") ไม่ถูก�
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "ยังไม่รองรับกล้องที่ระบุ (\"%1\")"
 
-#: core/app/main/digikamapp_tools.cpp:29
+#: core/app/main/digikamapp_tools.cpp:31
 #, fuzzy, kde-format
 #| msgid "Main Toolbar"
 msgctxt "@title Main Tools"
 msgid "Main Tools"
 msgstr "แถบเครื่องมือหลัก"
 
-#: core/app/main/digikamapp_tools.cpp:38
+#: core/app/main/digikamapp_tools.cpp:40
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2641
 #, fuzzy, kde-format
 #| msgid "Post Processing"
@@ -2679,7 +2679,7 @@ msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "กำลังประมวลผลหลังการกระทำ"
 
-#: core/app/main/digikamapp_tools.cpp:58
+#: core/app/main/digikamapp_tools.cpp:60
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2670
 #, fuzzy, kde-format
 #| msgid "Export"
@@ -2687,7 +2687,7 @@ msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "ส่งออก"
 
-#: core/app/main/digikamapp_tools.cpp:69
+#: core/app/main/digikamapp_tools.cpp:71
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2681
 #, fuzzy, kde-format
 #| msgid "Import"
@@ -11351,7 +11351,7 @@ msgstr "พลิกด้านแนวนอน"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
 #: core/utilities/searchwindow/searchutilities.cpp:643
@@ -29174,7 +29174,7 @@ msgstr ""
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Cancel"
@@ -34875,7 +34875,7 @@ msgstr "ลวดลายไม้ปาเกต์"
 msgid "Deletion Time"
 msgstr "เวลาที่สร้าง"
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:125
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:127
 #, fuzzy, kde-format
 #| msgid ""
 #| "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -34890,7 +34890,7 @@ msgstr ""
 "ทำให้ไม่สามารถตรวจความถูกต้องของรุ่นของชุดรูปแบบฐานข้อมูลปัจจุบันได้ "
 "โปรดลองเริ่มการทำงานด้วยฐานข้อมูลเปล่าดู"
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:159
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:161
 #, fuzzy, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -34903,7 +34903,7 @@ msgstr ""
 "(ซึ่งหมายความว่าดิจิแคมรุ่นนี้เก่าเกินไปนั่นเอง หรือเป็นไปได้ว่า รูปแบบของฐานข้อมูลนั้นใหม่เกินไป) "
 "โปรดใช้ดิจิแคมรุ่นที่ใหม่มากกว่ารุ่นที่คุณกำลังใช้อยู่นี้"
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:192
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:194
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to create tables in database.\n"
@@ -35411,7 +35411,7 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:86
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:134
 #, fuzzy, kde-format
 #| msgid "Search in:"
 msgctxt "@title:tab"
@@ -39580,7 +39580,7 @@ msgstr "ค้นหาใน:"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -39718,7 +39718,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -39735,7 +39735,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
@@ -52970,49 +52970,32 @@ msgstr "สร้างป้ายกำกับจากสมุดที่
 msgid "No address book entries found"
 msgstr "ไม่พบรายการใด ๆ ในสมุดที่อยู่"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:63
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:62
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgctxt "@title:window"
-msgid "Facial Recognition Model"
+msgid "Facial Recognition Database"
 msgstr "ปลายทาง:"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
-#, fuzzy, kde-format
-msgid "OpenFace"
-msgstr "เปิดโฟลเดอร์"
-
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
-#, fuzzy, kde-format
-msgid "SFace"
-msgstr "ไม่เลือกเลย"
-
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:87
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
-"You are about to change the face recognition model. This process can take "
-"several minutes or more depending on the size of your library and the speed "
-"of your computer. SFace is the preferred model. Do not use any facial "
-"detection or recognition features during the process.\n"
+"Your face recognition database is outdated and requires retraining. This "
+"process might take anywhere from a few seconds to several minutes. Facial "
+"recognition will not be reliable until retraining is finished.Retraining "
+"will run in the backaground and you can continue to use digiKam. \n"
 "\n"
-"Are you sure you want to continue?"
-msgid_plural ""
-"You are about to change the face recognition model to %1. This process can "
-"take several minutes or more depending on the size of your library and the "
-"speed of your computer. SFace is the preferred model. Do not use any facial "
-"detection or recognition features during the process.\n"
-"\n"
-"Are you sure you want to continue?"
-msgstr[0] ""
+"Do you want to retrain your database now?"
+msgstr ""
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:108
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:82
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:112
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:86
 #, fuzzy, kde-format
 #| msgid "Cancel"
 msgctxt "@action:button"
@@ -53119,7 +53102,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:94
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:93
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53128,7 +53111,7 @@ msgid ""
 "it can also recognize the people shown on your photos."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:101
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, fuzzy, kde-format
 #| msgid "Scan Image"
@@ -53136,7 +53119,7 @@ msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "สแกนภาพ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, fuzzy, kde-format
 #| msgid "Scan Image"
@@ -53144,7 +53127,7 @@ msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "สแกนภาพ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:104
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, fuzzy, kde-format
 #| msgid "Synchronize"
@@ -53152,7 +53135,7 @@ msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "ปรับเทียบข้อมูล"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:106
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53164,26 +53147,26 @@ msgid ""
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:112
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:111
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@info"
 msgid "Help"
 msgstr "&ช่วยเหลือ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:129
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:128
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "พอดีกับหน้าต่าง"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
 #, fuzzy, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "หมุนภาพ/พลิกภาพโดยอัตโนมัติ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53192,26 +53175,26 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:196
 #, fuzzy, kde-format
 #| msgid "File size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "ขนาดของแฟ้ม"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
 #, fuzzy, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "ตั้งค่าต่าง ๆ ของภาพ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
 #, fuzzy, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "ตั้งค่าต่าง ๆ ของภาพ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -53219,20 +53202,20 @@ msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "ปานกลาง"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "ภาพเป้าหมาย"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, fuzzy, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "ตั้งค่าต่าง ๆ ของภาพ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53251,18 +53234,18 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:226
 #, fuzzy, kde-format
 msgid "Face Detection Settings"
 msgstr "กลับค่าการเรียงลำดับ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
 #, fuzzy, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "หมุนภาพ/พลิกภาพโดยอัตโนมัติ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53272,7 +53255,7 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53281,7 +53264,7 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
 #, fuzzy, kde-format
 msgid "Face Recognition Settings"
 msgstr "กลับค่าการเรียงลำดับ"
@@ -62467,79 +62450,79 @@ msgstr "ภาพซ้ำ"
 msgid "Duplicate found: %1"
 msgstr "ภาพซ้ำ"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:215
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
 #, fuzzy, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "ค้นหาใน:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:219
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:221
 #, fuzzy, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "ค้นหาใน:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:226
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in image: %1"
 msgstr "ตรวจค้นหารูปภาพใหม่ ๆ"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:230
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:232
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in %1 images"
 msgstr "ตรวจค้นหารูปภาพใหม่ ๆ"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:235
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:237
 #, fuzzy, kde-format
 msgid "Updating faces database"
 msgstr "<b>กำลังทำการปรับปรุงฐานข้อมูลอัตลักษณ์ของภาพ โปรดรอสักครู่...</b>"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:284
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:366
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:258
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
 #, kde-format
 msgid "Error starting face detection."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:389
 #, fuzzy, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "ค้นหาใน:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:393
 #, fuzzy, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "ค้นหาใน:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:396
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:398
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "พบภาพใน %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:400
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:402
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "พบภาพใน %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, fuzzy, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "ค้นหาใน:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "Found %1 face."
 msgstr "ไม่ใช้แฟลช"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:444
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:446
 #, kde-format
 msgid "Found %1 faces."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:450
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:452
 #, fuzzy, kde-format
 msgid "Recognized: %1"
 msgstr "ขนาด:"
@@ -69017,6 +69000,14 @@ msgstr "รายการอัลบั้มต่าง ๆ"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "จัดเ&รียงรูปภาพ"
+
+#, fuzzy
+#~ msgid "OpenFace"
+#~ msgstr "เปิดโฟลเดอร์"
+
+#, fuzzy
+#~ msgid "SFace"
+#~ msgstr "ไม่เลือกเลย"
 
 #, fuzzy
 #~ msgid "Scanning from: %1\n"

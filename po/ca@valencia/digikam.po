@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-29 01:53+0000\n"
+"POT-Creation-Date: 2025-01-30 01:53+0000\n"
 "PO-Revision-Date: 2025-01-28 10:23+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1342,7 +1342,7 @@ msgstr "Neteja la base de dades…"
 msgid "Loading albums..."
 msgstr "S'estan carregant els àlbums…"
 
-#: core/app/main/digikamapp.cpp:367
+#: core/app/main/digikamapp.cpp:369
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1354,7 +1354,7 @@ msgstr ""
 "cas, la característica de «Gestió del color» quedarà desactivada fins que "
 "resoleu esta qüestió.</p>"
 
-#: core/app/main/digikamapp.cpp:423
+#: core/app/main/digikamapp.cpp:425
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1367,92 +1367,92 @@ msgstr ""
 "disponibilitat del fitxer executable d'ExifTool a la secció metadades.\n"
 "Missatge d'error: %1"
 
-#: core/app/main/digikamapp.cpp:709 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:711 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Cap element seleccionat (%1 element)"
 msgstr[1] "Cap element seleccionat (%1 elements)"
 
-#: core/app/main/digikamapp.cpp:715
+#: core/app/main/digikamapp.cpp:717
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Cap element seleccionat (%1 [%2] element)"
 msgstr[1] "Cap element seleccionat (%1 [%2] elements)"
 
-#: core/app/main/digikamapp.cpp:720
+#: core/app/main/digikamapp.cpp:722
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Cap element seleccionat (%1 element. Amb elements agrupats: %2)"
 msgstr[1] "Cap element seleccionat (%1 elements. Amb elements agrupats: %2)"
 
-#: core/app/main/digikamapp.cpp:731
+#: core/app/main/digikamapp.cpp:733
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 element seleccionat (%3/%4)"
 msgstr[1] "%1/%2 elements seleccionats (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:744
+#: core/app/main/digikamapp.cpp:746
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] element seleccionat (%4/%5)"
 msgstr[1] "%1/%2 [%3] elements seleccionats (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:752
+#: core/app/main/digikamapp.cpp:754
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "1/%2 element seleccionat. Total amb elements agrupats: %3"
 msgstr[1] "%1/%2 elements seleccionats. Total amb elements agrupats: %3"
 
-#: core/app/main/digikamapp.cpp:760
+#: core/app/main/digikamapp.cpp:762
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] element seleccionat (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] elements seleccionats (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:769
+#: core/app/main/digikamapp.cpp:771
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "%1/%2 element seleccionat. Amb elements agrupats: %3/%4"
 msgstr[1] "%1/%2 elements seleccionats. Amb elements agrupats: %3/%4"
 
-#: core/app/main/digikamapp.cpp:800
+#: core/app/main/digikamapp.cpp:802
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 de %2)"
 
-#: core/app/main/digikamapp.cpp:814
+#: core/app/main/digikamapp.cpp:816
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 de %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:818
+#: core/app/main/digikamapp.cpp:820
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 de %2. Total amb elements agrupats: %3)"
 
-#: core/app/main/digikamapp.cpp:829
+#: core/app/main/digikamapp.cpp:831
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 element ocult"
 msgstr[1] "%1 elements ocults"
 
-#: core/app/main/digikamapp.cpp:881
+#: core/app/main/digikamapp.cpp:883
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Escriu les metadades en el fitxer"
 msgstr[1] "Escriu les metadades en els fitxers seleccionats"
 
-#: core/app/main/digikamapp.cpp:883
+#: core/app/main/digikamapp.cpp:885
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2514,27 +2514,27 @@ msgstr "El dispositiu especificat («%1») no és vàlid."
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "La càmera especificada («%1») no està admesa."
 
-#: core/app/main/digikamapp_tools.cpp:29
+#: core/app/main/digikamapp_tools.cpp:31
 #, kde-format
 msgctxt "@title Main Tools"
 msgid "Main Tools"
 msgstr "Eines principals"
 
-#: core/app/main/digikamapp_tools.cpp:38
+#: core/app/main/digikamapp_tools.cpp:40
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2641
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Postprocessat"
 
-#: core/app/main/digikamapp_tools.cpp:58
+#: core/app/main/digikamapp_tools.cpp:60
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2670
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Exportació"
 
-#: core/app/main/digikamapp_tools.cpp:69
+#: core/app/main/digikamapp_tools.cpp:71
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2681
 #, kde-format
 msgctxt "@title Import Tools"
@@ -11466,7 +11466,7 @@ msgstr "Dos mapes - superior i inferior"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
 #: core/utilities/searchwindow/searchutilities.cpp:643
@@ -29180,7 +29180,7 @@ msgstr "Migra ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Cancel"
@@ -34954,7 +34954,7 @@ msgstr "Camí relatiu"
 msgid "Deletion Time"
 msgstr "Hora de la supressió"
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:125
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:127
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBFaceVersion\" setting does not exist. The "
@@ -34965,7 +34965,7 @@ msgstr ""
 "«DBFaceVersion» no existix. No es pot verificar la versió de l'esquema de la "
 "base de dades actual. Proveu d'iniciar amb una base de dades buida. "
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:159
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:161
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -34979,7 +34979,7 @@ msgstr ""
 "format de la base de dades és massa recent. Utilitzeu la versió més recent "
 "de digiKam que hàgeu utilitzat abans."
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:192
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:194
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -35493,7 +35493,7 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:86
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:134
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -39716,7 +39716,7 @@ msgstr "Exploreu objectes: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -39876,7 +39876,7 @@ msgstr ""
 "es detectaran els objectes, però es reconeixeran menys objectes.\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -39897,7 +39897,7 @@ msgstr ""
 "o treballar en segon pla, amb només un nucli."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -52207,61 +52207,33 @@ msgstr "Crea una etiqueta a partir de la llibreta d'adreces"
 msgid "No address book entries found"
 msgstr "No s'ha trobat cap entrada en la llibreta d'adreces"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:63
-#, kde-format
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Facial Recognition Model"
 msgctxt "@title:window"
-msgid "Facial Recognition Model"
+msgid "Facial Recognition Database"
 msgstr "Model de reconeixement facial"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
-#, kde-format
-msgid "OpenFace"
-msgstr "OpenFace"
-
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
-#, kde-format
-msgid "SFace"
-msgstr "SFace"
-
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:87
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
-"You are about to change the face recognition model. This process can take "
-"several minutes or more depending on the size of your library and the speed "
-"of your computer. SFace is the preferred model. Do not use any facial "
-"detection or recognition features during the process.\n"
+"Your face recognition database is outdated and requires retraining. This "
+"process might take anywhere from a few seconds to several minutes. Facial "
+"recognition will not be reliable until retraining is finished.Retraining "
+"will run in the backaground and you can continue to use digiKam. \n"
 "\n"
-"Are you sure you want to continue?"
-msgid_plural ""
-"You are about to change the face recognition model to %1. This process can "
-"take several minutes or more depending on the size of your library and the "
-"speed of your computer. SFace is the preferred model. Do not use any facial "
-"detection or recognition features during the process.\n"
-"\n"
-"Are you sure you want to continue?"
-msgstr[0] ""
-"Esteu a punt de canviar el model de reconeixement de cares. Este procés pot "
-"tardar diversos minuts o més depenent de la mida de la biblioteca i la "
-"velocitat de l'ordinador. El model preferit és SFace. No utilitzeu cap "
-"característica de detecció o reconeixement facial durant el procés.\n"
-"\n"
-"Segur que voleu continuar?"
-msgstr[1] ""
-"Esteu a punt de canviar el model de reconeixement de cares a %1. Este procés "
-"pot tardar diversos minuts o més depenent de la mida de la biblioteca i la "
-"velocitat de l'ordinador. El model preferit és SFace. No utilitzeu cap "
-"característica de detecció o reconeixement facial durant el procés.\n"
-"\n"
-"Segur que voleu continuar?"
+"Do you want to retrain your database now?"
+msgstr ""
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:108
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:82
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
 msgstr "Comença"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:112
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:86
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
@@ -52362,7 +52334,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Rebutja este suggeriment"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:94
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:93
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52374,28 +52346,28 @@ msgstr ""
 "Quan hàgeu identificat els vostres amics en algunes fotografies,\n"
 "es podrà reconéixer a les persones que es mostren a les fotografies."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:101
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Explora les imatges noves"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Explora totes les imatges"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:104
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Només reconeix les cares"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:106
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52414,25 +52386,25 @@ msgstr ""
 "intentarà fer coincidir les cares desconegudes amb les cares confirmades "
 "sense explorar cares noves de les imatges.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:112
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Ajuda"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:129
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:128
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Flux de treball"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Precisió:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52444,43 +52416,43 @@ msgstr ""
 "valor, amb més precisió\n"
 "es detectaran les cares, però es reconeixeran menys cares."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:196
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Mida de les cares:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Molt xicoteta"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Xicoteta"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Mitjana"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Gran"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Molt gran"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52512,18 +52484,18 @@ msgstr ""
 "precisió de detecció de 6-8 i una mida de cara <b>Mitjana</b> o <b>Gran</b> "
 "per a un ús normal.</p><p>Este paràmetre no s'aplica a YuNet.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:226
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Configureu la detecció de cares"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Precisió:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52538,7 +52510,7 @@ msgstr ""
 "Nota: només es reconeixeran les cares que siguen molt similars a les cares "
 "etiquetades amb anterioritat."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52550,7 +52522,7 @@ msgstr ""
 "Podeu triar si voleu emprar tots els nuclis del processador del sistema\n"
 "o treballar en segon pla, amb només un nucli."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Configureu el reconeixement de cares"
@@ -61553,74 +61525,74 @@ msgstr "Duplicats trobats: %1"
 msgid "Duplicate found: %1"
 msgstr "Duplicat trobat: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:215
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Exploració de cares en l'àlbum: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:219
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:221
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Exploració de cares en %1 àlbums"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:226
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Exploració de cares en la imatge: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:230
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:232
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Exploració de cares en %1 imatges"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:235
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:237
 #, kde-format
 msgid "Updating faces database"
 msgstr "S'està actualitzant la base de dades de cares"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:284
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:366
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:258
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
 #, kde-format
 msgid "Error starting face detection."
 msgstr "S'ha produït un error en iniciar la detecció de cares."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:389
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Elements explorats buscant cares: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:393
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Element explorat buscant cares: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:396
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:398
 #, kde-format
 msgid "Faces found: %1"
 msgstr "Cares trobades: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:400
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:402
 #, kde-format
 msgid "Face found: %1"
 msgstr "Cara trobada: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "Exploració de cares: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
 #, kde-format
 msgid "Found %1 face."
 msgstr "S'ha trobat %1 cara."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:444
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:446
 #, kde-format
 msgid "Found %1 faces."
 msgstr "S'han trobat %1 cares."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:450
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:452
 #, kde-format
 msgid "Recognized: %1"
 msgstr "Reconegudes: %1"
@@ -68289,3 +68261,40 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
+
+#~ msgid "OpenFace"
+#~ msgstr "OpenFace"
+
+#~ msgid "SFace"
+#~ msgstr "SFace"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "You are about to change the face recognition model. This process can take "
+#~ "several minutes or more depending on the size of your library and the "
+#~ "speed of your computer. SFace is the preferred model. Do not use any "
+#~ "facial detection or recognition features during the process.\n"
+#~ "\n"
+#~ "Are you sure you want to continue?"
+#~ msgid_plural ""
+#~ "You are about to change the face recognition model to %1. This process "
+#~ "can take several minutes or more depending on the size of your library "
+#~ "and the speed of your computer. SFace is the preferred model. Do not use "
+#~ "any facial detection or recognition features during the process.\n"
+#~ "\n"
+#~ "Are you sure you want to continue?"
+#~ msgstr[0] ""
+#~ "Esteu a punt de canviar el model de reconeixement de cares. Este procés "
+#~ "pot tardar diversos minuts o més depenent de la mida de la biblioteca i "
+#~ "la velocitat de l'ordinador. El model preferit és SFace. No utilitzeu cap "
+#~ "característica de detecció o reconeixement facial durant el procés.\n"
+#~ "\n"
+#~ "Segur que voleu continuar?"
+#~ msgstr[1] ""
+#~ "Esteu a punt de canviar el model de reconeixement de cares a %1. Este "
+#~ "procés pot tardar diversos minuts o més depenent de la mida de la "
+#~ "biblioteca i la velocitat de l'ordinador. El model preferit és SFace. No "
+#~ "utilitzeu cap característica de detecció o reconeixement facial durant el "
+#~ "procés.\n"
+#~ "\n"
+#~ "Segur que voleu continuar?"

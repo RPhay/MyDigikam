@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-29 01:53+0000\n"
-"PO-Revision-Date: 2025-01-26 21:22+0100\n"
+"POT-Creation-Date: 2025-01-30 01:53+0000\n"
+"PO-Revision-Date: 2025-01-29 08:06+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -1391,7 +1391,7 @@ msgstr "Limpar a base de datos…"
 msgid "Loading albums..."
 msgstr "Cargando os álbums…"
 
-#: core/app/main/digikamapp.cpp:367
+#: core/app/main/digikamapp.cpp:369
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1403,7 +1403,7 @@ msgstr ""
 "función de «Xestión de cores» desactivarase ata que se solucione este "
 "problema.</p>"
 
-#: core/app/main/digikamapp.cpp:423
+#: core/app/main/digikamapp.cpp:425
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1416,21 +1416,21 @@ msgstr ""
 "do ficheiro executábel de ExifTool na sección de metadatos.\n"
 "Mensaxe de erro: %1"
 
-#: core/app/main/digikamapp.cpp:709 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:711 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Non se seleccionou ningún elemento (%1 elemento)"
 msgstr[1] "Non se seleccionou ningún elemento (%1 elementos)"
 
-#: core/app/main/digikamapp.cpp:715
+#: core/app/main/digikamapp.cpp:717
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Non se seleccionou ningún elemento (%1 [%2] elemento)"
 msgstr[1] "Non se seleccionou ningún elemento (%1 [%2] elementos)"
 
-#: core/app/main/digikamapp.cpp:720
+#: core/app/main/digikamapp.cpp:722
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1440,71 +1440,71 @@ msgstr[1] ""
 "Non se seleccionou ningún elemento (%1 elementos; cos elementos agrupados: "
 "%2)"
 
-#: core/app/main/digikamapp.cpp:731
+#: core/app/main/digikamapp.cpp:733
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 elemento seleccionado (%3/%4)"
 msgstr[1] "%1/%2 elementos seleccionados (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:744
+#: core/app/main/digikamapp.cpp:746
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] elemento seleccionado (%4/%5)"
 msgstr[1] "%1/%2 [%3] elementos seleccionados (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:752
+#: core/app/main/digikamapp.cpp:754
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "1/%2 elemento seleccionado. Total cos elementos agrupados: %3"
 msgstr[1] "%1/%2 elementos seleccionados. Total cos elementos agrupados: %3"
 
-#: core/app/main/digikamapp.cpp:760
+#: core/app/main/digikamapp.cpp:762
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] elemento seleccionado (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] elementos seleccionados (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:769
+#: core/app/main/digikamapp.cpp:771
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "1/%2 elemento seleccionado. Cos elementos agrupados: %3/%4"
 msgstr[1] "%1/%2 elementos seleccionados. Cos elementos agrupados: %3/%4"
 
-#: core/app/main/digikamapp.cpp:800
+#: core/app/main/digikamapp.cpp:802
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 de %2)"
 
-#: core/app/main/digikamapp.cpp:814
+#: core/app/main/digikamapp.cpp:816
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 de %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:818
+#: core/app/main/digikamapp.cpp:820
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 de %2. Total cos elementos agrupados: %3)"
 
-#: core/app/main/digikamapp.cpp:829
+#: core/app/main/digikamapp.cpp:831
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 elemento agochado"
 msgstr[1] "%1 elementos agochados"
 
-#: core/app/main/digikamapp.cpp:881
+#: core/app/main/digikamapp.cpp:883
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Escribir os metadatos no ficheiro"
 msgstr[1] "Escribir os metadatos nos ficheiros seleccionados"
 
-#: core/app/main/digikamapp.cpp:883
+#: core/app/main/digikamapp.cpp:885
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2561,27 +2561,27 @@ msgstr "O dispositivo especificado («%1») non é correcto."
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "A cámara indicada («%1») non é compatíbel."
 
-#: core/app/main/digikamapp_tools.cpp:29
+#: core/app/main/digikamapp_tools.cpp:31
 #, kde-format
 msgctxt "@title Main Tools"
 msgid "Main Tools"
 msgstr "Ferramentas principais"
 
-#: core/app/main/digikamapp_tools.cpp:38
+#: core/app/main/digikamapp_tools.cpp:40
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2641
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Post-procesamento"
 
-#: core/app/main/digikamapp_tools.cpp:58
+#: core/app/main/digikamapp_tools.cpp:60
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2670
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Exportar"
 
-#: core/app/main/digikamapp_tools.cpp:69
+#: core/app/main/digikamapp_tools.cpp:71
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2681
 #, kde-format
 msgctxt "@title Import Tools"
@@ -11470,7 +11470,7 @@ msgstr "Dous mapas — arriba e abaixo"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
 #: core/utilities/searchwindow/searchutilities.cpp:643
@@ -29067,7 +29067,7 @@ msgstr "Migrar ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Cancel"
@@ -34779,7 +34779,7 @@ msgstr "Ruta relativa"
 msgid "Deletion Time"
 msgstr "Hora de eliminación"
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:125
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:127
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBFaceVersion\" setting does not exist. The "
@@ -34790,7 +34790,7 @@ msgstr ""
 "se pode verificar a versión do esquema de base de datos actual. Probe a "
 "iniciar unha base de datos baleira. "
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:159
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:161
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -34804,7 +34804,7 @@ msgstr ""
 "base de datos é recente de máis). Por favor, use a versión máis recente de "
 "digiKam que usase con anterioridade."
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:192
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:194
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -35318,7 +35318,7 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:86
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:134
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -35409,7 +35409,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Rules"
-msgstr ""
+msgstr "Regras"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
 #, kde-format
@@ -35525,11 +35525,10 @@ msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Detectar se as imaxes sofren infraexposición ou sobreexposición."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:225
-#, fuzzy, kde-format
-#| msgid "Sparsity Factor: "
+#, kde-format
 msgctxt "@title:tab"
 msgid "Basic Factors"
-msgstr "Factor de distribución: "
+msgstr "Factores básicos"
 
 #: core/libs/iojobs/iojob.cpp:64
 #, kde-format
@@ -39528,7 +39527,7 @@ msgstr "Exame de obxectos: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -39687,7 +39686,7 @@ msgstr ""
 "do recoñecemento de obxectos, pero recoñeceranse menos obxectos.\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -39708,7 +39707,7 @@ msgstr ""
 "sistema ou traballar no fondo só cun núcleo."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -51949,61 +51948,33 @@ msgstr "Crear unha etiqueta a partir da axenda de enderezos"
 msgid "No address book entries found"
 msgstr "Non se atoparon entradas na axenda de enderezos."
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:63
-#, kde-format
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Facial Recognition Model"
 msgctxt "@title:window"
-msgid "Facial Recognition Model"
+msgid "Facial Recognition Database"
 msgstr "Modelo de recoñecemento facial"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
-#, kde-format
-msgid "OpenFace"
-msgstr "OpenFace"
-
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
-#, kde-format
-msgid "SFace"
-msgstr "SFace"
-
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:87
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
-"You are about to change the face recognition model. This process can take "
-"several minutes or more depending on the size of your library and the speed "
-"of your computer. SFace is the preferred model. Do not use any facial "
-"detection or recognition features during the process.\n"
+"Your face recognition database is outdated and requires retraining. This "
+"process might take anywhere from a few seconds to several minutes. Facial "
+"recognition will not be reliable until retraining is finished.Retraining "
+"will run in the backaground and you can continue to use digiKam. \n"
 "\n"
-"Are you sure you want to continue?"
-msgid_plural ""
-"You are about to change the face recognition model to %1. This process can "
-"take several minutes or more depending on the size of your library and the "
-"speed of your computer. SFace is the preferred model. Do not use any facial "
-"detection or recognition features during the process.\n"
-"\n"
-"Are you sure you want to continue?"
-msgstr[0] ""
-"Está a piques de cambiar o modelo de recoñecemento facial. O proceso pode "
-"levar varios minutos ou máis segundo o tamaño da súa biblioteca e a "
-"velocidade do seu computador. SFace é o modelo preferido. Non use "
-"funcionalidades de detección ou recoñecemento facial durante o proceso.\n"
-"\n"
-"Seguro que quere continuar?"
-msgstr[1] ""
-"Está a piques de cambiar o modelo de recoñecemento facial a %1. O proceso "
-"pode levar varios minutos ou máis segundo o tamaño da súa biblioteca e a "
-"velocidade do seu computador. SFace é o modelo preferido. Non use "
-"funcionalidades de detección ou recoñecemento facial durante o proceso.\n"
-"\n"
-"Seguro que quere continuar?"
+"Do you want to retrain your database now?"
+msgstr ""
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:108
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:82
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
 msgstr "Comezar"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:112
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:86
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
@@ -52104,7 +52075,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Rexeitar a suxestión"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:94
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:93
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52116,28 +52087,28 @@ msgstr ""
 "Cando leve identificadas algunha persoa en varias fotos,\n"
 "tamén pode recoñecer as persoas que aparezan nas fotos."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:101
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Dixitalizar novas imaxes"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Dixitalizar todas as imaxes"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:104
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Só recoñecer caras"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:106
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52155,25 +52126,25 @@ msgstr ""
 "en».</p><p><b>Só recoñecer caras</b> intentará buscar coincidencias entre "
 "caras descoñecidas e caras confirmadas sen buscar novas caras en imaxes.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:112
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Axuda"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:129
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:128
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Fluxo de traballo"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Precisión:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52185,43 +52156,43 @@ msgstr ""
 "precisión\n"
 "da detección de caras, pero detectaranse menos caras."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:196
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Tamaño das caras:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Anano"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Pequeno"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Medio"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Grande"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Enorme"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52253,18 +52224,18 @@ msgstr ""
 "<b>Mediano</b> ou <b>Grande</b> para uso normal.</p><p>Esta opción só afecta "
 "a YuNet.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:226
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Configuración da detección de caras"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Precisión:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52279,7 +52250,7 @@ msgstr ""
 "(Nota: só se recoñecerán as caras moi semellantes ás previamente "
 "etiquetadas)."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52291,7 +52262,7 @@ msgstr ""
 "Pode escoller se desexa usar todos os núcleos de procesador do\n"
 "sistema ou traballar no fondo só cun núcleo."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Configuración de recoñecemento facial"
@@ -61253,74 +61224,74 @@ msgstr "Duplicados atopados: %1"
 msgid "Duplicate found: %1"
 msgstr "Duplicado atopado: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:215
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Buscar caras no álbum: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:219
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:221
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Buscar caras en %1 álbums"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:226
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Buscar caras na imaxe: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:230
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:232
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Buscar caras en %1 imaxes"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:235
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:237
 #, kde-format
 msgid "Updating faces database"
 msgstr "Actualizando a base de datos de caras"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:284
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:366
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:258
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
 #, kde-format
 msgid "Error starting face detection."
 msgstr "Erro ao iniciar a detección facial."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:389
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Elementos escaneados en busca de caras: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:393
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Elemento escaneado en busca de caras: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:396
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:398
 #, kde-format
 msgid "Faces found: %1"
 msgstr "Caras atopadas: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:400
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:402
 #, kde-format
 msgid "Face found: %1"
 msgstr "Cara atopada: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "Buscando caras: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
 #, kde-format
 msgid "Found %1 face."
 msgstr "Atopouse %1 cara."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:444
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:446
 #, kde-format
 msgid "Found %1 faces."
 msgstr "Atopáronse %1 caras."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:450
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:452
 #, kde-format
 msgid "Recognized: %1"
 msgstr "Recoñecemento: %1"
@@ -67929,6 +67900,42 @@ msgstr "Elementos do álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importar os elementos"
+
+#~ msgid "OpenFace"
+#~ msgstr "OpenFace"
+
+#~ msgid "SFace"
+#~ msgstr "SFace"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "You are about to change the face recognition model. This process can take "
+#~ "several minutes or more depending on the size of your library and the "
+#~ "speed of your computer. SFace is the preferred model. Do not use any "
+#~ "facial detection or recognition features during the process.\n"
+#~ "\n"
+#~ "Are you sure you want to continue?"
+#~ msgid_plural ""
+#~ "You are about to change the face recognition model to %1. This process "
+#~ "can take several minutes or more depending on the size of your library "
+#~ "and the speed of your computer. SFace is the preferred model. Do not use "
+#~ "any facial detection or recognition features during the process.\n"
+#~ "\n"
+#~ "Are you sure you want to continue?"
+#~ msgstr[0] ""
+#~ "Está a piques de cambiar o modelo de recoñecemento facial. O proceso pode "
+#~ "levar varios minutos ou máis segundo o tamaño da súa biblioteca e a "
+#~ "velocidade do seu computador. SFace é o modelo preferido. Non use "
+#~ "funcionalidades de detección ou recoñecemento facial durante o proceso.\n"
+#~ "\n"
+#~ "Seguro que quere continuar?"
+#~ msgstr[1] ""
+#~ "Está a piques de cambiar o modelo de recoñecemento facial a %1. O proceso "
+#~ "pode levar varios minutos ou máis segundo o tamaño da súa biblioteca e a "
+#~ "velocidade do seu computador. SFace é o modelo preferido. Non use "
+#~ "funcionalidades de detección ou recoñecemento facial durante o proceso.\n"
+#~ "\n"
+#~ "Seguro que quere continuar?"
 
 #~ msgid "Scanning from: %1\n"
 #~ msgstr "Escaneamento desde: %1\n"

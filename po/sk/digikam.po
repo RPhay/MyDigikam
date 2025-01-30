@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-29 01:53+0000\n"
+"POT-Creation-Date: 2025-01-30 01:53+0000\n"
 "PO-Revision-Date: 2024-10-03 22:47+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -1360,7 +1360,7 @@ msgstr "Databáza skratiek"
 msgid "Loading albums..."
 msgstr "Načítavam albumy..."
 
-#: core/app/main/digikamapp.cpp:367
+#: core/app/main/digikamapp.cpp:369
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1371,7 +1371,7 @@ msgstr ""
 "nastaviť, vyberte „Áno“, inak vyberte „Nie“. V tom prípade bude, „Správa "
 "farieb“ vypnutá až kým tento problém nevyriešite.</p>"
 
-#: core/app/main/digikamapp.cpp:423
+#: core/app/main/digikamapp.cpp:425
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1380,7 +1380,7 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:709 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:711 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1388,7 +1388,7 @@ msgstr[0] "Nie je vybraná žiadna položka (%1 položka)"
 msgstr[1] "Nie je vybraná žiadna položka (%1 položky)"
 msgstr[2] "Nie je vybraná žiadna položka (%1 položiek)"
 
-#: core/app/main/digikamapp.cpp:715
+#: core/app/main/digikamapp.cpp:717
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1396,7 +1396,7 @@ msgstr[0] "Nie je vybraná žiadna položka (%1 [%2] položka)"
 msgstr[1] "Nie je vybraná žiadna položka (%1 [%2] položky)"
 msgstr[2] "Nie je vybraná žiadna položka (%1 [%2] položiek)"
 
-#: core/app/main/digikamapp.cpp:720
+#: core/app/main/digikamapp.cpp:722
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1407,7 +1407,7 @@ msgstr[1] ""
 msgstr[2] ""
 "Nie je vybraná žiadna položka (%1 položiek. So zoskupenými položkami: %2)"
 
-#: core/app/main/digikamapp.cpp:731
+#: core/app/main/digikamapp.cpp:733
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected (%3/%4)"
 msgid "1/%2 item selected (%3/%4)"
@@ -1416,7 +1416,7 @@ msgstr[0] "%1/%2 vybraných položiek (%3/%4)"
 msgstr[1] "%1/%2 vybraných položiek (%3/%4)"
 msgstr[2] "%1/%2 vybraných položiek (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:744
+#: core/app/main/digikamapp.cpp:746
 #, fuzzy, kde-format
 #| msgid "%1/%2 [%3] items selected (%4/%5)"
 msgid "1/%2 [%3] item selected (%4/%5)"
@@ -1425,7 +1425,7 @@ msgstr[0] "%1/%2 [%3] vybraných položiek (%4/%5)"
 msgstr[1] "%1/%2 [%3] vybraných položiek (%4/%5)"
 msgstr[2] "%1/%2 [%3] vybraných položiek (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:752
+#: core/app/main/digikamapp.cpp:754
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected. Total with grouped items: %3"
 msgid "1/%2 item selected. Total with grouped items: %3"
@@ -1434,7 +1434,7 @@ msgstr[0] "%1/%2 vybraných položiek. Celkom vrátane zoskupených položiek: %
 msgstr[1] "%1/%2 vybraných položiek. Celkom vrátane zoskupených položiek: %3"
 msgstr[2] "%1/%2 vybraných položiek. Celkom vrátane zoskupených položiek: %3"
 
-#: core/app/main/digikamapp.cpp:760
+#: core/app/main/digikamapp.cpp:762
 #, fuzzy, kde-format
 #| msgid "%1/%2 [%3/%4] items selected (%5/%6)"
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
@@ -1443,7 +1443,7 @@ msgstr[0] "%1/%2 [%3/%4] vybraných položiek (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] vybraných položiek (%5/%6)"
 msgstr[2] "%1/%2 [%3/%4] vybraných položiek (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:769
+#: core/app/main/digikamapp.cpp:771
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected. With grouped items: %3/%4"
 msgid "1/%2 item selected. With grouped items: %3/%4"
@@ -1452,22 +1452,22 @@ msgstr[0] "%1/%2 vybraných položiek. Vrátane zoskupených položiek: %3/%4"
 msgstr[1] "%1/%2 vybraných položiek. Vrátane zoskupených položiek: %3/%4"
 msgstr[2] "%1/%2 vybraných položiek. Vrátane zoskupených položiek: %3/%4"
 
-#: core/app/main/digikamapp.cpp:800
+#: core/app/main/digikamapp.cpp:802
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 z %2)"
 
-#: core/app/main/digikamapp.cpp:814
+#: core/app/main/digikamapp.cpp:816
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 z %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:818
+#: core/app/main/digikamapp.cpp:820
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 z %2. Celkom vrátane zoskupených položiek: %3)"
 
-#: core/app/main/digikamapp.cpp:829
+#: core/app/main/digikamapp.cpp:831
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
@@ -1475,7 +1475,7 @@ msgstr[0] "1 položka skrytá"
 msgstr[1] "%1 položky skryté"
 msgstr[2] "%1 položiek skrytých"
 
-#: core/app/main/digikamapp.cpp:881
+#: core/app/main/digikamapp.cpp:883
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1483,7 +1483,7 @@ msgstr[0] "Zapísať metadáta do obrázka"
 msgstr[1] "Zapísať metadáta do vybraných obrázkov"
 msgstr[2] "Zapísať metadáta do vybraných obrázkov"
 
-#: core/app/main/digikamapp.cpp:883
+#: core/app/main/digikamapp.cpp:885
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2534,27 +2534,27 @@ msgstr "Zariadenie (\"%1\") je neplatné."
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "Fotoaparát (\"%1\") nie je podporovaný."
 
-#: core/app/main/digikamapp_tools.cpp:29
+#: core/app/main/digikamapp_tools.cpp:31
 #, kde-format
 msgctxt "@title Main Tools"
 msgid "Main Tools"
 msgstr "Hlavné nástroje"
 
-#: core/app/main/digikamapp_tools.cpp:38
+#: core/app/main/digikamapp_tools.cpp:40
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2641
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Následné spracovanie"
 
-#: core/app/main/digikamapp_tools.cpp:58
+#: core/app/main/digikamapp_tools.cpp:60
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2670
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Exportovať"
 
-#: core/app/main/digikamapp_tools.cpp:69
+#: core/app/main/digikamapp_tools.cpp:71
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2681
 #, kde-format
 msgctxt "@title Import Tools"
@@ -11207,7 +11207,7 @@ msgstr "Dve mapy - vodorovné"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
 #: core/utilities/searchwindow/searchutilities.cpp:643
@@ -28865,7 +28865,7 @@ msgstr "Migrovať ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Cancel"
@@ -34623,7 +34623,7 @@ msgstr "Relatívna cesta"
 msgid "Deletion Time"
 msgstr "Čas vytvorenia"
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:125
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:127
 #, fuzzy, kde-format
 #| msgid ""
 #| "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -34637,7 +34637,7 @@ msgstr ""
 "Databáza nie je platná: voľba „DBVersion“ neexistuje. Nie je možné overiť "
 "aktuálnu verziu schémy databázy. Skúste začať znova s prázdnou databázou."
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:159
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:161
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -34651,7 +34651,7 @@ msgstr ""
 "Prosím, použite novšiu verziu aplikácie digikam, ktorú ste už predtým "
 "použili."
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:192
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:194
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -35172,7 +35172,7 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:86
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:134
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -39590,7 +39590,7 @@ msgstr "Hľadať v albumoch:"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -39731,7 +39731,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -39756,7 +39756,7 @@ msgstr ""
 "alebo pracovať iba s jedným jadrom na pozadí."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -53005,55 +53005,33 @@ msgstr "Vytvoriť štítok z adresára"
 msgid "No address book entries found"
 msgstr "Neboli nájdené žiadne záznamy adresára"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:63
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Destination Folder:"
 msgctxt "@title:window"
-msgid "Facial Recognition Model"
+msgid "Facial Recognition Database"
 msgstr "Cieľový priečinok:"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
-#, fuzzy, kde-format
-#| msgid "Open File"
-msgid "OpenFace"
-msgstr "Otvoriť súbor"
-
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Faces"
-msgid "SFace"
-msgstr "Podľa tvárí"
-
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:87
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
-"You are about to change the face recognition model. This process can take "
-"several minutes or more depending on the size of your library and the speed "
-"of your computer. SFace is the preferred model. Do not use any facial "
-"detection or recognition features during the process.\n"
+"Your face recognition database is outdated and requires retraining. This "
+"process might take anywhere from a few seconds to several minutes. Facial "
+"recognition will not be reliable until retraining is finished.Retraining "
+"will run in the backaground and you can continue to use digiKam. \n"
 "\n"
-"Are you sure you want to continue?"
-msgid_plural ""
-"You are about to change the face recognition model to %1. This process can "
-"take several minutes or more depending on the size of your library and the "
-"speed of your computer. SFace is the preferred model. Do not use any facial "
-"detection or recognition features during the process.\n"
-"\n"
-"Are you sure you want to continue?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+"Do you want to retrain your database now?"
+msgstr ""
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:108
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:82
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:112
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:86
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
@@ -53166,7 +53144,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Odmietnuť tento návrh"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:94
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:93
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53178,7 +53156,7 @@ msgstr ""
 "Ak ste identifikovali vašich priateľov na viacerých fotografiách,\n"
 "môžu byť tieto osoby rozoznané na zvyšných snímkach."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:101
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, fuzzy, kde-format
 #| msgid "Scan Images"
@@ -53186,7 +53164,7 @@ msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Skenovať obrázky"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, fuzzy, kde-format
 #| msgid "Scan Images"
@@ -53194,7 +53172,7 @@ msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Skenovať obrázky"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:104
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
@@ -53203,7 +53181,7 @@ msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Rozoznávať tváre"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:106
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53215,26 +53193,26 @@ msgid ""
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:112
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Pomocník"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:129
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:128
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Proces"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Presnosť"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53243,28 +53221,28 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:196
 #, fuzzy, kde-format
 #| msgid "File size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Veľkosť súboru"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
 #, fuzzy, kde-format
 #| msgid "Extra tags"
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Dodatočné štítky"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
 #, fuzzy, kde-format
 #| msgid "Extra tags"
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Dodatočné štítky"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -53272,21 +53250,21 @@ msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Stredná"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Cieľ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, fuzzy, kde-format
 #| msgid "Extra tags"
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Dodatočné štítky"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53305,20 +53283,20 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Face Detection Settings"
 msgstr "Detekcia tváre"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Presnosť"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53328,7 +53306,7 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53340,7 +53318,7 @@ msgstr ""
 "či si prajete použiť všetky procesorové jadrá vášho systému\n"
 "alebo pracovať iba s jedným jadrom na pozadí."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
 #, fuzzy, kde-format
 msgid "Face Recognition Settings"
 msgstr "Detekcia horného okraja"
@@ -62701,89 +62679,89 @@ msgstr "Duplikáty"
 msgid "Duplicate found: %1"
 msgstr "Duplikáty"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:215
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scan for faces in album: %1"
 msgstr "Hľadať v albumoch:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:219
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:221
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scan for faces in %1 albums"
 msgstr "Hľadať v albumoch:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:226
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in image: %1"
 msgstr "Hľadať tváre"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:230
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:232
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in %1 images"
 msgstr "Hľadať tváre"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:235
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:237
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Updating faces database"
 msgstr "Aktualizuje sa databáza tvárí."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:284
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:366
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:258
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
 #, fuzzy, kde-format
 msgid "Error starting face detection."
 msgstr "Detekcia horného okraja"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:389
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Items scanned for faces: %1\n"
 msgstr "Hľadať v albumoch:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:393
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Item scanned for faces: %1\n"
 msgstr "Hľadať v albumoch:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:396
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:398
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "Obrázky nájdené v %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:400
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:402
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "Obrázky nájdené v %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Face Scanning: %1\n"
 msgstr "Hľadať v albumoch:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
 #, fuzzy, kde-format
 msgid "Found %1 face."
 msgstr "Pamäť Flash"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:444
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:446
 #, kde-format
 msgid "Found %1 faces."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:450
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:452
 #, fuzzy, kde-format
 #| msgid "Icon Size:"
 msgid "Recognized: %1"
@@ -69479,6 +69457,17 @@ msgstr "Nastavenie albumu spracovaných položiek"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovať položky"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgid "OpenFace"
+#~ msgstr "Otvoriť súbor"
+
+#, fuzzy
+#~| msgctxt "@action: setup"
+#~| msgid "By Faces"
+#~ msgid "SFace"
+#~ msgstr "Podľa tvárí"
 
 #, fuzzy
 #~| msgctxt "@label"

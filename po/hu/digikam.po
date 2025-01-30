@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-29 01:53+0000\n"
+"POT-Creation-Date: 2025-01-30 01:53+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1371,7 +1371,7 @@ msgstr "Adatbázis olvasása…"
 msgid "Loading albums..."
 msgstr "Témák betöltése…"
 
-#: core/app/main/digikamapp.cpp:367
+#: core/app/main/digikamapp.cpp:369
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1383,7 +1383,7 @@ msgstr ""
 "válassza a „Nem” lehetőséget, és a „Színkezelés” funkció le lesz tiltva. "
 "amíg meg nem oldja ezt a kérdést. </p>"
 
-#: core/app/main/digikamapp.cpp:423
+#: core/app/main/digikamapp.cpp:425
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1392,28 +1392,28 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:709 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:711 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Nincs elem kijelölve (%1 elem)"
 msgstr[1] "Nincs elem kijelölve (%1 elem)"
 
-#: core/app/main/digikamapp.cpp:715
+#: core/app/main/digikamapp.cpp:717
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:720
+#: core/app/main/digikamapp.cpp:722
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:731
+#: core/app/main/digikamapp.cpp:733
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1422,7 +1422,7 @@ msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "Nincs elem kijelölve (%1 elem)"
 msgstr[1] "Nincs elem kijelölve (%1 elem)"
 
-#: core/app/main/digikamapp.cpp:744
+#: core/app/main/digikamapp.cpp:746
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1431,7 +1431,7 @@ msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "Nincs elem kijelölve (%1 elem)"
 msgstr[1] "Nincs elem kijelölve (%1 elem)"
 
-#: core/app/main/digikamapp.cpp:752
+#: core/app/main/digikamapp.cpp:754
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected. Total with grouped items: %3"
 msgid "1/%2 item selected. Total with grouped items: %3"
@@ -1439,7 +1439,7 @@ msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "%1 /%2 elem kiválasztva. Összesen csoportosított elemekkel: %3"
 msgstr[1] "%1 /%2 elem kiválasztva. Összesen csoportosított elemekkel: %3"
 
-#: core/app/main/digikamapp.cpp:760
+#: core/app/main/digikamapp.cpp:762
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "%2/%1 item selected"
@@ -1449,7 +1449,7 @@ msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%2/%1 elem kijelölve"
 msgstr[1] "%2/%1 elem kijelölve"
 
-#: core/app/main/digikamapp.cpp:769
+#: core/app/main/digikamapp.cpp:771
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected. With grouped items: %3/%4"
 msgid "1/%2 item selected. With grouped items: %3/%4"
@@ -1457,36 +1457,36 @@ msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "%1/%2 elem kiválasztva. Csoportosított elemekkel: %3/%4"
 msgstr[1] "%1/%2 elem kiválasztva. Csoportosított elemekkel: %3/%4"
 
-#: core/app/main/digikamapp.cpp:800
+#: core/app/main/digikamapp.cpp:802
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%2/%1)"
 
-#: core/app/main/digikamapp.cpp:814
+#: core/app/main/digikamapp.cpp:816
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:818
+#: core/app/main/digikamapp.cpp:820
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:829
+#: core/app/main/digikamapp.cpp:831
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:881
+#: core/app/main/digikamapp.cpp:883
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:883
+#: core/app/main/digikamapp.cpp:885
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2539,27 +2539,27 @@ msgstr "A megadott eszköz („%1”) nem érvényes."
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "A megadott kamera („%1”) nem támogatott."
 
-#: core/app/main/digikamapp_tools.cpp:29
+#: core/app/main/digikamapp_tools.cpp:31
 #, kde-format
 msgctxt "@title Main Tools"
 msgid "Main Tools"
 msgstr ""
 
-#: core/app/main/digikamapp_tools.cpp:38
+#: core/app/main/digikamapp_tools.cpp:40
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2641
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr ""
 
-#: core/app/main/digikamapp_tools.cpp:58
+#: core/app/main/digikamapp_tools.cpp:60
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2670
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Exportálás"
 
-#: core/app/main/digikamapp_tools.cpp:69
+#: core/app/main/digikamapp_tools.cpp:71
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2681
 #, kde-format
 msgctxt "@title Import Tools"
@@ -11112,7 +11112,7 @@ msgstr "Két térkép - vízszintes"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:107
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
 #: core/utilities/searchwindow/searchutilities.cpp:643
@@ -28045,7 +28045,7 @@ msgstr "Migrálás ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:111
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Cancel"
@@ -33393,7 +33393,7 @@ msgstr ""
 msgid "Deletion Time"
 msgstr ""
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:125
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:127
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBFaceVersion\" setting does not exist. The "
@@ -33401,7 +33401,7 @@ msgid ""
 "empty database. "
 msgstr ""
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:159
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:161
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -33410,7 +33410,7 @@ msgid ""
 "recent.) Please use the more recent version of digiKam that you used before."
 msgstr ""
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:192
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:194
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -33903,7 +33903,7 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:86
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:134
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -38230,7 +38230,7 @@ msgstr "Arcok keresése"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -38377,7 +38377,7 @@ msgstr ""
 "pontosabb találatokat kap, de annál több időt is vesz igénybe."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -38402,7 +38402,7 @@ msgstr ""
 "egyetlen magon."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -51224,55 +51224,33 @@ msgstr "Címke létrehozása a címjegyzékből"
 msgid "No address book entries found"
 msgstr ""
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:63
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Destination Folder:"
 msgctxt "@title:window"
-msgid "Facial Recognition Model"
+msgid "Facial Recognition Database"
 msgstr "Cél mappa:"
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open file"
-msgid "OpenFace"
-msgstr "Fájl megnyitása"
-
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Faces"
-msgid "SFace"
-msgstr "Arcok szerint"
-
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:87
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
-"You are about to change the face recognition model. This process can take "
-"several minutes or more depending on the size of your library and the speed "
-"of your computer. SFace is the preferred model. Do not use any facial "
-"detection or recognition features during the process.\n"
+"Your face recognition database is outdated and requires retraining. This "
+"process might take anywhere from a few seconds to several minutes. Facial "
+"recognition will not be reliable until retraining is finished.Retraining "
+"will run in the backaground and you can continue to use digiKam. \n"
 "\n"
-"Are you sure you want to continue?"
-msgid_plural ""
-"You are about to change the face recognition model to %1. This process can "
-"take several minutes or more depending on the size of your library and the "
-"speed of your computer. SFace is the preferred model. Do not use any facial "
-"detection or recognition features during the process.\n"
-"\n"
-"Are you sure you want to continue?"
-msgstr[0] ""
-msgstr[1] ""
+"Do you want to retrain your database now?"
+msgstr ""
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:108
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:82
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
 msgstr ""
 
-#: core/utilities/facemanagement/dialogs/recognitionmodelchange.cpp:112
+#: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:86
 #, fuzzy, kde-format
 #| msgid "Cancel"
 msgctxt "@action:button"
@@ -51385,7 +51363,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:94
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:93
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51394,7 +51372,7 @@ msgid ""
 "it can also recognize the people shown on your photos."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:101
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, fuzzy, kde-format
 #| msgid "Scan Images"
@@ -51402,7 +51380,7 @@ msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Képek beolvasása"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, fuzzy, kde-format
 #| msgid "Scan Images"
@@ -51410,7 +51388,7 @@ msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Képek beolvasása"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:104
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, fuzzy, kde-format
 #| msgctxt "List of detected faces that need not be recognized"
@@ -51419,7 +51397,7 @@ msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Kihagyva"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:106
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51431,26 +51409,26 @@ msgid ""
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:112
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Súgó"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:129
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:128
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Munkafolyamat"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Pontosság"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:156
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -51465,26 +51443,26 @@ msgstr ""
 "Állítsa be a sebességet vagy a pontosságot. Minél nagyobb az érték, annál "
 "pontosabb találatokat kap, de annál több időt is vesz igénybe."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:196
 #, fuzzy, kde-format
 #| msgid "File size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Fájl méret"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -51492,21 +51470,21 @@ msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Közepes"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Cél"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Cél"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51525,20 +51503,20 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Face Detection Settings"
 msgstr "Arcfelismerés"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Pontosság"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -51554,7 +51532,7 @@ msgstr ""
 "Állítsa be a sebességet vagy a pontosságot. Minél nagyobb az érték, annál "
 "pontosabb találatokat kap, de annál több időt is vesz igénybe."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51563,7 +51541,7 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face Recognition Settings"
@@ -60501,86 +60479,86 @@ msgstr "Kettőzések"
 msgid "Duplicate found: %1"
 msgstr "Kettőzések"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:215
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in album: %1"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:219
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:221
 #, fuzzy, kde-format
 #| msgid "Scanning for removed albums..."
 msgid "Scan for faces in %1 albums"
 msgstr "Eltávolított albumok vizsgálata…"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:226
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in image: %1"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:230
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:232
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in %1 images"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:235
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:237
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Updating faces database"
 msgstr "Arc-adatbázis frissítése."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:256
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:284
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:366
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:258
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
 #, fuzzy, kde-format
 #| msgid "Enable face detection"
 msgid "Error starting face detection."
 msgstr "Arcfelismerés engedélyezése"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:387
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:389
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Items scanned for faces: %1\n"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:391
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:393
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Item scanned for faces: %1\n"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:396
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:398
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "Képeket találtam itt: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:400
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:402
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "Képeket találtam itt: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:434
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Face Scanning: %1\n"
 msgstr "Arcok keresése"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
 #, fuzzy, kde-format
 #| msgid "Libface"
 msgid "Found %1 face."
 msgstr "Libface"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:444
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:446
 #, kde-format
 msgid "Found %1 faces."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:450
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:452
 #, fuzzy, kde-format
 #| msgid "Icon Size:"
 msgid "Recognized: %1"
@@ -66774,6 +66752,18 @@ msgstr "Album elemek"
 #, kde-format
 msgid "Import Items"
 msgstr "Elemek importálása"
+
+#, fuzzy
+#~| msgctxt "@info:tooltip"
+#~| msgid "Open file"
+#~ msgid "OpenFace"
+#~ msgstr "Fájl megnyitása"
+
+#, fuzzy
+#~| msgctxt "@action: setup"
+#~| msgid "By Faces"
+#~ msgid "SFace"
+#~ msgstr "Arcok szerint"
 
 #, fuzzy
 #~| msgid "Scan for Faces"
