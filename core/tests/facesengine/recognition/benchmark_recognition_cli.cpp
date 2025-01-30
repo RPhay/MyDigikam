@@ -90,7 +90,7 @@ private:
 // --------------------------------------------------------
 
 /**
- * @note DBB face detector can be parallelized but it takes longer than a single thread.
+ * @note DNN face detector can be parallelized but it takes longer than a single thread.
  */
 class ParallelDetector: public cv::ParallelLoopBody
 {
@@ -300,7 +300,7 @@ QList<QImage*> Benchmark::detect(const QList<QImage*>& images) const
 
     QList<QImage*> croppedFaces;
 
-    for (int i = 0 ; i < faces.size() ; ++i)
+    for (int i = 0 ; i < faces.size() ; ++i)    // cppcheck-suppress knownConditionTrueFalse
     {
         if (faces[i].isEmpty())
         {
