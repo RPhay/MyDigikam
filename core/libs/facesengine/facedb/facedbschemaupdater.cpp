@@ -243,7 +243,12 @@ bool FaceDbSchemaUpdater::makeUpdates()
 
 bool FaceDbSchemaUpdater::createDatabase()
 {
-    if (createTables() && createIndices() && createTriggers() && populateDbSettings())
+    if (
+        createTables()   &&
+        createIndices()  &&
+        createTriggers() &&
+        populateDbSettings()        // cppcheck-suppress knownConditionTrueFalse
+       )
     {
         d->currentVersion         = schemaVersion();
         d->currentRequiredVersion = 5;
@@ -280,7 +285,7 @@ bool FaceDbSchemaUpdater::createTriggers()
 bool FaceDbSchemaUpdater::populateDbSettings()
 {
     d->dbAccess->db()->setSetting(QLatin1String("TrainingVersion"), IdentityProvider::FaceTrainingVersion);
-    d->dbAccess->db()->setSetting(QLatin1String("ExtractorModel"), IdentityProvider::ExtractorModel);
+    d->dbAccess->db()->setSetting(QLatin1String("ExtractorModel"),  IdentityProvider::ExtractorModel);
 
     return true;
 }
