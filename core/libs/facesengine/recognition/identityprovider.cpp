@@ -75,6 +75,12 @@ Q_GLOBAL_STATIC(IdentityProviderCreator, identityProviderCreator)
 
 IdentityProvider::IdentityProvider()
 {
+
+    // Save face settings to remove old Detector and Recognizer models.
+
+    ApplicationSettings::instance()->setFaceDetectionModel(FaceScanSettings::FaceDetectionModel::YuNet);
+    ApplicationSettings::instance()->setFaceRecognitionModel(FaceScanSettings::FaceRecognitionModel::SFace);
+
     if (!d)
     {
         d = new Private;
