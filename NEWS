@@ -136,7 +136,7 @@ BUGFIXES:
 087 ==> 499156 - YOLOv11 let digiKam crash.
 088 ==> 499305 - Check at startup if FaceDB needs retrained box crash digikam if apply
 089 ==> 491473 - digiKam 8.4 does not start.
-090 ==>
+090 ==> 499172 - Display issue of processed face recognitions when the queue is overloaded
 091 ==>
 092 ==>
 093 ==>
