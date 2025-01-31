@@ -280,7 +280,7 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
     }
 
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Finish computing face embedding in "
-                                << timer.elapsed() << " ms";
+                                     << timer.elapsed() << " ms";
 
     return normalized_descriptors;
 }

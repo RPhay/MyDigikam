@@ -358,26 +358,39 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
             inputImage = inputImage.convertToFormat(QImage::Format_RGB888);
         }
 
-        // create a cv::Mat image from the QImage and move it to the GPU with a cv::UMat
+        // create a cv::Mat image from the QImage
 
-        cv::UMat cvUImage = cv::Mat(
-                                    inputImage.height(),
-                                    inputImage.width(),
-                                    CV_8UC3,
-                                    inputImage.scanLine(0),
-                                    inputImage.bytesPerLine()
-                                   )
-                                   .getUMat(cv::ACCESS_FAST);
+        cv::Mat  cvImage    = cv::Mat(
+                                      inputImage.height(),
+                                      inputImage.width(),
+                                      CV_8UC3,
+                                      inputImage.scanLine(0),
+                                      inputImage.bytesPerLine()
+                                     );
 
-        // extract the face features
-
-        package->features = extractor.getFaceEmbedding(cvUImage);
-        cv::Rect origSize(0, 0, package->face.region().toRect().width(), package->face.region().toRect().height());
-
-        if (trainingQualityCheck)
+        if (!cvImage.empty())
         {
-            package->useForTraining = useForTraining(origSize, cvUImage.getMat(cv::ACCESS_FAST));
+            cv::UMat cvUImage = cvImage.getUMat(cv::ACCESS_READ);
+            
+            // extract the face features
+
+            package->features = extractor.getFaceEmbedding(cvUImage);
+
+            // check for a valid feature set
+
+            if (!package->features.empty() && trainingQualityCheck)
+            {
+                // get the original size of the image
+
+                cv::Rect origSize(0, 0, package->face.region().toRect().width(), package->face.region().toRect().height());
+
+                // check if the image is suitable for training
+
+                package->useForTraining = useForTraining(origSize, cvImage);
+            }
         }
+
+        // send the package to the next stage
 
         enqueue(nextQueue, package);
     }
