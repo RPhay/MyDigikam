@@ -135,7 +135,7 @@ BUGFIXES:
 086 ==> 463760 - Names are not clickable.
 087 ==> 499156 - YOLOv11 let digiKam crash.
 088 ==> 499305 - Check at startup if FaceDB needs retrained box crash digikam if apply
-089 ==>
+089 ==> 491473 - digiKam 8.4 does not start.
 090 ==>
 091 ==>
 092 ==>
