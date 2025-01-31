@@ -138,7 +138,7 @@ BUGFIXES:
 089 ==> 491473 - digiKam 8.4 does not start.
 090 ==> 499172 - Display issue of processed face recognitions when the queue is overloaded
 091 ==> 498320 - Renaming a face tag fails to move over the training data
-092 ==>
+092 ==> 499361 - Possibly add exiftool "-m" parameter to.
 093 ==>
 094 ==>
 095 ==>
