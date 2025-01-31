@@ -163,7 +163,6 @@ private:
 private:
 
     void setupSelectToolsAction();
-    void checkFaceTrainingVersion();
 
 private Q_SLOTS:
 
@@ -172,6 +171,7 @@ private Q_SLOTS:
     void slotMaintenanceDone();
     void slotDatabaseMigration();
     void slotDetectFaces();
+    void slotCheckFaceTrainingVersion();
 //@}
 
 //@{

@@ -189,7 +189,7 @@ void DigikamApp::slotDatabaseMigration()
     delete dlg;
 }
 
-void DigikamApp::checkFaceTrainingVersion()
+void DigikamApp::slotCheckFaceTrainingVersion()
 {
     if (IdentityProvider::instance()->checkRetrainingRequired())
     {

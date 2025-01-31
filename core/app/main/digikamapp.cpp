@@ -249,8 +249,6 @@ DigikamApp::DigikamApp()
     setAutoSaveSettings(configGroupName(), true);
 
     setupSelectToolsAction();
-
-    checkFaceTrainingVersion();
 }
 
 DigikamApp::~DigikamApp()
@@ -430,6 +428,8 @@ void DigikamApp::show()
 
         Q_EMIT signalNotificationError(msg, DNotificationWidget::Warning);
     }
+
+    QTimer::singleShot(1000, this, SLOT(slotCheckFaceTrainingVersion()));
 }
 
 void DigikamApp::restoreSession()
