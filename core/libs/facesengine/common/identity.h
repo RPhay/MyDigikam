@@ -71,6 +71,8 @@ public:
     void    setAttribute(const QString& att,
                          const QString& val);
 
+    void    deleteAttributeValue(const QString& att, const QString& val);
+
     /**
      * @brief Attributes map accessor.
      */

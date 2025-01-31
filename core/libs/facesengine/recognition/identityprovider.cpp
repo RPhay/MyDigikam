@@ -504,6 +504,40 @@ void IdentityProvider::deleteIdentities(QList<Identity> identitiesToBeDeleted)
     }
 }
 
+void IdentityProvider::renameIdentity(const QString& uuid, const QString& newName)
+{
+    Identity identity = findIdentity(QLatin1String("uuid"), uuid);
+
+    if (!identity.isNull())
+    {
+        // remove the old name and fullName attributes
+
+        identity.deleteAttributeValue(QLatin1String("name"), identity.attribute(QLatin1String("name")));
+        identity.deleteAttributeValue(QLatin1String("fullName"), identity.attribute(QLatin1String("fullName")));
+
+        // add the new name and fullName attributes
+
+        identity.setAttribute(QLatin1String("name"), newName);
+        identity.setAttribute(QLatin1String("fullName"), newName);
+
+        // lock for write
+
+        d->trainingLock.lockForWrite();
+
+        // update the identity in the DB
+
+        FaceDbAccess().db()->updateIdentity(identity);
+
+        // update the identity in the cache
+
+        d->identityCache[identity.id()] = identity;
+
+        // unlock
+
+        d->trainingLock.unlock();
+    }
+}
+
 bool IdentityProvider::clearTraining(const QString& hash)
 {
     d->trainingLock.lockForWrite();

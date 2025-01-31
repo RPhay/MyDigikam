@@ -137,7 +137,7 @@ BUGFIXES:
 088 ==> 499305 - Check at startup if FaceDB needs retrained box crash digikam if apply
 089 ==> 491473 - digiKam 8.4 does not start.
 090 ==> 499172 - Display issue of processed face recognitions when the queue is overloaded
-091 ==>
+091 ==> 498320 - Renaming a face tag fails to move over the training data
 092 ==>
 093 ==>
 094 ==>

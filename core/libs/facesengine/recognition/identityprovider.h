@@ -54,7 +54,7 @@ public:
     /**
      * @brief retrieves the identity with the given id.
      */
-    Identity        identity(int id)                                        const;
+    Identity identity(int id)                                               const;
 
     /**
      * @brief Finds the first identity with matching attribute - value.
@@ -91,6 +91,11 @@ public:
      * @brief Deletes a list of identities from the database.
      */
     void deleteIdentities(QList<Identity> identitiesToBeDeleted);
+
+    /**
+     * @brief Renames an identity. Fails if the new name is already in use.
+     */
+    void renameIdentity(const QString& uuid, const QString& newName);
 
     /**
      * @brief Deletes the training image for the given hash,

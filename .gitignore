@@ -51,3 +51,15 @@ GRTAGS
 GSYMS
 BROWSE
 
+Applications/
+bundle/
+project/bundles/homebrew/data/liblqr_manifest.txt
+project/bundles/homebrew/data/libraw_manifest.txt
+project/bundles/homebrew/data/o2_manifest.txt
+project/bundles/homebrew/data/RELEASEID.txt
+project/bundles/homebrew/installer/postinstall
+project/bundles/homebrew/installer/preinstall
+
+project/reports/report.cppcheck.xml
+project/reports/report.scan/
+

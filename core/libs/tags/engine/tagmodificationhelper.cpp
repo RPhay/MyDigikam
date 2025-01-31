@@ -44,8 +44,7 @@
 #include "tagproperties.h"
 #include "tageditdlg.h"
 #include "facetags.h"
-#include "facedbaccess.h"
-#include "facedb.h"
+#include "identityprovider.h"
 
 namespace Digikam
 {
@@ -197,6 +196,9 @@ void TagModificationHelper::slotTagEdit(TAlbum* t)
                 TagProperties props(tag->id());
                 props.setProperty(TagPropertyName::person(),         title);
                 props.setProperty(TagPropertyName::faceEngineName(), title);
+
+                QString uuid = tag->property(TagPropertyName::faceEngineUuid());
+                IdentityProvider::instance()->renameIdentity(uuid, title);
             }
         }
         else
@@ -673,7 +675,11 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
 
                 // delete the faces db identity with this uuid.
 
-                FaceDbAccess().db()->deleteIdentity(uuid);
+                IdentityProvider* idProvider = IdentityProvider::instance();
+                Identity id = idProvider->findIdentity(QLatin1String("uuid"), uuid);
+                idProvider->deleteIdentity(id);                
+
+                // FaceDbAccess().db()->deleteIdentity(uuid);
             }
 
             // reset tag icon

@@ -80,6 +80,11 @@ void Identity::setAttribute(const QString& att, const QString& val)
     d->attributes.insert(att, val);
 }
 
+void Identity::deleteAttributeValue(const QString& att, const QString& val)
+{
+    d->attributes.remove(att, val);
+}
+
 QMultiMap<QString, QString> Identity::attributesMap() const
 {
     return d->attributes;
