@@ -43,8 +43,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-30 01:53+0000\n"
-"PO-Revision-Date: 2025-01-29 16:41+0100\n"
+"POT-Creation-Date: 2025-01-31 01:54+0000\n"
+"PO-Revision-Date: 2025-01-30 20:00+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -42670,25 +42670,25 @@ msgstr[1] ""
 "Utför åtgärd för\n"
 "\"%1\" markerade bilder"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:406
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:405
 #, kde-format
 msgctxt "date of last image modification"
 msgid "Mod.: %1"
 msgstr "Ändrad: %1"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:422
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:421
 #: core/showfoto/main/showfoto.cpp:267
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
-#: core/utilities/import/items/itemviewimportdelegate.cpp:368
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
+#: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Mbp)"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:427
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:447
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
-#: core/utilities/import/items/itemviewimportdelegate.cpp:373
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:426
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:446
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:320
+#: core/utilities/import/items/itemviewimportdelegate.cpp:372
 #, kde-format
 msgctxt "unknown image resolution"
 msgid "Unknown"
@@ -50553,8 +50553,8 @@ msgctxt "@action"
 msgid "C&ancel"
 msgstr "&Avbryt"
 
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:254
-#: core/utilities/import/items/itemviewimportdelegate.cpp:321
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:253
+#: core/utilities/import/items/itemviewimportdelegate.cpp:320
 #, kde-format
 msgctxt "date of image creation"
 msgid "created: %1"
@@ -51624,24 +51624,36 @@ msgid "No address book entries found"
 msgstr "Inga adressboksposter hittades"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Facial Recognition Model"
+#, kde-format
 msgctxt "@title:window"
 msgid "Facial Recognition Database"
-msgstr "Ansiktsigenkänningsmodell"
+msgstr "Ansiktsigenkänningsdatabas"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Your face recognition database is outdated and requires retraining. This "
+#| "process might take anywhere from a few seconds to several minutes. Facial "
+#| "recognition will not be reliable until retraining is finished.Retraining "
+#| "will run in the backaground and you can continue to use digiKam. \n"
+#| "\n"
+#| "Do you want to retrain your database now?"
 msgctxt "@info"
 msgid ""
 "Your face recognition database is outdated and requires retraining. This "
 "process might take anywhere from a few seconds to several minutes. Facial "
-"recognition will not be reliable until retraining is finished.Retraining "
-"will run in the backaground and you can continue to use digiKam. \n"
+"recognition will not be reliable until retraining is finished. Retraining "
+"will run in the background and you can continue to use digiKam. \n"
 "\n"
 "Do you want to retrain your database now?"
 msgstr ""
+"Databasen för ansiktsigenkänning är föråldrad och måstes tränas om. "
+"Processen kan ta allt från några sekunder till flera minuter. "
+"Ansiktsigenkänning kommer inte att vara tillförlitlig förrän träningen är "
+"klar. Träning körs i bakgrunden och du kan fortsätta att använda digiKam. \n"
+"\n"
+"Vill du träna om databasen nu?"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:82
 #, kde-format
