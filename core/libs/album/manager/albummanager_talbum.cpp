@@ -373,7 +373,10 @@ bool AlbumManager::deleteTAlbum(TAlbum* album, QString& errMsg, QList<qlonglong>
         return false;
     }
 
-    if (FaceTags::isSystemPersonTagId(album->id()))
+    if (
+        FaceTags::isSystemPersonTagId(album->id()) ||
+        (FaceTags::personParentTag() == album->id())
+       )
     {
         errMsg = i18n("Cannot delete required face tag");
         return false;

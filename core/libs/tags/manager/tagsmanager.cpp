@@ -983,10 +983,11 @@ void TagsManager::slotMarkNotAssignedTags()
             TAlbum* const t = static_cast<TAlbum*>(d->tagMngrView->albumForIndex(current));
 
             if (
-                t                                     &&
-                !t->isRoot()                          &&
-                !t->isInternalTag()                   &&
-                !FaceTags::isSystemPersonTagId(t->id())
+                t                                       &&
+                !t->isRoot()                            &&
+                !t->isInternalTag()                     &&
+                !FaceTags::isSystemPersonTagId(t->id()) &&
+                (FaceTags::personParentTag() != t->id())
                )
             {
                 QList<qlonglong> assignedItems = CoreDbAccess().db()->getItemIDsInTag(t->id());
