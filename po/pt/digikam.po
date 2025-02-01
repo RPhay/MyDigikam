@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 01:54+0000\n"
+"POT-Creation-Date: 2025-02-01 01:53+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -1492,7 +1492,7 @@ msgstr "Limpar a Base de Dados..."
 msgid "Loading albums..."
 msgstr "A carregar os álbuns..."
 
-#: core/app/main/digikamapp.cpp:369
+#: core/app/main/digikamapp.cpp:367
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1504,7 +1504,7 @@ msgstr ""
 "Nesse caso, a funcionalidade de \"Gestão de Cores\" ficará desactivada até "
 "resolver essa questão.</p>"
 
-#: core/app/main/digikamapp.cpp:425
+#: core/app/main/digikamapp.cpp:423
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -40132,7 +40132,7 @@ msgstr "Criar a \"%1\" em %2"
 msgid "Create \"%1\""
 msgstr "Criar a \"%1\""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:256
+#: core/libs/tags/engine/tagmodificationhelper.cpp:258
 #, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -40147,26 +40147,26 @@ msgstr[1] ""
 "A marca '%2' tem %1 sub-marcas. Se apagar estas, também vai apagar as sub-"
 "marcas. Tem a certeza que deseja continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:279
+#: core/libs/tags/engine/tagmodificationhelper.cpp:281
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
 msgstr[0] "A marca '%2' está atribuída a um item. Deseja continuar?"
 msgstr[1] "A marca '%2' está atribuída a %1 itens. Deseja continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:287
+#: core/libs/tags/engine/tagmodificationhelper.cpp:289
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "Apagar a marca '%1'?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:290
-#: core/libs/tags/engine/tagmodificationhelper.cpp:409
+#: core/libs/tags/engine/tagmodificationhelper.cpp:292
+#: core/libs/tags/engine/tagmodificationhelper.cpp:411
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Apagar a Marca"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:383
+#: core/libs/tags/engine/tagmodificationhelper.cpp:385
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -40177,17 +40177,17 @@ msgstr ""
 "apagar as sub-marcas.\n"
 "Tem a certeza que deseja continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:400
+#: core/libs/tags/engine/tagmodificationhelper.cpp:402
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr "As marcas '%1' estão atribuídas a um ou mais itens. Deseja continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:406
+#: core/libs/tags/engine/tagmodificationhelper.cpp:408
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Apagar as marcas '%1'?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:571
+#: core/libs/tags/engine/tagmodificationhelper.cpp:573
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -40206,7 +40206,7 @@ msgstr[1] ""
 "esta também vai apagar as sub-marcas.\n"
 "Tem a certeza que deseja continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:593
+#: core/libs/tags/engine/tagmodificationhelper.cpp:595
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -40218,14 +40218,14 @@ msgstr[1] ""
 "As marcas de caras '%2' estão atribuídas a pelo menos um item. Deseja "
 "continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:601
+#: core/libs/tags/engine/tagmodificationhelper.cpp:603
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "Remover a marca de cara?"
 msgstr[1] "Remover as marcas de caras?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:612
+#: core/libs/tags/engine/tagmodificationhelper.cpp:614
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""

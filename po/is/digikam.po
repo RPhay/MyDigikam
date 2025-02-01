@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 01:54+0000\n"
-"PO-Revision-Date: 2025-01-23 08:48+0000\n"
+"POT-Creation-Date: 2025-02-01 01:53+0000\n"
+"PO-Revision-Date: 2025-01-31 12:06+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -1357,7 +1357,7 @@ msgstr "Hreinsa gagnagrunn..."
 msgid "Loading albums..."
 msgstr "Hleð inn albúmum..."
 
-#: core/app/main/digikamapp.cpp:369
+#: core/app/main/digikamapp.cpp:367
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1368,7 +1368,7 @@ msgstr ""
 "veldu þá \"Já\", annars \"Nei\". Í því tilfelli verður \"Stýring litasniða\" "
 "gerð óvirk þar til þú leysir þetta vandamál.</p>"
 
-#: core/app/main/digikamapp.cpp:425
+#: core/app/main/digikamapp.cpp:423
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -7254,18 +7254,7 @@ msgid "An image loader based on Libpgf codec"
 msgstr "Myndhleðsluforrit byggt á Libpgf-kóðunarlyklun"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:78
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This plugin allows users to load and save image using Libpgf codec."
-#| "</para><para>The Progressive Graphics File (PGF) is an efficient image "
-#| "file format, that is based on a fast, discrete wavelet transform with "
-#| "progressive coding features. PGF can be used for lossless and lossy "
-#| "compression. It's most suitable for natural images. PGF can be used as a "
-#| "very efficient and fast replacement of JPEG-2000.</para><para>See <a "
-#| "href='https://en.wikipedia.org/wiki/"
-#| "Progressive_Graphics_File'>Progressive Graphics File documentation</a> "
-#| "for details.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This plugin allows users to load and save image using Libpgf codec.</"
@@ -20692,12 +20681,7 @@ msgid "Soundtrack Preview:"
 msgstr "Sýnishorn af hljóðrás:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:226
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-#| "will be played in loop. If the audio length is largest than video, it "
-#| "will be trimmed. Leave this setting empty if you don't want a soundtrack "
-#| "to the media.</i>"
+#, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is larger than video, it will be "
@@ -20730,14 +20714,7 @@ msgid "Number of Frames by Image:"
 msgstr "Fjöldi ramma fyrir hverja mynd:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:90
-#, fuzzy, kde-format
-#| msgid ""
-#| "This value repeat one image in the sequence.\n"
-#| "While creating timelapse; it's usual to use 1.\n"
-#| "Typically, the number of frames will determine\n"
-#| "the time to show the same frame in the video.\n"
-#| "The result will depend of the number of frames\n"
-#| "per second used to encode the media."
+#, kde-format
 msgid ""
 "This value repeat one image in the sequence.\n"
 "While creating timelapse; it is usual to use 1.\n"
@@ -24229,10 +24206,9 @@ msgid "Export to &iNaturalist..."
 msgstr "Flytja út á &iNaturalist..."
 
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:259
-#, fuzzy, kde-format
-#| msgid "We're pretty sure it's in this %1."
+#, kde-format
 msgid "We are pretty sure it is in this %1."
-msgstr "Við erum nokkuð viss um að það er í %1."
+msgstr "Við erum nokkuð viss um að það er í þessu %1."
 
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:269
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:274
@@ -27259,8 +27235,7 @@ msgstr "Viltu sameina merkið '%1' inn í merkið '%2'?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:624
 #: core/libs/album/manager/albummanager_talbum.cpp:1138
-#, fuzzy, kde-format
-#| msgid "Don't ask again at this session"
+#, kde-format
 msgid "Do not ask again at this session"
 msgstr "Ekki spyrja aftur í þessari setu"
 
@@ -35126,7 +35101,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Rules"
-msgstr ""
+msgstr "Reglur"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
 #, kde-format
@@ -35239,11 +35214,10 @@ msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Skynja hvort myndir séu yfirlýstar eða undirlýstar"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:225
-#, fuzzy, kde-format
-#| msgid "Sparsity Factor: "
+#, kde-format
 msgctxt "@title:tab"
 msgid "Basic Factors"
-msgstr "Þéttleikastuðull: "
+msgstr "Grunnþættir"
 
 #: core/libs/iojobs/iojob.cpp:64
 #, kde-format
@@ -36665,16 +36639,7 @@ msgstr ""
 "uppfærsluvalkostina í uppsetningarglugga.</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:287
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version "
-#| "<i>%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
-#| "<b>Download</b> to get the file...</p><p>Note: from Setup/Misc panel, you "
-#| "can switch to check for weekly pre-release.<br/>Pre-release versions are "
-#| "dedicated to test quickly new features.<br/>It's not recommended to use "
-#| "pre-releases in production as bugs can remain,<br/>unless you know what "
-#| "you are doing.</p><p>Press <b>Configure</b> if you want to customize "
-#| "update options from setup dialog.</p>"
+#, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
 "%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
@@ -39449,7 +39414,7 @@ msgstr "Búa til \"%1\" í %2"
 msgid "Create \"%1\""
 msgstr "Búa til \"%1\""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:256
+#: core/libs/tags/engine/tagmodificationhelper.cpp:258
 #, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -39464,7 +39429,7 @@ msgstr[1] ""
 "Merkið '%2' hefur %1 undirmerki. Að eyða merki eyðir líka undirmerkjum.\n"
 "Ertu viss um að þú viljir halda áfram?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:279
+#: core/libs/tags/engine/tagmodificationhelper.cpp:281
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -39475,19 +39440,19 @@ msgstr[1] ""
 "Merki '%2' hefur undirmerki á %1 hlutum. Að eyða merki eyðir líka "
 "undirmerkjum. Ertu viss um að þú viljir halda áfram?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:287
+#: core/libs/tags/engine/tagmodificationhelper.cpp:289
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "Eyða '%1' merki?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:290
-#: core/libs/tags/engine/tagmodificationhelper.cpp:409
+#: core/libs/tags/engine/tagmodificationhelper.cpp:292
+#: core/libs/tags/engine/tagmodificationhelper.cpp:411
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Eyða merki"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:383
+#: core/libs/tags/engine/tagmodificationhelper.cpp:385
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -39498,19 +39463,19 @@ msgstr ""
 "undirmerkjunum.\n"
 "Ertu viss um að þú viljir halda áfram?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:400
+#: core/libs/tags/engine/tagmodificationhelper.cpp:402
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 "Merkjunum '%1' hefur verið úthlutað á eitt eða fleiri atriði. Ertu viss um "
 "að þú viljir halda áfram?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:406
+#: core/libs/tags/engine/tagmodificationhelper.cpp:408
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Eyða '%1' merki/merkjum?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:571
+#: core/libs/tags/engine/tagmodificationhelper.cpp:573
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39529,7 +39494,7 @@ msgstr[1] ""
 "líka undirmerkjum.\n"
 "Ertu viss um að þú viljir halda áfram?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:593
+#: core/libs/tags/engine/tagmodificationhelper.cpp:595
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -39542,14 +39507,14 @@ msgstr[1] ""
 "Andlitsmerkjunum '%2' er úthlutað á a.m.k. eitt atriði.  Ertu viss um að þú "
 "viljir halda áfram?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:601
+#: core/libs/tags/engine/tagmodificationhelper.cpp:603
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "Fjarlægja andlitsmerki?"
 msgstr[1] "Fjarlægja valið merki"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:612
+#: core/libs/tags/engine/tagmodificationhelper.cpp:614
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -42692,14 +42657,7 @@ msgid "Show Thumbbar"
 msgstr "Sýna smámyndastiku"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the slogan formatted string displayed in splashscreen. Please "
-#| "translate using short words else the slogan can be truncated."
-#| msgid ""
-#| "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> "
-#| "with the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>"
-#| "%1</i></font></qt>"
+#, kde-format
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
@@ -42708,8 +42666,7 @@ msgid ""
 ">with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
 "<qt><font color=\"white\"><b>Meðhöndlaðu ljósmyndir</b> eins og "
-"<b>atvinnumaður</b> með öflugum <b>opnum</b> hugbúnaði</font><font color="
-"\"gray\"><br/><i>%1</i></font></qt>"
+"<b>atvinnumaður</b> með öflugum <b>opnum</b> hugbúnaði</font></qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
@@ -47666,10 +47623,9 @@ msgstr "Valið tungumál notandaviðmóts %1 er ekki stutt fyrir %2"
 #: core/libs/widgets/text/donlinetranslator.cpp:132
 #: core/libs/widgets/text/donlinetranslator.cpp:215
 #: core/libs/widgets/text/donlinetranslator.cpp:232
-#, fuzzy, kde-format
-#| msgid "%1 URL can't be empty."
+#, kde-format
 msgid "%1 URL cannot be empty."
-msgstr "%1 slóð má ekki vera auð."
+msgstr "%1-slóð má ekki vera auð."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
 #, kde-format
@@ -49852,14 +49808,7 @@ msgstr "Kerfi"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:370
 #: core/utilities/setup/misc/setupmisc.cpp:407
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check for new version option will verify the pre-releases.\n"
-#| "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
-#| "It's not recommended to use pre-release in production as bugs can "
-#| "remain,\n"
-#| "unless you know what you are doing.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
 "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
@@ -51626,12 +51575,10 @@ msgid "No address book entries found"
 msgstr "Engar færslur fundust í nafnaskrá"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Facial Recognition Model"
+#, kde-format
 msgctxt "@title:window"
 msgid "Facial Recognition Database"
-msgstr "Líkan andlitakennsla"
+msgstr "Gagnagrunnur andlitakennsla"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:65
 #, kde-format
@@ -51644,6 +51591,12 @@ msgid ""
 "\n"
 "Do you want to retrain your database now?"
 msgstr ""
+"Gagnagrunnurinn þinn fyrir andlitakennsl er úreltur og þarfnast "
+"endurþjálfunar. Það ferli getur krafist tíma allt frá örfáum sekúndum upp í "
+"margar mínútur. Andlitakennsl verða ekki áreiðanleg fyrr en þessari þjálfun "
+"er lokið. Þjálfunin keyrir í bakgrunni og þú getur notað digiKam á meðan.\n"
+"\n"
+"Viltu endurþjálfa gagnagrunninn þinn núna?"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:82
 #, kde-format
@@ -51871,23 +51824,7 @@ msgid "Extra Large"
 msgstr "Mjög stór"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p>Selecting <b>Extra Small</b> means the model will detect small "
-#| "background faces in addition to medium and larger faces. Selecting "
-#| "<b>Small Faces</b> increases the sensitivity of the model by tuning the "
-#| "model parameters. It will also increase the probability of false-"
-#| "positives, and it will increase detection time.</p><p>Selecting <b>Large</"
-#| "b> or <b>Extra Large</b> will eliminate small background faces from being "
-#| "detected. It is much faster and will reduce the number of false-"
-#| "positives, but will not detect small faces in the background or faces in "
-#| "large group photos.</p><p>If you want to detect all faces in one pass, "
-#| "select <b>Extra Small</b> faces and set the detection accuracy to 2. "
-#| "Unfortunately, this will create a significant number of false-positives. "
-#| "It's recommended to set a detection accuracy of 6-8 and face size of "
-#| "<b>Medium</b> or <b>Large</b> for normal use.</p><p>This setting applies "
-#| "only to YuNet.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Selecting <b>Extra Small</b> means the model will detect small background "
@@ -60496,9 +60433,7 @@ msgid "Use the last saved active tools and settings"
 msgstr "Nota síðast vistuði virku verkfæri og stillingar"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores (when it's possible)"
+#, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it is possible)"
 msgstr "Vinna á öllum kjörnum örgjörva (þegar þar er hægt)"
@@ -64763,24 +64698,7 @@ msgid "Always show intermediate snapshots"
 msgstr "Alltaf birta millistigsþrep (snapshots)"
 
 #: core/utilities/setup/editor/setupversioning.cpp:461
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG</emphasis>: It's the most commonly "
-#| "used file format, but it employs lossy compression, which means that with "
-#| "each saving operation some image information will be irreversibly lost. "
-#| "JPEG offers a good compression rate, resulting in smaller files. </"
-#| "item><item><emphasis strong='true'>PNG</emphasis>: A widely used format "
-#| "employing lossless compression. The files, though, will be larger because "
-#| "PNG does not achieve very good compression rates.</item><item><emphasis "
-#| "strong='true'>TIFF</emphasis>: A commonly used format, usually "
-#| "uncompressed or with modest lossless compression. Resulting files will be "
-#| "large, but without quality loss due to compression. </"
-#| "item><item><emphasis strong='true'>PGF</emphasis>: This is a technically "
-#| "superior file format offering good compression rates with either lossy or "
-#| "lossless compression. But it is not yet widely used and supported, so "
-#| "your friends may not directly be able to open these files, and you may "
-#| "not be able to directly publish them on the web. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG</emphasis>: It is the most commonly used "
@@ -64817,13 +64735,7 @@ msgstr ""
 "item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:494
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG-2000</emphasis>: It's similar to PGF. "
-#| "Loading or saving is slower, the compression rate is better, and the "
-#| "format more widely supported, though still not comparable to the "
-#| "tradition formats JPEG, PNG or TIFF. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-2000</emphasis>: It is similar to PGF. "
@@ -64851,13 +64763,7 @@ msgstr ""
 "samsvarandi gæðum. </item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:517
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG-XL</emphasis>: It's a royalty-free "
-#| "raster-graphics file format that supports lossless compression. It is "
-#| "designed to outperform existing raster formats and thus to become their "
-#| "universal replacement. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-XL</emphasis>: It is a royalty-free "
@@ -64871,13 +64777,7 @@ msgstr ""
 "rastasnið og þannig að koma í stað þeirra.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:527
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>WEBP</emphasis>: It's an image file format "
-#| "that Google has developed as a replacement for JPEG, PNG, and GIF file "
-#| "formats. Files are smaller for the same quality, or of higher quality for "
-#| "the same size. It supports both lossy and lossless compression</item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>WEBP</emphasis>: It is an image file format "

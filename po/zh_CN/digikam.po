@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 01:54+0000\n"
+"POT-Creation-Date: 2025-02-01 01:53+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1318,7 +1318,7 @@ msgstr "清理数据库..."
 msgid "Loading albums..."
 msgstr "正在加载相册..."
 
-#: core/app/main/digikamapp.cpp:369
+#: core/app/main/digikamapp.cpp:367
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1328,7 +1328,7 @@ msgstr ""
 "<p>ICC 色彩特性文件所在的文件夹无效。</p><p>要重新设置该文件夹，请选择“是”。"
 "如果选择“否”，色彩管理功能将被禁用，直至问题被解决为止。</p>"
 
-#: core/app/main/digikamapp.cpp:425
+#: core/app/main/digikamapp.cpp:423
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -38246,7 +38246,7 @@ msgstr "创建“%1”到 %2 之下"
 msgid "Create \"%1\""
 msgstr "创建“%1”"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:256
+#: core/libs/tags/engine/tagmodificationhelper.cpp:258
 #, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -38258,25 +38258,25 @@ msgstr[0] ""
 "标签“%2”含有 %1 个子标签。删除此标签将同时删除它的子标签。\n"
 "您想要继续吗？"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:279
+#: core/libs/tags/engine/tagmodificationhelper.cpp:281
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
 msgstr[0] "标签“%2”已被指定到 %1 个项目。您想要继续吗？"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:287
+#: core/libs/tags/engine/tagmodificationhelper.cpp:289
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "删除标签“%1”吗？"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:290
-#: core/libs/tags/engine/tagmodificationhelper.cpp:409
+#: core/libs/tags/engine/tagmodificationhelper.cpp:292
+#: core/libs/tags/engine/tagmodificationhelper.cpp:411
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "删除标签"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:383
+#: core/libs/tags/engine/tagmodificationhelper.cpp:385
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -38286,17 +38286,17 @@ msgstr ""
 "标签“%1”含有一个或多个子标签。删除此标签将同时删除它的子标签。\n"
 "您想要继续吗？"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:400
+#: core/libs/tags/engine/tagmodificationhelper.cpp:402
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr "标签“%1”已被指定到一个或多个项目。您想要继续吗？"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:406
+#: core/libs/tags/engine/tagmodificationhelper.cpp:408
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "删除标签“%1”吗？"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:571
+#: core/libs/tags/engine/tagmodificationhelper.cpp:573
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -38310,7 +38310,7 @@ msgstr[0] ""
 "人脸标签“%2”含有一个或多个人脸子标签。删除此标签将同时删除它的子标签。\n"
 "您想要继续吗？"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:593
+#: core/libs/tags/engine/tagmodificationhelper.cpp:595
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -38318,13 +38318,13 @@ msgid_plural ""
 "Face tags '%2' are assigned to at least one item. Do you want to continue?"
 msgstr[0] "人脸标签“%2”已被指定到一个或多个项目。您想要继续吗？"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:601
+#: core/libs/tags/engine/tagmodificationhelper.cpp:603
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "移除人脸标签吗？"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:612
+#: core/libs/tags/engine/tagmodificationhelper.cpp:614
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""

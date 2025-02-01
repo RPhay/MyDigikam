@@ -54,7 +54,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 01:54+0000\n"
+"POT-Creation-Date: 2025-02-01 01:53+0000\n"
 "PO-Revision-Date: 2025-01-27 11:15+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1411,7 +1411,7 @@ msgstr "Очистка баз данных…"
 msgid "Loading albums..."
 msgstr "Получение списка альбомов…"
 
-#: core/app/main/digikamapp.cpp:369
+#: core/app/main/digikamapp.cpp:367
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1423,7 +1423,7 @@ msgstr ""
 "«Нет» (функция управления цветом будет отключена до тех пор, пока эта "
 "проблема не будет решена).</p>"
 
-#: core/app/main/digikamapp.cpp:425
+#: core/app/main/digikamapp.cpp:423
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -40052,7 +40052,7 @@ msgstr "Создать «%1» в %2"
 msgid "Create \"%1\""
 msgstr "Создать «%1»"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:256
+#: core/libs/tags/engine/tagmodificationhelper.cpp:258
 #, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -40077,7 +40077,7 @@ msgstr[3] ""
 "вложенной метки.\n"
 "Продолжить?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:279
+#: core/libs/tags/engine/tagmodificationhelper.cpp:281
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -40086,19 +40086,19 @@ msgstr[1] "Метка «%2» связана с %1 объектами. Продо
 msgstr[2] "Метка «%2» связана с %1 объектами. Продолжить?"
 msgstr[3] "Метка «%2» связана с одним объектом. Продолжить?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:287
+#: core/libs/tags/engine/tagmodificationhelper.cpp:289
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "Удалить метку «%1»?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:290
-#: core/libs/tags/engine/tagmodificationhelper.cpp:409
+#: core/libs/tags/engine/tagmodificationhelper.cpp:292
+#: core/libs/tags/engine/tagmodificationhelper.cpp:411
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Удаление метки"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:383
+#: core/libs/tags/engine/tagmodificationhelper.cpp:385
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -40109,17 +40109,17 @@ msgstr ""
 "повлечёт удаление всех вложенных меток.\n"
 "Продолжить?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:400
+#: core/libs/tags/engine/tagmodificationhelper.cpp:402
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr "Метка «%1» связана с одним или нескольким объектами. Продолжить?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:406
+#: core/libs/tags/engine/tagmodificationhelper.cpp:408
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Удалить метку(и) «%1»?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:571
+#: core/libs/tags/engine/tagmodificationhelper.cpp:573
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -40146,7 +40146,7 @@ msgstr[3] ""
 "повлечёт удаление всех вложенных меток.\n"
 "Продолжить?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:593
+#: core/libs/tags/engine/tagmodificationhelper.cpp:595
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -40157,7 +40157,7 @@ msgstr[1] "Метки лица «%2» связаны с как минимум о
 msgstr[2] "Метки лица «%2» связаны с как минимум одним объектом. Продолжить?"
 msgstr[3] "Метка лица «%2» связана с как минимум одним объектом. Продолжить?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:601
+#: core/libs/tags/engine/tagmodificationhelper.cpp:603
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
@@ -40166,7 +40166,7 @@ msgstr[1] "Удалить метки лиц?"
 msgstr[2] "Удалить метки лиц?"
 msgstr[3] "Удалить метку лица?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:612
+#: core/libs/tags/engine/tagmodificationhelper.cpp:614
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""

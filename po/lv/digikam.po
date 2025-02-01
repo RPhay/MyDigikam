@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 01:54+0000\n"
+"POT-Creation-Date: 2025-02-01 01:53+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1376,7 +1376,7 @@ msgstr "Lasa datubāzi"
 msgid "Loading albums..."
 msgstr "Ielādē albumus..."
 
-#: core/app/main/digikamapp.cpp:369
+#: core/app/main/digikamapp.cpp:367
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1387,7 +1387,7 @@ msgstr ""
 "izvēlieties \"Jā\", pretējā gadījumā izvēlieties \"Nē\", un \"Krāsu "
 "pārvaldība\" tiks atslēgta, līdz jūs atrisināsiet šo problēmu.</p>"
 
-#: core/app/main/digikamapp.cpp:425
+#: core/app/main/digikamapp.cpp:423
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -39042,7 +39042,7 @@ msgstr "Izveidot \"%1\" mapē %2"
 msgid "Create \"%1\""
 msgstr "Izveidot \"%1\""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:256
+#: core/libs/tags/engine/tagmodificationhelper.cpp:258
 #, fuzzy, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -39060,7 +39060,7 @@ msgstr[2] ""
 "Tags '%2' satur %1 apakštagu. Tā dzēšana izdzēsīs arī visus apakštagus. Vai "
 "vēlaties turpināt?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:279
+#: core/libs/tags/engine/tagmodificationhelper.cpp:281
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -39068,20 +39068,20 @@ msgstr[0] "Tags '%2' piešķirts %1 failam. Vai vēlaties turpināt?"
 msgstr[1] "Tags '%2' piešķirts %1 failiem. Vai vēlaties turpināt?"
 msgstr[2] "Tags '%2' piešķirts %1 failu. Vai vēlaties turpināt?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:287
+#: core/libs/tags/engine/tagmodificationhelper.cpp:289
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "Dzēst tagu '%1'?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:290
-#: core/libs/tags/engine/tagmodificationhelper.cpp:409
+#: core/libs/tags/engine/tagmodificationhelper.cpp:292
+#: core/libs/tags/engine/tagmodificationhelper.cpp:411
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Dzēst tagu"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:383
+#: core/libs/tags/engine/tagmodificationhelper.cpp:385
 #, fuzzy, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -39091,17 +39091,17 @@ msgstr ""
 "Tags '%2' satur %1 apakštagu. Tā dzēšana izdzēsīs arī visus apakštagus. Vai "
 "vēlaties turpināt?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:400
+#: core/libs/tags/engine/tagmodificationhelper.cpp:402
 #, fuzzy, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr "Tags '%2' piešķirts %1 failam. Vai vēlaties turpināt?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:406
+#: core/libs/tags/engine/tagmodificationhelper.cpp:408
 #, fuzzy, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Dzēst tagu '%1'?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:571
+#: core/libs/tags/engine/tagmodificationhelper.cpp:573
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39121,7 +39121,7 @@ msgstr[2] ""
 "Tags '%2' satur %1 apakštagu. Tā dzēšana izdzēsīs arī visus apakštagus. Vai "
 "vēlaties turpināt?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:593
+#: core/libs/tags/engine/tagmodificationhelper.cpp:595
 #, fuzzy, kde-format
 #| msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 #| msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -39133,7 +39133,7 @@ msgstr[0] "Tags '%2' piešķirts %1 failam. Vai vēlaties turpināt?"
 msgstr[1] "Tags '%2' piešķirts %1 failiem. Vai vēlaties turpināt?"
 msgstr[2] "Tags '%2' piešķirts %1 failu. Vai vēlaties turpināt?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:601
+#: core/libs/tags/engine/tagmodificationhelper.cpp:603
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
@@ -39141,7 +39141,7 @@ msgstr[0] "Noņemt sejas tagu?"
 msgstr[1] "Noņemt sejas tagus?"
 msgstr[2] "Noņemt sejas tagus?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:612
+#: core/libs/tags/engine/tagmodificationhelper.cpp:614
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""

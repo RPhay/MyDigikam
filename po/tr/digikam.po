@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 01:54+0000\n"
-"PO-Revision-Date: 2025-01-30 16:49+0300\n"
+"POT-Creation-Date: 2025-02-01 01:53+0000\n"
+"PO-Revision-Date: 2025-01-31 16:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1378,7 +1378,7 @@ msgstr "Veritabanı temizleniyor…"
 msgid "Loading albums..."
 msgstr "Albümler yükleniyor…"
 
-#: core/app/main/digikamapp.cpp:369
+#: core/app/main/digikamapp.cpp:367
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1390,7 +1390,7 @@ msgstr ""
 "seçerseniz “Renk Yönetimi” desteği siz bu sorunu çözene dek devre dışı "
 "bırakılacaktır.</p>"
 
-#: core/app/main/digikamapp.cpp:425
+#: core/app/main/digikamapp.cpp:423
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -39535,7 +39535,7 @@ msgstr "%2 içinde “%1” oluştur"
 msgid "Create \"%1\""
 msgstr "“%1” oluştur"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:256
+#: core/libs/tags/engine/tagmodificationhelper.cpp:258
 #, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -39552,26 +39552,26 @@ msgstr[1] ""
 "silecektir.\n"
 "Sürdürmek istiyor musunuz?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:279
+#: core/libs/tags/engine/tagmodificationhelper.cpp:281
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
 msgstr[0] "“%2” künyesi 1 ögeye atanmış. Sürdürmek istiyor musunuz?"
 msgstr[1] "“%2” künyesi %1 ögeye atanmış. Sürdürmek istiyor muzunuz?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:287
+#: core/libs/tags/engine/tagmodificationhelper.cpp:289
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "“%1” künye silinsin mi?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:290
-#: core/libs/tags/engine/tagmodificationhelper.cpp:409
+#: core/libs/tags/engine/tagmodificationhelper.cpp:292
+#: core/libs/tags/engine/tagmodificationhelper.cpp:411
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Künyeyi Sil"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:383
+#: core/libs/tags/engine/tagmodificationhelper.cpp:385
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -39582,18 +39582,18 @@ msgstr ""
 "alt künyelerini de silecektir.\n"
 "Sürdürmek istiyor musunuz?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:400
+#: core/libs/tags/engine/tagmodificationhelper.cpp:402
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 "“%1” künyeleri bir veya daha çok ögeye atanmış. Sürdürmek istiyor musunuz?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:406
+#: core/libs/tags/engine/tagmodificationhelper.cpp:408
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "“%1” künye silinsin mi?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:571
+#: core/libs/tags/engine/tagmodificationhelper.cpp:573
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39612,7 +39612,7 @@ msgstr[1] ""
 "künyeleri de kaldırır.\n"
 "Sürdürmek istiyor musunuz?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:593
+#: core/libs/tags/engine/tagmodificationhelper.cpp:595
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -39621,14 +39621,14 @@ msgid_plural ""
 msgstr[0] "“%2” yüz künyesi en az 1 ögeye atanmış. Sürdürmek istiyor musunuz?"
 msgstr[1] "“%2” yüz künyesi en az 1 ögeye atanmış. Sürdürmek istiyor musunuz?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:601
+#: core/libs/tags/engine/tagmodificationhelper.cpp:603
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "Yüz künyesi kaldırılsın mı?"
 msgstr[1] "Yüz künyeleri kaldırılsın mı?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:612
+#: core/libs/tags/engine/tagmodificationhelper.cpp:614
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -51697,15 +51697,7 @@ msgid "Facial Recognition Database"
 msgstr "Yüz Tanıma Veritabanı"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Your face recognition database is outdated and requires retraining. This "
-#| "process might take anywhere from a few seconds to several minutes. Facial "
-#| "recognition will not be reliable until retraining is finished.Retraining "
-#| "will run in the backaground and you can continue to use digiKam. \n"
-#| "\n"
-#| "Do you want to retrain your database now?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Your face recognition database is outdated and requires retraining. This "

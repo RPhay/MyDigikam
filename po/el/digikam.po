@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 01:54+0000\n"
+"POT-Creation-Date: 2025-02-01 01:53+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -1391,7 +1391,7 @@ msgstr "Καθαρισμός βάσης δεδομένων..."
 msgid "Loading albums..."
 msgstr "Φόρτωση άλμπουμ..."
 
-#: core/app/main/digikamapp.cpp:369
+#: core/app/main/digikamapp.cpp:367
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1403,7 +1403,7 @@ msgstr ""
 "\"Όχι\" και το χαρακτηριστικό \"Διαχείριση χρωμάτων\" θα απενεργοποιηθεί "
 "μέχρι να διορθώσετε το πρόβλημα.</p>"
 
-#: core/app/main/digikamapp.cpp:425
+#: core/app/main/digikamapp.cpp:423
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -41858,7 +41858,7 @@ msgstr "Δημιουργία \"%1\" στο %2"
 msgid "Create \"%1\""
 msgstr "Δημιουργία \"%1\""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:256
+#: core/libs/tags/engine/tagmodificationhelper.cpp:258
 #, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -41875,7 +41875,7 @@ msgstr[1] ""
 "υποετικέτες.\n"
 "Επιθυμείτε να συνεχίσετε;"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:279
+#: core/libs/tags/engine/tagmodificationhelper.cpp:281
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -41884,20 +41884,20 @@ msgstr[0] ""
 msgstr[1] ""
 "Η ετικέτα '%2' έχει οριστεί σε %1 αντικείμενα. Θέλετε να συνεχίσετε;"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:287
+#: core/libs/tags/engine/tagmodificationhelper.cpp:289
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "Διαγραφή της ετικέτας '%1';"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:290
-#: core/libs/tags/engine/tagmodificationhelper.cpp:409
+#: core/libs/tags/engine/tagmodificationhelper.cpp:292
+#: core/libs/tags/engine/tagmodificationhelper.cpp:411
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Διαγραφή ετικέτας"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:383
+#: core/libs/tags/engine/tagmodificationhelper.cpp:385
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -41908,19 +41908,19 @@ msgstr ""
 "διαγραφούν και οι υποετικέτες.\n"
 "Επιθυμείτε να συνεχίσετε;"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:400
+#: core/libs/tags/engine/tagmodificationhelper.cpp:402
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 "Οι ετικέτες '%1' έχουν οριστεί σε ένα ή περισσότερα αντικείμενα. Θέλετε να "
 "συνεχίσετε;"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:406
+#: core/libs/tags/engine/tagmodificationhelper.cpp:408
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Διαγραφή '%1' ετικετών;"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:571
+#: core/libs/tags/engine/tagmodificationhelper.cpp:573
 #, fuzzy, kde-format
 #| msgid ""
 #| "Face tag '%2' has at least one face tag child. Deleting it will also "
@@ -41947,7 +41947,7 @@ msgstr[1] ""
 "δισγρφή τους θα διαγραφούν και οι απόγονοι.\n"
 "Επιθυμείτε να συνεχίσετε;"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:593
+#: core/libs/tags/engine/tagmodificationhelper.cpp:595
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -41960,14 +41960,14 @@ msgstr[1] ""
 "Οι ετικέτες προσώπου '%2' έχουν οριστεί σε ένα τουλάχιστον αντικείμενο. "
 "Θέλετε να συνεχίσετε;"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:601
+#: core/libs/tags/engine/tagmodificationhelper.cpp:603
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "Να αφαιρεθεί η ετικέτα προσώπου;"
 msgstr[1] "Να αφαιρεθούν οι ετικέτες προσώπου;"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:612
+#: core/libs/tags/engine/tagmodificationhelper.cpp:614
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""

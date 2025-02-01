@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 01:54+0000\n"
+"POT-Creation-Date: 2025-02-01 01:53+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -1454,7 +1454,7 @@ msgstr "បង្កើត​មូលដ្ឋាន​ទិន្នន័យ
 msgid "Loading albums..."
 msgstr "កំពុង​ផ្ទុក​ម៉ាស៊ីន​ថតរូប..."
 
-#: core/app/main/digikamapp.cpp:369
+#: core/app/main/digikamapp.cpp:367
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1465,7 +1465,7 @@ msgstr ""
 "ទីនេះ បើក​មិន​ដូច្នេះ​ទេ ជ្រើស \"ទេ\" និង​លក្ខណ​ពិសេស \"ការ​គ្រប់គ្រង​ពណ៌\" នឹង​ត្រូវ​បាន​បិទ ទាល់តែ​​អ្នក​"
 "ដោះស្រាយ​បញ្ហា​សិន ។</p>"
 
-#: core/app/main/digikamapp.cpp:425
+#: core/app/main/digikamapp.cpp:423
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -39844,7 +39844,7 @@ msgstr ""
 msgid "Create \"%1\""
 msgstr "បង្កើត \"%1\""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:256
+#: core/libs/tags/engine/tagmodificationhelper.cpp:258
 #, fuzzy, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -39854,26 +39854,26 @@ msgid_plural ""
 "Do you want to continue?"
 msgstr[0] "ស្លាក '%2' មាន​ស្លាក​រង %1 ។ លុប​វា​នឹង​លុប​ស្លាក​រង​ផងដែរ ។ តើ​អ្នក​ចង់​បន្ត​ឬ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:279
+#: core/libs/tags/engine/tagmodificationhelper.cpp:281
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
 msgstr[0] "ស្លាក '%2' ត្រូវ​បាន​កំណត់​ទៅ​ធាតុ %1 ។ តើ​អ្នក​ចង់​បន្ត​ឬ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:287
+#: core/libs/tags/engine/tagmodificationhelper.cpp:289
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "លុប​ស្លាក '%1' ឬ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:290
-#: core/libs/tags/engine/tagmodificationhelper.cpp:409
+#: core/libs/tags/engine/tagmodificationhelper.cpp:292
+#: core/libs/tags/engine/tagmodificationhelper.cpp:411
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "លុប​ស្លាក"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:383
+#: core/libs/tags/engine/tagmodificationhelper.cpp:385
 #, fuzzy, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -39881,17 +39881,17 @@ msgid ""
 "Do you want to continue?"
 msgstr "ស្លាក '%2' មាន​ស្លាក​រង %1 ។ លុប​វា​នឹង​លុប​ស្លាក​រង​ផងដែរ ។ តើ​អ្នក​ចង់​បន្ត​ឬ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:400
+#: core/libs/tags/engine/tagmodificationhelper.cpp:402
 #, fuzzy, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr "ស្លាក '%2' ត្រូវ​បាន​កំណត់​ទៅ​ធាតុ %1 ។ តើ​អ្នក​ចង់​បន្ត​ឬ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:406
+#: core/libs/tags/engine/tagmodificationhelper.cpp:408
 #, fuzzy, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "លុប​ស្លាក '%1' ឬ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:571
+#: core/libs/tags/engine/tagmodificationhelper.cpp:573
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39903,7 +39903,7 @@ msgid_plural ""
 "Do you want to continue?"
 msgstr[0] "ស្លាក '%2' មាន​ស្លាក​រង %1 ។ លុប​វា​នឹង​លុប​ស្លាក​រង​ផងដែរ ។ តើ​អ្នក​ចង់​បន្ត​ឬ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:593
+#: core/libs/tags/engine/tagmodificationhelper.cpp:595
 #, fuzzy, kde-format
 #| msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 #| msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -39913,14 +39913,14 @@ msgid_plural ""
 "Face tags '%2' are assigned to at least one item. Do you want to continue?"
 msgstr[0] "ស្លាក '%2' ត្រូវ​បាន​កំណត់​ទៅ​ធាតុ %1 ។ តើ​អ្នក​ចង់​បន្ត​ឬ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:601
+#: core/libs/tags/engine/tagmodificationhelper.cpp:603
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "យក​ស្លាក​ដែល​បាន​ជ្រើស​ចេញ​​"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:612
+#: core/libs/tags/engine/tagmodificationhelper.cpp:614
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Remove the tag corresponding to this face tag from the images?"

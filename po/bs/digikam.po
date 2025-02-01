@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 01:54+0000\n"
+"POT-Creation-Date: 2025-02-01 01:53+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -1488,7 +1488,7 @@ msgstr "Čitanje baze podataka..."
 msgid "Loading albums..."
 msgstr "Učitavanje kamera..."
 
-#: core/app/main/digikamapp.cpp:369
+#: core/app/main/digikamapp.cpp:367
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1500,7 +1500,7 @@ msgstr ""
 "mogućnost \"Upravljanje bojama\" će biti onesposobljena sve dok ne riješite "
 "ovaj problem.</p>"
 
-#: core/app/main/digikamapp.cpp:425
+#: core/app/main/digikamapp.cpp:423
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -41959,7 +41959,7 @@ msgstr ""
 msgid "Create \"%1\""
 msgstr "Kreiraj \"%1\""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:256
+#: core/libs/tags/engine/tagmodificationhelper.cpp:258
 #, fuzzy, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -41977,7 +41977,7 @@ msgstr[2] ""
 "Oznaka '%2' ima %1 podoznaka. Brisanje oznake će obrisati i podoznake. Da li "
 "želite da nastavite?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:279
+#: core/libs/tags/engine/tagmodificationhelper.cpp:281
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -41985,20 +41985,20 @@ msgstr[0] "Oznaka '%2' je pridružena na %1 stavku. Da li želite nastaviti?"
 msgstr[1] "Oznaka '%2' je pridružena na %1 stavkw. Da li želite nastaviti?"
 msgstr[2] "Oznaka '%2' je pridružena na %1 stavki. Da li želite nastaviti?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:287
+#: core/libs/tags/engine/tagmodificationhelper.cpp:289
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "Brišem oznaku „%1“ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:290
-#: core/libs/tags/engine/tagmodificationhelper.cpp:409
+#: core/libs/tags/engine/tagmodificationhelper.cpp:292
+#: core/libs/tags/engine/tagmodificationhelper.cpp:411
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Izbriši oznaku"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:383
+#: core/libs/tags/engine/tagmodificationhelper.cpp:385
 #, fuzzy, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -42008,18 +42008,18 @@ msgstr ""
 "Oznake '%1' imaju jednu ili više sporednih oznaka. Njihovim uklanjanjem, "
 "uklonit će se i sporedne oznake. Da li želite nastaviti?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:400
+#: core/libs/tags/engine/tagmodificationhelper.cpp:402
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 "Oznake '%1' dodijeljene su jednoj ili više stavki. Da li želite nastaviti?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:406
+#: core/libs/tags/engine/tagmodificationhelper.cpp:408
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Izbriši '%1' oznaku(e)?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:571
+#: core/libs/tags/engine/tagmodificationhelper.cpp:573
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -42039,7 +42039,7 @@ msgstr[2] ""
 "Oznaka '%2' ima %1 podoznaka. Brisanje oznake će obrisati i podoznake. Da li "
 "želite da nastavite?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:593
+#: core/libs/tags/engine/tagmodificationhelper.cpp:595
 #, fuzzy, kde-format
 #| msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 #| msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -42051,7 +42051,7 @@ msgstr[0] "Oznaka '%2' je pridružena na %1 stavku. Da li želite nastaviti?"
 msgstr[1] "Oznaka '%2' je pridružena na %1 stavkw. Da li želite nastaviti?"
 msgstr[2] "Oznaka '%2' je pridružena na %1 stavki. Da li želite nastaviti?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:601
+#: core/libs/tags/engine/tagmodificationhelper.cpp:603
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Remove face tag?"
@@ -42060,7 +42060,7 @@ msgstr[0] "Ukloni odabranu oznaku"
 msgstr[1] "Ukloni odabranu oznaku"
 msgstr[2] "Ukloni odabranu oznaku"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:612
+#: core/libs/tags/engine/tagmodificationhelper.cpp:614
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Remove the tag corresponding to this face tag from the images?"
