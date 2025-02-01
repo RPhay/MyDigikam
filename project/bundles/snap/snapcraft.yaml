@@ -37,12 +37,11 @@ apps:
       LD_LIBRARY_PATH: $SNAP/ffmpeg-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/kde-qt6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libproxy${LD_LIBRARY_PATH}
       PATH: $SNAP/ffmpeg-platform/usr/bin:${PATH}
       ALSA_CONFIG_PATH: "$SNAP/kf6/etc/asound.conf"
-      QT_MEDIA_BACKEND: "gstreamer"
-      QT_PLUGIN_PATH: "$QT_PLUGIN_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/marble"
+      QT_MEDIA_BACKEND: "ffmpeg"
+      QT_PLUGIN_PATH: "$QT_PLUGIN_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/marble/plugins"
       QTWEBENGINE_DISABLE_SANDBOX: 1
       XDG_DATA_DIRS: "$XDG_DATA_DIRS:$SNAP/usr/share"
       XDG_CONFIG_DIRS: "$XDG_CONFIG_DIRS:$SNAP/etc/xdg"
-      XDG_DATA_HOME: $HOME
 layout:
   /usr/share/marble:
     symlink: $SNAP/usr/share/marble
@@ -54,10 +53,10 @@ plugs:
     interface: content
     target: "$SNAP/usr/share/hunspell"
     default-provider: hunspell-dictionaries
-  # ffmpeg-2404:
-  #   interface: content
-  #   target: ffmpeg-platform # the folder where this content snap will be mounted
-  #   default-provider: ffmpeg-2404
+  ffmpeg-2404:
+    interface: content
+    target: ffmpeg-platform # the folder where this content snap will be mounted
+    default-provider: ffmpeg-2404
 
 slots:
   session-dbus-interface:
@@ -98,7 +97,7 @@ parts:
       craftctl default
       rsync -a --ignore-existing $CRAFT_PART_INSTALL/ /
     build-environment:
-      - LD_LIBRARY_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/ffmpeg-2404-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/kde-qt6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libproxy:${LD_LIBRARY_PATH}"
+      - LD_LIBRARY_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/mesa-2404/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/ffmpeg-2404-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/kde-qt6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libproxy:${LD_LIBRARY_PATH}"
       - DICPATH: "$SNAP/usr/share/hunspell"
     prime:
       - -usr/bin/rsync
@@ -155,20 +154,14 @@ parts:
       - -DENABLE_FACESENGINE_DNN=ON
       - -DCMAKE_CXX_FLAGS="-DMAGICKCORE_HAVE_ISNAN=0"
     build-environment:
-      # - CMAKE_FIND_ROOT_PATH: "${CMAKE_FIND_ROOT_PATH}:/snap/ffmpeg-2404-sdk/current"
-      # - PKG_CONFIG_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/ffmpeg-2404-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig"
-      - LD_LIBRARY_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/ffmpeg-2404-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/kde-qt6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libproxy:${LD_LIBRARY_PATH}"
+      - CMAKE_FIND_ROOT_PATH: "${CMAKE_FIND_ROOT_PATH}:/snap/ffmpeg-2404-sdk/current"
+      - PKG_CONFIG_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/ffmpeg-2404-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig"
+      - LD_LIBRARY_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/mesa-2404/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/ffmpeg-2404-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/kde-qt6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libproxy:${LD_LIBRARY_PATH}"
       - DICPATH: "$SNAP/usr/share/hunspell"
     build-packages:
       - bison
       - flex
       - gphoto2
-      - libswscale-dev
-      - libavcodec-dev
-      - libavdevice-dev
-      - libavfilter-dev
-      - libavformat-dev
-      - libavutil-dev
       - libboost-graph-dev
       - libeigen3-dev
       - libexiv2-dev
@@ -191,9 +184,8 @@ parts:
       - libxkbcommon-dev
     build-snaps:
       - hunspell-dictionaries
-      # - ffmpeg-2404-sdk
+      - ffmpeg-2404-sdk
     stage-packages:
-      - ffmpeg
       - libexif12
       - libgphoto2-6
       - libgphoto2-port12
@@ -257,7 +249,7 @@ parts:
       - mariadb-server
       - cups-client
       - libxkbcommon0
-      - exif
+      - exiftool
     override-pull: |
         craftctl default
         patch -p0 < ${SNAPCRAFT_PROJECT_DIR}/project/bundles/snap/snap/local/digikam_magick_isnan.patch
