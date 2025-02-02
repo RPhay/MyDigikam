@@ -14,6 +14,7 @@
 
 // Qt includes
 
+#include <QDir>
 #include <QFile>
 #include <QFileInfo>
 #include <QString>
@@ -22,7 +23,7 @@
 #include <QCoreApplication>
 #include <QVariant>
 #include <QObject>
-#include <QtConcurrent>   // krazy:exclude=includes
+#include <QtConcurrentRun>
 
 // Local includes
 

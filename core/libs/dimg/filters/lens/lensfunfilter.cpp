@@ -17,7 +17,7 @@
 #include <QByteArray>
 #include <QCheckBox>
 #include <QString>
-#include <QtConcurrent>    // krazy:exclude=includes
+#include <QtConcurrentRun>
 #include <QScopedPointer>
 
 // Local includes

@@ -17,7 +17,7 @@
 
 // Qt includes
 
-#include <QtConcurrent>
+#include <QtConcurrentRun>
 #include <QThread>
 #include <QList>
 

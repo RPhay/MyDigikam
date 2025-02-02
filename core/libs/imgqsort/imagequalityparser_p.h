@@ -33,7 +33,7 @@
 #include <QThread>
 #include <QThreadPool>
 #include <QFuture>
-#include <QtConcurrent>              // krazy:exclude=includes
+#include <QtConcurrentRun>
 
 // Local includes
 

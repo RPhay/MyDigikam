@@ -35,7 +35,7 @@
 
 #include <QString>
 #include <QBuffer>
-#include <QtConcurrent>              // krazy:exclude=includes
+#include <QtConcurrentRun>
 
 // Local includes
 

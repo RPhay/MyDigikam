@@ -24,7 +24,7 @@
 
 // Qt includes
 
-#include <QtConcurrent>    // krazy:exclude=includes
+#include <QtConcurrentRun>
 
 // Local includes
 

@@ -22,7 +22,7 @@
 #include <QDialog>
 #include <QFuture>
 #include <QFutureWatcher>
-#include <QtConcurrent>    // krazy:exclude=includes
+#include <QtConcurrentRun>
 #include <QByteArray>
 #include <QPointer>
 #include <QEventLoop>

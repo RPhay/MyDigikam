@@ -26,7 +26,7 @@
 // Qt includes
 
 #include <QDateTime>
-#include <QtConcurrent>    // krazy:exclude=includes
+#include <QtConcurrentRun>
 #include <QtMath>
 
 // Local includes

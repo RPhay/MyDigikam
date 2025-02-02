@@ -19,8 +19,9 @@
 
 #include <QException>
 #include <QReadWriteLock>
-#include <QtConcurrent>
+#include <QtConcurrentRun>
 #include <QFuture>
+#include <QFutureWatcher>
 #include <QMap>
 #include <QList>
 #include <QTimer>

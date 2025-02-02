@@ -28,7 +28,7 @@
 #include <QDateTime>
 #include <QRect>
 #include <QtMath>
-#include <QtConcurrent>    // krazy:exclude=includes
+#include <QtConcurrentRun>
 
 // Local includes
 
@@ -40,10 +40,11 @@ namespace Digikam
 
 class Q_DECL_HIDDEN RainDropFilter::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     int                   drop      = 80;
     int                   amount    = 150;

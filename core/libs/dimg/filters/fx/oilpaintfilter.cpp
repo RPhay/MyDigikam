@@ -26,7 +26,7 @@
 
 // Qt includes
 
-#include <QtConcurrent>    // krazy:exclude=includes
+#include <QtConcurrentRun>
 #include <QMutex>
 
 // Local includes
@@ -42,6 +42,8 @@ class Q_DECL_HIDDEN OilPaintFilter::Private
 public:
 
     Private() = default;
+
+public:
 
     int    brushSize        = 1;
     int    smoothness       = 30;

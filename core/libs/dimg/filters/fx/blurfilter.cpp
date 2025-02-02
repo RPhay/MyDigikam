@@ -18,7 +18,7 @@
 
 // Qt includes
 
-#include <QtConcurrent>    // krazy:exclude=includes
+#include <QtConcurrentRun>
 #include <QtMath>
 #include <QMutex>
 

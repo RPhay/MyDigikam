@@ -23,7 +23,7 @@
 #include <QThread>
 #include <QThreadPool>
 #include <QFuture>
-#include <QtConcurrent>
+#include <QtConcurrentRun>
 
 // KDE includes
 
