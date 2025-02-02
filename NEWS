@@ -140,8 +140,8 @@ BUGFIXES:
 091 ==> 498320 - Renaming a face tag fails to move over the training data
 092 ==> 499361 - Possibly add exiftool "-m" parameter to.
 093 ==> 499301 - Facial recognition database update not working
-094 ==>
-095 ==>
+094 ==> 475488 - In face detection, an option to suppress low quality faces as detected might improve recognition training and results
+095 ==> 425263 - Blur Level on Face Detection
 096 ==>
 097 ==>
 098 ==>
