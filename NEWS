@@ -143,7 +143,7 @@ BUGFIXES:
 094 ==> 475488 - In face detection, an option to suppress low quality faces as detected might improve recognition training and results
 095 ==> 425263 - Blur Level on Face Detection
 096 ==> 472416 - Add a new option in Face Recognition about duplication of a Confirmed Face.
-097 ==>
+097 ==> 425981 - Clustering: limit face recognition by tags.
 098 ==>
 099 ==>
 100 ==>
