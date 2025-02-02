@@ -40,7 +40,7 @@ public:
     bool   overExposureIndicator    = false;
 
     /**
-     * If this option is true, over and under exposure indicators will be displayed
+     * @brief If this option is true, over and under exposure indicators will be displayed
      * only when pure white and pure black color matches, as all color components match
      * the condition in the same time.
      * Else indicators are turn on when one of color components match the condition.

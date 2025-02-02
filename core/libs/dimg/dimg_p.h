@@ -86,19 +86,19 @@ namespace Digikam
 {
 
 /**
- * Lanczos kernel is precomputed in a table with this resolution
+ * @brief Lanczos kernel is precomputed in a table with this resolution
  * The value below seems to be enough for HQ upscaling up to eight times
  */
 static const int LANCZOS_TABLE_RES = 256;
 
 /**
- * A support of 3 gives an overall sharper looking image, but
+ * @brief A support of 3 gives an overall sharper looking image, but
  * it is a) slower b) gives more sharpening artifacts
  */
 static const int LANCZOS_SUPPORT   = 2;
 
 /**
- * Define this to use a floating-point implementation of Lanczos interpolation.
+ * @brief Define this to use a floating-point implementation of Lanczos interpolation.
  * The integer implementation is a little bit less accurate, but MUCH faster
  * (even on machines with FPU - ~2.5 times faster on Core2); besides, it will
  * run a hell lot faster on computers without a FPU (e.g. PDAs).

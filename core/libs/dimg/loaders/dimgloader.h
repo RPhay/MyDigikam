@@ -42,7 +42,7 @@ class DIGIKAM_EXPORT DImgLoader
 public:
 
     /**
-     * This is the list of loading modes usable by DImg image plugins
+     * @brief This is the list of loading modes usable by DImg image plugins
      */
     enum LoadFlag
     {
@@ -89,9 +89,9 @@ public:
     static int convertCompressionForLibJpeg(int value);
 
     /**
-     * Value returned : -1 : unsupported platform
-     *                   0 : parse failure from supported platform
-     *                   1 : parse done with success from supported platform
+     * @return -1 : unsupported platform
+     *          0 : parse failure from supported platform
+     *          1 : parse done with success from supported platform
      */
     static qint64 checkAllocation(qint64 fullSize);
 
@@ -150,7 +150,7 @@ private:
 // ---------------------------------------------------------------------------------------------------
 
 /**
- * Allows safe multiplication of requested pixel number and bytes per pixel, avoiding particularly
+ * @brief Allows safe multiplication of requested pixel number and bytes per pixel, avoiding particularly
  * 32 bits overflow and exceeding the size_t type
  */
 template <typename Type>

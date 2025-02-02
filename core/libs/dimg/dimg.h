@@ -96,7 +96,7 @@ public:
 public:
 
     /**
-     * Identify file format
+     * @brief Identify file format
      */
     static FORMAT fileFormat(const QString& filePath);
 
@@ -109,36 +109,36 @@ public:
 public:
 
     /**
-     * Create null image
+     * @brief Create null image
      */
     DImg();
 
     /**
-     * Load image using QByteArray as file path
+     * @brief Load image using QByteArray as file path
      */
     explicit DImg(const QByteArray& filePath, DImgLoaderObserver* const observer = nullptr,
                   const DRawDecoding& rawDecodingSettings = DRawDecoding());
 
     /**
-     * Load image using QString as file path
+     * @brief Load image using QString as file path
      */
     explicit DImg(const QString& filePath, DImgLoaderObserver* const observer = nullptr,
                   const DRawDecoding& rawDecodingSettings = DRawDecoding());
 
     /**
-     * Copy image: Creates a shallow copy that refers to the same shared data.
+     * @brief Copy image: Creates a shallow copy that refers to the same shared data.
      * The two images will be equal. Call detach() or copy() to create deep copies.
      */
     DImg(const DImg& image);
 
     /**
-     * Copy image: Creates a copy of a QImage object. If the QImage is null, a
+     * @brief Copy image: Creates a copy of a QImage object. If the QImage is null, a
      * null DImg will be created.
      */
     explicit DImg(const QImage& image);
 
     /**
-     * Create image from data.
+     * @brief Create image from data.
      * If data is 0, a new buffer will be allocated, otherwise the given data will be used:
      * If copydata is true, the data will be copied to a newly allocated buffer.
      * If copyData is false, this DImg object will take ownership of the data pointer.
@@ -149,11 +149,12 @@ public:
     ~DImg();
 
     /**
-     * Equivalent to the copy constructor
+     * @brief Equivalent to the copy constructor
      */
     DImg&      operator=(const DImg& image);
 
-    /** Detaches from shared data and makes sure that this image
+    /**
+     * @brief Detaches from shared data and makes sure that this image
      * is the only one referring to the data.
      * If multiple images share common data, this image makes a copy
      * of the data and detaches itself from the sharing mechanism.
@@ -161,7 +162,8 @@ public:
      */
     void       detach();
 
-    /** Returns whether two images are equal.
+    /**
+     * @return whether two images are equal.
      * Two images are equal if and only if they refer to the same shared data.
      * (Thus, DImg() == DImg() is not true, both instances refer two their
      * own shared data. image == DImg(image) is true.)
@@ -173,13 +175,13 @@ public:
     bool        operator==(const DImg& image) const;
 
     /**
-     * Replaces image data of this object.
+     * @brief Replaces image data of this object.
      * Metadata are unchanged. Parameters like constructor above.
      */
     void        putImageData(uint width, uint height, bool sixteenBit, bool alpha, uchar* const data, bool copyData = true);
 
     /**
-     * Overloaded function, provided for convenience, behaves essentially
+     * @brief Overloaded function, provided for convenience, behaves essentially
      * like the function above if data is not nullptr.
      * Uses current width, height, sixteenBit, and alpha values.
      * If data is nullptr, the current data are deleted and the image is set to null
@@ -188,17 +190,17 @@ public:
     void        putImageData(uchar* const data, bool copyData = true);
 
     /**
-     * Reset metadata and image data to null image
+     * @brief Reset metadata and image data to null image
      */
     void        reset();
 
     /**
-     * Reset metadata, but do not change image data
+     * @brief Reset metadata, but do not change image data
      */
     void        resetMetaData();
 
     /**
-     * Returns the data of this image.
+     * @return The data of this image.
      * Ownership of the buffer is passed to the caller, this image will be null afterwards.
      */
     uchar*      stripImageData();
@@ -218,7 +220,7 @@ public:
     bool        save(const QString& filePath, const QString& format, DImgLoaderObserver* const observer = nullptr);
 
     /**
-     * It is common that images are not directly saved to the destination path.
+     * @brief It is common that images are not directly saved to the destination path.
      * For this reason, save() does not call addAsReferredImage(), and the stored
      * save path may be wrong.
      * Call this method after save() with the final destination path.
@@ -227,7 +229,7 @@ public:
     void        imageSavedAs(const QString& savePath);
 
     /**
-     * Loads most parts of the meta information, but never the image data.
+     * @brief Loads most parts of the meta information, but never the image data.
      * If loadMetadata is true, the metadata will be available with getComments, getExif, getIptc, getXmp .
      * If loadICCData is true, the ICC profile will be available with getICCProfile.
      */
@@ -248,55 +250,55 @@ public:
     quint64     numPixels()      const;
 
     /**
-     * Return the number of bytes depth of one pixel : 4 (non sixteenBit) or 8 (sixteen)
+     * @return The number of bytes depth of one pixel : 4 (non sixteenBit) or 8 (sixteen)
      */
     int         bytesDepth() const;
 
     /**
-     * Return the number of bits depth of one color component for one pixel : 8 (non sixteenBit) or 16 (sixteen)
+     * @return The number of bits depth of one color component for one pixel : 8 (non sixteenBit) or 16 (sixteen)
      */
     int         bitsDepth()  const;
 
     /**
-     * Returns the file path from which this DImg was originally loaded.
-     * Returns a null string if the DImg was not loaded from a file.
+     * @return The file path from which this DImg was originally loaded or
+     * a null string if the DImg was not loaded from a file.
      */
     QString     originalFilePath() const;
 
     /**
-     * Returns the file path to which this DImg was saved.
-     * Returns the file path set with imageSavedAs(), if that was not called,
-     * save(), if that was not called, a null string.
+     * @return The file path to which this DImg was saved.
+     * The file path set with imageSavedAs() is returned if that was not called, else
+     * save() if that was not called, a null string.
      */
     QString     lastSavedFilePath() const;
 
     /**
-     * Returns the color model in which the image was stored in the file.
+     * @return The color model in which the image was stored in the file.
      * The color space of the loaded image data is always RGB.
      */
     COLORMODEL  originalColorModel() const;
 
     /**
-     * Returns the bit depth (in bits per channel, e.g. 8 or 16) of the original file.
+     * @return The bit depth (in bits per channel, e.g. 8 or 16) of the original file.
      */
     int         originalBitDepth() const;
 
     /**
-     * Returns the size of the original file.
+     * @return The size of the original file.
      */
     QSize       originalSize() const;
 
     /**
-     * Returns the size of the original file
+     * @return the size of the original file
      * in the same aspect ratio as size().
      */
     QSize       originalRatioSize() const;
 
     /**
-     * Returns the file format in form of the FORMAT enum that was detected in the load()
+     * @return The file format in form of the FORMAT enum that was detected in the load()
      * method. Other than the format attribute which is written by the DImgLoader,
      * this can include the QIMAGE or NONE values.
-     * Returns NONE for images that have not been loaded.
+     * NONE is returned for images that have not been loaded.
      * For unknown image formats, a value of QIMAGE can be returned to indicate that the
      * QImage-based loader will have been used. To find out if this has worked, check
      * the return value you got from load().
@@ -304,7 +306,7 @@ public:
     FORMAT      detectedFormat() const;
 
     /**
-     * Returns the format string as written by the image loader this image was originally
+     * @return The format string as written by the image loader this image was originally
      * loaded from. Format strings used include JPEG, PNG, TIFF, PGF, JP2K, RAW, PPM.
      * For images loaded with the platform QImage loader, the file suffix is used.
      * Returns null if this DImg was not loaded from a file, but created in memory.
@@ -312,7 +314,7 @@ public:
     QString     format() const;
 
     /**
-     * Returns the format string of the format that this image was last saved to.
+     * @return The format string of the format that this image was last saved to.
      * An image can be loaded from a file - retrieve that format with fileFormat()
      * and loadedFormat() - and can the multiple times be saved to different formats.
      * Format strings used include JPG, PGF, PNG, TIFF and JP2K.
@@ -321,13 +323,13 @@ public:
     QString     savedFormat() const;
 
     /**
-     * Returns the DRawDecoding options that this DImg was loaded with.
+     * @return The DRawDecoding options that this DImg was loaded with.
      * If this is not a RAW image or no options were specified, returns DRawDecoding().
      */
     DRawDecoding rawDecodingSettings() const;
 
     /**
-     * Access a single pixel of the image.
+     * @brief Access a single pixel of the image.
      * These functions add some safety checks and then use the methods from DColor.
      * In optimized code working directly on the data,
      * better use the inline methods from DColor.
@@ -339,7 +341,7 @@ public:
     DColor      getSubPixelColorFast(float x, float y) const;
 
     /**
-     * If the image has an alpha channel, check if there exist pixels
+     * @brief If the image has an alpha channel, check if there exist pixels
      * which actually have non-opaque color, that is alpha < 1.0.
      * Note that all pixels are scanned to reach a return value of "false".
      * If hasAlpha() is false, always returns false.
@@ -347,7 +349,7 @@ public:
     bool        hasTransparentPixels() const;
 
     /**
-     * Return true if the original image file format cannot be saved.
+     * @return True if the original image file format cannot be saved.
      * This is depending of DImgLoader::save() implementation. For example
      * RAW file formats are supported by DImg using dcraw than cannot support
      * writing operations.
@@ -355,7 +357,7 @@ public:
     bool       isReadOnly()        const;
 
     /**
-     * Metadata manipulation methods
+     * @brief Metadata manipulation methods
      */
     MetaEngineData getMetadata()   const;
     IccProfile getIccProfile()     const;
@@ -378,7 +380,7 @@ public:
     void                 addFilterAction(const FilterAction& action);
 
     /**
-     * Sets a step in the history to constitute the beginning of a branch.
+     * @brief Sets a step in the history to constitute the beginning of a branch.
      * Use setHistoryBranch() to take getOriginalImageHistory() and set the first added step as a branch.
      * Use setHistoryBranchForLastSteps(n) to start the branch before the last n steps in the history.
      * (Assume the history had 3 steps and you added 2, call setHistoryBranchForLastSteps(2))
@@ -390,7 +392,7 @@ public:
     void                 setHistoryBranch(bool isBranch = true);
 
     /**
-     * When saving, several changes to the image metadata are necessary
+     * @brief When saving, several changes to the image metadata are necessary
      * before it can safely be written to the new file.
      * This method updates the stored meta engine object in preparation to a subsequent
      * call to save() with the same target file.
@@ -405,21 +407,21 @@ public:
     enum PrepareMetadataFlag
     {
         /**
-         * A small preview can be stored in the metadata.
+         * @brief A small preview can be stored in the metadata.
          * Remove old preview entries
          */
         RemoveOldMetadataPreviews = 1 << 0,
         /**
-         * Create a new preview from current image data.
+         * @brief Create a new preview from current image data.
          */
         CreateNewMetadataPreview  = 1 << 1,
         /**
-         * Set the exif orientation tag to "normal"
+         * @brief Set the exif orientation tag to "normal"
          * Applicable if the image data was rotated according to the tag
          */
         ResetExifOrientationTag   = 1 << 2,
         /**
-         * Creates a new UUID for the image history.
+         * @brief Creates a new UUID for the image history.
          * Applicable if the file was changed.
          */
         CreateNewImageHistoryUUID = 1 << 3,
@@ -437,7 +439,7 @@ public:
                                PrepareMetadataFlags flags      = PrepareMetadataFlagsAll);
 
     /**
-     * For convenience: Including all flags, except for ResetExifOrientationTag which can be selected.
+     * @brief For convenience: Including all flags, except for ResetExifOrientationTag which can be selected.
      * Uses originalFilePath() to fill the original file name.
      */
     void prepareMetadataToSave(const QString& intendedDestPath,
@@ -445,12 +447,12 @@ public:
                                bool           resetExifOrientationTag);
 
     /**
-     * Create a HistoryImageId for _this_ image _already_ saved at the given file path.
+     * @brief Create a HistoryImageId for _this_ image _already_ saved at the given file path.
      */
     HistoryImageId createHistoryImageId(const QString& filePath, HistoryImageId::Type type);
 
     /**
-     * If you have saved this DImg to filePath, and want to continue using this DImg object
+     * @brief If you have saved this DImg to filePath, and want to continue using this DImg object
      * to add further changes to the image history, you can call this method to add to the image history
      * a reference to the just saved image.
      * First call updateMetadata(), then call save(), then call addAsReferredImage().
@@ -466,14 +468,14 @@ public:
     void           insertAsReferredImage(int afterHistoryStep, const HistoryImageId& otherImagesId);
 
     /**
-     * In the history, adjusts the UUID of the ImageHistoryId of the current file.
+     * @brief In the history, adjusts the UUID of the ImageHistoryId of the current file.
      * Call this if you have associated a UUID with this file which is not written to the metadata.
      * If there is already a UUID present, read from metadata, it will not be replaced.
      */
     void addCurrentUniqueImageId(const QString& uuid);
 
     /**
-     * Retrieves the Exif orientation, either from the LoadSaveThread info provider if available,
+     * @brief Retrieves the Exif orientation, either from the LoadSaveThread info provider if available,
      * or from the metadata
      */
     int exifOrientation(const QString& filePath);
@@ -502,17 +504,17 @@ public:
     void        switchOriginToLastSaved();
 
     /**
-     * Return a deep copy of full image
+     * @return A deep copy of full image
      */
     DImg       copy() const;
 
     /**
-     * Return a deep copy of the image, but do not include metadata.
+     * @return A deep copy of the image, but do not include metadata.
      */
     DImg       copyImageData() const;
 
     /**
-     * Return an image that contains a deep copy of
+     * @return An image that contains a deep copy of
      * this image's metadata and the information associated
      * with the image data (width, height, hasAlpha, sixteenBit),
      * but no image data, i.e. isNull() is true.
@@ -520,14 +522,14 @@ public:
     DImg       copyMetaData() const;
 
     /**
-     * Return a region of image
+     * @return A region of image
      */
     DImg       copy(const QRect& rect)          const;
     DImg       copy(const QRectF& relativeRect) const;
     DImg       copy(int x, int y, int w, int h) const;
 
     /**
-     * Copy a region of pixels from a source image to this image.
+     * @brief Copy a region of pixels from a source image to this image.
      * Parameters:
      * sx|sy  Coordinates in the source image of the rectangle to be copied
      * w h    Width and height of the rectangle (Default, or when both are -1: whole source image)
@@ -542,7 +544,7 @@ public:
                            uint swidth, uint sheight, int sdepth);
 
     /**
-     * Blend src image on this image (this is dest) with the specified composer
+     * @brief Blend src image on this image (this is dest) with the specified composer
      * and multiplication flags. See documentation of DColorComposer for more info.
      * For the other arguments, see documentation of bitBltImage above.
      */
@@ -552,7 +554,7 @@ public:
                                  DColorComposer::NoMultiplication);
 
     /**
-     * For the specified region, blend this image on the given color with the specified
+     * @brief For the specified region, blend this image on the given color with the specified
      * composer and multiplication flags. See documentation of DColorComposer for more info.
      * Note that the result pixel is again written to this image, which is, for the blending, source.
      */
@@ -564,7 +566,7 @@ public:
     void       bitBlendImageOnColor(const DColor& color);
 
     /**
-     * QImage wrapper methods
+     * @brief QImage wrapper methods
      */
     QImage     copyQImage()                           const;
     QImage     copyQImage32()                         const;
@@ -573,18 +575,18 @@ public:
     QImage     copyQImage(int x, int y, int w, int h) const;
 
     /**
-     * Crop image to the specified region
+     * @brief Crop image to the specified region
      */
     void       crop(const QRect& rect);
     void       crop(int x, int y, int w, int h);
 
     /**
-     * Set width and height of this image, smoothScale it to the given size
+     * @brief Set width and height of this image, smoothScale it to the given size
      */
     void       resize(int w, int h);
 
     /**
-     * If the image has an alpha channel and transparent pixels,
+     * @brief If the image has an alpha channel and transparent pixels,
      * it will be blended on the specified color and the alpha channel will be removed.
      * This is a no-op if hasTransparentPixels() is false, but this method can be expensive,
      * therefore it is _not_ checked inside removeAlphaChannel().
@@ -594,14 +596,14 @@ public:
     void       removeAlphaChannel();
 
     /**
-     * Return a version of this image scaled to the specified size with the specified mode.
+     * @return A version of this image scaled to the specified size with the specified mode.
      * See QSize documentation for information on available modes
      */
     DImg       smoothScale(int width, int height, Qt::AspectRatioMode aspectRatioMode = Qt::IgnoreAspectRatio) const;
     DImg       smoothScale(const QSize& destSize, Qt::AspectRatioMode aspectRatioMode = Qt::IgnoreAspectRatio) const;
 
     /**
-     * Executes the same scaling as smoothScale(width, height), but from the result of this call,
+     * @brief Executes the same scaling as smoothScale(width, height), but from the result of this call,
      * returns only the section specified by clipx, clipy, clipwidth, clipheight.
      * This is thus equivalent to calling
      * Dimg scaled = smoothScale(width, height); scaled.crop(clipx, clipy, clipwidth, clipheight);
@@ -614,7 +616,7 @@ public:
     DImg smoothScaleClipped(const QSize& destSize, const QRect& clip, bool smooth = true) const;
 
     /**
-     * Take the region specified by the rectangle sx|sy, width and height sw * sh,
+     * @brief Take the region specified by the rectangle sx|sy, width and height sw * sh,
      * and scale it to an image with size dw * dh
      */
     DImg       smoothScaleSection(int sx, int sy, int sw, int sh, int dw, int dh) const;
@@ -624,41 +626,42 @@ public:
     void       flip(FLIP direction);
 
     /**
-     * Rotates and/or flip the DImg according to the given DMetadata::Orientation,
+     * @brief Rotates and/or flip the DImg according to the given DMetadata::Orientation,
      * so that the current state is orientation and the resulting step is normal orientation.
-     * Returns true if the image was actually rotated or flipped (e.g. if ORIENTATION_NORMAL
+     * @return True if the image was actually rotated or flipped (e.g. if ORIENTATION_NORMAL
      * is given, returns false, because no action is taken).
      */
     bool       rotateAndFlip(int orientation);
 
     /**
-     * Reverses the previous function.
+     * @brief Reverses the previous function.
      */
     bool       reverseRotateAndFlip(int orientation);
 
     /**
-     * Utility to make sure that an image is rotated according to Exif tag.
+     * @brief Utility to make sure that an image is rotated according to Exif tag.
      * Detects if an image has previously already been rotated: You can
      * call this method more than one time on the same image.
-     * Returns true if the image has actually been rotated or flipped.
-     * Returns false if a rotation was not needed.
+     * @return True if the image has actually been rotated or flipped.
+     * or false if a rotation was not needed.
      */
     bool       wasExifRotated();
     bool       exifRotate(const QString& filePath);
 
     /**
-     * Reverses the previous function
+     * @brief Reverses the previous function
      */
     bool       reverseExifRotate(const QString& filePath);
 
     /**
-     * Returns current DMetadata::Orientation from DImg
+     * @return Current DMetadata::Orientation from DImg
      */
     int        orientation() const;
 
-    /** Rotates and/or flip the DImg according to the given transform action,
+    /**
+     * @brief Rotates and/or flip the DImg according to the given transform action,
      * which is a MetaEngineRotation::TransformAction.
-     * Returns true if the image was actually rotated or flipped.
+     * @return True if the image was actually rotated or flipped.
      */
     bool       transform(int transformAction);
 
@@ -666,33 +669,33 @@ public:
     QPixmap    convertToPixmap(IccTransform& monitorICCtrans) const;
 
     /**
-     * Return a mask image where pure white and pure black pixels are over-colored.
+     * @return A mask image where pure white and pure black pixels are over-colored.
      * This way is used to identify over and under exposed pixels.
      */
     QImage     pureColorMask(ExposureSettingsContainer* const expoSettings) const;
 
     /**
-     * Convert depth of image. Depth is bytesDepth * bitsDepth.
+     * @brief Convert depth of image. Depth is bytesDepth * bitsDepth.
      * If depth is 32, converts to 8 bits,
      * if depth is 64, converts to 16 bits.
      */
     void       convertDepth(int depth);
 
     /**
-     * Wrapper methods for convertDepth
+     * @brief Wrapper methods for convertDepth
      */
     void       convertToSixteenBit();
     void       convertToEightBit();
     void       convertToDepthOfImage(const DImg* const otherImage);
 
     /**
-     * Fill whole image with specified color.
+     * @brief Fill whole image with specified color.
      * The bit depth of the color must be identical to the depth of this image.
      */
     void       fill(const DColor& color);
 
     /**
-     * This methods return a 128-bit MD5 hex digest which is meant to uniquely identify
+     * @brief This methods return a 128-bit MD5 hex digest which is meant to uniquely identify
      * the file. The hash is calculated on parts of the file and the file metadata.
      * It cannot be used to find similar images. It is not calculated from the image data.
      * The hash will be returned as a 32-byte hexadecimal string.
@@ -713,7 +716,7 @@ public:
     static QByteArray getUniqueHash(const QString& filePath);
 
     /**
-     * Version 2: This methods return a 128-bit MD5 hex digest which is meant to uniquely
+     * @brief Version 2: This methods return a 128-bit MD5 hex digest which is meant to uniquely
      * identify the file. The hash is calculated on parts of the file.
      * It cannot be used to find similar images. It is not calculated from the image data.
      * The hash will be returned as a 32-byte hexadecimal string.
@@ -735,7 +738,7 @@ public:
     static QByteArray getUniqueHashVersion(const QString& filePath, int version);
 
     /**
-     * This method creates a new 256-bit UUID meant to be globally unique.
+     * @brief This method creates a new 256-bit UUID meant to be globally unique.
      * The UUID will be returned as a 64-byte hexadecimal string.
      * At least 128bits of the UUID will be created by the platform random number
      * generator. The rest may be created from a content-based hash similar to the uniqueHash, see above.
@@ -745,12 +748,12 @@ public:
     QByteArray createImageUniqueId();
 
     /**
-     * Helper method to translate enum values to user presentable strings
+     * @brief Helper method to translate enum values to user presentable strings
      */
     static QString colorModelToString(COLORMODEL colorModel);
 
     /**
-     * Return true if image file is an animation, as GIFa or NMG
+     * @return True if image file is an animation, as GIFa or NMG
      */
     static bool isAnimatedImage(const QString& filePath);
 

@@ -29,7 +29,7 @@ namespace Digikam
 {
 
 /**
- * Map container of widget parameter name/value.
+ * @brief Map container of widget parameter name/value.
  */
 typedef QMap<QString, QVariant> DImgLoaderPrms;
 
@@ -43,24 +43,24 @@ public:
     ~DImgLoaderSettings() override;
 
     /**
-     * Set the parameters values in the widget from DImgLoaderPrms map container.
+     * @brief Set the parameters values in the widget from DImgLoaderPrms map container.
      */
     virtual void setSettings(const DImgLoaderPrms& set) = 0;
 
     /**
-     * Return the DImgLoaderPrms map container of parameters/values from the Widget.
+     * @return The DImgLoaderPrms map container of parameters/values from the Widget.
      */
     virtual DImgLoaderPrms settings() const             = 0;
 
     /**
-     * Return the list of supported parameter names.
+     * @return The list of supported parameter names.
      */
      QStringList parameters()         const;
 
 Q_SIGNALS:
 
     /**
-     * Signal to emit when a settings is changed from the widget.
+     * @brief Signal to emit when a settings is changed from the widget.
      */
     void signalSettingsChanged();
 };
