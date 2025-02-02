@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-01 01:53+0000\n"
+"POT-Creation-Date: 2025-02-02 01:57+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -2658,7 +2658,7 @@ msgstr "Thanh công cụ chính"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
-#: core/libs/album/manager/albummanager_talbum.cpp:985
+#: core/libs/album/manager/albummanager_talbum.cpp:988
 #: core/libs/timeadjust/timeadjustsettings.cpp:134
 #, kde-format
 msgid "digiKam"
@@ -26411,9 +26411,9 @@ msgstr "Lỗi thêm tập ảnh vào cơ sở dữ liệu"
 #: core/libs/album/manager/albummanager_palbum.cpp:463
 #: core/libs/album/manager/albummanager_palbum.cpp:550
 #: core/libs/album/manager/albummanager_talbum.cpp:366
-#: core/libs/album/manager/albummanager_talbum.cpp:461
-#: core/libs/album/manager/albummanager_talbum.cpp:501
-#: core/libs/album/manager/albummanager_talbum.cpp:590
+#: core/libs/album/manager/albummanager_talbum.cpp:464
+#: core/libs/album/manager/albummanager_talbum.cpp:504
+#: core/libs/album/manager/albummanager_talbum.cpp:593
 #, kde-format
 msgid "No such album"
 msgstr "Không có tập ảnh như vậy"
@@ -26463,7 +26463,7 @@ msgid "Tag name cannot be empty"
 msgstr "Không cho phép tên thẻ rỗng."
 
 #: core/libs/album/manager/albummanager_talbum.cpp:304
-#: core/libs/album/manager/albummanager_talbum.cpp:473
+#: core/libs/album/manager/albummanager_talbum.cpp:476
 #, kde-format
 msgid "Tag name cannot contain '/'"
 msgstr "Không cho phép tên thẻ chứa « / »"
@@ -26485,19 +26485,19 @@ msgstr "Lỗi thêm thẻ vào cơ sở dữ liệu"
 msgid "Cannot delete root tag"
 msgstr "Không thể xoá thẻ gốc"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:378
+#: core/libs/album/manager/albummanager_talbum.cpp:381
 #, fuzzy, kde-format
 #| msgid "Cannot delete Root Tag"
 msgid "Cannot delete required face tag"
 msgstr "Không thể xoá thẻ gốc"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:467
-#: core/libs/album/manager/albummanager_talbum.cpp:706
+#: core/libs/album/manager/albummanager_talbum.cpp:470
+#: core/libs/album/manager/albummanager_talbum.cpp:709
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Không thể sửa đổi thẻ gốc"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:481
+#: core/libs/album/manager/albummanager_talbum.cpp:484
 #, fuzzy, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -26506,17 +26506,17 @@ msgstr ""
 "Một tập ảnh cùng tên đã có.\n"
 "Hãy chọn tên khác."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:507
+#: core/libs/album/manager/albummanager_talbum.cpp:510
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:513
+#: core/libs/album/manager/albummanager_talbum.cpp:516
 #, kde-format
 msgid "Cannot move root tag"
 msgstr "Không thẻ di chuyển thẻ gốc"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:521
+#: core/libs/album/manager/albummanager_talbum.cpp:524
 #, fuzzy, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -26525,40 +26525,40 @@ msgstr ""
 "Một tập ảnh cùng tên đã có.\n"
 "Hãy chọn tên khác."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:596
+#: core/libs/album/manager/albummanager_talbum.cpp:599
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge root tag"
 msgstr "Không thẻ di chuyển thẻ gốc"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:602
+#: core/libs/album/manager/albummanager_talbum.cpp:605
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge required face tag"
 msgstr "Không thẻ di chuyển thẻ gốc"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:608
+#: core/libs/album/manager/albummanager_talbum.cpp:611
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:620
+#: core/libs/album/manager/albummanager_talbum.cpp:623
 #, fuzzy, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Siêu dữ liệu"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:624
-#: core/libs/album/manager/albummanager_talbum.cpp:1138
+#: core/libs/album/manager/albummanager_talbum.cpp:627
+#: core/libs/album/manager/albummanager_talbum.cpp:1141
 #, fuzzy, kde-format
 msgid "Do not ask again at this session"
 msgstr "Đừng &hỏi lại"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:700
+#: core/libs/album/manager/albummanager_talbum.cpp:703
 #, kde-format
 msgid "No such tag"
 msgstr "Không có thẻ như vậy"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1133
+#: core/libs/album/manager/albummanager_talbum.cpp:1136
 #, fuzzy, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
