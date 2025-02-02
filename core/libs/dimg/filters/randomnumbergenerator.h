@@ -30,7 +30,7 @@ class DIGIKAM_EXPORT NonDeterministicRandomData : public QByteArray
 public:
 
     /**
-     * Constructs a QByteArray of given byte size
+     * @brief Constructs a QByteArray of given byte size
      * filled with non-deterministic random data.
      * For larger quantities of data,
      * prefer using a RandomNumberGenerator seeded
@@ -42,8 +42,9 @@ public:
 // --------------------------------------------------------------------
 
 /**
- * This class differs from standard pseudo
+ * @brief This class differs from standard pseudo
  * random number generators (rand()) in these points:
+ *
  * - it uses a specified, independently implemented algorithm
  *   identical across platforms
  * - provides access to the used seed
@@ -55,7 +56,7 @@ class DIGIKAM_EXPORT RandomNumberGenerator
 public:
 
     /**
-     * Constructs a random number generator that is seeded
+     * @brief Constructs a random number generator that is seeded
      * with a constant value. It is recommended to call a seed method
      * after construction.
      */
@@ -63,33 +64,33 @@ public:
     ~RandomNumberGenerator();
 
     /**
-     * Seeds the generator from a non-deterministic
+     * @brief Seeds the generator from a non-deterministic
      * random number generator. This is the most secure
      * seeding method.
-     * Returns the new currentSeed().
+     * @return the new currentSeed().
      */
     quint32 seedNonDeterministic();
 
     /**
-     * Seeds the generator by current time. This is common practice
+     * @brief Seeds the generator by current time. This is common practice
      * and good enough for most purposes.
-     * Returns the new currentSeed().
+     * @return the new currentSeed().
      */
     quint32 seedByTime();
 
     /**
-     * Produces a non-deterministic seed, as used by seedNonDeterministic()
+     * @brief Produces a non-deterministic seed, as used by seedNonDeterministic()
      */
     static quint32 nonDeterministicSeed();
 
     /**
-     * Produces a seed that includes at least the time as source
+     * @brief Produces a seed that includes at least the time as source
      * of random data
      */
     static quint32 timeSeed();
 
     /**
-     * Seeds the generator with the given value.
+     * @brief Seeds the generator with the given value.
      * This is not meant to be called with a constant value,
      * but with a value retrieved from currentSeed() on a previous run.
      * Across platforms, the same sequence of random numbers will be
@@ -98,7 +99,7 @@ public:
     void seed(quint32 seed);
 
     /**
-     * Seeds the generator again with the currentSeed().
+     * @brief Seeds the generator again with the currentSeed().
      * This is not a no-op, rather, the sequence of random numbers
      * starts again from its beginning after each re-seed.
      * Equivalent to seed(currentSeed())
@@ -106,29 +107,29 @@ public:
     void reseed();
 
     /**
-     * Retrieves the current seed. Can be used for seed(quint32)
+     * @brief Retrieves the current seed. Can be used for seed(quint32)
      * to replay the results again.
      */
     quint32 currentSeed() const;
 
     /**
-     * Returns a random integer in the interval [min, max]
+     * @return A random integer in the interval [min, max]
      * (including min and max).
-     * Warning: this method is non re-entrant.
+     * @warning this method is non re-entrant.
      */
     int number(int min, int max);
 
     /**
-     * Returns a random double in the interval [min, max)
+     * @return A random double in the interval [min, max)
      * (including min, excluding max)
-     * Warning: this method is non re-entrant.
+     * @warning This method is non re-entrant.
      */
     double number(double min, double max);
 
     /**
-     * Returns true with a probability of p
+     * @return true with a probability of p
      * (where p shall be in the interval [0, 1])
-     * Warning: this method is non re-entrant.
+     * @warning This method is non re-entrant.
      */
     bool yesOrNo(double p);
 

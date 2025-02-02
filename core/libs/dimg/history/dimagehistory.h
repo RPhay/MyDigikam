@@ -44,7 +44,7 @@ public:
     public:
 
         /**
-         * A DImageHistory is a list of entries.
+         * @brief A DImageHistory is a list of entries.
          *
          * Each entry has one action. The action can be null,
          * but it shall be null only if it is the action of the first
@@ -68,24 +68,24 @@ public:
     DImageHistory& operator=(const DImageHistory& other);
 
     /**
-     * A history is null if it is constructed with the default constructor
+     * @brief A history is null if it is constructed with the default constructor
      */
     bool isNull()                                                           const;
 
     /**
-     * A history is considered empty if there are no entries.
+     * @brief A history is considered empty if there are no entries.
      */
     bool isEmpty()                                                          const;
 
     /**
-     * A history is a valid history (telling something about the past),
+     * @brief A history is a valid history (telling something about the past),
      * if the history is not empty, and there is at least one
      * referred image other than the "Current" entry,
      * or there is a valid action.
      */
     bool isValid()                                                          const;
 
-    /// Returns the number of entries
+    /// @return The number of entries
     int size()                                                              const;
 
     bool operator==(const DImageHistory& other)                             const;
@@ -99,12 +99,12 @@ public:
     bool operator>(const DImageHistory& other)                              const;
 
     /**
-     * Appends a new filter action to the history.
+     * @brief Appends a new filter action to the history.
      */
     DImageHistory& operator<<(const FilterAction& action);
 
     /**
-     * Appends a new referred image, representing the current state
+     * @brief Appends a new referred image, representing the current state
      * of the history.
      * If you add an id of type Current, adjustReferredImages() will be called.
      */
@@ -113,11 +113,11 @@ public:
     void appendReferredImage(const HistoryImageId& id);
     void insertReferredImage(int entryIndex, const HistoryImageId& id);
 
-    /// Removes the last entry from the history
+    /// @brief Removes the last entry from the history
     void removeLast();
 
     /**
-     * Access entries.
+     * @brief Access entries.
      * There are size() entries.
      */
     QList<DImageHistory::Entry>&       entries();
@@ -126,28 +126,28 @@ public:
     const Entry&                       operator[](int i)                    const;
 
     /**
-     * Access actions.
+     * @brief Access actions.
      *
      * There is one action per entry,
      * but the action may be null.
      */
 
-    /// Returns if there is any non-null action
+    /// @return True if there is any non-null action
     bool hasActions()                                                       const;
     bool hasFilters()                                                       const
     {
         return hasActions();
     }
 
-    /// Returns the number of non-null actions
+    /// @return The number of non-null actions
     int actionCount()                                                       const;
 
-    /// Gets all actions which are not null
+    /// @brief Gets all actions which are not null
     QList<FilterAction> allActions()                                        const;
     const FilterAction& action(int i)                                       const;
 
     /**
-     * Access referred images
+     * @brief Access referred images
      */
     QList<HistoryImageId>& referredImages(int i);
     const QList<HistoryImageId>& referredImages(int i)                      const;
@@ -161,25 +161,25 @@ public:
     bool hasOriginalReferredImage()                                         const;
 
     /**
-     * Edit referred images
+     * @brief Edit referred images
      */
 
-    /// Remove all referredImages, leaving the entries list untouched
+    /// @brief Remove all referredImages, leaving the entries list untouched
     void clearReferredImages();
 
     /**
-     * Adjusts the type of a Current HistoryImageId:
+     * @brief Adjusts the type of a Current HistoryImageId:
      * If it is the first entry, it becomes Original,
      * if it is in an intermediate entry, it becomes Intermediate,
      * if in the last entry, it stays current.
      */
     void adjustReferredImages();
 
-    /// Changes the UUID of the current (last added current) referred image
+    /// @brief Changes the UUID of the current (last added current) referred image
     void adjustCurrentUuid(const QString& uuid);
 
     /**
-     * Remove file path entries pointing to the given absolute path
+     * @brief Remove file path entries pointing to the given absolute path
      * from any referred images. This is useful when said file
      * is about to be overwritten.
      * All other HistoryImageId fields remain unchanged, no HistoryImageId is removed.
@@ -188,14 +188,14 @@ public:
     void purgePathFromReferredImages(const QString& path, const QString& fileName);
 
     /**
-     * Change file path entries of the current referred image
+     * @brief Change file path entries of the current referred image
      */
     void moveCurrentReferredImage(const QString& newPath, const QString& newFileName);
 
     /**
-     * Serialize toand from XML.
+     * @brief Serialize toand from XML.
      *
-     * Note: The "Current" entry is skipped when writing to XML,
+     * @note The "Current" entry is skipped when writing to XML,
      * so make sure the file into the metadata of which you write the XML,
      * is the file marked as "Current" in this history.
      */
@@ -204,7 +204,7 @@ public:
 
 public:
 
-    /// Set as public there because of PrivateSharedNull
+    // Set as public there because of PrivateSharedNull
     class Private;
 
 private:

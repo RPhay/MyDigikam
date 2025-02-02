@@ -89,7 +89,7 @@ private:
 protected:
 
     /**
-     * Main image analys method. Override in subclass.
+     * @brief Main image analys method. Override in subclass.
      */
     virtual void startAnalyse() = 0;
 };

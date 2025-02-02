@@ -34,7 +34,7 @@ class DIGIKAM_EXPORT DImgThreadedFilter : public DynamicThread
 public:
 
     /**
-     * Constructs a filter without argument.
+     * @brief Constructs a filter without argument.
      * You need to call setupFilter() and startFilter()
      * to start the threaded computation.
      * To run filter without to use multithreading, call startFilterDirectly().
@@ -42,7 +42,7 @@ public:
     explicit DImgThreadedFilter(QObject* const parent = nullptr, const QString& name = QString());
 
     /**
-     * Constructs a filter with all arguments (ready to use).
+     * @brief Constructs a filter with all arguments (ready to use).
      * The given original image will be copied.
      * You need to call startFilter() to start the threaded computation.
      * To run filter without to use multithreading, call startFilterDirectly().
@@ -54,14 +54,14 @@ public:
     ~DImgThreadedFilter() override;
 
     /**
-     * You need to call this and then start filter of you used
+     * @brief You need to call this and then start filter of you used
      * the constructor not setting an original image.
      * The original image's data will not be copied.
      */
     void setupFilter(const DImg& orgImage);
 
     /**
-     * Initializes the filter for use as a slave and directly starts computation (in-thread)
+     * @brief Initializes the filter for use as a slave and directly starts computation (in-thread)
      */
     void setupAndStartDirectly(const DImg& orgImage,
                                DImgThreadedFilter* const master,
@@ -82,7 +82,7 @@ public:
     };
 
     /**
-     * This method return a list of steps to process parallelized operation in filter using QtConcurrents API.
+     * @brief This method return a list of steps to process parallelized operation in filter using QtConcurrents API.
      * Usually, start and stop are rows or columns from image to process. By default, whole image will be processed
      * and start value is 0. In this case stop will be last row or column to process.
      * Between range [start,stop], this method will divide by equal steps depending of number of CPU cores available.
@@ -93,47 +93,48 @@ public:
     QList<int> multithreadedSteps(int stop, int start = 0)                      const;
 
     /**
-     * Start the threaded computation.
+     * @brief Start the threaded computation.
      */
     virtual void startFilter();
 
     /**
-     * Cancel the threaded computation.
+     * @brief Cancel the threaded computation.
      */
     virtual void cancelFilter();
 
     /**
-     * Start computation of this filter, directly in this thread.
+     * @brief Start computation of this filter, directly in this thread.
      */
     virtual void startFilterDirectly();
 
     /**
-     * Returns the action description corresponding to currently set options.
+     * @return The action description corresponding to currently set options.
      */
     virtual FilterAction filterAction()                                               = 0;
 
     virtual void readParameters(const FilterAction&)                                  = 0;
 
     /**
-     * Return the identifier for this filter in the image history.
+     * @return The identifier for this filter in the image history.
      */
     virtual QString filterIdentifier()                                          const = 0;
 
     virtual QList<int> supportedVersions()                                      const;
 
     /**
-     *  Replaying a filter action:
+     *  @brief Replaying a filter action:
      *  Set the filter version. A filter may implement different versions, to preserve
      *  image history when the algorithm is changed.
      *  Any value set here must be contained in supportedVersions, otherwise
      *  this call will be ignored. Default value is 1.
-     *  (Note: If you intend to _record_ a filter action, please look at FilterAction's m_version)
+     *
+     *  @note If you intend to _record_ a filter action, please look at FilterAction's m_version
      */
     void setFilterVersion(int version);
     int filterVersion()                                                         const;
 
     /**
-     * Optional: error handling for readParameters.
+     * @brief Optional error handling for readParameters.
      * When readParameters() has been called, this method will return true
      * if the call was successful, and false if not.
      * If returning false, readParametersError() will give an error message.
@@ -149,17 +150,17 @@ public:
 Q_SIGNALS:
 
     /**
-     * This signal is emitted when image data is available and the computation has started.
+     * @brief This signal is emitted when image data is available and the computation has started.
      */
     void signalStarted();
 
     /**
-     * Emitted when progress info from the calculation is available.
+     * @brief Emitted when progress info from the calculation is available.
      */
     void signalProgress(int progress);
 
     /**
-     * Emitted when the computation has completed.
+     * @brief Emitted when the computation has completed.
      * @param success True if computation finished without interruption on valid data
      *                False if the thread was canceled, or no data is available.
      */
@@ -168,35 +169,35 @@ Q_SIGNALS:
 protected:
 
     /**
-     * Start filter operation before threaded method. Must be called by your constructor.
+     * @brief Start filter operation before threaded method. Must be called by your constructor.
      */
     virtual void initFilter();
 
     /**
-     * List of threaded operations by filter.
+     * @brief List of threaded operations by filter.
      */
     void run() override;
 
     /**
-     * Main image filter method. Override in subclass.
+     * @brief Main image filter method. Override in subclass.
      */
     virtual void filterImage() = 0;
 
     /**
-     * Clean up filter data if necessary, called by stopComputation() method.
+     * @brief Clean up filter data if necessary, called by stopComputation() method.
      * Override in subclass.
      */
     virtual void cleanupFilter() {};
 
     /**
-     * Emit progress info.
+     * @brief Emit progress info.
      */
     virtual void postProgress(int progress);
 
 protected:
 
     /**
-     * Support for chaining two filters as master and thread.
+     * @brief Support for chaining two filters as master and thread.
      *
      * Do not call startFilter() or startFilterDirectly() on this.
      * The computation will be started from initFilter() which you must
@@ -220,20 +221,20 @@ protected:
                        const QString& name = QString());
 
     /**
-     * Initialize the filter for use as a slave - reroutes progress info to master.
-     * Note: Computation will be started from setupFilter().
+     * @brief Initialize the filter for use as a slave - reroutes progress info to master.
+     * @note Computation will be started from setupFilter().
      */
     void initSlave(DImgThreadedFilter* const master,
                    int progressBegin = 0,
                    int progressEnd = 100);
 
     /**
-     * Inform the master that there is currently a slave. At destruction of the slave, call with slave=0.
+     * @brief Inform the master that there is currently a slave. At destruction of the slave, call with slave=0.
      */
     void setSlave(DImgThreadedFilter* const slave);
 
     /**
-     * This method modulates the progress value from the 0..100 span to the span of this slave.
+     * @brief This method modulates the progress value from the 0..100 span to the span of this slave.
      * Called by postProgress if master is not null.
      */
     virtual int modulateProgress(int progress);
@@ -242,7 +243,7 @@ protected:
     virtual void prepareDestImage();
 
     /**
-     * Convenience class to spare the few repeating lines of code
+     * @brief Convenience class to spare the few repeating lines of code
      */
     template <class Filter>
 
@@ -264,7 +265,7 @@ protected:
         }
 
         /**
-         * Preserve backwards compatibility:
+         * @brief Preserve backwards compatibility
          * If a given condition (some new feature is not used) is true,
          * decrease the version so that older digikam versions can still replay the action
          */
@@ -275,7 +276,6 @@ protected:
                 m_version = version;
             }
         }
-
     };
 
 protected:
@@ -285,34 +285,34 @@ protected:
     bool                m_wasCancelled      = false;
 
     /**
-     * The progress span that a slave filter uses in the parent filter's progress.
+     * @brief The progress span that a slave filter uses in the parent filter's progress.
      */
     int                 m_progressBegin     = 0;
     int                 m_progressSpan      = 0;
     int                 m_progressCurrent   = 0;  ///< To prevent signals bombarding with progress indicator value in postProgress().
 
     /**
-     * Filter name.
+     * @brief Filter name.
      */
     QString             m_name;
 
     /**
-     * Copy of original Image data.
+     * @brief Copy of original Image data.
      */
     DImg                m_orgImage;
 
     /**
-     * Output image data.
+     * @brief Output image data.
      */
     DImg                m_destImage;
 
     /**
-     * The current slave. Any filter might want to use another filter while processing.
+     * @brief The current slave. Any filter might want to use another filter while processing.
      */
     DImgThreadedFilter* m_slave             = nullptr;
 
     /**
-     * The master of this slave filter. Progress info will be routed to this one.
+     * @brief The master of this slave filter. Progress info will be routed to this one.
      */
     DImgThreadedFilter* m_master            = nullptr;
 };

@@ -38,59 +38,61 @@ public:
     static DImgFilterManager* instance();
 
     /**
-     * Returns a list of the supported filter identifiers
+     * @return A list of the supported filter identifiers
      */
     QStringList supportedFilters()                                  override;
 
     /**
-     * Returns a list of supported versions of the given filter
+     * @return A list of supported versions of the given filter
      */
     QList<int> supportedVersions(const QString& filterIdentifier)   override;
 
     /**
-     * Returns the (untranslated) displayable name for the given identifier.
+     * @return The (untranslated) displayable name for the given identifier.
      * This is only possible for supported filters. If you have a FilterAction,
      * it may already contain a displayable name.
      */
     QString displayableName(const QString& filterIdentifier)        override;
 
     /**
-     * Returns the translated displayable name
+     * @return The translated displayable name
      */
     QString i18nDisplayableName(const QString& filterIdentifier);
     QString i18nDisplayableName(const FilterAction& action);
 
     /**
-     * Returns an icon for the given filter.
+     * @return An icon for the given filter.
      * If no icon is known, returns a null string.
      */
     QString filterIcon(const QString& filterIdentifier);
     QString filterIcon(const FilterAction& action);
 
     /**
-     * Returns true if the given filter, or, more specifically,
+     * @return True if the given filter, or, more specifically,
      * the given filter in the given version is supported.
      */
     bool isSupported(const QString& filterIdentifier)               override;
     bool isSupported(const QString& filterIdentifier, int version)  override;
 
     /**
-     * Returns true if the given filter is to be considered
+     * @return True if the given filter is to be considered
      * as a step converting a RAW image to a normal image.
      */
     bool isRawConversion(const QString& filterIdentifier);
 
     /**
-     * Create a filter from an installed manager.
-     * Returns 0 if no filter could be created. This is true
+     * @brief Create a filter from an installed manager.
+     *
+     * @return 0 if no filter could be created. This is true
      * if identifier/version is not supported, or the filter is builtin.
-     * Note: You probably want to use FilterActionFilter.
+     *
+     * @note You probably want to use FilterActionFilter.
      */
     DImgThreadedFilter* createFilter(const QString& filterIdentifier,
                                      int version)                   override;
 
     /**
-     * Registers all filter provided by this generator.
+     * @brief Registers all filter provided by this generator.
      */
     void addGenerator(DImgFilterGenerator* const generator);
     void removeGenerator(DImgFilterGenerator* const generator);

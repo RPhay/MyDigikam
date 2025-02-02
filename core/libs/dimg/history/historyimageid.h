@@ -37,18 +37,18 @@ public:
         InvalidType    = 0,
 
         /**
-         * The original file (typically created by a camera)
+         * @brief The original file (typically created by a camera)
          */
         Original       = 1 << 0,
 
         /**
-         * A file created during the editing the history,
+         * @brief A file created during the editing the history,
          * between the original file and the current file.
          */
         Intermediate   = 1 << 1,
 
         /**
-         * When a file is created from multiple files, there can be no direct
+         * @brief When a file is created from multiple files, there can be no direct
          * original (panorama) but multiple sources, or one direct original
          * and some other, additional source files.
          * To record source files outside of the direct history, this type is used.
@@ -56,7 +56,7 @@ public:
         Source         = 1 << 2,
 
         /**
-         * The "current" file. This is a special entry: It refers to the file from
+         * @brief The "current" file. This is a special entry: It refers to the file from
          * which this history was read. It need not be written to the file,
          * because it describes the file itself. There is typically
          * exactly one current entry if the history is associated with an image;
@@ -66,20 +66,20 @@ public:
     };
 
     /**
-     * Note: In this class, the Type is used as a simple enum,
+     * @note In this class, the Type is used as a simple enum,
      * but it is also prepared for usage as flags.
      */
     Q_DECLARE_FLAGS(Types, Type)
 
 public:
 
-    /// Creates an invalid HistoryImageId
+    /// @brief Creates an invalid HistoryImageId
     HistoryImageId() = default;
 
-    /// Creates an id with the given UUID and type
+    /// @brief Creates an id with the given UUID and type
     explicit HistoryImageId(const QString& uuid, Type type = Current);
 
-    /// A valid id needs at least a valid type and a UUID or a filename
+    /// @brief A valid id needs at least a valid type and a UUID or a filename
     bool isValid()                                  const;
 
     Type type()                                     const;
@@ -116,15 +116,15 @@ public:
 
     bool hasFileOnDisk()                            const;
 
-    /// If a file on disk is referenced: Returns the path, without filename, with a trailing slash
+    /// @brief If a file on disk is referenced: Returns the path, without filename, with a trailing slash
     QString path()                                  const;
 
-    /// If a file on disk is referenced: Returns the full file path (folder + filename)
+    /// @brief If a file on disk is referenced: Returns the full file path (folder + filename)
     QString filePath()                              const;
 
     bool hasFileName()                              const;
 
-    /// If a file on disk is referenced: Returns the file name (without folder)
+    /// @brief If a file on disk is referenced: Returns the file name (without folder)
     QString fileName()                              const;
 
     bool      hasUuid()                             const;
@@ -138,32 +138,35 @@ public:
 
 public:
 
-    /// Type of this History Image Id
+    /// @brief Type of this History Image Id
     Type      m_type        = InvalidType;
 
     /**
-     * A unique identifier for the referred file. This id shall be changed each time
+     * @brief A unique identifier for the referred file. This id shall be changed each time
      * the image is edited.
      */
     QString   m_uuid;
 
-    /// The filename of the referred file
+    /// @brief The filename of the referred file
     QString   m_fileName;
 
-    /// The creationDate of the original image
+    /// @brief The creation date of the original image
     QDateTime m_creationDate;
 
-    /// The path of the referred file (NOTE: without file name!, including trailing slash)
+    /**
+     * @brief The path of the referred file
+     * @note Without file name, including trailing slash
+     */
     QString   m_filePath;
 
-    /// The uniqueHash of the referred file
+    /// @brief The unique hash of the referred file
     QString   m_uniqueHash;
 
-    /// The file size of the referred file
+    /// @brief The file size of the referred file
     qlonglong m_fileSize    = 0;
 
     /**
-     * A unique identifier designating the _original image_ from which the referred
+     * @brief A unique identifier designating the _original image_ from which the referred
      * image was created. Typically, this is a RAW or JPEG created by the camera in
      * the moment of taking the photograph.
      */

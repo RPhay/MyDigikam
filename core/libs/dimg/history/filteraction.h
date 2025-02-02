@@ -40,20 +40,20 @@ public:
          */
 
         /**
-         * When given the set of stored parameters and the original data,
-         *  an identical result will be produced.
+         * @brief When given the set of stored parameters and the original data,
+         * an identical result will be produced.
          */
         ReproducibleFilter = 0,
 
         /**
-         * The operation is documented and a number of parameters may be known,
+         * @brief The operation is documented and a number of parameters may be known,
          * but the identical result cannot be reproduced.
          * It may be possible to produce a sufficiently similar result.
          */
         ComplexFilter      = 1,
 
         /**
-         * The source images are known, a textual description may be added,
+         * @brief The source images are known, a textual description may be added,
          * but there is no way to automatically replay
          */
         DocumentedHistory  = 2,
@@ -65,7 +65,7 @@ public:
     enum Flag
     {
         /**
-         * The editing step of this filter action explicitly branches from the parent.
+         * @brief The editing step of this filter action explicitly branches from the parent.
          * This is an optional hint that the result is meant as a new version.
          */
         ExplicitBranch     = 1 << 0
@@ -84,20 +84,20 @@ public:
     Category category()                                             const;
 
     /**
-     * Returns a technical identifier for the filter used to produce this action.
+     * @return A technical identifier for the filter used to produce this action.
      * Can include a namespace. Example: digikam:charcoal
      */
     QString  identifier()                                           const;
 
     /**
-     * Returns the version (>= 1) of the filter used to produce this action.
+     * @return The version (>= 1) of the filter used to produce this action.
      * When a filter / tool is found by the identifier, it can decide
      * by the version if it supports this action and which parameters it expects.
      */
     int      version()                                              const;
 
     /**
-     * Returns a description / comment for this action.
+     * @return A description / comment for this action.
      * In the case of DocumentedHistory, this may be the most useful value.
      */
     QString  description()                                          const;
@@ -112,7 +112,7 @@ public:
     void  removeFlag(Flags flags);
 
     /**
-     * Access parameters.
+     * @brief Access parameters.
      * A parameters is a key -> value pair.
      * Keys need to be unique.
      */
@@ -125,7 +125,7 @@ public:
     QVariant&                      parameter(const QString& key);
 
     /**
-     * Returns parameter converted from QVariant to given type
+     * @return Parameter converted from QVariant to given type
      */
     template <typename T>
     T parameter(const QString& key)                                 const
@@ -134,7 +134,7 @@ public:
     }
 
     /**
-     * Read parameter with a default value:
+     * @brief Read parameter with a default value:
      * If there is a parameter for the given key, return it converted
      *  from QVariant to the template type.
      * If there is no parameter, return the given default value.
@@ -149,16 +149,16 @@ public:
                );
     }
 
-    /// Sets parameter, removing all other values for the same key
+    /// @brief Sets parameter, removing all other values for the same key
     void addParameter(const QString& key, const QVariant& value);
 
-    /// Removes all parameters for key
+    /// @brief Removes all parameters for key
     void removeParameters(const QString& key);
 
-    /// Clear all parameters
+    /// @brief Clear all parameters
     void clearParameters();
 
-    /// Replaces parameters
+    /// @brief Replaces parameters
     void setParameters(const QHash<QString, QVariant>& params);
 
 protected:

@@ -36,20 +36,20 @@ public:
     DImgFilterGenerator()          = default;
     virtual ~DImgFilterGenerator() = default;
 
-    /// Returns a list with identifiers of supported filters
+    /// @return A list with identifiers of supported filters
     virtual QStringList supportedFilters()                                  = 0;
 
-    /// Returns a list with the supported versions for the given identifier
+    /// @return A list with the supported versions for the given identifier
     virtual QList<int>  supportedVersions(const QString& filterIdentifier)  = 0;
 
-    /// Returns a QString with filter name for displaying in views
+    /// @return A QString with filter name for displaying in views
     virtual QString displayableName(const QString& filterIdentifier)        = 0;
 
-    /// Convenience methods
+    /// @brief Convenience methods
     virtual bool isSupported(const QString& filterIdentifier);
     virtual bool isSupported(const QString& filterIdentifier, int version);
 
-    /// Create the filter for the given combination of identifier and version
+    /// @brief Create the filter for the given combination of identifier and version
     virtual DImgThreadedFilter* createFilter(const QString& filterIdentifier,
                                              int version)                   = 0;
 private:
@@ -65,7 +65,7 @@ class BasicDImgFilterGenerator : public DImgFilterGenerator
 public:
 
     /**
-     * A sample implementation for one DImgThreadedFilter class.
+     * @brief A sample implementation for one DImgThreadedFilter class.
      * The class must provide two static methods, FilterIdentifier() and SupportedVersions().
      */
 

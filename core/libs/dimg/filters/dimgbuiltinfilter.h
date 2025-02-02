@@ -51,42 +51,42 @@ public:
 public:
 
     /**
-     * Create a filter performing no operation
+     * @brief Create a filter performing no operation
      */
     DImgBuiltinFilter() = default;
 
     /**
-     * Create a filter for the given action. If the action is not supported,
+     * @brief Create a filter for the given action. If the action is not supported,
      * the filter will perform no operation.
      */
     explicit DImgBuiltinFilter(const FilterAction& action);
 
     /**
-     * Create a filter of the given type.
+     * @brief Create a filter of the given type.
      * See documentation of Type for required arguments.
      */
     explicit DImgBuiltinFilter(Type type, const QVariant& arg = QVariant());
 
     /**
-     * same as constructor
+     * @brief Same as constructor
      */
     void setAction(const FilterAction& action);
     void setAction(Type type, const QVariant& arg = QVariant());
 
     /**
-     * Returns the reverse action of this filter.
+     * @return The reverse action of this filter.
      * If the current action is not revertible, returns an invalid filter.
      */
     DImgBuiltinFilter reverseFilter()                                                               const;
     bool isReversible()                                                                             const;
 
     /**
-     * Checks that the action is supported and valid arguments are set
+     * @brief Checks that the action is supported and valid arguments are set
      */
     bool isValid()                                                                                  const;
 
     /**
-     * Apply the described change to the given image reference
+     * @brief Apply the described change to the given image reference
      */
     void apply(DImg& image)                                                                         const;
 
@@ -96,19 +96,19 @@ public:
      */
 
     /**
-     * Returns the FilterAction describing this filter.
+     * @return The FilterAction describing this filter.
      */
     FilterAction filterAction()                                                                     const;
 
     /**
-     * Returns a displayableName for this filter
+     * @return A displayableName for this filter
      */
     QString displayableName()                                                                       const;
     QString i18nDisplayableName()                                                                   const;
     QString filterIcon()                                                                            const;
 
     /**
-     * Returns a DImgThreadedFilter which executes this builtin action.
+     * @return A DImgThreadedFilter which executes this builtin action.
      */
     DImgThreadedFilter* createThreadedFilter(QObject* const parent = nullptr)                       const;
     DImgThreadedFilter* createThreadedFilter(DImg* const orgImage, QObject* const parent = nullptr) const;
@@ -121,12 +121,12 @@ public:
     static QStringList supportedFilters();
 
     /**
-     * Returns a list of supported versions of the given filter
+     * @return A list of supported versions of the given filter
      */
     static QList<int> supportedVersions(const QString& filterIdentifier);
 
     /**
-     * Returns if the given filter and version are supported by DImgBuiltinFilter
+     * @return True if the given filter and version are supported by DImgBuiltinFilter
      */
     static bool isSupported(const QString& filterIdentifier);
     static bool isSupported(const QString& filterIdentifier, int version);
