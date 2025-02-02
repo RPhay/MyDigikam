@@ -20,22 +20,41 @@
 #include <stdlib.h>    /* define malloc() */
 
 /**
- * Since an ICC profile can be larger than the maximum size of a JPEG marker
+ * @note Since an ICC profile can be larger than the maximum size of a JPEG marker
  * (64K), we need provisions to split it into multiple markers.  The format
  * defined by the ICC specifies one or more APP2 markers containing the
  * following data:
- *    Identifying string    ASCII "ICC_PROFILE\0"  (12 bytes)
+ *
+ *    Identifying string        ASCII "ICC_PROFILE\0"  (12 bytes)
  *    Marker sequence number    1 for first APP2, 2 for next, etc (1 byte)
- *    Number of markers    Total number of APP2's used (1 byte)
- *      Profile data        (remainder of APP2 data)
+ *    Number of markers         Total number of APP2's used (1 byte)
+ *    Profile data              (remainder of APP2 data)
+ *
  * Decoders should use the marker sequence numbers to reassemble the profile,
  * rather than assuming that the APP2 markers appear in the correct sequence.
  */
-#define ICC_MARKER                              (JPEG_APP0 + 2)    /* JPEG marker code for ICC                                       */
-#define ICC_OVERHEAD_LEN                        14                 /* size of non-profile data in APP2          krazy:exclude=define */
-#define MAX_BYTES_IN_MARKER                     65533              /* maximum data len of a JPEG marker         krazy:exclude=define */
+
+/**
+ * JPEG marker code for ICC
+ */
+#define ICC_MARKER                              (JPEG_APP0 + 2)
+
+/**
+ * Size of non-profile data in APP2
+ */
+#define ICC_OVERHEAD_LEN                        14                 /* krazy:exclude=define */
+
+/**
+ * Maximum data len of a JPEG marker
+ */
+#define MAX_BYTES_IN_MARKER                     65533              /* krazy:exclude=define */
+
 #define MAX_DATA_BYTES_IN_MARKER                (MAX_BYTES_IN_MARKER - ICC_OVERHEAD_LEN)
-#define MAX_SEQ_NO                              255                /* sufficient since marker numbers are bytes krazy:exclude=define */
+
+/**
+ * Sufficient since marker numbers are bytes
+ */
+#define MAX_SEQ_NO                              255                /* krazy:exclude=define */
 
 /**
  * @brief This routine writes the given ICC profile data into a JPEG file.
