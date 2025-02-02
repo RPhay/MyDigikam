@@ -45,6 +45,7 @@ qt6-qhash-signature,\
 qt6-deprecated-api-fixes,\
 qt6-fwd-fixes,\
 qt6-header-fixes,\
+no-module-include,\
 signal-with-return-value,\
 raw-environment-function,\
 qt-keywords,\
