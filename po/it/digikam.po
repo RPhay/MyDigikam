@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-01 01:53+0000\n"
+"POT-Creation-Date: 2025-02-02 01:57+0000\n"
 "PO-Revision-Date: 2025-01-25 18:06+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -2658,7 +2658,7 @@ msgstr "Barra principale"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
-#: core/libs/album/manager/albummanager_talbum.cpp:985
+#: core/libs/album/manager/albummanager_talbum.cpp:988
 #: core/libs/timeadjust/timeadjustsettings.cpp:134
 #, kde-format
 msgid "digiKam"
@@ -27495,9 +27495,9 @@ msgstr "Impossibile aggiungere l'album alla banca dati"
 #: core/libs/album/manager/albummanager_palbum.cpp:463
 #: core/libs/album/manager/albummanager_palbum.cpp:550
 #: core/libs/album/manager/albummanager_talbum.cpp:366
-#: core/libs/album/manager/albummanager_talbum.cpp:461
-#: core/libs/album/manager/albummanager_talbum.cpp:501
-#: core/libs/album/manager/albummanager_talbum.cpp:590
+#: core/libs/album/manager/albummanager_talbum.cpp:464
+#: core/libs/album/manager/albummanager_talbum.cpp:504
+#: core/libs/album/manager/albummanager_talbum.cpp:593
 #, kde-format
 msgid "No such album"
 msgstr "Nessun album"
@@ -27547,7 +27547,7 @@ msgid "Tag name cannot be empty"
 msgstr "Il nome del tag non può essere vuoto"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:304
-#: core/libs/album/manager/albummanager_talbum.cpp:473
+#: core/libs/album/manager/albummanager_talbum.cpp:476
 #, kde-format
 msgid "Tag name cannot contain '/'"
 msgstr "Il nome del tag non può contenere «/»"
@@ -27568,18 +27568,18 @@ msgstr "Impossibile aggiungere tag alla banca dati"
 msgid "Cannot delete root tag"
 msgstr "Impossibile eliminare il tag radice"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:378
+#: core/libs/album/manager/albummanager_talbum.cpp:381
 #, kde-format
 msgid "Cannot delete required face tag"
 msgstr "Impossibile eliminare il tag del volto richiesto"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:467
-#: core/libs/album/manager/albummanager_talbum.cpp:706
+#: core/libs/album/manager/albummanager_talbum.cpp:470
+#: core/libs/album/manager/albummanager_talbum.cpp:709
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Impossibile modificare il tag radice"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:481
+#: core/libs/album/manager/albummanager_talbum.cpp:484
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27588,17 +27588,17 @@ msgstr ""
 "Esiste già un tag con lo stesso nome.\n"
 "Scegline un altro."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:507
+#: core/libs/album/manager/albummanager_talbum.cpp:510
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
 msgstr "Tentativo di spostare TAlbum in nessun posto"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:513
+#: core/libs/album/manager/albummanager_talbum.cpp:516
 #, kde-format
 msgid "Cannot move root tag"
 msgstr "Impossibile spostare il tag radice"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:521
+#: core/libs/album/manager/albummanager_talbum.cpp:524
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27607,38 +27607,38 @@ msgstr ""
 "Esiste già un tag con lo stesso nome.\n"
 "Vuoi unire i tag?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:596
+#: core/libs/album/manager/albummanager_talbum.cpp:599
 #, kde-format
 msgid "Cannot merge root tag"
 msgstr "Impossibile unire il tag radice"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:602
+#: core/libs/album/manager/albummanager_talbum.cpp:605
 #, kde-format
 msgid "Cannot merge required face tag"
 msgstr "Impossibile unire il tag del volto richiesto"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:608
+#: core/libs/album/manager/albummanager_talbum.cpp:611
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr "Può essere unito solo un tag senza elementi secondari."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:620
+#: core/libs/album/manager/albummanager_talbum.cpp:623
 #, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Vuoi unire il tag «%1» nel tag «%2»?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:624
-#: core/libs/album/manager/albummanager_talbum.cpp:1138
+#: core/libs/album/manager/albummanager_talbum.cpp:627
+#: core/libs/album/manager/albummanager_talbum.cpp:1141
 #, kde-format
 msgid "Do not ask again at this session"
 msgstr "Non chiederlo più per questa sessione"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:700
+#: core/libs/album/manager/albummanager_talbum.cpp:703
 #, kde-format
 msgid "No such tag"
 msgstr "Nessun tag"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1133
+#: core/libs/album/manager/albummanager_talbum.cpp:1136
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
