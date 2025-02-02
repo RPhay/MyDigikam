@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#include "digikam_config.h"
-#include "dimgpgfloader.h"       // krazy:exclude=includes
+#include "dimgpgfloader.h"
 
 // C Ansi includes
 

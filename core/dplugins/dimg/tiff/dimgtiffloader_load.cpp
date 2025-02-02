@@ -13,7 +13,10 @@
  *
  * ============================================================ */
 
+#include "dimgtiffloader.h"
+
 // C ANSI includes
+
 extern "C"
 {
 #include <tiffvers.h>
@@ -33,9 +36,7 @@ extern "C"
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_config.h"
 #include "dimgloaderobserver.h"
-#include "dimgtiffloader.h"     //krazy:exclude=includes
 
 namespace DigikamTIFFDImgPlugin
 {

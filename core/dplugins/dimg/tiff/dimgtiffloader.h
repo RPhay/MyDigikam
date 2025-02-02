@@ -42,6 +42,7 @@ extern "C"
 
 // Local includes
 
+#include "digikam_config.h"
 #include "dimg.h"
 #include "dimgloader.h"
 #include "dmetadata.h"
