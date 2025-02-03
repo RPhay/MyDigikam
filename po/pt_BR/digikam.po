@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-02 01:57+0000\n"
+"POT-Creation-Date: 2025-02-03 01:51+0000\n"
 "PO-Revision-Date: 2023-09-18 10:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -33867,12 +33867,12 @@ msgstr "Ruído vermelho de crominância"
 msgid "Invert Effect"
 msgstr "Efeito de inversão"
 
-#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:79
+#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:81
 #, kde-format
 msgid "Oil Painter Effect"
 msgstr "Efeito de pintura a óleo"
 
-#: core/libs/dimg/filters/fx/raindropfilter.cpp:89
+#: core/libs/dimg/filters/fx/raindropfilter.cpp:90
 #, kde-format
 msgid "Rain Drops Effect"
 msgstr "Efeito de pingos de chuva"

@@ -54,7 +54,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-02 01:57+0000\n"
+"POT-Creation-Date: 2025-02-03 01:51+0000\n"
 "PO-Revision-Date: 2025-01-27 11:15+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -32304,12 +32304,12 @@ msgstr "Шум красной цветоразностной компонент�
 msgid "Invert Effect"
 msgstr "Эффект инверсии"
 
-#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:79
+#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:81
 #, kde-format
 msgid "Oil Painter Effect"
 msgstr "Эффект масляной краски"
 
-#: core/libs/dimg/filters/fx/raindropfilter.cpp:89
+#: core/libs/dimg/filters/fx/raindropfilter.cpp:90
 #, kde-format
 msgid "Rain Drops Effect"
 msgstr "Эффект дождевых капель"

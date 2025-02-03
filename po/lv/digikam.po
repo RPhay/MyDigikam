@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-02 01:57+0000\n"
+"POT-Creation-Date: 2025-02-03 01:51+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -31440,12 +31440,12 @@ msgstr "Krāsainība - sarkans"
 msgid "Invert Effect"
 msgstr "Invertēt iezīmējumu"
 
-#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:79
+#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:81
 #, fuzzy, kde-format
 msgid "Oil Painter Effect"
 msgstr "Eļļas glezna"
 
-#: core/libs/dimg/filters/fx/raindropfilter.cpp:89
+#: core/libs/dimg/filters/fx/raindropfilter.cpp:90
 #, fuzzy, kde-format
 msgid "Rain Drops Effect"
 msgstr "LietusLāse"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-02 01:57+0000\n"
+"POT-Creation-Date: 2025-02-03 01:51+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -30957,12 +30957,12 @@ msgstr "Độ trưng:"
 msgid "Invert Effect"
 msgstr "Đảo vùng chọn"
 
-#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:79
+#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:81
 #, fuzzy, kde-format
 msgid "Oil Painter Effect"
 msgstr "Áp dụng hiệu ứng sơn dầu"
 
-#: core/libs/dimg/filters/fx/raindropfilter.cpp:89
+#: core/libs/dimg/filters/fx/raindropfilter.cpp:90
 #, fuzzy, kde-format
 msgid "Rain Drops Effect"
 msgstr "Giọt mưa"

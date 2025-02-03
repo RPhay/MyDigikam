@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-02 01:57+0000\n"
+"POT-Creation-Date: 2025-02-03 01:51+0000\n"
 "PO-Revision-Date: 2024-11-23 12:48+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -31740,12 +31740,12 @@ msgstr "Chrominance Red Noise"
 msgid "Invert Effect"
 msgstr "Invert Effect"
 
-#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:79
+#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:81
 #, kde-format
 msgid "Oil Painter Effect"
 msgstr "Oil Painter Effect"
 
-#: core/libs/dimg/filters/fx/raindropfilter.cpp:89
+#: core/libs/dimg/filters/fx/raindropfilter.cpp:90
 #, kde-format
 msgid "Rain Drops Effect"
 msgstr "Rain Drops Effect"

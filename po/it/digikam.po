@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-02 01:57+0000\n"
-"PO-Revision-Date: 2025-01-25 18:06+0100\n"
+"POT-Creation-Date: 2025-02-03 01:51+0000\n"
+"PO-Revision-Date: 2025-02-02 11:46+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -21003,12 +21003,7 @@ msgid "Soundtrack Preview:"
 msgstr "Anteprima della traccia audio:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:226
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-#| "will be played in loop. If the audio length is largest than video, it "
-#| "will be trimmed. Leave this setting empty if you don't want a soundtrack "
-#| "to the media.</i>"
+#, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is larger than video, it will be "
@@ -32227,12 +32222,12 @@ msgstr "Rumore di crominanza rossa"
 msgid "Invert Effect"
 msgstr "Effetto Inversione"
 
-#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:79
+#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:81
 #, kde-format
 msgid "Oil Painter Effect"
 msgstr "Effetto Pittura a olio"
 
-#: core/libs/dimg/filters/fx/raindropfilter.cpp:89
+#: core/libs/dimg/filters/fx/raindropfilter.cpp:90
 #, kde-format
 msgid "Rain Drops Effect"
 msgstr "Effetto Gocce di pioggia"
@@ -35628,7 +35623,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Rules"
-msgstr ""
+msgstr "Regole"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
 #, kde-format
@@ -35748,11 +35743,10 @@ msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Rileva se le immagini sono sottoesposte o sovraesposte"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:225
-#, fuzzy, kde-format
-#| msgid "Sparsity Factor: "
+#, kde-format
 msgctxt "@title:tab"
 msgid "Basic Factors"
-msgstr "Fattore di scarsità: "
+msgstr "Fattori di base"
 
 #: core/libs/iojobs/iojob.cpp:64
 #, kde-format
@@ -35762,7 +35756,7 @@ msgstr "Il file/la cartella %1 non esiste più"
 #: core/libs/iojobs/iojob.cpp:71
 #, kde-format
 msgid "Album %1 does not exist anymore"
-msgstr "L'albun %1 non esiste più"
+msgstr "L'album %1 non esiste più"
 
 #: core/libs/iojobs/iojob.cpp:99
 #, kde-format
@@ -52204,12 +52198,10 @@ msgid "No address book entries found"
 msgstr "Nessuna voce trovata nella rubrica "
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Facial Recognition Model"
+#, kde-format
 msgctxt "@title:window"
 msgid "Facial Recognition Database"
-msgstr "Modello di riconoscimento facciale"
+msgstr "Banca dati del riconoscimento facciale"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:65
 #, kde-format
@@ -52222,6 +52214,13 @@ msgid ""
 "\n"
 "Do you want to retrain your database now?"
 msgstr ""
+"La tua banca dati del riconoscimento facciale è obsoleta e richiede un nuovo "
+"addestramento. Questo processo impiegherà da pochi secondi a diversi minuti. "
+"Il riconoscimento facciale non sarà affidabile fin quando non termini "
+"l'addestramento. Il nuovo addestramento sarà eseguito in background e potrai "
+"continuare a usare use digiKam. \n"
+"\n"
+"Vuoi eseguire il nuovo addestramento della banca dati adesso?"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:82
 #, kde-format
