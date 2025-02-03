@@ -33,6 +33,8 @@ RecognitionTrainingUpdateQueue::~RecognitionTrainingUpdateQueue()
 {
     --ref;
 
+    qCDebug(DIGIKAM_FACEDB_LOG) << "Delete RecognitionTrainingUpdateQueue:" << ref;
+
     if (0 == ref)
     {
         qCDebug(DIGIKAM_FACEDB_LOG) << "Remove queue destroyed";
