@@ -53,6 +53,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName               = QLatin1String("adjustcurves Tool");
     const QString configHistogramChannelEntry   = QLatin1String("Histogram Channel");
     const QString configHistogramScaleEntry     = QLatin1String("Histogram Scale");
@@ -105,8 +107,11 @@ AdjustCurvesTool::AdjustCurvesTool(QObject* const parent)
 
     setToolSettings(d->gboxSettings);
 
-    // -------------------------------------------------------------
+    setupConnections();
+}
 
+void AdjustCurvesTool::setupConnections()
+{
     connect(d->settingsView, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotTimer()));
 
