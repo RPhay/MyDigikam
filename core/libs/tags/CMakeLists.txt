@@ -65,6 +65,7 @@ set(autotagassignment_LIB_SRCS
                                ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/classifiers/autotagsclassifierbase.cpp
                                ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/classifiers/softmax/autotagsclassifiersoftmax.cpp
                                ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/classifiers/multiclassyolo/autotagsclassifiermultiyolo.cpp
+                               ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/classifiers/minmax/autotagsclassifierminmax.cpp
                                ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/autotagsscanwidget.cpp
 )
 

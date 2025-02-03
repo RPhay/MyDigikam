@@ -40,6 +40,7 @@ public:
     DNNModelInfoContainer(const DNNModelInfoContainer&);
     explicit DNNModelInfoContainer(
                                    const QString&           _displayName,
+                                   const QString&           _toolTip,
                                    const QString&           _fileName,
                                    const DNNModelUsageList& _usage,
                                    const QVersionNumber&    _minVersion,
@@ -50,6 +51,8 @@ public:
                                    int                      _minUsableThreshold,
                                    int                      _maxUsableThreshold,
                                    DNNLoaderType            _loaderType,
+                                   const QString&           _preprocessor,
+                                   const QString&           _classifier,
                                    const QString&           _classList,
                                    const QString&           _configName,
                                    const cv::Scalar&        _meanValToSubtract,
@@ -65,11 +68,14 @@ public:
 public:
 
     QString            displayName;                                     ///< Name used for display in UI (QComboBox).
+    QString            toolTip;                                         ///< Tooltip for the model.
     QString            fileName;                                        ///< Used by the downloader and model loader.
     DNNModelUsageList  usage;                                           ///< How the model can be used. | for more than one use. face_detection, face_recognition, weight, object_detection, etc...
     QVersionNumber     minVersion;                                      ///< Minimum version of digiKam needed to use this model.
     QString            downloadPath;                                    ///< Used by the downloader for the download path.
     QString            sha256;                                          ///< SHA265 hash of the file for download.
+    QString            preprocessor;                                    ///< Name of preprocessor type.
+    QString            classifier;                                      ///< Name of classifier type.
     QString            classList;                                       ///< Name of model containing list of class names for classification.
     QString            configName;
 

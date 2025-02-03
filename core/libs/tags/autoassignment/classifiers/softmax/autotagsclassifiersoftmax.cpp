@@ -74,7 +74,7 @@ int AutotagsClassifierSoftmax::predict(const cv::Mat& target) const
     {
         qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsClassifierSoftmax::predict - Class ID:"
                                             << label_id << predefinedClasses[label_id]
-                                            <<"Confidence:" << final_prob;
+                                            << "Confidence:" << final_prob;
         return label_id;
     }
     else

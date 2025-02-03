@@ -47,6 +47,11 @@ public:
     const QList<DownloadInfo>& getDownloadInformation(DNNModelUsage usage);
 
     /**
+     * @brief Get a list of models that can be used for a specific usage.
+     */
+    const QList<QPair<QString, QStringList> > getModelList(DNNModelUsage usage);
+
+    /**
      * @brief Retrieve a DNNModelBase pointer by name.
      * This will load and create the model on first use.
      * It will also find the best OpenCV Target and Backend for the model
@@ -80,6 +85,8 @@ private:
      */
     void loadConfig();      ///<  Load the Model map, but don't create the cv::dnn::Net objects yet.
     void getSettings();     ///<  Loads the settings from disk (or web: future).
+
+    QStringList getDisplayStrings(const QString& modelName) const;
 
 private:
 

@@ -46,6 +46,7 @@
 #include "dnnmodelconfig.h"
 #include "autotagsclassifiersoftmax.h"
 #include "autotagsclassifiermultiyolo.h"
+#include "autotagsclassifierminmax.h"
 #include "scancontroller.h"
 #include "metadatahub.h"
 #include "tagscache.h"
@@ -74,36 +75,7 @@ bool AutotagsPipelineObject::start()
 
     try
     {
-        switch (settings.objectDetectModel)
-        {
-            case AutotagsScanSettings::ObjectDetectionModel::YOLOV11NANO:
-            {
-                model = static_cast<DNNModelNet*>(DNNModelManager::instance()->getModel(QStringLiteral("YOLOv11-nano"), DNNModelUsage::DNNUsageObjectDetection));
-
-                break;
-            }
-
-            case AutotagsScanSettings::ObjectDetectionModel::YOLOV11XLARGE:
-            {
-                model = static_cast<DNNModelNet*>(DNNModelManager::instance()->getModel(QStringLiteral("YOLOv11-xl"), DNNModelUsage::DNNUsageObjectDetection));
-
-                break;
-            }
-
-            case AutotagsScanSettings::ObjectDetectionModel::RESNET152:
-            {
-                model = static_cast<DNNModelNet*>(DNNModelManager::instance()->getModel(QStringLiteral("ResNet152_v2"), DNNModelUsage::DNNUsageImageClassification));
-
-                break;
-            }
-
-            default:
-            {
-                qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::start(): Unknown object detection model. ";
-
-                return false;
-            }
-        }
+        model = static_cast<DNNModelNet*>(DNNModelManager::instance()->getModel(settings.objectDetectModel, DNNModelUsage::DNNUsageObjectDetection));
 
         model->getNet();
 
@@ -112,19 +84,25 @@ bool AutotagsPipelineObject::start()
 
         if (configModel)
         {
-            if (
-                (AutotagsScanSettings::ObjectDetectionModel::YOLOV11NANO   == settings.objectDetectModel) ||
-                (AutotagsScanSettings::ObjectDetectionModel::YOLOV11XLARGE == settings.objectDetectModel)
-               )
+            if      (model->info.classifier == QStringLiteral("softmax"))
+            {
+                autotagsClassifier = new AutotagsClassifierSoftmax(model->getThreshold(settings.uiConfidenceThreshold), configModel->getModelPath());
+            }
+            else if (model->info.classifier == QStringLiteral("minmax"))
+            {
+                autotagsClassifier = new AutotagsClassifierMinmax(model->getThreshold(settings.uiConfidenceThreshold), configModel->getModelPath());
+            }
+            else if (model->info.classifier == QStringLiteral("multiyolo"))
             {
                 autotagsClassifier = new AutotagsClassifierYolo(model->getThreshold(settings.uiConfidenceThreshold), configModel->getModelPath());
                 static_cast<AutotagsClassifierYolo*>(autotagsClassifier)->setParams(AutotagsClassifierYolo::YoloVersion::YOLOv11,
-                                                                                    QSize(model->info.imageSize,
-                                                                                    model->info.imageSize));
+                                                                                            QSize(model->info.imageSize,
+                                                                                            model->info.imageSize));
             }
             else
             {
-                autotagsClassifier = new AutotagsClassifierSoftmax(model->getThreshold(settings.uiConfidenceThreshold), configModel->getModelPath());
+                qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::start(): Unknown classifier. ";
+                return false;
             }
         }
     }
@@ -389,11 +367,30 @@ bool AutotagsPipelineObject::extractor()
         }
 
         // convert the image to a blob
+        cv::Mat cvPreprocessedImage;
 
-        cv::UMat cvUBlob = cv::dnn::blobFromImage(cvImage, 1.0 / 255,
-                                                cv::Size(cvImage.cols, cvImage.rows),
-                                                cv::Scalar(0, 0, 0),
-                                                true, false).getUMat(cv::ACCESS_READ);
+        if      (model->info.preprocessor == QStringLiteral("blob"))
+        {
+            // Preprocessor=Blob
+
+            cvPreprocessedImage = cv::dnn::blobFromImage(cvImage, 1.0 / 255,
+                                                         cv::Size(cvImage.cols, cvImage.rows),
+                                                         cv::Scalar(0, 0, 0),
+                                                         true, false);
+        }
+        else if (model->info.preprocessor == QStringLiteral("flat"))
+        {
+            // Preprocessor=Flat
+
+            int sz[4] = {1, cvImage.cols, cvImage.rows, 3};
+            cvPreprocessedImage = cv::Mat(4, sz, CV_8U, cvImage.data);
+        }
+        else
+        {
+            // Preprocessor=None or empty
+
+            cvPreprocessedImage = cvImage;
+        }
 
         std::vector<cv::Mat> detectionResults;
 
@@ -402,7 +399,7 @@ bool AutotagsPipelineObject::extractor()
 
             QMutexLocker lock(&(model->mutex));
 
-            model->getNet().setInput(cvUBlob);
+            model->getNet().setInput(cvPreprocessedImage.getUMat(cv::ACCESS_READ));
 
             model->getNet().forward(detectionResults, model->getNet().getUnconnectedOutLayersNames());
         }

@@ -52,26 +52,6 @@ public:
     };
     Q_ENUM(TagMode)
 
-    /**
-     * object detection AI models.
-     */
-    enum ObjectDetectionModel
-    {
-        YOLOV11NANO,
-        YOLOV11XLARGE,
-        RESNET152
-    };
-    Q_ENUM(ObjectDetectionModel)
-
-    /**
-     * object detection AI models.
-     */
-    enum ImageClassificationModel
-    {
-        ResNet152_v2
-    };
-    Q_ENUM(ImageClassificationModel)
-
 public:
 
     AutotagsScanSettings();
@@ -92,10 +72,10 @@ public:
     bool                                    useFullCpu                  = false;
 
     /// Object Detection Model.
-    ObjectDetectionModel                    objectDetectModel           = ObjectDetectionModel::YOLOV11NANO;
+    QString                                 objectDetectModel           = QStringLiteral("yolov11-nano");
 
     /// Object Detection Model.
-    ImageClassificationModel                imageClassificationModel    = ImageClassificationModel::ResNet152_v2;
+    QString                                 imageClassificationModel    = QStringLiteral("efficientnet-b7");
 
     /// Albums to scan.
     AlbumList                               albums;

@@ -19,6 +19,10 @@
 #include <QStandardPaths>
 #include <QVersionNumber>
 #include <QApplication>
+#include <QFileInfo>
+
+// KDE includes
+#include <klocalizedstring.h>
 
 // Local includes
 
@@ -96,6 +100,36 @@ const QList<DownloadInfo>& DNNModelManager::getDownloadInformation(DNNModelUsage
     return d->downloadInfo;
 }
 
+const QList<QPair<QString, QStringList> > DNNModelManager::getModelList(DNNModelUsage usage)
+{
+    QList<QPair<QString, QStringList> > result;
+
+    // iterate over all models and get the display strings.
+
+    for (const auto& model : d->modelMap.keys())
+    {
+        // check if the model is used for the requested usage.
+
+        if (d->modelMap[model]->info.usage.contains(usage) && d->modelMap[model]->info.loaderType != DNNLoaderType::DNNLoaderConfig)
+        {
+            // check we have the model downloaded.
+
+            QFileInfo check_file(d->modelMap[model]->getModelPath());
+            if (!check_file.exists())
+            {
+                qCDebug(DIGIKAM_DNNMODELMNGR_LOG) << "DNNModelManager::getModelList: Model file not found:" << model;
+                continue;
+            }
+
+            // get the display strings for the model.
+
+            result << QPair<QString, QStringList>(model, getDisplayStrings(model));
+        }
+    }
+
+    return result;
+}
+
 DNNModelBase* DNNModelManager::getModel(const QString& modelName, DNNModelUsage usage) const
 {
     Q_UNUSED(usage);       // For future reference.
@@ -139,8 +173,11 @@ void DNNModelManager::loadConfig()
             // Set basic values.
 
             info.displayName         = d->settings->value(QLatin1String("DisplayName")).toString();
+            info.toolTip             = d->settings->value(QLatin1String("ToolTip")).toString();
             info.fileName            = d->settings->value(QLatin1String("FileName")).toString();
             info.downloadPath        = d->settings->value(QLatin1String("DownloadPath")).toString();
+            info.preprocessor        = d->settings->value(QLatin1String("Preprocessor")).toString().toLower();
+            info.classifier          = d->settings->value(QLatin1String("Classifier")).toString().toLower();
             info.sha256              = d->settings->value(QLatin1String("SHA256")).toString();
             info.fileSize            = d->settings->value(QLatin1String("FileSize")).toInt();
             info.defaultThreshold    = d->settings->value(QLatin1String("DefaultThreshold")).toInt();
@@ -285,6 +322,52 @@ void DNNModelManager::getSettings()
             d->settings = new QSettings(appPath, QSettings::IniFormat, this);
         }
     }
+}
+
+/**
+ * @brief Retrieve display strings for a model.
+ * The QStringLiteral must match the [model_section] in dnnmodels.conf.
+ * @return QStringList containing the display name and tooltip.
+ */
+
+QStringList DNNModelManager::getDisplayStrings(const QString& modelName) const
+{
+    QStringList result;
+
+    if (d->modelMap.contains(modelName))
+    {
+        if      (modelName == QStringLiteral("YOLOv11-nano").toLower())
+        {
+            result << i18n("YOLOv11 Nano");
+            result << i18nc("@info:tooltip",
+                            "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering exceptional speed, but may miss identifying more objects in images. "
+                            "YOLO can detect multiple objects in an image. It is trained to recognize 80 different objects using the COCO dataset.</p>");
+        }
+        else if (modelName == QStringLiteral("YOLOv11-xl").toLower())
+        {
+            result << i18n("YOLOv11 XLarge");
+            result << i18nc("@info:tooltip",
+                            "<p><b>YOLOv11 XLarge</b>: large, robust neural network offering good accuracy. It will detect more objects in images than YOLOv11 Nano, "
+                            "but is slower. YOLO can detect multiple objects in an image. It is trained to recognize 80 different objects using the COCO dataset.</p>");
+        }
+        else if (modelName == QStringLiteral("EfficientNetB7").toLower())
+        {
+            result << i18n("EfficientNet B7");
+            result << i18nc("@info:tooltip",
+                            "<p><b>EfficientNet B7</b>: large and powerful convoluted neural network. It will detect a single object in an image with high accuracy. "
+                            "EfficientNet B7 was trained to recognize 1,000 different objects using the ImageNet dataset.</p>");
+        }
+
+        // if no translation is found, use the info from dnnmodels.conf
+
+        if (result.isEmpty())
+        {
+            result << d->modelMap[modelName]->info.displayName;
+            result << d->modelMap[modelName]->info.toolTip;
+        }
+    }
+
+    return result;
 }
 
 } // namespace Digikam

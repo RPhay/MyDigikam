@@ -118,7 +118,7 @@ BatchToolSettings AssignTags::defaultSettings()
 void AssignTags::slotAssignSettings2Widget()
 {
     AutotagsScanSettings autotagsSettings;
-    autotagsSettings.objectDetectModel      = (AutotagsScanSettings::ObjectDetectionModel)settings().value(QLatin1String("AutotagsObjectDetectModel")).toInt();
+    autotagsSettings.objectDetectModel      = settings().value(QLatin1String("AutotagsObjectDetectModel")).toString();
     autotagsSettings.tagMode                = (AutotagsScanSettings::TagMode)settings().value(QLatin1String("AutotagsTagMode")).toInt();
     autotagsSettings.uiConfidenceThreshold  = settings().value(QLatin1String("AutotagsObjectDetectAccuracy")).toInt();
     autotagsSettings.languages              = settings().value(QLatin1String("TrAutotagsLangs")).toStringList();
@@ -156,7 +156,7 @@ bool AssignTags::toolOperations()
     if (nullptr == d->pipeline)
     {
         AutotagsScanSettings pipelineSettings;
-        pipelineSettings.objectDetectModel      = (AutotagsScanSettings::ObjectDetectionModel)settings().value(QLatin1String("AutotagsObjectDetectModel")).toInt();
+        pipelineSettings.objectDetectModel      = settings().value(QLatin1String("AutotagsObjectDetectModel")).toString();
         pipelineSettings.tagMode                = (AutotagsScanSettings::TagMode)settings().value(QLatin1String("AutotagsTagMode")).toInt();
         pipelineSettings.uiConfidenceThreshold  = settings().value(QLatin1String("AutotagsObjectDetectAccuracy")).toInt();
         pipelineSettings.languages              = settings().value(QLatin1String("TrAutotagsLangs")).toStringList();

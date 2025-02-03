@@ -14,6 +14,7 @@
  * ============================================================ */
 
 #include "autotagsscanwidget_p.h"
+#include "dnnmodelmanager.h"
 
 namespace Digikam
 {
@@ -47,7 +48,11 @@ void AutotagsScanWidget::doLoadState()
     d->tagMode->setCurrentIndex(tagTagMode);
 
     int objectDetectModel       = d->objectDetectModel->findData(group.readEntry(d->configObjectDetectModel,
-                                                                 (int)prm.objectDetectModel));
+                                                                 (QString)prm.objectDetectModel));
+    if (objectDetectModel < 0)
+    {
+        objectDetectModel = 0;
+    }
     d->objectDetectModel->setCurrentIndex(objectDetectModel);
 
     d->accuracyInput->setValue(group.readEntry(d->configObjectDetectAccuracy, prm.uiConfidenceThreshold));
@@ -72,7 +77,7 @@ void AutotagsScanWidget::doSaveState()
 
     group.writeEntry(d->configScanMode,             (int)prm.scanMode);
     group.writeEntry(d->configTagMode,              (int)prm.tagMode);
-    group.writeEntry(d->configObjectDetectModel,    (int)prm.objectDetectModel);
+    group.writeEntry(d->configObjectDetectModel,    prm.objectDetectModel);
     group.writeEntry(d->configObjectDetectAccuracy, (int)prm.uiConfidenceThreshold);
     group.writeEntry(d->configLanguages,            prm.languages);
 }
@@ -128,17 +133,23 @@ void AutotagsScanWidget::setupUi()
     QWidget* const space9       = new QWidget(hbox13);
     hbox13->setStretchFactor(space9, 10);
 
+    DNNModelManager* const dnnModelManager = DNNModelManager::instance();
+    QList<QPair<QString, QStringList> > modelList = dnnModelManager->getModelList(DNNModelUsage::DNNUsageObjectDetection);
+
     d->objectDetectModel        = new QComboBox(hbox13);
-    d->objectDetectModel->addItem(i18n("YOLOv11 Nano"),   AutotagsScanSettings::ObjectDetectionModel::YOLOV11NANO);
-    d->objectDetectModel->addItem(i18n("YOLOv11 XLarge"), AutotagsScanSettings::ObjectDetectionModel::YOLOV11XLARGE);
-    d->objectDetectModel->addItem(i18n("ResNet-152"),      AutotagsScanSettings::ObjectDetectionModel::RESNET152);
-    d->objectDetectModel->setToolTip(i18nc("@info:tooltip",
-        "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering exceptional speed, but may miss identifying more objects in images. "
-        "YOLO can detect multiple objects in an image. It is trained to recognize 80 different objects using the COCO dataset.</p>"
-        "<p><b>YOLOv11 XLarge</b>: large, robust neural network offering good accuracy. It will detect more objects in images than YOLOv11 Nano, "
-        "but is slower. YOLO can detect multiple objects in an image. It is trained to recognize 80 different objects using the COCO dataset.</p>"
-        "<p><b>ResNet-152</b>: large and powerful convoluted neural network. It will detect a single object in an image with high accuracy. "
-        "ResNet-152 was trained to recognize 1,000 different objects using the ImageNet dataset.</p>"));
+    if (modelList.isEmpty())
+    {
+        d->objectDetectModel->addItem(i18n("No models available"), QStringLiteral("none"));
+        this->parentWidget()->setEnabled(false);
+    }
+    else
+    {
+        for (const auto& model : modelList)
+        {
+            d->objectDetectModel->addItem(model.second[0], model.first);
+            d->objectDetectModel->setToolTip(d->objectDetectModel->toolTip() + model.second[1]);
+        }
+    }
 
     DHBox* const hbox14         = new DHBox(d->settingsTab);
     new QLabel(i18n("Object detection accuracy: "), hbox14);
@@ -222,17 +233,17 @@ AutotagsScanSettings AutotagsScanWidget::settings() const
 
     if (SettingsDisplayMode::Normal == d->displayMode )
     {
-        result.albums                 = d->albumSelectors->selectedAlbumsAndTags();
-        result.wholeAlbums            = d->albumSelectors->wholeAlbumsChecked();
+        result.albums             = d->albumSelectors->selectedAlbumsAndTags();
+        result.wholeAlbums        = d->albumSelectors->wholeAlbumsChecked();
     }
 
     if (SettingsDisplayMode::BQM != d->displayMode )
     {
-        result.scanMode               = (AutotagsScanSettings::ScanMode)d->scanMode->itemData(d->scanMode->currentIndex()).toInt();
+        result.scanMode           = (AutotagsScanSettings::ScanMode)d->scanMode->itemData(d->scanMode->currentIndex()).toInt();
     }
 
     result.tagMode                = (AutotagsScanSettings::TagMode)d->tagMode->itemData(d->tagMode->currentIndex()).toInt();
-    result.objectDetectModel      = (AutotagsScanSettings::ObjectDetectionModel)d->objectDetectModel->itemData(d->objectDetectModel->currentIndex()).toInt();
+    result.objectDetectModel      = d->objectDetectModel->itemData(d->objectDetectModel->currentIndex()).toString();
     result.uiConfidenceThreshold  = d->accuracyInput->value();
     result.languages              = d->trSelectorList->languagesList();
 

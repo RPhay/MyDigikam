@@ -96,7 +96,8 @@ public:
     int                                     autotagsTagMode             = AutotagsScanSettings::TagMode::Replace;
 
     /// model selection mode
-    int                                     autotagsObjectDetectModel   = AutotagsScanSettings::ObjectDetectionModel::YOLOV11NANO;
+    // int                                     autotagsObjectDetectModel   = AutotagsScanSettings::ObjectDetectionModel::YOLOV11NANO;
+    QString                                 autotagsObjectDetectModel   = QStringLiteral("yolov11-nano");
 
     /// Autotags languages
     QStringList                             autotagsLanguages;

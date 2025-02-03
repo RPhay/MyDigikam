@@ -349,7 +349,7 @@ void MaintenanceMngr::stage7()
         autotagSettings.languages               = d->settings.autotagsLanguages;
         autotagSettings.scanMode                = (AutotagsScanSettings::ScanMode)d->settings.autotagsScanMode;
         autotagSettings.tagMode                 = (AutotagsScanSettings::TagMode)d->settings.autotagsTagMode;
-        autotagSettings.objectDetectModel       = (AutotagsScanSettings::ObjectDetectionModel)d->settings.autotagsObjectDetectModel;
+        autotagSettings.objectDetectModel       = d->settings.autotagsObjectDetectModel;
         autotagSettings.uiConfidenceThreshold   = d->settings.autotagsObjectDetectAccuracy;
 
         d->newAutotagsAssignment                = new AutotagsEngine(autotagSettings);
