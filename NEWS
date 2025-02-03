@@ -147,7 +147,7 @@ BUGFIXES:
 098 ==> 488237 - Crash during confirming face tags.
 099 ==> 497151 - "QMYSQL: Unable to execute query" "Unknown column 'context' in 'FaceMatrices'" "1054" 2.
 100 ==> 495810 - G'Mic within Digikam Crashes when right click filter name.
-101 ==>
+101 ==> 499466 - Using Exiftool to write tags corrupts the ICC Profile of the image.
 102 ==>
 103 ==>
 104 ==>
