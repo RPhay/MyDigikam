@@ -115,8 +115,8 @@ void AdjustCurvesTool::setupConnections()
     connect(d->settingsView, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotTimer()));
 
-    connect(d->gboxSettings, SIGNAL(signalChannelChanged()),
-            this, SLOT(slotChannelChanged()));
+    connect(d->gboxSettings, &EditorToolSettings::signalChannelChanged,
+            this, &AdjustCurvesTool::slotChannelChanged);
 
     connect(d->gboxSettings, SIGNAL(signalScaleChanged()),
             this, SLOT(slotScaleChanged()));
