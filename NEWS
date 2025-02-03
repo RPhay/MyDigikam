@@ -134,19 +134,19 @@ BUGFIXES:
 085 ==> 498663 - digiKam exits with error message after a few seconds.
 086 ==> 463760 - Names are not clickable.
 087 ==> 499156 - YOLOv11 let digiKam crash.
-088 ==> 499305 - Check at startup if FaceDB needs retrained box crash digikam if apply
+088 ==> 499305 - Check at startup if FaceDB needs retrained box crash digikam if apply.
 089 ==> 491473 - digiKam 8.4 does not start.
-090 ==> 499172 - Display issue of processed face recognitions when the queue is overloaded
-091 ==> 498320 - Renaming a face tag fails to move over the training data
+090 ==> 499172 - Display issue of processed face recognitions when the queue is overloaded.
+091 ==> 498320 - Renaming a face tag fails to move over the training data.
 092 ==> 499361 - Possibly add exiftool "-m" parameter to.
-093 ==> 499301 - Facial recognition database update not working
-094 ==> 475488 - In face detection, an option to suppress low quality faces as detected might improve recognition training and results
-095 ==> 425263 - Blur Level on Face Detection
+093 ==> 499301 - Facial recognition database update not working.
+094 ==> 475488 - In face detection, an option to suppress low quality faces as detected might improve recognition training and results.
+095 ==> 425263 - Blur Level on Face Detection.
 096 ==> 472416 - Add a new option in Face Recognition about duplication of a Confirmed Face.
 097 ==> 425981 - Clustering: limit face recognition by tags.
 098 ==> 488237 - Crash during confirming face tags.
 099 ==> 497151 - "QMYSQL: Unable to execute query" "Unknown column 'context' in 'FaceMatrices'" "1054" 2.
-100 ==>
+100 ==> 495810 - G'Mic within Digikam Crashes when right click filter name.
 101 ==>
 102 ==>
 103 ==>
