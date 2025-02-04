@@ -28,7 +28,7 @@ class DIGIKAM_GUI_EXPORT AutotagsClassifierMinmax : public AutotagsClassifierBas
 public:
 
     explicit AutotagsClassifierMinmax(float _threshold, const QString& predefinedClassFile);
-    virtual ~AutotagsClassifierMinmax()                                  override = default;
+    virtual ~AutotagsClassifierMinmax()                                   override = default;
 
     virtual int predict(const cv::Mat& target)                      const override;
     virtual int predict(const cv::UMat& target)                     const override;
@@ -40,7 +40,7 @@ private:
 
     // Disable
     AutotagsClassifierMinmax()                                     = delete;
-    AutotagsClassifierMinmax(const AutotagsClassifierMinmax&)     = delete;
+    AutotagsClassifierMinmax(const AutotagsClassifierMinmax&)      = delete;
 };
 
 } // namespace Digikam

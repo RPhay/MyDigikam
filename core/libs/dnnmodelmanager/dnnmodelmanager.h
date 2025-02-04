@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2024-10-13
- * Description : digiKam DNN Model Manager
+ * Description : digiKam deep neural network Model Manager
  *
  * SPDX-FileCopyrightText: 2024 by Michael Miller <michael underscore miller at msn dot com>
  *
@@ -83,8 +83,8 @@ private:
      * @brief Read the configuration file.  The configuration is a .ini-style .conf hardcoded in dnnmodelmanager.cpp and
      * bundled with digiKam, but could be downloaded from the Internet.
      */
-    void loadConfig();      ///<  Load the Model map, but don't create the cv::dnn::Net objects yet.
-    void getSettings();     ///<  Loads the settings from disk (or web: future).
+    void loadConfig();      ///< Load the Model map, but don't create the cv::dnn::Net objects yet.
+    void getSettings();     ///< Loads the settings from disk (or web: future).
 
     QStringList getDisplayStrings(const QString& modelName) const;
 

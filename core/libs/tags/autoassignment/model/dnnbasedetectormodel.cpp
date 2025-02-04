@@ -4,8 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2023-09-02
- * Description : Base class to perform low-level neural network inference
- *               for object detection and object classification
+ * Description : Low-level DNN base class for object detection and classification.
  *
  * SPDX-FileCopyrightText: 2023 by Quoc Hung TRAN <quochungtran1999 at gmail dot com>
  *
@@ -33,23 +32,26 @@
 namespace Digikam
 {
 
-int DNNBaseDetectorModel::uiConfidenceThreshold = DNN_MODEL_THRESHOLD_NOT_SET; ///< setting 1000 will use the value from dnnmodels.conf if passed in
+/**
+ * @note Setting 1000 will use the value from dnnmodels.conf if passed in.
+ */
+int DNNBaseDetectorModel::uiConfidenceThreshold = DNN_MODEL_THRESHOLD_NOT_SET;
 float DNNBaseDetectorModel::nmsThreshold        = 0.4F;
 float DNNBaseDetectorModel::scoreThreshold      = 0.45F;
 
 // --------------------------------------------------------------------------------------------------------
 
 DNNBaseDetectorModel::DNNBaseDetectorModel()
-  : scaleFactor(1.0)
+    : scaleFactor(1.0F)
 {
 }
 
 DNNBaseDetectorModel::DNNBaseDetectorModel(float scale,
                                            const cv::Scalar& val,
                                            const cv::Size& inputImageSize)
-    : scaleFactor       (scale),
-      meanValToSubtract (val),
-      inputImageSize    (inputImageSize)
+    : scaleFactor      (scale),
+      meanValToSubtract(val),
+      inputImageSize   (inputImageSize)
 {
 }
 
@@ -242,7 +244,7 @@ std::vector<cv::Mat> DNNBaseDetectorModel::preprocess(const std::vector<cv::Mat>
 }
 
 QList<QHash<QString, QVector<QRect> > > DNNBaseDetectorModel::postprocess(const std::vector<cv::Mat>& inputBatchImages,
-                                                                     const std::vector<cv::Mat>& outs) const
+                                                                          const std::vector<cv::Mat>& outs) const
 {
     QList<QHash<QString, QVector<QRect> > > detectedBoxesList;
 

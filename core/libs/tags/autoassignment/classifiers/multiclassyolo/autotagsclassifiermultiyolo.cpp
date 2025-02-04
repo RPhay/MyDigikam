@@ -48,7 +48,7 @@ void AutotagsClassifierYolo::setParams(YoloVersion version, QSize size)
 
     yoloVersion = version;
     imageSize   = size;
-    ready       = predefinedClasses.size() > 0;
+    ready       = (predefinedClasses.size() > 0);
 
     if ((yoloVersion == YOLOv5) || (yoloVersion == YOLOv7))
     {
@@ -64,7 +64,7 @@ void AutotagsClassifierYolo::setParams(YoloVersion version, QSize size)
                         imageSize.width() / 16 * imageSize.height() / 16 +
                         imageSize.width() / 32 * imageSize.height() / 32;
     }
-    if (yoloVersion == YOLOv8 || yoloVersion == YOLOv9 || yoloVersion == YOLOv11)
+    if ((yoloVersion == YOLOv8) || (yoloVersion == YOLOv9) || (yoloVersion == YOLOv11))
     {
         outputNumprob = 4 + predefinedClasses.size();
         outputNumbox  = imageSize.width() / 8  * imageSize.height() / 8  +
@@ -89,10 +89,10 @@ QList<int> AutotagsClassifierYolo::predictMulti(const QList<cv::Mat>& targets)  
     }
 
     std::vector<cv::Rect> boxes;
-    std::vector<float> scores;
-    std::vector<int> class_ids;
-    std::vector<float> objnesses;
-    float* outputHost = nullptr;
+    std::vector<float>    scores;
+    std::vector<int>      class_ids;
+    std::vector<float>    objnesses;
+    float*                outputHost = nullptr;
 
     if (targets[0].dims > 2)
     {
@@ -100,9 +100,10 @@ QList<int> AutotagsClassifierYolo::predictMulti(const QList<cv::Mat>& targets)  
 
         // check we have a valid cv::Mat
 
-        if (targets[0].size[1] - 4  != predefinedClasses.size())
+        if ((targets[0].size[1] - 4) != predefinedClasses.size())
         {
             qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsClassifierYolo::predictMulti: Invalid cv::Mat size";
+
             return results;
         }
 
@@ -122,8 +123,8 @@ QList<int> AutotagsClassifierYolo::predictMulti(const QList<cv::Mat>& targets)  
     {
         float* ptr    = outputHost + i * outputNumprob;
         int class_id  = -1;
-        float score   = -1.0f;
-        float objness = -1.0f;
+        float score   = -1.0F;
+        float objness = -1.0F;
 
         if ((yoloVersion == YOLOv5) || (yoloVersion == YOLOv6) || (yoloVersion == YOLOv7))
         {
@@ -148,16 +149,19 @@ QList<int> AutotagsClassifierYolo::predictMulti(const QList<cv::Mat>& targets)  
 
         // check the score
 
-        if (score > 1.0f)
+        if (score > 1.0F)
         {
             // any score greater than 1.0 is invalid, and all scores are ignored
 
             qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsClassifierYolo::predictMulti: invalid score: " << score;
+
             return results;
         }
 
         if (score < scoreThreshold)
+        {
             continue;
+        }
 
         cv::Rect box;
 
@@ -197,7 +201,7 @@ QList<int> AutotagsClassifierYolo::predictMulti(const QList<cv::Mat>& targets)  
 
         for (int i = 0 ; i < (int)indices.size() ; i++)
         {
-            int idx = indices[i];
+            int idx         = indices[i];
             bool saveResult = false;
 
             if ((yoloVersion == YOLOv5) || (yoloVersion == YOLOv6) || (yoloVersion == YOLOv7))

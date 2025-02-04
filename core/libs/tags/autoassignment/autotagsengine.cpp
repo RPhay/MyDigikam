@@ -110,7 +110,7 @@ void AutotagsEngine::slotStart()
 
     // Set label depending on settings.
 
-    if      (d->settings.albums.size() > 0)
+    if (d->settings.albums.size() > 0)
     {
         if (d->settings.albums.size() == 1)
         {
@@ -248,6 +248,7 @@ void AutotagsEngine::slotShowOneDetected(const MLPipelinePackageNotify::Ptr& pac
 
     QString lbl = i18n("Object Scanning: %1\n", package->name);
     lbl.append(i18n("Album: %1\n", package->path));
+
     if (package->processed > 0)
     {
         if (package->processed == 1)

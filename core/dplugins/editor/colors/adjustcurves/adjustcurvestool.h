@@ -47,7 +47,6 @@ private Q_SLOTS:
 
 private:
 
-    void setupConnections();
     void readSettings()         override;
     void writeSettings()        override;
     void preparePreview()       override;

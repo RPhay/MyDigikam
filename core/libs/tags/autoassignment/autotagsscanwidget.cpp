@@ -14,6 +14,9 @@
  * ============================================================ */
 
 #include "autotagsscanwidget_p.h"
+
+// Local includes
+
 #include "dnnmodelmanager.h"
 
 namespace Digikam
@@ -53,6 +56,7 @@ void AutotagsScanWidget::doLoadState()
     {
         objectDetectModel = 0;
     }
+
     d->objectDetectModel->setCurrentIndex(objectDetectModel);
 
     d->accuracyInput->setValue(group.readEntry(d->configObjectDetectAccuracy, prm.uiConfidenceThreshold));
@@ -137,6 +141,7 @@ void AutotagsScanWidget::setupUi()
     QList<QPair<QString, QStringList> > modelList = dnnModelManager->getModelList(DNNModelUsage::DNNUsageObjectDetection);
 
     d->objectDetectModel        = new QComboBox(hbox13);
+
     if (modelList.isEmpty())
     {
         d->objectDetectModel->addItem(i18n("No models available"), QStringLiteral("none"));
@@ -231,13 +236,13 @@ AutotagsScanSettings AutotagsScanWidget::settings() const
 
     AutotagsScanSettings result;
 
-    if (SettingsDisplayMode::Normal == d->displayMode )
+    if (SettingsDisplayMode::Normal == d->displayMode)
     {
         result.albums             = d->albumSelectors->selectedAlbumsAndTags();
         result.wholeAlbums        = d->albumSelectors->wholeAlbumsChecked();
     }
 
-    if (SettingsDisplayMode::BQM != d->displayMode )
+    if (SettingsDisplayMode::BQM != d->displayMode)
     {
         result.scanMode           = (AutotagsScanSettings::ScanMode)d->scanMode->itemData(d->scanMode->currentIndex()).toInt();
     }
@@ -253,7 +258,6 @@ AutotagsScanSettings AutotagsScanWidget::settings() const
 void AutotagsScanWidget::settings(const AutotagsScanSettings& newSettings)
 {
     // d->albumSelectors->setAlbumSelected(newSettings.albums);
-    // d->albumSelectors->set
 
     // result.albums                 = d->albumSelectors->selectedAlbumsAndTags();
     // result.wholeAlbums            = d->albumSelectors->wholeAlbumsChecked();

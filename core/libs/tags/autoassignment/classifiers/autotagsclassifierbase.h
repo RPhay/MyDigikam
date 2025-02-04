@@ -59,6 +59,8 @@ protected:
     QString         predefinedClassFile;
     QList<QString>  predefinedClasses;
 
+protected:
+
     bool loadTrainingData()                                             override;
 
 private:

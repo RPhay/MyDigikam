@@ -33,7 +33,7 @@ class DIGIKAM_GUI_EXPORT AutotagsScanSettings
 public:
 
     /**
-     * Different possible tasks processed while scanning operation.
+     * @brief Different possible mode processed while scanning operation.
      */
     enum ScanMode
     {
@@ -43,7 +43,7 @@ public:
     Q_ENUM(ScanMode)
 
     /**
-     * Different possible tasks processed while scanning operation.
+     * @brief Different possible mode processed with tags while scanning operation.
      */
     enum TagMode
     {

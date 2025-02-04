@@ -4,8 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2023-09-02
- * Description : Derived class to perform Resnet neural network inference
- *               for object detection (including yolo versions to benchmark).
+ * Description : Resnet DNN inference for object detection.
  *
  * SPDX-FileCopyrightText: 2023 by Quoc Hung TRAN <quochungtran1999 at gmail dot com>
  *
@@ -20,6 +19,10 @@
 namespace Digikam
 {
 
+/**
+ * @brief Derived class to perform Resnet neural network inference
+ * for object detection (including yolo versions to benchmark).
+ */
 class DIGIKAM_GUI_EXPORT DNNResnetDetector: public DNNBaseDetectorModel
 {
 

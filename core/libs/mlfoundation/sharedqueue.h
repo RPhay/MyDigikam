@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2024-11-10
- * Description : Foundation for all ML classifiers
+ * Description : Foundation for all model learning classifiers
  *
  * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  *

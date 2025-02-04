@@ -159,8 +159,8 @@ RestorationTool::RestorationTool(QObject* const parent)
 
     // -------------------------------------------------------------
 
-    connect(d->restorationTypeCB, SIGNAL(activated(int)),
-            this, SLOT(slotResetValues(int)));
+    connect(d->restorationTypeCB, &QComboBox::activated,
+            this, &RestorationTool::slotResetValues);              // cppcheck-suppress virtualCallInConstructor
 
     // -------------------------------------------------------------
 

@@ -75,10 +75,10 @@ private:
     YoloVersion yoloVersion                                                     = YOLOv7;
     bool        ready                                                           = false;
     QSize       imageSize                                                       = QSize(640, 640);
-    float       objThreshold                                                    = 0.35;
-    float       confidenceThreshold                                             = 0.33;
-    float       nmsThreshold                                                    = 0.5;
-    float       scoreThreshold                                                  = 0.2;
+    float       objThreshold                                                    = 0.35F;
+    float       confidenceThreshold                                             = 0.33F;
+    float       nmsThreshold                                                    = 0.5F;
+    float       scoreThreshold                                                  = 0.2F;
     int         outputNumbox                                                    = 0;
     int         outputNumprob                                                   = 0;
 

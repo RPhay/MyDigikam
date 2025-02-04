@@ -4,8 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2023-09-02
- * Description : Derived class to perform YOLO neural network inference
- *               for object detection (here yolo version 5).
+ * Description : YOLO DNN inference for object detection.
  *
  * SPDX-FileCopyrightText: 2023 by Quoc Hung TRAN <quochungtran1999 at gmail dot com>
  *

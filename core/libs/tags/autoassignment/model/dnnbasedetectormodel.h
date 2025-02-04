@@ -4,8 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2023-09-02
- * Description : Base class to perform low-level neural network inference
- *               for object detection and object classification
+ * Description : Low-level DNN base class for object detection and classification.
  *
  * SPDX-FileCopyrightText: 2023 by Quoc Hung TRAN <quochungtran1999 at gmail dot com>
  *
@@ -36,6 +35,10 @@
 namespace Digikam
 {
 
+/**
+ * @brief Base class to perform low-level neural network inference
+ * for object detection and object classification
+ */
 class DIGIKAM_GUI_EXPORT DNNBaseDetectorModel
 {
 
@@ -59,37 +62,37 @@ public:
     std::vector<cv::String> getOutputsNames()                                               const;
 
     /**
-     * detectObjects return the predicted objects and localization as well (if we use deeplearning for object detection like YOLO, etc)
+     * @return The predicted objects and localization as well (if we use deeplearning for object detection like YOLO, etc)
      * otherwise the map whose the key is the objects name and their values are empty.
      */
     virtual QHash<QString, QVector<QRect> > detectObjects(const cv::Mat& inputImage);
 
     /**
-     * detectObjects in batch images (fixed batch size).
+     * @return Detected Objects in batch images (fixed batch size).
      */
     virtual QList<QHash<QString, QVector<QRect> > > detectObjects(const std::vector<cv::Mat>& inputBatchImages);
 
     /**
-     * Get predefined objects according to selected model.
+     * @return Predefined objects according to selected model.
      */
     virtual QList<QString> getPredefinedClasses()                                           const;
 
     /**
-     * generateObjects in one image return just the predicted objects without locations of objects
+     * @return From one image just the predicted objects without locations of objects
      * using for the assignment tagging names.
      */
     QList<QString> generateObjects(const cv::Mat& inputImage);
 
     /**
-     * generateObjects in batch images return just the predicted objects without locations of objects
+     * @return In batch images just the predicted objects without locations of objects
      * using for the assignment tagging names.
      */
     QList<QList<QString> > generateObjects(const std::vector<cv::Mat>& inputImage);
 
     /**
-     * Return the input Image Size from Deep NN model.
+     * @return The input Image Size from Deep Neural Network model.
      */
-   cv::Size getinputImageSize()                                                             const;
+    cv::Size getinputImageSize()                                                            const;
 
 public:
 
@@ -97,9 +100,9 @@ public:
 
 public:
 
-    static int   uiConfidenceThreshold;  ///< Threshold for bbox detection. It can be init and changed in the GUI.
-    static float nmsThreshold;           ///< Threshold for nms suppression.
-    static float scoreThreshold;         ///< Threshold for class detection score.
+    static int   uiConfidenceThreshold;  ///< @brief Threshold for bbox detection. It can be init and changed in the GUI.
+    static float nmsThreshold;           ///< @brief Threshold for nms suppression.
+    static float scoreThreshold;         ///< @brief Threshold for class detection score.
 
 protected:
 

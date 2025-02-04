@@ -36,7 +36,7 @@ int AutotagsClassifierSoftmax::predict(const cv::Mat& target) const
     Q_ASSERT(target.rows == 1);
 
     float* input = reinterpret_cast<float*>(target.data);
-    float m      = -INFINITY;
+    float  m     = -INFINITY;
 
     for (int i = 0 ; i < target.size[1] ; i++)
     {
@@ -65,10 +65,10 @@ int AutotagsClassifierSoftmax::predict(const cv::Mat& target) const
         input[i] = expf(input[i] - offset);
     }
 
-    double final_prob = 0.0;
+    float final_prob = 0.0F;
     cv::Point classIdPoint;
     cv::minMaxLoc(target.reshape(1, 1), 0, &final_prob, 0, &classIdPoint);
-    int label_id      = classIdPoint.x;
+    int label_id     = classIdPoint.x;
 
     if (final_prob > threshold)
     {

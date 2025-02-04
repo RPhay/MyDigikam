@@ -38,11 +38,13 @@ int AutotagsClassifierMinmax::predict(const cv::Mat& target) const
     // Get the prediction
 
     cv::Point classIdPoint;
-    double confidence;
+    float confidence  = 0.0F;
     cv::minMaxLoc(target.reshape(1, 1), 0, &confidence, 0, &classIdPoint);
-    int classId = classIdPoint.x;
+    int classId       = classIdPoint.x;
 
-    qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsClassifierMinmax::predict:  Class ID: " << classId << " Confidence: " << confidence << " Predefined class: " << predefinedClasses[classId];
+    qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsClassifierMinmax::predict: Class ID:"
+                                        << classId << "Confidence:" << confidence
+                                        << "Predefined class:" << predefinedClasses[classId];
 
     if (confidence > threshold)
     {

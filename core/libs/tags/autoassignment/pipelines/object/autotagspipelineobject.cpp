@@ -102,6 +102,7 @@ bool AutotagsPipelineObject::start()
             else
             {
                 qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::start(): Unknown classifier. ";
+
                 return false;
             }
         }
@@ -340,7 +341,7 @@ bool AutotagsPipelineObject::extractor()
             // Image should be resized.
 
             float resizeFactor      = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvImage.cols),
-                                                static_cast<float>(inputImageSize.height) / static_cast<float>(cvImage.rows));
+                                               static_cast<float>(inputImageSize.height) / static_cast<float>(cvImage.rows));
 
             int newWidth            = (int)(resizeFactor * cvImage.cols);
             int newHeight           = (int)(resizeFactor * cvImage.rows);
@@ -382,7 +383,7 @@ bool AutotagsPipelineObject::extractor()
         {
             // Preprocessor=Flat
 
-            int sz[4] = {1, cvImage.cols, cvImage.rows, 3};
+            int sz[4] = { 1, cvImage.cols, cvImage.rows, 3 };
             cvPreprocessedImage = cv::Mat(4, sz, CV_8U, cvImage.data);
         }
         else
@@ -489,13 +490,13 @@ bool AutotagsPipelineObject::writer()
      * is at least 1. More instances are created by addMoreWorkers if needed.
      */
 
-    MetadataHub                hub;
-    TagsCache* const           tagsCache   = TagsCache::instance();
-    const QString              rootTag     = QLatin1String("auto/");
-    const int                  rootTagId   = tagsCache->getOrCreateTag(rootTag);
+    MetadataHub      hub;
+    TagsCache* const tagsCache   = TagsCache::instance();
+    const QString    rootTag     = QLatin1String("auto/");
+    const int        rootTagId   = tagsCache->getOrCreateTag(rootTag);
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
-    package                    = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
+    package                      = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
 
     /* =========================================================================================
      * Start pipeline stage specific loop
@@ -505,7 +506,7 @@ bool AutotagsPipelineObject::writer()
      */
 
     {
-        bool        tagsChanged           = false;
+        bool        tagsChanged = false;
         QStringList tagsPath;
         QStringList displayTags;
         QSet<int>   newIds;
@@ -517,7 +518,7 @@ bool AutotagsPipelineObject::writer()
             // clear the metadata hub before reuse
 
             hub.reset();
-            
+
             // load the metadata info from the hub
 
             hub.load(package->info);

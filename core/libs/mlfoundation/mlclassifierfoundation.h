@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2024-11-10
- * Description : Foundation for all ML classifiers
+ * Description : Foundation for all model learning classifiers
  *
  * SPDX-FileCopyrightText: 2024-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
@@ -44,7 +44,7 @@ public:
     virtual int predict(const cv::UMat& target)                     const       = 0;
 
     virtual QList<int> predictMulti(const QList<cv::Mat>& targets)  const       = 0;
-    virtual QList<int> predictMulti(const QList<cv::UMat>& targets)  const      = 0;
+    virtual QList<int> predictMulti(const QList<cv::UMat>& targets) const       = 0;
 
     virtual bool retrain()                                                      = 0;
 
@@ -97,7 +97,6 @@ protected:
 
     QReadWriteLock  lock;
     float           threshold = 0.0F;
-
 
 protected:
 

@@ -42,7 +42,7 @@ public:
 
     explicit AutotagsEngine(const AutotagsScanSettings& _settings,
                             ProgressItem* const parent = nullptr);
-    ~AutotagsEngine()                                                override;
+    ~AutotagsEngine()                                               override;
 
 Q_SIGNALS:
 

@@ -39,7 +39,6 @@ public:
     explicit DNNModelBase(const DNNModelInfoContainer& _info);
     virtual ~DNNModelBase() = default;
 
-
     // ---------- public members ----------
 
     /**
@@ -56,9 +55,9 @@ public:
 
 public:
 
-    bool                        modelLoaded                 = false;    ///< check if the model has been loaded.
-    const DNNModelInfoContainer info;                                   ///< information about the model.
-    QMutex                      mutex;                                  ///< mutex to sigle-thread model during critical processing functions.
+    bool                        modelLoaded                 = false;    ///< Indicate if the model has been loaded.
+    const DNNModelInfoContainer info;                                   ///< Information about the model.
+    QMutex                      mutex;                                  ///< Mutex to single-thread model during critical processing functions.
 
 protected:
 
