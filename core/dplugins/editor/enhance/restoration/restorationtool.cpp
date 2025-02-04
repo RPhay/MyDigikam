@@ -63,6 +63,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName               = QLatin1String("restoration Tool");
     const QString configPresetEntry             = QLatin1String("Preset");
     const QString configFastApproxEntry         = QLatin1String("FastApprox");
@@ -159,8 +161,8 @@ RestorationTool::RestorationTool(QObject* const parent)
 
     // -------------------------------------------------------------
 
-    connect(d->restorationTypeCB, &QComboBox::activated,
-            this, &RestorationTool::slotResetValues);              // cppcheck-suppress virtualCallInConstructor
+    connect(d->restorationTypeCB, SIGNAL(activated(int)),
+            this, SLOT(slotResetValues(int)));              // cppcheck-suppress virtualCallInConstructor
 
     // -------------------------------------------------------------
 
