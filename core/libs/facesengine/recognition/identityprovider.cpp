@@ -73,7 +73,8 @@ Q_GLOBAL_STATIC(IdentityProviderCreator, identityProviderCreator)
 // ---------------------------------------------------------------------------
 
 IdentityProvider::IdentityProvider()
-    : d(new Private)
+    : QObject(),
+      d      (new Private)
 {
 
     // Save face settings to remove old Detector and Recognizer models.

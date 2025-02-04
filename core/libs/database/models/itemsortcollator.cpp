@@ -59,7 +59,8 @@ Q_GLOBAL_STATIC(ItemSortCollatorCreator, itemSortCollatorCreator)
 // -----------------------------------------------------------------------------------------------
 
 ItemSortCollator::ItemSortCollator()
-    : d(new Private)
+    : QObject(),
+      d      (new Private)
 {
 }
 
