@@ -30,8 +30,9 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT MLClassifierFoundation
+class DIGIKAM_EXPORT MLClassifierFoundation : public QObject
 {
+    Q_OBJECT
 
 public:
 

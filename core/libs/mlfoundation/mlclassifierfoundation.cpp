@@ -140,3 +140,5 @@ int MLClassifierFoundation::VotingGroups::winner(WinnerType winnerType)
 }
 
 } // namespace Digikam
+
+#include "moc_mlclassifierfoundation.cpp"

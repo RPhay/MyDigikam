@@ -69,7 +69,7 @@ private:
 private:
 
     class Private;
-    static Private* d;
+    Private* const d = nullptr;
 
 private:
 

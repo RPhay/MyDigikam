@@ -40,13 +40,10 @@
 namespace Digikam
 {
 
-FaceClassifier::Private* FaceClassifier::d = nullptr;
-
 class Q_DECL_HIDDEN FaceClassifier::Private
 {
 public:
 
-    int                                     ref                     = 0;
     bool                                    ready                   = false;
     bool                                    trainingWaiting         = false;
     FaceScanSettings::FaceRecognitionModel  recognizeModel          = FaceScanSettings::FaceRecognitionModel::SFace;
@@ -89,32 +86,19 @@ Q_GLOBAL_STATIC(FaceClassifierCreator, faceClassifierCreator)
 // -----------------------------------------------------------
 
 FaceClassifier::FaceClassifier()
-    : FaceClassifierBase()
+    : FaceClassifierBase(),
+      d(new Private)
 {
-    if (!d)
-    {
-        d                   = new Private;
-        d->identityProvider = IdentityProvider::instance();
+    d->identityProvider = IdentityProvider::instance();
 
-        // Use dynamic binding as retrain() function is virtual and called in constructor.
+    // Use dynamic binding as retrain() function is virtual and called in constructor.
 
-        this->retrain();
-    }
-    else
-    {
-        ++(d->ref);
-    }
+    this->retrain();
 }
 
 FaceClassifier::~FaceClassifier()
 {
-    --(d->ref);
-
-    if (d->ref == 0)
-    {
-        delete d;
-        d = nullptr;
-    }
+    delete d;
 }
 
 FaceClassifier* FaceClassifier::instance()
