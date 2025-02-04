@@ -50,7 +50,8 @@ Q_GLOBAL_STATIC(DatabaseServerStarterCreator, databaseServerStarterCreator)
 // -----------------------------------------------------------------------------------------------
 
 DatabaseServerStarter::DatabaseServerStarter()
-    : d(new Private)
+    : QObject(),
+      d      (new Private)
 {
 }
 

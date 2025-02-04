@@ -33,6 +33,8 @@ class DIGIKAM_DATABASE_EXPORT DBJobsManager : public QObject
 
 public:
 
+    DBJobsManager();
+
     /**
      * @brief instance: returns DBJobsManager singleton
      * @return DBJobsManager global instance
@@ -76,8 +78,6 @@ public:
 
 private:
 
-    // Disable
-    DBJobsManager() = default;
     explicit DBJobsManager(QObject*) = delete;
 
     friend class DBJobsManagerCreator;

@@ -342,7 +342,8 @@ TagsCache* TagsCache::instance()
 }
 
 TagsCache::TagsCache()
-    : d(new Private(this))
+    : QObject(),
+      d      (new Private(this))
 {
 }
 

@@ -97,7 +97,8 @@ DMetadataSettings* DMetadataSettings::instance()
 }
 
 DMetadataSettings::DMetadataSettings()
-    : d(new Private)
+    : QObject(),
+      d      (new Private)
 {
     readFromConfig();
     qRegisterMetaType<DMetadataSettingsContainer>("DMetadataSettingsContainer");

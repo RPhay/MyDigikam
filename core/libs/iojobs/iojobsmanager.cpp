@@ -34,6 +34,7 @@ Q_GLOBAL_STATIC(IOJobsManagerCreator, creator)
 // ----------------------------------------------
 
 IOJobsManager::IOJobsManager()
+    : QObject()
 {
 }
 

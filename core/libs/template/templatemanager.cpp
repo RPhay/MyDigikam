@@ -66,7 +66,8 @@ TemplateManager* TemplateManager::defaultManager()
 }
 
 TemplateManager::TemplateManager()
-    : d(new Private)
+    : QObject(),
+      d      (new Private)
 {
     d->file = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/template.xml");
 

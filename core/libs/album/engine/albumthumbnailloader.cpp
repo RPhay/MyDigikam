@@ -103,7 +103,8 @@ AlbumThumbnailLoader* AlbumThumbnailLoader::instance()
 }
 
 AlbumThumbnailLoader::AlbumThumbnailLoader()
-    : d(new Private)
+    : QObject(),
+      d      (new Private)
 {
     connect(this, SIGNAL(signalDispatchThumbnailInternal(int,QPixmap)),
             this, SLOT(slotDispatchThumbnailInternal(int,QPixmap)));

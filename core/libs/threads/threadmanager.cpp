@@ -256,7 +256,8 @@ ThreadManager* ThreadManager::instance()
 }
 
 ThreadManager::ThreadManager()
-    : d(new Private)
+    : QObject(),
+      d      (new Private)
 {
     d->parkingThread = new ParkingThread(this);
     d->pool          = new QThreadPool(this);

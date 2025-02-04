@@ -113,7 +113,8 @@ LocalizeSettings* LocalizeSettings::instance()
 }
 
 LocalizeSettings::LocalizeSettings()
-    : d(new Private)
+    : QObject(),
+      d      (new Private)
 {
     readFromConfig();
     qRegisterMetaType<LocalizeContainer>("LocalizeContainer");

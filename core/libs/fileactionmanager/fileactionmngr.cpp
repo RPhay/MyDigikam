@@ -53,7 +53,8 @@ FileActionMngr* FileActionMngr::instance()
 }
 
 FileActionMngr::FileActionMngr()
-    : d(new Private(this))
+    : QObject(),
+      d      (new Private(this))
 {
     connect(d->fileWorker, SIGNAL(imageChangeFailed(QString,QStringList)),
             this, SIGNAL(signalImageChangeFailed(QString,QStringList)));

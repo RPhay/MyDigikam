@@ -96,7 +96,8 @@ MetaEngineSettings* MetaEngineSettings::instance()
 }
 
 MetaEngineSettings::MetaEngineSettings()
-    : d(new Private)
+    : QObject(),
+      d      (new Private)
 {
     readFromConfig();
     qRegisterMetaType<MetaEngineSettingsContainer>("MetaEngineSettingsContainer");

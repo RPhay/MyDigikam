@@ -44,7 +44,8 @@ Q_GLOBAL_STATIC(NetworkManagerCreator, networkManagerCreator)
 // -----------------------------------------------------------------------------------------------
 
 NetworkManager::NetworkManager()
-    : d(new Private)
+    : QObject(),
+      d      (new Private)
 {
     d->networkManager = new QNetworkAccessManager(this);
 }

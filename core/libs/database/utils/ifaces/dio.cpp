@@ -75,6 +75,7 @@ DIO* DIO::instance()
 }
 
 DIO::DIO()
+    : QObject()
 {
     qRegisterMetaType<QMap<QString,int> >("QMap<QString,int>");
 }

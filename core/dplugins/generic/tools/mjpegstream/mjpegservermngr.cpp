@@ -88,7 +88,8 @@ MjpegServerMngr* MjpegServerMngr::instance()
 }
 
 MjpegServerMngr::MjpegServerMngr()
-    : d(new Private)
+    : QObject(),
+      d      (new Private)
 {
     d->mapsConf = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) +
                   QLatin1String("/mjpegserver.xml");

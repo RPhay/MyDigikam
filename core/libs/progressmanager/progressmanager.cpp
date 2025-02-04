@@ -381,7 +381,8 @@ void ProgressManager::Private::removeItem(ProgressItem* const t)
 // --------------------------------------------------------------------------
 
 ProgressManager::ProgressManager()
-    : d(new Private)
+    : QObject(),
+      d      (new Private)
 {
     if (thread() != QApplication::instance()->thread())
     {

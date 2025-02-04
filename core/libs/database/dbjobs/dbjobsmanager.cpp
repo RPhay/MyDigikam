@@ -31,6 +31,11 @@ Q_GLOBAL_STATIC(DBJobsManagerCreator, creator)
 
 // -----------------------------------------------
 
+DBJobsManager::DBJobsManager()
+    : QObject()
+{
+}
+
 DBJobsManager* DBJobsManager::instance()
 {
     return &creator->object;

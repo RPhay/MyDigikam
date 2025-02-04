@@ -82,7 +82,8 @@ DMediaServerMngr* DMediaServerMngr::instance()
 }
 
 DMediaServerMngr::DMediaServerMngr()
-    : d(new Private)
+    : QObject(),
+      d      (new Private)
 {
     d->mapsConf = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) +
                   QLatin1String("/mediaserver.xml");

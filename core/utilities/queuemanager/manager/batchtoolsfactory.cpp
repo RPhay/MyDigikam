@@ -56,7 +56,8 @@ BatchToolsFactory* BatchToolsFactory::instance()
 }
 
 BatchToolsFactory::BatchToolsFactory()
-    : d(new Private)
+    : QObject(),
+      d      (new Private)
 {
     d->iface                 = new BqmInfoIface(this);
     DPluginLoader* const dpl = DPluginLoader::instance();

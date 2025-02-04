@@ -36,7 +36,8 @@ IccSettings* IccSettings::instance()
 // -----------------------------------------------------------------------------------------------
 
 IccSettings::IccSettings()
-    : d(new Private)
+    : QObject(),
+      d      (new Private)
 {
     IccTransform::init();
     readFromConfig();

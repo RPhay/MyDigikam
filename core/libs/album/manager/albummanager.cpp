@@ -35,7 +35,8 @@ AlbumManager* AlbumManager::instance()
 // -----------------------------------------------------------------------------------
 
 AlbumManager::AlbumManager()
-    : d(new Private)
+    : QObject(),
+      d      (new Private)
 {
     qRegisterMetaType<QHash<QDateTime,int>>("QHash<QDateTime,int>");
     qRegisterMetaType<QMap<int,int>>("QMap<int,int>");
