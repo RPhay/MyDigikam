@@ -36,7 +36,7 @@ class DIGIKAM_EXPORT MLClassifierFoundation : public QObject
 
 public:
 
-    MLClassifierFoundation()                                                    = default;
+    MLClassifierFoundation();
     virtual ~MLClassifierFoundation()                                           = default;
 
 public:

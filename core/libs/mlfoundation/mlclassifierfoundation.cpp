@@ -18,6 +18,11 @@
 namespace Digikam
 {
 
+MLClassifierFoundation::MLClassifierFoundation()
+    : QObject()
+{
+}
+
 void MLClassifierFoundation::VotingGroups::addVote(int label, float score)
 {
     if (!votes.contains(label))

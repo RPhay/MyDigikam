@@ -26,7 +26,11 @@ class DIGIKAM_GUI_EXPORT FaceClassifierBase : public MLClassifierFoundation
 {
 public:
 
-    FaceClassifierBase()                                                       = default;
+    FaceClassifierBase()
+        : MLClassifierFoundation()
+    {
+    }
+
     ~FaceClassifierBase()                                             override = default;
 
     QList<int> predictMulti(const QList<cv::Mat>& targets)      const override
