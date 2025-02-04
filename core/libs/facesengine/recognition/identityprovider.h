@@ -15,6 +15,10 @@
 
 #pragma once
 
+// Qt includes
+
+#include <QObject>
+
 // Local includes
 
 #include "digikam_export.h"
@@ -24,8 +28,10 @@
 namespace Digikam
 {
 
-class DIGIKAM_GUI_EXPORT IdentityProvider
+class DIGIKAM_GUI_EXPORT IdentityProvider : public QObject
 {
+    Q_OBJECT
+
 public:
 
     static IdentityProvider* instance();

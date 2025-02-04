@@ -695,3 +695,5 @@ bool IdentityProvider::trainingRemoveConcurrent()
 }
 
 } // namespace Digikam
+
+#include "moc_identityprovider.cpp"
