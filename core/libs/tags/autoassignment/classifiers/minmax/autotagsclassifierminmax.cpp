@@ -38,7 +38,7 @@ int AutotagsClassifierMinmax::predict(const cv::Mat& target) const
     // Get the prediction
 
     cv::Point classIdPoint;
-    float confidence  = 0.0F;
+    double confidence  = 0.0;
     cv::minMaxLoc(target.reshape(1, 1), 0, &confidence, 0, &classIdPoint);
     int classId       = classIdPoint.x;
 

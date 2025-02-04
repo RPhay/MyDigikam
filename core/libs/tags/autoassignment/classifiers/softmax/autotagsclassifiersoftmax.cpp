@@ -65,7 +65,7 @@ int AutotagsClassifierSoftmax::predict(const cv::Mat& target) const
         input[i] = expf(input[i] - offset);
     }
 
-    float final_prob = 0.0F;
+    double final_prob = 0.0;
     cv::Point classIdPoint;
     cv::minMaxLoc(target.reshape(1, 1), 0, &final_prob, 0, &classIdPoint);
     int label_id     = classIdPoint.x;
