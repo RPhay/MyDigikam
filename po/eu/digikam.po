@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-03 01:51+0000\n"
+"POT-Creation-Date: 2025-02-04 01:52+0000\n"
 "PO-Revision-Date: 2025-01-19 14:15+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -7485,7 +7485,7 @@ msgctxt "@title"
 msgid "Tagged Image Format"
 msgstr "Etiketatutako irudi-formatua"
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:248
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:253
 #, kde-format
 msgid "Adjust Curve"
 msgstr "Doitu kurba"
@@ -34353,6 +34353,53 @@ msgid ""
 "ExifTool, DNG will not include all RAW source properties."
 msgstr ""
 
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:341
+#, fuzzy, kde-format
+#| msgid "YOLOv5 Nano"
+msgid "YOLOv11 Nano"
+msgstr "YOLOv5 Nano"
+
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:343
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+"exceptional speed, but may miss identifying more objects in images. YOLO can "
+"detect multiple objects in an image. It is trained to recognize 80 different "
+"objects using the COCO dataset.</p>"
+msgstr ""
+
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:348
+#, fuzzy, kde-format
+#| msgid "YOLOv5 XLarge"
+msgid "YOLOv11 XLarge"
+msgstr "YOLOv5 XLarge"
+
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:350
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv11 XLarge</b>: large, robust neural network offering good "
+"accuracy. It will detect more objects in images than YOLOv11 Nano, but is "
+"slower. YOLO can detect multiple objects in an image. It is trained to "
+"recognize 80 different objects using the COCO dataset.</p>"
+msgstr ""
+
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:355
+#, kde-format
+msgid "EfficientNet B7"
+msgstr ""
+
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:357
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>EfficientNet B7</b>: large and powerful convoluted neural network. It "
+"will detect a single object in an image with high accuracy. EfficientNet B7 "
+"was trained to recognize 1,000 different objects using the ImageNet dataset."
+"</p>"
+msgstr ""
+
 #: core/libs/dplugins/core/dpluginaction.cpp:94
 #, fuzzy, kde-format
 #| msgid "Export"
@@ -35765,7 +35812,7 @@ msgstr ""
 "parametroak erabili."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:86
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:91
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:134
 #, fuzzy, kde-format
 #| msgid "Search in:"
@@ -39911,7 +39958,7 @@ msgstr ""
 msgid "Found %1 objects. Tags: %2"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:100
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -39923,25 +39970,25 @@ msgid ""
 "database.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging mode: "
 msgstr "Mode de mesure :"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
 #, fuzzy, kde-format
 #| msgid "Scan Image"
 msgid "Scan all"
 msgstr "Eskaneatu irudia"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:114
 #: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Miatu esleitu gabekoak bakarrik"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:116
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -39957,25 +40004,25 @@ msgstr ""
 "denak eta berriz hutsetik miatu.</p><p><b>Miatu esleitu gabekoak bakarrik</"
 "b>: miatu etiketarik esleitu gabeko elementuak bakarrik.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tagging tag mode: "
 msgstr "Mode de mesure :"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgid "Replace existing autotags"
 msgstr "Eguneratu datu-basea"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:126
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgid "Update autotags"
 msgstr "Eguneratu datu-basea"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39984,54 +40031,25 @@ msgid ""
 "autotags found to the existing tags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #, kde-format
 msgid "Selection model: "
 msgstr "Hautapen eredua: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:142
 #, fuzzy, kde-format
-#| msgid "YOLOv5 Nano"
-msgid "YOLOv11 Nano"
-msgstr "YOLOv5 Nano"
+#| msgid "No options available"
+msgid "No models available"
+msgstr "Aukera ez dago erabilgarri"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
-#, fuzzy, kde-format
-#| msgid "YOLOv5 XLarge"
-msgid "YOLOv11 XLarge"
-msgstr "YOLOv5 XLarge"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "ResNet50"
-msgid "ResNet-152"
-msgstr "ResNet50"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
-"exceptional speed, but may miss identifying more objects in images. YOLO can "
-"detect multiple objects in an image. It is trained to recognize 80 different "
-"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, robust "
-"neural network offering good accuracy. It will detect more objects in images "
-"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
-"image. It is trained to recognize 80 different objects using the COCO "
-"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
-"network. It will detect a single object in an image with high accuracy. "
-"ResNet-152 was trained to recognize 1,000 different objects using the "
-"ImageNet dataset.</p>"
-msgstr ""
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:155
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Face Accuracy"
 msgid "Object detection accuracy: "
 msgstr "Aurpegien zehaztasuna"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -40051,7 +40069,7 @@ msgstr ""
 "ezagutuko dira (aurrez etiketatutakoekin oso antzekoak direnak bakarrik "
 "ezagutzen dira)."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:165
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -40059,7 +40077,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Prozesatzailearen nukleo guztiekin lan egitea"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -40076,21 +40094,21 @@ msgstr ""
 "Sistemako prozesatzaileetako nukleo guztiak erabiltzea edo atzeko planoan "
 "nukleo bakarrean lan egitea nahi duzun aukera dezakezu."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:178
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Ezarpenak"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Nabigatu %1(e)ra"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:185
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Translate to:"
@@ -68959,6 +68977,11 @@ msgstr "Album elementuak"
 #, kde-format
 msgid "Import Items"
 msgstr "Inportatu elementuak"
+
+#, fuzzy
+#~| msgid "ResNet50"
+#~ msgid "ResNet-152"
+#~ msgstr "ResNet50"
 
 #~ msgid "OpenFace"
 #~ msgstr "OpenFace"

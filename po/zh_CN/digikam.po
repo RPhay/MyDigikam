@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-03 01:51+0000\n"
+"POT-Creation-Date: 2025-02-04 01:52+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -7301,7 +7301,7 @@ msgctxt "@title"
 msgid "Tagged Image Format"
 msgstr "标签图像文件格式 (TIFF)"
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:248
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:253
 #, kde-format
 msgid "Adjust Curve"
 msgstr "曲线调整"
@@ -32634,6 +32634,51 @@ msgstr ""
 "警告：ExifTool 当前不可用。digiKam 需要使用 ExifTool 管理后期处理元数据。没"
 "有 ExifTool，DNG 文件将不包含所有 RAW 来源属性。"
 
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:341
+#, kde-format
+msgid "YOLOv11 Nano"
+msgstr "YOLOv11 Nano"
+
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:343
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+"exceptional speed, but may miss identifying more objects in images. YOLO can "
+"detect multiple objects in an image. It is trained to recognize 80 different "
+"objects using the COCO dataset.</p>"
+msgstr ""
+
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:348
+#, kde-format
+msgid "YOLOv11 XLarge"
+msgstr "YOLOv11 XLarge"
+
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:350
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv11 XLarge</b>: large, robust neural network offering good "
+"accuracy. It will detect more objects in images than YOLOv11 Nano, but is "
+"slower. YOLO can detect multiple objects in an image. It is trained to "
+"recognize 80 different objects using the COCO dataset.</p>"
+msgstr ""
+
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:355
+#, kde-format
+msgid "EfficientNet B7"
+msgstr ""
+
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:357
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>EfficientNet B7</b>: large and powerful convoluted neural network. It "
+"will detect a single object in an image with high accuracy. EfficientNet B7 "
+"was trained to recognize 1,000 different objects using the ImageNet dataset."
+"</p>"
+msgstr ""
+
 #: core/libs/dplugins/core/dpluginaction.cpp:94
 #, kde-format
 msgctxt "@action: dplugin"
@@ -33926,7 +33971,7 @@ msgid "Use custom parameters to perform quality sorting instead default one."
 msgstr "使用自定义品质分类参数来执行品质分类，而不是默认参数。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:86
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:91
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:134
 #, kde-format
 msgctxt "@title:tab"
@@ -38060,7 +38105,7 @@ msgstr "找到 %1 个对象。标签：%2"
 msgid "Found %1 objects. Tags: %2"
 msgstr "找到 %1 个对象。标签：%2"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:100
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -38076,23 +38121,23 @@ msgstr ""
 "以确定它包含的对象。选定的 AI 神经网络模型会在后台自动生成能够反映图像内容的"
 "标签，并将结果存储到数据库中。</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
 #, kde-format
 msgid "Auto-tagging mode: "
 msgstr "自动标签模式："
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
 #, kde-format
 msgid "Scan all"
 msgstr "扫描全部"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:114
 #: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "仅扫描未指定品质项目"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -38102,22 +38147,22 @@ msgstr ""
 "<p><b>扫描全部</b>：重新扫描所有项目并分配标签。</p><p><b>仅扫描无自动标签项"
 "目</b>：仅扫描没有自动分配标签的项目。</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgid "Auto-tagging tag mode: "
 msgstr "自动分配标签模式："
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
 #, kde-format
 msgid "Replace existing autotags"
 msgstr "替换已有自动标签"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:126
 #, kde-format
 msgid "Update autotags"
 msgstr "附加到已有自动标签"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -38129,57 +38174,23 @@ msgstr ""
 "标签。</p><p><b>附加到已有自动标签</b>：将扫描发现的新自动标签附加到已有的自"
 "动标签中。</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #, kde-format
 msgid "Selection model: "
 msgstr "选择模型："
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
-#, kde-format
-msgid "YOLOv11 Nano"
-msgstr "YOLOv11 Nano"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:142
+#, fuzzy, kde-format
+#| msgid "No detail available"
+msgid "No models available"
+msgstr "没有可用的详情"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
-#, kde-format
-msgid "YOLOv11 XLarge"
-msgstr "YOLOv11 XLarge"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
-#, kde-format
-msgid "ResNet-152"
-msgstr "ResNet-152"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
-"exceptional speed, but may miss identifying more objects in images. YOLO can "
-"detect multiple objects in an image. It is trained to recognize 80 different "
-"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, robust "
-"neural network offering good accuracy. It will detect more objects in images "
-"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
-"image. It is trained to recognize 80 different objects using the COCO "
-"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
-"network. It will detect a single object in an image with high accuracy. "
-"ResNet-152 was trained to recognize 1,000 different objects using the "
-"ImageNet dataset.</p>"
-msgstr ""
-"<p><b>YOLOv11 Nano</b>：轻量小巧的神经网络，速度极快，但识别图像内容时可能会"
-"遗漏更多对象。YOLO 模型能够检测图像中的多个对象。它使用 COCO 数据集训练，能够"
-"识别 80 种不同的对象。</p><p><b>YOLOv11 XLarge</b>：大型且可靠的神经网络，具"
-"有良好的准确性。与 YOLOv11 Nano 相比，它能检测出图像中更多的对象，但速度较"
-"慢。YOLO 模型能够检测图像中的多个对象。它使用 COCO 数据集训练，能够识别 80 种"
-"不同的对象。</p><p><b>ResNet-152</b>：大型且功能强大的卷积神经网络。它能够精"
-"确地检测图像中的单个物体。ResNet-152 使用 ImageNet 数据集训练，能够识别 1000 "
-"种不同的对象。</p>"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:155
 #, kde-format
 msgid "Object detection accuracy: "
 msgstr "对象检测精度："
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -38190,7 +38201,7 @@ msgstr ""
 "调整灵敏度与特异性：数值越高，检测到的对象越准确，但检测到的对象数量会减"
 "少。\n"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:165
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -38198,7 +38209,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "使用全部处理器核心"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -38210,20 +38221,20 @@ msgstr ""
 "您可以选择使用系统的所有处理器内核以提升速度，\n"
 "或者选择在后台使用单一处理器内核以减少卡顿。"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:178
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "设置"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "翻译标签到："
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:185
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
@@ -65501,6 +65512,32 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
+
+#~ msgid "ResNet-152"
+#~ msgstr "ResNet-152"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+#~ "exceptional speed, but may miss identifying more objects in images. YOLO "
+#~ "can detect multiple objects in an image. It is trained to recognize 80 "
+#~ "different objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: "
+#~ "large, robust neural network offering good accuracy. It will detect more "
+#~ "objects in images than YOLOv11 Nano, but is slower. YOLO can detect "
+#~ "multiple objects in an image. It is trained to recognize 80 different "
+#~ "objects using the COCO dataset.</p><p><b>ResNet-152</b>: large and "
+#~ "powerful convoluted neural network. It will detect a single object in an "
+#~ "image with high accuracy. ResNet-152 was trained to recognize 1,000 "
+#~ "different objects using the ImageNet dataset.</p>"
+#~ msgstr ""
+#~ "<p><b>YOLOv11 Nano</b>：轻量小巧的神经网络，速度极快，但识别图像内容时可能"
+#~ "会遗漏更多对象。YOLO 模型能够检测图像中的多个对象。它使用 COCO 数据集训"
+#~ "练，能够识别 80 种不同的对象。</p><p><b>YOLOv11 XLarge</b>：大型且可靠的神"
+#~ "经网络，具有良好的准确性。与 YOLOv11 Nano 相比，它能检测出图像中更多的对"
+#~ "象，但速度较慢。YOLO 模型能够检测图像中的多个对象。它使用 COCO 数据集训"
+#~ "练，能够识别 80 种不同的对象。</p><p><b>ResNet-152</b>：大型且功能强大的卷"
+#~ "积神经网络。它能够精确地检测图像中的单个物体。ResNet-152 使用 ImageNet 数"
+#~ "据集训练，能够识别 1000 种不同的对象。</p>"
 
 #~ msgid "OpenFace"
 #~ msgstr "OpenFace"

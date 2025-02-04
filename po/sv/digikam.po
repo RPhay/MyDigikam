@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-03 01:51+0000\n"
+"POT-Creation-Date: 2025-02-04 01:52+0000\n"
 "PO-Revision-Date: 2025-01-31 07:50+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -7611,7 +7611,7 @@ msgctxt "@title"
 msgid "Tagged Image Format"
 msgstr "Taggat bildfilformat"
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:248
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:253
 #, kde-format
 msgid "Adjust Curve"
 msgstr "Justera kurva"
@@ -33756,6 +33756,51 @@ msgstr ""
 "Varning: ExifTool är inte tillgängligt för att efterbehandla metadata. Utan "
 "ExifTool inkluderar inte DNG alla obehandlade källegenskaper."
 
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:341
+#, kde-format
+msgid "YOLOv11 Nano"
+msgstr "YOLOv11 Nano"
+
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:343
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+"exceptional speed, but may miss identifying more objects in images. YOLO can "
+"detect multiple objects in an image. It is trained to recognize 80 different "
+"objects using the COCO dataset.</p>"
+msgstr ""
+
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:348
+#, kde-format
+msgid "YOLOv11 XLarge"
+msgstr "YOLOv11 XLarge"
+
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:350
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>YOLOv11 XLarge</b>: large, robust neural network offering good "
+"accuracy. It will detect more objects in images than YOLOv11 Nano, but is "
+"slower. YOLO can detect multiple objects in an image. It is trained to "
+"recognize 80 different objects using the COCO dataset.</p>"
+msgstr ""
+
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:355
+#, kde-format
+msgid "EfficientNet B7"
+msgstr ""
+
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:357
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>EfficientNet B7</b>: large and powerful convoluted neural network. It "
+"will detect a single object in an image with high accuracy. EfficientNet B7 "
+"was trained to recognize 1,000 different objects using the ImageNet dataset."
+"</p>"
+msgstr ""
+
 #: core/libs/dplugins/core/dpluginaction.cpp:94
 #, kde-format
 msgctxt "@action: dplugin"
@@ -35074,7 +35119,7 @@ msgstr ""
 "standardparametrar."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:86
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:91
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:134
 #, kde-format
 msgctxt "@title:tab"
@@ -39287,7 +39332,7 @@ msgstr "Hittade %1 objekt. Etikett: %2"
 msgid "Found %1 objects. Tags: %2"
 msgstr "Hittade %1 objekt. Etiketter: %2"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:100
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -39305,23 +39350,23 @@ msgstr ""
 "neurala AI nätverket genererar automatiskt beskrivande etiketter för "
 "bildinnehållet och lagrar resultaten i databasen.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:103
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
 #, kde-format
 msgid "Auto-tagging mode: "
 msgstr "Automatiskt etiketteringsläge: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
 #, kde-format
 msgid "Scan all"
 msgstr "Sök igenom alla"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:114
 #: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Sök bara igenom ej tilldelade"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39332,22 +39377,22 @@ msgstr ""
 "p><p><b>Sök bara igenom ej tilldelade</b>: sök bara igenom objekten utan "
 "några tilldelade automatiska etiketter.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgid "Auto-tagging tag mode: "
 msgstr "Automatiskt etiketteringsläge: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
 #, kde-format
 msgid "Replace existing autotags"
 msgstr "Ersätt befintliga automatiska etiketter"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:126
 #, kde-format
 msgid "Update autotags"
 msgstr "Uppdatera automatiska etiketter"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39360,60 +39405,23 @@ msgstr ""
 "p><p><b>Uppdatera automatiska etiketter</b>: lägg till alla nya automatiska "
 "etiketter som hittats i befintliga etiketter.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #, kde-format
 msgid "Selection model: "
 msgstr "Urvalsmodell: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
-#, kde-format
-msgid "YOLOv11 Nano"
-msgstr "YOLOv11 Nano"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:142
+#, fuzzy, kde-format
+#| msgid "No detail available"
+msgid "No models available"
+msgstr "Ingen detaljinformation tillgänglig"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
-#, kde-format
-msgid "YOLOv11 XLarge"
-msgstr "YOLOv11 XLarge"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:134
-#, kde-format
-msgid "ResNet-152"
-msgstr "ResNet-152"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
-"exceptional speed, but may miss identifying more objects in images. YOLO can "
-"detect multiple objects in an image. It is trained to recognize 80 different "
-"objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: large, robust "
-"neural network offering good accuracy. It will detect more objects in images "
-"than YOLOv11 Nano, but is slower. YOLO can detect multiple objects in an "
-"image. It is trained to recognize 80 different objects using the COCO "
-"dataset.</p><p><b>ResNet-152</b>: large and powerful convoluted neural "
-"network. It will detect a single object in an image with high accuracy. "
-"ResNet-152 was trained to recognize 1,000 different objects using the "
-"ImageNet dataset.</p>"
-msgstr ""
-"<p><b>YOLOv11 Nano</b>: litet, lätt neuralt nätverk som erbjuder "
-"exceptionell hastighet, men kan missa identifiering av flera objekt i "
-"bilder. YOLO kan upptäcka flera objekt i en bild. Det är tränat att känna "
-"igen 80 olika objekt med hjälp av datauppsättningen COCO.</p><p><b>YOLOv11 "
-"XLarge</b>: stort, robust neuralt nätverk som erbjuder bra noggrannhet. Det "
-"upptäcker flera objekt i bilder än YOLOv11 Nano, men är långsammare. YOLO "
-"kan upptäcka flera objekt i en bild. Det är tränat att känna igen 80 olika "
-"objekt med hjälp av datauppsättningen COCO.</p><p><b>ResNet-152</b>: stort "
-"och kraftfullt neuralt faltningsnätverk. Det upptäcker ett enda objekt i en "
-"bild med stor noggrannhet. ResNet-152 tränades för att känna igen 1 000 "
-"olika objekt med hjälp av datauppsättningen ImageNet.</p>"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:144
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:155
 #, kde-format
 msgid "Object detection accuracy: "
 msgstr "Objektdetekteringsnoggrannhet"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:149
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39424,7 +39432,7 @@ msgstr ""
 "Justera känslighet kontra specificitet: ju högre värde, desto mer exakt\n"
 "känns objekt igen, men färre objekt känns igen.\n"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:165
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -39432,7 +39440,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Använd alla processorkärnor"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39444,20 +39452,20 @@ msgstr ""
 "Du kan välja om du vill använda alla processor-kärnor\n"
 "i systemet eller arbeta i bakgrunden med bara en kärna."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:178
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Inställningar"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Översätt etikett till:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:174
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:185
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
@@ -67513,6 +67521,36 @@ msgstr "Albumobjekt"
 #, kde-format
 msgid "Import Items"
 msgstr "Importera objekt"
+
+#~ msgid "ResNet-152"
+#~ msgstr "ResNet-152"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
+#~ "exceptional speed, but may miss identifying more objects in images. YOLO "
+#~ "can detect multiple objects in an image. It is trained to recognize 80 "
+#~ "different objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: "
+#~ "large, robust neural network offering good accuracy. It will detect more "
+#~ "objects in images than YOLOv11 Nano, but is slower. YOLO can detect "
+#~ "multiple objects in an image. It is trained to recognize 80 different "
+#~ "objects using the COCO dataset.</p><p><b>ResNet-152</b>: large and "
+#~ "powerful convoluted neural network. It will detect a single object in an "
+#~ "image with high accuracy. ResNet-152 was trained to recognize 1,000 "
+#~ "different objects using the ImageNet dataset.</p>"
+#~ msgstr ""
+#~ "<p><b>YOLOv11 Nano</b>: litet, lätt neuralt nätverk som erbjuder "
+#~ "exceptionell hastighet, men kan missa identifiering av flera objekt i "
+#~ "bilder. YOLO kan upptäcka flera objekt i en bild. Det är tränat att känna "
+#~ "igen 80 olika objekt med hjälp av datauppsättningen COCO.</"
+#~ "p><p><b>YOLOv11 XLarge</b>: stort, robust neuralt nätverk som erbjuder "
+#~ "bra noggrannhet. Det upptäcker flera objekt i bilder än YOLOv11 Nano, men "
+#~ "är långsammare. YOLO kan upptäcka flera objekt i en bild. Det är tränat "
+#~ "att känna igen 80 olika objekt med hjälp av datauppsättningen COCO.</"
+#~ "p><p><b>ResNet-152</b>: stort och kraftfullt neuralt faltningsnätverk. "
+#~ "Det upptäcker ett enda objekt i en bild med stor noggrannhet. ResNet-152 "
+#~ "tränades för att känna igen 1 000 olika objekt med hjälp av "
+#~ "datauppsättningen ImageNet.</p>"
 
 #~ msgid "OpenFace"
 #~ msgstr "OpenFace"
