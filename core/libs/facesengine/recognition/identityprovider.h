@@ -171,7 +171,7 @@ private:
     IdentityProvider(const IdentityProvider&)                     = delete;
 
     class Private;
-    static Private* d;
+    Private* const d = nullptr;
 
 private:
 

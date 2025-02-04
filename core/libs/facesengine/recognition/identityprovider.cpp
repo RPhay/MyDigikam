@@ -43,9 +43,8 @@
 namespace Digikam
 {
 
-IdentityProvider::Private* IdentityProvider::d = nullptr;
-QString IdentityProvider::FaceTrainingVersion  = QLatin1String("8.6.0");
-QString IdentityProvider::ExtractorModel       = QLatin1String("SFace");
+QString IdentityProvider::FaceTrainingVersion = QLatin1String("8.6.0");
+QString IdentityProvider::ExtractorModel      = QLatin1String("SFace");
 
 class Q_DECL_HIDDEN IdentityProvider::Private
 {
@@ -74,6 +73,7 @@ Q_GLOBAL_STATIC(IdentityProviderCreator, identityProviderCreator)
 // ---------------------------------------------------------------------------
 
 IdentityProvider::IdentityProvider()
+    : d(new Private)
 {
 
     // Save face settings to remove old Detector and Recognizer models.
@@ -81,51 +81,46 @@ IdentityProvider::IdentityProvider()
     ApplicationSettings::instance()->setFaceDetectionModel(FaceScanSettings::FaceDetectionModel::YuNet);
     ApplicationSettings::instance()->setFaceRecognitionModel(FaceScanSettings::FaceRecognitionModel::SFace);
 
-    if (!d)
+    // initialize the database
+
+    if (!initialize())
     {
-        d = new Private;
+        QException().raise();
+    }
 
-        // initialize the database
+    // Create a thread pool for the training remover.
 
-        if (!initialize())
-        {
-            QException().raise();
-        }
-
-        // Create a thread pool for the training remover.
-
-        d->removeThreadPool = new QThreadPool();
+    d->removeThreadPool = new QThreadPool(this);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-        // Priority should be equal or greater than trainer or recognizer threads.
+    // Priority should be equal or greater than trainer or recognizer threads.
 
-        d->removeThreadPool->setThreadPriority(QThread::NormalPriority);
+    d->removeThreadPool->setThreadPriority(QThread::NormalPriority);
 
 #endif
 
-        // We only need 1 thread for the training remover.
+    // We only need 1 thread for the training remover.
 
-        d->removeThreadPool->setMaxThreadCount(1);
+    d->removeThreadPool->setMaxThreadCount(1);
 
-        // Run the remove queue listener thread.
+    // Run the remove queue listener thread.
 
-        d->removeThreadResult = QtConcurrent::run(d->removeThreadPool,
+    d->removeThreadResult = QtConcurrent::run(d->removeThreadPool,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                                                  &IdentityProvider::trainingRemoveConcurrent,
-                                                  this
+                                              &IdentityProvider::trainingRemoveConcurrent,
+                                              this
 
 #else
 
-                                                  this,
-                                                  &IdentityProvider::trainingRemoveConcurrent
+                                              this,
+                                              &IdentityProvider::trainingRemoveConcurrent
 
 #endif
-                                                 );
 
-    }
+                                             );
 }
 
 IdentityProvider::~IdentityProvider()
@@ -141,14 +136,9 @@ IdentityProvider::~IdentityProvider()
         QThread::msleep(10);
     }
 
-    // Clean up the thread pool.
-
-    delete d->removeThreadPool;
-
     // final cleanup
 
     delete d;
-    d = nullptr;
 }
 
 IdentityProvider* IdentityProvider::instance()
@@ -189,7 +179,7 @@ bool IdentityProvider::initialize()
 
 bool IdentityProvider::checkRetrainingRequired() const
 {
-    if (!d || !d->dbAvailable)
+    if (!d->dbAvailable)
     {
         // don't use this if we're not initialized
 
@@ -199,7 +189,7 @@ bool IdentityProvider::checkRetrainingRequired() const
 
     // return false if there are no identities in the database
 
-    if (d && d->identityCache.isEmpty())
+    if (d->identityCache.isEmpty())
     {
         // write the current version to the database
 
@@ -231,7 +221,7 @@ bool IdentityProvider::checkRetrainingRequired() const
 
 bool IdentityProvider::integrityCheck()
 {
-    if (!d || !d->dbAvailable)
+    if (!d->dbAvailable)
     {
         return false;
     }
@@ -247,7 +237,7 @@ bool IdentityProvider::integrityCheck()
 
 void IdentityProvider::vacuum()
 {
-    if (!d || !d->dbAvailable)
+    if (!d->dbAvailable)
     {
         return;
     }
@@ -265,7 +255,7 @@ const QList<Identity> IdentityProvider::allIdentities() const
 {
     // Return a copy of the identity cache.
 
-    if (!d || !d->dbAvailable)
+    if (!d->dbAvailable)
     {
         return QList<Identity>();
     }
@@ -281,7 +271,7 @@ const QList<Identity> IdentityProvider::allIdentities() const
 
 Identity IdentityProvider::identity(int id) const
 {
-    if (!d || !d->dbAvailable)
+    if (!d->dbAvailable)
     {
         return Identity();
     }
@@ -297,7 +287,7 @@ Identity IdentityProvider::identity(int id) const
 
 Identity IdentityProvider::findIdentity(const QString& attribute, const QString& value) const
 {
-    if (!d || !d->dbAvailable || attribute.isEmpty())
+    if (!d->dbAvailable || attribute.isEmpty())
     {
         return Identity();
     }
@@ -313,7 +303,7 @@ Identity IdentityProvider::findIdentity(const QString& attribute, const QString&
 
 Identity IdentityProvider::findIdentity(const QMultiMap<QString, QString>& attributes) const
 {
-    if (!d || !d->dbAvailable || attributes.isEmpty())
+    if (!d->dbAvailable || attributes.isEmpty())
     {
         return Identity();
     }
@@ -395,7 +385,7 @@ Identity IdentityProvider::findIdentity(const QMultiMap<QString, QString>& attri
 
 Identity IdentityProvider::addIdentity(const QMultiMap<QString, QString>& attributes)
 {
-    if (!d || !d->dbAvailable)
+    if (!d->dbAvailable)
     {
         return Identity();
     }
@@ -463,7 +453,7 @@ cv::Ptr<cv::ml::TrainData> IdentityProvider::getTrainingData() const
 {
     cv::Ptr<cv::ml::TrainData> trainData = nullptr;
 
-    if (!d || !d->dbAvailable)
+    if (!d->dbAvailable)
     {
         return trainData;
     }
@@ -479,7 +469,7 @@ cv::Ptr<cv::ml::TrainData> IdentityProvider::getTrainingData() const
 
 void IdentityProvider::deleteIdentity(const Identity& identityToBeDeleted)
 {
-    if (!d || !d->dbAvailable || identityToBeDeleted.isNull())
+    if (!d->dbAvailable || identityToBeDeleted.isNull())
     {
         return;
     }
@@ -551,7 +541,7 @@ bool IdentityProvider::clearTraining(const QString& hash)
 
 void IdentityProvider::clearAllTraining()
 {
-    if (!d || !d->dbAvailable)
+    if (!d->dbAvailable)
     {
         return;
     }
