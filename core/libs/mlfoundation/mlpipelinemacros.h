@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2025-01-03
- * Description : Macros for simplifying the model learning pipeline code
+ * Description : Macros for simplifying the machine learning pipeline code
  *
  * SPDX-FileCopyrightText: 2024-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>

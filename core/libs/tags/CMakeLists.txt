@@ -53,10 +53,6 @@ set(libtags_SRCS
 )
 
 set(autotagassignment_LIB_SRCS 
-                            #    ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/model/dnnbasedetectormodel.cpp
-                            #    ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/model/dnnyolodetector.cpp
-                            #    ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/model/dnnresnetdetector.cpp
-                            #    ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/autotagsassign.cpp
                                ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/autotagsscansettings.cpp
                                ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/autotagsengine.cpp
                                ${CMAKE_CURRENT_SOURCE_DIR}/autoassignment/pipelines/autotagspipelinebase.cpp
