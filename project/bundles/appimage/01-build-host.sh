@@ -122,7 +122,7 @@ cmake --build . --config RelWithDebInfo --target ext_openssl         -- -j$CPU_C
 QT_CORES=$((PHY_MEM / 4))
 echo "Qt will be compiled with $QT_CORES CPU cores."
 
-cmake --build . --config RelWithDebInfo --target ext_qt$DK_QTVERSION -- -j$QT_CORES    # depend of tiff, png, jpeg
+cmake --build . --config RelWithDebInfo --target ext_qt$DK_QTVERSION -- -j8    # depend of tiff, png, jpeg
 
 # Clean up previous openssl install
 

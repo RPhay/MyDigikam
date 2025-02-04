@@ -8,12 +8,8 @@
 
 SET(EXTPREFIX_qt ${EXTPREFIX})
 
-# Do not compile yet under Ubuntu 22.04
-SET(QT_URL https://download.qt.io/official_releases/qt/6.8/6.8.1/single/qt-everywhere-src-6.8.1.tar.xz)
-SET(QT_HASH 4068b07ca6366bcb9ba56508bbbf20e6)
-
-#SET(QT_URL https://download.qt.io/official_releases/qt/6.7/6.7.3/single/qt-everywhere-src-6.7.3.tar.xz)
-#SET(QT_HASH 3efadf18f1e16e3271abd09c606d3c9b)
+SET(QT_URL https://download.qt.io/official_releases/qt/6.8/6.8.2/single/qt-everywhere-src-6.8.2.tar.xz)
+SET(QT_HASH ccc7100bc687005c167a8a43a4f99050)
 
 IF(MSVC)
 
