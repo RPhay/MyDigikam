@@ -42,19 +42,19 @@
 /**
  * Size of non-profile data in APP2
  */
-#define ICC_OVERHEAD_LEN                        14                 /* krazy:exclude=define */
+#define ICC_OVERHEAD_LEN                        14                 /* // krazy:exclude=define */
 
 /**
  * Maximum data len of a JPEG marker
  */
-#define MAX_BYTES_IN_MARKER                     65533              /* krazy:exclude=define */
+#define MAX_BYTES_IN_MARKER                     65533              /* // krazy:exclude=define */
 
 #define MAX_DATA_BYTES_IN_MARKER                (MAX_BYTES_IN_MARKER - ICC_OVERHEAD_LEN)
 
 /**
  * Sufficient since marker numbers are bytes
  */
-#define MAX_SEQ_NO                              255                /* krazy:exclude=define */
+#define MAX_SEQ_NO                              255                /* // krazy:exclude=define */
 
 /**
  * @brief This routine writes the given ICC profile data into a JPEG file.
