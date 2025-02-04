@@ -87,7 +87,7 @@ Q_GLOBAL_STATIC(FaceClassifierCreator, faceClassifierCreator)
 
 FaceClassifier::FaceClassifier()
     : FaceClassifierBase(),
-      d(new Private)
+      d                 (new Private)
 {
     d->identityProvider = IdentityProvider::instance();
 
