@@ -94,7 +94,7 @@ DItemsList::DItemsList(QWidget* const parent)
             this, &DItemsList::slotAddImages);
 
     connect(d->thumbLoadThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
-            this, SLOT(slotThumbnail(LoadingDescription,QPixmap)));
+            this, SLOT(slotThumbnail(LoadingDescription,QPixmap)));             // cppcheck-suppress virtualCallInConstructor
 
     connect(d->listView, &DItemsListView::signalItemClicked,
             this, &DItemsList::signalItemClicked);

@@ -476,7 +476,7 @@ ResizeTool::ResizeTool(QObject* const parent)
     defaults.setResizeDefaultSettings();
     d->settingsWidget->setDefaultSettings(defaults);
 
-    QTimer::singleShot(0, this, SLOT(slotResetSettings()));
+    QTimer::singleShot(0, this, SLOT(slotResetSettings()));      // cppcheck-suppress virtualCallInConstructor
 }
 
 ResizeTool::~ResizeTool()

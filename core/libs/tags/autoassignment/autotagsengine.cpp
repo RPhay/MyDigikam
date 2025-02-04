@@ -80,7 +80,7 @@ AutotagsEngine::AutotagsEngine(const AutotagsScanSettings& _settings, ProgressIt
     d->newPipeline = new AutotagsPipelineObject(_settings);
 
     connect(d->newPipeline, SIGNAL(finished()),
-            this, SLOT(slotDone()));
+            this, SLOT(slotDone()));                          // cppcheck-suppress virtualCallInConstructor
 
     connect(d->newPipeline, SIGNAL(processed(MLPipelinePackageNotify::Ptr)),
             this, SLOT(slotShowOneDetected(MLPipelinePackageNotify::Ptr)));
@@ -89,7 +89,7 @@ AutotagsEngine::AutotagsEngine(const AutotagsScanSettings& _settings, ProgressIt
             this, SLOT(slotImagesSkipped(MLPipelinePackageNotify::Ptr)));
 
     connect(this, SIGNAL(progressItemCanceled(ProgressItem*)),
-            this, SLOT(slotCancel()));
+            this, SLOT(slotCancel()));                        // cppcheck-suppress virtualCallInConstructor
 
     connect(d->newPipeline, SIGNAL(signalUpdateItemCount(qlonglong)),
             this, SLOT(slotUpdateItemCount(qlonglong)));

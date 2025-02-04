@@ -38,7 +38,6 @@ namespace Digikam
 
 class Q_DECL_HIDDEN DTrashItemModel::Private
 {
-
 public:
 
     Private() = default;
@@ -74,7 +73,7 @@ DTrashItemModel::DTrashItemModel(QObject* const parent, QWidget* const widget)
     d->thumbnailThread->setSendSurrogatePixmap(false);
 
     connect(d->thumbnailThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
-            this, SLOT(refreshThumbnails(LoadingDescription,QPixmap)));
+            this, SLOT(refreshThumbnails(LoadingDescription,QPixmap)));           // cppcheck-suppress virtualCallInConstructor
 }
 
 DTrashItemModel::~DTrashItemModel()

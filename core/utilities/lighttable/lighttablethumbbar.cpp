@@ -205,7 +205,7 @@ LightTableThumbBar::LightTableThumbBar(QWidget* const parent)
             this, SIGNAL(signalContentChanged()));
 
     connect(settings, SIGNAL(setupChanged()),
-            this, SLOT(slotSetupChanged()));
+            this, SLOT(slotSetupChanged()));              // cppcheck-suppress virtualCallInConstructor
 }
 
 LightTableThumbBar::~LightTableThumbBar()
