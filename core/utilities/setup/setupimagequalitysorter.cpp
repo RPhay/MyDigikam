@@ -56,7 +56,7 @@ SetupImageQualitySorter::SetupImageQualitySorter(QWidget* const parent)
                                                  "or using a deep learning neural network engine. The first one helps to determine whether "
                                                  "images are distorted by the basic factors, however it demands some drawbacks as fine-tuning "
                                                  "from the user’s side and it cannot work along the aesthetic image processing. "
-                                                 "The second one uses an IA approach based on %1 model to predict the score. "
+                                                 "The second one uses an AI approach based on %1 model to predict the score. "
                                                  "As deep learning is an end-to-end solution, it doesn’t require hyper-parameter settings, "
                                                  "and make this feature easier to use.",
                                            QString::fromUtf8("<a href='https://expertphotography.com/aesthetic-photography/'>%1</a>")
