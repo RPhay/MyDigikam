@@ -44,7 +44,7 @@ public:
 
 private Q_SLOTS:
 
-    void accept()        override;
+    void accept()        override;          // cppcheck-suppress virtualCallInConstructor
 
 private:
 
@@ -67,10 +67,11 @@ public:
 private Q_SLOTS:
 
     void slotCustomContextMenuRequested(const QPoint&);
-    void accept() override;
     void slotOpenInMap(const QModelIndex&);
     void slotNewFolder();
     void slotRemoveOne();
+
+    void accept() override;                 // cppcheck-suppress virtualCallInConstructor
 
 protected:
 
