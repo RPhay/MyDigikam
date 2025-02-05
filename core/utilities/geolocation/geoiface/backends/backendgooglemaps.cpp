@@ -328,7 +328,7 @@ void BackendGoogleMaps::setMapType(const QString& newMapType)
     d->cacheMapType = newMapType;
     qCDebug(DIGIKAM_GEOIFACE_LOG) << newMapType;
 
-    if (isReady())
+    if (this->isReady())
     {
         d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetMapType(\"%1\");").arg(newMapType));
         updateZoomMinMaxCache();
@@ -413,9 +413,9 @@ void BackendGoogleMaps::readSettingsFromGroup(const KConfigGroup* const group)
 
 void BackendGoogleMaps::slotUngroupedModelChanged(const int mindex)
 {
-    GEOIFACE_ASSERT(isReady());
+    GEOIFACE_ASSERT(this->isReady());
 
-    if (!isReady())
+    if (!this->isReady())
     {
         return;
     }
@@ -809,9 +809,9 @@ void BackendGoogleMaps::updateClusters()
 
     // re-transfer the clusters to the map:
 
-    GEOIFACE_ASSERT(isReady());
+    GEOIFACE_ASSERT(this->isReady());
 
-    if (!isReady())
+    if (!this->isReady())
     {
         return;
     }
@@ -935,7 +935,7 @@ void BackendGoogleMaps::setShowScaleControl(const bool state)
         d->showScaleControlAction->setChecked(state);
     }
 
-    if (!isReady())
+    if (!this->isReady())
     {
         return;
     }
@@ -955,7 +955,7 @@ void BackendGoogleMaps::setShowNavigationControl(const bool state)
         d->showNavigationControlAction->setChecked(state);
     }
 
-    if (!isReady())
+    if (!this->isReady())
     {
         return;
     }
@@ -976,7 +976,7 @@ void BackendGoogleMaps::setShowMapTypeControl(const bool state)
         d->showMapTypeControlAction->setChecked(state);
     }
 
-    if (!isReady())
+    if (!this->isReady())
     {
         return;
     }
@@ -1001,7 +1001,7 @@ void BackendGoogleMaps::setZoom(const QString& newZoom)
     const int myZoom           = myZoomString.mid(QString::fromLatin1("googlemaps:").length()).toInt();
     d->cacheZoom               = myZoom;
 
-    if (isReady())
+    if (this->isReady())
     {
         d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetZoom(%1);").arg(d->cacheZoom));
     }
@@ -1014,9 +1014,9 @@ QString BackendGoogleMaps::getZoom() const
 
 int BackendGoogleMaps::getMarkerModelLevel()
 {
-    GEOIFACE_ASSERT(isReady());
+    GEOIFACE_ASSERT(this->isReady());
 
-    if (!isReady())
+    if (!this->isReady())
     {
         return 0;
     }
@@ -1068,7 +1068,7 @@ GeoCoordinates::PairList BackendGoogleMaps::getNormalizedBounds()
 /*
 void BackendGoogleMaps::updateDragDropMarker(const QPoint& pos, const GeoIfaceDragData* const dragData)
 {
-    if (!isReady())
+    if (!this->isReady())
     {
         return;
     }
@@ -1094,7 +1094,7 @@ void BackendGoogleMaps::updateDragDropMarkerPosition(const QPoint& pos)
 {
     // TODO: buffer this!
 
-    if (!isReady())
+    if (!this->isReady())
     {
         return;
     }
@@ -1108,7 +1108,7 @@ void BackendGoogleMaps::updateDragDropMarkerPosition(const QPoint& pos)
 
 void BackendGoogleMaps::updateActionAvailability()
 {
-    if (!d->activeState || !isReady())
+    if (!d->activeState || !this->isReady())
     {
         return;
     }
