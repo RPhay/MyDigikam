@@ -189,7 +189,6 @@ bool FacePipelineRetrain::writer()
     // we start looping through the results from the pipeline
 
     idProvider->clearAllTraining();
-    FaceDbAccess().db()->setTrainingVersionInfo(IdentityProvider::FaceTrainingVersion, IdentityProvider::ExtractorModel);
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
     package                            = static_cast<FacePipelinePackageBase*>(mlpackage);
@@ -254,6 +253,10 @@ bool FacePipelineRetrain::writer()
     // retrain the classifier after all results have been processed
 
     FaceClassifier::instance()->retrain();
+
+    // set the training version info to the latest info
+
+    FaceDbAccess().db()->setTrainingVersionInfo(IdentityProvider::FaceTrainingVersion, IdentityProvider::ExtractorModel);
 
     MLPIPELINE_STAGE_END(MLPipelineStage::Writer, MLPipelineStage::None);
 }
