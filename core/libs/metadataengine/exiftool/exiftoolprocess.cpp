@@ -40,6 +40,7 @@ ExifToolProcess::ExifToolProcess()
 
 ExifToolProcess::~ExifToolProcess()
 {
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Test deconstruction: ExifToolProcess";
     delete d;
 }
 

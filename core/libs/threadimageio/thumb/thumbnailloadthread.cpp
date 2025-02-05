@@ -104,7 +104,7 @@ ThumbnailLoadThread::ThumbnailLoadThread(QObject* const parent)
 ThumbnailLoadThread::~ThumbnailLoadThread()
 {
     shutDown();
-
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Test deconstruction: ThumbnailLoadThread";
     delete d->creator;
     delete d;
 }

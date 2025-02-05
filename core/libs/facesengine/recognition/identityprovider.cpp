@@ -126,6 +126,8 @@ IdentityProvider::IdentityProvider()
 
 IdentityProvider::~IdentityProvider()
 {
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Test deconstruction: IdentityProvider";
+
     // Signal the remove thread to terminate.
 
     d->removeQueue.push(d->removeQueue.endSignal());

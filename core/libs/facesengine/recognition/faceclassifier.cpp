@@ -98,6 +98,7 @@ FaceClassifier::FaceClassifier()
 
 FaceClassifier::~FaceClassifier()
 {
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Test deconstruction: FaceClassifier";
     delete d;
 }
 

@@ -33,7 +33,7 @@ RecognitionTrainingUpdateQueue::~RecognitionTrainingUpdateQueue()
 {
     --ref;
 
-    qCDebug(DIGIKAM_FACEDB_LOG) << "Delete RecognitionTrainingUpdateQueue:" << ref;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Test deconstruction: RecognitionTrainingUpdateQueue";
 
     if (0 == ref)
     {
