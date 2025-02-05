@@ -48,6 +48,8 @@ public:
 
     Private() = default;
 
+public:
+
     QTreeWidget*      listView  = nullptr;
     QWidget*          page      = nullptr;
     QDialogButtonBox* buttons   = nullptr;

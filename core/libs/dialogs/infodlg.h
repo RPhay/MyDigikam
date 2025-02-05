@@ -48,7 +48,7 @@ public:
 
 private Q_SLOTS:
 
-    virtual void slotHelp();
+    virtual void slotHelp();            // cppcheck-suppress virtualCallInConstructor
     virtual void slotCopy2ClipBoard();
 
 private:

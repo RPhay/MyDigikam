@@ -57,7 +57,7 @@ public Q_SLOTS:
 
 protected Q_SLOTS:
 
-    virtual void slotCancel();
+    virtual void slotCancel();  // cppcheck-suppress virtualCallInConstructor
 
 private:
 
