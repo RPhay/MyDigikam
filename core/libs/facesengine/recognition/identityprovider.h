@@ -40,6 +40,8 @@ public:
 
 public:
 
+    void cancel();
+
     bool checkRetrainingRequired() const;
 
     /**

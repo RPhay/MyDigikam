@@ -128,16 +128,7 @@ IdentityProvider::~IdentityProvider()
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Test deconstruction: IdentityProvider";
 
-    // Signal the remove thread to terminate.
-
-    d->removeQueue.push(d->removeQueue.endSignal());
-
-    // Wait for the remove thread to finish.
-
-    while (d->removeThreadResult.isRunning())
-    {
-        QThread::msleep(10);
-    }
+    cancel();
 
     // final cleanup
 
@@ -178,6 +169,25 @@ bool IdentityProvider::initialize()
     }
 
     return true;
+}
+
+void IdentityProvider::cancel()
+{
+    if (d && d->removeThreadResult.isRunning())
+    {
+        // Signal the remove thread to terminate.
+
+        d->removeQueue.push(d->removeQueue.endSignal());
+
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::shutdown: sent queue end signal";
+
+        // Wait for the remove thread to finish.
+
+        while (d->removeThreadResult.isRunning())
+        {
+            QThread::msleep(10);
+        }
+    }
 }
 
 bool IdentityProvider::checkRetrainingRequired() const
@@ -682,7 +692,7 @@ bool IdentityProvider::trainingRemoveConcurrent()
         }
     }
 
-    qCDebug(DIGIKAM_FACEDB_LOG) << "IdentityProvider::trainingRemoveConcurrent thread terminated";
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::trainingRemoveConcurrent thread terminated";
 
     return true;
 }

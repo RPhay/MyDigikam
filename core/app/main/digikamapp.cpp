@@ -255,6 +255,8 @@ DigikamApp::~DigikamApp()
 {
     FacePipelineEdit::instance()->cancel();
 
+    IdentityProvider::instance()->cancel();
+
     ProgressManager::instance()->slotAbortAll();
 
     ItemAttributesWatch::shutDown();
