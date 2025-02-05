@@ -103,4 +103,5 @@ CPPCHECK_SUPPRESSIONS="\
 --suppress=checkersReport \
 --suppress=constVariablePointer \
 --suppress=useStlAlgorithm \
+--suppress=returnByReference \
 "
