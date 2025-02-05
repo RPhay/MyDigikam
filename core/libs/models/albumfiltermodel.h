@@ -378,7 +378,7 @@ public:
     void doNotListTagsWithProperty(const QString& property);
     void removeDoNotListProperty(const QString& property);
 
-    bool isFiltering()                                                          const override;     // cppcheck-suppress virtualCallInConstructor
+    bool isFiltering()                                                          const override;
 
 protected Q_SLOTS:
 

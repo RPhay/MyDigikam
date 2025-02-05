@@ -97,7 +97,7 @@ void TagPropertiesFilterModel::tagPropertiesChanged(TAlbum*)
 {
     // I do not expect batch changes. Otherwise we'll need a timer.
 
-    if (isFiltering())
+    if (this->isFiltering())
     {
         invalidateFilter();
 
