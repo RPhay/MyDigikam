@@ -88,6 +88,7 @@ QList<int> AutotagsClassifierYolo::predictMulti(const QList<cv::Mat>& targets)  
         return results;
     }
 
+    cv::Mat cvTranspose;
     std::vector<cv::Rect> boxes;
     std::vector<float>    scores;
     std::vector<int>      class_ids;
@@ -107,12 +108,11 @@ QList<int> AutotagsClassifierYolo::predictMulti(const QList<cv::Mat>& targets)  
             return results;
         }
 
-        cv::Mat newOut;
+        cv::Mat cvReshape;
         std::vector<int> shape = { targets[0].size[1], targets[0].size[2] };
-        newOut                 = targets[0].reshape(1, shape);
-        cv::Mat newOut2;
-        cv::transpose(newOut, newOut2);
-        outputHost             = reinterpret_cast<float*>(newOut2.data);
+        cvReshape                 = targets[0].reshape(1, shape);
+        cv::transpose(cvReshape, cvTranspose);
+        outputHost             = reinterpret_cast<float*>(cvTranspose.data);
     }
     else
     {
