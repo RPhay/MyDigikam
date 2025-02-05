@@ -44,7 +44,7 @@ public:
 public:
 
     /**
-     * Constructor which remove all images metadata from an Albums list.
+     * @brief Constructor which remove all images metadata from an Albums list.
      * If list is empty, whole Albums collection is processed.
      */
     explicit MetadataRemover(const AlbumList& list = AlbumList(),
@@ -52,7 +52,7 @@ public:
                              ProgressItem* const parent = nullptr);
 
     /**
-     * Constructor which remove all images metadata from an Images list
+     * @brief Constructor which remove all images metadata from an Images list
      */
     explicit MetadataRemover(const ItemInfoList& list,
                              RemoveAction action = None,
@@ -67,7 +67,7 @@ private Q_SLOTS:
 
     void slotStart()                override;
     void slotCancel()               override;
-    void slotDone()                 override;
+    void slotDone()                 override;         // cppcheck-suppress virtualCallInConstructor
 
     void slotAdvance(const ItemInfo&);
 

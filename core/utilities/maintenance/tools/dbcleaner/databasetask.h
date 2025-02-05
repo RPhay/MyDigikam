@@ -69,7 +69,7 @@ Q_SIGNALS:
                     const QList<qlonglong>& staleSimilarityImageIds);
 
     /**
-     * Signal to emit the count of additional items to process.
+     * @brief Signal to emit the count of additional items to process.
      */
     void signalAddItemsToProcess(int count);
 

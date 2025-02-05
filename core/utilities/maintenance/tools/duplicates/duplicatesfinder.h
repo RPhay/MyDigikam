@@ -39,7 +39,7 @@ class DIGIKAM_GUI_EXPORT DuplicatesFinder : public MaintenanceTool
 public:
 
     /**
-     * Version to find all duplicates over a specific list to PAlbums and TAlbums
+     * @brief Version to find all duplicates over a specific list to PAlbums and TAlbums
      */
     DuplicatesFinder(const AlbumList& albums,
                      const AlbumList& tags,

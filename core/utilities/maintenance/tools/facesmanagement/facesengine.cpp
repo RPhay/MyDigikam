@@ -46,7 +46,6 @@
 #include "facescansettings.h"
 #include "iteminfojob.h"
 #include "facetags.h"
-
 #include "mlpipelinepackagenotify.h"
 #include "facepipelinedetectrecognize.h"
 #include "facepipelinerecognize.h"
@@ -435,6 +434,7 @@ void FacesEngine::slotShowOneDetected(const MLPipelinePackageNotify::Ptr& packag
 
     QString lbl = i18n("Face Scanning: %1\n", package->name);
     lbl.append(i18n("Album: %1\n", package->path));
+
     if (package->processed > 0)
     {
         if (package->processed == 1)
@@ -452,11 +452,12 @@ void FacesEngine::slotShowOneDetected(const MLPipelinePackageNotify::Ptr& packag
             lbl.append(i18n("Recognized: %1", package->displayData));
         }
     }
-    // else
-    // {
-    //     lbl.append(i18n("No faces found."));
-    // }
-
+/*
+    else
+    {
+        lbl.append(i18n("No faces found."));
+    }
+*/
     d->totalFacesFound += package->processed;
 
     setLabel(lbl);

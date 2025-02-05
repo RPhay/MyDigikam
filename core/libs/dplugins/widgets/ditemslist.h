@@ -310,7 +310,7 @@ protected Q_SLOTS:
     virtual void slotClearItems();
     virtual void slotLoadItems();
     virtual void slotSaveItems();
-    virtual void slotThumbnail(const LoadingDescription&, const QPixmap&);
+    virtual void slotThumbnail(const LoadingDescription&, const QPixmap&);      // cppcheck-suppress virtualCallInConstructor
     virtual void slotImageListChanged();
 
 private:

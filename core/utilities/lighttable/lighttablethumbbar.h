@@ -79,7 +79,7 @@ private:
 
 private Q_SLOTS:
 
-    void slotSetupChanged()                                                override;
+    void slotSetupChanged()                                                override;  // cppcheck-suppress virtualCallInConstructor
 
 private:
 

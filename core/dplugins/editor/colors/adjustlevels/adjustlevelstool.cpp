@@ -75,6 +75,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName               = QLatin1String("adjustlevels Tool");
     const QString configGammaChannelEntry       = QLatin1String("GammaChannel%1");
     const QString configLowInputChannelEntry    = QLatin1String("LowInputChannel%1");

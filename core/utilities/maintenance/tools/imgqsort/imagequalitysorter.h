@@ -48,7 +48,7 @@ public:
 public:
 
     /**
-     * Constructor using AlbumList as argument. If list is empty, whole Albums collection is processed.
+     * @brief Constructor using AlbumList as argument. If list is empty, whole Albums collection is processed.
      */
     explicit ImageQualitySorter(QualityScanMode mode,
                                 const AlbumList& list = AlbumList(),
@@ -66,7 +66,7 @@ private Q_SLOTS:
 
     void slotStart()                override;
     void slotCancel()               override;
-    void slotDone()                 override;
+    void slotDone()                 override;             // cppcheck-suppress virtualCallInConstructor
     void slotAdvance(const ItemInfo&, const QImage&, int);
 
 private:

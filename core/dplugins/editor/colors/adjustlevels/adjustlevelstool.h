@@ -40,7 +40,7 @@ private Q_SLOTS:
     void slotResetSettings()                override;
     void slotResetCurrentChannel();
     void slotAutoLevels();
-    void slotChannelChanged()               override;
+    void slotChannelChanged()               override;             // cppcheck-suppress virtualCallInConstructor
     void slotScaleChanged()                 override;
     void slotAdjustSliders();
     void slotGammaInputchanged(double val);

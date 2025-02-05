@@ -42,7 +42,7 @@ public:
 public:
 
     /**
-     * Constructor which sync all images metadata from an Albums list.
+     * @brief Constructor which sync all images metadata from an Albums list.
      * If list is empty, whole Albums collection is processed.
      */
     explicit MetadataSynchronizer(const AlbumList& list = AlbumList(),
@@ -50,7 +50,7 @@ public:
                                   ProgressItem* const parent = nullptr);
 
     /**
-     * Constructor which sync all images metadata from an Images list
+     * @brief Constructor which sync all images metadata from an Images list
      */
     explicit MetadataSynchronizer(const ItemInfoList& list,
                                   SyncDirection = WriteFromDatabaseToFile,
@@ -70,7 +70,7 @@ private Q_SLOTS:
 
     void slotStart()                override;
     void slotCancel()               override;
-    void slotDone()                 override;
+    void slotDone()                 override;      // cppcheck-suppress virtualCallInConstructor
 
     void slotParseAlbums();
     void slotAlbumParsed(const ItemInfoList&);

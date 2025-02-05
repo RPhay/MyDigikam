@@ -111,7 +111,7 @@ AdjustCurvesTool::AdjustCurvesTool(QObject* const parent)
             this, SLOT(slotTimer()));
 
     connect(d->gboxSettings, SIGNAL(signalChannelChanged()),
-            this, SLOT(slotChannelChanged()));              // cppcheck-suppress virtualCallInConstructor
+            this, SLOT(slotChannelChanged()));
 
     connect(d->gboxSettings, SIGNAL(signalScaleChanged()),
             this, SLOT(slotScaleChanged()));

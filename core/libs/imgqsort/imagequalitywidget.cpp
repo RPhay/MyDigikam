@@ -44,7 +44,7 @@ void ImageQualityWidget::doLoadState()
 
 void ImageQualityWidget::doSaveState()
 {
-    KConfigGroup group       = getConfigGroup();
+    KConfigGroup group = getConfigGroup();
     d->albumSelectors->saveState();
 
     applySettings(group);

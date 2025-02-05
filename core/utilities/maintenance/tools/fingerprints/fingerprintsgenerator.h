@@ -36,9 +36,12 @@ class FingerPrintsGenerator : public MaintenanceTool
 
 public:
 
-    /** Constructor using AlbumList as argument. If list is empty, whole Albums collection is processed.
+    /**
+     * @brief Constructor using AlbumList as argument. If list is empty, whole Albums collection is processed.
      */
-    explicit FingerPrintsGenerator(const bool rebuildAll, const AlbumList& list = AlbumList(), ProgressItem* const parent = nullptr);
+    explicit FingerPrintsGenerator(const bool rebuildAll,
+                                   const AlbumList& list = AlbumList(),
+                                   ProgressItem* const parent = nullptr);
     ~FingerPrintsGenerator() override;
 
     void setUseMultiCoreCPU(bool b) override;
@@ -54,7 +57,7 @@ private:
 private Q_SLOTS:
 
     void slotStart()                override;
-    void slotDone()                 override;
+    void slotDone()                 override;      // cppcheck-suppress virtualCallInConstructor
     void slotCancel()               override;
     void slotAdvance(const ItemInfo&, const QImage&);
 

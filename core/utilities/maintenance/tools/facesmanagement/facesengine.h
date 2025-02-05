@@ -51,7 +51,7 @@ public:
 
     explicit FacesEngine(const FaceScanSettings& settings,
                          ProgressItem* const parent = nullptr);
-    ~FacesEngine()                                                override;
+    ~FacesEngine()                                                  override;
 
 Q_SIGNALS:
 
@@ -63,8 +63,8 @@ private Q_SLOTS:
     void slotUpdateItemCount(const qlonglong itemCount);
     void slotImagesSkipped(const MLPipelinePackageNotify::Ptr&);
     void slotShowOneDetected(const MLPipelinePackageNotify::Ptr&);
-    void slotDone()                                                 override;
-    void slotCancel()                                               override;
+    void slotDone()                                                 override;      // cppcheck-suppress virtualCallInConstructor
+    void slotCancel()                                               override;      // cppcheck-suppress virtualCallInConstructor
 
 private:
 

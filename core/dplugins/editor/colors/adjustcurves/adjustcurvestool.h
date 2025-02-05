@@ -42,8 +42,8 @@ private Q_SLOTS:
     void slotSpotColorChanged();
     void slotColorSelectedFromTarget(const Digikam::DColor&);
     void slotResetCurrentChannel();
-    void slotChannelChanged()   override;
-    void slotScaleChanged()     override;
+    void slotChannelChanged()   override;                       // cppcheck-suppress virtualCallInConstructor
+    void slotScaleChanged()     override;                       // cppcheck-suppress virtualCallInConstructor
 
 private:
 

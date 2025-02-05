@@ -104,7 +104,7 @@ public:
 /// QAbstractItemModel interface
 public:
 
-    int rowCount(const QModelIndex&)                                        const override;
+    int rowCount(const QModelIndex&)                                        const override;  // cppcheck-suppress virtualCallInConstructor
     int columnCount(const QModelIndex&)                                     const override;
 
     QVariant data(const QModelIndex& index, int role)                       const override;

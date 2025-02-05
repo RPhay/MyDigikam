@@ -54,7 +54,7 @@ private Q_SLOTS:
 
     void slotSaveAsSettings()   override;
     void slotLoadSettings()     override;
-    void slotResetSettings()    override;
+    void slotResetSettings()    override;             // cppcheck-suppress virtualCallInConstructor
     void slotValuesChanged();
     void slotUnitsChanged();
     void slotPresetsChanged();

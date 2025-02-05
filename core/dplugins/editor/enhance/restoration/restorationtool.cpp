@@ -162,7 +162,7 @@ RestorationTool::RestorationTool(QObject* const parent)
     // -------------------------------------------------------------
 
     connect(d->restorationTypeCB, SIGNAL(activated(int)),
-            this, SLOT(slotResetValues(int)));              // cppcheck-suppress virtualCallInConstructor
+            this, SLOT(slotResetValues(int)));
 
     // -------------------------------------------------------------
 
