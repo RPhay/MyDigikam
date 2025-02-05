@@ -263,7 +263,7 @@ void BackendGoogleMaps::setCenter(const GeoCoordinates& coordinate)
 {
     d->cacheCenter = coordinate;
 
-    if (isReady())
+    if (this->isReady())
     {
         QTimer::singleShot(0, this, SLOT(slotSetCenterTimer()));
     }
