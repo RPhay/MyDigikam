@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-04 01:52+0000\n"
-"PO-Revision-Date: 2025-01-31 11:17+0100\n"
+"POT-Creation-Date: 2025-02-05 01:55+0000\n"
+"PO-Revision-Date: 2025-02-04 22:45+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2912,7 +2912,7 @@ msgstr "Volledig scherm tonen"
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:487
-#: core/libs/album/manager/albummanager.cpp:178
+#: core/libs/album/manager/albummanager.cpp:179
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
@@ -3029,7 +3029,7 @@ msgstr "Geen album met tags"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:340
 #: core/libs/album/engine/album.cpp:554
-#: core/libs/album/manager/albummanager.cpp:181
+#: core/libs/album/manager/albummanager.cpp:182
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
@@ -4349,7 +4349,7 @@ msgstr "Eenheid"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:84
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:261
+#: core/libs/dtrash/dtrashitemmodel.cpp:260
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:673
 #, kde-format
 msgid "Thumbnail"
@@ -6031,26 +6031,26 @@ msgstr ""
 "afbeeldingen verminderen.</para>"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:54
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:119
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:121
 #: core/dplugins/editor/transform/resize/resizetool.cpp:397
 #, kde-format
 msgid "Visit CImg library website"
 msgstr "Bezoek de website van de CImg-bibliotheek"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:58
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:124
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:126
 #, kde-format
 msgid "Reduce Uniform Noise"
 msgstr "Uniforme ruis reduceren"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:59
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:125
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:127
 #, kde-format
 msgid "Reduce JPEG Artifacts"
 msgstr "JPEG-artefacten reduceren"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:126
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:128
 #, kde-format
 msgid "Reduce Texturing"
 msgstr "Texturing reduceren"
@@ -7678,7 +7678,7 @@ msgctxt "@title"
 msgid "Tagged Image Format"
 msgstr "Afbeeldingsformaat met tags"
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:253
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:248
 #, kde-format
 msgid "Adjust Curve"
 msgstr "Curve aanpassen"
@@ -9038,23 +9038,23 @@ msgstr ""
 "Dit filter kan worden gebruikt om de rode ogen in een foto te corrigeren. "
 "Selecteer het gebied met de ogen om deze actie te activeren."
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:115
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:117
 #, kde-format
 msgid "Preset"
 msgstr "Voorinstelling"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:121
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:123
 #, kde-format
 msgid "Filtering type:"
 msgstr "Filtertype:"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:127
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:129
 #, kde-format
 msgctxt "custom restoration settings"
 msgid "Custom"
 msgstr "Aangepast"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:128
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:130
 #, kde-format
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
@@ -9073,34 +9073,34 @@ msgstr ""
 "moirépatronen in ingescande afbeeldingen.<br/><b>Aangepast</b>: Zet "
 "instellingen op de meest algemene waarden, volledig aan te passen.<br/></p>"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:319
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:321
 #, kde-format
 msgid "Restoration"
 msgstr "Restaureren"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:324
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Load"
 msgstr "Bestand met restauratieinstellingen om te laden"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:340
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:342
 #, kde-format
 msgid "\"%1\" is not a Photograph Restoration settings text file."
 msgstr "\"%1\" is geen tekstbestand met restauratieinstellingen."
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:351
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:353
 #, kde-format
 msgid "Cannot load settings from the Photograph Restoration text file."
 msgstr "Het tekstbestand met restauratieinstellingen kon niet worden geladen."
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:363
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:365
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Save"
 msgstr "Bestand met restauratieinstellingen om op te slaan"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:381
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:383
 #, kde-format
 msgid "Cannot save settings to the Photograph Restoration text file."
 msgstr "Het bestand met restauratieinstellingen kon niet worden opgeslagen."
@@ -18184,22 +18184,22 @@ msgstr "Delen met DLNA..."
 msgid "%1 Media Server"
 msgstr "%1 Mediaserver"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:153
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:154
 #, kde-format
 msgid "Media Server have been started"
 msgstr "Mediaserver is gestart"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:154
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:155
 #, kde-format
 msgid "Media Server cannot be started!"
 msgstr "Mediaserver kan niet gestart worden!"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:170
+#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:171
 #, kde-format
 msgid "MJPEG Server have been started"
 msgstr "MJPEG-server is gestart"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:171
+#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:172
 #, kde-format
 msgid "MJPEG Server cannot be started!"
 msgstr "MJPEG-server kan niet gestart worden!"
@@ -27036,7 +27036,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Rawconversie UFRaw"
 
 #: core/libs/album/engine/album.cpp:412
-#: core/libs/database/utils/ifaces/dio.cpp:907
+#: core/libs/database/utils/ifaces/dio.cpp:908
 #, kde-format
 msgid "Trash"
 msgstr "Prullenbak"
@@ -27112,7 +27112,7 @@ msgstr "Nieuwe albumnaam invoeren:"
 msgid "Scanning albums"
 msgstr "Albums worden gescand"
 
-#: core/libs/album/manager/albummanager.cpp:184
+#: core/libs/album/manager/albummanager.cpp:185
 #: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:72
@@ -27628,7 +27628,7 @@ msgid "Context menu"
 msgstr "Contextmenu"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
-#: core/libs/database/utils/ifaces/dio.cpp:917
+#: core/libs/database/utils/ifaces/dio.cpp:918
 #, kde-format
 msgid "Empty Trash"
 msgstr "Prullenbak legen"
@@ -29050,13 +29050,13 @@ msgstr ""
 "niet. De huidige versie van het databaseschema kan niet worden geverifieerd. "
 "Probeer te beginnen met een lege database. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:348
+#: core/libs/database/utils/ifaces/dio.cpp:349
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Bestandsconflict"
 
-#: core/libs/database/utils/ifaces/dio.cpp:349
+#: core/libs/database/utils/ifaces/dio.cpp:350
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29078,62 +29078,62 @@ msgstr ""
 "worden.\n"
 "Automatisch overslaan: conflicterende bestanden zullen overgeslagen worden."
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:359
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Automatisch hernoemen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:361
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Automatisch overschrijven"
 
-#: core/libs/database/utils/ifaces/dio.cpp:362
+#: core/libs/database/utils/ifaces/dio.cpp:363
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Automatisch overslaan"
 
-#: core/libs/database/utils/ifaces/dio.cpp:871
+#: core/libs/database/utils/ifaces/dio.cpp:872
 #, kde-format
 msgid "Copy Album"
 msgstr "Album kopiëren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:876
+#: core/libs/database/utils/ifaces/dio.cpp:877
 #, kde-format
 msgid "Copy Images"
 msgstr "Afbeeldingen kopiëren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:882
+#: core/libs/database/utils/ifaces/dio.cpp:883
 #, kde-format
 msgid "Copy Files"
 msgstr "Bestanden kopiëren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:887
+#: core/libs/database/utils/ifaces/dio.cpp:888
 #, kde-format
 msgid "Move Album"
 msgstr "Album verplaatsen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:892
+#: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Move Images"
 msgstr "Afbeeldingen verplaatsen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:897
+#: core/libs/database/utils/ifaces/dio.cpp:898
 #, kde-format
 msgid "Move Files"
 msgstr "Bestanden verplaatsen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:902
+#: core/libs/database/utils/ifaces/dio.cpp:903
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:912
+#: core/libs/database/utils/ifaces/dio.cpp:913
 #, kde-format
 msgid "Restore Trash"
 msgstr "Prullenbak herstellen"
@@ -34141,12 +34141,12 @@ msgstr ""
 "Waarschuwing: ExifTool is niet beschikbaar om metagegevens na te bewerken. "
 "Zonder ExifTool zal DNG not alle RAW broneigenschappen meenemen."
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:341
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:342
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr "YOLOv11 Nano"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:343
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:344
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34155,13 +34155,18 @@ msgid ""
 "detect multiple objects in an image. It is trained to recognize 80 different "
 "objects using the COCO dataset.</p>"
 msgstr ""
+"<p><b>YOLOv11 Nano</b>: klein, lichtgewicht neuraal netwerk die "
+"uitzonderlijke snelheid biedt, maar identificeren van meer objecten in "
+"afbeeldingen kan missen. YOLO kan meerdere objecten in een afbeelding "
+"detecteren. Het is getraind om 80 verschillende objecten te detecteren met "
+"gebruik van de COCO-gegevensset.</p>"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:348
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr "YOLOv11 XLarge"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:350
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:351
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34170,13 +34175,18 @@ msgid ""
 "slower. YOLO can detect multiple objects in an image. It is trained to "
 "recognize 80 different objects using the COCO dataset.</p>"
 msgstr ""
+"<p><b>YOLOv11 XLarge</b>: groot, robuust neuraal netwerk die goede "
+"nauwkeurigheid biedt. Het zal meer objecten in afbeeldingen detecteren dan "
+"YOLOv11 Nano, maar is langzamer. YOLO kan meerdere objecten in een "
+"afbeelding detecteren. Het is getraind om 80 verschillende objecten te "
+"detecteren met gebruik van de COCO-gegevensset.</p>"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:355
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
 #, kde-format
 msgid "EfficientNet B7"
-msgstr ""
+msgstr "EfficientNet B7"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:357
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:358
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34185,6 +34195,10 @@ msgid ""
 "was trained to recognize 1,000 different objects using the ImageNet dataset."
 "</p>"
 msgstr ""
+"<p><b>EfficientNet B7</b>: groot en krachtig geconvolueerd neuraal netwerk. "
+"Het zal een enkel object in een afbeelding met hoge nauwkeurigheid "
+"detecteren. EfficientNet B7 was getraind om 1.000 verschillende objecten te "
+"herkennen met gebruik van de ImageNet gegevensset.</p>"
 
 #: core/libs/dplugins/core/dpluginaction.cpp:94
 #, kde-format
@@ -34966,12 +34980,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Help"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:266
+#: core/libs/dtrash/dtrashitemmodel.cpp:265
 #, kde-format
 msgid "Relative Path"
 msgstr "Relatieve pad"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:271
+#: core/libs/dtrash/dtrashitemmodel.cpp:270
 #, kde-format
 msgid "Deletion Time"
 msgstr "Tijd van verwijderen"
@@ -35024,61 +35038,61 @@ msgstr "Metagegevens worden naar bestanden geschreven"
 msgid "Revising Exif Orientation tags"
 msgstr "Exif-oriëntatietags worden herzien"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:80
+#: core/libs/fileactionmanager/fileactionmngr.cpp:81
 #, kde-format
 msgctxt "@label"
 msgid "Finishing tasks"
 msgstr "Bezig taken te beëindigen"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:130
+#: core/libs/fileactionmanager/fileactionmngr.cpp:131
 #, kde-format
 msgid "Assigning image tags"
 msgstr "Tags worden aan afbeeldingen gehangen"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:152
+#: core/libs/fileactionmanager/fileactionmngr.cpp:153
 #, kde-format
 msgid "Removing image tags"
 msgstr "Afbeeldingstags worden verwijderd"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:169
+#: core/libs/fileactionmanager/fileactionmngr.cpp:170
 #, kde-format
 msgid "Assigning image pick label"
 msgstr "Keuzelabels worden aan afbeeldingen gehangen"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:176
+#: core/libs/fileactionmanager/fileactionmngr.cpp:177
 #, kde-format
 msgid "Assigning image color label"
 msgstr "Kleurlabels worden aan afbeeldingen gehangen"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:188
+#: core/libs/fileactionmanager/fileactionmngr.cpp:189
 #, kde-format
 msgid "Assigning image ratings"
 msgstr "Waarderingen worden aan afbeeldingen gehangen"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:195
-#: core/libs/fileactionmanager/fileactionmngr.cpp:207
-#: core/libs/fileactionmanager/fileactionmngr.cpp:219
+#: core/libs/fileactionmanager/fileactionmngr.cpp:196
+#: core/libs/fileactionmanager/fileactionmngr.cpp:208
+#: core/libs/fileactionmanager/fileactionmngr.cpp:220
 #, kde-format
 msgid "Editing group"
 msgstr "Groep bewerken"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:226
+#: core/libs/fileactionmanager/fileactionmngr.cpp:227
 #, kde-format
 msgid "Updating orientation in database"
 msgstr "De oriëntatie in de database wordt bijgewerkt"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:244
-#: core/libs/fileactionmanager/fileactionmngr.cpp:262
+#: core/libs/fileactionmanager/fileactionmngr.cpp:245
+#: core/libs/fileactionmanager/fileactionmngr.cpp:263
 #, kde-format
 msgid "Applying metadata"
 msgstr "Metagegevens toepassen"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:269
+#: core/libs/fileactionmanager/fileactionmngr.cpp:270
 #, kde-format
 msgid "Rotating images"
 msgstr "Afbeeldingen worden gedraaid"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:285
+#: core/libs/fileactionmanager/fileactionmngr.cpp:286
 #, kde-format
 msgid "Copying attributes"
 msgstr "Attributen kopiëren"
@@ -35514,7 +35528,7 @@ msgstr ""
 "voeren in plaats van die uit de standaard."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:91
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:134
 #, kde-format
 msgctxt "@title:tab"
@@ -39739,17 +39753,17 @@ msgstr "Object wordt gescand: %1\n"
 msgid "Album: %1\n"
 msgstr "Album: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:255
+#: core/libs/tags/autoassignment/autotagsengine.cpp:256
 #, kde-format
 msgid "Found %1 object. Tag: %2"
 msgstr "%1 object gevonden. Tag: %2"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:259
+#: core/libs/tags/autoassignment/autotagsengine.cpp:260
 #, kde-format
 msgid "Found %1 objects. Tags: %2"
 msgstr "%1 objecten gevonden. Tags: %2"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:100
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:104
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -39768,23 +39782,23 @@ msgstr ""
 "neurale netwerk zal automatisch een beschrijvende tags genereren voor de "
 "inhoud van de afbeelding en de resultaten opslaan in de database.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, kde-format
 msgid "Auto-tagging mode: "
 msgstr "Modus voor automatisch toekennen van tags: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
 #, kde-format
 msgid "Scan all"
 msgstr "Alles scannen"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:114
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Alleen niet-toegewezen scannen"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:116
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39795,22 +39809,22 @@ msgstr ""
 "alleen niet toegekende</b>: alleen de items scannen zonder automatisch "
 "toegekende tags.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
 #, kde-format
 msgid "Auto-tagging tag mode: "
 msgstr "Modus voor automatisch toekennen van tags: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, kde-format
 msgid "Replace existing autotags"
 msgstr "Vervang bestaande automatisch toegekende tags"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:126
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
 #, kde-format
 msgid "Update autotags"
 msgstr "Automatisch toegekende tags bijwerken"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:128
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39823,23 +39837,22 @@ msgstr ""
 "p><p><b>Automatisch toegekende tags bijwerken</b>: voeg elke gevonden nieuwe "
 "automatisch toegekende tags toe aan de bestaande tags.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, kde-format
 msgid "Selection model: "
 msgstr "Selectiemodel: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:142
-#, fuzzy, kde-format
-#| msgid "No detail available"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:147
+#, kde-format
 msgid "No models available"
-msgstr "Geen details beschikbaar"
+msgstr "Geen modellen beschikbaar"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:155
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
 #, kde-format
 msgid "Object detection accuracy: "
 msgstr "Nauwkeurigheid van detectie van objecten: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39851,7 +39864,7 @@ msgstr ""
 "accuraat objecten herkent\n"
 "zullen worden, maar minder objecten zullen herkend worden.\n"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:165
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:170
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -39859,7 +39872,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Werk op alle processorkernen"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39871,20 +39884,20 @@ msgstr ""
 "U kunt kiezen of u alle processorkernen in uw systeem wilt\n"
 "gebruiken of alleen in de achtergrond wilt werken in één kern."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:178
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Instellingen"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:188
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Tags vertalen naar:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:185
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:190
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
@@ -67616,7 +67629,19 @@ msgstr ""
 "paden aanwezig en gescand:<ul><li>%1</li></ul>"
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "These settings determines the quality of an image and convert it into a "
+#| "score, stored in database as Pick Label property. This information can be "
+#| "evaluated by two ways: using four basic factors sabotaging the images "
+#| "(blur, noise, exposure, and compression), or using a deep learning neural "
+#| "network engine. The first one helps to determine whether images are "
+#| "distorted by the basic factors, however it demands some drawbacks as fine-"
+#| "tuning from the user’s side and it cannot work along the aesthetic image "
+#| "processing. The second one uses an IA approach based on %1 model to "
+#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
+#| "require hyper-parameter settings, and make this feature easier to use."
 msgctxt "@label"
 msgid ""
 "These settings determines the quality of an image and convert it into a "
@@ -67626,7 +67651,7 @@ msgid ""
 "engine. The first one helps to determine whether images are distorted by the "
 "basic factors, however it demands some drawbacks as fine-tuning from the "
 "user’s side and it cannot work along the aesthetic image processing. The "
-"second one uses an IA approach based on %1 model to predict the score. As "
+"second one uses an AI approach based on %1 model to predict the score. As "
 "deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
 "settings, and make this feature easier to use."
 msgstr ""

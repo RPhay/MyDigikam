@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-04 01:52+0000\n"
+"POT-Creation-Date: 2025-02-05 01:55+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2808,7 +2808,7 @@ msgstr "全屏显示"
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:487
-#: core/libs/album/manager/albummanager.cpp:178
+#: core/libs/album/manager/albummanager.cpp:179
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
@@ -2919,7 +2919,7 @@ msgstr "无标签相册"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:340
 #: core/libs/album/engine/album.cpp:554
-#: core/libs/album/manager/albummanager.cpp:181
+#: core/libs/album/manager/albummanager.cpp:182
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
@@ -4165,7 +4165,7 @@ msgstr "单位"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:84
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:261
+#: core/libs/dtrash/dtrashitemmodel.cpp:260
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:673
 #, kde-format
 msgid "Thumbnail"
@@ -5757,26 +5757,26 @@ msgid ""
 msgstr "<para>用于减轻图像中红眼现象的批处理工具。</para>"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:54
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:119
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:121
 #: core/dplugins/editor/transform/resize/resizetool.cpp:397
 #, kde-format
 msgid "Visit CImg library website"
 msgstr "访问 CIMG 程序库网站"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:58
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:124
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:126
 #, kde-format
 msgid "Reduce Uniform Noise"
 msgstr "减少均匀噪点"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:59
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:125
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:127
 #, kde-format
 msgid "Reduce JPEG Artifacts"
 msgstr "减少 JPEG 杂色"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:126
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:128
 #, kde-format
 msgid "Reduce Texturing"
 msgstr "减少纹理"
@@ -7301,7 +7301,7 @@ msgctxt "@title"
 msgid "Tagged Image Format"
 msgstr "标签图像文件格式 (TIFF)"
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:253
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:248
 #, kde-format
 msgid "Adjust Curve"
 msgstr "曲线调整"
@@ -8566,23 +8566,23 @@ msgstr ""
 "此滤镜用于消除照片中的红眼现象。请先在图像上选择包含红眼的区域，然后再打开此"
 "工具。"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:115
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:117
 #, kde-format
 msgid "Preset"
 msgstr "预设"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:121
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:123
 #, kde-format
 msgid "Filtering type:"
 msgstr "滤镜类型："
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:127
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:129
 #, kde-format
 msgctxt "custom restoration settings"
 msgid "Custom"
 msgstr "自定义"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:128
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:130
 #, kde-format
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
@@ -8598,34 +8598,34 @@ msgstr ""
 "缩特有的马赛克色斑。<br/><b>减少纹理</b>：减少扫描图像时引入的纸张纹理或者摩"
 "尔纹。<br/><b>自定义</b>：可调整所有选项，并默认设为最常用的值。</p>"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:319
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:321
 #, kde-format
 msgid "Restoration"
 msgstr "照片修复"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:324
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Load"
 msgstr "要加载的照片修复设置文件"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:340
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:342
 #, kde-format
 msgid "\"%1\" is not a Photograph Restoration settings text file."
 msgstr "“%1”不是一个照片修复设置文本文件。"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:351
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:353
 #, kde-format
 msgid "Cannot load settings from the Photograph Restoration text file."
 msgstr "无法加载照片修复设置文本文件。"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:363
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:365
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Save"
 msgstr "要保存的照片修复设置文件"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:381
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:383
 #, kde-format
 msgid "Cannot save settings to the Photograph Restoration text file."
 msgstr "无法保存照片修复设置文本文件。"
@@ -17334,22 +17334,22 @@ msgstr "共享到 DLNA..."
 msgid "%1 Media Server"
 msgstr "%1 媒体服务器"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:153
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:154
 #, kde-format
 msgid "Media Server have been started"
 msgstr "媒体服务器已经启动"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:154
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:155
 #, kde-format
 msgid "Media Server cannot be started!"
 msgstr "媒体服务器无法启动。"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:170
+#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:171
 #, kde-format
 msgid "MJPEG Server have been started"
 msgstr "MJPEG 服务器已启动"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:171
+#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:172
 #, kde-format
 msgid "MJPEG Server cannot be started!"
 msgstr "MJPEG 服务器无法启动。"
@@ -25881,7 +25881,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW 转换"
 
 #: core/libs/album/engine/album.cpp:412
-#: core/libs/database/utils/ifaces/dio.cpp:907
+#: core/libs/database/utils/ifaces/dio.cpp:908
 #, kde-format
 msgid "Trash"
 msgstr "回收站"
@@ -25956,7 +25956,7 @@ msgstr "输入新相册名称："
 msgid "Scanning albums"
 msgstr "正在扫描相册"
 
-#: core/libs/album/manager/albummanager.cpp:184
+#: core/libs/album/manager/albummanager.cpp:185
 #: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:72
@@ -26444,7 +26444,7 @@ msgid "Context menu"
 msgstr "右键菜单"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
-#: core/libs/database/utils/ifaces/dio.cpp:917
+#: core/libs/database/utils/ifaces/dio.cpp:918
 #, kde-format
 msgid "Empty Trash"
 msgstr "清空回收站"
@@ -27795,13 +27795,13 @@ msgstr ""
 "数据库无效：“DBSimilarityVersion”设置不存在。无法验证当前数据库纲目结构版本。"
 "请尝试新建一个空数据库以启动程序。"
 
-#: core/libs/database/utils/ifaces/dio.cpp:348
+#: core/libs/database/utils/ifaces/dio.cpp:349
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "文件冲突"
 
-#: core/libs/database/utils/ifaces/dio.cpp:349
+#: core/libs/database/utils/ifaces/dio.cpp:350
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -27822,62 +27822,62 @@ msgstr ""
 "自动覆盖：覆盖冲突文件。\n"
 "自动跳过：跳过冲突文件。"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:359
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "自动重命名"
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:361
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "自动覆盖"
 
-#: core/libs/database/utils/ifaces/dio.cpp:362
+#: core/libs/database/utils/ifaces/dio.cpp:363
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "自动跳过"
 
-#: core/libs/database/utils/ifaces/dio.cpp:871
+#: core/libs/database/utils/ifaces/dio.cpp:872
 #, kde-format
 msgid "Copy Album"
 msgstr "复制相册"
 
-#: core/libs/database/utils/ifaces/dio.cpp:876
+#: core/libs/database/utils/ifaces/dio.cpp:877
 #, kde-format
 msgid "Copy Images"
 msgstr "复制图像"
 
-#: core/libs/database/utils/ifaces/dio.cpp:882
+#: core/libs/database/utils/ifaces/dio.cpp:883
 #, kde-format
 msgid "Copy Files"
 msgstr "复制文件"
 
-#: core/libs/database/utils/ifaces/dio.cpp:887
+#: core/libs/database/utils/ifaces/dio.cpp:888
 #, kde-format
 msgid "Move Album"
 msgstr "移动相册"
 
-#: core/libs/database/utils/ifaces/dio.cpp:892
+#: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Move Images"
 msgstr "移动图像"
 
-#: core/libs/database/utils/ifaces/dio.cpp:897
+#: core/libs/database/utils/ifaces/dio.cpp:898
 #, kde-format
 msgid "Move Files"
 msgstr "移动文件"
 
-#: core/libs/database/utils/ifaces/dio.cpp:902
+#: core/libs/database/utils/ifaces/dio.cpp:903
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
 msgid "Delete"
 msgstr "删除"
 
-#: core/libs/database/utils/ifaces/dio.cpp:912
+#: core/libs/database/utils/ifaces/dio.cpp:913
 #, kde-format
 msgid "Restore Trash"
 msgstr "还原回收站"
@@ -32634,12 +32634,12 @@ msgstr ""
 "警告：ExifTool 当前不可用。digiKam 需要使用 ExifTool 管理后期处理元数据。没"
 "有 ExifTool，DNG 文件将不包含所有 RAW 来源属性。"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:341
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:342
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr "YOLOv11 Nano"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:343
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:344
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -32649,12 +32649,12 @@ msgid ""
 "objects using the COCO dataset.</p>"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:348
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr "YOLOv11 XLarge"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:350
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:351
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -32664,12 +32664,12 @@ msgid ""
 "recognize 80 different objects using the COCO dataset.</p>"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:355
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
 #, kde-format
 msgid "EfficientNet B7"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:357
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:358
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33445,12 +33445,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "帮助"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:266
+#: core/libs/dtrash/dtrashitemmodel.cpp:265
 #, kde-format
 msgid "Relative Path"
 msgstr "相对路径"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:271
+#: core/libs/dtrash/dtrashitemmodel.cpp:270
 #, kde-format
 msgid "Deletion Time"
 msgstr "删除时间"
@@ -33500,61 +33500,61 @@ msgstr "正在写入元数据到文件"
 msgid "Revising Exif Orientation tags"
 msgstr "正在修改 EXIF 方向标签"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:80
+#: core/libs/fileactionmanager/fileactionmngr.cpp:81
 #, kde-format
 msgctxt "@label"
 msgid "Finishing tasks"
 msgstr "正在完成任务"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:130
+#: core/libs/fileactionmanager/fileactionmngr.cpp:131
 #, kde-format
 msgid "Assigning image tags"
 msgstr "正在指定图像标签"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:152
+#: core/libs/fileactionmanager/fileactionmngr.cpp:153
 #, kde-format
 msgid "Removing image tags"
 msgstr "正在移除图像标签"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:169
+#: core/libs/fileactionmanager/fileactionmngr.cpp:170
 #, kde-format
 msgid "Assigning image pick label"
 msgstr "正在指定图像挑选标记"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:176
+#: core/libs/fileactionmanager/fileactionmngr.cpp:177
 #, kde-format
 msgid "Assigning image color label"
 msgstr "正在指定图像颜色标记"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:188
+#: core/libs/fileactionmanager/fileactionmngr.cpp:189
 #, kde-format
 msgid "Assigning image ratings"
 msgstr "正在指定图像评分"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:195
-#: core/libs/fileactionmanager/fileactionmngr.cpp:207
-#: core/libs/fileactionmanager/fileactionmngr.cpp:219
+#: core/libs/fileactionmanager/fileactionmngr.cpp:196
+#: core/libs/fileactionmanager/fileactionmngr.cpp:208
+#: core/libs/fileactionmanager/fileactionmngr.cpp:220
 #, kde-format
 msgid "Editing group"
 msgstr "正在编辑分组"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:226
+#: core/libs/fileactionmanager/fileactionmngr.cpp:227
 #, kde-format
 msgid "Updating orientation in database"
 msgstr "正在更新数据库的方向信息"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:244
-#: core/libs/fileactionmanager/fileactionmngr.cpp:262
+#: core/libs/fileactionmanager/fileactionmngr.cpp:245
+#: core/libs/fileactionmanager/fileactionmngr.cpp:263
 #, kde-format
 msgid "Applying metadata"
 msgstr "正在应用元数据"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:269
+#: core/libs/fileactionmanager/fileactionmngr.cpp:270
 #, kde-format
 msgid "Rotating images"
 msgstr "旋转图像"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:285
+#: core/libs/fileactionmanager/fileactionmngr.cpp:286
 #, kde-format
 msgid "Copying attributes"
 msgstr "正在复制属性"
@@ -33971,7 +33971,7 @@ msgid "Use custom parameters to perform quality sorting instead default one."
 msgstr "使用自定义品质分类参数来执行品质分类，而不是默认参数。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:91
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:134
 #, kde-format
 msgctxt "@title:tab"
@@ -38095,17 +38095,17 @@ msgstr "正在扫描对象：%1\n"
 msgid "Album: %1\n"
 msgstr "相册：%1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:255
+#: core/libs/tags/autoassignment/autotagsengine.cpp:256
 #, kde-format
 msgid "Found %1 object. Tag: %2"
 msgstr "找到 %1 个对象。标签：%2"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:259
+#: core/libs/tags/autoassignment/autotagsengine.cpp:260
 #, kde-format
 msgid "Found %1 objects. Tags: %2"
 msgstr "找到 %1 个对象。标签：%2"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:100
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:104
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -38121,23 +38121,23 @@ msgstr ""
 "以确定它包含的对象。选定的 AI 神经网络模型会在后台自动生成能够反映图像内容的"
 "标签，并将结果存储到数据库中。</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:108
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, kde-format
 msgid "Auto-tagging mode: "
 msgstr "自动标签模式："
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
 #, kde-format
 msgid "Scan all"
 msgstr "扫描全部"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:114
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #: core/utilities/maintenance/main/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "仅扫描未指定品质项目"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:116
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -38147,22 +38147,22 @@ msgstr ""
 "<p><b>扫描全部</b>：重新扫描所有项目并分配标签。</p><p><b>仅扫描无自动标签项"
 "目</b>：仅扫描没有自动分配标签的项目。</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
 #, kde-format
 msgid "Auto-tagging tag mode: "
 msgstr "自动分配标签模式："
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, kde-format
 msgid "Replace existing autotags"
 msgstr "替换已有自动标签"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:126
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
 #, kde-format
 msgid "Update autotags"
 msgstr "附加到已有自动标签"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:128
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -38174,23 +38174,23 @@ msgstr ""
 "标签。</p><p><b>附加到已有自动标签</b>：将扫描发现的新自动标签附加到已有的自"
 "动标签中。</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, kde-format
 msgid "Selection model: "
 msgstr "选择模型："
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:142
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:147
 #, fuzzy, kde-format
 #| msgid "No detail available"
 msgid "No models available"
 msgstr "没有可用的详情"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:155
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
 #, kde-format
 msgid "Object detection accuracy: "
 msgstr "对象检测精度："
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -38201,7 +38201,7 @@ msgstr ""
 "调整灵敏度与特异性：数值越高，检测到的对象越准确，但检测到的对象数量会减"
 "少。\n"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:165
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:170
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -38209,7 +38209,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "使用全部处理器核心"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:167
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -38221,20 +38221,20 @@ msgstr ""
 "您可以选择使用系统的所有处理器内核以提升速度，\n"
 "或者选择在后台使用单一处理器内核以减少卡顿。"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:178
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "设置"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:188
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "翻译标签到："
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:185
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:190
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
@@ -65012,7 +65012,19 @@ msgstr ""
 "<ul><li>%1</li></ul>"
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "These settings determines the quality of an image and convert it into a "
+#| "score, stored in database as Pick Label property. This information can be "
+#| "evaluated by two ways: using four basic factors sabotaging the images "
+#| "(blur, noise, exposure, and compression), or using a deep learning neural "
+#| "network engine. The first one helps to determine whether images are "
+#| "distorted by the basic factors, however it demands some drawbacks as fine-"
+#| "tuning from the user’s side and it cannot work along the aesthetic image "
+#| "processing. The second one uses an IA approach based on %1 model to "
+#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
+#| "require hyper-parameter settings, and make this feature easier to use."
 msgctxt "@label"
 msgid ""
 "These settings determines the quality of an image and convert it into a "
@@ -65022,7 +65034,7 @@ msgid ""
 "engine. The first one helps to determine whether images are distorted by the "
 "basic factors, however it demands some drawbacks as fine-tuning from the "
 "user’s side and it cannot work along the aesthetic image processing. The "
-"second one uses an IA approach based on %1 model to predict the score. As "
+"second one uses an AI approach based on %1 model to predict the score. As "
 "deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
 "settings, and make this feature easier to use."
 msgstr ""
