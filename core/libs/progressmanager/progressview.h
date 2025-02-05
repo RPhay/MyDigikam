@@ -117,7 +117,7 @@ public:
                           const QString& name = QString());
     ~ProgressView()                 override;
 
-    void setVisible(bool b)         override;       // cppcheck-suppress virtualCallInConstructor
+    void setVisible(bool b)         override;
 
 public Q_SLOTS:
 

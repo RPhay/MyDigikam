@@ -507,7 +507,7 @@ void ProgressView::slotTransactionThumbnail(ProgressItem* item, const QPixmap& t
 
 void ProgressView::slotShow()
 {
-    setVisible(true);
+    this->setVisible(true);
 }
 
 void ProgressView::slotHide()
