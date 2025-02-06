@@ -121,6 +121,7 @@ void FaceScanWidget::setupUi()
     scanOptionLayout->addWidget(d->helpButton,        1);
 
     optionLayout->addLayout(scanOptionLayout);
+    optionLayout->addStretch();
 
     d->alreadyScannedBox->setCurrentIndex(FaceScanSettings::Skip);
 
