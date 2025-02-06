@@ -135,7 +135,7 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
     QVBoxLayout* const autotagsLay = new QVBoxLayout(autotagsWdg);
 
     d->settingsWdg  = new AutotagsScanWidget(AutotagsScanWidget::SettingsDisplayMode::Normal, autotagsWdg);
-    d->rescanButton = new QPushButton;
+    d->rescanButton = new QPushButton(d->autotagsExpander);
     d->rescanButton->setText(i18n("Auto-tag Scan"));
     d->rescanButton->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
     d->rescanButton->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for objects to auto-tag"));
@@ -164,7 +164,7 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
             this, SIGNAL(signalFindDuplicates(QList<TAlbum*>)));
 
     connect(d->rescanButton, SIGNAL(pressed()),
-            this, SLOT(slotScanForAutotags()) );
+            this, SLOT(slotScanForAutotags()));
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
 
