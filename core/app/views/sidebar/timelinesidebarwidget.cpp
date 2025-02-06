@@ -65,6 +65,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString             configHistogramTimeUnitEntry  = QLatin1String("Histogram TimeUnit");
     const QString             configHistogramScaleEntry     = QLatin1String("Histogram Scale");
     const QString             configCursorPositionEntry     = QLatin1String("Cursor Position");
@@ -228,6 +230,7 @@ TimelineSideBarWidget::TimelineSideBarWidget(QWidget* const parent,
     vlay->addWidget(d->searchDateBar);
     vlay->setContentsMargins(0, 0, spacing, 0);
     vlay->setSpacing(0);
+    vlay->setStretchFactor(d->timeLineFolderView, 10);
 
     // ---------------------------------------------------------------
 
