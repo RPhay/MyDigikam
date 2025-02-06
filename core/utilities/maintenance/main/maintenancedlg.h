@@ -43,7 +43,6 @@ private Q_SLOTS:
     void slotItemToggled(int index, bool b);
     void slotUseLastSettings(bool checked);
     void slotMetadataSetup();
-    void slotQualitySetup();
     void slotOk();
     void slotHelp();
 

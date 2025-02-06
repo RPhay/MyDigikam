@@ -66,18 +66,7 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.autotagsObjectDetectAccuracy        = tagSettings.uiConfidenceThreshold;
 
     prm.qualitySort                         = d->expanderBox->isChecked(Private::ImageQualitySorter);
-    prm.qualitySettingsSelected             = (int)d->qualitySelector->settingsSelected();
-
-    if (prm.qualitySettingsSelected == ImageQualityConfSelector::GlobalSettings)
-    {
-        ImageQualitySettings imgq;
-        imgq.readFromConfig();
-        prm.quality                         = imgq;
-    }
-    else
-    {
-        prm.quality                         = d->qualitySelector->customSettings();
-    }
+    prm.quality                             = d->qualityWidget->settings();
 
     prm.metadataSync                        = d->expanderBox->isChecked(Private::MetadataSync);
     prm.syncDirection                       = d->syncDirection->itemData(d->syncDirection->currentIndex()).toInt();
@@ -139,12 +128,10 @@ void MaintenanceDlg::readSettings()
         d->expanderBox->setChecked(Private::AutotagsAssignment, group.readEntry(d->configAutotagsAssignment,    prm.autotagsAssignment));
 
         d->expanderBox->setChecked(Private::ImageQualitySorter, group.readEntry(d->configImageQualitySorter,    prm.qualitySort));
-        d->qualitySelector->setSettingsSelected(
-            (ImageQualityConfSelector::SettingsType)group.readEntry(d->configQualitySettingsSelected,           prm.qualitySettingsSelected));
 
         ImageQualitySettings imq;
         imq.readFromConfig(group);
-        d->qualitySelector->setCustomSettings(imq);
+        d->qualityWidget->setSettings(imq);
 
         d->expanderBox->setChecked(Private::MetadataSync,       group.readEntry(d->configMetadataSync,          prm.metadataSync));
         int direction    = d->syncDirection->findData(group.readEntry(d->configSyncDirection,                   prm.syncDirection));
@@ -189,9 +176,8 @@ void MaintenanceDlg::writeSettings()
         group.writeEntry(d->configFaceScannedHandling,          (int)prm.faceSettings.alreadyScannedHandling);
         group.writeEntry(d->configAutotagsAssignment,           prm.autotagsAssignment);
         group.writeEntry(d->configImageQualitySorter,           prm.qualitySort);
-        group.writeEntry(d->configQualitySettingsSelected,      prm.qualitySettingsSelected);
 
-        ImageQualitySettings imq = d->qualitySelector->customSettings();
+        ImageQualitySettings imq = d->qualityWidget->settings();
         imq.writeToConfig(group);
 
         group.writeEntry(d->configMetadataSync,               prm.metadataSync);

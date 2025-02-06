@@ -21,7 +21,6 @@
 
 // Local includes
 
-#include "imagequalityconfselector.h"
 #include "album.h"
 #include "facescansettings.h"
 #include "haariface.h"
@@ -96,7 +95,6 @@ public:
     int                                     autotagsTagMode              = AutotagsScanSettings::TagMode::Replace;
 
     /// model selection mode
-    // int                                     autotagsObjectDetectModel   = AutotagsScanSettings::ObjectDetectionModel::YOLOV11NANO;
     QString                                 autotagsObjectDetectModel    = QStringLiteral("yolov11-nano");
 
     /// Autotags languages
@@ -107,9 +105,6 @@ public:
 
     /// Perform Image Quality Sorting.
     bool                                    qualitySort                  = false;
-
-    /// Type of quality settings selected.
-    int                                     qualitySettingsSelected      = ImageQualityConfSelector::GlobalSettings;
 
     /// Image Quality Sorting Settings.
     ImageQualitySettings                    quality;

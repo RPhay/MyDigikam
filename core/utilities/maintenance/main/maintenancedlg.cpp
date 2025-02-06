@@ -246,7 +246,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     // --------------------------------------------------------------------------------------
 
     d->vbox               = new DVBox;
-    d->qualitySelector    = new ImageQualityConfSelector(d->vbox);
+    d->qualityWidget      = new ImageQualityWidget(ImageQualityWidget::Maintenance, d->vbox);
 
     d->expanderBox->insertItem(
                                Private::ImageQualitySorter,
@@ -323,9 +323,6 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     connect(d->metadataSetup, SIGNAL(clicked()),
             this, SLOT(slotMetadataSetup()));
-
-    connect(d->qualitySelector, SIGNAL(signalQualitySetup()),
-            this, SLOT(slotQualitySetup()));
 
     connect(d->retrainAllFaces, &QCheckBox::toggled,
             this, [hbox3](bool on)
@@ -437,11 +434,6 @@ void MaintenanceDlg::slotItemToggled(int index, bool b)
 void MaintenanceDlg::slotMetadataSetup()
 {
     Setup::execSinglePage(this, Setup::MetadataPage);
-}
-
-void MaintenanceDlg::slotQualitySetup()
-{
-    Setup::execSinglePage(this, Setup::ImageQualityPage);
 }
 
 void MaintenanceDlg::slotHelp()

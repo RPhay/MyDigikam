@@ -47,7 +47,7 @@
 #include "albumselectors.h"
 #include "facescansettings.h"
 #include "imagequalitysettings.h"
-#include "imagequalityconfselector.h"
+#include "imagequalitywidget.h"
 #include "metadatasynchronizer.h"
 #include "dxmlguiwindow.h"
 #include "applicationsettings.h"
@@ -127,7 +127,7 @@ public:
     QComboBox*                qualityScanMode           = nullptr;
     AutotagsScanWidget*       autotagsWidget            = nullptr;
     QPushButton*              metadataSetup             = nullptr;
-    ImageQualityConfSelector* qualitySelector           = nullptr;
+    ImageQualityWidget*       qualityWidget             = nullptr;
     QComboBox*                syncDirection             = nullptr;
     DHBox*                    similarityRangeBox        = nullptr;
     DHBox*                    dupeRestrictionBox        = nullptr;
