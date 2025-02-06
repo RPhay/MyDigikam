@@ -38,7 +38,7 @@
 #include "dinfointerface.h"
 #include "dmetadata.h"
 #include "dpluginbqm.h"
-#include "imagequalityconfselector.h"
+#include "imagequalitywidget.h"
 #include "imagequalitysettings.h"
 #include "imagequalityparser.h"
 #include "dlayoutbox.h"
@@ -56,10 +56,10 @@ public:
 
 public:
 
-    ImageQualityConfSelector* qualitySelector   = nullptr;
-    ImageQualityParser*       imgqsort          = nullptr;
+    ImageQualityWidget* qualityWidget  = nullptr;
+    ImageQualityParser* imgqsort       = nullptr;
 
-    bool                      changeSettings    = true;
+    bool                changeSettings = true;
 };
 
 QualitySort::QualitySort(QObject* const parent)
@@ -80,34 +80,15 @@ BatchTool* QualitySort::clone(QObject* const parent) const
 
 void QualitySort::registerSettingsWidget()
 {
-    DVBox* const vbox  = new DVBox;
-    d->qualitySelector = new ImageQualityConfSelector(vbox);
+    DVBox* const vbox = new DVBox;
+    d->qualityWidget  = new ImageQualityWidget(ImageQualityWidget::BQM, vbox);
 
-    m_settingsWidget   = vbox;
+    m_settingsWidget  = vbox;
 
-    connect(d->qualitySelector, SIGNAL(signalSettingsChanged()),
+    connect(d->qualityWidget, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
 
-    connect(d->qualitySelector, SIGNAL(signalQualitySetup()),
-            this, SLOT(slotQualitySetup()));
-
     BatchTool::registerSettingsWidget();
-}
-
-void QualitySort::slotQualitySetup()
-{
-    DInfoInterface* const iface = plugin()->infoIface();
-
-    if (iface)
-    {
-        if (d->qualitySelector)
-        {
-            connect(iface, SIGNAL(signalSetupChanged()),
-                    this, SLOT(slotSettingsChanged()));
-        }
-
-        iface->openSetupPage(DInfoInterface::ImageQualityPage);
-    }
 }
 
 BatchToolSettings QualitySort::defaultSettings()
@@ -115,7 +96,6 @@ BatchToolSettings QualitySort::defaultSettings()
     BatchToolSettings settings;
     ImageQualitySettings prm;
 
-    settings.insert(QLatin1String("SettingsSelected"),                  ImageQualityConfSelector::GlobalSettings);
     settings.insert(QLatin1String("CustomSettingsDetectBlur"),          prm.detectBlur);
     settings.insert(QLatin1String("CustomSettingsDetectNoise"),         prm.detectNoise);
     settings.insert(QLatin1String("CustomSettingsDetectCompression"),   prm.detectCompression);
@@ -141,9 +121,6 @@ void QualitySort::slotAssignSettings2Widget()
 
     ImageQualitySettings prm;
 
-    d->qualitySelector->setSettingsSelected((ImageQualityConfSelector::SettingsType)
-                                            settings().value(QLatin1String("SettingsSelected")).toInt());
-
     prm.detectBlur          = settings().value(QLatin1String("CustomSettingsDetectBlur")).toBool();
     prm.detectNoise         = settings().value(QLatin1String("CustomSettingsDetectNoise")).toBool();
     prm.detectCompression   = settings().value(QLatin1String("CustomSettingsDetectCompression")).toBool();
@@ -160,7 +137,7 @@ void QualitySort::slotAssignSettings2Widget()
     prm.compressionWeight   = settings().value(QLatin1String("CustomSettingsCompressionWeight")).toInt();
     prm.exposureWeight      = settings().value(QLatin1String("CustomSettingsExposureWeight")).toInt();
 
-    d->qualitySelector->setCustomSettings(prm);
+    d->qualityWidget->setSettings(prm);
 
     d->changeSettings = true;
 }
@@ -170,9 +147,8 @@ void QualitySort::slotSettingsChanged()
     if (d->changeSettings)
     {
         BatchToolSettings settings;
-        ImageQualitySettings prm = d->qualitySelector->customSettings();
+        ImageQualitySettings prm = d->qualityWidget->settings();
 
-        settings.insert(QLatin1String("SettingsSelected"),                  d->qualitySelector->settingsSelected());
         settings.insert(QLatin1String("CustomSettingsDetectBlur"),          prm.detectBlur);
         settings.insert(QLatin1String("CustomSettingsDetectNoise"),         prm.detectNoise);
         settings.insert(QLatin1String("CustomSettingsDetectCompression"),   prm.detectCompression);
@@ -216,32 +192,23 @@ bool QualitySort::toolOperations()
         dimg             = image().smoothScale(scaledSize.width(), scaledSize.height());
     }
 
-    ImageQualityConfSelector::SettingsType type = (ImageQualityConfSelector::SettingsType)
-                                                  settings().value(QLatin1String("SettingsSelected")).toInt();
     ImageQualitySettings prm;
 
-    if (type == ImageQualityConfSelector::GlobalSettings)
-    {
-        prm.readFromConfig();
-    }
-    else
-    {
-        prm.detectBlur          = settings().value(QLatin1String("CustomSettingsDetectBlur")).toBool();
-        prm.detectNoise         = settings().value(QLatin1String("CustomSettingsDetectNoise")).toBool();
-        prm.detectCompression   = settings().value(QLatin1String("CustomSettingsDetectCompression")).toBool();
-        prm.detectExposure      = settings().value(QLatin1String("CustomSettingsDetectExposure")).toBool();
-        prm.detectAesthetic     = settings().value(QLatin1String("CustomSettingsDetectAesthetic")).toBool();
-        prm.lowQRejected        = settings().value(QLatin1String("CustomSettingsLowQRejected")).toBool();
-        prm.mediumQPending      = settings().value(QLatin1String("CustomSettingsMediumQPending")).toBool();
-        prm.highQAccepted       = settings().value(QLatin1String("CustomSettingsHighQAccepted")).toBool();
-        prm.rejectedThreshold   = settings().value(QLatin1String("CustomSettingsRejectedThreshold")).toInt();
-        prm.pendingThreshold    = settings().value(QLatin1String("CustomSettingsPendingThreshold")).toInt();
-        prm.acceptedThreshold   = settings().value(QLatin1String("CustomSettingsAcceptedThreshold")).toInt();
-        prm.blurWeight          = settings().value(QLatin1String("CustomSettingsBlurWeight")).toInt();
-        prm.noiseWeight         = settings().value(QLatin1String("CustomSettingsNoiseWeight")).toInt();
-        prm.compressionWeight   = settings().value(QLatin1String("CustomSettingsCompressionWeight")).toInt();
-        prm.exposureWeight      = settings().value(QLatin1String("CustomSettingsExposureWeight")).toInt();
-    }
+    prm.detectBlur          = settings().value(QLatin1String("CustomSettingsDetectBlur")).toBool();
+    prm.detectNoise         = settings().value(QLatin1String("CustomSettingsDetectNoise")).toBool();
+    prm.detectCompression   = settings().value(QLatin1String("CustomSettingsDetectCompression")).toBool();
+    prm.detectExposure      = settings().value(QLatin1String("CustomSettingsDetectExposure")).toBool();
+    prm.detectAesthetic     = settings().value(QLatin1String("CustomSettingsDetectAesthetic")).toBool();
+    prm.lowQRejected        = settings().value(QLatin1String("CustomSettingsLowQRejected")).toBool();
+    prm.mediumQPending      = settings().value(QLatin1String("CustomSettingsMediumQPending")).toBool();
+    prm.highQAccepted       = settings().value(QLatin1String("CustomSettingsHighQAccepted")).toBool();
+    prm.rejectedThreshold   = settings().value(QLatin1String("CustomSettingsRejectedThreshold")).toInt();
+    prm.pendingThreshold    = settings().value(QLatin1String("CustomSettingsPendingThreshold")).toInt();
+    prm.acceptedThreshold   = settings().value(QLatin1String("CustomSettingsAcceptedThreshold")).toInt();
+    prm.blurWeight          = settings().value(QLatin1String("CustomSettingsBlurWeight")).toInt();
+    prm.noiseWeight         = settings().value(QLatin1String("CustomSettingsNoiseWeight")).toInt();
+    prm.compressionWeight   = settings().value(QLatin1String("CustomSettingsCompressionWeight")).toInt();
+    prm.exposureWeight      = settings().value(QLatin1String("CustomSettingsExposureWeight")).toInt();
 
     PickLabel pick;
     d->imgqsort = new ImageQualityParser(dimg, prm, &pick);
