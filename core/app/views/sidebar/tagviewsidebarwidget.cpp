@@ -127,7 +127,7 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
     d->tagSearchBar->setFilterModel(d->tagFolderView->albumFilterModel());
 
     d->autotagsExpander            = new DLabelExpander(this);
-    d->autotagsExpander->setText(i18n("Auto-tag scan"));
+    d->autotagsExpander->setText(i18n("Auto-tag Scan"));
     d->autotagsExpander->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
     d->autotagsExpander->setObjectName(QLatin1String("AutotagScanWidgetExpanded"));
 
@@ -136,7 +136,7 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
 
     d->settingsWdg  = new AutotagsScanWidget(AutotagsScanWidget::SettingsDisplayMode::Normal, autotagsWdg);
     d->rescanButton = new QPushButton;
-    d->rescanButton->setText(i18n("Auto-tag scan"));
+    d->rescanButton->setText(i18n("Auto-tag Scan"));
     d->rescanButton->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
     d->rescanButton->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for objects to auto-tag"));
 
