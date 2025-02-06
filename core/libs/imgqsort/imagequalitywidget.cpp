@@ -54,17 +54,31 @@ void ImageQualityWidget::setupUi()
 {
     const int spacing         = layoutSpacing();
 
-    // --- Album tab --------------------------------------------------------------------------------------
+    // --- Album tab ----------------------------------------------------------------
 
     d->albumSelectors         = new AlbumSelectors(QString(), d->configName,
                                                    this, AlbumSelectors::AlbumType::All, true);
     addTab(d->albumSelectors, i18nc("@title:tab", "Search in"));
 
-    // ---- Rules tab ---------------------------------------------------------------
+    // ---- Settings tab ------------------------------------------------------------
 
-    d->rulesWidget            = new QWidget(this);
+    d->settingsView           = new QWidget(this);
 
-    DHBox* const hlay1        = new DHBox(d->rulesWidget);
+    DHBox* const hlay0        = new DHBox(d->settingsView);
+    new QLabel(i18n("Scan Mode: "), hlay0);
+    QWidget* const space8     = new QWidget(hlay0);
+    hlay0->setStretchFactor(space8, 10);
+
+    d->scanMode               = new QComboBox(hlay0);
+    d->scanMode->addItem(i18n("All"),                ImageQualitySettings::ScanMode::AllItems);
+    d->scanMode->addItem(i18n("Non-Assigned Only"),  ImageQualitySettings::ScanMode::NonAssignedItems);
+    d->scanMode->setToolTip(i18nc("@info:tooltip",
+                                  "<p><b>All</b>: re-scan all items for tags.</p>"
+                                  "<p><b>Non-Assigned Only</b>: scan only the items with no assigned autotags.</p>"));
+
+    // ------------------------------------------------------------------------------
+
+    DHBox* const hlay1        = new DHBox(d->settingsView);
 
     d->setRejected            = new QCheckBox(i18nc("@option:check", "Assign 'Rejected' Label to Low Quality Pictures"), hlay1);
     d->setRejected->setToolTip(i18nc("@info:tooltip", "Low quality images detected by blur, noise, and compression analysis will be assigned to Rejected label."));
@@ -77,7 +91,7 @@ void ImageQualityWidget::setupUi()
 
     // ------------------------------------------------------------------------------
 
-    DHBox* const hlay2        = new DHBox(d->rulesWidget);
+    DHBox* const hlay2        = new DHBox(d->settingsView);
 
     d->setPending             = new QCheckBox(i18nc("@option:check", "Assign 'Pending' Label to Medium Quality Pictures"), hlay2);
     d->setPending->setToolTip(i18nc("@info:tooltip", "Medium quality images detected by blur, noise, and compression analysis will be assigned to Pending label."));
@@ -90,7 +104,7 @@ void ImageQualityWidget::setupUi()
 
     // ------------------------------------------------------------------------------
 
-    DHBox* const hlay3        = new DHBox(d->rulesWidget);
+    DHBox* const hlay3        = new DHBox(d->settingsView);
 
     d->setAccepted            = new QCheckBox(i18nc("@option:check", "Assign 'Accepted' Label to High Quality Pictures"), hlay3);
     d->setAccepted->setToolTip(i18nc("@info:tooltip", "High quality images detected by blur, noise, and compression analysis will be assigned to Accepted label."));
@@ -103,7 +117,7 @@ void ImageQualityWidget::setupUi()
 
     // ------------------------------------------------------------------------------
 
-    d->detectButtonGroup      = new QButtonGroup(d->rulesWidget);
+    d->detectButtonGroup      = new QButtonGroup(d->settingsView);
     d->detectButtonGroup->setExclusive(true);
 
     d->detectAesthetic        = new QRadioButton(i18nc("@option:radio", "Detect Aesthetic Image using Deep Learning"),
@@ -123,17 +137,18 @@ void ImageQualityWidget::setupUi()
 
     // ------------------------------------------------------------------------------
 
-    QGridLayout* const glay = new QGridLayout(d->rulesWidget);
-    glay->addWidget(hlay1,                 0, 1, 1, 1);
-    glay->addWidget(hlay2,                 1, 1, 1, 1);
-    glay->addWidget(hlay3,                 2, 1, 1, 1);
-    glay->addWidget(d->detectAesthetic,    3, 1, 1, 1);
-    glay->addWidget(d->detectBasicFactors, 4, 1, 1, 1);
+    QGridLayout* const glay = new QGridLayout(d->settingsView);
+    glay->addWidget(hlay0,                 0, 1, 1, 1);
+    glay->addWidget(hlay1,                 1, 1, 1, 1);
+    glay->addWidget(hlay2,                 2, 1, 1, 1);
+    glay->addWidget(hlay3,                 3, 1, 1, 1);
+    glay->addWidget(d->detectAesthetic,    4, 1, 1, 1);
+    glay->addWidget(d->detectBasicFactors, 5, 1, 1, 1);
     glay->setColumnStretch(1, 10);
-    glay->setRowStretch(5, 10);
+    glay->setRowStretch(6, 10);
     glay->setContentsMargins(2 * spacing, spacing, spacing, spacing);
 
-    addTab(d->rulesWidget, i18nc("@title:tab", "Rules"));
+    addTab(d->settingsView, i18nc("@title:tab", "Settings"));
 
     // --- Basic Factors tab --------------------------------------------------------
 
@@ -226,6 +241,9 @@ void ImageQualityWidget::setupUi()
 
     // ------------------------------------------------------------------------------
 
+    connect(d->scanMode, SIGNAL(currentIndexChanged(int)),
+            this, SIGNAL(signalSettingsChanged()));
+
     connect(d->detectBlur, SIGNAL(toggled(bool)),
             this, SIGNAL(signalSettingsChanged()));
 
@@ -297,6 +315,13 @@ void ImageQualityWidget::setupUi()
 
 #endif
 
+    if (SettingsDisplayMode::BQM == d->displayMode)
+    {
+        hlay0->hide();
+        this->setTabVisible(0, false);
+        this->setCurrentIndex(1);
+    }
+
     if (d->displayMode != SettingsDisplayMode::Normal)
     {
         setTabVisible(0, false);
@@ -334,6 +359,10 @@ void ImageQualityWidget::readSettings(const KConfigGroup& group)
 
 void ImageQualityWidget::setSettings(const ImageQualitySettings& imq)
 {
+    d->scanMode->setCurrentIndex(d->scanMode->findData(imq.scanMode));
+
+    // NOTE: Album settings are handled by AlbumSelector widget.
+
     d->detectBlur->setChecked(imq.detectBlur);
     d->detectNoise->setChecked(imq.detectNoise);
     d->detectCompression->setChecked(imq.detectCompression);
@@ -376,6 +405,11 @@ ImageQualitySettings ImageQualityWidget::settings() const
     {
         imq.albums      = d->albumSelectors->selectedAlbumsAndTags();
         imq.wholeAlbums = d->albumSelectors->wholeAlbumsChecked();
+    }
+
+    if (SettingsDisplayMode::BQM != d->displayMode)
+    {
+        imq.scanMode = (ImageQualitySettings::ScanMode)d->scanMode->itemData(d->scanMode->currentIndex()).toInt();
     }
 
     imq.detectBlur        = d->detectBlur->isChecked();

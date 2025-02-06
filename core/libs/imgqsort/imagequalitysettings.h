@@ -31,6 +31,20 @@ namespace Digikam
 
 class DIGIKAM_GUI_EXPORT ImageQualitySettings
 {
+    Q_GADGET
+
+public:
+
+    /**
+     * @brief Different possible mode processed while scanning operation.
+     */
+    enum ScanMode
+    {
+        AllItems = 0,        ///< Scan all items
+        NonAssignedItems     ///< Scan only items with no tags assigned.
+    };
+    Q_ENUM(ScanMode)
+
 public:
 
     ImageQualitySettings()  = default;
@@ -48,26 +62,28 @@ public:
 
 public:
 
-    bool      wholeAlbums       = true;     ///< Processing power.
-    AlbumList albums;                       ///< Albums to scan.
+    ScanMode  scanMode          = ScanMode::AllItems;   ///< Scanning mode. @note turn all items by default to prevent clearing whole Pick Labels from Collection.
 
-    bool      detectBlur        = true;     ///< Enable image blur detection.
-    bool      detectNoise       = true;     ///< Enable image noise detection.
-    bool      detectCompression = true;     ///< Enable image compression detection.
-    bool      detectExposure    = true;     ///< Enable image over and under exposure detection.
-    bool      detectAesthetic   = true;     ///< Enable image aesthetic detection.
+    bool      wholeAlbums       = true;                 ///< Processing power.
+    AlbumList albums;                                   ///< Albums to scan.
 
-    bool      lowQRejected      = true;     ///< Assign Rejected property to low quality.
-    bool      mediumQPending    = true;     ///< Assign Pending property to medium quality.
-    bool      highQAccepted     = true;     ///< Assign Accepted property to high quality.
+    bool      detectBlur        = true;                 ///< Enable image blur detection.
+    bool      detectNoise       = true;                 ///< Enable image noise detection.
+    bool      detectCompression = true;                 ///< Enable image compression detection.
+    bool      detectExposure    = true;                 ///< Enable image over and under exposure detection.
+    bool      detectAesthetic   = true;                 ///< Enable image aesthetic detection.
 
-    int       rejectedThreshold = 10;       ///< Item rejection threshold.
-    int       pendingThreshold  = 40;       ///< Item pending threshold.
-    int       acceptedThreshold = 60;       ///< Item accepted threshold.
-    int       blurWeight        = 100;      ///< Item blur level.
-    int       noiseWeight       = 100;      ///< Item noise level.
-    int       compressionWeight = 100;      ///< Item compression level.
-    int       exposureWeight    = 100;      ///< Item exposure level.
+    bool      lowQRejected      = true;                 ///< Assign Rejected property to low quality.
+    bool      mediumQPending    = true;                 ///< Assign Pending property to medium quality.
+    bool      highQAccepted     = true;                 ///< Assign Accepted property to high quality.
+
+    int       rejectedThreshold = 10;                   ///< Item rejection threshold.
+    int       pendingThreshold  = 40;                   ///< Item pending threshold.
+    int       acceptedThreshold = 60;                   ///< Item accepted threshold.
+    int       blurWeight        = 100;                  ///< Item blur level.
+    int       noiseWeight       = 100;                  ///< Item noise level.
+    int       compressionWeight = 100;                  ///< Item compression level.
+    int       exposureWeight    = 100;                  ///< Item exposure level.
 };
 
 //! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.

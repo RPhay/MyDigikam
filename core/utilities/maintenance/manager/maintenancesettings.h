@@ -43,61 +43,61 @@ public:
 
 public:
 
-    bool                                    wholeAlbums             = true;
-    bool                                    wholeTags               = true;
+    bool                                    wholeAlbums                  = true;
+    bool                                    wholeTags                    = true;
 
     AlbumList                               albums;
     AlbumList                               tags;
 
 
     /// Use Multi-core CPU to process items.
-    bool                                    useMutiCoreCPU          = false;
+    bool                                    useMutiCoreCPU               = false;
 
     /// Find new items on whole collection.
-    bool                                    newItems                = false;
+    bool                                    newItems                     = false;
 
     /// Generate thumbnails
-    bool                                    thumbnails              = false;
+    bool                                    thumbnails                   = false;
 
     /// Rebuild all thumbnails or only scan missing items.
-    bool                                    scanThumbs              = false;
+    bool                                    scanThumbs                   = false;
 
     /// Generate finger-prints
-    bool                                    fingerPrints            = false;
+    bool                                    fingerPrints                 = false;
 
     /// Rebuild all fingerprints or only scan missing items.
-    bool                                    scanFingerPrints        = false;
+    bool                                    scanFingerPrints             = false;
 
     /// Scan for new items
-    bool                                    duplicates              = false;
+    bool                                    duplicates                   = false;
 
     /// Minimal similarity between items to compare, in percents.
-    int                                     minSimilarity           = 90;
+    int                                     minSimilarity                = 90;
 
     /// Maximal similarity between items to compare, in percents.
-    int                                     maxSimilarity           = 100;
+    int                                     maxSimilarity                = 100;
 
     /// The type of restrictions to apply on duplicates search results.
-    HaarIface::DuplicatesSearchRestrictions duplicatesRestriction   = HaarIface::DuplicatesSearchRestrictions::None;
+    HaarIface::DuplicatesSearchRestrictions duplicatesRestriction        = HaarIface::DuplicatesSearchRestrictions::None;
 
     /// Scan for faces.
-    bool                                    faceManagement          = false;
+    bool                                    faceManagement               = false;
 
     /// Face detection settings.
     FaceScanSettings                        faceSettings;
 
     /// Autotags assignment.
-    bool                                    autotagsAssignment          = false;
+    bool                                    autotagsAssignment           = false;
 
     /// autotagging scan mode
-    int                                     autotagsScanMode            = AutotagsScanSettings::ScanMode::AllItems;
+    int                                     autotagsScanMode             = AutotagsScanSettings::ScanMode::AllItems;
 
     /// autotagging tag mode
-    int                                     autotagsTagMode             = AutotagsScanSettings::TagMode::Replace;
+    int                                     autotagsTagMode              = AutotagsScanSettings::TagMode::Replace;
 
     /// model selection mode
     // int                                     autotagsObjectDetectModel   = AutotagsScanSettings::ObjectDetectionModel::YOLOV11NANO;
-    QString                                 autotagsObjectDetectModel   = QStringLiteral("yolov11-nano");
+    QString                                 autotagsObjectDetectModel    = QStringLiteral("yolov11-nano");
 
     /// Autotags languages
     QStringList                             autotagsLanguages;
@@ -106,30 +106,26 @@ public:
     int                                     autotagsObjectDetectAccuracy = 7;
 
     /// Perform Image Quality Sorting.
-    bool                                    qualitySort             = false;
-
-    /// Mode to assign Pick Labels to items.
-    /// @note turn all items by default to prevent clearing whole Pick Labels from Collection
-    int                                     qualityScanMode         = ImageQualitySorter::AllItems;
+    bool                                    qualitySort                  = false;
 
     /// Type of quality settings selected.
-    int                                     qualitySettingsSelected = ImageQualityConfSelector::GlobalSettings;
+    int                                     qualitySettingsSelected      = ImageQualityConfSelector::GlobalSettings;
 
     /// Image Quality Sorting Settings.
-    ImageQualitySettings                   quality;
+    ImageQualitySettings                    quality;
 
     /// Sync metadata and DB.
-    bool                                    metadataSync            = false;
+    bool                                    metadataSync                 = false;
 
     /// Sync direction (image metadata <-> DB).
-    int                                     syncDirection           = MetadataSynchronizer::WriteFromDatabaseToFile;
+    int                                     syncDirection                = MetadataSynchronizer::WriteFromDatabaseToFile;
 
     /// Perform database cleanup
-    bool                                    databaseCleanup         = false;
-    bool                                    cleanThumbDb            = false;
-    bool                                    cleanFacesDb            = false;
-    bool                                    cleanSimilarityDb       = false;
-    bool                                    shrinkDatabases         = false;
+    bool                                    databaseCleanup              = false;
+    bool                                    cleanThumbDb                 = false;
+    bool                                    cleanFacesDb                 = false;
+    bool                                    cleanSimilarityDb            = false;
+    bool                                    shrinkDatabases              = false;
 };
 
 //! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.

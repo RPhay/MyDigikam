@@ -66,7 +66,6 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.autotagsObjectDetectAccuracy        = tagSettings.uiConfidenceThreshold;
 
     prm.qualitySort                         = d->expanderBox->isChecked(Private::ImageQualitySorter);
-    prm.qualityScanMode                     = d->qualityScanMode->itemData(d->qualityScanMode->currentIndex()).toInt();
     prm.qualitySettingsSelected             = (int)d->qualitySelector->settingsSelected();
 
     if (prm.qualitySettingsSelected == ImageQualityConfSelector::GlobalSettings)
@@ -140,8 +139,6 @@ void MaintenanceDlg::readSettings()
         d->expanderBox->setChecked(Private::AutotagsAssignment, group.readEntry(d->configAutotagsAssignment,    prm.autotagsAssignment));
 
         d->expanderBox->setChecked(Private::ImageQualitySorter, group.readEntry(d->configImageQualitySorter,    prm.qualitySort));
-        int qualityMod   = d->qualityScanMode->findData(group.readEntry(d->configQualityScanMode,               prm.qualityScanMode));
-        d->qualityScanMode->setCurrentIndex(qualityMod);
         d->qualitySelector->setSettingsSelected(
             (ImageQualityConfSelector::SettingsType)group.readEntry(d->configQualitySettingsSelected,           prm.qualitySettingsSelected));
 
@@ -192,7 +189,6 @@ void MaintenanceDlg::writeSettings()
         group.writeEntry(d->configFaceScannedHandling,          (int)prm.faceSettings.alreadyScannedHandling);
         group.writeEntry(d->configAutotagsAssignment,           prm.autotagsAssignment);
         group.writeEntry(d->configImageQualitySorter,           prm.qualitySort);
-        group.writeEntry(d->configQualityScanMode,              prm.qualityScanMode);
         group.writeEntry(d->configQualitySettingsSelected,      prm.qualitySettingsSelected);
 
         ImageQualitySettings imq = d->qualitySelector->customSettings();
@@ -243,14 +239,9 @@ void MaintenanceDlg::slotUseLastSettings(bool checked)
         d->expanderBox->setChecked(Private::FaceManagement,     prm.faceManagement);
         d->faceScannedHandling->setCurrentIndex(prm.faceSettings.alreadyScannedHandling);
 
-        // d->expanderBox->setChecked(Private::AutotagsAssignment, prm.autotagsAssignment);
-        // d->autotagsScanMode->setCurrentIndex(prm.autotagsScanMode);
-
-        // d->expanderBox->setChecked(Private::AutotagsAssignment, prm.autotagsAssignment);
-        // d->autotagsTagMode->setCurrentIndex(prm.autotagsTagMode);
+        d->expanderBox->setChecked(Private::AutotagsAssignment, prm.autotagsAssignment);
 
         d->expanderBox->setChecked(Private::ImageQualitySorter, prm.qualitySort);
-        d->qualityScanMode->setCurrentIndex(prm.qualityScanMode);
 
         d->expanderBox->setChecked(Private::MetadataSync,       prm.metadataSync);
         d->syncDirection->setCurrentIndex(prm.syncDirection);

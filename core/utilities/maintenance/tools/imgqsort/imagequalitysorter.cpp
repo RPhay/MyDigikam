@@ -48,26 +48,18 @@ public:
 
 public:
 
-    QualityScanMode       mode      = ImageQualitySorter::NonAssignedItems;
-
-    ImageQualitySettings quality;
+    ImageQualitySettings  quality;
 
     QStringList           allPicturesPath;
-
-    AlbumList             albumList;
 
     MaintenanceThread*    thread    = nullptr;
 };
 
-ImageQualitySorter::ImageQualitySorter(QualityScanMode mode,
-                                       const AlbumList& list,
-                                       const ImageQualitySettings& quality,
+ImageQualitySorter::ImageQualitySorter(const ImageQualitySettings& quality,
                                        ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("ImageQualitySorter"), parent),
       d              (new Private)
 {
-    d->mode       = mode;
-    d->albumList  = list;
     d->quality    = quality;
     d->thread     = new MaintenanceThread(this);
 
@@ -103,9 +95,9 @@ void ImageQualitySorter::slotStart()
 
     ProgressManager::addProgressItem(this);
 
-    if (d->albumList.isEmpty())
+    if (d->quality.albums.isEmpty())
     {
-        d->albumList = AlbumManager::instance()->allPAlbums();
+        d->quality.albums = AlbumManager::instance()->allPAlbums();
     }
 
     // Get all item in DB which do not have any Pick Label assigned.
@@ -114,8 +106,8 @@ void ImageQualitySorter::slotStart()
 
     // Get all digiKam albums collection pictures path, depending of d->rebuildAll flag.
 
-    for (AlbumList::ConstIterator it = d->albumList.constBegin() ;
-         !canceled() && (it != d->albumList.constEnd()) ; ++it)
+    for (AlbumList::ConstIterator it = d->quality.albums.constBegin() ;
+         !canceled() && (it != d->quality.albums.constEnd()) ; ++it)
     {
         QStringList aPaths;
 
@@ -144,7 +136,7 @@ void ImageQualitySorter::slotStart()
             }
         }
 
-        if (d->mode == NonAssignedItems)
+        if (d->quality.scanMode == ImageQualitySettings::NonAssignedItems)
         {
             for (const QString& path : std::as_const(aPaths))
             {

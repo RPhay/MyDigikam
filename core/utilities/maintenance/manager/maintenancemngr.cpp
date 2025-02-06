@@ -335,11 +335,8 @@ void MaintenanceMngr::stage7()
 
     if (d->settings.autotagsAssignment)
     {
-        AlbumList list;
-        list << d->settings.albums;
-        list << d->settings.tags;
-
         // new autotags engine
+
         AutotagsScanSettings autotagSettings;
 
         autotagSettings.albums << d->settings.albums;
@@ -369,12 +366,14 @@ void MaintenanceMngr::stage8()
 
     if (d->settings.qualitySort)
     {
-        AlbumList list;
-        list << d->settings.albums;
-        list << d->settings.tags;
+        // new image quality engine
 
-        d->imageQualitySorter = new ImageQualitySorter((ImageQualitySorter::QualityScanMode)d->settings.qualityScanMode,
-                                                       list, d->settings.quality);
+        ImageQualitySettings imgqsortSettings = d->settings.quality;
+
+        imgqsortSettings.albums << d->settings.albums;
+        imgqsortSettings.albums << d->settings.tags;
+
+        d->imageQualitySorter = new ImageQualitySorter(imgqsortSettings);
         d->imageQualitySorter->setNotificationEnabled(false);
         d->imageQualitySorter->setUseMultiCoreCPU(d->settings.useMutiCoreCPU);
         d->imageQualitySorter->start();

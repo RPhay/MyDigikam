@@ -24,6 +24,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QIcon>
+#include <QPushButton>
 
 // KDE includes
 
@@ -36,18 +37,27 @@
 #include "digikam_debug.h"
 #include "albummanager.h"
 #include "applicationsettings.h"
+#include "dexpanderbox.h"
+#include "imagequalitywidget.h"
+#include "imagequalitysorter.h"
 
 namespace Digikam
 {
 
 class Q_DECL_HIDDEN LabelsSideBarWidget::Private
 {
-
 public:
 
     Private() = default;
 
-    LabelsTreeView* labelsTree = nullptr;
+public:
+
+    ImageQualityWidget* settingsWdg  = nullptr;
+    QPushButton*        rescanButton = nullptr;
+
+    DLabelExpander*     scanExpander = nullptr;
+
+    LabelsTreeView*     labelsTree   = nullptr;
 };
 
 LabelsSideBarWidget::LabelsSideBarWidget(QWidget* const parent)
@@ -57,15 +67,42 @@ LabelsSideBarWidget::LabelsSideBarWidget(QWidget* const parent)
     setObjectName(QLatin1String("Labels Sidebar"));
     setProperty("Shortcut", QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_F3));
 
-    const int spacing         = layoutSpacing();
+    const int spacing              = layoutSpacing();
+    QVBoxLayout* const layout      = new QVBoxLayout(this);
 
-    QVBoxLayout* const layout = new QVBoxLayout(this);
-
-    d->labelsTree = new LabelsTreeView(this);
+    d->labelsTree                  = new LabelsTreeView(this);
     d->labelsTree->setConfigGroup(getConfigGroup());
 
-    layout->addWidget(d->labelsTree);
-    layout->setContentsMargins(0, 0, spacing, 0);
+
+    d->scanExpander                = new DLabelExpander(this);
+    d->scanExpander->setText(i18n("Image Quality Scan"));
+    d->scanExpander->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
+    d->scanExpander->setObjectName(QLatin1String("ImageQualityScanWidgetExpanded"));
+
+    QWidget* const imgqsortWdg     = new QWidget(d->scanExpander);
+    QVBoxLayout* const imgqsortLay = new QVBoxLayout(imgqsortWdg);
+
+    d->settingsWdg  = new ImageQualityWidget(ImageQualityWidget::SettingsDisplayMode::Normal, imgqsortWdg);
+    d->rescanButton = new QPushButton(d->scanExpander);
+    d->rescanButton->setText(i18n("Image Quality Scan"));
+    d->rescanButton->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
+    d->rescanButton->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for image quality parsing"));
+
+    imgqsortLay->addWidget(d->settingsWdg);
+    imgqsortLay->addWidget(d->rescanButton);
+    imgqsortLay->setContentsMargins(0, spacing, 0, 0);
+
+    d->scanExpander->setLineVisible(true);
+    d->scanExpander->setWidget(imgqsortWdg);
+    d->scanExpander->setExpandByDefault(true);
+    d->scanExpander->layout()->setContentsMargins(0, 0, 0, spacing);
+
+    layout->addWidget(d->labelsTree, 10);
+    layout->addWidget(d->scanExpander);
+    layout->setContentsMargins(0, spacing, spacing, 0);
+
+    connect(d->rescanButton, SIGNAL(pressed()),
+            this, SLOT(slotScanForImageQuality()));
 }
 
 LabelsSideBarWidget::~LabelsSideBarWidget()
@@ -118,6 +155,36 @@ const QString LabelsSideBarWidget::getCaption()
 QHash<LabelsTreeView::Labels, QList<int> > LabelsSideBarWidget::selectedLabels()
 {
     return d->labelsTree->selectedLabels();
+}
+
+void LabelsSideBarWidget::slotScanForImageQuality()
+{
+    ImageQualitySettings imgqsortSettings = d->settingsWdg->settings();
+    doImageQualityScan(imgqsortSettings);
+}
+
+void LabelsSideBarWidget::slotScanComplete()
+{
+    d->settingsWdg->setEnabled(true);
+    d->rescanButton->setEnabled(true);
+}
+
+void LabelsSideBarWidget::doImageQualityScan(const ImageQualitySettings& imgqsortSettings)
+{
+    ImageQualitySorter* const imgqsortDetector = new ImageQualitySorter(imgqsortSettings);
+    imgqsortDetector->start();
+
+    connect(imgqsortDetector, SIGNAL(signalComplete()),
+            this, SLOT(slotScanComplete()));
+
+    connect(imgqsortDetector, SIGNAL(signalCanceled()),
+            this, SLOT(slotScanComplete()));
+
+    connect(imgqsortDetector, SIGNAL(signalScanNotification(QString,int)),
+            this, SIGNAL(signalNotificationError(QString,int)));
+
+    d->settingsWdg->setEnabled(false);
+    d->rescanButton->setEnabled(false);
 }
 
 } // namespace Digikam

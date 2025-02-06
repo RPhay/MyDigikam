@@ -246,15 +246,6 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     // --------------------------------------------------------------------------------------
 
     d->vbox               = new DVBox;
-    DHBox* const hbox11   = new DHBox(d->vbox);
-    new QLabel(i18n("Scan Mode: "), hbox11);
-    QWidget* const space7 = new QWidget(hbox11);
-    hbox11->setStretchFactor(space7, 10);
-
-    d->qualityScanMode    = new QComboBox(hbox11);
-    d->qualityScanMode->addItem(i18n("Clean all and re-scan"),  ImageQualitySorter::AllItems);
-    d->qualityScanMode->addItem(i18n("Scan non-assigned only"), ImageQualitySorter::NonAssignedItems);
-
     d->qualitySelector    = new ImageQualityConfSelector(d->vbox);
 
     d->expanderBox->insertItem(

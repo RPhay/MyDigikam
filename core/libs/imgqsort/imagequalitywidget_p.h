@@ -31,6 +31,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QPushButton>
+#include <QComboBox>
 
 // KDE includes
 
@@ -69,8 +70,10 @@ public:
 
     AlbumSelectors*                           albumSelectors        = nullptr;
 
-    QWidget*                                  rulesWidget           = nullptr;
+    QWidget*                                  settingsView          = nullptr;
     QWidget*                                  basicView             = nullptr;
+
+    QComboBox*                                scanMode              = nullptr;
 
     QCheckBox*                                detectBlur            = nullptr;
     QCheckBox*                                detectNoise           = nullptr;

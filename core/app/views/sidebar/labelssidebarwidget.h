@@ -22,6 +22,7 @@
 #include "album.h"
 #include "sidebarwidget.h"
 #include "labelstreeview.h"
+#include "imagequalitysettings.h"
 
 namespace Digikam
 {
@@ -46,6 +47,15 @@ public:
     const QString getCaption()                                       override;
 
     QHash<LabelsTreeView::Labels, QList<int> > selectedLabels();
+
+private:
+
+    void doImageQualityScan(const ImageQualitySettings& imgqsortSettings);
+
+private Q_SLOTS:
+
+    void slotScanForImageQuality();
+    void slotScanComplete();
 
 private:
 

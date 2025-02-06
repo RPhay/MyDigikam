@@ -24,7 +24,8 @@ namespace Digikam
 {
 
 ImageQualitySettings::ImageQualitySettings(const ImageQualitySettings& other)
-    : wholeAlbums       (other.wholeAlbums),
+    : scanMode          (other.scanMode),
+      wholeAlbums       (other.wholeAlbums),
       albums            (other.albums),
       detectBlur        (other.detectBlur),
       detectNoise       (other.detectNoise),
@@ -46,6 +47,7 @@ ImageQualitySettings::ImageQualitySettings(const ImageQualitySettings& other)
 
 ImageQualitySettings& ImageQualitySettings::operator=(const ImageQualitySettings& other)
 {
+    scanMode           = other.scanMode;
     wholeAlbums        = other.wholeAlbums;
     albums             = other.albums;
     detectBlur         = other.detectBlur;
@@ -76,21 +78,25 @@ void ImageQualitySettings::readFromConfig()
 
 void ImageQualitySettings::readFromConfig(const KConfigGroup& group)
 {
-    detectBlur                = group.readEntry("Detect Blur",        true);
-    detectNoise               = group.readEntry("Detect Noise",       true);
-    detectCompression         = group.readEntry("Detect Compression", true);
-    detectExposure            = group.readEntry("Detect Exposure",    true);
-    detectAesthetic           = group.readEntry("Detect Aesthetic",   true);
-    lowQRejected              = group.readEntry("LowQ Rejected",      true);
-    mediumQPending            = group.readEntry("MediumQ Pending",    true);
-    highQAccepted             = group.readEntry("HighQ Accepted",     true);
-    rejectedThreshold         = group.readEntry("Rejected Threshold", 10);
-    pendingThreshold          = group.readEntry("Pending Threshold",  40);
-    acceptedThreshold         = group.readEntry("Accepted Threshold", 60);
-    blurWeight                = group.readEntry("Blur Weight",        100);
-    noiseWeight               = group.readEntry("Noise Weight",       100);
-    compressionWeight         = group.readEntry("Compression Weight", 100);
-    exposureWeight            = group.readEntry("Exposure Weight",    100);
+    scanMode                  = (ScanMode)group.readEntry("Scan Mode", (int)ScanMode::AllItems);
+
+    // NOTE: Album settings are handled by AlbumSelector widget.
+
+    detectBlur                = group.readEntry("Detect Blur",         true);
+    detectNoise               = group.readEntry("Detect Noise",        true);
+    detectCompression         = group.readEntry("Detect Compression",  true);
+    detectExposure            = group.readEntry("Detect Exposure",     true);
+    detectAesthetic           = group.readEntry("Detect Aesthetic",    true);
+    lowQRejected              = group.readEntry("LowQ Rejected",       true);
+    mediumQPending            = group.readEntry("MediumQ Pending",     true);
+    highQAccepted             = group.readEntry("HighQ Accepted",      true);
+    rejectedThreshold         = group.readEntry("Rejected Threshold",  10);
+    pendingThreshold          = group.readEntry("Pending Threshold",   40);
+    acceptedThreshold         = group.readEntry("Accepted Threshold",  60);
+    blurWeight                = group.readEntry("Blur Weight",         100);
+    noiseWeight               = group.readEntry("Noise Weight",        100);
+    compressionWeight         = group.readEntry("Compression Weight",  100);
+    exposureWeight            = group.readEntry("Exposure Weight",     100);
 }
 
 void ImageQualitySettings::writeToConfig()
@@ -102,6 +108,10 @@ void ImageQualitySettings::writeToConfig()
 
 void ImageQualitySettings::writeToConfig(KConfigGroup& group)
 {
+    group.writeEntry("Scan Mode",           (int)scanMode);
+
+    // NOTE: Album settings are handled by AlbumSelector widget.
+
     group.writeEntry("Detect Blur",         detectBlur);
     group.writeEntry("Detect Noise",        detectNoise);
     group.writeEntry("Detect Compression",  detectCompression);
@@ -122,6 +132,7 @@ void ImageQualitySettings::writeToConfig(KConfigGroup& group)
 QDebug operator<<(QDebug dbg, const ImageQualitySettings& s)
 {
     dbg.nospace()                                                   << Qt::endl;
+    dbg.nospace() << "Scan Mode          :" << s.scanMode           << Qt::endl;
     dbg.nospace() << "Whole Albums       :" << s.wholeAlbums        << Qt::endl;
     dbg.nospace() << "Albums             :" << s.albums             << Qt::endl;
     dbg.nospace() << "DetectBlur         :" << s.detectBlur         << Qt::endl;

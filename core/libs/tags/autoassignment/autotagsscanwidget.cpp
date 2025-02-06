@@ -109,31 +109,31 @@ void AutotagsScanWidget::setupUi()
     title->setWordWrap(true);
 
     DHBox* const hbox12         = new DHBox(d->settingsTab);
-    new QLabel (i18n("Auto-tagging mode: "), hbox12);
+    new QLabel(i18n("Scan Mode: "), hbox12);
     QWidget* const space8       = new QWidget(hbox12);
     hbox12->setStretchFactor(space8, 10);
 
     d->scanMode                 = new QComboBox(hbox12);
-    d->scanMode->addItem(i18n("Scan all"), AutotagsScanSettings::ScanMode::AllItems);
-    d->scanMode->addItem(i18n("Scan non-assigned only"),  AutotagsScanSettings::ScanMode::NonAssignedItems);
+    d->scanMode->addItem(i18n("All"),               AutotagsScanSettings::ScanMode::AllItems);
+    d->scanMode->addItem(i18n("Non-Assigned Only"), AutotagsScanSettings::ScanMode::NonAssignedItems);
     d->scanMode->setToolTip(i18nc("@info:tooltip",
-        "<p><b>Scan all</b>: re-scan all items for tags.</p>"
-        "<p><b>Scan non-assigned only</b>: scan only the items with no assigned autotags.</p>"));
+                                  "<p><b>All</b>: re-scan all items for tags.</p>"
+                                  "<p><b>Non-Assigned Only</b>: scan only the items with no assigned autotags.</p>"));
 
     DHBox* const hbox15         = new DHBox(d->settingsTab);
-    new QLabel (i18n("Auto-tagging tag mode: "), hbox15);
+    new QLabel (i18n("Auto-Tagging Tag Mode: "), hbox15);
     QWidget* const space15      = new QWidget(hbox15);
     hbox15->setStretchFactor(space15, 10);
 
     d->tagMode                  = new QComboBox(hbox15);
-    d->tagMode->addItem(i18n("Replace existing autotags"), AutotagsScanSettings::TagMode::Replace);
-    d->tagMode->addItem(i18n("Update autotags"),  AutotagsScanSettings::TagMode::Update);
+    d->tagMode->addItem(i18n("Replace Existing Autotags"), AutotagsScanSettings::TagMode::Replace);
+    d->tagMode->addItem(i18n("Update Autotags"),  AutotagsScanSettings::TagMode::Update);
     d->tagMode->setToolTip(i18nc("@info:tooltip",
-        "<p><b>Replace existing autotags</b>: clear existing autotags and replace with the results of the scan.</p>"
-        "<p><b>Update autotags</b>: add any new autotags found to the existing tags.</p>"));
+                                 "<p><b>Replace Existing Autotags</b>: clear existing autotags and replace with the results of the scan.</p>"
+                                 "<p><b>Update Autotags</b>: add any new autotags found to the existing tags.</p>"));
 
     DHBox* const hbox13         = new DHBox(d->settingsTab);
-    new QLabel(i18n("Selection model: "), hbox13);
+    new QLabel(i18n("Selection Model: "), hbox13);
     QWidget* const space9       = new QWidget(hbox13);
     hbox13->setStretchFactor(space9, 10);
 
@@ -157,13 +157,13 @@ void AutotagsScanWidget::setupUi()
     }
 
     DHBox* const hbox14         = new DHBox(d->settingsTab);
-    new QLabel(i18n("Object detection accuracy: "), hbox14);
+    new QLabel(i18n("Object Detection Accuracy: "), hbox14);
     d->accuracyInput            = new DIntNumInput(hbox14);
     d->accuracyInput->setDefaultValue(7);
     d->accuracyInput->setRange(1, 10, 1);
     d->accuracyInput->setToolTip(i18nc("@info:tooltip",
-                                                "Adjust sensitivity versus specificity: the higher the value, the more accurately objects will\n"
-                                                "be recognized, but fewer objects will be recognized.\n"));
+                                       "Adjust sensitivity versus specificity: the higher the value, the more accurately objects will\n"
+                                       "be recognized, but fewer objects will be recognized.\n"));
 
     DHBox* const hbox16         = new DHBox(d->settingsTab);
     d->useFullCpuButton         = new QCheckBox(hbox16);
@@ -233,7 +233,6 @@ void AutotagsScanWidget::setupUi()
 
 AutotagsScanSettings AutotagsScanWidget::settings() const
 {
-
     AutotagsScanSettings result;
 
     if (SettingsDisplayMode::Normal == d->displayMode)

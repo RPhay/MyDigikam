@@ -59,7 +59,7 @@ public:
 
 public:
 
-    /// Whole albums checked.
+    /// Scanning mode.
     ScanMode                                scanMode                    = ScanMode::AllItems;
 
     /// Processing power.

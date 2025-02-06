@@ -39,20 +39,10 @@ class ImageQualitySorter : public MaintenanceTool
 
 public:
 
-    enum QualityScanMode
-    {
-        AllItems = 0,        ///< Clean all Pick Labels assignments and re-scan all items.
-        NonAssignedItems     ///< Scan only items with no Pick Labels assigned.
-    };
-
-public:
-
     /**
-     * @brief Constructor using AlbumList as argument. If list is empty, whole Albums collection is processed.
+     * @brief Constructor using ImageQualitySettings as argument including AlbumList. If list is empty, whole Albums collection is processed.
      */
-    explicit ImageQualitySorter(QualityScanMode mode,
-                                const AlbumList& list = AlbumList(),
-                                const ImageQualitySettings& quality = ImageQualitySettings(),
+    explicit ImageQualitySorter(const ImageQualitySettings& quality,
                                 ProgressItem* const parent = nullptr);
     ~ImageQualitySorter() override;
 
