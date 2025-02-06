@@ -140,6 +140,7 @@ void LabelsSideBarWidget::doLoadState()
                                                  d->scanExpander->isExpandByDefault()));
 
     d->labelsTree->doLoadState();
+    d->settingsWdg->loadState();
 }
 
 void LabelsSideBarWidget::doSaveState()
@@ -150,6 +151,7 @@ void LabelsSideBarWidget::doSaveState()
                      d->scanExpander->isExpanded());
 
     d->labelsTree->doSaveState();
+    d->settingsWdg->saveState();
 }
 
 const QIcon LabelsSideBarWidget::getIcon()
