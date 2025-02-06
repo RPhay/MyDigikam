@@ -191,7 +191,8 @@ void PeopleSideBarWidget::doSaveState()
 {
     KConfigGroup group = getConfigGroup();
 
-    group.writeEntry(d->faceScanExpander->objectName(), d->faceScanExpander->isExpanded());
+    group.writeEntry(d->faceScanExpander->objectName(),
+                     d->faceScanExpander->isExpanded());
 
     d->tagFolderView->saveState();
     d->settingsWdg->saveState();

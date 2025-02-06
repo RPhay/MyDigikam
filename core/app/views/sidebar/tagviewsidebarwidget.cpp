@@ -222,8 +222,10 @@ void TagViewSideBarWidget::doSaveState()
 {
     KConfigGroup group = getConfigGroup();
 
-    group.writeEntry(d->configTagsSourceEntry, d->noTagsBtn->isChecked());
-    group.writeEntry(d->autotagsExpander->objectName(), d->autotagsExpander->isExpanded());
+    group.writeEntry(d->configTagsSourceEntry,
+                     d->noTagsBtn->isChecked());
+    group.writeEntry(d->autotagsExpander->objectName(),
+                     d->autotagsExpander->isExpanded());
 
     d->tagFolderView->saveState();
 

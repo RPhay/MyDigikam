@@ -134,11 +134,21 @@ void LabelsSideBarWidget::changeAlbumFromHistory(const QList<Album*>& album)
 
 void LabelsSideBarWidget::doLoadState()
 {
+    KConfigGroup group = getConfigGroup();
+
+    d->scanExpander->setExpanded(group.readEntry(d->scanExpander->objectName(),
+                                                 d->scanExpander->isExpandByDefault()));
+
     d->labelsTree->doLoadState();
 }
 
 void LabelsSideBarWidget::doSaveState()
 {
+    KConfigGroup group = getConfigGroup();
+
+    group.writeEntry(d->scanExpander->objectName(),
+                     d->scanExpander->isExpanded());
+
     d->labelsTree->doSaveState();
 }
 
