@@ -505,7 +505,5 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 #   endif
 #endif
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "End...";
-
     return ret;
 }

@@ -66,7 +66,6 @@ ItemSortCollator::ItemSortCollator()
 
 ItemSortCollator::~ItemSortCollator()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Test deconstruction: ItemSortCollator";
     delete d;
 }
 

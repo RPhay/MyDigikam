@@ -126,8 +126,6 @@ IdentityProvider::IdentityProvider()
 
 IdentityProvider::~IdentityProvider()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Test deconstruction: IdentityProvider";
-
     cancel();
 
     // final cleanup

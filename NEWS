@@ -153,7 +153,7 @@ BUGFIXES:
 104 ==> 499464 - Thumbnails Icons View shows captions incorrectly when there is a multi-line caption.
 105 ==> 498104 - Face Recognition fails.
 106 ==> 498024 - Face recognition becomes quickly useless with many faces in library.
-107 ==>
+107 ==> 498113 - On Windows 10, digiKam background process remains running after app close.
 108 ==>
 109 ==>
 110 ==>
