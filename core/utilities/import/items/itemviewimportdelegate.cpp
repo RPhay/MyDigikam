@@ -245,7 +245,8 @@ void ItemViewImportDelegate::invalidatePaintingCache()
     QSize oldGridSize = d->gridSize;
     updateSizeRectsAndPixmaps();
 
-    if (oldGridSize != d->gridSize) // cppcheck-suppress knowConditionTrueFalse
+    // cppcheck-suppress knownConditionTrueFalse
+    if (oldGridSize != d->gridSize)
     {
         Q_EMIT gridSizeChanged(d->gridSize);
 /*
