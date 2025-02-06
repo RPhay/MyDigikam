@@ -91,7 +91,7 @@ void ImageQualityWidget::setupUi()
 
     DHBox* const hlay1        = new DHBox(d->settingsView);
 
-    d->setRejected            = new QCheckBox(i18nc("@option:check", "Assign 'Rejected' Label to Low Quality Pictures"), hlay1);
+    d->setRejected            = new QCheckBox(i18nc("@option:check", "Assign 'Rejected' Label to Low Quality"), hlay1);
     d->setRejected->setToolTip(i18nc("@info:tooltip", "Low quality images detected by blur, noise, and compression analysis will be assigned to Rejected label."));
 
     QWidget* const hspace1    = new QWidget(hlay1);
@@ -104,7 +104,7 @@ void ImageQualityWidget::setupUi()
 
     DHBox* const hlay2        = new DHBox(d->settingsView);
 
-    d->setPending             = new QCheckBox(i18nc("@option:check", "Assign 'Pending' Label to Medium Quality Pictures"), hlay2);
+    d->setPending             = new QCheckBox(i18nc("@option:check", "Assign 'Pending' Label to Medium Quality"), hlay2);
     d->setPending->setToolTip(i18nc("@info:tooltip", "Medium quality images detected by blur, noise, and compression analysis will be assigned to Pending label."));
 
     QWidget* const hspace2    = new QWidget(hlay2);
@@ -117,7 +117,7 @@ void ImageQualityWidget::setupUi()
 
     DHBox* const hlay3        = new DHBox(d->settingsView);
 
-    d->setAccepted            = new QCheckBox(i18nc("@option:check", "Assign 'Accepted' Label to High Quality Pictures"), hlay3);
+    d->setAccepted            = new QCheckBox(i18nc("@option:check", "Assign 'Accepted' Label to High Quality"), hlay3);
     d->setAccepted->setToolTip(i18nc("@info:tooltip", "High quality images detected by blur, noise, and compression analysis will be assigned to Accepted label."));
 
     QWidget* const hspace3    = new QWidget(hlay3);
@@ -131,9 +131,9 @@ void ImageQualityWidget::setupUi()
     d->detectButtonGroup      = new QButtonGroup(d->settingsView);
     d->detectButtonGroup->setExclusive(true);
 
-    d->detectAesthetic        = new QRadioButton(i18nc("@option:radio", "Detect Aesthetic Image using Deep Learning"),
+    d->detectAesthetic        = new QRadioButton(i18nc("@option:radio", "Detect Aesthetic Contents using Deep Learning"),
                                                  this);
-    d->detectAesthetic->setToolTip(i18nc("@info:tooltip", "Detect if the image has aesthetic value.\n"
+    d->detectAesthetic->setToolTip(i18nc("@info:tooltip", "Detect if the image has aesthetic contents.\n"
                                          "The aesthetic detection engine use deep learning model to classify images"));
 
     d->detectButtonGroup->addButton(d->detectAesthetic, Private::AESTHETIC);
@@ -141,7 +141,8 @@ void ImageQualityWidget::setupUi()
     d->detectBasicFactors     = new QRadioButton(i18nc("@option:radio", "Detect Quality Using Basic Factors"),
                                                  this);
     d->detectBasicFactors->setToolTip(i18nc("@info:tooltip", "Detect if the image is sabotaging by four basic factors "
-                                            "(blur, noise, exposure, and compression)."));
+                                            "(blur, noise, exposure, and compression). "
+                                            "See the relevant settings in the next tab."));
 
     d->detectButtonGroup->addButton(d->detectBasicFactors, Private::BASICFACTORS);
     d->detectAesthetic->setChecked(true);
