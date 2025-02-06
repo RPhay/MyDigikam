@@ -5,8 +5,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 # Arguments : $1 : install path '/opt/homebrew' (default).
-#             $2 : build type   'Debug' to hack (default), 'Release' for production.
-#             $3 : target type  'arm64' for Apple Silicon (default). 'x86_64' for Intel MacOS.
+#             $2 : build type: 'debugfull' to hack, 'release' for production, relwithdebinfo for packaging.
+#             $3 : target type: 'arm64' for Apple Silicon (default). 'x86_64' for Intel MacOS.
 #             $4 : Cmake extra configure options.
 
 # Halt and catch errors

@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-# Arguments : $1 : VCPKG install path (default ./project/mxe/build.win32).
+# Arguments : $1 : VCPKG install path.
 #             $2 : build type : 'debugfull' to hack (default), 'release' for production, relwithdebinfo for packaging.
 #             $3 : Cmake extra configure options.
 
