@@ -304,24 +304,7 @@ void TagViewSideBarWidget::setNoTagsAlbum()
 void TagViewSideBarWidget::slotScanForAutotags()
 {
     AutotagsScanSettings autotagsScanSettings = d->settingsWdg->settings();
-
     doAutotagsScan(autotagsScanSettings);
-
-    // AutotagsScanSettings autotagsScanSettings = d->settingsWdg->settings();
-
-    // if (!d->settingsWdg->settingsConflicted())
-    // {
-
-    //     doAutotagsScan(autotagsScanSettings);
-
-    // }
-    // else
-    // {
-    //     Q_EMIT signalNotificationError(i18n("Face recognition is aborted, because "
-    //                                         "there are no identities to recognize. "
-    //                                         "Please add new identities."),
-    //                                    DNotificationWidget::Information);
-    // }
 }
 
 void TagViewSideBarWidget::slotScanComplete()
