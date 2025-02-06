@@ -84,7 +84,7 @@ public:
 
     QString                 noTagsSearchXml;
 
-    const QString configTagsSourceEntry             = QLatin1String("TagsSource");
+    const QString           configTagsSourceEntry  = QLatin1String("TagsSource");
 };
 
 TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* const model)
