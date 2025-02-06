@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-05 01:55+0000\n"
+"POT-Creation-Date: 2025-02-06 01:53+0000\n"
 "PO-Revision-Date: 2025-01-31 12:06+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -1357,7 +1357,7 @@ msgstr "Hreinsa gagnagrunn..."
 msgid "Loading albums..."
 msgstr "Hleð inn albúmum..."
 
-#: core/app/main/digikamapp.cpp:367
+#: core/app/main/digikamapp.cpp:369
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1368,7 +1368,7 @@ msgstr ""
 "veldu þá \"Já\", annars \"Nei\". Í því tilfelli verður \"Stýring litasniða\" "
 "gerð óvirk þar til þú leysir þetta vandamál.</p>"
 
-#: core/app/main/digikamapp.cpp:423
+#: core/app/main/digikamapp.cpp:425
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1381,92 +1381,92 @@ msgstr ""
 "keyrsluskrár ExifTool séu aðgengilegar.\n"
 "Villuskilaboð: %1"
 
-#: core/app/main/digikamapp.cpp:711 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:713 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Ekkert atriði er valið (af %1 atriði)"
 msgstr[1] "Ekkert atriði er valið (af %1 atriðum)"
 
-#: core/app/main/digikamapp.cpp:717
+#: core/app/main/digikamapp.cpp:719
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Ekkert atriði valið (%1 [%2] atriði)"
 msgstr[1] "Engin atriði valin (%1 [%2] atriðum)"
 
-#: core/app/main/digikamapp.cpp:722
+#: core/app/main/digikamapp.cpp:724
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Ekkert atriði valið (%1 atriði. Með hópuðum atriðum: %2)"
 msgstr[1] "Ekkert atriði valið (%1 atriði. Með hópuðum atriðum: %2)"
 
-#: core/app/main/digikamapp.cpp:733
+#: core/app/main/digikamapp.cpp:735
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 atriði valið (%3/%4)"
 msgstr[1] "%1/%2 atriði valin (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:746
+#: core/app/main/digikamapp.cpp:748
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] atriði valið (%4/%5)"
 msgstr[1] "%1/%2 [%3] atriði valin (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:754
+#: core/app/main/digikamapp.cpp:756
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "1/%2 atriði valið. Alls með hópuðum atriðum: %3"
 msgstr[1] "%1/%2 atriði valin. Alls með hópuðum atriðum: %3"
 
-#: core/app/main/digikamapp.cpp:762
+#: core/app/main/digikamapp.cpp:764
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] atriði valið (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] atriði valin (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:771
+#: core/app/main/digikamapp.cpp:773
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "1/%2 atriði valið. Með hópuðum atriðum: %3/%4"
 msgstr[1] "%1/%2 atriði valin. Með hópuðum atriðum: %3/%4"
 
-#: core/app/main/digikamapp.cpp:802
+#: core/app/main/digikamapp.cpp:804
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 af %2)"
 
-#: core/app/main/digikamapp.cpp:816
+#: core/app/main/digikamapp.cpp:818
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 af %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:820
+#: core/app/main/digikamapp.cpp:822
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 af %2. Alls með hópuðum atriðum: %3)"
 
-#: core/app/main/digikamapp.cpp:831
+#: core/app/main/digikamapp.cpp:833
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 atriði falið"
 msgstr[1] "%1 atriði falin"
 
-#: core/app/main/digikamapp.cpp:883
+#: core/app/main/digikamapp.cpp:885
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Skrifa lýsigögn í skrá"
 msgstr[1] "Skrifa lýsigögn í valdar skrár"
 
-#: core/app/main/digikamapp.cpp:885
+#: core/app/main/digikamapp.cpp:887
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -7598,7 +7598,7 @@ msgctxt "@action"
 msgid "Curves Adjust..."
 msgstr "Laga litferla..."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:161
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:163
 #: core/dplugins/editor/colors/film/filmtool.cpp:157
 #, kde-format
 msgid ""
@@ -7606,84 +7606,84 @@ msgid ""
 "image."
 msgstr "Þetta er litatíðni valinnar litrásar í upprunalegu myndinni."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:169
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:171
 #, kde-format
 msgid "Select the input intensity of the histogram here."
 msgstr "Veldu hér styrk á inntaksgildi litatíðniritsins."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:170
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:172
 #, kde-format
 msgid "Input intensity."
 msgstr "Styrkur inntaksgildis."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:177
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:179
 #, kde-format
 msgid "Select the output intensity of the histogram here."
 msgstr "Veldu hér styrk á inntaksgildi litatíðniritsins."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:178
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:180
 #, kde-format
 msgid "Output intensity."
 msgstr "Styrkur úttaksgildis."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:184
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:186
 #, kde-format
 msgid "Select the minimal input intensity value of the histogram here."
 msgstr "Veldu hér lágmarks inntaksgildi litatíðniritsins."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:185
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:187
 #, kde-format
 msgid "Minimal input intensity."
 msgstr "Lágmarks inntaksgildi."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:191
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:193
 #: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
 msgstr "Litrófsgildi."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:192
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:194
 #, kde-format
 msgid "Select the gamma input value here."
 msgstr "Veldu hér inntaksgildi litrófs."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:197
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:199
 #, kde-format
 msgid "Maximal input intensity."
 msgstr "Hámarks inntaksgildi."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:198
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
 #, kde-format
 msgid "Select the maximal input intensity value of the histogram here."
 msgstr "Veldu hér hámarks inntaksgildi litatíðniritsins."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:203
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:205
 #, kde-format
 msgid "Minimal output intensity."
 msgstr "Lágmarks inntaksgildi."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:204
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:206
 #, kde-format
 msgid "Select the minimal output intensity value of the histogram here."
 msgstr "Veldu hér lágmarks inntaksgildi litatíðniritsins."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:209
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:211
 #, kde-format
 msgid "Maximal output intensity."
 msgstr "Hámarks inntaksgildi."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:210
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:212
 #, kde-format
 msgid "Select the maximal output intensity value of the histogram here."
 msgstr "Veldu hér hámarks inntaksgildi litatíðniritsins."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:219
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:221
 #: core/libs/dimg/filters/curves/curvesbox.cpp:159
 #, kde-format
 msgid "All channels shadow tone color picker"
 msgstr "Litaplokkari sem tekur lágtóna á öllum rásum"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:220
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7694,13 +7694,13 @@ msgstr ""
 "til að stilla gildi <b>lágtóna</b> tíðnistigs á Rauð-, Græn-, Blá-, og "
 "Birtustigsrásum."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:227
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:229
 #: core/libs/dimg/filters/curves/curvesbox.cpp:167
 #, kde-format
 msgid "All channels middle tone color picker"
 msgstr "Litaplokkari sem tekur miðtóna á öllum rásum"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:228
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:230
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7711,13 +7711,13 @@ msgstr ""
 "til að stilla gildi <b>miðtóna</b> tíðnistigs á Rauð-, Græn-, Blá-, og "
 "Birtustigsrásum."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:235
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:237
 #: core/libs/dimg/filters/curves/curvesbox.cpp:175
 #, kde-format
 msgid "All channels highlight tone color picker"
 msgstr "Litaplokkari sem tekur hátóna á öllum rásum"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:236
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:238
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7728,12 +7728,12 @@ msgstr ""
 "til að stilla gildi <b>hátóna</b> tíðnistigs á Rauð-, Græn-, Blá-, og "
 "Birtustigsrásum."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:259
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:261
 #, kde-format
 msgid "Adjust all levels automatically."
 msgstr "Stilla öll litatíðnistig sjálfvirkt."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:260
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:262
 #, kde-format
 msgid ""
 "If you press this button, all channel levels will be adjusted automatically."
@@ -7741,7 +7741,7 @@ msgstr ""
 "Ef þú styður á þennan hnapp, verður tíðnistig allra litrása stillt "
 "sjálfvirkt."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
 #: core/dplugins/editor/colors/film/filmtool.cpp:212
 #: core/libs/dimg/filters/curves/curvesbox.cpp:197
 #: core/libs/dimg/filters/curves/curvesbox.cpp:204
@@ -7749,12 +7749,12 @@ msgstr ""
 msgid "&Reset"
 msgstr "F&rumstilla"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:267
 #, kde-format
 msgid "Reset current channel levels' values."
 msgstr "Stilla litferlana aftur á upphafleg gildi."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:268
 #, kde-format
 msgid ""
 "If you press this button, all levels' values from the currently selected "
@@ -7763,29 +7763,29 @@ msgstr ""
 "Ef þú styður á þennan hnapp, verður gildi allra tíðnistiga á núverandi "
 "litrás frumstillt aftur á upphaflegu gildin."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:882
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:884
 #, kde-format
 msgid "Adjust Levels"
 msgstr "Laga littíðnistig"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:889
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:891
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "Veldu Gimp-littaíðniskrá til að hlaða inn"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:901
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:903
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr "Get ekki hlaðið inn littíðnistigum úr Gimp textaskrá."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:916
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:918
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "Gimp-litatíðniskrá sem á að vista"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:928
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:930
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr "Get ekki vistað littíðnistig inn í Gimp textaskrá."
@@ -11310,7 +11310,7 @@ msgstr "Tvö landakort - efst og neðst"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:72
 #: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
 msgid "OK"
@@ -29838,26 +29838,26 @@ msgstr "<i>Rammatíðni:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Myndmerkiskóðun:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:185
+#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr "Upplýsingar um sameiginleg forritasöfn og einingar"
 
-#: core/libs/dialogs/infodlg.cpp:68
+#: core/libs/dialogs/infodlg.cpp:70
 #: core/libs/progressmanager/dhistoryview.cpp:145
 #, kde-format
 msgid "Copy to Clipboard"
 msgstr "Afrita á klippispjald"
 
-#: core/libs/dialogs/infodlg.cpp:90
+#: core/libs/dialogs/infodlg.cpp:92
 #, kde-format
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
 msgstr ""
 "<font size=\"5\">%1</font><br/><b>Útgáfa %2</b><p>%3</p><p><i>%4</i></p>"
 
-#: core/libs/dialogs/infodlg.cpp:111
+#: core/libs/dialogs/infodlg.cpp:113
 #, kde-format
 msgid "Items List"
 msgstr "Atriðalisti"
@@ -36507,12 +36507,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "Tvíundarkerfisgögn %1 bæti"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:375
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:376
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "ExifTool er ekki til staðar eða að exec-keyrsluheimildir vantar"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:389
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:390
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl er ekki til staðar eða að exec-keyrsluheimildir vantar"
@@ -39246,7 +39246,7 @@ msgstr "Skönnun hluta: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -60829,59 +60829,59 @@ msgstr "Tvítekningar fundust: %1"
 msgid "Duplicate found: %1"
 msgstr "Tvítekning fannst: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:216
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Leita að andlitum í albúmi: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:221
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Leita að andlitum í %1 albúmum"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:227
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Leita að andlitum í mynd: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:232
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:231
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Leita að andlitum í %1 myndum"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:237
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:236
 #, kde-format
 msgid "Updating faces database"
 msgstr "Uppfæri andlitagagnagrunn"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:258
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:286
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:367
 #, kde-format
 msgid "Error starting face detection."
 msgstr "Villa við að ræsa andlitaskönnun."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:389
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:388
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Leitað í atriðum að andlitum: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:393
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:392
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Leitað í atriði að andlitum: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:398
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
 #, kde-format
 msgid "Faces found: %1"
 msgstr "Andlit fundust: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:402
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
 #, kde-format
 msgid "Face found: %1"
 msgstr "Andlit fannst: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "Andlitaskönnun: %1\n"

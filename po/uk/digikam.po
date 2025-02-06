@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-05 01:55+0000\n"
-"PO-Revision-Date: 2025-02-04 10:07+0200\n"
+"POT-Creation-Date: 2025-02-06 01:53+0000\n"
+"PO-Revision-Date: 2025-02-05 08:52+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1360,7 +1360,7 @@ msgstr "Спорожнити базу даних…"
 msgid "Loading albums..."
 msgstr "Завантаження списку альбомів…"
 
-#: core/app/main/digikamapp.cpp:367
+#: core/app/main/digikamapp.cpp:369
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1372,7 +1372,7 @@ msgstr ""
 "цьому випадку, «Керування кольорами» буде вимкнено до того часу, коли ви "
 "розв'яжете цю проблему.</p>"
 
-#: core/app/main/digikamapp.cpp:423
+#: core/app/main/digikamapp.cpp:425
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1385,7 +1385,7 @@ msgstr ""
 "доступність виконуваного файла ExifTool у розділі метаданих.\n"
 "Повідомлення про помилку: %1"
 
-#: core/app/main/digikamapp.cpp:711 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:713 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1394,7 +1394,7 @@ msgstr[1] "Нічого не вибрано (%1 пункти)"
 msgstr[2] "Нічого не вибрано (%1 пунктів)"
 msgstr[3] "Нічого не вибрано (1 пункт)"
 
-#: core/app/main/digikamapp.cpp:717
+#: core/app/main/digikamapp.cpp:719
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1403,7 +1403,7 @@ msgstr[1] "Нічого не позначено (%1 [%2] записи)"
 msgstr[2] "Нічого не позначено (%1 [%2] записів)"
 msgstr[3] "Нічого не позначено (%1 [%2] запис)"
 
-#: core/app/main/digikamapp.cpp:722
+#: core/app/main/digikamapp.cpp:724
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1412,7 +1412,7 @@ msgstr[1] "Нічого не позначено (%1 записи. Зі згру�
 msgstr[2] "Нічого не позначено (%1 записів. Зі згрупованим записами: %2)"
 msgstr[3] "Нічого не позначено (%1 запис. Зі згрупованим записами: %2)"
 
-#: core/app/main/digikamapp.cpp:733
+#: core/app/main/digikamapp.cpp:735
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
@@ -1421,7 +1421,7 @@ msgstr[1] "Позначено %1 з %2 записів (%3 з %4)"
 msgstr[2] "Позначено %1 з %2 записів (%3 з %4)"
 msgstr[3] "Позначено один запис з %2 (%3 з %4)"
 
-#: core/app/main/digikamapp.cpp:746
+#: core/app/main/digikamapp.cpp:748
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
@@ -1430,7 +1430,7 @@ msgstr[1] "Позначено %1 з %2 [%3] записів (%4 з %5)"
 msgstr[2] "Позначено %1 з %2 [%3] записів (%4 з %5)"
 msgstr[3] "Позначено один запис з %2 [%3] (%4 з %5)"
 
-#: core/app/main/digikamapp.cpp:754
+#: core/app/main/digikamapp.cpp:756
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1439,7 +1439,7 @@ msgstr[1] "Позначено %1 із %2 записів. Загалом, зі з
 msgstr[2] "Позначено %1 із %2 записів. Загалом, зі згрупованими записами: %3"
 msgstr[3] "Позначено один запис з %2. Загалом, зі згрупованими записами: %3"
 
-#: core/app/main/digikamapp.cpp:762
+#: core/app/main/digikamapp.cpp:764
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
@@ -1448,7 +1448,7 @@ msgstr[1] "Позначено %1 з %2 [%3 з %4] записів (%5 з %6)"
 msgstr[2] "Позначено %1 з %2 [%3 з %4] записів (%5 з %6)"
 msgstr[3] "Позначено один запис з %2 [%3 з %4] (%5 з %6)"
 
-#: core/app/main/digikamapp.cpp:771
+#: core/app/main/digikamapp.cpp:773
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1457,22 +1457,22 @@ msgstr[1] "Позначено %1 із %2 записів. Зі згрупован
 msgstr[2] "Позначено %1 із %2 записів. Зі згрупованими записами: %3 із %4"
 msgstr[3] "Позначено один запис з %2. Зі згрупованими записами: %3 із %4"
 
-#: core/app/main/digikamapp.cpp:802
+#: core/app/main/digikamapp.cpp:804
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 з %2)"
 
-#: core/app/main/digikamapp.cpp:816
+#: core/app/main/digikamapp.cpp:818
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 з %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:820
+#: core/app/main/digikamapp.cpp:822
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 з %2. Загалом, зі згрупованими записами: %3)"
 
-#: core/app/main/digikamapp.cpp:831
+#: core/app/main/digikamapp.cpp:833
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
@@ -1481,7 +1481,7 @@ msgstr[1] "Приховано %1 записи"
 msgstr[2] "Приховано %1 записів"
 msgstr[3] "Приховано один запис"
 
-#: core/app/main/digikamapp.cpp:883
+#: core/app/main/digikamapp.cpp:885
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1490,7 +1490,7 @@ msgstr[1] "Записати метадані до позначених файл�
 msgstr[2] "Записати метадані до позначених файлів"
 msgstr[3] "Записати метадані до файла"
 
-#: core/app/main/digikamapp.cpp:885
+#: core/app/main/digikamapp.cpp:887
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -7743,7 +7743,7 @@ msgctxt "@action"
 msgid "Curves Adjust..."
 msgstr "Виправлення кривих…"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:161
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:163
 #: core/dplugins/editor/colors/film/filmtool.cpp:157
 #, kde-format
 msgid ""
@@ -7751,88 +7751,88 @@ msgid ""
 "image."
 msgstr "Це рисунок гістограми вибраного з початкового зображення каналу."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:169
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:171
 #, kde-format
 msgid "Select the input intensity of the histogram here."
 msgstr "Тут ви можете вибрати значення вхідної інтенсивності гістограми."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:170
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:172
 #, kde-format
 msgid "Input intensity."
 msgstr "Вхідна інтенсивність."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:177
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:179
 #, kde-format
 msgid "Select the output intensity of the histogram here."
 msgstr "Тут ви можете вибрати значення інтенсивності виходів гістограми."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:178
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:180
 #, kde-format
 msgid "Output intensity."
 msgstr "Інтенсивність виводу."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:184
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:186
 #, kde-format
 msgid "Select the minimal input intensity value of the histogram here."
 msgstr ""
 "Тут ви можете вибрати мінімальне значення вхідної інтенсивності діаграми."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:185
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:187
 #, kde-format
 msgid "Minimal input intensity."
 msgstr "Мінімальна вхідна інтенсивність."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:191
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:193
 #: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
 msgstr "Вхідне значення гами."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:192
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:194
 #, kde-format
 msgid "Select the gamma input value here."
 msgstr "Тут ви можете вибрати вхідне значення гами."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:197
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:199
 #, kde-format
 msgid "Maximal input intensity."
 msgstr "Максимальна вхідна інтенсивність."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:198
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
 #, kde-format
 msgid "Select the maximal input intensity value of the histogram here."
 msgstr ""
 "Тут ви можете вибрати максимальне значення вхідної інтенсивності діаграми."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:203
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:205
 #, kde-format
 msgid "Minimal output intensity."
 msgstr "Мінімальна вихідна інтенсивність."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:204
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:206
 #, kde-format
 msgid "Select the minimal output intensity value of the histogram here."
 msgstr ""
 "Тут ви можете вибрати мінімальне значення вихідної інтенсивності діаграми."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:209
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:211
 #, kde-format
 msgid "Maximal output intensity."
 msgstr "Максимальна вихідна інтенсивність."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:210
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:212
 #, kde-format
 msgid "Select the maximal output intensity value of the histogram here."
 msgstr ""
 "Тут ви можете вибрати максимальне вихідне значення інтенсивності діаграми."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:219
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:221
 #: core/libs/dimg/filters/curves/curvesbox.cpp:159
 #, kde-format
 msgid "All channels shadow tone color picker"
 msgstr "Піпетка для тіньового тону всіх каналів"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:220
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7844,13 +7844,13 @@ msgstr ""
 "тону</b> на каналах Червоного, Зеленого, Синього кольорів і Яскравості "
 "світла."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:227
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:229
 #: core/libs/dimg/filters/curves/curvesbox.cpp:167
 #, kde-format
 msgid "All channels middle tone color picker"
 msgstr "Піпетка для середнього тону всіх каналів"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:228
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:230
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7862,13 +7862,13 @@ msgstr ""
 "тону</b> на каналах Червоного, Зеленого, Синього кольорів і Яскравості "
 "світла."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:235
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:237
 #: core/libs/dimg/filters/curves/curvesbox.cpp:175
 #, kde-format
 msgid "All channels highlight tone color picker"
 msgstr "Піпетка для тону підсвічування всіх каналів"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:236
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:238
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7880,19 +7880,19 @@ msgstr ""
 "підсвічування</b> на каналах Червоного, Зеленого, Синього кольорів і "
 "Яскравості світла."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:259
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:261
 #, kde-format
 msgid "Adjust all levels automatically."
 msgstr "Виправити всі рівні автоматично."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:260
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:262
 #, kde-format
 msgid ""
 "If you press this button, all channel levels will be adjusted automatically."
 msgstr ""
 "Якщо ви натиснете цю кнопку, рівні всіх каналів буде виправлено автоматично."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
 #: core/dplugins/editor/colors/film/filmtool.cpp:212
 #: core/libs/dimg/filters/curves/curvesbox.cpp:197
 #: core/libs/dimg/filters/curves/curvesbox.cpp:204
@@ -7900,12 +7900,12 @@ msgstr ""
 msgid "&Reset"
 msgstr "&Скинути"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:267
 #, kde-format
 msgid "Reset current channel levels' values."
 msgstr "Скинути поточні значення рівнів кольорів."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:268
 #, kde-format
 msgid ""
 "If you press this button, all levels' values from the currently selected "
@@ -7914,29 +7914,29 @@ msgstr ""
 "Якщо ви натиснете на цю кнопку, значення всіх рівнів для поточного каналу "
 "буде замінено типовими значеннями."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:882
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:884
 #, kde-format
 msgid "Adjust Levels"
 msgstr "Налаштувати рівні"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:889
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:891
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "Виберіть файл рівнів Gimp для завантаження"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:901
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:903
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr "Не вдалося завантажити дані з текстового файла рівнів Gimp."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:916
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:918
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "Файл рівнів Gimp, який слід зберегти"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:928
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:930
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr "Не вдалося зберегти до текстового файла рівнів Gimp."
@@ -11572,7 +11572,7 @@ msgstr "Дві карти — верхня і нижня"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:72
 #: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
 msgid "OK"
@@ -30365,26 +30365,26 @@ msgstr "<i>Частота кадрів:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Відеокодек:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:185
+#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr "Відомості щодо спільних бібліотек і компонентів"
 
-#: core/libs/dialogs/infodlg.cpp:68
+#: core/libs/dialogs/infodlg.cpp:70
 #: core/libs/progressmanager/dhistoryview.cpp:145
 #, kde-format
 msgid "Copy to Clipboard"
 msgstr "Скопіювати до буфера"
 
-#: core/libs/dialogs/infodlg.cpp:90
+#: core/libs/dialogs/infodlg.cpp:92
 #, kde-format
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
 msgstr ""
 "<font size=\"5\">%1</font><br/><b>Версія %2</b><p>%3</p><p><i>%4</i></p>"
 
-#: core/libs/dialogs/infodlg.cpp:111
+#: core/libs/dialogs/infodlg.cpp:113
 #, kde-format
 msgid "Items List"
 msgstr "Список записів"
@@ -37153,12 +37153,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "Двійкові дані, %1 байтів"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:375
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:376
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "ExifTool немає у системі або файл програми не є виконуваним"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:389
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:390
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl немає у системі або файл програми не є виконуваним"
@@ -39937,7 +39937,7 @@ msgstr "Сканування об'єктів: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -61745,59 +61745,59 @@ msgstr "Знайдено дублікатів: %1"
 msgid "Duplicate found: %1"
 msgstr "Знайдено дублікат: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:216
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Пошук облич в альбомі: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:221
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Пошук облич у %1 альбомах"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:227
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Пошук облич на зображенні: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:232
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:231
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Пошук облич на %1 зображеннях"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:237
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:236
 #, kde-format
 msgid "Updating faces database"
 msgstr "Оновлюється база даних облич"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:258
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:286
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:367
 #, kde-format
 msgid "Error starting face detection."
 msgstr "Помилка під час спроби розпочати виявлення облич."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:389
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:388
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Записи у пошуку облич: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:393
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:392
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Запис у пошуку облич: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:398
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
 #, kde-format
 msgid "Faces found: %1"
 msgstr "Знайдено обличчя: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:402
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
 #, kde-format
 msgid "Face found: %1"
 msgstr "Знайдено обличчя: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "Сканування облич: %1\n"
@@ -67959,19 +67959,7 @@ msgstr ""
 "шляхи для пошуку:<ul><li>%1</li></ul>"
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "These settings determines the quality of an image and convert it into a "
-#| "score, stored in database as Pick Label property. This information can be "
-#| "evaluated by two ways: using four basic factors sabotaging the images "
-#| "(blur, noise, exposure, and compression), or using a deep learning neural "
-#| "network engine. The first one helps to determine whether images are "
-#| "distorted by the basic factors, however it demands some drawbacks as fine-"
-#| "tuning from the user’s side and it cannot work along the aesthetic image "
-#| "processing. The second one uses an IA approach based on %1 model to "
-#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
-#| "require hyper-parameter settings, and make this feature easier to use."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "These settings determines the quality of an image and convert it into a "

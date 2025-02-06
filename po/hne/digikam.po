@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-05 01:55+0000\n"
+"POT-Creation-Date: 2025-02-06 01:53+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -1396,7 +1396,7 @@ msgstr "डाटाबेस पढ़त हे"
 msgid "Loading albums..."
 msgstr "सब्बो एलबम ल पारसिंग करत हे"
 
-#: core/app/main/digikamapp.cpp:367
+#: core/app/main/digikamapp.cpp:369
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1404,7 +1404,7 @@ msgid ""
 "\"Color Management\" feature will be disabled until you solve this issue.</p>"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:423
+#: core/app/main/digikamapp.cpp:425
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1413,93 +1413,93 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:711 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:713 core/app/views/stack/trashview.cpp:509
 #, fuzzy, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "कोई चीज चुने नइ गे हे"
 msgstr[1] "कोई चीज चुने नइ गे हे"
 
-#: core/app/main/digikamapp.cpp:717
+#: core/app/main/digikamapp.cpp:719
 #, fuzzy, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "कोई चीज चुने नइ गे हे"
 msgstr[1] "कोई चीज चुने नइ गे हे"
 
-#: core/app/main/digikamapp.cpp:722
+#: core/app/main/digikamapp.cpp:724
 #, fuzzy, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "कोई चीज चुने नइ गे हे"
 msgstr[1] "कोई चीज चुने नइ गे हे"
 
-#: core/app/main/digikamapp.cpp:733
+#: core/app/main/digikamapp.cpp:735
 #, fuzzy, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1/%2 चीज चुने गे"
 msgstr[1] "%1/%2 चीज चुने गे"
 
-#: core/app/main/digikamapp.cpp:746
+#: core/app/main/digikamapp.cpp:748
 #, fuzzy, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1/%2 चीज चुने गे"
 msgstr[1] "%1/%2 चीज चुने गे"
 
-#: core/app/main/digikamapp.cpp:754
+#: core/app/main/digikamapp.cpp:756
 #, fuzzy, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "कोई चीज चुने नइ गे हे"
 msgstr[1] "कोई चीज चुने नइ गे हे"
 
-#: core/app/main/digikamapp.cpp:762
+#: core/app/main/digikamapp.cpp:764
 #, fuzzy, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1/%2 चीज चुने गे"
 msgstr[1] "%1/%2 चीज चुने गे"
 
-#: core/app/main/digikamapp.cpp:771
+#: core/app/main/digikamapp.cpp:773
 #, fuzzy, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "कोई चीज चुने नइ गे हे"
 msgstr[1] "कोई चीज चुने नइ गे हे"
 
-#: core/app/main/digikamapp.cpp:802
+#: core/app/main/digikamapp.cpp:804
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%2 मं से %1)"
 
-#: core/app/main/digikamapp.cpp:816
+#: core/app/main/digikamapp.cpp:818
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr " (%2 मं से %1)"
 
-#: core/app/main/digikamapp.cpp:820
+#: core/app/main/digikamapp.cpp:822
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:831
+#: core/app/main/digikamapp.cpp:833
 #, fuzzy, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "16 बिट्स"
 msgstr[1] "16 बिट्स"
 
-#: core/app/main/digikamapp.cpp:883
+#: core/app/main/digikamapp.cpp:885
 #, fuzzy, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "हर एक फाइल मं मेटाडाटा लिखव"
 msgstr[1] "हर एक फाइल मं मेटाडाटा लिखव"
 
-#: core/app/main/digikamapp.cpp:885
+#: core/app/main/digikamapp.cpp:887
 #, fuzzy, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -7398,7 +7398,7 @@ msgctxt "@action"
 msgid "Curves Adjust..."
 msgstr "कर्व्स एडजस्ट..."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:161
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:163
 #: core/dplugins/editor/colors/film/filmtool.cpp:157
 #, fuzzy, kde-format
 msgid ""
@@ -7406,84 +7406,84 @@ msgid ""
 "image."
 msgstr "ये असली फोटू मं चुने गे चैनल के हिस्टोग्राम ड्राइंग हे"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:169
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:171
 #, fuzzy, kde-format
 msgid "Select the input intensity of the histogram here."
 msgstr "इहां हिस्टोग्राम के सबसे कम तीव्रता इनपुट मूल्य चुनव."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:170
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:172
 #, fuzzy, kde-format
 msgid "Input intensity."
 msgstr "तीव्रता इनपुट."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:177
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:179
 #, fuzzy, kde-format
 msgid "Select the output intensity of the histogram here."
 msgstr "इहां हिस्टोग्राम के आउटपुट तीव्रता चुनव."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:178
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:180
 #, fuzzy, kde-format
 msgid "Output intensity."
 msgstr "आउटपुट उपकरन"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:184
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:186
 #, fuzzy, kde-format
 msgid "Select the minimal input intensity value of the histogram here."
 msgstr "इहां हिस्टोग्राम के सबसे कम तीव्रता इनपुट मूल्य चुनव."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:185
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:187
 #, fuzzy, kde-format
 msgid "Minimal input intensity."
 msgstr "सबसे कम तीव्रता इनपुट."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:191
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:193
 #: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
 msgstr "गामा इनपुट मूल्य."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:192
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:194
 #, kde-format
 msgid "Select the gamma input value here."
 msgstr "इहां गामा इनपुट मूल्य चुनव."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:197
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:199
 #, fuzzy, kde-format
 msgid "Maximal input intensity."
 msgstr "सबसे अधिक तीव्रता इनपुट."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:198
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
 #, fuzzy, kde-format
 msgid "Select the maximal input intensity value of the histogram here."
 msgstr "इहां हिस्टोग्राम के सबसे अधिक तीव्रता इनपुट मूल्य चुनव."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:203
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:205
 #, fuzzy, kde-format
 msgid "Minimal output intensity."
 msgstr "सबसे कम तीव्रता इनपुट."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:204
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:206
 #, fuzzy, kde-format
 msgid "Select the minimal output intensity value of the histogram here."
 msgstr "इहां हिस्टोग्राम के सबसे कम तीव्रता इनपुट मूल्य चुनव."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:209
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:211
 #, fuzzy, kde-format
 msgid "Maximal output intensity."
 msgstr "सबसे अधिक तीव्रता इनपुट."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:210
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:212
 #, fuzzy, kde-format
 msgid "Select the maximal output intensity value of the histogram here."
 msgstr "इहां हिस्टोग्राम के सबसे अधिक तीव्रता इनपुट मूल्य चुनव."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:219
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:221
 #: core/libs/dimg/filters/curves/curvesbox.cpp:159
 #, kde-format
 msgid "All channels shadow tone color picker"
 msgstr "सब्बो चैनल छइंहा टोन रंग चुनइया"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:220
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7491,13 +7491,13 @@ msgid ""
 "channels."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:227
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:229
 #: core/libs/dimg/filters/curves/curvesbox.cpp:167
 #, kde-format
 msgid "All channels middle tone color picker"
 msgstr "सब्बो चैनल मध्य टोन रंग चुनइया"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:228
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:230
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7505,13 +7505,13 @@ msgid ""
 "channels."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:235
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:237
 #: core/libs/dimg/filters/curves/curvesbox.cpp:175
 #, kde-format
 msgid "All channels highlight tone color picker"
 msgstr "सब्बो चैनल उभार टोन रंग चुनइया"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:236
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:238
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7519,18 +7519,18 @@ msgid ""
 "channels."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:259
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:261
 #, kde-format
 msgid "Adjust all levels automatically."
 msgstr "सब्बो स्तर अपने अपन एडजस्ट करव."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:260
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:262
 #, kde-format
 msgid ""
 "If you press this button, all channel levels will be adjusted automatically."
 msgstr "यदि आप मन ए बटन ल दबाहू, सब्बो चैनल स्तर अपने अपन एडजस्ट हो जाही."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
 #: core/dplugins/editor/colors/film/filmtool.cpp:212
 #: core/libs/dimg/filters/curves/curvesbox.cpp:197
 #: core/libs/dimg/filters/curves/curvesbox.cpp:204
@@ -7538,43 +7538,43 @@ msgstr "यदि आप मन ए बटन ल दबाहू, सब्ब�
 msgid "&Reset"
 msgstr "रीसेट (&R)"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:267
 #, kde-format
 msgid "Reset current channel levels' values."
 msgstr "अभी हाल के चैनल स्तर मान रीसेट करव."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:268
 #, kde-format
 msgid ""
 "If you press this button, all levels' values from the currently selected "
 "channel will be reset to the default values."
 msgstr ""
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:882
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:884
 #, kde-format
 msgid "Adjust Levels"
 msgstr "स्तर एडजस्ट करव"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:889
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:891
 #, fuzzy, kde-format
 #| msgid "Select Gimp Levels File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "लोड करे बर गिम्प स्तर फाइल चुनव"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:901
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:903
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr "गिम्प स्तर पाठ फाइल से लोड नइ कर सकिस."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:916
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:918
 #, fuzzy, kde-format
 #| msgid "Gimp Levels File to Save"
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "सहेजे बर गिम्प स्तर फाइल"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:928
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:930
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr "गिम्प स्तर पाठ फाइल मं सहेज नइ सकिस."
@@ -10969,7 +10969,7 @@ msgstr "आड़ा लहुटाव"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:72
 #: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
 msgid "OK"
@@ -28969,27 +28969,27 @@ msgstr "<b>निर्मित</b>:"
 msgid "<i>VideoCodec:</i>"
 msgstr "<b>माडल</b>:"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:185
+#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:185
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr "साझा जानकारी अउ एलबम गुन संपादित करव."
 
-#: core/libs/dialogs/infodlg.cpp:68
+#: core/libs/dialogs/infodlg.cpp:70
 #: core/libs/progressmanager/dhistoryview.cpp:145
 #, kde-format
 msgid "Copy to Clipboard"
 msgstr "क्लिपबोर्ड मं नकल करव"
 
-#: core/libs/dialogs/infodlg.cpp:90
+#: core/libs/dialogs/infodlg.cpp:92
 #, fuzzy, kde-format
 #| msgid "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p>"
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
 msgstr "<font size=\"5\">%1</font><br/><b>संस्करन %2</b><p>%3</p>"
 
-#: core/libs/dialogs/infodlg.cpp:111
+#: core/libs/dialogs/infodlg.cpp:113
 #, fuzzy, kde-format
 msgid "Items List"
 msgstr "फोटू संपादक "
@@ -35627,13 +35627,13 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr ""
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:375
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:376
 #, fuzzy, kde-format
 #| msgid "The selected folder does not exist or is not readable"
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "चुने गे फोल्डर नइ मिलत हे, या पढ़े नइ जा सके हे"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:389
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:390
 #, fuzzy, kde-format
 #| msgid "The selected folder does not exist or is not readable"
 msgid "Perl does not exists or exec permission is missing"
@@ -38272,7 +38272,7 @@ msgstr "खोजव:"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -60328,63 +60328,63 @@ msgstr "चीज मेटारव"
 msgid "Duplicate found: %1"
 msgstr "चीज मेटारव"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:216
 #, fuzzy, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "खोजव:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:221
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
 #, fuzzy, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "खोजव:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:227
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in image: %1"
 msgstr "नवा फोटू मन बर खोजव"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:232
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:231
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in %1 images"
 msgstr "नवा फोटू मन बर खोजव"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:237
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:236
 #, fuzzy, kde-format
 msgid "Updating faces database"
 msgstr "<b>फिंगरप्रिंट डाटाबेस ल अपडेट करत हे. किरपा करके, अगोरव...</b>"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:258
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:286
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:367
 #, kde-format
 msgid "Error starting face detection."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:389
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:388
 #, fuzzy, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "खोजव:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:393
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:392
 #, fuzzy, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "खोजव:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:398
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "%1 मं फोटू मिले"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:402
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "%1 मं फोटू मिले"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #, fuzzy, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "खोजव:"

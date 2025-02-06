@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-05 01:55+0000\n"
-"PO-Revision-Date: 2025-02-04 07:18+0100\n"
+"POT-Creation-Date: 2025-02-06 01:53+0000\n"
+"PO-Revision-Date: 2025-02-05 06:59+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1387,7 +1387,7 @@ msgstr "Počisti podatkovno bazo..."
 msgid "Loading albums..."
 msgstr "Nalaganje albumov..."
 
-#: core/app/main/digikamapp.cpp:367
+#: core/app/main/digikamapp.cpp:369
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1399,7 +1399,7 @@ msgstr ""
 "Posledica slednjega bo onemogočena zmožnost \"Upravljanja barv\", dokler ne "
 "boste rešili te težave.</p>"
 
-#: core/app/main/digikamapp.cpp:423
+#: core/app/main/digikamapp.cpp:425
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1412,7 +1412,7 @@ msgstr ""
 "ExifTool v razdelku z metapodatki.\n"
 "Sporočilo o napaki: %1"
 
-#: core/app/main/digikamapp.cpp:711 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:713 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1421,7 +1421,7 @@ msgstr[1] "Ni izbranih predmetov (%1 predmeta)"
 msgstr[2] "Ni izbranih predmetov (%1 predmeti)"
 msgstr[3] "Ni izbranih predmetov (%1 predmetov)"
 
-#: core/app/main/digikamapp.cpp:717
+#: core/app/main/digikamapp.cpp:719
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1430,7 +1430,7 @@ msgstr[1] "Ni izbranih predmetov ((%1 [%2]  predmeta)"
 msgstr[2] "Ni izbranih predmetov ((%1 [%2] predmeti)"
 msgstr[3] "Ni izbranih predmetov ((%1 [%2] predmetov)"
 
-#: core/app/main/digikamapp.cpp:722
+#: core/app/main/digikamapp.cpp:724
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1439,7 +1439,7 @@ msgstr[1] "Ni izbranih predmetov (%1 predmeta. S predmeti v skupini: %2)"
 msgstr[2] "Ni izbranih predmetov (%1 predmeti. S predmeti v skupini: %2)"
 msgstr[3] "Ni izbranih predmetov (%1 predmetov. S predmeti v skupini: %2)"
 
-#: core/app/main/digikamapp.cpp:733
+#: core/app/main/digikamapp.cpp:735
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
@@ -1448,7 +1448,7 @@ msgstr[1] "%1/%2 izbrana predmeta (%3/%4)"
 msgstr[2] "%1/%2 izbrani predmeti (%3/%4)"
 msgstr[3] "%1/%2 izbranih predmetov (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:746
+#: core/app/main/digikamapp.cpp:748
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
@@ -1457,7 +1457,7 @@ msgstr[1] "%1/%2 [%3] izbrana predmeta (%4/%5)"
 msgstr[2] "%1/%2 [%3] izbrani predmeti (%4/%5)"
 msgstr[3] "%1/%2 [%3] izbranih predmetov (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:754
+#: core/app/main/digikamapp.cpp:756
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1466,7 +1466,7 @@ msgstr[1] "%1/%2 izbrana predmeta. Skupaj s predmeti v skupini: %3"
 msgstr[2] "%1/%2 izbrani predmeti. Skupaj s predmeti v skupini: %3"
 msgstr[3] "%1/%2 izbranih predmetov. Skupaj s predmeti v skupini: %3"
 
-#: core/app/main/digikamapp.cpp:762
+#: core/app/main/digikamapp.cpp:764
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
@@ -1475,7 +1475,7 @@ msgstr[1] "%1/%2 [%3/%4] izbrana predmeta (%5/%6)"
 msgstr[2] "%1/%2 [%3/%4] izbrani predmeti (%5/%6)"
 msgstr[3] "%1/%2 [%3/%4] izbranih predmetov (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:771
+#: core/app/main/digikamapp.cpp:773
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1484,22 +1484,22 @@ msgstr[1] "%1/%2 izbrana predmeta. Skupaj s predmeti v skupini: %3/%4"
 msgstr[2] "%1/%2 izbrani predmeti. Skupaj s predmeti v skupini: %3/%4"
 msgstr[3] "%1/%2 izbranih predmetov. Skupaj s predmeti v skupini: %3/%4"
 
-#: core/app/main/digikamapp.cpp:802
+#: core/app/main/digikamapp.cpp:804
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 od %2)"
 
-#: core/app/main/digikamapp.cpp:816
+#: core/app/main/digikamapp.cpp:818
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 od %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:820
+#: core/app/main/digikamapp.cpp:822
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 od %2. Skupaj s predmeti v skupini: %3)"
 
-#: core/app/main/digikamapp.cpp:831
+#: core/app/main/digikamapp.cpp:833
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
@@ -1508,7 +1508,7 @@ msgstr[1] "%1 skrita predmeta"
 msgstr[2] "%1 skriti predmeti"
 msgstr[3] "%1 skritih predmetov"
 
-#: core/app/main/digikamapp.cpp:883
+#: core/app/main/digikamapp.cpp:885
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1517,7 +1517,7 @@ msgstr[1] "Zapiši metapodatke v izbrani datoteki"
 msgstr[2] "Zapiši metapodatke v izbrane datoteke"
 msgstr[3] "Zapiši metapodatke v izbrane datoteke"
 
-#: core/app/main/digikamapp.cpp:885
+#: core/app/main/digikamapp.cpp:887
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -7683,7 +7683,7 @@ msgctxt "@action"
 msgid "Curves Adjust..."
 msgstr "Prilagoditev krivulj..."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:161
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:163
 #: core/dplugins/editor/colors/film/filmtool.cpp:157
 #, kde-format
 msgid ""
@@ -7691,84 +7691,84 @@ msgid ""
 "image."
 msgstr "To je izris histograma izbranega kanala iz izvorne slike."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:169
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:171
 #, kde-format
 msgid "Select the input intensity of the histogram here."
 msgstr "Tukaj izberite vhodno intenziteto histograma."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:170
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:172
 #, kde-format
 msgid "Input intensity."
 msgstr "Vhodna intenziteta."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:177
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:179
 #, kde-format
 msgid "Select the output intensity of the histogram here."
 msgstr "Tukaj izberite izhodno intenziteto histograma."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:178
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:180
 #, kde-format
 msgid "Output intensity."
 msgstr "Izhodna intenziteta."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:184
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:186
 #, kde-format
 msgid "Select the minimal input intensity value of the histogram here."
 msgstr "Tukaj izberite najmanjšo vrednost vhodne intenzitete histograma."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:185
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:187
 #, kde-format
 msgid "Minimal input intensity."
 msgstr "Najmanjša vhodna intenziteta."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:191
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:193
 #: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
 msgstr "Vhodna vrednost game."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:192
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:194
 #, kde-format
 msgid "Select the gamma input value here."
 msgstr "Tukaj izberite vhodno vrednost game."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:197
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:199
 #, kde-format
 msgid "Maximal input intensity."
 msgstr "Največja vhodna intenziteta."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:198
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
 #, kde-format
 msgid "Select the maximal input intensity value of the histogram here."
 msgstr "Tukaj izberite največjo vrednost vhodne intenzitete histograma."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:203
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:205
 #, kde-format
 msgid "Minimal output intensity."
 msgstr "Najmanjša izhodna intenziteta."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:204
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:206
 #, kde-format
 msgid "Select the minimal output intensity value of the histogram here."
 msgstr "Tukaj izberite najmanjšo vrednost izhodne intenzitete histograma."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:209
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:211
 #, kde-format
 msgid "Maximal output intensity."
 msgstr "Največja izhodna intenziteta."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:210
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:212
 #, kde-format
 msgid "Select the maximal output intensity value of the histogram here."
 msgstr "Tukaj izberite največjo vrednost izhodne intenzitete histograma."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:219
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:221
 #: core/libs/dimg/filters/curves/curvesbox.cpp:159
 #, kde-format
 msgid "All channels shadow tone color picker"
 msgstr "Izbirnik barve tona sence vseh kanalov"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:220
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7779,13 +7779,13 @@ msgstr ""
 "za nastavljanje vhodnih ravni kanalov rdeče, zelene, modre in svetilnosti za "
 "<b>Ton sence</b>."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:227
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:229
 #: core/libs/dimg/filters/curves/curvesbox.cpp:167
 #, kde-format
 msgid "All channels middle tone color picker"
 msgstr "Izbirnik barve tona sredine vseh kanalov"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:228
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:230
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7796,13 +7796,13 @@ msgstr ""
 "za nastavljanje vhodnih ravni kanalov rdeče, zelene, modre in svetilnosti za "
 "<b>Ton sredine</b>."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:235
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:237
 #: core/libs/dimg/filters/curves/curvesbox.cpp:175
 #, kde-format
 msgid "All channels highlight tone color picker"
 msgstr "Izbirnik barve tona osvetlitve vseh kanalov"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:236
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:238
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7813,18 +7813,18 @@ msgstr ""
 "za nastavljanje vhodnih ravni kanalov rdeče, zelene, modre in svetilnosti za "
 "<b>Ton osvetlitve</b>."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:259
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:261
 #, kde-format
 msgid "Adjust all levels automatically."
 msgstr "Samodejni prilagodi vse ravni."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:260
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:262
 #, kde-format
 msgid ""
 "If you press this button, all channel levels will be adjusted automatically."
 msgstr "Če pritisnete ta gumb, bodo vse ravni kanalov samodejno prilagojene."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
 #: core/dplugins/editor/colors/film/filmtool.cpp:212
 #: core/libs/dimg/filters/curves/curvesbox.cpp:197
 #: core/libs/dimg/filters/curves/curvesbox.cpp:204
@@ -7832,12 +7832,12 @@ msgstr "Če pritisnete ta gumb, bodo vse ravni kanalov samodejno prilagojene."
 msgid "&Reset"
 msgstr "&Ponastavi"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:267
 #, kde-format
 msgid "Reset current channel levels' values."
 msgstr "Ponastavi vrednosti trenutnih ravni kanalov."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:268
 #, kde-format
 msgid ""
 "If you press this button, all levels' values from the currently selected "
@@ -7846,29 +7846,29 @@ msgstr ""
 "Če pritisnete ta gumb, bodo vse vrednosti ravni trenutno izbranega kanala "
 "ponastavljene na privzete vrednosti."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:882
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:884
 #, kde-format
 msgid "Adjust Levels"
 msgstr "Prilagodi ravni"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:889
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:891
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "Izberite datoteko z ravnmi Gimpa za nalaganje"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:901
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:903
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr "Ni bilo mogoče naložiti besedilne datoteke z ravnmi Gimpa."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:916
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:918
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "Datoteka z ravnmi Gimpa za shranjevanje"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:928
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:930
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr "Ni bilo mogoče shraniti besedilne datoteke z ravnmi Gimpa."
@@ -11391,7 +11391,7 @@ msgstr "Dva zemljevida - na vrhu in spodaj"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:72
 #: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
 msgid "OK"
@@ -29946,26 +29946,26 @@ msgstr "<i>Hitrost sličic:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Video kodeki:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:185
+#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr "Podrobnosti o deljenih knjižnicah in sestavnih delih"
 
-#: core/libs/dialogs/infodlg.cpp:68
+#: core/libs/dialogs/infodlg.cpp:70
 #: core/libs/progressmanager/dhistoryview.cpp:145
 #, kde-format
 msgid "Copy to Clipboard"
 msgstr "Kopiraj v odložišče"
 
-#: core/libs/dialogs/infodlg.cpp:90
+#: core/libs/dialogs/infodlg.cpp:92
 #, kde-format
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
 msgstr ""
 "<font size=\"5\">%1</font><br/><b>Različica %2</b><p>%3</p><p><i>%4</i></p>"
 
-#: core/libs/dialogs/infodlg.cpp:111
+#: core/libs/dialogs/infodlg.cpp:113
 #, kde-format
 msgid "Items List"
 msgstr "Seznam predmetov"
@@ -36658,12 +36658,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "Binarni podatki %1 bytov"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:375
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:376
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "Manjka orodje ExifTool ali nima dovoljenja za izvajanje"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:389
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:390
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Manjka Perl ali nima dovoljenja za izvajanje"
@@ -39427,7 +39427,7 @@ msgstr "Preiskovanje predmetov: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -61060,59 +61060,59 @@ msgstr "Najdenih dvojnikov: %1"
 msgid "Duplicate found: %1"
 msgstr "Najden dvojnik: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:216
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Preišči obraze v albumu: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:221
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Preišči obraze v %1 albumih"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:227
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Preišči obraze v sliki: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:232
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:231
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Preišči obraze v %1 slikah"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:237
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:236
 #, kde-format
 msgid "Updating faces database"
 msgstr "Posodabljanje podatkovne zbirke obrazov"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:258
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:286
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:367
 #, kde-format
 msgid "Error starting face detection."
 msgstr "Napaka pri zagonu zaznavanja obrazov."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:389
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:388
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Postavk preiskanih za obraze: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:393
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:392
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Postavka preiskana za obraze: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:398
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
 #, kde-format
 msgid "Faces found: %1"
 msgstr "Obrazov najdenih: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:402
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
 #, kde-format
 msgid "Face found: %1"
 msgstr "Obraz najden: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "Prečesavanje obraza: %1\n"
@@ -67168,19 +67168,7 @@ msgstr ""
 "trenutno obstajajo in bodo preiskane te poti:<ul><li>%1</li></ul>"
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "These settings determines the quality of an image and convert it into a "
-#| "score, stored in database as Pick Label property. This information can be "
-#| "evaluated by two ways: using four basic factors sabotaging the images "
-#| "(blur, noise, exposure, and compression), or using a deep learning neural "
-#| "network engine. The first one helps to determine whether images are "
-#| "distorted by the basic factors, however it demands some drawbacks as fine-"
-#| "tuning from the user’s side and it cannot work along the aesthetic image "
-#| "processing. The second one uses an IA approach based on %1 model to "
-#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
-#| "require hyper-parameter settings, and make this feature easier to use."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "These settings determines the quality of an image and convert it into a "
@@ -67194,16 +67182,16 @@ msgid ""
 "deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
 "settings, and make this feature easier to use."
 msgstr ""
-"Cilj teh nastavitev je določiti kakovost slike in ga pretvoriti v oceno "
-"shranjeno v bazi podatkov kot lastnosti izbrane oznake. To informacijo je "
-"mogoče ovrednotiti na dva načina: z uporabo štirih osnovnih dejavnikov, ki "
-"kvarijo slike (zamegljenost, šum, ekspozicija in stiskanje) ali z uporabo "
-"stroja z globokim učnim nevronskim omrežjem. Prvi pomaga ugotoviti, ali "
-"slike kvarijo osnovni dejavniki, vendar zahteva nekatere pomanjkljivosti kot "
-"natančno prilagoditev z uporabnikove strani in ne more delovati ob estetski "
-"obdelavi slike. Drugi uporablja za napoved ocene pristop umetne inteligence, "
-"ki temelji na modelu %1 za napoved ocene. Ker je globoko učenje rešitev od "
-"konca do konca, ne potrebuje nastavitev hiper parametrov in olajša uporabo "
+"Te nastavitve določajo kakovost slike in jo pretvorijo v rezultat, shranjen "
+"v zbirki podatkov kot lastnost Pick Label. Te informacije je mogoče "
+"ovrednotiti na dva načina: z uporabo štirih osnovnih dejavnikov, ki kvarijo "
+"slike (zamegljenost, šum, osvetlitev in stiskanje), ali z uporabo mehanizma "
+"nevronske mreže za globoko učenje. Prvi pomaga ugotoviti, ali so slike "
+"popačene zaradi osnovnih dejavnikov, vendar ima nekaj pomanjkljivosti, kot "
+"je fina nastavitev s strani uporabnika, in ne more delovati skupaj z "
+"estetsko obdelavo slike. Drugi uporablja pristop umetne inteligence, ki "
+"temelji na modelu %1, da napoveduje rezultat. Ker je globoko učenje rešitev "
+"od začetka do konca, ne zahteva nastavitev hiperparametrov in olajša uporabo "
 "te zmožnosti."
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:63

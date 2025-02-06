@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-05 01:55+0000\n"
+"POT-Creation-Date: 2025-02-06 01:53+0000\n"
 "PO-Revision-Date: 2025-01-19 14:15+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1367,7 +1367,7 @@ msgstr "Garbitu datu-basea..."
 msgid "Loading albums..."
 msgstr "Albumak zamatzen..."
 
-#: core/app/main/digikamapp.cpp:367
+#: core/app/main/digikamapp.cpp:369
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1379,7 +1379,7 @@ msgstr ""
 "eta arazo hau konpontzen duzun arte, \"Kolore kudeaketa\" ezaugarria ezgaitu "
 "egingo da.</p>"
 
-#: core/app/main/digikamapp.cpp:423
+#: core/app/main/digikamapp.cpp:425
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1392,21 +1392,21 @@ msgstr ""
 "«ExifTool»en fitxategi bitarra erabilgarri dagoen.\n"
 "Errore mezua: %1"
 
-#: core/app/main/digikamapp.cpp:711 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:713 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Ez da elementurik hautatu (elementu %1)"
 msgstr[1] "Ez da elementurik hautatu (%1 elementu)"
 
-#: core/app/main/digikamapp.cpp:717
+#: core/app/main/digikamapp.cpp:719
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Ez da elementurik hautatu (elementu %1 [%2])"
 msgstr[1] "Ez da elementurik hautatu (%1 [%2] elementu)"
 
-#: core/app/main/digikamapp.cpp:722
+#: core/app/main/digikamapp.cpp:724
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1415,71 +1415,71 @@ msgstr[0] ""
 msgstr[1] ""
 "Ez da elementurik hautatu (%1 elementu. Taldekatutako elementuekin: %2)"
 
-#: core/app/main/digikamapp.cpp:733
+#: core/app/main/digikamapp.cpp:735
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 elementu hautatu da (%3/%4)"
 msgstr[1] "%1/%2 elementu hautatu dira (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:746
+#: core/app/main/digikamapp.cpp:748
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] elementu hautatu da (%4/%5)"
 msgstr[1] "%1/%2 [%3] elementu hautatu dira (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:754
+#: core/app/main/digikamapp.cpp:756
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "1/%2 elementu hautatu da. Guztira taldekatutako elementuekin: %3"
 msgstr[1] "%1/%2 elementu hautatu dira. Guztira taldekatutako elementuekin: %3"
 
-#: core/app/main/digikamapp.cpp:762
+#: core/app/main/digikamapp.cpp:764
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] elementu hautatu da (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] elementu hautatu dira (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:771
+#: core/app/main/digikamapp.cpp:773
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "1/%2 elementu hautatu da. Taldekatutako elementuekin: %3/%4"
 msgstr[1] "%1/%2 elementu hautatu dira. Taldekatutako elementuekin: %3/%4"
 
-#: core/app/main/digikamapp.cpp:802
+#: core/app/main/digikamapp.cpp:804
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 / %2)"
 
-#: core/app/main/digikamapp.cpp:816
+#: core/app/main/digikamapp.cpp:818
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr "(%1 / %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:820
+#: core/app/main/digikamapp.cpp:822
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 / %2. Guztira taldekatutako elementuekin: %3)"
 
-#: core/app/main/digikamapp.cpp:831
+#: core/app/main/digikamapp.cpp:833
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "Elementu %1 ezkutuan"
 msgstr[1] "%1 elementu ezkutuan"
 
-#: core/app/main/digikamapp.cpp:883
+#: core/app/main/digikamapp.cpp:885
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Idatzi meta-datuak fitxategian"
 msgstr[1] "Idatzi meta-datuak hautatutako fitxategietan"
 
-#: core/app/main/digikamapp.cpp:885
+#: core/app/main/digikamapp.cpp:887
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -7508,7 +7508,7 @@ msgctxt "@action"
 msgid "Curves Adjust..."
 msgstr "Kurbak doitzea..."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:161
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:163
 #: core/dplugins/editor/colors/film/filmtool.cpp:157
 #, kde-format
 msgid ""
@@ -7516,84 +7516,84 @@ msgid ""
 "image."
 msgstr "Jatorrizko iruditik hautatutako kanalaren histogramaren marrazkia da."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:169
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:171
 #, kde-format
 msgid "Select the input intensity of the histogram here."
 msgstr "Hautatu histogramaren sarrerako intentsitatea."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:170
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:172
 #, kde-format
 msgid "Input intensity."
 msgstr "Sarrerako intentsitatea."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:177
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:179
 #, kde-format
 msgid "Select the output intensity of the histogram here."
 msgstr "Hautatu histogramaren irteerako intentsitatea."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:178
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:180
 #, kde-format
 msgid "Output intensity."
 msgstr "Irteerako intentsitatea."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:184
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:186
 #, kde-format
 msgid "Select the minimal input intensity value of the histogram here."
 msgstr "Hautatu histogramaren sarrerako intentsitatearen gutxieneko balioa."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:185
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:187
 #, kde-format
 msgid "Minimal input intensity."
 msgstr "Sarrerako gutxieneko intentsitatea."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:191
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:193
 #: core/dplugins/editor/colors/film/filmtool.cpp:249
 #, kde-format
 msgid "Gamma input value."
 msgstr "Gamma-ren sarreraren balioa."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:192
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:194
 #, kde-format
 msgid "Select the gamma input value here."
 msgstr "Hautatu gamma-ren sarrerako balioa."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:197
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:199
 #, kde-format
 msgid "Maximal input intensity."
 msgstr "Sarrerako gehienezko intentsitatea."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:198
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
 #, kde-format
 msgid "Select the maximal input intensity value of the histogram here."
 msgstr "Hautatu histogramaren sarrerako intentsitatearen gehienezko balioa."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:203
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:205
 #, kde-format
 msgid "Minimal output intensity."
 msgstr "Irteerako gutxieneko intentsitatea."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:204
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:206
 #, kde-format
 msgid "Select the minimal output intensity value of the histogram here."
 msgstr "Hautatu histogramaren irteerako intentsitatearen gutxieneko balioa."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:209
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:211
 #, kde-format
 msgid "Maximal output intensity."
 msgstr "Irteerako gehienezko intentsitatea."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:210
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:212
 #, kde-format
 msgid "Select the maximal output intensity value of the histogram here."
 msgstr "Hautatu histogramaren irteerako intentsitatearen gehienezko balioa."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:219
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:221
 #: core/libs/dimg/filters/curves/curvesbox.cpp:159
 #, kde-format
 msgid "All channels shadow tone color picker"
 msgstr "Tonu ilunen kolore-hautatzailea kanal guztientzako"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:220
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7604,13 +7604,13 @@ msgstr ""
 "b>ren sarrerako mailak ezartzeko Gorria, Berdea, Urdina eta argitasunaren "
 "kanaletan."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:227
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:229
 #: core/libs/dimg/filters/curves/curvesbox.cpp:167
 #, kde-format
 msgid "All channels middle tone color picker"
 msgstr "Tonu ertainen kolore-hautatzailea kanal guztientzako"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:228
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:230
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7621,13 +7621,13 @@ msgstr ""
 "b>ren sarrerako mailak ezartzeko Gorria, Berdea, Urdina eta argitasunaren "
 "kanaletan."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:235
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:237
 #: core/libs/dimg/filters/curves/curvesbox.cpp:175
 #, kde-format
 msgid "All channels highlight tone color picker"
 msgstr "Argitasunaren tonuaren kolore-hautatzailea kanal guztientzako"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:236
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:238
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7638,12 +7638,12 @@ msgstr ""
 "tonua</b>ren sarrerako mailak ezartzeko Gorria, Berdea, Urdina eta "
 "argitasunaren kanaletan."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:259
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:261
 #, kde-format
 msgid "Adjust all levels automatically."
 msgstr "Doitu maila guztiak automatikoki."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:260
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:262
 #, kde-format
 msgid ""
 "If you press this button, all channel levels will be adjusted automatically."
@@ -7651,7 +7651,7 @@ msgstr ""
 "Botoi honetan klik egiten baduzu, kanalen maila guztiak automatikoki doituko "
 "dira."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
 #: core/dplugins/editor/colors/film/filmtool.cpp:212
 #: core/libs/dimg/filters/curves/curvesbox.cpp:197
 #: core/libs/dimg/filters/curves/curvesbox.cpp:204
@@ -7659,12 +7659,12 @@ msgstr ""
 msgid "&Reset"
 msgstr "&Berrezarri"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:267
 #, kde-format
 msgid "Reset current channel levels' values."
 msgstr "Berrezarri uneko kanalaren mailen balioak."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:268
 #, kde-format
 msgid ""
 "If you press this button, all levels' values from the currently selected "
@@ -7673,31 +7673,31 @@ msgstr ""
 "Botoi honetan klik egiten baduzu, unean hautatutako kanalaren mailen balio "
 "guztiak balio lehenetsietara berrezarriko dira."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:882
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:884
 #, kde-format
 msgid "Adjust Levels"
 msgstr "Doitu mailak"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:889
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:891
 #, fuzzy, kde-format
 #| msgid "Select Gimp Levels File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "Hautatu Gimp-eko mailen fitxategia kargatzeko"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:901
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:903
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr "Ezin da Gimp-eko mailen testu-fitxategia kargatu."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:916
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:918
 #, fuzzy, kde-format
 #| msgid "Gimp Levels File to Save"
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "Gimp-eko mailen fitxategia gordetzeko"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:928
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:930
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr "Ezin da Gimp-eko mailen testu-fitxategian gorde."
@@ -11270,7 +11270,7 @@ msgstr "Bi mapa - goian eta behean"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:73
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:72
 #: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
 msgid "OK"
@@ -30275,27 +30275,27 @@ msgstr "<i>Bilbe-emaria:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Bideo kodeka:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:185
+#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:185
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr "Partekatutako liburutegien eta osagaien informazioa"
 
-#: core/libs/dialogs/infodlg.cpp:68
+#: core/libs/dialogs/infodlg.cpp:70
 #: core/libs/progressmanager/dhistoryview.cpp:145
 #, kde-format
 msgid "Copy to Clipboard"
 msgstr "Kopiatu arbelera"
 
-#: core/libs/dialogs/infodlg.cpp:90
+#: core/libs/dialogs/infodlg.cpp:92
 #, fuzzy, kde-format
 #| msgid "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p>"
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
 msgstr "Bertsioa:"
 
-#: core/libs/dialogs/infodlg.cpp:111
+#: core/libs/dialogs/infodlg.cpp:113
 #, fuzzy, kde-format
 msgid "Items List"
 msgstr "Irudi-editorea"
@@ -37266,13 +37266,13 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "Datu bitarrak %1 byte"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:375
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:376
 #, fuzzy, kde-format
 #| msgid "The selected folder does not exist or is not readable"
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "Hautatutako karpeta ez da existitzen edo ez da irakurgarria"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:389
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:390
 #, fuzzy, kde-format
 #| msgid "The selected folder does not exist or is not readable"
 msgid "Perl does not exists or exec permission is missing"
@@ -39938,7 +39938,7 @@ msgstr "Miatu albumetan aurpegi bila: %1"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -62302,63 +62302,63 @@ msgstr "Bikoiztutakoak"
 msgid "Duplicate found: %1"
 msgstr "Bikoiztutakoak"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:216
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Miatu albumetan aurpegi bila: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:221
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Miatu %1 albumetan aurpegi bila"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:227
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Miatu irudia aurpegi bila: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:232
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:231
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Miatu %1 irudiak aurpegi bila"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:237
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:236
 #, fuzzy, kde-format
 msgid "Updating faces database"
 msgstr "<b>Hatz-marken datu-basea eguneratzen. Itxaron...</b>"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:258
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:286
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:367
 #, kde-format
 msgid "Error starting face detection."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:389
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:388
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Items scanned for faces: %1\n"
 msgstr "Miatu albumetan aurpegi bila: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:393
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:392
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Item scanned for faces: %1\n"
 msgstr "Miatu albumetan aurpegi bila: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:398
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
 #, fuzzy, kde-format
 #| msgid "Plugins found: %1"
 msgid "Faces found: %1"
 msgstr "Aurkitutako plugin-ak: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:402
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
 #, fuzzy, kde-format
 #| msgid "Plugins found: %1"
 msgid "Face found: %1"
 msgstr "Aurkitutako plugin-ak: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Face Scanning: %1\n"
