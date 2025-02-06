@@ -31,7 +31,7 @@ FaceEngine:      Complete rewrite of the Face Classifier and Face Pipeline imple
                  8.5.0 used a custom made K Nearest Neighbor (KNN) classifier. In 8.6.0 we’re using an ensemble approach
                  using cross validating KNN and SVM classifiers from OpenCV with a single custom distance check.
                  It’s faster and more accurate.
-                 In addition, we added a Face Image Quality Assessment (FIQA) which perform a minimum size check and
+                 In addition, we added a Face Image Quality Assessment (FIQA) which performs a minimum size check and
                  a Fast Fourier Transform filter to stop small, blurry, and noisy faces from being used for training
                  the recognition model.
                  The only thing we’re really reusing from 8.5.0 are the YuNet and SFace models themselves.
@@ -40,7 +40,7 @@ FaceEngine:      Complete rewrite of the Face Classifier and Face Pipeline imple
 AutoTags:        The Autotags engine has been completely rewritten using the new pipelines and improvements found
                  in the FaceEngine. New classifiers and the option to adjust the Autotagging confidence threshold
                  have been added. Autotagging is now faster and more accurate using new YOLOv11, YOLOv11 XLarge,
-                 and ResNet-152 DNN models. The older YOLOv5 and ResNet-50 models have been removed.
+                 and EfficientNet B7 DNN models. The older YOLOv5 and ResNet-50 models have been removed.
                  Auto-tags scan tool is now available in the Tags tab from the left sidebar.
 
 Image Quality    The Image Quality Sorter is now available from the Labels tab on the left sidebar. The global
