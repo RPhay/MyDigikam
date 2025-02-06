@@ -151,8 +151,8 @@ BUGFIXES:
 102 ==> 499500 - Build failed with: restorationtool.cpp:162:12: error: no matching function for call to ‘DigikamEditorRestorationToolPlugin.
 103 ==> 499156 - YOLOv11 let digiKam crash.
 104 ==> 499464 - Thumbnails Icons View shows captions incorrectly when there is a multi-line caption.
-105 ==>
-106 ==>
+105 ==> 498104 - Face Recognition fails.
+106 ==> 498024 - Face recognition becomes quickly useless with many faces in library.
 107 ==>
 108 ==>
 109 ==>
