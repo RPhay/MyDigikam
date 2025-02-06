@@ -13,7 +13,7 @@ Bundles:         Windows installer Qt5 uses last Qt 5.15.16.
 Bundles:         G'Mic-Qt BQM and Image Editor updated to last version 3.4.2.
 Setup:           Add new GPU hardware support options for decoding video with FFmpeg backend (Qt6 only).
 
-FaceEngine:      Complete rewrite of the Face Classifier and Face Pipeline implmentations.
+FaceEngine:      Complete rewrite of the Face Classifier and Face Pipeline implementations.
                  There are significant improvements coming in 8.6.0. The pipelines have
                  been completely rewritten and are 25%-50% faster when using full CPU. The face
                  detector has also been improved to reduce false positives. There is a
@@ -40,7 +40,11 @@ FaceEngine:      Complete rewrite of the Face Classifier and Face Pipeline implm
 AutoTags:        The Autotags engine has been completely rewritten using the new pipelines and improvements found
                  in the FaceEngine. New classifiers and the option to adjust the Autotagging confidence threshold
                  have been added. Autotagging is now faster and more accurate using new YOLOv11, YOLOv11 XLarge,
-                 and ResNet-152 DNN models.  The older YOLOv5 and ResNet-50 models have been removed.
+                 and ResNet-152 DNN models. The older YOLOv5 and ResNet-50 models have been removed.
+                 Auto-tags scan tool is now available in the Tags tab from the left sidebar.
+
+Image Quality    The Image Quality Sorter is now available from the Labels tab on the left sidebar. The global
+                 Image Quality settings from the setup dialog have been removed.
 
 RedEyes:         RedEye Correction Filter tool has been updated to use an AI DNN model to detect eyes.
 
