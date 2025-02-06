@@ -52,7 +52,6 @@ public:
 
 #endif
 
-        ImageQualityPage,
         CameraPage,
         PluginsPage,
         MiscellaneousPage,
@@ -84,8 +83,6 @@ public:
     static bool execExifTool(QWidget* const parent);
 
     static bool execLocalize(QWidget* const parent);
-
-    static bool execImageQualitySorter(QWidget* const parent);
 
 #ifdef HAVE_GEOLOCATION
 

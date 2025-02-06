@@ -56,7 +56,6 @@ set(libsetup_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/setupplugins.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setuplighttable.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setupdatabase.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/setupimagequalitysorter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setuputils.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/misc/setupmisc.cpp

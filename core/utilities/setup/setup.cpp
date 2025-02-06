@@ -40,7 +40,6 @@
 #include "setuplighttable.h"
 #include "setupmetadata.h"
 #include "setupmisc.h"
-#include "setupimagequalitysorter.h"
 #include "setuptooltip.h"
 #include "setupdatabase.h"
 #include "setupplugins.h"
@@ -75,7 +74,6 @@ public:
 #endif
 
     DConfigDlgWdgItem*       page_editor                = nullptr;
-    DConfigDlgWdgItem*       page_imagequalitysorter    = nullptr;
     DConfigDlgWdgItem*       page_icc                   = nullptr;
     DConfigDlgWdgItem*       page_camera                = nullptr;
     DConfigDlgWdgItem*       page_plugins               = nullptr;
@@ -96,7 +94,6 @@ public:
 #endif
 
     SetupEditor*             editorPage                 = nullptr;
-    SetupImageQualitySorter* imageQualitySorterPage     = nullptr;
     SetupICC*                iccPage                    = nullptr;
     SetupCamera*             cameraPage                 = nullptr;
     SetupPlugins*            pluginsPage                = nullptr;
@@ -177,11 +174,6 @@ Setup::Setup(QWidget* const parent)
     d->page_geolocation->setIcon(QIcon::fromTheme(QLatin1String("map-globe")));
 
 #endif
-
-    d->imageQualitySorterPage = new SetupImageQualitySorter();
-    d->page_imagequalitysorter = addPage(d->imageQualitySorterPage, i18nc("@title: settings section", "Image Quality Sorter"));
-    d->page_imagequalitysorter->setHeader(i18nc("@title", "Image Quality Sorter Settings\nCustomize default settings to perform image triaging by quality"));
-    d->page_imagequalitysorter->setIcon(QIcon::fromTheme(QLatin1String("flag-green")));
 
     d->cameraPage  = new SetupCamera();
     d->page_camera = addPage(d->cameraPage, i18nc("@title: settings section", "Cameras"));
@@ -482,32 +474,6 @@ bool Setup::execLocalize(QWidget* const parent)
     return success;
 }
 
-bool Setup::execImageQualitySorter(QWidget* const parent)
-{
-    QPointer<Setup> setup        = new Setup(parent);
-    setup->showPage(ImageQualityPage);
-    setup->setFaceType(Plain);
-
-    DConfigDlgWdgItem* const cur = setup->currentPage();
-
-    if (!cur)
-    {
-        return false;
-    }
-
-    SetupImageQualitySorter* const widget  = dynamic_cast<SetupImageQualitySorter*>(cur->widget());
-
-    if (!widget)
-    {
-        return false;
-    }
-
-    bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
-    delete setup;
-
-    return success;
-}
-
 void Setup::slotOkClicked()
 {
     if (!d->cameraPage->checkSettings())
@@ -540,7 +506,6 @@ void Setup::slotOkClicked()
 #endif
 
     d->editorPage->applySettings();
-    d->imageQualitySorterPage->applySettings();
     d->iccPage->applySettings();
     d->pluginsPage->applySettings();
     d->miscPage->applySettings();
@@ -657,11 +622,6 @@ Setup::Page Setup::activePageIndex() const
         return EditorPage;
     }
 
-    if (cur == d->page_imagequalitysorter)
-    {
-        return ImageQualityPage;
-    }
-
     if (cur == d->page_icc)
     {
         return ICCPage;
@@ -736,11 +696,6 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
         case Setup::EditorPage:
         {
             return page_editor;
-        }
-
-        case Setup::ImageQualityPage:
-        {
-            return page_imagequalitysorter;
         }
 
         case Setup::ICCPage:

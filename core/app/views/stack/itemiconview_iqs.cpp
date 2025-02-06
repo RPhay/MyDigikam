@@ -17,7 +17,6 @@
 
 // Local includes
 
-#include "setupimagequalitysorter.h"
 #include "maintenancethread.h"
 
 namespace Digikam
@@ -25,8 +24,6 @@ namespace Digikam
 
 void ItemIconView::slotImageQualitySorter()
 {
-    Setup::execSinglePage(qApp->activeWindow(), Setup::ImageQualityPage);
-
     QStringList paths;
     const auto urls = selectedUrls();
 
@@ -35,11 +32,10 @@ void ItemIconView::slotImageQualitySorter()
         paths << url.toLocalFile();
     }
 
-    SetupImageQualitySorter* const settingWidgets = new SetupImageQualitySorter();
+    ImageQualitySettings settings;
+    settings.readFromConfig();
 
-    ImageQualitySettings settings                 = settingWidgets->getImageQualitySettings();
-
-    MaintenanceThread* const thread               = new MaintenanceThread(this);
+    MaintenanceThread* const thread = new MaintenanceThread(this);
 
     thread->sortByImageQuality(paths, settings);
     thread->start();
