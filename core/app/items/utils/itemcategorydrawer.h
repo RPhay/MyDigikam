@@ -57,8 +57,9 @@ private:
     void textForSAlbum(SAlbum* a, int count, QString* header, QString* subLine)                                      const;
     void textForDAlbum(DAlbum* a, int count, QString* header, QString* subLine)                                      const;
     void textForFormat(const QModelIndex& index, QString* header, QString* subLine)                                  const;
-    void textForMonth(const QModelIndex& index, QString* header, QString* subLine)                                   const;
     void textForFace(const QModelIndex& index, QString* header, QString* subLine)                                    const;
+    void textForMonth(const QModelIndex& index, QString* header, QString* subLine)                                   const;
+    void textForDay(const QModelIndex& index, QString* header, QString* subLine)                                     const;
 
 private:
 

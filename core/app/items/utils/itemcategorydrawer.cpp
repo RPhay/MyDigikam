@@ -160,15 +160,21 @@ void ItemCategoryDrawer::drawCategory(const QModelIndex& index, int /*sortRole*/
             break;
         }
 
+        case ItemSortSettings::CategoryByFaces:
+        {
+            textForFace(index, &header, &subLine);
+            break;
+        }
+
         case ItemSortSettings::CategoryByMonth:
         {
             textForMonth(index, &header, &subLine);
             break;
         }
 
-        case ItemSortSettings::CategoryByFaces:
+        case ItemSortSettings::CategoryByDay:
         {
-            textForFace(index, &header, &subLine);
+            textForDay(index, &header, &subLine);
             break;
         }
     }
@@ -277,20 +283,33 @@ void ItemCategoryDrawer::textForFormat(const QModelIndex& index, QString* header
     *subLine       = i18np("1 Item", "%1 Items", count);
 }
 
-void ItemCategoryDrawer::textForMonth(const QModelIndex& index, QString* header, QString* subLine) const
-{
-    QDate date = index.data(ItemFilterModel::CategoryDateRole).toDate();
-    *header    = date.isValid() ? date.toString(QLatin1String("MMM yyyy"))
-                                : i18n("Invalid date");
-    int count  = d->view->categoryRange(index).height();
-    *subLine   = i18np("1 Item", "%1 Items", count);
-}
-
 void ItemCategoryDrawer::textForFace(const QModelIndex& index, QString* header, QString* subLine) const
 {
     *header    = index.data(ItemFilterModel::CategoryFaceRole).toString();
     int count  = d->view->categoryRange(index).height();
     *subLine   = i18np("1 Item", "%1 Items", count);
+}
+
+void ItemCategoryDrawer::textForMonth(const QModelIndex& index, QString* header, QString* subLine) const
+{
+    QDate date    = index.data(ItemFilterModel::CategoryDateRole).toDate();
+    QString month = QLocale().standaloneMonthName(date.month());
+    *header       = date.isValid() ? month + date.toString(QLatin1String(" yyyy"))
+                                   : i18n("Invalid date");
+    int count     = d->view->categoryRange(index).height();
+    *subLine      = i18np("1 Item", "%1 Items", count);
+}
+
+void ItemCategoryDrawer::textForDay(const QModelIndex& index, QString* header, QString* subLine) const
+{
+    QDate date    = index.data(ItemFilterModel::CategoryDateRole).toDate();
+    QString month = QLocale().standaloneMonthName(date.month());
+    QString day   = date.toString(QLatin1String("dd (")) +
+                    QLocale().standaloneDayName(date.dayOfWeek()) + QLatin1String(") ");
+    *header       = date.isValid() ? day + month + date.toString(QLatin1String(" yyyy"))
+                                   : i18n("Invalid date");
+    int count     = d->view->categoryRange(index).height();
+    *subLine      = i18np("1 Item", "%1 Items", count);
 }
 
 void ItemCategoryDrawer::textForPAlbum(PAlbum* album, bool recursive, int count, QString* header, QString* subLine) const

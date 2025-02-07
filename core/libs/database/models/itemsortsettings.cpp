@@ -100,6 +100,7 @@ Qt::SortOrder ItemSortSettings::defaultSortOrderForCategorizationMode(Categoriza
     {
         case OneCategory:
         case NoCategories:
+        case CategoryByDay:
         case CategoryByAlbum:
         case CategoryByMonth:
         case CategoryByFormat:
@@ -198,17 +199,6 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
                                   categorizationCaseSensitivity, strTypeNatural);
         }
 
-        case CategoryByMonth:
-        {
-            int leftMonth  = left.dateTime().date().year()  * 100 +
-                             left.dateTime().date().month();
-            int rightMonth = right.dateTime().date().year() * 100 +
-                             right.dateTime().date().month();
-
-            return compareByOrder(leftMonth, rightMonth,
-                                  currentCategorizationSortOrder);
-        }
-
         case CategoryByFaces:
         {
             if (leftFace.isNull() && rightFace.isNull())
@@ -285,6 +275,30 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
             return naturalCompare(leftValue, rightValue,
                                   currentCategorizationSortOrder,
                                   categorizationCaseSensitivity, strTypeNatural);
+        }
+
+        case CategoryByMonth:
+        {
+            int leftMonth  = left.dateTime().date().year()  * 100 +
+                             left.dateTime().date().month();
+            int rightMonth = right.dateTime().date().year() * 100 +
+                             right.dateTime().date().month();
+
+            return compareByOrder(leftMonth, rightMonth,
+                                  currentCategorizationSortOrder);
+        }
+
+        case CategoryByDay:
+        {
+            int leftDay  = (left.dateTime().date().year()   * 100 +
+                            left.dateTime().date().month()) * 100 +
+                            left.dateTime().date().day();
+            int rightDay = (right.dateTime().date().year()   * 100 +
+                            right.dateTime().date().month()) * 100 +
+                            right.dateTime().date().day();
+
+            return compareByOrder(leftDay, rightDay,
+                                  currentCategorizationSortOrder);
         }
 
         default:

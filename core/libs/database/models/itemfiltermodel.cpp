@@ -1151,16 +1151,6 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
             return info.format();
         }
 
-        case ItemSortSettings::CategoryByMonth:
-        {
-            if (!info.dateTime().isValid())
-            {
-                return QLatin1String("INVALIDDATE");
-            }
-
-            return info.dateTime().toString(QLatin1String("yyyyMM"));
-        }
-
         case ItemSortSettings::CategoryByFaces:
         {
             // No face from extra data.
@@ -1202,6 +1192,26 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
             }
 
             return QLatin1String("NO_FACE");
+        }
+
+        case ItemSortSettings::CategoryByMonth:
+        {
+            if (!info.dateTime().isValid())
+            {
+                return QLatin1String("INVALIDDATE");
+            }
+
+            return info.dateTime().toString(QLatin1String("yyyyMM"));
+        }
+
+        case ItemSortSettings::CategoryByDay:
+        {
+            if (!info.dateTime().isValid())
+            {
+                return QLatin1String("INVALIDDATE");
+            }
+
+            return info.dateTime().toString(QLatin1String("yyyyMMdd"));
         }
 
         default:

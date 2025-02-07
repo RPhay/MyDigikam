@@ -158,7 +158,7 @@ BUGFIXES:
 105 ==> 498104 - Face Recognition fails.
 106 ==> 498024 - Face recognition becomes quickly useless with many faces in library.
 107 ==> 498113 - On Windows 10, digiKam background process remains running after app close.
-108 ==>
+108 ==> 499661 - Good software but no grouping per day in miniature mode.
 109 ==>
 110 ==>
 111 ==>

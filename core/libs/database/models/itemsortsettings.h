@@ -52,8 +52,9 @@ public:
         OneCategory,                ///< all items in one global category
         CategoryByAlbum,
         CategoryByFormat,
+        CategoryByFaces,
         CategoryByMonth,
-        CategoryByFaces
+        CategoryByDay
     };
 
     enum SortRole

@@ -672,8 +672,9 @@ void DigikamApp::setupActions()
     QAction* const noCategoriesAction     = d->imageSeparationAction->addAction(i18nc("@action: setup", "Flat List"));
     QAction* const separateByAlbumAction  = d->imageSeparationAction->addAction(i18nc("@action: setup", "By Album"));
     QAction* const separateByFormatAction = d->imageSeparationAction->addAction(i18nc("@action: setup", "By Format"));
-    QAction* const separateByMonthAction  = d->imageSeparationAction->addAction(i18nc("@action: setup", "By Month"));
     QAction* const separateByFacesAction  = d->imageSeparationAction->addAction(i18nc("@action: setup", "By Faces"));
+    QAction* const separateByMonthAction  = d->imageSeparationAction->addAction(i18nc("@action: setup", "By Month"));
+    QAction* const separateByDayAction    = d->imageSeparationAction->addAction(i18nc("@action: setup", "By Day"));
 
     connect(noCategoriesAction, &QAction::triggered,
             this, [this]() { d->view->slotSeparateImages((int)ItemSortSettings::OneCategory); });
@@ -684,11 +685,14 @@ void DigikamApp::setupActions()
     connect(separateByFormatAction, &QAction::triggered,
             this, [this]() { d->view->slotSeparateImages((int)ItemSortSettings::CategoryByFormat); });
 
+    connect(separateByFacesAction, &QAction::triggered,
+            this, [this]() { d->view->slotSeparateImages((int)ItemSortSettings::CategoryByFaces); });
+
     connect(separateByMonthAction, &QAction::triggered,
             this, [this]() { d->view->slotSeparateImages((int)ItemSortSettings::CategoryByMonth); });
 
-    connect(separateByFacesAction, &QAction::triggered,
-            this, [this]() { d->view->slotSeparateImages((int)ItemSortSettings::CategoryByFaces); });
+    connect(separateByDayAction, &QAction::triggered,
+            this, [this]() { d->view->slotSeparateImages((int)ItemSortSettings::CategoryByDay); });
 
     connect(d->view, &ItemIconView::signalSeparationModeChanged,
             this, [this](int category)
