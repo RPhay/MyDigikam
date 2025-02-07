@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-06 01:53+0000\n"
+"POT-Creation-Date: 2025-02-07 02:00+0000\n"
 "PO-Revision-Date: 2025-01-31 12:48+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -2909,8 +2909,25 @@ msgctxt "Search images on a map"
 msgid "Map"
 msgstr "Карта"
 
+#: core/app/views/sidebar/labelssidebarwidget.cpp:78
+#: core/app/views/sidebar/labelssidebarwidget.cpp:87
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu Pluralized"
+#| msgid "Image Quality Sort"
+#| msgid_plural "Image Quality Sort"
+msgid "Image Quality Scan"
+msgstr "Сортиране на качеството на изображението"
+
+#: core/app/views/sidebar/labelssidebarwidget.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Use this button to scan the selected albums for faces"
+msgctxt "@info"
+msgid "Use this button to scan the selected albums for image quality parsing"
+msgstr "Използвайте този бутон, за да сканирате избраните албуми за лица"
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/app/views/sidebar/labelssidebarwidget.cpp:115
+#: core/app/views/sidebar/labelssidebarwidget.cpp:164
 #: core/libs/album/widgets/albumselecttabs.cpp:182
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:133
@@ -2941,7 +2958,7 @@ msgstr ""
 "първи път, моля, помислете дали да не използвате полето за помощ в долния "
 "ляв страничен панел."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:223
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:224
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -2950,7 +2967,7 @@ msgstr ""
 "Разпознаването на лица е прекъснато, тъй като няма идентичности за "
 "разпознаване. Моля, добавете нови идентичности."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:243
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:244
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -2979,8 +2996,9 @@ msgstr "Налични тагове"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:139
-#, kde-format
-msgid "Auto-tag scan"
+#, fuzzy, kde-format
+#| msgid "Auto-tag scan"
+msgid "Auto-tag Scan"
 msgstr "Автоматично сканиране на етикети"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:141
@@ -2991,12 +3009,12 @@ msgstr ""
 "Използвайте този бутон, за да сканирате избраните албуми за автоматични "
 "етикети"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:296
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:298
 #, kde-format
 msgid "No Tags Album"
 msgstr "Няма албум с етикети"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:340
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:325
 #: core/libs/album/engine/album.cpp:554
 #: core/libs/album/manager/albummanager.cpp:182
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -3010,32 +3028,32 @@ msgstr "Няма албум с етикети"
 msgid "Tags"
 msgstr "Тагове"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:121
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:123
 #, kde-format
 msgid "Time Unit:"
 msgstr "Единица време:"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:123
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:125
 #, kde-format
 msgid "Day"
 msgstr "Ден"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:124
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:126
 #, kde-format
 msgid "Week"
 msgstr "Седмица"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:125
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:127
 #, kde-format
 msgid "Month"
 msgstr "Месец"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:126
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:128
 #, kde-format
 msgid "Year"
 msgstr "Година"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:129
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:131
 #, kde-format
 msgid ""
 "<p>Select the histogram time unit.</p><p>You can change the graph decade to "
@@ -3044,7 +3062,7 @@ msgstr ""
 "<p>Изберете единицата за време на хистограмата.</p><p>Можете да промените "
 "декадата на графиката, за да я увеличите или намалите във времето.</p>"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:136
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:138
 #, kde-format
 msgid ""
 "<p>Select the histogram scale.</p><p>If the date's maximal counts are small, "
@@ -3057,24 +3075,24 @@ msgstr ""
 "скала може да се използва, когато максималните стойности са големи; ако се "
 "използва, всички стойности (малки и големи) ще се виждат на графиката.</p>"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:143
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:145
 #, kde-format
 msgctxt "@info: timeline sidebar"
 msgid "Linear"
 msgstr "Линейно"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:149
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:151
 #, kde-format
 msgctxt "@info: timeline sidebar"
 msgid "Logarithmic"
 msgstr "Логаритмично"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:186
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:188
 #, kde-format
 msgid "Clear current selection"
 msgstr "Изчистване на текущата селекция"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:187
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:189
 #, kde-format
 msgid ""
 "If you press this button, the current date selection on the time-line will "
@@ -3083,7 +3101,7 @@ msgstr ""
 "Ако натиснете този бутон, текущата селекция на датата на времевата линия ще "
 "бъде изчистена."
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:190
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:192
 #, kde-format
 msgid ""
 "Enter the name of the current dates search to save in the \"Searches\" view"
@@ -3091,12 +3109,12 @@ msgstr ""
 "Въведете името на текущото търсене на дати, за да го запазите в изгледа "
 "\"Търсения\""
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:196
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:198
 #, kde-format
 msgid "Save current selection to a new virtual Album"
 msgstr "Запазване на текущата селекция в нов виртуален албум"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:197
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:199
 #, kde-format
 msgid ""
 "If you press this button, the dates selected on the time-line will be saved "
@@ -3106,18 +3124,18 @@ msgstr ""
 "запаметени в нов виртуален Албум за търсене, като се използва името, "
 "зададено отляво."
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:380
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:383
 #: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Хронология"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:411
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:414
 #, kde-format
 msgid "no item"
 msgstr "няма елемент"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:412
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:415
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:481
 #, kde-format
@@ -9187,9 +9205,8 @@ msgid "Use Color Management for Printing"
 msgstr "Използване на управление на цветовете за отпечатване"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
-#: core/libs/imgqsort/imagequalityconfselector.cpp:72
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:286
+#: core/utilities/maintenance/main/maintenancedlg.cpp:277
 #, kde-format
 msgid "Settings..."
 msgstr "Настройки..."
@@ -35502,49 +35519,106 @@ msgstr "Изчистване на всичко"
 msgid "Select All"
 msgstr "Избиране на всички"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:68
-#, kde-format
-msgctxt "@option:radio"
-msgid "Use default settings"
-msgstr "Използване на настройките по подразбиране"
-
-#: core/libs/imgqsort/imagequalityconfselector.cpp:69
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Use the default quality sorting parameters configured in Setup dialog."
-msgstr ""
-"Използвайте параметрите за сортиране на качеството по подразбиране, "
-"конфигурирани в диалоговия прозорец Настройка."
-
-#: core/libs/imgqsort/imagequalityconfselector.cpp:76
-#, kde-format
-msgctxt "@option:radio"
-msgid "Use custom settings"
-msgstr "Използване на потребителски настройки"
-
-#: core/libs/imgqsort/imagequalityconfselector.cpp:77
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Use custom parameters to perform quality sorting instead default one."
-msgstr ""
-"Използвайте потребителски параметри, за да извършвате качествено сортиране "
-"вместо това по подразбиране."
-
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:134
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Търсене в"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:69
+#: core/libs/imgqsort/imagequalitywidget.cpp:66
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "These settings determines the quality of an image and convert it into a "
+#| "score, stored in database as Pick Label property. This information can be "
+#| "evaluated by two ways: using four basic factors sabotaging the images "
+#| "(blur, noise, exposure, and compression), or using a deep learning neural "
+#| "network engine. The first one helps to determine whether images are "
+#| "distorted by the basic factors, however it demands some drawbacks as fine-"
+#| "tuning from the user’s side and it cannot work along the aesthetic image "
+#| "processing. The second one uses an IA approach based on %1 model to "
+#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
+#| "require hyper-parameter settings, and make this feature easier to use."
+msgctxt "@info"
+msgid ""
+"These settings determines the quality of an image and convert it into a "
+"score, stored in database as Pick Label property. This information can be "
+"evaluated by two ways: using four basic factors sabotaging the images (blur, "
+"noise, exposure, and compression), or using a deep learning neural network "
+"engine. The first one helps to determine whether images are distorted by the "
+"basic factors, however it demands some drawbacks as fine-tuning from the "
+"user’s side and it cannot work along the aesthetic image processing. The "
+"second one uses an AI approach based on %1 model to predict the score. As "
+"deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
+"settings, and make this feature easier to use."
+msgstr ""
+"Тези настройки определят качеството на изображението и го преобразуват в "
+"оценка, която се съхранява в базата данни като свойство Pick Label. Тази "
+"информация може да бъде оценена по два начина: като се използват четирите "
+"основни фактора, саботиращи изображенията (размазване, шум, експозиция и "
+"компресия), или като се използва двигател на невронна мрежа за дълбоко "
+"обучение. Първият метод помага да се определи дали изображенията са "
+"изкривени от основните фактори, но изисква някои недостатъци като фина "
+"настройка от страна на потребителя и не може да работи заедно с "
+"естетическата обработка на изображенията. Вторият използва подход на ИА, "
+"основан на модела %1, за да предскаже резултата. Тъй като дълбокото обучение "
+"е решение от край до край, то не изисква хиперпараметрични настройки и прави "
+"тази функция по-лесна за използване."
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:76
 #, kde-format
+msgctxt "@label"
+msgid "aesthetic image quality"
+msgstr "естетическо качество на изображението"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:79
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#, kde-format
+msgid "Scan Mode: "
+msgstr "Режим на сканиране: "
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:84
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "In All"
+msgid "All"
+msgstr "Във всички"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:85
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Scan non-assigned only"
+msgid "Non-Assigned Only"
+msgstr "Сканиране само на неприсвоени"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:87
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-"
+#| "assigned only</b>: scan only the items with no assigned autotags.</p>"
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>All</b>: re-scan all items for tags.</p><p><b>Non-Assigned Only</b>: "
+"scan only the items with no assigned autotags.</p>"
+msgstr ""
+"<p><b>Сканиране на всички</b>: повторно сканиране на всички елементи за "
+"тагове.</p><p><b>Сканиране само на неприсвоени</b>: сканиране само на "
+"елементите без присвоени автоматични тагове. </p>"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:94
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgctxt "@option:check"
-msgid "Assign 'Rejected' Label to Low Quality Pictures"
+msgid "Assign 'Rejected' Label to Low Quality"
 msgstr "Присвояване на етикет \"Отхвърлено\" на снимки с ниско качество"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:70
+#: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35554,14 +35628,16 @@ msgstr ""
 "Изображенията с ниско качество, открити чрез анализ на размазване, шум и "
 "компресия, ще бъдат присвоени на етикета \"Отхвърлено\"."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:82
-#, kde-format
+#: core/libs/imgqsort/imagequalitywidget.cpp:107
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgctxt "@option:check"
-msgid "Assign 'Pending' Label to Medium Quality Pictures"
+msgid "Assign 'Pending' Label to Medium Quality"
 msgstr ""
 "Присвояване на етикет \"Изискващо обработка\" на снимки със средно качество"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:83
+#: core/libs/imgqsort/imagequalitywidget.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35571,13 +35647,15 @@ msgstr ""
 "Изображенията със средно качество, открити чрез анализ на размазване, шум и "
 "компресия, ще бъдат присвоени на етикета Pending (Очакващи)."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, kde-format
+#: core/libs/imgqsort/imagequalitywidget.cpp:120
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgctxt "@option:check"
-msgid "Assign 'Accepted' Label to High Quality Pictures"
+msgid "Assign 'Accepted' Label to High Quality"
 msgstr "Присвояване на етикет \"Прието\" на снимки с високо качество"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:96
+#: core/libs/imgqsort/imagequalitywidget.cpp:121
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35587,64 +35665,76 @@ msgstr ""
 "Изображенията с високо качество, открити чрез размазване, шум и анализ на "
 "компресията, ще бъдат назначени на етикет \"Приети\"."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:109
-#, kde-format
+#: core/libs/imgqsort/imagequalitywidget.cpp:134
+#, fuzzy, kde-format
+#| msgctxt "@option:radio"
+#| msgid "Detect Aesthetic Image using Deep Learning"
 msgctxt "@option:radio"
-msgid "Detect Aesthetic Image using Deep Learning"
+msgid "Detect Aesthetic Contents using Deep Learning"
 msgstr "Откриване на естетическо изображение с помощта на Deep Learning"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:111
-#, kde-format
+#: core/libs/imgqsort/imagequalitywidget.cpp:136
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Detect if the image has aesthetic value.\n"
+#| "The aesthetic detection engine use deep learning model to classify images"
 msgctxt "@info:tooltip"
 msgid ""
-"Detect if the image has aesthetic value.\n"
+"Detect if the image has aesthetic contents.\n"
 "The aesthetic detection engine use deep learning model to classify images"
 msgstr ""
 "Определяне дали изображението има естетическа стойност.\n"
 "Естетичният двигател за откриване използва модел на дълбоко обучение, за да "
 "класифицира изображенията"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:116
+#: core/libs/imgqsort/imagequalitywidget.cpp:141
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr "Откриване на качеството с помощта на основни фактори"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:118
-#, kde-format
+#: core/libs/imgqsort/imagequalitywidget.cpp:143
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Detect if the image is sabotaging by four basic factors (blur, noise, "
+#| "exposure, and compression)."
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image is sabotaging by four basic factors (blur, noise, "
-"exposure, and compression)."
+"exposure, and compression). See the relevant settings in the next tab."
 msgstr ""
 "Открива дали изображението е саботирано чрез четири основни фактора "
 "(размазване, шум, експозиция и компресия)."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:136
+#: core/libs/imgqsort/imagequalitywidget.cpp:163
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
 msgctxt "@title:tab"
-msgid "Rules"
-msgstr "Правила"
+msgid "Settings"
+msgstr "Настройки"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:143
+#: core/libs/imgqsort/imagequalitywidget.cpp:170
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Праг за Отказани:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:148
+#: core/libs/imgqsort/imagequalitywidget.cpp:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr "Праг, под който на всички снимки се присвоява етикет за отхвърлени"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:150
+#: core/libs/imgqsort/imagequalitywidget.cpp:177
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Праг за Изчакващи:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:155
+#: core/libs/imgqsort/imagequalitywidget.cpp:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
@@ -35652,94 +35742,94 @@ msgstr ""
 "Праг на качеството, под което всички снимки ще бъдат означени с етикет "
 "\"Изискващо обработка\""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:157
+#: core/libs/imgqsort/imagequalitywidget.cpp:184
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Допустим  праг:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:162
+#: core/libs/imgqsort/imagequalitywidget.cpp:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr "Праг, над който на всички снимки се присвоява етикет Accepted Label"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:164
+#: core/libs/imgqsort/imagequalitywidget.cpp:191
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Откриване на замъгляване"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:165
+#: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr ""
 "Открийте количеството размазване в изображенията, които са му предадени"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:167
-#: core/libs/imgqsort/imagequalitywidget.cpp:177
-#: core/libs/imgqsort/imagequalitywidget.cpp:187
+#: core/libs/imgqsort/imagequalitywidget.cpp:194
+#: core/libs/imgqsort/imagequalitywidget.cpp:204
+#: core/libs/imgqsort/imagequalitywidget.cpp:214
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Ширина:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:172
+#: core/libs/imgqsort/imagequalitywidget.cpp:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Тежест, която да се присвои на алгоритъма за размазване"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:174
+#: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Откриване на шум"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:175
+#: core/libs/imgqsort/imagequalitywidget.cpp:202
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Откриване на количеството шум в предадените му изображения"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:182
+#: core/libs/imgqsort/imagequalitywidget.cpp:209
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Тежест, която да се присвои на алгоритъма за шум"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:184
+#: core/libs/imgqsort/imagequalitywidget.cpp:211
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Откриване на компресия"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:185
+#: core/libs/imgqsort/imagequalitywidget.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Открийте размера на компресията в предадените към него изображения"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:192
+#: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Тежест за определяне на алгоритъма за компресиране"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:194
+#: core/libs/imgqsort/imagequalitywidget.cpp:221
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Откриване на недостатъчна и прекомерна експозиция"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:195
+#: core/libs/imgqsort/imagequalitywidget.cpp:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Откриване дали изображенията са недоекспонирани или преекспонирани"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:225
+#: core/libs/imgqsort/imagequalitywidget.cpp:252
 #, kde-format
 msgctxt "@title:tab"
 msgid "Basic Factors"
@@ -36991,12 +37081,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "Бинарни данни %1 байта"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:376
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:375
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "ExifTool не съществува или липсва разрешение за изпълнение"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:390
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:389
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl не съществува или липсва разрешение за изпълнение"
@@ -39748,7 +39838,7 @@ msgstr "Сканиране на обект: %1\n"
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
@@ -39785,54 +39875,35 @@ msgstr ""
 "ще генерира описателни етикети за съдържанието на изображението и ще "
 "съхранява резултатите в базата данни.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
-#, kde-format
-msgid "Auto-tagging mode: "
-msgstr "Режим на автоматично поставяне на етикети: "
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
-msgid "Scan all"
-msgstr "Сканиране на всички"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
-#: core/utilities/maintenance/main/maintenancedlg.cpp:256
-#, kde-format
-msgid "Scan non-assigned only"
-msgstr "Сканиране само на неприсвоени"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-assigned "
-"only</b>: scan only the items with no assigned autotags.</p>"
-msgstr ""
-"<p><b>Сканиране на всички</b>: повторно сканиране на всички елементи за "
-"тагове.</p><p><b>Сканиране само на неприсвоени</b>: сканиране само на "
-"елементите без присвоени автоматични тагове. </p>"
-
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
-#, kde-format
-msgid "Auto-tagging tag mode: "
+#, fuzzy, kde-format
+#| msgid "Auto-tagging tag mode: "
+msgid "Auto-Tagging Tag Mode: "
 msgstr "Режим на етикети за автоматично маркиране:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
-#, kde-format
-msgid "Replace existing autotags"
+#, fuzzy, kde-format
+#| msgid "Replace existing autotags"
+msgid "Replace Existing Autotags"
 msgstr "Замяна на съществуващите автоматични тагове"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
-#, kde-format
-msgid "Update autotags"
+#, fuzzy, kde-format
+#| msgid "Update autotags"
+msgid "Update Autotags"
 msgstr "Актуализиране на автоматичните тагове"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Replace existing autotags</b>: clear existing autotags and replace "
+#| "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
+#| "autotags found to the existing tags.</p>"
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Replace existing autotags</b>: clear existing autotags and replace "
-"with the results of the scan.</p><p><b>Update autotags</b>: add any new "
+"<p><b>Replace Existing Autotags</b>: clear existing autotags and replace "
+"with the results of the scan.</p><p><b>Update Autotags</b>: add any new "
 "autotags found to the existing tags.</p>"
 msgstr ""
 "<p><b>Замяна на съществуващи автоматични тагове</b>: изчистете "
@@ -39841,8 +39912,9 @@ msgstr ""
 "нови автоматични тагове към съществуващи тагове.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#, kde-format
-msgid "Selection model: "
+#, fuzzy, kde-format
+#| msgid "Selection model: "
+msgid "Selection Model: "
 msgstr "Модел за селекция: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:147
@@ -39852,8 +39924,9 @@ msgid "No models available"
 msgstr "Няма налични подробности"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
-#, kde-format
-msgid "Object detection accuracy: "
+#, fuzzy, kde-format
+#| msgid "Object detection accuracy: "
+msgid "Object Detection Accuracy: "
 msgstr "Точност на откриване на обект:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:165
@@ -39869,7 +39942,7 @@ msgstr ""
 "обектите да бъдат разпознати, но ще бъдат разпознати по-малко обекти.\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:170
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -39887,13 +39960,6 @@ msgstr ""
 "Откриването на обекти и автоматичното маркиране са отнемащи време задачи.\n"
 "Можете да изберете дали искате да използвате всички процесорни ядра\n"
 "на вашата система или да работи във фонов режим само на едно ядро."
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
-#, kde-format
-msgctxt "@title:tab"
-msgid "Settings"
-msgstr "Настройки"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:188
 #, kde-format
@@ -43158,25 +43224,25 @@ msgstr[1] ""
 "Прилагане на операция към \n"
 "\"%1\" избрани снимки"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:405
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:406
 #, kde-format
 msgctxt "date of last image modification"
 msgid "Mod.: %1"
 msgstr "Мод.: %1"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:421
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:422
 #: core/showfoto/main/showfoto.cpp:267
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
-#: core/utilities/import/items/itemviewimportdelegate.cpp:367
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
+#: core/utilities/import/items/itemviewimportdelegate.cpp:368
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1 на %2 (%3 Мп)"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:426
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:446
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:320
-#: core/utilities/import/items/itemviewimportdelegate.cpp:372
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:427
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:447
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
+#: core/utilities/import/items/itemviewimportdelegate.cpp:373
 #, kde-format
 msgctxt "unknown image resolution"
 msgid "Unknown"
@@ -43348,8 +43414,8 @@ msgid "Model/View Port of Image Editor Canvas"
 msgstr "Порт на модела/изгледа на платното на редактора на изображения"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:218
-#: core/utilities/maintenance/main/maintenancedlg.cpp:264
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:101
+#: core/utilities/maintenance/main/maintenancedlg.cpp:255
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Сортиране на качеството на изображението"
@@ -49846,7 +49912,7 @@ msgstr "&Декориране"
 msgid "Effec&ts"
 msgstr "Е&фекти"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:120
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:117
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -49925,13 +49991,13 @@ msgstr ""
 "<qt>Настройки за запазване на файлове с изображения<br/><i>Задайте "
 "конфигурация по подразбиране, използвана за запазване на изображения</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:172
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Геолокация"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:176
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:173
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -51088,8 +51154,8 @@ msgctxt "@action"
 msgid "C&ancel"
 msgstr "О&тказ"
 
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:253
-#: core/utilities/import/items/itemviewimportdelegate.cpp:320
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:254
+#: core/utilities/import/items/itemviewimportdelegate.cpp:321
 #, kde-format
 msgctxt "date of image creation"
 msgid "created: %1"
@@ -52354,19 +52420,19 @@ msgctxt "@info"
 msgid "Help"
 msgstr "Помощ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:128
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:129
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Работен процес"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Точност:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:156
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52378,43 +52444,43 @@ msgstr ""
 "стойността, толкова по-точно ще\n"
 "бъдат разпознавани лицата, но ще бъдат открити по-малко лица."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:196
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Размер на лицето:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Много малък"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Малък"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Среден"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Голям"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Много голям"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52447,18 +52513,18 @@ msgstr ""
 "<b>Голям</b> за нормална употреба.</p><p>Тази настройка се отнася само за "
 "YuNet .</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:226
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Настройки на откриване на лица"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Точност:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52474,7 +52540,7 @@ msgstr ""
 " (разпознават се само лица, които са много сходни с предварително маркирани "
 "лица)."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52486,7 +52552,7 @@ msgstr ""
 "Можете да изберете дали желаете да използвате всички процесорни ядра\n"
 "на вашата система или да се изпълнява във фонов режим само на едно ядро."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Настройки на разпознаване на лица"
@@ -61261,48 +61327,38 @@ msgstr "Откриване и разпознаване на лица"
 msgid "Auto-tags Assignment"
 msgstr "Автоматично задаване на етикети"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:250
-#, kde-format
-msgid "Scan Mode: "
-msgstr "Режим на сканиране: "
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:255
-#, kde-format
-msgid "Clean all and re-scan"
-msgstr "Почистване на всички и повторно сканиране"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:275
+#: core/utilities/maintenance/main/maintenancedlg.cpp:266
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Направление за синхронизиране: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:279
+#: core/utilities/maintenance/main/maintenancedlg.cpp:270
 #, kde-format
 msgid "From database to image metadata"
 msgstr "От база данни към метаданни на изображение"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:280
+#: core/utilities/maintenance/main/maintenancedlg.cpp:271
 #, kde-format
 msgid "From image metadata to database"
 msgstr "От метаданни на изображение към база данни"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:283
+#: core/utilities/maintenance/main/maintenancedlg.cpp:274
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Проверка на панела за настройка на метаданните за подробности: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:292
+#: core/utilities/maintenance/main/maintenancedlg.cpp:283
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Синхронизиране на метаданни и база данни"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:353
+#: core/utilities/maintenance/main/maintenancedlg.cpp:341
 #, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Предупреждение"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:354
+#: core/utilities/maintenance/main/maintenancedlg.cpp:342
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
@@ -61315,7 +61371,7 @@ msgstr ""
 "разпознати."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -61324,7 +61380,7 @@ msgstr ""
 "Всички операции са извършени.\n"
 "Продължителност: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Поддръжка на digiKam"
@@ -61586,22 +61642,22 @@ msgstr "Сканирани обекти за пръстов отпечатък: 
 msgid "Item scanned for fingerprint: %1"
 msgstr "Сканирани обекти за пръстов отпечатък: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:172
 #, kde-format
 msgid "Image Quality: %1\n"
 msgstr "Качество на изображението: %1\n"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:182
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #, kde-format
 msgid "Pick Label: %1"
 msgstr "Избране на етикет: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:197
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:189
 #, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "Обекти, сканирани за качество: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:201
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:193
 #, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "Обектът е сканиран за качество: %1"
@@ -67034,13 +67090,13 @@ msgstr ""
 "<b>Забележка: Всички промени в тези настройки влизат в сила само след "
 "рестартиране. Някои настройки зависят от хардуера и може да нямат ефект.</b>"
 
-#: core/utilities/setup/setup.cpp:128
+#: core/utilities/setup/setup.cpp:125
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "База от данни"
 
-#: core/utilities/setup/setup.cpp:129
+#: core/utilities/setup/setup.cpp:126
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67050,13 +67106,13 @@ msgstr ""
 "Настройки на база от данни\n"
 "Персонализиране на настройките на базата данни"
 
-#: core/utilities/setup/setup.cpp:133
+#: core/utilities/setup/setup.cpp:130
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Колекции"
 
-#: core/utilities/setup/setup.cpp:134
+#: core/utilities/setup/setup.cpp:131
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67066,13 +67122,13 @@ msgstr ""
 "Настройки на колекциите\n"
 "Задаване на местоположението на албумите"
 
-#: core/utilities/setup/setup.cpp:138
+#: core/utilities/setup/setup.cpp:135
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Изгледи"
 
-#: core/utilities/setup/setup.cpp:139
+#: core/utilities/setup/setup.cpp:136
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67082,13 +67138,13 @@ msgstr ""
 "Настройки на изгледите на приложението\n"
 "Персонализиране на външния вид на изгледите"
 
-#: core/utilities/setup/setup.cpp:143
+#: core/utilities/setup/setup.cpp:140
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Подсказка"
 
-#: core/utilities/setup/setup.cpp:144
+#: core/utilities/setup/setup.cpp:141
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67098,13 +67154,13 @@ msgstr ""
 "Настройки на подсказките на елементите\n"
 "Персонализиране на информацията в подсказките на елементите"
 
-#: core/utilities/setup/setup.cpp:148
+#: core/utilities/setup/setup.cpp:145
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Метаданни"
 
-#: core/utilities/setup/setup.cpp:149
+#: core/utilities/setup/setup.cpp:146
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67114,13 +67170,13 @@ msgstr ""
 "Управление на вградената информация за изображенията\n"
 "Настройване на връзките между изображенията и метаданните"
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:150
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Шаблони"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:151
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67130,13 +67186,13 @@ msgstr ""
 "Шаблони за метаданни\n"
 "Управление на колекцията ви от шаблони за метаданни"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:155
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Редактор на изображения"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:156
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67146,13 +67202,13 @@ msgstr ""
 "Настройки на редактор на изображения\n"
 "Персонализиране на настройките на редактора на изображения"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:160
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Управление на цветовете"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:161
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67162,13 +67218,13 @@ msgstr ""
 "Настройки за управление на цветовете\n"
 "Персонализиране на настройките за управление на цветовете"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:165
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Светлинна маса"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:166
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67178,30 +67234,13 @@ msgstr ""
 "Настройки на светлинната маса\n"
 "Персонализиране на инструмента за сравняване на изображения"
 
-#: core/utilities/setup/setup.cpp:182
-#, kde-format
-msgctxt "@title: settings section"
-msgid "Image Quality Sorter"
-msgstr "Сортиране на качеството на изображението"
-
-#: core/utilities/setup/setup.cpp:183
-#, kde-format
-msgctxt "@title"
-msgid ""
-"Image Quality Sorter Settings\n"
-"Customize default settings to perform image triaging by quality"
-msgstr ""
-"Настройки на сортера за качество на изображениетоПерсонализиране на "
-"настройките по подразбиране за извършване на сортиране на изображенията по "
-"качество"
-
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:179
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Фотоапарати"
 
-#: core/utilities/setup/setup.cpp:188
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67211,13 +67250,13 @@ msgstr ""
 "Настройки на камера\n"
 "Управление на вашите камери"
 
-#: core/utilities/setup/setup.cpp:195
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Приставки"
 
-#: core/utilities/setup/setup.cpp:196
+#: core/utilities/setup/setup.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67227,13 +67266,13 @@ msgstr ""
 "Настройки на плъгин\n"
 "Задава, кои плъгини ще бъдат достъпни в приложението"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Разни"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67711,52 +67750,6 @@ msgstr ""
 "li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
 "li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>В момента във "
 "вашата система тези пътища съществуват и са сканирани:<ul><li>%1</li></ul>"
-
-#: core/utilities/setup/setupimagequalitysorter.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "These settings determines the quality of an image and convert it into a "
-#| "score, stored in database as Pick Label property. This information can be "
-#| "evaluated by two ways: using four basic factors sabotaging the images "
-#| "(blur, noise, exposure, and compression), or using a deep learning neural "
-#| "network engine. The first one helps to determine whether images are "
-#| "distorted by the basic factors, however it demands some drawbacks as fine-"
-#| "tuning from the user’s side and it cannot work along the aesthetic image "
-#| "processing. The second one uses an IA approach based on %1 model to "
-#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
-#| "require hyper-parameter settings, and make this feature easier to use."
-msgctxt "@label"
-msgid ""
-"These settings determines the quality of an image and convert it into a "
-"score, stored in database as Pick Label property. This information can be "
-"evaluated by two ways: using four basic factors sabotaging the images (blur, "
-"noise, exposure, and compression), or using a deep learning neural network "
-"engine. The first one helps to determine whether images are distorted by the "
-"basic factors, however it demands some drawbacks as fine-tuning from the "
-"user’s side and it cannot work along the aesthetic image processing. The "
-"second one uses an AI approach based on %1 model to predict the score. As "
-"deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
-"settings, and make this feature easier to use."
-msgstr ""
-"Тези настройки определят качеството на изображението и го преобразуват в "
-"оценка, която се съхранява в базата данни като свойство Pick Label. Тази "
-"информация може да бъде оценена по два начина: като се използват четирите "
-"основни фактора, саботиращи изображенията (размазване, шум, експозиция и "
-"компресия), или като се използва двигател на невронна мрежа за дълбоко "
-"обучение. Първият метод помага да се определи дали изображенията са "
-"изкривени от основните фактори, но изисква някои недостатъци като фина "
-"настройка от страна на потребителя и не може да работи заедно с "
-"естетическата обработка на изображенията. Вторият използва подход на ИА, "
-"основан на модела %1, за да предскаже резултата. Тъй като дълбокото обучение "
-"е решение от край до край, то не изисква хиперпараметрични настройки и прави "
-"тази функция по-лесна за използване."
-
-#: core/utilities/setup/setupimagequalitysorter.cpp:63
-#, kde-format
-msgctxt "@label"
-msgid "aesthetic image quality"
-msgstr "естетическо качество на изображението"
 
 #: core/utilities/setup/setuplighttable.cpp:81
 #, kde-format
@@ -68251,6 +68244,54 @@ msgstr "Елементи на албуми"
 #, kde-format
 msgid "Import Items"
 msgstr "Импортиране на елементи"
+
+#~ msgctxt "@option:radio"
+#~ msgid "Use default settings"
+#~ msgstr "Използване на настройките по подразбиране"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "Use the default quality sorting parameters configured in Setup dialog."
+#~ msgstr ""
+#~ "Използвайте параметрите за сортиране на качеството по подразбиране, "
+#~ "конфигурирани в диалоговия прозорец Настройка."
+
+#~ msgctxt "@option:radio"
+#~ msgid "Use custom settings"
+#~ msgstr "Използване на потребителски настройки"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "Use custom parameters to perform quality sorting instead default one."
+#~ msgstr ""
+#~ "Използвайте потребителски параметри, за да извършвате качествено "
+#~ "сортиране вместо това по подразбиране."
+
+#~ msgctxt "@title:tab"
+#~ msgid "Rules"
+#~ msgstr "Правила"
+
+#~ msgid "Auto-tagging mode: "
+#~ msgstr "Режим на автоматично поставяне на етикети: "
+
+#~ msgid "Scan all"
+#~ msgstr "Сканиране на всички"
+
+#~ msgid "Clean all and re-scan"
+#~ msgstr "Почистване на всички и повторно сканиране"
+
+#~ msgctxt "@title: settings section"
+#~ msgid "Image Quality Sorter"
+#~ msgstr "Сортиране на качеството на изображението"
+
+#~ msgctxt "@title"
+#~ msgid ""
+#~ "Image Quality Sorter Settings\n"
+#~ "Customize default settings to perform image triaging by quality"
+#~ msgstr ""
+#~ "Настройки на сортера за качество на изображениетоПерсонализиране на "
+#~ "настройките по подразбиране за извършване на сортиране на изображенията "
+#~ "по качество"
 
 #~ msgid "ResNet-152"
 #~ msgstr "ResNet-152"

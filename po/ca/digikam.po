@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-06 01:53+0000\n"
+"POT-Creation-Date: 2025-02-07 02:00+0000\n"
 "PO-Revision-Date: 2025-02-05 15:16+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2894,8 +2894,26 @@ msgctxt "Search images on a map"
 msgid "Map"
 msgstr "Mapa"
 
+#: core/app/views/sidebar/labelssidebarwidget.cpp:78
+#: core/app/views/sidebar/labelssidebarwidget.cpp:87
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu Pluralized"
+#| msgid "Image Quality Sort"
+#| msgid_plural "Image Quality Sort"
+msgid "Image Quality Scan"
+msgstr "Ordena segons la qualitat de la imatge"
+
+#: core/app/views/sidebar/labelssidebarwidget.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Use this button to scan the selected albums for faces"
+msgctxt "@info"
+msgid "Use this button to scan the selected albums for image quality parsing"
+msgstr ""
+"Useu aquest botó per a explorar els àlbums seleccionats per a cercar cares"
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/app/views/sidebar/labelssidebarwidget.cpp:115
+#: core/app/views/sidebar/labelssidebarwidget.cpp:164
 #: core/libs/album/widgets/albumselecttabs.cpp:182
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:133
@@ -2927,7 +2945,7 @@ msgstr ""
 "vegada que useu aquesta característica, considereu usar el quadre d'ajuda al "
 "plafó lateral esquerre inferior."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:223
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:224
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -2936,7 +2954,7 @@ msgstr ""
 "S'ha interromput el reconeixement de les cares, perquè no hi ha identitats "
 "per a reconèixer. Si us plau, afegiu-hi identitats noves."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:243
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:244
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -2965,8 +2983,9 @@ msgstr "Etiquetes existents"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:139
-#, kde-format
-msgid "Auto-tag scan"
+#, fuzzy, kde-format
+#| msgid "Auto-tag scan"
+msgid "Auto-tag Scan"
 msgstr "Exploració d'etiquetes automàtiques"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:141
@@ -2977,12 +2996,12 @@ msgstr ""
 "Useu aquest botó per a explorar els àlbums seleccionats per a cercar "
 "objectes a etiquetar automàticament"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:296
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:298
 #, kde-format
 msgid "No Tags Album"
 msgstr "Sense etiquetes d'àlbum"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:340
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:325
 #: core/libs/album/engine/album.cpp:554
 #: core/libs/album/manager/albummanager.cpp:182
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -2996,32 +3015,32 @@ msgstr "Sense etiquetes d'àlbum"
 msgid "Tags"
 msgstr "Etiquetes"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:121
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:123
 #, kde-format
 msgid "Time Unit:"
 msgstr "Unitat de temps:"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:123
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:125
 #, kde-format
 msgid "Day"
 msgstr "Dia"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:124
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:126
 #, kde-format
 msgid "Week"
 msgstr "Setmana"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:125
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:127
 #, kde-format
 msgid "Month"
 msgstr "Mes"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:126
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:128
 #, kde-format
 msgid "Year"
 msgstr "Any"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:129
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:131
 #, kde-format
 msgid ""
 "<p>Select the histogram time unit.</p><p>You can change the graph decade to "
@@ -3030,7 +3049,7 @@ msgstr ""
 "<p>Seleccioneu la unitat de temps de l'histograma.</p><p>Podeu canviar "
 "l'ordre de magnitud del gràfic per a apropar o allunyar en el temps.</p>"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:136
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:138
 #, kde-format
 msgid ""
 "<p>Select the histogram scale.</p><p>If the date's maximal counts are small, "
@@ -3043,24 +3062,24 @@ msgstr ""
 "s'usa quan els valors màxims són alts; si la useu, la gràfica mostrarà tots "
 "els valors, els baixos i els alts.</p>"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:143
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:145
 #, kde-format
 msgctxt "@info: timeline sidebar"
 msgid "Linear"
 msgstr "Lineal"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:149
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:151
 #, kde-format
 msgctxt "@info: timeline sidebar"
 msgid "Logarithmic"
 msgstr "Logarítmica"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:186
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:188
 #, kde-format
 msgid "Clear current selection"
 msgstr "Neteja la selecció actual"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:187
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:189
 #, kde-format
 msgid ""
 "If you press this button, the current date selection on the time-line will "
@@ -3069,7 +3088,7 @@ msgstr ""
 "Si premeu aquest botó, es netejarà la selecció actual de la data a la línia "
 "de temps."
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:190
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:192
 #, kde-format
 msgid ""
 "Enter the name of the current dates search to save in the \"Searches\" view"
@@ -3077,12 +3096,12 @@ msgstr ""
 "Introduïu el nom de la cerca actual per dates per a desar-la a la vista de "
 "«Cerques»"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:196
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:198
 #, kde-format
 msgid "Save current selection to a new virtual Album"
 msgstr "Desa la selecció actual a un àlbum virtual nou"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:197
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:199
 #, kde-format
 msgid ""
 "If you press this button, the dates selected on the time-line will be saved "
@@ -3091,18 +3110,18 @@ msgstr ""
 "Si premeu aquest botó, les dates seleccionades a la línia de temps es "
 "desaran en un àlbum virtual de cerca nou usant el nom establert a l'esquerra."
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:380
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:383
 #: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Línia de temps"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:411
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:414
 #, kde-format
 msgid "no item"
 msgstr "Sense element"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:412
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:415
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:481
 #, kde-format
@@ -9176,9 +9195,8 @@ msgid "Use Color Management for Printing"
 msgstr "Usa la gestió del color per a imprimir"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
-#: core/libs/imgqsort/imagequalityconfselector.cpp:72
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:286
+#: core/utilities/maintenance/main/maintenancedlg.cpp:277
 #, kde-format
 msgid "Settings..."
 msgstr "Configuració..."
@@ -35532,49 +35550,106 @@ msgstr "Neteja-ho tot"
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:68
-#, kde-format
-msgctxt "@option:radio"
-msgid "Use default settings"
-msgstr "Usa la configuració predeterminada"
-
-#: core/libs/imgqsort/imagequalityconfselector.cpp:69
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Use the default quality sorting parameters configured in Setup dialog."
-msgstr ""
-"Usa els paràmetres predeterminats d'ordenació de qualitat configurats en el "
-"diàleg de configuració."
-
-#: core/libs/imgqsort/imagequalityconfselector.cpp:76
-#, kde-format
-msgctxt "@option:radio"
-msgid "Use custom settings"
-msgstr "Usa una configuració personalitzada"
-
-#: core/libs/imgqsort/imagequalityconfselector.cpp:77
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Use custom parameters to perform quality sorting instead default one."
-msgstr ""
-"Usa paràmetres personalitzats per a realitzar l'ordenació de qualitat en "
-"lloc dels predeterminats."
-
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:134
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Cerca a"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:69
+#: core/libs/imgqsort/imagequalitywidget.cpp:66
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "These settings determines the quality of an image and convert it into a "
+#| "score, stored in database as Pick Label property. This information can be "
+#| "evaluated by two ways: using four basic factors sabotaging the images "
+#| "(blur, noise, exposure, and compression), or using a deep learning neural "
+#| "network engine. The first one helps to determine whether images are "
+#| "distorted by the basic factors, however it demands some drawbacks as fine-"
+#| "tuning from the user’s side and it cannot work along the aesthetic image "
+#| "processing. The second one uses an AI approach based on %1 model to "
+#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
+#| "require hyper-parameter settings, and make this feature easier to use."
+msgctxt "@info"
+msgid ""
+"These settings determines the quality of an image and convert it into a "
+"score, stored in database as Pick Label property. This information can be "
+"evaluated by two ways: using four basic factors sabotaging the images (blur, "
+"noise, exposure, and compression), or using a deep learning neural network "
+"engine. The first one helps to determine whether images are distorted by the "
+"basic factors, however it demands some drawbacks as fine-tuning from the "
+"user’s side and it cannot work along the aesthetic image processing. The "
+"second one uses an AI approach based on %1 model to predict the score. As "
+"deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
+"settings, and make this feature easier to use."
+msgstr ""
+"Aquestes opcions determinen la qualitat d'una imatge i la converteix en una "
+"puntuació, emmagatzemada a la base de dades com a propietat de rètol de "
+"selecció. Aquesta informació es pot avaluar de dues maneres: utilitzant "
+"quatre factors bàsics que alteren les imatges (difuminat, soroll, exposició "
+"i compressió), o emprant un motor de xarxa neuronal d'aprenentatge profund. "
+"La primera ajuda a determinar si les imatges estan distorsionades pels "
+"factors bàsics, però requereix algunes contrapartides com l'ajust fi per "
+"part de l'usuari i pot no funcionar durant el processament estètic de les "
+"imatges. La segona usa un enfocament d'IA basat en el model %1 per a predir "
+"la puntuació. Com que l'aprenentatge profund és una solució d'extrem a "
+"extrem, no requereix una parametrització extrema, i fa que aquesta "
+"característica sigui més fàcil de fer servir."
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:76
 #, kde-format
+msgctxt "@label"
+msgid "aesthetic image quality"
+msgstr "qualitat estètica de les imatges"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:79
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#, kde-format
+msgid "Scan Mode: "
+msgstr "Mode d'exploració: "
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:84
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "In All"
+msgid "All"
+msgstr "A tot"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:85
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Scan non-assigned only"
+msgid "Non-Assigned Only"
+msgstr "Explora només els no assignats"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:87
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-"
+#| "assigned only</b>: scan only the items with no assigned autotags.</p>"
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>All</b>: re-scan all items for tags.</p><p><b>Non-Assigned Only</b>: "
+"scan only the items with no assigned autotags.</p>"
+msgstr ""
+"<p><b>Explora-ho tot</b>: torna a explorar tots els elements per a "
+"l'etiquetatge.</p><p><b>Explora només els no assignats</b>: només explora "
+"els elements sense etiquetes automàtiques assignades.</p>"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:94
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgctxt "@option:check"
-msgid "Assign 'Rejected' Label to Low Quality Pictures"
+msgid "Assign 'Rejected' Label to Low Quality"
 msgstr "Assigna l'etiqueta «Rebutjada» a les imatges de qualitat baixa"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:70
+#: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35584,13 +35659,15 @@ msgstr ""
 "Les imatges de qualitat baixa detectades per a l'anàlisi de difuminat, "
 "soroll i compressió se'ls assignarà l'etiqueta «Rebutjada»."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:82
-#, kde-format
+#: core/libs/imgqsort/imagequalitywidget.cpp:107
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgctxt "@option:check"
-msgid "Assign 'Pending' Label to Medium Quality Pictures"
+msgid "Assign 'Pending' Label to Medium Quality"
 msgstr "Assigna l'etiqueta «Pendent» a les imatges de qualitat mitjana"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:83
+#: core/libs/imgqsort/imagequalitywidget.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35600,13 +35677,15 @@ msgstr ""
 "Les imatges de qualitat mitjana detectades per a l'anàlisi de difuminat, "
 "soroll i compressió se'ls assignarà l'etiqueta «Pendent»."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, kde-format
+#: core/libs/imgqsort/imagequalitywidget.cpp:120
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgctxt "@option:check"
-msgid "Assign 'Accepted' Label to High Quality Pictures"
+msgid "Assign 'Accepted' Label to High Quality"
 msgstr "Assigna l'etiqueta «Acceptada» a les imatges de qualitat alta"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:96
+#: core/libs/imgqsort/imagequalitywidget.cpp:121
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35616,78 +35695,90 @@ msgstr ""
 "Les imatges de qualitat alta detectades per a l'anàlisi de difuminat, soroll "
 "i compressió se'ls assignarà l'etiqueta «Acceptada»."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:109
-#, kde-format
+#: core/libs/imgqsort/imagequalitywidget.cpp:134
+#, fuzzy, kde-format
+#| msgctxt "@option:radio"
+#| msgid "Detect Aesthetic Image using Deep Learning"
 msgctxt "@option:radio"
-msgid "Detect Aesthetic Image using Deep Learning"
+msgid "Detect Aesthetic Contents using Deep Learning"
 msgstr "Detecta una imatge estètica usant l'aprenentatge profund"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:111
-#, kde-format
+#: core/libs/imgqsort/imagequalitywidget.cpp:136
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Detect if the image has aesthetic value.\n"
+#| "The aesthetic detection engine use deep learning model to classify images"
 msgctxt "@info:tooltip"
 msgid ""
-"Detect if the image has aesthetic value.\n"
+"Detect if the image has aesthetic contents.\n"
 "The aesthetic detection engine use deep learning model to classify images"
 msgstr ""
 "Detecta si la imatge té un valor estètic.\n"
 "El motor de detecció estètica usa un model d'aprenentatge profund per a "
 "classificar les imatges"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:116
+#: core/libs/imgqsort/imagequalitywidget.cpp:141
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr "Detecta la qualitat emprant factors bàsics"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:118
-#, kde-format
+#: core/libs/imgqsort/imagequalitywidget.cpp:143
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Detect if the image is sabotaging by four basic factors (blur, noise, "
+#| "exposure, and compression)."
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image is sabotaging by four basic factors (blur, noise, "
-"exposure, and compression)."
+"exposure, and compression). See the relevant settings in the next tab."
 msgstr ""
 "Detecta si la imatge està alterada segons quatre factors bàsics (difuminat, "
 "soroll, exposició i compressió)."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:136
+#: core/libs/imgqsort/imagequalitywidget.cpp:163
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
 msgctxt "@title:tab"
-msgid "Rules"
-msgstr "Regles"
+msgid "Settings"
+msgstr "Configuració"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:143
+#: core/libs/imgqsort/imagequalitywidget.cpp:170
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Llindar de rebuig:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:148
+#: core/libs/imgqsort/imagequalitywidget.cpp:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr ""
 "Llindar sota el qual totes les imatges se'ls assignarà l'etiqueta «Rebutjada»"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:150
+#: core/libs/imgqsort/imagequalitywidget.cpp:177
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Llindar de pendent:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:155
+#: core/libs/imgqsort/imagequalitywidget.cpp:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr ""
 "Llindar sota el qual totes les imatges se'ls assignarà l'etiqueta «Pendent»"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:157
+#: core/libs/imgqsort/imagequalitywidget.cpp:184
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Llindar d'acceptació:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:162
+#: core/libs/imgqsort/imagequalitywidget.cpp:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
@@ -35695,81 +35786,81 @@ msgstr ""
 "Llindar sobre el qual totes les imatges se'ls assignarà l'etiqueta "
 "«Acceptada»"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:164
+#: core/libs/imgqsort/imagequalitywidget.cpp:191
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Detecta el difuminat"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:165
+#: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "Detecta la quantitat de difuminat a les imatges"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:167
-#: core/libs/imgqsort/imagequalitywidget.cpp:177
-#: core/libs/imgqsort/imagequalitywidget.cpp:187
+#: core/libs/imgqsort/imagequalitywidget.cpp:194
+#: core/libs/imgqsort/imagequalitywidget.cpp:204
+#: core/libs/imgqsort/imagequalitywidget.cpp:214
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Ponderació:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:172
+#: core/libs/imgqsort/imagequalitywidget.cpp:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Ponderació assignada a l'algorisme de difuminat"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:174
+#: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Detecta el soroll"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:175
+#: core/libs/imgqsort/imagequalitywidget.cpp:202
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Detecta la quantitat de soroll a les imatges"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:182
+#: core/libs/imgqsort/imagequalitywidget.cpp:209
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Ponderació assignada a l'algorisme de soroll"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:184
+#: core/libs/imgqsort/imagequalitywidget.cpp:211
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Detecta la compressió"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:185
+#: core/libs/imgqsort/imagequalitywidget.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Detecta la quantitat de compressió a les imatges"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:192
+#: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Ponderació assignada a l'algorisme de compressió"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:194
+#: core/libs/imgqsort/imagequalitywidget.cpp:221
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Detecta la subexposició i la sobreexposició"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:195
+#: core/libs/imgqsort/imagequalitywidget.cpp:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Detecta si les imatges estan subexposades o sobreexposades"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:225
+#: core/libs/imgqsort/imagequalitywidget.cpp:252
 #, kde-format
 msgctxt "@title:tab"
 msgid "Basic Factors"
@@ -37022,12 +37113,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "Dades binàries %1 bytes"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:376
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:375
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "No existeix l'ExifTool o li manca el permís d'execució"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:390
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:389
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "No existeix el Perl o li manca el permís d'execució"
@@ -39782,7 +39873,7 @@ msgstr "Exploració d'objectes: %1\n"
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
@@ -39819,54 +39910,35 @@ msgstr ""
 "automàticament etiquetes descriptives del contingut de la imatge i "
 "emmagatzemarà el resultat a la base de dades.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
-#, kde-format
-msgid "Auto-tagging mode: "
-msgstr "Mode d'etiquetatge automàtic: "
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
-msgid "Scan all"
-msgstr "Explora-ho tot"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
-#: core/utilities/maintenance/main/maintenancedlg.cpp:256
-#, kde-format
-msgid "Scan non-assigned only"
-msgstr "Explora només els no assignats"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-assigned "
-"only</b>: scan only the items with no assigned autotags.</p>"
-msgstr ""
-"<p><b>Explora-ho tot</b>: torna a explorar tots els elements per a "
-"l'etiquetatge.</p><p><b>Explora només els no assignats</b>: només explora "
-"els elements sense etiquetes automàtiques assignades.</p>"
-
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
-#, kde-format
-msgid "Auto-tagging tag mode: "
+#, fuzzy, kde-format
+#| msgid "Auto-tagging tag mode: "
+msgid "Auto-Tagging Tag Mode: "
 msgstr "Mode d'etiquetatge d'etiquetes automàtiques: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
-#, kde-format
-msgid "Replace existing autotags"
+#, fuzzy, kde-format
+#| msgid "Replace existing autotags"
+msgid "Replace Existing Autotags"
 msgstr "Substitueix les etiquetes automàtiques existents"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
-#, kde-format
-msgid "Update autotags"
+#, fuzzy, kde-format
+#| msgid "Update autotags"
+msgid "Update Autotags"
 msgstr "Actualitza les etiquetes automàtiques"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Replace existing autotags</b>: clear existing autotags and replace "
+#| "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
+#| "autotags found to the existing tags.</p>"
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Replace existing autotags</b>: clear existing autotags and replace "
-"with the results of the scan.</p><p><b>Update autotags</b>: add any new "
+"<p><b>Replace Existing Autotags</b>: clear existing autotags and replace "
+"with the results of the scan.</p><p><b>Update Autotags</b>: add any new "
 "autotags found to the existing tags.</p>"
 msgstr ""
 "<p><b>Substitueix les etiquetes automàtiques existents</b>: neteja les "
@@ -39875,8 +39947,9 @@ msgstr ""
 "qualsevol nova etiqueta automàtica trobada a les etiquetes existents.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#, kde-format
-msgid "Selection model: "
+#, fuzzy, kde-format
+#| msgid "Selection model: "
+msgid "Selection Model: "
 msgstr "Model de selecció: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:147
@@ -39886,7 +39959,7 @@ msgstr "Cap model disponible"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
 #, kde-format
-msgid "Object detection accuracy: "
+msgid "Object Detection Accuracy: "
 msgstr "Precisió de la detecció d'objectes: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:165
@@ -39902,7 +39975,7 @@ msgstr ""
 "es detectaran els objectes, però es reconeixeran menys objectes.\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:170
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -39921,13 +39994,6 @@ msgstr ""
 "temps.\n"
 "Podeu triar si desitgeu emprar tots els nuclis del processador del sistema\n"
 "o treballar en segon pla, amb només un nucli."
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
-#, kde-format
-msgctxt "@title:tab"
-msgid "Settings"
-msgstr "Configuració"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:188
 #, kde-format
@@ -43204,25 +43270,25 @@ msgstr[1] ""
 "S'està aplicant l'operació a\n"
 "«%1» imatges seleccionades"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:405
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:406
 #, kde-format
 msgctxt "date of last image modification"
 msgid "Mod.: %1"
 msgstr "Mod.: %1"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:421
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:422
 #: core/showfoto/main/showfoto.cpp:267
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
-#: core/utilities/import/items/itemviewimportdelegate.cpp:367
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
+#: core/utilities/import/items/itemviewimportdelegate.cpp:368
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Mpx)"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:426
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:446
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:320
-#: core/utilities/import/items/itemviewimportdelegate.cpp:372
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:427
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:447
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
+#: core/utilities/import/items/itemviewimportdelegate.cpp:373
 #, kde-format
 msgctxt "unknown image resolution"
 msgid "Unknown"
@@ -43398,8 +43464,8 @@ msgid "Model/View Port of Image Editor Canvas"
 msgstr "Adaptació model/vista del llenç de l'editor d'imatges"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:218
-#: core/utilities/maintenance/main/maintenancedlg.cpp:264
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:101
+#: core/utilities/maintenance/main/maintenancedlg.cpp:255
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Ordena les imatges segons la qualitat"
@@ -49899,7 +49965,7 @@ msgstr "&Decora"
 msgid "Effec&ts"
 msgstr "Efec&tes"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:120
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:117
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -49978,13 +50044,13 @@ msgstr ""
 "<qt>Configuració per a desar els fitxers d'imatge<br/><i>Estableix la "
 "configuració predeterminada emprada per a desar les imatges</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:172
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Geolocalització"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:176
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:173
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -51145,8 +51211,8 @@ msgctxt "@action"
 msgid "C&ancel"
 msgstr "C&ancel·la"
 
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:253
-#: core/utilities/import/items/itemviewimportdelegate.cpp:320
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:254
+#: core/utilities/import/items/itemviewimportdelegate.cpp:321
 #, kde-format
 msgctxt "date of image creation"
 msgid "created: %1"
@@ -52411,19 +52477,19 @@ msgctxt "@info"
 msgid "Help"
 msgstr "Ajuda"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:128
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:129
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Flux de treball"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Precisió:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:156
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52435,43 +52501,43 @@ msgstr ""
 "valor, amb més precisió\n"
 "es detectaran les cares, però es reconeixeran menys cares."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:196
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Mida de les cares:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Molt petita"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Petita"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Mitjana"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Gran"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Molt gran"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52503,18 +52569,18 @@ msgstr ""
 "de detecció de 6-8 i una mida de cara <b>Mitjana</b> o <b>Gran</b> per a un "
 "ús normal.</p><p>Aquest paràmetre no s'aplica a YuNet.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:226
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Configuració de la detecció de cares"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Precisió:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52529,7 +52595,7 @@ msgstr ""
 "Nota: només es reconeixeran les cares que siguin molt similars a les cares "
 "etiquetades amb anterioritat."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52541,7 +52607,7 @@ msgstr ""
 "Podeu triar si desitgeu emprar tots els nuclis del processador del sistema\n"
 "o treballar en segon pla, amb només un nucli."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Configuració del reconeixement de cares"
@@ -61322,48 +61388,38 @@ msgstr "Detecta i reconeix les cares"
 msgid "Auto-tags Assignment"
 msgstr "Assignació automàtica d'etiquetes"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:250
-#, kde-format
-msgid "Scan Mode: "
-msgstr "Mode d'exploració: "
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:255
-#, kde-format
-msgid "Clean all and re-scan"
-msgstr "Neteja-ho tot i torna a explorar"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:275
+#: core/utilities/maintenance/main/maintenancedlg.cpp:266
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Direcció de la sincronització: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:279
+#: core/utilities/maintenance/main/maintenancedlg.cpp:270
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Des de la base de dades a les metadades de la imatge"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:280
+#: core/utilities/maintenance/main/maintenancedlg.cpp:271
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Des de les metadades de la imatge a la base de dades"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:283
+#: core/utilities/maintenance/main/maintenancedlg.cpp:274
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Per a més detalls reviseu el plafó de configuració de les metadades: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:292
+#: core/utilities/maintenance/main/maintenancedlg.cpp:283
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Sincronitza les metadades i la base de dades"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:353
+#: core/utilities/maintenance/main/maintenancedlg.cpp:341
 #, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Avís"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:354
+#: core/utilities/maintenance/main/maintenancedlg.cpp:342
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
@@ -61375,7 +61431,7 @@ msgstr ""
 "cares desconegudes de nou abans que es pugui reconèixer cap cara."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -61384,7 +61440,7 @@ msgstr ""
 "Han finalitzat totes les operacions.\n"
 "Durada: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Manteniment del digiKam"
@@ -61646,22 +61702,22 @@ msgstr "Elements explorats cercant empremtes digitals: %1"
 msgid "Item scanned for fingerprint: %1"
 msgstr "Element explorat cercant empremtes digitals: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:172
 #, kde-format
 msgid "Image Quality: %1\n"
 msgstr "Qualitat de les imatges: %1\n"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:182
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #, kde-format
 msgid "Pick Label: %1"
 msgstr "Rètol de selecció: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:197
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:189
 #, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "Elements explorats cercant qualitat: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:201
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:193
 #, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "Element explorat cercant qualitat: %1"
@@ -67079,13 +67135,13 @@ msgstr ""
 "efecte després de reiniciar. Algunes depenen del maquinari i podrien no "
 "tenir cap efecte.</b>"
 
-#: core/utilities/setup/setup.cpp:128
+#: core/utilities/setup/setup.cpp:125
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Base de dades"
 
-#: core/utilities/setup/setup.cpp:129
+#: core/utilities/setup/setup.cpp:126
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67095,13 +67151,13 @@ msgstr ""
 "Configuració de la base de dades\n"
 "Personalitza la configuració de la base de dades"
 
-#: core/utilities/setup/setup.cpp:133
+#: core/utilities/setup/setup.cpp:130
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Col·leccions"
 
-#: core/utilities/setup/setup.cpp:134
+#: core/utilities/setup/setup.cpp:131
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67111,13 +67167,13 @@ msgstr ""
 "Configuració de les col·leccions\n"
 "Estableix les ubicacions dels àlbums principals"
 
-#: core/utilities/setup/setup.cpp:138
+#: core/utilities/setup/setup.cpp:135
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Vistes"
 
-#: core/utilities/setup/setup.cpp:139
+#: core/utilities/setup/setup.cpp:136
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67127,13 +67183,13 @@ msgstr ""
 "Configuració de les vistes a l'aplicació\n"
 "Personalitza l'aspecte de les vistes"
 
-#: core/utilities/setup/setup.cpp:143
+#: core/utilities/setup/setup.cpp:140
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Consell d'eina"
 
-#: core/utilities/setup/setup.cpp:144
+#: core/utilities/setup/setup.cpp:141
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67143,13 +67199,13 @@ msgstr ""
 "Configuració dels consells d'eina\n"
 "Personalitza la informació en els consells d'eina dels elements"
 
-#: core/utilities/setup/setup.cpp:148
+#: core/utilities/setup/setup.cpp:145
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metadades"
 
-#: core/utilities/setup/setup.cpp:149
+#: core/utilities/setup/setup.cpp:146
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67159,13 +67215,13 @@ msgstr ""
 "Gestió de la informació incrustada de les imatges\n"
 "Configura les relacions entre imatges i metadades"
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:150
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Plantilles"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:151
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67175,13 +67231,13 @@ msgstr ""
 "Plantilles de metadades\n"
 "Gestiona la col·lecció de les plantilles de metadades"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:155
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Editor d'imatges"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:156
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67191,13 +67247,13 @@ msgstr ""
 "Configuració de l'editor d'imatges\n"
 "Personalitza la configuració de l'editor d'imatges"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:160
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Gestió del color"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:161
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67207,13 +67263,13 @@ msgstr ""
 "Configuració de la gestió del color\n"
 "Personalitza la configuració de la gestió del color"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:165
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Taula de llum"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:166
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67223,30 +67279,13 @@ msgstr ""
 "Configuració de la taula de llum\n"
 "Personalitza l'eina emprada en comparar els elements"
 
-#: core/utilities/setup/setup.cpp:182
-#, kde-format
-msgctxt "@title: settings section"
-msgid "Image Quality Sorter"
-msgstr "Ordena les imatges segons la qualitat"
-
-#: core/utilities/setup/setup.cpp:183
-#, kde-format
-msgctxt "@title"
-msgid ""
-"Image Quality Sorter Settings\n"
-"Customize default settings to perform image triaging by quality"
-msgstr ""
-"Configuració de l'ordenador d'imatges segons la qualitat\n"
-"Personalitza la configuració predeterminada per a realitzar el triatge "
-"d'imatges segons la qualitat"
-
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:179
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Càmeres"
 
-#: core/utilities/setup/setup.cpp:188
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67256,13 +67295,13 @@ msgstr ""
 "Configuració de la càmera\n"
 "Gestiona els dispositius de càmera"
 
-#: core/utilities/setup/setup.cpp:195
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Connectors"
 
-#: core/utilities/setup/setup.cpp:196
+#: core/utilities/setup/setup.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67272,13 +67311,13 @@ msgstr ""
 "Configuració dels connectors\n"
 "Estableix els connectors que seran accessibles des de l'aplicació"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Miscel·lània"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -67755,40 +67794,6 @@ msgstr ""
 "icc/</li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>Actualment "
 "aquests camins existeixen al vostre sistema i s'han explorat:<ul><li>%1</"
 "li></ul>"
-
-#: core/utilities/setup/setupimagequalitysorter.cpp:53
-#, kde-format
-msgctxt "@label"
-msgid ""
-"These settings determines the quality of an image and convert it into a "
-"score, stored in database as Pick Label property. This information can be "
-"evaluated by two ways: using four basic factors sabotaging the images (blur, "
-"noise, exposure, and compression), or using a deep learning neural network "
-"engine. The first one helps to determine whether images are distorted by the "
-"basic factors, however it demands some drawbacks as fine-tuning from the "
-"user’s side and it cannot work along the aesthetic image processing. The "
-"second one uses an AI approach based on %1 model to predict the score. As "
-"deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
-"settings, and make this feature easier to use."
-msgstr ""
-"Aquestes opcions determinen la qualitat d'una imatge i la converteix en una "
-"puntuació, emmagatzemada a la base de dades com a propietat de rètol de "
-"selecció. Aquesta informació es pot avaluar de dues maneres: utilitzant "
-"quatre factors bàsics que alteren les imatges (difuminat, soroll, exposició "
-"i compressió), o emprant un motor de xarxa neuronal d'aprenentatge profund. "
-"La primera ajuda a determinar si les imatges estan distorsionades pels "
-"factors bàsics, però requereix algunes contrapartides com l'ajust fi per "
-"part de l'usuari i pot no funcionar durant el processament estètic de les "
-"imatges. La segona usa un enfocament d'IA basat en el model %1 per a predir "
-"la puntuació. Com que l'aprenentatge profund és una solució d'extrem a "
-"extrem, no requereix una parametrització extrema, i fa que aquesta "
-"característica sigui més fàcil de fer servir."
-
-#: core/utilities/setup/setupimagequalitysorter.cpp:63
-#, kde-format
-msgctxt "@label"
-msgid "aesthetic image quality"
-msgstr "qualitat estètica de les imatges"
 
 #: core/utilities/setup/setuplighttable.cpp:81
 #, kde-format
@@ -68287,6 +68292,57 @@ msgstr "Elements d'àlbum"
 msgid "Import Items"
 msgstr "Importa els elements"
 
+#~ msgctxt "@option:radio"
+#~ msgid "Use default settings"
+#~ msgstr "Usa la configuració predeterminada"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "Use the default quality sorting parameters configured in Setup dialog."
+#~ msgstr ""
+#~ "Usa els paràmetres predeterminats d'ordenació de qualitat configurats en "
+#~ "el diàleg de configuració."
+
+#~ msgctxt "@option:radio"
+#~ msgid "Use custom settings"
+#~ msgstr "Usa una configuració personalitzada"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "Use custom parameters to perform quality sorting instead default one."
+#~ msgstr ""
+#~ "Usa paràmetres personalitzats per a realitzar l'ordenació de qualitat en "
+#~ "lloc dels predeterminats."
+
+#~ msgctxt "@title:tab"
+#~ msgid "Rules"
+#~ msgstr "Regles"
+
+#~ msgid "Auto-tagging mode: "
+#~ msgstr "Mode d'etiquetatge automàtic: "
+
+#~ msgid "Scan all"
+#~ msgstr "Explora-ho tot"
+
+#~ msgid "Object detection accuracy: "
+#~ msgstr "Precisió de la detecció d'objectes: "
+
+#~ msgid "Clean all and re-scan"
+#~ msgstr "Neteja-ho tot i torna a explorar"
+
+#~ msgctxt "@title: settings section"
+#~ msgid "Image Quality Sorter"
+#~ msgstr "Ordena les imatges segons la qualitat"
+
+#~ msgctxt "@title"
+#~ msgid ""
+#~ "Image Quality Sorter Settings\n"
+#~ "Customize default settings to perform image triaging by quality"
+#~ msgstr ""
+#~ "Configuració de l'ordenador d'imatges segons la qualitat\n"
+#~ "Personalitza la configuració predeterminada per a realitzar el triatge "
+#~ "d'imatges segons la qualitat"
+
 #~ msgid "ResNet-152"
 #~ msgstr "ResNet-152"
 
@@ -68578,9 +68634,6 @@ msgstr "Importa els elements"
 
 #~ msgid "ResNet152"
 #~ msgstr "ResNet152"
-
-#~ msgid "Object Detection Accuracy: "
-#~ msgstr "Precisió de la detecció d'objectes: "
 
 #~ msgid "Applying face changes"
 #~ msgstr "S'estan aplicant els canvis de cares"

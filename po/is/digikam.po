@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-06 01:53+0000\n"
-"PO-Revision-Date: 2025-01-31 12:06+0000\n"
+"POT-Creation-Date: 2025-02-07 02:00+0000\n"
+"PO-Revision-Date: 2025-02-06 16:33+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -2893,8 +2893,25 @@ msgctxt "Search images on a map"
 msgid "Map"
 msgstr "Landakort"
 
+#: core/app/views/sidebar/labelssidebarwidget.cpp:78
+#: core/app/views/sidebar/labelssidebarwidget.cpp:87
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu Pluralized"
+#| msgid "Image Quality Sort"
+#| msgid_plural "Image Quality Sort"
+msgid "Image Quality Scan"
+msgstr "Myndgæðaröðun"
+
+#: core/app/views/sidebar/labelssidebarwidget.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Use this button to scan the selected albums for faces"
+msgctxt "@info"
+msgid "Use this button to scan the selected albums for image quality parsing"
+msgstr "Veldu þetta til að leita að andlitum í völdum albúmum"
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/app/views/sidebar/labelssidebarwidget.cpp:115
+#: core/app/views/sidebar/labelssidebarwidget.cpp:164
 #: core/libs/album/widgets/albumselecttabs.cpp:182
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:133
@@ -2925,7 +2942,7 @@ msgstr ""
 "nota þennan eiginleika, ættirðu að nýta þér hjálparreitinn neðst á vinstra "
 "hliðarspjaldinu."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:223
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:224
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -2934,7 +2951,7 @@ msgstr ""
 "Hætt var við andlitakennsl, því það voru engin andlitamerki til að miða við. "
 "Bættu við nýjum auðkennismerkjum."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:243
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:244
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -2963,8 +2980,9 @@ msgstr "Merki sem þegar eru til"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:139
-#, kde-format
-msgid "Auto-tag scan"
+#, fuzzy, kde-format
+#| msgid "Auto-tag scan"
+msgid "Auto-tag Scan"
 msgstr "Skönnun sjálfvirkra merkja"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:141
@@ -2974,12 +2992,12 @@ msgid "Use this button to scan the selected albums for objects to auto-tag"
 msgstr ""
 "Veldu þetta til að leita að hlutum í völdum albúmum til að merkja sjálfvirkt"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:296
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:298
 #, kde-format
 msgid "No Tags Album"
 msgstr "Ekkert merkingaalbúm"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:340
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:325
 #: core/libs/album/engine/album.cpp:554
 #: core/libs/album/manager/albummanager.cpp:182
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -2993,32 +3011,32 @@ msgstr "Ekkert merkingaalbúm"
 msgid "Tags"
 msgstr "Merki"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:121
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:123
 #, kde-format
 msgid "Time Unit:"
 msgstr "Tímaeining:"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:123
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:125
 #, kde-format
 msgid "Day"
 msgstr "Dagur"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:124
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:126
 #, kde-format
 msgid "Week"
 msgstr "Vika"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:125
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:127
 #, kde-format
 msgid "Month"
 msgstr "Mánuður"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:126
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:128
 #, kde-format
 msgid "Year"
 msgstr "Ár"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:129
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:131
 #, kde-format
 msgid ""
 "<p>Select the histogram time unit.</p><p>You can change the graph decade to "
@@ -3027,7 +3045,7 @@ msgstr ""
 "<p>Veldu hér tímaeiningu línurits.</p><p>Þú getur breytt áratug línuritsins "
 "til að sjá lengri eða skemmri tímabil í einu.</p>"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:136
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:138
 #, kde-format
 msgid ""
 "<p>Select the histogram scale.</p><p>If the date's maximal counts are small, "
@@ -3041,24 +3059,24 @@ msgstr ""
 "gildin verða þá sjáanleg á grafinu (lægstu gildin eru ýkt í hlutfalli við "
 "þau hæstu).</p>"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:143
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:145
 #, kde-format
 msgctxt "@info: timeline sidebar"
 msgid "Linear"
 msgstr "Línulegt"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:149
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:151
 #, kde-format
 msgctxt "@info: timeline sidebar"
 msgid "Logarithmic"
 msgstr "Lógaritmískt"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:186
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:188
 #, kde-format
 msgid "Clear current selection"
 msgstr "Hreinsa núverandi val"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:187
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:189
 #, kde-format
 msgid ""
 "If you press this button, the current date selection on the time-line will "
@@ -3067,7 +3085,7 @@ msgstr ""
 "Ef þú styður á þennan hnapp, verður val dagsteninga á tímalínunni verða "
 "afvalið."
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:190
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:192
 #, kde-format
 msgid ""
 "Enter the name of the current dates search to save in the \"Searches\" view"
@@ -3075,12 +3093,12 @@ msgstr ""
 "Settu hér nafnið sem notað er til vistunar á núverandi dagsetningaleit í "
 "\"Leitir\"-sýninni"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:196
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:198
 #, kde-format
 msgid "Save current selection to a new virtual Album"
 msgstr "Vista núverandi val í nýtt sýndaralbúm"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:197
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:199
 #, kde-format
 msgid ""
 "If you press this button, the dates selected on the time-line will be saved "
@@ -3089,18 +3107,18 @@ msgstr ""
 "Ef þú styður á þennan hnapp, munu valdar dagsetningar á tímalínunni verða "
 "vistaðar sem nýtt sýndaralbúm byggt á leit, undir heitinu hér til vinstri."
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:380
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:383
 #: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Tímalína"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:411
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:414
 #, kde-format
 msgid "no item"
 msgstr "ekkert atriði"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:412
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:415
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:481
 #, kde-format
@@ -9042,9 +9060,8 @@ msgid "Use Color Management for Printing"
 msgstr "Nota litastýringu við prentun"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
-#: core/libs/imgqsort/imagequalityconfselector.cpp:72
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:286
+#: core/utilities/maintenance/main/maintenancedlg.cpp:277
 #, kde-format
 msgid "Settings..."
 msgstr "Stillingar..."
@@ -33700,6 +33717,10 @@ msgid ""
 "detect multiple objects in an image. It is trained to recognize 80 different "
 "objects using the COCO dataset.</p>"
 msgstr ""
+"<p><b>YOLOv11 Nano</b>: lítið, léttkeyrandi tauganet sem býður upp á "
+"einstakan hraða, en sem gæti misst af einhverju við greiningu margra hluta í "
+"myndum. YOLO getur greint marga hluti í mynd. Það er þjálfað til að þekkja "
+"80 mismunandi hluti með því að nota COCO-gagnasafnið.</p>"
 
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
 #, kde-format
@@ -33715,11 +33736,15 @@ msgid ""
 "slower. YOLO can detect multiple objects in an image. It is trained to "
 "recognize 80 different objects using the COCO dataset.</p>"
 msgstr ""
+"<p><b>YOLOv11 XLarge</b>: stórt, öflugt og stöðugt tauganet sem býður upp á "
+"góða nákvæmni. Það mun greina fleiri hluti í myndum en YOLOv11 Nano, en er "
+"hægvirkara. YOLO getur greint marga hluti í mynd. Það er þjálfað til að "
+"þekkja 80 mismunandi hluti með því að nota COCO-gagnasafnið.</p>"
 
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
 #, kde-format
 msgid "EfficientNet B7"
-msgstr ""
+msgstr "EfficientNet B7"
 
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:358
 #, kde-format
@@ -33730,6 +33755,9 @@ msgid ""
 "was trained to recognize 1,000 different objects using the ImageNet dataset."
 "</p>"
 msgstr ""
+"<p><b>EfficientNet B7</b>: stórt og öflugt flókið tauganet. Það mun greina "
+"staka hluti í mynd með mikilli nákvæmni. EfficientNet B7 var þjálfað til að "
+"þekkja 1.000 mismunandi hluti með því að nota ImageNet-gagnasafnið.</p>"
 
 #: core/libs/dplugins/core/dpluginaction.cpp:94
 #, kde-format
@@ -35025,49 +35053,103 @@ msgstr "Hreinsa allt"
 msgid "Select All"
 msgstr "Velja allt"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:68
-#, kde-format
-msgctxt "@option:radio"
-msgid "Use default settings"
-msgstr "Nota sjálfgefnar stillingar"
-
-#: core/libs/imgqsort/imagequalityconfselector.cpp:69
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Use the default quality sorting parameters configured in Setup dialog."
-msgstr ""
-"Nota sjálfgefnar færibreytur fyrir myndgæðaröðun sem gefnar eru í "
-"stillingaglugganum."
-
-#: core/libs/imgqsort/imagequalityconfselector.cpp:76
-#, kde-format
-msgctxt "@option:radio"
-msgid "Use custom settings"
-msgstr "Nota sérsniðnar stillingar"
-
-#: core/libs/imgqsort/imagequalityconfselector.cpp:77
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Use custom parameters to perform quality sorting instead default one."
-msgstr ""
-"Nota sérsniðnar færibreytur til að framkvæma myndgæðaröðun í stað "
-"sjálfgefinna gilda."
-
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:134
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Leita í"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:69
+#: core/libs/imgqsort/imagequalitywidget.cpp:66
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "These settings determines the quality of an image and convert it into a "
+#| "score, stored in database as Pick Label property. This information can be "
+#| "evaluated by two ways: using four basic factors sabotaging the images "
+#| "(blur, noise, exposure, and compression), or using a deep learning neural "
+#| "network engine. The first one helps to determine whether images are "
+#| "distorted by the basic factors, however it demands some drawbacks as fine-"
+#| "tuning from the user’s side and it cannot work along the aesthetic image "
+#| "processing. The second one uses an AI approach based on %1 model to "
+#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
+#| "require hyper-parameter settings, and make this feature easier to use."
+msgctxt "@info"
+msgid ""
+"These settings determines the quality of an image and convert it into a "
+"score, stored in database as Pick Label property. This information can be "
+"evaluated by two ways: using four basic factors sabotaging the images (blur, "
+"noise, exposure, and compression), or using a deep learning neural network "
+"engine. The first one helps to determine whether images are distorted by the "
+"basic factors, however it demands some drawbacks as fine-tuning from the "
+"user’s side and it cannot work along the aesthetic image processing. The "
+"second one uses an AI approach based on %1 model to predict the score. As "
+"deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
+"settings, and make this feature easier to use."
+msgstr ""
+"Þessar stillingar ákvarða gæði mynda og gefa út frá þeim stigaskor, sem "
+"geymd eru í gagnagrunni sem sérmerkingar. Þessar upplýsingar má meta á tvo "
+"vegu: með því að nota fjögur grunnatriði sem skemma myndir (móska, "
+"truflanir, lýsing og þjöppun), eða með því að nota vélnáms-tauganet (deep "
+"learning neural network engine). Fyrri kosturinn hjálpar við að ákvarða "
+"hvort myndir séu bjagaðar út frá áðurnefndum grunnþáttum, en hefur ókosti í "
+"för með sér: þetta krefst þess að notandinn fínstilli aðferðina og þetta "
+"getur ekki nýst samhliða greiningu á fagurfræðilegu gildi mynda. Seinni "
+"kosturinn notar gervigreindartækni byggða á %1 líkani við að spá fyrir um "
+"stigaskor. Þar sem vélnáms-aðferðin er enda-í-enda lausn, krefst hún ekki "
+"nákvæmra fínstillinga og er því auðveldari í notkun."
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:76
 #, kde-format
+msgctxt "@label"
+msgid "aesthetic image quality"
+msgstr "fagurfræðileg gæði myndar"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:79
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#, kde-format
+msgid "Scan Mode: "
+msgstr "Skönnunarhamur"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:84
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#, kde-format
+msgid "All"
+msgstr "Allt"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:85
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Scan non-assigned only"
+msgid "Non-Assigned Only"
+msgstr "Skanna einungis óúthlutað"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:87
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-"
+#| "assigned only</b>: scan only the items with no assigned autotags.</p>"
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>All</b>: re-scan all items for tags.</p><p><b>Non-Assigned Only</b>: "
+"scan only the items with no assigned autotags.</p>"
+msgstr ""
+"<p><b>Skanna allt</b>: skanna aftur öll atriði frá grunni.</p><p><b>Skanna "
+"einungis óúthlutað</b>: skanna einungis þau atriði sem hafa engin óúthlutuð "
+"merki.</p>"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:94
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgctxt "@option:check"
-msgid "Assign 'Rejected' Label to Low Quality Pictures"
+msgid "Assign 'Rejected' Label to Low Quality"
 msgstr "Úthluta 'Hafnað'-merki á myndir í lágum gæðum"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:70
+#: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35077,13 +35159,15 @@ msgstr ""
 "Myndir sem metnar eru í lélegum gæðum eftir útreikninga á mósku, truflunum "
 "og þjöppun; þær fá úthlutað 'Hafnað'-merki."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:82
-#, kde-format
+#: core/libs/imgqsort/imagequalitywidget.cpp:107
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgctxt "@option:check"
-msgid "Assign 'Pending' Label to Medium Quality Pictures"
+msgid "Assign 'Pending' Label to Medium Quality"
 msgstr "Úthluta 'Í bið'-merki á myndir í miðlungsgæðum"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:83
+#: core/libs/imgqsort/imagequalitywidget.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35093,13 +35177,15 @@ msgstr ""
 "Myndir sem metnar eru í miðlungs gæðum eftir útreikninga á mósku, truflunum "
 "og þjöppun; þær fá úthlutað 'Í bið'-merki."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, kde-format
+#: core/libs/imgqsort/imagequalitywidget.cpp:120
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgctxt "@option:check"
-msgid "Assign 'Accepted' Label to High Quality Pictures"
+msgid "Assign 'Accepted' Label to High Quality"
 msgstr "Úthluta 'Samþykkt'-merki á myndir í háum gæðum"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:96
+#: core/libs/imgqsort/imagequalitywidget.cpp:121
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35109,156 +35195,168 @@ msgstr ""
 "Myndir sem metnar eru í háum gæðum eftir útreikninga á mósku, truflunum og "
 "þjöppun, þær fá úthlutað 'Samþykkt'-merki."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:109
-#, kde-format
+#: core/libs/imgqsort/imagequalitywidget.cpp:134
+#, fuzzy, kde-format
+#| msgctxt "@option:radio"
+#| msgid "Detect Aesthetic Image using Deep Learning"
 msgctxt "@option:radio"
-msgid "Detect Aesthetic Image using Deep Learning"
+msgid "Detect Aesthetic Contents using Deep Learning"
 msgstr "Greina fallegar myndir með vélanáms-reikniriti (deep learning)"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:111
-#, kde-format
+#: core/libs/imgqsort/imagequalitywidget.cpp:136
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Detect if the image has aesthetic value.\n"
+#| "The aesthetic detection engine use deep learning model to classify images"
 msgctxt "@info:tooltip"
 msgid ""
-"Detect if the image has aesthetic value.\n"
+"Detect if the image has aesthetic contents.\n"
 "The aesthetic detection engine use deep learning model to classify images"
 msgstr ""
 "Greina hvort mynd hafi fagurfræðilegt gildi.\n"
 "Kerfið sem greinir fagurfræðilegt gildi styðst við vélanámslíkan (deep "
 "learning model) til að flokka myndir"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:116
+#: core/libs/imgqsort/imagequalitywidget.cpp:141
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr "Greina gæði með notkun grunnþátta"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:118
-#, kde-format
+#: core/libs/imgqsort/imagequalitywidget.cpp:143
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Detect if the image is sabotaging by four basic factors (blur, noise, "
+#| "exposure, and compression)."
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image is sabotaging by four basic factors (blur, noise, "
-"exposure, and compression)."
+"exposure, and compression). See the relevant settings in the next tab."
 msgstr ""
 "Greindu hvort myndin uppfyllir kröfur varðandi fjóra grunnþætti (móska, suð, "
 "lýsingu og þjöppun)."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:136
+#: core/libs/imgqsort/imagequalitywidget.cpp:163
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
 msgctxt "@title:tab"
-msgid "Rules"
-msgstr "Reglur"
+msgid "Settings"
+msgstr "Stillingar"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:143
+#: core/libs/imgqsort/imagequalitywidget.cpp:170
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Þröskuldur fyrir höfnun:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:148
+#: core/libs/imgqsort/imagequalitywidget.cpp:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr "Fyrir neðan þennan þröskuld fá myndir úthlutað 'Hafnað'-merki."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:150
+#: core/libs/imgqsort/imagequalitywidget.cpp:177
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Þröskuldur fyrir bið:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:155
+#: core/libs/imgqsort/imagequalitywidget.cpp:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr "Fyrir neðan þennan þröskuld fá myndir úthlutað 'Í bið'-merki."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:157
+#: core/libs/imgqsort/imagequalitywidget.cpp:184
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Þröskuldur fyrir samþykkt:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:162
+#: core/libs/imgqsort/imagequalitywidget.cpp:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr "Fyrir ofan þennan þröskuld fá myndir úthlutað 'Samþykkt'-merki."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:164
+#: core/libs/imgqsort/imagequalitywidget.cpp:191
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Skynja móðun"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:165
+#: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "Skynja magn móðunar (blur) í myndum sem unnið er með"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:167
-#: core/libs/imgqsort/imagequalitywidget.cpp:177
-#: core/libs/imgqsort/imagequalitywidget.cpp:187
+#: core/libs/imgqsort/imagequalitywidget.cpp:194
+#: core/libs/imgqsort/imagequalitywidget.cpp:204
+#: core/libs/imgqsort/imagequalitywidget.cpp:214
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Vægi:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:172
+#: core/libs/imgqsort/imagequalitywidget.cpp:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Magn sem á að tengja við móðunarútreikning"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:174
+#: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Skynja suð"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:175
+#: core/libs/imgqsort/imagequalitywidget.cpp:202
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Skynja magn suðs (noise) í myndum sem unnið er með"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:182
+#: core/libs/imgqsort/imagequalitywidget.cpp:209
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Magn sem á að tengja við truflanaútreikning"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:184
+#: core/libs/imgqsort/imagequalitywidget.cpp:211
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Skynja gagnaþjöppun"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:185
+#: core/libs/imgqsort/imagequalitywidget.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Skynja styrk þjöppunar í myndum sem unnið er með"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:192
+#: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Magn sem á að tengja við þjöppunarútreikning"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:194
+#: core/libs/imgqsort/imagequalitywidget.cpp:221
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Skynja yfir- og undirlýsingu"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:195
+#: core/libs/imgqsort/imagequalitywidget.cpp:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Skynja hvort myndir séu yfirlýstar eða undirlýstar"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:225
+#: core/libs/imgqsort/imagequalitywidget.cpp:252
 #, kde-format
 msgctxt "@title:tab"
 msgid "Basic Factors"
@@ -36507,12 +36605,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "Tvíundarkerfisgögn %1 bæti"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:376
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:375
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "ExifTool er ekki til staðar eða að exec-keyrsluheimildir vantar"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:390
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:389
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl er ekki til staðar eða að exec-keyrsluheimildir vantar"
@@ -39247,7 +39345,7 @@ msgstr "Skönnun hluta: %1\n"
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:181
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
@@ -39283,54 +39381,35 @@ msgstr ""
 "ljósmyndanna. Vitlíkiskerfið sem keyrir í bakgrunni mun útbúa sjálfvirkt röð "
 "merkja til að lýsa myndefninu og geyma niðurstöðurnar í gagnagrunni.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
-#, kde-format
-msgid "Auto-tagging mode: "
-msgstr "Hamur sjálfvirkrar úthlutunar merkja:"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
-msgid "Scan all"
-msgstr "Skanna allt"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
-#: core/utilities/maintenance/main/maintenancedlg.cpp:256
-#, kde-format
-msgid "Scan non-assigned only"
-msgstr "Skanna einungis óúthlutað"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-assigned "
-"only</b>: scan only the items with no assigned autotags.</p>"
-msgstr ""
-"<p><b>Skanna allt</b>: skanna aftur öll atriði frá grunni.</p><p><b>Skanna "
-"einungis óúthlutað</b>: skanna einungis þau atriði sem hafa engin óúthlutuð "
-"merki.</p>"
-
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
-#, kde-format
-msgid "Auto-tagging tag mode: "
+#, fuzzy, kde-format
+#| msgid "Auto-tagging tag mode: "
+msgid "Auto-Tagging Tag Mode: "
 msgstr "Merkingahamur sjálfvirkrar úthlutunar merkja:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
-#, kde-format
-msgid "Replace existing autotags"
+#, fuzzy, kde-format
+#| msgid "Replace existing autotags"
+msgid "Replace Existing Autotags"
 msgstr "Skipta út fyrirliggjandi sjálfvirkum merkjum"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
-#, kde-format
-msgid "Update autotags"
+#, fuzzy, kde-format
+#| msgid "Update autotags"
+msgid "Update Autotags"
 msgstr "Uppfæra sjálfvirk merki"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Replace existing autotags</b>: clear existing autotags and replace "
+#| "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
+#| "autotags found to the existing tags.</p>"
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Replace existing autotags</b>: clear existing autotags and replace "
-"with the results of the scan.</p><p><b>Update autotags</b>: add any new "
+"<p><b>Replace Existing Autotags</b>: clear existing autotags and replace "
+"with the results of the scan.</p><p><b>Update Autotags</b>: add any new "
 "autotags found to the existing tags.</p>"
 msgstr ""
 "<p><b>Skipta út fyrirliggjandi sjálfvirkum merkjum</b>: hreinsa út "
@@ -39339,20 +39418,20 @@ msgstr ""
 "sem finnast við fyrirliggjandi merki.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#, kde-format
-msgid "Selection model: "
+#, fuzzy, kde-format
+#| msgid "Selection model: "
+msgid "Selection Model: "
 msgstr "Valhamur:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:147
-#, fuzzy, kde-format
-#| msgid "No detail available"
+#, kde-format
 msgid "No models available"
-msgstr "Engar ítaratriði tiltæk"
+msgstr "Engin líkön tiltæk"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
 #, kde-format
-msgid "Object detection accuracy: "
-msgstr "Nákvæmni greiningar hluta: "
+msgid "Object Detection Accuracy: "
+msgstr "Nákvæmni greiningar hluta"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:165
 #, kde-format
@@ -39367,7 +39446,7 @@ msgstr ""
 "hluti, en um leið þekkjast færri hlutir.\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:170
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:286
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -39385,13 +39464,6 @@ msgstr ""
 "Hlutaskönnun og sjálfvirk merki eru tímafrekar aðgerðir.\n"
 "Þú getur valið um að nota alla örgjörvakjarna kerfisins, eða\n"
 "látið vinnsluna fara fram í bakgrunni á aðeins einum kjarna."
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:300
-#, kde-format
-msgctxt "@title:tab"
-msgid "Settings"
-msgstr "Stillingar"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:188
 #, kde-format
@@ -42630,25 +42702,25 @@ msgstr[1] ""
 "Beiti aðgerð á\n"
 "\"%1\" valdar myndir"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:405
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:406
 #, kde-format
 msgctxt "date of last image modification"
 msgid "Mod.: %1"
 msgstr "Breytt: %1"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:421
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:422
 #: core/showfoto/main/showfoto.cpp:267
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
-#: core/utilities/import/items/itemviewimportdelegate.cpp:367
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
+#: core/utilities/import/items/itemviewimportdelegate.cpp:368
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:426
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:446
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:320
-#: core/utilities/import/items/itemviewimportdelegate.cpp:372
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:427
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:447
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
+#: core/utilities/import/items/itemviewimportdelegate.cpp:373
 #, kde-format
 msgctxt "unknown image resolution"
 msgid "Unknown"
@@ -42820,8 +42892,8 @@ msgid "Model/View Port of Image Editor Canvas"
 msgstr "Yfirfærsla á Módel/Skoðun fyrir bakgrunn myndvinnsluforrits"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:218
-#: core/utilities/maintenance/main/maintenancedlg.cpp:264
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:101
+#: core/utilities/maintenance/main/maintenancedlg.cpp:255
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Myndgæðaröðun"
@@ -49296,7 +49368,7 @@ msgstr "S&kreyting"
 msgid "Effec&ts"
 msgstr "Sjón&hverfingar"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:120
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:117
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -49375,13 +49447,13 @@ msgstr ""
 "<qt>Stillingar fyrir vistun myndskráa<br/><i>Setur sjálfgefnar stillingar "
 "sem notaðar eru við vistun myndskráa</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:172
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Hnattstaðsetning"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:176
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:173
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -50512,8 +50584,8 @@ msgctxt "@action"
 msgid "C&ancel"
 msgstr "Hætt&a við"
 
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:253
-#: core/utilities/import/items/itemviewimportdelegate.cpp:320
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:254
+#: core/utilities/import/items/itemviewimportdelegate.cpp:321
 #, kde-format
 msgctxt "date of image creation"
 msgid "created: %1"
@@ -51771,19 +51843,19 @@ msgctxt "@info"
 msgid "Help"
 msgstr "Hjálp"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:128
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:129
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Vinnuferli"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:149
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Nákvæmni:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:156
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51795,43 +51867,43 @@ msgstr ""
 "borin kennsl á\n"
 "andlit, en um leið þekkjast færri andlit."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:196
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Stærð andlita:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Mjög lítil"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Lítil"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Miðlungs"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Stór"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Mjög stór"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51863,18 +51935,18 @@ msgstr ""
 "6-8 og stærð andlita á <b>Miðlungs</b> eða <b>Stór</b>.</p><p>Þessi stilling "
 "á einungis við YuNet-líkanið.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:226
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Stillingar andlitaskönnunar"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Nákvæmni:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:242
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51889,7 +51961,7 @@ msgstr ""
 "Athugið: einungis munu þekkjast andlit sem eru mjög lík áður merktum "
 "andlitum."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:288
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51901,7 +51973,7 @@ msgstr ""
 "Þú getur valið um að nota alla örgjörvakjarna kerfisins, eða\n"
 "látið vinnsluna fara fram í bakgrunni á aðeins einum kjarna."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Stillingar fyrir andlitakennsl"
@@ -60602,48 +60674,38 @@ msgstr "Finna og þekkja andlit"
 msgid "Auto-tags Assignment"
 msgstr "Sjálfvirk úthlutun merkja"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:250
-#, kde-format
-msgid "Scan Mode: "
-msgstr "Skönnunarhamur"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:255
-#, kde-format
-msgid "Clean all and re-scan"
-msgstr "Hreinsa allt og endurskanna"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:275
+#: core/utilities/maintenance/main/maintenancedlg.cpp:266
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Stefna samræmingar: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:279
+#: core/utilities/maintenance/main/maintenancedlg.cpp:270
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Úr gagnagrunni yfir í lýsigögn mynda"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:280
+#: core/utilities/maintenance/main/maintenancedlg.cpp:271
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Úr lýsigögnum mynda yfir í gagnagrunn"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:283
+#: core/utilities/maintenance/main/maintenancedlg.cpp:274
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Skoða nánar á spjaldi fyrir uppsetningu lýsigagna: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:292
+#: core/utilities/maintenance/main/maintenancedlg.cpp:283
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Samræma lýsigögn og gagnagrunn"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:353
+#: core/utilities/maintenance/main/maintenancedlg.cpp:341
 #, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Aðvörun"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:354
+#: core/utilities/maintenance/main/maintenancedlg.cpp:342
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
@@ -60655,7 +60717,7 @@ msgstr ""
 "verður að bera kennsl á andlit."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -60664,7 +60726,7 @@ msgstr ""
 "Öllum aðgerðum er lokið.\n"
 "Tímalengd: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:420
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam viðhald"
@@ -60926,22 +60988,22 @@ msgstr "Leitað í atriðum að fingraförum: %1"
 msgid "Item scanned for fingerprint: %1"
 msgstr "Leitað í atriði að fingraförum: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:180
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:172
 #, kde-format
 msgid "Image Quality: %1\n"
 msgstr "Myndgæði: %1\n"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:182
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #, kde-format
 msgid "Pick Label: %1"
 msgstr "Sérmerking: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:197
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:189
 #, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "Atriði skönnuð vegna gæða: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:201
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:193
 #, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "Atriði skannað vegna gæða: %1"
@@ -66264,13 +66326,13 @@ msgstr ""
 "endurræsinguna. Sumar stillingar eru háðar vélbúnaði og gætu haft engin "
 "áhrif.</b>"
 
-#: core/utilities/setup/setup.cpp:128
+#: core/utilities/setup/setup.cpp:125
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Gagnagrunnur"
 
-#: core/utilities/setup/setup.cpp:129
+#: core/utilities/setup/setup.cpp:126
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66280,13 +66342,13 @@ msgstr ""
 "Stillingar gagnagrunns\n"
 "Sérsníddu stillingar gagnagrunnsins"
 
-#: core/utilities/setup/setup.cpp:133
+#: core/utilities/setup/setup.cpp:130
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Söfn"
 
-#: core/utilities/setup/setup.cpp:134
+#: core/utilities/setup/setup.cpp:131
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66296,13 +66358,13 @@ msgstr ""
 "Stillingar myndasafna\n"
 "Stilltu staðsetningu á grunnmöppum"
 
-#: core/utilities/setup/setup.cpp:138
+#: core/utilities/setup/setup.cpp:135
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Skoðun"
 
-#: core/utilities/setup/setup.cpp:139
+#: core/utilities/setup/setup.cpp:136
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66312,13 +66374,13 @@ msgstr ""
 "Stillingar albúmasýna\n"
 "Sérsníddu útlit sýnanna"
 
-#: core/utilities/setup/setup.cpp:143
+#: core/utilities/setup/setup.cpp:140
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Vísbendingar verkfæra"
 
-#: core/utilities/setup/setup.cpp:144
+#: core/utilities/setup/setup.cpp:141
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66328,13 +66390,13 @@ msgstr ""
 "Stillingar verkfæravísbendinga í albúmum\n"
 "Sérsníddu upplýsingar í vísbendingum verkfæra"
 
-#: core/utilities/setup/setup.cpp:148
+#: core/utilities/setup/setup.cpp:145
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Lýsigögn"
 
-#: core/utilities/setup/setup.cpp:149
+#: core/utilities/setup/setup.cpp:146
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66344,13 +66406,13 @@ msgstr ""
 "Stjórnun ígræddra myndupplýsinga\n"
 "Setur upp vensl milli mynda og lýsigagna (metadata)"
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:150
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Sniðskrár"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:151
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66360,13 +66422,13 @@ msgstr ""
 "Sniðmát lýsigagna\n"
 "Sýsla með forsniðin sniðmát fyrir lýsigagnaupplýsingar"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:155
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Myndvinnsluforrit"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:156
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66376,13 +66438,13 @@ msgstr ""
 "Stillingar myndvinnsluforrits\n"
 "Sérsníddu hegðun myndvinnsluforritsins"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:160
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Litastýring"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:161
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66392,13 +66454,13 @@ msgstr ""
 "Stillingar litastýringar\n"
 "Sérsníddu stillingar litastýringar"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:165
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Ljósaborð"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:166
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66408,29 +66470,13 @@ msgstr ""
 "Stillingar ljósaborðs\n"
 "Sérsníddu verkfærið sem notað er til að bera saman atriði"
 
-#: core/utilities/setup/setup.cpp:182
-#, kde-format
-msgctxt "@title: settings section"
-msgid "Image Quality Sorter"
-msgstr "Myndgæðaröðun"
-
-#: core/utilities/setup/setup.cpp:183
-#, kde-format
-msgctxt "@title"
-msgid ""
-"Image Quality Sorter Settings\n"
-"Customize default settings to perform image triaging by quality"
-msgstr ""
-"Stillingar myndgæðaröðunar\n"
-"Sérsníddu sjálfgefnar stillingar til röðunar á myndum eftir gæðum þeirra"
-
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:179
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Myndavélar"
 
-#: core/utilities/setup/setup.cpp:188
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66440,13 +66486,13 @@ msgstr ""
 "Myndavélastillingar\n"
 "Sýslaðu með myndavélarnar þínar"
 
-#: core/utilities/setup/setup.cpp:195
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Viðbætur"
 
-#: core/utilities/setup/setup.cpp:196
+#: core/utilities/setup/setup.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66456,13 +66502,13 @@ msgstr ""
 "Stillingar viðbóta\n"
 "Stilltu hvaða viðbætur séu aðgengilegar úr aðalviðmótinu"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Ýmislegt"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66929,51 +66975,6 @@ msgstr ""
 "usr/local/share/color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/"
 "share/icc/</li><li>~/.color/icc/</li></ul>Á kerfinu þínu hafa eftirfarandi "
 "slóðir fundist og verið kannaðar:<ul><li>%1</li></ul>"
-
-#: core/utilities/setup/setupimagequalitysorter.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "These settings determines the quality of an image and convert it into a "
-#| "score, stored in database as Pick Label property. This information can be "
-#| "evaluated by two ways: using four basic factors sabotaging the images "
-#| "(blur, noise, exposure, and compression), or using a deep learning neural "
-#| "network engine. The first one helps to determine whether images are "
-#| "distorted by the basic factors, however it demands some drawbacks as fine-"
-#| "tuning from the user’s side and it cannot work along the aesthetic image "
-#| "processing. The second one uses an IA approach based on %1 model to "
-#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
-#| "require hyper-parameter settings, and make this feature easier to use."
-msgctxt "@label"
-msgid ""
-"These settings determines the quality of an image and convert it into a "
-"score, stored in database as Pick Label property. This information can be "
-"evaluated by two ways: using four basic factors sabotaging the images (blur, "
-"noise, exposure, and compression), or using a deep learning neural network "
-"engine. The first one helps to determine whether images are distorted by the "
-"basic factors, however it demands some drawbacks as fine-tuning from the "
-"user’s side and it cannot work along the aesthetic image processing. The "
-"second one uses an AI approach based on %1 model to predict the score. As "
-"deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
-"settings, and make this feature easier to use."
-msgstr ""
-"Þessar stillingar ákvarða gæði mynda og gefa út frá þeim stigaskor, sem "
-"geymd eru í gagnagrunni sem sérmerkingar. Þessar upplýsingar má meta á tvo "
-"vegi: með því að nota fjögur grunnatriði sem skemma myndir (móska, "
-"truflanir, lýsing og þjöppun), eða með því að nota vélnáms-tauganet (deep "
-"learning neural network engine). Fyrri kosturinn hjálpar við að ákvarða "
-"hvort myndir séu bjagaðar út frá áðurnefndum grunnþáttum, en hefur ókosti í "
-"för með sér: þetta krefst þess að notandinn fínstilli aðferðina og þetta "
-"getur ekki nýst samhliða greiningu á fagurfræðilegu gildi mynda. Seinni "
-"kosturinn notar gervigreindartækni byggða á %1 líkani við að spá fyrir um "
-"stigaskor. Þar sem vélnáms-aðferðin er enda-í-enda lausn, krefst hún ekki "
-"nákvæmra fínstillinga og er því auðveldari í notkun."
-
-#: core/utilities/setup/setupimagequalitysorter.cpp:63
-#, kde-format
-msgctxt "@label"
-msgid "aesthetic image quality"
-msgstr "fagurfræðileg gæði myndar"
 
 #: core/utilities/setup/setuplighttable.cpp:81
 #, kde-format
@@ -67457,6 +67458,56 @@ msgstr "Atriði í albúmi"
 msgid "Import Items"
 msgstr "Flytja inn atriði"
 
+#~ msgctxt "@option:radio"
+#~ msgid "Use default settings"
+#~ msgstr "Nota sjálfgefnar stillingar"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "Use the default quality sorting parameters configured in Setup dialog."
+#~ msgstr ""
+#~ "Nota sjálfgefnar færibreytur fyrir myndgæðaröðun sem gefnar eru í "
+#~ "stillingaglugganum."
+
+#~ msgctxt "@option:radio"
+#~ msgid "Use custom settings"
+#~ msgstr "Nota sérsniðnar stillingar"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "Use custom parameters to perform quality sorting instead default one."
+#~ msgstr ""
+#~ "Nota sérsniðnar færibreytur til að framkvæma myndgæðaröðun í stað "
+#~ "sjálfgefinna gilda."
+
+#~ msgctxt "@title:tab"
+#~ msgid "Rules"
+#~ msgstr "Reglur"
+
+#~ msgid "Auto-tagging mode: "
+#~ msgstr "Hamur sjálfvirkrar úthlutunar merkja:"
+
+#~ msgid "Scan all"
+#~ msgstr "Skanna allt"
+
+#~ msgid "Object detection accuracy: "
+#~ msgstr "Nákvæmni greiningar hluta: "
+
+#~ msgid "Clean all and re-scan"
+#~ msgstr "Hreinsa allt og endurskanna"
+
+#~ msgctxt "@title: settings section"
+#~ msgid "Image Quality Sorter"
+#~ msgstr "Myndgæðaröðun"
+
+#~ msgctxt "@title"
+#~ msgid ""
+#~ "Image Quality Sorter Settings\n"
+#~ "Customize default settings to perform image triaging by quality"
+#~ msgstr ""
+#~ "Stillingar myndgæðaröðunar\n"
+#~ "Sérsníddu sjálfgefnar stillingar til röðunar á myndum eftir gæðum þeirra"
+
 #~ msgid "ResNet-152"
 #~ msgstr "ResNet-152"
 
@@ -67743,9 +67794,6 @@ msgstr "Flytja inn atriði"
 
 #~ msgid "ResNet152"
 #~ msgstr "ResNet152"
-
-#~ msgid "Object Detection Accuracy: "
-#~ msgstr "Nákvæmni greiningar hluta"
 
 #~ msgid "Applying face changes"
 #~ msgstr "Virkja breytingar á andlitaupplýsingum"
@@ -74723,9 +74771,6 @@ msgstr "Flytja inn atriði"
 #~| msgid "<p>Executable: %1</p>"
 #~ msgid "<p>Hot Pixels: %1</p>"
 #~ msgstr "<p>Keyrsluskrá: %1</p>"
-
-#~ msgid "All"
-#~ msgstr "Allt"
 
 #~ msgid ""
 #~ "Use this button to add a new black frame file which will be used by the "
