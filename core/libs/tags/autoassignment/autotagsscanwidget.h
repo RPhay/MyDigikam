@@ -45,7 +45,8 @@ public:
 
 public:
 
-    explicit AutotagsScanWidget(SettingsDisplayMode _displayMode, QWidget* const parent = nullptr);
+    explicit AutotagsScanWidget(SettingsDisplayMode displayMode,
+                                QWidget* const parent = nullptr);
     ~AutotagsScanWidget()                 override;
 
     AutotagsScanSettings settings() const;

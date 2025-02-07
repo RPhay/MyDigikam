@@ -22,12 +22,12 @@
 namespace Digikam
 {
 
-AutotagsScanWidget::AutotagsScanWidget(SettingsDisplayMode _displayMode, QWidget* const parent)
+AutotagsScanWidget::AutotagsScanWidget(SettingsDisplayMode displayMode, QWidget* const parent)
     : QTabWidget       (parent),
       StateSavingObject(this),
       d                (new Private)
 {
-    d->displayMode = _displayMode;
+    d->displayMode = displayMode;
     setObjectName(d->configName);
     setupUi();
 }
@@ -109,7 +109,7 @@ void AutotagsScanWidget::setupUi()
     title->setWordWrap(true);
 
     DHBox* const hbox12         = new DHBox(d->settingsTab);
-    new QLabel(i18n("Scan Mode: "), hbox12);
+    new QLabel(i18n("Scan Mode:"), hbox12);
     QWidget* const space8       = new QWidget(hbox12);
     hbox12->setStretchFactor(space8, 10);
 
@@ -121,26 +121,25 @@ void AutotagsScanWidget::setupUi()
                                   "<p><b>Non-Assigned Only</b>: scan only the items with no assigned autotags.</p>"));
 
     DHBox* const hbox15         = new DHBox(d->settingsTab);
-    new QLabel (i18n("Auto-Tagging Tag Mode: "), hbox15);
+    new QLabel (i18n("Auto-Tagging Mode:"), hbox15);
     QWidget* const space15      = new QWidget(hbox15);
     hbox15->setStretchFactor(space15, 10);
 
     d->tagMode                  = new QComboBox(hbox15);
-    d->tagMode->addItem(i18n("Replace Existing Autotags"), AutotagsScanSettings::TagMode::Replace);
-    d->tagMode->addItem(i18n("Update Autotags"),  AutotagsScanSettings::TagMode::Update);
+    d->tagMode->addItem(i18n("Replace Existing"), AutotagsScanSettings::TagMode::Replace);
+    d->tagMode->addItem(i18n("Update"),           AutotagsScanSettings::TagMode::Update);
     d->tagMode->setToolTip(i18nc("@info:tooltip",
-                                 "<p><b>Replace Existing Autotags</b>: clear existing autotags and replace with the results of the scan.</p>"
-                                 "<p><b>Update Autotags</b>: add any new autotags found to the existing tags.</p>"));
+                                 "<p><b>Replace Existing</b>: clear existing autotags and replace with the results of the scan.</p>"
+                                 "<p><b>Update</b>: add any new autotags found to the existing tags.</p>"));
 
     DHBox* const hbox13         = new DHBox(d->settingsTab);
-    new QLabel(i18n("Selection Model: "), hbox13);
+    new QLabel(i18n("Selection Model:"), hbox13);
     QWidget* const space9       = new QWidget(hbox13);
     hbox13->setStretchFactor(space9, 10);
 
-    DNNModelManager* const dnnModelManager = DNNModelManager::instance();
+    DNNModelManager* const dnnModelManager        = DNNModelManager::instance();
     QList<QPair<QString, QStringList> > modelList = dnnModelManager->getModelList(DNNModelUsage::DNNUsageObjectDetection);
-
-    d->objectDetectModel        = new QComboBox(hbox13);
+    d->objectDetectModel                          = new QComboBox(hbox13);
 
     if (modelList.isEmpty())
     {
@@ -157,7 +156,7 @@ void AutotagsScanWidget::setupUi()
     }
 
     DHBox* const hbox14         = new DHBox(d->settingsTab);
-    new QLabel(i18n("Object Detection Accuracy: "), hbox14);
+    new QLabel(i18n("Detection Accuracy:"), hbox14);
     d->accuracyInput            = new DIntNumInput(hbox14);
     d->accuracyInput->setDefaultValue(7);
     d->accuracyInput->setRange(1, 10, 1);
@@ -256,11 +255,6 @@ AutotagsScanSettings AutotagsScanWidget::settings() const
 
 void AutotagsScanWidget::settings(const AutotagsScanSettings& newSettings)
 {
-    // d->albumSelectors->setAlbumSelected(newSettings.albums);
-
-    // result.albums                 = d->albumSelectors->selectedAlbumsAndTags();
-    // result.wholeAlbums            = d->albumSelectors->wholeAlbumsChecked();
-
     d->scanMode->setCurrentIndex(d->scanMode->findData(newSettings.scanMode));
     d->tagMode->setCurrentIndex(d->tagMode->findData(newSettings.tagMode));
     d->objectDetectModel->setCurrentIndex(d->objectDetectModel->findData(newSettings.objectDetectModel));

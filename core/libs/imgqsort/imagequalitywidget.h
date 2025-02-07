@@ -48,7 +48,7 @@ public:
 
 public:
 
-    explicit ImageQualityWidget(SettingsDisplayMode _displayMode,
+    explicit ImageQualityWidget(SettingsDisplayMode displayMode,
                                 QWidget* const parent = nullptr);
     ~ImageQualityWidget()                                 override;
 

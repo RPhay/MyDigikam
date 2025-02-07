@@ -19,12 +19,12 @@
 namespace Digikam
 {
 
-ImageQualityWidget::ImageQualityWidget(SettingsDisplayMode _displayMode, QWidget* const parent)
+ImageQualityWidget::ImageQualityWidget(SettingsDisplayMode displayMode, QWidget* const parent)
     : QTabWidget       (parent),
       StateSavingObject(this),
       d                (new Private)
 {
-    d->displayMode = _displayMode;
+    d->displayMode = displayMode;
     setObjectName(d->configName);
     setupUi();
 }
@@ -76,7 +76,7 @@ void ImageQualityWidget::setupUi()
                                             .arg(i18nc("@label", "aesthetic image quality"))));
 
     DHBox* const hlay0        = new DHBox(d->settingsView);
-    new QLabel(i18n("Scan Mode: "), hlay0);
+    new QLabel(i18n("Scan Mode:"), hlay0);
     QWidget* const space8     = new QWidget(hlay0);
     hlay0->setStretchFactor(space8, 10);
 
@@ -91,8 +91,9 @@ void ImageQualityWidget::setupUi()
 
     DHBox* const hlay1        = new DHBox(d->settingsView);
 
-    d->setRejected            = new QCheckBox(i18nc("@option:check", "Assign 'Rejected' Label to Low Quality"), hlay1);
-    d->setRejected->setToolTip(i18nc("@info:tooltip", "Low quality images detected by blur, noise, and compression analysis will be assigned to Rejected label."));
+    d->setRejected            = new QCheckBox(i18nc("@option:check", "Assign Rejected Label to Low Quality"), hlay1);
+    d->setRejected->setToolTip(i18nc("@info:tooltip", "Low quality images detected by the quality engine\n"
+                                     "will be assigned to the rejected pick label (red flag)."));
 
     QWidget* const hspace1    = new QWidget(hlay1);
     hlay1->setStretchFactor(hspace1, 10);
@@ -104,8 +105,9 @@ void ImageQualityWidget::setupUi()
 
     DHBox* const hlay2        = new DHBox(d->settingsView);
 
-    d->setPending             = new QCheckBox(i18nc("@option:check", "Assign 'Pending' Label to Medium Quality"), hlay2);
-    d->setPending->setToolTip(i18nc("@info:tooltip", "Medium quality images detected by blur, noise, and compression analysis will be assigned to Pending label."));
+    d->setPending             = new QCheckBox(i18nc("@option:check", "Assign Pending Label to Medium Quality"), hlay2);
+    d->setPending->setToolTip(i18nc("@info:tooltip", "Medium quality images detected by the quality engine\n"
+                                    "will be assigned to the pending pick label (yellow flag)."));
 
     QWidget* const hspace2    = new QWidget(hlay2);
     hlay2->setStretchFactor(hspace2, 10);
@@ -117,8 +119,9 @@ void ImageQualityWidget::setupUi()
 
     DHBox* const hlay3        = new DHBox(d->settingsView);
 
-    d->setAccepted            = new QCheckBox(i18nc("@option:check", "Assign 'Accepted' Label to High Quality"), hlay3);
-    d->setAccepted->setToolTip(i18nc("@info:tooltip", "High quality images detected by blur, noise, and compression analysis will be assigned to Accepted label."));
+    d->setAccepted            = new QCheckBox(i18nc("@option:check", "Assign Accepted Label to High Quality"), hlay3);
+    d->setAccepted->setToolTip(i18nc("@info:tooltip", "High quality images detected by the quality engine\n"
+                                     "will be assigned to the accepted pick label (green flag)."));
 
     QWidget* const hspace3    = new QWidget(hlay3);
     hlay3->setStretchFactor(hspace3, 10);
@@ -131,18 +134,18 @@ void ImageQualityWidget::setupUi()
     d->detectButtonGroup      = new QButtonGroup(d->settingsView);
     d->detectButtonGroup->setExclusive(true);
 
-    d->detectAesthetic        = new QRadioButton(i18nc("@option:radio", "Detect Aesthetic Contents using Deep Learning"),
+    d->detectAesthetic        = new QRadioButton(i18nc("@option:radio", "Detect Aesthetic Contents"),
                                                  this);
     d->detectAesthetic->setToolTip(i18nc("@info:tooltip", "Detect if the image has aesthetic contents.\n"
-                                         "The aesthetic detection engine use deep learning model to classify images"));
+                                         "The aesthetic detection engine is based on a deep learning model to classify images"));
 
     d->detectButtonGroup->addButton(d->detectAesthetic, Private::AESTHETIC);
 
-    d->detectBasicFactors     = new QRadioButton(i18nc("@option:radio", "Detect Quality Using Basic Factors"),
+    d->detectBasicFactors     = new QRadioButton(i18nc("@option:radio", "Detect Quality by Basic Factors"),
                                                  this);
-    d->detectBasicFactors->setToolTip(i18nc("@info:tooltip", "Detect if the image is sabotaging by four basic factors "
-                                            "(blur, noise, exposure, and compression). "
-                                            "See the relevant settings in the next tab."));
+    d->detectBasicFactors->setToolTip(i18nc("@info:tooltip", "Detect if the image is sabotaging using four basic factors\n"
+                                            "eg. blur, noise, exposure (under / over), and compression levels.\n"
+                                            "See the relevant settings from the next <b>Basic Factors</b> tab."));
 
     d->detectButtonGroup->addButton(d->detectBasicFactors, Private::BASICFACTORS);
     d->detectAesthetic->setChecked(true);
@@ -172,21 +175,24 @@ void ImageQualityWidget::setupUi()
     d->setRejectedThreshold   = new DIntNumInput(d->basicView);
     d->setRejectedThreshold->setDefaultValue(10);
     d->setRejectedThreshold->setRange(1, 100, 1);
-    d->setRejectedThreshold->setToolTip(i18nc("@info:tooltip", "Threshold below which all pictures are assigned Rejected Label"));
+    d->setRejectedThreshold->setToolTip(i18nc("@info:tooltip",
+                                              "Threshold below which all pictures are assigned Rejected Label"));
 
     d->lbl3                   = new QLabel(i18nc("@label", "Pending threshold:"), d->basicView);
     d->lbl3->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setPendingThreshold    = new DIntNumInput(d->basicView);
     d->setPendingThreshold->setDefaultValue(40);
     d->setPendingThreshold->setRange(1, 100, 1);
-    d->setPendingThreshold->setToolTip(i18nc("@info:tooltip", "Threshold below which all pictures are assigned Pending Label"));
+    d->setPendingThreshold->setToolTip(i18nc("@info:tooltip",
+                                             "Threshold below which all pictures are assigned Pending Label"));
 
     d->lbl4                   = new QLabel(i18nc("@label", "Accepted threshold:"), d->basicView);
     d->lbl4->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setAcceptedThreshold   = new DIntNumInput(d->basicView);
     d->setAcceptedThreshold->setDefaultValue(60);
     d->setAcceptedThreshold->setRange(1, 100, 1);
-    d->setAcceptedThreshold->setToolTip(i18nc("@info:tooltip", "Threshold above which all pictures are assigned Accepted Label"));
+    d->setAcceptedThreshold->setToolTip(i18nc("@info:tooltip",
+                                              "Threshold above which all pictures are assigned Accepted Label"));
 
     d->detectBlur             = new QCheckBox(i18nc("@option:check", "Detect Blur"), d->basicView);
     d->detectBlur->setToolTip(i18nc("@info:tooltip", "Detect the amount of blur in the images passed to it"));
