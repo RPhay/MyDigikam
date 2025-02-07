@@ -84,13 +84,6 @@ public:
     QHash<Labels, QList<int> > selectedLabels();
 
     /**
-     * @brief Loading and saving state function inherited from
-     *        StateSavingObject
-     */
-    void doLoadState() override;
-    void doSaveState() override;
-
-    /**
      * @brief Restores the selection state from the AlbumHistory
      *        class
      *
@@ -105,6 +98,15 @@ public:
      *        album from currently selected labels
      */
     void setCurrentAlbum();
+
+protected:
+
+    /**
+     * @brief Loading and saving state function inherited from
+     *        StateSavingObject
+     */
+    void doLoadState() override;
+    void doSaveState() override;
 
 private:
 

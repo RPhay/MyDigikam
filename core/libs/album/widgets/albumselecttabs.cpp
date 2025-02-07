@@ -203,7 +203,7 @@ AlbumSelectTabs::AlbumSelectTabs(const QString& name, QWidget* const parent)
     d->tagSearchBar->loadState();
     d->searchTreeView->loadState();
     d->searchSearchBar->loadState();
-    d->labelsTree->doLoadState();
+    d->labelsTree->loadState();
 }
 
 AlbumSelectTabs::~AlbumSelectTabs()
@@ -214,7 +214,7 @@ AlbumSelectTabs::~AlbumSelectTabs()
     d->tagSearchBar->saveState();
     d->searchTreeView->saveState();
     d->searchSearchBar->saveState();
-    d->labelsTree->doSaveState();
+    d->labelsTree->saveState();
 
     delete d;
 }

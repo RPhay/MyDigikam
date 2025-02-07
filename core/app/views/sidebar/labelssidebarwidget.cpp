@@ -139,8 +139,8 @@ void LabelsSideBarWidget::doLoadState()
     d->scanExpander->setExpanded(group.readEntry(d->scanExpander->objectName(),
                                                  d->scanExpander->isExpandByDefault()));
 
-    d->labelsTree->doLoadState();
     d->settingsWdg->loadState();
+    d->labelsTree->loadState();
 }
 
 void LabelsSideBarWidget::doSaveState()
@@ -150,8 +150,8 @@ void LabelsSideBarWidget::doSaveState()
     group.writeEntry(d->scanExpander->objectName(),
                      d->scanExpander->isExpanded());
 
-    d->labelsTree->doSaveState();
     d->settingsWdg->saveState();
+    d->labelsTree->saveState();
 }
 
 const QIcon LabelsSideBarWidget::getIcon()
