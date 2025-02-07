@@ -91,7 +91,7 @@ void ImageQualityWidget::setupUi()
 
     DHBox* const hlay1        = new DHBox(d->settingsView);
 
-    d->setRejected            = new QCheckBox(i18nc("@option:check", "Assign Rejected Label to Low Quality"), hlay1);
+    d->setRejected            = new QCheckBox(i18nc("@option:check", "Assign Low Quality to Rejected Label"), hlay1);
     d->setRejected->setToolTip(i18nc("@info:tooltip", "Low quality images detected by the quality engine\n"
                                      "will be assigned to the rejected pick label (red flag)."));
 
@@ -105,7 +105,7 @@ void ImageQualityWidget::setupUi()
 
     DHBox* const hlay2        = new DHBox(d->settingsView);
 
-    d->setPending             = new QCheckBox(i18nc("@option:check", "Assign Pending Label to Medium Quality"), hlay2);
+    d->setPending             = new QCheckBox(i18nc("@option:check", "Assign Medium Quality to Pending Label"), hlay2);
     d->setPending->setToolTip(i18nc("@info:tooltip", "Medium quality images detected by the quality engine\n"
                                     "will be assigned to the pending pick label (yellow flag)."));
 
@@ -119,7 +119,7 @@ void ImageQualityWidget::setupUi()
 
     DHBox* const hlay3        = new DHBox(d->settingsView);
 
-    d->setAccepted            = new QCheckBox(i18nc("@option:check", "Assign Accepted Label to High Quality"), hlay3);
+    d->setAccepted            = new QCheckBox(i18nc("@option:check", "Assign High Quality to Accepted Label"), hlay3);
     d->setAccepted->setToolTip(i18nc("@info:tooltip", "High quality images detected by the quality engine\n"
                                      "will be assigned to the accepted pick label (green flag)."));
 
