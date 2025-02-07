@@ -292,24 +292,20 @@ void ItemCategoryDrawer::textForFace(const QModelIndex& index, QString* header, 
 
 void ItemCategoryDrawer::textForMonth(const QModelIndex& index, QString* header, QString* subLine) const
 {
-    QDate date    = index.data(ItemFilterModel::CategoryDateRole).toDate();
-    QString month = QLocale().standaloneMonthName(date.month());
-    *header       = date.isValid() ? month + date.toString(QLatin1String(" yyyy"))
-                                   : i18n("Invalid date");
-    int count     = d->view->categoryRange(index).height();
-    *subLine      = i18np("1 Item", "%1 Items", count);
+    QDate date = index.data(ItemFilterModel::CategoryDateRole).toDate();
+    *header    = date.isValid() ? QLocale().toString(date, QLatin1String("MMMM yyyy"))
+                                : i18n("Invalid date");
+    int count  = d->view->categoryRange(index).height();
+    *subLine   = i18np("1 Item", "%1 Items", count);
 }
 
 void ItemCategoryDrawer::textForDay(const QModelIndex& index, QString* header, QString* subLine) const
 {
-    QDate date    = index.data(ItemFilterModel::CategoryDateRole).toDate();
-    QString month = QLocale().standaloneMonthName(date.month());
-    QString day   = date.toString(QLatin1String("dd (")) +
-                    QLocale().standaloneDayName(date.dayOfWeek()) + QLatin1String(") ");
-    *header       = date.isValid() ? day + month + date.toString(QLatin1String(" yyyy"))
-                                   : i18n("Invalid date");
-    int count     = d->view->categoryRange(index).height();
-    *subLine      = i18np("1 Item", "%1 Items", count);
+    QDate date = index.data(ItemFilterModel::CategoryDateRole).toDate();
+    *header    = date.isValid() ? QLocale().toString(date, QLatin1String("dd (dddd) MMMM yyyy"))
+                                : i18n("Invalid date");
+    int count  = d->view->categoryRange(index).height();
+    *subLine   = i18np("1 Item", "%1 Items", count);
 }
 
 void ItemCategoryDrawer::textForPAlbum(PAlbum* album, bool recursive, int count, QString* header, QString* subLine) const
