@@ -131,17 +131,19 @@ void ImageQualityWidget::setupUi()
 
     // ------------------------------------------------------------------------------
 
+    QLabel* const engineLbl   = new QLabel(i18nc("@label", "Quality Engine:"), d->settingsView);
+
     d->detectButtonGroup      = new QButtonGroup(d->settingsView);
     d->detectButtonGroup->setExclusive(true);
 
     d->detectAesthetic        = new QRadioButton(i18nc("@option:radio", "Detect Aesthetic Contents"),
                                                  this);
     d->detectAesthetic->setToolTip(i18nc("@info:tooltip", "Detect if the image has aesthetic contents.\n"
-                                         "The aesthetic detection engine is based on a deep learning model to classify images"));
+                                         "The aesthetic detection engine is based on a deep learning model to classify images."));
 
     d->detectButtonGroup->addButton(d->detectAesthetic, Private::AESTHETIC);
 
-    d->detectBasicFactors     = new QRadioButton(i18nc("@option:radio", "Detect Quality by Basic Factors"),
+    d->detectBasicFactors     = new QRadioButton(i18nc("@option:radio", "Detect by Basic Factors"),
                                                  this);
     d->detectBasicFactors->setToolTip(i18nc("@info:tooltip", "Detect if the image is sabotaging using four basic factors\n"
                                             "eg. blur, noise, exposure (under / over), and compression levels.\n"
@@ -153,15 +155,16 @@ void ImageQualityWidget::setupUi()
     // ------------------------------------------------------------------------------
 
     QGridLayout* const glay = new QGridLayout(d->settingsView);
-    glay->addWidget(hlay0,                 0, 1, 1, 1);
-    glay->addWidget(hlay1,                 1, 1, 1, 1);
-    glay->addWidget(hlay2,                 2, 1, 1, 1);
-    glay->addWidget(hlay3,                 3, 1, 1, 1);
-    glay->addWidget(d->detectAesthetic,    4, 1, 1, 1);
-    glay->addWidget(d->detectBasicFactors, 5, 1, 1, 1);
+    glay->addWidget(hlay0,                 0, 0, 1, 2);
+    glay->addWidget(hlay1,                 1, 0, 1, 2);
+    glay->addWidget(hlay2,                 2, 0, 1, 2);
+    glay->addWidget(hlay3,                 3, 0, 1, 2);
+    glay->addWidget(engineLbl,             4, 0, 1, 2);
+    glay->addWidget(d->detectAesthetic,    5, 1, 1, 1);
+    glay->addWidget(d->detectBasicFactors, 6, 1, 1, 1);
     glay->setColumnStretch(1, 10);
-    glay->setRowStretch(6, 10);
-    glay->setContentsMargins(2 * spacing, spacing, spacing, spacing);
+    glay->setRowStretch(7, 10);
+    glay->setContentsMargins(spacing, spacing, spacing, spacing);
 
     addTab(d->settingsView, i18nc("@title:tab", "Settings"));
 
