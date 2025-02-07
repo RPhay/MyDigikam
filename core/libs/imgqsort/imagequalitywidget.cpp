@@ -84,8 +84,8 @@ void ImageQualityWidget::setupUi()
     d->scanMode->addItem(i18n("All"),                ImageQualitySettings::ScanMode::AllItems);
     d->scanMode->addItem(i18n("Non-Assigned Only"),  ImageQualitySettings::ScanMode::NonAssignedItems);
     d->scanMode->setToolTip(i18nc("@info:tooltip",
-                                  "<p><b>All</b>: re-scan all items for tags.</p>"
-                                  "<p><b>Non-Assigned Only</b>: scan only the items with no assigned autotags.</p>"));
+                                  "<p><b>All</b>: re-scan all items for quality.</p>"
+                                  "<p><b>Non-Assigned Only</b>: scan only the items with no assigned auto-pick labels.</p>"));
 
     // ------------------------------------------------------------------------------
 
