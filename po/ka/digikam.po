@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-07 02:00+0000\n"
+"POT-Creation-Date: 2025-02-08 01:52+0000\n"
 "PO-Revision-Date: 2024-07-07 06:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -873,11 +873,12 @@ msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
 msgstr "არსებულ რიგში ჩამატება"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:277
-#: core/app/items/utils/itemcategorydrawer.cpp:286
-#: core/app/items/utils/itemcategorydrawer.cpp:293
-#: core/app/items/utils/itemcategorydrawer.cpp:378
-#: core/app/items/utils/itemcategorydrawer.cpp:396
+#: core/app/items/utils/itemcategorydrawer.cpp:283
+#: core/app/items/utils/itemcategorydrawer.cpp:290
+#: core/app/items/utils/itemcategorydrawer.cpp:299
+#: core/app/items/utils/itemcategorydrawer.cpp:308
+#: core/app/items/utils/itemcategorydrawer.cpp:393
+#: core/app/items/utils/itemcategorydrawer.cpp:411
 #: core/utilities/import/items/importcategorydrawer.cpp:200
 #: core/utilities/import/items/importcategorydrawer.cpp:221
 #: core/utilities/import/items/importcategorydrawer.cpp:230
@@ -887,14 +888,15 @@ msgid_plural "%1 Items"
 msgstr[0] "1 ელემენტი"
 msgstr[1] "%1 ელემენტი"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:284
+#: core/app/items/utils/itemcategorydrawer.cpp:297
+#: core/app/items/utils/itemcategorydrawer.cpp:306
 #, fuzzy, kde-format
 #| msgctxt "@info: media loading"
 #| msgid "Invalid media"
 msgid "Invalid date"
 msgstr "არასწორი მედია"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:322
+#: core/app/items/utils/itemcategorydrawer.cpp:337
 #, kde-format
 msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
@@ -902,7 +904,7 @@ msgid_plural "Album Date: %2 %3 %4 - %1 Items"
 msgstr[0] "ალბომის თარიღი: %2 %3 %4 - 1 ჩანაწერი"
 msgstr[1] "ალბომის თარიღი: %2 %3 %4 - %1 ჩანაწერი"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:349
+#: core/app/items/utils/itemcategorydrawer.cpp:364
 #, kde-format
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
@@ -910,7 +912,7 @@ msgid_plural "%2 including %1 subtags"
 msgstr[0] "%2, 1 ქვეჭდის ჩათვლით"
 msgstr[1] "%2, %1 ქვეჭდის ჩათვლით"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:353
+#: core/app/items/utils/itemcategorydrawer.cpp:368
 #, kde-format
 msgctxt ""
 "%2: the previous string (e.g. 'Foo including 7 subtags'); %1: number of "
@@ -920,28 +922,28 @@ msgid_plural "%2 - %1 Items"
 msgstr[0] "%2 - %1 ელემენტი"
 msgstr[1] "%2 - %1 ელემენტი"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:358
+#: core/app/items/utils/itemcategorydrawer.cpp:373
 #, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
 msgstr[0] "%2 - %1 ელემენტი"
 msgstr[1] "%2 - %1 ელემენტი"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:370
+#: core/app/items/utils/itemcategorydrawer.cpp:385
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
 msgstr[0] "საკვანძო სიტყვის ძებნა - 1 ჩანაწერი"
 msgstr[1] "საკვანძო სიტყვის ძებნა - %1 ჩანაწერი"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:374
+#: core/app/items/utils/itemcategorydrawer.cpp:389
 #, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
 msgstr[0] "დამატებითი ძებნა - 1 ჩანაწერი"
 msgstr[1] "დამატებითი ძებნა - %1 ჩანაწერი"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:388
+#: core/app/items/utils/itemcategorydrawer.cpp:403
 #, kde-format
 msgctxt "Month String - Year String"
 msgid "%1 %2"
@@ -2054,14 +2056,14 @@ msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr ""
 
 #: core/app/main/digikamapp_setup.cpp:654
-#: core/app/main/digikamapp_setup.cpp:709
+#: core/app/main/digikamapp_setup.cpp:713
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "ზრდის მიხედვით"
 
 #: core/app/main/digikamapp_setup.cpp:656
-#: core/app/main/digikamapp_setup.cpp:711
+#: core/app/main/digikamapp_setup.cpp:715
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
@@ -2100,286 +2102,294 @@ msgstr "ფორმატით"
 #: core/app/main/digikamapp_setup.cpp:675
 #, kde-format
 msgctxt "@action: setup"
-msgid "By Month"
-msgstr "თვით"
+msgid "By Faces"
+msgstr "სახეებით"
 
 #: core/app/main/digikamapp_setup.cpp:676
 #, kde-format
 msgctxt "@action: setup"
-msgid "By Faces"
-msgstr "სახეებით"
+msgid "By Month"
+msgstr "თვით"
 
-#: core/app/main/digikamapp_setup.cpp:704
+#: core/app/main/digikamapp_setup.cpp:677
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Date"
+msgctxt "@action: setup"
+msgid "By Day"
+msgstr "თარიღით"
+
+#: core/app/main/digikamapp_setup.cpp:708
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "ჩანაწერების გაცალკევების მიმდევრობა"
 
-#: core/app/main/digikamapp_setup.cpp:705
+#: core/app/main/digikamapp_setup.cpp:709
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:726
+#: core/app/main/digikamapp_setup.cpp:730
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "ყველაფრის მონიშვნა"
 
-#: core/app/main/digikamapp_setup.cpp:733
+#: core/app/main/digikamapp_setup.cpp:737
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "მონიშვნის მოხსნა"
 
-#: core/app/main/digikamapp_setup.cpp:740
+#: core/app/main/digikamapp_setup.cpp:744
 #, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "მონიშვნის ინვერსია"
 
-#: core/app/main/digikamapp_setup.cpp:748
+#: core/app/main/digikamapp_setup.cpp:752
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "მინიატურის პანელის დამატება"
 
-#: core/app/main/digikamapp_setup.cpp:779
+#: core/app/main/digikamapp_setup.cpp:783
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "100%-მდე გადიდება"
 
-#: core/app/main/digikamapp_setup.cpp:787
+#: core/app/main/digikamapp_setup.cpp:791
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "ფანჯარაში ჩატევა"
 
-#: core/app/main/digikamapp_setup.cpp:800
+#: core/app/main/digikamapp_setup.cpp:804
 #, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "ფერით-მართული ხედი"
 
-#: core/app/main/digikamapp_setup.cpp:818
+#: core/app/main/digikamapp_setup.cpp:822
 #, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "ძებნა..."
 
-#: core/app/main/digikamapp_setup.cpp:826
+#: core/app/main/digikamapp_setup.cpp:830
 #, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "გაფართოებული ძებნა..."
 
-#: core/app/main/digikamapp_setup.cpp:834
+#: core/app/main/digikamapp_setup.cpp:838
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "დუბლიკატების პოვნა…"
 
-#: core/app/main/digikamapp_setup.cpp:844
+#: core/app/main/digikamapp_setup.cpp:848
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "ბაზის მიგრაცია..."
 
-#: core/app/main/digikamapp_setup.cpp:853
+#: core/app/main/digikamapp_setup.cpp:857
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "შეკეთების რეჟიმი..."
 
-#: core/app/main/digikamapp_setup.cpp:860
+#: core/app/main/digikamapp_setup.cpp:864
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "ახალი ობიექტების მოძებნა"
 
-#: core/app/main/digikamapp_setup.cpp:866
+#: core/app/main/digikamapp_setup.cpp:870
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "კამერის ხელით დამატება..."
 
-#: core/app/main/digikamapp_setup.cpp:877
+#: core/app/main/digikamapp_setup.cpp:881
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "კამერების ჩატვირთვა..."
 
-#: core/app/main/digikamapp_setup.cpp:911
+#: core/app/main/digikamapp_setup.cpp:915
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "გადახედვის რეჟიმიდან გასვლა"
 
-#: core/app/main/digikamapp_setup.cpp:916
+#: core/app/main/digikamapp_setup.cpp:920
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "შემდეგი გამოსახულება"
 
-#: core/app/main/digikamapp_setup.cpp:922
+#: core/app/main/digikamapp_setup.cpp:926
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "წინა გამოსახულება"
 
-#: core/app/main/digikamapp_setup.cpp:928
+#: core/app/main/digikamapp_setup.cpp:932
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "პირველი გამოსახულება"
 
-#: core/app/main/digikamapp_setup.cpp:933
+#: core/app/main/digikamapp_setup.cpp:937
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "ბოლო გამოსახულება"
 
-#: core/app/main/digikamapp_setup.cpp:938
+#: core/app/main/digikamapp_setup.cpp:942
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "ამ&ოჭრა"
 
-#: core/app/main/digikamapp_setup.cpp:940
+#: core/app/main/digikamapp_setup.cpp:944
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "მონიშნულის ბუფერში ამოჭრა"
 
-#: core/app/main/digikamapp_setup.cpp:959
+#: core/app/main/digikamapp_setup.cpp:963
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "სათაურების ჩასწორება"
 
-#: core/app/main/digikamapp_setup.cpp:964
+#: core/app/main/digikamapp_setup.cpp:968
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "კომენტარების ჩასწორება"
 
-#: core/app/main/digikamapp_setup.cpp:969
+#: core/app/main/digikamapp_setup.cpp:973
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "მინიჭებული ჭდეების ჩვენება"
 
-#: core/app/main/digikamapp_setup.cpp:978
+#: core/app/main/digikamapp_setup.cpp:982
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Exif-ის ორიენტაციის ჭდის მორგება"
 
-#: core/app/main/digikamapp_setup.cpp:981
+#: core/app/main/digikamapp_setup.cpp:985
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "ჩვეულებრივი"
 
-#: core/app/main/digikamapp_setup.cpp:983
+#: core/app/main/digikamapp_setup.cpp:987
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "ჰორიზონტალურად გადატრიალებული"
 
-#: core/app/main/digikamapp_setup.cpp:985
+#: core/app/main/digikamapp_setup.cpp:989
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "ზემოდან ქვემოთ გადაბრუნებული"
 
-#: core/app/main/digikamapp_setup.cpp:987
+#: core/app/main/digikamapp_setup.cpp:991
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "ვერტიკალურად გადატრიალებული"
 
-#: core/app/main/digikamapp_setup.cpp:989
+#: core/app/main/digikamapp_setup.cpp:993
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "მარჯვნივ შემობრუნებული / ჰორიზონტალურად გადაბრუნებული"
 
-#: core/app/main/digikamapp_setup.cpp:991
+#: core/app/main/digikamapp_setup.cpp:995
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "მარჯვნივ შემობრუნებული"
 
-#: core/app/main/digikamapp_setup.cpp:993
+#: core/app/main/digikamapp_setup.cpp:997
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "მარჯვნივ შემობრუნებული / ვერტიკალურად გადაბრუნებული"
 
-#: core/app/main/digikamapp_setup.cpp:995
+#: core/app/main/digikamapp_setup.cpp:999
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "მარცხნივ შემობრუნებული"
 
-#: core/app/main/digikamapp_setup.cpp:1056
+#: core/app/main/digikamapp_setup.cpp:1060
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "შემობრუნება"
 
-#: core/app/main/digikamapp_setup.cpp:1060
+#: core/app/main/digikamapp_setup.cpp:1064
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "მარცხენა"
 
-#: core/app/main/digikamapp_setup.cpp:1067
+#: core/app/main/digikamapp_setup.cpp:1071
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "მარჯვენა"
 
-#: core/app/main/digikamapp_setup.cpp:1077
+#: core/app/main/digikamapp_setup.cpp:1081
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "გადაბრუნება"
 
-#: core/app/main/digikamapp_setup.cpp:1081
+#: core/app/main/digikamapp_setup.cpp:1085
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "ჰორიზონტალურად"
 
-#: core/app/main/digikamapp_setup.cpp:1088
+#: core/app/main/digikamapp_setup.cpp:1092
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "ვერტიკალურად"
 
-#: core/app/main/digikamapp_setup.cpp:1098
+#: core/app/main/digikamapp_setup.cpp:1102
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1109
+#: core/app/main/digikamapp_setup.cpp:1113
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "თემების ჩატვირთვა..."
 
-#: core/app/main/digikamapp_setup.cpp:1112
+#: core/app/main/digikamapp_setup.cpp:1116
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "თემები"
 
-#: core/app/main/digikamapp_setup.cpp:1124
+#: core/app/main/digikamapp_setup.cpp:1128
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -32966,8 +32976,9 @@ msgstr "ესთეტიკური გამოსახულების �
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
-#, kde-format
-msgid "Scan Mode: "
+#, fuzzy, kde-format
+#| msgid "Scan Mode: "
+msgid "Scan Mode:"
 msgstr "სკანირების რეჟიმი: "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
@@ -32985,203 +32996,213 @@ msgid "Non-Assigned Only"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:87
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>All</b>: re-scan all items for tags.</p><p><b>Non-Assigned Only</b>: "
-"scan only the items with no assigned autotags.</p>"
+"<p><b>All</b>: re-scan all items for quality.</p><p><b>Non-Assigned Only</"
+"b>: scan only the items with no assigned auto-pick labels.</p>"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Assign Tags to &Selected Items"
 msgctxt "@option:check"
-msgid "Assign 'Rejected' Label to Low Quality"
-msgstr ""
+msgid "Assign Low Quality to Rejected Label"
+msgstr "&მონიშნული ობიექტებისთვის ჭდის მინიჭება"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Low quality images detected by blur, noise, and compression analysis will be "
-"assigned to Rejected label."
-msgstr ""
-
-#: core/libs/imgqsort/imagequalitywidget.cpp:107
-#, kde-format
-msgctxt "@option:check"
-msgid "Assign 'Pending' Label to Medium Quality"
+"Low quality images detected by the quality engine\n"
+"will be assigned to the rejected pick label (red flag)."
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:108
 #, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"Medium quality images detected by blur, noise, and compression analysis will "
-"be assigned to Pending label."
+msgctxt "@option:check"
+msgid "Assign Medium Quality to Pending Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:120
+#: core/libs/imgqsort/imagequalitywidget.cpp:109
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Medium quality images detected by the quality engine\n"
+"will be assigned to the pending pick label (yellow flag)."
+msgstr ""
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:122
 #, kde-format
 msgctxt "@option:check"
-msgid "Assign 'Accepted' Label to High Quality"
+msgid "Assign High Quality to Accepted Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:121
+#: core/libs/imgqsort/imagequalitywidget.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"High quality images detected by blur, noise, and compression analysis will "
-"be assigned to Accepted label."
+"High quality images detected by the quality engine\n"
+"will be assigned to the accepted pick label (green flag)."
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:134
+#, fuzzy, kde-format
+#| msgid "Quality:"
+msgctxt "@label"
+msgid "Quality Engine:"
+msgstr "ხარისხი:"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:139
 #, kde-format
 msgctxt "@option:radio"
-msgid "Detect Aesthetic Contents using Deep Learning"
-msgstr ""
-
-#: core/libs/imgqsort/imagequalitywidget.cpp:136
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"Detect if the image has aesthetic contents.\n"
-"The aesthetic detection engine use deep learning model to classify images"
+msgid "Detect Aesthetic Contents"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:141
 #, kde-format
-msgctxt "@option:radio"
-msgid "Detect Quality Using Basic Factors"
+msgctxt "@info:tooltip"
+msgid ""
+"Detect if the image has aesthetic contents.\n"
+"The aesthetic detection engine is based on a deep learning model to classify "
+"images."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:143
+#: core/libs/imgqsort/imagequalitywidget.cpp:146
+#, fuzzy, kde-format
+#| msgid "Sparsity Factor: "
+msgctxt "@option:radio"
+msgid "Detect by Basic Factors"
+msgstr "იშვიათობის ფაქტორი: "
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:148
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Detect if the image is sabotaging by four basic factors (blur, noise, "
-"exposure, and compression). See the relevant settings in the next tab."
+"Detect if the image is sabotaging using four basic factors\n"
+"eg. blur, noise, exposure (under / over), and compression levels.\n"
+"See the relevant settings from the next <b>Basic Factors</b> tab."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:163
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
+#: core/libs/imgqsort/imagequalitywidget.cpp:169
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "მორგება"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:170
+#: core/libs/imgqsort/imagequalitywidget.cpp:176
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "უარყოფილი ზღვარი:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:175
+#: core/libs/imgqsort/imagequalitywidget.cpp:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:177
+#: core/libs/imgqsort/imagequalitywidget.cpp:184
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "დარჩენილი ზღვარი:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:182
+#: core/libs/imgqsort/imagequalitywidget.cpp:190
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:184
+#: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "მისაღები ზღვარი:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:189
+#: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:191
+#: core/libs/imgqsort/imagequalitywidget.cpp:200
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:192
+#: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:194
-#: core/libs/imgqsort/imagequalitywidget.cpp:204
-#: core/libs/imgqsort/imagequalitywidget.cpp:214
+#: core/libs/imgqsort/imagequalitywidget.cpp:203
+#: core/libs/imgqsort/imagequalitywidget.cpp:213
+#: core/libs/imgqsort/imagequalitywidget.cpp:223
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "წონა:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:199
+#: core/libs/imgqsort/imagequalitywidget.cpp:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:201
+#: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "ხმაურის გამოვლენა"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:202
+#: core/libs/imgqsort/imagequalitywidget.cpp:211
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:209
+#: core/libs/imgqsort/imagequalitywidget.cpp:218
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:211
+#: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "შეკუმშვის გამოვლენა"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:212
+#: core/libs/imgqsort/imagequalitywidget.cpp:221
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:219
+#: core/libs/imgqsort/imagequalitywidget.cpp:228
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:221
+#: core/libs/imgqsort/imagequalitywidget.cpp:230
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:222
+#: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:252
+#: core/libs/imgqsort/imagequalitywidget.cpp:261
 #, fuzzy, kde-format
 #| msgid "Sparsity Factor: "
 msgctxt "@title:tab"
@@ -36977,51 +36998,61 @@ msgid ""
 "database.</p>"
 msgstr ""
 
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>All</b>: re-scan all items for tags.</p><p><b>Non-Assigned Only</b>: "
+"scan only the items with no assigned autotags.</p>"
+msgstr ""
+
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
 #, fuzzy, kde-format
 #| msgid "Auto-tagging mode: "
-msgid "Auto-Tagging Tag Mode: "
+msgid "Auto-Tagging Mode:"
 msgstr "ავტომატური ჭდეების რეჟიმი: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
 #| msgid "Update only existing timestamps"
-msgid "Replace Existing Autotags"
+msgid "Replace Existing"
 msgstr "მხოლოდ არსებული დროის შტამპების განახლება"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
 #, fuzzy, kde-format
-#| msgid "Update items"
-msgid "Update Autotags"
-msgstr "ელემენტების განახლება"
+#| msgctxt "Content type"
+#| msgid "Update"
+msgid "Update"
+msgstr "განახლება"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Replace Existing Autotags</b>: clear existing autotags and replace "
-"with the results of the scan.</p><p><b>Update Autotags</b>: add any new "
-"autotags found to the existing tags.</p>"
+"<p><b>Replace Existing</b>: clear existing autotags and replace with the "
+"results of the scan.</p><p><b>Update</b>: add any new autotags found to the "
+"existing tags.</p>"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, fuzzy, kde-format
 #| msgid "Selection model: "
-msgid "Selection Model: "
+msgid "Selection Model:"
 msgstr "მონიშვნის მოდელი: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:147
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:146
 #, fuzzy, kde-format
 #| msgid "No detail available"
 msgid "No models available"
 msgstr "დეტალები ხელმისაწვდომი არაა"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
-#, kde-format
-msgid "Object Detection Accuracy: "
-msgstr ""
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
+#, fuzzy, kde-format
+#| msgid "Accuracy"
+msgid "Detection Accuracy:"
+msgstr "სიზუსტე"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:165
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37030,7 +37061,7 @@ msgid ""
 "be recognized, but fewer objects will be recognized.\n"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:170
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:169
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -37038,7 +37069,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37047,13 +37078,13 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:188
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:187
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "ჭდეების თარგმნა ენაზე:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:190
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:189
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Translate to:"
@@ -63596,6 +63627,11 @@ msgstr ""
 #, kde-format
 msgid "Import Items"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Update items"
+#~ msgid "Update Autotags"
+#~ msgstr "ელემენტების განახლება"
 
 #~ msgctxt "@option:radio"
 #~ msgid "Use default settings"

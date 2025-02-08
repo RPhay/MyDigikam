@@ -46,8 +46,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-07 02:00+0000\n"
-"PO-Revision-Date: 2025-02-05 23:22+0100\n"
+"POT-Creation-Date: 2025-02-08 01:52+0000\n"
+"PO-Revision-Date: 2025-02-08 00:24+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -920,11 +920,12 @@ msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
 msgstr "Añadir a cola existente"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:277
-#: core/app/items/utils/itemcategorydrawer.cpp:286
-#: core/app/items/utils/itemcategorydrawer.cpp:293
-#: core/app/items/utils/itemcategorydrawer.cpp:378
-#: core/app/items/utils/itemcategorydrawer.cpp:396
+#: core/app/items/utils/itemcategorydrawer.cpp:283
+#: core/app/items/utils/itemcategorydrawer.cpp:290
+#: core/app/items/utils/itemcategorydrawer.cpp:299
+#: core/app/items/utils/itemcategorydrawer.cpp:308
+#: core/app/items/utils/itemcategorydrawer.cpp:393
+#: core/app/items/utils/itemcategorydrawer.cpp:411
 #: core/utilities/import/items/importcategorydrawer.cpp:200
 #: core/utilities/import/items/importcategorydrawer.cpp:221
 #: core/utilities/import/items/importcategorydrawer.cpp:230
@@ -934,12 +935,13 @@ msgid_plural "%1 Items"
 msgstr[0] "1 elemento"
 msgstr[1] "%1 elementos"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:284
+#: core/app/items/utils/itemcategorydrawer.cpp:297
+#: core/app/items/utils/itemcategorydrawer.cpp:306
 #, kde-format
 msgid "Invalid date"
 msgstr "Fecha no válida"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:322
+#: core/app/items/utils/itemcategorydrawer.cpp:337
 #, kde-format
 msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
@@ -947,7 +949,7 @@ msgid_plural "Album Date: %2 %3 %4 - %1 Items"
 msgstr[0] "Fecha del álbum: %2 %3 %4 - 1 elemento"
 msgstr[1] "Fecha del álbum: %2 %3 %4 - %1 elementos"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:349
+#: core/app/items/utils/itemcategorydrawer.cpp:364
 #, kde-format
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
@@ -955,7 +957,7 @@ msgid_plural "%2 including %1 subtags"
 msgstr[0] "%2 que incluyen 1 subetiqueta"
 msgstr[1] "%2 que incluyen %1 subetiquetas"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:353
+#: core/app/items/utils/itemcategorydrawer.cpp:368
 #, kde-format
 msgctxt ""
 "%2: the previous string (e.g. 'Foo including 7 subtags'); %1: number of "
@@ -965,28 +967,28 @@ msgid_plural "%2 - %1 Items"
 msgstr[0] "%2 - 1 elemento"
 msgstr[1] "%2 - %1 elementos"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:358
+#: core/app/items/utils/itemcategorydrawer.cpp:373
 #, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
 msgstr[0] "%2 - 1 elemento"
 msgstr[1] "%2 - %1 elementos"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:370
+#: core/app/items/utils/itemcategorydrawer.cpp:385
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
 msgstr[0] "Búsqueda por palabras clave - 1 elemento"
 msgstr[1] "Búsqueda por palabras clave - %1 elementos"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:374
+#: core/app/items/utils/itemcategorydrawer.cpp:389
 #, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
 msgstr[0] "Búsqueda avanzada - 1 elemento"
 msgstr[1] "Búsqueda avanzada - %1 elementos"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:388
+#: core/app/items/utils/itemcategorydrawer.cpp:403
 #, kde-format
 msgctxt "Month String - Year String"
 msgid "%1 %2"
@@ -2142,14 +2144,14 @@ msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr "Indica si las imágenes se ordenan de manera ascendente o descendente."
 
 #: core/app/main/digikamapp_setup.cpp:654
-#: core/app/main/digikamapp_setup.cpp:709
+#: core/app/main/digikamapp_setup.cpp:713
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "Ascendente"
 
 #: core/app/main/digikamapp_setup.cpp:656
-#: core/app/main/digikamapp_setup.cpp:711
+#: core/app/main/digikamapp_setup.cpp:715
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
@@ -2189,286 +2191,294 @@ msgstr "Por formato"
 #: core/app/main/digikamapp_setup.cpp:675
 #, kde-format
 msgctxt "@action: setup"
-msgid "By Month"
-msgstr "Por mes"
+msgid "By Faces"
+msgstr "Por caras"
 
 #: core/app/main/digikamapp_setup.cpp:676
 #, kde-format
 msgctxt "@action: setup"
-msgid "By Faces"
-msgstr "Por caras"
+msgid "By Month"
+msgstr "Por mes"
 
-#: core/app/main/digikamapp_setup.cpp:704
+#: core/app/main/digikamapp_setup.cpp:677
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Date"
+msgctxt "@action: setup"
+msgid "By Day"
+msgstr "Por fechas"
+
+#: core/app/main/digikamapp_setup.cpp:708
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Orden de separación de los elementos"
 
-#: core/app/main/digikamapp_setup.cpp:705
+#: core/app/main/digikamapp_setup.cpp:709
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "El orden de los grupos de elementos separados"
 
-#: core/app/main/digikamapp_setup.cpp:726
+#: core/app/main/digikamapp_setup.cpp:730
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: core/app/main/digikamapp_setup.cpp:733
+#: core/app/main/digikamapp_setup.cpp:737
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "No seleccionar nada"
 
-#: core/app/main/digikamapp_setup.cpp:740
+#: core/app/main/digikamapp_setup.cpp:744
 #, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Invertir la selección"
 
-#: core/app/main/digikamapp_setup.cpp:748
+#: core/app/main/digikamapp_setup.cpp:752
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "Mostrar la barra de miniaturas"
 
-#: core/app/main/digikamapp_setup.cpp:779
+#: core/app/main/digikamapp_setup.cpp:783
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "Ampliar al 100%"
 
-#: core/app/main/digikamapp_setup.cpp:787
+#: core/app/main/digikamapp_setup.cpp:791
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "Ajustar a la &ventana"
 
-#: core/app/main/digikamapp_setup.cpp:800
+#: core/app/main/digikamapp_setup.cpp:804
 #, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Vista gestionada por color"
 
-#: core/app/main/digikamapp_setup.cpp:818
+#: core/app/main/digikamapp_setup.cpp:822
 #, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Buscar..."
 
-#: core/app/main/digikamapp_setup.cpp:826
+#: core/app/main/digikamapp_setup.cpp:830
 #, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Búsqueda avanzada..."
 
-#: core/app/main/digikamapp_setup.cpp:834
+#: core/app/main/digikamapp_setup.cpp:838
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "Buscar duplicados..."
 
-#: core/app/main/digikamapp_setup.cpp:844
+#: core/app/main/digikamapp_setup.cpp:848
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Migración de la base de datos..."
 
-#: core/app/main/digikamapp_setup.cpp:853
+#: core/app/main/digikamapp_setup.cpp:857
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Mantenimiento..."
 
-#: core/app/main/digikamapp_setup.cpp:860
+#: core/app/main/digikamapp_setup.cpp:864
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Buscar elementos nuevos"
 
-#: core/app/main/digikamapp_setup.cpp:866
+#: core/app/main/digikamapp_setup.cpp:870
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "Añadir cámara a mano..."
 
-#: core/app/main/digikamapp_setup.cpp:877
+#: core/app/main/digikamapp_setup.cpp:881
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Cargando cámaras..."
 
-#: core/app/main/digikamapp_setup.cpp:911
+#: core/app/main/digikamapp_setup.cpp:915
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Salir del modo de vista previa"
 
-#: core/app/main/digikamapp_setup.cpp:916
+#: core/app/main/digikamapp_setup.cpp:920
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Imagen siguiente"
 
-#: core/app/main/digikamapp_setup.cpp:922
+#: core/app/main/digikamapp_setup.cpp:926
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Imagen anterior"
 
-#: core/app/main/digikamapp_setup.cpp:928
+#: core/app/main/digikamapp_setup.cpp:932
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Primera imagen"
 
-#: core/app/main/digikamapp_setup.cpp:933
+#: core/app/main/digikamapp_setup.cpp:937
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Última imagen"
 
-#: core/app/main/digikamapp_setup.cpp:938
+#: core/app/main/digikamapp_setup.cpp:942
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Cor&tar"
 
-#: core/app/main/digikamapp_setup.cpp:940
+#: core/app/main/digikamapp_setup.cpp:944
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Cortar la selección y copiarla en el portapapeles"
 
-#: core/app/main/digikamapp_setup.cpp:959
+#: core/app/main/digikamapp_setup.cpp:963
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Editar títulos"
 
-#: core/app/main/digikamapp_setup.cpp:964
+#: core/app/main/digikamapp_setup.cpp:968
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Editar comentarios"
 
-#: core/app/main/digikamapp_setup.cpp:969
+#: core/app/main/digikamapp_setup.cpp:973
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Mostrar las etiquetas asignadas"
 
-#: core/app/main/digikamapp_setup.cpp:978
+#: core/app/main/digikamapp_setup.cpp:982
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Ajustar la etiqueta de orientación Exif"
 
-#: core/app/main/digikamapp_setup.cpp:981
+#: core/app/main/digikamapp_setup.cpp:985
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normal"
 
-#: core/app/main/digikamapp_setup.cpp:983
+#: core/app/main/digikamapp_setup.cpp:987
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Invertida horizontalmente"
 
-#: core/app/main/digikamapp_setup.cpp:985
+#: core/app/main/digikamapp_setup.cpp:989
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Girada boca abajo"
 
-#: core/app/main/digikamapp_setup.cpp:987
+#: core/app/main/digikamapp_setup.cpp:991
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Invertida verticalmente"
 
-#: core/app/main/digikamapp_setup.cpp:989
+#: core/app/main/digikamapp_setup.cpp:993
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Rotada a la derecha / Invertida horizontalmente"
 
-#: core/app/main/digikamapp_setup.cpp:991
+#: core/app/main/digikamapp_setup.cpp:995
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Rotada a la derecha"
 
-#: core/app/main/digikamapp_setup.cpp:993
+#: core/app/main/digikamapp_setup.cpp:997
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Rotada a la derecha / Invertida verticalmente"
 
-#: core/app/main/digikamapp_setup.cpp:995
+#: core/app/main/digikamapp_setup.cpp:999
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Rotada a la izquierda"
 
-#: core/app/main/digikamapp_setup.cpp:1056
+#: core/app/main/digikamapp_setup.cpp:1060
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Rotar"
 
-#: core/app/main/digikamapp_setup.cpp:1060
+#: core/app/main/digikamapp_setup.cpp:1064
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Izquierda"
 
-#: core/app/main/digikamapp_setup.cpp:1067
+#: core/app/main/digikamapp_setup.cpp:1071
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Derecha"
 
-#: core/app/main/digikamapp_setup.cpp:1077
+#: core/app/main/digikamapp_setup.cpp:1081
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Invertir"
 
-#: core/app/main/digikamapp_setup.cpp:1081
+#: core/app/main/digikamapp_setup.cpp:1085
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Horizontalmente"
 
-#: core/app/main/digikamapp_setup.cpp:1088
+#: core/app/main/digikamapp_setup.cpp:1092
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Verticalmente"
 
-#: core/app/main/digikamapp_setup.cpp:1098
+#: core/app/main/digikamapp_setup.cpp:1102
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Rotar automáticamente/Invertir usando información Exif"
 
-#: core/app/main/digikamapp_setup.cpp:1109
+#: core/app/main/digikamapp_setup.cpp:1113
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Cargando temas..."
 
-#: core/app/main/digikamapp_setup.cpp:1112
+#: core/app/main/digikamapp_setup.cpp:1116
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Temas"
 
-#: core/app/main/digikamapp_setup.cpp:1124
+#: core/app/main/digikamapp_setup.cpp:1128
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2934,20 +2944,17 @@ msgstr "Mapa"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:78
 #: core/app/views/sidebar/labelssidebarwidget.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality Scan"
-msgstr "Ordenar por calidad de imagen"
+msgstr "Escaneo de calidad de imagen"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for faces"
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for image quality parsing"
-msgstr "Use este botón para detectar caras en los álbumes seleccionados"
+msgstr ""
+"Use este botón para explorar los álbumes seleccionados para analizar la "
+"calidad de las imágenes"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:164
@@ -3020,8 +3027,7 @@ msgstr "Etiquetas existentes"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:139
-#, fuzzy, kde-format
-#| msgid "Auto-tag scan"
+#, kde-format
 msgid "Auto-tag Scan"
 msgstr "Escaneo automático de etiquetas"
 
@@ -35572,19 +35578,7 @@ msgid "Search in"
 msgstr "Buscar en"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "These settings determines the quality of an image and convert it into a "
-#| "score, stored in database as Pick Label property. This information can be "
-#| "evaluated by two ways: using four basic factors sabotaging the images "
-#| "(blur, noise, exposure, and compression), or using a deep learning neural "
-#| "network engine. The first one helps to determine whether images are "
-#| "distorted by the basic factors, however it demands some drawbacks as fine-"
-#| "tuning from the user’s side and it cannot work along the aesthetic image "
-#| "processing. The second one uses an AI approach based on %1 model to "
-#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
-#| "require hyper-parameter settings, and make this feature easier to use."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "These settings determines the quality of an image and convert it into a "
@@ -35619,260 +35613,276 @@ msgstr "calidad estética de la imagen"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
-#, kde-format
-msgid "Scan Mode: "
+#, fuzzy, kde-format
+#| msgid "Scan Mode: "
+msgid "Scan Mode:"
 msgstr "Modo de escaneo: "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "In All"
+#, kde-format
 msgid "All"
-msgstr "En todos"
+msgstr "Todo"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Scan non-assigned only"
+#, kde-format
 msgid "Non-Assigned Only"
-msgstr "Explorar solo las no asignadas"
+msgstr "Solo los no asignados"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:87
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
-#| "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-"
-#| "assigned only</b>: scan only the items with no assigned autotags.</p>"
+#| "<p><b>All</b>: re-scan all items for tags.</p><p><b>Non-Assigned Only</"
+#| "b>: scan only the items with no assigned autotags.</p>"
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>All</b>: re-scan all items for tags.</p><p><b>Non-Assigned Only</b>: "
-"scan only the items with no assigned autotags.</p>"
+"<p><b>All</b>: re-scan all items for quality.</p><p><b>Non-Assigned Only</"
+"b>: scan only the items with no assigned auto-pick labels.</p>"
 msgstr ""
-"<p><b>Escanear todo</b>: volver a escanear todos los elementos en busca de "
-"etiquetas.</p><p><b>Escanear solo los no asignados</b>: escanear solo los "
-"elementos que no tienen asignadas etiquetas automáticas.</p>"
+"<p><b>Todo</b>: volver a escanear todos los elementos en busca de etiquetas."
+"</p><p><b>Solo los no asignados</b>: escanear solo los elementos que no "
+"tienen asignadas etiquetas automáticas.</p>"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:94
 #, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign 'Rejected' Label to Low Quality Pictures"
+#| msgid "Assign Tags to &Selected Items"
 msgctxt "@option:check"
-msgid "Assign 'Rejected' Label to Low Quality"
-msgstr "Asignar el emblema «Rechazada» a las imágenes de baja calidad"
+msgid "Assign Low Quality to Rejected Label"
+msgstr "Asignar etiquetas a los elementos &seleccionados"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Low quality images detected by blur, noise, and compression analysis will "
+#| "be assigned to Rejected label."
 msgctxt "@info:tooltip"
 msgid ""
-"Low quality images detected by blur, noise, and compression analysis will be "
-"assigned to Rejected label."
+"Low quality images detected by the quality engine\n"
+"will be assigned to the rejected pick label (red flag)."
 msgstr ""
 "A las imágenes de baja calidad detectadas por los análisis de desenfoque, "
 "ruido y compresión se les asigna el emblema «Rechazada»."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign 'Pending' Label to Medium Quality Pictures"
-msgctxt "@option:check"
-msgid "Assign 'Pending' Label to Medium Quality"
-msgstr "Asignar el emblema «Pendiente» a las imágenes de mediana calidad"
-
 #: core/libs/imgqsort/imagequalitywidget.cpp:108
 #, kde-format
+msgctxt "@option:check"
+msgid "Assign Medium Quality to Pending Label"
+msgstr ""
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:109
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Medium quality images detected by blur, noise, and compression analysis "
+#| "will be assigned to Pending label."
 msgctxt "@info:tooltip"
 msgid ""
-"Medium quality images detected by blur, noise, and compression analysis will "
-"be assigned to Pending label."
+"Medium quality images detected by the quality engine\n"
+"will be assigned to the pending pick label (yellow flag)."
 msgstr ""
 "A las imágenes de mediana calidad detectadas por los análisis de desenfoque, "
 "ruido y compresión se les asigna el emblema «Pendiente»."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign 'Accepted' Label to High Quality Pictures"
-msgctxt "@option:check"
-msgid "Assign 'Accepted' Label to High Quality"
-msgstr "Asignar el emblema «Aceptada» a las imágenes de alta calidad"
-
-#: core/libs/imgqsort/imagequalitywidget.cpp:121
+#: core/libs/imgqsort/imagequalitywidget.cpp:122
 #, kde-format
+msgctxt "@option:check"
+msgid "Assign High Quality to Accepted Label"
+msgstr ""
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:123
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "High quality images detected by blur, noise, and compression analysis "
+#| "will be assigned to Accepted label."
 msgctxt "@info:tooltip"
 msgid ""
-"High quality images detected by blur, noise, and compression analysis will "
-"be assigned to Accepted label."
+"High quality images detected by the quality engine\n"
+"will be assigned to the accepted pick label (green flag)."
 msgstr ""
 "A las imágenes de alta calidad detectadas por los análisis de desenfoque, "
 "ruido y compresión se les asigna el emblema «Aceptada»."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:134
 #, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Aesthetic Image using Deep Learning"
-msgctxt "@option:radio"
-msgid "Detect Aesthetic Contents using Deep Learning"
-msgstr "Detectar imagen estética usando aprendizaje profundo"
+#| msgid "Quality:"
+msgctxt "@label"
+msgid "Quality Engine:"
+msgstr "Calidad:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:136
+#: core/libs/imgqsort/imagequalitywidget.cpp:139
+#, fuzzy, kde-format
+#| msgctxt "@option:radio"
+#| msgid "Detect Aesthetic Contents using Deep Learning"
+msgctxt "@option:radio"
+msgid "Detect Aesthetic Contents"
+msgstr "Detectar contenido estético usando aprendizaje profundo"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:141
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
-#| "Detect if the image has aesthetic value.\n"
+#| "Detect if the image has aesthetic contents.\n"
 #| "The aesthetic detection engine use deep learning model to classify images"
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image has aesthetic contents.\n"
-"The aesthetic detection engine use deep learning model to classify images"
+"The aesthetic detection engine is based on a deep learning model to classify "
+"images."
 msgstr ""
-"Detecta si la imagen tiene un valor estético.\n"
+"Detectar si la imagen tiene contenido estético.\n"
 "El motor de detección estético usa el modelo de aprendizaje profundo para "
 "clasificar imágenes."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:141
-#, kde-format
+#: core/libs/imgqsort/imagequalitywidget.cpp:146
+#, fuzzy, kde-format
+#| msgctxt "@option:radio"
+#| msgid "Detect Quality Using Basic Factors"
 msgctxt "@option:radio"
-msgid "Detect Quality Using Basic Factors"
+msgid "Detect by Basic Factors"
 msgstr "Detectar la calidad usando factores básicos"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:143
+#: core/libs/imgqsort/imagequalitywidget.cpp:148
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
 #| "Detect if the image is sabotaging by four basic factors (blur, noise, "
-#| "exposure, and compression)."
+#| "exposure, and compression). See the relevant settings in the next tab."
 msgctxt "@info:tooltip"
 msgid ""
-"Detect if the image is sabotaging by four basic factors (blur, noise, "
-"exposure, and compression). See the relevant settings in the next tab."
+"Detect if the image is sabotaging using four basic factors\n"
+"eg. blur, noise, exposure (under / over), and compression levels.\n"
+"See the relevant settings from the next <b>Basic Factors</b> tab."
 msgstr ""
 "Detectar si la imagen se ve saboteada por los cuatro factores básicos "
-"(borrosidad, ruido, exposición y compresión)."
+"(borrosidad, ruido, exposición y compresión). Consulte las preferencias "
+"relevantes en la pestaña siguiente."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:163
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
+#: core/libs/imgqsort/imagequalitywidget.cpp:169
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Preferencias"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:170
+#: core/libs/imgqsort/imagequalitywidget.cpp:176
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Umbral para «Rechazada»:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:175
+#: core/libs/imgqsort/imagequalitywidget.cpp:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr ""
 "Umbral por debajo del que se asignará a la imágenes el emblema «Rechazada»"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:177
+#: core/libs/imgqsort/imagequalitywidget.cpp:184
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Umbral para «Pendiente»:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:182
+#: core/libs/imgqsort/imagequalitywidget.cpp:190
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr ""
 "Umbral por debajo del que se asignará a la imágenes el emblema «Pendiente»"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:184
+#: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Umbral para «Aceptada»:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:189
+#: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr ""
 "Umbral por encima del que se asignará a la imágenes el emblema «Aceptada»"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:191
+#: core/libs/imgqsort/imagequalitywidget.cpp:200
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Detectar desenfoque"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:192
+#: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "Detectar la cantidad de desenfoque en las imágenes que se le pasan"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:194
-#: core/libs/imgqsort/imagequalitywidget.cpp:204
-#: core/libs/imgqsort/imagequalitywidget.cpp:214
+#: core/libs/imgqsort/imagequalitywidget.cpp:203
+#: core/libs/imgqsort/imagequalitywidget.cpp:213
+#: core/libs/imgqsort/imagequalitywidget.cpp:223
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Peso:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:199
+#: core/libs/imgqsort/imagequalitywidget.cpp:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Peso a asignar al algoritmo de desenfoque"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:201
+#: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Detectar ruido"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:202
+#: core/libs/imgqsort/imagequalitywidget.cpp:211
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Detectar la cantidad de ruido en las imágenes pasadas"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:209
+#: core/libs/imgqsort/imagequalitywidget.cpp:218
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Peso a asignar al algoritmo de ruido"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:211
+#: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Detectar compresión"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:212
+#: core/libs/imgqsort/imagequalitywidget.cpp:221
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Detectar la cantidad de compresión en las imágenes pasadas"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:219
+#: core/libs/imgqsort/imagequalitywidget.cpp:228
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Peso a asignar al algoritmo de compresión"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:221
+#: core/libs/imgqsort/imagequalitywidget.cpp:230
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Detectar subexposición y sobreexposición"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:222
+#: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Detectar si las imágenes están subexpuestas o sobreexpuestas"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:252
+#: core/libs/imgqsort/imagequalitywidget.cpp:261
 #, kde-format
 msgctxt "@title:tab"
 msgid "Basic Factors"
@@ -39924,36 +39934,48 @@ msgstr ""
 "descriptivas para el contenido de la imagen y almacenará los resultados en "
 "la base de datos.</p>"
 
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>All</b>: re-scan all items for tags.</p><p><b>Non-Assigned Only</b>: "
+"scan only the items with no assigned autotags.</p>"
+msgstr ""
+"<p><b>Todo</b>: volver a escanear todos los elementos en busca de etiquetas."
+"</p><p><b>Solo los no asignados</b>: escanear solo los elementos que no "
+"tienen asignadas etiquetas automáticas.</p>"
+
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
 #, fuzzy, kde-format
-#| msgid "Auto-tagging tag mode: "
-msgid "Auto-Tagging Tag Mode: "
+#| msgid "Auto-Tagging Tag Mode: "
+msgid "Auto-Tagging Mode:"
 msgstr "Modo de etiquetado automático: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
-#| msgid "Replace existing autotags"
-msgid "Replace Existing Autotags"
+#| msgid "Replace Existing Autotags"
+msgid "Replace Existing"
 msgstr "Sustituir etiquetas automáticas existentes"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
 #, fuzzy, kde-format
-#| msgid "Update autotags"
-msgid "Update Autotags"
-msgstr "Actualizar etiquetas automáticas"
+#| msgctxt "Content type"
+#| msgid "Update"
+msgid "Update"
+msgstr "Actualización"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
-#| "<p><b>Replace existing autotags</b>: clear existing autotags and replace "
-#| "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
+#| "<p><b>Replace Existing Autotags</b>: clear existing autotags and replace "
+#| "with the results of the scan.</p><p><b>Update Autotags</b>: add any new "
 #| "autotags found to the existing tags.</p>"
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Replace Existing Autotags</b>: clear existing autotags and replace "
-"with the results of the scan.</p><p><b>Update Autotags</b>: add any new "
-"autotags found to the existing tags.</p>"
+"<p><b>Replace Existing</b>: clear existing autotags and replace with the "
+"results of the scan.</p><p><b>Update</b>: add any new autotags found to the "
+"existing tags.</p>"
 msgstr ""
 "<p><b>Sustituir las etiquetas automáticas existentes</b>: borrar las "
 "etiquetas automáticas existentes y sustituirlas con el resultado del escaneo."
@@ -39962,21 +39984,22 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, fuzzy, kde-format
-#| msgid "Selection model: "
-msgid "Selection Model: "
+#| msgid "Selection Model: "
+msgid "Selection Model:"
 msgstr "Modelo de selección: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:147
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:146
 #, kde-format
 msgid "No models available"
 msgstr "No hay modelos disponibles"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
-#, kde-format
-msgid "Object Detection Accuracy: "
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
+#, fuzzy, kde-format
+#| msgid "Object Detection Accuracy: "
+msgid "Detection Accuracy:"
 msgstr "Precisión de las detección de objetos: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:165
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39988,7 +40011,7 @@ msgstr ""
 "más precisión se\n"
 "reconocerán los objetos, aunque se reconocerán menos objetos.\n"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:170
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:169
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
@@ -39996,7 +40019,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Usar todos los núcleos del procesador"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:172
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40008,13 +40031,13 @@ msgstr ""
 "consumen tiempo. Puede elegir si desea utilizar todos los núcleos del\n"
 "procesador de su sistema, o trabajar únicamente con un solo núcleo."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:188
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:187
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Traducir etiquetas al:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:190
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:189
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
@@ -68282,6 +68305,28 @@ msgstr "Elementos del álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementos importados"
+
+#~| msgctxt "@option:check"
+#~| msgid "Assign 'Rejected' Label to Low Quality Pictures"
+#~ msgctxt "@option:check"
+#~ msgid "Assign 'Rejected' Label to Low Quality"
+#~ msgstr "Asignar el emblema «Rechazada» a las de baja calidad"
+
+#~| msgctxt "@option:check"
+#~| msgid "Assign 'Pending' Label to Medium Quality Pictures"
+#~ msgctxt "@option:check"
+#~ msgid "Assign 'Pending' Label to Medium Quality"
+#~ msgstr "Asignar el emblema «Pendiente» a las de mediana calidad"
+
+#~| msgctxt "@option:check"
+#~| msgid "Assign 'Accepted' Label to High Quality Pictures"
+#~ msgctxt "@option:check"
+#~ msgid "Assign 'Accepted' Label to High Quality"
+#~ msgstr "Asignar el emblema «Aceptada» a las de alta calidad"
+
+#~| msgid "Update autotags"
+#~ msgid "Update Autotags"
+#~ msgstr "Actualizar etiquetas automáticas"
 
 #~ msgctxt "@option:radio"
 #~ msgid "Use default settings"
