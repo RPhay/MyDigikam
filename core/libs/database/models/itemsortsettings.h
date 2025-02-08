@@ -81,7 +81,7 @@ public:
     bool operator==(const ItemSortSettings& other)                              const;
 
     /**
-     * Compares the categories of left and right.
+     * @brief Compares the categories of left and right.
      * Return -1 if left is less than right, 0 if both fall in the same category,
      * and 1 if left is greater than right.
      * Adheres to set categorization mode and current category sort order.
@@ -94,21 +94,21 @@ public:
                           const FaceTagsIface& rightFace)                       const;
 
     /**
-     * Returns true if left is less than right.
+     * @return True if left is less than right.
      * Adheres to current sort role and sort order.
      */
     bool lessThan(const ItemInfo& left, const ItemInfo& right)                  const;
 
     /**
-     * Compares the ItemInfos left and right.
-     * Return -1 if left is less than right, 1 if left is greater than right,
+     * @brief Compares the ItemInfos left and right.
+     * @return -1 if left is less than right, 1 if left is greater than right,
      * and 0 if left equals right comparing the current sort role's value.
      * Adheres to set sort role and sort order.
      */
     int compare(const ItemInfo& left, const ItemInfo& right)                    const;
 
     /**
-     * Returns true if left QVariant is less than right.
+     * @return True if left QVariant is less than right.
      * Adheres to current sort role and sort order.
      * Use for extraValue, if necessary.
      */
@@ -145,7 +145,7 @@ public:
     /// --- Change notification ---
 
     /**
-     * Returns database fields a change in which would affect the current sorting.
+     * @return Database fields a change in which would affect the current sorting.
      */
     DatabaseFields::Set watchFlags()                                            const;
 
@@ -154,7 +154,7 @@ public:
     /// --- Utilities ---
 
     /**
-     * Returns a < b if sortOrder is Ascending, or b < a if order is descending.
+     * @return a < b if sortOrder is Ascending, or b < a if order is descending.
      */
     template <typename T>
     static inline bool lessThanByOrder(const T& a, const T& b, Qt::SortOrder sortOrder)
@@ -168,7 +168,7 @@ public:
     }
 
     /**
-     * Returns the usual compare result of -1, 0, or 1 for lessThan, equals and greaterThan.
+     * @return The usual compare result of -1, 0, or 1 for lessThan, equals and greaterThan.
      */
     template <typename T>
     static inline int compareValue(const T& a, const T& b)
@@ -187,7 +187,7 @@ public:
     }
 
     /**
-     * Takes a typical result from a compare method (0 is equal, -1 is less than, 1 is greater than)
+     * @brief Takes a typical result from a compare method (0 is equal, -1 is less than, 1 is greater than)
      * and applies the given sort order to it.
      */
     static inline int compareByOrder(int compareResult, Qt::SortOrder sortOrder)
@@ -207,7 +207,7 @@ public:
     }
 
     /**
-     * Compares the two string by natural comparison and adheres to given sort order
+     * @brief Compares the two string by natural comparison and adheres to given sort order
      */
     static inline int naturalCompare(const QString& a,
                                      const QString& b,

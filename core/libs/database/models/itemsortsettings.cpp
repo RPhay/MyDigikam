@@ -227,11 +227,11 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
             {
                 if (currentCategorizationSortOrder == Qt::AscendingOrder)
                 {
-                    return isLeftUnknown ? 1 : -1;
+                    return (isLeftUnknown ? 1 : -1);
                 }
                 else
                 {
-                    return isLeftUnknown ? -1 : 1;
+                    return (isLeftUnknown ? -1 : 1);
                 }
             }
 
@@ -272,9 +272,13 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
 
             // Compare alphabetically based on the face name
 
-            return naturalCompare(leftValue, rightValue,
+            return naturalCompare(
+                                  leftValue,
+                                  rightValue,
                                   currentCategorizationSortOrder,
-                                  categorizationCaseSensitivity, strTypeNatural);
+                                  categorizationCaseSensitivity,
+                                  strTypeNatural
+                                 );
         }
 
         case CategoryByMonth:
@@ -284,8 +288,11 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
             int rightMonth = right.dateTime().date().year() * 100 +
                              right.dateTime().date().month();
 
-            return compareByOrder(leftMonth, rightMonth,
-                                  currentCategorizationSortOrder);
+            return compareByOrder(
+                                  leftMonth,
+                                  rightMonth,
+                                  currentCategorizationSortOrder
+                                 );
         }
 
         case CategoryByDay:
@@ -297,8 +304,11 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
                             right.dateTime().date().month()) * 100 +
                             right.dateTime().date().day();
 
-            return compareByOrder(leftDay, rightDay,
-                                  currentCategorizationSortOrder);
+            return compareByOrder(
+                                  leftDay,
+                                  rightDay,
+                                  currentCategorizationSortOrder
+                                 );
         }
 
         default:
@@ -380,14 +390,23 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
     {
         case SortByFileName:
         {
-            return naturalCompare(left.name(), right.name(),
-                                  currentSortOrder, sortCaseSensitivity, strTypeNatural);
+            return naturalCompare(left.name(),
+                                  right.name(),
+                                  currentSortOrder,
+                                  sortCaseSensitivity,
+                                  strTypeNatural
+                                 );
         }
 
         case SortByFilePath:
         {
-            return naturalCompare(left.filePath(), right.filePath(),
-                                  currentSortOrder, sortCaseSensitivity, strTypeNatural);
+            return naturalCompare(
+                                  left.filePath(),
+                                  right.filePath(),
+                                  currentSortOrder,
+                                  sortCaseSensitivity,
+                                  strTypeNatural
+                                 );
         }
 
         case SortByFileSize:
@@ -467,8 +486,13 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
                 return compareByOrder(left.dateTime(), right.dateTime(), currentSortOrder);
             }
 
-            return naturalCompare(left.name(), right.name(),
-                                  currentSortOrder, sortCaseSensitivity, strTypeNatural);
+            return naturalCompare(
+                                  left.name(),
+                                  right.name(),
+                                  currentSortOrder,
+                                  sortCaseSensitivity,
+                                  strTypeNatural
+                                 );
         }
 
         default:
@@ -664,8 +688,13 @@ bool ItemSortSettings::lessThan(const QVariant& left, const QVariant& right) con
 
         default:
         {
-            return naturalCompare(left.toString(), right.toString(),
-                                  currentSortOrder, sortCaseSensitivity, strTypeNatural);
+            return naturalCompare(
+                                  left.toString(),
+                                  right.toString(),
+                                  currentSortOrder,
+                                  sortCaseSensitivity,
+                                  strTypeNatural
+                                 );
         }
     }
 }
