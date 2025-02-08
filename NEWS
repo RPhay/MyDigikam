@@ -3,7 +3,7 @@ digiKam 8.6.0 - Release date: 2025-03-xx
 *****************************************************************************************************
 NEW FEATURES:
 
-RawEngine:       Update internal Libraw to last 20250116 upstream.
+RawEngine:       Update internal Libraw to last 20250208 upstream.
 Video:           Update internal QtAVPlayer to last 20250107 upstream (Qt5 only).
 Bundles:         Update to last ExifTool version 13.18.
 Bundles:         Linux AppImage Qt6 uses last Qt 6.8.1, KDE frameworks 6.10.0 and OPenCV 4.11.0.
