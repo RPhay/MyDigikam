@@ -38,6 +38,8 @@ public:
         albumCollator.setIgnorePunctuation(false);
     }
 
+public:
+
     const QString            versionStr     = QLatin1String("_v");
     const QRegularExpression versionExp     = QRegularExpression(QRegularExpression::anchoredPattern(QLatin1String("(.+)_v(\\d+)(\\..+)?")));
 
@@ -74,8 +76,10 @@ ItemSortCollator* ItemSortCollator::instance()
     return &itemSortCollatorCreator->object;
 }
 
-int ItemSortCollator::itemCompare(const QString& a, const QString& b,
-                                  Qt::CaseSensitivity caseSensitive, bool natural) const
+int ItemSortCollator::itemCompare(const QString& a,
+                                  const QString& b,
+                                  Qt::CaseSensitivity caseSensitive,
+                                  bool natural) const
 {
     if (natural)
     {
@@ -113,8 +117,10 @@ int ItemSortCollator::itemCompare(const QString& a, const QString& b,
     return QString::compare(a, b, caseSensitive);
 }
 
-int ItemSortCollator::albumCompare(const QString& a, const QString& b,
-                                   Qt::CaseSensitivity caseSensitive, bool natural) const
+int ItemSortCollator::albumCompare(const QString& a,
+                                   const QString& b,
+                                   Qt::CaseSensitivity caseSensitive,
+                                   bool natural) const
 {
     if (natural)
     {

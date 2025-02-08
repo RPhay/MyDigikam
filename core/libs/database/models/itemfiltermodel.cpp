@@ -691,7 +691,7 @@ bool ItemFilterModel::filterAcceptsRow(int source_row, const QModelIndex& source
 
     ItemInfo info = d->imageModel->imageInfo(source_row);
     bool match    = d->filter.matches(info);
-    match         = match ? d->versionFilter.matches(info) : false;
+    match         = (match ? d->versionFilter.matches(info) : false);
 
     return (match ? d->groupFilter.matches(info) : false);
 }
@@ -1127,7 +1127,7 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
     }
 
     qlonglong groupedImageId = i.groupImageId();
-    ItemInfo info            = (groupedImageId == -1) ? i : ItemInfo(groupedImageId);
+    ItemInfo info            = ((groupedImageId == -1) ? i : ItemInfo(groupedImageId));
 
     switch (d->sorter.categorizationMode)
     {

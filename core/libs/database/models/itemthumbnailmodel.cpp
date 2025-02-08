@@ -215,6 +215,7 @@ QVariant ItemThumbnailModel::data(const QModelIndex& index, int role) const
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
             QVariant var = QPixmap();
+
             return var;
 
 #else

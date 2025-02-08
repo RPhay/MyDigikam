@@ -93,6 +93,7 @@ public:
         else if (index.row() >= extraValues.size())
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Invalid index for extraData" << index;
+
             return false;
         }
 

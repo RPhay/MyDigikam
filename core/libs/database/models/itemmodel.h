@@ -49,50 +49,50 @@ public:
     enum ItemModelRoles
     {
         /**
-         * An ItemModel* pointer to this model
+         * @brief An ItemModel pointer to this model
          */
         ItemModelPointerRole    = Qt::UserRole,
         ItemModelInternalId     = Qt::UserRole + 1,
 
         /**
-         * Returns a thumbnail pixmap. May be implemented by subclasses.
-         * Returns either a valid pixmap or a null QVariant.
+         * @return A thumbnail pixmap. May be implemented by subclasses.
+         * It's either a valid pixmap or a null QVariant.
          */
         ThumbnailRole           = Qt::UserRole + 2,
 
         /**
-         * Returns a QDateTime with the creation date
+         * @return A QDateTime with the creation date
          */
         CreationDateRole        = Qt::UserRole + 3,
 
         /**
-         * Return (optional) extraData field
+         * @return An optional extraData field
          */
         ExtraDataRole           = Qt::UserRole + 5,
 
         /**
-         * Returns the number of duplicate indexes for the same image id
+         * @return The number of duplicate indexes for the same image id
          */
         ExtraDataDuplicateCount = Qt::UserRole + 6,
 
         /**
-         * Roles which are defined here but not implemented by ItemModel
-         * Returns position of item in Left Light Table preview.
+         * @brief Roles which are defined here but not implemented by ItemModel
+         * @return Position of item in Left Light Table preview.
          */
         LTLeftPanelRole         = Qt::UserRole + 50,
 
         /**
-         * Returns position of item in Right Light Table preview.
+         * @return Position of item in Right Light Table preview.
          */
         LTRightPanelRole        = Qt::UserRole + 51,
 
         /**
-         * For use by subclasses
+         * @brief For use by subclasses.
          */
         SubclassRoles           = Qt::UserRole + 100,
 
         /**
-         * For use by filter models
+         * @brief For use by filter models.
          */
         FilterModelRoles        = Qt::UserRole + 500
     };
@@ -103,21 +103,21 @@ public:
     ~ItemModel() override;
 
     /**
-     * If a cache is kept, lookup by file path is fast,
+     * @brief If a cache is kept, lookup by file path is fast,
      * without a cache it is O(n). Default is false.
      */
     void setKeepsFilePathCache(bool keepCache);
     bool keepsFilePathCache()                                                                               const;
 
     /**
-     * Set a set of database fields to watch.
+     * @brief Set a set of database fields to watch.
      * If either of these is changed, dataChanged() will be emitted.
      * Default is no flag (no signal will be emitted).
      */
     void setWatchFlags(const DatabaseFields::Set& set);
 
     /**
-     * Returns the ItemInfo object, reference or image id from the underlying data
+     * @return The ItemInfo object, reference or image id from the underlying data
      * pointed to by the index.
      * If the index is not valid, imageInfo will return a null ItemInfo, imageId will
      * return 0, imageInfoRef must not be called with an invalid index.
@@ -129,16 +129,16 @@ public:
     QList<qlonglong> imageIds(const QList<QModelIndex>& indexes)                                            const;
 
     /**
-     * Returns the ItemInfo object, reference or image id from the underlying data
+     * @return The ItemInfo object, reference or image id from the underlying data
      * of the given row (parent is the invalid QModelIndex, column is 0).
-     * Note that imageInfoRef will crash if index is invalid.
+     * @note imageInfoRef will crash if index is invalid.
      */
     ItemInfo   imageInfo(int row)                                                                           const;
     ItemInfo&  imageInfoRef(int row)                                                                        const;
     qlonglong  imageId(int row)                                                                             const;
 
     /**
-     * Return the index for the given ItemInfo or id, if contained in this model.
+     * @return The index for the given ItemInfo or id, if contained in this model.
      */
     QModelIndex        indexForItemInfo(const ItemInfo& info)                                               const;
     QModelIndex        indexForItemInfo(const ItemInfo& info, const QVariant& extraValue)                   const;
@@ -151,7 +151,7 @@ public:
     int numberOfIndexesForImageId(qlonglong id)                                                             const;
 
     /**
-     * Returns the index or ItemInfo object from the underlying data
+     * @return The index or ItemInfo object from the underlying data
      * for the given file path. This is fast if keepsFilePathCache is enabled.
      * The file path is as returned by ItemInfo.filePath().
      * In case of multiple occurrences of the same file, the simpler variants return
@@ -163,27 +163,27 @@ public:
     QList<ItemInfo>    imageInfos(const QString& filePath)                                                  const;
 
     /**
-     * Main entry point for subclasses adding image infos to the model.
+     * @brief Main entry point for subclasses adding image infos to the model.
      * If you list entries not unique per image id, you must add an extraValue
      * so that every entry is unique by imageId and extraValues.
-     * Please note that these methods do not prevent addition of duplicate entries.
+     * @note These methods do not prevent addition of duplicate entries.
      */
     void addItemInfo(const ItemInfo& info);
     void addItemInfos(const QList<ItemInfo>& infos);
     void addItemInfos(const QList<ItemInfo>& infos, const QList<QVariant>& extraValues);
 
     /**
-     * Clears image infos and resets model.
+     * @brief Clears image infos and resets model.
      */
     void clearItemInfos();
 
     /**
-     * Clears and adds the infos.
+     * @brief Clears and adds the infos.
      */
     void setItemInfos(const QList<ItemInfo>& infos);
 
     /**
-     * Directly remove the given indexes or infos from the model.
+     * @brief Directly remove the given indexes or infos from the model.
      */
     void removeIndex(const QModelIndex& indexes);
     void removeIndexes(const QList<QModelIndex>& indexes);
@@ -192,18 +192,18 @@ public:
     void removeItemInfos(const QList<ItemInfo>& infos, const QList<QVariant>& extraValues);
 
     /**
-     * addItemInfo() is asynchronous if a prepocessor is set.
+     * @brief addItemInfo() is asynchronous if a prepocessor is set.
      * This method first adds the info, synchronously.
      * Only afterwards, the preprocessor will have the opportunity to process it.
      * This method also bypasses any incremental updates.
-     * Please note that these methods do not prevent addition of duplicate entries.
+     * @note These methods do not prevent addition of duplicate entries.
      */
     void addItemInfoSynchronously(const ItemInfo& info);
     void addItemInfosSynchronously(const QList<ItemInfo>& infos);
     void addItemInfosSynchronously(const QList<ItemInfo>& infos, const QList<QVariant>& extraValues);
 
     /**
-     * Add the given entries. Method returns immediately, the
+     * @brief Add the given entries. Method returns immediately, the
      * addition may happen later asynchronously.
      * These methods prevent the addition of duplicate entries.
      */
@@ -212,7 +212,7 @@ public:
     void ensureHasItemInfos(const QList<ItemInfo>& infos, const QList<QVariant>& extraValues);
 
     /**
-     * Ensure that all images grouped on the given leader are contained in the model.
+     * @brief Ensure that all images grouped on the given leader are contained in the model.
      */
     void ensureHasGroupedImages(const ItemInfo& groupLeader);
 
@@ -232,7 +232,7 @@ public:
     DECLARE_MODEL_DRAG_DROP_METHODS
 
     /**
-     * Install an object as a preprocessor for ItemInfos added to this model.
+     * @brief Install an object as a preprocessor for ItemInfos added to this model.
      * For every QList of ItemInfos added to addItemInfo, the signal preprocess()
      * will be emitted. The preprocessor may process the items and shall then readd
      * them by calling reAddItemInfos(). It may take some time to process.
@@ -247,15 +247,15 @@ public:
     void unsetPreprocessor(QObject* const processor);
 
     /**
-     * Returns true if this model is currently refreshing.
+     * @return True if this model is currently refreshing.
      * For a preprocessor this means that, although the preprocessor may currently have
      * processed all it got, more batches are to be expected.
      */
     bool isRefreshing()                                                                                     const;
 
     /**
-     * Enable sending of imageInfosAboutToBeRemoved and imageInfosRemoved signals.
-     * Default: false
+     * @brief Enable sending of imageInfosAboutToBeRemoved and imageInfosRemoved signals.
+     * Default is false
      */
     void setSendRemovalSignals(bool send);
 
@@ -266,7 +266,7 @@ public:
     QModelIndex   index(int row, int column = 0, const QModelIndex& parent = QModelIndex())         const override;
 
     /**
-     * Retrieves the imageInfo object from the data() method of the given index.
+     * @brief Retrieves the imageInfo object from the data() method of the given index.
      * The index may be from a QSortFilterProxyModel as long as an ItemModel is at the end.
      */
     static ItemInfo retrieveItemInfo(const QModelIndex& index);
@@ -275,59 +275,59 @@ public:
 Q_SIGNALS:
 
     /**
-     * Informs that ItemInfos will be added to the model.
+     * @brief Informs that ItemInfos will be added to the model.
      * This signal is sent before the model data is changed and views are informed.
      */
     void imageInfosAboutToBeAdded(const QList<ItemInfo>& infos);
 
     /**
-     * Informs that ItemInfos have been added to the model.
+     * @brief Informs that ItemInfos have been added to the model.
      * This signal is sent after the model data is changed and views are informed.
      */
     void imageInfosAdded(const QList<ItemInfo>& infos);
 
     /**
-     * Informs that ItemInfos will be removed from the model.
+     * @brief Informs that ItemInfos will be removed from the model.
      * This signal is sent before the model data is changed and views are informed.
-     * Note: You need to explicitly enable sending of this signal. It is not sent
+     * @note You need to explicitly enable sending of this signal. It is not sent
      * in clearItemInfos().
      */
     void imageInfosAboutToBeRemoved(const QList<ItemInfo>& infos);
 
     /**
-     * Informs that ItemInfos have been removed from the model.
+     * @brief Informs that ItemInfos have been removed from the model.
      * This signal is sent after the model data is changed and views are informed. *
-     * Note: You need to explicitly enable sending of this signal. It is not sent
+     * @note You need to explicitly enable sending of this signal. It is not sent
      * in clearItemInfos().
      */
     void imageInfosRemoved(const QList<ItemInfo>& infos);
 
     /**
-     * Connect to this signal only if you are the current preprocessor.
+     * @brief Connect to this signal only if you are the current preprocessor.
      */
     void preprocess(const QList<ItemInfo>& infos, const QList<QVariant>&);
     void processAdded(const QList<ItemInfo>& infos, const QList<QVariant>&);
 
     /**
-     * If an ImageChangeset affected indexes of this model with changes as set in watchFlags(),
+     * @brief If an ImageChangeset affected indexes of this model with changes as set in watchFlags(),
      * this signal contains the changeset and the affected indexes.
      */
     void imageChange(const ImageChangeset&, const QItemSelection&);
 
     /**
-     * If an ImageTagChangeset affected indexes of this model,
+     * @brief If an ImageTagChangeset affected indexes of this model,
      * this signal contains the changeset and the affected indexes.
      */
     void imageTagChange(const ImageTagChangeset&, const QItemSelection&);
 
     /**
-     * Signals that the model is right now ready to start an incremental refresh.
+     * @brief Signals that the model is right now ready to start an incremental refresh.
      * This is guaranteed only for the scope of emitting this signal.
      */
     void readyForIncrementalRefresh();
 
     /**
-     * Signals that the model has finished currently with all scheduled
+     * @brief Signals that the model has finished currently with all scheduled
      * refreshing, full or incremental, and all preprocessing.
      * The model is in polished, clean situation right now.
      */
@@ -341,7 +341,7 @@ public Q_SLOTS:
 protected:
 
     /**
-     * Subclasses that add ItemInfos in batches shall call startRefresh()
+     * @brief Subclasses that add ItemInfos in batches shall call startRefresh()
      * when they start sending batches and finishRefresh() when they have finished.
      * No incremental refreshes will be started while listing.
      * A clearItemInfos() always stops listing, calling finishRefresh() is then not necessary.
@@ -350,7 +350,7 @@ protected:
     void finishRefresh();
 
     /**
-     * As soon as the model is ready to start an incremental refresh, the signal
+     * @brief As soon as the model is ready to start an incremental refresh, the signal
      * readyForIncrementalRefresh() will be emitted. The signal will be emitted inline
      * if the model is ready right now.
      */
@@ -358,7 +358,7 @@ protected:
     bool hasIncrementalRefreshPending()                                                                     const;
 
     /**
-     * Starts an incremental refresh operation. You shall only call this method from a slot
+     * @brief Starts an incremental refresh operation. You shall only call this method from a slot
      * connected to readyForIncrementalRefresh(). To initiate an incremental refresh,
      * call requestIncrementalRefresh().
      */
@@ -369,12 +369,12 @@ protected:
     void emitDataChangedForSelection(const QItemSelection& selection);
 
     /**
-     * Called when the internal storage is cleared
+     * @brief Called when the internal storage is cleared
      */
     virtual void imageInfosCleared() {};
 
     /**
-     * Called before rowsAboutToBeRemoved
+     * @brief Called before rowsAboutToBeRemoved
      */
     virtual void prepareImageInfosAboutToBeRemoved(int /*begin*/, int /*end*/) {};
 

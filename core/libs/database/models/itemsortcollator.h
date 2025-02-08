@@ -33,7 +33,7 @@ class DIGIKAM_DATABASE_EXPORT ItemSortCollator : public QObject
 public:
 
     /**
-     * Global instance of internal item sort collator.
+     * @brief Global instance of internal item sort collator.
      * All accessor methods are thread-safe.
      */
     static ItemSortCollator* instance();

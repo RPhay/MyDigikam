@@ -7,7 +7,7 @@
  * Description : Qt item model for database entries
  *
  * SPDX-FileCopyrightText: 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * SPDX-FileCopyrightText:      2011 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2010 by Andi Clemens <andi dot clemens at gmail dot com>
  * SPDX-FileCopyrightText:      2011 by Michael G. Hansen <mike at mghansen dot de>
  * SPDX-FileCopyrightText:      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
@@ -68,7 +68,7 @@ public:
     QModelIndex mapFromDirectSourceToSourceItemModel(const QModelIndex& sourceModel_index)  const;
 
     /**
-     * Convenience methods mapped to ItemModel.
+     * @brief Convenience methods mapped to ItemModel.
      * Mentioned indexes returned come from the source image model.
      */
     QList<QModelIndex> mapListToSource(const QList<QModelIndex>& indexes)                   const;
@@ -84,20 +84,20 @@ public:
     QModelIndex indexForImageId(qlonglong id)                                               const;
 
     /**
-     * Returns a list of all image infos, sorted according to this model.
+     * @return a list of all image infos, sorted according to this model.
      * If you do not need a sorted list, use ItemModel's imageInfos() method.
      */
     QList<ItemInfo> imageInfosSorted()                                                      const;
 
     /**
-     * Returns this, any chained ItemFilterModel, or 0.
+     * @return This instance if any chained ItemFilterModel, or nullptr.
      */
     virtual ItemFilterModel* imageFilterModel()                                             const;
 
 protected:
 
     /**
-     * Reimplement if needed. Called only when model shall be set as (direct) sourceModel.
+     * @brief Reimplement if needed. Called only when model shall be set as (direct) sourceModel.
      */
     virtual void setDirectSourceItemModel(ItemModel* const model);
 
@@ -119,28 +119,28 @@ public:
 
     enum ItemFilterModelRoles
     {
-        /// Returns the current categorization mode
+        /// @return The current categorization mode
         CategorizationModeRole      = ItemModel::FilterModelRoles + 1,
 
-        /// Returns the current sort order
+        /// @return The current sort order
         SortOrderRole               = ItemModel::FilterModelRoles + 2,
 
-        /// Returns the number of items in the index category
+        /// @return The number of items in the index category
         //CategoryCountRole         = ItemModel::FilterModelRoles + 3,
 
-        /// Returns the id of the PAlbum of the index which is used for category
+        /// @return The id of the PAlbum of the index which is used for category
         CategoryAlbumIdRole         = ItemModel::FilterModelRoles + 3,
 
-        /// Returns the format of the index which is used for category
+        /// @return The format of the index which is used for category
         CategoryFormatRole          = ItemModel::FilterModelRoles + 4,
 
-        /// Returns the date of the index which is used for category
+        /// @return The date of the index which is used for category
         CategoryDateRole            = ItemModel::FilterModelRoles + 5,
 
-        /// Returns the suggested name for the face in this index
+        /// @return The suggested name for the face in this index
         CategoryFaceRole            = ItemModel::FilterModelRoles + 6,
 
-        /// Returns true if the given image is a group leader, and the group is opened
+        /// @return True if the given image is a group leader, and the group is opened
         GroupIsOpenRole             = ItemModel::FilterModelRoles + 7,
         ItemFilterModelPointerRole  = ItemModel::FilterModelRoles + 50
     };
@@ -151,13 +151,13 @@ public:
     ~ItemFilterModel() override;
 
     /**
-     * Add a hook to get added images for preparation tasks before they are added in the model
+     * @brief Add a hook to get added images for preparation tasks before they are added in the model
      */
     void addPrepareHook(ItemFilterModelPrepareHook* const hook);
     void removePrepareHook(ItemFilterModelPrepareHook* const hook);
 
     /**
-     * Returns a set of DatabaseFields suggested to set as watch flags on the source ItemModel.
+     * @return a set of DatabaseFields suggested to set as watch flags on the source ItemModel.
      * The contained flags will be those that this model can sort or filter by.
      */
     DatabaseFields::Set suggestedWatchFlags()                                               const;
@@ -168,13 +168,13 @@ public:
     ItemSortSettings          imageSortSettings()                                           const;
 
     /**
-     * group is identified by the id of its group leader
+     * @brief Group is identified by the id of its group leader
      */
     bool isGroupOpen(qlonglong group)                                                       const;
     bool isAllGroupsOpen()                                                                  const;
 
     /**
-     * Enables sending imageInfosAdded and imageInfosAboutToBeRemoved
+     * @brief Enables sending imageInfosAdded and imageInfosAboutToBeRemoved
      */
     void setSendItemInfoSignals(bool sendSignals);
 
@@ -184,17 +184,17 @@ public:
 public Q_SLOTS:
 
     /**
-     * Changes the current version image filter settings and refilters.
+     * @brief Changes the current version image filter settings and refilters.
      */
     void setVersionItemFilterSettings(const VersionItemFilterSettings& settings);
 
     /**
-     * Changes the current version image filter settings and refilters.
+     * @brief Changes the current version image filter settings and refilters.
      */
     void setGroupItemFilterSettings(const GroupItemFilterSettings& settings);
 
     /**
-     * Adjust the current ItemFilterSettings.
+     * @brief Adjust the current ItemFilterSettings.
      * Equivalent to retrieving the current filter settings, adjusting the parameter
      * and calling setItemFilterSettings.
      * Provided for convenience.
@@ -226,37 +226,37 @@ public Q_SLOTS:
     void setAllGroupsOpen(bool open);
 
     /**
-     * Changes the current image filter settings and refilters.
+     * @brief Changes the current image filter settings and refilters.
      */
     virtual void setItemFilterSettings(const ItemFilterSettings& settings);
 
     /**
-     * Changes the current image sort settings and resorts.
+     * @brief Changes the current image sort settings and resorts.
      */
     virtual void setItemSortSettings(const ItemSortSettings& settings);
 
 Q_SIGNALS:
 
     /**
-     * Signals that the set filter matches at least one index
+     * @brief Signals that the set filter matches at least one index
      */
     void filterMatches(bool matches);
 
     /**
-     * Signals that the set text filter matches at least one entry.
+     * @brief Signals that the set text filter matches at least one entry.
      * If no text filter is set, this signal is emitted
      * with 'false' when filterMatches() is emitted.
      */
     void filterMatchesForText(bool matchesByText);
 
     /**
-     * Emitted when the filter settings have been changed
+     * @brief Emitted when the filter settings have been changed
      * (the model may not yet have been updated)
      */
     void filterSettingsChanged(const ItemFilterSettings& settings);
 
     /**
-     * These signals need to be explicitly enabled with setSendItemInfoSignals()
+     * @brief These signals need to be explicitly enabled with setSendItemInfoSignals()
      */
     void imageInfosAdded(const QList<ItemInfo>& infos);
     void imageInfosAboutToBeRemoved(const QList<ItemInfo>& infos);
@@ -284,14 +284,14 @@ protected:
     virtual int  categoryCount(const ItemInfo& info)                                        const;
 */
     /**
-     * Reimplement to customize category sorting,
-     * Return negative if category of left < category right,
-     * Return 0 if left and right are in the same category, else return positive.
+     * @brief Reimplement to customize category sorting,
+     * @return negative if category of left < category right,
+     * or 0 if left and right are in the same category, else return positive.
      */
     virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right)          const;
 
     /**
-     * In order to be able to Categorize by Faces, it's necessary to pass in the
+     * @brief In order to be able to Categorize by Faces, it's necessary to pass in the
      * face as well. One image may have multiple Faces in it, hence just the ItemInfo
      * isn't sufficient.
      */
@@ -300,12 +300,12 @@ protected:
                                        const FaceTagsIface& rightFace)                       const;
 
     /**
-     * Reimplement to customize sorting. Do not take categories into account here.
+     * @brief Reimplement to customize sorting. Do not take categories into account here.
      */
     virtual bool infosLessThan(const ItemInfo& left, const ItemInfo& right)                  const;
 
     /**
-     * Returns a unique identifier for the category if info. The string need not be for user display.
+     * @return A unique identifier for the category if info. The string need not be for user display.
      */
     virtual QString categoryIdentifier(const ItemInfo& info, const FaceTagsIface& face)      const;
 

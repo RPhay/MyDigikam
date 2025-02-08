@@ -32,6 +32,8 @@ public:
 
     Private() = default;
 
+public:
+
     /// Complete paths with filenames and tree level
     QList<QPair<QString, int> >* data       = nullptr;
 

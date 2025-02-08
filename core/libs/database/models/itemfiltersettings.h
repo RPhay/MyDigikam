@@ -92,7 +92,7 @@ public:
         AndCondition
     };
 
-    /// Possible conditions used to filter rating: >=, =, <=
+    /// @brief Possible conditions used to filter rating: >=, =, <=
     enum RatingCondition
     {
         GreaterEqualCondition,
@@ -100,7 +100,7 @@ public:
         LessEqualCondition
     };
 
-    /// Possible logical matching condition used to sort geolocation.
+    /// @brief Possible logical matching condition used to sort geolocation.
     enum GeolocationCondition
     {
         GeolocationNoFilter       = 0,
@@ -113,14 +113,14 @@ public:
     ItemFilterSettings() = default;
 
     /**
-     *  Returns true if the given ItemInfo matches the filter criteria.
+     *  @return True if the given ItemInfo matches the filter criteria.
      *  Optionally, foundText is set to true if it matched by text search.
      */
     bool matches(const ItemInfo& info, bool* const foundText = nullptr) const;
 
 public:
 
-    /// --- Tags filter ---
+    // --- Tags filter ---
 
     void setTagFilter(const QList<int>& includedTags,
                       const QList<int>& excludedTags,
@@ -131,90 +131,99 @@ public:
 
 public:
 
-    /// --- Rating filter ---
+    // --- Rating filter ---
+
     void setRatingFilter(int rating, RatingCondition ratingCond, bool isUnratedExcluded);
 
 public:
 
-    /// --- Date filter ---
+    // --- Date filter ---
+
     void setDayFilter(const QList<QDateTime>& days);
 
 public:
 
-    /// --- Text filter ---
+    // --- Text filter ---
+
     void setTextFilter(const SearchTextFilterSettings& settings);
     void setTagNames(const QHash<int, QString>& tagNameHash);
     void setAlbumNames(const QHash<int, QString>& albumNameHash);
 
 public:
 
-    /// --- Mime filter ---
+    // --- Mime filter ---
+
     void setMimeTypeFilter(int mimeTypeFilter);
 
 public:
 
-    /// --- Geolocation filter
+    // --- Geolocation filter
+
     void setGeolocationFilter(const GeolocationCondition& condition);
 
 public:
 
-    /// Returns if the day is a filter criteria
+    /// @return True if the day is a filter criteria
     bool isFilteringByDay()                                 const;
 
-    /// Returns if the type mime is a filter criteria
+    /// @return True if the type mime is a filter criteria
     bool isFilteringByTypeMime()                            const;
 
-    /// Returns whether geolocation is a filter criteria
+    /// @return Whether geolocation is a filter criteria
     bool isFilteringByGeolocation()                         const;
 
-    /// Returns if the rating is a filter criteria
+    /// @return Ttue if the rating is a filter criteria
     bool isFilteringByRating()                              const;
 
-    /// Returns if the pick labels is a filter criteria
+    /// @return True if the pick labels is a filter criteria
     bool isFilteringByPickLabels()                          const;
 
-    /// Returns if the color labels is a filter criteria
+    /// @return True if the color labels is a filter criteria
     bool isFilteringByColorLabels()                         const;
 
-    /// Returns if the tag is a filter criteria
+    /// @return True if the tag is a filter criteria
     bool isFilteringByTags()                                const;
 
-    /// Returns if the text (including comment) is a filter criteria
+    /// @return True if the text (including comment) is a filter criteria
     bool isFilteringByText()                                const;
 
-    /// Returns if images will be filtered by these criteria at all
+    /// @return True if images will be filtered by these criteria at all
     bool isFiltering()                                      const;
 
 public:
 
-    /// --- URL whitelist filter
+    // --- URL whitelist filter
+
     void setUrlWhitelist(const QList<QUrl>& urlList, const QString& id);
 
 public:
 
-    /// --- ID whitelist filter
+    // --- ID whitelist filter
+
     void setIdWhitelist(const QList<qlonglong>& idList, const QString& id);
 
 public:
 
-    /// --- Change notification ---
+    // --- Change notification ---
 
-    /** Returns database fields a change in which would affect the current filtering.
-     *  To find out if an image tag change affects filtering, test isFilteringByTags().
-     *  The text filter will also be affected by changes in tags and album names.
+    /**
+     * @return Database fields a change in which would affect the current filtering.
+     * To find out if an image tag change affects filtering, test isFilteringByTags().
+     * The text filter will also be affected by changes in tags and album names.
      */
     DatabaseFields::Set watchFlags()                        const;
 
 private:
 
     /**
-     * @brief Returns whether some internal filtering (whitelist by id or URL) or normal filtering is going on
+     * @return Whether some internal filtering (whitelist by id or URL) or normal filtering is going on
      */
     bool isFilteringInternally()                            const;
 
 private:
 
-    /// --- Tags filter ---
+    // --- Tags filter ---
+
     bool                              m_untaggedFilter       = false;
     QList<int>                        m_includeTagFilter;
     QList<int>                        m_excludeTagFilter;
@@ -222,31 +231,39 @@ private:
     QList<int>                        m_colorLabelTagFilter;
     QList<int>                        m_pickLabelTagFilter;
 
-    /// --- Rating filter ---
+    // --- Rating filter ---
+
     int                               m_ratingFilter         = 0;
     RatingCondition                   m_ratingCond           = GreaterEqualCondition;
     bool                              m_isUnratedExcluded    = false;
 
-    /// --- Date filter ---
+    // --- Date filter ---
+
     QHash<QDateTime, bool>            m_dayFilter;
 
-    /// --- Text filter ---
+    // --- Text filter ---
+
     SearchTextFilterSettings          m_textFilterSettings;
 
-    /// Helpers for text search: Set these if you want to search album or tag names with text search
+    /// @brief Helpers for text search: Set these if you want to search album or tag names with text search
+
     QHash<int, QString>               m_tagNameHash;
     QHash<int, QString>               m_albumNameHash;
 
-    /// --- Mime filter ---
+    // --- Mime filter ---
+
     MimeFilter::TypeMimeFilter        m_mimeTypeFilter       = MimeFilter::AllFiles;
 
-    /// --- Geolocation filter
+    // --- Geolocation filter
+
     GeolocationCondition              m_geolocationCondition = GeolocationNoFilter;
 
-    /// --- URL whitelist filter
+    // --- URL whitelist filter
+
     QHash<QString, QList<QUrl> >      m_urlWhitelists;
 
-    /// --- ID whitelist filter
+    // --- ID whitelist filter
+
     QHash<QString, QList<qlonglong> > m_idWhitelists;
 };
 
@@ -262,29 +279,29 @@ public:
     bool operator==(const VersionItemFilterSettings& other) const;
 
     /**
-     *  Returns true if the given ItemInfo matches the filter criteria.
+     * @return True if the given ItemInfo matches the filter criteria.
      */
     bool matches(const ItemInfo& info)                      const;
 
     bool isHiddenBySettings(const ItemInfo& info)           const;
     bool isExemptedBySettings(const ItemInfo& info)         const;
 
-    /// --- Tags filter ---
+    // --- Tags filter ---
 
     void setVersionManagerSettings(const VersionManagerSettings& settings);
 
     /**
-     * Add list with exceptions: These images will be exempted from filtering by this filter
+     * @brief Add list with exceptions: These images will be exempted from filtering by this filter
      */
     void setExceptionList(const QList<qlonglong>& idlist, const QString& id);
 
-    /// Returns if images will be filtered by these criteria at all
+    /// @return True if images will be filtered by these criteria at all
     bool isFiltering()                                      const;
 
-    /// Returns if the tag is a filter criteria
+    /// @return True if the tag is a filter criteria
     bool isFilteringByTags()                                const;
 
-    /// DatabaseFields::Set watchFlags() const: Would return 0
+    /// @note DatabaseFields::Set watchFlags() const Would return 0
 
 protected:
 
@@ -305,23 +322,23 @@ public:
     bool operator==(const GroupItemFilterSettings& other)   const;
 
     /**
-     *  Returns true if the given ItemInfo matches the filter criteria.
+     * @return True if the given ItemInfo matches the filter criteria.
      */
     bool matches(const ItemInfo& info)                      const;
 
     /**
-     * Open or close a group.
+     * @brief Open or close a group.
      */
     void setOpen(qlonglong group, bool open);
     bool isOpen(qlonglong group)                            const;
 
     /**
-     * Open all groups
+     * @brief Open all groups
      */
     void setAllOpen(bool open);
     bool isAllOpen()                                        const;
 
-    /// Returns if images will be filtered by these criteria at all
+    /// @return True if images will be filtered by these criteria at all
     bool isFiltering()                                      const;
 
     DatabaseFields::Set watchFlags()                        const;
