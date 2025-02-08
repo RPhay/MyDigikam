@@ -797,6 +797,7 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
         }
 
         case CategoryByMonth:
+        case CategoryByDay:
         {
             set |= DatabaseFields::CreationDate;
             break;
