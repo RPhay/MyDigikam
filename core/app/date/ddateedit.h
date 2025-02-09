@@ -28,7 +28,7 @@ namespace Digikam
 {
 
 /**
- * A date editing widget that consists of an editable combo box.
+ * @brief A date editing widget that consists of an editable combo box.
  * The combo box contains the date in text form, and clicking the combo
  * box arrow will display a 'popup' style date picker.
  *
@@ -54,7 +54,7 @@ public:
     QDate date()                                                const;
 
     /**
-     * Sets whether the widget is read-only for the user. If read-only,
+     * @brief Sets whether the widget is read-only for the user. If read-only,
      * the date picker pop-up is inactive, and the displayed date cannot be edited.
      *
      * @param readOnly True to set the widget read-only, false to set it read-write.
@@ -71,7 +71,7 @@ public:
 Q_SIGNALS:
 
     /**
-     * This signal is emitted whenever the user modifies the date.
+     * @brief This signal is emitted whenever the user modifies the date.
      * The passed date can be invalid.
      */
     void dateChanged(const QDate& date);
@@ -79,7 +79,7 @@ Q_SIGNALS:
 public Q_SLOTS:
 
     /**
-     * Sets the date.
+     * @brief Sets the date.
      *
      * @param date The new date to display. This date must be valid or
      *             it will not be set
@@ -99,7 +99,7 @@ protected:
     void mousePressEvent(QMouseEvent*)                                override;
 
     /**
-     * Sets the date, without altering the display.
+     * @brief Sets the date, without altering the display.
      * This method is used internally to set the widget's date value.
      * As a virtual method, it allows derived classes to perform additional validation
      * on the date value before it is set. Derived classes should return true if
@@ -112,7 +112,7 @@ protected:
     virtual bool assignDate(const QDate& date);
 
     /**
-     * Fills the keyword map. Re-implement it if you want additional
+     * @brief Fills the keyword map. Re-implement it if you want additional
      * keywords.
      */
     void setupKeywords();

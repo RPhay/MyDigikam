@@ -31,42 +31,42 @@ class DPopupFrame : public QFrame
 public:
 
     /**
-     * The constructor. Creates a dialog without buttons.
+     * @brief The constructor. Creates a dialog without buttons.
      */
     explicit DPopupFrame(QWidget* const parent = nullptr);
 
     /**
-     * The destructor
+     * @brief The destructor
      */
     ~DPopupFrame()                      override;
 
     /**
-     * Set the main widget. You cannot set the main widget from the constructor,
+     * @brief Set the main widget. You cannot set the main widget from the constructor,
      * since it must be a child of the frame itselfes.
-     * Be careful: the size is set to the main widgets size. It is up to you to
+     * @warning The size is set to the main widgets size. It is up to you to
      * set the main widgets correct size before setting it as the main
      * widget.
      */
     void setMainWidget(QWidget* const m);
 
     /**
-     * The resize event. Simply resizes the main widget to the whole
+     * @brief The resize event. Simply resizes the main widget to the whole
      * widgets client size.
      */
     void resizeEvent(QResizeEvent* e)   override;
 
     /**
-     * Open the popup window at position pos.
+     * @brief Open the popup window at position pos.
      */
     void popup(const QPoint& p);
 
     /**
-     * Execute the popup window.
+     * @brief Execute the popup window.
      */
     int exec(const QPoint& p);
 
     /**
-     * Execute the popup window.
+     * @brief Execute the popup window.
      */
     int exec(int x, int y);
 
@@ -77,19 +77,19 @@ Q_SIGNALS:
 protected:
 
     /**
-     * Catch key press events.
+     * @brief Catch key press events.
      */
     void keyPressEvent(QKeyEvent* e)    override;
 
     /**
-     * Catch hide events.
+     * @brief Catch hide events.
      */
     void hideEvent(QHideEvent* e)       override;
 
 public Q_SLOTS:
 
     /**
-     * Close the popup window. This is called from the main widget, usually.
+     * @brief Close the popup window. This is called from the main widget, usually.
      * @p r is the result returned from exec().
      */
     void close(int r);

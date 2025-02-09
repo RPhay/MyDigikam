@@ -28,7 +28,7 @@ namespace Digikam
 {
 
 /**
- * This is a support class for the DDatePicker class. It just
+ * @brief This is a support class for the DDatePicker class. It just
  * draws the calendar table without titles, but could theoretically
  * be used as a standalone.
  *
@@ -58,7 +58,7 @@ public:
     ~DDateTable() override;
 
     /**
-     * Returns a recommended size for the widget.
+     * @return A recommended size for the widget.
      * To save some time, the size of the largest used cell content is
      * calculated in each paintCell() call, since all calculations have
      * to be done there anyway. The size is stored in maxCell. The
@@ -67,22 +67,22 @@ public:
     QSize sizeHint() const override;
 
     /**
-     * Set the font size of the date table.
+     * @brief Set the font size of the date table.
      */
     void setFontSize(int size);
 
     /**
-     * Select and display this date.
+     * @brief Select and display this date.
      */
     bool setDate(const QDate& date);
 
     /**
-     * @returns the selected date.
+     * @return The selected date.
      */
     const QDate& date() const;
 
     /**
-     * Enables a popup menu when right clicking on a date.
+     * @brief Enables a popup menu when right clicking on a date.
      *
      * When it's enabled, this object emits a aboutToShowContextMenu signal
      * where you can fill in the menu items.
@@ -90,12 +90,12 @@ public:
     void setPopupMenuEnabled(bool enable);
 
     /**
-     * Returns if the popup menu is enabled or not
+     * @return If the popup menu is enabled or not
      */
     bool popupMenuEnabled() const;
 
     /**
-     * Makes a given date be painted with a given foregroundColor, and background
+     * @brief Makes a given date be painted with a given foregroundColor, and background
      * (a rectangle, or a circle/ellipse) in a given color.
      */
     void setCustomDatePainting(const QDate& date, const QColor& fgColor,
@@ -103,20 +103,20 @@ public:
                                const QColor& bgColor = QColor());
 
     /**
-     * Unsets the custom painting of a date so that the date is painted as usual.
+     * @brief Unsets the custom painting of a date so that the date is painted as usual.
      */
     void unsetCustomDatePainting(const QDate& dt);
 
 protected:
 
     /**
-     * calculate the position of the cell in the matrix for the given date.
+     * @brief Calculate the position of the cell in the matrix for the given date.
      * The result is the 0-based index.
      */
     virtual int posFromDate(const QDate& dt);
 
     /**
-     * calculate the date that is displayed at a given cell in the matrix. pos is the
+     * @brief Calculate the date that is displayed at a given cell in the matrix. pos is the
      * 0-based index in the matrix. Inverse function to posForDate().
      */
     virtual QDate dateFromPos(int pos);
@@ -124,7 +124,7 @@ protected:
     void paintEvent(QPaintEvent* e) override;
 
     /**
-     * React on mouse clicks that select a date.
+     * @brief React on mouse clicks that select a date.
      */
     void mousePressEvent(QMouseEvent* e) override;
     void wheelEvent(QWheelEvent* e) override;
@@ -133,19 +133,19 @@ protected:
     void focusOutEvent(QFocusEvent* e) override;
 
     /**
-     * Cell highlight on mouse hovering
+     * @brief Cell highlight on mouse hovering
      */
     bool event(QEvent* e) override;
 
 Q_SIGNALS:
 
     /**
-     * The selected date changed.
+     * @brief The selected date changed.
      */
     void dateChanged(const QDate& date);
 
     /**
-     * This signal behaves essentially like the one above.
+     * @brief This signal behaves essentially like the one above.
      * The selected date changed.
      * @param cur The current date
      * @param old The date before the date was changed
@@ -153,12 +153,12 @@ Q_SIGNALS:
     void selectedDateChanged(const QDate& cur, const QDate& old);
 
     /**
-     * A date has been selected by clicking on the table.
+     * @brief A date has been selected by clicking on the table.
      */
     void tableClicked();
 
     /**
-     * A popup menu for a given date is about to be shown (as when the user
+     * @brief A popup menu for a given date is about to be shown (as when the user
      * right clicks on that date and the popup menu is enabled). Connect
      * the slot where you fill the menu to this signal.
      */

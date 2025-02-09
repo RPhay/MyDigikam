@@ -28,7 +28,7 @@ namespace Digikam
 {
 
 /**
- * This class is basically the same as the KDE Date Time widget
+ * @brief This class is basically the same as the KDE Date Time widget
  * with the exception that a QTimeEdit is placed directly
  * besides it.
  */
@@ -39,32 +39,32 @@ class DIGIKAM_GUI_EXPORT DDateTimeEdit : public DHBox
 public:
 
     /**
-     * constructor
+     * @brief Constructor
      * @param parent the parent widget
      * @param name the name of the widget
      */
     explicit DDateTimeEdit(QWidget* const parent, const QString& name);
 
     /**
-     * destructor
+     * @brief Destructor
      */
     ~DDateTimeEdit() override;
 
     /**
-     * returns the date and time
+     * @brief Return the date and time
      * @return a QDateTime with the currently chosen date and time
      */
     QDateTime dateTime() const;
 
     /**
-     * Sets the date and the time of this widget.
+     * @brief Sets the date and the time of this widget.
      */
     void setDateTime(const QDateTime& dateTime);
 
 Q_SIGNALS:
 
     /**
-     * This signal is emitted whenever the user modifies the date or time.
+     * @brief This signal is emitted whenever the user modifies the date or time.
      * The passed date and time can be invalid.
      */
     void dateTimeChanged(const QDateTime& dateTime);

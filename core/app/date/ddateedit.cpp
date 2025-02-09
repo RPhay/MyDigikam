@@ -220,7 +220,7 @@ void DDateEdit::showPopup()
         popupPoint.setY(popupPoint.y() + height());
     }
 
-    int dateFrameWidth = d->popup->sizeHint().width();
+    int dateFrameWidth  = d->popup->sizeHint().width();
 
     if ((popupPoint.x() + dateFrameWidth) > desk.right())
     {
@@ -252,8 +252,8 @@ void DDateEdit::showPopup()
     // by causing its (invisible) list box to emit a 'selected' signal.
     // First, ensure that the list box contains the date currently displayed.
 
-    QDate date                  = parseDate();
-    assignDate(date);
+    QDate dt                    = parseDate();
+    assignDate(dt);
     updateView();
 
     // Now, simulate an Enter to unpress it
@@ -298,18 +298,18 @@ void DDateEdit::dateEntered(const QDate& date)
 void DDateEdit::lineEnterPressed()
 {
     bool replaced = false;
-    QDate date    = parseDate(&replaced);
+    QDate dt      = parseDate(&replaced);
 
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
 
-    if (this->assignDate(date))
+    if (this->assignDate(dt))
     {
         if (replaced)
         {
             updateView();
         }
 
-        Q_EMIT dateChanged(date);
+        Q_EMIT dateChanged(dt);
     }
 }
 
@@ -408,17 +408,17 @@ bool DDateEdit::eventFilter(QObject* object, QEvent* event)
 
             if (step && !d->readOnly)
             {
-                QDate date = parseDate();
+                QDate dt = parseDate();
 
-                if (date.isValid())
+                if (dt.isValid())
                 {
-                    date = date.addDays(step);
+                    dt = dt.addDays(step);
 
-                    if (assignDate(date))
+                    if (assignDate(dt))
                     {
                         updateView();
 
-                        Q_EMIT dateChanged(date);
+                        Q_EMIT dateChanged(dt);
 
                         return true;
                     }
@@ -476,13 +476,13 @@ void DDateEdit::mousePressEvent(QMouseEvent* e)
 
 void DDateEdit::slotTextChanged(const QString&)
 {
-    QDate date = parseDate();
+    QDate dt = parseDate();
 
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
 
-    if (this->assignDate(date))
+    if (this->assignDate(dt))
     {
-        Q_EMIT dateChanged(date);
+        Q_EMIT dateChanged(dt);
     }
 
     d->textChanged = true;

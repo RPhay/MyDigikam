@@ -31,7 +31,7 @@ namespace Digikam
 /**
  * @short This menu helps the user to select a date quickly.
  *
- * This menu helps the user to select a date quickly. It offers various ways of selecting, e.g. with a DDatePicker or with words like "Tomorrow".
+ * @brief This menu helps the user to select a date quickly. It offers various ways of selecting, e.g. with a DDatePicker or with words like "Tomorrow".
  *
  * The available items are:
  *
@@ -59,7 +59,7 @@ public:
 public:
 
     /**
-     * A constructor for the DDatePickerPopup.
+     * @brief A constructor for the DDatePickerPopup.
      *
      * @param items List of all desirable items, separated with a bitwise OR.
      * @param date Initial date of datepicker-widget.
@@ -81,22 +81,22 @@ public:
 #if 0
 
     /**
-     * Set items which should be shown and rebuilds the menu afterwards. Only if the menu is not visible.
-     * @param items List of all desirable items, separated with a bitwise OR.
+     * @brief Set items which should be shown and rebuilds the menu afterwards. Only if the menu is not visible.
+     * @param Items List of all desirable items, separated with a bitwise OR.
      */
     void setItems(int items = 1);
 
 #endif
 
     /**
-     * @return Returns the bitwise result of the active items in the popup.
+     * @return The bitwise result of the active items in the popup.
      */
     int items()               const;
 
 Q_SIGNALS:
 
     /**
-     *  This signal emits the new date (selected with datepicker or other
+     *  @brief This signal emits the new date (selected with datepicker or other
      *  menu-items).
      */
     void dateChanged(const QDate&);
