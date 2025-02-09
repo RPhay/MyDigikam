@@ -107,15 +107,21 @@ const QList<QPair<QString, QStringList> > DNNModelManager::getModelList(DNNModel
 
     // iterate over all models and get the display strings.
 
-    for (const auto& model : d->modelMap.keys())
+    const auto& keys = d->modelMap.keys();
+
+    for (const auto& model : keys)
     {
         // check if the model is used for the requested usage.
 
-        if (d->modelMap[model]->info.usage.contains(usage) && d->modelMap[model]->info.loaderType != DNNLoaderType::DNNLoaderConfig)
+        if (
+            d->modelMap[model]->info.usage.contains(usage) &&
+            (d->modelMap[model]->info.loaderType != DNNLoaderType::DNNLoaderConfig)
+           )
         {
             // check we have the model downloaded.
 
             QFileInfo check_file(d->modelMap[model]->getModelPath());
+
             if (!check_file.exists())
             {
                 qCDebug(DIGIKAM_DNNMODELMNGR_LOG) << "DNNModelManager::getModelList: Model file not found:" << model;
@@ -324,12 +330,6 @@ void DNNModelManager::getSettings()
         }
     }
 }
-
-/**
- * @brief Retrieve display strings for a model.
- * The QStringLiteral must match the [model_section] in dnnmodels.conf.
- * @return QStringList containing the display name and tooltip.
- */
 
 QStringList DNNModelManager::getDisplayStrings(const QString& modelName) const
 {

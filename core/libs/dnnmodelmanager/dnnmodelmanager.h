@@ -56,7 +56,7 @@ public:
      * This will load and create the model on first use.
      * It will also find the best OpenCV Target and Backend for the model
      * based on computer capabilities.
-     * Returns nullptr if 'modelName' cannot be found.
+     * @return nullptr if 'modelName' cannot be found.
      */
     DNNModelBase* getModel(const QString& modelName, DNNModelUsage usage) const;
 
@@ -80,12 +80,17 @@ private:
     };
 
     /**
-     * @brief Read the configuration file.  The configuration is a .ini-style .conf hardcoded in dnnmodelmanager.cpp and
+     * @brief Read the configuration file. The configuration is a .ini-style .conf hardcoded in dnnmodelmanager.cpp and
      * bundled with digiKam, but could be downloaded from the Internet.
      */
     void loadConfig();      ///< Load the Model map, but don't create the cv::dnn::Net objects yet.
     void getSettings();     ///< Loads the settings from disk (or web: future).
 
+    /**
+     * @brief Retrieve display strings for a model.
+     * The QStringLiteral must match the [model_section] in dnnmodels.conf.
+     * @return QStringList containing the display name and tooltip.
+     */
     QStringList getDisplayStrings(const QString& modelName) const;
 
 private:
