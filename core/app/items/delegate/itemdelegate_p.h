@@ -37,50 +37,41 @@ public:
 
     ItemDelegatePrivate()
     {
-        contentWidth        = 0;
-        drawFocusFrame      = true;
-        drawCoordinates     = false;
-        drawImageFormat     = false;
-        drawImageFormatTop  = false;
-        drawMouseOverFrame  = true;
-        ratingOverThumbnail = false;
-        categoryDrawer      = nullptr;
-        currentView         = nullptr;
-        currentModel        = nullptr;
-
         actualPixmapRectCache.setMaxCost(250);
     }
 
-    int                   contentWidth;
+public:
 
-    QRect                 dateRect;
-    QRect                 modDateRect;
-    QRect                 pixmapRect;
-    QRect                 specialInfoRect;
-    QRect                 nameRect;
-    QRect                 titleRect;
-    QRect                 commentsRect;
-    QRect                 resolutionRect;
-    QRect                 arRect;
-    QRect                 sizeRect;
-    QRect                 tagRect;
-    QRect                 imageInformationRect;
-    QRect                 coordinatesRect;
-    QRect                 pickLabelRect;
-    QRect                 groupRect;
+    int                   contentWidth          = 0;
 
-    bool                  drawFocusFrame;
-    bool                  drawCoordinates;
-    bool                  drawImageFormat;
-    bool                  drawImageFormatTop;
-    bool                  drawMouseOverFrame;
-    bool                  ratingOverThumbnail;
+    QRect                 dateRect              = QRect(0, 0, 0, 0);
+    QRect                 modDateRect           = QRect(0, 0, 0, 0);
+    QRect                 pixmapRect            = QRect(0, 0, 0, 0);
+    QRect                 specialInfoRect       = QRect(0, 0, 0, 0);
+    QRect                 nameRect              = QRect(0, 0, 0, 0);
+    QRect                 titleRect             = QRect(0, 0, 0, 0);
+    QRect                 commentsRect          = QRect(0, 0, 0, 0);
+    QRect                 resolutionRect        = QRect(0, 0, 0, 0);
+    QRect                 arRect                = QRect(0, 0, 0, 0);
+    QRect                 sizeRect              = QRect(0, 0, 0, 0);
+    QRect                 tagRect               = QRect(0, 0, 0, 0);
+    QRect                 imageInformationRect  = QRect(0, 0, 0, 0);
+    QRect                 coordinatesRect       = QRect(0, 0, 0, 0);
+    QRect                 pickLabelRect         = QRect(0, 0, 0, 0);
+    QRect                 groupRect             = QRect(0, 0, 0, 0);
+
+    bool                  drawFocusFrame        = true;
+    bool                  drawCoordinates       = false;
+    bool                  drawImageFormat       = false;
+    bool                  drawImageFormatTop    = false;
+    bool                  drawMouseOverFrame    = true;
+    bool                  ratingOverThumbnail   = false;
 
     QCache<int, QRect>    actualPixmapRectCache;
-    ItemCategoryDrawer*   categoryDrawer;
+    ItemCategoryDrawer*   categoryDrawer        = nullptr;
 
-    ItemCategorizedView*  currentView;
-    QAbstractItemModel*   currentModel;
+    ItemCategorizedView*  currentView           = nullptr;
+    QAbstractItemModel*   currentModel          = nullptr;
 
 public:
 

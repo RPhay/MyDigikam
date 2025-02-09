@@ -52,7 +52,6 @@ namespace Digikam
 void ItemDelegate::ItemDelegatePrivate::clearRects()
 {
     ItemViewDelegatePrivate::clearRects();
-    dateRect             = QRect(0, 0, 0, 0);
     modDateRect          = QRect(0, 0, 0, 0);
     pixmapRect           = QRect(0, 0, 0, 0);
     nameRect             = QRect(0, 0, 0, 0);
@@ -82,7 +81,7 @@ ItemDelegate::~ItemDelegate()
 {
     Q_D(ItemDelegate);
 
-    // crashes for a lot of people, see bug 230515. Cause unknown.
+    // NOTE: crashes for a lot of people, see bug 230515. Cause unknown.
     //delete d->categoryDrawer;
 
     Q_UNUSED(d); // To please compiler about warnings.
@@ -272,13 +271,13 @@ void ItemDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const 
                               !index.data(ItemFilterModel::GroupIsOpenRole).toBool() &&
                               ApplicationSettings::instance()->getDrawFramesToGrouped());
 
-    QRect actualPixmapRect = drawThumbnail(p, d->pixmapRect,
+    QRect actualPixRect    = drawThumbnail(p, d->pixmapRect,
                                            pix, thumbnailPixmap(index),
                                            groupedAndClosed);
 
-    if (!actualPixmapRect.isNull())
+    if (!actualPixRect.isNull())
     {
-        const_cast<ItemDelegate*>(this)->updateActualPixmapRect(index, actualPixmapRect);
+        const_cast<ItemDelegate*>(this)->updateActualPixmapRect(index, actualPixRect);
     }
 
     if (!d->ratingRect.isNull())
@@ -301,7 +300,8 @@ void ItemDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const 
 
     if (info.hasImageHistory())
     {
-        p->drawPixmap(d->pixmapRect.right()-24, d->pixmapRect.bottom()-24, QIcon::fromTheme(QLatin1String("svn_switch")).pixmap(22, 22));
+        p->drawPixmap(d->pixmapRect.right() - 24, d->pixmapRect.bottom() - 24,
+                      QIcon::fromTheme(QLatin1String("svn_switch")).pixmap(22, 22));
     }
 */
 
@@ -378,12 +378,12 @@ void ItemDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const 
             frm = frm.section(QLatin1Char('-'), -1);   // For RAW format annotated as "RAW-xxx" => "xxx"
         }
 
-        drawImageFormat(p, actualPixmapRect, frm, d->drawImageFormatTop);
+        drawImageFormat(p, actualPixRect, frm, d->drawImageFormatTop);
     }
 
     if (info.id() == info.currentReferenceImage())
     {
-        drawSpecialInfo(p, actualPixmapRect, i18n("Reference Image"));
+        drawSpecialInfo(p, actualPixRect, i18n("Reference Image"));
     }
 
     if (d->drawCoordinates && info.hasCoordinates())

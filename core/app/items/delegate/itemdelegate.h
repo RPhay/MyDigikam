@@ -65,7 +65,7 @@ public:
     QPixmap pixmapForDrag(const QStyleOptionViewItem& option, const QList<QModelIndex>& indexes) const override;
 
     /**
-     * Retrieve the thumbnail pixmap in given size for the ItemModel::ThumbnailRole for
+     * @brief Retrieve the thumbnail pixmap in given size for the ItemModel::ThumbnailRole for
      * the given index from the given index, which must adhere to ItemThumbnailModel semantics.
      */
     static QPixmap retrieveThumbnailPixmap(const QModelIndex& index, int thumbnailSize);
@@ -78,13 +78,13 @@ public:
 protected:
 
     /**
-     * Reimplement this to set contentWidth. This is the maximum width of all
+     * @brief Reimplement this to set contentWidth. This is the maximum width of all
      * content rectangles, typically excluding margins on both sides.
      */
     virtual void updateContentWidth();
 
     /**
-     * In a subclass, you need to implement this method to set up the rects
+     * @brief In a subclass, you need to implement this method to set up the rects
      * for drawing. The paint() method operates depending on these rects.
      */
     virtual void updateRects() = 0;
@@ -92,7 +92,7 @@ protected:
     void clearCaches() override;
 
     /**
-     * Reimplement to clear caches based on model indexes (hash on row number etc.)
+     * @brief Reimplement to clear caches based on model indexes (hash on row number etc.)
      * Change signals are listened to this is called whenever such properties become invalid.
      */
     virtual void clearModelDataCaches();
