@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-08 01:52+0000\n"
+"POT-Creation-Date: 2025-02-09 01:50+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -28519,12 +28519,12 @@ msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr "ਪੁਸ਼ਟੀ"
 
-#: core/libs/database/models/itemversionsmodel.cpp:91
+#: core/libs/database/models/itemversionsmodel.cpp:93
 #, kde-format
 msgid "No image selected"
 msgstr "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣਿਆ"
 
-#: core/libs/database/models/itemversionsmodel.cpp:116
+#: core/libs/database/models/itemversionsmodel.cpp:118
 #, kde-format
 msgid "This is the original image"
 msgstr "ਇਹ ਅਸਲੀ ਚਿੱਤਰ ਹੈ"
@@ -35001,21 +35001,22 @@ msgid "aesthetic image quality"
 msgstr "ਚਿੱਤਰ ਲੜੀਬੱਧ ਕਰੋ:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
+msgctxt "@label:image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "ਮਾਡਲ: "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with image quality sort"
 msgid "All"
 msgstr "ਸਭ"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Assigned Tools"
+msgctxt "@item:image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "ਜਾਰੀ ਕੀਤੇ ਟੂਲ"
 
@@ -39272,6 +39273,26 @@ msgid ""
 "database.</p>"
 msgstr ""
 
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#, fuzzy, kde-format
+msgctxt "@label:autotags scanning mode"
+msgid "Scan Mode:"
+msgstr "ਮਾਡਲ: "
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with autotags"
+msgid "All"
+msgstr "ਸਭ"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Assigned Tools"
+msgctxt "@item:autotags scan only non assigned items"
+msgid "Non-Assigned Only"
+msgstr "ਜਾਰੀ ਕੀਤੇ ਟੂਲ"
+
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgctxt "@info:tooltip"
@@ -39288,11 +39309,13 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
+msgctxt "@item:remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "ਡਾਟਾਬੇਸ ਅੱਪਗਰੇਡ ਕਰੋ"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
 #, fuzzy, kde-format
+msgctxt "@item:update the autotags entries in database"
 msgid "Update"
 msgstr "ਅੱਪਡੇਟ"
 
@@ -39307,6 +39330,7 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, fuzzy, kde-format
+msgctxt "@label:deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "ਵੇਰਵਾ:"
 

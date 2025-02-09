@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-08 01:52+0000\n"
+"POT-Creation-Date: 2025-02-09 01:50+0000\n"
 "PO-Revision-Date: 2025-02-02 11:46+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -28910,12 +28910,12 @@ msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr "Confermati"
 
-#: core/libs/database/models/itemversionsmodel.cpp:91
+#: core/libs/database/models/itemversionsmodel.cpp:93
 #, kde-format
 msgid "No image selected"
 msgstr "Nessuna immagine selezionata"
 
-#: core/libs/database/models/itemversionsmodel.cpp:116
+#: core/libs/database/models/itemversionsmodel.cpp:118
 #, kde-format
 msgid "This is the original image"
 msgstr "Questa è l'immagine originale"
@@ -35630,22 +35630,23 @@ msgid "aesthetic image quality"
 msgstr "qualità estetica delle immagini"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
+msgctxt "@label:image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "Modalità di analisi: "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with image quality sort"
 msgid "All"
 msgstr "Tutto"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Scan non-assigned only"
+msgctxt "@item:image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Esegui un'analisi solo dei non assegnati"
 
@@ -39954,6 +39955,27 @@ msgstr ""
 "tag descrittivi per il contenuto delle immagini e memorizzerà i risultati "
 "all'interno della banca dati.</p>"
 
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#, fuzzy, kde-format
+#| msgid "Scan Mode: "
+msgctxt "@label:autotags scanning mode"
+msgid "Scan Mode:"
+msgstr "Modalità di analisi: "
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with autotags"
+msgid "All"
+msgstr "Tutto"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Scan non-assigned only"
+msgctxt "@item:autotags scan only non assigned items"
+msgid "Non-Assigned Only"
+msgstr "Esegui un'analisi solo dei non assegnati"
+
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
@@ -39978,6 +40000,7 @@ msgstr "Modalità attribuzione tag automatici: "
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
 #| msgid "Replace existing autotags"
+msgctxt "@item:remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Sostituisci solo i tag automatici esistenti"
 
@@ -39985,6 +40008,7 @@ msgstr "Sostituisci solo i tag automatici esistenti"
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
+msgctxt "@item:update the autotags entries in database"
 msgid "Update"
 msgstr "Aggiornamento"
 
@@ -40009,6 +40033,7 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, fuzzy, kde-format
 #| msgid "Selection model: "
+msgctxt "@label:deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Modello di selezione: "
 

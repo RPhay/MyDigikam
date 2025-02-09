@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-08 01:52+0000\n"
+"POT-Creation-Date: 2025-02-09 01:50+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -30541,12 +30541,12 @@ msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr "Potvrdi"
 
-#: core/libs/database/models/itemversionsmodel.cpp:91
+#: core/libs/database/models/itemversionsmodel.cpp:93
 #, kde-format
 msgid "No image selected"
 msgstr "Nijedna slika nije izabrana"
 
-#: core/libs/database/models/itemversionsmodel.cpp:116
+#: core/libs/database/models/itemversionsmodel.cpp:118
 #, kde-format
 msgid "This is the original image"
 msgstr "Ovo je originalna slika"
@@ -37505,22 +37505,23 @@ msgid "aesthetic image quality"
 msgstr "Razvrstavač slika po kvaliteti"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
+msgctxt "@label:image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "Režim skeniranja: "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with image quality sort"
 msgid "All"
 msgstr "Sve"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Scan non-assigned only"
+msgctxt "@item:image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Skeniraj samo nedodijeljeno"
 
@@ -41882,6 +41883,27 @@ msgid ""
 "database.</p>"
 msgstr ""
 
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#, fuzzy, kde-format
+#| msgid "Scan Mode: "
+msgctxt "@label:autotags scanning mode"
+msgid "Scan Mode:"
+msgstr "Režim skeniranja: "
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with autotags"
+msgid "All"
+msgstr "Sve"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Scan non-assigned only"
+msgctxt "@item:autotags scan only non assigned items"
+msgid "Non-Assigned Only"
+msgstr "Skeniraj samo nedodijeljeno"
+
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgctxt "@info:tooltip"
@@ -41899,6 +41921,7 @@ msgstr "Način mjerenja:"
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
+msgctxt "@item:remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Nadogradi bazu podataka"
 
@@ -41906,6 +41929,7 @@ msgstr "Nadogradi bazu podataka"
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
+msgctxt "@item:update the autotags entries in database"
 msgid "Update"
 msgstr "Ažuriranje"
 
@@ -41921,6 +41945,7 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, fuzzy, kde-format
 #| msgid "Destination:"
+msgctxt "@label:deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Odredište:"
 

@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-08 01:52+0000\n"
+"POT-Creation-Date: 2025-02-09 01:50+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -28548,12 +28548,12 @@ msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr "Configurează"
 
-#: core/libs/database/models/itemversionsmodel.cpp:91
+#: core/libs/database/models/itemversionsmodel.cpp:93
 #, fuzzy, kde-format
 msgid "No image selected"
 msgstr "Nici un element selectat"
 
-#: core/libs/database/models/itemversionsmodel.cpp:116
+#: core/libs/database/models/itemversionsmodel.cpp:118
 #, fuzzy, kde-format
 msgid "This is the original image"
 msgstr "Imaginea originală"
@@ -35136,21 +35136,22 @@ msgid "aesthetic image quality"
 msgstr "Sortează imaginile după:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
+msgctxt "@label:image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "Model: "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with image quality sort"
 msgid "All"
 msgstr "Tot"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Assigned Tools"
+msgctxt "@item:image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Unelte atribuite"
 
@@ -39397,6 +39398,26 @@ msgid ""
 "database.</p>"
 msgstr ""
 
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#, fuzzy, kde-format
+msgctxt "@label:autotags scanning mode"
+msgid "Scan Mode:"
+msgstr "Model: "
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with autotags"
+msgid "All"
+msgstr "Tot"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Assigned Tools"
+msgctxt "@item:autotags scan only non assigned items"
+msgid "Non-Assigned Only"
+msgstr "Unelte atribuite"
+
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgctxt "@info:tooltip"
@@ -39413,11 +39434,13 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
+msgctxt "@item:remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Actualizare majoră de bază de date"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
 #, fuzzy, kde-format
+msgctxt "@item:update the autotags entries in database"
 msgid "Update"
 msgstr "Actualizare"
 
@@ -39433,6 +39456,7 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, fuzzy, kde-format
 #| msgid "Destination:"
+msgctxt "@label:deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Destinație:"
 

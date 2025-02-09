@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-08 01:52+0000\n"
+"POT-Creation-Date: 2025-02-09 01:50+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -27767,12 +27767,12 @@ msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr "Elfogadva"
 
-#: core/libs/database/models/itemversionsmodel.cpp:91
+#: core/libs/database/models/itemversionsmodel.cpp:93
 #, kde-format
 msgid "No image selected"
 msgstr "Nincs kép kijelölve"
 
-#: core/libs/database/models/itemversionsmodel.cpp:116
+#: core/libs/database/models/itemversionsmodel.cpp:118
 #, kde-format
 msgid "This is the original image"
 msgstr "Ez az eredeti kép"
@@ -33974,22 +33974,23 @@ msgid "aesthetic image quality"
 msgstr "Képek rendezése:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
+msgctxt "@label:image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "Vizsgálat módja: "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with image quality sort"
 msgid "All"
 msgstr "Minden"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Scan non-assigned only"
+msgctxt "@item:image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Csak a nem hozzárendelt vizsgálata"
 
@@ -38366,6 +38367,27 @@ msgid ""
 "database.</p>"
 msgstr ""
 
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#, fuzzy, kde-format
+#| msgid "Scan Mode: "
+msgctxt "@label:autotags scanning mode"
+msgid "Scan Mode:"
+msgstr "Vizsgálat módja: "
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with autotags"
+msgid "All"
+msgstr "Minden"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Scan non-assigned only"
+msgctxt "@item:autotags scan only non assigned items"
+msgid "Non-Assigned Only"
+msgstr "Csak a nem hozzárendelt vizsgálata"
+
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgctxt "@info:tooltip"
@@ -38383,6 +38405,7 @@ msgstr "Mérési mód:"
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
+msgctxt "@item:remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Adatbázis frissítése"
 
@@ -38390,6 +38413,7 @@ msgstr "Adatbázis frissítése"
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
+msgctxt "@item:update the autotags entries in database"
 msgid "Update"
 msgstr "Frissítés"
 
@@ -38406,6 +38430,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Destination Folder:"
+msgctxt "@label:deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Cél mappa:"
 

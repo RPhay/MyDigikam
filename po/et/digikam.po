@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-08 01:52+0000\n"
+"POT-Creation-Date: 2025-02-09 01:50+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -30557,12 +30557,12 @@ msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr "Kinnita"
 
-#: core/libs/database/models/itemversionsmodel.cpp:91
+#: core/libs/database/models/itemversionsmodel.cpp:93
 #, kde-format
 msgid "No image selected"
 msgstr "Pilti pole valitud"
 
-#: core/libs/database/models/itemversionsmodel.cpp:116
+#: core/libs/database/models/itemversionsmodel.cpp:118
 #, kde-format
 msgid "This is the original image"
 msgstr "Originaalpilt"
@@ -37438,22 +37438,23 @@ msgid "aesthetic image quality"
 msgstr "Piltide sorteerimise alus:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
+msgctxt "@label:image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "Uurimismudel: "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with image quality sort"
 msgid "All"
 msgstr "Kõik"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Scan non-assigned only"
+msgctxt "@item:image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Ainult omistama nägude uurimine"
 
@@ -41918,6 +41919,27 @@ msgid ""
 "database.</p>"
 msgstr ""
 
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#, fuzzy, kde-format
+#| msgid "Scan Mode: "
+msgctxt "@label:autotags scanning mode"
+msgid "Scan Mode:"
+msgstr "Uurimismudel: "
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with autotags"
+msgid "All"
+msgstr "Kõik"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Scan non-assigned only"
+msgctxt "@item:autotags scan only non assigned items"
+msgid "Non-Assigned Only"
+msgstr "Ainult omistama nägude uurimine"
+
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgctxt "@info:tooltip"
@@ -41935,6 +41957,7 @@ msgstr "Mõõterežiim:"
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
 #| msgid "Update only existing timestamps"
+msgctxt "@item:remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Ainult olemasolevate ajatemplite uuendamine"
 
@@ -41942,6 +41965,7 @@ msgstr "Ainult olemasolevate ajatemplite uuendamine"
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
+msgctxt "@item:update the autotags entries in database"
 msgid "Update"
 msgstr "Uuendus"
 
@@ -41957,6 +41981,7 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, fuzzy, kde-format
 #| msgid "Destination Folder:"
+msgctxt "@label:deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Sihtkataloog:"
 

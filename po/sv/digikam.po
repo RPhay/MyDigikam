@@ -43,8 +43,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-08 01:52+0000\n"
-"PO-Revision-Date: 2025-02-07 21:50+0100\n"
+"POT-Creation-Date: 2025-02-09 01:50+0000\n"
+"PO-Revision-Date: 2025-02-08 08:23+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -2177,12 +2177,10 @@ msgid "By Month"
 msgstr "Enligt månad"
 
 #: core/app/main/digikamapp_setup.cpp:677
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Date"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Day"
-msgstr "Enligt datum"
+msgstr "Enligt dag"
 
 #: core/app/main/digikamapp_setup.cpp:708
 #, kde-format
@@ -28568,12 +28566,12 @@ msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr "Bekräftade"
 
-#: core/libs/database/models/itemversionsmodel.cpp:91
+#: core/libs/database/models/itemversionsmodel.cpp:93
 #, kde-format
 msgid "No image selected"
 msgstr "Ingen bild markerad"
 
-#: core/libs/database/models/itemversionsmodel.cpp:116
+#: core/libs/database/models/itemversionsmodel.cpp:118
 #, kde-format
 msgid "This is the original image"
 msgstr "Det här är originalbilden"
@@ -35166,121 +35164,99 @@ msgid "aesthetic image quality"
 msgstr "estetisk bildkvalitet"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
-#| msgid "Scan Mode: "
+#| msgid "Scan Mode:"
+msgctxt "@label:image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "Sökmetod: "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with image quality sort"
 msgid "All"
 msgstr "Alla"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Non-Assigned Only"
+msgctxt "@item:image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Bara ej tilldelade"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>All</b>: re-scan all items for tags.</p><p><b>Non-Assigned Only</"
-#| "b>: scan only the items with no assigned autotags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>All</b>: re-scan all items for quality.</p><p><b>Non-Assigned Only</"
 "b>: scan only the items with no assigned auto-pick labels.</p>"
 msgstr ""
-"<p><b>Alla</b>: sök igenom alla objekt igen efter etiketter.</p><p><b>Bara "
-"ej tilldelade</b>: sök bara igenom objekten utan några tilldelade "
-"automatiska etiketter.</p>"
+"<p><b>Alla</b>: sök igenom alla objekt igen för kvalitet.</p><p><b>Bara ej "
+"tilldelade</b>: sök bara igenom objekten utan några tilldelade automatiskt "
+"valda beteckningar.</p>"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@option:check"
 msgid "Assign Low Quality to Rejected Label"
-msgstr "Tilldela etiketter till &markerade objekt"
+msgstr "Tilldela Låg kvalitet till Kasserad beteckning"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Low quality images detected by blur, noise, and compression analysis will "
-#| "be assigned to Rejected label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Low quality images detected by the quality engine\n"
 "will be assigned to the rejected pick label (red flag)."
 msgstr ""
-"Bilder med låg kvalitet detekterade med analys av suddighet, brus och "
-"komprimering kommer att få beteckningen Kasserad."
+"Bilder med låg kvalitet detekterade av kvalitetsanalysen\n"
+"tilldelas den valda beteckningen kasserad (röd flagga)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:108
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign Medium Quality to Pending Label"
-msgstr ""
+msgstr "Tilldela Medelkvalitet till Obestämd beteckning"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Medium quality images detected by blur, noise, and compression analysis "
-#| "will be assigned to Pending label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Medium quality images detected by the quality engine\n"
 "will be assigned to the pending pick label (yellow flag)."
 msgstr ""
-"Bilder med medelkvalitet detekterade med analys av suddighet, brus och "
-"komprimering kommer att få beteckningen Obestämd."
+"Bilder med medelkvalitet detekterade av kvalitetsanalysen\n"
+"tilldelas den valda beteckningen obestämd (gul flagga)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:122
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign High Quality to Accepted Label"
-msgstr ""
+msgstr "Tilldela Hög kvalitet till Godkänd beteckning"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "High quality images detected by blur, noise, and compression analysis "
-#| "will be assigned to Accepted label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "High quality images detected by the quality engine\n"
 "will be assigned to the accepted pick label (green flag)."
 msgstr ""
-"Bilder med hög kvalitet detekterade med analys av suddighet, brus och "
-"komprimering kommer att få beteckningen Godkänd."
+"Bilder med hög kvalitet detekterade av kvalitetsanalysen\n"
+"tilldelas den valda beteckningen godkänd (grön flagga)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "Quality:"
+#, kde-format
 msgctxt "@label"
 msgid "Quality Engine:"
-msgstr "Kvalitet:"
+msgstr "Kvalitetsanalys:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:139
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Aesthetic Contents using Deep Learning"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Contents"
-msgstr "Detektera estetisk innehåll med djupinlärning"
+msgstr "Detektera estetisk innehåll"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detect if the image has aesthetic contents.\n"
-#| "The aesthetic detection engine use deep learning model to classify images"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image has aesthetic contents.\n"
@@ -35288,32 +35264,26 @@ msgid ""
 "images."
 msgstr ""
 "Detektera om bilden har estetiskt innehåll.\n"
-"Gränssnittet för estetisk detektering använder en modell för djupinlärning "
-"för att klassificera bilder"
+"Gränssnittet för estetisk detektering är baserad på en modell för "
+"djupinlärning för att klassificera bilder"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Quality Using Basic Factors"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Detect by Basic Factors"
-msgstr "Detektera kvalitet med användning av grundfaktorer"
+msgstr "Detektera enligt grundfaktorer"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detect if the image is sabotaging by four basic factors (blur, noise, "
-#| "exposure, and compression). See the relevant settings in the next tab."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image is sabotaging using four basic factors\n"
 "eg. blur, noise, exposure (under / over), and compression levels.\n"
 "See the relevant settings from the next <b>Basic Factors</b> tab."
 msgstr ""
-"Detektera om bilden är negativt påverkad med fyra grundfaktorer (suddighet, "
-"brus, exponering, och komprimering). Se relevanta inställningar under nästa "
-"flik."
+"Detektera om bilden är negativt påverkad med fyra grundfaktorer\n"
+"t.ex. suddighet, brus, (under, över) exponering, och komprimeringsnivåer.\n"
+"Se relevanta inställningar under nästa flik <b>Grundfaktorer</b>."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:169
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
@@ -39460,6 +39430,27 @@ msgstr ""
 "neurala AI nätverket genererar automatiskt beskrivande etiketter för "
 "bildinnehållet och lagrar resultaten i databasen.</p>"
 
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#, fuzzy, kde-format
+#| msgid "Scan Mode:"
+msgctxt "@label:autotags scanning mode"
+msgid "Scan Mode:"
+msgstr "Sökmetod: "
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with autotags"
+msgid "All"
+msgstr "Alla"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Non-Assigned Only"
+msgctxt "@item:autotags scan only non assigned items"
+msgid "Non-Assigned Only"
+msgstr "Bara ej tilldelade"
+
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgctxt "@info:tooltip"
@@ -39472,45 +39463,40 @@ msgstr ""
 "automatiska etiketter.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Auto-Tagging Tag Mode: "
+#, kde-format
 msgid "Auto-Tagging Mode:"
 msgstr "Automatiskt etiketteringsläge: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
-#| msgid "Replace Existing Autotags"
+#| msgid "Replace Existing"
+msgctxt "@item:remplace existing autotags entries in database"
 msgid "Replace Existing"
-msgstr "Ersätt befintliga automatiska etiketter"
+msgstr "Ersätt befintliga"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
 #, fuzzy, kde-format
-#| msgctxt "Content type"
 #| msgid "Update"
+msgctxt "@item:update the autotags entries in database"
 msgid "Update"
-msgstr "uUppdatering"
+msgstr "Uppdatera"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Replace Existing Autotags</b>: clear existing autotags and replace "
-#| "with the results of the scan.</p><p><b>Update Autotags</b>: add any new "
-#| "autotags found to the existing tags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Replace Existing</b>: clear existing autotags and replace with the "
 "results of the scan.</p><p><b>Update</b>: add any new autotags found to the "
 "existing tags.</p>"
 msgstr ""
-"<p><b>Ersätt befintliga automatiska etiketter</b>: rensa befintliga "
-"automatiska etiketter och ersätt med resultaten av sökningen.</"
-"p><p><b>Uppdatera automatiska etiketter</b>: lägg till alla nya automatiska "
-"etiketter som hittats i befintliga etiketter.</p>"
+"<p><b>Ersätt befintliga</b>: rensa befintliga automatiska etiketter och "
+"ersätt med resultaten av sökningen.</p><p><b>Uppdatera</b>: lägg till alla "
+"nya automatiska etiketter som hittats till de befintliga etiketterna.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, fuzzy, kde-format
-#| msgid "Selection Model: "
+#| msgid "Selection Model:"
+msgctxt "@label:deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Urvalsmodell: "
 
@@ -39520,10 +39506,9 @@ msgid "No models available"
 msgstr "Inga modeller tillgängliga"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
-#, fuzzy, kde-format
-#| msgid "Object Detection Accuracy: "
+#, kde-format
 msgid "Detection Accuracy:"
-msgstr "Objektdetekteringsnoggrannhet:"
+msgstr "Detekteringsnoggrannhet:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
 #, kde-format

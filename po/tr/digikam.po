@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-08 01:52+0000\n"
-"PO-Revision-Date: 2025-02-07 09:47+0300\n"
+"POT-Creation-Date: 2025-02-09 01:50+0000\n"
+"PO-Revision-Date: 2025-02-08 09:19+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2187,12 +2187,10 @@ msgid "By Month"
 msgstr "Aya Göre"
 
 #: core/app/main/digikamapp_setup.cpp:677
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Date"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Day"
-msgstr "Tarihe Göre"
+msgstr "Güne Göre"
 
 #: core/app/main/digikamapp_setup.cpp:708
 #, kde-format
@@ -28626,12 +28624,12 @@ msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr "Onaylı"
 
-#: core/libs/database/models/itemversionsmodel.cpp:91
+#: core/libs/database/models/itemversionsmodel.cpp:93
 #, kde-format
 msgid "No image selected"
 msgstr "Seçili görsel yok"
 
-#: core/libs/database/models/itemversionsmodel.cpp:116
+#: core/libs/database/models/itemversionsmodel.cpp:118
 #, kde-format
 msgid "This is the original image"
 msgstr "Bu, özgün görseldir"
@@ -35218,153 +35216,126 @@ msgid "aesthetic image quality"
 msgstr "estetik görsel kalitesi"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
-#| msgid "Scan Mode: "
+#| msgid "Scan Mode:"
+msgctxt "@label:image quality sort scan mode"
 msgid "Scan Mode:"
-msgstr "Tarama kipi: "
+msgstr "Tarama kipi:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with image quality sort"
 msgid "All"
 msgstr "Tümü"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Non-Assigned Only"
+msgctxt "@item:image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Yalnızca atanmamışlar"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>All</b>: re-scan all items for tags.</p><p><b>Non-Assigned Only</"
-#| "b>: scan only the items with no assigned autotags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>All</b>: re-scan all items for quality.</p><p><b>Non-Assigned Only</"
 "b>: scan only the items with no assigned auto-pick labels.</p>"
 msgstr ""
-"<p><b>Tümü</b>: Tüm görselleri künyeler için yeniden tarayın.</"
-"p><p><b>Yalnızca atanmamışlar</b>: Yalnızca kendiliğinden bir künye "
-"atanmamış ögeleri tarayın.</p>"
+"<p><b>Tümü</b>: Tüm görselleri kalite için yeniden tarayın.</"
+"p><p><b>Yalnızca atanmamışlar</b>: Yalnızca kendiliğinden seçilmiş etiketi "
+"olmayan ögeleri tarayın.</p>"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@option:check"
 msgid "Assign Low Quality to Rejected Label"
-msgstr "&Seçili Ögelere Künyeler Ata"
+msgstr "Reddedilen etiketine düşük kalite ata"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Low quality images detected by blur, noise, and compression analysis will "
-#| "be assigned to Rejected label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Low quality images detected by the quality engine\n"
 "will be assigned to the rejected pick label (red flag)."
 msgstr ""
-"Bulanıklık, gürültü ve sıkıştırma çözümlemesiyle tespit edilen düşük "
-"kaliteli görsellere “Reddedildi” etiketi atanır."
+"Kalite işletkesi tarafından algılanan düşük kaliteli\n"
+"görsellere “reddedildi” etiketi atanacaktır (kırmızı bayrak)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:108
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign Medium Quality to Pending Label"
-msgstr ""
+msgstr "Bekleyen etiketine orta kalite ata"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Medium quality images detected by blur, noise, and compression analysis "
-#| "will be assigned to Pending label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Medium quality images detected by the quality engine\n"
 "will be assigned to the pending pick label (yellow flag)."
 msgstr ""
-"Bulanıklık, gürültü ve sıkıştırma çözümlemesiyle tespit edilen orta kaliteli "
-"görsellere “Beklemede” etiketi atanır."
+"Kalite işletkesi tarafından algılanan orta kaliteli\n"
+"görsellere “beklemede” etiketi atanacaktır (sarı bayrak)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:122
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign High Quality to Accepted Label"
-msgstr ""
+msgstr "Kabul edilen etiketine yüksek kalite ata"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "High quality images detected by blur, noise, and compression analysis "
-#| "will be assigned to Accepted label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "High quality images detected by the quality engine\n"
 "will be assigned to the accepted pick label (green flag)."
 msgstr ""
-"Bulanıklık, gürültü ve sıkıştırma çözümlemesiyle tespit edilen yüksek "
-"kaliteli görsellere “Kabul Edildi” etiketi atanır."
+"Kalite işletkesi tarafından algılanan orta kaliteli\n"
+"görsellere “kabul edildi” etiketi atanacaktır (yeşil bayrak)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "Quality:"
+#, kde-format
 msgctxt "@label"
 msgid "Quality Engine:"
-msgstr "Kalite:"
+msgstr "Kalite işletkesi:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:139
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Aesthetic Contents using Deep Learning"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Contents"
-msgstr "Derin öğrenme kullanarak estetik bağlamları algıla"
+msgstr "Estetik içeriği algıla"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detect if the image has aesthetic contents.\n"
-#| "The aesthetic detection engine use deep learning model to classify images"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image has aesthetic contents.\n"
 "The aesthetic detection engine is based on a deep learning model to classify "
 "images."
 msgstr ""
-"Görselin estetik bağlamı olup olmadığını algılayın.\n"
+"Görselin estetik içeriği olup olmadığını algılayın.\n"
 "Estetik algılama işletkesi, görselleri sınıflandırmak için derin öğrenme "
-"modelini kullanır."
+"modeli tabanlıdır."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Quality Using Basic Factors"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Detect by Basic Factors"
-msgstr "Kaliteyi temel faktörleri kullanarak algıla"
+msgstr "Temel çarpanlarla algıla"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detect if the image is sabotaging by four basic factors (blur, noise, "
-#| "exposure, and compression). See the relevant settings in the next tab."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image is sabotaging using four basic factors\n"
 "eg. blur, noise, exposure (under / over), and compression levels.\n"
 "See the relevant settings from the next <b>Basic Factors</b> tab."
 msgstr ""
-"Görselin dört temel faktör (bulanıklık, gürültü, pozlama ve sıkıştırma) "
-"tarafından sabote edilip edilmediğini algılayın. Bir sonraki sekmedeki "
+"Görselin dört temel çarpan (bulanıklık, gürültü, pozlama —\n"
+"altında/üstünde ve sıkıştırma) tarafından sabote edilip\n"
+"edilmediğini algılayın. <b>Temel Çarpanlar</b> sekmesinden\n"
 "ilgili ayarlara bakın."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:169
@@ -39514,6 +39485,27 @@ msgstr ""
 "Yapay zeka sinir ağı, görsel içerikleri için kendiliğinden açıklayıcı "
 "künyeler oluşturacak ve sonuçları veritabanında saklayacaktır.</p>"
 
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#, fuzzy, kde-format
+#| msgid "Scan Mode:"
+msgctxt "@label:autotags scanning mode"
+msgid "Scan Mode:"
+msgstr "Tarama kipi:"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with autotags"
+msgid "All"
+msgstr "Tümü"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Non-Assigned Only"
+msgctxt "@item:autotags scan only non assigned items"
+msgid "Non-Assigned Only"
+msgstr "Yalnızca atanmamışlar"
+
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgctxt "@info:tooltip"
@@ -39526,47 +39518,42 @@ msgstr ""
 "atanmamış ögeleri tarayın.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Auto-Tagging Tag Mode: "
+#, kde-format
 msgid "Auto-Tagging Mode:"
-msgstr "Kendiliğinden künyeleme kipi: "
+msgstr "Kendiliğinden künyeleme kipi:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
-#| msgid "Replace Existing Autotags"
+#| msgid "Replace Existing"
+msgctxt "@item:remplace existing autotags entries in database"
 msgid "Replace Existing"
-msgstr "Var Olan Kendiliğinden Künyeleri Değiştir"
+msgstr "Var Olanı Değiştir"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
 #, fuzzy, kde-format
-#| msgctxt "Content type"
 #| msgid "Update"
+msgctxt "@item:update the autotags entries in database"
 msgid "Update"
 msgstr "Güncelle"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Replace Existing Autotags</b>: clear existing autotags and replace "
-#| "with the results of the scan.</p><p><b>Update Autotags</b>: add any new "
-#| "autotags found to the existing tags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Replace Existing</b>: clear existing autotags and replace with the "
 "results of the scan.</p><p><b>Update</b>: add any new autotags found to the "
 "existing tags.</p>"
 msgstr ""
-"<p><b>Var Olan Kendiliğinden Künyeleri Değiştir</b>: Var olan künyeleri "
-"temizleyin ve taramanın sonucuyla gelenlerle değiştirin.</"
-"p><p><b>Kendiliğinden Künyeleri Güncelle</b>: Yeni bulunan tüm kendiliğinden "
-"künyeleri var olan künyelere ekleyin.</p>"
+"<p><b>Var Olanı Değiştir</b>: Var olan künyeleri temizleyin ve taramanın "
+"sonucuyla gelenlerle değiştirin.</p><p><b>Güncelle</b>: Yeni bulunan tüm "
+"kendiliğinden künyeleri var olan künyelere ekleyin.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, fuzzy, kde-format
-#| msgid "Selection Model: "
+#| msgid "Selection Model:"
+msgctxt "@label:deep learning model selection to perform autotags"
 msgid "Selection Model:"
-msgstr "Seçim modeli: "
+msgstr "Seçim modeli:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:146
 #, kde-format
@@ -39574,10 +39561,9 @@ msgid "No models available"
 msgstr "Kullanılabilir model yok"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
-#, fuzzy, kde-format
-#| msgid "Object Detection Accuracy: "
+#, kde-format
 msgid "Detection Accuracy:"
-msgstr "Nesne algılama doğruluğu: "
+msgstr "Nesne algılama doğruluğu:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
 #, kde-format

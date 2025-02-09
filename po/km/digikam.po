@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-08 01:52+0000\n"
+"POT-Creation-Date: 2025-02-09 01:50+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -29067,12 +29067,12 @@ msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr "ការ​កំណត់​រចនាសម្ព័ន្ធ​​"
 
-#: core/libs/database/models/itemversionsmodel.cpp:91
+#: core/libs/database/models/itemversionsmodel.cpp:93
 #, kde-format
 msgid "No image selected"
 msgstr ""
 
-#: core/libs/database/models/itemversionsmodel.cpp:116
+#: core/libs/database/models/itemversionsmodel.cpp:118
 #, kde-format
 msgid "This is the original image"
 msgstr ""
@@ -35552,21 +35552,22 @@ msgid "aesthetic image quality"
 msgstr "កម្មវិធី​កែសម្រួល​រូបភាព"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
 #| msgid "Destination:"
+msgctxt "@label:image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "ទិសដៅ​ ៖"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with image quality sort"
 msgid "All"
 msgstr "ទាំងអស់"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, kde-format
+msgctxt "@item:image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr ""
 
@@ -39777,6 +39778,26 @@ msgid ""
 "database.</p>"
 msgstr ""
 
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#, fuzzy, kde-format
+#| msgid "Destination:"
+msgctxt "@label:autotags scanning mode"
+msgid "Scan Mode:"
+msgstr "ទិសដៅ​ ៖"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with autotags"
+msgid "All"
+msgstr "ទាំងអស់"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#, kde-format
+msgctxt "@item:autotags scan only non assigned items"
+msgid "Non-Assigned Only"
+msgstr ""
+
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
 msgctxt "@info:tooltip"
@@ -39795,6 +39816,7 @@ msgstr "របៀប​វាស់​ស្ទង់ ៖"
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
+msgctxt "@item:remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "ធ្វើ​បច្ចុប្បន្នភាព​​"
 
@@ -39802,6 +39824,7 @@ msgstr "ធ្វើ​បច្ចុប្បន្នភាព​​"
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
+msgctxt "@item:update the autotags entries in database"
 msgid "Update"
 msgstr "ធ្វើ​បច្ចុប្បន្នភាព​​"
 
@@ -39817,6 +39840,7 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, fuzzy, kde-format
 #| msgid "Destination:"
+msgctxt "@label:deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "ទិសដៅ​ ៖"
 

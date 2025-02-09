@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-08 01:52+0000\n"
+"POT-Creation-Date: 2025-02-09 01:50+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27658,12 +27658,12 @@ msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr "已确认"
 
-#: core/libs/database/models/itemversionsmodel.cpp:91
+#: core/libs/database/models/itemversionsmodel.cpp:93
 #, kde-format
 msgid "No image selected"
 msgstr "未选择图像"
 
-#: core/libs/database/models/itemversionsmodel.cpp:116
+#: core/libs/database/models/itemversionsmodel.cpp:118
 #, kde-format
 msgid "This is the original image"
 msgstr "这是原始图像"
@@ -34023,24 +34023,24 @@ msgid "aesthetic image quality"
 msgstr "图像美感"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
+msgctxt "@label:image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "扫描模式："
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "In All"
+msgctxt "@item:all items to scan with image quality sort"
 msgid "All"
 msgstr "匹配全部"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Scan non-assigned only"
+msgctxt "@item:image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "仅扫描未指定品质项目"
 
@@ -38237,6 +38237,28 @@ msgstr ""
 "以确定它包含的对象。选定的 AI 神经网络模型会在后台自动生成能够反映图像内容的"
 "标签，并将结果存储到数据库中。</p>"
 
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#, fuzzy, kde-format
+#| msgid "Scan Mode: "
+msgctxt "@label:autotags scanning mode"
+msgid "Scan Mode:"
+msgstr "扫描模式："
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "In All"
+msgctxt "@item:all items to scan with autotags"
+msgid "All"
+msgstr "匹配全部"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Scan non-assigned only"
+msgctxt "@item:autotags scan only non assigned items"
+msgid "Non-Assigned Only"
+msgstr "仅扫描未指定品质项目"
+
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
@@ -38260,6 +38282,7 @@ msgstr "自动分配标签模式："
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
 #| msgid "Replace existing autotags"
+msgctxt "@item:remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "替换已有自动标签"
 
@@ -38267,6 +38290,7 @@ msgstr "替换已有自动标签"
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
+msgctxt "@item:update the autotags entries in database"
 msgid "Update"
 msgstr "动态"
 
@@ -38290,6 +38314,7 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, fuzzy, kde-format
 #| msgid "Selection model: "
+msgctxt "@label:deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "选择模型："
 

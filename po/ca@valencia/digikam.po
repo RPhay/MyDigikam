@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-08 01:52+0000\n"
-"PO-Revision-Date: 2025-02-05 15:16+0100\n"
+"POT-Creation-Date: 2025-02-09 01:50+0000\n"
+"PO-Revision-Date: 2025-02-08 11:34+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2159,12 +2159,10 @@ msgid "By Month"
 msgstr "Per mes"
 
 #: core/app/main/digikamapp_setup.cpp:677
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Date"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Day"
-msgstr "Per data"
+msgstr "Per dia"
 
 #: core/app/main/digikamapp_setup.cpp:708
 #, kde-format
@@ -2905,21 +2903,17 @@ msgstr "Mapa"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:78
 #: core/app/views/sidebar/labelssidebarwidget.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality Scan"
-msgstr "Ordena segons la qualitat de la imatge"
+msgstr "Exploreu la qualitat de les imatges"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for faces"
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for image quality parsing"
 msgstr ""
-"Utilitzeu este botó per a explorar els àlbums seleccionats per a buscar cares"
+"Utilitzeu este botó per a explorar els àlbums seleccionats per a analitzar "
+"la qualitat de les imatges"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:164
@@ -2992,8 +2986,7 @@ msgstr "Etiquetes existents"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:139
-#, fuzzy, kde-format
-#| msgid "Auto-tag scan"
+#, kde-format
 msgid "Auto-tag Scan"
 msgstr "Exploreu etiquetes automàtiques"
 
@@ -6372,7 +6365,7 @@ msgctxt "@info"
 msgid "A tool to assign pick label metadata by image quality"
 msgstr ""
 "Una eina per a assignar les metadades de rètols de selecció segons la "
-"qualitat de la imatge"
+"qualitat de les imatges"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:62
 #, kde-kuit-format
@@ -7162,9 +7155,9 @@ msgstr ""
 "pèrdua per a les imatges digitals, particularment per a aquelles imatges "
 "produïdes per la fotografia digital. Es pot ajustar el grau de compressió, "
 "que permet seleccionar el balanç entre la mida d'emmagatzematge i la "
-"qualitat d'imatge.</para><para>Per als detalls, vegeu la <a href='https://en."
-"wikipedia.org/wiki/JPEG'>documentació del Joint Photographic Experts Group</"
-"a>.</para>"
+"qualitat de les imatges.</para><para>Per als detalls, vegeu la <a "
+"href='https://en.wikipedia.org/wiki/JPEG'>documentació del Joint "
+"Photographic Experts Group</a>.</para>"
 
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:118
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
@@ -28868,12 +28861,12 @@ msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr "Confirmada"
 
-#: core/libs/database/models/itemversionsmodel.cpp:91
+#: core/libs/database/models/itemversionsmodel.cpp:93
 #, kde-format
 msgid "No image selected"
 msgstr "No s'ha seleccionat cap imatge"
 
-#: core/libs/database/models/itemversionsmodel.cpp:116
+#: core/libs/database/models/itemversionsmodel.cpp:118
 #, kde-format
 msgid "This is the original image"
 msgstr "Esta és la imatge original"
@@ -35559,19 +35552,7 @@ msgid "Search in"
 msgstr "Busca a"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "These settings determines the quality of an image and convert it into a "
-#| "score, stored in database as Pick Label property. This information can be "
-#| "evaluated by two ways: using four basic factors sabotaging the images "
-#| "(blur, noise, exposure, and compression), or using a deep learning neural "
-#| "network engine. The first one helps to determine whether images are "
-#| "distorted by the basic factors, however it demands some drawbacks as fine-"
-#| "tuning from the user’s side and it cannot work along the aesthetic image "
-#| "processing. The second one uses an AI approach based on %1 model to "
-#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
-#| "require hyper-parameter settings, and make this feature easier to use."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "These settings determines the quality of an image and convert it into a "
@@ -35605,156 +35586,127 @@ msgid "aesthetic image quality"
 msgstr "qualitat estètica de les imatges"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
-#| msgid "Scan Mode: "
+#| msgid "Scan Mode:"
+msgctxt "@label:image quality sort scan mode"
 msgid "Scan Mode:"
-msgstr "Mode d'exploració: "
+msgstr "Mode d'exploració:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
 #, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "In All"
+#| msgid "All"
+msgctxt "@item:all items to scan with image quality sort"
 msgid "All"
-msgstr "A tot"
+msgstr "Tot"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, fuzzy, kde-format
-#| msgid "Scan non-assigned only"
+#| msgid "Non-Assigned Only"
+msgctxt "@item:image quality sort only non assigned items"
 msgid "Non-Assigned Only"
-msgstr "Explora només els no assignats"
+msgstr "Només les no assignades"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-"
-#| "assigned only</b>: scan only the items with no assigned autotags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>All</b>: re-scan all items for quality.</p><p><b>Non-Assigned Only</"
 "b>: scan only the items with no assigned auto-pick labels.</p>"
 msgstr ""
-"<p><b>Explora-ho tot</b>: torna a explorar tots els elements per a "
-"l'etiquetatge.</p><p><b>Explora només els no assignats</b>: només explora "
-"els elements sense etiquetes automàtiques assignades.</p>"
+"<p><b>Tot</b>: torna a explorar tots els elements buscant qualitat.</"
+"p><p><b>Només les no assignades</b>: explora només els elements sense "
+"etiquetes de rètol de selecció assignades.</p>"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@option:check"
 msgid "Assign Low Quality to Rejected Label"
-msgstr "Assigna les etiquetes als elements &seleccionats"
+msgstr "Assigna la qualitat baixa a l'etiqueta rebutjada"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Low quality images detected by blur, noise, and compression analysis will "
-#| "be assigned to Rejected label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Low quality images detected by the quality engine\n"
 "will be assigned to the rejected pick label (red flag)."
 msgstr ""
-"Les imatges de qualitat baixa detectades per a l'anàlisi de difuminat, "
-"soroll i compressió se'ls assignarà l'etiqueta «Rebutjada»."
+"Les imatges de qualitat baixa detectades pel motor de qualitat\n"
+"se'ls assignarà el rètol de selecció «Rebutjada» (indicador roig)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:108
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign Medium Quality to Pending Label"
-msgstr ""
+msgstr "Assigna la qualitat baixa a l'etiqueta pendent"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Medium quality images detected by blur, noise, and compression analysis "
-#| "will be assigned to Pending label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Medium quality images detected by the quality engine\n"
 "will be assigned to the pending pick label (yellow flag)."
 msgstr ""
-"Les imatges de qualitat mitjana detectades per a l'anàlisi de difuminat, "
-"soroll i compressió se'ls assignarà l'etiqueta «Pendent»."
+"Les imatges de qualitat mitjana detectades pel motor de qualitat\n"
+"se'ls assignarà el rètol de selecció «Pendent» (indicador groc)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:122
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign High Quality to Accepted Label"
-msgstr ""
+msgstr "Assigna la qualitat alta a l'etiqueta acceptada"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "High quality images detected by blur, noise, and compression analysis "
-#| "will be assigned to Accepted label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "High quality images detected by the quality engine\n"
 "will be assigned to the accepted pick label (green flag)."
 msgstr ""
-"Les imatges de qualitat alta detectades per a l'anàlisi de difuminat, soroll "
-"i compressió se'ls assignarà l'etiqueta «Acceptada»."
+"Les imatges de qualitat alta detectades pel motor de qualitat\n"
+"se'ls assignarà el rètol de selecció «Acceptada» (indicador verd)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "Quality:"
+#, kde-format
 msgctxt "@label"
 msgid "Quality Engine:"
-msgstr "Qualitat:"
+msgstr "Motor de qualitat:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:139
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Aesthetic Image using Deep Learning"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Contents"
-msgstr "Detecta una imatge estètica utilitzant l'aprenentatge profund"
+msgstr "Detecta el contingut estètic"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detect if the image has aesthetic value.\n"
-#| "The aesthetic detection engine use deep learning model to classify images"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image has aesthetic contents.\n"
 "The aesthetic detection engine is based on a deep learning model to classify "
 "images."
 msgstr ""
-"Detecta si la imatge té un valor estètic.\n"
-"El motor de detecció estètica utilitza un model d'aprenentatge profund per a "
-"classificar les imatges"
+"Detecta si la imatge té contingut estètic.\n"
+"El motor de detecció estètica està basat en un model d'aprenentatge profund "
+"per a classificar les imatges."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Quality Using Basic Factors"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Detect by Basic Factors"
-msgstr "Detecta la qualitat emprant factors bàsics"
+msgstr "Detecta segons factors bàsics"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detect if the image is sabotaging by four basic factors (blur, noise, "
-#| "exposure, and compression)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image is sabotaging using four basic factors\n"
 "eg. blur, noise, exposure (under / over), and compression levels.\n"
 "See the relevant settings from the next <b>Basic Factors</b> tab."
 msgstr ""
-"Detecta si la imatge està alterada segons quatre factors bàsics (difuminat, "
-"soroll, exposició i compressió)."
+"Detecta si la imatge està alterada utilitzant quatre factors bàsics:\n"
+"difuminat, soroll, exposició (sub i sobre) i nivells de compressió.\n"
+"Vegeu la configuració important cap a la pestanya següent <b>Factors bàsics</"
+"b>."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:169
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
@@ -39932,63 +39884,76 @@ msgstr ""
 "automàticament etiquetes descriptives del contingut de la imatge i "
 "emmagatzemarà el resultat a la base de dades.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-"
-#| "assigned only</b>: scan only the items with no assigned autotags.</p>"
+#| msgid "Scan Mode:"
+msgctxt "@label:autotags scanning mode"
+msgid "Scan Mode:"
+msgstr "Mode d'exploració:"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@item:all items to scan with autotags"
+msgid "All"
+msgstr "Tot"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Non-Assigned Only"
+msgctxt "@item:autotags scan only non assigned items"
+msgid "Non-Assigned Only"
+msgstr "Només les no assignades"
+
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>All</b>: re-scan all items for tags.</p><p><b>Non-Assigned Only</b>: "
 "scan only the items with no assigned autotags.</p>"
 msgstr ""
-"<p><b>Explora-ho tot</b>: torna a explorar tots els elements per a "
-"l'etiquetatge.</p><p><b>Explora només els no assignats</b>: només explora "
-"els elements sense etiquetes automàtiques assignades.</p>"
+"<p><b>Tot</b>: torna a explorar tots els elements per a assignar etiquetes.</"
+"p><p><b>Només les no assignades</b>: només explora els elements sense "
+"etiquetes automàtiques assignades.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Auto-tagging tag mode: "
+#, kde-format
 msgid "Auto-Tagging Mode:"
-msgstr "Mode d'etiquetatge d'etiquetes automàtiques: "
+msgstr "Mode d'etiquetatge automàtic:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
-#| msgid "Replace existing autotags"
+#| msgid "Replace Existing"
+msgctxt "@item:remplace existing autotags entries in database"
 msgid "Replace Existing"
-msgstr "Substituïx les etiquetes automàtiques existents"
+msgstr "Substituïx les existents"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
 #, fuzzy, kde-format
-#| msgctxt "Content type"
 #| msgid "Update"
+msgctxt "@item:update the autotags entries in database"
 msgid "Update"
-msgstr "Actualització"
+msgstr "Actualitza"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Replace existing autotags</b>: clear existing autotags and replace "
-#| "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
-#| "autotags found to the existing tags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Replace Existing</b>: clear existing autotags and replace with the "
 "results of the scan.</p><p><b>Update</b>: add any new autotags found to the "
 "existing tags.</p>"
 msgstr ""
-"<p><b>Substituïx les etiquetes automàtiques existents</b>: neteja les "
-"etiquetes automàtiques existents i les substituïx pels resultats de "
-"l'exploració.</p><p><b>Actualitza les etiquetes automàtiques</b>: afig "
-"qualsevol nova etiqueta automàtica trobada a les etiquetes existents.</p>"
+"<p><b>Substituïx les existents</b>: neteja les etiquetes automàtiques "
+"existents i les substituïx pels resultats de l'exploració.</"
+"p><p><b>Actualitza</b>: afig qualsevol etiqueta automàtica nova trobada a "
+"les etiquetes existents.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, fuzzy, kde-format
-#| msgid "Selection model: "
+#| msgid "Selection Model:"
+msgctxt "@label:deep learning model selection to perform autotags"
 msgid "Selection Model:"
-msgstr "Model de selecció: "
+msgstr "Model de selecció:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:146
 #, kde-format
@@ -39996,10 +39961,9 @@ msgid "No models available"
 msgstr "Cap model disponible"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
-#, fuzzy, kde-format
-#| msgid "Object detection accuracy: "
+#, kde-format
 msgid "Detection Accuracy:"
-msgstr "Precisió de la detecció d'objectes: "
+msgstr "Precisió de la detecció:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
 #, kde-format
@@ -68336,77 +68300,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#, fuzzy
-#~| msgctxt "@option:check"
-#~| msgid "Assign 'Rejected' Label to Low Quality Pictures"
-#~ msgctxt "@option:check"
-#~ msgid "Assign 'Rejected' Label to Low Quality"
-#~ msgstr "Assigna l'etiqueta «Rebutjada» a les imatges de qualitat baixa"
-
-#, fuzzy
-#~| msgctxt "@option:check"
-#~| msgid "Assign 'Pending' Label to Medium Quality Pictures"
-#~ msgctxt "@option:check"
-#~ msgid "Assign 'Pending' Label to Medium Quality"
-#~ msgstr "Assigna l'etiqueta «Pendent» a les imatges de qualitat mitjana"
-
-#, fuzzy
-#~| msgctxt "@option:check"
-#~| msgid "Assign 'Accepted' Label to High Quality Pictures"
-#~ msgctxt "@option:check"
-#~ msgid "Assign 'Accepted' Label to High Quality"
-#~ msgstr "Assigna l'etiqueta «Acceptada» a les imatges de qualitat alta"
-
-#, fuzzy
-#~| msgid "Update autotags"
-#~ msgid "Update Autotags"
-#~ msgstr "Actualitza les etiquetes automàtiques"
-
-#~ msgctxt "@option:radio"
-#~ msgid "Use default settings"
-#~ msgstr "Utilitza la configuració predeterminada"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "Use the default quality sorting parameters configured in Setup dialog."
-#~ msgstr ""
-#~ "Utilitza els paràmetres predeterminats d'ordenació de qualitat "
-#~ "configurats en el diàleg de configuració."
-
-#~ msgctxt "@option:radio"
-#~ msgid "Use custom settings"
-#~ msgstr "Utilitza una configuració personalitzada"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "Use custom parameters to perform quality sorting instead default one."
-#~ msgstr ""
-#~ "Utilitza paràmetres personalitzats per a realitzar l'ordenació de "
-#~ "qualitat en lloc dels predeterminats."
-
-#~ msgctxt "@title:tab"
-#~ msgid "Rules"
-#~ msgstr "Regles"
-
-#~ msgid "Auto-tagging mode: "
-#~ msgstr "Mode d'etiquetatge automàtic: "
-
-#~ msgid "Scan all"
-#~ msgstr "Explora-ho tot"
-
-#~ msgid "Clean all and re-scan"
-#~ msgstr "Neteja-ho tot i torna a explorar"
-
-#~ msgctxt "@title: settings section"
-#~ msgid "Image Quality Sorter"
-#~ msgstr "Ordena les imatges segons la qualitat"
-
-#~ msgctxt "@title"
-#~ msgid ""
-#~ "Image Quality Sorter Settings\n"
-#~ "Customize default settings to perform image triaging by quality"
-#~ msgstr ""
-#~ "Configureu l'ordenador d'imatges segons la qualitat\n"
-#~ "Personalitza la configuració predeterminada per a realitzar el triatge "
-#~ "d'imatges segons la qualitat"
