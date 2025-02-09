@@ -42,6 +42,7 @@ private:
     // Disable
     AutotagsClassifierSoftmax()                                     = delete;
     AutotagsClassifierSoftmax(const AutotagsClassifierSoftmax&)     = delete;
+    explicit AutotagsClassifierSoftmax(QObject*)                    = delete;
 };
 
 } // namespace Digikam

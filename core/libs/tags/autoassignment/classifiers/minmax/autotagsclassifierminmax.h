@@ -42,6 +42,7 @@ private:
     // Disable
     AutotagsClassifierMinmax()                                     = delete;
     AutotagsClassifierMinmax(const AutotagsClassifierMinmax&)      = delete;
+    explicit AutotagsClassifierMinmax(QObject*)                    = delete;
 };
 
 } // namespace Digikam

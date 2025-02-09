@@ -37,6 +37,7 @@ public:
 private:
 
     // Disable
+    explicit FaceClassifierBase(QObject*)                                      = delete;
     FaceClassifierBase(const FaceClassifierBase&)                              = delete;
 };
 

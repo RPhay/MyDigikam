@@ -106,6 +106,7 @@ protected:
 private:
 
     // Disable
+    explicit MLClassifierFoundation(QObject*)                           = delete;
     MLClassifierFoundation(const MLClassifierFoundation&)               = delete;
     MLClassifierFoundation& operator=(const MLClassifierFoundation&)    = delete;
 };

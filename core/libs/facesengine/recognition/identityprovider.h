@@ -170,7 +170,10 @@ private:
     ~IdentityProvider();
 
     // Disable
+    explicit IdentityProvider(QObject*)                           = delete;
     IdentityProvider(const IdentityProvider&)                     = delete;
+
+private:
 
     class Private;
     Private* const d = nullptr;

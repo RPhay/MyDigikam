@@ -68,6 +68,7 @@ protected:
 private:
 
     // Disable
+    explicit AutotagsClassifierBase(QObject*)                           = delete;
     AutotagsClassifierBase()                                            = delete;
     AutotagsClassifierBase(const AutotagsClassifierBase&)               = delete;
 };

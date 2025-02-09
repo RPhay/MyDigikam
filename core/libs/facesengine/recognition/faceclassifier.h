@@ -76,6 +76,7 @@ private:
 private:
 
     // Disable
+    explicit FaceClassifier(QObject*)                         = delete;
     FaceClassifier();
     ~FaceClassifier()                                         override;
     FaceClassifier(const FaceClassifier&)                     = delete;
