@@ -33,7 +33,7 @@ void MLClassifierFoundation::VotingGroups::addVote(int label, float score)
     votes[label] = QPair<int, float>(votes.value(label).first + 1, votes.value(label).second + score);
 }
 
-struct MLClassifierFoundation::VotingGroups::WinnerVotesLowScore
+struct Q_DECL_HIDDEN MLClassifierFoundation::VotingGroups::WinnerVotesLowScore
 {
     bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a,
                     const MLClassifierFoundation::VotingGroups::VoteTally& b) const
@@ -47,7 +47,7 @@ struct MLClassifierFoundation::VotingGroups::WinnerVotesLowScore
     }
 };
 
-struct MLClassifierFoundation::VotingGroups::WinnerVotesHighScore
+struct Q_DECL_HIDDEN MLClassifierFoundation::VotingGroups::WinnerVotesHighScore
 {
     bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a,
                     const MLClassifierFoundation::VotingGroups::VoteTally& b) const
@@ -63,7 +63,7 @@ struct MLClassifierFoundation::VotingGroups::WinnerVotesHighScore
     }
 };
 
-struct MLClassifierFoundation::VotingGroups::WinnerLowScore
+struct Q_DECL_HIDDEN MLClassifierFoundation::VotingGroups::WinnerLowScore
 {
     bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a,
                     const MLClassifierFoundation::VotingGroups::VoteTally& b) const
@@ -74,7 +74,7 @@ struct MLClassifierFoundation::VotingGroups::WinnerLowScore
     }
 };
 
-struct MLClassifierFoundation::VotingGroups::WinnerHighScore
+struct Q_DECL_HIDDEN MLClassifierFoundation::VotingGroups::WinnerHighScore
 {
     bool operator()(const MLClassifierFoundation::VotingGroups::VoteTally& a,
                     const MLClassifierFoundation::VotingGroups::VoteTally& b) const

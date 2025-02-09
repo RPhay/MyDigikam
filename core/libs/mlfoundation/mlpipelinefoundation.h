@@ -102,23 +102,23 @@ public:
 
 Q_SIGNALS:
 
-    /// Emitted when processing is scheduled.
+    /// @brief Emitted when processing is scheduled.
     void scheduled();
 
-    /// Emitted when processing has started.
+    /// @brief Emitted when processing has started.
     void started(const QString& message);
 
-    /// Emitted when one package begins processing.
+    /// @brief Emitted when one package begins processing.
     void processing(const MLPipelinePackageNotify::Ptr& package);
 
-    /// Emitted when one package has finished processing.
+    /// @brief Emitted when one package has finished processing.
     void processed(const MLPipelinePackageNotify::Ptr& package);
     void progressValueChanged(float progress);
 
-    /// Emitted when the last package has finished processing.
+    /// @brief Emitted when the last package has finished processing.
     void finished();
 
-    /// Emitted when one or several packages were skipped, usually because they have already been scanned.
+    /// @brief Emitted when one or several packages were skipped, usually because they have already been scanned.
     void skipped(const MLPipelinePackageNotify::Ptr& package);
 
     void signalAddMoreWorkers();
@@ -150,7 +150,7 @@ protected:
     virtual bool finder()                                        = 0;
     virtual bool loader()                                        = 0;
     virtual bool extractor()                                     = 0;
-    virtual bool classifier()                                    = 0;   /// TODO: rename to postprocessor
+    virtual bool classifier()                                    = 0;       // TODO: rename to postprocessor
     virtual bool trainer()                                       = 0;
     virtual bool writer()                                        = 0;
 
@@ -208,7 +208,7 @@ protected:
                         const QIcon& _thumbnail);
 
     /**
-     * Helper methods to perform signal emitting through the MLPIPELINE_FINDER_END mocro with the moc processor.
+     * @brief Helper methods to perform signal emitting through the MLPIPELINE_FINDER_END mocro with the moc processor.
      */
     void emitSignalUpdateItemCount(const qlonglong itemCount);
 
