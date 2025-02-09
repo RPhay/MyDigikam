@@ -161,7 +161,7 @@ BUGFIXES:
 108 ==> 499661 - Good software but no grouping per day in miniature mode.
 109 ==> 432388 - Color tag - I wish more colors.
 110 ==> 499616 - Ability to load/unload collections and their databases (Suggestion).
-111 ==>
+111 ==> 499720 - Refresh album view WITHOUT re-scanning thumbnails.
 112 ==>
 113 ==>
 114 ==>
