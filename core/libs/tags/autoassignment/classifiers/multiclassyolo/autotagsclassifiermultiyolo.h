@@ -28,6 +28,8 @@ namespace Digikam
 
 class DIGIKAM_GUI_EXPORT AutotagsClassifierYolo : public AutotagsClassifierBase
 {
+    Q_OBJECT
+
 public:
 
     enum YoloVersion

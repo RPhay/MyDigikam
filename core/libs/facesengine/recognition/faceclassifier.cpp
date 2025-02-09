@@ -603,3 +603,5 @@ bool FaceClassifier::featureSFaceCompare(const cv::Mat& target, const cv::Mat& s
 }
 
 } // namespace Digikam
+
+#include "moc_faceclassifier.cpp"

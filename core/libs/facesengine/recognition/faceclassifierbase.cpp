@@ -13,31 +13,32 @@
  *
  * ============================================================ */
 
-#pragma once
-
 // Local includes
 
-#include "mlclassifierfoundation.h"
+#include "faceclassifierbase.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_GUI_EXPORT FaceClassifierBase : public MLClassifierFoundation
+FaceClassifierBase::FaceClassifierBase()
+    : MLClassifierFoundation()
 {
-    Q_OBJECT
+}
 
-public:
+QList<int> FaceClassifierBase::predictMulti(const QList<cv::Mat>& targets) const
+{
+    Q_UNUSED(targets);
 
-    FaceClassifierBase();
-    ~FaceClassifierBase()                                             override = default;
+    return QList<int>();
+}
 
-    QList<int> predictMulti(const QList<cv::Mat>& targets)      const override;
-    QList<int> predictMulti(const QList<cv::UMat>& targets)     const override;
+QList<int> FaceClassifierBase::predictMulti(const QList<cv::UMat>& targets) const
+{
+    Q_UNUSED(targets);
 
-private:
-
-    // Disable
-    FaceClassifierBase(const FaceClassifierBase&)                              = delete;
-};
+    return QList<int>();
+}
 
 } // namespace Digikam
+
+#include "moc_faceclassifierbase.cpp"

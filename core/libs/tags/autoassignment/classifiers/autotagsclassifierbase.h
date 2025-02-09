@@ -28,6 +28,8 @@ namespace Digikam
 
 class DIGIKAM_GUI_EXPORT AutotagsClassifierBase : public MLClassifierFoundation
 {
+    Q_OBJECT
+
 public:
 
     explicit AutotagsClassifierBase(float _threshold, const QString& _predefinedClassFile);

@@ -59,7 +59,8 @@ add_library(digikamfacesengine STATIC $<TARGET_OBJECTS:core_digikamfacesengine_o
 
 # ---------------------------------------------------------------------------
 
-set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/faceclassifier.cpp
+set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/faceclassifierbase.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/faceclassifier.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/identityprovider.cpp
 
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractorbase.cpp

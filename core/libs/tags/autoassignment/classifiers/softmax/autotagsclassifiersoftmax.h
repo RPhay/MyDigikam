@@ -24,6 +24,7 @@ namespace Digikam
 
 class DIGIKAM_GUI_EXPORT AutotagsClassifierSoftmax : public AutotagsClassifierBase
 {
+    Q_OBJECT
 
 public:
 
