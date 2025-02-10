@@ -192,6 +192,7 @@ void AutotagsScanWidget::setupUi()
 
     if (SettingsDisplayMode::BQM == d->displayMode)
     {
+        hbox16->hide();
         hbox12->hide();
         setTabVisible(0, false);
         setCurrentIndex(1);
