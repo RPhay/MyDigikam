@@ -193,15 +193,15 @@ void AutotagsScanWidget::setupUi()
     if (SettingsDisplayMode::BQM == d->displayMode)
     {
         hbox12->hide();
-        this->setTabVisible(0, false);
-        this->setCurrentIndex(1);
+        setTabVisible(0, false);
+        setCurrentIndex(1);
     }
 
     if (SettingsDisplayMode::Maintenance == d->displayMode)
     {
         hbox16->hide();
-        this->setTabVisible(0, false);
-        this->setCurrentIndex(1);
+        setTabVisible(0, false);
+        setCurrentIndex(1);
     }
 
     if (SettingsDisplayMode::Normal == d->displayMode)
@@ -245,6 +245,7 @@ AutotagsScanSettings AutotagsScanWidget::settings() const
         result.scanMode           = (AutotagsScanSettings::ScanMode)d->scanMode->itemData(d->scanMode->currentIndex()).toInt();
     }
 
+    result.useFullCpu             = d->useFullCpuButton->isChecked();
     result.tagMode                = (AutotagsScanSettings::TagMode)d->tagMode->itemData(d->tagMode->currentIndex()).toInt();
     result.objectDetectModel      = d->objectDetectModel->itemData(d->objectDetectModel->currentIndex()).toString();
     result.uiConfidenceThreshold  = d->accuracyInput->value();
@@ -258,6 +259,7 @@ void AutotagsScanWidget::settings(const AutotagsScanSettings& newSettings)
     d->scanMode->setCurrentIndex(d->scanMode->findData(newSettings.scanMode));
     d->tagMode->setCurrentIndex(d->tagMode->findData(newSettings.tagMode));
     d->objectDetectModel->setCurrentIndex(d->objectDetectModel->findData(newSettings.objectDetectModel));
+    d->useFullCpuButton->setChecked(newSettings.useFullCpu);
 
     if (d->accuracyInput->value() != newSettings.uiConfidenceThreshold)
     {

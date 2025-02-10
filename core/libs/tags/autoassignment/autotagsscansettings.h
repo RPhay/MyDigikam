@@ -68,7 +68,7 @@ public:
     /// Whole albums checked.
     TagMode                                 tagMode                     = TagMode::Replace;
 
-    /// Processing power.
+    /// Processing using all CPU available.
     bool                                    useFullCpu                  = false;
 
     /// Object Detection Model.
