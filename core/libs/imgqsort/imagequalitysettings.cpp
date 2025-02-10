@@ -27,6 +27,7 @@ ImageQualitySettings::ImageQualitySettings(const ImageQualitySettings& other)
     : scanMode          (other.scanMode),
       wholeAlbums       (other.wholeAlbums),
       albums            (other.albums),
+      useFullCpu        (other.useFullCpu),
       detectBlur        (other.detectBlur),
       detectNoise       (other.detectNoise),
       detectCompression (other.detectCompression),
@@ -50,6 +51,7 @@ ImageQualitySettings& ImageQualitySettings::operator=(const ImageQualitySettings
     scanMode           = other.scanMode;
     wholeAlbums        = other.wholeAlbums;
     albums             = other.albums;
+    useFullCpu         = other.useFullCpu;
     detectBlur         = other.detectBlur;
     detectNoise        = other.detectNoise;
     detectCompression  = other.detectCompression;
@@ -82,6 +84,7 @@ void ImageQualitySettings::readFromConfig(const KConfigGroup& group)
 
     // NOTE: Album settings are handled by AlbumSelector widget.
 
+    useFullCpu                = group.readEntry("Use Full CPU",        false);
     detectBlur                = group.readEntry("Detect Blur",         true);
     detectNoise               = group.readEntry("Detect Noise",        true);
     detectCompression         = group.readEntry("Detect Compression",  true);
@@ -112,6 +115,7 @@ void ImageQualitySettings::writeToConfig(KConfigGroup& group)
 
     // NOTE: Album settings are handled by AlbumSelector widget.
 
+    group.writeEntry("Use Full CPU",        useFullCpu);
     group.writeEntry("Detect Blur",         detectBlur);
     group.writeEntry("Detect Noise",        detectNoise);
     group.writeEntry("Detect Compression",  detectCompression);
@@ -135,6 +139,7 @@ QDebug operator<<(QDebug dbg, const ImageQualitySettings& s)
     dbg.nospace() << "Scan Mode          :" << s.scanMode           << Qt::endl;
     dbg.nospace() << "Whole Albums       :" << s.wholeAlbums        << Qt::endl;
     dbg.nospace() << "Albums             :" << s.albums             << Qt::endl;
+    dbg.nospace() << "Use Full CPU       :" << s.useFullCpu         << Qt::endl;
     dbg.nospace() << "DetectBlur         :" << s.detectBlur         << Qt::endl;
     dbg.nospace() << "DetectNoise        :" << s.detectNoise        << Qt::endl;
     dbg.nospace() << "DetectCompression  :" << s.detectCompression  << Qt::endl;

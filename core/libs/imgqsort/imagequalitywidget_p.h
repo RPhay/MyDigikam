@@ -83,6 +83,7 @@ public:
     QButtonGroup*                             detectButtonGroup     = nullptr;
     QRadioButton*                             detectAesthetic       = nullptr;
     QRadioButton*                             detectBasicFactors    = nullptr;
+    QCheckBox*                                useFullCpuButton      = nullptr;
 
     QCheckBox*                                setRejected           = nullptr;
     QCheckBox*                                setPending            = nullptr;

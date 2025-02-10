@@ -184,6 +184,7 @@ void LabelsSideBarWidget::slotScanComplete()
 void LabelsSideBarWidget::doImageQualityScan(const ImageQualitySettings& imgqsortSettings)
 {
     ImageQualitySorter* const imgqsortDetector = new ImageQualitySorter(imgqsortSettings);
+    imgqsortDetector->setUseMultiCoreCPU(imgqsortSettings.useFullCpu);
     imgqsortDetector->start();
 
     connect(imgqsortDetector, SIGNAL(signalComplete()),

@@ -154,6 +154,16 @@ void ImageQualityWidget::setupUi()
 
     // ------------------------------------------------------------------------------
 
+    DHBox* const hbox16         = new DHBox(d->settingsView);
+    d->useFullCpuButton         = new QCheckBox(hbox16);
+    d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));
+    d->useFullCpuButton->setToolTip(i18nc("@info:tooltip",
+                                          "Quality detection is time-consuming tasks.\n"
+                                          "You can choose if you wish to employ all processor cores\n"
+                                          "on your system, or work in the background only on one core."));
+
+    // ------------------------------------------------------------------------------
+
     QGridLayout* const glay = new QGridLayout(d->settingsView);
     glay->addWidget(hlay0,                 0, 0, 1, 2);
     glay->addWidget(hlay1,                 1, 0, 1, 2);
@@ -162,8 +172,9 @@ void ImageQualityWidget::setupUi()
     glay->addWidget(engineLbl,             4, 0, 1, 2);
     glay->addWidget(d->detectAesthetic,    5, 1, 1, 1);
     glay->addWidget(d->detectBasicFactors, 6, 1, 1, 1);
+    glay->addWidget(hbox16,                7, 0, 1, 2);
     glay->setColumnStretch(1, 10);
-    glay->setRowStretch(7, 10);
+    glay->setRowStretch(8, 10);
     glay->setContentsMargins(spacing, spacing, spacing, spacing);
 
     addTab(d->settingsView, i18nc("@title:tab", "Settings"));
@@ -252,7 +263,7 @@ void ImageQualityWidget::setupUi()
     grid1->addWidget(d->setCompressionWeight,  5, 2, 1, 1);
 
     grid1->addWidget(d->detectExposure,        6, 0, 1, 3);
-    grid1->setContentsMargins(2 * spacing, spacing, spacing, spacing);
+    grid1->setContentsMargins(spacing, spacing, spacing, spacing);
     grid1->setColumnStretch(0, 1);
     grid1->setColumnStretch(1, 1);
     grid1->setColumnStretch(2, 100);
@@ -339,11 +350,19 @@ void ImageQualityWidget::setupUi()
     if (SettingsDisplayMode::BQM == d->displayMode)
     {
         hlay0->hide();
-        this->setTabVisible(0, false);
-        this->setCurrentIndex(1);
+        hbox16->hide();
+        setTabVisible(0, false);
+        setCurrentIndex(1);
     }
 
-    if (d->displayMode != SettingsDisplayMode::Normal)
+    if (SettingsDisplayMode::Maintenance == d->displayMode)
+    {
+        hbox16->hide();
+        setTabVisible(0, false);
+        setCurrentIndex(1);
+    }
+
+    if (SettingsDisplayMode::Normal != d->displayMode)
     {
         setTabVisible(0, false);
         setCurrentIndex(1);

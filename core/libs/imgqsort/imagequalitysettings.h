@@ -66,6 +66,7 @@ public:
 
     bool      wholeAlbums       = true;                 ///< Processing power.
     AlbumList albums;                                   ///< Albums to scan.
+    bool      useFullCpu        = false;                /// Processing using all CPU available.
 
     bool      detectBlur        = true;                 ///< Enable image blur detection.
     bool      detectNoise       = true;                 ///< Enable image noise detection.
