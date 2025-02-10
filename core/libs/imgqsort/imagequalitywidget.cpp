@@ -417,6 +417,8 @@ void ImageQualityWidget::setSettings(const ImageQualitySettings& imq)
         d->detectBasicFactors->setChecked(true);
     }
 
+    d->useFullCpuButton->setChecked(imq.useFullCpu);
+
     d->setRejected->setChecked(imq.lowQRejected);
     d->setPending->setChecked(imq.mediumQPending);
     d->setAccepted->setChecked(imq.highQAccepted);
@@ -457,6 +459,8 @@ ImageQualitySettings ImageQualityWidget::settings() const
     imq.detectCompression = d->detectCompression->isChecked();
     imq.detectExposure    = d->detectExposure->isChecked();
     imq.detectAesthetic   = d->detectAesthetic->isChecked();
+    imq.useFullCpu        = d->useFullCpuButton->isChecked();
+
     imq.lowQRejected      = d->setRejected->isChecked();
     imq.mediumQPending    = d->setPending->isChecked();
     imq.highQAccepted     = d->setAccepted->isChecked();
