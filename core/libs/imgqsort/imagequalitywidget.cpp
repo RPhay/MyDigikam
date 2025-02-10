@@ -76,13 +76,13 @@ void ImageQualityWidget::setupUi()
                                             .arg(i18nc("@label", "aesthetic image quality"))));
 
     DHBox* const hlay0        = new DHBox(d->settingsView);
-    new QLabel(i18nc("@label:image quality sort scan mode", "Scan Mode:"), hlay0);
+    new QLabel(i18nc("@label: image quality sort scan mode", "Scan Mode:"), hlay0);
     QWidget* const space8     = new QWidget(hlay0);
     hlay0->setStretchFactor(space8, 10);
 
     d->scanMode               = new QComboBox(hlay0);
-    d->scanMode->addItem(i18nc("@item:all items to scan with image quality sort",  "All"),                ImageQualitySettings::ScanMode::AllItems);
-    d->scanMode->addItem(i18nc("@item:image quality sort only non assigned items", "Non-Assigned Only"),  ImageQualitySettings::ScanMode::NonAssignedItems);
+    d->scanMode->addItem(i18nc("@item: all items to scan with image quality sort",  "All"),                ImageQualitySettings::ScanMode::AllItems);
+    d->scanMode->addItem(i18nc("@item: image quality sort only non assigned items", "Non-Assigned Only"),  ImageQualitySettings::ScanMode::NonAssignedItems);
     d->scanMode->setToolTip(i18nc("@info:tooltip",
                                   "<p><b>All</b>: re-scan all items for quality.</p>"
                                   "<p><b>Non-Assigned Only</b>: scan only the items with no assigned auto-pick labels.</p>"));

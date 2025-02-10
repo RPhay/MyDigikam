@@ -109,13 +109,13 @@ void AutotagsScanWidget::setupUi()
     title->setWordWrap(true);
 
     DHBox* const hbox12         = new DHBox(d->settingsTab);
-    new QLabel(i18nc("@label:autotags scanning mode", "Scan Mode:"), hbox12);
+    new QLabel(i18nc("@label: autotags scanning mode", "Scan Mode:"), hbox12);
     QWidget* const space8       = new QWidget(hbox12);
     hbox12->setStretchFactor(space8, 10);
 
     d->scanMode                 = new QComboBox(hbox12);
-    d->scanMode->addItem(i18nc("@item:all items to scan with autotags",       "All"),               AutotagsScanSettings::ScanMode::AllItems);
-    d->scanMode->addItem(i18nc("@item:autotags scan only non assigned items", "Non-Assigned Only"), AutotagsScanSettings::ScanMode::NonAssignedItems);
+    d->scanMode->addItem(i18nc("@item: all items to scan with autotags",       "All"),               AutotagsScanSettings::ScanMode::AllItems);
+    d->scanMode->addItem(i18nc("@item: autotags scan only non assigned items", "Non-Assigned Only"), AutotagsScanSettings::ScanMode::NonAssignedItems);
     d->scanMode->setToolTip(i18nc("@info:tooltip",
                                   "<p><b>All</b>: re-scan all items for tags.</p>"
                                   "<p><b>Non-Assigned Only</b>: scan only the items with no assigned autotags.</p>"));
@@ -126,14 +126,14 @@ void AutotagsScanWidget::setupUi()
     hbox15->setStretchFactor(space15, 10);
 
     d->tagMode                  = new QComboBox(hbox15);
-    d->tagMode->addItem(i18nc("@item:remplace existing autotags entries in database", "Replace Existing"), AutotagsScanSettings::TagMode::Replace);
-    d->tagMode->addItem(i18nc("@item:update the autotags entries in database",        "Update"),           AutotagsScanSettings::TagMode::Update);
+    d->tagMode->addItem(i18nc("@item: remplace existing autotags entries in database", "Replace Existing"), AutotagsScanSettings::TagMode::Replace);
+    d->tagMode->addItem(i18nc("@item: update the autotags entries in database",        "Update"),           AutotagsScanSettings::TagMode::Update);
     d->tagMode->setToolTip(i18nc("@info:tooltip",
                                  "<p><b>Replace Existing</b>: clear existing autotags and replace with the results of the scan.</p>"
                                  "<p><b>Update</b>: add any new autotags found to the existing tags.</p>"));
 
     DHBox* const hbox13         = new DHBox(d->settingsTab);
-    new QLabel(i18nc("@label:deep learning model selection to perform autotags", "Selection Model:"), hbox13);
+    new QLabel(i18nc("@label: deep learning model selection to perform autotags", "Selection Model:"), hbox13);
     QWidget* const space9       = new QWidget(hbox13);
     hbox13->setStretchFactor(space9, 10);
 
