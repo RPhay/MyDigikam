@@ -78,10 +78,10 @@ void DigikamApp::setupStatusBar()
 
     //------------------------------------------------------------------------------
 
-    ProgressView* const view = new ProgressView(statusBar(), this);
-    view->hide();
+    ProgressView* const pview = new ProgressView(statusBar(), this);
+    pview->hide();
 
-    StatusbarProgressWidget* const littleProgress = new StatusbarProgressWidget(view, statusBar());
+    StatusbarProgressWidget* const littleProgress = new StatusbarProgressWidget(pview, statusBar());
     littleProgress->show();
     statusBar()->addPermanentWidget(littleProgress);
 

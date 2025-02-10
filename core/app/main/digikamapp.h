@@ -155,6 +155,7 @@ private:
     void populateThemes();
     void preloadWindows();
     void initGui();
+
 //@}
 
 //@{
@@ -172,6 +173,7 @@ private Q_SLOTS:
     void slotDatabaseMigration();
     void slotDetectFaces();
     void slotCheckFaceTrainingVersion();
+
 //@}
 
 //@{
@@ -188,10 +190,11 @@ private Q_SLOTS:
     void slotSetupChanged();
     void slotEditKeys()                                                 override;
     void slotThemeChanged();
+
 //@}
 
 //@{
-// Import tools methods implemented in digikamapp_import.cpp
+/// Import tools methods implemented in digikamapp_import.cpp
 
 private:
 
@@ -202,10 +205,11 @@ private Q_SLOTS:
     void slotImportedImagefromScanner(const QUrl& url);
     void slotImportAddImages();
     void slotImportAddFolders();
+
 //@}
 
 //@{
-// Camera management methods implemented in digikamapp_camera.cpp
+/// Camera management methods implemented in digikamapp_camera.cpp
 
 public:
 
@@ -232,10 +236,11 @@ private Q_SLOTS:
     void slotOpenCameraUiFromPath(const QString& path);
     void downloadImages(const QString& folder);
     void cameraAutoDetect();
+
 //@}
 
 //@{
-// Solid based methods implemented in digikamapp_solid.cpp
+/// Solid based methods implemented in digikamapp_solid.cpp
 
 Q_SIGNALS:
 
@@ -254,6 +259,7 @@ private Q_SLOTS:
     void slotOpenSolidUsmDevice(QAction*);
     void slotOpenSolidDevice(const QString& udi);
     void slotSolidDeviceChanged(const QString& udi);
+
 //@}
 
 private:

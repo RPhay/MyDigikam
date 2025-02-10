@@ -209,7 +209,9 @@ public:
 
     KSharedConfig::Ptr                  config;
 
+    //@{
     /// Album Actions
+
     QAction*                            newAction                               = nullptr;
     QAction*                            moveSelectionToAlbumAction              = nullptr;
     QAction*                            copySelectionToAction                   = nullptr;
@@ -229,7 +231,11 @@ public:
     QAction*                            writeAlbumMetadataAction                = nullptr;
     QAction*                            readAlbumMetadataAction                 = nullptr;
 
+    //@}
+
+    //@{
     /// Tag Actions
+
     QAction*                            browseTagsAction                        = nullptr;
     QAction*                            openTagMngrAction                       = nullptr;
     QAction*                            newTagAction                            = nullptr;
@@ -237,7 +243,11 @@ public:
     QAction*                            editTagAction                           = nullptr;
     QAction*                            assignTagAction                         = nullptr;
 
-    /// Image Actions
+    //@}
+
+    //@{
+    /// Item Actions
+
     KSelectAction*                      imageViewSelectionAction                = nullptr;
     QAction*                            imagePreviewAction                      = nullptr;
 
@@ -278,7 +288,11 @@ public:
     QAction*                            ieAction                                = nullptr;
     QAction*                            ltAction                                = nullptr;
 
+    //@}
+
+    //@{
     /// Edit Actions
+
     QAction*                            cutItemsAction                          = nullptr;
     QAction*                            copyItemsAction                         = nullptr;
     QAction*                            pasteItemsAction                        = nullptr;
@@ -286,7 +300,11 @@ public:
     QAction*                            selectNoneAction                        = nullptr;
     QAction*                            selectInvertAction                      = nullptr;
 
+    //@}
+
+    //@{
     /// View Actions
+
     QAction*                            zoomPlusAction                          = nullptr;
     QAction*                            zoomMinusAction                         = nullptr;
     QAction*                            zoomFitToWindowAction                   = nullptr;
@@ -302,14 +320,22 @@ public:
     QAction*                            showBarAction                           = nullptr;
     QAction*                            viewCMViewAction                        = nullptr;
 
+    //@}
+
+    //@{
     /// Tools Actions
+
     QAction*                            bqmAction                               = nullptr;
     QAction*                            maintenanceAction                       = nullptr;
     QAction*                            scanNewItemsAction                      = nullptr;
     QAction*                            qualityAction                           = nullptr;
     QAction*                            advSearchAction                         = nullptr;
 
+    //@}
+
+    //@{
     /// Application Actions
+
     QAction*                            addCameraSeparatorAction                = nullptr;
     QAction*                            quitAction                              = nullptr;
     QAction*                            tipAction                               = nullptr;
@@ -318,6 +344,8 @@ public:
     QActionGroup*                       solidCameraActionGroup                  = nullptr;
     QActionGroup*                       solidUsmActionGroup                     = nullptr;
     QActionGroup*                       exifOrientationActionGroup              = nullptr;
+
+    //@}
 
     QMap<QString, QPointer<ImportUI> >  cameraUIMap;
 
