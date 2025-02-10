@@ -123,20 +123,20 @@ ItemCategorizedView::~ItemCategorizedView()
 
 void ItemCategorizedView::installDefaultModels()
 {
-    ItemAlbumModel* model             = new ItemAlbumModel(this);
-    ItemAlbumFilterModel* filterModel = new ItemAlbumFilterModel(this);
+    ItemAlbumModel* const aModel       = new ItemAlbumModel(this);
+    ItemAlbumFilterModel* const fModel = new ItemAlbumFilterModel(this);
 
-    filterModel->setSourceItemModel(model);
+    fModel->setSourceItemModel(aModel);
 
-    filterModel->setSortRole(ItemSortSettings::SortByFileName);
-    filterModel->setCategorizationMode(ItemSortSettings::CategoryByAlbum);
-    filterModel->sort(0); // an initial sorting is necessary
+    fModel->setSortRole(ItemSortSettings::SortByFileName);
+    fModel->setCategorizationMode(ItemSortSettings::CategoryByAlbum);
+    fModel->sort(0); // an initial sorting is necessary
 
     // set flags that we want to get dataChanged() signals for
 
-    model->setWatchFlags(filterModel->suggestedWatchFlags());
+    aModel->setWatchFlags(fModel->suggestedWatchFlags());
 
-    setModels(model, filterModel);
+    setModels(aModel, fModel);
 }
 
 void ItemCategorizedView::setModels(ItemModel* model, ImageSortFilterModel* filterModel)

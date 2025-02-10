@@ -51,13 +51,13 @@ public:
 
     QItemSelectionModel*  getSelectionModel()                                       const;
 
-    /// Returns any ItemFilterMode in chain. May not be sourceModel()
+    /// @return Any ItemFilterMode in chain. May not be sourceModel()
     ItemFilterModel*      itemFilterModel()                                         const;
 
-    /// Returns 0 if the ItemModel is not an ItemThumbnailModel
+    /// @return 0 if the ItemModel is not an ItemThumbnailModel
     ItemThumbnailModel*   itemThumbnailModel()                                      const;
 
-    /// Returns 0 if the ItemModel is not an ItemAlbumModel
+    /// @return 0 if the ItemModel is not an ItemAlbumModel
     ItemAlbumModel*       itemAlbumModel()                                          const;
     ItemAlbumFilterModel* itemAlbumFilterModel()                                    const;
 
@@ -72,15 +72,17 @@ public:
     ItemInfoList          selectedItemInfos()                                       const;
     ItemInfoList          selectedItemInfosCurrentFirst()                           const;
 
-    /** Selects the index as current and scrolls to it.
+    /**
+     * @brief Selects the index as current and scrolls to it.
      */
     void toIndex(const QUrl& url);
 
-    /** Returns the n-th info after the given one.
-     *  Specifically, return the previous info for nth = -1
-     *  and the next info for n = 1.
-     *  Returns a null info if either startingPoint or the nth info are
-     *  not contained in the model.
+    /**
+     * @return The n-th info after the given one.
+     * Specifically, return the previous info for nth = -1
+     * and the next info for n = 1.
+     * A null info is returned if either startingPoint or the nth info are
+     * not contained in the model.
      */
     ItemInfo nextInOrder(const ItemInfo& startingPoint, int nth);
 
@@ -100,14 +102,17 @@ public:
 
     virtual void setThumbnailSize(const ThumbnailSize& size);
 
-    /** If the model is categorized by an album, returns the album of the category
-     *  that contains the position.
-     *  If this is not applicable, return the current album. May return 0.
+    /**
+     * @brief If the model is categorized by an album, returns the album of the category
+     * that contains the position.
+     * If this is not applicable, return the current album. May return 0.
      */
     Album* albumAt(const QPoint& pos)                                               const;
 
-    /// Add and remove an overlay. It will as well be removed automatically when destroyed.
-    /// Unless you pass a different delegate, the current delegate will be used.
+    /**
+     * @brief Add and remove an overlay. It will as well be removed automatically when destroyed.
+     * Unless you pass a different delegate, the current delegate will be used.
+     */
     void addOverlay(ItemDelegateOverlay* overlay, ItemDelegate* delegate = nullptr);
 
     void removeOverlay(ItemDelegateOverlay* overlay);
@@ -120,31 +125,38 @@ public Q_SLOTS:
 
     void setThumbnailSize(int size);
 
-    /** Scroll the view to the given item when it becomes available.
+    /**
+     * @brief Scroll the view to the given item when it becomes available.
      */
     void setCurrentWhenAvailable(qlonglong imageId);
 
-    /** Set as current item when it becomes available, the item identified by its file url.
+    /**
+     * @brief Set as current item when it becomes available, the item identified by its file url.
      */
     void setCurrentUrlWhenAvailable(const QUrl& url);
 
-    /** Set as current item the item identified by its file url.
+    /**
+     * @brief Set as current item the item identified by its file url.
      */
     void setCurrentUrl(const QUrl& url);
 
-    /** Set as current item the item identified by the imageinfo.
+    /**
+     * @brief Set as current item the item identified by the imageinfo.
      */
     void setCurrentInfo(const ItemInfo& info);
 
-    /** Set selected items identified by their file urls.
+    /**
+     * @brief Set selected items identified by their file urls.
      */
     void setSelectedUrls(const QList<QUrl>& urlList);
 
-    /** Set selected items.
+    /**
+     * @brief Set selected items.
      */
     void setSelectedItemInfos(const QList<ItemInfo>& infos);
 
-    /** Does something to gain attention for info, but not changing current selection.
+    /**
+     * @brief Does something to gain attention for info, but not changing current selection.
      */
     void hintAt(const ItemInfo& info);
 
@@ -152,18 +164,22 @@ Q_SIGNALS:
 
     void currentInfoChanged(const ItemInfo& info);
 
-    /// Emitted when new items are selected. The parameter includes only the newly selected infos,
-    /// there may be other already selected infos.
+    /**
+     * @brief Emitted when new items are selected. The parameter includes only the newly selected infos,
+     * there may be other already selected infos.
+     */
     void selected(const QList<ItemInfo>& newSelectedInfos);
 
-    /// Emitted when items are deselected. There may be other selected infos left.
-    /// This signal is not emitted when the model is reset; then only selectionCleared is emitted.
+    /**
+     * @brief Emitted when items are deselected. There may be other selected infos left.
+     * This signal is not emitted when the model is reset; then only selectionCleared is emitted.
+     */
     void deselected(const QList<ItemInfo>& nowDeselectedInfos);
 
-    /// Emitted when the given image is activated. Info is never null.
+    /// @brief Emitted when the given image is activated. Info is never null.
     void imageActivated(const ItemInfo& info);
 
-    /// Emitted when a new model is set
+    /// @brief Emitted when a new model is set
     void modelChanged();
 
 protected Q_SLOTS:
@@ -173,7 +189,7 @@ protected Q_SLOTS:
 
 protected:
 
-    /// install default ItemAlbumModel and filter model, ready for use
+    /// @brief Install default ItemAlbumModel and filter model, ready for use
     void installDefaultModels();
 
     // reimplemented from parent class

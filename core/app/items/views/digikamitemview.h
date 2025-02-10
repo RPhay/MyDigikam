@@ -67,24 +67,24 @@ public Q_SLOTS:
     void setFaceMode(bool on);
 
     /**
-     * Confirm the face with a face tag (name) in the database.
+     * @brief Confirm the face with a face tag (name) in the database.
      */
     void confirmFaces(const QList<QModelIndex>& indexes, int tagId);
 
     /**
-     * Removes the face from the database.
+     * @brief Removes the face from the database.
      * You will have to run face detection again,
      * to recover the face.
      */
     void removeFaces(const QList<QModelIndex>& indexes);
 
     /**
-     * Ignored Face back to Unknown face.
+     * @brief Ignored Face back to Unknown face.
      */
     void unknownFaces(const QList<QModelIndex>& indexes);
 
     /**
-     * This slot is connected to the reject signal of
+     * @brief This slot is connected to the reject signal of
      * AssignNameOverlay, and handles two cases.
      *
      * If reject is done on an Unknown Face,
@@ -97,7 +97,7 @@ public Q_SLOTS:
     void rejectFaces(const QList<QModelIndex>& indexes);
 
     /**
-     * Set Face to Ignore ID.
+     * @brief Set Face to Ignore ID.
      */
     void ignoreFaces(const QList<QModelIndex>& indexes);
 
