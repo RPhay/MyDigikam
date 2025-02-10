@@ -47,14 +47,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-09 01:50+0000\n"
-"PO-Revision-Date: 2025-02-08 10:44+0100\n"
+"PO-Revision-Date: 2025-02-09 12:38+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 24.12.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -35610,22 +35610,19 @@ msgid "aesthetic image quality"
 msgstr "calidad estética de la imagen"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label:image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "Modo de escaneo:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgid "All"
+#, kde-format
 msgctxt "@item:all items to scan with image quality sort"
 msgid "All"
 msgstr "Todo"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item:image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Solo los no asignados"
@@ -39906,22 +39903,19 @@ msgstr ""
 "la base de datos.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
-#, fuzzy, kde-format
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label:autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Modo de escaneo:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "All"
+#, kde-format
 msgctxt "@item:all items to scan with autotags"
 msgid "All"
 msgstr "Todo"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item:autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Solo los no asignados"
@@ -39943,15 +39937,13 @@ msgid "Auto-Tagging Mode:"
 msgstr "Modo de etiquetado automático:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
-#, fuzzy, kde-format
-#| msgid "Replace Existing"
+#, kde-format
 msgctxt "@item:remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Sustituir las existentes"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
-#, fuzzy, kde-format
-#| msgid "Update"
+#, kde-format
 msgctxt "@item:update the autotags entries in database"
 msgid "Update"
 msgstr "Actualizar"
@@ -39970,8 +39962,7 @@ msgstr ""
 "etiquetas existentes.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#, fuzzy, kde-format
-#| msgid "Selection Model:"
+#, kde-format
 msgctxt "@label:deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Modelo de selección:"

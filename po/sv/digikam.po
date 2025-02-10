@@ -44,7 +44,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-09 01:50+0000\n"
-"PO-Revision-Date: 2025-02-08 08:23+0100\n"
+"PO-Revision-Date: 2025-02-09 15:48+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -27512,7 +27512,7 @@ msgstr "Dra ihop alla album"
 #: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
-msgstr "Sök duplikat..."
+msgstr "Sök efter dubbletter..."
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #, kde-format
@@ -35164,22 +35164,19 @@ msgid "aesthetic image quality"
 msgstr "estetisk bildkvalitet"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label:image quality sort scan mode"
 msgid "Scan Mode:"
-msgstr "Sökmetod: "
+msgstr "Sökmetod:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgid "All"
+#, kde-format
 msgctxt "@item:all items to scan with image quality sort"
 msgid "All"
 msgstr "Alla"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item:image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Bara ej tilldelade"
@@ -39431,22 +39428,19 @@ msgstr ""
 "bildinnehållet och lagrar resultaten i databasen.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
-#, fuzzy, kde-format
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label:autotags scanning mode"
 msgid "Scan Mode:"
-msgstr "Sökmetod: "
+msgstr "Sökmetod:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "All"
+#, kde-format
 msgctxt "@item:all items to scan with autotags"
 msgid "All"
 msgstr "Alla"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item:autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Bara ej tilldelade"
@@ -39468,15 +39462,13 @@ msgid "Auto-Tagging Mode:"
 msgstr "Automatiskt etiketteringsläge: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
-#, fuzzy, kde-format
-#| msgid "Replace Existing"
+#, kde-format
 msgctxt "@item:remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Ersätt befintliga"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
-#, fuzzy, kde-format
-#| msgid "Update"
+#, kde-format
 msgctxt "@item:update the autotags entries in database"
 msgid "Update"
 msgstr "Uppdatera"
@@ -39494,11 +39486,10 @@ msgstr ""
 "nya automatiska etiketter som hittats till de befintliga etiketterna.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#, fuzzy, kde-format
-#| msgid "Selection Model:"
+#, kde-format
 msgctxt "@label:deep learning model selection to perform autotags"
 msgid "Selection Model:"
-msgstr "Urvalsmodell: "
+msgstr "Urvalsmodell:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:146
 #, kde-format
@@ -52473,7 +52464,7 @@ msgstr "Använd knappen för att uppdatera alla bilders fingeravtryck."
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
-msgstr "Sök duplikat"
+msgstr "Sök efter dubbletter"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:114
 #, kde-format
@@ -52657,7 +52648,7 @@ msgstr "Använd knappen för att ta bort alla duplicerade bilder."
 #, kde-format
 msgctxt "Find Duplicates Tab"
 msgid "Duplicates"
-msgstr "Duplikat"
+msgstr "Dubbletter"
 
 #: core/utilities/fuzzysearch/fuzzysearchview.cpp:52
 #, kde-format
@@ -60699,7 +60690,7 @@ msgstr "Undanta album med referensbild"
 #: core/utilities/maintenance/main/maintenancedlg.cpp:192
 #, kde-format
 msgid "Find Duplicate Items"
-msgstr "Sök duplicerade objekt"
+msgstr "Sök efter duplicerade objekt"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:203
 #, kde-format
@@ -60919,7 +60910,7 @@ msgstr "Objekt genomsökt för katalogisering: %1"
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:108
 #, kde-format
 msgid "Find duplicates items"
-msgstr "Sök duplicerade objekt"
+msgstr "Sök efter duplicerade objekt"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:169
 #, kde-format

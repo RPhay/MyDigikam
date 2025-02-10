@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-09 01:50+0000\n"
-"PO-Revision-Date: 2025-02-08 09:23+0200\n"
+"PO-Revision-Date: 2025-02-09 08:27+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -35727,22 +35727,19 @@ msgid "aesthetic image quality"
 msgstr "естетична якість зображення"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label:image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "Режим пошуку:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgid "All"
+#, kde-format
 msgctxt "@item:all items to scan with image quality sort"
 msgid "All"
 msgstr "У всіх"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item:image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Лише у записах без призначень"
@@ -40045,22 +40042,19 @@ msgstr ""
 "описують вміст зображення, а отримані мітки буде збережено до бази даних.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
-#, fuzzy, kde-format
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label:autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Режим пошуку:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "All"
+#, kde-format
 msgctxt "@item:all items to scan with autotags"
 msgid "All"
 msgstr "У всіх"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item:autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Лише у записах без призначень"
@@ -40082,15 +40076,13 @@ msgid "Auto-Tagging Mode:"
 msgstr "Режим автоміток: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
-#, fuzzy, kde-format
-#| msgid "Replace Existing"
+#, kde-format
 msgctxt "@item:remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Замінити наявні"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
-#, fuzzy, kde-format
-#| msgid "Update"
+#, kde-format
 msgctxt "@item:update the autotags entries in database"
 msgid "Update"
 msgstr "Оновити"
@@ -40108,8 +40100,7 @@ msgstr ""
 "наявних міток.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#, fuzzy, kde-format
-#| msgid "Selection Model:"
+#, kde-format
 msgctxt "@label:deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Модель вибору:"

@@ -65,7 +65,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-09 01:50+0000\n"
-"PO-Revision-Date: 2025-01-29 08:06+0100\n"
+"PO-Revision-Date: 2025-02-09 12:18+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -73,7 +73,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -2208,12 +2208,10 @@ msgid "By Month"
 msgstr "Por mes"
 
 #: core/app/main/digikamapp_setup.cpp:677
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Date"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Day"
-msgstr "Segundo a data"
+msgstr "Por día"
 
 #: core/app/main/digikamapp_setup.cpp:708
 #, kde-format
@@ -2952,20 +2950,17 @@ msgstr "Mapa"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:78
 #: core/app/views/sidebar/labelssidebarwidget.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality Scan"
-msgstr "Orde por calidade da imaxe"
+msgstr "Exame de calidade de imaxe"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for faces"
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for image quality parsing"
-msgstr "Use este botón para buscar caras nos álbums escollidos."
+msgstr ""
+"Use este botón para buscar análises de calidade de imaxe nos álbums "
+"escollidos."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:164
@@ -3037,8 +3032,7 @@ msgstr "Etiquetas existentes"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:139
-#, fuzzy, kde-format
-#| msgid "Auto-tag scan"
+#, kde-format
 msgid "Auto-tag Scan"
 msgstr "Busca de etiquetaxe automática"
 
@@ -3978,7 +3972,7 @@ msgstr "Ningunha"
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rejected"
-msgstr "Rexeitado"
+msgstr "Rexeitada"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:346
 #, kde-format
@@ -27645,7 +27639,7 @@ msgstr "Sen escolla"
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
-msgstr "Rexeitado"
+msgstr "Rexeitada"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:410
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
@@ -34032,6 +34026,10 @@ msgid ""
 "detect multiple objects in an image. It is trained to recognize 80 different "
 "objects using the COCO dataset.</p>"
 msgstr ""
+"<p><b>YOLOv11 Nano</b>: rede neural pequena e lixeira cunha velocidade "
+"excepcional, pero que pode detectar menos obxectos en imaxes. YOLO pode "
+"detectar varios obxectos por imaxe. Está adestrada para recoñecer 80 "
+"obxectos distintos co conxunto de datos COCO.</p>"
 
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
 #, kde-format
@@ -34047,11 +34045,15 @@ msgid ""
 "slower. YOLO can detect multiple objects in an image. It is trained to "
 "recognize 80 different objects using the COCO dataset.</p>"
 msgstr ""
+"<p><b>YOLOv11 XLarge</b>: rede neural grande e robusta con boa precisión. "
+"Detecta máis obxectos en imaxes que YOLOv11 Nano, pero é máis lenta. YOLO "
+"pode detectar varios obxectos nunha imaxe. Está adestrada para recoñecer 80 "
+"obxectos distintos co conxunto de datos COCO.</p>"
 
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
 #, kde-format
 msgid "EfficientNet B7"
-msgstr ""
+msgstr "EfficientNet B7"
 
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:358
 #, kde-format
@@ -34062,6 +34064,10 @@ msgid ""
 "was trained to recognize 1,000 different objects using the ImageNet dataset."
 "</p>"
 msgstr ""
+"<p><b>EfficientNet B7</b>: rede neural convolucionada grande e potente. Pode "
+"detectar un único obxecto nunha imaxe con gran precisión. EfficientNet B7 "
+"adestrouse para recoñecer 1000 obxectos distintos mediante o conxunto de "
+"datos ImageNet.</p>"
 
 #: core/libs/dplugins/core/dpluginaction.cpp:94
 #, kde-format
@@ -35369,19 +35375,7 @@ msgid "Search in"
 msgstr "Buscar en"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "These settings determines the quality of an image and convert it into a "
-#| "score, stored in database as Pick Label property. This information can be "
-#| "evaluated by two ways: using four basic factors sabotaging the images "
-#| "(blur, noise, exposure, and compression), or using a deep learning neural "
-#| "network engine. The first one helps to determine whether images are "
-#| "distorted by the basic factors, however it demands some drawbacks as fine-"
-#| "tuning from the user’s side and it cannot work along the aesthetic image "
-#| "processing. The second one uses an IA approach based on %1 model to "
-#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
-#| "require hyper-parameter settings, and make this feature easier to use."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "These settings determines the quality of an image and convert it into a "
@@ -35436,134 +35430,107 @@ msgid "Non-Assigned Only"
 msgstr "Examinar só o non asignado"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-"
-#| "assigned only</b>: scan only the items with no assigned autotags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>All</b>: re-scan all items for quality.</p><p><b>Non-Assigned Only</"
 "b>: scan only the items with no assigned auto-pick labels.</p>"
 msgstr ""
-"<p><b>Buscar en todo</b>: buscar etiquetas de novo en todos os elementos.</"
-"p><p><b>Buscar só no non asignado</b>: buscar só nos elementos sen etiquetas "
+"<p><b>Todo</b>: examinar de novo todos os elementos en busca de calidades.</"
+"p><p><b>Só no non asignado</b>: buscar só nos elementos sen etiquetas "
 "automáticas asignadas.</p>"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@option:check"
 msgid "Assign Low Quality to Rejected Label"
-msgstr "Asignar as etiquetas aos elementos &seleccionados"
+msgstr "Asignar a etiqueta «Rexeitada» ás calidades baixas."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Low quality images detected by blur, noise, and compression analysis will "
-#| "be assigned to Rejected label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Low quality images detected by the quality engine\n"
 "will be assigned to the rejected pick label (red flag)."
 msgstr ""
-"Ás imaxes de baixa calidade detectadas polas análises de desenfoque, ruído e "
-"compresión ha asignárselles a etiqueta «Rexeitado»."
+"Ás imaxes de baixa calidade detectadas polo motor de calidade asignaráselles "
+"a etiqueta «Rexeitada» (vermella)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:108
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign Medium Quality to Pending Label"
-msgstr ""
+msgstr "Asignar a etiqueta «Pendente» ás calidades medias."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Medium quality images detected by blur, noise, and compression analysis "
-#| "will be assigned to Pending label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Medium quality images detected by the quality engine\n"
 "will be assigned to the pending pick label (yellow flag)."
 msgstr ""
-"Ás imaxes de calidade media detectadas polas análises de desenfoque, ruído e "
-"compresión ha asignárselles a etiqueta «Pendente»."
+"Ás imaxes de calidade media detectadas polo motor de calidade asignaráselles "
+"a etiqueta «Pendente» (amarela)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:122
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign High Quality to Accepted Label"
-msgstr ""
+msgstr "Asignar a etiqueta «Aceptada» ás calidades altas."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "High quality images detected by blur, noise, and compression analysis "
-#| "will be assigned to Accepted label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "High quality images detected by the quality engine\n"
 "will be assigned to the accepted pick label (green flag)."
 msgstr ""
-"Ás imaxes de alta calidade detectadas polas análises de desenfoque, ruído e "
-"compresión ha asignárselles a etiqueta «Aceptada»."
+"Ás imaxes de alta calidade detectadas polo motor de calidade asignaráselles "
+"a etiqueta «Aceptada» (verde)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "Quality:"
+#, kde-format
 msgctxt "@label"
 msgid "Quality Engine:"
-msgstr "Calidade:"
+msgstr "Motor de calidade:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:139
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Aesthetic Image using Deep Learning"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Contents"
-msgstr "Detectar unha imaxe estética mediante aprendizaxe profunda"
+msgstr "Detectar contidos estéticos."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detect if the image has aesthetic value.\n"
-#| "The aesthetic detection engine use deep learning model to classify images"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image has aesthetic contents.\n"
 "The aesthetic detection engine is based on a deep learning model to classify "
 "images."
 msgstr ""
-"Detectar se a imaxe ten valor estético.\n"
-"O motor de detección estética usa un modelo de aprendizaxe profunda para "
-"clasificar imaxes."
+"Detectar se a imaxe ten contido estético.\n"
+"O motor de detección estética baséase nun modelo de aprendizaxe profunda "
+"para clasificar imaxes."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Quality Using Basic Factors"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Detect by Basic Factors"
-msgstr "Detectar a calidade mediante factores básicos"
+msgstr "Detectar mediante factores básicos."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detect if the image is sabotaging by four basic factors (blur, noise, "
-#| "exposure, and compression)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image is sabotaging using four basic factors\n"
 "eg. blur, noise, exposure (under / over), and compression levels.\n"
 "See the relevant settings from the next <b>Basic Factors</b> tab."
 msgstr ""
-"Detectar se a imaxe está sabotando por catro factores básicos (desenfoque, "
-"ruído, exposición e compresión)."
+"Detectar se a imaxe está sabotando mediante catro factores básicos,\n"
+"p. ex. desenfoque, ruído, exposición (excesiva ou insuficiente) e niveis de "
+"compresión.\n"
+"Consulte as opcións correspondentes na seguinte lapela, <b>Factores básicos</"
+"b>."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:169
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
@@ -35584,7 +35551,7 @@ msgstr "Límite para rexeitar:"
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr ""
-"O límite por baixo do cal as imaxes han asignarse á etiqueta «Rexeitado»."
+"O límite por baixo do cal as imaxes han asignarse á etiqueta «Rexeitada»."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
 #, kde-format
@@ -39749,25 +39716,20 @@ msgid "Non-Assigned Only"
 msgstr "Examinar só o non asignado"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-"
-#| "assigned only</b>: scan only the items with no assigned autotags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>All</b>: re-scan all items for tags.</p><p><b>Non-Assigned Only</b>: "
 "scan only the items with no assigned autotags.</p>"
 msgstr ""
-"<p><b>Buscar en todo</b>: buscar etiquetas de novo en todos os elementos.</"
-"p><p><b>Buscar só no non asignado</b>: buscar só nos elementos sen etiquetas "
-"automáticas asignadas.</p>"
+"<p><b>Todo</b>: buscar etiquetas de novo en todos os elementos.</p><p><b>Só "
+"no non asignado</b>: buscar só nos elementos sen etiquetas automáticas "
+"asignadas.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Auto-tagging tag mode: "
+#, kde-format
 msgid "Auto-Tagging Mode:"
-msgstr "Modo de etiqueta da etiquetaxe automática: "
+msgstr "Moto de etiquetado automático:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
@@ -39785,22 +39747,17 @@ msgid "Update"
 msgstr "Actualización"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Replace existing autotags</b>: clear existing autotags and replace "
-#| "with the results of the scan.</p><p><b>Update autotags</b>: add any new "
-#| "autotags found to the existing tags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Replace Existing</b>: clear existing autotags and replace with the "
 "results of the scan.</p><p><b>Update</b>: add any new autotags found to the "
 "existing tags.</p>"
 msgstr ""
-"<p><b>Substituír as etiquetas automáticas existentes</b>: borrar as "
-"etiquetas automáticas existentes e substituílas polo resultado da busca.</"
-"p><p><b>Actualizar as etiquetas automáticas</b>: engadir calquera nova "
-"etiqueta automática atopada ás etiquetas existentes.</p>"
+"<p><b>Substituír as existentes</b>: borrar as etiquetas automáticas "
+"existentes e substituílas polo resultado da busca.</p><p><b>Actualizar</b>: "
+"engadir calquera nova etiqueta automática atopada ás etiquetas existentes.</"
+"p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, fuzzy, kde-format
@@ -39810,16 +39767,14 @@ msgid "Selection Model:"
 msgstr "Modelo de selección: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:146
-#, fuzzy, kde-format
-#| msgid "No detail available"
+#, kde-format
 msgid "No models available"
-msgstr "Non hai detalles dispoñíbeis"
+msgstr "Non hai modelos dispoñíbeis."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
-#, fuzzy, kde-format
-#| msgid "Object Detection Accuracy: "
+#, kde-format
 msgid "Detection Accuracy:"
-msgstr "Precisión da detección de obxectos: "
+msgstr "Precisión da detección:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
 #, kde-format
@@ -52090,12 +52045,10 @@ msgid "No address book entries found"
 msgstr "Non se atoparon entradas na axenda de enderezos."
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Facial Recognition Model"
+#, kde-format
 msgctxt "@title:window"
 msgid "Facial Recognition Database"
-msgstr "Modelo de recoñecemento facial"
+msgstr "Base de datos de recoñecemento facial"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:65
 #, kde-format
@@ -52108,6 +52061,13 @@ msgid ""
 "\n"
 "Do you want to retrain your database now?"
 msgstr ""
+"A súa base de datos de recoñecemento facial está obsoleta e necesita un novo "
+"adestramento. O proceso pode levar entre uns poucos segundos e varios "
+"minutos. O recoñecemento facial non funcionará ben ata que remate o "
+"adestramento. O adestramento realizarase en segundo plano, así que poderá "
+"continuar usando digiKam.\n"
+"\n"
+"Quere adestrar de novo a base de datos agora?"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:82
 #, kde-format

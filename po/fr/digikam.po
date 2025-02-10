@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-09 01:50+0000\n"
-"PO-Revision-Date: 2025-02-05 18:01+0100\n"
+"PO-Revision-Date: 2025-02-08 10:14+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -79,7 +79,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 24.12.2\n"
 "X-Text-Markup: kde4\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -2986,22 +2986,17 @@ msgstr "Carte"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:78
 #: core/app/views/sidebar/labelssidebarwidget.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality Scan"
-msgstr "Tri d'images par qualité"
+msgstr "Analyse de la qualité d'image"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for faces"
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for image quality parsing"
 msgstr ""
-"Utilisez ce bouton pour analyser les albums sélectionnés à la recherche de "
-"visages."
+"Utilisez ce bouton pour parcourir les albums sélectionnés en analysant la "
+"qualité de leurs images"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:164
@@ -3075,8 +3070,7 @@ msgstr "Étiquettes existantes"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:139
-#, fuzzy, kde-format
-#| msgid "Auto-tag scan"
+#, kde-format
 msgid "Auto-tag Scan"
 msgstr "Analyse de l'étiquetage automatique"
 
@@ -34476,6 +34470,11 @@ msgid ""
 "detect multiple objects in an image. It is trained to recognize 80 different "
 "objects using the COCO dataset.</p>"
 msgstr ""
+"<p><b>YOLOv11 Nano</b> : petit réseau neuronal léger offrant une vitesse "
+"exceptionnelle. Cependant, il peut rater l'identification de nombreux objets "
+"dans les images. Yolo peut détecter plusieurs objets dans une image. Il est "
+"formé pour reconnaître 80 objets différents à l'aide de l'ensemble de "
+"données « COCO ».</p>"
 
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
 #, kde-format
@@ -34491,6 +34490,11 @@ msgid ""
 "slower. YOLO can detect multiple objects in an image. It is trained to "
 "recognize 80 different objects using the COCO dataset.</p>"
 msgstr ""
+"<p><b>YOLOv11 XLarge</b> : grand réseau neuronal robuste offrant une bonne "
+"précision. Il détectera plus d'objets dans les images que YOLOv11 Nano, mais "
+"il est plus lent. Yolo peut détecter plusieurs objets dans une image. Il est "
+"formé pour reconnaître 80 objets différents à l'aide de l'ensemble de "
+"données « COCO ».</p>"
 
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
 #, kde-format
@@ -35824,19 +35828,7 @@ msgid "Search in"
 msgstr "Chercher dans"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "These settings determines the quality of an image and convert it into a "
-#| "score, stored in database as Pick Label property. This information can be "
-#| "evaluated by two ways: using four basic factors sabotaging the images "
-#| "(blur, noise, exposure, and compression), or using a deep learning neural "
-#| "network engine. The first one helps to determine whether images are "
-#| "distorted by the basic factors, however it demands some drawbacks as fine-"
-#| "tuning from the user’s side and it cannot work along the aesthetic image "
-#| "processing. The second one uses an IA approach based on %1 model to "
-#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
-#| "require hyper-parameter settings, and make this feature easier to use."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "These settings determines the quality of an image and convert it into a "
@@ -35852,17 +35844,17 @@ msgid ""
 msgstr ""
 "Ces paramètres déterminent la qualité d'une image et la convertissent en un "
 "score, enregistré dans la base de données comme propriété « Étiquette de "
-"sélection ». Cette information peut être calculée de deux manières : en "
-"utilisant quatre facteurs de base sabotant les images (flou, bruit, "
-"exposition et compression), ou en utilisant un moteur de réseau neuronal "
+"sélection ». Cette information peut être calculée de deux manières : en "
+"utilisant quatre facteurs de base sabotant les images (Flou, bruit, "
+"exposition et compression) ou en utilisant un moteur de réseau neuronal "
 "d'apprentissage profond. La première méthode permet de déterminer si les "
-"images sont déformées par les facteurs de base, mais elle présente certains "
+"images sont déformées par les facteurs de base. Mais, elle présente certains "
 "inconvénients, comme la nécessité d'un réglage fin de la part de "
-"l'utilisateur, et elle ne peut pas fonctionner dans le cadre du traitement "
+"l'utilisateur. Elle ne peut pas fonctionner dans le cadre du traitement "
 "esthétique des images. La seconde utilise une approche d'intelligence "
 "artificielle, reposant sur le modèle %1 pour prédire le score. "
 "L'apprentissage profond étant une solution de bout en bout, il ne nécessite "
-"aucun configuration hyper-paramétriques, ce qui rend cette fonction plus "
+"aucun configuration hyper-paramétrique, ce qui rend cette fonction plus "
 "facile à utiliser."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:76
@@ -40232,19 +40224,15 @@ msgid "Non-Assigned Only"
 msgstr "Analyser seulement ce qui n'est pas affecté"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-"
-#| "assigned only</b>: scan only the items with no assigned autotags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>All</b>: re-scan all items for tags.</p><p><b>Non-Assigned Only</b>: "
 "scan only the items with no assigned autotags.</p>"
 msgstr ""
-"<p><b>Tout analyser</b> : nouvelle analyse de tous les éléments à la "
-"recherche d'étiquettes.</p><p><b>analyse uniquement des éléments n'ayant "
-"aucune étiquette automatique associée.</p>."
+"<p><b>Tout</b> : analyser à nouveau tous les éléments à la recherche "
+"d'étiquettes.</p><p><b>Uniquement les non associés : analyser uniquement les "
+"éléments n'ayant aucune étiquette automatique associée.</p>."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
 #, fuzzy, kde-format
