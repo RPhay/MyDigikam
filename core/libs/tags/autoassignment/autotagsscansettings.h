@@ -27,6 +27,8 @@
 #include "digikam_export.h"
 #include "dnnmodeldefinitions.h"
 
+class KConfigGroup;
+
 namespace Digikam
 {
 
@@ -66,6 +68,13 @@ public:
 
 public:
 
+    void readFromConfig();
+    void readFromConfig(const KConfigGroup&);
+    void writeToConfig();
+    void writeToConfig(KConfigGroup&);
+
+public:
+
     /// Scanning mode.
     ScanMode                                scanMode                    = ScanMode::AllItems;
 
@@ -81,9 +90,6 @@ public:
     /// Object Detection Model.
     QString                                 objectDetectModel           = QStringLiteral("yolov11-nano");
 
-    /// Object Detection Model.
-    QString                                 imageClassificationModel    = QStringLiteral("efficientnet-b7");
-
     /// Albums to scan.
     AlbumList                               albums;
 
@@ -95,6 +101,16 @@ public:
 
     /// Set true for BQM
     bool                                    bqmMode                     = false;
+
+private:
+
+    const QString                           configName                  = QLatin1String("Autotags Settings");
+    const QString                           configScanMode              = QLatin1String("Scan Mode");
+    const QString                           configTagMode               = QLatin1String("Tag Mode");
+    const QString                           configObjectDetectModel     = QLatin1String("Object Detection Model");
+    const QString                           configObjectDetectAccuracy  = QLatin1String("Object Detection Accuracy");
+    const QString                           configLanguages             = QLatin1String("Languages");
+    const QString                           configUseFullCpu            = QLatin1String("Use Full CPU");
 };
 
 //! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.

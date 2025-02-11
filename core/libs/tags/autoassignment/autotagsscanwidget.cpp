@@ -43,15 +43,16 @@ void AutotagsScanWidget::doLoadState()
     d->albumSelectors->loadState();
 
     AutotagsScanSettings prm;
+    prm.readFromConfig(group);
 
-    int tagScanMode             = d->scanMode->findData(group.readEntry(d->configScanMode, (int)prm.scanMode));
+    int tagScanMode             = d->scanMode->findData(prm.scanMode);
     d->scanMode->setCurrentIndex(tagScanMode);
 
-    int tagTagMode              = d->tagMode->findData(group.readEntry(d->configTagMode, (int)prm.tagMode));
+    int tagTagMode              = d->tagMode->findData(prm.tagMode);
     d->tagMode->setCurrentIndex(tagTagMode);
 
-    int objectDetectModel       = d->objectDetectModel->findData(group.readEntry(d->configObjectDetectModel,
-                                                                 (QString)prm.objectDetectModel));
+    int objectDetectModel       = d->objectDetectModel->findData(prm.objectDetectModel);
+
     if (objectDetectModel < 0)
     {
         objectDetectModel = 0;
@@ -59,14 +60,13 @@ void AutotagsScanWidget::doLoadState()
 
     d->objectDetectModel->setCurrentIndex(objectDetectModel);
 
-    d->accuracyInput->setValue(group.readEntry(d->configObjectDetectAccuracy, prm.uiConfidenceThreshold));
+    d->accuracyInput->setValue(prm.uiConfidenceThreshold);
 
-    d->useFullCpuButton->setChecked(group.readEntry(d->configObjectDetectAccuracy, prm.useFullCpu));
+    d->useFullCpuButton->setChecked(prm.useFullCpu);
 
     d->trSelectorList->clearLanguages();
-    const auto lgs              = group.readEntry(d->configLanguages, prm.languages);
 
-    for (const QString& lg : lgs)
+    for (const QString& lg : std::as_const(prm.languages))
     {
         d->trSelectorList->addLanguage(lg);
     }
@@ -75,15 +75,10 @@ void AutotagsScanWidget::doLoadState()
 void AutotagsScanWidget::doSaveState()
 {
     KConfigGroup group       = getConfigGroup();
-    AutotagsScanSettings prm = settings();
-
     d->albumSelectors->saveState();
 
-    group.writeEntry(d->configScanMode,             (int)prm.scanMode);
-    group.writeEntry(d->configTagMode,              (int)prm.tagMode);
-    group.writeEntry(d->configObjectDetectModel,    prm.objectDetectModel);
-    group.writeEntry(d->configObjectDetectAccuracy, (int)prm.uiConfidenceThreshold);
-    group.writeEntry(d->configLanguages,            prm.languages);
+    AutotagsScanSettings prm = settings();
+    prm.writeToConfig(group);
 }
 
 void AutotagsScanWidget::setupUi()

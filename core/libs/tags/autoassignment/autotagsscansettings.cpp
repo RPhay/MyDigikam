@@ -15,6 +15,11 @@
 
 #include "autotagsscansettings.h"
 
+// KDE includes
+
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
+
 namespace Digikam
 {
 
@@ -24,7 +29,6 @@ AutotagsScanSettings::AutotagsScanSettings(const AutotagsScanSettings& other)
       tagMode                 (other.tagMode),
       useFullCpu              (other.useFullCpu),
       objectDetectModel       (other.objectDetectModel),
-      imageClassificationModel(other.imageClassificationModel),
       albums                  (other.albums),
       uiConfidenceThreshold   (other.uiConfidenceThreshold),
       languages               (other.languages),
@@ -39,7 +43,6 @@ AutotagsScanSettings& AutotagsScanSettings::operator=(const AutotagsScanSettings
     tagMode                  = other.tagMode;
     useFullCpu               = other.useFullCpu;
     objectDetectModel        = other.objectDetectModel;
-    imageClassificationModel = other.imageClassificationModel;
     albums                   = other.albums;
     uiConfidenceThreshold    = other.uiConfidenceThreshold;
     languages                = other.languages;
@@ -48,16 +51,55 @@ AutotagsScanSettings& AutotagsScanSettings::operator=(const AutotagsScanSettings
     return *this;
 }
 
+void AutotagsScanSettings::readFromConfig()
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(configName);
+    readFromConfig(group);
+}
+
+void AutotagsScanSettings::readFromConfig(const KConfigGroup& group)
+{
+    scanMode              = (ScanMode)group.readEntry(configScanMode,   (int)ScanMode::AllItems);
+
+    // NOTE: Album settings are handled by AlbumSelector widget.
+
+    tagMode               = (TagMode)group.readEntry(configTagMode,     (int)TagMode::Replace);
+    useFullCpu            = group.readEntry(configUseFullCpu,           false);
+    objectDetectModel     = group.readEntry(configObjectDetectModel,    QString::fromLatin1("yolov11-nano"));
+    uiConfidenceThreshold = group.readEntry(configObjectDetectAccuracy, 7);
+    languages             = group.readEntry(configLanguages,            QStringList());
+}
+
+void AutotagsScanSettings::writeToConfig()
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(configName);
+    writeToConfig(group);
+}
+
+void AutotagsScanSettings::writeToConfig(KConfigGroup& group)
+{
+    group.writeEntry(configScanMode,             (int)scanMode);
+
+    // NOTE: Album settings are handled by AlbumSelector widget.
+
+    group.writeEntry(configTagMode,              (int)tagMode);
+    group.writeEntry(configUseFullCpu,           useFullCpu);
+    group.writeEntry(configObjectDetectModel,    objectDetectModel);
+    group.writeEntry(configObjectDetectAccuracy, (int)uiConfidenceThreshold);
+    group.writeEntry(configLanguages,            languages);
+}
+
 QDebug operator<<(QDebug dbg, const AutotagsScanSettings& s)
 {
     dbg.nospace()                                                                << Qt::endl;
     dbg.nospace() << "Scan Mode                 :" << s.scanMode                 << Qt::endl;
+    dbg.nospace() << "Albums                    :" << s.albums                   << Qt::endl;
     dbg.nospace() << "Whole Albums              :" << s.wholeAlbums              << Qt::endl;
     dbg.nospace() << "Tag Mode                  :" << s.tagMode                  << Qt::endl;
     dbg.nospace() << "Use Full CPU              :" << s.useFullCpu               << Qt::endl;
     dbg.nospace() << "Object Detect Model       :" << s.objectDetectModel        << Qt::endl;
-    dbg.nospace() << "Image Classification Model:" << s.imageClassificationModel << Qt::endl;
-    dbg.nospace() << "Albums                    :" << s.albums                   << Qt::endl;
     dbg.nospace() << "Confidence Threshold      :" << s.uiConfidenceThreshold    << Qt::endl;
     dbg.nospace() << "Languages                 :" << s.languages                << Qt::endl;
     dbg.nospace() << "Bqm Mode                  :" << s.bqmMode                  << Qt::endl;
