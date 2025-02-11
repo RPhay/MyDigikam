@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-09 01:50+0000\n"
+"POT-Creation-Date: 2025-02-11 01:59+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2157,12 +2157,10 @@ msgid "By Month"
 msgstr "Podle měsíce"
 
 #: core/app/main/digikamapp_setup.cpp:677
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Date"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Day"
-msgstr "Podle data"
+msgstr ""
 
 #: core/app/main/digikamapp_setup.cpp:708
 #, kde-format
@@ -2892,22 +2890,15 @@ msgstr "Mapa"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:78
 #: core/app/views/sidebar/labelssidebarwidget.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality Scan"
-msgstr "Řazení podle kvality obrázků"
+msgstr ""
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for image quality parsing"
 msgstr ""
-"Použijte toto tlačítko k prohledání vybraného alba a nalezení položek, které "
-"se vyskytují vícekrát."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:164
@@ -2974,21 +2965,15 @@ msgstr "Existující značky"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:139
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Autostart Search"
+#, kde-format
 msgid "Auto-tag Scan"
-msgstr "Automatické hledání"
+msgstr ""
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
 msgstr ""
-"Použijte toto tlačítko k prohledání vybraného alba a nalezení položek, které "
-"se vyskytují vícekrát."
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:298
 #, kde-format
@@ -3164,10 +3149,9 @@ msgstr "Poslední hledání"
 
 #: core/app/views/stack/itemiconview_search.cpp:67
 #: core/app/views/stack/itemiconview_search.cpp:114
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgid "FacesEngine"
-msgstr "Obličeje"
+msgstr ""
 
 #: core/app/views/stack/itemiconview_search.cpp:69
 #: core/app/views/stack/itemiconview_search.cpp:116
@@ -3284,18 +3268,16 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Opravdu si přejete VŠECHNY položky navždy smazat?"
 
 #: core/app/views/stack/trashview.cpp:447
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
-msgstr "Výběr"
+msgstr ""
 
 #: core/app/views/stack/trashview.cpp:449
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
-msgstr "Smazat"
+msgstr ""
 
 #: core/app/views/stack/trashview.cpp:516
 #, kde-format
@@ -6474,40 +6456,33 @@ msgstr[1] "Obrovský (%1 pixely)"
 msgstr[2] "Obrovský (%1 pixelů)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:170
-#, fuzzy, kde-format
-#| msgid "Big (1 pixel)"
-#| msgid_plural "Big (%1 pixels)"
+#, kde-format
 msgid "QXGA (1 pixel)"
 msgid_plural "QXGA (%1 pixels)"
-msgstr[0] "Velký (1 pixel)"
-msgstr[1] "Velký (%1 pixely)"
-msgstr[2] "Velký (%1 pixelů)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:171
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "QHD (1 pixel)"
 msgid_plural "QHD (%1 pixels)"
-msgstr[0] "Obrovský (1 pixel)"
-msgstr[1] "Obrovský (%1 pixely)"
-msgstr[2] "Obrovský (%1 pixelů)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:172
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "UHD (1 pixel)"
 msgid_plural "UHD (%1 pixels)"
-msgstr[0] "Obrovský (1 pixel)"
-msgstr[1] "Obrovský (%1 pixely)"
-msgstr[2] "Obrovský (%1 pixelů)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:174
-#, fuzzy, kde-format
-#| msgid "Not enlarge small images"
+#, kde-format
 msgid "Do Not Enlarge Small Images"
-msgstr "Nezvětšovat malé obrázky"
+msgstr ""
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:175
 #, kde-format
@@ -16546,10 +16521,9 @@ msgstr "Nástroje pro vrstvené obrázky"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:124
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
-#, fuzzy, kde-format
-#| msgid "Could not save image to file '%1'"
+#, kde-format
 msgid "Could not copy image to file '%1'"
-msgstr "Nelze uložit obrázek do souboru '%1'"
+msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:172
 #, kde-format
@@ -21500,12 +21474,10 @@ msgstr "Nebyl vybrán žádný obrázek. Prosím vyberte obrázky pro odeslání
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Warning"
-msgstr "Varování"
+msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:248
 #: core/dplugins/generic/webservices/google/gswindow.cpp:519
@@ -21522,11 +21494,10 @@ msgstr "Ověření totožnosti selhalo. Klikněte na \"Pokračovat\" pro ověře
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Continue"
-msgstr "Pokračovat"
+msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/google/gswindow.cpp:523
@@ -21534,11 +21505,10 @@ msgstr "Pokračovat"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Cancel"
-msgstr "Zrušit"
+msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:280
 #: core/dplugins/generic/webservices/google/gswindow.cpp:380
@@ -22596,12 +22566,10 @@ msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgstr "Selhalo získávání informací o sadách fotografií z %1. %2\n"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:821
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window failed add photo"
 msgid "Warning"
-msgstr "Varování"
+msgstr ""
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:822
 #, kde-format
@@ -22613,18 +22581,16 @@ msgstr ""
 "Přejete si pokračovat?"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:826
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Continue"
-msgstr "Pokračovat"
+msgstr ""
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:827
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Cancel"
-msgstr "Zrušit"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:433
 #, kde-format
@@ -22915,43 +22881,35 @@ msgstr "Volání Google Drive selhalo: %1\n"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Error"
-msgstr "Chyba"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, fuzzy, kde-format
-#| msgid "%v / %m"
+#, kde-format
 msgctxt "@info: progress bar start transfert"
 msgid "%v / %m"
-msgstr "%v / %m"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Drive export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Drive export"
-msgstr "Export do Google Drive"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Photo export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Photo export"
-msgstr "Export do Google Photo"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1007
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Warning"
-msgstr "Varování"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:987
 #, kde-format
@@ -22965,19 +22923,17 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:991
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1012
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Continue"
-msgstr "Pokračovat"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:992
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1013
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Cancel"
-msgstr "Zrušit"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1008
 #, kde-format
@@ -22990,11 +22946,10 @@ msgstr ""
 "Přejete si pokračovat?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1034
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Error"
-msgstr "Chyba"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1035
 #, kde-format
@@ -23003,12 +22958,10 @@ msgid "Failed to save image to %1"
 msgstr "Chyba při ukládání obrázku do %1"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1056
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window add photo done"
 msgid "Warning"
-msgstr "Varování"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1057
 #, kde-format
@@ -23023,26 +22976,22 @@ msgstr ""
 "Přejete si pokračovat?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1062
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Continue"
-msgstr "Pokračovat"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1063
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Cancel"
-msgstr "Zrušit"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1106
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window upload photo done"
 msgid "Warning"
-msgstr "Varování"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1107
 #, kde-format
@@ -23057,19 +23006,17 @@ msgstr ""
 "Na váš účet nebyla odeslána žádná fotografie."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1112
-#, fuzzy, kde-format
-#| msgid "OK"
+#, kde-format
 msgctxt "@action: button upload photo done"
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1265
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1282
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window create folder"
 msgid "Error"
-msgstr "Chyba"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1266
 #, kde-format
@@ -23093,12 +23040,10 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1324
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:657
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window change user"
 msgid "Warning"
-msgstr "Varování"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1325
 #, kde-format
@@ -23110,19 +23055,17 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1329
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:662
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Continue"
-msgstr "Pokračovat"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1330
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:663
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Cancel"
-msgstr "Zrušit"
+msgstr ""
 
 #: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:44
 #, kde-format
@@ -23409,10 +23352,9 @@ msgid "Export to &iNaturalist..."
 msgstr "Exportovat do &iNaturalist..."
 
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:259
-#, fuzzy, kde-format
-#| msgid "We're pretty sure it's in this %1."
+#, kde-format
 msgid "We are pretty sure it is in this %1."
-msgstr "Jsme si dost jisti, že je v tomto %1."
+msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:269
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:274
@@ -26339,10 +26281,9 @@ msgstr "Přejete si sloučit značku '%1' do značky '%2'?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:627
 #: core/libs/album/manager/albummanager_talbum.cpp:1141
-#, fuzzy, kde-format
-#| msgid "Do not ask again"
+#, kde-format
 msgid "Do not ask again at this session"
-msgstr "Znovu se nedotazovat"
+msgstr ""
 
 #: core/libs/album/manager/albummanager_talbum.cpp:703
 #, kde-format
@@ -26891,20 +26832,16 @@ msgstr "Všechna alba"
 
 #: core/libs/album/widgets/albumselectors.cpp:176
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@option"
 msgid "Recursive selection"
-msgstr "Rekurzivní výběr."
+msgstr ""
 
 #: core/libs/album/widgets/albumselectors.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive album selection."
-msgstr "Rekurzivní výběr."
+msgstr ""
 
 #: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
@@ -26931,12 +26868,10 @@ msgid "All tags"
 msgstr "Všechny značky"
 
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive tags selection."
-msgstr "Rekurzivní výběr."
+msgstr ""
 
 #: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format
@@ -28279,18 +28214,7 @@ msgstr ""
 "následující SQL příkazy (vyměňte <b><i>password</i></b> za vaše heslo).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have problems with a MySQL server on Ubuntu "
-#| "based Linux system, use the addition command in the mysql prompt to be "
-#| "able to create MySQL triggers.<br>SET GLOBAL "
-#| "log_bin_trust_function_creators=1;</p><p>NOTE: If you have an enormous "
-#| "collection, you should start MySQL server with mysql --"
-#| "max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -28303,16 +28227,6 @@ msgid ""
 "with mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the "
 "settings</p>"
 msgstr ""
-"<p>Poznámka: Na Linuxu můžete databázi vytvořit následujícími příkazy:</"
-"p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u root</p><p>...</"
-"p><p>Do příkazové řádky MySQL vložte výše uvedený SQL kód pro vytvoření "
-"databáze digiKamu se správnými právy</p><p>...</p><p>quit</p><p>Poznámka: "
-"Pokud máte na Ubuntu problém se serverem MySQL, zadejte, použijte další "
-"příkaz v příkazové řádce mysql, abyste vytvořili spouštěče MySQL.<br>SET "
-"GLOBAL log_bin_trust_function_creators=1;<br><p>Poznámka: Pokud máte "
-"obrovskou sbírku obrázků, můžete spustit MySQL server příkazem mysql --"
-"max_allowed_packet=128M nebo v souboru my.ini či ~/.my.cnf změnit nastavení</"
-"p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
 #, kde-format
@@ -33318,12 +33232,10 @@ msgid "JPEG Quality:"
 msgstr "Kvalita JPEG:"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "&Start"
+#, kde-format
 msgctxt "@action: button to start processing"
 msgid "&Start"
-msgstr "&Spustit"
+msgstr ""
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:100
 #: core/libs/onlineversion/onlineversiondlg.cpp:308
@@ -34099,23 +34011,24 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
 #, fuzzy, kde-format
-#| msgid "Scan Mode: "
-msgctxt "@label:image quality sort scan mode"
+#| msgctxt "camera model"
+#| msgid "Model:"
+msgctxt "@label: image quality sort scan mode"
 msgid "Scan Mode:"
-msgstr "Režim procházení: "
+msgstr "Model:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "In All"
-msgctxt "@item:all items to scan with image quality sort"
+msgctxt "@item: all items to scan with image quality sort"
 msgid "All"
 msgstr "Ve všech"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
 #, fuzzy, kde-format
 #| msgid "Assigned Tools"
-msgctxt "@item:image quality sort only non assigned items"
+msgctxt "@item: image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Přidělené nástroje"
 
@@ -34128,25 +34041,18 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@option:check"
 msgid "Assign Low Quality to Rejected Label"
-msgstr "Na&stavit značky označeným položkám"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Low quality images detected by blur, noise, and compression analysis will "
-#| "be assigned to Rejected label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Low quality images detected by the quality engine\n"
 "will be assigned to the rejected pick label (red flag)."
 msgstr ""
-"Obrázky vyhodnocené na základě analýzy rozmazání, šumu a komprese jako "
-"nekvalitní budou označené popiskem 'Odmítnuto'."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:108
 #, kde-format
@@ -34155,18 +34061,12 @@ msgid "Assign Medium Quality to Pending Label"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Medium quality images detected by blur, noise, and compression analysis "
-#| "will be assigned to Pending label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Medium quality images detected by the quality engine\n"
 "will be assigned to the pending pick label (yellow flag)."
 msgstr ""
-"Obrázky vyhodnocené na základě analýzy rozmazání, šumu a komprese jako "
-"středně kvalitní budou označené popiskem 'Čeká se'."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:122
 #, kde-format
@@ -34175,33 +34075,24 @@ msgid "Assign High Quality to Accepted Label"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "High quality images detected by blur, noise, and compression analysis "
-#| "will be assigned to Accepted label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "High quality images detected by the quality engine\n"
 "will be assigned to the accepted pick label (green flag)."
 msgstr ""
-"Obrázky vyhodnocené na základě analýzy rozmazání, šumu a komprese jako "
-"kvalitní budou označené popiskem 'Přijato'."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "Quality:"
+#, kde-format
 msgctxt "@label"
 msgid "Quality Engine:"
-msgstr "Kvalita:"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:139
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Aesthetic Image using Deep Learning"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Contents"
-msgstr "Určit estetickou hodnotu obrázku pomocí hlubokého učení"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:141
 #, kde-format
@@ -34213,12 +34104,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Quality Using Basic Factors"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Detect by Basic Factors"
-msgstr "Určit kvalitu pomocí základních faktorů"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:148
 #, kde-format
@@ -34229,7 +34118,33 @@ msgid ""
 "See the relevant settings from the next <b>Basic Factors</b> tab."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:169
+#: core/libs/imgqsort/imagequalitywidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
+#, kde-format
+msgctxt "@option:check"
+msgid "Work on all processor cores"
+msgstr "Pracovat na všech jádrech procesoru"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:161
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Face detection and recognition are time-consuming tasks.\n"
+#| "You can choose if you wish to employ all processor cores\n"
+#| "on your system, or work in the background only on one core."
+msgctxt "@info:tooltip"
+msgid ""
+"Quality detection is time-consuming tasks.\n"
+"You can choose if you wish to employ all processor cores\n"
+"on your system, or work in the background only on one core."
+msgstr ""
+"Detekce obličeje je časově náročná úloha. Můžete si vybrat,\n"
+"zda si přejete použít všechna jádra procesoru vašeho systému,\n"
+"nebo pracovat pouze s jedním jádrem na pozadí."
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:180
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
@@ -34237,117 +34152,117 @@ msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Nastavení"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:176
+#: core/libs/imgqsort/imagequalitywidget.cpp:187
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Odmítnutý práh:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:182
+#: core/libs/imgqsort/imagequalitywidget.cpp:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr "Prahová hodnota, pod níž budou obrázky označeny jako odmítnuté"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:184
+#: core/libs/imgqsort/imagequalitywidget.cpp:195
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Práh čekání:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:190
+#: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr "Prahová hodnota, pod níž budou obrázky označeny jako 'Čeká se'"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:192
+#: core/libs/imgqsort/imagequalitywidget.cpp:203
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Přijatý práh:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:198
+#: core/libs/imgqsort/imagequalitywidget.cpp:209
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr "Prahová hodnota, nad níž budou obrázky označeny jako 'Přijato'"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:200
+#: core/libs/imgqsort/imagequalitywidget.cpp:211
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Detekovat rozmazání"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:201
+#: core/libs/imgqsort/imagequalitywidget.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "Detekovat množství rozmazání v předaných obrázcích"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:203
-#: core/libs/imgqsort/imagequalitywidget.cpp:213
-#: core/libs/imgqsort/imagequalitywidget.cpp:223
+#: core/libs/imgqsort/imagequalitywidget.cpp:214
+#: core/libs/imgqsort/imagequalitywidget.cpp:224
+#: core/libs/imgqsort/imagequalitywidget.cpp:234
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Váha:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:208
+#: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Váha přiřazena kritériu rozmazání"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:210
+#: core/libs/imgqsort/imagequalitywidget.cpp:221
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Detekovat šum"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:211
+#: core/libs/imgqsort/imagequalitywidget.cpp:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Detekovat množství šumu v předaných obrázcích"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:218
+#: core/libs/imgqsort/imagequalitywidget.cpp:229
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Váha přiřazena kritériu šum"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:220
+#: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Detekovat kompresi"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:221
+#: core/libs/imgqsort/imagequalitywidget.cpp:232
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Detekovat množství komprese v předaných obrázcích"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:228
+#: core/libs/imgqsort/imagequalitywidget.cpp:239
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Váha přiřazena kritériu komprese"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:230
+#: core/libs/imgqsort/imagequalitywidget.cpp:241
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:231
+#: core/libs/imgqsort/imagequalitywidget.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:261
+#: core/libs/imgqsort/imagequalitywidget.cpp:272
 #, kde-format
 msgctxt "@title:tab"
 msgid "Basic Factors"
@@ -37094,12 +37009,10 @@ msgid "Keywords: "
 msgstr "Klíčová slova: "
 
 #: core/libs/properties/itempropertiestab.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Peoples: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
-msgstr "Lidé: "
+msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:305
 #, kde-format
@@ -38171,16 +38084,14 @@ msgid "Autotags Assignment"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:117
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scan for objects in album: %1"
-msgstr "Rozpoznat obličeje v albu: %1"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:121
-#, fuzzy, kde-format
-#| msgid "Scan for faces in %1 albums"
+#, kde-format
 msgid "Scan for objects in %1 albums"
-msgstr "Rozpoznávám obličeje v  %1 alb"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:202
 #, kde-format
@@ -38198,10 +38109,9 @@ msgid "Item scanned for objects: %1\n"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:249
-#, fuzzy, kde-format
-#| msgid "Rating: %1\n"
+#, kde-format
 msgid "Object Scanning: %1\n"
-msgstr "Hodnocení: %1\n"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
@@ -38210,10 +38120,9 @@ msgstr "Hodnocení: %1\n"
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
-#, fuzzy, kde-format
-#| msgid "Album: %1"
+#, kde-format
 msgid "Album: %1\n"
-msgstr "Album: %1"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:256
 #, kde-format
@@ -38239,23 +38148,24 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
-#| msgid "Scan Mode: "
-msgctxt "@label:autotags scanning mode"
+#| msgctxt "camera model"
+#| msgid "Model:"
+msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
-msgstr "Režim procházení: "
+msgstr "Model:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "In All"
-msgctxt "@item:all items to scan with autotags"
+msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "Ve všech"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Assigned Tools"
-msgctxt "@item:autotags scan only non assigned items"
+msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Přidělené nástroje"
 
@@ -38274,16 +38184,16 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
-#| msgid "Updates"
-msgctxt "@item:remplace existing autotags entries in database"
+#| msgid "Replace"
+msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
-msgstr "Aktualizace"
+msgstr "Nahradit"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
-msgctxt "@item:update the autotags entries in database"
+msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "Aktualizace"
 
@@ -38299,15 +38209,14 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, fuzzy, kde-format
 #| msgid "Selection Method"
-msgctxt "@label:deep learning model selection to perform autotags"
+msgctxt "@label: deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Metoda výběru"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:146
-#, fuzzy, kde-format
-#| msgid "No detail available"
+#, kde-format
 msgid "No models available"
-msgstr "Není dostupný žádný detail"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
 #, kde-format
@@ -38323,30 +38232,14 @@ msgid ""
 "be recognized, but fewer objects will be recognized.\n"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:169
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
-msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr "Pracovat na všech jádrech procesoru"
-
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Object detection and auto-tagging are time-consuming tasks.\n"
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"Detekce obličeje je časově náročná úloha. Můžete si vybrat,\n"
-"zda si přejete použít všechna jádra procesoru vašeho systému,\n"
-"nebo pracovat pouze s jedním jádrem na pozadí."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:187
 #, kde-format
@@ -38355,12 +38248,10 @@ msgid "Translate Tags to:"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Translate to:"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
-msgstr "Přeložit do:"
+msgstr ""
 
 #: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, kde-format
@@ -38492,10 +38383,9 @@ msgid "Assign Rating \"%1 Star\""
 msgstr "Přiřadit hodnocení \"%1 hvězdička\""
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
-#, fuzzy, kde-format
-#| msgid "Assign Rating \"%1 Star\""
+#, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
-msgstr "Přiřadit hodnocení \"%1 hvězdička\""
+msgstr ""
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
@@ -41597,14 +41487,7 @@ msgid "Show Thumbbar"
 msgstr "Zobrazit panel náhledů"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the slogan formatted string displayed in splashscreen. Please "
-#| "translate using short words else the slogan can be truncated."
-#| msgid ""
-#| "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b> "
-#| "with the Power of <b>Open Source</b></font><font color=\"gray\"><br/><i>"
-#| "%1</i></font></qt>"
+#, kde-format
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
@@ -41612,9 +41495,6 @@ msgid ""
 "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b><br/"
 ">with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
-"<qt><font color=\"white\"><b>Profesionální</b> <b>správa</b> fotografií "
-"pomocí <b>Otevřeného software</b></font><font color=\"gray\"><br/><i>%1</i></"
-"font></qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
@@ -41627,10 +41507,9 @@ msgid "A KDE Family Project"
 msgstr "Projekt z rodiny KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:61
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2024, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2025, digiKam developers team"
-msgstr "(c) 2001-2024, team vývojářů digiKam"
+msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:74
 #, kde-format
@@ -41709,12 +41588,11 @@ msgid "Face management workflow improvements"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:188
-#, fuzzy, kde-format
-#| msgid "UPnP / DLNA Export tool and Mentoring"
+#, kde-format
 msgid ""
 "UPNP/DLNA export tool\n"
 "and Healing clone tool for image editor"
-msgstr "Nástroj UPnP / DLNA Export a mentorování"
+msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:194
 #, kde-format
@@ -41771,10 +41649,9 @@ msgid "Multi-core Support in Batch Queue Manager and Mentoring"
 msgstr "Podpora více jader u Správce dávkového zpracování a mentorování"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:254
-#, fuzzy, kde-format
-#| msgid "UPnP / DLNA Export tool and Mentoring"
+#, kde-format
 msgid "UPnP/DLNA Export tool and Mentoring"
-msgstr "Nástroj UPnP / DLNA Export a mentorování"
+msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:260
 #, kde-format
@@ -41865,12 +41742,11 @@ msgid "digiKam website banner and application icons"
 msgstr "banner digiKam a ikony aplikace"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:413
-#, fuzzy, kde-format
-#| msgid "Various usability fixes and general application polishing"
+#, kde-format
 msgid ""
 "Various usability fixes\n"
 "and general application polishing"
-msgstr "Různé opravy a vylepšení"
+msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:419
 #, kde-format
@@ -41899,10 +41775,9 @@ msgid "Developer (2004)"
 msgstr "Vývojář (2004)"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:454
-#, fuzzy, kde-format
-#| msgid "Developer and Mentoring"
+#, kde-format
 msgid "Developer and Mentoring (2005-2012)"
-msgstr "Vývojář a mentorování"
+msgstr ""
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:87
 #, kde-format
@@ -46535,10 +46410,9 @@ msgstr ""
 #: core/libs/widgets/text/donlinetranslator.cpp:132
 #: core/libs/widgets/text/donlinetranslator.cpp:215
 #: core/libs/widgets/text/donlinetranslator.cpp:232
-#, fuzzy, kde-format
-#| msgid "Tag name cannot be empty"
+#, kde-format
 msgid "%1 URL cannot be empty."
-msgstr "Název značky nesmí být prázdný"
+msgstr ""
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
 #, kde-format
@@ -48452,14 +48326,9 @@ msgid "Store thumbnails on disk for faster reuse"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:155
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to see icons and text in the image "
-#| "preview."
+#, kde-format
 msgid "Disable this option if you do not want thumbnails to be cached on disk."
 msgstr ""
-"Pokud si nepřejete vidět ikony a text v náhledu obrázku, zrušte zaškrtnutí "
-"této volby."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:165
 #: core/utilities/setup/misc/setupmisc.cpp:115
@@ -50418,11 +50287,10 @@ msgid "No address book entries found"
 msgstr "Nebyly nalezeny žádné záznamy knihy adres"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:62
-#, fuzzy, kde-format
-#| msgid "Face Recognition DB"
+#, kde-format
 msgctxt "@title:window"
 msgid "Facial Recognition Database"
-msgstr "Databáze rozpoznávání obličejů"
+msgstr ""
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:65
 #, kde-format
@@ -50449,37 +50317,29 @@ msgid "Cancel"
 msgstr "Zrušit"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "Confirmed"
+#, kde-format
 msgid "Confirming face"
-msgstr "Potvrzeno"
+msgstr ""
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:120
-#, fuzzy, kde-format
-#| msgid "Remove face tag?"
-#| msgid_plural "Remove face tags?"
+#, kde-format
 msgid "Removing face"
-msgstr "Odstranit značku obličeje?"
+msgstr ""
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
-#, fuzzy, kde-format
-#| msgid "Edit Piwigo Data"
+#, kde-format
 msgid "Editing face tag"
-msgstr "Upravit data Piwigo"
+msgstr ""
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:169
-#, fuzzy, kde-format
-#| msgid "Editing group"
+#, kde-format
 msgid "Editing face region"
-msgstr "Upravování skupiny"
+msgstr ""
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Manual and Name"
+#, kde-format
 msgid "Manually adding face"
-msgstr "Podle manuálu a názvu"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
@@ -50565,28 +50425,24 @@ msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:101
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
-msgstr "Naskenovat obrázky"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
-msgstr "Naskenovat obrázky"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Recognize faces"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
-msgstr "Rozpoznat obličeje"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
 #, kde-format
@@ -50634,11 +50490,10 @@ msgid "Face size:"
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
-msgstr "Dodatečné značky"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
 #, kde-format
@@ -50647,26 +50502,22 @@ msgid "Small"
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
-msgstr "Střední"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
-msgstr "Cíl"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
-msgstr "Dodatečné značky"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
@@ -51292,12 +51143,10 @@ msgid "Reference"
 msgstr "Reference"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@group"
-#| msgid "Reference Image Selection Method"
+#, kde-format
 msgctxt "@info"
 msgid "Reference Image Selection Method"
-msgstr "Metoda výběru referenčního obrázku"
+msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:224
 #, kde-format
@@ -58578,25 +58427,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<p>These expressions may be used to customize date format:</p><p><b>d</"
-#| "b>: The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: "
-#| "The day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
-#| "abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: "
-#| "The long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: "
-#| "The month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: "
-#| "The month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: "
-#| "The abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</"
-#| "b>: The long localized month name (e.g. 'January' to 'December')</"
-#| "p><p><b>yy</b>: The year as two digit number (eg. 00 to 99)</"
-#| "p><p><b>yyyy</b>: The year as four digit number (eg. 2012)</p><p>All "
-#| "other input characters will be treated as text. Any sequence of "
-#| "characters that are enclosed in singlequotes will be treated as text and "
-#| "not be used as an expression. Examples, if date is 20 July 1969:</"
-#| "p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Sun July "
-#| "20 69</p><p><b>'Photo shot on ' dddd</b> : Photo shot on Sunday</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
@@ -58616,22 +58447,6 @@ msgid ""
 "p><p><b>ddd MMMM d yy</b> : Sun July 20 69</p><p><b>'Photo shot on ' dddd</"
 "b> : Photo shot on Sunday</p>"
 msgstr ""
-"<p>Tyto výrazy mohou být použity pro vlastní formát data:</p><p><b>d</b>: "
-"Den, jako číslo bez počáteční nuly (1 až 31)</p><p><b>dd</b>: Den, jako "
-"číslo s počáteční nulou (01 až 31)</p><p><b>ddd</b>: Lokalizovaná zkratka "
-"názvu dne (např. 'Po.' až 'Ne.')</p><p><b>dddd</b>: Celý lokalizovaný název "
-"dne (např. 'Pondělí' až 'Neděle').</p><p><b>M</b>: Měsíc jako číslo bez "
-"počáteční nuly (1 až 12)</p><p><b>MM</b>: Měsíc, jako číslo s počáteční "
-"nulou (01 až 12)</p><p><b>MMM</b>: Lokalizovaná zkratka názvu měsíce (např. "
-"'Led' až 'Pro')</p><p><b>MMMM</b>: Celý lokalizovaný název měsíce (např. "
-"'Leden' až 'Prosinec')</p><p><b>yy</b>: Rok, jako dvojciferné číslo (např. "
-"00 až 99)</p><p><b>yyyy</b>: Rok, jako čtyřciferné číslo (např. 2012)</"
-"p><p>Všechny ostatní vstupní znaky budou zpracovány jako text. Jakákoliv "
-"posloupnost znaků, uzavřených mezi apostrofy, bude zpracována jako text, "
-"nikoliv použita jako výraz. Příklad, pokud datum je 20 leden 1969:</"
-"p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Ne. Leden "
-"20 69</p><p><b>'Fotografie byla pořízena v ' dddd</b> : Fotografie byla "
-"pořízena v neděli</p>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:98
 #, kde-format
@@ -59162,12 +58977,10 @@ msgid "Use the last saved active tools and settings"
 msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores (when it's possible)"
+#, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it is possible)"
-msgstr "Pracovat na všech jádrech procesoru (pokud možno)"
+msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:68
 #, kde-format
@@ -59187,13 +59000,7 @@ msgid "Scan for new items"
 msgstr "Vyhledat nové položky"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:90
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
-#| "additional databases for cleaning.<br/> If you select one of the options "
-#| "below, the process may take much time and can freeze digiKam "
-#| "temporarily<br/> in order to make sure that no database corruption occurs."
-#| "</i></qt>"
+#, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
 "select additional databases for cleaning.<br/>If you select one of the "
@@ -59201,11 +59008,6 @@ msgid ""
 "temporarily in order to make sure that no database corruption occurs.</i></"
 "qt>"
 msgstr ""
-"<qt><i>Poznámka: Při aktivaci této volby je základní databáze vždy "
-"pročištěna. Můžete zvolit pročištění i zbývajících databázi.<br/> Pokud "
-"zvolíte jednu z voleb níže, celá úloha bude trvat výrazně déle a digiKam "
-"může chvílemi přestat odpovídat,<br/> aby se předešlo možnému poškození "
-"databáze.</i></qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:95
 #, kde-format
@@ -59293,12 +59095,10 @@ msgid "Faces data management: "
 msgstr "Správa obličejových dat"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Clear and rebuild all training data"
+#, kde-format
 msgctxt "@option:check"
 msgid "Rebuild all training data"
-msgstr "Smazat a znovu sestavit všechny cvičné údaje"
+msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:214
 #, kde-format
@@ -59308,11 +59108,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:216
-#, fuzzy, kde-format
-#| msgid "Clear all faces on this image"
+#, kde-format
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
-msgstr "Smazat všechny obličeje na tomto obrázku"
+msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:218
 #, kde-format
@@ -59356,12 +59155,10 @@ msgid "Sync Metadata and Database"
 msgstr "Synchronizovat metadata s databází"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:341
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
-msgstr "Varování"
+msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:342
 #, kde-format
@@ -59476,16 +59273,14 @@ msgid "Find new items"
 msgstr "Najít nové položky"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
-#, fuzzy, kde-format
-#| msgid "Rating: %1\n"
+#, kde-format
 msgid "Scanning: %1\n"
-msgstr "Hodnocení: %1\n"
+msgstr ""
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
-#, fuzzy, kde-format
-#| msgid "Album: %1"
+#, kde-format
 msgid "Album Root: %1"
-msgstr "Album: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
 #, kde-format
@@ -59510,26 +59305,22 @@ msgid "Find duplicates items"
 msgstr "Hledám duplicitní položky"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "Finding Duplicates: %1\n"
-msgstr "Najít duplicity"
+msgstr ""
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:174
-#, fuzzy, kde-format
-#| msgid "Find duplicates items"
+#, kde-format
 msgid "No duplicate item"
-msgstr "Hledám duplicitní položky"
+msgstr ""
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:178
-#, fuzzy, kde-format
-#| msgid "Find duplicates items"
+#, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
-msgstr[0] "Hledám duplicitní položky"
-msgstr[1] "Hledám duplicitní položky"
-msgstr[2] "Hledám duplicitní položky"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:206
 #, kde-format
@@ -59594,22 +59385,19 @@ msgid "Item scanned for faces: %1\n"
 msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
-#, fuzzy, kde-format
-#| msgid "Images found in %1"
+#, kde-format
 msgid "Faces found: %1"
-msgstr "Nalezeny obrázky v %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
-#, fuzzy, kde-format
-#| msgid "No active process"
+#, kde-format
 msgid "Face found: %1"
-msgstr "Žádný aktivní proces"
+msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
-#, fuzzy, kde-format
-#| msgid "Rating: %1\n"
+#, kde-format
 msgid "Face Scanning: %1\n"
-msgstr "Hodnocení: %1\n"
+msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
 #, kde-format
@@ -59622,11 +59410,9 @@ msgid "Found %1 faces."
 msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:452
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Icon Size: %1"
+#, kde-format
 msgid "Recognized: %1"
-msgstr "Velikost ikony: %1"
+msgstr ""
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:95
 #, kde-format
@@ -59634,10 +59420,9 @@ msgid "Finger-prints"
 msgstr "Otisky"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
-#, fuzzy, kde-format
-#| msgid "Rebuild Finger-prints"
+#, kde-format
 msgid "Rebuild Fingerprint: %1\n"
-msgstr "Znovu vytvořit otisky"
+msgstr ""
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
 #, kde-format
@@ -59655,10 +59440,9 @@ msgid "Item scanned for fingerprint: %1"
 msgstr ""
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:172
-#, fuzzy, kde-format
-#| msgid "Image quality:"
+#, kde-format
 msgid "Image Quality: %1\n"
-msgstr "Kvalita obrázku:"
+msgstr ""
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
 #, kde-format
@@ -59700,10 +59484,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
-#, fuzzy, kde-format
-#| msgid "Use Metadata"
+#, kde-format
 msgid "Clear Metadata: %1\n"
-msgstr "Použít metadata"
+msgstr ""
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
 #, kde-format
@@ -59736,10 +59519,9 @@ msgid "Updating database from image metadata"
 msgstr "Aktualizace databáze z metadat obrázků"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
-#, fuzzy, kde-format
-#| msgid "Metadata Subspace"
+#, kde-format
 msgid "Metadata Sync: %1\n"
-msgstr "Podprostor metadat"
+msgstr ""
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
 #, kde-format
@@ -59767,10 +59549,9 @@ msgid "Generate Thumbnails"
 msgstr ""
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
-#, fuzzy, kde-format
-#| msgid "Thumbnail"
+#, kde-format
 msgid "Thumbnail: %1\n"
-msgstr "Náhled"
+msgstr ""
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
 #, kde-format
@@ -61864,20 +61645,14 @@ msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:300
-#, fuzzy, kde-format
-#| msgid "Preview image is always scaled to fit to window"
+#, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
-msgstr "Obrázek náhledu je vždy přizpůsoben velikosti okna"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to see icons and text in the image "
-#| "preview."
+#, kde-format
 msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
 msgstr ""
-"Pokud si nepřejete vidět ikony a text v náhledu obrázku, zrušte zaškrtnutí "
-"této volby."
 
 #: core/utilities/setup/album/setupalbumview.cpp:303
 #: core/utilities/setup/camera/setupcamera.cpp:498
@@ -62912,10 +62687,9 @@ msgid "Download Required Files"
 msgstr "Stáhnout požadované soubory"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:158
-#, fuzzy, kde-format
-#| msgid "Media Management "
+#, kde-format
 msgid "Use Face Management feature"
-msgstr "Správa médií"
+msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:159
 #, kde-format
@@ -64775,10 +64549,9 @@ msgid "Use the software OpenGL for rendering"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "Disable hardware acceleration OpenCL"
+#, kde-format
 msgid "Use the OpenCL hardware acceleration"
-msgstr "Vypnout hardware akceleraci OpenCL"
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
@@ -64788,10 +64561,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Disable hardware acceleration OpenCL"
+#, kde-format
 msgid "Use the video hardware acceleration"
-msgstr "Vypnout hardware akceleraci OpenCL"
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
@@ -64799,10 +64571,9 @@ msgid "Use the video textures conversion"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
-#, fuzzy, kde-format
-#| msgid "Used decoding backend for video:"
+#, kde-format
 msgid "Decoding backend to render video:"
-msgstr "Použitá dekódovací podpůrná vrstva pro video:"
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:109
 #, kde-format
@@ -64815,29 +64586,24 @@ msgid "GStreamer (System)"
 msgstr "GStreamer (Systém)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "Darwin (System)"
+#, kde-format
 msgid "WMF (System)"
-msgstr "Darwin (Systém)"
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:121
-#, fuzzy, kde-format
-#| msgid "Darwin (System)"
+#, kde-format
 msgid "AVFoundation (System)"
-msgstr "Darwin (Systém)"
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Required Files"
+#, kde-format
 msgid "Download required binary data:"
-msgstr "Stáhnout požadované soubory"
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Opening Download Dialog..."
+#, kde-format
 msgid "Open Download Dialog..."
-msgstr "Otevírá se dialog stahování..."
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
@@ -65977,330 +65743,3 @@ msgstr "Alba"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovat položky"
-
-#, fuzzy
-#~| msgctxt "@option:check"
-#~| msgid "Assign 'Rejected' Label to Low Quality Pictures"
-#~ msgctxt "@option:check"
-#~ msgid "Assign 'Rejected' Label to Low Quality"
-#~ msgstr "Přiřadit nekvalitním obrázkům popisek  'Odmítnuto'"
-
-#, fuzzy
-#~| msgctxt "@option:check"
-#~| msgid "Assign 'Pending' Label to Medium Quality Pictures"
-#~ msgctxt "@option:check"
-#~ msgid "Assign 'Pending' Label to Medium Quality"
-#~ msgstr "Přiřadit středně kvalitním obrázkům popisek 'Čeká se'"
-
-#, fuzzy
-#~| msgctxt "@option:check"
-#~| msgid "Assign 'Accepted' Label to High Quality Pictures"
-#~ msgctxt "@option:check"
-#~ msgid "Assign 'Accepted' Label to High Quality"
-#~ msgstr "Přiřadit kvalitním obrázkům popisek 'Přijato'"
-
-#, fuzzy
-#~| msgid "Updates"
-#~ msgid "Update Autotags"
-#~ msgstr "Aktualizace"
-
-#~ msgctxt "@option:radio"
-#~ msgid "Use default settings"
-#~ msgstr "Použít výchozí nastavení"
-
-#~ msgctxt "@option:radio"
-#~ msgid "Use custom settings"
-#~ msgstr "Použít vlastní nastavení"
-
-#, fuzzy
-#~| msgid "Scan Images"
-#~ msgid "Scan all"
-#~ msgstr "Naskenovat obrázky"
-
-#~ msgid "Clean all and re-scan"
-#~ msgstr "Vymazat vše a znovu projít"
-
-#~ msgctxt "@title: settings section"
-#~ msgid "Image Quality Sorter"
-#~ msgstr "Seřazovač kvality obrázků"
-
-#~ msgid "Path: %1"
-#~ msgstr "Cesta: %1"
-
-#~ msgid "Caulier Gilles"
-#~ msgstr "Caulier Gilles"
-
-#~ msgid "Maik Qualmann"
-#~ msgstr "Maik Qualmann"
-
-#~ msgid "Marcel Wiesweg"
-#~ msgstr "Marcel Wiesweg"
-
-#~ msgid "Mohamed Anwer"
-#~ msgstr "Mohamed Anwer"
-
-#~ msgid "Michael G. Hansen"
-#~ msgstr "Michael G. Hansen"
-
-#~ msgid "Teemu Rytilahti"
-#~ msgstr "Teemu Rytilahti"
-
-#~ msgid "Thanh Trung Dinh"
-#~ msgstr "Thanh Trung Dinh"
-
-#~ msgid "Matthias Welwarsky"
-#~ msgstr "Matthias Welwarsky"
-
-#~ msgid "Julien Narboux"
-#~ msgstr "Julien Narboux"
-
-#~ msgid "Mario Frank"
-#~ msgstr "Mario Frank"
-
-#~ msgid "Nicolas Lécureuil"
-#~ msgstr "Nicolas Lécureuil"
-
-#~ msgid "Anjani Kumar"
-#~ msgstr "Anjani Kumar"
-
-#~ msgid "Minh Nghĩa Duong"
-#~ msgstr "Minh Nghĩa Duong"
-
-#~ msgid "Kartik Ramesh"
-#~ msgstr "Kartik Ramesh"
-
-#~ msgid "Ahmed Fathi"
-#~ msgstr "Ahmed Fathi"
-
-#~ msgid "Veaceslav Munteanu"
-#~ msgstr "Veaceslav Munteanu"
-
-#~ msgid "Tarek Talaat"
-#~ msgstr "Tarek Talaat"
-
-#~ msgid "Yingjie Liu"
-#~ msgstr "Yingjie Liu"
-
-#~ msgid "Yiou Wang"
-#~ msgstr "Yiou Wang"
-
-#~ msgid "Gowtham Ashok"
-#~ msgstr "Gowtham Ashok"
-
-#~ msgid "Aditya Bhatt"
-#~ msgstr "Aditya Bhatt"
-
-#~ msgid "Martin Klapetek"
-#~ msgstr "Martin Klapetek"
-
-#~ msgid "Gabriel Voicu"
-#~ msgstr "Gabriel Voicu"
-
-#~ msgid "Mahesh Hegde"
-#~ msgstr "Mahesh Hegde"
-
-#~ msgid "Pankaj Kumar"
-#~ msgstr "Pankaj Kumar"
-
-#~ msgid "Smit Mehta"
-#~ msgstr "Smit Mehta"
-
-#~ msgid "Islam Wazery"
-#~ msgstr "Islam Wazery"
-
-#~ msgid "Abhinav Badola"
-#~ msgstr "Abhinav Badola"
-
-#~ msgid "Benjamin Girault"
-#~ msgstr "Benjamin Girault"
-
-#~ msgid "Victor Dodon"
-#~ msgstr "Victor Dodon"
-
-#~ msgid "Sayantan Datta"
-#~ msgstr "Sayantan Datta"
-
-#~ msgid "Ananta Palani"
-#~ msgstr "Ananta Palani"
-
-#~ msgid "Andi Clemens"
-#~ msgstr "Andi Clemens"
-
-#~ msgid "Patrick Spendrin"
-#~ msgstr "Patrick Spendrin"
-
-#~ msgid "Francesco Riosa"
-#~ msgstr "Francesco Riosa"
-
-#~ msgid "Johannes Wienke"
-#~ msgstr "Johannes Wienke"
-
-#~ msgid "Julien Pontabry"
-#~ msgstr "Julien Pontabry"
-
-#~ msgid "Arnd Baecker"
-#~ msgstr "Arnd Baecker"
-
-#~ msgid "Francisco J. Cruz"
-#~ msgstr "Francisco J. Cruz"
-
-#~ msgid "Pieter Edelman"
-#~ msgstr "Pieter Edelman"
-
-#~ msgid "Holger Foerster"
-#~ msgstr "Holger Foerster"
-
-#~ msgid "Risto Saukonpaa"
-#~ msgstr "Risto Saukonpaa"
-
-#~ msgid "Mikolaj Machowski"
-#~ msgstr "Mikolaj Machowski"
-
-#~ msgid "Achim Bohnet"
-#~ msgstr "Achim Bohnet"
-
-#~ msgid "Luka Renko"
-#~ msgstr "Luka Renko"
-
-#~ msgid "Angelo Naselli"
-#~ msgstr "Angelo Naselli"
-
-#~ msgid "Fabien Salvi"
-#~ msgstr "Fabien Salvi"
-
-#~ msgid "Todd Shoemaker"
-#~ msgstr "Todd Shoemaker"
-
-#~ msgid "Gerhard Kulzer"
-#~ msgstr "Gerhard Kulzer"
-
-#~ msgid "Oliver Doerr"
-#~ msgstr "Oliver Doerr"
-
-#~ msgid "Charles Bouveyron"
-#~ msgstr "Charles Bouveyron"
-
-#~ msgid "Richard Taylor"
-#~ msgstr "Richard Taylor"
-
-#~ msgid "Hans Karlsson"
-#~ msgstr "Hans Karlsson"
-
-#~ msgid "Aaron Seigo"
-#~ msgstr "Aaron Seigo"
-
-#~ msgid "Yves Chaufour"
-#~ msgstr "Yves Chaufour"
-
-#~ msgid "Tung Nguyen"
-#~ msgstr "Tung Nguyen"
-
-#~ msgid "Renchi Raju"
-#~ msgstr "Renchi Raju"
-
-#~ msgid "Joern Ahrens"
-#~ msgstr "Joern Ahrens"
-
-#~ msgid "Tom Albers"
-#~ msgstr "Tom Albers"
-
-#~ msgid "Ralf Holzer"
-#~ msgstr "Ralf Holzer"
-
-#, fuzzy
-#~| msgid "Images found in %1"
-#~ msgid "No faces found in %1"
-#~ msgstr "Nalezeny obrázky v %1"
-
-#~ msgid "Applying face changes"
-#~ msgstr "Použít změny obličejů"
-
-#, fuzzy
-#~| msgid "No active process"
-#~ msgid "Faces processed: %1"
-#~ msgstr "Žádný aktivní proces"
-
-#, fuzzy
-#~| msgid "No active process"
-#~ msgid "Face processed: %1"
-#~ msgstr "Žádný aktivní proces"
-
-#~ msgid "FacesDetector"
-#~ msgstr "Detekce obličeje"
-
-#~ msgctxt "@title:window"
-#~ msgid "Warning"
-#~ msgstr "Varování"
-
-#~ msgctxt "@action:button"
-#~ msgid "Continue"
-#~ msgstr "Pokračovat"
-
-#~ msgctxt "@action:button"
-#~ msgid "OK"
-#~ msgstr "OK"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Skip images already scanned"
-#~ msgstr "Vynechat již prohledané obrázky"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Scan again and merge results"
-#~ msgstr "Znovu prohledat a výsledky sloučit"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Clear unconfirmed results and rescan"
-#~ msgstr "Vymazat nepotvrzené výsledky a znovu prohledat"
-
-#~ msgctxt "@option:radio"
-#~ msgid "Detect faces"
-#~ msgstr "Rozpoznat obličeje"
-
-#~ msgctxt "@info"
-#~ msgid "Find all faces in your photos"
-#~ msgstr "Vyhledat všechny obličeje ve vašich fotografiích"
-
-#~ msgctxt "@option:radio"
-#~ msgid "Detect and recognize faces"
-#~ msgstr "Detekovat a rozeznat obličeje"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Find all faces in your photos and\n"
-#~ "try to recognize which person is depicted"
-#~ msgstr ""
-#~ "Vyhledat všechny obličeje ve vašich fotografiích\n"
-#~ "a pokusit se rozeznat zobrazené osoby"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Try again to recognize the people depicted\n"
-#~ "on marked but yet unconfirmed faces."
-#~ msgstr ""
-#~ "Znovu zkusit rozeznat osoby zachycené na označených\n"
-#~ ", avšak nepotvrzených obličejích."
-
-#~ msgid "Create Tag from Address Book"
-#~ msgstr "Vytvořit značku z knihy adres"
-
-#~ msgctxt "@option"
-#~ msgid "Recursive"
-#~ msgstr "Rekurzivně"
-
-#~ msgid "Error loading RAW image '%1'"
-#~ msgstr "Nelze načíst obrázek RAW '%1'"
-
-#~ msgid "Could not open file '%1' for writing"
-#~ msgstr "Nelze otevřít soubor '%1' pro zápis"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Clear all previous results and rescan"
-#~ msgstr "Vymazat všechny předchozí výsledky a znovu prohledat"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "This will clear all training data for recognition and rebuild it from all "
-#~ "available faces."
-#~ msgstr ""
-#~ "Toto vymaže všechna cvičná data pro rozeznávání obličejů a vytvoří ji "
-#~ "znovu z dostupných obličejů."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-09 01:50+0000\n"
+"POT-Creation-Date: 2025-02-11 01:59+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -34025,7 +34025,7 @@ msgstr "图像美感"
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
-msgctxt "@label:image quality sort scan mode"
+msgctxt "@label: image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "扫描模式："
 
@@ -34033,14 +34033,14 @@ msgstr "扫描模式："
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "In All"
-msgctxt "@item:all items to scan with image quality sort"
+msgctxt "@item: all items to scan with image quality sort"
 msgid "All"
 msgstr "匹配全部"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
 #, fuzzy, kde-format
 #| msgid "Scan non-assigned only"
-msgctxt "@item:image quality sort only non assigned items"
+msgctxt "@item: image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "仅扫描未指定品质项目"
 
@@ -34164,7 +34164,33 @@ msgid ""
 "See the relevant settings from the next <b>Basic Factors</b> tab."
 msgstr "检测图像的四项基本品质因素 (模糊、噪点、曝光、压缩)。"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:169
+#: core/libs/imgqsort/imagequalitywidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
+#, kde-format
+msgctxt "@option:check"
+msgid "Work on all processor cores"
+msgstr "使用全部处理器核心"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:161
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Face detection and recognition are time-consuming tasks.\n"
+#| "You can choose if you wish to employ all processor cores\n"
+#| "on your system, or work in the background only on one core."
+msgctxt "@info:tooltip"
+msgid ""
+"Quality detection is time-consuming tasks.\n"
+"You can choose if you wish to employ all processor cores\n"
+"on your system, or work in the background only on one core."
+msgstr ""
+"人脸检测和识别任务耗时较长。\n"
+"您可以选择使用系统的所有处理器内核以提升速度，\n"
+"或者选择在后台使用单一处理器内核以减少卡顿。"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:180
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
@@ -34172,117 +34198,117 @@ msgctxt "@title:tab"
 msgid "Settings"
 msgstr "设置"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:176
+#: core/libs/imgqsort/imagequalitywidget.cpp:187
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "否决阈值："
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:182
+#: core/libs/imgqsort/imagequalitywidget.cpp:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr "低于此阈值的所有图像将被指定“否决”标记。"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:184
+#: core/libs/imgqsort/imagequalitywidget.cpp:195
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "待定阈值："
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:190
+#: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr "低于此阈值的所有图像将被指定“待定”标记。"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:192
+#: core/libs/imgqsort/imagequalitywidget.cpp:203
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "接受阈值："
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:198
+#: core/libs/imgqsort/imagequalitywidget.cpp:209
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr "高于此阈值的所有图像将被指定“接受”标记。"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:200
+#: core/libs/imgqsort/imagequalitywidget.cpp:211
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "检测模糊"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:201
+#: core/libs/imgqsort/imagequalitywidget.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "检测图像的模糊程度。"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:203
-#: core/libs/imgqsort/imagequalitywidget.cpp:213
-#: core/libs/imgqsort/imagequalitywidget.cpp:223
+#: core/libs/imgqsort/imagequalitywidget.cpp:214
+#: core/libs/imgqsort/imagequalitywidget.cpp:224
+#: core/libs/imgqsort/imagequalitywidget.cpp:234
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "权重："
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:208
+#: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "模糊检测算法的权重"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:210
+#: core/libs/imgqsort/imagequalitywidget.cpp:221
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "检测噪点"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:211
+#: core/libs/imgqsort/imagequalitywidget.cpp:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "检测图像的噪点数量。"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:218
+#: core/libs/imgqsort/imagequalitywidget.cpp:229
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "噪点检测算法的权重"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:220
+#: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "检测压缩"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:221
+#: core/libs/imgqsort/imagequalitywidget.cpp:232
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "检测图像的压缩级别。"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:228
+#: core/libs/imgqsort/imagequalitywidget.cpp:239
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "压缩检测算法的权重"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:230
+#: core/libs/imgqsort/imagequalitywidget.cpp:241
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "检测曝光不足/过度"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:231
+#: core/libs/imgqsort/imagequalitywidget.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "检测图像是否曝光不足或者曝光过度。"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:261
+#: core/libs/imgqsort/imagequalitywidget.cpp:272
 #, fuzzy, kde-format
 #| msgid "Sparsity Factor: "
 msgctxt "@title:tab"
@@ -38240,7 +38266,7 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
-msgctxt "@label:autotags scanning mode"
+msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "扫描模式："
 
@@ -38248,14 +38274,14 @@ msgstr "扫描模式："
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "In All"
-msgctxt "@item:all items to scan with autotags"
+msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "匹配全部"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Scan non-assigned only"
-msgctxt "@item:autotags scan only non assigned items"
+msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "仅扫描未指定品质项目"
 
@@ -38282,7 +38308,7 @@ msgstr "自动分配标签模式："
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
 #| msgid "Replace existing autotags"
-msgctxt "@item:remplace existing autotags entries in database"
+msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "替换已有自动标签"
 
@@ -38290,7 +38316,7 @@ msgstr "替换已有自动标签"
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
-msgctxt "@item:update the autotags entries in database"
+msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "动态"
 
@@ -38314,7 +38340,7 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, fuzzy, kde-format
 #| msgid "Selection model: "
-msgctxt "@label:deep learning model selection to perform autotags"
+msgctxt "@label: deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "选择模型："
 
@@ -38340,14 +38366,6 @@ msgid ""
 msgstr ""
 "调整灵敏度与特异性：数值越高，检测到的对象越准确，但检测到的对象数量会减"
 "少。\n"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:169
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
-msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr "使用全部处理器核心"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
 #, kde-format
@@ -65592,6 +65610,32 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
+
+#, fuzzy
+#~| msgid "Scan Mode: "
+#~ msgctxt "@label:autotags scanning mode"
+#~ msgid "Scan Mode:"
+#~ msgstr "扫描模式："
+
+#, fuzzy
+#~| msgctxt "@label:listbox"
+#~| msgid "In All"
+#~ msgctxt "@item:all items to scan with autotags"
+#~ msgid "All"
+#~ msgstr "匹配全部"
+
+#, fuzzy
+#~| msgid "Scan non-assigned only"
+#~ msgctxt "@item:autotags scan only non assigned items"
+#~ msgid "Non-Assigned Only"
+#~ msgstr "仅扫描未指定品质项目"
+
+#, fuzzy
+#~| msgctxt "Content type"
+#~| msgid "Update"
+#~ msgctxt "@item:update the autotags entries in database"
+#~ msgid "Update"
+#~ msgstr "动态"
 
 #, fuzzy
 #~| msgctxt "@option:check"

@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-09 01:50+0000\n"
+"POT-Creation-Date: 2025-02-11 01:59+0000\n"
 "PO-Revision-Date: 2025-01-19 14:15+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -35867,21 +35867,21 @@ msgstr "irudiaren kalitate estetikoa"
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
-msgctxt "@label:image quality sort scan mode"
+msgctxt "@label: image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "Miatzeko modua: "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
 #, fuzzy, kde-format
 #| msgid "All"
-msgctxt "@item:all items to scan with image quality sort"
+msgctxt "@item: all items to scan with image quality sort"
 msgid "All"
 msgstr "Guztiak"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
 #, fuzzy, kde-format
 #| msgid "Scan non-assigned only"
-msgctxt "@item:image quality sort only non assigned items"
+msgctxt "@item: image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Miatu esleitu gabekoak bakarrik"
 
@@ -36000,7 +36000,33 @@ msgid ""
 "See the relevant settings from the next <b>Basic Factors</b> tab."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:169
+#: core/libs/imgqsort/imagequalitywidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
+#, kde-format
+msgctxt "@option:check"
+msgid "Work on all processor cores"
+msgstr "Prozesatzailearen nukleo guztiekin lan egitea"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:161
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Face detection and recognition are time-consuming tasks.\n"
+#| "You can choose if you wish to employ all processor cores\n"
+#| "on your system, or work in the background only on one core."
+msgctxt "@info:tooltip"
+msgid ""
+"Quality detection is time-consuming tasks.\n"
+"You can choose if you wish to employ all processor cores\n"
+"on your system, or work in the background only on one core."
+msgstr ""
+"Aurpegiak antzematea eta ezagutzea denbora behar duten atazak dira.\n"
+"Sistemako prozesatzaileetako nukleo guztiak erabiltzea edo atzeko planoan "
+"nukleo bakarrean lan egitea nahi duzun aukera dezakezu."
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:180
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
@@ -36008,13 +36034,13 @@ msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Ezarpenak"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:176
+#: core/libs/imgqsort/imagequalitywidget.cpp:187
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Errefusatu atalasea:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:182
+#: core/libs/imgqsort/imagequalitywidget.cpp:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
@@ -36022,37 +36048,37 @@ msgstr ""
 "Atalase muga zeinetatik behera irudi guztiei Errefusatua etiketa esleitzen "
 "zaien"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:184
+#: core/libs/imgqsort/imagequalitywidget.cpp:195
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Atalasea:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:190
+#: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:192
+#: core/libs/imgqsort/imagequalitywidget.cpp:203
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Atalasea:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:198
+#: core/libs/imgqsort/imagequalitywidget.cpp:209
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:200
+#: core/libs/imgqsort/imagequalitywidget.cpp:211
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Hautatu albuma"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:201
+#: core/libs/imgqsort/imagequalitywidget.cpp:212
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
@@ -36060,28 +36086,28 @@ msgstr ""
 "Pertsonalizatu atzeko planoaren kolorea irudien editorearen arean "
 "erabiltzeko."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:203
-#: core/libs/imgqsort/imagequalitywidget.cpp:213
-#: core/libs/imgqsort/imagequalitywidget.cpp:223
+#: core/libs/imgqsort/imagequalitywidget.cpp:214
+#: core/libs/imgqsort/imagequalitywidget.cpp:224
+#: core/libs/imgqsort/imagequalitywidget.cpp:234
 #, fuzzy, kde-format
 #| msgid "Height:"
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Pisua:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:208
+#: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:210
+#: core/libs/imgqsort/imagequalitywidget.cpp:221
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Bat ere ez hautatu"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:211
+#: core/libs/imgqsort/imagequalitywidget.cpp:222
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
@@ -36089,19 +36115,19 @@ msgstr ""
 "Pertsonalizatu atzeko planoaren kolorea irudien editorearen arean "
 "erabiltzeko."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:218
+#: core/libs/imgqsort/imagequalitywidget.cpp:229
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:220
+#: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "PNG konpresioa:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:221
+#: core/libs/imgqsort/imagequalitywidget.cpp:232
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
@@ -36109,25 +36135,25 @@ msgstr ""
 "Pertsonalizatu atzeko planoaren kolorea irudien editorearen arean "
 "erabiltzeko."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:228
+#: core/libs/imgqsort/imagequalitywidget.cpp:239
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:230
+#: core/libs/imgqsort/imagequalitywidget.cpp:241
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Bat ere ez hautatu"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:231
+#: core/libs/imgqsort/imagequalitywidget.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:261
+#: core/libs/imgqsort/imagequalitywidget.cpp:272
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Basic Factors"
@@ -40083,21 +40109,21 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
-msgctxt "@label:autotags scanning mode"
+msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Miatzeko modua: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
 #, fuzzy, kde-format
 #| msgid "All"
-msgctxt "@item:all items to scan with autotags"
+msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "Guztiak"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Scan non-assigned only"
-msgctxt "@item:autotags scan only non assigned items"
+msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Miatu esleitu gabekoak bakarrik"
 
@@ -40126,7 +40152,7 @@ msgstr "Mode de mesure :"
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
-msgctxt "@item:remplace existing autotags entries in database"
+msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Eguneratu datu-basea"
 
@@ -40134,7 +40160,7 @@ msgstr "Eguneratu datu-basea"
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
-msgctxt "@item:update the autotags entries in database"
+msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "Eguneratzea"
 
@@ -40150,7 +40176,7 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
 #, fuzzy, kde-format
 #| msgid "Selection model: "
-msgctxt "@label:deep learning model selection to perform autotags"
+msgctxt "@label: deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Hautapen eredua: "
 
@@ -40186,14 +40212,6 @@ msgstr ""
 "eta zehatzago ezagutuko dira, baina aurpegi gutxiago\n"
 "ezagutuko dira (aurrez etiketatutakoekin oso antzekoak direnak bakarrik "
 "ezagutzen dira)."
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:169
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
-msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr "Prozesatzailearen nukleo guztiekin lan egitea"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
 #, fuzzy, kde-format
@@ -69028,6 +69046,31 @@ msgstr "Album elementuak"
 #, kde-format
 msgid "Import Items"
 msgstr "Inportatu elementuak"
+
+#, fuzzy
+#~| msgid "Scan Mode: "
+#~ msgctxt "@label:autotags scanning mode"
+#~ msgid "Scan Mode:"
+#~ msgstr "Miatzeko modua: "
+
+#, fuzzy
+#~| msgid "All"
+#~ msgctxt "@item:all items to scan with autotags"
+#~ msgid "All"
+#~ msgstr "Guztiak"
+
+#, fuzzy
+#~| msgid "Scan non-assigned only"
+#~ msgctxt "@item:autotags scan only non assigned items"
+#~ msgid "Non-Assigned Only"
+#~ msgstr "Miatu esleitu gabekoak bakarrik"
+
+#, fuzzy
+#~| msgctxt "Content type"
+#~| msgid "Update"
+#~ msgctxt "@item:update the autotags entries in database"
+#~ msgid "Update"
+#~ msgstr "Eguneratzea"
 
 #, fuzzy
 #~| msgctxt "@option:check"

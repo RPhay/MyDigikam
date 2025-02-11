@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-09 01:50+0000\n"
+"POT-Creation-Date: 2025-02-11 01:59+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -33976,21 +33976,21 @@ msgstr "Képek rendezése:"
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
-msgctxt "@label:image quality sort scan mode"
+msgctxt "@label: image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "Vizsgálat módja: "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
 #, fuzzy, kde-format
 #| msgid "All"
-msgctxt "@item:all items to scan with image quality sort"
+msgctxt "@item: all items to scan with image quality sort"
 msgid "All"
 msgstr "Minden"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
 #, fuzzy, kde-format
 #| msgid "Scan non-assigned only"
-msgctxt "@item:image quality sort only non assigned items"
+msgctxt "@item: image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Csak a nem hozzárendelt vizsgálata"
 
@@ -34100,7 +34100,33 @@ msgid ""
 "See the relevant settings from the next <b>Basic Factors</b> tab."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:169
+#: core/libs/imgqsort/imagequalitywidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
+#, kde-format
+msgctxt "@option:check"
+msgid "Work on all processor cores"
+msgstr "Munka minden processzormagon"
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:161
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Face detection is a time-consuming task. You can choose if you wish to "
+#| "employ all processor cores on your system, or work in the background only "
+#| "on one core."
+msgctxt "@info:tooltip"
+msgid ""
+"Quality detection is time-consuming tasks.\n"
+"You can choose if you wish to employ all processor cores\n"
+"on your system, or work in the background only on one core."
+msgstr ""
+"Az arcfelismerés egy időigényes művelet. Kiválaszthatja, hogy minden "
+"processzormagot ennek kíván szentelni, vagy a háttérben kívánja csak futni "
+"egyetlen magon."
+
+#: core/libs/imgqsort/imagequalitywidget.cpp:180
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
 #, kde-format
@@ -34108,127 +34134,127 @@ msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Beállítások"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:176
+#: core/libs/imgqsort/imagequalitywidget.cpp:187
 #, fuzzy, kde-format
 #| msgid "Rejected threshold:"
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Visszautasított küszöb:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:182
+#: core/libs/imgqsort/imagequalitywidget.cpp:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:184
+#: core/libs/imgqsort/imagequalitywidget.cpp:195
 #, fuzzy, kde-format
 #| msgid "Pending threshold:"
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Függőben lévő küszöb:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:190
+#: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:192
+#: core/libs/imgqsort/imagequalitywidget.cpp:203
 #, fuzzy, kde-format
 #| msgid "Accepted threshold:"
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Elfogadott küszöb:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:198
+#: core/libs/imgqsort/imagequalitywidget.cpp:209
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:200
+#: core/libs/imgqsort/imagequalitywidget.cpp:211
 #, fuzzy, kde-format
 #| msgid "Detect Blur"
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Elmosás felismerése"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:201
+#: core/libs/imgqsort/imagequalitywidget.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:203
-#: core/libs/imgqsort/imagequalitywidget.cpp:213
-#: core/libs/imgqsort/imagequalitywidget.cpp:223
+#: core/libs/imgqsort/imagequalitywidget.cpp:214
+#: core/libs/imgqsort/imagequalitywidget.cpp:224
+#: core/libs/imgqsort/imagequalitywidget.cpp:234
 #, fuzzy, kde-format
 #| msgid "Height:"
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Magasság:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:208
+#: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, fuzzy, kde-format
 #| msgid "Weight to assign to Blur Algorithm"
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Az elmosódás algoritmushoz rendelt súly"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:210
+#: core/libs/imgqsort/imagequalitywidget.cpp:221
 #, fuzzy, kde-format
 #| msgid "Detect Noise"
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Zaj felismerése"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:211
+#: core/libs/imgqsort/imagequalitywidget.cpp:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:218
+#: core/libs/imgqsort/imagequalitywidget.cpp:229
 #, fuzzy, kde-format
 #| msgid "Weight to assign to Noise Algorithm"
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "A zaj algoritmushoz rendelt súly"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:220
+#: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, fuzzy, kde-format
 #| msgid "Detect Compression"
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Tömörítés felismerése"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:221
+#: core/libs/imgqsort/imagequalitywidget.cpp:232
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:228
+#: core/libs/imgqsort/imagequalitywidget.cpp:239
 #, fuzzy, kde-format
 #| msgid "Weight to assign to Compression Algorithm"
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "A tömörítés algoritmushoz rendelt súly"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:230
+#: core/libs/imgqsort/imagequalitywidget.cpp:241
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:231
+#: core/libs/imgqsort/imagequalitywidget.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:261
+#: core/libs/imgqsort/imagequalitywidget.cpp:272
 #, fuzzy, kde-format
 #| msgid "Separator:"
 msgctxt "@title:tab"
@@ -38370,21 +38396,21 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
-msgctxt "@label:autotags scanning mode"
+msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Vizsgálat módja: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
 #, fuzzy, kde-format
 #| msgid "All"
-msgctxt "@item:all items to scan with autotags"
+msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "Minden"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Scan non-assigned only"
-msgctxt "@item:autotags scan only non assigned items"
+msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Csak a nem hozzárendelt vizsgálata"
 
@@ -38405,7 +38431,7 @@ msgstr "Mérési mód:"
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
-msgctxt "@item:remplace existing autotags entries in database"
+msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Adatbázis frissítése"
 
@@ -38413,7 +38439,7 @@ msgstr "Adatbázis frissítése"
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
-msgctxt "@item:update the autotags entries in database"
+msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "Frissítés"
 
@@ -38430,7 +38456,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Destination Folder:"
-msgctxt "@label:deep learning model selection to perform autotags"
+msgctxt "@label: deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Cél mappa:"
 
@@ -38461,14 +38487,6 @@ msgid ""
 msgstr ""
 "Állítsa be a sebességet vagy a pontosságot. Minél nagyobb az érték, annál "
 "pontosabb találatokat kap, de annál több időt is vesz igénybe."
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:169
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
-msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr "Munka minden processzormagon"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
 #, fuzzy, kde-format
@@ -66781,6 +66799,31 @@ msgstr "Album elemek"
 #, kde-format
 msgid "Import Items"
 msgstr "Elemek importálása"
+
+#, fuzzy
+#~| msgid "Scan Mode: "
+#~ msgctxt "@label:autotags scanning mode"
+#~ msgid "Scan Mode:"
+#~ msgstr "Vizsgálat módja: "
+
+#, fuzzy
+#~| msgid "All"
+#~ msgctxt "@item:all items to scan with autotags"
+#~ msgid "All"
+#~ msgstr "Minden"
+
+#, fuzzy
+#~| msgid "Scan non-assigned only"
+#~ msgctxt "@item:autotags scan only non assigned items"
+#~ msgid "Non-Assigned Only"
+#~ msgstr "Csak a nem hozzárendelt vizsgálata"
+
+#, fuzzy
+#~| msgctxt "Content type"
+#~| msgid "Update"
+#~ msgctxt "@item:update the autotags entries in database"
+#~ msgid "Update"
+#~ msgstr "Frissítés"
 
 #, fuzzy
 #~| msgid "Assign 'Rejected' Label to Low Quality Pictures"
