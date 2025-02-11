@@ -458,7 +458,6 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
     }
 
     clearSelection();
-    qApp->processEvents();
 
     if (infos.size() > 1)
     {
@@ -501,7 +500,6 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
     }
 
     clearSelection();
-    qApp->processEvents();
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
@@ -539,7 +537,6 @@ void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
     }
 
     clearSelection();
-    qApp->processEvents();
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
@@ -578,7 +575,6 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
     }
 
     clearSelection();
-    qApp->processEvents();
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
@@ -633,7 +629,6 @@ void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
     }
 
     clearSelection();
-    qApp->processEvents();
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
