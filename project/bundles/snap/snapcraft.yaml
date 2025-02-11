@@ -35,7 +35,7 @@ apps:
       DICPATH: "$SNAP/usr/share/hunspell"
       PERL5LIB: "$SNAP/usr/share/perl5"
       LD_LIBRARY_PATH: $SNAP/ffmpeg-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/kde-qt6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libproxy${LD_LIBRARY_PATH}
-      PATH: $SNAP/ffmpeg-platform/usr/bin:${PATH}
+      PATH: $SNAP/ffmpeg-platform/usr/bin:$SNAP/usr/bin${PATH}
       ALSA_CONFIG_PATH: "$SNAP/kf6/etc/asound.conf"
       QT_MEDIA_BACKEND: "ffmpeg"
       QT_PLUGIN_PATH: "$QT_PLUGIN_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/marble/plugins"
@@ -96,31 +96,13 @@ parts:
     override-build: |
       craftctl default
       rsync -a --ignore-existing $CRAFT_PART_INSTALL/ /
-    build-environment:
-      - LD_LIBRARY_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/mesa-2404/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/ffmpeg-2404-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/kde-qt6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libproxy:${LD_LIBRARY_PATH}"
+    build-environment: &build-environment
+      - CMAKE_FIND_ROOT_PATH: "${CMAKE_FIND_ROOT_PATH}:/snap/ffmpeg-2404-sdk/current"
+      - PKG_CONFIG_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/ffmpeg-2404-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig"
+      - LD_LIBRARY_PATH: "/snap/mesa-2404/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/ffmpeg-2404-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/kde-qt6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libproxy:$LD_LIBRARY_PATH"
       - DICPATH: "$SNAP/usr/share/hunspell"
     prime:
       - -usr/bin/rsync
-  # libva:
-  #   source: https://github.com/intel/libva.git
-  #   source-branch: v2.22-branch
-  #   plugin: meson
-  #   build-packages:
-  #     - cmake
-  #     - pkg-config
-  #     - meson
-  #     - libdrm-dev
-  #     - automake
-  #     - libtool
-  #     - rsync
-  #   meson-parameters:
-  #     - -Dprefix=/usr
-  #     - -Dlibdir=/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
-  #   override-build: |
-  #     craftctl default
-  #     rsync -a --ignore-existing $CRAFT_PART_INSTALL/ /
-  #   prime:
-  #     - -usr/bin/rsync
   digikam:
     after:
       - marble
@@ -153,11 +135,7 @@ parts:
       - -DENABLE_QWEBENGINE=ON
       - -DENABLE_FACESENGINE_DNN=ON
       - -DCMAKE_CXX_FLAGS="-DMAGICKCORE_HAVE_ISNAN=0"
-    build-environment:
-      - CMAKE_FIND_ROOT_PATH: "${CMAKE_FIND_ROOT_PATH}:/snap/ffmpeg-2404-sdk/current"
-      - PKG_CONFIG_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/ffmpeg-2404-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig"
-      - LD_LIBRARY_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/mesa-2404/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/ffmpeg-2404-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/kde-qt6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libproxy:${LD_LIBRARY_PATH}"
-      - DICPATH: "$SNAP/usr/share/hunspell"
+    build-environment: *build-environment
     build-packages:
       - bison
       - flex
@@ -250,6 +228,7 @@ parts:
       - cups-client
       - libxkbcommon0
       - exiftool
+      - bash
     override-pull: |
         craftctl default
         patch -p0 < ${SNAPCRAFT_PROJECT_DIR}/project/bundles/snap/snap/local/digikam_magick_isnan.patch
