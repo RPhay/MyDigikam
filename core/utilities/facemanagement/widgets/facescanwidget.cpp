@@ -15,6 +15,9 @@
  * ============================================================ */
 
 #include "facescanwidget_p.h"
+
+// Local includes
+
 #include "peoplesidebarwidget.h"
 
 namespace Digikam
@@ -175,7 +178,7 @@ void FaceScanWidget::setupUi()
                                         "Detection model used to find faces. YuNet is the default model.\n"
                                         "It is faster and more configurable than SSD and YOLOv3.\n"
                                         "Note: YuNet is only available if digiKam is compiled with OpenCV 4.6.0 or later."));
-    
+
 #if OPENCV_TEST_VERSION(4,6,0)
 
     auto* const detModel = qobject_cast<QStandardItemModel*>(d->detectModelBox->model());
@@ -442,9 +445,7 @@ FaceScanSettings FaceScanWidget::settings() const
     {
         settings.task = FaceScanSettings::RecognizeMarkedFaces;
         settings.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::Rescan;
-
     }
-
     else
     {
         settings.task = FaceScanSettings::DetectAndRecognize;

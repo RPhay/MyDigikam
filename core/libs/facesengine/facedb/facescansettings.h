@@ -16,6 +16,10 @@
 
 #pragma once
 
+// Qt includes
+
+#include <QDebug>
+
 // Local includes
 
 #include "album.h"
@@ -89,43 +93,72 @@ public:
      */
     enum FaceRecognitionModel
     {
-        OpenFace,               ///< OpenFace pre-trained neural network model [https://github.com/sahilshah/openface/tree/master]
-        SFace                   ///< SFace pre-trained neural network model    [https://github.com/opencv/opencv_zoo/blob/main/models/face_recognition_sface/]
+        /**
+         * OpenFace pre-trained neural network model [https://github.com/sahilshah/openface/tree/master]
+         */
+        OpenFace,
+        /**
+         * SFace pre-trained neural network model    [https://github.com/opencv/opencv_zoo/blob/main/models/face_recognition_sface/]
+         */
+        SFace
     };
     Q_ENUM(FaceRecognitionModel)
 
 public:
 
-    FaceScanSettings();
-    ~FaceScanSettings();
+    FaceScanSettings()  = default;
+    FaceScanSettings(const FaceScanSettings& other);
+    ~FaceScanSettings() = default;
+
+    FaceScanSettings& operator=(const FaceScanSettings& other);
 
 public:
 
-    /// Whole albums checked.
+    /**
+     * @brief Whole albums checked.
+     */
     bool                                    wholeAlbums                 = false;
 
-    /// Processing power.
+    /**
+     * @brief Processing power.
+     */
     bool                                    useFullCpu                  = false;
 
-    /// Detection Model.
+    /**
+     * @brief Detection Model.
+     */
     FaceDetectionModel                      detectModel                 = FaceDetectionModel::YuNet;
 
-    /// Detection Model.
+    /**
+     * @brief Face size used by the detection Model.
+     */
     FaceDetectionSize                       detectSize                  = FaceDetectionSize::Large;
 
-    /// Detection accuracy.
-    int                                     detectAccuracy              = DNN_MODEL_THRESHOLD_NOT_SET;      ///< use default value from dnnmodels.conf
+    /**
+     * @brief Detection accuracy.
+     * @note Use default value from dnnmodels.conf
+     */
+    int                                     detectAccuracy              = DNN_MODEL_THRESHOLD_NOT_SET;
 
-    /// Detection Model.
+    /**
+     * @brief Detection Model.
+     */
     FaceRecognitionModel                    recognizeModel              = FaceRecognitionModel::SFace;
 
-    /// Detection accuracy.
-    int                                     recognizeAccuracy           = DNN_MODEL_THRESHOLD_NOT_SET;      ///< use default value from dnnmodels.conf
+    /**
+     * @brief Recognition accuracy.
+     * @note Use default value from dnnmodels.conf
+     */
+    int                                     recognizeAccuracy           = DNN_MODEL_THRESHOLD_NOT_SET;
 
-    /// Albums to scan.
+    /**
+     * @brief Albums to scan.
+     */
     AlbumList                               albums;
 
-    /// Image infos to scan.
+    /**
+     * @brief Image infos to scan.
+     */
     ItemInfoList                            infos;
 
     ScanTask                                task                        = DetectAndRecognize;
@@ -133,4 +166,9 @@ public:
     AlreadyScannedHandling                  alreadyScannedHandling      = Skip;
 };
 
+//! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.
+DIGIKAM_GUI_EXPORT QDebug operator<<(QDebug dbg, const FaceScanSettings& s);
+
 } // namespace Digikam
+
+

@@ -16,6 +16,10 @@
 
 #pragma once
 
+// Qt includes
+
+#include <QDebug>
+
 // Local includes
 
 #include "album.h"
@@ -54,8 +58,11 @@ public:
 
 public:
 
-    AutotagsScanSettings();
-    ~AutotagsScanSettings();
+    AutotagsScanSettings()  = default;
+    AutotagsScanSettings(const AutotagsScanSettings& other);
+    ~AutotagsScanSettings() = default;
+
+    AutotagsScanSettings& operator=(const AutotagsScanSettings& other);
 
 public:
 
@@ -80,7 +87,7 @@ public:
     /// Albums to scan.
     AlbumList                               albums;
 
-    /// confidence threshold
+    /// Confidence threshold
     int                                     uiConfidenceThreshold       = 7;
 
     /// Autotags languages
@@ -89,5 +96,8 @@ public:
     /// Set true for BQM
     bool                                    bqmMode                     = false;
 };
+
+//! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.
+DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const AutotagsScanSettings& s);
 
 } // namespace Digikam

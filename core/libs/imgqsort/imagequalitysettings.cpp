@@ -160,3 +160,5 @@ QDebug operator<<(QDebug dbg, const ImageQualitySettings& s)
 }
 
 } // namespace Digikam
+
+#include "moc_imagequalitysettings.cpp"

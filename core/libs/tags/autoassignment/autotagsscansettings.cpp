@@ -18,12 +18,51 @@
 namespace Digikam
 {
 
-AutotagsScanSettings::AutotagsScanSettings()
+AutotagsScanSettings::AutotagsScanSettings(const AutotagsScanSettings& other)
+    : scanMode                (other.scanMode),
+      wholeAlbums             (other.wholeAlbums),
+      tagMode                 (other.tagMode),
+      useFullCpu              (other.useFullCpu),
+      objectDetectModel       (other.objectDetectModel),
+      imageClassificationModel(other.imageClassificationModel),
+      albums                  (other.albums),
+      uiConfidenceThreshold   (other.uiConfidenceThreshold),
+      languages               (other.languages),
+      bqmMode                 (other.bqmMode)
 {
 }
 
-AutotagsScanSettings::~AutotagsScanSettings()
+AutotagsScanSettings& AutotagsScanSettings::operator=(const AutotagsScanSettings& other)
 {
+    scanMode                 = other.scanMode;
+    wholeAlbums              = other.wholeAlbums;
+    tagMode                  = other.tagMode;
+    useFullCpu               = other.useFullCpu;
+    objectDetectModel        = other.objectDetectModel;
+    imageClassificationModel = other.imageClassificationModel;
+    albums                   = other.albums;
+    uiConfidenceThreshold    = other.uiConfidenceThreshold;
+    languages                = other.languages;
+    bqmMode                  = other.bqmMode;
+
+    return *this;
+}
+
+QDebug operator<<(QDebug dbg, const AutotagsScanSettings& s)
+{
+    dbg.nospace()                                                                << Qt::endl;
+    dbg.nospace() << "Scan Mode                 :" << s.scanMode                 << Qt::endl;
+    dbg.nospace() << "Whole Albums              :" << s.wholeAlbums              << Qt::endl;
+    dbg.nospace() << "Tag Mode                  :" << s.tagMode                  << Qt::endl;
+    dbg.nospace() << "Use Full CPU              :" << s.useFullCpu               << Qt::endl;
+    dbg.nospace() << "Object Detect Model       :" << s.objectDetectModel        << Qt::endl;
+    dbg.nospace() << "Image Classification Model:" << s.imageClassificationModel << Qt::endl;
+    dbg.nospace() << "Albums                    :" << s.albums                   << Qt::endl;
+    dbg.nospace() << "Confidence Threshold      :" << s.uiConfidenceThreshold    << Qt::endl;
+    dbg.nospace() << "Languages                 :" << s.languages                << Qt::endl;
+    dbg.nospace() << "Bqm Mode                  :" << s.bqmMode                  << Qt::endl;
+
+    return dbg.space();
 }
 
 } // namespace Digikam
