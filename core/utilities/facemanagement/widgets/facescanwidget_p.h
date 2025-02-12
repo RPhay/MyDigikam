@@ -53,7 +53,6 @@
 #include "albummodel.h"
 #include "albumselectors.h"
 #include "albummanager.h"
-#include "applicationsettings.h"
 #include "squeezedcombobox.h"
 #include "dexpanderbox.h"
 #include "facedbaccess.h"
@@ -96,12 +95,6 @@ public:
     QCheckBox*        useFullCpuButton                  = nullptr;
 
     const QString     configName                        = QLatin1String("Face Management Settings");
-    // const QString     configMainTask                    = QLatin1String("Face Scan Main Task");
-    const QString     configValueDetect                 = QLatin1String("Detect");
-    const QString     configValueDetectAndRecognize     = QLatin1String("Detect and Recognize Faces");
-    const QString     configValueRecognizedMarkedFaces  = QLatin1String("Recognize Marked Faces");
-    const QString     configAlreadyScannedHandling      = QLatin1String("Already Scanned Handling");
-    const QString     configUseFullCpu                  = QLatin1String("Use Full CPU");
 
     bool              settingsConflicted                = false;
 

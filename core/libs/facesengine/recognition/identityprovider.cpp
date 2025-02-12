@@ -32,7 +32,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "applicationsettings.h"
 #include "facedboperationgroup.h"
 #include "facedbaccess.h"
 #include "facedb.h"
@@ -76,11 +75,13 @@ IdentityProvider::IdentityProvider()
     : QObject(),
       d      (new Private)
 {
-
     // Save face settings to remove old Detector and Recognizer models.
 
-    ApplicationSettings::instance()->setFaceDetectionModel(FaceScanSettings::FaceDetectionModel::YuNet);
-    ApplicationSettings::instance()->setFaceRecognitionModel(FaceScanSettings::FaceRecognitionModel::SFace);
+    FaceScanSettings prm;
+    prm.readFromConfig();
+    prm.detectModel    = FaceScanSettings::FaceDetectionModel::YuNet;
+    prm.recognizeModel = FaceScanSettings::FaceRecognitionModel::SFace;
+    prm.writeToConfig();
 
     // initialize the database
 

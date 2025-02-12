@@ -86,14 +86,6 @@ public:
     // ---
 
     const QString     configName                        = QLatin1String("Autotags Settings");
-    const QString     configAlbums                      = QLatin1String("Albums");
-    const QString     configWholeAlbums                 = QLatin1String("Whole Albums");
-    const QString     configScanMode                    = QLatin1String("Scan Mode");
-    const QString     configTagMode                     = QLatin1String("Tag Mode");
-    const QString     configObjectDetectModel           = QLatin1String("Object Detection Model");
-    const QString     configObjectDetectAccuracy        = QLatin1String("Object Detection Accuracy");
-    const QString     configLanguages                   = QLatin1String("Languages");
-    const QString     configUseFullCpu                  = QLatin1String("Use Full CPU");
 
     bool              settingsConflicted                = false;
 

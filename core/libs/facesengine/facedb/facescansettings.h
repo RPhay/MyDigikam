@@ -179,7 +179,7 @@ public:
 
 private:
 
-    const QString                           configName                       = QLatin1String("Face Detection Settings");
+    const QString                           configName                       = QLatin1String("Face Management Settings");
     const QString                           configFaceAlreadyScannedHandling = QLatin1String("Face Already Scanned Handling");
     const QString                           configFaceScanTask               = QLatin1String("Face Scan Task");
     const QString                           configUseFullCpu                 = QLatin1String("Face Use Full CPU");

@@ -81,7 +81,6 @@ public:
     const QString configGroupBaloo                                  = QLatin1String("Baloo Settings");
     const QString configGroupGeneral                                = QLatin1String("General Settings");
     const QString configGroupVersioning                             = QLatin1String("Versioning Settings");
-    const QString configGroupFaceDetection                          = QLatin1String("Face Detection Settings");
     const QString configGroupDuplicatesSearch                       = QLatin1String("Find Duplicates View");
     const QString configGroupGrouping                               = QLatin1String("Grouping Behaviour");
     const QString configAlbumCollectionsEntry                       = QLatin1String("Album Collections");
@@ -179,11 +178,6 @@ public:
     const QString configSyncBalootoDigikamEntry                     = QLatin1String("Sync Baloo to Digikam");
     const QString configSyncDigikamtoBalooEntry                     = QLatin1String("Sync Digikam to Baloo");
     const QString configStringComparisonTypeEntry                   = QLatin1String("String Comparison Type");
-    const QString configFaceDetectionAccuracyEntry                  = QLatin1String("Face Detection Accuracy");
-    const QString configFaceDetectionModelEntry                     = QLatin1String("Face Detection Model");
-    const QString configFaceDetectionSizeEntry                      = QLatin1String("Face Detection Size");
-    const QString configFaceRecognitionAccuracyEntry                = QLatin1String("Face Recognition Accuracy");
-    const QString configFaceRecognitionModelEntry                   = QLatin1String("Face Recognition Model");
     const QString configApplicationStyleEntry                       = QLatin1String("Application Style");
     const QString configIconThemeEntry                              = QLatin1String("Icon Theme");
     const QString configApplicationFontEntry                        = QLatin1String("Application Font");
@@ -338,15 +332,6 @@ public:
     /// versioning settings
 
     VersionManagerSettings                       versionSettings;
-
-    /// face detection settings
-    int                                          faceDetectionAccuracy                              = 7;
-    FaceScanSettings::FaceDetectionModel         faceDetectionModel                                 = FaceScanSettings::FaceDetectionModel::YuNet;
-    FaceScanSettings::FaceDetectionSize          faceDetectionSize                                  = FaceScanSettings::FaceDetectionSize::Medium;
-
-    /// face recognition settings
-    int                                          faceRecognitionAccuracy                            = 7;
-    FaceScanSettings::FaceRecognitionModel       faceRecognitionModel                               = FaceScanSettings::FaceRecognitionModel::SFace;
 
     /// misc
     ApplicationSettings::StringComparisonType    stringComparisonType                               = ApplicationSettings::Natural;

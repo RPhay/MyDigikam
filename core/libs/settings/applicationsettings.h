@@ -469,21 +469,6 @@ public:
     void setVersionManagerSettings(const VersionManagerSettings& settings);
     VersionManagerSettings getVersionManagerSettings() const;
 
-    int getFaceDetectionAccuracy() const;
-    void setFaceDetectionAccuracy(int value);
-
-    FaceScanSettings::FaceDetectionModel getFaceDetectionModel() const;
-    void setFaceDetectionModel(FaceScanSettings::FaceDetectionModel model);
-
-    FaceScanSettings::FaceDetectionSize getFaceDetectionSize() const;
-    void setFaceDetectionSize(FaceScanSettings::FaceDetectionSize size);
-
-    int getFaceRecognitionAccuracy() const;
-    void setFaceRecognitionAccuracy(int value);
-
-    FaceScanSettings::FaceRecognitionModel getFaceRecognitionModel() const;
-    void setFaceRecognitionModel(FaceScanSettings::FaceRecognitionModel model);
-
     void setShowThumbbar(bool val);
     bool getShowThumbbar() const;
 

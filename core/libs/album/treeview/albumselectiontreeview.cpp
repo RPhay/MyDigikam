@@ -296,12 +296,7 @@ void AlbumSelectionTreeView::slotScanForFaces()
     }
 
     FaceScanSettings settings;
-
-    settings.detectAccuracy         = ApplicationSettings::instance()->getFaceDetectionAccuracy();
-    settings.detectModel            = ApplicationSettings::instance()->getFaceDetectionModel();
-    settings.detectSize             = ApplicationSettings::instance()->getFaceDetectionSize();
-    settings.recognizeAccuracy      = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
-    settings.recognizeModel         = ApplicationSettings::instance()->getFaceRecognitionModel();
+    settings.readFromConfig();
     settings.task                   = FaceScanSettings::DetectAndRecognize;
     settings.alreadyScannedHandling = FaceScanSettings::Rescan;
     settings.albums                 = albums;

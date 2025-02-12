@@ -42,45 +42,43 @@ void FaceScanWidget::doLoadState()
 {
     KConfigGroup group = getConfigGroup();
 
-    FaceScanSettings::AlreadyScannedHandling handling;
-    handling = (FaceScanSettings::AlreadyScannedHandling)group.readEntry(entryName(d->configAlreadyScannedHandling),
-                                                                         (int)FaceScanSettings::Skip);
+    FaceScanSettings prm;
+    prm.readFromConfig(group);
 
     /**
      * ClearAll isn't a valid value anymore so set it Rescan.
      * ClearAll is only used by ResetFacesDb in maintenance.
      */
 
-    if (FaceScanSettings::AlreadyScannedHandling::ClearAll == handling)
+    if (FaceScanSettings::AlreadyScannedHandling::ClearAll == prm.alreadyScannedHandling)
     {
-        handling = FaceScanSettings::AlreadyScannedHandling::Rescan;
+        prm.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::Rescan;
     }
 
-    d->alreadyScannedBox->setCurrentIndex(d->alreadyScannedBox->findData(handling));
+    d->alreadyScannedBox->setCurrentIndex(d->alreadyScannedBox->findData(prm.alreadyScannedHandling));
+    d->detectAccuracyInput->setValue(prm.detectAccuracy);
+    d->detectSizeBox->setCurrentIndex(d->detectSizeBox->findData(prm.detectSize));
+    d->recognizeAccuracyInput->setValue(prm.recognizeAccuracy);
+    d->useFullCpuButton->setChecked(prm.useFullCpu);
 
     d->albumSelectors->loadState();
-
-    d->detectAccuracyInput->setValue(ApplicationSettings::instance()->getFaceDetectionAccuracy());
-    d->detectSizeBox->setCurrentIndex(d->detectSizeBox->findData(ApplicationSettings::instance()->getFaceDetectionSize()));
-    d->recognizeAccuracyInput->setValue(ApplicationSettings::instance()->getFaceRecognitionAccuracy());
-
-    d->useFullCpuButton->setChecked(group.readEntry(entryName(d->configUseFullCpu), false));
 }
 
 void FaceScanWidget::doSaveState()
 {
     KConfigGroup group = getConfigGroup();
 
-    group.writeEntry(entryName(d->configAlreadyScannedHandling),
-                     d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt());
+    FaceScanSettings prm;
+
+    prm.alreadyScannedHandling = static_cast<FaceScanSettings::AlreadyScannedHandling>(d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt());
+    prm.detectAccuracy         = d->detectAccuracyInput->value();
+    prm.detectSize             = static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt());
+    prm.recognizeAccuracy      = d->recognizeAccuracyInput->value();
+    prm.useFullCpu             = d->useFullCpuButton->isChecked();
+
+    prm.writeToConfig(group);
 
     d->albumSelectors->saveState();
-
-    ApplicationSettings::instance()->setFaceDetectionAccuracy(d->detectAccuracyInput->value());
-    ApplicationSettings::instance()->setFaceDetectionSize(static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt()));
-    ApplicationSettings::instance()->setFaceRecognitionAccuracy(d->recognizeAccuracyInput->value());
-
-    group.writeEntry(entryName(d->configUseFullCpu), d->useFullCpuButton->isChecked());
 }
 
 void FaceScanWidget::setupUi()
@@ -263,17 +261,26 @@ void FaceScanWidget::slotPrepareForRecognize(bool /*status*/)
 
 void FaceScanWidget::slotDetectAccuracyChanged()
 {
-    ApplicationSettings::instance()->setFaceDetectionAccuracy(d->detectAccuracyInput->value());
+    KConfigGroup group = getConfigGroup();
+    FaceScanSettings prm;
+    prm.detectAccuracy = d->detectAccuracyInput->value();
+    prm.writeToConfig(group);
 }
 
 void FaceScanWidget::slotDetectSizeChanged()
 {
-    ApplicationSettings::instance()->setFaceDetectionSize(static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt()));
+    KConfigGroup group = getConfigGroup();
+    FaceScanSettings prm;
+    prm.detectSize     = static_cast<FaceScanSettings::FaceDetectionSize>(d->detectSizeBox->currentData().toInt());
+    prm.writeToConfig(group);
 }
 
 void FaceScanWidget::slotRecognizeAccuracyChanged()
 {
-    ApplicationSettings::instance()->setFaceRecognitionAccuracy(d->recognizeAccuracyInput->value());
+    KConfigGroup group    = getConfigGroup();
+    FaceScanSettings prm;
+    prm.recognizeAccuracy = d->recognizeAccuracyInput->value();
+    prm.writeToConfig(group);
 }
 
 bool FaceScanWidget::settingsConflicted() const

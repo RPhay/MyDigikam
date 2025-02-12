@@ -168,12 +168,8 @@ void DigikamApp::slotDetectFaces()
     }
 
     FaceScanSettings settings;
+    settings.readFromConfig();
 
-    settings.detectAccuracy         = ApplicationSettings::instance()->getFaceDetectionAccuracy();
-    settings.detectModel            = ApplicationSettings::instance()->getFaceDetectionModel();
-    settings.detectSize             = ApplicationSettings::instance()->getFaceDetectionSize();
-    settings.recognizeAccuracy      = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
-    settings.recognizeModel         = ApplicationSettings::instance()->getFaceRecognitionModel();
     settings.task                   = FaceScanSettings::DetectAndRecognize;
     settings.alreadyScannedHandling = FaceScanSettings::Skip;
     settings.infos                  = newImages;
@@ -198,15 +194,13 @@ void DigikamApp::slotCheckFaceTrainingVersion()
         if (dlg->exec() == QDialog::Accepted)
         {
             FaceScanSettings settings;
+            settings.readFromConfig();
 
             settings.wholeAlbums            = true;
             settings.useFullCpu             = true;
             settings.albums                 = AlbumManager::instance()->allPAlbums();
             settings.detectModel            = FaceScanSettings::FaceDetectionModel::YuNet;
-            settings.detectSize             = ApplicationSettings::instance()->getFaceDetectionSize();
-            settings.detectAccuracy         = ApplicationSettings::instance()->getFaceDetectionAccuracy();
             settings.recognizeModel         = FaceScanSettings::FaceRecognitionModel::SFace;
-            settings.recognizeAccuracy      = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
             settings.task                   = FaceScanSettings::ScanTask::RetrainAll;
 
             PeopleSideBarWidget::doFaceScan(settings);

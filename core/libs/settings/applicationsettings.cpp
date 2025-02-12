@@ -289,16 +289,6 @@ void ApplicationSettings::readSettings()
 
     // ---------------------------------------------------------------------
 
-    group                       = config->group(d->configGroupFaceDetection);
-
-    d->faceDetectionAccuracy    = group.readEntry(d->configFaceDetectionAccuracyEntry, 7);
-    d->faceDetectionModel       = static_cast<FaceScanSettings::FaceDetectionModel>(group.readEntry(d->configFaceDetectionModelEntry, (int)FaceScanSettings::FaceDetectionModel::YuNet));
-    d->faceDetectionSize        = static_cast<FaceScanSettings::FaceDetectionSize>(group.readEntry(d->configFaceDetectionSizeEntry, (int)FaceScanSettings::FaceDetectionSize::Large));
-    d->faceRecognitionAccuracy  = group.readEntry(d->configFaceRecognitionAccuracyEntry, 7);
-    d->faceRecognitionModel     = static_cast<FaceScanSettings::FaceRecognitionModel>(group.readEntry(d->configFaceRecognitionModelEntry, (int)FaceScanSettings::FaceRecognitionModel::SFace));
-
-    // ---------------------------------------------------------------------
-
     group                                                = config->group(d->configGroupDuplicatesSearch);
 
     d->minimumSimilarityBound                            = group.readEntry(d->configMinimumSimilarityBound,               40);
@@ -478,14 +468,6 @@ void ApplicationSettings::saveSettings()
     d->versionSettings.writeToConfig(group);
 
     // ---------------------------------------------------------------------
-
-    group = config->group(d->configGroupFaceDetection);
-
-    group.writeEntry(d->configFaceDetectionAccuracyEntry,               d->faceDetectionAccuracy);
-    group.writeEntry(d->configFaceDetectionModelEntry,                  (int)d->faceDetectionModel);
-    group.writeEntry(d->configFaceDetectionSizeEntry,                   (int)d->faceDetectionSize);
-    group.writeEntry(d->configFaceRecognitionAccuracyEntry,             d->faceRecognitionAccuracy);
-    group.writeEntry(d->configFaceRecognitionModelEntry,                (int)d->faceRecognitionModel);
 
     group = config->group(d->configGroupDuplicatesSearch);
 
