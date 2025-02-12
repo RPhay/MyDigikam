@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-11 01:59+0000\n"
+"POT-Creation-Date: 2025-02-12 01:52+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -33763,8 +33763,8 @@ msgid "Select All"
 msgstr "सर्व निवडा"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -33899,8 +33899,8 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:159
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:169
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -33917,8 +33917,8 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:304
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
@@ -37930,7 +37930,7 @@ msgstr ""
 msgid "Found %1 objects. Tags: %2"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:104
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -37942,26 +37942,26 @@ msgid ""
 "database.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
 #, fuzzy, kde-format
 msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "मॉडेल"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
 #| msgid "All"
 msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "सर्व"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
 #, kde-format
 msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37969,18 +37969,18 @@ msgid ""
 "scan only the items with no assigned autotags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
 #, kde-format
 msgid "Auto-Tagging Mode:"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
 #, fuzzy, kde-format
 msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "अद्ययावत : %1"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
@@ -37988,7 +37988,7 @@ msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "अद्ययावत करा"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37997,25 +37997,25 @@ msgid ""
 "existing tags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgctxt "@label: deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "लक्ष्य :"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:146
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:141
 #, fuzzy, kde-format
 #| msgid "Not available"
 msgid "No models available"
 msgstr "उपलब्ध नाही"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #, fuzzy, kde-format
 msgid "Detection Accuracy:"
 msgstr "प्रतिमेचे स्थान"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -38024,7 +38024,7 @@ msgid ""
 "be recognized, but fewer objects will be recognized.\n"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -38033,14 +38033,14 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:187
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
 #, fuzzy, kde-format
 #| msgid "Database"
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "डेटाबेस"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:189
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:184
 #, fuzzy, kde-format
 #| msgid "Database"
 msgctxt "@title:tab"
@@ -51023,7 +51023,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:93
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51032,21 +51032,21 @@ msgid ""
 "it can also recognize the people shown on your photos."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:101
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:104
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "प्रतिमा"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "प्रतिमा"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:106
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, fuzzy, kde-format
 #| msgid "Synchronize"
@@ -51054,7 +51054,7 @@ msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "सिंक्रोनाईझ"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51066,25 +51066,25 @@ msgid ""
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:111
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:114
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "मदत (&H)"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:129
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:132
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51093,28 +51093,28 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
 #, fuzzy, kde-format
 #| msgid "File Size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "फाईलचा आकार"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, fuzzy, kde-format
 #| msgid "Image Settings"
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "प्रतिमा संयोजना"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, fuzzy, kde-format
 #| msgid "Image Settings"
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "प्रतिमा संयोजना"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -51122,21 +51122,21 @@ msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "मध्यम"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "लक्ष्य"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, fuzzy, kde-format
 #| msgid "Image Settings"
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "प्रतिमा संयोजना"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51155,18 +51155,18 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
 #, fuzzy, kde-format
 msgid "Face Detection Settings"
 msgstr "कार्यपद्धती :"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:239
 #, fuzzy, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "प्रतिमेचे स्थान"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51176,7 +51176,7 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51185,7 +51185,7 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:296
 #, fuzzy, kde-format
 msgid "Face Recognition Settings"
 msgstr "प्रतिमेचे स्थान"

@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-11 01:59+0000\n"
-"PO-Revision-Date: 2025-02-09 12:52+0300\n"
+"POT-Creation-Date: 2025-02-12 01:52+0000\n"
+"PO-Revision-Date: 2025-02-11 10:28+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -35175,8 +35175,8 @@ msgid "Select All"
 msgstr "Tümünü Seç"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -35216,25 +35216,19 @@ msgid "aesthetic image quality"
 msgstr "estetik görsel kalitesi"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@label:image quality sort scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label: image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "Tarama kipi:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@item:all items to scan with image quality sort"
-#| msgid "All"
+#, kde-format
 msgctxt "@item: all items to scan with image quality sort"
 msgid "All"
 msgstr "Tümü"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@item:image quality sort only non assigned items"
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item: image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Yalnızca atanmamışlar"
@@ -35342,8 +35336,8 @@ msgstr ""
 "ilgili ayarlara bakın."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:159
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:169
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -35351,25 +35345,20 @@ msgid "Work on all processor cores"
 msgstr "Tüm işlemci çekirdeklerinde çalış"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Quality detection is time-consuming tasks.\n"
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"Yüz algılama ve tanıma zaman alan görevlerdir. Sisteminizde tüm\n"
-"işlemci çekirdeklerini kullanmayı veya arka planda yalnızca tek\n"
-"bir çekirdek üzerinde çalışmayı seçebilirsiniz."
+"Kalite algılama zaman alan bir görevdir. Sisteminizdeki tüm\n"
+"işlemci çekirdeklerini kullanmayı veya arka planda yalnızca\n"
+"tek bir çekirdek üzerinde çalışmayı seçebilirsiniz."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:304
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -39496,7 +39485,7 @@ msgstr "%1 nesne bulundu: Künye: %2"
 msgid "Found %1 objects. Tags: %2"
 msgstr "%1 nesne bulundu. Künyeler: %2"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:104
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -39514,31 +39503,25 @@ msgstr ""
 "Yapay zeka sinir ağı, görsel içerikleri için kendiliğinden açıklayıcı "
 "künyeler oluşturacak ve sonuçları veritabanında saklayacaktır.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@label:image quality sort scan mode"
-#| msgid "Scan Mode:"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
+#, kde-format
 msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Tarama kipi:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@item:all items to scan with image quality sort"
-#| msgid "All"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#, kde-format
 msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "Tümü"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@item:image quality sort only non assigned items"
-#| msgid "Non-Assigned Only"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
+#, kde-format
 msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Yalnızca atanmamışlar"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39549,28 +39532,24 @@ msgstr ""
 "p><p><b>Yalnızca atanmamışlar</b>: Yalnızca kendiliğinden bir künye "
 "atanmamış ögeleri tarayın.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
 #, kde-format
 msgid "Auto-Tagging Mode:"
 msgstr "Kendiliğinden künyeleme kipi:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
-#, fuzzy, kde-format
-#| msgctxt "@item:remplace existing autotags entries in database"
-#| msgid "Replace Existing"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
+#, kde-format
 msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Var olanı değiştir"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Update"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
+#, kde-format
 msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "Güncelle"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39582,25 +39561,23 @@ msgstr ""
 "sonucuyla gelenlerle değiştirin.</p><p><b>Güncelle</b>: Yeni bulunan tüm "
 "kendiliğinden künyeleri var olan künyelere ekleyin.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@label:deep learning model selection to perform autotags"
-#| msgid "Selection Model:"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
+#, kde-format
 msgctxt "@label: deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Seçim modeli:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:146
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:141
 #, kde-format
 msgid "No models available"
 msgstr "Kullanılabilir model yok"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #, kde-format
 msgid "Detection Accuracy:"
 msgstr "Nesne algılama doğruluğu:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39611,7 +39588,7 @@ msgstr ""
 "Hassasiyeti ve özgüllüğü ayarlayın: Değer ne kadar yüksek olursa\n"
 "nesneler o kadar doğru tanınır; ancak daha az nesne tanınır.\n"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39624,13 +39601,13 @@ msgstr ""
 "istemediğinizi veya arka planda yalnızca bir çekirdek üzerinde\n"
 "çalışmak isteyip istemediğinizi seçebilirsiniz."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:187
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Künyeleri şuna çevir:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:189
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:184
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
@@ -51939,7 +51916,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Bu öneriyi reddet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:93
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51951,28 +51928,28 @@ msgstr ""
 "Arkadaşlarınızı bir dizi fotoğrafta tanımlarsanız,\n"
 "fotoğraflarınızda gösterilen kişileri de tanıyabilir."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:101
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:104
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Yeni görselleri tara"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Tüm görselleri tara"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:106
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Yalnızca yüzleri tanı"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51990,25 +51967,25 @@ msgstr ""
 "</p><p><b>Yalnızca yüzleri tanı</b>, görsellerdeki yeni yüzleri taramadan "
 "bilinmeyen yüzleri onaylı yüzlerle eşleştirmeye çalışacaktır.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:111
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Yardım"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:129
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:132
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "İş Akışı"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Doğruluk:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52019,43 +51996,43 @@ msgstr ""
 "Belirliliğe karşı duyarlılığı ayarlayın: Değer ne kadar yüksek olursa yüzler "
 "o kadar doğru bir biçimde algılanır; ancak daha az yüz tespit edilir."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Yüz boyutu:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Ekstra küçük"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Küçük"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Orta"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Büyük"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Ekstra büyük"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52088,18 +52065,18 @@ msgstr ""
 "ayarlamak ve yüz boyutunu <b>Orta</b> veya <b>Büyük</b> olarak seçmek "
 "önerilir.</p><p>Bu ayar yalnızca YuNet için geçerlidir.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Yüz Algılama Ayarları"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:239
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Doğruluk:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52112,7 +52089,7 @@ msgstr ""
 "o kadar doğru olarak tanınır; ancak toplam tanınan yüz sayısı daha az olur\n"
 "Not: Yalnızca önceden künye eklenen yüzlere çok benzeyen yüzler tanınır."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52120,11 +52097,11 @@ msgid ""
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"Yüz algılama ve tanıma zaman alan görevlerdir. Sisteminizde tüm\n"
-"işlemci çekirdeklerini kullanmayı veya arka planda yalnızca tek\n"
-"bir çekirdek üzerinde çalışmayı seçebilirsiniz."
+"Yüz algılama ve tanıma zaman alan görevlerdir. Sisteminizdeki\n"
+"tüm işlemci çekirdeklerini kullanmayı veya arka planda yalnızca\n"
+"tek bir çekirdek üzerinde çalışmayı seçebilirsiniz."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:296
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Yüz Tanıma Ayarları"

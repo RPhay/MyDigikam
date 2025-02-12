@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-11 01:59+0000\n"
+"POT-Creation-Date: 2025-02-12 01:52+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -34817,8 +34817,8 @@ msgid "Select All"
 msgstr "全部選取"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -35003,8 +35003,8 @@ msgid ""
 msgstr "偵測影像是否被四個基礎要素（模糊、雜訊、曝光、壓縮）影響而失真。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:159
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:169
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -35028,8 +35028,8 @@ msgstr ""
 "行臉孔偵測，或是只要在單一核心上在背景工作。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:304
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -39046,7 +39046,7 @@ msgstr ""
 msgid "Found %1 objects. Tags: %2"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:104
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -39058,28 +39058,28 @@ msgid ""
 "database.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
 msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "掃描型號："
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, fuzzy, kde-format
 #| msgid "All"
 msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "全部"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
 #, fuzzy, kde-format
 #| msgid "Scan non-assigned only"
 msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "只掃描未指定的"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39087,13 +39087,13 @@ msgid ""
 "scan only the items with no assigned autotags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
 #, fuzzy, kde-format
 #| msgid "Auto-tagging mode: "
 msgid "Auto-Tagging Mode:"
 msgstr "自動標籤模式："
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
 #, fuzzy, kde-format
 #| msgctxt "@title:group"
 #| msgid "Updates"
@@ -39101,7 +39101,7 @@ msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "更新"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
@@ -39109,7 +39109,7 @@ msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "更新"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39118,27 +39118,27 @@ msgid ""
 "existing tags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgctxt "@label: deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "目的地："
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:146
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:141
 #, fuzzy, kde-format
 #| msgid "No tool available"
 msgid "No models available"
 msgstr "沒有可用的工具"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Face Accuracy"
 msgid "Detection Accuracy:"
 msgstr "臉孔精準度"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -39151,7 +39151,7 @@ msgid ""
 "be recognized, but fewer objects will be recognized.\n"
 msgstr "調整速度與精確度：此值越高，精確度越高，但也越慢。"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -39167,13 +39167,13 @@ msgstr ""
 "臉孔偵測是個很花時間的工作。您可以選擇是否要使用您電腦中所有的處理器核心來進"
 "行臉孔偵測，或是只要在單一核心上在背景工作。"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:187
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "翻譯標籤成："
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:189
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:184
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Translate to:"
@@ -51608,7 +51608,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "拒絕這個建議"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:93
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:96
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51619,7 +51619,7 @@ msgstr ""
 "digiKam 可以搜尋您的相片中的臉孔。<nl/> 當您已經在相當數量中的相片標記出您的"
 "朋友後，<nl/> 它可以辨識中您其它相片中的此人。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:101
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:104
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, fuzzy, kde-format
 #| msgid "Scan Images"
@@ -51627,7 +51627,7 @@ msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "掃描影像"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, fuzzy, kde-format
 #| msgid "Scan Images"
@@ -51635,7 +51635,7 @@ msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "掃描影像"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:106
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
@@ -51644,7 +51644,7 @@ msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "辨識臉孔"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51656,27 +51656,27 @@ msgid ""
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:111
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "說明"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:129
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:132
 #, fuzzy, kde-format
 #| msgid "Workflow"
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "工作流"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "精準度"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -51689,14 +51689,14 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr "調整速度與精確度：此值越高，精確度越高，但也越慢。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
 #, fuzzy, kde-format
 #| msgid "File Size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "檔案大小"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -51704,7 +51704,7 @@ msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "影像標籤"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -51712,7 +51712,7 @@ msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "影像標籤"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -51720,14 +51720,14 @@ msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "中"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "目標"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -51735,7 +51735,7 @@ msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "影像標籤"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51754,20 +51754,20 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Face Detection Settings"
 msgstr "臉孔偵測"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:239
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "精準度"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -51781,7 +51781,7 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr "調整速度與精確度：此值越高，精確度越高，但也越慢。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -51797,7 +51797,7 @@ msgstr ""
 "臉孔偵測是個很花時間的工作。您可以選擇是否要使用您電腦中所有的處理器核心來進"
 "行臉孔偵測，或是只要在單一核心上在背景工作。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:296
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face Recognition Settings"

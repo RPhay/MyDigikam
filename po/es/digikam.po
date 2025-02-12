@@ -46,8 +46,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-11 01:59+0000\n"
-"PO-Revision-Date: 2025-02-09 12:38+0100\n"
+"POT-Creation-Date: 2025-02-12 01:52+0000\n"
+"PO-Revision-Date: 2025-02-11 19:03+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -35568,8 +35568,8 @@ msgid "Select All"
 msgstr "Seleccionar todo"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -35610,25 +35610,19 @@ msgid "aesthetic image quality"
 msgstr "calidad estética de la imagen"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@label:image quality sort scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label: image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "Modo de escaneo:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@item:all items to scan with image quality sort"
-#| msgid "All"
+#, kde-format
 msgctxt "@item: all items to scan with image quality sort"
 msgid "All"
 msgstr "Todo"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@item:image quality sort only non assigned items"
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item: image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Solo los no asignados"
@@ -35736,8 +35730,8 @@ msgstr ""
 "básicos</b>."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:159
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:169
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -35745,25 +35739,20 @@ msgid "Work on all processor cores"
 msgstr "Usar todos los núcleos del procesador"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Quality detection is time-consuming tasks.\n"
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"La detección de caras y su reconocimiento son tareas que consumen tiempo.\n"
-"Puede elegir si desea utilizar todos los núcleos del procesador de su\n"
+"La detección de calidad es una tarea que consume tiempo.\n"
+"Puede elegir si desea usar todos los núcleos del procesador de su\n"
 "sistema, o trabajar únicamente con un solo núcleo."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:304
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -39914,7 +39903,7 @@ msgstr "%1 objeto encontrado. Etiqueta: %2"
 msgid "Found %1 objects. Tags: %2"
 msgstr "%1 objetos encontrados. Etiquetas: %2"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:104
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -39934,31 +39923,25 @@ msgstr ""
 "descriptivas para el contenido de la imagen y almacenará los resultados en "
 "la base de datos.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@label:image quality sort scan mode"
-#| msgid "Scan Mode:"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
+#, kde-format
 msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Modo de escaneo:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@item:all items to scan with image quality sort"
-#| msgid "All"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#, kde-format
 msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "Todo"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@item:image quality sort only non assigned items"
-#| msgid "Non-Assigned Only"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
+#, kde-format
 msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Solo los no asignados"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39969,28 +39952,24 @@ msgstr ""
 "</p><p><b>Solo los no asignados</b>: escanear solo los elementos que no "
 "tienen asignadas etiquetas automáticas.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
 #, kde-format
 msgid "Auto-Tagging Mode:"
 msgstr "Modo de etiquetado automático:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
-#, fuzzy, kde-format
-#| msgctxt "@item:remplace existing autotags entries in database"
-#| msgid "Replace Existing"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
+#, kde-format
 msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Sustituir las existentes"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Update"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
+#, kde-format
 msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "Actualización"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40003,25 +39982,23 @@ msgstr ""
 "b>: añadir cualquier nueva etiqueta automática que se encuentre a las "
 "etiquetas existentes.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@label:deep learning model selection to perform autotags"
-#| msgid "Selection Model:"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
+#, kde-format
 msgctxt "@label: deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Modelo de selección:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:146
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:141
 #, kde-format
 msgid "No models available"
 msgstr "No hay modelos disponibles"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #, kde-format
 msgid "Detection Accuracy:"
 msgstr "Precisión de la detección:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40033,7 +40010,7 @@ msgstr ""
 "más precisión se\n"
 "reconocerán los objetos, aunque se reconocerán menos objetos.\n"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40045,13 +40022,13 @@ msgstr ""
 "consumen tiempo. Puede elegir si desea utilizar todos los núcleos del\n"
 "procesador de su sistema, o trabajar únicamente con un solo núcleo."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:187
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Traducir etiquetas al:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:189
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:184
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
@@ -52470,7 +52447,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Rechazar esta sugerencia"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:93
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52482,28 +52459,28 @@ msgstr ""
 "Cuando haya identificado a sus amigos en cierto número de fotos,\n"
 "también puede reconocer a las personas que aparecen en ellas."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:101
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:104
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Escanear nuevas imágenes"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Escanear todas las imágenes"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:106
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Reconocer caras solamente"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52522,25 +52499,25 @@ msgstr ""
 "b> tratará de reconocer caras desconocidas con las caras confirmadas sin "
 "escanear las nuevas caras de las imágenes.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:111
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Ayuda"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:129
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:132
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Flujo de trabajo"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Precisión:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52552,43 +52529,43 @@ msgstr ""
 "más precisión se\n"
 "detectarán las caras, aunque se detectarán menos caras."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Tamaño de las caras:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Muy pequeño"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Pequeño"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Media"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Grande"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Muy grande"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52620,18 +52597,18 @@ msgstr ""
 "la precisión de la detección a 6-8 y el tamaño de las caras a <b>Medio</b> o "
 "<b>Grande</b>.</p><p>Este ajuste solo se aplica a YuNet.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Preferencias de reconocimiento de caras"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:239
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Precisión:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52646,7 +52623,7 @@ msgstr ""
 "Nota: solo se reconocerán las caras que sean muy similares a las que ya "
 "hayan sido etiquetadas."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52658,7 +52635,7 @@ msgstr ""
 "Puede elegir si desea utilizar todos los núcleos del procesador de su\n"
 "sistema, o trabajar únicamente con un solo núcleo."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:296
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Preferencias de reconocimiento de caras"

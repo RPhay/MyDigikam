@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-11 01:59+0000\n"
-"PO-Revision-Date: 2025-02-09 08:27+0200\n"
+"POT-Creation-Date: 2025-02-12 01:52+0000\n"
+"PO-Revision-Date: 2025-02-11 08:42+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -35685,8 +35685,8 @@ msgid "Select All"
 msgstr "Вибрати все"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -35727,25 +35727,19 @@ msgid "aesthetic image quality"
 msgstr "естетична якість зображення"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@label:image quality sort scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label: image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr "Режим пошуку:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@item:all items to scan with image quality sort"
-#| msgid "All"
+#, kde-format
 msgctxt "@item: all items to scan with image quality sort"
 msgid "All"
 msgstr "У всіх"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@item:image quality sort only non assigned items"
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item: image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Лише у записах без призначень"
@@ -35852,8 +35846,8 @@ msgstr ""
 "Відповідні пункти можна знайти на вкладці <b>Основні фактори</b>."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:159
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:169
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -35861,26 +35855,21 @@ msgid "Work on all processor cores"
 msgstr "Використовувати всі ядра процесора"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Quality detection is time-consuming tasks.\n"
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"Виявлення і розпізнавання облич є доволі тривалим завданням.\n"
+"Виявлення якості є доволі тривалим завданням.\n"
 "Ви можете наказати програмі використовувати всі ядра процесора\n"
 "у системі або працювати у фоновому режимі, використовуючи лише одне ядро "
 "процесора."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:304
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -40055,7 +40044,7 @@ msgstr "Знайдено %1 об'єкт. Мітка: %2"
 msgid "Found %1 objects. Tags: %2"
 msgstr "Знайдено %1 об'єктів. Мітки: %2"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:104
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -40074,31 +40063,25 @@ msgstr ""
 "Буде використано нейронну мережу ШІ для автоматичного створення міток, що "
 "описують вміст зображення, а отримані мітки буде збережено до бази даних.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@label:image quality sort scan mode"
-#| msgid "Scan Mode:"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
+#, kde-format
 msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Режим пошуку:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@item:all items to scan with image quality sort"
-#| msgid "All"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#, kde-format
 msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "У всіх"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@item:image quality sort only non assigned items"
-#| msgid "Non-Assigned Only"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
+#, kde-format
 msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Лише у записах без призначень"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40109,28 +40092,24 @@ msgstr ""
 "елементів.</p><p><b>Лише у записах без призначень</b>: шукати лише у записах "
 "без призначених автоміток.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
 #, kde-format
 msgid "Auto-Tagging Mode:"
 msgstr "Режим автоміток: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
-#, fuzzy, kde-format
-#| msgctxt "@item:remplace existing autotags entries in database"
-#| msgid "Replace Existing"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
+#, kde-format
 msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Замінити наявні"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Update"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
+#, kde-format
 msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "Оновлення"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40142,25 +40121,23 @@ msgstr ""
 "результатами сканування.</p><p><b>Оновити</b>: додати усі нові автомітки до "
 "наявних міток.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@label:deep learning model selection to perform autotags"
-#| msgid "Selection Model:"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
+#, kde-format
 msgctxt "@label: deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Модель вибору:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:146
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:141
 #, kde-format
 msgid "No models available"
 msgstr "Немає доступних моделей"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #, kde-format
 msgid "Detection Accuracy:"
 msgstr "Точність виявлення:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40172,7 +40149,7 @@ msgstr ""
 "розпізнаватимуться об'єкти,\n"
 "але тим менше буде розпізнано об'єктів.\n"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40186,13 +40163,13 @@ msgstr ""
 "у системі або працювати у фоновому режимі, використовуючи лише одне ядро "
 "процесора."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:187
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Перекласти мітки такою мовою:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:189
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:184
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
@@ -52611,7 +52588,7 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Відкинути цю пропозицію"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:93
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52623,28 +52600,28 @@ msgstr ""
 "Якщо ви вкажете імена осіб, зображених на декількох фотографіях, програма\n"
 "зможе автоматично виконати розпізнавання цих людей на інших фотографіях."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:101
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:104
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Сканувати нові зображення"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Сканувати усі зображення"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:106
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Лише розпізнати обличчя"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52663,25 +52640,25 @@ msgstr ""
 "встановити відповідність облич з підтвердженими обличчями без пошуку нових "
 "облич.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:111
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "Help"
 msgstr "Довідка"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:129
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:132
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Процес"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Точність:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52693,43 +52670,43 @@ msgstr ""
 "розпізнаватимуться обличчя,\n"
 "але тим менше буде розпізнано облич."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Розмір обличчя:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Дуже малий"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Малий"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Середній"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Великий"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Дуже великий"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52761,18 +52738,18 @@ msgstr ""
 "встановити точність виявлення близько 6-8 і <b>Середній</b> або <b>Великий</"
 "b> розмір обличчя.</p><p>Цей параметр можна застосовувати лише до YuNet.</p>"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Параметри виявлення облич"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:239
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Точність:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52787,7 +52764,7 @@ msgstr ""
 "Зауваження: буде розпізнано лише обличчя, які є дуже подібними до попередньо "
 "визначених за допомогою міток обличчя."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52800,7 +52777,7 @@ msgstr ""
 "у системі або працювати у фоновому режимі, використовуючи лише одне ядро "
 "процесора."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:296
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Параметри розпізнавання облич"
