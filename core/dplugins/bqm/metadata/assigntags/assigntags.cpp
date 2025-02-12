@@ -50,7 +50,15 @@ class Q_DECL_HIDDEN AssignTags::Private
 public:
 
     Private() = default;
-    ~Private();
+    ~Private()
+    {
+        if (pipeline)
+        {
+            pipeline->cancel();
+            delete pipeline;
+            pipeline = nullptr;
+        }
+    }
 
 public:
 
@@ -58,16 +66,6 @@ public:
     AutotagsPipelineObject* pipeline            = nullptr;
     AutotagsScanWidget*     autotagsScanWidget  = nullptr;
 };
-
-AssignTags::Private::~Private()
-{
-    if (pipeline)
-    {
-        pipeline->cancel();
-        delete pipeline;
-        pipeline = nullptr;
-    }
-}
 
 AssignTags::AssignTags(QObject* const parent)
     : BatchTool(QLatin1String("AssignTags"), MetadataTool, parent),
@@ -87,10 +85,10 @@ BatchTool* AssignTags::clone(QObject* const parent) const
 
 void AssignTags::registerSettingsWidget()
 {
-    DVBox* const vbox  = new DVBox;
+    DVBox* const vbox     = new DVBox;
     d->autotagsScanWidget = new AutotagsScanWidget(AutotagsScanWidget::SettingsDisplayMode::BQM, vbox);
 
-    m_settingsWidget   = vbox;
+    m_settingsWidget      = vbox;
 
     connect(d->autotagsScanWidget, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
@@ -107,7 +105,7 @@ BatchToolSettings AssignTags::defaultSettings()
     settings.insert(QLatin1String("AutotagsObjectDetectModel"), autotagsSettings.objectDetectModel);
     settings.insert(QLatin1String("AutotagsObjectDetectAccuracy"), autotagsSettings.uiConfidenceThreshold);
     settings.insert(QLatin1String("TrAutotagsLangs"), autotagsSettings.languages);
-    
+
     return settings;
 }
 
