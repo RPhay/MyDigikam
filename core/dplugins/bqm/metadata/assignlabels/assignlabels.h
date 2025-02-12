@@ -30,7 +30,7 @@ class AssignLabels : public BatchTool
 public:
 
     explicit AssignLabels(QObject* const parent = nullptr);
-    ~AssignLabels()                                          override;
+    ~AssignLabels()                                         override;
 
     BatchToolSettings defaultSettings()                     override;
 

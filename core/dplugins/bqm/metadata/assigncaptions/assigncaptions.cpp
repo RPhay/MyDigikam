@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     QCheckBox*          setTitles       = nullptr;
     AltLangStrEdit*     titlesWidget    = nullptr;
 

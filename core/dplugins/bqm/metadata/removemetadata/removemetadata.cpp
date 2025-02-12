@@ -61,6 +61,8 @@ public:
 
     Private() = default;
 
+public:
+
     QCheckBox* removeExif       = nullptr;
     QCheckBox* removeIptc       = nullptr;
     QCheckBox* removeXmp        = nullptr;

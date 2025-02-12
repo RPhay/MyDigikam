@@ -55,6 +55,8 @@ public:
 
     Private() = default;
 
+public:
+
     QCheckBox*            titleCB           = nullptr;
     QCheckBox*            captionCB         = nullptr;
     QCheckBox*            copyrightsCB      = nullptr;

@@ -83,7 +83,7 @@ QList<DPluginAuthor> ApplyMetadataPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
                              QString::fromUtf8("metzpinguin at gmail dot com"),
-                             QString::fromUtf8("(C) 2024"))
+                             QString::fromUtf8("(C) 2024-2025"))
             ;
 }
 

@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     QCheckBox*          setRating           = nullptr;
     RatingWidget*       ratingWidget        = nullptr;
 
@@ -81,8 +83,6 @@ BatchTool* AssignLabels::clone(QObject* const parent) const
 void AssignLabels::registerSettingsWidget()
 {
     const int spacing     = layoutSpacing();
-
-
     DVBox* const vbox     = new DVBox;
 
     DHBox* const pickBox  = new DHBox(vbox);
