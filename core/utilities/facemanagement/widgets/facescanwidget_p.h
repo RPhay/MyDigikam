@@ -91,9 +91,6 @@ public:
     DIntNumInput*     detectAccuracyInput               = nullptr;
     DIntNumInput*     recognizeAccuracyInput            = nullptr;
 
-    // SqueezedComboBox* detectModelBox                    = nullptr;
-    // SqueezedComboBox* recognizeModelBox                 = nullptr;
-
     // ---
 
     QCheckBox*        useFullCpuButton                  = nullptr;
@@ -107,9 +104,7 @@ public:
     const QString     configUseFullCpu                  = QLatin1String("Use Full CPU");
 
     bool              settingsConflicted                = false;
-/*
-    FacesDetector*    facesDetector                     = nullptr;
-*/
+
     FacesEngine*      facesDetector                     = nullptr;
 };
 

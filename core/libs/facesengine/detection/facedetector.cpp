@@ -49,18 +49,6 @@ public:
 
                 switch (model)
                 {
-                    case FaceScanSettings::FaceDetectionModel::SSDMOBILENET:
-                    {
-                        m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::DNNDetectorSSD);
-                        break;
-                    }
-
-                    case FaceScanSettings::FaceDetectionModel::YOLOv3:
-                    {
-                        m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::DNNDetectorYOLOv3);
-                        break;
-                    }
-
                     case FaceScanSettings::FaceDetectionModel::YuNet:
                     {
                         m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::DNNDetectorYuNet);

@@ -43,13 +43,13 @@ public:
      */
     enum ScanTask
     {
-        // Detect,              ///< Detect faces only.
+//      Detect,              ///< Detect faces only.
         DetectAndRecognize,     ///< Detect and recognize faces only.
         RecognizeMarkedFaces,   ///< Recognize already marked faces only.
         RetrainAll,             ///< Retrain faces only.
         Reset
-    //  BenchmarkDetection,     ///< Bench performances of detect faces.
-    //  BenchmarkRecognition    ///< Bench performance of recognize faces.
+//      BenchmarkDetection,     ///< Bench performances of detect faces.
+//      BenchmarkRecognition    ///< Bench performance of recognize faces.
     };
     Q_ENUM(ScanTask)
 
@@ -59,7 +59,7 @@ public:
     enum AlreadyScannedHandling
     {
         Skip,                   ///< Skip faces from images already scanned.
-    //  Merge,                  ///< Merge faces from images already scanned.
+//      Merge,                  ///< Merge faces from images already scanned.
         Rescan,                 ///< Rescan faces from images already scanned.
         ClearAll,               ///< Clear all faces data from images already scanned. Clear identities and training data from FacesDb
         RecognizeOnly           ///< Recognize faces from images already scanned.
@@ -71,9 +71,10 @@ public:
      */
     enum FaceDetectionModel
     {
-        SSDMOBILENET,           ///< SSD MobileNet neural network inference [https://github.com/arunponnusamy/cvlib]
-        YOLOv3,                 ///< YOLO neural network inference          [https://github.com/sthanhng/yoloface]
-        YuNet                   ///< YuNet neural network inference         [https://github.com/opencv/opencv_zoo/tree/main]
+        /**
+         * YuNet neural network inference [https://github.com/opencv/opencv_zoo/tree/main]
+         */
+        YuNet
     };
     Q_ENUM(FaceDetectionModel)
 
@@ -96,11 +97,7 @@ public:
     enum FaceRecognitionModel
     {
         /**
-         * OpenFace pre-trained neural network model [https://github.com/sahilshah/openface/tree/master]
-         */
-        OpenFace,
-        /**
-         * SFace pre-trained neural network model    [https://github.com/opencv/opencv_zoo/blob/main/models/face_recognition_sface/]
+         * SFace pre-trained neural network model [https://github.com/opencv/opencv_zoo/blob/main/models/face_recognition_sface/]
          */
         SFace
     };

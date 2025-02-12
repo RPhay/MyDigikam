@@ -306,30 +306,7 @@ void AlbumSelectionTreeView::slotScanForFaces()
     settings.alreadyScannedHandling = FaceScanSettings::Rescan;
     settings.albums                 = albums;
 
-    // FacesDetector* const tool       = new FacesDetector(settings);
     FacesEngine* const tool       = new FacesEngine(settings);
-
-    // connect(tool, &FacesDetector::signalComplete,
-    // connect(tool, &FacesEngine::signalComplete,
-    //         this, [this, albums]()
-    //     {
-    //         FaceScanSettings settings;
-
-    //         settings.detectAccuracy    = ApplicationSettings::instance()->getFaceDetectionAccuracy();
-    //         settings.detectModel       = ApplicationSettings::instance()->getFaceDetectionModel();
-    //         settings.detectSize        = ApplicationSettings::instance()->getFaceDetectionSize();
-    //         settings.recognizeAccuracy = ApplicationSettings::instance()->getFaceRecognitionAccuracy();
-    //         settings.recognizeModel    = ApplicationSettings::instance()->getFaceRecognitionModel();
-    //         settings.task              = FaceScanSettings::RecognizeMarkedFaces;
-    //         settings.albums            = albums;
-
-    //         // FacesDetector* const tool  = new FacesDetector(settings);
-    //         FacesEngine* const tool  = new FacesEngine(settings);
-
-    //         tool->start();
-    //     }
-    // );
-
     tool->start();
 }
 

@@ -100,7 +100,6 @@ void ItemIconView::slotImageScanForFaces()
         }
     }
 
-    // FacesDetector* const tool = new FacesDetector(settings);
     FacesEngine* const tool = new FacesEngine(settings);
 
     connect(tool, SIGNAL(signalComplete()),
@@ -146,7 +145,6 @@ void ItemIconView::slotImageRecognizeFaces()
         }
     }
 
-    // FacesDetector* const tool = new FacesDetector(settings);
     FacesEngine* const tool = new FacesEngine(settings);
 
     connect(tool, SIGNAL(signalComplete()),
