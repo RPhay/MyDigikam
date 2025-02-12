@@ -16,55 +16,102 @@
 
 #include "facescansettings.h"
 
+// KDE includes
+
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
+
 namespace Digikam
 {
 
 FaceScanSettings::FaceScanSettings(const FaceScanSettings& other)
-    : wholeAlbums           (other.wholeAlbums),
+    : alreadyScannedHandling(other.alreadyScannedHandling),
+      task                  (other.task),
       useFullCpu            (other.useFullCpu),
       detectModel           (other.detectModel),
       detectSize            (other.detectSize),
       detectAccuracy        (other.detectAccuracy),
       recognizeModel        (other.recognizeModel),
       recognizeAccuracy     (other.recognizeAccuracy),
+      wholeAlbums           (other.wholeAlbums),
       albums                (other.albums),
-      infos                 (other.infos),
-      task                  (other.task),
-      alreadyScannedHandling(other.alreadyScannedHandling)
+      infos                 (other.infos)
 {
 }
 
 FaceScanSettings& FaceScanSettings::operator=(const FaceScanSettings& other)
 {
-    wholeAlbums            = other.wholeAlbums;
+    alreadyScannedHandling = other.alreadyScannedHandling;
+    task                   = other.task;
     useFullCpu             = other.useFullCpu;
     detectModel            = other.detectModel;
     detectSize             = other.detectSize;
     detectAccuracy         = other.detectAccuracy;
     recognizeModel         = other.recognizeModel;
     recognizeAccuracy      = other.recognizeAccuracy;
+    wholeAlbums            = other.wholeAlbums;
     albums                 = other.albums;
     infos                  = other.infos;
-    task                   = other.task;
-    alreadyScannedHandling = other.alreadyScannedHandling;
 
     return *this;
+}
+
+void FaceScanSettings::readFromConfig()
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(configName);
+    readFromConfig(group);
+}
+
+void FaceScanSettings::readFromConfig(const KConfigGroup& group)
+{
+    alreadyScannedHandling = static_cast<AlreadyScannedHandling>(group.readEntry(configFaceAlreadyScannedHandling, (int)AlreadyScannedHandling::Skip));
+    task                   = static_cast<ScanTask>(group.readEntry(configFaceScanTask,                             (int)ScanTask::DetectAndRecognize));
+    useFullCpu             = group.readEntry(configUseFullCpu,                                                     false);
+    detectModel            = static_cast<FaceDetectionModel>(group.readEntry(configFaceDetectionModel,             (int)FaceDetectionModel::YuNet));
+    detectSize             = static_cast<FaceDetectionSize>(group.readEntry(configFaceDetectionSize,               (int)FaceDetectionSize::Large));
+    detectAccuracy         = group.readEntry(configFaceDetectionAccuracy,                                          DNN_MODEL_THRESHOLD_NOT_SET);
+    recognizeModel         = static_cast<FaceRecognitionModel>(group.readEntry(configFaceRecognitionModel,         (int)FaceRecognitionModel::SFace));
+    recognizeAccuracy      = group.readEntry(configFaceRecognitionAccuracy,                                        DNN_MODEL_THRESHOLD_NOT_SET);
+
+    // NOTE: Album settings are handled by AlbumSelector widget.
+}
+
+void FaceScanSettings::writeToConfig()
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(configName);
+    writeToConfig(group);
+}
+
+void FaceScanSettings::writeToConfig(KConfigGroup& group)
+{
+    group.writeEntry(configFaceAlreadyScannedHandling, (int)alreadyScannedHandling);
+    group.writeEntry(configFaceScanTask,               (int)task);
+    group.writeEntry(configUseFullCpu,                 useFullCpu);
+    group.writeEntry(configFaceDetectionModel,         (int)detectModel);
+    group.writeEntry(configFaceDetectionSize,          (int)detectSize);
+    group.writeEntry(configFaceDetectionAccuracy,      detectAccuracy);
+    group.writeEntry(configFaceRecognitionModel,       (int)recognizeModel);
+    group.writeEntry(configFaceRecognitionAccuracy,    recognizeAccuracy);
+
+    // NOTE: Album settings are handled by AlbumSelector widget.
 }
 
 QDebug operator<<(QDebug dbg, const FaceScanSettings& s)
 {
     dbg.nospace()                                                            << Qt::endl;
-    dbg.nospace() << "Whole Albums            :" << s.wholeAlbums            << Qt::endl;
+    dbg.nospace() << "Already Scanned Handling:" << s.alreadyScannedHandling << Qt::endl;
+    dbg.nospace() << "Scan Task               :" << s.task                   << Qt::endl;
     dbg.nospace() << "Use Full CPU            :" << s.useFullCpu             << Qt::endl;
     dbg.nospace() << "Detection Model         :" << s.detectModel            << Qt::endl;
     dbg.nospace() << "Detection Size          :" << s.detectSize             << Qt::endl;
     dbg.nospace() << "Detection Accuracy      :" << s.detectAccuracy         << Qt::endl;
     dbg.nospace() << "Recognition Model       :" << s.recognizeModel         << Qt::endl;
     dbg.nospace() << "Recognition Accuracy    :" << s.recognizeAccuracy      << Qt::endl;
+    dbg.nospace() << "Whole Albums            :" << s.wholeAlbums            << Qt::endl;
     dbg.nospace() << "Albums                  :" << s.albums                 << Qt::endl;
     dbg.nospace() << "Image Infos             :" << s.infos                  << Qt::endl;
-    dbg.nospace() << "Scan Task               :" << s.task                   << Qt::endl;
-    dbg.nospace() << "Already Scanned Handling:" << s.alreadyScannedHandling << Qt::endl;
 
     return dbg.space();
 }

@@ -25,13 +25,13 @@ namespace Digikam
 
 AutotagsScanSettings::AutotagsScanSettings(const AutotagsScanSettings& other)
     : scanMode                (other.scanMode),
-      wholeAlbums             (other.wholeAlbums),
       tagMode                 (other.tagMode),
       useFullCpu              (other.useFullCpu),
       objectDetectModel       (other.objectDetectModel),
-      albums                  (other.albums),
       uiConfidenceThreshold   (other.uiConfidenceThreshold),
       languages               (other.languages),
+      wholeAlbums             (other.wholeAlbums),
+      albums                  (other.albums),
       bqmMode                 (other.bqmMode)
 {
 }
@@ -39,13 +39,13 @@ AutotagsScanSettings::AutotagsScanSettings(const AutotagsScanSettings& other)
 AutotagsScanSettings& AutotagsScanSettings::operator=(const AutotagsScanSettings& other)
 {
     scanMode                 = other.scanMode;
-    wholeAlbums              = other.wholeAlbums;
     tagMode                  = other.tagMode;
     useFullCpu               = other.useFullCpu;
     objectDetectModel        = other.objectDetectModel;
-    albums                   = other.albums;
     uiConfidenceThreshold    = other.uiConfidenceThreshold;
     languages                = other.languages;
+    wholeAlbums              = other.wholeAlbums;
+    albums                   = other.albums;
     bqmMode                  = other.bqmMode;
 
     return *this;
@@ -61,14 +61,13 @@ void AutotagsScanSettings::readFromConfig()
 void AutotagsScanSettings::readFromConfig(const KConfigGroup& group)
 {
     scanMode              = (ScanMode)group.readEntry(configScanMode,   (int)ScanMode::AllItems);
-
-    // NOTE: Album settings are handled by AlbumSelector widget.
-
     tagMode               = (TagMode)group.readEntry(configTagMode,     (int)TagMode::Replace);
     useFullCpu            = group.readEntry(configUseFullCpu,           false);
     objectDetectModel     = group.readEntry(configObjectDetectModel,    QString::fromLatin1("yolov11-nano"));
     uiConfidenceThreshold = group.readEntry(configObjectDetectAccuracy, 7);
     languages             = group.readEntry(configLanguages,            QStringList());
+
+    // NOTE: Album settings are handled by AlbumSelector widget.
 }
 
 void AutotagsScanSettings::writeToConfig()
@@ -81,27 +80,26 @@ void AutotagsScanSettings::writeToConfig()
 void AutotagsScanSettings::writeToConfig(KConfigGroup& group)
 {
     group.writeEntry(configScanMode,             (int)scanMode);
-
-    // NOTE: Album settings are handled by AlbumSelector widget.
-
     group.writeEntry(configTagMode,              (int)tagMode);
     group.writeEntry(configUseFullCpu,           useFullCpu);
     group.writeEntry(configObjectDetectModel,    objectDetectModel);
     group.writeEntry(configObjectDetectAccuracy, (int)uiConfidenceThreshold);
     group.writeEntry(configLanguages,            languages);
+
+    // NOTE: Album settings are handled by AlbumSelector widget.
 }
 
 QDebug operator<<(QDebug dbg, const AutotagsScanSettings& s)
 {
     dbg.nospace()                                                                << Qt::endl;
     dbg.nospace() << "Scan Mode                 :" << s.scanMode                 << Qt::endl;
-    dbg.nospace() << "Albums                    :" << s.albums                   << Qt::endl;
-    dbg.nospace() << "Whole Albums              :" << s.wholeAlbums              << Qt::endl;
     dbg.nospace() << "Tag Mode                  :" << s.tagMode                  << Qt::endl;
     dbg.nospace() << "Use Full CPU              :" << s.useFullCpu               << Qt::endl;
     dbg.nospace() << "Object Detect Model       :" << s.objectDetectModel        << Qt::endl;
     dbg.nospace() << "Confidence Threshold      :" << s.uiConfidenceThreshold    << Qt::endl;
     dbg.nospace() << "Languages                 :" << s.languages                << Qt::endl;
+    dbg.nospace() << "Whole Albums              :" << s.wholeAlbums              << Qt::endl;
+    dbg.nospace() << "Albums                    :" << s.albums                   << Qt::endl;
     dbg.nospace() << "Bqm Mode                  :" << s.bqmMode                  << Qt::endl;
 
     return dbg.space();

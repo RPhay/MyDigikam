@@ -27,6 +27,8 @@
 #include "digikam_export.h"
 #include "dnnmodeldefinitions.h"
 
+class KConfigGroup;
+
 namespace Digikam
 {
 
@@ -52,7 +54,7 @@ public:
     Q_ENUM(ScanTask)
 
     /**
-     * @brief To detect and recognize.
+     * @brief Scan Mode as detect and recognize.
      */
     enum AlreadyScannedHandling
     {
@@ -114,42 +116,59 @@ public:
 
 public:
 
-    /**
-     * @brief Whole albums checked.
-     */
-    bool                                    wholeAlbums                 = false;
+    void readFromConfig();
+    void readFromConfig(const KConfigGroup&);
+    void writeToConfig();
+    void writeToConfig(KConfigGroup&);
+
+public:
 
     /**
-     * @brief Processing power.
+     * Scanning mode.
      */
-    bool                                    useFullCpu                  = false;
+    AlreadyScannedHandling                  alreadyScannedHandling           = Skip;
+
+    /**
+     * @brief Tasks processed while scanning.
+     */
+    ScanTask                                task                             = DetectAndRecognize;
+
+    /**
+     * @brief Processing using all CPU available.
+     */
+    bool                                    useFullCpu                       = false;
 
     /**
      * @brief Detection Model.
      */
-    FaceDetectionModel                      detectModel                 = FaceDetectionModel::YuNet;
+    FaceDetectionModel                      detectModel                      = FaceDetectionModel::YuNet;
 
     /**
      * @brief Face size used by the detection Model.
      */
-    FaceDetectionSize                       detectSize                  = FaceDetectionSize::Large;
+    FaceDetectionSize                       detectSize                       = FaceDetectionSize::Large;
 
     /**
      * @brief Detection accuracy.
      * @note Use default value from dnnmodels.conf
      */
-    int                                     detectAccuracy              = DNN_MODEL_THRESHOLD_NOT_SET;
+    int                                     detectAccuracy                   = DNN_MODEL_THRESHOLD_NOT_SET;
 
     /**
      * @brief Detection Model.
      */
-    FaceRecognitionModel                    recognizeModel              = FaceRecognitionModel::SFace;
+    FaceRecognitionModel                    recognizeModel                   = FaceRecognitionModel::SFace;
 
     /**
      * @brief Recognition accuracy.
      * @note Use default value from dnnmodels.conf
      */
-    int                                     recognizeAccuracy           = DNN_MODEL_THRESHOLD_NOT_SET;
+    int                                     recognizeAccuracy                = DNN_MODEL_THRESHOLD_NOT_SET;
+
+    /**
+     * @brief Whole albums checked.
+     */
+    bool                                    wholeAlbums                      = false;
 
     /**
      * @brief Albums to scan.
@@ -161,14 +180,20 @@ public:
      */
     ItemInfoList                            infos;
 
-    ScanTask                                task                        = DetectAndRecognize;
+private:
 
-    AlreadyScannedHandling                  alreadyScannedHandling      = Skip;
+    const QString                           configName                       = QLatin1String("Face Detection Settings");
+    const QString                           configFaceAlreadyScannedHandling = QLatin1String("Face Already Scanned Handling");
+    const QString                           configFaceScanTask               = QLatin1String("Face Scan Task");
+    const QString                           configUseFullCpu                 = QLatin1String("Face Use Full CPU");
+    const QString                           configFaceDetectionAccuracy      = QLatin1String("Face Detection Accuracy");
+    const QString                           configFaceDetectionModel         = QLatin1String("Face Detection Model");
+    const QString                           configFaceDetectionSize          = QLatin1String("Face Detection Size");
+    const QString                           configFaceRecognitionAccuracy    = QLatin1String("Face Recognition Accuracy");
+    const QString                           configFaceRecognitionModel       = QLatin1String("Face Recognition Model");
 };
 
 //! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.
 DIGIKAM_GUI_EXPORT QDebug operator<<(QDebug dbg, const FaceScanSettings& s);
 
 } // namespace Digikam
-
-

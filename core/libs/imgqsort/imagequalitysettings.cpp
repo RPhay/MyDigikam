@@ -25,8 +25,6 @@ namespace Digikam
 
 ImageQualitySettings::ImageQualitySettings(const ImageQualitySettings& other)
     : scanMode          (other.scanMode),
-      wholeAlbums       (other.wholeAlbums),
-      albums            (other.albums),
       useFullCpu        (other.useFullCpu),
       detectBlur        (other.detectBlur),
       detectNoise       (other.detectNoise),
@@ -42,15 +40,15 @@ ImageQualitySettings::ImageQualitySettings(const ImageQualitySettings& other)
       blurWeight        (other.blurWeight),
       noiseWeight       (other.noiseWeight),
       compressionWeight (other.compressionWeight),
-      exposureWeight    (other.exposureWeight)
+      exposureWeight    (other.exposureWeight),
+      wholeAlbums       (other.wholeAlbums),
+      albums            (other.albums)
 {
 }
 
 ImageQualitySettings& ImageQualitySettings::operator=(const ImageQualitySettings& other)
 {
     scanMode           = other.scanMode;
-    wholeAlbums        = other.wholeAlbums;
-    albums             = other.albums;
     useFullCpu         = other.useFullCpu;
     detectBlur         = other.detectBlur;
     detectNoise        = other.detectNoise;
@@ -67,6 +65,8 @@ ImageQualitySettings& ImageQualitySettings::operator=(const ImageQualitySettings
     noiseWeight        = other.noiseWeight;
     compressionWeight  = other.compressionWeight;
     exposureWeight     = other.exposureWeight;
+    wholeAlbums        = other.wholeAlbums;
+    albums             = other.albums;
 
     return *this;
 }
@@ -81,9 +81,6 @@ void ImageQualitySettings::readFromConfig()
 void ImageQualitySettings::readFromConfig(const KConfigGroup& group)
 {
     scanMode                  = (ScanMode)group.readEntry("Scan Mode", (int)ScanMode::AllItems);
-
-    // NOTE: Album settings are handled by AlbumSelector widget.
-
     useFullCpu                = group.readEntry("Use Full CPU",        false);
     detectBlur                = group.readEntry("Detect Blur",         true);
     detectNoise               = group.readEntry("Detect Noise",        true);
@@ -100,6 +97,8 @@ void ImageQualitySettings::readFromConfig(const KConfigGroup& group)
     noiseWeight               = group.readEntry("Noise Weight",        100);
     compressionWeight         = group.readEntry("Compression Weight",  100);
     exposureWeight            = group.readEntry("Exposure Weight",     100);
+
+    // NOTE: Album settings are handled by AlbumSelector widget.
 }
 
 void ImageQualitySettings::writeToConfig()
@@ -112,9 +111,6 @@ void ImageQualitySettings::writeToConfig()
 void ImageQualitySettings::writeToConfig(KConfigGroup& group)
 {
     group.writeEntry("Scan Mode",           (int)scanMode);
-
-    // NOTE: Album settings are handled by AlbumSelector widget.
-
     group.writeEntry("Use Full CPU",        useFullCpu);
     group.writeEntry("Detect Blur",         detectBlur);
     group.writeEntry("Detect Noise",        detectNoise);
@@ -131,14 +127,14 @@ void ImageQualitySettings::writeToConfig(KConfigGroup& group)
     group.writeEntry("Noise Weight",        noiseWeight);
     group.writeEntry("Compression Weight",  compressionWeight);
     group.writeEntry("Exposure Weight",     exposureWeight);
+
+    // NOTE: Album settings are handled by AlbumSelector widget.
 }
 
 QDebug operator<<(QDebug dbg, const ImageQualitySettings& s)
 {
     dbg.nospace()                                                   << Qt::endl;
     dbg.nospace() << "Scan Mode          :" << s.scanMode           << Qt::endl;
-    dbg.nospace() << "Whole Albums       :" << s.wholeAlbums        << Qt::endl;
-    dbg.nospace() << "Albums             :" << s.albums             << Qt::endl;
     dbg.nospace() << "Use Full CPU       :" << s.useFullCpu         << Qt::endl;
     dbg.nospace() << "DetectBlur         :" << s.detectBlur         << Qt::endl;
     dbg.nospace() << "DetectNoise        :" << s.detectNoise        << Qt::endl;
@@ -155,6 +151,8 @@ QDebug operator<<(QDebug dbg, const ImageQualitySettings& s)
     dbg.nospace() << "Noise Weight       :" << s.noiseWeight        << Qt::endl;
     dbg.nospace() << "Compression Weight :" << s.compressionWeight  << Qt::endl;
     dbg.nospace() << "Exposure Weight    :" << s.exposureWeight     << Qt::endl;
+    dbg.nospace() << "Whole Albums       :" << s.wholeAlbums        << Qt::endl;
+    dbg.nospace() << "Albums             :" << s.albums             << Qt::endl;
 
     return dbg.space();
 }

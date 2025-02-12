@@ -78,10 +78,8 @@ public:
     /// Scanning mode.
     ScanMode                                scanMode                    = ScanMode::AllItems;
 
-    /// Processing power.
-    bool                                    wholeAlbums                 = true;
 
-    /// Whole albums checked.
+    /// Processing power.
     TagMode                                 tagMode                     = TagMode::Replace;
 
     /// Processing using all CPU available.
@@ -90,14 +88,17 @@ public:
     /// Object Detection Model.
     QString                                 objectDetectModel           = QStringLiteral("yolov11-nano");
 
-    /// Albums to scan.
-    AlbumList                               albums;
-
     /// Confidence threshold
     int                                     uiConfidenceThreshold       = 7;
 
     /// Autotags languages
     QStringList                             languages;
+
+    /// Whole albums checked.
+    bool                                    wholeAlbums                 = true;
+
+    /// Albums to scan.
+    AlbumList                               albums;
 
     /// Set true for BQM
     bool                                    bqmMode                     = false;
@@ -107,10 +108,10 @@ private:
     const QString                           configName                  = QLatin1String("Autotags Settings");
     const QString                           configScanMode              = QLatin1String("Scan Mode");
     const QString                           configTagMode               = QLatin1String("Tag Mode");
+    const QString                           configUseFullCpu            = QLatin1String("Use Full CPU");
     const QString                           configObjectDetectModel     = QLatin1String("Object Detection Model");
     const QString                           configObjectDetectAccuracy  = QLatin1String("Object Detection Accuracy");
     const QString                           configLanguages             = QLatin1String("Languages");
-    const QString                           configUseFullCpu            = QLatin1String("Use Full CPU");
 };
 
 //! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.

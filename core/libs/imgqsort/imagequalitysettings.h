@@ -63,10 +63,7 @@ public:
 public:
 
     ScanMode  scanMode          = ScanMode::AllItems;   ///< Scanning mode. @note turn all items by default to prevent clearing whole Pick Labels from Collection.
-
-    bool      wholeAlbums       = true;                 ///< Processing power.
-    AlbumList albums;                                   ///< Albums to scan.
-    bool      useFullCpu        = false;                /// Processing using all CPU available.
+    bool      useFullCpu        = false;                ///< Processing using all CPU available.
 
     bool      detectBlur        = true;                 ///< Enable image blur detection.
     bool      detectNoise       = true;                 ///< Enable image noise detection.
@@ -85,6 +82,9 @@ public:
     int       noiseWeight       = 100;                  ///< Item noise level.
     int       compressionWeight = 100;                  ///< Item compression level.
     int       exposureWeight    = 100;                  ///< Item exposure level.
+
+    bool      wholeAlbums       = true;                 ///< Processing power.
+    AlbumList albums;                                   ///< Albums to scan.
 };
 
 //! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.
