@@ -74,29 +74,29 @@ ImageQualitySettings& ImageQualitySettings::operator=(const ImageQualitySettings
 void ImageQualitySettings::readFromConfig()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("Image Quality Settings"));
+    KConfigGroup group        = config->group(configName);
     readFromConfig(group);
 }
 
 void ImageQualitySettings::readFromConfig(const KConfigGroup& group)
 {
-    scanMode                  = (ScanMode)group.readEntry("Scan Mode", (int)ScanMode::AllItems);
-    useFullCpu                = group.readEntry("Use Full CPU",        false);
-    detectBlur                = group.readEntry("Detect Blur",         true);
-    detectNoise               = group.readEntry("Detect Noise",        true);
-    detectCompression         = group.readEntry("Detect Compression",  true);
-    detectExposure            = group.readEntry("Detect Exposure",     true);
-    detectAesthetic           = group.readEntry("Detect Aesthetic",    true);
-    lowQRejected              = group.readEntry("LowQ Rejected",       true);
-    mediumQPending            = group.readEntry("MediumQ Pending",     true);
-    highQAccepted             = group.readEntry("HighQ Accepted",      true);
-    rejectedThreshold         = group.readEntry("Rejected Threshold",  10);
-    pendingThreshold          = group.readEntry("Pending Threshold",   40);
-    acceptedThreshold         = group.readEntry("Accepted Threshold",  60);
-    blurWeight                = group.readEntry("Blur Weight",         100);
-    noiseWeight               = group.readEntry("Noise Weight",        100);
-    compressionWeight         = group.readEntry("Compression Weight",  100);
-    exposureWeight            = group.readEntry("Exposure Weight",     100);
+    scanMode                  = (ScanMode)group.readEntry(configScanMode, (int)ScanMode::AllItems);
+    useFullCpu                = group.readEntry(configUseFullCpu,         false);
+    detectBlur                = group.readEntry(configDetectBlur,         true);
+    detectNoise               = group.readEntry(configDetectNoise,        true);
+    detectCompression         = group.readEntry(configDetectCompression,  true);
+    detectExposure            = group.readEntry(configDetectExposure,     true);
+    detectAesthetic           = group.readEntry(configDetectAesthetic,    true);
+    lowQRejected              = group.readEntry(configLowQRejected,       true);
+    mediumQPending            = group.readEntry(configMediumQPending,     true);
+    highQAccepted             = group.readEntry(configHighQAccepted,      true);
+    rejectedThreshold         = group.readEntry(configRejectedThreshold,  10);
+    pendingThreshold          = group.readEntry(configPendingThreshold,   40);
+    acceptedThreshold         = group.readEntry(configAcceptedThreshold,  60);
+    blurWeight                = group.readEntry(configBlurWeight,         100);
+    noiseWeight               = group.readEntry(configNoiseWeight,        100);
+    compressionWeight         = group.readEntry(configCompressionWeight,  100);
+    exposureWeight            = group.readEntry(configExposureWeight,     100);
 
     // NOTE: Album settings are handled by AlbumSelector widget.
 }
@@ -104,29 +104,29 @@ void ImageQualitySettings::readFromConfig(const KConfigGroup& group)
 void ImageQualitySettings::writeToConfig()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("Image Quality Settings"));
+    KConfigGroup group        = config->group(configName);
     writeToConfig(group);
 }
 
 void ImageQualitySettings::writeToConfig(KConfigGroup& group)
 {
-    group.writeEntry("Scan Mode",           (int)scanMode);
-    group.writeEntry("Use Full CPU",        useFullCpu);
-    group.writeEntry("Detect Blur",         detectBlur);
-    group.writeEntry("Detect Noise",        detectNoise);
-    group.writeEntry("Detect Compression",  detectCompression);
-    group.writeEntry("Detect Exposure",     detectExposure);
-    group.writeEntry("Detect Aesthetic",    detectAesthetic);
-    group.writeEntry("LowQ Rejected",       lowQRejected);
-    group.writeEntry("MediumQ Pending",     mediumQPending);
-    group.writeEntry("HighQ Accepted",      highQAccepted);
-    group.writeEntry("Rejected Threshold",  rejectedThreshold);
-    group.writeEntry("Pending Threshold",   pendingThreshold);
-    group.writeEntry("Accepted Threshold",  acceptedThreshold);
-    group.writeEntry("Blur Weight",         blurWeight);
-    group.writeEntry("Noise Weight",        noiseWeight);
-    group.writeEntry("Compression Weight",  compressionWeight);
-    group.writeEntry("Exposure Weight",     exposureWeight);
+    group.writeEntry(configScanMode,           (int)scanMode);
+    group.writeEntry(configUseFullCpu,         useFullCpu);
+    group.writeEntry(configDetectBlur,         detectBlur);
+    group.writeEntry(configDetectNoise,        detectNoise);
+    group.writeEntry(configDetectCompression,  detectCompression);
+    group.writeEntry(configDetectExposure,     detectExposure);
+    group.writeEntry(configDetectAesthetic,    detectAesthetic);
+    group.writeEntry(configLowQRejected,       lowQRejected);
+    group.writeEntry(configMediumQPending,     mediumQPending);
+    group.writeEntry(configHighQAccepted,      highQAccepted);
+    group.writeEntry(configRejectedThreshold,  rejectedThreshold);
+    group.writeEntry(configPendingThreshold,   pendingThreshold);
+    group.writeEntry(configAcceptedThreshold,  acceptedThreshold);
+    group.writeEntry(configBlurWeight,         blurWeight);
+    group.writeEntry(configNoiseWeight,        noiseWeight);
+    group.writeEntry(configCompressionWeight,  compressionWeight);
+    group.writeEntry(configExposureWeight,     exposureWeight);
 
     // NOTE: Album settings are handled by AlbumSelector widget.
 }
