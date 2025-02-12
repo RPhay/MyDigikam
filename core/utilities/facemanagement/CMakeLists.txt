@@ -12,7 +12,6 @@ set(libfacemanagement_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/items/faceitem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/facegroup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/facegroup_p.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/facescanwidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/assignnamewidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/assignnamewidget_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/assignnamewidgetstates.cpp

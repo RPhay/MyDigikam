@@ -74,7 +74,8 @@ set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facecl
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_identity.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn.cpp
 
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facescansettings.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/widgets/facescansettings.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/widgets/facescanwidget.cpp
 )
 
 # Used by digikamgui
