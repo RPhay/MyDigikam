@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-12 01:52+0000\n"
+"POT-Creation-Date: 2025-02-13 02:03+0000\n"
 "PO-Revision-Date: 2025-02-02 11:46+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -3195,13 +3195,13 @@ msgid "Last Search"
 msgstr "Ultima ricerca"
 
 #: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:114
+#: core/app/views/stack/itemiconview_search.cpp:109
 #, kde-format
 msgid "FacesEngine"
 msgstr "MotoreVolti"
 
 #: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:116
+#: core/app/views/stack/itemiconview_search.cpp:111
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -6237,36 +6237,36 @@ msgstr ""
 "<para>Questo strumento del gestore elaborazione in serie è in grado di "
 "applicare metadati da un'immagine o un file JSON con ExifTool.</para>"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:89
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
 #, kde-format
 msgid "Titles:"
 msgstr "Titoli:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:93
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
 msgstr "Immetti qui il titolo del testo."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
 #, kde-format
 msgid "Captions:"
 msgstr "Didascalie:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:101
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "Immetti qui la didascalia."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:104
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:106
 #, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr "Pulisci e sovrascrivi i metadati"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:107
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6409,133 +6409,133 @@ msgstr ""
 "ai metadati dell'etichetta di scelta analizzando l'immagine e stimandone la "
 "qualità.</para>"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:96
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:98
 #, kde-format
 msgctxt "@title"
 msgid "Exif:"
 msgstr "Exif:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:98
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:100
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Completely"
 msgstr "Completamente"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:99
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:101
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Date"
 msgstr "Data"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:100
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:102
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "GPS"
 msgstr "GPS"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:101
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:103
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "XPKeywords"
 msgstr "XPKeywords"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:102
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Comment and description"
 msgstr "Commento e descrizione"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
 #, kde-format
 msgctxt "@title"
 msgid "Iptc:"
 msgstr "IPTC:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Completely"
 msgstr "Completamente"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Date"
 msgstr "Data"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Caption"
 msgstr "Didascalia"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Preview image"
 msgstr "Anteprima immagine"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
 #, kde-format
 msgctxt "@title"
 msgid "Xmp:"
 msgstr "XMP:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Completely"
 msgstr "Completamente"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:114
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Date"
 msgstr "Data"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
 msgstr "digiKam completamente"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
 msgstr "Cronologia immagini digiKam"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:119
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
 msgstr "Anteprima immagine digikam"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr "Dublin Core"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:119
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr "Exif"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "Filmato"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
 msgstr "Didascalia, commento e descrizione"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:215
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:217
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
@@ -6584,37 +6584,37 @@ msgstr ""
 "<para>Questo strumento del gestore elaborazione in serie può regolare la "
 "data e l'ora nelle immagini.</para>"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:93
+#: core/dplugins/bqm/metadata/translate/translate.cpp:95
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Title"
 msgstr "Titolo"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:94
+#: core/dplugins/bqm/metadata/translate/translate.cpp:96
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
 msgstr "Didascalia"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:95
+#: core/dplugins/bqm/metadata/translate/translate.cpp:97
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Copyrights"
 msgstr "Copyright"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:96
+#: core/dplugins/bqm/metadata/translate/translate.cpp:98
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
 msgstr "Termini di utilizzo"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:99
+#: core/dplugins/bqm/metadata/translate/translate.cpp:101
 #, kde-format
 msgctxt "@label"
 msgid "Translate to:"
 msgstr "Traduci in:"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:137
+#: core/dplugins/bqm/metadata/translate/translate.cpp:139
 #, kde-format
 msgctxt "@label"
 msgid "Entries to Translate with %1:"
@@ -22509,7 +22509,7 @@ msgid "Slideshow"
 msgstr "Presentazione di diapositive"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
-#: core/libs/settings/applicationsettings_miscs.cpp:488
+#: core/libs/settings/applicationsettings_miscs.cpp:438
 #, kde-format
 msgid "Slideshow"
 msgstr "Presentazione"
@@ -35096,6 +35096,225 @@ msgstr ""
 "Creazione delle tabelle nella banca dati non riuscita.\n"
 "%1 "
 
+#: core/libs/facesengine/widgets/facescanwidget.cpp:90
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"digiKam can search for faces in your photos.\n"
+"When you have identified your friends on a number of photos,\n"
+"it can also recognize the people shown on your photos."
+msgstr ""
+"digiKam può cercare i volti nelle tue foto.\n"
+"Quando hai identificato i tuoi amici su un certo numero di immagini,\n"
+"può anche riconoscere le persone che si trovano in altre tue foto."
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:98
+#: core/utilities/maintenance/main/maintenancedlg.cpp:207
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Scan new images"
+msgstr "Analizza nuove immagini"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:99
+#: core/utilities/maintenance/main/maintenancedlg.cpp:208
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Scan all images"
+msgstr "Analizza tutte le immagini"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:100
+#: core/utilities/maintenance/main/maintenancedlg.cpp:209
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Recognize faces only"
+msgstr "Riconosci solo i volti"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:102
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
+"new images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
+"all images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Recognize faces only</b> will try to match unknown faces with "
+"confirmed faces without scanning images new faces.</p>"
+msgstr ""
+"<p><b>Analizza nuove immagini</b> analizza i volti e tenta il riconoscimento "
+"nelle nuove immagini trovate negli album selezionati nella scheda «Cerca in»."
+"</p><p><b>Analizza tutte le immagini</b> analizza i volti e tenta il "
+"riconoscimento per tutte le immagini trovate negli album selezionati nella "
+"scheda «Cerca in».</p><p><b>Riconosci solo i volti</b> tenta di trovare "
+"corrispondenze dei volti sconosciuti con quelli confermati, senza analizzare "
+"nuovi volti nelle immagini.</p>"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:108
+#, kde-format
+msgctxt "@info"
+msgid "Help"
+msgstr "Aiuto"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:126
+#, kde-format
+msgctxt "@title:tab"
+msgid "Workflow"
+msgstr "Flusso di lavoro"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:132
+#: core/libs/imgqsort/imagequalitywidget.cpp:61
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
+#, kde-format
+msgctxt "@title:tab"
+msgid "Search in"
+msgstr "Ricerca in"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:147
+#, kde-format
+msgctxt "@label Face Detection Accuracy"
+msgid "Accuracy:"
+msgstr "Accuratezza:"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:154
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Adjust sensitivity versus specificity: the higher the value, the more "
+"accurately faces will\n"
+"be detected, but less faces will be detected."
+msgstr ""
+"Regola la sensibilità rispetto alla specificità: più alto è il valore, più "
+"accuratamente\n"
+"saranno individuati i volti, ma ne saranno individuati di meno."
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:159
+#, kde-format
+msgctxt "@label face size for detection"
+msgid "Face size:"
+msgstr "Dimensione volto:"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:163
+#, kde-format
+msgctxt "@label: listbox face size"
+msgid "Extra Small"
+msgstr "Molto piccolo"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:164
+#, kde-format
+msgctxt "@label: listbox face size"
+msgid "Small"
+msgstr "Piccolo"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:165
+#, kde-format
+msgctxt "@label: listbox face size"
+msgid "Medium"
+msgstr "Medio"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:166
+#, kde-format
+msgctxt "@label: listbox face size"
+msgid "Large"
+msgstr "Grande"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:167
+#, kde-format
+msgctxt "@label: listbox face size"
+msgid "Extra Large"
+msgstr "Molto grande"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:170
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p>Selecting <b>Extra Small</b> means the model will detect small background "
+"faces in addition to medium and larger faces. Selecting <b>Small Faces</b> "
+"increases the sensitivity of the model by tuning the model parameters. It "
+"will also increase the probability of false-positives, and it will increase "
+"detection time.</p><p>Selecting <b>Large</b> or <b>Extra Large</b> will "
+"eliminate small background faces from being detected. It is much faster and "
+"will reduce the number of false-positives, but will not detect small faces "
+"in the background or faces in large group photos.</p><p>If you want to "
+"detect all faces in one pass, select <b>Extra Small</b> faces and set the "
+"detection accuracy to 2. Unfortunately, this will create a significant "
+"number of false-positives. It is recommended to set a detection accuracy of "
+"6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
+"p><p>This setting applies only to YuNet.</p>"
+msgstr ""
+"<p>Selezionare l'opzione <b>Molto piccolo</b> significa che il modello "
+"rileverà visi piccoli sullo sfondo in aggiunta a quelli medi e più grandi. "
+"Selezionare <b>piccolo</b> aumenterà la sensibilità del modello regolando "
+"uno dei parametri. Aumenterà anche la probabilità di falsi positivi e il "
+"tempo del rilevamento.</p><p>Selezionare <b>Grande</b> o <b>Molto grande</b> "
+"eliminerà dal rilevamento i volti sullo sfondo. Sarà molto più rapido e "
+"ridurrà il numero di falsi positivi ma non rileverà i visi piccoli sullo "
+"sfondo o i volti nelle grandi foto di gruppo.</p><p>Se vuoi rilevare tutti i "
+"visi in un colpo solo, seleziona <b>Molto piccolo</b> e imposta "
+"l'accuratezza del rilevamento attorno a 2. Purtroppo questa opzione genererà "
+"molti falsi positivi. Per un normale utilizzo, consigliamo di impostare "
+"l'accuratezza del rilevamento a 6-8 e la dimensione dei volti a <b>Medio</b> "
+"o <b>Grande</b>.</p>"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:187
+#, kde-format
+msgid "Face Detection Settings"
+msgstr "Impostazioni del rilevamento facciale"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:196
+#, kde-format
+msgctxt "@label Face Recognition Accuracy"
+msgid "Accuracy:"
+msgstr "Accuratezza:"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:203
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Adjust sensitivity versus specificity: the higher the value, the more "
+"accurately faces will\n"
+"be recognized, but less faces will be recognized.\n"
+"Note: only faces that are very similar to pre-tagged faces are recognized."
+msgstr ""
+"Regola la sensibilità rispetto alla specificità: più alto è il valore, più "
+"accuratamente\n"
+"saranno riconosciuti i volti, ma ne saranno riconosciuti di meno.\n"
+"Nota: saranno riconosciuti solo i volti molto simili a quelli cui sono già "
+"stati attribuiti dei tag."
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:213
+#: core/libs/imgqsort/imagequalitywidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
+#, kde-format
+msgctxt "@option:check"
+msgid "Work on all processor cores"
+msgstr "Lavora con tutti i core del processore"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:215
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Face detection and recognition are time-consuming tasks.\n"
+"You can choose if you wish to employ all processor cores\n"
+"on your system, or work in the background only on one core."
+msgstr ""
+"Il rilevamento e il riconoscimento facciale sono processi che richiedono "
+"tempo.\n"
+"Puoi scegliere se impiegare tutti i core del tuo processore\n"
+"o lavorare sullo sfondo usando un solo core."
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:219
+#, kde-format
+msgid "Face Recognition Settings"
+msgstr "Impostazioni del riconoscimento facciale"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:227
+#: core/libs/imgqsort/imagequalitywidget.cpp:180
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
+#, kde-format
+msgctxt "@title:tab"
+msgid "Settings"
+msgstr "Impostazioni"
+
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:94
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:145
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:194
@@ -35574,14 +35793,6 @@ msgstr "Azzera tutto"
 msgid "Select All"
 msgstr "Seleziona tutto"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#, kde-format
-msgctxt "@title:tab"
-msgid "Search in"
-msgstr "Ricerca in"
-
 #: core/libs/imgqsort/imagequalitywidget.cpp:66
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -35780,15 +35991,6 @@ msgstr ""
 "Rileva se l'immagine viene compromessa da quattro fattori di base "
 "(sfocatura, rumore, esposizione e compressione)."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:159
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
-msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr "Lavora con tutti i core del processore"
-
 #: core/libs/imgqsort/imagequalitywidget.cpp:161
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
@@ -35806,14 +36008,6 @@ msgstr ""
 "tempo.\n"
 "Puoi scegliere se impiegare tutti i core del tuo processore\n"
 "o lavorare sullo sfondo usando un solo core."
-
-#: core/libs/imgqsort/imagequalitywidget.cpp:180
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:304
-#, kde-format
-msgctxt "@title:tab"
-msgid "Settings"
-msgstr "Impostazioni"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:187
 #, kde-format
@@ -38082,7 +38276,7 @@ msgid "Properties"
 msgstr "Proprietà"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
-#: core/libs/settings/applicationsettings_miscs.cpp:473
+#: core/libs/settings/applicationsettings_miscs.cpp:423
 #: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid "Metadata"
@@ -39774,48 +39968,48 @@ msgstr "Formato immagine raw Phase One Digital Camera"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "Formato immagine raw Arriflex Camera"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:442
+#: core/libs/settings/applicationsettings_miscs.cpp:392
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr "Vuoi applicare questa operazione a tutti gli elementi del gruppo?"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:444
+#: core/libs/settings/applicationsettings_miscs.cpp:394
 #, kde-format
 msgid "Remember choice for this operation"
 msgstr "Ricorda la scelta per questa operazione"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:478
+#: core/libs/settings/applicationsettings_miscs.cpp:428
 #: core/utilities/lighttable/lighttablewindow.cpp:51
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Tavolo luminoso"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:483
+#: core/libs/settings/applicationsettings_miscs.cpp:433
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:195
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Gestore elaborazione in serie"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:493
+#: core/libs/settings/applicationsettings_miscs.cpp:443
 #, kde-format
 msgid "Renaming"
 msgstr "Rinomina"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:498
+#: core/libs/settings/applicationsettings_miscs.cpp:448
 #, kde-format
 msgid "Import/Export tools"
 msgstr "Strumenti d'importazione ed esportazione"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:503
+#: core/libs/settings/applicationsettings_miscs.cpp:453
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 "Strumenti (editor, panorama, fusione di sovrapposizioni, calendario, "
 "programma esterno)"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:520
+#: core/libs/settings/applicationsettings_miscs.cpp:470
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
@@ -39824,33 +40018,33 @@ msgstr ""
 "Operazioni collegate a metadati, etichette, valutazioni, tag, "
 "geolocalizzazione e rotazione"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:525
+#: core/libs/settings/applicationsettings_miscs.cpp:475
 #, kde-format
 msgid "Adding items to the Light Table"
 msgstr "Aggiunta degli elementi al tavolo luminoso"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:530
+#: core/libs/settings/applicationsettings_miscs.cpp:480
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
 msgstr "Aggiungi elementi al Gestore elaborazione in serie"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:535
+#: core/libs/settings/applicationsettings_miscs.cpp:485
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr "Apertura degli elementi nella Presentazione"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:540
+#: core/libs/settings/applicationsettings_miscs.cpp:490
 #, kde-format
 msgid "Renaming items"
 msgstr "Rinomina degli elementi"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:545
+#: core/libs/settings/applicationsettings_miscs.cpp:495
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr ""
 "Trasferimento degli elementi agli strumenti d'importazione ed esportazione"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:550
+#: core/libs/settings/applicationsettings_miscs.cpp:500
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
@@ -52490,200 +52684,6 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Rifiuta questo suggerimento"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:96
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"digiKam can search for faces in your photos.\n"
-"When you have identified your friends on a number of photos,\n"
-"it can also recognize the people shown on your photos."
-msgstr ""
-"digiKam può cercare i volti nelle tue foto.\n"
-"Quando hai identificato i tuoi amici su un certo numero di immagini,\n"
-"può anche riconoscere le persone che si trovano in altre tue foto."
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:104
-#: core/utilities/maintenance/main/maintenancedlg.cpp:207
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Scan new images"
-msgstr "Analizza nuove immagini"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
-#: core/utilities/maintenance/main/maintenancedlg.cpp:208
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Scan all images"
-msgstr "Analizza tutte le immagini"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:106
-#: core/utilities/maintenance/main/maintenancedlg.cpp:209
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Recognize faces only"
-msgstr "Riconosci solo i volti"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:108
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
-"new images found in the albums selected in the \"Search in\" tab.</"
-"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
-"all images found in the albums selected in the \"Search in\" tab.</"
-"p><p><b>Recognize faces only</b> will try to match unknown faces with "
-"confirmed faces without scanning images new faces.</p>"
-msgstr ""
-"<p><b>Analizza nuove immagini</b> analizza i volti e tenta il riconoscimento "
-"nelle nuove immagini trovate negli album selezionati nella scheda «Cerca in»."
-"</p><p><b>Analizza tutte le immagini</b> analizza i volti e tenta il "
-"riconoscimento per tutte le immagini trovate negli album selezionati nella "
-"scheda «Cerca in».</p><p><b>Riconosci solo i volti</b> tenta di trovare "
-"corrispondenze dei volti sconosciuti con quelli confermati, senza analizzare "
-"nuovi volti nelle immagini.</p>"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:114
-#, kde-format
-msgctxt "@info"
-msgid "Help"
-msgstr "Aiuto"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:132
-#, kde-format
-msgctxt "@title:tab"
-msgid "Workflow"
-msgstr "Flusso di lavoro"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
-#, kde-format
-msgctxt "@label Face Detection Accuracy"
-msgid "Accuracy:"
-msgstr "Accuratezza:"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will\n"
-"be detected, but less faces will be detected."
-msgstr ""
-"Regola la sensibilità rispetto alla specificità: più alto è il valore, più "
-"accuratamente\n"
-"saranno individuati i volti, ma ne saranno individuati di meno."
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
-#, kde-format
-msgctxt "@label face size for detection"
-msgid "Face size:"
-msgstr "Dimensione volto:"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
-#, kde-format
-msgctxt "@label: listbox face size"
-msgid "Extra Small"
-msgstr "Molto piccolo"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
-#, kde-format
-msgctxt "@label: listbox face size"
-msgid "Small"
-msgstr "Piccolo"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
-#, kde-format
-msgctxt "@label: listbox face size"
-msgid "Medium"
-msgstr "Medio"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
-#, kde-format
-msgctxt "@label: listbox face size"
-msgid "Large"
-msgstr "Grande"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
-#, kde-format
-msgctxt "@label: listbox face size"
-msgid "Extra Large"
-msgstr "Molto grande"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p>Selecting <b>Extra Small</b> means the model will detect small background "
-"faces in addition to medium and larger faces. Selecting <b>Small Faces</b> "
-"increases the sensitivity of the model by tuning the model parameters. It "
-"will also increase the probability of false-positives, and it will increase "
-"detection time.</p><p>Selecting <b>Large</b> or <b>Extra Large</b> will "
-"eliminate small background faces from being detected. It is much faster and "
-"will reduce the number of false-positives, but will not detect small faces "
-"in the background or faces in large group photos.</p><p>If you want to "
-"detect all faces in one pass, select <b>Extra Small</b> faces and set the "
-"detection accuracy to 2. Unfortunately, this will create a significant "
-"number of false-positives. It is recommended to set a detection accuracy of "
-"6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
-"p><p>This setting applies only to YuNet.</p>"
-msgstr ""
-"<p>Selezionare l'opzione <b>Molto piccolo</b> significa che il modello "
-"rileverà visi piccoli sullo sfondo in aggiunta a quelli medi e più grandi. "
-"Selezionare <b>piccolo</b> aumenterà la sensibilità del modello regolando "
-"uno dei parametri. Aumenterà anche la probabilità di falsi positivi e il "
-"tempo del rilevamento.</p><p>Selezionare <b>Grande</b> o <b>Molto grande</b> "
-"eliminerà dal rilevamento i volti sullo sfondo. Sarà molto più rapido e "
-"ridurrà il numero di falsi positivi ma non rileverà i visi piccoli sullo "
-"sfondo o i volti nelle grandi foto di gruppo.</p><p>Se vuoi rilevare tutti i "
-"visi in un colpo solo, seleziona <b>Molto piccolo</b> e imposta "
-"l'accuratezza del rilevamento attorno a 2. Purtroppo questa opzione genererà "
-"molti falsi positivi. Per un normale utilizzo, consigliamo di impostare "
-"l'accuratezza del rilevamento a 6-8 e la dimensione dei volti a <b>Medio</b> "
-"o <b>Grande</b>.</p>"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
-#, kde-format
-msgid "Face Detection Settings"
-msgstr "Impostazioni del rilevamento facciale"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:239
-#, kde-format
-msgctxt "@label Face Recognition Accuracy"
-msgid "Accuracy:"
-msgstr "Accuratezza:"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will\n"
-"be recognized, but less faces will be recognized.\n"
-"Note: only faces that are very similar to pre-tagged faces are recognized."
-msgstr ""
-"Regola la sensibilità rispetto alla specificità: più alto è il valore, più "
-"accuratamente\n"
-"saranno riconosciuti i volti, ma ne saranno riconosciuti di meno.\n"
-"Nota: saranno riconosciuti solo i volti molto simili a quelli cui sono già "
-"stati attribuiti dei tag."
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"Face detection and recognition are time-consuming tasks.\n"
-"You can choose if you wish to employ all processor cores\n"
-"on your system, or work in the background only on one core."
-msgstr ""
-"Il rilevamento e il riconoscimento facciale sono processi che richiedono "
-"tempo.\n"
-"Puoi scegliere se impiegare tutti i core del tuo processore\n"
-"o lavorare sullo sfondo usando un solo core."
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:296
-#, kde-format
-msgid "Face Recognition Settings"
-msgstr "Impostazioni del riconoscimento facciale"
-
 #: core/utilities/firstrun/collectionpage.cpp:58
 #, kde-format
 msgid "<b>Configure where you keep your images</b>"
@@ -61481,7 +61481,7 @@ msgstr ""
 "i tag ai volti sconosciuti prima che i volti possano essere riconosciuti."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:413
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -61490,7 +61490,7 @@ msgstr ""
 "Tutte le operazioni sono state completate.\n"
 "Durata: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:414
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Manutenzione di digiKam"

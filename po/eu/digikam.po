@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-12 01:52+0000\n"
+"POT-Creation-Date: 2025-02-13 02:03+0000\n"
 "PO-Revision-Date: 2025-01-19 14:15+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3199,13 +3199,13 @@ msgid "Last Search"
 msgstr "Azken bilaketa"
 
 #: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:114
+#: core/app/views/stack/itemiconview_search.cpp:109
 #, kde-format
 msgid "FacesEngine"
 msgstr "AurpegienMotorra"
 
 #: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:116
+#: core/app/views/stack/itemiconview_search.cpp:111
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -6111,36 +6111,36 @@ msgstr ""
 "<para>Agindu-sorta ilara kudeatzeko tresna honek irudien gainean metadatuen "
 "txantiloiak ezar ditzake.</para>"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:89
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
 #, kde-format
 msgid "Titles:"
 msgstr "Tituluak:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:93
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
 msgstr "Sartu tituluaren testua hemen."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
 #, kde-format
 msgid "Captions:"
 msgstr "Epigrafeak:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:101
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "Sartu epigrafearen testua hemen."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:104
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:106
 #, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr "Garbitu eta gainidatzi metadatuak"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:107
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6298,134 +6298,134 @@ msgstr ""
 "<para>Sorta-ilara kudeatzeko tresna honek irudien gainean metadatuen "
 "txantiloiak ezar ditzake.</para>"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:96
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:98
 #, kde-format
 msgctxt "@title"
 msgid "Exif:"
 msgstr "Exif:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:98
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:100
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Completely"
 msgstr "Erabat"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:99
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:101
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Date"
 msgstr "Data"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:100
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:102
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "GPS"
 msgstr "GPS"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:101
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:103
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "XPKeywords"
 msgstr "XPKeywords"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:102
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Comment and description"
 msgstr "Iruzkina eta azalpena"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
 #, kde-format
 msgctxt "@title"
 msgid "Iptc:"
 msgstr "IPTC:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Completely"
 msgstr "Erabat"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Date"
 msgstr "Data"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Caption"
 msgstr "Epigrafea"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Preview image"
 msgstr "Aurreikusi irudia"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
 #, kde-format
 msgctxt "@title"
 msgid "Xmp:"
 msgstr "XMP:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Completely"
 msgstr "Erabat"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:114
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Date"
 msgstr "Data"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
 #, fuzzy, kde-format
 #| msgid "digiKam Properties"
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
 msgstr "digiKamen propietateak"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
 msgstr "digiKam-en irudi-historia"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:119
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
 msgstr "digiKam irudi aurreikuspegia"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr "Dublin Core"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:119
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr "Exif"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "Bideoa"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
 msgstr "Epigrafea, iruzkina eta deskribapena"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:215
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:217
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
@@ -6474,37 +6474,37 @@ msgstr ""
 "<para>Sorta-ilara kudeatzeko tresna honek ordua doitu dezake irudietan.</"
 "para>"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:93
+#: core/dplugins/bqm/metadata/translate/translate.cpp:95
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Title"
 msgstr "Titulua"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:94
+#: core/dplugins/bqm/metadata/translate/translate.cpp:96
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
 msgstr "Epigrafea"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:95
+#: core/dplugins/bqm/metadata/translate/translate.cpp:97
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Copyrights"
 msgstr "Egile-eskubideak - Copyright"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:96
+#: core/dplugins/bqm/metadata/translate/translate.cpp:98
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
 msgstr "Erabilera-baldintzak"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:99
+#: core/dplugins/bqm/metadata/translate/translate.cpp:101
 #, kde-format
 msgctxt "@label"
 msgid "Translate to:"
 msgstr "Itzuli honetara:"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:137
+#: core/dplugins/bqm/metadata/translate/translate.cpp:139
 #, kde-format
 msgctxt "@label"
 msgid "Entries to Translate with %1:"
@@ -22259,7 +22259,7 @@ msgid "Slideshow"
 msgstr "Diapositiba emanaldia"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
-#: core/libs/settings/applicationsettings_miscs.cpp:488
+#: core/libs/settings/applicationsettings_miscs.cpp:438
 #, kde-format
 msgid "Slideshow"
 msgstr "Diapositiba emanaldia"
@@ -35341,6 +35341,228 @@ msgstr ""
 "Huts egin du taulak datu-basean sortzean\n"
 " "
 
+#: core/libs/facesengine/widgets/facescanwidget.cpp:90
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"digiKam can search for faces in your photos.\n"
+"When you have identified your friends on a number of photos,\n"
+"it can also recognize the people shown on your photos."
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:98
+#: core/utilities/maintenance/main/maintenancedlg.cpp:207
+#, fuzzy, kde-format
+#| msgid "Scan Image"
+msgctxt "@label:listbox"
+msgid "Scan new images"
+msgstr "Eskaneatu irudia"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:99
+#: core/utilities/maintenance/main/maintenancedlg.cpp:208
+#, fuzzy, kde-format
+#| msgid "Scan Image"
+msgctxt "@label:listbox"
+msgid "Scan all images"
+msgstr "Eskaneatu irudia"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:100
+#: core/utilities/maintenance/main/maintenancedlg.cpp:209
+#, fuzzy, kde-format
+#| msgctxt "@option:radio"
+#| msgid "Recognize faces"
+msgctxt "@label:listbox"
+msgid "Recognize faces only"
+msgstr "Aurkegiak ezagutzea"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:102
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
+"new images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
+"all images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Recognize faces only</b> will try to match unknown faces with "
+"confirmed faces without scanning images new faces.</p>"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:108
+#, fuzzy, kde-format
+#| msgid "&Help"
+msgctxt "@info"
+msgid "Help"
+msgstr "Laguntza"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:126
+#, kde-format
+msgctxt "@title:tab"
+msgid "Workflow"
+msgstr "Lan-fluxua"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:132
+#: core/libs/imgqsort/imagequalitywidget.cpp:61
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
+#, fuzzy, kde-format
+#| msgid "Search in:"
+msgctxt "@title:tab"
+msgid "Search in"
+msgstr "Bilatu hemen:"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:147
+#, fuzzy, kde-format
+#| msgid "Accuracy"
+msgctxt "@label Face Detection Accuracy"
+msgid "Accuracy:"
+msgstr "&Zehaztasuna:"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:154
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Adjust sensitivity versus specificity: the higher the value, the more "
+#| "accurately faces will\n"
+#| "be recognized, but less faces will be recognized\n"
+#| "(only faces that are very similar to pre-tagged faces are recognized)."
+msgctxt "@info:tooltip"
+msgid ""
+"Adjust sensitivity versus specificity: the higher the value, the more "
+"accurately faces will\n"
+"be detected, but less faces will be detected."
+msgstr ""
+"Doitu sentikortasuna vs. espezifikotasuna: zenbat eta balio handiago, "
+"aurpegiak orduan\n"
+"eta zehatzago ezagutuko dira, baina aurpegi gutxiago\n"
+"ezagutuko dira (aurrez etiketatutakoekin oso antzekoak direnak bakarrik "
+"ezagutzen dira)."
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:159
+#, fuzzy, kde-format
+#| msgctxt "@option: audio"
+#| msgid "Frame size"
+msgctxt "@label face size for detection"
+msgid "Face size:"
+msgstr "Fotogramaren neurria"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:163
+#, fuzzy, kde-format
+msgctxt "@label: listbox face size"
+msgid "Extra Small"
+msgstr "Etiketa gehigarriak"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:164
+#, fuzzy, kde-format
+msgctxt "@label: listbox face size"
+msgid "Small"
+msgstr "Txikia"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:165
+#, fuzzy, kde-format
+#| msgctxt "embedded preview type in dng file"
+#| msgid "Medium"
+msgctxt "@label: listbox face size"
+msgid "Medium"
+msgstr "Ertaina"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:166
+#, fuzzy, kde-format
+#| msgid "Target"
+msgctxt "@label: listbox face size"
+msgid "Large"
+msgstr "Handia"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:167
+#, fuzzy, kde-format
+msgctxt "@label: listbox face size"
+msgid "Extra Large"
+msgstr "Etiketa gehigarriak"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:170
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p>Selecting <b>Extra Small</b> means the model will detect small background "
+"faces in addition to medium and larger faces. Selecting <b>Small Faces</b> "
+"increases the sensitivity of the model by tuning the model parameters. It "
+"will also increase the probability of false-positives, and it will increase "
+"detection time.</p><p>Selecting <b>Large</b> or <b>Extra Large</b> will "
+"eliminate small background faces from being detected. It is much faster and "
+"will reduce the number of false-positives, but will not detect small faces "
+"in the background or faces in large group photos.</p><p>If you want to "
+"detect all faces in one pass, select <b>Extra Small</b> faces and set the "
+"detection accuracy to 2. Unfortunately, this will create a significant "
+"number of false-positives. It is recommended to set a detection accuracy of "
+"6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
+"p><p>This setting applies only to YuNet.</p>"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:187
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgid "Face Detection Settings"
+msgstr "Aurpegia atzematea"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:196
+#, kde-format
+msgctxt "@label Face Recognition Accuracy"
+msgid "Accuracy:"
+msgstr "Zehaztasuna:"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:203
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Adjust sensitivity versus specificity: the higher the value, the more "
+#| "accurately faces will\n"
+#| "be recognized, but less faces will be recognized\n"
+#| "(only faces that are very similar to pre-tagged faces are recognized)."
+msgctxt "@info:tooltip"
+msgid ""
+"Adjust sensitivity versus specificity: the higher the value, the more "
+"accurately faces will\n"
+"be recognized, but less faces will be recognized.\n"
+"Note: only faces that are very similar to pre-tagged faces are recognized."
+msgstr ""
+"Doitu sentikortasuna vs. espezifikotasuna: zenbat eta balio handiago, "
+"aurpegiak orduan\n"
+"eta zehatzago ezagutuko dira, baina aurpegi gutxiago\n"
+"ezagutuko dira (aurrez etiketatutakoekin oso antzekoak direnak bakarrik "
+"ezagutzen dira)."
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:213
+#: core/libs/imgqsort/imagequalitywidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
+#, kde-format
+msgctxt "@option:check"
+msgid "Work on all processor cores"
+msgstr "Prozesatzailearen nukleo guztiekin lan egitea"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:215
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Face detection and recognition are time-consuming tasks.\n"
+"You can choose if you wish to employ all processor cores\n"
+"on your system, or work in the background only on one core."
+msgstr ""
+"Aurpegiak antzematea eta ezagutzea denbora behar duten atazak dira.\n"
+"Sistemako prozesatzaileetako nukleo guztiak erabiltzea edo atzeko planoan "
+"nukleo bakarrean lan egitea nahi duzun aukera dezakezu."
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:219
+#, kde-format
+msgid "Face Recognition Settings"
+msgstr "Aurpegi ezagutza ezarpenak"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:227
+#: core/libs/imgqsort/imagequalitywidget.cpp:180
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
+#, kde-format
+msgctxt "@title:tab"
+msgid "Settings"
+msgstr "Ezarpenak"
+
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:94
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:145
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:194
@@ -35809,15 +36031,6 @@ msgstr "Garbitu dena"
 msgid "Select All"
 msgstr "Hautatu dena"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#, fuzzy, kde-format
-#| msgid "Search in:"
-msgctxt "@title:tab"
-msgid "Search in"
-msgstr "Bilatu hemen:"
-
 #: core/libs/imgqsort/imagequalitywidget.cpp:66
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -36000,15 +36213,6 @@ msgid ""
 "See the relevant settings from the next <b>Basic Factors</b> tab."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:159
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
-msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr "Prozesatzailearen nukleo guztiekin lan egitea"
-
 #: core/libs/imgqsort/imagequalitywidget.cpp:161
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
@@ -36025,14 +36229,6 @@ msgstr ""
 "Aurpegiak antzematea eta ezagutzea denbora behar duten atazak dira.\n"
 "Sistemako prozesatzaileetako nukleo guztiak erabiltzea edo atzeko planoan "
 "nukleo bakarrean lan egitea nahi duzun aukera dezakezu."
-
-#: core/libs/imgqsort/imagequalitywidget.cpp:180
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:304
-#, kde-format
-msgctxt "@title:tab"
-msgid "Settings"
-msgstr "Ezarpenak"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:187
 #, kde-format
@@ -38269,7 +38465,7 @@ msgid "Properties"
 msgstr "Propietateak"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
-#: core/libs/settings/applicationsettings_miscs.cpp:473
+#: core/libs/settings/applicationsettings_miscs.cpp:423
 #: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid "Metadata"
@@ -39904,79 +40100,79 @@ msgstr "Pentax Kamera Digitalaren RAW irudi formatua"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "Fuji Kamera Digitalaren RAW irudi formatua"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:442
+#: core/libs/settings/applicationsettings_miscs.cpp:392
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr "Taldeko elementu guztietan egin nahi duzu eragiketa hori?"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:444
+#: core/libs/settings/applicationsettings_miscs.cpp:394
 #, kde-format
 msgid "Remember choice for this operation"
 msgstr "Gogoratu eragiketa honetarako aukera"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:478
+#: core/libs/settings/applicationsettings_miscs.cpp:428
 #: core/utilities/lighttable/lighttablewindow.cpp:51
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Argi-mahaia"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:483
+#: core/libs/settings/applicationsettings_miscs.cpp:433
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:195
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Sorta-ilara kudeatzailea"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:493
+#: core/libs/settings/applicationsettings_miscs.cpp:443
 #, kde-format
 msgid "Renaming"
 msgstr "Berrizendatzea"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:498
+#: core/libs/settings/applicationsettings_miscs.cpp:448
 #, kde-format
 msgid "Import/Export tools"
 msgstr "Inportatze-/esportatze-tresnak"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:503
+#: core/libs/settings/applicationsettings_miscs.cpp:453
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:520
+#: core/libs/settings/applicationsettings_miscs.cpp:470
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
 "rotation"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:525
+#: core/libs/settings/applicationsettings_miscs.cpp:475
 #, fuzzy, kde-format
 #| msgid "Add to Light Table"
 msgid "Adding items to the Light Table"
 msgstr "Gehitu argi-mahaiari"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:530
+#: core/libs/settings/applicationsettings_miscs.cpp:480
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
 msgstr "Sorta-ilara kudeatzailean elementuak gehitzen"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:535
+#: core/libs/settings/applicationsettings_miscs.cpp:485
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:540
+#: core/libs/settings/applicationsettings_miscs.cpp:490
 #, kde-format
 msgid "Renaming items"
 msgstr "Elementuak berrizendatzea"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:545
+#: core/libs/settings/applicationsettings_miscs.cpp:495
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:550
+#: core/libs/settings/applicationsettings_miscs.cpp:500
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
@@ -53116,202 +53312,6 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Errefusatu iradokizun hau"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:96
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"digiKam can search for faces in your photos.\n"
-"When you have identified your friends on a number of photos,\n"
-"it can also recognize the people shown on your photos."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:104
-#: core/utilities/maintenance/main/maintenancedlg.cpp:207
-#, fuzzy, kde-format
-#| msgid "Scan Image"
-msgctxt "@label:listbox"
-msgid "Scan new images"
-msgstr "Eskaneatu irudia"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
-#: core/utilities/maintenance/main/maintenancedlg.cpp:208
-#, fuzzy, kde-format
-#| msgid "Scan Image"
-msgctxt "@label:listbox"
-msgid "Scan all images"
-msgstr "Eskaneatu irudia"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:106
-#: core/utilities/maintenance/main/maintenancedlg.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Recognize faces"
-msgctxt "@label:listbox"
-msgid "Recognize faces only"
-msgstr "Aurkegiak ezagutzea"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:108
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
-"new images found in the albums selected in the \"Search in\" tab.</"
-"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
-"all images found in the albums selected in the \"Search in\" tab.</"
-"p><p><b>Recognize faces only</b> will try to match unknown faces with "
-"confirmed faces without scanning images new faces.</p>"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:114
-#, fuzzy, kde-format
-#| msgid "&Help"
-msgctxt "@info"
-msgid "Help"
-msgstr "Laguntza"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:132
-#, kde-format
-msgctxt "@title:tab"
-msgid "Workflow"
-msgstr "Lan-fluxua"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
-#, fuzzy, kde-format
-#| msgid "Accuracy"
-msgctxt "@label Face Detection Accuracy"
-msgid "Accuracy:"
-msgstr "&Zehaztasuna:"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "(only faces that are very similar to pre-tagged faces are recognized)."
-msgctxt "@info:tooltip"
-msgid ""
-"Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will\n"
-"be detected, but less faces will be detected."
-msgstr ""
-"Doitu sentikortasuna vs. espezifikotasuna: zenbat eta balio handiago, "
-"aurpegiak orduan\n"
-"eta zehatzago ezagutuko dira, baina aurpegi gutxiago\n"
-"ezagutuko dira (aurrez etiketatutakoekin oso antzekoak direnak bakarrik "
-"ezagutzen dira)."
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
-#, fuzzy, kde-format
-#| msgctxt "@option: audio"
-#| msgid "Frame size"
-msgctxt "@label face size for detection"
-msgid "Face size:"
-msgstr "Fotogramaren neurria"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
-#, fuzzy, kde-format
-msgctxt "@label: listbox face size"
-msgid "Extra Small"
-msgstr "Etiketa gehigarriak"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
-#, fuzzy, kde-format
-msgctxt "@label: listbox face size"
-msgid "Small"
-msgstr "Txikia"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
-msgctxt "@label: listbox face size"
-msgid "Medium"
-msgstr "Ertaina"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
-#, fuzzy, kde-format
-#| msgid "Target"
-msgctxt "@label: listbox face size"
-msgid "Large"
-msgstr "Handia"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
-#, fuzzy, kde-format
-msgctxt "@label: listbox face size"
-msgid "Extra Large"
-msgstr "Etiketa gehigarriak"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p>Selecting <b>Extra Small</b> means the model will detect small background "
-"faces in addition to medium and larger faces. Selecting <b>Small Faces</b> "
-"increases the sensitivity of the model by tuning the model parameters. It "
-"will also increase the probability of false-positives, and it will increase "
-"detection time.</p><p>Selecting <b>Large</b> or <b>Extra Large</b> will "
-"eliminate small background faces from being detected. It is much faster and "
-"will reduce the number of false-positives, but will not detect small faces "
-"in the background or faces in large group photos.</p><p>If you want to "
-"detect all faces in one pass, select <b>Extra Small</b> faces and set the "
-"detection accuracy to 2. Unfortunately, this will create a significant "
-"number of false-positives. It is recommended to set a detection accuracy of "
-"6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
-"p><p>This setting applies only to YuNet.</p>"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
-#, fuzzy, kde-format
-#| msgid "Face Detection"
-msgid "Face Detection Settings"
-msgstr "Aurpegia atzematea"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:239
-#, kde-format
-msgctxt "@label Face Recognition Accuracy"
-msgid "Accuracy:"
-msgstr "Zehaztasuna:"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized\n"
-#| "(only faces that are very similar to pre-tagged faces are recognized)."
-msgctxt "@info:tooltip"
-msgid ""
-"Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will\n"
-"be recognized, but less faces will be recognized.\n"
-"Note: only faces that are very similar to pre-tagged faces are recognized."
-msgstr ""
-"Doitu sentikortasuna vs. espezifikotasuna: zenbat eta balio handiago, "
-"aurpegiak orduan\n"
-"eta zehatzago ezagutuko dira, baina aurpegi gutxiago\n"
-"ezagutuko dira (aurrez etiketatutakoekin oso antzekoak direnak bakarrik "
-"ezagutzen dira)."
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"Face detection and recognition are time-consuming tasks.\n"
-"You can choose if you wish to employ all processor cores\n"
-"on your system, or work in the background only on one core."
-msgstr ""
-"Aurpegiak antzematea eta ezagutzea denbora behar duten atazak dira.\n"
-"Sistemako prozesatzaileetako nukleo guztiak erabiltzea edo atzeko planoan "
-"nukleo bakarrean lan egitea nahi duzun aukera dezakezu."
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:296
-#, kde-format
-msgid "Face Recognition Settings"
-msgstr "Aurpegi ezagutza ezarpenak"
-
 #: core/utilities/firstrun/collectionpage.cpp:58
 #, kde-format
 msgid "<b>Configure where you keep your images</b>"
@@ -62242,14 +62242,14 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:413
 #, fuzzy, kde-format
 msgid ""
 "All operations are done.\n"
 "Duration: %1"
 msgstr "Alderantzizko ordenan"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:414
 #, fuzzy, kde-format
 msgid "digiKam Maintenance"
 msgstr "Angelu nagusia:"

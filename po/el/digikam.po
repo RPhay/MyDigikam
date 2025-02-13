@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-12 01:52+0000\n"
+"POT-Creation-Date: 2025-02-13 02:03+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -3250,14 +3250,14 @@ msgid "Last Search"
 msgstr "Τελευταία αναζήτηση"
 
 #: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:114
+#: core/app/views/stack/itemiconview_search.cpp:109
 #, fuzzy, kde-format
 #| msgid "File size"
 msgid "FacesEngine"
 msgstr "Μέγεθος αρχείου"
 
 #: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:116
+#: core/app/views/stack/itemiconview_search.cpp:111
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -6345,14 +6345,14 @@ msgstr ""
 "Προσθήκη νέου εργαλείου διαχείρισης ουράς για προσαρμογή μεταδεδομένων ώρας "
 "και ημερομηνίας;"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:89
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
 #, fuzzy, kde-format
 #| msgctxt "title of the file"
 #| msgid "Title:"
 msgid "Titles:"
 msgstr "Τίτλος:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:93
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:289
 #, fuzzy, kde-format
 #| msgid "Enter title here."
@@ -6360,13 +6360,13 @@ msgctxt "@info"
 msgid "Enter title text here."
 msgstr "Εισαγάγετε τον τίτλο εδώ."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
 #, fuzzy, kde-format
 #| msgid "Captions: "
 msgid "Captions:"
 msgstr "Επιγραφές:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:101
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:294
 #, fuzzy, kde-format
 #| msgid "Enter caption text here."
@@ -6374,12 +6374,12 @@ msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "Εισαγάγετε το κείμενο τίτλου εδώ."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:104
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:106
 #, fuzzy, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr "Καθαρισμός ανεπιβεβαίωτων αποτελεσμάτων και επανάληψη σάρωσης"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:107
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6527,13 +6527,13 @@ msgstr ""
 "Προσθήκη νέου εργαλείου διαχείρισης ουράς για προσαρμογή μεταδεδομένων ώρας "
 "και ημερομηνίας;"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:96
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:98
 #, kde-format
 msgctxt "@title"
 msgid "Exif:"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:98
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:100
 #, fuzzy, kde-format
 #| msgctxt "Name of the component"
 #| msgid "Component"
@@ -6541,39 +6541,39 @@ msgctxt "@item: exif namespace"
 msgid "Completely"
 msgstr "Συστατικό"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:99
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:101
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@item: exif namespace"
 msgid "Date"
 msgstr "Ημερομηνία"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:100
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:102
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "GPS"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:101
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:103
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgctxt "@item: exif namespace"
 msgid "XPKeywords"
 msgstr "Λέξεις κλειδιά"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:102
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
 #, fuzzy, kde-format
 msgctxt "@item: exif namespace"
 msgid "Comment and description"
 msgstr "Περιγραφή"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
 #, kde-format
 msgctxt "@title"
 msgid "Iptc:"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
 #, fuzzy, kde-format
 #| msgctxt "Name of the component"
 #| msgid "Component"
@@ -6581,21 +6581,21 @@ msgctxt "@item: iptc namespace"
 msgid "Completely"
 msgstr "Συστατικό"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@item: iptc namespace"
 msgid "Date"
 msgstr "Ημερομηνία"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@item: iptc namespace"
 msgid "Caption"
 msgstr "Τίτλος"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
 #, fuzzy, kde-format
 #| msgctxt "View the selected image"
 #| msgid "Preview Image"
@@ -6603,13 +6603,13 @@ msgctxt "@item: iptc namespace"
 msgid "Preview image"
 msgstr "Προεπισκόπηση εικόνας"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
 #, kde-format
 msgctxt "@title"
 msgid "Xmp:"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
 #, fuzzy, kde-format
 #| msgctxt "Name of the component"
 #| msgid "Component"
@@ -6617,21 +6617,21 @@ msgctxt "@item: xmp namespace"
 msgid "Completely"
 msgstr "Συστατικό"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:114
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@item: xmp namespace"
 msgid "Date"
 msgstr "Ημερομηνία"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
 #, fuzzy, kde-format
 #| msgid "digiKam Properties"
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
 msgstr "Ιδιότητες digiKam"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Image History"
@@ -6639,7 +6639,7 @@ msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
 msgstr "Ιστορικό εικόνων"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:119
 #, fuzzy, kde-format
 #| msgctxt "View the selected image"
 #| msgid "Preview Image"
@@ -6647,34 +6647,34 @@ msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
 msgstr "Προεπισκόπηση εικόνας"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, fuzzy, kde-format
 #| msgid "Dublin Core"
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr "Dublin Core"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:119
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "Βίντεο"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
 #, fuzzy, kde-format
 #| msgid "Caption, Comment, Title"
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
 msgstr "Υπότιτλος, σχόλιο, τίτλος"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:215
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:217
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
@@ -6730,42 +6730,42 @@ msgstr ""
 "Προσθήκη νέου εργαλείου διαχείρισης ουράς για προσαρμογή μεταδεδομένων ώρας "
 "και ημερομηνίας;"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:93
+#: core/dplugins/bqm/metadata/translate/translate.cpp:95
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@option:check metadata entry"
 msgid "Title"
 msgstr "Τίτλος"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:94
+#: core/dplugins/bqm/metadata/translate/translate.cpp:96
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@option:check metadata entry"
 msgid "Caption"
 msgstr "Τίτλος"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:95
+#: core/dplugins/bqm/metadata/translate/translate.cpp:97
 #, fuzzy, kde-format
 #| msgid "Copyright"
 msgctxt "@option:check metadata entry"
 msgid "Copyrights"
 msgstr "Copyright"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:96
+#: core/dplugins/bqm/metadata/translate/translate.cpp:98
 #, fuzzy, kde-format
 #| msgid "Right Usage Terms:"
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
 msgstr "Όροι ορθής χρήσης:"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:99
+#: core/dplugins/bqm/metadata/translate/translate.cpp:101
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@label"
 msgid "Translate to:"
 msgstr "Πλοήγηση στο %1"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:137
+#: core/dplugins/bqm/metadata/translate/translate.cpp:139
 #, fuzzy, kde-format
 #| msgid "Hungarian translations"
 msgctxt "@label"
@@ -23447,7 +23447,7 @@ msgid "Slideshow"
 msgstr "Παρουσίαση διαφανειών"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
-#: core/libs/settings/applicationsettings_miscs.cpp:488
+#: core/libs/settings/applicationsettings_miscs.cpp:438
 #, kde-format
 msgid "Slideshow"
 msgstr "Παρουσίαση διαφανειών"
@@ -36804,6 +36804,233 @@ msgstr ""
 "Αποτυχία δημιουργίας πινάκων στη βάση δεδομένων.\n"
 "%1"
 
+#: core/libs/facesengine/widgets/facescanwidget.cpp:90
+#, fuzzy, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"digiKam can search for faces in your photos.\n"
+"When you have identified your friends on a number of photos,\n"
+"it can also recognize the people shown on your photos."
+msgstr ""
+"Το digiKam μπορεί να αναζητήσει πρόσωπα στις φωτογραφίες σας.<nl/> Όταν "
+"αναγνωρίζετε τους φίλους σας σε έναν αριθμό φωτογραφιών,<nl/> αναγνωρίζει "
+"και πρόσωπα που εμφανίζονται στις φωτογραφίες σας."
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:98
+#: core/utilities/maintenance/main/maintenancedlg.cpp:207
+#, fuzzy, kde-format
+#| msgid "Scan Image"
+msgctxt "@label:listbox"
+msgid "Scan new images"
+msgstr "Σάρωση εικόνας"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:99
+#: core/utilities/maintenance/main/maintenancedlg.cpp:208
+#, fuzzy, kde-format
+#| msgid "Scan Image"
+msgctxt "@label:listbox"
+msgid "Scan all images"
+msgstr "Σάρωση εικόνας"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:100
+#: core/utilities/maintenance/main/maintenancedlg.cpp:209
+#, fuzzy, kde-format
+#| msgid "Synchronize"
+msgctxt "@label:listbox"
+msgid "Recognize faces only"
+msgstr "Συγχρονισμός"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:102
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
+"new images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
+"all images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Recognize faces only</b> will try to match unknown faces with "
+"confirmed faces without scanning images new faces.</p>"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:108
+#, fuzzy, kde-format
+#| msgid "&Help"
+msgctxt "@info"
+msgid "Help"
+msgstr "&Βοήθεια"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:126
+#, fuzzy, kde-format
+#| msgid "Workflow"
+msgctxt "@title:tab"
+msgid "Workflow"
+msgstr "Ροή εργασιών"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:132
+#: core/libs/imgqsort/imagequalitywidget.cpp:61
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
+#, fuzzy, kde-format
+#| msgid "Search in:"
+msgctxt "@title:tab"
+msgid "Search in"
+msgstr "Αναζήτηση σε:"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:147
+#, fuzzy, kde-format
+#| msgid "Accuracy"
+msgctxt "@label Face Detection Accuracy"
+msgid "Accuracy:"
+msgstr "Ακρίβεια"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:154
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Adjust speed versus accuracy: The higher the value, the more accurate the "
+#| "results will be, but it will take more time."
+msgctxt "@info:tooltip"
+msgid ""
+"Adjust sensitivity versus specificity: the higher the value, the more "
+"accurately faces will\n"
+"be detected, but less faces will be detected."
+msgstr ""
+"Προσαρμογή ταχύτητας εναντίον ακρίβειας: όσο υψηλότερη η τιμή, τόσο "
+"ακριβέστερα τα αποτελέσματα, αλλά θα διαρκέσει περισσότερο."
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:159
+#, fuzzy, kde-format
+#| msgid "File size"
+msgctxt "@label face size for detection"
+msgid "Face size:"
+msgstr "Μέγεθος αρχείου"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:163
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Image tags"
+msgctxt "@label: listbox face size"
+msgid "Extra Small"
+msgstr "Ετικέτες εικόνας"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:164
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Image tags"
+msgctxt "@label: listbox face size"
+msgid "Small"
+msgstr "Ετικέτες εικόνας"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:165
+#, fuzzy, kde-format
+#| msgctxt "embedded preview type in dng file"
+#| msgid "Medium"
+msgctxt "@label: listbox face size"
+msgid "Medium"
+msgstr "Μεσαίο μέγεθος"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:166
+#, fuzzy, kde-format
+#| msgid "Target"
+msgctxt "@label: listbox face size"
+msgid "Large"
+msgstr "Προορισμός"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:167
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Image tags"
+msgctxt "@label: listbox face size"
+msgid "Extra Large"
+msgstr "Ετικέτες εικόνας"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:170
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p>Selecting <b>Extra Small</b> means the model will detect small background "
+"faces in addition to medium and larger faces. Selecting <b>Small Faces</b> "
+"increases the sensitivity of the model by tuning the model parameters. It "
+"will also increase the probability of false-positives, and it will increase "
+"detection time.</p><p>Selecting <b>Large</b> or <b>Extra Large</b> will "
+"eliminate small background faces from being detected. It is much faster and "
+"will reduce the number of false-positives, but will not detect small faces "
+"in the background or faces in large group photos.</p><p>If you want to "
+"detect all faces in one pass, select <b>Extra Small</b> faces and set the "
+"detection accuracy to 2. Unfortunately, this will create a significant "
+"number of false-positives. It is recommended to set a detection accuracy of "
+"6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
+"p><p>This setting applies only to YuNet.</p>"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:187
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgid "Face Detection Settings"
+msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:196
+#, fuzzy, kde-format
+#| msgid "Accuracy"
+msgctxt "@label Face Recognition Accuracy"
+msgid "Accuracy:"
+msgstr "Ακρίβεια"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:203
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Adjust speed versus accuracy: The higher the value, the more accurate the "
+#| "results will be, but it will take more time."
+msgctxt "@info:tooltip"
+msgid ""
+"Adjust sensitivity versus specificity: the higher the value, the more "
+"accurately faces will\n"
+"be recognized, but less faces will be recognized.\n"
+"Note: only faces that are very similar to pre-tagged faces are recognized."
+msgstr ""
+"Προσαρμογή ταχύτητας εναντίον ακρίβειας: όσο υψηλότερη η τιμή, τόσο "
+"ακριβέστερα τα αποτελέσματα, αλλά θα διαρκέσει περισσότερο."
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:213
+#: core/libs/imgqsort/imagequalitywidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
+#, kde-format
+msgctxt "@option:check"
+msgid "Work on all processor cores"
+msgstr "Εργασία σε όλους τους πυρήνες του επεξεργαστή"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:215
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Face detection is a time-consuming task. You can choose if you wish to "
+#| "employ all processor cores on your system, or work in the background only "
+#| "on one core."
+msgctxt "@info:tooltip"
+msgid ""
+"Face detection and recognition are time-consuming tasks.\n"
+"You can choose if you wish to employ all processor cores\n"
+"on your system, or work in the background only on one core."
+msgstr ""
+"Η ανίχνευση προσώπων είναι μια χρονοβόρα εργασία. Μπορείτε να επιλέξετε αν "
+"θέλετε να χρησιμοποιήσετε όλους τους πυρήνες του επεξεργαστή στο σύστημά σας "
+"ή να εργαστείτε στο παρασκήνιο με μόνο έναν πυρήνα."
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:219
+#, fuzzy, kde-format
+msgid "Face Recognition Settings"
+msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:227
+#: core/libs/imgqsort/imagequalitywidget.cpp:180
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgctxt "@title:tab"
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:94
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:145
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:194
@@ -37292,15 +37519,6 @@ msgstr "Καθάρισμα όλων"
 msgid "Select All"
 msgstr "Επιλογή όλων"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#, fuzzy, kde-format
-#| msgid "Search in:"
-msgctxt "@title:tab"
-msgid "Search in"
-msgstr "Αναζήτηση σε:"
-
 #: core/libs/imgqsort/imagequalitywidget.cpp:66
 #, kde-format
 msgctxt "@info"
@@ -37431,15 +37649,6 @@ msgid ""
 "See the relevant settings from the next <b>Basic Factors</b> tab."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:159
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:290
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
-msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr "Εργασία σε όλους τους πυρήνες του επεξεργαστή"
-
 #: core/libs/imgqsort/imagequalitywidget.cpp:161
 #, fuzzy, kde-format
 #| msgctxt "@info"
@@ -37456,15 +37665,6 @@ msgstr ""
 "Η ανίχνευση προσώπων είναι μια χρονοβόρα εργασία. Μπορείτε να επιλέξετε αν "
 "θέλετε να χρησιμοποιήσετε όλους τους πυρήνες του επεξεργαστή στο σύστημά σας "
 "ή να εργαστείτε στο παρασκήνιο με μόνο έναν πυρήνα."
-
-#: core/libs/imgqsort/imagequalitywidget.cpp:180
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:304
-#, fuzzy, kde-format
-#| msgid "Settings"
-msgctxt "@title:tab"
-msgid "Settings"
-msgstr "Ρυθμίσεις"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:187
 #, fuzzy, kde-format
@@ -39802,7 +40002,7 @@ msgid "Properties"
 msgstr "Ιδιότητες"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
-#: core/libs/settings/applicationsettings_miscs.cpp:473
+#: core/libs/settings/applicationsettings_miscs.cpp:423
 #: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid "Metadata"
@@ -41595,49 +41795,49 @@ msgstr "Μορφή TIFF (έκδοση 5.0)"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "Μορφή TIFF (έκδοση 5.0)"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:442
+#: core/libs/settings/applicationsettings_miscs.cpp:392
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr "Θέλετε να γίνει αυτή η λειτουργία για όλα τα αντικείμενα της ομάδας;"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:444
+#: core/libs/settings/applicationsettings_miscs.cpp:394
 #, kde-format
 msgid "Remember choice for this operation"
 msgstr "Απομνημόνευση επιλογής για αυτήν τη λειτουργία"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:478
+#: core/libs/settings/applicationsettings_miscs.cpp:428
 #: core/utilities/lighttable/lighttablewindow.cpp:51
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Φωτεινός πίνακας"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:483
+#: core/libs/settings/applicationsettings_miscs.cpp:433
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:195
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Διαχειριστής ουράς για δέσμες εργασιών"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:493
+#: core/libs/settings/applicationsettings_miscs.cpp:443
 #, kde-format
 msgid "Renaming"
 msgstr "Μετονομασία"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:498
+#: core/libs/settings/applicationsettings_miscs.cpp:448
 #, fuzzy, kde-format
 #| msgid "Import/Export plugins"
 msgid "Import/Export tools"
 msgstr "Πρόσθετα εισαγωγής/εξαγωγής"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:503
+#: core/libs/settings/applicationsettings_miscs.cpp:453
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 "Εργαλεία (επεξεργαστής, πανόραμα, stack blending, ημερολόγιο, εξωτερικό "
 "πρόγραμμα)"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:520
+#: core/libs/settings/applicationsettings_miscs.cpp:470
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
@@ -41646,33 +41846,33 @@ msgstr ""
 "Λειτουργίες σχρτικές με μεταδεδομένα, τίτλους, αξιολογήσεις, ετικέτες, "
 "γεωγραφική θέση και διαδοχική εναλλαγή"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:525
+#: core/libs/settings/applicationsettings_miscs.cpp:475
 #, kde-format
 msgid "Adding items to the Light Table"
 msgstr "Προσθήκη αντικειμένων στο φωτεινό πίνακα"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:530
+#: core/libs/settings/applicationsettings_miscs.cpp:480
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
 msgstr "Προσθήκη αντικειμένων στο διαχειριστή ουράς για δέσμες εργασιών·"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:535
+#: core/libs/settings/applicationsettings_miscs.cpp:485
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr "Άνοιγμα αντικειμένων στην προβολή διαφανειών"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:540
+#: core/libs/settings/applicationsettings_miscs.cpp:490
 #, kde-format
 msgid "Renaming items"
 msgstr "Μετονομασία αντικειμένων"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:545
+#: core/libs/settings/applicationsettings_miscs.cpp:495
 #, fuzzy, kde-format
 #| msgid "Passing items to import/export plugins"
 msgid "Passing items to import/export tools"
 msgstr "Πέρασμα αντικειμένων σε πρόσθετα εισαγωγής/εξαγωγής"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:550
+#: core/libs/settings/applicationsettings_miscs.cpp:500
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
@@ -55786,206 +55986,6 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:96
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"digiKam can search for faces in your photos.\n"
-"When you have identified your friends on a number of photos,\n"
-"it can also recognize the people shown on your photos."
-msgstr ""
-"Το digiKam μπορεί να αναζητήσει πρόσωπα στις φωτογραφίες σας.<nl/> Όταν "
-"αναγνωρίζετε τους φίλους σας σε έναν αριθμό φωτογραφιών,<nl/> αναγνωρίζει "
-"και πρόσωπα που εμφανίζονται στις φωτογραφίες σας."
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:104
-#: core/utilities/maintenance/main/maintenancedlg.cpp:207
-#, fuzzy, kde-format
-#| msgid "Scan Image"
-msgctxt "@label:listbox"
-msgid "Scan new images"
-msgstr "Σάρωση εικόνας"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
-#: core/utilities/maintenance/main/maintenancedlg.cpp:208
-#, fuzzy, kde-format
-#| msgid "Scan Image"
-msgctxt "@label:listbox"
-msgid "Scan all images"
-msgstr "Σάρωση εικόνας"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:106
-#: core/utilities/maintenance/main/maintenancedlg.cpp:209
-#, fuzzy, kde-format
-#| msgid "Synchronize"
-msgctxt "@label:listbox"
-msgid "Recognize faces only"
-msgstr "Συγχρονισμός"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:108
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
-"new images found in the albums selected in the \"Search in\" tab.</"
-"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
-"all images found in the albums selected in the \"Search in\" tab.</"
-"p><p><b>Recognize faces only</b> will try to match unknown faces with "
-"confirmed faces without scanning images new faces.</p>"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:114
-#, fuzzy, kde-format
-#| msgid "&Help"
-msgctxt "@info"
-msgid "Help"
-msgstr "&Βοήθεια"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Workflow"
-msgctxt "@title:tab"
-msgid "Workflow"
-msgstr "Ροή εργασιών"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:153
-#, fuzzy, kde-format
-#| msgid "Accuracy"
-msgctxt "@label Face Detection Accuracy"
-msgid "Accuracy:"
-msgstr "Ακρίβεια"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust speed versus accuracy: The higher the value, the more accurate the "
-#| "results will be, but it will take more time."
-msgctxt "@info:tooltip"
-msgid ""
-"Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will\n"
-"be detected, but less faces will be detected."
-msgstr ""
-"Προσαρμογή ταχύτητας εναντίον ακρίβειας: όσο υψηλότερη η τιμή, τόσο "
-"ακριβέστερα τα αποτελέσματα, αλλά θα διαρκέσει περισσότερο."
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:200
-#, fuzzy, kde-format
-#| msgid "File size"
-msgctxt "@label face size for detection"
-msgid "Face size:"
-msgstr "Μέγεθος αρχείου"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Image tags"
-msgctxt "@label: listbox face size"
-msgid "Extra Small"
-msgstr "Ετικέτες εικόνας"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Image tags"
-msgctxt "@label: listbox face size"
-msgid "Small"
-msgstr "Ετικέτες εικόνας"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
-msgctxt "@label: listbox face size"
-msgid "Medium"
-msgstr "Μεσαίο μέγεθος"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
-#, fuzzy, kde-format
-#| msgid "Target"
-msgctxt "@label: listbox face size"
-msgid "Large"
-msgstr "Προορισμός"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Image tags"
-msgctxt "@label: listbox face size"
-msgid "Extra Large"
-msgstr "Ετικέτες εικόνας"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p>Selecting <b>Extra Small</b> means the model will detect small background "
-"faces in addition to medium and larger faces. Selecting <b>Small Faces</b> "
-"increases the sensitivity of the model by tuning the model parameters. It "
-"will also increase the probability of false-positives, and it will increase "
-"detection time.</p><p>Selecting <b>Large</b> or <b>Extra Large</b> will "
-"eliminate small background faces from being detected. It is much faster and "
-"will reduce the number of false-positives, but will not detect small faces "
-"in the background or faces in large group photos.</p><p>If you want to "
-"detect all faces in one pass, select <b>Extra Small</b> faces and set the "
-"detection accuracy to 2. Unfortunately, this will create a significant "
-"number of false-positives. It is recommended to set a detection accuracy of "
-"6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
-"p><p>This setting applies only to YuNet.</p>"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
-#, fuzzy, kde-format
-#| msgid "Face Detection"
-msgid "Face Detection Settings"
-msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:239
-#, fuzzy, kde-format
-#| msgid "Accuracy"
-msgctxt "@label Face Recognition Accuracy"
-msgid "Accuracy:"
-msgstr "Ακρίβεια"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust speed versus accuracy: The higher the value, the more accurate the "
-#| "results will be, but it will take more time."
-msgctxt "@info:tooltip"
-msgid ""
-"Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will\n"
-"be recognized, but less faces will be recognized.\n"
-"Note: only faces that are very similar to pre-tagged faces are recognized."
-msgstr ""
-"Προσαρμογή ταχύτητας εναντίον ακρίβειας: όσο υψηλότερη η τιμή, τόσο "
-"ακριβέστερα τα αποτελέσματα, αλλά θα διαρκέσει περισσότερο."
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Face detection is a time-consuming task. You can choose if you wish to "
-#| "employ all processor cores on your system, or work in the background only "
-#| "on one core."
-msgctxt "@info:tooltip"
-msgid ""
-"Face detection and recognition are time-consuming tasks.\n"
-"You can choose if you wish to employ all processor cores\n"
-"on your system, or work in the background only on one core."
-msgstr ""
-"Η ανίχνευση προσώπων είναι μια χρονοβόρα εργασία. Μπορείτε να επιλέξετε αν "
-"θέλετε να χρησιμοποιήσετε όλους τους πυρήνες του επεξεργαστή στο σύστημά σας "
-"ή να εργαστείτε στο παρασκήνιο με μόνο έναν πυρήνα."
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:296
-#, fuzzy, kde-format
-msgid "Face Recognition Settings"
-msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
-
 #: core/utilities/firstrun/collectionpage.cpp:58
 #, fuzzy, kde-format
 msgid "<b>Configure where you keep your images</b>"
@@ -65339,7 +65339,7 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:413
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -65348,7 +65348,7 @@ msgstr ""
 "Όλες οι λειτουργίες ολοκληρώθηκαν.\n"
 "Διάρκεια: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:414
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Συντήρηση digiKam"
