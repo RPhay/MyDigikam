@@ -83,48 +83,6 @@ void FaceScanWidget::doSaveState()
 
 void FaceScanWidget::setupUi()
 {
-    // --- Workflow tab ------------------------------------------------------------------------------------
-
-    d->workflowWidget                   = new QWidget(this);
-    d->workflowWidget->setToolTip(i18nc("@info:tooltip",
-                                        "digiKam can search for faces in your photos.\n"
-                                        "When you have identified your friends on a number of photos,\n"
-                                        "it can also recognize the people shown on your photos."));
-
-    QVBoxLayout* const optionLayout     = new QVBoxLayout;
-    QHBoxLayout* const scanOptionLayout = new QHBoxLayout;
-
-    d->alreadyScannedBox                = new SqueezedComboBox;
-    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan new images"),           FaceScanSettings::Skip);
-    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan all images"),           FaceScanSettings::Rescan);
-    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Recognize faces only"),      FaceScanSettings::RecognizeOnly);
-    d->alreadyScannedBox->setToolTip(i18nc("@info:tooltip",
-                                           "<p><b>Scan new images</b> will scan for faces and attempt recognition for new images found in the albums selected in the \"Search in\" tab.</p>"
-                                           "<p><b>Scan all images</b> will scan for faces and attempt recognition for all images found in the albums selected in the \"Search in\" tab.</p>"
-                                           "<p><b>Recognize faces only</b> will try to match unknown faces with confirmed faces without scanning images new faces.</p>"));
-
-    QString buttonText;
-    d->helpButton                       = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), buttonText);
-    d->helpButton->setToolTip(i18nc("@info", "Help"));
-
-    connect(d->helpButton, &QPushButton::clicked,
-            this, []()
-        {
-            openOnlineDocumentation(QLatin1String("left_sidebar"), QLatin1String("people_view"));
-        }
-    );
-
-    scanOptionLayout->addWidget(d->alreadyScannedBox, 9);
-    scanOptionLayout->addWidget(d->helpButton,        1);
-
-    optionLayout->addLayout(scanOptionLayout);
-    optionLayout->addStretch();
-
-    d->alreadyScannedBox->setCurrentIndex(FaceScanSettings::Skip);
-
-    d->workflowWidget->setLayout(optionLayout);
-    addTab(d->workflowWidget, i18nc("@title:tab", "Workflow"));
-
     // --- Album tab --------------------------------------------------------------------------------------
 
     d->albumSelectors                   = new AlbumSelectors(QString(), d->configName,
@@ -136,16 +94,51 @@ void FaceScanWidget::setupUi()
     d->settingsTab                      = new QWidget(this);
     QVBoxLayout* const settingsLayout   = new QVBoxLayout(d->settingsTab);
 
-    DExpanderBox* const expBox          = new DExpanderBox(d->settingsTab);
+    // --- Workflow settings ---
+
+    d->workflowWidget                   = new DHBox(d->settingsTab);
+
+    QLabel* const workflowLabel         = new QLabel(i18nc("@label Face Worflow",
+                                                           "Workflow:"), d->workflowWidget);
+    workflowLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+
+    d->alreadyScannedBox                = new SqueezedComboBox(d->workflowWidget);
+    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan new images"),           FaceScanSettings::Skip);
+    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan all images"),           FaceScanSettings::Rescan);
+    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Recognize faces only"),      FaceScanSettings::RecognizeOnly);
+    d->alreadyScannedBox->setToolTip(i18nc("@info:tooltip",
+                                           "digiKam can search for faces in your photos.\n"
+                                           "When you have identified your friends on a number of photos,\n"
+                                           "it can also recognize the people shown on your photos.\n"
+                                           "<p><b>Scan new images</b> will scan for faces and attempt recognition for new images found in the albums selected in the \"Search in\" tab.</p>"
+                                           "<p><b>Scan all images</b> will scan for faces and attempt recognition for all images found in the albums selected in the \"Search in\" tab.</p>"
+                                           "<p><b>Recognize faces only</b> will try to match unknown faces with confirmed faces without scanning images new faces.</p>"));
+
+    QString buttonText;
+    d->helpButton                       = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")),
+                                                          buttonText, d->workflowWidget);
+    d->helpButton->setToolTip(i18nc("@info", "Help"));
+
+    connect(d->helpButton, &QPushButton::clicked,
+            this, []()
+        {
+            openOnlineDocumentation(QLatin1String("left_sidebar"), QLatin1String("people_view"));
+        }
+    );
+
+    d->workflowWidget->setStretchFactor(d->alreadyScannedBox, 10);
+    d->alreadyScannedBox->setCurrentIndex(FaceScanSettings::Skip);
 
     // --- Detection settings ---
+
+    DExpanderBox* const expBox          = new DExpanderBox(d->settingsTab);
 
     QWidget* const detectWidget         = new QWidget(expBox);
     QGridLayout* const detectGrid       = new QGridLayout(detectWidget);
 
     QLabel* const detectAccuracyLabel   = new QLabel(i18nc("@label Face Detection Accuracy",
                                                            "Accuracy:"), d->settingsTab);
-    detectAccuracyLabel->setAlignment(Qt::AlignLeft);
+    detectAccuracyLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
     d->detectAccuracyInput              = new DIntNumInput(d->settingsTab);
     d->detectAccuracyInput->setDefaultValue(7);
@@ -157,7 +150,7 @@ void FaceScanWidget::setupUi()
 
     QLabel* const detectSizeLabel       = new QLabel(i18nc("@label face size for detection",
                                                            "Face size:"), d->settingsTab);
-    detectSizeLabel->setAlignment(Qt::AlignLeft);
+    detectSizeLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
     d->detectSizeBox                    = new SqueezedComboBox(d->settingsTab);
     d->detectSizeBox->addSqueezedItem(i18nc("@label: listbox face size", "Extra Small"), FaceScanSettings::FaceDetectionSize::ExtraSmall);
@@ -194,7 +187,7 @@ void FaceScanWidget::setupUi()
 
     QLabel* const recognizeAccuracyLabel = new QLabel(i18nc("@label Face Recognition Accuracy",
                                                             "Accuracy:"), d->settingsTab);
-    recognizeAccuracyLabel->setAlignment(Qt::AlignLeft);
+    recognizeAccuracyLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
     d->recognizeAccuracyInput            = new DIntNumInput(d->settingsTab);
     d->recognizeAccuracyInput->setDefaultValue(7);
@@ -207,7 +200,7 @@ void FaceScanWidget::setupUi()
     recognizeGrid->addWidget(recognizeAccuracyLabel,    0, 0, 1, 1);
     recognizeGrid->addWidget(d->recognizeAccuracyInput, 0, 2, 1, 1);
 
-    // ---
+    // --- Full cpu settings ---
 
     d->useFullCpuButton                 = new QCheckBox(d->settingsTab);
     d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));
@@ -221,6 +214,9 @@ void FaceScanWidget::setupUi()
 
     expBox->addStretch();
 
+    // ---
+
+    settingsLayout->addWidget(d->workflowWidget);
     settingsLayout->addWidget(expBox);
     settingsLayout->addWidget(d->useFullCpuButton);
 

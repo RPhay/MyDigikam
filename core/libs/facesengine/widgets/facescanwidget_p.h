@@ -70,7 +70,7 @@ public:
 
 public:
 
-    QWidget*          workflowWidget                    = nullptr;
+    DHBox*            workflowWidget                    = nullptr;
 
     SqueezedComboBox* alreadyScannedBox                 = nullptr;
     QRadioButton*     detectButton                      = nullptr;
