@@ -35,6 +35,7 @@
 
 #include "digikam_globals.h"
 #include "digikam_debug.h"
+#include "dlayoutbox.h"
 #include "albummanager.h"
 #include "applicationsettings.h"
 #include "dexpanderbox.h"
@@ -52,6 +53,7 @@ public:
 
 public:
 
+    QPushButton*        helpButton   = nullptr;
     ImageQualityWidget* settingsWdg  = nullptr;
     QPushButton*        rescanButton = nullptr;
 
@@ -82,14 +84,31 @@ LabelsSideBarWidget::LabelsSideBarWidget(QWidget* const parent)
     QWidget* const imgqsortWdg     = new QWidget(d->scanExpander);
     QVBoxLayout* const imgqsortLay = new QVBoxLayout(imgqsortWdg);
 
-    d->settingsWdg  = new ImageQualityWidget(ImageQualityWidget::SettingsDisplayMode::Normal, imgqsortWdg);
-    d->rescanButton = new QPushButton(d->scanExpander);
+    d->settingsWdg    = new ImageQualityWidget(ImageQualityWidget::SettingsDisplayMode::Normal, imgqsortWdg);
+
+    DHBox* const hbox = new DHBox(d->scanExpander);
+    d->rescanButton   = new QPushButton(hbox);
     d->rescanButton->setText(i18n("Image Quality Scan"));
     d->rescanButton->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
     d->rescanButton->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for image quality parsing"));
 
+    d->helpButton     = new QPushButton(hbox);
+    d->helpButton->setToolTip(i18nc("@info", "Help"));
+    d->helpButton->setIcon(QIcon::fromTheme(QLatin1String("help-browser")));
+    hbox->setStretchFactor(d->rescanButton, 10);
+
+    QFontMetrics fmt  = d->rescanButton->fontMetrics();
+    d->helpButton->setIconSize(QSize(fmt.height(), fmt.height()));
+
+    connect(d->helpButton, &QPushButton::clicked,
+            this, []()
+        {
+            openOnlineDocumentation(QLatin1String("left_sidebar"), QLatin1String("labels_view"));
+        }
+    );
+
     imgqsortLay->addWidget(d->settingsWdg);
-    imgqsortLay->addWidget(d->rescanButton);
+    imgqsortLay->addWidget(hbox);
     imgqsortLay->setContentsMargins(0, spacing, 0, 0);
 
     d->scanExpander->setLineVisible(true);

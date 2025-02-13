@@ -76,7 +76,6 @@ public:
     QRadioButton*     detectButton                      = nullptr;
     QRadioButton*     detectAndRecognizeButton          = nullptr;
     QRadioButton*     reRecognizeButton                 = nullptr;
-    QPushButton*      helpButton                        = nullptr;
 
     // ---
 

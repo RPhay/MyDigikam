@@ -42,6 +42,7 @@
 #include "facescanwidget.h"
 #include "dnotificationwidget.h"
 #include "applicationsettings.h"
+#include "dlayoutbox.h"
 #include "dexpanderbox.h"
 #include "facesengine.h"
 
@@ -54,6 +55,9 @@ public:
 
     Private() = default;
 
+public:
+
+    QPushButton*              helpButton                = nullptr;
     QPushButton*              rescanButton              = nullptr;
     SearchModificationHelper* searchModificationHelper  = nullptr;
     FaceScanWidget*           settingsWdg               = nullptr;
@@ -113,14 +117,31 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
     QWidget* const faceScanWdg     = new QWidget(d->faceScanExpander);
     QVBoxLayout* const faceScanLay = new QVBoxLayout(faceScanWdg);
 
-    d->settingsWdg  = new FaceScanWidget(faceScanWdg);
-    d->rescanButton = new QPushButton;
+    d->settingsWdg    = new FaceScanWidget(faceScanWdg);
+
+    DHBox* const hbox = new DHBox(this);
+    d->rescanButton   = new QPushButton(hbox);
     d->rescanButton->setText(i18n("Scan collection for faces"));
     d->rescanButton->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
     d->rescanButton->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for faces"));
 
+    d->helpButton     = new QPushButton(hbox);
+    d->helpButton->setToolTip(i18nc("@info", "Help"));
+    d->helpButton->setIcon(QIcon::fromTheme(QLatin1String("help-browser")));
+    hbox->setStretchFactor(d->rescanButton, 10);
+
+    QFontMetrics fmt  = d->rescanButton->fontMetrics();
+    d->helpButton->setIconSize(QSize(fmt.height(), fmt.height()));
+
+    connect(d->helpButton, &QPushButton::clicked,
+            this, []()
+        {
+            openOnlineDocumentation(QLatin1String("left_sidebar"), QLatin1String("people_view"));
+        }
+    );
+
     faceScanLay->addWidget(d->settingsWdg);
-    faceScanLay->addWidget(d->rescanButton);
+    faceScanLay->addWidget(hbox);
     faceScanLay->setContentsMargins(0, spacing, 0, 0);
 
     d->faceScanExpander->setLineVisible(true);

@@ -37,6 +37,7 @@
 
 #include "digikam_globals.h"
 #include "digikam_debug.h"
+#include "dlayoutbox.h"
 #include "applicationsettings.h"
 #include "searchtextbardb.h"
 #include "tagfolderview.h"
@@ -66,6 +67,7 @@ public:
 
 public:
 
+    QPushButton*            helpButton             = nullptr;
     QPushButton*            openTagMngr            = nullptr;
     SearchTextBarDb*        tagSearchBar           = nullptr;
     TagFolderView*          tagFolderView          = nullptr;
@@ -134,14 +136,31 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
     QWidget* const autotagsWdg     = new QWidget(d->autotagsExpander);
     QVBoxLayout* const autotagsLay = new QVBoxLayout(autotagsWdg);
 
-    d->settingsWdg  = new AutotagsScanWidget(AutotagsScanWidget::SettingsDisplayMode::Normal, autotagsWdg);
-    d->rescanButton = new QPushButton(d->autotagsExpander);
+    d->settingsWdg    = new AutotagsScanWidget(AutotagsScanWidget::SettingsDisplayMode::Normal, autotagsWdg);
+
+    DHBox* const hbox = new DHBox(d->autotagsExpander);
+    d->rescanButton   = new QPushButton(hbox);
     d->rescanButton->setText(i18n("Auto-tag Scan"));
     d->rescanButton->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
     d->rescanButton->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for objects to auto-tag"));
 
+    d->helpButton     = new QPushButton(hbox);
+    d->helpButton->setToolTip(i18nc("@info", "Help"));
+    d->helpButton->setIcon(QIcon::fromTheme(QLatin1String("help-browser")));
+    hbox->setStretchFactor(d->rescanButton, 10);
+
+    QFontMetrics fmt  = d->rescanButton->fontMetrics();
+    d->helpButton->setIconSize(QSize(fmt.height(), fmt.height()));
+
+    connect(d->helpButton, &QPushButton::clicked,
+            this, []()
+        {
+            openOnlineDocumentation(QLatin1String("left_sidebar"), QLatin1String("tags_view"));
+        }
+    );
+
     autotagsLay->addWidget(d->settingsWdg);
-    autotagsLay->addWidget(d->rescanButton);
+    autotagsLay->addWidget(hbox);
     autotagsLay->setContentsMargins(0, spacing, 0, 0);
 
     d->autotagsExpander->setLineVisible(true);

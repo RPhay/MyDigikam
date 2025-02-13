@@ -114,17 +114,6 @@ void FaceScanWidget::setupUi()
                                            "<p><b>Scan all images</b> will scan for faces and attempt recognition for all images found in the albums selected in the \"Search in\" tab.</p>"
                                            "<p><b>Recognize faces only</b> will try to match unknown faces with confirmed faces without scanning images new faces.</p>"));
 
-    d->helpButton                       = new QPushButton(d->workflowWidget);
-    d->helpButton->setToolTip(i18nc("@info", "Help"));
-    d->helpButton->setIcon(QIcon::fromTheme(QLatin1String("help-browser")));
-
-    connect(d->helpButton, &QPushButton::clicked,
-            this, []()
-        {
-            openOnlineDocumentation(QLatin1String("left_sidebar"), QLatin1String("people_view"));
-        }
-    );
-
     d->workflowWidget->setStretchFactor(d->alreadyScannedBox, 10);
     d->alreadyScannedBox->setCurrentIndex(FaceScanSettings::Skip);
 
