@@ -51,13 +51,13 @@ MaintenanceSettings MaintenanceDlg::settings() const
 
     if (d->resetFaceDb->isChecked())
     {
-        prm.faceSettings.task               = FaceScanSettings::Reset;
+        prm.faceSettings.task                   = FaceScanSettings::Reset;
         prm.faceSettings.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::ClearAll;
     }
 
     prm.faceSettings.albums                 = d->albumSelectors->selectedAlbums();
 
-    AutotagsScanSettings tagSettings       = d->autotagsWidget->settings();
+    AutotagsScanSettings tagSettings        = d->autotagsWidget->settings();
     prm.autotagsAssignment                  = d->expanderBox->isChecked(Private::AutotagsAssignment);
     prm.autotagsScanMode                    = tagSettings.scanMode;
     prm.autotagsTagMode                     = tagSettings.tagMode;
