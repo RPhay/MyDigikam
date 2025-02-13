@@ -52,6 +52,7 @@ namespace Digikam
 void ItemDelegate::ItemDelegatePrivate::clearRects()
 {
     ItemViewDelegatePrivate::clearRects();
+    dateRect             = QRect(0, 0, 0, 0);
     modDateRect          = QRect(0, 0, 0, 0);
     pixmapRect           = QRect(0, 0, 0, 0);
     nameRect             = QRect(0, 0, 0, 0);
