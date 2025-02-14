@@ -166,7 +166,7 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
     d->autotagsExpander->setLineVisible(true);
     d->autotagsExpander->setWidget(autotagsWdg);
     d->autotagsExpander->setExpandByDefault(true);
-    d->autotagsExpander->layout()->setContentsMargins(0, 0, 0, 0);
+    d->autotagsExpander->layout()->setContentsMargins(0, 0, 0, spacing);
 
     layout->addWidget(d->openTagMngr);
     layout->addWidget(d->noTagsBtn);
