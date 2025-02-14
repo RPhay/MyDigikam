@@ -161,12 +161,12 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
 
     autotagsLay->addWidget(d->settingsWdg);
     autotagsLay->addWidget(hbox);
-    autotagsLay->setContentsMargins(0, spacing, 0, 0);
+    autotagsLay->setContentsMargins(0, 0, 0, 0);
 
     d->autotagsExpander->setLineVisible(true);
     d->autotagsExpander->setWidget(autotagsWdg);
     d->autotagsExpander->setExpandByDefault(true);
-    d->autotagsExpander->layout()->setContentsMargins(0, 0, 0, spacing);
+    d->autotagsExpander->layout()->setContentsMargins(0, 0, 0, 0);
 
     layout->addWidget(d->openTagMngr);
     layout->addWidget(d->noTagsBtn);
