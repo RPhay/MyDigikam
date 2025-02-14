@@ -51,6 +51,7 @@
 #include "haariface.h"
 #include "squeezedcombobox.h"
 #include "drangebox.h"
+#include "dlayoutbox.h"
 
 namespace Digikam
 {
@@ -76,6 +77,7 @@ public:
     QPushButton*         findDuplicatesBtn       = nullptr;
     QPushButton*         updateFingerPrtBtn      = nullptr;
     QPushButton*         removeDuplicatesBtn     = nullptr;
+    QPushButton*         helpButton              = nullptr;
 
     FindDuplicatesAlbum* listView                = nullptr;
 
@@ -99,27 +101,17 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     const int spacing = layoutSpacing();
 
-
-    // ---------------------------------------------------------------
+    // ---
 
     d->listView           = new FindDuplicatesAlbum();
     d->listView->setSortingEnabled(false);
 
-    d->updateFingerPrtBtn = new QPushButton(i18nc("@action", "Update fingerprints"));
-    d->updateFingerPrtBtn->setIcon(QIcon::fromTheme(QLatin1String("run-build")));
-    d->updateFingerPrtBtn->setWhatsThis(i18nc("@info", "Use this button to update all image fingerprints."));
-
-    d->findDuplicatesBtn  = new QPushButton(i18nc("@action", "Find duplicates"));
-    d->findDuplicatesBtn->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
-    d->findDuplicatesBtn->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for "
-                                            "duplicate items."));
-
-    // ---------------------------------------------------------------
+    // ---
 
     d->albumSelectors  = new AlbumSelectors(i18nc("@label", "Search in:"), QLatin1String("Find Duplicates View"),
                                             nullptr, AlbumSelectors::AlbumType::All, true);
 
-    // ---------------------------------------------------------------
+    // ---
 
     d->similarityRange = new DIntRangeBox();
     d->similarityRange->setSuffix(QLatin1String("%"));
@@ -237,6 +229,34 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     d->albumTagRelation->setCurrentIndex(d->albumTagRelation->findData(relation));
 
+    // ---
+
+    DHBox* const hbox     = new DHBox();
+
+    d->updateFingerPrtBtn = new QPushButton(i18nc("@action", "Update fingerprints"), hbox);
+    d->updateFingerPrtBtn->setIcon(QIcon::fromTheme(QLatin1String("run-build")));
+    d->updateFingerPrtBtn->setWhatsThis(i18nc("@info", "Use this button to update all image fingerprints."));
+
+    d->helpButton         = new QPushButton(hbox);
+    d->helpButton->setToolTip(i18nc("@info", "Help"));
+    d->helpButton->setIcon(QIcon::fromTheme(QLatin1String("help-browser")));
+    hbox->setStretchFactor(d->updateFingerPrtBtn, 10);
+
+    QFontMetrics fmt      = d->updateFingerPrtBtn->fontMetrics();
+    d->helpButton->setIconSize(QSize(fmt.height(), fmt.height()));
+
+    connect(d->helpButton, &QPushButton::clicked,
+            this, []()
+        {
+            openOnlineDocumentation(QLatin1String("left_sidebar"), QLatin1String("similarity_view"));
+        }
+    );
+
+    d->findDuplicatesBtn  = new QPushButton(i18nc("@action", "Find duplicates"));
+    d->findDuplicatesBtn->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
+    d->findDuplicatesBtn->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for "
+                                            "duplicate items."));
+
     d->removeDuplicatesBtn = new QPushButton(i18nc("@action", "Remove Duplicates"));
     d->removeDuplicatesBtn->setIcon(QIcon::fromTheme(QLatin1String("user-trash")));
     d->removeDuplicatesBtn->setWhatsThis(i18nc("@info", "Use this button to delete all duplicate images."));
@@ -255,7 +275,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     mainLayout->addWidget(d->similarityRange,         4, 2, 1,  1);
     mainLayout->addWidget(d->restrictResultsLabel,    5, 0, 1,  2);
     mainLayout->addWidget(d->searchResultRestriction, 5, 2, 1, -1);
-    mainLayout->addWidget(d->updateFingerPrtBtn,      6, 0, 1, -1);
+    mainLayout->addWidget(hbox,                       6, 0, 1, -1);
     mainLayout->addWidget(d->findDuplicatesBtn,       7, 0, 1, -1);
     mainLayout->addWidget(d->removeDuplicatesBtn,     8, 0, 1, -1);
 
