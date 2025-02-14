@@ -67,7 +67,7 @@ if [[ $DK_QTVERSION == 5 ]] ; then
     # Absolute path where are compiled all tarballs
     BUILDING_DIR="/b/$DK_VERSION"
 
-    # KDE KF6 frameworks version.
+    # KDE KF5 frameworks version.
     # See official release here: https://download.kde.org/stable/frameworks/
     DK_KDE_VERSION="5.116"
 
