@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-13 02:03+0000\n"
+"POT-Creation-Date: 2025-02-14 02:03+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -447,7 +447,7 @@ msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
 msgstr "不得含有此标签"
 
-#: core/app/items/delegate/itemdelegate.cpp:386
+#: core/app/items/delegate/itemdelegate.cpp:387
 #, kde-format
 msgid "Reference Image"
 msgstr "参考图像"
@@ -2843,20 +2843,28 @@ msgctxt "Search images on a map"
 msgid "Map"
 msgstr "地图"
 
-#: core/app/views/sidebar/labelssidebarwidget.cpp:78
-#: core/app/views/sidebar/labelssidebarwidget.cpp:87
+#: core/app/views/sidebar/labelssidebarwidget.cpp:80
+#: core/app/views/sidebar/labelssidebarwidget.cpp:91
 #, kde-format
 msgid "Image Quality Scan"
 msgstr "图像品质扫描"
 
-#: core/app/views/sidebar/labelssidebarwidget.cpp:89
+#: core/app/views/sidebar/labelssidebarwidget.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for image quality parsing"
 msgstr "点击此按钮以扫描所选相册中的对象并进行图像品质解析"
 
+#: core/app/views/sidebar/labelssidebarwidget.cpp:96
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:129
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:148
+#, kde-format
+msgctxt "@info"
+msgid "Help"
+msgstr "帮助"
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/app/views/sidebar/labelssidebarwidget.cpp:164
+#: core/app/views/sidebar/labelssidebarwidget.cpp:183
 #: core/libs/album/widgets/albumselecttabs.cpp:182
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:133
@@ -2865,19 +2873,19 @@ msgstr "点击此按钮以扫描所选相册中的对象并进行图像品质解
 msgid "Labels"
 msgstr "标记"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:109
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:118
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:113
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "扫描相册集合中的人脸"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:120
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
 msgstr "点击此按钮以扫描所选相册中的人脸。"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:169
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:190
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -2886,14 +2894,14 @@ msgstr ""
 "欢迎使用 digiKam 的人脸管理功能。如果您是第一次使用此功能，可以在左侧栏最下方"
 "的面板查看帮助框。"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:224
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:245
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr "人脸识别已中止，因为没有可供识别的人物。请添加新人物。"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:244
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:265
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -2905,39 +2913,39 @@ msgctxt "Advanced search images, access stored searches"
 msgid "Search"
 msgstr "搜索"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:103
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
 #, kde-format
 msgid "Open Tag Manager"
 msgstr "打开标签管理器"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:104
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:106
 #, kde-format
 msgid "No Tags"
 msgstr "无标签"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:107
 #, kde-format
 msgid "Existing Tags"
 msgstr "已有标签"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:139
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:143
 #, kde-format
 msgid "Auto-tag Scan"
 msgstr "自动分配标签扫描"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:141
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
 msgstr "点击此按钮以扫描所选相册中的对象并自动分配标签。"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:298
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:317
 #, kde-format
 msgid "No Tags Album"
 msgstr "无标签相册"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:325
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:344
 #: core/libs/album/engine/album.cpp:554
 #: core/libs/album/manager/albummanager.cpp:182
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -33516,42 +33524,56 @@ msgstr ""
 " %1"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:90
+#: core/libs/imgqsort/imagequalitywidget.cpp:61
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
 #, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"digiKam can search for faces in your photos.\n"
-"When you have identified your friends on a number of photos,\n"
-"it can also recognize the people shown on your photos."
-msgstr ""
-"digiKam 可以通过人脸搜索照片。\n"
-"您只需事先人工识别数张照片，\n"
-"即可在整个相册中自动识别出对应的人物。"
+msgctxt "@title:tab"
+msgid "Search in"
+msgstr "扫描范围"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:98
+#: core/libs/facesengine/widgets/facescanwidget.cpp:102
+#, fuzzy, kde-format
+#| msgid "Workflow"
+msgctxt "@label Face Worflow"
+msgid "Workflow:"
+msgstr "工作流程"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:106
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "扫描新图像"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:99
+#: core/libs/facesengine/widgets/facescanwidget.cpp:107
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "扫描所有图像"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:100
+#: core/libs/facesengine/widgets/facescanwidget.cpp:108
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "仅识别人脸"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, kde-format
+#: core/libs/facesengine/widgets/facescanwidget.cpp:110
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Scan new images</b> will scan for faces and attempt recognition for "
+#| "new images found in the albums selected in the \"Search in\" tab.</"
+#| "p><p><b>Scan all images</b> will scan for faces and attempt recognition "
+#| "for all images found in the albums selected in the \"Search in\" tab.</"
+#| "p><p><b>Recognize faces only</b> will try to match unknown faces with "
+#| "confirmed faces without scanning images new faces.</p>"
 msgctxt "@info:tooltip"
 msgid ""
+"digiKam can search for faces in your photos.\n"
+"When you have identified your friends on a number of photos,\n"
+"it can also recognize the people shown on your photos.\n"
 "<p><b>Scan new images</b> will scan for faces and attempt recognition for "
 "new images found in the albums selected in the \"Search in\" tab.</"
 "p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
@@ -33564,33 +33586,13 @@ msgstr ""
 "选中的相册中发现的所有图像中的人脸。</p><p><b>仅识别人脸</b> 将尝试将未知人脸"
 "与已确认的人脸进行匹配，而不会扫描图像中的新人脸。</p>"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:108
-#, kde-format
-msgctxt "@info"
-msgid "Help"
-msgstr "帮助"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:126
-#, kde-format
-msgctxt "@title:tab"
-msgid "Workflow"
-msgstr "扫描流程"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:132
-#: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
-#, kde-format
-msgctxt "@title:tab"
-msgid "Search in"
-msgstr "扫描范围"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:147
+#: core/libs/facesengine/widgets/facescanwidget.cpp:128
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "精度："
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:154
+#: core/libs/facesengine/widgets/facescanwidget.cpp:135
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33600,43 +33602,43 @@ msgid ""
 msgstr ""
 "调整灵敏度与特异性：数值越高，检测到的人脸越准确，但检测到的人脸数量会减少。"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:159
+#: core/libs/facesengine/widgets/facescanwidget.cpp:140
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "人脸大小："
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:163
+#: core/libs/facesengine/widgets/facescanwidget.cpp:144
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "超小"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:164
+#: core/libs/facesengine/widgets/facescanwidget.cpp:145
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "小"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:165
+#: core/libs/facesengine/widgets/facescanwidget.cpp:146
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "中"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:166
+#: core/libs/facesengine/widgets/facescanwidget.cpp:147
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "大"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:167
+#: core/libs/facesengine/widgets/facescanwidget.cpp:148
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "超大"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:170
+#: core/libs/facesengine/widgets/facescanwidget.cpp:151
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33663,18 +33665,18 @@ msgstr ""
 "测精度设置为 6 - 8，并将人脸大小设置为 <b>中</b> 或者 <b>大</b>。</p><p>此设"
 "置仅适用于 YuNet。</p>"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:187
+#: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "人脸检测设置"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:196
+#: core/libs/facesengine/widgets/facescanwidget.cpp:177
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "精度："
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:203
+#: core/libs/facesengine/widgets/facescanwidget.cpp:184
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33687,7 +33689,7 @@ msgstr ""
 "数值越高，识别精度越高，识别到的人脸也越少。\n"
 "提示：只有与同一人物标签的已有人脸高度相似的人脸才会被识别。"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:213
+#: core/libs/facesengine/widgets/facescanwidget.cpp:194
 #: core/libs/imgqsort/imagequalitywidget.cpp:159
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
@@ -33696,7 +33698,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "使用全部处理器核心"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:215
+#: core/libs/facesengine/widgets/facescanwidget.cpp:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33708,12 +33710,12 @@ msgstr ""
 "您可以选择使用系统的所有处理器内核以提升速度，\n"
 "或者选择在后台使用单一处理器内核以减少卡顿。"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:219
+#: core/libs/facesengine/widgets/facescanwidget.cpp:200
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "人脸检测设置"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:227
+#: core/libs/facesengine/widgets/facescanwidget.cpp:211
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
 #, kde-format
@@ -65552,3 +65554,17 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "digiKam can search for faces in your photos.\n"
+#~ "When you have identified your friends on a number of photos,\n"
+#~ "it can also recognize the people shown on your photos."
+#~ msgstr ""
+#~ "digiKam 可以通过人脸搜索照片。\n"
+#~ "您只需事先人工识别数张照片，\n"
+#~ "即可在整个相册中自动识别出对应的人物。"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Workflow"
+#~ msgstr "扫描流程"

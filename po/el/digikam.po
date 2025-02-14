@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-13 02:03+0000\n"
+"POT-Creation-Date: 2025-02-14 02:03+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -497,7 +497,7 @@ msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
 msgstr "Δεν πρέπει να έχετε αυτήν την ετικέτα"
 
-#: core/app/items/delegate/itemdelegate.cpp:386
+#: core/app/items/delegate/itemdelegate.cpp:387
 #, kde-format
 msgid "Reference Image"
 msgstr "Σχετική εικόνα"
@@ -2966,8 +2966,8 @@ msgctxt "Search images on a map"
 msgid "Map"
 msgstr "Χάρτης"
 
-#: core/app/views/sidebar/labelssidebarwidget.cpp:78
-#: core/app/views/sidebar/labelssidebarwidget.cpp:87
+#: core/app/views/sidebar/labelssidebarwidget.cpp:80
+#: core/app/views/sidebar/labelssidebarwidget.cpp:91
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Pluralized"
 #| msgid "Image Quality Sort"
@@ -2975,7 +2975,7 @@ msgstr "Χάρτης"
 msgid "Image Quality Scan"
 msgstr "Ταξινόμηση ανά ποιότητα εικόνας"
 
-#: core/app/views/sidebar/labelssidebarwidget.cpp:89
+#: core/app/views/sidebar/labelssidebarwidget.cpp:93
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -2984,8 +2984,17 @@ msgstr ""
 "Χρησιμοποιήστε αυτό το κουμπί για τη σάρωση επιλεγμένων λευκωμάτων για την "
 "εύρεση διπλά εμφανιζόμενων αντικειμένων."
 
+#: core/app/views/sidebar/labelssidebarwidget.cpp:96
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:129
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:148
+#, fuzzy, kde-format
+#| msgid "&Help"
+msgctxt "@info"
+msgid "Help"
+msgstr "&Βοήθεια"
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/app/views/sidebar/labelssidebarwidget.cpp:164
+#: core/app/views/sidebar/labelssidebarwidget.cpp:183
 #: core/libs/album/widgets/albumselecttabs.cpp:182
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:133
@@ -2994,13 +3003,13 @@ msgstr ""
 msgid "Labels"
 msgstr "Τίτλοι"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:109
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:118
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:113
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Αναζήτηση για πρόσωπα"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:120
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:126
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -3009,7 +3018,7 @@ msgstr ""
 "Χρησιμοποιήστε αυτό το κουμπί για τη σάρωση επιλεγμένων λευκωμάτων για την "
 "εύρεση διπλά εμφανιζόμενων αντικειμένων."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:169
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:190
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -3019,7 +3028,7 @@ msgstr ""
 "πρώτη φορά αυτή τη λειτουργία, παρακαλούμε χρησιμοποιήστε το πλαίσιο "
 "βοήθειας στον κάτω αριστερό πλευρικό πίνακα."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:224
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:245
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -3028,7 +3037,7 @@ msgstr ""
 "Η αναγνώριση προσώπου διακόπτεται, επειδή δεν υπάρχουν ταυτότητες προς "
 "αναγνώριση. Παρακαλώ προσθέστε νέες ταυτότητες."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:244
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:265
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3040,29 +3049,29 @@ msgctxt "Advanced search images, access stored searches"
 msgid "Search"
 msgstr "Αναζήτηση"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:103
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
 #, kde-format
 msgid "Open Tag Manager"
 msgstr "Άνοιγμα διαχειριστή ετικετών"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:104
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:106
 #, kde-format
 msgid "No Tags"
 msgstr "Χωρίς ετικέτες"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:107
 #, kde-format
 msgid "Existing Tags"
 msgstr "Υφιστάμενες ετικέτες"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:139
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:143
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Auto-tag Scan"
 msgstr "Αυτόματη προσαρμογή"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:141
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:145
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -3071,12 +3080,12 @@ msgstr ""
 "Χρησιμοποιήστε αυτό το κουμπί για τη σάρωση επιλεγμένων λευκωμάτων για την "
 "εύρεση διπλά εμφανιζόμενων αντικειμένων."
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:298
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:317
 #, kde-format
 msgid "No Tags Album"
 msgstr "Λεύκωμα χωρίς ετικέτες"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:325
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:344
 #: core/libs/album/engine/album.cpp:554
 #: core/libs/album/manager/albummanager.cpp:182
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -36805,68 +36814,6 @@ msgstr ""
 "%1"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:90
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"digiKam can search for faces in your photos.\n"
-"When you have identified your friends on a number of photos,\n"
-"it can also recognize the people shown on your photos."
-msgstr ""
-"Το digiKam μπορεί να αναζητήσει πρόσωπα στις φωτογραφίες σας.<nl/> Όταν "
-"αναγνωρίζετε τους φίλους σας σε έναν αριθμό φωτογραφιών,<nl/> αναγνωρίζει "
-"και πρόσωπα που εμφανίζονται στις φωτογραφίες σας."
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:98
-#: core/utilities/maintenance/main/maintenancedlg.cpp:207
-#, fuzzy, kde-format
-#| msgid "Scan Image"
-msgctxt "@label:listbox"
-msgid "Scan new images"
-msgstr "Σάρωση εικόνας"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:99
-#: core/utilities/maintenance/main/maintenancedlg.cpp:208
-#, fuzzy, kde-format
-#| msgid "Scan Image"
-msgctxt "@label:listbox"
-msgid "Scan all images"
-msgstr "Σάρωση εικόνας"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:100
-#: core/utilities/maintenance/main/maintenancedlg.cpp:209
-#, fuzzy, kde-format
-#| msgid "Synchronize"
-msgctxt "@label:listbox"
-msgid "Recognize faces only"
-msgstr "Συγχρονισμός"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
-"new images found in the albums selected in the \"Search in\" tab.</"
-"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
-"all images found in the albums selected in the \"Search in\" tab.</"
-"p><p><b>Recognize faces only</b> will try to match unknown faces with "
-"confirmed faces without scanning images new faces.</p>"
-msgstr ""
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:108
-#, fuzzy, kde-format
-#| msgid "&Help"
-msgctxt "@info"
-msgid "Help"
-msgstr "&Βοήθεια"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:126
-#, fuzzy, kde-format
-#| msgid "Workflow"
-msgctxt "@title:tab"
-msgid "Workflow"
-msgstr "Ροή εργασιών"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:132
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
 #, fuzzy, kde-format
@@ -36875,14 +36822,60 @@ msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Αναζήτηση σε:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:147
+#: core/libs/facesengine/widgets/facescanwidget.cpp:102
+#, fuzzy, kde-format
+#| msgid "Workflow"
+msgctxt "@label Face Worflow"
+msgid "Workflow:"
+msgstr "Ροή εργασιών"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:106
+#: core/utilities/maintenance/main/maintenancedlg.cpp:207
+#, fuzzy, kde-format
+#| msgid "Scan Image"
+msgctxt "@label:listbox"
+msgid "Scan new images"
+msgstr "Σάρωση εικόνας"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:107
+#: core/utilities/maintenance/main/maintenancedlg.cpp:208
+#, fuzzy, kde-format
+#| msgid "Scan Image"
+msgctxt "@label:listbox"
+msgid "Scan all images"
+msgstr "Σάρωση εικόνας"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:108
+#: core/utilities/maintenance/main/maintenancedlg.cpp:209
+#, fuzzy, kde-format
+#| msgid "Synchronize"
+msgctxt "@label:listbox"
+msgid "Recognize faces only"
+msgstr "Συγχρονισμός"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:110
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"digiKam can search for faces in your photos.\n"
+"When you have identified your friends on a number of photos,\n"
+"it can also recognize the people shown on your photos.\n"
+"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
+"new images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
+"all images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Recognize faces only</b> will try to match unknown faces with "
+"confirmed faces without scanning images new faces.</p>"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:128
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Ακρίβεια"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:154
+#: core/libs/facesengine/widgets/facescanwidget.cpp:135
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -36897,14 +36890,14 @@ msgstr ""
 "Προσαρμογή ταχύτητας εναντίον ακρίβειας: όσο υψηλότερη η τιμή, τόσο "
 "ακριβέστερα τα αποτελέσματα, αλλά θα διαρκέσει περισσότερο."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:159
+#: core/libs/facesengine/widgets/facescanwidget.cpp:140
 #, fuzzy, kde-format
 #| msgid "File size"
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Μέγεθος αρχείου"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:163
+#: core/libs/facesengine/widgets/facescanwidget.cpp:144
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -36912,7 +36905,7 @@ msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Ετικέτες εικόνας"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:164
+#: core/libs/facesengine/widgets/facescanwidget.cpp:145
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -36920,7 +36913,7 @@ msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Ετικέτες εικόνας"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:165
+#: core/libs/facesengine/widgets/facescanwidget.cpp:146
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Medium"
@@ -36928,14 +36921,14 @@ msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Μεσαίο μέγεθος"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:166
+#: core/libs/facesengine/widgets/facescanwidget.cpp:147
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Προορισμός"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:167
+#: core/libs/facesengine/widgets/facescanwidget.cpp:148
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Image tags"
@@ -36943,7 +36936,7 @@ msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Ετικέτες εικόνας"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:170
+#: core/libs/facesengine/widgets/facescanwidget.cpp:151
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -36962,20 +36955,20 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:187
+#: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Face Detection Settings"
 msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:196
+#: core/libs/facesengine/widgets/facescanwidget.cpp:177
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Ακρίβεια"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:203
+#: core/libs/facesengine/widgets/facescanwidget.cpp:184
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -36991,7 +36984,7 @@ msgstr ""
 "Προσαρμογή ταχύτητας εναντίον ακρίβειας: όσο υψηλότερη η τιμή, τόσο "
 "ακριβέστερα τα αποτελέσματα, αλλά θα διαρκέσει περισσότερο."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:213
+#: core/libs/facesengine/widgets/facescanwidget.cpp:194
 #: core/libs/imgqsort/imagequalitywidget.cpp:159
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
@@ -37000,7 +36993,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Εργασία σε όλους τους πυρήνες του επεξεργαστή"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:215
+#: core/libs/facesengine/widgets/facescanwidget.cpp:196
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -37017,12 +37010,12 @@ msgstr ""
 "θέλετε να χρησιμοποιήσετε όλους τους πυρήνες του επεξεργαστή στο σύστημά σας "
 "ή να εργαστείτε στο παρασκήνιο με μόνο έναν πυρήνα."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:219
+#: core/libs/facesengine/widgets/facescanwidget.cpp:200
 #, fuzzy, kde-format
 msgid "Face Recognition Settings"
 msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:227
+#: core/libs/facesengine/widgets/facescanwidget.cpp:211
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
 #, fuzzy, kde-format
@@ -72582,6 +72575,23 @@ msgstr "Αντικείμενα λευκώματος"
 #, kde-format
 msgid "Import Items"
 msgstr "Εισαγωγή αντικειμένων"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "digiKam can search for faces in your photos.\n"
+#~ "When you have identified your friends on a number of photos,\n"
+#~ "it can also recognize the people shown on your photos."
+#~ msgstr ""
+#~ "Το digiKam μπορεί να αναζητήσει πρόσωπα στις φωτογραφίες σας.<nl/> Όταν "
+#~ "αναγνωρίζετε τους φίλους σας σε έναν αριθμό φωτογραφιών,<nl/> αναγνωρίζει "
+#~ "και πρόσωπα που εμφανίζονται στις φωτογραφίες σας."
+
+#, fuzzy
+#~| msgid "Workflow"
+#~ msgctxt "@title:tab"
+#~ msgid "Workflow"
+#~ msgstr "Ροή εργασιών"
 
 #, fuzzy
 #~ msgctxt "@label:autotags scanning mode"

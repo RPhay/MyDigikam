@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-13 02:03+0000\n"
-"PO-Revision-Date: 2025-02-09 11:16+0100\n"
+"POT-Creation-Date: 2025-02-14 02:03+0000\n"
+"PO-Revision-Date: 2025-02-12 09:34+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -515,7 +515,7 @@ msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
 msgstr "Ne doit pas comporter cette étiquette"
 
-#: core/app/items/delegate/itemdelegate.cpp:386
+#: core/app/items/delegate/itemdelegate.cpp:387
 #, kde-format
 msgid "Reference Image"
 msgstr "Image de référence"
@@ -2982,13 +2982,13 @@ msgctxt "Search images on a map"
 msgid "Map"
 msgstr "Carte"
 
-#: core/app/views/sidebar/labelssidebarwidget.cpp:78
-#: core/app/views/sidebar/labelssidebarwidget.cpp:87
+#: core/app/views/sidebar/labelssidebarwidget.cpp:80
+#: core/app/views/sidebar/labelssidebarwidget.cpp:91
 #, kde-format
 msgid "Image Quality Scan"
 msgstr "Analyse de la qualité d'image"
 
-#: core/app/views/sidebar/labelssidebarwidget.cpp:89
+#: core/app/views/sidebar/labelssidebarwidget.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for image quality parsing"
@@ -2996,8 +2996,16 @@ msgstr ""
 "Utilisez ce bouton pour parcourir les albums sélectionnés en analysant la "
 "qualité de leurs images"
 
+#: core/app/views/sidebar/labelssidebarwidget.cpp:96
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:129
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:148
+#, kde-format
+msgctxt "@info"
+msgid "Help"
+msgstr "Aide"
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/app/views/sidebar/labelssidebarwidget.cpp:164
+#: core/app/views/sidebar/labelssidebarwidget.cpp:183
 #: core/libs/album/widgets/albumselecttabs.cpp:182
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:133
@@ -3006,13 +3014,13 @@ msgstr ""
 msgid "Labels"
 msgstr "Libellés"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:109
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:118
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:113
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Analyser une collection pour chercher des visages"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:120
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
@@ -3020,7 +3028,7 @@ msgstr ""
 "Utilisez ce bouton pour analyser les albums sélectionnés à la recherche de "
 "visages."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:169
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:190
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -3030,7 +3038,7 @@ msgstr ""
 "votre première utilisation de cette fonctionnalité, veuillez utiliser la "
 "boîte de dialogue d'aide dans le panneau latéral inférieur gauche."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:224
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:245
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -3039,7 +3047,7 @@ msgstr ""
 "La reconnaissance faciale est annulée car il n'y a aucune identité à "
 "reconnaître. Veuillez ajouter de nouvelles identités."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:244
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:265
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3051,28 +3059,28 @@ msgctxt "Advanced search images, access stored searches"
 msgid "Search"
 msgstr "Chercher"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:103
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
 #, kde-format
 msgid "Open Tag Manager"
 msgstr "Ouvrir le gestionnaire d'étiquettes"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:104
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:106
 #, kde-format
 msgid "No Tags"
 msgstr "Aucune étiquette"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:107
 #, kde-format
 msgid "Existing Tags"
 msgstr "Étiquettes existantes"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:139
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:143
 #, kde-format
 msgid "Auto-tag Scan"
 msgstr "Analyse de l'étiquetage automatique"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:141
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
@@ -3080,12 +3088,12 @@ msgstr ""
 "Veuillez utiliser ce bouton pour l'analyser des albums sélectionnés à la "
 "recherche d'objets pour étiquetage automatique."
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:298
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:317
 #, kde-format
 msgid "No Tags Album"
 msgstr "Album sans étiquettes"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:325
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:344
 #: core/libs/album/engine/album.cpp:554
 #: core/libs/album/manager/albummanager.cpp:182
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -35341,43 +35349,56 @@ msgstr ""
 " %1"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:90
+#: core/libs/imgqsort/imagequalitywidget.cpp:61
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
 #, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"digiKam can search for faces in your photos.\n"
-"When you have identified your friends on a number of photos,\n"
-"it can also recognize the people shown on your photos."
-msgstr ""
-"DigiKam peut rechercher des visages dans vos photos.\n"
-"Lorsque vous avez identifié vos amis sur un certain nombre de photos,\n"
-" DigiKam peut également reconnaître les personnes représentées sur vos "
-"photos."
+msgctxt "@title:tab"
+msgid "Search in"
+msgstr "Chercher dans"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:98
+#: core/libs/facesengine/widgets/facescanwidget.cpp:102
+#, fuzzy, kde-format
+#| msgid "Workflow"
+msgctxt "@label Face Worflow"
+msgid "Workflow:"
+msgstr "Flux de production"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:106
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Analyser de nouvelles images"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:99
+#: core/libs/facesengine/widgets/facescanwidget.cpp:107
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Analyser toutes les images"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:100
+#: core/libs/facesengine/widgets/facescanwidget.cpp:108
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Ne reconnaître que les visages"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, kde-format
+#: core/libs/facesengine/widgets/facescanwidget.cpp:110
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Scan new images</b> will scan for faces and attempt recognition for "
+#| "new images found in the albums selected in the \"Search in\" tab.</"
+#| "p><p><b>Scan all images</b> will scan for faces and attempt recognition "
+#| "for all images found in the albums selected in the \"Search in\" tab.</"
+#| "p><p><b>Recognize faces only</b> will try to match unknown faces with "
+#| "confirmed faces without scanning images new faces.</p>"
 msgctxt "@info:tooltip"
 msgid ""
+"digiKam can search for faces in your photos.\n"
+"When you have identified your friends on a number of photos,\n"
+"it can also recognize the people shown on your photos.\n"
 "<p><b>Scan new images</b> will scan for faces and attempt recognition for "
 "new images found in the albums selected in the \"Search in\" tab.</"
 "p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
@@ -35394,33 +35415,13 @@ msgstr ""
 "correspondre des visages inconnus avec des visages confirmés sans analyser "
 "les nouveaux visages des images.</p>"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:108
-#, kde-format
-msgctxt "@info"
-msgid "Help"
-msgstr "Aide"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:126
-#, kde-format
-msgctxt "@title:tab"
-msgid "Workflow"
-msgstr "Flux de traitement"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:132
-#: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
-#, kde-format
-msgctxt "@title:tab"
-msgid "Search in"
-msgstr "Chercher dans"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:147
+#: core/libs/facesengine/widgets/facescanwidget.cpp:128
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Précision :"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:154
+#: core/libs/facesengine/widgets/facescanwidget.cpp:135
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35432,43 +35433,43 @@ msgstr ""
 "élevée, plus la reconnaissance\n"
 "de visages sera précise mais moins de visages seront reconnus."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:159
+#: core/libs/facesengine/widgets/facescanwidget.cpp:140
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Taille de visages :"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:163
+#: core/libs/facesengine/widgets/facescanwidget.cpp:144
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Extrêmement petit"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:164
+#: core/libs/facesengine/widgets/facescanwidget.cpp:145
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Petit"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:165
+#: core/libs/facesengine/widgets/facescanwidget.cpp:146
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Moyen"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:166
+#: core/libs/facesengine/widgets/facescanwidget.cpp:147
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Grand"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:167
+#: core/libs/facesengine/widgets/facescanwidget.cpp:148
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Extrêmement grand"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:170
+#: core/libs/facesengine/widgets/facescanwidget.cpp:151
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35503,18 +35504,18 @@ msgstr ""
 "pour une utilisation normale. </p><p>Cette configuration ne s'applique qu'à "
 "YuNet.</p>"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:187
+#: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Configuration pour la reconnaissance de visages"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:196
+#: core/libs/facesengine/widgets/facescanwidget.cpp:177
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Précision :"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:203
+#: core/libs/facesengine/widgets/facescanwidget.cpp:184
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35529,7 +35530,7 @@ msgstr ""
 "Remarque : seuls les visages, très proches des visages préenregistrés, "
 "seront reconnus."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:213
+#: core/libs/facesengine/widgets/facescanwidget.cpp:194
 #: core/libs/imgqsort/imagequalitywidget.cpp:159
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
@@ -35538,7 +35539,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Travailler sur tous les cœurs de processeurs"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:215
+#: core/libs/facesengine/widgets/facescanwidget.cpp:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35552,12 +35553,12 @@ msgstr ""
 "présents \n"
 "sur votre système ou travailler en tâche de fond uniquement sur un seul cœur."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:219
+#: core/libs/facesengine/widgets/facescanwidget.cpp:200
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Configuration pour la reconnaissance de visages"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:227
+#: core/libs/facesengine/widgets/facescanwidget.cpp:211
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
 #, kde-format
@@ -36079,25 +36080,22 @@ msgid "aesthetic image quality"
 msgstr "qualité esthétique de l'image"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Scan Mode: "
+#, kde-format
 msgctxt "@label: image quality sort scan mode"
 msgid "Scan Mode:"
-msgstr "Mode analyse :"
+msgstr "Mode d'analyse :"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgid "All"
+#, kde-format
 msgctxt "@item: all items to scan with image quality sort"
 msgid "All"
 msgstr "Tout"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgid "Scan non-assigned only"
+#, kde-format
 msgctxt "@item: image quality sort only non assigned items"
 msgid "Non-Assigned Only"
-msgstr "Analyser seulement ce qui n'est pas affecté"
+msgstr "Uniquement ce qui est non affecté"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:87
 #, kde-format
@@ -36202,23 +36200,17 @@ msgstr ""
 "prochain onglet <b>Facteurs basiques</b>."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Quality detection is time-consuming tasks.\n"
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"La reconnaissance des visages est une tâche consommatrice de temps de "
+"La détection du niveau de qualité est une tâche consommatrice de temps de "
 "traitement.\n"
-"Vous pouvez décider d'utiliser ou non tous les cœurs de vos processeurs "
-"présents \n"
-"sur votre système ou travailler en tâche de fond uniquement sur un seul cœur."
+"Vous pouvez décider d'utiliser ou non tous les cœurs de vos processeurs\n"
+"de votre système ou travailler en tâche de fond uniquement avec un seul cœur."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:187
 #, kde-format
@@ -40401,25 +40393,22 @@ msgstr ""
 "de données. </p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Scan Mode: "
+#, kde-format
 msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
-msgstr "Mode analyse :"
+msgstr "Mode d'analyse :"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
-#, fuzzy, kde-format
-#| msgid "All"
+#, kde-format
 msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "Tout"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
-#, fuzzy, kde-format
-#| msgid "Scan non-assigned only"
+#, kde-format
 msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
-msgstr "Analyser seulement ce qui n'est pas affecté"
+msgstr "Uniquement ce qui est non affecté"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #, kde-format
@@ -40438,19 +40427,16 @@ msgid "Auto-Tagging Mode:"
 msgstr "Mode d'étiquetage automatique :"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Replace existing autotags"
+#, kde-format
 msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
-msgstr "Remplacer les étiquettes automatiques existantes"
+msgstr "Remplacer les existants"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Update"
+#, kde-format
 msgctxt "@item: update the autotags entries in database"
 msgid "Update"
-msgstr "Mise à jour"
+msgstr "Mettre à jour"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, kde-format
@@ -40466,8 +40452,7 @@ msgstr ""
 "étiquettes automatiques trouvées en plus des étiquettes existantes.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
-#, fuzzy, kde-format
-#| msgid "Selection model: "
+#, kde-format
 msgctxt "@label: deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Modèle de sélection :"
@@ -68794,6 +68779,21 @@ msgstr "Éléments de l'album"
 #, kde-format
 msgid "Import Items"
 msgstr "Importer des éléments"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "digiKam can search for faces in your photos.\n"
+#~ "When you have identified your friends on a number of photos,\n"
+#~ "it can also recognize the people shown on your photos."
+#~ msgstr ""
+#~ "DigiKam peut rechercher des visages dans vos photos.\n"
+#~ "Lorsque vous avez identifié vos amis sur un certain nombre de photos,\n"
+#~ " DigiKam peut également reconnaître les personnes représentées sur vos "
+#~ "photos."
+
+#~ msgctxt "@title:tab"
+#~ msgid "Workflow"
+#~ msgstr "Flux de traitement"
 
 #, fuzzy
 #~| msgid "Scan Mode: "

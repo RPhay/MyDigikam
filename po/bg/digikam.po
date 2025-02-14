@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-13 02:03+0000\n"
+"POT-Creation-Date: 2025-02-14 02:03+0000\n"
 "PO-Revision-Date: 2025-01-31 12:48+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -477,7 +477,7 @@ msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
 msgstr "Не трябва да има този етикет"
 
-#: core/app/items/delegate/itemdelegate.cpp:386
+#: core/app/items/delegate/itemdelegate.cpp:387
 #, kde-format
 msgid "Reference Image"
 msgstr "Референтно изображение"
@@ -2919,8 +2919,8 @@ msgctxt "Search images on a map"
 msgid "Map"
 msgstr "Карта"
 
-#: core/app/views/sidebar/labelssidebarwidget.cpp:78
-#: core/app/views/sidebar/labelssidebarwidget.cpp:87
+#: core/app/views/sidebar/labelssidebarwidget.cpp:80
+#: core/app/views/sidebar/labelssidebarwidget.cpp:91
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Pluralized"
 #| msgid "Image Quality Sort"
@@ -2928,7 +2928,7 @@ msgstr "Карта"
 msgid "Image Quality Scan"
 msgstr "Сортиране на качеството на изображението"
 
-#: core/app/views/sidebar/labelssidebarwidget.cpp:89
+#: core/app/views/sidebar/labelssidebarwidget.cpp:93
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Use this button to scan the selected albums for faces"
@@ -2936,8 +2936,16 @@ msgctxt "@info"
 msgid "Use this button to scan the selected albums for image quality parsing"
 msgstr "Използвайте този бутон, за да сканирате избраните албуми за лица"
 
+#: core/app/views/sidebar/labelssidebarwidget.cpp:96
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:129
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:148
+#, kde-format
+msgctxt "@info"
+msgid "Help"
+msgstr "Помощ"
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/app/views/sidebar/labelssidebarwidget.cpp:164
+#: core/app/views/sidebar/labelssidebarwidget.cpp:183
 #: core/libs/album/widgets/albumselecttabs.cpp:182
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:133
@@ -2946,19 +2954,19 @@ msgstr "Използвайте този бутон, за да сканирате
 msgid "Labels"
 msgstr "Етикети"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:109
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:118
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:113
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Сканиране на колекцията за лица"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:120
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
 msgstr "Използвайте този бутон, за да сканирате избраните албуми за лица"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:169
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:190
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -2968,7 +2976,7 @@ msgstr ""
 "първи път, моля, помислете дали да не използвате полето за помощ в долния "
 "ляв страничен панел."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:224
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:245
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -2977,7 +2985,7 @@ msgstr ""
 "Разпознаването на лица е прекъснато, тъй като няма идентичности за "
 "разпознаване. Моля, добавете нови идентичности."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:244
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:265
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -2989,29 +2997,29 @@ msgctxt "Advanced search images, access stored searches"
 msgid "Search"
 msgstr "Търсене"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:103
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
 #, kde-format
 msgid "Open Tag Manager"
 msgstr "Отваряне на мениджъра на тагове"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:104
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:106
 #, kde-format
 msgid "No Tags"
 msgstr "Без тагове"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:107
 #, kde-format
 msgid "Existing Tags"
 msgstr "Налични тагове"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:139
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:143
 #, fuzzy, kde-format
 #| msgid "Auto-tag scan"
 msgid "Auto-tag Scan"
 msgstr "Автоматично сканиране на етикети"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:141
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
@@ -3019,12 +3027,12 @@ msgstr ""
 "Използвайте този бутон, за да сканирате избраните албуми за автоматични "
 "етикети"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:298
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:317
 #, kde-format
 msgid "No Tags Album"
 msgstr "Няма албум с етикети"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:325
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:344
 #: core/libs/album/engine/album.cpp:554
 #: core/libs/album/manager/albummanager.cpp:182
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -35053,42 +35061,56 @@ msgstr ""
 "%1"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:90
+#: core/libs/imgqsort/imagequalitywidget.cpp:61
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
 #, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"digiKam can search for faces in your photos.\n"
-"When you have identified your friends on a number of photos,\n"
-"it can also recognize the people shown on your photos."
-msgstr ""
-"digiKam може да търси лица във вашите снимки.\n"
-"Когато сте идентифицирали приятелите си на няколко снимки,\n"
-"той може също така да разпознава лицата, показани на вашите снимки."
+msgctxt "@title:tab"
+msgid "Search in"
+msgstr "Търсене в"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:98
+#: core/libs/facesengine/widgets/facescanwidget.cpp:102
+#, fuzzy, kde-format
+#| msgid "Workflow"
+msgctxt "@label Face Worflow"
+msgid "Workflow:"
+msgstr "Работен процес"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:106
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Сканиране на нови изображения"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:99
+#: core/libs/facesengine/widgets/facescanwidget.cpp:107
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Сканиране на всички изображения"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:100
+#: core/libs/facesengine/widgets/facescanwidget.cpp:108
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "Разпознаване само на лица"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, kde-format
+#: core/libs/facesengine/widgets/facescanwidget.cpp:110
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Scan new images</b> will scan for faces and attempt recognition for "
+#| "new images found in the albums selected in the \"Search in\" tab.</"
+#| "p><p><b>Scan all images</b> will scan for faces and attempt recognition "
+#| "for all images found in the albums selected in the \"Search in\" tab.</"
+#| "p><p><b>Recognize faces only</b> will try to match unknown faces with "
+#| "confirmed faces without scanning images new faces.</p>"
 msgctxt "@info:tooltip"
 msgid ""
+"digiKam can search for faces in your photos.\n"
+"When you have identified your friends on a number of photos,\n"
+"it can also recognize the people shown on your photos.\n"
 "<p><b>Scan new images</b> will scan for faces and attempt recognition for "
 "new images found in the albums selected in the \"Search in\" tab.</"
 "p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
@@ -35104,33 +35126,13 @@ msgstr ""
 "се опита да съпоставете непознати лица с потвърдени лица без сканиране на "
 "изображения нови лица.</p>"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:108
-#, kde-format
-msgctxt "@info"
-msgid "Help"
-msgstr "Помощ"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:126
-#, kde-format
-msgctxt "@title:tab"
-msgid "Workflow"
-msgstr "Работен процес"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:132
-#: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
-#, kde-format
-msgctxt "@title:tab"
-msgid "Search in"
-msgstr "Търсене в"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:147
+#: core/libs/facesengine/widgets/facescanwidget.cpp:128
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Точност:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:154
+#: core/libs/facesengine/widgets/facescanwidget.cpp:135
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35142,43 +35144,43 @@ msgstr ""
 "стойността, толкова по-точно ще\n"
 "бъдат разпознавани лицата, но ще бъдат открити по-малко лица."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:159
+#: core/libs/facesengine/widgets/facescanwidget.cpp:140
 #, kde-format
 msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "Размер на лицето:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:163
+#: core/libs/facesengine/widgets/facescanwidget.cpp:144
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "Много малък"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:164
+#: core/libs/facesengine/widgets/facescanwidget.cpp:145
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "Малък"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:165
+#: core/libs/facesengine/widgets/facescanwidget.cpp:146
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "Среден"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:166
+#: core/libs/facesengine/widgets/facescanwidget.cpp:147
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "Голям"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:167
+#: core/libs/facesengine/widgets/facescanwidget.cpp:148
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "Много голям"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:170
+#: core/libs/facesengine/widgets/facescanwidget.cpp:151
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35211,18 +35213,18 @@ msgstr ""
 "<b>Голям</b> за нормална употреба.</p><p>Тази настройка се отнася само за "
 "YuNet .</p>"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:187
+#: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, kde-format
 msgid "Face Detection Settings"
 msgstr "Настройки на откриване на лица"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:196
+#: core/libs/facesengine/widgets/facescanwidget.cpp:177
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Точност:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:203
+#: core/libs/facesengine/widgets/facescanwidget.cpp:184
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35238,7 +35240,7 @@ msgstr ""
 " (разпознават се само лица, които са много сходни с предварително маркирани "
 "лица)."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:213
+#: core/libs/facesengine/widgets/facescanwidget.cpp:194
 #: core/libs/imgqsort/imagequalitywidget.cpp:159
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
@@ -35247,7 +35249,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Работи на всички процесорни ядра"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:215
+#: core/libs/facesengine/widgets/facescanwidget.cpp:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35259,12 +35261,12 @@ msgstr ""
 "Можете да изберете дали желаете да използвате всички процесорни ядра\n"
 "на вашата система или да се изпълнява във фонов режим само на едно ядро."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:219
+#: core/libs/facesengine/widgets/facescanwidget.cpp:200
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Настройки на разпознаване на лица"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:227
+#: core/libs/facesengine/widgets/facescanwidget.cpp:211
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
 #, kde-format
@@ -68330,6 +68332,20 @@ msgstr "Елементи на албуми"
 #, kde-format
 msgid "Import Items"
 msgstr "Импортиране на елементи"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "digiKam can search for faces in your photos.\n"
+#~ "When you have identified your friends on a number of photos,\n"
+#~ "it can also recognize the people shown on your photos."
+#~ msgstr ""
+#~ "digiKam може да търси лица във вашите снимки.\n"
+#~ "Когато сте идентифицирали приятелите си на няколко снимки,\n"
+#~ "той може също така да разпознава лицата, показани на вашите снимки."
+
+#~ msgctxt "@title:tab"
+#~ msgid "Workflow"
+#~ msgstr "Работен процес"
 
 #, fuzzy
 #~| msgid "Scan Mode: "

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-13 02:03+0000\n"
+"POT-Creation-Date: 2025-02-14 02:03+0000\n"
 "PO-Revision-Date: 2025-01-29 17:11+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -463,7 +463,7 @@ msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
 msgstr "يجب أن لا تحتوي على هذا الوسم"
 
-#: core/app/items/delegate/itemdelegate.cpp:386
+#: core/app/items/delegate/itemdelegate.cpp:387
 #, kde-format
 msgid "Reference Image"
 msgstr "الصّورة المرجع"
@@ -2989,22 +2989,30 @@ msgctxt "Search images on a map"
 msgid "Map"
 msgstr "الخريطة"
 
-#: core/app/views/sidebar/labelssidebarwidget.cpp:78
-#: core/app/views/sidebar/labelssidebarwidget.cpp:87
+#: core/app/views/sidebar/labelssidebarwidget.cpp:80
+#: core/app/views/sidebar/labelssidebarwidget.cpp:91
 #, fuzzy, kde-format
 #| msgid "PGF quality:"
 msgid "Image Quality Scan"
 msgstr "جودة PGF:"
 
-#: core/app/views/sidebar/labelssidebarwidget.cpp:89
+#: core/app/views/sidebar/labelssidebarwidget.cpp:93
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for image quality parsing"
 msgstr "استخدم هذا الزّرّ لفحص الألبومات المتحدّدة بحثًا عن عناصر متكرّرة."
 
+#: core/app/views/sidebar/labelssidebarwidget.cpp:96
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:129
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:148
+#, kde-format
+msgctxt "@info"
+msgid "Help"
+msgstr "مساعدة"
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/app/views/sidebar/labelssidebarwidget.cpp:164
+#: core/app/views/sidebar/labelssidebarwidget.cpp:183
 #: core/libs/album/widgets/albumselecttabs.cpp:182
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:133
@@ -3013,34 +3021,34 @@ msgstr "استخدم هذا الزّرّ لفحص الألبومات المتح�
 msgid "Labels"
 msgstr "اللصاقات"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:109
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:118
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:113
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "افحص التّجميعات بحثًا عن وجوه"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:120
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:126
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
 msgstr "استخدم هذا الزّرّ لفحص الألبومات المتحدّدة بحثًا عن عناصر متكرّرة."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:169
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:190
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:224
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:245
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:244
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:265
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3052,41 +3060,41 @@ msgctxt "Advanced search images, access stored searches"
 msgid "Search"
 msgstr "ابحث"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:103
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
 #, kde-format
 msgid "Open Tag Manager"
 msgstr "افتح مدير الوسوم"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:104
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:106
 #, kde-format
 msgid "No Tags"
 msgstr "لا وسوم"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:107
 #, kde-format
 msgid "Existing Tags"
 msgstr "الوسوم الموجودة"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:139
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:143
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-tag Scan"
 msgstr "نمط القياس:"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:141
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:145
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
 msgstr "استخدم هذا الزّرّ لفحص الألبومات المتحدّدة بحثًا عن عناصر متكرّرة."
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:298
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:317
 #, kde-format
 msgid "No Tags Album"
 msgstr ""
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:325
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:344
 #: core/libs/album/engine/album.cpp:554
 #: core/libs/album/manager/albummanager.cpp:182
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -34238,17 +34246,21 @@ msgstr ""
 "%1"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:90
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"digiKam can search for faces in your photos.\n"
-"When you have identified your friends on a number of photos,\n"
-"it can also recognize the people shown on your photos."
-msgstr ""
-"<qt>يمكن ل«دِجي‌كام» البحث عن الوجوه في الصّور.<br> إن عرّفت أصدقائك في عدد من "
-"الصّور،<br> فيمكنه أيضًا التّعرّف على الأشخاص في الصّور.</qt>"
+#: core/libs/imgqsort/imagequalitywidget.cpp:61
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
+#, kde-format
+msgctxt "@title:tab"
+msgid "Search in"
+msgstr "ابحث في"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:98
+#: core/libs/facesengine/widgets/facescanwidget.cpp:102
+#, fuzzy, kde-format
+#| msgid "Workflow"
+msgctxt "@label Face Worflow"
+msgid "Workflow:"
+msgstr "سير العمل"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:106
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, fuzzy, kde-format
 #| msgid "Scan for new items"
@@ -34256,24 +34268,27 @@ msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "افحص بحثًا عن العناصر الجديدة"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:99
+#: core/libs/facesengine/widgets/facescanwidget.cpp:107
 #: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "انتقِ أسود إطار صورة"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:100
+#: core/libs/facesengine/widgets/facescanwidget.cpp:108
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
 msgstr "زامن معاينة"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:102
+#: core/libs/facesengine/widgets/facescanwidget.cpp:110
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
+"digiKam can search for faces in your photos.\n"
+"When you have identified your friends on a number of photos,\n"
+"it can also recognize the people shown on your photos.\n"
 "<p><b>Scan new images</b> will scan for faces and attempt recognition for "
 "new images found in the albums selected in the \"Search in\" tab.</"
 "p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
@@ -34282,33 +34297,13 @@ msgid ""
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:108
-#, kde-format
-msgctxt "@info"
-msgid "Help"
-msgstr "مساعدة"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:126
-#, kde-format
-msgctxt "@title:tab"
-msgid "Workflow"
-msgstr "سير العمل"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:132
-#: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
-#, kde-format
-msgctxt "@title:tab"
-msgid "Search in"
-msgstr "ابحث في"
-
-#: core/libs/facesengine/widgets/facescanwidget.cpp:147
+#: core/libs/facesengine/widgets/facescanwidget.cpp:128
 #, kde-format
 msgctxt "@label Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "الدّقّة:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:154
+#: core/libs/facesengine/widgets/facescanwidget.cpp:135
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34317,7 +34312,7 @@ msgid ""
 "be detected, but less faces will be detected."
 msgstr ""
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:159
+#: core/libs/facesengine/widgets/facescanwidget.cpp:140
 #, fuzzy, kde-format
 #| msgctxt "@option: audio"
 #| msgid "Frame size"
@@ -34325,37 +34320,37 @@ msgctxt "@label face size for detection"
 msgid "Face size:"
 msgstr "مقاس الإطار"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:163
+#: core/libs/facesengine/widgets/facescanwidget.cpp:144
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
 msgstr "بالغ الصغر"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:164
+#: core/libs/facesengine/widgets/facescanwidget.cpp:145
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
 msgstr "صغير"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:165
+#: core/libs/facesengine/widgets/facescanwidget.cpp:146
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "متوسّطة"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:166
+#: core/libs/facesengine/widgets/facescanwidget.cpp:147
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
 msgstr "كبير"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:167
+#: core/libs/facesengine/widgets/facescanwidget.cpp:148
 #, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
 msgstr "كبير جدا"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:170
+#: core/libs/facesengine/widgets/facescanwidget.cpp:151
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34374,19 +34369,19 @@ msgid ""
 "p><p>This setting applies only to YuNet.</p>"
 msgstr ""
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:187
+#: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Face Detection Settings"
 msgstr "اكتشاف الوجوه"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:196
+#: core/libs/facesengine/widgets/facescanwidget.cpp:177
 #, kde-format
 msgctxt "@label Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "الدّقّة:"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:203
+#: core/libs/facesengine/widgets/facescanwidget.cpp:184
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34396,7 +34391,7 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:213
+#: core/libs/facesengine/widgets/facescanwidget.cpp:194
 #: core/libs/imgqsort/imagequalitywidget.cpp:159
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
@@ -34405,7 +34400,7 @@ msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr ""
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:215
+#: core/libs/facesengine/widgets/facescanwidget.cpp:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34414,13 +34409,13 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:219
+#: core/libs/facesengine/widgets/facescanwidget.cpp:200
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face Recognition Settings"
 msgstr "التّعرّف على الوجوه"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:227
+#: core/libs/facesengine/widgets/facescanwidget.cpp:211
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
 #, kde-format
@@ -66794,6 +66789,20 @@ msgstr "عناصر الألبوم"
 #, kde-format
 msgid "Import Items"
 msgstr "استورد عناصر"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "digiKam can search for faces in your photos.\n"
+#~ "When you have identified your friends on a number of photos,\n"
+#~ "it can also recognize the people shown on your photos."
+#~ msgstr ""
+#~ "<qt>يمكن ل«دِجي‌كام» البحث عن الوجوه في الصّور.<br> إن عرّفت أصدقائك في عدد "
+#~ "من الصّور،<br> فيمكنه أيضًا التّعرّف على الأشخاص في الصّور.</qt>"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Workflow"
+#~ msgstr "سير العمل"
 
 #, fuzzy
 #~| msgid "Scan Mode: "
