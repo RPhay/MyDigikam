@@ -229,7 +229,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     d->albumTagRelation->setCurrentIndex(d->albumTagRelation->findData(relation));
 
-    // ---
+    // --- Bottom View Buttons
 
     DHBox* const hbox     = new DHBox();
 
@@ -263,7 +263,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     d->removeDuplicatesBtn->setEnabled(false);
 
-    // ---------------------------------------------------------------
+    // ---
 
     QGridLayout* const mainLayout = new QGridLayout();
     mainLayout->addWidget(d->listView,                0, 0, 1, -1);
@@ -285,7 +285,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     mainLayout->setSpacing(spacing);
     setLayout(mainLayout);
 
-    // ---------------------------------------------------------------
+    // ---
 
     connect(d->updateFingerPrtBtn, SIGNAL(clicked()),
             this, SLOT(slotUpdateFingerPrints()));
