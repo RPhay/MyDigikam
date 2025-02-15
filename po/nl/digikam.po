@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-14 02:03+0000\n"
-"PO-Revision-Date: 2025-02-11 11:17+0100\n"
+"POT-Creation-Date: 2025-02-15 02:14+0000\n"
+"PO-Revision-Date: 2025-02-14 12:32+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2964,6 +2964,7 @@ msgstr ""
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:129
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:148
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
 #, kde-format
 msgctxt "@info"
 msgid "Help"
@@ -35055,17 +35056,17 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:90
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:115
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Zoeken in"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Workflow"
+#, kde-format
 msgctxt "@label Face Worflow"
 msgid "Workflow:"
-msgstr "Workflow"
+msgstr "Werkmethode:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:106
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
@@ -35089,15 +35090,7 @@ msgid "Recognize faces only"
 msgstr "Alleen gezichten herkennen"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Scan new images</b> will scan for faces and attempt recognition for "
-#| "new images found in the albums selected in the \"Search in\" tab.</"
-#| "p><p><b>Scan all images</b> will scan for faces and attempt recognition "
-#| "for all images found in the albums selected in the \"Search in\" tab.</"
-#| "p><p><b>Recognize faces only</b> will try to match unknown faces with "
-#| "confirmed faces without scanning images new faces.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "digiKam can search for faces in your photos.\n"
@@ -35110,13 +35103,16 @@ msgid ""
 "p><p><b>Recognize faces only</b> will try to match unknown faces with "
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
-"<p><b>Scan nieuwe afbeeldingen</b> zal op gezichten scannen en herkennen "
-"proberen voor nieuw gevonden afbeeldingen in de geselecteerde albums in "
+"digiKam kan naar gezichten in uw foto's zoeken.\n"
+"Wanneer u uw vrienden op een aantal foto's hebt geïdentificeerd,\n"
+"kan het ook de mensen tonen op uw foto's.\n"
+"<p><b>Scan nieuwe afbeeldingen</b> zal op gezichten scannen en deze proberen "
+"te herkennen op nieuw gevonden afbeeldingen in de geselecteerde albums in "
 "tabblad \"Zoeken in\".</p><p><b>Scan alle afbeeldingen</b> zal scannen op "
-"gezichten en herkenning te proberen op alle afbeeldingen in de gevonden "
+"gezichten en deze proberen te herkenning op alle afbeeldingen in de gevonden "
 "albums geselecteerd in het tabblad \"Zoeken in\".</p><p><b>Alleen gezichten "
 "herkennen</b> zal proberen onbekende gezichten te herkennen met bevestigde "
-"gezichten zonder scannen van nieuwe gezichten in afbeeldingen.</p>"
+"gezichten zonder het scannen van nieuwe gezichten in afbeeldingen.</p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
 #, kde-format
@@ -35233,7 +35229,7 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:194
 #: core/libs/imgqsort/imagequalitywidget.cpp:159
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -35259,7 +35255,8 @@ msgstr "Instellingen voor gezichtsherkenning"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:211
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:254
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -40066,25 +40063,25 @@ msgstr ""
 "neurale netwerk zal automatisch een beschrijvende tags genereren voor de "
 "inhoud van de afbeelding en de resultaten opslaan in de database.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:106
 #, kde-format
 msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Modus van scan:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #, kde-format
 msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "Alles"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #, kde-format
 msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Alleen niet-toegewezen"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40095,24 +40092,24 @@ msgstr ""
 "toegekende</b>: alleen de items scannen zonder automatisch toegekende tags.</"
 "p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #, kde-format
 msgid "Auto-Tagging Mode:"
 msgstr "Modus voor automatisch tags toekennen:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, kde-format
 msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Bestaande vervangen"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
 #, kde-format
 msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "Bijwerken"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40125,23 +40122,23 @@ msgstr ""
 "elke gevonden nieuwe automatisch toegekende tags toe aan de bestaande tags.</"
 "p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
 #, kde-format
 msgctxt "@label: deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Selectiemodel:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:141
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, kde-format
 msgid "No models available"
 msgstr "Geen modellen beschikbaar"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:145
 #, kde-format
 msgid "Detection Accuracy:"
 msgstr "Nauwkeurigheid van detectie:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:150
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40153,7 +40150,7 @@ msgstr ""
 "accuraat objecten herkent\n"
 "zullen worden, maar minder objecten zullen herkend worden.\n"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40165,13 +40162,13 @@ msgstr ""
 "U kunt kiezen of u alle processorkernen in uw systeem wilt\n"
 "gebruiken of alleen in de achtergrond wilt werken in één kern."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:178
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Tags vertalen naar:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:184
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:180
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
@@ -52949,74 +52946,112 @@ msgstr "Gem. gelijkenis"
 msgid "This shows all found duplicate items."
 msgstr "Dit toont alle gevonden dubbele items."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:108
-#, kde-format
-msgctxt "@action"
-msgid "Update fingerprints"
-msgstr "Vingerafdrukken opwaarderen"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:110
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
 #, kde-format
 msgctxt "@info"
-msgid "Use this button to update all image fingerprints."
-msgstr ""
-"Gebruik deze knop om alle vingerafdrukken van afbeeldingen bij te werken."
+msgid "Reference Image Selection Method"
+msgstr "Selectiemethode voor referentieafbeelding"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:112
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
 #, kde-format
-msgctxt "@action"
-msgid "Find duplicates"
-msgstr "Dubbels zoeken"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Older or Larger"
+msgstr "Ouder of groter"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:114
-#, kde-format
-msgctxt "@info"
-msgid "Use this button to scan the selected albums for duplicate items."
-msgstr ""
-"Gebruik deze knop om de geselecteerde albums te scannen op dubbele items."
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:129
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox similarity reference selection method"
+#| msgid "Prefer selected folder as reference"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer selected Album as reference"
+msgstr "Geselecteerde map heeft voorkeur als referentie"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:119
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox similarity reference selection method"
+#| msgid "Prefer other than selected folder as reference"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer other than selected Album as reference"
+msgstr "Andere dan geselecteerde map heeft voorkeur als referentie"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:135
 #, kde-format
-msgctxt "@label"
-msgid "Search in:"
-msgstr "Zoeken in:"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Creation Date"
+msgstr "Nieuwere aanmaakdatum heeft voorkeur"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:138
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Modification Date"
+msgstr "Nieuwere wijzigingsdatum heeft voorkeur"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:142
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Select method for reference image selection"
+msgstr "Methode selecteren voor selectie van referentieafbeelding"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:144
+#, fuzzy, kde-format
+#| msgid "Reference:"
+msgctxt "@label"
+msgid "Reference Album:"
+msgstr "Referentie:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:155
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Reference"
+msgctxt "@title:tab"
+msgid "Reference"
+msgstr "Referentie"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:176
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Reeks van gelijkenissen:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:141
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, kde-format
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "Beperking:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:145
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:183
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Geen"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:146
-#, kde-format
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox similarity restriction"
+#| msgid "Restrict to reference album"
 msgctxt "@label:listbox similarity restriction"
-msgid "Restrict to reference album"
+msgid "Restrict to reference Album"
 msgstr "Beperken tot referentie-album"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:147
-#, kde-format
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox similarity restriction"
+#| msgid "Exclude reference album"
 msgctxt "@label:listbox similarity restriction"
-msgid "Exclude reference album"
+msgid "Exclude reference Album"
 msgstr "Referentie-album uitsluiten"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:148
-#, kde-format
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Use this option to restrict the duplicate search with some criteria, as "
+#| "to limit search to the album of reference image, or to exclude the album "
+#| "of reference image of the search."
 msgctxt "@info"
 msgid ""
 "Use this option to restrict the duplicate search with some criteria, as to "
-"limit search to the album of reference image, or to exclude the album of "
+"limit search to the Album of reference image, or to exclude the Album of "
 "reference image of the search."
 msgstr ""
 "Gebruik deze optie om het zoeken naar duplicaten te beperken met enige "
@@ -53024,103 +53059,67 @@ msgstr ""
 "afbeelding of het album met de referentie-afbeelding uit te sluiten bij het "
 "zoeken."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:161
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
 #, kde-format
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "Beperken tot:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:174
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Alleen geselecteerd tabblad"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:177
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:215
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Één van"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:180
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:218
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Beide"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:183
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:221
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Albums maar geen tags"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:224
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Tags maar geen albums"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Older or Larger"
-msgstr "Ouder of groter"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer selected folder as reference"
-msgstr "Geselecteerde map heeft voorkeur als referentie"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer other than selected folder as reference"
-msgstr "Andere dan geselecteerde map heeft voorkeur als referentie"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:202
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer Newer Creation Date"
-msgstr "Nieuwere aanmaakdatum heeft voorkeur"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:205
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer Newer Modification Date"
-msgstr "Nieuwere wijzigingsdatum heeft voorkeur"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Select method for reference image selection"
-msgstr "Methode selecteren voor selectie van referentieafbeelding"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
-#, kde-format
-msgctxt "@label"
-msgid "Reference"
-msgstr "Referentie"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
-#, kde-format
-msgctxt "@info"
-msgid "Reference Image Selection Method"
-msgstr "Selectiemethode voor referentieafbeelding"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:224
-#, kde-format
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Use this option to decide about the relation of the selected albums and "
+#| "tags.\n"
+#| "\"One of\" means that the images are either in the selected albums or "
+#| "tags.\n"
+#| "\"Both\" means that the images are both in the selected albums and tags.\n"
+#| "\"Albums but not tags\" means that images must be in the selected albums "
+#| "but not tags.\n"
+#| "\"Tags but not albums\" means that images must be in the selected tags "
+#| "but not albums.\n"
+#| "\"Only selected tab\" means that only the selected tab is used."
 msgctxt "@info"
 msgid ""
 "Use this option to decide about the relation of the selected albums and "
 "tags.\n"
+"\"Only selected tab\" means that only the selected tab is used.\n"
 "\"One of\" means that the images are either in the selected albums or tags.\n"
 "\"Both\" means that the images are both in the selected albums and tags.\n"
 "\"Albums but not tags\" means that images must be in the selected albums but "
 "not tags.\n"
 "\"Tags but not albums\" means that images must be in the selected tags but "
-"not albums.\n"
-"\"Only selected tab\" means that only the selected tab is used."
+"not albums."
 msgstr ""
 "Deze optie gebruiken om te beslissen over de relatie tussen de geselecteerde "
 "albums en tags.\n"
@@ -53135,13 +53134,39 @@ msgstr ""
 "\"Alleen geselecteerd tabblad\" betekent dat alleen het geselecteerde "
 "tabblad wordt gebruikt."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:240
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:259
+#, kde-format
+msgctxt "@action"
+msgid "Update fingerprints"
+msgstr "Vingerafdrukken opwaarderen"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:261
+#, kde-format
+msgctxt "@info"
+msgid "Use this button to update all image fingerprints."
+msgstr ""
+"Gebruik deze knop om alle vingerafdrukken van afbeeldingen bij te werken."
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:278
+#, kde-format
+msgctxt "@action"
+msgid "Find duplicates"
+msgstr "Dubbels zoeken"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:280
+#, kde-format
+msgctxt "@info"
+msgid "Use this button to scan the selected albums for duplicate items."
+msgstr ""
+"Gebruik deze knop om de geselecteerde albums te scannen op dubbele items."
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:283
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Duplicaten verwijderen"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -68170,6 +68195,10 @@ msgstr "Album-items"
 #, kde-format
 msgid "Import Items"
 msgstr "Items importeren"
+
+#~ msgctxt "@label"
+#~ msgid "Search in:"
+#~ msgstr "Zoeken in:"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid ""

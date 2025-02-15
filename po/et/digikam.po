@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-14 02:03+0000\n"
+"POT-Creation-Date: 2025-02-15 02:14+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -3184,6 +3184,7 @@ msgstr ""
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:129
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:148
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@info"
@@ -36941,6 +36942,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:90
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:115
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -37108,7 +37110,7 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:194
 #: core/libs/imgqsort/imagequalitywidget.cpp:159
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -37135,7 +37137,8 @@ msgstr "Näotuvastus"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:211
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:254
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -42132,28 +42135,28 @@ msgid ""
 "database.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:106
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
 msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Uurimismudel: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #, fuzzy, kde-format
 #| msgid "All"
 msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "Kõik"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #, fuzzy, kde-format
 #| msgid "Scan non-assigned only"
 msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Ainult omistama nägude uurimine"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -42161,20 +42164,20 @@ msgid ""
 "scan only the items with no assigned autotags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-Tagging Mode:"
 msgstr "Mõõterežiim:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Update only existing timestamps"
 msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Ainult olemasolevate ajatemplite uuendamine"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
@@ -42182,7 +42185,7 @@ msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "Uuendus"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -42191,27 +42194,27 @@ msgid ""
 "existing tags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
 #, fuzzy, kde-format
 #| msgid "Destination Folder:"
 msgctxt "@label: deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Sihtkataloog:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:141
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, fuzzy, kde-format
 #| msgid "No detail available"
 msgid "No models available"
 msgstr "Ühtegi üksikasja pole saada"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:145
 #, fuzzy, kde-format
 #| msgctxt "@groupbox"
 #| msgid "Face Accuracy"
 msgid "Detection Accuracy:"
 msgstr "Näo täpsus"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:150
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -42226,7 +42229,7 @@ msgstr ""
 "Kiiruse ja täpsuse vahekorra määramine. Mida suurem väärtus, seda täpsem on "
 "tulemus, aga seda kauem ka aega kulub."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -42243,14 +42246,14 @@ msgstr ""
 "Siin saab valida, kas kasutada kõiki süsteemi protsessorituumi\n"
 "või töötada taustal ainult ühe tuumaga."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:178
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Liikumine asukohta %1"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:184
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:180
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@title:tab"
@@ -56663,95 +56666,122 @@ msgstr "Keskmine sarnasus:"
 msgid "This shows all found duplicate items."
 msgstr "Siin näeb kõiki leitud topeltelemente."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:108
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
 #, fuzzy, kde-format
-#| msgid "Update fingerprints"
-msgctxt "@action"
-msgid "Update fingerprints"
-msgstr "Uuenda sõrmejälgi"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:110
-#, fuzzy, kde-format
-#| msgid "Use this button to update all image fingerprints."
+#| msgid "&Choose image selection method:"
 msgctxt "@info"
-msgid "Use this button to update all image fingerprints."
-msgstr "Selle nupuga saab uuendadada kõigi piltide sõrmejälgi."
+msgid "Reference Image Selection Method"
+msgstr "Pildi&valiku meetod:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:112
-#, fuzzy, kde-format
-#| msgid "Find duplicates"
-msgctxt "@action"
-msgid "Find duplicates"
-msgstr "Topeltpiltide otsimine"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:114
-#, fuzzy, kde-format
-#| msgid "Use this button to scan the selected albums for duplicate items."
-msgctxt "@info"
-msgid "Use this button to scan the selected albums for duplicate items."
-msgstr ""
-"Selle nupuga saab topeltelementide leidmiseks läbi uurida valitud albumid."
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:119
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
 #, kde-format
-msgctxt "@label"
-msgid "Search in:"
-msgstr "Otsing asukohas:"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Older or Larger"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:129
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Reset selected albums"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer selected Album as reference"
+msgstr "Valitud albumite lähtestamine"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer other than selected Album as reference"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:135
+#, fuzzy, kde-format
+#| msgid "By Creation Date"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Creation Date"
+msgstr "Loomise kuupäeva järgi"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:138
+#, fuzzy, kde-format
+#| msgid "By Modification Date"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Modification Date"
+msgstr "Muutmise kuupäeva järgi"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:142
+#, fuzzy, kde-format
+#| msgid "Information about current image selection"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Select method for reference image selection"
+msgstr "Teave praegu valitud piltide kohta"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:144
+#, fuzzy, kde-format
+#| msgid "Reference:"
+msgctxt "@label"
+msgid "Reference Album:"
+msgstr "Viide:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:155
+#, fuzzy, kde-format
+#| msgid "Reference:"
+msgctxt "@title:tab"
+msgid "Reference"
+msgstr "Viide:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:176
 #, fuzzy, kde-format
 #| msgid "Similarity range:"
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Sarnasusvahemik:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:141
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, fuzzy, kde-format
 #| msgid "Restriction:"
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "Piirang:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:145
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:183
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Puudub"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:146
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Restrict to reference album"
 msgctxt "@label:listbox similarity restriction"
-msgid "Restrict to reference album"
+msgid "Restrict to reference Album"
 msgstr "Piiratud viitealbumiga"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:147
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Exclude reference album"
 msgctxt "@label:listbox similarity restriction"
-msgid "Exclude reference album"
+msgid "Exclude reference Album"
 msgstr "Viitealbumi väljajätmine"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:148
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to restrict the duplicate search with some criteria, as to "
-"limit search to the album of reference image, or to exclude the album of "
+"limit search to the Album of reference image, or to exclude the Album of "
 "reference image of the search."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:161
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
 #, fuzzy, kde-format
 #| msgid "Restrict to:"
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "Piirangu rakendusala:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:174
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Only selected tab"
@@ -56759,7 +56789,7 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Ainult valitud kaart"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:177
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:215
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "One of"
@@ -56767,7 +56797,7 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Üks"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:180
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:218
 #, fuzzy, kde-format
 #| msgctxt "toggle child and parent tags"
 #| msgid "Both"
@@ -56775,7 +56805,7 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Mõlemad"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:183
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:221
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Albums but not tags"
@@ -56783,7 +56813,7 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Albumid, aga mitte sildid"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:224
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Tags but not albums"
@@ -56791,82 +56821,58 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Sildid, aga mitte albumid"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Older or Larger"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer selected folder as reference"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer other than selected folder as reference"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:202
-#, fuzzy, kde-format
-#| msgid "By Creation Date"
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer Newer Creation Date"
-msgstr "Loomise kuupäeva järgi"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:205
-#, fuzzy, kde-format
-#| msgid "By Modification Date"
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer Newer Modification Date"
-msgstr "Muutmise kuupäeva järgi"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
-#, fuzzy, kde-format
-#| msgid "Information about current image selection"
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Select method for reference image selection"
-msgstr "Teave praegu valitud piltide kohta"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
-#, fuzzy, kde-format
-#| msgid "Reference:"
-msgctxt "@label"
-msgid "Reference"
-msgstr "Viide:"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
-#, fuzzy, kde-format
-#| msgid "&Choose image selection method:"
-msgctxt "@info"
-msgid "Reference Image Selection Method"
-msgstr "Pildi&valiku meetod:"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:224
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to decide about the relation of the selected albums and "
 "tags.\n"
+"\"Only selected tab\" means that only the selected tab is used.\n"
 "\"One of\" means that the images are either in the selected albums or tags.\n"
 "\"Both\" means that the images are both in the selected albums and tags.\n"
 "\"Albums but not tags\" means that images must be in the selected albums but "
 "not tags.\n"
 "\"Tags but not albums\" means that images must be in the selected tags but "
-"not albums.\n"
-"\"Only selected tab\" means that only the selected tab is used."
+"not albums."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:240
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:259
+#, fuzzy, kde-format
+#| msgid "Update fingerprints"
+msgctxt "@action"
+msgid "Update fingerprints"
+msgstr "Uuenda sõrmejälgi"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:261
+#, fuzzy, kde-format
+#| msgid "Use this button to update all image fingerprints."
+msgctxt "@info"
+msgid "Use this button to update all image fingerprints."
+msgstr "Selle nupuga saab uuendadada kõigi piltide sõrmejälgi."
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:278
+#, fuzzy, kde-format
+#| msgid "Find duplicates"
+msgctxt "@action"
+msgid "Find duplicates"
+msgstr "Topeltpiltide otsimine"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:280
+#, fuzzy, kde-format
+#| msgid "Use this button to scan the selected albums for duplicate items."
+msgctxt "@info"
+msgid "Use this button to scan the selected albums for duplicate items."
+msgstr ""
+"Selle nupuga saab topeltelementide leidmiseks läbi uurida valitud albumid."
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:283
 #, fuzzy, kde-format
 #| msgid "Remove duplicate words"
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Topeltsõnade eemaldamine"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:285
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -72598,6 +72604,10 @@ msgstr "Albumielemendid"
 #, kde-format
 msgid "Import Items"
 msgstr "Impordi elemendid"
+
+#~ msgctxt "@label"
+#~ msgid "Search in:"
+#~ msgstr "Otsing asukohas:"
 
 #, fuzzy
 #~| msgctxt "@tooltip"

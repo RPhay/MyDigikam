@@ -11,7 +11,7 @@
 # Mikael Lammentausta <mikael.lammentausta+kdetrans@gmail.com>, 2006, 2007, 2008, 2009, 2010.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2011, 2012, 2013, 2014.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2013.
-# SPDX-FileCopyrightText: 2014, 2024 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2014, 2024, 2025 Tommi Nieminen <translator@legisign.org>
 # Mikael Lammentausta <mikael.lammentausta+kdetrans@gmail.com>, 2008, 2009.
 # Jorma Karvonen <karvonen.jorma@gmail.com>, 2012.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2014.
@@ -45,8 +45,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-14 02:03+0000\n"
-"PO-Revision-Date: 2024-10-29 20:20+0200\n"
+"POT-Creation-Date: 2025-02-15 02:14+0000\n"
+"PO-Revision-Date: 2025-02-08 11:19+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -3009,6 +3009,7 @@ msgstr "Etsi tällä painikkeella valituista albumeista kaksoiskappaleita."
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:129
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:148
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
 #, kde-format
 msgctxt "@info"
 msgid "Help"
@@ -35015,6 +35016,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:90
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:115
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -35171,7 +35173,7 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:194
 #: core/libs/imgqsort/imagequalitywidget.cpp:159
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -35198,7 +35200,8 @@ msgstr "Kasvontunnistus"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:211
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:254
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -40003,28 +40006,28 @@ msgstr ""
 "automaattisesti sisältöä kuvaavia luokituksia, jotka talletetaan tuloksiksi "
 "tietokantaan.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:106
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
 msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Etsintätila:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #, fuzzy, kde-format
 #| msgid "All"
 msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "Kaikki"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #, fuzzy, kde-format
 #| msgid "Scan non-assigned only"
 msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Hae vain merkitsemättömistä"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40032,20 +40035,20 @@ msgid ""
 "scan only the items with no assigned autotags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-Tagging Mode:"
 msgstr "Mittaustapa:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Update Database"
 msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Päivitä tietokanta"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
@@ -40053,7 +40056,7 @@ msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "Päivitä"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40062,7 +40065,7 @@ msgid ""
 "existing tags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Destination Folder:"
@@ -40070,20 +40073,20 @@ msgctxt "@label: deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "Kohdekansio:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:141
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, fuzzy, kde-format
 #| msgid "No detail available"
 msgid "No models available"
 msgstr "Ei tietoja saatavilla"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:145
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Face Accuracy"
 msgid "Detection Accuracy:"
 msgstr "Kasvojen tarkkuus"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:150
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40092,7 +40095,7 @@ msgid ""
 "be recognized, but fewer objects will be recognized.\n"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -40109,14 +40112,14 @@ msgstr ""
 "Voit valita, haluatko hyödyntää kaikki järjestelmän\n"
 "suoritinytimiä vai vain yhtä ydintä taustalla."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:178
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "Siirry kohteeseen %1"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:184
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:180
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@title:tab"
@@ -52756,157 +52759,7 @@ msgstr "Keskim. samankaltaisuus"
 msgid "This shows all found duplicate items."
 msgstr "Tässä näkyvät löydetyt kaksoiskappaleet."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:108
-#, kde-format
-msgctxt "@action"
-msgid "Update fingerprints"
-msgstr "Päivitä sormenjäljet"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:110
-#, kde-format
-msgctxt "@info"
-msgid "Use this button to update all image fingerprints."
-msgstr "Päivitä tällä painikkeella kaikki sormenjäljet."
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:112
-#, kde-format
-msgctxt "@action"
-msgid "Find duplicates"
-msgstr "Etsi kaksoiskappaleita"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:114
-#, kde-format
-msgctxt "@info"
-msgid "Use this button to scan the selected albums for duplicate items."
-msgstr "Etsi tällä painikkeella valituista albumeista kaksoiskappaleita."
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:119
-#, kde-format
-msgctxt "@label"
-msgid "Search in:"
-msgstr "Etsi:"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
-#, kde-format
-msgctxt "@label"
-msgid "Similarity range:"
-msgstr "Samankaltaisuusväli:"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:141
-#, kde-format
-msgctxt "@label"
-msgid "Restriction:"
-msgstr "Rajoitus:"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:145
-#, kde-format
-msgctxt "@label:listbox similarity restriction"
-msgid "None"
-msgstr "Ei mitään"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:146
-#, kde-format
-msgctxt "@label:listbox similarity restriction"
-msgid "Restrict to reference album"
-msgstr "Rajoita viitealbumiin"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:147
-#, kde-format
-msgctxt "@label:listbox similarity restriction"
-msgid "Exclude reference album"
-msgstr "Jätä viitealbumi pois"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:148
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Use this option to restrict the duplicate search with some criteria, as to "
-"limit search to the album of reference image, or to exclude the album of "
-"reference image of the search."
-msgstr ""
-"Tällä valinnalla voi rajoittaa kaksoiskappaleiden etsintää ehdoin, "
-"esimerkiksi rajoittaa haun viitekuvan albumiin tai jättää viitekuvan albumin "
-"pois hausta."
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:161
-#, kde-format
-msgctxt "@label"
-msgid "Restrict to:"
-msgstr "Rajoita:"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:174
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "Only selected tab"
-msgstr "vain valittuun välilehteen"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:177
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "One of"
-msgstr "jompaankumpaan"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:180
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "Both"
-msgstr "kumpaankin"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:183
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "Albums but not tags"
-msgstr "albumeihin muttei luokituksiin"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "Tags but not albums"
-msgstr "luokituksiin muttei albumeihin"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Older or Larger"
-msgstr "Vanhempi tai suurempi"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer selected folder as reference"
-msgstr "Suosi viitteeksi valittua kansiota"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer other than selected folder as reference"
-msgstr "Suosi viitteeksi muuta kuin valittua kansiota"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:202
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer Newer Creation Date"
-msgstr "Suosi uudempaa luontipäivää"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:205
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer Newer Modification Date"
-msgstr "Suosi uudempaa muokkauspäivää"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Select method for reference image selection"
-msgstr "Valitse viitekuvan valintatapa"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
-#, kde-format
-msgctxt "@label"
-msgid "Reference"
-msgstr "Viite"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
 #, fuzzy, kde-format
 #| msgctxt "@group"
 #| msgid "Reference Image Selection Method"
@@ -52914,7 +52767,149 @@ msgctxt "@info"
 msgid "Reference Image Selection Method"
 msgstr "Viitekuvan valintatapa"
 
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Older or Larger"
+msgstr "Vanhempi tai suurempi"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:129
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox similarity reference selection method"
+#| msgid "Prefer selected folder as reference"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer selected Album as reference"
+msgstr "Suosi viitteeksi valittua kansiota"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox similarity reference selection method"
+#| msgid "Prefer other than selected folder as reference"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer other than selected Album as reference"
+msgstr "Suosi viitteeksi muuta kuin valittua kansiota"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:135
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Creation Date"
+msgstr "Suosi uudempaa luontipäivää"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Modification Date"
+msgstr "Suosi uudempaa muokkauspäivää"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:142
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Select method for reference image selection"
+msgstr "Valitse viitekuvan valintatapa"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:144
+#, fuzzy, kde-format
+#| msgid "Reference:"
+msgctxt "@label"
+msgid "Reference Album:"
+msgstr "Viite:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:155
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Reference"
+msgctxt "@title:tab"
+msgid "Reference"
+msgstr "Viite"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:176
+#, kde-format
+msgctxt "@label"
+msgid "Similarity range:"
+msgstr "Samankaltaisuusväli:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#, kde-format
+msgctxt "@label"
+msgid "Restriction:"
+msgstr "Rajoitus:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:183
+#, kde-format
+msgctxt "@label:listbox similarity restriction"
+msgid "None"
+msgstr "Ei mitään"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox similarity restriction"
+#| msgid "Restrict to reference album"
+msgctxt "@label:listbox similarity restriction"
+msgid "Restrict to reference Album"
+msgstr "Rajoita viitealbumiin"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox similarity restriction"
+#| msgid "Exclude reference album"
+msgctxt "@label:listbox similarity restriction"
+msgid "Exclude reference Album"
+msgstr "Jätä viitealbumi pois"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Use this option to restrict the duplicate search with some criteria, as "
+#| "to limit search to the album of reference image, or to exclude the album "
+#| "of reference image of the search."
+msgctxt "@info"
+msgid ""
+"Use this option to restrict the duplicate search with some criteria, as to "
+"limit search to the Album of reference image, or to exclude the Album of "
+"reference image of the search."
+msgstr ""
+"Tällä valinnalla voi rajoittaa kaksoiskappaleiden etsintää ehdoin, "
+"esimerkiksi rajoittaa haun viitekuvan albumiin tai jättää viitekuvan albumin "
+"pois hausta."
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
+#, kde-format
+msgctxt "@label"
+msgid "Restrict to:"
+msgstr "Rajoita:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "Only selected tab"
+msgstr "vain valittuun välilehteen"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:215
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "One of"
+msgstr "jompaankumpaan"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:218
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "Both"
+msgstr "kumpaankin"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:221
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "Albums but not tags"
+msgstr "albumeihin muttei luokituksiin"
+
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:224
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "Tags but not albums"
+msgstr "luokituksiin muttei albumeihin"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
 #, fuzzy, kde-format
 #| msgid ""
 #| "Use this option to decide about the relation of the selected albums and "
@@ -52928,13 +52923,13 @@ msgctxt "@info"
 msgid ""
 "Use this option to decide about the relation of the selected albums and "
 "tags.\n"
+"\"Only selected tab\" means that only the selected tab is used.\n"
 "\"One of\" means that the images are either in the selected albums or tags.\n"
 "\"Both\" means that the images are both in the selected albums and tags.\n"
 "\"Albums but not tags\" means that images must be in the selected albums but "
 "not tags.\n"
 "\"Tags but not albums\" means that images must be in the selected tags but "
-"not albums.\n"
-"\"Only selected tab\" means that only the selected tab is used."
+"not albums."
 msgstr ""
 "Päätä tällä valinnalla valittujen albumien ja luokitusten suhde.<br/"
 "><i>Jompikumpi</i> tarkoittaa, että kuvat ovat valituissa albumeissa tai "
@@ -52946,13 +52941,37 @@ msgstr ""
 "><i>Vain valitulla välilehdellä</i> tarkoittaa, että vain valittua "
 "välilehteä käytetään."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:240
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:259
+#, kde-format
+msgctxt "@action"
+msgid "Update fingerprints"
+msgstr "Päivitä sormenjäljet"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:261
+#, kde-format
+msgctxt "@info"
+msgid "Use this button to update all image fingerprints."
+msgstr "Päivitä tällä painikkeella kaikki sormenjäljet."
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:278
+#, kde-format
+msgctxt "@action"
+msgid "Find duplicates"
+msgstr "Etsi kaksoiskappaleita"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:280
+#, kde-format
+msgctxt "@info"
+msgid "Use this button to scan the selected albums for duplicate items."
+msgstr "Etsi tällä painikkeella valituista albumeista kaksoiskappaleita."
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:283
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Poista kaksoiskappaleet"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:285
 #, fuzzy, kde-format
 #| msgid "Use this button to delete all duplicate images."
 msgctxt "@info"
@@ -53549,29 +53568,24 @@ msgid "City Capital"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:514
-#, fuzzy, kde-format
-#| msgid "{Suburb}"
+#, kde-format
 msgid "Suburb"
-msgstr "{Lähiö}"
+msgstr "Lähiö"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:517
-#, fuzzy, kde-format
-#| msgid "{Hamlet}"
+#, kde-format
 msgid "Hamlet"
-msgstr "{Kylä}"
+msgstr "Kylä"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:520
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Localize"
+#, kde-format
 msgid "Locality"
-msgstr "Paikanna"
+msgstr "Paikkakunta"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:523
-#, fuzzy, kde-format
-#| msgid "{Town}"
+#, kde-format
 msgid "Town"
-msgstr "{Taajama}"
+msgstr "Taajama"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:526
 #, kde-format
@@ -53600,18 +53614,14 @@ msgid "Wood"
 msgstr "Metsä"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:550
-#, fuzzy, kde-format
-#| msgctxt "@info: effect type"
-#| msgid "Bleach"
+#, kde-format
 msgid "Beach"
-msgstr "Valkaisu"
+msgstr "Uimaranta"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:553
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Iceland"
+#, kde-format
 msgid "Wetland"
-msgstr "Islanti"
+msgstr "Kosteikko"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:556
 #, kde-format
@@ -53644,24 +53654,19 @@ msgid "Traffic Signals"
 msgstr "Liikennemerkit"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:574
-#, fuzzy, kde-format
-#| msgctxt "@label: item creator"
-#| msgid "Creator"
+#, kde-format
 msgid "Elevator"
-msgstr "Luoja"
+msgstr "Hissi"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:577
-#, fuzzy, kde-format
-#| msgctxt "stepping for custom range"
-#| msgid "Step:"
+#, kde-format
 msgid "Steps"
-msgstr "Askel:"
+msgstr "Portaikko"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:580
-#, fuzzy, kde-format
-#| msgid "Unknown Format"
+#, kde-format
 msgid "Unknown Road"
-msgstr "Tuntematon muoto"
+msgstr "Tuntematon tie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:586
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:592
@@ -53671,29 +53676,24 @@ msgstr "Jalankulkutie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:589
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1180
-#, fuzzy, kde-format
-#| msgctxt "@item: linetrack over the map"
-#| msgid "Track"
+#, kde-format
 msgid "Track"
-msgstr "Raita"
+msgstr "Polku"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:595
-#, fuzzy, kde-format
-#| msgid "Cycle:"
+#, kde-format
 msgid "Cycleway"
-msgstr "Ajankohta:"
+msgstr "Pyörätie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:598
-#, fuzzy, kde-format
-#| msgid "Service ID:"
+#, kde-format
 msgid "Service Road"
-msgstr "Palvelun tunniste:"
+msgstr "Huoltoväylä"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:601
-#, fuzzy, kde-format
-#| msgid "Roadmap"
+#, kde-format
 msgid "Road"
-msgstr "Tiekartta"
+msgstr "Tie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:604
 #, kde-format
@@ -53761,24 +53761,19 @@ msgid "Motorway Link Road"
 msgstr "Moottoriyhdystie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:643
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Norway"
+#, kde-format
 msgid "Motorway"
-msgstr "Norja"
+msgstr "Moottoritie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:646
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Corrections"
+#, kde-format
 msgid "Corridor"
-msgstr "Korjaukset"
+msgstr "Käytävä"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:649
-#, fuzzy, kde-format
-#| msgid "Build version"
+#, kde-format
 msgid "Building"
-msgstr "Koosteversio"
+msgstr "Rakennus"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:652
 #, kde-format
@@ -53786,10 +53781,9 @@ msgid "Camping"
 msgstr "Leirintäalue"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:655
-#, fuzzy, kde-format
-#| msgid "Host Name"
+#, kde-format
 msgid "Hostel"
-msgstr "Konenimi"
+msgstr "Hostelli"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:658
 #, kde-format
@@ -53812,18 +53806,14 @@ msgid "Guest House"
 msgstr "Vierastalo"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:670
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Library"
+#, kde-format
 msgid "Library"
 msgstr "Kirjasto"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:673
-#, fuzzy, kde-format
-#| msgctxt "@item: scene code"
-#| msgid "Under-water"
+#, kde-format
 msgid "Kindergarten"
-msgstr "Vedenalainen kuva"
+msgstr "Päiväkoti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:676
 #, kde-format
@@ -53836,17 +53826,14 @@ msgid "School"
 msgstr "Koulu"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:682
-#, fuzzy, kde-format
-#| msgid "Intensity:"
+#, kde-format
 msgid "University"
-msgstr "Intensiteetti:"
+msgstr "Yliopisto"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:685
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Bihari"
+#, kde-format
 msgid "Bar"
-msgstr "bihari"
+msgstr "Baari"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:688
 #, kde-format
@@ -53864,17 +53851,14 @@ msgid "Fast Food"
 msgstr "Pikaruokala"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:697
-#, fuzzy, kde-format
-#| msgctxt "photo permissions"
-#| msgid "Public"
+#, kde-format
 msgid "Pub"
-msgstr "Julkinen"
+msgstr "Pubi"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:700
-#, fuzzy, kde-format
-#| msgid "Restoration"
+#, kde-format
 msgid "Restaurant"
-msgstr "Retusointi"
+msgstr "Ravintola"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:703
 #, kde-format
@@ -53882,11 +53866,9 @@ msgid "Dentist"
 msgstr "Hammaslääkäri"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:706
-#, fuzzy, kde-format
-#| msgctxt "renaming option for directory related information"
-#| msgid "Directory"
+#, kde-format
 msgid "Doctors"
-msgstr "Kansio"
+msgstr "Lääkäri"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:709
 #, kde-format
@@ -53899,11 +53881,9 @@ msgid "Pharmacy"
 msgstr "Apteekki"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:715
-#, fuzzy, kde-format
-#| msgctxt "@title: binary properties"
-#| msgid "Binary"
+#, kde-format
 msgid "Veterinary"
-msgstr "Binaarinen"
+msgstr "Eläinlääkäri"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:718
 #, kde-format
@@ -53936,22 +53916,19 @@ msgid "Mountain Rescue"
 msgstr "Vuoripelastus"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:736
-#, fuzzy, kde-format
-#| msgid "Add Watermark"
+#, kde-format
 msgid "Water Park"
-msgstr "Lisää vesileima"
+msgstr "Vesipuisto"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:739
-#, fuzzy, kde-format
-#| msgid "Comment Change"
+#, kde-format
 msgid "Community Centre"
-msgstr "Kommentin muutos"
+msgstr "Yhteisökeskus"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:742
-#, fuzzy, kde-format
-#| msgid "Count"
+#, kde-format
 msgid "Fountain"
-msgstr "Lukumäärä"
+msgstr "Suihkulähde"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:745
 #, kde-format
@@ -53959,11 +53936,9 @@ msgid "Night Club"
 msgstr "Yökerho"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:748
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "French"
+#, kde-format
 msgid "Bench"
-msgstr "ranska"
+msgstr "Penkki"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:751
 #, kde-format
@@ -53971,35 +53946,29 @@ msgid "Court House"
 msgstr "Oikeustalo"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:754
-#, fuzzy, kde-format
-#| msgid "Free Rotation"
+#, kde-format
 msgid "Fire Station"
-msgstr "Vapaakääntö"
+msgstr "Paloasema"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:757
-#, fuzzy, kde-format
-#| msgid "Printing canceled"
+#, kde-format
 msgid "Hunting Stand"
-msgstr "Tulostaminen peruttu"
+msgstr "Metsästysjalusta"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:760
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Polish"
+#, kde-format
 msgid "Police"
-msgstr "puola"
+msgstr "Poliisi"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:763
-#, fuzzy, kde-format
-#| msgid "Postal code:"
+#, kde-format
 msgid "Post Box"
-msgstr "Postinumero:"
+msgstr "Postilaatikko"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:766
-#, fuzzy, kde-format
-#| msgid "Postal code:"
+#, kde-format
 msgid "Post Office"
-msgstr "Postinumero:"
+msgstr "Postitoimisto"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:769
 #, kde-format
@@ -54007,10 +53976,9 @@ msgid "Prison"
 msgstr "Vankila"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:772
-#, fuzzy, kde-format
-#| msgid "Scaling"
+#, kde-format
 msgid "Recycling"
-msgstr "Skaalataan"
+msgstr "Kierrätys"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:775
 #, fuzzy, kde-format
@@ -54039,10 +54007,9 @@ msgid "Waste Basket"
 msgstr "Jäteastia"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:790
-#, fuzzy, kde-format
-#| msgid "shrinking databases"
+#, kde-format
 msgid "Drinking Water"
-msgstr "kutistetaan tietokantoja"
+msgstr "Juomavesi"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:793
 #, kde-format
@@ -54050,10 +54017,9 @@ msgid "Graveyard"
 msgstr "Hautausmaa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:796
-#, fuzzy, kde-format
-#| msgid "Orientation"
+#, kde-format
 msgid "Charging Station"
-msgstr "Suunta"
+msgstr "Latauspiste"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:799
 #, kde-format
@@ -54066,10 +54032,9 @@ msgid "Social Facility"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:805
-#, fuzzy, kde-format
-#| msgid "City"
+#, kde-format
 msgid "City Wall"
-msgstr "Kaupunki"
+msgstr "Kaupunginmuuri"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:808
 #, kde-format
@@ -54095,11 +54060,9 @@ msgid "Peak"
 msgstr "Vuorenhuippu"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:823
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "In Tree"
+#, kde-format
 msgid "Tree"
-msgstr "Puussa"
+msgstr "Puu"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:826
 #, kde-format
@@ -54107,11 +54070,9 @@ msgid "Cave Entrance"
 msgstr "Luolan sisäänkäynti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:829
-#, fuzzy, kde-format
-#| msgctxt "metering mode"
-#| msgid "Average"
+#, kde-format
 msgid "Beverages"
-msgstr "Keskiarvo"
+msgstr "Juomat"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:832
 #, kde-format
@@ -54134,18 +54095,14 @@ msgid "Bakery"
 msgstr "Leipomo"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:844
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Dutch"
+#, kde-format
 msgid "Butcher"
-msgstr "hollanti"
+msgstr "Lihakauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:847
-#, fuzzy, kde-format
-#| msgctxt "@item: icc profile properties"
-#| msgid "Connection Space"
+#, kde-format
 msgid "Confectionery"
-msgstr "Yhteysavaruus"
+msgstr "Konditoria"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:850
 #, kde-format
@@ -54153,11 +54110,9 @@ msgid "Convenience Shop"
 msgstr "Lähikauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:853
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Greece"
+#, kde-format
 msgid "Greengrocer"
-msgstr "Kreikka"
+msgstr "Vihanneskauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:856
 #, kde-format
@@ -54165,10 +54120,9 @@ msgid "Seafood Shop"
 msgstr "Kalakauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:859
-#, fuzzy, kde-format
-#| msgid "Decorative Stone"
+#, kde-format
 msgid "Department Store"
-msgstr "Kivisomiste"
+msgstr "Tavaratalo"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:862
 #, kde-format
@@ -54186,10 +54140,9 @@ msgid "Clothes Shop"
 msgstr "Vaatekauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:871
-#, fuzzy, kde-format
-#| msgid "Light Source Information"
+#, kde-format
 msgid "Fashion Shop"
-msgstr "Valonlähdetiedot"
+msgstr "Muotiliike"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:874
 #, kde-format
@@ -54197,10 +54150,9 @@ msgid "Jewelry Shop"
 msgstr "Jalokiviliike"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:877
-#, fuzzy, kde-format
-#| msgid "Slide Show"
+#, kde-format
 msgid "Shoe Shop"
-msgstr "Kuvaesitys"
+msgstr "Kenkäkauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:880
 #, kde-format
@@ -54208,10 +54160,9 @@ msgid "Variety Store"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:883
-#, fuzzy, kde-format
-#| msgid "Fuzzy Searches"
+#, kde-format
 msgid "Beauty Services"
-msgstr "Sumea haku"
+msgstr "Kauneushoitola"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:886
 #, kde-format
@@ -54229,11 +54180,9 @@ msgid "Hairdresser"
 msgstr "Kampaamo"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:895
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Optimization"
+#, kde-format
 msgid "Optician"
-msgstr "Optimointi"
+msgstr "Optikko"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:898
 #, kde-format
@@ -54257,17 +54206,14 @@ msgid "Furniture Store"
 msgstr "Huonekaluliike"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:913
-#, fuzzy, kde-format
-#| msgctxt "@item: WB settings"
-#| msgid "electronic photo flash"
+#, kde-format
 msgid "Electronics Shop"
-msgstr "kameran salamavalo"
+msgstr "Elektroniikkaliike"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:916
-#, fuzzy, kde-format
-#| msgid "Adobe Photoshop"
+#, kde-format
 msgid "Mobile Phone Shop"
-msgstr "Adobe Photoshop"
+msgstr "Matkapuhelinliike"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:919
 #, kde-format
@@ -54305,10 +54251,9 @@ msgid "Sports Shop"
 msgstr "Urheiluliike"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:940
-#, fuzzy, kde-format
-#| msgid "Printing in Progress"
+#, kde-format
 msgid "Printing Services"
-msgstr "Tulostus meneillään"
+msgstr "Tulostuspalvelu"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:943
 #, kde-format
@@ -54321,10 +54266,9 @@ msgid "Musical Instrument Shop"
 msgstr "Soitinliike"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:949
-#, fuzzy, kde-format
-#| msgid "Photo width"
+#, kde-format
 msgid "Photo Shop"
-msgstr "Kuvan leveys"
+msgstr "Valokuvaamo"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:952
 #, kde-format
@@ -54332,10 +54276,9 @@ msgid "Bookshop"
 msgstr "Kirjakauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:955
-#, fuzzy, kde-format
-#| msgid "Light Source Information"
+#, kde-format
 msgid "Gift Shop"
-msgstr "Valonlähdetiedot"
+msgstr "Lahjakauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:958
 #, fuzzy, kde-format
@@ -54349,10 +54292,9 @@ msgid "Laundry"
 msgstr "Pesula"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:964
-#, fuzzy, kde-format
-#| msgid "Light Source Information"
+#, kde-format
 msgid "Pet Shop"
-msgstr "Valonlähdetiedot"
+msgstr "Lemmikkieläinkauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:967
 #, kde-format
@@ -54360,11 +54302,9 @@ msgid "Toy Store"
 msgstr "Lelukauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:970
-#, fuzzy, kde-format
-#| msgctxt "@item: album categories"
-#| msgid "Travel"
+#, kde-format
 msgid "Travel Agency"
-msgstr "Matka"
+msgstr "Matkatoimisto"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:973
 #, kde-format
@@ -54402,10 +54342,9 @@ msgid "Bridge"
 msgstr "Silta"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:994
-#, fuzzy, kde-format
-#| msgid "Light source:"
+#, kde-format
 msgid "Lighthouse"
-msgstr "Valolähde:"
+msgstr "Majakka"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:997
 #, kde-format
@@ -54428,16 +54367,14 @@ msgid "Communications Tower"
 msgstr "Tietoliikennetorni"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1009
-#, fuzzy, kde-format
-#| msgid "No restriction"
+#, kde-format
 msgid "Tourist Attraction"
-msgstr "Ei rajausta"
+msgstr "Turistinähtävyys"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1012
-#, fuzzy, kde-format
-#| msgid "Network"
+#, kde-format
 msgid "Artwork"
-msgstr "Verkko"
+msgstr "Taidekauppa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1015
 #, kde-format
@@ -54457,11 +54394,9 @@ msgid "Information"
 msgstr "Tietoja"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1024
-#, fuzzy, kde-format
-#| msgctxt "@item: type is a document"
-#| msgid "Document"
+#, kde-format
 msgid "Monument"
-msgstr "Tiedosto"
+msgstr "Muistomerkki"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1027
 #, kde-format
@@ -54479,23 +54414,19 @@ msgid "Theatre"
 msgstr "Teatteri"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1036
-#, fuzzy, kde-format
-#| msgid "Theme Parameters"
+#, kde-format
 msgid "Theme Park"
-msgstr "Teeman parametrit"
+msgstr "Huvipuisto"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1039
-#, fuzzy, kde-format
-#| msgctxt "@item: point coordinates"
-#| msgid "Point"
+#, kde-format
 msgid "View Point"
-msgstr "Piste"
+msgstr "Näköalapaikka"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1042
-#, fuzzy, kde-format
-#| msgid "Zoom:"
+#, kde-format
 msgid "Zoo"
-msgstr "Lähennys:"
+msgstr "Eläintarha"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1045
 #, kde-format
@@ -54508,11 +54439,9 @@ msgid "Wilderness Hut"
 msgstr "Korpimaja"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1051
-#, fuzzy, kde-format
-#| msgctxt "@item: serail port based camera"
-#| msgid "Serial"
+#, kde-format
 msgid "Memorial"
-msgstr "Sarjaportti"
+msgstr "Muistomerkki"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1054
 #, kde-format
@@ -54550,16 +54479,14 @@ msgid "Airport Terminal"
 msgstr "Lentokenttäterminaali"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1075
-#, fuzzy, kde-format
-#| msgid "Saturation"
+#, kde-format
 msgid "Bus Station"
-msgstr "Värikylläisyys"
+msgstr "Linja-autoasema"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1078
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgid "Bus Stop"
-msgstr "Pysäytä"
+msgstr "Linja-autopysäkki"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1081
 #, kde-format
@@ -54567,10 +54494,9 @@ msgid "Car Sharing"
 msgstr "Auton jakaminen"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1084
-#, fuzzy, kde-format
-#| msgid "Saturation"
+#, kde-format
 msgid "Gas Station"
-msgstr "Värikylläisyys"
+msgstr "Huoltoasema"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1087
 #, kde-format
@@ -54578,16 +54504,14 @@ msgid "Parking"
 msgstr "Pysäköinti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1090
-#, fuzzy, kde-format
-#| msgid "Working Color Space"
+#, kde-format
 msgid "Parking Space"
-msgstr "Työväriavaruus"
+msgstr "Pysäköintialue"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1093
-#, fuzzy, kde-format
-#| msgid "Transform"
+#, kde-format
 msgid "Platform"
-msgstr "Muunnos"
+msgstr "Laituri"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1096
 #, kde-format
@@ -54610,16 +54534,14 @@ msgid "Taxi Rank"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1108
-#, fuzzy, kde-format
-#| msgid "Orientation"
+#, kde-format
 msgid "Train Station"
-msgstr "Suunta"
+msgstr "Rautatieasema"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1111
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgid "Tram Stop"
-msgstr "Pysäytä"
+msgstr "Raitiovaunupysäkki"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1114
 #, kde-format
@@ -54637,10 +54559,9 @@ msgid "Subway Entrance"
 msgstr "Maanalaisen sisäänkäynti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1123
-#, fuzzy, kde-format
-#| msgid "Mounted Camera"
+#, kde-format
 msgid "Speed Camera"
-msgstr "Massamuistikamera"
+msgstr "Nopeusvalvontakamera"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1126
 #, kde-format
@@ -54648,11 +54569,9 @@ msgid "Place Of Worship"
 msgstr "Palvontapaikka"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1129
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Bahamas"
+#, kde-format
 msgid "Bahai"
-msgstr "Bahama"
+msgstr "Bahai"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1132
 #, kde-format
@@ -54660,11 +54579,9 @@ msgid "Buddhist"
 msgstr "Buddhalainen"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1135
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Croatian"
+#, kde-format
 msgid "Christian"
-msgstr "kroatia"
+msgstr "Kristillinen"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1138
 #, kde-format
@@ -54672,11 +54589,9 @@ msgid "Muslim"
 msgstr "Islamilainen"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1141
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Hindi"
+#, kde-format
 msgid "Hindu"
-msgstr "hindi"
+msgstr "Hindu"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1144
 #, kde-format
@@ -54709,11 +54624,9 @@ msgid "Golf Course"
 msgstr "Golfrata"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1162
-#, fuzzy, kde-format
-#| msgctxt "@info: language name"
-#| msgid "Mari"
+#, kde-format
 msgid "Marina"
-msgstr "mari"
+msgstr "Venesatama"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1165
 #, kde-format
@@ -54721,11 +54634,9 @@ msgid "Park"
 msgstr "Puisto"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1168
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Background"
+#, kde-format
 msgid "Playground"
-msgstr "Tausta"
+msgstr "Leikkikenttä"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1171
 #, kde-format
@@ -54738,10 +54649,9 @@ msgid "Sports Centre"
 msgstr "Urheilukeskus"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1177
-#, fuzzy, kde-format
-#| msgid "Medium"
+#, kde-format
 msgid "Stadium"
-msgstr "Keskinkertainen"
+msgstr "Stadion"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1183
 #, kde-format
@@ -54754,9 +54664,9 @@ msgid "Miniature Golf Course"
 msgstr "Pienoisgolfrata"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1189
-#, fuzzy, kde-format
+#, kde-format
 msgid "Allotments"
-msgstr "Kuvan kommentti"
+msgstr "Siirtolapuutarha"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1192
 #, kde-format
@@ -54764,11 +54674,9 @@ msgid "Basin"
 msgstr "Vesiallas"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1195
-#, fuzzy, kde-format
-#| msgctxt "distance"
-#| msgid "meter"
+#, kde-format
 msgid "Cemetery"
-msgstr "metri"
+msgstr "Hautausmaa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1198
 #, kde-format
@@ -54776,17 +54684,14 @@ msgid "Commercial"
 msgstr "Kaupallinen alue"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1201
-#, fuzzy, kde-format
-#| msgid "Instructions:"
+#, kde-format
 msgid "Construction"
-msgstr "Lisätietoja:"
+msgstr "Rakennustyömaa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1204
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Finland"
+#, kde-format
 msgid "Farmland"
-msgstr "Suomi"
+msgstr "Viljelysmaa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1207
 #, kde-format
@@ -54794,10 +54699,9 @@ msgid "Farmyard"
 msgstr "Viljelysmaa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1210
-#, fuzzy, kde-format
-#| msgid "Images"
+#, kde-format
 msgid "Garages"
-msgstr "Kuvat"
+msgstr "Autotalli"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1213
 #, kde-format
@@ -54805,11 +54709,9 @@ msgid "Grass"
 msgstr "Ruohikko"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1216
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Austria"
+#, kde-format
 msgid "Industrial"
-msgstr "Itävalta"
+msgstr "Teollisuusalue"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1219
 #, kde-format
@@ -54837,10 +54739,9 @@ msgid "Railway"
 msgstr "Rautatie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1234
-#, fuzzy, kde-format
-#| msgid "Reset curve to linear"
+#, kde-format
 msgid "Reservoir"
-msgstr "Palauta käyrä lineaariseksi"
+msgstr "Tekojärvi"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1237
 #, kde-format
@@ -54848,11 +54749,9 @@ msgid "Residential"
 msgstr "Asuinalue"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1240
-#, fuzzy, kde-format
-#| msgctxt "@item: map tool"
-#| msgid "Details"
+#, kde-format
 msgid "Retail"
-msgstr "Yksityiskohdat"
+msgstr "Vähittäismyynti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1243
 #, kde-format
@@ -54881,10 +54780,9 @@ msgid "Tram"
 msgstr "Raitiovaunu"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1258
-#, fuzzy, kde-format
-#| msgid "Light Table"
+#, kde-format
 msgid "Light Rail"
-msgstr "Valopöytä"
+msgstr "Raitiotie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1261
 #, kde-format
@@ -54898,10 +54796,9 @@ msgid "Subway"
 msgstr "Maanalainen"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1267
-#, fuzzy, kde-format
-#| msgid "Preserve Aspect Ratio"
+#, kde-format
 msgid "Preserved Railway"
-msgstr "Säilytä kuvasuhde"
+msgstr "Säilynyt rautatie"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1270
 #, kde-format
@@ -67877,6 +67774,10 @@ msgstr "Albumit"
 #, kde-format
 msgid "Import Items"
 msgstr "Tuo kohteet"
+
+#~ msgctxt "@label"
+#~ msgid "Search in:"
+#~ msgstr "Etsi:"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid ""
