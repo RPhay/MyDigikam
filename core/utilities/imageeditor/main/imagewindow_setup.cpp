@@ -179,6 +179,10 @@ void ImageWindow::setupUserArea()
     d->imageFilterModel->setStringTypeNatural(ApplicationSettings::instance()->isStringTypeNatural());
     d->imageFilterModel->setSortRole((ItemSortSettings::SortRole)ApplicationSettings::instance()->getImageSortOrder());
     d->imageFilterModel->setSortOrder((ItemSortSettings::SortOrder)ApplicationSettings::instance()->getImageSorting());
+
+    VersionManagerSettings versionSettings = ApplicationSettings::instance()->getVersionManagerSettings();
+    d->imageFilterModel->setVersionItemFilterSettings(VersionItemFilterSettings(versionSettings));
+
     d->imageFilterModel->setAllGroupsOpen(true);    // disable filtering out by group, see bug #283847
     d->imageFilterModel->sort(0);                   // an initial sorting is necessary
 

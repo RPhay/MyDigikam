@@ -39,6 +39,7 @@ void ImageWindow::slotSetupChanged()
     d->imageFilterModel->setStringTypeNatural(ApplicationSettings::instance()->isStringTypeNatural());
     d->imageFilterModel->setSortRole((ItemSortSettings::SortRole)ApplicationSettings::instance()->getImageSortOrder());
     d->imageFilterModel->setSortOrder((ItemSortSettings::SortOrder)ApplicationSettings::instance()->getImageSorting());
+    d->imageFilterModel->setVersionItemFilterSettings(VersionItemFilterSettings(versionSettings));
     d->rightSideBar->setStyle(ApplicationSettings::instance()->getSidebarTitleStyle());
 }
 
