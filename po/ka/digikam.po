@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-14 02:03+0000\n"
+"POT-Creation-Date: 2025-02-15 02:14+0000\n"
 "PO-Revision-Date: 2024-07-07 06:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2867,6 +2867,7 @@ msgstr "გამოიყენეთ ეს ღილაკი ყველა
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:129
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:148
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
 #, kde-format
 msgctxt "@info"
 msgid "Help"
@@ -32503,6 +32504,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:90
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:115
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -32659,7 +32661,7 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:194
 #: core/libs/imgqsort/imagequalitywidget.cpp:159
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -32684,7 +32686,8 @@ msgstr "ტექსტის ამოცნობა"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:211
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:254
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -37189,14 +37192,14 @@ msgid ""
 "database.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:106
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
 msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "სკანირების რეჟიმი: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "In All"
@@ -37204,13 +37207,13 @@ msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "ყველაში"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #, kde-format
 msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37218,20 +37221,20 @@ msgid ""
 "scan only the items with no assigned autotags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #, fuzzy, kde-format
 #| msgid "Auto-tagging mode: "
 msgid "Auto-Tagging Mode:"
 msgstr "ავტომატური ჭდეების რეჟიმი: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Update only existing timestamps"
 msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "მხოლოდ არსებული დროის შტამპების განახლება"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
@@ -37239,7 +37242,7 @@ msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "განახლება"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37248,26 +37251,26 @@ msgid ""
 "existing tags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
 #, fuzzy, kde-format
 #| msgid "Selection model: "
 msgctxt "@label: deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "მონიშვნის მოდელი: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:141
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, fuzzy, kde-format
 #| msgid "No detail available"
 msgid "No models available"
 msgstr "დეტალები ხელმისაწვდომი არაა"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:145
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgid "Detection Accuracy:"
 msgstr "სიზუსტე"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:150
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37276,7 +37279,7 @@ msgid ""
 "be recognized, but fewer objects will be recognized.\n"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37285,13 +37288,13 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:178
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "ჭდეების თარგმნა ენაზე:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:184
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:180
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Translate to:"
@@ -49544,154 +49547,7 @@ msgstr ""
 msgid "This shows all found duplicate items."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:108
-#, kde-format
-msgctxt "@action"
-msgid "Update fingerprints"
-msgstr "ანაბეჭდების განახლება"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:110
-#, kde-format
-msgctxt "@info"
-msgid "Use this button to update all image fingerprints."
-msgstr "გამოიყენეთ ეს ღილაკი ყველა გამოსახულების ანაბეჭდის განახლებისთვის."
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:112
-#, kde-format
-msgctxt "@action"
-msgid "Find duplicates"
-msgstr "დუბლიკატების პოვნა"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:114
-#, kde-format
-msgctxt "@info"
-msgid "Use this button to scan the selected albums for duplicate items."
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:119
-#, kde-format
-msgctxt "@label"
-msgid "Search in:"
-msgstr "ძებნა:"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
-#, kde-format
-msgctxt "@label"
-msgid "Similarity range:"
-msgstr "მსგავსების დიაპაზონი:"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:141
-#, kde-format
-msgctxt "@label"
-msgid "Restriction:"
-msgstr "შეზღუდვა:"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:145
-#, kde-format
-msgctxt "@label:listbox similarity restriction"
-msgid "None"
-msgstr "არცერთი"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:146
-#, kde-format
-msgctxt "@label:listbox similarity restriction"
-msgid "Restrict to reference album"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:147
-#, kde-format
-msgctxt "@label:listbox similarity restriction"
-msgid "Exclude reference album"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:148
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Use this option to restrict the duplicate search with some criteria, as to "
-"limit search to the album of reference image, or to exclude the album of "
-"reference image of the search."
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:161
-#, kde-format
-msgctxt "@label"
-msgid "Restrict to:"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:174
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "Only selected tab"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:177
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "One of"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:180
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "Both"
-msgstr "ორივე"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:183
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "Albums but not tags"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "Tags but not albums"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Older or Larger"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer selected folder as reference"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer other than selected folder as reference"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:202
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer Newer Creation Date"
-msgstr "უპირატესობა უფრო ახალ შექმნის თარიღს"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:205
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer Newer Modification Date"
-msgstr "უპირატესობა უფრო ახალ ცვლილების თარიღს"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Select method for reference image selection"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
-#, kde-format
-msgctxt "@label"
-msgid "Reference"
-msgstr "მითითება"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
 #, fuzzy, kde-format
 #| msgctxt "@group"
 #| msgid "Reference Image Selection Method"
@@ -49699,28 +49555,178 @@ msgctxt "@info"
 msgid "Reference Image Selection Method"
 msgstr "მიმართული გამოსახულების შერჩევის მეთოდი"
 
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Older or Larger"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:129
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer selected Album as reference"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer other than selected Album as reference"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:135
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Creation Date"
+msgstr "უპირატესობა უფრო ახალ შექმნის თარიღს"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Modification Date"
+msgstr "უპირატესობა უფრო ახალ ცვლილების თარიღს"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:142
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Select method for reference image selection"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:144
+#, fuzzy, kde-format
+#| msgid "Reference:"
+msgctxt "@label"
+msgid "Reference Album:"
+msgstr "მიბმა:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:155
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Reference"
+msgctxt "@title:tab"
+msgid "Reference"
+msgstr "მითითება"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:176
+#, kde-format
+msgctxt "@label"
+msgid "Similarity range:"
+msgstr "მსგავსების დიაპაზონი:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#, kde-format
+msgctxt "@label"
+msgid "Restriction:"
+msgstr "შეზღუდვა:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:183
+#, kde-format
+msgctxt "@label:listbox similarity restriction"
+msgid "None"
+msgstr "არცერთი"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
+#, kde-format
+msgctxt "@label:listbox similarity restriction"
+msgid "Restrict to reference Album"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#, kde-format
+msgctxt "@label:listbox similarity restriction"
+msgid "Exclude reference Album"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Use this option to restrict the duplicate search with some criteria, as to "
+"limit search to the Album of reference image, or to exclude the Album of "
+"reference image of the search."
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
+#, kde-format
+msgctxt "@label"
+msgid "Restrict to:"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "Only selected tab"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:215
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "One of"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:218
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "Both"
+msgstr "ორივე"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:221
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "Albums but not tags"
+msgstr ""
+
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:224
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "Tags but not albums"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to decide about the relation of the selected albums and "
 "tags.\n"
+"\"Only selected tab\" means that only the selected tab is used.\n"
 "\"One of\" means that the images are either in the selected albums or tags.\n"
 "\"Both\" means that the images are both in the selected albums and tags.\n"
 "\"Albums but not tags\" means that images must be in the selected albums but "
 "not tags.\n"
 "\"Tags but not albums\" means that images must be in the selected tags but "
-"not albums.\n"
-"\"Only selected tab\" means that only the selected tab is used."
+"not albums."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:240
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:259
+#, kde-format
+msgctxt "@action"
+msgid "Update fingerprints"
+msgstr "ანაბეჭდების განახლება"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:261
+#, kde-format
+msgctxt "@info"
+msgid "Use this button to update all image fingerprints."
+msgstr "გამოიყენეთ ეს ღილაკი ყველა გამოსახულების ანაბეჭდის განახლებისთვის."
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:278
+#, kde-format
+msgctxt "@action"
+msgid "Find duplicates"
+msgstr "დუბლიკატების პოვნა"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:280
+#, kde-format
+msgctxt "@info"
+msgid "Use this button to scan the selected albums for duplicate items."
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:283
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "წაშალეთ დუბლიკატები"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -63658,6 +63664,10 @@ msgstr ""
 #, kde-format
 msgid "Import Items"
 msgstr ""
+
+#~ msgctxt "@label"
+#~ msgid "Search in:"
+#~ msgstr "ძებნა:"
 
 #~ msgctxt "@title:tab"
 #~ msgid "Workflow"

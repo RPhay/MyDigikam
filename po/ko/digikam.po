@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-14 02:03+0000\n"
+"POT-Creation-Date: 2025-02-15 02:14+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2887,6 +2887,7 @@ msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:129
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:148
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
 #, kde-format
 msgctxt "@info"
 msgid "Help"
@@ -34941,6 +34942,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:90
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:115
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -35114,7 +35116,7 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:194
 #: core/libs/imgqsort/imagequalitywidget.cpp:159
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
@@ -35141,7 +35143,8 @@ msgstr "얼굴 인식"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:211
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:254
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -40137,13 +40140,13 @@ msgid ""
 "database.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:106
 #, fuzzy, kde-format
 msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "<b>카메라 모델</b>:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "In All"
@@ -40151,13 +40154,13 @@ msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "모두에서"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #, fuzzy, kde-format
 msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "붙인 태그"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40165,20 +40168,20 @@ msgid ""
 "scan only the items with no assigned autotags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-Tagging Mode:"
 msgstr "측광 모드:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Update only existing timestamps"
 msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "존재하는 타임스탬프만 업데이트"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
@@ -40186,7 +40189,7 @@ msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "업데이트"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40195,27 +40198,27 @@ msgid ""
 "existing tags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:131
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
 #, fuzzy, kde-format
 #| msgid "Destination Folder:"
 msgctxt "@label: deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr "대상 폴더:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:141
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, fuzzy, kde-format
 #| msgid "No detail available"
 msgid "No models available"
 msgstr "자세한 정보 없음"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:145
 #, fuzzy, kde-format
 #| msgctxt "@groupbox"
 #| msgid "Face Accuracy"
 msgid "Detection Accuracy:"
 msgstr "얼굴 정확도"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:150
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -40233,7 +40236,7 @@ msgstr ""
 "더 적게 인식됩니다\n"
 "(사전 태그가 지정된 얼굴과 매우 유사한 얼굴만 인식됨)."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:166
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -40250,14 +40253,14 @@ msgstr ""
 "시스템의 모든 프로세서 코어를 사용할지, 아니면 한 코어에서만\n"
 "백그라운드에서 작업할지를 선택할 수 있습니다."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:178
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr "%1(으)로 탐색"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:184
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:180
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@title:tab"
@@ -53801,137 +53804,33 @@ msgstr "평균 유사도"
 msgid "This shows all found duplicate items."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:108
-#, kde-format
-msgctxt "@action"
-msgid "Update fingerprints"
-msgstr "지문 업데이트"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:110
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
 #, fuzzy, kde-format
+#| msgid "&Choose image selection method:"
 msgctxt "@info"
-msgid "Use this button to update all image fingerprints."
-msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
+msgid "Reference Image Selection Method"
+msgstr "이미지 선택 방법 선택(&C):"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:112
-#, kde-format
-msgctxt "@action"
-msgid "Find duplicates"
-msgstr "중복 항목 찾기"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:114
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "Use this button to scan the selected albums for duplicate items."
-msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:119
-#, kde-format
-msgctxt "@label"
-msgid "Search in:"
-msgstr "다음에서 찾기:"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
-#, kde-format
-msgctxt "@label"
-msgid "Similarity range:"
-msgstr "유사도 범위:"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:141
-#, kde-format
-msgctxt "@label"
-msgid "Restriction:"
-msgstr "제한:"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:145
-#, fuzzy, kde-format
-#| msgid "None"
-msgctxt "@label:listbox similarity restriction"
-msgid "None"
-msgstr "없음"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:146
-#, fuzzy, kde-format
-#| msgid "Store as a different name"
-msgctxt "@label:listbox similarity restriction"
-msgid "Restrict to reference album"
-msgstr "다른 이름으로 저장하기"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:147
-#, fuzzy, kde-format
-#| msgid "Store as a different name"
-msgctxt "@label:listbox similarity restriction"
-msgid "Exclude reference album"
-msgstr "다른 이름으로 저장하기"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:148
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Use this option to restrict the duplicate search with some criteria, as to "
-"limit search to the album of reference image, or to exclude the album of "
-"reference image of the search."
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:161
-#, kde-format
-msgctxt "@label"
-msgid "Restrict to:"
-msgstr "다음으로 제한:"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:174
-#, fuzzy, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "Only selected tab"
-msgstr "태그 아이콘 초기화"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "In One of"
-msgctxt "@label:listbox similarity album tag relation"
-msgid "One of"
-msgstr "다음 중 하나로"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "toggle child and parent tags"
-#| msgid "Both"
-msgctxt "@label:listbox similarity album tag relation"
-msgid "Both"
-msgstr "모두"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:183
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "Albums but not tags"
-msgstr "앨범 포함, 태그 제외"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "Tags but not albums"
-msgstr "태그 포함, 앨범 제외"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:129
+#, fuzzy, kde-format
+#| msgid "Please select album first"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer selected Album as reference"
+msgstr "앨범을 먼저 선택하십시오"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer selected folder as reference"
+msgid "Prefer other than selected Album as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer other than selected folder as reference"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:202
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:135
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Creation Date"
@@ -53939,7 +53838,7 @@ msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
 msgstr "만든 날짜순"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:205
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Modification Date"
@@ -53947,50 +53846,156 @@ msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
 msgstr "수정한 날짜순"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:142
 #, fuzzy, kde-format
 #| msgid "Remove the current region selection"
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
 msgstr "현재 지역 선택 삭제"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:144
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgctxt "@label"
+msgid "Reference Album:"
+msgstr "참조:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:155
+#, fuzzy, kde-format
+#| msgid "Reference:"
+msgctxt "@title:tab"
 msgid "Reference"
 msgstr "참조:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:176
+#, kde-format
+msgctxt "@label"
+msgid "Similarity range:"
+msgstr "유사도 범위:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#, kde-format
+msgctxt "@label"
+msgid "Restriction:"
+msgstr "제한:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:183
 #, fuzzy, kde-format
-#| msgid "&Choose image selection method:"
+#| msgid "None"
+msgctxt "@label:listbox similarity restriction"
+msgid "None"
+msgstr "없음"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
+#, fuzzy, kde-format
+#| msgid "Store as a different name"
+msgctxt "@label:listbox similarity restriction"
+msgid "Restrict to reference Album"
+msgstr "다른 이름으로 저장하기"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#, fuzzy, kde-format
+#| msgid "Store as a different name"
+msgctxt "@label:listbox similarity restriction"
+msgid "Exclude reference Album"
+msgstr "다른 이름으로 저장하기"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#, kde-format
 msgctxt "@info"
-msgid "Reference Image Selection Method"
-msgstr "이미지 선택 방법 선택(&C):"
+msgid ""
+"Use this option to restrict the duplicate search with some criteria, as to "
+"limit search to the Album of reference image, or to exclude the Album of "
+"reference image of the search."
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
+#, kde-format
+msgctxt "@label"
+msgid "Restrict to:"
+msgstr "다음으로 제한:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
+#, fuzzy, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "Only selected tab"
+msgstr "태그 아이콘 초기화"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:215
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "In One of"
+msgctxt "@label:listbox similarity album tag relation"
+msgid "One of"
+msgstr "다음 중 하나로"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:218
+#, fuzzy, kde-format
+#| msgctxt "toggle child and parent tags"
+#| msgid "Both"
+msgctxt "@label:listbox similarity album tag relation"
+msgid "Both"
+msgstr "모두"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:221
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "Albums but not tags"
+msgstr "앨범 포함, 태그 제외"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:224
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "Tags but not albums"
+msgstr "태그 포함, 앨범 제외"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to decide about the relation of the selected albums and "
 "tags.\n"
+"\"Only selected tab\" means that only the selected tab is used.\n"
 "\"One of\" means that the images are either in the selected albums or tags.\n"
 "\"Both\" means that the images are both in the selected albums and tags.\n"
 "\"Albums but not tags\" means that images must be in the selected albums but "
 "not tags.\n"
 "\"Tags but not albums\" means that images must be in the selected tags but "
-"not albums.\n"
-"\"Only selected tab\" means that only the selected tab is used."
+"not albums."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:240
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:259
+#, kde-format
+msgctxt "@action"
+msgid "Update fingerprints"
+msgstr "지문 업데이트"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:261
+#, fuzzy, kde-format
+msgctxt "@info"
+msgid "Use this button to update all image fingerprints."
+msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:278
+#, kde-format
+msgctxt "@action"
+msgid "Find duplicates"
+msgstr "중복 항목 찾기"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:280
+#, fuzzy, kde-format
+msgctxt "@info"
+msgid "Use this button to scan the selected albums for duplicate items."
+msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:283
 #, fuzzy, kde-format
 #| msgid "Remove duplicate words"
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "중복 단어 삭제"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:285
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -68706,6 +68711,10 @@ msgstr ""
 msgid "Import Items"
 msgstr "최근 태그"
 
+#~ msgctxt "@label"
+#~ msgid "Search in:"
+#~ msgstr "다음에서 찾기:"
+
 #~ msgctxt "@title:tab"
 #~ msgid "Workflow"
 #~ msgstr "작업 흐름"
@@ -73080,9 +73089,6 @@ msgstr "최근 태그"
 
 #~ msgid "Images have been uploaded"
 #~ msgstr "이미지 업로드함"
-
-#~ msgid "Please select album first"
-#~ msgstr "앨범을 먼저 선택하십시오"
 
 #~ msgid "Session error"
 #~ msgstr "세션 오류"
