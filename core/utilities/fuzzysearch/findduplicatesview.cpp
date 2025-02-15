@@ -163,48 +163,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     // ---
 
-    d->restrictResultsLabel    = new QLabel(i18nc("@label", "Limit Search to:"));
-    d->restrictResultsLabel->setBuddy(d->searchResultRestriction);
-
-    d->searchResultRestriction = new SqueezedComboBox();
-    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox similarity restriction", "None"),                    HaarIface::DuplicatesSearchRestrictions::None);
-    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox similarity restriction", "Reference Album only"),    HaarIface::DuplicatesSearchRestrictions::SameAlbum);
-    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox similarity restriction", "Exclude reference Album"), HaarIface::DuplicatesSearchRestrictions::DifferentAlbum);
-    d->searchResultRestriction->setToolTip(i18nc("@info", "Use this option to restrict the duplicate search "
-                                                          "with some criteria, as to limit search to the Album\n"
-                                                          "of reference image, or to exclude the Album of "
-                                                          "reference image of the search."));
-
-    // Load the last choice from application settings.
-
-    HaarIface::DuplicatesSearchRestrictions restrictions
-        = d->settings ? (HaarIface::DuplicatesSearchRestrictions)(d->settings->getDuplicatesSearchRestrictions())
-                      : HaarIface::DuplicatesSearchRestrictions::None;
-
-    d->searchResultRestriction->setCurrentIndex(d->searchResultRestriction->findData(restrictions));
-
-    // ---
-
-    d->similarityLabel         = new QLabel(i18nc("@label", "Similarity range:"));
-    d->similarityLabel->setBuddy(d->similarityRange);
-
-    d->similarityRange       = new DIntRangeBox();
-    d->similarityRange->setSuffix(QLatin1String("%"));
-
-    if (d->settings)
-    {
-        d->similarityRange->setRange(d->settings->getMinimumSimilarityBound(), 100);
-        updateSimilarityRangeInterval();
-    }
-    else
-    {
-        d->similarityRange->setRange(40, 100);
-        d->similarityRange->setInterval(40, 100);
-    }
-
-    // ---
-
-    d->albumTagRelationLabel = new QLabel(i18nc("@label", "Restrict search to:"));
+    d->albumTagRelationLabel = new QLabel(i18nc("@label", "Restrict Search to:"));
     d->albumTagRelationLabel->setBuddy(d->albumTagRelation);
 
     /*
@@ -235,7 +194,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     QString tip = i18nc("@info",
                         "Use this option to decide about the relation of the selected search-in albums and tags.\n"
-                        "\"Only selected tab\": only the selected tab is used.\n"
+                        "\"Only selected tab\": only the Search In selected tab is used.\n"
                         "\"One of\": the images are either in the selected albums or tags.\n"
                         "\"Both\": the images are both in the selected albums and tags.\n"
                         "\"Albums but not tags\": images must be in the selected albums but not tags.\n"
@@ -249,6 +208,47 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
                       : HaarIface::AlbumTagRelation::NoMix;
 
     d->albumTagRelation->setCurrentIndex(d->albumTagRelation->findData(relation));
+
+    // ---
+
+    d->similarityLabel         = new QLabel(i18nc("@label", "Similarity range:"));
+    d->similarityLabel->setBuddy(d->similarityRange);
+
+    d->similarityRange       = new DIntRangeBox();
+    d->similarityRange->setSuffix(QLatin1String("%"));
+
+    if (d->settings)
+    {
+        d->similarityRange->setRange(d->settings->getMinimumSimilarityBound(), 100);
+        updateSimilarityRangeInterval();
+    }
+    else
+    {
+        d->similarityRange->setRange(40, 100);
+        d->similarityRange->setInterval(40, 100);
+    }
+
+    // ---
+
+    d->restrictResultsLabel    = new QLabel(i18nc("@label", "Limit Search to:"));
+    d->restrictResultsLabel->setBuddy(d->searchResultRestriction);
+
+    d->searchResultRestriction = new SqueezedComboBox();
+    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox similarity restriction", "None"),                    HaarIface::DuplicatesSearchRestrictions::None);
+    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox similarity restriction", "Reference Album only"),    HaarIface::DuplicatesSearchRestrictions::SameAlbum);
+    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox similarity restriction", "Exclude reference Album"), HaarIface::DuplicatesSearchRestrictions::DifferentAlbum);
+    d->searchResultRestriction->setToolTip(i18nc("@info", "Use this option to restrict the duplicate search "
+                                                          "with some criteria, as to limit search to the Album\n"
+                                                          "of reference image, or to exclude the Album of "
+                                                          "reference image of the search."));
+
+    // Load the last choice from application settings.
+
+    HaarIface::DuplicatesSearchRestrictions restrictions
+        = d->settings ? (HaarIface::DuplicatesSearchRestrictions)(d->settings->getDuplicatesSearchRestrictions())
+                      : HaarIface::DuplicatesSearchRestrictions::None;
+
+    d->searchResultRestriction->setCurrentIndex(d->searchResultRestriction->findData(restrictions));
 
     // ---
 
