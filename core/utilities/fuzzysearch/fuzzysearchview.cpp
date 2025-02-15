@@ -303,7 +303,7 @@ void FuzzySearchView::setActive(bool val)
 void FuzzySearchView::slotTabChanged(int tab)
 {
     /**
-     * Set a list with only one element, albummanager can set only multiple albums
+     * Set a list with only one element, albummanager can set only multiple albums.
      */
     QList<Album*> albums;
 

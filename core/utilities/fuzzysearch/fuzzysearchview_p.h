@@ -105,7 +105,7 @@ public:
     const QString             configSimilarsThresholdEntry      = QLatin1String("Similars Threshold");
     const QString             configSimilarsMaxThresholdEntry   = QLatin1String("Similars Maximum Threshold");
 
-    bool                      active                            = false;  ///< initially be active to update sketch panel when the search list is restored
+    bool                      active                            = false;  ///< @note Initially be active to update sketch panel when the search list is restored.
     bool                      fingerprintsChecked               = false;
 
     QColor                    selColor;

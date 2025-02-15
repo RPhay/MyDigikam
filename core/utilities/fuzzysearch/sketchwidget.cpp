@@ -418,7 +418,7 @@ void SketchWidget::addPath(QXmlStreamReader& reader)
 
         if      (element == QXmlStreamReader::StartElement)
         {
-            // The line element has four attributes, x1,y1,x2,y2
+            // The line element has four attributes: x1,y1,x2,y2
 
             if (reader.name() == QLatin1String("Line"))
             {

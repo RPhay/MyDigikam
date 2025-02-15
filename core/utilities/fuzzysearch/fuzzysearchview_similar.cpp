@@ -22,8 +22,7 @@ namespace Digikam
 
 QWidget* FuzzySearchView::setupFindSimilarPanel() const
 {
-    const int spacing = layoutSpacing();
-
+    const int spacing     = layoutSpacing();
 
     DHBox* const imageBox = new DHBox();
     d->imageWidget        = new QLabel(imageBox);

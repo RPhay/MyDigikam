@@ -22,8 +22,7 @@ namespace Digikam
 
 QWidget* FuzzySearchView::setupSketchPanel() const
 {
-    const int spacing = layoutSpacing();
-
+    const int spacing       = layoutSpacing();
 
     DHBox* const drawingBox = new DHBox();
     d->sketchWidget         = new SketchWidget(drawingBox);

@@ -34,7 +34,6 @@ namespace Digikam
 
 class Q_DECL_HIDDEN FindDuplicatesAlbumItem::Private
 {
-
 public:
 
     Private()
@@ -43,6 +42,8 @@ public:
         collator.setIgnorePunctuation(false);
         collator.setCaseSensitivity(Qt::CaseSensitive);
     }
+
+public:
 
     bool      hasThumb  = false;
 

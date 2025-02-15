@@ -37,10 +37,11 @@ namespace Digikam
 
 class Q_DECL_HIDDEN FindDuplicatesAlbum::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     const int            iconSize        = 64;
 
@@ -144,7 +145,7 @@ void FindDuplicatesAlbum::updateDuplicatesAlbumItems(const QList<SAlbum*>& sAlbu
                                                      const QList<qlonglong>& deletedImages)
 {
     FindDuplicatesAlbumItem* currentItem = nullptr;
-    const auto sels = selectedItems();
+    const auto sels                      = selectedItems();
 
     for (QTreeWidgetItem* const selectedItem : sels)
     {
