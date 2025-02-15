@@ -166,7 +166,7 @@ BUGFIXES:
 112 ==> 499739 - When confirming face recommendations, clicking Enter in the name list tags current photo, plus next.
 113 ==> 499809 - Add possibility to batch rename files without modifying them too.
 114 ==> 500091 - Image Quality Sort options do not show configuration items as in v5.
-115 ==> 
+115 ==> 499880 - Update digiKam db from single file geotag.
 116 ==> 
 117 ==> 
 118 ==> 
