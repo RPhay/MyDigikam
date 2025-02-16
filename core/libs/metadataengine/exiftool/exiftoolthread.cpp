@@ -31,14 +31,10 @@ ExifToolThread::ExifToolThread(QObject* const parent)
         {
             quit();
             wait();
+
+            delete this;
         }
     );
-}
-
-ExifToolThread::~ExifToolThread()
-{
-    quit();
-    wait();
 }
 
 void ExifToolThread::run()
