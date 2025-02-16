@@ -32,6 +32,7 @@ ExifToolThread::ExifToolThread(QObject* const parent)
             quit();
             wait();
 
+            delete ExifToolProcess::internalPtr;
             delete this;
         }
     );
