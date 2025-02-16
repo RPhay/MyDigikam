@@ -24,15 +24,8 @@ namespace Digikam
 {
 
 ExifToolThread::ExifToolThread(QObject* const parent)
-    : QThread()
+    : QThread(parent)
 {
-    connect(parent, &QObject::destroyed,
-            this, [this](QObject*)
-        {
-            quit();
-            wait();
-        }
-    );
 }
 
 ExifToolThread::~ExifToolThread()
@@ -56,6 +49,7 @@ void ExifToolThread::run()
         (ExifToolProcess::instance()->thread() == this)
        )
     {
+        qDebug() << "ExifToolThread: shutDownExifTool()";
         ExifToolProcess::instance()->shutDownExifTool();
     }
 }
