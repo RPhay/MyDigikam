@@ -136,10 +136,12 @@ public:
     ~ExifToolProcess();
 
     /**
-     * @brief Q_GLOBAL_STATIC implementation
+     * @brief internalPtr - singleton implementation
      */
-    static ExifToolProcess* instance();
-    static bool             isCreated();
+    static QPointer<ExifToolProcess> internalPtr;
+
+    static bool                      isCreated();
+    static ExifToolProcess*          instance();
 
     /**
      * Setup connections, apply Settings and start ExifTool process.

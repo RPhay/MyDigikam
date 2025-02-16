@@ -20,16 +20,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN ExifToolProcessCreator
-{
-public:
-
-    ExifToolProcess object;
-};
-
-Q_GLOBAL_STATIC(ExifToolProcessCreator, exifToolProcessCreator)
-
-// -----------------------------------------------------------------------------------------------
+QPointer<ExifToolProcess> ExifToolProcess::internalPtr = QPointer<ExifToolProcess>();
 
 ExifToolProcess::ExifToolProcess()
     : QProcess(nullptr),
@@ -40,17 +31,24 @@ ExifToolProcess::ExifToolProcess()
 
 ExifToolProcess::~ExifToolProcess()
 {
+    internalPtr = nullptr;
+
     delete d;
 }
 
 bool ExifToolProcess::isCreated()
 {
-    return exifToolProcessCreator.exists();
+    return (!internalPtr.isNull());
 }
 
 ExifToolProcess* ExifToolProcess::instance()
 {
-    return &exifToolProcessCreator->object;
+    if (internalPtr.isNull())
+    {
+        internalPtr = new ExifToolProcess();
+    }
+
+    return internalPtr;
 }
 
 void ExifToolProcess::setExifToolProgram(const QString& etExePath)

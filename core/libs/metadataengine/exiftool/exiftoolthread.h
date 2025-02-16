@@ -33,7 +33,7 @@ class DIGIKAM_EXPORT ExifToolThread : public QThread
 public:
 
     explicit ExifToolThread(QObject* const parent);
-    ~ExifToolThread() override;
+    ~ExifToolThread() override = default;
 
 Q_SIGNALS:
 
