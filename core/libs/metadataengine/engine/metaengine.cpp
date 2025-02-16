@@ -143,14 +143,6 @@ bool MetaEngine::initializeExiv2()
 
 #endif
 
-    // Start ExifTool thread and process
-
-    if (!ExifToolProcess::isCreated())
-    {
-        ExifToolThread* const exifToolThread = new ExifToolThread(qApp);
-        exifToolThread->start();
-    }
-
     return true;
 }
 
