@@ -35,11 +35,9 @@ FaceGroup::FaceGroup(GraphicsDImgView* const view)
 
     connect(view->previewItem(), SIGNAL(stateChanged(int)),
             this, SLOT(itemStateChanged(int)));
-/*
-    d->editPipeline.plugDatabaseEditor();
-    d->editPipeline.plugTrainer();
-    d->editPipeline.construct();
-*/
+
+    connect(CoreDbAccess::databaseWatch(), SIGNAL(imageTagChange(ImageTagChangeset)),
+            this, SLOT(slotImageTagChange(ImageTagChangeset)));
 }
 
 FaceGroup::~FaceGroup()
@@ -52,10 +50,6 @@ void FaceGroup::itemStateChanged(int itemState)
     switch (itemState)
     {
         case DImgPreviewItem::NoImage:
-
-/*
-        case DImgPreviewItem::Loading:
-*/
         case DImgPreviewItem::ImageLoadingFailed:
         {
             d->visibilityController->hide();
@@ -409,6 +403,25 @@ void FaceGroup::slotAlbumRenamed(Album* album)
            )
         {
             item->updateCurrentTag();
+        }
+    }
+}
+
+void FaceGroup::slotImageTagChange(const ImageTagChangeset& changeset)
+{
+    if (!changeset.containsImage(d->info.id()))
+    {
+        return;
+    }
+
+    if (changeset.operation() == ImageTagChangeset::PropertiesChanged)
+    {
+        if (
+            changeset.containsTag(FaceTags::unknownPersonTagId())  ||
+            changeset.containsTag(FaceTags::unconfirmedPersonTagId())
+           )
+        {
+            load();
         }
     }
 }

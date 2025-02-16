@@ -27,6 +27,7 @@ namespace Digikam
 
 class Album;
 class ItemInfo;
+class ImageTagChangeset;
 class GraphicsDImgView;
 class RegionFrameItem;
 class TaggingAction;
@@ -133,6 +134,7 @@ protected Q_SLOTS:
     void startAutoSuggest();
     void slotAlbumsUpdated(int type);
     void slotAlbumRenamed(Album* album);
+    void slotImageTagChange(const ImageTagChangeset& changeset);
     void slotAssigned(const TaggingAction& action, const ItemInfo& info, const QVariant& faceIdentifier);
     void slotRejected(const ItemInfo& info, const QVariant& faceIdentifier);
     void slotIgnored(const ItemInfo& info, const QVariant& faceIdentifier);

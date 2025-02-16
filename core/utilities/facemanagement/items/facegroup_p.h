@@ -42,6 +42,8 @@
 #include "metaenginesettings.h"
 #include "itemvisibilitycontroller.h"
 #include "facepipelineedit.h"
+#include "coredbchangesets.h"
+#include "coredbwatch.h"
 
 namespace Digikam
 {
