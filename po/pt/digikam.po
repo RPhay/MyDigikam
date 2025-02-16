@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-15 02:14+0000\n"
+"POT-Creation-Date: 2025-02-16 01:57+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -1394,7 +1394,7 @@ msgid "Name:"
 msgstr "Nome:"
 
 #: core/app/items/utils/tooltipfiller.cpp:593
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:72
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:71
 #, kde-format
 msgid "Items:"
 msgstr "Itens:"
@@ -3067,7 +3067,7 @@ msgstr ""
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:129
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:148
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:274
 #, kde-format
 msgctxt "@info"
 msgid "Help"
@@ -35468,7 +35468,7 @@ msgstr "Reconhecimento de Caras"
 #: core/libs/facesengine/widgets/facescanwidget.cpp:211
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:254
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -53235,32 +53235,32 @@ msgstr ""
 "ficheiros de configuração antigos, pelo que se recomenda não o fazer neste "
 "momento, ou por sua conta e risco.</p></qt>"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:64
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
 #, kde-format
 msgid "Ref. images"
 msgstr "Imagens de ref"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:66
 #, kde-format
 msgid "Ref. dates"
 msgstr "Imagens de ref"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:66
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:67
 #, kde-format
 msgid "Ref. albums"
 msgstr "Álbuns de ref"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:67
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
 #, kde-format
 msgid "Items"
 msgstr "Itens"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:69
 #, kde-format
 msgid "Avg. similarity"
 msgstr "Semelhança média"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:74
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:75
 #, kde-format
 msgid "This shows all found duplicate items."
 msgstr "Isto mostra todos os itens duplicados encontrados."
@@ -53320,7 +53320,7 @@ msgctxt "@label"
 msgid "Reference Album:"
 msgstr "Referência:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:155
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Reference"
@@ -53328,94 +53328,45 @@ msgctxt "@title:tab"
 msgid "Reference"
 msgstr "Referência"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:176
-#, kde-format
-msgctxt "@label"
-msgid "Similarity range:"
-msgstr "Gama de semelhança:"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
-#, kde-format
-msgctxt "@label"
-msgid "Restriction:"
-msgstr "Restrição:"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:183
-#, kde-format
-msgctxt "@label:listbox similarity restriction"
-msgid "None"
-msgstr "Nenhuma"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
 #, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity restriction"
-#| msgid "Restrict to reference album"
-msgctxt "@label:listbox similarity restriction"
-msgid "Restrict to reference Album"
-msgstr "Restringir ao álbum de referência"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity restriction"
-#| msgid "Exclude reference album"
-msgctxt "@label:listbox similarity restriction"
-msgid "Exclude reference Album"
-msgstr "Excluir o álbum de referência"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Use this option to restrict the duplicate search with some criteria, as "
-#| "to limit search to the album of reference image, or to exclude the album "
-#| "of reference image of the search."
-msgctxt "@info"
-msgid ""
-"Use this option to restrict the duplicate search with some criteria, as to "
-"limit search to the Album of reference image, or to exclude the Album of "
-"reference image of the search."
-msgstr ""
-"Use esta opção para restringir a pesquisa por duplicados com alguns "
-"critérios, como o limite da pesquisa ao álbum da imagem de referência ou "
-"para excluir o álbum da imagem de referência da pesquisa."
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
-#, kde-format
+#| msgctxt "@label"
+#| msgid "Restrict to:"
 msgctxt "@label"
-msgid "Restrict to:"
+msgid "Restrict Search to:"
 msgstr "Restringir a:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Apenas a página seleccionada"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:215
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:182
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Um deles"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:218
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Ambos"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:221
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Álbuns mas não marcas"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:224
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:191
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Marcas mas não álbuns"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -53431,15 +53382,14 @@ msgstr "Marcas mas não álbuns"
 #| "\"Only selected tab\" means that only the selected tab is used."
 msgctxt "@info"
 msgid ""
-"Use this option to decide about the relation of the selected albums and "
+"Use this option to decide about the relation of the selected search-in "
+"albums and tags.\n"
+"\"Only selected tab\": only the Search In selected tab is used.\n"
+"\"One of\": the images are either in the selected albums or tags.\n"
+"\"Both\": the images are both in the selected albums and tags.\n"
+"\"Albums but not tags\": images must be in the selected albums but not "
 "tags.\n"
-"\"Only selected tab\" means that only the selected tab is used.\n"
-"\"One of\" means that the images are either in the selected albums or tags.\n"
-"\"Both\" means that the images are both in the selected albums and tags.\n"
-"\"Albums but not tags\" means that images must be in the selected albums but "
-"not tags.\n"
-"\"Tags but not albums\" means that images must be in the selected tags but "
-"not albums."
+"\"Tags but not albums\": images must be in the selected tags but not albums."
 msgstr ""
 "Use esta opção para decidir a relação dos álbuns e marcas seleccionados.\n"
 "\"Um dos\" significa que as imagens estão ou nos álbuns ou nas marcas "
@@ -53453,26 +53403,77 @@ msgstr ""
 "\"Apenas a página seleccionada\" significa que é usada apenas a página "
 "seleccionada."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:259
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#, kde-format
+msgctxt "@label"
+msgid "Similarity range:"
+msgstr "Gama de semelhança:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:233
+#, fuzzy, kde-format
+#| msgid "Last Search"
+msgctxt "@label"
+msgid "Limit Search to:"
+msgstr "Última Procura"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:237
+#, kde-format
+msgctxt "@label:listbox similarity restriction"
+msgid "None"
+msgstr "Nenhuma"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:238
+#, fuzzy, kde-format
+#| msgid "Reference:"
+msgctxt "@label:listbox similarity restriction"
+msgid "Reference Album only"
+msgstr "Referência:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox similarity restriction"
+#| msgid "Exclude reference album"
+msgctxt "@label:listbox similarity restriction"
+msgid "Exclude reference Album"
+msgstr "Excluir o álbum de referência"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:240
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Use this option to restrict the duplicate search with some criteria, as "
+#| "to limit search to the album of reference image, or to exclude the album "
+#| "of reference image of the search."
+msgctxt "@info"
+msgid ""
+"Use this option to restrict the duplicate search with some criteria, as to "
+"limit search to the Album\n"
+"of reference image, or to exclude the Album of reference image of the search."
+msgstr ""
+"Use esta opção para restringir a pesquisa por duplicados com alguns "
+"critérios, como o limite da pesquisa ao álbum da imagem de referência ou "
+"para excluir o álbum da imagem de referência da pesquisa."
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:269
 #, kde-format
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "Actualizar as impressões digitais"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:261
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:271
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr ""
 "Use este botão para actualizar todas as impressões digitais das imagens."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:278
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:288
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Procurar os duplicados"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:280
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
@@ -53480,13 +53481,13 @@ msgstr ""
 "Use este botão para analisar os álbuns seleccionados, de modo a descobrir os "
 "itens duplicados."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:283
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Remover os Duplicados"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:285
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:295
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -53522,46 +53523,50 @@ msgstr ""
 "adequadamente sem estas impressões digitais geradas. Por favor, faça a "
 "geração das impressões digitais primeiro."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:31
-#, kde-format
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:30
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
+#| "p><p>You can also use the context menu<br/> when browsing through your "
+#| "images.</p>"
 msgid ""
 "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-"p><p>You can also use the context menu<br/> when browsing through your "
+"p><p>You can also use the context menu<br/>when browsing through<br/>your "
 "images.</p>"
 msgstr ""
 "<p>Arraste e largue aqui uma imagem<br/>para efectuar uma pesquisa<br/>por "
 "itens semelhantes.</p><p>Poderá também usar o menu de contexto<br/> ao "
 "navegar pelas suas imagens.</p>"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:39
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
 #, kde-format
 msgid "<b>File</b>:"
 msgstr "<b>Ficheiro</b>:"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:41
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:40
 #, kde-format
 msgid "<b>Folder</b>:"
 msgstr "<b>Pasta</b>:"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:51
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:93
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:50
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:92
 #, kde-format
 msgctxt "@label"
 msgid "Search in albums:"
 msgstr "Procurar nos álbuns:"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:57
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:56
 #, kde-format
 msgid "Similarity range:"
 msgstr "Gama de semelhança:"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:73
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:72
 #, kde-format
 msgid "Select here the approximate similarity interval as a percentage. "
 msgstr ""
 "Seleccione aqui o intervalo de semelhança aproximado como uma percentagem. "
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:84
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:83
 #, kde-format
 msgid ""
 "Enter the name of the current similar image search to save in the "
@@ -53570,13 +53575,13 @@ msgstr ""
 "Indique aqui o nome da pesquisa de itens semelhantes actual a gravar na área "
 "\"Pesquisas por Semelhança\"."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:90
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:89
 #, kde-format
 msgid "Save current similar image search to a new virtual Album"
 msgstr ""
 "Gravar a pesquisa de imagens semelhantes actual como um álbum virtual novo"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:91
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:90
 #, kde-format
 msgid ""
 "If you press this button, the current similar image search will be saved to "
@@ -53585,57 +53590,57 @@ msgstr ""
 "Se carregar neste botão, a pesquisa de imagens semelhantes actual será "
 "guardada num novo álbum virtual de pesquisa no lado esquerdo."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:35
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:34
 #, kde-format
 msgid "Set here the brush color used to draw sketch."
 msgstr "Escolha aqui a cor usada para fazer o desenho."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:54
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:53
 #, kde-format
 msgid "Undo last draw on sketch"
 msgstr "Desfazer o último desenho"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:55
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:54
 #, kde-format
 msgid "Use this button to undo last drawing action on sketch."
 msgstr "Use este botão para desfazer a última acção de desenho."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:61
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:60
 #, kde-format
 msgid "Redo last draw on sketch"
 msgstr "Refazer o último desenho"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:62
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:61
 #, kde-format
 msgid "Use this button to redo last drawing action on sketch."
 msgstr "Use este botão para refazer a última acção de desenho."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:65
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:64
 #, kde-format
 msgid "Pen:"
 msgstr "Caneta:"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:70
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:69
 #, kde-format
 msgid "Set here the brush size in pixels used to draw sketch."
 msgstr "Escolha aqui o tamanho do pincel usado para o desenho."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:77
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:76
 #, kde-format
 msgid "Set here the number of items to find using sketch."
 msgstr "Indique aqui o número de itens a encontrar com o desenho."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:105
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:104
 #, kde-format
 msgid "Clear sketch"
 msgstr "Limpar o desenho"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:106
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:105
 #, kde-format
 msgid "Use this button to clear sketch contents."
 msgstr "Use este botão para limpar o conteúdo do desenho."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:110
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:109
 #, kde-format
 msgid ""
 "Enter the name of the current sketch search to save in the \"Similarity "
@@ -53644,12 +53649,12 @@ msgstr ""
 "Indique aqui o nome da pesquisa por desenho actual a gravar na área "
 "\"Pesquisas por Semelhança\"."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:116
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:115
 #, kde-format
 msgid "Save current sketch search to a new virtual Album"
 msgstr "Gravar a pesquisa por desenho actual como um álbum virtual novo"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:117
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:116
 #, kde-format
 msgid ""
 "If you press this button, the current sketch fuzzy search will be saved to a "
@@ -59868,17 +59873,17 @@ msgstr "Editar os Comentários"
 msgid "Show Assigned Tags"
 msgstr "Mostrar as Marcas Atribuídas"
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:224
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:228
 #, kde-format
 msgid "Assign Tag"
 msgstr "Atribuir uma Marca"
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:225
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:229
 #, kde-format
 msgid "Remove Tag"
 msgstr "Remover a Marca"
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:250
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:254
 #, kde-format
 msgid "Assign Labels"
 msgstr "Atribuir as Legendas"
@@ -69065,6 +69070,17 @@ msgstr "Itens do Álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importar os Itens"
+
+#~ msgctxt "@label"
+#~ msgid "Restriction:"
+#~ msgstr "Restrição:"
+
+#, fuzzy
+#~| msgctxt "@label:listbox similarity restriction"
+#~| msgid "Restrict to reference album"
+#~ msgctxt "@label:listbox similarity restriction"
+#~ msgid "Restrict to reference Album"
+#~ msgstr "Restringir ao álbum de referência"
 
 #~ msgctxt "@label"
 #~ msgid "Search in:"

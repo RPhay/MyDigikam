@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-09 01:50+0000\n"
+"POT-Creation-Date: 2025-02-15 02:14+0000\n"
 "PO-Revision-Date: 2024-08-27 20:25+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -453,7 +453,7 @@ msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
 msgstr "Kan ikkje ha denne merkelappen"
 
-#: core/app/items/delegate/itemdelegate.cpp:386
+#: core/app/items/delegate/itemdelegate.cpp:387
 #, kde-format
 msgid "Reference Image"
 msgstr "Referansebilete"
@@ -2879,20 +2879,29 @@ msgctxt "Search images on a map"
 msgid "Map"
 msgstr "Kart"
 
-#: core/app/views/sidebar/labelssidebarwidget.cpp:78
-#: core/app/views/sidebar/labelssidebarwidget.cpp:87
+#: core/app/views/sidebar/labelssidebarwidget.cpp:80
+#: core/app/views/sidebar/labelssidebarwidget.cpp:91
 #, kde-format
 msgid "Image Quality Scan"
 msgstr ""
 
-#: core/app/views/sidebar/labelssidebarwidget.cpp:89
+#: core/app/views/sidebar/labelssidebarwidget.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for image quality parsing"
 msgstr ""
 
+#: core/app/views/sidebar/labelssidebarwidget.cpp:96
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:129
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:148
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
+#, kde-format
+msgctxt "@info"
+msgid "Help"
+msgstr ""
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/app/views/sidebar/labelssidebarwidget.cpp:164
+#: core/app/views/sidebar/labelssidebarwidget.cpp:183
 #: core/libs/album/widgets/albumselecttabs.cpp:182
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:133
@@ -2901,19 +2910,19 @@ msgstr ""
 msgid "Labels"
 msgstr "Kategoriar"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:109
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:118
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:113
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Søk i samlinga etter ansikt"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:120
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:169
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:190
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -2923,7 +2932,7 @@ msgstr ""
 "brukar ho, er det lurt å sjå kikka på hjelpe­boksen i panelet nede til "
 "venstre."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:224
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:245
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -2932,7 +2941,7 @@ msgstr ""
 "Ansiktsattkjenninga vart avbroten, då det ikkje finst nokon identitetar å "
 "kjenna att. Legg til identitetar."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:244
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:265
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -2944,39 +2953,39 @@ msgctxt "Advanced search images, access stored searches"
 msgid "Search"
 msgstr "Søk"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:103
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
 #, kde-format
 msgid "Open Tag Manager"
 msgstr "Opna merkelapphandsamar"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:104
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:106
 #, kde-format
 msgid "No Tags"
 msgstr "Ingen merkelappar"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:107
 #, kde-format
 msgid "Existing Tags"
 msgstr "Eksisterande merkelappar"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:130
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:139
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:143
 #, kde-format
 msgid "Auto-tag Scan"
 msgstr ""
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:141
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
 msgstr ""
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:298
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:317
 #, kde-format
 msgid "No Tags Album"
 msgstr "Ingen albummerkelappar"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:325
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:344
 #: core/libs/album/engine/album.cpp:554
 #: core/libs/album/manager/albummanager.cpp:182
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -3143,13 +3152,13 @@ msgid "Last Search"
 msgstr "Førre søk"
 
 #: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:114
+#: core/app/views/stack/itemiconview_search.cpp:109
 #, kde-format
 msgid "FacesEngine"
 msgstr ""
 
 #: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:116
+#: core/app/views/stack/itemiconview_search.cpp:111
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -5936,36 +5945,36 @@ msgid ""
 "file with ExifTool.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:89
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
 #, kde-format
 msgid "Titles:"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:93
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
 #, kde-format
 msgid "Captions:"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:101
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:104
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:106
 #, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:107
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6089,133 +6098,133 @@ msgid ""
 "by parsing image and estimate the quality.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:96
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:98
 #, kde-format
 msgctxt "@title"
 msgid "Exif:"
 msgstr "Exif:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:98
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:100
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Completely"
 msgstr "Fullstendig"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:99
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:101
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Date"
 msgstr "Dato"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:100
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:102
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "GPS"
 msgstr "GPS"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:101
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:103
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "XPKeywords"
 msgstr "XPKeywords"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:102
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Comment and description"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
 #, kde-format
 msgctxt "@title"
 msgid "Iptc:"
 msgstr "IPTC:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Completely"
 msgstr "Fullstendig"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Date"
 msgstr "Dato"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Caption"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Preview image"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
 #, kde-format
 msgctxt "@title"
 msgid "Xmp:"
 msgstr "XMP:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Completely"
 msgstr "Fullstendig"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:114
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Date"
 msgstr "Dato"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:119
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr "Dublin Core"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:119
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr "Exif"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "Video"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:215
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:217
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
@@ -6260,37 +6269,37 @@ msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can adjust time in images.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:93
+#: core/dplugins/bqm/metadata/translate/translate.cpp:95
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Title"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:94
+#: core/dplugins/bqm/metadata/translate/translate.cpp:96
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:95
+#: core/dplugins/bqm/metadata/translate/translate.cpp:97
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Copyrights"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:96
+#: core/dplugins/bqm/metadata/translate/translate.cpp:98
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:99
+#: core/dplugins/bqm/metadata/translate/translate.cpp:101
 #, kde-format
 msgctxt "@label"
 msgid "Translate to:"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:137
+#: core/dplugins/bqm/metadata/translate/translate.cpp:139
 #, kde-format
 msgctxt "@label"
 msgid "Entries to Translate with %1:"
@@ -21195,7 +21204,7 @@ msgid "Slideshow"
 msgstr "Lysbiletframvising"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
-#: core/libs/settings/applicationsettings_miscs.cpp:488
+#: core/libs/settings/applicationsettings_miscs.cpp:438
 #, kde-format
 msgid "Slideshow"
 msgstr "Lysbiletframvising"
@@ -33081,6 +33090,180 @@ msgid ""
 "%1"
 msgstr ""
 
+#: core/libs/facesengine/widgets/facescanwidget.cpp:90
+#: core/libs/imgqsort/imagequalitywidget.cpp:61
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:115
+#, kde-format
+msgctxt "@title:tab"
+msgid "Search in"
+msgstr "Søk i"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:102
+#, kde-format
+msgctxt "@label Face Worflow"
+msgid "Workflow:"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:106
+#: core/utilities/maintenance/main/maintenancedlg.cpp:207
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Scan new images"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:107
+#: core/utilities/maintenance/main/maintenancedlg.cpp:208
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Scan all images"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:108
+#: core/utilities/maintenance/main/maintenancedlg.cpp:209
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Recognize faces only"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:110
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"digiKam can search for faces in your photos.\n"
+"When you have identified your friends on a number of photos,\n"
+"it can also recognize the people shown on your photos.\n"
+"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
+"new images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
+"all images found in the albums selected in the \"Search in\" tab.</"
+"p><p><b>Recognize faces only</b> will try to match unknown faces with "
+"confirmed faces without scanning images new faces.</p>"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:128
+#, kde-format
+msgctxt "@label Face Detection Accuracy"
+msgid "Accuracy:"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:135
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Adjust sensitivity versus specificity: the higher the value, the more "
+"accurately faces will\n"
+"be detected, but less faces will be detected."
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:140
+#, kde-format
+msgctxt "@label face size for detection"
+msgid "Face size:"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:144
+#, kde-format
+msgctxt "@label: listbox face size"
+msgid "Extra Small"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:145
+#, kde-format
+msgctxt "@label: listbox face size"
+msgid "Small"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:146
+#, kde-format
+msgctxt "@label: listbox face size"
+msgid "Medium"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:147
+#, kde-format
+msgctxt "@label: listbox face size"
+msgid "Large"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:148
+#, kde-format
+msgctxt "@label: listbox face size"
+msgid "Extra Large"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:151
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"<p>Selecting <b>Extra Small</b> means the model will detect small background "
+"faces in addition to medium and larger faces. Selecting <b>Small Faces</b> "
+"increases the sensitivity of the model by tuning the model parameters. It "
+"will also increase the probability of false-positives, and it will increase "
+"detection time.</p><p>Selecting <b>Large</b> or <b>Extra Large</b> will "
+"eliminate small background faces from being detected. It is much faster and "
+"will reduce the number of false-positives, but will not detect small faces "
+"in the background or faces in large group photos.</p><p>If you want to "
+"detect all faces in one pass, select <b>Extra Small</b> faces and set the "
+"detection accuracy to 2. Unfortunately, this will create a significant "
+"number of false-positives. It is recommended to set a detection accuracy of "
+"6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
+"p><p>This setting applies only to YuNet.</p>"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:168
+#, kde-format
+msgid "Face Detection Settings"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:177
+#, kde-format
+msgctxt "@label Face Recognition Accuracy"
+msgid "Accuracy:"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:184
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Adjust sensitivity versus specificity: the higher the value, the more "
+"accurately faces will\n"
+"be recognized, but less faces will be recognized.\n"
+"Note: only faces that are very similar to pre-tagged faces are recognized."
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:194
+#: core/libs/imgqsort/imagequalitywidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
+#, kde-format
+msgctxt "@option:check"
+msgid "Work on all processor cores"
+msgstr "Arbeid på alle prosessorkjernane"
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:196
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Face detection and recognition are time-consuming tasks.\n"
+"You can choose if you wish to employ all processor cores\n"
+"on your system, or work in the background only on one core."
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:200
+#, kde-format
+msgid "Face Recognition Settings"
+msgstr ""
+
+#: core/libs/facesengine/widgets/facescanwidget.cpp:211
+#: core/libs/imgqsort/imagequalitywidget.cpp:180
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:254
+#, kde-format
+msgctxt "@title:tab"
+msgid "Settings"
+msgstr ""
+
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:94
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:145
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:194
@@ -33533,14 +33716,6 @@ msgstr ""
 msgid "Select All"
 msgstr "Merk alle"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:61
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:95
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:135
-#, kde-format
-msgctxt "@title:tab"
-msgid "Search in"
-msgstr "Søk i"
-
 #: core/libs/imgqsort/imagequalitywidget.cpp:66
 #, kde-format
 msgctxt "@info"
@@ -33565,19 +33740,19 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
 #, kde-format
-msgctxt "@label:image quality sort scan mode"
+msgctxt "@label: image quality sort scan mode"
 msgid "Scan Mode:"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
 #, kde-format
-msgctxt "@item:all items to scan with image quality sort"
+msgctxt "@item: all items to scan with image quality sort"
 msgid "All"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
 #, kde-format
-msgctxt "@item:image quality sort only non assigned items"
+msgctxt "@item: image quality sort only non assigned items"
 msgid "Non-Assigned Only"
 msgstr ""
 
@@ -33667,125 +33842,126 @@ msgid ""
 "See the relevant settings from the next <b>Basic Factors</b> tab."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:169
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:182
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:301
+#: core/libs/imgqsort/imagequalitywidget.cpp:161
 #, kde-format
-msgctxt "@title:tab"
-msgid "Settings"
+msgctxt "@info:tooltip"
+msgid ""
+"Quality detection is time-consuming tasks.\n"
+"You can choose if you wish to employ all processor cores\n"
+"on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:176
+#: core/libs/imgqsort/imagequalitywidget.cpp:187
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:182
+#: core/libs/imgqsort/imagequalitywidget.cpp:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:184
+#: core/libs/imgqsort/imagequalitywidget.cpp:195
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:190
+#: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:192
+#: core/libs/imgqsort/imagequalitywidget.cpp:203
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:198
+#: core/libs/imgqsort/imagequalitywidget.cpp:209
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:200
+#: core/libs/imgqsort/imagequalitywidget.cpp:211
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:201
+#: core/libs/imgqsort/imagequalitywidget.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:203
-#: core/libs/imgqsort/imagequalitywidget.cpp:213
-#: core/libs/imgqsort/imagequalitywidget.cpp:223
+#: core/libs/imgqsort/imagequalitywidget.cpp:214
+#: core/libs/imgqsort/imagequalitywidget.cpp:224
+#: core/libs/imgqsort/imagequalitywidget.cpp:234
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:208
+#: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:210
+#: core/libs/imgqsort/imagequalitywidget.cpp:221
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:211
+#: core/libs/imgqsort/imagequalitywidget.cpp:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:218
+#: core/libs/imgqsort/imagequalitywidget.cpp:229
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:220
+#: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:221
+#: core/libs/imgqsort/imagequalitywidget.cpp:232
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:228
+#: core/libs/imgqsort/imagequalitywidget.cpp:239
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:230
+#: core/libs/imgqsort/imagequalitywidget.cpp:241
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:231
+#: core/libs/imgqsort/imagequalitywidget.cpp:242
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:261
+#: core/libs/imgqsort/imagequalitywidget.cpp:272
 #, kde-format
 msgctxt "@title:tab"
 msgid "Basic Factors"
@@ -35840,7 +36016,7 @@ msgid "Properties"
 msgstr "Eigenskapar"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
-#: core/libs/settings/applicationsettings_miscs.cpp:473
+#: core/libs/settings/applicationsettings_miscs.cpp:423
 #: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid "Metadata"
@@ -37379,78 +37555,78 @@ msgstr ""
 msgid "Arriflex Camera Raw Image Format"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:442
+#: core/libs/settings/applicationsettings_miscs.cpp:392
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr "Vil du utføra handlinga på alle grupperte element?"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:444
+#: core/libs/settings/applicationsettings_miscs.cpp:394
 #, kde-format
 msgid "Remember choice for this operation"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:478
+#: core/libs/settings/applicationsettings_miscs.cpp:428
 #: core/utilities/lighttable/lighttablewindow.cpp:51
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Lysbord"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:483
+#: core/libs/settings/applicationsettings_miscs.cpp:433
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:195
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Kø­handsamar"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:493
+#: core/libs/settings/applicationsettings_miscs.cpp:443
 #, kde-format
 msgid "Renaming"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:498
+#: core/libs/settings/applicationsettings_miscs.cpp:448
 #, kde-format
 msgid "Import/Export tools"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:503
+#: core/libs/settings/applicationsettings_miscs.cpp:453
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:520
+#: core/libs/settings/applicationsettings_miscs.cpp:470
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
 "rotation"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:525
+#: core/libs/settings/applicationsettings_miscs.cpp:475
 #, kde-format
 msgid "Adding items to the Light Table"
 msgstr "Legg bilete på lysbordet"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:530
+#: core/libs/settings/applicationsettings_miscs.cpp:480
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:535
+#: core/libs/settings/applicationsettings_miscs.cpp:485
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:540
+#: core/libs/settings/applicationsettings_miscs.cpp:490
 #, kde-format
 msgid "Renaming items"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:545
+#: core/libs/settings/applicationsettings_miscs.cpp:495
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:550
+#: core/libs/settings/applicationsettings_miscs.cpp:500
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
@@ -37561,7 +37737,7 @@ msgstr ""
 msgid "Found %1 objects. Tags: %2"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:104
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -37573,25 +37749,25 @@ msgid ""
 "database.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:106
 #, kde-format
-msgctxt "@label:autotags scanning mode"
+msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
 #, kde-format
-msgctxt "@item:all items to scan with autotags"
+msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #, kde-format
-msgctxt "@item:autotags scan only non assigned items"
+msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37599,24 +37775,24 @@ msgid ""
 "scan only the items with no assigned autotags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:124
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
 #, kde-format
 msgid "Auto-Tagging Mode:"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:129
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
 #, kde-format
-msgctxt "@item:remplace existing autotags entries in database"
+msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:130
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
 #, kde-format
-msgctxt "@item:update the autotags entries in database"
+msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:132
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37625,23 +37801,23 @@ msgid ""
 "existing tags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:136
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
 #, kde-format
-msgctxt "@label:deep learning model selection to perform autotags"
+msgctxt "@label: deep learning model selection to perform autotags"
 msgid "Selection Model:"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:146
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, kde-format
 msgid "No models available"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:159
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:145
 #, kde-format
 msgid "Detection Accuracy:"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:164
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:150
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37650,15 +37826,7 @@ msgid ""
 "be recognized, but fewer objects will be recognized.\n"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:169
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:287
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
-msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr "Arbeid på alle prosessorkjernane"
-
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:171
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37667,13 +37835,13 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:187
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:178
 #, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:189
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:180
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
@@ -49578,165 +49746,6 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:93
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"digiKam can search for faces in your photos.\n"
-"When you have identified your friends on a number of photos,\n"
-"it can also recognize the people shown on your photos."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:101
-#: core/utilities/maintenance/main/maintenancedlg.cpp:207
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Scan new images"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:102
-#: core/utilities/maintenance/main/maintenancedlg.cpp:208
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Scan all images"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:103
-#: core/utilities/maintenance/main/maintenancedlg.cpp:209
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Recognize faces only"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:105
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
-"new images found in the albums selected in the \"Search in\" tab.</"
-"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
-"all images found in the albums selected in the \"Search in\" tab.</"
-"p><p><b>Recognize faces only</b> will try to match unknown faces with "
-"confirmed faces without scanning images new faces.</p>"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:111
-#, kde-format
-msgctxt "@info"
-msgid "Help"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:129
-#, kde-format
-msgctxt "@title:tab"
-msgid "Workflow"
-msgstr "Arbeidsflyt"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:150
-#, kde-format
-msgctxt "@label Face Detection Accuracy"
-msgid "Accuracy:"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:157
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will\n"
-"be detected, but less faces will be detected."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
-#, kde-format
-msgctxt "@label face size for detection"
-msgid "Face size:"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:201
-#, kde-format
-msgctxt "@label: listbox face size"
-msgid "Extra Small"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:202
-#, kde-format
-msgctxt "@label: listbox face size"
-msgid "Small"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:203
-#, kde-format
-msgctxt "@label: listbox face size"
-msgid "Medium"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
-#, kde-format
-msgctxt "@label: listbox face size"
-msgid "Large"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
-#, kde-format
-msgctxt "@label: listbox face size"
-msgid "Extra Large"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"<p>Selecting <b>Extra Small</b> means the model will detect small background "
-"faces in addition to medium and larger faces. Selecting <b>Small Faces</b> "
-"increases the sensitivity of the model by tuning the model parameters. It "
-"will also increase the probability of false-positives, and it will increase "
-"detection time.</p><p>Selecting <b>Large</b> or <b>Extra Large</b> will "
-"eliminate small background faces from being detected. It is much faster and "
-"will reduce the number of false-positives, but will not detect small faces "
-"in the background or faces in large group photos.</p><p>If you want to "
-"detect all faces in one pass, select <b>Extra Small</b> faces and set the "
-"detection accuracy to 2. Unfortunately, this will create a significant "
-"number of false-positives. It is recommended to set a detection accuracy of "
-"6-8 and face size of <b>Medium</b> or <b>Large</b> for normal use.</"
-"p><p>This setting applies only to YuNet.</p>"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
-#, kde-format
-msgid "Face Detection Settings"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
-#, kde-format
-msgctxt "@label Face Recognition Accuracy"
-msgid "Accuracy:"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:243
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will\n"
-"be recognized, but less faces will be recognized.\n"
-"Note: only faces that are very similar to pre-tagged faces are recognized."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:289
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"Face detection and recognition are time-consuming tasks.\n"
-"You can choose if you wish to employ all processor cores\n"
-"on your system, or work in the background only on one core."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:293
-#, kde-format
-msgid "Face Recognition Settings"
-msgstr ""
-
 #: core/utilities/firstrun/collectionpage.cpp:58
 #, kde-format
 msgid "<b>Configure where you keep your images</b>"
@@ -50073,181 +50082,181 @@ msgstr ""
 msgid "This shows all found duplicate items."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:108
-#, kde-format
-msgctxt "@action"
-msgid "Update fingerprints"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:110
-#, kde-format
-msgctxt "@info"
-msgid "Use this button to update all image fingerprints."
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:112
-#, kde-format
-msgctxt "@action"
-msgid "Find duplicates"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:114
-#, kde-format
-msgctxt "@info"
-msgid "Use this button to scan the selected albums for duplicate items."
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:119
-#, kde-format
-msgctxt "@label"
-msgid "Search in:"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
-#, kde-format
-msgctxt "@label"
-msgid "Similarity range:"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:141
-#, kde-format
-msgctxt "@label"
-msgid "Restriction:"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:145
-#, kde-format
-msgctxt "@label:listbox similarity restriction"
-msgid "None"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:146
-#, kde-format
-msgctxt "@label:listbox similarity restriction"
-msgid "Restrict to reference album"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:147
-#, kde-format
-msgctxt "@label:listbox similarity restriction"
-msgid "Exclude reference album"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:148
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Use this option to restrict the duplicate search with some criteria, as to "
-"limit search to the album of reference image, or to exclude the album of "
-"reference image of the search."
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:161
-#, kde-format
-msgctxt "@label"
-msgid "Restrict to:"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:174
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "Only selected tab"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:177
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "One of"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:180
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "Both"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:183
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "Albums but not tags"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
-#, kde-format
-msgctxt "@label:listbox similarity album tag relation"
-msgid "Tags but not albums"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Older or Larger"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer selected folder as reference"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer other than selected folder as reference"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:202
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer Newer Creation Date"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:205
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Prefer Newer Modification Date"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
-#, kde-format
-msgctxt "@label:listbox similarity reference selection method"
-msgid "Select method for reference image selection"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
-#, kde-format
-msgctxt "@label"
-msgid "Reference"
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
 #, kde-format
 msgctxt "@info"
 msgid "Reference Image Selection Method"
 msgstr ""
 
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Older or Larger"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:129
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer selected Album as reference"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer other than selected Album as reference"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:135
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Creation Date"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Modification Date"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:142
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Select method for reference image selection"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:144
+#, kde-format
+msgctxt "@label"
+msgid "Reference Album:"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:155
+#, kde-format
+msgctxt "@title:tab"
+msgid "Reference"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:176
+#, kde-format
+msgctxt "@label"
+msgid "Similarity range:"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#, kde-format
+msgctxt "@label"
+msgid "Restriction:"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:183
+#, kde-format
+msgctxt "@label:listbox similarity restriction"
+msgid "None"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
+#, kde-format
+msgctxt "@label:listbox similarity restriction"
+msgid "Restrict to reference Album"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#, kde-format
+msgctxt "@label:listbox similarity restriction"
+msgid "Exclude reference Album"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Use this option to restrict the duplicate search with some criteria, as to "
+"limit search to the Album of reference image, or to exclude the Album of "
+"reference image of the search."
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
+#, kde-format
+msgctxt "@label"
+msgid "Restrict to:"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "Only selected tab"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:215
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "One of"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:218
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "Both"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:221
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "Albums but not tags"
+msgstr ""
+
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:224
+#, kde-format
+msgctxt "@label:listbox similarity album tag relation"
+msgid "Tags but not albums"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to decide about the relation of the selected albums and "
 "tags.\n"
+"\"Only selected tab\" means that only the selected tab is used.\n"
 "\"One of\" means that the images are either in the selected albums or tags.\n"
 "\"Both\" means that the images are both in the selected albums and tags.\n"
 "\"Albums but not tags\" means that images must be in the selected albums but "
 "not tags.\n"
 "\"Tags but not albums\" means that images must be in the selected tags but "
-"not albums.\n"
-"\"Only selected tab\" means that only the selected tab is used."
+"not albums."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:240
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:259
+#, kde-format
+msgctxt "@action"
+msgid "Update fingerprints"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:261
+#, kde-format
+msgctxt "@info"
+msgid "Use this button to update all image fingerprints."
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:278
+#, kde-format
+msgctxt "@action"
+msgid "Find duplicates"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:280
+#, kde-format
+msgctxt "@info"
+msgid "Use this button to scan the selected albums for duplicate items."
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:283
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:285
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -58015,7 +58024,7 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:418
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:413
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -58024,7 +58033,7 @@ msgstr ""
 "Ferdig med alle handlingane.\n"
 "Tid brukt: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:419
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:414
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam-vedlikehald"

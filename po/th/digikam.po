@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-15 02:14+0000\n"
+"POT-Creation-Date: 2025-02-16 01:57+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1296,7 +1296,7 @@ msgid "Name:"
 msgstr "ชื่อ:"
 
 #: core/app/items/utils/tooltipfiller.cpp:593
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:72
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:71
 #, kde-format
 msgid "Items:"
 msgstr "จำนวนรายการ:"
@@ -3072,7 +3072,7 @@ msgstr "ใช้ปุ่มนี้เพื่อทำการค้นห
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:129
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:148
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:274
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@info"
@@ -35167,7 +35167,7 @@ msgstr "กลับค่าการเรียงลำดับ"
 #: core/libs/facesengine/widgets/facescanwidget.cpp:211
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:254
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
@@ -53741,35 +53741,35 @@ msgid ""
 "risk.</p></qt>"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:64
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
 #, kde-format
 msgid "Ref. images"
 msgstr "ภาพอ้างอิง"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:66
 #, fuzzy, kde-format
 #| msgid "Ref. images"
 msgid "Ref. dates"
 msgstr "ภาพอ้างอิง"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:66
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:67
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgid "Ref. albums"
 msgstr "อัลบั้มใหม่"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:67
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
 #, kde-format
 msgid "Items"
 msgstr "รายการ"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:69
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgid "Avg. similarity"
 msgstr "ระดับความคล้ายกัน:"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:74
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:75
 #, kde-format
 msgid "This shows all found duplicate items."
 msgstr "ที่ตรงนี้จะแสดงรายการต่าง ๆ ที่ซ้ำกันที่ถูกค้นพบ"
@@ -53825,75 +53825,33 @@ msgctxt "@label"
 msgid "Reference Album:"
 msgstr "อ้างอิง:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:155
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgctxt "@title:tab"
 msgid "Reference"
 msgstr "อ้างอิง:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:176
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
 #, fuzzy, kde-format
-#| msgid "Similarity:"
+#| msgid "Restoration"
 msgctxt "@label"
-msgid "Similarity range:"
-msgstr "ระดับความคล้ายกัน:"
+msgid "Restrict Search to:"
+msgstr "ซ่อมแซมภาพถ่าย"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:179
-#, fuzzy, kde-format
-#| msgid "Restoration"
-msgctxt "@label"
-msgid "Restriction:"
-msgstr "ซ่อมแซมภาพถ่าย"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:183
-#, fuzzy, kde-format
-#| msgid "None"
-msgctxt "@label:listbox similarity restriction"
-msgid "None"
-msgstr "ไม่ใช้"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
-#, fuzzy, kde-format
-msgctxt "@label:listbox similarity restriction"
-msgid "Restrict to reference Album"
-msgstr "ทำการลบอัลบั้มต่าง ๆ ที่เลือกไว้"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
-#, fuzzy, kde-format
-msgctxt "@label:listbox similarity restriction"
-msgid "Exclude reference Album"
-msgstr "ทำการลบอัลบั้มต่าง ๆ ที่เลือกไว้"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Use this option to restrict the duplicate search with some criteria, as to "
-"limit search to the Album of reference image, or to exclude the Album of "
-"reference image of the search."
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
-#, fuzzy, kde-format
-#| msgid "Restoration"
-msgctxt "@label"
-msgid "Restrict to:"
-msgstr "ซ่อมแซมภาพถ่าย"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "ตั้งค่าเนื้อหาใหม่"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:215
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:182
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:218
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
 #, fuzzy, kde-format
 #| msgctxt "toggle child and parent tags"
 #| msgid "Both"
@@ -53901,70 +53859,112 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "ทั้งคู่"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:221
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
 #, fuzzy, kde-format
 #| msgid "File does not exist"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "ยังไม่มีแฟ้มอยู่"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:224
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:191
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "ล้มเหลวในการเปลี่ยนชื่ออัลบั้ม"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
 #, kde-format
 msgctxt "@info"
 msgid ""
-"Use this option to decide about the relation of the selected albums and "
+"Use this option to decide about the relation of the selected search-in "
+"albums and tags.\n"
+"\"Only selected tab\": only the Search In selected tab is used.\n"
+"\"One of\": the images are either in the selected albums or tags.\n"
+"\"Both\": the images are both in the selected albums and tags.\n"
+"\"Albums but not tags\": images must be in the selected albums but not "
 "tags.\n"
-"\"Only selected tab\" means that only the selected tab is used.\n"
-"\"One of\" means that the images are either in the selected albums or tags.\n"
-"\"Both\" means that the images are both in the selected albums and tags.\n"
-"\"Albums but not tags\" means that images must be in the selected albums but "
-"not tags.\n"
-"\"Tags but not albums\" means that images must be in the selected tags but "
-"not albums."
+"\"Tags but not albums\": images must be in the selected tags but not albums."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:259
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#, fuzzy, kde-format
+#| msgid "Similarity:"
+msgctxt "@label"
+msgid "Similarity range:"
+msgstr "ระดับความคล้ายกัน:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:233
+#, fuzzy, kde-format
+#| msgid "Last Search"
+msgctxt "@label"
+msgid "Limit Search to:"
+msgstr "การค้นหาล่าสุด"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:237
+#, fuzzy, kde-format
+#| msgid "None"
+msgctxt "@label:listbox similarity restriction"
+msgid "None"
+msgstr "ไม่ใช้"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:238
+#, fuzzy, kde-format
+#| msgid "Reference:"
+msgctxt "@label:listbox similarity restriction"
+msgid "Reference Album only"
+msgstr "อ้างอิง:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
+#, fuzzy, kde-format
+msgctxt "@label:listbox similarity restriction"
+msgid "Exclude reference Album"
+msgstr "ทำการลบอัลบั้มต่าง ๆ ที่เลือกไว้"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:240
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Use this option to restrict the duplicate search with some criteria, as to "
+"limit search to the Album\n"
+"of reference image, or to exclude the Album of reference image of the search."
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:269
 #, fuzzy, kde-format
 #| msgid "Update fingerprints"
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "ปรับปรุงอัตลักษณ์ของภาพ"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:261
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:271
 #, fuzzy, kde-format
 #| msgid "Use this button to update all image fingerprints."
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr "ใช้ปุ่มนี้ เพื่อปรับปรุงอัตลักษณ์ของภาพทั้งหมด"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:278
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:288
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "ค้นหาภาพซ้ำ"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:280
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:290
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
 msgstr "ใช้ปุ่มนี้เพื่อทำการค้นหาในอัลบั้มที่เลือกไว้ เพื่อค้นหารายการต่าง ๆ ที่ซ้ำกัน"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:283
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:293
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "เอารายการต่าง ๆ ออก"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:285
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:295
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -54005,46 +54005,50 @@ msgstr ""
 "ข้อควรทราบ: กระบวนการนี้จะใช้เวลานานพอสมควร และคุณสามารถจะเรียกใช้มัน \n"
 "ได้ทุกเมื่อ โดยเรียกผ่านเมนู 'เครื่องมือ/สร้างอัตลักษณ์ของภาพอีกครั้ง'"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:31
-#, kde-format
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:30
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
+#| "p><p>You can also use the context menu<br/> when browsing through your "
+#| "images.</p>"
 msgid ""
 "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-"p><p>You can also use the context menu<br/> when browsing through your "
+"p><p>You can also use the context menu<br/>when browsing through<br/>your "
 "images.</p>"
 msgstr ""
 "<p>ลากและวางแฟ้มมาไว้ที่นี่<br/>เพื่อทำการค้นหา<br/>รายการต่าง ๆ ที่เหมือนกัน</"
 "p><p>และสามารถใช้เมนูคลิกขวา<br/>ระหว่างการเรียกดูรูปภาพต่าง ๆ อยู่ก็ได้เช่นกัน</p>"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:39
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
 #, kde-format
 msgid "<b>File</b>:"
 msgstr "<b>แฟ้ม</b>:"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:41
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:40
 #, kde-format
 msgid "<b>Folder</b>:"
 msgstr "<b>โฟลเดอร์</b>:"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:51
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:93
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:50
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:92
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Search in albums:"
 msgstr "ค้นหาใน:"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:57
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:56
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgid "Similarity range:"
 msgstr "ระดับความคล้ายกัน:"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:73
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:72
 #, fuzzy, kde-format
 #| msgid "Set here the spatial integral step."
 msgid "Select here the approximate similarity interval as a percentage. "
 msgstr "ปรับตั้งค่าระดับขั้นเชิงอินทีกรัลได้ที่นี่"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:84
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:83
 #, fuzzy, kde-format
 msgid ""
 "Enter the name of the current similar image search to save in the "
@@ -54052,12 +54056,12 @@ msgid ""
 msgstr ""
 "ป้อนชื่อที่จะใช้บันทึกการค้นหาภาพที่คล้ายกันตัวปัจจุบันไว้ในมุมมอง \"การค้นหาแบบฉลาดของฉัน\""
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:90
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:89
 #, kde-format
 msgid "Save current similar image search to a new virtual Album"
 msgstr "จัดเก็บการค้นหาภาพที่คล้ายกันไปเป็นอัลบั้มเสมือนตัวใหม่"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:91
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:90
 #, kde-format
 msgid ""
 "If you press this button, the current similar image search will be saved to "
@@ -54066,57 +54070,57 @@ msgstr ""
 "หากคุณกดที่ปุ่มนี้ การค้นหาภาพที่คล้ายกันตัวปัจจุบัน "
 "จะถูกบันทึกเป็นอัลบั้มเสมือนตัวใหม่โดยใช้ชื่อที่ตั้งไว้ทางด้านซ้ายนี้"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:35
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:34
 #, kde-format
 msgid "Set here the brush color used to draw sketch."
 msgstr "ตั้งค่าสีของแปรงที่จะใช้วาดภาพร่างได้ที่นี่"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:54
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:53
 #, kde-format
 msgid "Undo last draw on sketch"
 msgstr "เลิกทำการวาดล่าสุดบนภาพร่าง"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:55
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:54
 #, kde-format
 msgid "Use this button to undo last drawing action on sketch."
 msgstr "ใช้ปุ่มนี้ เพื่อเลิกทำการวาดที่ได้วาดไปล่าสุดบนภาพร่าง"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:61
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:60
 #, kde-format
 msgid "Redo last draw on sketch"
 msgstr "ทำซ้ำการวาดล่าสุดบนภาพร่าง"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:62
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:61
 #, kde-format
 msgid "Use this button to redo last drawing action on sketch."
 msgstr "ใช้ปุ่มนี้ เพื่อทำการวาดที่ได้วาดไปล่าสุดบนภาพร่าง"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:65
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:64
 #, kde-format
 msgid "Pen:"
 msgstr "ปากกา:"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:70
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:69
 #, kde-format
 msgid "Set here the brush size in pixels used to draw sketch."
 msgstr "ตั้งค่าขนาดของแปรง (หน่วยเป็นพิกเซล) ที่จะใช้ในการวาดภาพร่าง"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:77
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:76
 #, kde-format
 msgid "Set here the number of items to find using sketch."
 msgstr "ตั้งค่าจำนวนของรายการที่จะค้นหาโดยใช้ภาพร่างได้ที่นี่"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:105
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:104
 #, kde-format
 msgid "Clear sketch"
 msgstr "ล้างภาพร่าง"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:106
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:105
 #, kde-format
 msgid "Use this button to clear sketch contents."
 msgstr "ใช้ปุ่มนี้ เพื่อล้างเนื้อหาของภาพร่าง"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:110
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:109
 #, fuzzy, kde-format
 msgid ""
 "Enter the name of the current sketch search to save in the \"Similarity "
@@ -54124,12 +54128,12 @@ msgid ""
 msgstr ""
 "ป้อนชื่อที่จะใช้บันทึกการค้นหาโดยการร่างภาพตัวปัจจุบันไว้ในมุมมอง \"การค้นหาแบบฉลาดของฉัน\""
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:116
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:115
 #, kde-format
 msgid "Save current sketch search to a new virtual Album"
 msgstr "จัดเก็บการค้นหาโดยใช้ภาพร่างตัวปัจจุบันไปเป็นอัลบั้มเสมือนตัวใหม่"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:117
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:116
 #, kde-format
 msgid ""
 "If you press this button, the current sketch fuzzy search will be saved to a "
@@ -60211,17 +60215,17 @@ msgstr "การจัดการสี..."
 msgid "Show Assigned Tags"
 msgstr "ป้ายกำกับที่กำหนดไว้"
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:224
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:228
 #, kde-format
 msgid "Assign Tag"
 msgstr "กำหนดป้ายกำกับ"
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:225
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:229
 #, kde-format
 msgid "Remove Tag"
 msgstr "เอาป้ายกำกับออก"
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:250
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:254
 #, fuzzy, kde-format
 msgid "Assign Labels"
 msgstr "กำหนดเครื่องมือ"
@@ -69035,6 +69039,17 @@ msgstr "รายการอัลบั้มต่าง ๆ"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "จัดเ&รียงรูปภาพ"
+
+#, fuzzy
+#~| msgid "Restoration"
+#~ msgctxt "@label"
+#~ msgid "Restriction:"
+#~ msgstr "ซ่อมแซมภาพถ่าย"
+
+#, fuzzy
+#~ msgctxt "@label:listbox similarity restriction"
+#~ msgid "Restrict to reference Album"
+#~ msgstr "ทำการลบอัลบั้มต่าง ๆ ที่เลือกไว้"
 
 #, fuzzy
 #~ msgctxt "@label"

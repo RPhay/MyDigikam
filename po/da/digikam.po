@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-15 02:14+0000\n"
+"POT-Creation-Date: 2025-02-16 01:57+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1359,7 +1359,7 @@ msgid "Name:"
 msgstr "Navn:"
 
 #: core/app/items/utils/tooltipfiller.cpp:593
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:72
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:71
 #, kde-format
 msgid "Items:"
 msgstr "Elementer:"
@@ -3214,7 +3214,7 @@ msgstr ""
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:129
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:148
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:274
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@info"
@@ -36869,7 +36869,7 @@ msgstr "Ansigtsgenkendelse"
 #: core/libs/facesengine/widgets/facescanwidget.cpp:211
 #: core/libs/imgqsort/imagequalitywidget.cpp:180
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:254
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -56287,36 +56287,36 @@ msgid ""
 "risk.</p></qt>"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:64
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
 #, kde-format
 msgid "Ref. images"
 msgstr "Ref.-billeder"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:66
 #, fuzzy, kde-format
 #| msgid "Ref. images"
 msgid "Ref. dates"
 msgstr "Ref.-billeder"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:66
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "New album"
 msgid "Ref. albums"
 msgstr "Nyt album"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:67
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
 #, kde-format
 msgid "Items"
 msgstr "Elementer"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:69
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgid "Avg. similarity"
 msgstr "Lighed:"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:74
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:75
 #, kde-format
 msgid "This shows all found duplicate items."
 msgstr "Dette viser alle fundne duplikerede elementer."
@@ -56376,81 +56376,35 @@ msgctxt "@label"
 msgid "Reference Album:"
 msgstr "Reference:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:155
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgctxt "@title:tab"
 msgid "Reference"
 msgstr "Reference:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:176
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
 #, fuzzy, kde-format
-#| msgid "Similarity:"
+#| msgid "Restoration"
 msgctxt "@label"
-msgid "Similarity range:"
-msgstr "Lighed:"
+msgid "Restrict Search to:"
+msgstr "Restaurering"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:179
-#, fuzzy, kde-format
-#| msgid "Restoration"
-msgctxt "@label"
-msgid "Restriction:"
-msgstr "Restaurering"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:183
-#, fuzzy, kde-format
-#| msgid "None"
-msgctxt "@label:listbox similarity restriction"
-msgid "None"
-msgstr "Ingen"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reset selected albums"
-msgctxt "@label:listbox similarity restriction"
-msgid "Restrict to reference Album"
-msgstr "Nulstil valgte albummer"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reset selected albums"
-msgctxt "@label:listbox similarity restriction"
-msgid "Exclude reference Album"
-msgstr "Nulstil valgte albummer"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Use this option to restrict the duplicate search with some criteria, as to "
-"limit search to the Album of reference image, or to exclude the Album of "
-"reference image of the search."
-msgstr ""
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
-#, fuzzy, kde-format
-#| msgid "Restoration"
-msgctxt "@label"
-msgid "Restrict to:"
-msgstr "Restaurering"
-
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Fjern markeret mærke"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:215
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:182
 #, fuzzy, kde-format
 #| msgid "One map"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Et kort"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:218
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
 #, fuzzy, kde-format
 #| msgctxt "toggle child and parent tags"
 #| msgid "Both"
@@ -56458,57 +56412,101 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Begge"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:221
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
 #, fuzzy, kde-format
 #| msgid "Album does not exist"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Albummet findes ikke"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:224
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:191
 #, fuzzy, kde-format
 #| msgid "Failed to list albums"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Kunne ikke opliste albummer"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
 #, kde-format
 msgctxt "@info"
 msgid ""
-"Use this option to decide about the relation of the selected albums and "
+"Use this option to decide about the relation of the selected search-in "
+"albums and tags.\n"
+"\"Only selected tab\": only the Search In selected tab is used.\n"
+"\"One of\": the images are either in the selected albums or tags.\n"
+"\"Both\": the images are both in the selected albums and tags.\n"
+"\"Albums but not tags\": images must be in the selected albums but not "
 "tags.\n"
-"\"Only selected tab\" means that only the selected tab is used.\n"
-"\"One of\" means that the images are either in the selected albums or tags.\n"
-"\"Both\" means that the images are both in the selected albums and tags.\n"
-"\"Albums but not tags\" means that images must be in the selected albums but "
-"not tags.\n"
-"\"Tags but not albums\" means that images must be in the selected tags but "
-"not albums."
+"\"Tags but not albums\": images must be in the selected tags but not albums."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:259
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#, fuzzy, kde-format
+#| msgid "Similarity:"
+msgctxt "@label"
+msgid "Similarity range:"
+msgstr "Lighed:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:233
+#, fuzzy, kde-format
+#| msgid "Last Search"
+msgctxt "@label"
+msgid "Limit Search to:"
+msgstr "Sidste søgning"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:237
+#, fuzzy, kde-format
+#| msgid "None"
+msgctxt "@label:listbox similarity restriction"
+msgid "None"
+msgstr "Ingen"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:238
+#, fuzzy, kde-format
+#| msgid "Reference:"
+msgctxt "@label:listbox similarity restriction"
+msgid "Reference Album only"
+msgstr "Reference:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Reset selected albums"
+msgctxt "@label:listbox similarity restriction"
+msgid "Exclude reference Album"
+msgstr "Nulstil valgte albummer"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:240
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Use this option to restrict the duplicate search with some criteria, as to "
+"limit search to the Album\n"
+"of reference image, or to exclude the Album of reference image of the search."
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:269
 #, fuzzy, kde-format
 #| msgid "Update fingerprints"
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "Opdatér fingeraftryk"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:261
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:271
 #, fuzzy, kde-format
 #| msgid "Use this button to update all image fingerprints."
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr "Brug denne knap til at opdatere alle billede-fingeraftryk."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:278
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:288
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Find duplikater"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:280
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:290
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -56517,14 +56515,14 @@ msgstr ""
 "Brug denne knap til at scanne de markerede albummer for duplikerede "
 "elementer."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:283
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:293
 #, fuzzy, kde-format
 #| msgid "Remove duplicate words"
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Fjern duplikerede ord"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:285
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:295
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -56575,29 +56573,33 @@ msgstr ""
 "Bemærk: Denne proces kan tage noget tid. Du kan gøre det på et senere "
 "tidspunkt med \"Værktøjer/Genbyg alle fingeraftryk\"."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:31
-#, kde-format
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:30
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
+#| "p><p>You can also use the context menu<br/> when browsing through your "
+#| "images.</p>"
 msgid ""
 "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-"p><p>You can also use the context menu<br/> when browsing through your "
+"p><p>You can also use the context menu<br/>when browsing through<br/>your "
 "images.</p>"
 msgstr ""
 "<p>Træk og slip et billede her<br/>for at udføre en lignende<br/>søgning "
 "efter elementer.</p><p>Du kan også benytte kontekst-menuen<br/> når du "
 "kigger dine billeder igennem.</p>"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:39
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
 #, kde-format
 msgid "<b>File</b>:"
 msgstr "<b>Fil</b>:"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:41
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:40
 #, kde-format
 msgid "<b>Folder</b>:"
 msgstr "<b>Mappe</b>:"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:51
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:93
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:50
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:92
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
@@ -56605,19 +56607,19 @@ msgctxt "@label"
 msgid "Search in albums:"
 msgstr "Søg i:"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:57
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:56
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgid "Similarity range:"
 msgstr "Lighed:"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:73
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:72
 #, fuzzy, kde-format
 #| msgid "Set here the spatial integral step."
 msgid "Select here the approximate similarity interval as a percentage. "
 msgstr "Sæt trinet for rumlig integration her."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:84
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:83
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the name of the current similar image search to save in the \"Fuzzy "
@@ -56629,12 +56631,12 @@ msgstr ""
 "Angiv navnet på den nuværende søgning efter lignende billeder for at gemme "
 "den i visningen \"Uklare søgninger\"."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:90
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:89
 #, kde-format
 msgid "Save current similar image search to a new virtual Album"
 msgstr "Gem nuværende søgning efter lignende billeder i et nyt virtuelt album"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:91
+#: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:90
 #, kde-format
 msgid ""
 "If you press this button, the current similar image search will be saved to "
@@ -56643,58 +56645,58 @@ msgstr ""
 "Hvis du trykker på denne knap gemmes nuværende søgning efter lignende "
 "billeder i et nyt virtuelt album med det navn der er sat på venstre side."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:35
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:34
 #, kde-format
 msgid "Set here the brush color used to draw sketch."
 msgstr "Sæt den penselfarve der bruges til at tegne skitser her."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:54
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:53
 #, kde-format
 msgid "Undo last draw on sketch"
 msgstr "Fortryd det sidst tegnede på skitse"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:55
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:54
 #, kde-format
 msgid "Use this button to undo last drawing action on sketch."
 msgstr "Brug denne knap til at fortryde sidste tegningshandling på skitse."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:61
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:60
 #, kde-format
 msgid "Redo last draw on sketch"
 msgstr "Gendan det sidst tegnede på skitse"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:62
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:61
 #, kde-format
 msgid "Use this button to redo last drawing action on sketch."
 msgstr "Brug denne knap til at gendanne det sidst tegnede på skitse."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:65
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:64
 #, kde-format
 msgid "Pen:"
 msgstr "Pen:"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:70
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:69
 #, kde-format
 msgid "Set here the brush size in pixels used to draw sketch."
 msgstr ""
 "Sæt størrelsen på penslen (i pixels) der bruges til at tegne skitser her."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:77
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:76
 #, kde-format
 msgid "Set here the number of items to find using sketch."
 msgstr "Sæt det antal elementer der skal findes med skitse her."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:105
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:104
 #, kde-format
 msgid "Clear sketch"
 msgstr "Ryd skitse"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:106
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:105
 #, kde-format
 msgid "Use this button to clear sketch contents."
 msgstr "Brug denne knap til at rydde skitsens indhold."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:110
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:109
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the name of the current sketch search to save in the \"Fuzzy "
@@ -56706,12 +56708,12 @@ msgstr ""
 "Angiv navnet på den nuværende skitsesøgning der skal gemmes i visningen "
 "\"Uklare søgninger\"."
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:116
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:115
 #, kde-format
 msgid "Save current sketch search to a new virtual Album"
 msgstr "Gem nuværende skitsesøgning i et nyt virtuelt album"
 
-#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:117
+#: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:116
 #, kde-format
 msgid ""
 "If you press this button, the current sketch fuzzy search will be saved to a "
@@ -62991,17 +62993,17 @@ msgstr "Redigér kommentarer"
 msgid "Show Assigned Tags"
 msgstr "Vis tildelte mærker"
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:224
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:228
 #, kde-format
 msgid "Assign Tag"
 msgstr "Tildel mærke"
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:225
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:229
 #, kde-format
 msgid "Remove Tag"
 msgstr "Fjern mærke"
 
-#: core/utilities/imageeditor/main/imagewindow_setup.cpp:250
+#: core/utilities/imageeditor/main/imagewindow_setup.cpp:254
 #, kde-format
 msgid "Assign Labels"
 msgstr "Tildel etiketter"
@@ -72547,6 +72549,19 @@ msgstr "Album-elementer"
 #, kde-format
 msgid "Import Items"
 msgstr "Importér elementer"
+
+#, fuzzy
+#~| msgid "Restoration"
+#~ msgctxt "@label"
+#~ msgid "Restriction:"
+#~ msgstr "Restaurering"
+
+#, fuzzy
+#~| msgctxt "@info:tooltip"
+#~| msgid "Reset selected albums"
+#~ msgctxt "@label:listbox similarity restriction"
+#~ msgid "Restrict to reference Album"
+#~ msgstr "Nulstil valgte albummer"
 
 #~ msgctxt "@label"
 #~ msgid "Search in:"
