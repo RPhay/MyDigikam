@@ -113,12 +113,6 @@ DigikamApp::DigikamApp()
         }
     );
 
-    if (!ExifToolProcess::isCreated())
-    {
-        ExifToolThread* const exifToolThread = new ExifToolThread(qApp);
-        exifToolThread->start();
-    }
-
     // creation of the engine on first use - when drawing -
     // can take considerable time and cause a noticeable hang in the UI thread.
 

@@ -49,7 +49,6 @@ void ExifToolThread::run()
         (ExifToolProcess::instance()->thread() == this)
        )
     {
-        qDebug() << "ExifToolThread: shutDownExifTool()";
         ExifToolProcess::instance()->shutDownExifTool();
     }
 }

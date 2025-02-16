@@ -35,6 +35,7 @@
 #include <QFile>
 #include <QSize>
 #include <QLatin1String>
+#include <QApplication>
 #include <QFileInfo>
 #include <QSharedData>
 #include <QMutexLocker>
@@ -110,6 +111,8 @@
 #include "metaengine_mergehelper.h"
 #include "metaenginesettings.h"
 #include "digikam_globals.h"
+#include "exiftoolprocess.h"
+#include "exiftoolthread.h"
 
 namespace Digikam
 {

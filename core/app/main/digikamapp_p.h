@@ -144,7 +144,6 @@
 #include "dfiledialog.h"
 #include "dpluginloader.h"
 #include "exiftoolparser.h"
-#include "exiftoolthread.h"
 #include "localizesettings.h"
 #include "networkmanager.h"
 #include "dnotificationwidget.h"

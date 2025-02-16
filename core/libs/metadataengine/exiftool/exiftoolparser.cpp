@@ -22,7 +22,7 @@ ExifToolParser::ExifToolParser(QObject* const parent, bool async)
       d      (new Private(this))
 {
     // For handling the unit-test tools.
-
+/*
     if (!ExifToolProcess::isCreated())
     {
         QEventLoop loop;
@@ -34,7 +34,7 @@ ExifToolParser::ExifToolParser(QObject* const parent, bool async)
         exifToolThread->start();
         loop.exec();
     }
-
+*/
     // Get ExifTool process instance.
 
     d->proc  = ExifToolProcess::instance();
