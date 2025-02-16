@@ -169,7 +169,7 @@ BUGFIXES:
 115 ==> 499880 - Update digiKam db from single file geotag.
 116 ==> 499624 - Thumbbar - Both original and v1 of image show up in thumbbar after aspect ratio crop "OK".
 117 ==> 500176 - Adding a new face does not work on Pixel 5 (work ok with digiKam 8.5).
-118 ==> 
+118 ==> 500178 - Star Rating metadata won't write to Video.
 119 ==> 
 120 ==> 
 121 ==> 
