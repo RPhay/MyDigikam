@@ -90,7 +90,7 @@ bool MetaEngine::initializeExiv2()
     registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container1/"),         // krazy:exclude=insecurenet
                          QLatin1String("Container_1_"));
 
-    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/ccontainer2/"),        // krazy:exclude=insecurenet
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container2/"),         // krazy:exclude=insecurenet
                          QLatin1String("GContainer"));
 
     registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item/"),     // krazy:exclude=insecurenet
