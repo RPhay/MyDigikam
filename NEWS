@@ -5,7 +5,7 @@ NEW FEATURES:
 
 RawEngine:       Update internal Libraw to last 20250208 upstream.
 Video:           Update internal QtAVPlayer to last 20250107 upstream (Qt5 only).
-Bundles:         Update to last ExifTool version 13.18.
+Bundles:         Update to last ExifTool version 13.19.
 Bundles:         Linux AppImage Qt6 uses last Qt 6.8.1, KDE frameworks 6.10.0 and OPenCV 4.11.0.
 Bundles:         Linux AppImage Qt5 uses last Qt 5.15.16 and OPenCV 4.11.0.
 Bundles:         Windows installer Qt6 uses last Qt 6.8.1 and KDE frameworks 6.10.0.
@@ -179,46 +179,46 @@ BUGFIXES:
 125 ==> 
 126 ==> 
 127 ==> 
-128 ==>
-129 ==>
-130 ==>
-131 ==>
-132 ==>
-133 ==>
-134 ==>
-135 ==>
-136 ==>
-137 ==>
-138 ==>
-139 ==>
-140 ==>
-141 ==>
-142 ==>
-143 ==>
-144 ==>
-145 ==>
-146 ==>
-147 ==>
-148 ==>
-149 ==>
-150 ==>
-151 ==>
-152 ==>
-153 ==>
-154 ==>
-155 ==>
-156 ==>
-157 ==>
-158 ==>
-159 ==>
-160 ==>
-161 ==>
-162 ==>
-163 ==>
-164 ==>
-165 ==>
-166 ==>
-167 ==>
-168 ==>
-169 ==>
-170 ==>
+128 ==> 
+129 ==> 
+130 ==> 
+131 ==> 
+132 ==> 
+133 ==> 
+134 ==> 
+135 ==> 
+136 ==> 
+137 ==> 
+138 ==> 
+139 ==> 
+140 ==> 
+141 ==> 
+142 ==> 
+143 ==> 
+144 ==> 
+145 ==> 
+146 ==> 
+147 ==> 
+148 ==> 
+149 ==> 
+150 ==> 
+151 ==> 
+152 ==> 
+153 ==> 
+154 ==> 
+155 ==> 
+156 ==> 
+157 ==> 
+158 ==> 
+159 ==> 
+160 ==> 
+161 ==> 
+162 ==> 
+163 ==> 
+164 ==> 
+165 ==> 
+166 ==> 
+167 ==> 
+168 ==> 
+169 ==> 
+170 ==> 
