@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-16 01:57+0000\n"
+"POT-Creation-Date: 2025-02-17 01:51+0000\n"
 "PO-Revision-Date: 2025-02-12 09:34+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -37581,13 +37581,13 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "%1 octets de données binaires"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:375
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:373
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr ""
 "Le logiciel « ExifTool » n'existe pas ou n'a pas de permission d'exécution."
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:389
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:387
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr ""

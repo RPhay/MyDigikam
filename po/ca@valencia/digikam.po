@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-16 01:57+0000\n"
-"PO-Revision-Date: 2025-02-15 13:24+0100\n"
+"POT-Creation-Date: 2025-02-17 01:51+0000\n"
+"PO-Revision-Date: 2025-02-16 10:05+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -37296,12 +37296,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "Dades binàries %1 bytes"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:375
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:373
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "No existix ExifTool o li falta el permís d'execució"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:389
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:387
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "No existix el Perl o li falta el permís d'execució"
@@ -53115,12 +53115,10 @@ msgid "Reference"
 msgstr "Referència"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Restrict to:"
+#, kde-format
 msgctxt "@label"
 msgid "Restrict Search to:"
-msgstr "Restringix a:"
+msgstr "Restringix la busca a:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, kde-format
@@ -53153,19 +53151,7 @@ msgid "Tags but not albums"
 msgstr "Etiquetes però no àlbums"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Use this option to decide about the relation of the selected albums and "
-#| "tags.\n"
-#| "\"Only selected tab\" means that only the selected tab is used.\n"
-#| "\"One of\" means that the images are either in the selected albums or "
-#| "tags.\n"
-#| "\"Both\" means that the images are both in the selected albums and tags.\n"
-#| "\"Albums but not tags\" means that images must be in the selected albums "
-#| "but not tags.\n"
-#| "\"Tags but not albums\" means that images must be in the selected tags "
-#| "but not albums."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to decide about the relation of the selected search-in "
@@ -53177,17 +53163,16 @@ msgid ""
 "tags.\n"
 "\"Tags but not albums\": images must be in the selected tags but not albums."
 msgstr ""
-"Utilitzeu esta opció per a decidir sobre la relació entre els àlbums "
-"seleccionats i les etiquetes.\n"
-"«Només la pestanya seleccionada» vol dir que només s'utilitza la pestanya "
-"seleccionada.\n"
-"«Un de» vol dir que les imatges estan en els àlbums seleccionats o les "
+"Utilitzeu esta opció per a decidir sobre la relació entre els àlbums i les "
+"etiquetes de la busca seleccionada.\n"
+"«Només la pestanya seleccionada»: només s'utilitza la pestanya seleccionada "
+"a la busca.\n"
+"«Un de»: les imatges estan en els àlbums seleccionats o les etiquetes.\n"
+"«Ambdós»: les imatges estan tant en els àlbums seleccionats com en les "
 "etiquetes.\n"
-"«Ambdós» vol dir que les imatges estan tant en els àlbums seleccionats com "
-"en les etiquetes.\n"
-"«Àlbums però no etiquetes» vol dir que les imatges estaran en els àlbums "
-"seleccionats però no en les etiquetes.\n"
-"«Etiquetes però no àlbums» vol dir que les imatges estaran en les etiquetes "
+"«Àlbums però no etiquetes»: les imatges estaran en els àlbums seleccionats "
+"però no en les etiquetes.\n"
+"«Etiquetes però no àlbums»: les imatges estaran en les etiquetes "
 "seleccionades però no en els àlbums."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:214
@@ -53197,11 +53182,10 @@ msgid "Similarity range:"
 msgstr "Interval de similitud:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:233
-#, fuzzy, kde-format
-#| msgid "Last Search"
+#, kde-format
 msgctxt "@label"
 msgid "Limit Search to:"
-msgstr "Última busca"
+msgstr "Limita la busca a:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:237
 #, kde-format
@@ -53210,12 +53194,10 @@ msgid "None"
 msgstr "Cap"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Reference Album:"
+#, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Reference Album only"
-msgstr "Àlbum de referència:"
+msgstr "Només l'àlbum de referència"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:239
 #, kde-format
@@ -53224,12 +53206,7 @@ msgid "Exclude reference Album"
 msgstr "Exclou l'àlbum de referència"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:240
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Use this option to restrict the duplicate search with some criteria, as "
-#| "to limit search to the Album of reference image, or to exclude the Album "
-#| "of reference image of the search."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to restrict the duplicate search with some criteria, as to "
@@ -53237,8 +53214,9 @@ msgid ""
 "of reference image, or to exclude the Album of reference image of the search."
 msgstr ""
 "Utilitzeu esta opció per a restringir la busca de duplicats amb determinats "
-"criteris, com limitar la busca a l'àlbum de la imatge de referència, o per a "
-"excloure de la busca l'àlbum de la imatge de referència."
+"criteris, com limitar la busca a l'àlbum\n"
+"de la imatge de referència, o per a excloure de la busca l'àlbum de la "
+"imatge de referència."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:269
 #, kde-format
@@ -53310,11 +53288,7 @@ msgstr ""
 "haver generat prèviament les empremtes digitals. Primer genereu-les."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-#| "p><p>You can also use the context menu<br/> when browsing through your "
-#| "images.</p>"
+#, kde-format
 msgid ""
 "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
 "p><p>You can also use the context menu<br/>when browsing through<br/>your "
@@ -53322,7 +53296,7 @@ msgid ""
 msgstr ""
 "<p>Arrossegueu i deixeu anar una imatge ací<br/>per a executar una busca<br/"
 ">d'elements similars.</p><p>També podeu utilitzar el menú contextual<br/> en "
-"navegar per les imatges.</p>"
+"navegar per les<br/>imatges.</p>"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
 #, kde-format
@@ -68328,11 +68302,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgctxt "@label"
-#~ msgid "Restriction:"
-#~ msgstr "Restricció:"
-
-#~ msgctxt "@label:listbox similarity restriction"
-#~ msgid "Restrict to reference Album"
-#~ msgstr "Restringix a l'àlbum de referència"

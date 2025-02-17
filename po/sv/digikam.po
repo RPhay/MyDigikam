@@ -43,8 +43,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-16 01:57+0000\n"
-"PO-Revision-Date: 2025-02-15 08:14+0100\n"
+"POT-Creation-Date: 2025-02-17 01:51+0000\n"
+"PO-Revision-Date: 2025-02-16 11:58+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -36862,12 +36862,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "Binärdata %1 byte"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:375
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:373
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "Exiftool finns inte eller saknar körrättighet"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:389
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:387
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl finns inte eller saknar körrättighet"
@@ -52515,12 +52515,10 @@ msgid "Reference"
 msgstr "Referens"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Restrict to:"
+#, kde-format
 msgctxt "@label"
 msgid "Restrict Search to:"
-msgstr "Begränsa till:"
+msgstr "Begränsa sökning till:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, kde-format
@@ -52553,19 +52551,7 @@ msgid "Tags but not albums"
 msgstr "Etiketter men inte album"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Use this option to decide about the relation of the selected albums and "
-#| "tags.\n"
-#| "\"Only selected tab\" means that only the selected tab is used.\n"
-#| "\"One of\" means that the images are either in the selected albums or "
-#| "tags.\n"
-#| "\"Both\" means that the images are both in the selected albums and tags.\n"
-#| "\"Albums but not tags\" means that images must be in the selected albums "
-#| "but not tags.\n"
-#| "\"Tags but not albums\" means that images must be in the selected tags "
-#| "but not albums."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to decide about the relation of the selected search-in "
@@ -52579,15 +52565,14 @@ msgid ""
 msgstr ""
 "Använd alternativet för att bestämma förhållandet mellan markerade album och "
 "etiketter.\n"
-"\"Bara markerad flik\" betyder att bara den markerade fliken används.\n"
-"\"Något av\" betyder att bilderna är antingen i de markerade albumen eller "
+"\"Bara markerad flik\": Bara sökning i den markerade fliken används.\n"
+"\"Något av\": Bilderna är antingen i de markerade albumen eller "
 "etiketterna.\n"
-"\"Båda\" betyder att bilderna är både i de markerade albumen och "
-"etiketterna.\n"
-"\"Album men inte etiketter\" betyder att bilderna måste finnas i markerade "
-"album, men inte i etiketterna.\n"
-"\"Etiketter men inte album\" betyder att bilderna måste finnas i de "
-"markerade etiketterna, men inte albumen."
+"\"Båda\": Bilderna är både i de markerade albumen och etiketterna.\n"
+"\"Album men inte etiketter\": Bilderna måste finnas i markerade album, men "
+"inte i etiketterna.\n"
+"\"Etiketter men inte album\": Bilderna måste finnas i de markerade "
+"etiketterna, men inte albumen."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:214
 #, kde-format
@@ -52596,11 +52581,10 @@ msgid "Similarity range:"
 msgstr "Likhetsintervall:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:233
-#, fuzzy, kde-format
-#| msgid "Last Search"
+#, kde-format
 msgctxt "@label"
 msgid "Limit Search to:"
-msgstr "Senaste sökning"
+msgstr "Begränsa sökning till:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:237
 #, kde-format
@@ -52609,12 +52593,10 @@ msgid "None"
 msgstr "Ingen"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Reference Album:"
+#, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Reference Album only"
-msgstr "Referensalbum:"
+msgstr "Bara referensalbum"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:239
 #, kde-format
@@ -52623,12 +52605,7 @@ msgid "Exclude reference Album"
 msgstr "Undanta referensalbum"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:240
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Use this option to restrict the duplicate search with some criteria, as "
-#| "to limit search to the Album of reference image, or to exclude the Album "
-#| "of reference image of the search."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to restrict the duplicate search with some criteria, as to "
@@ -52636,8 +52613,9 @@ msgid ""
 "of reference image, or to exclude the Album of reference image of the search."
 msgstr ""
 "Använd alternativet för att begränsa sökning efter dubbletter med några "
-"kriterier, såsom att begränsa sökningen till albumet med referensbilden, "
-"eller för att undanta albumet med referensbilden från sökningen."
+"kriterier, såsom att begränsa sökningen till albumet\n"
+"med referensbilden, eller för att undanta albumet med referensbilden från "
+"sökningen."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:269
 #, kde-format
@@ -52707,19 +52685,15 @@ msgstr ""
 "skapade i förväg. Skapa först fingeravtrycken."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-#| "p><p>You can also use the context menu<br/> when browsing through your "
-#| "images.</p>"
+#, kde-format
 msgid ""
 "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
 "p><p>You can also use the context menu<br/>when browsing through<br/>your "
 "images.</p>"
 msgstr ""
-"<p>Dra och släpp en bild här<br/>för att utföra sökning<br/>efter likande "
+"<p>Dra och släpp en bild här<br/>för att utföra sökning<br/>efter liknande "
 "objekt.</p><p>Du kan också använda den sammanhangsberoende<br/>menyn medan "
-"du bläddrar igenom bilder.</p>"
+"du bläddrar<br/>igenom bilder.</p>"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
 #, kde-format

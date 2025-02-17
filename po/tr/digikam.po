@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-16 01:57+0000\n"
-"PO-Revision-Date: 2025-02-15 09:47+0300\n"
+"POT-Creation-Date: 2025-02-17 01:51+0000\n"
+"PO-Revision-Date: 2025-02-16 12:53+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -36914,12 +36914,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "%1 bayt ikili veri"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:375
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:373
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "ExifTool yok veya yürütme izni eksik"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:389
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:387
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl yok veya yürütme izni eksik"
@@ -52582,12 +52582,10 @@ msgid "Reference"
 msgstr "Başvuru"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Restrict to:"
+#, kde-format
 msgctxt "@label"
 msgid "Restrict Search to:"
-msgstr "Şuna kısıtla:"
+msgstr "Aramayı şuna kısıtla:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, kde-format
@@ -52620,19 +52618,7 @@ msgid "Tags but not albums"
 msgstr "Künyeler; ancak albümler değil"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Use this option to decide about the relation of the selected albums and "
-#| "tags.\n"
-#| "\"Only selected tab\" means that only the selected tab is used.\n"
-#| "\"One of\" means that the images are either in the selected albums or "
-#| "tags.\n"
-#| "\"Both\" means that the images are both in the selected albums and tags.\n"
-#| "\"Albums but not tags\" means that images must be in the selected albums "
-#| "but not tags.\n"
-#| "\"Tags but not albums\" means that images must be in the selected tags "
-#| "but not albums."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to decide about the relation of the selected search-in "
@@ -52646,16 +52632,13 @@ msgid ""
 msgstr ""
 "Seçili albümlerin ve künyelerin ilişkisine karar vermek için bu seçeneği "
 "kullanın.\n"
-"“Yalnızca seçili sekme” yalnızca seçilen sekmenin kullanıldığı anlamına "
-"gelir.\n"
-"“Biri”, görsellerin seçilen albümlerde veya künyelerde olduğu anlamına "
-"gelir.\n"
-"“Her ikisi”, görsellerin hem seçili albümlerde hem de künyelerde olduğu "
-"anlamına gelir.\n"
-"“Albümler; ancak künyeler değil”, görsellerin seçili albümlerde olması; "
-"ancak künyelerin olmaması gerektiği anlamına gelir.\n"
-"“Künyeler; ancak albümler değil”, görsellerin seçili künyelerde olması; "
-"ancak albümlerde olmaması gerektiği anlamına gelir."
+"“Yalnızca seçili sekme” yalnızca seçili sekmeyi kullanın.\n"
+"“Biri”, görseller ya seçili albümlerdedir ya da künyelerdedir.\n"
+"“Her ikisi”, görseller hem seçili albümlerdedir hem künyelerdedir.\n"
+"“Albümler; ancak künyeler değil”, görseller seçili albümlerde olmalıdır, "
+"künyelerde olamaz.\n"
+"“Künyeler; ancak albümler değil”, görseller seçili künyelerde olmalıdır, "
+"albümlerde olamaz."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:214
 #, kde-format
@@ -52664,11 +52647,10 @@ msgid "Similarity range:"
 msgstr "Benzerlik erimi:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:233
-#, fuzzy, kde-format
-#| msgid "Last Search"
+#, kde-format
 msgctxt "@label"
 msgid "Limit Search to:"
-msgstr "Son Arama"
+msgstr "Aramayı şuna sınırla:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:237
 #, kde-format
@@ -52677,12 +52659,10 @@ msgid "None"
 msgstr "Yok"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Reference Album:"
+#, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Reference Album only"
-msgstr "Başvuru albümü:"
+msgstr "Yalnızca başvuru albümü"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:239
 #, kde-format
@@ -52691,21 +52671,16 @@ msgid "Exclude reference Album"
 msgstr "Başvuru albümünü dışla"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:240
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Use this option to restrict the duplicate search with some criteria, as "
-#| "to limit search to the Album of reference image, or to exclude the Album "
-#| "of reference image of the search."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to restrict the duplicate search with some criteria, as to "
 "limit search to the Album\n"
 "of reference image, or to exclude the Album of reference image of the search."
 msgstr ""
-"Aramayı başvuru görsel albümüyle sınırlamak veya aramanın başvuru görsel "
-"albümünü dışlamak gibi bazı kriterlerle yinelenen aramayı kısıtlamak için bu "
-"seçeneği kullanın."
+"Aramayı başvuru görsel albümüyle sınırlamak veya aramanın başvuru\n"
+"görsel albümünü dışlamak gibi bazı kriterlerle yinelenen aramayı\n"
+"kısıtlamak için bu seçeneği kullanın."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:269
 #, kde-format
@@ -52773,19 +52748,15 @@ msgstr ""
 "Lütfen önce parmak izlerini oluşturun."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-#| "p><p>You can also use the context menu<br/> when browsing through your "
-#| "images.</p>"
+#, kde-format
 msgid ""
 "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
 "p><p>You can also use the context menu<br/>when browsing through<br/>your "
 "images.</p>"
 msgstr ""
-"<p>Buraya bir görsel sürükleyip bırakarak<br/> benzer ögeler<br/>araması "
-"gerçekleştirebilirsiniz.</p><p>Bunun için ayrıcı görsellerinizde "
-"gezinirken<br/> bağlam menüsü de kullanılabilir.</p>"
+"<p>Buraya bir görsel sürükleyip bırakarak<br/>benzer ögeler<br/>araması "
+"gerçekleştirebilirsiniz.</p><p>Bunun için ayrıca<br/>görsellerinizde "
+"gezinirken<br/>bağlam menüsü de kullanılabilir.</p>"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
 #, kde-format
