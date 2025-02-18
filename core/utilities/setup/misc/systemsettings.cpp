@@ -83,14 +83,14 @@ void SystemSettings::readSettings()
 
     enableAesthetic      = settings.value(QLatin1String("enableAesthetic"),   true).toBool();
     enableAutoTags       = settings.value(QLatin1String("enableAutoTags"),    true).toBool();
-    softwareOpenGL       = settings.value(QLatin1String("softwareOpenGL"),    false).toBool();
+    softwareOpenGL       = settings.value(QLatin1String("softwareOpenGL"),    true).toBool();
     enableLogging        = settings.value(QLatin1String("enableLogging"),     false).toBool();
     enableOpenCL         = settings.value(QLatin1String("enableOpenCL"),      false).toBool();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    enableHWVideo        = settings.value(QLatin1String("enableHWVideo"),     true).toBool();
-    enableHWTConv        = settings.value(QLatin1String("enableHWTConv"),     true).toBool();
+    enableHWVideo        = settings.value(QLatin1String("enableHWVideo"),     false).toBool();
+    enableHWTConv        = settings.value(QLatin1String("enableHWTConv"),     false).toBool();
     videoBackend         = settings.value(QLatin1String("videoBackend"),      QLatin1String("ffmpeg")).toString();
 
 #endif
