@@ -171,7 +171,7 @@ BUGFIXES:
 117 ==> 500176 - Adding a new face does not work on Pixel 5 (work ok with digiKam 8.5).
 118 ==> 500178 - Star Rating metadata won't write to Video.
 119 ==> 500239 - Face tags from iPhone cannot overwriiten or deleted.
-120 ==> 
+120 ==> 500340 - Issue with tags using special characters UTF-8.
 121 ==> 
 122 ==> 
 123 ==> 
