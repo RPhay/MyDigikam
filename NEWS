@@ -170,7 +170,7 @@ BUGFIXES:
 116 ==> 499624 - Thumbbar - Both original and v1 of image show up in thumbbar after aspect ratio crop "OK".
 117 ==> 500176 - Adding a new face does not work on Pixel 5 (work ok with digiKam 8.5).
 118 ==> 500178 - Star Rating metadata won't write to Video.
-119 ==> 
+119 ==> 500239 - Face tags from iPhone cannot overwriiten or deleted.
 120 ==> 
 121 ==> 
 122 ==> 
