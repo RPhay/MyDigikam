@@ -171,10 +171,12 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     if (system.enableHWVideo)
     {
         qunsetenv("QT_FFMPEG_DECODING_HW_DEVICE_TYPES");
+        qunsetenv("QT_FFMPEG_ENCODING_HW_DEVICE_TYPES");
     }
     else
     {
         qputenv("QT_FFMPEG_DECODING_HW_DEVICE_TYPES", ",");
+        qputenv("QT_FFMPEG_ENCODING_HW_DEVICE_TYPES", ",");
     }
 
     qputenv("QT_MEDIA_BACKEND", system.videoBackend.toLatin1());
