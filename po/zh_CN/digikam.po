@@ -50981,13 +50981,13 @@ msgstr "更早或者更大"
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected Album as reference"
-msgstr ""
+msgstr "优先使用选中的相册作为参考图像来源"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:132
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected Album as reference"
-msgstr ""
+msgstr "优先使用未被选中的相册作为参考图像来源"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:135
 #, kde-format
@@ -51011,21 +51011,19 @@ msgstr "参考图像选择方式"
 #, kde-format
 msgctxt "@label"
 msgid "Reference Album:"
-msgstr ""
+msgstr "参考相册："
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, kde-format
 msgctxt "@title:tab"
 msgid "Reference"
-msgstr ""
+msgstr "参考图像"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Restrict to:"
+#, kde-format
 msgctxt "@label"
 msgid "Restrict Search to:"
-msgstr "扫描条件："
+msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, kde-format
@@ -51078,11 +51076,10 @@ msgid "Similarity range:"
 msgstr "相似度范围："
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:233
-#, fuzzy, kde-format
-#| msgid "Last Search"
+#, kde-format
 msgctxt "@label"
 msgid "Limit Search to:"
-msgstr "上次搜索"
+msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:237
 #, kde-format
@@ -51091,18 +51088,16 @@ msgid "None"
 msgstr "无"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@action: context menu"
-#| msgid "Reset Album Icon"
+#, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Reference Album only"
-msgstr "重置相册图标"
+msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:239
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference Album"
-msgstr ""
+msgstr "排除参考图像相册"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:240
 #, kde-format
@@ -51178,18 +51173,12 @@ msgstr ""
 "图像指纹。"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-#| "p><p>You can also use the context menu<br/> when browsing through your "
-#| "images.</p>"
+#, kde-format
 msgid ""
 "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
 "p><p>You can also use the context menu<br/>when browsing through<br/>your "
 "images.</p>"
 msgstr ""
-"<p>拖放一张图像到此处<br/>以查找相似项。</p><p>您也可以在浏览图像时<br/>在项"
-"目的右键菜单中<br/>选择“查找相似项”。</p>"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
 #, kde-format
@@ -65551,7 +65540,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgctxt "@label"
-#~ msgid "Restriction:"
-#~ msgstr "限制范围："

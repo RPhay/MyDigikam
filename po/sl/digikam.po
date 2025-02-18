@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-17 01:51+0000\n"
-"PO-Revision-Date: 2025-02-15 09:16+0100\n"
+"PO-Revision-Date: 2025-02-17 10:45+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -52658,12 +52658,10 @@ msgid "Reference"
 msgstr "Referenca"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Restrict to:"
+#, kde-format
 msgctxt "@label"
 msgid "Restrict Search to:"
-msgstr "Omeji na:"
+msgstr "Omeji iskanje na:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, kde-format
@@ -52696,19 +52694,7 @@ msgid "Tags but not albums"
 msgstr "Značke a ne albumi"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Use this option to decide about the relation of the selected albums and "
-#| "tags.\n"
-#| "\"Only selected tab\" means that only the selected tab is used.\n"
-#| "\"One of\" means that the images are either in the selected albums or "
-#| "tags.\n"
-#| "\"Both\" means that the images are both in the selected albums and tags.\n"
-#| "\"Albums but not tags\" means that images must be in the selected albums "
-#| "but not tags.\n"
-#| "\"Tags but not albums\" means that images must be in the selected tags "
-#| "but not albums."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to decide about the relation of the selected search-in "
@@ -52721,13 +52707,13 @@ msgid ""
 "\"Tags but not albums\": images must be in the selected tags but not albums."
 msgstr ""
 "S to možnostjo se odločate za razmerje med izbranimi albumi in značkami.\n"
-"\"Samo izbrani zavihek\" pomeni, da je uporabljen samo izbrani zavihek.\n"
-"\"En od\" pomeni, da so slike v izbranih albumih ali značkah.\n"
-"\"Oboje\" pomeni, da sta sliki in v izbranih albumih in značkah.\n"
+"\"Samo izbrani zavihek\" pomeni, da se išče samo v izbranem zavihku.\n"
+"\"En od\" pomeni, da so slike v izbranih albumih ali z značkami.\n"
+"\"Oboje\" pomeni, da so sliki in v izbranih albumih in z značkami.\n"
 "\"Albumi, a ne značke\" pomeni, da morajo biti slike v izbranih albumih, ne "
-"pa tudi značkah.\n"
-"\"Značke, a ne albumi\" pomeni, da morajo biti slike v izbranih značkah, ne "
-"pa tudi v albumih."
+"pa tudi z značkami.\n"
+"\"Značke, a ne albumi\" pomeni, da morajo biti slike z izbranimi značkami, a "
+"ne v albumih."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:214
 #, kde-format
@@ -52736,11 +52722,10 @@ msgid "Similarity range:"
 msgstr "Obseg podobnosti:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:233
-#, fuzzy, kde-format
-#| msgid "Last Search"
+#, kde-format
 msgctxt "@label"
 msgid "Limit Search to:"
-msgstr "Zadnje iskanje"
+msgstr "Omeji iskanje na:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:237
 #, kde-format
@@ -52749,12 +52734,10 @@ msgid "None"
 msgstr "Brez"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Reference Album:"
+#, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Reference Album only"
-msgstr "Referenčni album:"
+msgstr "Samo referenčni album:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:239
 #, kde-format
@@ -52763,12 +52746,7 @@ msgid "Exclude reference Album"
 msgstr "Izvzemi referenčni album"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:240
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Use this option to restrict the duplicate search with some criteria, as "
-#| "to limit search to the Album of reference image, or to exclude the Album "
-#| "of reference image of the search."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to restrict the duplicate search with some criteria, as to "
@@ -52776,8 +52754,8 @@ msgid ""
 "of reference image, or to exclude the Album of reference image of the search."
 msgstr ""
 "S to možnostjo omejite iskanje dvojnikov z nekaterimi kriteriji, na primer "
-"omejite iskanje na album referenčne slike ali izključite album referenčne "
-"slike iskanja."
+"omejite iskanje na album\n"
+"referenčne slike ali izključite album referenčne slike iskanja."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:269
 #, kde-format
@@ -52846,19 +52824,15 @@ msgstr ""
 "Prosim najprej ustvarite prstne odtise slik."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-#| "p><p>You can also use the context menu<br/> when browsing through your "
-#| "images.</p>"
+#, kde-format
 msgid ""
 "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
 "p><p>You can also use the context menu<br/>when browsing through<br/>your "
 "images.</p>"
 msgstr ""
-"<p>Sem povlecite in spustite sliko,<br/> da najdete podobne predmete.</"
-"p><p>Uporabite lahko tudi vsebinski meni<br/> med brskanjem skozi vaše slike."
-"</p>"
+"<p>Povlecite in spustite sliko sem,<br/> da najdete<br/>podobne predmete.</"
+"p><p>Uporabite lahko tudi vsebinski meni<br/> med brskanjem skozi<br/>vaše "
+"slike.</p>"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
 #, kde-format

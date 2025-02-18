@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-17 01:51+0000\n"
-"PO-Revision-Date: 2025-02-12 09:34+0100\n"
+"PO-Revision-Date: 2025-02-16 21:51+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -35359,11 +35359,10 @@ msgid "Search in"
 msgstr "Chercher dans"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Workflow"
+#, kde-format
 msgctxt "@label Face Worflow"
 msgid "Workflow:"
-msgstr "Flux de production"
+msgstr "Flux de travail :"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:106
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
@@ -35387,15 +35386,7 @@ msgid "Recognize faces only"
 msgstr "Ne reconnaître que les visages"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Scan new images</b> will scan for faces and attempt recognition for "
-#| "new images found in the albums selected in the \"Search in\" tab.</"
-#| "p><p><b>Scan all images</b> will scan for faces and attempt recognition "
-#| "for all images found in the albums selected in the \"Search in\" tab.</"
-#| "p><p><b>Recognize faces only</b> will try to match unknown faces with "
-#| "confirmed faces without scanning images new faces.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "digiKam can search for faces in your photos.\n"
@@ -35408,14 +35399,18 @@ msgid ""
 "p><p><b>Recognize faces only</b> will try to match unknown faces with "
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
-"<p><b>Analyser de nouvelles images</b> recherchera les visages et tentera de "
-"reconnaître les nouvelles images trouvées dans les albums sélectionnés dans "
-"l'onglet « Rechercher dans ».</p><p><b>Analyser toutes les images</b> "
-"recherchera les visages et tentera de reconnaître toutes les images trouvées "
-"dans les albums sélectionnés dans l'onglet « Rechercher dans ».</"
-"p><p><b>Reconnaître uniquement les visages</b> essaiera de faire "
-"correspondre des visages inconnus avec des visages confirmés sans analyser "
-"les nouveaux visages des images.</p>"
+"DigiKam peut rechercher des visages dans vos photos. \n"
+"Lorsque vous avez identifié vos ami(e)s sur un certain nombre de photos, \n"
+"il peut aussi reconnaître les personnes figurant sur vos photos.  \n"
+"<p><b>Analyser de nouvelles images</b> fera une recherche de visages et "
+"tentera une reconnaissance dans toutes les nouvelles images trouvées dans "
+"les albums sélectionnés dans l’onglet \"Rechercher dans\". </"
+"p><p><b>Analyser toutes les images</b> fera une recherche de visages et "
+"tentera une reconnaissance dans toutes les images trouvées dans les albums "
+"sélectionnés dans l’onglet \"Rechercher dans\". </p><p><b>Reconnaître "
+"uniquement les visages</b> essaiera de faire correspondre des visages "
+"inconnus avec des visages confirmés sans analyser de nouveaux visages dans "
+"les images. </p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
 #, kde-format
@@ -53412,20 +53407,16 @@ msgid "Older or Larger"
 msgstr "Plus ancien ou plus grand"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:129
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity reference selection method"
-#| msgid "Prefer selected folder as reference"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected Album as reference"
-msgstr "Préférez le dossier sélectionné comme référence"
+msgstr "Préférer l'album sélectionné comme référence"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity reference selection method"
-#| msgid "Prefer other than selected folder as reference"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected Album as reference"
-msgstr "Préférez un dossier différent de celui sélectionné comme référence"
+msgstr "Préférer un album différent de celui sélectionné comme référence"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:135
 #, kde-format
@@ -53446,16 +53437,13 @@ msgid "Select method for reference image selection"
 msgstr "Sélectionnez une méthode pour la sélection d'images de référence"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:144
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference Album:"
-msgstr "Référence :"
+msgstr "Album de référence :"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Reference"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Reference"
 msgstr "Référence"
@@ -53563,9 +53551,7 @@ msgid "Reference Album only"
 msgstr "Référence :"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:239
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity restriction"
-#| msgid "Exclude reference album"
+#, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference Album"
 msgstr "Exclure l'album de référence"
