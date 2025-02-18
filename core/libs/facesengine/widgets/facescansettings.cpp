@@ -70,9 +70,9 @@ void FaceScanSettings::readFromConfig(const KConfigGroup& group)
     useFullCpu             = group.readEntry(configUseFullCpu,                                                     false);
     detectModel            = static_cast<FaceDetectionModel>(group.readEntry(configFaceDetectionModel,             (int)FaceDetectionModel::YuNet));
     detectSize             = static_cast<FaceDetectionSize>(group.readEntry(configFaceDetectionSize,               (int)FaceDetectionSize::Large));
-    detectAccuracy         = group.readEntry(configFaceDetectionAccuracy,                                          DNN_MODEL_THRESHOLD_NOT_SET);
+    detectAccuracy         = group.readEntry(configFaceDetectionAccuracy,                                          7);
     recognizeModel         = static_cast<FaceRecognitionModel>(group.readEntry(configFaceRecognitionModel,         (int)FaceRecognitionModel::SFace));
-    recognizeAccuracy      = group.readEntry(configFaceRecognitionAccuracy,                                        DNN_MODEL_THRESHOLD_NOT_SET);
+    recognizeAccuracy      = group.readEntry(configFaceRecognitionAccuracy,                                        7);
 
     // NOTE: Album settings are handled by AlbumSelector widget.
 }
