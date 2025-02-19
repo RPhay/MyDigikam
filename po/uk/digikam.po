@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-17 01:51+0000\n"
+"POT-Creation-Date: 2025-02-19 01:56+0000\n"
 "PO-Revision-Date: 2025-02-16 09:52+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -2682,7 +2682,7 @@ msgstr "&Довідка"
 msgid "Main Toolbar"
 msgstr "Головний пенал"
 
-#: core/app/main/main.cpp:225 core/app/views/stack/welcomepageview.cpp:231
+#: core/app/main/main.cpp:227 core/app/views/stack/welcomepageview.cpp:231
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2692,35 +2692,35 @@ msgstr "Головний пенал"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:211
+#: core/app/main/main.cpp:236 core/showfoto/main/main.cpp:211
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Іван Петрущак,Юрій Чорноіван"
 
-#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:212
+#: core/app/main/main.cpp:237 core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ivanpetrouchtchak@yahoo.com,yurchor@ukr.net"
 
-#: core/app/main/main.cpp:243
+#: core/app/main/main.cpp:245
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Відкрити вікно фотоапарата у «path»"
 
-#: core/app/main/main.cpp:246
+#: core/app/main/main.cpp:248
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Відкрити діалогове вікно фотоапарата для пристрою з UDI Solid «udi»"
 
-#: core/app/main/main.cpp:249
+#: core/app/main/main.cpp:251
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr ""
 "Автоматично виявляти і відкривати фотоапарат, з'єднаний за допомогою gphoto2"
 
-#: core/app/main/main.cpp:251
+#: core/app/main/main.cpp:253
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2728,12 +2728,12 @@ msgstr ""
 "Запустити digiKam з використанням файла бази даних SQLite, виявленого у "
 "каталозі «dir»"
 
-#: core/app/main/main.cpp:254
+#: core/app/main/main.cpp:256
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Запустити digikam із вказаним файлом налаштувань «config»"
 
-#: core/app/main/main.cpp:287
+#: core/app/main/main.cpp:289
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2744,7 +2744,7 @@ msgstr ""
 "встановіть його.\n"
 "У вашій системі не встановлено жодного додатка баз даних."
 
-#: core/app/main/main.cpp:296
+#: core/app/main/main.cpp:298
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2755,7 +2755,7 @@ msgstr ""
 "встановіть його.\n"
 "Список встановлених у вашій системі додатків баз даних:"
 
-#: core/app/main/main.cpp:340
+#: core/app/main/main.cpp:342
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "

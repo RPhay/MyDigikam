@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-17 01:51+0000\n"
+"POT-Creation-Date: 2025-02-19 01:56+0000\n"
 "PO-Revision-Date: 2025-01-19 14:15+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2670,7 +2670,7 @@ msgstr "&Laguntza"
 msgid "Main Toolbar"
 msgstr "Tresna-barra nagusia"
 
-#: core/app/main/main.cpp:225 core/app/views/stack/welcomepageview.cpp:231
+#: core/app/main/main.cpp:227 core/app/views/stack/welcomepageview.cpp:231
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2680,34 +2680,34 @@ msgstr "Tresna-barra nagusia"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:211
+#: core/app/main/main.cpp:236 core/showfoto/main/main.cpp:211
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Iñaki Larrañaga Murgoitio;Iñigo Salvador Azurmendi"
 
-#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:212
+#: core/app/main/main.cpp:237 core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "dooteo@euskalgnu.org;xalba@ni.eus"
 
-#: core/app/main/main.cpp:243
+#: core/app/main/main.cpp:245
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Ireki kameraren elkarrizketa-koadroa \"bide-izenen\"ean"
 
-#: core/app/main/main.cpp:246
+#: core/app/main/main.cpp:248
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Ireki kameraren elkarrizketa-koadroa Solid UDI \"udi\" erabiliz"
 
-#: core/app/main/main.cpp:249
+#: core/app/main/main.cpp:251
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Automatikoki antzeman eta ireki konektatutako gphoto2 kamera bat"
 
-#: core/app/main/main.cpp:251
+#: core/app/main/main.cpp:253
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2715,12 +2715,12 @@ msgstr ""
 "Abiarazi digiKam \"dir\" direktorioan aurkitutako SQLite datu-base "
 "fitxategiarekin"
 
-#: core/app/main/main.cpp:254
+#: core/app/main/main.cpp:256
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Abiarazi digiKam konfiguratzeko \"config\" fitxategiarekin"
 
-#: core/app/main/main.cpp:287
+#: core/app/main/main.cpp:289
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2731,7 +2731,7 @@ msgstr ""
 "Mesedez, instalatu ezazu.\n"
 "Zure ordenagailuan ez dago instalatuta datu-base pluginik."
 
-#: core/app/main/main.cpp:296
+#: core/app/main/main.cpp:298
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2743,7 +2743,7 @@ msgstr ""
 "Zure ordenagailuan instalatutako datu-base pluginak behean zerrendatuta "
 "daude."
 
-#: core/app/main/main.cpp:340
+#: core/app/main/main.cpp:342
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
