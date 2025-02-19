@@ -25,6 +25,8 @@ using namespace Digikam;
 namespace DigikamGenericMetadataEditPlugin
 {
 
+class MetadataEditDialog;
+
 class MetadataEditPlugin : public DPluginGeneric
 {
     Q_OBJECT
@@ -46,10 +48,15 @@ public:
     QString handbookChapter()      const override;
 
     void setup(QObject* const)           override;
+    void cleanUp()                       override;
 
 private Q_SLOTS:
 
     void slotEditMetadata();
+
+private:
+
+    QPointer<MetadataEditDialog> m_toolDlg;
 };
 
 } // namespace DigikamGenericMetadataEditPlugin

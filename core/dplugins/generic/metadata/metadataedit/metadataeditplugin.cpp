@@ -34,6 +34,11 @@ MetadataEditPlugin::MetadataEditPlugin(QObject* const parent)
 {
 }
 
+void MetadataEditPlugin::cleanUp()
+{
+    delete m_toolDlg;
+}
+
 QString MetadataEditPlugin::name() const
 {
     return i18nc("@title", "Metadata Edit");
@@ -120,10 +125,13 @@ void MetadataEditPlugin::slotEditMetadata()
         return;
     }
 
-    QPointer<MetadataEditDialog> dialog = new MetadataEditDialog(nullptr, iface);
-    dialog->setPlugin(this);
-    dialog->exec();
-    delete dialog;
+    if (!reactivateToolDialog(m_toolDlg))
+    {
+        delete m_toolDlg;
+        m_toolDlg = new MetadataEditDialog(nullptr, iface);
+        m_toolDlg->setPlugin(this);
+        m_toolDlg->show();
+    }
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

@@ -57,7 +57,6 @@ private Q_SLOTS:
 private:
 
     QPointer<TimeAdjustDialog> m_toolDlg;
-
 };
 
 } // namespace DigikamGenericTimeAdjustPlugin
