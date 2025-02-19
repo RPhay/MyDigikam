@@ -220,7 +220,6 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     : DPluginDialog(parent, QLatin1String("Geolocation Edit Settings")),
       d            (new Private)
 {
-    setAttribute(Qt::WA_DeleteOnClose, true);
     setWindowTitle(i18nc("@title:window", "Geolocation Editor"));
     setMinimumSize(300, 400);
     setModal(true);
