@@ -83,7 +83,17 @@ void SystemSettings::readSettings()
 
     enableAesthetic      = settings.value(QLatin1String("enableAesthetic"),   true).toBool();
     enableAutoTags       = settings.value(QLatin1String("enableAutoTags"),    true).toBool();
+
+#ifdef Q_OS_WIN
+
     softwareOpenGL       = settings.value(QLatin1String("softwareOpenGL"),    true).toBool();
+
+#else
+
+    softwareOpenGL       = settings.value(QLatin1String("softwareOpenGL"),    false).toBool();
+
+#endif
+
     enableLogging        = settings.value(QLatin1String("enableLogging"),     false).toBool();
     enableOpenCL         = settings.value(QLatin1String("enableOpenCL"),      false).toBool();
 
