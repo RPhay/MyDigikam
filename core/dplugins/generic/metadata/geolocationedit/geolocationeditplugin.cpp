@@ -35,6 +35,11 @@ GeolocationEditPlugin::GeolocationEditPlugin(QObject* const parent)
 {
 }
 
+void GeolocationEditPlugin::cleanUp()
+{
+    delete m_toolDlg;
+}
+
 QString GeolocationEditPlugin::name() const
 {
     return i18nc("@title", "Geolocation Edit");
@@ -108,11 +113,13 @@ void GeolocationEditPlugin::setup(QObject* const parent)
 
 void GeolocationEditPlugin::slotEditGeolocation()
 {
-    QPointer<GeolocationEdit> dialog = new GeolocationEdit(nullptr, infoIface(sender()));
-    dialog->moveToThread(qApp->thread());
-    dialog->setPlugin(this);
-    dialog->exec();
-    delete dialog;
+    if (!reactivateToolDialog(m_toolDlg))
+    {
+        delete m_toolDlg;
+        m_toolDlg = new GeolocationEdit(nullptr, infoIface(sender()));
+        m_toolDlg->setPlugin(this);
+        m_toolDlg->show();
+    }
 }
 
 } // namespace DigikamGenericGeolocationEditPlugin

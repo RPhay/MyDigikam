@@ -25,6 +25,8 @@ using namespace Digikam;
 namespace DigikamGenericGeolocationEditPlugin
 {
 
+class GeolocationEdit;
+
 class GeolocationEditPlugin : public DPluginGeneric
 {
     Q_OBJECT
@@ -46,10 +48,15 @@ public:
     QString handbookChapter()      const override;
 
     void setup(QObject* const)           override;
+    void cleanUp()                       override;
 
 private Q_SLOTS:
 
     void slotEditGeolocation();
+
+private:
+
+    QPointer<GeolocationEdit> m_toolDlg;
 };
 
 } // namespace DigikamGenericGeolocationEditPlugin
