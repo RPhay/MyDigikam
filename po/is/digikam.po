@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-19 01:56+0000\n"
+"POT-Creation-Date: 2025-02-20 01:54+0000\n"
 "PO-Revision-Date: 2025-02-11 10:07+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -11293,7 +11293,7 @@ msgstr "Skrá ekki vistuð"
 msgid "Cannot save \"%1\" file"
 msgstr "Gat ekki vistað \"%1\" skrána"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:224
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:223
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:421
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:522
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:801
@@ -11302,38 +11302,38 @@ msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "Hnattstaðsetningarritill"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:257
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:256
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr "Birta staði með bókamerkjum á kortinu."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:275
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:274
 #, kde-format
 msgctxt "@label"
 msgid "Layout:"
 msgstr "Framsetning:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:276
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr "Eitt landakort"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:278
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - left and right"
 msgstr "Tvö landakort - til vinstri og hægri"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:279
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:278
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - top and bottom"
 msgstr "Tvö landakort - efst og neðst"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
@@ -11344,67 +11344,67 @@ msgstr "Tvö landakort - efst og neðst"
 msgid "OK"
 msgstr "Í lagi"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:322
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:321
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Röðun"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:329
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:328
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Birta elsta fyrst"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:333
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:332
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Birta yngsta fyrst"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Nánar"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS pörun"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Afturkalla/Endurtaka"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Viðsnúin staðsetningarkóðun (Reverse Geocoding)"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:377
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Leita"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:378
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:377
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "KML-útflutningur"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:596
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:595
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Hleð inn lýsigögnum -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:789
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:788
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11412,25 +11412,25 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "1 mynd hefur verið breytt."
 msgstr[1] "%1 myndum hefur verið breytt."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:796
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:795
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Óvistaðar breytingar"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:797
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:796
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Myndirðu vilja vista breytingarnar sem þú hefur gert á þeim?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:912
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:911
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Vista breytingar -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
@@ -11467,13 +11467,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Villa"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:972
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Tókst ekki að vista sumar upplýsingar:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -11535,19 +11535,19 @@ msgstr "Virkja"
 msgid "Details changed"
 msgstr "Ítaratriðum breytt"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:40
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "Geolocation Edit"
 msgstr "Breytingar á hnattstaðsetningu"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:55
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "A tool to edit items geolocation"
 msgstr "Verkfæri til að breyta hnattstaðsetningu atriða"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:60
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -11574,7 +11574,7 @@ msgstr ""
 "Að lokum, þetta verkfæri getur einnig lesið GPS-ferla úr tækjum og samstillt "
 "hnattstaðsetningu atriða ef myndavél er ekki með innbyggt GPS-tæki."
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:98
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
@@ -14910,19 +14910,19 @@ msgstr ""
 "valdir staðlaðan IPTC/NAA tilvísunarkóða. Þessi reitur takmarkast við 64 "
 "stafi."
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:39
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Metadata Edit"
 msgstr "Breytingar á lýsigögnum"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:54
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to edit items metadata"
 msgstr "Verkfæri til að breyta lýsigögnum atriða"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:59
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -14943,7 +14943,7 @@ msgstr ""
 "Ljósmyndaumboðsskrifstofur geta notað forstillt viðfangsefni til að lýsa "
 "efni mynda/myndskeiða byggt á IPTC-tilvísanakóðum."
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Edit Metadata..."

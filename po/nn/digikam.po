@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-16 01:57+0000\n"
+"POT-Creation-Date: 2025-02-19 01:56+0000\n"
 "PO-Revision-Date: 2024-08-27 20:25+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -2628,7 +2628,7 @@ msgstr "&Hjelp"
 msgid "Main Toolbar"
 msgstr "Hovudverktøylinje"
 
-#: core/app/main/main.cpp:225 core/app/views/stack/welcomepageview.cpp:231
+#: core/app/main/main.cpp:227 core/app/views/stack/welcomepageview.cpp:231
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2638,45 +2638,45 @@ msgstr "Hovudverktøylinje"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:234 core/showfoto/main/main.cpp:211
+#: core/app/main/main.cpp:236 core/showfoto/main/main.cpp:211
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Karl Ove Hufthammer"
 
-#: core/app/main/main.cpp:235 core/showfoto/main/main.cpp:212
+#: core/app/main/main.cpp:237 core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "karl@huftis.org"
 
-#: core/app/main/main.cpp:243
+#: core/app/main/main.cpp:245
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Opna kameravindauget ved «path»."
 
-#: core/app/main/main.cpp:246
+#: core/app/main/main.cpp:248
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Opna kameravindauget til eininga med Solid-UDI-en «udi»."
 
-#: core/app/main/main.cpp:249
+#: core/app/main/main.cpp:251
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Oppdag automatisk og opna tilkopla gphoto2-kamera."
 
-#: core/app/main/main.cpp:251
+#: core/app/main/main.cpp:253
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "Start digiKam med SQLite-databasefila som finst i mappa «dir»."
 
-#: core/app/main/main.cpp:254
+#: core/app/main/main.cpp:256
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Start digiKam med oppsettfila «config»."
 
-#: core/app/main/main.cpp:287
+#: core/app/main/main.cpp:289
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2687,7 +2687,7 @@ msgstr ""
 "installera det.\n"
 "Det finst ingen databasetillegg installerte på datamaskina."
 
-#: core/app/main/main.cpp:296
+#: core/app/main/main.cpp:298
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2698,7 +2698,7 @@ msgstr ""
 "installera det.\n"
 "Desse databasetillegga er alt installerte på maskina:"
 
-#: core/app/main/main.cpp:340
+#: core/app/main/main.cpp:342
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -35202,12 +35202,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr ""
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:375
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:373
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr ""
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:389
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:387
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr ""

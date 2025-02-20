@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-19 01:56+0000\n"
+"POT-Creation-Date: 2025-02-20 01:54+0000\n"
 "PO-Revision-Date: 2025-02-16 17:23+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -11505,7 +11505,7 @@ msgstr "Archivo no guardado"
 msgid "Cannot save \"%1\" file"
 msgstr "No es posible guardar el archivo «%1» "
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:224
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:223
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:421
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:522
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:801
@@ -11514,38 +11514,38 @@ msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "Editor de geolocalización"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:257
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:256
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr "Mostrar las posiciones marcadas en el mapa."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:275
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:274
 #, kde-format
 msgctxt "@label"
 msgid "Layout:"
 msgstr "Disposición:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:276
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr "Un mapa"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:278
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - left and right"
 msgstr "Dos mapas (izquierda y derecha)"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:279
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:278
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - top and bottom"
 msgstr "Dos mapas (arriba y abajo)"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
@@ -11556,67 +11556,67 @@ msgstr "Dos mapas (arriba y abajo)"
 msgid "OK"
 msgstr "OK"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:322
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:321
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Orden"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:329
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:328
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Mostrar primero las más antiguas"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:333
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:332
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Mostrar primero las más nuevas"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Detalles"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "Correlacionador GPS"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Deshacer/rehacer"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Invertir geocodificación"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:377
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Buscar"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:378
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:377
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "Exportar a KML"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:596
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:595
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Cargando metadatos -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:789
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:788
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11624,25 +11624,25 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "Tiene 1 imagen modificada "
 msgstr[1] "Tiene %1 imágenes modificadas"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:796
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:795
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Cambios sin guardar"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:797
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:796
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 ¿Le gustaría guardar los cambios que ha realizado? "
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:912
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:911
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Guardando cambios -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
@@ -11679,13 +11679,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Error"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:972
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "No se ha podido guardar parte de la información:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -11747,19 +11747,19 @@ msgstr "Aplicar"
 msgid "Details changed"
 msgstr "Cambiaron los detalles"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:40
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "Geolocation Edit"
 msgstr "Edición de geolocalización"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:55
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "A tool to edit items geolocation"
 msgstr "Herramienta para editar la geolocalización de elementos"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:60
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -11787,7 +11787,7 @@ msgstr ""
 "para sincronizar los datos de geolocalización de los elementos si su cámara "
 "no dispone de un dispositivo GPS integrado."
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:98
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
@@ -15164,19 +15164,19 @@ msgstr ""
 "seleccionado un código de referencia IPTC/NAA estándar. Este campo está "
 "limitado a 64 caracteres."
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:39
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Metadata Edit"
 msgstr "Edición de metadatos"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:54
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to edit items metadata"
 msgstr "Herramienta para editar metadatos de elementos"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:59
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -15197,7 +15197,7 @@ msgstr ""
 "Las agencias fotográficas pueden usar temas preconfigurados para describir "
 "el contenido de elementos basados en códigos de referencias Iptc."
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Edit Metadata..."

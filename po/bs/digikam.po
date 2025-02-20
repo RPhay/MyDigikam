@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-19 01:56+0000\n"
+"POT-Creation-Date: 2025-02-20 01:54+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -11965,7 +11965,7 @@ msgstr "Sačuvajte XMP datoteku"
 msgid "Cannot save \"%1\" file"
 msgstr "Ne mogu da sačuvam \"%1\" datoteku"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:224
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:223
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:421
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:522
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:801
@@ -11974,7 +11974,7 @@ msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "Geolokacijski filter"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:257
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:256
 #, fuzzy, kde-format
 #| msgid "Display bookmarked positions on the map."
 msgctxt "@info"
@@ -11983,28 +11983,28 @@ msgstr "Prikaži zabilježene pozicije na karti."
 
 # >! Missing trailing :
 # >> @label:listbox
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:275
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:274
 #, fuzzy, kde-format
 #| msgid "Layout:"
 msgctxt "@label"
 msgid "Layout:"
 msgstr "Raspored:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:276
 #, fuzzy, kde-format
 #| msgid "One map"
 msgctxt "@item"
 msgid "One map"
 msgstr "Jedna karta"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:278
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
 #, fuzzy, kde-format
 #| msgid "Two maps - vertical"
 msgctxt "@item"
 msgid "Two maps - left and right"
 msgstr "Dvije karte - uspravno"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:279
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:278
 #, fuzzy, kde-format
 #| msgid "Two maps - horizontal"
 msgctxt "@item"
@@ -12012,7 +12012,7 @@ msgid "Two maps - top and bottom"
 msgstr "Dvije karte - vodoravno"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
@@ -12023,77 +12023,77 @@ msgstr "Dvije karte - vodoravno"
 msgid "OK"
 msgstr "OK"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:322
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:321
 #, fuzzy, kde-format
 #| msgid "Sorting"
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Sortiranje"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:329
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:328
 #, fuzzy, kde-format
 #| msgid "Show oldest first"
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Prvo prikaži starije"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:333
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:332
 #, fuzzy, kde-format
 #| msgid "Show youngest first"
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Prvo prikaži mlađe"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Detalji"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, fuzzy, kde-format
 #| msgid "GPS Correlator"
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS korelator"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
 #, fuzzy, kde-format
 #| msgid "Undo/Redo"
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Poništiti/Obnoviti"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
 #, fuzzy, kde-format
 #| msgid "Reverse Geocoding"
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Reverzno Geokodiranje"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:377
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
 #, fuzzy, kde-format
 #| msgid "Search"
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Traži"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:378
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:377
 #, fuzzy, kde-format
 #| msgid "Export"
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "Izvezi"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:596
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:595
 #, fuzzy, kde-format
 #| msgid "Loading metadata - %p%"
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Učitavanje metapodataka - %p%"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:789
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:788
 #, fuzzy, kde-format
 #| msgid "You have 1 modified image."
 #| msgid_plural "You have %1 modified images."
@@ -12104,28 +12104,28 @@ msgstr[0] "Imate %1 modifikovanu sliku."
 msgstr[1] "Imate %1 modifikovanih slika."
 msgstr[2] "Imate %1 modifikovane slike."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:796
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:795
 #, fuzzy, kde-format
 #| msgid "Unsaved changes"
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Nespremljene promjene"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:797
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:796
 #, fuzzy, kde-format
 #| msgid "%1 Would you like to save the changes you made to them?"
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Želite li sačuvati promjene koje ste napravili na njima?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:912
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:911
 #, fuzzy, kde-format
 #| msgid "Saving changes - %p%"
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Snimanje promjena - %p%"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
@@ -12163,14 +12163,14 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Greška"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:972
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
 #, fuzzy, kde-format
 #| msgid "Failed to save some information:"
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Nije uspjelo snimanje nekih informacija:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -12232,20 +12232,20 @@ msgstr "Primijeni"
 msgid "Details changed"
 msgstr "Detalji promijenjeni"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:40
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:45
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Geolocation Edit"
 msgstr "Geolokacijski filter"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:55
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "Filter by geolocation"
 msgctxt "@info"
 msgid "A tool to edit items geolocation"
 msgstr "Filtrirano po geolokaciji"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:60
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -12261,7 +12261,7 @@ msgid ""
 "geo-location of items if you camera do not have an embedded GPS device."
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:98
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:103
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
@@ -15894,20 +15894,20 @@ msgstr ""
 "standardni IPTC/NAA  referentni kod. Ovo polje je ograničeno sa 64 ASCII "
 "znaka."
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:39
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:44
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Metadata Edit"
 msgstr "Dijalog za uređivanje metapodataka"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:54
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Apply template metadata"
 msgctxt "@info"
 msgid "A tool to edit items metadata"
 msgstr "Primijenite predložak metapodataka"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:59
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -15920,7 +15920,7 @@ msgid ""
 "items contents based on Iptc reference codes."
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:101
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Edit Metadata..."

@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-19 01:56+0000\n"
+"POT-Creation-Date: 2025-02-20 01:54+0000\n"
 "PO-Revision-Date: 2025-02-08 11:19+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -11596,7 +11596,7 @@ msgstr "Tiedostoa ei tallennettu"
 msgid "Cannot save \"%1\" file"
 msgstr "Tiedoston \"%1\" tallennus epäonnistui"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:224
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:223
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:421
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:522
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:801
@@ -11605,26 +11605,26 @@ msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "Maantieteellisen sijainnin muokkaus"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:257
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:256
 #, fuzzy, kde-format
 #| msgid "Display bookmarked positions on the map."
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr "Näytä kartalla kirjanmerkityt sijainnit."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:275
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:274
 #, kde-format
 msgctxt "@label"
 msgid "Layout:"
 msgstr "Asettelu:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:276
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr "Yksi kartta"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:278
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
 #, fuzzy, kde-format
 #| msgctxt "@item"
 #| msgid "Two maps - vertical"
@@ -11632,7 +11632,7 @@ msgctxt "@item"
 msgid "Two maps - left and right"
 msgstr "Kaksi karttaa – pysty"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:279
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:278
 #, fuzzy, kde-format
 #| msgctxt "@item"
 #| msgid "Two maps - horizontal"
@@ -11641,7 +11641,7 @@ msgid "Two maps - top and bottom"
 msgstr "Kaksi karttaa – vaaka"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
@@ -11652,68 +11652,68 @@ msgstr "Kaksi karttaa – vaaka"
 msgid "OK"
 msgstr "OK"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:322
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:321
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Lajittelu"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:329
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:328
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Näytä vanhin ensin"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:333
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:332
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Näytä uusin ensin"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Yksityiskohdat"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS-korrelointi"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Kumoa/Tee uudelleen"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Käänteinen geokoodaus"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:377
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Etsi"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:378
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:377
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "KML-vienti"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:596
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:595
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Ladataan metatietoa –"
 
 # Monikossa pitäisi tarkkaan ottaen %1:een merkitä partitiivin pääte (koska 10 kuvaa = kymmenen, ei kymmentä kuvaa), mutta menköön :)
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:789
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:788
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11721,26 +11721,26 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "Yhtä kuvaa on muokattu."
 msgstr[1] "%1 kuvaa on muokattu."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:796
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:795
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Tallentamattomia muutoksia"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:797
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:796
 #, fuzzy, kde-format
 #| msgid "%1 Would you like to save the changes you made to them?"
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Haluatko tallentaa tehdyt muutokset?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:912
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:911
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Tallennetaan muutoksia –"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
@@ -11777,14 +11777,14 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Virhe"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:972
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
 #, fuzzy, kde-format
 #| msgid "Failed to save some information:"
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Joidenkin tietojen tallentaminen epäonnistui:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -11846,20 +11846,20 @@ msgstr "Käytä"
 msgid "Details changed"
 msgstr "Yksityiskohdat muuttuneet"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:40
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "Geolocation Edit"
 msgstr "Maantieteellisen sijainnin muokkaus"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:55
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "A tool to edit items geolocation"
 msgctxt "@info"
 msgid "A tool to edit items geolocation"
 msgstr "Työkalu maantieteellisen sijaintitiedon muokkaamiseen"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:60
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:65
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>This tool permit to changes geolocation information from items.</"
@@ -11890,7 +11890,7 @@ msgstr ""
 "maantieteellisen sijainnin tahdistamiseksi, ellei kamerassa ole omaa GPS-"
 "laitetta.</p>"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:98
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
@@ -15352,20 +15352,20 @@ msgstr ""
 "Kirjoita tähän aiheen nimi. Käytä englantia, jos valitsit standardinmukaisen "
 "IPTC/NAA-viitekoodin. Kenttä on rajattu 64 ASCII-merkkiin."
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:39
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Metadata Edit"
 msgstr "Metatietojen muokkaus"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:54
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "A tool to edit items metadata"
 msgctxt "@info"
 msgid "A tool to edit items metadata"
 msgstr "Työkalu metatietojen muokkaukseen"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:59
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:64
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>This tool permit to changes plenty of metadata from items.</p><p>Most "
@@ -15389,7 +15389,7 @@ msgstr ""
 "aiheita voi käyttää kohteiden sisällön kuvaamiseen IPTC-viitekoodein "
 "valokuvatoimistoja varten.</p>"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Edit Metadata..."
