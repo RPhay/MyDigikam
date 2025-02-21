@@ -28,13 +28,13 @@
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2010.
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2006, 2008, 2009, 2010.
 # pan93412 <pan93412@gmail.com>, 2019, 2020.
-# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-20 01:54+0000\n"
-"PO-Revision-Date: 2024-07-05 15:29+0900\n"
+"PO-Revision-Date: 2025-02-20 15:42+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -35653,7 +35653,7 @@ msgstr "亞塞拜然語"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bashkir"
-msgstr "巴什吉爾語"
+msgstr "巴什喀爾語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:342
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:490
@@ -44321,7 +44321,7 @@ msgstr "亞塞拜然語（亞塞拜然共和國）"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:70
 msgctxt "@info: country code"
 msgid "Bashkir (Russia)"
-msgstr "巴什吉爾語（俄羅斯）"
+msgstr "巴什喀爾語（俄羅斯）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:71
 msgctxt "@info: country code"
@@ -47886,7 +47886,7 @@ msgstr "巴斯克語"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Bashkir"
-msgstr "巴什吉爾語"
+msgstr "巴什喀爾語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:130
 #, kde-format
