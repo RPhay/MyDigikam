@@ -67,7 +67,7 @@ void FaceScanSettings::readFromConfig(const KConfigGroup& group)
 {
     alreadyScannedHandling = static_cast<AlreadyScannedHandling>(group.readEntry(configFaceAlreadyScannedHandling, (int)AlreadyScannedHandling::Skip));
     task                   = static_cast<ScanTask>(group.readEntry(configFaceScanTask,                             (int)ScanTask::DetectAndRecognize));
-    useFullCpu             = group.readEntry(configUseFullCpu,                                                     false);
+    useFullCpu             = group.readEntry(configUseFullCpu,                                                     true);
     detectModel            = static_cast<FaceDetectionModel>(group.readEntry(configFaceDetectionModel,             (int)FaceDetectionModel::YuNet));
     detectSize             = static_cast<FaceDetectionSize>(group.readEntry(configFaceDetectionSize,               (int)FaceDetectionSize::Large));
     detectAccuracy         = group.readEntry(configFaceDetectionAccuracy,                                          7);
