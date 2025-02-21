@@ -172,7 +172,7 @@ BUGFIXES:
 118 ==> 500178 - Star Rating metadata won't write to Video.
 119 ==> 500239 - Face tags from iPhone cannot overwriiten or deleted.
 120 ==> 500340 - Issue with tags using special characters UTF-8.
-121 ==> 
+121 ==> 500525 - Writing metadata to AVIF files.
 122 ==> 
 123 ==> 
 124 ==> 
