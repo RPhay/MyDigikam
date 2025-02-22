@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-20 01:54+0000\n"
-"PO-Revision-Date: 2025-02-16 10:05+0100\n"
+"PO-Revision-Date: 2025-02-21 11:02+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -35121,7 +35121,7 @@ msgstr "Explora totes les imatges"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
-msgstr "Només reconeix les cares"
+msgstr "Reconeix només les cares"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:110
 #, kde-format
@@ -35144,7 +35144,7 @@ msgstr ""
 "reconeixement de les imatges noves trobades als àlbums seleccionats a la "
 "pestanya «Cerca a».</p><p><b>Explora totes les imatges</b> cercarà les cares "
 "i intentarà el reconeixement de totes les imatges trobades als àlbums "
-"seleccionats a la pestanya «Cerca a».</p><p><b>Només reconeix les cares</b> "
+"seleccionats a la pestanya «Cerca a».</p><p><b>Reconeix només les cares</b> "
 "intentarà fer coincidir les cares desconegudes amb les cares confirmades "
 "sense explorar cares noves de les imatges.</p>"
 
