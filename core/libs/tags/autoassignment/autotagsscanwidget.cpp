@@ -118,11 +118,11 @@ void AutotagsScanWidget::setupUi()
     d->tagMode->addItem(i18nc("@item: remplace existing autotags entries in database", "Replace Existing"), AutotagsScanSettings::TagMode::Replace);
     d->tagMode->addItem(i18nc("@item: update the autotags entries in database",        "Update"),           AutotagsScanSettings::TagMode::Update);
     d->tagMode->setToolTip(i18nc("@info:tooltip",
-                                 "<p><b>Replace Existing</b>: clear existing autotags and replace with the results of the scan.</p>"
-                                 "<p><b>Update</b>: add any new autotags found to the existing tags.</p>"));
+                                 "<p><b>Replace Existing</b>: clear existing auto-tags and replace with the results of the scan.</p>"
+                                 "<p><b>Update</b>: add any new auto-tags found to the existing auto-tags.</p>"));
 
-    QLabel* const modelLbl  = new QLabel(i18nc("@label: deep learning model selection to perform autotags",
-                                             "Selection Model:"), d->settingsTab);
+    QLabel* const modelLbl  = new QLabel(i18nc("@label: deep learning model used to detect objects to auto-tag",
+                                             "Detection Model:"), d->settingsTab);
 
     DNNModelManager* const dnnModelManager        = DNNModelManager::instance();
     QList<QPair<QString, QStringList> > modelList = dnnModelManager->getModelList(DNNModelUsage::DNNUsageObjectDetection);
