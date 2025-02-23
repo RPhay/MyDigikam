@@ -173,8 +173,8 @@ BUGFIXES:
 119 ==> 500239 - Face tags from iPhone cannot overwriiten or deleted.
 120 ==> 500340 - Issue with tags using special characters UTF-8.
 121 ==> 500525 - Writing metadata to AVIF files.
-122 ==> 
-123 ==> 
+122 ==> 469408 - Tags added to videos files (mp4 or mov) in digiKam-8.0.0 are +written to file but not recognized in other software.
+123 ==> 500445 - digiKam "You have insufficient privileges on database.
 124 ==> 
 125 ==> 
 126 ==> 
