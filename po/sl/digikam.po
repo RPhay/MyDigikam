@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-20 01:54+0000\n"
+"POT-Creation-Date: 2025-02-24 01:53+0000\n"
 "PO-Revision-Date: 2025-02-17 10:45+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -39786,21 +39786,28 @@ msgid "Update"
 msgstr "Posodobi"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "<p><b>Replace Existing</b>: clear existing autotags and replace with the "
+#| "results of the scan.</p><p><b>Update</b>: add any new autotags found to "
+#| "the existing tags.</p>"
 msgctxt "@info:tooltip"
 msgid ""
-"<p><b>Replace Existing</b>: clear existing autotags and replace with the "
-"results of the scan.</p><p><b>Update</b>: add any new autotags found to the "
-"existing tags.</p>"
+"<p><b>Replace Existing</b>: clear existing auto-tags and replace with the "
+"results of the scan.</p><p><b>Update</b>: add any new auto-tags found to the "
+"existing auto-tags.</p>"
 msgstr ""
 "<p><b>Zamenjaj obstoječe</b>: počisti obstoječe samodejne oznake in jih "
 "zamenjaj z rezultati prečesavanja.</p><p><b>Posodobi</b>: dodaj vse nove "
 "najdene samodejne značke k obstoječim značkam.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
-#, kde-format
-msgctxt "@label: deep learning model selection to perform autotags"
-msgid "Selection Model:"
+#, fuzzy, kde-format
+#| msgctxt "@label: deep learning model selection to perform autotags"
+#| msgid "Selection Model:"
+msgctxt "@label: deep learning model used to detect objects to auto-tag"
+msgid "Detection Model:"
 msgstr "Model izbire:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
