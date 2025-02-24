@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 01:53+0000\n"
-"PO-Revision-Date: 2025-02-16 12:53+0300\n"
+"PO-Revision-Date: 2025-02-24 09:03+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -39739,12 +39739,7 @@ msgid "Update"
 msgstr "Güncelle"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Replace Existing</b>: clear existing autotags and replace with the "
-#| "results of the scan.</p><p><b>Update</b>: add any new autotags found to "
-#| "the existing tags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Replace Existing</b>: clear existing auto-tags and replace with the "
@@ -39756,12 +39751,10 @@ msgstr ""
 "kendiliğinden künyeleri var olan künyelere ekleyin.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@label: deep learning model selection to perform autotags"
-#| msgid "Selection Model:"
+#, kde-format
 msgctxt "@label: deep learning model used to detect objects to auto-tag"
 msgid "Detection Model:"
-msgstr "Seçim modeli:"
+msgstr "Algılama modeli:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, kde-format
