@@ -38448,28 +38448,19 @@ msgid "Update"
 msgstr "附加"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Replace Existing</b>: clear existing autotags and replace with the "
-#| "results of the scan.</p><p><b>Update</b>: add any new autotags found to "
-#| "the existing tags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Replace Existing</b>: clear existing auto-tags and replace with the "
 "results of the scan.</p><p><b>Update</b>: add any new auto-tags found to the "
 "existing auto-tags.</p>"
 msgstr ""
-"<p><b>替换</b>：清除已有的自动标签并将它们替换为扫描发现的新自动标签。</"
-"p><p><b>附加</b>：将扫描发现的新自动标签附加到已有的自动标签中。</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@label: deep learning model selection to perform autotags"
-#| msgid "Selection Model:"
+#, kde-format
 msgctxt "@label: deep learning model used to detect objects to auto-tag"
 msgid "Detection Model:"
-msgstr "选择模型："
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, kde-format

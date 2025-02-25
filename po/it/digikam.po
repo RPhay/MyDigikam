@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 01:53+0000\n"
-"PO-Revision-Date: 2025-02-02 11:46+0100\n"
+"PO-Revision-Date: 2025-02-17 22:03+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -2176,12 +2176,10 @@ msgid "By Month"
 msgstr "Per mese"
 
 #: core/app/main/digikamapp_setup.cpp:677
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Date"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Day"
-msgstr "Per data"
+msgstr "Per giorno"
 
 #: core/app/main/digikamapp_setup.cpp:708
 #, kde-format
@@ -2920,20 +2918,17 @@ msgstr "Mappa"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:80
 #: core/app/views/sidebar/labelssidebarwidget.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality Scan"
-msgstr "Ordinamento qualità dell'immagine"
+msgstr "Analisi qualità dell'immagine"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for faces"
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for image quality parsing"
-msgstr "Usa questo pulsante per cercare volti negli album selezionati"
+msgstr ""
+"Usa questo pulsante per analizzare la qualità delle immagini negli album "
+"selezionati"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:129
@@ -3014,8 +3009,7 @@ msgstr "Tag esistenti"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:143
-#, fuzzy, kde-format
-#| msgid "Auto-tag scan"
+#, kde-format
 msgid "Auto-tag Scan"
 msgstr "Analisi tag automatici"
 
@@ -34248,6 +34242,11 @@ msgid ""
 "detect multiple objects in an image. It is trained to recognize 80 different "
 "objects using the COCO dataset.</p>"
 msgstr ""
+"<p><b>YOLOv11 Nano</b>: rete neurale piccola e leggera, che offre una "
+"velocità eccezionale ma può mancare l'individuazione di molti oggetti nelle "
+"immagini. YOLO è in grado di rilevare più oggetti in un'immagine. È "
+"addestrata a riconoscere 80 oggetti diversi tramite l'insieme di dati COCO.</"
+"p>"
 
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
 #, kde-format
@@ -34263,11 +34262,15 @@ msgid ""
 "slower. YOLO can detect multiple objects in an image. It is trained to "
 "recognize 80 different objects using the COCO dataset.</p>"
 msgstr ""
+"<p><b>YOLOv11 XLarge</b>: rete neurale grande e robusta, che offre una buona "
+"precisione. Rileva più oggetti rispetto a YOLOv11 Nano, ma è più lenta. YOLO "
+"è in grado di rilevare più oggetti in un'immagine. È addestrata a "
+"riconoscere 80 oggetti diversi tramite l'insieme di dati COCO.</p>"
 
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
 #, kde-format
 msgid "EfficientNet B7"
-msgstr ""
+msgstr "EfficientNet B7"
 
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:358
 #, kde-format
@@ -34278,6 +34281,10 @@ msgid ""
 "was trained to recognize 1,000 different objects using the ImageNet dataset."
 "</p>"
 msgstr ""
+"<p><b>EfficientNet B7</b>: rete neurale complicata grande e avanzata. Rileva "
+"con precisione elevata un singolo oggetto in un'immagine. EfficientNet B7 è "
+"stata addestrata a riconoscere 1.000 oggetti diversi utilizzando l'insieme "
+"di dati ImageNet.</p>"
 
 #: core/libs/dplugins/core/dpluginaction.cpp:94
 #, kde-format
@@ -35115,11 +35122,10 @@ msgid "Search in"
 msgstr "Ricerca in"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Workflow"
+#, kde-format
 msgctxt "@label Face Worflow"
 msgid "Workflow:"
-msgstr "Flusso di lavoro"
+msgstr "Flusso di lavoro:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:106
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
@@ -35143,15 +35149,7 @@ msgid "Recognize faces only"
 msgstr "Riconosci solo i volti"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Scan new images</b> will scan for faces and attempt recognition for "
-#| "new images found in the albums selected in the \"Search in\" tab.</"
-#| "p><p><b>Scan all images</b> will scan for faces and attempt recognition "
-#| "for all images found in the albums selected in the \"Search in\" tab.</"
-#| "p><p><b>Recognize faces only</b> will try to match unknown faces with "
-#| "confirmed faces without scanning images new faces.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "digiKam can search for faces in your photos.\n"
@@ -35164,6 +35162,9 @@ msgid ""
 "p><p><b>Recognize faces only</b> will try to match unknown faces with "
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
+"digiKam è in grado di ricercare volti nelle tue fotografie.\n"
+"Una volta che hai individuato i tuoi amici in alcune foto,\n"
+"può riconoscere anche le persone mostrate nelle tue foto.\n"
 "<p><b>Analizza nuove immagini</b> analizza i volti e tenta il riconoscimento "
 "nelle nuove immagini trovate negli album selezionati nella scheda «Cerca in»."
 "</p><p><b>Analizza tutte le immagini</b> analizza i volti e tenta il "
@@ -35799,19 +35800,7 @@ msgid "Select All"
 msgstr "Seleziona tutto"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "These settings determines the quality of an image and convert it into a "
-#| "score, stored in database as Pick Label property. This information can be "
-#| "evaluated by two ways: using four basic factors sabotaging the images "
-#| "(blur, noise, exposure, and compression), or using a deep learning neural "
-#| "network engine. The first one helps to determine whether images are "
-#| "distorted by the basic factors, however it demands some drawbacks as fine-"
-#| "tuning from the user’s side and it cannot work along the aesthetic image "
-#| "processing. The second one uses an IA approach based on %1 model to "
-#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
-#| "require hyper-parameter settings, and make this feature easier to use."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "These settings determines the quality of an image and convert it into a "
@@ -35846,171 +35835,135 @@ msgid "aesthetic image quality"
 msgstr "qualità estetica delle immagini"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Scan Mode: "
+#, kde-format
 msgctxt "@label: image quality sort scan mode"
 msgid "Scan Mode:"
-msgstr "Modalità di analisi: "
+msgstr "Modalità di analisi:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgid "All"
+#, kde-format
 msgctxt "@item: all items to scan with image quality sort"
 msgid "All"
 msgstr "Tutto"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgid "Scan non-assigned only"
+#, kde-format
 msgctxt "@item: image quality sort only non assigned items"
 msgid "Non-Assigned Only"
-msgstr "Esegui un'analisi solo dei non assegnati"
+msgstr "Solo dei non assegnati"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-"
-#| "assigned only</b>: scan only the items with no assigned autotags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>All</b>: re-scan all items for quality.</p><p><b>Non-Assigned Only</"
 "b>: scan only the items with no assigned auto-pick labels.</p>"
 msgstr ""
-"<p><b>Analizza tutto</b>: rianalizza tutti gli elementi alla ricerca di tag."
-"</p><p><b>Esegui un'analisi solo dei non assegnati</b>: analizza solamente "
-"gli elementi con tag automatici non assegnati.</p>"
+"<p><b>Tutto</b>: rianalizza tutti gli elementi alla ricerca della qualità.</"
+"p><p><b>Solo dei non assegnati</b>: analizza solamente le etichette di "
+"scelta automatiche non assegnate.</p>"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@option:check"
 msgid "Assign Low Quality to Rejected Label"
-msgstr "Assegna i tag agli elementi &selezionati"
+msgstr "Assegna bassa qualità all'etichetta Rifiutata"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Low quality images detected by blur, noise, and compression analysis will "
-#| "be assigned to Rejected label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Low quality images detected by the quality engine\n"
 "will be assigned to the rejected pick label (red flag)."
 msgstr ""
-"Alle immagini di bassa qualità rilevate dall'analisi di sfocatura, rumore e "
-"compressione verrà assegnata l'etichetta «Rifiutata»."
+"Le immagini di bassa qualità rilevate dal motore della qualità\n"
+"saranno assegnate all'etichetta di scelta Rifiutata (contrassegno rosso)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:108
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign Medium Quality to Pending Label"
-msgstr ""
+msgstr "Assegna qualità media all'etichetta In sospeso"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Medium quality images detected by blur, noise, and compression analysis "
-#| "will be assigned to Pending label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Medium quality images detected by the quality engine\n"
 "will be assigned to the pending pick label (yellow flag)."
 msgstr ""
-"Alle immagini di media qualità rilevate dall'analisi di sfocatura, rumore e "
-"compressione verrà assegnata l'etichetta «In sospeso»."
+"Le immagini di media qualità rilevate dal motore della qualità\n"
+"saranno assegnate all'etichetta di scelta In sospeso (contrassegno giallo)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:122
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign High Quality to Accepted Label"
-msgstr ""
+msgstr "Assegna alta qualità all'etichetta Accettata"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "High quality images detected by blur, noise, and compression analysis "
-#| "will be assigned to Accepted label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "High quality images detected by the quality engine\n"
 "will be assigned to the accepted pick label (green flag)."
 msgstr ""
-"Alle immagini di alta qualità rilevate dall'analisi di sfocatura, rumore e "
-"compressione verrà assegnata l'etichetta «Accettata»."
+"Le immagini di alta qualità rilevate dal motore della qualità\n"
+"saranno assegnate all'etichetta di scelta Accettata (contrassegno verde)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "Quality:"
+#, kde-format
 msgctxt "@label"
 msgid "Quality Engine:"
-msgstr "Qualità:"
+msgstr "Motore della qualità:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:139
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Aesthetic Image using Deep Learning"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Contents"
-msgstr "Rileva immagine estetica utilizzando l'apprendimento profondo"
+msgstr "Rileva contenuti estetici"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detect if the image has aesthetic value.\n"
-#| "The aesthetic detection engine use deep learning model to classify images"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image has aesthetic contents.\n"
 "The aesthetic detection engine is based on a deep learning model to classify "
 "images."
 msgstr ""
-"Rileva se l'immagine ha un valore estetico.\n"
-"Il motore di rilevamento estetico utilizza il modello di apprendimento "
-"profondo per classificare le immagini"
+"Rileva se l'immagine ha dei contenuti estetici.\n"
+"Il motore di rilevamento estetico si basa su un modello di apprendimento "
+"profondo per classificare le immagini."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Quality Using Basic Factors"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Detect by Basic Factors"
-msgstr "Rileva la qualità usando i fattori di base"
+msgstr "Rileva per fattori di base"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detect if the image is sabotaging by four basic factors (blur, noise, "
-#| "exposure, and compression)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image is sabotaging using four basic factors\n"
 "eg. blur, noise, exposure (under / over), and compression levels.\n"
 "See the relevant settings from the next <b>Basic Factors</b> tab."
 msgstr ""
-"Rileva se l'immagine viene compromessa da quattro fattori di base "
-"(sfocatura, rumore, esposizione e compressione)."
+"Rileva se l'immagine viene compromessa utilizzando quattro fattori di base\n"
+"per es. i livelli sfocatura, rumore, (sovra/sotto) esposizione e "
+"compressione).\n"
+"Vedi le impostazioni pertinenti nella scheda <b>Fattori di base</b> "
+"successiva."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Quality detection is time-consuming tasks.\n"
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"Il rilevamento e il riconoscimento facciale sono processi che richiedono "
-"tempo.\n"
+"Il rilevamento di qualità è un processo che richiede tempo.\n"
 "Puoi scegliere se impiegare tutti i core del tuo processore\n"
 "o lavorare sullo sfondo usando un solo core."
 
@@ -40182,61 +40135,50 @@ msgstr ""
 "all'interno della banca dati.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:106
-#, fuzzy, kde-format
-#| msgid "Scan Mode: "
+#, kde-format
 msgctxt "@label: autotags scanning mode"
 msgid "Scan Mode:"
-msgstr "Modalità di analisi: "
+msgstr "Modalità di analisi:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
-#, fuzzy, kde-format
-#| msgid "All"
+#, kde-format
 msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "Tutto"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Scan non-assigned only"
+#, kde-format
 msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
-msgstr "Esegui un'analisi solo dei non assegnati"
+msgstr "Solo dei non assegnati"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Scan all</b>: re-scan all items for tags.</p><p><b>Scan non-"
-#| "assigned only</b>: scan only the items with no assigned autotags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>All</b>: re-scan all items for tags.</p><p><b>Non-Assigned Only</b>: "
 "scan only the items with no assigned autotags.</p>"
 msgstr ""
-"<p><b>Analizza tutto</b>: rianalizza tutti gli elementi alla ricerca di tag."
-"</p><p><b>Esegui un'analisi solo dei non assegnati</b>: analizza solamente "
-"gli elementi con tag automatici non assegnati.</p>"
+"<p><b>Tutto</b>: rianalizza tutti gli elementi alla ricerca di tag.</"
+"p><p><b>Solo dei non assegnati</b>: analizza solamente gli elementi con tag "
+"automatici non assegnati.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Auto-tagging tag mode: "
+#, kde-format
 msgid "Auto-Tagging Mode:"
-msgstr "Modalità attribuzione tag automatici: "
+msgstr "Modalità attribuzione tag automatici:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Replace existing autotags"
+#, kde-format
 msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
-msgstr "Sostituisci solo i tag automatici esistenti"
+msgstr "Sostituisci esistenti"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Update"
+#, kde-format
 msgctxt "@item: update the autotags entries in database"
 msgid "Update"
-msgstr "Aggiornamento"
+msgstr "Aggiorna"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #, fuzzy, kde-format
@@ -40264,17 +40206,14 @@ msgid "Detection Model:"
 msgstr "Modello di selezione: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
-#, fuzzy, kde-format
-#| msgid "No detail available"
+#, kde-format
 msgid "No models available"
-msgstr "Nessuna dettaglio disponibile"
+msgstr "Nessun modello disponibile"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Face Accuracy"
+#, kde-format
 msgid "Detection Accuracy:"
-msgstr "Accuratezza volto"
+msgstr "Accuratezza rilevamento:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:150
 #, kde-format
@@ -53127,20 +53066,16 @@ msgid "Older or Larger"
 msgstr "Più vecchia o più grande"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:129
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity reference selection method"
-#| msgid "Prefer selected folder as reference"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected Album as reference"
-msgstr "Preferisci cartella selezionata come riferimento"
+msgstr "Preferisci album selezionato come riferimento"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity reference selection method"
-#| msgid "Prefer other than selected folder as reference"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected Album as reference"
-msgstr "Preferisci cartella diversa da quella selezionata come riferimento"
+msgstr "Preferisci album diverso da quello selezionato come riferimento"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:135
 #, kde-format
@@ -53161,27 +53096,22 @@ msgid "Select method for reference image selection"
 msgstr "Scegli il metodo per la selezione dell'immagine di riferimento"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:144
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference Album:"
-msgstr "Riferimento:"
+msgstr "Album di riferimento:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Reference"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Reference"
 msgstr "Riferimento"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Restrict to:"
+#, kde-format
 msgctxt "@label"
 msgid "Restrict Search to:"
-msgstr "Limita a:"
+msgstr "Limita la ricerca a:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, kde-format
@@ -53214,19 +53144,7 @@ msgid "Tags but not albums"
 msgstr "Tag ma non album"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Use this option to decide about the relation of the selected albums and "
-#| "tags.\n"
-#| "\"One of\" means that the images are either in the selected albums or "
-#| "tags.\n"
-#| "\"Both\" means that the images are both in the selected albums and tags.\n"
-#| "\"Albums but not tags\" means that images must be in the selected albums "
-#| "but not tags.\n"
-#| "\"Tags but not albums\" means that images must be in the selected tags "
-#| "but not albums.\n"
-#| "\"Only selected tab\" means that only the selected tab is used."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to decide about the relation of the selected search-in "
@@ -53239,16 +53157,15 @@ msgid ""
 "\"Tags but not albums\": images must be in the selected tags but not albums."
 msgstr ""
 "Usa questa opzione per decidere circa la relazione degli album e i tag "
-"selezionati.\n"
-"«Uno di» significa che le immagini sono o negli album o nei tag "
-"selezionati.\n"
-"«Entrambi» significa che le immagini sono sia negli album, sia nei tag "
-"selezionati.\n"
-"«Album ma non tag» significa che le immagini devono essere negli album "
-"selezionati ma non nei tag.\n"
-"«Tag ma non album» significa che le immagini devono essere nei tag "
-"selezionati ma non negli album.\n"
-"«Solo scheda selezionata» significa che è usata solo la scheda selezionata."
+"selezionati nella ricerca.\n"
+"«Solo scheda selezionata»: è usata solo la scheda selezionata nella "
+"ricerca.\n"
+"«Uno di»: le immagini sono o negli album o nei tag selezionati.\n"
+"«Entrambi»: le immagini sono sia negli album, sia nei tag selezionati.\n"
+"«Album ma non tag»: le immagini devono essere negli album selezionati ma non "
+"nei tag.\n"
+"«Tag ma non album»: le immagini devono essere nei tag selezionati ma non "
+"negli album."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:214
 #, kde-format
@@ -53257,11 +53174,10 @@ msgid "Similarity range:"
 msgstr "Intervallo di somiglianza:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:233
-#, fuzzy, kde-format
-#| msgid "Last Search"
+#, kde-format
 msgctxt "@label"
 msgid "Limit Search to:"
-msgstr "Ultima ricerca"
+msgstr "Limita la ricerca a:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:237
 #, kde-format
@@ -53270,27 +53186,19 @@ msgid "None"
 msgstr "Nessuna"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:238
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Reference Album only"
-msgstr "Riferimento:"
+msgstr "Solo album di riferimento"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:239
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity restriction"
-#| msgid "Exclude reference album"
+#, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference Album"
 msgstr "Escludi album di riferimento"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:240
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Use this option to restrict the duplicate search with some criteria, as "
-#| "to limit search to the album of reference image, or to exclude the album "
-#| "of reference image of the search."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to restrict the duplicate search with some criteria, as to "
@@ -53298,8 +53206,9 @@ msgid ""
 "of reference image, or to exclude the Album of reference image of the search."
 msgstr ""
 "Usa questa opzione per restringere la ricerca dei duplicati in base a certi "
-"criteri, tipo limitare la ricerca all'album dell'immagine di riferimento, o "
-"escludere l'album dell'immagine di riferimento della ricerca."
+"criteri, tipo limitare la ricerca all'album\n"
+"dell'immagine di riferimento, o escludere l'album dell'immagine di "
+"riferimento della ricerca."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:269
 #, kde-format
@@ -53370,18 +53279,14 @@ msgstr ""
 "controllo."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-#| "p><p>You can also use the context menu<br/> when browsing through your "
-#| "images.</p>"
+#, kde-format
 msgid ""
 "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
 "p><p>You can also use the context menu<br/>when browsing through<br/>your "
 "images.</p>"
 msgstr ""
 "<p>Trascina qui un'immagine<br/>per effettuare la ricerca<br/>di elementi "
-"simili.</p><p>Puoi anche usare il menu contestuale<br/>quando sfogli le "
+"simili.</p><p>Puoi anche usare il menu contestuale<br/>quando sfogli<br/>le "
 "immagini.</p>"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
