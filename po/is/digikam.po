@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-24 01:53+0000\n"
-"PO-Revision-Date: 2025-02-11 10:07+0000\n"
+"POT-Creation-Date: 2025-02-26 01:55+0000\n"
+"PO-Revision-Date: 2025-02-25 09:16+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -34600,11 +34600,10 @@ msgid "Search in"
 msgstr "Leita í"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Workflow"
+#, kde-format
 msgctxt "@label Face Worflow"
 msgid "Workflow:"
-msgstr "Vinnuferli"
+msgstr "Vinnuferli:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:106
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
@@ -34628,15 +34627,7 @@ msgid "Recognize faces only"
 msgstr "Einungis þekkja andlit"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Scan new images</b> will scan for faces and attempt recognition for "
-#| "new images found in the albums selected in the \"Search in\" tab.</"
-#| "p><p><b>Scan all images</b> will scan for faces and attempt recognition "
-#| "for all images found in the albums selected in the \"Search in\" tab.</"
-#| "p><p><b>Recognize faces only</b> will try to match unknown faces with "
-#| "confirmed faces without scanning images new faces.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "digiKam can search for faces in your photos.\n"
@@ -34649,6 +34640,9 @@ msgid ""
 "p><p><b>Recognize faces only</b> will try to match unknown faces with "
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
+"digiKam getur leitað að andlitum í myndunum þínum.\n"
+"Þegar þú hefur greint fólk sem þú þekkir á nokkrum fjölda mynda,\n"
+"þá getur forritið einnig þekkt fólk sem birtist á öðrum myndum.\n"
 "<p><b>Skanna nýjar myndir</b> mun leita að andlitum og gera tilraun til að "
 "þekkja andlit í nýjum myndum sem finnast í þeim albúmum sem valin eru í "
 "flipanum \"Leita í\".</p><p><b>Skanna allar myndir</b> mun leita að andlitum "
@@ -35279,19 +35273,30 @@ msgid "Select All"
 msgstr "Velja allt"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:66
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "These settings determines the quality of an image and convert it into a "
+#| "score, stored in database as Pick Label property. This information can be "
+#| "evaluated by two ways: using four basic factors sabotaging the images "
+#| "(blur, noise, exposure, and compression), or using a deep learning neural "
+#| "network engine. The first one helps to determine whether images are "
+#| "distorted by the basic factors, however it demands some drawbacks as fine-"
+#| "tuning from the user’s side and it cannot work along the aesthetic image "
+#| "processing. The second one uses an AI approach based on %1 model to "
+#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
+#| "require hyper-parameter settings, and make this feature easier to use."
 msgctxt "@info"
 msgid ""
-"These settings determines the quality of an image and convert it into a "
-"score, stored in database as Pick Label property. This information can be "
-"evaluated by two ways: using four basic factors sabotaging the images (blur, "
-"noise, exposure, and compression), or using a deep learning neural network "
-"engine. The first one helps to determine whether images are distorted by the "
-"basic factors, however it demands some drawbacks as fine-tuning from the "
-"user’s side and it cannot work along the aesthetic image processing. The "
-"second one uses an AI approach based on %1 model to predict the score. As "
-"deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
-"settings, and make this feature easier to use."
+"These settings determine the quality of an image and convert it into a score "
+"stored in database as Pick Label property. This information can be evaluated "
+"two ways: using four basic factors to rate the image (blur, noise, exposure, "
+"and compression), or using a deep learning neural network engine. The first "
+"one helps to determine whether images are distorted by the basic factors, "
+"however it requires fine-tuning by the user and it cannot work along the "
+"aesthetic image processing. The second one uses an AI approach based on %1 "
+"model to predict the score. As deep learning is an end-to-end solution, it "
+"doesn’t require adjusting the settings, and makes this feature easier to use."
 msgstr ""
 "Þessar stillingar ákvarða gæði mynda og gefa út frá þeim stigaskor, sem "
 "geymd eru í gagnagrunni sem sérmerkingar. Þessar upplýsingar má meta á tvo "
@@ -39624,12 +39629,7 @@ msgid "Update"
 msgstr "Uppfærsla"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Replace Existing</b>: clear existing autotags and replace with the "
-#| "results of the scan.</p><p><b>Update</b>: add any new autotags found to "
-#| "the existing tags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Replace Existing</b>: clear existing auto-tags and replace with the "
@@ -39642,12 +39642,10 @@ msgstr ""
 "fyrirliggjandi merki.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@label: deep learning model selection to perform autotags"
-#| msgid "Selection Model:"
+#, kde-format
 msgctxt "@label: deep learning model used to detect objects to auto-tag"
 msgid "Detection Model:"
-msgstr "Líkan fyrir val:"
+msgstr "Greiningarlíkan:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, kde-format
@@ -52440,20 +52438,16 @@ msgid "Older or Larger"
 msgstr "Eldra eða stærra"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:129
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity reference selection method"
-#| msgid "Prefer selected folder as reference"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected Album as reference"
-msgstr "Kjósa fremur valda möppu sem tilvísun"
+msgstr "Kjósa fremur valda möppu sem viðmiðun"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity reference selection method"
-#| msgid "Prefer other than selected folder as reference"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected Album as reference"
-msgstr "Kjósa fremur annað en valda möppu sem tilvísun"
+msgstr "Kjósa fremur annað en valda möppu sem viðmiðun"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:135
 #, kde-format
@@ -52474,27 +52468,22 @@ msgid "Select method for reference image selection"
 msgstr "Veldu aðferð við val viðmiðunarmyndar"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:144
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference Album:"
-msgstr "Tilvísun:"
+msgstr "Viðmiðunaralbúm:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Reference"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Reference"
-msgstr "Tilvísun"
+msgstr "Viðmiðun"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Restrict to:"
+#, kde-format
 msgctxt "@label"
 msgid "Restrict Search to:"
-msgstr "Takmarka við:"
+msgstr "Takmarka leit við:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, kde-format
@@ -52527,19 +52516,7 @@ msgid "Tags but not albums"
 msgstr "Merki en ekki albúm"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Use this option to decide about the relation of the selected albums and "
-#| "tags.\n"
-#| "\"One of\" means that the images are either in the selected albums or "
-#| "tags.\n"
-#| "\"Both\" means that the images are both in the selected albums and tags.\n"
-#| "\"Albums but not tags\" means that images must be in the selected albums "
-#| "but not tags.\n"
-#| "\"Tags but not albums\" means that images must be in the selected tags "
-#| "but not albums.\n"
-#| "\"Only selected tab\" means that only the selected tab is used."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to decide about the relation of the selected search-in "
@@ -52551,15 +52528,15 @@ msgid ""
 "tags.\n"
 "\"Tags but not albums\": images must be in the selected tags but not albums."
 msgstr ""
-"Veldu þennan valkost til að ákvarða vensl valinna albúma og merkja.\n"
-"\"Eitt af\" merkir að myndirnar eru annað hvort í völdum merkjum eða "
-"albúmum.\n"
-"\"Bæði\" merkir að myndirnar eru bæði í völdum merkjum eða albúmum.\n"
-"\"Albúm en ekki merki\" merkir að myndirnar verða að í völdum albúmum en "
-"ekki merkjum.\n"
-"\"Merki en ekki albúm\" merkir að myndirnar verða að í völdum merkjum en "
-"ekki albúmum.\n"
-"\"Aðeins valinn flipi\" merkir að einungis valinn flipi er notaður."
+"Veldu þennan valkost til að ákvarða vensl valinna albúma og merkja við "
+"leit.\n"
+"\"Aðeins valinn flipi\": einungis valinn flipi er notaður við leit.\n"
+"\"Eitt af\": myndirnar eru annað hvort í völdum merkjum eða albúmum.\n"
+"\"Bæði\": myndirnar eru bæði í völdum merkjum eða albúmum.\n"
+"\"Albúm en ekki merki\": myndirnar verða að vera í völdum albúmum en ekki "
+"merkjum.\n"
+"\"Merki en ekki albúm\": myndirnar verða að vera í völdum merkjum en ekki "
+"albúmum."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:214
 #, kde-format
@@ -52568,11 +52545,10 @@ msgid "Similarity range:"
 msgstr "Líkindasvið:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:233
-#, fuzzy, kde-format
-#| msgid "Last Search"
+#, kde-format
 msgctxt "@label"
 msgid "Limit Search to:"
-msgstr "Síðasta leit"
+msgstr "Afmarka leit við:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:237
 #, kde-format
@@ -52581,27 +52557,19 @@ msgid "None"
 msgstr "Ekkert"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:238
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Reference Album only"
-msgstr "Tilvísun:"
+msgstr "Einungis viðmiðunaralbúm"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:239
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity restriction"
-#| msgid "Exclude reference album"
+#, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference Album"
 msgstr "Útiloka viðmiðunaralbúm"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:240
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Use this option to restrict the duplicate search with some criteria, as "
-#| "to limit search to the album of reference image, or to exclude the album "
-#| "of reference image of the search."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Use this option to restrict the duplicate search with some criteria, as to "
@@ -52609,8 +52577,8 @@ msgid ""
 "of reference image, or to exclude the Album of reference image of the search."
 msgstr ""
 "Notaðu þetta til að takmarka leit að tvítökum við ákveðin skilyrði, eins og "
-"að takmarka leitina við albúm viðmiðunarmyndar, eða að útiloka albúm "
-"viðmiðunarmyndar frá leitinni."
+"að takmarka leitina við albúm\n"
+" viðmiðunarmyndar, eða að útiloka albúm viðmiðunarmyndar frá leitinni."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:269
 #, kde-format
@@ -52678,11 +52646,7 @@ msgstr ""
 "fyrst."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-#| "p><p>You can also use the context menu<br/> when browsing through your "
-#| "images.</p>"
+#, kde-format
 msgid ""
 "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
 "p><p>You can also use the context menu<br/>when browsing through<br/>your "
@@ -52690,7 +52654,7 @@ msgid ""
 msgstr ""
 "<p>Dragðu & slepptu mynd hér<br/>til að framkvæma leit<br/>að svipuðum "
 "atriðum.</p><p>Þú getur líka notað samhengisvalmyndina<br/> (hægrismella) "
-"þegar þú flettir í gegnum myndirnar þínar.</p>"
+"þegar þú flettir í gegnum<br/> myndirnar þínar.</p>"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
 #, kde-format

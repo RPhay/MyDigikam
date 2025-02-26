@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-24 01:53+0000\n"
-"PO-Revision-Date: 2025-02-16 10:05+0100\n"
+"POT-Creation-Date: 2025-02-26 01:55+0000\n"
+"PO-Revision-Date: 2025-02-24 13:44+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -35111,7 +35111,7 @@ msgstr "Explora totes les imatges"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
-msgstr "Només reconeix les cares"
+msgstr "Reconeix només les cares"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:110
 #, kde-format
@@ -35134,7 +35134,7 @@ msgstr ""
 "reconeixement de les imatges noves trobades als àlbums seleccionats a la "
 "pestanya «Busca a».</p><p><b>Explora totes les imatges</b> buscarà les cares "
 "i intentarà el reconeixement de totes les imatges trobades als àlbums "
-"seleccionats a la pestanya «Busca a».</p><p><b>Només reconeix les cares</b> "
+"seleccionats a la pestanya «Busca a».</p><p><b>Reconeix només les cares</b> "
 "intentarà fer coincidir les cares desconegudes amb les cares confirmades "
 "sense explorar cares noves de les imatges.</p>"
 
@@ -35761,19 +35761,30 @@ msgid "Select All"
 msgstr "Selecciona-ho tot"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:66
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "These settings determines the quality of an image and convert it into a "
+#| "score, stored in database as Pick Label property. This information can be "
+#| "evaluated by two ways: using four basic factors sabotaging the images "
+#| "(blur, noise, exposure, and compression), or using a deep learning neural "
+#| "network engine. The first one helps to determine whether images are "
+#| "distorted by the basic factors, however it demands some drawbacks as fine-"
+#| "tuning from the user’s side and it cannot work along the aesthetic image "
+#| "processing. The second one uses an AI approach based on %1 model to "
+#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
+#| "require hyper-parameter settings, and make this feature easier to use."
 msgctxt "@info"
 msgid ""
-"These settings determines the quality of an image and convert it into a "
-"score, stored in database as Pick Label property. This information can be "
-"evaluated by two ways: using four basic factors sabotaging the images (blur, "
-"noise, exposure, and compression), or using a deep learning neural network "
-"engine. The first one helps to determine whether images are distorted by the "
-"basic factors, however it demands some drawbacks as fine-tuning from the "
-"user’s side and it cannot work along the aesthetic image processing. The "
-"second one uses an AI approach based on %1 model to predict the score. As "
-"deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
-"settings, and make this feature easier to use."
+"These settings determine the quality of an image and convert it into a score "
+"stored in database as Pick Label property. This information can be evaluated "
+"two ways: using four basic factors to rate the image (blur, noise, exposure, "
+"and compression), or using a deep learning neural network engine. The first "
+"one helps to determine whether images are distorted by the basic factors, "
+"however it requires fine-tuning by the user and it cannot work along the "
+"aesthetic image processing. The second one uses an AI approach based on %1 "
+"model to predict the score. As deep learning is an end-to-end solution, it "
+"doesn’t require adjusting the settings, and makes this feature easier to use."
 msgstr ""
 "Estes opcions determinen la qualitat d'una imatge i la convertix en una "
 "puntuació, emmagatzemada en la base de dades com a propietat del rètol de "
@@ -40141,12 +40152,7 @@ msgid "Update"
 msgstr "Actualitza"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>Replace Existing</b>: clear existing autotags and replace with the "
-#| "results of the scan.</p><p><b>Update</b>: add any new autotags found to "
-#| "the existing tags.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>Replace Existing</b>: clear existing auto-tags and replace with the "
@@ -40156,15 +40162,13 @@ msgstr ""
 "<p><b>Substituïx les existents</b>: neteja les etiquetes automàtiques "
 "existents i les substituïx pels resultats de l'exploració.</"
 "p><p><b>Actualitza</b>: afig qualsevol etiqueta automàtica nova trobada a "
-"les etiquetes existents.</p>"
+"les etiquetes automàtiques existents.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@label: deep learning model selection to perform autotags"
-#| msgid "Selection Model:"
+#, kde-format
 msgctxt "@label: deep learning model used to detect objects to auto-tag"
 msgid "Detection Model:"
-msgstr "Seleccioneu el model:"
+msgstr "Model de detecció:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
 #, kde-format
