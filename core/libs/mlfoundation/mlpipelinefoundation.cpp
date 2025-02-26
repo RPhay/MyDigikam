@@ -49,8 +49,10 @@ MLPipelineFoundation::~MLPipelineFoundation()
 
     threadPool->waitForDone();
 
-    for (const QFutureWatcher<bool>* watcher : std::as_const(watchList))
+    for (QFutureWatcher<bool>* const watcher : std::as_const(watchList))
     {
+        watcher->waitForFinished();
+
         delete watcher;
     }
 }
