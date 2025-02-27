@@ -273,10 +273,19 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName,
 
         if (images.size() && !images[0].isNull())
         {
+            // store the thumbnail image in the package
+
             package->thumbnail     = images[0];
+
+            // create a thumbnail icon
+
             package->thumbnailIcon = QIcon(DImg(package->thumbnail).smoothScale(48,
                                                                                 48,
                                                                                 Qt::KeepAspectRatio).convertToPixmap());
+
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineBase::commonFaceThumbnailLoader: Thumbnail loaded for" << package->info.name();
+
+            // send the package to the next stage
 
             enqueue(nextQueue, package);
         }
@@ -289,7 +298,7 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName,
                    package->info.filePath(),
                    QString(),
                    0,
-                   DImg());
+                   QIcon::fromTheme(QLatin1String("image-missing")));
 
             // delete the package since it is not needed
 
@@ -388,11 +397,29 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
 
                 package->useForTraining = useForTraining(origSize, cvImage);
             }
+
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineBase::commonFaceThumbnailExtractor: Features extracted for" << package->info.name();
+
+            // send the package to the next stage
+
+            enqueue(nextQueue, package);
+
         }
+        else
+        {
+            // send a notification that the file was skipped
 
-        // send the package to the next stage
+            notify(MLPipelineNotification::notifySkipped,
+                   package->info.name(),
+                   package->info.filePath(),
+                   QString(),
+                   0,
+                   package->thumbnailIcon);
 
-        enqueue(nextQueue, package);
+            // delete the package since it is not needed
+
+            delete package;
+        }
     }
 
     /* =========================================================================================

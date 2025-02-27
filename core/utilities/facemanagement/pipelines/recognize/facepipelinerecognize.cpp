@@ -54,6 +54,8 @@ FacePipelineRecognize::FacePipelineRecognize(const FaceScanSettings& _settings)
 
 bool FacePipelineRecognize::start()
 {
+    FacePipelineBase::start();
+
     QVariantMap params;
     params[QLatin1String("detectAccuracy")]       = settings.detectAccuracy;
     params[QLatin1String("detectModel")]          = settings.detectModel;
@@ -76,7 +78,7 @@ bool FacePipelineRecognize::start()
         addWorker(MLPipelineStage::Writer);
     }
 
-    return FacePipelineBase::start();
+    return true;
 }
 
 bool FacePipelineRecognize::finder()
@@ -217,6 +219,8 @@ bool FacePipelineRecognize::classifier()
 
             package->label = classifier->predict(package->features);
         }
+
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier: Predicted label " << package->label << " for " << package->info.name();
 
         // -1 means no match suggested
         // pass the package to the next stage if we have a suggestion

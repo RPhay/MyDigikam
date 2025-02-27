@@ -568,7 +568,7 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification,
                _path,
                _displayData,
                _processed,
-               QIcon());
+               missingIcon);
     }
 }
 
@@ -595,7 +595,7 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification,
                _path,
                _displayData,
                _processed,
-               QIcon());
+               missingIcon);
     }
 }
 
@@ -607,7 +607,15 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification,
                                   const QIcon& _thumbnail)
 {
     MLPipelinePackageNotify::Ptr notify;
-    notify = new MLPipelinePackageNotify(_name, _path, _displayData, _processed, _thumbnail);
+    
+    if (_thumbnail.isNull())
+    {
+        notify = new MLPipelinePackageNotify(_name, _path, _displayData, _processed, missingIcon);
+    }
+    else
+    {
+        notify = new MLPipelinePackageNotify(_name, _path, _displayData, _processed, _thumbnail);
+    }
 
     switch (notification)
     {
