@@ -35,8 +35,7 @@ namespace Digikam
 {
 
 Album::Album(Album::Type type, int id, bool root)
-    : m_cacheLock(QReadWriteLock::Recursive),
-      m_root     (root),
+    : m_root     (root),
       m_id       (id),
       m_type     (type)
 {
