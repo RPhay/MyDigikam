@@ -169,33 +169,55 @@ LensFunIface::LensFunIface()
 
 #endif
 
-    // Lensfun host XML files in a dedicated sub-directory.
+   QString lensPath;
+   QDir    lensDir;
 
-    QString lensPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                              QLatin1String("lensfun"),
-                                              QStandardPaths::LocateDirectory);
+#if LENSFUN_TEST_VERSION(0,3,99)
 
-    QDir lensDir;
+    // Use last Lensfun version data dir.
 
-    // In first try to use last Lensfun version data dir.
+    lensPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                      QLatin1String("lensfun/updates/version_2"),
+                                      QStandardPaths::LocateDirectory);
 
-    lensDir = QDir(lensPath + QLatin1String("/version_2"), QLatin1String("*.xml"));
+    if (lensPath.isEmpty())
+    {
+        lensPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                          QLatin1String("lensfun/version_2"),
+                                          QStandardPaths::LocateDirectory);
+    }
+
+#else
+
+    // Use Lensfun version revision 1.
+
+    lensPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                      QLatin1String("lensfun/updates/version_1"),
+                                      QStandardPaths::LocateDirectory);
+
+    if (lensPath.isEmpty())
+    {
+        lensPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                          QLatin1String("lensfun/version_1"),
+                                          QStandardPaths::LocateDirectory);
+    }
+
+#endif
+
+    lensDir = QDir(lensPath, QLatin1String("*.xml"));
 
     if (lensDir.entryList().isEmpty())
     {
-        // Fail-back to revision 1.
+        // Fail-back to revision 0 which host XML data in root data directory.
 
-        lensDir = QDir(lensPath + QLatin1String("/version_1"), QLatin1String("*.xml"));
+        lensPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                          QLatin1String("lensfun"),
+                                          QStandardPaths::LocateDirectory);
 
-        if (lensDir.entryList().isEmpty())
-        {
-           // Fail-back to revision 0 which host XML data in root data directory.
-
-           lensDir = QDir(lensPath, QLatin1String("*.xml"));
-        }
+        lensDir  = QDir(lensPath, QLatin1String("*.xml"));
     }
 
-    qCDebug(DIGIKAM_DIMG_LOG) << "Using root lens database dir: " << lensPath;
+    qCDebug(DIGIKAM_DIMG_LOG) << "Using root lens database dir:" << lensPath;
     const auto lenses = lensDir.entryList();
 
     for (const QString& lens : lenses)
