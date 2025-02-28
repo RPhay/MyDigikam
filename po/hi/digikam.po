@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 01:55+0000\n"
+"POT-Creation-Date: 2025-02-28 01:54+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -2901,7 +2901,7 @@ msgstr "पूर्ण स्क्रीन मोड से बाहर ह�
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:487
+#: core/libs/album/engine/album.cpp:486
 #: core/libs/album/manager/albummanager.cpp:179
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -3032,7 +3032,7 @@ msgid "No Tags Album"
 msgstr "मेरे एलबम"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:344
-#: core/libs/album/engine/album.cpp:554
+#: core/libs/album/engine/album.cpp:553
 #: core/libs/album/manager/albummanager.cpp:182
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -25908,38 +25908,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "रंग जगह"
 
-#: core/libs/album/engine/album.cpp:412
+#: core/libs/album/engine/album.cpp:411
 #: core/libs/database/utils/ifaces/dio.cpp:908
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:751
+#: core/libs/album/engine/album.cpp:750
 #, fuzzy, kde-format
 msgid "Current Timeline Search"
 msgstr "खोज मिटाएँ"
 
-#: core/libs/album/engine/album.cpp:758
+#: core/libs/album/engine/album.cpp:757
 #, fuzzy, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "खोज मिटाएँ"
 
-#: core/libs/album/engine/album.cpp:762
+#: core/libs/album/engine/album.cpp:761
 #, fuzzy, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "खोज मिटाएँ"
 
-#: core/libs/album/engine/album.cpp:770
+#: core/libs/album/engine/album.cpp:769
 #, fuzzy, kde-format
 msgid "Current Map Search"
 msgstr "खोज मिटाएँ"
 
-#: core/libs/album/engine/album.cpp:777
+#: core/libs/album/engine/album.cpp:776
 #, fuzzy, kde-format
 msgid "Current Search"
 msgstr "खोज मिटाएँ"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:781
 #, fuzzy, kde-format
 msgid "Current Duplicates Search"
 msgstr "खोज मिटाएँ"

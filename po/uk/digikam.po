@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 01:55+0000\n"
+"POT-Creation-Date: 2025-02-28 01:54+0000\n"
 "PO-Revision-Date: 2025-02-26 08:01+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -2908,7 +2908,7 @@ msgstr "Показати на весь екран"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:487
+#: core/libs/album/engine/album.cpp:486
 #: core/libs/album/manager/albummanager.cpp:179
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -3049,7 +3049,7 @@ msgid "No Tags Album"
 msgstr "Альбом без міток"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:344
-#: core/libs/album/engine/album.cpp:554
+#: core/libs/album/engine/album.cpp:553
 #: core/libs/album/manager/albummanager.cpp:182
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -27188,38 +27188,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Перетворення цифрових негативів UFRaw"
 
-#: core/libs/album/engine/album.cpp:412
+#: core/libs/album/engine/album.cpp:411
 #: core/libs/database/utils/ifaces/dio.cpp:908
 #, kde-format
 msgid "Trash"
 msgstr "Смітник"
 
-#: core/libs/album/engine/album.cpp:751
+#: core/libs/album/engine/album.cpp:750
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Поточний пошук за розкладом"
 
-#: core/libs/album/engine/album.cpp:758
+#: core/libs/album/engine/album.cpp:757
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Поточний нечіткий пошук за зображенням"
 
-#: core/libs/album/engine/album.cpp:762
+#: core/libs/album/engine/album.cpp:761
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Поточний нечіткий пошук за ескізом"
 
-#: core/libs/album/engine/album.cpp:770
+#: core/libs/album/engine/album.cpp:769
 #, kde-format
 msgid "Current Map Search"
 msgstr "Поточний пошук за картою"
 
-#: core/libs/album/engine/album.cpp:777
+#: core/libs/album/engine/album.cpp:776
 #, kde-format
 msgid "Current Search"
 msgstr "Поточний пошук"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:781
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Поточний пошук дублікатів"

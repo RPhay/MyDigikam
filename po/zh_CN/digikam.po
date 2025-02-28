@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 01:55+0000\n"
+"POT-Creation-Date: 2025-02-28 01:54+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2815,7 +2815,7 @@ msgstr "全屏显示"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:487
+#: core/libs/album/engine/album.cpp:486
 #: core/libs/album/manager/albummanager.cpp:179
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -2947,7 +2947,7 @@ msgid "No Tags Album"
 msgstr "无标签相册"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:344
-#: core/libs/album/engine/album.cpp:554
+#: core/libs/album/engine/album.cpp:553
 #: core/libs/album/manager/albummanager.cpp:182
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -25910,38 +25910,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW 转换"
 
-#: core/libs/album/engine/album.cpp:412
+#: core/libs/album/engine/album.cpp:411
 #: core/libs/database/utils/ifaces/dio.cpp:908
 #, kde-format
 msgid "Trash"
 msgstr "回收站"
 
-#: core/libs/album/engine/album.cpp:751
+#: core/libs/album/engine/album.cpp:750
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "当前时间轴搜索结果"
 
-#: core/libs/album/engine/album.cpp:758
+#: core/libs/album/engine/album.cpp:757
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "当前模糊图像搜索结果"
 
-#: core/libs/album/engine/album.cpp:762
+#: core/libs/album/engine/album.cpp:761
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "当前模糊画图搜索结果"
 
-#: core/libs/album/engine/album.cpp:770
+#: core/libs/album/engine/album.cpp:769
 #, kde-format
 msgid "Current Map Search"
 msgstr "当前地图搜索结果"
 
-#: core/libs/album/engine/album.cpp:777
+#: core/libs/album/engine/album.cpp:776
 #, kde-format
 msgid "Current Search"
 msgstr "当前搜索结果"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:781
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "当前重复项搜索结果"
@@ -34195,6 +34195,12 @@ msgid ""
 "model to predict the score. As deep learning is an end-to-end solution, it "
 "doesn’t require adjusting the settings, and makes this feature easier to use."
 msgstr ""
+"这些设置将用于确定图像的品质并将其转换为一个评分，作为图像的“挑选标记”属性存"
+"储到数据库中。digiKam 可以通过两种方式来评估图像品质：使用图像品质的四大主要"
+"劣化因素 (模糊、噪点、曝光、压缩) 评估；或者使用深度学习神经网络引擎评估。第"
+"一种方式有助于发现图像是否被四大主要劣化因素影响，但需要用户调整参数，且无法"
+"配合美感检测引擎使用。第二种方式使用基于 %1 AI 模型的方式来预测图像的品质评"
+"分。因为深度学习是一种端到端解决方案，无需调整设置，因此更易于使用。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:76
 #, kde-format
