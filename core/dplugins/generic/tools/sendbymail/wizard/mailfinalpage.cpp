@@ -139,10 +139,10 @@ void MailFinalPage::slotProcess()
                                   DHistoryView::ProgressEntry);
     }
 
-
     d->progressBar->setMinimum(0);
     d->progressBar->setMaximum(d->settings->itemsList.count());
 
+    delete d->processor;
     d->processor = new MailProcess(d->settings, d->iface, this);
 
     connect(d->processor, SIGNAL(signalProgress(int)),

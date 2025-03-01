@@ -34,6 +34,11 @@ SendByMailPlugin::SendByMailPlugin(QObject* const parent)
 {
 }
 
+void SendByMailPlugin::cleanUp()
+{
+    delete m_toolDlg;
+}
+
 QString SendByMailPlugin::name() const
 {
     return i18n("Send by Email");
@@ -103,10 +108,13 @@ void SendByMailPlugin::setup(QObject* const parent)
 
 void SendByMailPlugin::slotSendByMail()
 {
-    QPointer<MailWizard> wzrd = new MailWizard(nullptr, infoIface(sender()));
-    wzrd->setPlugin(this);
-    wzrd->exec();
-    delete wzrd;
+    if (!reactivateToolDialog(m_toolDlg))
+    {
+        delete m_toolDlg;
+        m_toolDlg = new MailWizard(nullptr, infoIface(sender()));
+        m_toolDlg->setPlugin(this);
+        m_toolDlg->show();
+    }
 }
 
 } // namespace DigikamGenericSendByMailPlugin

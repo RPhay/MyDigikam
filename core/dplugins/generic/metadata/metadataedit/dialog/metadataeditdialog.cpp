@@ -79,10 +79,10 @@ MetadataEditDialog::MetadataEditDialog(QWidget* const parent, DInfoInterface* co
     : DPluginDialog(parent, QLatin1String("Metadata Edit Dialog")),
       d            (new Private)
 {
-    d->iface                          = iface;
-
     setWindowTitle(i18nc("@title:window", "Metadata Editor"));
     setModal(true);
+
+    d->iface                          = iface;
 
     ThumbnailLoadThread* const thread = new ThumbnailLoadThread;
     thread->setThumbnailSize(48);

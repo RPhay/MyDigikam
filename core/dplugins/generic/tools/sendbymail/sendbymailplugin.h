@@ -25,6 +25,8 @@ using namespace Digikam;
 namespace DigikamGenericSendByMailPlugin
 {
 
+class MailWizard;
+
 class SendByMailPlugin : public DPluginGeneric
 {
     Q_OBJECT
@@ -46,10 +48,15 @@ public:
     QString handbookChapter()      const override;
 
     void setup(QObject* const)           override;
+    void cleanUp()                       override;
 
 private Q_SLOTS:
 
     void slotSendByMail();
+
+private:
+
+    QPointer<MailWizard> m_toolDlg;
 };
 
 } // namespace DigikamGenericSendByMailPlugin

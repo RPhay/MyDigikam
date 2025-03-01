@@ -62,8 +62,9 @@ MailWizard::MailWizard(QWidget* const parent, DInfoInterface* const iface)
     : DWizardDlg(parent, QLatin1String("Email Dialog")),
       d         (new Private)
 {
-    setOption(QWizard::NoCancelButtonOnLastPage);
     setWindowTitle(i18nc("@title:window", "Send by Email"));
+    setOption(QWizard::NoCancelButtonOnLastPage);
+    setModal(true);
 
     d->iface             = iface;
     d->settings          = new MailSettings;
