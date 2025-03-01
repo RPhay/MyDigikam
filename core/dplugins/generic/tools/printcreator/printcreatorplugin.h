@@ -25,6 +25,8 @@ using namespace Digikam;
 namespace DigikamGenericPrintCreatorPlugin
 {
 
+class AdvPrintWizard;
+
 class PrintCreatorPlugin : public DPluginGeneric
 {
     Q_OBJECT
@@ -46,10 +48,15 @@ public:
     QString handbookChapter()      const override;
 
     void setup(QObject* const)           override;
+    void cleanUp()                       override;
 
 private Q_SLOTS:
 
     void slotPrintCreator();
+
+private:
+
+    QPointer<AdvPrintWizard> m_toolDlg;
 };
 
 } // namespace DigikamGenericPrintCreatorPlugin

@@ -87,6 +87,7 @@ AdvPrintWizard::AdvPrintWizard(QWidget* const parent, DInfoInterface* const ifac
       d         (new Private)
 {
     setWindowTitle(i18nc("@title:window", "Print Creator"));
+    setModal(true);
 
     d->iface           = iface;
     d->settings        = new AdvPrintSettings;

@@ -63,8 +63,9 @@ VidSlideWizard::VidSlideWizard(QWidget* const parent, DInfoInterface* const ifac
     : DWizardDlg(parent, QLatin1String("Video SlideShow Dialog")),
       d         (new Private)
 {
-    setOption(QWizard::NoCancelButtonOnLastPage);
     setWindowTitle(i18nc("@title:window", "Create a Video Slideshow"));
+    setOption(QWizard::NoCancelButtonOnLastPage);
+    setModal(true);
 
     d->settings             = new VidSlideSettings;
     d->settings->iface      = iface;

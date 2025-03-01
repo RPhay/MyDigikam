@@ -34,6 +34,11 @@ PrintCreatorPlugin::PrintCreatorPlugin(QObject* const parent)
 {
 }
 
+void PrintCreatorPlugin::cleanUp()
+{
+    delete m_toolDlg;
+}
+
 QString PrintCreatorPlugin::name() const
 {
     return i18n("Print Creator");
@@ -108,10 +113,13 @@ void PrintCreatorPlugin::setup(QObject* const parent)
 
 void PrintCreatorPlugin::slotPrintCreator()
 {
-    QPointer<AdvPrintWizard> wzrd = new AdvPrintWizard(nullptr, infoIface(sender()));
-    wzrd->setPlugin(this);
-    wzrd->exec();
-    delete wzrd;
+    if (!reactivateToolDialog(m_toolDlg))
+    {
+        delete m_toolDlg;
+        m_toolDlg = new AdvPrintWizard(nullptr, infoIface(sender()));
+        m_toolDlg->setPlugin(this);
+        m_toolDlg->show();
+    }
 }
 
 } // namespace DigikamGenericPrintCreatorPlugin

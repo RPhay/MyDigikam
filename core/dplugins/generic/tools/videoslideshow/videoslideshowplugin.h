@@ -25,6 +25,8 @@ using namespace Digikam;
 namespace DigikamGenericVideoSlideShowPlugin
 {
 
+class VidSlideWizard;
+
 class VideoSlideShowPlugin : public DPluginGeneric
 {
     Q_OBJECT
@@ -46,10 +48,15 @@ public:
     QString handbookChapter()      const override;
 
     void setup(QObject* const) override;
+    void cleanUp()                       override;
 
 private Q_SLOTS:
 
     void slotVideoSlideShow();
+
+private:
+
+    QPointer<VidSlideWizard> m_toolDlg;
 };
 
 } // namespace DigikamGenericVideoSlideShowPlugin

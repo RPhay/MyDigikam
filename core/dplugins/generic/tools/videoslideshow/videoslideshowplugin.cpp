@@ -34,6 +34,11 @@ VideoSlideShowPlugin::VideoSlideShowPlugin(QObject* const parent)
 {
 }
 
+void VideoSlideShowPlugin::cleanUp()
+{
+    delete m_toolDlg;
+}
+
 QString VideoSlideShowPlugin::name() const
 {
     return i18n("Video Slideshow");
@@ -100,10 +105,13 @@ void VideoSlideShowPlugin::setup(QObject* const parent)
 
 void VideoSlideShowPlugin::slotVideoSlideShow()
 {
-    QPointer<VidSlideWizard> wzrd = new VidSlideWizard(nullptr, infoIface(sender()));
-    wzrd->setPlugin(this);
-    wzrd->exec();
-    delete wzrd;
+    if (!reactivateToolDialog(m_toolDlg))
+    {
+        delete m_toolDlg;
+        m_toolDlg = new VidSlideWizard(nullptr, infoIface(sender()));
+        m_toolDlg->setPlugin(this);
+        m_toolDlg->show();
+    }
 }
 
 } // namespace DigikamGenericVideoSlideShowPlugin
