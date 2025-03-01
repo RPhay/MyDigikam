@@ -153,7 +153,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
                         );
 
     aboutData.addCredit ( QString::fromUtf8("Phuoc Khanh LE"),
-                          i18n("Rewrite Image Quality Sorter algorithms\n"
+                          i18n("Rewrite Image Quality Scanner algorithms\n"
                                "and Photo Focus Information Extraction.\n"
                                "Aesthetic Detection to classify images\n"
                                "using deep learning model.\n"
@@ -215,7 +215,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
                         );
 
     aboutData.addCredit ( QString::fromUtf8("Gowtham Ashok"),
-                          i18n("Image Quality Sorter"),
+                          i18n("Image Quality Scanner"),
                           QString::fromUtf8("gwty93 at gmail dot com"),
                           QString::fromUtf8("https://www.linkedin.com/in/gowtham-ashok/")
                         );

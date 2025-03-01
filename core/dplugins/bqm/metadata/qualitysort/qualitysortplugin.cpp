@@ -39,7 +39,7 @@ QualitySortPlugin::QualitySortPlugin(QObject* const parent)
 
 QString QualitySortPlugin::name() const
 {
-    return i18nc("@title", "Image Quality Sort");
+    return i18nc("@title", "Image Quality Scan");
 }
 
 QString QualitySortPlugin::iid() const

@@ -252,7 +252,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
                                Private::ImageQualitySorter,
                                d->vbox,
                                QIcon::fromTheme(QLatin1String("flag-green")),
-                               i18n("Image Quality Sorter"),
+                               i18n("Image Quality Scanner"),
                                QLatin1String("ImageQualitySorter"),
                                false
                               );

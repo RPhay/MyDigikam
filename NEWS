@@ -44,8 +44,8 @@ AutoTags:        The Autotags engine has been completely rewritten using the new
                  and EfficientNet B7 DNN models. The older YOLOv5 and ResNet-50 models have been removed.
                  Auto-tags scan tool is now available in the Tags tab from the left sidebar.
 
-Image Quality    The Image Quality Sorter is now available from the Labels tab on the left sidebar. The global
-                 Image Quality settings from the setup dialog have been removed.
+Image Quality    The Image Quality Sorter has been renammed to Image Quality Scanner. It is now available from the
+                 Labels tab on the left sidebar. The global Image Quality settings from the setup dialog have been removed.
 
 RedEyes:         RedEye Correction Filter tool has been updated to use an AI DNN model to detect eyes.
 

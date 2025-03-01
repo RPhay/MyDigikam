@@ -90,7 +90,7 @@ void ImageQualitySorter::slotStart()
 {
     MaintenanceTool::slotStart();
 
-    setLabel(i18n("Image Quality Sorter"));
+    setLabel(i18n("Image Quality Scanner"));
     setThumbnail(QIcon::fromTheme(QLatin1String("flag-green")).pixmap(48));
 
     ProgressManager::addProgressItem(this);
