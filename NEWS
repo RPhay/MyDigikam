@@ -175,7 +175,7 @@ BUGFIXES:
 121 ==> 500525 - Writing metadata to AVIF files.
 122 ==> 469408 - Tags added to videos files (mp4 or mov) in digiKam-8.0.0 are +written to file but not recognized in other software.
 123 ==> 500445 - digiKam "You have insufficient privileges on database.
-124 ==> 
+124 ==> 500881 - "Update fingerprints" taking 17 seconds / file apparently due to multiple database locks.
 125 ==> 
 126 ==> 
 127 ==> 
