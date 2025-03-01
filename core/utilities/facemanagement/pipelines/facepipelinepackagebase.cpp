@@ -21,12 +21,14 @@ namespace Digikam
 FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId)
     : info(_imageId)
 {
+    features = cv::Mat();
 }
 
 FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId, const FaceTagsIface& _face)
     : info(_imageId),
       face(_face)
 {
+    features = cv::Mat();
 }
 
 FacePipelinePackageBase::FacePipelinePackageBase(const ItemInfo& _info,
@@ -44,6 +46,7 @@ FacePipelinePackageBase::FacePipelinePackageBase(const ItemInfo& _info,
       action (_action),
       retrain(_retrain)
 {
+    features = cv::Mat();
 }
 
 } // namespace Digikam
