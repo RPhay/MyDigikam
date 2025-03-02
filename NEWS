@@ -178,7 +178,7 @@ BUGFIXES:
 124 ==> 500881 - "Update fingerprints" taking 17 seconds / file apparently due to multiple database locks.
 125 ==> 500912 - Files in tmp not found.
 126 ==> 500140 - Couldn't adjust the deducted face area.
-127 ==> 
+127 ==> 500739 - Lens correction tools seems not working.
 128 ==> 
 129 ==> 
 130 ==> 
