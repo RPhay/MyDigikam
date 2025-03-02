@@ -319,33 +319,28 @@ bool FacePipelineDetectRecognize::extractor()
 
         // copy the image to a cv::UMat
 
-        cv::UMat cvUImage;
-        cv::UMat cvUOrigImage   = QtOpenCVImg::image2Mat(
-                                                         package->image,
-                                                         CV_8UC3,
-                                                         QtOpenCVImg::MatColorOrder::MCO_RGB
-                                                        )
-                                                        .getUMat(cv::ACCESS_RW);
+        cv::UMat cvUImage   = QtOpenCVImg::image2Mat(
+                                                     package->image,
+                                                     CV_8UC3,
+                                                     QtOpenCVImg::MatColorOrder::MCO_RGB
+                                                    )
+                                                    .getUMat(cv::ACCESS_RW);
 
         // resize the image if needed. Only resize if the image is larger than the input size of the detector
 
         cv::Size inputImageSize = faceDetector->nnInputSizeRequired();
 
-        if (std::max(cvUOrigImage.cols, cvUOrigImage.rows) > std::max(inputImageSize.width, inputImageSize.height))
+        if (std::max(cvUImage.cols, cvUImage.rows) > std::max(inputImageSize.width, inputImageSize.height))
         {
             // Image should be resized. YuNet image sizes are much more flexible than SSD and YOLO
             // so we just need to make sure no one bound exceeds the max. No padding needed.
 
-            float resizeFactor      = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvUOrigImage.cols),
-                                               static_cast<float>(inputImageSize.height) / static_cast<float>(cvUOrigImage.rows));
+            float resizeFactor      = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvUImage.cols),
+                                               static_cast<float>(inputImageSize.height) / static_cast<float>(cvUImage.rows));
 
-            int newWidth            = (int)(resizeFactor * cvUOrigImage.cols);
-            int newHeight           = (int)(resizeFactor * cvUOrigImage.rows);
-            cv::resize(cvUOrigImage, cvUImage, cv::Size(newWidth, newHeight));
-        }
-        else
-        {
-            cvUImage = cvUOrigImage;
+            int newWidth            = (int)(resizeFactor * cvUImage.cols);
+            int newHeight           = (int)(resizeFactor * cvUImage.rows);
+            cv::resize(cvUImage, cvUImage, cv::Size(newWidth, newHeight));
         }
 
         // detect any faces in the image
