@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-28 01:54+0000\n"
-"PO-Revision-Date: 2025-02-26 12:58+0100\n"
+"POT-Creation-Date: 2025-03-02 01:54+0000\n"
+"PO-Revision-Date: 2025-03-01 16:56+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -551,12 +551,13 @@ msgstr[0] "Mou cap a dins de la paperera"
 msgstr[1] "Mou %1 fitxers cap a dins de la paperera"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Image Quality Scan"
 msgctxt "@action:inmenu Pluralized"
-msgid "Image Quality Sort"
-msgid_plural "Image Quality Sort"
-msgstr[0] "Ordena segons la qualitat de la imatge"
-msgstr[1] "Ordena segons la qualitat de les imatges"
+msgid "Image Quality Scan"
+msgid_plural "Image Quality Scan"
+msgstr[0] "Exploreu la qualitat de les imatges"
+msgstr[1] "Exploreu la qualitat de les imatges"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
 #, kde-format
@@ -3507,9 +3508,12 @@ msgstr ""
 "traduïts preferits en el giny d'edició de text."
 
 #: core/app/views/stack/welcomepageview.cpp:122
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Allow to use Global or Customized Image Quality Sorting settings "
+#| "everywhere."
 msgid ""
-"Allow to use Global or Customized Image Quality Sorting settings everywhere."
+"Allow to use Global or Customized Image Quality Scanning settings everywhere."
 msgstr ""
 "Permetre utilitzar les opcions de configuració d'ordenació de les imatges "
 "segons la qualitat de forma global o personalitzada per tot arreu."
@@ -3519,7 +3523,7 @@ msgstr ""
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
 "Afegir la configuració de la vista d'icones per a personalitzar la "
-"visibilitat de les etiquetes sobre les miniatures."
+"visibilitat dels rètols sobre les miniatures."
 
 #: core/app/views/stack/welcomepageview.cpp:124
 #, kde-format
@@ -3564,8 +3568,8 @@ msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
 msgstr ""
-"Gestor de cues: afegir una eina nova per a assignar valoracions, i etiquetes "
-"de selecció i color per lots."
+"Gestor de cues: afegir una eina nova per a assignar valoracions, i rètols de "
+"selecció i color per lots."
 
 #: core/app/views/stack/welcomepageview.cpp:129
 #, kde-format
@@ -3628,7 +3632,7 @@ msgid ""
 "a frame to render Color Labels."
 msgstr ""
 "Miniatures més compactes a la vista d'icones utilitzant una única línia "
-"horitzontal en lloc d'un marc per a renderitzar etiquetes de color."
+"horitzontal en lloc d'un marc per a renderitzar rètols de color."
 
 #: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
@@ -6363,10 +6367,11 @@ msgstr ""
 "metadades a les imatges.</para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Image Quality Scan"
 msgctxt "@title"
-msgid "Image Quality Sort"
-msgstr "Ordenació segons la qualitat de les imatges"
+msgid "Image Quality Scan"
+msgstr "Exploreu la qualitat de les imatges"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:57
 #, kde-format
@@ -12271,7 +12276,7 @@ msgid_plural "%1 images moved to '%2'"
 msgstr[0] "S'ha mogut 1 imatge a «%2»"
 msgstr[1] "S'han mogut %1 imatges a «%2»"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
@@ -16150,7 +16155,7 @@ msgstr "Autoria antic"
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:92
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:96
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr "Desenvolupador i mantenidor"
@@ -17051,8 +17056,8 @@ msgstr ""
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:85
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:86
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:83
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:88
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
 #, kde-format
 msgid "Author and Maintainer"
@@ -17842,7 +17847,7 @@ msgid "Theme Parameters"
 msgstr "Paràmetres del tema"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:81
 #, kde-format
 msgid "Output Settings"
 msgstr "Configureu l'eixida"
@@ -19646,17 +19651,17 @@ msgstr "No s'ha pogut guardar el fitxer %1"
 msgid "Page %1 saved as %2"
 msgstr "Pàgina %1 guardada com a %2"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:39
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:44
 #, kde-format
 msgid "Print Creator"
 msgstr "Creador d'impressió"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:54
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
 #, kde-format
 msgid "A tool to create print composition from images"
 msgstr "Una eina per a crear una composició d'impressió a partir d'imatges"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as assemble) before to "
@@ -19670,18 +19675,18 @@ msgstr ""
 "p><p>Es poden utilitzar mides de paper predefinides i disposicions diferents "
 "per a processar els fitxers.</p>"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:80
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
 #: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, kde-format
 msgid "Author"
 msgstr "Autoria"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:87
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:92
 #, kde-format
 msgid "Contributor"
 msgstr "Col·laborador"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:99
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Print Creator..."
@@ -20252,51 +20257,51 @@ msgstr ""
 "Disposició\n"
 "personalitzada"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:99
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
 #, kde-format
 msgid "Welcome to Print Creator"
 msgstr "Us donem la benvinguda al creador d'impressió"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:77
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:86
 #, kde-format
 msgid "Albums Selection"
 msgstr "Seleccioneu àlbums"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
 #, kde-format
 msgid "Select Page Layout"
 msgstr "Seleccioneu la disposició de la pàgina"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
 #, kde-format
 msgid "Caption Settings"
 msgstr "Configureu la llegenda"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
 #, kde-format
 msgid "Crop and Rotate Photos"
 msgstr "Escapça i gira les fotografies"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:105
 #, kde-format
 msgid "Images Output Settings"
 msgstr "Configureu l'eixida de les imatges"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:105
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:106
 #, kde-format
 msgid "Render Printing"
 msgstr "Renderització de la impressió"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:242
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:243
 #, kde-format
 msgid "Photo %1 of %2"
 msgstr "Fotografia %1 de %2"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:341
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:353
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:342
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:354
 #, kde-format
 msgid "Page %1 of %2"
 msgstr "Pàgina %1 de %2"
@@ -20515,17 +20520,17 @@ msgctxt "Image format: PNG"
 msgid "Png"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:39
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:44
 #, kde-format
 msgid "Send by Email"
 msgstr "Envia per correu electrònic"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:54
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:59
 #, kde-format
 msgid "A tool to send images by E-mail"
 msgstr "Una eina per a enviar imatges per correu electrònic"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:59
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as resize) before to send "
@@ -20539,7 +20544,7 @@ msgstr ""
 "d'una selecció d'àlbums.</p><p>Es poden utilitzar aplicacions de client de "
 "correu diferents per a processar els fitxers a la xarxa.</p>"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:94
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Send by Mail..."
@@ -20743,40 +20748,40 @@ msgstr ""
 "Si marqueu esta opció, totes les metadades com l'Exif, IPTC, i XMP "
 "s'eliminaran."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:66
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:65
 #, kde-format
 msgctxt "@title:window"
 msgid "Send by Email"
 msgstr "Enviament per correu electrònic"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
 #, kde-format
 msgid "Welcome to Email Tool"
 msgstr "Us donem la benvinguda a l'eina de correu electrònic"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:78
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:78
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:79
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:87
 #, kde-format
 msgid "Images List"
 msgstr "Llista d'imatges"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:78
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:79
 #, kde-format
 msgid "Email Settings"
 msgstr "Configureu el correu electrònic"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:79
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:80
 #, kde-format
 msgid "Export by Email"
 msgstr "Exporta per correu electrònic"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:39
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:44
 #, kde-format
 msgid "Video Slideshow"
 msgstr "Vídeo de presentació de diapositives"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:54
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:59
 #, kde-format
 msgid "A tool to create video slideshow from images"
 msgstr ""
@@ -20784,7 +20789,7 @@ msgstr ""
 "d'imatges"
 
 # skip-rule: common-diferent_a
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:59
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process image as frame to create video "
@@ -20798,7 +20803,7 @@ msgstr ""
 "selecció d'àlbums.</p><p>Es poden aplicar efectes visuals diferents a les "
 "imatges per a fer transicions en renderitzar el vídeo final.</p>"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
@@ -21061,24 +21066,24 @@ msgstr ""
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr "Duració: %1 segons per element, total %2 segons (sense transicions)"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:67
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "Creeu un vídeo de presentació de diapositives"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:76
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:77
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
 msgstr ""
 "Us donem la benvinguda a l'eina de vídeo de presentació de diapositives"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:79
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, kde-format
 msgid "Video Settings"
 msgstr "Configureu el vídeo"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:81
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:82
 #, kde-format
 msgid "Generating Video Slideshow"
 msgstr "S'està generant el vídeo de presentació de diapositives"
@@ -35793,20 +35798,26 @@ msgid "aesthetic image quality"
 msgstr "qualitat estètica de les imatges"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, kde-format
-msgctxt "@label: image quality sort scan mode"
+#, fuzzy, kde-format
+#| msgctxt "@label: image quality sort scan mode"
+#| msgid "Scan Mode:"
+msgctxt "@label: image quality scan mode"
 msgid "Scan Mode:"
 msgstr "Mode d'exploració:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, kde-format
-msgctxt "@item: all items to scan with image quality sort"
+#, fuzzy, kde-format
+#| msgctxt "@item: all items to scan with image quality sort"
+#| msgid "All"
+msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
 msgstr "Totes"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, kde-format
-msgctxt "@item: image quality sort only non assigned items"
+#, fuzzy, kde-format
+#| msgctxt "@item: image quality sort only non assigned items"
+#| msgid "Non-Assigned Only"
+msgctxt "@item: image quality scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Només les no assignades"
 
@@ -43583,9 +43594,15 @@ msgid "Port to Qt6,"
 msgstr "Adaptació a les Qt6"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:156
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Rewrite Image Quality Sorter algorithms\n"
+#| "and Photo Focus Information Extraction.\n"
+#| "Aesthetic Detection to classify images\n"
+#| "using deep learning model.\n"
+#| "Slideshow and Presentation tools improvement"
 msgid ""
-"Rewrite Image Quality Sorter algorithms\n"
+"Rewrite Image Quality Scanner algorithms\n"
 "and Photo Focus Information Extraction.\n"
 "Aesthetic Detection to classify images\n"
 "using deep learning model.\n"
@@ -43663,9 +43680,10 @@ msgstr "Adaptació model/vista del llenç de l'editor d'imatges"
 #: core/libs/widgets/mainview/daboutdata.cpp:218
 #: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
-#, kde-format
-msgid "Image Quality Sorter"
-msgstr "Ordena les imatges segons la qualitat"
+#, fuzzy, kde-format
+#| msgid "Image Quality Scan"
+msgid "Image Quality Scanner"
+msgstr "Exploreu la qualitat de les imatges"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:224
 #, kde-format
@@ -55755,26 +55773,26 @@ msgstr "Color de l'equador."
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1398
 #, kde-format
 msgid "&Named Labels"
-msgstr "Etiquetes a&nomenades"
+msgstr "Rètols a&nomenats"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, primaryCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1408
 #, kde-format
 msgid "Show Labels for Prime meridian, Equator, Tropics."
 msgstr ""
-"Mostra les etiquetes per al meridià de Greenwich, l'equador i els tròpics."
+"Mostra els rètols per al meridià de Greenwich, l'equador i els tròpics."
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1415
 #, kde-format
 msgid "&Numerical Labels"
-msgstr "Etiquetes &numèriques"
+msgstr "Rètols &numèrics"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, secondaryCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1425
 #, kde-format
 msgid "Show numerical Labels."
-msgstr "Mostra etiquetes numèriques."
+msgstr "Mostra rètols numèrics."
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:85
 #, kde-format
@@ -55940,7 +55958,7 @@ msgstr "Cercle"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:51
 #, kde-format
 msgid "Segment labels"
-msgstr "Etiquetes de segment"
+msgstr "Rètols de segment"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showDistanceLabelsCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:60
@@ -68300,3 +68318,16 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
+
+#~ msgctxt "@action:inmenu Pluralized"
+#~ msgid "Image Quality Sort"
+#~ msgid_plural "Image Quality Sort"
+#~ msgstr[0] "Ordena segons la qualitat de la imatge"
+#~ msgstr[1] "Ordena segons la qualitat de les imatges"
+
+#~ msgctxt "@title"
+#~ msgid "Image Quality Sort"
+#~ msgstr "Ordenació segons la qualitat de les imatges"
+
+#~ msgid "Image Quality Sorter"
+#~ msgstr "Ordena les imatges segons la qualitat"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-28 01:54+0000\n"
+"POT-Creation-Date: 2025-03-02 01:54+0000\n"
 "PO-Revision-Date: 2010-08-27 21:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -543,8 +543,8 @@ msgstr[1] "Alihkan ke Tong Sampah"
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Pluralized"
-msgid "Image Quality Sort"
-msgid_plural "Image Quality Sort"
+msgid "Image Quality Scan"
+msgid_plural "Image Quality Scan"
 msgstr[0] "Sejarah"
 msgstr[1] "Sejarah"
 
@@ -3371,7 +3371,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:122
 #, kde-format
 msgid ""
-"Allow to use Global or Customized Image Quality Sorting settings everywhere."
+"Allow to use Global or Customized Image Quality Scanning settings everywhere."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:123
@@ -5965,7 +5965,7 @@ msgstr "Sharuzzaman Ahmat Raslan"
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
-msgid "Image Quality Sort"
+msgid "Image Quality Scan"
 msgstr "Sejarah"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:57
@@ -11293,7 +11293,7 @@ msgid_plural "%1 images moved to '%2'"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:82
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
@@ -14964,7 +14964,7 @@ msgstr "Pengarang"
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:92
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:96
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr ""
@@ -15783,8 +15783,8 @@ msgstr ""
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:85
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:86
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:83
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:88
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
 #, kde-format
 msgid "Author and Maintainer"
@@ -16538,7 +16538,7 @@ msgid "Theme Parameters"
 msgstr "Ciri-ciri"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:81
 #, fuzzy, kde-format
 msgid "Output Settings"
 msgstr "Tetapan"
@@ -18173,17 +18173,17 @@ msgstr "Maklumat Imej"
 msgid "Page %1 saved as %2"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:39
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:44
 #, fuzzy, kde-format
 msgid "Print Creator"
 msgstr "Kalendar"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:54
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
 #, kde-format
 msgid "A tool to create print composition from images"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as assemble) before to "
@@ -18192,18 +18192,18 @@ msgid ""
 "can be used to process files.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:80
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
 #: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, fuzzy, kde-format
 msgid "Author"
 msgstr "Pengarang"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:87
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:92
 #, fuzzy, kde-format
 msgid "Contributor"
 msgstr "Kontras:"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:99
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:104
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Print Creator..."
@@ -18731,51 +18731,51 @@ msgid ""
 "layout"
 msgstr "Tersendiri"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:99
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
 #, fuzzy, kde-format
 msgid "Welcome to Print Creator"
 msgstr "Padam Fail"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:77
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:86
 #, fuzzy, kde-format
 msgid "Albums Selection"
 msgstr "Fungsi:"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
 #, fuzzy, kde-format
 msgid "Select Page Layout"
 msgstr "Pilihan"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
 #, fuzzy, kde-format
 msgid "Caption Settings"
 msgstr "Tetapan"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
 #, fuzzy, kde-format
 msgid "Crop and Rotate Photos"
 msgstr "Dinormalkan"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:105
 #, fuzzy, kde-format
 msgid "Images Output Settings"
 msgstr "Tetapan"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:105
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:106
 #, fuzzy, kde-format
 msgid "Render Printing"
 msgstr "Keamatan Persembahan"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:242
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:243
 #, kde-format
 msgid "Photo %1 of %2"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:341
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:353
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:342
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:354
 #, kde-format
 msgid "Page %1 of %2"
 msgstr ""
@@ -18988,17 +18988,17 @@ msgctxt "Image format: PNG"
 msgid "Png"
 msgstr "Kedudukan:"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:39
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:44
 #, kde-format
 msgid "Send by Email"
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:54
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:59
 #, kde-format
 msgid "A tool to send images by E-mail"
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:59
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as resize) before to send "
@@ -19007,7 +19007,7 @@ msgid ""
 "be used to process files on the network.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:94
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Send by Mail..."
@@ -19194,45 +19194,45 @@ msgid ""
 "removed."
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:66
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:65
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Send by Email"
 msgstr "&Eksport"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
 #, kde-format
 msgid "Welcome to Email Tool"
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:78
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:78
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:79
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:87
 #, fuzzy, kde-format
 msgid "Images List"
 msgstr "Sejarah"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:78
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:79
 #, fuzzy, kde-format
 msgid "Email Settings"
 msgstr "Tetapan"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:79
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:80
 #, fuzzy, kde-format
 msgid "Export by Email"
 msgstr "&Eksport"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:39
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:44
 #, fuzzy, kde-format
 msgid "Video Slideshow"
 msgstr "Tidak dapat mencipta thumbnail untuk %1"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:54
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:59
 #, fuzzy, kde-format
 msgid "A tool to create video slideshow from images"
 msgstr "Tidak dapat mencipta thumbnail untuk %1"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:59
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process image as frame to create video "
@@ -19241,7 +19241,7 @@ msgid ""
 "to images to make transitions while to render target video.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:96
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
@@ -19465,23 +19465,23 @@ msgstr ""
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:67
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:66
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "Tidak dapat mencipta thumbnail untuk %1"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:76
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:77
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:79
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, fuzzy, kde-format
 msgid "Video Settings"
 msgstr "Seting Imej"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:81
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:82
 #, fuzzy, kde-format
 msgid "Generating Video Slideshow"
 msgstr "Tidak dapat mencipta thumbnail untuk %1"
@@ -32942,19 +32942,19 @@ msgstr "Sharuzzaman Ahmat Raslan"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
 #, fuzzy, kde-format
-msgctxt "@label: image quality sort scan mode"
+msgctxt "@label: image quality scan mode"
 msgid "Scan Mode:"
 msgstr "Huraian"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
 #, fuzzy, kde-format
-msgctxt "@item: all items to scan with image quality sort"
+msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
 msgstr "Semua"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
 #, kde-format
-msgctxt "@item: image quality sort only non assigned items"
+msgctxt "@item: image quality scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr ""
 
@@ -40157,7 +40157,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:156
 #, kde-format
 msgid ""
-"Rewrite Image Quality Sorter algorithms\n"
+"Rewrite Image Quality Scanner algorithms\n"
 "and Photo Focus Information Extraction.\n"
 "Aesthetic Detection to classify images\n"
 "using deep learning model.\n"
@@ -40218,7 +40218,7 @@ msgstr ""
 #: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
 #, fuzzy, kde-format
-msgid "Image Quality Sorter"
+msgid "Image Quality Scanner"
 msgstr "Sejarah"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:224
@@ -63372,6 +63372,22 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "Sharuzzaman Ahmat Raslan"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu Pluralized"
+#~ msgid "Image Quality Sort"
+#~ msgid_plural "Image Quality Sort"
+#~ msgstr[0] "Sejarah"
+#~ msgstr[1] "Sejarah"
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Image Quality Sort"
+#~ msgstr "Sejarah"
+
+#, fuzzy
+#~ msgid "Image Quality Sorter"
+#~ msgstr "Sejarah"
 
 #, fuzzy
 #~ msgctxt "@label"

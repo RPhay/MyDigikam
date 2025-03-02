@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-28 01:54+0000\n"
+"POT-Creation-Date: 2025-03-02 01:54+0000\n"
 "PO-Revision-Date: 2025-02-26 18:23+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -581,12 +581,13 @@ msgstr[0] "Flytta till papperskorgen"
 msgstr[1] "Flytta %1 filer till papperskorgen"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Image Quality Scan"
 msgctxt "@action:inmenu Pluralized"
-msgid "Image Quality Sort"
-msgid_plural "Image Quality Sort"
-msgstr[0] "Bildkvalitetssortering"
-msgstr[1] "Bildkvalitetssorteringar"
+msgid "Image Quality Scan"
+msgid_plural "Image Quality Scan"
+msgstr[0] "Bildkvalitetssökning"
+msgstr[1] "Bildkvalitetssökning"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
 #, kde-format
@@ -3512,9 +3513,12 @@ msgstr ""
 "textredigeringskomponenten."
 
 #: core/app/views/stack/welcomepageview.cpp:122
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Allow to use Global or Customized Image Quality Sorting settings "
+#| "everywhere."
 msgid ""
-"Allow to use Global or Customized Image Quality Sorting settings everywhere."
+"Allow to use Global or Customized Image Quality Scanning settings everywhere."
 msgstr ""
 "Tillåt användning av globala eller egna inställningar av "
 "bildkvalitetssortering överallt."
@@ -6340,10 +6344,11 @@ msgstr ""
 "bilder.</para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Image Quality Scan"
 msgctxt "@title"
-msgid "Image Quality Sort"
-msgstr "Bildkvalitetssorteringar"
+msgid "Image Quality Scan"
+msgstr "Bildkvalitetssökning"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:57
 #, kde-format
@@ -12152,7 +12157,7 @@ msgid_plural "%1 images moved to '%2'"
 msgstr[0] "1 bild flyttad till '%2'"
 msgstr[1] "%1 bilder flyttade till '%2'"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
@@ -15983,7 +15988,7 @@ msgstr "Tidigare upphovsman"
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:92
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:96
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr "Utvecklare och underhåll"
@@ -16884,8 +16889,8 @@ msgstr ""
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:85
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:86
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:83
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:88
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
 #, kde-format
 msgid "Author and Maintainer"
@@ -17672,7 +17677,7 @@ msgid "Theme Parameters"
 msgstr "Temaparametrar"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:81
 #, kde-format
 msgid "Output Settings"
 msgstr "Utdatainställningar"
@@ -19460,17 +19465,17 @@ msgstr "Kunde inte spara filen %1"
 msgid "Page %1 saved as %2"
 msgstr "Sida %1 sparad som %2"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:39
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:44
 #, kde-format
 msgid "Print Creator"
 msgstr "Utskriftsguide"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:54
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
 #, kde-format
 msgid "A tool to create print composition from images"
 msgstr "Ett verktyg för att skapa en utskriftssammanställning av bilder"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as assemble) before to "
@@ -19483,18 +19488,18 @@ msgstr ""
 "taget eller i grupp via val av album.</p><p>Olika fördefinierade "
 "pappersstorlekar och utläggningar kan användas för att behandla filer.</p>"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:80
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
 #: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, kde-format
 msgid "Author"
 msgstr "Upphovsman"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:87
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:92
 #, kde-format
 msgid "Contributor"
 msgstr "Bidragsgivare"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:99
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Print Creator..."
@@ -20058,51 +20063,51 @@ msgstr ""
 "Egen\n"
 "layout"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:99
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
 #, kde-format
 msgid "Welcome to Print Creator"
 msgstr "Välkommen till utskriftsguiden"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:77
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:86
 #, kde-format
 msgid "Albums Selection"
 msgstr "Albumval"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
 #, kde-format
 msgid "Select Page Layout"
 msgstr "Välj sidlayout"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
 #, kde-format
 msgid "Caption Settings"
 msgstr "Rubrikinställningar"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
 #, kde-format
 msgid "Crop and Rotate Photos"
 msgstr "Beskär och rotera foton"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:105
 #, kde-format
 msgid "Images Output Settings"
 msgstr "Utmatningsinställningar för bilder"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:105
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:106
 #, kde-format
 msgid "Render Printing"
 msgstr "Återge utskrift"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:242
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:243
 #, kde-format
 msgid "Photo %1 of %2"
 msgstr "Foto %1 av %2"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:341
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:353
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:342
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:354
 #, kde-format
 msgid "Page %1 of %2"
 msgstr "Sida %1 av %2"
@@ -20321,17 +20326,17 @@ msgctxt "Image format: PNG"
 msgid "Png"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:39
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:44
 #, kde-format
 msgid "Send by Email"
 msgstr "Skicka med e-post"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:54
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:59
 #, kde-format
 msgid "A tool to send images by E-mail"
 msgstr "Ett verktyg för att skicka bilder via e-post"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:59
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as resize) before to send "
@@ -20344,7 +20349,7 @@ msgstr ""
 "ett i taget eller i grupp via val av album</p><p>Olika e-postklienter kan "
 "användas för att behandla filer på nätverket.</p>"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:94
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Send by Mail..."
@@ -20544,45 +20549,45 @@ msgstr ""
 "Om alternativet aktiveras, kommer all metadata såsom EXIF, IPTC och XMP tas "
 "bort."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:66
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:65
 #, kde-format
 msgctxt "@title:window"
 msgid "Send by Email"
 msgstr "Skicka med e-post"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
 #, kde-format
 msgid "Welcome to Email Tool"
 msgstr "Välkommen till e-postverktyget"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:78
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:78
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:79
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:87
 #, kde-format
 msgid "Images List"
 msgstr "Bildlista"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:78
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:79
 #, kde-format
 msgid "Email Settings"
 msgstr "E-postinställningar"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:79
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:80
 #, kde-format
 msgid "Export by Email"
 msgstr "Exportera med e-post"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:39
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:44
 #, kde-format
 msgid "Video Slideshow"
 msgstr "Videobildspel"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:54
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:59
 #, kde-format
 msgid "A tool to create video slideshow from images"
 msgstr "Ett verktyg för att skapa videobildspel från bilder"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:59
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process image as frame to create video "
@@ -20595,7 +20600,7 @@ msgstr ""
 "i grupp via val av album</p><p>Olika visuella effekter kan appliceras på "
 "bilderna för att göra övergångar medan resultatvideon framställs.</p>"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
@@ -20854,23 +20859,23 @@ msgstr ""
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr "Längd: %1 sekunder per objekt, totalt %2 sekunder (utan övergångar)"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:67
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "Skapa ett videobildspel"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:76
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:77
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
 msgstr "Välkommen till verktyget för videobildspel"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:79
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, kde-format
 msgid "Video Settings"
 msgstr "Videoinställningar"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:81
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:82
 #, kde-format
 msgid "Generating Video Slideshow"
 msgstr "Skapar videobildspel"
@@ -35369,20 +35374,26 @@ msgid "aesthetic image quality"
 msgstr "estetisk bildkvalitet"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, kde-format
-msgctxt "@label: image quality sort scan mode"
+#, fuzzy, kde-format
+#| msgctxt "@label: image quality sort scan mode"
+#| msgid "Scan Mode:"
+msgctxt "@label: image quality scan mode"
 msgid "Scan Mode:"
 msgstr "Sökmetod:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, kde-format
-msgctxt "@item: all items to scan with image quality sort"
+#, fuzzy, kde-format
+#| msgctxt "@item: all items to scan with image quality sort"
+#| msgid "All"
+msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
 msgstr "Alla"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, kde-format
-msgctxt "@item: image quality sort only non assigned items"
+#, fuzzy, kde-format
+#| msgctxt "@item: image quality sort only non assigned items"
+#| msgid "Non-Assigned Only"
+msgctxt "@item: image quality scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Bara ej tilldelade"
 
@@ -43068,9 +43079,15 @@ msgid "Port to Qt6,"
 msgstr "Konvertering till Qt6,"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:156
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Rewrite Image Quality Sorter algorithms\n"
+#| "and Photo Focus Information Extraction.\n"
+#| "Aesthetic Detection to classify images\n"
+#| "using deep learning model.\n"
+#| "Slideshow and Presentation tools improvement"
 msgid ""
-"Rewrite Image Quality Sorter algorithms\n"
+"Rewrite Image Quality Scanner algorithms\n"
 "and Photo Focus Information Extraction.\n"
 "Aesthetic Detection to classify images\n"
 "using deep learning model.\n"
@@ -43145,9 +43162,10 @@ msgstr "Portering till modell/vy av bildeditorns duk"
 #: core/libs/widgets/mainview/daboutdata.cpp:218
 #: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
-#, kde-format
-msgid "Image Quality Sorter"
-msgstr "Bildkvalitetssortering"
+#, fuzzy, kde-format
+#| msgid "Image Quality Scan"
+msgid "Image Quality Scanner"
+msgstr "Bildkvalitetssökning"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:224
 #, kde-format
@@ -67546,6 +67564,19 @@ msgstr "Albumobjekt"
 #, kde-format
 msgid "Import Items"
 msgstr "Importera objekt"
+
+#~ msgctxt "@action:inmenu Pluralized"
+#~ msgid "Image Quality Sort"
+#~ msgid_plural "Image Quality Sort"
+#~ msgstr[0] "Bildkvalitetssortering"
+#~ msgstr[1] "Bildkvalitetssorteringar"
+
+#~ msgctxt "@title"
+#~ msgid "Image Quality Sort"
+#~ msgstr "Bildkvalitetssorteringar"
+
+#~ msgid "Image Quality Sorter"
+#~ msgstr "Bildkvalitetssortering"
 
 #~ msgctxt "@label"
 #~ msgid "Restriction:"

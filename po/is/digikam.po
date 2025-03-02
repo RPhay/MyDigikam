@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-28 01:54+0000\n"
+"POT-Creation-Date: 2025-03-02 01:54+0000\n"
 "PO-Revision-Date: 2025-02-25 09:16+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -568,12 +568,13 @@ msgstr[0] "Setja í ruslið"
 msgstr[1] "Setja %1 skrár í ruslið"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Image Quality Scan"
 msgctxt "@action:inmenu Pluralized"
-msgid "Image Quality Sort"
-msgid_plural "Image Quality Sort"
-msgstr[0] "Myndgæðaröðun"
-msgstr[1] "Myndgæðaröðun"
+msgid "Image Quality Scan"
+msgid_plural "Image Quality Scan"
+msgstr[0] "Myndgæðaskönnun"
+msgstr[1] "Myndgæðaskönnun"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
 #, kde-format
@@ -3487,9 +3488,12 @@ msgid ""
 msgstr "Bætt við stillingum í lista fyrir varatungumál í textabreytingareit."
 
 #: core/app/views/stack/welcomepageview.cpp:122
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Allow to use Global or Customized Image Quality Sorting settings "
+#| "everywhere."
 msgid ""
-"Allow to use Global or Customized Image Quality Sorting settings everywhere."
+"Allow to use Global or Customized Image Quality Scanning settings everywhere."
 msgstr "Leyfa að nota allsstaðar sérsniðnar stillingar myndgæðaröðunar."
 
 #: core/app/views/stack/welcomepageview.cpp:123
@@ -6311,10 +6315,11 @@ msgstr ""
 "lýsigögn á myndir.</para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Image Quality Scan"
 msgctxt "@title"
-msgid "Image Quality Sort"
-msgstr "Myndgæðaröðun"
+msgid "Image Quality Scan"
+msgstr "Myndgæðaskönnun"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:57
 #, kde-format
@@ -12104,7 +12109,7 @@ msgid_plural "%1 images moved to '%2'"
 msgstr[0] "1 mynd færð í '%2'"
 msgstr[1] "%1 myndir færðar í '%2'"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
@@ -15942,7 +15947,7 @@ msgstr "Fyrrverandi höfundur"
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:92
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:96
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr "Forritari og umsjónarmaður"
@@ -16838,8 +16843,8 @@ msgstr ""
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:85
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:86
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:83
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:88
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
 #, kde-format
 msgid "Author and Maintainer"
@@ -17624,7 +17629,7 @@ msgid "Theme Parameters"
 msgstr "Stillingar þema"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:81
 #, kde-format
 msgid "Output Settings"
 msgstr "Úttaksstillingar"
@@ -19415,17 +19420,17 @@ msgstr "Gat ekki vistað skrána %1"
 msgid "Page %1 saved as %2"
 msgstr "Síða %1 vistuð sem %2"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:39
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:44
 #, kde-format
 msgid "Print Creator"
 msgstr "Prentstjórnun"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:54
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
 #, kde-format
 msgid "A tool to create print composition from images"
 msgstr "Verkfæri til að útbúa prentsamsetningar úr myndum"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as assemble) before to "
@@ -19438,18 +19443,18 @@ msgstr ""
 "eða í hópum með því að velja möppur.</p><p>Mismunandi for-ákvarðaðar "
 "pappírsstærðir og mismunandi framsetning er í boði fyrir vinnslu skránna.</p>"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:80
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
 #: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, kde-format
 msgid "Author"
 msgstr "Höfundur"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:87
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:92
 #, kde-format
 msgid "Contributor"
 msgstr "Framlög frá"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:99
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Print Creator..."
@@ -20013,51 +20018,51 @@ msgstr ""
 "Sérsniðin\n"
 "framsetning"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:99
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
 #, kde-format
 msgid "Welcome to Print Creator"
 msgstr "Velkomin í prentstjórnun"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:77
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:86
 #, kde-format
 msgid "Albums Selection"
 msgstr "Val albúma"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
 #, kde-format
 msgid "Select Page Layout"
 msgstr "Veldu uppsetningu á síðu"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
 #, kde-format
 msgid "Caption Settings"
 msgstr "Stillingar skýringartexta"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
 #, kde-format
 msgid "Crop and Rotate Photos"
 msgstr "Utansníða og snúa myndum"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:105
 #, kde-format
 msgid "Images Output Settings"
 msgstr "Úttaksstillingar mynda"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:105
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:106
 #, kde-format
 msgid "Render Printing"
 msgstr "Myndgera prentun"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:242
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:243
 #, kde-format
 msgid "Photo %1 of %2"
 msgstr "Mynd %1 af %2"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:341
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:353
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:342
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:354
 #, kde-format
 msgid "Page %1 of %2"
 msgstr "Síða %1 af %2"
@@ -20275,17 +20280,17 @@ msgctxt "Image format: PNG"
 msgid "Png"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:39
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:44
 #, kde-format
 msgid "Send by Email"
 msgstr "Senda með tölvupósti"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:54
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:59
 #, kde-format
 msgid "A tool to send images by E-mail"
 msgstr "Verkfæri til að senda myndir með tölvupósti"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:59
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as resize) before to send "
@@ -20298,7 +20303,7 @@ msgstr ""
 "eitt og eitt eða í hópum með því að velja möppur<p>Mismunandi "
 "tölvupóstförrit má nota til að senda skrárnar.</p>"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:94
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Send by Mail..."
@@ -20499,45 +20504,45 @@ msgstr ""
 "Ef þú hefur þennan möguleika virkan, verða öll lýsigögn úr EXIF,IPTC og XMP "
 "fjarlægð."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:66
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:65
 #, kde-format
 msgctxt "@title:window"
 msgid "Send by Email"
 msgstr "Senda með tölvupósti"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
 #, kde-format
 msgid "Welcome to Email Tool"
 msgstr "Velkomin í tölvupóstverkfærið"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:78
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:78
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:79
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:87
 #, kde-format
 msgid "Images List"
 msgstr "Myndalisti"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:78
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:79
 #, kde-format
 msgid "Email Settings"
 msgstr "Stillingar á tölvupósti"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:79
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:80
 #, kde-format
 msgid "Export by Email"
 msgstr "Senda með tölvupósti"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:39
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:44
 #, kde-format
 msgid "Video Slideshow"
 msgstr "Myndskeiða-skyggnusýning"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:54
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:59
 #, kde-format
 msgid "A tool to create video slideshow from images"
 msgstr "Verkfæri til að búa til skyggnusýningu úr myndum"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:59
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process image as frame to create video "
@@ -20551,7 +20556,7 @@ msgstr ""
 "möppur<p>Mismunandi sjónbrellur má nota við millifærslur áður en "
 "úttaksmyndskeið er útbúið.</p>"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
@@ -20813,23 +20818,23 @@ msgstr ""
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr "Tímalengd : %1 sekúndur á atriði, alls %2 sekúndur (án millifærslna)"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:67
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "Búa til myndskeiða-skyggnusýningu"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:76
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:77
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
 msgstr "Velkomin í verkfærið til að útbúa skyggnusýningar með myndskeiðum"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:79
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, kde-format
 msgid "Video Settings"
 msgstr "Myndskeiðastillingar"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:81
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:82
 #, kde-format
 msgid "Generating Video Slideshow"
 msgstr "Bý til skyggnusýningu með myndskeiðum"
@@ -35317,20 +35322,26 @@ msgid "aesthetic image quality"
 msgstr "fagurfræðileg gæði myndar"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, kde-format
-msgctxt "@label: image quality sort scan mode"
+#, fuzzy, kde-format
+#| msgctxt "@label: image quality sort scan mode"
+#| msgid "Scan Mode:"
+msgctxt "@label: image quality scan mode"
 msgid "Scan Mode:"
 msgstr "Skönnunarhamur:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, kde-format
-msgctxt "@item: all items to scan with image quality sort"
+#, fuzzy, kde-format
+#| msgctxt "@item: all items to scan with image quality sort"
+#| msgid "All"
+msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
 msgstr "Allt"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, kde-format
-msgctxt "@item: image quality sort only non assigned items"
+#, fuzzy, kde-format
+#| msgctxt "@item: image quality sort only non assigned items"
+#| msgid "Non-Assigned Only"
+msgctxt "@item: image quality scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Einungis óúthlutað"
 
@@ -43034,9 +43045,15 @@ msgid "Port to Qt6,"
 msgstr "Aðlögun að Qt6;"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:156
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Rewrite Image Quality Sorter algorithms\n"
+#| "and Photo Focus Information Extraction.\n"
+#| "Aesthetic Detection to classify images\n"
+#| "using deep learning model.\n"
+#| "Slideshow and Presentation tools improvement"
 msgid ""
-"Rewrite Image Quality Sorter algorithms\n"
+"Rewrite Image Quality Scanner algorithms\n"
 "and Photo Focus Information Extraction.\n"
 "Aesthetic Detection to classify images\n"
 "using deep learning model.\n"
@@ -43110,9 +43127,10 @@ msgstr "Yfirfærsla á Módel/Skoðun fyrir bakgrunn myndvinnsluforrits"
 #: core/libs/widgets/mainview/daboutdata.cpp:218
 #: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
-#, kde-format
-msgid "Image Quality Sorter"
-msgstr "Myndgæðaröðun"
+#, fuzzy, kde-format
+#| msgid "Image Quality Scan"
+msgid "Image Quality Scanner"
+msgstr "Myndgæðaskönnun"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:224
 #, kde-format
@@ -67479,6 +67497,19 @@ msgstr "Atriði í albúmi"
 #, kde-format
 msgid "Import Items"
 msgstr "Flytja inn atriði"
+
+#~ msgctxt "@action:inmenu Pluralized"
+#~ msgid "Image Quality Sort"
+#~ msgid_plural "Image Quality Sort"
+#~ msgstr[0] "Myndgæðaröðun"
+#~ msgstr[1] "Myndgæðaröðun"
+
+#~ msgctxt "@title"
+#~ msgid "Image Quality Sort"
+#~ msgstr "Myndgæðaröðun"
+
+#~ msgid "Image Quality Sorter"
+#~ msgstr "Myndgæðaröðun"
 
 #~ msgctxt "@label"
 #~ msgid "Restriction:"

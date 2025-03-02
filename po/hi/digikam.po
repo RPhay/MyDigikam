@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-28 01:54+0000\n"
+"POT-Creation-Date: 2025-03-02 01:54+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -565,8 +565,8 @@ msgstr[1] "%1 फ़ाईल कूडे में डालें"
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Pluralized"
-msgid "Image Quality Sort"
-msgid_plural "Image Quality Sort"
+msgid "Image Quality Scan"
+msgid_plural "Image Quality Scan"
 msgstr[0] "छवि संपादक "
 msgstr[1] "छवि संपादक "
 
@@ -3471,7 +3471,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:122
 #, kde-format
 msgid ""
-"Allow to use Global or Customized Image Quality Sorting settings everywhere."
+"Allow to use Global or Customized Image Quality Scanning settings everywhere."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:123
@@ -6153,7 +6153,7 @@ msgstr "रंग जगह"
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
-msgid "Image Quality Sort"
+msgid "Image Quality Scan"
 msgstr "छवि संपादक "
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:57
@@ -11686,7 +11686,7 @@ msgid_plural "%1 images moved to '%2'"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:82
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
@@ -15433,7 +15433,7 @@ msgstr "लेखकः"
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:92
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:96
 #, fuzzy, kde-format
 msgid "Developer and Maintainer"
 msgstr "मुख्य डेवलपर तथा संयोजक"
@@ -16283,8 +16283,8 @@ msgstr ""
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:85
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:86
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:83
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:88
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
 #, fuzzy, kde-format
 #| msgid "Author and maintainer"
@@ -17080,7 +17080,7 @@ msgid "Theme Parameters"
 msgstr "पैरेन्ट्स"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:81
 #, fuzzy, kde-format
 msgid "Output Settings"
 msgstr "सामान्य विन्यास"
@@ -18767,18 +18767,18 @@ msgstr "%1 में फ़ाइल सूची बनाना असफल"
 msgid "Page %1 saved as %2"
 msgstr " (%2 में से %1)"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:39
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Print Creator"
 msgstr "कैलेन्डर"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:54
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
 #, kde-format
 msgid "A tool to create print composition from images"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as assemble) before to "
@@ -18787,19 +18787,19 @@ msgid ""
 "can be used to process files.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:80
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
 #: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, fuzzy, kde-format
 msgid "Author"
 msgstr "लेखकः"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:87
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:92
 #, fuzzy, kde-format
 #| msgid "Contrast:"
 msgid "Contributor"
 msgstr "कंट्रास्टः"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:99
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:104
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@action"
@@ -19352,53 +19352,53 @@ msgid ""
 "layout"
 msgstr "मनपसंद"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:99
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
 #, fuzzy, kde-format
 msgid "Welcome to Print Creator"
 msgstr "छवियाँ सहेजें"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:77
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:86
 #, fuzzy, kde-format
 msgid "Albums Selection"
 msgstr "एलबम संग्रह"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgid "Select Page Layout"
 msgstr "कुछ नहीं चुनें"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
 #, fuzzy, kde-format
 msgid "Caption Settings"
 msgstr "विन्यास"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
 #, fuzzy, kde-format
 msgid "Crop and Rotate Photos"
 msgstr "स्वचालित ब्रेकेट"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:105
 #, fuzzy, kde-format
 msgid "Images Output Settings"
 msgstr "सामान्य विन्यास"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:105
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:106
 #, fuzzy, kde-format
 msgid "Render Printing"
 msgstr "रेंडरिंग इंटेंट:"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:242
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:243
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid "Photo %1 of %2"
 msgstr " (%2 में से %1)"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:341
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:353
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:342
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:354
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid "Page %1 of %2"
@@ -19619,18 +19619,18 @@ msgctxt "Image format: PNG"
 msgid "Png"
 msgstr "पीएनजी"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:39
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:44
 #, kde-format
 msgid "Send by Email"
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:54
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Color Space"
 msgid "A tool to send images by E-mail"
 msgstr "रंग जगह"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:59
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as resize) before to send "
@@ -19639,7 +19639,7 @@ msgid ""
 "be used to process files on the network.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:94
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Send by Mail..."
@@ -19830,45 +19830,45 @@ msgid ""
 "removed."
 msgstr "<p>यदि आप इस विकल्प को सक्षम करते हैं, आप मूल छवि देख सकेंगे."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:66
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:65
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Send by Email"
 msgstr "दरजा आयातित"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
 #, kde-format
 msgid "Welcome to Email Tool"
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:78
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:78
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:79
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:87
 #, fuzzy, kde-format
 msgid "Images List"
 msgstr "छवि संपादक "
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:78
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:79
 #, fuzzy, kde-format
 msgid "Email Settings"
 msgstr "विन्यास"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:79
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:80
 #, fuzzy, kde-format
 msgid "Export by Email"
 msgstr "दरजा आयातित"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:39
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:44
 #, fuzzy, kde-format
 msgid "Video Slideshow"
 msgstr "यह टैग आबंटित करें"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:54
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:59
 #, fuzzy, kde-format
 msgid "A tool to create video slideshow from images"
 msgstr "यह टैग आबंटित करें"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:59
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process image as frame to create video "
@@ -19877,7 +19877,7 @@ msgid ""
 "to images to make transitions while to render target video.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:96
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
@@ -20109,24 +20109,24 @@ msgstr ""
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:67
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:66
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "यह टैग आबंटित करें"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:76
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:77
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:79
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, fuzzy, kde-format
 #| msgid "Slide Show Settings"
 msgid "Video Settings"
 msgstr "स्लाइड शो विन्यास"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:81
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:82
 #, fuzzy, kde-format
 msgid "Generating Video Slideshow"
 msgstr "यह टैग आबंटित करें"
@@ -34090,20 +34090,20 @@ msgstr "छवियाँ छांटें (&S)"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
 #, fuzzy, kde-format
-msgctxt "@label: image quality sort scan mode"
+msgctxt "@label: image quality scan mode"
 msgid "Scan Mode:"
 msgstr "मॉडलः"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
 #, fuzzy, kde-format
 #| msgid "All"
-msgctxt "@item: all items to scan with image quality sort"
+msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
 msgstr "सभी"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
 #, fuzzy, kde-format
-msgctxt "@item: image quality sort only non assigned items"
+msgctxt "@item: image quality scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "आबंटित टैग"
 
@@ -41540,7 +41540,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:156
 #, kde-format
 msgid ""
-"Rewrite Image Quality Sorter algorithms\n"
+"Rewrite Image Quality Scanner algorithms\n"
 "and Photo Focus Information Extraction.\n"
 "Aesthetic Detection to classify images\n"
 "using deep learning model.\n"
@@ -41601,7 +41601,7 @@ msgstr ""
 #: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
 #, fuzzy, kde-format
-msgid "Image Quality Sorter"
+msgid "Image Quality Scanner"
 msgstr "छवि संपादक "
 
 #: core/libs/widgets/mainview/daboutdata.cpp:224
@@ -66045,6 +66045,22 @@ msgstr "एल्बम"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "छवियाँ छांटें (&S)"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu Pluralized"
+#~ msgid "Image Quality Sort"
+#~ msgid_plural "Image Quality Sort"
+#~ msgstr[0] "छवि संपादक "
+#~ msgstr[1] "छवि संपादक "
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Image Quality Sort"
+#~ msgstr "छवि संपादक "
+
+#, fuzzy
+#~ msgid "Image Quality Sorter"
+#~ msgstr "छवि संपादक "
 
 #, fuzzy
 #~| msgid "Restoration"
