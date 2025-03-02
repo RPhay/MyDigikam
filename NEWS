@@ -177,7 +177,7 @@ BUGFIXES:
 123 ==> 500445 - digiKam "You have insufficient privileges on database.
 124 ==> 500881 - "Update fingerprints" taking 17 seconds / file apparently due to multiple database locks.
 125 ==> 500912 - Files in tmp not found.
-126 ==> 
+126 ==> 500140 - Couldn't adjust the deducted face area.
 127 ==> 
 128 ==> 
 129 ==> 

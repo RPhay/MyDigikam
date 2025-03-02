@@ -435,9 +435,18 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
         return;
     }
 
-    FaceItem* const item    = d->items[faceList[4].toInt()];
-    FaceTagsIface face      = item->face();
-    TagRegion currentRegion(item->originalRect());
+    FaceItem* const item = d->items[faceList[4].toInt()];
+    FaceTagsIface face   = item->face();
+    QRect faceRect       = item->originalRect();
+
+    if (!d->exifRotate)
+    {
+        TagRegion::adjustToOrientation(faceRect,
+                                       d->info.orientation(),
+                                       d->info.dimensions());
+    }
+
+    TagRegion currentRegion(faceRect);
 
     if (
         !face.isConfirmedName()          ||
@@ -450,6 +459,10 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
        )
     {
         int tagId = 0;
+
+        // Apply a modified region.
+
+        face.setRegion(currentRegion);
 
         if      (action.shallAssignTag())
         {
