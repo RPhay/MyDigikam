@@ -266,6 +266,8 @@ bool AutotagsPipelineObject::loader()
 
                 enqueue(nextQueue, package);
 
+                package = nullptr;
+
                 sendNotification = false;
             }
         }
@@ -284,6 +286,8 @@ bool AutotagsPipelineObject::loader()
             // delete the package since it is not needed
 
             delete package;
+
+            package = nullptr;
         }
     }
 
@@ -413,6 +417,8 @@ bool AutotagsPipelineObject::extractor()
         // send the package to the next stage
 
         enqueue(nextQueue, package);
+
+        package = nullptr;
     }
 
     /* =========================================================================================
@@ -460,6 +466,8 @@ bool AutotagsPipelineObject::classifier()
         // send the package to the next stage
 
         enqueue(nextQueue, package);
+
+        package = nullptr;
     }
 
     /* =========================================================================================
@@ -654,6 +662,8 @@ bool AutotagsPipelineObject::writer()
         // delete the package
 
         delete package;
+    
+        package = nullptr;
     }
 
     /* =========================================================================================

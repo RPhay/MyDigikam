@@ -47,10 +47,12 @@ public:
 public:
 
     FacePipelinePackageBase()                                               = default;
-    explicit FacePipelinePackageBase(qlonglong _imageId);
+    explicit FacePipelinePackageBase(qlonglong _imageId,
+                                     int _serialNumber = -1);
 
     explicit FacePipelinePackageBase(qlonglong _imageId,
-                                     const FaceTagsIface& _face);
+                                     const FaceTagsIface& _face,
+                                     int _serialNumber = -1);
 
     explicit FacePipelinePackageBase(const ItemInfo& _info,
                                      const FaceTagsIface& _face,
@@ -58,9 +60,11 @@ public:
                                      const TagRegion& _region,
                                      const DImg& _image,
                                      EditPipelineAction _action,
-                                     bool _retrain);
+                                     bool _retrain,
+                                     int _serialNumber = -1);
 
-    virtual ~FacePipelinePackageBase() override                             = default;
+
+    virtual ~FacePipelinePackageBase() override;
 
 public:
 
@@ -79,6 +83,7 @@ public:
     QList<cv::Mat>          featuresList;
     QList<int>              labelList;
     QList<FaceTagsIface>    faceList;
+    int                     serialNumber    = -1;
 
 private:
 

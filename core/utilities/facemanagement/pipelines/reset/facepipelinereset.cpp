@@ -193,6 +193,8 @@ bool FacePipelineReset::writer()
         // delete the package
 
         delete package;
+
+        package = nullptr;
     }
 
     /* =========================================================================================

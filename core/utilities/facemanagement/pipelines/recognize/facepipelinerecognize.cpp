@@ -97,6 +97,7 @@ bool FacePipelineRecognize::finder()
 
     FaceUtils utils;
     QSet<qlonglong> filter;
+    int serialNumber = 0;
 
     for (const Album* const album : std::as_const(settings.albums))
     {
@@ -134,7 +135,7 @@ bool FacePipelineRecognize::finder()
                     {
                         ++totalItemCount;
                         filter << imageId;
-                        enqueue(nextQueue, new FacePipelinePackageBase(imageId, face));
+                        enqueue(nextQueue, new FacePipelinePackageBase(imageId, face, ++serialNumber));
                     }
                 }
             }
@@ -155,7 +156,7 @@ bool FacePipelineRecognize::finder()
             {
                 ++totalItemCount;
                 filter << imageId;
-                enqueue(nextQueue, new FacePipelinePackageBase(imageId, face));
+                enqueue(nextQueue, new FacePipelinePackageBase(imageId, face, ++serialNumber));
             }
         }
     }
@@ -211,7 +212,7 @@ bool FacePipelineRecognize::classifier()
      * This loop is run once per image.
      */
     {
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier: Classifying " << package->info.name();
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier: Classifying " << package->info.name() << " with serial number " << package->serialNumber;
 
         // verify the feature mat is the correct size
 
@@ -232,6 +233,8 @@ bool FacePipelineRecognize::classifier()
         if (-1 != package->label)
         {
             enqueue(nextQueue, package);
+
+            package = nullptr;
         }
         else
         {
@@ -261,6 +264,8 @@ bool FacePipelineRecognize::classifier()
             // delete the package
 
             delete package;
+
+            package = nullptr;
         }
     }
     /* =========================================================================================
@@ -330,6 +335,8 @@ bool FacePipelineRecognize::writer()
         // delete the package
 
         delete package;
+
+        package = nullptr;
     }
 
     /* =========================================================================================

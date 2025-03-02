@@ -383,6 +383,8 @@ bool FacePipelineEdit::writer()
 
         delete package;
 
+        package = nullptr;
+
         if (
             (0 == queues[MLPipelineStage::Loader]->size())    &&
             (0 == queues[MLPipelineStage::Extractor]->size()) &&

@@ -236,6 +236,8 @@ bool FacePipelineRetrain::writer()
         // delete the package
 
         delete package;
+
+        package = nullptr;
     }
 
     /* =========================================================================================

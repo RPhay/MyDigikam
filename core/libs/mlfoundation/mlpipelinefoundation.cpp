@@ -385,6 +385,10 @@ bool MLPipelineFoundation::checkMoreWorkers(int totalItemCount, int currentItemC
 
 void MLPipelineFoundation::slotAddMoreWorkers()
 {
+    qCDebug(DIGIKAM_MLPIPELINEFOUNDATION_LOG) << "MLPipelineFoundation::slotAddMoreWorkers: Adding more workers";
+
+    // call the derived class to add more workers
+    
     addMoreWorkers();
 }
 
