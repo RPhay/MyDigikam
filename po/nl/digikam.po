@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 01:54+0000\n"
-"PO-Revision-Date: 2025-02-26 16:45+0100\n"
+"POT-Creation-Date: 2025-03-03 01:57+0000\n"
+"PO-Revision-Date: 2025-03-02 14:13+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -600,8 +600,7 @@ msgstr[0] "Naar prullenbak verplaatsen"
 msgstr[1] "%1 bestanden naar prullenbak verplaatsen"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
@@ -3554,15 +3553,12 @@ msgstr ""
 "talen met voorkeur in tekstbewerkerwidget."
 
 #: core/app/views/stack/welcomepageview.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow to use Global or Customized Image Quality Sorting settings "
-#| "everywhere."
+#, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Scanning settings everywhere."
 msgstr ""
-"Sta toe om globale of aangepaste instellingen voor sortering op "
-"afbeeldingskwaliteit settings overal te gebruiken."
+"Sta toe om globale of aangepaste instellingen voor scannen op "
+"afbeeldingskwaliteit overal te gebruiken."
 
 #: core/app/views/stack/welcomepageview.cpp:123
 #, kde-format
@@ -6400,8 +6396,7 @@ msgstr ""
 "afbeeldingen toepassen.</para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@title"
 msgid "Image Quality Scan"
 msgstr "Scan op kwaliteit van afbeelding"
@@ -29206,7 +29201,7 @@ msgstr "Verzameling scannen"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
-#: core/libs/mlfoundation/mlpipelinemacros.h:70
+#: core/libs/mlfoundation/mlpipelinemacros.h:71
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -35777,25 +35772,19 @@ msgid "aesthetic image quality"
 msgstr "esthetische afbeeldingskwaliteit"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@label: image quality sort scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label: image quality scan mode"
 msgid "Scan Mode:"
 msgstr "Modus van scan:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@item: all items to scan with image quality sort"
-#| msgid "All"
+#, kde-format
 msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
 msgstr "Alles"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@item: image quality sort only non assigned items"
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item: image quality scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Alleen niet-toegewezen"
@@ -43530,13 +43519,7 @@ msgid "Port to Qt6,"
 msgstr "Overzetten naar Qt6,"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:156
-#, fuzzy, kde-format
-#| msgid ""
-#| "Rewrite Image Quality Sorter algorithms\n"
-#| "and Photo Focus Information Extraction.\n"
-#| "Aesthetic Detection to classify images\n"
-#| "using deep learning model.\n"
-#| "Slideshow and Presentation tools improvement"
+#, kde-format
 msgid ""
 "Rewrite Image Quality Scanner algorithms\n"
 "and Photo Focus Information Extraction.\n"
@@ -43544,7 +43527,7 @@ msgid ""
 "using deep learning model.\n"
 "Slideshow and Presentation tools improvement"
 msgstr ""
-"Herschrijven van algoritmen voor afbeeldingskwaliteitssorteerder\n"
+"Herschrijven van algoritmen voor afbeeldingskwaliteitsscanner\n"
 "en verbeteringen van fotofocusinformatie-extractie.\n"
 "Esthetische detectie om afbeeldingen te classificeren\n"
 "met deep learning model.\n"
@@ -43613,10 +43596,9 @@ msgstr "Model/tonen port van werkveld afbeeldingsbewerker"
 #: core/libs/widgets/mainview/daboutdata.cpp:218
 #: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgid "Image Quality Scanner"
-msgstr "Scan op kwaliteit van afbeelding"
+msgstr "Scanner op kwaliteit van afbeelding"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:224
 #, kde-format

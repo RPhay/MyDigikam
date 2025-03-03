@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 01:54+0000\n"
-"PO-Revision-Date: 2025-02-26 06:45+0100\n"
+"POT-Creation-Date: 2025-03-03 01:57+0000\n"
+"PO-Revision-Date: 2025-03-02 08:31+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -47,7 +47,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -582,15 +582,14 @@ msgstr[2] "Prenesi %1 datoteke v Smeti"
 msgstr[3] "Prenesi %1 datotek v Smeti"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
-msgstr[0] "Prečesavanje slik po kakovosti"
-msgstr[1] "Prečesavanje slik po kakovosti"
-msgstr[2] "Prečesavanje slik po kakovosti"
-msgstr[3] "Prečesavanje slik po kakovosti"
+msgstr[0] "Skeniranje slik po kakovosti"
+msgstr[1] "Skeniranje slik po kakovosti"
+msgstr[2] "Skeniranje slik po kakovosti"
+msgstr[3] "Skeniranje slik po kakovosti"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
 #, kde-format
@@ -3548,14 +3547,12 @@ msgstr ""
 "gradnik urejevalnika besedil."
 
 #: core/app/views/stack/welcomepageview.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow to use Global or Customized Image Quality Sorting settings "
-#| "everywhere."
+#, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Scanning settings everywhere."
 msgstr ""
-"Povsod dovoli uporabo globalnih ali po meri razvrstitev slik po kakovosti."
+"Omogoči uporabo globalnih ali prilagojenih nastavitev skeniranja kakovosti "
+"slike povsod."
 
 #: core/app/views/stack/welcomepageview.cpp:123
 #, kde-format
@@ -6378,11 +6375,10 @@ msgstr ""
 "metapodatkov na slikah.</para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@title"
 msgid "Image Quality Scan"
-msgstr "Prečesavanje slik po kakovosti"
+msgstr "Skeniranje slik po kakovosti"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:57
 #, kde-format
@@ -28911,7 +28907,7 @@ msgstr "Preiskovanje zbirke"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
-#: core/libs/mlfoundation/mlpipelinemacros.h:70
+#: core/libs/mlfoundation/mlpipelinemacros.h:71
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -35449,25 +35445,19 @@ msgid "aesthetic image quality"
 msgstr "estetska kakovost slike"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@label: image quality sort scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label: image quality scan mode"
 msgid "Scan Mode:"
-msgstr "Način preiskovanja:"
+msgstr "Način skeniranja:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@item: all items to scan with image quality sort"
-#| msgid "All"
+#, kde-format
 msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
 msgstr "Vse"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@item: image quality sort only non assigned items"
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item: image quality scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Samo ne-dodeljene"
@@ -43215,13 +43205,7 @@ msgid "Port to Qt6,"
 msgstr "Prenos na Qt6,"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:156
-#, fuzzy, kde-format
-#| msgid ""
-#| "Rewrite Image Quality Sorter algorithms\n"
-#| "and Photo Focus Information Extraction.\n"
-#| "Aesthetic Detection to classify images\n"
-#| "using deep learning model.\n"
-#| "Slideshow and Presentation tools improvement"
+#, kde-format
 msgid ""
 "Rewrite Image Quality Scanner algorithms\n"
 "and Photo Focus Information Extraction.\n"
@@ -43229,8 +43213,8 @@ msgid ""
 "using deep learning model.\n"
 "Slideshow and Presentation tools improvement"
 msgstr ""
-"Prepiši algoritme za razvrščanje kakovosti slike\n"
-"in ekstrakcijo informacij foto fokusa.\n"
+"Algoritmi skenerja kakovosti slike\n"
+"in ekstrakcija informacij foto fokusa.\n"
 "Estetsko odkrivanje za razvrščanje slik\n"
 "z uporabo modela globokega učenja.\n"
 "Izboljšanje orodij za predstavitve"
@@ -43298,10 +43282,9 @@ msgstr "Modelno/vidno polje za platno urejevalnika slik"
 #: core/libs/widgets/mainview/daboutdata.cpp:218
 #: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgid "Image Quality Scanner"
-msgstr "Prečesavanje slik po kakovosti"
+msgstr "Skener kakovosti slike"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:224
 #, kde-format

@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 01:54+0000\n"
+"POT-Creation-Date: 2025-03-03 01:57+0000\n"
 "PO-Revision-Date: 2025-03-01 08:55+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -22494,7 +22494,7 @@ msgstr "Exportar a &Box…"
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:856
 #, kde-format
 msgid "Failed to upload photo"
-msgstr "Non foi posíbel enviar a foto"
+msgstr "Non foi posíbel subir a foto"
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:455
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:456
@@ -22540,7 +22540,7 @@ msgstr "Iniciar o envío a Box"
 #, kde-format
 msgctxt "@info"
 msgid "No image selected. Please select which images should be uploaded."
-msgstr "Non se escolleu ningunha imaxe. Escolla as imaxes para enviar."
+msgstr "Non se escolleu ningunha imaxe. Escolla as imaxes para subir."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:247
 #: core/dplugins/generic/webservices/google/gswindow.cpp:518
@@ -22625,7 +22625,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"Non foi posíbel enviar a imaxe a Box.\n"
+"Non foi posíbel subir a imaxe a Box.\n"
 "%1\n"
 "Quere continuar?"
 
@@ -22707,7 +22707,7 @@ msgstr "Iniciar o envío a Dropbox"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:243
 #, kde-format
 msgid "No image selected. Please select which images should be uploaded."
-msgstr "Non se escolleu ningunha imaxe. Escolla as imaxes para enviar."
+msgstr "Non se escolleu ningunha imaxe. Escolla as imaxes para subir."
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:245
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:370
@@ -22740,7 +22740,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"Non foi posíbel enviar a imaxe a Dropbox\n"
+"Non foi posíbel subir a imaxe a Dropbox\n"
 "%1\n"
 "Quere continuar?"
 
@@ -22929,7 +22929,7 @@ msgid ""
 "Failed to upload photo into Facebook: %1\n"
 "Do you want to continue?"
 msgstr ""
-"Non foi posíbel enviar a foto a Facebook: %1\n"
+"Non foi posíbel subir a foto a Facebook: %1\n"
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:639
@@ -23079,7 +23079,7 @@ msgid ""
 "Sets the target address to upload the images to. This can be any address as "
 "used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
 msgstr ""
-"Configura o enderezo de destino ao que enviar as imaxes. Isto pode ser "
+"Configura o enderezo de destino ao que subir as imaxes. Isto pode ser "
 "calquera enderezo, tal e como se usan en Dolphin ou Konqueror, p.ex. ftp://"
 "meu.servidor.org/sub/cartafol."
 
@@ -23091,7 +23091,7 @@ msgstr "Seleccionar o lugar da exportación…"
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:87
 #, kde-format
 msgid "This is the list of images to upload to the specified target."
-msgstr "Esta é a lista das imaxes que quere enviar ao destino indicado."
+msgstr "Esta é a lista das imaxes que quere subir ao destino indicado."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:156
 #, kde-format
@@ -23455,7 +23455,7 @@ msgstr "Pública"
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:50
 #, kde-format
 msgid "This is the list of images to upload to your Flickr account."
-msgstr "Esta é a lista de imaxes que enviar á conta en Flickr."
+msgstr "Esta é a lista de imaxes que subir á conta en Flickr."
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:56
 #, kde-format
@@ -23679,7 +23679,7 @@ msgid ""
 "Failed to upload photo into %1. %2\n"
 "Do you want to continue?"
 msgstr ""
-"Non foi posíbel enviar a foto a %1. %2\n"
+"Non foi posíbel subir a foto a %1. %2\n"
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:826
@@ -24085,7 +24085,7 @@ msgid ""
 "%2\n"
 "Do you want to continue?"
 msgstr ""
-"Non foi posíbel enviar a foto a %1.\n"
+"Non foi posíbel subir a foto a %1.\n"
 "%2\n"
 "Quere continuar?"
 
@@ -24304,7 +24304,7 @@ msgid ""
 "Failed to upload photo into ImageShack: %1\n"
 "Do you want to continue?"
 msgstr ""
-"Non foi posíbel enviar a imaxe a ImageShack: %1\n"
+"Non foi posíbel subir a imaxe a ImageShack: %1\n"
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:56
@@ -24426,7 +24426,7 @@ msgstr "Non foi posíbel identificar en Imgur: %1\n"
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:271
 #, kde-format
 msgid "Failed to upload photo to Imgur: %1\n"
-msgstr "Non foi posíbel enviar a imaxe a Imgur: %1\n"
+msgstr "Non foi posíbel subir a imaxe a Imgur: %1\n"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:278
 #, kde-format
@@ -24434,7 +24434,7 @@ msgid ""
 "Failed to upload photo to Imgur: %1\n"
 "Do you want to continue?"
 msgstr ""
-"Non foi posíbel enviar a imaxe a Imgur: %1\n"
+"Non foi posíbel subir a imaxe a Imgur: %1\n"
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:113
@@ -24523,7 +24523,7 @@ msgstr "Produciuse un erro ao crear a observación"
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
-msgstr "Produciuse un erro ao enviar a foto"
+msgstr "Produciuse un erro ao subir a foto"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1824
 #, kde-format
@@ -24767,7 +24767,7 @@ msgstr "segundos"
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:63
 #, kde-format
 msgid "This is the list of images to upload to an iNaturalist observation."
-msgstr "Esta é a lista de imaxes que enviar a unha observación de iNaturalist."
+msgstr "Esta é a lista de imaxes que subir a unha observación de iNaturalist."
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:66
 #: core/utilities/searchwindow/searchfields_createfield.cpp:169
@@ -24976,7 +24976,7 @@ msgstr "Iniciar o envío a IPFS"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:226
 #, kde-format
 msgid "Failed to upload photo to IPFS: %1\n"
-msgstr "Non foi posíbel enviar a imaxe a IPFS: %1\n"
+msgstr "Non foi posíbel subir a imaxe a IPFS: %1\n"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #, kde-format
@@ -24984,7 +24984,7 @@ msgid ""
 "Failed to upload photo to IPFS: %1\n"
 "Do you want to continue?"
 msgstr ""
-"Non foi posíbel enviar a imaxe a IPFS: %1\n"
+"Non foi posíbel subir a imaxe a IPFS: %1\n"
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/mediawiki/backend/mediawiki_queryimageinfo.cpp:203
@@ -25059,7 +25059,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "This is the list of images to upload to the wiki."
-msgstr "Esta é a lista de imaxes para enviar ao wiki."
+msgstr "Esta é a lista de imaxes para subir ao wiki."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:169
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:346
@@ -25438,7 +25438,7 @@ msgstr "Opcións"
 #, kde-format
 msgctxt "@info"
 msgid "These are options that will be applied to photos before upload."
-msgstr "Estas son opcións que se aplicarán ás fotos antes de as enviar."
+msgstr "Estas son opcións que se aplicarán ás fotos antes de as subir."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:433
 #, kde-format
@@ -25572,7 +25572,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"Non foi posíbel enviar a imaxe a Onedrive.\n"
+"Non foi posíbel subir a imaxe a Onedrive.\n"
 "%1\n"
 "Quere continuar?"
 
@@ -25621,7 +25621,7 @@ msgstr "Exportar a &Pinterest…"
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:491
 #, kde-format
 msgid "Failed to upload Pin"
-msgstr "Non foi posíbel enviar o broche"
+msgstr "Non foi posíbel subir o broche"
 
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:517
 #, kde-format
@@ -25658,7 +25658,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"Non foi posíbel enviar a foto a Pinterest.\n"
+"Non foi posíbel subir a foto a Pinterest.\n"
 "%1\n"
 "Quere continuar?"
 
@@ -25737,7 +25737,7 @@ msgstr "Indicouse un nome de usuaria ou contrasinal incorrecto"
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:737
 #, kde-format
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
-msgstr "Xa non se permite enviar a versións de Piwigo inferiores á 2.4."
+msgstr "Xa non se permite subir a versións de Piwigo inferiores á 2.4."
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:627
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:709
@@ -25776,7 +25776,7 @@ msgstr "Enviar o fragmento %1/%2 de %3."
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:940
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
-msgstr "Advertencia: Non se pode enviar a foto a tamaño completo."
+msgstr "Advertencia: Non se pode subir a foto a tamaño completo."
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:991
 #, kde-format
@@ -25897,7 +25897,7 @@ msgstr "Álbum"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:567
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
-msgstr "Non hai nada que enviar - seleccione as fotos que queira enviar."
+msgstr "Non hai nada que subir - seleccione as fotos que queira subir."
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:610
 #, kde-format
@@ -25912,7 +25912,7 @@ msgstr "Enviando o ficheiro %1"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:639
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
-msgstr "Non foi posíbel enviar o ficheiro ao Piwigo remoto. "
+msgstr "Non foi posíbel subir o ficheiro ao Piwigo remoto. "
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:640
 #, kde-format
@@ -26241,7 +26241,7 @@ msgstr "Non foi posíbel listar os modelos de álbum"
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:66
 #, kde-format
 msgid "This is the list of images to upload to your SmugMug account."
-msgstr "Esta é a lista de imaxes que enviar á conta no SmugMug."
+msgstr "Esta é a lista de imaxes que subir á conta no SmugMug."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:74
 #, kde-format
@@ -26419,7 +26419,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"Non foi posíbel enviar a foto a SmugMug.\n"
+"Non foi posíbel subir a foto a SmugMug.\n"
 "%1\n"
 "Quere continuar?"
 
@@ -26477,7 +26477,7 @@ msgstr "Exportar a &Twitter…"
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:486
 #, kde-format
 msgid "File too big to upload"
-msgstr "O ficheiro é grande de máis para enviar"
+msgstr "O ficheiro é grande de máis para subir"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:497
 #, kde-format
@@ -26490,7 +26490,7 @@ msgid ""
 "Failed to upload photo\n"
 "Code: %1, name: %2, message: %3"
 msgstr ""
-"Non foi posíbel enviar a foto\n"
+"Non foi posíbel subir a foto\n"
 "Código: %1; nome: %2; mensaxe: %3"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:921
@@ -26522,7 +26522,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"Non foi posíbel enviar a foto a Twitter.\n"
+"Non foi posíbel subir a foto a Twitter.\n"
 "%1\n"
 "Quere continuar?"
 
@@ -26560,7 +26560,7 @@ msgid ""
 "Failed to upload photo: %1\n"
 "Do you want to continue?"
 msgstr ""
-"Non foi posíbel enviar a foto: %1\n"
+"Non foi posíbel subir a foto: %1\n"
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:40
@@ -29074,7 +29074,7 @@ msgstr "Examinando a colección"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
-#: core/libs/mlfoundation/mlpipelinemacros.h:70
+#: core/libs/mlfoundation/mlpipelinemacros.h:71
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -34512,7 +34512,7 @@ msgstr "Tamaño máximo"
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:147
 #, kde-format
 msgid "This is the list of images to upload to your %1 account."
-msgstr "Esta é a lista de imaxes que se van enviar á súa conta de %1."
+msgstr "Esta é a lista de imaxes que se van subir á súa conta de %1."
 
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:175
 #, kde-format
@@ -34602,7 +34602,7 @@ msgstr "Este é o lugar no que se descargarán as imaxes desde %1."
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:237
 #, kde-format
 msgid "These are the options that would be applied to photos before upload."
-msgstr "Estas son as opcións que se aplicarán ás fotos antes de as enviar."
+msgstr "Estas son as opcións que se aplicarán ás fotos antes de as subir."
 
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:240
 #, kde-format
@@ -59274,17 +59274,17 @@ msgstr "Non foi posíbel descargar o ficheiro <b>%1</b>. Quere continuar?"
 #: core/utilities/import/backend/cameracontroller.cpp:1042
 #, kde-kuit-format
 msgid "Failed to upload <filename>%1</filename>"
-msgstr "Non foi posíbel enviar <filename>%1</filename>."
+msgstr "Non foi posíbel subir <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1050
 #, kde-format
 msgid "Failed to upload file <b>%1</b>."
-msgstr "Non foi posíbel enviar o ficheiro <b>%1</b>."
+msgstr "Non foi posíbel subir o ficheiro <b>%1</b>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1054
 #, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
-msgstr "Non foi posíbel enviar o ficheiro <b>%1</b>. Quere continuar?"
+msgstr "Non foi posíbel subir o ficheiro <b>%1</b>. Quere continuar?"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1070
 #, kde-kuit-format
@@ -59491,7 +59491,7 @@ msgstr "%1 - Escolla o cartafol da cámara"
 #, kde-format
 msgctxt "@info"
 msgid "Please select the camera folder where you want to upload the images."
-msgstr "Escolla o cartafol da cámara no que queira enviar as imaxes."
+msgstr "Escolla o cartafol da cámara no que queira subir as imaxes."
 
 #: core/utilities/import/dialogs/camerainfodialog.cpp:46
 #, kde-format
@@ -59962,7 +59962,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
-msgstr "Escolla a imaxe para enviar"
+msgstr "Escolla a imaxe para subir"
 
 #: core/utilities/import/main/importui.cpp:1230
 #, kde-format
@@ -59973,7 +59973,7 @@ msgid ""
 "Space require: %1\n"
 "Available free space: %2"
 msgstr ""
-"Non hai espazo libre dabondo na cámara para enviar imaxes.\n"
+"Non hai espazo libre dabondo na cámara para subir imaxes.\n"
 "\n"
 "Espazo requirido: %1\n"
 "Espazo libre dispoñíbel: %2"

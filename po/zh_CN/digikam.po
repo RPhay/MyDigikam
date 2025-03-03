@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 01:54+0000\n"
+"POT-Creation-Date: 2025-03-03 01:57+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -539,12 +539,11 @@ msgid_plural "Move %1 Files to Trash"
 msgstr[0] "移动 %1 张图像到回收站"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
-msgstr[0] "图像品质扫描"
+msgstr[0] ""
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
 #, kde-format
@@ -3393,13 +3392,10 @@ msgid ""
 msgstr "为文字编辑控件的偏好备选语言/翻译语言列表添加设置。"
 
 #: core/app/views/stack/welcomepageview.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow to use Global or Customized Image Quality Sorting settings "
-#| "everywhere."
+#, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Scanning settings everywhere."
-msgstr "允许在程序相关的各个位置使用全局或者自定义图像品质分类器设置。"
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:123
 #, kde-format
@@ -6103,11 +6099,10 @@ msgid ""
 msgstr "<para>用于应用元数据模板到图像的批处理工具。</para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@title"
 msgid "Image Quality Scan"
-msgstr "图像品质扫描"
+msgstr ""
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:57
 #, kde-format
@@ -27948,7 +27943,7 @@ msgstr "正在扫描相册集合"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
-#: core/libs/mlfoundation/mlpipelinemacros.h:70
+#: core/libs/mlfoundation/mlpipelinemacros.h:71
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -34214,28 +34209,22 @@ msgid "aesthetic image quality"
 msgstr "图像美感"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@label: image quality sort scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label: image quality scan mode"
 msgid "Scan Mode:"
-msgstr "扫描模式："
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@item: all items to scan with image quality sort"
-#| msgid "All"
+#, kde-format
 msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
-msgstr "全部"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@item: image quality sort only non assigned items"
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item: image quality scan only non assigned items"
 msgid "Non-Assigned Only"
-msgstr "仅未分配自动标签项目"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:87
 #, kde-format
@@ -41719,13 +41708,7 @@ msgid "Port to Qt6,"
 msgstr "移植到 Qt6"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:156
-#, fuzzy, kde-format
-#| msgid ""
-#| "Rewrite Image Quality Sorter algorithms\n"
-#| "and Photo Focus Information Extraction.\n"
-#| "Aesthetic Detection to classify images\n"
-#| "using deep learning model.\n"
-#| "Slideshow and Presentation tools improvement"
+#, kde-format
 msgid ""
 "Rewrite Image Quality Scanner algorithms\n"
 "and Photo Focus Information Extraction.\n"
@@ -41733,11 +41716,6 @@ msgid ""
 "using deep learning model.\n"
 "Slideshow and Presentation tools improvement"
 msgstr ""
-"重写图像品质分类算法\n"
-"和照片焦点信息提取功能、\n"
-"美感检测使用深度学习模型\n"
-"来判断图像的美感好坏、\n"
-"幻灯片和演示工具改进"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:166
 #, kde-format
@@ -41802,10 +41780,9 @@ msgstr "图像编辑器视图的模型/视图移植"
 #: core/libs/widgets/mainview/daboutdata.cpp:218
 #: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgid "Image Quality Scanner"
-msgstr "图像品质扫描"
+msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:224
 #, kde-format
@@ -65567,15 +65544,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgctxt "@action:inmenu Pluralized"
-#~ msgid "Image Quality Sort"
-#~ msgid_plural "Image Quality Sort"
-#~ msgstr[0] "图像品质分类"
-
-#~ msgctxt "@title"
-#~ msgid "Image Quality Sort"
-#~ msgstr "图像品质分类"
-
-#~ msgid "Image Quality Sorter"
-#~ msgstr "图像品质分类器"

@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 01:54+0000\n"
-"PO-Revision-Date: 2025-02-26 11:10+0300\n"
+"POT-Creation-Date: 2025-03-03 01:57+0000\n"
+"PO-Revision-Date: 2025-03-02 13:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -589,8 +589,7 @@ msgstr[0] "Çöp Kutusuna Taşı"
 msgstr[1] "%1 Dosyayı Çöp Kutusuna Taşı"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
@@ -3507,14 +3506,11 @@ msgstr ""
 "ayar listesi eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow to use Global or Customized Image Quality Sorting settings "
-#| "everywhere."
+#, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Scanning settings everywhere."
 msgstr ""
-"Her yerde Global veya Özelleştirilmiş Görsel Kalitesi sıralama ayarları "
+"Her yerde Global veya Özelleştirilmiş Görsel Kalitesi tarama ayarları "
 "eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:123
@@ -6341,8 +6337,7 @@ msgstr ""
 "para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@title"
 msgid "Image Quality Scan"
 msgstr "Görsel Kalitesi Tarama"
@@ -28931,7 +28926,7 @@ msgstr "Koleksiyon taranıyor…"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
-#: core/libs/mlfoundation/mlpipelinemacros.h:70
+#: core/libs/mlfoundation/mlpipelinemacros.h:71
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
@@ -35426,25 +35421,19 @@ msgid "aesthetic image quality"
 msgstr "estetik görsel kalitesi"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@label: image quality sort scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label: image quality scan mode"
 msgid "Scan Mode:"
 msgstr "Tarama kipi:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@item: all items to scan with image quality sort"
-#| msgid "All"
+#, kde-format
 msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
 msgstr "Tümü"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@item: image quality sort only non assigned items"
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item: image quality scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Yalnızca atanmamışlar"
@@ -43134,13 +43123,7 @@ msgid "Port to Qt6,"
 msgstr "Qt6 geçişi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:156
-#, fuzzy, kde-format
-#| msgid ""
-#| "Rewrite Image Quality Sorter algorithms\n"
-#| "and Photo Focus Information Extraction.\n"
-#| "Aesthetic Detection to classify images\n"
-#| "using deep learning model.\n"
-#| "Slideshow and Presentation tools improvement"
+#, kde-format
 msgid ""
 "Rewrite Image Quality Scanner algorithms\n"
 "and Photo Focus Information Extraction.\n"
@@ -43148,7 +43131,7 @@ msgid ""
 "using deep learning model.\n"
 "Slideshow and Presentation tools improvement"
 msgstr ""
-"Görsel Kalitesi Sıralayıcısı algoritmalarını ve\n"
+"Görsel Kalitesi Tarayıcısı algoritmalarını ve\n"
 "Fotoğraf Odak Bilgisi Çıkarma bileşenlerini yeniden\n"
 "yazma, derin öğrenme modelini kullanıp görselleri\n"
 "sınıflandırmak için Estetik Algılama ve Slayt\n"
@@ -43217,10 +43200,9 @@ msgstr "Görsel düzenleyicisi tuvalinin model/görüntü geçişi"
 #: core/libs/widgets/mainview/daboutdata.cpp:218
 #: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgid "Image Quality Scanner"
-msgstr "Görsel Kalitesi Tarama"
+msgstr "Görsel Kalitesi Tarayıcısı"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:224
 #, kde-format
