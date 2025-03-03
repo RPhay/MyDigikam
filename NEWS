@@ -181,7 +181,7 @@ BUGFIXES:
 127 ==> 500739 - Lens correction tools seems not working.
 128 ==> 500961 - digiKam Crash when face detection is triggered.
 129 ==> 476120 - Name confirmation on facial recognition crashes on PDF files.
-130 ==> 
+130 ==> 501021 - Small info window in fullscreen mode.
 131 ==> 
 132 ==> 
 133 ==> 
