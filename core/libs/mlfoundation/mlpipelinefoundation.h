@@ -145,6 +145,7 @@ protected:
     quint64                                             maxBufferSize       = 2147483648;           ///< 2 GB default
     quint64                                             usedBufferSize      = 0;
     QIcon                                               missingIcon        = QIcon::fromTheme(QLatin1String("image-missing"));
+    QElapsedTimer                                       pipelineTimer;
 
 protected:
 

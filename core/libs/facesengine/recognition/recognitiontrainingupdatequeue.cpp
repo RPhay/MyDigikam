@@ -48,8 +48,7 @@ void RecognitionTrainingUpdateQueue::push(const QString& hash)
 
 QString RecognitionTrainingUpdateQueue::pop_front()
 {
-    QString result(queue.front());
-    queue.pop_front();
+    QString result = queue.pop_front();
 
     return result;
 }

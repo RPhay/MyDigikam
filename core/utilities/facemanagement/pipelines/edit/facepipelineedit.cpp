@@ -266,7 +266,7 @@ bool FacePipelineEdit::writer()
 
     // override the default queue depth
 
-    thisQueue->setMaxDepth(100000);
+    thisQueue->setMaxDepth(thisQueue->maxDepthLimit());
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
     package                    = static_cast<FacePipelinePackageBase*>(mlpackage);

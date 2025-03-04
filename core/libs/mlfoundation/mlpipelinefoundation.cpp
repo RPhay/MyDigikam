@@ -67,6 +67,8 @@ bool MLPipelineFoundation::start()
         maxBufferSize     = available / 4;
     }
 
+    pipelineTimer.start();
+
     return true;
 }
 
@@ -89,7 +91,7 @@ void MLPipelineFoundation::cancel()
     {
         // update the max queue size to something big
 
-        queue->setMaxDepth(1000000);
+        queue->setMaxDepth(queue->maxDepthLimit());
 
         // send end of queue signal (case 1 above)
 
@@ -394,7 +396,7 @@ void MLPipelineFoundation::slotAddMoreWorkers()
 
 void MLPipelineFoundation::clearQueue(MLPipelineQueue* thisQueue)
 {
-    while (!thisQueue->empty())
+    while (!thisQueue->isEmpty())
     {
         MLPipelinePackageFoundation* const package = thisQueue->pop_front();
 
@@ -411,7 +413,7 @@ void MLPipelineFoundation::clearAllQueues()
     {
         // update the max queue size to something big
 
-        queue->setMaxDepth(1000000);
+        queue->setMaxDepth(queue->maxDepthLimit());
 
         // tell the threads to exit
 
@@ -534,7 +536,7 @@ void MLPipelineFoundation::stageEnd(MLPipelineStage thisStage, MLPipelineStage n
 
     if (queues.contains(thisStage))
     {
-        queues[thisStage]->setMaxDepth(1000000);
+        queues[thisStage]->setMaxDepth(queues[thisStage]->maxDepthLimit());
         queues[thisStage]->push_back(queueEndSignal());
     }
 
@@ -544,7 +546,7 @@ void MLPipelineFoundation::stageEnd(MLPipelineStage thisStage, MLPipelineStage n
 
     if (queues.contains(nextStage) && (performanceProfileList[thisStage].currentThreadCount == 0))
     {
-        queues[nextStage]->setMaxDepth(1000000);
+        queues[nextStage]->setMaxDepth(queues[nextStage]->maxDepthLimit());
         queues[nextStage]->push_back(queueEndSignal());
     }
 }
@@ -693,6 +695,8 @@ void MLPipelineFoundation::showPipelinePerformance() const
                                                       << " Avg Elapsed:" << profile.elapsedTime / profile.itemCount;
         }
     }
+
+    qCDebug(DIGIKAM_MLPIPELINEFOUNDATION_LOG) << "Total Elapsed:" << pipelineTimer.elapsed();
 }
 
 void MLPipelineFoundation::emitSignalUpdateItemCount(const qlonglong itemCount)
