@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 01:57+0000\n"
-"PO-Revision-Date: 2025-02-25 09:16+0000\n"
+"PO-Revision-Date: 2025-03-03 10:21+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -568,8 +568,7 @@ msgstr[0] "Setja í ruslið"
 msgstr[1] "Setja %1 skrár í ruslið"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
@@ -3488,13 +3487,11 @@ msgid ""
 msgstr "Bætt við stillingum í lista fyrir varatungumál í textabreytingareit."
 
 #: core/app/views/stack/welcomepageview.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow to use Global or Customized Image Quality Sorting settings "
-#| "everywhere."
+#, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Scanning settings everywhere."
-msgstr "Leyfa að nota allsstaðar sérsniðnar stillingar myndgæðaröðunar."
+msgstr ""
+"Leyfa að nota allsstaðar víðværar eða sérsniðnar stillingar myndgæðaröðunar."
 
 #: core/app/views/stack/welcomepageview.cpp:123
 #, kde-format
@@ -6315,8 +6312,7 @@ msgstr ""
 "lýsigögn á myndir.</para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@title"
 msgid "Image Quality Scan"
 msgstr "Myndgæðaskönnun"
@@ -35278,19 +35274,7 @@ msgid "Select All"
 msgstr "Velja allt"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "These settings determines the quality of an image and convert it into a "
-#| "score, stored in database as Pick Label property. This information can be "
-#| "evaluated by two ways: using four basic factors sabotaging the images "
-#| "(blur, noise, exposure, and compression), or using a deep learning neural "
-#| "network engine. The first one helps to determine whether images are "
-#| "distorted by the basic factors, however it demands some drawbacks as fine-"
-#| "tuning from the user’s side and it cannot work along the aesthetic image "
-#| "processing. The second one uses an AI approach based on %1 model to "
-#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
-#| "require hyper-parameter settings, and make this feature easier to use."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "These settings determine the quality of an image and convert it into a score "
@@ -35322,25 +35306,19 @@ msgid "aesthetic image quality"
 msgstr "fagurfræðileg gæði myndar"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@label: image quality sort scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label: image quality scan mode"
 msgid "Scan Mode:"
 msgstr "Skönnunarhamur:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@item: all items to scan with image quality sort"
-#| msgid "All"
+#, kde-format
 msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
 msgstr "Allt"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@item: image quality sort only non assigned items"
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item: image quality scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Einungis óúthlutað"
@@ -43045,13 +43023,7 @@ msgid "Port to Qt6,"
 msgstr "Aðlögun að Qt6;"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:156
-#, fuzzy, kde-format
-#| msgid ""
-#| "Rewrite Image Quality Sorter algorithms\n"
-#| "and Photo Focus Information Extraction.\n"
-#| "Aesthetic Detection to classify images\n"
-#| "using deep learning model.\n"
-#| "Slideshow and Presentation tools improvement"
+#, kde-format
 msgid ""
 "Rewrite Image Quality Scanner algorithms\n"
 "and Photo Focus Information Extraction.\n"
@@ -43059,10 +43031,11 @@ msgid ""
 "using deep learning model.\n"
 "Slideshow and Presentation tools improvement"
 msgstr ""
-"Endurskrifuð reiknirit myndgæðaröðunar\n"
-"og brennivíddarupplýsinga, greining með hjálp\n"
-"vélanámslíkana hvort myndir hafi fagurfræðilegt gildi,\n"
-"endurbætur á verkfærum skyggnusýninga og kynninga"
+"Endurskrifuð reiknirit myndgæðaskönnunar\n"
+"og brennivíddarupplýsinga.\n"
+"Greining með hjálp vélnámslíkana hvort myndir \n"
+"hafi fagurfræðilegt gildi.\n"
+"Endurbætur á verkfærum skyggnusýninga og kynninga"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:166
 #, kde-format
@@ -43127,8 +43100,7 @@ msgstr "Yfirfærsla á Módel/Skoðun fyrir bakgrunn myndvinnsluforrits"
 #: core/libs/widgets/mainview/daboutdata.cpp:218
 #: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgid "Image Quality Scanner"
 msgstr "Myndgæðaskönnun"
 

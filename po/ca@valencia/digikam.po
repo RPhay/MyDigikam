@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 01:57+0000\n"
-"PO-Revision-Date: 2025-03-01 16:56+0100\n"
+"PO-Revision-Date: 2025-03-02 11:40+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -551,12 +551,11 @@ msgstr[0] "Mou cap a dins de la paperera"
 msgstr[1] "Mou %1 fitxers cap a dins de la paperera"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
-msgstr[0] "Exploreu la qualitat de les imatges"
+msgstr[0] "Exploreu la qualitat de la imatge"
 msgstr[1] "Exploreu la qualitat de les imatges"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
@@ -3508,14 +3507,11 @@ msgstr ""
 "traduïts preferits en el giny d'edició de text."
 
 #: core/app/views/stack/welcomepageview.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow to use Global or Customized Image Quality Sorting settings "
-#| "everywhere."
+#, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Scanning settings everywhere."
 msgstr ""
-"Permetre utilitzar les opcions de configuració d'ordenació de les imatges "
+"Permetre utilitzar les opcions de configuració d'exploració de les imatges "
 "segons la qualitat de forma global o personalitzada per tot arreu."
 
 #: core/app/views/stack/welcomepageview.cpp:123
@@ -6367,8 +6363,7 @@ msgstr ""
 "metadades a les imatges.</para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@title"
 msgid "Image Quality Scan"
 msgstr "Exploreu la qualitat de les imatges"
@@ -35798,25 +35793,19 @@ msgid "aesthetic image quality"
 msgstr "qualitat estètica de les imatges"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@label: image quality sort scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label: image quality scan mode"
 msgid "Scan Mode:"
 msgstr "Mode d'exploració:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@item: all items to scan with image quality sort"
-#| msgid "All"
+#, kde-format
 msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
 msgstr "Totes"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@item: image quality sort only non assigned items"
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item: image quality scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Només les no assignades"
@@ -43594,13 +43583,7 @@ msgid "Port to Qt6,"
 msgstr "Adaptació a les Qt6"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:156
-#, fuzzy, kde-format
-#| msgid ""
-#| "Rewrite Image Quality Sorter algorithms\n"
-#| "and Photo Focus Information Extraction.\n"
-#| "Aesthetic Detection to classify images\n"
-#| "using deep learning model.\n"
-#| "Slideshow and Presentation tools improvement"
+#, kde-format
 msgid ""
 "Rewrite Image Quality Scanner algorithms\n"
 "and Photo Focus Information Extraction.\n"
@@ -43608,8 +43591,8 @@ msgid ""
 "using deep learning model.\n"
 "Slideshow and Presentation tools improvement"
 msgstr ""
-"Reescriure els algorismes d'ordenació segons\n"
-"la qualitat de les imatges, i extracció de la informació\n"
+"Reescriure els algorismes de l'explorador de la\n"
+"qualitat de les imatges, i extracció de la informació\n"
 "d'enfocament de fotografies.\n"
 "Detecció estètica per a classificar les imatges\n"
 "utilitzant un model d'aprenentatge profund.\n"
@@ -43680,10 +43663,9 @@ msgstr "Adaptació model/vista del llenç de l'editor d'imatges"
 #: core/libs/widgets/mainview/daboutdata.cpp:218
 #: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgid "Image Quality Scanner"
-msgstr "Exploreu la qualitat de les imatges"
+msgstr "Explorador de la qualitat de les imatges"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:224
 #, kde-format
@@ -68318,16 +68300,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgctxt "@action:inmenu Pluralized"
-#~ msgid "Image Quality Sort"
-#~ msgid_plural "Image Quality Sort"
-#~ msgstr[0] "Ordena segons la qualitat de la imatge"
-#~ msgstr[1] "Ordena segons la qualitat de les imatges"
-
-#~ msgctxt "@title"
-#~ msgid "Image Quality Sort"
-#~ msgstr "Ordenació segons la qualitat de les imatges"
-
-#~ msgid "Image Quality Sorter"
-#~ msgstr "Ordena les imatges segons la qualitat"

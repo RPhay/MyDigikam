@@ -65,7 +65,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-03 01:57+0000\n"
-"PO-Revision-Date: 2025-03-01 08:55+0100\n"
+"PO-Revision-Date: 2025-03-03 07:10+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -602,8 +602,7 @@ msgstr[0] "Botar no lixo"
 msgstr[1] "Deitar %1 ficheiros no lixo"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
@@ -3550,15 +3549,12 @@ msgstr ""
 "traducións no trebello de editor de texto."
 
 #: core/app/views/stack/welcomepageview.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow to use Global or Customized Image Quality Sorting settings "
-#| "everywhere."
+#, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Scanning settings everywhere."
 msgstr ""
-"Permitir usar a configuración de ordenación de calidade de imaxe "
-"personalizada ou global en todas partes."
+"Permitir usar a configuración de exame de calidade de imaxe personalizada ou "
+"global en todas partes."
 
 #: core/app/views/stack/welcomepageview.cpp:123
 #, kde-format
@@ -6405,8 +6401,7 @@ msgstr ""
 "metadatos ás imaxes.</para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@title"
 msgid "Image Quality Scan"
 msgstr "Exame de calidade de imaxe"
@@ -35620,25 +35615,19 @@ msgid "aesthetic image quality"
 msgstr "calidade estética de imaxe"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@label: image quality sort scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label: image quality scan mode"
 msgid "Scan Mode:"
-msgstr "Modo do dixitalización:"
+msgstr "Modo do exame:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@item: all items to scan with image quality sort"
-#| msgid "All"
+#, kde-format
 msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
 msgstr "Todo"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@item: image quality sort only non assigned items"
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item: image quality scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Só o non asignado"
@@ -43378,13 +43367,7 @@ msgid "Port to Qt6,"
 msgstr "Adaptación a Qt 6."
 
 #: core/libs/widgets/mainview/daboutdata.cpp:156
-#, fuzzy, kde-format
-#| msgid ""
-#| "Rewrite Image Quality Sorter algorithms\n"
-#| "and Photo Focus Information Extraction.\n"
-#| "Aesthetic Detection to classify images\n"
-#| "using deep learning model.\n"
-#| "Slideshow and Presentation tools improvement"
+#, kde-format
 msgid ""
 "Rewrite Image Quality Scanner algorithms\n"
 "and Photo Focus Information Extraction.\n"
@@ -43393,7 +43376,7 @@ msgid ""
 "Slideshow and Presentation tools improvement"
 msgstr ""
 "Nova implementación dos algoritmos de\n"
-"ordenación por calidade da imaxe e extracción\n"
+"exame por calidade da imaxe e extracción\n"
 "de información de enfoque das fotos, detección\n"
 "estética para clasificar as imaxes mediante un\n"
 "modelo de aprendizaxe profunda, e mellora\n"
@@ -43462,10 +43445,9 @@ msgstr "Adaptación do modelo/vista do lenzo do editor de imaxes."
 #: core/libs/widgets/mainview/daboutdata.cpp:218
 #: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgid "Image Quality Scanner"
-msgstr "Exame de calidade de imaxe"
+msgstr "Examinador de calidade de imaxe"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:224
 #, kde-format
