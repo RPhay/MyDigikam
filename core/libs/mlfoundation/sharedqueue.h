@@ -12,143 +12,133 @@
  *
  * ============================================================ */
 
- #pragma once
+#pragma once
 
- // Qt includes
- 
- #include <QMutex>
- #include <QWaitCondition>
- #include <QQueue>
- 
- // C++ includes
- 
- #include <limits>
- 
- // Local includes
- 
- #include "digikam_export.h"
- 
- namespace Digikam
- {
- 
- template <typename T>
- class DIGIKAM_EXPORT SharedQueue
- {
- public:
- 
+// C++ includes
+
+#include <limits>
+
+// Qt includes
+
+#include <QMutex>
+#include <QWaitCondition>
+#include <QQueue>
+
+// Local includes
+
+#include "digikam_export.h"
+
+namespace Digikam
+{
+
+template <typename T>
+class DIGIKAM_EXPORT SharedQueue
+{
+public:
+
     SharedQueue()  = default;
     ~SharedQueue() = default;
 
- public:
- 
+public:
+
     T& front()
     {
-        QMutexLocker frontLock(&frontMutex_);
+        QMutexLocker locker(&mutex_);
 
         while (queue_.isEmpty())
         {
-            front_.wait(&frontMutex_);
+            front_.wait(&mutex_);
         }
-
-        QMutexLocker lock(&mutex_);
 
         return queue_.head();
-     }
- 
+    }
+
     T pop_front()
     {
-        QMutexLocker frontLock(&frontMutex_);
+        QMutexLocker locker(&mutex_);
 
         while (queue_.isEmpty())
         {
-            front_.wait(&frontMutex_);
+            front_.wait(&mutex_);
         }
 
-        QMutexLocker lock(&mutex_);
+        if(queue_.isEmpty())
+        {
+            throw std::runtime_error("SharedQueue::pop_front(): queue is empty");
+        }
 
         T result = queue_.dequeue();
         back_.wakeOne();
 
         return result;
     }
- 
+
     void push_back(T const& item)
     {
-        QMutexLocker backLock(&backMutex_);
+        QMutexLocker locker(&mutex_);
 
         while (maxDepth_ <= queue_.size())
         {
-            back_.wait(&backMutex_);
+            back_.wait(&mutex_);
         }
-
-        QMutexLocker lock(&mutex_);
 
         queue_.enqueue(item);
         front_.wakeOne();     // Notify one waiting thread.
-     }
- 
-     void push_back(T&& item)
-     {
-        QMutexLocker backLock(&backMutex_);
+    }
+
+    void push_back(T&& item)
+    {
+        QMutexLocker locker(&mutex_);
 
         while (maxDepth_ <= queue_.size())
         {
-            back_.wait(&backMutex_);
+            back_.wait(&mutex_);
         }
-
-        QMutexLocker lock(&mutex_);
 
         queue_.enqueue(std::move(item));
         front_.wakeOne();     // Notify one waiting thread.
-     }
- 
-     int size()
-     {
-        QMutexLocker lock(&mutex_);
-        int size = queue_.size();
+    }
 
-        return size;
-     }
- 
-     bool isEmpty()
-     {
-        QMutexLocker lock(&mutex_);
-        bool ret = queue_.isEmpty();
+    int size()
+    {
+        QMutexLocker locker(&mutex_);
+        return queue_.size();
+    }
 
-        return ret;
-     }
- 
-     void clear()
-     {
-        QMutexLocker lock(&mutex_);
+    bool isEmpty()
+    {
+        QMutexLocker locker(&mutex_);
+        return queue_.isEmpty();
+    }
+
+    void clear()
+    {
+        QMutexLocker locker(&mutex_);
         queue_.clear();
-     }
- 
-     int maxDepth() const
-     {
-         return maxDepth_;
-     }
- 
-     void setMaxDepth(int depth)
-     {
-         maxDepth_ = depth;
-     }
- 
-     int maxDepthLimit()
-     {
-         return std::numeric_limits<int>::max();
-     }
-     
- private:
- 
-     QQueue<T>               queue_;
-     QMutex                  mutex_;
-     QMutex                  frontMutex_;
-     QMutex                  backMutex_;
-     QWaitCondition          front_;
-     QWaitCondition          back_;
-     qsizetype               maxDepth_ = std::numeric_limits<int>::max();
- };
- 
- } // namespace Digikam
- 
+    }
+
+    int maxDepth() const
+    {
+        return maxDepth_;
+    }
+
+    void setMaxDepth(int depth)
+    {
+        maxDepth_ = depth;
+    }
+
+    int maxDepthLimit() const
+    {
+        return std::numeric_limits<int>::max();
+    }
+
+private:
+
+    QQueue<T>               queue_;
+    QMutex                  mutex_;
+    QWaitCondition          front_;
+    QWaitCondition          back_;
+    qsizetype               maxDepth_ = std::numeric_limits<int>::max();
+};
+
+} // namespace Digikam
