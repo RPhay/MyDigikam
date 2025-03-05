@@ -2671,13 +2671,13 @@ msgstr "digiKam"
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Panagiotis Papadopoulos,Oliver Dörr,Torbjörn Klatt"
+msgstr "Deutsches KDE-Übersetzungsteam"
 
 #: core/app/main/main.cpp:237 core/showfoto/main/main.cpp:212
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "pano_90@gmx.net,kde@doerr-privat.de,torbjoern.k@googlemail.com"
+msgstr "kde-i18n-de@kde.org"
 
 #: core/app/main/main.cpp:245
 #, kde-format
