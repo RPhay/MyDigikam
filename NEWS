@@ -182,7 +182,7 @@ BUGFIXES:
 128 ==> 500961 - digiKam Crash when face detection is triggered.
 129 ==> 476120 - Name confirmation on facial recognition crashes on PDF files.
 130 ==> 501021 - Small info window in fullscreen mode.
-131 ==> 
+131 ==> 501067 - Changing Creation Date with metadata Editor / Exif changes content of description field to Chinese characters.
 132 ==> 
 133 ==> 
 134 ==> 
