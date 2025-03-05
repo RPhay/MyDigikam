@@ -212,8 +212,6 @@ bool FacePipelineRecognize::classifier()
      * This loop is run once per image.
      */
     {
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier: Classifying " << package->info.name() << " with serial number " << package->serialNumber;
-
         // verify the feature mat is the correct size
 
         if (2   == package->features.dims &&
@@ -223,8 +221,6 @@ bool FacePipelineRecognize::classifier()
             // classify the features
 
             package->label = classifier->predict(package->features);
-
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineRecognize::classifier: Predicted label " << package->label << " for " << package->info.name();
         }
 
         // -1 means no match suggested
@@ -246,20 +242,6 @@ bool FacePipelineRecognize::classifier()
                    QString(),
                    0,
                    package->thumbnail);
-
-            // clear the package to see if it helps with BUG: 500570
-
-            package->image          = DImg();
-            package->thumbnail      = QImage();
-            package->thumbnailIcon  = QIcon();
-            package->face           = FaceTagsIface();
-            package->labelList      = QList<int>();
-            package->features       = cv::Mat();
-            package->info           = ItemInfo();
-            package->region         = TagRegion();
-            package->tagId          = -1;
-            package->label          = -1;
-            package->retrain        = false;
 
             // delete the package
 

@@ -88,6 +88,7 @@ bool FacePipelineReset::finder()
 
     FaceUtils utils;
     QSet<qlonglong> filter;
+    int serialNumber = 0;
 
     for (const Album* const album : std::as_const(settings.albums))
     {
@@ -114,7 +115,7 @@ bool FacePipelineReset::finder()
                 if (!filter.contains(imageId))
                 {
                     ++totalItemCount;
-                    enqueue(nextQueue, new FacePipelinePackageBase(imageId));
+                    enqueue(nextQueue, new FacePipelinePackageBase(imageId, ++serialNumber));
                 }
             }
         }

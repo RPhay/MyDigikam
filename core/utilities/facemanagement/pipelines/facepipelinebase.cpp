@@ -283,8 +283,6 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName,
                                                                                 48,
                                                                                 Qt::KeepAspectRatio).convertToPixmap());
 
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineBase::commonFaceThumbnailLoader: Thumbnail loaded for" << package->info.name() << " with serial number " << package->serialNumber;
-
             // send the package to the next stage
 
             enqueue(nextQueue, package);
@@ -401,8 +399,6 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
 
                 package->useForTraining = useForTraining(origSize, cvImage);
             }
-
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineBase::commonFaceThumbnailExtractor: Features extracted for" << package->info.name() << " with serial number " << package->serialNumber;
 
             // send the package to the next stage
 
