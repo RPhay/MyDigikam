@@ -616,7 +616,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
     try
     {
         QByteArray rawComment(exifDatum.size(), '\0');
-        exifDatum.copy(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(rawComment.data())), Exiv2::littleEndian);
+        exifDatum.copy(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(rawComment.data())), exifByteOrder());
 
         if (
             (rawComment.size() > 8) &&
