@@ -1,4 +1,4 @@
-digiKam 8.6.0 - Release date: 2025-03-xx
+digiKam 8.6.0 - Release date: 2025-03-16
 
 *****************************************************************************************************
 NEW FEATURES:
@@ -183,7 +183,7 @@ BUGFIXES:
 129 ==> 476120 - Name confirmation on facial recognition crashes on PDF files.
 130 ==> 501021 - Small info window in fullscreen mode.
 131 ==> 501067 - Changing Creation Date with metadata Editor / Exif changes content of description field to Chinese characters.
-132 ==> 500570 - Face recognition crash
+132 ==> 500570 - Face recognition crash.
 133 ==> 
 134 ==> 
 135 ==> 
