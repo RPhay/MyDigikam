@@ -271,10 +271,6 @@ const QString PeopleSideBarWidget::getCaption()
 void PeopleSideBarWidget::doFaceScan(const FaceScanSettings& faceScanSettings)
 {
     FacesEngine* const facesDetector = new FacesEngine(faceScanSettings);
-    facesDetector->start();
-
-    // FacesDetector* const facesDetector = new FacesDetector(faceScanSettings);
-    // facesDetector->start();
 
     connect(facesDetector, SIGNAL(signalComplete()),
             d->parentInstance, SLOT(slotScanComplete()));
@@ -287,6 +283,8 @@ void PeopleSideBarWidget::doFaceScan(const FaceScanSettings& faceScanSettings)
 
     d->settingsWdg->setEnabled(false);
     d->rescanButton->setEnabled(false);
+
+    facesDetector->start();
 }
 
 } // namespace Digikam
