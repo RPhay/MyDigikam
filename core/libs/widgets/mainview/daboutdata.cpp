@@ -144,11 +144,18 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
                           QString::fromUtf8("https://www.linkedin.com/in/nicolaslecureuil/")
                         );
 
+    // -- Contributors -----------------------------------------------------------
+
+    aboutData.addCredit ( QString::fromUtf8("André Molkentin"),
+                          i18n("Quality Test Engineer"),
+                          QString::fromUtf8("zunar at gmx dot de")
+                        );
+
     // -- Students ---------------------------------------------------------------
 
     aboutData.addCredit ( QString::fromUtf8("Anjani Kumar"),
-                          i18n("Port to Qt6,"),
-                          QString::fromUtf8("anjanik012 at gmail dot com "),
+                          i18n("Port to Qt6"),
+                          QString::fromUtf8("anjanik012 at gmail dot com"),
                           QString::fromUtf8("https://www.linkedin.com/in/anjanik012/")
                         );
 
