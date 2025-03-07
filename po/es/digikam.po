@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-03 01:57+0000\n"
+"POT-Creation-Date: 2025-03-07 01:58+0000\n"
 "PO-Revision-Date: 2025-03-02 17:42+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -18505,14 +18505,14 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:107
 #: core/libs/widgets/mainview/daboutdata.cpp:125
 #: core/libs/widgets/mainview/daboutdata.cpp:131
-#: core/libs/widgets/mainview/daboutdata.cpp:298
-#: core/libs/widgets/mainview/daboutdata.cpp:315
-#: core/libs/widgets/mainview/daboutdata.cpp:321
-#: core/libs/widgets/mainview/daboutdata.cpp:327
-#: core/libs/widgets/mainview/daboutdata.cpp:337
-#: core/libs/widgets/mainview/daboutdata.cpp:365
-#: core/libs/widgets/mainview/daboutdata.cpp:371
-#: core/libs/widgets/mainview/daboutdata.cpp:382
+#: core/libs/widgets/mainview/daboutdata.cpp:305
+#: core/libs/widgets/mainview/daboutdata.cpp:322
+#: core/libs/widgets/mainview/daboutdata.cpp:328
+#: core/libs/widgets/mainview/daboutdata.cpp:334
+#: core/libs/widgets/mainview/daboutdata.cpp:344
+#: core/libs/widgets/mainview/daboutdata.cpp:372
+#: core/libs/widgets/mainview/daboutdata.cpp:378
+#: core/libs/widgets/mainview/daboutdata.cpp:389
 #: core/utilities/geolocation/engine/plugins/PluginInterface.h:46
 #, kde-format
 msgid "Developer"
@@ -43605,11 +43605,19 @@ msgid "Releases Manager"
 msgstr "Gestión de lanzamientos"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:150
-#, kde-format
-msgid "Port to Qt6,"
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Quality Engine:"
+msgid "Quality Test Engineer"
+msgstr "Motor de calidad:"
+
+#: core/libs/widgets/mainview/daboutdata.cpp:157
+#, fuzzy, kde-format
+#| msgid "Port to Qt6,"
+msgid "Port to Qt6"
 msgstr "Adaptación a Qt6,"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:156
+#: core/libs/widgets/mainview/daboutdata.cpp:163
 #, kde-format
 msgid ""
 "Rewrite Image Quality Scanner algorithms\n"
@@ -43624,7 +43632,7 @@ msgstr ""
 "usando un modelo de aprendizaje profundo.\n"
 "Mejoras en las herramientas de diapositivas y presentación."
 
-#: core/libs/widgets/mainview/daboutdata.cpp:166
+#: core/libs/widgets/mainview/daboutdata.cpp:173
 #, kde-format
 msgid ""
 "MJPEGStream plugin,\n"
@@ -43636,7 +43644,7 @@ msgstr ""
 "motor de asignación automática de etiquetas"
 
 # TODO - Una mejor de tooltip
-#: core/libs/widgets/mainview/daboutdata.cpp:174
+#: core/libs/widgets/mainview/daboutdata.cpp:181
 #, kde-format
 msgid ""
 "Face workflow Clustering support,\n"
@@ -43647,12 +43655,12 @@ msgstr ""
 "mejora del motor de caras,\n"
 "adaptación de la herramienta de presentación a la interfaz de complementos"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:182
+#: core/libs/widgets/mainview/daboutdata.cpp:189
 #, kde-format
 msgid "Face management workflow improvements"
 msgstr "Mejoras en el flujo de trabajo de la gestión de caras"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:188
+#: core/libs/widgets/mainview/daboutdata.cpp:195
 #, kde-format
 msgid ""
 "UPNP/DLNA export tool\n"
@@ -43661,17 +43669,17 @@ msgstr ""
 "Herramienta de exportación UPnP/DLNA\n"
 "y herramienta de clonación correctora para el editor de imágenes"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:194
+#: core/libs/widgets/mainview/daboutdata.cpp:201
 #, kde-format
 msgid "Tags Manager"
 msgstr "Gestor de etiquetas"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:200
+#: core/libs/widgets/mainview/daboutdata.cpp:207
 #, kde-format
 msgid "New OneDrive, Pinterrest, and Box export tools"
 msgstr "Nuevas herramientas de exportación a OneDrive, Pinterest y Box"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:206
+#: core/libs/widgets/mainview/daboutdata.cpp:213
 #, kde-format
 msgid ""
 "Face-engine improvements\n"
@@ -43680,138 +43688,138 @@ msgstr ""
 "Mejoras en el motor facial\n"
 "y ordenación manual de la vista de iconos"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:212
+#: core/libs/widgets/mainview/daboutdata.cpp:219
 #, kde-format
 msgid "Model/View Port of Image Editor Canvas"
 msgstr "Adaptación a modelo/vista del tapiz de edición de imágenes"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:218
+#: core/libs/widgets/mainview/daboutdata.cpp:225
 #: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
 #, kde-format
 msgid "Image Quality Scanner"
 msgstr "Escáner de calidad de imagen"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:224
+#: core/libs/widgets/mainview/daboutdata.cpp:231
 #, kde-format
 msgid "Face Detection"
 msgstr "Reconocimiento de caras"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:230
+#: core/libs/widgets/mainview/daboutdata.cpp:237
 #, kde-format
 msgid "Non-destructive image editing"
 msgstr "Edición de imágenes no destructiva"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:236
+#: core/libs/widgets/mainview/daboutdata.cpp:243
 #, kde-format
 msgid "Reverse Geo-Coding"
 msgstr "Geocodificación inversa"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:242
+#: core/libs/widgets/mainview/daboutdata.cpp:249
 #, kde-format
 msgid "Face Recognition"
 msgstr "Reconocimiento de caras"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:248
+#: core/libs/widgets/mainview/daboutdata.cpp:255
 #, kde-format
 msgid "Multi-core Support in Batch Queue Manager and Mentoring"
 msgstr ""
 "Implementación multinúcleo en el gestor de proceso por lotes y tutelaje"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:254
+#: core/libs/widgets/mainview/daboutdata.cpp:261
 #, kde-format
 msgid "UPnP/DLNA Export tool and Mentoring"
 msgstr "Herramienta de exportación UPnP/DLNA y tutelaje"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:260
+#: core/libs/widgets/mainview/daboutdata.cpp:267
 #, kde-format
 msgid "Model/View port of Import Tool and Mentoring"
 msgstr "Adaptación a modelo/vista de la herramienta de importación y tutelaje"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:266
+#: core/libs/widgets/mainview/daboutdata.cpp:273
 #, kde-format
 msgid "Video Metadata Support and Mentoring"
 msgstr "Implementación de metadatos de vídeo y tutelaje"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:272
+#: core/libs/widgets/mainview/daboutdata.cpp:279
 #, kde-format
 msgid "Panorama Tool and Mentoring"
 msgstr "Herramienta de panoramas y tutelaje"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:278
+#: core/libs/widgets/mainview/daboutdata.cpp:285
 #, kde-format
 msgid "XML based GUI port of tools"
 msgstr "Adaptación de la interfaz gráfica basada en XML para las herramientas"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:284
+#: core/libs/widgets/mainview/daboutdata.cpp:291
 #, kde-format
 msgid "Auto Noise Reduction"
 msgstr "Reducción de ruido automática"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:292
+#: core/libs/widgets/mainview/daboutdata.cpp:299
 #, kde-format
 msgid "Windows Port and Release Manager"
 msgstr "Adaptación a Windows y gestión de lanzamientos"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:303
+#: core/libs/widgets/mainview/daboutdata.cpp:310
 #, kde-format
 msgid "Developer and Windows port"
 msgstr "Desarrollador y versión Windows"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:309
+#: core/libs/widgets/mainview/daboutdata.cpp:316
 #, kde-format
 msgid "LCMS2 library port"
 msgstr "Adaptación a la biblioteca LCMS2"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:332
+#: core/libs/widgets/mainview/daboutdata.cpp:339
 #: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid "Color Management"
 msgstr "Gestión de colores"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:343
+#: core/libs/widgets/mainview/daboutdata.cpp:350
 #, kde-format
 msgid "MySQL interface"
 msgstr "Interfaz MySQL"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:348
+#: core/libs/widgets/mainview/daboutdata.cpp:355
 #, kde-format
 msgid "Design, icons, logo, banner, mockup, beta tester"
 msgstr "Diseño, iconos, logotipo, anuncios, pruebas beta"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:353
-#: core/libs/widgets/mainview/daboutdata.cpp:359
+#: core/libs/widgets/mainview/daboutdata.cpp:360
+#: core/libs/widgets/mainview/daboutdata.cpp:366
 #, kde-format
 msgid "Bug reports and patches"
 msgstr "Informes de fallos y parches"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:377
+#: core/libs/widgets/mainview/daboutdata.cpp:384
 #, kde-format
 msgid "Webmaster"
 msgstr "Webmaster"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:387
+#: core/libs/widgets/mainview/daboutdata.cpp:394
 #, kde-format
 msgid "Handbook writer, alpha tester, webmaster"
 msgstr "Autor del manual, testeador alpha, webmaster"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:393
-#: core/libs/widgets/mainview/daboutdata.cpp:398
+#: core/libs/widgets/mainview/daboutdata.cpp:400
+#: core/libs/widgets/mainview/daboutdata.cpp:405
 #, kde-format
 msgid "Beta tester"
 msgstr "Evaluador de versiones beta"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:403
+#: core/libs/widgets/mainview/daboutdata.cpp:410
 #, kde-format
 msgid "Feedback and patches. Handbook writer"
 msgstr "Comentarios, sugerencias y parches. Autor del manual."
 
-#: core/libs/widgets/mainview/daboutdata.cpp:408
+#: core/libs/widgets/mainview/daboutdata.cpp:415
 #, kde-format
 msgid "digiKam website banner and application icons"
 msgstr "Banner del sitio web de digiKam e iconos de la aplicación"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:413
+#: core/libs/widgets/mainview/daboutdata.cpp:420
 #, kde-format
 msgid ""
 "Various usability fixes\n"
@@ -43820,33 +43828,33 @@ msgstr ""
 "Varios arreglos de ergonomía\n"
 "y pulido general de la aplicación"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:419
+#: core/libs/widgets/mainview/daboutdata.cpp:426
 #, kde-format
 msgid "digiKam website, Feedback"
 msgstr "Sitio web de digiKam, comentarios y sugerencias."
 
-#: core/libs/widgets/mainview/daboutdata.cpp:424
+#: core/libs/widgets/mainview/daboutdata.cpp:431
 #, kde-format
 msgid "Bug reports, feedback and icons"
 msgstr "Informes de fallos, comentarios, sugerencias e iconos."
 
-#: core/libs/widgets/mainview/daboutdata.cpp:431
+#: core/libs/widgets/mainview/daboutdata.cpp:438
 #, kde-format
 msgid "Developer (2001-2005)"
 msgstr "Desarrollador (2001-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:437
-#: core/libs/widgets/mainview/daboutdata.cpp:443
+#: core/libs/widgets/mainview/daboutdata.cpp:444
+#: core/libs/widgets/mainview/daboutdata.cpp:450
 #, kde-format
 msgid "Developer (2004-2005)"
 msgstr "Desarrollador (2004-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:449
+#: core/libs/widgets/mainview/daboutdata.cpp:456
 #, kde-format
 msgid "Developer (2004)"
 msgstr "Desarrollador (2004)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:454
+#: core/libs/widgets/mainview/daboutdata.cpp:461
 #, kde-format
 msgid "Developer and Mentoring (2005-2012)"
 msgstr "Desarrollador y tutelaje (2005-2012)"
