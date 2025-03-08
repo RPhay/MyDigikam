@@ -184,8 +184,8 @@ BUGFIXES:
 130 ==> 501021 - Small info window in fullscreen mode.
 131 ==> 501067 - Changing Creation Date with metadata Editor / Exif changes content of description field to Chinese characters.
 132 ==> 500570 - Face recognition crash.
-133 ==> 
-134 ==> 
+133 ==> 500834 - digiKam crashes automatically after 1m 50 s.
+134 ==> 492658 - digiKam crashes after adding a new collection.
 135 ==> 
 136 ==> 
 137 ==> 
