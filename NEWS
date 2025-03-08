@@ -12,6 +12,7 @@ Bundles:         Windows installer Qt6 uses last Qt 6.8.1 and KDE frameworks 6.1
 Bundles:         Windows installer Qt5 uses last Qt 5.15.16.
 Bundles:         MacOS package Qt6 uses last Qt 6.8.1 and KDE frameworks 6.10.0.
 Bundles:         G'Mic-Qt BQM and Image Editor updated to last version 3.4.2.
+                 Image Editor tool can now work on the current canvas selection.
 Setup:           Add new GPU hardware support options for decoding video with FFmpeg backend (Qt6 only).
 
 FaceEngine:      Complete rewrite of the Face Classifier and Face Pipeline implementations.
