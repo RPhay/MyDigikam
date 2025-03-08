@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-07 01:58+0000\n"
-"PO-Revision-Date: 2025-03-02 11:40+0100\n"
+"PO-Revision-Date: 2025-03-07 10:14+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -43586,7 +43586,7 @@ msgstr "Motor de qualitat:"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:157
 #, fuzzy, kde-format
-#| msgid "Port to Qt6,"
+#| msgid "Port to Qt6"
 msgid "Port to Qt6"
 msgstr "Adaptació a les Qt6"
 

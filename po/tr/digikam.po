@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-07 01:58+0000\n"
-"PO-Revision-Date: 2025-03-02 13:01+0300\n"
+"PO-Revision-Date: 2025-03-07 15:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -43118,15 +43118,12 @@ msgid "Releases Manager"
 msgstr "Yayımlama yöneticisi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Quality Engine:"
+#, kde-format
 msgid "Quality Test Engineer"
-msgstr "Kalite işletkesi:"
+msgstr "Kalite kontrol mühendisi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:157
-#, fuzzy, kde-format
-#| msgid "Port to Qt6,"
+#, kde-format
 msgid "Port to Qt6"
 msgstr "Qt6 geçişi"
 

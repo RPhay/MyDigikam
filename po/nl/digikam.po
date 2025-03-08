@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-07 01:58+0000\n"
-"PO-Revision-Date: 2025-03-02 14:13+0100\n"
+"PO-Revision-Date: 2025-03-07 13:24+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -43514,17 +43514,14 @@ msgid "Releases Manager"
 msgstr "Manager van uitgaven"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Quality Engine:"
+#, kde-format
 msgid "Quality Test Engineer"
-msgstr "Kwaliteitsengine:"
+msgstr "Kwaliteitstestingenieur"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:157
-#, fuzzy, kde-format
-#| msgid "Port to Qt6,"
+#, kde-format
 msgid "Port to Qt6"
-msgstr "Overzetten naar Qt6,"
+msgstr "Overzetten naar Qt6"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:163
 #, kde-format
