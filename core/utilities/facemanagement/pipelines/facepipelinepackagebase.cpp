@@ -23,21 +23,20 @@ namespace Digikam
 {
 
 FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId, int _serialNumber)
-    : info(_imageId),
+    : info        (_imageId),
+      features    (cv::Mat()),
       serialNumber(_serialNumber)
 {
-    features = cv::Mat();
 }
 
 FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId,
                                                  const FaceTagsIface& _face,
                                                  int _serialNumber)
-    : info(_imageId),
-      face(_face),
+    : info        (_imageId),
+      face        (_face),
+      features    (cv::Mat()),
       serialNumber(_serialNumber)
-
 {
-  features = cv::Mat();
 }
 
 FacePipelinePackageBase::FacePipelinePackageBase(const ItemInfo& _info,
@@ -48,22 +47,22 @@ FacePipelinePackageBase::FacePipelinePackageBase(const ItemInfo& _info,
                                                  EditPipelineAction _action,
                                                  bool _retrain,
                                                  int _serialNumber)
-    : info   (_info),
-      face   (_face),
-      image  (_image),
-      tagId  (_tagId),
-      region (_region),
-      action (_action),
-      retrain(_retrain),
+    : info        (_info),
+      face        (_face),
+      image       (_image),
+      features    (cv::Mat()),
+      tagId       (_tagId),
+      region      (_region),
+      action      (_action),
+      retrain     (_retrain),
       serialNumber(_serialNumber)
-
 {
-    features = cv::Mat();
 }
 
 FacePipelinePackageBase::~FacePipelinePackageBase()
 {
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelinePackageBase::~FacePipelinePackageBase: Deleting package with serial number" << serialNumber;
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelinePackageBase::~FacePipelinePackageBase: "
+                                        "Deleting package with serial number" << serialNumber;
 }
 
 } // namespace Digikam
