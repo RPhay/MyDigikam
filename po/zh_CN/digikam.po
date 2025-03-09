@@ -41703,17 +41703,14 @@ msgid "Releases Manager"
 msgstr "软件发布管理人员"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Quality Engine:"
+#, kde-format
 msgid "Quality Test Engineer"
-msgstr "图像品质检测引擎："
+msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:157
-#, fuzzy, kde-format
-#| msgid "Port to Qt6,"
+#, kde-format
 msgid "Port to Qt6"
-msgstr "移植到 Qt6"
+msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:163
 #, kde-format
