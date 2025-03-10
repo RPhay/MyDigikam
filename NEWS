@@ -188,7 +188,7 @@ BUGFIXES:
 133 ==> 500834 - digiKam crashes automatically after 1m 50 s.
 134 ==> 492658 - digiKam crashes after adding a new collection.
 135 ==> 501275 - Database gets bigger when person is confirmed.
-136 ==> 
+136 ==> 501217 - Confirm faces - same processes in the background.
 137 ==> 
 138 ==> 
 139 ==> 
