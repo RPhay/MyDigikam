@@ -41705,12 +41705,12 @@ msgstr "软件发布管理人员"
 #: core/libs/widgets/mainview/daboutdata.cpp:150
 #, kde-format
 msgid "Quality Test Engineer"
-msgstr ""
+msgstr "质量测试工程师"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:157
 #, kde-format
 msgid "Port to Qt6"
-msgstr ""
+msgstr "移植到 Qt6"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:163
 #, kde-format
