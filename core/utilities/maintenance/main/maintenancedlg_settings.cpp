@@ -42,6 +42,11 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.duplicatesRestriction               = (HaarIface::DuplicatesSearchRestrictions)
                                                   d->searchResultRestriction->itemData(d->searchResultRestriction->currentIndex()).toInt();
     prm.faceManagement                      = d->expanderBox->isChecked(Private::FaceManagement);
+
+    // Read faceSettings from config and overwrite with maintenance settings.
+
+    prm.faceSettings.readFromConfig();
+
     prm.faceSettings.alreadyScannedHandling = (FaceScanSettings::AlreadyScannedHandling)
                                                   d->faceScannedHandling->itemData(d->faceScannedHandling->currentIndex()).toInt();
     prm.faceSettings.task                   = d->retrainAllFaces->isChecked() ? FaceScanSettings::RetrainAll
