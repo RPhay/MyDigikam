@@ -46,7 +46,10 @@ MaintenanceSettings MaintenanceDlg::settings() const
     // Read faceSettings from config and overwrite with maintenance settings.
 
     prm.faceSettings.readFromConfig();
-
+    
+    prm.faceSettings.albums                 = prm.albums;
+    prm.faceSettings.wholeAlbums            = prm.wholeAlbums;
+    prm.faceSettings.useFullCpu             = prm.useMutiCoreCPU;
     prm.faceSettings.alreadyScannedHandling = (FaceScanSettings::AlreadyScannedHandling)
                                                   d->faceScannedHandling->itemData(d->faceScannedHandling->currentIndex()).toInt();
     prm.faceSettings.task                   = d->retrainAllFaces->isChecked() ? FaceScanSettings::RetrainAll
@@ -59,8 +62,6 @@ MaintenanceSettings MaintenanceDlg::settings() const
         prm.faceSettings.task                   = FaceScanSettings::Reset;
         prm.faceSettings.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::ClearAll;
     }
-
-    prm.faceSettings.albums                 = d->albumSelectors->selectedAlbums();
 
     AutotagsScanSettings tagSettings        = d->autotagsWidget->settings();
     prm.autotagsAssignment                  = d->expanderBox->isChecked(Private::AutotagsAssignment);
