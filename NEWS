@@ -189,7 +189,7 @@ BUGFIXES:
 134 ==> 492658 - digiKam crashes after adding a new collection.
 135 ==> 501275 - Database gets bigger when person is confirmed.
 136 ==> 501217 - Confirm faces - same processes in the background.
-137 ==> 
+137 ==> 501330 - Driver not loaded for mysql.
 138 ==> 
 139 ==> 
 140 ==> 
