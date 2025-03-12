@@ -349,12 +349,7 @@ void MaintenanceMngr::stage8()
     {
         // new image quality engine
 
-        ImageQualitySettings imgqsortSettings = d->settings.quality;
-
-        imgqsortSettings.albums << d->settings.albums;
-        imgqsortSettings.albums << d->settings.tags;
-
-        d->imageQualitySorter = new ImageQualitySorter(imgqsortSettings);
+        d->imageQualitySorter = new ImageQualitySorter(d->settings.quality);
         d->imageQualitySorter->setNotificationEnabled(false);
         d->imageQualitySorter->setUseMultiCoreCPU(d->settings.useMutiCoreCPU);
         d->imageQualitySorter->start();
