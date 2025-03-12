@@ -507,7 +507,6 @@ bool AutotagsPipelineObject::writer()
      * is at least 1. More instances are created by addMoreWorkers if needed.
      */
 
-    MetadataHub      hub;
     TagsCache* const tagsCache   = TagsCache::instance();
     const QString    rootTag     = QLatin1String("auto/");
     const int        rootTagId   = tagsCache->getOrCreateTag(rootTag);
@@ -532,14 +531,6 @@ bool AutotagsPipelineObject::writer()
 
         if (!settings.bqmMode)
         {
-            // clear the metadata hub before reuse
-
-            hub.reset();
-
-            // load the metadata info from the hub
-
-            hub.load(package->info);
-
             const auto ids = package->info.tagIds();
 
             for (int tid : ids)
@@ -633,6 +624,9 @@ bool AutotagsPipelineObject::writer()
 
             if (tagsChanged)
             {
+                MetadataHub hub;
+                hub.load(package->info);
+
                 ScanController::FileMetadataWrite writeScope(package->info);
                 writeScope.changed(hub.writeToMetadata(package->info, MetadataHub::WRITE_TAGS));
             }
