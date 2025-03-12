@@ -54,7 +54,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-07 01:58+0000\n"
+"POT-Creation-Date: 2025-03-12 01:58+0000\n"
 "PO-Revision-Date: 2025-03-10 17:01+0300\n"
 "Last-Translator: Mariya Shikunova <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -61419,7 +61419,7 @@ msgstr ""
 "какие-то лица."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:413
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:408
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -61428,7 +61428,7 @@ msgstr ""
 "Все операции выполнены.\n"
 "Длительность: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:414
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:409
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Обслуживание digiKam"

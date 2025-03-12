@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-07 01:58+0000\n"
+"POT-Creation-Date: 2025-03-12 01:58+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -59596,14 +59596,14 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:413
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:408
 #, fuzzy, kde-format
 msgid ""
 "All operations are done.\n"
 "Duration: %1"
 msgstr "Lỗi xem lại hướng EXIF cho tệp %1."
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:414
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:409
 #, fuzzy, kde-format
 msgid "digiKam Maintenance"
 msgstr "Góc chính:"
