@@ -320,6 +320,7 @@ bool FacePipelineDetectRecognize::extractor()
 
         // copy the image to a cv::UMat
 
+        cv::UMat cvUResizedImage;
         cv::UMat cvUImage   = QtOpenCVImg::image2Mat(
                                                      package->image,
                                                      CV_8UC3,
@@ -330,23 +331,28 @@ bool FacePipelineDetectRecognize::extractor()
         // resize the image if needed. Only resize if the image is larger than the input size of the detector
 
         cv::Size inputImageSize = faceDetector->nnInputSizeRequired();
-
+        float resizeFactor      = 1.0F;
+        
         if (std::max(cvUImage.cols, cvUImage.rows) > std::max(inputImageSize.width, inputImageSize.height))
         {
             // Image should be resized. YuNet image sizes are much more flexible than SSD and YOLO
             // so we just need to make sure no one bound exceeds the max. No padding needed.
 
-            float resizeFactor      = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvUImage.cols),
+            resizeFactor            = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvUImage.cols),
                                                static_cast<float>(inputImageSize.height) / static_cast<float>(cvUImage.rows));
 
             int newWidth            = (int)(resizeFactor * cvUImage.cols);
             int newHeight           = (int)(resizeFactor * cvUImage.rows);
-            cv::resize(cvUImage, cvUImage, cv::Size(newWidth, newHeight));
+            cv::resize(cvUImage, cvUResizedImage, cv::Size(newWidth, newHeight));
         }
+
+        // get reciprocal factor for resizing the face to back the original image size
+
+        float reciprocalFactor = 1.0F / resizeFactor;
 
         // detect any faces in the image
 
-        cv::UMat udetectionResults  = faceDetector->callModel(cvUImage);
+        cv::UMat udetectionResults  = faceDetector->callModel(cvUResizedImage);
 
         // process detected faces
 
@@ -377,10 +383,10 @@ bool FacePipelineDetectRecognize::extractor()
 
                 // Add the rect to result list.
 
-                faceFRects << QRectF(qreal(X)      / qreal(cvUImage.cols),
-                                     qreal(Y)      / qreal(cvUImage.rows),
-                                     qreal(width)  / qreal(cvUImage.cols),
-                                     qreal(height) / qreal(cvUImage.rows));
+                faceFRects << QRectF(qreal(X)      / qreal(cvUResizedImage.cols),
+                                     qreal(Y)      / qreal(cvUResizedImage.rows),
+                                     qreal(width)  / qreal(cvUResizedImage.cols),
+                                     qreal(height) / qreal(cvUResizedImage.rows));
 
                 // check if rect is already assigned to a face to filter out confirmed and ignored faces
 
@@ -417,11 +423,51 @@ bool FacePipelineDetectRecognize::extractor()
                     // extract the face vectors (features) for classification
 
                     {
+                        // get cvMat of the face landmarks
+
+                        cv::Mat row = udetectionResults.getMat(cv::ACCESS_READ).row(i);
+                        
+                        // convert the face landmarks to the full size image
+
+                        for (int j = 0; j < row.cols; ++j)
+                        {
+                            row.at<float>(j) = (int)(row.at<float>(j) * reciprocalFactor);
+                        }
+
+                        // convert the face landmarks to a UMat
+
+                        cv::UMat urow = row.getUMat(cv::ACCESS_READ);
+
+                        // align and crop the face
+
                         QMutexLocker lock(&(faceExtractor->mutex));
 
-                        faceExtractor->getNet()->alignCrop(cvUImage, udetectionResults.row(i), ualignedFace);
+                        faceExtractor->getNet()->alignCrop(cvUImage, urow, ualignedFace);
 
-                        faceExtractor->getNet()->feature(ualignedFace, uface_features);
+                        cv::UMat paddedFace;
+
+                        if (std::min(ualignedFace.cols, ualignedFace.rows) > 112)
+                        {
+                            // Image should be resized. YuNet image sizes are much more flexible than SSD and YOLO.
+                            // So we just need to make sure no one bound exceeds the max. No padding needed.
+                    
+                            float resizeFactor      = std::min(static_cast<float>(112) / static_cast<float>(ualignedFace.cols),
+                                                               static_cast<float>(112) / static_cast<float>(ualignedFace.rows));
+                    
+                            int newWidth            = (int)(resizeFactor * ualignedFace.cols);
+                            int newHeight           = (int)(resizeFactor * ualignedFace.rows);
+                            cv::resize(ualignedFace, paddedFace, cv::Size(newWidth, newHeight));
+                        }
+                        else
+                        {
+                            paddedFace = ualignedFace.clone();
+                        }
+
+                        ualignedFace.release();
+
+                        // get the face features
+            
+                        faceExtractor->getNet()->feature(paddedFace, uface_features);
 
                         face_features = uface_features.getMat(cv::ACCESS_READ);
                     }
@@ -449,7 +495,7 @@ bool FacePipelineDetectRecognize::extractor()
         enqueue(nextQueue, package);
     
         package = nullptr;
-}
+    }
 
     /* =========================================================================================
      * End pipeline stage specific loop

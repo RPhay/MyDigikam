@@ -364,9 +364,9 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
 
         // preprocess image to be in the correct format
 
-        if (inputImage.format() != QImage::Format_RGB888)
+        if (inputImage.format() != QImage::Format_BGR888)
         {
-            inputImage = inputImage.convertToFormat(QImage::Format_RGB888);
+            inputImage = inputImage.convertToFormat(QImage::Format_BGR888);
         }
 
         // create a cv::Mat image from the QImage

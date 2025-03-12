@@ -190,7 +190,7 @@ BUGFIXES:
 135 ==> 501275 - Database gets bigger when person is confirmed.
 136 ==> 501217 - Confirm faces - same processes in the background.
 137 ==> 501330 - Driver not loaded for mysql.
-138 ==> 
+138 ==> 501270 - People are not recognized
 139 ==> 
 140 ==> 
 141 ==> 
