@@ -164,33 +164,6 @@ void MaintenanceThread::generateFingerprints(const QList<qlonglong>& itemIds, bo
     appendJobs(collection);
 }
 
-// void MaintenanceThread::generateTags(const QStringList& paths,
-//                                      int modelType,
-//                                      const QStringList& langs)
-// {
-//     ActionJobCollection collection;
-
-//     data->setImagePaths(paths);
-
-//     for (int i = 1 ; i <= maximumNumberOfThreads() ; ++i)
-//     {
-//         AutotagsAssignmentTask* const t = new AutotagsAssignmentTask();
-
-//         t->setMaintenanceData(data);
-//         t->setModelType(modelType);
-//         t->setLanguages(langs);
-
-//         connect(t, SIGNAL(signalFinished(ItemInfo,QImage,QStringList)),
-//                 this, SIGNAL(signalAdvanceList(ItemInfo,QImage,QStringList)));
-
-//         collection.insert(t, 0);
-
-//         qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Creating an autotagging task for autotags assignment items";
-//     }
-
-//     appendJobs(collection);
-// }
-
 void MaintenanceThread::sortByImageQuality(const QStringList& paths, const ImageQualitySettings& quality)
 {
     ActionJobCollection collection;
