@@ -5,6 +5,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 # Copy this script on root folder where are source code
+# https://github.com/Krazy-collection/krazy
 
 sudo apt install libsaxonhe-java libxml-perl libxml-libxml-perl libyaml-libyaml-perl libyaml-perl libjson-perl
 

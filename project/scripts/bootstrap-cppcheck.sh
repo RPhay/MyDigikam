@@ -5,11 +5,10 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 # Copy this script on root folder where are source code
+# https://github.com/danmar/cppcheck
 
-#export VERBOSE=1
-
-export CC=/usr/bin/clang
-export CXX=/usr/bin/clang++
+#export CC=/usr/bin/clang
+#export CXX=/usr/bin/clang++
 
 # We will work on command line using MinGW compiler
 export MAKEFILES_TYPE='Unix Makefiles'

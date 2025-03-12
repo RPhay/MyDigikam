@@ -5,10 +5,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 # Copy this script on root folder where are source code
+# https://github.com/KDE/clazy
 
-#export VERBOSE=1
-
-# We will work on command line using MinGW compiler
 export MAKEFILES_TYPE='Unix Makefiles'
 
 if [ ! -d "build" ]; then
