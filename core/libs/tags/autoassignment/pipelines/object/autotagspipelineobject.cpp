@@ -180,11 +180,20 @@ bool AutotagsPipelineObject::finder()
             break;
         }
 
-        if (!album->isTrashAlbum())
+        if (album && !album->isTrashAlbum())
         {
-            // get the image IDs for the album
+            QList<qlonglong> imageIds;
 
-            QList<qlonglong> imageIds = CoreDbAccess().db()->getImageIds(album->id(), DatabaseItem::Status::Visible, true);
+            // get the image IDs for the album/tag
+
+            if      (album->type() == Album::PHYSICAL)
+            {
+                imageIds = CoreDbAccess().db()->getItemIDsInAlbum(album->id());
+            }
+            else if (album->type() == Album::TAG)
+            {
+                imageIds = CoreDbAccess().db()->getItemIDsInTag(album->id());
+            }
 
             // quick check if we should add threads.
 
