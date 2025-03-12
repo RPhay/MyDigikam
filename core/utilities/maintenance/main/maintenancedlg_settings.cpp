@@ -63,13 +63,11 @@ MaintenanceSettings MaintenanceDlg::settings() const
         prm.faceSettings.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::ClearAll;
     }
 
-    AutotagsScanSettings tagSettings        = d->autotagsWidget->settings();
     prm.autotagsAssignment                  = d->expanderBox->isChecked(Private::AutotagsAssignment);
-    prm.autotagsScanMode                    = tagSettings.scanMode;
-    prm.autotagsTagMode                     = tagSettings.tagMode;
-    prm.autotagsObjectDetectModel           = tagSettings.objectDetectModel;
-    prm.autotagsLanguages                   = tagSettings.languages;
-    prm.autotagsObjectDetectAccuracy        = tagSettings.uiConfidenceThreshold;
+    prm.autotagsSettings                    = d->autotagsWidget->settings();
+    prm.autotagsSettings.useFullCpu         = prm.useMutiCoreCPU;
+    prm.autotagsSettings.albums << prm.albums;
+    prm.autotagsSettings.albums << prm.tags;
 
     prm.qualitySort                         = d->expanderBox->isChecked(Private::ImageQualitySorter);
     prm.quality                             = d->qualityWidget->settings();

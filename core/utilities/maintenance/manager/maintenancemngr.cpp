@@ -331,22 +331,9 @@ void MaintenanceMngr::stage7()
     {
         // new autotags engine
 
-        AutotagsScanSettings autotagSettings;
-
-        autotagSettings.albums << d->settings.albums;
-        autotagSettings.albums << d->settings.tags;
-
-        autotagSettings.useFullCpu            = d->settings.useMutiCoreCPU;
-        autotagSettings.languages             = d->settings.autotagsLanguages;
-        autotagSettings.scanMode              = (AutotagsScanSettings::ScanMode)d->settings.autotagsScanMode;
-        autotagSettings.tagMode               = (AutotagsScanSettings::TagMode)d->settings.autotagsTagMode;
-        autotagSettings.objectDetectModel     = d->settings.autotagsObjectDetectModel;
-        autotagSettings.uiConfidenceThreshold = d->settings.autotagsObjectDetectAccuracy;
-
-        d->newAutotagsAssignment              = new AutotagsEngine(autotagSettings);
+        d->newAutotagsAssignment = new AutotagsEngine(d->settings.autotagsSettings);
         d->newAutotagsAssignment->setNotificationEnabled(false);
         d->newAutotagsAssignment->start();
-
     }
     else
     {

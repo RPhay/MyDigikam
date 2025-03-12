@@ -88,20 +88,8 @@ public:
     /// Autotags assignment.
     bool                                    autotagsAssignment           = false;
 
-    /// autotagging scan mode
-    int                                     autotagsScanMode             = AutotagsScanSettings::ScanMode::AllItems;
-
-    /// autotagging tag mode
-    int                                     autotagsTagMode              = AutotagsScanSettings::TagMode::Replace;
-
-    /// model selection mode
-    QString                                 autotagsObjectDetectModel    = QStringLiteral("yolov11-nano");
-
-    /// Autotags languages
-    QStringList                             autotagsLanguages;
-
-    /// Autotags detection threshold
-    int                                     autotagsObjectDetectAccuracy = 7;
+    /// Autotags settings.
+    AutotagsScanSettings                    autotagsSettings;
 
     /// Perform Image Quality Sorting.
     bool                                    qualitySort                  = false;
