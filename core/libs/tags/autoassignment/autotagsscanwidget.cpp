@@ -247,7 +247,7 @@ AutotagsScanSettings AutotagsScanWidget::settings() const
     return result;
 }
 
-void AutotagsScanWidget::settings(const AutotagsScanSettings& newSettings)
+void AutotagsScanWidget::setSettings(const AutotagsScanSettings& newSettings)
 {
     d->scanMode->setCurrentIndex(d->scanMode->findData(newSettings.scanMode));
     d->tagMode->setCurrentIndex(d->tagMode->findData(newSettings.tagMode));

@@ -118,7 +118,7 @@ void AssignTags::slotAssignSettings2Widget()
     autotagsSettings.languages              = settings().value(QLatin1String("TrAutotagsLangs")).toStringList();
     autotagsSettings.bqmMode                = true;
 
-    d->autotagsScanWidget->settings(autotagsSettings);
+    d->autotagsScanWidget->setSettings(autotagsSettings);
 }
 
 void AssignTags::slotSettingsChanged()

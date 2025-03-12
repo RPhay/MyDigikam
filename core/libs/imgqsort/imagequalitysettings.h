@@ -87,23 +87,23 @@ public:
     AlbumList     albums;                                         ///< Albums to scan.
 
     const QString configName              = QLatin1String("Image Quality Settings");
-    const QString configScanMode          = QLatin1String("Scan Mode");
-    const QString configUseFullCpu        = QLatin1String("Use Full CPU");
-    const QString configDetectBlur        = QLatin1String("Detect Blur");
-    const QString configDetectNoise       = QLatin1String("Detect Noise");
-    const QString configDetectCompression = QLatin1String("Detect Compression");
-    const QString configDetectExposure    = QLatin1String("Detect Exposure");
-    const QString configDetectAesthetic   = QLatin1String("Detect Aesthetic");
-    const QString configLowQRejected      = QLatin1String("LowQ Rejected");
-    const QString configMediumQPending    = QLatin1String("MediumQ Pending");
-    const QString configHighQAccepted     = QLatin1String("HighQ Accepted");
-    const QString configRejectedThreshold = QLatin1String("Rejected Threshold");
-    const QString configPendingThreshold  = QLatin1String("Pending Threshold");
-    const QString configAcceptedThreshold = QLatin1String("Accepted Threshold");
-    const QString configBlurWeight        = QLatin1String("Blur Weight");
-    const QString configNoiseWeight       = QLatin1String("Noise Weight");
-    const QString configCompressionWeight = QLatin1String("Compression Weight");
-    const QString configExposureWeight    = QLatin1String("Exposure Weight");
+    const QString configScanMode          = QLatin1String("Image Quality Scan Mode");
+    const QString configUseFullCpu        = QLatin1String("Image Quality Use Full CPU");
+    const QString configDetectBlur        = QLatin1String("Image Quality Detect Blur");
+    const QString configDetectNoise       = QLatin1String("Image Quality Detect Noise");
+    const QString configDetectCompression = QLatin1String("Image Quality Detect Compression");
+    const QString configDetectExposure    = QLatin1String("Image Quality Detect Exposure");
+    const QString configDetectAesthetic   = QLatin1String("Image Quality Detect Aesthetic");
+    const QString configLowQRejected      = QLatin1String("Image Quality LowQ Rejected");
+    const QString configMediumQPending    = QLatin1String("Image Quality MediumQ Pending");
+    const QString configHighQAccepted     = QLatin1String("Image Quality HighQ Accepted");
+    const QString configRejectedThreshold = QLatin1String("Image Quality Rejected Threshold");
+    const QString configPendingThreshold  = QLatin1String("Image Quality Pending Threshold");
+    const QString configAcceptedThreshold = QLatin1String("Image Quality Accepted Threshold");
+    const QString configBlurWeight        = QLatin1String("Image Quality Blur Weight");
+    const QString configNoiseWeight       = QLatin1String("Image Quality Noise Weight");
+    const QString configCompressionWeight = QLatin1String("Image Quality Compression Weight");
+    const QString configExposureWeight    = QLatin1String("Image Quality Exposure Weight");
 };
 
 //! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.

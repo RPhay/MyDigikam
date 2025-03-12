@@ -633,7 +633,6 @@ bool AutotagsPipelineObject::writer()
 
             if (tagsChanged)
             {
-
                 ScanController::FileMetadataWrite writeScope(package->info);
                 writeScope.changed(hub.writeToMetadata(package->info, MetadataHub::WRITE_TAGS));
             }
@@ -664,8 +663,11 @@ bool AutotagsPipelineObject::writer()
 
         if (displayTags.size() > 6)
         {
-            qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::writer: adding " << displayTags.size() << " tags to the image.";
-            qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::writer: " << package->info.relativePath() << "/" << albumName + package->info.relativePath();
+            qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::writer: adding "
+                                                << displayTags.size() << " tags to the image.";
+            qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsPipelineObject::writer: "
+                                                << package->info.relativePath() << "/"
+                                                << albumName + package->info.relativePath();
         }
 
         // delete the package

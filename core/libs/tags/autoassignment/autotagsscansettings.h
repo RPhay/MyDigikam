@@ -106,12 +106,12 @@ public:
 private:
 
     const QString                           configName                  = QLatin1String("Autotags Settings");
-    const QString                           configScanMode              = QLatin1String("Scan Mode");
-    const QString                           configTagMode               = QLatin1String("Tag Mode");
-    const QString                           configUseFullCpu            = QLatin1String("Use Full CPU");
-    const QString                           configObjectDetectModel     = QLatin1String("Object Detection Model");
-    const QString                           configObjectDetectAccuracy  = QLatin1String("Object Detection Accuracy");
-    const QString                           configLanguages             = QLatin1String("Languages");
+    const QString                           configScanMode              = QLatin1String("Autotags Scan Mode");
+    const QString                           configTagMode               = QLatin1String("Autotags Tag Mode");
+    const QString                           configUseFullCpu            = QLatin1String("Autotags Use Full CPU");
+    const QString                           configObjectDetectModel     = QLatin1String("Autotags Object Detection Model");
+    const QString                           configObjectDetectAccuracy  = QLatin1String("Autotags Object Detection Accuracy");
+    const QString                           configLanguages             = QLatin1String("Autotags Languages");
 };
 
 //! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.

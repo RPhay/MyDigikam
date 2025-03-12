@@ -46,7 +46,7 @@ MaintenanceSettings MaintenanceDlg::settings() const
     // Read faceSettings from config and overwrite with maintenance settings.
 
     prm.faceSettings.readFromConfig();
-    
+
     prm.faceSettings.albums                 = prm.albums;
     prm.faceSettings.wholeAlbums            = prm.wholeAlbums;
     prm.faceSettings.useFullCpu             = prm.useMutiCoreCPU;
@@ -139,6 +139,10 @@ void MaintenanceDlg::readSettings()
         imq.readFromConfig(group);
         d->qualityWidget->setSettings(imq);
 
+        AutotagsScanSettings autotags;
+        autotags.readFromConfig(group);
+        d->autotagsWidget->setSettings(autotags);
+
         d->expanderBox->setChecked(Private::MetadataSync,       group.readEntry(d->configMetadataSync,          prm.metadataSync));
         int direction    = d->syncDirection->findData(group.readEntry(d->configSyncDirection,                   prm.syncDirection));
         d->syncDirection->setCurrentIndex(direction);
@@ -183,8 +187,11 @@ void MaintenanceDlg::writeSettings()
         group.writeEntry(d->configAutotagsAssignment,           prm.autotagsAssignment);
         group.writeEntry(d->configImageQualitySorter,           prm.qualitySort);
 
-        ImageQualitySettings imq = d->qualityWidget->settings();
+        ImageQualitySettings imq      = d->qualityWidget->settings();
         imq.writeToConfig(group);
+
+        AutotagsScanSettings autotags = d->autotagsWidget->settings();
+        autotags.writeToConfig(group);
 
         group.writeEntry(d->configMetadataSync,               prm.metadataSync);
         group.writeEntry(d->configSyncDirection,              prm.syncDirection);

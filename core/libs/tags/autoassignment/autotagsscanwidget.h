@@ -50,7 +50,7 @@ public:
     ~AutotagsScanWidget()                 override;
 
     AutotagsScanSettings settings() const;
-    void settings(const AutotagsScanSettings& newSettings);
+    void setSettings(const AutotagsScanSettings& newSettings);
 
 Q_SIGNALS:
 
