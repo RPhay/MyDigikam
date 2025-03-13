@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-12 01:58+0000\n"
+"POT-Creation-Date: 2025-03-13 01:56+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -61649,14 +61649,14 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:408
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:394
 #, fuzzy, kde-format
 msgid ""
 "All operations are done.\n"
 "Duration: %1"
 msgstr "Baza de date cu miniaturi a fost actualizată."
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:409
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:395
 #, fuzzy, kde-format
 msgid "digiKam Maintenance"
 msgstr "Unghiul principal:"

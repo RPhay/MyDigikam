@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-12 01:58+0000\n"
+"POT-Creation-Date: 2025-03-13 01:56+0000\n"
 "PO-Revision-Date: 2025-03-07 07:06+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -60950,7 +60950,7 @@ msgstr ""
 "pregledati slike in znova začeti označevati neznane obraze."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:408
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:394
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -60959,7 +60959,7 @@ msgstr ""
 "Vsa opravila so končana.\n"
 "Trajanje: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:409
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:395
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "vzdrževanje digiKama"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-12 01:58+0000\n"
+"POT-Creation-Date: 2025-03-13 01:56+0000\n"
 "PO-Revision-Date: 2024-11-16 08:32+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -60834,14 +60834,14 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:408
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:394
 #, kde-format
 msgid ""
 "All operations are done.\n"
 "Duration: %1"
 msgstr ""
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:409
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:395
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr ""

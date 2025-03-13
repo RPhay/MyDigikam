@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-12 01:58+0000\n"
+"POT-Creation-Date: 2025-03-13 01:56+0000\n"
 "PO-Revision-Date: 2025-03-07 10:14+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -30015,9 +30015,9 @@ msgid ""
 "most filesystems are unable to undelete deleted items reliably.</p>"
 msgstr ""
 "<p>Si està marcada, els elements s'<b>eliminaran definitivament</b> en lloc "
-"d'ubicar-los a dins de la paperera.</p><p><em>Utilitzeu esta opció amb "
-"compte</em>: la majoria de sistemes de fitxers no poden recuperar amb "
-"fiabilitat els elements suprimits.</p>"
+"d'ubicar-los dins de la paperera.</p><p><em>Utilitzeu esta opció amb compte</"
+"em>: la majoria de sistemes de fitxers no poden recuperar amb fiabilitat els "
+"elements suprimits.</p>"
 
 #: core/libs/dialogs/deletedialog.cpp:297
 #, kde-format
@@ -43578,15 +43578,12 @@ msgid "Releases Manager"
 msgstr "Gestor de llançaments"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Quality Engine:"
+#, kde-format
 msgid "Quality Test Engineer"
-msgstr "Motor de qualitat:"
+msgstr "Enginyer de proves de qualitat"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:157
-#, fuzzy, kde-format
-#| msgid "Port to Qt6"
+#, kde-format
 msgid "Port to Qt6"
 msgstr "Adaptació a les Qt6"
 
@@ -61449,7 +61446,7 @@ msgstr ""
 "cares desconegudes de nou abans que es puga reconéixer cap cara."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:408
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:394
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -61458,7 +61455,7 @@ msgstr ""
 "Han finalitzat totes les operacions.\n"
 "Duració: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:409
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:395
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Manteniment de digiKam"
