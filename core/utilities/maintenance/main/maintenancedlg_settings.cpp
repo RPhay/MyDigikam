@@ -76,9 +76,9 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.autotagsSettings.albums << prm.tags;
 
     prm.qualitySort                         = d->expanderBox->isChecked(Private::ImageQualitySorter);
-    prm.quality                             = d->qualityWidget->settings();
-    prm.quality.albums << prm.albums;
-    prm.quality.albums << prm.tags;
+    prm.qualitySettings                     = d->qualityWidget->settings();
+    prm.qualitySettings.albums << prm.albums;
+    prm.qualitySettings.albums << prm.tags;
 
     prm.metadataSync                        = d->expanderBox->isChecked(Private::MetadataSync);
     prm.syncDirection                       = d->syncDirection->itemData(d->syncDirection->currentIndex()).toInt();

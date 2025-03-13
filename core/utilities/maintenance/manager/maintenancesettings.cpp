@@ -41,7 +41,7 @@ QDebug operator<<(QDebug dbg, const MaintenanceSettings& s)
     dbg.nospace() << "faceScannedHandling    : " << s.faceSettings.alreadyScannedHandling << Qt::endl;
     dbg.nospace() << "AutotagsAssignment     : " << s.autotagsAssignment                  << Qt::endl;
     dbg.nospace() << "qualitySort            : " << s.qualitySort                         << Qt::endl;
-    dbg.nospace() << "quality                : " << s.quality                             << Qt::endl;
+    dbg.nospace() << "qualitySettings        : " << s.qualitySettings                     << Qt::endl;
     dbg.nospace() << "metadataSync           : " << s.metadataSync                        << Qt::endl;
     dbg.nospace() << "syncDirection          : " << s.syncDirection                       << Qt::endl;
     dbg.nospace() << "databaseCleanup        : " << s.databaseCleanup                     << Qt::endl;

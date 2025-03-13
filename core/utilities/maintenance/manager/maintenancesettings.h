@@ -95,7 +95,7 @@ public:
     bool                                    qualitySort                  = false;
 
     /// Image Quality Sorting Settings.
-    ImageQualitySettings                    quality;
+    ImageQualitySettings                    qualitySettings;
 
     /// Sync metadata and DB.
     bool                                    metadataSync                 = false;

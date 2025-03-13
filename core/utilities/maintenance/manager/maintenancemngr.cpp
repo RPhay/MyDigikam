@@ -349,7 +349,7 @@ void MaintenanceMngr::stage8()
     {
         // new image quality engine
 
-        d->imageQualitySorter = new ImageQualitySorter(d->settings.quality);
+        d->imageQualitySorter = new ImageQualitySorter(d->settings.qualitySettings);
         d->imageQualitySorter->setNotificationEnabled(false);
         d->imageQualitySorter->setUseMultiCoreCPU(d->settings.useMutiCoreCPU);
         d->imageQualitySorter->start();
@@ -369,6 +369,7 @@ void MaintenanceMngr::stage9()
         AlbumList list;
         list << d->settings.albums;
         list << d->settings.tags;
+
         d->metadataSynchronizer = new MetadataSynchronizer(list, MetadataSynchronizer::SyncDirection(d->settings.syncDirection));
         d->metadataSynchronizer->setNotificationEnabled(false);
 
