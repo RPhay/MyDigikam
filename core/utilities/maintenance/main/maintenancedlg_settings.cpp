@@ -26,21 +26,27 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.albums                              = d->albumSelectors->selectedAlbums();
     prm.tags                                = d->albumSelectors->selectedTags();
     prm.useMutiCoreCPU                      = d->useMutiCoreCPU->isChecked();
+
     prm.newItems                            = d->expanderBox->isChecked(Private::NewItems);
+
     prm.databaseCleanup                     = d->expanderBox->isChecked(Private::DbCleanup);
     prm.cleanThumbDb                        = d->cleanThumbsDb->isChecked();
     prm.cleanFacesDb                        = d->cleanFacesDb->isChecked();
     prm.cleanSimilarityDb                   = d->cleanSimilarityDb->isChecked();
     prm.shrinkDatabases                     = d->shrinkDatabases->isChecked();
+
     prm.thumbnails                          = d->expanderBox->isChecked(Private::Thumbnails);
     prm.scanThumbs                          = d->scanThumbs->isChecked();
+
     prm.fingerPrints                        = d->expanderBox->isChecked(Private::FingerPrints);
     prm.scanFingerPrints                    = d->scanFingerPrints->isChecked();
+
     prm.duplicates                          = d->expanderBox->isChecked(Private::Duplicates);
     prm.minSimilarity                       = d->similarityRange->minValue();
     prm.maxSimilarity                       = d->similarityRange->maxValue();
     prm.duplicatesRestriction               = (HaarIface::DuplicatesSearchRestrictions)
                                                   d->searchResultRestriction->itemData(d->searchResultRestriction->currentIndex()).toInt();
+
     prm.faceManagement                      = d->expanderBox->isChecked(Private::FaceManagement);
 
     // Read faceSettings from config and overwrite with maintenance settings.
