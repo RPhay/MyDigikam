@@ -157,14 +157,15 @@ double FacePipelineBase::detectBlur(const cv::Mat& cvGrayImage) const
 
     cv::Mat invFFT;
     cv::Mat logFFT;
-    double minVal = 0.0, maxVal = 0.0;
+    double minVal     = 0.0;
+    double maxVal     = 0.0;
 
     cv::dft(orgFFT, invFFT, cv::DFT_INVERSE | cv::DFT_REAL_OUTPUT);
 
-    invFFT = cv::abs(invFFT);
+    invFFT            = cv::abs(invFFT);
     cv::minMaxLoc(invFFT, &minVal, &maxVal);
 
-    //check for impossible values
+    // check for impossible values
 
     if (maxVal <= 0.0)
     {
@@ -172,7 +173,7 @@ double FacePipelineBase::detectBlur(const cv::Mat& cvGrayImage) const
     }
 
     cv::log(invFFT, logFFT);
-    logFFT *= 20;
+    logFFT           *= 20;
 
     cv::Scalar result = cv::mean(logFFT);
 
@@ -256,7 +257,7 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName,
     catcher->setActive(true);
 
     MLPIPELINE_LOOP_START(thisStage, thisQueue);
-    package = static_cast<FacePipelinePackageBase*>(mlpackage);
+    package                                        = static_cast<FacePipelinePackageBase*>(mlpackage);
 
     /* =========================================================================================
      * Start pipeline stage specific loop
