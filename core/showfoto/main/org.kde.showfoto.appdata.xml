@@ -172,6 +172,7 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release date="2025-03-16" version="8.6.0"/>
     <release date="2024-11-16" version="8.5.0"/>
     <release date="2024-07-14" version="8.4.0"/>
     <release date="2024-03-17" version="8.3.0"/>
