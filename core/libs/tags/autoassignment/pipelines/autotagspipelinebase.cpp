@@ -107,7 +107,7 @@ void AutotagsPipelineBase::bqmSendOne(QScopedPointer<DMetadata>& _bqmMeta,
             enqueue(queues[MLPipelineStage::Extractor], package);
         }
 
-        // Try to acquire the semaphore again. 
+        // Try to acquire the semaphore again.
         // This will block until the package is processed and the semaphore is released
 
         bqmSemaphore.acquire();

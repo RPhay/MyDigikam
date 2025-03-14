@@ -332,7 +332,7 @@ bool FacePipelineDetectRecognize::extractor()
 
         cv::Size inputImageSize = faceDetector->nnInputSizeRequired();
         float resizeFactor      = 1.0F;
-        
+
         if (std::max(cvUImage.cols, cvUImage.rows) > std::max(inputImageSize.width, inputImageSize.height))
         {
             // Image should be resized. YuNet image sizes are much more flexible than SSD and YOLO
@@ -426,7 +426,7 @@ bool FacePipelineDetectRecognize::extractor()
                         // get cvMat of the face landmarks
 
                         cv::Mat row = udetectionResults.getMat(cv::ACCESS_READ).row(i);
-                        
+
                         // convert the face landmarks to the full size image
 
                         for (int j = 0; j < row.cols; ++j)
@@ -450,10 +450,10 @@ bool FacePipelineDetectRecognize::extractor()
                         {
                             // Image should be resized. YuNet image sizes are much more flexible than SSD and YOLO.
                             // So we just need to make sure no one bound exceeds the max. No padding needed.
-               
+
                             float resizeFactor2     = std::min(static_cast<float>(112) / static_cast<float>(ualignedFace.cols),
                                                                static_cast<float>(112) / static_cast<float>(ualignedFace.rows));
-                    
+
                             int newWidth            = (int)(resizeFactor2 * ualignedFace.cols);
                             int newHeight           = (int)(resizeFactor2 * ualignedFace.rows);
                             cv::resize(ualignedFace, paddedFace, cv::Size(newWidth, newHeight));
@@ -466,7 +466,7 @@ bool FacePipelineDetectRecognize::extractor()
                         ualignedFace.release();
 
                         // get the face features
-            
+
                         faceExtractor->getNet()->feature(paddedFace, uface_features);
 
                         face_features = uface_features.getMat(cv::ACCESS_READ);
@@ -493,7 +493,7 @@ bool FacePipelineDetectRecognize::extractor()
         // send the package to the next stage
 
         enqueue(nextQueue, package);
-    
+
         package = nullptr;
     }
 
@@ -705,7 +705,7 @@ bool FacePipelineDetectRecognize::writer()
         // delete the package
 
         delete package;
-    
+
         package = nullptr;
     }
 

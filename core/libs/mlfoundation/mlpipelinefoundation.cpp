@@ -390,7 +390,7 @@ void MLPipelineFoundation::slotAddMoreWorkers()
     qCDebug(DIGIKAM_MLPIPELINEFOUNDATION_LOG) << "MLPipelineFoundation::slotAddMoreWorkers: Adding more workers";
 
     // call the derived class to add more workers
-    
+
     addMoreWorkers();
 }
 
@@ -580,7 +580,7 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification,
 
 void MLPipelineFoundation::notify(MLPipelineNotification notification,
                                   const QString& _name,
-                                  const QString& _path, 
+                                  const QString& _path,
                                   const QString& _displayData,
                                   int _processed,
                                   const DImg& _thumbnail)
@@ -613,7 +613,7 @@ void MLPipelineFoundation::notify(MLPipelineNotification notification,
                                   const QIcon& _thumbnail)
 {
     MLPipelinePackageNotify::Ptr notify;
-    
+
     if (_thumbnail.isNull())
     {
         notify = new MLPipelinePackageNotify(_name, _path, _displayData, _processed, missingIcon);

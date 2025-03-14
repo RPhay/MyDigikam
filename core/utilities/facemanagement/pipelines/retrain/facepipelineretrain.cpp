@@ -215,7 +215,7 @@ bool FacePipelineRetrain::writer()
             }
             else
             {
-                qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): not using for training: " 
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): not using for training: "
                                                  << package->info.filePath();
             }
         }

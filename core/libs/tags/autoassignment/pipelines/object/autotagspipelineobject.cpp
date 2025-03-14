@@ -487,7 +487,7 @@ bool AutotagsPipelineObject::classifier()
 
     /* =========================================================================================
      * Pipeline stage specific cleanup
-     * 
+     *
      * Use the block from here to MLPIPELINE_STAGE_END to clean up any resources used by the stage.
      */
 
@@ -667,7 +667,7 @@ bool AutotagsPipelineObject::writer()
         // delete the package
 
         delete package;
-    
+
         package = nullptr;
     }
 
@@ -691,7 +691,7 @@ void AutotagsPipelineObject::addMoreWorkers()
     /* =========================================================================================
      * Use the performanceProfile metrics to find the slowest stages
      * and add more workers to those stages.
-     * 
+     *
      * For the Autotags object detection pipeline, the loader is the
      * slowest stage so add 3 more loaders and 2 more extractors.
      */

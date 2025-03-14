@@ -270,7 +270,7 @@ cv::Mat QtOpenCVImg::image2Mat(const QImage& img, int requiredMatType, MatColorO
     // Adjust mat channels if needed.
 
     cv::Mat mat_adjustCn;
-    const float maxAlpha   = (targetDepth == CV_8U) ? 255 
+    const float maxAlpha   = (targetDepth == CV_8U) ? 255
                                                     : ((targetDepth == CV_16U) ? 65535
                                                                                : 1.0);
 

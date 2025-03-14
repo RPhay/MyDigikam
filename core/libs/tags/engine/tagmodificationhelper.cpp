@@ -677,7 +677,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
 
                 IdentityProvider* idProvider = IdentityProvider::instance();
                 Identity id = idProvider->findIdentity(QLatin1String("uuid"), uuid);
-                idProvider->deleteIdentity(id);                
+                idProvider->deleteIdentity(id);
 
                 // FaceDbAccess().db()->deleteIdentity(uuid);
             }

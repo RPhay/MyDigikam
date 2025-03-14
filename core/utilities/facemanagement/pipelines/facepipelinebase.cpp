@@ -382,7 +382,7 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
         if (!cvImage.empty())
         {
             cv::UMat cvUImage = cvImage.getUMat(cv::ACCESS_READ);
-            
+
             // extract the face features
 
             package->features = extractor.getFaceEmbedding(cvUImage);

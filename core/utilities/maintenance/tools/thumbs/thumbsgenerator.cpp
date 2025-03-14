@@ -220,7 +220,7 @@ void ThumbsGenerator::slotStart()
 void ThumbsGenerator::slotAdvance(const ItemInfo& inf, const QImage& img)
 {
     QString album = CollectionManager::instance()->albumRootLabel(inf.albumRootId());
-    
+
     QString lbl = i18n("Thumbnail: %1\n", inf.name());
     lbl.append(i18n("Album: %1\n", album + inf.relativePath()));
     setLabel(lbl);

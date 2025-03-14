@@ -112,7 +112,7 @@ void RedEyeCorrectionFilter::filterImage()
         return;
     }
 
-    // convert the image to CV_8UC3 RGB 
+    // convert the image to CV_8UC3 RGB
 
     cv::Mat faceLandmarks;
     cv::Mat cvImage = QtOpenCVImg::image2Mat(m_orgImage, CV_8UC3, QtOpenCVImg::MatColorOrder::MCO_RGB);
@@ -136,19 +136,19 @@ void RedEyeCorrectionFilter::filterImage()
 
         // get the bounding boxes for eyes
 
-        cv::Rect eyeRectR = cv::Rect(faceLandmarks.at<float>(i, 4) - eyeWidth, 
+        cv::Rect eyeRectR = cv::Rect(faceLandmarks.at<float>(i, 4) - eyeWidth,
                                      faceLandmarks.at<float>(i, 5) - eyeHeight,
                                      eyeWidth * 2,
                                      eyeHeight * 2);
 
-        cv::Rect eyeRectL = cv::Rect(faceLandmarks.at<float>(i, 6) - eyeWidth, 
+        cv::Rect eyeRectL = cv::Rect(faceLandmarks.at<float>(i, 6) - eyeWidth,
                                      faceLandmarks.at<float>(i, 7) - eyeHeight,
                                      eyeWidth * 2,
                                      eyeHeight * 2);
 
         // use eyes that don't exceed the face bounding box and image bounds
 
-        if ((eyeRectR.x > 0) && 
+        if ((eyeRectR.x > 0) &&
             (eyeRectR.x > (int)faceLandmarks.at<float>(i, 0)))
         {
             eyes.push_back(eyeRectR);

@@ -107,7 +107,7 @@ QList<int> AutotagsClassifierSoftmax::predictMulti(const QList<cv::Mat>& targets
 }
 
 QList<int> AutotagsClassifierSoftmax::predictMulti(const QList<cv::UMat>& targets) const
-{ 
+{
     QList<int> result;
 
     int label = predict(targets[0]);
