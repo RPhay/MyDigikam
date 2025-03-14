@@ -20,10 +20,6 @@
 
 #include <QSplitter>
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -37,10 +33,11 @@ class MediaPlayerView;
 
 class Q_DECL_HIDDEN ImportStackedView::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     QMainWindow*        dockArea            = nullptr;
     QSplitter*          splitter            = nullptr;
