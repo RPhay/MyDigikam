@@ -122,6 +122,20 @@ void FacePipelineEdit::removeFace(const ItemInfo& info,
     enqueue(nextQueue, package);
 }
 
+void FacePipelineEdit::removeAllFaces(const ItemInfo& info)
+{
+    MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
+    FacePipelinePackageBase* const package = new FacePipelinePackageBase(info,
+                                                                         FacePipelinePackageBase::EditPipelineAction::RemoveAll);
+
+    ++totalItemCount;
+
+    Q_EMIT scheduled();
+    Q_EMIT started(i18n("Remove all faces"));
+
+    enqueue(nextQueue, package);
+}
+
 FaceTagsIface FacePipelineEdit::editTag(const ItemInfo& info,
                                         const FaceTagsIface& face,
                                         int newTagId)
@@ -309,6 +323,12 @@ bool FacePipelineEdit::writer()
             case FacePipelinePackageBase::EditPipelineAction::Remove:
             {
                 utils.removeFace(package->face);
+                break;
+            }
+
+            case FacePipelinePackageBase::EditPipelineAction::RemoveAll:
+            {
+                utils.removeAllFaces(package->info.id());
                 break;
             }
 

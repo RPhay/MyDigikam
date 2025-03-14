@@ -351,7 +351,7 @@ void FaceGroup::clear()
 
 void FaceGroup::rejectAll()
 {
-    FaceUtils().removeAllFaces(d->info.id());
+    d->newEditPipeline->removeAllFaces(d->info);
     clear();
 }
 

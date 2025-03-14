@@ -22,7 +22,8 @@
 namespace Digikam
 {
 
-FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId, int _serialNumber)
+FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId,
+                                                 int _serialNumber)
     : info        (_imageId),
       features    (cv::Mat()),
       serialNumber(_serialNumber)
@@ -35,6 +36,15 @@ FacePipelinePackageBase::FacePipelinePackageBase(qlonglong _imageId,
     : info        (_imageId),
       face        (_face),
       features    (cv::Mat()),
+      serialNumber(_serialNumber)
+{
+}
+
+FacePipelinePackageBase::FacePipelinePackageBase(const ItemInfo& _info,
+                                                 EditPipelineAction _action,
+                                                 int _serialNumber)
+    : info        (_info),
+      action      (_action),
       serialNumber(_serialNumber)
 {
 }

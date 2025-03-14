@@ -39,6 +39,7 @@ public:
     {
         Confirm,
         Remove,
+        RemoveAll,
         EditTag,
         EditRegion,
         AddManually
@@ -55,6 +56,10 @@ public:
                                      int _serialNumber = -1);
 
     explicit FacePipelinePackageBase(const ItemInfo& _info,
+                                     EditPipelineAction _action,
+                                     int _serialNumber = -1);
+
+    explicit FacePipelinePackageBase(const ItemInfo& _info,
                                      const FaceTagsIface& _face,
                                      int _tagId,
                                      const TagRegion& _region,
@@ -62,7 +67,6 @@ public:
                                      EditPipelineAction _action,
                                      bool _retrain,
                                      int _serialNumber = -1);
-
 
     virtual ~FacePipelinePackageBase() override;
 

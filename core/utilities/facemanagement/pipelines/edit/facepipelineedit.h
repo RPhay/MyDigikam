@@ -49,6 +49,8 @@ public:
     void removeFace(const ItemInfo& info,
                     const FaceTagsIface& face);
 
+    void removeAllFaces(const ItemInfo& info);
+
     FaceTagsIface editTag(const ItemInfo& info,
                           const FaceTagsIface& face,
                           int newTagId);
