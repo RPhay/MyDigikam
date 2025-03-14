@@ -33,7 +33,7 @@ for i in `find \( -name '*.cpp' -o -name '*.h' \)` ; do
 
          # file name is printed only if "string A" is present and "string B" is absent
 
-         echo "$i\n"
+         echo "$i"
 
       fi
 
