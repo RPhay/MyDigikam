@@ -450,12 +450,12 @@ bool FacePipelineDetectRecognize::extractor()
                         {
                             // Image should be resized. YuNet image sizes are much more flexible than SSD and YOLO.
                             // So we just need to make sure no one bound exceeds the max. No padding needed.
-                    
-                            float resizeFactor      = std::min(static_cast<float>(112) / static_cast<float>(ualignedFace.cols),
+               
+                            float resizeFactor2     = std::min(static_cast<float>(112) / static_cast<float>(ualignedFace.cols),
                                                                static_cast<float>(112) / static_cast<float>(ualignedFace.rows));
                     
-                            int newWidth            = (int)(resizeFactor * ualignedFace.cols);
-                            int newHeight           = (int)(resizeFactor * ualignedFace.rows);
+                            int newWidth            = (int)(resizeFactor2 * ualignedFace.cols);
+                            int newHeight           = (int)(resizeFactor2 * ualignedFace.rows);
                             cv::resize(ualignedFace, paddedFace, cv::Size(newWidth, newHeight));
                         }
                         else
