@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 01:56+0000\n"
+"POT-Creation-Date: 2025-03-14 02:03+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -59112,7 +59112,7 @@ msgstr ""
 "知人脸分配标签，否则将无法识别任何人脸。"
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:394
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:395
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -59121,7 +59121,7 @@ msgstr ""
 "所有操作已完成。\n"
 "耗时：%1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:395
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:396
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam 系统维护"

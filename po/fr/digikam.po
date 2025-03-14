@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 01:56+0000\n"
+"POT-Creation-Date: 2025-03-14 02:03+0000\n"
 "PO-Revision-Date: 2025-03-08 10:16+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -61835,7 +61835,7 @@ msgstr ""
 "étiqueter avant de pouvoir reconnaître d'autres visages."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:394
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:395
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -61844,7 +61844,7 @@ msgstr ""
 "Toutes les opérations sont effectuées.\n"
 "Durée : %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:395
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:396
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Maintenance de DigiKam"
