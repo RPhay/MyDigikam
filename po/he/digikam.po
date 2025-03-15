@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-14 02:03+0000\n"
+"POT-Creation-Date: 2025-03-15 01:57+0000\n"
 "PO-Revision-Date: 2025-01-25 14:39+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -50193,20 +50193,25 @@ msgstr "מתאם:"
 msgid "Removing face"
 msgstr "אתחול התוכן"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+msgid "Remove all faces"
+msgstr "הסרת תוויות"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
 #, fuzzy, kde-format
 msgid "Editing face tag"
 msgstr ""
 "<b>מתאם את נתוני המידע-הנוסף של כל התמונות עם מסד הנתונים של Digikam. אנא "
 "המתינו...</b>"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:169
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "הסרת תוויות זו"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:197
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
 #, fuzzy, kde-format
 msgid "Manually adding face"
 msgstr "ספר הדרכה "

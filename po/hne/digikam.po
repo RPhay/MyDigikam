@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-14 02:03+0000\n"
+"POT-Creation-Date: 2025-03-15 01:57+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -51594,18 +51594,24 @@ msgstr "कोरिलेसन:"
 msgid "Removing face"
 msgstr "टैग हटाव"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgid "Remove Tag"
+msgid "Remove all faces"
+msgstr "टैग हटाव"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
 #, fuzzy, kde-format
 msgid "Editing face tag"
 msgstr "<b>फिंगरप्रिंट डाटाबेस ल अपडेट करत हे. किरपा करके, अगोरव...</b>"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:169
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "ये टैग मेटाव"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:197
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgid "Manually adding face"

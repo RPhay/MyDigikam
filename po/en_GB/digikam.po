@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-14 02:03+0000\n"
+"POT-Creation-Date: 2025-03-15 01:57+0000\n"
 "PO-Revision-Date: 2024-11-23 12:48+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -51979,20 +51979,27 @@ msgstr "Confirm Faces"
 msgid "Removing face"
 msgstr "Remove face tag?"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Remove all Faces"
+msgid "Remove all faces"
+msgstr "Remove all Faces"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
 #, fuzzy, kde-format
 #| msgid "Updating faces database"
 msgid "Editing face tag"
 msgstr "Updating faces database"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:169
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Remove this face region"
 msgid "Editing face region"
 msgstr "Remove this face region"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:197
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Manual and Name"

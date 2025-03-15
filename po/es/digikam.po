@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-14 02:03+0000\n"
+"POT-Creation-Date: 2025-03-15 01:57+0000\n"
 "PO-Revision-Date: 2025-03-07 17:51+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -52556,17 +52556,24 @@ msgstr "Confirmando cara"
 msgid "Removing face"
 msgstr "Eliminando cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Remove all Faces"
+msgid "Remove all faces"
+msgstr "Eliminar todas las caras"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
 #, kde-format
 msgid "Editing face tag"
 msgstr "Editando etiqueta de cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:169
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
 #, kde-format
 msgid "Editing face region"
 msgstr "Editando región de cara"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:197
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
 #, kde-format
 msgid "Manually adding face"
 msgstr "Añadiendo cara de forma manual"

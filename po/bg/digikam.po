@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-14 02:03+0000\n"
+"POT-Creation-Date: 2025-03-15 01:57+0000\n"
 "PO-Revision-Date: 2025-01-31 12:48+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -52587,17 +52587,24 @@ msgstr "Потвърждаващо лице"
 msgid "Removing face"
 msgstr "Премахване на лицето"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Remove all Faces"
+msgid "Remove all faces"
+msgstr "Премахване на всички лица"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
 #, kde-format
 msgid "Editing face tag"
 msgstr "Редактиране на етикет за лице"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:169
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
 #, kde-format
 msgid "Editing face region"
 msgstr "Редактиране на регион на лицето"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:197
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
 #, kde-format
 msgid "Manually adding face"
 msgstr "Ръчно добавяне на лице"

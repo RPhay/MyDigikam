@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-14 02:03+0000\n"
+"POT-Creation-Date: 2025-03-15 01:57+0000\n"
 "PO-Revision-Date: 2025-01-29 17:11+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -51399,18 +51399,24 @@ msgstr "أكّد الحذف"
 msgid "Removing face"
 msgstr "أأزيل وسم الوجه؟"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgid "Remove Face Tags"
+msgid "Remove all faces"
+msgstr "أزل وسوم الوجوه"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
 #, fuzzy, kde-format
 msgid "Editing face tag"
 msgstr "إنشاء جديد الألبوم"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:169
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "أزل هذا الوسم"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:197
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
 #, fuzzy, kde-format
 #| msgctxt "exposure program"
 #| msgid "Manual"

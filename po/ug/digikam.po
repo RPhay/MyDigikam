@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-14 02:03+0000\n"
+"POT-Creation-Date: 2025-03-15 01:57+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -52155,18 +52155,24 @@ msgstr "تاللانمىدى"
 msgid "Removing face"
 msgstr "سۈزگۈچنى چىقىرىۋەت"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgid "Recent Tags"
+msgid "Remove all faces"
+msgstr "يېقىنقى بەتكۈچ"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
 #, fuzzy, kde-format
 msgid "Editing face tag"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:169
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
 #, fuzzy, kde-format
 #| msgid "Remove filter"
 msgid "Editing face region"
 msgstr "سۈزگۈچنى چىقىرىۋەت"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:197
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgid "Manually adding face"

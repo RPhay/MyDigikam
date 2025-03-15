@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-14 02:03+0000\n"
+"POT-Creation-Date: 2025-03-15 01:57+0000\n"
 "PO-Revision-Date: 2025-03-07 23:04+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -52539,17 +52539,24 @@ msgstr "Conferma del volto"
 msgid "Removing face"
 msgstr "Rimozione del volto"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Remove all Faces"
+msgid "Remove all faces"
+msgstr "Rimuovi tutti i volti"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
 #, kde-format
 msgid "Editing face tag"
 msgstr "Modifica del tag volto"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:169
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
 #, kde-format
 msgid "Editing face region"
 msgstr "Modifica della regione del volto"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:197
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
 #, kde-format
 msgid "Manually adding face"
 msgstr "Aggiunta manuale del volto"

@@ -54,7 +54,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-14 02:03+0000\n"
+"POT-Creation-Date: 2025-03-15 01:57+0000\n"
 "PO-Revision-Date: 2025-03-10 17:01+0300\n"
 "Last-Translator: Mariya Shikunova <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -52490,17 +52490,24 @@ msgstr "Подтверждение лица"
 msgid "Removing face"
 msgstr "Удаление лица"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Remove all Faces"
+msgid "Remove all faces"
+msgstr "Удалить все метки лиц"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
 #, kde-format
 msgid "Editing face tag"
 msgstr "Изменение метки лица"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:169
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
 #, kde-format
 msgid "Editing face region"
 msgstr "Изменение области лица"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:197
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
 #, kde-format
 msgid "Manually adding face"
 msgstr "Добавление лица вручную"
