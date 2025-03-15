@@ -20,7 +20,7 @@ BUGFIXES:
 011 ==> 470641 - Video metadata is not copied to the source file.
 012 ==> 428941 - Cleanup tool to delete duplicated faces.
 013 ==> 454938 - Simplify workload by selecting who.
-014 ==> 
+014 ==> 458629 - Unconfirmed face is signalled in the "Persons" view, but not shown in the person's album.
 015 ==> 
 016 ==> 
 017 ==> 
