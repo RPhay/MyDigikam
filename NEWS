@@ -10,7 +10,7 @@ BUGFIXES:
 001 ==> 501495 - Delete all face tags, no JPG changes.
 002 ==> 501424 - Settings: Exiftool is not found in Metadata.
 003 ==> 498880 - Image cannot be loaded.
-004 ==>
+004 ==> 499646 - digiKam incapable of assigning multiple color tags.
 005 ==>
 006 ==>
 007 ==>
