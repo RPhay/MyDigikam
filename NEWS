@@ -8,7 +8,7 @@ NEW FEATURES:
 BUGFIXES:
 
 001 ==> 501495 - Delete all face tags, no JPG changes.
-002 ==>
+002 ==> 501424 - Settings: Exiftool is not found in Metadata.
 003 ==>
 004 ==>
 005 ==>
