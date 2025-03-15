@@ -14,7 +14,7 @@ BUGFIXES:
 005 ==> 490968 - No white icons in dark themes.
 006 ==> 486807 - Importing error from Google photo.
 007 ==> 487821 - Keep People/Face Tag, but Mark Them to be Ignored in Further Recognition Suggestions.
-008 ==> 
+008 ==> 472645 - Face Recognition does not recognize any faces even after rebuilding and retraining all training data.
 009 ==> 
 010 ==> 
 011 ==> 
