@@ -19,7 +19,7 @@ BUGFIXES:
 010 ==> 468629 - Exclude individual images from face recognition.
 011 ==> 470641 - Video metadata is not copied to the source file.
 012 ==> 428941 - Cleanup tool to delete duplicated faces.
-013 ==> 
+013 ==> 454938 - Simplify workload by selecting who.
 014 ==> 
 015 ==> 
 016 ==> 
