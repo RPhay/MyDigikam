@@ -22,7 +22,7 @@ BUGFIXES:
 013 ==> 454938 - Simplify workload by selecting who.
 014 ==> 458629 - Unconfirmed face is signalled in the "Persons" view, but not shown in the person's album.
 015 ==> 459266 - Incorrect unconfirmed (new) faces count appears next to people names.
-016 ==> 
+016 ==> 459954 - digiKam shows non existing new faces.
 017 ==> 
 018 ==> 
 019 ==> 
