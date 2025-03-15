@@ -17,7 +17,7 @@ BUGFIXES:
 008 ==> 472645 - Face Recognition does not recognize any faces even after rebuilding and retraining all training data.
 009 ==> 478585 - Sidebars have disappeared.
 010 ==> 468629 - Exclude individual images from face recognition.
-011 ==> 
+011 ==> 470641 - Video metadata is not copied to the source file.
 012 ==> 
 013 ==> 
 014 ==> 
