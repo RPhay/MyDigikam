@@ -24,7 +24,7 @@ BUGFIXES:
 015 ==> 459266 - Incorrect unconfirmed (new) faces count appears next to people names.
 016 ==> 459954 - digiKam shows non existing new faces.
 017 ==> 465369 - Exclude people from recognition runs.
-018 ==> 
+018 ==> 407467 - Adjust the size of settings window to elimimnate horizontal scrollbar.
 019 ==> 
 020 ==> 
 021 ==> 
