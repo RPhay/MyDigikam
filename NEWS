@@ -26,7 +26,7 @@ BUGFIXES:
 017 ==> 465369 - Exclude people from recognition runs.
 018 ==> 407467 - Adjust the size of settings window to elimimnate horizontal scrollbar.
 019 ==> 501528 - digiKam 8.6.0 tarball has wrong version and soversion.
-020 ==> 
+020 ==> 499204 - Crash on Windows 10, can't open.
 021 ==> 
 022 ==> 
 023 ==> 
