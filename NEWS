@@ -23,7 +23,7 @@ BUGFIXES:
 014 ==> 458629 - Unconfirmed face is signalled in the "Persons" view, but not shown in the person's album.
 015 ==> 459266 - Incorrect unconfirmed (new) faces count appears next to people names.
 016 ==> 459954 - digiKam shows non existing new faces.
-017 ==> 
+017 ==> 465369 - Exclude people from recognition runs.
 018 ==> 
 019 ==> 
 020 ==> 
