@@ -15,7 +15,7 @@ BUGFIXES:
 006 ==> 486807 - Importing error from Google photo.
 007 ==> 487821 - Keep People/Face Tag, but Mark Them to be Ignored in Further Recognition Suggestions.
 008 ==> 472645 - Face Recognition does not recognize any faces even after rebuilding and retraining all training data.
-009 ==> 
+009 ==> 478585 - Sidebars have disappeared.
 010 ==> 
 011 ==> 
 012 ==> 
