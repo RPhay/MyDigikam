@@ -11,7 +11,7 @@ BUGFIXES:
 002 ==> 501424 - Settings: Exiftool is not found in Metadata.
 003 ==> 498880 - Image cannot be loaded.
 004 ==> 499646 - digiKam incapable of assigning multiple color tags.
-005 ==>
+005 ==> 490968 - No white icons in dark themes.
 006 ==>
 007 ==>
 008 ==>
