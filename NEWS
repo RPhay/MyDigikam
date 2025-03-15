@@ -16,7 +16,7 @@ BUGFIXES:
 007 ==> 487821 - Keep People/Face Tag, but Mark Them to be Ignored in Further Recognition Suggestions.
 008 ==> 472645 - Face Recognition does not recognize any faces even after rebuilding and retraining all training data.
 009 ==> 478585 - Sidebars have disappeared.
-010 ==> 
+010 ==> 468629 - Exclude individual images from face recognition.
 011 ==> 
 012 ==> 
 013 ==> 
