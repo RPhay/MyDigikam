@@ -13,7 +13,7 @@ BUGFIXES:
 004 ==> 499646 - digiKam incapable of assigning multiple color tags.
 005 ==> 490968 - No white icons in dark themes.
 006 ==> 486807 - Importing error from Google photo.
-007 ==> 
+007 ==> 487821 - Keep People/Face Tag, but Mark Them to be Ignored in Further Recognition Suggestions.
 008 ==> 
 009 ==> 
 010 ==> 
