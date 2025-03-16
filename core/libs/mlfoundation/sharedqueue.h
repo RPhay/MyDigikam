@@ -43,11 +43,11 @@ public:
 
     T& front()
     {
-        QMutexLocker locker(&mutex_);
+        QMutexLocker frontLocker(&frontMutex_);
 
         while (queue_.isEmpty())
         {
-            front_.wait(&mutex_);
+            front_.wait(&frontMutex_);
         }
 
         return queue_.head();
@@ -55,11 +55,11 @@ public:
 
     T pop_front()
     {
-        QMutexLocker locker(&mutex_);
+        QMutexLocker frontLocker(&frontMutex_);
 
         while (queue_.isEmpty())
         {
-            front_.wait(&mutex_);
+            front_.wait(&frontMutex_);
         }
 
         if (queue_.isEmpty())
@@ -67,7 +67,10 @@ public:
             throw std::runtime_error("SharedQueue::pop_front(): queue is empty");
         }
 
+        QMutexLocker backLocker(&backMutex_);
+
         T result = queue_.dequeue();
+
         back_.wakeOne();
 
         return result;
@@ -75,45 +78,51 @@ public:
 
     void push_back(T const& item)
     {
-        QMutexLocker locker(&mutex_);
+        QMutexLocker backlocker(&backMutex_);
 
         while (maxDepth_ <= queue_.size())
         {
-            back_.wait(&mutex_);
+            back_.wait(&backMutex_);
         }
 
+        QMutexLocker frontLocker(&frontMutex_);
+
         queue_.enqueue(item);
+
         front_.wakeOne();     // Notify one waiting thread.
     }
 
     void push_back(T&& item)
     {
-        QMutexLocker locker(&mutex_);
+        QMutexLocker backLocker(&backMutex_);
 
         while (maxDepth_ <= queue_.size())
         {
-            back_.wait(&mutex_);
+            back_.wait(&backMutex_);
         }
 
+        QMutexLocker frontLocker(&frontMutex_);
+
         queue_.enqueue(std::move(item));
+
         front_.wakeOne();     // Notify one waiting thread.
     }
 
     int size()
     {
-        QMutexLocker locker(&mutex_);
+        QMutexLocker frontLocker(&frontMutex_);
         return queue_.size();
     }
 
     bool isEmpty()
     {
-        QMutexLocker locker(&mutex_);
+        QMutexLocker frontLocker(&frontMutex_);
         return queue_.isEmpty();
     }
 
     void clear()
     {
-        QMutexLocker locker(&mutex_);
+        QMutexLocker frontLocker(&frontMutex_);
         queue_.clear();
     }
 
@@ -135,7 +144,8 @@ public:
 private:
 
     QQueue<T>               queue_;
-    QMutex                  mutex_;
+    QMutex                  frontMutex_;
+    QMutex                  backMutex_;
     QWaitCondition          front_;
     QWaitCondition          back_;
     qsizetype               maxDepth_ = std::numeric_limits<int>::max();
