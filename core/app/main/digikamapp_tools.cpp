@@ -160,6 +160,11 @@ void DigikamApp::slotMaintenanceDone()
 
 void DigikamApp::slotDetectFaces()
 {
+    if (d->terminating)
+    {
+        return;
+    }
+
     ItemInfoList newImages(ScanController::instance()->getNewIdsList());
 
     if (newImages.isEmpty())

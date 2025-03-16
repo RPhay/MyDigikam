@@ -253,6 +253,8 @@ DigikamApp::DigikamApp()
 
 DigikamApp::~DigikamApp()
 {
+    d->terminating = true;
+
     FacePipelineEdit::instance()->cancel();
 
     IdentityProvider::instance()->cancel();

@@ -200,6 +200,7 @@ public:
 
     bool                                autoShowZoomToolTip                     = false;
     bool                                validIccPath                            = true;
+    bool                                terminating                             = false;
 
     QMenu*                              cameraMenu                              = nullptr;
     QMenu*                              usbMediaMenu                            = nullptr;
