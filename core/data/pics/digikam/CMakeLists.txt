@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-file(GLOB _files *.png *.mp4)
+file(GLOB _files *.png *.mp4 *.webp)
 
 install(FILES ${_files}
         DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/data
