@@ -891,6 +891,8 @@ void DigikamApp::setupActions()
 
     registerPluginsActions();
 
+    slotThemeChanged();
+
     cleanupActions();
 
     // NOTE: see bug #252130 and #283281 : we need to disable these actions when BQM is running.
