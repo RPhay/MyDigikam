@@ -50496,11 +50496,9 @@ msgid "Removing face"
 msgstr "正在移除人脸"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Remove all Faces"
+#, kde-format
 msgid "Remove all faces"
-msgstr "移除所有人脸"
+msgstr ""
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
 #, kde-format
