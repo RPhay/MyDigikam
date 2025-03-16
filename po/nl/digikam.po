@@ -63,14 +63,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-15 01:57+0000\n"
-"PO-Revision-Date: 2025-03-07 13:24+0100\n"
+"PO-Revision-Date: 2025-03-15 13:55+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 24.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -32167,7 +32167,7 @@ msgstr "Hoeveel het filter middentonen beïnvloedt instellen."
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:255
 #, kde-format
 msgid "Highlights:"
-msgstr "Accentueringen:"
+msgstr "Highlights:"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:165
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:212
@@ -39240,7 +39240,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Highlights:"
-msgstr "Lichtvlekken:"
+msgstr "Highlights:"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:368
 #, kde-format
@@ -52441,9 +52441,7 @@ msgid "Removing face"
 msgstr "Gezichtstag wordt verwijderd"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Remove all Faces"
+#, kde-format
 msgid "Remove all faces"
 msgstr "Alle gezichten verwijderen"
 
