@@ -103,7 +103,8 @@ void AutotagsScanWidget::setupUi()
                          "descriptive tags for the image contents and store the results in the database.</p>"));
     title->setWordWrap(true);
 
-    QLabel* const scanLbl   = new QLabel(i18nc("@label: autotags scanning mode", "Scan Mode:"), d->settingsTab);
+    QLabel* const scanLbl   = new QLabel(i18nc("@label with a short translated text about autotags scanning mode",
+                                               "Scan Mode:"), d->settingsTab);
 
     d->scanMode             = new QComboBox(d->settingsTab);
     d->scanMode->addItem(i18nc("@item: all items to scan with autotags",       "All"),               AutotagsScanSettings::ScanMode::AllItems);
@@ -112,7 +113,8 @@ void AutotagsScanWidget::setupUi()
                                   "<p><b>All</b>: re-scan all items for tags.</p>"
                                   "<p><b>Non-Assigned Only</b>: scan only the items with no assigned autotags.</p>"));
 
-    QLabel* const tmodeLbl  = new QLabel (i18n("Auto-Tagging Mode:"), d->settingsTab);
+    QLabel* const tmodeLbl  = new QLabel(i18nc("@label with a short translated text ",
+                                               "Auto-Tagging Mode:"), d->settingsTab);
 
     d->tagMode              = new QComboBox(d->settingsTab);
     d->tagMode->addItem(i18nc("@item: remplace existing autotags entries in database", "Replace Existing"), AutotagsScanSettings::TagMode::Replace);
@@ -121,8 +123,8 @@ void AutotagsScanWidget::setupUi()
                                  "<p><b>Replace Existing</b>: clear existing auto-tags and replace with the results of the scan.</p>"
                                  "<p><b>Update</b>: add any new auto-tags found to the existing auto-tags.</p>"));
 
-    QLabel* const modelLbl  = new QLabel(i18nc("@label: deep learning model used to detect objects to auto-tag",
-                                             "Detection Model:"), d->settingsTab);
+    QLabel* const modelLbl  = new QLabel(i18nc("@label with a short translated text about deep learning model used to detect objects to auto-tag",
+                                               "Detection Model:"), d->settingsTab);
 
     DNNModelManager* const dnnModelManager        = DNNModelManager::instance();
     QList<QPair<QString, QStringList> > modelList = dnnModelManager->getModelList(DNNModelUsage::DNNUsageObjectDetection);
@@ -142,7 +144,8 @@ void AutotagsScanWidget::setupUi()
         }
     }
 
-    QLabel* const detLbl    = new QLabel(i18n("Detection Accuracy:"), d->settingsTab);
+    QLabel* const detLbl    = new QLabel(i18nc("@label with a short translated text",
+                                               "Detection Accuracy:"), d->settingsTab);
     d->accuracyInput        = new DIntNumInput(d->settingsTab);
     d->accuracyInput->setDefaultValue(7);
     d->accuracyInput->setRange(1, 10, 1);
@@ -151,7 +154,8 @@ void AutotagsScanWidget::setupUi()
                                        "be recognized, but fewer objects will be recognized.\n"));
 
     d->useFullCpuButton     = new QCheckBox(d->settingsTab);
-    d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));
+    d->useFullCpuButton->setText(i18nc("@option:check with a short translated text",
+                                       "Work on all processor cores"));
     d->useFullCpuButton->setToolTip(i18nc("@info:tooltip",
                                           "Object detection and auto-tagging are time-consuming tasks.\n"
                                           "You can choose if you wish to employ all processor cores\n"
@@ -175,7 +179,8 @@ void AutotagsScanWidget::setupUi()
     // --- Translate tab -----------------------------------------------------------------------------------
 
     d->trSelectorList       = new LocalizeSelectorList(d->settingsTab);
-    d->trSelectorList->setTitle(i18nc("@label", "Translate Tags to:"));
+    d->trSelectorList->setTitle(i18nc("@label with a short translated text",
+                                      "Translate Tags to:"));
 
     addTab(d->trSelectorList, i18nc("@title:tab", "Translate"));
 

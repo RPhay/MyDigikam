@@ -98,7 +98,7 @@ void FaceScanWidget::setupUi()
 
     d->workflowWidget                   = new DHBox(d->settingsTab);
 
-    QLabel* const workflowLabel         = new QLabel(i18nc("@label Face Worflow",
+    QLabel* const workflowLabel         = new QLabel(i18nc("@label short translated text about the Face Worflow.",
                                                            "Workflow:"), d->workflowWidget);
     workflowLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
@@ -124,7 +124,7 @@ void FaceScanWidget::setupUi()
     QWidget* const detectWidget         = new QWidget(expBox);
     QGridLayout* const detectGrid       = new QGridLayout(detectWidget);
 
-    QLabel* const detectAccuracyLabel   = new QLabel(i18nc("@label Face Detection Accuracy",
+    QLabel* const detectAccuracyLabel   = new QLabel(i18nc("@label short translated text about the Face Detection Accuracy",
                                                            "Accuracy:"), d->settingsTab);
     detectAccuracyLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
@@ -136,7 +136,7 @@ void FaceScanWidget::setupUi()
                                              "the more accurately faces will\n"
                                              "be detected, but less faces will be detected."));
 
-    QLabel* const detectSizeLabel       = new QLabel(i18nc("@label face size for detection",
+    QLabel* const detectSizeLabel       = new QLabel(i18nc("@label with a short translated text about the face size for detection",
                                                            "Face size:"), d->settingsTab);
     detectSizeLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
@@ -173,7 +173,7 @@ void FaceScanWidget::setupUi()
     QWidget* const recognizeWidget       = new QWidget(expBox);
     QGridLayout* const recognizeGrid     = new QGridLayout(recognizeWidget);
 
-    QLabel* const recognizeAccuracyLabel = new QLabel(i18nc("@label Face Recognition Accuracy",
+    QLabel* const recognizeAccuracyLabel = new QLabel(i18nc("@label short translated text about the Face Recognition Accuracy",
                                                             "Accuracy:"), d->settingsTab);
     recognizeAccuracyLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
@@ -191,7 +191,8 @@ void FaceScanWidget::setupUi()
     // --- Full cpu settings ---
 
     d->useFullCpuButton                 = new QCheckBox(d->settingsTab);
-    d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));
+    d->useFullCpuButton->setText(i18nc("@option:check with a short translated text",
+                                       "Work on all processor cores"));
     d->useFullCpuButton->setToolTip(i18nc("@info:tooltip",
                                           "Face detection and recognition are time-consuming tasks.\n"
                                           "You can choose if you wish to employ all processor cores\n"
