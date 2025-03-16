@@ -44,6 +44,7 @@ FacePipelinePackageBase::FacePipelinePackageBase(const ItemInfo& _info,
                                                  EditPipelineAction _action,
                                                  int _serialNumber)
     : info        (_info),
+      features    (cv::Mat()),
       action      (_action),
       serialNumber(_serialNumber)
 {
