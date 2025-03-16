@@ -174,11 +174,11 @@ void IdentityProvider::cancel()
 {
     if (d && d->removeThreadResult.isRunning())
     {
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::shutdown: sent queue end signal";
+
         // Signal the remove thread to terminate.
 
         d->removeQueue.push(d->removeQueue.endSignal());
-
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::shutdown: sent queue end signal";
 
         // Wait for the remove thread to finish.
 
