@@ -152,7 +152,8 @@ private:
     void setupAccelerators();
     void setupExifOrientationActions();
     void setupImageTransformActions();
-    void populateThemes();
+    void loadThemesActions();
+    void loadCurrentTheme();
     void preloadWindows();
     void initGui();
 

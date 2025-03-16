@@ -885,13 +885,13 @@ void DigikamApp::setupActions()
 
     // Load Themes
 
-    populateThemes();
+    loadThemesActions();
 
     createGUI(xmlFile());
 
     registerPluginsActions();
 
-    slotThemeChanged();
+    loadCurrentTheme();
 
     cleanupActions();
 
@@ -1108,7 +1108,7 @@ void DigikamApp::setupImageTransformActions()
     ac->addAction(QLatin1String("image_transform_exif"), d->imageAutoExifActionMenu);
 }
 
-void DigikamApp::populateThemes()
+void DigikamApp::loadThemesActions()
 {
     if (d->splashScreen)
     {
@@ -1117,6 +1117,10 @@ void DigikamApp::populateThemes()
 
     ThemeManager::instance()->setThemeMenuAction(new QMenu(i18nc("@action: setup", "&Themes"), this));
     ThemeManager::instance()->registerThemeActions(this);
+}
+
+void DigikamApp::loadCurrentTheme()
+{
     ThemeManager::instance()->setCurrentTheme(ApplicationSettings::instance()->getCurrentTheme());
 
     connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
