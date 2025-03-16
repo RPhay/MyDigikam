@@ -235,11 +235,9 @@ bool IdentityProvider::integrityCheck()
         return false;
     }
 
-    d->trainingLock.lockForRead();
+    QReadLocker readLocker(&d->trainingLock);
 
     bool result = FaceDbAccess().db()->integrityCheck();
-
-    d->trainingLock.unlock();
 
     return result;
 }
@@ -251,11 +249,9 @@ void IdentityProvider::vacuum()
         return;
     }
 
-    d->trainingLock.lockForWrite();
+    QWriteLocker writeLocker(&d->trainingLock);
 
     FaceDbAccess().db()->vacuum();
-
-    d->trainingLock.unlock();
 }
 
 // -----------------------------------------------------------------------
@@ -269,11 +265,9 @@ const QList<Identity> IdentityProvider::allIdentities() const
         return QList<Identity>();
     }
 
-    d->trainingLock.lockForRead();
+    QReadLocker readLocker(&d->trainingLock);
 
     QList<Identity> result = (d->identityCache.values());
-
-    d->trainingLock.unlock();
 
     return result;
 }
@@ -285,11 +279,9 @@ Identity IdentityProvider::identity(int id) const
         return Identity();
     }
 
-    d->trainingLock.lockForRead();
+    QReadLocker readLocker(&d->trainingLock);
 
     Identity result = d->identityCache.value(id);
-
-    d->trainingLock.unlock();
 
     return result;
 }
@@ -301,11 +293,9 @@ Identity IdentityProvider::findIdentity(const QString& attribute, const QString&
         return Identity();
     }
 
-    d->trainingLock.lockForRead();
+    QReadLocker readLocker(&d->trainingLock);
 
     Identity result = findByAttribute(attribute, value);
-
-    d->trainingLock.unlock();
 
     return result;
 }
@@ -317,7 +307,7 @@ Identity IdentityProvider::findIdentity(const QMultiMap<QString, QString>& attri
         return Identity();
     }
 
-    d->trainingLock.lockForRead();
+    QReadLocker readLocker(&d->trainingLock);
 
     Identity match;
 
@@ -328,8 +318,6 @@ Identity IdentityProvider::findIdentity(const QMultiMap<QString, QString>& attri
 
     if (!match.isNull())
     {
-        d->trainingLock.unlock();
-
         return match;
     }
 
@@ -337,8 +325,6 @@ Identity IdentityProvider::findIdentity(const QMultiMap<QString, QString>& attri
 
     if (!uuid.isNull())
     {
-        d->trainingLock.unlock();
-
         return Identity();
     }
 
@@ -348,8 +334,6 @@ Identity IdentityProvider::findIdentity(const QMultiMap<QString, QString>& attri
 
     if (!match.isNull())
     {
-        d->trainingLock.unlock();
-
         return match;
     }
 
@@ -359,8 +343,6 @@ Identity IdentityProvider::findIdentity(const QMultiMap<QString, QString>& attri
 
     if (!match.isNull())
     {
-        d->trainingLock.unlock();
-
         return match;
     }
 
@@ -381,13 +363,9 @@ Identity IdentityProvider::findIdentity(const QMultiMap<QString, QString>& attri
 
         if (!match.isNull())
         {
-            d->trainingLock.unlock();
-
             return match;
         }
     }
-
-    d->trainingLock.unlock();
 
     return Identity();
 }
@@ -401,11 +379,9 @@ Identity IdentityProvider::addIdentity(const QMultiMap<QString, QString>& attrib
 
     if (attributes.contains(QLatin1String("uuid")))
     {
-        d->trainingLock.lockForRead();
+        QReadLocker readLocker(&d->trainingLock);
 
         Identity matchByUuid = findIdentity(QLatin1String("uuid"), attributes.value(QLatin1String("uuid")));
-
-        d->trainingLock.unlock();
 
         if (!matchByUuid.isNull())
         {
@@ -423,7 +399,7 @@ Identity IdentityProvider::addIdentity(const QMultiMap<QString, QString>& attrib
     {
         FaceDbOperationGroup group;
 
-        d->trainingLock.lockForWrite();
+        QWriteLocker writeLocker(&d->trainingLock);
 
         int id = FaceDbAccess().db()->addIdentity();
         identity.setId(id);
@@ -431,11 +407,8 @@ Identity IdentityProvider::addIdentity(const QMultiMap<QString, QString>& attrib
         identity.setAttribute(QLatin1String("uuid"), QUuid::createUuid().toString());
 
         FaceDbAccess().db()->updateIdentity(identity);
-
-        d->trainingLock.unlock();
+        d->identityCache[identity.id()] = identity;
     }
-
-    d->identityCache[identity.id()] = identity;
 
     return identity;
 }
@@ -449,11 +422,9 @@ Identity IdentityProvider::addIdentityDebug(const QMultiMap<QString, QString>& a
         identity.setAttribute(QLatin1String("uuid"), QUuid::createUuid().toString());
     }
 
-    d->trainingLock.lockForWrite();
+    QWriteLocker writeLocker(&d->trainingLock);
 
     d->identityCache[identity.id()] = identity;
-
-    d->trainingLock.unlock();
 
     return identity;
 }
@@ -467,11 +438,9 @@ cv::Ptr<cv::ml::TrainData> IdentityProvider::getTrainingData() const
         return trainData;
     }
 
-    d->trainingLock.lockForRead();
+    QReadLocker readLocker(&d->trainingLock);
 
     trainData = FaceDbAccess().db()->trainData();
-
-    d->trainingLock.unlock();
 
     return trainData;
 }
@@ -483,12 +452,10 @@ void IdentityProvider::deleteIdentity(const Identity& identityToBeDeleted)
         return;
     }
 
-    d->trainingLock.lockForWrite();
+    QWriteLocker writeLocker(&d->trainingLock);
 
     FaceDbAccess().db()->deleteIdentity(identityToBeDeleted.id());
     d->identityCache.remove(identityToBeDeleted.id());
-
-    d->trainingLock.unlock();
 }
 
 void IdentityProvider::deleteIdentities(QList<Identity> identitiesToBeDeleted)
@@ -521,7 +488,7 @@ void IdentityProvider::renameIdentity(const QString& uuid, const QString& newNam
 
         // lock for write
 
-        d->trainingLock.lockForWrite();
+        QWriteLocker writeLocker(&d->trainingLock);
 
         // update the identity in the DB
 
@@ -530,20 +497,14 @@ void IdentityProvider::renameIdentity(const QString& uuid, const QString& newNam
         // update the identity in the cache
 
         d->identityCache[identity.id()] = identity;
-
-        // unlock
-
-        d->trainingLock.unlock();
     }
 }
 
 bool IdentityProvider::clearTraining(const QString& hash)
 {
-    d->trainingLock.lockForWrite();
+    QWriteLocker writeLocker(&d->trainingLock);
 
     bool result = FaceDbAccess().db()->removeFaceVector(hash);
-
-    d->trainingLock.unlock();
 
     return result;
 }
@@ -555,34 +516,31 @@ void IdentityProvider::clearAllTraining()
         return;
     }
 
-    d->trainingLock.lockForWrite();
+    QWriteLocker writeLocker(&d->trainingLock);
 
     d->identityCache.clear();
     FaceDbAccess().db()->clearIdentities();
     FaceDbAccess().db()->clearDNNTraining();
-
-    d->trainingLock.unlock();
 }
 
 int IdentityProvider::addTraining(const Identity& identity, const QString& hash, const cv::Mat& feature)
 {
-    d->trainingLock.lockForWrite();
+    QWriteLocker writeLocker(&d->trainingLock);
 
     int result = FaceDbAccess().db()->insertFaceVector(feature, identity.id(), hash);
-
-    d->trainingLock.unlock();
 
     return result;
 }
 
 bool IdentityProvider::isValidId(int label) const
 {
+    QReadLocker readLocker(&d->trainingLock);
+
 /*
     return ((label > d->seedMax) && d->identityCache.contains(label));
 */
     return (d->identityCache.contains(label));
 }
-
 
 //--------------------------------------------------------------
 // private methods
@@ -594,7 +552,7 @@ bool IdentityProvider::identityContains(const Identity& identity,
                                         const QString&  attribute,
                                         const QString&  value) const
 {
-    d->trainingLock.lockForRead();
+    QReadLocker readLocker(&d->trainingLock);
 
     const QMultiMap<QString, QString> map          = identity.attributesMap();
     QMultiMap<QString, QString>::const_iterator it = map.constFind(attribute);
@@ -603,12 +561,9 @@ bool IdentityProvider::identityContains(const Identity& identity,
     {
         if (it.value() == value)
         {
-            d->trainingLock.unlock();
             return true;
         }
     }
-
-    d->trainingLock.unlock();
 
     return false;
 }
@@ -616,20 +571,15 @@ bool IdentityProvider::identityContains(const Identity& identity,
 Identity IdentityProvider::findByAttribute(const QString& attribute,
                                            const QString& value) const
 {
-    d->trainingLock.lockForRead();
+    QReadLocker readLocker(&d->trainingLock);
 
     for (const Identity& identity : std::as_const(d->identityCache))
     {
         if (identityContains(identity, attribute, value))
         {
-            // cppcheck-suppress useStlAlgorithm
-            d->trainingLock.unlock();
-
             return identity;
         }
     }
-
-    d->trainingLock.unlock();
 
     return Identity();
 }
@@ -642,7 +592,7 @@ Identity IdentityProvider::findByAttributes(const QString& attribute,
 {
     QMultiMap<QString, QString>::const_iterator it = valueMap.find(attribute);
 
-    d->trainingLock.lockForRead();
+    QReadLocker readLocker(&d->trainingLock);
 
     for ( ; (it != valueMap.end()) && (it.key() == attribute) ; ++it)
     {
@@ -650,15 +600,10 @@ Identity IdentityProvider::findByAttributes(const QString& attribute,
         {
             if (identityContains(identity, attribute, it.value()))
             {
-                // cppcheck-suppress useStlAlgorithm
-                d->trainingLock.unlock();
-
                 return identity;
             }
         }
     }
-
-    d->trainingLock.unlock();
 
     return Identity();
 }
