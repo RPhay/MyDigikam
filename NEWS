@@ -28,8 +28,8 @@ BUGFIXES:
 019 ==> 501528 - digiKam 8.6.0 tarball has wrong version and soversion.
 020 ==> 499204 - Crash on Windows 10, can't open.
 021 ==> 501545 - The size of the album list panel cannot be reduced.
-022 ==> 
-023 ==> 
+022 ==> 498213 - Crash when starting with xkbmap de(sundeadkeys) set.
+023 ==> 494288 - digiKam crashes on first interaction.
 024 ==> 
 025 ==> 
 026 ==> 
