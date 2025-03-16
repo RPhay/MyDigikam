@@ -62,7 +62,7 @@ public:
             front_.wait(&mutex_);
         }
 
-        if(queue_.isEmpty())
+        if (queue_.isEmpty())
         {
             throw std::runtime_error("SharedQueue::pop_front(): queue is empty");
         }
