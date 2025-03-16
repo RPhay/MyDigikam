@@ -27,7 +27,7 @@ BUGFIXES:
 018 ==> 407467 - Adjust the size of settings window to elimimnate horizontal scrollbar.
 019 ==> 501528 - digiKam 8.6.0 tarball has wrong version and soversion.
 020 ==> 499204 - Crash on Windows 10, can't open.
-021 ==> 
+021 ==> 501545 - The size of the album list panel cannot be reduced.
 022 ==> 
 023 ==> 
 024 ==> 
