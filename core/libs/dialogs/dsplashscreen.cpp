@@ -76,7 +76,7 @@ DSplashScreen::DSplashScreen()
     if (!QString::fromUtf8(digikam_version_suffix).isEmpty())
     {
         QPainter p(&splash);
-        p.drawPixmap(380, 27, QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-beta.png")));
+        p.drawPixmap(380, 27, QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-beta.webp")));
         p.end();
     }
 

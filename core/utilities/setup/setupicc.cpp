@@ -140,7 +140,7 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
                                                 "disabled</li></ul>"));
 
     DActiveLabel* const lcmsLogoLabel = new DActiveLabel(QUrl(QLatin1String("https://www.littlecms.com")),
-                                                         QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-lcms.png")),
+                                                         QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-lcms.webp")),
                                                          colorPolicy);
     lcmsLogoLabel->setToolTip(i18n("Visit Little CMS project website"));
 

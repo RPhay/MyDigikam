@@ -393,7 +393,7 @@ ResizeTool::ResizeTool(QObject* const parent)
 
     d->cimgLogoLabel        = new DActiveLabel(QUrl(QLatin1String("http://cimg.sourceforge.net")),      // krazy:exclude=insecurenet
                                                QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                                      QLatin1String("digikam/data/logo-cimg.png")), firstPage);
+                                                                      QLatin1String("digikam/data/logo-webp.png")), firstPage);
     d->cimgLogoLabel->setToolTip(i18n("Visit CImg library website"));
 
     d->useGreycstorationBox = new QCheckBox(i18n("Restore photograph (slow)"), firstPage);

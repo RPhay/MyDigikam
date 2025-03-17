@@ -140,7 +140,7 @@ PanoOptimizePage::PanoOptimizePage(PanoManager* const mngr, QWizard* const dlg)
 
     setPageWidget(vbox);
 
-    QPixmap leftPix(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/assistant-hugin.png")));
+    QPixmap leftPix(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/assistant-hugin.webp")));
     setLeftBottomPix(leftPix.scaledToWidth(128, Qt::SmoothTransformation));
 
     connect(d->progressTimer, SIGNAL(timeout()),

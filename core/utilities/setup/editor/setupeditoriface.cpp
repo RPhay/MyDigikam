@@ -169,7 +169,7 @@ SetupEditorIface::SetupEditorIface(QWidget* const parent)
     d->expoPreview             = new QLabel(exposureOptionsGroup);
     d->expoPreviewHisto        = new HistogramWidget(256, 128, exposureOptionsGroup, false, false);
     QImage image(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                        QLatin1String("digikam/data/sample-aix.png")));
+                                        QLatin1String("digikam/data/sample-aix.webp")));
     d->preview                 = DImg(image);
 
     if (!d->preview.isNull())

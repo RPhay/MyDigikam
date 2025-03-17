@@ -44,11 +44,11 @@ NPT_Result DLNAMediaServer::SetupIcons()
 
     if (QApplication::applicationName() == QLatin1String("digikam"))
     {
-        path = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-digikam.png"));
+        path = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-digikam.webp"));
     }
     else
     {
-        path = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("showfoto/data/logo-showfoto.png"));
+        path = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("showfoto/data/logo-showfoto.webp"));
     }
 
     QByteArray icon;

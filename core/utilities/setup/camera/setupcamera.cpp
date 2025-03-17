@@ -280,7 +280,7 @@ SetupCamera::SetupCamera(QWidget* const parent)
 
     QSpacerItem* const spacer           = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding);
     DActiveLabel* const gphotoLogoLabel = new DActiveLabel(QUrl(QLatin1String("http://www.gphoto.org")),        // krazy:exclude=insecurenet
-                                                           QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-gphoto.png")),
+                                                           QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-gphoto.webp")),
                                                            panel);
     gphotoLogoLabel->setToolTip(i18n("Visit Gphoto project website"));
 

@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-file(GLOB _files *.png *.webp)
+file(GLOB _files *.webp)
 
 install(FILES       ${_files}
         DESTINATION ${KDE_INSTALL_FULL_DATADIR}/showfoto/data

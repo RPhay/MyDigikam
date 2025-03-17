@@ -77,7 +77,7 @@ void EffectPreview::setImagesList(const QList<QUrl>& images)
     else
     {
         QImage sample = QImage(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                      QLatin1String("digikam/data/sample-aix.png")));
+                                                      QLatin1String("digikam/data/sample-aix.webp")));
         d->mngr->setImage(sample.scaled(QSize(1024, 768), Qt::KeepAspectRatio));
     }
 }

@@ -88,7 +88,7 @@ void TransitionPreview::setImagesList(const QList<QUrl>& images)
     else
     {
         QImage sample = QImage(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                      QLatin1String("digikam/data/sample-aix.png")));
+                                                      QLatin1String("digikam/data/sample-aix.webp")));
         d->mngr->setInImage(sample);
 
         QImage blank(d->previewSize, QImage::Format_ARGB32);

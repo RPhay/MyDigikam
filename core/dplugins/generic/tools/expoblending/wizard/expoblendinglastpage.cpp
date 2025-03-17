@@ -68,7 +68,7 @@ ExpoBlendingLastPage::ExpoBlendingLastPage(ExpoBlendingManager* const mngr, QWiz
 
     setPageWidget(vbox);
 
-    QPixmap leftPix(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/assistant-enfuse.png")));
+    QPixmap leftPix(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/assistant-enfuse.webp")));
     setLeftBottomPix(leftPix.scaledToWidth(128, Qt::SmoothTransformation));
 }
 

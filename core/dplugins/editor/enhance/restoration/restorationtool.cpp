@@ -117,7 +117,7 @@ RestorationTool::RestorationTool(QObject* const parent)
     d->mainTab->addTab( firstPage, i18n("Preset") );
 
     DActiveLabel* const cimgLogoLabel = new DActiveLabel(QUrl(QLatin1String("http://cimg.sourceforge.net")),    // krazy:exclude=insecurenet
-                                                         QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-cimg.png")));
+                                                         QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-cimg.webp")));
     cimgLogoLabel->setToolTip(i18n("Visit CImg library website"));
 
     QLabel* const typeLabel = new QLabel(i18n("Filtering type:"), firstPage);

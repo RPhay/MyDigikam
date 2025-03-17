@@ -114,7 +114,7 @@ ExpoBlendingIntroPage::ExpoBlendingIntroPage(ExpoBlendingManager* const mngr, QW
 
     setPageWidget(vbox);
 
-    QPixmap leftPix(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/assistant-stack.png")));
+    QPixmap leftPix(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/assistant-stack.webp")));
     setLeftBottomPix(leftPix.scaledToWidth(128, Qt::SmoothTransformation));
 
     connect(d->binariesWidget, SIGNAL(signalBinariesFound(bool)),

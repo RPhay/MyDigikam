@@ -67,13 +67,13 @@ DLogoAction::DLogoAction(QObject* const parent, bool alignOnright)
     {
         setIcon(QIcon::fromTheme(QLatin1String("digikam")));
         d->progressPixmap = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                    QLatin1String("digikam/data/banner-digikam.png")));
+                                    QLatin1String("digikam/data/banner-digikam.webp")));
     }
     else
     {
         setIcon(QIcon::fromTheme(QLatin1String("showfoto")));
         d->progressPixmap = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                    QLatin1String("showfoto/data/banner-showfoto.png")));
+                                    QLatin1String("showfoto/data/banner-showfoto.webp")));
     }
 
     d->alignOnright  = alignOnright;
