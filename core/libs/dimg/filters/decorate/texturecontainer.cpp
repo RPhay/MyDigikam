@@ -126,7 +126,7 @@ QString TextureContainer::getTexturePath(int texture)
         }
     }
 
-    return (QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/") + pattern + QLatin1String(".png")));
+    return (QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/") + pattern + QLatin1String(".webp")));
 }
 
 } // namespace Digikam
