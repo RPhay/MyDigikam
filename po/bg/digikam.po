@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-15 01:57+0000\n"
+"POT-Creation-Date: 2025-03-17 01:53+0000\n"
 "PO-Revision-Date: 2025-01-31 12:48+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1367,7 +1367,7 @@ msgstr "Почистване на базата данни..."
 msgid "Loading albums..."
 msgstr "Зареждане на албуми..."
 
-#: core/app/main/digikamapp.cpp:369
+#: core/app/main/digikamapp.cpp:371
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1379,7 +1379,7 @@ msgstr ""
 "фунционалността \"Управление на цветовете\" ще бъде изключена докато този "
 "приблем бъде разрешен.</p>"
 
-#: core/app/main/digikamapp.cpp:425
+#: core/app/main/digikamapp.cpp:427
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1391,92 +1391,92 @@ msgstr ""
 "правилно. Отидете в настройките на digiKam и проверете наличието на ExifTool "
 "в раздела за метаданни. Съобщение за грешка: %1"
 
-#: core/app/main/digikamapp.cpp:713 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:715 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Няма избран елемент (%1 елемент)"
 msgstr[1] "Не е избран елемент (%1 елементи)"
 
-#: core/app/main/digikamapp.cpp:719
+#: core/app/main/digikamapp.cpp:721
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Няма избран елемент (%1 [%2] елемент)"
 msgstr[1] "Няма избран елемент (%1 [%2] елементи)"
 
-#: core/app/main/digikamapp.cpp:724
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Няма избран елемент (%1 елемент. С групирани елементи: %2)"
 msgstr[1] "Няма избран елемент (%1 елементи. С групирани елементи: %2)"
 
-#: core/app/main/digikamapp.cpp:735
+#: core/app/main/digikamapp.cpp:737
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 избран елемент (%3/%4)"
 msgstr[1] "%1/%2 избрани елемента (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:748
+#: core/app/main/digikamapp.cpp:750
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] избран елемент (%4/%5)"
 msgstr[1] "%1/%2 [%3] избрани елемента (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:756
+#: core/app/main/digikamapp.cpp:758
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "Избран е 1/%2 елемент. Общо с групираните елементи: %3"
 msgstr[1] "%1/%2 избрани елементи. Общо с групираните елементи: %3"
 
-#: core/app/main/digikamapp.cpp:764
+#: core/app/main/digikamapp.cpp:766
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] избран елемент (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] избрани елемента (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:773
+#: core/app/main/digikamapp.cpp:775
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "1/%2 избран елемент. С групирани елементи: %3/%4"
 msgstr[1] "%1/%2 избрани елементи. С групирани елементи: %3/%4"
 
-#: core/app/main/digikamapp.cpp:804
+#: core/app/main/digikamapp.cpp:806
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 от %2)"
 
-#: core/app/main/digikamapp.cpp:818
+#: core/app/main/digikamapp.cpp:820
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 от %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:822
+#: core/app/main/digikamapp.cpp:824
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 от %2. Общо с групираните елементи: %3)"
 
-#: core/app/main/digikamapp.cpp:833
+#: core/app/main/digikamapp.cpp:835
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 скрит елемент"
 msgstr[1] "%1 скрити елемента"
 
-#: core/app/main/digikamapp.cpp:885
+#: core/app/main/digikamapp.cpp:887
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Запис на метаданните във файл"
 msgstr[1] "Запис на метаданните в избраните файлове"
 
-#: core/app/main/digikamapp.cpp:887
+#: core/app/main/digikamapp.cpp:889
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2291,175 +2291,175 @@ msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Зареждане на камерите..."
 
-#: core/app/main/digikamapp_setup.cpp:915
+#: core/app/main/digikamapp_setup.cpp:917
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Излизане от режим на преглед"
 
-#: core/app/main/digikamapp_setup.cpp:920
+#: core/app/main/digikamapp_setup.cpp:922
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Следващо изображение"
 
-#: core/app/main/digikamapp_setup.cpp:926
+#: core/app/main/digikamapp_setup.cpp:928
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Предишна снимка"
 
-#: core/app/main/digikamapp_setup.cpp:932
+#: core/app/main/digikamapp_setup.cpp:934
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Първо изображение"
 
-#: core/app/main/digikamapp_setup.cpp:937
+#: core/app/main/digikamapp_setup.cpp:939
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Последно изображения"
 
-#: core/app/main/digikamapp_setup.cpp:942
+#: core/app/main/digikamapp_setup.cpp:944
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "&Изрязване"
 
-#: core/app/main/digikamapp_setup.cpp:944
+#: core/app/main/digikamapp_setup.cpp:946
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Изрязване на селекцията в клипборда"
 
-#: core/app/main/digikamapp_setup.cpp:963
+#: core/app/main/digikamapp_setup.cpp:965
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Редактиране на заглавията"
 
-#: core/app/main/digikamapp_setup.cpp:968
+#: core/app/main/digikamapp_setup.cpp:970
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Редактиране на коментарите"
 
-#: core/app/main/digikamapp_setup.cpp:973
+#: core/app/main/digikamapp_setup.cpp:975
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Показване на зададените тагове"
 
-#: core/app/main/digikamapp_setup.cpp:982
+#: core/app/main/digikamapp_setup.cpp:984
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Настройка на таговете за ориентацията в Exif"
 
-#: core/app/main/digikamapp_setup.cpp:985
+#: core/app/main/digikamapp_setup.cpp:987
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Нормален"
 
-#: core/app/main/digikamapp_setup.cpp:987
+#: core/app/main/digikamapp_setup.cpp:989
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Обърнато хоризонтално"
 
-#: core/app/main/digikamapp_setup.cpp:989
+#: core/app/main/digikamapp_setup.cpp:991
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Завъртане на обратно"
 
-#: core/app/main/digikamapp_setup.cpp:991
+#: core/app/main/digikamapp_setup.cpp:993
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Обърнато вертикално"
 
-#: core/app/main/digikamapp_setup.cpp:993
+#: core/app/main/digikamapp_setup.cpp:995
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Завъртяно надясно / Обърнато хоризонтално"
 
-#: core/app/main/digikamapp_setup.cpp:995
+#: core/app/main/digikamapp_setup.cpp:997
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Завъртяно надясно"
 
-#: core/app/main/digikamapp_setup.cpp:997
+#: core/app/main/digikamapp_setup.cpp:999
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Завъртяно надясно / Обърнато вертикално"
 
-#: core/app/main/digikamapp_setup.cpp:999
+#: core/app/main/digikamapp_setup.cpp:1001
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Завъртяно наляво"
 
-#: core/app/main/digikamapp_setup.cpp:1060
+#: core/app/main/digikamapp_setup.cpp:1062
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Завъртане"
 
-#: core/app/main/digikamapp_setup.cpp:1064
+#: core/app/main/digikamapp_setup.cpp:1066
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Наляво"
 
-#: core/app/main/digikamapp_setup.cpp:1071
+#: core/app/main/digikamapp_setup.cpp:1073
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Надясно"
 
-#: core/app/main/digikamapp_setup.cpp:1081
+#: core/app/main/digikamapp_setup.cpp:1083
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Обръщане"
 
-#: core/app/main/digikamapp_setup.cpp:1085
+#: core/app/main/digikamapp_setup.cpp:1087
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Хоризонтално"
 
-#: core/app/main/digikamapp_setup.cpp:1092
+#: core/app/main/digikamapp_setup.cpp:1094
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Вертикално"
 
-#: core/app/main/digikamapp_setup.cpp:1102
+#: core/app/main/digikamapp_setup.cpp:1104
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Автоматично завъртване според данните от Exif"
 
-#: core/app/main/digikamapp_setup.cpp:1113
+#: core/app/main/digikamapp_setup.cpp:1115
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Зареждане на изгледи..."
 
-#: core/app/main/digikamapp_setup.cpp:1116
+#: core/app/main/digikamapp_setup.cpp:1118
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Теми"
 
-#: core/app/main/digikamapp_setup.cpp:1128
+#: core/app/main/digikamapp_setup.cpp:1134
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -35082,7 +35082,7 @@ msgstr "Търсене в"
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
 #, fuzzy, kde-format
 #| msgid "Workflow"
-msgctxt "@label Face Worflow"
+msgctxt "@label short translated text about the Face Worflow."
 msgid "Workflow:"
 msgstr "Работен процес"
 
@@ -35138,8 +35138,10 @@ msgstr ""
 "изображения нови лица.</p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
-#, kde-format
-msgctxt "@label Face Detection Accuracy"
+#, fuzzy, kde-format
+#| msgctxt "@label Face Detection Accuracy"
+#| msgid "Accuracy:"
+msgctxt "@label short translated text about the Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Точност:"
 
@@ -35156,8 +35158,10 @@ msgstr ""
 "бъдат разпознавани лицата, но ще бъдат открити по-малко лица."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:140
-#, kde-format
-msgctxt "@label face size for detection"
+#, fuzzy, kde-format
+#| msgctxt "@label face size for detection"
+#| msgid "Face size:"
+msgctxt "@label with a short translated text about the face size for detection"
 msgid "Face size:"
 msgstr "Размер на лицето:"
 
@@ -35230,8 +35234,10 @@ msgid "Face Detection Settings"
 msgstr "Настройки на откриване на лица"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
-#, kde-format
-msgctxt "@label Face Recognition Accuracy"
+#, fuzzy, kde-format
+#| msgctxt "@label Face Detection Accuracy"
+#| msgid "Accuracy:"
+msgctxt "@label short translated text about the Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Точност:"
 
@@ -35251,16 +35257,17 @@ msgstr ""
 " (разпознават се само лица, които са много сходни с предварително маркирани "
 "лица)."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:194
-#: core/libs/imgqsort/imagequalitywidget.cpp:159
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
-msgctxt "@option:check"
+#: core/libs/facesengine/widgets/facescanwidget.cpp:195
+#: core/libs/imgqsort/imagequalitywidget.cpp:163
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Work on all processor cores"
+msgctxt "@option:check with a short translated text"
 msgid "Work on all processor cores"
 msgstr "Работи на всички процесорни ядра"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:196
+#: core/libs/facesengine/widgets/facescanwidget.cpp:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35272,14 +35279,14 @@ msgstr ""
 "Можете да изберете дали желаете да използвате всички процесорни ядра\n"
 "на вашата система или да се изпълнява във фонов режим само на едно ядро."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:200
+#: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, kde-format
 msgid "Face Recognition Settings"
 msgstr "Настройки на разпознаване на лица"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:211
-#: core/libs/imgqsort/imagequalitywidget.cpp:180
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
+#: core/libs/facesengine/widgets/facescanwidget.cpp:212
+#: core/libs/imgqsort/imagequalitywidget.cpp:184
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:264
 #, kde-format
 msgctxt "@title:tab"
@@ -35811,7 +35818,7 @@ msgstr "естетическо качество на изображението"
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
-msgctxt "@label: image quality scan mode"
+msgctxt "@label: short translated text about the image quality scan mode"
 msgid "Scan Mode:"
 msgstr "Режим на сканиране: "
 
@@ -35845,14 +35852,14 @@ msgstr ""
 "тагове.</p><p><b>Сканиране само на неприсвоени</b>: сканиране само на "
 "елементите без присвоени автоматични тагове. </p>"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:94
+#: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, fuzzy, kde-format
 #| msgid "Assign Tags to &Selected Items"
-msgctxt "@option:check"
+msgctxt "@option:check with a short translated text"
 msgid "Assign Low Quality to Rejected Label"
 msgstr "&Поставяне тагове на избраните записи"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:95
+#: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -35866,13 +35873,14 @@ msgstr ""
 "Изображенията с ниско качество, открити чрез анализ на размазване, шум и "
 "компресия, ще бъдат присвоени на етикета \"Отхвърлено\"."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:108
-#, kde-format
-msgctxt "@option:check"
+#: core/libs/imgqsort/imagequalitywidget.cpp:110
+#, fuzzy, kde-format
+#| msgid "Assign Tags to &Selected Items"
+msgctxt "@option:check with a short translated text"
 msgid "Assign Medium Quality to Pending Label"
-msgstr ""
+msgstr "&Поставяне тагове на избраните записи"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:109
+#: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -35886,13 +35894,14 @@ msgstr ""
 "Изображенията със средно качество, открити чрез анализ на размазване, шум и "
 "компресия, ще бъдат присвоени на етикета Pending (Очакващи)."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:122
-#, kde-format
-msgctxt "@option:check"
+#: core/libs/imgqsort/imagequalitywidget.cpp:125
+#, fuzzy, kde-format
+#| msgid "Assign Tags to &Selected Items"
+msgctxt "@option:check with a short translated text"
 msgid "Assign High Quality to Accepted Label"
-msgstr ""
+msgstr "&Поставяне тагове на избраните записи"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:123
+#: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -35906,22 +35915,22 @@ msgstr ""
 "Изображенията с високо качество, открити чрез размазване, шум и анализ на "
 "компресията, ще бъдат назначени на етикет \"Приети\"."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:134
+#: core/libs/imgqsort/imagequalitywidget.cpp:137
 #, fuzzy, kde-format
 #| msgid "Quality:"
-msgctxt "@label"
+msgctxt "@label with a short translated text"
 msgid "Quality Engine:"
 msgstr "Качество:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:139
+#: core/libs/imgqsort/imagequalitywidget.cpp:143
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Detect Aesthetic Image using Deep Learning"
-msgctxt "@option:radio"
+msgctxt "@option:radio with a short translated text"
 msgid "Detect Aesthetic Contents"
 msgstr "Откриване на естетическо изображение с помощта на Deep Learning"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:141
+#: core/libs/imgqsort/imagequalitywidget.cpp:144
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -35937,15 +35946,15 @@ msgstr ""
 "Естетичният двигател за откриване използва модел на дълбоко обучение, за да "
 "класифицира изображенията"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:146
+#: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Detect Quality Using Basic Factors"
-msgctxt "@option:radio"
+msgctxt "@option:radio with a short translated text"
 msgid "Detect by Basic Factors"
 msgstr "Откриване на качеството с помощта на основни фактори"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:148
+#: core/libs/imgqsort/imagequalitywidget.cpp:151
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -35960,7 +35969,7 @@ msgstr ""
 "Открива дали изображението е саботирано чрез четири основни фактора "
 "(размазване, шум, експозиция и компресия)."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:161
+#: core/libs/imgqsort/imagequalitywidget.cpp:165
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -35977,25 +35986,29 @@ msgstr ""
 "Можете да изберете дали желаете да използвате всички процесорни ядра\n"
 "на вашата система или да се изпълнява във фонов режим само на едно ядро."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:187
-#, kde-format
-msgctxt "@label"
+#: core/libs/imgqsort/imagequalitywidget.cpp:192
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Rejected threshold:"
+msgctxt "@label with a short translated text"
 msgid "Rejected threshold:"
 msgstr "Праг за Отказани:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:193
+#: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr "Праг, под който на всички снимки се присвоява етикет за отхвърлени"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:195
-#, kde-format
-msgctxt "@label"
+#: core/libs/imgqsort/imagequalitywidget.cpp:201
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Pending threshold:"
+msgctxt "@label with a short translated text"
 msgid "Pending threshold:"
 msgstr "Праг за Изчакващи:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:201
+#: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
@@ -36003,94 +36016,106 @@ msgstr ""
 "Праг на качеството, под което всички снимки ще бъдат означени с етикет "
 "\"Изискващо обработка\""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:203
-#, kde-format
-msgctxt "@label"
+#: core/libs/imgqsort/imagequalitywidget.cpp:210
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Accepted threshold:"
+msgctxt "@label with a short translated text"
 msgid "Accepted threshold:"
 msgstr "Допустим  праг:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:209
+#: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr "Праг, над който на всички снимки се присвоява етикет Accepted Label"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:211
-#, kde-format
-msgctxt "@option:check"
+#: core/libs/imgqsort/imagequalitywidget.cpp:219
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Detect Blur"
+msgctxt "@option:check with a short translated text"
 msgid "Detect Blur"
 msgstr "Откриване на замъгляване"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:212
+#: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr ""
 "Открийте количеството размазване в изображенията, които са му предадени"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:214
-#: core/libs/imgqsort/imagequalitywidget.cpp:224
+#: core/libs/imgqsort/imagequalitywidget.cpp:223
 #: core/libs/imgqsort/imagequalitywidget.cpp:234
-#, kde-format
-msgctxt "@label"
+#: core/libs/imgqsort/imagequalitywidget.cpp:246
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Weight:"
+msgctxt "@label with a short translated text"
 msgid "Weight:"
 msgstr "Ширина:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:219
+#: core/libs/imgqsort/imagequalitywidget.cpp:228
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Тежест, която да се присвои на алгоритъма за размазване"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:221
-#, kde-format
-msgctxt "@option:check"
+#: core/libs/imgqsort/imagequalitywidget.cpp:230
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Detect Noise"
+msgctxt "@option:check with a short translated text"
 msgid "Detect Noise"
 msgstr "Откриване на шум"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:222
+#: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Откриване на количеството шум в предадените му изображения"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:229
+#: core/libs/imgqsort/imagequalitywidget.cpp:239
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Тежест, която да се присвои на алгоритъма за шум"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:231
-#, kde-format
-msgctxt "@option:check"
+#: core/libs/imgqsort/imagequalitywidget.cpp:242
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Detect Compression"
+msgctxt "@option:check with a short translated text"
 msgid "Detect Compression"
 msgstr "Откриване на компресия"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:232
+#: core/libs/imgqsort/imagequalitywidget.cpp:243
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Открийте размера на компресията в предадените към него изображения"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:239
+#: core/libs/imgqsort/imagequalitywidget.cpp:251
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Тежест за определяне на алгоритъма за компресиране"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:241
-#, kde-format
-msgctxt "@option:check"
+#: core/libs/imgqsort/imagequalitywidget.cpp:254
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Detect Under and Over Exposure"
+msgctxt "@option:check with a short translated text"
 msgid "Detect Under and Over Exposure"
 msgstr "Откриване на недостатъчна и прекомерна експозиция"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:242
+#: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Откриване дали изображенията са недоекспонирани или преекспонирани"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:272
+#: core/libs/imgqsort/imagequalitywidget.cpp:285
 #, kde-format
 msgctxt "@title:tab"
 msgid "Basic Factors"
@@ -40136,14 +40161,14 @@ msgstr ""
 "ще генерира описателни етикети за съдържанието на изображението и ще "
 "съхранява резултатите в базата данни.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:106
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
-msgctxt "@label: autotags scanning mode"
+msgctxt "@label with a short translated text about autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Режим на сканиране: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "In All"
@@ -40151,14 +40176,14 @@ msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "Във всички"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #, fuzzy, kde-format
 #| msgid "Scan non-assigned only"
 msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Сканиране само на неприсвоени"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -40173,20 +40198,21 @@ msgstr ""
 "тагове.</p><p><b>Сканиране само на неприсвоени</b>: сканиране само на "
 "елементите без присвоени автоматични тагове. </p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
 #, fuzzy, kde-format
 #| msgid "Auto-tagging tag mode: "
+msgctxt "@label with a short translated text "
 msgid "Auto-Tagging Mode:"
 msgstr "Режим на етикети за автоматично маркиране:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, fuzzy, kde-format
 #| msgid "Replace existing autotags"
 msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Замяна на съществуващите автоматични тагове"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
@@ -40194,7 +40220,7 @@ msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "Обновяване"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -40212,26 +40238,29 @@ msgstr ""
 "</p><p><b>Актуализиране на автоматични тагове</b>: добавете всички намерени "
 "нови автоматични тагове към съществуващи тагове.</p>"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, fuzzy, kde-format
 #| msgid "Selection model: "
-msgctxt "@label: deep learning model used to detect objects to auto-tag"
+msgctxt ""
+"@label with a short translated text about deep learning model used to detect "
+"objects to auto-tag"
 msgid "Detection Model:"
 msgstr "Модел за селекция: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, fuzzy, kde-format
 #| msgid "No detail available"
 msgid "No models available"
 msgstr "Няма налични подробности"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:145
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, fuzzy, kde-format
 #| msgid "Object detection accuracy: "
+msgctxt "@label with a short translated text"
 msgid "Detection Accuracy:"
 msgstr "Точност на откриване на обект:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:150
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40243,7 +40272,7 @@ msgstr ""
 "стойността, толкова по-точни ще бъдат\n"
 "обектите да бъдат разпознати, но ще бъдат разпознати по-малко обекти.\n"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40255,13 +40284,15 @@ msgstr ""
 "Можете да изберете дали искате да използвате всички процесорни ядра\n"
 "на вашата система или да работи във фонов режим само на едно ядро."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:178
-#, kde-format
-msgctxt "@label"
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Translate Tags to:"
+msgctxt "@label with a short translated text"
 msgid "Translate Tags to:"
 msgstr "Превод на етикетите на:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:180
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:185
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
@@ -62368,6 +62399,12 @@ msgstr ""
 "Включете тази опция, за да запазвате текущите модификации в нова версия на "
 "файла"
 
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
+#, kde-format
+msgctxt "@option:check"
+msgid "Work on all processor cores"
+msgstr "Работи на всички процесорни ядра"
+
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
 #, kde-format
 msgid ""
@@ -68399,6 +68436,16 @@ msgstr "Елементи на албуми"
 #, kde-format
 msgid "Import Items"
 msgstr "Импортиране на елементи"
+
+#~ msgctxt "@label Face Recognition Accuracy"
+#~ msgid "Accuracy:"
+#~ msgstr "Точност:"
+
+#, fuzzy
+#~| msgid "Scan Mode: "
+#~ msgctxt "@label: autotags scanning mode"
+#~ msgid "Scan Mode:"
+#~ msgstr "Режим на сканиране: "
 
 #~ msgctxt "@action:inmenu Pluralized"
 #~ msgid "Image Quality Sort"
