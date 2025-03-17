@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-15 01:57+0000\n"
+"POT-Creation-Date: 2025-03-17 01:53+0000\n"
 "PO-Revision-Date: 2024-10-03 22:47+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -1365,7 +1365,7 @@ msgstr "Databáza skratiek"
 msgid "Loading albums..."
 msgstr "Načítavam albumy..."
 
-#: core/app/main/digikamapp.cpp:369
+#: core/app/main/digikamapp.cpp:371
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1376,7 +1376,7 @@ msgstr ""
 "nastaviť, vyberte „Áno“, inak vyberte „Nie“. V tom prípade bude, „Správa "
 "farieb“ vypnutá až kým tento problém nevyriešite.</p>"
 
-#: core/app/main/digikamapp.cpp:425
+#: core/app/main/digikamapp.cpp:427
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1385,7 +1385,7 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:713 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:715 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1393,7 +1393,7 @@ msgstr[0] "Nie je vybraná žiadna položka (%1 položka)"
 msgstr[1] "Nie je vybraná žiadna položka (%1 položky)"
 msgstr[2] "Nie je vybraná žiadna položka (%1 položiek)"
 
-#: core/app/main/digikamapp.cpp:719
+#: core/app/main/digikamapp.cpp:721
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1401,7 +1401,7 @@ msgstr[0] "Nie je vybraná žiadna položka (%1 [%2] položka)"
 msgstr[1] "Nie je vybraná žiadna položka (%1 [%2] položky)"
 msgstr[2] "Nie je vybraná žiadna položka (%1 [%2] položiek)"
 
-#: core/app/main/digikamapp.cpp:724
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1412,7 +1412,7 @@ msgstr[1] ""
 msgstr[2] ""
 "Nie je vybraná žiadna položka (%1 položiek. So zoskupenými položkami: %2)"
 
-#: core/app/main/digikamapp.cpp:735
+#: core/app/main/digikamapp.cpp:737
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected (%3/%4)"
 msgid "1/%2 item selected (%3/%4)"
@@ -1421,7 +1421,7 @@ msgstr[0] "%1/%2 vybraných položiek (%3/%4)"
 msgstr[1] "%1/%2 vybraných položiek (%3/%4)"
 msgstr[2] "%1/%2 vybraných položiek (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:748
+#: core/app/main/digikamapp.cpp:750
 #, fuzzy, kde-format
 #| msgid "%1/%2 [%3] items selected (%4/%5)"
 msgid "1/%2 [%3] item selected (%4/%5)"
@@ -1430,7 +1430,7 @@ msgstr[0] "%1/%2 [%3] vybraných položiek (%4/%5)"
 msgstr[1] "%1/%2 [%3] vybraných položiek (%4/%5)"
 msgstr[2] "%1/%2 [%3] vybraných položiek (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:756
+#: core/app/main/digikamapp.cpp:758
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected. Total with grouped items: %3"
 msgid "1/%2 item selected. Total with grouped items: %3"
@@ -1439,7 +1439,7 @@ msgstr[0] "%1/%2 vybraných položiek. Celkom vrátane zoskupených položiek: %
 msgstr[1] "%1/%2 vybraných položiek. Celkom vrátane zoskupených položiek: %3"
 msgstr[2] "%1/%2 vybraných položiek. Celkom vrátane zoskupených položiek: %3"
 
-#: core/app/main/digikamapp.cpp:764
+#: core/app/main/digikamapp.cpp:766
 #, fuzzy, kde-format
 #| msgid "%1/%2 [%3/%4] items selected (%5/%6)"
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
@@ -1448,7 +1448,7 @@ msgstr[0] "%1/%2 [%3/%4] vybraných položiek (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] vybraných položiek (%5/%6)"
 msgstr[2] "%1/%2 [%3/%4] vybraných položiek (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:773
+#: core/app/main/digikamapp.cpp:775
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected. With grouped items: %3/%4"
 msgid "1/%2 item selected. With grouped items: %3/%4"
@@ -1457,22 +1457,22 @@ msgstr[0] "%1/%2 vybraných položiek. Vrátane zoskupených položiek: %3/%4"
 msgstr[1] "%1/%2 vybraných položiek. Vrátane zoskupených položiek: %3/%4"
 msgstr[2] "%1/%2 vybraných položiek. Vrátane zoskupených položiek: %3/%4"
 
-#: core/app/main/digikamapp.cpp:804
+#: core/app/main/digikamapp.cpp:806
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 z %2)"
 
-#: core/app/main/digikamapp.cpp:818
+#: core/app/main/digikamapp.cpp:820
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 z %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:822
+#: core/app/main/digikamapp.cpp:824
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 z %2. Celkom vrátane zoskupených položiek: %3)"
 
-#: core/app/main/digikamapp.cpp:833
+#: core/app/main/digikamapp.cpp:835
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
@@ -1480,7 +1480,7 @@ msgstr[0] "1 položka skrytá"
 msgstr[1] "%1 položky skryté"
 msgstr[2] "%1 položiek skrytých"
 
-#: core/app/main/digikamapp.cpp:885
+#: core/app/main/digikamapp.cpp:887
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1488,7 +1488,7 @@ msgstr[0] "Zapísať metadáta do obrázka"
 msgstr[1] "Zapísať metadáta do vybraných obrázkov"
 msgstr[2] "Zapísať metadáta do vybraných obrázkov"
 
-#: core/app/main/digikamapp.cpp:887
+#: core/app/main/digikamapp.cpp:889
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2293,175 +2293,175 @@ msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Načítavajú sa fotoaparáty..."
 
-#: core/app/main/digikamapp_setup.cpp:915
+#: core/app/main/digikamapp_setup.cpp:917
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Ukončiť režim náhľadu"
 
-#: core/app/main/digikamapp_setup.cpp:920
+#: core/app/main/digikamapp_setup.cpp:922
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Ďalší obrázok"
 
-#: core/app/main/digikamapp_setup.cpp:926
+#: core/app/main/digikamapp_setup.cpp:928
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Predchádzajúci obrázok"
 
-#: core/app/main/digikamapp_setup.cpp:932
+#: core/app/main/digikamapp_setup.cpp:934
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Prvý obrázok"
 
-#: core/app/main/digikamapp_setup.cpp:937
+#: core/app/main/digikamapp_setup.cpp:939
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Posledný obrázok"
 
-#: core/app/main/digikamapp_setup.cpp:942
+#: core/app/main/digikamapp_setup.cpp:944
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Vys&trihnúť"
 
-#: core/app/main/digikamapp_setup.cpp:944
+#: core/app/main/digikamapp_setup.cpp:946
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Vystrihnúť výber do schránky"
 
-#: core/app/main/digikamapp_setup.cpp:963
+#: core/app/main/digikamapp_setup.cpp:965
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Upraviť názvy"
 
-#: core/app/main/digikamapp_setup.cpp:968
+#: core/app/main/digikamapp_setup.cpp:970
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Upraviť komentáre"
 
-#: core/app/main/digikamapp_setup.cpp:973
+#: core/app/main/digikamapp_setup.cpp:975
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Zobraziť priradené štítky"
 
-#: core/app/main/digikamapp_setup.cpp:982
+#: core/app/main/digikamapp_setup.cpp:984
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Opraviť EXIF štítok orientácie"
 
-#: core/app/main/digikamapp_setup.cpp:985
+#: core/app/main/digikamapp_setup.cpp:987
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normálne"
 
-#: core/app/main/digikamapp_setup.cpp:987
+#: core/app/main/digikamapp_setup.cpp:989
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Prevrátené vodorovne"
 
-#: core/app/main/digikamapp_setup.cpp:989
+#: core/app/main/digikamapp_setup.cpp:991
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Otočené dolu hlavou"
 
-#: core/app/main/digikamapp_setup.cpp:991
+#: core/app/main/digikamapp_setup.cpp:993
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Prevrátené zvisle"
 
-#: core/app/main/digikamapp_setup.cpp:993
+#: core/app/main/digikamapp_setup.cpp:995
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Otočené vpravo / Prevrátené vodorovne"
 
-#: core/app/main/digikamapp_setup.cpp:995
+#: core/app/main/digikamapp_setup.cpp:997
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Otočené vpravo"
 
-#: core/app/main/digikamapp_setup.cpp:997
+#: core/app/main/digikamapp_setup.cpp:999
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Otočené vpravo / Prevrátené zvislo"
 
-#: core/app/main/digikamapp_setup.cpp:999
+#: core/app/main/digikamapp_setup.cpp:1001
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Otočené vľavo"
 
-#: core/app/main/digikamapp_setup.cpp:1060
+#: core/app/main/digikamapp_setup.cpp:1062
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Otočiť"
 
-#: core/app/main/digikamapp_setup.cpp:1064
+#: core/app/main/digikamapp_setup.cpp:1066
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Vľavo"
 
-#: core/app/main/digikamapp_setup.cpp:1071
+#: core/app/main/digikamapp_setup.cpp:1073
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Vpravo"
 
-#: core/app/main/digikamapp_setup.cpp:1081
+#: core/app/main/digikamapp_setup.cpp:1083
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Prevrátiť"
 
-#: core/app/main/digikamapp_setup.cpp:1085
+#: core/app/main/digikamapp_setup.cpp:1087
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Horizontálne"
 
-#: core/app/main/digikamapp_setup.cpp:1092
+#: core/app/main/digikamapp_setup.cpp:1094
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Vertikálne"
 
-#: core/app/main/digikamapp_setup.cpp:1102
+#: core/app/main/digikamapp_setup.cpp:1104
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Automaticky otočiť/prevrátiť pomocou Exif informácie"
 
-#: core/app/main/digikamapp_setup.cpp:1113
+#: core/app/main/digikamapp_setup.cpp:1115
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Načítam motívy..."
 
-#: core/app/main/digikamapp_setup.cpp:1116
+#: core/app/main/digikamapp_setup.cpp:1118
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Motívy"
 
-#: core/app/main/digikamapp_setup.cpp:1128
+#: core/app/main/digikamapp_setup.cpp:1134
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -34757,7 +34757,7 @@ msgstr "Hľadať v"
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
 #, fuzzy, kde-format
 #| msgid "Workflow"
-msgctxt "@label Face Worflow"
+msgctxt "@label short translated text about the Face Worflow."
 msgid "Workflow:"
 msgstr "Workflow"
 
@@ -34804,7 +34804,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
 #, fuzzy, kde-format
 #| msgid "Accuracy"
-msgctxt "@label Face Detection Accuracy"
+msgctxt "@label short translated text about the Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Presnosť"
 
@@ -34820,7 +34820,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:140
 #, fuzzy, kde-format
 #| msgid "File size"
-msgctxt "@label face size for detection"
+msgctxt "@label with a short translated text about the face size for detection"
 msgid "Face size:"
 msgstr "Veľkosť súboru"
 
@@ -34888,7 +34888,7 @@ msgstr "Detekcia tváre"
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
 #, fuzzy, kde-format
 #| msgid "Accuracy"
-msgctxt "@label Face Recognition Accuracy"
+msgctxt "@label short translated text about the Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Presnosť"
 
@@ -34902,16 +34902,17 @@ msgid ""
 "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgstr ""
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:194
-#: core/libs/imgqsort/imagequalitywidget.cpp:159
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:154
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
-msgctxt "@option:check"
+#: core/libs/facesengine/widgets/facescanwidget.cpp:195
+#: core/libs/imgqsort/imagequalitywidget.cpp:163
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Work on all processor cores"
+msgctxt "@option:check with a short translated text"
 msgid "Work on all processor cores"
 msgstr "Pracovať na všetkých jadrách procesora"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:196
+#: core/libs/facesengine/widgets/facescanwidget.cpp:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34923,14 +34924,14 @@ msgstr ""
 "či si prajete použiť všetky procesorové jadrá vášho systému\n"
 "alebo pracovať iba s jedným jadrom na pozadí."
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:200
+#: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, fuzzy, kde-format
 msgid "Face Recognition Settings"
 msgstr "Detekcia horného okraja"
 
-#: core/libs/facesengine/widgets/facescanwidget.cpp:211
-#: core/libs/imgqsort/imagequalitywidget.cpp:180
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:173
+#: core/libs/facesengine/widgets/facescanwidget.cpp:212
+#: core/libs/imgqsort/imagequalitywidget.cpp:184
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:264
 #, kde-format
 msgctxt "@title:tab"
@@ -35445,7 +35446,7 @@ msgstr "Kvalita obrázka:"
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
-msgctxt "@label: image quality scan mode"
+msgctxt "@label: short translated text about the image quality scan mode"
 msgid "Scan Mode:"
 msgstr "Režim prehľadávania: "
 
@@ -35471,14 +35472,14 @@ msgid ""
 "b>: scan only the items with no assigned auto-pick labels.</p>"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:94
+#: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, fuzzy, kde-format
 #| msgid "Assign Tags to &Selected Items"
-msgctxt "@option:check"
+msgctxt "@option:check with a short translated text"
 msgid "Assign Low Quality to Rejected Label"
 msgstr "Prir&adiť štítky vybraným položkám"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:95
+#: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, fuzzy, kde-format
 #| msgid ""
 #| "Low quality images detected by blur, noise, and compression analysis will "
@@ -35491,13 +35492,14 @@ msgstr ""
 "Obrázky vyhodnotené na základe analýzy rozmazania, šumu a kompresie ako "
 "nekvalitné budú označené menovkou 'Odmietnutý'."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:108
-#, kde-format
-msgctxt "@option:check"
+#: core/libs/imgqsort/imagequalitywidget.cpp:110
+#, fuzzy, kde-format
+#| msgid "Assign Tags to &Selected Items"
+msgctxt "@option:check with a short translated text"
 msgid "Assign Medium Quality to Pending Label"
-msgstr ""
+msgstr "Prir&adiť štítky vybraným položkám"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:109
+#: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, fuzzy, kde-format
 #| msgid ""
 #| "Medium quality images detected by blur, noise, and compression analysis "
@@ -35510,13 +35512,14 @@ msgstr ""
 "Obrázky vyhodnotené na základe analýzy rozmazania, šumu a kompresie ako "
 "obrázky s priemernou kvalitu budú označené menovkou 'Čakajúci'."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:122
-#, kde-format
-msgctxt "@option:check"
+#: core/libs/imgqsort/imagequalitywidget.cpp:125
+#, fuzzy, kde-format
+#| msgid "Assign Tags to &Selected Items"
+msgctxt "@option:check with a short translated text"
 msgid "Assign High Quality to Accepted Label"
-msgstr ""
+msgstr "Prir&adiť štítky vybraným položkám"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:123
+#: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, fuzzy, kde-format
 #| msgid ""
 #| "High quality images detected by blur, noise, and compression analysis "
@@ -35529,21 +35532,21 @@ msgstr ""
 "Obrázky vyhodnotené na základe analýzy rozmazania, šumu a kompresie ako "
 "kvalitne budu označené menovkou 'Akceptovaný'."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:134
+#: core/libs/imgqsort/imagequalitywidget.cpp:137
 #, fuzzy, kde-format
 #| msgid "Quality:"
-msgctxt "@label"
+msgctxt "@label with a short translated text"
 msgid "Quality Engine:"
 msgstr "Kvalita:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:139
+#: core/libs/imgqsort/imagequalitywidget.cpp:143
 #, fuzzy, kde-format
 #| msgid "Reset contents"
-msgctxt "@option:radio"
+msgctxt "@option:radio with a short translated text"
 msgid "Detect Aesthetic Contents"
 msgstr "Vynulovať obsah"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:141
+#: core/libs/imgqsort/imagequalitywidget.cpp:144
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35552,14 +35555,14 @@ msgid ""
 "images."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:146
+#: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, fuzzy, kde-format
 #| msgid "Separator:"
-msgctxt "@option:radio"
+msgctxt "@option:radio with a short translated text"
 msgid "Detect by Basic Factors"
 msgstr "Oddeľovač:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:148
+#: core/libs/imgqsort/imagequalitywidget.cpp:151
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35568,7 +35571,7 @@ msgid ""
 "See the relevant settings from the next <b>Basic Factors</b> tab."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:161
+#: core/libs/imgqsort/imagequalitywidget.cpp:165
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -35585,134 +35588,134 @@ msgstr ""
 "či si prajete použiť všetky procesorové jadrá vášho systému\n"
 "alebo pracovať iba s jedným jadrom na pozadí."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:187
+#: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, fuzzy, kde-format
 #| msgid "Rejected threshold:"
-msgctxt "@label"
+msgctxt "@label with a short translated text"
 msgid "Rejected threshold:"
 msgstr "Prah odmietnutých:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:193
+#: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, fuzzy, kde-format
 #| msgid "Threshold below which all pictures are assigned Rejected Label"
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr "Prahová hodnota, pod ktorou budú obrázky označené ako odmietnuté"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:195
+#: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, fuzzy, kde-format
 #| msgid "Pending threshold:"
-msgctxt "@label"
+msgctxt "@label with a short translated text"
 msgid "Pending threshold:"
 msgstr "Prah čakajúcich:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:201
+#: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, fuzzy, kde-format
 #| msgid "Threshold below which all pictures are assigned Pending Label"
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr "Prahová hodnota, pod ktorou budú obrázky označené ako čakajúce"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:203
+#: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, fuzzy, kde-format
 #| msgid "Accepted threshold:"
-msgctxt "@label"
+msgctxt "@label with a short translated text"
 msgid "Accepted threshold:"
 msgstr "Prah akceptovaných:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:209
+#: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, fuzzy, kde-format
 #| msgid "Threshold above which all pictures are assigned Accepted Label"
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr "Prahová hodnota, nad ktorou budú obrázky označené ako akceptované"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:211
+#: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, fuzzy, kde-format
 #| msgid "Detect Blur"
-msgctxt "@option:check"
+msgctxt "@option:check with a short translated text"
 msgid "Detect Blur"
 msgstr "Detegovať rozmazanie"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:212
+#: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, fuzzy, kde-format
 #| msgid "Detect the amount of blur in the images passed to it"
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "Detegovať množstvo rozmazania v spracovávaných obrázkoch"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:214
-#: core/libs/imgqsort/imagequalitywidget.cpp:224
+#: core/libs/imgqsort/imagequalitywidget.cpp:223
 #: core/libs/imgqsort/imagequalitywidget.cpp:234
+#: core/libs/imgqsort/imagequalitywidget.cpp:246
 #, fuzzy, kde-format
 #| msgid "Height:"
-msgctxt "@label"
+msgctxt "@label with a short translated text"
 msgid "Weight:"
 msgstr "Výška:"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:219
+#: core/libs/imgqsort/imagequalitywidget.cpp:228
 #, fuzzy, kde-format
 #| msgid "Weight to assign to Blur Algorithm"
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Váha priradená kritériu rozmazania"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:221
+#: core/libs/imgqsort/imagequalitywidget.cpp:230
 #, fuzzy, kde-format
 #| msgid "Detect Noise"
-msgctxt "@option:check"
+msgctxt "@option:check with a short translated text"
 msgid "Detect Noise"
 msgstr "Detegovať šum"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:222
+#: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "<p>Tu môžete prispôsobiť farbu pozadia pre oblasť editora obrázkov."
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:229
+#: core/libs/imgqsort/imagequalitywidget.cpp:239
 #, fuzzy, kde-format
 #| msgid "Weight to assign to Noise Algorithm"
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Váha priradená kritériu šum"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:231
+#: core/libs/imgqsort/imagequalitywidget.cpp:242
 #, fuzzy, kde-format
 #| msgid "Detect Compression"
-msgctxt "@option:check"
+msgctxt "@option:check with a short translated text"
 msgid "Detect Compression"
 msgstr "Detegovať kompresiu"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:232
+#: core/libs/imgqsort/imagequalitywidget.cpp:243
 #, fuzzy, kde-format
 #| msgid "Detect the amount of compression in the images passed to it"
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Detegovať množstvo kompresie v spracovávaných obrázkoch"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:239
+#: core/libs/imgqsort/imagequalitywidget.cpp:251
 #, fuzzy, kde-format
 #| msgid "Weight to assign to Compression Algorithm"
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Váha priradená kritériu kompresie"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:241
+#: core/libs/imgqsort/imagequalitywidget.cpp:254
 #, fuzzy, kde-format
 #| msgid "Detect Under and Over Exposure"
-msgctxt "@option:check"
+msgctxt "@option:check with a short translated text"
 msgid "Detect Under and Over Exposure"
 msgstr "Detegovať pre a podexponovanie"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:242
+#: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, fuzzy, kde-format
 #| msgid "Detect if the images are under-exposed or over-exposed"
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Zisťuje, či sú obrázky pre alebo podexponované"
 
-#: core/libs/imgqsort/imagequalitywidget.cpp:272
+#: core/libs/imgqsort/imagequalitywidget.cpp:285
 #, fuzzy, kde-format
 #| msgid "Separator:"
 msgctxt "@title:tab"
@@ -39935,28 +39938,28 @@ msgid ""
 "database.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:106
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
 #, fuzzy, kde-format
 #| msgid "Scan Mode: "
-msgctxt "@label: autotags scanning mode"
+msgctxt "@label with a short translated text about autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Režim prehľadávania: "
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:109
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #, fuzzy, kde-format
 #| msgid "All"
 msgctxt "@item: all items to scan with autotags"
 msgid "All"
 msgstr "Všetky"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #, fuzzy, kde-format
 #| msgid "Scan non-assigned only"
 msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Prehľadať iba nepriradené"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:112
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39964,20 +39967,21 @@ msgid ""
 "scan only the items with no assigned autotags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:115
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
+msgctxt "@label with a short translated text "
 msgid "Auto-Tagging Mode:"
 msgstr "Režim merania:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:118
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, fuzzy, kde-format
 #| msgid "Update only existing timestamps"
 msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
 msgstr "Aktualizovať iba existujúce časové údaje"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:119
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
@@ -39985,7 +39989,7 @@ msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "Aktualizovať"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -39994,27 +39998,30 @@ msgid ""
 "existing auto-tags.</p>"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:125
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Destination Folder:"
-msgctxt "@label: deep learning model used to detect objects to auto-tag"
+msgctxt ""
+"@label with a short translated text about deep learning model used to detect "
+"objects to auto-tag"
 msgid "Detection Model:"
 msgstr "Cieľový priečinok:"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:133
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, fuzzy, kde-format
 msgid "No models available"
 msgstr "Nie je dostupný popis."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:145
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Face Accuracy"
+msgctxt "@label with a short translated text"
 msgid "Detection Accuracy:"
 msgstr "Presnosť rozpoznávania tvárí"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:150
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -40023,7 +40030,7 @@ msgid ""
 "be recognized, but fewer objects will be recognized.\n"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:156
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -40040,14 +40047,14 @@ msgstr ""
 "či si prajete použiť všetky procesorové jadrá vášho systému\n"
 "alebo pracovať iba s jedným jadrom na pozadí."
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:178
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
-msgctxt "@label"
+msgctxt "@label with a short translated text"
 msgid "Translate Tags to:"
 msgstr "Navigovať na %1"
 
-#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:180
+#: core/libs/tags/autoassignment/autotagsscanwidget.cpp:185
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@title:tab"
@@ -63539,6 +63546,12 @@ msgid ""
 "the file"
 msgstr "Uložiť aktuálny výber do nového virtuálneho albumu"
 
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
+#, kde-format
+msgctxt "@option:check"
+msgid "Work on all processor cores"
+msgstr "Pracovať na všetkých jadrách procesora"
+
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
 #, kde-format
 msgid ""
@@ -69533,6 +69546,18 @@ msgstr "Nastavenie albumu spracovaných položiek"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovať položky"
+
+#, fuzzy
+#~| msgid "Accuracy"
+#~ msgctxt "@label Face Recognition Accuracy"
+#~ msgid "Accuracy:"
+#~ msgstr "Presnosť"
+
+#, fuzzy
+#~| msgid "Scan Mode: "
+#~ msgctxt "@label: autotags scanning mode"
+#~ msgid "Scan Mode:"
+#~ msgstr "Režim prehľadávania: "
 
 #~ msgctxt "@action:inmenu Pluralized"
 #~ msgid "Image Quality Sort"
