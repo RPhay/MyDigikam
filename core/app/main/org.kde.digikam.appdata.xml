@@ -702,7 +702,7 @@
       <caption xml:lang="x-test">xxdigiKam Batch Queue Managerxx</caption>
       <caption xml:lang="zh-CN">digiKam 批处理管理器</caption>
       <caption xml:lang="zh-TW">digiKam 批次佇列管理器</caption>
-      <image>https://www.digikam.org/img/content/about/overview_bqm.wepb</image>
+      <image>https://www.digikam.org/img/content/about/overview_bqm.webp</image>
     </screenshot>
     <screenshot type="default">
       <caption>digiKam Image Editor</caption>
@@ -737,7 +737,7 @@
       <caption xml:lang="x-test">xxdigiKam Image Editorxx</caption>
       <caption xml:lang="zh-CN">digiKam 图像编辑器</caption>
       <caption xml:lang="zh-TW">digiKam 影像編輯器</caption>
-      <image>https://www.digikam.org/img/content/about/overview_imageeditor.wepb</image>
+      <image>https://www.digikam.org/img/content/about/overview_imageeditor.webp</image>
     </screenshot>
     <screenshot type="default">
       <caption>digiKam Import From Camera</caption>
@@ -772,7 +772,7 @@
       <caption xml:lang="x-test">xxdigiKam Import From Cameraxx</caption>
       <caption xml:lang="zh-CN">digiKam 导入相机照片</caption>
       <caption xml:lang="zh-TW">digiKam 從相機匯入</caption>
-      <image>https://www.digikam.org/img/content/about/overview_import.wepb</image>
+      <image>https://www.digikam.org/img/content/about/overview_import.webp</image>
     </screenshot>
     <screenshot type="default">
       <caption>digiKam Light Table</caption>
@@ -807,7 +807,7 @@
       <caption xml:lang="x-test">xxdigiKam Light Tablexx</caption>
       <caption xml:lang="zh-CN">digiKam 多图对比工具</caption>
       <caption xml:lang="zh-TW">digiKam 光桌</caption>
-      <image>https://www.digikam.org/img/content/about/overview_lighttable.wepb</image>
+      <image>https://www.digikam.org/img/content/about/overview_lighttable.webp</image>
     </screenshot>
     <screenshot type="default">
       <caption>digiKam Tags View</caption>
@@ -842,7 +842,7 @@
       <caption xml:lang="x-test">xxdigiKam Tags Viewxx</caption>
       <caption xml:lang="zh-CN">digiKam 标签视图</caption>
       <caption xml:lang="zh-TW">digiKam 標籤檢視</caption>
-      <image>https://www.digikam.org/img/content/about/overview_tagsview.wepb</image>
+      <image>https://www.digikam.org/img/content/about/overview_tagsview.webp</image>
     </screenshot>
   </screenshots>
   <releases>
