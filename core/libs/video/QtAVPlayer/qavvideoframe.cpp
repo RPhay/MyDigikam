@@ -241,15 +241,19 @@ public:
     {
     }
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 7, 2)
-    QVideoFrame::MapMode mapMode() const override { return m_mode; }
-
-    quint64 textureHandle(int plane) const override
-#else
 #if QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
     QVideoFrameFormat format() const override { return m_videoFormat; }
 #endif
-    quint64 textureHandle(QRhi*, int plane) const override
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 7, 2)
+    QVideoFrame::MapMode mapMode() const override { return m_mode; }
+    quint64 textureHandle(int plane) const override
+#else
+    #if QT_VERSION < QT_VERSION_CHECK(6, 8, 2)
+        quint64 textureHandle(QRhi *, int plane) const override
+    #else
+        quint64 textureHandle(QRhi &, int plane) override
+    #endif // QT_VERSION < QT_VERSION_CHECK(6, 8, 2)
 #endif // #if QT_VERSION < QT_VERSION_CHECK(6, 7, 2)
     {
         if (m_textures.isNull())
@@ -295,13 +299,23 @@ public:
     void unmap() override { m_mode = QVideoFrame::NotMapped; }
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    std::unique_ptr<QVideoFrameTextures> mapTextures(QRhi *rhi) override
-    {
-        m_rhi = rhi;
-        if (m_textures.isNull())
-            m_textures = m_frame.handle(m_rhi);
-        return nullptr;
-    }
+    #if QT_VERSION < QT_VERSION_CHECK(6, 8, 2)
+        std::unique_ptr<QVideoFrameTextures> mapTextures(QRhi *rhi) override
+        {
+            m_rhi = rhi;
+            if (m_textures.isNull())
+                m_textures = m_frame.handle(m_rhi);
+            return nullptr;
+        }
+    #else
+        QVideoFrameTexturesUPtr mapTextures(QRhi &rhi, QVideoFrameTexturesUPtr &/*oldTextures*/) override
+        {
+            m_rhi = &rhi;
+            if (m_textures.isNull())
+                m_textures = m_frame.handle(m_rhi);
+            return nullptr;
+        }
+    #endif // QT_VERSION < QT_VERSION_CHECK(6, 8, 2)
 
     static QVideoFrameFormat::ColorSpace colorSpace(const AVFrame *frame)
     {
@@ -493,10 +507,10 @@ QAVVideoFrame::operator QVideoFrame() const
     QVideoFrameFormat videoFormat(size(), format);
     
     QRect viewport(
-        frame()->crop_left,
-        frame()->crop_top,
-        frame()->width - frame()->crop_left - frame()->crop_right,
-        frame()->height - frame()->crop_top - frame()->crop_bottom
+        static_cast<int>(frame()->crop_left),
+        static_cast<int>(frame()->crop_top),
+        static_cast<int>(frame()->width - frame()->crop_left - frame()->crop_right),
+        static_cast<int>(frame()->height - frame()->crop_top - frame()->crop_bottom)
     );
     videoFormat.setViewport(viewport);
 #if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)

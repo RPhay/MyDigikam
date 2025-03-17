@@ -1,9 +1,9 @@
-/*********************************************************
- * Copyright (C) 2020, Val Doroshchuk <valbok@gmail.com> *
- *                                                       *
- * This file is part of QtAVPlayer.                      *
- * Free Qt Media Player based on FFmpeg.                 *
- *********************************************************/
+/***************************************************************
+ * Copyright (C) 2020, 2025, Val Doroshchuk <valbok@gmail.com> *
+ *                                                             *
+ * This file is part of QtAVPlayer.                            *
+ * Free Qt Media Player based on FFmpeg.                       *
+ ***************************************************************/
 
 #include "qavcodec_p.h"
 #include "qavcodec_p_p.h"
@@ -23,10 +23,11 @@ QAVCodec::QAVCodec()
 {
 }
 
-QAVCodec::QAVCodec(QAVCodecPrivate &d)
+QAVCodec::QAVCodec(QAVCodecPrivate &d, const AVCodec *codec)
     : d_ptr(&d)
 {
-    d_ptr->avctx = avcodec_alloc_context3(nullptr);
+    d_ptr->avctx = avcodec_alloc_context3(codec);
+    d_ptr->codec = codec;
 }
 
 QAVCodec::~QAVCodec()
@@ -47,7 +48,6 @@ bool QAVCodec::open(AVStream *stream, AVDictionary** opts)
 
     if (!stream)
         return false;
-
     int ret = avcodec_parameters_to_context(d->avctx, stream->codecpar);
     if (ret < 0) {
         qWarning() << "Failed avcodec_parameters_to_context:" << ret;
@@ -59,17 +59,15 @@ bool QAVCodec::open(AVStream *stream, AVDictionary** opts)
     if (!d->codec)
         d->codec = avcodec_find_decoder(d->avctx->codec_id);
     if (!d->codec) {
-        qWarning() << "No decoder could be found for codec";
+        qWarning() << "No decoder could be found for codec:" << d->avctx->codec_id <<
+            (d->avctx->codec ? d->avctx->codec->name : "");
         return false;
     }
 
     d->avctx->codec_id = d->codec->id;
-
-    av_opt_set_int(d->avctx, "refcounted_frames", true, 0);
-    av_opt_set_int(d->avctx, "threads", 1, 0);
     ret = avcodec_open2(d->avctx, d->codec, opts);
     if (ret < 0) {
-        qWarning() << "Could not open the codec:" << d->codec->name << ret;
+        qWarning() << "Could not open the codec:" << d->codec->name << d->codec->id << ret;
         return false;
     }
 

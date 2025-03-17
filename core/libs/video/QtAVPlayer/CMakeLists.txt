@@ -23,6 +23,7 @@ set(libqtavplayer_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/qavaudiooutputdevice.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/qavaudiooutputfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/qavcodec.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/qavmuxer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/qavdemuxer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/qavfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/qavfiltergraph.cpp
@@ -86,6 +87,14 @@ if(APPLE)
 
     set(libqtavplayer_SRCS ${libqtavplayer_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/qavhwdevice_videotoolbox.mm
+    )
+
+endif()
+
+if(HAVE_OPENGL)
+
+    set(libqtavplayer_SRCS ${libqtavplayer_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/qavwidget_opengl.cpp
     )
 
 endif()
