@@ -116,6 +116,7 @@ set(libraw_LIB_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/smal.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/unpack_thumb.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/unpack.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/olympus14.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/demosaic/aahd_demosaic.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/demosaic/ahd_demosaic.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/demosaic/dcb_demosaic.cpp
