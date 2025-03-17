@@ -32,7 +32,7 @@ BUGFIXES:
 021 ==> 501545 - The size of the album list panel cannot be reduced.
 022 ==> 498213 - Crash when starting with xkbmap de(sundeadkeys) set.
 023 ==> 494288 - digiKam crashes on first interaction.
-024 ==> 
+024 ==> 501604 - 8.6.0 compilation error in QtAVPlayer/qavstream.cpp.
 025 ==> 
 026 ==> 
 027 ==> 
