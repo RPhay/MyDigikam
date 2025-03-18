@@ -552,20 +552,10 @@ void FaceGroup::slotIgnored(const ItemInfo&, const QVariant& faceIdentifier)
 
         TagRegion currentRegion(faceRect);
 
-        if (face.region() != currentRegion)
-        {
-            DImg preview(d->view->previewItem()->image().copy());
+        face = d->newEditPipeline->editRegion(d->info, face,
+                                              currentRegion,
+                                              FaceTags::ignoredPersonTagId(), false);
 
-            if (!d->exifRotate)
-            {
-                preview.rotateAndFlip(d->info.orientation());
-            }
-
-            face = d->newEditPipeline->editRegion(d->info, face, currentRegion, preview, false);
-        }
-
-        face = d->newEditPipeline->editTag(d->info, face,
-                                           FaceTags::ignoredPersonTagId());
         item->setFace(face);
         item->switchMode(AssignNameWidget::IgnoredMode);
 
@@ -694,13 +684,6 @@ void FaceGroup::applyItemGeometryChanges()
         return;
     }
 
-    DImg preview(d->view->previewItem()->image().copy());
-
-    if (!d->exifRotate)
-    {
-        preview.rotateAndFlip(d->info.orientation());
-    }
-
     for (FaceItem* const item : std::as_const(d->items))
     {
         if (item->face().isNull())
@@ -723,9 +706,7 @@ void FaceGroup::applyItemGeometryChanges()
         {
             d->newEditPipeline->editRegion(d->info,
                                            item->face(),
-                                           currentRegion,
-                                           preview,
-                                           false);
+                                           currentRegion, -1, false);
         }
     }
 }
