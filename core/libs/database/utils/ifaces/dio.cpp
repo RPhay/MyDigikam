@@ -229,7 +229,7 @@ int DIO::getTrashCounter(const QString& albumRootPath)
     QUrl url = QUrl::fromLocalFile(albumRootPath);
     url      = url.adjusted(QUrl::StripTrailingSlash);
 
-    QMutexLocker locker(&instance()->m_trashCounterMutex);
+    QMutexLocker locker(&instance()->m_dioMutex);
 
     return instance()->m_trashCounterMap.value(url.toLocalFile(), 0);
 }
@@ -333,15 +333,43 @@ void DIO::createJob(IOJobData* const data)
     {
         CollectionLocation location         = CollectionManager::instance()->locationForUrl(data->destUrl());
         Qt::CaseSensitivity caseSensitivity = location.asQtCaseSensitivity();
+        QList<QString> currentPathList;
+
+        {
+            QMutexLocker locker(&m_dioMutex);
+
+            currentPathList = m_currentPathHash.values();
+        }
+
+        for (const QString& cpath : std::as_const(currentPathList))
+        {
+            for (const QUrl& url : data->sourceUrls())
+            {
+                QFileInfo srcInfo(url.toLocalFile());
+
+                if (
+                    cpath.contains(data->destUrl().toLocalFile(), caseSensitivity)  ||
+                    cpath.contains(srcInfo.path() + QLatin1Char('/'), caseSensitivity)
+                   )
+                {
+                    QMessageBox::warning(qApp->activeWindow(),
+                                         i18nc("@title:window", "File Conflict"),
+                                         i18n("A file operation using the same path is currently in progress. "
+                                              "Please wait for the operation to complete and try again."));
+
+                    delete data;
+
+                    return;
+                }
+            }
+        }
+
         QDir dir(data->destUrl().toLocalFile());
+        const QStringList& dirList = dir.entryList(QDir::Dirs    |
+                                                   QDir::Files   |
+                                                   QDir::NoDotAndDotDot);
 
-        const QStringList& dirList          = dir.entryList(QDir::Dirs    |
-                                                            QDir::Files   |
-                                                            QDir::NoDotAndDotDot);
-
-        const auto urls = data->sourceUrls();
-
-        for (const QUrl& url : urls)
+        for (const QUrl& url : data->sourceUrls())
         {
             if (dirList.contains(url.adjusted(QUrl::StripTrailingSlash).fileName(), caseSensitivity))
             {
@@ -387,6 +415,18 @@ void DIO::createJob(IOJobData* const data)
                 }
 
                 break;
+            }
+        }
+
+        {
+            QMutexLocker locker(&m_dioMutex);
+
+            m_currentPathHash.insert(data, data->destUrl().toLocalFile());
+
+            for (const QUrl& url : data->sourceUrls())
+            {
+                QFileInfo srcInfo(url.toLocalFile());
+                m_currentPathHash.insert(data, srcInfo.path() + QLatin1Char('/'));
             }
         }
     }
@@ -507,6 +547,12 @@ void DIO::slotResult()
         {
             buildCollectionTrashCounters();
         }
+    }
+
+    {
+        QMutexLocker locker(&m_dioMutex);
+
+        m_currentPathHash.remove(data);
     }
 
     if (m_processingCount)
@@ -950,7 +996,7 @@ void DIO::slotCancel(ProgressItem* item)
 void DIO::slotTrashCounterMap(const QMap<QString, int>& counterMap)
 {
     {
-        QMutexLocker locker(&m_trashCounterMutex);
+        QMutexLocker locker(&m_dioMutex);
 
         m_trashCounterMap = counterMap;
     }

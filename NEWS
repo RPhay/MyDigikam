@@ -33,7 +33,7 @@ BUGFIXES:
 022 ==> 498213 - Crash when starting with xkbmap de(sundeadkeys) set.
 023 ==> 494288 - digiKam crashes on first interaction.
 024 ==> 501604 - 8.6.0 compilation error in QtAVPlayer/qavstream.cpp.
-025 ==> 
+025 ==> 501616 - Drag and drop same folder into subfolder creates recursive copy.
 026 ==> 
 027 ==> 
 028 ==> 
