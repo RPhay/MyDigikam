@@ -1333,6 +1333,59 @@ bool MetaEngine::getItemPreview(QImage& preview) const
         {
             if (preview.loadFromData(imgData))
             {
+                // check if we know what wrote the preview
+
+                QString imgDataSource = QLatin1String(getXmpTagString("Xmp.digiKam.PreviewSource", false).toUtf8());
+
+                // check if the preview image came from a dkdt Lua thumbnail
+
+                if (QStringLiteral("dkdtLuaThumbnail") == imgDataSource)
+                {
+                    // The preview is a dkdt Lua thumbnail, we need to rotate opposite direction based on the orientation tag in the metadata.
+                    
+                    int orientation = getItemOrientation();
+                    switch (orientation)
+                    {
+                        case MetaEngine::ORIENTATION_UNSPECIFIED:
+                            break;
+
+                        case MetaEngine::ORIENTATION_NORMAL:
+                            break;
+
+                        case MetaEngine::ORIENTATION_HFLIP:
+                            preview = preview.mirrored(true, false);
+                            break;
+
+                        case MetaEngine::ORIENTATION_VFLIP:
+                            preview = preview.mirrored(false, true);
+                            break;
+
+                        case MetaEngine::ORIENTATION_ROT_180:
+                            preview = preview.transformed(QTransform().rotate(180));
+                            break;
+
+                        case MetaEngine::ORIENTATION_ROT_90_HFLIP:
+                            preview = preview.transformed(QTransform().rotate(270)).mirrored(true, false);
+                            break;
+
+                        case MetaEngine::ORIENTATION_ROT_90:
+                            preview = preview.transformed(QTransform().rotate(270));
+                            break;
+
+                        case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+                            preview = preview.transformed(QTransform().rotate(270)).mirrored(false, true);
+                            break;
+
+                        case MetaEngine::ORIENTATION_ROT_270:
+                            preview = preview.transformed(QTransform().rotate(90));
+                            break;
+
+                        default:
+                            break;
+
+                    }
+                }
+                
                 return true;
             }
         }
