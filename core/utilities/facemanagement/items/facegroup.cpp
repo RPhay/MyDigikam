@@ -421,7 +421,8 @@ void FaceGroup::slotImageTagChange(const ImageTagChangeset& changeset)
             changeset.containsTag(FaceTags::unconfirmedPersonTagId())
            )
         {
-            load();
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Face data change detected";
+            //load();
         }
     }
 }
