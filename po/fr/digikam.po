@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-17 01:53+0000\n"
-"PO-Revision-Date: 2025-03-08 10:16+0100\n"
+"PO-Revision-Date: 2025-03-16 10:23+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -52925,9 +52925,7 @@ msgid "Removing face"
 msgstr "Suppression d'un visage"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Remove all Faces"
+#, kde-format
 msgid "Remove all faces"
 msgstr "Supprimer tous les visages"
 

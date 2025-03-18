@@ -55,7 +55,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-17 01:53+0000\n"
-"PO-Revision-Date: 2025-03-10 17:01+0300\n"
+"PO-Revision-Date: 2025-03-17 11:19+0300\n"
 "Last-Translator: Mariya Shikunova <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -603,7 +603,7 @@ msgstr[2] "Удалить %1 файлов в корзину"
 msgstr[3] "Удалить файл в корзину"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
@@ -3609,12 +3609,12 @@ msgstr ""
 "использования онлайн-переводчика, используемых при редактировании текста;"
 
 #: core/app/views/stack/welcomepageview.cpp:122
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Scanning settings everywhere."
 msgstr ""
 "Добавлена возможность назначать параметры сортировки по качеству изображений "
-"как глобально, так и в соответствии с потребностями пользователя;"
+"как глобально, так и в соответствии с потребностями пользователя."
 
 #: core/app/views/stack/welcomepageview.cpp:123
 #, kde-format
@@ -6459,7 +6459,7 @@ msgstr ""
 "изображения метаданные на основе шаблона.</para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Image Quality Scan"
 msgstr "Сканирование изображений по качеству"
@@ -12253,7 +12253,7 @@ msgid ""
 msgstr ""
 "<p>Выбор способа показа точек<dl><dt>по уровню поверхности (по умолчанию)</"
 "dt><dd>Не учитывать значение высоты</dd><dt>относительно поверхности</"
-"dt><dd>SУстанавливает высоту элемента относительно фактической высоты на "
+"dt><dd>Устанавливает высоту элемента относительно фактической высоты на "
 "местности.</dd><dt>абсолютная</dt><dd>Устанавливает высоту места "
 "относительно уровня моря, безотносительно фактической высоты суши под местом "
 "снимка.</dd></dl></p>"
@@ -35053,9 +35053,7 @@ msgid "Search in"
 msgstr "Искать в"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@label Face Worflow"
-#| msgid "Workflow:"
+#, kde-format
 msgctxt "@label short translated text about the Face Worflow."
 msgid "Workflow:"
 msgstr "Профиль пакетной обработки:"
@@ -35108,9 +35106,7 @@ msgstr ""
 "изображений новых лиц.</p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
-#, fuzzy, kde-format
-#| msgctxt "@label Face Detection Accuracy"
-#| msgid "Accuracy:"
+#, kde-format
 msgctxt "@label short translated text about the Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Точность:"
@@ -35128,9 +35124,7 @@ msgstr ""
 "но будет определено меньшее количество лиц"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@label face size for detection"
-#| msgid "Face size:"
+#, kde-format
 msgctxt "@label with a short translated text about the face size for detection"
 msgid "Face size:"
 msgstr "Размер лица:"
@@ -35204,9 +35198,7 @@ msgid "Face Detection Settings"
 msgstr "Параметры определения лиц"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@label Face Detection Accuracy"
-#| msgid "Accuracy:"
+#, kde-format
 msgctxt "@label short translated text about the Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Точность:"
@@ -35228,9 +35220,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Work on all processor cores"
 msgstr "Работать на всех ядрах процессора"
@@ -35772,19 +35762,19 @@ msgid "aesthetic image quality"
 msgstr "оценки эстетики изображения"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: short translated text about the image quality scan mode"
 msgid "Scan Mode:"
 msgstr "Режим сканирования:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
 msgstr "Все"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item: image quality scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Только не присвоенные"
@@ -35801,12 +35791,10 @@ msgstr ""
 "которых не назначены метки автоматического выбора</p>"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign Low Quality to Rejected Label"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign Low Quality to Rejected Label"
-msgstr "Присвоить метку «Низкое качество» ярлыку «Отклонено»"
+msgstr "Присвоить метку «Низкое качество» ярлыку «Отклонённые»"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
@@ -35819,12 +35807,10 @@ msgstr ""
 "будет присвоена метка «Отклонено» (красный флаг)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign Medium Quality to Pending Label"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign Medium Quality to Pending Label"
-msgstr "Присвоить метку «Среднее качество» ярлыку «В ожидании»"
+msgstr "Присвоить метку «Среднее качество» ярлыку «Отложенные»"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, kde-format
@@ -35837,9 +35823,7 @@ msgstr ""
 "будет присвоена метка «В ожидании» (жёлтый флаг)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign High Quality to Accepted Label"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign High Quality to Accepted Label"
 msgstr "Присвоить принятому ярлыку высокое качество"
@@ -35855,17 +35839,13 @@ msgstr ""
 "будет присвоена метка «Одобрено» (зелёный флаг)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Quality Engine:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Quality Engine:"
 msgstr "Движок оценки качества:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Aesthetic Contents"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Detect Aesthetic Contents"
 msgstr "Определить наличие эстетической ценности"
@@ -35883,9 +35863,7 @@ msgstr ""
 "обучения."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect by Basic Factors"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Detect by Basic Factors"
 msgstr "Определять по основным характеристикам"
@@ -35916,8 +35894,7 @@ msgstr ""
 "процессора или фоновый режим только с одним ядром."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
-#, fuzzy, kde-format
-#| msgid "Rejected threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Rejected threshold:"
 msgstr "Порог для «Отклонённых»:"
@@ -35929,8 +35906,7 @@ msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr "Порог, ниже которого изображениям присваивается метка «Отклонённые»"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
-#, fuzzy, kde-format
-#| msgid "Pending threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Pending threshold:"
 msgstr "Порог для «Отложенных»:"
@@ -35942,8 +35918,7 @@ msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr "Порог, ниже которого изображениям присваивается метка «Отложенные»"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
-#, fuzzy, kde-format
-#| msgid "Accepted threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Accepted threshold:"
 msgstr "Порог для «Принятых»:"
@@ -35955,8 +35930,7 @@ msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr "Порог, выше которого изображениям присваивается метка «Принятые»"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
-#, fuzzy, kde-format
-#| msgid "Detect Blur"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Blur"
 msgstr "Определить размытие"
@@ -35970,12 +35944,10 @@ msgstr "Определить процент размытия в переданн
 #: core/libs/imgqsort/imagequalitywidget.cpp:223
 #: core/libs/imgqsort/imagequalitywidget.cpp:234
 #: core/libs/imgqsort/imagequalitywidget.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Weight:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Weight:"
-msgstr "Высота:"
+msgstr "Вес:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:228
 #, kde-format
@@ -35984,8 +35956,7 @@ msgid "Weight to assign to Blur Algorithm"
 msgstr "Вес размытия для алгоритма обнаружения размытия"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
-#, fuzzy, kde-format
-#| msgid "Detect Noise"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Noise"
 msgstr "Определить шум"
@@ -36003,8 +35974,7 @@ msgid "Weight to assign to Noise Algorithm"
 msgstr "Вес шума для алгоритма обнаружения шума"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
-#, fuzzy, kde-format
-#| msgid "Detect Compression"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Compression"
 msgstr "Определить сжатие"
@@ -36022,8 +35992,7 @@ msgid "Weight to assign to Compression Algorithm"
 msgstr "Вес сжатия для алгоритма обнаружения сжатия"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
-#, fuzzy, kde-format
-#| msgid "Detect Under and Over Exposure"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Under and Over Exposure"
 msgstr "Определить недодержку и передержку"
@@ -40103,7 +40072,7 @@ msgstr ""
 "меток, описывающих содержимое, и сохранит результаты в базе данных.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label with a short translated text about autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Режим сканирования:"
@@ -40132,8 +40101,7 @@ msgstr ""
 "автоматически присвоенных меток.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "Auto-Tagging Mode:"
+#, kde-format
 msgctxt "@label with a short translated text "
 msgid "Auto-Tagging Mode:"
 msgstr "Режим автоматического присваивания меток:"
@@ -40163,9 +40131,7 @@ msgstr ""
 "автоматические метки к уже существующим.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@label: deep learning model used to detect objects to auto-tag"
-#| msgid "Detection Model:"
+#, kde-format
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
@@ -40178,8 +40144,7 @@ msgid "No models available"
 msgstr "Нет доступных моделей"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Detection Accuracy:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Detection Accuracy:"
 msgstr "Точность распознавания:"
@@ -40210,9 +40175,7 @@ msgstr ""
 "процессора или фоновый режим только с одним ядром."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Translate Tags to:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Translate Tags to:"
 msgstr "Перевести метки на:"
@@ -43596,17 +43559,17 @@ msgid "Releases Manager"
 msgstr "Руководитель выпусков"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:150
-#, fuzzy, kde-format
+#, kde-format
 msgid "Quality Test Engineer"
-msgstr "Движок оценки качества:"
+msgstr "Механизм оценки качества:"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:157
-#, fuzzy, kde-format
+#, kde-format
 msgid "Port to Qt6"
-msgstr "Перенос на Qt6,"
+msgstr "Перенос на Qt6"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:163
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Rewrite Image Quality Scanner algorithms\n"
 "and Photo Focus Information Extraction.\n"
@@ -43683,7 +43646,7 @@ msgstr "Портирование редактора изображений Canva
 #: core/libs/widgets/mainview/daboutdata.cpp:225
 #: core/utilities/maintenance/main/maintenancedlg.cpp:255
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
-#, fuzzy, kde-format
+#, kde-format
 msgid "Image Quality Scanner"
 msgstr "Сканирование изображений по качеству"
 
@@ -52531,11 +52494,9 @@ msgid "Removing face"
 msgstr "Удаление лица"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Remove all Faces"
+#, kde-format
 msgid "Remove all faces"
-msgstr "Удалить все метки лиц"
+msgstr "Удалить все лица"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
 #, kde-format
@@ -66640,7 +66601,7 @@ msgstr ""
 "когда соответствующий объект альбома (например, «image.dng» для «image.dng."
 "pp3») будет переименован, перемещён, скопирован или удалён, соответствующая "
 "операция будет произведена с этими дополнительными файлами.\n"
-"Multiple extensions must be separated by a semicolon or a space."
+"Несколько расширений необходимо разделить точкой с запятой или пробелом."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:91
 #, kde-format
