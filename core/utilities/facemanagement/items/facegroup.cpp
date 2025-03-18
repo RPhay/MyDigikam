@@ -421,8 +421,7 @@ void FaceGroup::slotImageTagChange(const ImageTagChangeset& changeset)
             changeset.containsTag(FaceTags::unconfirmedPersonTagId())
            )
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Face data change detected";
-            //load();
+            load();
         }
     }
 }
@@ -461,10 +460,6 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
     {
         int tagId = 0;
 
-        // Apply a modified region.
-
-        face.setRegion(currentRegion);
-
         if      (action.shallAssignTag())
         {
             tagId = action.tagId();
@@ -497,7 +492,7 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
             return;
         }
 
-        face = d->newEditPipeline->confirmFace(d->info, face, tagId, true);
+        face = d->newEditPipeline->confirmFace(d->info, face, currentRegion, tagId, true);
         item->setFace(face);
 
         item->switchMode(AssignNameWidget::ConfirmedMode);

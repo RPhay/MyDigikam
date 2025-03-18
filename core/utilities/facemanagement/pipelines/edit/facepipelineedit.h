@@ -43,6 +43,7 @@ public:
 
     FaceTagsIface confirmFace(const ItemInfo& info,
                               const FaceTagsIface& face,
+                              const TagRegion& region,
                               int tagId,
                               bool retrain = true);
 
