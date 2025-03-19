@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-17 01:53+0000\n"
+"POT-Creation-Date: 2025-03-19 01:55+0000\n"
 "PO-Revision-Date: 2025-01-25 14:39+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -25543,7 +25543,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "מרחב צבע"
 
 #: core/libs/album/engine/album.cpp:411
-#: core/libs/database/utils/ifaces/dio.cpp:908
+#: core/libs/database/utils/ifaces/dio.cpp:954
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -26084,7 +26084,7 @@ msgid "Context menu"
 msgstr ""
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
-#: core/libs/database/utils/ifaces/dio.cpp:918
+#: core/libs/database/utils/ifaces/dio.cpp:964
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -27385,13 +27385,21 @@ msgid ""
 "with an empty database. "
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:349
+#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:377
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "שם קובץ"
 
-#: core/libs/database/utils/ifaces/dio.cpp:350
+#: core/libs/database/utils/ifaces/dio.cpp:357
+#, kde-format
+msgid ""
+"A file operation using the same path is currently in progress. Please wait "
+"for the operation to complete and try again."
+msgstr ""
+
+#: core/libs/database/utils/ifaces/dio.cpp:378
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -27404,64 +27412,64 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:359
+#: core/libs/database/utils/ifaces/dio.cpp:387
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "לשכתב את הקובץ?"
 
-#: core/libs/database/utils/ifaces/dio.cpp:361
+#: core/libs/database/utils/ifaces/dio.cpp:389
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "לשכתב את הקובץ?"
 
-#: core/libs/database/utils/ifaces/dio.cpp:363
+#: core/libs/database/utils/ifaces/dio.cpp:391
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "לשכתב את הקובץ?"
 
-#: core/libs/database/utils/ifaces/dio.cpp:872
+#: core/libs/database/utils/ifaces/dio.cpp:918
 #, fuzzy, kde-format
 msgid "Copy Album"
 msgstr "אוספי-התמונות שלי"
 
-#: core/libs/database/utils/ifaces/dio.cpp:877
+#: core/libs/database/utils/ifaces/dio.cpp:923
 #, fuzzy, kde-format
 msgid "Copy Images"
 msgstr "סידור תמונות"
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:929
 #, fuzzy, kde-format
 msgid "Copy Files"
 msgstr "העתיקו לכאן"
 
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:934
 #, fuzzy, kde-format
 msgid "Move Album"
 msgstr "אוסף-תמונות חדש..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:939
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "שמירת תמונות"
 
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:944
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "קבצי סרטים"
 
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/database/utils/ifaces/dio.cpp:949
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
 msgid "Delete"
 msgstr "מחיקה"
 
-#: core/libs/database/utils/ifaces/dio.cpp:913
+#: core/libs/database/utils/ifaces/dio.cpp:959
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "שחזור"
@@ -50188,35 +50196,35 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "ביטול"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:98
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:99
 #, fuzzy, kde-format
 msgid "Confirming face"
 msgstr "מתאם:"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:120
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:121
 #, fuzzy, kde-format
 msgid "Removing face"
 msgstr "אתחול התוכן"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:135
 #, fuzzy, kde-format
 msgid "Remove all faces"
 msgstr "הסרת תוויות"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:156
 #, fuzzy, kde-format
 msgid "Editing face tag"
 msgstr ""
 "<b>מתאם את נתוני המידע-הנוסף של כל התמונות עם מסד הנתונים של Digikam. אנא "
 "המתינו...</b>"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:184
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "הסרת תוויות זו"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:218
 #, fuzzy, kde-format
 msgid "Manually adding face"
 msgstr "ספר הדרכה "

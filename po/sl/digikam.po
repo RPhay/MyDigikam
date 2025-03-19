@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-17 01:53+0000\n"
+"POT-Creation-Date: 2025-03-19 01:55+0000\n"
 "PO-Revision-Date: 2025-03-17 06:20+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -26787,7 +26787,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "UFRaw pretvorba surove"
 
 #: core/libs/album/engine/album.cpp:411
-#: core/libs/database/utils/ifaces/dio.cpp:908
+#: core/libs/database/utils/ifaces/dio.cpp:954
 #, kde-format
 msgid "Trash"
 msgstr "Smeti"
@@ -27378,7 +27378,7 @@ msgid "Context menu"
 msgstr "Vsebinski meni"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
-#: core/libs/database/utils/ifaces/dio.cpp:918
+#: core/libs/database/utils/ifaces/dio.cpp:964
 #, kde-format
 msgid "Empty Trash"
 msgstr "Izprazni smeti"
@@ -28788,13 +28788,21 @@ msgstr ""
 "obstaja. Trenutne različice sheme podatkovne zbirke ni mogoče preveriti. "
 "Poskusite začeti s prazno podatkovno zbirko. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:349
+#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:377
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Spor imen datotek"
 
-#: core/libs/database/utils/ifaces/dio.cpp:350
+#: core/libs/database/utils/ifaces/dio.cpp:357
+#, kde-format
+msgid ""
+"A file operation using the same path is currently in progress. Please wait "
+"for the operation to complete and try again."
+msgstr ""
+
+#: core/libs/database/utils/ifaces/dio.cpp:378
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -28815,62 +28823,62 @@ msgstr ""
 "Samodejni prepis: datoteke v konfliktu bodo prepisane.\n"
 "Samodejni preskok: datoteke v konfliktu bodo preskočene."
 
-#: core/libs/database/utils/ifaces/dio.cpp:359
+#: core/libs/database/utils/ifaces/dio.cpp:387
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Samodejno preimenuj"
 
-#: core/libs/database/utils/ifaces/dio.cpp:361
+#: core/libs/database/utils/ifaces/dio.cpp:389
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Samodejno prepiši"
 
-#: core/libs/database/utils/ifaces/dio.cpp:363
+#: core/libs/database/utils/ifaces/dio.cpp:391
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Samodejno preskoči"
 
-#: core/libs/database/utils/ifaces/dio.cpp:872
+#: core/libs/database/utils/ifaces/dio.cpp:918
 #, kde-format
 msgid "Copy Album"
 msgstr "Kopiraj album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:877
+#: core/libs/database/utils/ifaces/dio.cpp:923
 #, kde-format
 msgid "Copy Images"
 msgstr "Kopiraj slike"
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:929
 #, kde-format
 msgid "Copy Files"
 msgstr "Kopiraj datoteke"
 
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:934
 #, kde-format
 msgid "Move Album"
 msgstr "Premakni album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:939
 #, kde-format
 msgid "Move Images"
 msgstr "Premakni slike"
 
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:944
 #, kde-format
 msgid "Move Files"
 msgstr "Premakni datoteke"
 
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/database/utils/ifaces/dio.cpp:949
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
 msgid "Delete"
 msgstr "Izbriši"
 
-#: core/libs/database/utils/ifaces/dio.cpp:913
+#: core/libs/database/utils/ifaces/dio.cpp:959
 #, kde-format
 msgid "Restore Trash"
 msgstr "Obnovi smeti"
@@ -52098,32 +52106,32 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:98
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:99
 #, kde-format
 msgid "Confirming face"
 msgstr "Potrjevanje obraza"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:120
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:121
 #, kde-format
 msgid "Removing face"
 msgstr "Odstranjevanje obraza"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:135
 #, kde-format
 msgid "Remove all faces"
 msgstr "Odstrani vse obraze"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:156
 #, kde-format
 msgid "Editing face tag"
 msgstr "Urejanje značke obraza"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:184
 #, kde-format
 msgid "Editing face region"
 msgstr "Urejanje območja obraza"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:218
 #, kde-format
 msgid "Manually adding face"
 msgstr "Ročno dodajanje obraza"

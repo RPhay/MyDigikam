@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-17 01:53+0000\n"
+"POT-Creation-Date: 2025-03-19 01:55+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -27283,7 +27283,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "カラースペースの変換"
 
 #: core/libs/album/engine/album.cpp:411
-#: core/libs/database/utils/ifaces/dio.cpp:908
+#: core/libs/database/utils/ifaces/dio.cpp:954
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -27894,7 +27894,7 @@ msgid "Context menu"
 msgstr "コンテキストメニュー"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
-#: core/libs/database/utils/ifaces/dio.cpp:918
+#: core/libs/database/utils/ifaces/dio.cpp:964
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -29371,14 +29371,22 @@ msgstr ""
 "データベーススキーマのバージョンを確認できません。空のデータベースで開始して"
 "みてください。"
 
-#: core/libs/database/utils/ifaces/dio.cpp:349
+#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:377
 #, fuzzy, kde-format
 #| msgid "File name filter:"
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "ファイル名フィルタ:"
 
-#: core/libs/database/utils/ifaces/dio.cpp:350
+#: core/libs/database/utils/ifaces/dio.cpp:357
+#, kde-format
+msgid ""
+"A file operation using the same path is currently in progress. Please wait "
+"for the operation to complete and try again."
+msgstr ""
+
+#: core/libs/database/utils/ifaces/dio.cpp:378
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29391,71 +29399,71 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:359
+#: core/libs/database/utils/ifaces/dio.cpp:387
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "自動的に上書きする"
 
-#: core/libs/database/utils/ifaces/dio.cpp:361
+#: core/libs/database/utils/ifaces/dio.cpp:389
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "自動的に上書きする"
 
-#: core/libs/database/utils/ifaces/dio.cpp:363
+#: core/libs/database/utils/ifaces/dio.cpp:391
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "自動的に上書きする"
 
-#: core/libs/database/utils/ifaces/dio.cpp:872
+#: core/libs/database/utils/ifaces/dio.cpp:918
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Copy Album"
 msgstr "アルバムで"
 
-#: core/libs/database/utils/ifaces/dio.cpp:877
+#: core/libs/database/utils/ifaces/dio.cpp:923
 #, fuzzy, kde-format
 #| msgid "Sort Images"
 msgid "Copy Images"
 msgstr "画像をソート"
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:929
 #, fuzzy, kde-format
 #| msgid "no preset value"
 msgid "Copy Files"
 msgstr "プリセットなし"
 
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:934
 #, fuzzy, kde-format
 #| msgid "&Move to Album..."
 msgid "Move Album"
 msgstr "アルバムへ移動(&M)..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:939
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "画像の保存"
 
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:944
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "動画ファイル"
 
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/database/utils/ifaces/dio.cpp:949
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
 msgid "Delete"
 msgstr "削除"
 
-#: core/libs/database/utils/ifaces/dio.cpp:913
+#: core/libs/database/utils/ifaces/dio.cpp:959
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "復元"
@@ -53983,37 +53991,37 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:98
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:99
 #, fuzzy, kde-format
 msgid "Confirming face"
 msgstr "設定"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:120
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:121
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Removing face"
 msgstr "選択したタグを削除"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:135
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Remove all Faces"
 msgid "Remove all faces"
 msgstr "すべての顔を削除"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:156
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Editing face tag"
 msgstr "顔データベースの更新中です。"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:184
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "このタグを取り除く"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:218
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Manual and Name"

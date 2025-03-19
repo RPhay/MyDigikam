@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-17 01:53+0000\n"
+"POT-Creation-Date: 2025-03-19 01:55+0000\n"
 "PO-Revision-Date: 2025-01-29 17:11+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -26557,7 +26557,7 @@ msgid "UFRaw Raw Conversion"
 msgstr ""
 
 #: core/libs/album/engine/album.cpp:411
-#: core/libs/database/utils/ifaces/dio.cpp:908
+#: core/libs/database/utils/ifaces/dio.cpp:954
 #, kde-format
 msgid "Trash"
 msgstr "المهملات"
@@ -27171,7 +27171,7 @@ msgid "Context menu"
 msgstr "قائمة منبثقة"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
-#: core/libs/database/utils/ifaces/dio.cpp:918
+#: core/libs/database/utils/ifaces/dio.cpp:964
 #, kde-format
 msgid "Empty Trash"
 msgstr "أفرغ المهملات"
@@ -28552,14 +28552,22 @@ msgstr ""
 "قاعدة البيانات غير صالحة: إعداد ”DBThumbnailsVersion“ غير موجود. تعذّر التّحقّق "
 "من إصدارة مخطّط قاعدة البيانات الحاليّة. جرّب البدء بقاعدة بيانات فارغة."
 
-#: core/libs/database/utils/ifaces/dio.cpp:349
+#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:377
 #, fuzzy, kde-format
 #| msgid "File name filter:"
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "مرشّح اسم الملفّ:"
 
-#: core/libs/database/utils/ifaces/dio.cpp:350
+#: core/libs/database/utils/ifaces/dio.cpp:357
+#, kde-format
+msgid ""
+"A file operation using the same path is currently in progress. Please wait "
+"for the operation to complete and try again."
+msgstr ""
+
+#: core/libs/database/utils/ifaces/dio.cpp:378
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -28572,64 +28580,64 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:359
+#: core/libs/database/utils/ifaces/dio.cpp:387
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "اكتب فوقه آليًّا"
 
-#: core/libs/database/utils/ifaces/dio.cpp:361
+#: core/libs/database/utils/ifaces/dio.cpp:389
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "اكتب فوقه آليًّا"
 
-#: core/libs/database/utils/ifaces/dio.cpp:363
+#: core/libs/database/utils/ifaces/dio.cpp:391
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "تخطّه آليًّا"
 
-#: core/libs/database/utils/ifaces/dio.cpp:872
+#: core/libs/database/utils/ifaces/dio.cpp:918
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Copy Album"
 msgstr "دفاتر صوري"
 
-#: core/libs/database/utils/ifaces/dio.cpp:877
+#: core/libs/database/utils/ifaces/dio.cpp:923
 #, kde-format
 msgid "Copy Images"
 msgstr "انسخ الصور"
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:929
 #, kde-format
 msgid "Copy Files"
 msgstr "انسخ الملفّات"
 
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:934
 #, kde-format
 msgid "Move Album"
 msgstr "انقل الألبوم"
 
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:939
 #, kde-format
 msgid "Move Images"
 msgstr "انقل الصور"
 
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:944
 #, kde-format
 msgid "Move Files"
 msgstr "ينقل ملفّات"
 
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/database/utils/ifaces/dio.cpp:949
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
 msgid "Delete"
 msgstr "احذف"
 
-#: core/libs/database/utils/ifaces/dio.cpp:913
+#: core/libs/database/utils/ifaces/dio.cpp:959
 #, fuzzy, kde-format
 #| msgid "Restore"
 msgid "Restore Trash"
@@ -51399,35 +51407,35 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "ألغِ"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:98
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:99
 #, fuzzy, kde-format
 #| msgid "Confirm Deletion"
 msgid "Confirming face"
 msgstr "أكّد الحذف"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:120
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:121
 #, fuzzy, kde-format
 msgid "Removing face"
 msgstr "أأزيل وسم الوجه؟"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:135
 #, fuzzy, kde-format
 #| msgid "Remove Face Tags"
 msgid "Remove all faces"
 msgstr "أزل وسوم الوجوه"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:156
 #, fuzzy, kde-format
 msgid "Editing face tag"
 msgstr "إنشاء جديد الألبوم"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:184
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "أزل هذا الوسم"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:218
 #, fuzzy, kde-format
 #| msgctxt "exposure program"
 #| msgid "Manual"

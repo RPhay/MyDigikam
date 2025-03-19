@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-17 01:53+0000\n"
+"POT-Creation-Date: 2025-03-19 01:55+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -25911,7 +25911,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW 转换"
 
 #: core/libs/album/engine/album.cpp:411
-#: core/libs/database/utils/ifaces/dio.cpp:908
+#: core/libs/database/utils/ifaces/dio.cpp:954
 #, kde-format
 msgid "Trash"
 msgstr "回收站"
@@ -26474,7 +26474,7 @@ msgid "Context menu"
 msgstr "右键菜单"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
-#: core/libs/database/utils/ifaces/dio.cpp:918
+#: core/libs/database/utils/ifaces/dio.cpp:964
 #, kde-format
 msgid "Empty Trash"
 msgstr "清空回收站"
@@ -27825,13 +27825,21 @@ msgstr ""
 "数据库无效：“DBSimilarityVersion”设置不存在。无法验证当前数据库纲目结构版本。"
 "请尝试新建一个空数据库以启动程序。"
 
-#: core/libs/database/utils/ifaces/dio.cpp:349
+#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:377
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "文件冲突"
 
-#: core/libs/database/utils/ifaces/dio.cpp:350
+#: core/libs/database/utils/ifaces/dio.cpp:357
+#, kde-format
+msgid ""
+"A file operation using the same path is currently in progress. Please wait "
+"for the operation to complete and try again."
+msgstr ""
+
+#: core/libs/database/utils/ifaces/dio.cpp:378
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -27852,62 +27860,62 @@ msgstr ""
 "自动覆盖：覆盖冲突文件。\n"
 "自动跳过：跳过冲突文件。"
 
-#: core/libs/database/utils/ifaces/dio.cpp:359
+#: core/libs/database/utils/ifaces/dio.cpp:387
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "自动重命名"
 
-#: core/libs/database/utils/ifaces/dio.cpp:361
+#: core/libs/database/utils/ifaces/dio.cpp:389
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "自动覆盖"
 
-#: core/libs/database/utils/ifaces/dio.cpp:363
+#: core/libs/database/utils/ifaces/dio.cpp:391
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "自动跳过"
 
-#: core/libs/database/utils/ifaces/dio.cpp:872
+#: core/libs/database/utils/ifaces/dio.cpp:918
 #, kde-format
 msgid "Copy Album"
 msgstr "复制相册"
 
-#: core/libs/database/utils/ifaces/dio.cpp:877
+#: core/libs/database/utils/ifaces/dio.cpp:923
 #, kde-format
 msgid "Copy Images"
 msgstr "复制图像"
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:929
 #, kde-format
 msgid "Copy Files"
 msgstr "复制文件"
 
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:934
 #, kde-format
 msgid "Move Album"
 msgstr "移动相册"
 
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:939
 #, kde-format
 msgid "Move Images"
 msgstr "移动图像"
 
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:944
 #, kde-format
 msgid "Move Files"
 msgstr "移动文件"
 
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/database/utils/ifaces/dio.cpp:949
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
 msgid "Delete"
 msgstr "删除"
 
-#: core/libs/database/utils/ifaces/dio.cpp:913
+#: core/libs/database/utils/ifaces/dio.cpp:959
 #, kde-format
 msgid "Restore Trash"
 msgstr "还原回收站"
@@ -33537,7 +33545,7 @@ msgstr "扫描范围"
 #, kde-format
 msgctxt "@label short translated text about the Face Worflow."
 msgid "Workflow:"
-msgstr ""
+msgstr "工作流程："
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:106
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
@@ -33586,7 +33594,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label short translated text about the Face Detection Accuracy"
 msgid "Accuracy:"
-msgstr ""
+msgstr "精度："
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:135
 #, kde-format
@@ -33602,7 +33610,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label with a short translated text about the face size for detection"
 msgid "Face size:"
-msgstr ""
+msgstr "人脸大小："
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:144
 #, kde-format
@@ -33670,7 +33678,7 @@ msgstr "人脸检测设置"
 #, kde-format
 msgctxt "@label short translated text about the Face Recognition Accuracy"
 msgid "Accuracy:"
-msgstr ""
+msgstr "精度："
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:184
 #, kde-format
@@ -33691,7 +33699,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Work on all processor cores"
-msgstr ""
+msgstr "使用全部处理器核心"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
 #, kde-format
@@ -34211,7 +34219,7 @@ msgstr "图像美感"
 #, kde-format
 msgctxt "@label: short translated text about the image quality scan mode"
 msgid "Scan Mode:"
-msgstr ""
+msgstr "扫描模式："
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
 #, kde-format
@@ -34239,7 +34247,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign Low Quality to Rejected Label"
-msgstr ""
+msgstr "分配否决标记给低品质项目"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
@@ -34255,7 +34263,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign Medium Quality to Pending Label"
-msgstr ""
+msgstr "分配待定标记给中品质项目"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, kde-format
@@ -34271,7 +34279,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign High Quality to Accepted Label"
-msgstr ""
+msgstr "分配接受标记给高品质项目"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, kde-format
@@ -34287,13 +34295,13 @@ msgstr ""
 #, kde-format
 msgctxt "@label with a short translated text"
 msgid "Quality Engine:"
-msgstr ""
+msgstr "图像品质检测引擎："
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
 #, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Detect Aesthetic Contents"
-msgstr ""
+msgstr "检测内容美感"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
 #, kde-format
@@ -34310,7 +34318,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Detect by Basic Factors"
-msgstr ""
+msgstr "检测主要劣化因素"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
 #, kde-format
@@ -34340,7 +34348,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label with a short translated text"
 msgid "Rejected threshold:"
-msgstr ""
+msgstr "否决阈值："
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -34352,7 +34360,7 @@ msgstr "低于此阈值的所有图像将被指定“否决”标记。"
 #, kde-format
 msgctxt "@label with a short translated text"
 msgid "Pending threshold:"
-msgstr ""
+msgstr "待定阈值："
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -34364,7 +34372,7 @@ msgstr "低于此阈值的所有图像将被指定“待定”标记。"
 #, kde-format
 msgctxt "@label with a short translated text"
 msgid "Accepted threshold:"
-msgstr ""
+msgstr "接受阈值："
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, kde-format
@@ -34376,7 +34384,7 @@ msgstr "高于此阈值的所有图像将被指定“接受”标记。"
 #, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Blur"
-msgstr ""
+msgstr "检测模糊"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, kde-format
@@ -34390,7 +34398,7 @@ msgstr "检测图像的模糊程度。"
 #, kde-format
 msgctxt "@label with a short translated text"
 msgid "Weight:"
-msgstr ""
+msgstr "权重："
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:228
 #, kde-format
@@ -34402,7 +34410,7 @@ msgstr "模糊检测算法的权重"
 #, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Noise"
-msgstr ""
+msgstr "检测噪点"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
@@ -34420,7 +34428,7 @@ msgstr "噪点检测算法的权重"
 #, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Compression"
-msgstr ""
+msgstr "检测有损压缩"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
 #, kde-format
@@ -34438,7 +34446,7 @@ msgstr "压缩检测算法的权重"
 #, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Under and Over Exposure"
-msgstr ""
+msgstr "检测曝光不足/过度"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, kde-format
@@ -38404,7 +38412,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label with a short translated text about autotags scanning mode"
 msgid "Scan Mode:"
-msgstr ""
+msgstr "扫描模式："
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #, kde-format
@@ -38432,7 +38440,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label with a short translated text "
 msgid "Auto-Tagging Mode:"
-msgstr ""
+msgstr "自动标签模式："
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
@@ -38463,7 +38471,7 @@ msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
 msgid "Detection Model:"
-msgstr ""
+msgstr "检测模型："
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, kde-format
@@ -38474,7 +38482,7 @@ msgstr "没有可用的模型"
 #, kde-format
 msgctxt "@label with a short translated text"
 msgid "Detection Accuracy:"
-msgstr ""
+msgstr "检测精度："
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #, kde-format
@@ -38503,7 +38511,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label with a short translated text"
 msgid "Translate Tags to:"
-msgstr ""
+msgstr "翻译标签到："
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:185
 #, kde-format
@@ -50488,32 +50496,32 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "取消"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:98
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:99
 #, kde-format
 msgid "Confirming face"
 msgstr "正在确认人脸"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:120
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:121
 #, kde-format
 msgid "Removing face"
 msgstr "正在移除人脸"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:135
 #, kde-format
 msgid "Remove all faces"
 msgstr "移除所有人脸"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:156
 #, kde-format
 msgid "Editing face tag"
 msgstr "正在编辑人脸标签"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:184
 #, kde-format
 msgid "Editing face region"
 msgstr "正在编辑人脸区域"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:218
 #, kde-format
 msgid "Manually adding face"
 msgstr "正在手动添加人脸"

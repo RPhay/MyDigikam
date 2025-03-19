@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-17 01:53+0000\n"
+"POT-Creation-Date: 2025-03-19 01:55+0000\n"
 "PO-Revision-Date: 2025-01-31 12:48+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -27088,7 +27088,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Конвертиране UFRaw Raw"
 
 #: core/libs/album/engine/album.cpp:411
-#: core/libs/database/utils/ifaces/dio.cpp:908
+#: core/libs/database/utils/ifaces/dio.cpp:954
 #, kde-format
 msgid "Trash"
 msgstr "Кошче"
@@ -27684,7 +27684,7 @@ msgid "Context menu"
 msgstr "Контекстно меню"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
-#: core/libs/database/utils/ifaces/dio.cpp:918
+#: core/libs/database/utils/ifaces/dio.cpp:964
 #, kde-format
 msgid "Empty Trash"
 msgstr "Изчистване на кошчето"
@@ -29108,13 +29108,21 @@ msgstr ""
 "съществува. Текущата версия на схемата на базата данни не може да бъде "
 "проверена. Опитайте да стартирате с празна база данни. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:349
+#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:377
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Файлов конфликт"
 
-#: core/libs/database/utils/ifaces/dio.cpp:350
+#: core/libs/database/utils/ifaces/dio.cpp:357
+#, kde-format
+msgid ""
+"A file operation using the same path is currently in progress. Please wait "
+"for the operation to complete and try again."
+msgstr ""
+
+#: core/libs/database/utils/ifaces/dio.cpp:378
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29135,62 +29143,62 @@ msgstr ""
 "Автоматично презаписване: конфликтните файлове ще бъдат презаписани.\n"
 "Автоматично пропускане: конфликтните файлове ще бъдат пропуснати."
 
-#: core/libs/database/utils/ifaces/dio.cpp:359
+#: core/libs/database/utils/ifaces/dio.cpp:387
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Автоматично преименуване"
 
-#: core/libs/database/utils/ifaces/dio.cpp:361
+#: core/libs/database/utils/ifaces/dio.cpp:389
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Автоматично презаписване"
 
-#: core/libs/database/utils/ifaces/dio.cpp:363
+#: core/libs/database/utils/ifaces/dio.cpp:391
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Автоматично пропускане"
 
-#: core/libs/database/utils/ifaces/dio.cpp:872
+#: core/libs/database/utils/ifaces/dio.cpp:918
 #, kde-format
 msgid "Copy Album"
 msgstr "Копиране на албум"
 
-#: core/libs/database/utils/ifaces/dio.cpp:877
+#: core/libs/database/utils/ifaces/dio.cpp:923
 #, kde-format
 msgid "Copy Images"
 msgstr "Копиране на  изображения"
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:929
 #, kde-format
 msgid "Copy Files"
 msgstr "Копиране на файлове"
 
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:934
 #, kde-format
 msgid "Move Album"
 msgstr "Преместване на албум"
 
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:939
 #, kde-format
 msgid "Move Images"
 msgstr "Преместване на изображения"
 
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:944
 #, kde-format
 msgid "Move Files"
 msgstr "Преместване на  файлове"
 
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/database/utils/ifaces/dio.cpp:949
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
 msgid "Delete"
 msgstr "Изтриване"
 
-#: core/libs/database/utils/ifaces/dio.cpp:913
+#: core/libs/database/utils/ifaces/dio.cpp:959
 #, kde-format
 msgid "Restore Trash"
 msgstr "Възстановяване на кошчето"
@@ -52608,34 +52616,34 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Отказ"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:98
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:99
 #, kde-format
 msgid "Confirming face"
 msgstr "Потвърждаващо лице"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:120
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:121
 #, kde-format
 msgid "Removing face"
 msgstr "Премахване на лицето"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:135
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Remove all Faces"
 msgid "Remove all faces"
 msgstr "Премахване на всички лица"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:156
 #, kde-format
 msgid "Editing face tag"
 msgstr "Редактиране на етикет за лице"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:184
 #, kde-format
 msgid "Editing face region"
 msgstr "Редактиране на регион на лицето"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:218
 #, kde-format
 msgid "Manually adding face"
 msgstr "Ръчно добавяне на лице"
