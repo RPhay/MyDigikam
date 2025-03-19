@@ -36,7 +36,7 @@ BUGFIXES:
 025 ==> 501616 - Drag and drop same folder into subfolder creates recursive copy.
 026 ==> 501684 - Duplicate region when changing the region and confirming the face.
 027 ==> 501573 - "ignore face" doesn't work anymore.
-028 ==> 
+028 ==> 481252 - digiKam crashes when selecting tags in the advanced search.
 029 ==> 
 030 ==> 
 031 ==> 
