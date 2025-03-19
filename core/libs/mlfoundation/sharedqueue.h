@@ -68,7 +68,7 @@ public:
         }
 
         T result = queue_.dequeue();
-        back_.wakeAll();
+        back_.wakeOne();
 
         return result;
     }
@@ -83,7 +83,7 @@ public:
         }
 
         queue_.enqueue(item);
-        front_.wakeAll();     // Notify one waiting thread.
+        front_.wakeOne();     // Notify one waiting thread.
     }
 
     void push_back(T&& item)
@@ -96,7 +96,7 @@ public:
         }
 
         queue_.enqueue(std::move(item));
-        front_.wakeAll();     // Notify one waiting thread.
+        front_.wakeOne();     // Notify one waiting thread.
     }
 
     int size()

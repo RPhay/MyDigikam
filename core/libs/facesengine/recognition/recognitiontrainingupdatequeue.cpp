@@ -27,6 +27,7 @@ int                   RecognitionTrainingUpdateQueue::ref = 0;
 RecognitionTrainingUpdateQueue::RecognitionTrainingUpdateQueue()
 {
     ++ref;
+    queue.setMaxDepth(queue.maxDepthLimit());
 }
 
 RecognitionTrainingUpdateQueue::~RecognitionTrainingUpdateQueue()
