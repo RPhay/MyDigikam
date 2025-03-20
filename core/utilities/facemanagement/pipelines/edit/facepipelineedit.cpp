@@ -74,6 +74,7 @@ FacePipelineEdit* FacePipelineEdit::instance()
 
 FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info,
                                             const FaceTagsIface& face,
+                                            const TagRegion& region,
                                             int tagId,
                                             bool retrain)
 {
@@ -88,7 +89,7 @@ FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info,
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info,
                                                                          face,
                                                                          tagId,
-                                                                         face.region(),
+                                                                         region,
                                                                          DImg(),
                                                                          FacePipelinePackageBase::EditPipelineAction::Confirm,
                                                                          retrain);
@@ -99,7 +100,7 @@ FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info,
 
     enqueue(nextQueue, package);
 
-    return (FaceTagsEditor::confirmedEntry(face, tagId, face.region()));
+    return (FaceTagsEditor::confirmedEntry(face, tagId, region));
 }
 
 void FacePipelineEdit::removeFace(const ItemInfo& info,
@@ -165,15 +166,15 @@ FaceTagsIface FacePipelineEdit::editTag(const ItemInfo& info,
 FaceTagsIface FacePipelineEdit::editRegion(const ItemInfo& info,
                                            const FaceTagsIface& face,
                                            const TagRegion& region,
-                                           const DImg& image,
-                                           bool retrain)
+                                           int tagId,
+                                            bool retrain)
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info,
                                                                          face,
-                                                                         face.tagId(),
+                                                                         tagId,
                                                                          region,
-                                                                         image,
+                                                                         DImg(),
                                                                          FacePipelinePackageBase::EditPipelineAction::EditRegion,
                                                                          retrain);
 
@@ -185,7 +186,13 @@ FaceTagsIface FacePipelineEdit::editRegion(const ItemInfo& info,
     enqueue(nextQueue, package);
 
     FaceTagsIface newFace(package->face);
-    newFace.setRegion(TagRegion());
+    newFace.setRegion(region);
+
+    if (tagId != -1)
+    {
+        newFace.setTagId(tagId);
+        newFace.setType(FaceTagsIface::typeForId(tagId));
+    }
 
     return newFace;
 }
@@ -297,7 +304,9 @@ bool FacePipelineEdit::writer()
         {
             case FacePipelinePackageBase::EditPipelineAction::Confirm:
             {
-                FaceTagsIface confirmedFace = utils.confirmName(package->face, package->tagId, package->face.region());
+                TagRegion confirmedRegion   = package->region.isValid() ? package->region
+                                                                        : package->face.region();
+                FaceTagsIface confirmedFace = utils.confirmName(package->face, package->tagId, confirmedRegion);
                 Identity identity           = utils.identityForTag(confirmedFace.tagId());
 
                 if (0 != package->features.rows)
@@ -345,7 +354,12 @@ bool FacePipelineEdit::writer()
             {
                 if (package->face.region() != package->region)
                 {
-                    utils.changeRegion(package->face, package->region);
+                    package->face = utils.changeRegion(package->face, package->region);
+                }
+
+                if (package->tagId != -1)
+                {
+                   utils.changeTag(package->face, package->tagId);
                 }
 
                 break;

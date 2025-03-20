@@ -174,7 +174,7 @@ void IdentityProvider::cancel()
 {
     if (d && d->removeThreadResult.isRunning())
     {
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::shutdown: sent queue end signal";
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::cancel: sent queue end signal";
 
         // Signal the remove thread to terminate.
 
@@ -677,9 +677,13 @@ bool IdentityProvider::trainingRemoveConcurrent()
 
             FaceClassifier::instance()->retrain();
         }
-
         else
         {
+            // send the end signal if anyone else is listening
+
+            d->removeQueue.push(d->removeQueue.endSignal());
+
+
             break;
         }
     }

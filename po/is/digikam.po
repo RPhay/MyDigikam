@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-17 01:53+0000\n"
-"PO-Revision-Date: 2025-03-15 20:14+0000\n"
+"POT-Creation-Date: 2025-03-19 01:55+0000\n"
+"PO-Revision-Date: 2025-03-18 08:03+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -26702,7 +26702,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "RAW-umbreyting UFRaw"
 
 #: core/libs/album/engine/album.cpp:411
-#: core/libs/database/utils/ifaces/dio.cpp:908
+#: core/libs/database/utils/ifaces/dio.cpp:954
 #, kde-format
 msgid "Trash"
 msgstr "Rusl"
@@ -27288,7 +27288,7 @@ msgid "Context menu"
 msgstr "Samhengisvalmynd"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
-#: core/libs/database/utils/ifaces/dio.cpp:918
+#: core/libs/database/utils/ifaces/dio.cpp:964
 #, kde-format
 msgid "Empty Trash"
 msgstr "Tæma rusl"
@@ -28685,13 +28685,21 @@ msgstr ""
 "staðar. Ekki er hægt að yfirfara núverandi gagnagrunnsskema. Reyndu að ræsa "
 "með tómum gagnagrunni. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:349
+#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:377
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Árekstrar milli skráa"
 
-#: core/libs/database/utils/ifaces/dio.cpp:350
+#: core/libs/database/utils/ifaces/dio.cpp:357
+#, kde-format
+msgid ""
+"A file operation using the same path is currently in progress. Please wait "
+"for the operation to complete and try again."
+msgstr ""
+
+#: core/libs/database/utils/ifaces/dio.cpp:378
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -28712,62 +28720,62 @@ msgstr ""
 "Yfirskrifa sjálfvirkt: skrifað verður yfir skrár sem rekast á.\n"
 "Sleppa sjálfvirkt: skrám sem rekast á verður sleppt."
 
-#: core/libs/database/utils/ifaces/dio.cpp:359
+#: core/libs/database/utils/ifaces/dio.cpp:387
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Endurnefna sjálfkrafa"
 
-#: core/libs/database/utils/ifaces/dio.cpp:361
+#: core/libs/database/utils/ifaces/dio.cpp:389
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Skrifa yfir sjálfkrafa"
 
-#: core/libs/database/utils/ifaces/dio.cpp:363
+#: core/libs/database/utils/ifaces/dio.cpp:391
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Sleppa henni sjálfkrafa"
 
-#: core/libs/database/utils/ifaces/dio.cpp:872
+#: core/libs/database/utils/ifaces/dio.cpp:918
 #, kde-format
 msgid "Copy Album"
 msgstr "Afrita albúm"
 
-#: core/libs/database/utils/ifaces/dio.cpp:877
+#: core/libs/database/utils/ifaces/dio.cpp:923
 #, kde-format
 msgid "Copy Images"
 msgstr "Afrita myndir"
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:929
 #, kde-format
 msgid "Copy Files"
 msgstr "Afrita skrár"
 
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:934
 #, kde-format
 msgid "Move Album"
 msgstr "Færa albúm"
 
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:939
 #, kde-format
 msgid "Move Images"
 msgstr "Færa myndir"
 
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:944
 #, kde-format
 msgid "Move Files"
 msgstr "Færa skrár"
 
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/database/utils/ifaces/dio.cpp:949
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
 msgid "Delete"
 msgstr "Eyða"
 
-#: core/libs/database/utils/ifaces/dio.cpp:913
+#: core/libs/database/utils/ifaces/dio.cpp:959
 #, kde-format
 msgid "Restore Trash"
 msgstr "Endurheimta úr ruslinu"
@@ -34601,9 +34609,7 @@ msgid "Search in"
 msgstr "Leita í"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@label Face Worflow"
-#| msgid "Workflow:"
+#, kde-format
 msgctxt "@label short translated text about the Face Worflow."
 msgid "Workflow:"
 msgstr "Vinnuferli:"
@@ -34655,9 +34661,7 @@ msgstr ""
 "þess að skanna myndirnar fyrir nýjum andlitum.</p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
-#, fuzzy, kde-format
-#| msgctxt "@label Face Detection Accuracy"
-#| msgid "Accuracy:"
+#, kde-format
 msgctxt "@label short translated text about the Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Nákvæmni:"
@@ -34675,9 +34679,7 @@ msgstr ""
 "andlit, en um leið þekkjast færri andlit."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@label face size for detection"
-#| msgid "Face size:"
+#, kde-format
 msgctxt "@label with a short translated text about the face size for detection"
 msgid "Face size:"
 msgstr "Stærð andlita:"
@@ -34750,9 +34752,7 @@ msgid "Face Detection Settings"
 msgstr "Stillingar andlitaskönnunar"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@label Face Detection Accuracy"
-#| msgid "Accuracy:"
+#, kde-format
 msgctxt "@label short translated text about the Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Nákvæmni:"
@@ -34775,9 +34775,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Work on all processor cores"
 msgstr "Vinna á öllum kjörnum örgjörva"
@@ -35315,9 +35313,7 @@ msgid "aesthetic image quality"
 msgstr "fagurfræðileg gæði myndar"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@label: image quality scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label: short translated text about the image quality scan mode"
 msgid "Scan Mode:"
 msgstr "Skönnunarhamur:"
@@ -35346,9 +35342,7 @@ msgstr ""
 "óúthlutuð sérmerki.</p>"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign Low Quality to Rejected Label"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign Low Quality to Rejected Label"
 msgstr "Úthluta lággæðum á myndir með 'Hafnað'-merki"
@@ -35364,9 +35358,7 @@ msgstr ""
 "úthlutað 'Hafnað'-sérmerki (rautt flagg)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign Medium Quality to Pending Label"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign Medium Quality to Pending Label"
 msgstr "Úthluta miðlungsgæðum á myndir með 'Í bið'-merki"
@@ -35382,9 +35374,7 @@ msgstr ""
 "úthlutað 'Í bið'-sérmerki (gult flagg)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign High Quality to Accepted Label"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign High Quality to Accepted Label"
 msgstr "Úthluta hágæðum á myndir með 'Samþykkt'-merki"
@@ -35400,17 +35390,13 @@ msgstr ""
 "úthlutað 'Samþykkt'-sérmerki (grænt flagg)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Quality Engine:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Quality Engine:"
-msgstr "Kerfi til að meta gæði:"
+msgstr "Kerfi fyrir gæðamat:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Aesthetic Contents"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Detect Aesthetic Contents"
 msgstr "Greina fagurfræðilegt efni"
@@ -35428,9 +35414,7 @@ msgstr ""
 "model) til að flokka myndir"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect by Basic Factors"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Detect by Basic Factors"
 msgstr "Greina gæði eftir grunnþáttum"
@@ -35460,9 +35444,7 @@ msgstr ""
 "látið vinnsluna fara fram í bakgrunni á aðeins einum kjarna."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Rejected threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Rejected threshold:"
 msgstr "Þröskuldur fyrir höfnun:"
@@ -35474,12 +35456,10 @@ msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr "Fyrir neðan þennan þröskuld fá myndir úthlutað 'Hafnað'-merki."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Pending threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Pending threshold:"
-msgstr "Þröskuldur fyrir bið:"
+msgstr "Þröskuldur fyrir biðstöðu:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -35488,9 +35468,7 @@ msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr "Fyrir neðan þennan þröskuld fá myndir úthlutað 'Í bið'-merki."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Accepted threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Accepted threshold:"
 msgstr "Þröskuldur fyrir samþykkt:"
@@ -35502,12 +35480,10 @@ msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr "Fyrir ofan þennan þröskuld fá myndir úthlutað 'Samþykkt'-merki."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Blur"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Blur"
-msgstr "Skynja móðun"
+msgstr "Skynja mósku"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, kde-format
@@ -35518,9 +35494,7 @@ msgstr "Skynja magn móðunar (blur) í myndum sem unnið er með"
 #: core/libs/imgqsort/imagequalitywidget.cpp:223
 #: core/libs/imgqsort/imagequalitywidget.cpp:234
 #: core/libs/imgqsort/imagequalitywidget.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Weight:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Weight:"
 msgstr "Vægi:"
@@ -35532,9 +35506,7 @@ msgid "Weight to assign to Blur Algorithm"
 msgstr "Magn sem á að tengja við móðunarútreikning"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Noise"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Noise"
 msgstr "Skynja suð"
@@ -35552,9 +35524,7 @@ msgid "Weight to assign to Noise Algorithm"
 msgstr "Magn sem á að tengja við truflanaútreikning"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Compression"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Compression"
 msgstr "Skynja gagnaþjöppun"
@@ -35572,9 +35542,7 @@ msgid "Weight to assign to Compression Algorithm"
 msgstr "Magn sem á að tengja við þjöppunarútreikning"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Under and Over Exposure"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Under and Over Exposure"
 msgstr "Skynja yfir- og undirlýsingu"
@@ -39611,9 +39579,7 @@ msgstr ""
 "merkja til að lýsa myndefninu og geyma niðurstöðurnar í gagnagrunni.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@label: image quality scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label with a short translated text about autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Skönnunarhamur:"
@@ -39642,11 +39608,10 @@ msgstr ""
 "merki.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "Auto-Tagging Mode:"
+#, kde-format
 msgctxt "@label with a short translated text "
 msgid "Auto-Tagging Mode:"
-msgstr "Merkingahamur sjálfvirkra merkja:"
+msgstr "Hamur sjálfvirkra merkja:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
@@ -39674,9 +39639,7 @@ msgstr ""
 "fyrirliggjandi merki.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@label: deep learning model used to detect objects to auto-tag"
-#| msgid "Detection Model:"
+#, kde-format
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
@@ -39689,8 +39652,7 @@ msgid "No models available"
 msgstr "Engin líkön tiltæk"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Detection Accuracy:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Detection Accuracy:"
 msgstr "Nákvæmni greiningar:"
@@ -39720,9 +39682,7 @@ msgstr ""
 "látið vinnsluna fara fram í bakgrunni á aðeins einum kjarna."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Translate Tags to:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Translate Tags to:"
 msgstr "Þýða merki yfir á:"
@@ -43069,15 +43029,12 @@ msgid "Releases Manager"
 msgstr "Útgáfustjóri"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Quality Engine:"
+#, kde-format
 msgid "Quality Test Engineer"
 msgstr "Kerfi til að meta gæði:"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:157
-#, fuzzy, kde-format
-#| msgid "Port to Qt6,"
+#, kde-format
 msgid "Port to Qt6"
 msgstr "Aðlögun að Qt6;"
 
@@ -51955,34 +51912,32 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Hætta við"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:98
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:99
 #, kde-format
 msgid "Confirming face"
 msgstr "Staðfesta andlit"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:120
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:121
 #, kde-format
 msgid "Removing face"
 msgstr "Fjarlægja andlit"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Remove all Faces"
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:135
+#, kde-format
 msgid "Remove all faces"
 msgstr "Fjarlægja öll andlitsmerki"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:156
 #, kde-format
 msgid "Editing face tag"
 msgstr "Breyta andlitsmerki"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:184
 #, kde-format
 msgid "Editing face region"
 msgstr "Breyta andlitssvæði"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:218
 #, kde-format
 msgid "Manually adding face"
 msgstr "Bæta andliti við handvirkt"

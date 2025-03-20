@@ -14,7 +14,7 @@ HEIF    Done  Done   Done  Done      N.A     yes      yes     libheif + libde265
 Others file formats are supported:
 
 - in 8 or 16 bits/color/pixel only using Qt plugin loaders (QImage and KImageFormat plugins from KDE framework - "KIMG").
-  https://doc.qt.io/qt-5/qimage.html#reading-and-writing-image-files
+  https://doc.qt.io/qt-6/qimage.html#reading-and-writing-image-files
   https://invent.kde.org/frameworks/kimageformats
 
 - in 8 or 16 bits/color/pixel using ImageMagick codecs (optional - "IM").
@@ -52,12 +52,12 @@ XBM      yes        yes    yes        X Windows system bitmap                  K
 XPM      yes        yes    yes        X Windows system pixmap                  KIMG | IM
 JXL      yes        yes    yes        JPEG Extended Long-term                  KIMG | [IM]     Libjxr dependency - since KF 5.89 - IM with RT dependency
 JXR      yes        yes    yes        JPEG Extended Range                      KIMG | IM       Older HD photo from Microsoft - since KF 5.117
+WEBP     yes        yes    yes        Weppy image format                       KIMG   IM
 PCD      yes        no     yes        PhotoCD                                         IM
 SGI      yes        no     yes        Irix RGB image                                  IM
 ICO      yes        no     no         Windows icon format                             IM
 MNG      yes        no     yes        Multiple-image Network Graphics                 IM
 SVG      yes        no     yes        Scalable Vector Graphics                        IM
-WEBP     yes        no     yes        Weppy image format                              IM
 FIT/FITS yes        no     yes        Flexible Image Transport System                 IM
 FLIF     yes        no     yes        Free Lossless Image Format                      IM
 JBIG     yes        no     yes        Joint Bi-level Image                            IM

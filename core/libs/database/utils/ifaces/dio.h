@@ -18,6 +18,7 @@
 
 // Qt includes
 
+#include <QMultiHash>
 #include <QObject>
 #include <QMutex>
 #include <QMap>
@@ -127,9 +128,10 @@ private:
 
 private:
 
-    int                m_processingCount    = 0;
-    QMap<QString, int> m_trashCounterMap;
-    QMutex             m_trashCounterMutex;
+    int                             m_processingCount    = 0;
+    QMap<QString, int>              m_trashCounterMap;
+    QMultiHash<IOJobData*, QString> m_currentPathHash;
+    QMutex                          m_dioMutex;
 
     friend class DIOCreator;
 };

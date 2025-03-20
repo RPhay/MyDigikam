@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-17 01:53+0000\n"
-"PO-Revision-Date: 2025-03-15 13:55+0100\n"
+"POT-Creation-Date: 2025-03-19 01:55+0000\n"
+"PO-Revision-Date: 2025-03-19 14:26+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -27066,7 +27066,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Rawconversie UFRaw"
 
 #: core/libs/album/engine/album.cpp:411
-#: core/libs/database/utils/ifaces/dio.cpp:908
+#: core/libs/database/utils/ifaces/dio.cpp:954
 #, kde-format
 msgid "Trash"
 msgstr "Prullenbak"
@@ -27658,7 +27658,7 @@ msgid "Context menu"
 msgstr "Contextmenu"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
-#: core/libs/database/utils/ifaces/dio.cpp:918
+#: core/libs/database/utils/ifaces/dio.cpp:964
 #, kde-format
 msgid "Empty Trash"
 msgstr "Prullenbak legen"
@@ -29080,13 +29080,23 @@ msgstr ""
 "niet. De huidige versie van het databaseschema kan niet worden geverifieerd. "
 "Probeer te beginnen met een lege database. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:349
+#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:377
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Bestandsconflict"
 
-#: core/libs/database/utils/ifaces/dio.cpp:350
+#: core/libs/database/utils/ifaces/dio.cpp:357
+#, kde-format
+msgid ""
+"A file operation using the same path is currently in progress. Please wait "
+"for the operation to complete and try again."
+msgstr ""
+"Een bestandsbewerking die hetzelfde pad gebruikt is op dit moment bezig. "
+"Wacht op de bewerking om te voltooien en probeer opnieuw."
+
+#: core/libs/database/utils/ifaces/dio.cpp:378
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29108,62 +29118,62 @@ msgstr ""
 "worden.\n"
 "Automatisch overslaan: conflicterende bestanden zullen overgeslagen worden."
 
-#: core/libs/database/utils/ifaces/dio.cpp:359
+#: core/libs/database/utils/ifaces/dio.cpp:387
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Automatisch hernoemen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:361
+#: core/libs/database/utils/ifaces/dio.cpp:389
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Automatisch overschrijven"
 
-#: core/libs/database/utils/ifaces/dio.cpp:363
+#: core/libs/database/utils/ifaces/dio.cpp:391
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Automatisch overslaan"
 
-#: core/libs/database/utils/ifaces/dio.cpp:872
+#: core/libs/database/utils/ifaces/dio.cpp:918
 #, kde-format
 msgid "Copy Album"
 msgstr "Album kopiëren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:877
+#: core/libs/database/utils/ifaces/dio.cpp:923
 #, kde-format
 msgid "Copy Images"
 msgstr "Afbeeldingen kopiëren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:929
 #, kde-format
 msgid "Copy Files"
 msgstr "Bestanden kopiëren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:934
 #, kde-format
 msgid "Move Album"
 msgstr "Album verplaatsen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:939
 #, kde-format
 msgid "Move Images"
 msgstr "Afbeeldingen verplaatsen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:944
 #, kde-format
 msgid "Move Files"
 msgstr "Bestanden verplaatsen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/database/utils/ifaces/dio.cpp:949
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:913
+#: core/libs/database/utils/ifaces/dio.cpp:959
 #, kde-format
 msgid "Restore Trash"
 msgstr "Prullenbak herstellen"
@@ -35063,9 +35073,7 @@ msgid "Search in"
 msgstr "Zoeken in"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@label Face Worflow"
-#| msgid "Workflow:"
+#, kde-format
 msgctxt "@label short translated text about the Face Worflow."
 msgid "Workflow:"
 msgstr "Werkmethode:"
@@ -35117,9 +35125,7 @@ msgstr ""
 "gezichten zonder het scannen van nieuwe gezichten in afbeeldingen.</p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
-#, fuzzy, kde-format
-#| msgctxt "@label Face Detection Accuracy"
-#| msgid "Accuracy:"
+#, kde-format
 msgctxt "@label short translated text about the Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Nauwkeurigheid:"
@@ -35137,9 +35143,7 @@ msgstr ""
 "worden gedetecteerd, maar minder gezichten zullen gedetecteerd worden."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@label face size for detection"
-#| msgid "Face size:"
+#, kde-format
 msgctxt "@label with a short translated text about the face size for detection"
 msgid "Face size:"
 msgstr "Gezichtsafmeting:"
@@ -35213,9 +35217,7 @@ msgid "Face Detection Settings"
 msgstr "Instellingen voor gezichtsdetectie"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@label Face Detection Accuracy"
-#| msgid "Accuracy:"
+#, kde-format
 msgctxt "@label short translated text about the Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Nauwkeurigheid:"
@@ -35238,9 +35240,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Work on all processor cores"
 msgstr "Werk op alle processorkernen"
@@ -35781,9 +35781,7 @@ msgid "aesthetic image quality"
 msgstr "esthetische afbeeldingskwaliteit"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@label: image quality scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label: short translated text about the image quality scan mode"
 msgid "Scan Mode:"
 msgstr "Modus van scan:"
@@ -35812,9 +35810,7 @@ msgstr ""
 "p>"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign Low Quality to Rejected Label"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign Low Quality to Rejected Label"
 msgstr "Lage kwaliteit toewijzen aan label Afgewezen"
@@ -35830,9 +35826,7 @@ msgstr ""
 "zullen toegekend worden aan het keuzelabel afgewezen (rode vlag)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign Medium Quality to Pending Label"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign Medium Quality to Pending Label"
 msgstr "Middelmatige kwaliteit toegewezen aan label Afwachten"
@@ -35849,9 +35843,7 @@ msgstr ""
 "zullen toegekend worden aan het keuzelabel label Afwachten (gele vlag)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign High Quality to Accepted Label"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign High Quality to Accepted Label"
 msgstr "Hoge kwaliteit toekennen aan label Geaccepteerd"
@@ -35867,17 +35859,13 @@ msgstr ""
 "zullen toegekend worden aan het label Geaccepteerd (groene vlag)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Quality Engine:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Quality Engine:"
 msgstr "Kwaliteitsengine:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Aesthetic Contents"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Detect Aesthetic Contents"
 msgstr "Esthetische inhoud detecteren"
@@ -35895,9 +35883,7 @@ msgstr ""
 "deep learning om afbeeldingen te classificeren"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect by Basic Factors"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Detect by Basic Factors"
 msgstr "Detecteren met basis factoren"
@@ -35927,9 +35913,7 @@ msgstr ""
 "gebruiken of alleen in de achtergrond wilt werken in één kern."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Rejected threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Rejected threshold:"
 msgstr "Drempel voor afwijzing:"
@@ -35942,9 +35926,7 @@ msgstr ""
 "Drempel waaronder alle afbeeldingen het label Afgewezen krijgen toegekend"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Pending threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Pending threshold:"
 msgstr "Drempel voor wachten:"
@@ -35957,9 +35939,7 @@ msgstr ""
 "Drempel waaronder alle afbeeldingen het label Afwachten krijgen toegekend"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Accepted threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Accepted threshold:"
 msgstr "Drempel voor acceptatie:"
@@ -35972,9 +35952,7 @@ msgstr ""
 "Drempel waarboven alle afbeeldingen het label Geaccepteerd krijgen toegekend"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Blur"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Blur"
 msgstr "Vervaging detecteren"
@@ -35988,9 +35966,7 @@ msgstr "Detecteer de hoeveelheid vervaging in de ingebrachte afbeeldingen"
 #: core/libs/imgqsort/imagequalitywidget.cpp:223
 #: core/libs/imgqsort/imagequalitywidget.cpp:234
 #: core/libs/imgqsort/imagequalitywidget.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Weight:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Weight:"
 msgstr "Gewicht:"
@@ -36002,9 +35978,7 @@ msgid "Weight to assign to Blur Algorithm"
 msgstr "Toe te kennen gewicht aan het algoritme voor vaagheid"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Noise"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Noise"
 msgstr "Ruis detecteren"
@@ -36022,9 +35996,7 @@ msgid "Weight to assign to Noise Algorithm"
 msgstr "Toe te kennen gewicht aan het algoritme voor ruis"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Compression"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Compression"
 msgstr "Compressie detecteren"
@@ -36042,9 +36014,7 @@ msgid "Weight to assign to Compression Algorithm"
 msgstr "Toe te kennen gewicht aan het algoritme voor compressie"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Under and Over Exposure"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Under and Over Exposure"
 msgstr "Onder- en overbelichting detecteren"
@@ -40102,9 +40072,7 @@ msgstr ""
 "inhoud van de afbeelding en de resultaten opslaan in de database.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@label: image quality scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label with a short translated text about autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Modus van scan:"
@@ -40133,8 +40101,7 @@ msgstr ""
 "p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "Auto-Tagging Mode:"
+#, kde-format
 msgctxt "@label with a short translated text "
 msgid "Auto-Tagging Mode:"
 msgstr "Modus voor automatisch tags toekennen:"
@@ -40165,9 +40132,7 @@ msgstr ""
 "p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@label: deep learning model used to detect objects to auto-tag"
-#| msgid "Detection Model:"
+#, kde-format
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
@@ -40180,8 +40145,7 @@ msgid "No models available"
 msgstr "Geen modellen beschikbaar"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Detection Accuracy:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Detection Accuracy:"
 msgstr "Nauwkeurigheid van detectie:"
@@ -40211,9 +40175,7 @@ msgstr ""
 "gebruiken of alleen in de achtergrond wilt werken in één kern."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Translate Tags to:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Translate Tags to:"
 msgstr "Tags vertalen naar:"
@@ -52481,32 +52443,32 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:98
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:99
 #, kde-format
 msgid "Confirming face"
 msgstr "Gezicht bevestigen"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:120
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:121
 #, kde-format
 msgid "Removing face"
 msgstr "Gezichtstag wordt verwijderd"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:134
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:135
 #, kde-format
 msgid "Remove all faces"
 msgstr "Alle gezichten verwijderen"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:155
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:156
 #, kde-format
 msgid "Editing face tag"
 msgstr "Gezichten wordt bewerkt"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:183
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:184
 #, kde-format
 msgid "Editing face region"
 msgstr "Gezichtsgebied wordt bewerkt"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:211
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:218
 #, kde-format
 msgid "Manually adding face"
 msgstr "Handmatig wordt gezicht toegevoegd"

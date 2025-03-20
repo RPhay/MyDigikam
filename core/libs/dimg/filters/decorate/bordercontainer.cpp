@@ -129,7 +129,6 @@ QString BorderContainer::getBorderPath(int border)
         default:
         {
             return pattern;
-            break;
         }
     }
 

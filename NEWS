@@ -33,11 +33,11 @@ BUGFIXES:
 022 ==> 498213 - Crash when starting with xkbmap de(sundeadkeys) set.
 023 ==> 494288 - digiKam crashes on first interaction.
 024 ==> 501604 - 8.6.0 compilation error in QtAVPlayer/qavstream.cpp.
-025 ==> 
-026 ==> 
-027 ==> 
-028 ==> 
-029 ==> 
+025 ==> 501616 - Drag and drop same folder into subfolder creates recursive copy.
+026 ==> 501684 - Duplicate region when changing the region and confirming the face.
+027 ==> 501573 - "ignore face" doesn't work anymore.
+028 ==> 481252 - digiKam crashes when selecting tags in the advanced search.
+029 ==> 501776 - Editing existing face rectangle boundaries adds a new face rectangle.
 030 ==> 
 031 ==> 
 032 ==> 

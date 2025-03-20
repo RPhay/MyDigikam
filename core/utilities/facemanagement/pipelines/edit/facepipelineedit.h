@@ -43,6 +43,7 @@ public:
 
     FaceTagsIface confirmFace(const ItemInfo& info,
                               const FaceTagsIface& face,
+                              const TagRegion& region,
                               int tagId,
                               bool retrain = true);
 
@@ -58,7 +59,7 @@ public:
     FaceTagsIface editRegion(const ItemInfo& info,
                              const FaceTagsIface& face,
                              const TagRegion& region,
-                             const DImg& image,
+                             int tagId = -1,
                              bool retrain = true);
 
     FaceTagsIface addManually(const ItemInfo& info,
