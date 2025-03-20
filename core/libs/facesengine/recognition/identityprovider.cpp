@@ -50,7 +50,6 @@ class Q_DECL_HIDDEN IdentityProvider::Private
 public:
 
     bool                            dbAvailable             = false;
-    bool                            cancelled               = false;
     int                             seedMax                 = 0;
 
     QHash<int, Identity>            identityCache;
@@ -173,10 +172,8 @@ bool IdentityProvider::initialize()
 
 void IdentityProvider::cancel()
 {
-    if (d && d->removeThreadResult.isRunning() && !d->cancelled)
+    if (d && d->removeThreadResult.isRunning())
     {
-        d->cancelled = true;
-
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::cancel: sent queue end signal";
 
         // Signal the remove thread to terminate.
@@ -187,13 +184,8 @@ void IdentityProvider::cancel()
 
         while (d->removeThreadResult.isRunning())
         {
-            // d->removeQueue.push(d->removeQueue.endSignal());
             QThread::msleep(10);
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::cancel: waiting for removeThread to exit";
         }
-
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::cancel: cancel complete";
-
     }
 }
 
@@ -675,28 +667,18 @@ Identity IdentityProvider::findByAttributes(const QString& attribute,
 
 bool IdentityProvider::trainingRemoveConcurrent()
 {
-    static int threadCount = 0;
-
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::trainingRemoveConcurrent thread started: " << ++threadCount;
-
     QString hash;
 
     while (true)
     {
         hash = d->removeQueue.pop_front();
 
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::trainingRemoveConcurrent: received: " << hash;
-
         if (d->removeQueue.endSignal() != hash)
         {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::trainingRemoveConcurrent: processing: " << hash;
-
             clearTraining(hash);
             hash.clear();
 
             FaceClassifier::instance()->retrain();
-
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::trainingRemoveConcurrent: finished processing: " << hash;
         }
         else
         {
@@ -704,7 +686,6 @@ bool IdentityProvider::trainingRemoveConcurrent()
 
             d->removeQueue.push(d->removeQueue.endSignal());
 
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::trainingRemoveConcurrent: end signal processed: " << hash;
 
             break;
         }
