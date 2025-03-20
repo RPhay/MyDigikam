@@ -38,7 +38,7 @@ BUGFIXES:
 027 ==> 501573 - "ignore face" doesn't work anymore.
 028 ==> 481252 - digiKam crashes when selecting tags in the advanced search.
 029 ==> 501776 - Editing existing face rectangle boundaries adds a new face rectangle.
-030 ==> 
+030 ==> 501769 - Build uses -Werror=undef, which makes it fail.
 031 ==> 
 032 ==> 
 033 ==> 
