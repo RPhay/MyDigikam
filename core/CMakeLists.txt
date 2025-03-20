@@ -406,6 +406,9 @@ if(DIGIKAM_CAN_BE_COMPILED)
     REMOVE_GCC_COMPILER_WARNINGS("-Wzero-as-null-pointer-constant")
     REMOVE_GCC_COMPILER_WARNINGS("-pedantic")
 
+    # See bug for NETBSD #501769
+    REMOVE_GCC_COMPILER_WARNINGS("-Werror=undef")
+
     # Remove deprecated-copy GCC warnings which generate a lots of compilation warnings
     DISABLE_GCC_COMPILER_WARNINGS("8.99.99" "-Wno-deprecated-copy")
 
