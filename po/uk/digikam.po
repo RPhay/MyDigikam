@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-19 01:55+0000\n"
-"PO-Revision-Date: 2025-03-18 15:56+0200\n"
+"PO-Revision-Date: 2025-03-19 08:35+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -29211,6 +29211,8 @@ msgid ""
 "A file operation using the same path is currently in progress. Please wait "
 "for the operation to complete and try again."
 msgstr ""
+"Зараз виконуємо дію з файлами за тим самим шляхом. Будь ласка, дочекайтеся "
+"завершення цієї дії і повторіть спробу."
 
 #: core/libs/database/utils/ifaces/dio.cpp:378
 #, kde-format

@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-19 01:55+0000\n"
-"PO-Revision-Date: 2025-03-17 06:20+0100\n"
+"PO-Revision-Date: 2025-03-19 07:11+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -28801,6 +28801,8 @@ msgid ""
 "A file operation using the same path is currently in progress. Please wait "
 "for the operation to complete and try again."
 msgstr ""
+"Trenutno je v teku datotečna operacija, ki uporablja isto pot. Počakajte, da "
+"se operacija zaključi in poskusite znova."
 
 #: core/libs/database/utils/ifaces/dio.cpp:378
 #, kde-format

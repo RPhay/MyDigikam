@@ -47,7 +47,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-19 01:55+0000\n"
-"PO-Revision-Date: 2025-03-18 01:06+0100\n"
+"PO-Revision-Date: 2025-03-19 14:03+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -29109,6 +29109,8 @@ msgid ""
 "A file operation using the same path is currently in progress. Please wait "
 "for the operation to complete and try again."
 msgstr ""
+"Una operación con archivos que usa la misma ruta está en curso. Espere a que "
+"termine esta operación y vuelva a probar."
 
 #: core/libs/database/utils/ifaces/dio.cpp:378
 #, kde-format
