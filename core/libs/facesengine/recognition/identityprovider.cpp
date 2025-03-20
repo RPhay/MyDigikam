@@ -182,10 +182,7 @@ void IdentityProvider::cancel()
 
         // Wait for the remove thread to finish.
 
-        while (d->removeThreadResult.isRunning())
-        {
-            QThread::msleep(10);
-        }
+        d->removeThreadResult.waitForFinished();
     }
 }
 
