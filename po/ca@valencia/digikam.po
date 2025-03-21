@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-19 01:55+0000\n"
-"PO-Revision-Date: 2025-03-07 10:14+0100\n"
+"PO-Revision-Date: 2025-03-19 08:54+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -29075,6 +29075,8 @@ msgid ""
 "A file operation using the same path is currently in progress. Please wait "
 "for the operation to complete and try again."
 msgstr ""
+"Actualment hi ha en curs una operació de fitxer que utilitza el mateix camí. "
+"Espereu que l'operació es complete i torneu-ho a provar."
 
 #: core/libs/database/utils/ifaces/dio.cpp:378
 #, kde-format
@@ -35095,9 +35097,7 @@ msgid "Search in"
 msgstr "Busca a"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@label Face Worflow"
-#| msgid "Workflow:"
+#, kde-format
 msgctxt "@label short translated text about the Face Worflow."
 msgid "Workflow:"
 msgstr "Flux de treball:"
@@ -35149,9 +35149,7 @@ msgstr ""
 "sense explorar cares noves de les imatges.</p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
-#, fuzzy, kde-format
-#| msgctxt "@label Face Detection Accuracy"
-#| msgid "Accuracy:"
+#, kde-format
 msgctxt "@label short translated text about the Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Precisió:"
@@ -35169,9 +35167,7 @@ msgstr ""
 "es detectaran les cares, però es reconeixeran menys cares."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@label face size for detection"
-#| msgid "Face size:"
+#, kde-format
 msgctxt "@label with a short translated text about the face size for detection"
 msgid "Face size:"
 msgstr "Mida de les cares:"
@@ -35244,9 +35240,7 @@ msgid "Face Detection Settings"
 msgstr "Configureu la detecció de cares"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@label Face Detection Accuracy"
-#| msgid "Accuracy:"
+#, kde-format
 msgctxt "@label short translated text about the Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Precisió:"
@@ -35269,9 +35263,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Work on all processor cores"
 msgstr "Treballa amb tots els nuclis dels processadors"
@@ -35810,9 +35802,7 @@ msgid "aesthetic image quality"
 msgstr "qualitat estètica de les imatges"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@label: image quality scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label: short translated text about the image quality scan mode"
 msgid "Scan Mode:"
 msgstr "Mode d'exploració:"
@@ -35841,9 +35831,7 @@ msgstr ""
 "etiquetes de rètol de selecció assignades.</p>"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign Low Quality to Rejected Label"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign Low Quality to Rejected Label"
 msgstr "Assigna la qualitat baixa a l'etiqueta rebutjada"
@@ -35859,9 +35847,7 @@ msgstr ""
 "se'ls assignarà el rètol de selecció «Rebutjada» (indicador roig)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign Medium Quality to Pending Label"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign Medium Quality to Pending Label"
 msgstr "Assigna la qualitat baixa a l'etiqueta pendent"
@@ -35877,9 +35863,7 @@ msgstr ""
 "se'ls assignarà el rètol de selecció «Pendent» (indicador groc)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign High Quality to Accepted Label"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign High Quality to Accepted Label"
 msgstr "Assigna la qualitat alta a l'etiqueta acceptada"
@@ -35895,17 +35879,13 @@ msgstr ""
 "se'ls assignarà el rètol de selecció «Acceptada» (indicador verd)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Quality Engine:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Quality Engine:"
 msgstr "Motor de qualitat:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Aesthetic Contents"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Detect Aesthetic Contents"
 msgstr "Detecta el contingut estètic"
@@ -35923,9 +35903,7 @@ msgstr ""
 "per a classificar les imatges."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect by Basic Factors"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Detect by Basic Factors"
 msgstr "Detecta segons factors bàsics"
@@ -35956,9 +35934,7 @@ msgstr ""
 "o treballar en segon pla, amb només un nucli."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Rejected threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Rejected threshold:"
 msgstr "Llindar de rebuig:"
@@ -35972,9 +35948,7 @@ msgstr ""
 "«Rebutjada»"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Pending threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Pending threshold:"
 msgstr "Llindar de pendent:"
@@ -35987,9 +35961,7 @@ msgstr ""
 "Llindar davall el qual totes les imatges se'ls assignarà l'etiqueta «Pendent»"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Accepted threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Accepted threshold:"
 msgstr "Llindar d'acceptació:"
@@ -36003,9 +35975,7 @@ msgstr ""
 "«Acceptada»"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Blur"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Blur"
 msgstr "Detecta el difuminat"
@@ -36019,9 +35989,7 @@ msgstr "Detecta la quantitat de difuminat en les imatges"
 #: core/libs/imgqsort/imagequalitywidget.cpp:223
 #: core/libs/imgqsort/imagequalitywidget.cpp:234
 #: core/libs/imgqsort/imagequalitywidget.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Weight:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Weight:"
 msgstr "Ponderació:"
@@ -36033,9 +36001,7 @@ msgid "Weight to assign to Blur Algorithm"
 msgstr "Ponderació assignada a l'algorisme de difuminat"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Noise"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Noise"
 msgstr "Detecta el soroll"
@@ -36053,9 +36019,7 @@ msgid "Weight to assign to Noise Algorithm"
 msgstr "Ponderació assignada a l'algorisme de soroll"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Compression"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Compression"
 msgstr "Detecta la compressió"
@@ -36073,9 +36037,7 @@ msgid "Weight to assign to Compression Algorithm"
 msgstr "Ponderació assignada a l'algorisme de compressió"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Under and Over Exposure"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Under and Over Exposure"
 msgstr "Detecta la subexposició i la sobreexposició"
@@ -40140,9 +40102,7 @@ msgstr ""
 "emmagatzemarà el resultat a la base de dades.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@label: image quality scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label with a short translated text about autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Mode d'exploració:"
@@ -40171,8 +40131,7 @@ msgstr ""
 "etiquetes automàtiques assignades.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "Auto-Tagging Mode:"
+#, kde-format
 msgctxt "@label with a short translated text "
 msgid "Auto-Tagging Mode:"
 msgstr "Mode d'etiquetatge automàtic:"
@@ -40203,9 +40162,7 @@ msgstr ""
 "les etiquetes automàtiques existents.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@label: deep learning model used to detect objects to auto-tag"
-#| msgid "Detection Model:"
+#, kde-format
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
@@ -40218,8 +40175,7 @@ msgid "No models available"
 msgstr "Cap model disponible"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Detection Accuracy:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Detection Accuracy:"
 msgstr "Precisió de la detecció:"
@@ -40250,9 +40206,7 @@ msgstr ""
 "o treballar en segon pla, amb només un nucli."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Translate Tags to:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Translate Tags to:"
 msgstr "Traduïx les etiquetes a:"
@@ -52608,9 +52562,7 @@ msgid "Removing face"
 msgstr "Eliminació de cara"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Remove all Faces"
+#, kde-format
 msgid "Remove all faces"
 msgstr "Elimina totes les cares"
 
@@ -68377,11 +68329,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgctxt "@label Face Recognition Accuracy"
-#~ msgid "Accuracy:"
-#~ msgstr "Precisió:"
-
-#~ msgctxt "@label: autotags scanning mode"
-#~ msgid "Scan Mode:"
-#~ msgstr "Mode d'exploració:"
