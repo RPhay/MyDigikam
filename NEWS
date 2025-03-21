@@ -43,7 +43,7 @@ BUGFIXES:
 031 ==> 496408 - Tried to auto-assign tags. The two Yolo models produced results, the ResNet50 did not.
 032 ==> 495540 - Accuracy of the auto tag feature is very bad.
 033 ==> 501770 - JXL - Tag deletion misses XP Keywords.
-034 ==> 
+034 ==> 478861 - digiKam freezes when closing settings on Fedora w/ Gnome (default workstation).
 035 ==> 
 036 ==> 
 037 ==> 
