@@ -27837,7 +27837,7 @@ msgstr "文件冲突"
 msgid ""
 "A file operation using the same path is currently in progress. Please wait "
 "for the operation to complete and try again."
-msgstr ""
+msgstr "当前有另一个文件操作正在使用相同的路径，请等待该操作完成后重试。"
 
 #: core/libs/database/utils/ifaces/dio.cpp:378
 #, kde-format
