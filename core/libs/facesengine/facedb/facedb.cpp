@@ -110,8 +110,13 @@ bool FaceDb::integrityCheck()
 
                 if (messageText.toLower().compare(QLatin1String("ok")) != 0)
                 {
-                    qCDebug(DIGIKAM_DATABASE_LOG) << "Failed integrity check for table "
-                                                  << tableName << ". Reason:" << messageText;
+                    qCWarning(DIGIKAM_DATABASE_LOG) << "Failed integrity check for table "
+                                                    << tableName << ". Reason:" << messageText;
+
+                    QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
+                                          i18n("Failed integrity check for MySQL face database.\n"
+                                               "Table: %1\nReason: %2", tableName, messageText));
+
                     return false;
                 }
                 else

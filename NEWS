@@ -45,7 +45,7 @@ BUGFIXES:
 033 ==> 501770 - JXL - Tag deletion misses XP Keywords.
 034 ==> 478861 - digiKam freezes when closing settings on Fedora w/ Gnome (default workstation).
 035 ==> 501907 - No active process` is misleading.
-036 ==> 
+036 ==> 501905 - Since upgrade to 8.6.0 digiKam crashes on startup after integrity check fails for "digikamfaces.Identities".
 037 ==> 
 038 ==> 
 039 ==> 

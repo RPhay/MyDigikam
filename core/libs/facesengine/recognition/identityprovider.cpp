@@ -87,7 +87,7 @@ IdentityProvider::IdentityProvider()
 
     if (!initialize())
     {
-        QException().raise();
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::initialize() failed!";
     }
 
     // Create a thread pool for the training remover.

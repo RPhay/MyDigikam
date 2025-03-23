@@ -23,6 +23,15 @@
 
 #include <iterator>
 
+// Qt includes
+
+#include <QApplication>
+#include <QMessageBox>
+
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
