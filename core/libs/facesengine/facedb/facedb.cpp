@@ -83,9 +83,8 @@ bool FaceDb::integrityCheck()
 
             if (!result && !values.isEmpty())
             {
-                QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
-                                      i18n("Failed integrity check for SQLite face database.\n"
-                                           "Reason: %1", values.first().toString()));
+                qCWarning(DIGIKAM_DATABASE_LOG) << "Failed integrity check for SQLite face database:"
+                                                << values.first().toString();
             }
 
             return result;
@@ -129,16 +128,14 @@ bool FaceDb::integrityCheck()
                         (messageText.toLower().compare(QLatin1String("ok"))     != 0)
                        )
                     {
-                        QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
-                                              i18n("Failed integrity check for MySQL face database.\n"
-                                                   "Table: %1\nReason: %2", tableName, messageText));
-
                         return false;
                     }
                 }
                 else
                 {
+/*
                     qCDebug(DIGIKAM_DATABASE_LOG) << "Passed integrity check for table " << tableName;
+*/
                 }
             }
 

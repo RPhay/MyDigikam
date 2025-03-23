@@ -497,10 +497,18 @@ bool SimilarityDb::integrityCheck()
         {
             // For SQLite the integrity check returns a single row with one string column "ok" on success and multiple rows on error.
 
-            return (
-                    (values.size() == 1) &&
-                    (values.first().toString().toLower().compare(QLatin1String("ok")) == 0)
-                   );
+            bool result = (
+                           (values.size() == 1) &&
+                           (values.first().toString().toLower().compare(QLatin1String("ok")) == 0)
+                          );
+
+            if (!result && !values.isEmpty())
+            {
+                qCWarning(DIGIKAM_DATABASE_LOG) << "Failed integrity check for SQLite similarity database:"
+                                                << values.first().toString();
+            }
+
+            return result;
         }
 
         case BdEngineBackend::DbType::MySQL:
@@ -526,13 +534,22 @@ bool SimilarityDb::integrityCheck()
                 ++it;
 
                 Q_UNUSED(operation);
-                Q_UNUSED(messageType);
 
-                if (messageText.toLower().compare(QLatin1String("ok")) != 0)
+                if (!messageText.isEmpty())
                 {
-                    qCDebug(DIGIKAM_DATABASE_LOG) << "Failed integrity check for table "
-                                                  << tableName << ". Reason:" << messageText;
-                    return false;
+                    if ((messageType.toLower().compare(QLatin1String("note")) == 0))
+                    {
+                        qCWarning(DIGIKAM_DATABASE_LOG) << "Failed integrity check for table "
+                                                        << tableName << ". Reason:" << messageText;
+                    }
+
+                    if (
+                        (messageType.toLower().compare(QLatin1String("status")) == 0) &&
+                        (messageText.toLower().compare(QLatin1String("ok"))     != 0)
+                       )
+                    {
+                        return false;
+                    }
                 }
                 else
                 {
