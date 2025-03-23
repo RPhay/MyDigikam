@@ -97,7 +97,7 @@ DK_QTVERSION="6"
 # If you want to package current implementation from git, use "master" as tag.
 #DK_VERSION=v8.5.0
 DK_VERSION=master
-#DK_VERSION="work/michmill/bug_500570"
+#DK_VERSION="work/michmill/8_7_0-bqm-autorotate"
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
 #DK_SUBVER="-01"

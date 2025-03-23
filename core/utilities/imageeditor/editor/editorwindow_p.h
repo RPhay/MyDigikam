@@ -201,6 +201,7 @@ public:
     QAction*                     flipVertAction                     = nullptr;
     QAction*                     rotateLeftAction                   = nullptr;
     QAction*                     rotateRightAction                  = nullptr;
+    QAction*                     rotateAutoAction                   = nullptr;
     QAction*                     selectAllAction                    = nullptr;
     QAction*                     selectNoneAction                   = nullptr;
     QAction*                     softProofOptionsAction             = nullptr;

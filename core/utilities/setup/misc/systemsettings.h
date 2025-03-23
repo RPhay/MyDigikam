@@ -58,7 +58,9 @@ public:
 
     bool    enableFaceEngine  = false;
     bool    enableAesthetic   = false;
+    bool    enableAITools     = false;
     bool    enableAutoTags    = false;
+    bool    deleteOldDNNFiles = false;
     bool    softwareOpenGL    = false;
     bool    enableLogging     = false;
     bool    enableOpenCL      = false;

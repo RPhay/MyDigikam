@@ -71,7 +71,9 @@ public:
     QProgressBar*          progress         = nullptr;
     QCheckBox*             facesEngineCheck = nullptr;
     QCheckBox*             aestheticCheck   = nullptr;
+    QCheckBox*             aitoolsCheck     = nullptr;
     QCheckBox*             autoTagsCheck    = nullptr;
+    QCheckBox*             oldDNNFileCheck  = nullptr;
     QLabel*                nameLabel        = nullptr;
     QLabel*                infoLabel        = nullptr;
     QLabel*                loadLabel        = nullptr;
@@ -118,6 +120,13 @@ bool FilesDownloader::checkDownloadFiles() const
         return false;
     }
 
+    // check if we need to remove old AI/DNN model files
+
+    if (d->system.deleteOldDNNFiles)
+    {
+        deleteUnusedFiles();
+    }
+
     for (const DownloadInfo& info : std::as_const(d->files))
     {
         QFileInfo fileInfo(path + QLatin1Char('/') + info.name);
@@ -133,7 +142,7 @@ bool FilesDownloader::checkDownloadFiles() const
 
 void FilesDownloader::startDownload()
 {
-    setWindowTitle(i18nc("@title:window", "Download Required Files"));
+    setWindowTitle(i18nc("@title:window", "Download Required Model Files"));
     setMinimumHeight(250);
     setMinimumWidth(600);
 
@@ -157,7 +166,10 @@ void FilesDownloader::startDownload()
 
     d->facesEngineCheck  = new QCheckBox(i18n("Use Face Management feature"),      mainWidget);
     d->aestheticCheck    = new QCheckBox(i18n("Use Aesthetic Detection feature"),  mainWidget);
-    d->autoTagsCheck     = new QCheckBox(i18n("Use Auto Tags Assignment feature"), mainWidget);
+    d->aitoolsCheck      = new QCheckBox(i18n("Use AI Auto-Tools features"),       mainWidget);
+    d->autoTagsCheck     = new QCheckBox(i18n("Use AutoTags Assignment feature"),  mainWidget);
+
+    d->oldDNNFileCheck   = new QCheckBox(i18n("Delete obsolete model files (runs at startup)"),      mainWidget);
 
     d->progress          = new QProgressBar(mainWidget);
     d->progress->setFormat(i18nc("%p is the percent value, % is the percent sign", "%p%"));
@@ -173,7 +185,10 @@ void FilesDownloader::startDownload()
     vBox->addStretch(1);
     vBox->addWidget(d->facesEngineCheck);
     vBox->addWidget(d->aestheticCheck);
+    vBox->addWidget(d->aitoolsCheck);
     vBox->addWidget(d->autoTagsCheck);
+    vBox->addStretch(1);
+    vBox->addWidget(d->oldDNNFileCheck);
     vBox->addStretch(1);
     vBox->addWidget(d->nameLabel);
     vBox->addWidget(d->progress);
@@ -192,7 +207,9 @@ void FilesDownloader::startDownload()
 
     d->facesEngineCheck->setChecked(d->system.enableFaceEngine);
     d->aestheticCheck->setChecked(d->system.enableAesthetic);
+    d->aitoolsCheck->setChecked(d->system.enableAITools);
     d->autoTagsCheck->setChecked(d->system.enableAutoTags);
+    d->oldDNNFileCheck->setChecked(d->system.deleteOldDNNFiles);
 
     connect(d->facesEngineCheck, SIGNAL(toggled(bool)),
             this, SLOT(slotUpdateDownloadInfo()));
@@ -200,7 +217,13 @@ void FilesDownloader::startDownload()
     connect(d->aestheticCheck, SIGNAL(toggled(bool)),
             this, SLOT(slotUpdateDownloadInfo()));
 
+    connect(d->aitoolsCheck, SIGNAL(toggled(bool)),
+            this, SLOT(slotUpdateDownloadInfo()));
+
     connect(d->autoTagsCheck, SIGNAL(toggled(bool)),
+            this, SLOT(slotUpdateDownloadInfo()));
+
+    connect(d->oldDNNFileCheck, SIGNAL(toggled(bool)),
             this, SLOT(slotUpdateDownloadInfo()));
 
     slotUpdateDownloadInfo();
@@ -231,7 +254,7 @@ void FilesDownloader::slotDownload()
         }
 
         QMessageBox::information(this, qApp->applicationName(),
-                                 i18n("All files were downloaded successfully."));
+                                 i18n("All model files were downloaded successfully."));
 
         close();
     }
@@ -472,19 +495,28 @@ void FilesDownloader::createDownloadInfo()
         d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageAesthetics);
     }
 
+    if (d->system.enableAITools)
+    {
+        d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageAutoRotate);
+    }
+
     if (d->system.enableAutoTags)
     {
         d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageObjectDetection);
         d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageImageClassification);
     }
+
+
 }
 
 void FilesDownloader::slotUpdateDownloadInfo()
 {
-    QString path               = QDir::toNativeSeparators(getFacesEnginePath());
-    d->system.enableFaceEngine = d->facesEngineCheck->isChecked();
-    d->system.enableAesthetic  = d->aestheticCheck->isChecked();
-    d->system.enableAutoTags   = d->autoTagsCheck->isChecked();
+    QString path                = QDir::toNativeSeparators(getFacesEnginePath());
+    d->system.enableFaceEngine  = d->facesEngineCheck->isChecked();
+    d->system.enableAesthetic   = d->aestheticCheck->isChecked();
+    d->system.enableAITools     = d->aitoolsCheck->isChecked();
+    d->system.enableAutoTags    = d->autoTagsCheck->isChecked();
+    d->system.deleteOldDNNFiles = d->oldDNNFileCheck->isChecked();
     d->system.saveSettings();
 
     createDownloadInfo();
@@ -504,18 +536,17 @@ void FilesDownloader::slotUpdateDownloadInfo()
 
     QString sizeString = ItemPropertiesTab::humanReadableBytesCount(size);
 
-    d->infoLabel->setText(i18n("<p>For the face management, the red-eye removal tool, and the classification "
-                               "of images according to aesthetics or the automatic assignment "
-                               "of tags to images, digiKam requires some large binary files. You "
-                               "can choose which feature you want to use.</p>"));
+    d->infoLabel->setText(i18n("<p>digiKam relies on large binary model files to power features like face management, "
+                               "image classification based on aesthetics, AI AutoTools such as automatic image rotation, "
+                               "and automatic tag assignment. You have the option to select the specific features you want to "
+                               "enable.</p><p><b>Note:</b> The red-eye removal tool requires face management model files.</p>"));
 
     d->loadLabel->setText(i18nc("%1: folder path",
-                                "<p>Some of these files were not found. Click “Download” to begin "
-                                "downloading the files you need. You can close this dialog, you "
-                                "will be asked again the next time you start digiKam. Without "
-                                "these files the selected features will not work.</p>"
+                                "<p>Some required files are missing. Click “Download” to start installing the necessary model files. "
+                                "If you close this dialog you will be prompted again the next time you launch digiKam. The "
+                                "selected features will not function without these files.</p>"
                                 "<p>The files will be downloaded to \"<i>%1</i>\".</p>"
-                                "<p><b>After the successful download you have to restart digiKam.</b></p>", path));
+                                "<p><b>You must restart digiKam after successfully downloading the files.</b></p>", path));
     if (size > 0)
     {
         d->sizeLabel->setText(i18nc("%1: file counter, %2: disk size with unit",
@@ -527,10 +558,58 @@ void FilesDownloader::slotUpdateDownloadInfo()
     }
     else
     {
-        d->sizeLabel->setText(i18n("All files of the selected features were found."));
+        d->sizeLabel->setText(i18n("All files for the selected features were found."));
 
         d->loadLabel->setEnabled(false);
+        d->loadLabel->hide();
         d->buttons->button(QDialogButtonBox::Ok)->setEnabled(false);
+    }
+}
+
+void FilesDownloader::deleteUnusedFiles() const
+{
+    QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                          QLatin1String("digikam/facesengine"),
+                                          QStandardPaths::LocateDirectory);
+
+    if (!path.isEmpty())
+    {
+        // Get a QDir object for the directory
+
+        QDir dir(path);
+
+        // get a list of all model files regardless if the feature is enabled or not
+
+        QList<DownloadInfo> fileList;
+        fileList << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageFaceDetection)
+                 << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageFaceRecognition)
+                 << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageAesthetics)
+                 << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageAutoRotate)
+                 << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageObjectDetection)
+                 << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageImageClassification);
+    
+        // iterate over all files in the directory and remove those that are not in the list
+
+        for (const QFileInfo& info : dir.entryInfoList(QDir::Files))
+        {
+            bool found = false;
+
+            for (const DownloadInfo& dinfo : std::as_const(fileList))
+            {
+                if (info.fileName() == dinfo.name)
+                {
+                    found = true;
+                    break;
+                }
+            }
+
+            // delete the file if it was not found in the list
+
+            if (!found)
+            {
+                QFile::remove(info.filePath());
+            }
+        }
     }
 }
 

@@ -42,6 +42,7 @@
 #include "imagezoomsettings.h"
 #include "clickdragreleaseitem.h"
 #include "rubberitem.h"
+#include "autorotator.h"
 
 namespace Digikam
 {
@@ -313,6 +314,34 @@ void Canvas::slotRotate270()
 {
     d->canvasItem->clearCache();
     d->core->rotate270();
+}
+
+void Canvas::slotRotateAuto()
+{
+    AutoRotator autorotator;
+    
+    switch (autorotator.rotationOrientation(d->core->getImageFilePath(), 10))
+    {
+        case MetaEngineRotation::Rotate90:
+        {
+            slotRotate90();
+            break;
+        }
+        case MetaEngineRotation::Rotate180:
+        {
+            slotRotate180();
+            break;
+        }
+        case MetaEngineRotation::Rotate270:
+        {
+            slotRotate270();
+            break;
+        }
+        default:
+        {
+            break;
+        }
+    }
 }
 
 void Canvas::slotFlipHoriz()

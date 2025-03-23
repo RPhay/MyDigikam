@@ -163,6 +163,7 @@ public Q_SLOTS:
     void slotRotate90();
     void slotRotate180();
     void slotRotate270();
+    void slotRotateAuto();
     void slotFlipHoriz();
     void slotFlipVert();
     void slotCrop();

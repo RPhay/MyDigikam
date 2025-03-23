@@ -7,14 +7,8 @@
 
 APPLY_COMMON_POLICIES()
 
-set(libdnnmodelmanager_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/dnnmodelinfocontainer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/dnnmodelmanager.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/dnnmodelbase.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/dnnmodelnet.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/dnnmodelconfig.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/dnnmodelyunet.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/dnnmodelsface.cpp
+set(libautorotator_SRCS
+    ${CMAKE_CURRENT_SOURCE_DIR}/autorotator.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
@@ -24,9 +18,9 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCL
 )
 
 # Used by digikamcore
-add_library(core_dnnmodelmanager_obj OBJECT ${libdnnmodelmanager_SRCS})
+add_library(core_autorotator_obj OBJECT ${libautorotator_SRCS})
 
-target_compile_definitions(core_dnnmodelmanager_obj
+target_compile_definitions(core_autorotator_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

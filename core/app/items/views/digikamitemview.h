@@ -141,6 +141,7 @@ protected:
 
 private Q_SLOTS:
 
+    void slotRotateAuto(const QList<QModelIndex>&);
     void slotRotateLeft(const QList<QModelIndex>&);
     void slotRotateRight(const QList<QModelIndex>&);
     void slotFullscreen(const QList<QModelIndex>&);

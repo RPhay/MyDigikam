@@ -35,6 +35,7 @@
 #include "faceutils.h"
 #include "jpegutils.h"
 #include "dimg.h"
+#include "autorotator.h"
 
 namespace Digikam
 {
@@ -230,6 +231,14 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
                     }
                 }
             }
+        }
+
+        if (MetaEngineRotation::TransformationAction::RotateAuto == action)
+        {
+            // Auto-rotate based on DNN model
+
+            AutoRotator autorotator;
+            action = autorotator.rotationOrientation(filePath, 10);
         }
 
         MetaEngineRotation matrix;
