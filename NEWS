@@ -44,7 +44,7 @@ BUGFIXES:
 032 ==> 495540 - Accuracy of the auto tag feature is very bad.
 033 ==> 501770 - JXL - Tag deletion misses XP Keywords.
 034 ==> 478861 - digiKam freezes when closing settings on Fedora w/ Gnome (default workstation).
-035 ==> 
+035 ==> 501907 - No active process` is misleading.
 036 ==> 
 037 ==> 
 038 ==> 
