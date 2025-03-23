@@ -286,7 +286,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     w->show();
 
-    if (system.enableFaceEngine || system.enableAesthetic || system.enableAutoTags)
+    if (system.enableFaceEngine || system.enableAesthetic || system.enableAITools || system.enableAutoTags)
     {
         QPointer<FilesDownloader> floader = new FilesDownloader(w);
 

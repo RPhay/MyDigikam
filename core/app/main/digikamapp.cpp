@@ -957,7 +957,11 @@ void DigikamApp::moveEvent(QMoveEvent*)
 
 void DigikamApp::slotTransformAction()
 {
-    if      (sender()->objectName() == QLatin1String("rotate_ccw"))
+    if      (sender()->objectName() == QLatin1String("rotate_auto"))
+    {
+        d->view->imageTransform(MetaEngineRotation::RotateAuto);
+    }
+    else if (sender()->objectName() == QLatin1String("rotate_ccw"))
     {
         d->view->imageTransform(MetaEngineRotation::Rotate270);
     }

@@ -92,6 +92,11 @@ MetaEngineRotation matrix(MetaEngineRotation::TransformationAction action)
         {
             return rotate270;
         }
+
+        default:
+        {
+            break;
+        }
     }
 
     return identity;

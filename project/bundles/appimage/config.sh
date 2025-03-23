@@ -17,7 +17,7 @@ CheckSystemReleaseID
 # If you want to package current implementation from git, use "master" as tag.
 #DK_VERSION=v7.0.0
 DK_VERSION=master
-#DK_VERSION=gsoc21-qt6-port
+#DK_VERSION=work/michmill/8_7_0-bqm-autorotate
 
 # Absolute path where are installed all software components
 INSTALL_DIR="/usr"

@@ -86,6 +86,7 @@ private:
     void createRequest(const QUrl& url);
     void printDownloadInfo(const QUrl& url);
     bool downloadExists(const DownloadInfo& info) const;
+    void deleteUnusedFiles()                      const;
 
     QString getFacesEnginePath()                  const;
     void createDownloadInfo();

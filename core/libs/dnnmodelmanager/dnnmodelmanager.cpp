@@ -228,6 +228,11 @@ void DNNModelManager::loadConfig()
                 info.usage.append(DNNModelUsage::DNNUsageAesthetics);
             }
 
+            if (usageStr.contains(QLatin1String("auto_rotate")))
+            {
+                info.usage.append(DNNModelUsage::DNNUsageAutoRotate);
+            }
+
             // Create version.
 
             QStringList versionParts = d->settings->value(QLatin1String("MinVersion"))

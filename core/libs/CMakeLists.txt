@@ -58,6 +58,7 @@ add_subdirectory(video)
 add_subdirectory(dnnmodelmanager)
 add_subdirectory(mlfoundation)
 add_subdirectory(qtopencvimg)
+add_subdirectory(autorotator)
 
 if(JXL_FOUND)
 

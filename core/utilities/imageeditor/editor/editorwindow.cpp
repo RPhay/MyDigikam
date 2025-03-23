@@ -15,6 +15,7 @@
  * ============================================================ */
 
 #include "editorwindow_p.h"
+#include "autorotator.h"
 
 namespace Digikam
 {
@@ -80,6 +81,7 @@ void EditorWindow::setupContextMenu()
     addAction2ContextMenu(QLatin1String("slideshow_plugin"),                   true);
     addAction2ContextMenu(QLatin1String("editorwindow_transform_rotateleft"),  true);
     addAction2ContextMenu(QLatin1String("editorwindow_transform_rotateright"), true);
+    addAction2ContextMenu(QLatin1String("editorwindow_transform_rotateauto"),  true);
     addAction2ContextMenu(QLatin1String("editorwindow_transform_crop"),        true);
     m_contextMenu->addSeparator();
 
@@ -526,6 +528,14 @@ void EditorWindow::setupStandardActions()
     ac->addAction(QLatin1String("editorwindow_transform_rotateright"), d->rotateRightAction);
     ac->setDefaultShortcut(d->rotateRightAction, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_Right));
     d->rotateRightAction->setEnabled(false);
+
+    d->rotateAutoAction = new QAction(QIcon::fromTheme(QLatin1String("image-rotate-right-symbolic")),
+                                      i18nc("@action", "Auto-Rotate"), this);
+    connect(d->rotateAutoAction, SIGNAL(triggered()), m_canvas, SLOT(slotRotateAuto()));
+    connect(d->rotateAutoAction, SIGNAL(triggered()), this, SLOT(slotRotateAutoIntoQue()));
+    ac->addAction(QLatin1String("editorwindow_transform_rotateauto"), d->rotateAutoAction);
+    ac->setDefaultShortcut(d->rotateAutoAction, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_Up));
+    d->rotateAutoAction->setEnabled(false);
 
     m_showBarAction = thumbBar()->getToggleAction(this);
     ac->addAction(QLatin1String("editorwindow_showthumbs"), m_showBarAction);
@@ -1005,6 +1015,7 @@ void EditorWindow::toggleStandardActions(bool val)
     m_lastAction->setEnabled(val);
     d->rotateLeftAction->setEnabled(val);
     d->rotateRightAction->setEnabled(val);
+    d->rotateAutoAction->setEnabled(val);
     d->flipHorizAction->setEnabled(val);
     d->flipVertAction->setEnabled(val);
     m_fileDeleteAction->setEnabled(val);
@@ -2582,6 +2593,7 @@ void EditorWindow::setupSelectToolsAction()
 
         actionModel->addAction(d->rotateLeftAction,  transformCategory);
         actionModel->addAction(d->rotateRightAction, transformCategory);
+        actionModel->addAction(d->rotateAutoAction,  transformCategory);
         actionModel->addAction(d->flipHorizAction,   transformCategory);
         actionModel->addAction(d->flipVertAction,    transformCategory);
         actionModel->addAction(d->cropAction,        transformCategory);
@@ -2969,6 +2981,11 @@ void EditorWindow::slotRotateRightIntoQue()
     m_transformQue.append(TransformType::RotateRight);
 }
 
+void EditorWindow::slotRotateAutoIntoQue()
+{
+    m_transformQue.append(TransformType::RotateAuto);
+}
+
 void EditorWindow::slotFlipHIntoQue()
 {
     m_transformQue.append(TransformType::FlipHorizontal);
@@ -2998,6 +3015,7 @@ void EditorWindow::registerExtraPluginsActions(QString& dom)
     dom.replace(QLatin1String("<!-- _DPLUGINS_EDITOR_ENHANCE_ACTIONS_ -->"),   dpl->pluginXmlSections(DPluginAction::EditorEnhance,  this));
 
     QString transformActions;
+    transformActions.append(QLatin1String("<Action name=\"editorwindow_transform_rotateauto\" />\n"));
     transformActions.append(QLatin1String("<Action name=\"editorwindow_transform_rotateleft\" />\n"));
     transformActions.append(QLatin1String("<Action name=\"editorwindow_transform_rotateright\" />\n"));
     transformActions.append(QLatin1String("<Action name=\"editorwindow_transform_fliphoriz\" />\n"));

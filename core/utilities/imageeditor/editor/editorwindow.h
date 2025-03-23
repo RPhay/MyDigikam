@@ -74,6 +74,7 @@ public:
     {
         RotateLeft,
         RotateRight,
+        RotateAuto,
         FlipHorizontal,
         FlipVertical
     };
@@ -325,6 +326,7 @@ private Q_SLOTS:
 
     void slotRotateLeftIntoQue();
     void slotRotateRightIntoQue();
+    void slotRotateAutoIntoQue();
     void slotFlipHIntoQue();
     void slotFlipVIntoQue();
 

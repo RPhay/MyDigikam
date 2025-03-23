@@ -47,7 +47,8 @@ public:
         FlipVertical     = 2, ///< vertical flip
         Rotate90         = 5, ///< 90-degree clockwise rotation
         Rotate180        = 6, ///< 180-degree rotation
-        Rotate270        = 7  ///< 270-degree clockwise (or 90 ccw)
+        Rotate270        = 7, ///< 270-degree clockwise (or 90 ccw)
+        RotateAuto       = 8  ///< auto-rotate based on AutoRotator class
     };
 
 public:

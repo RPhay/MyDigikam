@@ -810,6 +810,12 @@ void DigikamItemView::slotRotateRight(const QList<QModelIndex>& indexes)
     FileActionMngr::instance()->transform(infos, MetaEngineRotation::Rotate90);
 }
 
+void DigikamItemView::slotRotateAuto(const QList<QModelIndex>& indexes)
+{
+    ItemInfoList infos = imageInfos(indexes, MetadataOps);
+    FileActionMngr::instance()->transform(infos, MetaEngineRotation::RotateAuto);
+}
+
 void DigikamItemView::slotFullscreen(const QList<QModelIndex>& indexes)
 {
    QList<ItemInfo> infos = imageInfos(indexes, SlideshowOps);
