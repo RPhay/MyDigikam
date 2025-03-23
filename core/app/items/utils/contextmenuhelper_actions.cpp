@@ -192,7 +192,7 @@ void ContextMenuHelper::addStandardActionItemDelete(QObject* const recv, const c
 void ContextMenuHelper::addIQSAction(QObject* const recv, const char* const slot)
 {
     QAction* const IQSAction = new QAction(QIcon::fromTheme(QLatin1String("")),
-                                           i18ncp("@action:inmenu Pluralized",
+                                           i18ncp("@action:inmenu Pluralized, to scan using IQS",
                                                   "Image Quality Scan", "Image Quality Scan",
                                                   1), d->parent);
     connect(IQSAction, SIGNAL(triggered()),
