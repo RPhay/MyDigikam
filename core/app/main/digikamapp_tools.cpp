@@ -15,6 +15,7 @@
 #include "digikamapp_p.h"
 #include "facetrainingupgradedlg.h"
 #include "peoplesidebarwidget.h"
+#include "systemsettings.h"
 
 namespace Digikam
 {
@@ -192,7 +193,9 @@ void DigikamApp::slotDatabaseMigration()
 
 void DigikamApp::slotCheckFaceTrainingVersion()
 {
-    if (IdentityProvider::instance()->checkRetrainingRequired())
+    SystemSettings system = SystemSettings(qApp->applicationName());
+
+    if (system.enableFaceEngine && IdentityProvider::instance()->checkRetrainingRequired())
     {
         QPointer<FaceTrainingUpgradeDlg> dlg = new FaceTrainingUpgradeDlg(this);
 
