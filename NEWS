@@ -105,12 +105,12 @@ BUGFIXES:
 092 ==> 220002 - digiKam import from Camera.
 093 ==> 219628 - Sony import crash.
 094 ==> 219584 - Crash of digiKam everytime trying load the photos from the camera Canon A570 IS.
-095 ==> 
-096 ==> 
-097 ==> 
-098 ==> 
-099 ==> 
-100 ==> 
+095 ==> 210518 - Add Option to disable the DSplitterButton.
+096 ==> 100770 - wish: create album from selected pictures.
+097 ==> 088805 - digiKam: wish: popup image information only when over the thumbnail.
+098 ==> 095669 - Sort collections combo box in ablum properties.
+099 ==> 210519 - DSplitterButton floats around in digiKam icon view.
+100 ==> 185317 - Album thumbnails are gone when moving nested albums.
 101 ==> 
 102 ==> 
 103 ==> 
