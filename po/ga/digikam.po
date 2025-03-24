@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-19 01:55+0000\n"
+"POT-Creation-Date: 2025-03-24 01:55+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -627,7 +627,7 @@ msgstr[4] "Cuir %1 Comhad sa Bhruscar"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
 #, fuzzy, kde-format
-msgctxt "@action:inmenu Pluralized"
+msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
 msgstr[0] "Eagarthóir Íomhá"
@@ -2108,7 +2108,7 @@ msgid "Change the filename of the currently selected item."
 msgstr "Athraigh ainm comhaid na míre atá roghnaithe faoi láthair."
 
 #: core/app/main/digikamapp_setup.cpp:498
-#: core/utilities/imageeditor/editor/editorwindow.cpp:311
+#: core/utilities/imageeditor/editor/editorwindow.cpp:313
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Pluralized"
 #| msgid "Move to Trash"
@@ -2646,13 +2646,20 @@ msgstr "Rothlaigh"
 
 #: core/app/main/digikamapp_setup.cpp:1066
 #, fuzzy, kde-format
+#| msgid "Auto rotate"
+msgctxt "@action: auto-rotate image"
+msgid "Auto-Rotate"
+msgstr "Uath-rothlaigh"
+
+#: core/app/main/digikamapp_setup.cpp:1073
+#, fuzzy, kde-format
 #| msgctxt "rotate image left"
 #| msgid "Left"
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Go Tuathalach"
 
-#: core/app/main/digikamapp_setup.cpp:1073
+#: core/app/main/digikamapp_setup.cpp:1080
 #, fuzzy, kde-format
 #| msgctxt "rotate image right"
 #| msgid "Right"
@@ -2660,49 +2667,49 @@ msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Go Deisealach"
 
-#: core/app/main/digikamapp_setup.cpp:1083
+#: core/app/main/digikamapp_setup.cpp:1090
 #, fuzzy, kde-format
 #| msgid "Flip"
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Smeach"
 
-#: core/app/main/digikamapp_setup.cpp:1087
+#: core/app/main/digikamapp_setup.cpp:1094
 #, fuzzy, kde-format
 #| msgid "Horizontally"
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Go Cothrománach"
 
-#: core/app/main/digikamapp_setup.cpp:1094
+#: core/app/main/digikamapp_setup.cpp:1101
 #, fuzzy, kde-format
 #| msgid "Vertically"
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Go hIngearach"
 
-#: core/app/main/digikamapp_setup.cpp:1104
+#: core/app/main/digikamapp_setup.cpp:1111
 #, fuzzy, kde-format
 #| msgid "Auto Rotate/Flip Using Exif Information"
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Rothlaigh/Smeach go hUathoibríoch le hEolas Exif"
 
-#: core/app/main/digikamapp_setup.cpp:1115
+#: core/app/main/digikamapp_setup.cpp:1122
 #, fuzzy, kde-format
 #| msgid "Loading themes..."
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Téamaí á luchtú..."
 
-#: core/app/main/digikamapp_setup.cpp:1118
+#: core/app/main/digikamapp_setup.cpp:1125
 #, fuzzy, kde-format
 #| msgid "&Themes"
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Téamaí"
 
-#: core/app/main/digikamapp_setup.cpp:1134
+#: core/app/main/digikamapp_setup.cpp:1141
 #, fuzzy, kde-format
 #| msgid "Loading tools..."
 msgctxt "@info: setup"
@@ -2789,31 +2796,31 @@ msgstr ""
 msgid "The specified camera (\"%1\") is not supported."
 msgstr ""
 
-#: core/app/main/digikamapp_tools.cpp:31
+#: core/app/main/digikamapp_tools.cpp:32
 #, fuzzy, kde-format
 #| msgid "Main Toolbar"
 msgctxt "@title Main Tools"
 msgid "Main Tools"
 msgstr "Príomhbharra Uirlisí"
 
-#: core/app/main/digikamapp_tools.cpp:40
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2641
+#: core/app/main/digikamapp_tools.cpp:41
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2653
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Iarphróiseáil"
 
-#: core/app/main/digikamapp_tools.cpp:60
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2670
+#: core/app/main/digikamapp_tools.cpp:61
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2682
 #, fuzzy, kde-format
 #| msgid "Export"
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Easpórtáil"
 
-#: core/app/main/digikamapp_tools.cpp:71
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2681
+#: core/app/main/digikamapp_tools.cpp:72
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2693
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@title Import Tools"
@@ -6808,6 +6815,28 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can translate alternative language "
 "strings in Xmp metadata from images.</para>"
+msgstr "Breiseán íomhá digiKam chun braonta báistí a chur le híomhá."
+
+#: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:43
+#, fuzzy, kde-format
+#| msgid "Auto rotate"
+msgctxt "@title"
+msgid "Auto-Rotate"
+msgstr "Uath-rothlaigh"
+
+#: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
+#, fuzzy, kde-format
+msgctxt "@info"
+msgid "AI tool to automatically rotate images"
+msgstr "Cumasaigh an rogha seo chun an treoshuíomh a shocrú go huathoibríoch."
+
+#: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
+#, fuzzy, kde-kuit-format
+#| msgid "A digiKam image plugin to add raindrops to an image."
+msgctxt "@info"
+msgid ""
+"<para>This Batch Queue Manager tool can automatically detect the correct "
+"orientation of an image and rotate the image.</para>"
 msgstr "Breiseán íomhá digiKam chun braonta báistí a chur le híomhá."
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:84
@@ -11301,7 +11330,7 @@ msgstr "Scan Íomhá"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1826
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1837
 #, fuzzy, kde-format
 #| msgid "New Image File Name"
 msgctxt "@title:window"
@@ -11342,8 +11371,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2300
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2319
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2311
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2330
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
@@ -16149,7 +16178,7 @@ msgstr "Coigeartú:"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
-#: core/utilities/imageeditor/editor/editorwindow.cpp:569
+#: core/utilities/imageeditor/editor/editorwindow.cpp:579
 #, fuzzy, kde-format
 #| msgid "Cancel"
 msgctxt "@action"
@@ -30182,7 +30211,7 @@ msgstr "Ná fiafraigh díom arís"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:163
+#: core/utilities/setup/downloader/filesdownloader.cpp:175
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -34058,12 +34087,12 @@ msgid ""
 "ExifTool, DNG will not include all RAW source properties."
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:342
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:347
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:344
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34073,12 +34102,12 @@ msgid ""
 "objects using the COCO dataset.</p>"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:354
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:351
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34088,12 +34117,12 @@ msgid ""
 "recognize 80 different objects using the COCO dataset.</p>"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:361
 #, kde-format
 msgid "EfficientNet B7"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:358
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35273,12 +35302,12 @@ msgstr ""
 msgid "Process Items"
 msgstr "Míreanna Próiseáilte"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:75
+#: core/libs/fileactionmanager/fileworkeriface.cpp:76
 #, kde-format
 msgid "Failed to revise Exif orientation these files:"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:357
+#: core/libs/fileactionmanager/fileworkeriface.cpp:366
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Níorbh fhéidir na comhaid seo a thrasfhoirmiú:"
@@ -37456,7 +37485,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:148
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, fuzzy, kde-format
 msgid "Download"
 msgstr "Íosluchtaigh"
@@ -51641,7 +51670,7 @@ msgid "Delete File"
 msgstr "Scrios Comhad"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2346
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2357
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgctxt "@title:window"
@@ -54124,7 +54153,7 @@ msgstr "De Láimh"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
-#: core/utilities/imageeditor/editor/editorwindow.cpp:563
+#: core/utilities/imageeditor/editor/editorwindow.cpp:573
 #, fuzzy, kde-format
 #| msgid "OK"
 msgctxt "@action"
@@ -60225,51 +60254,51 @@ msgstr "Bain Triail As"
 msgid "Try all settings."
 msgstr "Bain triail as gach socrú."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:185
+#: core/utilities/imageeditor/editor/editorwindow.cpp:187
 #, fuzzy, kde-format
 #| msgid "&First"
 msgctxt "@action; go to first item"
 msgid "&First"
 msgstr "An &Chéad Cheann"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:192
+#: core/utilities/imageeditor/editor/editorwindow.cpp:194
 #, fuzzy, kde-format
 #| msgid "&Last"
 msgctxt "@action; go to last item"
 msgid "&Last"
 msgstr "&Roimhe Seo"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:199
+#: core/utilities/imageeditor/editor/editorwindow.cpp:201
 #, kde-format
 msgctxt "@action"
 msgid "Open Original"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:211
+#: core/utilities/imageeditor/editor/editorwindow.cpp:213
 #, kde-format
 msgctxt "@action Save changes to current version"
 msgid "Save Changes"
 msgstr "Sábháil na hAthruithe"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:212
+#: core/utilities/imageeditor/editor/editorwindow.cpp:214
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the modifications to the current version of the file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:217
+#: core/utilities/imageeditor/editor/editorwindow.cpp:219
 #, kde-format
 msgctxt "@action Save changes to a newly created version"
 msgid "Save As New Version"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:218
+#: core/utilities/imageeditor/editor/editorwindow.cpp:220
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current modifications to a new version of the file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:224
+#: core/utilities/imageeditor/editor/editorwindow.cpp:226
 #, kde-format
 msgctxt ""
 "@action Save changes to a newly created version, specifying the filename and "
@@ -60277,7 +60306,7 @@ msgctxt ""
 msgid "Save New Version As..."
 msgstr "Sábháil an Leagan Nua Mar..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:225
+#: core/utilities/imageeditor/editor/editorwindow.cpp:227
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -60285,166 +60314,166 @@ msgid ""
 "filename and format"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:230
+#: core/utilities/imageeditor/editor/editorwindow.cpp:232
 #, kde-format
 msgctxt "@action Save As New Version...Save in format..."
 msgid "Save in Format"
 msgstr "Sábháil i bhFormáid"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:232
+#: core/utilities/imageeditor/editor/editorwindow.cpp:234
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:233
+#: core/utilities/imageeditor/editor/editorwindow.cpp:235
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:234
+#: core/utilities/imageeditor/editor/editorwindow.cpp:236
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:235
+#: core/utilities/imageeditor/editor/editorwindow.cpp:237
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PGF"
 msgstr "PGF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:239
+#: core/utilities/imageeditor/editor/editorwindow.cpp:241
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:245
+#: core/utilities/imageeditor/editor/editorwindow.cpp:247
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "HEIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:251
+#: core/utilities/imageeditor/editor/editorwindow.cpp:253
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JXL"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:256
+#: core/utilities/imageeditor/editor/editorwindow.cpp:258
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "WEBP"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:261
+#: core/utilities/imageeditor/editor/editorwindow.cpp:263
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "AVIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:279
+#: core/utilities/imageeditor/editor/editorwindow.cpp:281
 #, kde-format
 msgctxt "@action"
 msgid "Export"
 msgstr "Easpórtáil"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:280
+#: core/utilities/imageeditor/editor/editorwindow.cpp:282
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the file in a folder outside your collection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:289
+#: core/utilities/imageeditor/editor/editorwindow.cpp:291
 #, kde-format
 msgctxt "@action"
 msgid "Discard Changes"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:290
+#: core/utilities/imageeditor/editor/editorwindow.cpp:292
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard all current changes to this file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:303
+#: core/utilities/imageeditor/editor/editorwindow.cpp:305
 #, kde-format
 msgctxt "@action"
 msgid "Open With Default Application"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:304
+#: core/utilities/imageeditor/editor/editorwindow.cpp:306
 #, kde-format
 msgctxt "@info"
 msgid "Open the item with default assigned application."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:327
+#: core/utilities/imageeditor/editor/editorwindow.cpp:329
 #, fuzzy, kde-format
 #| msgid "Undo"
 msgctxt "@action"
 msgid "Undo"
 msgstr "Cealaigh"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:356
+#: core/utilities/imageeditor/editor/editorwindow.cpp:358
 #, fuzzy, kde-format
 #| msgid "Redo"
 msgctxt "@action"
 msgid "Redo"
 msgstr "Athdhéan"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:384
+#: core/utilities/imageeditor/editor/editorwindow.cpp:386
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action: create a selection containing the full image"
 msgid "Select All"
 msgstr "Roghnaigh Uile"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:389
+#: core/utilities/imageeditor/editor/editorwindow.cpp:391
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@action"
 msgid "Select None"
 msgstr "Ná Roghnaigh"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:403
+#: core/utilities/imageeditor/editor/editorwindow.cpp:405
 #, fuzzy, kde-format
 #| msgid "Zoom to 100%"
 msgctxt "@action"
 msgid "Zoom to 100%"
 msgstr "Súmáil go 100%"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:409
+#: core/utilities/imageeditor/editor/editorwindow.cpp:411
 #, fuzzy, kde-format
 #| msgid "Fit to &Window"
 msgctxt "@action"
 msgid "Fit to &Window"
 msgstr "Oiriúnaigh don &Fuinneog"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:416
+#: core/utilities/imageeditor/editor/editorwindow.cpp:418
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@action"
 msgid "Fit to &Selection"
 msgstr "Roghnúchán"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:421
+#: core/utilities/imageeditor/editor/editorwindow.cpp:423
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
 "This option can be used to zoom the image to the current selection area."
 msgstr "Cumasaigh an rogha seo chun an treoshuíomh a shocrú go huathoibríoch."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:446
+#: core/utilities/imageeditor/editor/editorwindow.cpp:448
 #, fuzzy, kde-format
 #| msgid "Exposure mode:"
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "Mód nochta:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:448
+#: core/utilities/imageeditor/editor/editorwindow.cpp:450
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60454,14 +60483,14 @@ msgstr ""
 "Cumasaigh an rogha seo chun an rátáil a thaispeáint faoi mhionsamhail na "
 "híomhá."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:456
+#: core/utilities/imageeditor/editor/editorwindow.cpp:458
 #, fuzzy, kde-format
 #| msgid "Exposure mode:"
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "Mód nochta:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:458
+#: core/utilities/imageeditor/editor/editorwindow.cpp:460
 #, fuzzy, kde-format
 #| msgid "Set this option to display the date when the image was taken."
 msgctxt "@info"
@@ -60470,7 +60499,7 @@ msgid ""
 "to avoid over-exposing the image."
 msgstr "Cumasaigh an rogha seo chun dáta na híomhá a thaispeáint."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:466
+#: core/utilities/imageeditor/editor/editorwindow.cpp:468
 #: core/utilities/import/main/importui.cpp:506
 #, fuzzy, kde-format
 #| msgid "Color Management"
@@ -60478,27 +60507,27 @@ msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "Bainisteoireacht na nDathanna"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:473
+#: core/utilities/imageeditor/editor/editorwindow.cpp:475
 #, fuzzy, kde-format
 #| msgid "Soft Proofing Options"
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr "Roghanna Bogphrofa"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:478
+#: core/utilities/imageeditor/editor/editorwindow.cpp:480
 #, fuzzy, kde-format
 #| msgid "Soft Proofing View"
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr "Amharc Bogphrofa"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:486
+#: core/utilities/imageeditor/editor/editorwindow.cpp:488
 #, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:489
+#: core/utilities/imageeditor/editor/editorwindow.cpp:491
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60506,21 +60535,21 @@ msgid ""
 "enable this action."
 msgstr "Cumasaigh an rogha seo chun an treoshuíomh a shocrú go huathoibríoch."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:497
+#: core/utilities/imageeditor/editor/editorwindow.cpp:499
 #, fuzzy, kde-format
 #| msgid "Flip Horizontally"
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "Smeach go Cothrománach"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:505
+#: core/utilities/imageeditor/editor/editorwindow.cpp:507
 #, fuzzy, kde-format
 #| msgid "Flip Vertically"
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "Smeach go hIngearach"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:515
+#: core/utilities/imageeditor/editor/editorwindow.cpp:517
 #: core/utilities/import/views/importpreviewview.cpp:188
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
@@ -60528,7 +60557,7 @@ msgctxt "@action"
 msgid "Rotate Left"
 msgstr "Rothlaigh go Tuathalach"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:523
+#: core/utilities/imageeditor/editor/editorwindow.cpp:525
 #: core/utilities/import/views/importpreviewview.cpp:189
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
@@ -60536,7 +60565,14 @@ msgctxt "@action"
 msgid "Rotate Right"
 msgstr "Rothlaigh go Deisealach"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:555
+#: core/utilities/imageeditor/editor/editorwindow.cpp:533
+#, fuzzy, kde-format
+#| msgid "Auto rotate"
+msgctxt "@action"
+msgid "Auto-Rotate"
+msgstr "Uath-rothlaigh"
+
+#: core/utilities/imageeditor/editor/editorwindow.cpp:565
 #: core/utilities/import/main/importui.cpp:551
 #: core/utilities/import/main/importui.cpp:794
 #, fuzzy, kde-format
@@ -60544,39 +60580,39 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "An Íomhá Roimhe Seo"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:585
+#: core/utilities/imageeditor/editor/editorwindow.cpp:595
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgctxt "@label"
 msgid "No selection"
 msgstr "Gan roghnúchán"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:588
+#: core/utilities/imageeditor/editor/editorwindow.cpp:598
 #, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:593
+#: core/utilities/imageeditor/editor/editorwindow.cpp:603
 #, kde-format
 msgctxt "@info"
 msgid "Information about image size"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1108
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1119
 #, fuzzy, kde-format
 #| msgid "Saving image..."
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "Íomhá á sábháil..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1109
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1120
 #, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1130
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1141
 #, fuzzy, kde-format
 #| msgid ""
 #| "About to overwrite file \"%1\"\n"
@@ -60589,14 +60625,14 @@ msgstr ""
 "Ar tí comhad \"%1\" a forscríobh\n"
 "An bhfuil tú cinnte?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1135
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1146
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Rabhadh"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1245
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1256
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60604,7 +60640,7 @@ msgid ""
 "Do you want to save it?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1396
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1407
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60612,21 +60648,21 @@ msgid ""
 "All changes will be lost."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1474
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1485
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgctxt "@info"
 msgid "No selection"
 msgstr "Gan roghnúchán"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1494
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1505
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgctxt "@label"
 msgid "Loading:"
 msgstr "Á Luchtú: "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1522
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1533
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cannot display image\n"
@@ -60637,7 +60673,7 @@ msgstr ""
 "Ní féidir an íomhá a thaispeáint\n"
 "\"%1\""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1564
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1575
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60646,14 +60682,14 @@ msgid ""
 "configuration in digiKam's setup."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1621
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1632
 #, fuzzy, kde-format
 #| msgid "Saving: "
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "Á Shábháil: "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1643
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1654
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to save file\n"
@@ -60672,31 +60708,31 @@ msgstr ""
 "i\n"
 "\"%2\"."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1776
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1787
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1972
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1983
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1979
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1990
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2226
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2237
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2301
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2312
 #, fuzzy, kde-format
 #| msgid ""
 #| "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -60708,7 +60744,7 @@ msgstr ""
 "Tá comhad darb ainm \"%1\" ann cheana. An bhfuil tú cinnte gur mian leat "
 "scríobh air?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2320
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2331
 #, fuzzy, kde-format
 #| msgid ""
 #| "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -60719,7 +60755,7 @@ msgstr ""
 "Tá comhad darb ainm \"%1\" ann cheana. An bhfuil tú cinnte gur mian leat "
 "scríobh air?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2347
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2358
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
@@ -60729,21 +60765,21 @@ msgstr ""
 "i\n"
 "\"%2\"."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2426
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2437
 #, fuzzy, kde-format
 #| msgid "Color Management is disabled..."
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "Díchumasaíodh Bainisteoireacht na nDathanna..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2430
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2441
 #, fuzzy, kde-format
 #| msgid "Color Management is disabled..."
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "Díchumasaíodh Bainisteoireacht na nDathanna..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2435
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2446
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60751,81 +60787,81 @@ msgid ""
 "available."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2471
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2482
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2472
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2483
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2486
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2497
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2487
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2498
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2578
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2589
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Trasfhoirmigh"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2597
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2609
 #, fuzzy, kde-format
 #| msgid "Decorate"
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Maisigh"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2608
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2620
 #, fuzzy, kde-format
 #| msgid "Effects"
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Maisíochtaí"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2619
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2631
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Dathanna"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2630
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2642
 #, fuzzy, kde-format
 #| msgid "Enhance"
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Feabhsaigh"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2820
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2871
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2832
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2883
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action"
 msgid "Open With"
 msgstr "Oscail Le"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2832
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2844
 #, fuzzy, kde-format
 #| msgid "Other..."
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Eile..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2841
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2853
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgctxt "@action: open with desktop application"
@@ -60932,7 +60968,7 @@ msgstr "Bain Clib"
 msgid "Assign Labels"
 msgstr "Sann Lipéid"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:164
+#: core/utilities/imageeditor/widgets/canvas.cpp:165
 #, kde-format
 msgid ""
 "Failed to load image\n"
@@ -66604,42 +66640,53 @@ msgstr "Roghnaigh Mír"
 msgid "Your collection will use this category:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:136
+#: core/utilities/setup/downloader/filesdownloader.cpp:145
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@title:window"
-msgid "Download Required Files"
+msgid "Download Required Model Files"
 msgstr "Comhad %1 á íosluchtú..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:158
+#: core/utilities/setup/downloader/filesdownloader.cpp:167
 #, fuzzy, kde-format
 msgid "Use Face Management feature"
 msgstr "Feidhm:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:159
+#: core/utilities/setup/downloader/filesdownloader.cpp:168
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:160
+#: core/utilities/setup/downloader/filesdownloader.cpp:169
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
-msgid "Use Auto Tags Assignment feature"
+msgid "Use AI Auto-Tools features"
 msgstr "Coigeartú Uathoibríoch"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:234
+#: core/utilities/setup/downloader/filesdownloader.cpp:170
+#, fuzzy, kde-format
+#| msgid "Automatic Adjustment"
+msgid "Use AutoTags Assignment feature"
+msgstr "Coigeartú Uathoibríoch"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:172
+#, kde-format
+msgid "Delete obsolete model files (runs at startup)"
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:257
 #, fuzzy, kde-format
 #| msgid "Download successfully %1..."
-msgid "All files were downloaded successfully."
+msgid "All model files were downloaded successfully."
 msgstr "D'éirigh le híosluchtú %1..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:241
+#: core/utilities/setup/downloader/filesdownloader.cpp:264
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Íosluchtaigh Cinn Nua"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:242
+#: core/utilities/setup/downloader/filesdownloader.cpp:265
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -66651,63 +66698,65 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:250
+#: core/utilities/setup/downloader/filesdownloader.cpp:273
 #, fuzzy, kde-format
 #| msgid "Add new tag"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Cuir clib nua leis"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:388
+#: core/utilities/setup/downloader/filesdownloader.cpp:411
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:412
+#: core/utilities/setup/downloader/filesdownloader.cpp:435
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:419
+#: core/utilities/setup/downloader/filesdownloader.cpp:442
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "File open error."
 msgstr "Uirlis Easpórtála"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:434
+#: core/utilities/setup/downloader/filesdownloader.cpp:457
 #, kde-format
 msgid "File on the server is too large."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:507
+#: core/utilities/setup/downloader/filesdownloader.cpp:539
 #, kde-format
 msgid ""
-"<p>For the face management, the red-eye removal tool, and the classification "
-"of images according to aesthetics or the automatic assignment of tags to "
-"images, digiKam requires some large binary files. You can choose which "
-"feature you want to use.</p>"
+"<p>digiKam relies on large binary model files to power features like face "
+"management, image classification based on aesthetics, AI AutoTools such as "
+"automatic image rotation, and automatic tag assignment. You have the option "
+"to select the specific features you want to enable.</p><p><b>Note:</b> The "
+"red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:513
+#: core/utilities/setup/downloader/filesdownloader.cpp:545
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
-"<p>Some of these files were not found. Click “Download” to begin downloading "
-"the files you need. You can close this dialog, you will be asked again the "
-"next time you start digiKam. Without these files the selected features will "
-"not work.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
-"p><p><b>After the successful download you have to restart digiKam.</b></p>"
+"<p>Some required files are missing. Click “Download” to start installing the "
+"necessary model files. If you close this dialog you will be prompted again "
+"the next time you launch digiKam. The selected features will not function "
+"without these files.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
+"p><p><b>You must restart digiKam after successfully downloading the files.</"
+"b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:522
+#: core/utilities/setup/downloader/filesdownloader.cpp:553
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:530
+#: core/utilities/setup/downloader/filesdownloader.cpp:561
 #, kde-format
-msgid "All files of the selected features were found."
+msgid "All files for the selected features were found."
 msgstr ""
 
 #: core/utilities/setup/editor/setupeditor.cpp:63
@@ -69553,6 +69602,16 @@ msgstr "Míreanna Albaim"
 #, kde-format
 msgid "Import Items"
 msgstr "Iompórtáil Íomhánna"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu Pluralized"
+#~ msgid "Image Quality Scan"
+#~ msgid_plural "Image Quality Scan"
+#~ msgstr[0] "Eagarthóir Íomhá"
+#~ msgstr[1] "Eagarthóir Íomhá"
+#~ msgstr[2] "Eagarthóir Íomhá"
+#~ msgstr[3] "Eagarthóir Íomhá"
+#~ msgstr[4] "Eagarthóir Íomhá"
 
 #, fuzzy
 #~| msgid "Accuracy"
