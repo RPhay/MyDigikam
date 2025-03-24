@@ -50,7 +50,7 @@ BUGFIXES:
 038 ==> 127179 - digiKam thumbnails does not adhere to the Rotate Images setting in Configure dialog.
 039 ==> 141187 - Automatically create album with set date-based on directory-name when importing.
 040 ==> 178435 - Solid doesn't automatically detect digital camera.
-041 ==> 
+041 ==> 493821 - Unwanted tags Import due to XMP sidecar settings.
 042 ==> 
 043 ==> 
 044 ==> 
