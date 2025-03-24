@@ -35,7 +35,7 @@ class AutoRotatePlugin : public DPluginBqm
 public:
 
     explicit AutoRotatePlugin(QObject* const parent = nullptr);
-    ~AutoRotatePlugin()                      override = default;
+    ~AutoRotatePlugin()                  override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

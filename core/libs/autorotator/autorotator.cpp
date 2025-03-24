@@ -6,7 +6,7 @@
  * Date        : 2025-03-10
  * Description : Autorotator class to automatically rotate images
  *
- * SPDX-FileCopyrightText: 2025 by Michael Miller <michael underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -19,6 +19,7 @@
 #include <QException>
 
 // digiKam includes
+
 #include "digikam_debug.h"
 #include "dnnmodelmanager.h"
 #include "qtopencvimg.h"
@@ -38,7 +39,8 @@ AutoRotator::AutoRotator()
 
 bool AutoRotator::loadModel()
 {
-    model = static_cast<DNNModelNet*>(DNNModelManager::instance()->getModel(QLatin1String("AutoRotate"), DNNModelUsage::DNNUsageAutoRotate));
+    model = static_cast<DNNModelNet*>(DNNModelManager::instance()->getModel(QLatin1String("AutoRotate"),
+                                                                            DNNModelUsage::DNNUsageAutoRotate));
 
     if (model && !model->modelLoaded)
     {
@@ -68,7 +70,6 @@ bool AutoRotator::loadModel()
     {
         qCDebug(DIGIKAM_AUTOROTATE_LOG) << "AutoRotate model ready";
     }
-
     else
     {
         qCWarning(DIGIKAM_AUTOROTATE_LOG) << "AutoRotate model not loaded";
@@ -89,11 +90,11 @@ cv::Mat AutoRotator::Preprocess(const DImg& image)
 
     if (std::max(cvImage.cols, cvImage.rows) > std::max(model->info.imageSize, model->info.imageSize))
     {
-        // Image should be resized. 
+        // Image should be resized.
         // so we just need to make sure no one bound exceeds the max. No padding needed.
 
-        float resizeFactor            = std::min(static_cast<float>(model->info.imageSize) / static_cast<float>(cvImage.cols),
-                                                 static_cast<float>(model->info.imageSize) / static_cast<float>(cvImage.rows));
+        float resizeFactor      = std::min(static_cast<float>(model->info.imageSize) / static_cast<float>(cvImage.cols),
+                                           static_cast<float>(model->info.imageSize) / static_cast<float>(cvImage.rows));
 
         int newWidth            = (int)(resizeFactor * cvImage.cols);
         int newHeight           = (int)(resizeFactor * cvImage.rows);
@@ -103,16 +104,19 @@ cv::Mat AutoRotator::Preprocess(const DImg& image)
     // Convert image to the correct input format
 
     cvImage.convertTo(cvImage, CV_32F, 1.0 / 255.0);
-    cv::Mat blob = cv::dnn::blobFromImage(cvImage, 1.0, cv::Size(model->info.imageSize, model->info.imageSize), cv::Scalar(0, 0, 0), false, false);
+    cv::Mat blob = cv::dnn::blobFromImage(cvImage, 1.0, cv::Size(model->info.imageSize,
+                                                                 model->info.imageSize),
+                                          cv::Scalar(0, 0, 0), false, false);
 
     return blob;
 }
 
 bool AutoRotator::shouldRotate(int degrees, int sensitivity, int angle)
 {
-    if (angle > (degrees - ((sensitivity * 2) + (baseArc / 2))) && 
-        angle < (degrees + ((sensitivity * 2) + (baseArc / 2))))
-        
+    if (
+        (angle > (degrees - ((sensitivity * 2) + (baseArc / 2)))) &&
+        (angle < (degrees + ((sensitivity * 2) + (baseArc / 2))))
+       )
     {
         return true;
     }
@@ -129,7 +133,7 @@ int AutoRotator::rotationAngle(const DImg& img)
 
     // get a cv::Mat from the DImg
 
-    cv::Mat blob = Preprocess(img);
+    cv::Mat blob     = Preprocess(img);
 
     // lock the model mutex
 
@@ -142,10 +146,12 @@ int AutoRotator::rotationAngle(const DImg& img)
     // process the image
 
     net.setInput(blob);
-    cv::Mat result = net.forward();
-    float angle = result.at<float>(0, 0);
+    cv::Mat result   = net.forward();
+    float angle      = result.at<float>(0, 0);
 
-    qCDebug(DIGIKAM_AUTOROTATE_LOG) << "AutoRotator::rotationAngle Rotation angle:" << angle << "Elapsed time:" << timer.elapsed() << "ms";
+    qCDebug(DIGIKAM_AUTOROTATE_LOG) << "AutoRotator::rotationAngle Rotation angle:"
+                                    << angle << "Elapsed time:"
+                                    << timer.elapsed() << "ms";
 
     return angle;
 }
@@ -156,24 +162,25 @@ MetaEngineRotation::TransformationAction AutoRotator::rotationOrientation(const 
 
     // convert the angle to a positive value
 
-    if (angle < 0) {
+    if (angle < 0)
+    {
         angle = 360 + angle;
     }
 
     MetaEngineRotation::TransformationAction rotation = MetaEngineRotation::NoTransformation;
 
-    if (shouldRotate(90, sensitivity, angle))
+    if      (shouldRotate(90, sensitivity, angle))
     {
         rotation = MetaEngineRotation::Rotate90;
     } 
     else if (shouldRotate(180, sensitivity, angle))
     {
         rotation = MetaEngineRotation::Rotate180;
-    }     
+    }
     else if (shouldRotate(270, sensitivity, angle)) 
     {
         rotation = MetaEngineRotation::Rotate270;
-    } 
+    }
 
     return rotation;
 }
@@ -181,8 +188,8 @@ MetaEngineRotation::TransformationAction AutoRotator::rotationOrientation(const 
 MetaEngineRotation::TransformationAction AutoRotator::rotationOrientation(const QString& filePath, int sensitivity)
 {
     DImg image = PreviewLoadThread::loadSynchronously(filePath,
-                                                    PreviewSettings(),
-                                                    model->info.imageSize);
+                                                      PreviewSettings(),
+                                                      model->info.imageSize);
 
     return rotationOrientation(image, sensitivity);
 }

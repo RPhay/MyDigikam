@@ -86,7 +86,7 @@ QList<DPluginAuthor> AutoRotatePlugin::authors() const
                              QString::fromUtf8("(C) 2025"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2024"));
+                             QString::fromUtf8("(C) 2009-2025"));
 }
 
 void AutoRotatePlugin::setup(QObject* const parent)

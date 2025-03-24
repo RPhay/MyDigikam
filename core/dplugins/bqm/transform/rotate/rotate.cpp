@@ -45,6 +45,8 @@ public:
 
     Private() = default;
 
+public:
+
     const int             CUSTOM_ANGLE  = DImg::ROT270 + 1;
 
     QLabel*               label         = nullptr;
@@ -74,12 +76,11 @@ BatchTool* Rotate::clone(QObject* const parent) const
 
 void Rotate::registerSettingsWidget()
 {
+    DVBox* const vbox   = new DVBox;
+    d->useExif          = new QCheckBox(i18nc("@title", "Use Exif Orientation"), vbox);
 
-    DVBox* const vbox = new DVBox;
-    d->useExif        = new QCheckBox(i18nc("@title", "Use Exif Orientation"), vbox);
-
-    d->label     = new QLabel(vbox);
-    d->comboBox  = new DComboBox(vbox);
+    d->label            = new QLabel(vbox);
+    d->comboBox         = new DComboBox(vbox);
     d->comboBox->insertItem(DImg::ROT90,     i18nc("@item: angle", "90 degrees"));
     d->comboBox->insertItem(DImg::ROT180,    i18nc("@item: angle", "180 degrees"));
     d->comboBox->insertItem(DImg::ROT270,    i18nc("@item: angle", "270 degrees"));

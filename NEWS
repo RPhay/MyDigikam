@@ -47,7 +47,7 @@ BUGFIXES:
 035 ==> 501907 - No active process` is misleading.
 036 ==> 501905 - Since upgrade to 8.6.0 digiKam crashes on startup after integrity check fails for "digikamfaces.Identities".
 037 ==> 501838 - digiKam won't start after updating to 8.6.0.
-038 ==> 
+038 ==> 127179 - digiKam thumbnails does not adhere to the Rotate Images setting in Configure dialog.
 039 ==> 
 040 ==> 
 041 ==> 
