@@ -236,7 +236,9 @@ void FilesDownloader::slotDownload()
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(false);
     d->facesEngineCheck->setEnabled(false);
     d->aestheticCheck->setEnabled(false);
+    d->aitoolsCheck->setEnabled(false);
     d->autoTagsCheck->setEnabled(false);
+    d->oldDNNFileCheck->setEnabled(false);
 
     if (d->error.isEmpty())
     {
