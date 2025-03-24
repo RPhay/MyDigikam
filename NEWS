@@ -51,37 +51,37 @@ BUGFIXES:
 039 ==> 141187 - Automatically create album with set date-based on directory-name when importing.
 040 ==> 178435 - Solid doesn't automatically detect digital camera.
 041 ==> 493821 - Unwanted tags Import due to XMP sidecar settings.
-042 ==> 
-043 ==> 
-044 ==> 
-045 ==> 
-046 ==> 
-047 ==> 
-048 ==> 
-049 ==> 
-050 ==> 
-051 ==> 
-052 ==> 
-053 ==> 
-054 ==> 
-055 ==> 
-056 ==> 
-057 ==> 
-058 ==> 
-059 ==> 
-060 ==> 
-061 ==> 
-062 ==> 
-063 ==> 
-064 ==> 
-065 ==> 
-066 ==> 
-067 ==> 
-068 ==> 
-069 ==> 
-070 ==> 
-071 ==> 
-072 ==> 
+042 ==> 493188 - Find New Items hasn't found new photos.
+043 ==> 492182 - Photos are imported as double items in the database.
+044 ==> 492164 - Wish : Map view : display not complete when two identical photos selected (groups).
+045 ==> 490589 - Hangs WIndows OS.
+046 ==> 488562 - digiKam crashes instantly when providing a name for a face.
+047 ==> 480748 - digiKam crashed while tagging face in the middle of a people match run.
+048 ==> 479307 - digiKam: no pictures to pick after application starts.
+049 ==> 471644 - digiKam: some Mac computers are unable to export any Tag data (under TagList column for Exif).
+050 ==> 470694 - Some Face Regions are Rotated.
+051 ==> 435868 - Cannot create face label.
+052 ==> 367979 - Crashes when scanning directories on network drive.
+053 ==> 367853 - digiKam hangs on 'Reading database' when stumbling across MacOS' Photos Library of a huge size (>20GB).
+054 ==> 366559 - Wrong item counting in face detection view.
+055 ==> 266938 - New tool to export to Costco.ca.
+056 ==> 254389 - New tool to export to Phanfare.
+057 ==> 238409 - Simple Upload of Data.
+058 ==> 237158 - digiKam importing shared folder.
+059 ==> 236387 - New tool to export to Twitpic.
+060 ==> 235537 - Import from USB device causes crash.
+061 ==> 235214 - digiKam crashes when confirming "import all" from card reader.
+062 ==> 234989 - Crash during import from SD card reader after selecting target directory.
+063 ==> 234921 - digiKam crashes when i try to download images from my camera.
+064 ==> 234726 - New tool to export to PixelPipe.
+065 ==> 234664 - Download crash Powershot A570.
+066 ==> 233885 - Crash when importing from USB camera.
+067 ==> 232449 - Crashed when sdcard download.
+068 ==> 232384 - digiKam crash on import.
+069 ==> 231385 - digiKam downloading photos from Canon PowerShot A40 crashes.
+070 ==> 231028 - Download my pictures the digital camera Nikon.
+071 ==> 230852 - Download of pictures with digiKam.
+072 ==> 229881 - digiKam crashes when I attempt to download photos.
 073 ==> 
 074 ==> 
 075 ==>
