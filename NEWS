@@ -1,4 +1,4 @@
-digiKam 8.7.0 - Release date: 2025-xx-xx
+digiKam 8.7.0 - Release date: 2025-06-xx
 
 *****************************************************************************************************
 NEW FEATURES:
@@ -6,6 +6,7 @@ NEW FEATURES:
 Bundles:         Update to last ExifTool version 13.25.
 RawEngine:       Update internal Libraw to last 20250317 upstream.
 Video:           Update internal QtAVPlayer to last 20250317 upstream (Qt5 only).
+Queue Manager:   New tool to perform auto-rotation based on content analysis using DNN.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -82,44 +83,44 @@ BUGFIXES:
 070 ==> 231028 - Download my pictures the digital camera Nikon.
 071 ==> 230852 - Download of pictures with digiKam.
 072 ==> 229881 - digiKam crashes when I attempt to download photos.
-073 ==> 
-074 ==> 
-075 ==>
-076 ==>
-077 ==>
-078 ==>
-079 ==>
-080 ==>
-081 ==>
-082 ==>
-083 ==>
-084 ==>
-085 ==>
-086 ==>
-087 ==>
-088 ==>
-089 ==>
-090 ==>
-091 ==>
-092 ==>
-093 ==>
-094 ==>
-095 ==>
-096 ==>
-097 ==>
-098 ==>
-099 ==>
-100 ==>
-101 ==>
-102 ==>
-103 ==>
-104 ==>
-105 ==>
-106 ==>
-107 ==>
-108 ==>
-109 ==>
-110 ==>
+073 ==> 229799 - digiKam - Download from Canon EOS 500D.
+074 ==> 229751 - digiKam segfault on image download.
+075 ==> 229749 - digiKam downloading from Olympus as USB.
+076 ==> 228793 - digiKam import from directory.
+077 ==> 228489 - digiKam cannot autodetect camera when gvfs-gdu-volume-monitor is running.
+078 ==> 225538 - While transfering images from canon camera to the hard drive digiKam crash.
+079 ==> 221656 - I was downloading photos to an album in digiKam.
+080 ==> 221391 - Crash while uploading from SD Card reader.
+081 ==> 221205 - digiKam crashes when transfering photos from Canon IXUS digital camera.
+082 ==> 221173 - Crashed when importing selected pictures.
+083 ==> 221163 - Can not download picture files from camera.
+084 ==> 221160 - Download new files from Canon PowerShot A40.
+085 ==> 220897 - digiKam crash while importing all pictures.
+086 ==> 220813 - digiKam crash import SONY DSC-H3 camera.
+087 ==> 220634 - Importing a directory with more than 1,000 files.
+088 ==> 220595 - Crash during export to Google Photo.
+089 ==> 220548 - Crashes when tried to upload photos to Google album.
+090 ==> 220506 - Crash when importing photos from USB mass storage device camera.
+091 ==> 220174 - Picture Download from Camera / Panasonic DMC-FX 100.
+092 ==> 220002 - digiKam import from Camera.
+093 ==> 219628 - Sony import crash.
+094 ==> 219584 - Crash of digiKam everytime trying load the photos from the camera Canon A570 IS.
+095 ==> 
+096 ==> 
+097 ==> 
+098 ==> 
+099 ==> 
+100 ==> 
+101 ==> 
+102 ==> 
+103 ==> 
+104 ==> 
+105 ==> 
+106 ==> 
+107 ==> 
+108 ==> 
+109 ==> 
+110 ==> 
 111 ==>
 112 ==>
 113 ==>
