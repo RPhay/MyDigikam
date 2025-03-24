@@ -111,7 +111,7 @@ BUGFIXES:
 098 ==> 095669 - Sort collections combo box in ablum properties.
 099 ==> 210519 - DSplitterButton floats around in digiKam icon view.
 100 ==> 185317 - Album thumbnails are gone when moving nested albums.
-101 ==> 
+101 ==> 501925 - OpenCV dlls not recognised; OpenCV not running; face detection detects no face at all; face detection failure.
 102 ==> 
 103 ==> 
 104 ==> 
