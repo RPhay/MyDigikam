@@ -48,7 +48,7 @@ BUGFIXES:
 036 ==> 501905 - Since upgrade to 8.6.0 digiKam crashes on startup after integrity check fails for "digikamfaces.Identities".
 037 ==> 501838 - digiKam won't start after updating to 8.6.0.
 038 ==> 127179 - digiKam thumbnails does not adhere to the Rotate Images setting in Configure dialog.
-039 ==> 
+039 ==> 141187 - Automatically create album with set date-based on directory-name when importing.
 040 ==> 
 041 ==> 
 042 ==> 
