@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 01:55+0000\n"
+"POT-Creation-Date: 2025-03-25 01:55+0000\n"
 "PO-Revision-Date: 2025-01-19 14:15+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -6797,37 +6797,37 @@ msgid "<para>This Batch Queue Manager tool can resize images.</para>"
 msgstr ""
 "<para>Sorta-ilara kudeatzeko tresna honek irudien tamaina alda dezake.</para>"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:79
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:80
 #, kde-format
 msgctxt "@title"
 msgid "Use Exif Orientation"
 msgstr "Erabili Exif orientazioa"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:83
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
 #, kde-format
 msgctxt "@item: angle"
 msgid "90 degrees"
 msgstr "90 gradu"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
 #, kde-format
 msgctxt "@item: angle"
 msgid "180 degrees"
 msgstr "180 gradu"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
 #, kde-format
 msgctxt "@item: angle"
 msgid "270 degrees"
 msgstr "270 gradu"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:87
 #, kde-format
 msgctxt "@item: angle"
 msgid "Custom"
 msgstr "Pertsonalizatua"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:88
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:89
 #, kde-format
 msgctxt "@label"
 msgid "Angle:"
@@ -66131,19 +66131,19 @@ msgstr "Erabili Etiketa automatikoak esleitzea funtzioa"
 msgid "Delete obsolete model files (runs at startup)"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:257
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
 #, fuzzy, kde-format
 #| msgid "All files were downloaded successfully."
 msgid "All model files were downloaded successfully."
 msgstr "Fitxategi guztiak ondo zama-jaitsi dira."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:264
+#: core/utilities/setup/downloader/filesdownloader.cpp:266
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Zama-jaisteko errorea"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:265
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -66162,33 +66162,33 @@ msgstr ""
 "\n"
 "Berriz saiatu edo hurrengo abioan zama-jaisten jarrai dezakezu."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:273
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Berriz saiatu"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:411
+#: core/utilities/setup/downloader/filesdownloader.cpp:413
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Egiaztapen-batura okerra da."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:435
+#: core/utilities/setup/downloader/filesdownloader.cpp:437
 #, kde-format
 msgid "File write error."
 msgstr "Fitxategia idazteko errorea."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:442
+#: core/utilities/setup/downloader/filesdownloader.cpp:444
 #, kde-format
 msgid "File open error."
 msgstr "Fitxategi irekitzeko errorea."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:457
+#: core/utilities/setup/downloader/filesdownloader.cpp:459
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Zerbitzariko fitxategia handiegia da."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:539
+#: core/utilities/setup/downloader/filesdownloader.cpp:541
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -66198,7 +66198,7 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:545
+#: core/utilities/setup/downloader/filesdownloader.cpp:547
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -66210,13 +66210,13 @@ msgid ""
 "b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:553
+#: core/utilities/setup/downloader/filesdownloader.cpp:555
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Zama-jaitsierak %2 neurriko %1 fitxategi behar ditu."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:561
+#: core/utilities/setup/downloader/filesdownloader.cpp:563
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 01:55+0000\n"
-"PO-Revision-Date: 2025-03-19 08:54+0100\n"
+"POT-Creation-Date: 2025-03-25 01:55+0000\n"
+"PO-Revision-Date: 2025-03-24 10:43+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -551,12 +551,11 @@ msgstr[0] "Mou cap a dins de la paperera"
 msgstr[1] "Mou %1 fitxers cap a dins de la paperera"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
-msgstr[0] "Exploreu la qualitat de les imatges"
+msgstr[0] "Exploreu la qualitat de la imatge"
 msgstr[1] "Exploreu la qualitat de les imatges"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
@@ -2390,8 +2389,7 @@ msgid "Rotate"
 msgstr "Gira"
 
 #: core/app/main/digikamapp_setup.cpp:1066
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "Gir automàtic"
@@ -6630,33 +6628,26 @@ msgstr ""
 "l'idioma alternatiu en les metadades XMP de les imatges.</para>"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@title"
 msgid "Auto-Rotate"
 msgstr "Gir automàtic"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to automatically assign tags to images"
+#, kde-format
 msgctxt "@info"
 msgid "AI tool to automatically rotate images"
-msgstr "Una eina per a assignar automàticament etiquetes a les imatges"
+msgstr "Una eina d'IA per a girar automàticament les imatges"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can fix automatically lens artifacts "
-#| "over images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can automatically detect the correct "
 "orientation of an image and rotate the image.</para>"
 msgstr ""
-"<para>Esta eina del gestor de la cua per lots pot corregir automàticament "
-"els defectes de la lent sobre les imatges.</para>"
+"<para>Esta eina del gestor de la cua per lots pot detectar automàticament "
+"l'orientació d'una imatge i girar-la.</para>"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, kde-format
@@ -6869,37 +6860,37 @@ msgstr ""
 "<para>Esta eina del gestor de la cua per lots pot redimensionar les imatges."
 "</para>"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:79
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:80
 #, kde-format
 msgctxt "@title"
 msgid "Use Exif Orientation"
 msgstr "Utilitza l'orientació de l'Exif"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:83
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
 #, kde-format
 msgctxt "@item: angle"
 msgid "90 degrees"
 msgstr "90 graus"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
 #, kde-format
 msgctxt "@item: angle"
 msgid "180 degrees"
 msgstr "180 graus"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
 #, kde-format
 msgctxt "@item: angle"
 msgid "270 degrees"
 msgstr "270 graus"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:87
 #, kde-format
 msgctxt "@item: angle"
 msgid "Custom"
 msgstr "Personalitzat"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:88
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:89
 #, kde-format
 msgctxt "@label"
 msgid "Angle:"
@@ -7986,7 +7977,7 @@ msgid ""
 "becomes as bright as possible without altering its hue. This is often a "
 "\"magic fix\" for images that are dim or washed out.</p>"
 msgstr ""
-"<b>Normalització</b>:<p>Esta opció escala els valors de brillantor de la "
+"<b>Normalització</b>:<p>Esta opció escala els valors de lluminositat de la "
 "imatge activa de manera que el punt més fosc esdevé negre, i el punt més "
 "brillant esdevé tan brillant com siga possible sense alterar el seu to. "
 "Sovint, açò és un «retoc màgic» per a les imatges que estan apagades o "
@@ -24231,7 +24222,7 @@ msgid ""
 msgstr ""
 "No s'ha pogut finalitzar la pujada de la fotografia a %1.\n"
 "%2\n"
-"No s'ha pujat cap imatge al vostre compte."
+"No ha pujat cap imatge al vostre compte."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1112
 #, kde-format
@@ -30062,9 +30053,9 @@ msgid ""
 "most filesystems are unable to undelete deleted items reliably.</p>"
 msgstr ""
 "<p>Si està marcada, els elements s'<b>eliminaran definitivament</b> en lloc "
-"d'ubicar-los dins de la paperera.</p><p><em>Utilitzeu esta opció amb compte</"
-"em>: la majoria de sistemes de fitxers no poden recuperar amb fiabilitat els "
-"elements suprimits.</p>"
+"d'ubicar-los a dins de la paperera.</p><p><em>Utilitzeu esta opció amb "
+"compte</em>: la majoria de sistemes de fitxers no poden recuperar amb "
+"fiabilitat els elements suprimits.</p>"
 
 #: core/libs/dialogs/deletedialog.cpp:297
 #, kde-format
@@ -33213,8 +33204,8 @@ msgid ""
 "Four geometries are handled here: Rectilinear (99 percent of all lenses), "
 "Fisheye, Cylindrical, Equirectangular."
 msgstr ""
-"Ací es gestionen quatre geometries: rectilínia (99 per cent de totes les "
-"lents), ull de peix, cilíndrica, cilíndrica equidistant."
+"Ací es gestionen quatre geometries: rectilínia (99 % de totes les lents), "
+"ull de peix, cilíndrica, cilíndrica equidistant."
 
 #: core/libs/dimg/filters/lens/lensfunsettings.cpp:80
 #, kde-format
@@ -58995,8 +58986,7 @@ msgid "Rotate Right"
 msgstr "Gira a la dreta"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:533
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
 msgstr "Gir automàtic"
@@ -60864,7 +60854,7 @@ msgid ""
 msgstr ""
 "Seleccioneu ací el format de data que preferiu per a crear\n"
 "àlbums nous. Les opcions disponibles són:\n"
-"«ISO»: el format de data està d'acord amb la ISO 8601\n"
+"«ISO»: el format de data està d'acord amb l'ISO 8601\n"
 "(YYYY-MM-DD). P. ex.: 2006-08-24\n"
 "«Text complet»: el format de data és una cadena llegible\n"
 "per l'usuari. P. ex.: Diu 24 Aug 2006\n"
@@ -65111,12 +65101,10 @@ msgid "Your collection will use this category:"
 msgstr "La col·lecció utilitzarà esta categoria:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Required Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
-msgstr "Baixada dels fitxers necessaris"
+msgstr "Baixada dels fitxers de model necessaris"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:167
 #, kde-format
@@ -65129,35 +65117,32 @@ msgid "Use Aesthetic Detection feature"
 msgstr "Utilitza la característica de detecció estètica"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:169
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AI Auto-Tools features"
-msgstr "Utilitza la característica d'assignació automàtica d'etiquetes"
+msgstr "Utilitza característiques d'eines automàtiques d'IA"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:170
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Utilitza la característica d'assignació automàtica d'etiquetes"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:172
 #, kde-format
 msgid "Delete obsolete model files (runs at startup)"
-msgstr ""
+msgstr "Suprimix els fitxers de model obsolets (s'executa en iniciar)"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:257
-#, fuzzy, kde-format
-#| msgid "All files were downloaded successfully."
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#, kde-format
 msgid "All model files were downloaded successfully."
-msgstr "Tots els fitxers s'han descarregat correctament."
+msgstr "Tots els fitxers de model s'han descarregat correctament."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:264
+#: core/utilities/setup/downloader/filesdownloader.cpp:266
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "S'ha produït un error de baixada"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:265
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65176,33 +65161,33 @@ msgstr ""
 "\n"
 "Podeu intentar-ho de nou o continuar la descàrrega en el següent inici."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:273
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Torneu-ho a provar"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:411
+#: core/utilities/setup/downloader/filesdownloader.cpp:413
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "La suma de verificació no és correcta."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:435
+#: core/utilities/setup/downloader/filesdownloader.cpp:437
 #, kde-format
 msgid "File write error."
 msgstr "S'ha produït un error mentre s'escrivia en el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:442
+#: core/utilities/setup/downloader/filesdownloader.cpp:444
 #, kde-format
 msgid "File open error."
 msgstr "S'ha produït un error en obrir el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:457
+#: core/utilities/setup/downloader/filesdownloader.cpp:459
 #, kde-format
 msgid "File on the server is too large."
 msgstr "El fitxer que hi ha en el servidor és massa gran."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:539
+#: core/utilities/setup/downloader/filesdownloader.cpp:541
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -65211,17 +65196,16 @@ msgid ""
 "to select the specific features you want to enable.</p><p><b>Note:</b> The "
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
+"<p>digiKam es basa en fitxers de models binaris grans per a fer funcionar "
+"característiques com la gestió de cares, la classificació d'imatges basada "
+"en l'estètica, eines automàtiques d'IA com el gir automàtic d'imatges i "
+"l'assignació automàtica d'etiquetes. Teniu l'opció de seleccionar les "
+"característiques específiques que voleu habilitar.</p><p><b>Nota:</b> L'eina "
+"d'eliminació d'ulls rojos requerix els fitxers de model de gestió de cares.</"
+"p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:545
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>Some of these files were not found. Click “Download” to begin "
-#| "downloading the files you need. You can close this dialog, you will be "
-#| "asked again the next time you start digiKam. Without these files the "
-#| "selected features will not work.</p><p>The files will be downloaded to "
-#| "\"<i>%1</i>\".</p><p><b>After the successful download you have to restart "
-#| "digiKam.</b></p>"
+#: core/utilities/setup/downloader/filesdownloader.cpp:547
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
@@ -65232,23 +65216,23 @@ msgid ""
 "b></p>"
 msgstr ""
 "<p>No s'han trobat alguns d'estos fitxers. Feu clic en «Baixa» per a "
-"començar a baixar els fitxers necessaris. Podeu tancar este diàleg, la "
-"pròxima vegada que s'inicie digiKam es tornarà a demanar. La detecció de "
-"cares no funcionarà sense estos fitxers.</p><p>Els fitxers es descarregaran "
-"a «<i>%1</i>».</p><p><b>Una vegada finalitzada la baixada, caldrà reiniciar "
-"digiKam.</b></p>"
+"començar a instal·lar els fitxers de model necessaris. Si tanqueu este "
+"diàleg, se vos tornarà a preguntar la propera vegada que inicieu digiKam. "
+"Les característiques seleccionades no funcionaran sense estos fitxers.</"
+"p><p>Els fitxers es baixaran a «<i>%1</i>».</p><p><b>Heu de reiniciar "
+"digiKam després de baixar correctament els fitxers.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:553
+#: core/utilities/setup/downloader/filesdownloader.cpp:555
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "La baixada necessita %1 fitxers amb una mida de %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:561
-#, fuzzy, kde-format
-#| msgid "All files of the selected features were found."
+#: core/utilities/setup/downloader/filesdownloader.cpp:563
+#, kde-format
 msgid "All files for the selected features were found."
-msgstr "S'han trobat tots els fitxers de les característiques seleccionades."
+msgstr ""
+"S'han trobat tots els fitxers per a les característiques seleccionades."
 
 #: core/utilities/setup/editor/setupeditor.cpp:63
 #, kde-format
@@ -65740,7 +65724,7 @@ msgid ""
 "universal replacement. </item>"
 msgstr ""
 "<item><emphasis strong='true'>JPEG-XL</emphasis>: És un format de fitxer de "
-"gràfics ràster lliure de cànons que permet compressió amb i sense pèrdua "
+"gràfics ràster lliure de cànons que permet compressió amb pèrdua i sense. "
 "Està dissenyat per a superar els formats ràster existents i així convertir-"
 "se en la seua substitució universal. </item>"
 
@@ -68395,20 +68379,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgctxt "@action:inmenu Pluralized"
-#~ msgid "Image Quality Scan"
-#~ msgid_plural "Image Quality Scan"
-#~ msgstr[0] "Exploreu la qualitat de la imatge"
-#~ msgstr[1] "Exploreu la qualitat de les imatges"
-
-#~ msgid ""
-#~ "<p>For the face management, the red-eye removal tool, and the "
-#~ "classification of images according to aesthetics or the automatic "
-#~ "assignment of tags to images, digiKam requires some large binary files. "
-#~ "You can choose which feature you want to use.</p>"
-#~ msgstr ""
-#~ "<p>Per a la gestió de cares, l'eina d'eliminació dels ulls rojos i la "
-#~ "classificació d'imatges segons l'estètica o l'assignació automàtica "
-#~ "d'etiquetes a les imatges, digiKam necessita alguns fitxers binaris "
-#~ "grans. Podeu triar quina característica voleu emprar.</p>"

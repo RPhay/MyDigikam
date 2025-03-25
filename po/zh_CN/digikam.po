@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 01:55+0000\n"
+"POT-Creation-Date: 2025-03-25 01:55+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -539,12 +539,11 @@ msgid_plural "Move %1 Files to Trash"
 msgstr[0] "移动 %1 张图像到回收站"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
-msgstr[0] "图像品质扫描"
+msgstr[0] ""
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
 #, kde-format
@@ -2333,11 +2332,10 @@ msgid "Rotate"
 msgstr "旋转"
 
 #: core/app/main/digikamapp_setup.cpp:1066
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
-msgstr "自动旋转"
+msgstr ""
 
 #: core/app/main/digikamapp_setup.cpp:1073
 #, kde-format
@@ -6356,31 +6354,24 @@ msgid ""
 msgstr "<para>用于翻译图像 XMP 元数据的备选语言字符串的批处理工具。</para>"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@title"
 msgid "Auto-Rotate"
-msgstr "自动旋转"
+msgstr ""
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to automatically assign tags to images"
+#, kde-format
 msgctxt "@info"
 msgid "AI tool to automatically rotate images"
-msgstr "为图像自动分配标签"
+msgstr ""
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can fix automatically lens artifacts "
-#| "over images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can automatically detect the correct "
 "orientation of an image and rotate the image.</para>"
-msgstr "<para>用于自动校正图像的镜头畸变的批处理工具。</para>"
+msgstr ""
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, kde-format
@@ -6575,37 +6566,37 @@ msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can resize images.</para>"
 msgstr "<para>用于调整图像大小的批处理工具。</para>"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:79
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:80
 #, kde-format
 msgctxt "@title"
 msgid "Use Exif Orientation"
 msgstr "使用 EXIF 画面方向"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:83
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
 #, kde-format
 msgctxt "@item: angle"
 msgid "90 degrees"
 msgstr "90 度"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
 #, kde-format
 msgctxt "@item: angle"
 msgid "180 degrees"
 msgstr "180 度"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
 #, kde-format
 msgctxt "@item: angle"
 msgid "270 degrees"
 msgstr "270 度"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:87
 #, kde-format
 msgctxt "@item: angle"
 msgid "Custom"
 msgstr "自定义"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:88
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:89
 #, kde-format
 msgctxt "@label"
 msgid "Angle:"
@@ -56747,11 +56738,10 @@ msgid "Rotate Right"
 msgstr "旋转 (向右)"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:533
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
-msgstr "自动旋转"
+msgstr ""
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:565
 #: core/utilities/import/main/importui.cpp:551
@@ -62582,12 +62572,10 @@ msgid "Your collection will use this category:"
 msgstr "该相册集合将被设为以下分类："
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Required Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
-msgstr "下载所需文件"
+msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:167
 #, kde-format
@@ -62600,35 +62588,32 @@ msgid "Use Aesthetic Detection feature"
 msgstr "使用美感检测功能"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:169
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AI Auto-Tools features"
-msgstr "使用自动标签分配功能"
+msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:170
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AutoTags Assignment feature"
-msgstr "使用自动标签分配功能"
+msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:172
 #, kde-format
 msgid "Delete obsolete model files (runs at startup)"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:257
-#, fuzzy, kde-format
-#| msgid "All files were downloaded successfully."
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#, kde-format
 msgid "All model files were downloaded successfully."
-msgstr "已成功下载所有文件。"
+msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:264
+#: core/utilities/setup/downloader/filesdownloader.cpp:266
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "下载错误"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:265
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -62647,33 +62632,33 @@ msgstr ""
 "\n"
 "您可以现在重试，也可以在下次启动程序时继续下载。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:273
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "重试"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:411
+#: core/utilities/setup/downloader/filesdownloader.cpp:413
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "文件的校验和不正确。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:435
+#: core/utilities/setup/downloader/filesdownloader.cpp:437
 #, kde-format
 msgid "File write error."
 msgstr "文件写入错误。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:442
+#: core/utilities/setup/downloader/filesdownloader.cpp:444
 #, kde-format
 msgid "File open error."
 msgstr "文件打开错误。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:457
+#: core/utilities/setup/downloader/filesdownloader.cpp:459
 #, kde-format
 msgid "File on the server is too large."
 msgstr "服务器提供的文件体积过大。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:539
+#: core/utilities/setup/downloader/filesdownloader.cpp:541
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -62683,16 +62668,8 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:545
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>Some of these files were not found. Click “Download” to begin "
-#| "downloading the files you need. You can close this dialog, you will be "
-#| "asked again the next time you start digiKam. Without these files the "
-#| "selected features will not work.</p><p>The files will be downloaded to "
-#| "\"<i>%1</i>\".</p><p><b>After the successful download you have to restart "
-#| "digiKam.</b></p>"
+#: core/utilities/setup/downloader/filesdownloader.cpp:547
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
@@ -62702,22 +62679,17 @@ msgid ""
 "p><p><b>You must restart digiKam after successfully downloading the files.</"
 "b></p>"
 msgstr ""
-"<p>程序找不到部分所需的文件。请点击“下载”以获取这些文件。您也可以关闭此对话"
-"框，digiKam 将在它下次启动时再次询问。没有这些文件，您选择的功能将无法工作。"
-"</p><p>这些文件将下载到“<i>%1</i>”。</p><p><b>下载完成后，您必须重新启动 "
-"digiKam 才能生效。</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:553
+#: core/utilities/setup/downloader/filesdownloader.cpp:555
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "需要下载 %1 个文件，占用 %2 大小的空间。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:561
-#, fuzzy, kde-format
-#| msgid "All files of the selected features were found."
+#: core/utilities/setup/downloader/filesdownloader.cpp:563
+#, kde-format
 msgid "All files for the selected features were found."
-msgstr "选中功能所需的所有文件均已找到。"
+msgstr ""
 
 #: core/utilities/setup/editor/setupeditor.cpp:63
 #, kde-format
@@ -65642,17 +65614,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgctxt "@action:inmenu Pluralized"
-#~ msgid "Image Quality Scan"
-#~ msgid_plural "Image Quality Scan"
-#~ msgstr[0] "图像品质扫描"
-
-#~ msgid ""
-#~ "<p>For the face management, the red-eye removal tool, and the "
-#~ "classification of images according to aesthetics or the automatic "
-#~ "assignment of tags to images, digiKam requires some large binary files. "
-#~ "You can choose which feature you want to use.</p>"
-#~ msgstr ""
-#~ "<p>digiKam 的人脸管理、红眼消除、美感检测、自动分配图像的标签等功能需要使"
-#~ "用一些大型二进制文件。您可以选择要使用哪些功能。</p>"

@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 01:55+0000\n"
-"PO-Revision-Date: 2025-03-19 14:43+0300\n"
+"POT-Creation-Date: 2025-03-25 01:55+0000\n"
+"PO-Revision-Date: 2025-03-24 23:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -589,13 +589,12 @@ msgstr[0] "Çöp Kutusuna Taşı"
 msgstr[1] "%1 Dosyayı Çöp Kutusuna Taşı"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
-msgstr[0] "Görsel Kalitesi Tarama"
-msgstr[1] "Görsel Kalitesi Tarama"
+msgstr[0] "Görsel Kalitesi Taraması"
+msgstr[1] "Görsel Kalitesi Taraması"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
 #, kde-format
@@ -2416,11 +2415,10 @@ msgid "Rotate"
 msgstr "Döndür"
 
 #: core/app/main/digikamapp_setup.cpp:1066
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
-msgstr "Otomatik Döndür"
+msgstr "Kendiliğinden Döndür"
 
 #: core/app/main/digikamapp_setup.cpp:1073
 #, kde-format
@@ -6600,33 +6598,26 @@ msgstr ""
 "alternatif dillerdeki dizileri çevirebilir.</para>"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@title"
 msgid "Auto-Rotate"
-msgstr "Otomatik Döndür"
+msgstr "Kendiliğinden Döndür"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to automatically assign tags to images"
+#, kde-format
 msgctxt "@info"
 msgid "AI tool to automatically rotate images"
-msgstr "Görsellere kendiliğinden künyeler atamak için bir araç"
+msgstr "Görselleri kendiliğinden döndürmek için yapay zekâ aracı"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can fix automatically lens artifacts "
-#| "over images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can automatically detect the correct "
 "orientation of an image and rotate the image.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görseller üzerindeki mercek "
-"bozulmalarını kendiliğinden düzeltebilir.</para>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, bir görselin doğru yönünü "
+"kendiliğinden algılayabilir ve görseli döndürebilir.</para>"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, kde-format
@@ -6839,37 +6830,37 @@ msgstr ""
 "<para>Bu Toplu Kuyruk Yöneticisi aracı, görselleri yeniden boyutlandırabilir."
 "</para>"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:79
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:80
 #, kde-format
 msgctxt "@title"
 msgid "Use Exif Orientation"
 msgstr "Exif Yönelimini Kullan"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:83
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
 #, kde-format
 msgctxt "@item: angle"
 msgid "90 degrees"
 msgstr "90 derece"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
 #, kde-format
 msgctxt "@item: angle"
 msgid "180 degrees"
 msgstr "180 derece"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
 #, kde-format
 msgctxt "@item: angle"
 msgid "270 degrees"
 msgstr "270 derece"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:87
 #, kde-format
 msgctxt "@item: angle"
 msgid "Custom"
 msgstr "Özel"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:88
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:89
 #, kde-format
 msgctxt "@label"
 msgid "Angle:"
@@ -58417,11 +58408,10 @@ msgid "Rotate Right"
 msgstr "Sağa Döndür"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:533
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
-msgstr "Otomatik Döndür"
+msgstr "Kendiliğinden Döndür"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:565
 #: core/utilities/import/main/importui.cpp:551
@@ -64487,12 +64477,10 @@ msgid "Your collection will use this category:"
 msgstr "Yeni koleksiyonunuz şu kategoriyi kullanacak:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Required Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
-msgstr "Gerekli Dosyaları İndir"
+msgstr "Gerekli Model Dosyalarını İndir"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:167
 #, kde-format
@@ -64505,35 +64493,32 @@ msgid "Use Aesthetic Detection feature"
 msgstr "Estetik algılama özelliğini kullan"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:169
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AI Auto-Tools features"
-msgstr "Kendiliğinden künye atama özelliğini kullan"
+msgstr "AI Auto-Tools özelliklerini kullan"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:170
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Kendiliğinden künye atama özelliğini kullan"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:172
 #, kde-format
 msgid "Delete obsolete model files (runs at startup)"
-msgstr ""
+msgstr "Eskimiş model dosyalarını sil (başlangıçta çalışır)"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:257
-#, fuzzy, kde-format
-#| msgid "All files were downloaded successfully."
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#, kde-format
 msgid "All model files were downloaded successfully."
-msgstr "Tüm dosyalar başarıyla indirildi."
+msgstr "Tüm model dosyaları başarıyla indirildi."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:264
+#: core/utilities/setup/downloader/filesdownloader.cpp:266
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "İndirme Hatası"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:265
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -64553,33 +64538,33 @@ msgstr ""
 "Yeniden deneyebilir veya bir sonraki başlatmada kaldığınız yerden "
 "sürdürebilirsiniz."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:273
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Yeniden Dene"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:411
+#: core/utilities/setup/downloader/filesdownloader.cpp:413
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Sağlama toplamı doğru değil."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:435
+#: core/utilities/setup/downloader/filesdownloader.cpp:437
 #, kde-format
 msgid "File write error."
 msgstr "Dosya yazma hatası."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:442
+#: core/utilities/setup/downloader/filesdownloader.cpp:444
 #, kde-format
 msgid "File open error."
 msgstr "Dosya açma hatası."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:457
+#: core/utilities/setup/downloader/filesdownloader.cpp:459
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Sunucudaki dosya pek büyük."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:539
+#: core/utilities/setup/downloader/filesdownloader.cpp:541
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -64588,17 +64573,15 @@ msgid ""
 "to select the specific features you want to enable.</p><p><b>Note:</b> The "
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
+"<p>digiKam, yüz yönetimi, estetiğe dayalı görsel sınıflandırması, "
+"kendiliğinden görsel döndürme gibi AI AutoTools ve kendiliğinden künye atama "
+"gibi özellikleri güçlendirmek için büyük ikili model dosyalarına güvenir. "
+"Etkinleştirmek istediğiniz belirli özellikleri seçme seçeneğiniz vardır.</"
+"p><p><b>Not:</b> Kırmızı göz giderme aracı, yüz yönetimi modeli dosyaları "
+"gerektirir.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:545
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>Some of these files were not found. Click “Download” to begin "
-#| "downloading the files you need. You can close this dialog, you will be "
-#| "asked again the next time you start digiKam. Without these files the "
-#| "selected features will not work.</p><p>The files will be downloaded to "
-#| "\"<i>%1</i>\".</p><p><b>After the successful download you have to restart "
-#| "digiKam.</b></p>"
+#: core/utilities/setup/downloader/filesdownloader.cpp:547
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
@@ -64608,24 +64591,23 @@ msgid ""
 "p><p><b>You must restart digiKam after successfully downloading the files.</"
 "b></p>"
 msgstr ""
-"<p>Bu dosyalardan bazıları bulunamadı. Gereksiniminiz olan dosyaları "
-"indirmeye başlamak için “İndir”e tıklayın. Bu iletişim kutusunu "
-"kapatabilirsiniz; digiKam’ı bir sonraki başlatışınızda size yeniden "
-"sorulacaktır. Bu dosyalar olmadan seçili özellikler çalışmazlar.</"
-"p><p>Dosyalar “<i>%1</i>” konumuna indirilecek.</p><p><b>Başarılı bir "
-"indirme işleminden sonra digiKam’ı yeniden başlatmanız gerekir.</b></p>"
+"<p>Bazı gerekli dosyalar bulunamadı. Gereksiniminiz olan dosyaları kurmaya "
+"başlamak için “İndir”e tıklayın. Bu iletişim kutusunu kapatırsanız; "
+"digiKam’ı bir sonraki başlatışınızda size yeniden sorulacaktır. Bu dosyalar "
+"olmadan seçili özellikler çalışmazlar.</p><p>Dosyalar “<i>%1</i>” konumuna "
+"indirilecektir.</p><p><b>Dosyaları başarılı bir şekilde indirdikten sonra "
+"digiKam’ı yeniden başlatmanız gerekir.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:553
+#: core/utilities/setup/downloader/filesdownloader.cpp:555
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "İndirme, %2 boyutunda %1 dosya gerektiriyor."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:561
-#, fuzzy, kde-format
-#| msgid "All files of the selected features were found."
+#: core/utilities/setup/downloader/filesdownloader.cpp:563
+#, kde-format
 msgid "All files for the selected features were found."
-msgstr "Seçili özelliklerin tüm dosyaları bulunamadı."
+msgstr "Seçili özellikler için olan bütün dosyalar bulunamadı."
 
 #: core/utilities/setup/editor/setupeditor.cpp:63
 #, kde-format

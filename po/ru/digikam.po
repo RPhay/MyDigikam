@@ -54,7 +54,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 01:55+0000\n"
+"POT-Creation-Date: 2025-03-25 01:55+0000\n"
 "PO-Revision-Date: 2025-03-17 11:19+0300\n"
 "Last-Translator: Mariya Shikunova <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -6979,37 +6979,37 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для изменения "
 "размера изображений.</para>"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:79
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:80
 #, kde-format
 msgctxt "@title"
 msgid "Use Exif Orientation"
 msgstr "Использовать ориентацию из EXIF"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:83
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
 #, kde-format
 msgctxt "@item: angle"
 msgid "90 degrees"
 msgstr "90 градусов"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
 #, kde-format
 msgctxt "@item: angle"
 msgid "180 degrees"
 msgstr "180 градусов"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
 #, kde-format
 msgctxt "@item: angle"
 msgid "270 degrees"
 msgstr "270 градусов"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:87
 #, kde-format
 msgctxt "@item: angle"
 msgid "Custom"
 msgstr "Другое"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:88
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:89
 #, kde-format
 msgctxt "@label"
 msgid "Angle:"
@@ -65081,19 +65081,19 @@ msgstr "Использовать функцию автоматического �
 msgid "Delete obsolete model files (runs at startup)"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:257
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
 #, fuzzy, kde-format
 #| msgid "All files were downloaded successfully."
 msgid "All model files were downloaded successfully."
 msgstr "Все файлы успешно загружены."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:264
+#: core/utilities/setup/downloader/filesdownloader.cpp:266
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Ошибка загрузки"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:265
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65112,33 +65112,33 @@ msgstr ""
 "\n"
 "Возможно повторить попытку или продолжить загрузку при следующем запуске."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:273
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Попробовать снова"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:411
+#: core/utilities/setup/downloader/filesdownloader.cpp:413
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Неверная контрольная сумма"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:435
+#: core/utilities/setup/downloader/filesdownloader.cpp:437
 #, kde-format
 msgid "File write error."
 msgstr "Ошибка записи файла."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:442
+#: core/utilities/setup/downloader/filesdownloader.cpp:444
 #, kde-format
 msgid "File open error."
 msgstr "Ошибка открытия файла"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:457
+#: core/utilities/setup/downloader/filesdownloader.cpp:459
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Файл на сервере слишком большой"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:539
+#: core/utilities/setup/downloader/filesdownloader.cpp:541
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -65148,7 +65148,7 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:545
+#: core/utilities/setup/downloader/filesdownloader.cpp:547
 #, fuzzy, kde-format
 #| msgctxt "%1: folder path"
 #| msgid ""
@@ -65173,13 +65173,13 @@ msgstr ""
 "будут работать.</p><p>Файлы будут загружены в «<i>%1</i>».</p><p><b>После "
 "успешной загрузки необходимо будет перезапустить digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:553
+#: core/utilities/setup/downloader/filesdownloader.cpp:555
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Загрузка требует файлов: %1, с размером %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:561
+#: core/utilities/setup/downloader/filesdownloader.cpp:563
 #, fuzzy, kde-format
 #| msgid "All files of the selected features were found."
 msgid "All files for the selected features were found."

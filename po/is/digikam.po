@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 01:55+0000\n"
-"PO-Revision-Date: 2025-03-18 08:03+0000\n"
+"POT-Creation-Date: 2025-03-25 01:55+0000\n"
+"PO-Revision-Date: 2025-03-24 10:06+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -568,8 +568,7 @@ msgstr[0] "Setja í ruslið"
 msgstr[1] "Setja %1 skrár í ruslið"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
@@ -2392,8 +2391,7 @@ msgid "Rotate"
 msgstr "Snúa"
 
 #: core/app/main/digikamapp_setup.cpp:1066
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "Sjálfvirkur snúningur"
@@ -6577,33 +6575,27 @@ msgstr ""
 "tungumálum í XMP-lýsigögnum í myndum.</para>"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@title"
 msgid "Auto-Rotate"
 msgstr "Sjálfvirkur snúningur"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to automatically assign tags to images"
+#, kde-format
 msgctxt "@info"
 msgid "AI tool to automatically rotate images"
-msgstr "Verkfæri til að úthluta sjálfvirkt merkjum á myndir"
+msgstr ""
+"Verkfæri til að úthluta sjálfvirkt merkjum á myndir með aðstoð gervigreindar"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can fix automatically lens artifacts "
-#| "over images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can automatically detect the correct "
 "orientation of an image and rotate the image.</para>"
 msgstr ""
-"<para>Þetta verkfæri magnvinnslustjórans getur sjálfvirkt lagað "
-"linsutruflanir í myndum.</para>"
+"<para>Þetta verkfæri magnvinnslustjórans getur sjálfvirkt fundið rétta "
+"stefnu mynda og snúið þeim.</para>"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, kde-format
@@ -6814,37 +6806,37 @@ msgid "<para>This Batch Queue Manager tool can resize images.</para>"
 msgstr ""
 "<para>Þetta verkfæri magnvinnslustjórans getur breytt stærð mynda.</para>"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:79
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:80
 #, kde-format
 msgctxt "@title"
 msgid "Use Exif Orientation"
 msgstr "Nota EXIF stefnumerki"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:83
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
 #, kde-format
 msgctxt "@item: angle"
 msgid "90 degrees"
 msgstr "90 gráður"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
 #, kde-format
 msgctxt "@item: angle"
 msgid "180 degrees"
 msgstr "180 gráður"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
 #, kde-format
 msgctxt "@item: angle"
 msgid "270 degrees"
 msgstr "270 gráður"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:87
 #, kde-format
 msgctxt "@item: angle"
 msgid "Custom"
 msgstr "Sérsniðið"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:88
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:89
 #, kde-format
 msgctxt "@label"
 msgid "Angle:"
@@ -28735,6 +28727,8 @@ msgid ""
 "A file operation using the same path is currently in progress. Please wait "
 "for the operation to complete and try again."
 msgstr ""
+"Skráaaðgerð sem notar sömu slóð er þegar í gangi. Bíddu eftir að aðgerðinni "
+"ljúki og reyndu svo aftur."
 
 #: core/libs/database/utils/ifaces/dio.cpp:378
 #, kde-format
@@ -58297,8 +58291,7 @@ msgid "Rotate Right"
 msgstr "Snúa til hægri"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:533
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
 msgstr "Sjálfvirkur snúningur"
@@ -64332,12 +64325,10 @@ msgid "Your collection will use this category:"
 msgstr "Myndasafnið mun nota þennan flokk:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Required Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
-msgstr "Sækja nauðsynlegar skrár"
+msgstr "Sækja nauðsynlegar líkanaskrár"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:167
 #, kde-format
@@ -64350,35 +64341,32 @@ msgid "Use Aesthetic Detection feature"
 msgstr "Nota eiginleikann til að greina fagurfræði mynda"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:169
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AI Auto-Tools features"
-msgstr "Nota eiginleikann fyrir sjálfvirka úthlutun merkja"
+msgstr "Nota eiginleikann fyrir sjálfvirka úthlutun gervigreindar á merkjum"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:170
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Nota eiginleikann fyrir sjálfvirka úthlutun merkja"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:172
 #, kde-format
 msgid "Delete obsolete model files (runs at startup)"
-msgstr ""
+msgstr "Eyða úreltum líkanaskrám (keyrir í ræsingu)"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:257
-#, fuzzy, kde-format
-#| msgid "All files were downloaded successfully."
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#, kde-format
 msgid "All model files were downloaded successfully."
-msgstr "Tókst að hlaða inn öllum skrám."
+msgstr "Tókst að hlaða inn öllum líkanaskrám."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:264
+#: core/utilities/setup/downloader/filesdownloader.cpp:266
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Villa við að sækja gögn"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:265
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -64397,33 +64385,33 @@ msgstr ""
 "\n"
 "Þú getur prófað aftur eða haldið áfram í næstu ræsingu."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:273
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Reyna aftur"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:411
+#: core/utilities/setup/downloader/filesdownloader.cpp:413
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Gátsumma er ógild."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:435
+#: core/utilities/setup/downloader/filesdownloader.cpp:437
 #, kde-format
 msgid "File write error."
 msgstr "Villa við að skrifa í skrá."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:442
+#: core/utilities/setup/downloader/filesdownloader.cpp:444
 #, kde-format
 msgid "File open error."
 msgstr "Villa  við að opna skrá."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:457
+#: core/utilities/setup/downloader/filesdownloader.cpp:459
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Skrá á netþjóni er of stór."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:539
+#: core/utilities/setup/downloader/filesdownloader.cpp:541
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -64432,17 +64420,15 @@ msgid ""
 "to select the specific features you want to enable.</p><p><b>Note:</b> The "
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
+"<p>digiKam reiðir sig á stórar tvíundakerfis-líkanaskrár til að keyra "
+"eiginleika á borð við andlitaumsýslu, myndgæðaflokkun, sjálfvirkar aðgerðir "
+"með aðstoð gervigreindarlíkana eins og sjálfvirkan snúning mynda og "
+"sjálfvirka úthlutun merkja. Þú hefur kost á að velja hvaða tilteknu "
+"eiginleika þú vilt virkja.</p><p><b>Athugaðu:</b> Verkfærið til að fjarlægja "
+"rauð augu krefst uppsetningar á líkanaskrám fyrir andlitaumsýslu.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:545
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>Some of these files were not found. Click “Download” to begin "
-#| "downloading the files you need. You can close this dialog, you will be "
-#| "asked again the next time you start digiKam. Without these files the "
-#| "selected features will not work.</p><p>The files will be downloaded to "
-#| "\"<i>%1</i>\".</p><p><b>After the successful download you have to restart "
-#| "digiKam.</b></p>"
+#: core/utilities/setup/downloader/filesdownloader.cpp:547
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
@@ -64459,15 +64445,14 @@ msgstr ""
 "p><p><b>Eftir að búið er að sækja skrárnar þarftu að endurræsa digiKam.</b></"
 "p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:553
+#: core/utilities/setup/downloader/filesdownloader.cpp:555
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Niðurhalið krefst %1 skráa af stærðinni %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:561
-#, fuzzy, kde-format
-#| msgid "All files of the selected features were found."
+#: core/utilities/setup/downloader/filesdownloader.cpp:563
+#, kde-format
 msgid "All files for the selected features were found."
 msgstr "Allar skrár valinna eiginleika fundust."
 

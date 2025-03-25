@@ -46,8 +46,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 01:55+0000\n"
-"PO-Revision-Date: 2025-03-19 14:03+0100\n"
+"POT-Creation-Date: 2025-03-25 01:55+0000\n"
+"PO-Revision-Date: 2025-03-24 20:43+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -541,7 +541,7 @@ msgstr "Mostrar a pantalla completa"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rotate Left"
-msgstr "Rotar a la izquierda"
+msgstr "Girar a la izquierda"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
 #: core/app/views/preview/itempreviewview.cpp:169
@@ -549,7 +549,7 @@ msgstr "Rotar a la izquierda"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rotate Right"
-msgstr "Rotar a la derecha"
+msgstr "Girar a la derecha"
 
 #: core/app/items/overlays/itemselectionoverlay.cpp:48
 #, kde-format
@@ -584,13 +584,12 @@ msgstr[0] "Mover a la papelera"
 msgstr[1] "Mover %1 archivos a la papelera"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
 msgstr[0] "Escaneo de calidad de imagen"
-msgstr[1] "Escaneo de calidad de imagen"
+msgstr[1] "Escaneo de calidad de imágenes"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
 #, kde-format
@@ -2403,38 +2402,37 @@ msgstr "Invertida verticalmente"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
-msgstr "Rotada a la derecha / Invertida horizontalmente"
+msgstr "Girada a la derecha / invertida horizontalmente"
 
 #: core/app/main/digikamapp_setup.cpp:997
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
-msgstr "Rotada a la derecha"
+msgstr "Girada a la derecha"
 
 #: core/app/main/digikamapp_setup.cpp:999
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
-msgstr "Rotada a la derecha / Invertida verticalmente"
+msgstr "Girada a la derecha / invertida verticalmente"
 
 #: core/app/main/digikamapp_setup.cpp:1001
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
-msgstr "Rotada a la izquierda"
+msgstr "Girada a la izquierda"
 
 #: core/app/main/digikamapp_setup.cpp:1062
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
-msgstr "Rotar"
+msgstr "Girar"
 
 #: core/app/main/digikamapp_setup.cpp:1066
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
-msgstr "Rotar automáticamente"
+msgstr "Girar automáticamente"
 
 #: core/app/main/digikamapp_setup.cpp:1073
 #, kde-format
@@ -2470,7 +2468,7 @@ msgstr "Verticalmente"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
-msgstr "Rotar automáticamente/Invertir usando información Exif"
+msgstr "Girar automáticamente/invertir usando información Exif"
 
 #: core/app/main/digikamapp_setup.cpp:1122
 #, kde-format
@@ -5720,7 +5718,7 @@ msgid ""
 "180, 270 degrees)."
 msgstr ""
 "Cuando elija tener la marca de agua repetida aleatoriamente en la lista "
-"desplegable de emplazamiento, aquí puede indicar si se rota la marca de agua "
+"desplegable de emplazamiento, aquí puede indicar si se gira la marca de agua "
 "aleatoriamente (0, 90, 180, 270 grados)."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
@@ -6677,33 +6675,26 @@ msgstr ""
 "de idiomas alternativos en los metadatos Xmp de las imágenes.</para>"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@title"
 msgid "Auto-Rotate"
-msgstr "Rotar automáticamente"
+msgstr "Girar automáticamente"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to automatically assign tags to images"
+#, kde-format
 msgctxt "@info"
 msgid "AI tool to automatically rotate images"
-msgstr "Herramienta para asignar automáticamente etiquetas a las imágenes"
+msgstr "Herramienta de IA para girar automáticamente las imágenes"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can fix automatically lens artifacts "
-#| "over images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can automatically detect the correct "
 "orientation of an image and rotate the image.</para>"
 msgstr ""
-"<para>Esta herramienta de gestión de cola por lotes puede corregir "
-"automáticamente defectos producidos por las lentes en las imágenes.</para>"
+"<para>Esta herramienta de gestión de cola por lotes puede detectar "
+"automáticamente la orientación correcta de una imagen y girarla.</para>"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, kde-format
@@ -6789,13 +6780,13 @@ msgstr "Invertir:"
 #, kde-format
 msgctxt "@title"
 msgid "Flip"
-msgstr "Voltear"
+msgstr "Invertir"
 
 #: core/dplugins/bqm/transform/flip/flipplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to flip images horizontally or vertically"
-msgstr "Herramienta para voltear imágenes horizontal o verticalmente"
+msgstr "Herramienta para invertir imágenes horizontal o verticalmente"
 
 #: core/dplugins/bqm/transform/flip/flipplugin.cpp:62
 #, kde-kuit-format
@@ -6918,37 +6909,37 @@ msgstr ""
 "<para>Esta herramienta de gestión de cola por lotes puede cambiar el tamaño "
 "de las imágenes.</para>"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:79
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:80
 #, kde-format
 msgctxt "@title"
 msgid "Use Exif Orientation"
 msgstr "Usar la orientación de Exif"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:83
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
 #, kde-format
 msgctxt "@item: angle"
 msgid "90 degrees"
 msgstr "90 grados"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
 #, kde-format
 msgctxt "@item: angle"
 msgid "180 degrees"
 msgstr "180 grados"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
 #, kde-format
 msgctxt "@item: angle"
 msgid "270 degrees"
 msgstr "270 grados"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:87
 #, kde-format
 msgctxt "@item: angle"
 msgid "Custom"
 msgstr "Personalizado"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:88
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:89
 #, kde-format
 msgctxt "@label"
 msgid "Angle:"
@@ -6958,20 +6949,20 @@ msgstr "Ángulo:"
 #, kde-format
 msgctxt "@title"
 msgid "Rotate"
-msgstr "Rotar"
+msgstr "Girar"
 
 #: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to rotate images"
-msgstr "Herramienta para rotar imágenes"
+msgstr "Herramienta para girar imágenes"
 
 #: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can rotate images.</para>"
 msgstr ""
-"<para>Esta herramienta de gestión de cola por lotes puede rotar imágenes.</"
+"<para>Esta herramienta de gestión de cola por lotes puede girar imágenes.</"
 "para>"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:62
@@ -9318,7 +9309,7 @@ msgstr "Posición de la imagen"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:366
 #, kde-format
 msgid "Auto rotate"
-msgstr "Rotar automáticamente"
+msgstr "Girar automáticamente"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/editor/file/print/printoptionspage.ui:75
@@ -10475,7 +10466,7 @@ msgstr "Nueva anchura:"
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
 #, kde-format
 msgid " px"
-msgstr " píxeles"
+msgstr " px"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:107
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:109
@@ -10549,14 +10540,14 @@ msgstr "Rotación libre"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to rotate an image"
-msgstr "Herramienta para rotar una imagen"
+msgstr "Herramienta para girar una imagen"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:62
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can rotate an image with an arbitrary angle."
 msgstr ""
-"Esta herramienta de edición de imágenes puede rotar una imagen con un ángulo "
+"Esta herramienta de edición de imágenes puede girar una imagen con un ángulo "
 "determinado."
 
 #: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:96
@@ -11430,10 +11421,10 @@ msgid ""
 "p><p>Plenty of scanner devices are supported through the Sane library.</"
 "p><p>Target image can be post processed as crop and rotate.</p>"
 msgstr ""
-"<p>Esta herramienta permite al usuario obtener nuevas imágenes de un escáner "
-"digital.</p><p>Se pueden usar gran cantidad de escáneres mediante la "
-"biblioteca Sane.</p><p>La imagen final se puede procesar posteriormente, por "
-"ejemplo, recortándola o rotándola.</p>"
+"<p>Esta herramienta permite al usuario obtener nuevas imágenes con un "
+"escáner digital.</p><p>Se pueden usar gran cantidad de escáneres mediante la "
+"biblioteca Sane.</p><p>La imagen final se puede procesar posteriormente (por "
+"ejemplo, recortándola o girándola).</p>"
 
 #: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:105
 #, kde-format
@@ -19920,13 +19911,13 @@ msgstr "No recortar"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:69
 #, kde-format
 msgid "Rotate photo to the left"
-msgstr "Rotar la foto hacia la izquierda"
+msgstr "Girar la foto hacia la izquierda"
 
 #. i18n: ectx: property (text), widget (QPushButton, BtnCropRotateLeft)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:72
 #, kde-format
 msgid "Rotate &left"
-msgstr "Rotar a la i&zquierda"
+msgstr "Girar a la i&zquierda"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, BtnCropRotateRight)
 #. i18n: ectx: property (whatsThis), widget (QPushButton, BtnCropRotateRight)
@@ -19934,13 +19925,13 @@ msgstr "Rotar a la i&zquierda"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:82
 #, kde-format
 msgid "Rotate photo to the right"
-msgstr "Rotar la foto hacia la derecha"
+msgstr "Girar la foto hacia la derecha"
 
 #. i18n: ectx: property (text), widget (QPushButton, BtnCropRotateRight)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:85
 #, kde-format
 msgid "Rotate &right"
-msgstr "&Rotar a la derecha"
+msgstr "&Girar a la derecha"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, BtnPreviewPageDown)
 #. i18n: ectx: property (whatsThis), widget (QToolButton, BtnPreviewPageDown)
@@ -20178,7 +20169,7 @@ msgid ""
 "Rotate photo automatically on layout accordingly with camera orientation "
 "information"
 msgstr ""
-"Rotar la foto automáticamente en el diseño según la información de "
+"Girar la foto automáticamente en el diseño según la información de "
 "orientación de la cámara"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:133
@@ -20372,7 +20363,7 @@ msgstr "Preferencias del pie de foto"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:104
 #, kde-format
 msgid "Crop and Rotate Photos"
-msgstr "Recortar y rotar las fotos"
+msgstr "Recortar y girar las fotos"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:105
 #, kde-format
@@ -22018,7 +22009,7 @@ msgstr "Dentro y fuera"
 #, kde-format
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
-msgstr "Rotar"
+msgstr "Girar"
 
 # TODO - Una mejor de tooltip
 #: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:538
@@ -31888,27 +31879,27 @@ msgstr "Indique la ganancia de relieve para fusionar la textura y la imagen."
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:387
 #, kde-format
 msgid "Rotate Right"
-msgstr "Rotar a la derecha"
+msgstr "Girar a la derecha"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:392
 #, kde-format
 msgid "Rotate 180 degrees"
-msgstr "Rotar 180 grados"
+msgstr "Girar 180 grados"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:397
 #, kde-format
 msgid "Rotate Left"
-msgstr "Rotar a la izquierda"
+msgstr "Girar a la izquierda"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:402
 #, kde-format
 msgid "Flip Horizontally"
-msgstr "Voltear horizontalmente"
+msgstr "Invertir horizontalmente"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:407
 #, kde-format
 msgid "Flip Vertically"
-msgstr "Voltear verticalmente"
+msgstr "Invertir verticalmente"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:412
 #, kde-format
@@ -31929,13 +31920,13 @@ msgstr "Convertir a 16 bits"
 #, kde-format
 msgctxt "Rotate image"
 msgid "Rotate"
-msgstr "Rotar"
+msgstr "Girar"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:500
 #, kde-format
 msgctxt "Flip image"
 msgid "Flip"
-msgstr "Voltear"
+msgstr "Invertir"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:504
 #, kde-format
@@ -33797,7 +33788,7 @@ msgid ""
 "An angle in degrees by which to rotate the image. A positive angle rotates "
 "the image clockwise; a negative angle rotates it counter-clockwise."
 msgstr ""
-"Ángulo en grados que se girará la imagen. Un ángulo positivo rota la imagen "
+"Ángulo en grados que se girará la imagen. Un ángulo positivo gira la imagen "
 "en sentido horario; un ángulo negativo la gira en sentido antihorario."
 
 #: core/libs/dimg/filters/transform/freerotationsettings.cpp:86
@@ -33820,7 +33811,7 @@ msgid ""
 "Enable this option to apply the anti-aliasing filter to the rotated image. "
 "In order to smooth the target image, it will be blurred a little."
 msgstr ""
-"Active esta opción para procesar la imagen rotada con el filtro de suavizado "
+"Active esta opción para procesar la imagen girada con el filtro de suavizado "
 "de bordes. Para suavizar la imagen destino, se desenfocará un poco."
 
 #: core/libs/dimg/filters/transform/freerotationsettings.cpp:98
@@ -33851,7 +33842,7 @@ msgid ""
 "around a rotated image here."
 msgstr ""
 "Seleccione aquí el método para procesar el recorte automático de una imagen "
-"para eliminar los marcos negros alrededor de la imagen rotada."
+"para eliminar los marcos negros alrededor de la imagen girada."
 
 #: core/libs/dimg/filters/wb/wbfilter.cpp:89
 #, kde-format
@@ -36268,7 +36259,7 @@ msgstr "Invertida horizontalmente"
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated by 180 Degrees"
-msgstr "Rotada 180 grados"
+msgstr "Girada 180 grados"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:881
 #, kde-format
@@ -36280,25 +36271,25 @@ msgstr "Invertida verticalmente"
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally and Rotated Left"
-msgstr "Invertida horizontalmente y rotada a la izquierda"
+msgstr "Invertida horizontalmente y girada a la izquierda"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:891
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated Left"
-msgstr "Rotada a la izquierda"
+msgstr "Girada a la izquierda"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:896
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Vertically and Rotated Left"
-msgstr "Invertida verticalmente y rotada a la izquierda "
+msgstr "Invertida verticalmente y girada a la izquierda "
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:901
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated Right"
-msgstr "Rotada a la derecha"
+msgstr "Girada a la derecha"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:906
 #, kde-format
@@ -39060,7 +39051,7 @@ msgstr "Visitar el sitio web del proyecto LibRaw"
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not stretch or rotate pixels"
-msgstr "No estirar ni rotar píxeles"
+msgstr "No estirar ni girar píxeles"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:226
 #, kde-kuit-format
@@ -39072,7 +39063,7 @@ msgid ""
 "this option guarantees that each output pixel corresponds to one RAW pixel.</"
 "para>"
 msgstr ""
-"<title>No estirar ni rotar píxeles</title><para>Para las cámaras Fuji Super "
+"<title>No estirar ni girar píxeles</title><para>Para las cámaras Fuji Super "
 "CCD, mostrar la imagen inclinada 45 grados. Para las cámaras con píxeles no "
 "cuadrados, no estirar la imagen hasta sus proporciones correctas. En "
 "cualquier caso, esta opción garantiza que cada píxel de salida se "
@@ -50374,20 +50365,21 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Rotate actions"
-msgstr "Acciones de rotación"
+msgstr "Acciones de giro"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:89
 #, kde-format
 msgctxt "@option:check"
 msgid "Show images/thumbnails &rotated according to orientation tag."
 msgstr ""
-"Mostrar las imágenes/miniaturas &rotadas según la etiqueta de orientación."
+"Mostrar las imágenes/miniaturas gi&radas según la etiqueta de orientación."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:91
 #, kde-format
 msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
-msgstr "Poner la etiqueta de orientación como normal después de rotar/voltear."
+msgstr ""
+"Poner la etiqueta de orientación como normal después de girar/invertir."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:112
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:193
@@ -58965,34 +58957,33 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Flip Horizontally"
-msgstr "Voltear horizontalmente"
+msgstr "Invertir horizontalmente"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:507
 #, kde-format
 msgctxt "@action"
 msgid "Flip Vertically"
-msgstr "Voltear verticalmente"
+msgstr "Invertir verticalmente"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:517
 #: core/utilities/import/views/importpreviewview.cpp:188
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
-msgstr "Rotar a la izquierda"
+msgstr "Girar a la izquierda"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:525
 #: core/utilities/import/views/importpreviewview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
-msgstr "Rotar a la derecha"
+msgstr "Girar a la derecha"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:533
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
-msgstr "Rotar automáticamente"
+msgstr "Girar automáticamente"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:565
 #: core/utilities/import/main/importui.cpp:551
@@ -60512,7 +60503,7 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 "La descarga de imágenes ha finalizado. Ya puede desconectar la cámara "
-"mientras las imágenes se rotan automáticamente."
+"mientras las imágenes se giran automáticamente."
 
 #: core/utilities/import/main/importui.cpp:2563
 #, kde-format
@@ -60583,7 +60574,7 @@ msgstr "Corregir la fecha y la hora internas"
 #, kde-format
 msgctxt "@option:check"
 msgid "Auto-rotate/flip image"
-msgstr "Rotar/invertir imagen automáticamente"
+msgstr "Girar/invertir imagen automáticamente"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:78
 #, kde-format
@@ -60670,7 +60661,7 @@ msgid ""
 "Enable this option if you want images automatically rotated or flipped using "
 "Exif information provided by the camera."
 msgstr ""
-"Active esta opción si desea que las imágenes se roten o se inviertan "
+"Active esta opción si desea que las imágenes se giren o se inviertan "
 "automáticamente usando la información Exif que proporciona la cámara."
 
 #: core/utilities/import/widgets/advancedsettings.cpp:134
@@ -65097,12 +65088,10 @@ msgid "Your collection will use this category:"
 msgstr "La colección usará esta categoría:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Required Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
-msgstr "Descargar los archivos necesarios"
+msgstr "Descargar los archivos de modelos necesarios"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:167
 #, kde-format
@@ -65115,14 +65104,12 @@ msgid "Use Aesthetic Detection feature"
 msgstr "Usar la función de detección estética"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:169
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AI Auto-Tools features"
-msgstr "Usar la función de asignación automática de etiquetas"
+msgstr "Usar funciones de herramientas automáticas de IA"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:170
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Usar la función de asignación automática de etiquetas"
 
@@ -65130,20 +65117,20 @@ msgstr "Usar la función de asignación automática de etiquetas"
 #, kde-format
 msgid "Delete obsolete model files (runs at startup)"
 msgstr ""
+"Borrar los archivos de modelos obsoletos (se ejecuta durante el inicio)"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:257
-#, fuzzy, kde-format
-#| msgid "All files were downloaded successfully."
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#, kde-format
 msgid "All model files were downloaded successfully."
-msgstr "Todos los archivos se han descargado con éxito."
+msgstr "Todos los archivos de modelos se han descargado con éxito."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:264
+#: core/utilities/setup/downloader/filesdownloader.cpp:266
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Error de descarga"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:265
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65162,33 +65149,33 @@ msgstr ""
 "\n"
 "Puede volver a intentarlo o continuar la descarga en el siguiente inicio."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:273
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Volver a intentarlo"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:411
+#: core/utilities/setup/downloader/filesdownloader.cpp:413
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "La suma de verificación no es correcta."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:435
+#: core/utilities/setup/downloader/filesdownloader.cpp:437
 #, kde-format
 msgid "File write error."
 msgstr "Ha ocurrido un error de escritura de archivo."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:442
+#: core/utilities/setup/downloader/filesdownloader.cpp:444
 #, kde-format
 msgid "File open error."
 msgstr "Ha ocurrido un error de apertura de archivo."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:457
+#: core/utilities/setup/downloader/filesdownloader.cpp:459
 #, kde-format
 msgid "File on the server is too large."
 msgstr "El archivo del servidor es demasiado grande."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:539
+#: core/utilities/setup/downloader/filesdownloader.cpp:541
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -65197,17 +65184,16 @@ msgid ""
 "to select the specific features you want to enable.</p><p><b>Note:</b> The "
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
+"<p>digiKam se basa en grandes archivos de modelos binarios para potenciar "
+"funciones como la gestión de caras, la clasificación de imágenes según la "
+"estética y herramientas automáticas de IA, como la rotación automática de "
+"imágenes y la asignación automática de etiquetas. Tiene la opción de "
+"seleccionar las funciones específicas que desea activar.</p><p><b>Nota:</b> "
+"La herramienta de eliminación de ojos rojos necesita archivos de modelos de "
+"gestión de caras.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:545
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>Some of these files were not found. Click “Download” to begin "
-#| "downloading the files you need. You can close this dialog, you will be "
-#| "asked again the next time you start digiKam. Without these files the "
-#| "selected features will not work.</p><p>The files will be downloaded to "
-#| "\"<i>%1</i>\".</p><p><b>After the successful download you have to restart "
-#| "digiKam.</b></p>"
+#: core/utilities/setup/downloader/filesdownloader.cpp:547
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
@@ -65217,24 +65203,23 @@ msgid ""
 "p><p><b>You must restart digiKam after successfully downloading the files.</"
 "b></p>"
 msgstr ""
-"<p>Algunos de estos archivos no se han encontrado. Pulse «Descargar» para "
-"comenzar la descarga de los archivos requeridos. Puede cerrar este diálogo y "
-"se le preguntará de nuevo la próxima vez que inicie digiKam. Sin estos "
-"archivos, las funciones seleccionadas no funcionarán.</p><p>Los archivos se "
-"descargarán en «<i>%1</i>».</p><p><b>Tras la descarga deberá reiniciar "
-"digiKam.</b></p>"
+"<p>Faltan algunos archivos necesarios. Pulse «Descargar» para empezar a "
+"instalar los archivos de modelos necesarios. Si cierra este diálogo, se le "
+"preguntará de nuevo la próxima vez que lance digiKam. Las funciones "
+"seleccionadas fallarán sin estos archivos.</p><p>Los archivos se descargarán "
+"en «<i>%1</i>».</p><p><b>Debe reiniciar digiKam tras descargar los archivos "
+"correctamente.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:553
+#: core/utilities/setup/downloader/filesdownloader.cpp:555
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "La descarga necesita %1 archivos con un tamaño de %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:561
-#, fuzzy, kde-format
-#| msgid "All files of the selected features were found."
+#: core/utilities/setup/downloader/filesdownloader.cpp:563
+#, kde-format
 msgid "All files for the selected features were found."
-msgstr "Se han encontrado todos los archivos de las funciones seleccionadas."
+msgstr "Se han encontrado todos los archivos para las funciones seleccionadas."
 
 #: core/utilities/setup/editor/setupeditor.cpp:63
 #, kde-format
@@ -66492,13 +66477,13 @@ msgstr "Al rotar un archivo"
 #, kde-format
 msgctxt "@option:radio"
 msgid "Rotate by only setting a flag"
-msgstr "Rotar estableciendo solo un indicador"
+msgstr "Girar estableciendo solo un indicador"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:36
 #, kde-format
 msgctxt "@option:radio"
 msgid "Rotate by changing the content if possible"
-msgstr "Rotar por medio del cambio del contenido si es posible"
+msgstr "Girar por medio del cambio del contenido si es posible"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:37
 #, kde-format
@@ -66517,7 +66502,7 @@ msgstr "Escribir indicador en los metadatos si es posible"
 msgctxt "@info:tooltip"
 msgid "Rotate files only by changing a flag, not touching the pixel data"
 msgstr ""
-"Rotar archivos solo mediante el cambio de un indicador, sin tocar los datos "
+"Girar archivos solo mediante el cambio de un indicador, sin tocar los datos "
 "de píxeles"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:52
@@ -66532,9 +66517,9 @@ msgid ""
 "to allow setting the flag in the metadata if you want to share your files "
 "outside digiKam.</para>"
 msgstr ""
-"<para>Un archivo se puede rotar de dos formas:<nl/>Puede alterar el "
+"<para>Un archivo se puede girar de dos formas:<nl/>Puede alterar el "
 "contenido reorganizando los píxeles de los datos de la imagen.<nl/>También "
-"puede fijar un indicador para rotar el archivo antes de mostrarlo.</para> "
+"puede fijar un indicador para girar el archivo antes de mostrarlo.</para> "
 "<para>Seleccione esta opción siempre que quiera fijar un único indicador. "
 "Esto es menos intrusivo, pero necesita una implementación específica si va a "
 "acceder al archivo con otra aplicación. Asegúrese de que permite el ajuste "
@@ -66545,7 +66530,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "If possible rotate files by changing the pixel data"
-msgstr "Si es posible, rotar los archivos cambiando los datos de los píxeles"
+msgstr "Si es posible, girar los archivos cambiando los datos de los píxeles"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:63
 #, kde-kuit-format
@@ -66559,14 +66544,14 @@ msgid ""
 "operation, which you need to enable explicitly. It is not support for RAW "
 "and other read-only formats, which will be rotated by flag only.</para>"
 msgstr ""
-"<para>Un archivo se puede rotar de dos formas:<nl/>Puede alterar el "
+"<para>Un archivo se puede girar de dos formas:<nl/>Puede alterar el "
 "contenido reorganizando los píxeles de los datos de la imagen.<nl/>También "
-"puede fijar un indicador para rotar el archivo antes de mostrarlo.</para> "
-"<para>Seleccione esta opción si desea que el archivo se rote cambiando su "
+"puede fijar un indicador para girar el archivo antes de mostrarlo.</para> "
+"<para>Seleccione esta opción si desea que el archivo se gire cambiando su "
 "contenido. Esta es una operación sin pérdida de calidad para los archivos "
 "JPEG. Para otros formatos, es una operación con pérdida de calidad que se "
 "debe activar explícitamente. No esta permitida para los archivos RAW ni para "
-"otros archivos de solo lectura, que solo se podrán rotar mediante un "
+"otros archivos de solo lectura, que solo se podrán girar mediante un "
 "indicador.</para>"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:73
@@ -66576,7 +66561,7 @@ msgid ""
 "Rotate files by changing the pixel data even if the operation will incur "
 "quality loss"
 msgstr ""
-"Rotar los archivos cambiando los datos de píxeles incluso si la operación "
+"Girar los archivos cambiando los datos de píxeles incluso si la operación "
 "incurre en pérdidas de calidad"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:75
@@ -66588,9 +66573,9 @@ msgid ""
 "not enabled, these files will be rotated by flag."
 msgstr ""
 "Para algunos formatos de archivos que aplican a compresión con pérdidas, se "
-"perderán datos cada vez que se rote el contenido. Marque esta opción para "
-"permitir rotaciones con pérdidas. Si no está activada, estos archivos se "
-"rotarán según su indicador."
+"perderán datos cada vez que se gire el contenido. Marque esta opción para "
+"permitir giros con pérdidas. Si no está activada, estos archivos se girarán "
+"según su indicador."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:81
 #, kde-format
@@ -66610,21 +66595,21 @@ msgid ""
 "shown rotated. Enable this option to allow editing this field. "
 msgstr ""
 "Los metadatos del archivo contienen normalmente un indicador para mostrar el "
-"archivo rotado. Active esta opción para permitir la edición de este campo."
+"archivo girado. Active esta opción para permitir la edición de este campo."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:107
 #, kde-format
 msgctxt "@option"
 msgid "Show images/thumbnails &rotated according to orientation tag."
 msgstr ""
-"Mostrar las imágenes/miniaturas &rotadas según la etiqueta de orientación."
+"Mostrar las imágenes/miniaturas gi&radas según la etiqueta de orientación."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:109
 #, kde-format
 msgctxt "@option"
 msgid "Set orientation tag to normal after rotate/flip."
 msgstr ""
-"Ajustar la etiqueta de orientación como normal después de rotar/voltear."
+"Ajustar la etiqueta de orientación como normal después de girar/invertir."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:120
 #, kde-format
@@ -68387,20 +68372,3 @@ msgstr "Elementos del álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementos importados"
-
-#~ msgctxt "@action:inmenu Pluralized"
-#~ msgid "Image Quality Scan"
-#~ msgid_plural "Image Quality Scan"
-#~ msgstr[0] "Escaneo de calidad de imagen"
-#~ msgstr[1] "Escaneo de calidad de imagen"
-
-#~ msgid ""
-#~ "<p>For the face management, the red-eye removal tool, and the "
-#~ "classification of images according to aesthetics or the automatic "
-#~ "assignment of tags to images, digiKam requires some large binary files. "
-#~ "You can choose which feature you want to use.</p>"
-#~ msgstr ""
-#~ "<p>Para la gestión de caras, la herramienta de eliminación de ojos rojos, "
-#~ "la clasificación de imágenes según su estética o la asignación automática "
-#~ "de etiquetas a las imágenes, digiKam necesita algunos archivos binarios "
-#~ "de gran tamaño. Puede elegir la función que desea usar.</p>"

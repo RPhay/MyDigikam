@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-24 01:55+0000\n"
-"PO-Revision-Date: 2025-03-19 08:35+0200\n"
+"POT-Creation-Date: 2025-03-25 01:55+0000\n"
+"PO-Revision-Date: 2025-03-24 14:50+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -555,8 +555,7 @@ msgstr[2] "Пересунути %1 файлів до смітника"
 msgstr[3] "Пересунути до смітника"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
@@ -2426,8 +2425,7 @@ msgid "Rotate"
 msgstr "Обертати"
 
 #: core/app/main/digikamapp_setup.cpp:1066
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "Автоматичний поворот"
@@ -6673,33 +6671,27 @@ msgstr ""
 "перекладати рядки з метаданих XMP зображень.</para>"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@title"
 msgid "Auto-Rotate"
 msgstr "Автоматичний поворот"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to automatically assign tags to images"
+#, kde-format
 msgctxt "@info"
 msgid "AI tool to automatically rotate images"
-msgstr "Інструмент для автоматичного призначення позначок зображень"
+msgstr "Інструмент ШІ для автоматичного обертання зображень"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can fix automatically lens artifacts "
-#| "over images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can automatically detect the correct "
 "orientation of an image and rotate the image.</para>"
 msgstr ""
-"<para>За допомогою цього інструмента керування пакетною обробкою черги можна "
-"автоматично усувати дефекти викривлення зображень об'єктивом.</para>"
+"<para>За допомогою цього інструмента керування пакетною обробкою можливе "
+"автоматичне визначення правильної орієнтації зображення та обертання "
+"зображень.</para>"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, kde-format
@@ -6930,37 +6922,37 @@ msgstr ""
 "<para>За допомогою цього інструмента керування чергою пакетної обробки ви "
 "можете змінювати розміри зображень.</para>"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:79
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:80
 #, kde-format
 msgctxt "@title"
 msgid "Use Exif Orientation"
 msgstr "Використовувати мітку орієнтації Exif"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:83
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
 #, kde-format
 msgctxt "@item: angle"
 msgid "90 degrees"
 msgstr "90°"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
 #, kde-format
 msgctxt "@item: angle"
 msgid "180 degrees"
 msgstr "180°"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
 #, kde-format
 msgctxt "@item: angle"
 msgid "270 degrees"
 msgstr "270°"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:87
 #, kde-format
 msgctxt "@item: angle"
 msgid "Custom"
 msgstr "Нетиповий"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:88
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:89
 #, kde-format
 msgctxt "@label"
 msgid "Angle:"
@@ -59168,8 +59160,7 @@ msgid "Rotate Right"
 msgstr "Повернути праворуч"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:533
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
 msgstr "Автоматичний поворот"
@@ -65304,12 +65295,10 @@ msgid "Your collection will use this category:"
 msgstr "Для вашої збірки буде використано таку категорію:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Required Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
-msgstr "Отримання потрібних файлів"
+msgstr "Отримання потрібних файлів моделей"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:167
 #, kde-format
@@ -65322,35 +65311,32 @@ msgid "Use Aesthetic Detection feature"
 msgstr "Використати можливість визначення естетичності"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:169
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AI Auto-Tools features"
-msgstr "Використати можливість автоматичного призначення міток"
+msgstr "Використати можливості автоматизації ШІ"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:170
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Використати можливість автоматичного призначення міток"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:172
 #, kde-format
 msgid "Delete obsolete model files (runs at startup)"
-msgstr ""
+msgstr "Вилучати застарілі файли моделей (виконується під час запуску)"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:257
-#, fuzzy, kde-format
-#| msgid "All files were downloaded successfully."
+#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#, kde-format
 msgid "All model files were downloaded successfully."
-msgstr "Усі файли було успішно отримано."
+msgstr "Усі файли моделей було успішно отримано."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:264
+#: core/utilities/setup/downloader/filesdownloader.cpp:266
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Помилка під час отримання"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:265
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65370,33 +65356,33 @@ msgstr ""
 "Ви можете повторити спробу або продовжити отримання даних під час наступного "
 "запуску."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:273
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Спробувати ще раз"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:411
+#: core/utilities/setup/downloader/filesdownloader.cpp:413
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Неправильна контрольна сума."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:435
+#: core/utilities/setup/downloader/filesdownloader.cpp:437
 #, kde-format
 msgid "File write error."
 msgstr "Помилка запису до файла."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:442
+#: core/utilities/setup/downloader/filesdownloader.cpp:444
 #, kde-format
 msgid "File open error."
 msgstr "Помилка під час спроби відкрити файл."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:457
+#: core/utilities/setup/downloader/filesdownloader.cpp:459
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Файл на сервері є надто великим."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:539
+#: core/utilities/setup/downloader/filesdownloader.cpp:541
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -65405,17 +65391,16 @@ msgid ""
 "to select the specific features you want to enable.</p><p><b>Note:</b> The "
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
+"<p>Для реалізації потужних можливостей, зокрема керування записами облич, "
+"класифікації на основі естетичних критерії, автоматичних інструментів ШІ, "
+"зокрема автоматичного повороту, та автоматичного призначення міток digiKam "
+"потрібні великі двійкові файли моделей. Ви можете вибрати можливості, які "
+"вам потрібні.</p><p><b>Зауваження:</b> для роботи інструменту усування "
+"ефекту «червоних» очей, потрібні будуть файли моделей керування записами "
+"облич.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:545
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>Some of these files were not found. Click “Download” to begin "
-#| "downloading the files you need. You can close this dialog, you will be "
-#| "asked again the next time you start digiKam. Without these files the "
-#| "selected features will not work.</p><p>The files will be downloaded to "
-#| "\"<i>%1</i>\".</p><p><b>After the successful download you have to restart "
-#| "digiKam.</b></p>"
+#: core/utilities/setup/downloader/filesdownloader.cpp:547
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
@@ -65425,22 +65410,21 @@ msgid ""
 "p><p><b>You must restart digiKam after successfully downloading the files.</"
 "b></p>"
 msgstr ""
-"<p>Не знайдено деяких з цих файлів. Натисніть «Отримати», щоб почати "
-"отримання потрібних вам файлів. Ви можете скасувати цей процес, це вікно "
-"буде показано знову під час наступного запуску digiKam. Без цих файлів "
-"вибрані можливості не працюватиме.</p><p>Файли буде отримано до «<i>%1</i>»."
-"</p><p><b>Після успішного отримання файлів вам слід перезапустити digiKam.</"
-"b></p>"
+"<p>Не знайдено деяких потрібних програмі файлів. Натисніть кнопку "
+"«Отримати», щоб почати встановлення потрібних програмі файлів моделей. Якщо "
+"ви закриєте це вікно, програма попросить вас про це наступного разу, коли ви "
+"запускатимете digiKam. Вибрані вами можливості не працюватимуть без цих "
+"файлів.</p><p>Файли буде отримано до «<i>%1</i>».</p><p><b>Вам доведеться "
+"перезапустити digiKam після успішного отримання цих файлів.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:553
+#: core/utilities/setup/downloader/filesdownloader.cpp:555
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Для отримання даних потрібні дані %1 файлів розміром %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:561
-#, fuzzy, kde-format
-#| msgid "All files of the selected features were found."
+#: core/utilities/setup/downloader/filesdownloader.cpp:563
+#, kde-format
 msgid "All files for the selected features were found."
 msgstr "Знайдено усі файли для реалізації вибраних можливостей."
 
