@@ -119,6 +119,7 @@ void ScanDialog::closeEvent(QCloseEvent* e)
 
 void ScanDialog::slotDialogFinished()
 {
+    d->saneWidget->cancelScan();
     d->saneWidget->closeDevice();
 }
 
