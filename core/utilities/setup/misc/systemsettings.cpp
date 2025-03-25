@@ -81,10 +81,9 @@ void SystemSettings::readSettings()
         enableFaceEngine = settings.value(QLatin1String("enableFaceEngine"),  true).toBool();
     }
 
+    enableAIAutoTools    = settings.value(QLatin1String("enableAIAutoTools"), true).toBool();
     enableAesthetic      = settings.value(QLatin1String("enableAesthetic"),   true).toBool();
-    enableAITools        = settings.value(QLatin1String("enableAITools"),     true).toBool();
     enableAutoTags       = settings.value(QLatin1String("enableAutoTags"),    true).toBool();
-    deleteOldDNNFiles    = settings.value(QLatin1String("deleteOldDNNFiles"), true).toBool();
 
 #ifdef Q_OS_WIN
 
@@ -172,11 +171,10 @@ void SystemSettings::saveSettings()
 
 #endif
 
+    settings.setValue(QLatin1String("enableAIAutoTools"), enableAIAutoTools);
     settings.setValue(QLatin1String("enableFaceEngine"),  enableFaceEngine);
     settings.setValue(QLatin1String("enableAesthetic"),   enableAesthetic);
-    settings.setValue(QLatin1String("enableAITools"),     enableAITools);
     settings.setValue(QLatin1String("enableAutoTags"),    enableAutoTags);
-    settings.setValue(QLatin1String("deleteOldDNNFiles"), deleteOldDNNFiles);
     settings.setValue(QLatin1String("softwareOpenGL"),    softwareOpenGL);
     settings.setValue(QLatin1String("enableLogging"),     enableLogging);
     settings.setValue(QLatin1String("enableOpenCL"),      enableOpenCL);

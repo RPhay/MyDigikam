@@ -459,7 +459,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     digikam->restoreSession();
     digikam->show();
 
-    if (system.enableFaceEngine || system.enableAesthetic || system.enableAITools || system.enableAutoTags)
+    if (system.enableAIAutoTools || system.enableFaceEngine || system.enableAesthetic || system.enableAutoTags)
     {
         QPointer<FilesDownloader> floader = new FilesDownloader(digikam);
 
