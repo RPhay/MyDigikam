@@ -35,6 +35,7 @@
 
 /*
 #include <QWebEngineView>
+#include <QWebEngineSettings>
 #include <QWebEnginePage>
 #include <QWebEngineProfile>
 #include <QWebEngineCookieStore>

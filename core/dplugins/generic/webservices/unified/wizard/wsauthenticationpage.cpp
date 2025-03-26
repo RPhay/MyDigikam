@@ -24,6 +24,7 @@
 #include <QStandardPaths>
 #include <QLabel>
 #include <QStringList>
+#include <QWebEngineSettings>
 
 // KDE includes
 
