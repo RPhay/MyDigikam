@@ -79,7 +79,7 @@ QString PanoramaPlugin::handbookSection() const
 
 QString PanoramaPlugin::handbookChapter() const
 {
-    return QLatin1String("panorama_tool");
+    return QLatin1String("pano_creator");
 }
 
 QList<DPluginAuthor> PanoramaPlugin::authors() const
