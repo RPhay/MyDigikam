@@ -324,23 +324,7 @@ bool Setup::execDialog(QWidget* const parent, Page page)
     QPointer<Setup> setup = new Setup(parent);
     setup->showPage(page);
 
-    QEventLoop loop;
-    bool success = false;
-
-    connect(setup, &QDialog::finished,
-            setup, [&loop, &success](int result)
-            {
-                success = (result == QDialog::Accepted);
-                loop.quit();
-            }
-    );
-
-    setup->DConfigDlg::open();
-
-    loop.exec();
-    delete setup;
-
-    return success;
+    return openSetup(setup);
 }
 
 bool Setup::execSinglePage(Page page)
@@ -354,23 +338,7 @@ bool Setup::execSinglePage(QWidget* const parent, Page page)
     setup->showPage(page);
     setup->setFaceType(Plain);
 
-    QEventLoop loop;
-    bool success = false;
-
-    connect(setup, &QDialog::finished,
-            setup, [&loop, &success](int result)
-            {
-                success = (result == QDialog::Accepted);
-                loop.quit();
-            }
-    );
-
-    setup->DConfigDlg::open();
-
-    loop.exec();
-    delete setup;
-
-    return success;
+    return openSetup(setup);
 }
 
 bool Setup::execTemplateEditor(QWidget* const parent, const Template& t)
@@ -380,23 +348,7 @@ bool Setup::execTemplateEditor(QWidget* const parent, const Template& t)
     setup->setFaceType(Plain);
     setup->setTemplate(t);
 
-    QEventLoop loop;
-    bool success = false;
-
-    connect(setup, &QDialog::finished,
-            setup, [&loop, &success](int result)
-            {
-                success = (result == QDialog::Accepted);
-                loop.quit();
-            }
-    );
-
-    setup->DConfigDlg::open();
-
-    loop.exec();
-    delete setup;
-
-    return success;
+    return openSetup(setup);
 }
 
 #ifdef HAVE_GEOLOCATION
@@ -423,23 +375,7 @@ bool Setup::execGeolocation(QWidget* const parent, int tab)
 
     widget->setActiveTab((SetupGeolocation::GeolocationTab)tab);
 
-    QEventLoop loop;
-    bool success = false;
-
-    connect(setup, &QDialog::finished,
-            setup, [&loop, &success](int result)
-            {
-                success = (result == QDialog::Accepted);
-                loop.quit();
-            }
-    );
-
-    setup->DConfigDlg::open();
-
-    loop.exec();
-    delete setup;
-
-    return success;
+    return openSetup(setup);
 }
 
 #endif
@@ -467,23 +403,7 @@ bool Setup::execMetadataFilters(QWidget* const parent, int tab)
     widget->setActiveTab(SetupMetadata::Display);
     widget->setActiveSubTab((SetupMetadata::MetadataSubTab)tab);
 
-    QEventLoop loop;
-    bool success = false;
-
-    connect(setup, &QDialog::finished,
-            setup, [&loop, &success](int result)
-            {
-                success = (result == QDialog::Accepted);
-                loop.quit();
-            }
-    );
-
-    setup->DConfigDlg::open();
-
-    loop.exec();
-    delete setup;
-
-    return success;
+     return openSetup(setup);
 }
 
 bool Setup::execExifTool(QWidget* const parent)
@@ -508,23 +428,7 @@ bool Setup::execExifTool(QWidget* const parent)
 
     widget->setActiveTab(SetupMetadata::ExifTool);
 
-    QEventLoop loop;
-    bool success = false;
-
-    connect(setup, &QDialog::finished,
-            setup, [&loop, &success](int result)
-            {
-                success = (result == QDialog::Accepted);
-                loop.quit();
-            }
-    );
-
-    setup->DConfigDlg::open();
-
-    loop.exec();
-    delete setup;
-
-    return success;
+    return openSetup(setup);
 }
 
 bool Setup::execLocalize(QWidget* const parent)
@@ -549,6 +453,11 @@ bool Setup::execLocalize(QWidget* const parent)
 
     widget->setActiveTab(SetupMisc::Localize);
 
+    return openSetup(setup);
+}
+
+bool Setup::openSetup(Setup* const setup)
+{
     QEventLoop loop;
     bool success = false;
 

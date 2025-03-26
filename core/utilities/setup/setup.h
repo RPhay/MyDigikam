@@ -105,6 +105,7 @@ private:
 
     Setup::Page activePageIndex() const;
     void        showPage(Setup::Page page);
+    static bool openSetup(Setup* const setup);
 
 private:
 
