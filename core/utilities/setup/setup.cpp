@@ -323,7 +323,21 @@ bool Setup::execDialog(QWidget* const parent, Page page)
 {
     QPointer<Setup> setup = new Setup(parent);
     setup->showPage(page);
-    bool success          = (setup->DConfigDlg::exec() == QDialog::Accepted);
+
+    QEventLoop loop;
+    bool success = false;
+
+    connect(setup, &QDialog::finished,
+            setup, [&loop, &success](int result)
+            {
+                success = (result == QDialog::Accepted);
+                loop.quit();
+            }
+    );
+
+    setup->DConfigDlg::open();
+
+    loop.exec();
     delete setup;
 
     return success;
@@ -339,7 +353,21 @@ bool Setup::execSinglePage(QWidget* const parent, Page page)
     QPointer<Setup> setup = new Setup(parent);
     setup->showPage(page);
     setup->setFaceType(Plain);
-    bool success          = (setup->DConfigDlg::exec() == QDialog::Accepted);
+
+    QEventLoop loop;
+    bool success = false;
+
+    connect(setup, &QDialog::finished,
+            setup, [&loop, &success](int result)
+            {
+                success = (result == QDialog::Accepted);
+                loop.quit();
+            }
+    );
+
+    setup->DConfigDlg::open();
+
+    loop.exec();
     delete setup;
 
     return success;
@@ -351,7 +379,21 @@ bool Setup::execTemplateEditor(QWidget* const parent, const Template& t)
     setup->showPage(TemplatePage);
     setup->setFaceType(Plain);
     setup->setTemplate(t);
-    bool success          = (setup->DConfigDlg::exec() == QDialog::Accepted);
+
+    QEventLoop loop;
+    bool success = false;
+
+    connect(setup, &QDialog::finished,
+            setup, [&loop, &success](int result)
+            {
+                success = (result == QDialog::Accepted);
+                loop.quit();
+            }
+    );
+
+    setup->DConfigDlg::open();
+
+    loop.exec();
     delete setup;
 
     return success;
@@ -381,7 +423,20 @@ bool Setup::execGeolocation(QWidget* const parent, int tab)
 
     widget->setActiveTab((SetupGeolocation::GeolocationTab)tab);
 
-    bool success                   = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    QEventLoop loop;
+    bool success = false;
+
+    connect(setup, &QDialog::finished,
+            setup, [&loop, &success](int result)
+            {
+                success = (result == QDialog::Accepted);
+                loop.quit();
+            }
+    );
+
+    setup->DConfigDlg::open();
+
+    loop.exec();
     delete setup;
 
     return success;
@@ -412,7 +467,20 @@ bool Setup::execMetadataFilters(QWidget* const parent, int tab)
     widget->setActiveTab(SetupMetadata::Display);
     widget->setActiveSubTab((SetupMetadata::MetadataSubTab)tab);
 
-    bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    QEventLoop loop;
+    bool success = false;
+
+    connect(setup, &QDialog::finished,
+            setup, [&loop, &success](int result)
+            {
+                success = (result == QDialog::Accepted);
+                loop.quit();
+            }
+    );
+
+    setup->DConfigDlg::open();
+
+    loop.exec();
     delete setup;
 
     return success;
@@ -440,7 +508,20 @@ bool Setup::execExifTool(QWidget* const parent)
 
     widget->setActiveTab(SetupMetadata::ExifTool);
 
-    bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    QEventLoop loop;
+    bool success = false;
+
+    connect(setup, &QDialog::finished,
+            setup, [&loop, &success](int result)
+            {
+                success = (result == QDialog::Accepted);
+                loop.quit();
+            }
+    );
+
+    setup->DConfigDlg::open();
+
+    loop.exec();
     delete setup;
 
     return success;
@@ -468,7 +549,20 @@ bool Setup::execLocalize(QWidget* const parent)
 
     widget->setActiveTab(SetupMisc::Localize);
 
-    bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    QEventLoop loop;
+    bool success = false;
+
+    connect(setup, &QDialog::finished,
+            setup, [&loop, &success](int result)
+            {
+                success = (result == QDialog::Accepted);
+                loop.quit();
+            }
+    );
+
+    setup->DConfigDlg::open();
+
+    loop.exec();
     delete setup;
 
     return success;

@@ -113,7 +113,7 @@ BUGFIXES:
 100 ==> 185317 - Album thumbnails are gone when moving nested albums.
 101 ==> 501925 - OpenCV dlls not recognised; OpenCV not running; face detection detects no face at all; face detection failure.
 102 ==> 501978 - No Database created at startup
-103 ==> 
+103 ==> 502003 - digiKam exits abruptly when attempting to open help.
 104 ==> 
 105 ==> 
 106 ==> 
