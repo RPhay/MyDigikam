@@ -364,9 +364,23 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     if (!mainConfig.exists() || (version.startsWith(QLatin1String("0.5"))))
     {
         FirstRunDlg firstRun;
-        firstRun.show();
 
-        if (firstRun.exec() == QDialog::Rejected)
+        QEventLoop loop;
+        bool rejected = true;
+
+        QObject::connect(&firstRun, &QDialog::finished,
+                         &firstRun, [&loop, &rejected](int result)
+            {
+                rejected = (result == QDialog::Rejected);
+                loop.quit();
+            }
+        );
+
+        firstRun.open();
+
+        loop.exec();
+
+        if (rejected)
         {
             return 1;
         }
