@@ -114,6 +114,7 @@ checks_list = ["[-Wclazy-assert-with-side-effects]",
                "[-Wclazy-unexpected-flag-enumerator-value]",
                "[-Wclazy-virtual-call-ctor]",
                "[-Wclazy-use-static-qregularexpression]",
+               "[-Wclazy-module-include]",
 ]
 
 # Each check will have its own node of information.
