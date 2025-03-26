@@ -28,6 +28,7 @@
 #include <QHash>
 
 #include <QWebEngineView>
+#include <QWebEngineSettings>
 #include <QWebEnginePage>
 #include <QWebEngineProfile>
 #include <QWebEngineCookieStore>
@@ -78,6 +79,8 @@ INatBrowserDlg::INatBrowserDlg(const QString& username,
     d->username = username;
 
     d->browser                             = new QWebEngineView(this);
+    d->browser->settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
+    d->browser->settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, false);
     QWebEngineCookieStore* const cookieJar = d->browser->page()->profile()->cookieStore();
     cookieJar->deleteAllCookies();
 

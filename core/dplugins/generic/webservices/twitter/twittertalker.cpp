@@ -209,6 +209,8 @@ void TwTalker::link()
     url.setQuery(query);
 
     d->view = new QWebEngineView(d->parent);
+    d->view->settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
+    d->view->settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, false);
     d->view->setWindowFlags(Qt::Dialog);
     d->view->load(url);
     d->view->show();

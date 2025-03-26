@@ -25,6 +25,7 @@
 #include <QDesktopServices>
 #include <QNetworkCookieJar>
 #include <QWebEngineView>
+#include <QWebEngineSettings>
 #include <QWebEnginePage>
 #include <QWebEngineProfile>
 #include <QWebEngineCookieStore>
@@ -72,6 +73,8 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDe
     d->home    = url;
 
     d->browser = new QWebEngineView(this);
+    d->browser->settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
+    d->browser->settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, false);
     d->browser->page()->profile()->cookieStore()->deleteAllCookies();
 
     // --------------------------
@@ -122,10 +125,7 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDe
     setLayout(grid);
 
     // ----------------------
-/*
-    connect(d->browser, SIGNAL(iconChanged(const QIcon&)),
-            this, SLOT(slotIconChanged(const QIcon&)));
-*/
+
     connect(d->browser, SIGNAL(titleChanged(QString)),
             this, SLOT(slotTitleChanged(QString)));
 
@@ -194,11 +194,6 @@ void WebBrowserDlg::slotUrlChanged(const QUrl& url)
 void WebBrowserDlg::slotTitleChanged(const QString& title)
 {
     setWindowTitle(title);
-}
-
-void WebBrowserDlg::slotIconChanged(const QIcon& icon)
-{
-    setWindowIcon(icon);
 }
 
 void WebBrowserDlg::slotLoadingStarted()
