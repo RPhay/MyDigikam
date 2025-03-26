@@ -234,9 +234,21 @@ bool FacePipelineDetectRecognize::loader()
 
         if (DatabaseItem::Category::Image == package->info.category())
         {
-            // load high quality image for detection
+            PreviewSettings::RawLoading rawLoadingMode = PreviewSettings::RawPreviewAutomatic;
 
-            package->image = PreviewLoadThread::loadHighQualitySynchronously(package->info.filePath());
+            if (QStringLiteral("RAW-ARW") == package->info.format())
+            {
+                // fix for #447767: ARW preview is different aspect than the image
+                
+                bool loadFullSize = qMin(package->info.dimensions().width() / 2, package->info.dimensions().height() / 2) < 
+                                    qMin(faceDetector->nnInputSizeRequired().height / 2, faceDetector->nnInputSizeRequired().width / 2);                
+
+                rawLoadingMode = loadFullSize ? PreviewSettings::RawPreviewFromRawFullSize : PreviewSettings::RawPreviewFromRawHalfSize;
+            }
+
+            // load high quality image for detection            
+
+            package->image = PreviewLoadThread::loadHighQualitySynchronously(package->info.filePath(), rawLoadingMode);
 
             // check for corrupted images that can't be loaded
 
