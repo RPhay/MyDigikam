@@ -67,7 +67,7 @@ FirstRunDlg::FirstRunDlg(QWidget* const parent)
     : QWizard(parent),
       d      (new Private)
 {
-    setWizardStyle(QWizard::ClassicStyle);
+    setWizardStyle(QWizard::ModernStyle);
     setButtonLayout(QList<QWizard::WizardButton>() << QWizard::HelpButton
                                                    << QWizard::BackButton
                                                    << QWizard::CancelButton
