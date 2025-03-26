@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-25 01:55+0000\n"
+"POT-Creation-Date: 2025-03-26 01:56+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -11819,7 +11819,7 @@ msgstr "Scan billede"
 msgid "Scan Images"
 msgstr "Scan billeder"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:163
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:164
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1837
 #, fuzzy, kde-format
@@ -11828,20 +11828,20 @@ msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "Nyt navn på billedfil"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:211
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:212
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:148
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Ikke understøttet format: %1"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:212
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:213
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:149
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "Det ønskede billedformat \"%1\" er ikke understøttet."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:224
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:225
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, fuzzy, kde-format
 #| msgid "Cannot Save File"
@@ -11849,7 +11849,7 @@ msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "Kan ikke gemme filen"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:225
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:226
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:162
 #, kde-format
 msgid ""
@@ -11861,7 +11861,7 @@ msgstr ""
 "\"%1\" til\n"
 "\"%2\"."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:240
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:241
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2311
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2330
@@ -11871,7 +11871,7 @@ msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Overskriv fil?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:241
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:242
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:178
 #, kde-format
 msgid ""
@@ -11879,18 +11879,18 @@ msgid ""
 msgstr ""
 "En fil ved navn \"%1\" findes allerede. Vil du virkelig overskrive den?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:292
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:293
 #, kde-format
 msgid "Saving file %1 -"
 msgstr "Gemmer filen %1 -"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:301
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "Fil ikke gemt."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:301
 #, kde-format
 msgid "Cannot save \"%1\" file"
 msgstr "Kan ikke gemme \"%1\"-filen"
@@ -31538,7 +31538,7 @@ msgstr "Spørg ikke igen"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:175
+#: core/utilities/setup/downloader/filesdownloader.cpp:166
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -39262,7 +39262,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader.cpp:150
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Download"
@@ -69268,48 +69268,43 @@ msgstr "Vælg et år"
 msgid "Your collection will use this category:"
 msgstr "Din nye samling vil blive oprettet med dette navn:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:145
+#: core/utilities/setup/downloader/filesdownloader.cpp:138
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@title:window"
 msgid "Download Required Model Files"
 msgstr "Downloader filen %1..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:167
-#, fuzzy, kde-format
-#| msgid "Face Detection"
-msgid "Use Face Management feature"
-msgstr "Ansigtsgenkendelse"
-
-#: core/utilities/setup/downloader/filesdownloader.cpp:168
-#, kde-format
-msgid "Use Aesthetic Detection feature"
-msgstr ""
-
-#: core/utilities/setup/downloader/filesdownloader.cpp:169
+#: core/utilities/setup/downloader/filesdownloader.cpp:160
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use AI Auto-Tools features"
 msgstr "Automatisk justering"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:170
+#: core/utilities/setup/downloader/filesdownloader.cpp:161
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgid "Use Face Management feature"
+msgstr "Ansigtsgenkendelse"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#, kde-format
+msgid "Use Aesthetic Detection feature"
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:163
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use AutoTags Assignment feature"
 msgstr "Automatisk justering"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:172
-#, kde-format
-msgid "Delete obsolete model files (runs at startup)"
-msgstr ""
-
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#: core/utilities/setup/downloader/filesdownloader.cpp:243
 #, fuzzy, kde-format
 #| msgid "Download successfully %1..."
 msgid "All model files were downloaded successfully."
 msgstr "Download af %1 gennemført..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:266
+#: core/utilities/setup/downloader/filesdownloader.cpp:252
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Download New"
@@ -69317,7 +69312,7 @@ msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Download ny"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:267
+#: core/utilities/setup/downloader/filesdownloader.cpp:253
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -69329,36 +69324,36 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:275
+#: core/utilities/setup/downloader/filesdownloader.cpp:261
 #, fuzzy, kde-format
 #| msgid "Add again"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Tilføj igen"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:413
+#: core/utilities/setup/downloader/filesdownloader.cpp:399
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:437
+#: core/utilities/setup/downloader/filesdownloader.cpp:423
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:444
+#: core/utilities/setup/downloader/filesdownloader.cpp:430
 #, fuzzy, kde-format
 #| msgid "Token error"
 msgid "File open error."
 msgstr "Symbolfejl"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:459
+#: core/utilities/setup/downloader/filesdownloader.cpp:445
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "File on the server is too large."
 msgstr "Kunne ikke gemme mærker til fil."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:541
+#: core/utilities/setup/downloader/filesdownloader.cpp:526
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -69368,7 +69363,7 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:547
+#: core/utilities/setup/downloader/filesdownloader.cpp:532
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -69380,15 +69375,20 @@ msgid ""
 "b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:555
+#: core/utilities/setup/downloader/filesdownloader.cpp:540
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:563
+#: core/utilities/setup/downloader/filesdownloader.cpp:548
 #, kde-format
 msgid "All files for the selected features were found."
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:568
+#, kde-format
+msgid "Clean up unused AI/DNN model files..."
 msgstr ""
 
 #: core/utilities/setup/editor/setupeditor.cpp:63
