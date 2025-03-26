@@ -581,7 +581,9 @@ void FilesDownloader::deleteUnusedFiles() const
 
         // iterate over all files in the directory and remove those that are not in the list
 
-        for (const QFileInfo& info : dir.entryInfoList(QDir::Files))
+        const auto lst = dir.entryInfoList(QDir::Files);
+
+        for (const QFileInfo& info : lst)
         {
             bool found = false;
             d->progress->setValue(d->progress->value() + 1);

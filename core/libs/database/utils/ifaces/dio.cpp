@@ -343,7 +343,9 @@ void DIO::createJob(IOJobData* const data)
 
         for (const QString& cpath : std::as_const(currentPathList))
         {
-            for (const QUrl& url : data->sourceUrls())
+            const auto src = data->sourceUrls();
+
+            for (const QUrl& url : src)
             {
                 QFileInfo srcInfo(url.toLocalFile());
 
@@ -369,7 +371,9 @@ void DIO::createJob(IOJobData* const data)
                                                    QDir::Files   |
                                                    QDir::NoDotAndDotDot);
 
-        for (const QUrl& url : data->sourceUrls())
+        const auto src = data->sourceUrls();
+
+        for (const QUrl& url : src)
         {
             if (dirList.contains(url.adjusted(QUrl::StripTrailingSlash).fileName(), caseSensitivity))
             {
@@ -422,8 +426,9 @@ void DIO::createJob(IOJobData* const data)
             QMutexLocker locker(&m_dioMutex);
 
             m_currentPathHash.insert(data, data->destUrl().toLocalFile());
+            const auto src = data->sourceUrls();
 
-            for (const QUrl& url : data->sourceUrls())
+            for (const QUrl& url : src)
             {
                 QFileInfo srcInfo(url.toLocalFile());
                 m_currentPathHash.insert(data, srcInfo.path() + QLatin1Char('/'));
