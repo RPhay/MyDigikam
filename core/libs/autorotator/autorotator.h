@@ -37,7 +37,7 @@ public:
      * @param img               The DImg file must be in the same rotation as what is displayed in the image viewer
      * @return                  The free rotation angle
      */
-    int                                         rotationAngle(const DImg& img);
+    float                                     rotationAngle(const DImg& img);
 
     /**
      * @brief rotationOrientation

@@ -126,7 +126,7 @@ bool AutoRotator::shouldRotate(int degrees, int sensitivity, int angle)
     }
 }
 
-int AutoRotator::rotationAngle(const DImg& img)
+float AutoRotator::rotationAngle(const DImg& img)
 {
     QElapsedTimer timer;
     timer.start();
