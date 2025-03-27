@@ -114,7 +114,7 @@ BUGFIXES:
 101 ==> 501925 - OpenCV dlls not recognised; OpenCV not running; face detection detects no face at all; face detection failure.
 102 ==> 501978 - No Database created at startup
 103 ==> 502003 - digiKam exits abruptly when attempting to open help.
-104 ==> 
+104 ==> 502051 - Tag tree in right window pane (under the Tag tab) doesnt work consistently as regards nested item memberships.
 105 ==> 
 106 ==> 
 107 ==> 
