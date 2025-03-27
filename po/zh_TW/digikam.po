@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-26 01:56+0000\n"
+"POT-Creation-Date: 2025-03-27 01:57+0000\n"
 "PO-Revision-Date: 2025-02-20 15:42+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -10889,7 +10889,7 @@ msgstr "掃描影像"
 msgid "Scan Images"
 msgstr "掃描影像"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:164
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1837
 #, kde-format
@@ -10897,27 +10897,27 @@ msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "新的影像檔案名稱"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:212
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:211
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:148
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "不支援的格式"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:213
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:212
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:149
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "不支援目標影像檔案格式「%1」。"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:225
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:224
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "無法儲存檔案"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:226
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:225
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:162
 #, kde-format
 msgid ""
@@ -10928,7 +10928,7 @@ msgstr ""
 "將檔案 \"%1\" 儲存\n"
 "到 \"%2\" 失敗。"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:241
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2311
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2330
@@ -10937,25 +10937,25 @@ msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "覆寫檔案嗎？"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:242
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:241
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:178
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "已經存在名稱為「%1」的檔案。您確定想要覆寫嗎？"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:293
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:292
 #, kde-format
 msgid "Saving file %1 -"
 msgstr "正在儲存檔案 %1 -"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:301
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "檔案未儲存"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:301
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, kde-format
 msgid "Cannot save \"%1\" file"
 msgstr "無法儲存「%1」檔案"
@@ -11125,7 +11125,7 @@ msgstr "儲存變更中 -"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:476
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:513
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1008
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:658
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:661
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:351
 #: core/libs/dplugins/webservices/wslogindialog.cpp:159
 #, kde-format
@@ -21969,10 +21969,10 @@ msgstr "匯出到 &Box..."
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:863
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1031
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:754
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:777
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:820
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:856
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:757
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:780
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:823
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:859
 #, kde-format
 msgid "Failed to upload photo"
 msgstr "上傳照片失敗"
@@ -21981,7 +21981,7 @@ msgstr "上傳照片失敗"
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:456
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:940
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:943
 #, kde-format
 msgid "Failed to list folders"
 msgstr "列出資料夾失敗"
@@ -23983,14 +23983,14 @@ msgstr ""
 "無法上傳相片到 Imgur：%1\n"
 "您要繼續嗎？"
 
-#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:113
-#: core/libs/dialogs/webbrowserdlg.cpp:88
+#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:116
+#: core/libs/dialogs/webbrowserdlg.cpp:91
 #, kde-format
 msgid "Home"
 msgstr "首頁"
 
-#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:114
-#: core/libs/dialogs/webbrowserdlg.cpp:89
+#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:117
+#: core/libs/dialogs/webbrowserdlg.cpp:92
 #, kde-format
 msgid "Go back to Home page"
 msgstr "回到首頁"
@@ -26079,19 +26079,19 @@ msgctxt "@action"
 msgid "Export to &Twitter..."
 msgstr "匯出到 &Twitter..."
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:461
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:473
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:486
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:476
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:489
 #, kde-format
 msgid "File too big to upload"
 msgstr "檔案太大而無法上傳"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:497
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:500
 #, kde-format
 msgid "Media format is not supported yet"
 msgstr "媒體格式尚未支援"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:874
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:877
 #, kde-format
 msgid ""
 "Failed to upload photo\n"
@@ -26100,7 +26100,7 @@ msgstr ""
 "上傳照片失敗\n"
 "代碼：%1，名稱：%2，訊息：%3"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:921
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:924
 #, kde-format
 msgid "Failed to create tweet for photo uploaded"
 msgstr "建立上傳的照片的推文時失敗"
@@ -26204,14 +26204,14 @@ msgctxt "@action"
 msgid "Export to Webservices..."
 msgstr "匯出到網路服務..."
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:265
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:268
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking "
 "succeeded!</h3></p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:272
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:275
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking failed!"
@@ -26537,7 +26537,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "UFRaw Raw 轉換"
 
 #: core/libs/album/engine/album.cpp:411
-#: core/libs/database/utils/ifaces/dio.cpp:954
+#: core/libs/database/utils/ifaces/dio.cpp:959
 #, kde-format
 msgid "Trash"
 msgstr "垃圾桶"
@@ -27134,7 +27134,7 @@ msgid "Context menu"
 msgstr "右鍵功能表"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
-#: core/libs/database/utils/ifaces/dio.cpp:964
+#: core/libs/database/utils/ifaces/dio.cpp:969
 #, kde-format
 msgid "Empty Trash"
 msgstr "清空垃圾桶"
@@ -28539,21 +28539,21 @@ msgstr ""
 "此資料庫無效：此 \"DBThumbnailsVersion\" 設定值不存在。無法校驗目前的資料庫網"
 "要版本。試著以空白資料庫啟動。"
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
-#: core/libs/database/utils/ifaces/dio.cpp:377
+#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:381
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "檔案衝突"
 
-#: core/libs/database/utils/ifaces/dio.cpp:357
+#: core/libs/database/utils/ifaces/dio.cpp:359
 #, kde-format
 msgid ""
 "A file operation using the same path is currently in progress. Please wait "
 "for the operation to complete and try again."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:378
+#: core/libs/database/utils/ifaces/dio.cpp:382
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -28566,62 +28566,62 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:387
+#: core/libs/database/utils/ifaces/dio.cpp:391
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "自動重新命名"
 
-#: core/libs/database/utils/ifaces/dio.cpp:389
+#: core/libs/database/utils/ifaces/dio.cpp:393
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "自動覆寫"
 
-#: core/libs/database/utils/ifaces/dio.cpp:391
+#: core/libs/database/utils/ifaces/dio.cpp:395
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "自動略過"
 
-#: core/libs/database/utils/ifaces/dio.cpp:918
+#: core/libs/database/utils/ifaces/dio.cpp:923
 #, kde-format
 msgid "Copy Album"
 msgstr "複製相簿"
 
-#: core/libs/database/utils/ifaces/dio.cpp:923
+#: core/libs/database/utils/ifaces/dio.cpp:928
 #, kde-format
 msgid "Copy Images"
 msgstr "複製影像"
 
-#: core/libs/database/utils/ifaces/dio.cpp:929
+#: core/libs/database/utils/ifaces/dio.cpp:934
 #, kde-format
 msgid "Copy Files"
 msgstr "複製檔案"
 
-#: core/libs/database/utils/ifaces/dio.cpp:934
+#: core/libs/database/utils/ifaces/dio.cpp:939
 #, kde-format
 msgid "Move Album"
 msgstr "移動相簿"
 
-#: core/libs/database/utils/ifaces/dio.cpp:939
+#: core/libs/database/utils/ifaces/dio.cpp:944
 #, kde-format
 msgid "Move Images"
 msgstr "移動影像"
 
-#: core/libs/database/utils/ifaces/dio.cpp:944
+#: core/libs/database/utils/ifaces/dio.cpp:949
 #, kde-format
 msgid "Move Files"
 msgstr "移動檔案"
 
-#: core/libs/database/utils/ifaces/dio.cpp:949
+#: core/libs/database/utils/ifaces/dio.cpp:954
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
 msgid "Delete"
 msgstr "刪除"
 
-#: core/libs/database/utils/ifaces/dio.cpp:959
+#: core/libs/database/utils/ifaces/dio.cpp:964
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "修復"
@@ -29920,17 +29920,17 @@ msgctxt "@item"
 msgid "Udi"
 msgstr ""
 
-#: core/libs/dialogs/webbrowserdlg.cpp:93
+#: core/libs/dialogs/webbrowserdlg.cpp:96
 #, kde-format
 msgid "Desktop Browser"
 msgstr "桌面瀏覽器"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:94
+#: core/libs/dialogs/webbrowserdlg.cpp:97
 #, kde-format
 msgid "Open Home page with default desktop Web browser"
 msgstr "用桌面預設網頁瀏覽器開啟首頁"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:217
+#: core/libs/dialogs/webbrowserdlg.cpp:212
 #, kde-format
 msgid "Cannot load page %1"
 msgstr "無法載入頁面 %1"

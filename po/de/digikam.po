@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-26 01:56+0000\n"
+"POT-Creation-Date: 2025-03-27 01:57+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -11522,7 +11522,7 @@ msgstr "Bild scannen"
 msgid "Scan Images"
 msgstr "Bilder scannen"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:164
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1837
 #, kde-format
@@ -11530,27 +11530,27 @@ msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "Neuer Dateiname des Bildes"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:212
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:211
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:148
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Nicht unterstütztes Format"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:213
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:212
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:149
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "Das Zielbildformat „%1“ wird nicht unterstützt."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:225
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:224
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "Die Datei kann nicht gespeichert werden"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:226
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:225
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:162
 #, kde-format
 msgid ""
@@ -11562,7 +11562,7 @@ msgstr ""
 "„%1“ nach\n"
 "„%2“."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:241
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2311
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2330
@@ -11571,7 +11571,7 @@ msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Datei überschreiben?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:242
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:241
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:178
 #, kde-format
 msgid ""
@@ -11580,18 +11580,18 @@ msgstr ""
 "Eine Datei mit dem Namen „%1“ existiert bereits. Soll sie überschrieben "
 "werden?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:293
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:292
 #, kde-format
 msgid "Saving file %1 -"
 msgstr "Datei %1 wird gespeichert  -"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:301
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "Datei nicht gespeichert"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:301
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, kde-format
 msgid "Cannot save \"%1\" file"
 msgstr "Die Datei „%1“ kann nicht gespeichert werden"
@@ -11766,7 +11766,7 @@ msgstr "Änderungen werden gespeichert -"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:476
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:513
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1008
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:658
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:661
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:351
 #: core/libs/dplugins/webservices/wslogindialog.cpp:159
 #, kde-format
@@ -22737,10 +22737,10 @@ msgstr "Export zu &Box ..."
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:863
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1031
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:754
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:777
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:820
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:856
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:757
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:780
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:823
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:859
 #, kde-format
 msgid "Failed to upload photo"
 msgstr "Das Hochladen des Fotos ist fehlgeschlagen."
@@ -22749,7 +22749,7 @@ msgstr "Das Hochladen des Fotos ist fehlgeschlagen."
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:456
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:940
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:943
 #, kde-format
 msgid "Failed to list folders"
 msgstr "Die Liste der Ordner lässt sich nicht lesen."
@@ -24739,14 +24739,14 @@ msgstr ""
 "Fehler beim Hochladen des Fotos zu Imgur: %1\n"
 "Möchten Sie fortfahren?"
 
-#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:113
-#: core/libs/dialogs/webbrowserdlg.cpp:88
+#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:116
+#: core/libs/dialogs/webbrowserdlg.cpp:91
 #, kde-format
 msgid "Home"
 msgstr "Startseite"
 
-#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:114
-#: core/libs/dialogs/webbrowserdlg.cpp:89
+#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:117
+#: core/libs/dialogs/webbrowserdlg.cpp:92
 #, kde-format
 msgid "Go back to Home page"
 msgstr "Zurück zur Startseite"
@@ -26804,19 +26804,19 @@ msgctxt "@action"
 msgid "Export to &Twitter..."
 msgstr "Export zu &Twitter ..."
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:461
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:473
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:486
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:476
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:489
 #, kde-format
 msgid "File too big to upload"
 msgstr "Die Datei ist zu groß zum Hochladen"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:497
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:500
 #, kde-format
 msgid "Media format is not supported yet"
 msgstr "Das Medienformat wird noch nicht unterstützt"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:874
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:877
 #, kde-format
 msgid ""
 "Failed to upload photo\n"
@@ -26825,7 +26825,7 @@ msgstr ""
 "Fehler bei Hochladen des Fotos\n"
 "Code: %1, Name: %2, Meldung: %3"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:921
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:924
 #, kde-format
 msgid "Failed to create tweet for photo uploaded"
 msgstr "Fehler beim Einstellen des Tweets für das hochgeladene Foto"
@@ -26926,7 +26926,7 @@ msgctxt "@action"
 msgid "Export to Webservices..."
 msgstr "Export zu Webdiensten ..."
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:265
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:268
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking "
@@ -26935,7 +26935,7 @@ msgstr ""
 "<qt><p><h1><b>Authentifizierung erfolgt.</b></h1></p><p><h3>Anmeldung im "
 "Konto erfolgreich.</h3></p></qt>"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:272
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:275
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking failed!"
@@ -27280,7 +27280,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "UFRaw-RAW-Umwandlung"
 
 #: core/libs/album/engine/album.cpp:411
-#: core/libs/database/utils/ifaces/dio.cpp:954
+#: core/libs/database/utils/ifaces/dio.cpp:959
 #, kde-format
 msgid "Trash"
 msgstr "Papierkorb"
@@ -27911,7 +27911,7 @@ msgid "Context menu"
 msgstr "Kontextmenü"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
-#: core/libs/database/utils/ifaces/dio.cpp:964
+#: core/libs/database/utils/ifaces/dio.cpp:969
 #, kde-format
 msgid "Empty Trash"
 msgstr "Papierkorb leeren"
@@ -29357,21 +29357,21 @@ msgstr ""
 "überprüft werden. Versuchen Sie bitte, mit einer leeren Datenbank neu zu "
 "starten. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
-#: core/libs/database/utils/ifaces/dio.cpp:377
+#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:381
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Dateikonflikt"
 
-#: core/libs/database/utils/ifaces/dio.cpp:357
+#: core/libs/database/utils/ifaces/dio.cpp:359
 #, kde-format
 msgid ""
 "A file operation using the same path is currently in progress. Please wait "
 "for the operation to complete and try again."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:378
+#: core/libs/database/utils/ifaces/dio.cpp:382
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29393,62 +29393,62 @@ msgstr ""
 "Automatisch überschreiben: Konfliktdateien werden überschrieben.\n"
 "Automatisch überspringen: Konfliktdateien werden übersprungen."
 
-#: core/libs/database/utils/ifaces/dio.cpp:387
+#: core/libs/database/utils/ifaces/dio.cpp:391
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Automatisch umbenennen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:389
+#: core/libs/database/utils/ifaces/dio.cpp:393
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Automatisch überschreiben"
 
-#: core/libs/database/utils/ifaces/dio.cpp:391
+#: core/libs/database/utils/ifaces/dio.cpp:395
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Automatisch überspringen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:918
+#: core/libs/database/utils/ifaces/dio.cpp:923
 #, kde-format
 msgid "Copy Album"
 msgstr "Album kopieren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:923
+#: core/libs/database/utils/ifaces/dio.cpp:928
 #, kde-format
 msgid "Copy Images"
 msgstr "Bilder kopieren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:929
+#: core/libs/database/utils/ifaces/dio.cpp:934
 #, kde-format
 msgid "Copy Files"
 msgstr "Dateien kopieren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:934
+#: core/libs/database/utils/ifaces/dio.cpp:939
 #, kde-format
 msgid "Move Album"
 msgstr "Album verschieben"
 
-#: core/libs/database/utils/ifaces/dio.cpp:939
+#: core/libs/database/utils/ifaces/dio.cpp:944
 #, kde-format
 msgid "Move Images"
 msgstr "Bilder verschieben"
 
-#: core/libs/database/utils/ifaces/dio.cpp:944
+#: core/libs/database/utils/ifaces/dio.cpp:949
 #, kde-format
 msgid "Move Files"
 msgstr "Dateien verschieben"
 
-#: core/libs/database/utils/ifaces/dio.cpp:949
+#: core/libs/database/utils/ifaces/dio.cpp:954
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
 msgid "Delete"
 msgstr "Löschen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:959
+#: core/libs/database/utils/ifaces/dio.cpp:964
 #, kde-format
 msgid "Restore Trash"
 msgstr "Papierkorb wiederherstellen"
@@ -30815,17 +30815,17 @@ msgctxt "@item"
 msgid "Udi"
 msgstr "Produktidentifizierungsnummer"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:93
+#: core/libs/dialogs/webbrowserdlg.cpp:96
 #, kde-format
 msgid "Desktop Browser"
 msgstr "Standardbrowser"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:94
+#: core/libs/dialogs/webbrowserdlg.cpp:97
 #, kde-format
 msgid "Open Home page with default desktop Web browser"
 msgstr "Startseite mit Standard-Webbrowser öffnen"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:217
+#: core/libs/dialogs/webbrowserdlg.cpp:212
 #, kde-format
 msgid "Cannot load page %1"
 msgstr "Die Datei %1 kann nicht geladen werden"

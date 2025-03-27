@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-26 01:56+0000\n"
+"POT-Creation-Date: 2025-03-27 01:57+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -11924,7 +11924,7 @@ msgstr "Skeniraj sliku"
 msgid "Scan Images"
 msgstr "Skeniraj sliku"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:164
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1837
 #, fuzzy, kde-format
@@ -11933,27 +11933,27 @@ msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "Ime datoteke nove slike"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:212
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:211
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:148
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Nepoznat format"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:213
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:212
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:149
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "Ciljni format datoteke slike \"%1\" nije podržan."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:225
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:224
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "Ne mogu da sačuvam \"%1\" datoteku"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:226
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:225
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:162
 #, kde-format
 msgid ""
@@ -11965,7 +11965,7 @@ msgstr ""
 "\"%1\" u\n"
 "\"%2\"."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:241
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2311
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2330
@@ -11975,7 +11975,7 @@ msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Da prebrišem datoteku?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:242
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:241
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:178
 #, kde-format
 msgid ""
@@ -11983,18 +11983,18 @@ msgid ""
 msgstr ""
 "Datoteka sa imenom „%1“ već postoji. Sigurni ste da želite da ga prebrišete?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:293
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:292
 #, fuzzy, kde-format
 msgid "Saving file %1 -"
 msgstr "Spasi u datoteku"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:301
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "Sačuvajte XMP datoteku"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:301
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, kde-format
 msgid "Cannot save \"%1\" file"
 msgstr "Ne mogu da sačuvam \"%1\" datoteku"
@@ -12188,7 +12188,7 @@ msgstr "Snimanje promjena - %p%"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:476
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:513
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1008
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:658
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:661
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:351
 #: core/libs/dplugins/webservices/wslogindialog.cpp:159
 #, fuzzy, kde-format
@@ -23797,10 +23797,10 @@ msgstr "Izvozni alati"
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:863
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1031
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:754
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:777
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:820
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:856
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:757
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:780
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:823
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:859
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Failed to upload photo"
@@ -23810,7 +23810,7 @@ msgstr "Neuspjelo učitavanje slike"
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:456
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:940
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:943
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Failed to list folders"
@@ -25898,14 +25898,14 @@ msgstr ""
 "Nije uspjelo postavljanje datoteke <filename>%1</filename>. Da li želite "
 "nastaviti?"
 
-#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:113
-#: core/libs/dialogs/webbrowserdlg.cpp:88
+#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:116
+#: core/libs/dialogs/webbrowserdlg.cpp:91
 #, kde-format
 msgid "Home"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:114
-#: core/libs/dialogs/webbrowserdlg.cpp:89
+#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:117
+#: core/libs/dialogs/webbrowserdlg.cpp:92
 #, kde-format
 msgid "Go back to Home page"
 msgstr ""
@@ -28102,21 +28102,21 @@ msgctxt "@action"
 msgid "Export to &Twitter..."
 msgstr "Izvozni alati"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:461
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:473
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:486
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:476
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:489
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "File too big to upload"
 msgstr "Neuspjelo učitavanje slike"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:497
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:500
 #, fuzzy, kde-format
 #| msgid "Built-in transformation not supported"
 msgid "Media format is not supported yet"
 msgstr "Ugrađena transformacija nije podržana."
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:874
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:877
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to load image\n"
@@ -28128,7 +28128,7 @@ msgstr ""
 "Neuspjelo učitavanje slike\n"
 "\"%1\""
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:921
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:924
 #, fuzzy, kde-format
 #| msgid "Failed to create file..."
 msgid "Failed to create tweet for photo uploaded"
@@ -28238,14 +28238,14 @@ msgctxt "@action"
 msgid "Export to Webservices..."
 msgstr "Sortiraj prema ocjenama"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:265
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:268
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking "
 "succeeded!</h3></p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:272
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:275
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking failed!"
@@ -28585,7 +28585,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Gruba konverzija"
 
 #: core/libs/album/engine/album.cpp:411
-#: core/libs/database/utils/ifaces/dio.cpp:954
+#: core/libs/database/utils/ifaces/dio.cpp:959
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -29228,7 +29228,7 @@ msgid "Context menu"
 msgstr "Meni sadržaja"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
-#: core/libs/database/utils/ifaces/dio.cpp:964
+#: core/libs/database/utils/ifaces/dio.cpp:969
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -30790,22 +30790,22 @@ msgstr ""
 "Trenutna šema baze podataka ne može biti ovjerena.Pokušajte početi sa "
 "praznom bazom podataka. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
-#: core/libs/database/utils/ifaces/dio.cpp:377
+#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:381
 #, fuzzy, kde-format
 #| msgid "File name filter:"
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Ime datoteke filtera:"
 
-#: core/libs/database/utils/ifaces/dio.cpp:357
+#: core/libs/database/utils/ifaces/dio.cpp:359
 #, kde-format
 msgid ""
 "A file operation using the same path is currently in progress. Please wait "
 "for the operation to complete and try again."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:378
+#: core/libs/database/utils/ifaces/dio.cpp:382
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -30818,71 +30818,71 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:387
+#: core/libs/database/utils/ifaces/dio.cpp:391
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Automatski pisati preko"
 
-#: core/libs/database/utils/ifaces/dio.cpp:389
+#: core/libs/database/utils/ifaces/dio.cpp:393
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Automatski pisati preko"
 
-#: core/libs/database/utils/ifaces/dio.cpp:391
+#: core/libs/database/utils/ifaces/dio.cpp:395
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Automatski pisati preko"
 
-#: core/libs/database/utils/ifaces/dio.cpp:918
+#: core/libs/database/utils/ifaces/dio.cpp:923
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Copy Album"
 msgstr "Po albumu"
 
-#: core/libs/database/utils/ifaces/dio.cpp:923
+#: core/libs/database/utils/ifaces/dio.cpp:928
 #, fuzzy, kde-format
 #| msgid "&Group Images"
 msgid "Copy Images"
 msgstr "&Grupiši slike"
 
-#: core/libs/database/utils/ifaces/dio.cpp:929
+#: core/libs/database/utils/ifaces/dio.cpp:934
 #, fuzzy, kde-format
 #| msgid "no preset value"
 msgid "Copy Files"
 msgstr "nema postavljene vrijednosti"
 
-#: core/libs/database/utils/ifaces/dio.cpp:934
+#: core/libs/database/utils/ifaces/dio.cpp:939
 #, fuzzy, kde-format
 #| msgid "&Move to Album..."
 msgid "Move Album"
 msgstr "&Pomjeri u album..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:939
+#: core/libs/database/utils/ifaces/dio.cpp:944
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "Snimi slike"
 
-#: core/libs/database/utils/ifaces/dio.cpp:944
+#: core/libs/database/utils/ifaces/dio.cpp:949
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "Datoteke filmova"
 
-#: core/libs/database/utils/ifaces/dio.cpp:949
+#: core/libs/database/utils/ifaces/dio.cpp:954
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
 msgid "Delete"
 msgstr "Obriši"
 
-#: core/libs/database/utils/ifaces/dio.cpp:959
+#: core/libs/database/utils/ifaces/dio.cpp:964
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "Restauracija"
@@ -32250,18 +32250,18 @@ msgctxt "@item"
 msgid "Udi"
 msgstr ""
 
-#: core/libs/dialogs/webbrowserdlg.cpp:93
+#: core/libs/dialogs/webbrowserdlg.cpp:96
 #, fuzzy, kde-format
 #| msgid "Open in Terminal"
 msgid "Desktop Browser"
 msgstr "Otvori u terminalu"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:94
+#: core/libs/dialogs/webbrowserdlg.cpp:97
 #, kde-format
 msgid "Open Home page with default desktop Web browser"
 msgstr ""
 
-#: core/libs/dialogs/webbrowserdlg.cpp:217
+#: core/libs/dialogs/webbrowserdlg.cpp:212
 #, fuzzy, kde-format
 #| msgid "Cannot delete Root Tag"
 msgid "Cannot load page %1"
