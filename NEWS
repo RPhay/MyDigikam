@@ -115,7 +115,7 @@ BUGFIXES:
 102 ==> 501978 - No Database created at startup
 103 ==> 502003 - digiKam exits abruptly when attempting to open help.
 104 ==> 502051 - Tag tree in right window pane (under the Tag tab) doesnt work consistently as regards nested item memberships.
-105 ==> 
+105 ==> 502048 - Save tiff to tiff make corrupt output file
 106 ==> 
 107 ==> 
 108 ==> 

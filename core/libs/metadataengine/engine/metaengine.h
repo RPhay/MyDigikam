@@ -439,7 +439,7 @@ public:
      * Set the size of item in pixels in Exif tags. Return true if size have been changed
      * in metadata.
      */
-    bool setItemDimensions(const QSize& size) const;
+    bool setItemDimensions(const QSize& size, bool setExifPixelXY = true) const;
 
     /**
      * Return the item orientation set in Exif metadata. The makernotes of item are also parsed to

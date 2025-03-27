@@ -261,18 +261,23 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
             // a thumbnail at a special location. See bug #211758
 
             meta->setTiffThumbnail(thumb);
+
+            // Update Exif Image dimensions.
+            // Disable Exif.Photo.PixelX(Y)Dimension in TIFF files.
+
+            meta->setItemDimensions(size(), false);
         }
         else
         {
             // Update Exif thumbnail.
 
             meta->setExifThumbnail(thumb);
+
+            // Update Exif Image dimensions.
+
+            meta->setItemDimensions(size());
         }
     }
-
-    // Update Exif Image dimensions.
-
-    meta->setItemDimensions(size());
 
     // Update Exif Document Name tag with the original file name.
 
