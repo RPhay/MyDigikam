@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 01:57+0000\n"
+"POT-Creation-Date: 2025-03-28 01:58+0000\n"
 "PO-Revision-Date: 2025-03-20 07:14+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -30835,55 +30835,55 @@ msgstr "Ouvrir la page d'accueil dans le navigateur par &défaut"
 msgid "Cannot load page %1"
 msgstr "Impossible de charger la page %1"
 
-#: core/libs/dimg/dimg_metadata.cpp:442
+#: core/libs/dimg/dimg_metadata.cpp:447
 #, kde-format
 msgctxt "Color Model: RGB"
 msgid "RGB"
 msgstr "RVB"
 
-#: core/libs/dimg/dimg_metadata.cpp:447
+#: core/libs/dimg/dimg_metadata.cpp:452
 #, kde-format
 msgctxt "Color Model: Grayscale"
 msgid "Grayscale"
 msgstr "Échelle de gris"
 
-#: core/libs/dimg/dimg_metadata.cpp:452
+#: core/libs/dimg/dimg_metadata.cpp:457
 #, kde-format
 msgctxt "Color Model: Monochrome"
 msgid "Monochrome"
 msgstr "Monochrome"
 
-#: core/libs/dimg/dimg_metadata.cpp:457
+#: core/libs/dimg/dimg_metadata.cpp:462
 #, kde-format
 msgctxt "Color Model: Indexed"
 msgid "Indexed"
 msgstr "Indexé"
 
-#: core/libs/dimg/dimg_metadata.cpp:462
+#: core/libs/dimg/dimg_metadata.cpp:467
 #, kde-format
 msgctxt "Color Model: YCbCr"
 msgid "YCbCr"
 msgstr "YCbCr"
 
-#: core/libs/dimg/dimg_metadata.cpp:467
+#: core/libs/dimg/dimg_metadata.cpp:472
 #, kde-format
 msgctxt "Color Model: CMYK"
 msgid "CMYK"
 msgstr "CMJN"
 
-#: core/libs/dimg/dimg_metadata.cpp:472
+#: core/libs/dimg/dimg_metadata.cpp:477
 #, kde-format
 msgctxt "Color Model: CIE L*a*b*"
 msgid "CIE L*a*b*"
 msgstr "CIE L*a*b*"
 
-#: core/libs/dimg/dimg_metadata.cpp:477
+#: core/libs/dimg/dimg_metadata.cpp:482
 #, kde-format
 msgctxt "Color Model: Uncalibrated (RAW)"
 msgid "Uncalibrated (RAW)"
 msgstr "Non calibré (RAW)"
 
-#: core/libs/dimg/dimg_metadata.cpp:483
+#: core/libs/dimg/dimg_metadata.cpp:488
 #, kde-format
 msgctxt "Color Model: Unknown"
 msgid "Unknown"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-19 01:55+0000\n"
+"POT-Creation-Date: 2025-03-27 01:57+0000\n"
 "PO-Revision-Date: 2024-08-27 20:25+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -548,7 +548,7 @@ msgstr[1] "Flytt %1 filer til papirkorga"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
 #, kde-format
-msgctxt "@action:inmenu Pluralized"
+msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
 msgstr[0] ""
@@ -1893,7 +1893,7 @@ msgid "Change the filename of the currently selected item."
 msgstr "Endra filnamnet på det merkte elementet."
 
 #: core/app/main/digikamapp_setup.cpp:498
-#: core/utilities/imageeditor/editor/editorwindow.cpp:311
+#: core/utilities/imageeditor/editor/editorwindow.cpp:313
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
@@ -2372,53 +2372,59 @@ msgstr "Drei til"
 
 #: core/app/main/digikamapp_setup.cpp:1066
 #, kde-format
+msgctxt "@action: auto-rotate image"
+msgid "Auto-Rotate"
+msgstr ""
+
+#: core/app/main/digikamapp_setup.cpp:1073
+#, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Venstre"
 
-#: core/app/main/digikamapp_setup.cpp:1073
+#: core/app/main/digikamapp_setup.cpp:1080
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Høgre"
 
-#: core/app/main/digikamapp_setup.cpp:1083
+#: core/app/main/digikamapp_setup.cpp:1090
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Spegelvend"
 
-#: core/app/main/digikamapp_setup.cpp:1087
+#: core/app/main/digikamapp_setup.cpp:1094
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Vassrett"
 
-#: core/app/main/digikamapp_setup.cpp:1094
+#: core/app/main/digikamapp_setup.cpp:1101
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Loddrett"
 
-#: core/app/main/digikamapp_setup.cpp:1104
+#: core/app/main/digikamapp_setup.cpp:1111
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Drei/vend automatisk basert på Exif-info"
 
-#: core/app/main/digikamapp_setup.cpp:1115
+#: core/app/main/digikamapp_setup.cpp:1122
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Lastar tema …"
 
-#: core/app/main/digikamapp_setup.cpp:1118
+#: core/app/main/digikamapp_setup.cpp:1125
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Tema"
 
-#: core/app/main/digikamapp_setup.cpp:1134
+#: core/app/main/digikamapp_setup.cpp:1141
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2504,28 +2510,28 @@ msgstr "Eininga «%1» er ikkje gyldig."
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "Kameraet «%1» er ikkje støtta."
 
-#: core/app/main/digikamapp_tools.cpp:31
+#: core/app/main/digikamapp_tools.cpp:32
 #, kde-format
 msgctxt "@title Main Tools"
 msgid "Main Tools"
 msgstr "Hovudverktøy"
 
-#: core/app/main/digikamapp_tools.cpp:40
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2641
+#: core/app/main/digikamapp_tools.cpp:41
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2653
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Etterhandsaming"
 
-#: core/app/main/digikamapp_tools.cpp:60
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2670
+#: core/app/main/digikamapp_tools.cpp:61
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2682
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Eksportering"
 
-#: core/app/main/digikamapp_tools.cpp:71
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2681
+#: core/app/main/digikamapp_tools.cpp:72
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2693
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -6325,6 +6331,26 @@ msgid ""
 "strings in Xmp metadata from images.</para>"
 msgstr ""
 
+#: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:43
+#, kde-format
+msgctxt "@title"
+msgid "Auto-Rotate"
+msgstr ""
+
+#: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
+#, kde-format
+msgctxt "@info"
+msgid "AI tool to automatically rotate images"
+msgstr ""
+
+#: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>This Batch Queue Manager tool can automatically detect the correct "
+"orientation of an image and rotate the image.</para>"
+msgstr ""
+
 #: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, kde-format
 msgid "Auto-Crop"
@@ -6529,37 +6555,37 @@ msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can resize images.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:79
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:80
 #, kde-format
 msgctxt "@title"
 msgid "Use Exif Orientation"
 msgstr "Bruk Exif-retning"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:83
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
 #, kde-format
 msgctxt "@item: angle"
 msgid "90 degrees"
 msgstr "90 gradar"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
 #, kde-format
 msgctxt "@item: angle"
 msgid "180 degrees"
 msgstr "180 gradar"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
 #, kde-format
 msgctxt "@item: angle"
 msgid "270 degrees"
 msgstr "270 gradar"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:87
 #, kde-format
 msgctxt "@item: angle"
 msgid "Custom"
 msgstr "Tilpassa"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:88
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:89
 #, kde-format
 msgctxt "@label"
 msgid "Angle:"
@@ -10798,7 +10824,7 @@ msgstr "Skann bilete"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1826
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1837
 #, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
@@ -10838,8 +10864,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2300
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2319
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2311
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2330
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
@@ -11034,7 +11060,7 @@ msgstr "Lagrar endringar –"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:476
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:513
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1008
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:658
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:661
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:351
 #: core/libs/dplugins/webservices/wslogindialog.cpp:159
 #, kde-format
@@ -15286,7 +15312,7 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
-#: core/utilities/imageeditor/editor/editorwindow.cpp:569
+#: core/utilities/imageeditor/editor/editorwindow.cpp:579
 #, kde-format
 msgctxt "@action"
 msgid "Cancel"
@@ -21285,10 +21311,10 @@ msgstr "Eksporter til &Box …"
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:863
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1031
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:754
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:777
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:820
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:856
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:757
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:780
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:823
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:859
 #, kde-format
 msgid "Failed to upload photo"
 msgstr "Klarte ikkje lasta opp biletet"
@@ -21297,7 +21323,7 @@ msgstr "Klarte ikkje lasta opp biletet"
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:456
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:361
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:475
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:940
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:943
 #, kde-format
 msgid "Failed to list folders"
 msgstr ""
@@ -23125,14 +23151,14 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:113
-#: core/libs/dialogs/webbrowserdlg.cpp:88
+#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:116
+#: core/libs/dialogs/webbrowserdlg.cpp:91
 #, kde-format
 msgid "Home"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:114
-#: core/libs/dialogs/webbrowserdlg.cpp:89
+#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:117
+#: core/libs/dialogs/webbrowserdlg.cpp:92
 #, kde-format
 msgid "Go back to Home page"
 msgstr ""
@@ -25087,26 +25113,26 @@ msgctxt "@action"
 msgid "Export to &Twitter..."
 msgstr "Eksporter til &Twitter"
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:461
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:473
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:486
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:476
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:489
 #, kde-format
 msgid "File too big to upload"
 msgstr ""
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:497
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:500
 #, kde-format
 msgid "Media format is not supported yet"
 msgstr ""
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:874
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:877
 #, kde-format
 msgid ""
 "Failed to upload photo\n"
 "Code: %1, name: %2, message: %3"
 msgstr ""
 
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:921
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:924
 #, kde-format
 msgid "Failed to create tweet for photo uploaded"
 msgstr ""
@@ -25196,14 +25222,14 @@ msgctxt "@action"
 msgid "Export to Webservices..."
 msgstr "Eksporter til vevtenester …"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:265
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:268
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking "
 "succeeded!</h3></p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:272
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:275
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking failed!"
@@ -25520,7 +25546,7 @@ msgid "UFRaw Raw Conversion"
 msgstr ""
 
 #: core/libs/album/engine/album.cpp:411
-#: core/libs/database/utils/ifaces/dio.cpp:954
+#: core/libs/database/utils/ifaces/dio.cpp:959
 #, kde-format
 msgid "Trash"
 msgstr "Papirkorg"
@@ -26078,7 +26104,7 @@ msgid "Context menu"
 msgstr "Kontekstmeny"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1106
-#: core/libs/database/utils/ifaces/dio.cpp:964
+#: core/libs/database/utils/ifaces/dio.cpp:969
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -27445,21 +27471,21 @@ msgstr ""
 "versjonen av databaseskjemaet kan ikkje stadfestast. Prøv å starta med ein "
 "tom database. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
-#: core/libs/database/utils/ifaces/dio.cpp:377
+#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:381
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:357
+#: core/libs/database/utils/ifaces/dio.cpp:359
 #, kde-format
 msgid ""
 "A file operation using the same path is currently in progress. Please wait "
 "for the operation to complete and try again."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:378
+#: core/libs/database/utils/ifaces/dio.cpp:382
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -27472,62 +27498,62 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:387
+#: core/libs/database/utils/ifaces/dio.cpp:391
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:389
+#: core/libs/database/utils/ifaces/dio.cpp:393
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:391
+#: core/libs/database/utils/ifaces/dio.cpp:395
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:918
+#: core/libs/database/utils/ifaces/dio.cpp:923
 #, kde-format
 msgid "Copy Album"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:923
+#: core/libs/database/utils/ifaces/dio.cpp:928
 #, kde-format
 msgid "Copy Images"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:929
+#: core/libs/database/utils/ifaces/dio.cpp:934
 #, kde-format
 msgid "Copy Files"
 msgstr "Kopier filer"
 
-#: core/libs/database/utils/ifaces/dio.cpp:934
+#: core/libs/database/utils/ifaces/dio.cpp:939
 #, kde-format
 msgid "Move Album"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:939
+#: core/libs/database/utils/ifaces/dio.cpp:944
 #, kde-format
 msgid "Move Images"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:944
+#: core/libs/database/utils/ifaces/dio.cpp:949
 #, kde-format
 msgid "Move Files"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:949
+#: core/libs/database/utils/ifaces/dio.cpp:954
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
 msgid "Delete"
 msgstr "Slett"
 
-#: core/libs/database/utils/ifaces/dio.cpp:959
+#: core/libs/database/utils/ifaces/dio.cpp:964
 #, kde-format
 msgid "Restore Trash"
 msgstr ""
@@ -28449,7 +28475,7 @@ msgstr "Ikkje spør igjen"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:163
+#: core/utilities/setup/downloader/filesdownloader.cpp:166
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -28797,17 +28823,17 @@ msgctxt "@item"
 msgid "Udi"
 msgstr ""
 
-#: core/libs/dialogs/webbrowserdlg.cpp:93
+#: core/libs/dialogs/webbrowserdlg.cpp:96
 #, kde-format
 msgid "Desktop Browser"
 msgstr ""
 
-#: core/libs/dialogs/webbrowserdlg.cpp:94
+#: core/libs/dialogs/webbrowserdlg.cpp:97
 #, kde-format
 msgid "Open Home page with default desktop Web browser"
 msgstr ""
 
-#: core/libs/dialogs/webbrowserdlg.cpp:217
+#: core/libs/dialogs/webbrowserdlg.cpp:212
 #, kde-format
 msgid "Cannot load page %1"
 msgstr ""
@@ -32257,12 +32283,12 @@ msgid ""
 "ExifTool, DNG will not include all RAW source properties."
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:342
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:347
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:344
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -32272,12 +32298,12 @@ msgid ""
 "objects using the COCO dataset.</p>"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:354
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:351
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -32287,12 +32313,12 @@ msgid ""
 "recognize 80 different objects using the COCO dataset.</p>"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:361
 #, kde-format
 msgid "EfficientNet B7"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:358
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33350,12 +33376,12 @@ msgstr ""
 msgid "Process Items"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:75
+#: core/libs/fileactionmanager/fileworkeriface.cpp:76
 #, kde-format
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Klarte ikkje retta opp Exif-retning for desse bileta:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:357
+#: core/libs/fileactionmanager/fileworkeriface.cpp:366
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr ""
@@ -35361,7 +35387,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:148
+#: core/utilities/setup/downloader/filesdownloader.cpp:150
 #, kde-format
 msgid "Download"
 msgstr ""
@@ -47355,7 +47381,7 @@ msgid "Delete File"
 msgstr "Slett fil"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2346
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2357
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
@@ -49698,7 +49724,7 @@ msgstr ""
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
-#: core/utilities/imageeditor/editor/editorwindow.cpp:563
+#: core/utilities/imageeditor/editor/editorwindow.cpp:573
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -55441,49 +55467,49 @@ msgstr ""
 msgid "Try all settings."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:185
+#: core/utilities/imageeditor/editor/editorwindow.cpp:187
 #, kde-format
 msgctxt "@action; go to first item"
 msgid "&First"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:192
+#: core/utilities/imageeditor/editor/editorwindow.cpp:194
 #, kde-format
 msgctxt "@action; go to last item"
 msgid "&Last"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:199
+#: core/utilities/imageeditor/editor/editorwindow.cpp:201
 #, kde-format
 msgctxt "@action"
 msgid "Open Original"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:211
+#: core/utilities/imageeditor/editor/editorwindow.cpp:213
 #, kde-format
 msgctxt "@action Save changes to current version"
 msgid "Save Changes"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:212
+#: core/utilities/imageeditor/editor/editorwindow.cpp:214
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the modifications to the current version of the file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:217
+#: core/utilities/imageeditor/editor/editorwindow.cpp:219
 #, kde-format
 msgctxt "@action Save changes to a newly created version"
 msgid "Save As New Version"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:218
+#: core/utilities/imageeditor/editor/editorwindow.cpp:220
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current modifications to a new version of the file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:224
+#: core/utilities/imageeditor/editor/editorwindow.cpp:226
 #, kde-format
 msgctxt ""
 "@action Save changes to a newly created version, specifying the filename and "
@@ -55491,7 +55517,7 @@ msgctxt ""
 msgid "Save New Version As..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:225
+#: core/utilities/imageeditor/editor/editorwindow.cpp:227
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55499,158 +55525,158 @@ msgid ""
 "filename and format"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:230
+#: core/utilities/imageeditor/editor/editorwindow.cpp:232
 #, kde-format
 msgctxt "@action Save As New Version...Save in format..."
 msgid "Save in Format"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:232
+#: core/utilities/imageeditor/editor/editorwindow.cpp:234
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:233
+#: core/utilities/imageeditor/editor/editorwindow.cpp:235
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:234
+#: core/utilities/imageeditor/editor/editorwindow.cpp:236
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PNG"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:235
+#: core/utilities/imageeditor/editor/editorwindow.cpp:237
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PGF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:239
+#: core/utilities/imageeditor/editor/editorwindow.cpp:241
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG 2000"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:245
+#: core/utilities/imageeditor/editor/editorwindow.cpp:247
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "HEIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:251
+#: core/utilities/imageeditor/editor/editorwindow.cpp:253
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JXL"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:256
+#: core/utilities/imageeditor/editor/editorwindow.cpp:258
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "WEBP"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:261
+#: core/utilities/imageeditor/editor/editorwindow.cpp:263
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "AVIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:279
+#: core/utilities/imageeditor/editor/editorwindow.cpp:281
 #, kde-format
 msgctxt "@action"
 msgid "Export"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:280
+#: core/utilities/imageeditor/editor/editorwindow.cpp:282
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the file in a folder outside your collection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:289
+#: core/utilities/imageeditor/editor/editorwindow.cpp:291
 #, kde-format
 msgctxt "@action"
 msgid "Discard Changes"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:290
+#: core/utilities/imageeditor/editor/editorwindow.cpp:292
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard all current changes to this file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:303
+#: core/utilities/imageeditor/editor/editorwindow.cpp:305
 #, kde-format
 msgctxt "@action"
 msgid "Open With Default Application"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:304
+#: core/utilities/imageeditor/editor/editorwindow.cpp:306
 #, kde-format
 msgctxt "@info"
 msgid "Open the item with default assigned application."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:327
+#: core/utilities/imageeditor/editor/editorwindow.cpp:329
 #, kde-format
 msgctxt "@action"
 msgid "Undo"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:356
+#: core/utilities/imageeditor/editor/editorwindow.cpp:358
 #, kde-format
 msgctxt "@action"
 msgid "Redo"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:384
+#: core/utilities/imageeditor/editor/editorwindow.cpp:386
 #, kde-format
 msgctxt "@action: create a selection containing the full image"
 msgid "Select All"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:389
+#: core/utilities/imageeditor/editor/editorwindow.cpp:391
 #, kde-format
 msgctxt "@action"
 msgid "Select None"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:403
+#: core/utilities/imageeditor/editor/editorwindow.cpp:405
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to 100%"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:409
+#: core/utilities/imageeditor/editor/editorwindow.cpp:411
 #, kde-format
 msgctxt "@action"
 msgid "Fit to &Window"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:416
+#: core/utilities/imageeditor/editor/editorwindow.cpp:418
 #, kde-format
 msgctxt "@action"
 msgid "Fit to &Selection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:421
+#: core/utilities/imageeditor/editor/editorwindow.cpp:423
 #, kde-format
 msgctxt "@info"
 msgid ""
 "This option can be used to zoom the image to the current selection area."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:446
+#: core/utilities/imageeditor/editor/editorwindow.cpp:448
 #, kde-format
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:448
+#: core/utilities/imageeditor/editor/editorwindow.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -55658,13 +55684,13 @@ msgid ""
 "to avoid under-exposing the image."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:456
+#: core/utilities/imageeditor/editor/editorwindow.cpp:458
 #, kde-format
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:458
+#: core/utilities/imageeditor/editor/editorwindow.cpp:460
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -55672,32 +55698,32 @@ msgid ""
 "to avoid over-exposing the image."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:466
+#: core/utilities/imageeditor/editor/editorwindow.cpp:468
 #: core/utilities/import/main/importui.cpp:506
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:473
+#: core/utilities/imageeditor/editor/editorwindow.cpp:475
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:478
+#: core/utilities/imageeditor/editor/editorwindow.cpp:480
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:486
+#: core/utilities/imageeditor/editor/editorwindow.cpp:488
 #, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:489
+#: core/utilities/imageeditor/editor/editorwindow.cpp:491
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -55705,33 +55731,39 @@ msgid ""
 "enable this action."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:497
+#: core/utilities/imageeditor/editor/editorwindow.cpp:499
 #, kde-format
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:505
+#: core/utilities/imageeditor/editor/editorwindow.cpp:507
 #, kde-format
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:515
+#: core/utilities/imageeditor/editor/editorwindow.cpp:517
 #: core/utilities/import/views/importpreviewview.cpp:188
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:523
+#: core/utilities/imageeditor/editor/editorwindow.cpp:525
 #: core/utilities/import/views/importpreviewview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:555
+#: core/utilities/imageeditor/editor/editorwindow.cpp:533
+#, kde-format
+msgctxt "@action"
+msgid "Auto-Rotate"
+msgstr ""
+
+#: core/utilities/imageeditor/editor/editorwindow.cpp:565
 #: core/utilities/import/main/importui.cpp:551
 #: core/utilities/import/main/importui.cpp:794
 #, kde-format
@@ -55739,37 +55771,37 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "Førre bilete"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:585
+#: core/utilities/imageeditor/editor/editorwindow.cpp:595
 #, kde-format
 msgctxt "@label"
 msgid "No selection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:588
+#: core/utilities/imageeditor/editor/editorwindow.cpp:598
 #, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:593
+#: core/utilities/imageeditor/editor/editorwindow.cpp:603
 #, kde-format
 msgctxt "@info"
 msgid "Information about image size"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1108
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1119
 #, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1109
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1120
 #, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1130
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1141
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -55777,13 +55809,13 @@ msgid ""
 "Are you sure?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1135
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1146
 #, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1245
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1256
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -55791,7 +55823,7 @@ msgid ""
 "Do you want to save it?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1396
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1407
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -55799,25 +55831,25 @@ msgid ""
 "All changes will be lost."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1474
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1485
 #, kde-format
 msgctxt "@info"
 msgid "No selection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1494
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1505
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1522
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1533
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1564
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1575
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -55826,13 +55858,13 @@ msgid ""
 "configuration in digiKam's setup."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1621
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1632
 #, kde-format
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1643
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1654
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -55842,31 +55874,31 @@ msgid ""
 "\"%2\"."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1776
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1787
 #, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1972
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1983
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1979
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1990
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2226
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2237
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2301
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2312
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -55874,32 +55906,32 @@ msgid ""
 "you want to overwrite it?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2320
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2331
 #, kde-format
 msgctxt "@info"
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2347
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2358
 #, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2426
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2437
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2430
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2441
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2435
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2446
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -55907,74 +55939,74 @@ msgid ""
 "available."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2471
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2482
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2472
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2483
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2486
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2497
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2487
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2498
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2578
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2589
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Omdanna"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2597
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2609
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Dekorer"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2608
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2620
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Effektar"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2619
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2631
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Fargar"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2630
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2642
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Forbetra"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2820
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2871
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2832
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2883
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2832
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2844
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2841
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2853
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
@@ -56079,7 +56111,7 @@ msgstr "Fjern merkelapp"
 msgid "Assign Labels"
 msgstr "Tilordna kategoriar"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:164
+#: core/utilities/imageeditor/widgets/canvas.cpp:165
 #, kde-format
 msgid ""
 "Failed to load image\n"
@@ -61377,39 +61409,44 @@ msgstr ""
 msgid "Your collection will use this category:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:136
+#: core/utilities/setup/downloader/filesdownloader.cpp:138
 #, kde-format
 msgctxt "@title:window"
-msgid "Download Required Files"
-msgstr ""
-
-#: core/utilities/setup/downloader/filesdownloader.cpp:158
-#, kde-format
-msgid "Use Face Management feature"
-msgstr ""
-
-#: core/utilities/setup/downloader/filesdownloader.cpp:159
-#, kde-format
-msgid "Use Aesthetic Detection feature"
+msgid "Download Required Model Files"
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:160
 #, kde-format
-msgid "Use Auto Tags Assignment feature"
+msgid "Use AI Auto-Tools features"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:234
+#: core/utilities/setup/downloader/filesdownloader.cpp:161
 #, kde-format
-msgid "All files were downloaded successfully."
+msgid "Use Face Management feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:241
+#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#, kde-format
+msgid "Use Aesthetic Detection feature"
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:163
+#, kde-format
+msgid "Use AutoTags Assignment feature"
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:243
+#, kde-format
+msgid "All model files were downloaded successfully."
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:252
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:242
+#: core/utilities/setup/downloader/filesdownloader.cpp:253
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61421,61 +61458,68 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:250
+#: core/utilities/setup/downloader/filesdownloader.cpp:261
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:388
+#: core/utilities/setup/downloader/filesdownloader.cpp:399
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:412
+#: core/utilities/setup/downloader/filesdownloader.cpp:423
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:419
+#: core/utilities/setup/downloader/filesdownloader.cpp:430
 #, kde-format
 msgid "File open error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:434
+#: core/utilities/setup/downloader/filesdownloader.cpp:445
 #, kde-format
 msgid "File on the server is too large."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:507
+#: core/utilities/setup/downloader/filesdownloader.cpp:526
 #, kde-format
 msgid ""
-"<p>For the face management, the red-eye removal tool, and the classification "
-"of images according to aesthetics or the automatic assignment of tags to "
-"images, digiKam requires some large binary files. You can choose which "
-"feature you want to use.</p>"
+"<p>digiKam relies on large binary model files to power features like face "
+"management, image classification based on aesthetics, AI AutoTools such as "
+"automatic image rotation, and automatic tag assignment. You have the option "
+"to select the specific features you want to enable.</p><p><b>Note:</b> The "
+"red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:513
+#: core/utilities/setup/downloader/filesdownloader.cpp:532
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
-"<p>Some of these files were not found. Click “Download” to begin downloading "
-"the files you need. You can close this dialog, you will be asked again the "
-"next time you start digiKam. Without these files the selected features will "
-"not work.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
-"p><p><b>After the successful download you have to restart digiKam.</b></p>"
+"<p>Some required files are missing. Click “Download” to start installing the "
+"necessary model files. If you close this dialog you will be prompted again "
+"the next time you launch digiKam. The selected features will not function "
+"without these files.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
+"p><p><b>You must restart digiKam after successfully downloading the files.</"
+"b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:522
+#: core/utilities/setup/downloader/filesdownloader.cpp:540
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:530
+#: core/utilities/setup/downloader/filesdownloader.cpp:548
 #, kde-format
-msgid "All files of the selected features were found."
+msgid "All files for the selected features were found."
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:568
+#, kde-format
+msgid "Clean up unused AI/DNN model files..."
 msgstr ""
 
 #: core/utilities/setup/editor/setupeditor.cpp:63

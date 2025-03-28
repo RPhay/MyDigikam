@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 01:57+0000\n"
+"POT-Creation-Date: 2025-03-28 01:58+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -30677,55 +30677,55 @@ msgstr "기본 데스크톱 웹 브라우저로 홈페이지 열기"
 msgid "Cannot load page %1"
 msgstr "%1 페이지를 불러올 수 없음"
 
-#: core/libs/dimg/dimg_metadata.cpp:442
+#: core/libs/dimg/dimg_metadata.cpp:447
 #, kde-format
 msgctxt "Color Model: RGB"
 msgid "RGB"
 msgstr "RGB"
 
-#: core/libs/dimg/dimg_metadata.cpp:447
+#: core/libs/dimg/dimg_metadata.cpp:452
 #, kde-format
 msgctxt "Color Model: Grayscale"
 msgid "Grayscale"
 msgstr "회색조"
 
-#: core/libs/dimg/dimg_metadata.cpp:452
+#: core/libs/dimg/dimg_metadata.cpp:457
 #, kde-format
 msgctxt "Color Model: Monochrome"
 msgid "Monochrome"
 msgstr "흑백"
 
-#: core/libs/dimg/dimg_metadata.cpp:457
+#: core/libs/dimg/dimg_metadata.cpp:462
 #, kde-format
 msgctxt "Color Model: Indexed"
 msgid "Indexed"
 msgstr "색인된 색상"
 
-#: core/libs/dimg/dimg_metadata.cpp:462
+#: core/libs/dimg/dimg_metadata.cpp:467
 #, kde-format
 msgctxt "Color Model: YCbCr"
 msgid "YCbCr"
 msgstr "YCbCr"
 
-#: core/libs/dimg/dimg_metadata.cpp:467
+#: core/libs/dimg/dimg_metadata.cpp:472
 #, kde-format
 msgctxt "Color Model: CMYK"
 msgid "CMYK"
 msgstr "CMYK"
 
-#: core/libs/dimg/dimg_metadata.cpp:472
+#: core/libs/dimg/dimg_metadata.cpp:477
 #, kde-format
 msgctxt "Color Model: CIE L*a*b*"
 msgid "CIE L*a*b*"
 msgstr "CIE L*a*b*"
 
-#: core/libs/dimg/dimg_metadata.cpp:477
+#: core/libs/dimg/dimg_metadata.cpp:482
 #, kde-format
 msgctxt "Color Model: Uncalibrated (RAW)"
 msgid "Uncalibrated (RAW)"
 msgstr "교정되지 않음(RAW)"
 
-#: core/libs/dimg/dimg_metadata.cpp:483
+#: core/libs/dimg/dimg_metadata.cpp:488
 #, kde-format
 msgctxt "Color Model: Unknown"
 msgid "Unknown"

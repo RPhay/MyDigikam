@@ -46,8 +46,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 01:57+0000\n"
-"PO-Revision-Date: 2025-03-24 20:43+0100\n"
+"POT-Creation-Date: 2025-03-28 01:58+0000\n"
+"PO-Revision-Date: 2025-03-28 01:32+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -30600,55 +30600,55 @@ msgstr ""
 msgid "Cannot load page %1"
 msgstr "No se puede cargar la página %1"
 
-#: core/libs/dimg/dimg_metadata.cpp:442
+#: core/libs/dimg/dimg_metadata.cpp:447
 #, kde-format
 msgctxt "Color Model: RGB"
 msgid "RGB"
 msgstr "RGB"
 
-#: core/libs/dimg/dimg_metadata.cpp:447
+#: core/libs/dimg/dimg_metadata.cpp:452
 #, kde-format
 msgctxt "Color Model: Grayscale"
 msgid "Grayscale"
 msgstr "Escala de grises"
 
-#: core/libs/dimg/dimg_metadata.cpp:452
+#: core/libs/dimg/dimg_metadata.cpp:457
 #, kde-format
 msgctxt "Color Model: Monochrome"
 msgid "Monochrome"
 msgstr "Monocromático"
 
-#: core/libs/dimg/dimg_metadata.cpp:457
+#: core/libs/dimg/dimg_metadata.cpp:462
 #, kde-format
 msgctxt "Color Model: Indexed"
 msgid "Indexed"
 msgstr "Indexado"
 
-#: core/libs/dimg/dimg_metadata.cpp:462
+#: core/libs/dimg/dimg_metadata.cpp:467
 #, kde-format
 msgctxt "Color Model: YCbCr"
 msgid "YCbCr"
 msgstr "YCbCr"
 
-#: core/libs/dimg/dimg_metadata.cpp:467
+#: core/libs/dimg/dimg_metadata.cpp:472
 #, kde-format
 msgctxt "Color Model: CMYK"
 msgid "CMYK"
 msgstr "CMYK"
 
-#: core/libs/dimg/dimg_metadata.cpp:472
+#: core/libs/dimg/dimg_metadata.cpp:477
 #, kde-format
 msgctxt "Color Model: CIE L*a*b*"
 msgid "CIE L*a*b*"
 msgstr "CIE L*a*b*"
 
-#: core/libs/dimg/dimg_metadata.cpp:477
+#: core/libs/dimg/dimg_metadata.cpp:482
 #, kde-format
 msgctxt "Color Model: Uncalibrated (RAW)"
 msgid "Uncalibrated (RAW)"
 msgstr "Sin calibrar (RAW)"
 
-#: core/libs/dimg/dimg_metadata.cpp:483
+#: core/libs/dimg/dimg_metadata.cpp:488
 #, kde-format
 msgctxt "Color Model: Unknown"
 msgid "Unknown"
@@ -65218,7 +65218,7 @@ msgstr "Se han encontrado todos los archivos para las funciones seleccionadas."
 #: core/utilities/setup/downloader/filesdownloader.cpp:568
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
-msgstr ""
+msgstr "Borrar los archivos de modelos AI/DNN no usados…"
 
 #: core/utilities/setup/editor/setupeditor.cpp:63
 #, kde-format
@@ -68371,7 +68371,3 @@ msgstr "Elementos del álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementos importados"
-
-#~ msgid "Delete obsolete model files (runs at startup)"
-#~ msgstr ""
-#~ "Borrar los archivos de modelos obsoletos (se ejecuta durante el inicio)"

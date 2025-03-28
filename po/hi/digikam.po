@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 01:57+0000\n"
+"POT-Creation-Date: 2025-03-28 01:58+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -29124,55 +29124,55 @@ msgstr ""
 msgid "Cannot load page %1"
 msgstr "रूट टैग को मिटाया नहीं जा सकता"
 
-#: core/libs/dimg/dimg_metadata.cpp:442
+#: core/libs/dimg/dimg_metadata.cpp:447
 #, kde-format
 msgctxt "Color Model: RGB"
 msgid "RGB"
 msgstr "आरजीबी"
 
-#: core/libs/dimg/dimg_metadata.cpp:447
+#: core/libs/dimg/dimg_metadata.cpp:452
 #, kde-format
 msgctxt "Color Model: Grayscale"
 msgid "Grayscale"
 msgstr "श्वेत-श्याम"
 
-#: core/libs/dimg/dimg_metadata.cpp:452
+#: core/libs/dimg/dimg_metadata.cpp:457
 #, kde-format
 msgctxt "Color Model: Monochrome"
 msgid "Monochrome"
 msgstr "एकवर्ण"
 
-#: core/libs/dimg/dimg_metadata.cpp:457
+#: core/libs/dimg/dimg_metadata.cpp:462
 #, kde-format
 msgctxt "Color Model: Indexed"
 msgid "Indexed"
 msgstr "इंडैक्स्ड"
 
-#: core/libs/dimg/dimg_metadata.cpp:462
+#: core/libs/dimg/dimg_metadata.cpp:467
 #, kde-format
 msgctxt "Color Model: YCbCr"
 msgid "YCbCr"
 msgstr "YCbCr"
 
-#: core/libs/dimg/dimg_metadata.cpp:467
+#: core/libs/dimg/dimg_metadata.cpp:472
 #, kde-format
 msgctxt "Color Model: CMYK"
 msgid "CMYK"
 msgstr "सीएमवायके"
 
-#: core/libs/dimg/dimg_metadata.cpp:472
+#: core/libs/dimg/dimg_metadata.cpp:477
 #, kde-format
 msgctxt "Color Model: CIE L*a*b*"
 msgid "CIE L*a*b*"
 msgstr "सीआईई L*a*b*"
 
-#: core/libs/dimg/dimg_metadata.cpp:477
+#: core/libs/dimg/dimg_metadata.cpp:482
 #, kde-format
 msgctxt "Color Model: Uncalibrated (RAW)"
 msgid "Uncalibrated (RAW)"
 msgstr "बिना कैलिब्रेट की हुई (रॉ)"
 
-#: core/libs/dimg/dimg_metadata.cpp:483
+#: core/libs/dimg/dimg_metadata.cpp:488
 #, kde-format
 msgctxt "Color Model: Unknown"
 msgid "Unknown"
