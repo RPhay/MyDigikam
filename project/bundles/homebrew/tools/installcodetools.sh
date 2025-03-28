@@ -22,6 +22,8 @@ echo -e "\n"
 echo "---------- Installing code analysis tools"
 $INSTALL_PREFIX/bin/brew install \
                 cppcheck \
-                flawfinder
+                flawfinder \
+                lizard-analyzer \
+                doxygen
 
 TerminateScript
