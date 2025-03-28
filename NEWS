@@ -116,7 +116,7 @@ BUGFIXES:
 103 ==> 502003 - digiKam exits abruptly when attempting to open help.
 104 ==> 502051 - Tag tree in right window pane (under the Tag tab) doesnt work consistently as regards nested item memberships.
 105 ==> 502048 - Save tiff to tiff make corrupt output file
-106 ==> 
+106 ==> 501298 - Crash after creating an sub album in a sub window.
 107 ==> 
 108 ==> 
 109 ==> 
