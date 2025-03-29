@@ -111,7 +111,7 @@ cp $PWD/../../../core/data/dnnmodels/dnnmodels.conf $TEMPROOT/$DK_APP_CONTENTS/R
 if [ ! -d "$HOME/Library/Application Support/digikam" ]; then
     mkdir -p "$HOME/Library/Application Support/digikam/"
 fi
-cp -r "$PWD/../Applications/digiKam.org/digikam.app/Contents/Resources/digikam" "$HOME/Library/Application Support/"
+cp -r "$PWD/Applications/digiKam.org/digikam.app/Contents/Resources/digikam" "$HOME/Library/Application Support/"
 
 # check if dnnmodels dir exists
 if [ ! -d "$HOME/Library/Application Support/digikam/dnnmodels" ]; then
@@ -125,7 +125,7 @@ if [ ! -d "$HOME/Library/Application Support/digikam/database" ]; then
 fi
 
 #copy dbconfig/xml
-cp $PWD/../temp.digikam/core/data/database/dbconfig.xml "$HOME/Library/Application Support/digikam/database/dbconfig.xml"
+cp $PWD/temp.digikam/core/data/database/dbconfig.xml "$HOME/Library/Application Support/digikam/database/dbconfig.xml"
 
 TerminateScript
 
