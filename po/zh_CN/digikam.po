@@ -62696,7 +62696,7 @@ msgstr "所选功能需要的所有文件均已找到。"
 #: core/utilities/setup/downloader/filesdownloader.cpp:568
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
-msgstr ""
+msgstr "清理未使用的 AI/DNN 模型文件..."
 
 #: core/utilities/setup/editor/setupeditor.cpp:63
 #, kde-format
