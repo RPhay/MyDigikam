@@ -119,7 +119,7 @@ BUGFIXES:
 106 ==> 501298 - Crash after creating an sub album in a sub window.
 107 ==> 502173 - digiKam - white screen.
 108 ==> 502242 - Uneven preview sharpness!!
-109 ==> 
+109 ==> 502219 - Right-click, "Recognize faces" does no longer recognize any faces.
 110 ==> 
 111 ==>
 112 ==>
