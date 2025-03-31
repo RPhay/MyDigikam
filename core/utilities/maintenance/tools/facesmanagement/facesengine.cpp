@@ -161,7 +161,8 @@ FacesEngine::FacesEngine(const FaceScanSettings& settings, ProgressItem* const p
             this, SLOT(slotUpdateItemCount(qlonglong)));
 
     if      (
-             settings.wholeAlbums &&
+             settings.wholeAlbums     &&
+             settings.infos.isEmpty() &&
              (settings.task == FaceScanSettings::RecognizeMarkedFaces)
             )
     {

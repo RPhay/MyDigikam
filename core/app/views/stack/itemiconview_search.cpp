@@ -123,7 +123,8 @@ void ItemIconView::slotImageRecognizeFaces()
 
     // TODO Faces engine : set K-nearest config
 
-    settings.task              = FaceScanSettings::RecognizeMarkedFaces;
+    settings.task                   = FaceScanSettings::RecognizeMarkedFaces;
+    settings.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::Rescan;
 
     // Remove possible duplicate ItemInfos.
 
