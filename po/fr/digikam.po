@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-28 01:58+0000\n"
-"PO-Revision-Date: 2025-03-20 07:14+0100\n"
+"PO-Revision-Date: 2025-03-27 08:43+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -609,8 +609,7 @@ msgstr[0] "Mettre à la corbeille"
 msgstr[1] "Mettre %1 fichiers à la corbeille"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
@@ -2465,11 +2464,10 @@ msgid "Rotate"
 msgstr "Faire pivoter"
 
 #: core/app/main/digikamapp_setup.cpp:1066
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
-msgstr "Rotation automatique"
+msgstr "Faire pivoter automatiquement"
 
 #: core/app/main/digikamapp_setup.cpp:1073
 #, kde-format
@@ -6744,33 +6742,26 @@ msgstr ""
 "langage alternatif en métadonnées « XMP » à partir des images.</para>"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@title"
 msgid "Auto-Rotate"
-msgstr "Rotation automatique"
+msgstr "Faire pivoter automatiquement"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to automatically assign tags to images"
+#, kde-format
 msgctxt "@info"
 msgid "AI tool to automatically rotate images"
-msgstr "Un outil pour associer automatiquement des étiquettes aux images."
+msgstr "Un outil avec IA pour faire pivoter automatiquement des images."
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can fix automatically lens artifacts "
-#| "over images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can automatically detect the correct "
 "orientation of an image and rotate the image.</para>"
 msgstr ""
-"<p>Ce gestionnaire de traitement par lots peut corriger automatiquement les "
-"artefacts des objectifs.</p>"
+"<para>Ce gestionnaire de traitement par lots peut détecter automatiquement "
+"l'orientation correcte d’une image et faire pivoter l’image. </para>"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, kde-format
@@ -59353,11 +59344,10 @@ msgid "Rotate Right"
 msgstr "Rotation vers la droite"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:533
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
-msgstr "Rotation automatique"
+msgstr "Faire pivoter automatiquement"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:565
 #: core/utilities/import/main/importui.cpp:551
@@ -65529,18 +65519,15 @@ msgid "Your collection will use this category:"
 msgstr "Votre collection utilisera cette catégorie :"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Required Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
-msgstr "Télécharger les fichiers demandés"
+msgstr "Télécharger les fichiers de modèles demandés"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:160
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AI Auto-Tools features"
-msgstr "Utiliser la fonctionnalité d'association automatique d'étiquettes"
+msgstr "Utiliser les fonctionnalités d'outils automatiques avec IA"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:161
 #, kde-format
@@ -65553,16 +65540,14 @@ msgid "Use Aesthetic Detection feature"
 msgstr "Utiliser la fonctionnalité de reconnaissance esthétique"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:163
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Utiliser la fonctionnalité d'association automatique d'étiquettes"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:243
-#, fuzzy, kde-format
-#| msgid "All files were downloaded successfully."
+#, kde-format
 msgid "All model files were downloaded successfully."
-msgstr "Tous les fichiers ont été téléchargés avec succès."
+msgstr "Tous les fichiers de modèles ont été téléchargés avec succès."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:252
 #, kde-format
@@ -65624,17 +65609,17 @@ msgid ""
 "to select the specific features you want to enable.</p><p><b>Note:</b> The "
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
+"<p>DigiKam s'appuie sur de grands fichiers de modèles binaires pour "
+"alimenter des fonctionnalités telles que la gestion des visages, la "
+"classification des images en fonction de l'esthétique, les outils "
+"automatiques d'IA tels que la rotation automatique d'images et l'association "
+"automatique d'étiquettes. Vous avez la possibilité de sélectionner les "
+"fonctionnalités spécifiques que vous souhaitez activer.</p><p><b>Remarque : "
+"</b> L'outil de suppression des yeux rouges nécessite des fichiers de "
+"modèles de gestion des visages.</p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:532
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>Some of these files were not found. Click “Download” to begin "
-#| "downloading the files you need. You can close this dialog, you will be "
-#| "asked again the next time you start digiKam. Without these files the "
-#| "selected features will not work.</p><p>The files will be downloaded to "
-#| "\"<i>%1</i>\".</p><p><b>After the successful download you have to restart "
-#| "digiKam.</b></p>"
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
@@ -65644,13 +65629,14 @@ msgid ""
 "p><p><b>You must restart digiKam after successfully downloading the files.</"
 "b></p>"
 msgstr ""
-"<p>Il a été impossible de trouver certains de ces fichiers. Veuillez cliquer "
-"sur « Télécharger » pour lancer le téléchargement des fichiers nécessaires. "
-"Vous pouvez fermer cette boîte de dialogue. Elle vous sera présentée à "
-"nouveau lors du prochain démarrage de DigiKam. Sans ces fichiers, les "
-"fonctionnalités sélectionnées ne pourront fonctionner. </p><p>Les fichiers "
-"seront téléchargés vers « <i>%1</i> ».</p><p><b>Après un téléchargement "
-"réussi, vous devrez re-démarrer DigiKam.</b></p>"
+"<p>Il a été impossible de trouver certains des fichiers nécessaires. "
+"Veuillez cliquer sur « Télécharger » pour lancer l'installation des fichiers "
+"nécessaires. Si vous fermez cette boîte de dialogue, elle vous sera "
+"présentée à nouveau lors du prochain démarrage de DigiKam. Sans ces "
+"fichiers, les fonctionnalités sélectionnées ne pourront fonctionner. </"
+"p><p>Les fichiers seront téléchargés vers « <i>%1</i> ».</p><p><b>Après un "
+"téléchargement réussi de ces fichiers, vous devrez re-démarrer DigiKam.</b></"
+"p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:540
 #, kde-format
@@ -65659,15 +65645,15 @@ msgid "The download requires %1 files with a size of %2."
 msgstr "Le téléchargement nécessite %1 fichiers d'une taille de %2."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:548
-#, fuzzy, kde-format
-#| msgid "All files of the selected features were found."
+#, kde-format
 msgid "All files for the selected features were found."
-msgstr "Tous les fichiers des fonctionnalités sélectionnées ont été trouvés."
+msgstr ""
+"Tous les fichiers pour les fonctionnalités sélectionnées ont été trouvés."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:568
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
-msgstr ""
+msgstr "Nettoyer les fichiers de modèles « AI / DNN » inutilisés..."
 
 #: core/utilities/setup/editor/setupeditor.cpp:63
 #, kde-format

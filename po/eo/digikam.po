@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-28 01:58+0000\n"
-"PO-Revision-Date: 2025-03-23 14:42+0100\n"
+"PO-Revision-Date: 2025-03-30 23:35+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -561,13 +561,12 @@ msgstr[0] "Movi al Rubujo"
 msgstr[1] "Movi %1 Dosierojn al Rubujo"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
-msgstr[0] "Bildkvalita Skano"
-msgstr[1] "Bildkvalita Skano"
+msgstr[0] "Skani per Bildkvalita Ilo"
+msgstr[1] "Skani per Bildkvalita Ilo"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
 #, kde-format
@@ -2391,11 +2390,10 @@ msgid "Rotate"
 msgstr "Rotacii"
 
 #: core/app/main/digikamapp_setup.cpp:1066
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
-msgstr "Aŭtomata rotacio"
+msgstr "Aŭtomate Rotacii"
 
 #: core/app/main/digikamapp_setup.cpp:1073
 #, kde-format
@@ -6562,33 +6560,26 @@ msgstr ""
 "ĉenojn en Xmp-metadatumoj el bildoj.</para>"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@title"
 msgid "Auto-Rotate"
-msgstr "Aŭtomata rotacio"
+msgstr "Aŭtomate Rotacii"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to automatically assign tags to images"
+#, kde-format
 msgctxt "@info"
 msgid "AI tool to automatically rotate images"
-msgstr "Ilo por aŭtomate atribui etikedojn al bildoj"
+msgstr "Ilo por aŭtomate rotacii bildojn"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can fix automatically lens artifacts "
-#| "over images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can automatically detect the correct "
 "orientation of an image and rotate the image.</para>"
 msgstr ""
-"<para>Ĉi tiu ilo de Batch Queue Manager povas aŭtomate ripari lensajn "
-"artefaktojn super bildoj.</para>"
+"<para>Ĉi tiu ilo de Batch Queue Manager povas aŭtomate detekti la ĝustan "
+"orientiĝon de bildo kaj rotacii la bildon.</para>"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, kde-format
@@ -35302,60 +35293,46 @@ msgid "Assign Low Quality to Rejected Label"
 msgstr "Atribui Malaltan Kvaliton al Malakceptita Etikedo"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Low quality images detected by blur, noise, and compression analysis will "
-#| "be assigned to Rejected label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Low quality images detected by the quality engine\n"
 "will be assigned to the rejected pick label (red flag)."
 msgstr ""
-"Malkvalitaj bildoj detektitaj per malklareco, bruo kaj kunprema analizo "
-"estos asignitaj al Malakceptita etikedo."
+"Malkvalitaj bildoj detektitaj per la kvalitmotoro\n"
+"estos asignitaj al la malakceptita elekt-etikedo (ruĝa flago)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign Medium Quality to Pending Label"
-msgstr "A&signi Etikedojn al Elektitaj Eroj"
+msgstr "Atribui Mezan Kvaliton al Antendanta Etikedo"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Medium quality images detected by blur, noise, and compression analysis "
-#| "will be assigned to Pending label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Medium quality images detected by the quality engine\n"
 "will be assigned to the pending pick label (yellow flag)."
 msgstr ""
-"Mezkvalitaj bildoj detektitaj per malklareco, bruo kaj kunprema analizo "
-"estos asignitaj al Pritraktata etikedo."
+"Mezkvalitaj bildoj detektitaj per la kvalitmotoro\n"
+"estos asignitaj al la pritraktota elekt-etikedo (flava flago)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign High Quality to Accepted Label"
-msgstr "A&signi Etikedojn al Elektitaj Eroj"
+msgstr "Atribui Altan Kvaliton al Akceptita Etikedo"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "High quality images detected by blur, noise, and compression analysis "
-#| "will be assigned to Accepted label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "High quality images detected by the quality engine\n"
 "will be assigned to the accepted pick label (green flag)."
 msgstr ""
-"Altkvalitaj bildoj detektitaj per malklareco, bruo kaj kunprema analizo "
-"estos asignitaj al Akceptata etikedo."
+"Altkvalitaj bildoj detektitaj per la kvalitmotoro\n"
+"estos asignitaj al la akceptita elekt-etikedo (verda flago)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:137
 #, kde-format
@@ -42990,13 +42967,7 @@ msgid "Port to Qt6"
 msgstr "Portado al Qt6"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Rewrite Image Quality Sorter algorithms\n"
-#| "and Photo Focus Information Extraction.\n"
-#| "Aesthetic Detection to classify images\n"
-#| "using deep learning model.\n"
-#| "Slideshow and Presentation tools improvement"
+#, kde-format
 msgid ""
 "Rewrite Image Quality Scanner algorithms\n"
 "and Photo Focus Information Extraction.\n"
@@ -43004,11 +42975,11 @@ msgid ""
 "using deep learning model.\n"
 "Slideshow and Presentation tools improvement"
 msgstr ""
-"Reverki algoritmojn de Ordigo de Kvalito de Bildo\n"
-"kaj Eltiro de Informoj de Fotofokuso\n"
-"Estetika Detekto por klasifiki bildojn per profunda\n"
-"lernado-modelo, Plibonigo de Bildprezentoj kaj\n"
-"Prezentiloj."
+"Reverki algoritmojn de Bildkvalita Skanilo\n"
+"kaj Eltiro de Informoj de Fotofokuso.\n"
+"Estetika Detekto por klasifiki bildojns\n"
+"per profunda lernado-modelo.\n"
+"Plibonigo de Bildprezentaj iloj."
 
 #: core/libs/widgets/mainview/daboutdata.cpp:173
 #, kde-format
@@ -52625,17 +52596,14 @@ msgstr ""
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:30
 #, fuzzy, kde-format
-#| msgid ""
-#| "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-#| "p><p>You can also use the context menu<br/> when browsing through your "
-#| "images.</p>"
 msgid ""
 "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
 "p><p>You can also use the context menu<br/>when browsing through<br/>your "
 "images.</p>"
 msgstr ""
-"<p>Trenu kaj faligi bildon ĉi tie<br/>por fari similan<br/>serĉon.</p><p>Vi "
-"povas ankaŭ uzi la kuntekstan menuon<br/> dum foliumado tra viaj bildoj.</p>"
+"<p>Trenu & faligu bildon ĉi tie<br/>por fari similan<br/>erserĉon.</p><p>Vi "
+"povas ankaŭ uzi la kuntekstan menuon<br/>dum foliumado tra<br/>viaj bildoj.</"
+"p>"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
 #, kde-format
@@ -58232,11 +58200,10 @@ msgid "Rotate Right"
 msgstr "Turni dekstre"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:533
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
-msgstr "Aŭtomata rotacio"
+msgstr "Aŭtomate Rotacii"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:565
 #: core/utilities/import/main/importui.cpp:551
@@ -64255,18 +64222,15 @@ msgid "Your collection will use this category:"
 msgstr "Via kolekto uzos ĉi tiun kategorion:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Required Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
-msgstr "Elŝuti Bezonatajn Dosierojn"
+msgstr "Elŝuti Bezonatajn Modeldosierojn"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:160
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AI Auto-Tools features"
-msgstr "Uzi Aŭtomatan Etiked-Atribuan kapablon"
+msgstr "Uzi Aŭtomatajn Ilkapablojn el AI"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:161
 #, kde-format
@@ -64279,16 +64243,14 @@ msgid "Use Aesthetic Detection feature"
 msgstr "Uzi Estetik-Detektan kapablon"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:163
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AutoTags Assignment feature"
-msgstr "Uzi Aŭtomatan Etiked-Atribuan kapablon"
+msgstr "Uzi Aŭtomat-Etikedan Atribuokapablon"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:243
-#, fuzzy, kde-format
-#| msgid "All files were downloaded successfully."
+#, kde-format
 msgid "All model files were downloaded successfully."
-msgstr "Ĉiuj dosieroj estis elŝutitaj sukcese."
+msgstr "Ĉiuj modeldosieroj estis elŝutitaj sukcese."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:252
 #, kde-format
@@ -64384,15 +64346,14 @@ msgid "The download requires %1 files with a size of %2."
 msgstr "La elŝuto postulas %1 dosierojn kun grandeco de %2."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:548
-#, fuzzy, kde-format
-#| msgid "All files of the selected features were found."
+#, kde-format
 msgid "All files for the selected features were found."
-msgstr "Ĉiuj dosieroj de la elektitaj funkcioj estis trovitaj."
+msgstr "Ĉiuj dosieroj por la elektitaj funkcioj estis trovitaj."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:568
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
-msgstr ""
+msgstr "Purigi neuzitajn modeldosierojn AI/DNN..."
 
 #: core/utilities/setup/editor/setupeditor.cpp:63
 #, kde-format
@@ -67484,9 +67445,3 @@ msgstr "Albumaj Objektoj"
 #, kde-format
 msgid "Import Items"
 msgstr "Importi Objektojn"
-
-#~ msgctxt "@action:inmenu Pluralized"
-#~ msgid "Image Quality Scan"
-#~ msgid_plural "Image Quality Scan"
-#~ msgstr[0] "Bildkvalita Skano"
-#~ msgstr[1] "Bildkvalita Skano"
