@@ -426,9 +426,9 @@ void DIO::createJob(IOJobData* const data)
             QMutexLocker locker(&m_dioMutex);
 
             m_currentPathHash.insert(data, data->destUrl().toLocalFile());
-            const auto src = data->sourceUrls();
+            const auto urls = data->sourceUrls();
 
-            for (const QUrl& url : src)
+            for (const QUrl& url : urls)
             {
                 QFileInfo srcInfo(url.toLocalFile());
                 m_currentPathHash.insert(data, srcInfo.path() + QLatin1Char('/'));
