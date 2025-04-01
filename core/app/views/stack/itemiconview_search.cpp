@@ -63,7 +63,6 @@ void ItemIconView::slotImageFindSimilar()
 
 void ItemIconView::slotImageScanForFaces()
 {
-
     if (
         ProgressManager::instance()->findItembyId(QLatin1String("FacesEngine"))     ||
         ProgressManager::instance()->findItembyId(QLatin1String("DetectAndRecognize"))
