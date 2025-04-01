@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-28 01:58+0000\n"
+"POT-Creation-Date: 2025-04-01 01:54+0000\n"
 "PO-Revision-Date: 2025-03-20 20:18+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -198,7 +198,7 @@ msgstr "%1 %2"
 #: core/app/dragdrop/albumdragdrop.cpp:226
 #: core/app/dragdrop/albumdragdrop.cpp:353
 #: core/app/dragdrop/importdragdrop.cpp:119
-#: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:80
+#: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:81
 #, kde-format
 msgid "&Move Here"
 msgstr "&Sposta qui"
@@ -220,8 +220,8 @@ msgstr "&Copia qui"
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:775
-#: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:233
-#: core/app/dragdrop/tagdragdrop.cpp:282 core/app/dragdrop/tagdragdrop.cpp:397
+#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:234
+#: core/app/dragdrop/tagdragdrop.cpp:283 core/app/dragdrop/tagdragdrop.cpp:398
 #, kde-format
 msgid "C&ancel"
 msgstr "Annull&a"
@@ -322,24 +322,24 @@ msgstr "&Assegna i tag a tutti gli elementi"
 msgid "Importing"
 msgstr "Importazione"
 
-#: core/app/dragdrop/tagdragdrop.cpp:81
+#: core/app/dragdrop/tagdragdrop.cpp:82
 #, kde-format
 msgid "M&erge Here"
 msgstr "&Unisci qui"
 
-#: core/app/dragdrop/tagdragdrop.cpp:231 core/app/dragdrop/tagdragdrop.cpp:393
+#: core/app/dragdrop/tagdragdrop.cpp:232 core/app/dragdrop/tagdragdrop.cpp:394
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Imposta come miniatura del tag"
 
-#: core/app/dragdrop/tagdragdrop.cpp:276
+#: core/app/dragdrop/tagdragdrop.cpp:277
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "Cambia nome del volto da '%2' a '%3'"
 msgstr[1] "Cambia nomi del volto da '%2' a '%3'"
 
-#: core/app/dragdrop/tagdragdrop.cpp:388
+#: core/app/dragdrop/tagdragdrop.cpp:389
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Assegna il (i) tag «%1» agli elementi"
@@ -40140,7 +40140,7 @@ msgstr "Analisi degli oggetti in corso: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -61657,74 +61657,74 @@ msgstr "Trovati duplicati: %1"
 msgid "Duplicate found: %1"
 msgstr "Trovato duplicato: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:216
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Analisi dei volti nell'album: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:221
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Analisi dei volti in %1 album"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:227
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Analisi dei volti nell'immagine: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:231
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:232
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Analisi dei volti in %1 immagini"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:236
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:237
 #, kde-format
 msgid "Updating faces database"
 msgstr "Aggiornamento della banca dati dei volti"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:367
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:258
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
 #, kde-format
 msgid "Error starting face detection."
 msgstr "Errore di avvio del rilevamento facciale."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:388
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:389
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Elementi analizzati per i volti: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:392
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:393
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Elemento analizzato per i volti: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:398
 #, kde-format
 msgid "Faces found: %1"
 msgstr "Volti trovati: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:402
 #, kde-format
 msgid "Face found: %1"
 msgstr "Volto trovato: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "Analisi dei volti in corso: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:443
 #, kde-format
 msgid "Found %1 face."
 msgstr "Trovato %1 volto."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:446
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:447
 #, kde-format
 msgid "Found %1 faces."
 msgstr "Trovati %1 volti."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:452
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:453
 #, kde-format
 msgid "Recognized: %1"
 msgstr "Riconosciuti: %1"

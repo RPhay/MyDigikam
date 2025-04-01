@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-28 01:58+0000\n"
+"POT-Creation-Date: 2025-04-01 01:54+0000\n"
 "PO-Revision-Date: 2025-02-26 18:23+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -217,7 +217,7 @@ msgstr "%1 %2"
 #: core/app/dragdrop/albumdragdrop.cpp:226
 #: core/app/dragdrop/albumdragdrop.cpp:353
 #: core/app/dragdrop/importdragdrop.cpp:119
-#: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:80
+#: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:81
 #, kde-format
 msgid "&Move Here"
 msgstr "&Flytta hit"
@@ -239,8 +239,8 @@ msgstr "&Kopiera hit"
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:775
-#: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:233
-#: core/app/dragdrop/tagdragdrop.cpp:282 core/app/dragdrop/tagdragdrop.cpp:397
+#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:234
+#: core/app/dragdrop/tagdragdrop.cpp:283 core/app/dragdrop/tagdragdrop.cpp:398
 #, kde-format
 msgid "C&ancel"
 msgstr "&Avbryt"
@@ -341,24 +341,24 @@ msgstr "Tilldela etiketter till &alla objekt"
 msgid "Importing"
 msgstr "Importerar"
 
-#: core/app/dragdrop/tagdragdrop.cpp:81
+#: core/app/dragdrop/tagdragdrop.cpp:82
 #, kde-format
 msgid "M&erge Here"
 msgstr "Samman&foga här"
 
-#: core/app/dragdrop/tagdragdrop.cpp:231 core/app/dragdrop/tagdragdrop.cpp:393
+#: core/app/dragdrop/tagdragdrop.cpp:232 core/app/dragdrop/tagdragdrop.cpp:394
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Använd som miniatyrbild för etikett"
 
-#: core/app/dragdrop/tagdragdrop.cpp:276
+#: core/app/dragdrop/tagdragdrop.cpp:277
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "Ändra ansiktsnamn från '%2' till '%3'"
 msgstr[1] "Ändra ansiktsnamn från '%2' till '%3'"
 
-#: core/app/dragdrop/tagdragdrop.cpp:388
+#: core/app/dragdrop/tagdragdrop.cpp:389
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Tilldela etikett(er) '%1' till objekt"
@@ -39691,7 +39691,7 @@ msgstr "Objektsökning: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -61093,74 +61093,74 @@ msgstr "Funna dubbletter: %1"
 msgid "Duplicate found: %1"
 msgstr "Funnen dubblett: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:216
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Sök efter ansikten i album: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:221
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Sök efter ansikten i %1 album"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:227
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Sök efter ansikten i bild: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:231
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:232
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Sök efter ansikten i %1 bilder"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:236
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:237
 #, kde-format
 msgid "Updating faces database"
 msgstr "Uppdaterar ansiktsdatabasen"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:367
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:258
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
 #, kde-format
 msgid "Error starting face detection."
 msgstr "Fel vid start av ansiktsdetektering."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:388
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:389
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Objekt genomsökta efter ansikten: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:392
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:393
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Objekt genomsökt efter ansikten: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:398
 #, kde-format
 msgid "Faces found: %1"
 msgstr "Hittade ansikten: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:402
 #, kde-format
 msgid "Face found: %1"
 msgstr "Hittat ansikte: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "Ansiktssökning: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:443
 #, kde-format
 msgid "Found %1 face."
 msgstr "Hittade %1 ansikte."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:446
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:447
 #, kde-format
 msgid "Found %1 faces."
 msgstr "Hittade %1 ansikten"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:452
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:453
 #, kde-format
 msgid "Recognized: %1"
 msgstr "Igenkänd: %1"

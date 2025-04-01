@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-28 01:58+0000\n"
+"POT-Creation-Date: 2025-04-01 01:54+0000\n"
 "PO-Revision-Date: 2025-01-25 14:39+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -191,7 +191,7 @@ msgstr "%1 %2"
 #: core/app/dragdrop/albumdragdrop.cpp:226
 #: core/app/dragdrop/albumdragdrop.cpp:353
 #: core/app/dragdrop/importdragdrop.cpp:119
-#: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:80
+#: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:81
 #, kde-format
 msgid "&Move Here"
 msgstr "העב&רה לכאן"
@@ -213,8 +213,8 @@ msgstr "העת&קה לכאן"
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:775
-#: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:233
-#: core/app/dragdrop/tagdragdrop.cpp:282 core/app/dragdrop/tagdragdrop.cpp:397
+#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:234
+#: core/app/dragdrop/tagdragdrop.cpp:283 core/app/dragdrop/tagdragdrop.cpp:398
 #, kde-format
 msgid "C&ancel"
 msgstr "&ביטול"
@@ -315,25 +315,25 @@ msgstr "הוספת תוויות לכל הפריטים"
 msgid "Importing"
 msgstr "ייבא"
 
-#: core/app/dragdrop/tagdragdrop.cpp:81
+#: core/app/dragdrop/tagdragdrop.cpp:82
 #, fuzzy, kde-format
 #| msgid "&Move Here"
 msgid "M&erge Here"
 msgstr "העבי&רו לכאן"
 
-#: core/app/dragdrop/tagdragdrop.cpp:231 core/app/dragdrop/tagdragdrop.cpp:393
+#: core/app/dragdrop/tagdragdrop.cpp:232 core/app/dragdrop/tagdragdrop.cpp:394
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "הגדרת תווית תצוגה מקדימה"
 
-#: core/app/dragdrop/tagdragdrop.cpp:276
+#: core/app/dragdrop/tagdragdrop.cpp:277
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:388
+#: core/app/dragdrop/tagdragdrop.cpp:389
 #, fuzzy, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "קביעת תווית '%1' לפריטים"
@@ -37842,7 +37842,7 @@ msgstr "חיפוש:"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -58988,78 +58988,78 @@ msgstr "כפולים"
 msgid "Duplicate found: %1"
 msgstr "כפולים"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:216
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
 #, fuzzy, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "חיפוש:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:221
 #, fuzzy, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "חיפוש:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:227
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
 #, fuzzy, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "סריקה וחיפוש תמונות חדשות"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:231
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:232
 #, fuzzy, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "סריקה וחיפוש תמונות חדשות"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:236
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:237
 #, fuzzy, kde-format
 msgid "Updating faces database"
 msgstr ""
 "<b>מתאם את נתוני המידע-הנוסף של כל התמונות עם מסד הנתונים של Digikam. אנא "
 "המתינו...</b>"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:367
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:258
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
 #, kde-format
 msgid "Error starting face detection."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:388
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:389
 #, fuzzy, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "חיפוש:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:392
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:393
 #, fuzzy, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "חיפוש:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:398
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "תמונות נמצאו ב- %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:402
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "תמונות נמצאו ב- %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, fuzzy, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "חיפוש:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:443
 #, fuzzy, kde-format
 msgid "Found %1 face."
 msgstr "מבזק אור (פלאש)"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:446
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:447
 #, kde-format
 msgid "Found %1 faces."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:452
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:453
 #, fuzzy, kde-format
 msgid "Recognized: %1"
 msgstr "גודל:"

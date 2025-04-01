@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-28 01:58+0000\n"
+"POT-Creation-Date: 2025-04-01 01:54+0000\n"
 "PO-Revision-Date: 2025-03-26 09:01+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -187,7 +187,7 @@ msgstr "%1 %2"
 #: core/app/dragdrop/albumdragdrop.cpp:226
 #: core/app/dragdrop/albumdragdrop.cpp:353
 #: core/app/dragdrop/importdragdrop.cpp:119
-#: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:80
+#: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:81
 #, kde-format
 msgid "&Move Here"
 msgstr "&Mou aquí"
@@ -209,8 +209,8 @@ msgstr "&Copia aquí"
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:775
-#: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:233
-#: core/app/dragdrop/tagdragdrop.cpp:282 core/app/dragdrop/tagdragdrop.cpp:397
+#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:234
+#: core/app/dragdrop/tagdragdrop.cpp:283 core/app/dragdrop/tagdragdrop.cpp:398
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancel·la"
@@ -311,24 +311,24 @@ msgstr "Assigna les etiquetes &a tots els elements"
 msgid "Importing"
 msgstr "Importació"
 
-#: core/app/dragdrop/tagdragdrop.cpp:81
+#: core/app/dragdrop/tagdragdrop.cpp:82
 #, kde-format
 msgid "M&erge Here"
 msgstr "&Fusiona aquí"
 
-#: core/app/dragdrop/tagdragdrop.cpp:231 core/app/dragdrop/tagdragdrop.cpp:393
+#: core/app/dragdrop/tagdragdrop.cpp:232 core/app/dragdrop/tagdragdrop.cpp:394
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Estableix com a miniatura de l'etiqueta"
 
-#: core/app/dragdrop/tagdragdrop.cpp:276
+#: core/app/dragdrop/tagdragdrop.cpp:277
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "Canvia el nom de la cara des de «%2» a «%3»"
 msgstr[1] "Canvia els noms de les cares des de «%2» a «%3»"
 
-#: core/app/dragdrop/tagdragdrop.cpp:388
+#: core/app/dragdrop/tagdragdrop.cpp:389
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Assigna l'/es etiqueta/es «%1» als elements"
@@ -40097,7 +40097,7 @@ msgstr "Exploració d'objectes: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -61670,74 +61670,74 @@ msgstr "Duplicats trobats: %1"
 msgid "Duplicate found: %1"
 msgstr "Duplicat trobat: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:216
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:217
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Exploració de cares en l'àlbum: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:220
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:221
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Exploració de cares en %1 àlbums"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:227
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:228
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Exploració de cares en la imatge: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:231
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:232
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Exploració de cares en %1 imatges"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:236
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:237
 #, kde-format
 msgid "Updating faces database"
 msgstr "S'està actualitzant la base de dades de cares"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:285
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:367
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:258
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:286
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:368
 #, kde-format
 msgid "Error starting face detection."
 msgstr "Error en iniciar la detecció de cares."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:388
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:389
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Elements explorats cercant cares: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:392
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:393
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Element explorat cercant cares: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:397
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:398
 #, kde-format
 msgid "Faces found: %1"
 msgstr "Cares trobades: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:401
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:402
 #, kde-format
 msgid "Face found: %1"
 msgstr "Cara trobada: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:435
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "Exploració de cares: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:443
 #, kde-format
 msgid "Found %1 face."
 msgstr "S'ha trobat %1 cara."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:446
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:447
 #, kde-format
 msgid "Found %1 faces."
 msgstr "S'han trobat %1 cares."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:452
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:453
 #, kde-format
 msgid "Recognized: %1"
 msgstr "Reconegudes: %1"
