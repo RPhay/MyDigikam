@@ -869,7 +869,8 @@ void DigikamItemView::scrollTo(const QModelIndex& index, ScrollHint hint)
     bool runningFaceAction = (
                               ProgressManager::instance()->findItembyId(QLatin1String("FacesEngine"))        ||
                               ProgressManager::instance()->findItembyId(QLatin1String("FaceActionProgress")) ||
-                              ProgressManager::instance()->findItembyId(QLatin1String("DetectAndRecognize")) ||                              ProgressManager::instance()->findItembyId(QLatin1String("RecognizeMarkedFaces"))
+                              ProgressManager::instance()->findItembyId(QLatin1String("DetectAndRecognize")) ||
+                              ProgressManager::instance()->findItembyId(QLatin1String("RecognizeMarkedFaces"))
                              );
 
     if ((viewMode() == QListView::IconMode) && getFaceMode() && runningFaceAction)
