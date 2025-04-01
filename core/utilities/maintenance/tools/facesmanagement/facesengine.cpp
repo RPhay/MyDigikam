@@ -115,7 +115,7 @@ public:
 };
 
 FacesEngine::FacesEngine(const FaceScanSettings& settings, ProgressItem* const parent)
-    : MaintenanceTool(QLatin1String("FacesEngine"), parent),
+    : MaintenanceTool(faceScanTaskToString(settings), parent),
       d              (new Private)
 {
     switch (settings.task)
@@ -463,6 +463,38 @@ void FacesEngine::slotShowOneDetected(const MLPipelinePackageNotify::Ptr& packag
 
     setLabel(lbl);
     advance(1);
+}
+
+QString FacesEngine::faceScanTaskToString(const FaceScanSettings& settings) const
+{
+    QString faceStr = QLatin1String("FacesEngine");
+
+    switch (settings.task)
+    {
+        case FaceScanSettings::DetectAndRecognize:
+        {
+            faceStr = QLatin1String("DetectAndRecognize");
+            break;
+        }
+
+        case FaceScanSettings::RecognizeMarkedFaces:
+        {
+            faceStr = QLatin1String("RecognizeMarkedFaces");
+            break;
+        }
+
+        case FaceScanSettings::RetrainAll:
+        {
+            break;
+        }
+
+        case FaceScanSettings::Reset:
+        {
+            break;
+        }
+    }
+
+    return faceStr;
 }
 
 } // namespace Digikam

@@ -64,9 +64,12 @@ void ItemIconView::slotImageFindSimilar()
 void ItemIconView::slotImageScanForFaces()
 {
 
-    if (ProgressManager::instance()->findItembyId(i18n("FacesEngine")))
+    if (
+        ProgressManager::instance()->findItembyId(QLatin1String("FacesEngine"))     ||
+        ProgressManager::instance()->findItembyId(QLatin1String("DetectAndRecognize"))
+       )
     {
-        QString message = i18n("A face recognition task is already running. "
+        QString message = i18n("A face detection task is already running. "
                                "Only one task can be running at a time. "
                                "Please wait until it is finished.");
         d->errorWidget->setMessageType(DNotificationWidget::Information);
@@ -106,7 +109,10 @@ void ItemIconView::slotImageScanForFaces()
 
 void ItemIconView::slotImageRecognizeFaces()
 {
-    if (ProgressManager::instance()->findItembyId(i18n("FacesEngine")))
+    if (
+        ProgressManager::instance()->findItembyId(QLatin1String("FacesEngine"))       ||
+        ProgressManager::instance()->findItembyId(QLatin1String("RecognizeMarkedFaces"))
+       )
     {
         QString message = i18n("A face recognition task is already running. "
                                "Only one task can be running at a time. "

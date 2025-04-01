@@ -68,6 +68,10 @@ private Q_SLOTS:
 
 private:
 
+    QString faceScanTaskToString(const FaceScanSettings& settings)  const;
+
+private:
+
     class Private;
     Private* const d = nullptr;
 };
