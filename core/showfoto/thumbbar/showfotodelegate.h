@@ -49,7 +49,6 @@ public:
 
     int calculatethumbSizeToFit(int ws);
 
-    void setDefaultViewOptions(const QStyleOptionViewItem& option)                                     override;
     bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
                         const QModelIndex& index, QRect* tooltipRect = nullptr)                  const override;
     bool acceptsActivation(const QPoint& pos, const QRect& visualRect,

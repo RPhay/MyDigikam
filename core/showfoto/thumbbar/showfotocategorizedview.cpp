@@ -563,11 +563,6 @@ void ShowfotoCategorizedView::showContextMenuOnInfo(QContextMenuEvent*, const Sh
     // implemented in subclass
 }
 
-void ShowfotoCategorizedView::paintEvent(QPaintEvent* e)
-{
-    ItemViewCategorized::paintEvent(e);
-}
-
 QItemSelectionModel* ShowfotoCategorizedView::getSelectionModel() const
 {
     return selectionModel();

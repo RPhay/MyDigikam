@@ -288,12 +288,6 @@ bool ShowfotoDelegate::onActualPixmapRect(const QPoint& pos, const QRect& visual
     return actualRect.contains(pos);
 }
 
-void ShowfotoDelegate::setDefaultViewOptions(const QStyleOptionViewItem& option)
-{
-
-    ShowfotoItemViewDelegate::setDefaultViewOptions(option);
-}
-
 void ShowfotoDelegate::updateContentWidth()
 {
     Q_D(ShowfotoDelegate);
