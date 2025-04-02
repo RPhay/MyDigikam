@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-01 01:54+0000\n"
+"POT-Creation-Date: 2025-04-02 01:54+0000\n"
 "PO-Revision-Date: 2025-01-19 14:15+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3218,14 +3218,19 @@ msgstr "Mapa bilaketa"
 msgid "Last Search"
 msgstr "Azken bilaketa"
 
-#: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:109
-#, kde-format
-msgid "FacesEngine"
-msgstr "AurpegienMotorra"
+#: core/app/views/stack/itemiconview_search.cpp:71
+#, fuzzy, kde-format
+#| msgid ""
+#| "A face recognition task is already running. Only one task can be running "
+#| "at a time. Please wait until it is finished."
+msgid ""
+"A face detection task is already running. Only one task can be running at a "
+"time. Please wait until it is finished."
+msgstr ""
+"Aurpegi-ezagutza ataza bat dagoeneko martxan da. Aldiko ataza bat ibil "
+"daiteke bakarrik. Mesedez, itxoin hura amaitu arte."
 
-#: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:111
+#: core/app/views/stack/itemiconview_search.cpp:116
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -69157,6 +69162,9 @@ msgstr "Album elementuak"
 #, kde-format
 msgid "Import Items"
 msgstr "Inportatu elementuak"
+
+#~ msgid "FacesEngine"
+#~ msgstr "AurpegienMotorra"
 
 #, fuzzy
 #~| msgctxt "@action:inmenu Pluralized"

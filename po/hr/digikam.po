@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-01 01:54+0000\n"
+"POT-Creation-Date: 2025-04-02 01:54+0000\n"
 "PO-Revision-Date: 2011-03-11 10:04+0100\n"
 "Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -3147,15 +3147,14 @@ msgstr ""
 msgid "Last Search"
 msgstr ""
 
-#: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:109
-#, fuzzy, kde-format
-#| msgid "File: "
-msgid "FacesEngine"
-msgstr "Datoteka: "
+#: core/app/views/stack/itemiconview_search.cpp:71
+#, kde-format
+msgid ""
+"A face detection task is already running. Only one task can be running at a "
+"time. Please wait until it is finished."
+msgstr ""
 
-#: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:111
+#: core/app/views/stack/itemiconview_search.cpp:116
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -64872,6 +64871,11 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "Datoteka: "
+
+#, fuzzy
+#~| msgid "File: "
+#~ msgid "FacesEngine"
+#~ msgstr "Datoteka: "
 
 #, fuzzy
 #~ msgctxt "@action:inmenu Pluralized"

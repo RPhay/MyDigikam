@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-01 01:54+0000\n"
+"POT-Creation-Date: 2025-04-02 01:54+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -3166,14 +3166,14 @@ msgstr "Hledání na mapě"
 msgid "Last Search"
 msgstr "Poslední hledání"
 
-#: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:109
+#: core/app/views/stack/itemiconview_search.cpp:71
 #, kde-format
-msgid "FacesEngine"
+msgid ""
+"A face detection task is already running. Only one task can be running at a "
+"time. Please wait until it is finished."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:111
+#: core/app/views/stack/itemiconview_search.cpp:116
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "

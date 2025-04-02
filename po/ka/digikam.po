@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-01 01:54+0000\n"
+"POT-Creation-Date: 2025-04-02 01:54+0000\n"
 "PO-Revision-Date: 2024-07-07 06:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -3120,16 +3120,14 @@ msgstr "რუკაზე ძებნა"
 msgid "Last Search"
 msgstr "ბოლო ძებნა"
 
-#: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Engine"
-msgid "FacesEngine"
-msgstr "ძრავი"
+#: core/app/views/stack/itemiconview_search.cpp:71
+#, kde-format
+msgid ""
+"A face detection task is already running. Only one task can be running at a "
+"time. Please wait until it is finished."
+msgstr ""
 
-#: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:111
+#: core/app/views/stack/itemiconview_search.cpp:116
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -63777,6 +63775,12 @@ msgstr ""
 #, kde-format
 msgid "Import Items"
 msgstr ""
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Engine"
+#~ msgid "FacesEngine"
+#~ msgstr "ძრავი"
 
 #, fuzzy
 #~| msgctxt "@action:inmenu Pluralized"

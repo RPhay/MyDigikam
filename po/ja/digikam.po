@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-01 01:54+0000\n"
+"POT-Creation-Date: 2025-04-02 01:54+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -3184,15 +3184,19 @@ msgstr "地図検索"
 msgid "Last Search"
 msgstr "前回の検索"
 
-#: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:109
+#: core/app/views/stack/itemiconview_search.cpp:71
 #, fuzzy, kde-format
-#| msgid "Matrix size:"
-msgid "FacesEngine"
-msgstr "マトリックスのサイズ:"
+#| msgid ""
+#| "A face recognition task is already running. Only one task can be running "
+#| "at a time. Please wait until it is finished."
+msgid ""
+"A face detection task is already running. Only one task can be running at a "
+"time. Please wait until it is finished."
+msgstr ""
+"顔認識タスクが既に実行中です。同時に実行できるタスクは 1 つだけです。終了する"
+"までお待ちください。"
 
-#: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:111
+#: core/app/views/stack/itemiconview_search.cpp:116
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -69894,6 +69898,11 @@ msgstr "アルバムアイテム"
 #, kde-format
 msgid "Import Items"
 msgstr "インポートされたアイテム"
+
+#, fuzzy
+#~| msgid "Matrix size:"
+#~ msgid "FacesEngine"
+#~ msgstr "マトリックスのサイズ:"
 
 #, fuzzy
 #~| msgctxt "@action:inmenu Pluralized"

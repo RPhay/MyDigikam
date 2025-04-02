@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-01 01:54+0000\n"
+"POT-Creation-Date: 2025-04-02 01:54+0000\n"
 "PO-Revision-Date: 2025-02-08 11:19+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3285,16 +3285,19 @@ msgstr "Karttahaku"
 msgid "Last Search"
 msgstr "Viimeisin haku"
 
-#: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:109
+#: core/app/views/stack/itemiconview_search.cpp:71
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Engine"
-msgid "FacesEngine"
-msgstr "Moottori"
+#| msgid ""
+#| "A face recognition task is already running. Only one task can be running "
+#| "at a time. Please wait until it is finished."
+msgid ""
+"A face detection task is already running. Only one task can be running at a "
+"time. Please wait until it is finished."
+msgstr ""
+"Kasvontunnistustehtävä on jo käynnissä, ja vain yksi voidaan suorittaa "
+"kerrallaan. Odota, kunnes se on valmis."
 
-#: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:111
+#: core/app/views/stack/itemiconview_search.cpp:116
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -67874,6 +67877,12 @@ msgstr "Albumit"
 #, kde-format
 msgid "Import Items"
 msgstr "Tuo kohteet"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Engine"
+#~ msgid "FacesEngine"
+#~ msgstr "Moottori"
 
 #, fuzzy
 #~| msgid "Image Quality Sorter"

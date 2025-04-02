@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-01 01:54+0000\n"
+"POT-Creation-Date: 2025-04-02 01:54+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -3442,15 +3442,14 @@ msgstr "Paieška žemėlapyje"
 msgid "Last Search"
 msgstr "Naujausia paieška"
 
-#: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:109
-#, fuzzy, kde-format
-#| msgid "File Size"
-msgid "FacesEngine"
-msgstr "Failo dydis"
+#: core/app/views/stack/itemiconview_search.cpp:71
+#, kde-format
+msgid ""
+"A face detection task is already running. Only one task can be running at a "
+"time. Please wait until it is finished."
+msgstr ""
 
-#: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:111
+#: core/app/views/stack/itemiconview_search.cpp:116
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -69366,6 +69365,11 @@ msgstr "Albumo objektai"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Rikiuoti paveikslėlius"
+
+#, fuzzy
+#~| msgid "File Size"
+#~ msgid "FacesEngine"
+#~ msgstr "Failo dydis"
 
 #, fuzzy
 #~ msgctxt "@action:inmenu Pluralized"

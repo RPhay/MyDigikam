@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-01 01:54+0000\n"
+"POT-Creation-Date: 2025-04-02 01:54+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3113,14 +3113,19 @@ msgstr "地图搜索"
 msgid "Last Search"
 msgstr "上次搜索"
 
-#: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:109
-#, kde-format
-msgid "FacesEngine"
-msgstr "人脸引擎"
+#: core/app/views/stack/itemiconview_search.cpp:71
+#, fuzzy, kde-format
+#| msgid ""
+#| "A face recognition task is already running. Only one task can be running "
+#| "at a time. Please wait until it is finished."
+msgid ""
+"A face detection task is already running. Only one task can be running at a "
+"time. Please wait until it is finished."
+msgstr ""
+"已经有一个人脸识别任务正在运行。每次只能运行一个任务。请等待当前任务完成后重"
+"试。"
 
-#: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:111
+#: core/app/views/stack/itemiconview_search.cpp:116
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -65621,3 +65626,6 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
+
+#~ msgid "FacesEngine"
+#~ msgstr "人脸引擎"

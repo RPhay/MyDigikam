@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-01 01:54+0000\n"
+"POT-Creation-Date: 2025-04-02 01:54+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -3197,15 +3197,14 @@ msgstr "Térképes keresés"
 msgid "Last Search"
 msgstr "Utolsó keresés"
 
-#: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:109
-#, fuzzy, kde-format
-#| msgid "File size"
-msgid "FacesEngine"
-msgstr "Fájl méret"
+#: core/app/views/stack/itemiconview_search.cpp:71
+#, kde-format
+msgid ""
+"A face detection task is already running. Only one task can be running at a "
+"time. Please wait until it is finished."
+msgstr ""
 
-#: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:111
+#: core/app/views/stack/itemiconview_search.cpp:116
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -66900,6 +66899,11 @@ msgstr "Album elemek"
 #, kde-format
 msgid "Import Items"
 msgstr "Elemek importálása"
+
+#, fuzzy
+#~| msgid "File size"
+#~ msgid "FacesEngine"
+#~ msgstr "Fájl méret"
 
 #, fuzzy
 #~| msgid "Image Quality Sorter"

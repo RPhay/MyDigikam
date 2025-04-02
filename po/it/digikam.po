@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-01 01:54+0000\n"
+"POT-Creation-Date: 2025-04-02 01:54+0000\n"
 "PO-Revision-Date: 2025-03-20 20:18+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -3205,14 +3205,19 @@ msgstr "Ricerca su mappa"
 msgid "Last Search"
 msgstr "Ultima ricerca"
 
-#: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:109
-#, kde-format
-msgid "FacesEngine"
-msgstr "MotoreVolti"
+#: core/app/views/stack/itemiconview_search.cpp:71
+#, fuzzy, kde-format
+#| msgid ""
+#| "A face recognition task is already running. Only one task can be running "
+#| "at a time. Please wait until it is finished."
+msgid ""
+"A face detection task is already running. Only one task can be running at a "
+"time. Please wait until it is finished."
+msgstr ""
+"È già in corso un'operazione di rilevamento facciale. Può essere eseguita "
+"solo un'operazione alla volta. Attendi che sia terminata."
 
-#: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:111
+#: core/app/views/stack/itemiconview_search.cpp:116
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -68378,6 +68383,9 @@ msgstr "Elementi album"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementi importati"
+
+#~ msgid "FacesEngine"
+#~ msgstr "MotoreVolti"
 
 #~ msgctxt "@action:inmenu Pluralized"
 #~ msgid "Image Quality Scan"

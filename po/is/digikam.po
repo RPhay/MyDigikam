@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-01 01:54+0000\n"
+"POT-Creation-Date: 2025-04-02 01:54+0000\n"
 "PO-Revision-Date: 2025-03-31 10:13+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -3185,14 +3185,19 @@ msgstr "Leit á korti"
 msgid "Last Search"
 msgstr "Síðasta leit"
 
-#: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:109
-#, kde-format
-msgid "FacesEngine"
-msgstr "FacesEngine"
+#: core/app/views/stack/itemiconview_search.cpp:71
+#, fuzzy, kde-format
+#| msgid ""
+#| "A face recognition task is already running. Only one task can be running "
+#| "at a time. Please wait until it is finished."
+msgid ""
+"A face detection task is already running. Only one task can be running at a "
+"time. Please wait until it is finished."
+msgstr ""
+"Andlitagreiningarverk er þegar í gangi. Aðeins eitt verk er hægt að keyra í "
+"einu. Dokaðu við þar til núverandi aðgerð er lokið."
 
-#: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:111
+#: core/app/views/stack/itemiconview_search.cpp:116
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -67547,6 +67552,9 @@ msgstr "Atriði í albúmi"
 #, kde-format
 msgid "Import Items"
 msgstr "Flytja inn atriði"
+
+#~ msgid "FacesEngine"
+#~ msgstr "FacesEngine"
 
 #~ msgid "Delete obsolete model files (runs at startup)"
 #~ msgstr "Eyða úreltum líkanaskrám (keyrir í ræsingu)"
