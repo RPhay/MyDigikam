@@ -47,6 +47,9 @@ public:
 
     bool                                    ready                   = false;
     bool                                    trainingWaiting         = false;
+    bool                                    useFullSearch           = true;
+    bool                                    initialLoad             = true;
+
     FaceScanSettings::FaceRecognitionModel  recognizeModel          = FaceScanSettings::FaceRecognitionModel::SFace;
     IdentityProvider*                       identityProvider        = nullptr;
 
@@ -239,6 +242,10 @@ bool FaceClassifier::loadTrainingData()
 
     do
     {
+        // set default full search flag
+
+        bool useFullSearch = true;
+
         // clear the training waiting flag
 
         d->trainingWaiting            = false;
@@ -268,14 +275,89 @@ bool FaceClassifier::loadTrainingData()
                     int label = labels.at<int>(cv::Point(i, 0));
                     identityFeatures[label].append(samples.row(i));
                 }
+
+                if (d->initialLoad)
+                {
+                    // clear initial load flag
+
+                    d->initialLoad = false;
+
+                    // if this is the first time we are loading the training data
+                    // we can use the FaceClassifier with just the identity features if we use full search
+                    // CCBUG: 502219
+
+                    d->useFullSearch = true;
+
+                    // lock the classifiers and identity list
+
+                    d->trainingLock.lockForWrite();
+
+                    // swap the new identity list with the currently running one
+
+                    d->identityFeatures = identityFeatures;
+
+                    // classifier is ready to use
+
+                    d->ready         = true;
+
+                    // unlock the identity list
+
+                    d->trainingLock.unlock();
+
+                    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: face classifier is ready to use with full search in "
+                                                     << timer.elapsed() << "ms";
+                }
+
+                // if we have enough samples, train the classifiers
+
+                if (identityFeatures.count() > d->knn_defaultK)
+                {
+                    knn->train(trainData);
+                    svm->train(trainData);
+
+                    if(knn->isTrained() && svm->isTrained())
+                    {
+                        // we have enough samples to use the classifiers
+
+                        useFullSearch = false;
+                    }
+                    else
+                    {
+                        // Something went wrong with training KNN or SVM classifiers, so revert to full search
+
+                        useFullSearch = true;
+
+                        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: KNN or SVM training failed, reverting to full search";
+                    }
+                }
+                else
+                {
+                    // we don't have enough samples to use the classifiers so use full search
+
+                    useFullSearch = true;
+                }
+
+                // lock the classifiers and identity list
+
+                d->trainingLock.lockForWrite();
+
+                // swap the new classifiers and identity list with the currently running ones
+
+                d->knnClassifier    = knn;
+                d->svmClassifier    = svm;
+                d->identityFeatures = identityFeatures;
+                d->useFullSearch    = useFullSearch;
+                d->ready            = true;
+        
+                // unlock the classifiers and identity list
+
+                d->trainingLock.unlock();
             }
-
-            // if we have enough samples, train the classifiers
-
-            if (identityFeatures.count() > d->knn_defaultK)
+            else
             {
-                knn->train(trainData);
-                svm->train(trainData);
+                // no training data, so we can't train the classifiers
+
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: no training data available";
             }
         }
 
@@ -298,19 +380,6 @@ bool FaceClassifier::loadTrainingData()
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: exception:";
         }
-
-        // lock the classifiers and identity list
-
-        d->trainingLock.lockForWrite();
-
-        // swap the new classifiers and identity list with the currently running ones
-
-        d->knnClassifier    = knn;
-        d->svmClassifier    = svm;
-        d->identityFeatures = identityFeatures;
-        d->ready            = true;
-
-        d->trainingLock.unlock();
     }
     while (d->trainingWaiting);
 
@@ -335,7 +404,7 @@ int FaceClassifier::predict(const cv::Mat& target) const
 
     d->trainingLock.lockForRead();
 
-    if (!d->knnClassifier->isTrained() || !d->svmClassifier->isTrained())
+    if (d->useFullSearch)
     {
         // we don't have enough identites and samples yet to use the knn and svm classifiers
         // so we perform a full brute-force search on all the known faces
