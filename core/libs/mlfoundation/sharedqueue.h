@@ -62,13 +62,6 @@ public:
             front_.wait(&mutex_);
         }
 
-        // How this condition can appear here?
-
-        if (queue_.isEmpty())   // cppcheck-suppress knownConditionTrueFalse
-        {
-            throw std::runtime_error("SharedQueue::pop_front(): queue is empty");
-        }
-
         T result = queue_.dequeue();
         back_.wakeOne();
 
