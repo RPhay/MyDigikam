@@ -462,7 +462,7 @@ bool Setup::openSetup(Setup* const setup)
     bool success = false;
 
     connect(setup, &QDialog::finished,
-            setup, [&loop, &success](int result)
+            setup, [&loop, &success](int result)             // clazy:exclude=lambda-in-connect
             {
                 success = (result == QDialog::Accepted);
                 loop.quit();
