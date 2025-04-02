@@ -179,7 +179,6 @@ protected:
     void setItemDelegate(ImportDelegate* delegate);
     void indexActivated(const QModelIndex& index, Qt::KeyboardModifiers modifiers)                                         override;
     void currentChanged(const QModelIndex& index, const QModelIndex& previous)                                             override;
-    void paintEvent(QPaintEvent* e)                                                                                        override;
     void selectionChanged(const QItemSelection&, const QItemSelection&)                                                    override;
     void updateGeometries()                                                                                                override;
 

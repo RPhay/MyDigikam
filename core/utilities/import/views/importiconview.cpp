@@ -129,11 +129,6 @@ ItemViewUtilities* ImportIconView::utilities() const
     return d->utilities;
 }
 
-void ImportIconView::setThumbnailSize(const ThumbnailSize& size)
-{
-    ImportCategorizedView::setThumbnailSize(size);
-}
-
 int ImportIconView::fitToWidthIcons()
 {
     return importDelegate()->calculatethumbSizeToFit(viewport()->size().width());

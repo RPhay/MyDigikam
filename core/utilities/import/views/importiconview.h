@@ -40,8 +40,6 @@ public:
     CamItemInfo  camItemInfo(const QString& folder, const QString& file);
     CamItemInfo& camItemInfoRef(const QString& folder, const QString& file);
 
-    void setThumbnailSize(const ThumbnailSize& size)                              override;
-
 public Q_SLOTS:
 
     void deleteSelected(bool permanently = false);

@@ -607,11 +607,6 @@ void ImportCategorizedView::showContextMenuOnInfo(QContextMenuEvent*, const CamI
     // implemented in subclass
 }
 
-void ImportCategorizedView::paintEvent(QPaintEvent* e)
-{
-    ItemViewCategorized::paintEvent(e);
-}
-
 QItemSelectionModel* ImportCategorizedView::getSelectionModel() const
 {
     return selectionModel();
