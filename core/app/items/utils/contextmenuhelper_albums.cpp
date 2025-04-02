@@ -60,7 +60,7 @@ void ContextMenuHelper::addActionRenameAlbum(AlbumModificationHelper* const help
 
 void ContextMenuHelper::addActionResetAlbumIcon(AlbumModificationHelper* const helper, PAlbum* const album)
 {
-    QAction* const action = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),
+    QAction* const action = new QAction(QIcon::fromTheme(QLatin1String("run-build-prune")),
                                         i18nc("@action: context menu", "Reset Album Icon"), this);
     addAction(action, !album->isRoot());
     helper->bindAlbum(action, album);
