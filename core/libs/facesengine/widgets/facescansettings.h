@@ -19,6 +19,7 @@
 // Qt includes
 
 #include <QDebug>
+#include <QThread>
 
 // Local includes
 
@@ -103,7 +104,20 @@ public:
     };
     Q_ENUM(FaceRecognitionModel)
 
-public:
+    /**
+     * @brief How the FaceScan was started.
+     */
+    enum FaceScanSource
+    {
+        FaceScanWidget,
+        ItemIconView,
+        MaintenanceTool,
+        BackgroundRecognition,
+        BQM
+    };
+    Q_ENUM(FaceScanSource)
+
+    public:
 
     FaceScanSettings()  = default;
     FaceScanSettings(const FaceScanSettings& other);
@@ -176,6 +190,19 @@ public:
      * @brief Image infos to scan.
      */
     ItemInfoList                            infos;
+
+    /**
+     * @brief Worker thread priority.
+     * @note Most of the time, this is set to LowPriority.
+     *       The BackgroundRecognizer is set to IdlePriority.
+     *       Do not save this value in the config file.
+     */
+    QThread::Priority                       workerThreadPriority            = QThread::LowPriority;
+
+    /**
+     * @brief Source of the scan.
+     */
+    FaceScanSource                          source                           = FaceScanWidget;
 
 private:
 

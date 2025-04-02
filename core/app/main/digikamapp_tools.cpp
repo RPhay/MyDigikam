@@ -180,8 +180,19 @@ void DigikamApp::slotDetectFaces()
     settings.alreadyScannedHandling = FaceScanSettings::Skip;
     settings.infos                  = newImages;
 
-    FacesEngine* const tool         = new FacesEngine(settings);
-    tool->start();
+    // using scan source MaintenanceTool to prevent any other scan from running
+
+    settings.source                 = FaceScanSettings::MaintenanceTool;
+
+    try
+    {
+        FacesEngine* const tool         = new FacesEngine(settings);
+        tool->start();    
+    }
+    catch (...)
+    {
+        // do nothing. Continue gracefully
+    }
 }
 
 void DigikamApp::slotDatabaseMigration()

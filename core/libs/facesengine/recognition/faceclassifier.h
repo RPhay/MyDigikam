@@ -50,11 +50,16 @@ public:
 
     bool retrain()                                            override;
 
+Q_SIGNALS:
+
+    /**
+     * @brief Emitted when the training process is complete.
+     */
+    void signalTrainingComplete();
+
 protected:
 
     bool loadTrainingData()                                   override;
-
-    void trainingComplete();
 
 private:
 

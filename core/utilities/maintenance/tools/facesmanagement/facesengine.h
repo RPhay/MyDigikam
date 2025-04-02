@@ -27,6 +27,7 @@
 #include "maintenancetool.h"
 #include "iteminfo.h"
 #include "mlpipelinepackagenotify.h"
+#include "facescansettings.h"
 
 namespace Digikam
 {
@@ -53,6 +54,9 @@ public:
                          ProgressItem* const parent = nullptr);
     ~FacesEngine()                                                  override;
 
+    static QString                          faceScanTaskToString(FaceScanSettings::FaceScanSource source);
+    static FaceScanSettings::FaceScanSource faceScanTaskToEnum(const QString& taskName);
+
 Q_SIGNALS:
 
     void signalScanNotification(const QString& msg, int type);
@@ -65,10 +69,6 @@ private Q_SLOTS:
     void slotShowOneDetected(const MLPipelinePackageNotify::Ptr&);
     void slotDone()                                                 override;      // cppcheck-suppress virtualCallInConstructor
     void slotCancel()                                               override;      // cppcheck-suppress virtualCallInConstructor
-
-private:
-
-    QString faceScanTaskToString(const FaceScanSettings& settings)  const;
 
 private:
 

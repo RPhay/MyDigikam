@@ -27,6 +27,9 @@ set(libfacemanagement_SRCS
 
     # dialogs
     ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/facetrainingupgradedlg.cpp
+
+    # background processes
+    ${CMAKE_CURRENT_SOURCE_DIR}/backgroundprocesses/facebackgroundrecognition.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Sql,INTERFACE_INCLUDE_DIRECTORIES>

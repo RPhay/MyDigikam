@@ -63,28 +63,12 @@ void ItemIconView::slotImageFindSimilar()
 
 void ItemIconView::slotImageScanForFaces()
 {
-    if (
-        ProgressManager::instance()->findItembyId(QLatin1String("FacesEngine"))     ||
-        ProgressManager::instance()->findItembyId(QLatin1String("DetectAndRecognize"))
-       )
-    {
-        QString message = i18n("A face detection task is already running. "
-                               "Only one task can be running at a time. "
-                               "Please wait until it is finished.");
-        d->errorWidget->setMessageType(DNotificationWidget::Information);
-        d->errorWidget->setText(message);
-        d->errorWidget->animatedShowTemporized(5000);
-
-        return;
-    }
-
     FaceScanSettings settings;
     settings.readFromConfig();
 
-    // TODO Faces engine : set K-nearest config
-
     settings.task                   = FaceScanSettings::DetectAndRecognize;
     settings.alreadyScannedHandling = FaceScanSettings::Rescan;
+    settings.source                 = FaceScanSettings::ItemIconView;
 
     // Remove possible duplicate ItemInfos.
 
@@ -98,31 +82,23 @@ void ItemIconView::slotImageScanForFaces()
         }
     }
 
-    FacesEngine* const tool = new FacesEngine(settings);
+    try
+    {
+        FacesEngine* const tool = new FacesEngine(settings);
 
-    connect(tool, SIGNAL(signalComplete()),
-            this, SLOT(slotRefreshImagePreview()));
-
-    tool->start();
+        connect(tool, SIGNAL(signalComplete()),
+                this, SLOT(slotRefreshImagePreview()));
+    
+        tool->start();
+    }
+    catch (...)
+    {
+        // do nothing. Continue gracefully
+    }
 }
 
 void ItemIconView::slotImageRecognizeFaces()
 {
-    if (
-        ProgressManager::instance()->findItembyId(QLatin1String("FacesEngine"))       ||
-        ProgressManager::instance()->findItembyId(QLatin1String("RecognizeMarkedFaces"))
-       )
-    {
-        QString message = i18n("A face recognition task is already running. "
-                               "Only one task can be running at a time. "
-                               "Please wait until it is finished.");
-        d->errorWidget->setMessageType(DNotificationWidget::Information);
-        d->errorWidget->setText(message);
-        d->errorWidget->animatedShowTemporized(5000);
-
-        return;
-    }
-
     FaceScanSettings settings;
     settings.readFromConfig();
 
@@ -130,6 +106,7 @@ void ItemIconView::slotImageRecognizeFaces()
 
     settings.task                   = FaceScanSettings::RecognizeMarkedFaces;
     settings.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::Rescan;
+    settings.source                 = FaceScanSettings::ItemIconView;
 
     // Remove possible duplicate ItemInfos.
 
@@ -143,12 +120,19 @@ void ItemIconView::slotImageRecognizeFaces()
         }
     }
 
-    FacesEngine* const tool = new FacesEngine(settings);
+    try
+    {
+        FacesEngine* const tool = new FacesEngine(settings);
 
-    connect(tool, SIGNAL(signalComplete()),
-            this, SLOT(slotRefreshImagePreview()));
-
-    tool->start();
+        connect(tool, SIGNAL(signalComplete()),
+                this, SLOT(slotRefreshImagePreview()));
+    
+        tool->start();
+    }
+    catch (...)
+    {
+        // do nothing. Continue gracefully
+    }
 }
 
 void ItemIconView::slotImageRemoveAllFaces()

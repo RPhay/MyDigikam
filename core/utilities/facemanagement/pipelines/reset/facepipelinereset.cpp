@@ -74,7 +74,7 @@ bool FacePipelineReset::start()
 
 bool FacePipelineReset::finder()
 {
-    MLPIPELINE_FINDER_START(MLPipelineStage::Writer);
+    MLPIPELINE_FINDER_START(settings.workerThreadPriority, MLPipelineStage::Writer);
 
     /* =========================================================================================
      * Pipeline finder specific initialization code

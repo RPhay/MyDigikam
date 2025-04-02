@@ -53,6 +53,7 @@ MaintenanceSettings MaintenanceDlg::settings() const
 
     prm.faceSettings.readFromConfig();
 
+    prm.faceSettings.source                 = FaceScanSettings::FaceScanSource::MaintenanceTool;
     prm.faceSettings.albums                 = prm.albums;
     prm.faceSettings.wholeAlbums            = prm.wholeAlbums;
     prm.faceSettings.useFullCpu             = prm.useMutiCoreCPU;

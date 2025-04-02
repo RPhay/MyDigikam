@@ -36,6 +36,7 @@
 #include "digikam_debug.h"
 #include "identityprovider.h"
 #include "dnnmodelmanager.h"
+#include "facebackgroundrecognition.h"
 
 namespace Digikam
 {
@@ -219,11 +220,6 @@ bool FaceClassifier::retrain()
                                                  )
     );
 
-/*
-        connect(&d->trainingFuture, &QFutureWatcher<bool>::finished,
-                this, &FaceClassifier::trainingComplete);
-*/
-
     return true;
 }
 
@@ -247,7 +243,7 @@ bool FaceClassifier::loadTrainingData()
 
         d->trainingWaiting            = false;
 
-        // create new map and classifiers.  We'll swap them in at the end
+        // create new knn and svm classifiers.  We'll swap them in at the end
 
         QMap<int, QList<cv::Mat> > identityFeatures;
 
@@ -321,16 +317,11 @@ bool FaceClassifier::loadTrainingData()
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: training completed in "
                                      << timer.elapsed() << "ms";
 
-    return true;
-}
+    // emit the training complete signal
+    
+    Q_EMIT signalTrainingComplete();
 
-void FaceClassifier::trainingComplete()
-{
-    if (d->trainingWaiting)
-    {
-        d->trainingWaiting = false;
-        retrain();
-    }
+    return true;
 }
 
 int FaceClassifier::predict(const cv::Mat& target) const

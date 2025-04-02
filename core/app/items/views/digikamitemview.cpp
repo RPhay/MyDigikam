@@ -62,6 +62,7 @@
 #include "facetagsiface.h"
 #include "faceutils.h"
 #include "identityprovider.h"
+#include "facesengine.h"
 
 namespace Digikam
 {
@@ -867,10 +868,11 @@ void DigikamItemView::scrollTo(const QModelIndex& index, ScrollHint hint)
     // see bugs 444692, 40232, ...
 
     bool runningFaceAction = (
-                              ProgressManager::instance()->findItembyId(QLatin1String("FacesEngine"))        ||
-                              ProgressManager::instance()->findItembyId(QLatin1String("FaceActionProgress")) ||
-                              ProgressManager::instance()->findItembyId(QLatin1String("DetectAndRecognize")) ||
-                              ProgressManager::instance()->findItembyId(QLatin1String("RecognizeMarkedFaces"))
+                              ProgressManager::instance()->findItembyId(FacesEngine::faceScanTaskToString(FaceScanSettings::FaceScanSource::FaceScanWidget)) ||
+                              ProgressManager::instance()->findItembyId(FacesEngine::faceScanTaskToString(FaceScanSettings::FaceScanSource::ItemIconView)) ||
+                              ProgressManager::instance()->findItembyId(FacesEngine::faceScanTaskToString(FaceScanSettings::FaceScanSource::MaintenanceTool)) ||
+                              ProgressManager::instance()->findItembyId(FacesEngine::faceScanTaskToString(FaceScanSettings::FaceScanSource::BackgroundRecognition)) ||
+                              ProgressManager::instance()->findItembyId(FacesEngine::faceScanTaskToString(FaceScanSettings::FaceScanSource::BQM))
                              );
 
     if ((viewMode() == QListView::IconMode) && getFaceMode() && runningFaceAction)

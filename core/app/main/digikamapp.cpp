@@ -19,6 +19,7 @@
 
 #include "digikamapp_p.h"
 #include "facepipelineedit.h"
+#include "facebackgroundrecognition.h"
 
 namespace Digikam
 {
@@ -92,6 +93,7 @@ DigikamApp::DigikamApp()
     NetworkManager::instance();
     IdentityProvider::instance();
     FaceClassifier::instance();
+    FaceRecognitionBackgroundController::instance();
 
 #ifdef HAVE_GEOLOCATION
 
@@ -255,11 +257,14 @@ DigikamApp::~DigikamApp()
 {
     d->terminating = true;
 
+    ProgressManager::instance()->slotAbortAll();
+
+    FaceRecognitionBackgroundController::instance()->stop();
+    FaceRecognitionBackgroundController::instance()->waitForDone();
+
     FacePipelineEdit::instance()->cancel();
 
     IdentityProvider::instance()->cancel();
-
-    ProgressManager::instance()->slotAbortAll();
 
     ItemAttributesWatch::shutDown();
 

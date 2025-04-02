@@ -129,7 +129,7 @@ bool FacePipelineDetectRecognize::start()
 
 bool FacePipelineDetectRecognize::finder()
 {
-    MLPIPELINE_FINDER_START(MLPipelineStage::Loader);
+    MLPIPELINE_FINDER_START(settings.workerThreadPriority, MLPipelineStage::Loader);
 
     /* =========================================================================================
      * Pipeline finder specific initialization code

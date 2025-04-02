@@ -83,7 +83,7 @@ bool FacePipelineRecognize::start()
 
 bool FacePipelineRecognize::finder()
 {
-    MLPIPELINE_FINDER_START(MLPipelineStage::Loader);
+    MLPIPELINE_FINDER_START(settings.workerThreadPriority, MLPipelineStage::Loader);
 
     /* =========================================================================================
      * Pipeline finder specific initialization code
@@ -173,7 +173,7 @@ bool FacePipelineRecognize::finder()
 bool FacePipelineRecognize::loader()
 {
     return commonFaceThumbnailLoader(QStringLiteral("FacePipelineRecognize"),
-                                     QThread::LowPriority,
+                                     settings.workerThreadPriority,
                                      MLPipelineStage::Loader,
                                      MLPipelineStage::Extractor);
 }
@@ -181,14 +181,14 @@ bool FacePipelineRecognize::loader()
 bool FacePipelineRecognize::extractor()
 {
     return commonFaceThumbnailExtractor(QStringLiteral("FacePipelineRecognize"),
-                                        QThread::LowPriority,
+                                        settings.workerThreadPriority,
                                         MLPipelineStage::Extractor,
                                         MLPipelineStage::Classifier);
 }
 
 bool FacePipelineRecognize::classifier()
 {
-    MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Classifier, MLPipelineStage::Writer);
+    MLPIPELINE_STAGE_START(settings.workerThreadPriority, MLPipelineStage::Classifier, MLPipelineStage::Writer);
     FacePipelinePackageBase* package = nullptr;
 
     /* =========================================================================================
@@ -267,7 +267,7 @@ bool FacePipelineRecognize::classifier()
 
 bool FacePipelineRecognize::writer()
 {
-    MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None);
+    MLPIPELINE_STAGE_START(settings.workerThreadPriority, MLPipelineStage::Writer, MLPipelineStage::None);
     FacePipelinePackageBase* package = nullptr;
 
     /* =========================================================================================

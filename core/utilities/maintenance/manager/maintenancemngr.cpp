@@ -30,6 +30,8 @@
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "digikamapp.h"
+#include "dnotificationwidget.h"
 #include "albummanager.h"
 #include "maintenancesettings.h"
 #include "newitemsfinder.h"
@@ -313,9 +315,17 @@ void MaintenanceMngr::stage6()
 
     if (d->settings.faceManagement)
     {
-        d->facesDetector = new FacesEngine(d->settings.faceSettings);
-        d->facesDetector->setNotificationEnabled(false);
-        d->facesDetector->start();
+        try
+        {
+            d->settings.faceSettings.source = FaceScanSettings::FaceScanSource::MaintenanceTool;
+            d->facesDetector = new FacesEngine(d->settings.faceSettings);
+            d->facesDetector->setNotificationEnabled(false);
+            d->facesDetector->start();    
+        }
+        catch (...)
+        {
+            stage7();
+        }
     }
     else
     {

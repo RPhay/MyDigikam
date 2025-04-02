@@ -28,6 +28,7 @@
 #include <QTextEdit>
 #include <QHash>
 #include <QPixmap>
+#include <QException>
 
 // KDE includes
 
@@ -38,12 +39,12 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikamapp.h"
 #include "dnotificationwidget.h"
 #include "coredb.h"
 #include "album.h"
 #include "albummanager.h"
 #include "albumpointer.h"
-#include "facescansettings.h"
 #include "iteminfojob.h"
 #include "facetags.h"
 #include "mlpipelinepackagenotify.h"
@@ -51,6 +52,7 @@
 #include "facepipelinerecognize.h"
 #include "facepipelineretrain.h"
 #include "facepipelinereset.h"
+#include "facebackgroundrecognition.h"
 
 namespace Digikam
 {
@@ -115,9 +117,126 @@ public:
 };
 
 FacesEngine::FacesEngine(const FaceScanSettings& settings, ProgressItem* const parent)
-    : MaintenanceTool(faceScanTaskToString(settings), parent),
+    : MaintenanceTool(faceScanTaskToString(settings.source), parent),
       d              (new Private)
 {
+    bool incompatibleScanCheck = false;
+    bool stopBackgroundProcess = false;
+    bool showNotification      = true;
+
+    // check for incompatible running scans
+
+    switch (settings.source)
+    {
+        case FaceScanSettings::FaceScanSource::FaceScanWidget:
+        {
+            // FaceScanWidget scans are incompatible with FaceScanWidget, Background, and Maintenance scans
+            if (
+                ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::FaceScanWidget)) ||
+                ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::MaintenanceTool))
+            )
+            {
+                incompatibleScanCheck = true;
+            }
+
+            stopBackgroundProcess = true;
+            break;
+        }
+        case FaceScanSettings::FaceScanSource::ItemIconView:
+        {
+            // ItemIconView scans are incompatible with Maintenance scans
+            if (
+                ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::MaintenanceTool))
+               )
+            {
+                incompatibleScanCheck = true;
+            }
+
+            stopBackgroundProcess = false;
+            break;
+        }
+        case FaceScanSettings::FaceScanSource::MaintenanceTool:
+        {
+            // Maintenance scans are incompatible with all other scan sources
+            if (
+                ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::FaceScanWidget)) ||
+                ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::ItemIconView)) ||
+                ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::MaintenanceTool)) ||
+                ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::BQM))
+               )
+            {
+                incompatibleScanCheck = true;
+            }
+
+            stopBackgroundProcess = true;
+            break;
+        }
+        case FaceScanSettings::FaceScanSource::BackgroundRecognition:
+        {
+            // Background scans are incompatible with FaceScanWidget, BackgroundRecognition, and Maintenance scans
+            // instead of showing an error message, we just return without doing anything
+            if (
+                ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::FaceScanWidget)) ||
+                ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::MaintenanceTool)) ||
+                ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::BackgroundRecognition))
+               )
+            {
+                incompatibleScanCheck = true;
+                showNotification      = false;
+            }
+            break;
+        }
+        case FaceScanSettings::FaceScanSource::BQM:
+        {
+            // Background scans are incompatible with Maintenance scans
+            if (
+                ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::MaintenanceTool))
+               )
+            {
+                incompatibleScanCheck = true;
+            }
+
+            stopBackgroundProcess = false;
+            break;
+        }
+    }
+
+    // show error message if incompatible scan is running
+
+    if (incompatibleScanCheck)
+    {
+        // show error message if incompatible scan is running
+        if (showNotification)
+        {           
+            QString message = i18n("A face scan is already running. "
+                                   "Only one face task can be running at a time. "
+                                   "Please wait until it is finished.");
+
+            Q_EMIT DigikamApp::instance()->signalNotificationError(message, DNotificationWidget::Information);
+
+            // Q_EMIT signalScanNotification(message, DNotificationWidget::Error);
+        }
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacesEngine::FacesEngine: scan already running";
+        throw new QException();
+    }
+
+    if (stopBackgroundProcess)
+    {
+        // stop any background process
+
+        FaceRecognitionBackgroundController::instance()->stop();
+        FaceRecognitionBackgroundController::instance()->waitForDone();
+    }
+
+    // suppress notifications if this is a background process
+
+    if (settings.source == FaceScanSettings::FaceScanSource::BackgroundRecognition)
+    {
+        setNotificationEnabled(false);
+    }
+
+    // select scan type
+
     switch (settings.task)
     {
         case FaceScanSettings::DetectAndRecognize:
@@ -465,36 +584,60 @@ void FacesEngine::slotShowOneDetected(const MLPipelinePackageNotify::Ptr& packag
     advance(1);
 }
 
-QString FacesEngine::faceScanTaskToString(const FaceScanSettings& settings) const
+QString FacesEngine::faceScanTaskToString(FaceScanSettings::FaceScanSource source)
 {
     QString faceStr = QLatin1String("FacesEngine");
 
-    switch (settings.task)
+    switch (source)
     {
-        case FaceScanSettings::DetectAndRecognize:
-        {
-            faceStr = QLatin1String("DetectAndRecognize");
+        case FaceScanSettings::FaceScanSource::FaceScanWidget:
+            faceStr += QLatin1String(" (FaceScanWidget)");
             break;
-        }
 
-        case FaceScanSettings::RecognizeMarkedFaces:
-        {
-            faceStr = QLatin1String("RecognizeMarkedFaces");
+        case FaceScanSettings::FaceScanSource::ItemIconView:
+            faceStr += QLatin1String(" (ItemIconView)");
             break;
-        }
 
-        case FaceScanSettings::RetrainAll:
-        {
+        case FaceScanSettings::FaceScanSource::MaintenanceTool:
+            faceStr += QLatin1String(" (MaintenanceTool)");
             break;
-        }
 
-        case FaceScanSettings::Reset:
-        {
+        case FaceScanSettings::FaceScanSource::BackgroundRecognition:
+            faceStr += QLatin1String(" (BackgroundRecognition)");
             break;
-        }
+
+        case FaceScanSettings::FaceScanSource::BQM:
+            faceStr += QLatin1String(" (BQM)");
+            break;
     }
 
     return faceStr;
+}
+
+FaceScanSettings::FaceScanSource FacesEngine::faceScanTaskToEnum(const QString& taskName)
+{
+    if (QLatin1String("FacesEngine (FaceScanWidget)") == taskName)
+    {
+        return FaceScanSettings::FaceScanSource::FaceScanWidget;
+    }
+    else if (QLatin1String("FacesEngine (ItemIconView)") == taskName)
+    {
+        return FaceScanSettings::FaceScanSource::ItemIconView;
+    }
+    else if (QLatin1String("FacesEngine (MaintenanceTool)") == taskName)
+    {
+        return FaceScanSettings::FaceScanSource::MaintenanceTool;
+    }
+    else if (QLatin1String("FacesEngine (BackgroundRecognition)") == taskName)
+    {
+        return FaceScanSettings::FaceScanSource::BackgroundRecognition;
+    }
+    else if (QLatin1String("FacesEngine (BQM)") == taskName)
+    {
+        return FaceScanSettings::FaceScanSource::BQM;
+    }
+
+    return FaceScanSettings::FaceScanWidget;
 }
 
 } // namespace Digikam

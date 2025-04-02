@@ -159,7 +159,7 @@ bool AutotagsPipelineObject::finder()
         return true;
     }
 
-    MLPIPELINE_FINDER_START(MLPipelineStage::Loader);
+    MLPIPELINE_FINDER_START(QThread::LowPriority, MLPipelineStage::Loader);
 
     /* =========================================================================================
      * Pipeline finder specific initialization code

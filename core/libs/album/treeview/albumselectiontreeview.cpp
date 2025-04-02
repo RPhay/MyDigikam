@@ -300,9 +300,17 @@ void AlbumSelectionTreeView::slotScanForFaces()
     settings.task                   = FaceScanSettings::DetectAndRecognize;
     settings.alreadyScannedHandling = FaceScanSettings::Rescan;
     settings.albums                 = albums;
+    settings.source                 = FaceScanSettings::ItemIconView;
 
-    FacesEngine* const tool       = new FacesEngine(settings);
-    tool->start();
+    try
+    {
+        FacesEngine* const tool       = new FacesEngine(settings);
+        tool->start();    
+    }
+    catch (...)
+    {
+        // do nothing. Continue gracefully
+    }
 }
 
 void AlbumSelectionTreeView::slotRepairHiddenItems()

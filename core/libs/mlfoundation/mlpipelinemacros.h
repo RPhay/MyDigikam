@@ -20,9 +20,9 @@
  * ensure that the pipeline stages are consistent and easy to read.
  */
 
-#define MLPIPELINE_FINDER_START(nextStage)                                                              \
+#define MLPIPELINE_FINDER_START(threadPriority, nextStage)                                                              \
             MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr;                                 \
-            stageStart(QThread::LowPriority, MLPipelineStage::Finder, nextStage, thisQueue, nextQueue); \
+            stageStart(threadPriority, MLPipelineStage::Finder, nextStage, thisQueue, nextQueue); \
             bool moreCpu = false;                                                                       \
             QElapsedTimer timer;                                                                        \
             pipelinePerformanceStart(MLPipelineStage::Finder, timer);

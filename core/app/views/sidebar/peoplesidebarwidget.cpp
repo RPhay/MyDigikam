@@ -242,7 +242,7 @@ void PeopleSideBarWidget::slotScanForFaces()
     }
     else
     {
-        Q_EMIT signalNotificationError(i18n("Face recognition is aborted, because "
+        Q_EMIT signalNotificationError(i18n("Face scan was aborted, because "
                                             "there are no identities to recognize. "
                                             "Please add new identities."),
                                        DNotificationWidget::Information);
@@ -270,21 +270,28 @@ const QString PeopleSideBarWidget::getCaption()
 
 void PeopleSideBarWidget::doFaceScan(const FaceScanSettings& faceScanSettings)
 {
-    FacesEngine* const facesDetector = new FacesEngine(faceScanSettings);
+    try
+    {
+        FacesEngine* const facesDetector = new FacesEngine(faceScanSettings);
 
-    connect(facesDetector, SIGNAL(signalComplete()),
-            d->parentInstance, SLOT(slotScanComplete()));
-
-    connect(facesDetector, SIGNAL(signalCanceled()),
-            d->parentInstance, SLOT(slotScanComplete()));
-
-    connect(facesDetector, SIGNAL(signalScanNotification(QString,int)),
-            d->parentInstance, SIGNAL(signalNotificationError(QString,int)));
-
-    d->settingsWdg->setEnabled(false);
-    d->rescanButton->setEnabled(false);
-
-    facesDetector->start();
+        connect(facesDetector, SIGNAL(signalComplete()),
+                d->parentInstance, SLOT(slotScanComplete()));
+    
+        connect(facesDetector, SIGNAL(signalCanceled()),
+                d->parentInstance, SLOT(slotScanComplete()));
+    
+        connect(facesDetector, SIGNAL(signalScanNotification(QString,int)),
+                d->parentInstance, SIGNAL(signalNotificationError(QString,int)));
+    
+        d->settingsWdg->setEnabled(false);
+        d->rescanButton->setEnabled(false);
+    
+        facesDetector->start();    
+    }
+    catch (...)
+    {
+        // do nothing. Continue gracefully
+    }
 }
 
 } // namespace Digikam
