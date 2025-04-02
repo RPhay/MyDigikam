@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-01 01:54+0000\n"
+"POT-Creation-Date: 2025-04-02 01:54+0000\n"
 "PO-Revision-Date: 2024-08-24 11:18+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -3266,16 +3266,20 @@ msgstr "Wyszukiwanie na mapie"
 msgid "Last Search"
 msgstr "Ostatnie wyszukiwanie"
 
-#: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:109
+#: core/app/views/stack/itemiconview_search.cpp:71
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Engine"
-msgid "FacesEngine"
-msgstr "Silnik"
+#| msgid ""
+#| "A face recognition task is already running. Only one task can be running "
+#| "at a time. Please wait until it is finished."
+msgid ""
+"A face detection task is already running. Only one task can be running at a "
+"time. Please wait until it is finished."
+msgstr ""
+"Zadanie rozpoznawania twarzy jest już wykonywane. Możliwe jest wykonywanie "
+"tylko jednego zadania na raz. Zalecamy zaczekanie na zakończenie "
+"poprzedniego."
 
-#: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:111
+#: core/app/views/stack/itemiconview_search.cpp:116
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -68280,6 +68284,12 @@ msgstr "Rzeczy będące albumami"
 #, kde-format
 msgid "Import Items"
 msgstr "Rzeczy do zaimportowania"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Engine"
+#~ msgid "FacesEngine"
+#~ msgstr "Silnik"
 
 #, fuzzy
 #~| msgctxt "@action:inmenu Pluralized"

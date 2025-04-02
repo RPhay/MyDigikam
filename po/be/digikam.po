@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-01 01:54+0000\n"
+"POT-Creation-Date: 2025-04-02 01:54+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -3229,16 +3229,19 @@ msgstr "Пошук па мапе"
 msgid "Last Search"
 msgstr "Апошні пошук"
 
-#: core/app/views/stack/itemiconview_search.cpp:67
-#: core/app/views/stack/itemiconview_search.cpp:109
+#: core/app/views/stack/itemiconview_search.cpp:71
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Engine"
-msgid "FacesEngine"
-msgstr "Сістэма"
+#| msgid ""
+#| "A face recognition task is already running. Only one task can be running "
+#| "at a time. Please wait until it is finished."
+msgid ""
+"A face detection task is already running. Only one task can be running at a "
+"time. Please wait until it is finished."
+msgstr ""
+"Задача распазнавання твараў ужо запушчаная. Адначасова можа працаваць толькі "
+"адна задача. Пачакайце, пакуль скончыцца бягучая."
 
-#: core/app/views/stack/itemiconview_search.cpp:69
-#: core/app/views/stack/itemiconview_search.cpp:111
+#: core/app/views/stack/itemiconview_search.cpp:116
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -64321,6 +64324,12 @@ msgstr "Альбомы"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпарт"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Engine"
+#~ msgid "FacesEngine"
+#~ msgstr "Сістэма"
 
 #, fuzzy
 #~| msgctxt "@action:inmenu Pluralized"
