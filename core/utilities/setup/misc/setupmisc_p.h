@@ -96,6 +96,7 @@ public:
     QCheckBox*                scanAtStart                               = nullptr;
     QCheckBox*                useFastScan                               = nullptr;
     QCheckBox*                detectFaces                               = nullptr;
+    QCheckBox*                faceRecognitionBackgroundScan             = nullptr;
     QCheckBox*                cleanAtStart                              = nullptr;
 
     QComboBox*                updateType                                = nullptr;

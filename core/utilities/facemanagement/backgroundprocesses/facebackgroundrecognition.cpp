@@ -28,6 +28,7 @@
 
 // local includes
 
+#include "applicationsettings.h"
 #include "digikam_debug.h"
 #include "facescansettings.h"
 #include "facesengine.h"
@@ -60,8 +61,7 @@ FaceRecognitionBackgroundController::FaceRecognitionBackgroundController()
     : QObject(),
       d      (new Private)
 {
-    connect(FaceClassifier::instance(), &FaceClassifier::signalTrainingComplete,
-            this, &FaceRecognitionBackgroundController::slotRescan);
+    slotSetEnabled(ApplicationSettings::instance()->getFaceRecognitionBackgroundScan());
 }
 
 FaceRecognitionBackgroundController::~FaceRecognitionBackgroundController()
@@ -76,6 +76,20 @@ FaceRecognitionBackgroundController::~FaceRecognitionBackgroundController()
 FaceRecognitionBackgroundController* FaceRecognitionBackgroundController::instance()
 {
     return &faceBackgroundRecognitionControllerCreator->object;
+}
+
+void FaceRecognitionBackgroundController::slotSetEnabled(bool enabled)
+{
+    if (enabled)
+    {
+        connect(FaceClassifier::instance(), &FaceClassifier::signalTrainingComplete,
+                this, &FaceRecognitionBackgroundController::slotRescan);    
+    }
+    else
+    {
+        disconnect(FaceClassifier::instance(), &FaceClassifier::signalTrainingComplete,
+                   this, &FaceRecognitionBackgroundController::slotRescan);
+    }
 }
 
 bool FaceRecognitionBackgroundController::slotRescan()

@@ -175,6 +175,7 @@ public:
     const QString configScrollItemToCenterEntry                     = QLatin1String("Scroll Current Item To Center");
     const QString configShowOnlyPersonTagsInPeopleSidebarEntry      = QLatin1String("Show Only Face Tags For Assigning Name");
     const QString configDetectFacesInNewImagesEntry                 = QLatin1String("Detect faces in newly added images");
+    const QString configFaceRecognitionBackgroundScanEntry          = QLatin1String("Automatically start a background face recognition scan when a new face is tagged");
     const QString configSyncBalootoDigikamEntry                     = QLatin1String("Sync Baloo to Digikam");
     const QString configSyncDigikamtoBalooEntry                     = QLatin1String("Sync Digikam to Baloo");
     const QString configStringComparisonTypeEntry                   = QLatin1String("String Comparison Type");
@@ -214,6 +215,7 @@ public:
     bool                                         showOnlyPersonTagsInPeopleSidebar                  = false;
 
     bool                                         detectFacesInNewImages                             = false;
+    bool                                         faceRecognitionBackgroundScan                      = true;
 
     /// icon view settings
     bool                                         iconShowName                                       = true;

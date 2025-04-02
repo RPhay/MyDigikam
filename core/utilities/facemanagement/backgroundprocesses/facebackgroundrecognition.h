@@ -37,7 +37,7 @@ public:
 
 private Q_SLOTS:
 
-    // void slotScanNotification(const QString& msg, int type);
+    void slotSetEnabled(bool enabled);
     bool slotRescan();
     void slotScanDone();
 

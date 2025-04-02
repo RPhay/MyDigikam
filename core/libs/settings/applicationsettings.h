@@ -426,6 +426,9 @@ public:
     void setDetectFacesInNewImages(bool val);
     bool getDetectFacesInNewImages() const;
 
+    void setFaceRecognitionBackgroundScan(bool val);
+    bool getFaceRecognitionBackgroundScan() const;
+
     /**
      * Defines the way in which string comparisons are performed.
      *

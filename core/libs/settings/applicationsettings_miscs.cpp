@@ -182,6 +182,16 @@ bool ApplicationSettings::getDetectFacesInNewImages() const
     return d->detectFacesInNewImages;
 }
 
+void ApplicationSettings::setFaceRecognitionBackgroundScan(bool val)
+{
+    d->faceRecognitionBackgroundScan = val;
+}
+
+bool ApplicationSettings::getFaceRecognitionBackgroundScan() const
+{
+    return d->faceRecognitionBackgroundScan;
+}
+
 void ApplicationSettings::setStringComparisonType(ApplicationSettings::StringComparisonType val)
 {
     d->stringComparisonType = val;

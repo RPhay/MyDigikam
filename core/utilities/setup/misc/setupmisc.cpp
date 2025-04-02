@@ -15,6 +15,7 @@
  * ============================================================ */
 
 #include "setupmisc_p.h"
+#include "facebackgroundrecognition.h"
 
 namespace Digikam
 {
@@ -80,6 +81,9 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->useFastScan->setEnabled(false);
 
     d->detectFaces                    = new QCheckBox(i18n("Detect faces in newly added images"), behaviourPanel);
+    d->faceRecognitionBackgroundScan  = new QCheckBox(i18n("Background face recognition scan"), behaviourPanel);
+    d->faceRecognitionBackgroundScan->setToolTip(i18n("Set this option to automatically start a background face recognition scan\n"
+                                                     "when a new face is tagged. This will make the tagging process easier."));
 
     d->cleanAtStart                   = new QCheckBox(i18n("Remove obsolete core database objects (makes startup slower)"), behaviourPanel);
     d->cleanAtStart->setToolTip(i18n("Set this option to force digiKam to clean up the core database from obsolete item entries.\n"
@@ -165,26 +169,30 @@ SetupMisc::SetupMisc(QWidget* const parent)
     layout->addWidget(d->scanAtStart,                             0, 0, 1, 4);
     layout->addWidget(d->useFastScan,                             1, 3, 1, 1);
     layout->addWidget(d->detectFaces,                             2, 0, 1, 4);
-    layout->addWidget(d->cleanAtStart,                            3, 0, 1, 4);
-    layout->addWidget(new DLineWidget(Qt::Horizontal),            4, 0, 1, 4);
-    layout->addWidget(d->showTrashDeleteDialogCheck,              5, 0, 1, 4);
-    layout->addWidget(d->showPermanentDeleteDialogCheck,          6, 0, 1, 4);
-    layout->addWidget(d->sidebarApplyDirectlyCheck,               7, 0, 1, 4);
-    layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck,  8, 0, 1, 4);
-    layout->addWidget(d->selectFirstAlbumItemCheck,               9, 0, 1, 4);
-    layout->addWidget(d->expandNewCurrentItemCheck,              10, 0, 1, 4);
-    layout->addWidget(d->scrollItemToCenterCheck,                11, 0, 1, 4);
-    layout->addWidget(albumDateSourceHbox,                       12, 0, 1, 4);
-    layout->addWidget(stringComparisonHbox,                      13, 0, 1, 4);
-    layout->addWidget(minSimilarityBoundHbox,                    14, 0, 1, 4);
-    layout->addWidget(upOptionsGroup,                            15, 0, 1, 4);
+    layout->addWidget(d->faceRecognitionBackgroundScan,           3, 0, 1, 4);
+    layout->addWidget(d->cleanAtStart,                            4, 0, 1, 4);
+    layout->addWidget(new DLineWidget(Qt::Horizontal),            5, 0, 1, 4);
+    layout->addWidget(d->showTrashDeleteDialogCheck,              6, 0, 1, 4);
+    layout->addWidget(d->showPermanentDeleteDialogCheck,          7, 0, 1, 4);
+    layout->addWidget(d->sidebarApplyDirectlyCheck,               8, 0, 1, 4);
+    layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck,  9, 0, 1, 4);
+    layout->addWidget(d->selectFirstAlbumItemCheck,              10, 0, 1, 4);
+    layout->addWidget(d->expandNewCurrentItemCheck,              11, 0, 1, 4);
+    layout->addWidget(d->scrollItemToCenterCheck,                12, 0, 1, 4);
+    layout->addWidget(albumDateSourceHbox,                       13, 0, 1, 4);
+    layout->addWidget(stringComparisonHbox,                      14, 0, 1, 4);
+    layout->addWidget(minSimilarityBoundHbox,                    15, 0, 1, 4);
+    layout->addWidget(upOptionsGroup,                            16, 0, 1, 4);
     layout->setColumnStretch(3, 10);
-    layout->setRowStretch(16, 10);
+    layout->setRowStretch(17, 10);
 
     // --------------------------------------------------------
 
     connect(d->scanAtStart, SIGNAL(toggled(bool)),
             d->useFastScan, SLOT(setEnabled(bool)));
+
+    connect(d->faceRecognitionBackgroundScan, SIGNAL(toggled(bool)),
+            FaceRecognitionBackgroundController::instance(), SLOT(slotSetEnabled(bool)));
 
     // --------------------------------------------------------
 
@@ -435,6 +443,7 @@ void SetupMisc::applySettings()
     settings->setApplySidebarChangesDirectly(d->sidebarApplyDirectlyCheck->isChecked());
     settings->setScanAtStart(d->scanAtStart->isChecked());
     settings->setDetectFacesInNewImages(d->detectFaces->isChecked());
+    settings->setFaceRecognitionBackgroundScan(d->faceRecognitionBackgroundScan->isChecked());
     settings->setCleanAtStart(d->cleanAtStart->isChecked());
     settings->setUseNativeFileDialog(d->useNativeFileDialogCheck->isChecked());
     settings->setDrawFramesToGrouped(d->drawFramesToGroupedCheck->isChecked());
@@ -496,6 +505,7 @@ void SetupMisc::readSettings()
     d->sidebarApplyDirectlyCheck->setChecked(settings->getApplySidebarChangesDirectly());
     d->scanAtStart->setChecked(settings->getScanAtStart());
     d->detectFaces->setChecked(settings->getDetectFacesInNewImages());
+    d->faceRecognitionBackgroundScan->setChecked(settings->getFaceRecognitionBackgroundScan());
     d->cleanAtStart->setChecked(settings->getCleanAtStart());
     d->useNativeFileDialogCheck->setChecked(settings->getUseNativeFileDialog());
     d->drawFramesToGroupedCheck->setChecked(settings->getDrawFramesToGrouped());

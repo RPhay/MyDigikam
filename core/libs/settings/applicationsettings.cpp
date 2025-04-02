@@ -230,6 +230,7 @@ void ApplicationSettings::readSettings()
     d->scrollItemToCenter                = group.readEntry(d->configScrollItemToCenterEntry,                          false);
     d->showOnlyPersonTagsInPeopleSidebar = group.readEntry(d->configShowOnlyPersonTagsInPeopleSidebarEntry,           true);
     d->detectFacesInNewImages            = group.readEntry(d->configDetectFacesInNewImagesEntry,                      false);
+    d->faceRecognitionBackgroundScan     = group.readEntry(d->configFaceRecognitionBackgroundScanEntry,               true);
     d->stringComparisonType              = (StringComparisonType)
                                                group.readEntry(d->configStringComparisonTypeEntry,                    (int) Natural);
 
@@ -435,6 +436,7 @@ void ApplicationSettings::saveSettings()
     group.writeEntry(d->configScrollItemToCenterEntry,                  d->scrollItemToCenter);
     group.writeEntry(d->configShowOnlyPersonTagsInPeopleSidebarEntry,   d->showOnlyPersonTagsInPeopleSidebar);
     group.writeEntry(d->configDetectFacesInNewImagesEntry,              d->detectFacesInNewImages);
+    group.writeEntry(d->configFaceRecognitionBackgroundScanEntry,       d->faceRecognitionBackgroundScan);
     group.writeEntry(d->configStringComparisonTypeEntry,                (int) d->stringComparisonType);
 
 #ifdef HAVE_APPSTYLE_SUPPORT
