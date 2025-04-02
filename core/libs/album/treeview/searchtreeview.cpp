@@ -76,11 +76,6 @@ SAlbum* SearchTreeView::currentAlbum() const
     return dynamic_cast<SAlbum*>(m_albumFilterModel->albumForIndex(currentIndex()));
 }
 
-void SearchTreeView::setCurrentAlbums(const QList<Album*>& albums, bool selectInAlbumManager)
-{
-    AbstractCheckableAlbumTreeView::setCurrentAlbums(albums, selectInAlbumManager);
-}
-
 void SearchTreeView::setCurrentAlbum(int albumId, bool selectInAlbumManager)
 {
     SAlbum* const album = AlbumManager::instance()->findSAlbum(albumId);

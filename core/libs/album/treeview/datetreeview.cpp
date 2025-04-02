@@ -59,11 +59,6 @@ DAlbum* DateTreeView::albumForIndex(const QModelIndex& index) const
     return dynamic_cast<DAlbum*> (m_albumFilterModel->albumForIndex(index));
 }
 
-void DateTreeView::setCurrentAlbums(const QList<Album*>& albums, bool selectInAlbumManager)
-{
-    AbstractCountingAlbumTreeView::setCurrentAlbums(albums, selectInAlbumManager);
-}
-
 void DateTreeView::setCurrentAlbum(int albumId, bool selectInAlbumManager)
 {
     DAlbum* const album = AlbumManager::instance()->findDAlbum(albumId);

@@ -62,7 +62,6 @@ public:
 
 public Q_SLOTS:
 
-    void setCurrentAlbums(const QList<Album*>& tags, bool selectInAlbumManager = true) override;
     void setCurrentAlbum(int tagId, bool selectInAlbumManager = true);
 
 Q_SIGNALS:

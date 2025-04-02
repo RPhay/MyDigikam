@@ -81,11 +81,6 @@ PAlbum* AlbumTreeView::palbumForIndex(const QModelIndex& index) const
     return dynamic_cast<PAlbum*> (m_albumFilterModel->albumForIndex(index));
 }
 
-void AlbumTreeView::setCurrentAlbums(const QList<Album*>& albums, bool selectInAlbumManager)
-{
-    AbstractCheckableAlbumTreeView::setCurrentAlbums(albums, selectInAlbumManager);
-}
-
 void AlbumTreeView::setCurrentAlbum(int albumId, bool selectInAlbumManager)
 {
     PAlbum* const album = AlbumManager::instance()->findPAlbum(albumId);

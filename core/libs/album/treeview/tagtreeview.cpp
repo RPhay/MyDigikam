@@ -130,11 +130,6 @@ TagModificationHelper* TagTreeView::tagModificationHelper() const
     return m_modificationHelper;
 }
 
-void TagTreeView::setCurrentAlbums(const QList<Album*>& albums, bool selectInAlbumManager)
-{
-    AbstractCheckableAlbumTreeView::setCurrentAlbums(albums, selectInAlbumManager);
-}
-
 void TagTreeView::setCurrentAlbum(int albumId, bool selectInAlbumManager)
 {
     TAlbum* const album = AlbumManager::instance()->findTAlbum(albumId);
