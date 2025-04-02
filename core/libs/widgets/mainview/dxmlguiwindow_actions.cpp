@@ -204,7 +204,7 @@ void DXmlGuiWindow::createSettingsActions()
     d->hamburgerMenu = KStandardAction::hamburgerMenu(nullptr, nullptr, actionCollection());
     d->hamburgerMenu->setShowMenuBarAction(d->showMenuBarAction);
     d->hamburgerMenu->setMenuBar(menuBar());
-
+/*
     connect(d->hamburgerMenu, &KHamburgerMenu::aboutToShowMenu,
             this, [this]()
             {
@@ -216,7 +216,7 @@ void DXmlGuiWindow::createSettingsActions()
                            this, nullptr);
             }
     );
-
+*/
 #endif
 
 }
