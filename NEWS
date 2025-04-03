@@ -4,7 +4,7 @@ digiKam 8.7.0 - Release date: 2025-06-xx
 NEW FEATURES:
 
 Bundles:         Update to last ExifTool version 13.25.
-RawEngine:       Update internal Libraw to last 20250317 upstream.
+RawEngine:       Update internal Libraw to last 20250403 upstream.
 Video:           Update internal QtAVPlayer to last 20250317 upstream (Qt5 only).
 Queue Manager:   New tool to perform auto-rotation based on content analysis using DNN.
 

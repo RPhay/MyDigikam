@@ -1,2 +1,2 @@
-+LIBRAW Snapshot 2025-03-17
-libraw:09bea31181b43e97959ee5452d91e5bc66365f1f
++LIBRAW Snapshot 2025-04-03
+libraw:ba863fcd3d264cb1b49b02b6591187cb9cac8cb0
