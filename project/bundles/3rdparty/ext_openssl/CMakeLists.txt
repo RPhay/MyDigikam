@@ -21,7 +21,7 @@ if (NOT APPLE)
                    -DCMAKE_POSITION_INDEPENDENT_CODE=TRUE
                    -DOPENSSL_BUILD_VERBOSE=ON
                    -DOPENSSL_ENABLE_PARALLEL=ON
-                   -DOPENSSL_INSTALL=OFF
+                   -DOPENSSL_INSTALL=ON
                    -DOPENSSL_INSTALL_CERT=OFF
                    -DOPENSSL_TEST=OFF
                    -DOPENSSL_USE_CCACHE=OFF
