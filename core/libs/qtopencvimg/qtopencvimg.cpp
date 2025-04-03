@@ -21,6 +21,10 @@
 #include <QSysInfo>
 #include <QDebug>
 
+// digikam includes
+
+#include "digikam_debug.h"
+
 namespace Digikam
 {
 
@@ -189,7 +193,7 @@ QtOpenCVImg::MatColorOrder QtOpenCVImg::getColorOrderOfRGB32Format()
 /**
  * Convert DImg to cv::Mat
  */
-cv::Mat QtOpenCVImg::image2Mat(const DImg& img, int requiredMatType, MatColorOrder requriedOrder)
+cv::Mat QtOpenCVImg::image2Mat(const DImg& img, int requiredMatType, MatColorOrder requiredOrder)
 {
     int targetDepth    = CV_MAT_DEPTH(requiredMatType);
     int targetChannels = CV_MAT_CN(requiredMatType);
@@ -202,19 +206,37 @@ cv::Mat QtOpenCVImg::image2Mat(const DImg& img, int requiredMatType, MatColorOrd
         return cv::Mat();
     }
 
-    int type        = (img.sixteenBit() ? CV_16UC4 : CV_8UC4);
-    cv::Mat cvImage = cv::Mat(img.height(), img.width(), type, img.bits());
+    // DImg is always 4 channel BGR (MCO_BGRA) so the starting cv::Mat is either CV_16UC4 or CV_8UC4
 
-    // DImg is always 4 channel RGB (MCO_RGBA) so the starting cv::Mat is either CV_16UC4 or CV_8UC4
+    int type = (img.sixteenBit() ? CV_16UC4 : CV_8UC4);
 
-    // convert to target depth if needed
+    // copy the image data to cv::Mat
+
+    cv::Mat mat0 = cv::Mat(img.height(), img.width(), type, img.bits());
+
+    // apply scalar to 16-bit images
+
+    if (CV_16UC4 == type)
+    {
+        // 16 bits image
+        mat0 = mat0 / 255;
+    }
+
+    // convert the color order if needed
+
+    if (MCO_BGRA != requiredOrder)
+    {
+        mat0 = adjustChannelsOrder(mat0, MCO_BGRA, requiredOrder);
+    }
+
+    // convert to target bit depth if needed
 
     if (targetDepth != CV_MAT_DEPTH(type))
     {
-        cvImage.convertTo(cvImage, CV_MAKE_TYPE(targetDepth, cvImage.channels()));
+        mat0.convertTo(mat0, CV_MAKE_TYPE(targetDepth, mat0.channels()));
     }
 
-    // convert to target channels if needed
+    // convert the number of color channels if needed
 
     if (targetChannels != CV_MAT_CN(type))
     {
@@ -222,25 +244,34 @@ cv::Mat QtOpenCVImg::image2Mat(const DImg& img, int requiredMatType, MatColorOrd
         {
             case 1:
             {
-                cv::cvtColor(cvImage, cvImage, CV_RGBA2GRAY);
+                if (MCO_RGB == requiredOrder)
+                {
+                    cv::cvtColor(mat0, mat0, CV_RGBA2GRAY);
+                }
+                else if (MCO_BGR == requiredOrder)
+                {
+                    cv::cvtColor(mat0, mat0, CV_BGRA2GRAY);
+                }
 
                 break;
             }
             case 3:
             {
-                cv::cvtColor(cvImage, cvImage, CV_RGBA2RGB);
+                if (MCO_RGB == requiredOrder)
+                {
+                    cv::cvtColor(mat0, mat0, CV_RGBA2RGB);
+                }
+                else if (MCO_BGR == requiredOrder)
+                {
+                    cv::cvtColor(mat0, mat0, CV_BGRA2BGR);
+                }
 
                 break;
             }
         }
     }
 
-    if (MCO_RGBA != requriedOrder)
-    {
-        cvImage = adjustChannelsOrder(cvImage, MCO_RGBA, requriedOrder);
-    }
-
-    return cvImage;
+    return mat0;
 }
 
 /**

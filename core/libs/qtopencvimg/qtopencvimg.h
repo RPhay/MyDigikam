@@ -59,7 +59,6 @@ public:
      *   - All of the formats of QImage are supported.
      */
     static cv::Mat image2Mat(const DImg& img, int requiredMatType = CV_8UC(0), MatColorOrder requiredOrder = MCO_BGR);
-    static cv::UMat image2UMat(const DImg& img, int requiredMatType = CV_8UC(0), MatColorOrder requiredOrder = MCO_BGR);
     static cv::Mat image2Mat(const QImage& img, int requiredMatType = CV_8UC(0), MatColorOrder requiredOrder = MCO_BGR);
     static QImage mat2Image(const cv::Mat& mat, MatColorOrder order = MCO_BGR, QImage::Format formatHint = QImage::Format_Invalid);
 
