@@ -61,7 +61,21 @@ FaceRecognitionBackgroundController::FaceRecognitionBackgroundController()
     : QObject(),
       d      (new Private)
 {
-    slotSetEnabled(ApplicationSettings::instance()->getFaceRecognitionBackgroundScan());
+    bool enabled = ApplicationSettings::instance()->getFaceRecognitionBackgroundScan();
+    
+    // set the connection to the FaceClassifier
+
+    slotSetEnabled(enabled);
+
+    if (!enabled)
+    {
+        // If the background scan is disabled, we need to set the firstRun flag to false
+        // The firstRun flag is used to avoid running the scan when the FaceClassifier starts
+        // but we want to run it when the user enables the background scan and not skip the
+        // first notification
+
+        d->firstRun = false;
+    }
 }
 
 FaceRecognitionBackgroundController::~FaceRecognitionBackgroundController()
