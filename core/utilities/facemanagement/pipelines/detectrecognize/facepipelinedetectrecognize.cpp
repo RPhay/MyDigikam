@@ -336,7 +336,7 @@ bool FacePipelineDetectRecognize::extractor()
         cv::UMat cvUImage   = QtOpenCVImg::image2Mat(
                                                      package->image,
                                                      CV_8UC3,
-                                                     QtOpenCVImg::MatColorOrder::MCO_RGB
+                                                     QtOpenCVImg::MatColorOrder::MCO_BGR
                                                     )
                                                     .getUMat(cv::ACCESS_RW);
 

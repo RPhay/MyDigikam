@@ -343,7 +343,9 @@ bool AutotagsPipelineObject::extractor()
 
         // copy the image to a cv::Mat
 
-        cv::Mat cvImage         = QtOpenCVImg::image2Mat(package->image, CV_8UC3, QtOpenCVImg::MatColorOrder::MCO_RGB);
+        cv::Mat cvImage         = QtOpenCVImg::image2Mat(package->image, 
+                                                         CV_8UC3, 
+                                                         QtOpenCVImg::MatColorOrder::MCO_BGR);
 
         // resize the image if needed.  Only resize if the image is larger than the input size of the detector
 

@@ -115,7 +115,9 @@ void RedEyeCorrectionFilter::filterImage()
     // convert the image to CV_8UC3 RGB
 
     cv::Mat faceLandmarks;
-    cv::Mat cvImage = QtOpenCVImg::image2Mat(m_orgImage, CV_8UC3, QtOpenCVImg::MatColorOrder::MCO_RGB);
+    cv::Mat cvImage = QtOpenCVImg::image2Mat(m_orgImage, 
+                                             CV_8UC3, 
+                                             QtOpenCVImg::MatColorOrder::MCO_BGR);
 
     // extract the face landmarks
 
