@@ -1,12 +1,12 @@
 diff --git a/src/gui/platform/unix/qgenericunixservices.cpp b/src/gui/platform/unix/qgenericunixservices.cpp
-index bfd2556b1e..0b9268a27b 100644
---- a/qtbase/src/gui/platform/unix/qgenericunixservices.cpp
-+++ b/qtbase/src/gui/platform/unix/qgenericunixservices.cpp
-@@ -148,7 +148,77 @@ static inline bool launch(const QString &launcher, const QUrl &url,
-     bool ok = false;
-     if (!args.isEmpty()) {
-         QString program = args.takeFirst();
--        ok = QProcess::startDetached(program, args);
+index 708ce0d9c8d..ebc7098a20c 100644
+--- a/src/gui/platform/unix/qgenericunixservices.cpp
++++ b/src/gui/platform/unix/qgenericunixservices.cpp
+@@ -158,7 +158,77 @@ static inline bool launch(const QString &launcher, const QUrl &url,
+             env.insert(u"XDG_ACTIVATION_TOKEN"_s, xdgActivationToken);
+             process.setEnvironment(env.toStringList());
+         }
+-        ok = process.startDetached(nullptr);
 +
 +        QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
 +        qDebug() << env.toStringList();
@@ -79,5 +79,5 @@ index bfd2556b1e..0b9268a27b 100644
 +        process.setArguments(args);
 +        ok = process.startDetached();
      }
- #endif
+ #  endif
      if (!ok)
