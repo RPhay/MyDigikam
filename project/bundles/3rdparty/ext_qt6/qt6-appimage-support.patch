@@ -1,7 +1,7 @@
 diff --git a/src/gui/platform/unix/qgenericunixservices.cpp b/src/gui/platform/unix/qgenericunixservices.cpp
 index 708ce0d9c8d..ebc7098a20c 100644
---- a/src/gui/platform/unix/qgenericunixservices.cpp
-+++ b/src/gui/platform/unix/qgenericunixservices.cpp
+--- a/qtbase/src/gui/platform/unix/qgenericunixservices.cpp
++++ b/qtbase/src/gui/platform/unix/qgenericunixservices.cpp
 @@ -158,7 +158,77 @@ static inline bool launch(const QString &launcher, const QUrl &url,
              env.insert(u"XDG_ACTIVATION_TOKEN"_s, xdgActivationToken);
              process.setEnvironment(env.toStringList());
