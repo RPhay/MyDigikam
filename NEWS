@@ -120,7 +120,7 @@ BUGFIXES:
 107 ==> 502173 - digiKam - white screen.
 108 ==> 502242 - Uneven preview sharpness!!
 109 ==> 502219 - Right-click, "Recognize faces" does no longer recognize any faces.
-110 ==> 
+110 ==> 502200 - Set automatically the rotation flag for pictures in portrait format with a dedicated scanning tool.
 111 ==>
 112 ==>
 113 ==>
