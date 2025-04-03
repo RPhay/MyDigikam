@@ -4,7 +4,6 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-#
 
 if (NOT APPLE)
 
@@ -12,17 +11,20 @@ if (NOT APPLE)
 
     ExternalProject_Add(ext_openssl
 
-        GIT_REPOSITORY https://github.com/janbar/openssl-cmake
-        GIT_TAG 1.1.1w-20231130
+        GIT_REPOSITORY https://github.com/jimmy-park/openssl-cmake.git
+        GIT_TAG 3.4.1
 
         INSTALL_DIR ${EXTPREFIX_openssl}
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_openssl}
                    -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                    -DCMAKE_POSITION_INDEPENDENT_CODE=TRUE
-                   -DWITH_APPS=OFF
-                   -DWITH_DOCS=OFF
-                   -DWITH_TESTS=OFF
+                   -DOPENSSL_BUILD_VERBOSE=ON
+                   -DOPENSSL_ENABLE_PARALLEL=ON
+                   -DOPENSSL_INSTALL=OFF
+                   -DOPENSSL_INSTALL_CERT=OFF
+                   -DOPENSSL_TEST=OFF
+                   -DOPENSSL_USE_CCACHE=OFF
                    ${GLOBAL_PROFILE}
 
         BUILD_COMMAND ${BUILD_CLI}
