@@ -326,7 +326,7 @@ bool s_inlineTranslateString(const QString& text, const QString& trCode, QString
     }
     else
     {
-        error = QChar(trengine->error());
+        error = QChar::fromLatin1(trengine->error());
     }
 
     return false;
