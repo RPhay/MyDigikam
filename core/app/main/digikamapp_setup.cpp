@@ -13,6 +13,7 @@
  * ============================================================ */
 
 #include "digikamapp_p.h"
+#include "systemsettings.h"
 
 namespace Digikam
 {
@@ -1062,12 +1063,15 @@ void DigikamApp::setupImageTransformActions()
     d->imageRotateActionMenu = new QMenu(i18nc("@action: setup", "Rotate"), this);
     d->imageRotateActionMenu->setIcon(QIcon::fromTheme(QLatin1String("object-rotate-right")));
 
-    QAction* const autorotate = ac->addAction(QLatin1String("rotate_auto"));
-    autorotate->setText(i18nc("@action: auto-rotate image", "Auto-Rotate"));
-    ac->setDefaultShortcut(autorotate, Qt::CTRL | Qt::SHIFT | Qt::Key_Up);
-    connect(autorotate, SIGNAL(triggered(bool)),
-            this, SLOT(slotTransformAction()));
-    d->imageRotateActionMenu->addAction(autorotate);
+    if (SystemSettings(qApp->applicationName()).enableAIAutoTools)
+    {
+        QAction* const autorotate = ac->addAction(QLatin1String("rotate_auto"));
+        autorotate->setText(i18nc("@action: auto-rotate image", "Auto-Rotate"));
+        ac->setDefaultShortcut(autorotate, Qt::CTRL | Qt::SHIFT | Qt::Key_Up);
+        connect(autorotate, SIGNAL(triggered(bool)),
+                this, SLOT(slotTransformAction()));
+        d->imageRotateActionMenu->addAction(autorotate);
+    }
 
     QAction* const left = ac->addAction(QLatin1String("rotate_ccw"));
     left->setText(i18nc("@action: rotate image left", "Left"));

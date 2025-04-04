@@ -141,7 +141,24 @@ bool AutoRotator::shouldRotate(int degrees, int sensitivity, int angle)
     }
 }
 
-float AutoRotator::rotationAngle(const DImg& img)
+float AutoRotator::rotationAngle(const DImg& img, bool copyDImg)
+{
+    if (copyDImg)
+    {
+        // make a copy of the image to avoid modifying the original
+
+        DImg copy = img.copy();
+        return privateRotationAngle(copy);
+    }
+    else
+    {
+        // use the original image
+
+        return privateRotationAngle(img);
+    }
+}
+
+float AutoRotator::privateRotationAngle(const DImg& img)
 {
     QElapsedTimer timer;
     timer.start();
@@ -171,7 +188,7 @@ float AutoRotator::rotationAngle(const DImg& img)
     return angle;
 }
 
-MetaEngineRotation::TransformationAction AutoRotator::rotationOrientation(const DImg& image, int sensitivity)
+MetaEngineRotation::TransformationAction AutoRotator::rotationOrientation(const DImg& image, int sensitivity, bool copyDImg)
 {
     // check for corrupted images that can't be loaded
 
@@ -183,7 +200,7 @@ MetaEngineRotation::TransformationAction AutoRotator::rotationOrientation(const 
 
     // get the free rotation angle from the model
 
-    int angle = rotationAngle(image);
+    int angle = rotationAngle(image, copyDImg);
 
     // convert the angle to a positive value
 
@@ -218,7 +235,7 @@ MetaEngineRotation::TransformationAction AutoRotator::rotationOrientation(const 
                                                       PreviewSettings(),
                                                       model->info.imageSize);
 
-    return rotationOrientation(image, sensitivity);
+    return rotationOrientation(image, sensitivity, false);
 }
 
 } // namespace Digikam
