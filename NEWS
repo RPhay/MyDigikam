@@ -123,7 +123,7 @@ BUGFIXES:
 110 ==> 502200 - Set automatically the rotation flag for pictures in portrait format with a dedicated scanning tool.
 111 ==> 501627 - digiKam 8.6 crashes while retraining face recognition database.
 112 ==> 502327 - digiKam stopped working properly on Gnome and Gnome-based desktops since version 8.5.
-113 ==>
+113 ==> 398721 - No results if an album (directory) is selected.
 114 ==>
 115 ==>
 116 ==>
