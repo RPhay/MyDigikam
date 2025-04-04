@@ -115,14 +115,14 @@ BUGFIXES:
 102 ==> 501978 - No Database created at startup
 103 ==> 502003 - digiKam exits abruptly when attempting to open help.
 104 ==> 502051 - Tag tree in right window pane (under the Tag tab) doesnt work consistently as regards nested item memberships.
-105 ==> 502048 - Save tiff to tiff make corrupt output file
+105 ==> 502048 - Save tiff to tiff make corrupt output file.
 106 ==> 501298 - Crash after creating an sub album in a sub window.
 107 ==> 502173 - digiKam - white screen.
 108 ==> 502242 - Uneven preview sharpness!!
 109 ==> 502219 - Right-click, "Recognize faces" does no longer recognize any faces.
 110 ==> 502200 - Set automatically the rotation flag for pictures in portrait format with a dedicated scanning tool.
-111 ==> 501627 - Digikam 8.6 crashes while retraining face recognition database
-112 ==>
+111 ==> 501627 - digiKam 8.6 crashes while retraining face recognition database.
+112 ==> 502327 - digiKam stopped working properly on Gnome and Gnome-based desktops since version 8.5.
 113 ==>
 114 ==>
 115 ==>
