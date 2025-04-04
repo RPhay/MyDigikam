@@ -92,7 +92,14 @@ void MLPipelineFoundation::cancel()
         // update the max queue size to something big
 
         queue->setMaxDepth(queue->maxDepthLimit());
+    }
 
+    // quick pause to let the other threads see the cancel signal
+
+    QThread::msleep(100);
+
+    for (auto queue : std::as_const(queues))
+    {
         // pop the front of the queue to free up any threads waiting on the queue (case 3 above)
 
         if (1 < queue->size())
@@ -432,9 +439,9 @@ bool MLPipelineFoundation::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackage
     {
         // check if buffer memory is full
 
-        if ((package->size + usedBufferSize) > maxBufferSize)
+        if ((package->size + usedBufferSize) > maxBufferSize && !cancelled)
         {
-            // slow things down
+            // slow things down, but only if the cancelled flag is false
 
             thisQueue->setMaxDepth(throttledQueueDepth);
         }
