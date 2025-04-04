@@ -47,7 +47,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-03 01:55+0000\n"
-"PO-Revision-Date: 2025-04-02 11:59+0100\n"
+"PO-Revision-Date: 2025-04-04 02:18+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -3002,15 +3002,12 @@ msgstr ""
 "izquierda del panel lateral."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:245
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face recognition is aborted, because there are no identities to "
-#| "recognize. Please add new identities."
+#, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
 msgstr ""
-"Se ha interrumpido el reconocimiento de caras porque no hay identidades a "
+"Se ha interrumpido la exploración de caras porque no hay identidades para "
 "reconocer (excepto «Sin confirmar» y «Desconocido»). Añada nuevas "
 "identidades."
 
@@ -61660,15 +61657,12 @@ msgid "Duplicate found: %1"
 msgstr "Duplicado encontrado: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:211
-#, fuzzy, kde-format
-#| msgid ""
-#| "A face detection task is already running. Only one task can be running at "
-#| "a time. Please wait until it is finished."
+#, kde-format
 msgid ""
 "A face scan is already running. Only one face task can be running at a time. "
 "Please wait until it is finished."
 msgstr ""
-"Ya se está ejecutando una tarea de detección de caras. Solo se puede "
+"Ya se está ejecutando una tarea de exploración de caras. Solo se puede "
 "ejecutar una de estas tareas a la vez. Espere hasta que termine."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:336
@@ -67005,10 +66999,9 @@ msgid "Detect faces in newly added images"
 msgstr "Detectar caras en la imágenes recién añadidas"
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
-#, fuzzy, kde-format
-#| msgid "Background Image Credits"
+#, kde-format
 msgid "Background face recognition scan"
-msgstr "Créditos de la imagen de fondo"
+msgstr "Exploración de reconocimiento de caras en segundo plano"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format
@@ -67016,6 +67009,9 @@ msgid ""
 "Set this option to automatically start a background face recognition scan\n"
 "when a new face is tagged. This will make the tagging process easier."
 msgstr ""
+"Defina esta opción para empezar automáticamente una exploración de\n"
+"reconocimiento de caras en segundo plano cuando se etiqueta una nueva\n"
+"cara. Esto hace que el proceso de etiquetado sea más fácil."
 
 #: core/utilities/setup/misc/setupmisc.cpp:88
 #, kde-format
@@ -68383,10 +68379,3 @@ msgstr "Elementos del álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementos importados"
-
-#~ msgid ""
-#~ "A face recognition task is already running. Only one task can be running "
-#~ "at a time. Please wait until it is finished."
-#~ msgstr ""
-#~ "Ya se está ejecutando una tarea de reconocimiento de caras. Solo se puede "
-#~ "ejecutar una de estas tareas a la vez. Espere hasta que termine."

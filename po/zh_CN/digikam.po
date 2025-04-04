@@ -2902,14 +2902,11 @@ msgstr ""
 "的面板查看帮助框。"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:245
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face recognition is aborted, because there are no identities to "
-#| "recognize. Please add new identities."
+#, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
-msgstr "人脸识别已中止，因为没有可供识别的人物。请添加新人物。"
+msgstr ""
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:265
 #, kde-format
@@ -59319,16 +59316,11 @@ msgid "Duplicate found: %1"
 msgstr "已找到重复项：%1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:211
-#, fuzzy, kde-format
-#| msgid ""
-#| "A face recognition task is already running. Only one task can be running "
-#| "at a time. Please wait until it is finished."
+#, kde-format
 msgid ""
 "A face scan is already running. Only one face task can be running at a time. "
 "Please wait until it is finished."
 msgstr ""
-"已经有一个人脸识别任务正在运行。每次只能运行一个任务。请等待当前任务完成后重"
-"试。"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:336
 #, kde-format
@@ -64349,10 +64341,9 @@ msgid "Detect faces in newly added images"
 msgstr "检测新增图像中的人脸"
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
-#, fuzzy, kde-format
-#| msgid "Background Image Credits"
+#, kde-format
 msgid "Background face recognition scan"
-msgstr "背景作者"
+msgstr ""
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format

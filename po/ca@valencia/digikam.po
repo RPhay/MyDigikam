@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-03 01:55+0000\n"
-"PO-Revision-Date: 2025-04-02 09:13+0200\n"
+"PO-Revision-Date: 2025-04-03 09:54+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2964,16 +2964,13 @@ msgstr ""
 "d'ajuda en el quadro lateral esquerre inferior."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:245
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face recognition is aborted, because there are no identities to "
-#| "recognize. Please add new identities."
+#, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
 msgstr ""
-"S'ha interromput el reconeixement de les cares, perquè no hi ha identitats "
-"per a reconéixer. Per favor, afegiu-hi identitats noves."
+"S'ha interromput l'exploració de cares, perquè no hi ha identitats a "
+"reconéixer. Per favor, afegiu-hi identitats noves."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:265
 #, kde-format
@@ -61660,16 +61657,13 @@ msgid "Duplicate found: %1"
 msgstr "Duplicat trobat: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:211
-#, fuzzy, kde-format
-#| msgid ""
-#| "A face detection task is already running. Only one task can be running at "
-#| "a time. Please wait until it is finished."
+#, kde-format
 msgid ""
 "A face scan is already running. Only one face task can be running at a time. "
 "Please wait until it is finished."
 msgstr ""
-"Ja s'està executant una tasca de detecció de cares. Només es pot executar "
-"una tasca a la vegada. Espereu fins que acabe."
+"Ja s'està executant una exploració de cares. Només es pot executar una tasca "
+"a la vegada. Espereu fins que acabe."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:336
 #, kde-format
@@ -67009,10 +67003,9 @@ msgid "Detect faces in newly added images"
 msgstr "Detecta les cares en les imatges afegides recentment"
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
-#, fuzzy, kde-format
-#| msgid "Background Image Credits"
+#, kde-format
 msgid "Background face recognition scan"
-msgstr "Atribució de la imatge de fons"
+msgstr "Exploració de reconeixement de cares en segon pla"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format
@@ -67020,6 +67013,10 @@ msgid ""
 "Set this option to automatically start a background face recognition scan\n"
 "when a new face is tagged. This will make the tagging process easier."
 msgstr ""
+"Establiu esta opció per a iniciar automàticament un escaneig de "
+"reconeixement de cares en segons pla\n"
+"quan s'etiqueti una cara nova. Açò farà que el procés d'etiquetatge siga més "
+"fàcil."
 
 #: core/utilities/setup/misc/setupmisc.cpp:88
 #, kde-format
@@ -68391,10 +68388,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgid ""
-#~ "A face recognition task is already running. Only one task can be running "
-#~ "at a time. Please wait until it is finished."
-#~ msgstr ""
-#~ "Ja s'està executant una tasca de reconeixement de cares. Només es pot "
-#~ "executar una tasca a la vegada. Espereu fins que acabe."

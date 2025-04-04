@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-03 01:55+0000\n"
-"PO-Revision-Date: 2025-04-02 17:59+0300\n"
+"PO-Revision-Date: 2025-04-03 08:29+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -3000,16 +3000,13 @@ msgstr ""
 "лівій частині бічної панелі."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:245
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face recognition is aborted, because there are no identities to "
-#| "recognize. Please add new identities."
+#, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
 msgstr ""
-"Розпізнавання облич перервано, оскільки немає профілів для розпізнавання. "
-"Будь ласка, додайте профілі."
+"Сканування облич перервано, оскільки немає профілів для розпізнавання. Будь "
+"ласка, додайте профілі."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:265
 #, kde-format
@@ -61855,16 +61852,14 @@ msgid "Duplicate found: %1"
 msgstr "Знайдено дублікат: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:211
-#, fuzzy, kde-format
-#| msgid ""
-#| "A face detection task is already running. Only one task can be running at "
-#| "a time. Please wait until it is finished."
+#, kde-format
 msgid ""
 "A face scan is already running. Only one face task can be running at a time. "
 "Please wait until it is finished."
 msgstr ""
-"Уже запущено завдання із виявлення облич. Одночасно програма може виконувати "
-"лише одне таке завдання. Будь ласка, зачекайте на завершення попереднього."
+"Уже запущено завдання зі сканування облич. Одночасно програма може "
+"виконувати лише одне завдання щодо облич. Будь ласка, зачекайте на "
+"завершення попереднього."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:336
 #, kde-format
@@ -67212,10 +67207,9 @@ msgid "Detect faces in newly added images"
 msgstr "Виявляти обличчя на нових доданих зображеннях"
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
-#, fuzzy, kde-format
-#| msgid "Background Image Credits"
+#, kde-format
 msgid "Background face recognition scan"
-msgstr "Подяки за фонове зображення"
+msgstr "Фонове сканування для розпізнавання облич"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format
@@ -67223,6 +67217,10 @@ msgid ""
 "Set this option to automatically start a background face recognition scan\n"
 "when a new face is tagged. This will make the tagging process easier."
 msgstr ""
+"Позначте цей пункт, щоб автоматично запускати фонове сканування для "
+"розпізнавання облич,\n"
+"якщо встановлено мітку для нового обличчя. Це спростить процедуру "
+"встановлення міток."
 
 #: core/utilities/setup/misc/setupmisc.cpp:88
 #, kde-format
