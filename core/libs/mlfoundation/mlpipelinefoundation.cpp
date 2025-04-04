@@ -83,6 +83,10 @@ void MLPipelineFoundation::cancel()
      * handle all 3 cases so the worker thread sees the cancel signal
      */
 
+    // set the cancel flag (case 2 above)
+
+    cancelled = true;
+
     for (auto queue : std::as_const(queues))
     {
         // update the max queue size to something big
@@ -106,10 +110,6 @@ void MLPipelineFoundation::cancel()
         queue->push_back(queueEndSignal());
 
     }
-
-    // set the cancel flag (case 2 above)
-
-    cancelled = true;
 
     // wait for all threads to finish
 
