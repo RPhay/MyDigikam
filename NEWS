@@ -121,7 +121,7 @@ BUGFIXES:
 108 ==> 502242 - Uneven preview sharpness!!
 109 ==> 502219 - Right-click, "Recognize faces" does no longer recognize any faces.
 110 ==> 502200 - Set automatically the rotation flag for pictures in portrait format with a dedicated scanning tool.
-111 ==>
+111 ==> 501627 - Digikam 8.6 crashes while retraining face recognition database
 112 ==>
 113 ==>
 114 ==>
