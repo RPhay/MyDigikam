@@ -125,8 +125,8 @@ BUGFIXES:
 112 ==> 502327 - digiKam stopped working properly on Gnome and Gnome-based desktops since version 8.5.
 113 ==> 398721 - No results if an album (directory) is selected.
 114 ==> 465575 - Face Recognition - Suggest Names
-115 ==>
-116 ==>
+115 ==> 502397 - Not possible to reduce the width of the label field in digiKam.
+116 ==> 
 117 ==>
 118 ==>
 119 ==>
