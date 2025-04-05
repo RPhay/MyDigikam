@@ -8,6 +8,9 @@ Bundles:         Update Linux AppImage to last frameworks Qt 6.8.3 and KDE 6.12.
 RawEngine:       Update internal Libraw to last 20250403 upstream.
 Video:           Update internal QtAVPlayer to last 20250403 upstream (Qt5 only).
 Queue Manager:   New tool to perform auto-rotation based on content analysis using DNN.
+Face Engine:     digiKam will automatically start a new face recognition scan when new faces are
+                 confirmed/tagged. This feature can be controlled in Settings->Miscelaneous->
+                 Behaviour->Background face recognition scan.
 
 *****************************************************************************************************
 BUGFIXES:
