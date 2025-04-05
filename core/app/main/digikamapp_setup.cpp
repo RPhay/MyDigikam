@@ -459,15 +459,20 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
-    d->imageScanForFacesAction = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),
-                                             i18nc("@action: setup", "Scan for Faces"), this);
-    connect(d->imageScanForFacesAction, SIGNAL(triggered()), d->view, SLOT(slotImageScanForFaces()));
-    ac->addAction(QLatin1String("image_scan_for_faces"), d->imageScanForFacesAction);
+    // hide face actions if face engine is not enabled
 
-    d->imageRecognizeFacesAction = new QAction(QIcon::fromTheme(QLatin1String("edit-find-user")),
-                                               i18nc("@action: setup", "Recognize Faces"), this);
-    connect(d->imageRecognizeFacesAction, SIGNAL(triggered()), d->view, SLOT(slotImageRecognizeFaces()));
-    ac->addAction(QLatin1String("image_recognize_faces"), d->imageRecognizeFacesAction);
+    if (SystemSettings(qApp->applicationName()).enableFaceEngine)
+    {
+        d->imageScanForFacesAction = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),
+                                                                  i18nc("@action: setup", "Scan for Faces"), this);
+        connect(d->imageScanForFacesAction, SIGNAL(triggered()), d->view, SLOT(slotImageScanForFaces()));
+        ac->addAction(QLatin1String("image_scan_for_faces"), d->imageScanForFacesAction);
+
+        d->imageRecognizeFacesAction = new QAction(QIcon::fromTheme(QLatin1String("edit-find-user")),
+                                                                    i18nc("@action: setup", "Recognize Faces"), this);
+        connect(d->imageRecognizeFacesAction, SIGNAL(triggered()), d->view, SLOT(slotImageRecognizeFaces()));
+        ac->addAction(QLatin1String("image_recognize_faces"), d->imageRecognizeFacesAction);
+    }
 
     d->imageRemoveAllFacesAction = new QAction(QIcon::fromTheme(QLatin1String("list-remove-user")),
                                                i18nc("@action: setup", "Remove all Faces"), this);
@@ -1165,7 +1170,13 @@ void DigikamApp::initGui()
     d->imagePreviewAction->setEnabled(false);
     d->imageLightTableAction->setEnabled(false);
     d->imageAddLightTableAction->setEnabled(false);
-    d->imageScanForFacesAction->setEnabled(false);
+
+    if (SystemSettings(qApp->applicationName()).enableFaceEngine)
+    {
+        d->imageScanForFacesAction->setEnabled(false);
+        d->imageRecognizeFacesAction->setEnabled(false);
+    }
+
     d->imageRemoveAllFacesAction->setEnabled(false);
     d->imageFindSimilarAction->setEnabled(false);
     d->imageRenameAction->setEnabled(false);
