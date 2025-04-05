@@ -866,6 +866,13 @@ void DigikamApp::slotSelectionChanged(int selectionCount)
         d->imageScanForFacesAction->setEnabled(selectionCount > 0);
         d->imageRecognizeFacesAction->setEnabled(selectionCount > 0);
     }
+    else
+    {
+        d->imageScanForFacesAction->setEnabled(false);
+        d->imageScanForFacesAction->setVisible(false);
+        d->imageRecognizeFacesAction->setEnabled(false);
+        d->imageRecognizeFacesAction->setVisible(false);
+    }
     d->imageRemoveAllFacesAction->setEnabled(selectionCount > 0);
     d->imageFindSimilarAction->setEnabled(selectionCount == 1);
     d->imageRenameAction->setEnabled(selectionCount > 0);

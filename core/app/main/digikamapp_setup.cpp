@@ -461,8 +461,8 @@ void DigikamApp::setupActions()
 
     // hide face actions if face engine is not enabled
 
-    if (SystemSettings(qApp->applicationName()).enableFaceEngine)
-    {
+//     if (SystemSettings(qApp->applicationName()).enableFaceEngine)
+//     {
         d->imageScanForFacesAction = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),
                                                                   i18nc("@action: setup", "Scan for Faces"), this);
         connect(d->imageScanForFacesAction, SIGNAL(triggered()), d->view, SLOT(slotImageScanForFaces()));
@@ -472,7 +472,7 @@ void DigikamApp::setupActions()
                                                                     i18nc("@action: setup", "Recognize Faces"), this);
         connect(d->imageRecognizeFacesAction, SIGNAL(triggered()), d->view, SLOT(slotImageRecognizeFaces()));
         ac->addAction(QLatin1String("image_recognize_faces"), d->imageRecognizeFacesAction);
-    }
+//     }
 
     d->imageRemoveAllFacesAction = new QAction(QIcon::fromTheme(QLatin1String("list-remove-user")),
                                                i18nc("@action: setup", "Remove all Faces"), this);
