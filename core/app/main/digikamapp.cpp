@@ -864,20 +864,10 @@ void DigikamApp::slotSelectionChanged(int selectionCount)
 
     // show/shide face actions depending on the settings
 
-    if (SystemSettings(qApp->applicationName()).enableFaceEngine)
-    {
-        d->imageScanForFacesAction->setEnabled(selectionCount > 0);
-        d->imageScanForFacesAction->setVisible(true);
-        d->imageRecognizeFacesAction->setEnabled(selectionCount > 0);
-        d->imageRecognizeFacesAction->setVisible(true);
-    }
-    else
-    {
-        d->imageScanForFacesAction->setEnabled(false);
-        d->imageScanForFacesAction->setVisible(false);
-        d->imageRecognizeFacesAction->setEnabled(false);
-        d->imageRecognizeFacesAction->setVisible(false);
-    }
+    d->imageScanForFacesAction->setEnabled(selectionCount > 0);
+    d->imageScanForFacesAction->setVisible(SystemSettings(qApp->applicationName()).enableFaceEngine);
+    d->imageRecognizeFacesAction->setEnabled(selectionCount > 0);
+    d->imageRecognizeFacesAction->setVisible(SystemSettings(qApp->applicationName()).enableFaceEngine);
 
     d->imageRemoveAllFacesAction->setEnabled(selectionCount > 0);
     d->imageFindSimilarAction->setEnabled(selectionCount == 1);
