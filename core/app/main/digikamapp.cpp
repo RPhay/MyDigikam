@@ -861,10 +861,15 @@ void DigikamApp::slotSelectionChanged(int selectionCount)
 
     d->imagePreviewAction->setEnabled(hasAtLeastCurrent);
     d->imageViewAction->setEnabled(hasAtLeastCurrent);
+
+    // show/shide face actions depending on the settings
+
     if (SystemSettings(qApp->applicationName()).enableFaceEngine)
     {
         d->imageScanForFacesAction->setEnabled(selectionCount > 0);
+        d->imageScanForFacesAction->setVisible(true);
         d->imageRecognizeFacesAction->setEnabled(selectionCount > 0);
+        d->imageRecognizeFacesAction->setVisible(true);
     }
     else
     {
@@ -873,6 +878,7 @@ void DigikamApp::slotSelectionChanged(int selectionCount)
         d->imageRecognizeFacesAction->setEnabled(false);
         d->imageRecognizeFacesAction->setVisible(false);
     }
+
     d->imageRemoveAllFacesAction->setEnabled(selectionCount > 0);
     d->imageFindSimilarAction->setEnabled(selectionCount == 1);
     d->imageRenameAction->setEnabled(selectionCount > 0);
