@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-05 01:59+0000\n"
-"PO-Revision-Date: 2025-04-03 08:29+0300\n"
+"PO-Revision-Date: 2025-04-05 14:31+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2991,12 +2991,10 @@ msgstr ""
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:168
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Color-Managed View is disabled."
+#, kde-format
 msgctxt "@info"
 msgid "Face engine is disabled"
-msgstr "Перегляд з керуванням кольорами вимкнено."
+msgstr "Рушій обробки облич вимкнено"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:204
 #, kde-format

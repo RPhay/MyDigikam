@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-05 01:59+0000\n"
-"PO-Revision-Date: 2025-04-03 07:14+0200\n"
+"PO-Revision-Date: 2025-04-05 08:05+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -3005,12 +3005,10 @@ msgstr "Uporabite ta gumb, da preiščete obraze v izbranih albumih"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:168
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Color-Managed View is disabled."
+#, kde-format
 msgctxt "@info"
 msgid "Face engine is disabled"
-msgstr "Upravljan pregled barv je onemogočen."
+msgstr "Stroj za obraze je onemogočen."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:204
 #, kde-format

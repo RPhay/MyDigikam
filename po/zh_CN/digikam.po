@@ -2894,12 +2894,10 @@ msgstr "点击此按钮以扫描所选相册中的人脸。"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:168
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Color-Managed View is disabled."
+#, kde-format
 msgctxt "@info"
 msgid "Face engine is disabled"
-msgstr "色彩管理显示已禁用。"
+msgstr ""
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:204
 #, kde-format

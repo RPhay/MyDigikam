@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-05 01:59+0000\n"
-"PO-Revision-Date: 2025-04-03 09:54+0200\n"
+"PO-Revision-Date: 2025-04-05 11:35+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2955,12 +2955,10 @@ msgstr ""
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:168
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Color-Managed View is disabled."
+#, kde-format
 msgctxt "@info"
 msgid "Face engine is disabled"
-msgstr "La vista gestionada del color no està activa."
+msgstr "El motor de cares està desactivat"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:204
 #, kde-format

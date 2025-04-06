@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-05 01:59+0000\n"
-"PO-Revision-Date: 2025-03-27 08:43+0100\n"
+"PO-Revision-Date: 2025-04-04 18:01+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -3055,10 +3055,7 @@ msgstr ""
 "boîte de dialogue d'aide dans le panneau latéral inférieur gauche."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:259
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face recognition is aborted, because there are no identities to "
-#| "recognize. Please add new identities."
+#, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
@@ -62057,17 +62054,14 @@ msgid "Duplicate found: %1"
 msgstr "Doublon trouvé : %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:211
-#, fuzzy, kde-format
-#| msgid ""
-#| "A face recognition task is already running. Only one task can be running "
-#| "at a time. Please wait until it is finished."
+#, kde-format
 msgid ""
 "A face scan is already running. Only one face task can be running at a time. "
 "Please wait until it is finished."
 msgstr ""
-"Une tâche de reconnaissance faciale est déjà en cours d'exécution. Une seule "
-"tâche à la fois ne peut d'exécuter. Veuillez attendre jusqu'à ce qu'elle se "
-"termine."
+"Une analyse de reconnaissance faciale est déjà en cours d'exécution. Une "
+"seule tâche d'analyse ne peut s'exécuter à la fois. Veuillez attendre "
+"jusqu'à ce qu'elle se termine."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:336
 #, kde-format
@@ -67474,11 +67468,9 @@ msgid "Detect faces in newly added images"
 msgstr "Détecter les visages dans les images nouvellement ajoutées"
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Benchmark face recognition"
+#, kde-format
 msgid "Background face recognition scan"
-msgstr "Tester la reconnaissance des visages"
+msgstr "Analyse de reconnaissance faciale en arrière-plan"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format
@@ -67486,6 +67478,10 @@ msgid ""
 "Set this option to automatically start a background face recognition scan\n"
 "when a new face is tagged. This will make the tagging process easier."
 msgstr ""
+"Définissez cette option pour démarrer automatiquement une analyse de "
+"reconnaissance faciale en arrière-plan\n"
+"lorsqu'un nouveau visage est étiqueté. Cela facilitera le processus "
+"l’étiquettage."
 
 #: core/utilities/setup/misc/setupmisc.cpp:88
 #, kde-format
