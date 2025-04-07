@@ -2897,7 +2897,7 @@ msgstr "点击此按钮以扫描所选相册中的人脸。"
 #, kde-format
 msgctxt "@info"
 msgid "Face engine is disabled"
-msgstr ""
+msgstr "人脸引擎已禁用"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:204
 #, kde-format
