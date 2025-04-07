@@ -130,7 +130,7 @@ BUGFIXES:
 113 ==> 398721 - No results if an album (directory) is selected.
 114 ==> 465575 - Face Recognition - Suggest Names
 115 ==> 502397 - Not possible to reduce the width of the label field in digiKam.
-116 ==> 
+116 ==> 502404 - File creation and modification dates.
 117 ==>
 118 ==>
 119 ==>
