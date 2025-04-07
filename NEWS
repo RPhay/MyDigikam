@@ -132,7 +132,7 @@ BUGFIXES:
 115 ==> 502397 - Not possible to reduce the width of the label field in digiKam.
 116 ==> 502404 - File creation and modification dates.
 117 ==> 502515 - Cannot enter Proxy authentication data.
-118 ==> 
+118 ==> 502524 - Assign a suggested face by dragging to the same face.
 119 ==> 
 120 ==> 
 121 ==> 
