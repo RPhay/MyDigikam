@@ -31,22 +31,22 @@ apps:
       - hardware-observe
       - browser-support
     environment:
-      DK_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins/digikam"
+      DK_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins/digikam;$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/marble/plugins;$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins;$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins/digikam/marble$SNAP/kf6/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins"
       DICPATH: "$SNAP/usr/share/hunspell"
       PERL5LIB: "$SNAP/usr/share/perl5"
-      LD_LIBRARY_PATH: $SNAP/ffmpeg-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/kde-qt6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libproxy${LD_LIBRARY_PATH}
-      PATH: $SNAP/ffmpeg-platform/usr/bin:$SNAP/usr/bin${PATH}
+      LD_LIBRARY_PATH: "$SNAP/ffmpeg-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:$SNAP/kf6/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:$LD_LIBRARY_PATH"
+      PATH: $SNAP/ffmpeg-platform/usr/bin:$SNAP/usr/bin:$PATH
       ALSA_CONFIG_PATH: "$SNAP/kf6/etc/asound.conf"
       QT_MEDIA_BACKEND: "ffmpeg"
-      QT_PLUGIN_PATH: "$QT_PLUGIN_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/marble/plugins"
+      QT_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/marble/plugins:$SNAP/usr/lib/x86_64-linux-gnu/plugins:/snap/kf6-core24/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins"
       QTWEBENGINE_DISABLE_SANDBOX: 1
-      XDG_DATA_DIRS: "$XDG_DATA_DIRS:$SNAP/usr/share"
-      XDG_CONFIG_DIRS: "$XDG_CONFIG_DIRS:$SNAP/etc/xdg"
 layout:
   /usr/share/marble:
     symlink: $SNAP/usr/share/marble
   /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/marble:
     symlink: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/marble
+  /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins/digikam:
+    symlink: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins/digikam
 plugs:
   hunspell-dictionaries:
     content: hunspell-dictionaries
@@ -67,7 +67,7 @@ slots:
 parts:
   marble:
     source: https://invent.kde.org/education/marble.git
-    source-branch: release/24.12
+    source-branch: release/25.04
     plugin: cmake
     build-packages:
       - libpulse0
@@ -93,40 +93,202 @@ parts:
       - -DCMAKE_INSTALL_LIBDIR=lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
       - --log-level=STATUS
       - -DCMAKE_LIBRARY_PATH=lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
+      - -DCMAKE_FIND_ROOT_PATH="/snap/ffmpeg-2404-sdk/current;/snap/kde-qt6-core24-sdk/current;/snap/kf6-core24-sdk/current"
     override-build: |
       craftctl default
       rsync -a --ignore-existing $CRAFT_PART_INSTALL/ /
     build-environment: &build-environment
-      - CMAKE_FIND_ROOT_PATH: "${CMAKE_FIND_ROOT_PATH}:/snap/ffmpeg-2404-sdk/current"
       - PKG_CONFIG_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/ffmpeg-2404-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig"
       - LD_LIBRARY_PATH: "/snap/mesa-2404/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/ffmpeg-2404-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/kde-qt6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libproxy:$LD_LIBRARY_PATH"
-      - DICPATH: "$SNAP/usr/share/hunspell"
+      - DICPATH: "$CRAFT_STAGE/usr/share/hunspell"
     prime:
       - -usr/bin/rsync
+  opencv:
+    source: https://github.com/opencv/opencv.git
+    source-tag: 4.11.0
+    plugin: cmake
+    build-packages:
+      - zlib1g-dev
+      - libtiff-dev
+      - libopenjp2-7-dev
+      - libjpeg8-dev
+      - libpng-dev
+      - libopenexr-dev
+      - libwebp-dev
+      - libbtbb-dev
+      - libippcp-dev
+      - libva-dev
+      - rsync
+    stage-packages:
+      - zlib1g
+      - libtiff6
+      - libopenjp2-7
+      - libjpeg8
+      - libpng16-16t64
+      - libopenexr-3-1-30
+      - libwebp7
+      - libbtbb1
+      - libippcp11
+    cmake-generator: Ninja
+    cmake-parameters:
+      - -DCMAKE_INSTALL_PREFIX=/usr
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DQT_MAJOR_VERSION=6
+      - -DENABLE_QT5=OFF
+      - -DENABLE_QT6=ON
+      - -DBUILD_TESTING=OFF
+      - -DCMAKE_INSTALL_SYSCONFDIR=/etc
+      - -DCMAKE_INSTALL_LOCALSTATEDIR=/var
+      - -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON
+      - -DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF
+      - -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON
+      - -DCMAKE_INSTALL_RUNSTATEDIR=/run
+      - -DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON
+      - -DCMAKE_VERBOSE_MAKEFILE=ON
+      - -DCMAKE_INSTALL_LIBDIR=lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
+      - --log-level=STATUS
+      - -DCMAKE_LIBRARY_PATH=lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
+      - -DCMAKE_FIND_ROOT_PATH="/snap/ffmpeg-2404-sdk/current;/snap/kde-qt6-core24-sdk/current;/snap/kf6-core24-sdk/current"
+      - -DBUILD_JASPER=ON
+      - -DBUILD_ITT=ON
+    override-build: |
+      craftctl default
+      rsync -a --ignore-existing $CRAFT_PART_INSTALL/ /
+    build-environment: *build-environment
+    prime:
+      - -usr/bin/rsync
+  libsane:
+    source: https://gitlab.com/sane-project/backends.git
+    source-type: git
+    source-tag: '1.2.1'
+    source-depth: 1
+    plugin: autotools
+    autotools-configure-parameters:
+      - --prefix=/usr
+      - --sysconfdir=/etc
+      - --with-api-spec=no
+      - --with-avahi
+    build-packages:
+      # Everything of the build dependencies of the sane-backends
+      # Debian package ...
+      - libavahi-client-dev
+      - libcups2-dev
+      - libcurl4-gnutls-dev
+      - libgphoto2-dev
+      - libieee1284-3-dev
+      - libjpeg-dev
+      - libltdl3-dev
+      - libpoppler-glib-dev
+      - libsnmp-dev
+      - libtiff-dev
+      - libusb-1.0-0-dev
+      - libxml2-dev
+      - python3-minimal
+      - autoconf-archive
+      - rsync
+    stage-packages:
+      - libexif12
+      - libgphoto2-6
+      - libgphoto2-port12
+      - libsnmp40
+    organize:
+      snap/skanpage/current/usr: usr
+    override-build: |
+      craftctl default
+      rsync -a --ignore-existing $CRAFT_PART_INSTALL/ /
+  libsane-airscan:
+    after: [libsane]
+    source: https://github.com/alexpevzner/sane-airscan
+    source-type: git
+    source-tag: 0.99.27
+    source-depth: 1
+    plugin: make
+    make-parameters:
+      - prefix=/usr
+      - sysconfdir=/etc
+      - libdir=/usr/lib
+    build-packages:
+      # Everything of the build dependencies of the sane-airscan
+      # Debian package ...
+      - libavahi-client-dev
+      - libavahi-common-dev
+      - libjpeg-turbo8-dev
+      - libpng-dev
+      - libxml2-dev
+      - libgnutls28-dev
+  ksanecore:
+    after:
+      - libsane
+      - libsane-airscan
+    plugin: cmake
+    source: https://invent.kde.org/libraries/ksanecore.git
+    source-branch: master
+    cmake-parameters:
+      - -DCMAKE_INSTALL_PREFIX=/usr
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DQT_MAJOR_VERSION=6
+      - -DBUILD_WITH_QT6=ON
+      - -DBUILD_TESTING=OFF
+      - -DCMAKE_INSTALL_SYSCONFDIR=/etc
+      - -DCMAKE_INSTALL_LOCALSTATEDIR=/var
+      - -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON
+      - -DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF
+      - -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON
+      - -DCMAKE_INSTALL_RUNSTATEDIR=/run
+      - -DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON
+      - -DCMAKE_VERBOSE_MAKEFILE=ON
+      - -DCMAKE_INSTALL_LIBDIR=lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
+      - --log-level=STATUS
+      - -DCMAKE_LIBRARY_PATH=lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
+    build-environment: *build-environment
+  libksane:
+    after:
+      - ksanecore
+    plugin: cmake
+    source: https://invent.kde.org/graphics/libksane.git
+    source-branch: master
+    cmake-parameters:
+      - -DCMAKE_INSTALL_PREFIX=/usr
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DQT_MAJOR_VERSION=6
+      - -DBUILD_WITH_QT6=ON
+      - -DBUILD_TESTING=OFF
+      - -DCMAKE_INSTALL_SYSCONFDIR=/etc
+      - -DCMAKE_INSTALL_LOCALSTATEDIR=/var
+      - -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON
+      - -DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF
+      - -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON
+      - -DCMAKE_INSTALL_RUNSTATEDIR=/run
+      - -DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON
+      - -DCMAKE_VERBOSE_MAKEFILE=ON
+      - -DCMAKE_INSTALL_LIBDIR=lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
+      - --log-level=STATUS
+      - -DCMAKE_LIBRARY_PATH=lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
+    build-environment: *build-environment
   digikam:
     after:
       - marble
-      # - libva
+      - opencv
+      - libksane
     parse-info:
       - usr/share/metainfo/org.kde.digikam.appdata.xml
-    source: http://download.kde.org/stable/digikam/8.5.0/digiKam-8.5.0.tar.xz
+    source: http://download.kde.org/stable/digikam/8.6.0/digiKam-8.6.0.tar.xz
     plugin: cmake
     cmake-generator: Ninja
     cmake-parameters:
       - -DBUILD_WITH_QT6=ON
-      - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+      - -DCMAKE_BUILD_TYPE=Release
       - -DBUILD_TESTING=OFF
       - -DDIGIKAMSC_CHECKOUT_PO=OFF
       - -DDIGIKAMSC_CHECKOUT_DOC=OFF
       - -DDIGIKAMSC_COMPILE_PO=OFF
       - -DDIGIKAMSC_COMPILE_DOC=ON
       - -DDIGIKAMSC_COMPILE_DIGIKAM=ON
-      - -DENABLE_KFILEMETADATASUPPORT=OFF
       - -DENABLE_AKONADICONTACTSUPPORT=OFF
       - -DENABLE_MYSQLSUPPORT=ON
-      - -DENABLE_INTERNALMYSQL=OFF
+      - -DENABLE_INTERNALMYSQL=ON
       - -DENABLE_MEDIAPLAYER=ON
       - -DENABLE_LCMS2=ON
       - -DDIGIKAMSC_USE_PRIVATE_KDEGRAPHICS=OFF
@@ -135,27 +297,44 @@ parts:
       - -DENABLE_QWEBENGINE=ON
       - -DENABLE_FACESENGINE_DNN=ON
       - -DCMAKE_CXX_FLAGS="-DMAGICKCORE_HAVE_ISNAN=0"
+      - -DCMAKE_FIND_ROOT_PATH="$CRAFT_STAGE;/snap/ffmpeg-2404-sdk/current;/snap/kde-qt6-core24-sdk/current;/snap/kf6-core24-sdk/current"
     build-environment: *build-environment
     build-packages:
       - bison
+      - cmake
+      - doxygen
       - flex
-      - gphoto2
+      - glslang-dev
+      - graphviz
+      - libass-dev
       - libboost-graph-dev
       - libeigen3-dev
       - libexiv2-dev
       - libexpat1-dev
-      - libheif-dev
+      - libglu1-mesa-dev
+      - libgomp1
       - libgphoto2-dev
+      - libheif-dev
       - libjpeg-dev
+      - libjxl-dev
       - liblcms2-dev
       - liblensfun-dev
+      - liblqr-1-0-dev
       - libmagick++-dev
-      - libopencv-dev
+      - libopenal-dev
       - libpng-dev
+      - libpulse-dev
+      - libswscale-dev
       - libtiff-dev
-      - libusb-1.0-0-dev
-      - libxslt1-dev
+      - libuchardet-dev
+      - libibus-1.0-dev
+      - libva-dev
+      - libx265-dev
       - libxml2-dev
+      - libxslt1-dev
+      - libxv-dev
+      - pkg-config
+      - portaudio19-dev
       - libglib2.0-dev
       - libpulse0
       - libmariadb-dev
@@ -164,64 +343,27 @@ parts:
       - hunspell-dictionaries
       - ffmpeg-2404-sdk
     stage-packages:
-      - libexif12
-      - libgphoto2-6
-      - libgphoto2-port12
+      - libexiv2-27
+      - libexpat1
+      - libgomp1
+      - libgphoto2-6t64
+      - libgphoto2-port12t64
       - libheif1
-      - libimage-exiftool-perl
       - libjpeg8
-      - libjpeg-turbo8
+      - libjxl0.7
+      - liblcms2-2
       - liblensfun1
-      - libltdl7
-      - libtbb12
-      - libwlocate0
-      - libshp4
-      - libx265-199
-      - libxerces-c3.2
-      - liburiparser1
-      - libsz2
-      - libsuperlu6
-      - libspatialite8t64
-      - librttopo1
-      - libqhull-r8.0
-      - libprotobuf32t64
-      - libproj25
-      - libpoppler134
-      - libopencv-ml406t64
-      - libopencv-imgproc406t64
-      - libopencv-imgcodecs406t64
-      - libopencv-dnn406t64
-      - libopencv-core406t64
-      - libopencv-objdetect406t64
-      - libodbcinst2
-      - libnetcdf19
-      - libkmlengine1
-      - libkmldom1
-      - libkmlbase1
-      - libhdf5-103-1t64
-      - libhdf5-hl-100t64
-      - libgif7
-      - libgeotiff5
-      - libgeos-c1t64
-      - libgeos3.12.1t64
-      - libgdcm3.0
-      - libfyba0
-      - libfreexl1
-      - libfftw3-single3
-      - libcharls2
-      - libcfitsio10t64
-      - libblosc1
-      - libarpack2
-      - libaec0
-      - libmagickwand-6.q16-7t64
-      - libmagickcore-6.q16-7t64
       - libmagick++-6.q16-9t64
-      - libimath-3-1-29
-      - libogdi4.1
-      - libgdal34t64
-      - libarmadillo12
-      - libblas3
-      - kimageformat-plugins
+      - libmagickcore-6.q16-7t64
+      - libopengl0
+      - libpng16-16t64
+      - libswscale7
+      - libtiff6
+      - libx11-6
+      - libx265-199
+      - libxml2
+      - libxslt1.1
+      - zlib1g
       - libpulse0
       - mariadb-client
       - mariadb-server
