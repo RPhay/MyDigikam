@@ -284,25 +284,26 @@ if [ ! -f $INSTALL_PREFIX/bin/m4 ] ; then
 fi
 
 
-port install git -perl5_34      # See bug https://trac.macports.org/ticket/70547
+port install git
 port install cctools +xcode
 port install cmake
-port install ccache
 port install libpng
 port install jpeg
 port install tiff
 port install eigen3
 port install gettext
-port install vala -valadoc      # See bug https://trac.macports.org/ticket/70643
-port install wget +ssl
+#port install wget +ssl
 port install jasper
 port install lcms2
 port install expat
 port install libxml2
 port install libxslt
+port install py311-wheel
+port install py312-wheel
+port install py313-gobject3
+port install avahi +python27
 port install libical
 port install bison
-port install py38-lxml
 port install x265
 port install libde265
 port install libfdk-aac
@@ -319,38 +320,38 @@ port install libusb
 port install libgphoto2
 
 port install libheif +x265 -tests -rav1e -kvazaar
-port install ffmpeg6 +gpl2 +nonfree
+port install ffmpeg7 +gpl2 +nonfree
 
 if [ ! -f $INSTALL_PREFIX/bin/ffmpeg ] ; then
 
-    # Need to push ffmpeg6 from $INSTALL_PREFIX/libexec/ffmpeg6 to $INSTALL_PREFIX
-    cp -r $INSTALL_PREFIX/libexec/ffmpeg6/include $INSTALL_PREFIX
-    cp -r $INSTALL_PREFIX/libexec/ffmpeg6/lib     $INSTALL_PREFIX
-    mv $INSTALL_PREFIX/bin/ffmpeg6 $INSTALL_PREFIX/bin/ffmpeg
+    # Need to push ffmpeg7 from $INSTALL_PREFIX/libexec/ffmpeg7 to $INSTALL_PREFIX
+    cp -r $INSTALL_PREFIX/libexec/ffmpeg7/include $INSTALL_PREFIX
+    cp -r $INSTALL_PREFIX/libexec/ffmpeg7/lib     $INSTALL_PREFIX
+    mv $INSTALL_PREFIX/bin/ffmpeg7 $INSTALL_PREFIX/bin/ffmpeg
 
 fi
 
-port install qt$DK_QTVERSION-qtbase -examples -tests
-port install qt$DK_QTVERSION-qtdeclarative -examples -tests
+port install qt$DK_QTVERSION$MP_QTSUBVERSION-qtbase -examples -tests
+port install qt$DK_QTVERSION$MP_QTSUBVERSION-qtdeclarative -examples -tests
 
 if [[ $DK_QTVERSION = 5 ]] ; then
 
-    port install qt$DK_QTVERSION-qtmacextras -examples -tests
-    port install qt$DK_QTVERSION-qtquickcontrols -examples -tests
-    port install qt$DK_QTVERSION-qtxmlpatterns -examples -tests
+    port install qt$DK_QTVERSION$MP_QTSUBVERSION-qtmacextras -examples -tests
+    port install qt$DK_QTVERSION$MP_QTSUBVERSION-qtquickcontrols -examples -tests
+    port install qt$DK_QTVERSION$MP_QTSUBVERSION-qtxmlpatterns -examples -tests
 fi
 
-port install qt$DK_QTVERSION-qtscxml -examples -tests
-port install qt$DK_QTVERSION-qtspeech -examples -tests
-port install qt$DK_QTVERSION-qtsvg -examples -tests
-port install qt$DK_QTVERSION-qttools -examples -tests
-port install qt$DK_QTVERSION-qttranslations
-port install qt$DK_QTVERSION-qtimageformats -examples -tests
-port install qt$DK_QTVERSION-qtmultimedia -examples -tests
-port install qt$DK_QTVERSION-qtnetworkauth -examples -tests
-port install qt$DK_QTVERSION-sqlite-plugin
-port install qt$DK_QTVERSION-mysql-plugin $MP_MARIADB_VARIANT
-port install qt$DK_QTVERSION-qtwebengine -examples -tests
+port install qt$DK_QTVERSION$MP_QTSUBVERSION-qtscxml -examples -tests
+#port install qt$DK_QTVERSION$MP_QTSUBVERSION-qtspeech -examples -tests
+port install qt$DK_QTVERSION$MP_QTSUBVERSION-qtsvg -examples -tests
+port install qt$DK_QTVERSION$MP_QTSUBVERSION-qttools -examples -tests
+port install qt$DK_QTVERSION$MP_QTSUBVERSION-qttranslations
+port install qt$DK_QTVERSION$MP_QTSUBVERSION-qtimageformats -examples -tests
+port install qt$DK_QTVERSION$MP_QTSUBVERSION-qtmultimedia -examples -tests
+port install qt$DK_QTVERSION$MP_QTSUBVERSION-qtnetworkauth -examples -tests
+port install qt$DK_QTVERSION$MP_QTSUBVERSION-sqlite-plugin
+port install qt$DK_QTVERSION$MP_QTSUBVERSION-mysql-plugin $MP_MARIADB_VARIANT
+port install qt$DK_QTVERSION$MP_QTSUBVERSION-qtwebengine -examples -tests
 
 port install boost
 

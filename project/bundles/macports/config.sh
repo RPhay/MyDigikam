@@ -94,6 +94,8 @@ DK_BUILDTEMP=~/dktemp
 #DK_QTVERSION="5"
 DK_QTVERSION="6"
 
+MP_QTSUBVERSION="8"
+
 # Mariadb version to install for Qt SQL plugin.
 DK_MARIADB_VERSION="10.11"
 
