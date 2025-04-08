@@ -16,7 +16,7 @@
 
 #include "editorwindow_p.h"
 #include "autorotator.h"
-
+#include "systemsettings.h"
 namespace Digikam
 {
 
@@ -529,13 +529,16 @@ void EditorWindow::setupStandardActions()
     ac->setDefaultShortcut(d->rotateRightAction, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_Right));
     d->rotateRightAction->setEnabled(false);
 
-    d->rotateAutoAction = new QAction(QIcon::fromTheme(QLatin1String("image-rotate-right-symbolic")),
-                                      i18nc("@action", "Auto-Rotate"), this);
-    connect(d->rotateAutoAction, SIGNAL(triggered()), m_canvas, SLOT(slotRotateAuto()));
-    connect(d->rotateAutoAction, SIGNAL(triggered()), this, SLOT(slotRotateAutoIntoQue()));
-    ac->addAction(QLatin1String("editorwindow_transform_rotateauto"), d->rotateAutoAction);
-    ac->setDefaultShortcut(d->rotateAutoAction, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_Up));
-    d->rotateAutoAction->setEnabled(false);
+    if (SystemSettings(qApp->applicationName()).enableAIAutoTools)
+    {
+        d->rotateAutoAction = new QAction(QIcon::fromTheme(QLatin1String("image-rotate-right-symbolic")),
+                                                           i18nc("@action", "Auto-Rotate"), this);
+        connect(d->rotateAutoAction, SIGNAL(triggered()), m_canvas, SLOT(slotRotateAuto()));
+        connect(d->rotateAutoAction, SIGNAL(triggered()), this, SLOT(slotRotateAutoIntoQue()));
+        ac->addAction(QLatin1String("editorwindow_transform_rotateauto"), d->rotateAutoAction);
+        ac->setDefaultShortcut(d->rotateAutoAction, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_Up));
+        d->rotateAutoAction->setEnabled(false);
+    }
 
     m_showBarAction = thumbBar()->getToggleAction(this);
     ac->addAction(QLatin1String("editorwindow_showthumbs"), m_showBarAction);
@@ -1015,7 +1018,10 @@ void EditorWindow::toggleStandardActions(bool val)
     m_lastAction->setEnabled(val);
     d->rotateLeftAction->setEnabled(val);
     d->rotateRightAction->setEnabled(val);
-    d->rotateAutoAction->setEnabled(val);
+    if (d->rotateAutoAction)
+    {
+        d->rotateAutoAction->setEnabled(val);
+    }
     d->flipHorizAction->setEnabled(val);
     d->flipVertAction->setEnabled(val);
     m_fileDeleteAction->setEnabled(val);
@@ -2593,7 +2599,10 @@ void EditorWindow::setupSelectToolsAction()
 
         actionModel->addAction(d->rotateLeftAction,  transformCategory);
         actionModel->addAction(d->rotateRightAction, transformCategory);
-        actionModel->addAction(d->rotateAutoAction,  transformCategory);
+        if (d->rotateAutoAction)
+        {
+            actionModel->addAction(d->rotateAutoAction,  transformCategory);
+        }
         actionModel->addAction(d->flipHorizAction,   transformCategory);
         actionModel->addAction(d->flipVertAction,    transformCategory);
         actionModel->addAction(d->cropAction,        transformCategory);

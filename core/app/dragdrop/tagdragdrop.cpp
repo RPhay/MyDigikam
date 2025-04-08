@@ -209,9 +209,10 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
                 // here we set a new thumbnail
 
-                if      ((imageIDs.size() == 1) && (destAlbum->id() == faceIds.first()))
+                if      (destAlbum->id() == faceIds.first())
                 {
-                    bool set = false;
+                    bool set     = false;
+                    bool confirm = false;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -224,21 +225,39 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 #endif
 
                     {
-                        set = true;
+                        confirm = true;
                     }
                     else
                     {
                         QMenu popMenu(view);
-                        QAction* const setAction = popMenu.addAction(i18n("Set as Tag Thumbnail"));
+                        QAction* setAction           = nullptr;
+                        QAction* const confirmAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
+                                                                         i18np("Confirm face name '%2' to Item",
+                                                                               "Confirm face name '%2' to Items",
+                                                                         selectedIndexes.size(),
+                                                                         targetName));
+
+                        if (selectedIndexes.size() == 1)
+                        {
+                            setAction = popMenu.addAction(i18n("Set as Tag Thumbnail"));
+                        }
+
                         popMenu.addSeparator();
                         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 
                         popMenu.setMouseTracking(true);
-                        QAction* const choice   = popMenu.exec(QCursor::pos());
-                        set                     = (choice == setAction);
+                        QAction* const choice = popMenu.exec(QCursor::pos());
+                        confirm               = (choice == confirmAction);
+                        set                   = (setAction && (choice == setAction));
                     }
 
-                    if (set)
+                    if      (confirm)
+                    {
+                        int dstId = destAlbum->parent() ? destAlbum->parent()->id() : -1;
+                        int tagId = FaceTags::getOrCreateTagForPerson(targetName, dstId);
+                        dview->confirmFaces(selectedIndexes, tagId);
+                    }
+                    else if (set)
                     {
                         QString errMsg;
                         AlbumManager::instance()->updateTAlbumIcon(destAlbum, QString(), imageIDs.first(), errMsg);
@@ -246,7 +265,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
                     return true;
                 }
-                else if (destAlbum->id() != faceIds.first())
+                else
                 {
                     //here we move assign a new face tag to the selected faces
 
@@ -384,7 +403,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
         else
         {
             QMenu popMenu(view);
-            QAction* setAction = nullptr;
+            QAction* setAction          = nullptr;
             QAction* const assignAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
                                                             i18n("Assign Tag(s) '%1' to Items",
                                                                  tagNames.join(QLatin1String(", "))));

@@ -13,6 +13,7 @@
  * ============================================================ */
 
 #include "digikamapp_p.h"
+#include "systemsettings.h"
 
 namespace Digikam
 {
@@ -459,12 +460,12 @@ void DigikamApp::setupActions()
     // -----------------------------------------------------------
 
     d->imageScanForFacesAction = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),
-                                             i18nc("@action: setup", "Scan for Faces"), this);
+                                                                    i18nc("@action: setup", "Scan for Faces"), this);
     connect(d->imageScanForFacesAction, SIGNAL(triggered()), d->view, SLOT(slotImageScanForFaces()));
     ac->addAction(QLatin1String("image_scan_for_faces"), d->imageScanForFacesAction);
 
     d->imageRecognizeFacesAction = new QAction(QIcon::fromTheme(QLatin1String("edit-find-user")),
-                                               i18nc("@action: setup", "Recognize Faces"), this);
+                                                                    i18nc("@action: setup", "Recognize Faces"), this);
     connect(d->imageRecognizeFacesAction, SIGNAL(triggered()), d->view, SLOT(slotImageRecognizeFaces()));
     ac->addAction(QLatin1String("image_recognize_faces"), d->imageRecognizeFacesAction);
 
@@ -1062,12 +1063,15 @@ void DigikamApp::setupImageTransformActions()
     d->imageRotateActionMenu = new QMenu(i18nc("@action: setup", "Rotate"), this);
     d->imageRotateActionMenu->setIcon(QIcon::fromTheme(QLatin1String("object-rotate-right")));
 
-    QAction* const autorotate = ac->addAction(QLatin1String("rotate_auto"));
-    autorotate->setText(i18nc("@action: auto-rotate image", "Auto-Rotate"));
-    ac->setDefaultShortcut(autorotate, Qt::CTRL | Qt::SHIFT | Qt::Key_Up);
-    connect(autorotate, SIGNAL(triggered(bool)),
-            this, SLOT(slotTransformAction()));
-    d->imageRotateActionMenu->addAction(autorotate);
+    if (SystemSettings(qApp->applicationName()).enableAIAutoTools)
+    {
+        QAction* const autorotate = ac->addAction(QLatin1String("rotate_auto"));
+        autorotate->setText(i18nc("@action: auto-rotate image", "Auto-Rotate"));
+        ac->setDefaultShortcut(autorotate, Qt::CTRL | Qt::SHIFT | Qt::Key_Up);
+        connect(autorotate, SIGNAL(triggered(bool)),
+                this, SLOT(slotTransformAction()));
+        d->imageRotateActionMenu->addAction(autorotate);
+    }
 
     QAction* const left = ac->addAction(QLatin1String("rotate_ccw"));
     left->setText(i18nc("@action: rotate image left", "Left"));
@@ -1162,6 +1166,7 @@ void DigikamApp::initGui()
     d->imageLightTableAction->setEnabled(false);
     d->imageAddLightTableAction->setEnabled(false);
     d->imageScanForFacesAction->setEnabled(false);
+    d->imageRecognizeFacesAction->setEnabled(false);
     d->imageRemoveAllFacesAction->setEnabled(false);
     d->imageFindSimilarAction->setEnabled(false);
     d->imageRenameAction->setEnabled(false);

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-03 01:55+0000\n"
-"PO-Revision-Date: 2025-04-02 17:59+0300\n"
+"POT-Creation-Date: 2025-04-05 01:59+0000\n"
+"PO-Revision-Date: 2025-04-05 14:31+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1337,32 +1337,32 @@ msgstr "Технічні параметри"
 msgid "<i>Binary Data</i>"
 msgstr "<i>Двійкові дані</i>"
 
-#: core/app/main/digikamapp.cpp:78
+#: core/app/main/digikamapp.cpp:79
 #, kde-format
 msgid "Initializing..."
 msgstr "Ініціалізація…"
 
-#: core/app/main/digikamapp.cpp:160 core/showfoto/main/showfoto.cpp:110
+#: core/app/main/digikamapp.cpp:161 core/showfoto/main/showfoto.cpp:110
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Завантажити додатки…"
 
-#: core/app/main/digikamapp.cpp:184 core/showfoto/main/showfoto.cpp:92
+#: core/app/main/digikamapp.cpp:185 core/showfoto/main/showfoto.cpp:92
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Перевірка сховища профілів ICC…"
 
-#: core/app/main/digikamapp.cpp:198
+#: core/app/main/digikamapp.cpp:199
 #, kde-format
 msgid "Clean up Database..."
 msgstr "Спорожнити базу даних…"
 
-#: core/app/main/digikamapp.cpp:220
+#: core/app/main/digikamapp.cpp:221
 #, kde-format
 msgid "Loading albums..."
 msgstr "Завантаження списку альбомів…"
 
-#: core/app/main/digikamapp.cpp:376
+#: core/app/main/digikamapp.cpp:377
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1374,7 +1374,7 @@ msgstr ""
 "цьому випадку, «Керування кольорами» буде вимкнено до того часу, коли ви "
 "розв'яжете цю проблему.</p>"
 
-#: core/app/main/digikamapp.cpp:432
+#: core/app/main/digikamapp.cpp:433
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1387,7 +1387,7 @@ msgstr ""
 "доступність виконуваного файла ExifTool у розділі метаданих.\n"
 "Повідомлення про помилку: %1"
 
-#: core/app/main/digikamapp.cpp:720 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:721 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1396,7 +1396,7 @@ msgstr[1] "Нічого не вибрано (%1 пункти)"
 msgstr[2] "Нічого не вибрано (%1 пунктів)"
 msgstr[3] "Нічого не вибрано (1 пункт)"
 
-#: core/app/main/digikamapp.cpp:726
+#: core/app/main/digikamapp.cpp:727
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1405,7 +1405,7 @@ msgstr[1] "Нічого не позначено (%1 [%2] записи)"
 msgstr[2] "Нічого не позначено (%1 [%2] записів)"
 msgstr[3] "Нічого не позначено (%1 [%2] запис)"
 
-#: core/app/main/digikamapp.cpp:731
+#: core/app/main/digikamapp.cpp:732
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1414,7 +1414,7 @@ msgstr[1] "Нічого не позначено (%1 записи. Зі згру�
 msgstr[2] "Нічого не позначено (%1 записів. Зі згрупованим записами: %2)"
 msgstr[3] "Нічого не позначено (%1 запис. Зі згрупованим записами: %2)"
 
-#: core/app/main/digikamapp.cpp:742
+#: core/app/main/digikamapp.cpp:743
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
@@ -1423,7 +1423,7 @@ msgstr[1] "Позначено %1 з %2 записів (%3 з %4)"
 msgstr[2] "Позначено %1 з %2 записів (%3 з %4)"
 msgstr[3] "Позначено один запис з %2 (%3 з %4)"
 
-#: core/app/main/digikamapp.cpp:755
+#: core/app/main/digikamapp.cpp:756
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
@@ -1432,7 +1432,7 @@ msgstr[1] "Позначено %1 з %2 [%3] записів (%4 з %5)"
 msgstr[2] "Позначено %1 з %2 [%3] записів (%4 з %5)"
 msgstr[3] "Позначено один запис з %2 [%3] (%4 з %5)"
 
-#: core/app/main/digikamapp.cpp:763
+#: core/app/main/digikamapp.cpp:764
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1441,7 +1441,7 @@ msgstr[1] "Позначено %1 із %2 записів. Загалом, зі з
 msgstr[2] "Позначено %1 із %2 записів. Загалом, зі згрупованими записами: %3"
 msgstr[3] "Позначено один запис з %2. Загалом, зі згрупованими записами: %3"
 
-#: core/app/main/digikamapp.cpp:771
+#: core/app/main/digikamapp.cpp:772
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
@@ -1450,7 +1450,7 @@ msgstr[1] "Позначено %1 з %2 [%3 з %4] записів (%5 з %6)"
 msgstr[2] "Позначено %1 з %2 [%3 з %4] записів (%5 з %6)"
 msgstr[3] "Позначено один запис з %2 [%3 з %4] (%5 з %6)"
 
-#: core/app/main/digikamapp.cpp:780
+#: core/app/main/digikamapp.cpp:781
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1459,22 +1459,22 @@ msgstr[1] "Позначено %1 із %2 записів. Зі згрупован
 msgstr[2] "Позначено %1 із %2 записів. Зі згрупованими записами: %3 із %4"
 msgstr[3] "Позначено один запис з %2. Зі згрупованими записами: %3 із %4"
 
-#: core/app/main/digikamapp.cpp:811
+#: core/app/main/digikamapp.cpp:812
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 з %2)"
 
-#: core/app/main/digikamapp.cpp:825
+#: core/app/main/digikamapp.cpp:826
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 з %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:829
+#: core/app/main/digikamapp.cpp:830
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 з %2. Загалом, зі згрупованими записами: %3)"
 
-#: core/app/main/digikamapp.cpp:840
+#: core/app/main/digikamapp.cpp:841
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
@@ -1483,7 +1483,7 @@ msgstr[1] "Приховано %1 записи"
 msgstr[2] "Приховано %1 записів"
 msgstr[3] "Приховано один запис"
 
-#: core/app/main/digikamapp.cpp:892
+#: core/app/main/digikamapp.cpp:900
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1492,7 +1492,7 @@ msgstr[1] "Записати метадані до позначених файл�
 msgstr[2] "Записати метадані до позначених файлів"
 msgstr[3] "Записати метадані до файла"
 
-#: core/app/main/digikamapp.cpp:894
+#: core/app/main/digikamapp.cpp:902
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1602,106 +1602,106 @@ msgid ""
 msgstr ""
 "Тека %1 вже є частиною шляху до альбому — її не можна імпортувати рекурсивно!"
 
-#: core/app/main/digikamapp_setup.cpp:24
+#: core/app/main/digikamapp_setup.cpp:25
 #, kde-format
 msgctxt "@info: setup"
 msgid "Initializing Main View..."
 msgstr "Започаткування головного вікна…"
 
-#: core/app/main/digikamapp_setup.cpp:135
+#: core/app/main/digikamapp_setup.cpp:136
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Back"
 msgstr "&Назад"
 
-#: core/app/main/digikamapp_setup.cpp:160
+#: core/app/main/digikamapp_setup.cpp:161
 #, kde-format
 msgctxt "@action: setup"
 msgid "Forward"
 msgstr "Вперед"
 
-#: core/app/main/digikamapp_setup.cpp:185
+#: core/app/main/digikamapp_setup.cpp:186
 #, kde-format
 msgctxt "@action: setup"
 msgid "Refresh"
 msgstr "Оновити"
 
-#: core/app/main/digikamapp_setup.cpp:186
+#: core/app/main/digikamapp_setup.cpp:187
 #, kde-format
 msgctxt "@info: setup"
 msgid "Refresh the current contents."
 msgstr "Оновити поточний вміст."
 
-#: core/app/main/digikamapp_setup.cpp:215
+#: core/app/main/digikamapp_setup.cpp:216
 #, kde-format
 msgctxt "@action: setup"
 msgid "&New..."
 msgstr "&Створити…"
 
-#: core/app/main/digikamapp_setup.cpp:216
+#: core/app/main/digikamapp_setup.cpp:217
 #, kde-format
 msgctxt "@info: setup"
 msgid "Creates a new empty Album in the collection."
 msgstr "Створює новий порожній альбом у збірці."
 
-#: core/app/main/digikamapp_setup.cpp:224
+#: core/app/main/digikamapp_setup.cpp:225
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Move to Album..."
 msgstr "&Пересунути до альбому…"
 
-#: core/app/main/digikamapp_setup.cpp:225
+#: core/app/main/digikamapp_setup.cpp:226
 #, kde-format
 msgctxt "@info: setup"
 msgid "Move selected images into an album."
 msgstr "Пересунути позначені зображення до альбому."
 
-#: core/app/main/digikamapp_setup.cpp:232
+#: core/app/main/digikamapp_setup.cpp:233
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Copy to..."
 msgstr "&Копіювати до…"
 
-#: core/app/main/digikamapp_setup.cpp:233
+#: core/app/main/digikamapp_setup.cpp:234
 #, kde-format
 msgctxt "@info: setup"
 msgid "Copy selected images to a target folder."
 msgstr "Копіювати позначені зображення до теки призначення."
 
-#: core/app/main/digikamapp_setup.cpp:240
+#: core/app/main/digikamapp_setup.cpp:241
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Album"
 msgstr "Вилучити альбом"
 
-#: core/app/main/digikamapp_setup.cpp:247
-#: core/app/main/digikamapp_setup.cpp:487
+#: core/app/main/digikamapp_setup.cpp:248
+#: core/app/main/digikamapp_setup.cpp:488
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rename..."
 msgstr "Перейменувати…"
 
-#: core/app/main/digikamapp_setup.cpp:255
-#: core/app/main/digikamapp_setup.cpp:307
+#: core/app/main/digikamapp_setup.cpp:256
+#: core/app/main/digikamapp_setup.cpp:308
 #, kde-format
 msgctxt "@action: setup"
 msgid "Properties"
 msgstr "Властивості"
 
-#: core/app/main/digikamapp_setup.cpp:256
+#: core/app/main/digikamapp_setup.cpp:257
 #, kde-format
 msgctxt "@info: setup"
 msgid "Edit album properties and collection information."
 msgstr "Змінити властивості альбому і інформацію щодо збірки."
 
-#: core/app/main/digikamapp_setup.cpp:264
+#: core/app/main/digikamapp_setup.cpp:265
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Files"
 msgstr "Запис метаданих до файлів"
 
-#: core/app/main/digikamapp_setup.cpp:265
-#: core/app/main/digikamapp_setup.cpp:441
+#: core/app/main/digikamapp_setup.cpp:266
+#: core/app/main/digikamapp_setup.cpp:442
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1711,14 +1711,14 @@ msgstr ""
 "Оновлює поля метаданих файлів поточного альбому вмістом бази даних digiKam "
 "(метадані файлів буде перезаписано даними з бази даних)."
 
-#: core/app/main/digikamapp_setup.cpp:275
+#: core/app/main/digikamapp_setup.cpp:276
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Files"
 msgstr "Повторно прочитати метадані з файлів"
 
-#: core/app/main/digikamapp_setup.cpp:276
-#: core/app/main/digikamapp_setup.cpp:452
+#: core/app/main/digikamapp_setup.cpp:277
+#: core/app/main/digikamapp_setup.cpp:453
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1729,86 +1729,86 @@ msgstr ""
 "Оновлює дані бази даних digiKam метаданим з файлів поточного альбому (дані з "
 "бази даних буде перезаписано даними з полів метаданих файлів)."
 
-#: core/app/main/digikamapp_setup.cpp:286
+#: core/app/main/digikamapp_setup.cpp:287
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open in File Manager"
 msgstr "Відкрити у менеджері файлів"
 
-#: core/app/main/digikamapp_setup.cpp:293
+#: core/app/main/digikamapp_setup.cpp:294
 #, kde-format
 msgctxt "@action: setup"
 msgid "Tag Manager"
 msgstr "Керування мітками"
 
-#: core/app/main/digikamapp_setup.cpp:300
+#: core/app/main/digikamapp_setup.cpp:301
 #, kde-format
 msgctxt "@action: new tag"
 msgid "N&ew..."
 msgstr "С&творити…"
 
-#: core/app/main/digikamapp_setup.cpp:314
+#: core/app/main/digikamapp_setup.cpp:315
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete"
 msgstr "Вилучити"
 
-#: core/app/main/digikamapp_setup.cpp:321
+#: core/app/main/digikamapp_setup.cpp:322
 #, kde-format
 msgctxt "@action: setup"
 msgid "Assign Tag"
 msgstr "Призначити мітку"
 
-#: core/app/main/digikamapp_setup.cpp:329
+#: core/app/main/digikamapp_setup.cpp:330
 #, kde-format
 msgctxt "@action: setup"
 msgid "Views"
 msgstr "Режими перегляду"
 
-#: core/app/main/digikamapp_setup.cpp:333
+#: core/app/main/digikamapp_setup.cpp:334
 #, kde-format
 msgctxt "@action: Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Мініатюри"
 
-#: core/app/main/digikamapp_setup.cpp:340
+#: core/app/main/digikamapp_setup.cpp:341
 #: core/app/views/stack/itemiconview_views.cpp:303
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
 msgstr "Перегляд"
 
-#: core/app/main/digikamapp_setup.cpp:350
+#: core/app/main/digikamapp_setup.cpp:351
 #, kde-format
 msgctxt "@action: Switch to map view"
 msgid "Map"
 msgstr "Карта"
 
-#: core/app/main/digikamapp_setup.cpp:359
+#: core/app/main/digikamapp_setup.cpp:360
 #, kde-format
 msgctxt "@action: Switch to table view"
 msgid "Table"
 msgstr "Таблиця"
 
-#: core/app/main/digikamapp_setup.cpp:368
+#: core/app/main/digikamapp_setup.cpp:369
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open..."
 msgstr "Відкрити…"
 
-#: core/app/main/digikamapp_setup.cpp:369
+#: core/app/main/digikamapp_setup.cpp:370
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item."
 msgstr "Відкрити позначений запис."
 
-#: core/app/main/digikamapp_setup.cpp:375
+#: core/app/main/digikamapp_setup.cpp:376
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open With Default Application"
 msgstr "Відкрити за допомогою типової програми"
 
-#: core/app/main/digikamapp_setup.cpp:376
+#: core/app/main/digikamapp_setup.cpp:377
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item with default assigned application."
@@ -1816,194 +1816,194 @@ msgstr ""
 "Відкрити позначений запис за допомогою типової програми, пов'язаної з "
 "записами цього типу."
 
-#: core/app/main/digikamapp_setup.cpp:382
+#: core/app/main/digikamapp_setup.cpp:383
 #, kde-format
 msgctxt "@action: setup"
 msgid "Image Editor"
 msgstr "Редактор зображень"
 
-#: core/app/main/digikamapp_setup.cpp:383
+#: core/app/main/digikamapp_setup.cpp:384
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open the image editor."
 msgstr "Відкрити у редакторі зображень."
 
-#: core/app/main/digikamapp_setup.cpp:390
+#: core/app/main/digikamapp_setup.cpp:391
 #, kde-format
 msgctxt "@action: setup"
 msgid "Light Table"
 msgstr "Стіл з підсвічуванням"
 
-#: core/app/main/digikamapp_setup.cpp:396
+#: core/app/main/digikamapp_setup.cpp:397
 #, kde-format
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
 msgstr "Покласти на стіл для просвічування"
 
-#: core/app/main/digikamapp_setup.cpp:397
+#: core/app/main/digikamapp_setup.cpp:398
 #, kde-format
 msgctxt "@info: setup"
 msgid "Place the selected items on the light table thumbbar."
 msgstr "Покласти вибрані записи на панель мініатюр стола з підсвічуванням."
 
-#: core/app/main/digikamapp_setup.cpp:403
+#: core/app/main/digikamapp_setup.cpp:404
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Light Table"
 msgstr "Додати на стіл з підсвічуванням"
 
-#: core/app/main/digikamapp_setup.cpp:404
+#: core/app/main/digikamapp_setup.cpp:405
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
 msgstr "Додати вибрані записи на панель перегляду на столі з підсвічуванням."
 
-#: core/app/main/digikamapp_setup.cpp:412
+#: core/app/main/digikamapp_setup.cpp:413
 #, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr "Керування чергою обробки"
 
-#: core/app/main/digikamapp_setup.cpp:418
+#: core/app/main/digikamapp_setup.cpp:419
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr "Додати до поточної черги"
 
-#: core/app/main/digikamapp_setup.cpp:419
+#: core/app/main/digikamapp_setup.cpp:420
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
 msgstr "Додати вибрані записи до поточної черги керування пакетною обробкою."
 
-#: core/app/main/digikamapp_setup.cpp:425
+#: core/app/main/digikamapp_setup.cpp:426
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr "Додати до нової черги"
 
-#: core/app/main/digikamapp_setup.cpp:426
+#: core/app/main/digikamapp_setup.cpp:427
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
 msgstr "Додати вибрані записи до нової черги керування пакетною обробкою."
 
-#: core/app/main/digikamapp_setup.cpp:433
+#: core/app/main/digikamapp_setup.cpp:434
 #, kde-format
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "Імпортувати"
 
-#: core/app/main/digikamapp_setup.cpp:440
+#: core/app/main/digikamapp_setup.cpp:441
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "Записати метадані до позначених файлів"
 
-#: core/app/main/digikamapp_setup.cpp:451
+#: core/app/main/digikamapp_setup.cpp:452
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "Повторно прочитати метадані з позначених файлів"
 
-#: core/app/main/digikamapp_setup.cpp:462
+#: core/app/main/digikamapp_setup.cpp:463
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "Шукати обличчя"
 
-#: core/app/main/digikamapp_setup.cpp:467
+#: core/app/main/digikamapp_setup.cpp:468
 #, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "Розпізнати обличчя"
 
-#: core/app/main/digikamapp_setup.cpp:472
+#: core/app/main/digikamapp_setup.cpp:473
 #, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
 msgstr "Вилучити усі обличчя"
 
-#: core/app/main/digikamapp_setup.cpp:479
+#: core/app/main/digikamapp_setup.cpp:480
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr "Знайти подібні…"
 
-#: core/app/main/digikamapp_setup.cpp:480
+#: core/app/main/digikamapp_setup.cpp:481
 #, kde-format
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr "Знайти подібні зображення за вибраним записом, як еталоном."
 
-#: core/app/main/digikamapp_setup.cpp:488
+#: core/app/main/digikamapp_setup.cpp:489
 #, kde-format
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "Змінити назву файла вибраного запису."
 
-#: core/app/main/digikamapp_setup.cpp:498
+#: core/app/main/digikamapp_setup.cpp:499
 #: core/utilities/imageeditor/editor/editorwindow.cpp:313
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "Пересунути до смітника"
 
-#: core/app/main/digikamapp_setup.cpp:512
+#: core/app/main/digikamapp_setup.cpp:513
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "Остаточно вилучити"
 
-#: core/app/main/digikamapp_setup.cpp:523
+#: core/app/main/digikamapp_setup.cpp:524
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "Остаточне вилучення без підтвердження"
 
-#: core/app/main/digikamapp_setup.cpp:531
+#: core/app/main/digikamapp_setup.cpp:532
 #, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "Пересування до смітника без підтвердження"
 
-#: core/app/main/digikamapp_setup.cpp:538
+#: core/app/main/digikamapp_setup.cpp:539
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "Впо&рядкувати альбоми"
 
-#: core/app/main/digikamapp_setup.cpp:539
+#: core/app/main/digikamapp_setup.cpp:540
 #, kde-format
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "Сортувати альбоми у перегляді деревом"
 
-#: core/app/main/digikamapp_setup.cpp:558
+#: core/app/main/digikamapp_setup.cpp:559
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "За теками"
 
-#: core/app/main/digikamapp_setup.cpp:559
+#: core/app/main/digikamapp_setup.cpp:560
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "За категорією"
 
-#: core/app/main/digikamapp_setup.cpp:560
+#: core/app/main/digikamapp_setup.cpp:561
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "За датою"
 
-#: core/app/main/digikamapp_setup.cpp:565
+#: core/app/main/digikamapp_setup.cpp:566
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "Включати піддерево альбому"
 
-#: core/app/main/digikamapp_setup.cpp:567
+#: core/app/main/digikamapp_setup.cpp:568
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
@@ -2011,13 +2011,13 @@ msgstr ""
 "Позначте цей пункт, щоб рекурсивно показувати всі підальбоми поточного "
 "альбому."
 
-#: core/app/main/digikamapp_setup.cpp:572
+#: core/app/main/digikamapp_setup.cpp:573
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "Включати піддерево мітки"
 
-#: core/app/main/digikamapp_setup.cpp:574
+#: core/app/main/digikamapp_setup.cpp:575
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -2027,26 +2027,26 @@ msgstr ""
 "Позначте цей пункт, щоб програма показувала всі зображення позначені заданою "
 "міткою і всіма з її підміток."
 
-#: core/app/main/digikamapp_setup.cpp:579
+#: core/app/main/digikamapp_setup.cpp:580
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr "Показати усі згруповані записи як відкриті"
 
-#: core/app/main/digikamapp_setup.cpp:581
+#: core/app/main/digikamapp_setup.cpp:582
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr ""
 "Позначте цей пункт, якщо усі згруповані записи слід показувати як відкриті."
 
-#: core/app/main/digikamapp_setup.cpp:587
+#: core/app/main/digikamapp_setup.cpp:588
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "&Впорядкування зображень"
 
-#: core/app/main/digikamapp_setup.cpp:588
+#: core/app/main/digikamapp_setup.cpp:589
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -2055,430 +2055,430 @@ msgstr ""
 "Параметр, за яким буде впорядковано зображення з одного альбому у перегляді "
 "мініатюр"
 
-#: core/app/main/digikamapp_setup.cpp:593
+#: core/app/main/digikamapp_setup.cpp:594
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "За назвою"
 
-#: core/app/main/digikamapp_setup.cpp:594
+#: core/app/main/digikamapp_setup.cpp:595
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "За шляхом"
 
-#: core/app/main/digikamapp_setup.cpp:595
+#: core/app/main/digikamapp_setup.cpp:596
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "За датою створення"
 
-#: core/app/main/digikamapp_setup.cpp:596
+#: core/app/main/digikamapp_setup.cpp:597
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "За датою внесення змін"
 
-#: core/app/main/digikamapp_setup.cpp:597
+#: core/app/main/digikamapp_setup.cpp:598
 #, kde-format
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "За розміром файла"
 
-#: core/app/main/digikamapp_setup.cpp:598
+#: core/app/main/digikamapp_setup.cpp:599
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "За оцінкою"
 
-#: core/app/main/digikamapp_setup.cpp:599
+#: core/app/main/digikamapp_setup.cpp:600
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "За розміром зображення"
 
-#: core/app/main/digikamapp_setup.cpp:600
+#: core/app/main/digikamapp_setup.cpp:601
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "За співвідношенням розмірів"
 
-#: core/app/main/digikamapp_setup.cpp:601
+#: core/app/main/digikamapp_setup.cpp:602
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "За типом обличчя"
 
-#: core/app/main/digikamapp_setup.cpp:602
+#: core/app/main/digikamapp_setup.cpp:603
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "За подібністю"
 
-#: core/app/main/digikamapp_setup.cpp:603
+#: core/app/main/digikamapp_setup.cpp:604
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "За додаванням вручну і назвою"
 
-#: core/app/main/digikamapp_setup.cpp:604
+#: core/app/main/digikamapp_setup.cpp:605
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "За додаванням вручну і датою"
 
-#: core/app/main/digikamapp_setup.cpp:649
+#: core/app/main/digikamapp_setup.cpp:650
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "&Порядок зображень"
 
-#: core/app/main/digikamapp_setup.cpp:650
+#: core/app/main/digikamapp_setup.cpp:651
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr ""
 "Визначає, як буде впорядковано зображення: за спаданням чи за зростанням."
 
-#: core/app/main/digikamapp_setup.cpp:654
-#: core/app/main/digikamapp_setup.cpp:713
+#: core/app/main/digikamapp_setup.cpp:655
+#: core/app/main/digikamapp_setup.cpp:714
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "За зростанням"
 
-#: core/app/main/digikamapp_setup.cpp:656
-#: core/app/main/digikamapp_setup.cpp:715
+#: core/app/main/digikamapp_setup.cpp:657
+#: core/app/main/digikamapp_setup.cpp:716
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "За спаданням"
 
-#: core/app/main/digikamapp_setup.cpp:666
+#: core/app/main/digikamapp_setup.cpp:667
 #, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "Окремі записи"
 
-#: core/app/main/digikamapp_setup.cpp:667
+#: core/app/main/digikamapp_setup.cpp:668
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr "Показані категорії зображень у перегляді мініатюр"
 
-#: core/app/main/digikamapp_setup.cpp:672
+#: core/app/main/digikamapp_setup.cpp:673
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "Плоский список"
 
-#: core/app/main/digikamapp_setup.cpp:673
+#: core/app/main/digikamapp_setup.cpp:674
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "За альбомами"
 
-#: core/app/main/digikamapp_setup.cpp:674
+#: core/app/main/digikamapp_setup.cpp:675
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "За форматом"
 
-#: core/app/main/digikamapp_setup.cpp:675
+#: core/app/main/digikamapp_setup.cpp:676
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "За обличчями"
 
-#: core/app/main/digikamapp_setup.cpp:676
+#: core/app/main/digikamapp_setup.cpp:677
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "За місяцями"
 
-#: core/app/main/digikamapp_setup.cpp:677
+#: core/app/main/digikamapp_setup.cpp:678
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Day"
 msgstr "За днем"
 
-#: core/app/main/digikamapp_setup.cpp:708
+#: core/app/main/digikamapp_setup.cpp:709
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Порядок відокремлення записів"
 
-#: core/app/main/digikamapp_setup.cpp:709
+#: core/app/main/digikamapp_setup.cpp:710
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "Порядок груп відокремлених записів"
 
-#: core/app/main/digikamapp_setup.cpp:730
+#: core/app/main/digikamapp_setup.cpp:731
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Вибрати все"
 
-#: core/app/main/digikamapp_setup.cpp:737
+#: core/app/main/digikamapp_setup.cpp:738
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "Скасувати вибір"
 
-#: core/app/main/digikamapp_setup.cpp:744
+#: core/app/main/digikamapp_setup.cpp:745
 #, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Інвертувати вибір"
 
-#: core/app/main/digikamapp_setup.cpp:752
+#: core/app/main/digikamapp_setup.cpp:753
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "Показати панель мініатюр"
 
-#: core/app/main/digikamapp_setup.cpp:783
+#: core/app/main/digikamapp_setup.cpp:784
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "Масштаб у 100%"
 
-#: core/app/main/digikamapp_setup.cpp:791
+#: core/app/main/digikamapp_setup.cpp:792
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "Вмістити у &вікно"
 
-#: core/app/main/digikamapp_setup.cpp:804
+#: core/app/main/digikamapp_setup.cpp:805
 #, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Перегляд з керуванням кольорами"
 
-#: core/app/main/digikamapp_setup.cpp:822
+#: core/app/main/digikamapp_setup.cpp:823
 #, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Пошук…"
 
-#: core/app/main/digikamapp_setup.cpp:830
+#: core/app/main/digikamapp_setup.cpp:831
 #, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Складний пошук…"
 
-#: core/app/main/digikamapp_setup.cpp:838
+#: core/app/main/digikamapp_setup.cpp:839
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "Знайти дублікати…"
 
-#: core/app/main/digikamapp_setup.cpp:848
+#: core/app/main/digikamapp_setup.cpp:849
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Перетворення бази даних…"
 
-#: core/app/main/digikamapp_setup.cpp:857
+#: core/app/main/digikamapp_setup.cpp:858
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Супровід…"
 
-#: core/app/main/digikamapp_setup.cpp:864
+#: core/app/main/digikamapp_setup.cpp:865
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Виявити нові зображення"
 
-#: core/app/main/digikamapp_setup.cpp:870
+#: core/app/main/digikamapp_setup.cpp:871
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "Додати фотоапарат вручну…"
 
-#: core/app/main/digikamapp_setup.cpp:881
+#: core/app/main/digikamapp_setup.cpp:882
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Завантаження фотоапаратів…"
 
-#: core/app/main/digikamapp_setup.cpp:917
+#: core/app/main/digikamapp_setup.cpp:918
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Вийти з режиму перегляду"
 
-#: core/app/main/digikamapp_setup.cpp:922
+#: core/app/main/digikamapp_setup.cpp:923
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Наступне зображення"
 
-#: core/app/main/digikamapp_setup.cpp:928
+#: core/app/main/digikamapp_setup.cpp:929
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Попереднє зображення"
 
-#: core/app/main/digikamapp_setup.cpp:934
+#: core/app/main/digikamapp_setup.cpp:935
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Перше зображення"
 
-#: core/app/main/digikamapp_setup.cpp:939
+#: core/app/main/digikamapp_setup.cpp:940
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Останнє зображення"
 
-#: core/app/main/digikamapp_setup.cpp:944
+#: core/app/main/digikamapp_setup.cpp:945
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Ви&різати"
 
-#: core/app/main/digikamapp_setup.cpp:946
+#: core/app/main/digikamapp_setup.cpp:947
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Вирізати позначене до буфера обміну даними"
 
-#: core/app/main/digikamapp_setup.cpp:965
+#: core/app/main/digikamapp_setup.cpp:966
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Редагувати заголовки"
 
-#: core/app/main/digikamapp_setup.cpp:970
+#: core/app/main/digikamapp_setup.cpp:971
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Редагувати коментарі"
 
-#: core/app/main/digikamapp_setup.cpp:975
+#: core/app/main/digikamapp_setup.cpp:976
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Показати пов'язані мітки"
 
-#: core/app/main/digikamapp_setup.cpp:984
+#: core/app/main/digikamapp_setup.cpp:985
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Встановити мітку орієнтації Exif"
 
-#: core/app/main/digikamapp_setup.cpp:987
+#: core/app/main/digikamapp_setup.cpp:988
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Звичайний"
 
-#: core/app/main/digikamapp_setup.cpp:989
+#: core/app/main/digikamapp_setup.cpp:990
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Віддзеркалене горизонтально"
 
-#: core/app/main/digikamapp_setup.cpp:991
+#: core/app/main/digikamapp_setup.cpp:992
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Повернуте догори низом"
 
-#: core/app/main/digikamapp_setup.cpp:993
+#: core/app/main/digikamapp_setup.cpp:994
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Віддзеркалене вертикально"
 
-#: core/app/main/digikamapp_setup.cpp:995
+#: core/app/main/digikamapp_setup.cpp:996
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Повернуте прав. / Гор. віддзерк."
 
-#: core/app/main/digikamapp_setup.cpp:997
+#: core/app/main/digikamapp_setup.cpp:998
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Повернуте праворуч"
 
-#: core/app/main/digikamapp_setup.cpp:999
+#: core/app/main/digikamapp_setup.cpp:1000
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Повернуте прав. / Верт. віддзерк."
 
-#: core/app/main/digikamapp_setup.cpp:1001
+#: core/app/main/digikamapp_setup.cpp:1002
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Повернуте ліворуч"
 
-#: core/app/main/digikamapp_setup.cpp:1062
+#: core/app/main/digikamapp_setup.cpp:1063
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Обертати"
 
-#: core/app/main/digikamapp_setup.cpp:1066
+#: core/app/main/digikamapp_setup.cpp:1069
 #, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "Автоматичний поворот"
 
-#: core/app/main/digikamapp_setup.cpp:1073
+#: core/app/main/digikamapp_setup.cpp:1077
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Ліворуч"
 
-#: core/app/main/digikamapp_setup.cpp:1080
+#: core/app/main/digikamapp_setup.cpp:1084
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Праворуч"
 
-#: core/app/main/digikamapp_setup.cpp:1090
+#: core/app/main/digikamapp_setup.cpp:1094
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Віддзеркалити"
 
-#: core/app/main/digikamapp_setup.cpp:1094
+#: core/app/main/digikamapp_setup.cpp:1098
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Горизонтально"
 
-#: core/app/main/digikamapp_setup.cpp:1101
+#: core/app/main/digikamapp_setup.cpp:1105
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Вертикально"
 
-#: core/app/main/digikamapp_setup.cpp:1111
+#: core/app/main/digikamapp_setup.cpp:1115
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Автоматичне обертання або віддзеркалення за даними Exif"
 
-#: core/app/main/digikamapp_setup.cpp:1122
+#: core/app/main/digikamapp_setup.cpp:1126
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Завантаження тем…"
 
-#: core/app/main/digikamapp_setup.cpp:1125
+#: core/app/main/digikamapp_setup.cpp:1129
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Теми"
 
-#: core/app/main/digikamapp_setup.cpp:1141
+#: core/app/main/digikamapp_setup.cpp:1145
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2571,21 +2571,21 @@ msgid "Main Tools"
 msgstr "Основні інструменти"
 
 #: core/app/main/digikamapp_tools.cpp:41
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2653
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2662
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Остаточна обробка"
 
 #: core/app/main/digikamapp_tools.cpp:61
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2682
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2691
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Експорт"
 
 #: core/app/main/digikamapp_tools.cpp:72
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2693
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2702
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -2957,8 +2957,8 @@ msgstr ""
 "якості зображень"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:129
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:148
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:130
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:149
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:274
 #, kde-format
 msgctxt "@info"
@@ -2975,13 +2975,13 @@ msgstr "Довідка"
 msgid "Labels"
 msgstr "Позначки"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:113
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:114
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:125
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Шукати обличчя у збірці"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:126
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
@@ -2989,7 +2989,14 @@ msgstr ""
 "Натисніть цю кнопку, щоб наказати програмі виконати пошук облич у позначених "
 "альбомах"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:190
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:168
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:169
+#, kde-format
+msgctxt "@info"
+msgid "Face engine is disabled"
+msgstr "Рушій обробки облич вимкнено"
+
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:204
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -2999,19 +3006,16 @@ msgstr ""
 "користуєтеся цим засобом, будь ласка, скористайтеся панеллю довідки у нижній "
 "лівій частині бічної панелі."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:245
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face recognition is aborted, because there are no identities to "
-#| "recognize. Please add new identities."
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:259
+#, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
 msgstr ""
-"Розпізнавання облич перервано, оскільки немає профілів для розпізнавання. "
-"Будь ласка, додайте профілі."
+"Сканування облич перервано, оскільки немає профілів для розпізнавання. Будь "
+"ласка, додайте профілі."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:265
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:279
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3023,28 +3027,28 @@ msgctxt "Advanced search images, access stored searches"
 msgid "Search"
 msgstr "Пошук"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:106
 #, kde-format
 msgid "Open Tag Manager"
 msgstr "Відкрити вікно керування мітками"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:106
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:107
 #, kde-format
 msgid "No Tags"
 msgstr "Без міток"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:107
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:108
 #, kde-format
 msgid "Existing Tags"
 msgstr "Наявні мітки"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:143
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:133
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:144
 #, kde-format
 msgid "Auto-tag Scan"
 msgstr "Сканування для автоміток"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:145
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:146
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
@@ -3052,12 +3056,12 @@ msgstr ""
 "Натисніть цю кнопку, щоб наказати програмі виконати пошук об'єктів для "
 "автоміток у позначених альбомах"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:317
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:325
 #, kde-format
 msgid "No Tags Album"
 msgstr "Альбом без міток"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:344
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:352
 #: core/libs/album/engine/album.cpp:553
 #: core/libs/album/manager/albummanager.cpp:182
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -9297,7 +9301,7 @@ msgstr "Використовувати керування кольорами д�
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:277
+#: core/utilities/maintenance/main/maintenancedlg.cpp:294
 #, kde-format
 msgid "Settings..."
 msgstr "Параметри…"
@@ -11502,7 +11506,7 @@ msgstr "Сканувати зображення"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1837
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1843
 #, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
@@ -11542,8 +11546,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2311
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2330
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2317
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2336
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
@@ -16136,7 +16140,7 @@ msgstr "Скоригувати час і дату"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
-#: core/utilities/imageeditor/editor/editorwindow.cpp:579
+#: core/utilities/imageeditor/editor/editorwindow.cpp:582
 #, kde-format
 msgctxt "@action"
 msgid "Cancel"
@@ -35255,21 +35259,21 @@ msgid "Workflow:"
 msgstr "Процес:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:106
-#: core/utilities/maintenance/main/maintenancedlg.cpp:207
+#: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Сканувати нові зображення"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:107
-#: core/utilities/maintenance/main/maintenancedlg.cpp:208
+#: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Сканувати усі зображення"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:108
-#: core/utilities/maintenance/main/maintenancedlg.cpp:209
+#: core/utilities/maintenance/main/maintenancedlg.cpp:210
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
@@ -43865,7 +43869,7 @@ msgid "Model/View Port of Image Editor Canvas"
 msgstr "Портування моделі та панелі перегляду полотна редактора зображень"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:225
-#: core/utilities/maintenance/main/maintenancedlg.cpp:255
+#: core/utilities/maintenance/main/maintenancedlg.cpp:272
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
 #, kde-format
 msgid "Image Quality Scanner"
@@ -50234,7 +50238,7 @@ msgid "Delete File"
 msgstr "Вилучити файл"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2357
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2363
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
@@ -52750,7 +52754,7 @@ msgstr "Додавання обличчя вручну"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
-#: core/utilities/imageeditor/editor/editorwindow.cpp:573
+#: core/utilities/imageeditor/editor/editorwindow.cpp:576
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -59145,13 +59149,13 @@ msgctxt "@action"
 msgid "Rotate Right"
 msgstr "Повернути праворуч"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:533
+#: core/utilities/imageeditor/editor/editorwindow.cpp:535
 #, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
 msgstr "Автоматичний поворот"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:565
+#: core/utilities/imageeditor/editor/editorwindow.cpp:568
 #: core/utilities/import/main/importui.cpp:551
 #: core/utilities/import/main/importui.cpp:794
 #, kde-format
@@ -59159,37 +59163,37 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "Попереднє зображення"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:595
+#: core/utilities/imageeditor/editor/editorwindow.cpp:598
 #, kde-format
 msgctxt "@label"
 msgid "No selection"
 msgstr "Нічого не вибрано"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:598
+#: core/utilities/imageeditor/editor/editorwindow.cpp:601
 #, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr "Інформація щодо поточної ділянки зображення"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:603
+#: core/utilities/imageeditor/editor/editorwindow.cpp:606
 #, kde-format
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "Інформація щодо розміру зображення"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1119
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1125
 #, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "Збереження зображення…"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1120
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1126
 #, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr "Будь ласка, зачекайте на завершення збереження зображення…"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1141
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1147
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59199,13 +59203,13 @@ msgstr ""
 "Ви перезаписуєте файл «%1»\n"
 "Ви справді хочете виконати цю дію?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1146
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1152
 #, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Попередження"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1256
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1262
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59215,7 +59219,7 @@ msgstr ""
 "Зображення «%1» було змінено.\n"
 "Хочете його зберегти?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1407
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1413
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59225,25 +59229,25 @@ msgstr ""
 "Зображення «%1» було змінено.\n"
 "Усі зміни буде втрачено."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1485
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1491
 #, kde-format
 msgctxt "@info"
 msgid "No selection"
 msgstr "Нічого не вибрано"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1505
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1511
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
 msgstr "Завантаження:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1533
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1539
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr "Не вдалося завантажити «%1»"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1575
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1581
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59255,13 +59259,13 @@ msgstr ""
 "кольорів виконано не буде. Будь ласка, перевірте налаштування керування "
 "кольорами у налаштуваннях digiKam."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1632
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1638
 #, kde-format
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "Збереження:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1654
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1660
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59275,32 +59279,32 @@ msgstr ""
 "до\n"
 "«%2»."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1787
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1793
 #, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "Не вдалося відкрити тимчасовий файл у теці «%1»: %2 (%3)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1983
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1989
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr "Не вдалося визначити формат для збереження даних зміненого зображення."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1990
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1996
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr "Не вдалося зберегти: адреса «%1» є некоректною."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2237
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2243
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 "Не вдалося зберегти файл «%1» з запропонованою назвою файла версії «%2»"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2312
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2318
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59310,32 +59314,32 @@ msgstr ""
 "Ви не маєте прав на запис до файла «%1». Ви впевнені, що хочете його "
 "перезаписати?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2331
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2337
 #, kde-format
 msgctxt "@info"
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Файл з назвою «%1» вже існує. Ви справді хочете його перезаписати?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2358
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2364
 #, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "Не вдалося перезаписати початковий файл"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2437
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2443
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "Перегляд з керуванням кольорами увімкнено."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2441
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2447
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "Перегляд з керуванням кольорами вимкнено."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2446
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2452
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59345,74 +59349,74 @@ msgstr ""
 "Керування кольорами не налаштовано, отже, Перегляд з керуванням кольорами не "
 "буде доступним."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2482
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2488
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "Індикатор недоекспонування увімкнено"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2483
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2489
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "Індикатор недоекспонування вимкнено"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2497
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2503
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "Індикатор переекспонування увімкнено"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2498
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2504
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "Індикатор переекспонування вимкнено"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2589
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2595
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Перетворення"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2609
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2618
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Декорування"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2620
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2629
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Ефекти"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2631
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2640
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Кольори"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2642
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2651
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Покращення"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2832
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2883
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2841
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2892
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr "Відкрити за допомогою"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2844
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2853
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Інше…"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2853
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2862
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
@@ -61450,41 +61454,41 @@ msgstr "&Ліва панель"
 msgid "&Right Panel"
 msgstr "&Права панель"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:38
+#: core/utilities/maintenance/main/maintenancedlg.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Супровід"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:53
+#: core/utilities/maintenance/main/maintenancedlg.cpp:54
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr "<qt><b>Виберіть дію, яку слід виконати для супроводу збірки</b></qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:59
+#: core/utilities/maintenance/main/maintenancedlg.cpp:60
 #, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "Обробити записи:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:61
+#: core/utilities/maintenance/main/maintenancedlg.cpp:62
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr "Останні збережені активні інструменти і параметри"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:62
+#: core/utilities/maintenance/main/maintenancedlg.cpp:63
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it is possible)"
 msgstr "Використовувати всі ядра процесора (якщо є можливість)"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:68
+#: core/utilities/maintenance/main/maintenancedlg.cpp:69
 #, kde-format
 msgid "Common Options"
 msgstr "Загальні параметри"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:77
+#: core/utilities/maintenance/main/maintenancedlg.cpp:78
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
@@ -61493,12 +61497,12 @@ msgstr ""
 "<qt>Немає варіантів<br/><i>Зауваження: цим інструментом можна обробляти лише "
 "збірку альбомів.</i></qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:80
+#: core/utilities/maintenance/main/maintenancedlg.cpp:81
 #, kde-format
 msgid "Scan for new items"
 msgstr "Виявити нові зображення"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:90
+#: core/utilities/maintenance/main/maintenancedlg.cpp:91
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
@@ -61513,27 +61517,27 @@ msgstr ""
 "тривалішою і може на певний час призупинити роботу digiKam з метою запобігти "
 "пошкодженню бази даних.</i></qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:95
+#: core/utilities/maintenance/main/maintenancedlg.cpp:96
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "Також ущільнити базу даних мініатюр."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:96
+#: core/utilities/maintenance/main/maintenancedlg.cpp:97
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr "Також ущільнити базу даних облич."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:97
+#: core/utilities/maintenance/main/maintenancedlg.cpp:98
 #, kde-format
 msgid "Also clean up the similarity database."
 msgstr "Також ущільнити базу даних подібності."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:98
+#: core/utilities/maintenance/main/maintenancedlg.cpp:99
 #, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "Розширене чищення і стискання усіх баз даних."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:99
+#: core/utilities/maintenance/main/maintenancedlg.cpp:100
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
@@ -61542,69 +61546,69 @@ msgstr ""
 "За допомогою цього пункту можна очистити (ущільнити) бази даних. Підтримку "
 "ущільнення передбачено для обох типів баз даних, SQLite і MySQL."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:106
+#: core/utilities/maintenance/main/maintenancedlg.cpp:107
 #, kde-format
 msgid "Perform database cleaning"
 msgstr "Виконати спорожнення бази даних"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:115
-#: core/utilities/maintenance/main/maintenancedlg.cpp:130
+#: core/utilities/maintenance/main/maintenancedlg.cpp:116
+#: core/utilities/maintenance/main/maintenancedlg.cpp:131
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Шукати змінені або не додані до каталогу записи (швидше)"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:121
+#: core/utilities/maintenance/main/maintenancedlg.cpp:122
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Заново створити мініатюри"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:136
+#: core/utilities/maintenance/main/maintenancedlg.cpp:137
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Заново створити відбитки"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:149
+#: core/utilities/maintenance/main/maintenancedlg.cpp:150
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr "Діапазон подібності (у відсотках): "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:169
+#: core/utilities/maintenance/main/maintenancedlg.cpp:170
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "Обмеження на дублікати:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:173
+#: core/utilities/maintenance/main/maintenancedlg.cpp:174
 #, kde-format
 msgid "No restriction"
 msgstr "Без обмежень"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:174
+#: core/utilities/maintenance/main/maintenancedlg.cpp:175
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Обмежити альбомом еталонного зображення"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:175
+#: core/utilities/maintenance/main/maintenancedlg.cpp:176
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Виключити альбом еталонного зображення"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:192
+#: core/utilities/maintenance/main/maintenancedlg.cpp:193
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Знайти дублікати зображень"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:203
+#: core/utilities/maintenance/main/maintenancedlg.cpp:204
 #, kde-format
 msgid "Faces data management: "
 msgstr "Керування даними щодо облич: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:212
+#: core/utilities/maintenance/main/maintenancedlg.cpp:213
 #, kde-format
 msgctxt "@option:check"
 msgid "Rebuild all training data"
 msgstr "Перебудувати усі навчальні дані"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:214
+#: core/utilities/maintenance/main/maintenancedlg.cpp:215
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -61613,60 +61617,60 @@ msgstr ""
 "У результаті буде виконано повторне навчання засобу розпізнавання на основі "
 "міток облич у вашій бібліотеці."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:216
+#: core/utilities/maintenance/main/maintenancedlg.cpp:217
 #, kde-format
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
 msgstr "Вилучити усі прив'язки обличчя і виконати навчання"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:218
+#: core/utilities/maintenance/main/maintenancedlg.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This will clear all detected and tagged faces."
 msgstr "У результаті буде вилучено усі дані виявлених і розмічених облич."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:224
+#: core/utilities/maintenance/main/maintenancedlg.cpp:225
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Виявляти і розпізнавати обличчя"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:239
+#: core/utilities/maintenance/main/maintenancedlg.cpp:248
 #, kde-format
 msgid "Auto-tags Assignment"
 msgstr "Автоматичне призначення міток"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:266
+#: core/utilities/maintenance/main/maintenancedlg.cpp:283
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Напрямок синхронізації: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:270
+#: core/utilities/maintenance/main/maintenancedlg.cpp:287
 #, kde-format
 msgid "From database to image metadata"
 msgstr "з бази даних до метаданих зображення"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:271
+#: core/utilities/maintenance/main/maintenancedlg.cpp:288
 #, kde-format
 msgid "From image metadata to database"
 msgstr "з метаданих зображення до бази даних"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:274
+#: core/utilities/maintenance/main/maintenancedlg.cpp:291
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Докладні дані наведено на панелі налаштовування метаданих: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:283
+#: core/utilities/maintenance/main/maintenancedlg.cpp:300
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Синхронізувати метадані з базою даних"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:341
+#: core/utilities/maintenance/main/maintenancedlg.cpp:358
 #, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Попередження"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:342
+#: core/utilities/maintenance/main/maintenancedlg.cpp:359
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
@@ -61855,16 +61859,14 @@ msgid "Duplicate found: %1"
 msgstr "Знайдено дублікат: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:211
-#, fuzzy, kde-format
-#| msgid ""
-#| "A face detection task is already running. Only one task can be running at "
-#| "a time. Please wait until it is finished."
+#, kde-format
 msgid ""
 "A face scan is already running. Only one face task can be running at a time. "
 "Please wait until it is finished."
 msgstr ""
-"Уже запущено завдання із виявлення облич. Одночасно програма може виконувати "
-"лише одне таке завдання. Будь ласка, зачекайте на завершення попереднього."
+"Уже запущено завдання зі сканування облич. Одночасно програма може "
+"виконувати лише одне завдання щодо облич. Будь ласка, зачекайте на "
+"завершення попереднього."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:336
 #, kde-format
@@ -67212,10 +67214,9 @@ msgid "Detect faces in newly added images"
 msgstr "Виявляти обличчя на нових доданих зображеннях"
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
-#, fuzzy, kde-format
-#| msgid "Background Image Credits"
+#, kde-format
 msgid "Background face recognition scan"
-msgstr "Подяки за фонове зображення"
+msgstr "Фонове сканування для розпізнавання облич"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format
@@ -67223,6 +67224,10 @@ msgid ""
 "Set this option to automatically start a background face recognition scan\n"
 "when a new face is tagged. This will make the tagging process easier."
 msgstr ""
+"Позначте цей пункт, щоб автоматично запускати фонове сканування для "
+"розпізнавання облич,\n"
+"якщо встановлено мітку для нового обличчя. Це спростить процедуру "
+"встановлення міток."
 
 #: core/utilities/setup/misc/setupmisc.cpp:88
 #, kde-format

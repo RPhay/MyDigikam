@@ -45,6 +45,7 @@
 #include "dlayoutbox.h"
 #include "dexpanderbox.h"
 #include "facesengine.h"
+#include "systemsettings.h"
 
 namespace Digikam
 {
@@ -157,8 +158,21 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
     connect(d->tagFolderView, SIGNAL(signalFindDuplicates(QList<TAlbum*>)),
             this, SIGNAL(signalFindDuplicates(QList<TAlbum*>)));
 
-    connect(d->rescanButton, SIGNAL(pressed()),
-            this, SLOT(slotScanForFaces()) );
+    if (!SystemSettings(qApp->applicationName()).enableFaceEngine)
+    {
+        d->faceScanExpander->setEnabled(false);
+        d->rescanButton->setEnabled(false);
+        d->faceScanExpander->setVisible(false);
+        d->rescanButton->setVisible(false);
+
+        d->rescanButton->setToolTip(i18nc("@info", "Face engine is disabled"));
+        d->rescanButton->setWhatsThis(i18nc("@info", "Face engine is disabled"));
+    }
+    else
+    {
+        connect(d->rescanButton, SIGNAL(pressed()),
+                this, SLOT(slotScanForFaces()) );
+    }
 }
 
 PeopleSideBarWidget::~PeopleSideBarWidget()

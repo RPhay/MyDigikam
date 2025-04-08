@@ -39,13 +39,18 @@ AutoRotator::AutoRotator()
 
 bool AutoRotator::loadModel()
 {
+    // load the model from the DNNModelManager
+
     model = static_cast<DNNModelNet*>(DNNModelManager::instance()->getModel(QLatin1String("AutoRotate"),
                                                                             DNNModelUsage::DNNUsageAutoRotate));
+    // check if the model was loaded
 
     if (model && !model->modelLoaded)
     {
         try
         {
+            // verify we can get the underlying neural net
+
             model->getNet();
 
             qCDebug(DIGIKAM_AUTOROTATE_LOG) << "AutoRotate model loaded";
@@ -84,14 +89,15 @@ cv::Mat AutoRotator::Preprocess(const DImg& image)
 {
     // load the image to a cvMat
 
-    cv::Mat cvImage = QtOpenCVImg::image2Mat(image, CV_8UC3, QtOpenCVImg::MatColorOrder::MCO_RGB);
+    cv::Mat cvImage = QtOpenCVImg::image2Mat(image, 
+                                             CV_8UC3, 
+                                             QtOpenCVImg::MatColorOrder::MCO_BGR);
 
-    //resize the image to the correct input size
+    // resize the image to the correct input size
 
     if (std::max(cvImage.cols, cvImage.rows) > std::max(model->info.imageSize, model->info.imageSize))
     {
         // Image should be resized.
-        // so we just need to make sure no one bound exceeds the max. No padding needed.
 
         float resizeFactor      = std::min(static_cast<float>(model->info.imageSize) / static_cast<float>(cvImage.cols),
                                            static_cast<float>(model->info.imageSize) / static_cast<float>(cvImage.rows));
@@ -101,7 +107,14 @@ cv::Mat AutoRotator::Preprocess(const DImg& image)
         cv::resize(cvImage, cvImage, cv::Size(newWidth, newHeight));
     }
 
-    // Convert image to the correct input format
+    // pad the image to the correct input size
+
+    int padX                = (model->info.imageSize - cvImage.cols) / 2;
+    int padY                = (model->info.imageSize - cvImage.rows) / 2;
+    cv::copyMakeBorder(cvImage, cvImage, padY, padY, padX, padX,
+                       cv::BORDER_CONSTANT, cv::Scalar(0, 0, 0));
+
+    // Convert image to the correct input format for blob
 
     cvImage.convertTo(cvImage, CV_32F, 1.0 / 255.0);
     cv::Mat blob = cv::dnn::blobFromImage(cvImage, 1.0, cv::Size(model->info.imageSize,
@@ -113,6 +126,8 @@ cv::Mat AutoRotator::Preprocess(const DImg& image)
 
 bool AutoRotator::shouldRotate(int degrees, int sensitivity, int angle)
 {
+    // check if the angle is within the range of the degrees +/- sensitivity
+
     if (
         (angle > (degrees - ((sensitivity * 2) + (baseArc / 2)))) &&
         (angle < (degrees + ((sensitivity * 2) + (baseArc / 2))))
@@ -126,12 +141,29 @@ bool AutoRotator::shouldRotate(int degrees, int sensitivity, int angle)
     }
 }
 
-float AutoRotator::rotationAngle(const DImg& img)
+float AutoRotator::rotationAngle(const DImg& img, bool copyDImg)
+{
+    if (copyDImg)
+    {
+        // make a copy of the image to avoid modifying the original
+
+        DImg copy = img.copy();
+        return privateRotationAngle(copy);
+    }
+    else
+    {
+        // use the original image
+
+        return privateRotationAngle(img);
+    }
+}
+
+float AutoRotator::privateRotationAngle(const DImg& img)
 {
     QElapsedTimer timer;
     timer.start();
 
-    // get a cv::Mat from the DImg
+    // get a cv::Mat blob from the DImg
 
     cv::Mat blob     = Preprocess(img);
 
@@ -156,9 +188,19 @@ float AutoRotator::rotationAngle(const DImg& img)
     return angle;
 }
 
-MetaEngineRotation::TransformationAction AutoRotator::rotationOrientation(const DImg& image, int sensitivity)
+MetaEngineRotation::TransformationAction AutoRotator::rotationOrientation(const DImg& image, int sensitivity, bool copyDImg)
 {
-    int angle = rotationAngle(image);
+    // check for corrupted images that can't be loaded
+
+    if (image.isNull())
+    {
+        qCWarning(DIGIKAM_AUTOROTATE_LOG) << "AutoRotator::rotationOrientation: image is null";
+        return MetaEngineRotation::NoTransformation;
+    }
+
+    // get the free rotation angle from the model
+
+    int angle = rotationAngle(image, copyDImg);
 
     // convert the angle to a positive value
 
@@ -166,6 +208,8 @@ MetaEngineRotation::TransformationAction AutoRotator::rotationOrientation(const 
     {
         angle = 360 + angle;
     }
+
+    // rotate in 90 degree increments
 
     MetaEngineRotation::TransformationAction rotation = MetaEngineRotation::NoTransformation;
 
@@ -191,7 +235,7 @@ MetaEngineRotation::TransformationAction AutoRotator::rotationOrientation(const 
                                                       PreviewSettings(),
                                                       model->info.imageSize);
 
-    return rotationOrientation(image, sensitivity);
+    return rotationOrientation(image, sensitivity, false);
 }
 
 } // namespace Digikam

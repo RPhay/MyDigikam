@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-03 01:55+0000\n"
-"PO-Revision-Date: 2025-04-02 09:13+0200\n"
+"POT-Creation-Date: 2025-04-05 01:59+0000\n"
+"PO-Revision-Date: 2025-04-05 11:35+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1319,32 +1319,32 @@ msgstr "Paràmetres tècnics"
 msgid "<i>Binary Data</i>"
 msgstr "<i>Dades binàries</i>"
 
-#: core/app/main/digikamapp.cpp:78
+#: core/app/main/digikamapp.cpp:79
 #, kde-format
 msgid "Initializing..."
 msgstr "S'està inicialitzant..."
 
-#: core/app/main/digikamapp.cpp:160 core/showfoto/main/showfoto.cpp:110
+#: core/app/main/digikamapp.cpp:161 core/showfoto/main/showfoto.cpp:110
 #, kde-format
 msgid "Load Plugins..."
 msgstr "S'estan carregant els connectors..."
 
-#: core/app/main/digikamapp.cpp:184 core/showfoto/main/showfoto.cpp:92
+#: core/app/main/digikamapp.cpp:185 core/showfoto/main/showfoto.cpp:92
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "S'està comprovant el repositori ICC..."
 
-#: core/app/main/digikamapp.cpp:198
+#: core/app/main/digikamapp.cpp:199
 #, kde-format
 msgid "Clean up Database..."
 msgstr "Neteja la base de dades..."
 
-#: core/app/main/digikamapp.cpp:220
+#: core/app/main/digikamapp.cpp:221
 #, kde-format
 msgid "Loading albums..."
 msgstr "S'estan carregant els àlbums..."
 
-#: core/app/main/digikamapp.cpp:376
+#: core/app/main/digikamapp.cpp:377
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1356,7 +1356,7 @@ msgstr ""
 "característica de «Gestió del color» quedarà inactivada fins que resoleu "
 "aquesta qüestió.</p>"
 
-#: core/app/main/digikamapp.cpp:432
+#: core/app/main/digikamapp.cpp:433
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1369,92 +1369,92 @@ msgstr ""
 "disponibilitat del fitxer executable de l'ExifTool a la secció metadades.\n"
 "Missatge d'error: %1"
 
-#: core/app/main/digikamapp.cpp:720 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:721 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Cap element seleccionat (%1 element)"
 msgstr[1] "Cap element seleccionat (%1 elements)"
 
-#: core/app/main/digikamapp.cpp:726
+#: core/app/main/digikamapp.cpp:727
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Cap element seleccionat (%1 [%2] element)"
 msgstr[1] "Cap element seleccionat (%1 [%2] elements)"
 
-#: core/app/main/digikamapp.cpp:731
+#: core/app/main/digikamapp.cpp:732
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Cap element seleccionat (%1 element. Amb elements agrupats: %2)"
 msgstr[1] "Cap element seleccionat (%1 elements. Amb elements agrupats: %2)"
 
-#: core/app/main/digikamapp.cpp:742
+#: core/app/main/digikamapp.cpp:743
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 element seleccionat (%3/%4)"
 msgstr[1] "%1/%2 elements seleccionats (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:755
+#: core/app/main/digikamapp.cpp:756
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] element seleccionat (%4/%5)"
 msgstr[1] "%1/%2 [%3] elements seleccionats (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:763
+#: core/app/main/digikamapp.cpp:764
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "1/%2 element seleccionat. Total amb elements agrupats: %3"
 msgstr[1] "%1/%2 elements seleccionats. Total amb elements agrupats: %3"
 
-#: core/app/main/digikamapp.cpp:771
+#: core/app/main/digikamapp.cpp:772
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] element seleccionat (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] elements seleccionats (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:780
+#: core/app/main/digikamapp.cpp:781
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "%1/%2 element seleccionat. Amb elements agrupats: %3/%4"
 msgstr[1] "%1/%2 elements seleccionats. Amb elements agrupats: %3/%4"
 
-#: core/app/main/digikamapp.cpp:811
+#: core/app/main/digikamapp.cpp:812
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 de %2)"
 
-#: core/app/main/digikamapp.cpp:825
+#: core/app/main/digikamapp.cpp:826
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 de %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:829
+#: core/app/main/digikamapp.cpp:830
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 de %2. Total amb elements agrupats: %3)"
 
-#: core/app/main/digikamapp.cpp:840
+#: core/app/main/digikamapp.cpp:841
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 element ocult"
 msgstr[1] "%1 elements ocults"
 
-#: core/app/main/digikamapp.cpp:892
+#: core/app/main/digikamapp.cpp:900
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Escriu les metadades al fitxer"
 msgstr[1] "Escriu les metadades als fitxers seleccionats"
 
-#: core/app/main/digikamapp.cpp:894
+#: core/app/main/digikamapp.cpp:902
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1561,106 +1561,106 @@ msgstr ""
 "La carpeta %1 ja forma part del camí de l'àlbum i no s'ha pogut importar de "
 "forma recursiva!"
 
-#: core/app/main/digikamapp_setup.cpp:24
+#: core/app/main/digikamapp_setup.cpp:25
 #, kde-format
 msgctxt "@info: setup"
 msgid "Initializing Main View..."
 msgstr "S'està inicialitzant la vista principal..."
 
-#: core/app/main/digikamapp_setup.cpp:135
+#: core/app/main/digikamapp_setup.cpp:136
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Back"
 msgstr "E&nrere"
 
-#: core/app/main/digikamapp_setup.cpp:160
+#: core/app/main/digikamapp_setup.cpp:161
 #, kde-format
 msgctxt "@action: setup"
 msgid "Forward"
 msgstr "Endavant"
 
-#: core/app/main/digikamapp_setup.cpp:185
+#: core/app/main/digikamapp_setup.cpp:186
 #, kde-format
 msgctxt "@action: setup"
 msgid "Refresh"
 msgstr "Actualitza"
 
-#: core/app/main/digikamapp_setup.cpp:186
+#: core/app/main/digikamapp_setup.cpp:187
 #, kde-format
 msgctxt "@info: setup"
 msgid "Refresh the current contents."
 msgstr "Actualitza el contingut actual."
 
-#: core/app/main/digikamapp_setup.cpp:215
+#: core/app/main/digikamapp_setup.cpp:216
 #, kde-format
 msgctxt "@action: setup"
 msgid "&New..."
 msgstr "&Nou..."
 
-#: core/app/main/digikamapp_setup.cpp:216
+#: core/app/main/digikamapp_setup.cpp:217
 #, kde-format
 msgctxt "@info: setup"
 msgid "Creates a new empty Album in the collection."
 msgstr "Crea un àlbum buit nou a la col·lecció."
 
-#: core/app/main/digikamapp_setup.cpp:224
+#: core/app/main/digikamapp_setup.cpp:225
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Move to Album..."
 msgstr "&Mou a l'àlbum..."
 
-#: core/app/main/digikamapp_setup.cpp:225
+#: core/app/main/digikamapp_setup.cpp:226
 #, kde-format
 msgctxt "@info: setup"
 msgid "Move selected images into an album."
 msgstr "Mou les imatges seleccionades a un àlbum."
 
-#: core/app/main/digikamapp_setup.cpp:232
+#: core/app/main/digikamapp_setup.cpp:233
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Copy to..."
 msgstr "&Copia a..."
 
-#: core/app/main/digikamapp_setup.cpp:233
+#: core/app/main/digikamapp_setup.cpp:234
 #, kde-format
 msgctxt "@info: setup"
 msgid "Copy selected images to a target folder."
 msgstr "Copia les imatges seleccionades a la carpeta de destinació."
 
-#: core/app/main/digikamapp_setup.cpp:240
+#: core/app/main/digikamapp_setup.cpp:241
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Album"
 msgstr "Suprimeix l'àlbum"
 
-#: core/app/main/digikamapp_setup.cpp:247
-#: core/app/main/digikamapp_setup.cpp:487
+#: core/app/main/digikamapp_setup.cpp:248
+#: core/app/main/digikamapp_setup.cpp:488
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rename..."
 msgstr "Reanomena..."
 
-#: core/app/main/digikamapp_setup.cpp:255
-#: core/app/main/digikamapp_setup.cpp:307
+#: core/app/main/digikamapp_setup.cpp:256
+#: core/app/main/digikamapp_setup.cpp:308
 #, kde-format
 msgctxt "@action: setup"
 msgid "Properties"
 msgstr "Propietats"
 
-#: core/app/main/digikamapp_setup.cpp:256
+#: core/app/main/digikamapp_setup.cpp:257
 #, kde-format
 msgctxt "@info: setup"
 msgid "Edit album properties and collection information."
 msgstr "Edita les propietats de l'àlbum i la informació de la col·lecció."
 
-#: core/app/main/digikamapp_setup.cpp:264
+#: core/app/main/digikamapp_setup.cpp:265
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Files"
 msgstr "Escriu les metadades als fitxers"
 
-#: core/app/main/digikamapp_setup.cpp:265
-#: core/app/main/digikamapp_setup.cpp:441
+#: core/app/main/digikamapp_setup.cpp:266
+#: core/app/main/digikamapp_setup.cpp:442
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1671,14 +1671,14 @@ msgstr ""
 "la base de dades del digiKam (les metadades dels fitxers se sobreescriuran "
 "amb les dades de la base de dades)."
 
-#: core/app/main/digikamapp_setup.cpp:275
+#: core/app/main/digikamapp_setup.cpp:276
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Files"
 msgstr "Rellegeix les metadades dels fitxers"
 
-#: core/app/main/digikamapp_setup.cpp:276
-#: core/app/main/digikamapp_setup.cpp:452
+#: core/app/main/digikamapp_setup.cpp:277
+#: core/app/main/digikamapp_setup.cpp:453
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1690,116 +1690,116 @@ msgstr ""
 "l'àlbum actual (la informació de la base de dades serà sobreescrita amb les "
 "metadades dels fitxers)."
 
-#: core/app/main/digikamapp_setup.cpp:286
+#: core/app/main/digikamapp_setup.cpp:287
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open in File Manager"
 msgstr "Obre al gestor de fitxers"
 
-#: core/app/main/digikamapp_setup.cpp:293
+#: core/app/main/digikamapp_setup.cpp:294
 #, kde-format
 msgctxt "@action: setup"
 msgid "Tag Manager"
 msgstr "Gestor d'etiquetes"
 
-#: core/app/main/digikamapp_setup.cpp:300
+#: core/app/main/digikamapp_setup.cpp:301
 #, kde-format
 msgctxt "@action: new tag"
 msgid "N&ew..."
 msgstr "N&ova..."
 
-#: core/app/main/digikamapp_setup.cpp:314
+#: core/app/main/digikamapp_setup.cpp:315
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete"
 msgstr "Suprimeix"
 
-#: core/app/main/digikamapp_setup.cpp:321
+#: core/app/main/digikamapp_setup.cpp:322
 #, kde-format
 msgctxt "@action: setup"
 msgid "Assign Tag"
 msgstr "Assigna una etiqueta"
 
-#: core/app/main/digikamapp_setup.cpp:329
+#: core/app/main/digikamapp_setup.cpp:330
 #, kde-format
 msgctxt "@action: setup"
 msgid "Views"
 msgstr "Vistes"
 
-#: core/app/main/digikamapp_setup.cpp:333
+#: core/app/main/digikamapp_setup.cpp:334
 #, kde-format
 msgctxt "@action: Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Miniatures"
 
-#: core/app/main/digikamapp_setup.cpp:340
+#: core/app/main/digikamapp_setup.cpp:341
 #: core/app/views/stack/itemiconview_views.cpp:303
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
 msgstr "Vista prèvia"
 
-#: core/app/main/digikamapp_setup.cpp:350
+#: core/app/main/digikamapp_setup.cpp:351
 #, kde-format
 msgctxt "@action: Switch to map view"
 msgid "Map"
 msgstr "Mapa"
 
-#: core/app/main/digikamapp_setup.cpp:359
+#: core/app/main/digikamapp_setup.cpp:360
 #, kde-format
 msgctxt "@action: Switch to table view"
 msgid "Table"
 msgstr "Taula"
 
-#: core/app/main/digikamapp_setup.cpp:368
+#: core/app/main/digikamapp_setup.cpp:369
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open..."
 msgstr "Obre..."
 
-#: core/app/main/digikamapp_setup.cpp:369
+#: core/app/main/digikamapp_setup.cpp:370
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item."
 msgstr "Obre l'element seleccionat."
 
-#: core/app/main/digikamapp_setup.cpp:375
+#: core/app/main/digikamapp_setup.cpp:376
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open With Default Application"
 msgstr "Obre amb l'aplicació predeterminada"
 
-#: core/app/main/digikamapp_setup.cpp:376
+#: core/app/main/digikamapp_setup.cpp:377
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item with default assigned application."
 msgstr "Obre l'element seleccionat amb l'aplicació predeterminada assignada."
 
-#: core/app/main/digikamapp_setup.cpp:382
+#: core/app/main/digikamapp_setup.cpp:383
 #, kde-format
 msgctxt "@action: setup"
 msgid "Image Editor"
 msgstr "Editor d'imatges"
 
-#: core/app/main/digikamapp_setup.cpp:383
+#: core/app/main/digikamapp_setup.cpp:384
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open the image editor."
 msgstr "Obre l'editor d'imatges."
 
-#: core/app/main/digikamapp_setup.cpp:390
+#: core/app/main/digikamapp_setup.cpp:391
 #, kde-format
 msgctxt "@action: setup"
 msgid "Light Table"
 msgstr "Taula de llum"
 
-#: core/app/main/digikamapp_setup.cpp:396
+#: core/app/main/digikamapp_setup.cpp:397
 #, kde-format
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
 msgstr "Col·loca sobre la taula de llum"
 
-#: core/app/main/digikamapp_setup.cpp:397
+#: core/app/main/digikamapp_setup.cpp:398
 #, kde-format
 msgctxt "@info: setup"
 msgid "Place the selected items on the light table thumbbar."
@@ -1807,13 +1807,13 @@ msgstr ""
 "Posa els elements seleccionats sobre la barra de miniatures de la taula de "
 "llum."
 
-#: core/app/main/digikamapp_setup.cpp:403
+#: core/app/main/digikamapp_setup.cpp:404
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Light Table"
 msgstr "Afegeix a la taula de llum"
 
-#: core/app/main/digikamapp_setup.cpp:404
+#: core/app/main/digikamapp_setup.cpp:405
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
@@ -1821,153 +1821,153 @@ msgstr ""
 "Afegeix els elements seleccionats a la barra de miniatures de la taula de "
 "llum."
 
-#: core/app/main/digikamapp_setup.cpp:412
+#: core/app/main/digikamapp_setup.cpp:413
 #, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr "Gestor de la cua per lots"
 
-#: core/app/main/digikamapp_setup.cpp:418
+#: core/app/main/digikamapp_setup.cpp:419
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr "Afegeix a la cua actual"
 
-#: core/app/main/digikamapp_setup.cpp:419
+#: core/app/main/digikamapp_setup.cpp:420
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
 msgstr "Afegeix els elements seleccionats a la cua actual del gestor per lots."
 
-#: core/app/main/digikamapp_setup.cpp:425
+#: core/app/main/digikamapp_setup.cpp:426
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr "Afegeix a una cua nova"
 
-#: core/app/main/digikamapp_setup.cpp:426
+#: core/app/main/digikamapp_setup.cpp:427
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
 msgstr "Afegeix els elements seleccionats a una cua nova del gestor per lots."
 
-#: core/app/main/digikamapp_setup.cpp:433
+#: core/app/main/digikamapp_setup.cpp:434
 #, kde-format
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "Importa"
 
-#: core/app/main/digikamapp_setup.cpp:440
+#: core/app/main/digikamapp_setup.cpp:441
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "Escriu les metadades als fitxers seleccionats"
 
-#: core/app/main/digikamapp_setup.cpp:451
+#: core/app/main/digikamapp_setup.cpp:452
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "Rellegeix les metadades des dels fitxers seleccionats"
 
-#: core/app/main/digikamapp_setup.cpp:462
+#: core/app/main/digikamapp_setup.cpp:463
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "Exploració de cares"
 
-#: core/app/main/digikamapp_setup.cpp:467
+#: core/app/main/digikamapp_setup.cpp:468
 #, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "Reconeix les cares"
 
-#: core/app/main/digikamapp_setup.cpp:472
+#: core/app/main/digikamapp_setup.cpp:473
 #, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
 msgstr "Elimina totes les cares"
 
-#: core/app/main/digikamapp_setup.cpp:479
+#: core/app/main/digikamapp_setup.cpp:480
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr "Cerca les similars..."
 
-#: core/app/main/digikamapp_setup.cpp:480
+#: core/app/main/digikamapp_setup.cpp:481
 #, kde-format
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr ""
 "Cerca les imatges similars emprant l'element seleccionat com a referència."
 
-#: core/app/main/digikamapp_setup.cpp:488
+#: core/app/main/digikamapp_setup.cpp:489
 #, kde-format
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "Canvia el nom del fitxer de l'element actualment seleccionat."
 
-#: core/app/main/digikamapp_setup.cpp:498
+#: core/app/main/digikamapp_setup.cpp:499
 #: core/utilities/imageeditor/editor/editorwindow.cpp:313
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "Mou a la paperera"
 
-#: core/app/main/digikamapp_setup.cpp:512
+#: core/app/main/digikamapp_setup.cpp:513
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "Suprimeix definitivament"
 
-#: core/app/main/digikamapp_setup.cpp:523
+#: core/app/main/digikamapp_setup.cpp:524
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "Suprimeix definitivament sense confirmació"
 
-#: core/app/main/digikamapp_setup.cpp:531
+#: core/app/main/digikamapp_setup.cpp:532
 #, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "Mou a la paperera sense confirmació"
 
-#: core/app/main/digikamapp_setup.cpp:538
+#: core/app/main/digikamapp_setup.cpp:539
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "O&rdena els àlbums"
 
-#: core/app/main/digikamapp_setup.cpp:539
+#: core/app/main/digikamapp_setup.cpp:540
 #, kde-format
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "Ordena els àlbums en una vista en arbre."
 
-#: core/app/main/digikamapp_setup.cpp:558
+#: core/app/main/digikamapp_setup.cpp:559
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "Per carpeta"
 
-#: core/app/main/digikamapp_setup.cpp:559
+#: core/app/main/digikamapp_setup.cpp:560
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "Per categoria"
 
-#: core/app/main/digikamapp_setup.cpp:560
+#: core/app/main/digikamapp_setup.cpp:561
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "Per data"
 
-#: core/app/main/digikamapp_setup.cpp:565
+#: core/app/main/digikamapp_setup.cpp:566
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "Inclou les subbranques de l'àlbum"
 
-#: core/app/main/digikamapp_setup.cpp:567
+#: core/app/main/digikamapp_setup.cpp:568
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
@@ -1975,13 +1975,13 @@ msgstr ""
 "Establiu aquesta opció per a mostrar tots els subàlbums continguts en "
 "l'àlbum actual."
 
-#: core/app/main/digikamapp_setup.cpp:572
+#: core/app/main/digikamapp_setup.cpp:573
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "Inclou les subbranques de l'etiqueta"
 
-#: core/app/main/digikamapp_setup.cpp:574
+#: core/app/main/digikamapp_setup.cpp:575
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1991,26 +1991,26 @@ msgstr ""
 "Establiu aquesta opció per a mostrar totes les imatges marcades amb "
 "l'etiqueta indicada i totes les seves subetiquetes."
 
-#: core/app/main/digikamapp_setup.cpp:579
+#: core/app/main/digikamapp_setup.cpp:580
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr "Mostra tots els elements agrupats com a oberts"
 
-#: core/app/main/digikamapp_setup.cpp:581
+#: core/app/main/digikamapp_setup.cpp:582
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr ""
 "Establiu aquesta opció per a mostrar tots els elements agrupats com a oberts."
 
-#: core/app/main/digikamapp_setup.cpp:587
+#: core/app/main/digikamapp_setup.cpp:588
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "&Ordena els elements"
 
-#: core/app/main/digikamapp_setup.cpp:588
+#: core/app/main/digikamapp_setup.cpp:589
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -2018,432 +2018,432 @@ msgid ""
 msgstr ""
 "El valor amb què les imatges d'un àlbum s'ordenen a la vista de miniatures"
 
-#: core/app/main/digikamapp_setup.cpp:593
+#: core/app/main/digikamapp_setup.cpp:594
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "Per nom"
 
-#: core/app/main/digikamapp_setup.cpp:594
+#: core/app/main/digikamapp_setup.cpp:595
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "Per camí"
 
-#: core/app/main/digikamapp_setup.cpp:595
+#: core/app/main/digikamapp_setup.cpp:596
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "Per la data de creació"
 
-#: core/app/main/digikamapp_setup.cpp:596
+#: core/app/main/digikamapp_setup.cpp:597
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "Per la data de modificació"
 
-#: core/app/main/digikamapp_setup.cpp:597
+#: core/app/main/digikamapp_setup.cpp:598
 #, kde-format
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "Per la mida del fitxer"
 
-#: core/app/main/digikamapp_setup.cpp:598
+#: core/app/main/digikamapp_setup.cpp:599
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "Per la valoració"
 
-#: core/app/main/digikamapp_setup.cpp:599
+#: core/app/main/digikamapp_setup.cpp:600
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "Per la mida de la imatge"
 
-#: core/app/main/digikamapp_setup.cpp:600
+#: core/app/main/digikamapp_setup.cpp:601
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "Per la relació d'aspecte"
 
-#: core/app/main/digikamapp_setup.cpp:601
+#: core/app/main/digikamapp_setup.cpp:602
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "Per tipus de cara"
 
-#: core/app/main/digikamapp_setup.cpp:602
+#: core/app/main/digikamapp_setup.cpp:603
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "Per similitud"
 
-#: core/app/main/digikamapp_setup.cpp:603
+#: core/app/main/digikamapp_setup.cpp:604
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "Per manual i nom"
 
-#: core/app/main/digikamapp_setup.cpp:604
+#: core/app/main/digikamapp_setup.cpp:605
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "Per manual i data"
 
-#: core/app/main/digikamapp_setup.cpp:649
+#: core/app/main/digikamapp_setup.cpp:650
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "&Sentit de l'ordenació dels elements"
 
-#: core/app/main/digikamapp_setup.cpp:650
+#: core/app/main/digikamapp_setup.cpp:651
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr "Defineix si les imatges s'ordenen de forma ascendent o descendent."
 
-#: core/app/main/digikamapp_setup.cpp:654
-#: core/app/main/digikamapp_setup.cpp:713
+#: core/app/main/digikamapp_setup.cpp:655
+#: core/app/main/digikamapp_setup.cpp:714
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "Ascendent"
 
-#: core/app/main/digikamapp_setup.cpp:656
-#: core/app/main/digikamapp_setup.cpp:715
+#: core/app/main/digikamapp_setup.cpp:657
+#: core/app/main/digikamapp_setup.cpp:716
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "Descendent"
 
-#: core/app/main/digikamapp_setup.cpp:666
+#: core/app/main/digikamapp_setup.cpp:667
 #, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "Separa els elements"
 
-#: core/app/main/digikamapp_setup.cpp:667
+#: core/app/main/digikamapp_setup.cpp:668
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr ""
 "Les categories en què es mostraran les imatges en la vista de miniatures"
 
-#: core/app/main/digikamapp_setup.cpp:672
+#: core/app/main/digikamapp_setup.cpp:673
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "Llista plana"
 
-#: core/app/main/digikamapp_setup.cpp:673
+#: core/app/main/digikamapp_setup.cpp:674
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "Per àlbum"
 
-#: core/app/main/digikamapp_setup.cpp:674
+#: core/app/main/digikamapp_setup.cpp:675
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "Per format"
 
-#: core/app/main/digikamapp_setup.cpp:675
+#: core/app/main/digikamapp_setup.cpp:676
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "Per cares"
 
-#: core/app/main/digikamapp_setup.cpp:676
+#: core/app/main/digikamapp_setup.cpp:677
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "Per mes"
 
-#: core/app/main/digikamapp_setup.cpp:677
+#: core/app/main/digikamapp_setup.cpp:678
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Day"
 msgstr "Per dia"
 
-#: core/app/main/digikamapp_setup.cpp:708
+#: core/app/main/digikamapp_setup.cpp:709
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Element de separació dels elements"
 
-#: core/app/main/digikamapp_setup.cpp:709
+#: core/app/main/digikamapp_setup.cpp:710
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "El sentit d'ordenació dels grups d'elements separats"
 
-#: core/app/main/digikamapp_setup.cpp:730
+#: core/app/main/digikamapp_setup.cpp:731
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#: core/app/main/digikamapp_setup.cpp:737
+#: core/app/main/digikamapp_setup.cpp:738
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "No seleccionis res"
 
-#: core/app/main/digikamapp_setup.cpp:744
+#: core/app/main/digikamapp_setup.cpp:745
 #, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Inverteix la selecció"
 
-#: core/app/main/digikamapp_setup.cpp:752
+#: core/app/main/digikamapp_setup.cpp:753
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "Mostra la barra de miniatures"
 
-#: core/app/main/digikamapp_setup.cpp:783
+#: core/app/main/digikamapp_setup.cpp:784
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "Zoom al 100%"
 
-#: core/app/main/digikamapp_setup.cpp:791
+#: core/app/main/digikamapp_setup.cpp:792
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "Ajusta a la &finestra"
 
-#: core/app/main/digikamapp_setup.cpp:804
+#: core/app/main/digikamapp_setup.cpp:805
 #, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Vista gestionada del color"
 
-#: core/app/main/digikamapp_setup.cpp:822
+#: core/app/main/digikamapp_setup.cpp:823
 #, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Cerca..."
 
-#: core/app/main/digikamapp_setup.cpp:830
+#: core/app/main/digikamapp_setup.cpp:831
 #, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Cerca avançada..."
 
-#: core/app/main/digikamapp_setup.cpp:838
+#: core/app/main/digikamapp_setup.cpp:839
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "Cerca els duplicats..."
 
-#: core/app/main/digikamapp_setup.cpp:848
+#: core/app/main/digikamapp_setup.cpp:849
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Migra la base de dades..."
 
-#: core/app/main/digikamapp_setup.cpp:857
+#: core/app/main/digikamapp_setup.cpp:858
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Manteniment..."
 
-#: core/app/main/digikamapp_setup.cpp:864
+#: core/app/main/digikamapp_setup.cpp:865
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Explora cercant elements nous"
 
-#: core/app/main/digikamapp_setup.cpp:870
+#: core/app/main/digikamapp_setup.cpp:871
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "Afegeix una càmera manualment..."
 
-#: core/app/main/digikamapp_setup.cpp:881
+#: core/app/main/digikamapp_setup.cpp:882
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "S'estan carregant les càmeres..."
 
-#: core/app/main/digikamapp_setup.cpp:917
+#: core/app/main/digikamapp_setup.cpp:918
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Sortida del mode de vista prèvia"
 
-#: core/app/main/digikamapp_setup.cpp:922
+#: core/app/main/digikamapp_setup.cpp:923
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Imatge següent"
 
-#: core/app/main/digikamapp_setup.cpp:928
+#: core/app/main/digikamapp_setup.cpp:929
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Imatge anterior"
 
-#: core/app/main/digikamapp_setup.cpp:934
+#: core/app/main/digikamapp_setup.cpp:935
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Primera imatge"
 
-#: core/app/main/digikamapp_setup.cpp:939
+#: core/app/main/digikamapp_setup.cpp:940
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Darrera imatge"
 
-#: core/app/main/digikamapp_setup.cpp:944
+#: core/app/main/digikamapp_setup.cpp:945
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Re&talla"
 
-#: core/app/main/digikamapp_setup.cpp:946
+#: core/app/main/digikamapp_setup.cpp:947
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Retalla la selecció al porta-retalls"
 
-#: core/app/main/digikamapp_setup.cpp:965
+#: core/app/main/digikamapp_setup.cpp:966
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Edita els títols"
 
-#: core/app/main/digikamapp_setup.cpp:970
+#: core/app/main/digikamapp_setup.cpp:971
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Edita els comentaris"
 
-#: core/app/main/digikamapp_setup.cpp:975
+#: core/app/main/digikamapp_setup.cpp:976
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Mostra les etiquetes assignades"
 
-#: core/app/main/digikamapp_setup.cpp:984
+#: core/app/main/digikamapp_setup.cpp:985
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Ajusta l'etiqueta Exif d'orientació"
 
-#: core/app/main/digikamapp_setup.cpp:987
+#: core/app/main/digikamapp_setup.cpp:988
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normal"
 
-#: core/app/main/digikamapp_setup.cpp:989
+#: core/app/main/digikamapp_setup.cpp:990
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Invertida horitzontalment"
 
-#: core/app/main/digikamapp_setup.cpp:991
+#: core/app/main/digikamapp_setup.cpp:992
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Capgirada"
 
-#: core/app/main/digikamapp_setup.cpp:993
+#: core/app/main/digikamapp_setup.cpp:994
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Invertida verticalment"
 
 # skip-rule: punctuation-period-no
-#: core/app/main/digikamapp_setup.cpp:995
+#: core/app/main/digikamapp_setup.cpp:996
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Girada a la dreta / Invertida horitz."
 
-#: core/app/main/digikamapp_setup.cpp:997
+#: core/app/main/digikamapp_setup.cpp:998
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Girada a la dreta"
 
 # skip-rule: punctuation-period-no
-#: core/app/main/digikamapp_setup.cpp:999
+#: core/app/main/digikamapp_setup.cpp:1000
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Girada a la dreta / Invertida vert."
 
-#: core/app/main/digikamapp_setup.cpp:1001
+#: core/app/main/digikamapp_setup.cpp:1002
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Girada a l'esquerra"
 
-#: core/app/main/digikamapp_setup.cpp:1062
+#: core/app/main/digikamapp_setup.cpp:1063
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Gira"
 
-#: core/app/main/digikamapp_setup.cpp:1066
+#: core/app/main/digikamapp_setup.cpp:1069
 #, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "Gir automàtic"
 
-#: core/app/main/digikamapp_setup.cpp:1073
+#: core/app/main/digikamapp_setup.cpp:1077
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Esquerra"
 
-#: core/app/main/digikamapp_setup.cpp:1080
+#: core/app/main/digikamapp_setup.cpp:1084
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Dreta"
 
-#: core/app/main/digikamapp_setup.cpp:1090
+#: core/app/main/digikamapp_setup.cpp:1094
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Inverteix"
 
-#: core/app/main/digikamapp_setup.cpp:1094
+#: core/app/main/digikamapp_setup.cpp:1098
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Horitzontalment"
 
-#: core/app/main/digikamapp_setup.cpp:1101
+#: core/app/main/digikamapp_setup.cpp:1105
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Verticalment"
 
-#: core/app/main/digikamapp_setup.cpp:1111
+#: core/app/main/digikamapp_setup.cpp:1115
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Gir/Inversió automàtics usant la informació Exif"
 
-#: core/app/main/digikamapp_setup.cpp:1122
+#: core/app/main/digikamapp_setup.cpp:1126
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "S'estan carregant els temes..."
 
-#: core/app/main/digikamapp_setup.cpp:1125
+#: core/app/main/digikamapp_setup.cpp:1129
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Temes"
 
-#: core/app/main/digikamapp_setup.cpp:1141
+#: core/app/main/digikamapp_setup.cpp:1145
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2536,21 +2536,21 @@ msgid "Main Tools"
 msgstr "Eines principals"
 
 #: core/app/main/digikamapp_tools.cpp:41
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2653
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2662
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Postprocessat"
 
 #: core/app/main/digikamapp_tools.cpp:61
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2682
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2691
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Exportació"
 
 #: core/app/main/digikamapp_tools.cpp:72
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2693
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2702
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -2923,8 +2923,8 @@ msgstr ""
 "qualitat de les imatges"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:129
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:148
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:130
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:149
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:274
 #, kde-format
 msgctxt "@info"
@@ -2941,20 +2941,27 @@ msgstr "Ajuda"
 msgid "Labels"
 msgstr "Rètols"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:113
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:124
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:114
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:125
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Explora la col·lecció cercant cares"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:126
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for faces"
 msgstr ""
 "Useu aquest botó per a explorar els àlbums seleccionats per a cercar cares"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:190
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:168
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:169
+#, kde-format
+msgctxt "@info"
+msgid "Face engine is disabled"
+msgstr "El motor de cares està desactivat"
+
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:204
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -2964,19 +2971,16 @@ msgstr ""
 "vegada que useu aquesta característica, considereu usar el quadre d'ajuda al "
 "plafó lateral esquerre inferior."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:245
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face recognition is aborted, because there are no identities to "
-#| "recognize. Please add new identities."
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:259
+#, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
 msgstr ""
-"S'ha interromput el reconeixement de les cares, perquè no hi ha identitats "
-"per a reconèixer. Si us plau, afegiu-hi identitats noves."
+"S'ha interromput l'exploració de cares, perquè no hi ha identitats a "
+"reconèixer. Si us plau, afegiu-hi identitats noves."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:265
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:279
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -2988,28 +2992,28 @@ msgctxt "Advanced search images, access stored searches"
 msgid "Search"
 msgstr "Cerca"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:106
 #, kde-format
 msgid "Open Tag Manager"
 msgstr "Obre el gestor d'etiquetes"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:106
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:107
 #, kde-format
 msgid "No Tags"
 msgstr "Sense etiquetes"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:107
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:108
 #, kde-format
 msgid "Existing Tags"
 msgstr "Etiquetes existents"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:132
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:143
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:133
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:144
 #, kde-format
 msgid "Auto-tag Scan"
 msgstr "Exploració d'etiquetes automàtiques"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:145
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:146
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for objects to auto-tag"
@@ -3017,12 +3021,12 @@ msgstr ""
 "Useu aquest botó per a explorar els àlbums seleccionats per a cercar "
 "objectes a etiquetar automàticament"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:317
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:325
 #, kde-format
 msgid "No Tags Album"
 msgstr "Sense etiquetes d'àlbum"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:344
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:352
 #: core/libs/album/engine/album.cpp:553
 #: core/libs/album/manager/albummanager.cpp:182
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -9223,7 +9227,7 @@ msgstr "Usa la gestió del color per a imprimir"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:277
+#: core/utilities/maintenance/main/maintenancedlg.cpp:294
 #, kde-format
 msgid "Settings..."
 msgstr "Configuració..."
@@ -11415,7 +11419,7 @@ msgstr "Escaneig d'imatges"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1837
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1843
 #, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
@@ -11455,8 +11459,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2311
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2330
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2317
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2336
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
@@ -16042,7 +16046,7 @@ msgstr "Ajusta la data i l'hora"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
-#: core/utilities/imageeditor/editor/editorwindow.cpp:579
+#: core/utilities/imageeditor/editor/editorwindow.cpp:582
 #, kde-format
 msgctxt "@action"
 msgid "Cancel"
@@ -35128,21 +35132,21 @@ msgid "Workflow:"
 msgstr "Flux de treball:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:106
-#: core/utilities/maintenance/main/maintenancedlg.cpp:207
+#: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Explora les imatges noves"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:107
-#: core/utilities/maintenance/main/maintenancedlg.cpp:208
+#: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Explora totes les imatges"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:108
-#: core/utilities/maintenance/main/maintenancedlg.cpp:209
+#: core/utilities/maintenance/main/maintenancedlg.cpp:210
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
@@ -43700,7 +43704,7 @@ msgid "Model/View Port of Image Editor Canvas"
 msgstr "Adaptació model/vista del llenç de l'editor d'imatges"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:225
-#: core/utilities/maintenance/main/maintenancedlg.cpp:255
+#: core/utilities/maintenance/main/maintenancedlg.cpp:272
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
 #, kde-format
 msgid "Image Quality Scanner"
@@ -50085,7 +50089,7 @@ msgid "Delete File"
 msgstr "Suprimeix el fitxer"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2357
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2363
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
@@ -52592,7 +52596,7 @@ msgstr "Addició de cara manualment"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
-#: core/utilities/imageeditor/editor/editorwindow.cpp:573
+#: core/utilities/imageeditor/editor/editorwindow.cpp:576
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -58967,13 +58971,13 @@ msgctxt "@action"
 msgid "Rotate Right"
 msgstr "Gira a la dreta"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:533
+#: core/utilities/imageeditor/editor/editorwindow.cpp:535
 #, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
 msgstr "Gir automàtic"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:565
+#: core/utilities/imageeditor/editor/editorwindow.cpp:568
 #: core/utilities/import/main/importui.cpp:551
 #: core/utilities/import/main/importui.cpp:794
 #, kde-format
@@ -58981,37 +58985,37 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "Imatge anterior"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:595
+#: core/utilities/imageeditor/editor/editorwindow.cpp:598
 #, kde-format
 msgctxt "@label"
 msgid "No selection"
 msgstr "Sense selecció"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:598
+#: core/utilities/imageeditor/editor/editorwindow.cpp:601
 #, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr "Informació quant a la selecció d'imatge actual"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:603
+#: core/utilities/imageeditor/editor/editorwindow.cpp:606
 #, kde-format
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "Informació quant a la mida de la imatge"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1119
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1125
 #, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "Desament de la imatge..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1120
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1126
 #, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr "Espereu mentre es desa la imatge..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1141
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1147
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59021,13 +59025,13 @@ msgstr ""
 "Esteu a punt de sobreescriure el fitxer «%1»\n"
 "Esteu segur?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1146
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1152
 #, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Avís"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1256
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1262
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59037,7 +59041,7 @@ msgstr ""
 "S'ha modificat la imatge «%1».\n"
 "Voleu desar-la?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1407
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1413
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59047,25 +59051,25 @@ msgstr ""
 "S'ha modificat la imatge «%1».\n"
 "Es perdran tots els canvis."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1485
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1491
 #, kde-format
 msgctxt "@info"
 msgid "No selection"
 msgstr "Sense selecció"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1505
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1511
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
 msgstr "S'està carregant:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1533
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1539
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr "No s'ha pogut carregar «%1»"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1575
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1581
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59077,13 +59081,13 @@ msgstr ""
 "s'aplicarà cap transformació de color. Comproveu la configuració de la "
 "gestió del color a la configuració del digiKam."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1632
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1638
 #, kde-format
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "S'està desant:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1654
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1660
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59097,25 +59101,25 @@ msgstr ""
 "a\n"
 "«%2»."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1787
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1793
 #, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "No s'ha pogut obrir un fitxer temporal a la carpeta «%1»: %2 (%3)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1983
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1989
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr "No es pot determinar el format en què desar la imatge de destinació."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1990
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1996
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr "No s'ha pogut desar: El camí de fitxer trobat «%1» no és vàlid."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2237
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2243
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
@@ -59123,7 +59127,7 @@ msgstr ""
 "No s'ha pogut desar el fitxer «%1» amb el nom de versió de fitxer suggerit "
 "«%2»"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2312
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2318
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59133,7 +59137,7 @@ msgstr ""
 "No teniu permís d'escriptura per al fitxer anomenat «%1». Esteu segur que "
 "voleu sobreescriure'l?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2331
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2337
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59141,25 +59145,25 @@ msgid ""
 msgstr ""
 "Ja existeix un fitxer anomenat «%1». Esteu segur que voleu sobreescriure'l?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2358
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2364
 #, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "Ha fallat en sobreescriure el fitxer original"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2437
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2443
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "La vista gestionada del color està activa."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2441
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2447
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "La vista gestionada del color no està activa."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2446
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2452
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59169,74 +59173,74 @@ msgstr ""
 "No s'ha configurat la gestió del color, per tant, no està disponible la "
 "vista gestionada del color."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2482
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2488
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "L'indicador de subexposició està actiu"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2483
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2489
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "L'indicador de subexposició no està actiu"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2497
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2503
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "L'indicador de sobreexposició està actiu"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2498
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2504
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "L'indicador de sobreexposició no està actiu"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2589
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2595
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Transformació"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2609
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2618
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Decoració"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2620
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2629
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Efectes"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2631
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2640
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Colors"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2642
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2651
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Realçat"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2832
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2883
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2841
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2892
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr "Obre amb"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2844
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2853
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Altres..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2853
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2862
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
@@ -61253,43 +61257,43 @@ msgstr "Plafó &esquerre"
 msgid "&Right Panel"
 msgstr "Plafó d&ret"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:38
+#: core/utilities/maintenance/main/maintenancedlg.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Manteniment"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:53
+#: core/utilities/maintenance/main/maintenancedlg.cpp:54
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr ""
 "<qt><b>Seleccioneu les operacions de manteniment que s'han de processar</b></"
 "qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:59
+#: core/utilities/maintenance/main/maintenancedlg.cpp:60
 #, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "Processa els elements de:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:61
+#: core/utilities/maintenance/main/maintenancedlg.cpp:62
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr "Usa les últimes eines i opcions de configuració desades"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:62
+#: core/utilities/maintenance/main/maintenancedlg.cpp:63
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it is possible)"
 msgstr "Treballa amb tots els nuclis dels processadors (quan sigui possible)"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:68
+#: core/utilities/maintenance/main/maintenancedlg.cpp:69
 #, kde-format
 msgid "Common Options"
 msgstr "Opcions comunes"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:77
+#: core/utilities/maintenance/main/maintenancedlg.cpp:78
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
@@ -61298,12 +61302,12 @@ msgstr ""
 "<qt>Cap opció<br/><i>Nota: Aquesta eina només processa col·leccions d'àlbums."
 "</i></qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:80
+#: core/utilities/maintenance/main/maintenancedlg.cpp:81
 #, kde-format
 msgid "Scan for new items"
 msgstr "Explora cercant elements nous"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:90
+#: core/utilities/maintenance/main/maintenancedlg.cpp:91
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
@@ -61318,27 +61322,27 @@ msgstr ""
 "pot congelar el digiKam temporalment per tal d'assegurar que no es produeix "
 "cap corrupció a la base de dades.</i></qt>"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:95
+#: core/utilities/maintenance/main/maintenancedlg.cpp:96
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "També es neteja la base de dades de miniatures."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:96
+#: core/utilities/maintenance/main/maintenancedlg.cpp:97
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr "També es neteja la base de dades de cares."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:97
+#: core/utilities/maintenance/main/maintenancedlg.cpp:98
 #, kde-format
 msgid "Also clean up the similarity database."
 msgstr "També es neteja la base de dades de similitud."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:98
+#: core/utilities/maintenance/main/maintenancedlg.cpp:99
 #, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "Neteja estesa i redueix totes les bases de dades."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:99
+#: core/utilities/maintenance/main/maintenancedlg.cpp:100
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
@@ -61347,69 +61351,69 @@ msgstr ""
 "Aquesta opció condueix al buidatge (encongiment) de les bases de dades. El "
 "buidatge funciona per a SQLite i MySQL."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:106
+#: core/utilities/maintenance/main/maintenancedlg.cpp:107
 #, kde-format
 msgid "Perform database cleaning"
 msgstr "Realitza la neteja de la base de dades"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:115
-#: core/utilities/maintenance/main/maintenancedlg.cpp:130
+#: core/utilities/maintenance/main/maintenancedlg.cpp:116
+#: core/utilities/maintenance/main/maintenancedlg.cpp:131
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Explora els elements modificats o sense catalogar (més ràpid)"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:121
+#: core/utilities/maintenance/main/maintenancedlg.cpp:122
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Reconstrueix les miniatures"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:136
+#: core/utilities/maintenance/main/maintenancedlg.cpp:137
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Reconstrueix les empremtes digitals"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:149
+#: core/utilities/maintenance/main/maintenancedlg.cpp:150
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr "Interval de similitud (en percentatges):"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:169
+#: core/utilities/maintenance/main/maintenancedlg.cpp:170
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "Restricció en els duplicats:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:173
+#: core/utilities/maintenance/main/maintenancedlg.cpp:174
 #, kde-format
 msgid "No restriction"
 msgstr "Sense restricció"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:174
+#: core/utilities/maintenance/main/maintenancedlg.cpp:175
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Restringeix a l'àlbum de la imatge de referència"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:175
+#: core/utilities/maintenance/main/maintenancedlg.cpp:176
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Exclou l'àlbum de la imatge de referència"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:192
+#: core/utilities/maintenance/main/maintenancedlg.cpp:193
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Cerca els elements duplicats"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:203
+#: core/utilities/maintenance/main/maintenancedlg.cpp:204
 #, kde-format
 msgid "Faces data management: "
 msgstr "Gestió de les dades de cares: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:212
+#: core/utilities/maintenance/main/maintenancedlg.cpp:213
 #, kde-format
 msgctxt "@option:check"
 msgid "Rebuild all training data"
 msgstr "Reconstrueix totes les dades d'entrenament"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:214
+#: core/utilities/maintenance/main/maintenancedlg.cpp:215
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -61418,60 +61422,60 @@ msgstr ""
 "Això tornarà a entrenar el reconeixedor de cares amb cares etiquetades a la "
 "biblioteca."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:216
+#: core/utilities/maintenance/main/maintenancedlg.cpp:217
 #, kde-format
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
 msgstr "Reinicia i neteja totes les cares i l'entrenament"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:218
+#: core/utilities/maintenance/main/maintenancedlg.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This will clear all detected and tagged faces."
 msgstr "Això netejarà totes les cares detectades i etiquetades."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:224
+#: core/utilities/maintenance/main/maintenancedlg.cpp:225
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Detecta i reconeix les cares"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:239
+#: core/utilities/maintenance/main/maintenancedlg.cpp:248
 #, kde-format
 msgid "Auto-tags Assignment"
 msgstr "Assignació automàtica d'etiquetes"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:266
+#: core/utilities/maintenance/main/maintenancedlg.cpp:283
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Direcció de la sincronització: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:270
+#: core/utilities/maintenance/main/maintenancedlg.cpp:287
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Des de la base de dades a les metadades de la imatge"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:271
+#: core/utilities/maintenance/main/maintenancedlg.cpp:288
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Des de les metadades de la imatge a la base de dades"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:274
+#: core/utilities/maintenance/main/maintenancedlg.cpp:291
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Per a més detalls reviseu el plafó de configuració de les metadades: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:283
+#: core/utilities/maintenance/main/maintenancedlg.cpp:300
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Sincronitza les metadades i la base de dades"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:341
+#: core/utilities/maintenance/main/maintenancedlg.cpp:358
 #, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Avís"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:342
+#: core/utilities/maintenance/main/maintenancedlg.cpp:359
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
@@ -61658,16 +61662,13 @@ msgid "Duplicate found: %1"
 msgstr "Duplicat trobat: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:211
-#, fuzzy, kde-format
-#| msgid ""
-#| "A face detection task is already running. Only one task can be running at "
-#| "a time. Please wait until it is finished."
+#, kde-format
 msgid ""
 "A face scan is already running. Only one face task can be running at a time. "
 "Please wait until it is finished."
 msgstr ""
-"Ja s'està executant una tasca de detecció de cares. Només es pot executar "
-"una tasca a la vegada. Espereu fins que acabi."
+"Ja s'està executant una exploració de cares. Només es pot executar una tasca "
+"a la vegada. Espereu fins que acabi."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:336
 #, kde-format
@@ -67007,10 +67008,9 @@ msgid "Detect faces in newly added images"
 msgstr "Detecta les cares a les imatges afegides recentment"
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
-#, fuzzy, kde-format
-#| msgid "Background Image Credits"
+#, kde-format
 msgid "Background face recognition scan"
-msgstr "Atribució de la imatge de fons"
+msgstr "Exploració de reconeixement de cares en segon pla"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format
@@ -67018,6 +67018,10 @@ msgid ""
 "Set this option to automatically start a background face recognition scan\n"
 "when a new face is tagged. This will make the tagging process easier."
 msgstr ""
+"Establiu aquesta opció per a iniciar automàticament un escaneig de "
+"reconeixement de cares en segons pla\n"
+"quan s'etiqueti una cara nova. Això farà que el procés d'etiquetatge sigui "
+"més fàcil."
 
 #: core/utilities/setup/misc/setupmisc.cpp:88
 #, kde-format
@@ -68390,946 +68394,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgid ""
-#~ "A face recognition task is already running. Only one task can be running "
-#~ "at a time. Please wait until it is finished."
-#~ msgstr ""
-#~ "Ja s'està executant una tasca de reconeixement de cares. Només es pot "
-#~ "executar una tasca a la vegada. Espereu fins que acabi."
-
-#~ msgid "FacesEngine"
-#~ msgstr "FacesEngine"
-
-#~ msgid "Delete obsolete model files (runs at startup)"
-#~ msgstr "Suprimeix els fitxers de model obsolets (s'executa en iniciar)"
-
-#~ msgctxt "@action:inmenu Pluralized"
-#~ msgid "Image Quality Scan"
-#~ msgid_plural "Image Quality Scan"
-#~ msgstr[0] "Exploració de la qualitat de la imatge"
-#~ msgstr[1] "Exploració de la qualitat de les imatges"
-
-#~ msgid ""
-#~ "<p>For the face management, the red-eye removal tool, and the "
-#~ "classification of images according to aesthetics or the automatic "
-#~ "assignment of tags to images, digiKam requires some large binary files. "
-#~ "You can choose which feature you want to use.</p>"
-#~ msgstr ""
-#~ "<p>Per a la gestió de cares, l'eina d'eliminació dels ulls vermells i la "
-#~ "classificació d'imatges segons l'estètica o l'assignació automàtica "
-#~ "d'etiquetes a les imatges, el digiKam necessita alguns fitxers binaris "
-#~ "grans. Podeu triar quina característica voleu emprar.</p>"
-
-#~ msgctxt "@label Face Recognition Accuracy"
-#~ msgid "Accuracy:"
-#~ msgstr "Precisió:"
-
-#~ msgctxt "@label: autotags scanning mode"
-#~ msgid "Scan Mode:"
-#~ msgstr "Mode d'exploració:"
-
-#~ msgctxt "@action:inmenu Pluralized"
-#~ msgid "Image Quality Sort"
-#~ msgid_plural "Image Quality Sort"
-#~ msgstr[0] "Ordena segons la qualitat de la imatge"
-#~ msgstr[1] "Ordena segons la qualitat de les imatges"
-
-#~ msgctxt "@title"
-#~ msgid "Image Quality Sort"
-#~ msgstr "Ordenació segons la qualitat de les imatges"
-
-#~ msgid "Image Quality Sorter"
-#~ msgstr "Ordena les imatges segons la qualitat"
-
-#~ msgctxt "@label"
-#~ msgid "Restriction:"
-#~ msgstr "Restricció:"
-
-#~| msgctxt "@label:listbox similarity restriction"
-#~| msgid "Restrict to reference album"
-#~ msgctxt "@label:listbox similarity restriction"
-#~ msgid "Restrict to reference Album"
-#~ msgstr "Restringeix a l'àlbum de referència"
-
-#~ msgctxt "@label"
-#~ msgid "Search in:"
-#~ msgstr "Cerca a:"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "digiKam can search for faces in your photos.\n"
-#~ "When you have identified your friends on a number of photos,\n"
-#~ "it can also recognize the people shown on your photos."
-#~ msgstr ""
-#~ "El digiKam pot cercar les cares a les fotografies.\n"
-#~ "Quan hàgiu identificat els vostres amics en algunes fotografies,\n"
-#~ "es podrà reconèixer a les persones que es mostren a les fotografies."
-
-#~ msgctxt "@title:tab"
-#~ msgid "Workflow"
-#~ msgstr "Flux de treball"
-
-#~ msgctxt "@label:autotags scanning mode"
-#~ msgid "Scan Mode:"
-#~ msgstr "Mode d'exploració:"
-
-#~ msgctxt "@item:all items to scan with autotags"
-#~ msgid "All"
-#~ msgstr "Totes"
-
-#~ msgctxt "@item:autotags scan only non assigned items"
-#~ msgid "Non-Assigned Only"
-#~ msgstr "Només les no assignades"
-
-#~ msgctxt "@item:update the autotags entries in database"
-#~ msgid "Update"
-#~ msgstr "Actualitza"
-
-#~| msgctxt "@option:check"
-#~| msgid "Assign 'Rejected' Label to Low Quality Pictures"
-#~ msgctxt "@option:check"
-#~ msgid "Assign 'Rejected' Label to Low Quality"
-#~ msgstr "Assigna l'etiqueta «Rebutjada» a qualitat baixa"
-
-#~| msgctxt "@option:check"
-#~| msgid "Assign 'Pending' Label to Medium Quality Pictures"
-#~ msgctxt "@option:check"
-#~ msgid "Assign 'Pending' Label to Medium Quality"
-#~ msgstr "Assigna l'etiqueta «Pendent» a qualitat mitjana"
-
-#~| msgctxt "@option:check"
-#~| msgid "Assign 'Accepted' Label to High Quality Pictures"
-#~ msgctxt "@option:check"
-#~ msgid "Assign 'Accepted' Label to High Quality"
-#~ msgstr "Assigna l'etiqueta «Acceptada» a qualitat alta"
-
-#~| msgid "Update autotags"
-#~ msgid "Update Autotags"
-#~ msgstr "Actualitza les etiquetes automàtiques"
-
-#~ msgctxt "@option:radio"
-#~ msgid "Use default settings"
-#~ msgstr "Usa la configuració predeterminada"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "Use the default quality sorting parameters configured in Setup dialog."
-#~ msgstr ""
-#~ "Usa els paràmetres predeterminats d'ordenació de qualitat configurats en "
-#~ "el diàleg de configuració."
-
-#~ msgctxt "@option:radio"
-#~ msgid "Use custom settings"
-#~ msgstr "Usa una configuració personalitzada"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "Use custom parameters to perform quality sorting instead default one."
-#~ msgstr ""
-#~ "Usa paràmetres personalitzats per a realitzar l'ordenació de qualitat en "
-#~ "lloc dels predeterminats."
-
-#~ msgctxt "@title:tab"
-#~ msgid "Rules"
-#~ msgstr "Regles"
-
-#~ msgid "Auto-tagging mode: "
-#~ msgstr "Mode d'etiquetatge automàtic: "
-
-#~ msgid "Scan all"
-#~ msgstr "Explora-ho tot"
-
-#~ msgid "Object detection accuracy: "
-#~ msgstr "Precisió de la detecció d'objectes: "
-
-#~ msgid "Clean all and re-scan"
-#~ msgstr "Neteja-ho tot i torna a explorar"
-
-#~ msgctxt "@title: settings section"
-#~ msgid "Image Quality Sorter"
-#~ msgstr "Ordena les imatges segons la qualitat"
-
-#~ msgctxt "@title"
-#~ msgid ""
-#~ "Image Quality Sorter Settings\n"
-#~ "Customize default settings to perform image triaging by quality"
-#~ msgstr ""
-#~ "Configuració de l'ordenador d'imatges segons la qualitat\n"
-#~ "Personalitza la configuració predeterminada per a realitzar el triatge "
-#~ "d'imatges segons la qualitat"
-
-#~ msgid "ResNet-152"
-#~ msgstr "ResNet-152"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
-#~ "exceptional speed, but may miss identifying more objects in images. YOLO "
-#~ "can detect multiple objects in an image. It is trained to recognize 80 "
-#~ "different objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: "
-#~ "large, robust neural network offering good accuracy. It will detect more "
-#~ "objects in images than YOLOv11 Nano, but is slower. YOLO can detect "
-#~ "multiple objects in an image. It is trained to recognize 80 different "
-#~ "objects using the COCO dataset.</p><p><b>ResNet-152</b>: large and "
-#~ "powerful convoluted neural network. It will detect a single object in an "
-#~ "image with high accuracy. ResNet-152 was trained to recognize 1,000 "
-#~ "different objects using the ImageNet dataset.</p>"
-#~ msgstr ""
-#~ "<p><b>YOLOv11 Nano</b>: xarxa neuronal petita i lleugera que ofereix una "
-#~ "velocitat excepcional, però pot faltar la identificació de més objectes a "
-#~ "les imatges. YOLO pot detectar diversos objectes en una imatge. Està "
-#~ "entrenat per a reconèixer 80 objectes diferents utilitzant el conjunt de "
-#~ "dades COCO.</p><p><b>YOLOv11 XLarge</b>: xarxa neuronal gran i robusta "
-#~ "que ofereix una precisió bona. Detectarà més objectes en imatges que el "
-#~ "YOLOv11 Nano, però és més lent. YOLO pot detectar diversos objectes en "
-#~ "una imatge. Està entrenat per a reconèixer 80 objectes diferents "
-#~ "utilitzant el conjunt de dades COCO.</p><p><b>ResNet-152</b>: xarxa "
-#~ "neuronal gran i potent de convolució. Detectarà un objecte únic en una "
-#~ "imatge amb gran precisió. ResNet-152 s'ha entrenat per a reconèixer 1.000 "
-#~ "objectes diferents utilitzant el conjunt de dades ImageNet.</p>"
-
-#~ msgid "OpenFace"
-#~ msgstr "OpenFace"
-
-#~ msgid "SFace"
-#~ msgstr "SFace"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "You are about to change the face recognition model. This process can take "
-#~ "several minutes or more depending on the size of your library and the "
-#~ "speed of your computer. SFace is the preferred model. Do not use any "
-#~ "facial detection or recognition features during the process.\n"
-#~ "\n"
-#~ "Are you sure you want to continue?"
-#~ msgid_plural ""
-#~ "You are about to change the face recognition model to %1. This process "
-#~ "can take several minutes or more depending on the size of your library "
-#~ "and the speed of your computer. SFace is the preferred model. Do not use "
-#~ "any facial detection or recognition features during the process.\n"
-#~ "\n"
-#~ "Are you sure you want to continue?"
-#~ msgstr[0] ""
-#~ "Esteu a punt de canviar el model de reconeixement de cares. Aquest procés "
-#~ "pot trigar diversos minuts o més depenent de la mida de la biblioteca i "
-#~ "la velocitat de l'ordinador. El model preferit és SFace. No utilitzeu cap "
-#~ "característica de detecció o reconeixement facial durant el procés.\n"
-#~ "\n"
-#~ "Segur que voleu continuar?"
-#~ msgstr[1] ""
-#~ "Esteu a punt de canviar el model de reconeixement de cares a %1. Aquest "
-#~ "procés pot trigar diversos minuts o més depenent de la mida de la "
-#~ "biblioteca i la velocitat de l'ordinador. El model preferit és SFace. No "
-#~ "utilitzeu cap característica de detecció o reconeixement facial durant el "
-#~ "procés.\n"
-#~ "\n"
-#~ "Segur que voleu continuar?"
-
-#~ msgid "Scanning from: %1\n"
-#~ msgstr "S'està explorant des de: %1\n"
-
-#~ msgid "Duplicates for: %1\n"
-#~ msgstr "Duplicats de: %1\n"
-
-# Nre.= Abreviatura de nombre (sinònim de quantitat)
-# skip-rule: t-pu_sp
-#~ msgid "Path: %1\n"
-#~ msgstr "Camí: %1\n"
-
-# Nre.= Abreviatura de nombre (sinònim de quantitat)
-# skip-rule: t-pu_sp
-#~ msgid "Path: %1"
-#~ msgstr "Camí: %1"
-
-#~ msgid "Caulier Gilles"
-#~ msgstr "Caulier Gilles"
-
-#~ msgid "Maik Qualmann"
-#~ msgstr "Maik Qualmann"
-
-#~ msgid "Marcel Wiesweg"
-#~ msgstr "Marcel Wiesweg"
-
-#~ msgid "Mohamed Anwer"
-#~ msgstr "Mohamed Anwer"
-
-#~ msgid "Michael G. Hansen"
-#~ msgstr "Michael G. Hansen"
-
-#~ msgid "Teemu Rytilahti"
-#~ msgstr "Teemu Rytilahti"
-
-#~ msgid "Thanh Trung Dinh"
-#~ msgstr "Thanh Trung Dinh"
-
-#~ msgid "Michael Miller"
-#~ msgstr "Michael Miller"
-
-#~ msgid "Matthias Welwarsky"
-#~ msgstr "Matthias Welwarsky"
-
-#~ msgid "Julien Narboux"
-#~ msgstr "Julien Narboux"
-
-#~ msgid "Mario Frank"
-#~ msgstr "Mario Frank"
-
-#~ msgid "Nicolas Lécureuil"
-#~ msgstr "Nicolas Lécureuil"
-
-#~ msgid "Anjani Kumar"
-#~ msgstr "Anjani Kumar"
-
-#~ msgid "Phuoc Khanh LE"
-#~ msgstr "Phuoc Khanh LE"
-
-#~ msgid "Quốc Hưng Trần"
-#~ msgstr "Quốc Hưng Trần"
-
-#~ msgid "Minh Nghĩa Duong"
-#~ msgstr "Minh Nghĩa Duong"
-
-#~ msgid "Kartik Ramesh"
-#~ msgstr "Kartik Ramesh"
-
-#~ msgid "Ahmed Fathi"
-#~ msgstr "Ahmed Fathi"
-
-#~ msgid "Veaceslav Munteanu"
-#~ msgstr "Veaceslav Munteanu"
-
-#~ msgid "Tarek Talaat"
-#~ msgstr "Tarek Talaat"
-
-#~ msgid "Yingjie Liu"
-#~ msgstr "Yingjie Liu"
-
-#~ msgid "Yiou Wang"
-#~ msgstr "Yiou Wang"
-
-#~ msgid "Gowtham Ashok"
-#~ msgstr "Gowtham Ashok"
-
-#~ msgid "Aditya Bhatt"
-#~ msgstr "Aditya Bhatt"
-
-#~ msgid "Martin Klapetek"
-#~ msgstr "Martin Klapetek"
-
-#~ msgid "Gabriel Voicu"
-#~ msgstr "Gabriel Voicu"
-
-#~ msgid "Mahesh Hegde"
-#~ msgstr "Mahesh Hegde"
-
-#~ msgid "Pankaj Kumar"
-#~ msgstr "Pankaj Kumar"
-
-#~ msgid "Smit Mehta"
-#~ msgstr "Smit Mehta"
-
-#~ msgid "Islam Wazery"
-#~ msgstr "Islam Wazery"
-
-#~ msgid "Abhinav Badola"
-#~ msgstr "Abhinav Badola"
-
-#~ msgid "Benjamin Girault"
-#~ msgstr "Benjamin Girault"
-
-#~ msgid "Victor Dodon"
-#~ msgstr "Victor Dodon"
-
-#~ msgid "Sayantan Datta"
-#~ msgstr "Sayantan Datta"
-
-#~ msgid "Ananta Palani"
-#~ msgstr "Ananta Palani"
-
-#~ msgid "Andi Clemens"
-#~ msgstr "Andi Clemens"
-
-#~ msgid "Patrick Spendrin"
-#~ msgstr "Patrick Spendrin"
-
-#~ msgid "Francesco Riosa"
-#~ msgstr "Francesco Riosa"
-
-#~ msgid "Johannes Wienke"
-#~ msgstr "Johannes Wienke"
-
-#~ msgid "Julien Pontabry"
-#~ msgstr "Julien Pontabry"
-
-#~ msgid "Arnd Baecker"
-#~ msgstr "Arnd Baecker"
-
-#~ msgid "Francisco J. Cruz"
-#~ msgstr "Francisco J. Cruz"
-
-#~ msgid "Pieter Edelman"
-#~ msgstr "Pieter Edelman"
-
-#~ msgid "Holger Foerster"
-#~ msgstr "Holger Foerster"
-
-#~ msgid "Risto Saukonpaa"
-#~ msgstr "Risto Saukonpaa"
-
-#~ msgid "Mikolaj Machowski"
-#~ msgstr "Mikolaj Machowski"
-
-#~ msgid "Achim Bohnet"
-#~ msgstr "Achim Bohnet"
-
-#~ msgid "Luka Renko"
-#~ msgstr "Luka Renko"
-
-#~ msgid "Angelo Naselli"
-#~ msgstr "Angelo Naselli"
-
-#~ msgid "Fabien Salvi"
-#~ msgstr "Fabien Salvi"
-
-#~ msgid "Todd Shoemaker"
-#~ msgstr "Todd Shoemaker"
-
-#~ msgid "Gerhard Kulzer"
-#~ msgstr "Gerhard Kulzer"
-
-#~ msgid "Oliver Doerr"
-#~ msgstr "Oliver Doerr"
-
-#~ msgid "Charles Bouveyron"
-#~ msgstr "Charles Bouveyron"
-
-#~ msgid "Richard Taylor"
-#~ msgstr "Richard Taylor"
-
-#~ msgid "Hans Karlsson"
-#~ msgstr "Hans Karlsson"
-
-#~ msgid "Aaron Seigo"
-#~ msgstr "Aaron Seigo"
-
-#~ msgid "Yves Chaufour"
-#~ msgstr "Yves Chaufour"
-
-#~ msgid "Tung Nguyen"
-#~ msgstr "Tung Nguyen"
-
-#~ msgid "Renchi Raju"
-#~ msgstr "Renchi Raju"
-
-#~ msgid "Joern Ahrens"
-#~ msgstr "Joern Ahrens"
-
-#~ msgid "Tom Albers"
-#~ msgstr "Tom Albers"
-
-#~ msgid "Ralf Holzer"
-#~ msgstr "Ralf Holzer"
-
-#~ msgid "No faces found in %1"
-#~ msgstr "No s'ha trobat cares a %1"
-
-#~ msgid "Auto-tagging scan mode: "
-#~ msgstr "Mode d'exploració de l'etiquetatge automàtic: "
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "<p><b>Replace existing autotags</b>: clear existing autotags and replace "
-#~ "with the results of the scan.</p><p><b>Update autotags</b>: add new "
-#~ "autotags found to the existing tags.</p>"
-#~ msgstr ""
-#~ "<p><b>Substitueix les etiquetes automàtiques existents</b>: neteja les "
-#~ "etiquetes automàtiques existents i les substitueix pels resultats de "
-#~ "l'exploració.</p><p><b>Actualitza les etiquetes automàtiques</b>: afegeix "
-#~ "les noves etiquetes automàtiques trobades a les etiquetes existents.</p>"
-
-#~ msgid "ResNet152"
-#~ msgstr "ResNet152"
-
-#~ msgid "Applying face changes"
-#~ msgstr "S'estan aplicant els canvis de cares"
-
-#~ msgid "Auto-tags for: %1\n"
-#~ msgstr "Etiquetatge automàtic per a: %1\n"
-
-#~ msgid "Keywords: %1"
-#~ msgstr "Paraules clau: %1"
-
-#~ msgid "Items scanned for auto-tags: %1"
-#~ msgstr "Elements explorats per a l'etiquetatge automàtic: %1"
-
-#~ msgid "Item scanned for auto-tags: %1"
-#~ msgstr "Element explorat per a l'etiquetatge automàtic: %1"
-
-#~ msgid "Faces processed: %1"
-#~ msgstr "Cares processades: %1"
-
-#~ msgid "Face processed: %1"
-#~ msgstr "Cara processada: %1"
-
-#~ msgid "Scanned for faces: %1\n"
-#~ msgstr "Cares explorades: %1\n"
-
-#~ msgid "No face"
-#~ msgstr "Cap cara"
-
-#~ msgid "1 face"
-#~ msgid_plural "%1 faces"
-#~ msgstr[0] "1 cara"
-#~ msgstr[1] "%1 cares"
-
-#~ msgid "Scanned for objects: %1\n"
-#~ msgstr "Objectes explorats: %1\n"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "<p><b>YOLOv11 Nano</b>: small, lightweight neural network offering "
-#~ "exceptional speed, but may miss identifying more objects in images. YOLO "
-#~ "can detect multiple objects in an image. It is trained to recognize 80 "
-#~ "different objects using the COCO dataset.</p><p><b>YOLOv11 XLarge</b>: "
-#~ "large, rebust neural network offering good accuracy. It will detect more "
-#~ "objects in images than YOLOv11 Nano, but is slower. YOLO can detect "
-#~ "multiple objects in an image. It is trained to recognize 80 different "
-#~ "objects using the COCO dataset.</p><p><b>ResNet-152</b>: large and "
-#~ "powerful convoluted neural network. It will detect a single object in an "
-#~ "image with high accuracy. ResNet-152 was trained to recognize 1,000 "
-#~ "different objects using the ImageNet dataset.</p>"
-#~ msgstr ""
-#~ "<p><b>YOLOv11 Nano</b>: xarxa neuronal petita i lleugera que ofereix una "
-#~ "velocitat excepcional, però pot faltar la identificació de més objectes a "
-#~ "les imatges. YOLO pot detectar diversos objectes en una imatge. Està "
-#~ "entrenat per a reconèixer 80 objectes diferents utilitzant el conjunt de "
-#~ "dades COCO.</p><p><b>YOLOv11 XLarge</b>: xarxa neuronal gran i robusta "
-#~ "que ofereix una precisió bona. Detectarà més objectes en imatges que el "
-#~ "YOLOv11 Nano, però és més lent. YOLO pot detectar diversos objectes en "
-#~ "una imatge. Està entrenat per a reconèixer 80 objectes diferents "
-#~ "utilitzant el conjunt de dades COCO.</p><p><b>ResNet-152</b>: xarxa "
-#~ "neuronal gran i potent de convolució. Detectarà un objecte únic en una "
-#~ "imatge amb gran precisió. ResNet-152 s'ha entrenat per a reconèixer 1.000 "
-#~ "objectes diferents utilitzant el conjunt de dades ImageNet.</p>"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#~ "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#~ "integration of smaller-scale object detection scenarios. It's designed "
-#~ "for objects detections, capable of recognizing and extracting the "
-#~ "location of objects within an image. The limitation on the number of "
-#~ "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#~ "previous one, this model is a neural network dedicated for more complex "
-#~ "object detection requirements and showcases remarkable capabilities. "
-#~ "Despite the additional complexity introducing more time-latency and "
-#~ "computer resources, it must be used for larger-scale object detection "
-#~ "scenarios as it provides more accurate predictions at the expense of "
-#~ "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#~ "convolutional neural network formed by stacking residual blocks commonly "
-#~ "used to power computer vision applications as object detections. This "
-#~ "kind of design allows the training of very deep networks without "
-#~ "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#~ "primarily focused on image classification and does not provide object "
-#~ "localization. It can recognize objects from a vast set of more than 1,000 "
-#~ "classes, covering a wide range of objects, animals, and scenes.</p>"
-#~ msgstr ""
-#~ "<p><b>YOLOv5 Nano</b>: aquest model és una xarxa neuronal que ofereix una "
-#~ "velocitat i eficiència excepcionals. Permet avaluar ràpidament la "
-#~ "integració d'escenaris de detecció d'objectes de petita escala. Està "
-#~ "dissenyat per a deteccions d'objectes, capaç de reconèixer i extreure la "
-#~ "ubicació dels objectes en una imatge. La limitació del nombre d'objectes "
-#~ "reconeixibles s'estableix a 80.</p><p><b>YOLOv5 XLarge</b>: com "
-#~ "l'anterior, aquest model és una xarxa neuronal dedicada a requisits de "
-#~ "detecció d'objectes més complexos i mostra capacitats notables. Malgrat "
-#~ "la complexitat addicional que introdueix més latència de temps i recursos "
-#~ "informàtics, s'ha d'utilitzar per a escenaris de detecció d'objectes a "
-#~ "gran escala, ja que proporciona prediccions més precises a costa de la "
-#~ "velocitat.</p><p><b>ResNet50</b>: aquest model és un tipus específic de "
-#~ "xarxa neuronal de convolució formada per l'apilament de blocs residuals "
-#~ "normalment utilitzats per a alimentar aplicacions de visió per ordinador "
-#~ "com a deteccions d'objectes. Aquesta classe de disseny permet "
-#~ "l'entrenament de xarxes molt profundes sense trobar-se amb el problema "
-#~ "del degradat que desapareix. A diferència de YOLO, ResNet50 se centra "
-#~ "principalment en la classificació d'imatges i no proporciona la "
-#~ "localització d'objectes. Pot reconèixer objectes d'un vast conjunt de més "
-#~ "de 1.000 classes, cobrint una àmplia varietat d'objectes, animals i "
-#~ "escenes.</p>"
-
-#~ msgctxt "@label"
-#~ msgid ""
-#~ "<p><b>This tool allows to assign automatically tags to images by contents "
-#~ "analysis using deep-learning neural network.</b></p><p>The settings below "
-#~ "determines the deep-learning model to use while parsing image contents to "
-#~ "determine the subjects of the photography. The neural network used in "
-#~ "background will generate automatically a serie of tags describing the "
-#~ "contents and store the results in the database.</p>"
-#~ msgstr ""
-#~ "<p><b>Aquesta eina permet assignar etiquetes automàticament a les imatges "
-#~ "mitjançant l'anàlisi del contingut mitjançant una xarxa neuronal "
-#~ "d'aprenentatge profund.</b></p><p>Els paràmetres de sota determinen el "
-#~ "model d'aprenentatge profund a utilitzar mentre s'analitza el contingut "
-#~ "de la imatge per a determinar els subjectes de la fotografia. La xarxa "
-#~ "neuronal utilitzada en segon pla generarà automàticament una sèrie "
-#~ "d'etiquetes que descriuen el contingut i emmagatzemaran els resultats a "
-#~ "la base de dades.</p>"
-
-#~ msgid "Clean all and re-assign"
-#~ msgstr "Neteja-ho tot i torna a assignar"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#~ "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#~ "integration of smaller-scale object detection scenarios. It's designed "
-#~ "for objects detections, capable of recognizing and extracting the "
-#~ "location of objects within an image. The limitation on the number of "
-#~ "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#~ "previous one, this model is a neural network dedicated for more complex "
-#~ "object detection requirements and showcases remarkable capabilities. "
-#~ "Despite the additional complexity introducing more time-latency and "
-#~ "computer resources, it must be used for larger-scale object detection "
-#~ "scenarios as it provides more accurate predictions at the expense of "
-#~ "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#~ "convolutional neural network formed by stacking residual blocks commonly "
-#~ "used to power computer vision applications as object detections. This "
-#~ "king of design allows the training of very deep networks without "
-#~ "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#~ "primarily focused on image classification and does not provide object "
-#~ "localization. It can recognize objects from a vast set of more than 1,000 "
-#~ "classes, covering a wide range of objects, animals, and scenes.</p>"
-#~ msgstr ""
-#~ "<p><b>YOLOv5 Nano</b>: aquest model és una xarxa neuronal que ofereix una "
-#~ "velocitat i eficiència excepcionals. Permet avaluar ràpidament la "
-#~ "integració d'escenaris de detecció d'objectes de petita escala. Està "
-#~ "dissenyat per a deteccions d'objectes, capaç de reconèixer i extreure la "
-#~ "ubicació dels objectes en una imatge. La limitació del nombre d'objectes "
-#~ "reconeixibles s'estableix a 80.</p><p><b>YOLOv5 XLarge</b>: com "
-#~ "l'anterior, aquest model és una xarxa neuronal dedicada a requisits de "
-#~ "detecció d'objectes més complexos i presenta capacitats notables. Malgrat "
-#~ "la complexitat addicional que introdueix més latència de temps i recursos "
-#~ "informàtics, s'ha d'utilitzar per a escenaris de detecció d'objectes a "
-#~ "gran escala, ja que proporciona prediccions més precises a costa de la "
-#~ "velocitat.</p><p><b>ResNet50</b>: aquest model és un tipus específic de "
-#~ "xarxa neuronal de convolució formada per l'apilament de blocs residuals "
-#~ "normalment utilitzats per a alimentar aplicacions de visió per ordinador "
-#~ "com a deteccions d'objectes. Aquest tipus de disseny permet l'entrenament "
-#~ "de xarxes molt profundes sense trobar-se amb el problema del degradat que "
-#~ "desapareix. A diferència de YOLO, ResNet50 se centra principalment en la "
-#~ "classificació d'imatges i no proporciona la localització d'objectes. Pot "
-#~ "reconèixer objectes d'un vast conjunt de més de 1.000 classes, cobrint "
-#~ "una àmplia varietat d'objectes, animals i escenes.</p>"
-
-#~ msgctxt "@label AI model used for face detection"
-#~ msgid "Model:"
-#~ msgstr "Model:"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "YuNet"
-#~ msgstr "YuNet"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "YOLOv3"
-#~ msgstr "YOLOv3"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "SSD"
-#~ msgstr "SSD"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "Detection model used to find faces. YuNet is the default model.\n"
-#~ "It is faster and more configurable than SSD and YOLOv3.\n"
-#~ "Note: YuNet is only available if digiKam is compiled with OpenCV 4.6.0 or "
-#~ "later."
-#~ msgstr ""
-#~ "Model de detecció emprat per a trobar cares. YuNet és el model "
-#~ "predeterminat.\n"
-#~ "És més ràpid i més configurable que el SSD i el YOLOv3.\n"
-#~ "Nota: El YuNet només és disponible si el digiKam s'ha compilat amb "
-#~ "l'OpenCV 4.6.0 o posterior."
-
-#~ msgctxt "@label AI model used for face recognition"
-#~ msgid "Model:"
-#~ msgstr "Model:"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "SFace"
-#~ msgstr "SFace"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "OpenFace"
-#~ msgstr "OpenFace"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "SFace is the default detection model. It is faster and more accurate.\n"
-#~ "OpenFace can be used for older libraries.\n"
-#~ "Note: SFace is only available if digiKam is compiled with OpenCV 4.6.0 or "
-#~ "later."
-#~ msgstr ""
-#~ "SFace és el model de detecció predeterminat. És més ràpid i més precís.\n"
-#~ "L'OpenFace es pot fer servir per a les biblioteques més antigues.\n"
-#~ "Nota: El SFace només és disponible si el digiKam s'ha compilat amb "
-#~ "l'OpenCV 4.6.0 o posterior."
-
-#~ msgid "FacesDetector"
-#~ msgstr "Detector de cares"
-
-#~ msgctxt "@title:window"
-#~ msgid "Warning"
-#~ msgstr "Avís"
-
-#~ msgctxt "@action:button"
-#~ msgid "Continue"
-#~ msgstr "Continua"
-
-#~ msgctxt "@action:button"
-#~ msgid "OK"
-#~ msgstr "D'acord"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Medium"
-#~ msgstr "Mitjana"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Skip images already scanned"
-#~ msgstr "Omet les imatges que ja s'han explorat"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Scan again and merge results"
-#~ msgstr "Torna a explorar i fusiona els resultats"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Clear unconfirmed results and rescan"
-#~ msgstr "Neteja els resultats no confirmats i torna a explorar"
-
-#~ msgctxt "@option:radio"
-#~ msgid "Detect faces"
-#~ msgstr "Detecta les cares"
-
-#~ msgctxt "@info"
-#~ msgid "Find all faces in your photos"
-#~ msgstr "Cerca totes les cares en les fotografies"
-
-#~ msgctxt "@option:radio"
-#~ msgid "Detect and recognize faces"
-#~ msgstr "Detecta i reconeix les cares"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Find all faces in your photos and\n"
-#~ "try to recognize which person is depicted"
-#~ msgstr ""
-#~ "Cerca totes les cares en les fotografies i\n"
-#~ "intenta reconèixer la persona representada"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Try again to recognize the people depicted\n"
-#~ "on marked but yet unconfirmed faces."
-#~ msgstr ""
-#~ "Torna a intentar reconèixer les persones representades\n"
-#~ "a les cares marcades però encara no confirmades."
-
-#~ msgid "Create Tag from Address Book"
-#~ msgstr "Crea una etiqueta a partir de la llibreta d'adreces"
-
-#~ msgid "Copy geo: URL"
-#~ msgstr "Copia la geolocalització: URL"
-
-#~ msgctxt "@option"
-#~ msgid "Recursive"
-#~ msgstr "Recursiu"
-
-#~ msgid "Error loading RAW image '%1'"
-#~ msgstr "Error en carregar la imatge RAW «%1»"
-
-#~ msgid "Could not open file '%1' for writing"
-#~ msgstr "No s'ha pogut obrir el fitxer «%1» per a escriptura"
-
-#~ msgid "Fix AMD-GPU video decoding issue"
-#~ msgstr "Corregeix un problema de descodificació de vídeo de les GPU AMD"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Clear all previous results and rescan"
-#~ msgstr "Neteja els resultats anteriors i torna a explorar"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "This will clear all training data for recognition and rebuild it from all "
-#~ "available faces."
-#~ msgstr ""
-#~ "Això netejarà totes les dades d'entrenament per al reconeixement i les "
-#~ "reconstrueix a partir de totes les cares disponibles."
-
-#~ msgid "Thumbs"
-#~ msgstr "Miniatures"
-
-#~ msgid "downgrade"
-#~ msgstr "desactualització"
-
-#~ msgid "upgrade"
-#~ msgstr "actualització"
-
-#~| msgctxt "@option"
-#~| msgid "Login Information"
-#~ msgctxt "@action"
-#~ msgid "Begin operation"
-#~ msgid_plural "Begin %1."
-#~ msgstr[0] "Comença l'operació"
-#~ msgstr[1] "Comença %1."
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "Detecting smaller faces takes more time and has a higher probability of "
-#~ "incorrect facial detection.\n"
-#~ "Detecting larger faces is faster, but may miss smaller faces in group "
-#~ "pictures."
-#~ msgstr ""
-#~ "Detectar cares més petites requereix més temps i té més probabilitats de "
-#~ "detecció facial incorrecta.\n"
-#~ "Detectar cares més grans és més ràpid, però poden mancar cares més "
-#~ "petites en imatges de grup."
-
-#~| msgctxt "camera model"
-#~| msgid "Model:"
-#~ msgctxt "@label AI model used for detection"
-#~ msgid "AI Model:"
-#~ msgstr "Model d'IA:"
-
-#~| msgid "Face Recognition DB"
-#~ msgctxt "@label Face Recognition Accuracy"
-#~ msgid "Recognition Accuracy:"
-#~ msgstr "Precisió del reconeixement:"
-
-#~ msgctxt "@label left extremities of a scale"
-#~ msgid "Sensitivity"
-#~ msgstr "Sensibilitat"
-
-#~ msgctxt "@label right extremities of a scale"
-#~ msgid "Specificity"
-#~ msgstr "Especificitat"
-
-#~ msgctxt "@option:check"
-#~ msgid "Use YOLO v3 detection model"
-#~ msgstr "Usa el model de detecció YOLO v3"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Face detection with YOLO v3 data model. Better results but slower."
-#~ msgstr ""
-#~ "Detecció de cares amb el model de dades YOLO v3. Millors resultats, però "
-#~ "més lent."
-
-#~ msgid ""
-#~ "We now switch to the system icon theme. The icon colors are automatically "
-#~ "adjusted on a Plasma 6 desktop. The icon theme is available after a "
-#~ "restart of digiKam."
-#~ msgstr ""
-#~ "Ara canviem al tema d'icones del sistema. Els colors de les icones "
-#~ "s'ajusten automàticament en un escriptori Plasma 6. El tema d'icones "
-#~ "estarà disponible després de reiniciar el digiKam."
-
-#~| msgid ""
-#~| "IRC: %1 - #digikam\n"
-#~| "Feedback: %2\n"
-#~| "Documentation: %3\n"
-#~| "\n"
-#~| "Build date: %4 (target: %5)\n"
-#~| "Revision: %6\n"
-#~| "Branch: %7"
-#~ msgid ""
-#~ "IRC: %1 - #digikam\n"
-#~ "Feedback: %2\n"
-#~ "Documentation: %3\n"
-#~ "\n"
-#~ "Build date: %4\n"
-#~ "Build target: %5\n"
-#~ "Build architecture: %6"
-#~ msgstr ""
-#~ "IRC: %1 - #digikam\n"
-#~ "Comentaris: %2\n"
-#~ "Documentació: %3\n"
-#~ "\n"
-#~ "Data de construcció: %4\n"
-#~ "Objectiu de construcció: %5\n"
-#~ "Arquitectura de construcció: %6"
-
-#~ msgid ""
-#~ "\n"
-#~ "Revision: %1\n"
-#~ "Branch: %2"
-#~ msgstr ""
-#~ "\n"
-#~ "Revisió: %1\n"
-#~ "Branca: %2"
-
-#~ msgid ""
-#~ "IRC: %1 - #digikam\n"
-#~ "Feedback: %2\n"
-#~ "Documentation: %3\n"
-#~ "\n"
-#~ "Build date: %4 (target: %5)"
-#~ msgstr ""
-#~ "IRC: %1 - #digikam\n"
-#~ "Comentaris: %2\n"
-#~ "Documentació: %3\n"
-#~ "\n"
-#~ "Data de construcció: %4 (objectiu: %5)"
-
-#~ msgid ""
-#~ "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
-#~ "p><p>Please install the 64-bit version of digiKam to get a better "
-#~ "experience with digiKam.</p>"
-#~ msgstr ""
-#~ "<p>Esteu executant el digiKam amb una versió de 32 bits en un Windows de "
-#~ "64 bits.</p><p>Instal·leu la versió de 64 bits del digiKam per a obtenir "
-#~ "una experiència millor.</p>"
-
-#~ msgctxt "#info"
-#~ msgid ""
-#~ "<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</"
-#~ "p><p>Please install the 64-bit version of Showfoto to get a better "
-#~ "experience with Showfoto.</p>"
-#~ msgstr ""
-#~ "<p>Esteu executant el Showfoto amb una versió de 32 bits en un Windows de "
-#~ "64 bits.</p><p>Instal·leu la versió de 64 bits del Showfoto per a obtenir "
-#~ "una experiència millor.</p>"
-
-#~ msgctxt "@title:window"
-#~ msgid "Enter Flickr Login URL"
-#~ msgstr "Introduïu l'URL d'inici de sessió de Flickr"
-
-#~ msgid ""
-#~ "Copy the full URL from the external browser that contains the "
-#~ "\"oauth_token\" entry:"
-#~ msgstr ""
-#~ "Copieu l'URL complet des del navegador extern que contingui l'entrada "
-#~ "«oauth_token»:"
-
-#~ msgid ""
-#~ "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
-#~ "RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit unpacked) "
-#~ "DNGs (non-standard) Deflate-compressed integer DNG files are allowed "
-#~ "Canon EOS R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica "
-#~ "M11 Sony A7-IV (ILCE-7M4) DJI Mavic 3"
-#~ msgstr ""
-#~ "Noves característiques RAW: Implementació de fitxers Phase One/Leaf IIQ-S "
-#~ "v2 Canon CR3 filmrolls/RawBurst Canon CRM (pel·lícula) en format de "
-#~ "mosaic de bits empaquetats (i de 16 bits no empaquetats) DNG (no "
-#~ "estàndard) Es permeten fitxers DNG comprimits «deflate» Canon EOS R3, R7 "
-#~ "i R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
-#~ "(ILCE-7M4) DJI Mavic 3"
-
-#~ msgctxt "@title:menu open with desktop application"
-#~ msgid "Open With"
-#~ msgstr "Obre amb"
-
-#~ msgctxt "@item:inmenu open with other application"
-#~ msgid "Other..."
-#~ msgstr "Altres..."
-
-#~ msgctxt "@title:menu"
-#~ msgid "Open With..."
-#~ msgstr "Obre amb..."

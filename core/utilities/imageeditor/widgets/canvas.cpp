@@ -320,7 +320,7 @@ void Canvas::slotRotateAuto()
 {
     AutoRotator autorotator;
     
-    switch (autorotator.rotationOrientation(d->core->getImageFilePath(), 10))
+    switch (autorotator.rotationOrientation(currentImage(), 10))
     {
         case MetaEngineRotation::Rotate90:
         {

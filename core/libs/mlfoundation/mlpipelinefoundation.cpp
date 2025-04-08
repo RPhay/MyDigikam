@@ -74,53 +74,64 @@ bool MLPipelineFoundation::start()
 
 void MLPipelineFoundation::cancel()
 {
-    /**
-     * @note worker threads can be in 1 of 3 states when cancel is called
-     *   1. waiting for a new package
-     *   2. processing a package
-     *   3. waiting to push a package
-     *
-     * handle all 3 cases so the worker thread sees the cancel signal
-     */
-
-    for (auto queue : std::as_const(queues))
+    if (!cancelled)
     {
-        // update the max queue size to something big
+        /**
+         * @note worker threads can be in 1 of 3 states when cancel is called
+         *   1. waiting for a new package
+         *   2. processing a package
+         *   3. waiting to push a package
+         *
+         * handle all 3 cases so the worker thread sees the cancel signal
+         */
 
-        queue->setMaxDepth(queue->maxDepthLimit());
+        // set the cancel flag (case 2 above)
 
-        // pop the front of the queue to free up any threads waiting on the queue (case 3 above)
+        cancelled = true;
 
-        if (1 < queue->size())
+        for (auto queue : std::as_const(queues))
         {
-            MLPipelinePackageFoundation* const package = queue->pop_front();
+            // update the max queue size to something big
 
-            if (queueEndSignal() != package)
-            {
-                delete package;
-            }
+            // queue->setMaxDepth(queue->maxDepthLimit());
+            queue->cancel(queueEndSignal());
         }
 
-        // send end of queue signal (case 1 above)
+        // quick pause to let the other threads see the cancel signal
 
-        queue->push_back(queueEndSignal());
-
-    }
-
-    // set the cancel flag (case 2 above)
-
-    cancelled = true;
-
-    // wait for all threads to finish
-
-    while (!hasFinished())
-    {
         QThread::msleep(100);
+
+        for (auto queue : std::as_const(queues))
+        {
+            // pop the front of the queue to free up any threads waiting on the queue (case 3 above)
+
+            if (1 < queue->size())
+            {
+                MLPipelinePackageFoundation* const package = queue->pop_front();
+
+                if (queueEndSignal() != package)
+                {
+                    delete package;
+                }
+            }
+
+            // send end of queue signal (case 1 above)
+
+            queue->push_back(queueEndSignal());
+
+        }
+
+        // wait for all threads to finish
+
+        while (!hasFinished())
+        {
+            QThread::msleep(100);
+        }
+
+        // clear the queues of any unprocessed packages
+
+        clearAllQueues();
     }
-
-    // clear the queues of any unprocessed packages
-
-    clearAllQueues();
 }
 
 bool MLPipelineFoundation::hasFinished() const
@@ -395,34 +406,21 @@ void MLPipelineFoundation::slotAddMoreWorkers()
     addMoreWorkers();
 }
 
-void MLPipelineFoundation::clearQueue(MLPipelineQueue* thisQueue)
-{
-    while (!thisQueue->isEmpty())
-    {
-        MLPipelinePackageFoundation* const package = thisQueue->pop_front();
-
-        if (queueEndSignal() != package)
-        {
-            delete package;
-        }
-    }
-}
-
 void MLPipelineFoundation::clearAllQueues()
 {
     for (MLPipelineQueue* const queue : std::as_const(queues))
     {
-        // update the max queue size to something big
-
-        queue->setMaxDepth(queue->maxDepthLimit());
-
-        // tell the threads to exit
-
-        queue->push_back(queueEndSignal());
-
         // remove any incoming items
 
-        clearQueue(queue);
+        while (!queue->isEmpty())
+        {
+            MLPipelinePackageFoundation* const package = queue->pop_front();
+    
+            if (queueEndSignal() != package)
+            {
+                delete package;
+            }
+        }
     }
 }
 
@@ -432,9 +430,9 @@ bool MLPipelineFoundation::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackage
     {
         // check if buffer memory is full
 
-        if ((package->size + usedBufferSize) > maxBufferSize)
+        if ((package->size + usedBufferSize) > maxBufferSize && !cancelled)
         {
-            // slow things down
+            // slow things down, but only if the cancelled flag is false
 
             thisQueue->setMaxDepth(throttledQueueDepth);
         }
@@ -538,6 +536,9 @@ void MLPipelineFoundation::stageEnd(MLPipelineStage thisStage, MLPipelineStage n
     if (queues.contains(thisStage))
     {
         queues[thisStage]->setMaxDepth(queues[thisStage]->maxDepthLimit());
+        
+        // tell other threads to exit
+
         queues[thisStage]->push_back(queueEndSignal());
     }
 
@@ -548,6 +549,9 @@ void MLPipelineFoundation::stageEnd(MLPipelineStage thisStage, MLPipelineStage n
     if (queues.contains(nextStage) && (performanceProfileList[thisStage].currentThreadCount == 0))
     {
         queues[nextStage]->setMaxDepth(queues[nextStage]->maxDepthLimit());
+
+        // tell the next stage to exit
+
         queues[nextStage]->push_back(queueEndSignal());
     }
 }

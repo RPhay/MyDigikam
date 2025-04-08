@@ -20,6 +20,7 @@
 #include "digikamapp_p.h"
 #include "facepipelineedit.h"
 #include "facebackgroundrecognition.h"
+#include "systemsettings.h"
 
 namespace Digikam
 {
@@ -860,7 +861,14 @@ void DigikamApp::slotSelectionChanged(int selectionCount)
 
     d->imagePreviewAction->setEnabled(hasAtLeastCurrent);
     d->imageViewAction->setEnabled(hasAtLeastCurrent);
+
+    // show/shide face actions depending on the settings
+
     d->imageScanForFacesAction->setEnabled(selectionCount > 0);
+    d->imageScanForFacesAction->setVisible(SystemSettings(qApp->applicationName()).enableFaceEngine);
+    d->imageRecognizeFacesAction->setEnabled(selectionCount > 0);
+    d->imageRecognizeFacesAction->setVisible(SystemSettings(qApp->applicationName()).enableFaceEngine);
+
     d->imageRemoveAllFacesAction->setEnabled(selectionCount > 0);
     d->imageFindSimilarAction->setEnabled(selectionCount == 1);
     d->imageRenameAction->setEnabled(selectionCount > 0);

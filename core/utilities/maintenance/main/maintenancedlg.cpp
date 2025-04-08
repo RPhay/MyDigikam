@@ -22,6 +22,7 @@
 // local includes
 
 #include "autotagsscansettings.h"
+#include "systemsettings.h"
 
 namespace Digikam
 {
@@ -228,6 +229,14 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     d->expanderBox->setCheckBoxVisible(Private::FaceManagement, true);
 
+    // disable face management if the setting is not enabled
+
+    if (!SystemSettings(qApp->applicationName()).enableFaceEngine)
+    {
+        d->expanderBox->setItemExpanded(Private::FaceManagement, false);
+        d->expanderBox->setItemEnabled(Private::FaceManagement, false);
+    }
+
     // --------------------------------------------------------------------------------------
 
     d->vbox5               = new DVBox;
@@ -242,6 +251,14 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
                               );
 
     d->expanderBox->setCheckBoxVisible(Private::AutotagsAssignment, true);
+
+    // disable auto-tags assignment if the setting is not enabled
+
+    if (!SystemSettings(qApp->applicationName()).enableAutoTags)
+    {
+        d->expanderBox->setItemExpanded(Private::AutotagsAssignment, false);    
+        d->expanderBox->setItemEnabled(Private::AutotagsAssignment, false);
+    }
 
     // --------------------------------------------------------------------------------------
 

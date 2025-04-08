@@ -4,9 +4,13 @@ digiKam 8.7.0 - Release date: 2025-06-xx
 NEW FEATURES:
 
 Bundles:         Update to last ExifTool version 13.26.
+Bundles:         Update Linux AppImage to last frameworks Qt 6.8.3 and KDE 6.12.0
 RawEngine:       Update internal Libraw to last 20250403 upstream.
 Video:           Update internal QtAVPlayer to last 20250403 upstream (Qt5 only).
 Queue Manager:   New tool to perform auto-rotation based on content analysis using DNN.
+Face Engine:     digiKam will automatically start a new face recognition scan when new faces are
+                 confirmed/tagged. This feature can be controlled in Settings->Miscelaneous->
+                 Behaviour->Background face recognition scan.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -115,37 +119,37 @@ BUGFIXES:
 102 ==> 501978 - No Database created at startup
 103 ==> 502003 - digiKam exits abruptly when attempting to open help.
 104 ==> 502051 - Tag tree in right window pane (under the Tag tab) doesnt work consistently as regards nested item memberships.
-105 ==> 502048 - Save tiff to tiff make corrupt output file
+105 ==> 502048 - Save tiff to tiff make corrupt output file.
 106 ==> 501298 - Crash after creating an sub album in a sub window.
 107 ==> 502173 - digiKam - white screen.
 108 ==> 502242 - Uneven preview sharpness!!
 109 ==> 502219 - Right-click, "Recognize faces" does no longer recognize any faces.
-110 ==> 
-111 ==>
-112 ==>
-113 ==>
-114 ==>
-115 ==>
-116 ==>
-117 ==>
-118 ==>
-119 ==>
-120 ==>
-121 ==>
-122 ==>
-123 ==>
-124 ==>
-125 ==>
-126 ==>
-127 ==>
-128 ==>
-129 ==>
-130 ==>
-131 ==>
-132 ==>
-133 ==>
-134 ==>
-135 ==>
-136 ==>
-137 ==>
-138 ==>
+110 ==> 502200 - Set automatically the rotation flag for pictures in portrait format with a dedicated scanning tool.
+111 ==> 501627 - digiKam 8.6 crashes while retraining face recognition database.
+112 ==> 502327 - digiKam stopped working properly on Gnome and Gnome-based desktops since version 8.5.
+113 ==> 398721 - No results if an album (directory) is selected.
+114 ==> 465575 - Face Recognition - Suggest Names
+115 ==> 502397 - Not possible to reduce the width of the label field in digiKam.
+116 ==> 502404 - File creation and modification dates.
+117 ==> 502515 - Cannot enter Proxy authentication data.
+118 ==> 502524 - Assign a suggested face by dragging to the same face.
+119 ==> 
+120 ==> 
+121 ==> 
+122 ==> 
+123 ==> 
+124 ==> 
+125 ==> 
+126 ==> 
+127 ==> 
+128 ==> 
+129 ==> 
+130 ==> 
+131 ==> 
+132 ==> 
+133 ==> 
+134 ==> 
+135 ==> 
+136 ==> 
+137 ==> 
+138 ==> 

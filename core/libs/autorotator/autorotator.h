@@ -37,7 +37,7 @@ public:
      * @param img               The DImg file must be in the same rotation as what is displayed in the image viewer
      * @return                  The free rotation angle
      */
-    float                                     rotationAngle(const DImg& img);
+    float                                     rotationAngle(const DImg& img, bool copyDImg = true);
 
     /**
      * @brief rotationOrientation
@@ -45,7 +45,7 @@ public:
      * @param sensitivity       The sensitivity of the of the base angle
      * @return                  The rotation action to be taken
      */
-    MetaEngineRotation::TransformationAction    rotationOrientation(const DImg& img,    int sensitivity);
+    MetaEngineRotation::TransformationAction    rotationOrientation(const DImg& img,    int sensitivity, bool copyDImg = true);
 
     /**
      * @brief rotationOrientation
@@ -64,6 +64,8 @@ private:
     bool            loadModel();
     cv::Mat         Preprocess(const DImg& img);
     bool            shouldRotate(int degrees, int sensitivity, int angle);
+    float           privateRotationAngle(const DImg& img);
+
 
 private:
 

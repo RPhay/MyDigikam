@@ -168,7 +168,6 @@ protected:
         return nullptr;
     }
 
-    void clearQueue(MLPipelineQueue* thisQueue);
     void clearAllQueues();
 
     virtual bool enqueue(MLPipelineQueue* thisQueue, MLPipelinePackageFoundation* package);

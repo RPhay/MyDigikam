@@ -127,6 +127,15 @@ public:
         return std::numeric_limits<int>::max();
     }
 
+    void cancel(T const& queueEndSignal)
+    {
+        QMutexLocker locker(&mutex_);
+        maxDepth_ = std::numeric_limits<int>::max();
+        queue_.push_front(queueEndSignal);
+        front_.wakeOne();
+        back_.wakeAll();
+    }
+
 private:
 
     QQueue<T>               queue_;

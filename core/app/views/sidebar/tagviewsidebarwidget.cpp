@@ -47,6 +47,7 @@
 #include "autotagsscanwidget.h"
 #include "autotagsengine.h"
 #include "dexpanderbox.h"
+#include "systemsettings.h"
 
 namespace Digikam
 {
@@ -197,6 +198,13 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
 
 #endif
 
+    // hide autotags expander and rescan button if autotags are disabled
+
+    if (!SystemSettings(qApp->applicationName()).enableAutoTags)
+    {
+        d->autotagsExpander->setVisible(false);
+        d->rescanButton->setVisible(false);        
+    }
 }
 
 TagViewSideBarWidget::~TagViewSideBarWidget()
