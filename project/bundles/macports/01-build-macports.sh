@@ -342,7 +342,6 @@ if [[ $DK_QTVERSION = 5 ]] ; then
 fi
 
 port install qt$DK_QTVERSION$MP_QTSUBVERSION-qtscxml -examples -tests
-#port install qt$DK_QTVERSION$MP_QTSUBVERSION-qtspeech -examples -tests
 port install qt$DK_QTVERSION$MP_QTSUBVERSION-qtsvg -examples -tests
 port install qt$DK_QTVERSION$MP_QTSUBVERSION-qttools -examples -tests
 port install qt$DK_QTVERSION$MP_QTSUBVERSION-qttranslations
