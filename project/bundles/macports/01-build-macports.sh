@@ -292,7 +292,7 @@ port install jpeg
 port install tiff
 port install eigen3
 port install gettext
-#port install wget +ssl
+port install wget +ssl
 port install jasper
 port install lcms2
 port install expat
