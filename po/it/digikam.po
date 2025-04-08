@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-05 01:59+0000\n"
+"POT-Creation-Date: 2025-04-08 01:59+0000\n"
 "PO-Revision-Date: 2025-03-29 12:53+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -220,8 +220,8 @@ msgstr "&Copia qui"
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:775
-#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:234
-#: core/app/dragdrop/tagdragdrop.cpp:283 core/app/dragdrop/tagdragdrop.cpp:398
+#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:246
+#: core/app/dragdrop/tagdragdrop.cpp:302 core/app/dragdrop/tagdragdrop.cpp:417
 #, kde-format
 msgid "C&ancel"
 msgstr "Annull&a"
@@ -327,19 +327,28 @@ msgstr "Importazione"
 msgid "M&erge Here"
 msgstr "&Unisci qui"
 
-#: core/app/dragdrop/tagdragdrop.cpp:232 core/app/dragdrop/tagdragdrop.cpp:394
+#: core/app/dragdrop/tagdragdrop.cpp:235
+#, fuzzy, kde-format
+#| msgid "Change face name from '%2' to '%3'"
+#| msgid_plural "Change face names from '%2' to '%3'"
+msgid "Confirm face name '%2' to Item"
+msgid_plural "Confirm face name '%2' to Items"
+msgstr[0] "Cambia nome del volto da '%2' a '%3'"
+msgstr[1] "Cambia nomi del volto da '%2' a '%3'"
+
+#: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Imposta come miniatura del tag"
 
-#: core/app/dragdrop/tagdragdrop.cpp:277
+#: core/app/dragdrop/tagdragdrop.cpp:296
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "Cambia nome del volto da '%2' a '%3'"
 msgstr[1] "Cambia nomi del volto da '%2' a '%3'"
 
-#: core/app/dragdrop/tagdragdrop.cpp:389
+#: core/app/dragdrop/tagdragdrop.cpp:408
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Assegna il (i) tag «%1» agli elementi"

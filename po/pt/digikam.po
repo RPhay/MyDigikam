@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-05 01:59+0000\n"
+"POT-Creation-Date: 2025-04-08 01:59+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -360,8 +360,8 @@ msgstr "&Copiar para Aqui"
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:775
-#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:234
-#: core/app/dragdrop/tagdragdrop.cpp:283 core/app/dragdrop/tagdragdrop.cpp:398
+#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:246
+#: core/app/dragdrop/tagdragdrop.cpp:302 core/app/dragdrop/tagdragdrop.cpp:417
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancelar"
@@ -467,19 +467,28 @@ msgstr "A importar"
 msgid "M&erge Here"
 msgstr "R&eunir Aqui"
 
-#: core/app/dragdrop/tagdragdrop.cpp:232 core/app/dragdrop/tagdragdrop.cpp:394
+#: core/app/dragdrop/tagdragdrop.cpp:235
+#, fuzzy, kde-format
+#| msgid "Change face name from '%2' to '%3'"
+#| msgid_plural "Change face names from '%2' to '%3'"
+msgid "Confirm face name '%2' to Item"
+msgid_plural "Confirm face name '%2' to Items"
+msgstr[0] "Mudança do nome da cara de '%2' para '%3'"
+msgstr[1] "Mudança dos nomes das caras de '%2' para '%3'"
+
+#: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Escolher como Miniatura da Marca"
 
-#: core/app/dragdrop/tagdragdrop.cpp:277
+#: core/app/dragdrop/tagdragdrop.cpp:296
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "Mudança do nome da cara de '%2' para '%3'"
 msgstr[1] "Mudança dos nomes das caras de '%2' para '%3'"
 
-#: core/app/dragdrop/tagdragdrop.cpp:389
+#: core/app/dragdrop/tagdragdrop.cpp:408
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Atribuir as Marcas '%1' aos Itens"

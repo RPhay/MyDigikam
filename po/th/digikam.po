@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-05 01:59+0000\n"
+"POT-Creation-Date: 2025-04-08 01:59+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -243,8 +243,8 @@ msgstr "&คัดลอกไว้ที่นี่"
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:775
-#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:234
-#: core/app/dragdrop/tagdragdrop.cpp:283 core/app/dragdrop/tagdragdrop.cpp:398
+#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:246
+#: core/app/dragdrop/tagdragdrop.cpp:302 core/app/dragdrop/tagdragdrop.cpp:417
 #, kde-format
 msgid "C&ancel"
 msgstr "&ยกเลิก"
@@ -351,18 +351,24 @@ msgstr "นำเข้า"
 msgid "M&erge Here"
 msgstr "ย้าย&มาไว้ที่นี่"
 
-#: core/app/dragdrop/tagdragdrop.cpp:232 core/app/dragdrop/tagdragdrop.cpp:394
+#: core/app/dragdrop/tagdragdrop.cpp:235
+#, kde-format
+msgid "Confirm face name '%2' to Item"
+msgid_plural "Confirm face name '%2' to Items"
+msgstr[0] ""
+
+#: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "ตั้งเป็นภาพตัวอย่างของป้ายกำกับ"
 
-#: core/app/dragdrop/tagdragdrop.cpp:277
+#: core/app/dragdrop/tagdragdrop.cpp:296
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:389
+#: core/app/dragdrop/tagdragdrop.cpp:408
 #, fuzzy, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "กำหนดป้ายกำกับ '%1' ไปยังรายการ"

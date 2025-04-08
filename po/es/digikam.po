@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-05 01:59+0000\n"
+"POT-Creation-Date: 2025-04-08 01:59+0000\n"
 "PO-Revision-Date: 2025-04-05 10:53+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -242,8 +242,8 @@ msgstr "&Copiar aquí"
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:775
-#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:234
-#: core/app/dragdrop/tagdragdrop.cpp:283 core/app/dragdrop/tagdragdrop.cpp:398
+#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:246
+#: core/app/dragdrop/tagdragdrop.cpp:302 core/app/dragdrop/tagdragdrop.cpp:417
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancelar"
@@ -349,19 +349,28 @@ msgstr "Importando"
 msgid "M&erge Here"
 msgstr "&Fusionar aquí"
 
-#: core/app/dragdrop/tagdragdrop.cpp:232 core/app/dragdrop/tagdragdrop.cpp:394
+#: core/app/dragdrop/tagdragdrop.cpp:235
+#, fuzzy, kde-format
+#| msgid "Change face name from '%2' to '%3'"
+#| msgid_plural "Change face names from '%2' to '%3'"
+msgid "Confirm face name '%2' to Item"
+msgid_plural "Confirm face name '%2' to Items"
+msgstr[0] "Cambiar nombre de la cara de «%2» a «%3»"
+msgstr[1] "Cambiar nombres de las caras de «%2» a «%3»"
+
+#: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Establecer como miniatura de la etiqueta"
 
-#: core/app/dragdrop/tagdragdrop.cpp:277
+#: core/app/dragdrop/tagdragdrop.cpp:296
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "Cambiar nombre de la cara de «%2» a «%3»"
 msgstr[1] "Cambiar nombres de las caras de «%2» a «%3»"
 
-#: core/app/dragdrop/tagdragdrop.cpp:389
+#: core/app/dragdrop/tagdragdrop.cpp:408
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Asignar la(s) etiqueta(s) «%1» a los elementos"

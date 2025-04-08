@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-05 01:59+0000\n"
+"POT-Creation-Date: 2025-04-08 01:59+0000\n"
 "PO-Revision-Date: 2025-04-07 00:52+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -247,8 +247,8 @@ msgstr "Buraya &Kopyala"
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:775
-#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:234
-#: core/app/dragdrop/tagdragdrop.cpp:283 core/app/dragdrop/tagdragdrop.cpp:398
+#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:246
+#: core/app/dragdrop/tagdragdrop.cpp:302 core/app/dragdrop/tagdragdrop.cpp:417
 #, kde-format
 msgid "C&ancel"
 msgstr "İ&ptal"
@@ -354,19 +354,28 @@ msgstr "İçe aktarılıyor"
 msgid "M&erge Here"
 msgstr "Buraya &Birleştir"
 
-#: core/app/dragdrop/tagdragdrop.cpp:232 core/app/dragdrop/tagdragdrop.cpp:394
+#: core/app/dragdrop/tagdragdrop.cpp:235
+#, fuzzy, kde-format
+#| msgid "Change face name from '%2' to '%3'"
+#| msgid_plural "Change face names from '%2' to '%3'"
+msgid "Confirm face name '%2' to Item"
+msgid_plural "Confirm face name '%2' to Items"
+msgstr[0] "“%2” olan yüz adını “%3” olarak değiştir"
+msgstr[1] "“%2” olan yüz adlarını “%3” olarak değiştir"
+
+#: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Künye Küçük Görseli Olarak Ayarla"
 
-#: core/app/dragdrop/tagdragdrop.cpp:277
+#: core/app/dragdrop/tagdragdrop.cpp:296
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "“%2” olan yüz adını “%3” olarak değiştir"
 msgstr[1] "“%2” olan yüz adlarını “%3” olarak değiştir"
 
-#: core/app/dragdrop/tagdragdrop.cpp:389
+#: core/app/dragdrop/tagdragdrop.cpp:408
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Ögelere “%1” Künyelerini Ata"
