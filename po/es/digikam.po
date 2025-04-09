@@ -47,7 +47,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-08 01:59+0000\n"
-"PO-Revision-Date: 2025-04-05 10:53+0200\n"
+"PO-Revision-Date: 2025-04-08 14:29+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -350,13 +350,11 @@ msgid "M&erge Here"
 msgstr "&Fusionar aquí"
 
 #: core/app/dragdrop/tagdragdrop.cpp:235
-#, fuzzy, kde-format
-#| msgid "Change face name from '%2' to '%3'"
-#| msgid_plural "Change face names from '%2' to '%3'"
+#, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
-msgstr[0] "Cambiar nombre de la cara de «%2» a «%3»"
-msgstr[1] "Cambiar nombres de las caras de «%2» a «%3»"
+msgstr[0] "Confirmar nombre de cara «%2» para el elemento"
+msgstr[1] "Confirmar nombre de cara «%2» para los elementos"
 
 #: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
 #, kde-format
@@ -367,8 +365,8 @@ msgstr "Establecer como miniatura de la etiqueta"
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
-msgstr[0] "Cambiar nombre de la cara de «%2» a «%3»"
-msgstr[1] "Cambiar nombres de las caras de «%2» a «%3»"
+msgstr[0] "Cambiar nombre de cara de «%2» a «%3»"
+msgstr[1] "Cambiar nombres de caras de «%2» a «%3»"
 
 #: core/app/dragdrop/tagdragdrop.cpp:408
 #, kde-format

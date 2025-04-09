@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-08 01:59+0000\n"
-"PO-Revision-Date: 2025-04-05 14:31+0300\n"
+"PO-Revision-Date: 2025-04-08 09:44+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -315,15 +315,13 @@ msgid "M&erge Here"
 msgstr "О&б'єднати сюди"
 
 #: core/app/dragdrop/tagdragdrop.cpp:235
-#, fuzzy, kde-format
-#| msgid "Change face name from '%2' to '%3'"
-#| msgid_plural "Change face names from '%2' to '%3'"
+#, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
-msgstr[0] "Змінити ім'я для облич з «%2» на «%3»"
-msgstr[1] "Змінити ім'я для облич з «%2» на «%3»"
-msgstr[2] "Змінити ім'я для облич з «%2» на «%3»"
-msgstr[3] "Змінити ім'я для обличчя з «%2» на «%3»"
+msgstr[0] "Підтвердження імені обличчя «%2» для записів"
+msgstr[1] "Підтвердження імені обличчя «%2» для записів"
+msgstr[2] "Підтвердження імені обличчя «%2» для записів"
+msgstr[3] "Підтвердження імені обличчя «%2» для запису"
 
 #: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
 #, kde-format

@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-08 01:59+0000\n"
-"PO-Revision-Date: 2025-04-05 23:26+0200\n"
+"PO-Revision-Date: 2025-04-08 13:54+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -366,13 +366,11 @@ msgid "M&erge Here"
 msgstr "Hi&er samenvoegen"
 
 #: core/app/dragdrop/tagdragdrop.cpp:235
-#, fuzzy, kde-format
-#| msgid "Change face name from '%2' to '%3'"
-#| msgid_plural "Change face names from '%2' to '%3'"
+#, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
-msgstr[0] "Gezichtsnaam wijzigen van '%2' naar '%3'"
-msgstr[1] "Gezichtsnamen wijzigen van '%2' naar '%3'"
+msgstr[0] "Gezichtsnaam '%2' bevestigen naar item"
+msgstr[1] "Gezichtsnaam '%2' bevestigen naar items'"
 
 #: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
 #, kde-format

@@ -355,13 +355,11 @@ msgid "M&erge Here"
 msgstr "Buraya &Birleştir"
 
 #: core/app/dragdrop/tagdragdrop.cpp:235
-#, fuzzy, kde-format
-#| msgid "Change face name from '%2' to '%3'"
-#| msgid_plural "Change face names from '%2' to '%3'"
+#, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
-msgstr[0] "“%2” olan yüz adını “%3” olarak değiştir"
-msgstr[1] "“%2” olan yüz adlarını “%3” olarak değiştir"
+msgstr[0] "“%2” olan yüz adını Öge olarak onayla"
+msgstr[1] "“%2” olan yüz adlarını Ögeler olarak onayla"
 
 #: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
 #, kde-format

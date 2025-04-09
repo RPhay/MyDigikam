@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-08 01:59+0000\n"
-"PO-Revision-Date: 2025-04-05 08:05+0200\n"
+"PO-Revision-Date: 2025-04-08 06:54+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -342,15 +342,13 @@ msgid "M&erge Here"
 msgstr "Zlij sem"
 
 #: core/app/dragdrop/tagdragdrop.cpp:235
-#, fuzzy, kde-format
-#| msgid "Change face name from '%2' to '%3'"
-#| msgid_plural "Change face names from '%2' to '%3'"
+#, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
-msgstr[0] "Spremeni ime človeka iz '%2' v '%3'"
-msgstr[1] "Spremeni imena ljudi iz '%2' v '%3'"
-msgstr[2] "Spremeni imena ljudi iz '%2' v '%3'"
-msgstr[3] "Spremeni imena ljudi iz '%2' v '%3'"
+msgstr[0] "Potrdi ime obraza '%2' za postavke"
+msgstr[1] "Potrdi ime obraza '%2' za postavko"
+msgstr[2] "Potrdi ime obraza '%2' za postavki"
+msgstr[3] "Potrdi ime obraza '%2' za postavke"
 
 #: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
 #, kde-format
@@ -3019,7 +3017,7 @@ msgstr "Uporabite ta gumb, da preiščete obraze v izbranih albumih"
 #, kde-format
 msgctxt "@info"
 msgid "Face engine is disabled"
-msgstr "Stroj za obraze je onemogočen."
+msgstr "Stroj za obraze je onemogočen"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:204
 #, kde-format
