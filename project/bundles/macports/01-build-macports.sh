@@ -292,7 +292,6 @@ port install jpeg
 port install tiff
 port install eigen3
 port install gettext
-port install wget +ssl
 port install jasper
 port install lcms2
 port install expat
@@ -318,6 +317,7 @@ port install x264
 port install aom
 port install libusb
 port install libgphoto2
+port install wget +ssl
 
 port install libheif +x265 -tests -rav1e -kvazaar
 port install ffmpeg7 +gpl2 +nonfree
