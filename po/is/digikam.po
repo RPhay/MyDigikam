@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-08 01:59+0000\n"
-"PO-Revision-Date: 2025-03-31 10:13+0000\n"
+"PO-Revision-Date: 2025-04-09 15:42+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -334,13 +334,11 @@ msgid "M&erge Here"
 msgstr "Sam&eina hingað"
 
 #: core/app/dragdrop/tagdragdrop.cpp:235
-#, fuzzy, kde-format
-#| msgid "Change face name from '%2' to '%3'"
-#| msgid_plural "Change face names from '%2' to '%3'"
+#, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
-msgstr[0] "Breyta nafni andlits úr '%2' í '%3'"
-msgstr[1] "Breyta nafni andlita úr '%2' í '%3'"
+msgstr[0] "Staðfestu nafn andlits úr '%2' atriði"
+msgstr[1] "Staðfestu nafn andlits úr '%2' atriðum"
 
 #: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
 #, kde-format
@@ -2961,12 +2959,10 @@ msgstr "Veldu þetta til að leita að andlitum í völdum albúmum"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:168
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Color-Managed View is disabled."
+#, kde-format
 msgctxt "@info"
 msgid "Face engine is disabled"
-msgstr "Litasstýrð sýn er óvirk."
+msgstr "Andlitagreining er óvirk."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:204
 #, kde-format
@@ -2979,16 +2975,13 @@ msgstr ""
 "hliðarspjaldinu."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:259
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face recognition is aborted, because there are no identities to "
-#| "recognize. Please add new identities."
+#, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
 msgstr ""
-"Hætt var við andlitakennsl, því það voru engin andlitamerki til að miða við. "
-"Bættu við nýjum auðkennismerkjum."
+"Hætt var við andlitakennsl, því það voru engin andlitaauðkenni til að miða "
+"við. Bættu við nýjum auðkennismerkjum."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:279
 #, kde-format
@@ -60967,10 +60960,7 @@ msgid "Duplicate found: %1"
 msgstr "Tvítekning fannst: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:211
-#, fuzzy, kde-format
-#| msgid ""
-#| "A face recognition task is already running. Only one task can be running "
-#| "at a time. Please wait until it is finished."
+#, kde-format
 msgid ""
 "A face scan is already running. Only one face task can be running at a time. "
 "Please wait until it is finished."
@@ -66224,11 +66214,9 @@ msgid "Detect faces in newly added images"
 msgstr "Finna andlit í nýlega viðbættum myndum"
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Benchmark face recognition"
+#, kde-format
 msgid "Background face recognition scan"
-msgstr "Álagsprófa andlitakennsl"
+msgstr "Andlitakennsl keyrð í bakgrunni"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format
@@ -66236,6 +66224,8 @@ msgid ""
 "Set this option to automatically start a background face recognition scan\n"
 "when a new face is tagged. This will make the tagging process easier."
 msgstr ""
+"Veldu þetta til að setja sjálfkrafa í gang andlitagreiningu í bakgrunni\n"
+"þegar nýtt andlit er merkt. Þetta mun einfalda ferlið við merkingar."
 
 #: core/utilities/setup/misc/setupmisc.cpp:88
 #, kde-format

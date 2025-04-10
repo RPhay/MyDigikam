@@ -313,7 +313,7 @@ msgstr "合并标签(&E)"
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
-msgstr[0] ""
+msgstr[0] "确认分配人脸名称“%2”到项目"
 
 #: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
 #, kde-format
