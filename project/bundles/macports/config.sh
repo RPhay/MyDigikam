@@ -94,8 +94,6 @@ DK_BUILDTEMP=~/dktemp
 #DK_QTVERSION="5"
 DK_QTVERSION="6"
 
-MP_QTSUBVERSION="8"
-
 # Mariadb version to install for Qt SQL plugin.
 DK_MARIADB_VERSION="10.11"
 
@@ -146,6 +144,9 @@ if [[ $DK_QTVERSION == 5 ]] ; then
     DK_UPLOADDIR="/srv/archives/files/digikam/legacy"
 
 else
+
+    # Use Qt 6.8 LTS for the moment.
+    MP_QTSUBVERSION="8"
 
     # KDE KF6 frameworks version.
     # See official release here: https://download.kde.org/stable/frameworks/
