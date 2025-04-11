@@ -139,7 +139,7 @@ BUGFIXES:
 120 ==> 437389 - Add option to refresh all faces from all albuns.
 121 ==> 426000 - Please allow Unicode-Strings in EXIF metadata.
 122 ==> 492122 - Keep the Show Focus Point between session.
-123 ==> 
+123 ==> 449546 - Improve watermark tool to paste signatures easily to a photo.
 124 ==> 
 125 ==> 
 126 ==> 
