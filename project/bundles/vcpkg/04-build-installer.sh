@@ -97,7 +97,8 @@ fi
 
 # Check for the CUDA toolkits install directory.
 
-CUDASDK_PREFIX="`find "/c/Program Files/" -name "cublas64_12.dll" -type f -executable`"
+CUDASDK_PREFIX="`find "/c/Program Files/NVIDIA GPU Computing Toolkit" -name "cublas64_12.dll" -type f -executable`"
+CUDASDK_PREFIX="`dirname "${CUDASDK_PREFIX}"`"
 echo "$CUDASDK_PREFIX"
 
 if [ ! -d "$CUDASDK_PREFIX" ] ; then
@@ -107,7 +108,8 @@ else
     echo "Check CUDA toolkit install path passed..."
 fi
 
-CUDADNNSDK_PREFIX="`find "/c/Program Files/" -name "cudnn64_9.dll" -type f -executable`"
+CUDADNNSDK_PREFIX="`find "/c/Program Files/NVIDIA/CUDNN/v9.8/bin/11.8" -name "cudnn64_9.dll" -type f -executable`"
+CUDADNNSDK_PREFIX="`dirname "${CUDADNNSDK_PREFIX}"`"
 echo "$CUDADNNSDK_PREFIX"
 
 if [ ! -d "$CUDADNNSDK_PREFIX" ] ; then
@@ -456,8 +458,8 @@ done
 
 echo -e "\n---------- Copy CUDA toolkits dlls"
 
-cp -r "$CUDASDK_PREFIX"/cublas64_12.dll                                    $BUNDLEDIR/                           2>/dev/null
-cp -r "$CUDADNNSDK_PREFIX"/cudnn64_9.dll                                   $BUNDLEDIR/                           2>/dev/null
+cp "$CUDASDK_PREFIX"/cublas64_12.dll                                    $BUNDLEDIR/                           2>/dev/null
+cp "$CUDADNNSDK_PREFIX"/cudnn64_9.dll                                   $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- Copy redistributable VSCommunity compatibility dlls"
 
