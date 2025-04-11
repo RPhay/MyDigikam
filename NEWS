@@ -140,7 +140,7 @@ BUGFIXES:
 121 ==> 426000 - Please allow Unicode-Strings in EXIF metadata.
 122 ==> 492122 - Keep the Show Focus Point between session.
 123 ==> 449546 - Improve watermark tool to paste signatures easily to a photo.
-124 ==> 
+124 ==> 497257 - Unix time as image file name not being detected for 'adjust time and date' tool.
 125 ==> 
 126 ==> 
 127 ==> 
