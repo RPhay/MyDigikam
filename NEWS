@@ -136,7 +136,7 @@ BUGFIXES:
 117 ==> 502515 - Cannot enter Proxy authentication data.
 118 ==> 502524 - Assign a suggested face by dragging to the same face.
 119 ==> 502636 - Intel 620 gpu opencl support disabled on windows 11.
-120 ==> 
+120 ==> 437389 - Add option to refresh all faces from all albuns.
 121 ==> 
 122 ==> 
 123 ==> 
