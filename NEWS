@@ -137,7 +137,7 @@ BUGFIXES:
 118 ==> 502524 - Assign a suggested face by dragging to the same face.
 119 ==> 502636 - Intel 620 gpu opencl support disabled on windows 11.
 120 ==> 437389 - Add option to refresh all faces from all albuns.
-121 ==> 
+121 ==> 426000 - Please allow Unicode-Strings in EXIF metadata.
 122 ==> 
 123 ==> 
 124 ==> 
