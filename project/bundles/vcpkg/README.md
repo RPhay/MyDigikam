@@ -116,6 +116,10 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
         + Disable all others features                   Note: in 'Addition Tasks' step
         + Use default install path in C:/
 
+    - NVIDIA CUDA + CUDA-DNN Sdks for Windows 10 64 bits Intel
+        + Install CUDA toolkits from https://developer.nvidia.com/cuda-downloads
+        + Install CUDA-DNN toolkits from https://developer.nvidia.com/cudnn-downloads
+
 * BUILD
 
     You must set the digiKam git tags to checkout right source code in installer.
