@@ -459,6 +459,7 @@ done
 echo -e "\n---------- Copy CUDA toolkits dlls"
 
 cp "$CUDASDK_PREFIX"/cublas64_12.dll                                    $BUNDLEDIR/                           2>/dev/null
+cp "$CUDASDK_PREFIX"/cublasLt64_12.dll                                  $BUNDLEDIR/                           2>/dev/null
 cp "$CUDADNNSDK_PREFIX"/cudnn64_9.dll                                   $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- Copy redistributable VSCommunity compatibility dlls"
