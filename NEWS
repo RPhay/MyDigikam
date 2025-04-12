@@ -150,7 +150,7 @@ BUGFIXES:
 131 ==> 479783 - Configurable Default Action for Thumbnail Click Action.
 132 ==> 399552 - Add option to apply tags, color codes and stars to treeview-albums.
 133 ==> 458256 - Tagging with shortcut doesn't display checkmarks for parent tags in Collections > Tags.
-134 ==> 
+134 ==> 453013 - Album-specific tags.
 135 ==> 
 136 ==> 
 137 ==> 
