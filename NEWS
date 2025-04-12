@@ -148,7 +148,7 @@ BUGFIXES:
 129 ==> 480461 - Add way to export and import application settings.
 130 ==> 493535 - Writing sidecar files timestamp option.
 131 ==> 479783 - Configurable Default Action for Thumbnail Click Action.
-132 ==> 
+132 ==> 399552 - Add option to apply tags, color codes and stars to treeview-albums.
 133 ==> 
 134 ==> 
 135 ==> 
