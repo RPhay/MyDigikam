@@ -147,7 +147,7 @@ BUGFIXES:
 128 ==> 497033 - Search by tags.
 129 ==> 480461 - Add way to export and import application settings.
 130 ==> 493535 - Writing sidecar files timestamp option.
-131 ==> 
+131 ==> 479783 - Configurable Default Action for Thumbnail Click Action.
 132 ==> 
 133 ==> 
 134 ==> 
