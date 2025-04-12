@@ -151,7 +151,7 @@ BUGFIXES:
 132 ==> 399552 - Add option to apply tags, color codes and stars to treeview-albums.
 133 ==> 458256 - Tagging with shortcut doesn't display checkmarks for parent tags in Collections > Tags.
 134 ==> 453013 - Album-specific tags.
-135 ==> 
+135 ==> 414114 - Gphoto2 I/O error -7 when importing photos from iphone 7+.
 136 ==> 
 137 ==> 
 138 ==> 
