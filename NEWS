@@ -155,7 +155,7 @@ BUGFIXES:
 136 ==> 411388 - digiKam froze and crash after downloading photos.
 137 ==> 457662 - Ghostscript --with-tesseract crashes digiKam on startup.
 138 ==> 487545 - Error rename files in digiKam.
-139 ==> 
+139 ==> 496495 - Sort by examination date fails after editing an image.
 140 ==> 
 141 ==> 
 142 ==> 
