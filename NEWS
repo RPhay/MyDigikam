@@ -154,7 +154,7 @@ BUGFIXES:
 135 ==> 414114 - Gphoto2 I/O error -7 when importing photos from iphone 7+.
 136 ==> 411388 - digiKam froze and crash after downloading photos.
 137 ==> 457662 - Ghostscript --with-tesseract crashes digiKam on startup.
-138 ==> 
+138 ==> 487545 - Error rename files in digiKam.
 139 ==> 
 140 ==> 
 141 ==> 
