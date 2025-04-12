@@ -144,7 +144,7 @@ BUGFIXES:
 125 ==> 500846 - Show caption property too short in properties tab from right sidebar.
 126 ==> 479673 - Search under parent.
 127 ==> 467786 - Include Subfolders in Advanced Search.
-128 ==> 
+128 ==> 497033 - Search by tags.
 129 ==> 
 130 ==> 
 131 ==> 
