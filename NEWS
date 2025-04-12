@@ -156,7 +156,7 @@ BUGFIXES:
 137 ==> 457662 - Ghostscript --with-tesseract crashes digiKam on startup.
 138 ==> 487545 - Error rename files in digiKam.
 139 ==> 496495 - Sort by examination date fails after editing an image.
-140 ==> 
+140 ==> 499580 - Variable RAW conversion via different tools?
 141 ==> 
 142 ==> 
 143 ==> 
