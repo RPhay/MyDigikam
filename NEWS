@@ -146,7 +146,7 @@ BUGFIXES:
 127 ==> 467786 - Include Subfolders in Advanced Search.
 128 ==> 497033 - Search by tags.
 129 ==> 480461 - Add way to export and import application settings.
-130 ==> 
+130 ==> 493535 - Writing sidecar files timestamp option.
 131 ==> 
 132 ==> 
 133 ==> 
