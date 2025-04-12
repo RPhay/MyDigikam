@@ -158,7 +158,7 @@ BUGFIXES:
 139 ==> 496495 - Sort by examination date fails after editing an image.
 140 ==> 499580 - Variable RAW conversion via different tools?
 141 ==> 498145 - Appimage for 8.5.0 will not run.
-142 ==> 
+142 ==> 393068 - digikam.coredb: Core database: Album library path from config file is empty. Aborting update.
 143 ==> 
 144 ==> 
 145 ==> 
