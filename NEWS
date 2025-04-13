@@ -161,7 +161,7 @@ BUGFIXES:
 142 ==> 393068 - digikam.coredb: Core database: Album library path from config file is empty. Aborting update.
 143 ==> 498392 - Creating new print wizzard templates.
 144 ==> 485333 - Print creator - how to change a template.xml.
-145 ==> 
+145 ==> 476424 - Files can't be imported to album on SMB share.
 146 ==> 
 147 ==> 
 148 ==> 
