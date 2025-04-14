@@ -165,7 +165,7 @@ BUGFIXES:
 146 ==> 468646 - I can not import news albums.
 147 ==> 478503 - Thumbnail view does not refresh after tag renaming.
 148 ==> 499191 - Adding a rating for a picture changes pick from pending to rejected.
-149 ==> 
+149 ==> 501236 - OpenCV Not Detecting CUDA GPU In Latest 8.6 Weekly Build.
 150 ==> 
 151 ==> 
 152 ==> 
