@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-08 01:59+0000\n"
-"PO-Revision-Date: 2025-03-29 12:53+0100\n"
+"PO-Revision-Date: 2025-04-10 20:53+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -328,13 +328,11 @@ msgid "M&erge Here"
 msgstr "&Unisci qui"
 
 #: core/app/dragdrop/tagdragdrop.cpp:235
-#, fuzzy, kde-format
-#| msgid "Change face name from '%2' to '%3'"
-#| msgid_plural "Change face names from '%2' to '%3'"
+#, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
-msgstr[0] "Cambia nome del volto da '%2' a '%3'"
-msgstr[1] "Cambia nomi del volto da '%2' a '%3'"
+msgstr[0] "Conferma nome del volto «%2» all'elemento"
+msgstr[1] "Conferma nome del volto «%2» agli elementi"
 
 #: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
 #, kde-format
@@ -2978,12 +2976,10 @@ msgstr "Usa questo pulsante per cercare volti negli album selezionati"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:168
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Color-Managed View is disabled."
+#, kde-format
 msgctxt "@info"
 msgid "Face engine is disabled"
-msgstr "La vista di gestione del colore è disabilitata"
+msgstr "Il motore del riconoscimento facciale è disabilitato"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:204
 #, kde-format
@@ -2996,16 +2992,13 @@ msgstr ""
 "nella parte inferiore del pannello sinistro."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:259
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face recognition is aborted, because there are no identities to "
-#| "recognize. Please add new identities."
+#, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
 msgstr ""
-"Il riconoscimento facciale è stato interrotto, poiché non sono presenti "
-"identità per il riconoscimento. Aggiungi nuove identità."
+"L'analisi dei volti è stata interrotta, poiché non sono presenti identità "
+"per il riconoscimento. Aggiungi nuove identità."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:279
 #, kde-format
@@ -61653,16 +61646,13 @@ msgid "Duplicate found: %1"
 msgstr "Trovato duplicato: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:211
-#, fuzzy, kde-format
-#| msgid ""
-#| "A face recognition task is already running. Only one task can be running "
-#| "at a time. Please wait until it is finished."
+#, kde-format
 msgid ""
 "A face scan is already running. Only one face task can be running at a time. "
 "Please wait until it is finished."
 msgstr ""
-"È già in corso un'operazione di rilevamento facciale. Può essere eseguita "
-"solo un'operazione alla volta. Attendi che sia terminata."
+"È già in corso un'operazione di analisi dei volti. Può essere eseguita solo "
+"un'operazione di analisi alla volta. Attendi che sia terminata."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:336
 #, kde-format
@@ -65183,9 +65173,9 @@ msgstr ""
 "funzionalità quali la gestione dei volti, la classificazione delle immagini "
 "basata sull'estetica, gli strumenti automatici di intelligenza artificiale "
 "quali la rotazione automatica dell'immagine e l'assegnazione dei tag "
-"automatici. Puoi selezionare le opzioni specifiche da attivare.<p><p><b>Nota:"
-"</b> Lo strumento per la rimozione degli occhi rossi richiede i file modello "
-"per la gestione dei volti.</p>"
+"automatici. Puoi selezionare le opzioni specifiche da attivare.</"
+"p><p><b>Nota:</b> Lo strumento per la rimozione degli occhi rossi richiede i "
+"file modello per la gestione dei volti.</p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:532
 #, kde-format
@@ -67011,11 +67001,9 @@ msgid "Detect faces in newly added images"
 msgstr "Individua volti nelle immagini aggiunte di recente"
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Benchmark face recognition"
+#, kde-format
 msgid "Background face recognition scan"
-msgstr "Misura le prestazioni del riconoscimento facciale"
+msgstr "Analisi per il riconoscimento facciale in background"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format
@@ -67023,6 +67011,10 @@ msgid ""
 "Set this option to automatically start a background face recognition scan\n"
 "when a new face is tagged. This will make the tagging process easier."
 msgstr ""
+"Imposta questa opzione per avviare in automatico un'analisi per il "
+"riconoscimento facciale in background\n"
+"quando viene assegnato un tag a un nuovo volto. Ciò facilita il processo di "
+"assegnazione dei tag."
 
 #: core/utilities/setup/misc/setupmisc.cpp:88
 #, kde-format
