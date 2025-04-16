@@ -23,6 +23,7 @@
 #   pragma GCC diagnostic ignored "-Woverloaded-virtual"
 #   pragma GCC diagnostic ignored "-Wcast-align"
 #   pragma GCC diagnostic ignored "-Wdeprecated-enum-enum-conversion"
+#   pragma GCC diagnostic ignored "-Wshift-negative-value"
 #endif
 
 #if defined(__clang__)
