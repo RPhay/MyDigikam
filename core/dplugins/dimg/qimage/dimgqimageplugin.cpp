@@ -161,6 +161,11 @@ int DImgQImagePlugin::canRead(const QFileInfo& fileInfo, bool magic) const
     reader.setDecideFormatFromContent(true);
     QByteArray readFormat = reader.format();
 
+    if (readFormat == QByteArray("raw"))
+    {
+        return 0;
+    }
+
     return (QImageReader::supportedImageFormats().contains(readFormat) ? 80 : 0);
 }
 

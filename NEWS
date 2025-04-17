@@ -168,7 +168,7 @@ BUGFIXES:
 149 ==> 501236 - OpenCV Not Detecting CUDA GPU In Latest 8.6 Weekly Build.
 150 ==> 489279 - Albums Not Discovering all Pictures in a Folder.
 151 ==> 489278 - Remote albums not show.
-152 ==> 
+152 ==> 502889 - digiKam Crash and core dump of scanning for faces on a folder.
 153 ==> 
 154 ==> 
 155 ==> 
