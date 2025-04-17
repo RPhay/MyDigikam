@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-08 01:59+0000\n"
+"POT-Creation-Date: 2025-04-17 01:54+0000\n"
 "PO-Revision-Date: 2025-04-10 20:53+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -36254,113 +36254,113 @@ msgstr "Impossibile rinominare l'immagine %1"
 msgid "Could not restore file %1 from trash"
 msgstr "Impossibile ripristinare il file %1 dal cestino"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:861
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:860
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Unspecified"
 msgstr "Non specificata"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:866
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:865
 #, kde-format
 msgctxt "@info: rotation of an unrotated image"
 msgid "Normal"
 msgstr "Normale"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:871
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:870
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally"
 msgstr "Ribaltata orizzontalmente"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:876
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:875
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated by 180 Degrees"
 msgstr "Ruotata di 180 gradi"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:881
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:880
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Vertically"
 msgstr "Ribaltata verticalmente"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:886
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:885
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally and Rotated Left"
 msgstr "Ribaltata orizzontalmente e ruotata a sinistra"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:891
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:890
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated Left"
 msgstr "Ruotata a sinistra"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:896
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:895
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Vertically and Rotated Left"
 msgstr "Ribaltata verticalmente e ruotata a sinistra"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:901
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:900
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated Right"
 msgstr "Ruotata a destra"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:906
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:905
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Unknown"
 msgstr "Sconosciuta"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:992
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:991
 #, kde-format
 msgctxt "@info: Temperature in Kelvin"
 msgid "%1 K"
 msgstr "%1 K"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1018
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1034
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1017
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1033
 #, kde-format
 msgctxt "@info: For use in longitude coordinate"
 msgid "West"
 msgstr "Ovest"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1019
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1035
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1018
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1034
 #, kde-format
 msgctxt "@info: For use in longitude coordinate"
 msgid "East"
 msgstr "Est"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1054
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1070
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1053
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1069
 #, kde-format
 msgctxt "@info: For use in latitude coordinate"
 msgid "North"
 msgstr "Nord"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1055
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1071
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1054
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1070
 #, kde-format
 msgctxt "@info: For use in latitude coordinate"
 msgid "South"
 msgstr "Sud"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1084
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1083
 #, no-c-format, kde-format
 msgctxt "@info: Height in meters"
 msgid "%1m"
 msgstr "%1m"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1264
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1263
 #, kde-format
 msgctxt "@info"
 msgid "Flash has been fired"
 msgstr "È scattato il flash"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1265
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1264
 #, kde-format
 msgctxt "@info"
 msgid "Flash with red-eye reduction mode"
