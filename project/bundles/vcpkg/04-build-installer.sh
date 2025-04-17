@@ -10,6 +10,7 @@
 #   - Mt from VSCommunity C++ Desktop tools.
 #   - ImageMagick for the run-time dlls.
 #   - Msys2/Rsync CLI tools for Windows.
+#   - CUDA+CuDNN toolkits from NVIDIA.
 #
 # SPDX-FileCopyrightText: 2015-2025 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -92,6 +93,30 @@ if [ ! -d "$MAGICK_PREFIX" ] ; then
     exit 1
 else
     echo "Check ImageMagick install path passed..."
+fi
+
+# Check for the CUDA toolkits install directory.
+
+CUDASDK_PREFIX="`find "/c/Program Files/NVIDIA GPU Computing Toolkit" -name "cublas64_12.dll" -type f -executable`"
+CUDASDK_PREFIX="`dirname "${CUDASDK_PREFIX}"`"
+echo "$CUDASDK_PREFIX"
+
+if [ ! -d "$CUDASDK_PREFIX" ] ; then
+    echo "CUDA toolkit is not installed"
+    exit 1
+else
+    echo "Check CUDA toolkit install path passed..."
+fi
+
+CUDADNNSDK_PREFIX="`find "/c/Program Files/NVIDIA/CUDNN/v9.8/bin/11.8" -name "cudnn64_9.dll" -type f -executable`"
+CUDADNNSDK_PREFIX="`dirname "${CUDADNNSDK_PREFIX}"`"
+echo "$CUDADNNSDK_PREFIX"
+
+if [ ! -d "$CUDADNNSDK_PREFIX" ] ; then
+    echo "cuDNN toolkit is not installed"
+    exit 1
+else
+    echo "Check cuDNN toolkit install path passed..."
 fi
 
 #################################################################################################
@@ -430,6 +455,12 @@ for ffmpegdll in $FFMPEG_DLL_FILES ; do
     CopyReccursiveDependencies "$DUMP_BIN" "$ffmpegdll" "$BUNDLEDIR/" "$VCPKG_INSTALL_PREFIX/bin"
 
 done
+
+echo -e "\n---------- Copy CUDA and cuDNN toolkits dlls"
+
+cp "$CUDASDK_PREFIX"/cublas64_12.dll                                    $BUNDLEDIR/                           2>/dev/null
+cp "$CUDASDK_PREFIX"/cublasLt64_12.dll                                  $BUNDLEDIR/                           2>/dev/null
+cp "$CUDADNNSDK_PREFIX"/cudnn64_9.dll                                   $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- Copy redistributable VSCommunity compatibility dlls"
 
