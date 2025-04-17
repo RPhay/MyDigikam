@@ -61,8 +61,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
     }
 
     TAlbum* const destAlbum = model()->talbumForIndex(droppedOn);
-    if (destAlbum) qCDebug(DIGIKAM_GENERAL_LOG) << "Test Merge Popup: destAlbum:" << destAlbum->title();
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Test Merge Popup: canDecode:" << DTagListDrag::canDecode(e->mimeData());
+
     if (DTagListDrag::canDecode(e->mimeData()))
     {
         QList<int> tagIDs;
@@ -76,7 +75,8 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
         {
             return false;
         }
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Test Merge Popup: popMenu: create";
+
+        qApp->processEvents();
         QMenu popMenu(view);
         QAction* const gotoAction  = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")), i18n("&Move Here"));
         QAction* const mergeAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("merge")),   i18n("M&erge Here"));
@@ -84,7 +84,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
         popMenu.setMouseTracking(true);
         QAction* const choice      = popMenu.exec(QCursor::pos());
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Test Merge Popup: popMenu: choice" << choice;
+
         for (int index = 0 ; index < tagIDs.count() ; ++index)
         {
             TAlbum* const talbum = AlbumManager::instance()->findTAlbum(tagIDs.at(index));
@@ -115,7 +115,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
                     newParentTag = destAlbum;
                 }
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Test Merge Popup: popMenu: exec move";
+
                 QString errMsg;
 
                 if (!AlbumManager::instance()->moveTAlbum(talbum, newParentTag, errMsg))
@@ -134,7 +134,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                 {
                     return false;
                 }
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Test Merge Popup: popMenu: exec merge";
+
                 QString errMsg;
 
                 if (!AlbumManager::instance()->mergeTAlbum(talbum, destAlbum, true, errMsg))
