@@ -259,6 +259,9 @@ static DropAction s_groupAction(const QDropEvent* const e, QWidget* const view)
     popMenu.addSeparator();
     addCancelAction(&popMenu);
 
+    popMenu.setMouseTracking(true);
+    qApp->restoreOverrideCursor();
+
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     QAction* const choice      = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
