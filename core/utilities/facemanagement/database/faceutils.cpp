@@ -159,24 +159,22 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
         return newFaces;
     }
 
-    return writeUnconfirmedResults(imageid, newFaces, fullSize);
+    return writeUnconfirmedResults(imageid, newFaces);
 }
 
 QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
                                                         QList<FaceTagsIface>& newFaces,
-                                                        const QList<Identity>& recognitionResults,
-                                                        const QSize& fullSize)
+                                                        const QList<Identity>& recognitionResults)
 {
     for(int i = 0 ; i < newFaces.size() ; ++i)
     {
         newFaces[i].setTagId(FaceTags::getOrCreateTagForIdentity(recognitionResults.at(i).attributesMap()));
     }
-    return writeUnconfirmedResults(imageid, newFaces, fullSize);
+    return writeUnconfirmedResults(imageid, newFaces);
 }
 
 QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
-                                                        QList<FaceTagsIface>& newFaces,
-                                                        const QSize& fullSize)
+                                                        QList<FaceTagsIface>& newFaces)
 {
 
     if (newFaces.isEmpty())

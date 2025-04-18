@@ -70,12 +70,10 @@ public:
 
     QList<FaceTagsIface> writeUnconfirmedResults(qlonglong imageid,
                                                  QList<FaceTagsIface>& detectedFaces,               // cannot be const
-                                                 const QList<Identity>& recognitionResults,
-                                                 const QSize& fullSize);
+                                                 const QList<Identity>& recognitionResults);
    
     QList<FaceTagsIface> writeUnconfirmedResults(qlonglong imageid,
-                                                 QList<FaceTagsIface>& detectedFaces,               // cannot be const
-                                                 const QSize& fullSize);
+                                                 QList<FaceTagsIface>& detectedFaces);
       
           // --- Status flags ---
 
