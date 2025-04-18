@@ -125,14 +125,15 @@ public:
      * Returns the entry that would be added if the given face is confirmed.
      */
     static FaceTagsIface confirmedEntry(const FaceTagsIface& face, int tagId = -1,
-                                        const TagRegion& confirmedRegion = TagRegion());
+                                        const TagRegion& confirmedRegion = TagRegion(),
+                                        const QList<int>& rejectedFaceTagList = QList<int>());
 
     /**
      * Returns the entry that would be added if the given face is autodetected.
      * If tagId is -1, the unknown person will be taken.
      */
-    static FaceTagsIface unconfirmedEntry(qlonglong imageId, int tagId, const TagRegion& region);
-    static FaceTagsIface unknownPersonEntry(qlonglong imageId, const TagRegion& region);
+    static FaceTagsIface unconfirmedEntry(qlonglong imageId, int tagId, const TagRegion& region, const QList<int>& rejectedFaceTagList);
+    static FaceTagsIface unknownPersonEntry(qlonglong imageId, const TagRegion& region, const QList<int>& rejectedFaceTagList);
 
     // --- Remove entries ---
 
@@ -166,6 +167,12 @@ public:
     FaceTagsIface        changeTag(const FaceTagsIface& face, int newTagId);
 
     /**
+    * Changes the tag of the given entry to the unknown person tag and
+    * adds the existing tag to the list of rejected face tags.
+     */
+    FaceTagsIface        rejectSuggestedTag(const FaceTagsIface& face);
+
+    /**
      * Rotate face tags.
      */
     bool                 rotateFaces(qlonglong imageId, const QSize& size,
@@ -180,6 +187,11 @@ protected:
 
     void addFaceAndTag(ItemTagPair& pair, const FaceTagsIface& face, const QStringList& properties, bool addTag);
     void removeFaceAndTag(ItemTagPair& pair, const FaceTagsIface& face, bool touchTags);
+
+
+    void removeRejectedFaceTagListProperty(ItemTagPair& pair, const QString& regionString);
+    void addRejectedFaceTagListProperty(ItemTagPair& pair, const FaceTagsIface& face);
+    QList<int> getRejectedFaceTagList(const ItemTagPair& pair, const QString& regionString) const;
 
     virtual void addNormalTag(qlonglong imageId, int tagId);
     virtual void removeNormalTag(qlonglong imageId, int tagId);

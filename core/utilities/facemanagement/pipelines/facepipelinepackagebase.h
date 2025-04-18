@@ -87,6 +87,7 @@ public:
     QList<cv::Mat>          featuresList;
     QList<int>              labelList;
     QList<FaceTagsIface>    faceList;
+    QList<int>              exclusionIdentityIds;
     int                     serialNumber    = -1;
 
 private:

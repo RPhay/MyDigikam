@@ -182,6 +182,7 @@ public:
     static QLatin1String autodetectedPerson();
     static QLatin1String ignoredFace();
     static QLatin1String faceToTrain();
+    static QLatin1String rejectedFaceTagList();
 };
 
 } // namespace Digikam

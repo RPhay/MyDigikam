@@ -162,9 +162,9 @@ bool IdentityProvider::initialize()
 
     const auto ids = FaceDbAccess().db()->identities();
 
-    for (const Identity& identity : ids)
+    for (const Identity& _identity : ids)
     {
-        d->identityCache[identity.id()] = identity;
+        d->identityCache[_identity.id()] = _identity;
     }
 
     return true;
@@ -419,43 +419,43 @@ Identity IdentityProvider::addIdentity(const QMultiMap<QString, QString>& attrib
         }
     }
 
-    Identity identity;
+    Identity _identity;
     {
         FaceDbOperationGroup group;
 
         d->trainingLock.lockForWrite();
 
         int id = FaceDbAccess().db()->addIdentity();
-        identity.setId(id);
-        identity.setAttributesMap(attributes);
-        identity.setAttribute(QLatin1String("uuid"), QUuid::createUuid().toString());
+        _identity.setId(id);
+        _identity.setAttributesMap(attributes);
+        _identity.setAttribute(QLatin1String("uuid"), QUuid::createUuid().toString());
 
-        FaceDbAccess().db()->updateIdentity(identity);
+        FaceDbAccess().db()->updateIdentity(_identity);
 
         d->trainingLock.unlock();
     }
 
-    d->identityCache[identity.id()] = identity;
+    d->identityCache[_identity.id()] = _identity;
 
-    return identity;
+    return _identity;
 }
 
 Identity IdentityProvider::addIdentityDebug(const QMultiMap<QString, QString>& attributes)
 {
-    Identity identity;
+    Identity _identity;
     {
-        identity.setId(attributes.value(QLatin1String("name")).toInt());
-        identity.setAttributesMap(attributes);
-        identity.setAttribute(QLatin1String("uuid"), QUuid::createUuid().toString());
+        _identity.setId(attributes.value(QLatin1String("name")).toInt());
+        _identity.setAttributesMap(attributes);
+        _identity.setAttribute(QLatin1String("uuid"), QUuid::createUuid().toString());
     }
 
     d->trainingLock.lockForWrite();
 
-    d->identityCache[identity.id()] = identity;
+    d->identityCache[_identity.id()] = _identity;
 
     d->trainingLock.unlock();
 
-    return identity;
+    return _identity;
 }
 
 cv::Ptr<cv::ml::TrainData> IdentityProvider::getTrainingData() const
@@ -493,31 +493,31 @@ void IdentityProvider::deleteIdentity(const Identity& identityToBeDeleted)
 
 void IdentityProvider::deleteIdentities(QList<Identity> identitiesToBeDeleted)
 {
-    QList<Identity>::iterator identity = identitiesToBeDeleted.begin();
+    QList<Identity>::iterator _identity = identitiesToBeDeleted.begin();
 
-    while (identity != identitiesToBeDeleted.end())
+    while (_identity != identitiesToBeDeleted.end())
     {
-        deleteIdentity(*identity);
+        deleteIdentity(*_identity);
 
-        identity = identitiesToBeDeleted.erase(identity);
+        _identity = identitiesToBeDeleted.erase(_identity);
     }
 }
 
 void IdentityProvider::renameIdentity(const QString& uuid, const QString& newName)
 {
-    Identity identity = findIdentity(QLatin1String("uuid"), uuid);
+    Identity _identity = findIdentity(QLatin1String("uuid"), uuid);
 
-    if (!identity.isNull())
+    if (!_identity.isNull())
     {
         // remove the old name and fullName attributes
 
-        identity.deleteAttributeValue(QLatin1String("name"), identity.attribute(QLatin1String("name")));
-        identity.deleteAttributeValue(QLatin1String("fullName"), identity.attribute(QLatin1String("fullName")));
+        _identity.deleteAttributeValue(QLatin1String("name"), _identity.attribute(QLatin1String("name")));
+        _identity.deleteAttributeValue(QLatin1String("fullName"), _identity.attribute(QLatin1String("fullName")));
 
         // add the new name and fullName attributes
 
-        identity.setAttribute(QLatin1String("name"), newName);
-        identity.setAttribute(QLatin1String("fullName"), newName);
+        _identity.setAttribute(QLatin1String("name"), newName);
+        _identity.setAttribute(QLatin1String("fullName"), newName);
 
         // lock for write
 
@@ -525,11 +525,11 @@ void IdentityProvider::renameIdentity(const QString& uuid, const QString& newNam
 
         // update the identity in the DB
 
-        FaceDbAccess().db()->updateIdentity(identity);
+        FaceDbAccess().db()->updateIdentity(_identity);
 
         // update the identity in the cache
 
-        d->identityCache[identity.id()] = identity;
+        d->identityCache[_identity.id()] = _identity;
 
         // unlock
 
@@ -589,13 +589,13 @@ bool IdentityProvider::isValidId(int label) const
 /**
  * @note Takes care that there may be multiple values of attribute in identity's attributes.
  */
-bool IdentityProvider::identityContains(const Identity& identity,
+bool IdentityProvider::identityContains(const Identity& _identity,
                                         const QString&  attribute,
                                         const QString&  value) const
 {
     d->trainingLock.lockForRead();
 
-    const QMultiMap<QString, QString> map          = identity.attributesMap();
+    const QMultiMap<QString, QString> map          = _identity.attributesMap();
     QMultiMap<QString, QString>::const_iterator it = map.constFind(attribute);
 
     for ( ; (it != map.constEnd()) && (it.key() == attribute) ; ++it)
@@ -617,14 +617,14 @@ Identity IdentityProvider::findByAttribute(const QString& attribute,
 {
     d->trainingLock.lockForRead();
 
-    for (const Identity& identity : std::as_const(d->identityCache))
+    for (const Identity& _identity : std::as_const(d->identityCache))
     {
-        if (identityContains(identity, attribute, value))
+        if (identityContains(_identity, attribute, value))
         {
             // cppcheck-suppress useStlAlgorithm
             d->trainingLock.unlock();
 
-            return identity;
+            return _identity;
         }
     }
 
@@ -645,14 +645,14 @@ Identity IdentityProvider::findByAttributes(const QString& attribute,
 
     for ( ; (it != valueMap.end()) && (it.key() == attribute) ; ++it)
     {
-        for (const Identity& identity : std::as_const(d->identityCache))
+        for (const Identity& _identity : std::as_const(d->identityCache))
         {
-            if (identityContains(identity, attribute, it.value()))
+            if (identityContains(_identity, attribute, it.value()))
             {
                 // cppcheck-suppress useStlAlgorithm
                 d->trainingLock.unlock();
 
-                return identity;
+                return _identity;
             }
         }
     }
@@ -682,7 +682,6 @@ bool IdentityProvider::trainingRemoveConcurrent()
             // send the end signal if anyone else is listening
 
             d->removeQueue.push(d->removeQueue.endSignal());
-
 
             break;
         }

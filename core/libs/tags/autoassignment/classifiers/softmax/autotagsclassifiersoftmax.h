@@ -29,20 +29,22 @@ class DIGIKAM_GUI_EXPORT AutotagsClassifierSoftmax : public AutotagsClassifierBa
 public:
 
     explicit AutotagsClassifierSoftmax(float _threshold, const QString& predefinedClassFile);
-    virtual ~AutotagsClassifierSoftmax()                                  override = default;
+    virtual ~AutotagsClassifierSoftmax()                                            override    = default;
 
-    virtual int predict(const cv::Mat& target)                      const override;
-    virtual int predict(const cv::UMat& target)                     const override;
+    virtual int predict(const cv::Mat& target,
+                        const QList<int>& exclusionLabelList = QList<int>()) const  override;
+    virtual int predict(const cv::UMat& target,
+                        const QList<int>& exclusionLabelList = QList<int>()) const  override;
 
-    virtual QList<int> predictMulti(const QList<cv::Mat>& targets)  const override;
-    virtual QList<int> predictMulti(const QList<cv::UMat>& targets) const override;
+    virtual QList<int> predictMulti(const QList<cv::Mat>& targets)           const  override;
+    virtual QList<int> predictMulti(const QList<cv::UMat>& targets)          const  override;
 
 private:
 
     // Disable
-    AutotagsClassifierSoftmax()                                     = delete;
-    AutotagsClassifierSoftmax(const AutotagsClassifierSoftmax&)     = delete;
-    explicit AutotagsClassifierSoftmax(QObject*)                    = delete;
+    AutotagsClassifierSoftmax()                                                                 = delete;
+    AutotagsClassifierSoftmax(const AutotagsClassifierSoftmax&)                                 = delete;
+    explicit AutotagsClassifierSoftmax(QObject*)                                                = delete;
 };
 
 } // namespace Digikam

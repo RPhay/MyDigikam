@@ -73,8 +73,9 @@ QList<FaceTagsIface> FaceTagsEditor::ignoredFaceTagsIfaces(qlonglong imageId) co
 QList<FaceTagsIface> FaceTagsEditor::databaseFaces(qlonglong imageid, FaceTagsIface::TypeFlags flags) const
 {
     QList<FaceTagsIface> faces;
-    QStringList          attributes = FaceTagsIface::attributesForFlags(flags);
-    const auto pairs                = faceItemTagPairs(imageid, flags);
+    QStringList          rejectedFaceTagsLists;
+    QStringList          attributes     = FaceTagsIface::attributesForFlags(flags);
+    const auto pairs                    = faceItemTagPairs(imageid, flags);
 
     for (const ItemTagPair& pair : pairs)
     {
@@ -94,7 +95,13 @@ QList<FaceTagsIface> FaceTagsEditor::databaseFaces(qlonglong imageid, FaceTagsIf
                     continue;
                 }
 
-                faces << FaceTagsIface(attribute, imageid, pair.tagId(), region);
+                // load the rejectedFaceTagList if the property is set
+
+                QList<int> rejectedFaceTagList = getRejectedFaceTagList(pair, region.toXml());
+
+                // add the face to the list
+
+                faces << FaceTagsIface(attribute, imageid, pair.tagId(), region, rejectedFaceTagList);
             }
         }
     }
@@ -177,28 +184,30 @@ int FaceTagsEditor::numberOfFaces(qlonglong imageid) const
 
 // --- Confirming and adding ---
 
-FaceTagsIface FaceTagsEditor::unknownPersonEntry(qlonglong imageId, const TagRegion& region)
+FaceTagsIface FaceTagsEditor::unknownPersonEntry(qlonglong imageId, const TagRegion& region, const QList<int>& rejectedFaceTagList)
 {
-    return unconfirmedEntry(imageId, -1, region);
+    return unconfirmedEntry(imageId, -1, region, rejectedFaceTagList);
 }
 
-FaceTagsIface FaceTagsEditor::unconfirmedEntry(qlonglong imageId, int tagId, const TagRegion& region)
+FaceTagsIface FaceTagsEditor::unconfirmedEntry(qlonglong imageId, int tagId, const TagRegion& region, const QList<int>& rejectedFaceTagList)
 {
     return FaceTagsIface(
                          FaceTagsIface::UnconfirmedName,
                          imageId,
                          (tagId == -1) ? FaceTags::unknownPersonTagId() : tagId,
-                         region
+                         region,
+                         rejectedFaceTagList
                         );
 }
 
-FaceTagsIface FaceTagsEditor::confirmedEntry(const FaceTagsIface& face, int tagId, const TagRegion& confirmedRegion)
+FaceTagsIface FaceTagsEditor::confirmedEntry(const FaceTagsIface& face, int tagId, const TagRegion& confirmedRegion, const QList<int>& rejectedFaceTagList)
 {
     return FaceTagsIface(
                          FaceTagsIface::ConfirmedName,
                          face.imageId(),
                          (tagId == -1) ? face.tagId() : tagId,
-                         confirmedRegion.isValid() ? confirmedRegion : face.region()
+                         confirmedRegion.isValid() ? confirmedRegion : face.region(),
+                         rejectedFaceTagList
                         );
 }
 
@@ -219,7 +228,7 @@ FaceTagsIface FaceTagsEditor::changeSuggestedName(const FaceTagsIface& previousE
         return previousEntry;
     }
 
-    FaceTagsIface newEntry = unconfirmedEntry(previousEntry.imageId(), unconfirmedNameTagId, previousEntry.region());
+    FaceTagsIface newEntry = unconfirmedEntry(previousEntry.imageId(), unconfirmedNameTagId, previousEntry.region(), previousEntry.getRejectedFaceTagList());
 
     if (newEntry == previousEntry)
     {
@@ -289,7 +298,7 @@ FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face,
                                           int tagId,
                                           const TagRegion& confirmedRegion)
 {
-    FaceTagsIface newEntry = confirmedEntry(face, tagId, confirmedRegion);
+    FaceTagsIface newEntry = confirmedEntry(face, tagId, confirmedRegion, face.getRejectedFaceTagList());
 
     if (
         FaceTags::isTheUnknownPerson(newEntry.tagId())     ||
@@ -314,6 +323,21 @@ FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face,
     {
         ItemTagPair pairOldEntry(face.imageId(), face.tagId());
         removeFaceAndTag(pairOldEntry, face, true);
+    }
+
+    /*
+     compare the original face tagId with the new one
+     if the face was suggested but a different tag was chosen
+     add the suggested face tag to the rejected list
+    */
+
+    if ((face.tagId() != tagId) &&
+        face.isUnconfirmedName())
+    {
+        // face was suggested but a different tag was chosen
+        // so add the suggested face tag to the rejected list
+
+        newEntry.addRejectedFaceTag(face.tagId());
     }
 
     // Add new full entry.
@@ -361,6 +385,8 @@ void FaceTagsEditor::addFaceAndTag(ItemTagPair& pair,
         pair.addProperty(property, region);
     }
 
+    addRejectedFaceTagListProperty(pair, face);
+
     if (addTag)
     {
         addNormalTag(face.imageId(), face.tagId());
@@ -399,6 +425,8 @@ void FaceTagsEditor::removeFace(qlonglong imageid, const QRect& rect)
 
     for (ItemTagPair pair : pairs)
     {
+        removeRejectedFaceTagListProperty(pair, TagRegion(rect).toXml());
+
         for (const QString& attribute : std::as_const(attributes))
         {
             const auto regions = pair.values(attribute);
@@ -448,11 +476,13 @@ void FaceTagsEditor::removeFaces(const QList<FaceTagsIface>& faces)
 
 void FaceTagsEditor::removeFaceAndTag(ItemTagPair& pair, const FaceTagsIface& face, bool touchTags)
 {
-    QString regionString = TagRegion(face.region().toRect()).toXml();
+    QString regionString = face.region().toXml();
 
     face.removeFaceTraining();
 
     pair.removeProperty(FaceTagsIface::attributeForType(face.type()), regionString);
+
+    removeRejectedFaceTagListProperty(pair, regionString);
 
     if (face.type() == FaceTagsIface::ConfirmedName)
     {
@@ -558,7 +588,45 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId)
                   isConfirmed);
 
     return newFace;
- }
+}
+
+FaceTagsIface FaceTagsEditor::rejectSuggestedTag(const FaceTagsIface& face)
+{
+    if (face.isNull() || !face.isUnconfirmedName())
+    {
+        // process only unconfirmed faces
+
+        return face;
+    }
+
+    int rejectedTagId = face.tagId();
+
+    /**
+     * Since a new Tag is going to be assigned to the Face,
+     * it's important to remove the association between
+     * the face and the old tagId.
+     *
+     * If the face is being ignored and it was an unconfirmed or
+     * unknown face don't remove a possible tag. See bug 449142.
+     */
+
+
+    removeFace(face, (face.type() == FaceTagsIface::ConfirmedName));
+
+    FaceTagsIface newFace(face);
+    newFace.setTagId(FaceTags::unknownPersonTagId());
+    newFace.setType(FaceTagsIface::typeForId(FaceTags::unknownPersonTagId()));
+    newFace.addRejectedFaceTag(rejectedTagId);
+
+    ItemTagPair newPair(newFace.imageId(), newFace.tagId());
+
+    addFaceAndTag(newPair,
+                  newFace,
+                  FaceTagsIface::attributesForFlags(newFace.type()),
+                  false);
+
+    return newFace;
+}
 
 bool FaceTagsEditor::rotateFaces(qlonglong imageId, const QSize& size,
                                  int oldOrientation, int newOrientation)
@@ -617,5 +685,61 @@ void FaceTagsEditor::removeNormalTags(qlonglong imageId, const QList<int>& tagId
         group.allowLift();
     }
 }
+
+void FaceTagsEditor::removeRejectedFaceTagListProperty(ItemTagPair& pair, const QString& regionString)
+{
+    if (pair.hasProperty(ImageTagPropertyName::rejectedFaceTagList()))
+    {
+        QStringList values = pair.values(ImageTagPropertyName::rejectedFaceTagList());
+        for(const QString& value : std::as_const(values))
+        {
+            if (value.contains(regionString))
+            {
+                pair.removeProperty(ImageTagPropertyName::rejectedFaceTagList(), value);
+            }
+        }
+    }
+}
+
+void FaceTagsEditor::addRejectedFaceTagListProperty(ItemTagPair& pair, const FaceTagsIface& face)
+{
+    if (!face.getRejectedFaceTagList().isEmpty())
+    {
+        // Add the rejected list for the face
+
+        pair.addProperty(ImageTagPropertyName::rejectedFaceTagList(), face.rejectedFaceTagsDBString());
+    }
+
+}
+
+QList<int> FaceTagsEditor::getRejectedFaceTagList(const ItemTagPair& pair, const QString& regionString) const
+{
+    QList<int> rejectedFaceTagList;
+
+    if (pair.hasProperty(ImageTagPropertyName::rejectedFaceTagList()))
+    {
+        QStringList values = pair.values(ImageTagPropertyName::rejectedFaceTagList());
+        for(const QString& value : std::as_const(values))
+        {
+            if (value.contains(regionString))
+            {
+                QStringList list = value.split(FaceTagsIface::valueSeparator);
+                if (2 == list.size())
+                {
+                    // The first part is the region, the second part is the rejectedFaceTagList
+
+                    rejectedFaceTagList = FaceTagsIface::stringToRejectedFaceTagList(list.at(1));
+                }
+                else
+                {
+                    qCDebug(DIGIKAM_DATABASE_LOG) << "FaceTagsEditor::getRejectedFaceTagList: invalid rejectedFaceTagList" << pair.value(ImageTagPropertyName::rejectedFaceTagList());
+                }
+            }
+        }
+    }
+
+    return rejectedFaceTagList;
+}
+
 
 } // Namespace Digikam

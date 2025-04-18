@@ -36,7 +36,8 @@ FaceScanSettings::FaceScanSettings(const FaceScanSettings& other)
       wholeAlbums           (other.wholeAlbums),
       albums                (other.albums),
       infos                 (other.infos),
-      workerThreadPriority  (other.workerThreadPriority)
+      workerThreadPriority  (other.workerThreadPriority),
+      source                (other.source)
 
 {
 }
@@ -55,6 +56,7 @@ FaceScanSettings& FaceScanSettings::operator=(const FaceScanSettings& other)
     albums                 = other.albums;
     infos                  = other.infos;
     workerThreadPriority   = other.workerThreadPriority;
+    source                 = other.source;
 
     return *this;
 }
@@ -116,6 +118,7 @@ QDebug operator<<(QDebug dbg, const FaceScanSettings& s)
     dbg.nospace() << "Albums                  :" << s.albums                 << Qt::endl;
     dbg.nospace() << "Image Infos             :" << s.infos                  << Qt::endl;
     dbg.nospace() << "Worker Thread Priority  :" << s.workerThreadPriority   << Qt::endl;
+    dbg.nospace() << "Source                  :" << s.source                 << Qt::endl;
 
     return dbg.space();
 }

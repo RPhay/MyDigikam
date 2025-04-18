@@ -35,6 +35,7 @@
 #include "dnnsfaceextractor.h"
 #include "dnnmodelmanager.h"
 #include "coredb.h"
+#include "identityprovider.h"
 
 namespace Digikam
 {
@@ -349,6 +350,7 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
      */
 
     DNNSFaceExtractor extractor;
+    FaceUtils utils;
 
     MLPIPELINE_LOOP_START(thisStage, thisQueue);
     package = static_cast<FacePipelinePackageBase*>(mlpackage);
@@ -399,6 +401,19 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
                 // check if the image is suitable for training
 
                 package->useForTraining = useForTraining(origSize, cvImage);
+            }
+
+            for (const auto tagId : package->face.getRejectedFaceTagList())
+            {
+                // add the Identity ID for the rejected face tag to the exclusion list
+
+                QMultiMap<QString, QString> attributes = FaceTags::identityAttributes(tagId);
+                Identity identity                      = IdentityProvider::instance()->findIdentity(attributes);
+
+                if (!identity.isNull())
+                {
+                    package->exclusionIdentityIds << identity.id();
+                }
             }
 
             // send the package to the next stage

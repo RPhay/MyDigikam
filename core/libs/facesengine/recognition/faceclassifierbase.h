@@ -34,6 +34,8 @@ public:
     QList<int> predictMulti(const QList<cv::Mat>& targets)      const override;
     QList<int> predictMulti(const QList<cv::UMat>& targets)     const override;
 
+    static const int UNKNOWN_LABEL_ID; // Make it static const
+
 private:
 
     // Disable

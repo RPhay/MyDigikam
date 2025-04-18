@@ -304,7 +304,7 @@ bool FacePipelineDetectRecognize::loader()
 
 bool FacePipelineDetectRecognize::extractor()
 {
-    MLPIPELINE_STAGE_START(QThread::NormalPriority, MLPipelineStage::Extractor, MLPipelineStage::Classifier);
+    MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Extractor, MLPipelineStage::Classifier);
     FacePipelinePackageBase* package = nullptr;
 
     /* =========================================================================================
@@ -372,13 +372,9 @@ bool FacePipelineDetectRecognize::extractor()
         {
             cv::Mat detectionResults   = udetectionResults.getMat(cv::ACCESS_READ);
 
-            // get list of previously confirmed faces
+            // get list of all previously detected faces
 
-            QList<FaceTagsIface> faces = utils.confirmedFaceTagsIfaces(package->info.id());
-
-            // get list of previously ignored faces
-
-            faces                     += utils.ignoredFaceTagsIfaces(package->info.id());
+            QList<FaceTagsIface> faces = utils.databaseFaces(package->info.id());
 
             QList<QRectF> faceFRects;
 
@@ -400,26 +396,38 @@ bool FacePipelineDetectRecognize::extractor()
                                      qreal(width)  / qreal(cvUResizedImage.cols),
                                      qreal(height) / qreal(cvUResizedImage.rows));
 
+                // compute current image relative rect
+
+                QRect rect = QRect(package->image.width()  * faceFRects[i].x(),
+                                   package->image.height() * faceFRects[i].y(),
+                                   package->image.width()  * faceFRects[i].width(),
+                                   package->image.height() * faceFRects[i].height());
+
                 // check if rect is already assigned to a face to filter out confirmed and ignored faces
 
                 bool found = false;
+                FaceTagsIface face;
 
                 if (faces.size() > 0)
                 {
                     for (int j = 0; j < faces.size(); ++j)
                     {
-                        // compute current image relative rect
-
-                        QRect rect = QRect(package->image.width()  * faceFRects[i].x(),
-                                           package->image.height() * faceFRects[i].y(),
-                                           package->image.width()  * faceFRects[i].width(),
-                                           package->image.height() * faceFRects[i].height());
-
                         if (faces[j].region().intersects(TagRegion(rect), 0.85))
                         {
-                            found = true;
+                            if (faces[j].isConfirmedName() || faces[j].isIgnoredName())
+                            {
+                                // face is already confirmed or ignored
 
-                            break;
+                                found = true;
+                                break;
+                            }
+                            else
+                            {
+                                // face is not confirmed or ignored, but already detected
+
+                                face = faces[j];
+                                break;
+                            }
                         }
                     }
                 }
@@ -497,6 +505,7 @@ bool FacePipelineDetectRecognize::extractor()
 
                         package->featuresList << normalized_features;
                         package->faceRects << faceFRects[i];
+                        package->faceList << face;
                     }
                 }
             }
@@ -557,13 +566,28 @@ bool FacePipelineDetectRecognize::classifier()
 
             if (0 < package->featuresList[i].rows)
             {
+                QList<int> exclusionIdentityIds;
+
+                for (const auto tagId : package->faceList[i].getRejectedFaceTagList())
+                {
+                    // add the Identity ID for the rejected face tag to the exclusion list
+    
+                    QMultiMap<QString, QString> attributes = FaceTags::identityAttributes(tagId);
+                    Identity identity                      = IdentityProvider::instance()->findIdentity(attributes);
+    
+                    if (!identity.isNull())
+                    {
+                        exclusionIdentityIds << identity.id();
+                    }
+                }
+        
                 // classify the features
 
-                package->labelList << classifier->predict(package->featuresList[i]);
+                package->labelList << classifier->predict(package->featuresList[i], exclusionIdentityIds);
             }
             else
             {
-                package->labelList << -1;
+                package->labelList << FaceClassifier::UNKNOWN_LABEL_ID;
             }
         }
 
@@ -667,7 +691,7 @@ bool FacePipelineDetectRecognize::writer()
                                std::round(package->image.width()  * package->faceRects[i].width()),
                                std::round(package->image.height() * package->faceRects[i].height()));
 
-                if (package->labelList[i] != -1)
+                if (package->labelList[i] != FaceClassifier::UNKNOWN_LABEL_ID)
                 {
                     Identity identity = idProvider->identity(package->labelList[i]);
                     names << identity.attribute(QStringLiteral("name"));

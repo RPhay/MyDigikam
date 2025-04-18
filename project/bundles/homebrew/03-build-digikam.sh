@@ -69,6 +69,7 @@ cmake $ORIG_WD/../3rdparty \
       -DMACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET \
       -DARCH_TARGET=$ARCH_TARGET \
       -DDK_APPLE_PACKAGE_MANAGER=$DK_APPLE_PACKAGE_MANAGER \
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
       -Wno-dev
 
 #cmake --build . --config RelWithDebInfo --target ext_exiv2   -- -j$CPU_CORES
@@ -226,6 +227,7 @@ cmake $ORIG_WD/../3rdparty \
        -DMACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET \
        -DARCH_TARGET=$ARCH_TARGET \
        -DDK_APPLE_PACKAGE_MANAGER=$DK_APPLE_PACKAGE_MANAGER \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
        -Wno-dev
 
 cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES

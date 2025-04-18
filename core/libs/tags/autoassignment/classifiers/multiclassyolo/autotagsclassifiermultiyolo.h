@@ -46,24 +46,28 @@ public:
 public:
 
     explicit AutotagsClassifierYolo(float _threshold, const QString& predefinedClassFile);
-    virtual ~AutotagsClassifierYolo()                                           override = default;
+    virtual ~AutotagsClassifierYolo()                                               override = default;
 
-    virtual int predict(const cv::Mat& target)      const                       override
+    virtual int predict(const cv::Mat& target,
+                        const QList<int>& exclusionLabelList = QList<int>()) const  override
     {
         Q_UNUSED(target);
+        Q_UNUSED(exclusionLabelList);
 
         return -1;
     }
 
-    virtual int predict(const cv::UMat& target)     const                       override
+    virtual int predict(const cv::UMat& target,
+                        const QList<int>& exclusionLabelList = QList<int>()) const  override
     {
         Q_UNUSED(target);
+        Q_UNUSED(exclusionLabelList);
 
         return -1;
     }
 
-    virtual QList<int> predictMulti(const QList<cv::Mat>& targets)  const       override;
-    virtual QList<int> predictMulti(const QList<cv::UMat>& targets) const       override
+    virtual QList<int> predictMulti(const QList<cv::Mat>& targets)  const           override;
+    virtual QList<int> predictMulti(const QList<cv::UMat>& targets) const           override
     {
         Q_UNUSED(targets);
 

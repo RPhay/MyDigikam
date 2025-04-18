@@ -96,8 +96,8 @@ DK_QTVERSION="6"
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
 # If you want to package current implementation from git, use "master" as tag.
 #DK_VERSION=v8.5.0
-DK_VERSION=master
-#DK_VERSION="work/michmill/facebackgroundprocess"
+#DK_VERSION=master
+DK_VERSION="work/michmill/saverejectedfacedata"
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
 #DK_SUBVER="-01"
@@ -139,17 +139,20 @@ if [[ $DK_QTVERSION == 5 ]] ; then
 
 else
 
-    # KDE Plasma version.
-    # See official release here: https://download.kde.org/stable/plasma/
-    DK_KP_VERSION="v6.2.5"
-
-    # KDE Application version.
-    # See official release here: https://download.kde.org/stable/release-service/
-    DK_KA_VERSION="v24.12.1"
+    # Use Qt 6.8 LTS for the moment.
+    MP_QTSUBVERSION="8"
 
     # KDE KF6 frameworks version.
     # See official release here: https://download.kde.org/stable/frameworks/
-    DK_KDE_VERSION="v6.10.0"
+    DK_KDE_VERSION="v6.12.0"
+
+    # KDE Plasma version.
+    # See official release here: https://download.kde.org/stable/plasma/
+    DK_KP_VERSION="v6.3.4"
+
+    # KDE Application version.
+    # See official release here: https://download.kde.org/stable/release-service/
+    DK_KA_VERSION="v24.12.3"
 
     DK_UPLOADDIR="/srv/archives/files/digikam/unstable"
 

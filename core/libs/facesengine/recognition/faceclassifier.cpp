@@ -393,13 +393,13 @@ bool FaceClassifier::loadTrainingData()
     return true;
 }
 
-int FaceClassifier::predict(const cv::Mat& target) const
+int FaceClassifier::predict(const cv::Mat& target, const QList<int>& exclusionLabelList) const
 {
-    int label = -1;
+    int label = UNKNOWN_LABEL_ID;
 
     if (!d->ready)
     {
-        return -1;
+        return UNKNOWN_LABEL_ID;
     }
 
     d->trainingLock.lockForRead();
@@ -409,13 +409,13 @@ int FaceClassifier::predict(const cv::Mat& target) const
         // we don't have enough identites and samples yet to use the knn and svm classifiers
         // so we perform a full brute-force search on all the known faces
 
-        label = predictFullSearch(target);
+        label = predictFullSearch(target, exclusionLabelList);
     }
     else
     {
         // use the classifier algorithm
 
-        label = predictClassifier(target);
+        label = predictClassifier(target, exclusionLabelList);
     }
 
     d->trainingLock.unlock();
@@ -423,19 +423,19 @@ int FaceClassifier::predict(const cv::Mat& target) const
     return label;
 }
 
-int FaceClassifier::predict(const cv::UMat& target) const
+int FaceClassifier::predict(const cv::UMat& target, const QList<int>& exclusionLabelList) const
 {
     cv::Mat matTarget = target.getMat(cv::ACCESS_READ);
 
-    return predict(matTarget);
+    return predict(matTarget, exclusionLabelList);
 }
 
-int FaceClassifier::predictFullSearch(const cv::Mat& target)const
+int FaceClassifier::predictFullSearch(const cv::Mat& target, const QList<int>& exclusionLabelList)const
 {
     QElapsedTimer timer;
     timer.start();
 
-    int label = listSearch(target, d->identityFeatures);
+    int label = listSearch(target, d->identityFeatures, exclusionLabelList);
 
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictFullSearch: classifier prediction is: "
                                      << label << " completed in " << timer.elapsed();
@@ -443,11 +443,11 @@ int FaceClassifier::predictFullSearch(const cv::Mat& target)const
     return label;
 }
 
-int FaceClassifier::predictClassifier(const cv::Mat& target) const
+int FaceClassifier::predictClassifier(const cv::Mat& target, const QList<int>& exclusionLabelList) const
 {
-    int     label                      = -1;
-    int     badLabel1                  = -1;
-    int     badLabel2                  = -1;
+    int     label                      = UNKNOWN_LABEL_ID;
+    int     badLabel1                  = UNKNOWN_LABEL_ID;
+    int     badLabel2                  = UNKNOWN_LABEL_ID;
     cv::Mat knn_resultMat;
     cv::Mat knn_neighbors;
     cv::Mat knn_distances;
@@ -472,20 +472,20 @@ int FaceClassifier::predictClassifier(const cv::Mat& target) const
 
     // check if results exist in recognition DB
 
-    if (!idProvider->isValidId(svm_result))
+    if (!idProvider->isValidId(svm_result) || exclusionLabelList.contains(svm_result))
     {
-        svm_result = -1;
+        svm_result = UNKNOWN_LABEL_ID;
     }
 
-    if (!idProvider->isValidId(knn_result))
+    if (!idProvider->isValidId(knn_result) || exclusionLabelList.contains(knn_result))
     {
-        knn_result = -1;
+        knn_result = UNKNOWN_LABEL_ID;
     }
 
     // if the  SVM and KNN classifiers agree it's usually over 98% correct unless
     // we have massively unbalanced data so we need to validate the results
 
-    if ((svm_result == knn_result) && (svm_result != -1))
+    if ((svm_result == knn_result) && (svm_result != UNKNOWN_LABEL_ID))
     {
         if (validateKNNSVMResult(target, svm_result))
         {
@@ -507,11 +507,11 @@ int FaceClassifier::predictClassifier(const cv::Mat& target) const
 
     // Stage 2 - check the absolute nearest neighbor for a match to the SVM result
 
-    if ((-1 != svm_result) && (-1 != knn_result))
+    if ((UNKNOWN_LABEL_ID != svm_result) && (UNKNOWN_LABEL_ID != knn_result))
     {
         // find the absolute nearest neighbor
 
-        float distance = 10000.0F;
+        float distance = MAX_DISTANCE;
 
         for (int i = 0 ; i < knn_neighbors.cols ; ++i)
         {
@@ -574,7 +574,7 @@ int FaceClassifier::predictClassifier(const cv::Mat& target) const
             }
         }
 
-        label = listSearch(target, featureSet);
+        label = listSearch(target, featureSet, exclusionLabelList);
     }
 
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::predictClassifier: classifier stage 3 prediction is: "
@@ -591,8 +591,6 @@ bool FaceClassifier::validateKNNSVMResult(const cv::Mat& target, int label) cons
     {
         float distance = 10000.0F;
 
-        // TODO: add a feature compare for OpenFace if we decide to keep it
-
         if (featureSFaceCompare(target, feature, distance))
         {
             result = true;
@@ -603,7 +601,9 @@ bool FaceClassifier::validateKNNSVMResult(const cv::Mat& target, int label) cons
     return result;
 }
 
-int FaceClassifier::listSearch(const cv::Mat& target, const QMap<int, QList<cv::Mat> >& identityFeatures) const
+int FaceClassifier::listSearch(const cv::Mat& target,
+                               const QMap<int, QList<cv::Mat> >& identityFeatures,
+                               const QList<int>& exclusionLabelList) const
 {
     VotingGroups votes;
 
@@ -622,9 +622,12 @@ int FaceClassifier::listSearch(const cv::Mat& target, const QMap<int, QList<cv::
 
         for (const cv::Mat& feature : std::as_const(value))
         {
-            float distance = 10000.0F;
+            if (exclusionLabelList.contains(key))
+            {
+                continue;
+            }
 
-            // TODO: add a feature compare for OpenFace if we decide to keep it
+            float distance = 10000.0F;
 
             if (featureSFaceCompare(target, feature, distance))
             {
@@ -635,8 +638,6 @@ int FaceClassifier::listSearch(const cv::Mat& target, const QMap<int, QList<cv::
 
     return votes.winner(VotingGroups::VotesLowScore);
 }
-
-// TODO: add a feature compare for OpenFace if we decide to keep it
 
 bool FaceClassifier::featureSFaceCompare(const cv::Mat& target, const cv::Mat& sample, float& distance) const
 {

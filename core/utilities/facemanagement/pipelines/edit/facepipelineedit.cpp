@@ -37,7 +37,6 @@
 #include "coredb.h"
 #include "facescansettings.h"
 #include "dimg.h"
-#include "faceutils.h"
 #include "facepipelinepackagebase.h"
 #include "identityprovider.h"
 #include "identity.h"
@@ -86,8 +85,9 @@ FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info,
     debugConfirmTimer.restart();
 
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Loader);
+    FaceTagsIface newFace                  = getRejectedFaceTagList(face);
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info,
-                                                                         face,
+                                                                         newFace,
                                                                          tagId,
                                                                          region,
                                                                          DImg(),
@@ -100,20 +100,21 @@ FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info,
 
     enqueue(nextQueue, package);
 
-    return (FaceTagsEditor::confirmedEntry(face, tagId, region));
+    return (FaceTagsEditor::confirmedEntry(newFace, tagId, region));
 }
 
 void FacePipelineEdit::removeFace(const ItemInfo& info,
                                   const FaceTagsIface& face)
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
+    FaceTagsIface newFace                  = getRejectedFaceTagList(face);
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info,
-                                                                         face,
-                                                                         face.tagId(),
-                                                                         face.region(),
+                                                                         newFace,
+                                                                         newFace.tagId(),
+                                                                         newFace.region(),
                                                                          DImg(),
                                                                          FacePipelinePackageBase::EditPipelineAction::Remove,
-                                                                         face.isConfirmedName());
+                                                                         newFace.isConfirmedName());
 
     ++totalItemCount;
 
@@ -142,10 +143,11 @@ FaceTagsIface FacePipelineEdit::editTag(const ItemInfo& info,
                                         int newTagId)
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
+    FaceTagsIface newFace                  = getRejectedFaceTagList(face);
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info,
-                                                                         face,
+                                                                         newFace,
                                                                          newTagId,
-                                                                         face.region(),
+                                                                         newFace.region(),
                                                                          DImg(),
                                                                          FacePipelinePackageBase::EditPipelineAction::EditTag,
                                                                          face.isConfirmedName());
@@ -157,7 +159,7 @@ FaceTagsIface FacePipelineEdit::editTag(const ItemInfo& info,
 
     enqueue(nextQueue, package);
 
-    FaceTagsIface newFace(package->face);
+    // FaceTagsIface newFace(package->face);
     newFace.setTagId(newTagId);
 
     return newFace;
@@ -170,8 +172,9 @@ FaceTagsIface FacePipelineEdit::editRegion(const ItemInfo& info,
                                             bool retrain)
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
+    FaceTagsIface newFace                  = getRejectedFaceTagList(face);
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info,
-                                                                         face,
+                                                                         newFace,
                                                                          tagId,
                                                                          region,
                                                                          DImg(),
@@ -185,10 +188,9 @@ FaceTagsIface FacePipelineEdit::editRegion(const ItemInfo& info,
 
     enqueue(nextQueue, package);
 
-    FaceTagsIface newFace(package->face);
     newFace.setRegion(region);
 
-    if (tagId != -1)
+    if (tagId != FaceClassifierBase::UNKNOWN_LABEL_ID)
     {
         newFace.setTagId(tagId);
         newFace.setType(FaceTagsIface::typeForId(tagId));
@@ -203,11 +205,11 @@ FaceTagsIface FacePipelineEdit::addManually(const ItemInfo& info,
                                             bool retrain)
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
-    FaceTagsIface face                     = FaceTagsEditor::unconfirmedEntry(info.id(), -1, region);
+    FaceTagsIface newFace                  = FaceTagsEditor::unconfirmedEntry(info.id(), FaceClassifier::UNKNOWN_LABEL_ID, region, QList<int>());
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info,
-                                                                         face,
-                                                                         face.tagId(),
-                                                                         face.region(),
+                                                                         newFace,
+                                                                         newFace.tagId(),
+                                                                         newFace.region(),
                                                                          image,
                                                                          FacePipelinePackageBase::EditPipelineAction::AddManually,
                                                                          retrain);
@@ -219,7 +221,7 @@ FaceTagsIface FacePipelineEdit::addManually(const ItemInfo& info,
 
     enqueue(nextQueue, package);
 
-    return face;
+    return newFace;
 }
 
 bool FacePipelineEdit::start()
@@ -282,7 +284,7 @@ bool FacePipelineEdit::writer()
 
     //--------------------------------------------------------------------------------
 
-    FaceUtils utils;
+    // FaceUtils utils;
     IdentityProvider* const idProvider             = IdentityProvider::instance();
 
     // override the default queue depth
@@ -345,7 +347,30 @@ bool FacePipelineEdit::writer()
             {
                 // Change Tag operation.
 
-                utils.changeTag(package->face, package->tagId);
+                if (
+                    (package->face.isUnconfirmedName()) &&
+                    (FaceTags::unknownPersonTagId() != package->face.tagId()) &&
+                    (FaceTags::unknownPersonTagId() == package->tagId)
+                   )
+                {
+                    // The face is unconfirmed and the tag is not the unknown person tag.
+                    // We need to change the tag to the unknown person tag.
+
+                    /*
+                    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): adding rejected tagId"
+                                                     << package->face.tagId()
+                                                     << "to the rejected list of the unknown person tag for imageid"
+                                                     << package->face.imageId()
+                                                     << "and rect"
+                                                     << package->face.region().toXml();
+                    */
+
+                    utils.rejectSuggestedTag(package->face);
+                }
+                else
+                {
+                    utils.changeTag(package->face, package->tagId);
+                }
 
                 break;
             }
@@ -357,7 +382,7 @@ bool FacePipelineEdit::writer()
                     package->face = utils.changeRegion(package->face, package->region);
                 }
 
-                if (package->tagId != -1)
+                if (package->tagId != FaceClassifier::UNKNOWN_LABEL_ID)
                 {
                    utils.changeTag(package->face, package->tagId);
                 }
@@ -367,21 +392,8 @@ bool FacePipelineEdit::writer()
 
             case FacePipelinePackageBase::EditPipelineAction::AddManually:
             {
-                utils.addManually(utils.unconfirmedEntry(package->info.id(), package->tagId, package->region));
+                utils.addManually(utils.unconfirmedEntry(package->info.id(), package->tagId, package->region, package->face.getRejectedFaceTagList()));
             }
-
-                // if      (package->face.isNull())
-                // {
-                //     // Add Manually.
-                //
-                //     FaceTagsIface newFace = utils.unconfirmedEntry(package->info.id(), package->face.assignedTagId, package->face.assignedRegion);
-                //     utils.addManually(newFace);
-                //     // add << FacePipelineFaceTagsIface(newFace);
-                // }
-                // else if (package->face.assignedRegion.isValid())
-                // {
-                //     add << FacePipelineFaceTagsIface();
-                // }
         }
 
         // update the tags
@@ -402,13 +414,11 @@ bool FacePipelineEdit::writer()
             FaceClassifier::instance()->retrain();
         }
 
-        QString albumName = CollectionManager::instance()->albumRootLabel(package->info.albumRootId());
-
         // send a notification that the image was processed
 
         notify(MLPipelineNotification::notifyProcessed,
                package->info.name(),
-               albumName = package->info.relativePath(),
+               package->info.relativePath(),
                QString(),
                package->faceRects.size(),
                package->thumbnail);
@@ -456,7 +466,31 @@ bool FacePipelineEdit::writer()
 
 void FacePipelineEdit::addMoreWorkers()
 {
-    // edit pipeline is always single thread per stage
+    // edit pipeline is always single thread per stage. Do nothing.
+}
+
+FaceTagsIface FacePipelineEdit::getRejectedFaceTagList(const FaceTagsIface& face) const
+{
+    /**
+     * some FaceTagsIface objects don't have the rejectedFaceTagList set
+     * because of the way they were loaded.
+     * This function will set it to the value from the database.
+     */
+
+    FaceTagsIface newFace(face);
+
+    QList<FaceTagsIface> faces = utils.databaseFaces(face.imageId());
+
+    for (const FaceTagsIface& f : std::as_const(faces))
+    {
+        if (f.region() == newFace.region())
+        {
+            newFace.setRejectedFaceTagList(f.getRejectedFaceTagList());
+            break;
+        }
+    }
+
+    return newFace;
 }
 
 } // namespace Digikam

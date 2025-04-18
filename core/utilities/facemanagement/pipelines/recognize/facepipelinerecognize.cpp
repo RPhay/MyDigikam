@@ -43,6 +43,8 @@
 #include "identity.h"
 #include "dnnsfaceextractor.h"
 #include "faceclassifier.h"
+#include "metadatahub.h"
+#include "scancontroller.h"
 
 namespace Digikam
 {
@@ -220,35 +222,12 @@ bool FacePipelineRecognize::classifier()
         {
             // classify the features
 
-            package->label = classifier->predict(package->features);
+            package->label = classifier->predict(package->features, package->exclusionIdentityIds);
         }
 
-        // -1 means no match suggested
-        // pass the package to the next stage if we have a suggestion
+        enqueue(nextQueue, package);
 
-        if (-1 != package->label)
-        {
-            enqueue(nextQueue, package);
-
-            package = nullptr;
-        }
-        else
-        {
-            // no suggested match found, so notify the user
-
-            notify(MLPipelineNotification::notifyProcessed,
-                   package->info.name(),
-                   package->info.relativePath(),
-                   QString(),
-                   0,
-                   package->thumbnail);
-
-            // delete the package
-
-            delete package;
-
-            package = nullptr;
-        }
+        package = nullptr;
     }
     /* =========================================================================================
      * End pipeline stage specific loop
@@ -294,13 +273,32 @@ bool FacePipelineRecognize::writer()
         QString displayName;
         int matches = 0;
 
-        if (-1 != package->label)
+        if (FaceClassifier::UNKNOWN_LABEL_ID != package->label)
         {
             Identity identity = idProvider->identity(package->label);
             int tagId         = FaceTags::getOrCreateTagForIdentity(identity.attributesMap());
-            utils.changeSuggestedName(package->face, tagId);
+            if (package->face.tagId() != tagId)
+            {
+                utils.changeSuggestedName(package->face, tagId);
+            }
             displayName      += identity.attribute(QStringLiteral("name"));
-            matches           = 1;
+            matches           = 1;    
+        }
+        else
+        {
+            if (package->face.isUnconfirmedName())
+            {
+                utils.changeTag(package->face, FaceTags::unknownPersonTagId());
+            }
+        }
+
+        if (utils.normalTagChanged())
+        {
+            MetadataHub hub;
+            hub.load(package->info);
+
+            ScanController::FileMetadataWrite writeScope(package->info);
+            writeScope.changed(hub.writeToMetadata(package->info, MetadataHub::WRITE_TAGS));
         }
 
         QString albumName = CollectionManager::instance()->albumRootLabel(package->info.albumRootId());

@@ -20,6 +20,8 @@
 namespace Digikam
 {
 
+const int FaceClassifierBase::UNKNOWN_LABEL_ID = -1;
+
 FaceClassifierBase::FaceClassifierBase()
     : MLClassifierFoundation()
 {

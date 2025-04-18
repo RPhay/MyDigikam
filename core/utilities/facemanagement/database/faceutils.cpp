@@ -159,6 +159,31 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
         return newFaces;
     }
 
+    return writeUnconfirmedResults(imageid, newFaces, fullSize);
+}
+
+QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
+                                                        QList<FaceTagsIface>& newFaces,
+                                                        const QList<Identity>& recognitionResults,
+                                                        const QSize& fullSize)
+{
+    for(int i = 0 ; i < newFaces.size() ; ++i)
+    {
+        newFaces[i].setTagId(FaceTags::getOrCreateTagForIdentity(recognitionResults.at(i).attributesMap()));
+    }
+    return writeUnconfirmedResults(imageid, newFaces, fullSize);
+}
+
+QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
+                                                        QList<FaceTagsIface>& newFaces,
+                                                        const QSize& fullSize)
+{
+
+    if (newFaces.isEmpty())
+    {
+        return newFaces;
+    }
+
     // List of existing entries.
 
     QList<FaceTagsIface> currentFaces = databaseFaces(imageid);

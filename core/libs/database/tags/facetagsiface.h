@@ -8,6 +8,8 @@
  *
  * SPDX-FileCopyrightText: 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2012-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -55,8 +57,8 @@ public:
 
     FaceTagsIface() = default;
     FaceTagsIface(const FaceTagsIface& other);
-    FaceTagsIface(Type type, qlonglong imageId, int tagId, const TagRegion& region);
-    FaceTagsIface(const QString& attribute, qlonglong imageId, int tagId, const TagRegion& region);
+    FaceTagsIface(Type type, qlonglong imageId, int tagId, const TagRegion& region, const QList<int>& rejectedFaceTagList = QList<int>());
+    FaceTagsIface(const QString& attribute, qlonglong imageId, int tagId, const TagRegion& region, const QList<int>& rejectedFaceTagList = QList<int>());
     ~FaceTagsIface() = default;
 
     FaceTagsIface& operator=(const FaceTagsIface& other);
@@ -158,12 +160,56 @@ public:
      */
     const QString hash() const;
 
+    /**
+     * Adds a tag to the list of tags excluded from face recognition
+     * so "rejected" matches are not matched again
+     */
+    bool addRejectedFaceTag(int tagId);
+
+    /**
+     * Adds a tag to the list of tags excluded from face recognition
+     * so "rejected" matches are not matched again
+     */
+    bool setRejectedFaceTagList(const QList<int>& tagList);
+
+    /**
+     * Clears the list of tags excluded from face recognition.
+     */
+    void clearRejectedFaceTagList();
+
+    /**
+     * Returns the list of tags excluded from face recognition
+     * so "rejected" matches are not matched again
+     */
+    QList<int> getRejectedFaceTagList() const;
+
+    /**
+     * Returns a string representation of m_rejectedFaceTagList
+     * separated by m_listSeparator.
+     */
+    QString rejectedFaceTagListToString() const;
+
+    /**
+     * Returns a QList<int> from a string representation of m_rejectedFaceTagList
+     * separated by m_listSeparator.
+     */
+    static QList<int> stringToRejectedFaceTagList(const QString& str);
+
+    /**
+     * Returns a string of the rect and the rejectedFaceTagList to be saved in the DB
+     */
+    QString rejectedFaceTagsDBString() const;
+
+    static QLatin1Char listSeparator;
+    static QLatin1Char valueSeparator;
+
 protected:
 
-    Type      m_type    = InvalidFace;
-    qlonglong m_imageId = 0;
-    int       m_tagId   = 0;
-    TagRegion m_region;
+    Type        m_type    = InvalidFace;
+    qlonglong   m_imageId = 0;
+    int         m_tagId   = 0;
+    TagRegion   m_region;
+    QList<int>  m_rejectedFaceTagList;
 };
 
 DIGIKAM_DATABASE_EXPORT QDebug operator<<(QDebug dbg, const FaceTagsIface& f);

@@ -22,6 +22,7 @@
 
 #include "facepipelinebase.h"
 #include "facetagsiface.h"
+#include "faceutils.h"
 
 namespace Digikam
 {
@@ -91,12 +92,18 @@ protected:
 
     void addMoreWorkers()                                       override;
 
+    /**
+     * returns a copy of FaceTagsIface object with the face tags that were rejected
+     */
+    FaceTagsIface getRejectedFaceTagList(const FaceTagsIface& face)     const;
+
 private:
 
     bool isStarted = false;
 
     // TODO: Remove DEBUG timer
     QElapsedTimer   debugConfirmTimer;
+    FaceUtils       utils;
 
 private:
 

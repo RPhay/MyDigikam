@@ -68,7 +68,16 @@ public:
                                                  const QList<Identity>& recognitionResults,
                                                  const QSize& fullSize);
 
-    // --- Status flags ---
+    QList<FaceTagsIface> writeUnconfirmedResults(qlonglong imageid,
+                                                 QList<FaceTagsIface>& detectedFaces,               // cannot be const
+                                                 const QList<Identity>& recognitionResults,
+                                                 const QSize& fullSize);
+   
+    QList<FaceTagsIface> writeUnconfirmedResults(qlonglong imageid,
+                                                 QList<FaceTagsIface>& detectedFaces,               // cannot be const
+                                                 const QSize& fullSize);
+      
+          // --- Status flags ---
 
     /**
      * Tells if the image has been scanned for faces or not

@@ -91,6 +91,7 @@ cmake $ORIG_WD/../3rdparty \
        -DENABLE_QTVERSION=$DK_QTVERSION \
        -DDK_APPLE_PACKAGE_MANAGER=$DK_APPLE_PACKAGE_MANAGER \
        -DARCH_TARGET=$ARCH_TARGET \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
        -Wno-dev
 
 # NOTE: The order to compile each component here is very important.

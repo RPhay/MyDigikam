@@ -31,8 +31,10 @@ AutotagsClassifierSoftmax::AutotagsClassifierSoftmax(float _threshold, const QSt
 {
 }
 
-int AutotagsClassifierSoftmax::predict(const cv::Mat& target) const
+int AutotagsClassifierSoftmax::predict(const cv::Mat& target, const QList<int>& exclusionLabelList) const
 {
+    Q_UNUSED(exclusionLabelList);
+
     Q_ASSERT(target.rows == 1);
 
     float* input = reinterpret_cast<float*>(target.data);
@@ -87,9 +89,9 @@ int AutotagsClassifierSoftmax::predict(const cv::Mat& target) const
     return -1;
 }
 
-int AutotagsClassifierSoftmax::predict(const cv::UMat& target) const
+int AutotagsClassifierSoftmax::predict(const cv::UMat& target, const QList<int>& exclusionLabelList) const
 {
-    return predict(target.getMat(cv::ACCESS_READ));
+    return predict(target.getMat(cv::ACCESS_READ), exclusionLabelList);
 }
 
 QList<int> AutotagsClassifierSoftmax::predictMulti(const QList<cv::Mat>& targets) const

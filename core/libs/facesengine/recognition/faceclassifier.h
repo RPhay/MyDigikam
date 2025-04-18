@@ -43,12 +43,14 @@ public:
      */
     void setParameters(const FaceScanSettings& parameters);
 
-    bool ready()                                        const;
+    bool ready()                                                        const;
 
-    int predict(const cv::Mat& target)                  const override;
-    int predict(const cv::UMat& target)                 const override;
+    int predict(const cv::Mat& target,
+                const QList<int>& exclusionLabelList = QList<int>())    const override;
+    int predict(const cv::UMat& target, 
+                const QList<int>& exclusionLabelList = QList<int>())    const override;
 
-    bool retrain()                                            override;
+    bool retrain()                                                      override;
 
 Q_SIGNALS:
 
@@ -59,16 +61,20 @@ Q_SIGNALS:
 
 protected:
 
-    bool loadTrainingData()                                   override;
+    const float MAX_DISTANCE                                            = 1000.0f; // arbitrary max distance to start calculating distance
+
+    bool loadTrainingData()                                             override;
 
 private:
 
     cv::Ptr<cv::ml::KNearest> createKNearest();
     cv::Ptr<cv::ml::SVM>      createSVM();
 
-    int                       predictFullSearch(const cv::Mat& target)                                              const;
-    int                       predictClassifier(const cv::Mat& target)                                              const;
-    int                       listSearch(const cv::Mat& target, const QMap<int, QList<cv::Mat> >& identityFeatures) const;
+    int                       predictFullSearch(const cv::Mat& target, const QList<int>& exclusionLabelList)        const;
+    int                       predictClassifier(const cv::Mat& target, const QList<int>& exclusionLabelList)        const;
+    int                       listSearch(const cv::Mat& target,
+                                         const QMap<int, QList<cv::Mat> >& identityFeatures,
+                                         const QList<int>& exclusionLabelList)                                      const;
 
     bool                      validateKNNSVMResult(const cv::Mat& target, int label)                                const;
     bool                      featureSFaceCompare(const cv::Mat& target, const cv::Mat& sample, float& distance)    const;
@@ -81,10 +87,10 @@ private:
 private:
 
     // Disable
-    explicit FaceClassifier(QObject*)                         = delete;
+    explicit FaceClassifier(QObject*)                                   = delete;
     FaceClassifier();
-    ~FaceClassifier()                                         override;
-    FaceClassifier(const FaceClassifier&)                     = delete;
+    ~FaceClassifier()                                                   override;
+    FaceClassifier(const FaceClassifier&)                               = delete;
 
 private:
 

@@ -31,9 +31,10 @@ AutotagsClassifierMinmax::AutotagsClassifierMinmax(float _threshold, const QStri
 {
 }
 
-int AutotagsClassifierMinmax::predict(const cv::Mat& target) const
+int AutotagsClassifierMinmax::predict(const cv::Mat& target, const QList<int>& exclusionLabelList) const
 {
     Q_ASSERT(target.rows == 1);
+    Q_UNUSED(exclusionLabelList);
 
     // Get the prediction
 
@@ -54,9 +55,9 @@ int AutotagsClassifierMinmax::predict(const cv::Mat& target) const
     return -1;
 }
 
-int AutotagsClassifierMinmax::predict(const cv::UMat& target) const
+int AutotagsClassifierMinmax::predict(const cv::UMat& target, const QList<int>& exclusionLabelList) const
 {
-    return predict(target.getMat(cv::ACCESS_READ));
+    return predict(target.getMat(cv::ACCESS_READ), exclusionLabelList);
 }
 
 QList<int> AutotagsClassifierMinmax::predictMulti(const QList<cv::Mat>& targets) const

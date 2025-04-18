@@ -191,4 +191,9 @@ QLatin1String ImageTagPropertyName::faceToTrain()
     return QLatin1String("faceToTrain");
 }
 
+QLatin1String ImageTagPropertyName::rejectedFaceTagList()
+{
+    return QLatin1String("rejectedFaceTagList");
+}
+
 } // namespace DigiKam

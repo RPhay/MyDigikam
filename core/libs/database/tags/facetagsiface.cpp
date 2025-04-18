@@ -8,6 +8,8 @@
  *
  * SPDX-FileCopyrightText: 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2012-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -33,36 +35,43 @@
 namespace Digikam
 {
 
+QLatin1Char FaceTagsIface::listSeparator = QLatin1Char(';');
+QLatin1Char FaceTagsIface::valueSeparator = QLatin1Char(',');
+
 FaceTagsIface::FaceTagsIface(const FaceTagsIface& other)
     : m_type   (other.type()),
       m_imageId(other.imageId()),
       m_tagId  (other.tagId()),
-      m_region (other.region())
+      m_region (other.region()),
+      m_rejectedFaceTagList(other.m_rejectedFaceTagList)
 {
 }
 
-FaceTagsIface::FaceTagsIface(Type type, qlonglong imageId, int tagId, const TagRegion& region)
+FaceTagsIface::FaceTagsIface(Type type, qlonglong imageId, int tagId, const TagRegion& region, const QList<int>& rejectedFaceTagList)
     : m_type   (type),
       m_imageId(imageId),
       m_tagId  (tagId),
-      m_region (region)
+      m_region (region),
+      m_rejectedFaceTagList(rejectedFaceTagList)
 {
 }
 
-FaceTagsIface::FaceTagsIface(const QString& attribute, qlonglong imageId, int tagId, const TagRegion& region)
+FaceTagsIface::FaceTagsIface(const QString& attribute, qlonglong imageId, int tagId, const TagRegion& region, const QList<int>& rejectedFaceTagList)
     : m_imageId(imageId),
       m_tagId  (tagId),
-      m_region (region)
+      m_region (region),
+      m_rejectedFaceTagList(rejectedFaceTagList)
 {
     m_type = typeForAttribute(attribute, tagId);
 }
 
 FaceTagsIface& FaceTagsIface::operator=(const FaceTagsIface& other)
 {
-    m_type    = other.type();
-    m_imageId = other.imageId();
-    m_tagId   = other.tagId();
-    m_region  = other.region();
+    m_type                  = other.type();
+    m_imageId               = other.imageId();
+    m_tagId                 = other.tagId();
+    m_region                = other.region();
+    m_rejectedFaceTagList   = other.m_rejectedFaceTagList;
 
     return *this;
 }
@@ -110,10 +119,11 @@ void FaceTagsIface::setRegion(const TagRegion& region)
 bool FaceTagsIface::operator==(const FaceTagsIface& other) const
 {
     return (
-            (m_tagId   == other.m_tagId)   &&
-            (m_imageId == other.m_imageId) &&
-            (m_type    == other.m_type)    &&
-            (m_region  == other.m_region)
+            (m_tagId               == other.m_tagId)   &&
+            (m_imageId             == other.m_imageId) &&
+            (m_type                == other.m_type)    &&
+            (m_region              == other.m_region)  &&
+            (m_rejectedFaceTagList == other.m_rejectedFaceTagList)
            );
 }
 
@@ -236,7 +246,8 @@ FaceTagsIface FaceTagsIface::fromVariant(const QVariant& var)
                                  (Type)list.at(0).toInt(),
                                  list.at(1).toLongLong(),
                                  list.at(2).toInt(),
-                                 TagRegion::fromVariant(list.at(3))
+                                 TagRegion::fromVariant(list.at(3)),
+                                 QList<int>()
                                 );
         }
     }
@@ -267,16 +278,19 @@ FaceTagsIface FaceTagsIface::fromListing(qlonglong imageId, const QList<QVariant
 
     // See imagelister.cpp: value - property - tagId.
 
-    int tagId         = extraValues.at(2).toInt();
+    int _tagId        = extraValues.at(2).toInt();
     QString attribute = extraValues.at(1).toString();
     QString value     = extraValues.at(0).toString();
+
 /*
     qCDebug(DIGIKAM_DATABASE_LOG) << tagId << attribute << value;
 */
     return FaceTagsIface(
                          attribute,
-                         imageId, tagId,
-                         TagRegion(value)
+                         imageId,
+                         _tagId,
+                         TagRegion(value),
+                         QList<int>()
                         );
 }
 
@@ -284,13 +298,13 @@ QString FaceTagsIface::getAutodetectedPersonString() const
 {
     if (isUnconfirmedType())
     {
-        return (
-                QString::number(tagId())                 +
-                QLatin1Char(',')                         +
-                ImageTagPropertyName::autodetectedFace() +
-                QLatin1Char(',')                         +
-                (TagRegion(region().toRect())).toXml()
-               );
+        QString personString = QString::number(tagId())                 +
+                               QLatin1Char(',')                         +
+                               ImageTagPropertyName::autodetectedFace() +
+                               QLatin1Char(',')                         +
+                               (TagRegion(region().toRect())).toXml();
+
+        return (personString);
     }
     else
     {
@@ -300,10 +314,12 @@ QString FaceTagsIface::getAutodetectedPersonString() const
 
 QDebug operator<<(QDebug dbg, const FaceTagsIface& f)
 {
-    dbg.nospace() << "FaceTagsIface(" << f.type()
-                  << ", image "       << f.imageId()
-                  << ", tag "         << f.tagId()
-                  << ", region"       << f.region();
+    dbg.nospace() << "FaceTagsIface("   << f.type()
+                  << ", image "         << f.imageId()
+                  << ", tag "           << f.tagId()
+                  << ", region"         << f.region()
+                  << ", excluded tags"  << f.getRejectedFaceTagList()
+                  ;
     return dbg;
 }
 
@@ -349,6 +365,97 @@ const QString FaceTagsIface::hash() const
     hasher.addData(m_region.toXml().toLatin1());
 
     return QLatin1String(hasher.result().toHex());
+}
+
+/**
+ * adds a tag to the list of tags excluded from face recognition
+ * so "rejected" matches are not matched again
+ */
+bool FaceTagsIface::addRejectedFaceTag(int tagId)
+{
+    if (!m_rejectedFaceTagList.contains(tagId))
+    {
+        // check if the tagId is already in the list
+
+        m_rejectedFaceTagList << tagId;
+    }
+
+    return true;
+}
+
+/**
+ * replaces the list of tags excluded from face recognition
+ */
+bool FaceTagsIface::setRejectedFaceTagList(const QList<int>& tagList)
+{
+    m_rejectedFaceTagList = tagList;
+    
+    return true;
+}
+
+/**
+ * clears the list of tags excluded from face recognition.
+ */
+void FaceTagsIface::clearRejectedFaceTagList()
+{
+    m_rejectedFaceTagList.clear();
+}
+
+/**
+ * returns the list of tags excluded from face recognition
+ * so "rejected" matches are not matched again
+ */
+QList<int> FaceTagsIface::getRejectedFaceTagList() const
+{
+    return m_rejectedFaceTagList;
+}
+
+/**
+ * returns a string representation of m_rejectedFaceTagList
+ * separated by listSeparator.
+ */
+QString FaceTagsIface::rejectedFaceTagListToString() const
+{
+    QStringList strings;
+    strings.reserve(m_rejectedFaceTagList.size());
+
+    for (int i = 0 ; i < m_rejectedFaceTagList.size() ; ++i)
+    {
+        strings.append(QString::number(m_rejectedFaceTagList.at(i)));
+    }
+
+    return strings.join(listSeparator);
+}
+
+/**
+ * returns a QList<int> from a string representation of m_rejectedFaceTagList
+ * separated by listSeparator.
+ */
+QList<int> FaceTagsIface::stringToRejectedFaceTagList(const QString& str)
+{
+    QList<int> rejectedFaceTagList;
+    QStringList strings = str.split(listSeparator);
+
+    for (const QString& tagIdStr : std::as_const(strings))
+    {
+        bool ok;
+        int _tagId = tagIdStr.toInt(&ok);
+
+        if (ok)
+        {
+            rejectedFaceTagList << _tagId;
+        }
+    }
+
+    return rejectedFaceTagList;
+}
+
+/**
+ * Returns a string of the rect and the rejectedFaceTagList to be saved in the DB
+ */
+QString FaceTagsIface::rejectedFaceTagsDBString() const
+{
+    return m_region.toXml() + FaceTagsIface::valueSeparator + rejectedFaceTagListToString();
 }
 
 } // namespace Digikam
