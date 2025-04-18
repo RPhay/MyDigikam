@@ -181,7 +181,7 @@ double FacePipelineBase::detectBlur(const cv::Mat& cvGrayImage) const
     return result.val[0];
 }
 
-bool FacePipelineBase::useForTraining(const cv::Rect origSize, const cv::Mat& cvImage)
+bool FacePipelineBase::useForTraining(const QSize& faceSize, const cv::Mat& cvImage)
 {
     if (!detectorModel)
     {
@@ -192,10 +192,13 @@ bool FacePipelineBase::useForTraining(const cv::Rect origSize, const cv::Mat& cv
     // thumbnail must be at least minThumbnailSize of the size the detector expects
 
     if (
-        ((detectorModel->info.imageSize * minThumbnailSize) > origSize.width) ||
-        ((detectorModel->info.imageSize * minThumbnailSize) > origSize.height)
+        ((detectorModel->info.imageSize * minThumbnailSize) > faceSize.width()) ||
+        ((detectorModel->info.imageSize * minThumbnailSize) > faceSize.height())
        )
     {
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineBase::useForTraining Image is too small for face detection"
+                                         << faceSize.width() << "x" << faceSize.height()
+                                         << "required:" << detectorModel->info.imageSize * minThumbnailSize;
         return false;
     }
 
@@ -388,22 +391,60 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
 
             // extract the face features
 
-            package->features = extractor.getFaceEmbedding(cvUImage);
+            QPair<cv::Mat, cv::Mat> faceEmbedding = extractor.getFaceEmbedding(cvUImage);
+            package->features = faceEmbedding.second;
 
             // check for a valid feature set
 
             if (!package->features.empty() && trainingQualityCheck)
             {
-                // get the original size of the image
+                /* 
+                * compute the size of the face region in pixels as shown
+                * in the original image
+                * this is used to check if the image is suitable for training
+                */
 
-                cv::Rect origSize(0, 0, package->face.region().toRect().width(), package->face.region().toRect().height());
+                // percentage of the region compared to the image
+
+                float xThumbnailPercent = static_cast<float>(package->face.region().toRect().width()) /
+                                          static_cast<float>(package->info.dimensions().width());
+
+                float yThumbnailPercent = static_cast<float>(package->face.region().toRect().height()) /
+                                          static_cast<float>(package->info.dimensions().height());
+
+                // percentage of the face compared to the thumbnail
+
+                float xFaceAreaPercent = static_cast<float>(faceEmbedding.first.at<float>(0, 2)) /
+                                         static_cast<float>(package->thumbnail.width());
+
+                float yFaceAreaPercent = static_cast<float>(faceEmbedding.first.at<float>(0, 3)) /
+                                         static_cast<float>(package->thumbnail.height());
+
+                // compute the size of the face area in pixels
+
+                QSize faceSize(qRound(package->info.dimensions().width() * xThumbnailPercent * xFaceAreaPercent),
+                               qRound(package->info.dimensions().height() * yThumbnailPercent * yFaceAreaPercent));
+
+                // compute the of the extracted face in relation to the thumbnail image
+
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineBase::commonFaceThumbnailExtractor"
+                                                    << "xThumbnailPercent:" << xThumbnailPercent
+                                                    << "yThumbnailPercent:" << yThumbnailPercent
+                                                    << "xFaceAreaPercent:" << xFaceAreaPercent
+                                                    << "yFaceAreaPercent:" << yFaceAreaPercent
+                                                    << "faceSize:" << faceSize
+                                                    << "region:" << package->face.region().toRect()
+                                                    << "thumbnail:" << package->thumbnail.size()
+                                                    << "image:" << package->info.dimensions();
+
+                
 
                 // check if the image is suitable for training
 
-                package->useForTraining = useForTraining(origSize, cvImage);
+                package->useForTraining = useForTraining(faceSize, cvImage);
             }
 
-            for (const auto tagId : package->face.getRejectedFaceTagList())
+            for (const auto tagId : package->face.rejectedFaceTagList())
             {
                 // add the Identity ID for the rejected face tag to the exclusion list
 

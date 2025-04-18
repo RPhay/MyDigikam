@@ -85,7 +85,7 @@ protected:
     double                      blurThreshold       = 4.87f;
     double                      noiseThreshold1     = 3.7;
     double                      noiseThreshold2     = 1.89;
-    float                       minThumbnailSize    = 0.33f;
+    const float                 minThumbnailSize    = 0.4f;
 
     FaceScanSettings            settings;
 
@@ -94,7 +94,7 @@ protected:
     double detectNoise1(const cv::Mat& cvGrayImage) const;
     double detectNoise2(const cv::Mat& cvGrayImage) const;
     double detectBlur(const cv::Mat& cvGrayImage) const;
-    bool useForTraining(const cv::Rect origSize, const cv::Mat& image);
+    bool useForTraining(const QSize& faceSize, const cv::Mat& image);
 
     bool commonFaceThumbnailLoader(const QString& pipelineName,
                                    QThread::Priority stagePriority,

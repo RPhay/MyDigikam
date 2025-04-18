@@ -189,8 +189,8 @@ protected:
     void removeFaceAndTag(ItemTagPair& pair, const FaceTagsIface& face, bool touchTags);
 
 
-    void removeRejectedFaceTagListProperty(ItemTagPair& pair, const QString& regionString);
-    void addRejectedFaceTagListProperty(ItemTagPair& pair, const FaceTagsIface& face);
+    void removeFaceTagExtendedDataProperty(ItemTagPair& pair, const QString& regionString);
+    void addFaceTagExtendedDataProperty(ItemTagPair& pair, const FaceTagsIface& face);
     QList<int> getRejectedFaceTagList(const ItemTagPair& pair, const QString& regionString) const;
 
     virtual void addNormalTag(qlonglong imageId, int tagId);

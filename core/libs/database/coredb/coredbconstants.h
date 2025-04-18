@@ -177,12 +177,12 @@ class DIGIKAM_DATABASE_EXPORT ImageTagPropertyName
 {
 public:
 
-    static QLatin1String tagRegion();
-    static QLatin1String autodetectedFace();
-    static QLatin1String autodetectedPerson();
-    static QLatin1String ignoredFace();
-    static QLatin1String faceToTrain();
-    static QLatin1String rejectedFaceTagList();
+    static const QLatin1String tagRegion();
+    static const QLatin1String autodetectedFace();
+    static const QLatin1String autodetectedPerson();
+    static const QLatin1String ignoredFace();
+    static const QLatin1String faceToTrain();
+    static const QLatin1String faceTagExtendedData();
 };
 
 } // namespace Digikam

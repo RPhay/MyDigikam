@@ -49,10 +49,10 @@ public:
     float getThreshold(int uiThreshold = DNN_MODEL_THRESHOLD_NOT_SET)   const   override;
 
     virtual cv::Mat alignFace(const cv::Mat& inputImage)                const   override;
-    virtual cv::Mat getFaceEmbedding(const cv::Mat& faceImage)                  override;
+    virtual const QPair<cv::Mat, cv::Mat> getFaceEmbedding(const cv::Mat& faceImage)          const   override;
 
     virtual cv::UMat alignFace(const cv::UMat& inputImage)              const   override;
-    virtual cv::Mat getFaceEmbedding(const cv::UMat& faceImage)                 override;
+    virtual const QPair<cv::Mat, cv::Mat> getFaceEmbedding(const cv::UMat& faceImage)         const   override;
 
 private:
 

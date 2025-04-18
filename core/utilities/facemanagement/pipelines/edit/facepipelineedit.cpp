@@ -284,7 +284,6 @@ bool FacePipelineEdit::writer()
 
     //--------------------------------------------------------------------------------
 
-    // FaceUtils utils;
     IdentityProvider* const idProvider             = IdentityProvider::instance();
 
     // override the default queue depth
@@ -354,16 +353,6 @@ bool FacePipelineEdit::writer()
                    )
                 {
                     // The face is unconfirmed and the tag is not the unknown person tag.
-                    // We need to change the tag to the unknown person tag.
-
-                    /*
-                    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::writer(): adding rejected tagId"
-                                                     << package->face.tagId()
-                                                     << "to the rejected list of the unknown person tag for imageid"
-                                                     << package->face.imageId()
-                                                     << "and rect"
-                                                     << package->face.region().toXml();
-                    */
 
                     utils.rejectSuggestedTag(package->face);
                 }
@@ -392,7 +381,7 @@ bool FacePipelineEdit::writer()
 
             case FacePipelinePackageBase::EditPipelineAction::AddManually:
             {
-                utils.addManually(utils.unconfirmedEntry(package->info.id(), package->tagId, package->region, package->face.getRejectedFaceTagList()));
+                utils.addManually(utils.unconfirmedEntry(package->info.id(), package->tagId, package->region, package->face.rejectedFaceTagList()));
             }
         }
 
@@ -485,7 +474,7 @@ FaceTagsIface FacePipelineEdit::getRejectedFaceTagList(const FaceTagsIface& face
     {
         if (f.region() == newFace.region())
         {
-            newFace.setRejectedFaceTagList(f.getRejectedFaceTagList());
+            newFace.setRejectedFaceTagList(f.rejectedFaceTagList());
             break;
         }
     }

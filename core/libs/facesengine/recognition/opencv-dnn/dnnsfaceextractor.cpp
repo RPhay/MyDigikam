@@ -170,8 +170,9 @@ cv::UMat DNNSFaceExtractor::alignFace(const cv::UMat& inputImage) const
     return alignedFace;
 }
 
-cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
+const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage) const
 {
+    QPair<cv::Mat, cv::Mat> result;
     cv::Mat paddedFace;
     cv::Mat normalized_descriptors = cv::Mat();
 
@@ -232,6 +233,8 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
             d->detectorModel->getNet()->setScoreThreshold(d->detectorModel->getThreshold(1));
             d->detectorModel->getNet()->detect(borderFace, faceLandmark);
 
+            result.first = faceLandmark.clone();
+
             detectorLock.unlock();
 
             if (0 < faceLandmark.rows)
@@ -260,6 +263,7 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
                 if (face_descriptors.rows > 0)
                 {
                     normalize(face_descriptors, normalized_descriptors);
+                    result.second = normalized_descriptors;
                 }
             }
             else
@@ -282,11 +286,12 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Finish computing face embedding in "
                                      << timer.elapsed() << " ms";
 
-    return normalized_descriptors;
+    return result;
 }
 
-cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
+const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage) const
 {
+    QPair<cv::Mat, cv::Mat> result;
     cv::UMat paddedFace;
     cv::Mat normalized_descriptors = cv::Mat();
 
@@ -296,31 +301,11 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
 
     timer.start();
 
-    // Resize the thumbnail if necessary to match SFace detection.
-    // SFace wants 112x112px images. Resize so 112 is the smallest dimension.
-
-    if (std::min(faceImage.cols, faceImage.rows) > 112)
-    {
-        // Image should be resized. YuNet image sizes are much more flexible than SSD and YOLO.
-        // So we just need to make sure no one bound exceeds the max. No padding needed.
-
-        float resizeFactor      = std::min(static_cast<float>(112) / static_cast<float>(faceImage.cols),
-                                           static_cast<float>(112) / static_cast<float>(faceImage.rows));
-
-        int newWidth            = (int)(resizeFactor * faceImage.cols);
-        int newHeight           = (int)(resizeFactor * faceImage.rows);
-        cv::resize(faceImage, paddedFace, cv::Size(newWidth, newHeight));
-    }
-    else
-    {
-        paddedFace = faceImage.clone();
-    }
-
     // Add a border so there is room to rotate the image during alignment.
 
     cv::UMat borderFace;
 
-    cv::copyMakeBorder(paddedFace, borderFace,
+    cv::copyMakeBorder(faceImage, borderFace,
                        60, 60,
                        60, 60,
                        cv::BORDER_CONSTANT,
@@ -346,6 +331,8 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
             d->detectorModel->getNet()->setInputSize(borderFace.size());
             d->detectorModel->getNet()->setScoreThreshold(d->detectorModel->getThreshold(1));
             d->detectorModel->getNet()->detect(borderFace, faceLandmark);
+
+            result.first = faceLandmark.getMat(cv::ACCESS_READ).clone();
 
             detectorLock.unlock();
 
@@ -376,6 +363,7 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
                 if (uface_descriptors.rows > 0)
                 {
                     normalize(uface_descriptors.getMat(cv::ACCESS_FAST), normalized_descriptors);
+                    result.second = normalized_descriptors;
                 }
             }
             else
@@ -398,7 +386,7 @@ cv::Mat DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage)
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Finish computing face embedding in "
                                      << timer.elapsed() << " ms";
 
-    return normalized_descriptors;
+    return result;
 }
 
 } // namespace Digikam

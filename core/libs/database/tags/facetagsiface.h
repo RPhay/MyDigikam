@@ -53,6 +53,11 @@ public:
     };
     Q_DECLARE_FLAGS(TypeFlags, Type)
 
+    enum ExtendedFaceData
+    {
+        RejectedFaceTagListPosition = 1
+    };
+    
 public:
 
     FaceTagsIface() = default;
@@ -63,14 +68,20 @@ public:
 
     FaceTagsIface& operator=(const FaceTagsIface& other);
 
-    bool      isNull()                          const;
+    bool        isNull()                          const;
 
-    Type      type()                            const;
-    qlonglong imageId()                         const;
-    int       tagId()                           const;
-    TagRegion region()                          const;
+    Type        type()                            const;
+    qlonglong   imageId()                         const;
+    int         tagId()                           const;
+    TagRegion   region()                          const;
 
-    bool      isInvalidFace()                   const
+    /**
+     * Returns the list of tags excluded from face recognition
+     * so "rejected" matches are not matched again
+     */
+    const QList<int>  rejectedFaceTagList()       const;
+
+    bool      isInvalidFace()                     const
     {
         return (type() == InvalidFace);
     }
@@ -178,30 +189,25 @@ public:
     void clearRejectedFaceTagList();
 
     /**
-     * Returns the list of tags excluded from face recognition
-     * so "rejected" matches are not matched again
-     */
-    QList<int> getRejectedFaceTagList() const;
-
-    /**
      * Returns a string representation of m_rejectedFaceTagList
      * separated by m_listSeparator.
      */
-    QString rejectedFaceTagListToString() const;
+    const QString rejectedFaceTagListToString() const;
 
     /**
      * Returns a QList<int> from a string representation of m_rejectedFaceTagList
      * separated by m_listSeparator.
      */
-    static QList<int> stringToRejectedFaceTagList(const QString& str);
+    static const QList<int> stringToRejectedFaceTagList(const QString& str);
 
     /**
      * Returns a string of the rect and the rejectedFaceTagList to be saved in the DB
      */
-    QString rejectedFaceTagsDBString() const;
+    const QString faceTagExtendedDataDBString() const;
 
-    static QLatin1Char listSeparator;
-    static QLatin1Char valueSeparator;
+    static const QLatin1Char listSeparator;
+    static const QLatin1Char valueSeparator;
+    static const float faceThumbnailResizeFactor;
 
 protected:
 
@@ -210,6 +216,7 @@ protected:
     int         m_tagId   = 0;
     TagRegion   m_region;
     QList<int>  m_rejectedFaceTagList;
+
 };
 
 DIGIKAM_DATABASE_EXPORT QDebug operator<<(QDebug dbg, const FaceTagsIface& f);

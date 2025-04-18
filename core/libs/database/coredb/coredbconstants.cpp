@@ -166,34 +166,34 @@ QLatin1String TagPropertyName::faceEngineUuid()
 
 // ----------------------------------------------------------------------------------
 
-QLatin1String ImageTagPropertyName::tagRegion()
+const QLatin1String ImageTagPropertyName::tagRegion()
 {
     return QLatin1String("tagRegion");
 }
 
-QLatin1String ImageTagPropertyName::autodetectedFace()
+const QLatin1String ImageTagPropertyName::autodetectedFace()
 {
     return QLatin1String("autodetectedFace");
 }
 
-QLatin1String ImageTagPropertyName::autodetectedPerson()
+const QLatin1String ImageTagPropertyName::autodetectedPerson()
 {
     return QLatin1String("autodetectedPerson");
 }
 
-QLatin1String ImageTagPropertyName::ignoredFace()
+const QLatin1String ImageTagPropertyName::ignoredFace()
 {
     return QLatin1String("ignoredFace");
 }
 
-QLatin1String ImageTagPropertyName::faceToTrain()
+const QLatin1String ImageTagPropertyName::faceToTrain()
 {
     return QLatin1String("faceToTrain");
 }
 
-QLatin1String ImageTagPropertyName::rejectedFaceTagList()
+const QLatin1String ImageTagPropertyName::faceTagExtendedData()
 {
-    return QLatin1String("rejectedFaceTagList");
+    return QLatin1String("faceTagExtendedData");
 }
 
 } // namespace DigiKam
