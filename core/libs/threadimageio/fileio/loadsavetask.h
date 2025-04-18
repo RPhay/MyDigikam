@@ -132,13 +132,14 @@ public:
     void execute()                                                      override;
     void progressInfo(float progress)                                   override;
 
-    bool needsPostProcessing()              const;
+    bool needsPostProcessing()                  const;
+    bool comparePostProcessing(DImg* const img) const;
     virtual void postProcess();
 
     // LoadingProcess
 
-    bool completed()                        const                       override;
-    QString cacheKey()                      const                       override;
+    bool completed()                            const                   override;
+    QString cacheKey()                          const                   override;
     void addListener(LoadingProcessListener* const listener)            override;
     void removeListener(LoadingProcessListener* const listener)         override;
     void notifyNewLoadingProcess(LoadingProcess* const process,
@@ -146,13 +147,13 @@ public:
 
     // LoadingProcessListener
 
-    bool querySendNotifyEvent()             const                       override;
+    bool querySendNotifyEvent()                 const                   override;
     void setResult(const LoadingDescription& loadingDescription,
                    const DImg& img)                                     override;
-    LoadSaveNotifier* loadSaveNotifier()    const                       override;
-    LoadSaveThread::AccessMode accessMode() const                       override;
+    LoadSaveNotifier* loadSaveNotifier()        const                   override;
+    LoadSaveThread::AccessMode accessMode()     const                   override;
 
-    DImg img()                              const;
+    DImg img()                                  const;
 
 protected:
 

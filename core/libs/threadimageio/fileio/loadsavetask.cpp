@@ -137,6 +137,11 @@ void SharedLoadingTask::execute()
         {
             if ((cachedImg = cache->retrieveImage(key)))
             {
+                if (!comparePostProcessing(cachedImg))
+                {
+                    cachedImg = nullptr;
+                }
+
                 if (m_loadingDescription.needCheckRawDecoding())
                 {
                     if (cachedImg->rawDecodingSettings() == m_loadingDescription.rawDecodingSettings)
@@ -322,6 +327,18 @@ bool SharedLoadingTask::needsPostProcessing() const
     return m_loadingDescription.postProcessingParameters.needsProcessing();
 }
 
+bool SharedLoadingTask::comparePostProcessing(DImg* const img) const
+{
+    int colorManagement = 0;
+
+    if (img->hasAttribute(QLatin1String("colorManagement")))
+    {
+        colorManagement = img->attribute(QLatin1String("colorManagement")).toInt();
+    }
+
+    return (colorManagement == (int)m_loadingDescription.postProcessingParameters.colorManagement);
+}
+
 void SharedLoadingTask::postProcess()
 {
     // ---- Color management ---- //
@@ -367,6 +384,9 @@ void SharedLoadingTask::postProcess()
             break;
         }
     }
+
+    m_img.setAttribute(QLatin1String("colorManagement"),
+                       (int)m_loadingDescription.postProcessingParameters.colorManagement);
 }
 
 void SharedLoadingTask::progressInfo(float progress)

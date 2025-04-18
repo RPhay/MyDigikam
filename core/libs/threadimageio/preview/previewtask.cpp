@@ -70,6 +70,11 @@ void PreviewLoadingTask::execute()
         {
             if ((cachedImg = cache->retrieveImage(key)))
             {
+                if (!comparePostProcessing(cachedImg))
+                {
+                    cachedImg = nullptr;
+                }
+
                 if (m_loadingDescription.needCheckRawDecoding())
                 {
                     if (cachedImg->rawDecodingSettings() == m_loadingDescription.rawDecodingSettings)
