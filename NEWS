@@ -169,11 +169,11 @@ BUGFIXES:
 150 ==> 489279 - Albums Not Discovering all Pictures in a Folder.
 151 ==> 489278 - Remote albums not show.
 152 ==> 502889 - digiKam Crash and core dump of scanning for faces on a folder.
-153 ==> 
-154 ==> 
-155 ==> 
-156 ==> 
-157 ==> 
+153 ==> 444394 - Rejected face suggestions reappear for the same person the next time recognition is run.
+154 ==> 432207 - After rejection, assign face to next best match.
+155 ==> 415783 - Rejected face keep coming up as faces when detected faces again.
+156 ==> 502219 - Right-click, "Recognize faces" does no longer recognize any faces.
+157 ==> 502924 - Don't suggest a rejected face match again.
 158 ==> 
 159 ==> 
 160 ==> 
