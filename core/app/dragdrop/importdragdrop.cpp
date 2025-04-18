@@ -133,7 +133,16 @@ ImportDragDropHandler::DropAction ImportDragDropHandler::copyOrMove(const QDropE
     addCancelAction(&popMenu);
 
     popMenu.setMouseTracking(true);
-    QAction* const choice = popMenu.exec(QCursor::pos());
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    QAction* const choice     = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
+
+#else
+
+    QAction* const choice     = popMenu.exec(view->mapToGlobal(e->pos()));
+
+#endif
 
     if      (moveAction && (choice == moveAction))
     {

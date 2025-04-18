@@ -163,7 +163,16 @@ static DropAction copyOrMove(const QDropEvent* const e,
     addCancelAction(&popMenu);
 
     popMenu.setMouseTracking(true);
-    QAction* const choice = popMenu.exec(QCursor::pos());
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    QAction* const choice  = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
+
+#else
+
+    QAction* const choice  = popMenu.exec(view->mapToGlobal(e->pos()));
+
+#endif
 
     if      (moveAction && (choice == moveAction))
     {
@@ -185,7 +194,7 @@ static DropAction copyOrMove(const QDropEvent* const e,
     return NoAction;
 }
 
-static DropAction tagAction(const QDropEvent* const, QWidget* const view, bool askForGrouping)
+static DropAction tagAction(const QDropEvent* const e, QWidget* const view, bool askForGrouping)
 {
     QMenu popMenu(view);
     QAction* const tagAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
@@ -202,7 +211,16 @@ static DropAction tagAction(const QDropEvent* const, QWidget* const view, bool a
     addCancelAction(&popMenu);
 
     popMenu.setMouseTracking(true);
-    QAction* const choice = popMenu.exec(QCursor::pos());
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    QAction* const choice    = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
+
+#else
+
+    QAction* const choice    = popMenu.exec(view->mapToGlobal(e->pos()));
+
+#endif
 
     if      (groupAction && (choice == groupAction))
     {
@@ -216,7 +234,7 @@ static DropAction tagAction(const QDropEvent* const, QWidget* const view, bool a
     return NoAction;
 }
 
-static DropAction s_groupAction(const QDropEvent* const, QWidget* const view)
+static DropAction s_groupAction(const QDropEvent* const e, QWidget* const view)
 {
     ItemCategorizedView* const imgView = dynamic_cast<ItemCategorizedView*>(view);
     int sortOrder                      = ApplicationSettings::instance()->getImageSortOrder();
@@ -239,7 +257,15 @@ static DropAction s_groupAction(const QDropEvent* const, QWidget* const view)
     popMenu.addSeparator();
     addCancelAction(&popMenu);
 
-    QAction* const choice      = popMenu.exec(QCursor::pos());
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    QAction* const choice      = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
+
+#else
+
+    QAction* const choice      = popMenu.exec(view->mapToGlobal(e->pos()));
+
+#endif
 
     if (groupAction && (choice == groupAction))
     {
