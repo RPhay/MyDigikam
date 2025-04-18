@@ -163,6 +163,7 @@ static DropAction copyOrMove(const QDropEvent* const e,
     addCancelAction(&popMenu);
 
     popMenu.setMouseTracking(true);
+    qApp->restoreOverrideCursor();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -211,6 +212,7 @@ static DropAction tagAction(const QDropEvent* const e, QWidget* const view, bool
     addCancelAction(&popMenu);
 
     popMenu.setMouseTracking(true);
+    qApp->restoreOverrideCursor();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -686,6 +688,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             popFaceTagMenu.addSeparator();
             popFaceTagMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("&Cancel"));
             popFaceTagMenu.setMouseTracking(true);
+            qApp->restoreOverrideCursor();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -740,6 +743,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("&Cancel"));
 
         popMenu.setMouseTracking(true);
+        qApp->restoreOverrideCursor();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -800,6 +804,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
         popMenu.addSeparator();
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
         popMenu.setMouseTracking(true);
+        qApp->restoreOverrideCursor();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
