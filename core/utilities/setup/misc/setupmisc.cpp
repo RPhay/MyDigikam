@@ -81,7 +81,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->useFastScan->setEnabled(false);
 
     d->detectFaces                    = new QCheckBox(i18n("Detect faces in newly added images"), behaviourPanel);
-    d->faceRecognitionBackgroundScan  = new QCheckBox(i18n("Background face recognition scan"), behaviourPanel);
+    d->faceRecognitionBackgroundScan  = new QCheckBox(i18n("Enable background face recognition scan"), behaviourPanel);
     d->faceRecognitionBackgroundScan->setToolTip(i18n("Set this option to automatically start a background face recognition scan\n"
                                                      "when a new face is tagged. This will make the tagging process easier."));
 
