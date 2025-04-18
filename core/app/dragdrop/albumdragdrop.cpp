@@ -61,6 +61,12 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
         return false;
     }
 
+    if (!view)
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Error: View is null!";
+        return false;
+    }
+
     AlbumPointer<PAlbum> destAlbum = model()->palbumForIndex(droppedOn);
 
     if (!destAlbum)

@@ -60,6 +60,12 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
         return false;
     }
 
+    if (!view)
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Error: View is null!";
+        return false;
+    }
+
     TAlbum* const destAlbum = model()->talbumForIndex(droppedOn);
 
     if (DTagListDrag::canDecode(e->mimeData()))
@@ -132,7 +138,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                     QMessageBox::critical(view, qApp->applicationName(), errMsg);
                 }
 
-                if (view && !view->isVisible())
+                if (view->isVisible())
                 {
                     view->setVisible(true);
                 }
@@ -151,7 +157,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                     QMessageBox::critical(view, qApp->applicationName(), errMsg);
                 }
 
-                if (view && !view->isVisible())
+                if (!view->isVisible())
                 {
                     view->setVisible(true);
                 }
