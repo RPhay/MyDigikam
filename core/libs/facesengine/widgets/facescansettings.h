@@ -44,7 +44,7 @@ public:
      */
     enum ScanTask
     {
-//      Detect,              ///< Detect faces only.
+//      Detect,                 ///< Detect faces only.
         DetectAndRecognize,     ///< Detect and recognize faces only.
         RecognizeMarkedFaces,   ///< Recognize already marked faces only.
         RetrainAll,             ///< Retrain faces only.
@@ -62,7 +62,7 @@ public:
         Skip,                   ///< Skip faces from images already scanned.
 //      Merge,                  ///< Merge faces from images already scanned.
         Rescan,                 ///< Rescan faces from images already scanned.
-        ClearAll,               ///< Clear all faces data from images already scanned. Clear identities and training data from FacesDb
+        ClearAll,               ///< Clear all faces data from images already scanned. Clear identities and training data from FacesDb.
         RecognizeOnly           ///< Recognize faces from images already scanned.
     };
     Q_ENUM(AlreadyScannedHandling)
@@ -73,7 +73,8 @@ public:
     enum FaceDetectionModel
     {
         /**
-         * YuNet neural network inference [https://github.com/opencv/opencv_zoo/tree/main]
+         * YuNet neural network inference.
+         * https://github.com/opencv/opencv_zoo/tree/main
          */
         YuNet
     };
@@ -98,7 +99,8 @@ public:
     enum FaceRecognitionModel
     {
         /**
-         * SFace pre-trained neural network model [https://github.com/opencv/opencv_zoo/blob/main/models/face_recognition_sface/]
+         * SFace pre-trained neural network model.
+         * https://github.com/opencv/opencv_zoo/blob/main/models/face_recognition_sface/
          */
         SFace
     };
@@ -117,7 +119,7 @@ public:
     };
     Q_ENUM(FaceScanSource)
 
-    public:
+public:
 
     FaceScanSettings()  = default;
     FaceScanSettings(const FaceScanSettings& other);

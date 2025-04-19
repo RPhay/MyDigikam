@@ -118,7 +118,6 @@ void MLPipelineFoundation::cancel()
             // send end of queue signal (case 1 above)
 
             queue->push_back(queueEndSignal());
-
         }
 
         // wait for all threads to finish
@@ -160,7 +159,7 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
             // always 1 finder thread, no incoming queue
             // start a new thread
 
-            QFutureWatcher<bool>* watcher = new QFutureWatcher<bool>(this);
+            QFutureWatcher<bool>* const watcher = new QFutureWatcher<bool>(this);
             watcher->setFuture(QtConcurrent::run(threadPool,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
@@ -195,7 +194,7 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
 
             // start a new thread
 
-            QFutureWatcher<bool>* watcher = new QFutureWatcher<bool>(this);
+            QFutureWatcher<bool>* const watcher = new QFutureWatcher<bool>(this);
             watcher->setFuture(QtConcurrent::run(threadPool,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
@@ -230,7 +229,7 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
 
             // start a new thread
 
-            QFutureWatcher<bool>* watcher = new QFutureWatcher<bool>(this);
+            QFutureWatcher<bool>* const watcher = new QFutureWatcher<bool>(this);
             watcher->setFuture(QtConcurrent::run(threadPool,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
@@ -265,7 +264,7 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
 
             // start a new thread
 
-            QFutureWatcher<bool>* watcher = new QFutureWatcher<bool>(this);
+            QFutureWatcher<bool>* const watcher = new QFutureWatcher<bool>(this);
             watcher->setFuture(QtConcurrent::run(threadPool,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
@@ -300,7 +299,7 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
 
             // start a new thread
 
-            QFutureWatcher<bool>* watcher = new QFutureWatcher<bool>(this);
+            QFutureWatcher<bool>* const watcher = new QFutureWatcher<bool>(this);
             watcher->setFuture(QtConcurrent::run(threadPool,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
@@ -335,7 +334,7 @@ bool MLPipelineFoundation::addWorker(const MLPipelineStage& stage)
 
             // start a new thread
 
-            QFutureWatcher<bool>* watcher = new QFutureWatcher<bool>(this);
+            QFutureWatcher<bool>* const watcher = new QFutureWatcher<bool>(this);
             watcher->setFuture(QtConcurrent::run(threadPool,
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
@@ -415,7 +414,7 @@ void MLPipelineFoundation::clearAllQueues()
         while (!queue->isEmpty())
         {
             MLPipelinePackageFoundation* const package = queue->pop_front();
-    
+
             if (queueEndSignal() != package)
             {
                 delete package;
@@ -536,7 +535,7 @@ void MLPipelineFoundation::stageEnd(MLPipelineStage thisStage, MLPipelineStage n
     if (queues.contains(thisStage))
     {
         queues[thisStage]->setMaxDepth(queues[thisStage]->maxDepthLimit());
-        
+
         // tell other threads to exit
 
         queues[thisStage]->push_back(queueEndSignal());
@@ -661,7 +660,7 @@ void MLPipelineFoundation::pipelinePerformanceStart(const MLPipelineStage& stage
 
 void MLPipelineFoundation::pipelinePerformanceEnd(const MLPipelineStage& stage, QElapsedTimer& timer)
 {
-    qint64 elapsedTime = timer.elapsed();
+    qint64 elapsedTime                           = timer.elapsed();
     performanceProfileList[stage].elapsedTime   += elapsedTime;
     performanceProfileList[stage].maxElapsedTime = qMax((qint64)performanceProfileList[stage].maxElapsedTime, elapsedTime);
 }

@@ -91,9 +91,9 @@ private:
 private:
 
     // Disable
-    AutotagsClassifierYolo()                                                    = delete;
-    AutotagsClassifierYolo(const AutotagsClassifierYolo&)                       = delete;
-    explicit AutotagsClassifierYolo(QObject*)                                   = delete;
+    AutotagsClassifierYolo()                                                                 = delete;
+    AutotagsClassifierYolo(const AutotagsClassifierYolo&)                                    = delete;
+    explicit AutotagsClassifierYolo(QObject*)                                                = delete;
 };
 
 } // Digikam

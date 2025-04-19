@@ -110,7 +110,7 @@ QList<int> AutotagsClassifierYolo::predictMulti(const QList<cv::Mat>& targets)  
 
         cv::Mat cvReshape;
         std::vector<int> shape = { targets[0].size[1], targets[0].size[2] };
-        cvReshape                 = targets[0].reshape(1, shape);
+        cvReshape              = targets[0].reshape(1, shape);
         cv::transpose(cvReshape, cvTranspose);
         outputHost             = reinterpret_cast<float*>(cvTranspose.data);
     }

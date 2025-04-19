@@ -214,16 +214,6 @@ void FaceScanWidget::setupUi()
 
 void FaceScanWidget::setupConnections()
 {
-/*
-    connect(d->detectButton, SIGNAL(toggled(bool)),
-            d->alreadyScannedBox, SLOT(setEnabled(bool)));
-
-    connect(d->detectButton, SIGNAL(toggled(bool)),
-            this, SLOT(slotPrepareForDetect(bool)));
-
-    connect(d->reRecognizeButton, SIGNAL(toggled(bool)),
-            this, SLOT(slotPrepareForRecognize(bool)));
-*/
     connect(d->detectAccuracyInput, &DIntNumInput::valueChanged,
             this, &FaceScanWidget::slotDetectAccuracyChanged);
 
@@ -281,18 +271,15 @@ FaceScanSettings FaceScanWidget::settings() const
 
     if (FaceScanSettings::RecognizeOnly == d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt())
     {
-        settings.task = FaceScanSettings::RecognizeMarkedFaces;
+        settings.task                   = FaceScanSettings::RecognizeMarkedFaces;
         settings.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::Rescan;
     }
     else
     {
-        settings.task = FaceScanSettings::DetectAndRecognize;
+        settings.task                   = FaceScanSettings::DetectAndRecognize;
         settings.alreadyScannedHandling = (FaceScanSettings::AlreadyScannedHandling)
                                           d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt();
     }
-
-    // settings.alreadyScannedHandling = (FaceScanSettings::AlreadyScannedHandling)
-    //                                   d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt();
 
     settings.albums                 = d->albumSelectors->selectedAlbumsAndTags();
     settings.wholeAlbums            = d->albumSelectors->wholeAlbumsChecked();

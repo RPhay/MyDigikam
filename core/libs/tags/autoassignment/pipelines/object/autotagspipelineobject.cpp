@@ -75,7 +75,8 @@ bool AutotagsPipelineObject::start()
 
     try
     {
-        model = static_cast<DNNModelNet*>(DNNModelManager::instance()->getModel(settings.objectDetectModel, DNNModelUsage::DNNUsageObjectDetection));
+        model = static_cast<DNNModelNet*>(DNNModelManager::instance()->getModel(settings.objectDetectModel,
+                                                                                DNNModelUsage::DNNUsageObjectDetection));
 
         model->getNet();
 
@@ -86,18 +87,22 @@ bool AutotagsPipelineObject::start()
         {
             if      (model->info.classifier == QStringLiteral("softmax"))
             {
-                autotagsClassifier = new AutotagsClassifierSoftmax(model->getThreshold(settings.uiConfidenceThreshold), configModel->getModelPath());
+                autotagsClassifier = new AutotagsClassifierSoftmax(model->getThreshold(settings.uiConfidenceThreshold),
+                                                                                       configModel->getModelPath());
             }
             else if (model->info.classifier == QStringLiteral("minmax"))
             {
-                autotagsClassifier = new AutotagsClassifierMinmax(model->getThreshold(settings.uiConfidenceThreshold), configModel->getModelPath());
+                autotagsClassifier = new AutotagsClassifierMinmax(model->getThreshold(settings.uiConfidenceThreshold),
+                                                                                      configModel->getModelPath());
             }
             else if (model->info.classifier == QStringLiteral("multiyolo"))
             {
-                autotagsClassifier = new AutotagsClassifierYolo(model->getThreshold(settings.uiConfidenceThreshold), configModel->getModelPath());
+                autotagsClassifier = new AutotagsClassifierYolo(model->getThreshold(settings.uiConfidenceThreshold),
+                                                                                    configModel->getModelPath());
+
                 static_cast<AutotagsClassifierYolo*>(autotagsClassifier)->setParams(AutotagsClassifierYolo::YoloVersion::YOLOv11,
-                                                                                            QSize(model->info.imageSize,
-                                                                                            model->info.imageSize));
+                                                                                    QSize(model->info.imageSize,
+                                                                                    model->info.imageSize));
             }
             else
             {
@@ -243,7 +248,7 @@ bool AutotagsPipelineObject::loader()
      */
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Loader, thisQueue);
-    package = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
+    package                              = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
 
     /* =========================================================================================
      * Start pipeline stage specific loop
@@ -329,7 +334,7 @@ bool AutotagsPipelineObject::extractor()
      */
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Extractor, thisQueue);
-    package = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
+    package                              = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
 
     /* =========================================================================================
      * Start pipeline stage specific loop
@@ -383,6 +388,7 @@ bool AutotagsPipelineObject::extractor()
         }
 
         // convert the image to a blob
+
         cv::Mat cvPreprocessedImage;
 
         if      (model->info.preprocessor == QStringLiteral("blob"))
@@ -461,7 +467,7 @@ bool AutotagsPipelineObject::classifier()
      */
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Classifier, thisQueue);
-    package = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
+    package                              = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
 
     /* =========================================================================================
      * Start pipeline stage specific loop
@@ -509,12 +515,12 @@ bool AutotagsPipelineObject::writer()
      * is at least 1. More instances are created by addMoreWorkers if needed.
      */
 
-    TagsCache* const tagsCache   = TagsCache::instance();
-    const QString    rootTag     = QLatin1String("auto/");
-    const int        rootTagId   = tagsCache->getOrCreateTag(rootTag);
+    TagsCache* const tagsCache           = TagsCache::instance();
+    const QString    rootTag             = QLatin1String("auto/");
+    const int        rootTagId           = tagsCache->getOrCreateTag(rootTag);
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
-    package                      = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
+    package                              = static_cast<AutotagsPipelinePackageBase*>(mlpackage);
 
     /* =========================================================================================
      * Start pipeline stage specific loop

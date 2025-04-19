@@ -78,7 +78,6 @@ public:
     /// Scanning mode.
     ScanMode                                scanMode                    = ScanMode::AllItems;
 
-
     /// Processing power.
     TagMode                                 tagMode                     = TagMode::Replace;
 
