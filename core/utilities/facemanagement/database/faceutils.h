@@ -71,11 +71,11 @@ public:
     QList<FaceTagsIface> writeUnconfirmedResults(qlonglong imageid,
                                                  QList<FaceTagsIface>& detectedFaces,               // cannot be const
                                                  const QList<Identity>& recognitionResults);
-   
+
     QList<FaceTagsIface> writeUnconfirmedResults(qlonglong imageid,
                                                  QList<FaceTagsIface>& detectedFaces);
-      
-          // --- Status flags ---
+
+    // --- Status flags ---
 
     /**
      * Tells if the image has been scanned for faces or not

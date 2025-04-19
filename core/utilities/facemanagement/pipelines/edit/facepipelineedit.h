@@ -16,6 +16,7 @@
 #pragma once
 
 // Qt includes
+
 #include <QElapsedTimer>
 
 // Local includes
@@ -95,14 +96,15 @@ protected:
     /**
      * returns a copy of FaceTagsIface object with the face tags that were rejected
      */
-    FaceTagsIface getRejectedFaceTagList(const FaceTagsIface& face)     const;
+    FaceTagsIface getRejectedFaceTagList(const FaceTagsIface& face) const;
 
 private:
 
-    bool isStarted = false;
+    bool            isStarted = false;
 
     // TODO: Remove DEBUG timer
     QElapsedTimer   debugConfirmTimer;
+
     FaceUtils       utils;
 
 private:

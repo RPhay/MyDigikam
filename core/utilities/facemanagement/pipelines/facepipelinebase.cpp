@@ -239,7 +239,7 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName,
                                                  MLPipelineStage nextStage)
 {
     MLPIPELINE_STAGE_START(stagePriority, thisStage, nextStage);
-    FacePipelinePackageBase* package = nullptr;
+    FacePipelinePackageBase* package              = nullptr;
 
     /* =========================================================================================
      * Pipeline stage specific initialization code
@@ -250,8 +250,9 @@ bool FacePipelineBase::commonFaceThumbnailLoader(const QString& pipelineName,
      */
 
     ThumbnailLoadThread* const thumbnailLoadThread = new ThumbnailLoadThread;
-    // ThumbnailLoadThread* thumbnailLoadThread = ThumbnailLoadThread::defaultThread();
-
+/*
+    ThumbnailLoadThread* thumbnailLoadThread = ThumbnailLoadThread::defaultThread();
+*/
     thumbnailLoadThread->setPixmapRequested(false);
     thumbnailLoadThread->setThumbnailSize(ThumbnailLoadThread::maximumThumbnailSize());
     thumbnailLoadThread->setPriority(QThread::NormalPriority);
@@ -356,7 +357,7 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
     FaceUtils utils;
 
     MLPIPELINE_LOOP_START(thisStage, thisQueue);
-    package = static_cast<FacePipelinePackageBase*>(mlpackage);
+    package                          = static_cast<FacePipelinePackageBase*>(mlpackage);
 
     /* =========================================================================================
      * Start pipeline stage specific loop
@@ -398,7 +399,7 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
 
             if (!package->features.empty() && trainingQualityCheck)
             {
-                /* 
+               /**
                 * compute the size of the face region in pixels as shown
                 * in the original image
                 * this is used to check if the image is suitable for training
@@ -428,16 +429,14 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
                 // compute the of the extracted face in relation to the thumbnail image
 
                 qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineBase::commonFaceThumbnailExtractor"
-                                                    << "xThumbnailPercent:" << xThumbnailPercent
-                                                    << "yThumbnailPercent:" << yThumbnailPercent
-                                                    << "xFaceAreaPercent:" << xFaceAreaPercent
-                                                    << "yFaceAreaPercent:" << yFaceAreaPercent
-                                                    << "faceSize:" << faceSize
-                                                    << "region:" << package->face.region().toRect()
-                                                    << "thumbnail:" << package->thumbnail.size()
-                                                    << "image:" << package->info.dimensions();
-
-                
+                                                 << "xThumbnailPercent:" << xThumbnailPercent
+                                                 << "yThumbnailPercent:" << yThumbnailPercent
+                                                 << "xFaceAreaPercent:" << xFaceAreaPercent
+                                                 << "yFaceAreaPercent:" << yFaceAreaPercent
+                                                 << "faceSize:" << faceSize
+                                                 << "region:" << package->face.region().toRect()
+                                                 << "thumbnail:" << package->thumbnail.size()
+                                                 << "image:" << package->info.dimensions();
 
                 // check if the image is suitable for training
 

@@ -73,7 +73,8 @@ FacePipelinePackageBase::FacePipelinePackageBase(const ItemInfo& _info,
 FacePipelinePackageBase::~FacePipelinePackageBase()
 {
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelinePackageBase::~FacePipelinePackageBase: "
-                                        "Deleting package with serial number" << serialNumber;
+                                        "Deleting package with serial number"
+                                     << serialNumber;
 }
 
 } // namespace Digikam

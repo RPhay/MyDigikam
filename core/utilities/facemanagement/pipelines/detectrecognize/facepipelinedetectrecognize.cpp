@@ -65,7 +65,6 @@ FacePipelineDetectRecognize::~FacePipelineDetectRecognize()
 
 bool FacePipelineDetectRecognize::start()
 {
-
     // create the face detector and extractor
 
     try
@@ -240,13 +239,17 @@ bool FacePipelineDetectRecognize::loader()
             {
                 // fix for #447767: ARW preview is different aspect than the image
 
-                bool loadFullSize = qMin(package->info.dimensions().width() / 2, package->info.dimensions().height() / 2) < 
-                                    qMin(faceDetector->nnInputSizeRequired().height / 2, faceDetector->nnInputSizeRequired().width / 2);                
+                bool loadFullSize =
+                   (
+                    qMin(package->info.dimensions().width()         / 2, package->info.dimensions().height()       / 2) <
+                    qMin(faceDetector->nnInputSizeRequired().height / 2, faceDetector->nnInputSizeRequired().width / 2)
+                   );
 
-                rawLoadingMode = loadFullSize ? PreviewSettings::RawPreviewFromRawFullSize : PreviewSettings::RawPreviewFromRawHalfSize;
+                rawLoadingMode = (loadFullSize ? PreviewSettings::RawPreviewFromRawFullSize
+                                               : PreviewSettings::RawPreviewFromRawHalfSize);
             }
 
-            // load high quality image for detection            
+            // load high quality image for detection.
 
             package->image = PreviewLoadThread::loadHighQualitySynchronously(package->info.filePath(), rawLoadingMode);
 
@@ -360,7 +363,7 @@ bool FacePipelineDetectRecognize::extractor()
 
         // get reciprocal factor for resizing the face to back the original image size
 
-        float reciprocalFactor = 1.0F / resizeFactor;
+        float reciprocalFactor      = 1.0F / resizeFactor;
 
         // detect any faces in the image
 
@@ -441,14 +444,14 @@ bool FacePipelineDetectRecognize::extractor()
                     cv::Mat  face_features;
 
                     // extract the face vectors (features) for classification
-                    
+
                     // get cvMat of the face landmarks
 
                     cv::Mat row = detectionResults.row(i);
 
                     // convert the face landmarks to the full size image
 
-                    for (int j = 0; j < row.cols; ++j)
+                    for (int j = 0 ; j < row.cols ; ++j)
                     {
                         row.at<float>(j) = (int)(row.at<float>(j) * reciprocalFactor);
                     }
@@ -471,7 +474,7 @@ bool FacePipelineDetectRecognize::extractor()
                         // So we just need to make sure no one bound exceeds the max. No padding needed.
 
                         float resizeFactor2     = std::min(static_cast<float>(112) / static_cast<float>(ualignedFace.cols),
-                                                            static_cast<float>(112) / static_cast<float>(ualignedFace.rows));
+                                                           static_cast<float>(112) / static_cast<float>(ualignedFace.rows));
 
                         int newWidth            = (int)(resizeFactor2 * ualignedFace.cols);
                         int newHeight           = (int)(resizeFactor2 * ualignedFace.rows);
@@ -569,16 +572,16 @@ bool FacePipelineDetectRecognize::classifier()
                 for (const auto tagId : package->faceList[i].rejectedFaceTagList())
                 {
                     // add the Identity ID for the rejected face tag to the exclusion list
-    
+
                     QMultiMap<QString, QString> attributes = FaceTags::identityAttributes(tagId);
                     Identity identity                      = IdentityProvider::instance()->findIdentity(attributes);
-    
+
                     if (!identity.isNull())
                     {
                         exclusionIdentityIds << identity.id();
                     }
                 }
-        
+
                 // classify the features
 
                 package->labelList << classifier->predict(package->featuresList[i], exclusionIdentityIds);
@@ -702,8 +705,8 @@ bool FacePipelineDetectRecognize::writer()
                 if (package->labelList[i] != FaceClassifier::UNKNOWN_LABEL_ID)
                 {
                     Identity identity = idProvider->identity(package->labelList[i]);
-                    names << identity.attribute(QStringLiteral("name"));
-                    identities << identity;
+                    names         << identity.attribute(QStringLiteral("name"));
+                    identities    << identity;
                     databaseFaces << FaceTagsIface(FaceTagsIface::Type::UnconfirmedName,
                                                    package->info.id(),
                                                    FaceTags::unconfirmedPersonTagId(),
@@ -711,7 +714,7 @@ bool FacePipelineDetectRecognize::writer()
                 }
                 else
                 {
-                    identities << Identity();
+                    identities    << Identity();
                     databaseFaces << FaceTagsIface(FaceTagsIface::Type::UnknownName,
                                                    package->info.id(),
                                                    FaceTags::unknownPersonTagId(),

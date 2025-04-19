@@ -82,10 +82,10 @@ public:
 protected:
 
     DNNModelBase*               detectorModel       = nullptr;
-    double                      blurThreshold       = 4.87f;
+    double                      blurThreshold       = 4.87F;
     double                      noiseThreshold1     = 3.7;
     double                      noiseThreshold2     = 1.89;
-    const float                 minThumbnailSize    = 0.4f;
+    const float                 minThumbnailSize    = 0.4F;
 
     FaceScanSettings            settings;
 

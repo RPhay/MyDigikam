@@ -74,12 +74,13 @@ FacePipelineEdit* FacePipelineEdit::instance()
 FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info,
                                             const FaceTagsIface& face,
                                             const TagRegion& region,
-                                            int tagId,
-                                            bool retrain)
+                                            int   tagId,
+                                            bool  retrain)
 {
     if (debugConfirmTimer.elapsed() < 250)
     {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::confirmFace(): INFO: more than 1 face confirmed in less than 0.25 seconds";
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineEdit::confirmFace(): INFO: more than 1 "
+                                                "face confirmed in less than 0.25 seconds";
     }
 
     debugConfirmTimer.restart();
@@ -169,7 +170,7 @@ FaceTagsIface FacePipelineEdit::editRegion(const ItemInfo& info,
                                            const FaceTagsIface& face,
                                            const TagRegion& region,
                                            int tagId,
-                                            bool retrain)
+                                           bool retrain)
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
     FaceTagsIface newFace                  = getRejectedFaceTagList(face);
@@ -205,7 +206,9 @@ FaceTagsIface FacePipelineEdit::addManually(const ItemInfo& info,
                                             bool retrain)
 {
     MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
-    FaceTagsIface newFace                  = FaceTagsEditor::unconfirmedEntry(info.id(), FaceClassifier::UNKNOWN_LABEL_ID, region, QList<int>());
+    FaceTagsIface newFace                  = FaceTagsEditor::unconfirmedEntry(info.id(),
+                                                                              FaceClassifier::UNKNOWN_LABEL_ID,
+                                                                              region, QList<int>());
     FacePipelinePackageBase* const package = new FacePipelinePackageBase(info,
                                                                          newFace,
                                                                          newFace.tagId(),
@@ -236,11 +239,14 @@ bool FacePipelineEdit::start()
             QMutexLocker lock(&mutex);
 
             // add the worker threads for this pipeline
-
-            // addWorker(MLPipelineStage::Finder);
+/*
+            addWorker(MLPipelineStage::Finder);
+*/
             addWorker(MLPipelineStage::Loader);
             addWorker(MLPipelineStage::Extractor);
-            // addWorker(MLPipelineStage::Classifier);
+/*
+            addWorker(MLPipelineStage::Classifier);
+*/
             addWorker(MLPipelineStage::Writer);
         }
 
@@ -284,14 +290,14 @@ bool FacePipelineEdit::writer()
 
     //--------------------------------------------------------------------------------
 
-    IdentityProvider* const idProvider             = IdentityProvider::instance();
+    IdentityProvider* const idProvider = IdentityProvider::instance();
 
     // override the default queue depth
 
     thisQueue->setMaxDepth(thisQueue->maxDepthLimit());
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
-    package                    = static_cast<FacePipelinePackageBase*>(mlpackage);
+    package                            = static_cast<FacePipelinePackageBase*>(mlpackage);
 
     /* =========================================================================================
      * Start pipeline stage specific loop
@@ -347,7 +353,7 @@ bool FacePipelineEdit::writer()
                 // Change Tag operation.
 
                 if (
-                    (package->face.isUnconfirmedName()) &&
+                    (package->face.isUnconfirmedName())                       &&
                     (FaceTags::unknownPersonTagId() != package->face.tagId()) &&
                     (FaceTags::unknownPersonTagId() == package->tagId)
                    )
@@ -381,7 +387,8 @@ bool FacePipelineEdit::writer()
 
             case FacePipelinePackageBase::EditPipelineAction::AddManually:
             {
-                utils.addManually(utils.unconfirmedEntry(package->info.id(), package->tagId, package->region, package->face.rejectedFaceTagList()));
+                utils.addManually(utils.unconfirmedEntry(package->info.id(), package->tagId,
+                                                         package->region, package->face.rejectedFaceTagList()));
             }
         }
 

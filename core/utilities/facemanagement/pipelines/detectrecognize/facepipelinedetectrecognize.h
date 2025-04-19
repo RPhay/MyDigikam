@@ -57,8 +57,8 @@ protected:
 
 private:
 
-    DNNFaceDetectorYuNet*           faceDetector                        = nullptr;
-    DNNModelSFace*                  faceExtractor                       = nullptr;
+    DNNFaceDetectorYuNet* faceDetector                          = nullptr;
+    DNNModelSFace*        faceExtractor                         = nullptr;
 
 private:
 

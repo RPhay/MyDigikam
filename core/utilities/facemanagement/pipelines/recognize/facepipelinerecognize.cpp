@@ -216,9 +216,11 @@ bool FacePipelineRecognize::classifier()
     {
         // verify the feature mat is the correct size
 
-        if (2   == package->features.dims &&
-            1   == package->features.rows &&
-            128 == package->features.cols)
+        if (
+            (2   == package->features.dims) &&
+            (1   == package->features.rows) &&
+            (128 == package->features.cols)
+           )
         {
             // classify the features
 
@@ -277,12 +279,14 @@ bool FacePipelineRecognize::writer()
         {
             Identity identity = idProvider->identity(package->label);
             int tagId         = FaceTags::getOrCreateTagForIdentity(identity.attributesMap());
+
             if (package->face.tagId() != tagId)
             {
                 utils.changeSuggestedName(package->face, tagId);
             }
+
             displayName      += identity.attribute(QStringLiteral("name"));
-            matches           = 1;    
+            matches           = 1;
         }
         else
         {

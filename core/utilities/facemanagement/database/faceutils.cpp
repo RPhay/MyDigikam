@@ -9,6 +9,7 @@
  * SPDX-FileCopyrightText: 2010-2011 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2012-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -103,7 +104,7 @@ QList<FaceTagsIface> FaceUtils::toFaceTagsIfaces(qlonglong imageid,
 
         int tagId                = FaceTags::getOrCreateTagForIdentity(identity.attributesMap());
         QRect fullSizeRect       = TagRegion::relativeToAbsolute(detectedFaces[i], fullSize);
-        FaceTagsIface::Type type = identity.isNull() ? FaceTagsIface::UnknownName : FaceTagsIface::UnconfirmedName;
+        FaceTagsIface::Type type = (identity.isNull() ? FaceTagsIface::UnknownName : FaceTagsIface::UnconfirmedName);
 
         if (!tagId || !fullSizeRect.isValid())
         {
@@ -176,7 +177,6 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
 QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
                                                         QList<FaceTagsIface>& newFaces)
 {
-
     if (newFaces.isEmpty())
     {
         return newFaces;
@@ -195,7 +195,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
 
         for (const FaceTagsIface& oldFace : std::as_const(currentFaces))
         {
-            double minOverlap = oldFace.isConfirmedName() ? 0.25 : 0.5;
+            double minOverlap = (oldFace.isConfirmedName() ? 0.25 : 0.5);
 
             if (oldFace.region().intersects(newFace.region(), minOverlap))
             {
@@ -300,8 +300,9 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
 
     return newFaces;
 }
-
-// Identity FaceUtils::identityForTag(int tagId, FacialRecognitionWrapper& recognizer) const
+/*
+Identity FaceUtils::identityForTag(int tagId, FacialRecognitionWrapper& recognizer) const
+*/
 Identity FaceUtils::identityForTag(int tagId) const
 {
     QMultiMap<QString, QString> attributes = FaceTags::identityAttributes(tagId);
@@ -382,11 +383,12 @@ void FaceUtils::removeNormalTags(qlonglong imageId, const QList<int>& tagIds)
 
 QRect FaceUtils::faceRectToDisplayRect(const QRect& rect)
 {
-    /*
+    /**
      * Do not change that value unless you know what you do.
      * There are a lot of pregenerated thumbnails in user's databases,
      * expensive to regenerate, depending on this very value.
      */
+
     int margin = qMax(rect.width(), rect.height());
     margin    /= 10;
 
