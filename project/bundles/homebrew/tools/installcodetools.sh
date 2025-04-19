@@ -20,7 +20,7 @@ StartScript
 
 echo -e "\n"
 echo "---------- Installing code analysis tools"
-$INSTALL_PREFIX/bin/brew install \
+HOMEBREW_NO_AUTO_UPDATE=1 $INSTALL_PREFIX/bin/brew install \
                 cppcheck \
                 flawfinder \
                 lizard-analyzer \
