@@ -23,6 +23,7 @@
 #include <QDropEvent>
 #include <QMenu>
 #include <QIcon>
+#include <QApplication>
 
 // KDE includes
 

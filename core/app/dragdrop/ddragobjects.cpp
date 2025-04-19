@@ -20,6 +20,7 @@
 #include <QIODevice>
 #include <QByteArray>
 #include <QDataStream>
+#include <QApplication>
 
 // Local includes
 

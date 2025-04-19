@@ -19,6 +19,7 @@
 
 #include <QDropEvent>
 #include <QIcon>
+#include <QApplication>
 
 // KDE includes
 
