@@ -7,6 +7,7 @@
  * Description : Qt Model for ImportUI - drag and drop handling
  *
  * SPDX-FileCopyrightText: 2012      by Islam Wazery <wazery at ubuntu dot com>
+ * SPDX-FileCopyrightText: 2020-2025 by Maik Qualmann <metzpinguin at gmail dot com>
  * SPDX-FileCopyrightText: 2013-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
