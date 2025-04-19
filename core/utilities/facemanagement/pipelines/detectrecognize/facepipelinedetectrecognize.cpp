@@ -687,11 +687,11 @@ bool FacePipelineDetectRecognize::writer()
             {
                 // pad the rect by FaceTagsIface::faceThumbnailResizeFactor (1/2 on each side)
 
-                QRectF paddedRect = QRectF(qMax(0.0F, package->faceRects[i].x()      - (package->faceRects[i].width()  * (FaceTagsIface::faceThumbnailResizeFactor / 2.0F))),
-                                           qMax(0.0F, package->faceRects[i].y()      - (package->faceRects[i].height() * (FaceTagsIface::faceThumbnailResizeFactor / 2.0F))),
-                                           qMin(1.0F ,package->faceRects[i].width()  + (package->faceRects[i].width()  * FaceTagsIface::faceThumbnailResizeFactor)),
-                                           qMin(1.0F ,package->faceRects[i].height() + (package->faceRects[i].height() * FaceTagsIface::faceThumbnailResizeFactor)));
-                
+                QRectF paddedRect = QRectF(qMax(0.0, package->faceRects[i].x()      - (package->faceRects[i].width()  * (FaceTagsIface::faceThumbnailResizeFactor / 2.0F))),
+                                           qMax(0.0, package->faceRects[i].y()      - (package->faceRects[i].height() * (FaceTagsIface::faceThumbnailResizeFactor / 2.0F))),
+                                           qMin(1.0 ,package->faceRects[i].width()  + (package->faceRects[i].width()  * FaceTagsIface::faceThumbnailResizeFactor)),
+                                           qMin(1.0 ,package->faceRects[i].height() + (package->faceRects[i].height() * FaceTagsIface::faceThumbnailResizeFactor)));
+
                 paddedRectList << paddedRect;
 
                 QRect faceRect(std::round(package->image.width()  * paddedRect.x()),
