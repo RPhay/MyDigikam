@@ -33,26 +33,26 @@ class DIGIKAM_GUI_EXPORT DNNSFaceExtractor: public DNNFaceExtractorBase
 public:
 
     DNNSFaceExtractor();
-    ~DNNSFaceExtractor()                                                        override;
+    ~DNNSFaceExtractor()                                                                        override;
 
 public:
 
     /**
      * Read pretrained neural network for face recognition.
      */
-    bool loadModels()                                                           override;
+    bool loadModels()                                                                           override;
 
     /**
-     * cover the UI threshold to a float using the conversion
-     * factor built into the model
+     * Cover the UI threshold to a float using the conversion
+     * factor built into the model.
      */
-    float getThreshold(int uiThreshold = DNN_MODEL_THRESHOLD_NOT_SET)   const   override;
+    float getThreshold(int uiThreshold = DNN_MODEL_THRESHOLD_NOT_SET)                   const   override;
 
-    virtual cv::Mat alignFace(const cv::Mat& inputImage)                const   override;
-    virtual const QPair<cv::Mat, cv::Mat> getFaceEmbedding(const cv::Mat& faceImage)          const   override;
+    virtual cv::Mat alignFace(const cv::Mat& inputImage)                                const   override;
+    virtual const QPair<cv::Mat, cv::Mat> getFaceEmbedding(const cv::Mat& faceImage)    const   override;
 
-    virtual cv::UMat alignFace(const cv::UMat& inputImage)              const   override;
-    virtual const QPair<cv::Mat, cv::Mat> getFaceEmbedding(const cv::UMat& faceImage)         const   override;
+    virtual cv::UMat alignFace(const cv::UMat& inputImage)                              const   override;
+    virtual const QPair<cv::Mat, cv::Mat> getFaceEmbedding(const cv::UMat& faceImage)   const   override;
 
 private:
 

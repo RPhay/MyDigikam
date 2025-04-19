@@ -158,7 +158,7 @@ void FaceClassifier::setParameters(const FaceScanSettings& parameters)
 
 cv::Ptr<cv::ml::KNearest> FaceClassifier::createKNearest()
 {
-    // create the KNN classifier
+    // Create the KNN classifier.
 
     cv::Ptr<cv::ml::KNearest> cvClassifier = cv::ml::KNearest::create();
     cvClassifier->setIsClassifier(true);
@@ -170,7 +170,7 @@ cv::Ptr<cv::ml::KNearest> FaceClassifier::createKNearest()
 
 cv::Ptr<cv::ml::SVM> FaceClassifier::createSVM()
 {
-    // create the SVM classifier
+    // Create the SVM classifier.
 
     cv::Ptr<cv::ml::SVM> cvClassifier = cv::ml::SVM::create();
     cvClassifier->setType(d->svm_type);
@@ -184,7 +184,7 @@ cv::Ptr<cv::ml::SVM> FaceClassifier::createSVM()
 
 bool FaceClassifier::retrain()
 {
-    // called to retrain the classifier
+    // Called to retrain the classifier.
 
     // lock the mutex
 
@@ -228,17 +228,15 @@ bool FaceClassifier::retrain()
 
 bool FaceClassifier::loadTrainingData()
 {
-    // training thread to load the training data
-
-    // training thread should have a higher priority
+    // Training thread to load the training data and should have a higher priority.
 
     QThread::currentThread()->setPriority(QThread::Priority::HighPriority);
 
     QElapsedTimer timer;
     timer.start();
 
-    // loop to rebuild the classifier components if there is training waiting
-    // d->trainingWaiting can be modified outside the loop
+    // Loop to rebuild the classifier components if there is training waiting
+    // d->trainingWaiting can be modified outside the loop.
 
     do
     {
@@ -282,9 +280,9 @@ bool FaceClassifier::loadTrainingData()
 
                     d->initialLoad = false;
 
-                    // if this is the first time we are loading the training data
+                    // If this is the first time we are loading the training data,
                     // we can use the FaceClassifier with just the identity features if we use full search
-                    // CCBUG: 502219
+                    // See bug 502219.
 
                     d->useFullSearch = true;
 
@@ -348,7 +346,7 @@ bool FaceClassifier::loadTrainingData()
                 d->identityFeatures = identityFeatures;
                 d->useFullSearch    = useFullSearch;
                 d->ready            = true;
-        
+
                 // unlock the classifiers and identity list
 
                 d->trainingLock.unlock();
@@ -387,7 +385,7 @@ bool FaceClassifier::loadTrainingData()
                                      << timer.elapsed() << "ms";
 
     // emit the training complete signal
-    
+
     Q_EMIT signalTrainingComplete();
 
     return true;
@@ -482,8 +480,8 @@ int FaceClassifier::predictClassifier(const cv::Mat& target, const QList<int>& e
         knn_result = UNKNOWN_LABEL_ID;
     }
 
-    // if the  SVM and KNN classifiers agree it's usually over 98% correct unless
-    // we have massively unbalanced data so we need to validate the results
+    // If the SVM and KNN classifiers agree it's usually over 98% correct unless
+    // we have massively unbalanced data so we need to validate the results.
 
     if ((svm_result == knn_result) && (svm_result != UNKNOWN_LABEL_ID))
     {

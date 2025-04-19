@@ -33,29 +33,6 @@
 namespace Digikam
 {
 
-/*
-class Q_DECL_HIDDEN DNNFaceExtractorBase::Private
-{
-public:
-
-    Private()  = default;
-    ~Private() = default;
-
-public:
-
-    int                      ref                = 1;
-
-    cv::dnn::Net             net;
-    QMutex                   mutex;
-
-    // As we use OpenFace, we need to set appropriate values for image color space and image size
-
-    cv::Size                 imageSize          = cv::Size(96, 96);
-    float                    scaleFactor        = 1.0F / 255.0F;
-    cv::Scalar               meanValToSubtract  = cv::Scalar(0.0, 0.0, 0.0);
-};
-*/
-
 DNNFaceExtractorBase::DNNFaceExtractorBase()
 {
 }

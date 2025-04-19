@@ -23,7 +23,6 @@
 #include <QCryptographicHash>
 #include <QByteArray>
 
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -35,8 +34,8 @@
 namespace Digikam
 {
 
-const QLatin1Char FaceTagsIface::listSeparator = QLatin1Char(';');
-const QLatin1Char FaceTagsIface::valueSeparator = QLatin1Char(',');
+const QLatin1Char FaceTagsIface::listSeparator       = QLatin1Char(';');
+const QLatin1Char FaceTagsIface::valueSeparator      = QLatin1Char(',');
 const float FaceTagsIface::faceThumbnailResizeFactor = 0.25F;
 
 FaceTagsIface::FaceTagsIface(const FaceTagsIface& other)
@@ -48,7 +47,8 @@ FaceTagsIface::FaceTagsIface(const FaceTagsIface& other)
 {
 }
 
-FaceTagsIface::FaceTagsIface(Type type, qlonglong imageId, int tagId, const TagRegion& region, const QList<int>& rejectedFaceTagList)
+FaceTagsIface::FaceTagsIface(Type type, qlonglong imageId, int tagId,
+                             const TagRegion& region, const QList<int>& rejectedFaceTagList)
     : m_type   (type),
       m_imageId(imageId),
       m_tagId  (tagId),
@@ -57,7 +57,8 @@ FaceTagsIface::FaceTagsIface(Type type, qlonglong imageId, int tagId, const TagR
 {
 }
 
-FaceTagsIface::FaceTagsIface(const QString& attribute, qlonglong imageId, int tagId, const TagRegion& region, const QList<int>& rejectedFaceTagList)
+FaceTagsIface::FaceTagsIface(const QString& attribute, qlonglong imageId,
+                             int tagId, const TagRegion& region, const QList<int>& rejectedFaceTagList)
     : m_type   (typeForAttribute(attribute, tagId)),
       m_imageId(imageId),
       m_tagId  (tagId),
@@ -341,7 +342,7 @@ static inline QString fastNumberToString(qlonglong id)
 {
     const int size   = sizeof(qlonglong) * 2;
     qlonglong number = id;
-    char c[size + 1];
+    char c[size + 1] = { 0 };
     c[size]          = '\0';
 
     for (int i = 0 ; i < size ; ++i)
@@ -388,12 +389,12 @@ bool FaceTagsIface::addRejectedFaceTag(int tagId)
 bool FaceTagsIface::setRejectedFaceTagList(const QList<int>& tagList)
 {
     m_rejectedFaceTagList = tagList;
-    
+
     return true;
 }
 
 /**
- * clears the list of tags excluded from face recognition.
+ * Clears the list of tags excluded from face recognition.
  */
 void FaceTagsIface::clearRejectedFaceTagList()
 {
@@ -401,7 +402,7 @@ void FaceTagsIface::clearRejectedFaceTagList()
 }
 
 /**
- * returns the list of tags excluded from face recognition
+ * Returns the list of tags excluded from face recognition
  * so "rejected" matches are not matched again
  */
 const QList<int> FaceTagsIface::rejectedFaceTagList() const
@@ -410,7 +411,7 @@ const QList<int> FaceTagsIface::rejectedFaceTagList() const
 }
 
 /**
- * returns a string representation of m_rejectedFaceTagList
+ * Returns a string representation of m_rejectedFaceTagList
  * separated by listSeparator.
  */
 const QString FaceTagsIface::rejectedFaceTagListToString() const
@@ -427,7 +428,7 @@ const QString FaceTagsIface::rejectedFaceTagListToString() const
 }
 
 /**
- * returns a QList<int> from a string representation of m_rejectedFaceTagList
+ * Returns a QList<int> from a string representation of m_rejectedFaceTagList
  * separated by listSeparator.
  */
 const QList<int> FaceTagsIface::stringToRejectedFaceTagList(const QString& str)
@@ -454,9 +455,11 @@ const QList<int> FaceTagsIface::stringToRejectedFaceTagList(const QString& str)
  */
 const QString FaceTagsIface::faceTagExtendedDataDBString() const
 {
-    return m_region.toXml() + 
-           FaceTagsIface::valueSeparator + 
-           rejectedFaceTagListToString();
+    return (
+            m_region.toXml()              +
+            FaceTagsIface::valueSeparator + 
+            rejectedFaceTagListToString()
+           );
 
            // other data can be added here later
 }

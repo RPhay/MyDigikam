@@ -57,6 +57,7 @@ public:
 
     virtual cv::Mat alignFace(const cv::Mat& inputImage) const                              = 0;
     virtual const QPair<cv::Mat, cv::Mat> getFaceEmbedding(const cv::Mat& faceImage) const  = 0;
+
     // UMat versions
     virtual cv::UMat alignFace(const cv::UMat& inputImage) const                            = 0;
     virtual const QPair<cv::Mat, cv::Mat> getFaceEmbedding(const cv::UMat& faceImage) const = 0;

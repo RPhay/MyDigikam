@@ -21,13 +21,12 @@
 
 #include <QFlags>
 #include <QVariant>
+#include <QDebug>
 
 // Local includes
 
 #include "tagregion.h"
 #include "digikam_export.h"
-
-class QDebug;
 
 namespace Digikam
 {
@@ -57,13 +56,15 @@ public:
     {
         RejectedFaceTagListPosition = 1
     };
-    
+
 public:
 
     FaceTagsIface() = default;
     FaceTagsIface(const FaceTagsIface& other);
-    FaceTagsIface(Type type, qlonglong imageId, int tagId, const TagRegion& region, const QList<int>& rejectedFaceTagList = QList<int>());
-    FaceTagsIface(const QString& attribute, qlonglong imageId, int tagId, const TagRegion& region, const QList<int>& rejectedFaceTagList = QList<int>());
+    FaceTagsIface(Type type, qlonglong imageId, int tagId, const TagRegion& region,
+                  const QList<int>& rejectedFaceTagList = QList<int>());
+    FaceTagsIface(const QString& attribute, qlonglong imageId, int tagId,
+                  const TagRegion& region, const QList<int>& rejectedFaceTagList = QList<int>());
     ~FaceTagsIface() = default;
 
     FaceTagsIface& operator=(const FaceTagsIface& other);
@@ -77,7 +78,7 @@ public:
 
     /**
      * Returns the list of tags excluded from face recognition
-     * so "rejected" matches are not matched again
+     * so "rejected" matches are not matched again.
      */
     const QList<int>  rejectedFaceTagList()       const;
 
@@ -86,32 +87,32 @@ public:
         return (type() == InvalidFace);
     }
 
-    bool      isUnknownName()                   const
+    bool      isUnknownName()                     const
     {
         return (type() == UnknownName);
     }
 
-    bool      isUnconfirmedName()               const
+    bool      isUnconfirmedName()                 const
     {
         return (type() == UnconfirmedName);
     }
 
-    bool      isUnconfirmedType()               const
+    bool      isUnconfirmedType()                 const
     {
         return (type() & UnconfirmedTypes);
     }
 
-    bool      isIgnoredName()                   const
+    bool      isIgnoredName()                     const
     {
         return (type() == IgnoredName);
     }
 
-    bool      isConfirmedName()                 const
+    bool      isConfirmedName()                   const
     {
         return (type() == ConfirmedName);
     }
 
-    bool      isForTraining()                   const
+    bool      isForTraining()                     const
     {
         return (type() == FaceForTraining);
     }
@@ -120,7 +121,7 @@ public:
     void setTagId(int tagId);
     void setRegion(const TagRegion& region);
 
-    bool operator==(const FaceTagsIface& other) const;
+    bool operator==(const FaceTagsIface& other)   const;
 
     /**
      * Returns a list of all image tag properties for which flags are set.
@@ -164,22 +165,22 @@ public:
     /**
      * Remove the face from face training based on the current imageId, tagId, and rect hash.
      */
-    void removeFaceTraining() const;
+    void removeFaceTraining()                   const;
 
     /**
      * Generate a hash based on the imageId, tagId, and rect to uniquely identify this entry in the face training DB.
      */
-    const QString hash() const;
+    const QString hash()                        const;
 
     /**
      * Adds a tag to the list of tags excluded from face recognition
-     * so "rejected" matches are not matched again
+     * so "rejected" matches are not matched again.
      */
     bool addRejectedFaceTag(int tagId);
 
     /**
      * Adds a tag to the list of tags excluded from face recognition
-     * so "rejected" matches are not matched again
+     * so "rejected" matches are not matched again.
      */
     bool setRejectedFaceTagList(const QList<int>& tagList);
 
@@ -201,9 +202,11 @@ public:
     static const QList<int> stringToRejectedFaceTagList(const QString& str);
 
     /**
-     * Returns a string of the rect and the rejectedFaceTagList to be saved in the DB
+     * Returns a string of the rect and the rejectedFaceTagList to be saved in the DB.
      */
     const QString faceTagExtendedDataDBString() const;
+
+public:
 
     static const QLatin1Char listSeparator;
     static const QLatin1Char valueSeparator;

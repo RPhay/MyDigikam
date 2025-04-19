@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2024-11-10
- * Description : base face classifier. Thin wrapper to allow for easy replacement in the future
+ * Description : Base face classifier. Thin wrapper to allow for easy replacement in the future.
  *
  * SPDX-FileCopyrightText: 2024-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
