@@ -95,10 +95,10 @@ QList<DPluginAuthor> DImgQImagePlugin::authors() const
                              QString::fromUtf8("(C) 2005"))
             << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
                              QString::fromUtf8("metzpinguin at gmail dot com"),
-                             QString::fromUtf8("(C) 2019-2022"))
+                             QString::fromUtf8("(C) 2019-2025"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2024"))
+                             QString::fromUtf8("(C) 2006-2025"))
             ;
 }
 
