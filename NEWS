@@ -175,7 +175,7 @@ BUGFIXES:
 156 ==> 502219 - Right-click, "Recognize faces" does no longer recognize any faces.
 157 ==> 502924 - Don't suggest a rejected face match again.
 158 ==> 502962 - Color management inconsistency.
-159 ==> 
+159 ==> 502986 - MP4 previews not showing, screen remains blank.
 160 ==> 
 161 ==> 
 162 ==> 
