@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-17 01:54+0000\n"
+"POT-Creation-Date: 2025-04-19 01:55+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -186,52 +186,52 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 (%2)"
 
-#: core/app/dragdrop/albumdragdrop.cpp:89
-#: core/app/dragdrop/albumdragdrop.cpp:226
-#: core/app/dragdrop/albumdragdrop.cpp:353
+#: core/app/dragdrop/albumdragdrop.cpp:95
+#: core/app/dragdrop/albumdragdrop.cpp:253
+#: core/app/dragdrop/albumdragdrop.cpp:400
 #: core/app/dragdrop/importdragdrop.cpp:119
-#: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:81
+#: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:86
 #, kde-format
 msgid "&Move Here"
 msgstr "यहाँ सार्नुहोस्"
 
-#: core/app/dragdrop/albumdragdrop.cpp:90
-#: core/app/dragdrop/albumdragdrop.cpp:227
-#: core/app/dragdrop/albumdragdrop.cpp:354
+#: core/app/dragdrop/albumdragdrop.cpp:96
+#: core/app/dragdrop/albumdragdrop.cpp:254
+#: core/app/dragdrop/albumdragdrop.cpp:401
 #: core/app/dragdrop/importdragdrop.cpp:122
 #: core/app/dragdrop/itemdragdrop.cpp:150
 #, kde-format
 msgid "&Copy Here"
 msgstr "यहाँ प्रतिलिपि बनाउनुहोस्"
 
-#: core/app/dragdrop/albumdragdrop.cpp:92
-#: core/app/dragdrop/albumdragdrop.cpp:171
-#: core/app/dragdrop/albumdragdrop.cpp:236
-#: core/app/dragdrop/albumdragdrop.cpp:291
-#: core/app/dragdrop/albumdragdrop.cpp:356
+#: core/app/dragdrop/albumdragdrop.cpp:98
+#: core/app/dragdrop/albumdragdrop.cpp:187
+#: core/app/dragdrop/albumdragdrop.cpp:263
+#: core/app/dragdrop/albumdragdrop.cpp:328
+#: core/app/dragdrop/albumdragdrop.cpp:403
 #: core/app/dragdrop/importdragdrop.cpp:55
-#: core/app/dragdrop/importdragdrop.cpp:184
-#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:775
-#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:246
-#: core/app/dragdrop/tagdragdrop.cpp:302 core/app/dragdrop/tagdragdrop.cpp:417
+#: core/app/dragdrop/importdragdrop.cpp:194
+#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:808
+#: core/app/dragdrop/tagdragdrop.cpp:89 core/app/dragdrop/tagdragdrop.cpp:261
+#: core/app/dragdrop/tagdragdrop.cpp:328 core/app/dragdrop/tagdragdrop.cpp:454
 #, kde-format
 msgid "C&ancel"
 msgstr "रद्द गर्नुहोस्"
 
-#: core/app/dragdrop/albumdragdrop.cpp:167
-#: core/app/dragdrop/albumdragdrop.cpp:232
+#: core/app/dragdrop/albumdragdrop.cpp:183
+#: core/app/dragdrop/albumdragdrop.cpp:259
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "एल्बम थम्बनेलको रूपमा सेट गर्नुहोस्"
 
-#: core/app/dragdrop/albumdragdrop.cpp:288
-#: core/app/dragdrop/itemdragdrop.cpp:771
+#: core/app/dragdrop/albumdragdrop.cpp:325
+#: core/app/dragdrop/itemdragdrop.cpp:804
 #, fuzzy, kde-format
 msgid "Download From Camera"
 msgstr "क्यामेरामा अपलोड गर्नुहोस्"
 
-#: core/app/dragdrop/albumdragdrop.cpp:289
-#: core/app/dragdrop/itemdragdrop.cpp:773
+#: core/app/dragdrop/albumdragdrop.cpp:326
+#: core/app/dragdrop/itemdragdrop.cpp:806
 #, fuzzy, kde-format
 msgid "Download && Delete From Camera"
 msgstr "चयन गरेको डाउनलोड गर्नुहोस्"
@@ -243,12 +243,12 @@ msgctxt "@action:inmenu Group images with this image"
 msgid "Group here"
 msgstr "टोन फिल्टर होइन"
 
-#: core/app/dragdrop/importdragdrop.cpp:180
+#: core/app/dragdrop/importdragdrop.cpp:190
 #, fuzzy, kde-format
 msgid "Exporting"
 msgstr "निर्यात"
 
-#: core/app/dragdrop/importdragdrop.cpp:182
+#: core/app/dragdrop/importdragdrop.cpp:192
 #, fuzzy, kde-format
 msgid "Upload to Camera"
 msgstr "क्यामेरामा अपलोड गर्नुहोस्"
@@ -271,75 +271,75 @@ msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr ""
 
-#: core/app/dragdrop/itemdragdrop.cpp:192
+#: core/app/dragdrop/itemdragdrop.cpp:202
 #, fuzzy, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr "चयन गरेको वस्तुमा ट्याग मानाङ्कन गर्नुहोस्"
 
-#: core/app/dragdrop/itemdragdrop.cpp:653
+#: core/app/dragdrop/itemdragdrop.cpp:684
 #, fuzzy, kde-format
 msgid "Change Face Tags"
 msgstr "छवि प्रकार देखाउनुहोस्"
 
-#: core/app/dragdrop/itemdragdrop.cpp:657
+#: core/app/dragdrop/itemdragdrop.cpp:688
 #, fuzzy, kde-format
 msgid "Change Face Tag"
 msgstr "केस परिवर्तन गर्नुहोस्:"
 
-#: core/app/dragdrop/itemdragdrop.cpp:661
-#: core/app/dragdrop/itemdragdrop.cpp:714
+#: core/app/dragdrop/itemdragdrop.cpp:692
+#: core/app/dragdrop/itemdragdrop.cpp:746
 #: core/app/views/preview/itempreviewview.cpp:704
 #, fuzzy, kde-format
 msgid "&Cancel"
 msgstr "रद्द गर्नुहोस्"
 
-#: core/app/dragdrop/itemdragdrop.cpp:699
+#: core/app/dragdrop/itemdragdrop.cpp:731
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "चयन गरेको वस्तुमा ट्याग मानाङ्कन गर्नुहोस्"
 
-#: core/app/dragdrop/itemdragdrop.cpp:707
+#: core/app/dragdrop/itemdragdrop.cpp:739
 #: core/app/views/preview/itempreviewview.cpp:702
 #, fuzzy, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "सबै वस्तुमा ट्याग मानाङ्कन गर्नुहोस्"
 
-#: core/app/dragdrop/itemdragdrop.cpp:711
+#: core/app/dragdrop/itemdragdrop.cpp:743
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "सबै वस्तुमा ट्याग मानाङ्कन गर्नुहोस्"
 
-#: core/app/dragdrop/itemdragdrop.cpp:769
+#: core/app/dragdrop/itemdragdrop.cpp:802
 #, fuzzy, kde-format
 msgid "Importing"
 msgstr "आयात"
 
-#: core/app/dragdrop/tagdragdrop.cpp:82
+#: core/app/dragdrop/tagdragdrop.cpp:87
 #, fuzzy, kde-format
 #| msgid "&Move Here"
 msgid "M&erge Here"
 msgstr "यहाँ सार्नुहोस्"
 
-#: core/app/dragdrop/tagdragdrop.cpp:235
+#: core/app/dragdrop/tagdragdrop.cpp:250
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
+#: core/app/dragdrop/tagdragdrop.cpp:257 core/app/dragdrop/tagdragdrop.cpp:450
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "ट्याग थम्बनेलको रूपमा सेट गर्नुहोस्"
 
-#: core/app/dragdrop/tagdragdrop.cpp:296
+#: core/app/dragdrop/tagdragdrop.cpp:322
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:408
+#: core/app/dragdrop/tagdragdrop.cpp:445
 #, fuzzy, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "वस्तुमा '%1' ट्याग मानाङ्कन गर्नुहोस्"
@@ -50507,28 +50507,28 @@ msgstr "रद्द गर्नुहोस्"
 msgid "Confirming face"
 msgstr "सङ्कलन:"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:121
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:122
 #, fuzzy, kde-format
 msgid "Removing face"
 msgstr "ट्याग प्रतिमा रिसेट गर्नुहोस्"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:135
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:136
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgid "Remove all faces"
 msgstr "ट्याग हटाउनुहोस्"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:156
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
 #, fuzzy, kde-format
 msgid "Editing face tag"
 msgstr "<b>थम्बनेल अद्यावधिक हुँदैछ । कृपया प्रतिक्षा गर्नुहोस्...</b>"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:184
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:187
 #, fuzzy, kde-format
 msgid "Editing face region"
 msgstr "ट्याग हटाउनुहोस्"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:218
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:220
 #, fuzzy, kde-format
 msgid "Manually adding face"
 msgstr "म्यानुअल"
@@ -64205,7 +64205,7 @@ msgstr ""
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
 #, fuzzy, kde-format
-msgid "Background face recognition scan"
+msgid "Enable background face recognition scan"
 msgstr "पृष्ठभूमि रङ:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85

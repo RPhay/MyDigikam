@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-17 01:54+0000\n"
+"POT-Creation-Date: 2025-04-19 01:55+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -203,52 +203,52 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%2年%1月"
 
-#: core/app/dragdrop/albumdragdrop.cpp:89
-#: core/app/dragdrop/albumdragdrop.cpp:226
-#: core/app/dragdrop/albumdragdrop.cpp:353
+#: core/app/dragdrop/albumdragdrop.cpp:95
+#: core/app/dragdrop/albumdragdrop.cpp:253
+#: core/app/dragdrop/albumdragdrop.cpp:400
 #: core/app/dragdrop/importdragdrop.cpp:119
-#: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:81
+#: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:86
 #, kde-format
 msgid "&Move Here"
 msgstr "ここに移動(&M)"
 
-#: core/app/dragdrop/albumdragdrop.cpp:90
-#: core/app/dragdrop/albumdragdrop.cpp:227
-#: core/app/dragdrop/albumdragdrop.cpp:354
+#: core/app/dragdrop/albumdragdrop.cpp:96
+#: core/app/dragdrop/albumdragdrop.cpp:254
+#: core/app/dragdrop/albumdragdrop.cpp:401
 #: core/app/dragdrop/importdragdrop.cpp:122
 #: core/app/dragdrop/itemdragdrop.cpp:150
 #, kde-format
 msgid "&Copy Here"
 msgstr "ここにコピー(&C)"
 
-#: core/app/dragdrop/albumdragdrop.cpp:92
-#: core/app/dragdrop/albumdragdrop.cpp:171
-#: core/app/dragdrop/albumdragdrop.cpp:236
-#: core/app/dragdrop/albumdragdrop.cpp:291
-#: core/app/dragdrop/albumdragdrop.cpp:356
+#: core/app/dragdrop/albumdragdrop.cpp:98
+#: core/app/dragdrop/albumdragdrop.cpp:187
+#: core/app/dragdrop/albumdragdrop.cpp:263
+#: core/app/dragdrop/albumdragdrop.cpp:328
+#: core/app/dragdrop/albumdragdrop.cpp:403
 #: core/app/dragdrop/importdragdrop.cpp:55
-#: core/app/dragdrop/importdragdrop.cpp:184
-#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:775
-#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:246
-#: core/app/dragdrop/tagdragdrop.cpp:302 core/app/dragdrop/tagdragdrop.cpp:417
+#: core/app/dragdrop/importdragdrop.cpp:194
+#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:808
+#: core/app/dragdrop/tagdragdrop.cpp:89 core/app/dragdrop/tagdragdrop.cpp:261
+#: core/app/dragdrop/tagdragdrop.cpp:328 core/app/dragdrop/tagdragdrop.cpp:454
 #, kde-format
 msgid "C&ancel"
 msgstr "キャンセル(&A)"
 
-#: core/app/dragdrop/albumdragdrop.cpp:167
-#: core/app/dragdrop/albumdragdrop.cpp:232
+#: core/app/dragdrop/albumdragdrop.cpp:183
+#: core/app/dragdrop/albumdragdrop.cpp:259
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "アルバムのサムネイルに設定"
 
-#: core/app/dragdrop/albumdragdrop.cpp:288
-#: core/app/dragdrop/itemdragdrop.cpp:771
+#: core/app/dragdrop/albumdragdrop.cpp:325
+#: core/app/dragdrop/itemdragdrop.cpp:804
 #, kde-format
 msgid "Download From Camera"
 msgstr "カメラからダウンロード"
 
-#: core/app/dragdrop/albumdragdrop.cpp:289
-#: core/app/dragdrop/itemdragdrop.cpp:773
+#: core/app/dragdrop/albumdragdrop.cpp:326
+#: core/app/dragdrop/itemdragdrop.cpp:806
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "カメラからダウンロード＆削除"
@@ -260,12 +260,12 @@ msgctxt "@action:inmenu Group images with this image"
 msgid "Group here"
 msgstr "ここにグループ化"
 
-#: core/app/dragdrop/importdragdrop.cpp:180
+#: core/app/dragdrop/importdragdrop.cpp:190
 #, kde-format
 msgid "Exporting"
 msgstr "エクスポート中"
 
-#: core/app/dragdrop/importdragdrop.cpp:182
+#: core/app/dragdrop/importdragdrop.cpp:192
 #, kde-format
 msgid "Upload to Camera"
 msgstr "カメラへアップロード"
@@ -288,55 +288,55 @@ msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr "ここにグループ化しアルバムに移動"
 
-#: core/app/dragdrop/itemdragdrop.cpp:192
+#: core/app/dragdrop/itemdragdrop.cpp:202
 #, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr "ドロップされたアイテムにタグを付ける"
 
-#: core/app/dragdrop/itemdragdrop.cpp:653
+#: core/app/dragdrop/itemdragdrop.cpp:684
 #, kde-format
 msgid "Change Face Tags"
 msgstr "顔タグを変更"
 
-#: core/app/dragdrop/itemdragdrop.cpp:657
+#: core/app/dragdrop/itemdragdrop.cpp:688
 #, kde-format
 msgid "Change Face Tag"
 msgstr "顔タグを変更"
 
-#: core/app/dragdrop/itemdragdrop.cpp:661
-#: core/app/dragdrop/itemdragdrop.cpp:714
+#: core/app/dragdrop/itemdragdrop.cpp:692
+#: core/app/dragdrop/itemdragdrop.cpp:746
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "キャンセル(&C)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:699
+#: core/app/dragdrop/itemdragdrop.cpp:731
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "選択したアイテムにタグを付ける(&S)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:707
+#: core/app/dragdrop/itemdragdrop.cpp:739
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "このアイテムにタグを付ける(&T)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:711
+#: core/app/dragdrop/itemdragdrop.cpp:743
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "すべてのアイテムにタグを付ける(&A)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:769
+#: core/app/dragdrop/itemdragdrop.cpp:802
 #, kde-format
 msgid "Importing"
 msgstr "インポート中"
 
-#: core/app/dragdrop/tagdragdrop.cpp:82
+#: core/app/dragdrop/tagdragdrop.cpp:87
 #, kde-format
 msgid "M&erge Here"
 msgstr "ここにマージ(&E)"
 
-#: core/app/dragdrop/tagdragdrop.cpp:235
+#: core/app/dragdrop/tagdragdrop.cpp:250
 #, fuzzy, kde-format
 #| msgid "Change face name from '%2' to '%3'"
 #| msgid_plural "Change face names from '%2' to '%3'"
@@ -344,18 +344,18 @@ msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "顔の名前を ‘%2’ から ‘%3’ に変更する"
 
-#: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
+#: core/app/dragdrop/tagdragdrop.cpp:257 core/app/dragdrop/tagdragdrop.cpp:450
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "タグのサムネイルに設定"
 
-#: core/app/dragdrop/tagdragdrop.cpp:296
+#: core/app/dragdrop/tagdragdrop.cpp:322
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "顔の名前を ‘%2’ から ‘%3’ に変更する"
 
-#: core/app/dragdrop/tagdragdrop.cpp:408
+#: core/app/dragdrop/tagdragdrop.cpp:445
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "アイテムにタグ '%1' を付ける"
@@ -54033,32 +54033,32 @@ msgstr "キャンセル"
 msgid "Confirming face"
 msgstr "設定"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:121
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:122
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Removing face"
 msgstr "選択したタグを削除"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:135
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:136
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Remove all Faces"
 msgid "Remove all faces"
 msgstr "すべての顔を削除"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:156
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Editing face tag"
 msgstr "顔データベースの更新中です。"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:184
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:187
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "このタグを取り除く"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:218
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:220
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Manual and Name"
@@ -68638,7 +68638,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:84
 #, fuzzy, kde-format
 #| msgid "Background Image Credits"
-msgid "Background face recognition scan"
+msgid "Enable background face recognition scan"
 msgstr "背景画像クレジット"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85

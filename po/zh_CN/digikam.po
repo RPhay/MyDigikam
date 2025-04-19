@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-17 01:54+0000\n"
+"POT-Creation-Date: 2025-04-19 01:55+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -176,52 +176,52 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%2 年 %1 月"
 
-#: core/app/dragdrop/albumdragdrop.cpp:89
-#: core/app/dragdrop/albumdragdrop.cpp:226
-#: core/app/dragdrop/albumdragdrop.cpp:353
+#: core/app/dragdrop/albumdragdrop.cpp:95
+#: core/app/dragdrop/albumdragdrop.cpp:253
+#: core/app/dragdrop/albumdragdrop.cpp:400
 #: core/app/dragdrop/importdragdrop.cpp:119
-#: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:81
+#: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:86
 #, kde-format
 msgid "&Move Here"
 msgstr "移动到此位置(&M)"
 
-#: core/app/dragdrop/albumdragdrop.cpp:90
-#: core/app/dragdrop/albumdragdrop.cpp:227
-#: core/app/dragdrop/albumdragdrop.cpp:354
+#: core/app/dragdrop/albumdragdrop.cpp:96
+#: core/app/dragdrop/albumdragdrop.cpp:254
+#: core/app/dragdrop/albumdragdrop.cpp:401
 #: core/app/dragdrop/importdragdrop.cpp:122
 #: core/app/dragdrop/itemdragdrop.cpp:150
 #, kde-format
 msgid "&Copy Here"
 msgstr "复制到此位置(&C)"
 
-#: core/app/dragdrop/albumdragdrop.cpp:92
-#: core/app/dragdrop/albumdragdrop.cpp:171
-#: core/app/dragdrop/albumdragdrop.cpp:236
-#: core/app/dragdrop/albumdragdrop.cpp:291
-#: core/app/dragdrop/albumdragdrop.cpp:356
+#: core/app/dragdrop/albumdragdrop.cpp:98
+#: core/app/dragdrop/albumdragdrop.cpp:187
+#: core/app/dragdrop/albumdragdrop.cpp:263
+#: core/app/dragdrop/albumdragdrop.cpp:328
+#: core/app/dragdrop/albumdragdrop.cpp:403
 #: core/app/dragdrop/importdragdrop.cpp:55
-#: core/app/dragdrop/importdragdrop.cpp:184
-#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:775
-#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:246
-#: core/app/dragdrop/tagdragdrop.cpp:302 core/app/dragdrop/tagdragdrop.cpp:417
+#: core/app/dragdrop/importdragdrop.cpp:194
+#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:808
+#: core/app/dragdrop/tagdragdrop.cpp:89 core/app/dragdrop/tagdragdrop.cpp:261
+#: core/app/dragdrop/tagdragdrop.cpp:328 core/app/dragdrop/tagdragdrop.cpp:454
 #, kde-format
 msgid "C&ancel"
 msgstr "取消(&A)"
 
-#: core/app/dragdrop/albumdragdrop.cpp:167
-#: core/app/dragdrop/albumdragdrop.cpp:232
+#: core/app/dragdrop/albumdragdrop.cpp:183
+#: core/app/dragdrop/albumdragdrop.cpp:259
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "设为相册缩略图"
 
-#: core/app/dragdrop/albumdragdrop.cpp:288
-#: core/app/dragdrop/itemdragdrop.cpp:771
+#: core/app/dragdrop/albumdragdrop.cpp:325
+#: core/app/dragdrop/itemdragdrop.cpp:804
 #, kde-format
 msgid "Download From Camera"
 msgstr "从相机下载"
 
-#: core/app/dragdrop/albumdragdrop.cpp:289
-#: core/app/dragdrop/itemdragdrop.cpp:773
+#: core/app/dragdrop/albumdragdrop.cpp:326
+#: core/app/dragdrop/itemdragdrop.cpp:806
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "从相机下载并删除"
@@ -233,12 +233,12 @@ msgctxt "@action:inmenu Group images with this image"
 msgid "Group here"
 msgstr "在此建立分组"
 
-#: core/app/dragdrop/importdragdrop.cpp:180
+#: core/app/dragdrop/importdragdrop.cpp:190
 #, kde-format
 msgid "Exporting"
 msgstr "导出"
 
-#: core/app/dragdrop/importdragdrop.cpp:182
+#: core/app/dragdrop/importdragdrop.cpp:192
 #, kde-format
 msgid "Upload to Camera"
 msgstr "上传到相机"
@@ -261,72 +261,72 @@ msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr "在此建立分组并移动到相册"
 
-#: core/app/dragdrop/itemdragdrop.cpp:192
+#: core/app/dragdrop/itemdragdrop.cpp:202
 #, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr "指定标签到拖放项"
 
-#: core/app/dragdrop/itemdragdrop.cpp:653
+#: core/app/dragdrop/itemdragdrop.cpp:684
 #, kde-format
 msgid "Change Face Tags"
 msgstr "更改人脸标签"
 
-#: core/app/dragdrop/itemdragdrop.cpp:657
+#: core/app/dragdrop/itemdragdrop.cpp:688
 #, kde-format
 msgid "Change Face Tag"
 msgstr "更改人脸标签"
 
-#: core/app/dragdrop/itemdragdrop.cpp:661
-#: core/app/dragdrop/itemdragdrop.cpp:714
+#: core/app/dragdrop/itemdragdrop.cpp:692
+#: core/app/dragdrop/itemdragdrop.cpp:746
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "取消(&C)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:699
+#: core/app/dragdrop/itemdragdrop.cpp:731
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "指定标签到所选项(&S)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:707
+#: core/app/dragdrop/itemdragdrop.cpp:739
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "指定标签到此项(&T)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:711
+#: core/app/dragdrop/itemdragdrop.cpp:743
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "指定标签到所有项(&A)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:769
+#: core/app/dragdrop/itemdragdrop.cpp:802
 #, kde-format
 msgid "Importing"
 msgstr "正在导入"
 
-#: core/app/dragdrop/tagdragdrop.cpp:82
+#: core/app/dragdrop/tagdragdrop.cpp:87
 #, kde-format
 msgid "M&erge Here"
 msgstr "合并标签(&E)"
 
-#: core/app/dragdrop/tagdragdrop.cpp:235
+#: core/app/dragdrop/tagdragdrop.cpp:250
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "确认分配人脸名称“%2”到项目"
 
-#: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
+#: core/app/dragdrop/tagdragdrop.cpp:257 core/app/dragdrop/tagdragdrop.cpp:450
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "设为标签缩略图"
 
-#: core/app/dragdrop/tagdragdrop.cpp:296
+#: core/app/dragdrop/tagdragdrop.cpp:322
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "更改人脸名称，从“%2”到“%3”"
 
-#: core/app/dragdrop/tagdragdrop.cpp:408
+#: core/app/dragdrop/tagdragdrop.cpp:445
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "指定标签“%1”到图像"
@@ -50524,27 +50524,27 @@ msgstr "取消"
 msgid "Confirming face"
 msgstr "正在确认人脸"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:121
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:122
 #, kde-format
 msgid "Removing face"
 msgstr "正在移除人脸"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:135
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:136
 #, kde-format
 msgid "Remove all faces"
 msgstr "移除所有人脸"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:156
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
 #, kde-format
 msgid "Editing face tag"
 msgstr "正在编辑人脸标签"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:184
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:187
 #, kde-format
 msgid "Editing face region"
 msgstr "正在编辑人脸区域"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:218
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:220
 #, kde-format
 msgid "Manually adding face"
 msgstr "正在手动添加人脸"
@@ -64356,8 +64356,9 @@ msgid "Detect faces in newly added images"
 msgstr "检测新增图像中的人脸"
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
-#, kde-format
-msgid "Background face recognition scan"
+#, fuzzy, kde-format
+#| msgid "Background face recognition scan"
+msgid "Enable background face recognition scan"
 msgstr "后台人脸识别扫描"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85

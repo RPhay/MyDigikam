@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-17 01:54+0000\n"
+"POT-Creation-Date: 2025-04-19 01:55+0000\n"
 "PO-Revision-Date: 2023-09-18 10:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -186,52 +186,52 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:89
-#: core/app/dragdrop/albumdragdrop.cpp:226
-#: core/app/dragdrop/albumdragdrop.cpp:353
+#: core/app/dragdrop/albumdragdrop.cpp:95
+#: core/app/dragdrop/albumdragdrop.cpp:253
+#: core/app/dragdrop/albumdragdrop.cpp:400
 #: core/app/dragdrop/importdragdrop.cpp:119
-#: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:81
+#: core/app/dragdrop/itemdragdrop.cpp:147 core/app/dragdrop/tagdragdrop.cpp:86
 #, kde-format
 msgid "&Move Here"
 msgstr "&Mover aqui"
 
-#: core/app/dragdrop/albumdragdrop.cpp:90
-#: core/app/dragdrop/albumdragdrop.cpp:227
-#: core/app/dragdrop/albumdragdrop.cpp:354
+#: core/app/dragdrop/albumdragdrop.cpp:96
+#: core/app/dragdrop/albumdragdrop.cpp:254
+#: core/app/dragdrop/albumdragdrop.cpp:401
 #: core/app/dragdrop/importdragdrop.cpp:122
 #: core/app/dragdrop/itemdragdrop.cpp:150
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Copiar aqui"
 
-#: core/app/dragdrop/albumdragdrop.cpp:92
-#: core/app/dragdrop/albumdragdrop.cpp:171
-#: core/app/dragdrop/albumdragdrop.cpp:236
-#: core/app/dragdrop/albumdragdrop.cpp:291
-#: core/app/dragdrop/albumdragdrop.cpp:356
+#: core/app/dragdrop/albumdragdrop.cpp:98
+#: core/app/dragdrop/albumdragdrop.cpp:187
+#: core/app/dragdrop/albumdragdrop.cpp:263
+#: core/app/dragdrop/albumdragdrop.cpp:328
+#: core/app/dragdrop/albumdragdrop.cpp:403
 #: core/app/dragdrop/importdragdrop.cpp:55
-#: core/app/dragdrop/importdragdrop.cpp:184
-#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:775
-#: core/app/dragdrop/tagdragdrop.cpp:84 core/app/dragdrop/tagdragdrop.cpp:246
-#: core/app/dragdrop/tagdragdrop.cpp:302 core/app/dragdrop/tagdragdrop.cpp:417
+#: core/app/dragdrop/importdragdrop.cpp:194
+#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:808
+#: core/app/dragdrop/tagdragdrop.cpp:89 core/app/dragdrop/tagdragdrop.cpp:261
+#: core/app/dragdrop/tagdragdrop.cpp:328 core/app/dragdrop/tagdragdrop.cpp:454
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancelar"
 
-#: core/app/dragdrop/albumdragdrop.cpp:167
-#: core/app/dragdrop/albumdragdrop.cpp:232
+#: core/app/dragdrop/albumdragdrop.cpp:183
+#: core/app/dragdrop/albumdragdrop.cpp:259
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Definir como miniatura do álbum"
 
-#: core/app/dragdrop/albumdragdrop.cpp:288
-#: core/app/dragdrop/itemdragdrop.cpp:771
+#: core/app/dragdrop/albumdragdrop.cpp:325
+#: core/app/dragdrop/itemdragdrop.cpp:804
 #, kde-format
 msgid "Download From Camera"
 msgstr "Transferir da câmera"
 
-#: core/app/dragdrop/albumdragdrop.cpp:289
-#: core/app/dragdrop/itemdragdrop.cpp:773
+#: core/app/dragdrop/albumdragdrop.cpp:326
+#: core/app/dragdrop/itemdragdrop.cpp:806
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "Transferir e excluir da câmera"
@@ -243,12 +243,12 @@ msgctxt "@action:inmenu Group images with this image"
 msgid "Group here"
 msgstr "Agrupar aqui"
 
-#: core/app/dragdrop/importdragdrop.cpp:180
+#: core/app/dragdrop/importdragdrop.cpp:190
 #, kde-format
 msgid "Exporting"
 msgstr "Exportando"
 
-#: core/app/dragdrop/importdragdrop.cpp:182
+#: core/app/dragdrop/importdragdrop.cpp:192
 #, kde-format
 msgid "Upload to Camera"
 msgstr "Enviar para a câmera"
@@ -271,77 +271,77 @@ msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr "Agrupar aqui e mover para o álbum"
 
-#: core/app/dragdrop/itemdragdrop.cpp:192
+#: core/app/dragdrop/itemdragdrop.cpp:202
 #, kde-format
 msgid "Assign Tag to Dropped Items"
 msgstr "Atribuir etiquetas aos itens largados"
 
-#: core/app/dragdrop/itemdragdrop.cpp:653
+#: core/app/dragdrop/itemdragdrop.cpp:684
 #, fuzzy, kde-format
 #| msgid "Show Face Tags"
 msgid "Change Face Tags"
 msgstr "Mostrar etiquetas de rosto"
 
-#: core/app/dragdrop/itemdragdrop.cpp:657
+#: core/app/dragdrop/itemdragdrop.cpp:688
 #, fuzzy, kde-format
 #| msgid "Change Case"
 msgid "Change Face Tag"
 msgstr "Alterar maiúsculas e minúsculas"
 
-#: core/app/dragdrop/itemdragdrop.cpp:661
-#: core/app/dragdrop/itemdragdrop.cpp:714
+#: core/app/dragdrop/itemdragdrop.cpp:692
+#: core/app/dragdrop/itemdragdrop.cpp:746
 #: core/app/views/preview/itempreviewview.cpp:704
 #, kde-format
 msgid "&Cancel"
 msgstr "&Cancelar"
 
-#: core/app/dragdrop/itemdragdrop.cpp:699
+#: core/app/dragdrop/itemdragdrop.cpp:731
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "Atribuir etiquetas aos itens &selecionados"
 
-#: core/app/dragdrop/itemdragdrop.cpp:707
+#: core/app/dragdrop/itemdragdrop.cpp:739
 #: core/app/views/preview/itempreviewview.cpp:702
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "A&tribuir etiquetas a este item"
 
-#: core/app/dragdrop/itemdragdrop.cpp:711
+#: core/app/dragdrop/itemdragdrop.cpp:743
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "&Atribuir etiquetas a todos os itens"
 
-#: core/app/dragdrop/itemdragdrop.cpp:769
+#: core/app/dragdrop/itemdragdrop.cpp:802
 #, kde-format
 msgid "Importing"
 msgstr "Importando"
 
-#: core/app/dragdrop/tagdragdrop.cpp:82
+#: core/app/dragdrop/tagdragdrop.cpp:87
 #, fuzzy, kde-format
 #| msgid "&Move Here"
 msgid "M&erge Here"
 msgstr "&Mover aqui"
 
-#: core/app/dragdrop/tagdragdrop.cpp:235
+#: core/app/dragdrop/tagdragdrop.cpp:250
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:242 core/app/dragdrop/tagdragdrop.cpp:413
+#: core/app/dragdrop/tagdragdrop.cpp:257 core/app/dragdrop/tagdragdrop.cpp:450
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Definir como miniatura da etiqueta"
 
-#: core/app/dragdrop/tagdragdrop.cpp:296
+#: core/app/dragdrop/tagdragdrop.cpp:322
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:408
+#: core/app/dragdrop/tagdragdrop.cpp:445
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Atribuir a(s) etiqueta(s) '%1' aos itens"
@@ -56538,32 +56538,32 @@ msgstr "Cancelar"
 msgid "Confirming face"
 msgstr "Confirmar exclusão"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:121
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:122
 #, fuzzy, kde-format
 #| msgid "Remove face tag?"
 #| msgid_plural "Remove face tags?"
 msgid "Removing face"
 msgstr "Remover etiqueta de rosto?"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:135
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:136
 #, fuzzy, kde-format
 #| msgid "Remove Face Tags"
 msgid "Remove all faces"
 msgstr "Remover as etiquetas de rostos"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:156
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:158
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Editing face tag"
 msgstr "Atualizando o banco de dados de rostos."
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:184
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:187
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "Remover esta etiqueta"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:218
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:220
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgid "Manually adding face"
@@ -72137,7 +72137,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Benchmark face recognition"
-msgid "Background face recognition scan"
+msgid "Enable background face recognition scan"
 msgstr "Analisar o desempenho do reconhecimento de rostos"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
