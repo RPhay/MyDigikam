@@ -167,8 +167,8 @@ public:
     FaceTagsIface        changeTag(const FaceTagsIface& face, int newTagId);
 
     /**
-    * Changes the tag of the given entry to the unknown person tag and
-    * adds the existing tag to the list of rejected face tags.
+     * Changes the tag of the given entry to the unknown person tag and
+     * adds the existing tag to the list of rejected face tags.
      */
     FaceTagsIface        rejectSuggestedTag(const FaceTagsIface& face);
 

@@ -239,7 +239,7 @@ bool FacePipelineDetectRecognize::loader()
             if (QStringLiteral("RAW-ARW") == package->info.format())
             {
                 // fix for #447767: ARW preview is different aspect than the image
-                
+
                 bool loadFullSize = qMin(package->info.dimensions().width() / 2, package->info.dimensions().height() / 2) < 
                                     qMin(faceDetector->nnInputSizeRequired().height / 2, faceDetector->nnInputSizeRequired().width / 2);                
 
