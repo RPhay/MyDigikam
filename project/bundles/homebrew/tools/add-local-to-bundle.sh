@@ -24,6 +24,7 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
 ORIG_WD="`pwd`"
 
+COPY_MAIN=1
 COPY_EDITOR_PLUGINS=0
 COPY_BQM_PLUGINS=0
 COPY_GENERIC_PLUGINS=0
@@ -48,11 +49,13 @@ DK_APP_CONTENTS="digikam.app/Contents"
 # local binary directory
 LOCAL_BINS="temp.digikam"
 
-# copy binaries to bundle location
-cp "$PWD/$LOCAL_BINS/bin/digikam.app/Contents/MacOS/digikam" "$TEMPROOT/$DK_APP_CONTENTS/MacOS"
+if [ $COPY_MAIN -eq 1 ]; then
+    # copy binaries to bundle location
+    cp "$PWD/$LOCAL_BINS/bin/digikam.app/Contents/MacOS/digikam" "$TEMPROOT/$DK_APP_CONTENTS/MacOS"
 
-# copy main binaries
-rsync -av --include="*/" --include="libdigikam*.dylib" --exclude="*" "$PWD/$LOCAL_BINS/bin/" "$TEMPROOT/$DK_APP_CONTENTS/lib"
+    # copy main binaries
+    rsync -av --include="*/" --include="libdigikam*.dylib" --exclude="*" "$PWD/$LOCAL_BINS/bin/" "$TEMPROOT/$DK_APP_CONTENTS/lib"
+fi
 
 # copy Editor, BQM, and Generic plugins
 if [ $COPY_EDITOR_PLUGINS -eq 1 ]; then
@@ -65,12 +68,14 @@ if [ $COPY_GENERIC_PLUGINS -eq 1 ]; then
     rsync -av --include="*/" --include="Generic_*.so" --exclude="*" "$PWD/$LOCAL_BINS/bin/" "$TEMPROOT/$DK_APP_CONTENTS/share/qt/plugins/digikam/generic"
 fi
 
-# relocate main binaries
-FILES=`find "$TEMPROOT/$DK_APP_CONTENTS/lib" -name "libdigikam*.dylib"`
-for FILE in $FILES ; do
-    copy_lib="$INSTALL_PREFIX/bin/python3 $PWD/package_lib.py --file="$FILE" --bundle-root=$TEMPROOT/$DK_APP_CONTENTS --homebrew=$INSTALL_PREFIX --processed-cache=use  --found-cache=use --signed-cache=use --update-binary=1 --copy=0 --preserve_rpath=0 --force=1"
-    eval "$copy_lib"
-done
+if [ $COPY_MAIN -eq 1 ]; then
+    # relocate main binaries
+    FILES=`find "$TEMPROOT/$DK_APP_CONTENTS/lib" -name "libdigikam*.dylib"`
+    for FILE in $FILES ; do
+        copy_lib="$INSTALL_PREFIX/bin/python3 $PWD/package_lib.py --file="$FILE" --bundle-root=$TEMPROOT/$DK_APP_CONTENTS --homebrew=$INSTALL_PREFIX --processed-cache=use  --found-cache=use --signed-cache=use --update-binary=1 --copy=0 --preserve_rpath=0 --force=1"
+        eval "$copy_lib"
+    done
+fi
 
 # relocate Editor binaries
 if [ $COPY_EDITOR_PLUGINS -eq 1 ]; then
