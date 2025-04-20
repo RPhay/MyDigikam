@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2011-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -26,12 +27,16 @@
 
 #include "digikam_export.h"
 
-
 namespace Digikam
 {
 
 class DImg;
 
+/**
+ * Use this small class to convert between the formatted
+ * textual representation of a tag region in the database
+ * and the corresponding object.
+ */
 class DIGIKAM_EXPORT TagRegion
 {
 
@@ -44,12 +49,6 @@ public:
     };
 
 public:
-
-    /**
-     * Use this small class to convert between the formatted
-     * textual representation of a tag region in the database
-     * and the corresponding object.
-     */
 
     /**
      * Construct an invalid region.

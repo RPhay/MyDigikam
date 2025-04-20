@@ -151,7 +151,10 @@ QStringList FaceTagsIface::attributesForFlags(TypeFlags flags)
 
 QString FaceTagsIface::attributeForType(Type type)
 {
-    if ((type == FaceTagsIface::UnknownName) || (type == FaceTagsIface::UnconfirmedName))
+    if (
+        (type == FaceTagsIface::UnknownName) ||
+        (type == FaceTagsIface::UnconfirmedName)
+       )
     {
         return ImageTagPropertyName::autodetectedFace();
     }
@@ -300,11 +303,13 @@ QString FaceTagsIface::getAutodetectedPersonString() const
 {
     if (isUnconfirmedType())
     {
-        return (QString::number(tagId())                 +
+        return (
+                QString::number(tagId())                 +
                 QLatin1Char(',')                         +
                 ImageTagPropertyName::autodetectedFace() +
                 QLatin1Char(',')                         +
-                (TagRegion(region().toRect())).toXml());
+                (TagRegion(region().toRect())).toXml()
+               );
     }
     else
     {

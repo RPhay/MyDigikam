@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2011-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -251,12 +252,16 @@ QRect TagRegion::mapFromOriginalSize(const QSize& fullImageSize, const QSize& re
 
 QRect TagRegion::mapToOriginalSize(const DImg& reducedSizeImage, const QRect& reducedSizeDetail)
 {
-    return mapToOriginalSize(reducedSizeImage.originalRatioSize(), reducedSizeImage.size(), reducedSizeDetail);
+    return mapToOriginalSize(reducedSizeImage.originalRatioSize(),
+                             reducedSizeImage.size(),
+                             reducedSizeDetail);
 }
 
 QRect TagRegion::mapFromOriginalSize(const DImg& reducedSizeImage, const QRect& fullSizeDetail)
 {
-    return mapFromOriginalSize(reducedSizeImage.originalRatioSize(), reducedSizeImage.size(), fullSizeDetail);
+    return mapFromOriginalSize(reducedSizeImage.originalRatioSize(),
+                               reducedSizeImage.size(),
+                               fullSizeDetail);
 }
 
 QRect TagRegion::relativeToAbsolute(const QRectF& region, const QSize& fullSize)

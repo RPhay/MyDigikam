@@ -232,7 +232,10 @@ FaceTagsIface FaceTagsEditor::changeSuggestedName(const FaceTagsIface& previousE
         return previousEntry;
     }
 
-    FaceTagsIface newEntry = unconfirmedEntry(previousEntry.imageId(), unconfirmedNameTagId, previousEntry.region(), previousEntry.rejectedFaceTagList());
+    FaceTagsIface newEntry = unconfirmedEntry(previousEntry.imageId(),
+                                              unconfirmedNameTagId,
+                                              previousEntry.region(),
+                                              previousEntry.rejectedFaceTagList());
 
     if (newEntry == previousEntry)
     {
@@ -335,8 +338,10 @@ FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face,
      * add the suggested face tag to the rejected list.
      */
 
-    if ((face.tagId() != tagId) &&
-        face.isUnconfirmedName())
+    if (
+        (face.tagId() != tagId) &&
+        face.isUnconfirmedName()
+       )
     {
         // Face was suggested but a different tag was chosen
         // so add the suggested face tag to the rejected list.
@@ -741,7 +746,8 @@ QList<int> FaceTagsEditor::getRejectedFaceTagList(const ItemTagPair& pair, const
                 }
                 else
                 {
-                    qCDebug(DIGIKAM_DATABASE_LOG) << "FaceTagsEditor::getRejectedFaceTagList: invalid rejectedFaceTagList" << pair.value(ImageTagPropertyName::faceTagExtendedData());
+                    qCDebug(DIGIKAM_DATABASE_LOG) << "FaceTagsEditor::getRejectedFaceTagList: invalid rejectedFaceTagList"
+                                                  << pair.value(ImageTagPropertyName::faceTagExtendedData());
                 }
             }
         }
@@ -750,16 +756,14 @@ QList<int> FaceTagsEditor::getRejectedFaceTagList(const ItemTagPair& pair, const
     return rejectedFaceTagList;
 }
 
-
 void FaceTagsEditor::removeAllRejectedFaceTags()
 {
     CoreDbOperationGroup group;
     group.setMaximumTime(200);
 
-    DbEngineSqlQuery result = CoreDbAccess().backend()->execQuery(QLatin1String("SELECT imageid from ImageTagProperties where property='") + 
-                                                                                   ImageTagPropertyName::faceTagExtendedData() + 
-                                                                                   QLatin1String("';"));
-
+    DbEngineSqlQuery result = CoreDbAccess().backend()->execQuery(QLatin1String("SELECT imageid from ImageTagProperties where property='") +
+                                                                                ImageTagPropertyName::faceTagExtendedData()                +
+                                                                                QLatin1String("';"));
     while (result.next())
     {
         QList<FaceTagsIface> faces = databaseFaces(result.value(0).toLongLong());
@@ -779,12 +783,11 @@ void FaceTagsEditor::removeAllRejectedFaceTags()
                 // TODO: Save this section for when we add more to faceTagExtendedData.
                 // Add the extended data property again without the rejected face tags
                 // if there is other data
-
-                /*
+/*
                 FaceTagsIface newFace = face;
                 newFace.clearRejectedFaceTagList();
                 addFaceTagExtendedDataProperty(pair, newFace);
-                */
+*/
             }
         }
     }

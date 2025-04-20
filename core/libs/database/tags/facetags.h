@@ -8,6 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2010-2011 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -76,14 +77,16 @@ public:
      * As parentId of -1 signals to look for any tag, a valid parentId will limit the search to direct children
      * of this tag. parentId of 0 means top-level tag.
      */
-    static int            tagForPerson(const QString& name, int parentId = -1, const QString& fullName = QString());
+    static int            tagForPerson(const QString& name, int parentId = -1,
+                                       const QString& fullName = QString());
 
     /**
      * First, looks for the given person name in person tags, and returns an ID.
      * If not, creates a new tag.
      * Per default, fullName is the same as name.
      */
-    static int            getOrCreateTagForPerson(const QString& name, int parentId = -1, const QString& fullName = QString());
+    static int            getOrCreateTagForPerson(const QString& name, int parentId = -1,
+                                                  const QString& fullName = QString());
 
     /**
      * Ensure that the given tag is a person tag. If not, it will be converted.

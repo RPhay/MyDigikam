@@ -210,7 +210,7 @@ public:
 
     static const QLatin1Char listSeparator;
     static const QLatin1Char valueSeparator;
-    static const float faceThumbnailResizeFactor;
+    static const float       faceThumbnailResizeFactor;
 
 protected:
 
@@ -219,7 +219,6 @@ protected:
     int         m_tagId   = 0;
     TagRegion   m_region;
     QList<int>  m_rejectedFaceTagList;
-
 };
 
 DIGIKAM_DATABASE_EXPORT QDebug operator<<(QDebug dbg, const FaceTagsIface& f);

@@ -132,8 +132,10 @@ public:
      * Returns the entry that would be added if the given face is autodetected.
      * If tagId is -1, the unknown person will be taken.
      */
-    static FaceTagsIface unconfirmedEntry(qlonglong imageId, int tagId, const TagRegion& region, const QList<int>& rejectedFaceTagList);
-    static FaceTagsIface unknownPersonEntry(qlonglong imageId, const TagRegion& region, const QList<int>& rejectedFaceTagList);
+    static FaceTagsIface unconfirmedEntry(qlonglong imageId, int tagId, const TagRegion& region,
+                                          const QList<int>& rejectedFaceTagList);
+    static FaceTagsIface unknownPersonEntry(qlonglong imageId, const TagRegion& region,
+                                            const QList<int>& rejectedFaceTagList);
 
     // --- Remove entries ---
 
@@ -187,13 +189,14 @@ public:
 
 protected:
 
-    void addFaceAndTag(ItemTagPair& pair, const FaceTagsIface& face, const QStringList& properties, bool addTag);
+    void addFaceAndTag(ItemTagPair& pair, const FaceTagsIface& face,
+                       const QStringList& properties, bool addTag);
     void removeFaceAndTag(ItemTagPair& pair, const FaceTagsIface& face, bool touchTags);
 
 
     void removeFaceTagExtendedDataProperty(ItemTagPair& pair, const QString& regionString);
     void addFaceTagExtendedDataProperty(ItemTagPair& pair, const FaceTagsIface& face);
-    QList<int> getRejectedFaceTagList(const ItemTagPair& pair, const QString& regionString) const;
+    QList<int> getRejectedFaceTagList(const ItemTagPair& pair, const QString& regionString)     const;
 
     virtual void addNormalTag(qlonglong imageId, int tagId);
     virtual void removeNormalTag(qlonglong imageId, int tagId);
