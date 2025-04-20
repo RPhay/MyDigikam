@@ -193,12 +193,12 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath) const
 
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_TESTS_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_TESTS_LOG) << "MainWindow::detectFaces: cv::Exception:" << e.what();
     }
 
     catch (...)
     {
-        qCWarning(DIGIKAM_TESTS_LOG) << "Default exception from OpenCV";
+        qCWarning(DIGIKAM_TESTS_LOG) << "MainWindow::detectFaces: Default exception from OpenCV";
     }
 
     return faces;

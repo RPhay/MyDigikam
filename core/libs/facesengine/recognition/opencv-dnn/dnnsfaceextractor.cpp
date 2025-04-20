@@ -272,11 +272,11 @@ const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::Mat&
     }
     catch (cv::Exception& e)
     {
-        qCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCritical(DIGIKAM_FACESENGINE_LOG) << "DNNSFaceExtractor::getFaceEmbedding: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "DNNSFaceExtractor::getFaceEmbedding: Default exception from OpenCV";
     }
 
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Finish computing face embedding in "
@@ -370,11 +370,11 @@ const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::UMat
     }
     catch (cv::Exception& e)
     {
-        qCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCritical(DIGIKAM_FACESENGINE_LOG) << "DNNSFaceExtractor::getFaceEmbedding: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "DNNSFaceExtractor::getFaceEmbedding: Default exception from OpenCV";
     }
 
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Finish computing face embedding in "

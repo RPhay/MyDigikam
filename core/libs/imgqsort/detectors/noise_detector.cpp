@@ -60,11 +60,11 @@ NoiseDetector::Mat3D initFiltersHaar()
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "Default exception from OpenCV";
     }
 
     return NoiseDetector::Mat3D();
@@ -126,11 +126,11 @@ float NoiseDetector::detect(const cv::Mat& image) const
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "Default exception from OpenCV";
     }
 
     return 1.0F;
@@ -158,11 +158,11 @@ NoiseDetector::Mat3D NoiseDetector::decompose_by_filter(const cv::Mat& image, co
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "Default exception from OpenCV";
     }
 
     return Mat3D();
@@ -188,11 +188,11 @@ void NoiseDetector::calculate_variance_kurtosis(const Mat3D& channels, cv::Mat& 
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "Default exception from OpenCV";
     }
 }
 
@@ -218,11 +218,11 @@ float NoiseDetector::noise_variance(const cv::Mat& variance, const cv::Mat& kurt
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "Default exception from OpenCV";
     }
 
     return 1.0F;
@@ -246,11 +246,11 @@ cv::Mat NoiseDetector::raw_moment(const NoiseDetector::Mat3D& mat, int order) co
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "Default exception from OpenCV";
     }
 
     return cv::Mat();
@@ -267,11 +267,11 @@ cv::Mat NoiseDetector::pow_mat(const cv::Mat& mat, float order) const
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "Default exception from OpenCV";
     }
 
     return cv::Mat();
@@ -288,11 +288,11 @@ float NoiseDetector::mean_mat(const cv::Mat& mat) const
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "Default exception from OpenCV";
     }
 
     return 1.0F;

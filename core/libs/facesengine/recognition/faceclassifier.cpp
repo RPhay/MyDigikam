@@ -154,7 +154,7 @@ void FaceClassifier::setParameters(const FaceScanSettings& parameters)
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::setParameters: Default exception from OpenCV";
     }
 }
 
@@ -377,7 +377,7 @@ bool FaceClassifier::loadTrainingData()
         }
         catch (...)
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: Default exception from OpenCV";
         }
     }
     while (d->trainingWaiting);

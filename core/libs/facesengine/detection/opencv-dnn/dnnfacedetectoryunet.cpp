@@ -92,13 +92,13 @@ bool DNNFaceDetectorYuNet::loadModels()
         }
         catch (cv::Exception& e)
         {
-            qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+            qCWarning(DIGIKAM_FACESENGINE_LOG) << "DNNFaceDetectorYuNet::loadModels: cv::Exception:" << e.what();
 
             return false;
         }
         catch (...)
         {
-            qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+            qCWarning(DIGIKAM_FACESENGINE_LOG) << "DNNFaceDetectorYuNet::loadModels: Default exception from OpenCV";
 
             return false;
         }
@@ -294,11 +294,11 @@ void DNNFaceDetectorYuNet::setFaceDetectionSize(FaceScanSettings::FaceDetectionS
     }
     catch (const std::exception& e)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::YuNet face size error:" << e.what();
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "DNNFaceDetectorYuNet::setFaceDetectionSize: cv::YuNet face size error:" << e.what();
     }
     catch (...)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "DNNFaceDetectorYuNet::setFaceDetectionSize: Default exception from OpenCV";
     }
 }
 

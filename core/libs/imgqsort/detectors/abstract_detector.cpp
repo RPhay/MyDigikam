@@ -62,11 +62,11 @@ cv::Mat AbstractDetector::prepareForDetection(const DImg& inputImage)
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "AbstractDetector::prepareForDetection: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "AbstractDetector::prepareForDetection: Default exception from OpenCV";
     }
 
     return cv::Mat();

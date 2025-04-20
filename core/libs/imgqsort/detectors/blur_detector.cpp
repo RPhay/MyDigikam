@@ -101,11 +101,11 @@ float BlurDetector::detect(const cv::Mat& image) const
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "BlurDetector::detect: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "BlurDetector::detect: Default exception from OpenCV";
     }
 
     return 0.0F;
@@ -129,11 +129,11 @@ cv::Mat BlurDetector::edgeDetection(const cv::Mat& image) const
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "BlurDetector::edgeDetection: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "BlurDetector::edgeDetection: Default exception from OpenCV";
     }
 
     return cv::Mat();
@@ -168,11 +168,11 @@ cv::Mat BlurDetector::detectDefocusMap(const cv::Mat& edgesMap) const
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "BlurDetector::detectDefocusMap: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "BlurDetector::detectDefocusMap: Default exception from OpenCV";
     }
 
     return cv::Mat();
@@ -217,11 +217,11 @@ cv::Mat BlurDetector::detectMotionBlurMap(const cv::Mat& edgesMap) const
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "BlurDetector::detectMotionBlurMap: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "BlurDetector::detectMotionBlurMap: Default exception from OpenCV";
     }
 
     return cv::Mat();
@@ -271,11 +271,11 @@ bool BlurDetector::isMotionBlur(const cv::Mat& frag) const
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "BlurDetector::isMotionBlur: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "BlurDetector::isMotionBlur: Default exception from OpenCV";
     }
 
     return false;
@@ -344,11 +344,11 @@ cv::Mat BlurDetector::getWeightMap(const cv::Mat& image) const
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "BlurDetector::getWeightMap: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "BlurDetector::getWeightMap: Default exception from OpenCV";
     }
 
     return cv::Mat();
@@ -394,11 +394,11 @@ cv::Mat BlurDetector::detectBackgroundRegion(const cv::Mat& image)    const
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "BlurDetector::detectBackgroundRegion: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "BlurDetector::detectBackgroundRegion: Default exception from OpenCV";
     }
 
     return cv::Mat();

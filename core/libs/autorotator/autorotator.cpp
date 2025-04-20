@@ -53,17 +53,17 @@ bool AutoRotator::loadModel()
 
             model->getNet();
 
-            qCDebug(DIGIKAM_AUTOROTATE_LOG) << "AutoRotate model loaded";
+            qCDebug(DIGIKAM_AUTOROTATE_LOG) << "AutoRotator::loadModel: AutoRotate model loaded";
         }
         catch (cv::Exception& e)
         {
-            qCWarning(DIGIKAM_AUTOROTATE_LOG) << "cv::Exception:" << e.what();
+            qCWarning(DIGIKAM_AUTOROTATE_LOG) << "AutoRotator::loadModel: cv::Exception:" << e.what();
 
             return false;
         }
         catch (...)
         {
-            qCWarning(DIGIKAM_AUTOROTATE_LOG) << "Default exception from OpenCV";
+            qCWarning(DIGIKAM_AUTOROTATE_LOG) << "AutoRotator::loadModel: Default exception from OpenCV";
 
             return false;
         }

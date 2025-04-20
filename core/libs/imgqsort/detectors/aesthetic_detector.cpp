@@ -52,20 +52,20 @@ float AestheticDetector::detect(const cv::Mat& image) const
         }
         else
         {
-            qCCritical(DIGIKAM_DIMG_LOG) << "Cannot load Aesthetic DNN model";
+            qCCritical(DIGIKAM_DETECTOR_LOG) << "Cannot load Aesthetic DNN model";
 
             return (-1.0F);
         }
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_DETECTOR_LOG) << "AestheticDetector::detect: cv::Exception:" << e.what();
 
         return (-1.0F);
     }
     catch (...)
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Default exception from OpenCV";
+        qCWarning(DIGIKAM_DETECTOR_LOG) << "AestheticDetector::detect: Default exception from OpenCV";
 
         return (-1.0F);
     }
@@ -89,13 +89,13 @@ cv::Mat AestheticDetector::preprocess(const cv::Mat& image) const
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_DETECTOR_LOG) << "AestheticDetector::preprocess: cv::Exception:" << e.what();
 
         return cv::Mat();
     }
     catch (...)
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Default exception from OpenCV";
+        qCWarning(DIGIKAM_DETECTOR_LOG) << "AestheticDetector::preprocess: Default exception from OpenCV";
 
         return cv::Mat();
     }
@@ -107,19 +107,19 @@ float AestheticDetector::postProcess(const cv::Mat& modelOutput) const
     {
         cv::Point maxLoc;
         cv::minMaxLoc(modelOutput, nullptr, nullptr, nullptr, &maxLoc);
-        qCDebug(DIGIKAM_DIMG_LOG) << "class : " << maxLoc.x;
+        qCDebug(DIGIKAM_DETECTOR_LOG) << "class : " << maxLoc.x;
 
         return float(maxLoc.x);
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_DETECTOR_LOG) << "AestheticDetector::postProcess: cv::Exception:" << e.what();
 
         return float(cv::Point().x);
     }
     catch (...)
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Default exception from OpenCV";
+        qCWarning(DIGIKAM_DETECTOR_LOG) << "AestheticDetector::postProcess: Default exception from OpenCV";
 
         return float(cv::Point().x);
     }
@@ -145,7 +145,7 @@ bool AestheticDetector::s_loadModel()
 
         if (QFileInfo::exists(nnmodel))
         {
-            qCDebug(DIGIKAM_DIMG_LOG) << "Aesthetic detector model:" << model;
+            qCDebug(DIGIKAM_DETECTOR_LOG) << "Aesthetic detector model:" << model;
 
 #ifdef Q_OS_WIN
 
@@ -169,21 +169,21 @@ bool AestheticDetector::s_loadModel()
         }
         else
         {
-            qCCritical(DIGIKAM_DIMG_LOG) << "Cannot found Aesthetic DNN model" << nnmodel;
-            qCCritical(DIGIKAM_DIMG_LOG) << "Aesthetic detection feature cannot be used!";
+            qCCritical(DIGIKAM_DETECTOR_LOG) << "Cannot found Aesthetic DNN model" << nnmodel;
+            qCCritical(DIGIKAM_DETECTOR_LOG) << "Aesthetic detection feature cannot be used!";
 
             return false;
         }
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_DETECTOR_LOG) << "AestheticDetector::s_loadModel: cv::Exception:" << e.what();
 
         return false;
     }
     catch (...)
     {
-       qCWarning(DIGIKAM_DIMG_LOG) << "Default exception from OpenCV";
+       qCWarning(DIGIKAM_DETECTOR_LOG) << "AestheticDetector::s_loadModel: Default exception from OpenCV";
 
        return false;
     }
@@ -202,11 +202,11 @@ void AestheticDetector::s_unloadModel()
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_DETECTOR_LOG) << "AestheticDetector::s_unloadModel: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Default exception from OpenCV";
+        qCWarning(DIGIKAM_DETECTOR_LOG) << "AestheticDetector::s_unloadModel: Default exception from OpenCV";
     }
 }
 
@@ -220,13 +220,13 @@ bool AestheticDetector::s_isEmptyModel()
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_DETECTOR_LOG) << "AestheticDetector::s_isEmptyModel: cv::Exception:" << e.what();
 
         return true;
     }
     catch (...)
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Default exception from OpenCV";
+        qCWarning(DIGIKAM_DETECTOR_LOG) << "AestheticDetector::s_isEmptyModel: Default exception from OpenCV";
 
         return true;
     }

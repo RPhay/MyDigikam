@@ -98,13 +98,13 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "OpenCVDNNFaceDetector::prepareForDetection: cv::Exception:" << e.what();
 
         return cv::Mat();
     }
     catch (...)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "OpenCVDNNFaceDetector::prepareForDetection: Default exception from OpenCV";
 
         return cv::Mat();
     }
@@ -151,13 +151,13 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage, cv:
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "OpenCVDNNFaceDetector::prepareForDetection: cv::Exception:" << e.what();
 
         return cv::Mat();
     }
     catch (...)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "OpenCVDNNFaceDetector::prepareForDetection: Default exception from OpenCV";
 
         return cv::Mat();
     }
@@ -185,13 +185,13 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QString& inputImagePath
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "OpenCVDNNFaceDetector::prepareForDetection: cv::Exception:" << e.what();
 
         return cv::Mat();
     }
     catch (...)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "OpenCVDNNFaceDetector::prepareForDetection: Default exception from OpenCV";
 
         return cv::Mat();
     }
@@ -230,13 +230,13 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(cv::Mat& cvImage, cv::Size& p
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "OpenCVDNNFaceDetector::prepareForDetection: cv::Exception:" << e.what();
 
         return cv::Mat();
     }
     catch (...)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "OpenCVDNNFaceDetector::prepareForDetection: Default exception from OpenCV";
 
         return cv::Mat();
     }
@@ -268,13 +268,13 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetectionYuNet(cv::Mat& cvImage, cv::Si
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "prepareForDetectionYuNet: cv::Exception:" << e.what();
 
         return cv::Mat();
     }
     catch (...)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "prepareForDetectionYuNet: Default exception from OpenCV";
 
         return cv::Mat();
     }

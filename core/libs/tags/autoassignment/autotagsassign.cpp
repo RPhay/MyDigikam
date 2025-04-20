@@ -92,11 +92,11 @@ cv::Mat AutotagsAssign::prepareForDetection(const DImg& inputImage) const
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::prepareForDetection: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::prepareForDetection: Default exception from OpenCV";
     }
 
     return cvImage;
@@ -141,11 +141,11 @@ cv::Mat AutotagsAssign::prepareForDetection(const QImage& inputImage) const
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::prepareForDetection: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::prepareForDetection: Default exception from OpenCV";
     }
 
     return cvImage;
@@ -173,11 +173,11 @@ cv::Mat AutotagsAssign::prepareForDetection(const QString& inputImagePath) const
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::prepareForDetection: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::prepareForDetection: Default exception from OpenCV";
     }
 
     return cvImage;
@@ -206,11 +206,11 @@ std::vector<cv::Mat> AutotagsAssign::prepareForDetection(const QList<DImg>& inpu
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::prepareForDetection: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::prepareForDetection: Default exception from OpenCV";
     }
 
     return result;
@@ -239,11 +239,11 @@ std::vector<cv::Mat> AutotagsAssign::prepareForDetection(const QList<QString>& i
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::prepareForDetection: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::prepareForDetection: Default exception from OpenCV";
     }
 
     return result;
@@ -265,11 +265,11 @@ QList<QString> AutotagsAssign::generateTagsList(const DImg& image)
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::generateTagsList: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::generateTagsList: Default exception from OpenCV";
     }
 
     return result;
@@ -293,11 +293,11 @@ QList<QString> AutotagsAssign::generateTagsList(const QImage& image)
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::generateTagsList: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::generateTagsList: Default exception from OpenCV";
     }
 
     return result;
@@ -316,11 +316,11 @@ QList<QString> AutotagsAssign::generateTagsList(const QString& imagePath)
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::generateTagsList: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::generateTagsList: Default exception from OpenCV";
     }
 
     return result;
@@ -339,11 +339,11 @@ QList<QList<QString> > AutotagsAssign::generateTagsList(const QList<DImg>& input
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::generateTagsList: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::generateTagsList: Default exception from OpenCV";
     }
 
     return result;
@@ -362,11 +362,11 @@ QList<QList<QString> > AutotagsAssign::generateTagsList(const QList<QString>& in
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::generateTagsList: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_AUTOTAGSENGINE_LOG) << "AutotagsAssign::generateTagsList: Default exception from OpenCV";
     }
 
     return result;

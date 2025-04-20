@@ -98,11 +98,11 @@ int ExposureDetector::count_by_condition(const cv::Mat& image, int minVal, int m
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "ExposureDetector::count_by_condition: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "ExposureDetector::count_by_condition: Default exception from OpenCV";
     }
 
     return 0;

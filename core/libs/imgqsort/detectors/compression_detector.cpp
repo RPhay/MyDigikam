@@ -101,11 +101,11 @@ float CompressionDetector::detect(const cv::Mat& image) const
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "CompressionDetector::detect: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "CompressionDetector::detect: Default exception from OpenCV";
     }
 
     return 1.0F;
@@ -132,11 +132,11 @@ cv::Mat CompressionDetector::checkEdgesBlock(const cv::Mat& gray_image, int bloc
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "CompressionDetector::checkEdgesBlock: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "CompressionDetector::checkEdgesBlock: Default exception from OpenCV";
     }
 
     return cv::Mat();
@@ -161,11 +161,11 @@ cv::Mat CompressionDetector::detectMonoColorRegion(const cv::Mat& image) const
     }
     catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "CompressionDetector::detectMonoColorRegion: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_DETECTOR_LOG) << "CompressionDetector::detectMonoColorRegion: Default exception from OpenCV";
     }
 
     return cv::Mat();

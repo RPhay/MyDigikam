@@ -43,13 +43,13 @@ cv::Mat QtOpenCVImg::argb2bgra(const cv::Mat& mat)
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_QTOPENCVIMG_LOG) << "QtOpenCVImg::argb2bgra: cv::Exception:" << e.what();
 
         return cv::Mat();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_QTOPENCVIMG_LOG) << "QtOpenCVImg::argb2bgra: Default exception from OpenCV";
 
         return cv::Mat();
     }
@@ -104,13 +104,13 @@ cv::Mat QtOpenCVImg::adjustChannelsOrder(const cv::Mat& srcMat, MatColorOrder sr
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_QTOPENCVIMG_LOG) << "QtOpenCVImg::adjustChannelsOrder: cv::Exception:" << e.what();
 
         return cv::Mat();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_QTOPENCVIMG_LOG) << "QtOpenCVImg::adjustChannelsOrder: Default exception from OpenCV";
 
         return cv::Mat();
     }
@@ -306,13 +306,13 @@ cv::Mat QtOpenCVImg::image2Mat(const DImg& img, int requiredMatType, MatColorOrd
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_QTOPENCVIMG_LOG) << "QtOpenCVImg::image2Mat: cv::Exception:" << e.what();
 
         return cv::Mat();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_QTOPENCVIMG_LOG) << "QtOpenCVImg::image2Mat: Default exception from OpenCV";
 
         return cv::Mat();
     }
@@ -501,13 +501,13 @@ cv::Mat QtOpenCVImg::image2Mat(const QImage& img, int requiredMatType, MatColorO
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_QTOPENCVIMG_LOG) << "QtOpenCVImg::image2Mat: cv::Exception:" << e.what();
 
         return cv::Mat();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_QTOPENCVIMG_LOG) << "QtOpenCVImg::image2Mat: Default exception from OpenCV";
 
         return cv::Mat();
     }
@@ -677,13 +677,13 @@ QImage QtOpenCVImg::mat2Image(const cv::Mat& mat, MatColorOrder order, QImage::F
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_QTOPENCVIMG_LOG) << "QtOpenCVImg::mat2Image: cv::Exception:" << e.what();
 
         return QImage();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_QTOPENCVIMG_LOG) << "QtOpenCVImg::mat2Image: Default exception from OpenCV";
 
         return QImage();
     }
@@ -776,13 +776,13 @@ cv::Mat QtOpenCVImg::image2Mat_shared(const QImage& img, MatColorOrder* const or
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_QTOPENCVIMG_LOG) << "QtOpenCVImg::image2Mat_shared: cv::Exception:" << e.what();
 
         return cv::Mat();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_QTOPENCVIMG_LOG) << "QtOpenCVImg::image2Mat_shared: Default exception from OpenCV";
 
         return cv::Mat();
     }
@@ -875,13 +875,13 @@ QImage QtOpenCVImg::mat2Image_shared(const cv::Mat& mat, QImage::Format formatHi
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_QTOPENCVIMG_LOG) << "QtOpenCVImg::mat2Image_shared: cv::Exception:" << e.what();
 
         return QImage();
     }
     catch (...)
     {
-        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        qCCritical(DIGIKAM_QTOPENCVIMG_LOG) << "QtOpenCVImg::mat2Image_shared: Default exception from OpenCV";
 
         return QImage();
     }
