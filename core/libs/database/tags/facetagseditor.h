@@ -183,6 +183,8 @@ public:
     QList<FaceTagsIface> databaseFaces(qlonglong imageId, FaceTagsIface::TypeFlags flags)       const;
     QList<ItemTagPair>   faceItemTagPairs(qlonglong imageid, FaceTagsIface::TypeFlags flags)    const;
 
+    void                 removeAllRejectedFaceTags();
+
 protected:
 
     void addFaceAndTag(ItemTagPair& pair, const FaceTagsIface& face, const QStringList& properties, bool addTag);

@@ -96,7 +96,6 @@ public:
     const QString configMaxSimilarity                   = QLatin1String("maxSimilarity");
     const QString configDuplicatesRestriction           = QLatin1String("duplicatesRestriction");
     const QString configFaceManagement                  = QLatin1String("FaceManagement");
-    const QString configFaceScannedHandling             = QLatin1String("FaceScannedHandling");
     const QString configAutotagsAssignment              = QLatin1String("AutotagsAssignment");
     const QString configImageQualitySorter              = QLatin1String("ImageQualitySorter");
     const QString configQualityScanMode                 = QLatin1String("QualityScanMode");
@@ -123,6 +122,7 @@ public:
     QCheckBox*                cleanSimilarityDb         = nullptr;
     QCheckBox*                retrainAllFaces           = nullptr;
     QCheckBox*                resetFaceDb               = nullptr;
+    QCheckBox*                clearRejectedFaces        = nullptr;
     QCheckBox*                shrinkDatabases           = nullptr;
     QComboBox*                qualityScanMode           = nullptr;
     AutotagsScanWidget*       autotagsWidget            = nullptr;
@@ -138,7 +138,6 @@ public:
     DVBox*                    vbox5                     = nullptr;
     DVBox*                    duplicatesBox             = nullptr;
     DIntRangeBox*             similarityRange           = nullptr;
-    QComboBox*                faceScannedHandling       = nullptr;
     QComboBox*                searchResultRestriction   = nullptr;
     DExpanderBox*             expanderBox               = nullptr;
     AlbumSelectors*           albumSelectors            = nullptr;

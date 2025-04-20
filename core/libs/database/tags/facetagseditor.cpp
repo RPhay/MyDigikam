@@ -20,6 +20,8 @@
 
 #include "coredbaccess.h"
 #include "coredbconstants.h"
+#include "coredbbackend.h"
+#include "dbenginesqlquery.h"
 #include "coredboperationgroup.h"
 #include "iteminfo.h"
 #include "itemtagpair.h"
@@ -403,6 +405,10 @@ void FaceTagsEditor::removeAllFaces(qlonglong imageid)
     QStringList attributes = FaceTagsIface::attributesForFlags(FaceTagsIface::AllTypes);
     const auto pairs       = faceItemTagPairs(imageid, FaceTagsIface::AllTypes);
 
+    // Remove the face tag extended data property because we are removing the face.
+
+    attributes << ImageTagPropertyName::faceTagExtendedData();
+
     for (ItemTagPair pair : pairs)
     {
         for (const QString& attribute : std::as_const(attributes))
@@ -742,6 +748,46 @@ QList<int> FaceTagsEditor::getRejectedFaceTagList(const ItemTagPair& pair, const
     }
 
     return rejectedFaceTagList;
+}
+
+
+void FaceTagsEditor::removeAllRejectedFaceTags()
+{
+    CoreDbOperationGroup group;
+    group.setMaximumTime(200);
+
+    DbEngineSqlQuery result = CoreDbAccess().backend()->execQuery(QLatin1String("SELECT imageid from ImageTagProperties where property='") + 
+                                                                                   ImageTagPropertyName::faceTagExtendedData() + 
+                                                                                   QLatin1String("';"));
+
+    while (result.next())
+    {
+        QList<FaceTagsIface> faces = databaseFaces(result.value(0).toLongLong());
+
+        if (!faces.isEmpty())
+        {
+            for (const FaceTagsIface& face : std::as_const(faces))
+            {
+                if (face.isNull())
+                {
+                    continue;
+                }
+
+                ItemTagPair pair(face.imageId(), face.tagId());
+                removeFaceTagExtendedDataProperty(pair, face.region().toXml());
+
+                // TODO: Save this section for when we add more to faceTagExtendedData.
+                // Add the extended data property again without the rejected face tags
+                // if there is other data
+
+                /*
+                FaceTagsIface newFace = face;
+                newFace.clearRejectedFaceTagList();
+                addFaceTagExtendedDataProperty(pair, newFace);
+                */
+            }
+        }
+    }
 }
 
 } // Namespace Digikam

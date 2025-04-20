@@ -85,6 +85,9 @@ public:
     /// Face detection settings.
     FaceScanSettings                        faceSettings;
 
+    /// clear rejected face matches.
+    bool                                    clearRejectedFaces           = false;
+
     /// Autotags assignment.
     bool                                    autotagsAssignment           = false;
 

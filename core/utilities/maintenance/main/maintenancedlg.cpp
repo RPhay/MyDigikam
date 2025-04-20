@@ -200,29 +200,27 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     // --------------------------------------------------------------------------------------
 
     d->vbox4               = new DVBox;
-    DHBox* const hbox3     = new DHBox(d->vbox4);
-    new QLabel(i18n("Faces data management: "), hbox3);
-    QWidget* const space3  = new QWidget(hbox3);
-    hbox3->setStretchFactor(space3, 10);
-    d->faceScannedHandling = new QComboBox(hbox3);
-    d->faceScannedHandling->addItem(i18nc("@label:listbox", "Scan new images"),           FaceScanSettings::Skip);
-    d->faceScannedHandling->addItem(i18nc("@label:listbox", "Scan all images"),           FaceScanSettings::Rescan);
-    d->faceScannedHandling->addItem(i18nc("@label:listbox", "Recognize faces only"),      FaceScanSettings::RecognizeOnly);
-
     d->retrainAllFaces     = new QCheckBox(d->vbox4);
     d->retrainAllFaces->setText(i18nc("@option:check", "Rebuild all training data"));
     d->retrainAllFaces->setToolTip(i18nc("@info:tooltip",
                                          "This will re-train the face recognizer with tagged faces in your library."));
+
     d->resetFaceDb         = new QCheckBox(d->vbox4);
     d->resetFaceDb->setText(i18nc("@option:check", "Reset and clear all faces and training"));
     d->resetFaceDb->setToolTip(i18nc("@info:tooltip",
                                          "This will clear all detected and tagged faces."));
 
+    d->clearRejectedFaces  = new QCheckBox(d->vbox4);
+    d->clearRejectedFaces->setText(i18nc("@option:check", "Clear rejected face matches"));
+    d->clearRejectedFaces->setToolTip(i18nc("@info:tooltip",
+                                         "This will delete all rejected face matches allowing the "
+                                         "face recognizer to present the suggested matches again."));
+
     d->expanderBox->insertItem(
                                Private::FaceManagement,
                                d->vbox4,
                                QIcon::fromTheme(QLatin1String("edit-image-face-detect")),
-                               i18n("Detect and recognize Faces"),
+                               i18n("Face engine management"),
                                QLatin1String("FaceManagement"),
                                false
                               );
@@ -341,15 +339,8 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     connect(d->metadataSetup, SIGNAL(clicked()),
             this, SLOT(slotMetadataSetup()));
 
-    connect(d->retrainAllFaces, &QCheckBox::toggled,
-            this, [hbox3](bool on)
-        {
-            hbox3->setEnabled(!on);
-        }
-    );
-
     connect(d->resetFaceDb, &QCheckBox::toggled,
-            this, [hbox3, this](bool on)
+            [this] (bool on)
         {
             if (on)
             {
@@ -369,7 +360,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
             }
 
             d->retrainAllFaces->setEnabled(!(Qt::Checked == d->resetFaceDb->checkState()));
-            hbox3->setEnabled(!(Qt::Checked == d->retrainAllFaces->checkState()) && d->retrainAllFaces->isEnabled());
+            d->clearRejectedFaces->setEnabled(!(Qt::Checked == d->resetFaceDb->checkState()));
         }
     );
 

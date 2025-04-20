@@ -45,6 +45,7 @@
 #include "dbcleaner.h"
 #include "facesengine.h"
 #include "autotagsengine.h"
+#include "faceutils.h"
 
 namespace Digikam
 {
@@ -317,10 +318,26 @@ void MaintenanceMngr::stage6()
     {
         try
         {
-            d->settings.faceSettings.source = FaceScanSettings::FaceScanSource::MaintenanceTool;
-            d->facesDetector = new FacesEngine(d->settings.faceSettings);
-            d->facesDetector->setNotificationEnabled(false);
-            d->facesDetector->start();    
+            if (d->settings.clearRejectedFaces && 
+                (d->settings.faceSettings.task != FaceScanSettings::Reset)) // skip if doing full reset because full reset will clear all rejected face tags
+            {
+                // Clear all rejected face tags in the database.
+                
+                FaceUtils().removeAllRejectedFaceTags();
+
+                // because this is a fast, inline operation, call the next stage immediately
+
+                stage7();
+            }
+
+            if ((d->settings.faceSettings.task == FaceScanSettings::Reset) ||
+                (d->settings.faceSettings.task == FaceScanSettings::RetrainAll))
+            {
+                d->settings.faceSettings.source = FaceScanSettings::FaceScanSource::MaintenanceTool;
+                d->facesDetector = new FacesEngine(d->settings.faceSettings);
+                d->facesDetector->setNotificationEnabled(false);
+                d->facesDetector->start();        
+            }
         }
         catch (...)
         {

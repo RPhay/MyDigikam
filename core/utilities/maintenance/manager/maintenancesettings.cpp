@@ -38,7 +38,6 @@ QDebug operator<<(QDebug dbg, const MaintenanceSettings& s)
     dbg.nospace() << "maxSimilarity          : " << s.maxSimilarity                       << Qt::endl;
     dbg.nospace() << "duplicatesRestriction  : " << s.duplicatesRestriction               << Qt::endl;
     dbg.nospace() << "faceManagement         : " << s.faceManagement                      << Qt::endl;
-    dbg.nospace() << "faceScannedHandling    : " << s.faceSettings.alreadyScannedHandling << Qt::endl;
     dbg.nospace() << "AutotagsAssignment     : " << s.autotagsAssignment                  << Qt::endl;
     dbg.nospace() << "qualitySort            : " << s.qualitySort                         << Qt::endl;
     dbg.nospace() << "qualitySettings        : " << s.qualitySettings                     << Qt::endl;

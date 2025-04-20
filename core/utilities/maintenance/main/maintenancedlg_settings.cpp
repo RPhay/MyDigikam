@@ -57,10 +57,11 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.faceSettings.albums                 = prm.albums;
     prm.faceSettings.wholeAlbums            = prm.wholeAlbums;
     prm.faceSettings.useFullCpu             = prm.useMutiCoreCPU;
-    prm.faceSettings.alreadyScannedHandling = (FaceScanSettings::AlreadyScannedHandling)
-                                                  d->faceScannedHandling->itemData(d->faceScannedHandling->currentIndex()).toInt();
+    prm.faceSettings.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::Rescan;
     prm.faceSettings.task                   = d->retrainAllFaces->isChecked() ? FaceScanSettings::RetrainAll
                                                                               : FaceScanSettings::DetectAndRecognize;
+
+    prm.clearRejectedFaces                  = d->clearRejectedFaces->isChecked();
 
     // Overwrite previous task value if reset is checked.
 
@@ -124,19 +125,6 @@ void MaintenanceDlg::readSettings()
         d->searchResultRestriction->setCurrentIndex(restrictions);
 
         d->expanderBox->setChecked(Private::FaceManagement,     group.readEntry(d->configFaceManagement,        prm.faceManagement));
-        int faceHandling = d->faceScannedHandling->findData(group.readEntry(d->configFaceScannedHandling,       (int)prm.faceSettings.alreadyScannedHandling));
-
-        /**
-         * ClearAll isn't a valid value anymore so set it Rescan.
-         * ClearAll is only used by ResetFacesDb in maintenance.
-         */
-
-        if (FaceScanSettings::AlreadyScannedHandling::ClearAll == faceHandling)
-        {
-            faceHandling = FaceScanSettings::AlreadyScannedHandling::Rescan;
-        }
-
-        d->faceScannedHandling->setCurrentIndex(faceHandling);
 
         d->expanderBox->setChecked(Private::AutotagsAssignment, group.readEntry(d->configAutotagsAssignment,    prm.autotagsAssignment));
 
@@ -190,7 +178,6 @@ void MaintenanceDlg::writeSettings()
         group.writeEntry(d->configMaxSimilarity,                prm.maxSimilarity);
         group.writeEntry(d->configDuplicatesRestriction,        (int)prm.duplicatesRestriction);
         group.writeEntry(d->configFaceManagement,               prm.faceManagement);
-        group.writeEntry(d->configFaceScannedHandling,          (int)prm.faceSettings.alreadyScannedHandling);
         group.writeEntry(d->configAutotagsAssignment,           prm.autotagsAssignment);
         group.writeEntry(d->configImageQualitySorter,           prm.qualitySort);
 
@@ -243,7 +230,6 @@ void MaintenanceDlg::slotUseLastSettings(bool checked)
         d->searchResultRestriction->setCurrentIndex(restrictions);
 
         d->expanderBox->setChecked(Private::FaceManagement,     prm.faceManagement);
-        d->faceScannedHandling->setCurrentIndex(prm.faceSettings.alreadyScannedHandling);
 
         d->expanderBox->setChecked(Private::AutotagsAssignment, prm.autotagsAssignment);
 
