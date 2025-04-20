@@ -138,20 +138,19 @@ void SharedLoadingTask::execute()
         {
             if ((cachedImg = cache->retrieveImage(key)))
             {
-                if (!comparePostProcessing(cachedImg))
+                if      (!comparePostProcessing(cachedImg))
                 {
                     cachedImg = nullptr;
                 }
-
-                if (m_loadingDescription.needCheckRawDecoding())
+                else if (m_loadingDescription.needCheckRawDecoding())
                 {
-                    if (cachedImg->rawDecodingSettings() == m_loadingDescription.rawDecodingSettings)
+                    if (cachedImg->rawDecodingSettings() != m_loadingDescription.rawDecodingSettings)
                     {
-                        break;
+                        cachedImg = nullptr;
                     }
                     else
                     {
-                        cachedImg = nullptr;
+                        break;
                     }
                 }
                 else
