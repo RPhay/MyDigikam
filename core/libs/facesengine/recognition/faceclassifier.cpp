@@ -53,25 +53,29 @@ public:
     FaceScanSettings::FaceRecognitionModel  recognizeModel          = FaceScanSettings::FaceRecognitionModel::SFace;
     IdentityProvider*                       identityProvider        = nullptr;
 
-    // Qt variables
+    /// Qt variables
 
     QReadWriteLock                          trainingLock;
     QFutureWatcher<bool>                    trainingFuture;
     QMutex                                  trainingMutex;
     QMap<int, QList<cv::Mat> >              identityFeatures;
 
-    // OpenCV variables
+    /// OpenCV variables
 
     cv::Ptr<cv::ml::KNearest>               knnClassifier;
     cv::Ptr<cv::ml::SVM>                    svmClassifier;
 
-    // Classifier hyperparameters
+    /**
+     * Classifier hyper-parameters.
+     */
 
-    // KNN hyperparameters
+    /// KNN hyper-parameters
+
     int                                     knn_defaultK            = 8;
     cv::ml::KNearest::Types                 knn_algorithm           = cv::ml::KNearest::Types::BRUTE_FORCE;
 
-    // SVM hyperparameeters
+    /// SVM hyper-parameters
+
     cv::ml::SVM::Types                      svm_type                = cv::ml::SVM::Types::C_SVC;
     cv::ml::SVM::KernelTypes                svm_kernel              = cv::ml::SVM::KernelTypes::RBF;
     double                                  svm_gamma               = 0.38;
@@ -147,12 +151,12 @@ void FaceClassifier::setParameters(const FaceScanSettings& parameters)
 
     catch (const std::exception& e)
     {
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::setParameters: exception: " << e.what();
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::setParameters: exception: " << e.what();
     }
 
     catch (...)
     {
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::setParameters: exception:";
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
     }
 }
 
@@ -177,7 +181,10 @@ cv::Ptr<cv::ml::SVM> FaceClassifier::createSVM()
     cvClassifier->setKernel(d->svm_kernel);
     cvClassifier->setGamma(d->svm_gamma);
     cvClassifier->setC(d->svm_C);
-    cvClassifier->setTermCriteria(cvTermCriteria(cv::TermCriteria::Type::MAX_ITER + cv::TermCriteria::Type::EPS, 500, 1e-6));
+    cvClassifier->setTermCriteria(cvTermCriteria(
+                                                 cv::TermCriteria::Type::MAX_ITER + cv::TermCriteria::Type::EPS,
+                                                 500, 1e-6)
+                                                );
 
     return cvClassifier;
 }
@@ -248,15 +255,15 @@ bool FaceClassifier::loadTrainingData()
 
         d->trainingWaiting            = false;
 
-        // create new knn and svm classifiers.  We'll swap them in at the end
-
-        QMap<int, QList<cv::Mat> > identityFeatures;
-
-        cv::Ptr<cv::ml::KNearest> knn = createKNearest();
-        cv::Ptr<cv::ml::SVM> svm      = createSVM();
-
         try
         {
+            // create new KNN and SVM classifiers.  We'll swap them in at the end
+
+            QMap<int, QList<cv::Mat> > identityFeatures;
+
+            cv::Ptr<cv::ml::KNearest> knn = createKNearest();
+            cv::Ptr<cv::ml::SVM>      svm = createSVM();
+
             // get the training data from the identity provider
 
             cv::Ptr<cv::ml::TrainData> trainData = d->identityProvider->getTrainingData();
@@ -376,7 +383,7 @@ bool FaceClassifier::loadTrainingData()
 
         catch (...)
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: exception:";
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
         }
     }
     while (d->trainingWaiting);

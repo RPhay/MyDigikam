@@ -37,7 +37,6 @@ RecognitionTrainingUpdateQueue::~RecognitionTrainingUpdateQueue()
     {
         qCDebug(DIGIKAM_FACEDB_LOG) << "Remove queue destroyed";
     }
-
 }
 
 void RecognitionTrainingUpdateQueue::push(const QString& hash)

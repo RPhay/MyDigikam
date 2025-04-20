@@ -79,7 +79,7 @@ double DNNFaceExtractorBase::L2squareNormDistance(const std::vector<float>& v1,
 
     for (size_t i = 0 ; i < v1.size() ; ++i)
     {
-        sqrDistance += pow((v1[i] / normV1 - v2[i] / normV2), 2);
+        sqrDistance += pow((v1[i] / (normV1 - v2[i]) / normV2), 2);
     }
 
     return sqrDistance;

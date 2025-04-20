@@ -184,7 +184,6 @@ const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::Mat&
 
     try
     {
-
         // Resize the thumbnail if necessary to match SFace detection.
         // SFace wants 112x112px images. Resize so 112 is the smallest dimension.
 
@@ -281,7 +280,7 @@ const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::Mat&
 
     catch (...)
     {
-        qCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception: unknown error";
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
     }
 
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Finish computing face embedding in "
@@ -381,7 +380,7 @@ const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::UMat
 
     catch (...)
     {
-        qCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception: unknown error";
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
     }
 
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Finish computing face embedding in "
