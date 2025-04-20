@@ -70,28 +70,45 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
         return cv::Mat();
     }
 
-    cv::Mat cvImage;
-    int type               = (inputImage.sixteenBit() ? CV_16UC4 : CV_8UC4);
-    cv::Mat cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
-
-    // DImg is always 4 channel. Convert to 3 channel RGB
-
-    cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2RGB);
-
-    // convert to 8 bit if 16 bit
-
-    if (type == CV_16UC4)
+    try
     {
-        cvImage.convertTo(cvImage, CV_8UC3, 1 / 256.0);
+        cv::Mat cvImage;
+        int type               = (inputImage.sixteenBit() ? CV_16UC4 : CV_8UC4);
+        cv::Mat cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
+
+        // DImg is always 4 channel. Convert to 3 channel RGB
+
+        cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2RGB);
+
+        // convert to 8 bit if 16 bit
+
+        if (type == CV_16UC4)
+        {
+            cvImage.convertTo(cvImage, CV_8UC3, 1 / 256.0);
+        }
+
+        if (DetectorNNModel::DNNDetectorYuNet == m_modelType)
+        {
+            return prepareForDetectionYuNet(cvImage, paddedSize);
+        }
+        else
+        {
+            return prepareForDetection(cvImage, paddedSize);
+        }
     }
 
-    if (DetectorNNModel::DNNDetectorYuNet == m_modelType)
+    catch (cv::Exception& e)
     {
-        return prepareForDetectionYuNet(cvImage, paddedSize);
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+
+        return cv::Mat();
     }
-    else
+
+    catch (...)
     {
-        return prepareForDetection(cvImage, paddedSize);
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+
+        return cv::Mat();
     }
 }
 
@@ -102,107 +119,175 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage, cv:
         return cv::Mat();
     }
 
-    cv::Mat cvImage;
-    cv::Mat cvImageWrapper;
-    QImage qimage(inputImage);
-
-    switch (qimage.format())
+    try
     {
-        case QImage::Format_RGB32:
-        case QImage::Format_ARGB32:
-        case QImage::Format_ARGB32_Premultiplied:
-        {
-            // I think we can ignore premultiplication when converting to grayscale.
+        cv::Mat cvImage;
+        cv::Mat cvImageWrapper;
+        QImage qimage(inputImage);
 
-            cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC4,
-                                     qimage.scanLine(0), qimage.bytesPerLine());
-            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2RGB);
-            break;
+        switch (qimage.format())
+        {
+            case QImage::Format_RGB32:
+            case QImage::Format_ARGB32:
+            case QImage::Format_ARGB32_Premultiplied:
+            {
+                // I think we can ignore premultiplication when converting to grayscale.
+
+                cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC4,
+                                         qimage.scanLine(0), qimage.bytesPerLine());
+                cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2RGB);
+                break;
+            }
+
+            default:
+            {
+                qimage         = qimage.convertToFormat(QImage::Format_RGB888);
+                cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC3,
+                                         qimage.scanLine(0), qimage.bytesPerLine());
+                // cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
+                break;
+            }
         }
 
-        default:
-        {
-            qimage         = qimage.convertToFormat(QImage::Format_RGB888);
-            cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC3,
-                                     qimage.scanLine(0), qimage.bytesPerLine());
-            // cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
-            break;
-        }
+        return prepareForDetection(cvImage, paddedSize);
     }
 
-    return prepareForDetection(cvImage, paddedSize);
+    catch (cv::Exception& e)
+    {
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+
+        return cv::Mat();
+    }
+
+    catch (...)
+    {
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+
+        return cv::Mat();
+    }
 }
 
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QString& inputImagePath, cv::Size& paddedSize) const
 {
-    std::vector<char> buffer;
-    QFile file(inputImagePath);
-    buffer.resize(file.size());
-
-    if (!file.open(QIODevice::ReadOnly))
+    try
     {
+        std::vector<char> buffer;
+        QFile file(inputImagePath);
+        buffer.resize(file.size());
+
+        if (!file.open(QIODevice::ReadOnly))
+        {
+            return cv::Mat();
+        }
+
+        file.read(buffer.data(), file.size());
+        file.close();
+
+        cv::Mat cvImage = cv::imdecode(std::vector<char>(buffer.begin(), buffer.end()), cv::IMREAD_COLOR);
+
+        return prepareForDetection(cvImage, paddedSize);
+    }
+
+    catch (cv::Exception& e)
+    {
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+
         return cv::Mat();
     }
 
-    file.read(buffer.data(), file.size());
-    file.close();
+    catch (...)
+    {
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
 
-    cv::Mat cvImage = cv::imdecode(std::vector<char>(buffer.begin(), buffer.end()), cv::IMREAD_COLOR);
-
-    return prepareForDetection(cvImage, paddedSize);
+        return cv::Mat();
+    }
 }
 
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(cv::Mat& cvImage, cv::Size& paddedSize) const
 {
-    // Resize image before padding to fit in neural net.
+    try
+    {
+        // Resize image before padding to fit in neural net.
 
-    cv::Size inputImageSize = m_inferenceEngine->nnInputSizeRequired();
-    float k                 = qMin(inputImageSize.width  * 1.0F / cvImage.cols,
-                                   inputImageSize.height * 1.0F / cvImage.rows);
+        cv::Size inputImageSize = m_inferenceEngine->nnInputSizeRequired();
+        float k                 = qMin(inputImageSize.width  * 1.0F / cvImage.cols,
+                                       inputImageSize.height * 1.0F / cvImage.rows);
 
-    int newWidth            = (int)(k * cvImage.cols);
-    int newHeight           = (int)(k * cvImage.rows);
-    cv::resize(cvImage, cvImage, cv::Size(newWidth, newHeight));
+        int newWidth            = (int)(k * cvImage.cols);
+        int newHeight           = (int)(k * cvImage.rows);
+        cv::resize(cvImage, cvImage, cv::Size(newWidth, newHeight));
 
-    // Pad with black pixels.
+        // Pad with black pixels.
 
-    int padX                = (inputImageSize.width  - newWidth)  / 2;
-    int padY                = (inputImageSize.height - newHeight) / 2;
+        int padX                = (inputImageSize.width  - newWidth)  / 2;
+        int padY                = (inputImageSize.height - newHeight) / 2;
 
-    cv::Mat imagePadded;
+        cv::Mat imagePadded;
 
-    cv::copyMakeBorder(cvImage, imagePadded,
-                       padY, padY,
-                       padX, padX,
-                       cv::BORDER_CONSTANT,
-                       cv::Scalar(0, 0, 0));
+        cv::copyMakeBorder(cvImage, imagePadded,
+                           padY, padY,
+                           padX, padX,
+                           cv::BORDER_CONSTANT,
+                           cv::Scalar(0, 0, 0));
 
-    paddedSize              = cv::Size(padX, padY);
+        paddedSize              = cv::Size(padX, padY);
 
-    return imagePadded;
+        return imagePadded;
+    }
+
+    catch (cv::Exception& e)
+    {
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+
+        return cv::Mat();
+    }
+
+    catch (...)
+    {
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+
+        return cv::Mat();
+    }
 }
 
 cv::Mat OpenCVDNNFaceDetector::prepareForDetectionYuNet(cv::Mat& cvImage, cv::Size& paddedSize) const
 {
-    cv::Size inputImageSize = m_inferenceEngine->nnInputSizeRequired();
-    float resizeFactor      = 1.0F;
-
-    if (std::max(cvImage.cols, cvImage.rows) > std::max(inputImageSize.width, inputImageSize.height))
+    try
     {
-        // Image should be resized.  YuNet image sizes are much more flexible than SSD and YOLO
-        // so we just need to make sure no one bound exceeds the max. No padding needed.
+        cv::Size inputImageSize = m_inferenceEngine->nnInputSizeRequired();
+        float resizeFactor      = 1.0F;
 
-        resizeFactor            = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvImage.cols),
-                                           static_cast<float>(inputImageSize.height) / static_cast<float>(cvImage.rows));
+        if (std::max(cvImage.cols, cvImage.rows) > std::max(inputImageSize.width, inputImageSize.height))
+        {
+            // Image should be resized.  YuNet image sizes are much more flexible than SSD and YOLO
+            // so we just need to make sure no one bound exceeds the max. No padding needed.
 
-        int newWidth            = (int)(resizeFactor * cvImage.cols);
-        int newHeight           = (int)(resizeFactor * cvImage.rows);
-        cv::resize(cvImage, cvImage, cv::Size(newWidth, newHeight));
+            resizeFactor            = std::min(static_cast<float>(inputImageSize.width)  / static_cast<float>(cvImage.cols),
+                                               static_cast<float>(inputImageSize.height) / static_cast<float>(cvImage.rows));
+
+            int newWidth            = (int)(resizeFactor * cvImage.cols);
+            int newHeight           = (int)(resizeFactor * cvImage.rows);
+            cv::resize(cvImage, cvImage, cv::Size(newWidth, newHeight));
+        }
+
+        paddedSize = cv::Size(0, 0); // Special case for YuNet.
+
+        return cvImage;
     }
 
-    paddedSize = cv::Size(0, 0); // Special case for YuNet.
+    catch (cv::Exception& e)
+    {
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
 
-    return cvImage;
+        return cv::Mat();
+    }
+
+    catch (...)
+    {
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+
+        return cv::Mat();
+    }
 }
 
 void OpenCVDNNFaceDetector::setAccuracy(const int accuracy)

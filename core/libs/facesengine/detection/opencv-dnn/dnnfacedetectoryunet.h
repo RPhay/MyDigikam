@@ -48,7 +48,7 @@ protected:
 
     std::vector<cv::String> getOutputsNames() const;
 
-    cv::Mat callModel(const cv::Mat& inputImage);
+    cv::Mat  callModel(const cv::Mat& inputImage);
     cv::UMat callModel(const cv::UMat& inputImage);
 
 private:

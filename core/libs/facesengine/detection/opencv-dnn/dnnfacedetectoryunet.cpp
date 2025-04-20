@@ -154,14 +154,14 @@ cv::Mat DNNFaceDetectorYuNet::callModel(const cv::Mat& inputImage)
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet detected" << faces.rows << "faces in" << timer.elapsed() << "ms";
         }
 
-        catch (const std::exception& ex)
+        catch (const std::exception& e)
         {
-            // ...
+            qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
         }
 
-        catch (const std::string& ex)
+        catch (const std::string& e)
         {
-            // ...
+            //...
         }
 
         catch (...)
@@ -195,7 +195,6 @@ cv::UMat DNNFaceDetectorYuNet::callModel(const cv::UMat& inputImage)
 
         try
         {
-
             // Start the timer so we know how long we're locking for.
 
             timer.start();
@@ -213,14 +212,14 @@ cv::UMat DNNFaceDetectorYuNet::callModel(const cv::UMat& inputImage)
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet detected" << faces.rows << "faces in" << timer.elapsed() << "ms";
         }
 
-        catch (const std::exception& ex)
+        catch (const std::exception& e)
         {
-            // ...
+            qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
         }
 
-        catch (const std::string& ex)
+        catch (const std::string& e)
         {
-            // ...
+            //...
         }
 
         catch (...)
@@ -295,9 +294,15 @@ void DNNFaceDetectorYuNet::setFaceDetectionSize(FaceScanSettings::FaceDetectionS
                                   faceenum2size.at(faceSize)
                                  );
     }
+
     catch (const std::exception& e)
     {
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "YuNet face size error:" << e.what() << '\n';
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::YuNet face size error:" << e.what();
+    }
+
+    catch (...)
+    {
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
     }
 }
 
