@@ -291,11 +291,11 @@ bool AutotagsPipelineObject::loader()
             // send a notification that the file was skipped
 
             notify(MLPipelineNotification::notifySkipped,
-                    package->info.name(),
-                    package->info.relativePath(),
-                    QString(),
-                    0,
-                    package->thumbnailIcon);
+                   package->info.name(),
+                   package->info.relativePath(),
+                   QString(),
+                   0,
+                   package->thumbnailIcon);
 
             // delete the package since it is not needed
 
@@ -348,8 +348,8 @@ bool AutotagsPipelineObject::extractor()
 
         // copy the image to a cv::Mat
 
-        cv::Mat cvImage         = QtOpenCVImg::image2Mat(package->image, 
-                                                         CV_8UC3, 
+        cv::Mat cvImage         = QtOpenCVImg::image2Mat(package->image,
+                                                         CV_8UC3,
                                                          QtOpenCVImg::MatColorOrder::MCO_BGR);
 
         // resize the image if needed.  Only resize if the image is larger than the input size of the detector
@@ -379,10 +379,10 @@ bool AutotagsPipelineObject::extractor()
             int yPad = model->info.imageSize - cvImage.rows;
 
             cv::copyMakeBorder(cvImage, borderImage,
-                                0, yPad,
-                                0, xPad,
-                                cv::BORDER_CONSTANT,
-                                cv::Scalar(0, 0, 0));
+                               0, yPad,
+                               0, xPad,
+                               cv::BORDER_CONSTANT,
+                               cv::Scalar(0, 0, 0));
 
             cvImage = borderImage;
         }

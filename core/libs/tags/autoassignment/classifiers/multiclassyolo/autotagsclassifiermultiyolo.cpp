@@ -53,23 +53,29 @@ void AutotagsClassifierYolo::setParams(YoloVersion version, QSize size)
     if ((yoloVersion == YOLOv5) || (yoloVersion == YOLOv7))
     {
         outputNumprob = 5 + predefinedClasses.size();
-        outputNumbox  = 3 * (imageSize.width() / 8  * imageSize.height() / 8  +
-                             imageSize.width() / 16 * imageSize.height() / 16 +
-                             imageSize.width() / 32 * imageSize.height() / 32);
+        outputNumbox  = 3 * (
+                             (imageSize.width() / 8 ) * (imageSize.height() / 8 ) +
+                             (imageSize.width() / 16) * (imageSize.height() / 16) +
+                             (imageSize.width() / 32) * (imageSize.height() / 32)
+                            );
     }
     if (yoloVersion == YOLOv6)
     {
         outputNumprob = 5 + predefinedClasses.size();
-        outputNumbox  = imageSize.width() / 8  * imageSize.height() / 8  +
-                        imageSize.width() / 16 * imageSize.height() / 16 +
-                        imageSize.width() / 32 * imageSize.height() / 32;
+        outputNumbox  = (
+                         (imageSize.width() / 8 ) * (imageSize.height() / 8 ) +
+                         (imageSize.width() / 16) * (imageSize.height() / 16) +
+                         (imageSize.width() / 32) * (imageSize.height() / 32)
+                        );
     }
     if ((yoloVersion == YOLOv8) || (yoloVersion == YOLOv9) || (yoloVersion == YOLOv11))
     {
         outputNumprob = 4 + predefinedClasses.size();
-        outputNumbox  = imageSize.width() / 8  * imageSize.height() / 8  +
-                        imageSize.width() / 16 * imageSize.height() / 16 +
-                        imageSize.width() / 32 * imageSize.height() / 32;
+        outputNumbox  = (
+                         (imageSize.width() / 8 ) * (imageSize.height() / 8 ) +
+                         (imageSize.width() / 16) * (imageSize.height() / 16) +
+                         (imageSize.width() / 32) * (imageSize.height() / 32)
+                        );
     }
 }
 
@@ -166,8 +172,8 @@ QList<int> AutotagsClassifierYolo::predictMulti(const QList<cv::Mat>& targets)  
         cv::Rect box;
 
         if (
-            (yoloVersion == YOLOv5) || (yoloVersion == YOLOv6) ||
-            (yoloVersion == YOLOv7) || (yoloVersion == YOLOv8) ||
+            (yoloVersion == YOLOv5) || (yoloVersion == YOLOv6 ) ||
+            (yoloVersion == YOLOv7) || (yoloVersion == YOLOv8 ) ||
             (yoloVersion == YOLOv9) || (yoloVersion == YOLOv11)
            )
         {
@@ -191,8 +197,8 @@ QList<int> AutotagsClassifierYolo::predictMulti(const QList<cv::Mat>& targets)  
     }
 
     if (
-        (yoloVersion == YOLOv5) || (yoloVersion == YOLOv6) ||
-        (yoloVersion == YOLOv7) || (yoloVersion == YOLOv8) ||
+        (yoloVersion == YOLOv5) || (yoloVersion == YOLOv6 ) ||
+        (yoloVersion == YOLOv7) || (yoloVersion == YOLOv8 ) ||
         (yoloVersion == YOLOv9) || (yoloVersion == YOLOv11)
        )
     {

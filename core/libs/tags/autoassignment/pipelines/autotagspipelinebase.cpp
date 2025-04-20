@@ -175,8 +175,10 @@ bool AutotagsPipelineBase::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackage
 
     if (nullptr != package)
     {
-        package->size = static_cast<AutotagsPipelinePackageBase*>(package)->image.size().width()  *
-                        static_cast<AutotagsPipelinePackageBase*>(package)->image.size().height() * 4;
+        package->size = (
+                         static_cast<AutotagsPipelinePackageBase*>(package)->image.size().width()  *
+                         static_cast<AutotagsPipelinePackageBase*>(package)->image.size().height() * 4
+                        );
     }
 
     return MLPipelineFoundation::enqueue(thisQueue, package);
