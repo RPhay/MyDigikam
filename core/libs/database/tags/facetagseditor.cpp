@@ -73,7 +73,6 @@ QList<FaceTagsIface> FaceTagsEditor::ignoredFaceTagsIfaces(qlonglong imageId) co
 QList<FaceTagsIface> FaceTagsEditor::databaseFaces(qlonglong imageid, FaceTagsIface::TypeFlags flags) const
 {
     QList<FaceTagsIface> faces;
-    QStringList          rejectedFaceTagsLists;
     QStringList          attributes     = FaceTagsIface::attributesForFlags(flags);
     const auto           pairs          = faceItemTagPairs(imageid, flags);
 
@@ -208,8 +207,8 @@ FaceTagsIface FaceTagsEditor::confirmedEntry(const FaceTagsIface& face, int tagI
     return FaceTagsIface(
                          FaceTagsIface::ConfirmedName,
                          face.imageId(),
-                         (tagId == -1) ? face.tagId() : tagId,
-                         confirmedRegion.isValid() ? confirmedRegion : face.region(),
+                         ((tagId == -1) ? face.tagId() : tagId),
+                         (confirmedRegion.isValid() ? confirmedRegion : face.region()),
                          rejectedFaceTagList
                         );
 }
