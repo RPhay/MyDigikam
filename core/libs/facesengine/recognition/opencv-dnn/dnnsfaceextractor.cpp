@@ -125,14 +125,12 @@ bool DNNSFaceExtractor::loadModels()
             return false;
         }
     }
-
     catch (cv::Exception& e)
     {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
 
         return false;
     }
-
     catch (...)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "SFace cannot find faces engine DNN models";
@@ -272,12 +270,10 @@ const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::Mat&
             }
         }
     }
-
     catch (cv::Exception& e)
     {
         qCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
     }
-
     catch (...)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
@@ -372,12 +368,10 @@ const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::UMat
             }
         }
     }
-
     catch (cv::Exception& e)
     {
         qCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
     }
-
     catch (...)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";

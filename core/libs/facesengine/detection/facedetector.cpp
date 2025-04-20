@@ -152,12 +152,10 @@ QList<QRectF> FaceDetector::detectFaces(const QImage& image, const QSize& origin
 
         return result;
     }
-
     catch (cv::Exception& e)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
     }
-
     catch (...)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
@@ -188,12 +186,10 @@ QList<QRectF> FaceDetector::detectFaces(const DImg& image, const QSize& original
 
         return result;
     }
-
     catch (cv::Exception& e)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
     }
-
     catch (...)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
@@ -216,12 +212,10 @@ QList<QRectF> FaceDetector::detectFaces(const QString& imagePath)
                                                       cvImage.rows - 2 * paddedSize.height));
 
     }
-
     catch (cv::Exception& e)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
     }
-
     catch (...)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";

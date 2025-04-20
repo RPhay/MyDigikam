@@ -304,8 +304,8 @@ void AlbumSelectionTreeView::slotScanForFaces()
 
     try
     {
-        FacesEngine* const tool       = new FacesEngine(settings);
-        tool->start();    
+        FacesEngine* const tool = new FacesEngine(settings);
+        tool->start();
     }
     catch (...)
     {

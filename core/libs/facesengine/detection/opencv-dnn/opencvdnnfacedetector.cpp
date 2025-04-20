@@ -96,14 +96,12 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
             return prepareForDetection(cvImage, paddedSize);
         }
     }
-
     catch (cv::Exception& e)
     {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
 
         return cv::Mat();
     }
-
     catch (...)
     {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
@@ -151,14 +149,12 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage, cv:
 
         return prepareForDetection(cvImage, paddedSize);
     }
-
     catch (cv::Exception& e)
     {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
 
         return cv::Mat();
     }
-
     catch (...)
     {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
@@ -187,14 +183,12 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QString& inputImagePath
 
         return prepareForDetection(cvImage, paddedSize);
     }
-
     catch (cv::Exception& e)
     {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
 
         return cv::Mat();
     }
-
     catch (...)
     {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
@@ -234,14 +228,12 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(cv::Mat& cvImage, cv::Size& p
 
         return imagePadded;
     }
-
     catch (cv::Exception& e)
     {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
 
         return cv::Mat();
     }
-
     catch (...)
     {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
@@ -274,14 +266,12 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetectionYuNet(cv::Mat& cvImage, cv::Si
 
         return cvImage;
     }
-
     catch (cv::Exception& e)
     {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
 
         return cv::Mat();
     }
-
     catch (...)
     {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";

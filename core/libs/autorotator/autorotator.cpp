@@ -55,14 +55,12 @@ bool AutoRotator::loadModel()
 
             qCDebug(DIGIKAM_AUTOROTATE_LOG) << "AutoRotate model loaded";
         }
-
         catch (cv::Exception& e)
         {
             qCWarning(DIGIKAM_AUTOROTATE_LOG) << "cv::Exception:" << e.what();
 
             return false;
         }
-
         catch (...)
         {
             qCWarning(DIGIKAM_AUTOROTATE_LOG) << "Default exception from OpenCV";
@@ -89,8 +87,8 @@ cv::Mat AutoRotator::Preprocess(const DImg& image)
 {
     // load the image to a cvMat
 
-    cv::Mat cvImage = QtOpenCVImg::image2Mat(image, 
-                                             CV_8UC3, 
+    cv::Mat cvImage = QtOpenCVImg::image2Mat(image,
+                                             CV_8UC3,
                                              QtOpenCVImg::MatColorOrder::MCO_BGR);
 
     // resize the image to the correct input size

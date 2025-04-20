@@ -148,12 +148,10 @@ void FaceClassifier::setParameters(const FaceScanSettings& parameters)
             }
         }
     }
-
     catch (const std::exception& e)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::setParameters: exception: " << e.what();
     }
-
     catch (...)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
@@ -365,22 +363,18 @@ bool FaceClassifier::loadTrainingData()
                 qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: no training data available";
             }
         }
-
         catch (cv::Exception& e)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: exception: " << e.what();
         }
-
         catch (const QException& e)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: exception: " << e.what();
         }
-
         catch (const std::exception& e)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: exception: " << e.what();
         }
-
         catch (...)
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
