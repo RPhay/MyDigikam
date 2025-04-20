@@ -379,7 +379,11 @@ void MLPipelineFoundation::slotFinished()
 
 bool MLPipelineFoundation::checkMoreWorkers(int totalItemCount, int currentItemCount, bool useFullCpu)
 {
-    if (useFullCpu && ((totalItemCount + currentItemCount) > 25) && (QThread::idealThreadCount() > 4))
+    if (
+        useFullCpu                                 &&
+        ((totalItemCount + currentItemCount) > 25) &&
+        (QThread::idealThreadCount() > 4)
+       )
     {
         int newInstances = qMin(3, (QThread::idealThreadCount() / 4) - 1);
 
@@ -429,7 +433,7 @@ bool MLPipelineFoundation::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackage
     {
         // check if buffer memory is full
 
-        if ((package->size + usedBufferSize) > maxBufferSize && !cancelled)
+        if ((package->size + usedBufferSize) > maxBufferSize)
         {
             // slow things down, but only if the cancelled flag is false
 
@@ -438,7 +442,10 @@ bool MLPipelineFoundation::enqueue(MLPipelineQueue* thisQueue, MLPipelinePackage
 
         // check for 50% free buffer space
 
-        if ((throttledQueueDepth == thisQueue->maxDepth()) && ((package->size + usedBufferSize) < (maxBufferSize / 2)))
+        if (
+            (throttledQueueDepth == thisQueue->maxDepth()) &&
+            ((package->size + usedBufferSize) < (maxBufferSize / 2))
+           )
         {
             // speed things up
 
@@ -545,7 +552,10 @@ void MLPipelineFoundation::stageEnd(MLPipelineStage thisStage, MLPipelineStage n
 
     // last one out turns off the lights
 
-    if (queues.contains(nextStage) && (performanceProfileList[thisStage].currentThreadCount == 0))
+    if (
+        queues.contains(nextStage) &&
+        (performanceProfileList[thisStage].currentThreadCount == 0)
+       )
     {
         queues[nextStage]->setMaxDepth(queues[nextStage]->maxDepthLimit());
 
