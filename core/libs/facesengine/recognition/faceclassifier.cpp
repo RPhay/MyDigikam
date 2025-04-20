@@ -394,6 +394,7 @@ bool FaceClassifier::loadTrainingData()
 int FaceClassifier::predict(const cv::Mat& target, const QList<int>& exclusionLabelList) const
 {
     int label = UNKNOWN_LABEL_ID;
+    Q_UNUSED(label);
 
     if (!d->ready)
     {
