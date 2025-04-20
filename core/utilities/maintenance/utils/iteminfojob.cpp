@@ -36,6 +36,8 @@ public:
 
     Private() = default;
 
+public:
+
     DBJobsThread* jobThread = nullptr;
 };
 

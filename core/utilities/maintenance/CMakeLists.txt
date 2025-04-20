@@ -30,6 +30,7 @@ set(libmaintenance_SRCS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/dbcleaner/databasetask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/dbcleaner/dbcleaner.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/dbcleaner/dbshrinkdialog.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/dbscan/newitemsfinder.cpp
 

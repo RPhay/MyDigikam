@@ -42,6 +42,8 @@ public:
 
     Private() = default;
 
+public:
+
     QString          objectIdentification;
 
     bool             scanThumbsDb           = false;
@@ -142,7 +144,8 @@ void DatabaseTask::run()
 
                 if (!ThumbsDbAccess().db()->integrityCheck())
                 {
-                    qCWarning(DIGIKAM_DATABASE_LOG) << "Integrity check for thumbnails DB failed after vacuum. Something went wrong.";
+                    qCWarning(DIGIKAM_DATABASE_LOG) << "Integrity check for thumbnails DB failed after vacuum. "
+                                                       "Something went wrong.";
 
                     // Signal that the database was vacuumed but failed the integrity check afterwards.
 
@@ -150,7 +153,8 @@ void DatabaseTask::run()
                 }
                 else
                 {
-                    qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of thumbnails DB. Integrity check after vacuuming was positive.";
+                    qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of thumbnails DB. Integrity check after "
+                                                     "vacuuming was positive.";
 
                     Q_EMIT signalFinishedWithFeedback(true, true);
                 }
@@ -184,7 +188,8 @@ void DatabaseTask::run()
 
             if (!IdentityProvider::instance()->integrityCheck())
             {
-                qCWarning(DIGIKAM_DATABASE_LOG) << "Integrity check for recognition DB failed after vacuum. Something went wrong.";
+                qCWarning(DIGIKAM_DATABASE_LOG) << "Integrity check for recognition DB failed after vacuum. "
+                                                   "Something went wrong.";
 
                 // Signal that the database was vacuumed but failed the integrity check afterwards.
 
@@ -192,7 +197,8 @@ void DatabaseTask::run()
             }
             else
             {
-                qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of recognition DB. Integrity check after vacuuming was positive.";
+                qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of recognition DB. Integrity check after "
+                                                 "vacuuming was positive.";
 
                 Q_EMIT signalFinishedWithFeedback(true, true);
             }
@@ -221,7 +227,8 @@ void DatabaseTask::run()
 
                 if (!SimilarityDbAccess().db()->integrityCheck())
                 {
-                    qCWarning(DIGIKAM_DATABASE_LOG) << "Integrity check for similarity DB failed after vacuum. Something went wrong.";
+                    qCWarning(DIGIKAM_DATABASE_LOG) << "Integrity check for similarity DB failed after vacuum. "
+                                                       "Something went wrong.";
 
                     // Signal that the database was vacuumed but failed the integrity check afterwards.
 
@@ -229,7 +236,8 @@ void DatabaseTask::run()
                 }
                 else
                 {
-                    qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of similarity DB. Integrity check after vacuuming was positive.";
+                    qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of similarity DB. Integrity check after "
+                                                     "vacuuming was positive.";
 
                     Q_EMIT signalFinishedWithFeedback(true, true);
                 }
@@ -362,9 +370,9 @@ void DatabaseTask::run()
                             q.removeQueryItem(QLatin1String("rect"));
                             q.addQueryItem(QLatin1String("rect"), r);
                             url.setQuery(q);
-
-                            //qCDebug(DIGIKAM_GENERAL_LOG) << "URL: " << url.toString();
-
+/*
+                            qCDebug(DIGIKAM_GENERAL_LOG) << "URL: " << url.toString();
+*/
                             // Remove the id that is found by the custom identifier. Finding the id -1 does no harm
 
                             thumbIds.remove(ThumbsDbAccess().db()->findByCustomIdentifier(url.toString()).id);
@@ -485,7 +493,7 @@ void DatabaseTask::run()
     else if (d->mode == Mode::CleanThumbsDb)
     {
         BdEngineBackend::QueryState lastQueryState = BdEngineBackend::QueryState(BdEngineBackend::ConnectionError);
-        (void)lastQueryState; // prevent cppcheck warning.
+        Q_UNUSED(lastQueryState);
 
         // Connect to the database
 

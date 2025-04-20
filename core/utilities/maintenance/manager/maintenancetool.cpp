@@ -41,6 +41,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool          notification = true;
     QElapsedTimer duration;
 };

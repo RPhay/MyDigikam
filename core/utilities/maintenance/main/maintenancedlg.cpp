@@ -171,9 +171,12 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     QWidget* const space4      = new QWidget(d->dupeRestrictionBox);
     d->dupeRestrictionBox->setStretchFactor(space4, 10);
     d->searchResultRestriction = new QComboBox(d->dupeRestrictionBox);
-    d->searchResultRestriction->addItem(i18n("No restriction"),                       HaarIface::DuplicatesSearchRestrictions::None);
-    d->searchResultRestriction->addItem(i18n("Restrict to album of reference image"), HaarIface::DuplicatesSearchRestrictions::SameAlbum);
-    d->searchResultRestriction->addItem(i18n("Exclude album of reference image"),     HaarIface::DuplicatesSearchRestrictions::DifferentAlbum);
+    d->searchResultRestriction->addItem(i18n("No restriction"),
+                                        HaarIface::DuplicatesSearchRestrictions::None);
+    d->searchResultRestriction->addItem(i18n("Restrict to album of reference image"),
+                                        HaarIface::DuplicatesSearchRestrictions::SameAlbum);
+    d->searchResultRestriction->addItem(i18n("Exclude album of reference image"),
+                                        HaarIface::DuplicatesSearchRestrictions::DifferentAlbum);
 
     // Load the last choice from application settings.
 
@@ -282,8 +285,10 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     QWidget* const space5 = new QWidget(hbox21);
     hbox21->setStretchFactor(space5, 10);
     d->syncDirection      = new QComboBox(hbox21);
-    d->syncDirection->addItem(i18n("From database to image metadata"), MetadataSynchronizer::WriteFromDatabaseToFile);
-    d->syncDirection->addItem(i18n("From image metadata to database"), MetadataSynchronizer::ReadFromFileToDatabase);
+    d->syncDirection->addItem(i18n("From database to image metadata"),
+                              MetadataSynchronizer::WriteFromDatabaseToFile);
+    d->syncDirection->addItem(i18n("From image metadata to database"),
+                              MetadataSynchronizer::ReadFromFileToDatabase);
 
     DHBox* const hbox22   = new DHBox(d->vbox2);
     new QLabel(i18n("Check metadata setup panel for details: "), hbox22);
@@ -347,8 +352,10 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
                 int mbResult = QMessageBox(
                                            QMessageBox::Warning,
                                            i18nc("@title: window reset face database", "Warning"),
-                                           i18n("Are you sure you want to delete all confirmed, unconfirmed, and unknown faces? "
-                                                "You’ll need to rescan images and start tagging unknown faces again before any faces can be recognized."),
+                                           i18n("Are you sure you want to delete all confirmed, "
+                                                "unconfirmed, and unknown faces? "
+                                                "You’ll need to rescan images and start tagging "
+                                                "unknown faces again before any faces can be recognized."),
                                            QMessageBox::Ok | QMessageBox::Cancel,
                                            this
                                            ).exec();

@@ -32,6 +32,8 @@ public:
 
     Private() = default;
 
+public:
+
     AlbumList           albumsList;
     AlbumList::Iterator albumIt;
 

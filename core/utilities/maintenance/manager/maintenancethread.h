@@ -51,7 +51,9 @@ public:
     void removeMetadata(const ItemInfoList& items, MetadataRemover::RemoveAction action);
     void generateThumbs(const QStringList& paths);
     void generateFingerprints(const QList<qlonglong>& itemIds, bool rebuildAll);
-    // void generateTags(const QStringList& paths, int modelType, const QStringList& langs);
+/*
+    void generateTags(const QStringList& paths, int modelType, const QStringList& langs);
+*/
     void sortByImageQuality(const QStringList& paths, const ImageQualitySettings& quality);
 
     void computeDatabaseJunk(bool thumbsDb = false, bool facesDb = false, bool similarityDb = false);
@@ -67,30 +69,36 @@ public:
 
 Q_SIGNALS:
 
-    /** Emit when the task has started it's work.
+    /**
+     * Emit when the task has started it's work.
      */
     void signalStarted();
 
-    /** Emit when an item have been processed. QImage can be used to pass item thumbnail processed.
+    /**
+     * Emit when an item have been processed. QImage can be used to pass item thumbnail processed.
      */
     void signalAdvanceList(const ItemInfo&, const QImage&, const QStringList&);
     void signalAdvanceInfo(const ItemInfo&, const QImage&);
     void signalAdvanceImage(const QImage&);
     void signalAdvanceProgress(const ItemInfo&, const QImage&, int);
 
-    /** Emit when an item was processed and on additional information is necessary.
+    /**
+     * Emit when an item was processed and on additional information is necessary.
      */
     void signalAdvance();
 
-    /** Emit when a items list have been fully processed.
+    /**
+     * Emit when a items list have been fully processed.
      */
     void signalCompleted();
 
-    /** Signal to emit to sub-tasks to cancel processing.
+    /**
+     * Signal to emit to sub-tasks to cancel processing.
      */
     void signalCanceled();
 
-    /** Signal to emit junk data for db cleaner.
+    /**
+     * Signal to emit junk data for db cleaner.
      */
     void signalData(const QList<qlonglong>& staleImageIds,
                     const QList<int>& staleThumbIds,
@@ -166,6 +174,8 @@ private:
 
     int getChunkSize(int elementCount);
 */
+
+private:
 
     MaintenanceData* const data = nullptr;
 };

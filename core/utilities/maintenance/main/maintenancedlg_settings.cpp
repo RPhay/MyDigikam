@@ -45,7 +45,7 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.minSimilarity                       = d->similarityRange->minValue();
     prm.maxSimilarity                       = d->similarityRange->maxValue();
     prm.duplicatesRestriction               = (HaarIface::DuplicatesSearchRestrictions)
-                                                  d->searchResultRestriction->itemData(d->searchResultRestriction->currentIndex()).toInt();
+                                              d->searchResultRestriction->itemData(d->searchResultRestriction->currentIndex()).toInt();
 
     prm.faceManagement                      = d->expanderBox->isChecked(Private::FaceManagement);
 
@@ -58,8 +58,8 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.faceSettings.wholeAlbums            = prm.wholeAlbums;
     prm.faceSettings.useFullCpu             = prm.useMutiCoreCPU;
     prm.faceSettings.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::Rescan;
-    prm.faceSettings.task                   = d->retrainAllFaces->isChecked() ? FaceScanSettings::RetrainAll
-                                                                              : FaceScanSettings::DetectAndRecognize;
+    prm.faceSettings.task                   = (d->retrainAllFaces->isChecked() ? FaceScanSettings::RetrainAll
+                                                                               : FaceScanSettings::DetectAndRecognize);
 
     prm.clearRejectedFaces                  = d->clearRejectedFaces->isChecked();
 

@@ -107,7 +107,7 @@ void MaintenanceMngr::setSettings(const MaintenanceSettings& settings)
 
 void MaintenanceMngr::slotToolCompleted(ProgressItem* tool)
 {
-    // At each stage, relevant tool instance is set to zero to prevent redondant call to this slot
+    // NOTE: At each stage, relevant tool instance is set to zero to prevent redondant call to this slot
     // from ProgressManager. This will disable multiple triggering in this method.
     // There is no memory leak. Each tool instance are delete later by ProgressManager.
 
@@ -318,11 +318,15 @@ void MaintenanceMngr::stage6()
     {
         try
         {
-            if (d->settings.clearRejectedFaces && 
-                (d->settings.faceSettings.task != FaceScanSettings::Reset)) // skip if doing full reset because full reset will clear all rejected face tags
+
+            if (
+                d->settings.clearRejectedFaces &&
+                // NOTE: skip if doing full reset because full reset will clear all rejected face tags
+                (d->settings.faceSettings.task != FaceScanSettings::Reset)
+               )
             {
                 // Clear all rejected face tags in the database.
-                
+
                 FaceUtils().removeAllRejectedFaceTags();
 
                 // because this is a fast, inline operation, call the next stage immediately
@@ -330,13 +334,15 @@ void MaintenanceMngr::stage6()
                 stage7();
             }
 
-            if ((d->settings.faceSettings.task == FaceScanSettings::Reset) ||
-                (d->settings.faceSettings.task == FaceScanSettings::RetrainAll))
+            if (
+                (d->settings.faceSettings.task == FaceScanSettings::Reset) ||
+                (d->settings.faceSettings.task == FaceScanSettings::RetrainAll)
+               )
             {
                 d->settings.faceSettings.source = FaceScanSettings::FaceScanSource::MaintenanceTool;
                 d->facesDetector = new FacesEngine(d->settings.faceSettings);
                 d->facesDetector->setNotificationEnabled(false);
-                d->facesDetector->start();        
+                d->facesDetector->start();
             }
         }
         catch (...)
@@ -397,10 +403,11 @@ void MaintenanceMngr::stage9()
         list << d->settings.albums;
         list << d->settings.tags;
 
-        d->metadataSynchronizer = new MetadataSynchronizer(list, MetadataSynchronizer::SyncDirection(d->settings.syncDirection));
+        d->metadataSynchronizer = new MetadataSynchronizer(list,
+                                                           MetadataSynchronizer::SyncDirection(d->settings.syncDirection));
         d->metadataSynchronizer->setNotificationEnabled(false);
 
-        // See Bug #329091 : Multicore CPU support with Exiv2 sound problematic, even with 0.25 release.
+        // See Bug #329091: Multicore CPU support with Exiv2 is problematic, even with 0.25 release.
 
         d->metadataSynchronizer->setUseMultiCoreCPU(false);
         d->metadataSynchronizer->start();

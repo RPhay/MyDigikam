@@ -75,32 +75,4 @@ private:
     Private* const d = nullptr;
 };
 
-// -----------------------------------------------------
-
-class DbShrinkDialog : public QDialog
-{
-    Q_OBJECT
-
-public:
-
-    explicit DbShrinkDialog(QWidget* const parent);
-    ~DbShrinkDialog() override;
-
-    void setActive(const int pos);
-    void setIcon(const int pos, const QIcon& icon);
-
-public Q_SLOTS:
-
-    int exec()        override;
-
-private Q_SLOTS:
-
-    void slotProgressTimerDone();
-
-private:
-
-    class Private;
-    Private* const d = nullptr;
-};
-
 } // namespace Digikam

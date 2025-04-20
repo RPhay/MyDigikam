@@ -53,7 +53,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disabme
+    // Disable
     ItemInfoJob(QObject*) = delete;
 
 private:
