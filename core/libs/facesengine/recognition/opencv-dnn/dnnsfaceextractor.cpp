@@ -56,7 +56,7 @@ public:
 
 DNNSFaceExtractor::DNNSFaceExtractor()
     : DNNFaceExtractorBase(),
-      d(new Private)
+      d                   (new Private)
 {
     // Virtual call in contructor: use dynamic binding.
 
@@ -182,40 +182,41 @@ const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::Mat&
 
     timer.start();
 
-    // Resize the thumbnail if necessary to match SFace detection.
-    // SFace wants 112x112px images. Resize so 112 is the smallest dimension.
-
-    if (std::min(faceImage.cols, faceImage.rows) > 112)
-    {
-        // Image should be resized. YuNet image sizes are much more flexible than SSD and YOLO.
-        // So we just need to make sure no one bound exceeds the max. No padding needed.
-
-        float resizeFactor      = std::min(static_cast<float>(112) / static_cast<float>(faceImage.cols),
-                                           static_cast<float>(112) / static_cast<float>(faceImage.rows));
-
-        int newWidth            = (int)(resizeFactor * faceImage.cols);
-        int newHeight           = (int)(resizeFactor * faceImage.rows);
-        cv::resize(faceImage, paddedFace, cv::Size(newWidth, newHeight));
-    }
-    else
-    {
-        paddedFace = faceImage.clone();
-    }
-
-    // Add a border so there is room to rotate the image during alignment.
-
-    cv::Mat borderFace;
-
-    cv::copyMakeBorder(paddedFace, borderFace,
-                       60, 60,
-                       60, 60,
-                       cv::BORDER_CONSTANT,
-                       cv::Scalar(0, 0, 0));
-
-    paddedFace.release();
-
     try
     {
+
+        // Resize the thumbnail if necessary to match SFace detection.
+        // SFace wants 112x112px images. Resize so 112 is the smallest dimension.
+
+        if (std::min(faceImage.cols, faceImage.rows) > 112)
+        {
+            // Image should be resized. YuNet image sizes are much more flexible than SSD and YOLO.
+            // So we just need to make sure no one bound exceeds the max. No padding needed.
+
+            float resizeFactor      = std::min(static_cast<float>(112) / static_cast<float>(faceImage.cols),
+                                               static_cast<float>(112) / static_cast<float>(faceImage.rows));
+
+            int newWidth            = (int)(resizeFactor * faceImage.cols);
+            int newHeight           = (int)(resizeFactor * faceImage.rows);
+            cv::resize(faceImage, paddedFace, cv::Size(newWidth, newHeight));
+        }
+        else
+        {
+            paddedFace = faceImage.clone();
+        }
+
+        // Add a border so there is room to rotate the image during alignment.
+
+        cv::Mat borderFace;
+
+        cv::copyMakeBorder(paddedFace, borderFace,
+                           60, 60,
+                           60, 60,
+                           cv::BORDER_CONSTANT,
+                           cv::Scalar(0, 0, 0));
+
+        paddedFace.release();
+
         if (
             d->model                        &&
             d->model->modelLoaded           &&
@@ -301,20 +302,20 @@ const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::UMat
 
     timer.start();
 
-    // Add a border so there is room to rotate the image during alignment.
-
-    cv::UMat borderFace;
-
-    cv::copyMakeBorder(faceImage, borderFace,
-                       60, 60,
-                       60, 60,
-                       cv::BORDER_CONSTANT,
-                       cv::Scalar(0, 0, 0));
-
-    paddedFace.release();
-
     try
     {
+        // Add a border so there is room to rotate the image during alignment.
+
+        cv::UMat borderFace;
+
+        cv::copyMakeBorder(faceImage, borderFace,
+                           60, 60,
+                           60, 60,
+                           cv::BORDER_CONSTANT,
+                           cv::Scalar(0, 0, 0));
+
+        paddedFace.release();
+
         if (
             d->model                        &&
             d->model->modelLoaded           &&
