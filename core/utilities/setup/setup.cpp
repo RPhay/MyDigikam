@@ -59,6 +59,8 @@ public:
 
     Private() = default;
 
+public:
+
     DConfigDlgWdgItem*       page_database              = nullptr;
     DConfigDlgWdgItem*       page_collections           = nullptr;
     DConfigDlgWdgItem*       page_albumView             = nullptr;
@@ -403,7 +405,7 @@ bool Setup::execMetadataFilters(QWidget* const parent, int tab)
     widget->setActiveTab(SetupMetadata::Display);
     widget->setActiveSubTab((SetupMetadata::MetadataSubTab)tab);
 
-     return openSetup(setup);
+    return openSetup(setup);
 }
 
 bool Setup::execExifTool(QWidget* const parent)

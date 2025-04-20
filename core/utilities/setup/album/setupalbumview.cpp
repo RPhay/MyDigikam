@@ -57,6 +57,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                useLargeThumbsOriginal          = false;
     bool                useLargeThumbsShowedInfo        = false;
 

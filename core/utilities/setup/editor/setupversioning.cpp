@@ -227,7 +227,7 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
     snapshotHeader->addWidget(snapshotExplanation,     0, 1);
 */
 
-    d->snapshotGB                     = new QGroupBox;//(i18nc("@title:group", "Intermediate Version Snapshots"));
+    d->snapshotGB                     = new QGroupBox;      // Intermediate Version Snapshots
     QGridLayout* const snapshotLayout = new QGridLayout;
 
     QString snapshotWhatsThis = xi18nc("@info:whatsthis",

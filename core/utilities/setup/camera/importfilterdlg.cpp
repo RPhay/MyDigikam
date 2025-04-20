@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     QDialogButtonBox*   buttons             = nullptr;
 
     DTextEdit*          filterName          = nullptr;

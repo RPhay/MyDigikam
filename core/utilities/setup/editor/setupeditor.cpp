@@ -38,6 +38,8 @@ public:
 
     Private() = default;
 
+public:
+
     QTabWidget*       tab        = nullptr;
 
     SetupEditorIface* iface      = nullptr;

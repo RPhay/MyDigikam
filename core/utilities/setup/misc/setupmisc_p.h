@@ -71,6 +71,8 @@ public:
 
     Private() = default;
 
+public:
+
     QTabWidget*               tab                                       = nullptr;
 
     QLabel*                   updateTypeLabel                           = nullptr;

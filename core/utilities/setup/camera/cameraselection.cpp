@@ -55,6 +55,8 @@ public:
 
     Private() = default;
 
+public:
+
     QDialogButtonBox* buttons               = nullptr;
 
     QButtonGroup*     portButtonGroup       = nullptr;
@@ -94,13 +96,13 @@ CameraSelection::CameraSelection(QWidget* const parent)
     const int spacing       = layoutSpacing();
 
 
-    d->buttons              = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->buttons                 = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
-    d->UMSCameraNameActual  = QLatin1String("Directory Browse");   // Don't be i18n!
-    d->UMSCameraNameShown   = i18n("Mounted Camera");
-    d->PTPCameraNameShown   = QLatin1String("USB PTP Class Camera");
-    d->PTPIPCameraNameShown = QLatin1String("PTP/IP Camera");
+    d->UMSCameraNameActual     = QLatin1String("Directory Browse");   // Don't be i18n!
+    d->UMSCameraNameShown      = i18n("Mounted Camera");
+    d->PTPCameraNameShown      = QLatin1String("USB PTP Class Camera");
+    d->PTPIPCameraNameShown    = QLatin1String("PTP/IP Camera");
 
     QWidget* const page        = new QWidget(this);
     QGridLayout* mainBoxLayout = new QGridLayout(page);

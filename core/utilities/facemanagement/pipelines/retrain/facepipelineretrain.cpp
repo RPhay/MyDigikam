@@ -173,7 +173,7 @@ bool FacePipelineRetrain::classifier()
 bool FacePipelineRetrain::writer()
 {
     MLPIPELINE_STAGE_START(QThread::LowPriority, MLPipelineStage::Writer, MLPipelineStage::None);
-    FacePipelinePackageBase* package = nullptr;
+    FacePipelinePackageBase* package   = nullptr;
 
     /* =========================================================================================
      * Pipeline stage specific initialization code

@@ -49,6 +49,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName               = QLatin1String("Collection Settings");
     const QString configLastAddedCollectionPath = QLatin1String("LastAddedCollectionPath");
 

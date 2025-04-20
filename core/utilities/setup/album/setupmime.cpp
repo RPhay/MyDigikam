@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     QLabel*    imageFileFilterLabel = nullptr;
     QLabel*    movieFileFilterLabel = nullptr;
     QLabel*    audioFileFilterLabel = nullptr;
@@ -267,9 +269,11 @@ void SetupMime::applySettings()
     movieFilterString.replace(QLatin1Char(';'), QLatin1Char(' '));
     audioFilterString.replace(QLatin1Char(';'), QLatin1Char(' '));
 
-    if ((d->imageFileFilterEdit->text() != imageFilterString) ||
+    if (
+        (d->imageFileFilterEdit->text() != imageFilterString) ||
         (d->movieFileFilterEdit->text() != movieFilterString) ||
-        (d->audioFileFilterEdit->text() != audioFilterString))
+        (d->audioFileFilterEdit->text() != audioFilterString)
+       )
     {
         CoreDbAccess().db()->setUserFilterSettings(cleanUserFilterString(d->imageFileFilterEdit->text()),
                                                    cleanUserFilterString(d->movieFileFilterEdit->text()),

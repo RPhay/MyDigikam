@@ -111,7 +111,9 @@ public:
     ItemInfo info()                         const;
     QVariant  faceIdentifier()              const;
 
-    /// The combo box or line edit in use, if any.
+    /**
+     * The combo box or line edit in use, if any.
+     */
     AddTagsComboBox* comboBox()             const;
     AddTagsLineEdit* lineEdit()             const;
 

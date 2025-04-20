@@ -52,11 +52,13 @@ public:
 
     Private() = default;
 
-    MarbleConfigView* tab      = nullptr;
-    QWidget* gMapView          = nullptr;
-    QLineEdit* gMapApi         = nullptr;
+public:
 
-    QString oldKey;
+    MarbleConfigView* tab      = nullptr;
+    QWidget*          gMapView = nullptr;
+    QLineEdit*        gMapApi  = nullptr;
+
+    QString           oldKey;
 
 public:
 

@@ -62,7 +62,7 @@ FaceRecognitionBackgroundController::FaceRecognitionBackgroundController()
       d      (new Private)
 {
     bool enabled = ApplicationSettings::instance()->getFaceRecognitionBackgroundScan();
-    
+
     // set the connection to the FaceClassifier
 
     slotSetEnabled(enabled);
@@ -89,7 +89,7 @@ FaceRecognitionBackgroundController::~FaceRecognitionBackgroundController()
 
 FaceRecognitionBackgroundController* FaceRecognitionBackgroundController::instance()
 {
-    return &faceBackgroundRecognitionControllerCreator->object;
+    return (&faceBackgroundRecognitionControllerCreator->object);
 }
 
 void FaceRecognitionBackgroundController::slotSetEnabled(bool enabled)
@@ -115,32 +115,32 @@ bool FaceRecognitionBackgroundController::slotRescan()
         d->runAgain = true;
         return false;
     }
-    
+
     d->settings.readFromConfig();
-    
+
     // the background process is recognizing faces only
 
-    d->settings.task = FaceScanSettings::RecognizeMarkedFaces;
+    d->settings.task                   = FaceScanSettings::RecognizeMarkedFaces;
     d->settings.alreadyScannedHandling = FaceScanSettings::RecognizeOnly;
 
     // use only a single thread to avoid overloading the CPU
 
-    d->settings.useFullCpu = false;
+    d->settings.useFullCpu             = false;
 
     // scan all albums
 
-    d->settings.wholeAlbums = true;
-    d->settings.albums = AlbumManager::instance()->allPAlbums();
+    d->settings.wholeAlbums            = true;
+    d->settings.albums                 = AlbumManager::instance()->allPAlbums();
 
     d->settings.infos.clear();
 
     // set the thread priority to idle to avoid slowing down the UI
 
-    d->settings.workerThreadPriority = QThread::IdlePriority;
+    d->settings.workerThreadPriority   = QThread::IdlePriority;
 
     // set the source to background recognition
 
-    d->settings.source = FaceScanSettings::BackgroundRecognition;
+    d->settings.source                 = FaceScanSettings::BackgroundRecognition;
 
     // don't run the first time this function is called
     // this is to avoid running the scan when the application starts
@@ -160,40 +160,44 @@ bool FaceRecognitionBackgroundController::slotRescan()
         // create the faces engine
 
         d->facesEngine = new FacesEngine(d->settings, nullptr);
-        
+
         // connect signals and slots
 
         connect(d->facesEngine, &FacesEngine::signalComplete,
                 this, &FaceRecognitionBackgroundController::slotScanDone);
 
-        // connect(facesDetector, SIGNAL(signalComplete()),
-        //         d->parentInstance, SLOT(slotScanComplete()));
-    
-        // connect(facesDetector, SIGNAL(signalCanceled()),
-        //         d->parentInstance, SLOT(slotScanComplete()));
-    
-        // connect(facesDetector, SIGNAL(signalScanNotification(QString,int)),
-        //         d->parentInstance, SIGNAL(signalNotificationError(QString,int)));
-    
+/*
+        connect(facesDetector, SIGNAL(signalComplete()),
+                d->parentInstance, SLOT(slotScanComplete()));
+
+        connect(facesDetector, SIGNAL(signalCanceled()),
+                d->parentInstance, SLOT(slotScanComplete()));
+
+        connect(facesDetector, SIGNAL(signalScanNotification(QString,int)),
+                d->parentInstance, SIGNAL(signalNotificationError(QString,int)));
+*/
         // start the faces engine
 
         d->facesEngine->start();
 
         return true;
     }
+
     catch(const QException& e)
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceRecognitionBackgroundController::start: exception";
     }
+
     catch(const std::exception& e)
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceRecognitionBackgroundController::start: exception: " << e.what();
     }
+
     catch(...)
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceRecognitionBackgroundController::start: exception";
     }
-    
+
     d->facesEngine = nullptr;
 
     return false;
@@ -234,9 +238,11 @@ void FaceRecognitionBackgroundController::slotScanDone()
 bool FaceRecognitionBackgroundController::waitForDone()
 {
     // wait for the faces engine to finish
+
     while (d->facesEngine)
     {
         // Allow Qt to process events to keep the application responsive
+
         QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
         QThread::msleep(10); // Avoid busy-waiting by adding a small delay
     }

@@ -17,10 +17,12 @@
 namespace Digikam
 {
 
-QStringList cleanUserFilterString(QString filterString,
+QStringList cleanUserFilterString(const QString& filter,
                                   const bool caseSensitive,
                                   const bool useSemicolon)
 {
+    QString filterString = filter;
+
     if (!caseSensitive)
     {
         filterString = filterString.toLower();

@@ -63,9 +63,11 @@ bool FacePipelineReset::start()
         // add the worker threads for this pipeline
 
         addWorker(MLPipelineStage::Finder);
-        // addWorker(MLPipelineStage::Loader);
-        // addWorker(MLPipelineStage::Extractor);
-        // addWorker(MLPipelineStage::Classifier);
+/*
+        addWorker(MLPipelineStage::Loader);
+        addWorker(MLPipelineStage::Extractor);
+        addWorker(MLPipelineStage::Classifier);
+*/
         addWorker(MLPipelineStage::Writer);
     }
 

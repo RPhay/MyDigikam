@@ -48,6 +48,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool         cameraUseFileMetadata      = false;
 
     QCheckBox*   showToolTipsBox            = nullptr;

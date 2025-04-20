@@ -51,6 +51,8 @@ public:
 
     Private() = default;
 
+public:
+
     QPushButton* addCategoryButton  = nullptr;
     QPushButton* delCategoryButton  = nullptr;
     QPushButton* repCategoryButton  = nullptr;

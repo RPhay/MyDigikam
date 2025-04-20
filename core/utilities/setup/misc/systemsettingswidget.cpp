@@ -124,11 +124,11 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #endif
 
-    QLabel* const filesLabel  = new QLabel(i18n("Download required binary data:"), this);
-    d->filesDownloadButton    = new QPushButton(i18n("Open Download Dialog..."), this);
+    QLabel* const filesLabel     = new QLabel(i18n("Download required binary data:"), this);
+    d->filesDownloadButton       = new QPushButton(i18n("Open Download Dialog..."), this);
     d->filesDownloadButton->setIcon(QIcon::fromTheme(QLatin1String("download")));
 
-    d->enableLoggingCheck     = new QCheckBox(i18n("Enable internal debug logging"), this);
+    d->enableLoggingCheck        = new QCheckBox(i18n("Enable internal debug logging"), this);
 
     // Proxy Settings
 
@@ -143,9 +143,9 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
         d->enableOpenCLCheck->hide();
     }
 
-    QLabel* const systemNote  = new QLabel(i18n("<b>Note: All changes to these settings only take effect "
-                                                "after the restart. Some settings are hardware dependent "
-                                                "and may have no effect.</b>"), this);
+    QLabel* const systemNote     = new QLabel(i18n("<b>Note: All changes to these settings only take effect "
+                                                   "after the restart. Some settings are hardware dependent "
+                                                   "and may have no effect.</b>"), this);
     systemNote->setWordWrap(true);
     systemNote->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 

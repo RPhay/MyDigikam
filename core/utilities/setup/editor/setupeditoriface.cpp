@@ -52,6 +52,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName                       = QLatin1String("ImageViewer Settings");
     const QString configUseThemeBackgroundColorEntry    = QLatin1String("UseThemeBackgroundColor");
     const QString configBackgroundColorEntry            = QLatin1String("BackgroundColor");

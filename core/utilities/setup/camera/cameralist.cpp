@@ -56,6 +56,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool               modified = false;
 
     QList<CameraType*> clist;

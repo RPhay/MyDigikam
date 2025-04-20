@@ -37,7 +37,7 @@ class Q_DECL_HIDDEN FaceItem : public RegionFrameItem       // clazy:exclude=cto
 public:
 
     explicit FaceItem(QGraphicsItem* const parent);
-    ~FaceItem() override = default;
+    ~FaceItem() override                                        = default;
 
     void setFace(const FaceTagsIface& face);
     FaceTagsIface face()                                const;

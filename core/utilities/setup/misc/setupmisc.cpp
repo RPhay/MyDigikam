@@ -32,8 +32,8 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     // -- Application Behavior Options --------------------------------------------------------
 
-    QWidget* const behaviourPanel = new QWidget(d->tab);
-    QGridLayout* const layout     = new QGridLayout(behaviourPanel);
+    QWidget* const behaviourPanel     = new QWidget(d->tab);
+    QGridLayout* const layout         = new QGridLayout(behaviourPanel);
 
     DHBox* const albumDateSourceHbox  = new DHBox(behaviourPanel);
     d->albumDateSourceLabel           = new QLabel(i18n("Get album date source:"), albumDateSourceHbox);
@@ -119,9 +119,9 @@ SetupMisc::SetupMisc(QWidget* const parent)
     QGroupBox* const upOptionsGroup = new QGroupBox(i18n("Updates"), behaviourPanel);
     QVBoxLayout* const gLayout5     = new QVBoxLayout();
 
-    DHBox* const updateHbox = new DHBox(upOptionsGroup);
-    d->updateTypeLabel      = new QLabel(i18n("Check for new version:"), updateHbox);
-    d->updateType           = new QComboBox(updateHbox);
+    DHBox* const updateHbox      = new DHBox(upOptionsGroup);
+    d->updateTypeLabel           = new QLabel(i18n("Check for new version:"), updateHbox);
+    d->updateType                = new QComboBox(updateHbox);
     d->updateType->addItem(i18n("Only For Stable Releases"), 0);
     d->updateType->addItem(i18n("Weekly Pre-Releases"),      1);
     d->updateType->setToolTip(i18n("Set this option to configure which kind of new versions must be check for updates.\n"
@@ -129,7 +129,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
                                    "\"Pre-releases\" are proposed weekly to tests quickly new features\n"
                                    "and are not recommended to use in production as bugs can remain."));
 
-    d->updateWithDebug = new QCheckBox(i18n("Use Version With Debug Symbols"), upOptionsGroup);
+    d->updateWithDebug           = new QCheckBox(i18n("Use Version With Debug Symbols"), upOptionsGroup);
     d->updateWithDebug->setWhatsThis(i18n("If this option is enabled, a version including debug symbols will be used for updates.\n"
                                           "This version is more heavy but can help developers to trace dysfunctions in debugger."));
 
@@ -406,8 +406,10 @@ bool SetupMisc::checkSettings()
 {
     // If check for new version use weekly pre-releases, warn end-user.
 
-    if ((d->updateType->currentIndex()                    == 1) &&
-        (ApplicationSettings::instance()->getUpdateType() == 0))
+    if (
+        (d->updateType->currentIndex()                    == 1) &&
+        (ApplicationSettings::instance()->getUpdateType() == 0)
+       )
     {
         d->tab->setCurrentIndex(0);
 
@@ -457,9 +459,12 @@ void SetupMisc::applySettings()
     settings->setStringComparisonType((ApplicationSettings::StringComparisonType)
                                       d->stringComparisonType->itemData(d->stringComparisonType->currentIndex()).toInt());
 
-    metaSettings.useFastScan = d->scanAtStart->isChecked() ? d->useFastScan->isChecked() : false;
+    metaSettings.useFastScan   = d->scanAtStart->isChecked() ? d->useFastScan->isChecked()
+                                                             : false;
+
     metaSettings.albumDateFrom = (MetaEngineSettingsContainer::AlbumDateSource)
                                  d->albumDateSource->itemData(d->albumDateSource->currentIndex()).toInt();
+
     MetaEngineSettings::instance()->setSettings(metaSettings);
 
     for (int i = 0 ; i != UnspecifiedOps ; ++i)

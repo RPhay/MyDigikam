@@ -65,6 +65,8 @@ public:
 
     Private() = default;
 
+public:
+
     QLabel*                     iccFolderLabel          = nullptr;
 
     QCheckBox*                  enableColorManagement   = nullptr;
@@ -205,7 +207,7 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->missingGB                    = new QGroupBox;//(i18n("Missing Profile Behavior"));
+    d->missingGB                    = new QGroupBox;        // Missing Profile Behavior
     QVBoxLayout* const vlayMissing  = new QVBoxLayout(d->missingGB);
 
     QLabel* const  missingIcon      = new QLabel;
@@ -225,13 +227,13 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
     d->defaultSRGBMissing = new QRadioButton(i18n("Assume it is using the sRGB color space (Internet standard)"));
 
     /**
-     * @todo d->defaultSRGBMissing->setWhatsThis( i18n("<p></p>"));
+     * @todo d->defaultSRGBMissing->setWhatsThis(i18n("<p></p>"));
      */
 
     d->defaultSRGBConvert = new QCheckBox(i18n("and convert it to the working color space"));
 
     /**
-     * @todo d->defaultSRGBConvert->setWhatsThis( i18n("<p></p>"));
+     * @todo d->defaultSRGBConvert->setWhatsThis(i18n("<p></p>"));
      */
 
     d->defaultSRGBConvert->setChecked(true);
@@ -244,13 +246,13 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
     d->defaultWSMissing         = new QRadioButton(i18n("Assume it is using the working color space"));
 
     /**
-     * @todo d->defaultWSMissing->setWhatsThis( i18n("<p></p>"));
+     * @todo d->defaultWSMissing->setWhatsThis(i18n("<p></p>"));
      */
 
     d->defaultInputMissing      = new QRadioButton(i18n("Convert it from default input color space to working space"));
 
     /**
-     * @todo d->defaultWSMissing->setWhatsThis( i18n("<p></p>"));
+     * @todo d->defaultWSMissing->setWhatsThis(i18n("<p></p>"));
      */
 
     vlayMissing->addLayout(hboxMP);
@@ -261,7 +263,7 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->rawGB                       = new QGroupBox;//(i18n("Raw File Behavior"));
+    d->rawGB                       = new QGroupBox;         // Raw File Behavior
     QVBoxLayout* const vlayRaw     = new QVBoxLayout(d->rawGB);
 
     QLabel* const rawBehaviorIcon  = new QLabel;
@@ -276,19 +278,19 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
     d->defaultAskRaw   = new QRadioButton(i18n("Ask for the input profile"));
 
     /**
-     * @todo d->defaultAskRaw->setWhatsThis( i18n("<p></p>"));
+     * @todo d->defaultAskRaw->setWhatsThis(i18n("<p></p>"));
      */
 
     d->defaultGuessRaw = new QRadioButton(i18n("Automatic color correction"));
 
     /**
-     * @todo d->defaultGuessRaw->setWhatsThis( i18n("<p></p>"));
+     * @todo d->defaultGuessRaw->setWhatsThis(i18n("<p></p>"));
      */
 
     d->defaultInputRaw = new QRadioButton(i18n("Convert it from the default input profile"));
 
     /**
-     * @todo d->defaultSRGBMissing->setWhatsThis( i18n("<p></p>"));
+     * @todo d->defaultSRGBMissing->setWhatsThis(i18n("<p></p>"));
      */
 
     d->defaultGuessRaw->setChecked(true);
@@ -297,7 +299,6 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
     vlayRaw->addWidget(d->defaultAskRaw);
     vlayRaw->addWidget(d->defaultGuessRaw);
     vlayRaw->addWidget(d->defaultInputRaw);
-
 
     mainLayout->addWidget(colorPolicy);
     mainLayout->addWidget(d->workspaceGB);
@@ -317,16 +318,16 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
     monitorIcon->setPixmap(QIcon::fromTheme(QLatin1String("video-display")).pixmap(32));
     QLabel* const monitorProfiles  = new QLabel(i18n("Monitor profile:"));
 
-    d->monitorProfilesKC     = new IccProfilesComboBox;
+    d->monitorProfilesKC           = new IccProfilesComboBox;
     monitorProfiles->setBuddy(d->monitorProfilesKC);
     d->monitorProfilesKC->setWhatsThis(i18n("<p>Select the color profile for your monitor here.</p>"));
 
-    d->infoMonitorProfiles   = new QPushButton;
+    d->infoMonitorProfiles         = new QPushButton;
     d->infoMonitorProfiles->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
     d->infoMonitorProfiles->setWhatsThis(i18n("<p>You can use this button to get more detailed "
                                               "information about the selected monitor profile.</p>"));
 
-    d->managedView           = new QCheckBox;
+    d->managedView                 = new QCheckBox;
     d->managedView->setText(i18n("Use color managed view in editor"));
     d->managedView->setWhatsThis(i18n("<p>Turn on this option if "
                                       "you want to use your <b>Monitor Color Profile</b> to show your pictures in "
@@ -334,11 +335,11 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
                                       "You can at any time toggle this option from the Editor window. "
                                       "<i>Warning</i>: This can slow down rendering of the image, depending on the speed of your computer.</p>"));
 
-    d->managedPreviews       = new QCheckBox;
+    d->managedPreviews             = new QCheckBox;
     d->managedPreviews->setText(i18n("Use color managed view for previews and thumbnails"));
 
     /**
-     * @todo d->managedPreview->setWhatsThis( i18n("") );
+     * @todo d->managedPreview->setWhatsThis(i18n(""));
      */
 
     gridView->addWidget(monitorIcon,            0, 0);

@@ -13,7 +13,7 @@
  *
  * ============================================================ */
 
- #pragma once
+#pragma once
 
 // Qt includes
 
@@ -29,7 +29,9 @@ namespace Digikam
 class DIGIKAM_GUI_EXPORT FaceRecognitionBackgroundController : public QObject
 {
     Q_OBJECT
+
 public:
+
     static FaceRecognitionBackgroundController* instance();
 
     void stop();
@@ -54,8 +56,6 @@ private:
     Private* const d = nullptr;
 
     friend class FaceRecognitionBackgroundControllerCreator;
-
-
 };
 
 } // namespace Digikam

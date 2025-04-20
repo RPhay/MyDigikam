@@ -239,7 +239,7 @@ void SetupMetadata::slotSidecarReadWriteToggled()
 
 void SetupMetadata::slotSidecarFileNameToggled(bool b)
 {
-    // Show info if sidcar file name for commercial programs was switched on, and only once.
+    // Show info if sidecar file name for commercial programs was switched on, and only once.
 
     if (b && !d->sidecarFileNameShowedInfo)
     {

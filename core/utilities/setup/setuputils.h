@@ -22,7 +22,7 @@
 namespace Digikam
 {
 
-QStringList cleanUserFilterString(QString filterString,
+QStringList cleanUserFilterString(const QString& filter,
                                   const bool caseSensitive = false,
                                   const bool useSemicolon  = false);
 

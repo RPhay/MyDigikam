@@ -53,6 +53,8 @@ public:
 
     Private() = default;
 
+public:
+
     QComboBox*                  metadataType        = nullptr;
     QComboBox*                  operationType       = nullptr;
     QPushButton*                addButton           = nullptr;

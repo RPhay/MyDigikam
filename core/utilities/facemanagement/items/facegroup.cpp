@@ -197,7 +197,7 @@ RegionFrameItem* FaceGroup::closestItem(const QPointF& p, qreal* const manhattan
         if (
             !closestItem             ||
             (distance < minDistance) ||
-            ((distance == 0) && (p - r.center()).manhattanLength() < minCenterDistance)
+            ((distance == 0) && ((p - r.center()).manhattanLength()) < minCenterDistance)
            )
         {
             closestItem = item;
@@ -301,8 +301,10 @@ void FaceGroup::load()
 {
     d->exifRotate = (
                         MetaEngineSettings::instance()->settings().exifRotate            ||
-                        ((d->view->previewItem()->image().detectedFormat() == DImg::RAW) &&
-                         !d->view->previewItem()->image().attribute(QLatin1String("fromRawEmbeddedPreview")).toBool())
+                        (
+                         (d->view->previewItem()->image().detectedFormat() == DImg::RAW) &&
+                         !d->view->previewItem()->image().attribute(QLatin1String("fromRawEmbeddedPreview")).toBool()
+                        )
                     );
 
     if (d->info.isNull())

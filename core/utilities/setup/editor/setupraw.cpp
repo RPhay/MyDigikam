@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName               = QLatin1String("ImageViewer Settings");
     const QString configUseRawImportToolEntry   = QLatin1String("UseRawImportTool");
     const QString configRawImportToolIidEntry   = QLatin1String("RawImportToolIid");
@@ -113,7 +115,7 @@ SetupRaw::SetupRaw(QTabWidget* const tab)
     d->rawImportTool = new QComboBox;
     const auto plugs = DPluginLoader::instance()->allPlugins();
 
-    for (DPlugin* const p : plugs )
+    for (DPlugin* const p : plugs)
     {
         DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
 
@@ -133,18 +135,17 @@ SetupRaw::SetupRaw(QTabWidget* const tab)
 
                 if (raw->getRawProgram().isEmpty())
                 {
-                    QStandardItemModel* const model =
-                        qobject_cast<QStandardItemModel*>(d->rawImportTool->model());
+                    QStandardItemModel* const model = qobject_cast<QStandardItemModel*>(d->rawImportTool->model());
 
-                   if (model)
-                   {
+                    if (model)
+                    {
                         QStandardItem* const item = model->item(d->rawImportTool->count() - 1);
 
                         if (item)
                         {
                             item->setEnabled(false);
                         }
-                   }
+                    }
                 }
             }
         }
@@ -270,11 +271,9 @@ void SetupRaw::readSettings()
         }
     }
 
-    QString iid  = group.readEntry(d->configRawImportToolIidEntry, d->nativeRawImportToolIid);
-    int rawIndex = d->rawImportTool->findData(iid);
-
-    QStandardItemModel* const model =
-        qobject_cast<QStandardItemModel*>(d->rawImportTool->model());
+    QString iid                     = group.readEntry(d->configRawImportToolIidEntry, d->nativeRawImportToolIid);
+    int rawIndex                    = d->rawImportTool->findData(iid);
+    QStandardItemModel* const model = qobject_cast<QStandardItemModel*>(d->rawImportTool->model());
 
     if (model)
     {
@@ -291,7 +290,7 @@ void SetupRaw::readSettings()
 
 void SetupRaw::slotAboutRawImportPlugin()
 {
-    QString iid = d->rawImportTool->itemData(d->rawImportTool->currentIndex()).toString();
+    QString iid      = d->rawImportTool->itemData(d->rawImportTool->currentIndex()).toString();
     const auto plugs = DPluginLoader::instance()->allPlugins();
 
     for (DPlugin* const p : plugs)

@@ -493,8 +493,6 @@ void FilesDownloader::createDownloadInfo()
         d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageObjectDetection);
         d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageImageClassification);
     }
-
-
 }
 
 void FilesDownloader::slotUpdateDownloadInfo()

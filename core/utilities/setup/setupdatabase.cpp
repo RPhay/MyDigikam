@@ -52,6 +52,8 @@ public:
 
     Private() = default;
 
+public:
+
     DatabaseSettingsWidget* databaseWidget  = nullptr;
     QGroupBox*              updateBox       = nullptr;
     QPushButton*            hashesButton    = nullptr;

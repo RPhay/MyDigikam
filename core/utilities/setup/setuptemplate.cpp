@@ -48,6 +48,8 @@ public:
 
     Private() = default;
 
+public:
+
     QPushButton*   addButton    = nullptr;
     QPushButton*   delButton    = nullptr;
     QPushButton*   repButton    = nullptr;

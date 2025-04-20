@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     QDialogButtonBox*               buttons                 = nullptr;
     bool                            create                  = false;
     QLabel*                         topLabel                = nullptr;
@@ -574,8 +576,10 @@ bool NamespaceEditDlg::validifyCheck(QString& errMsg)
                 return false;
             }
 
-            if (!d->alternativeName->text().isEmpty() &&
-                (d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Exif")))
+            if (
+                !d->alternativeName->text().isEmpty() &&
+                (d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Exif"))
+               )
             {
                 errMsg = i18n("EXIF alternative namespace name must start with \"Exif\".");
 
@@ -594,8 +598,10 @@ bool NamespaceEditDlg::validifyCheck(QString& errMsg)
                 return false;
             }
 
-            if (!d->alternativeName->text().isEmpty() &&
-                (d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Iptc")))
+            if (
+                !d->alternativeName->text().isEmpty() &&
+                (d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Iptc"))
+               )
             {
                 errMsg = i18n("IPTC alternative namespace name must start with \"Iptc\".");
 
@@ -614,8 +620,10 @@ bool NamespaceEditDlg::validifyCheck(QString& errMsg)
                 return false;
             }
 
-            if (!d->alternativeName->text().isEmpty() &&
-                (d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Xmp")))
+            if (
+                !d->alternativeName->text().isEmpty() &&
+                (d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Xmp"))
+               )
             {
                 errMsg = i18n("XMP alternative namespace name must start with \"Xmp\".");
 

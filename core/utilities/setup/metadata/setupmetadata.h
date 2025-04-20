@@ -60,8 +60,8 @@ public:
     void setActiveTab(MetadataTab tab);
     void setActiveSubTab(MetadataSubTab tab);
 
-    MetadataTab activeTab() const;
-    MetadataSubTab activeSubTab() const;
+    MetadataTab activeTab()         const;
+    MetadataSubTab activeSubTab()   const;
 
 private:
 

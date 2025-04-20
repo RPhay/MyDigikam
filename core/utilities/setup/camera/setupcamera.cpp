@@ -116,6 +116,8 @@ public:
 
     Private() = default;
 
+public:
+
     int     result = 0;
 
     QString model;
@@ -163,6 +165,8 @@ class Q_DECL_HIDDEN SetupCamera::Private
 public:
 
     Private() = default;
+
+public:
 
     const QString configGroupName                   = QLatin1String("Camera Settings");
     const QString configUseFileMetadata             = QLatin1String("UseFileMetadata");

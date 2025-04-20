@@ -52,7 +52,7 @@ protected:
 
 private:
 
-    FaceDetector    detector;
+    FaceDetector detector;
 
 private:
 

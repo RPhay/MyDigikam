@@ -43,6 +43,8 @@ public:
 
     Private() = default;
 
+public:
+
     QTabWidget*   tab           = nullptr;
 
     DPluginSetup* setupGeneric  = nullptr;
