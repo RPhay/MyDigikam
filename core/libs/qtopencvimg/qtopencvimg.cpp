@@ -293,7 +293,7 @@ cv::Mat QtOpenCVImg::image2Mat(const QImage& img, int requiredMatType, MatColorO
     // Find the closest image format that can be used in image2Mat_shared()
 
     QImage::Format format  = findClosestFormat(img.format());
-    QImage image           = (format == img.format()) ? img : img.convertToFormat(format);
+    QImage image           = ((format == img.format()) ? img : img.convertToFormat(format));
 
     MatColorOrder srcOrder = MCO_INVALID;
     cv::Mat mat0           = image2Mat_shared(image, &srcOrder);
@@ -301,9 +301,9 @@ cv::Mat QtOpenCVImg::image2Mat(const QImage& img, int requiredMatType, MatColorO
     // Adjust mat channels if needed.
 
     cv::Mat mat_adjustCn;
-    const float maxAlpha   = (targetDepth == CV_8U) ? 255
-                                                    : ((targetDepth == CV_16U) ? 65535
-                                                                               : 1.0);
+    const float maxAlpha   = ((targetDepth == CV_8U) ? 255
+                                                     : ((targetDepth == CV_16U) ? 65535
+                                                                                : 1.0));
 
     if (targetChannels == CV_CN_MAX)
     {
@@ -341,7 +341,7 @@ cv::Mat QtOpenCVImg::image2Mat(const QImage& img, int requiredMatType, MatColorO
         {
             if      (mat0.channels() == 1)
             {
-                cv::cvtColor(mat0, mat_adjustCn, (requriedOrder == MCO_BGR) ? CV_GRAY2BGR : CV_GRAY2RGB);
+                cv::cvtColor(mat0, mat_adjustCn, ((requriedOrder == MCO_BGR) ? CV_GRAY2BGR : CV_GRAY2RGB));
             }
             else if (mat0.channels() == 3)
             {
@@ -358,15 +358,15 @@ cv::Mat QtOpenCVImg::image2Mat(const QImage& img, int requiredMatType, MatColorO
                     mat_adjustCn   = cv::Mat(mat0.rows, mat0.cols, CV_MAKE_TYPE(mat0.type(), 3));
                     int ARGB2RGB[] = { 1, 0, 2, 1, 3, 2 };
                     int ARGB2BGR[] = { 1, 2, 2, 1, 3, 0 };
-                    cv::mixChannels(&mat0, 1, &mat_adjustCn, 1, (requriedOrder == MCO_BGR) ? ARGB2BGR : ARGB2RGB, 3);
+                    cv::mixChannels(&mat0, 1, &mat_adjustCn, 1, ((requriedOrder == MCO_BGR) ? ARGB2BGR : ARGB2RGB), 3);
                 }
                 else if (srcOrder == MCO_BGRA)
                 {
-                    cv::cvtColor(mat0, mat_adjustCn, (requriedOrder == MCO_BGR) ? CV_BGRA2BGR : CV_BGRA2RGB);
+                    cv::cvtColor(mat0, mat_adjustCn, ((requriedOrder == MCO_BGR) ? CV_BGRA2BGR : CV_BGRA2RGB));
                 }
                 else    // RGBA
                 {
-                    cv::cvtColor(mat0, mat_adjustCn, (requriedOrder == MCO_BGR) ? CV_RGBA2BGR : CV_RGBA2RGB);
+                    cv::cvtColor(mat0, mat_adjustCn, ((requriedOrder == MCO_BGR) ? CV_RGBA2BGR : CV_RGBA2RGB));
                 }
             }
 
@@ -447,7 +447,7 @@ cv::Mat QtOpenCVImg::image2Mat(const QImage& img, int requiredMatType, MatColorO
     mat_adjustCn.convertTo(
                            mat_adjustDepth,
                            CV_MAKE_TYPE(targetDepth, mat_adjustCn.channels()),
-                           (targetDepth == CV_16U) ? 255.0 : 1 / 255.0
+                           ((targetDepth == CV_16U) ? 255.0 : (1 / 255.0))
                           );
 
     return mat_adjustDepth;
@@ -507,7 +507,7 @@ QImage QtOpenCVImg::mat2Image(const cv::Mat& mat, MatColorOrder order, QImage::F
 
         format = QImage::Format_RGB32;
         cv::Mat mat_tmp;
-        cv::cvtColor(mat, mat_tmp, (order == MCO_BGR) ? CV_BGR2BGRA : CV_RGB2BGRA);
+        cv::cvtColor(mat, mat_tmp, ((order == MCO_BGR) ? CV_BGR2BGRA : CV_RGB2BGRA));
 
 #   if Q_BYTE_ORDER == Q_LITTLE_ENDIAN
 
@@ -547,7 +547,7 @@ QImage QtOpenCVImg::mat2Image(const cv::Mat& mat, MatColorOrder order, QImage::F
 
 #if QT_VERSION >= 0x050200
 
-            format = (order == MCO_RGBA) ? QImage::Format_RGBA8888 : QImage::Format_ARGB32;
+            format = ((order == MCO_RGBA) ? QImage::Format_RGBA8888 : QImage::Format_ARGB32);
 
 #else
 
@@ -594,7 +594,7 @@ QImage QtOpenCVImg::mat2Image(const cv::Mat& mat, MatColorOrder order, QImage::F
         mat_adjustCn.convertTo(
                                mat_adjustDepth,
                                CV_8UC(mat_adjustCn.channels()),
-                               (mat.depth() == CV_16U) ? 1 / 255.0 : 255.0
+                               ((mat.depth() == CV_16U) ? (1 / 255.0) : 255.0)
                               );
     }
 

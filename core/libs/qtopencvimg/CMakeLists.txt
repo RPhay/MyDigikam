@@ -7,6 +7,8 @@
 
 APPLY_COMMON_POLICIES()
 
+kde_enable_exceptions()
+
 set(libqtopencvimg_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/qtopencvimg.cpp
 )

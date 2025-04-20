@@ -86,14 +86,15 @@ public:
      */
     static cv::Mat image2Mat_shared(const QImage& img, MatColorOrder* const order = nullptr);
     static QImage mat2Image_shared(const cv::Mat& mat, QImage::Format formatHint = QImage::Format_Invalid);
+
 private:
 
     // cv::Mat versions
+
     static cv::Mat argb2bgra(const cv::Mat& mat);
     static cv::Mat adjustChannelsOrder(const cv::Mat& srcMat, MatColorOrder srcOrder, MatColorOrder targetOrder);
     static QImage::Format findClosestFormat(QImage::Format formatHint);
     static MatColorOrder getColorOrderOfRGB32Format();
-
 };
 
 } // namespace Digikam
