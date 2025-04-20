@@ -34,23 +34,23 @@ QStringList cleanUserFilterString(const QString& filter,
     {
         separator = QLatin1Char(' ');
         filterString.remove(QLatin1Char('*'));
-        filterString.replace(QLatin1Char(';'), QLatin1Char(' '));
-        filterString.replace(QLatin1String(" ."), QLatin1String(" "));
+        filterString.replace(QLatin1Char(';'),     QLatin1Char(' '));
+        filterString.replace(QLatin1String(" ."),  QLatin1String(" "));
         filterString.replace(QLatin1String(" -."), QLatin1String(" -"));
     }
     else
     {
         separator = QLatin1Char(';');
-        filterString.replace(QLatin1String(";."), QLatin1String(";"));
+        filterString.replace(QLatin1String(";."),  QLatin1String(";"));
         filterString.replace(QLatin1String(";-."), QLatin1String(";-"));
     }
 
     QStringList filterList;
     const auto filters = filterString.split(separator, Qt::SkipEmptyParts);
 
-    for (const QString& filter : filters)
+    for (const QString& flt : filters)
     {
-        filterList << filter.trimmed();
+        filterList << flt.trimmed();
     }
 
     return filterList;
