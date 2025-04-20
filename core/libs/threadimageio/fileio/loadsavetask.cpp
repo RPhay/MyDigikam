@@ -144,13 +144,13 @@ void SharedLoadingTask::execute()
                 }
                 else if (m_loadingDescription.needCheckRawDecoding())
                 {
-                    if (cachedImg->rawDecodingSettings() != m_loadingDescription.rawDecodingSettings)
+                    if (cachedImg->rawDecodingSettings() == m_loadingDescription.rawDecodingSettings)
                     {
-                        cachedImg = nullptr;
+                        break;
                     }
                     else
                     {
-                        break;
+                        cachedImg = nullptr;
                     }
                 }
                 else

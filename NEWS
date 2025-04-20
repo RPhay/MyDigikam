@@ -176,7 +176,7 @@ BUGFIXES:
 157 ==> 502924 - Don't suggest a rejected face match again.
 158 ==> 502962 - Color management inconsistency.
 159 ==> 502986 - MP4 previews not showing, screen remains blank.
-160 ==> 
+160 ==> 503069 - Build failed with : threadimageio/preview/previewtask.cpp:80:58.
 161 ==> 
 162 ==> 
 163 ==> 
