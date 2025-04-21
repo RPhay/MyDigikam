@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-20 01:54+0000\n"
+"POT-Creation-Date: 2025-04-21 01:54+0000\n"
 "PO-Revision-Date: 2025-03-30 23:35+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -3800,7 +3800,7 @@ msgstr "Tipo de sonkanalo"
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
 #: core/utilities/searchwindow/searchfields_createfield.cpp:973
-#: core/utilities/setup/setuptooltip.cpp:263
+#: core/utilities/setup/setuptooltip.cpp:265
 #, kde-format
 msgid "Audio Codec"
 msgstr "Aŭdiokodeko"
@@ -9098,7 +9098,7 @@ msgstr "Uzi Koloran Administradon por Presado"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:294
+#: core/utilities/maintenance/main/maintenancedlg.cpp:297
 #, kde-format
 msgid "Settings..."
 msgstr "Agordoj..."
@@ -10191,7 +10191,7 @@ msgid "Energy function"
 msgstr "Energia funkcio"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:387
-#: core/utilities/setup/setupicc.cpp:436
+#: core/utilities/setup/setupicc.cpp:437
 #, kde-format
 msgid "Advanced Settings"
 msgstr "Plia agordo"
@@ -13733,7 +13733,7 @@ msgstr "&Forigi"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:81
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:89
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:77
-#: core/utilities/setup/album/setupcategory.cpp:94
+#: core/utilities/setup/album/setupcategory.cpp:96
 #, kde-format
 msgid "&Replace"
 msgstr "&Anstataŭigi"
@@ -28644,25 +28644,25 @@ msgstr ""
 "datumbaza formato estas tro lastatempa) Bonvolu uzi la pli freŝan version de "
 "digikam kiun vi uzis antaŭe."
 
-#: core/libs/database/tags/facetags.cpp:418
+#: core/libs/database/tags/facetags.cpp:420
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Homoj"
 
-#: core/libs/database/tags/facetags.cpp:483
+#: core/libs/database/tags/facetags.cpp:485
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Nekonata"
 
-#: core/libs/database/tags/facetags.cpp:505
+#: core/libs/database/tags/facetags.cpp:507
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Nekonfirmita"
 
-#: core/libs/database/tags/facetags.cpp:527
+#: core/libs/database/tags/facetags.cpp:529
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -28764,7 +28764,7 @@ msgstr "Movi Dosierojn"
 
 #: core/libs/database/utils/ifaces/dio.cpp:954
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:435
 #, kde-format
 msgid "Delete"
 msgstr "Forigi"
@@ -34591,21 +34591,18 @@ msgid "Workflow:"
 msgstr "Laborfluo:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:106
-#: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Skani novajn bildojn"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:107
-#: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Skani ĉiujn bildojn"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:108
-#: core/utilities/maintenance/main/maintenancedlg.cpp:210
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
@@ -35010,7 +35007,7 @@ msgid "All Files"
 msgstr "Ĉiuj dosieroj"
 
 #: core/libs/filters/mimefilter.cpp:28
-#: core/utilities/setup/album/setupmime.cpp:89
+#: core/utilities/setup/album/setupmime.cpp:91
 #, kde-format
 msgid "Image Files"
 msgstr "Bildaj dosieroj"
@@ -35076,13 +35073,13 @@ msgid "RAW Files"
 msgstr "RAW Dosieroj"
 
 #: core/libs/filters/mimefilter.cpp:41
-#: core/utilities/setup/album/setupmime.cpp:121
+#: core/utilities/setup/album/setupmime.cpp:123
 #, kde-format
 msgid "Video Files"
 msgstr "Viddosieroj"
 
 #: core/libs/filters/mimefilter.cpp:42
-#: core/utilities/setup/album/setupmime.cpp:156
+#: core/utilities/setup/album/setupmime.cpp:158
 #, kde-format
 msgid "Audio Files"
 msgstr "Sondosieroj"
@@ -42105,19 +42102,19 @@ msgid "If Target File Exists:"
 msgstr "Se Cela Dosiero Ekzistas:"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:67
-#: core/utilities/setup/camera/setupcamera.cpp:326
+#: core/utilities/setup/camera/setupcamera.cpp:330
 #, kde-format
 msgid "Store as a different name"
 msgstr "Konservi je malsama nomo"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:68
-#: core/utilities/setup/camera/setupcamera.cpp:327
+#: core/utilities/setup/camera/setupcamera.cpp:331
 #, kde-format
 msgid "Overwrite automatically"
 msgstr "Anstataŭigi aŭtomate"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:69
-#: core/utilities/setup/camera/setupcamera.cpp:328
+#: core/utilities/setup/camera/setupcamera.cpp:332
 #, kde-format
 msgid "Skip automatically"
 msgstr "Salti aŭtomate"
@@ -43049,7 +43046,7 @@ msgid "Model/View Port of Image Editor Canvas"
 msgstr "Modelo/Vidoporto de Bildredaktila Kanvaso"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:225
-#: core/utilities/maintenance/main/maintenancedlg.cpp:272
+#: core/utilities/maintenance/main/maintenancedlg.cpp:273
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
 #, kde-format
 msgid "Image Quality Scanner"
@@ -44195,7 +44192,7 @@ msgstr "Bilda Informo"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
 #: core/showfoto/setup/showfotosetuptooltip.cpp:119
 #: core/utilities/searchwindow/searchgroup.cpp:152
-#: core/utilities/setup/setuptooltip.cpp:176
+#: core/utilities/setup/setuptooltip.cpp:178
 #, kde-format
 msgid "Photograph Information"
 msgstr "Foto Informoj"
@@ -49524,7 +49521,7 @@ msgstr "&Ornami"
 msgid "Effec&ts"
 msgstr "Efek&toj"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:119
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -49603,13 +49600,13 @@ msgstr ""
 "<qt>Agordoj por Konservado de Bildaj Dosieroj<br/><i>Agordu defaŭltan "
 "agordon uzatan por konservi bildojn</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:172
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Geolokigo"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:173
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -49772,7 +49769,7 @@ msgid "&Show image Format"
 msgstr "&Montri bildoformaton"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:150
-#: core/utilities/setup/camera/setupcamera.cpp:437
+#: core/utilities/setup/camera/setupcamera.cpp:441
 #, kde-format
 msgid "Set this option to show image format over image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri bildformaton super bildeto."
@@ -49783,7 +49780,7 @@ msgid "&Show Geolocation Indicator"
 msgstr "&Montri Geolokigan Indikilon"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:152
-#: core/utilities/setup/camera/setupcamera.cpp:440
+#: core/utilities/setup/camera/setupcamera.cpp:444
 #, kde-format
 msgid "Set this option to indicate if image has geolocation information."
 msgstr "Agordu ĉi tiun opcion por indiki ĉu bildo havas geolokigan informon."
@@ -50045,7 +50042,7 @@ msgid "System"
 msgstr "Sistemo"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:370
-#: core/utilities/setup/misc/setupmisc.cpp:415
+#: core/utilities/setup/misc/setupmisc.cpp:417
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
@@ -50109,7 +50106,7 @@ msgid "Show file name"
 msgstr "Montri dosiernomon"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:95
-#: core/utilities/setup/setuptooltip.cpp:148
+#: core/utilities/setup/setuptooltip.cpp:150
 #, kde-format
 msgid "Set this option to display the image file name."
 msgstr "Agordu ĉi tiun opcion por montri la bildodosiernomon."
@@ -50120,7 +50117,7 @@ msgid "Show file date"
 msgstr "Montri dosierdaton"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:98
-#: core/utilities/setup/setuptooltip.cpp:151
+#: core/utilities/setup/setuptooltip.cpp:153
 #, kde-format
 msgid "Set this option to display the image file date."
 msgstr "Agordu ĉi tiun opcion por montri la bilddosierdaton."
@@ -50131,7 +50128,7 @@ msgid "Show file size"
 msgstr "Montri dosiergrandecon"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:101
-#: core/utilities/setup/setuptooltip.cpp:154
+#: core/utilities/setup/setuptooltip.cpp:156
 #, kde-format
 msgid "Set this option to display the image file size."
 msgstr "Agordu ĉi tiun opcion por montri la grandecon de bilda dosiero."
@@ -50142,7 +50139,7 @@ msgid "Show image type"
 msgstr "Montri bildotipon"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:104
-#: core/utilities/setup/setuptooltip.cpp:157
+#: core/utilities/setup/setuptooltip.cpp:159
 #, kde-format
 msgid "Set this option to display the image type."
 msgstr "Agordu ĉi tiun opcion por montri la bildspecon."
@@ -50153,14 +50150,14 @@ msgid "Show image dimensions"
 msgstr "Montri bildajn dimensiojn"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:107
-#: core/utilities/setup/setuptooltip.cpp:160
+#: core/utilities/setup/setuptooltip.cpp:162
 #, kde-format
 msgid "Set this option to display the image dimensions in pixels."
 msgstr "Agordu ĉi tiun opcion por montri la bildajn dimensiojn en rastrumeroj."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:123
-#: core/utilities/setup/setuptooltip.cpp:180
-#: core/utilities/setup/setuptooltip.cpp:360
+#: core/utilities/setup/setuptooltip.cpp:182
+#: core/utilities/setup/setuptooltip.cpp:362
 #, kde-format
 msgid ""
 "Set this option to display the make and model of the camera with which the "
@@ -50170,15 +50167,15 @@ msgstr ""
 "la bildo estis prenita."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:126
-#: core/utilities/setup/setuptooltip.cpp:183
-#: core/utilities/setup/setuptooltip.cpp:363
+#: core/utilities/setup/setuptooltip.cpp:185
+#: core/utilities/setup/setuptooltip.cpp:365
 #, kde-format
 msgid "Camera lens model"
 msgstr "Fotillenso modelo"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:127
-#: core/utilities/setup/setuptooltip.cpp:184
-#: core/utilities/setup/setuptooltip.cpp:364
+#: core/utilities/setup/setuptooltip.cpp:186
+#: core/utilities/setup/setuptooltip.cpp:366
 #, kde-format
 msgid ""
 "Set this option to display the lens model with which the image was taken."
@@ -50192,15 +50189,15 @@ msgid "Show camera date"
 msgstr "Montri fotilan daton"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:131
-#: core/utilities/setup/setuptooltip.cpp:188
+#: core/utilities/setup/setuptooltip.cpp:190
 #, kde-format
 msgid "Set this option to display the date when the image was taken."
 msgstr ""
 "Agordu ĉi tiun opcion por montri la daton, kiam la bildo estis prenita."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:134
-#: core/utilities/setup/setuptooltip.cpp:191
-#: core/utilities/setup/setuptooltip.cpp:368
+#: core/utilities/setup/setuptooltip.cpp:193
+#: core/utilities/setup/setuptooltip.cpp:370
 #, kde-format
 msgid ""
 "Set this option to display the camera aperture and focal settings used to "
@@ -50210,8 +50207,8 @@ msgstr ""
 "uzatajn por preni la bildon."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:138
-#: core/utilities/setup/setuptooltip.cpp:195
-#: core/utilities/setup/setuptooltip.cpp:372
+#: core/utilities/setup/setuptooltip.cpp:197
+#: core/utilities/setup/setuptooltip.cpp:374
 #, kde-format
 msgid ""
 "Set this option to display the camera exposure and sensitivity used to take "
@@ -50226,7 +50223,7 @@ msgid "Show camera mode and program"
 msgstr "Montri fotilan reĝimon kaj programon"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:142
-#: core/utilities/setup/setuptooltip.cpp:199
+#: core/utilities/setup/setuptooltip.cpp:201
 #, kde-format
 msgid ""
 "Set this option to display the camera mode and program used to take the "
@@ -50241,8 +50238,8 @@ msgid "Show camera flash settings"
 msgstr "Montri fotila fulmo agordojn"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:146
-#: core/utilities/setup/setuptooltip.cpp:203
-#: core/utilities/setup/setuptooltip.cpp:376
+#: core/utilities/setup/setuptooltip.cpp:205
+#: core/utilities/setup/setuptooltip.cpp:378
 #, kde-format
 msgid ""
 "Set this option to display the camera flash settings used to take the image."
@@ -50256,8 +50253,8 @@ msgid "Show camera white balance settings"
 msgstr "Montri agordojn de blankbalanco de fotiloj"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:150
-#: core/utilities/setup/setuptooltip.cpp:207
-#: core/utilities/setup/setuptooltip.cpp:380
+#: core/utilities/setup/setuptooltip.cpp:209
+#: core/utilities/setup/setuptooltip.cpp:382
 #, kde-format
 msgid ""
 "Set this option to display the camera white balance settings used to take "
@@ -51403,14 +51400,14 @@ msgstr "Montri Aspektproporcion"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
 #: core/utilities/searchwindow/searchfields_createfield.cpp:936
-#: core/utilities/setup/setuptooltip.cpp:257
+#: core/utilities/setup/setuptooltip.cpp:259
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Aŭdio-Bitrapideco"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
 #: core/utilities/searchwindow/searchfields_createfield.cpp:954
-#: core/utilities/setup/setuptooltip.cpp:260
+#: core/utilities/setup/setuptooltip.cpp:262
 #, kde-format
 msgid "Audio Channel Type"
 msgstr "Audio-Kana Tipo"
@@ -51431,7 +51428,7 @@ msgid "Frame Rate of Video"
 msgstr "Kadra Frekvenco de Video"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:85
-#: core/utilities/setup/setuptooltip.cpp:272
+#: core/utilities/setup/setuptooltip.cpp:274
 #, kde-format
 msgid "Video Codec"
 msgstr "Video Codec"
@@ -51867,71 +51864,71 @@ msgstr "Redaktado de vizaĝregiono"
 msgid "Manually adding face"
 msgstr "Mane aldonante vizaĝon"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
 #: core/utilities/imageeditor/editor/editorwindow.cpp:576
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "bone"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:166
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr "Konfirmi, ke la elektita persono estas montrita ĉi tie"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "Konfirmi"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "Forigi"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:180
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:205
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "Forigi ĉi tiun vizaĝregionon"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:196
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr "Malmarki ĉi tiun vizaĝon kiel Ignorita"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:520
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:516
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "Kiu estas ĉi tiu?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:569
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:563
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Ignori"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:570
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:564
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Ignori ĉi tiun vizaĝon"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:606
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:598
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Marki ĉi tiun vizaĝon kiel Ignorita"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:612
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:603
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -54818,7 +54815,7 @@ msgstr "Nova Rilato"
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
 #: core/utilities/lighttable/lighttablethumbbar.cpp:245
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:430
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:432
 #, kde-format
 msgid "Edit"
 msgstr "Redakti"
@@ -56347,7 +56344,7 @@ msgid "Show Scale Control"
 msgstr "Montri Skalan Regilon"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:192
-#: core/utilities/setup/setupgeolocation.cpp:132
+#: core/utilities/setup/setupgeolocation.cpp:134
 #, kde-format
 msgid "Google Maps"
 msgstr "Google-Mapoj"
@@ -56475,10 +56472,10 @@ msgid "Edit Geolocation Bookmarks"
 msgstr "Redakti Geolokajn Legosignojn"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:223
-#: core/utilities/setup/album/setupcategory.cpp:93
-#: core/utilities/setup/camera/setupcamera.cpp:270
-#: core/utilities/setup/camera/setupcamera.cpp:392
-#: core/utilities/setup/setuptemplate.cpp:108
+#: core/utilities/setup/album/setupcategory.cpp:95
+#: core/utilities/setup/camera/setupcamera.cpp:274
+#: core/utilities/setup/camera/setupcamera.cpp:396
+#: core/utilities/setup/setuptemplate.cpp:110
 #, kde-format
 msgid "&Remove"
 msgstr "Fo&rigi"
@@ -57613,7 +57610,7 @@ msgstr "kaj poste konverti al laborspaco"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:373
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:472
-#: core/utilities/setup/setupicc.cpp:712
+#: core/utilities/setup/setupicc.cpp:713
 #, kde-format
 msgid "No Profile Available"
 msgstr "Neniu Profilo Disponebla"
@@ -57663,7 +57660,7 @@ msgstr ""
 "ĉi tiun bildon:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:514
-#: core/utilities/setup/setupicc.cpp:714
+#: core/utilities/setup/setupicc.cpp:715
 #, kde-format
 msgid "No Input Profile Available"
 msgstr "Neniu Eniga Profilo Disponebla"
@@ -57715,7 +57712,7 @@ msgid "Profile of the output device to simulate:"
 msgstr "Profilo de la eliga aparato por simuli:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
-#: core/utilities/setup/setupicc.cpp:387
+#: core/utilities/setup/setupicc.cpp:388
 #, kde-format
 msgid ""
 "<p>Select the profile for your output device (usually, your printer). This "
@@ -57751,14 +57748,14 @@ msgid "Highlighting color:"
 msgstr "Emfazkoloro:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:824
+#: core/utilities/setup/setupicc.cpp:825
 #, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Profila Eraro"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:824
+#: core/utilities/setup/setupicc.cpp:825
 #, kde-format
 msgid "No profile is selected."
 msgstr "Neniu profilo estas elektita."
@@ -60341,7 +60338,7 @@ msgid "Show item on right panel"
 msgstr "Montri objekton sur dekstra panelo"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:67
-#: core/utilities/setup/camera/setupcamera.cpp:458
+#: core/utilities/setup/camera/setupcamera.cpp:462
 #, kde-format
 msgid "Open With Default Application"
 msgstr "Malfermi Kun Defaŭlta Apliko"
@@ -60598,93 +60595,103 @@ msgstr "Limigo pri duplikatoj:"
 msgid "No restriction"
 msgstr "Neniu limigo"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:175
+#: core/utilities/maintenance/main/maintenancedlg.cpp:176
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Limigi al albumo de referenca bildo"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:176
+#: core/utilities/maintenance/main/maintenancedlg.cpp:178
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Ekskludi albumon de referenca bildo"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:193
+#: core/utilities/maintenance/main/maintenancedlg.cpp:196
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Trovi Duplikatajn Erojn"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:204
-#, kde-format
-msgid "Faces data management: "
-msgstr "Administrado de datumoj de vizaĝoj:"
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:213
+#: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
 msgctxt "@option:check"
 msgid "Rebuild all training data"
 msgstr "Rekonstruu ĉiujn trejnajn datumojn"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:215
+#: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:217
+#: core/utilities/maintenance/main/maintenancedlg.cpp:212
 #, kde-format
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
 msgstr "Restarigi kaj purigi ĉiujn vizaĝojn kaj trejnadon"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:219
+#: core/utilities/maintenance/main/maintenancedlg.cpp:214
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This will clear all detected and tagged faces."
 msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:225
+#: core/utilities/maintenance/main/maintenancedlg.cpp:217
 #, kde-format
-msgid "Detect and recognize Faces"
-msgstr "Detekti kaj rekoni Vizaĝojn"
+msgctxt "@option:check"
+msgid "Clear rejected face matches"
+msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:248
+#: core/utilities/maintenance/main/maintenancedlg.cpp:219
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"This will delete all rejected face matches allowing the face recognizer to "
+"present the suggested matches again."
+msgstr ""
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:226
+#, fuzzy, kde-format
+#| msgid "Faces data management: "
+msgid "Face engine management"
+msgstr "Administrado de datumoj de vizaĝoj:"
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:249
 #, kde-format
 msgid "Auto-tags Assignment"
 msgstr "Aŭtomat-etikeda Atribuado"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:283
+#: core/utilities/maintenance/main/maintenancedlg.cpp:284
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Sinkroniga Direkto:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:287
+#: core/utilities/maintenance/main/maintenancedlg.cpp:288
 #, kde-format
 msgid "From database to image metadata"
 msgstr "De datumbazo al bildatumoj"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:288
+#: core/utilities/maintenance/main/maintenancedlg.cpp:290
 #, kde-format
 msgid "From image metadata to database"
 msgstr "De bildatumoj ĝis datumbazo"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:291
+#: core/utilities/maintenance/main/maintenancedlg.cpp:294
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Kontroli metadatuman agordpanelon por detaloj:"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:300
+#: core/utilities/maintenance/main/maintenancedlg.cpp:303
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Sinkronigi metadatumojn kaj datumbazon"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:358
+#: core/utilities/maintenance/main/maintenancedlg.cpp:354
 #, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Averto"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:359
+#: core/utilities/maintenance/main/maintenancedlg.cpp:355
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
@@ -60693,7 +60700,7 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:405
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:429
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -60702,12 +60709,12 @@ msgstr ""
 "Ĉiuj operacioj estas faritaj.\n"
 "Daŭro: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:406
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:430
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam Prizorgado"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:107
+#: core/utilities/maintenance/manager/maintenancetool.cpp:109
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -60716,47 +60723,47 @@ msgstr ""
 "Procezo estas farita.\n"
 "Daŭro: %1"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:254
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:285
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:324
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:369
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:123
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:228
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:257
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:288
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:327
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:372
 #, kde-format
 msgid "Clean up the databases : "
 msgstr "Purigi la datumbazojn : "
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:123
 #, kde-format
 msgid "analysing databases"
 msgstr "analizante datumbazojn"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:228
 #, kde-format
 msgid "cleaning core db"
 msgstr "purigado de kerno db"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:254
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:257
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr "purigado de bildetoj db"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:285
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:288
 #, kde-format
 msgid "cleaning recognition db"
 msgstr "purigado de rekono db"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:324
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:327
 #, kde-format
 msgid "cleaning similarity db"
 msgstr "purigado simileco db"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:369
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:372
 #, kde-format
 msgid "shrinking databases"
 msgstr "ŝrumpantaj datumbazoj"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:488
+#: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:66
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -60770,22 +60777,22 @@ msgstr ""
 "datumbazo.</p><p>Ni devas frostigi digiKam por malhelpi datumbazan korupton. "
 "Ĉi tiu informkesto malaperos kiam la ŝrumpa procezo finiĝos.</p>Nuna Statuso:"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:501
+#: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:79
 #, kde-format
 msgid "Core DB"
 msgstr "Kerna DB"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:502
+#: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:80
 #, kde-format
 msgid "Thumbnails DB"
 msgstr "Bildetoj DB"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:503
+#: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:81
 #, kde-format
 msgid "Face Recognition DB"
 msgstr "Vizaĝa Rekono DB"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:504
+#: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:82
 #, kde-format
 msgid "Similarity DB"
 msgstr "Simileco DB"
@@ -61557,7 +61564,7 @@ msgstr ""
 "prilabori pli ol unu objekton el atendovico samtempe."
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:212
-#: core/utilities/setup/camera/setupcamera.cpp:345
+#: core/utilities/setup/camera/setupcamera.cpp:349
 #, kde-format
 msgid "Behavior"
 msgstr "Konduto"
@@ -62796,49 +62803,49 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Altnivela Serĉo"
 
-#: core/utilities/setup/album/setupalbumview.cpp:119
-#: core/utilities/setup/camera/setupcamera.cpp:420
+#: core/utilities/setup/album/setupalbumview.cpp:121
+#: core/utilities/setup/camera/setupcamera.cpp:424
 #, kde-format
 msgid "Show file&name"
 msgstr "Montri dosier&nomon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:120
-#: core/utilities/setup/camera/setupcamera.cpp:421
+#: core/utilities/setup/album/setupalbumview.cpp:122
+#: core/utilities/setup/camera/setupcamera.cpp:425
 #, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri la dosiernomon sub la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:122
-#: core/utilities/setup/camera/setupcamera.cpp:423
+#: core/utilities/setup/album/setupalbumview.cpp:124
+#: core/utilities/setup/camera/setupcamera.cpp:427
 #, kde-format
 msgid "Show file si&ze"
 msgstr "Montri dosiergrande&con"
 
-#: core/utilities/setup/album/setupalbumview.cpp:123
-#: core/utilities/setup/camera/setupcamera.cpp:424
+#: core/utilities/setup/album/setupalbumview.cpp:125
+#: core/utilities/setup/camera/setupcamera.cpp:428
 #, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri la dosiergrandecon sub la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:125
-#: core/utilities/setup/camera/setupcamera.cpp:426
+#: core/utilities/setup/album/setupalbumview.cpp:127
+#: core/utilities/setup/camera/setupcamera.cpp:430
 #, kde-format
 msgid "Show camera creation &date"
 msgstr "Montri fotilan kreo&daton"
 
-#: core/utilities/setup/album/setupalbumview.cpp:126
-#: core/utilities/setup/camera/setupcamera.cpp:427
+#: core/utilities/setup/album/setupalbumview.cpp:128
+#: core/utilities/setup/camera/setupcamera.cpp:431
 #, kde-format
 msgid ""
 "Set this option to show the camera creation date below the image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri la fotilan kredaton sub la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:129
+#: core/utilities/setup/album/setupalbumview.cpp:131
 #, kde-format
 msgid "Show file &modification date"
 msgstr "Montri dosieran &modifodaton"
 
-#: core/utilities/setup/album/setupalbumview.cpp:130
+#: core/utilities/setup/album/setupalbumview.cpp:132
 #, kde-format
 msgid ""
 "Set this option to show the file modification date below the image thumbnail "
@@ -62849,12 +62856,12 @@ msgstr ""
 "estas malsama ol fotila krea dato. Ĉi tiu opcio estas utila por identigi "
 "rapide kiuj eroj estis modifitaj."
 
-#: core/utilities/setup/album/setupalbumview.cpp:134
+#: core/utilities/setup/album/setupalbumview.cpp:136
 #, kde-format
 msgid "Show ima&ge dimensions"
 msgstr "Montri bildajn &dimensiojn"
 
-#: core/utilities/setup/album/setupalbumview.cpp:135
+#: core/utilities/setup/album/setupalbumview.cpp:137
 #, kde-format
 msgid ""
 "Set this option to show the image size in pixels below the image thumbnail."
@@ -62862,56 +62869,56 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri la grandecon de bildo en rastrumeroj sub la "
 "bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:138
+#: core/utilities/setup/album/setupalbumview.cpp:140
 #, kde-format
 msgid "Show image aspect ratio"
 msgstr "Montri bildan proporcion"
 
-#: core/utilities/setup/album/setupalbumview.cpp:139
+#: core/utilities/setup/album/setupalbumview.cpp:141
 #, kde-format
 msgid ""
 "Set this option to show the image aspect ratio below the image thumbnail."
 msgstr ""
 "Agordu ĉi tiun opcion por montri la bildan bildformaton sub la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:142
+#: core/utilities/setup/album/setupalbumview.cpp:144
 #, kde-format
 msgid "Show image format"
 msgstr "Montri bildformaton"
 
-#: core/utilities/setup/album/setupalbumview.cpp:143
+#: core/utilities/setup/album/setupalbumview.cpp:145
 #, kde-format
 msgid "Set this option to show image mime type over image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri bildmimspecon super bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:145
+#: core/utilities/setup/album/setupalbumview.cpp:147
 #, kde-format
 msgid "Show digiKam tit&le"
 msgstr "Montri digiKam tito&lon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:146
+#: core/utilities/setup/album/setupalbumview.cpp:148
 #, kde-format
 msgid "Set this option to show the digiKam title below the image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri la titolon de digiKam sub la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:149
+#: core/utilities/setup/album/setupalbumview.cpp:151
 #, kde-format
 msgid "Show digiKam &captions"
 msgstr "Montri digiKam &subtitolojn"
 
-#: core/utilities/setup/album/setupalbumview.cpp:150
+#: core/utilities/setup/album/setupalbumview.cpp:152
 #, kde-format
 msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr ""
 "Agordu ĉi tiun opcion por montri la subtitolojn de digiKam sub la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:153
-#: core/utilities/setup/camera/setupcamera.cpp:442
+#: core/utilities/setup/album/setupalbumview.cpp:155
+#: core/utilities/setup/camera/setupcamera.cpp:446
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "Montri digiKam e&tikedojn"
 
-#: core/utilities/setup/album/setupalbumview.cpp:154
+#: core/utilities/setup/album/setupalbumview.cpp:156
 #, kde-format
 msgid ""
 "Set this option to show the digiKam tags list below the image thumbnail."
@@ -62919,33 +62926,33 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri la liston de digiKam-etikedoj sub la "
 "bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:157
+#: core/utilities/setup/album/setupalbumview.cpp:159
 #, kde-format
 msgid "Show digiKam &rating"
 msgstr "Mont&ri digiKam taksadon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:158
+#: core/utilities/setup/album/setupalbumview.cpp:160
 #, kde-format
 msgid "Set this option to show the digiKam rating below the image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri la digiKam-takson sub la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:161
+#: core/utilities/setup/album/setupalbumview.cpp:163
 #, kde-format
 msgid "Show digiKam &pick label"
 msgstr "Montri digiKam &elekt-etikedon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:162
+#: core/utilities/setup/album/setupalbumview.cpp:164
 #, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri la digiKam-elektidon sub la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:165
+#: core/utilities/setup/album/setupalbumview.cpp:167
 #, kde-format
 msgid "Show digiKam color &label"
 msgstr "Montri digiKam-kolor&etikedon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:166
+#: core/utilities/setup/album/setupalbumview.cpp:168
 #, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a border around the "
@@ -62954,13 +62961,13 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri la digiKam-koloretikedon kiel randon ĉirkaŭ "
 "la bildeto."
 
-#: core/utilities/setup/album/setupalbumview.cpp:169
-#: core/utilities/setup/camera/setupcamera.cpp:450
+#: core/utilities/setup/album/setupalbumview.cpp:171
+#: core/utilities/setup/camera/setupcamera.cpp:454
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr "Montri rotaciajn tegmentajn butonojn"
 
-#: core/utilities/setup/album/setupalbumview.cpp:170
+#: core/utilities/setup/album/setupalbumview.cpp:172
 #, kde-format
 msgid ""
 "Set this option to show overlay buttons over the image thumbnail to be able "
@@ -62969,12 +62976,12 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri supermetitajn butonojn super la bildeto por "
 "povi prilabori maldekstren aŭ dekstran rotacion de bildo."
 
-#: core/utilities/setup/album/setupalbumview.cpp:173
+#: core/utilities/setup/album/setupalbumview.cpp:175
 #, kde-format
 msgid "Show fullscreen overlay button"
 msgstr "Montri plenekranan tegmentbutonon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:174
+#: core/utilities/setup/album/setupalbumview.cpp:176
 #, kde-format
 msgid ""
 "Set this option to show an overlay button over the image thumbnail to open "
@@ -62983,13 +62990,13 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri supermetitan butonon super la bildeto por "
 "malfermi ĝin en plenekrana reĝimo."
 
-#: core/utilities/setup/album/setupalbumview.cpp:177
-#: core/utilities/setup/camera/setupcamera.cpp:439
+#: core/utilities/setup/album/setupalbumview.cpp:179
+#: core/utilities/setup/camera/setupcamera.cpp:443
 #, kde-format
 msgid "Show Geolocation Indicator"
 msgstr "Montri Geolokigan Indikilon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:178
+#: core/utilities/setup/album/setupalbumview.cpp:180
 #, kde-format
 msgid ""
 "Set this option to show an icon over the image thumbnail if item has "
@@ -62998,56 +63005,56 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri piktogramon super la bildeto se objekto "
 "havas informojn pri geolokigo."
 
-#: core/utilities/setup/album/setupalbumview.cpp:180
-#: core/utilities/setup/camera/setupcamera.cpp:454
+#: core/utilities/setup/album/setupalbumview.cpp:182
+#: core/utilities/setup/camera/setupcamera.cpp:458
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "Bildetklaka ago:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:182
+#: core/utilities/setup/album/setupalbumview.cpp:184
 #, kde-format
 msgid "Show Preview"
 msgstr "Montri Antaŭrigardon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:183
+#: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
 msgid "Start Image Editor"
 msgstr "Komenci Bildredaktilon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:184
+#: core/utilities/setup/album/setupalbumview.cpp:186
 #, kde-format
 msgid "Show on Light Table"
 msgstr "Montri sur Luma Tablo"
 
-#: core/utilities/setup/album/setupalbumview.cpp:185
+#: core/utilities/setup/album/setupalbumview.cpp:187
 #, kde-format
 msgid "Open with Default Application"
 msgstr "Malfermi kun Defaŭlta Apliko"
 
-#: core/utilities/setup/album/setupalbumview.cpp:186
-#: core/utilities/setup/camera/setupcamera.cpp:459
+#: core/utilities/setup/album/setupalbumview.cpp:188
+#: core/utilities/setup/camera/setupcamera.cpp:463
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "Elektu kio devus okazi kiam vi alklakas bildeton."
 
-#: core/utilities/setup/album/setupalbumview.cpp:188
-#: core/utilities/setup/camera/setupcamera.cpp:461
+#: core/utilities/setup/album/setupalbumview.cpp:190
+#: core/utilities/setup/camera/setupcamera.cpp:465
 #, kde-format
 msgid "Icon View font:"
 msgstr "Piktogramvida tiparo:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:189
+#: core/utilities/setup/album/setupalbumview.cpp:191
 #, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr ""
 "Elektu ĉi tie la tiparon uzatan por montri tekston en piktogramaj vidoj."
 
-#: core/utilities/setup/album/setupalbumview.cpp:191
+#: core/utilities/setup/album/setupalbumview.cpp:193
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr "Uzi grandan bildeton por alta ekrana distingivo"
 
-#: core/utilities/setup/album/setupalbumview.cpp:192
+#: core/utilities/setup/album/setupalbumview.cpp:194
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -63070,18 +63077,18 @@ msgstr ""
 "Rekonstrui Bildetojn de Prizorga ilo devas esti prilaborita en tutaj "
 "kolektoj."
 
-#: core/utilities/setup/album/setupalbumview.cpp:227
+#: core/utilities/setup/album/setupalbumview.cpp:229
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "Piktogramoj"
 
-#: core/utilities/setup/album/setupalbumview.cpp:234
+#: core/utilities/setup/album/setupalbumview.cpp:236
 #, kde-format
 msgid "Tree View icon size:"
 msgstr "Grando de piktogramo de Arba Vido:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:241
+#: core/utilities/setup/album/setupalbumview.cpp:243
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -63090,12 +63097,12 @@ msgstr ""
 "Agordu ĉi tiun opcion por agordi la grandecon en rastrumeroj de la "
 "piktogramoj de Arbo-Vido en la flankaj bretoj de digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:244
+#: core/utilities/setup/album/setupalbumview.cpp:246
 #, kde-format
 msgid "People Tree View icon size:"
 msgstr "Grandeco de la piktogramo de Homoj Arbo:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:252
+#: core/utilities/setup/album/setupalbumview.cpp:254
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -63104,22 +63111,22 @@ msgstr ""
 "Agordu ĉi tiun opcion por agordi la grandecon en rastrumeroj de la "
 "piktogramoj de Arbo-Vido en la flanka kolumno de homoj de digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:255
+#: core/utilities/setup/album/setupalbumview.cpp:257
 #, kde-format
 msgid "Tree View font:"
 msgstr "Tiparo de Arbovido:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:256
+#: core/utilities/setup/album/setupalbumview.cpp:258
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr "Elekti ĉi tie la tiparon uzatan por montri tekston en Arbaj Vidoj."
 
-#: core/utilities/setup/album/setupalbumview.cpp:258
+#: core/utilities/setup/album/setupalbumview.cpp:260
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "Montri nombron de eroj en Arbaj Vidoj"
 
-#: core/utilities/setup/album/setupalbumview.cpp:259
+#: core/utilities/setup/album/setupalbumview.cpp:261
 #, kde-format
 msgid ""
 "Set this option to display along the album name the number of icon-view "
@@ -63128,60 +63135,60 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri laŭ la nomo de la albumo la nombron da "
 "piktogram-videblaj eroj ene."
 
-#: core/utilities/setup/album/setupalbumview.cpp:271
+#: core/utilities/setup/album/setupalbumview.cpp:273
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "Arbaj Vidoj"
 
-#: core/utilities/setup/album/setupalbumview.cpp:279
+#: core/utilities/setup/album/setupalbumview.cpp:281
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr "Antaŭrigardo montras enigitan vidon se disponebla (pli rapide)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:281
+#: core/utilities/setup/album/setupalbumview.cpp:283
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "Antaŭrigardo montras la plenan bildon"
 
-#: core/utilities/setup/album/setupalbumview.cpp:283
+#: core/utilities/setup/album/setupalbumview.cpp:285
 #, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
 msgstr "Krudaj bildoj:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:286
+#: core/utilities/setup/album/setupalbumview.cpp:288
 #, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Aŭtomata"
 
-#: core/utilities/setup/album/setupalbumview.cpp:288
+#: core/utilities/setup/album/setupalbumview.cpp:290
 #, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "Enigita antaŭrigardo"
 
-#: core/utilities/setup/album/setupalbumview.cpp:290
+#: core/utilities/setup/album/setupalbumview.cpp:292
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr "Krudaj datumoj en duona grandeco"
 
-#: core/utilities/setup/album/setupalbumview.cpp:292
+#: core/utilities/setup/album/setupalbumview.cpp:294
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr "Krudaj datumoj en plena grandeco (alta kvalito)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:294
+#: core/utilities/setup/album/setupalbumview.cpp:296
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr "Antaŭrigarda bildo estas konvertita al 8 bitoj por pli rapida spektado"
 
-#: core/utilities/setup/album/setupalbumview.cpp:295
+#: core/utilities/setup/album/setupalbumview.cpp:297
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
@@ -63189,36 +63196,36 @@ msgstr ""
 "Malmarku ĉi tion se vi ne volas konverti antaŭrigardan bildon de 16 bitoj al "
 "8 bitoj."
 
-#: core/utilities/setup/album/setupalbumview.cpp:297
+#: core/utilities/setup/album/setupalbumview.cpp:299
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr "Antaŭrigarda bildo estas ĉiam skalata por kongrui al fenestro"
 
-#: core/utilities/setup/album/setupalbumview.cpp:298
+#: core/utilities/setup/album/setupalbumview.cpp:300
 #, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
 "Malmarku ĉi tion se vi ne volas skali malgrandajn bildojn por kongrui al "
 "fenestro."
 
-#: core/utilities/setup/album/setupalbumview.cpp:300
+#: core/utilities/setup/album/setupalbumview.cpp:302
 #, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
 msgstr "Antaŭrigarda bildo uzu Kontraŭaliasing por pligrandigi"
 
-#: core/utilities/setup/album/setupalbumview.cpp:301
+#: core/utilities/setup/album/setupalbumview.cpp:303
 #, kde-format
 msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
 msgstr "Malmarku ĉi tion se vi ne volas uzi Kontraŭaliasing por pligrandigi."
 
-#: core/utilities/setup/album/setupalbumview.cpp:303
-#: core/utilities/setup/camera/setupcamera.cpp:498
+#: core/utilities/setup/album/setupalbumview.cpp:305
+#: core/utilities/setup/camera/setupcamera.cpp:502
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Montri piktogramojn kaj tekston super antaŭrigardo"
 
-#: core/utilities/setup/album/setupalbumview.cpp:304
-#: core/utilities/setup/camera/setupcamera.cpp:499
+#: core/utilities/setup/album/setupalbumview.cpp:306
+#: core/utilities/setup/camera/setupcamera.cpp:503
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to see icons and text in the image preview."
@@ -63226,31 +63233,31 @@ msgstr ""
 "Malmarku ĉi tion se vi ne volas vidi piktogramojn kaj tekston en la bilda "
 "antaŭprezento."
 
-#: core/utilities/setup/album/setupalbumview.cpp:322
+#: core/utilities/setup/album/setupalbumview.cpp:324
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Antaŭrigardo"
 
-#: core/utilities/setup/album/setupalbumview.cpp:337
+#: core/utilities/setup/album/setupalbumview.cpp:339
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Plenekrane"
 
-#: core/utilities/setup/album/setupalbumview.cpp:342
+#: core/utilities/setup/album/setupalbumview.cpp:344
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "Mimaj Tipoj"
 
-#: core/utilities/setup/album/setupalbumview.cpp:345
+#: core/utilities/setup/album/setupalbumview.cpp:347
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Kategorioj"
 
-#: core/utilities/setup/album/setupalbumview.cpp:513
+#: core/utilities/setup/album/setupalbumview.cpp:515
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63264,17 +63271,17 @@ msgstr ""
 "ĉiujn jam konservitajn bildetojn per la menuo <interface>Iloj/Prizorgado</"
 "interface>."
 
-#: core/utilities/setup/album/setupcategory.cpp:76
+#: core/utilities/setup/album/setupcategory.cpp:78
 #, kde-format
 msgid "Manage categories to sort and re-arrange album tree-view."
 msgstr "Administri kategoriojn por ordigi kaj reordigi albuman arbvidon."
 
-#: core/utilities/setup/album/setupcategory.cpp:83
+#: core/utilities/setup/album/setupcategory.cpp:85
 #, kde-format
 msgid "Set here the new category"
 msgstr "Meti ĉi tie la novan kategorion"
 
-#: core/utilities/setup/album/setupcategory.cpp:86
+#: core/utilities/setup/album/setupcategory.cpp:88
 #, kde-format
 msgid ""
 "You can add or remove Album category types here to improve how your Albums "
@@ -63283,15 +63290,15 @@ msgstr ""
 "Vi povas aldoni aŭ forigi Albumkategoriotipojn ĉi tie por plibonigi kiel "
 "viaj Albumoj estas ordigitaj en digiKam."
 
-#: core/utilities/setup/album/setupcategory.cpp:92
-#: core/utilities/setup/camera/setupcamera.cpp:268
-#: core/utilities/setup/camera/setupcamera.cpp:390
-#: core/utilities/setup/setuptemplate.cpp:106
+#: core/utilities/setup/album/setupcategory.cpp:94
+#: core/utilities/setup/camera/setupcamera.cpp:272
+#: core/utilities/setup/camera/setupcamera.cpp:394
+#: core/utilities/setup/setuptemplate.cpp:108
 #, kde-format
 msgid "&Add..."
 msgstr "&Aldoni..."
 
-#: core/utilities/setup/album/setupmime.cpp:77
+#: core/utilities/setup/album/setupmime.cpp:79
 #, kde-format
 msgid ""
 "<p>Add new file types to show as album items.</p><p>digiKam attempts to "
@@ -63311,7 +63318,7 @@ msgstr ""
 "u> ŝanĝoj faritaj en ĉi tiu vido faros datumbazan resanadon en la fono.</b></"
 "p>"
 
-#: core/utilities/setup/album/setupmime.cpp:95
+#: core/utilities/setup/album/setupmime.cpp:97
 #, kde-format
 msgid ""
 "Additional &image file extensions (<a href='image'>Currently-supported "
@@ -63319,7 +63326,7 @@ msgid ""
 msgstr ""
 "Pliaj b&ilddosieraj etendoj (<a href='image'>Aktuale subtenataj tipoj</a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:99
+#: core/utilities/setup/album/setupmime.cpp:101
 #, kde-format
 msgid ""
 "<p>Here you can add the extensions of image files (including RAW files) to "
@@ -63340,12 +63347,12 @@ msgstr ""
 "simple ne montritaj en digiKam.</p><p><b>Averto:</b> Forigi dosierojn el la "
 "datumbazo signifas perdi ĉiujn iliajn etikedojn kaj taksojn.</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:109
+#: core/utilities/setup/album/setupmime.cpp:111
 #, kde-format
 msgid "Enter additional image file extensions."
 msgstr "Enigu pliajn bildajn etendojn."
 
-#: core/utilities/setup/album/setupmime.cpp:128
+#: core/utilities/setup/album/setupmime.cpp:130
 #, kde-format
 msgid ""
 "Additional &video file extensions (<a href='video'>Currently-supported "
@@ -63353,7 +63360,7 @@ msgid ""
 msgstr ""
 "Pliaj &video-dosieretendoj (<a href='video'>Aktuale subtenataj tipoj</a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:132
+#: core/utilities/setup/album/setupmime.cpp:134
 #, kde-format
 msgid ""
 "<p>Here you can add extra extensions of video files to be displayed in your "
@@ -63376,12 +63383,12 @@ msgstr ""
 "p><p><b>Averto:</b> Forigi dosierojn el la datumbazo signifas perdi ĉiujn "
 "iliajn etikedojn kaj taksojn.</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:144
+#: core/utilities/setup/album/setupmime.cpp:146
 #, kde-format
 msgid "Enter additional video file extensions."
 msgstr "Enigu pliajn videodosierajn etendojn."
 
-#: core/utilities/setup/album/setupmime.cpp:163
+#: core/utilities/setup/album/setupmime.cpp:165
 #, kde-format
 msgid ""
 "Additional &audio file extensions (<a href='audio'>Currently-supported "
@@ -63389,7 +63396,7 @@ msgid ""
 msgstr ""
 "Pliaj &sondosieraj etendoj (<a href='audio'>Nuntempe subtenataj tipoj</a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:167
+#: core/utilities/setup/album/setupmime.cpp:169
 #, kde-format
 msgid ""
 "<p>Here you can add extra extensions of audio files to be displayed in your "
@@ -63412,12 +63419,12 @@ msgstr ""
 "dosierojn el la datumbazo signifas perdi ĉiujn iliajn etikedojn kaj taksojn."
 "</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:179
+#: core/utilities/setup/album/setupmime.cpp:181
 #, kde-format
 msgid "Enter additional audio file extensions."
 msgstr "Enigu pliajn sondosierajn etendaĵojn."
 
-#: core/utilities/setup/album/setupmime.cpp:245
+#: core/utilities/setup/album/setupmime.cpp:247
 #, kde-format
 msgid ""
 "<p>You have chosen to remove the following image formats from the list of "
@@ -63434,7 +63441,7 @@ msgstr ""
 "etikedoj.</p><p>Ĉu vi certas, ke vi volas apliki viajn ŝanĝojn kaj perdos. "
 "la subteno por ĉi tiuj formatoj?</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:298
+#: core/utilities/setup/album/setupmime.cpp:302
 #, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as images and included "
@@ -63443,7 +63450,7 @@ msgstr ""
 "<p>Dosieroj kun ĉi tiuj etendaĵoj estos rekonitaj kiel bildoj kaj "
 "inkluzivitaj en la datumbazon:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/album/setupmime.cpp:308
+#: core/utilities/setup/album/setupmime.cpp:312
 #, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as video files and "
@@ -63452,7 +63459,7 @@ msgstr ""
 "<p>Dosieroj kun ĉi tiuj etendaĵoj estos rekonitaj kiel videodosieroj kaj "
 "inkluzivitaj en la datumbazon:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/album/setupmime.cpp:318
+#: core/utilities/setup/album/setupmime.cpp:322
 #, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as audio files and "
@@ -63461,7 +63468,7 @@ msgstr ""
 "<p>Dosieroj kun ĉi tiuj etendaĵoj estos rekonitaj kiel sondosieroj kaj "
 "inkluzivitaj en la datumbazon:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/camera/cameralist.cpp:286
+#: core/utilities/setup/camera/cameralist.cpp:288
 #, kde-format
 msgid ""
 "Failed to auto-detect camera; please make sure it is connected properly and "
@@ -63470,24 +63477,24 @@ msgstr ""
 "Malsukcesis aŭtomate detekti fotilon; bonvolu certigi, ke ĝi estas konvene "
 "konektita kaj ŝaltita. Ĉu vi ŝatus provi denove?"
 
-#: core/utilities/setup/camera/cameraselection.cpp:91
+#: core/utilities/setup/camera/cameraselection.cpp:93
 #, kde-format
 msgctxt "@title:window"
 msgid "Camera Configuration"
 msgstr "Fotila Agordo"
 
 #. i18n!
-#: core/utilities/setup/camera/cameraselection.cpp:101
+#: core/utilities/setup/camera/cameraselection.cpp:103
 #, kde-format
 msgid "Mounted Camera"
 msgstr "Muntita Fotilo"
 
-#: core/utilities/setup/camera/cameraselection.cpp:117
+#: core/utilities/setup/camera/cameraselection.cpp:119
 #, kde-format
 msgid "Camera List"
 msgstr "Fotila Listo"
 
-#: core/utilities/setup/camera/cameraselection.cpp:118
+#: core/utilities/setup/camera/cameraselection.cpp:120
 #, kde-format
 msgid ""
 "<p>Select the camera name that you want to use here. All default settings on "
@@ -63498,12 +63505,12 @@ msgstr ""
 "sur la dekstra panelo estos aŭtomate fiksitaj.</p><p>Ĉi tiu listo estis "
 "kreita per la biblioteko gphoto2 instalita en via komputilo.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:127
+#: core/utilities/setup/camera/cameraselection.cpp:129
 #, kde-format
 msgid "Camera Title"
 msgstr "Ĉambro Titolo"
 
-#: core/utilities/setup/camera/cameraselection.cpp:131
+#: core/utilities/setup/camera/cameraselection.cpp:133
 #, kde-format
 msgid ""
 "<p>Set here the name used in digiKam interface to identify this camera.</p>"
@@ -63511,17 +63518,17 @@ msgstr ""
 "<p>Agordu ĉi tie la nomon uzatan en digiKam-interfaco por identigi ĉi tiun "
 "fotilon.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:140
+#: core/utilities/setup/camera/cameraselection.cpp:142
 #, kde-format
 msgid "Camera Port Type"
 msgstr "Fotila Pordotipo"
 
-#: core/utilities/setup/camera/cameraselection.cpp:145
+#: core/utilities/setup/camera/cameraselection.cpp:147
 #, kde-format
 msgid "USB"
 msgstr "USB"
 
-#: core/utilities/setup/camera/cameraselection.cpp:146
+#: core/utilities/setup/camera/cameraselection.cpp:148
 #, kde-format
 msgid ""
 "<p>Select this option if your camera is connected to your computer using a "
@@ -63530,13 +63537,13 @@ msgstr ""
 "<p>Elektu ĉi tiun opcion se via fotilo estas konektita al via komputilo per "
 "USB-kablo.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:149
+#: core/utilities/setup/camera/cameraselection.cpp:151
 #, kde-format
 msgctxt "@item: serail port based camera"
 msgid "Serial"
 msgstr "Seria"
 
-#: core/utilities/setup/camera/cameraselection.cpp:150
+#: core/utilities/setup/camera/cameraselection.cpp:152
 #, kde-format
 msgid ""
 "<p>Select this option if your camera is connected to your computer using a "
@@ -63545,12 +63552,12 @@ msgstr ""
 "<p>Elektu ĉi tiun opcion se via fotilo estas konektita al via komputilo per "
 "seria kablo.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:153
+#: core/utilities/setup/camera/cameraselection.cpp:155
 #, kde-format
 msgid "Network"
 msgstr "Reto"
 
-#: core/utilities/setup/camera/cameraselection.cpp:154
+#: core/utilities/setup/camera/cameraselection.cpp:156
 #, kde-format
 msgid ""
 "<p>Select this option if your camera is connected to your computer network.</"
@@ -63559,7 +63566,7 @@ msgstr ""
 "<p>Elektu ĉi tiun opcion se via fotilo estas konektita al via komputila reto."
 "</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:159
+#: core/utilities/setup/camera/cameraselection.cpp:161
 #, kde-format
 msgid ""
 "<p>Select the serial port to use on your computer here. This option is only "
@@ -63568,22 +63575,22 @@ msgstr ""
 "<p>Elektu ĉi tie la serian pordon por uzi en via komputilo. Ĉi tiu opcio "
 "estas bezonata nur se vi uzas serian fotilon.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:163
+#: core/utilities/setup/camera/cameraselection.cpp:165
 #, kde-format
 msgid "<p>Enter here the network address of your camera.</p>"
 msgstr "<p>Enigu ĉi tie la retadreson de via fotilo.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:181
+#: core/utilities/setup/camera/cameraselection.cpp:183
 #, kde-format
 msgid "Camera Mount Path"
 msgstr "Fotila Muntovojo"
 
-#: core/utilities/setup/camera/cameraselection.cpp:185
+#: core/utilities/setup/camera/cameraselection.cpp:187
 #, kde-format
 msgid "Note: only for USB/IEEE mass storage cameras."
 msgstr "Noto: nur por USB/IEEE amaskonservaj fotiloj."
 
-#: core/utilities/setup/camera/cameraselection.cpp:191
+#: core/utilities/setup/camera/cameraselection.cpp:193
 #, kde-format
 msgid ""
 "<p>Set here the mount path to use on your computer. This option is only "
@@ -63592,7 +63599,7 @@ msgstr ""
 "<p>Fiksu ĉi tie la muntan vojon por uzi en via komputilo. Ĉi tiu opcio estas "
 "bezonata nur se vi uzas <b>USB Mass Storage</b> fotilon.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:209
+#: core/utilities/setup/camera/cameraselection.cpp:211
 #, kde-format
 msgid ""
 "<p>To set a <b>USB Mass Storage</b> camera<br/>(which looks like a removable "
@@ -63603,7 +63610,7 @@ msgstr ""
 "forprenebla disko kiam muntita<br/>sur via labortablo), bonvolu uzi<br/><a "
 "href=\"umscamera\">%1</a> el la fotillisto.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:216
+#: core/utilities/setup/camera/cameraselection.cpp:218
 #, kde-format
 msgid ""
 "<p>To set a <b>Generic PTP USB Device</b><br/>(which uses Picture Transfer "
@@ -63614,7 +63621,7 @@ msgstr ""
 "Transfer Protocol), bonvolu<br/>uzi <a href=\"ptpcamera\">%1</a> el la "
 "fotillisto.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:222
+#: core/utilities/setup/camera/cameraselection.cpp:224
 #, kde-format
 msgid ""
 "<p>To set a <b>Generic PTP/IP Network Device</b><br/>(which uses Picture "
@@ -63625,7 +63632,7 @@ msgstr ""
 "Transfer Protocol), bonvolu<br/>uzi <a href=\"ptpipcamera\">%1</a> el la "
 "fotillisto.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:229
+#: core/utilities/setup/camera/cameraselection.cpp:231
 #, kde-format
 msgid ""
 "<p>A complete list of camera settings to use is<br/>available at <a "
@@ -63634,54 +63641,54 @@ msgstr ""
 "<p>Kompleta listo de fotilaj agordoj por uzi estas<br/>disponebla ĉe <a "
 "href='https://www.figuiere.net/digicam/'>ĉi tiu URL</a>.</p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:72
+#: core/utilities/setup/camera/importfilterdlg.cpp:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "Redakti Importfiltrilojn"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:89
+#: core/utilities/setup/camera/importfilterdlg.cpp:91
 #, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "Nomo:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:96
+#: core/utilities/setup/camera/importfilterdlg.cpp:98
 #, kde-format
 msgid "Mime filter:"
 msgstr "Mima filtrilo:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:104
+#: core/utilities/setup/camera/importfilterdlg.cpp:106
 #, kde-format
 msgid "Select Type Mime..."
 msgstr "Elekti Tipon Mime..."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:109
+#: core/utilities/setup/camera/importfilterdlg.cpp:111
 #, kde-format
 msgid "File name filter:"
 msgstr "Dosiernoma filtrilo:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:119
+#: core/utilities/setup/camera/importfilterdlg.cpp:121
 #, kde-format
 msgid "Path filter:"
 msgstr "Voja filtrilo:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:129
+#: core/utilities/setup/camera/importfilterdlg.cpp:131
 #, kde-format
 msgid "Show only new files"
 msgstr "Montri nur novajn dosierojn"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:203
+#: core/utilities/setup/camera/importfilterdlg.cpp:205
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr "Elektu la MimeTypes, kiujn vi volas por ĉi tiu filtrilo."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:205
+#: core/utilities/setup/camera/importfilterdlg.cpp:207
 #, kde-format
 msgid "Select Mime Types"
 msgstr "Elekti Mime-Tipojn"
 
-#: core/utilities/setup/camera/setupcamera.cpp:247
+#: core/utilities/setup/camera/setupcamera.cpp:251
 #, kde-format
 msgid ""
 "Here you can see the digital camera list used by digiKam via the Gphoto "
@@ -63690,72 +63697,72 @@ msgstr ""
 "Ĉi tie vi povas vidi la liston de cifereca fotilo uzata de digiKam per la "
 "interfaco de Gphoto."
 
-#: core/utilities/setup/camera/setupcamera.cpp:251
+#: core/utilities/setup/camera/setupcamera.cpp:255
 #, kde-format
 msgctxt "@title: camera title"
 msgid "Title"
 msgstr "Titolo"
 
-#: core/utilities/setup/camera/setupcamera.cpp:252
+#: core/utilities/setup/camera/setupcamera.cpp:256
 #, kde-format
 msgctxt "@title: camera model"
 msgid "Model"
 msgstr "Modelo"
 
-#: core/utilities/setup/camera/setupcamera.cpp:253
+#: core/utilities/setup/camera/setupcamera.cpp:257
 #, kde-format
 msgctxt "@title: camera port"
 msgid "Port"
 msgstr "Pordo"
 
-#: core/utilities/setup/camera/setupcamera.cpp:254
+#: core/utilities/setup/camera/setupcamera.cpp:258
 #, kde-format
 msgctxt "@title: camera mount path"
 msgid "Path"
 msgstr "Vojo"
 
-#: core/utilities/setup/camera/setupcamera.cpp:272
-#: core/utilities/setup/camera/setupcamera.cpp:394
+#: core/utilities/setup/camera/setupcamera.cpp:276
+#: core/utilities/setup/camera/setupcamera.cpp:398
 #, kde-format
 msgid "&Edit..."
 msgstr "R&edakti..."
 
-#: core/utilities/setup/camera/setupcamera.cpp:274
+#: core/utilities/setup/camera/setupcamera.cpp:278
 #, kde-format
 msgid "Auto-&Detect"
 msgstr "Aŭtomate-&Detekti"
 
-#: core/utilities/setup/camera/setupcamera.cpp:285
+#: core/utilities/setup/camera/setupcamera.cpp:289
 #, kde-format
 msgid "Visit Gphoto project website"
 msgstr "Viziti retejon de la projekto Gphoto"
 
-#: core/utilities/setup/camera/setupcamera.cpp:308
+#: core/utilities/setup/camera/setupcamera.cpp:312
 #, kde-format
 msgid "Devices"
 msgstr "Disponaĵoj"
 
-#: core/utilities/setup/camera/setupcamera.cpp:315
+#: core/utilities/setup/camera/setupcamera.cpp:319
 #, kde-format
 msgid "Use file metadata (makes connection slower)"
 msgstr "Uzi dosiermetadatenojn (malrapidigas konekton)"
 
-#: core/utilities/setup/camera/setupcamera.cpp:316
+#: core/utilities/setup/camera/setupcamera.cpp:320
 #, kde-format
 msgid "Turn on high quality thumbnail loading (slower loading)"
 msgstr "Ŝalti ŝargon de altkvalitaj bildetoj (pli malrapida ŝargo)"
 
-#: core/utilities/setup/camera/setupcamera.cpp:317
+#: core/utilities/setup/camera/setupcamera.cpp:321
 #, kde-format
 msgid "Use a default target album to download from camera"
 msgstr "Uzi defaŭltan celalbumon por elŝuti de fotilo"
 
-#: core/utilities/setup/camera/setupcamera.cpp:323
+#: core/utilities/setup/camera/setupcamera.cpp:327
 #, kde-format
 msgid "If target file exists when downloaded from camera"
 msgstr "Se celdosiero ekzistas kiam elŝutite de fotilo"
 
-#: core/utilities/setup/camera/setupcamera.cpp:364
+#: core/utilities/setup/camera/setupcamera.cpp:368
 #, kde-format
 msgid ""
 "Here you can see filters that can be used to filter files in import dialog."
@@ -63763,13 +63770,13 @@ msgstr ""
 "Ĉi tie vi povas vidi filtrilojn uzeblajn por filtri dosierojn en importa "
 "dialogo."
 
-#: core/utilities/setup/camera/setupcamera.cpp:377
+#: core/utilities/setup/camera/setupcamera.cpp:381
 #, kde-format
 msgid "Use a space as a separator to specify multiple file names to ignore."
 msgstr ""
 "Uzu spacon kiel apartigilon por specifi plurajn dosiernomojn por ignori."
 
-#: core/utilities/setup/camera/setupcamera.cpp:383
+#: core/utilities/setup/camera/setupcamera.cpp:387
 #, kde-format
 msgid ""
 "Use a space as a separator to specify multiple file extensions to ignore."
@@ -63777,27 +63784,27 @@ msgstr ""
 "Uzu spacon kiel apartigilon por specifi plurajn dosierajn etendojn por "
 "ignori."
 
-#: core/utilities/setup/camera/setupcamera.cpp:387
+#: core/utilities/setup/camera/setupcamera.cpp:391
 #, kde-format
 msgid "Always ignore"
 msgstr "Ĉiam ignori"
 
-#: core/utilities/setup/camera/setupcamera.cpp:388
+#: core/utilities/setup/camera/setupcamera.cpp:392
 #, kde-format
 msgid "Ignored file names:"
 msgstr "Ignoritaj dosiernomoj:"
 
-#: core/utilities/setup/camera/setupcamera.cpp:389
+#: core/utilities/setup/camera/setupcamera.cpp:393
 #, kde-format
 msgid "Ignored file extensions:"
 msgstr "Ignoritaj dosieraj etendoj:"
 
-#: core/utilities/setup/camera/setupcamera.cpp:409
+#: core/utilities/setup/camera/setupcamera.cpp:413
 #, kde-format
 msgid "Import Filters"
 msgstr "Importi Filtrilojn"
 
-#: core/utilities/setup/camera/setupcamera.cpp:417
+#: core/utilities/setup/camera/setupcamera.cpp:421
 #, kde-format
 msgid "Icon-View Options"
 msgstr "Piktogram-Vidaj Opcioj"
@@ -63806,27 +63813,27 @@ msgstr "Piktogram-Vidaj Opcioj"
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
 #.
-#: core/utilities/setup/camera/setupcamera.cpp:436
+#: core/utilities/setup/camera/setupcamera.cpp:440
 #, kde-format
 msgid "Show image Format"
 msgstr "Montri bildan Formaton"
 
-#: core/utilities/setup/camera/setupcamera.cpp:443
+#: core/utilities/setup/camera/setupcamera.cpp:447
 #, kde-format
 msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri la digiKam-etikedojn sub la bildeto."
 
-#: core/utilities/setup/camera/setupcamera.cpp:446
+#: core/utilities/setup/camera/setupcamera.cpp:450
 #, kde-format
 msgid "Show item &rating"
 msgstr "Mont&ri elementan takson"
 
-#: core/utilities/setup/camera/setupcamera.cpp:447
+#: core/utilities/setup/camera/setupcamera.cpp:451
 #, kde-format
 msgid "Set this option to show the item rating below the image thumbnail."
 msgstr "Agordu ĉi tiun opcion por montri la eron-takson sub la bildeto."
 
-#: core/utilities/setup/camera/setupcamera.cpp:451
+#: core/utilities/setup/camera/setupcamera.cpp:455
 #, kde-format
 msgid ""
 "Set this option to show overlay buttons on the image thumbnail for image "
@@ -63835,32 +63842,32 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri supermetitajn butonojn sur la bildeto por "
 "bilda rotacio."
 
-#: core/utilities/setup/camera/setupcamera.cpp:456
+#: core/utilities/setup/camera/setupcamera.cpp:460
 #, kde-format
 msgid "Show embedded preview"
 msgstr "Montri enigitan antaŭrigardon"
 
-#: core/utilities/setup/camera/setupcamera.cpp:457
+#: core/utilities/setup/camera/setupcamera.cpp:461
 #, kde-format
 msgid "Start image editor"
 msgstr "Komenci bildredaktilon"
 
-#: core/utilities/setup/camera/setupcamera.cpp:462
+#: core/utilities/setup/camera/setupcamera.cpp:466
 #, kde-format
 msgid "Select here the font used to display text in Icon Views."
 msgstr "Elektu ĉi tie la tiparon uzatan por montri tekston en Piktogram-Vidoj."
 
-#: core/utilities/setup/camera/setupcamera.cpp:484
+#: core/utilities/setup/camera/setupcamera.cpp:488
 #, kde-format
 msgid "Preview Options"
 msgstr "Antaŭrigardaj Opcioj"
 
-#: core/utilities/setup/camera/setupcamera.cpp:487
+#: core/utilities/setup/camera/setupcamera.cpp:491
 #, kde-format
 msgid "Embedded preview loads full-sized images"
 msgstr "Enigita antaŭrigardo ŝargas plengrandajn bildojn"
 
-#: core/utilities/setup/camera/setupcamera.cpp:488
+#: core/utilities/setup/camera/setupcamera.cpp:492
 #, kde-format
 msgid ""
 "<p>Set this option to load images at their full size for preview, rather "
@@ -63875,23 +63882,23 @@ msgstr ""
 "p><p><b>Noto:</b> por Krudaj bildoj, duongranda versio de la Krudaj datumoj. "
 "estas uzata anstataŭ la enigita JPEG antaŭrigardo.</p>"
 
-#: core/utilities/setup/camera/setupcamera.cpp:495
+#: core/utilities/setup/camera/setupcamera.cpp:499
 #, kde-format
 msgid "Preview each item while downloading it"
 msgstr "Antaŭrigardi ĉiun eron dum elŝuto de ĝi"
 
-#: core/utilities/setup/camera/setupcamera.cpp:496
+#: core/utilities/setup/camera/setupcamera.cpp:500
 #, kde-format
 msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr "<p>Agordu ĉi tiun opcion por antaŭrigardi ĉiun eron dum elŝuto.</p>"
 
-#: core/utilities/setup/camera/setupcamera.cpp:518
+#: core/utilities/setup/camera/setupcamera.cpp:522
 #, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "Importa Fenestro"
 
-#: core/utilities/setup/camera/setupcamera.cpp:782
+#: core/utilities/setup/camera/setupcamera.cpp:786
 #, kde-format
 msgid ""
 "No default target album have been selected to process download from camera "
@@ -63900,12 +63907,12 @@ msgstr ""
 "Neniu defaŭlta celalbumo estis elektita por procesi elŝuton de fotila "
 "aparato. Bonvolu elekti unu."
 
-#: core/utilities/setup/camera/setupcamera.cpp:870
+#: core/utilities/setup/camera/setupcamera.cpp:874
 #, kde-format
 msgid "Device detection under progress, please wait..."
 msgstr "Aparato-detekto estas en progreso, bonvolu atendi..."
 
-#: core/utilities/setup/camera/setupcamera.cpp:881
+#: core/utilities/setup/camera/setupcamera.cpp:885
 #, kde-format
 msgid ""
 "Failed to auto-detect camera.\n"
@@ -63916,28 +63923,28 @@ msgstr ""
 "Bonvolu kontroli ĉu via fotilo estas ŝaltita kaj reprovu aŭ provu agordi ĝin "
 "permane."
 
-#: core/utilities/setup/camera/setupcamera.cpp:896
+#: core/utilities/setup/camera/setupcamera.cpp:900
 #, kde-format
 msgid "Camera '%1' (%2) is already in list."
 msgstr "Fotilo '%1' (%2) jam estas en listo."
 
-#: core/utilities/setup/camera/setupcamera.cpp:900
+#: core/utilities/setup/camera/setupcamera.cpp:904
 #, kde-format
 msgid "Found camera '%1' (%2) and added it to the list."
 msgstr "Trovis fotilon '%1' (%2) kaj aldonis ĝin al la listo."
 
-#: core/utilities/setup/camera/setupcamera.cpp:916
+#: core/utilities/setup/camera/setupcamera.cpp:920
 #, kde-format
 msgid "Untitled"
 msgstr "Sentitola"
 
-#: core/utilities/setup/camera/setupcamera.cpp:980
+#: core/utilities/setup/camera/setupcamera.cpp:984
 #, kde-format
 msgid ""
 "In order to enable this feature, the full-sized preview will be disabled."
 msgstr "Por ebligi ĉi tiun funkcion, la plengranda antaŭvido estos malŝaltita."
 
-#: core/utilities/setup/camera/setupcamera.cpp:991
+#: core/utilities/setup/camera/setupcamera.cpp:995
 #, kde-format
 msgid ""
 "If the full-sized preview is enabled it will affect the speed of previewing "
@@ -63946,7 +63953,7 @@ msgstr ""
 "Se la plengranda antaŭrigardo estas ebligita, ĝi influos la rapidecon de "
 "antaŭrigardo de ĉiu objekto dum elŝuto."
 
-#: core/utilities/setup/collections/setupcollections.cpp:84
+#: core/utilities/setup/collections/setupcollections.cpp:86
 #, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -63963,7 +63970,7 @@ msgstr ""
 "p><p>Grave: Vi devas munti la kunhavon denaske en via sistemo antaŭ ol "
 "agordi foran kolekton.</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:97
+#: core/utilities/setup/collections/setupcollections.cpp:99
 #, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -63974,12 +63981,12 @@ msgstr ""
 "bildojn. Skriba aliro estas necesa por povi redakti bildojn en ĉi tiuj "
 "albumoj.</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:111
+#: core/utilities/setup/collections/setupcollections.cpp:113
 #, kde-format
 msgid "Monitor the albums for external changes (requires restart)"
 msgstr "Monitori la albumojn por eksteraj ŝanĝoj (postulas rekomencon)"
 
-#: core/utilities/setup/collections/setupcollections.cpp:114
+#: core/utilities/setup/collections/setupcollections.cpp:116
 #, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
@@ -63990,13 +63997,13 @@ msgstr ""
 "malrapidigi digiKam. Se vi uzas MacOS kaj retajn kolektojn, vi ne devas "
 "aktivigi la monitoradon de la albumo.</b>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:127
+#: core/utilities/setup/collections/setupcollections.cpp:129
 #, kde-format
 msgctxt "@title:tab"
 msgid "Root Album Folders"
 msgstr "Radikaj Albumaj Dosierujoj"
 
-#: core/utilities/setup/collections/setupcollections.cpp:134
+#: core/utilities/setup/collections/setupcollections.cpp:136
 #, kde-format
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
@@ -64017,7 +64024,7 @@ msgstr ""
 "ignorita.</p><p>Por re-inkluzivi dosierujojn kiuj estas defaŭlte ignoritaj "
 "prefikso ĝin per minuso, ekz. -@eaDir.</p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:152
+#: core/utilities/setup/collections/setupcollections.cpp:154
 #, kde-format
 msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
@@ -64026,19 +64033,19 @@ msgstr ""
 "Pliaj dosierujoj por ignori (<a href='image'>Nuntempe ignoritaj dosierujoj</"
 "a>):"
 
-#: core/utilities/setup/collections/setupcollections.cpp:157
+#: core/utilities/setup/collections/setupcollections.cpp:159
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr "Enigu dosierujojn, kiujn vi volas ignori de aldonado al viaj kolektoj."
 
-#: core/utilities/setup/collections/setupcollections.cpp:173
+#: core/utilities/setup/collections/setupcollections.cpp:175
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
 msgstr "Ignoritaj Dosierujoj"
 
-#: core/utilities/setup/collections/setupcollections.cpp:244
+#: core/utilities/setup/collections/setupcollections.cpp:246
 #, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br/> <code>%1</"
@@ -64320,7 +64327,7 @@ msgstr "Dosiero-malferma eraro."
 msgid "File on the server is too large."
 msgstr "Dosiero sur la servilo estas tro granda."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:526
+#: core/utilities/setup/downloader/filesdownloader.cpp:524
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -64330,7 +64337,7 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:532
+#: core/utilities/setup/downloader/filesdownloader.cpp:530
 #, fuzzy, kde-format
 #| msgctxt "%1: folder path"
 #| msgid ""
@@ -64356,52 +64363,52 @@ msgstr ""
 "dosieroj estos elŝutitaj al \"<i>%1</i>\".</p><p><b>Post la sukcesa elŝuto "
 "vi devas rekomenci digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:540
+#: core/utilities/setup/downloader/filesdownloader.cpp:538
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "La elŝuto postulas %1 dosierojn kun grandeco de %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:548
+#: core/utilities/setup/downloader/filesdownloader.cpp:546
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "Ĉiuj dosieroj por la elektitaj funkcioj estis trovitaj."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:568
+#: core/utilities/setup/downloader/filesdownloader.cpp:566
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Purigi neuzitajn modeldosierojn AI/DNN..."
 
-#: core/utilities/setup/editor/setupeditor.cpp:63
+#: core/utilities/setup/editor/setupeditor.cpp:65
 #, kde-format
 msgctxt "@title:tab"
 msgid "Editor Window"
 msgstr "Redaktora Fenestro"
 
-#: core/utilities/setup/editor/setupeditor.cpp:64
+#: core/utilities/setup/editor/setupeditor.cpp:66
 #, kde-format
 msgctxt "@title:tab"
 msgid "Versioning"
 msgstr "Versiado"
 
-#: core/utilities/setup/editor/setupeditor.cpp:65
+#: core/utilities/setup/editor/setupeditor.cpp:67
 #, kde-format
 msgctxt "@title:tab"
 msgid "Save Settings"
 msgstr "Konservi Agordojn"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:102
+#: core/utilities/setup/editor/setupeditoriface.cpp:104
 #: core/utilities/setup/setuplighttable.cpp:78
 #, kde-format
 msgid "Interface Options"
 msgstr "Interfac-Opcioj"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:105
+#: core/utilities/setup/editor/setupeditoriface.cpp:107
 #, kde-format
 msgid "&Use theme background color"
 msgstr "&Uzi etosan fonkoloron"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:108
+#: core/utilities/setup/editor/setupeditoriface.cpp:110
 #, kde-format
 msgid ""
 "Enable this option to use the background theme color in the image editor "
@@ -64409,39 +64416,39 @@ msgid ""
 msgstr ""
 "Ebligu ĉi tiun opcion por uzi la fonan etoskoloron en la bildredaktila areo."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:112
+#: core/utilities/setup/editor/setupeditoriface.cpp:114
 #, kde-format
 msgid "&Background color:"
 msgstr "&Fonkoloro:"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:115
+#: core/utilities/setup/editor/setupeditoriface.cpp:117
 #, kde-format
 msgid "Customize the background color to use in the image editor area."
 msgstr "Agordu la fonkoloron por uzi en la areo de bildredaktilo."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:129
+#: core/utilities/setup/editor/setupeditoriface.cpp:131
 #, kde-format
 msgid "Exposure Indicators"
 msgstr "Elmetaj Indikiloj"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:132
+#: core/utilities/setup/editor/setupeditoriface.cpp:134
 #, kde-format
 msgid "&Under-exposure color: "
 msgstr "S&ubelmeta koloro:"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:135
+#: core/utilities/setup/editor/setupeditoriface.cpp:137
 #, kde-format
 msgid "Customize color used in image editor to identify under-exposed pixels."
 msgstr ""
 "Agordu koloron uzatan en bildredaktilo por identigi subelmetitajn "
 "rastrumerojn."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:138
+#: core/utilities/setup/editor/setupeditoriface.cpp:140
 #, kde-format
 msgid "Under-exposure percents: "
 msgstr "Subeksponaj procentoj:"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:144
+#: core/utilities/setup/editor/setupeditoriface.cpp:146
 #, kde-format
 msgid ""
 "Adjust the percents of the bottom of image histogram which will be used to "
@@ -64450,24 +64457,24 @@ msgstr ""
 "Alĝustigu la procentojn de la fundo de bilda histogramo, kiu estos uzata por "
 "kontroli subelmetitajn rastrumerojn."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:147
+#: core/utilities/setup/editor/setupeditoriface.cpp:149
 #, kde-format
 msgid "&Over-exposure color: "
 msgstr "Tr&omalkovra koloro:"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:150
+#: core/utilities/setup/editor/setupeditoriface.cpp:152
 #, kde-format
 msgid "Customize color used in image editor to identify over-exposed pixels."
 msgstr ""
 "Agordu koloron uzatan en bildredaktilo por identigi troelmetitajn "
 "rastrumerojn."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:153
+#: core/utilities/setup/editor/setupeditoriface.cpp:155
 #, kde-format
 msgid "Over-exposure percents: "
 msgstr "Procentoj de troeksponado:"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:159
+#: core/utilities/setup/editor/setupeditoriface.cpp:161
 #, kde-format
 msgid ""
 "Adjust the percents of the top of image histogram which will be used to "
@@ -64476,12 +64483,12 @@ msgstr ""
 "Alĝustigu la procentojn de la supro de bilda histogramo, kiu estos uzata por "
 "kontroli troelmetitajn rastrumerojn."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:162
+#: core/utilities/setup/editor/setupeditoriface.cpp:164
 #, kde-format
 msgid "Indicate exposure as pure color"
 msgstr "Indiki eksponon kiel pura koloro"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:163
+#: core/utilities/setup/editor/setupeditoriface.cpp:165
 #, kde-format
 msgid ""
 "If this option is enabled, over- and under-exposure indicators will be "
@@ -64494,22 +64501,22 @@ msgstr ""
 "kolorkomponentoj kongruas kun la kondiĉo en la sama tempo. Alie, indikiloj "
 "estas ŝaltitaj kiam unu el la koloraj komponantoj kongruas kun la kondiĉo."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:168
+#: core/utilities/setup/editor/setupeditoriface.cpp:170
 #, kde-format
 msgid "Example:"
 msgstr "Ekzemplo:"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:201
+#: core/utilities/setup/editor/setupeditoriface.cpp:203
 #, kde-format
 msgid "Tool Options"
 msgstr "Ilaj Opcioj"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:204
+#: core/utilities/setup/editor/setupeditoriface.cpp:206
 #, kde-format
 msgid "&Restore the settings of the Image Editor tools"
 msgstr "&Restarigi la agordojn de la iloj de Bildredaktilo"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:206
+#: core/utilities/setup/editor/setupeditoriface.cpp:208
 #, kde-format
 msgid ""
 "Enable this option to restore the settings of the Image Editor tools from "
@@ -64534,7 +64541,7 @@ msgstr ""
 "bilddosieroj</li><li>Nemarkita: defaŭltaj agordoj estas uzataj dum "
 "konservado de bilddosieroj</li></ul>"
 
-#: core/utilities/setup/editor/setupraw.cpp:86
+#: core/utilities/setup/editor/setupraw.cpp:88
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64547,49 +64554,49 @@ msgstr ""
 "Malfermi krudan dosieron postulas ampleksan interpreton kaj prilaboradon de "
 "datumoj."
 
-#: core/utilities/setup/editor/setupraw.cpp:104
+#: core/utilities/setup/editor/setupraw.cpp:106
 #, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
 msgstr "Malfermi krudajn dosierojn en la bildredaktilo"
 
-#: core/utilities/setup/editor/setupraw.cpp:107
+#: core/utilities/setup/editor/setupraw.cpp:109
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Fast and simple, as 8 bit image"
 msgstr "Rapida kaj simpla, kiel 8-bita bildo"
 
-#: core/utilities/setup/editor/setupraw.cpp:109
+#: core/utilities/setup/editor/setupraw.cpp:111
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Using the default settings, in 16 bit"
 msgstr "Uzante la defaŭltajn agordojn, en 16 bitoj"
 
-#: core/utilities/setup/editor/setupraw.cpp:111
+#: core/utilities/setup/editor/setupraw.cpp:113
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Always open the Raw Import Tool to customize settings"
 msgstr "Ĉiam malfermi la Krudan Importilon por personecigi agordojn"
 
-#: core/utilities/setup/editor/setupraw.cpp:127
+#: core/utilities/setup/editor/setupraw.cpp:129
 #, kde-format
 msgctxt "@item: default raw plugin"
 msgid " (default)"
 msgstr "(defaŭlte)"
 
-#: core/utilities/setup/editor/setupraw.cpp:155
+#: core/utilities/setup/editor/setupraw.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About this Raw Import tool..."
 msgstr "Pri ĉi tiu ilo de Kruda Importo..."
 
-#: core/utilities/setup/editor/setupraw.cpp:189
+#: core/utilities/setup/editor/setupraw.cpp:190
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Behavior"
 msgstr "RAW Konduto"
 
-#: core/utilities/setup/editor/setupraw.cpp:190
+#: core/utilities/setup/editor/setupraw.cpp:191
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Default Settings"
@@ -64882,25 +64889,25 @@ msgstr ""
 "AOMedia Video 1 (AV1) kodeko, malfermita kaj reĝeca kodeko. libera koda "
 "formato. </item>"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:126
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:128
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Advanced Metadata Profile"
 msgstr "Konservi Altnivelan Metadatum-Profilon"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:155
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:157
 #, kde-format
 msgctxt "@title:window"
 msgid "Load Advanced Metadata Profile"
 msgstr "Ŝargi Altnivelan Metadatum-Profilon"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:196
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:198
 #, kde-format
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "Averto"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:197
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:199
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64912,7 +64919,7 @@ msgstr ""
 "Ĉiuj viaj ŝanĝoj estos perditaj.\n"
 " Ĉu vi volas daŭrigi?"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:393
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:395
 #, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
@@ -64923,90 +64930,90 @@ msgstr ""
 "uzatajn de digiKam por konservi kaj preni etikedojn, taksadon kaj komentojn."
 "<br/><b>Noto: </b>Ordo estas grava dum legado de metadatumoj."
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:403
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:405
 #, kde-format
 msgid "Read Options"
 msgstr "Legi Opciojn"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:404
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:406
 #, kde-format
 msgid "Write Options"
 msgstr "Skribi Opciojn"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:406
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:408
 #, kde-format
 msgid "Unify read and write"
 msgstr "Unuigi legon kaj skribon"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:407
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:409
 #, kde-format
 msgid "Read all metadata for tags"
 msgstr "Legi ĉiujn metadatumojn por etikedoj"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:427
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
 msgid "Add"
 msgstr "Aldoni"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:436
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:438
 #, kde-format
 msgid "Move Up"
 msgstr "Supreniĝi"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:439
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:441
 #, kde-format
 msgid "Move Down"
 msgstr "Movi Malsupren"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:442
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
 msgid "Revert Changes"
 msgstr "Reverti Ŝanĝojn"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:448
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
 #, kde-format
 msgid "Save Profile"
 msgstr "Konservi Profilon"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:451
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:453
 #, kde-format
 msgid "Load Profile"
 msgstr "Ŝargi Profilon"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:454
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:456
 #, kde-format
 msgid "Reset to Default"
 msgstr "Restarigi al Defaŭlta"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:110
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:112
 #, kde-format
 msgctxt "@title:window"
 msgid "New XMP Namespace"
 msgstr "Nova XMP Nomspaco"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:114
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:116
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit XMP Namespace"
 msgstr "Redakti XMP-Nomspacon"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:204
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:206
 #, kde-format
 msgid "Add metadata namespace"
 msgstr "Aldoni metadatuman nomspacon"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:208
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:210
 #, kde-format
 msgid "Metadata Subspace"
 msgstr "Metadatena Subspaco"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:220
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:222
 #, kde-format
 msgctxt "@label: namespace name"
 msgid "Name:"
 msgstr "Nomo:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:228
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:230
 #, kde-format
 msgid ""
 "<p>To create new namespaces, you need to specify parameters:</"
@@ -65021,7 +65028,7 @@ msgstr ""
 "Parizo\" aŭ \"Urbo|Parizo\"</li><li>Specigu ĉu oni devas skribi nur "
 "ŝlosilvorton aŭ la tutan vojon.</li></ul></p>"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:239
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:241
 #, kde-format
 msgid ""
 "<p>To create new rating namespaces, you need to specify parameters:</"
@@ -65036,7 +65043,7 @@ msgstr ""
 "Microsoft uzas 0 1 25 50 75 99</li><li>Elektu la ĝustan opcio de nomspaco el "
 "listo.</li></ul></p>"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:250
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:252
 #, kde-format
 msgid ""
 "<p>To create new comment namespaces, you need to specify parameters:</"
@@ -65047,84 +65054,84 @@ msgstr ""
 "p><p><ul><li>Nomspacnomon kun punktoj.<br/>Ekz.: <i>\"Xmp.xmp.Comment \"</"
 "i></li><li>Elektu la ĝustan nomspacan opcion el listo.</li></ul></p>"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:259
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:261
 #, kde-format
 msgid "Special Options"
 msgstr "Specialaj Opcioj"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:286
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:288
 #, kde-format
 msgid "Alternative name"
 msgstr "Alternativa nomo"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:290
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:292
 #, kde-format
 msgid "Alternative special options"
 msgstr "Alternativaj specialaj opcioj"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:320
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:322
 #, kde-format
 msgid "Separator:"
 msgstr "Apartigilo:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:326
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:328
 #, kde-format
 msgid "Set Tags Path:"
 msgstr "Metu Vojon por Etikedoj:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:346
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:348
 #, kde-format
 msgid "Rating Mapping:"
 msgstr "Mapado de taksado:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:534
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:536
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 "Ĉi tio estas defaŭlta nomspaco. Defaŭltaj nomspacoj nur povas esti "
 "malŝaltitaj"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:561
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:563
 #, kde-format
 msgid "The namespace name is required"
 msgstr "La nomspaca nomo estas postulata"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:572
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:574
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr "EXIF nomspaco nomo devas komenci per \"Exif\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:580
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:584
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr "EXIF-alternativa nomspaco nomo devas komenciĝi per \"Exif\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:592
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:596
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr "IPTC-nomspaco nomo devas komenciĝi per \"Iptc\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:600
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:606
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr "IPTC-alternativa nomspaco nomo devas komenciĝi per \"Iptc\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:612
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:618
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr "XMP nomspaco nomo devas komenci per \"Xmp\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:620
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:628
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr "XMP alternativa nomspaco nomo devas komenci per \"Xmp\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:641
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:649
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr "Etikedvoja apartigilo estas bezonata"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:647
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:655
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr "Nur unu signo nun estas subtenata kiel etikedvojapartigilo"
@@ -66340,13 +66347,13 @@ msgstr ""
 "<b>Noto: Ĉiuj ŝanĝoj al ĉi tiuj agordoj efektiviĝas nur post la rekomenco. "
 "Iuj agordoj dependas de aparataro kaj eble ne efikas.</b>"
 
-#: core/utilities/setup/setup.cpp:125
+#: core/utilities/setup/setup.cpp:127
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Datumbazo"
 
-#: core/utilities/setup/setup.cpp:126
+#: core/utilities/setup/setup.cpp:128
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66356,13 +66363,13 @@ msgstr ""
 "Datumbazaj agordoj\n"
 "Agordi datumbazajn metojn"
 
-#: core/utilities/setup/setup.cpp:130
+#: core/utilities/setup/setup.cpp:132
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Kolektoj"
 
-#: core/utilities/setup/setup.cpp:131
+#: core/utilities/setup/setup.cpp:133
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66372,13 +66379,13 @@ msgstr ""
 "Agordoj de kolektoj\n"
 "Agordi lokojn de radikaj albumoj"
 
-#: core/utilities/setup/setup.cpp:135
+#: core/utilities/setup/setup.cpp:137
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Perspektivoj"
 
-#: core/utilities/setup/setup.cpp:136
+#: core/utilities/setup/setup.cpp:138
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66388,13 +66395,13 @@ msgstr ""
 "Agordoj de Aplikaj Vidoj\n"
 "Agordi la aspekton de la vidoj"
 
-#: core/utilities/setup/setup.cpp:140
+#: core/utilities/setup/setup.cpp:142
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Ilo-Konsileto"
 
-#: core/utilities/setup/setup.cpp:141
+#: core/utilities/setup/setup.cpp:143
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66404,13 +66411,13 @@ msgstr ""
 "Eroj Konsiletoj Agordoj\n"
 "Agordi informojn en eraj konsiletoj"
 
-#: core/utilities/setup/setup.cpp:145
+#: core/utilities/setup/setup.cpp:147
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metadatenoj"
 
-#: core/utilities/setup/setup.cpp:146
+#: core/utilities/setup/setup.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66420,13 +66427,13 @@ msgstr ""
 "Enkorpigita Bilda Informa Administrado\n"
 "Agordi rilatojn inter bildoj kaj metadatenoj"
 
-#: core/utilities/setup/setup.cpp:150
+#: core/utilities/setup/setup.cpp:152
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Ŝablonoj:"
 
-#: core/utilities/setup/setup.cpp:151
+#: core/utilities/setup/setup.cpp:153
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66436,13 +66443,13 @@ msgstr ""
 "Metadatumaj ŝablonoj\n"
 "Administru vian kolekton de metadatumaj ŝablonoj"
 
-#: core/utilities/setup/setup.cpp:155
+#: core/utilities/setup/setup.cpp:157
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Bildredaktilo"
 
-#: core/utilities/setup/setup.cpp:156
+#: core/utilities/setup/setup.cpp:158
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66452,13 +66459,13 @@ msgstr ""
 "Agordoj de la bildoredaktilo\n"
 "Agordi la metojn de la bildoredaktilo"
 
-#: core/utilities/setup/setup.cpp:160
+#: core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Koloradministrado"
 
-#: core/utilities/setup/setup.cpp:161
+#: core/utilities/setup/setup.cpp:163
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66468,13 +66475,13 @@ msgstr ""
 "Agordoj por Koloro-Administrado\n"
 "Agordi la kolor-administrajn metojn"
 
-#: core/utilities/setup/setup.cpp:165
+#: core/utilities/setup/setup.cpp:167
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Luma Tablo"
 
-#: core/utilities/setup/setup.cpp:166
+#: core/utilities/setup/setup.cpp:168
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66484,13 +66491,13 @@ msgstr ""
 "Agordoj de Lumaj Tabeloj\n"
 "Agordi ilon uzatan por kompari objektojn"
 
-#: core/utilities/setup/setup.cpp:179
+#: core/utilities/setup/setup.cpp:181
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Fotiloj"
 
-#: core/utilities/setup/setup.cpp:180
+#: core/utilities/setup/setup.cpp:182
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66500,13 +66507,13 @@ msgstr ""
 "Agordoj de fotiloj\n"
 "Administru viajn fotilajn aparatojn"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:189
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Kromaĵoj"
 
-#: core/utilities/setup/setup.cpp:188
+#: core/utilities/setup/setup.cpp:190
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66516,13 +66523,13 @@ msgstr ""
 "Agordoj de aldonaĵoj\n"
 "Agordu kiuj kromprogramoj estos alireblaj de la aplikaĵo"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:194
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Diversaj"
 
-#: core/utilities/setup/setup.cpp:193
+#: core/utilities/setup/setup.cpp:195
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66532,7 +66539,7 @@ msgstr ""
 "Diversaj Agordoj\n"
 "Agordu konduton de la aliaj partoj de digiKam"
 
-#: core/utilities/setup/setupdatabase.cpp:169
+#: core/utilities/setup/setupdatabase.cpp:171
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66551,19 +66558,19 @@ msgstr ""
 "8.5.0.\n"
 "Ĉu vi volas komenci la ĝisdatigon?"
 
-#: core/utilities/setup/setupdatabase.cpp:183
+#: core/utilities/setup/setupdatabase.cpp:185
 #, kde-format
 msgctxt "@title:group"
 msgid "Updates"
 msgstr "Ĝisdatigoj"
 
-#: core/utilities/setup/setupdatabase.cpp:186
+#: core/utilities/setup/setupdatabase.cpp:188
 #, kde-format
 msgctxt "@action:button"
 msgid "Update File Hashes"
 msgstr "Ĝisdatigi Dosierajn Haketojn"
 
-#: core/utilities/setup/setupdatabase.cpp:188
+#: core/utilities/setup/setupdatabase.cpp:190
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -66581,18 +66588,18 @@ msgstr ""
 "Post la ĝisdatigo vi ne povas uzi vian datumbazon kun digiKam-versio antaŭ "
 "8.5.0."
 
-#: core/utilities/setup/setupdatabase.cpp:197
+#: core/utilities/setup/setupdatabase.cpp:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Update File Hashes</b>"
 msgstr "Akiri informojn pri <b>Ĝisdatigi Dosierajn Haketojn</b>"
 
-#: core/utilities/setup/setupgeolocation.cpp:104
+#: core/utilities/setup/setupgeolocation.cpp:106
 #, kde-format
 msgid "API Key:"
 msgstr "API-Ŝlosilo:"
 
-#: core/utilities/setup/setupgeolocation.cpp:115
+#: core/utilities/setup/setupgeolocation.cpp:117
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66608,12 +66615,12 @@ msgstr ""
 "Por pli da informoj, vidu ĉi tiun <a href='https://mapsplatform.google.com/"
 "pricing/'>Google-paĝon</a> pri uzadoj, praktikoj kaj prezoj."
 
-#: core/utilities/setup/setupicc.cpp:137
+#: core/utilities/setup/setupicc.cpp:139
 #, kde-format
 msgid "Enable Color Management"
 msgstr "Ebligi Koloradministradon"
 
-#: core/utilities/setup/setupicc.cpp:138
+#: core/utilities/setup/setupicc.cpp:140
 #, kde-format
 msgid ""
 "<ul><li>Checked: Color Management is enabled</li><li>Unchecked: Color "
@@ -66622,17 +66629,17 @@ msgstr ""
 "<ul><li>Markigita: Kolora Administrado estas ebligita</li><li>Nemarkita: "
 "Kolora Administrado estas malŝaltita</li></ul>"
 
-#: core/utilities/setup/setupicc.cpp:145
+#: core/utilities/setup/setupicc.cpp:147
 #, kde-format
 msgid "Visit Little CMS project website"
 msgstr "Viziti retejon de Little CMS-projekto"
 
-#: core/utilities/setup/setupicc.cpp:155
+#: core/utilities/setup/setupicc.cpp:157
 #, kde-format
 msgid "Working Color Space"
 msgstr "Labora Kolora Spaco"
 
-#: core/utilities/setup/setupicc.cpp:161
+#: core/utilities/setup/setupicc.cpp:163
 #, kde-format
 msgid ""
 "<p>This is the color space all the images will be converted to when opened "
@@ -66645,7 +66652,7 @@ msgstr ""
 "Bonaj kaj sekuraj elektoj estas <b>Adobe RGB (1998)</b> kaj <b>sRGB "
 "IEC61966-2.1</b></p>"
 
-#: core/utilities/setup/setupicc.cpp:167
+#: core/utilities/setup/setupicc.cpp:169
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -66654,17 +66661,17 @@ msgstr ""
 "<p>Vi povas uzi ĉi tiun butonon por akiri pli detalajn informojn pri la "
 "elektita laborspaca profilo.</p>"
 
-#: core/utilities/setup/setupicc.cpp:181
+#: core/utilities/setup/setupicc.cpp:183
 #, kde-format
 msgid "When the profile of an image does not match the working color space"
 msgstr "Kiam la profilo de bildo ne kongruas kun la laborkolorspaco"
 
-#: core/utilities/setup/setupicc.cpp:189 core/utilities/setup/setupicc.cpp:220
+#: core/utilities/setup/setupicc.cpp:191 core/utilities/setup/setupicc.cpp:222
 #, kde-format
 msgid "Ask when opening the image"
 msgstr "Demandi kiam vi malfermas la bildon"
 
-#: core/utilities/setup/setupicc.cpp:190
+#: core/utilities/setup/setupicc.cpp:192
 #, kde-format
 msgid ""
 "<p>If an image has an embedded color profile not matching the working space "
@@ -66676,12 +66683,12 @@ msgstr ""
 "profilo, digiKam demandos ĉu vi volas konvertiĝi al la laborspaco, konservi "
 "la enigitan profilon aŭ forĵeti la enigitan profilon kaj asigni alian.</p>"
 
-#: core/utilities/setup/setupicc.cpp:196
+#: core/utilities/setup/setupicc.cpp:198
 #, kde-format
 msgid "Convert the image to the working color space"
 msgstr "Konverti la bildon al la laborkolorspaco"
 
-#: core/utilities/setup/setupicc.cpp:197
+#: core/utilities/setup/setupicc.cpp:199
 #, kde-format
 msgid ""
 "<p>If an image has an embedded color profile not matching the working space "
@@ -66694,12 +66701,12 @@ msgstr ""
 "laborkolorspaco. Ĉi tio ŝanĝas la rastrumerojn, sed ne la aspekton de la "
 "bildo.</p>"
 
-#: core/utilities/setup/setupicc.cpp:213
+#: core/utilities/setup/setupicc.cpp:215
 #, kde-format
 msgid "When an image has no color profile information"
 msgstr "Kiam bildo ne havas kolorprofilajn informojn"
 
-#: core/utilities/setup/setupicc.cpp:221
+#: core/utilities/setup/setupicc.cpp:223
 #, kde-format
 msgid ""
 "<p>If an image has no embedded color profile, digiKam will ask which color "
@@ -66710,70 +66717,70 @@ msgstr ""
 "kolorspacon estos uzata por interpreti la bildon kaj al kiu kolorspaco ĝi "
 "estos transformita por redaktado.</p>"
 
-#: core/utilities/setup/setupicc.cpp:225
+#: core/utilities/setup/setupicc.cpp:227
 #, kde-format
 msgid "Assume it is using the sRGB color space (Internet standard)"
 msgstr "Supozu, ke ĝi uzas la sRGB-kolorspacon (Interreta normo)"
 
 #. i18n("<p></p>"));
 #.
-#: core/utilities/setup/setupicc.cpp:231
+#: core/utilities/setup/setupicc.cpp:233
 #, kde-format
 msgid "and convert it to the working color space"
 msgstr "kaj konverti ĝin al la laborkolorspaco"
 
-#: core/utilities/setup/setupicc.cpp:244
+#: core/utilities/setup/setupicc.cpp:246
 #, kde-format
 msgid "Assume it is using the working color space"
 msgstr "Supozu, ke ĝi uzas la laborkolorspacon"
 
 #. i18n("<p></p>"));
 #.
-#: core/utilities/setup/setupicc.cpp:250
+#: core/utilities/setup/setupicc.cpp:252
 #, kde-format
 msgid "Convert it from default input color space to working space"
 msgstr "Konverti ĝin de defaŭlta eniga kolorspaco al laborspaco"
 
-#: core/utilities/setup/setupicc.cpp:269
+#: core/utilities/setup/setupicc.cpp:271
 #, kde-format
 msgid "When loading a RAW file with uncalibrated colors"
 msgstr "Kiam vi ŝargas RAW-dosieron kun nekalibritaj koloroj"
 
-#: core/utilities/setup/setupicc.cpp:276
+#: core/utilities/setup/setupicc.cpp:278
 #, kde-format
 msgid "Ask for the input profile"
 msgstr "Demandi pri la enigprofilo"
 
 #. i18n("<p></p>"));
 #.
-#: core/utilities/setup/setupicc.cpp:282
+#: core/utilities/setup/setupicc.cpp:284
 #, kde-format
 msgid "Automatic color correction"
 msgstr "Aŭtomata kolorkorekto"
 
 #. i18n("<p></p>"));
 #.
-#: core/utilities/setup/setupicc.cpp:288
+#: core/utilities/setup/setupicc.cpp:290
 #, kde-format
 msgid "Convert it from the default input profile"
 msgstr "Konverti ĝin de la defaŭlta eniga profilo"
 
-#: core/utilities/setup/setupicc.cpp:313
+#: core/utilities/setup/setupicc.cpp:314
 #, kde-format
 msgid "Color Managed View"
 msgstr "Koloro Administrita Vido"
 
-#: core/utilities/setup/setupicc.cpp:318
+#: core/utilities/setup/setupicc.cpp:319
 #, kde-format
 msgid "Monitor profile:"
 msgstr "Monitora profilo:"
 
-#: core/utilities/setup/setupicc.cpp:322
+#: core/utilities/setup/setupicc.cpp:323
 #, kde-format
 msgid "<p>Select the color profile for your monitor here.</p>"
 msgstr "<p>Elekti ĉi tie la kolorprofilon por via ekrano.</p>"
 
-#: core/utilities/setup/setupicc.cpp:326
+#: core/utilities/setup/setupicc.cpp:327
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -66782,12 +66789,12 @@ msgstr ""
 "<p>Vi povas uzi ĉi tiun butonon por akiri pli detalajn informojn pri la "
 "elektita monitora profilo.</p>"
 
-#: core/utilities/setup/setupicc.cpp:330
+#: core/utilities/setup/setupicc.cpp:331
 #, kde-format
 msgid "Use color managed view in editor"
 msgstr "Uzi kolor-administritan vidon en redaktilo"
 
-#: core/utilities/setup/setupicc.cpp:331
+#: core/utilities/setup/setupicc.cpp:332
 #, kde-format
 msgid ""
 "<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
@@ -66802,22 +66809,22 @@ msgstr ""
 "el la fenestro de Redaktoro. <i>Averto</i>: Ĉi tio povas malrapidigi "
 "bildigon de la bildo, depende de la rapideco de via komputilo.</p>"
 
-#: core/utilities/setup/setupicc.cpp:338
+#: core/utilities/setup/setupicc.cpp:339
 #, kde-format
 msgid "Use color managed view for previews and thumbnails"
 msgstr "Uzi koloran administritan vidon por antaŭrigardoj kaj bildetoj"
 
-#: core/utilities/setup/setupicc.cpp:354
+#: core/utilities/setup/setupicc.cpp:355
 #, kde-format
 msgid "Camera and Scanner"
 msgstr "Fotilo kaj Skanilo"
 
-#: core/utilities/setup/setupicc.cpp:359
+#: core/utilities/setup/setupicc.cpp:360
 #, kde-format
 msgid "Default input color profile:"
 msgstr "Defaŭlta eniga kolorprofilo:"
 
-#: core/utilities/setup/setupicc.cpp:361
+#: core/utilities/setup/setupicc.cpp:362
 #, kde-format
 msgid ""
 "<p>This is the default color profile for your input device (that is your "
@@ -66830,7 +66837,7 @@ msgstr ""
 "ĝusta konvertiĝo de RAW-bildoj en 16 bitoj. Kelkaj el la elektoj pri ŝargado "
 "de konduto supre rilatas al ĉi tiu profilo.</p>"
 
-#: core/utilities/setup/setupicc.cpp:368
+#: core/utilities/setup/setupicc.cpp:369
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -66839,17 +66846,17 @@ msgstr ""
 "<p>Vi povas uzi ĉi tiun butonon por akiri pli detalajn informojn pri la "
 "elektita eniga profilo.</p>"
 
-#: core/utilities/setup/setupicc.cpp:379
+#: core/utilities/setup/setupicc.cpp:380
 #, kde-format
 msgid "Printing and Proofing"
 msgstr "Presado kaj Pruvo"
 
-#: core/utilities/setup/setupicc.cpp:384
+#: core/utilities/setup/setupicc.cpp:385
 #, kde-format
 msgid "Output device profile:"
 msgstr "Profilo de eliga aparato:"
 
-#: core/utilities/setup/setupicc.cpp:393
+#: core/utilities/setup/setupicc.cpp:394
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -66858,12 +66865,12 @@ msgstr ""
 "<p>Vi povas uzi ĉi tiun butonon por akiri pli detalajn informojn pri la "
 "elektita pruva profilo.</p>"
 
-#: core/utilities/setup/setupicc.cpp:404
+#: core/utilities/setup/setupicc.cpp:405
 #, kde-format
 msgid "Color Profiles Repository"
 msgstr "Koloraj Profiloj Deponejo"
 
-#: core/utilities/setup/setupicc.cpp:409
+#: core/utilities/setup/setupicc.cpp:410
 #, kde-format
 msgid ""
 "digiKam looks for ICC profiles in a number of <a href='default'>default "
@@ -66872,7 +66879,7 @@ msgstr ""
 "digiKam serĉas ICC-profilojn en kelkaj <a href='default'>defaŭltaj lokoj</"
 "a>. Vi povas specifi plian dosierujon:"
 
-#: core/utilities/setup/setupicc.cpp:417
+#: core/utilities/setup/setupicc.cpp:418
 #, kde-format
 msgid ""
 "<p>digiKam searches ICC profiles in default system folders and ships itself "
@@ -66883,12 +66890,12 @@ msgstr ""
 "al si kelkajn elektitajn profilojn. Konservu ĉiujn viajn kromajn "
 "kolorprofilojn en la dosierujo fiksita ĉi tie.</p>"
 
-#: core/utilities/setup/setupicc.cpp:440
+#: core/utilities/setup/setupicc.cpp:441
 #, kde-format
 msgid "Use black point compensation"
 msgstr "Uzi nigropunktan kompenson"
 
-#: core/utilities/setup/setupicc.cpp:441
+#: core/utilities/setup/setupicc.cpp:442
 #, kde-format
 msgid ""
 "<p><b>Black Point Compensation</b> is a way to make adjustments between the "
@@ -66899,56 +66906,56 @@ msgstr ""
 "maksimumaj nigraj niveloj de ciferecaj dosieroj kaj la nigraj kapabloj de "
 "diversaj ciferecaj aparatoj.</p>"
 
-#: core/utilities/setup/setupicc.cpp:447
+#: core/utilities/setup/setupicc.cpp:448
 #, kde-format
 msgid "Rendering Intents:"
 msgstr "Reprezentaj Intencoj:"
 
-#: core/utilities/setup/setupicc.cpp:462
+#: core/utilities/setup/setupicc.cpp:463
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Behavior"
 msgstr "Konduto"
 
-#: core/utilities/setup/setupicc.cpp:463
+#: core/utilities/setup/setupicc.cpp:464
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Profiles"
 msgstr "Profiloj"
 
-#: core/utilities/setup/setupicc.cpp:464
+#: core/utilities/setup/setupicc.cpp:465
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Advanced"
 msgstr "Plie"
 
-#: core/utilities/setup/setupicc.cpp:665
+#: core/utilities/setup/setupicc.cpp:666
 #, kde-format
 msgid "Monitor Profile From System Settings"
 msgstr "Monitora Profilo De Sistemaj Agordoj"
 
-#: core/utilities/setup/setupicc.cpp:697
+#: core/utilities/setup/setupicc.cpp:698
 #, kde-format
 msgid "No ICC profiles files found."
 msgstr "Neniuj dosieroj de profiloj de ICC trovitaj."
 
-#: core/utilities/setup/setupicc.cpp:713
+#: core/utilities/setup/setupicc.cpp:714
 #, kde-format
 msgid "No Display Profile Available"
 msgstr "Neniu Montra Profilo Disponebla"
 
-#: core/utilities/setup/setupicc.cpp:715
+#: core/utilities/setup/setupicc.cpp:716
 #, kde-format
 msgid "No Output Profile Available"
 msgstr "Neniu Eligo Profilo Havebla"
 
-#: core/utilities/setup/setupicc.cpp:849
+#: core/utilities/setup/setupicc.cpp:850
 #, kde-format
 msgctxt "none of the paths"
 msgid "none"
 msgstr "nenio"
 
-#: core/utilities/setup/setupicc.cpp:858
+#: core/utilities/setup/setupicc.cpp:859
 #, kde-format
 msgid ""
 "On Windows, the default search paths include <ul><li>%1/Windows/System32/"
@@ -66961,7 +66968,7 @@ msgstr ""
 "Windows/Color/</li></ul>En via sistemo, nuntempe ĉi tiuj vojoj ekzistas kaj "
 "estas skanitaj:<ul><li>%3</li></ul>"
 
-#: core/utilities/setup/setupicc.cpp:874
+#: core/utilities/setup/setupicc.cpp:875
 #, kde-format
 msgid ""
 "On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
@@ -66978,7 +66985,7 @@ msgstr ""
 "local/share/icc/</li><li>~/.color/icc/</li></ul>En via sistemo, nuntempe ĉi "
 "tiuj vojoj ekzistas kaj estas skanita:<ul><li>%2</li></ul>"
 
-#: core/utilities/setup/setupicc.cpp:893
+#: core/utilities/setup/setupicc.cpp:894
 #, kde-format
 msgid ""
 "On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
@@ -67034,41 +67041,41 @@ msgstr ""
 "fermas ĝin, aŭ malŝalti ĝin por konservi la bildojn nuntempe sur la luma "
 "tablo."
 
-#: core/utilities/setup/setupplugins.cpp:66
+#: core/utilities/setup/setupplugins.cpp:68
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Generic"
 msgstr "Ĝenerala"
 
-#: core/utilities/setup/setupplugins.cpp:72
+#: core/utilities/setup/setupplugins.cpp:74
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Image Editor"
 msgstr "Bildredaktilo"
 
-#: core/utilities/setup/setupplugins.cpp:78
+#: core/utilities/setup/setupplugins.cpp:80
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Batch Queue Manager"
 msgstr "Batch Queue Manager"
 
-#: core/utilities/setup/setupplugins.cpp:84
+#: core/utilities/setup/setupplugins.cpp:86
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "Bildaj Ŝargiloj"
 
-#: core/utilities/setup/setuptemplate.cpp:77
+#: core/utilities/setup/setuptemplate.cpp:79
 #, kde-format
 msgid "Template Title:"
 msgstr "Ŝablona Titolo:"
 
-#: core/utilities/setup/setuptemplate.cpp:80
+#: core/utilities/setup/setuptemplate.cpp:82
 #, kde-format
 msgid "Enter the metadata template title here."
 msgstr "Enigu la titolon de la metadatuma ŝablono ĉi tie."
 
-#: core/utilities/setup/setuptemplate.cpp:81
+#: core/utilities/setup/setuptemplate.cpp:83
 #, kde-format
 msgid ""
 "<p>Enter the metadata template title here. This title will be used to "
@@ -67077,7 +67084,7 @@ msgstr ""
 "<p>Enigu la titolon de la ŝablono de metadatumoj ĉi tie. Ĉi tiu titolo estos "
 "uzata por identigi ŝablonon en via kolekto.</p>"
 
-#: core/utilities/setup/setuptemplate.cpp:91
+#: core/utilities/setup/setuptemplate.cpp:93
 #, kde-format
 msgid ""
 "<b>Note: These information are used to set <b><a href='https://en.wikipedia."
@@ -67092,38 +67099,38 @@ msgstr ""
 "estas limigo kun XMP, sed notu, ke IPTC-teksta etikedo grandecoj estas "
 "limigitaj. Uzu kuntekstan helpon por detaloj.</b>"
 
-#: core/utilities/setup/setuptemplate.cpp:110
+#: core/utilities/setup/setuptemplate.cpp:112
 #, kde-format
 msgid "&Replace..."
 msgstr "&Anstataŭigi..."
 
-#: core/utilities/setup/setuptemplate.cpp:245
-#: core/utilities/setup/setuptemplate.cpp:276
+#: core/utilities/setup/setuptemplate.cpp:247
+#: core/utilities/setup/setuptemplate.cpp:278
 #, kde-format
 msgid "Cannot register new metadata template without title."
 msgstr "Ne povas registri novan metadatuman ŝablonon sen titolo."
 
-#: core/utilities/setup/setuptemplate.cpp:252
+#: core/utilities/setup/setuptemplate.cpp:254
 #, kde-format
 msgid "A metadata template named '%1' already exists."
 msgstr "Metadatuma ŝablono nomita '%1' jam ekzistas."
 
-#: core/utilities/setup/setuptooltip.cpp:131
+#: core/utilities/setup/setuptooltip.cpp:133
 #, kde-format
 msgid "Tool-Tips Font:"
 msgstr "Ilo-Konsiletoj Tiparo:"
 
-#: core/utilities/setup/setuptooltip.cpp:132
+#: core/utilities/setup/setuptooltip.cpp:134
 #, kde-format
 msgid "Select here the font used to display text in tool-tips."
 msgstr "Elektu ĉi tie la tiparon uzatan por montri tekston en konsiletoj."
 
-#: core/utilities/setup/setuptooltip.cpp:140
+#: core/utilities/setup/setuptooltip.cpp:142
 #, kde-format
 msgid "Show icon-view and thumb-bar items' tool-tips"
 msgstr "Montri ilo-konsiletojn de eroj de piktogram-vido kaj dikfingro-breto"
 
-#: core/utilities/setup/setuptooltip.cpp:141
+#: core/utilities/setup/setuptooltip.cpp:143
 #, kde-format
 msgid ""
 "Set this option to display image information when the mouse hovers over an "
@@ -67132,208 +67139,208 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri bildajn informojn kiam la muso ŝvebas super "
 "piktogramo-vido aŭ dikfingro-breto."
 
-#: core/utilities/setup/setuptooltip.cpp:144
+#: core/utilities/setup/setuptooltip.cpp:146
 #, kde-format
 msgid "File/Item Information"
 msgstr "Dosiero/Ero Informoj"
 
-#: core/utilities/setup/setuptooltip.cpp:147
+#: core/utilities/setup/setuptooltip.cpp:149
 #, kde-format
 msgid "File name"
 msgstr "Dosiernomo"
 
-#: core/utilities/setup/setuptooltip.cpp:150
+#: core/utilities/setup/setuptooltip.cpp:152
 #, kde-format
 msgid "File date"
 msgstr "Dosiera dato"
 
-#: core/utilities/setup/setuptooltip.cpp:153
+#: core/utilities/setup/setuptooltip.cpp:155
 #, kde-format
 msgid "File size"
 msgstr "Dosiera grandeco"
 
-#: core/utilities/setup/setuptooltip.cpp:156
+#: core/utilities/setup/setuptooltip.cpp:158
 #, kde-format
 msgid "Image type"
 msgstr "Bilda tipo"
 
-#: core/utilities/setup/setuptooltip.cpp:159
+#: core/utilities/setup/setuptooltip.cpp:161
 #, kde-format
 msgid "Image dimensions"
 msgstr "Bildaj dimensioj"
 
-#: core/utilities/setup/setuptooltip.cpp:162
+#: core/utilities/setup/setuptooltip.cpp:164
 #, kde-format
 msgid "Image aspect ratio"
 msgstr "Bilda bildforma proporcio"
 
-#: core/utilities/setup/setuptooltip.cpp:163
+#: core/utilities/setup/setuptooltip.cpp:165
 #, kde-format
 msgid "Set this option to display the image aspect ratio."
 msgstr "Agordu ĉi tiun opcion por montri la bildan bildformaton."
 
-#: core/utilities/setup/setuptooltip.cpp:179
-#: core/utilities/setup/setuptooltip.cpp:359
+#: core/utilities/setup/setuptooltip.cpp:181
+#: core/utilities/setup/setuptooltip.cpp:361
 #, kde-format
 msgid "Camera make and model"
 msgstr "Kamila marko kaj modelo"
 
-#: core/utilities/setup/setuptooltip.cpp:187
+#: core/utilities/setup/setuptooltip.cpp:189
 #, kde-format
 msgid "Camera date"
 msgstr "Fotila dato"
 
-#: core/utilities/setup/setuptooltip.cpp:190
-#: core/utilities/setup/setuptooltip.cpp:367
+#: core/utilities/setup/setuptooltip.cpp:192
+#: core/utilities/setup/setuptooltip.cpp:369
 #, kde-format
 msgid "Camera aperture and focal length"
 msgstr "Fotila aperturo kaj fokusa distanco"
 
-#: core/utilities/setup/setuptooltip.cpp:194
-#: core/utilities/setup/setuptooltip.cpp:371
+#: core/utilities/setup/setuptooltip.cpp:196
+#: core/utilities/setup/setuptooltip.cpp:373
 #, kde-format
 msgid "Camera exposure and sensitivity"
 msgstr "Fotila elmeto kaj sentemo"
 
-#: core/utilities/setup/setuptooltip.cpp:198
+#: core/utilities/setup/setuptooltip.cpp:200
 #, kde-format
 msgid "Camera mode and program"
 msgstr "Fotila reĝimo kaj programo"
 
-#: core/utilities/setup/setuptooltip.cpp:202
-#: core/utilities/setup/setuptooltip.cpp:375
+#: core/utilities/setup/setuptooltip.cpp:204
+#: core/utilities/setup/setuptooltip.cpp:377
 #, kde-format
 msgid "Camera flash settings"
 msgstr "Agordoj de fotila fulmo"
 
-#: core/utilities/setup/setuptooltip.cpp:206
-#: core/utilities/setup/setuptooltip.cpp:379
+#: core/utilities/setup/setuptooltip.cpp:208
+#: core/utilities/setup/setuptooltip.cpp:381
 #, kde-format
 msgid "Camera white balance settings"
 msgstr "Fotilaj blankbalancaj agordoj"
 
-#: core/utilities/setup/setuptooltip.cpp:223
+#: core/utilities/setup/setuptooltip.cpp:225
 #, kde-format
 msgid "digiKam Information"
 msgstr "digiKam Informoj"
 
-#: core/utilities/setup/setuptooltip.cpp:226
-#: core/utilities/setup/setuptooltip.cpp:299
+#: core/utilities/setup/setuptooltip.cpp:228
+#: core/utilities/setup/setuptooltip.cpp:301
 #, kde-format
 msgid "Album name"
 msgstr "Albumnomo"
 
-#: core/utilities/setup/setuptooltip.cpp:227
-#: core/utilities/setup/setuptooltip.cpp:300
+#: core/utilities/setup/setuptooltip.cpp:229
+#: core/utilities/setup/setuptooltip.cpp:302
 #, kde-format
 msgid "Set this option to display the album name."
 msgstr "Agordu ĉi tiun opcion por montri la nomon de la albumo."
 
-#: core/utilities/setup/setuptooltip.cpp:229
+#: core/utilities/setup/setuptooltip.cpp:231
 #, kde-format
 msgid "Image title"
 msgstr "Bilda titolo"
 
-#: core/utilities/setup/setuptooltip.cpp:230
+#: core/utilities/setup/setuptooltip.cpp:232
 #, kde-format
 msgid "Set this option to display the image title."
 msgstr "Agordu ĉi tiun opcion por montri la bildotitolon."
 
-#: core/utilities/setup/setuptooltip.cpp:232
+#: core/utilities/setup/setuptooltip.cpp:234
 #, kde-format
 msgid "Image caption"
 msgstr "Bildoteksto"
 
-#: core/utilities/setup/setuptooltip.cpp:233
+#: core/utilities/setup/setuptooltip.cpp:235
 #, kde-format
 msgid "Set this option to display the image captions."
 msgstr "Agordu ĉi tiun opcion por montri la bildotekstojn."
 
-#: core/utilities/setup/setuptooltip.cpp:235
+#: core/utilities/setup/setuptooltip.cpp:237
 #, kde-format
 msgid "Image tags"
 msgstr "Bildaj etikedoj"
 
-#: core/utilities/setup/setuptooltip.cpp:236
+#: core/utilities/setup/setuptooltip.cpp:238
 #, kde-format
 msgid "Set this option to display the image tags."
 msgstr "Agordu ĉi tiun opcion por montri la bildajn etikedojn."
 
-#: core/utilities/setup/setuptooltip.cpp:238
+#: core/utilities/setup/setuptooltip.cpp:240
 #, kde-format
 msgid "Image labels"
 msgstr "Bildaj etikedoj"
 
-#: core/utilities/setup/setuptooltip.cpp:239
+#: core/utilities/setup/setuptooltip.cpp:241
 #, kde-format
 msgid "Set this option to display the image pick, color, rating labels."
 msgstr ""
 "Agordu ĉi tiun opcion por montri la bildajn elektojn, kolorojn, taksajn "
 "etikedojn."
 
-#: core/utilities/setup/setuptooltip.cpp:251
+#: core/utilities/setup/setuptooltip.cpp:253
 #, kde-format
 msgid "Audio/Video Information"
 msgstr "Aŭdio/Video Informoj"
 
-#: core/utilities/setup/setuptooltip.cpp:254
+#: core/utilities/setup/setuptooltip.cpp:256
 #, kde-format
 msgid "Video Aspect Ratio"
 msgstr "Video Bildformato"
 
-#: core/utilities/setup/setuptooltip.cpp:255
-#: core/utilities/setup/setuptooltip.cpp:270
+#: core/utilities/setup/setuptooltip.cpp:257
+#: core/utilities/setup/setuptooltip.cpp:272
 #, kde-format
 msgid "Set this option to display the Aspect Ratio of the Video."
 msgstr "Agordu ĉi tiun opcion por montri la Proporcion de la Video."
 
-#: core/utilities/setup/setuptooltip.cpp:258
+#: core/utilities/setup/setuptooltip.cpp:260
 #, kde-format
 msgid "Set this option to display the Audio Bit Rate of the Video."
 msgstr "Agordu ĉi tiun opcion por montri la Aŭdian Biton de la Video."
 
-#: core/utilities/setup/setuptooltip.cpp:261
+#: core/utilities/setup/setuptooltip.cpp:263
 #, kde-format
 msgid "Set this option to display the Audio Channel Type of the Video."
 msgstr "Agordu ĉi tiun opcion por montri la Audio-Kanalo-Tipon de la Video."
 
-#: core/utilities/setup/setuptooltip.cpp:264
+#: core/utilities/setup/setuptooltip.cpp:266
 #, kde-format
 msgid "Set this option to display the Audio Codec of the Video."
 msgstr "Agordu ĉi tiun opcion por montri la Aŭdkodekon de la Video."
 
-#: core/utilities/setup/setuptooltip.cpp:266
+#: core/utilities/setup/setuptooltip.cpp:268
 #, kde-format
 msgid "Video Duration"
 msgstr "Video Daŭro"
 
-#: core/utilities/setup/setuptooltip.cpp:267
+#: core/utilities/setup/setuptooltip.cpp:269
 #, kde-format
 msgid "Set this option to display the Duration of the Video."
 msgstr "Agordu ĉi tiun opcion por montri la Daŭron de la Video."
 
-#: core/utilities/setup/setuptooltip.cpp:269
+#: core/utilities/setup/setuptooltip.cpp:271
 #, kde-format
 msgid "Video Frame Rate"
 msgstr "Video Frame Rate"
 
-#: core/utilities/setup/setuptooltip.cpp:273
+#: core/utilities/setup/setuptooltip.cpp:275
 #, kde-format
 msgid "Set this option to display the Codec of the Video."
 msgstr "Agordu ĉi tiun opcion por montri la Kodekon de la Video."
 
-#: core/utilities/setup/setuptooltip.cpp:293
+#: core/utilities/setup/setuptooltip.cpp:295
 #, kde-format
 msgid "Show album items' tool-tips"
 msgstr "Montri la konsiletojn de albumeroj"
 
-#: core/utilities/setup/setuptooltip.cpp:294
+#: core/utilities/setup/setuptooltip.cpp:296
 #, kde-format
 msgid "Album Information"
 msgstr "Albumaj Informoj"
 
-#: core/utilities/setup/setuptooltip.cpp:296
-#: core/utilities/setup/setuptooltip.cpp:337
+#: core/utilities/setup/setuptooltip.cpp:298
+#: core/utilities/setup/setuptooltip.cpp:339
 #, kde-format
 msgid ""
 "Set this option to display album information when the mouse hovers over a "
@@ -67342,117 +67349,117 @@ msgstr ""
 "Agordu ĉi tiun opcion por montri albumajn informojn kiam la muso ŝvebas "
 "super dosierujo-rigarda objekto."
 
-#: core/utilities/setup/setuptooltip.cpp:302
+#: core/utilities/setup/setuptooltip.cpp:304
 #, kde-format
 msgid "Album date"
 msgstr "Albuma dato"
 
-#: core/utilities/setup/setuptooltip.cpp:303
+#: core/utilities/setup/setuptooltip.cpp:305
 #, kde-format
 msgid "Set this option to display the album date."
 msgstr "Agordu ĉi tiun opcion por montri la albuman daton."
 
-#: core/utilities/setup/setuptooltip.cpp:305
+#: core/utilities/setup/setuptooltip.cpp:307
 #, kde-format
 msgid "Album collection"
 msgstr "Albumkolekto"
 
-#: core/utilities/setup/setuptooltip.cpp:306
+#: core/utilities/setup/setuptooltip.cpp:308
 #, kde-format
 msgid "Set this option to display the album collection."
 msgstr "Agordu ĉi tiun opcion por montri la albumkolekton."
 
-#: core/utilities/setup/setuptooltip.cpp:308
+#: core/utilities/setup/setuptooltip.cpp:310
 #, kde-format
 msgid "Album category"
 msgstr "Albumkategorio"
 
-#: core/utilities/setup/setuptooltip.cpp:309
+#: core/utilities/setup/setuptooltip.cpp:311
 #, kde-format
 msgid "Set this option to display the album category."
 msgstr "Agordu ĉi tiun opcion por montri la kategorion de la albumo."
 
-#: core/utilities/setup/setuptooltip.cpp:311
+#: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Album caption"
 msgstr "Albuma bildoteksto"
 
-#: core/utilities/setup/setuptooltip.cpp:312
+#: core/utilities/setup/setuptooltip.cpp:314
 #, kde-format
 msgid "Set this option to display the album caption."
 msgstr "Agordu ĉi tiun opcion por montri la bildotekston de la albumo."
 
-#: core/utilities/setup/setuptooltip.cpp:314
+#: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Album preview"
 msgstr "Antaŭprezento de la albumo"
 
-#: core/utilities/setup/setuptooltip.cpp:315
+#: core/utilities/setup/setuptooltip.cpp:317
 #, kde-format
 msgid "Set this option to display the album preview."
 msgstr "Agordu ĉi tiun opcion por montri la antaŭrigardon de la albumo."
 
-#: core/utilities/setup/setuptooltip.cpp:334
+#: core/utilities/setup/setuptooltip.cpp:336
 #, kde-format
 msgid "Show import items' tool-tips"
 msgstr "Montri la konsiletojn de importaĵoj"
 
-#: core/utilities/setup/setuptooltip.cpp:335
+#: core/utilities/setup/setuptooltip.cpp:337
 #, kde-format
 msgid "Import Information"
 msgstr "Importi Informojn"
 
-#: core/utilities/setup/setuptooltip.cpp:340
+#: core/utilities/setup/setuptooltip.cpp:342
 #, kde-format
 msgid "Item name"
 msgstr "Objektnomo"
 
-#: core/utilities/setup/setuptooltip.cpp:341
+#: core/utilities/setup/setuptooltip.cpp:343
 #, kde-format
 msgid "Set this option to display the item name."
 msgstr "Agordu ĉi tiun opcion por montri la nomon de la objekto."
 
-#: core/utilities/setup/setuptooltip.cpp:343
+#: core/utilities/setup/setuptooltip.cpp:345
 #, kde-format
 msgid "Item date"
 msgstr "Objektdato"
 
-#: core/utilities/setup/setuptooltip.cpp:344
+#: core/utilities/setup/setuptooltip.cpp:346
 #, kde-format
 msgid "Set this option to display the item date."
 msgstr "Agordu ĉi tiun opcion por montri la eron-daton."
 
-#: core/utilities/setup/setuptooltip.cpp:346
+#: core/utilities/setup/setuptooltip.cpp:348
 #, kde-format
 msgid "Item size"
 msgstr "Objekta grandeco"
 
-#: core/utilities/setup/setuptooltip.cpp:347
+#: core/utilities/setup/setuptooltip.cpp:349
 #, kde-format
 msgid "Set this option to display the item size."
 msgstr "Agordu ĉi tiun opcion por montri la grandecon de la objekto."
 
-#: core/utilities/setup/setuptooltip.cpp:349
+#: core/utilities/setup/setuptooltip.cpp:351
 #, kde-format
 msgid "Item type"
 msgstr "Objekttipo"
 
-#: core/utilities/setup/setuptooltip.cpp:350
+#: core/utilities/setup/setuptooltip.cpp:352
 #, kde-format
 msgid "Set this option to display the item type."
 msgstr "Agordu ĉi tiun opcion por montri la tipon de objekto."
 
-#: core/utilities/setup/setuptooltip.cpp:352
+#: core/utilities/setup/setuptooltip.cpp:354
 #, kde-format
 msgid "Item dimensions"
 msgstr "Objektdimensioj"
 
-#: core/utilities/setup/setuptooltip.cpp:353
+#: core/utilities/setup/setuptooltip.cpp:355
 #, kde-format
 msgid "Set this option to display the item dimensions."
 msgstr "Agordu ĉi tiun opcion por montri la dimensiojn de la objekto."
 
-#: core/utilities/setup/setuptooltip.cpp:356
+#: core/utilities/setup/setuptooltip.cpp:358
 #, kde-format
 msgid ""
 "Note: these settings require \"Use File Metadata\" option from Camera Setup "
@@ -67461,20 +67468,23 @@ msgstr ""
 "Notu: ĉi tiuj agordoj postulas opcion \"Uzu Dosiajn Metadatumojn\" de paĝo "
 "de Fotila Agorda Konduto."
 
-#: core/utilities/setup/setuptooltip.cpp:406
+#: core/utilities/setup/setuptooltip.cpp:408
 #, kde-format
 msgid "Icon Items"
 msgstr "Piktogramaj Objektoj"
 
-#: core/utilities/setup/setuptooltip.cpp:407
+#: core/utilities/setup/setuptooltip.cpp:409
 #, kde-format
 msgid "Album Items"
 msgstr "Albumaj Objektoj"
 
-#: core/utilities/setup/setuptooltip.cpp:408
+#: core/utilities/setup/setuptooltip.cpp:410
 #, kde-format
 msgid "Import Items"
 msgstr "Importi Objektojn"
+
+#~ msgid "Detect and recognize Faces"
+#~ msgstr "Detekti kaj rekoni Vizaĝojn"
 
 #~ msgid ""
 #~ "A face recognition task is already running. Only one task can be running "

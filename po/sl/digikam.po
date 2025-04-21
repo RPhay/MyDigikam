@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-20 01:54+0000\n"
+"POT-Creation-Date: 2025-04-21 01:54+0000\n"
 "PO-Revision-Date: 2025-04-19 06:31+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3861,7 +3861,7 @@ msgstr "Vrsta zvočnega kanala"
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
 #: core/utilities/searchwindow/searchfields_createfield.cpp:973
-#: core/utilities/setup/setuptooltip.cpp:263
+#: core/utilities/setup/setuptooltip.cpp:265
 #, kde-format
 msgid "Audio Codec"
 msgstr "Avdio kodek"
@@ -9186,7 +9186,7 @@ msgstr "Za tiskanje uporabi upravljanje barv"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
-#: core/utilities/maintenance/main/maintenancedlg.cpp:294
+#: core/utilities/maintenance/main/maintenancedlg.cpp:297
 #, kde-format
 msgid "Settings..."
 msgstr "Nastavitve ..."
@@ -10277,7 +10277,7 @@ msgid "Energy function"
 msgstr "Energijska funkcija"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:387
-#: core/utilities/setup/setupicc.cpp:436
+#: core/utilities/setup/setupicc.cpp:437
 #, kde-format
 msgid "Advanced Settings"
 msgstr "Napredne nastavitve"
@@ -13840,7 +13840,7 @@ msgstr "Izbriši"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:81
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:89
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:77
-#: core/utilities/setup/album/setupcategory.cpp:94
+#: core/utilities/setup/album/setupcategory.cpp:96
 #, kde-format
 msgid "&Replace"
 msgstr "Zamenjaj"
@@ -28781,25 +28781,25 @@ msgstr ""
 "je oblika podatkovne zbirke novejša). Uporabite novejšo različico digiKama "
 "kot ste jo uporabljali prej. "
 
-#: core/libs/database/tags/facetags.cpp:418
+#: core/libs/database/tags/facetags.cpp:420
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Ljudje"
 
-#: core/libs/database/tags/facetags.cpp:483
+#: core/libs/database/tags/facetags.cpp:485
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Neznano"
 
-#: core/libs/database/tags/facetags.cpp:505
+#: core/libs/database/tags/facetags.cpp:507
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Nepotrjeno"
 
-#: core/libs/database/tags/facetags.cpp:527
+#: core/libs/database/tags/facetags.cpp:529
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -28903,7 +28903,7 @@ msgstr "Premakni datoteke"
 
 #: core/libs/database/utils/ifaces/dio.cpp:954
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:435
 #, kde-format
 msgid "Delete"
 msgstr "Izbriši"
@@ -34782,21 +34782,18 @@ msgid "Workflow:"
 msgstr "Potek dela:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:106
-#: core/utilities/maintenance/main/maintenancedlg.cpp:208
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
 msgstr "Prečeši nove slike"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:107
-#: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
 msgstr "Prečeši vse slike"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:108
-#: core/utilities/maintenance/main/maintenancedlg.cpp:210
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
@@ -35229,7 +35226,7 @@ msgid "All Files"
 msgstr "Vse datoteke"
 
 #: core/libs/filters/mimefilter.cpp:28
-#: core/utilities/setup/album/setupmime.cpp:89
+#: core/utilities/setup/album/setupmime.cpp:91
 #, kde-format
 msgid "Image Files"
 msgstr "Slikovne datoteke"
@@ -35295,13 +35292,13 @@ msgid "RAW Files"
 msgstr "Datoteke RAW"
 
 #: core/libs/filters/mimefilter.cpp:41
-#: core/utilities/setup/album/setupmime.cpp:121
+#: core/utilities/setup/album/setupmime.cpp:123
 #, kde-format
 msgid "Video Files"
 msgstr "Video datoteke"
 
 #: core/libs/filters/mimefilter.cpp:42
-#: core/utilities/setup/album/setupmime.cpp:156
+#: core/utilities/setup/album/setupmime.cpp:158
 #, kde-format
 msgid "Audio Files"
 msgstr "Zvočne datoteke"
@@ -42378,19 +42375,19 @@ msgid "If Target File Exists:"
 msgstr "Če ciljna datoteka že obstaja:"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:67
-#: core/utilities/setup/camera/setupcamera.cpp:326
+#: core/utilities/setup/camera/setupcamera.cpp:330
 #, kde-format
 msgid "Store as a different name"
 msgstr "Shrani pod drugim imenom"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:68
-#: core/utilities/setup/camera/setupcamera.cpp:327
+#: core/utilities/setup/camera/setupcamera.cpp:331
 #, kde-format
 msgid "Overwrite automatically"
 msgstr "Samodejno prepiši"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:69
-#: core/utilities/setup/camera/setupcamera.cpp:328
+#: core/utilities/setup/camera/setupcamera.cpp:332
 #, kde-format
 msgid "Skip automatically"
 msgstr "Avtomatsko preskoči"
@@ -43326,7 +43323,7 @@ msgid "Model/View Port of Image Editor Canvas"
 msgstr "Modelno/vidno polje za platno urejevalnika slik"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:225
-#: core/utilities/maintenance/main/maintenancedlg.cpp:272
+#: core/utilities/maintenance/main/maintenancedlg.cpp:273
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
 #, kde-format
 msgid "Image Quality Scanner"
@@ -44476,7 +44473,7 @@ msgstr "Podatki o sliki"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
 #: core/showfoto/setup/showfotosetuptooltip.cpp:119
 #: core/utilities/searchwindow/searchgroup.cpp:152
-#: core/utilities/setup/setuptooltip.cpp:176
+#: core/utilities/setup/setuptooltip.cpp:178
 #, kde-format
 msgid "Photograph Information"
 msgstr "Podatki o fotografiji"
@@ -49808,7 +49805,7 @@ msgstr "Okrasi"
 msgid "Effec&ts"
 msgstr "Učinki"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:119
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -49887,13 +49884,13 @@ msgstr ""
 "<qt>Nastavitve za shranjevanje slikovnih datotek<br/><i>Nastavite privzete "
 "nastavitve za shranjevanje slik</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:172
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Geolokacija"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:173
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -50060,7 +50057,7 @@ msgid "&Show image Format"
 msgstr "Pokaži vr&sto slike"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:150
-#: core/utilities/setup/camera/setupcamera.cpp:437
+#: core/utilities/setup/camera/setupcamera.cpp:441
 #, kde-format
 msgid "Set this option to show image format over image thumbnail."
 msgstr "Nastavite to možnost, da čez sličico prikažete vrsto datoteke."
@@ -50071,7 +50068,7 @@ msgid "&Show Geolocation Indicator"
 msgstr "Pokaži kazalnik zemljepisne lege"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:152
-#: core/utilities/setup/camera/setupcamera.cpp:440
+#: core/utilities/setup/camera/setupcamera.cpp:444
 #, kde-format
 msgid "Set this option to indicate if image has geolocation information."
 msgstr ""
@@ -50331,7 +50328,7 @@ msgid "System"
 msgstr "Sistem"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:370
-#: core/utilities/setup/misc/setupmisc.cpp:415
+#: core/utilities/setup/misc/setupmisc.cpp:417
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
@@ -50395,7 +50392,7 @@ msgid "Show file name"
 msgstr "Pokaži ime datoteke"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:95
-#: core/utilities/setup/setuptooltip.cpp:148
+#: core/utilities/setup/setuptooltip.cpp:150
 #, kde-format
 msgid "Set this option to display the image file name."
 msgstr "Nastavite to možnost, da prikažete ime slikovne datoteke."
@@ -50406,7 +50403,7 @@ msgid "Show file date"
 msgstr "Pokaži datum datoteke"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:98
-#: core/utilities/setup/setuptooltip.cpp:151
+#: core/utilities/setup/setuptooltip.cpp:153
 #, kde-format
 msgid "Set this option to display the image file date."
 msgstr "Nastavite to možnost, da prikažete datum slikovne datoteke."
@@ -50417,7 +50414,7 @@ msgid "Show file size"
 msgstr "Pokaži velikost datoteke"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:101
-#: core/utilities/setup/setuptooltip.cpp:154
+#: core/utilities/setup/setuptooltip.cpp:156
 #, kde-format
 msgid "Set this option to display the image file size."
 msgstr "Nastavite to možnost, da prikažete velikost slikovne datoteke."
@@ -50428,7 +50425,7 @@ msgid "Show image type"
 msgstr "Pokaži vrsto datoteke"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:104
-#: core/utilities/setup/setuptooltip.cpp:157
+#: core/utilities/setup/setuptooltip.cpp:159
 #, kde-format
 msgid "Set this option to display the image type."
 msgstr "Nastavite to možnost, da prikažete vrsto slike."
@@ -50439,14 +50436,14 @@ msgid "Show image dimensions"
 msgstr "Pokaži mere slike"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:107
-#: core/utilities/setup/setuptooltip.cpp:160
+#: core/utilities/setup/setuptooltip.cpp:162
 #, kde-format
 msgid "Set this option to display the image dimensions in pixels."
 msgstr "Nastavite to možnost, da prikažete mere slike v slikovnih točkah."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:123
-#: core/utilities/setup/setuptooltip.cpp:180
-#: core/utilities/setup/setuptooltip.cpp:360
+#: core/utilities/setup/setuptooltip.cpp:182
+#: core/utilities/setup/setuptooltip.cpp:362
 #, kde-format
 msgid ""
 "Set this option to display the make and model of the camera with which the "
@@ -50456,15 +50453,15 @@ msgstr ""
 "posneli sliko."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:126
-#: core/utilities/setup/setuptooltip.cpp:183
-#: core/utilities/setup/setuptooltip.cpp:363
+#: core/utilities/setup/setuptooltip.cpp:185
+#: core/utilities/setup/setuptooltip.cpp:365
 #, kde-format
 msgid "Camera lens model"
 msgstr "Model objektiva fotoaparata"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:127
-#: core/utilities/setup/setuptooltip.cpp:184
-#: core/utilities/setup/setuptooltip.cpp:364
+#: core/utilities/setup/setuptooltip.cpp:186
+#: core/utilities/setup/setuptooltip.cpp:366
 #, kde-format
 msgid ""
 "Set this option to display the lens model with which the image was taken."
@@ -50478,14 +50475,14 @@ msgid "Show camera date"
 msgstr "Pokaži datum fotoaparata"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:131
-#: core/utilities/setup/setuptooltip.cpp:188
+#: core/utilities/setup/setuptooltip.cpp:190
 #, kde-format
 msgid "Set this option to display the date when the image was taken."
 msgstr "Nastavite to možnost, da prikažete datum, ko je bila posneta slika."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:134
-#: core/utilities/setup/setuptooltip.cpp:191
-#: core/utilities/setup/setuptooltip.cpp:368
+#: core/utilities/setup/setuptooltip.cpp:193
+#: core/utilities/setup/setuptooltip.cpp:370
 #, kde-format
 msgid ""
 "Set this option to display the camera aperture and focal settings used to "
@@ -50495,8 +50492,8 @@ msgstr ""
 "razdaljo, ki je bila uporabljena ob posnetku."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:138
-#: core/utilities/setup/setuptooltip.cpp:195
-#: core/utilities/setup/setuptooltip.cpp:372
+#: core/utilities/setup/setuptooltip.cpp:197
+#: core/utilities/setup/setuptooltip.cpp:374
 #, kde-format
 msgid ""
 "Set this option to display the camera exposure and sensitivity used to take "
@@ -50511,7 +50508,7 @@ msgid "Show camera mode and program"
 msgstr "Pokaži način in program fotoaparata"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:142
-#: core/utilities/setup/setuptooltip.cpp:199
+#: core/utilities/setup/setuptooltip.cpp:201
 #, kde-format
 msgid ""
 "Set this option to display the camera mode and program used to take the "
@@ -50526,8 +50523,8 @@ msgid "Show camera flash settings"
 msgstr "Pokaži nastavitve bliskavice fotoaparata"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:146
-#: core/utilities/setup/setuptooltip.cpp:203
-#: core/utilities/setup/setuptooltip.cpp:376
+#: core/utilities/setup/setuptooltip.cpp:205
+#: core/utilities/setup/setuptooltip.cpp:378
 #, kde-format
 msgid ""
 "Set this option to display the camera flash settings used to take the image."
@@ -50541,8 +50538,8 @@ msgid "Show camera white balance settings"
 msgstr "Pokaži nastavitve ravnovesja beline fotoaparata"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:150
-#: core/utilities/setup/setuptooltip.cpp:207
-#: core/utilities/setup/setuptooltip.cpp:380
+#: core/utilities/setup/setuptooltip.cpp:209
+#: core/utilities/setup/setuptooltip.cpp:382
 #, kde-format
 msgid ""
 "Set this option to display the camera white balance settings used to take "
@@ -51695,14 +51692,14 @@ msgstr "Prikaz razmerja"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
 #: core/utilities/searchwindow/searchfields_createfield.cpp:936
-#: core/utilities/setup/setuptooltip.cpp:257
+#: core/utilities/setup/setuptooltip.cpp:259
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Bitna hitrost zvoka"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
 #: core/utilities/searchwindow/searchfields_createfield.cpp:954
-#: core/utilities/setup/setuptooltip.cpp:260
+#: core/utilities/setup/setuptooltip.cpp:262
 #, kde-format
 msgid "Audio Channel Type"
 msgstr "Vrsta zvočnega kanala"
@@ -51723,7 +51720,7 @@ msgid "Frame Rate of Video"
 msgstr "Hitrost sličic videa"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:85
-#: core/utilities/setup/setuptooltip.cpp:272
+#: core/utilities/setup/setuptooltip.cpp:274
 #, kde-format
 msgid "Video Codec"
 msgstr "Video kodek"
@@ -52166,71 +52163,71 @@ msgstr "Urejanje območja obraza"
 msgid "Manually adding face"
 msgstr "Ročno dodajanje obraza"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
 #: core/utilities/imageeditor/editor/editorwindow.cpp:576
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "V redu"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:166
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr "Potrdite, da je tukaj izbrana oseba"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "Potrdi"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "Odstrani"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:180
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:205
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "Odstrani to oznako obraza"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:196
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr "Odznačite ta obraz kot prezrt"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:520
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:516
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "Kdo je to?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:569
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:563
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Prezri"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:570
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:564
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Prezri ta obraz"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:606
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:598
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Označi ta obraz kot prezrt"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:612
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:603
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -55098,7 +55095,7 @@ msgstr "Nova relacija"
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
 #: core/utilities/lighttable/lighttablethumbbar.cpp:245
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:430
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:432
 #, kde-format
 msgid "Edit"
 msgstr "Uredi"
@@ -56624,7 +56621,7 @@ msgid "Show Scale Control"
 msgstr "Pokaži nadzornik merila"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:192
-#: core/utilities/setup/setupgeolocation.cpp:132
+#: core/utilities/setup/setupgeolocation.cpp:134
 #, kde-format
 msgid "Google Maps"
 msgstr "Google Maps"
@@ -56751,10 +56748,10 @@ msgid "Edit Geolocation Bookmarks"
 msgstr "Uredi zaznamke zemljepisne lege"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:223
-#: core/utilities/setup/album/setupcategory.cpp:93
-#: core/utilities/setup/camera/setupcamera.cpp:270
-#: core/utilities/setup/camera/setupcamera.cpp:392
-#: core/utilities/setup/setuptemplate.cpp:108
+#: core/utilities/setup/album/setupcategory.cpp:95
+#: core/utilities/setup/camera/setupcamera.cpp:274
+#: core/utilities/setup/camera/setupcamera.cpp:396
+#: core/utilities/setup/setuptemplate.cpp:110
 #, kde-format
 msgid "&Remove"
 msgstr "Odst&rani"
@@ -57903,7 +57900,7 @@ msgstr "in potem pretvori v delovni prostor"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:373
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:472
-#: core/utilities/setup/setupicc.cpp:712
+#: core/utilities/setup/setupicc.cpp:713
 #, kde-format
 msgid "No Profile Available"
 msgstr "Na voljo ni nobenih profilov"
@@ -57953,7 +57950,7 @@ msgstr ""
 "ustvaritvi te slike:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:514
-#: core/utilities/setup/setupicc.cpp:714
+#: core/utilities/setup/setupicc.cpp:715
 #, kde-format
 msgid "No Input Profile Available"
 msgstr "Na voljo ni nobenih vhodnih profilov"
@@ -58005,7 +58002,7 @@ msgid "Profile of the output device to simulate:"
 msgstr "Profil na izhodni napravi, ki bo simuliran:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
-#: core/utilities/setup/setupicc.cpp:387
+#: core/utilities/setup/setupicc.cpp:388
 #, kde-format
 msgid ""
 "<p>Select the profile for your output device (usually, your printer). This "
@@ -58041,14 +58038,14 @@ msgid "Highlighting color:"
 msgstr "Datoteka poudarjanja:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:824
+#: core/utilities/setup/setupicc.cpp:825
 #, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Napaka profila"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:824
+#: core/utilities/setup/setupicc.cpp:825
 #, kde-format
 msgid "No profile is selected."
 msgstr "Izbran ni noben profil."
@@ -60643,7 +60640,7 @@ msgid "Show item on right panel"
 msgstr "Prikaži predmet na desnem pultu"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:67
-#: core/utilities/setup/camera/setupcamera.cpp:458
+#: core/utilities/setup/camera/setupcamera.cpp:462
 #, kde-format
 msgid "Open With Default Application"
 msgstr "Odpri s privzetim programom"
@@ -60902,33 +60899,28 @@ msgstr "Omejitev na dvojnikih:"
 msgid "No restriction"
 msgstr "Brez omejitev"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:175
+#: core/utilities/maintenance/main/maintenancedlg.cpp:176
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Omeji na album referenčne slike"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:176
+#: core/utilities/maintenance/main/maintenancedlg.cpp:178
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Izvzemi album referenčne slike"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:193
+#: core/utilities/maintenance/main/maintenancedlg.cpp:196
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Najdi podvojene predmete"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:204
-#, kde-format
-msgid "Faces data management: "
-msgstr "Upravljanje podatkov obrazov: "
-
-#: core/utilities/maintenance/main/maintenancedlg.cpp:213
+#: core/utilities/maintenance/main/maintenancedlg.cpp:207
 #, kde-format
 msgctxt "@option:check"
 msgid "Rebuild all training data"
 msgstr "Ponovno zgradi vse učne podatke"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:215
+#: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -60937,60 +60929,75 @@ msgstr ""
 "S tem boste ponovno naučili prepoznavanje obrazov z označenimi obrazi v vaši "
 "knjižnici."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:217
+#: core/utilities/maintenance/main/maintenancedlg.cpp:212
 #, kde-format
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
 msgstr "Ponastavi in počisti vse obraze in učenje"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:219
+#: core/utilities/maintenance/main/maintenancedlg.cpp:214
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This will clear all detected and tagged faces."
 msgstr "S tem boste izbrisali vse zaznane in označene obraze."
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:225
+#: core/utilities/maintenance/main/maintenancedlg.cpp:217
 #, kde-format
-msgid "Detect and recognize Faces"
-msgstr "Zaznaj in prepoznaj obraze"
+msgctxt "@option:check"
+msgid "Clear rejected face matches"
+msgstr ""
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:248
+#: core/utilities/maintenance/main/maintenancedlg.cpp:219
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"This will delete all rejected face matches allowing the face recognizer to "
+"present the suggested matches again."
+msgstr ""
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:226
+#, fuzzy, kde-format
+#| msgid "Faces data management: "
+msgid "Face engine management"
+msgstr "Upravljanje podatkov obrazov: "
+
+#: core/utilities/maintenance/main/maintenancedlg.cpp:249
 #, kde-format
 msgid "Auto-tags Assignment"
 msgstr "Samodejna dodelitev značk"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:283
+#: core/utilities/maintenance/main/maintenancedlg.cpp:284
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Smer uskladitve: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:287
+#: core/utilities/maintenance/main/maintenancedlg.cpp:288
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Iz podatkovne zbirke v metapodatke slike"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:288
+#: core/utilities/maintenance/main/maintenancedlg.cpp:290
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Iz metapodatkov slik v podatkovno zbirko"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:291
+#: core/utilities/maintenance/main/maintenancedlg.cpp:294
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Za podrobnosti si oglejte pult z nastavitvami metapodatkov: "
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:300
+#: core/utilities/maintenance/main/maintenancedlg.cpp:303
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Uskladi metapodatke s podatkovno zbirko"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:358
+#: core/utilities/maintenance/main/maintenancedlg.cpp:354
 #, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Opozorilo"
 
-#: core/utilities/maintenance/main/maintenancedlg.cpp:359
+#: core/utilities/maintenance/main/maintenancedlg.cpp:355
 #, kde-format
 msgid ""
 "Are you sure you want to delete all confirmed, unconfirmed, and unknown "
@@ -61002,7 +61009,7 @@ msgstr ""
 "pregledati slike in znova začeti označevati neznane obraze."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:405
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:429
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -61011,12 +61018,12 @@ msgstr ""
 "Vsa opravila so končana.\n"
 "Trajanje: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:406
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:430
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "vzdrževanje digiKama"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:107
+#: core/utilities/maintenance/manager/maintenancetool.cpp:109
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -61025,47 +61032,47 @@ msgstr ""
 "Opravilo je končano.\n"
 "Trajanje: %1"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:254
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:285
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:324
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:369
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:123
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:228
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:257
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:288
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:327
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:372
 #, kde-format
 msgid "Clean up the databases : "
 msgstr "Počisti podatkovne baze : "
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:123
 #, kde-format
 msgid "analysing databases"
 msgstr "analiziranje podatkovne zbirke"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:225
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:228
 #, kde-format
 msgid "cleaning core db"
 msgstr "čistim jedro podatkovne baze"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:254
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:257
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr "čistim podatkovno zbirko predoglednih sličic"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:285
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:288
 #, kde-format
 msgid "cleaning recognition db"
 msgstr "čistim podatkovno zbirko Prepoznavanja obrazov"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:324
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:327
 #, kde-format
 msgid "cleaning similarity db"
 msgstr "čiščenje podatkovne zbirke podobnosti slik"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:369
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:372
 #, kde-format
 msgid "shrinking databases"
 msgstr "krčenje podatkovne zbirke"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:488
+#: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:66
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -61080,22 +61087,22 @@ msgstr ""
 "baze podatkov. Ko se postopek konča, bo polje z informacijami izginilo.</"
 "p>Trenutno stanje:"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:501
+#: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:79
 #, kde-format
 msgid "Core DB"
 msgstr "Ime jedrne podatkovne zbirke"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:502
+#: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:80
 #, kde-format
 msgid "Thumbnails DB"
 msgstr "Zbirka sličic"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:503
+#: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:81
 #, kde-format
 msgid "Face Recognition DB"
 msgstr "Podatkovna zbirka prepoznavanje obrazov"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:504
+#: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:82
 #, kde-format
 msgid "Similarity DB"
 msgstr "Podatkovna zbirka podobnosti"
@@ -61875,7 +61882,7 @@ msgstr ""
 "obdelate več kot en predmet čakalne vrste naenkrat."
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:212
-#: core/utilities/setup/camera/setupcamera.cpp:345
+#: core/utilities/setup/camera/setupcamera.cpp:349
 #, kde-format
 msgid "Behavior"
 msgstr "Obnašanje"
@@ -63112,50 +63119,50 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Napredno iskanje"
 
-#: core/utilities/setup/album/setupalbumview.cpp:119
-#: core/utilities/setup/camera/setupcamera.cpp:420
+#: core/utilities/setup/album/setupalbumview.cpp:121
+#: core/utilities/setup/camera/setupcamera.cpp:424
 #, kde-format
 msgid "Show file&name"
 msgstr "Pokaži ime datoteke"
 
-#: core/utilities/setup/album/setupalbumview.cpp:120
-#: core/utilities/setup/camera/setupcamera.cpp:421
+#: core/utilities/setup/album/setupalbumview.cpp:122
+#: core/utilities/setup/camera/setupcamera.cpp:425
 #, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
 msgstr "Nastavite to možnost, da pod sličico prikažete ime datoteke."
 
-#: core/utilities/setup/album/setupalbumview.cpp:122
-#: core/utilities/setup/camera/setupcamera.cpp:423
+#: core/utilities/setup/album/setupalbumview.cpp:124
+#: core/utilities/setup/camera/setupcamera.cpp:427
 #, kde-format
 msgid "Show file si&ze"
 msgstr "Pokaži velikost datoteke"
 
-#: core/utilities/setup/album/setupalbumview.cpp:123
-#: core/utilities/setup/camera/setupcamera.cpp:424
+#: core/utilities/setup/album/setupalbumview.cpp:125
+#: core/utilities/setup/camera/setupcamera.cpp:428
 #, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
 msgstr "Nastavite to možnost, da pod sličico prikažete velikost datoteke."
 
-#: core/utilities/setup/album/setupalbumview.cpp:125
-#: core/utilities/setup/camera/setupcamera.cpp:426
+#: core/utilities/setup/album/setupalbumview.cpp:127
+#: core/utilities/setup/camera/setupcamera.cpp:430
 #, kde-format
 msgid "Show camera creation &date"
 msgstr "Pokaži &datum ustvaritve"
 
-#: core/utilities/setup/album/setupalbumview.cpp:126
-#: core/utilities/setup/camera/setupcamera.cpp:427
+#: core/utilities/setup/album/setupalbumview.cpp:128
+#: core/utilities/setup/camera/setupcamera.cpp:431
 #, kde-format
 msgid ""
 "Set this option to show the camera creation date below the image thumbnail."
 msgstr ""
 "Nastavite to možnost, da pod sličico prikažete datum ustvaritve posnetka."
 
-#: core/utilities/setup/album/setupalbumview.cpp:129
+#: core/utilities/setup/album/setupalbumview.cpp:131
 #, kde-format
 msgid "Show file &modification date"
 msgstr "Pokaži datum spremembe slike"
 
-#: core/utilities/setup/album/setupalbumview.cpp:130
+#: core/utilities/setup/album/setupalbumview.cpp:132
 #, kde-format
 msgid ""
 "Set this option to show the file modification date below the image thumbnail "
@@ -63166,99 +63173,99 @@ msgstr ""
 "se razlikuje od datuma stvaritve. S pomočjo te možnosti lahko hitro najdete "
 "predmete, ki so bili spremenjeni."
 
-#: core/utilities/setup/album/setupalbumview.cpp:134
+#: core/utilities/setup/album/setupalbumview.cpp:136
 #, kde-format
 msgid "Show ima&ge dimensions"
 msgstr "Pokaži dimenzije slike"
 
-#: core/utilities/setup/album/setupalbumview.cpp:135
+#: core/utilities/setup/album/setupalbumview.cpp:137
 #, kde-format
 msgid ""
 "Set this option to show the image size in pixels below the image thumbnail."
 msgstr ""
 "Nastavite to možnost, da pod sličico prikažete mere slike v slikovnih točkah."
 
-#: core/utilities/setup/album/setupalbumview.cpp:138
+#: core/utilities/setup/album/setupalbumview.cpp:140
 #, kde-format
 msgid "Show image aspect ratio"
 msgstr "Prikaži razmerje slike"
 
-#: core/utilities/setup/album/setupalbumview.cpp:139
+#: core/utilities/setup/album/setupalbumview.cpp:141
 #, kde-format
 msgid ""
 "Set this option to show the image aspect ratio below the image thumbnail."
 msgstr "Nastavite to možnost, da pod sličico prikažete razmerje slike."
 
-#: core/utilities/setup/album/setupalbumview.cpp:142
+#: core/utilities/setup/album/setupalbumview.cpp:144
 #, kde-format
 msgid "Show image format"
 msgstr "Pokaži vrsto slike"
 
-#: core/utilities/setup/album/setupalbumview.cpp:143
+#: core/utilities/setup/album/setupalbumview.cpp:145
 #, kde-format
 msgid "Set this option to show image mime type over image thumbnail."
 msgstr "Nastavite to možnost za prikaz mime zvrsti nad predogledno sličico."
 
-#: core/utilities/setup/album/setupalbumview.cpp:145
+#: core/utilities/setup/album/setupalbumview.cpp:147
 #, kde-format
 msgid "Show digiKam tit&le"
 msgstr "Prikaži digiKamov naslov"
 
-#: core/utilities/setup/album/setupalbumview.cpp:146
+#: core/utilities/setup/album/setupalbumview.cpp:148
 #, kde-format
 msgid "Set this option to show the digiKam title below the image thumbnail."
 msgstr "Nastavite to možnost, da pod sličico prikažete digiKamov naslov."
 
-#: core/utilities/setup/album/setupalbumview.cpp:149
+#: core/utilities/setup/album/setupalbumview.cpp:151
 #, kde-format
 msgid "Show digiKam &captions"
 msgstr "Prikaži digiKamov napis"
 
-#: core/utilities/setup/album/setupalbumview.cpp:150
+#: core/utilities/setup/album/setupalbumview.cpp:152
 #, kde-format
 msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr "Nastavite to možnost, da pod sličico prikažete digiKamov napis."
 
-#: core/utilities/setup/album/setupalbumview.cpp:153
-#: core/utilities/setup/camera/setupcamera.cpp:442
+#: core/utilities/setup/album/setupalbumview.cpp:155
+#: core/utilities/setup/camera/setupcamera.cpp:446
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "Prikaži značke digiKama"
 
-#: core/utilities/setup/album/setupalbumview.cpp:154
+#: core/utilities/setup/album/setupalbumview.cpp:156
 #, kde-format
 msgid ""
 "Set this option to show the digiKam tags list below the image thumbnail."
 msgstr "Nastavite to možnost, da pod sličico prikažete digiKamov seznam značk."
 
-#: core/utilities/setup/album/setupalbumview.cpp:157
+#: core/utilities/setup/album/setupalbumview.cpp:159
 #, kde-format
 msgid "Show digiKam &rating"
 msgstr "Prikaži digiKamovo oceno"
 
-#: core/utilities/setup/album/setupalbumview.cpp:158
+#: core/utilities/setup/album/setupalbumview.cpp:160
 #, kde-format
 msgid "Set this option to show the digiKam rating below the image thumbnail."
 msgstr "Nastavite to možnost, da pod sličico prikažete digiKamovo oceno."
 
-#: core/utilities/setup/album/setupalbumview.cpp:161
+#: core/utilities/setup/album/setupalbumview.cpp:163
 #, kde-format
 msgid "Show digiKam &pick label"
 msgstr "Prikaz pobiranja oznak v digiKamu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:162
+#: core/utilities/setup/album/setupalbumview.cpp:164
 #, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr ""
 "Nastavite to možnost za prikaz oznake digiKama pod predogledno sličico."
 
-#: core/utilities/setup/album/setupalbumview.cpp:165
+#: core/utilities/setup/album/setupalbumview.cpp:167
 #, kde-format
 msgid "Show digiKam color &label"
 msgstr "Prikaz barvne oznake digiKama"
 
-#: core/utilities/setup/album/setupalbumview.cpp:166
+#: core/utilities/setup/album/setupalbumview.cpp:168
 #, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a border around the "
@@ -63267,13 +63274,13 @@ msgstr ""
 "Nastavite to možnost, da digiKam prikazuje barvno oznako kot obrobo okrog "
 "predogledne sličice."
 
-#: core/utilities/setup/album/setupalbumview.cpp:169
-#: core/utilities/setup/camera/setupcamera.cpp:450
+#: core/utilities/setup/album/setupalbumview.cpp:171
+#: core/utilities/setup/camera/setupcamera.cpp:454
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr "Prikaži prekrivne gumbe za obračanje"
 
-#: core/utilities/setup/album/setupalbumview.cpp:170
+#: core/utilities/setup/album/setupalbumview.cpp:172
 #, kde-format
 msgid ""
 "Set this option to show overlay buttons over the image thumbnail to be able "
@@ -63282,12 +63289,12 @@ msgstr ""
 "Nastavite to možnost, da na sličici prikažete prekrivne gumbe za vrtenje "
 "slike."
 
-#: core/utilities/setup/album/setupalbumview.cpp:173
+#: core/utilities/setup/album/setupalbumview.cpp:175
 #, kde-format
 msgid "Show fullscreen overlay button"
 msgstr "Prikaži prekrivni gumb za celozaslonski način"
 
-#: core/utilities/setup/album/setupalbumview.cpp:174
+#: core/utilities/setup/album/setupalbumview.cpp:176
 #, kde-format
 msgid ""
 "Set this option to show an overlay button over the image thumbnail to open "
@@ -63296,13 +63303,13 @@ msgstr ""
 "Nastavite to možnost, da na sličici prikažete prekrivni gumb za prikaz v "
 "celozaslonskem načinu."
 
-#: core/utilities/setup/album/setupalbumview.cpp:177
-#: core/utilities/setup/camera/setupcamera.cpp:439
+#: core/utilities/setup/album/setupalbumview.cpp:179
+#: core/utilities/setup/camera/setupcamera.cpp:443
 #, kde-format
 msgid "Show Geolocation Indicator"
 msgstr "Pokaži kazalnik zemljepisne lege"
 
-#: core/utilities/setup/album/setupalbumview.cpp:178
+#: core/utilities/setup/album/setupalbumview.cpp:180
 #, kde-format
 msgid ""
 "Set this option to show an icon over the image thumbnail if item has "
@@ -63311,55 +63318,55 @@ msgstr ""
 "Vklopite to možnost, za prikaz ikone nad predogledno sličico, če je "
 "geokodirana."
 
-#: core/utilities/setup/album/setupalbumview.cpp:180
-#: core/utilities/setup/camera/setupcamera.cpp:454
+#: core/utilities/setup/album/setupalbumview.cpp:182
+#: core/utilities/setup/camera/setupcamera.cpp:458
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "Dejanje ob kliku sličice:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:182
+#: core/utilities/setup/album/setupalbumview.cpp:184
 #, kde-format
 msgid "Show Preview"
 msgstr "Prikaži predogled"
 
-#: core/utilities/setup/album/setupalbumview.cpp:183
+#: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
 msgid "Start Image Editor"
 msgstr "Zaženi urejevalnik slik"
 
-#: core/utilities/setup/album/setupalbumview.cpp:184
+#: core/utilities/setup/album/setupalbumview.cpp:186
 #, kde-format
 msgid "Show on Light Table"
 msgstr "Prikaži na osvetlitveni mizi"
 
-#: core/utilities/setup/album/setupalbumview.cpp:185
+#: core/utilities/setup/album/setupalbumview.cpp:187
 #, kde-format
 msgid "Open with Default Application"
 msgstr "Odpri s privzetim programom"
 
-#: core/utilities/setup/album/setupalbumview.cpp:186
-#: core/utilities/setup/camera/setupcamera.cpp:459
+#: core/utilities/setup/album/setupalbumview.cpp:188
+#: core/utilities/setup/camera/setupcamera.cpp:463
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "Izberite kaj se naj bi zgodilo, ko kliknete na sličico."
 
-#: core/utilities/setup/album/setupalbumview.cpp:188
-#: core/utilities/setup/camera/setupcamera.cpp:461
+#: core/utilities/setup/album/setupalbumview.cpp:190
+#: core/utilities/setup/camera/setupcamera.cpp:465
 #, kde-format
 msgid "Icon View font:"
 msgstr "Pisava pogleda ikon:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:189
+#: core/utilities/setup/album/setupalbumview.cpp:191
 #, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr "Tu izberite pisavo za prikaz besedila v pogledih ikon."
 
-#: core/utilities/setup/album/setupalbumview.cpp:191
+#: core/utilities/setup/album/setupalbumview.cpp:193
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr "Uporabi velike sličice za visoko ločljivost"
 
-#: core/utilities/setup/album/setupalbumview.cpp:192
+#: core/utilities/setup/album/setupalbumview.cpp:194
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -63381,18 +63388,18 @@ msgstr ""
 "več pomnilnika. Za uveljavitev sprememb boste morali znova zagnati digiKam "
 "in uporabiti vzdrževalno orodje \"Ponovno izgradi sličice\" na vseh zbirkah."
 
-#: core/utilities/setup/album/setupalbumview.cpp:227
+#: core/utilities/setup/album/setupalbumview.cpp:229
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "Ikone"
 
-#: core/utilities/setup/album/setupalbumview.cpp:234
+#: core/utilities/setup/album/setupalbumview.cpp:236
 #, kde-format
 msgid "Tree View icon size:"
 msgstr "Velikost ikon drevesnega pogleda:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:241
+#: core/utilities/setup/album/setupalbumview.cpp:243
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -63401,12 +63408,12 @@ msgstr ""
 "Nastavite to možnost, da določite velikost ikon drevesnega pogleda v "
 "slikovnih točkah v stranskih letvicah digiKama."
 
-#: core/utilities/setup/album/setupalbumview.cpp:244
+#: core/utilities/setup/album/setupalbumview.cpp:246
 #, kde-format
 msgid "People Tree View icon size:"
 msgstr "Velikost ikon drevesnega pogleda oseb:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:252
+#: core/utilities/setup/album/setupalbumview.cpp:254
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -63415,22 +63422,22 @@ msgstr ""
 "Nastavite to možnost za določanje velikosti ikon drevesnega pogleda v pikah "
 "v stranski vrstici oseb digiKama."
 
-#: core/utilities/setup/album/setupalbumview.cpp:255
+#: core/utilities/setup/album/setupalbumview.cpp:257
 #, kde-format
 msgid "Tree View font:"
 msgstr "Pisava drevesnega pogleda:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:256
+#: core/utilities/setup/album/setupalbumview.cpp:258
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr "Tukaj izberite pisavo za prikaz besedila v drevesnem pogledu."
 
-#: core/utilities/setup/album/setupalbumview.cpp:258
+#: core/utilities/setup/album/setupalbumview.cpp:260
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "Pokaži števec predmetov v drevesnem pogledu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:259
+#: core/utilities/setup/album/setupalbumview.cpp:261
 #, kde-format
 msgid ""
 "Set this option to display along the album name the number of icon-view "
@@ -63439,60 +63446,60 @@ msgstr ""
 "Nastavite to možnost, da prikažete ob imenu albuma število videnih ikon "
 "predmetov v albumu."
 
-#: core/utilities/setup/album/setupalbumview.cpp:271
+#: core/utilities/setup/album/setupalbumview.cpp:273
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "Drevesni prikazi"
 
-#: core/utilities/setup/album/setupalbumview.cpp:279
+#: core/utilities/setup/album/setupalbumview.cpp:281
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr "Predogled prikazuje vdelani pogled, če je na voljo (hitrejše)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:281
+#: core/utilities/setup/album/setupalbumview.cpp:283
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "Predogled prikaže sliko polne velikosti"
 
-#: core/utilities/setup/album/setupalbumview.cpp:283
+#: core/utilities/setup/album/setupalbumview.cpp:285
 #, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
 msgstr "Surove slike (RAW):"
 
-#: core/utilities/setup/album/setupalbumview.cpp:286
+#: core/utilities/setup/album/setupalbumview.cpp:288
 #, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Samodejno"
 
-#: core/utilities/setup/album/setupalbumview.cpp:288
+#: core/utilities/setup/album/setupalbumview.cpp:290
 #, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "Vgrajeni predogled"
 
-#: core/utilities/setup/album/setupalbumview.cpp:290
+#: core/utilities/setup/album/setupalbumview.cpp:292
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr "Podatki RAW v polovični velikosti"
 
-#: core/utilities/setup/album/setupalbumview.cpp:292
+#: core/utilities/setup/album/setupalbumview.cpp:294
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr "Surovi podatki v polni velikosti (visoka kakovost)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:294
+#: core/utilities/setup/album/setupalbumview.cpp:296
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr "Slika za predogled se pretvori v 8 bitov za morebitni hitrejši ogled"
 
-#: core/utilities/setup/album/setupalbumview.cpp:295
+#: core/utilities/setup/album/setupalbumview.cpp:297
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
@@ -63500,67 +63507,67 @@ msgstr ""
 "Odstranite potrditev, če ne želite pretvarjati 16 bitni predogled v 8 "
 "bitnega."
 
-#: core/utilities/setup/album/setupalbumview.cpp:297
+#: core/utilities/setup/album/setupalbumview.cpp:299
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr "Velikost predogledne slike vedno ustreza oknu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:298
+#: core/utilities/setup/album/setupalbumview.cpp:300
 #, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
 "Odstranite potrditev, če ne želite spreminjati velikosti majhnih slik, da "
 "ustrezajo oknu."
 
-#: core/utilities/setup/album/setupalbumview.cpp:300
+#: core/utilities/setup/album/setupalbumview.cpp:302
 #, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
 msgstr "Predogled slike uporablja Anti-aliasing za povečanje"
 
-#: core/utilities/setup/album/setupalbumview.cpp:301
+#: core/utilities/setup/album/setupalbumview.cpp:303
 #, kde-format
 msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
 msgstr "Počistite to polje, če ne želite uporabiti Anti-aliasing za povečanje."
 
-#: core/utilities/setup/album/setupalbumview.cpp:303
-#: core/utilities/setup/camera/setupcamera.cpp:498
+#: core/utilities/setup/album/setupalbumview.cpp:305
+#: core/utilities/setup/camera/setupcamera.cpp:502
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Prikaži ikone in besedilo preko predogleda"
 
-#: core/utilities/setup/album/setupalbumview.cpp:304
-#: core/utilities/setup/camera/setupcamera.cpp:499
+#: core/utilities/setup/album/setupalbumview.cpp:306
+#: core/utilities/setup/camera/setupcamera.cpp:503
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to see icons and text in the image preview."
 msgstr ""
 "Odstranite oznako, če ne želite videti ikon in besedila v predogledu slike."
 
-#: core/utilities/setup/album/setupalbumview.cpp:322
+#: core/utilities/setup/album/setupalbumview.cpp:324
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Predogled"
 
-#: core/utilities/setup/album/setupalbumview.cpp:337
+#: core/utilities/setup/album/setupalbumview.cpp:339
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Celozaslonsko"
 
-#: core/utilities/setup/album/setupalbumview.cpp:342
+#: core/utilities/setup/album/setupalbumview.cpp:344
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "Vrste MIME"
 
-#: core/utilities/setup/album/setupalbumview.cpp:345
+#: core/utilities/setup/album/setupalbumview.cpp:347
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Kategorije"
 
-#: core/utilities/setup/album/setupalbumview.cpp:513
+#: core/utilities/setup/album/setupalbumview.cpp:515
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63574,18 +63581,18 @@ msgstr ""
 "vse shranjene sličice preko menija <interface>Orodja / Vzdrževanje</"
 "interface>."
 
-#: core/utilities/setup/album/setupcategory.cpp:76
+#: core/utilities/setup/album/setupcategory.cpp:78
 #, kde-format
 msgid "Manage categories to sort and re-arrange album tree-view."
 msgstr ""
 "Urejanje kategorij za razvrščanje in preurejanje pogleda dreves albumov."
 
-#: core/utilities/setup/album/setupcategory.cpp:83
+#: core/utilities/setup/album/setupcategory.cpp:85
 #, kde-format
 msgid "Set here the new category"
 msgstr "Tu nastavite novo kategorijo"
 
-#: core/utilities/setup/album/setupcategory.cpp:86
+#: core/utilities/setup/album/setupcategory.cpp:88
 #, kde-format
 msgid ""
 "You can add or remove Album category types here to improve how your Albums "
@@ -63594,15 +63601,15 @@ msgstr ""
 "Tukaj lahko dodate več ali odstranite vrste kategorij albumov, da izboljšate "
 "kako so albumi razvrščeni v digiKamu."
 
-#: core/utilities/setup/album/setupcategory.cpp:92
-#: core/utilities/setup/camera/setupcamera.cpp:268
-#: core/utilities/setup/camera/setupcamera.cpp:390
-#: core/utilities/setup/setuptemplate.cpp:106
+#: core/utilities/setup/album/setupcategory.cpp:94
+#: core/utilities/setup/camera/setupcamera.cpp:272
+#: core/utilities/setup/camera/setupcamera.cpp:394
+#: core/utilities/setup/setuptemplate.cpp:108
 #, kde-format
 msgid "&Add..."
 msgstr "Dod&aj..."
 
-#: core/utilities/setup/album/setupmime.cpp:77
+#: core/utilities/setup/album/setupmime.cpp:79
 #, kde-format
 msgid ""
 "<p>Add new file types to show as album items.</p><p>digiKam attempts to "
@@ -63622,7 +63629,7 @@ msgstr ""
 "spremembe v tem pogledu bodo v ozadju povzročile ponovni pregled baze "
 "podatkov.</b></p>"
 
-#: core/utilities/setup/album/setupmime.cpp:95
+#: core/utilities/setup/album/setupmime.cpp:97
 #, kde-format
 msgid ""
 "Additional &image file extensions (<a href='image'>Currently-supported "
@@ -63631,7 +63638,7 @@ msgstr ""
 "Dodatne pripone sl&ikovnih datotek (<a href='image'>Trenutno podprte vrste</"
 "a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:99
+#: core/utilities/setup/album/setupmime.cpp:101
 #, kde-format
 msgid ""
 "<p>Here you can add the extensions of image files (including RAW files) to "
@@ -63652,12 +63659,12 @@ msgstr ""
 "datoteke izbrisane.</p><p><b>Opozorilo:</b> odstranitev datotek iz "
 "podatkovne zbirke pomeni izgubo vse značk in ocen.</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:109
+#: core/utilities/setup/album/setupmime.cpp:111
 #, kde-format
 msgid "Enter additional image file extensions."
 msgstr "Vnesite dodatne pripone slikovnih datotek."
 
-#: core/utilities/setup/album/setupmime.cpp:128
+#: core/utilities/setup/album/setupmime.cpp:130
 #, kde-format
 msgid ""
 "Additional &video file extensions (<a href='video'>Currently-supported "
@@ -63665,7 +63672,7 @@ msgid ""
 msgstr ""
 "Dodatne pripone &video datotek (<a href='video'>Trenutno podprte vrste</a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:132
+#: core/utilities/setup/album/setupmime.cpp:134
 #, kde-format
 msgid ""
 "<p>Here you can add extra extensions of video files to be displayed in your "
@@ -63688,12 +63695,12 @@ msgstr ""
 "p><p><b>Opozorilo:</b> odstranitev datotek iz podatkovne zbirke pomeni tudi "
 "izgubo vse njihovih značk in ocen.</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:144
+#: core/utilities/setup/album/setupmime.cpp:146
 #, kde-format
 msgid "Enter additional video file extensions."
 msgstr "Vstavite dodatne video pripone."
 
-#: core/utilities/setup/album/setupmime.cpp:163
+#: core/utilities/setup/album/setupmime.cpp:165
 #, kde-format
 msgid ""
 "Additional &audio file extensions (<a href='audio'>Currently-supported "
@@ -63701,7 +63708,7 @@ msgid ""
 msgstr ""
 "Dodatne pripone zvočnih datotek (<a href='image'>Trenutno podprte vrste</a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:167
+#: core/utilities/setup/album/setupmime.cpp:169
 #, kde-format
 msgid ""
 "<p>Here you can add extra extensions of audio files to be displayed in your "
@@ -63724,12 +63731,12 @@ msgstr ""
 "odstranitev datotek iz podatkovne zbirke pomeni izgubo vseh njihovih značk "
 "in ocen.</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:179
+#: core/utilities/setup/album/setupmime.cpp:181
 #, kde-format
 msgid "Enter additional audio file extensions."
 msgstr "Vstavite dodatne avdio pripone datotek."
 
-#: core/utilities/setup/album/setupmime.cpp:245
+#: core/utilities/setup/album/setupmime.cpp:247
 #, kde-format
 msgid ""
 "<p>You have chosen to remove the following image formats from the list of "
@@ -63745,7 +63752,7 @@ msgstr ""
 "podatke o njih, vključno z ocenami in značkami.</p><p>Ali ste prepričani, da "
 "želite uveljaviti vaše spremembe in izgubiti podporo za te vrste?</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:298
+#: core/utilities/setup/album/setupmime.cpp:302
 #, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as images and included "
@@ -63754,7 +63761,7 @@ msgstr ""
 "<p>Datoteke s temi priponami bodo prepoznane kot slike in vključene v "
 "podatkovno zbirko:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/album/setupmime.cpp:308
+#: core/utilities/setup/album/setupmime.cpp:312
 #, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as video files and "
@@ -63763,7 +63770,7 @@ msgstr ""
 "<p>Datoteke s temi priponami bodo prepoznane kot video datoteke in vključene "
 "v podatkovno zbirko:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/album/setupmime.cpp:318
+#: core/utilities/setup/album/setupmime.cpp:322
 #, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as audio files and "
@@ -63772,7 +63779,7 @@ msgstr ""
 "<p>Datoteke s temi priponami bodo prepoznane kot zvočne datoteke in "
 "vključene v podatkovno zbirko:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/camera/cameralist.cpp:286
+#: core/utilities/setup/camera/cameralist.cpp:288
 #, kde-format
 msgid ""
 "Failed to auto-detect camera; please make sure it is connected properly and "
@@ -63781,24 +63788,24 @@ msgstr ""
 "Ni bilo mogoče samodejno zaznati fotoaparata; prepričajte se, da je pravilno "
 "povezan in vklopljen. Ali želite poskusiti znova?"
 
-#: core/utilities/setup/camera/cameraselection.cpp:91
+#: core/utilities/setup/camera/cameraselection.cpp:93
 #, kde-format
 msgctxt "@title:window"
 msgid "Camera Configuration"
 msgstr "Konfiguracije fotoaparata"
 
 #. i18n!
-#: core/utilities/setup/camera/cameraselection.cpp:101
+#: core/utilities/setup/camera/cameraselection.cpp:103
 #, kde-format
 msgid "Mounted Camera"
 msgstr "Priklopljen fotoaparat"
 
-#: core/utilities/setup/camera/cameraselection.cpp:117
+#: core/utilities/setup/camera/cameraselection.cpp:119
 #, kde-format
 msgid "Camera List"
 msgstr "Seznam fotoaparatov"
 
-#: core/utilities/setup/camera/cameraselection.cpp:118
+#: core/utilities/setup/camera/cameraselection.cpp:120
 #, kde-format
 msgid ""
 "<p>Select the camera name that you want to use here. All default settings on "
@@ -63810,12 +63817,12 @@ msgstr ""
 "bil ustvarjen z uporabo knjižnice gphoto2, ki je nameščena na vašem "
 "računalniku.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:127
+#: core/utilities/setup/camera/cameraselection.cpp:129
 #, kde-format
 msgid "Camera Title"
 msgstr "Ime fotoaparata"
 
-#: core/utilities/setup/camera/cameraselection.cpp:131
+#: core/utilities/setup/camera/cameraselection.cpp:133
 #, kde-format
 msgid ""
 "<p>Set here the name used in digiKam interface to identify this camera.</p>"
@@ -63823,17 +63830,17 @@ msgstr ""
 "<p>Tukaj nastavite ime v vmesniku digiKam, ki bo določalo istovetnost "
 "fotoaparata.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:140
+#: core/utilities/setup/camera/cameraselection.cpp:142
 #, kde-format
 msgid "Camera Port Type"
 msgstr "Vrsta vrat fotoaparata"
 
-#: core/utilities/setup/camera/cameraselection.cpp:145
+#: core/utilities/setup/camera/cameraselection.cpp:147
 #, kde-format
 msgid "USB"
 msgstr "USB"
 
-#: core/utilities/setup/camera/cameraselection.cpp:146
+#: core/utilities/setup/camera/cameraselection.cpp:148
 #, kde-format
 msgid ""
 "<p>Select this option if your camera is connected to your computer using a "
@@ -63842,13 +63849,13 @@ msgstr ""
 "<p>Izberite to možnost, če je fotoaparat na vaš računalnik povezan s kablom "
 "USB.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:149
+#: core/utilities/setup/camera/cameraselection.cpp:151
 #, kde-format
 msgctxt "@item: serail port based camera"
 msgid "Serial"
 msgstr "Serijsko"
 
-#: core/utilities/setup/camera/cameraselection.cpp:150
+#: core/utilities/setup/camera/cameraselection.cpp:152
 #, kde-format
 msgid ""
 "<p>Select this option if your camera is connected to your computer using a "
@@ -63857,12 +63864,12 @@ msgstr ""
 "<p>Izberite to možnost, če je fotoaparat na vaš računalnik povezan z "
 "zaporednim kablom.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:153
+#: core/utilities/setup/camera/cameraselection.cpp:155
 #, kde-format
 msgid "Network"
 msgstr "Omrežje"
 
-#: core/utilities/setup/camera/cameraselection.cpp:154
+#: core/utilities/setup/camera/cameraselection.cpp:156
 #, kde-format
 msgid ""
 "<p>Select this option if your camera is connected to your computer network.</"
@@ -63871,7 +63878,7 @@ msgstr ""
 "<p>Izberite to možnost, če je fotoaparat priklopljen na računalniško omrežje."
 "</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:159
+#: core/utilities/setup/camera/cameraselection.cpp:161
 #, kde-format
 msgid ""
 "<p>Select the serial port to use on your computer here. This option is only "
@@ -63881,23 +63888,23 @@ msgstr ""
 "računalniku. Ta možnost je zahtevana le, če uporabljate zaporedni fotoaparat."
 "</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:163
+#: core/utilities/setup/camera/cameraselection.cpp:165
 #, kde-format
 msgid "<p>Enter here the network address of your camera.</p>"
 msgstr "<p>Tu vnesite omrežni naslov kamere.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:181
+#: core/utilities/setup/camera/cameraselection.cpp:183
 #, kde-format
 msgid "Camera Mount Path"
 msgstr "Pot priklopa fotoaparata"
 
-#: core/utilities/setup/camera/cameraselection.cpp:185
+#: core/utilities/setup/camera/cameraselection.cpp:187
 #, kde-format
 msgid "Note: only for USB/IEEE mass storage cameras."
 msgstr ""
 "Opomba: samo za USB/IEEE fotoaparate, ki se obnašajo kot hranilniki podatkov."
 
-#: core/utilities/setup/camera/cameraselection.cpp:191
+#: core/utilities/setup/camera/cameraselection.cpp:193
 #, kde-format
 msgid ""
 "<p>Set here the mount path to use on your computer. This option is only "
@@ -63907,7 +63914,7 @@ msgstr ""
 "je zahtevana le, če uporabljate fotoaparat, ki se obnaša kot <b>USB "
 "hranilnik podatkov</b>.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:209
+#: core/utilities/setup/camera/cameraselection.cpp:211
 #, kde-format
 msgid ""
 "<p>To set a <b>USB Mass Storage</b> camera<br/>(which looks like a removable "
@@ -63918,7 +63925,7 @@ msgstr ""
 "b>( priklopljen izgleda kot odstranljiv pogon<br/>), uporabite<br/><a href="
 "\"umscamera\">%1</a> iz seznama fotoaparatov.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:216
+#: core/utilities/setup/camera/cameraselection.cpp:218
 #, kde-format
 msgid ""
 "<p>To set a <b>Generic PTP USB Device</b><br/>(which uses Picture Transfer "
@@ -63929,7 +63936,7 @@ msgstr ""
 "Transfer Protocol), <br/>uporabite <a href=\"ptpcamera\">%1</a> iz seznama "
 "fotoaparatov.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:222
+#: core/utilities/setup/camera/cameraselection.cpp:224
 #, kde-format
 msgid ""
 "<p>To set a <b>Generic PTP/IP Network Device</b><br/>(which uses Picture "
@@ -63940,7 +63947,7 @@ msgstr ""
 "Picture Transfer Protocol), <br/>uporabite <a href=\"ptpipcamera\">%1</a> iz "
 "seznama fotoaparatov.</p>"
 
-#: core/utilities/setup/camera/cameraselection.cpp:229
+#: core/utilities/setup/camera/cameraselection.cpp:231
 #, kde-format
 msgid ""
 "<p>A complete list of camera settings to use is<br/>available at <a "
@@ -63949,54 +63956,54 @@ msgstr ""
 "<p>Celoten seznam nastavitev fotoaparatov se nahaja na<br/><a href='https://"
 "www.figuiere.net/digicam/'>tem spletnem naslovu</a>.</p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:72
+#: core/utilities/setup/camera/importfilterdlg.cpp:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "Uredi filtre za uvoz"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:89
+#: core/utilities/setup/camera/importfilterdlg.cpp:91
 #, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "Ime:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:96
+#: core/utilities/setup/camera/importfilterdlg.cpp:98
 #, kde-format
 msgid "Mime filter:"
 msgstr "Filter MIME:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:104
+#: core/utilities/setup/camera/importfilterdlg.cpp:106
 #, kde-format
 msgid "Select Type Mime..."
 msgstr "Izberite vrsto MIME ..."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:109
+#: core/utilities/setup/camera/importfilterdlg.cpp:111
 #, kde-format
 msgid "File name filter:"
 msgstr "Filter imen datotek:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:119
+#: core/utilities/setup/camera/importfilterdlg.cpp:121
 #, kde-format
 msgid "Path filter:"
 msgstr "Filter poti:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:129
+#: core/utilities/setup/camera/importfilterdlg.cpp:131
 #, kde-format
 msgid "Show only new files"
 msgstr "Pokaži samo nove datoteke"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:203
+#: core/utilities/setup/camera/importfilterdlg.cpp:205
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr "Izberite vrste MIME, ki bi jih želeli za ta filter."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:205
+#: core/utilities/setup/camera/importfilterdlg.cpp:207
 #, kde-format
 msgid "Select Mime Types"
 msgstr "Izberite vrste MIME"
 
-#: core/utilities/setup/camera/setupcamera.cpp:247
+#: core/utilities/setup/camera/setupcamera.cpp:251
 #, kde-format
 msgid ""
 "Here you can see the digital camera list used by digiKam via the Gphoto "
@@ -64005,72 +64012,72 @@ msgstr ""
 "Tukaj lahko vidite seznam digitalnih fotoaparatov, ki jih digiKam uporablja "
 "preko vmesnika Gphoto."
 
-#: core/utilities/setup/camera/setupcamera.cpp:251
+#: core/utilities/setup/camera/setupcamera.cpp:255
 #, kde-format
 msgctxt "@title: camera title"
 msgid "Title"
 msgstr "Naslov"
 
-#: core/utilities/setup/camera/setupcamera.cpp:252
+#: core/utilities/setup/camera/setupcamera.cpp:256
 #, kde-format
 msgctxt "@title: camera model"
 msgid "Model"
 msgstr "Model"
 
-#: core/utilities/setup/camera/setupcamera.cpp:253
+#: core/utilities/setup/camera/setupcamera.cpp:257
 #, kde-format
 msgctxt "@title: camera port"
 msgid "Port"
 msgstr "Vrata"
 
-#: core/utilities/setup/camera/setupcamera.cpp:254
+#: core/utilities/setup/camera/setupcamera.cpp:258
 #, kde-format
 msgctxt "@title: camera mount path"
 msgid "Path"
 msgstr "Pot"
 
-#: core/utilities/setup/camera/setupcamera.cpp:272
-#: core/utilities/setup/camera/setupcamera.cpp:394
+#: core/utilities/setup/camera/setupcamera.cpp:276
+#: core/utilities/setup/camera/setupcamera.cpp:398
 #, kde-format
 msgid "&Edit..."
 msgstr "Ur&edi..."
 
-#: core/utilities/setup/camera/setupcamera.cpp:274
+#: core/utilities/setup/camera/setupcamera.cpp:278
 #, kde-format
 msgid "Auto-&Detect"
 msgstr "Samo&dejno zaznaj"
 
-#: core/utilities/setup/camera/setupcamera.cpp:285
+#: core/utilities/setup/camera/setupcamera.cpp:289
 #, kde-format
 msgid "Visit Gphoto project website"
 msgstr "Obiščite spletišče projekta Gphoto"
 
-#: core/utilities/setup/camera/setupcamera.cpp:308
+#: core/utilities/setup/camera/setupcamera.cpp:312
 #, kde-format
 msgid "Devices"
 msgstr "Naprave"
 
-#: core/utilities/setup/camera/setupcamera.cpp:315
+#: core/utilities/setup/camera/setupcamera.cpp:319
 #, kde-format
 msgid "Use file metadata (makes connection slower)"
 msgstr "Uporabi metapodatke datoteke (upočasni povezavo)"
 
-#: core/utilities/setup/camera/setupcamera.cpp:316
+#: core/utilities/setup/camera/setupcamera.cpp:320
 #, kde-format
 msgid "Turn on high quality thumbnail loading (slower loading)"
 msgstr "Vklopi nalaganje sličic visoke kakovosti (počasnejše nalaganje)"
 
-#: core/utilities/setup/camera/setupcamera.cpp:317
+#: core/utilities/setup/camera/setupcamera.cpp:321
 #, kde-format
 msgid "Use a default target album to download from camera"
 msgstr "Uporabi privzet ciljni album za prejem iz fotoaparata"
 
-#: core/utilities/setup/camera/setupcamera.cpp:323
+#: core/utilities/setup/camera/setupcamera.cpp:327
 #, kde-format
 msgid "If target file exists when downloaded from camera"
 msgstr "Če ciljna datoteka že obstaja ob prenosu iz kamere"
 
-#: core/utilities/setup/camera/setupcamera.cpp:364
+#: core/utilities/setup/camera/setupcamera.cpp:368
 #, kde-format
 msgid ""
 "Here you can see filters that can be used to filter files in import dialog."
@@ -64078,14 +64085,14 @@ msgstr ""
 "Tukaj lahko vidite filtre, ki jih lahko uporabite za filtriranje datotek v "
 "pogovornem oknu za uvoz."
 
-#: core/utilities/setup/camera/setupcamera.cpp:377
+#: core/utilities/setup/camera/setupcamera.cpp:381
 #, kde-format
 msgid "Use a space as a separator to specify multiple file names to ignore."
 msgstr ""
 "Uporabite presledek kot ločilnik za določanje več datotek, ki naj bodo "
 "prezrte."
 
-#: core/utilities/setup/camera/setupcamera.cpp:383
+#: core/utilities/setup/camera/setupcamera.cpp:387
 #, kde-format
 msgid ""
 "Use a space as a separator to specify multiple file extensions to ignore."
@@ -64093,27 +64100,27 @@ msgstr ""
 "Uporabite presledek kot ločilnik za določanje več podaljškov datotek, ki naj "
 "bodo prezrti."
 
-#: core/utilities/setup/camera/setupcamera.cpp:387
+#: core/utilities/setup/camera/setupcamera.cpp:391
 #, kde-format
 msgid "Always ignore"
 msgstr "Vedno prezri"
 
-#: core/utilities/setup/camera/setupcamera.cpp:388
+#: core/utilities/setup/camera/setupcamera.cpp:392
 #, kde-format
 msgid "Ignored file names:"
 msgstr "Prezrta imena datotek:"
 
-#: core/utilities/setup/camera/setupcamera.cpp:389
+#: core/utilities/setup/camera/setupcamera.cpp:393
 #, kde-format
 msgid "Ignored file extensions:"
 msgstr "Prezrte pripone datotek:"
 
-#: core/utilities/setup/camera/setupcamera.cpp:409
+#: core/utilities/setup/camera/setupcamera.cpp:413
 #, kde-format
 msgid "Import Filters"
 msgstr "Filtri za uvoz"
 
-#: core/utilities/setup/camera/setupcamera.cpp:417
+#: core/utilities/setup/camera/setupcamera.cpp:421
 #, kde-format
 msgid "Icon-View Options"
 msgstr "Možnosti pogleda ikon"
@@ -64122,27 +64129,27 @@ msgstr "Možnosti pogleda ikon"
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
 #.
-#: core/utilities/setup/camera/setupcamera.cpp:436
+#: core/utilities/setup/camera/setupcamera.cpp:440
 #, kde-format
 msgid "Show image Format"
 msgstr "Pokaži vrsto datoteke"
 
-#: core/utilities/setup/camera/setupcamera.cpp:443
+#: core/utilities/setup/camera/setupcamera.cpp:447
 #, kde-format
 msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgstr "Nastavite to možnost, da pod sličico prikažete digiKamove značke."
 
-#: core/utilities/setup/camera/setupcamera.cpp:446
+#: core/utilities/setup/camera/setupcamera.cpp:450
 #, kde-format
 msgid "Show item &rating"
 msgstr "Pokaži oceno p&redmeta"
 
-#: core/utilities/setup/camera/setupcamera.cpp:447
+#: core/utilities/setup/camera/setupcamera.cpp:451
 #, kde-format
 msgid "Set this option to show the item rating below the image thumbnail."
 msgstr "Nastavite to možnost, da pod sličico prikažete oceno predmeta."
 
-#: core/utilities/setup/camera/setupcamera.cpp:451
+#: core/utilities/setup/camera/setupcamera.cpp:455
 #, kde-format
 msgid ""
 "Set this option to show overlay buttons on the image thumbnail for image "
@@ -64151,32 +64158,32 @@ msgstr ""
 "Nastavite to možnost, da na sličici prikažete prekrivne gumbe za vrtenje "
 "slike."
 
-#: core/utilities/setup/camera/setupcamera.cpp:456
+#: core/utilities/setup/camera/setupcamera.cpp:460
 #, kde-format
 msgid "Show embedded preview"
 msgstr "Prikaži vgrajeni predogled"
 
-#: core/utilities/setup/camera/setupcamera.cpp:457
+#: core/utilities/setup/camera/setupcamera.cpp:461
 #, kde-format
 msgid "Start image editor"
 msgstr "Zaženi urejevalnik slik"
 
-#: core/utilities/setup/camera/setupcamera.cpp:462
+#: core/utilities/setup/camera/setupcamera.cpp:466
 #, kde-format
 msgid "Select here the font used to display text in Icon Views."
 msgstr "Tukaj izberite pisavo za prikaz besedila v pogledih ikon."
 
-#: core/utilities/setup/camera/setupcamera.cpp:484
+#: core/utilities/setup/camera/setupcamera.cpp:488
 #, kde-format
 msgid "Preview Options"
 msgstr "Možnosti predogleda"
 
-#: core/utilities/setup/camera/setupcamera.cpp:487
+#: core/utilities/setup/camera/setupcamera.cpp:491
 #, kde-format
 msgid "Embedded preview loads full-sized images"
 msgstr "Vgrajeni predogled naloži slike polne velikosti"
 
-#: core/utilities/setup/camera/setupcamera.cpp:488
+#: core/utilities/setup/camera/setupcamera.cpp:492
 #, kde-format
 msgid ""
 "<p>Set this option to load images at their full size for preview, rather "
@@ -64191,24 +64198,24 @@ msgstr ""
 "uporabljena različica s polovično velikostjo namesto vgrajenega predogleda "
 "JPEG.</p>"
 
-#: core/utilities/setup/camera/setupcamera.cpp:495
+#: core/utilities/setup/camera/setupcamera.cpp:499
 #, kde-format
 msgid "Preview each item while downloading it"
 msgstr "Med prejemom prikaži predogled vsakega predmeta"
 
-#: core/utilities/setup/camera/setupcamera.cpp:496
+#: core/utilities/setup/camera/setupcamera.cpp:500
 #, kde-format
 msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr ""
 "<p>Nastavite to možnost za predogled vsakega predmeta med prejemom.</p>"
 
-#: core/utilities/setup/camera/setupcamera.cpp:518
+#: core/utilities/setup/camera/setupcamera.cpp:522
 #, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "Okno uvoza"
 
-#: core/utilities/setup/camera/setupcamera.cpp:782
+#: core/utilities/setup/camera/setupcamera.cpp:786
 #, kde-format
 msgid ""
 "No default target album have been selected to process download from camera "
@@ -64217,12 +64224,12 @@ msgstr ""
 "Ni nastavljenega privzetega ciljnega albuma za obdelavo prejema iz vašega "
 "fotoaparata. Izberite enega."
 
-#: core/utilities/setup/camera/setupcamera.cpp:870
+#: core/utilities/setup/camera/setupcamera.cpp:874
 #, kde-format
 msgid "Device detection under progress, please wait..."
 msgstr "Poteka zaznava naprave, počakajte ..."
 
-#: core/utilities/setup/camera/setupcamera.cpp:881
+#: core/utilities/setup/camera/setupcamera.cpp:885
 #, kde-format
 msgid ""
 "Failed to auto-detect camera.\n"
@@ -64233,28 +64240,28 @@ msgstr ""
 "Preverite, če je vaš fotoaparat vklopljen in poskusite znova, lahko pa ga "
 "poskusite nastaviti ročno."
 
-#: core/utilities/setup/camera/setupcamera.cpp:896
+#: core/utilities/setup/camera/setupcamera.cpp:900
 #, kde-format
 msgid "Camera '%1' (%2) is already in list."
 msgstr "Fotoaparat »%1« (%2) je že na seznamu."
 
-#: core/utilities/setup/camera/setupcamera.cpp:900
+#: core/utilities/setup/camera/setupcamera.cpp:904
 #, kde-format
 msgid "Found camera '%1' (%2) and added it to the list."
 msgstr "Najden fotoaparat »%1« (%2) in dodan na seznam."
 
-#: core/utilities/setup/camera/setupcamera.cpp:916
+#: core/utilities/setup/camera/setupcamera.cpp:920
 #, kde-format
 msgid "Untitled"
 msgstr "Neimenovano"
 
-#: core/utilities/setup/camera/setupcamera.cpp:980
+#: core/utilities/setup/camera/setupcamera.cpp:984
 #, kde-format
 msgid ""
 "In order to enable this feature, the full-sized preview will be disabled."
 msgstr "Da omogočite to zmožnost, bo onemogočen predogled polne velikosti."
 
-#: core/utilities/setup/camera/setupcamera.cpp:991
+#: core/utilities/setup/camera/setupcamera.cpp:995
 #, kde-format
 msgid ""
 "If the full-sized preview is enabled it will affect the speed of previewing "
@@ -64263,7 +64270,7 @@ msgstr ""
 "Če je omogočen predogled polne velikosti, bo vplival na hitrost predogleda "
 "vsakega predmeta med prejemom."
 
-#: core/utilities/setup/collections/setupcollections.cpp:84
+#: core/utilities/setup/collections/setupcollections.cpp:86
 #, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -64280,7 +64287,7 @@ msgstr ""
 "diski morajo biti najprej priklopljeni na vaš sistem pred nastavljanjem "
 "oddaljene zbirke.</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:97
+#: core/utilities/setup/collections/setupcollections.cpp:99
 #, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -64290,12 +64297,12 @@ msgstr ""
 "<p>Spodaj so mesta vaših korenskih albumov v katere shranjujete vaše slike. "
 "Za urejanje slik je obvezen dostop za pisanje.</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:111
+#: core/utilities/setup/collections/setupcollections.cpp:113
 #, kde-format
 msgid "Monitor the albums for external changes (requires restart)"
 msgstr "Spremljanje albumov za zunanje spremembe (potreben je ponovni zagon)"
 
-#: core/utilities/setup/collections/setupcollections.cpp:114
+#: core/utilities/setup/collections/setupcollections.cpp:116
 #, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
@@ -64306,13 +64313,13 @@ msgstr ""
 "digiKam. Če uporabljate MacOS in omrežne zbirke, ne smete aktivirati nadzor "
 "albuma.</b>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:127
+#: core/utilities/setup/collections/setupcollections.cpp:129
 #, kde-format
 msgctxt "@title:tab"
 msgid "Root Album Folders"
 msgstr "Korenske mape albuma"
 
-#: core/utilities/setup/collections/setupcollections.cpp:134
+#: core/utilities/setup/collections/setupcollections.cpp:136
 #, kde-format
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
@@ -64333,26 +64340,26 @@ msgstr ""
 "privzeto izvzeta.</p><p>Če želite ponovno vključiti mape, ki so privzeto "
 "prezrte, jih predpona z minusom, npr. -@eaDir, spet vključi.</p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:152
+#: core/utilities/setup/collections/setupcollections.cpp:154
 #, kde-format
 msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
 "directories</a>):"
 msgstr "Dodatne prezrte mape (<a href='image'>Trenutno prezrte mape</a>):"
 
-#: core/utilities/setup/collections/setupcollections.cpp:157
+#: core/utilities/setup/collections/setupcollections.cpp:159
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr "Vnesite mape, ki jih želite izvzeti iz dodajanja v svoje zbirke."
 
-#: core/utilities/setup/collections/setupcollections.cpp:173
+#: core/utilities/setup/collections/setupcollections.cpp:175
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
 msgstr "Izvzeti direktoriji"
 
-#: core/utilities/setup/collections/setupcollections.cpp:244
+#: core/utilities/setup/collections/setupcollections.cpp:246
 #, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br/> <code>%1</"
@@ -64634,7 +64641,7 @@ msgstr "Napaka pri odpiranju datoteke."
 msgid "File on the server is too large."
 msgstr "Datoteka na strežniku je prevelika."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:526
+#: core/utilities/setup/downloader/filesdownloader.cpp:524
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -64650,7 +64657,7 @@ msgstr ""
 "ki jih želite omogočiti.</p><p><b>Opomba:</b> Orodje za odstranjevanje "
 "rdečih oči zahteva datoteke modela upravljanja obraza.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:532
+#: core/utilities/setup/downloader/filesdownloader.cpp:530
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -64667,52 +64674,52 @@ msgstr ""
 "delovale brez teh datotek.</p><p>Datoteke bodo prenesene v \"<i>%1</i>\".</"
 "p><p><b>Po uspešnem prenosu datotek morate znova zagnati digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:540
+#: core/utilities/setup/downloader/filesdownloader.cpp:538
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Prenos zahteva %1 datotek z velikostjo %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:548
+#: core/utilities/setup/downloader/filesdownloader.cpp:546
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "Vse datoteke za izbrane zmožnosti so bile najdene."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:568
+#: core/utilities/setup/downloader/filesdownloader.cpp:566
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Počisti neuporabljene datoteke modela AI/DNN..."
 
-#: core/utilities/setup/editor/setupeditor.cpp:63
+#: core/utilities/setup/editor/setupeditor.cpp:65
 #, kde-format
 msgctxt "@title:tab"
 msgid "Editor Window"
 msgstr "Okno urejevalnika"
 
-#: core/utilities/setup/editor/setupeditor.cpp:64
+#: core/utilities/setup/editor/setupeditor.cpp:66
 #, kde-format
 msgctxt "@title:tab"
 msgid "Versioning"
 msgstr "Raba različic"
 
-#: core/utilities/setup/editor/setupeditor.cpp:65
+#: core/utilities/setup/editor/setupeditor.cpp:67
 #, kde-format
 msgctxt "@title:tab"
 msgid "Save Settings"
 msgstr "Shrani nastavitve"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:102
+#: core/utilities/setup/editor/setupeditoriface.cpp:104
 #: core/utilities/setup/setuplighttable.cpp:78
 #, kde-format
 msgid "Interface Options"
 msgstr "Možnosti vmesnika"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:105
+#: core/utilities/setup/editor/setupeditoriface.cpp:107
 #, kde-format
 msgid "&Use theme background color"
 msgstr "&Uporabi barvo ozadja teme"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:108
+#: core/utilities/setup/editor/setupeditoriface.cpp:110
 #, kde-format
 msgid ""
 "Enable this option to use the background theme color in the image editor "
@@ -64721,40 +64728,40 @@ msgstr ""
 "Omogočite to možnost, da uporabite barvo ozadja teme v območju urejevalnika "
 "slik."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:112
+#: core/utilities/setup/editor/setupeditoriface.cpp:114
 #, kde-format
 msgid "&Background color:"
 msgstr "&Barva ozadja:"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:115
+#: core/utilities/setup/editor/setupeditoriface.cpp:117
 #, kde-format
 msgid "Customize the background color to use in the image editor area."
 msgstr ""
 "Prilagodite barvo ozadja, ki bo uporabljena v območju urejevalnika slik."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:129
+#: core/utilities/setup/editor/setupeditoriface.cpp:131
 #, kde-format
 msgid "Exposure Indicators"
 msgstr "Kazalniki osvetlitve"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:132
+#: core/utilities/setup/editor/setupeditoriface.cpp:134
 #, kde-format
 msgid "&Under-exposure color: "
 msgstr "Barva pod-osvetlitve: "
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:135
+#: core/utilities/setup/editor/setupeditoriface.cpp:137
 #, kde-format
 msgid "Customize color used in image editor to identify under-exposed pixels."
 msgstr ""
 "Prilagodite barvo v urejevalniku slik, ki bo določala pod-osvetljene "
 "slikovne točke."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:138
+#: core/utilities/setup/editor/setupeditoriface.cpp:140
 #, kde-format
 msgid "Under-exposure percents: "
 msgstr "Odstotki pod-osvetlitve: "
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:144
+#: core/utilities/setup/editor/setupeditoriface.cpp:146
 #, kde-format
 msgid ""
 "Adjust the percents of the bottom of image histogram which will be used to "
@@ -64763,24 +64770,24 @@ msgstr ""
 "Prilagodite odstotke dna histograma slike, ki bodo uporabljeni za "
 "preverjanje pod-osvetljenih slikovnih točk."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:147
+#: core/utilities/setup/editor/setupeditoriface.cpp:149
 #, kde-format
 msgid "&Over-exposure color: "
 msgstr "Barva nad-osvetlitve: "
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:150
+#: core/utilities/setup/editor/setupeditoriface.cpp:152
 #, kde-format
 msgid "Customize color used in image editor to identify over-exposed pixels."
 msgstr ""
 "Prilagodite barvo v urejevalniku slik, ki bo določala nad-osvetljene "
 "slikovne točke."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:153
+#: core/utilities/setup/editor/setupeditoriface.cpp:155
 #, kde-format
 msgid "Over-exposure percents: "
 msgstr "Odstotki nad-osvetlitve: "
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:159
+#: core/utilities/setup/editor/setupeditoriface.cpp:161
 #, kde-format
 msgid ""
 "Adjust the percents of the top of image histogram which will be used to "
@@ -64789,12 +64796,12 @@ msgstr ""
 "Prilagodite odstotke vrha histograma slike, ki bodo uporabljeni za "
 "preverjanje nad-osvetljenih slikovnih točk."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:162
+#: core/utilities/setup/editor/setupeditoriface.cpp:164
 #, kde-format
 msgid "Indicate exposure as pure color"
 msgstr "Prikaži osvetlitev kot čisto barvo"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:163
+#: core/utilities/setup/editor/setupeditoriface.cpp:165
 #, kde-format
 msgid ""
 "If this option is enabled, over- and under-exposure indicators will be "
@@ -64807,22 +64814,22 @@ msgstr ""
 "naenkrat ujemajo s pogojem. V nasprotnem primeru bodo kazalniki vklopljeni, "
 "ko se s pogojem ujema ena izmed barvnih komponent."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:168
+#: core/utilities/setup/editor/setupeditoriface.cpp:170
 #, kde-format
 msgid "Example:"
 msgstr "Primer:"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:201
+#: core/utilities/setup/editor/setupeditoriface.cpp:203
 #, kde-format
 msgid "Tool Options"
 msgstr "Možnosti orodja"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:204
+#: core/utilities/setup/editor/setupeditoriface.cpp:206
 #, kde-format
 msgid "&Restore the settings of the Image Editor tools"
 msgstr "Obnova nastavitev orodij urejevanja slik"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:206
+#: core/utilities/setup/editor/setupeditoriface.cpp:208
 #, kde-format
 msgid ""
 "Enable this option to restore the settings of the Image Editor tools from "
@@ -64848,7 +64855,7 @@ msgstr ""
 "shranjevanjem slikovnih datotek</li><li>Brez oznake: med shranjevanjem so "
 "uporabljene privzete nastavitve</li></ul>"
 
-#: core/utilities/setup/editor/setupraw.cpp:86
+#: core/utilities/setup/editor/setupraw.cpp:88
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64860,49 +64867,49 @@ msgstr ""
 "digitalnega fotoaparata\n"
 "Odprtje takšne datoteke zahteva obširno tolmačenje in obdelovanje podatkov."
 
-#: core/utilities/setup/editor/setupraw.cpp:104
+#: core/utilities/setup/editor/setupraw.cpp:106
 #, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
 msgstr "Odpri datoteke RAW v urejevalniku slik"
 
-#: core/utilities/setup/editor/setupraw.cpp:107
+#: core/utilities/setup/editor/setupraw.cpp:109
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Fast and simple, as 8 bit image"
 msgstr "Hitro in preprosto, kot 8 bitna slika"
 
-#: core/utilities/setup/editor/setupraw.cpp:109
+#: core/utilities/setup/editor/setupraw.cpp:111
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Using the default settings, in 16 bit"
 msgstr "Z uporabo privzetih nastavitev, v 16 bit"
 
-#: core/utilities/setup/editor/setupraw.cpp:111
+#: core/utilities/setup/editor/setupraw.cpp:113
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Always open the Raw Import Tool to customize settings"
 msgstr "Vedno odpri orodje za uvažanje datotek RAW in prilagodi nastavitve"
 
-#: core/utilities/setup/editor/setupraw.cpp:127
+#: core/utilities/setup/editor/setupraw.cpp:129
 #, kde-format
 msgctxt "@item: default raw plugin"
 msgid " (default)"
 msgstr " (privzeto)"
 
-#: core/utilities/setup/editor/setupraw.cpp:155
+#: core/utilities/setup/editor/setupraw.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About this Raw Import tool..."
 msgstr "O orodju za uvoz surovih slik..."
 
-#: core/utilities/setup/editor/setupraw.cpp:189
+#: core/utilities/setup/editor/setupraw.cpp:190
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Behavior"
 msgstr "Obnašanje surovih (RAW)"
 
-#: core/utilities/setup/editor/setupraw.cpp:190
+#: core/utilities/setup/editor/setupraw.cpp:191
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Default Settings"
@@ -65199,25 +65206,25 @@ msgstr ""
 "kodekom AOMedia Video 1 (AV1) v odprtem in brez-licenčnem formatu kodiranja."
 "</item>"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:126
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:128
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Advanced Metadata Profile"
 msgstr "Shrani profil naprednih metapodatkov"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:155
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:157
 #, kde-format
 msgctxt "@title:window"
 msgid "Load Advanced Metadata Profile"
 msgstr "Naloži profil naprednih metapodatkov"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:196
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:198
 #, kde-format
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "Opozorilo"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:197
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:199
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65229,7 +65236,7 @@ msgstr ""
 "Vse spremembe bodo izgubljene.\n"
 "Ali želite nadaljevati?"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:393
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:395
 #, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
@@ -65241,90 +65248,90 @@ msgstr ""
 "ocen in komentarjev.<br/><b>Opomba:</b> Vrstni red je pomemben pri branju "
 "metapodatkov"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:403
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:405
 #, kde-format
 msgid "Read Options"
 msgstr "Možnosti branja"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:404
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:406
 #, kde-format
 msgid "Write Options"
 msgstr "Možnosti pisanja"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:406
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:408
 #, kde-format
 msgid "Unify read and write"
 msgstr "Poenoti branje in pisanje"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:407
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:409
 #, kde-format
 msgid "Read all metadata for tags"
 msgstr "Preberi vse metapodatke za značke"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:427
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
 msgid "Add"
 msgstr "Dodaj"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:436
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:438
 #, kde-format
 msgid "Move Up"
 msgstr "Premakni gor"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:439
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:441
 #, kde-format
 msgid "Move Down"
 msgstr "Premakni dol"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:442
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
 msgid "Revert Changes"
 msgstr "Povrni vse spremembe"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:448
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
 #, kde-format
 msgid "Save Profile"
 msgstr "Shrani profil"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:451
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:453
 #, kde-format
 msgid "Load Profile"
 msgstr "Naloži profil"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:454
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:456
 #, kde-format
 msgid "Reset to Default"
 msgstr "Ponastavi privzete vrednosti"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:110
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:112
 #, kde-format
 msgctxt "@title:window"
 msgid "New XMP Namespace"
 msgstr "Nov imenski prostor XMP"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:114
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:116
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit XMP Namespace"
 msgstr "Uredi XMP Namespace"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:204
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:206
 #, kde-format
 msgid "Add metadata namespace"
 msgstr "Dodaj imenski prostor za metapodatke"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:208
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:210
 #, kde-format
 msgid "Metadata Subspace"
 msgstr "Podprostor metapodatkov"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:220
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:222
 #, kde-format
 msgctxt "@label: namespace name"
 msgid "Name:"
 msgstr "Ime:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:228
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:230
 #, kde-format
 msgid ""
 "<p>To create new namespaces, you need to specify parameters:</"
@@ -65339,7 +65346,7 @@ msgstr ""
 ">Na primer: \"Mesto/Pariz\" ali \"Mesto|Pariz\"</li><li>Določite, ali mora "
 "biti napisana samo ključna beseda ali celotna pot.</li></ul></p>"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:239
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:241
 #, kde-format
 msgid ""
 "<p>To create new rating namespaces, you need to specify parameters:</"
@@ -65354,7 +65361,7 @@ msgstr ""
 "vrednosti razen 0-5<br/>Na primer: Microsoft uporablja 0 1 25 50 75 99</"
 "li><li>Izberite pravilno možnost imenskega prostora iz seznama.</li></ul></p>"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:250
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:252
 #, kde-format
 msgid ""
 "<p>To create new comment namespaces, you need to specify parameters:</"
@@ -65366,84 +65373,84 @@ msgstr ""
 "Comment\"</i></li><li>Izberite pravilni imenski prostor iz seznama.</li></"
 "ul></p>"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:259
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:261
 #, kde-format
 msgid "Special Options"
 msgstr "Posebne možnosti"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:286
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:288
 #, kde-format
 msgid "Alternative name"
 msgstr "Alternativno ime"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:290
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:292
 #, kde-format
 msgid "Alternative special options"
 msgstr "Alternativne posebne možnosti"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:320
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:322
 #, kde-format
 msgid "Separator:"
 msgstr "Ločilnik:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:326
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:328
 #, kde-format
 msgid "Set Tags Path:"
 msgstr "Nastavi pot značk:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:346
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:348
 #, kde-format
 msgid "Rating Mapping:"
 msgstr "Preslikava ocen:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:534
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:536
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 "To je privzeti imenski prostor. Privzete imenske prostore lahko le "
 "onemogočite"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:561
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:563
 #, kde-format
 msgid "The namespace name is required"
 msgstr "Ime imenskega prostora je obvezno"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:572
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:574
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr "Ime imenskega prostora Exif se mora začeti z \"Exif\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:580
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:584
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr "Ime nadomestnega imenskega prostora Exif se mora začeti z \"Exif\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:592
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:596
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr "Ime imenskega prostora IPTC se mora začeti z \"Iptc\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:600
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:606
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr "Ime nadomestnega imenskega prostora IPTC mora začeti z \"Iptc\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:612
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:618
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr "Ime imenskega prostora XMP se mora začeti z \"Xmp\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:620
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:628
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr "Ime alternativnega imenskega prostora XMP se mora začeti z \"Xmp\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:641
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:649
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr "Ločilnik poti značk je obvezen"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:647
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:655
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr "Samo en znak je zdaj podprt kot ločevalnik poti značk"
@@ -66663,13 +66670,13 @@ msgstr ""
 "zagonu. Nekatere nastavitve so odvisne od strojne opreme in morda nimajo "
 "nobenega učinka.</b>"
 
-#: core/utilities/setup/setup.cpp:125
+#: core/utilities/setup/setup.cpp:127
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Podatkovna zbirka"
 
-#: core/utilities/setup/setup.cpp:126
+#: core/utilities/setup/setup.cpp:128
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66679,13 +66686,13 @@ msgstr ""
 "Nastavitve podatkovne zbirke\n"
 "Prilagodi nastavitve podatkovne zbirke"
 
-#: core/utilities/setup/setup.cpp:130
+#: core/utilities/setup/setup.cpp:132
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Zbirke"
 
-#: core/utilities/setup/setup.cpp:131
+#: core/utilities/setup/setup.cpp:133
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66695,13 +66702,13 @@ msgstr ""
 "Nastavitve zbirk\n"
 "Nastavite mesta korenskih albumov"
 
-#: core/utilities/setup/setup.cpp:135
+#: core/utilities/setup/setup.cpp:137
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Pogledi"
 
-#: core/utilities/setup/setup.cpp:136
+#: core/utilities/setup/setup.cpp:138
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66711,13 +66718,13 @@ msgstr ""
 "Nastavitve pogledov aplikacije\n"
 "Prilagodite izgled pogledov"
 
-#: core/utilities/setup/setup.cpp:140
+#: core/utilities/setup/setup.cpp:142
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Orodni namig"
 
-#: core/utilities/setup/setup.cpp:141
+#: core/utilities/setup/setup.cpp:143
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66727,13 +66734,13 @@ msgstr ""
 "Nastavitve orodnih namigov\n"
 "Prilagodi informacije v orodnih namigih"
 
-#: core/utilities/setup/setup.cpp:145
+#: core/utilities/setup/setup.cpp:147
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metapodatki"
 
-#: core/utilities/setup/setup.cpp:146
+#: core/utilities/setup/setup.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66743,13 +66750,13 @@ msgstr ""
 "Upravljanje podatkov vgrajenih v sliko\n"
 "Nastavite povezave med slikami in metapodatki"
 
-#: core/utilities/setup/setup.cpp:150
+#: core/utilities/setup/setup.cpp:152
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Predloge"
 
-#: core/utilities/setup/setup.cpp:151
+#: core/utilities/setup/setup.cpp:153
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66759,13 +66766,13 @@ msgstr ""
 "Predloge metapodatkov\n"
 "Upravljajte z vašo zbirko predlog metapodatkov"
 
-#: core/utilities/setup/setup.cpp:155
+#: core/utilities/setup/setup.cpp:157
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Urejevalnik slik"
 
-#: core/utilities/setup/setup.cpp:156
+#: core/utilities/setup/setup.cpp:158
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66775,13 +66782,13 @@ msgstr ""
 "Nastavitve urejevalnika slik\n"
 "Prilagodi nastavitve urejevalnika slik"
 
-#: core/utilities/setup/setup.cpp:160
+#: core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Upravljanje barv"
 
-#: core/utilities/setup/setup.cpp:161
+#: core/utilities/setup/setup.cpp:163
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66791,13 +66798,13 @@ msgstr ""
 "Nastavitve za upravljanje barv\n"
 "Prilagodi nastavitve upravljanja barv"
 
-#: core/utilities/setup/setup.cpp:165
+#: core/utilities/setup/setup.cpp:167
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Osvetlitvena miza"
 
-#: core/utilities/setup/setup.cpp:166
+#: core/utilities/setup/setup.cpp:168
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66807,13 +66814,13 @@ msgstr ""
 "Nastavitve osvetlitvene mize\n"
 "Prilagodi orodje za primerjavo predmetov"
 
-#: core/utilities/setup/setup.cpp:179
+#: core/utilities/setup/setup.cpp:181
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Kamere"
 
-#: core/utilities/setup/setup.cpp:180
+#: core/utilities/setup/setup.cpp:182
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66823,13 +66830,13 @@ msgstr ""
 "Nastavitve kamere\n"
 "Upravljaj vaše kamere"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:189
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Vtičniki"
 
-#: core/utilities/setup/setup.cpp:188
+#: core/utilities/setup/setup.cpp:190
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66839,13 +66846,13 @@ msgstr ""
 "Nastavitve vstavkov\n"
 "Nastavi kateri vtičniki bodo dostopni iz aplikacije"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:194
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Razno"
 
-#: core/utilities/setup/setup.cpp:193
+#: core/utilities/setup/setup.cpp:195
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66855,7 +66862,7 @@ msgstr ""
 "Razne nastavitve\n"
 "Nastavi obnašanje drugih delov digiKam"
 
-#: core/utilities/setup/setupdatabase.cpp:169
+#: core/utilities/setup/setupdatabase.cpp:171
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66872,19 +66879,19 @@ msgstr ""
 "starejšim od različice 8.5.0.\n"
 "Ali želite začeti z posodobitvijo?"
 
-#: core/utilities/setup/setupdatabase.cpp:183
+#: core/utilities/setup/setupdatabase.cpp:185
 #, kde-format
 msgctxt "@title:group"
 msgid "Updates"
 msgstr "Posodobitve"
 
-#: core/utilities/setup/setupdatabase.cpp:186
+#: core/utilities/setup/setupdatabase.cpp:188
 #, kde-format
 msgctxt "@action:button"
 msgid "Update File Hashes"
 msgstr "Posodobi razpršila datotek"
 
-#: core/utilities/setup/setupdatabase.cpp:188
+#: core/utilities/setup/setupdatabase.cpp:190
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -66902,18 +66909,18 @@ msgstr ""
 "Po nadgradnji ne boste mogli podatkovne zbirke uporabljati z digiKamom "
 "starejšim od različice 8.5.0."
 
-#: core/utilities/setup/setupdatabase.cpp:197
+#: core/utilities/setup/setupdatabase.cpp:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Update File Hashes</b>"
 msgstr "Pridobi informacije o <b>Posodobi razpršila datotek</b>"
 
-#: core/utilities/setup/setupgeolocation.cpp:104
+#: core/utilities/setup/setupgeolocation.cpp:106
 #, kde-format
 msgid "API Key:"
 msgstr "API ključ:"
 
-#: core/utilities/setup/setupgeolocation.cpp:115
+#: core/utilities/setup/setupgeolocation.cpp:117
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66930,12 +66937,12 @@ msgstr ""
 "na <a href='https://mapsplatform.google.com/pricing/'>Googlovo stran</a> o "
 "uporabah, praksah in cenah."
 
-#: core/utilities/setup/setupicc.cpp:137
+#: core/utilities/setup/setupicc.cpp:139
 #, kde-format
 msgid "Enable Color Management"
 msgstr "Omogoči upravljanje barv"
 
-#: core/utilities/setup/setupicc.cpp:138
+#: core/utilities/setup/setupicc.cpp:140
 #, kde-format
 msgid ""
 "<ul><li>Checked: Color Management is enabled</li><li>Unchecked: Color "
@@ -66944,17 +66951,17 @@ msgstr ""
 "<ul><li>Označeno: upravljanje barv je omogočeno</li><li>Brez oznake: "
 "upravljanje barv je onemogočeno</li></ul>"
 
-#: core/utilities/setup/setupicc.cpp:145
+#: core/utilities/setup/setupicc.cpp:147
 #, kde-format
 msgid "Visit Little CMS project website"
 msgstr "Obiščite spletišče projekta Little CMS"
 
-#: core/utilities/setup/setupicc.cpp:155
+#: core/utilities/setup/setupicc.cpp:157
 #, kde-format
 msgid "Working Color Space"
 msgstr "Delovni barvni prostor"
 
-#: core/utilities/setup/setupicc.cpp:161
+#: core/utilities/setup/setupicc.cpp:163
 #, kde-format
 msgid ""
 "<p>This is the color space all the images will be converted to when opened "
@@ -66967,7 +66974,7 @@ msgstr ""
 "Dobre in varne izbire so <b>Adobe RGB (1998)</b> in <b>sRGB IEC61966-2.1</"
 "b></p>"
 
-#: core/utilities/setup/setupicc.cpp:167
+#: core/utilities/setup/setupicc.cpp:169
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -66976,17 +66983,17 @@ msgstr ""
 "<p>Da dobite več podrobnosti o izbranem profilu delovnega prostora, lahko "
 "kliknete ta gumb.</p>"
 
-#: core/utilities/setup/setupicc.cpp:181
+#: core/utilities/setup/setupicc.cpp:183
 #, kde-format
 msgid "When the profile of an image does not match the working color space"
 msgstr "Ko se profil slike ne ujema z delovnim barvnim prostorom"
 
-#: core/utilities/setup/setupicc.cpp:189 core/utilities/setup/setupicc.cpp:220
+#: core/utilities/setup/setupicc.cpp:191 core/utilities/setup/setupicc.cpp:222
 #, kde-format
 msgid "Ask when opening the image"
 msgstr "Vprašaj ob odprtju slike"
 
-#: core/utilities/setup/setupicc.cpp:190
+#: core/utilities/setup/setupicc.cpp:192
 #, kde-format
 msgid ""
 "<p>If an image has an embedded color profile not matching the working space "
@@ -66998,12 +67005,12 @@ msgstr ""
 "delovnega prostora, bo digiKam vprašal, če ga želite pretvoriti v delovni "
 "prostor, ga ohraniti ali dodeliti novega.</p>"
 
-#: core/utilities/setup/setupicc.cpp:196
+#: core/utilities/setup/setupicc.cpp:198
 #, kde-format
 msgid "Convert the image to the working color space"
 msgstr "Pretvori sliko v delovni barvni prostor"
 
-#: core/utilities/setup/setupicc.cpp:197
+#: core/utilities/setup/setupicc.cpp:199
 #, kde-format
 msgid ""
 "<p>If an image has an embedded color profile not matching the working space "
@@ -67015,12 +67022,12 @@ msgstr ""
 "delovnega prostora, bo digiKam pretvoril podatke o barvah slike v delovni "
 "barvni prostor. To spremeni podatke slikovnih točk, ne pa videza slike.</p>"
 
-#: core/utilities/setup/setupicc.cpp:213
+#: core/utilities/setup/setupicc.cpp:215
 #, kde-format
 msgid "When an image has no color profile information"
 msgstr "Ko slika nima podatkov o barvnem profilu"
 
-#: core/utilities/setup/setupicc.cpp:221
+#: core/utilities/setup/setupicc.cpp:223
 #, kde-format
 msgid ""
 "<p>If an image has no embedded color profile, digiKam will ask which color "
@@ -67031,70 +67038,70 @@ msgstr ""
 "barvni prostor naj bo uporabljen za razlago slike in v kateri barvni prostor "
 "naj bo pretvorjena za urejanje.</p>"
 
-#: core/utilities/setup/setupicc.cpp:225
+#: core/utilities/setup/setupicc.cpp:227
 #, kde-format
 msgid "Assume it is using the sRGB color space (Internet standard)"
 msgstr "Predpostavi, da uporablja barvni prostor sRGB (internetni standard)"
 
 #. i18n("<p></p>"));
 #.
-#: core/utilities/setup/setupicc.cpp:231
+#: core/utilities/setup/setupicc.cpp:233
 #, kde-format
 msgid "and convert it to the working color space"
 msgstr "in ga pretvori v delovni barvni prostor"
 
-#: core/utilities/setup/setupicc.cpp:244
+#: core/utilities/setup/setupicc.cpp:246
 #, kde-format
 msgid "Assume it is using the working color space"
 msgstr "Predpostavi, da uporablja delovni barvni prostor"
 
 #. i18n("<p></p>"));
 #.
-#: core/utilities/setup/setupicc.cpp:250
+#: core/utilities/setup/setupicc.cpp:252
 #, kde-format
 msgid "Convert it from default input color space to working space"
 msgstr "Pretvori iz privzetega vhodnega barvnega prostora v delovni prostor"
 
-#: core/utilities/setup/setupicc.cpp:269
+#: core/utilities/setup/setupicc.cpp:271
 #, kde-format
 msgid "When loading a RAW file with uncalibrated colors"
 msgstr "Med nalaganjem datoteke RAW z barvami, ki niso umerjene"
 
-#: core/utilities/setup/setupicc.cpp:276
+#: core/utilities/setup/setupicc.cpp:278
 #, kde-format
 msgid "Ask for the input profile"
 msgstr "Vprašaj za vhodni profil"
 
 #. i18n("<p></p>"));
 #.
-#: core/utilities/setup/setupicc.cpp:282
+#: core/utilities/setup/setupicc.cpp:284
 #, kde-format
 msgid "Automatic color correction"
 msgstr "Samodejno popravljanje barv"
 
 #. i18n("<p></p>"));
 #.
-#: core/utilities/setup/setupicc.cpp:288
+#: core/utilities/setup/setupicc.cpp:290
 #, kde-format
 msgid "Convert it from the default input profile"
 msgstr "Pretvori ga iz privzetega vhodnega profila"
 
-#: core/utilities/setup/setupicc.cpp:313
+#: core/utilities/setup/setupicc.cpp:314
 #, kde-format
 msgid "Color Managed View"
 msgstr "Upravljan pregled barv"
 
-#: core/utilities/setup/setupicc.cpp:318
+#: core/utilities/setup/setupicc.cpp:319
 #, kde-format
 msgid "Monitor profile:"
 msgstr "Profil zaslona:"
 
-#: core/utilities/setup/setupicc.cpp:322
+#: core/utilities/setup/setupicc.cpp:323
 #, kde-format
 msgid "<p>Select the color profile for your monitor here.</p>"
 msgstr "<p>Tukaj izberite barvni profil za vaš zaslon.</p>"
 
-#: core/utilities/setup/setupicc.cpp:326
+#: core/utilities/setup/setupicc.cpp:327
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -67103,12 +67110,12 @@ msgstr ""
 "<p>Da dobite več podrobnosti o izbranem profilu zaslona, lahko kliknete ta "
 "gumb.</p>"
 
-#: core/utilities/setup/setupicc.cpp:330
+#: core/utilities/setup/setupicc.cpp:331
 #, kde-format
 msgid "Use color managed view in editor"
 msgstr "Uporabi upravljan pregled barv v urejevalniku"
 
-#: core/utilities/setup/setupicc.cpp:331
+#: core/utilities/setup/setupicc.cpp:332
 #, kde-format
 msgid ""
 "<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
@@ -67123,22 +67130,22 @@ msgstr ""
 "urejevalniku. <i>Opozorilo</i>: to lahko upočasni izrisovanje slike, odvisno "
 "od hitrosti vašega računalnika.</p>"
 
-#: core/utilities/setup/setupicc.cpp:338
+#: core/utilities/setup/setupicc.cpp:339
 #, kde-format
 msgid "Use color managed view for previews and thumbnails"
 msgstr "Uporabi upravljan pregled barv za predoglede in sličice"
 
-#: core/utilities/setup/setupicc.cpp:354
+#: core/utilities/setup/setupicc.cpp:355
 #, kde-format
 msgid "Camera and Scanner"
 msgstr "Fotoaparat in optični bralnik"
 
-#: core/utilities/setup/setupicc.cpp:359
+#: core/utilities/setup/setupicc.cpp:360
 #, kde-format
 msgid "Default input color profile:"
 msgstr "Privzet vhodni barvni profil:"
 
-#: core/utilities/setup/setupicc.cpp:361
+#: core/utilities/setup/setupicc.cpp:362
 #, kde-format
 msgid ""
 "<p>This is the default color profile for your input device (that is your "
@@ -67151,7 +67158,7 @@ msgstr ""
 "pretvorbo slik RAW v 16 bit. Nekatere izmed možnosti o obnašanju ob "
 "nalaganju se nanašajo na ta profil.</p>"
 
-#: core/utilities/setup/setupicc.cpp:368
+#: core/utilities/setup/setupicc.cpp:369
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -67160,17 +67167,17 @@ msgstr ""
 "<p>Da dobite več podrobnosti o izbranem vhodnem profilu, lahko kliknete ta "
 "gumb.</p>"
 
-#: core/utilities/setup/setupicc.cpp:379
+#: core/utilities/setup/setupicc.cpp:380
 #, kde-format
 msgid "Printing and Proofing"
 msgstr "Tiskanje in preverjanje"
 
-#: core/utilities/setup/setupicc.cpp:384
+#: core/utilities/setup/setupicc.cpp:385
 #, kde-format
 msgid "Output device profile:"
 msgstr "Profil izhodne naprave:"
 
-#: core/utilities/setup/setupicc.cpp:393
+#: core/utilities/setup/setupicc.cpp:394
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -67179,12 +67186,12 @@ msgstr ""
 "<p>Da dobite več podrobnosti o izbranem profilu za preverjanje, lahko "
 "kliknete ta gumb.</p>"
 
-#: core/utilities/setup/setupicc.cpp:404
+#: core/utilities/setup/setupicc.cpp:405
 #, kde-format
 msgid "Color Profiles Repository"
 msgstr "Skladišče barvnih profilov"
 
-#: core/utilities/setup/setupicc.cpp:409
+#: core/utilities/setup/setupicc.cpp:410
 #, kde-format
 msgid ""
 "digiKam looks for ICC profiles in a number of <a href='default'>default "
@@ -67193,7 +67200,7 @@ msgstr ""
 "digiKam išče profile ICC v številnih <a href='default'>privzetih mestih</a>. "
 "Navedete lahko dodatno mapo:"
 
-#: core/utilities/setup/setupicc.cpp:417
+#: core/utilities/setup/setupicc.cpp:418
 #, kde-format
 msgid ""
 "<p>digiKam searches ICC profiles in default system folders and ships itself "
@@ -67204,12 +67211,12 @@ msgstr ""
 "vgrajenih. V mapo, ki je nastavljena tukaj, shranite vse vaše dodatne "
 "profile.</p>"
 
-#: core/utilities/setup/setupicc.cpp:440
+#: core/utilities/setup/setupicc.cpp:441
 #, kde-format
 msgid "Use black point compensation"
 msgstr "Uporabi kompenzacijo črne točke"
 
-#: core/utilities/setup/setupicc.cpp:441
+#: core/utilities/setup/setupicc.cpp:442
 #, kde-format
 msgid ""
 "<p><b>Black Point Compensation</b> is a way to make adjustments between the "
@@ -67220,56 +67227,56 @@ msgstr ""
 "najvišjimi ravnmi črne digitalnih datotek in najvišjimi ravnmi različnih "
 "digitalnih naprav.</p>"
 
-#: core/utilities/setup/setupicc.cpp:447
+#: core/utilities/setup/setupicc.cpp:448
 #, kde-format
 msgid "Rendering Intents:"
 msgstr "Nameni upodobitve:"
 
-#: core/utilities/setup/setupicc.cpp:462
+#: core/utilities/setup/setupicc.cpp:463
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Behavior"
 msgstr "Obnašanje"
 
-#: core/utilities/setup/setupicc.cpp:463
+#: core/utilities/setup/setupicc.cpp:464
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Profiles"
 msgstr "Profili"
 
-#: core/utilities/setup/setupicc.cpp:464
+#: core/utilities/setup/setupicc.cpp:465
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Advanced"
 msgstr "Napredno"
 
-#: core/utilities/setup/setupicc.cpp:665
+#: core/utilities/setup/setupicc.cpp:666
 #, kde-format
 msgid "Monitor Profile From System Settings"
 msgstr "Profil zaslona iz sistemskih nastavitev"
 
-#: core/utilities/setup/setupicc.cpp:697
+#: core/utilities/setup/setupicc.cpp:698
 #, kde-format
 msgid "No ICC profiles files found."
 msgstr "Ni bilo najdenih profilov ICC."
 
-#: core/utilities/setup/setupicc.cpp:713
+#: core/utilities/setup/setupicc.cpp:714
 #, kde-format
 msgid "No Display Profile Available"
 msgstr "Ni razpoložljivega profila zaslona"
 
-#: core/utilities/setup/setupicc.cpp:715
+#: core/utilities/setup/setupicc.cpp:716
 #, kde-format
 msgid "No Output Profile Available"
 msgstr "Ni razpoložljivega izhodnega profila"
 
-#: core/utilities/setup/setupicc.cpp:849
+#: core/utilities/setup/setupicc.cpp:850
 #, kde-format
 msgctxt "none of the paths"
 msgid "none"
 msgstr "brez"
 
-#: core/utilities/setup/setupicc.cpp:858
+#: core/utilities/setup/setupicc.cpp:859
 #, kde-format
 msgid ""
 "On Windows, the default search paths include <ul><li>%1/Windows/System32/"
@@ -67282,7 +67289,7 @@ msgstr ""
 "Windows/Color/</li></ul>Na vašem sistemu trenutno obstajajo in bodo "
 "preiskane te poti:<ul><li>%3</li></ul>"
 
-#: core/utilities/setup/setupicc.cpp:874
+#: core/utilities/setup/setupicc.cpp:875
 #, kde-format
 msgid ""
 "On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
@@ -67299,7 +67306,7 @@ msgstr ""
 "local/share/icc/</li><li>~/.color/icc/</li></ul>Na vašem sistemu trenutno "
 "obstajajo te poti in so preiskane:<ul><li>%2</li></ul>"
 
-#: core/utilities/setup/setupicc.cpp:893
+#: core/utilities/setup/setupicc.cpp:894
 #, kde-format
 msgid ""
 "On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
@@ -67354,41 +67361,41 @@ msgstr ""
 "Nastavite to možnost, da odstranite vse slike iz osvetlitvene mize, ko jo "
 "zaprete v nasprotnem primeru bodo slike, ki so trenutno na njej, ohranjene."
 
-#: core/utilities/setup/setupplugins.cpp:66
+#: core/utilities/setup/setupplugins.cpp:68
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Generic"
 msgstr "Splošno"
 
-#: core/utilities/setup/setupplugins.cpp:72
+#: core/utilities/setup/setupplugins.cpp:74
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Image Editor"
 msgstr "Urejevalnik slik"
 
-#: core/utilities/setup/setupplugins.cpp:78
+#: core/utilities/setup/setupplugins.cpp:80
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Batch Queue Manager"
 msgstr "Upravljalnik paketnih čakalnih vrst"
 
-#: core/utilities/setup/setupplugins.cpp:84
+#: core/utilities/setup/setupplugins.cpp:86
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "Nalagalniki slik"
 
-#: core/utilities/setup/setuptemplate.cpp:77
+#: core/utilities/setup/setuptemplate.cpp:79
 #, kde-format
 msgid "Template Title:"
 msgstr "Naslov predloge:"
 
-#: core/utilities/setup/setuptemplate.cpp:80
+#: core/utilities/setup/setuptemplate.cpp:82
 #, kde-format
 msgid "Enter the metadata template title here."
 msgstr "Tukaj vnesite naslov predloge metapodatkov."
 
-#: core/utilities/setup/setuptemplate.cpp:81
+#: core/utilities/setup/setuptemplate.cpp:83
 #, kde-format
 msgid ""
 "<p>Enter the metadata template title here. This title will be used to "
@@ -67397,7 +67404,7 @@ msgstr ""
 "<p>Sem vnesite naslov predloge metapodatkov. Ta naslov bo uporabljen za "
 "identifikacijo predloge v vaši zbirki.</p>"
 
-#: core/utilities/setup/setuptemplate.cpp:91
+#: core/utilities/setup/setuptemplate.cpp:93
 #, kde-format
 msgid ""
 "<b>Note: These information are used to set <b><a href='https://en.wikipedia."
@@ -67412,40 +67419,40 @@ msgstr ""
 "so pa besedilne oznake IPTC omejene na dolžino oznak. Za podrobnosti "
 "uporabite vsebinsko pomoč.</b>"
 
-#: core/utilities/setup/setuptemplate.cpp:110
+#: core/utilities/setup/setuptemplate.cpp:112
 #, kde-format
 msgid "&Replace..."
 msgstr "Zamenjaj..."
 
-#: core/utilities/setup/setuptemplate.cpp:245
-#: core/utilities/setup/setuptemplate.cpp:276
+#: core/utilities/setup/setuptemplate.cpp:247
+#: core/utilities/setup/setuptemplate.cpp:278
 #, kde-format
 msgid "Cannot register new metadata template without title."
 msgstr "Ni mogoče vpisati nove predloge metapodatkov brez naslova."
 
-#: core/utilities/setup/setuptemplate.cpp:252
+#: core/utilities/setup/setuptemplate.cpp:254
 #, kde-format
 msgid "A metadata template named '%1' already exists."
 msgstr "Predloga metapodatkov imenovana '%1' že obstaja."
 
-#: core/utilities/setup/setuptooltip.cpp:131
+#: core/utilities/setup/setuptooltip.cpp:133
 #, kde-format
 msgid "Tool-Tips Font:"
 msgstr "Pisava orodnih namigov:"
 
-#: core/utilities/setup/setuptooltip.cpp:132
+#: core/utilities/setup/setuptooltip.cpp:134
 #, kde-format
 msgid "Select here the font used to display text in tool-tips."
 msgstr "Tukaj izberite pisavo za prikaz besedila v orodnih namigih."
 
-#: core/utilities/setup/setuptooltip.cpp:140
+#: core/utilities/setup/setuptooltip.cpp:142
 #, kde-format
 msgid "Show icon-view and thumb-bar items' tool-tips"
 msgstr ""
 "Prikaži orodne namige za predmete pogleda ikon in predmete vrstice s "
 "sličicami"
 
-#: core/utilities/setup/setuptooltip.cpp:141
+#: core/utilities/setup/setuptooltip.cpp:143
 #, kde-format
 msgid ""
 "Set this option to display image information when the mouse hovers over an "
@@ -67454,208 +67461,208 @@ msgstr ""
 "Nastavite to možnost, da prikažete podrobnosti o sliki, ko se premaknete z "
 "miško čez predmet pogleda ikon ali predmet vrstice s sličicami."
 
-#: core/utilities/setup/setuptooltip.cpp:144
+#: core/utilities/setup/setuptooltip.cpp:146
 #, kde-format
 msgid "File/Item Information"
 msgstr "Podrobnosti o datoteki/predmetu"
 
-#: core/utilities/setup/setuptooltip.cpp:147
+#: core/utilities/setup/setuptooltip.cpp:149
 #, kde-format
 msgid "File name"
 msgstr "Ime datoteke"
 
-#: core/utilities/setup/setuptooltip.cpp:150
+#: core/utilities/setup/setuptooltip.cpp:152
 #, kde-format
 msgid "File date"
 msgstr "Datum datoteke"
 
-#: core/utilities/setup/setuptooltip.cpp:153
+#: core/utilities/setup/setuptooltip.cpp:155
 #, kde-format
 msgid "File size"
 msgstr "Velikost datoteke"
 
-#: core/utilities/setup/setuptooltip.cpp:156
+#: core/utilities/setup/setuptooltip.cpp:158
 #, kde-format
 msgid "Image type"
 msgstr "Vrsta datoteke"
 
-#: core/utilities/setup/setuptooltip.cpp:159
+#: core/utilities/setup/setuptooltip.cpp:161
 #, kde-format
 msgid "Image dimensions"
 msgstr "Dimenzije slike"
 
-#: core/utilities/setup/setuptooltip.cpp:162
+#: core/utilities/setup/setuptooltip.cpp:164
 #, kde-format
 msgid "Image aspect ratio"
 msgstr "Razmerje stranic slike"
 
-#: core/utilities/setup/setuptooltip.cpp:163
+#: core/utilities/setup/setuptooltip.cpp:165
 #, kde-format
 msgid "Set this option to display the image aspect ratio."
 msgstr "Nastavite to možnost, da prikažete razmerje slike."
 
-#: core/utilities/setup/setuptooltip.cpp:179
-#: core/utilities/setup/setuptooltip.cpp:359
+#: core/utilities/setup/setuptooltip.cpp:181
+#: core/utilities/setup/setuptooltip.cpp:361
 #, kde-format
 msgid "Camera make and model"
 msgstr "Znamka in model fotoaparata"
 
-#: core/utilities/setup/setuptooltip.cpp:187
+#: core/utilities/setup/setuptooltip.cpp:189
 #, kde-format
 msgid "Camera date"
 msgstr "Datum iz fotoaparata"
 
-#: core/utilities/setup/setuptooltip.cpp:190
-#: core/utilities/setup/setuptooltip.cpp:367
+#: core/utilities/setup/setuptooltip.cpp:192
+#: core/utilities/setup/setuptooltip.cpp:369
 #, kde-format
 msgid "Camera aperture and focal length"
 msgstr "Zaslonka fotoaparata in goriščna razdalja"
 
-#: core/utilities/setup/setuptooltip.cpp:194
-#: core/utilities/setup/setuptooltip.cpp:371
+#: core/utilities/setup/setuptooltip.cpp:196
+#: core/utilities/setup/setuptooltip.cpp:373
 #, kde-format
 msgid "Camera exposure and sensitivity"
 msgstr "Osvetlitev in občutljivost"
 
-#: core/utilities/setup/setuptooltip.cpp:198
+#: core/utilities/setup/setuptooltip.cpp:200
 #, kde-format
 msgid "Camera mode and program"
 msgstr "Način fotografiranja in program"
 
-#: core/utilities/setup/setuptooltip.cpp:202
-#: core/utilities/setup/setuptooltip.cpp:375
+#: core/utilities/setup/setuptooltip.cpp:204
+#: core/utilities/setup/setuptooltip.cpp:377
 #, kde-format
 msgid "Camera flash settings"
 msgstr "Nastavitve bliskavice fotoaparata"
 
-#: core/utilities/setup/setuptooltip.cpp:206
-#: core/utilities/setup/setuptooltip.cpp:379
+#: core/utilities/setup/setuptooltip.cpp:208
+#: core/utilities/setup/setuptooltip.cpp:381
 #, kde-format
 msgid "Camera white balance settings"
 msgstr "Nastavitve ravnovesja beline fotoaparata"
 
-#: core/utilities/setup/setuptooltip.cpp:223
+#: core/utilities/setup/setuptooltip.cpp:225
 #, kde-format
 msgid "digiKam Information"
 msgstr "Informacije o digiKamu"
 
-#: core/utilities/setup/setuptooltip.cpp:226
-#: core/utilities/setup/setuptooltip.cpp:299
+#: core/utilities/setup/setuptooltip.cpp:228
+#: core/utilities/setup/setuptooltip.cpp:301
 #, kde-format
 msgid "Album name"
 msgstr "Ime albuma"
 
-#: core/utilities/setup/setuptooltip.cpp:227
-#: core/utilities/setup/setuptooltip.cpp:300
+#: core/utilities/setup/setuptooltip.cpp:229
+#: core/utilities/setup/setuptooltip.cpp:302
 #, kde-format
 msgid "Set this option to display the album name."
 msgstr "Nastavite to možnost, da prikaže ime albuma."
 
-#: core/utilities/setup/setuptooltip.cpp:229
+#: core/utilities/setup/setuptooltip.cpp:231
 #, kde-format
 msgid "Image title"
 msgstr "Naslov slike"
 
-#: core/utilities/setup/setuptooltip.cpp:230
+#: core/utilities/setup/setuptooltip.cpp:232
 #, kde-format
 msgid "Set this option to display the image title."
 msgstr "Nastavite to možnost, da prikažete naslov slike."
 
-#: core/utilities/setup/setuptooltip.cpp:232
+#: core/utilities/setup/setuptooltip.cpp:234
 #, kde-format
 msgid "Image caption"
 msgstr "Napis slike"
 
-#: core/utilities/setup/setuptooltip.cpp:233
+#: core/utilities/setup/setuptooltip.cpp:235
 #, kde-format
 msgid "Set this option to display the image captions."
 msgstr "Nastavite to možnost, da prikažete napise slike."
 
-#: core/utilities/setup/setuptooltip.cpp:235
+#: core/utilities/setup/setuptooltip.cpp:237
 #, kde-format
 msgid "Image tags"
 msgstr "Značke slike"
 
-#: core/utilities/setup/setuptooltip.cpp:236
+#: core/utilities/setup/setuptooltip.cpp:238
 #, kde-format
 msgid "Set this option to display the image tags."
 msgstr "Nastavite to možnost, da prikažete značke slike."
 
-#: core/utilities/setup/setuptooltip.cpp:238
+#: core/utilities/setup/setuptooltip.cpp:240
 #, kde-format
 msgid "Image labels"
 msgstr "Oznake slike"
 
-#: core/utilities/setup/setuptooltip.cpp:239
+#: core/utilities/setup/setuptooltip.cpp:241
 #, kde-format
 msgid "Set this option to display the image pick, color, rating labels."
 msgstr ""
 "Nastavite to možnost, da prikažete izbor oznake, barvno oznako in "
 "ocenjevalne oznake."
 
-#: core/utilities/setup/setuptooltip.cpp:251
+#: core/utilities/setup/setuptooltip.cpp:253
 #, kde-format
 msgid "Audio/Video Information"
 msgstr "Podatki o avdiu/videu"
 
-#: core/utilities/setup/setuptooltip.cpp:254
+#: core/utilities/setup/setuptooltip.cpp:256
 #, kde-format
 msgid "Video Aspect Ratio"
 msgstr "Razmerje stranic videa"
 
-#: core/utilities/setup/setuptooltip.cpp:255
-#: core/utilities/setup/setuptooltip.cpp:270
+#: core/utilities/setup/setuptooltip.cpp:257
+#: core/utilities/setup/setuptooltip.cpp:272
 #, kde-format
 msgid "Set this option to display the Aspect Ratio of the Video."
 msgstr "Nastavite to možnost, da prikažete razmerje stranic videa."
 
-#: core/utilities/setup/setuptooltip.cpp:258
+#: core/utilities/setup/setuptooltip.cpp:260
 #, kde-format
 msgid "Set this option to display the Audio Bit Rate of the Video."
 msgstr "Nastavite to možnost, da prikažete bitno hitrost zvoka videa."
 
-#: core/utilities/setup/setuptooltip.cpp:261
+#: core/utilities/setup/setuptooltip.cpp:263
 #, kde-format
 msgid "Set this option to display the Audio Channel Type of the Video."
 msgstr "Nastavite to možnost, da prikažete vrsto zvočnega kanala videa."
 
-#: core/utilities/setup/setuptooltip.cpp:264
+#: core/utilities/setup/setuptooltip.cpp:266
 #, kde-format
 msgid "Set this option to display the Audio Codec of the Video."
 msgstr "Nastavite to možnost, da prikažete avdio kodek videa."
 
-#: core/utilities/setup/setuptooltip.cpp:266
+#: core/utilities/setup/setuptooltip.cpp:268
 #, kde-format
 msgid "Video Duration"
 msgstr "Trajanje videa"
 
-#: core/utilities/setup/setuptooltip.cpp:267
+#: core/utilities/setup/setuptooltip.cpp:269
 #, kde-format
 msgid "Set this option to display the Duration of the Video."
 msgstr "Nastavite to možnost, da prikažete trajanje videa."
 
-#: core/utilities/setup/setuptooltip.cpp:269
+#: core/utilities/setup/setuptooltip.cpp:271
 #, kde-format
 msgid "Video Frame Rate"
 msgstr "Hitrost sličic videa"
 
-#: core/utilities/setup/setuptooltip.cpp:273
+#: core/utilities/setup/setuptooltip.cpp:275
 #, kde-format
 msgid "Set this option to display the Codec of the Video."
 msgstr "Nastavite to možnost, da prikažete kodek videa."
 
-#: core/utilities/setup/setuptooltip.cpp:293
+#: core/utilities/setup/setuptooltip.cpp:295
 #, kde-format
 msgid "Show album items' tool-tips"
 msgstr "Prikaži orodne namige za predmete albuma"
 
-#: core/utilities/setup/setuptooltip.cpp:294
+#: core/utilities/setup/setuptooltip.cpp:296
 #, kde-format
 msgid "Album Information"
 msgstr "Podrobnosti o albumu"
 
-#: core/utilities/setup/setuptooltip.cpp:296
-#: core/utilities/setup/setuptooltip.cpp:337
+#: core/utilities/setup/setuptooltip.cpp:298
+#: core/utilities/setup/setuptooltip.cpp:339
 #, kde-format
 msgid ""
 "Set this option to display album information when the mouse hovers over a "
@@ -67664,117 +67671,117 @@ msgstr ""
 "Nastavite to možnost, da prikažete podrobnosti o albumu, ko se premaknete z "
 "miško čez predmet v pogledu map."
 
-#: core/utilities/setup/setuptooltip.cpp:302
+#: core/utilities/setup/setuptooltip.cpp:304
 #, kde-format
 msgid "Album date"
 msgstr "Datum albuma"
 
-#: core/utilities/setup/setuptooltip.cpp:303
+#: core/utilities/setup/setuptooltip.cpp:305
 #, kde-format
 msgid "Set this option to display the album date."
 msgstr "Nastavite to možnost, da prikažete datum albuma."
 
-#: core/utilities/setup/setuptooltip.cpp:305
+#: core/utilities/setup/setuptooltip.cpp:307
 #, kde-format
 msgid "Album collection"
 msgstr "Zbirka albuma"
 
-#: core/utilities/setup/setuptooltip.cpp:306
+#: core/utilities/setup/setuptooltip.cpp:308
 #, kde-format
 msgid "Set this option to display the album collection."
 msgstr "Nastavite to možnost, da prikažete zbirko albuma."
 
-#: core/utilities/setup/setuptooltip.cpp:308
+#: core/utilities/setup/setuptooltip.cpp:310
 #, kde-format
 msgid "Album category"
 msgstr "Kategorija albuma"
 
-#: core/utilities/setup/setuptooltip.cpp:309
+#: core/utilities/setup/setuptooltip.cpp:311
 #, kde-format
 msgid "Set this option to display the album category."
 msgstr "Nastavite to možnost, da prikažete kategorijo albuma."
 
-#: core/utilities/setup/setuptooltip.cpp:311
+#: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Album caption"
 msgstr "Napis albuma"
 
-#: core/utilities/setup/setuptooltip.cpp:312
+#: core/utilities/setup/setuptooltip.cpp:314
 #, kde-format
 msgid "Set this option to display the album caption."
 msgstr "Nastavite to možnost, da prikažete napis albuma."
 
-#: core/utilities/setup/setuptooltip.cpp:314
+#: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Album preview"
 msgstr "Predogled albuma"
 
-#: core/utilities/setup/setuptooltip.cpp:315
+#: core/utilities/setup/setuptooltip.cpp:317
 #, kde-format
 msgid "Set this option to display the album preview."
 msgstr "Nastavite to možnost, da prikažete predogled albuma."
 
-#: core/utilities/setup/setuptooltip.cpp:334
+#: core/utilities/setup/setuptooltip.cpp:336
 #, kde-format
 msgid "Show import items' tool-tips"
 msgstr "Prikaži orodne namige za uvožene predmete"
 
-#: core/utilities/setup/setuptooltip.cpp:335
+#: core/utilities/setup/setuptooltip.cpp:337
 #, kde-format
 msgid "Import Information"
 msgstr "Podrobnosti uvoza"
 
-#: core/utilities/setup/setuptooltip.cpp:340
+#: core/utilities/setup/setuptooltip.cpp:342
 #, kde-format
 msgid "Item name"
 msgstr "Ime predmeta"
 
-#: core/utilities/setup/setuptooltip.cpp:341
+#: core/utilities/setup/setuptooltip.cpp:343
 #, kde-format
 msgid "Set this option to display the item name."
 msgstr "Nastavite to možnost, da prikažete ime predmeta."
 
-#: core/utilities/setup/setuptooltip.cpp:343
+#: core/utilities/setup/setuptooltip.cpp:345
 #, kde-format
 msgid "Item date"
 msgstr "Datum predmeta"
 
-#: core/utilities/setup/setuptooltip.cpp:344
+#: core/utilities/setup/setuptooltip.cpp:346
 #, kde-format
 msgid "Set this option to display the item date."
 msgstr "Nastavite to možnost, da prikažete datum predmeta."
 
-#: core/utilities/setup/setuptooltip.cpp:346
+#: core/utilities/setup/setuptooltip.cpp:348
 #, kde-format
 msgid "Item size"
 msgstr "Velikost predmeta"
 
-#: core/utilities/setup/setuptooltip.cpp:347
+#: core/utilities/setup/setuptooltip.cpp:349
 #, kde-format
 msgid "Set this option to display the item size."
 msgstr "Nastavite to možnost, da prikažete velikost predmeta."
 
-#: core/utilities/setup/setuptooltip.cpp:349
+#: core/utilities/setup/setuptooltip.cpp:351
 #, kde-format
 msgid "Item type"
 msgstr "Vrsta predmeta"
 
-#: core/utilities/setup/setuptooltip.cpp:350
+#: core/utilities/setup/setuptooltip.cpp:352
 #, kde-format
 msgid "Set this option to display the item type."
 msgstr "Nastavite to možnost, da prikažete vrsto predmeta."
 
-#: core/utilities/setup/setuptooltip.cpp:352
+#: core/utilities/setup/setuptooltip.cpp:354
 #, kde-format
 msgid "Item dimensions"
 msgstr "Dimenzije predmeta"
 
-#: core/utilities/setup/setuptooltip.cpp:353
+#: core/utilities/setup/setuptooltip.cpp:355
 #, kde-format
 msgid "Set this option to display the item dimensions."
 msgstr "Nastavite to možnost, da prikažete mere predmeta."
 
-#: core/utilities/setup/setuptooltip.cpp:356
+#: core/utilities/setup/setuptooltip.cpp:358
 #, kde-format
 msgid ""
 "Note: these settings require \"Use File Metadata\" option from Camera Setup "
@@ -67783,20 +67790,23 @@ msgstr ""
 "Opomba: te nastavitve zahtevajo možnost \"Uporabi metapodatke datoteke\" na "
 "strani za nastavitev obnašanja fotoaparata."
 
-#: core/utilities/setup/setuptooltip.cpp:406
+#: core/utilities/setup/setuptooltip.cpp:408
 #, kde-format
 msgid "Icon Items"
 msgstr "Predmeti ikon"
 
-#: core/utilities/setup/setuptooltip.cpp:407
+#: core/utilities/setup/setuptooltip.cpp:409
 #, kde-format
 msgid "Album Items"
 msgstr "Predmeti albuma"
 
-#: core/utilities/setup/setuptooltip.cpp:408
+#: core/utilities/setup/setuptooltip.cpp:410
 #, kde-format
 msgid "Import Items"
 msgstr "Predmeti uvoza"
+
+#~ msgid "Detect and recognize Faces"
+#~ msgstr "Zaznaj in prepoznaj obraze"
 
 #~ msgid ""
 #~ "A face recognition task is already running. Only one task can be running "
