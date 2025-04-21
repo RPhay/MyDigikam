@@ -793,4 +793,23 @@ void FaceTagsEditor::removeAllRejectedFaceTags()
     }
 }
 
+FaceTagsIface FaceTagsEditor::removeRejectedFaceTagList(const FaceTagsIface& face)
+{
+    if (face.isNull())
+    {
+        return face;
+    }
+
+    ItemTagPair pair(face.imageId(), face.tagId());
+    removeFaceTagExtendedDataProperty(pair, face.region().toXml());
+
+    FaceTagsIface newFace(face);
+    newFace.clearRejectedFaceTagList();
+
+    addFaceTagExtendedDataProperty(pair, newFace);
+
+    return newFace;
+}
+
+
 } // Namespace Digikam

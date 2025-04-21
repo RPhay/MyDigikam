@@ -186,6 +186,7 @@ public:
     QList<ItemTagPair>   faceItemTagPairs(qlonglong imageid, FaceTagsIface::TypeFlags flags)    const;
 
     void                 removeAllRejectedFaceTags();
+    FaceTagsIface        removeRejectedFaceTagList(const FaceTagsIface& face);
 
 protected:
 

@@ -69,6 +69,16 @@ public:
                               const TagRegion& region,
                               bool retrain = true);
 
+    /**
+     * Delete all saved rejected face tag lists for faces in the given image.
+     */
+    QList<FaceTagsIface> deleteRejectedFaceTagLists(const ItemInfo& info);
+
+    /**
+     * Delete all saved rejected face tags for the given face.
+     */
+    FaceTagsIface deleteRejectedFaceTagList(const FaceTagsIface& face);
+
 protected:
 
     bool finder()                                               override

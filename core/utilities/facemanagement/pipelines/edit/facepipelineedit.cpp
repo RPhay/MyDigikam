@@ -99,6 +99,8 @@ FaceTagsIface FacePipelineEdit::confirmFace(const ItemInfo& info,
     Q_EMIT scheduled();
     Q_EMIT started(i18n("Confirming face"));
 
+    emitSignalUpdateItemCount(nextQueue->size()+1);
+
     enqueue(nextQueue, package);
 
     return (FaceTagsEditor::confirmedEntry(newFace, tagId, region));
@@ -122,6 +124,8 @@ void FacePipelineEdit::removeFace(const ItemInfo& info,
     Q_EMIT scheduled();
     Q_EMIT started(i18n("Removing face"));
 
+    emitSignalUpdateItemCount(nextQueue->size()+1);
+
     enqueue(nextQueue, package);
 }
 
@@ -135,6 +139,8 @@ void FacePipelineEdit::removeAllFaces(const ItemInfo& info)
 
     Q_EMIT scheduled();
     Q_EMIT started(i18n("Remove all faces"));
+
+    emitSignalUpdateItemCount(nextQueue->size()+1);
 
     enqueue(nextQueue, package);
 }
@@ -157,6 +163,8 @@ FaceTagsIface FacePipelineEdit::editTag(const ItemInfo& info,
 
     Q_EMIT scheduled();
     Q_EMIT started(i18n("Editing face tag"));
+
+    emitSignalUpdateItemCount(nextQueue->size()+1);
 
     enqueue(nextQueue, package);
 
@@ -186,6 +194,8 @@ FaceTagsIface FacePipelineEdit::editRegion(const ItemInfo& info,
 
     Q_EMIT scheduled();
     Q_EMIT started(i18n("Editing face region"));
+
+    emitSignalUpdateItemCount(nextQueue->size()+1);
 
     enqueue(nextQueue, package);
 
@@ -221,6 +231,46 @@ FaceTagsIface FacePipelineEdit::addManually(const ItemInfo& info,
 
     Q_EMIT scheduled();
     Q_EMIT started(i18n("Manually adding face"));
+
+    emitSignalUpdateItemCount(nextQueue->size()+1);
+
+    enqueue(nextQueue, package);
+
+    return newFace;
+}
+
+QList<FaceTagsIface> FacePipelineEdit::deleteRejectedFaceTagLists(const ItemInfo& info)
+{
+    QList<FaceTagsIface> result;
+    QList<FaceTagsIface> faces             = utils.databaseFaces(info.id());
+
+    for (const FaceTagsIface& face : faces)
+    {
+        result << deleteRejectedFaceTagList(face);
+    }
+
+    return result;
+}
+
+FaceTagsIface FacePipelineEdit::deleteRejectedFaceTagList(const FaceTagsIface& face)
+{
+    MLPipelineQueue* const nextQueue       = queues.value(MLPipelineStage::Writer);
+    FaceTagsIface newFace(face);
+    newFace.clearRejectedFaceTagList();
+    FacePipelinePackageBase* const package = new FacePipelinePackageBase(ItemInfo(face.imageId()),
+                                                                         face,
+                                                                         face.tagId(),
+                                                                         face.region(),
+                                                                         DImg(),
+                                                                         FacePipelinePackageBase::EditPipelineAction::DeleteRejectedFaceTagList,
+                                                                         false);
+
+    ++totalItemCount;
+
+    Q_EMIT scheduled();
+    Q_EMIT started(i18n("Clearing rejected face tag list."));
+
+    emitSignalUpdateItemCount(nextQueue->size()+1);
 
     enqueue(nextQueue, package);
 
@@ -389,6 +439,13 @@ bool FacePipelineEdit::writer()
             {
                 utils.addManually(utils.unconfirmedEntry(package->info.id(), package->tagId,
                                                          package->region, package->face.rejectedFaceTagList()));
+                break;
+            }
+
+            case FacePipelinePackageBase::EditPipelineAction::DeleteRejectedFaceTagList:
+            {
+                utils.removeRejectedFaceTagList(package->face);
+                break;
             }
         }
 

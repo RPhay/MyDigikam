@@ -42,7 +42,8 @@ public:
         RemoveAll,
         EditTag,
         EditRegion,
-        AddManually
+        AddManually,
+        DeleteRejectedFaceTagList
     };
 
 public:
