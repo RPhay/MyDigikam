@@ -72,7 +72,7 @@ DuplicatesFinder::DuplicatesFinder(const AlbumList& albums,
                                    const AlbumList& referenceImageAlbum,
                                    ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("DuplicatesFinder"), parent),
-      d                            (new Private)
+      d              (new Private)
 {
     d->minSimilarity           = minSimilarity;
     d->maxSimilarity           = maxSimilarity;
@@ -114,15 +114,27 @@ void DuplicatesFinder::slotStart()
     double maxThresh = d->maxSimilarity / 100.0;
 
     const HaarIface::AlbumTagRelation relation = static_cast<HaarIface::AlbumTagRelation>(d->albumTagRelation);
-    QSet<qlonglong> imageIds                   = HaarIface::imagesFromAlbumsAndTags(d->albumsIdList, d->tagsIdList, relation);
-    QSet<qlonglong> referenceImageIds          = HaarIface::imagesFromAlbumsAndTags(d->referenceAlbumsList, {}, HaarIface::AlbumExclusive);
+
+    QSet<qlonglong> imageIds                   = HaarIface::imagesFromAlbumsAndTags(
+                                                                                    d->albumsIdList,
+                                                                                    d->tagsIdList,
+                                                                                    relation
+                                                                                   );
+
+    QSet<qlonglong> referenceImageIds          = HaarIface::imagesFromAlbumsAndTags(
+                                                                                    d->referenceAlbumsList,
+                                                                                    {},
+                                                                                    HaarIface::AlbumExclusive
+                                                                                   );
 
     switch(d->refSelMethod)
     {
         case HaarIface::RefImageSelMethod::ExcludeFolder:
         case HaarIface::RefImageSelMethod::PreferFolder:
         {
-            imageIds.unite(referenceImageIds); // All reference images must be also in the search path, otherwise no duplicates are found
+            // All reference images must be also in the search path, otherwise no duplicates are found
+
+            imageIds.unite(referenceImageIds); 
             break;
         }
 
@@ -166,7 +178,7 @@ void DuplicatesFinder::slotDuplicatesProgress(int percentage, const ItemInfo& in
 
     QString album = CollectionManager::instance()->albumRootLabel(inf.albumRootId());
 
-    QString lbl = i18n("Finding Duplicates: %1\n", inf.name());
+    QString lbl   = i18n("Finding Duplicates: %1\n", inf.name());
     lbl.append(i18n("Album: %1\n", album + inf.relativePath()));
 
     if (!duplicates)
@@ -189,7 +201,7 @@ void DuplicatesFinder::slotDone()
 {
     if (d->job && d->job->hasErrors())
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to list url: " << d->job->errorsList().first();
+        qCWarning(DIGIKAM_MAINTENANCE_LOG) << "Failed to list url: " << d->job->errorsList().first();
 
         // Pop-up a message about the error.
 

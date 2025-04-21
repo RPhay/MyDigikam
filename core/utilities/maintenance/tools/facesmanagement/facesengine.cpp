@@ -15,106 +15,10 @@
  *
  * ============================================================ */
 
-#include "facesengine.h"
-
-// Qt includes
-
-#include <QClipboard>
-#include <QVBoxLayout>
-#include <QTimer>
-#include <QIcon>
-#include <QPushButton>
-#include <QApplication>
-#include <QTextEdit>
-#include <QHash>
-#include <QPixmap>
-#include <QException>
-
-// KDE includes
-
-#include <kconfiggroup.h>
-#include <klocalizedstring.h>
-#include <ksharedconfig.h>
-
-// Local includes
-
-#include "digikam_debug.h"
-#include "digikamapp.h"
-#include "dnotificationwidget.h"
-#include "coredb.h"
-#include "album.h"
-#include "albummanager.h"
-#include "albumpointer.h"
-#include "iteminfojob.h"
-#include "facetags.h"
-#include "mlpipelinepackagenotify.h"
-#include "facepipelinedetectrecognize.h"
-#include "facepipelinerecognize.h"
-#include "facepipelineretrain.h"
-#include "facepipelinereset.h"
-#include "facebackgroundrecognition.h"
+#include "facesengine_p.h"
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN BenchmarkMessageDisplay : public QWidget
-{
-    Q_OBJECT
-
-public:
-
-    explicit BenchmarkMessageDisplay(const QString& richText)
-        : QWidget(nullptr)
-    {
-        setAttribute(Qt::WA_DeleteOnClose);
-
-        QVBoxLayout* const vbox     = new QVBoxLayout;
-        QTextEdit* const edit       = new QTextEdit;
-        vbox->addWidget(edit, 1);
-        QPushButton* const okButton = new QPushButton(i18n("OK"));
-        vbox->addWidget(okButton, 0, Qt::AlignRight);
-
-        setLayout(vbox);
-
-        connect(okButton, SIGNAL(clicked()),
-                this, SLOT(close()));
-
-        edit->setHtml(richText);
-        QApplication::clipboard()->setText(edit->toPlainText());
-
-        resize(500, 400);
-        show();
-        raise();
-    }
-
-private:
-
-    // Disable
-    BenchmarkMessageDisplay(QWidget*);
-};
-
-// --------------------------------------------------------------------------
-
-class Q_DECL_HIDDEN FacesEngine::Private
-{
-public:
-
-    Private() = default;
-
-public:
-
-    FacesEngine::InputSource    source          = FacesEngine::Albums;
-    bool                        benchmark       = false;
-
-    AlbumPointerList<>          albumTodoList;
-    ItemInfoList                infoTodoList;
-    QList<qlonglong>            idsTodoList;
-
-    ItemInfoJob                 albumListing;
-    FacePipelineBase*           newPipeline     = nullptr;
-
-    int totalFacesFound                         = 0;
-};
 
 FacesEngine::FacesEngine(const FaceScanSettings& settings, ProgressItem* const parent)
     : MaintenanceTool(faceScanTaskToString(settings.source), parent),
@@ -131,20 +35,24 @@ FacesEngine::FacesEngine(const FaceScanSettings& settings, ProgressItem* const p
         case FaceScanSettings::FaceScanSource::FaceScanWidget:
         {
             // FaceScanWidget scans are incompatible with FaceScanWidget, Background, and Maintenance scans
+
             if (
                 ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::FaceScanWidget)) ||
                 ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::MaintenanceTool))
-            )
+               )
             {
                 incompatibleScanCheck = true;
             }
 
             stopBackgroundProcess = true;
+
             break;
         }
+
         case FaceScanSettings::FaceScanSource::ItemIconView:
         {
             // ItemIconView scans are incompatible with Maintenance scans
+
             if (
                 ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::MaintenanceTool))
                )
@@ -153,11 +61,14 @@ FacesEngine::FacesEngine(const FaceScanSettings& settings, ProgressItem* const p
             }
 
             stopBackgroundProcess = false;
+
             break;
         }
+
         case FaceScanSettings::FaceScanSource::MaintenanceTool:
         {
             // Maintenance scans are incompatible with all other scan sources
+
             if (
                 ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::FaceScanWidget)) ||
                 ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::ItemIconView)) ||
@@ -169,12 +80,15 @@ FacesEngine::FacesEngine(const FaceScanSettings& settings, ProgressItem* const p
             }
 
             stopBackgroundProcess = true;
+
             break;
         }
+
         case FaceScanSettings::FaceScanSource::BackgroundRecognition:
         {
             // Background scans are incompatible with FaceScanWidget, BackgroundRecognition, and Maintenance scans
             // instead of showing an error message, we just return without doing anything
+
             if (
                 ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::FaceScanWidget)) ||
                 ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::MaintenanceTool)) ||
@@ -184,11 +98,14 @@ FacesEngine::FacesEngine(const FaceScanSettings& settings, ProgressItem* const p
                 incompatibleScanCheck = true;
                 showNotification      = false;
             }
+
             break;
         }
+
         case FaceScanSettings::FaceScanSource::BQM:
         {
             // Background scans are incompatible with Maintenance scans
+
             if (
                 ProgressManager::instance()->findItembyId(faceScanTaskToString(FaceScanSettings::FaceScanSource::MaintenanceTool))
                )
@@ -197,6 +114,7 @@ FacesEngine::FacesEngine(const FaceScanSettings& settings, ProgressItem* const p
             }
 
             stopBackgroundProcess = false;
+
             break;
         }
     }
@@ -206,17 +124,20 @@ FacesEngine::FacesEngine(const FaceScanSettings& settings, ProgressItem* const p
     if (incompatibleScanCheck)
     {
         // show error message if incompatible scan is running
+
         if (showNotification)
-        {           
+        {
             QString message = i18n("A face scan is already running. "
                                    "Only one face task can be running at a time. "
                                    "Please wait until it is finished.");
 
             Q_EMIT DigikamApp::instance()->signalNotificationError(message, DNotificationWidget::Information);
-
-            // Q_EMIT signalScanNotification(message, DNotificationWidget::Error);
+/*
+            Q_EMIT signalScanNotification(message, DNotificationWidget::Error);
+*/
         }
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacesEngine::FacesEngine: scan already running";
+
+        qCDebug(DIGIKAM_MAINTENANCE_LOG) << "FacesEngine::FacesEngine: scan already running";
         throw new QException();
     }
 
@@ -361,7 +282,7 @@ void FacesEngine::slotStart()
     if      (d->source == FacesEngine::Infos)
     {
         int total = d->infoTodoList.count();
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Total is" << total;
+        qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Total is" << total;
 
         setTotalItems(total);
 
@@ -389,7 +310,7 @@ void FacesEngine::slotStart()
         ItemInfoList itemInfos(d->idsTodoList);
 
         int total = itemInfos.count();
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Total is" << total;
+        qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Total is" << total;
 
         setTotalItems(total);
 
@@ -477,7 +398,7 @@ void FacesEngine::slotStart()
     }
 
     total = qMax(1, total);
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Total is" << total;
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Total is" << total;
 
     setUsesBusyIndicator(false);
     setTotalItems(total);
@@ -591,24 +512,34 @@ QString FacesEngine::faceScanTaskToString(FaceScanSettings::FaceScanSource sourc
     switch (source)
     {
         case FaceScanSettings::FaceScanSource::FaceScanWidget:
+        {
             faceStr += QLatin1String(" (FaceScanWidget)");
             break;
+        }
 
         case FaceScanSettings::FaceScanSource::ItemIconView:
+        {
             faceStr += QLatin1String(" (ItemIconView)");
             break;
+        }
 
         case FaceScanSettings::FaceScanSource::MaintenanceTool:
+        {
             faceStr += QLatin1String(" (MaintenanceTool)");
             break;
+        }
 
         case FaceScanSettings::FaceScanSource::BackgroundRecognition:
+        {
             faceStr += QLatin1String(" (BackgroundRecognition)");
             break;
+        }
 
         case FaceScanSettings::FaceScanSource::BQM:
+        {
             faceStr += QLatin1String(" (BQM)");
             break;
+        }
     }
 
     return faceStr;
@@ -616,7 +547,7 @@ QString FacesEngine::faceScanTaskToString(FaceScanSettings::FaceScanSource sourc
 
 FaceScanSettings::FaceScanSource FacesEngine::faceScanTaskToEnum(const QString& taskName)
 {
-    if (QLatin1String("FacesEngine (FaceScanWidget)") == taskName)
+    if      (QLatin1String("FacesEngine (FaceScanWidget)") == taskName)
     {
         return FaceScanSettings::FaceScanSource::FaceScanWidget;
     }
@@ -642,4 +573,4 @@ FaceScanSettings::FaceScanSource FacesEngine::faceScanTaskToEnum(const QString& 
 
 } // namespace Digikam
 
-#include "facesengine.moc"
+#include "moc_facesengine.cpp"

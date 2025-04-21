@@ -138,7 +138,7 @@ void ItemInfoJob::slotResult()
 
     if (d->jobThread->hasErrors())
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to list url: " << d->jobThread->errorsList().first();
+        qCWarning(DIGIKAM_MAINTENANCE_LOG) << "Failed to list url: " << d->jobThread->errorsList().first();
 
         // Pop-up a message about the error.
 

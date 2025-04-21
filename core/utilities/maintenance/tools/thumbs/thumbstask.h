@@ -36,7 +36,7 @@ class ThumbsTask : public ActionJob
 public:
 
     explicit ThumbsTask();
-    ~ThumbsTask() override;
+    ~ThumbsTask()   override;
 
     void setMaintenanceData(MaintenanceData* const data = nullptr);
 
@@ -46,7 +46,7 @@ Q_SIGNALS:
 
 protected:
 
-    void run() override;
+    void run()      override;
 
 private Q_SLOTS:
 

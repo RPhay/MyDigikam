@@ -39,6 +39,8 @@ public:
 
     Private() = default;
 
+public:
+
     MaintenanceData* data       = nullptr;
     bool             rebuildAll = true;
 
@@ -103,7 +105,7 @@ void FingerprintsTask::run()
             )
            )
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Updating fingerprints for file:" << info.filePath();
+            qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Updating fingerprints for file:" << info.filePath();
 
             DImg dimg = PreviewLoadThread::loadFastSynchronously(info.filePath(),
                                                                  HaarIface::preferredSize());

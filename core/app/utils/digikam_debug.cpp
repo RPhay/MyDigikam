@@ -38,6 +38,7 @@ Q_LOGGING_CATEGORY(DIGIKAM_GEOENGINE_LOG,               "digikam.geocore",      
 Q_LOGGING_CATEGORY(DIGIKAM_DNNMODELMNGR_LOG,            "digikam.dnnmodelmanager",          QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_DETECTOR_LOG,                "digikam.detectors",                QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_QTOPENCVIMG_LOG,             "digikam.qtopencvimg",              QtInfoMsg)
+Q_LOGGING_CATEGORY(DIGIKAM_MAINTENANCE_LOG,             "digikam.maintenance",              QtInfoMsg)
 
 Q_LOGGING_CATEGORY(DIGIKAM_TESTS_LOG,                   "digikam.tests",                    QtInfoMsg)
 

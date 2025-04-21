@@ -81,7 +81,7 @@ void NewItemsFinder::slotStart()
         {
             connectToScanController();
 
-            qCDebug(DIGIKAM_GENERAL_LOG) << "scan mode: ScanDeferredFiles";
+            qCDebug(DIGIKAM_MAINTENANCE_LOG) << "scan mode: ScanDeferredFiles";
 
             ScanController::instance()->completeCollectionScanInBackground(false);
             ScanController::instance()->allowToScanDeferredFiles();
@@ -92,7 +92,7 @@ void NewItemsFinder::slotStart()
         {
             connectToScanController();
 
-            qCDebug(DIGIKAM_GENERAL_LOG) << "scan mode: CompleteCollectionScan";
+            qCDebug(DIGIKAM_MAINTENANCE_LOG) << "scan mode: CompleteCollectionScan";
 
             ScanController::instance()->completeCollectionScanInBackground(false);
 
@@ -114,14 +114,14 @@ void NewItemsFinder::slotStart()
 
             if (d->foldersToScan.isEmpty())
             {
-                qCWarning(DIGIKAM_GENERAL_LOG) << "NewItemsFinder called without any folders. Wrong call.";
+                qCWarning(DIGIKAM_MAINTENANCE_LOG) << "NewItemsFinder called without any folders. Wrong call.";
 
                 slotDone();
 
                 return;
             }
 
-            qCDebug(DIGIKAM_GENERAL_LOG) << "scan mode: ScheduleCollectionScan :: " << d->foldersToScan;
+            qCDebug(DIGIKAM_MAINTENANCE_LOG) << "scan mode: ScheduleCollectionScan :: " << d->foldersToScan;
 
             connect(ScanController::instance(), SIGNAL(partialScanDone(QString)),
                     this, SLOT(slotPartialScanDone(QString)));
@@ -165,13 +165,13 @@ void NewItemsFinder::connectToScanController()
 
 void NewItemsFinder::slotScanStarted(const QString& info)
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << info;
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << info;
     setStatus(info);
 }
 
 void NewItemsFinder::slotTotalFilesToScan(int t)
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "total scan value : " << t;
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "total scan value : " << t;
     setTotalItems(t);
 }
 
@@ -184,7 +184,9 @@ void NewItemsFinder::slotStartScanningAlbum(const QString& albumRoot, const QStr
 
 void NewItemsFinder::slotFilesScanned(int s)
 {
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "file scanned : " << s;
+/*
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "file scanned : " << s;
+*/
     advance(s);
 }
 

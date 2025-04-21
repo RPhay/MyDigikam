@@ -88,7 +88,7 @@ void MaintenanceThread::syncMetadata(const ItemInfoList& items, MetadataSynchron
 
         collection.insert(t, 0);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Creating a metadata task for synchronizing metadata";
+        qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Creating a metadata task for synchronizing metadata";
     }
 
     appendJobs(collection);
@@ -111,7 +111,7 @@ void MaintenanceThread::removeMetadata(const ItemInfoList& items, MetadataRemove
 
         collection.insert(t, 0);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Creating a remover task for removing metadata";
+        qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Creating a remover task for removing metadata";
     }
 
     appendJobs(collection);
@@ -134,7 +134,7 @@ void MaintenanceThread::generateThumbs(const QStringList& paths)
 
         collection.insert(t, 0);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Creating a thumbnails task for generating thumbnails";
+        qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Creating a thumbnails task for generating thumbnails";
     }
 
     appendJobs(collection);
@@ -158,7 +158,7 @@ void MaintenanceThread::generateFingerprints(const QList<qlonglong>& itemIds, bo
 
         collection.insert(t, 0);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Creating a fingerprints task for generating fingerprints";
+        qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Creating a fingerprints task for generating fingerprints";
     }
 
     appendJobs(collection);
@@ -184,7 +184,7 @@ void MaintenanceThread::sortByImageQuality(const QStringList& paths, const Image
 
         collection.insert(t, 0);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Creating a image quality task for sorting items.";
+        qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Creating a image quality task for sorting items.";
     }
 
     appendJobs(collection);
@@ -230,7 +230,7 @@ void MaintenanceThread::cleanCoreDb(const QList<qlonglong>& imageIds)
 
         collection.insert(t, 0);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Creating a database task for removing stale items.";
+        qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Creating a database task for removing stale items.";
     }
 
     appendJobs(collection);
@@ -254,7 +254,7 @@ void MaintenanceThread::cleanThumbsDb(const QList<int>& thumbnailIds)
 
         collection.insert(t, 0);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Creating a database task for removing stale thumbnails.";
+        qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Creating a database task for removing stale thumbnails.";
     }
 
     appendJobs(collection);
@@ -278,7 +278,7 @@ void MaintenanceThread::cleanFacesDb(const QList<Identity>& staleIdentities)
 
         collection.insert(t, 0);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Creating a database task for removing stale identities.";
+        qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Creating a database task for removing stale identities.";
     }
 
     appendJobs(collection);
@@ -302,7 +302,7 @@ void MaintenanceThread::cleanSimilarityDb(const QList<qlonglong>& imageIds)
 
         collection.insert(t, 0);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Creating a database task for removing stale image id entries from similarity db.";
+        qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Creating a database task for removing stale image id entries from similarity db.";
     }
 
     appendJobs(collection);
@@ -341,7 +341,7 @@ void MaintenanceThread::slotThreadFinished()
     if (isEmpty())
     {
         ImageQualityParser::unloadDLModel();
-        qCDebug(DIGIKAM_GENERAL_LOG) << "List of Pending Jobs is empty";
+        qCDebug(DIGIKAM_MAINTENANCE_LOG) << "List of Pending Jobs is empty";
 
         Q_EMIT signalCompleted();
     }

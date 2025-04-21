@@ -99,7 +99,7 @@ bool MaintenanceMngr::isRunning() const
 void MaintenanceMngr::setSettings(const MaintenanceSettings& settings)
 {
     d->settings = settings;
-    qCDebug(DIGIKAM_GENERAL_LOG) << d->settings;
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << d->settings;
 
     d->duration.start();
     stage1();
@@ -191,7 +191,7 @@ void MaintenanceMngr::slotToolCanceled(ProgressItem* tool)
 
 void MaintenanceMngr::stage1()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "stage1";
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "stage1";
 
     if (d->settings.newItems)
     {
@@ -227,7 +227,7 @@ void MaintenanceMngr::stage1()
 
 void MaintenanceMngr::stage2()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "stage2";
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "stage2";
 
     if (d->settings.databaseCleanup)
     {
@@ -247,7 +247,7 @@ void MaintenanceMngr::stage2()
 
 void MaintenanceMngr::stage3()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "stage3";
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "stage3";
 
     if (d->settings.thumbnails)
     {
@@ -269,7 +269,7 @@ void MaintenanceMngr::stage3()
 
 void MaintenanceMngr::stage4()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "stage4";
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "stage4";
 
     if (d->settings.fingerPrints)
     {
@@ -291,7 +291,7 @@ void MaintenanceMngr::stage4()
 
 void MaintenanceMngr::stage5()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "stage5";
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "stage5";
 
     if (d->settings.duplicates)
     {
@@ -312,7 +312,7 @@ void MaintenanceMngr::stage5()
 
 void MaintenanceMngr::stage6()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "stage6";
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "stage6";
 
     if (d->settings.faceManagement)
     {
@@ -358,7 +358,7 @@ void MaintenanceMngr::stage6()
 
 void MaintenanceMngr::stage7()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "stage7";
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "stage7";
 
     if (d->settings.autotagsAssignment)
     {
@@ -376,7 +376,7 @@ void MaintenanceMngr::stage7()
 
 void MaintenanceMngr::stage8()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "stage8";
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "stage8";
 
     if (d->settings.qualitySort)
     {
@@ -395,7 +395,7 @@ void MaintenanceMngr::stage8()
 
 void MaintenanceMngr::stage9()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "stage9";
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "stage9";
 
     if (d->settings.metadataSync)
     {

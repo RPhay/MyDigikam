@@ -129,7 +129,7 @@ void DbCleaner::slotStart()
 
     setTotalItems(d->databasesToAnalyseCount);
 /*
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items at start: "
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Completed items at start: "
                                  << completedItems() << "/"
                                  << totalItems();
 */
@@ -177,7 +177,7 @@ void DbCleaner::slotFetchedData(const QList<qlonglong>& staleImageIds,
         d->staleImageSimilarities.isEmpty()
        )
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Nothing to do. Databases are clean.";
+        qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Nothing to do. Databases are clean.";
 
         if (d->shrinkDatabases)
         {
@@ -207,13 +207,13 @@ void DbCleaner::slotFetchedData(const QList<qlonglong>& staleImageIds,
                   d->staleImageSimilarities.size()
                  );
 /*
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items after analysis: " << completedItems() << "/" << totalItems();
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Completed items after analysis: " << completedItems() << "/" << totalItems();
 */
 }
 
 void DbCleaner::slotCleanItems()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Cleaning core db.";
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Cleaning core db.";
 
     disconnect(d->thread, SIGNAL(signalCompleted()),
                this, SLOT(slotCleanItems()));
@@ -223,7 +223,7 @@ void DbCleaner::slotCleanItems()
 
     if (d->imagesToRemove.size() > 0)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found" << d->imagesToRemove.size() << "obsolete image entries.";
+        qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Found" << d->imagesToRemove.size() << "obsolete image entries.";
 
         setLabel(i18n("Clean up the databases : ") + i18n("cleaning core db"));
 
@@ -234,7 +234,7 @@ void DbCleaner::slotCleanItems()
     }
     else
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Core DB is clean.";
+        qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Core DB is clean.";
         slotCleanedItems();
     }
 }
@@ -253,7 +253,7 @@ void DbCleaner::slotCleanedItems()
     {
         if (!d->staleThumbnails.isEmpty())
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Found" << d->staleThumbnails.size() << "stale thumbnails.";
+            qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Found" << d->staleThumbnails.size() << "stale thumbnails.";
             setLabel(i18n("Clean up the databases : ") + i18n("cleaning thumbnails db"));
 
             // GO!
@@ -263,7 +263,7 @@ void DbCleaner::slotCleanedItems()
         }
         else
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Thumbnail DB is clean.";
+            qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Thumbnail DB is clean.";
             slotCleanedThumbnails();
         }
     }
@@ -284,7 +284,7 @@ void DbCleaner::slotCleanedThumbnails()
     {
         if (d->staleIdentities.count() > 0)
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Found" << d->staleIdentities.size() << "stale face identities.";
+            qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Found" << d->staleIdentities.size() << "stale face identities.";
             setLabel(i18n("Clean up the databases : ") + i18n("cleaning recognition db"));
 
             // GO! and don't forget the signal!
@@ -299,7 +299,7 @@ void DbCleaner::slotCleanedThumbnails()
         }
         else
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Faces DB is clean.";
+            qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Faces DB is clean.";
             slotCleanedFaces();
         }
     }
@@ -322,7 +322,7 @@ void DbCleaner::slotCleanedFaces()
 
         if (!d->staleImageSimilarities.isEmpty())
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Found" << d->staleImageSimilarities.size()
+            qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Found" << d->staleImageSimilarities.size()
                                          << "image ids that are referenced in similarity db but not used.";
             setLabel(i18n("Clean up the databases : ") + i18n("cleaning similarity db"));
 
@@ -338,7 +338,7 @@ void DbCleaner::slotCleanedFaces()
         }
         else
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Similarity DB is clean.";
+            qCDebug(DIGIKAM_MAINTENANCE_LOG) << "Similarity DB is clean.";
             slotCleanedSimilarity();
         }
     }

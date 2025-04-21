@@ -18,7 +18,7 @@ namespace Digikam
 {
 
 /**
- * qCDebug(DIGIKAM_GENERAL_LOG) stream operator. Writes property @a s to the debug output in a nicely formatted way.
+ * qCDebug(DIGIKAM_MAINTENANCE_LOG) stream operator. Writes property @a s to the debug output in a nicely formatted way.
  */
 QDebug operator<<(QDebug dbg, const MaintenanceSettings& s)
 {
