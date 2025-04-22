@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-21 01:54+0000\n"
-"PO-Revision-Date: 2025-04-19 06:31+0200\n"
+"POT-Creation-Date: 2025-04-22 01:56+0000\n"
+"PO-Revision-Date: 2025-04-21 07:02+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -47,7 +47,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -11449,7 +11449,7 @@ msgstr "Dva zemljevida - na vrhu in spodaj"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:74
+#: core/utilities/maintenance/tools/facesmanagement/facesengine_p.cpp:31
 #: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
 msgid "OK"
@@ -39735,8 +39735,8 @@ msgid "Object Scanning: %1\n"
 msgstr "Preiskovanje predmetov: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:556
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -52138,30 +52138,37 @@ msgstr "Prekliči"
 msgid "Confirming face"
 msgstr "Potrjevanje obraza"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:123
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
 #, kde-format
 msgid "Removing face"
 msgstr "Odstranjevanje obraza"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
 #, kde-format
 msgid "Remove all faces"
 msgstr "Odstrani vse obraze"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:159
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
 #, kde-format
 msgid "Editing face tag"
 msgstr "Urejanje značke obraza"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:188
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:196
 #, kde-format
 msgid "Editing face region"
 msgstr "Urejanje območja obraza"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:223
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:233
 #, kde-format
 msgid "Manually adding face"
 msgstr "Ročno dodajanje obraza"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:271
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Clear rejected face matches"
+msgid "Clearing rejected face tag list."
+msgstr "Počisti zavrnjene zadetke obrazov"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
@@ -60945,7 +60952,7 @@ msgstr "S tem boste izbrisali vse zaznane in označene obraze."
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear rejected face matches"
-msgstr ""
+msgstr "Počisti zavrnjene zadetke obrazov"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:219
 #, kde-format
@@ -60954,12 +60961,13 @@ msgid ""
 "This will delete all rejected face matches allowing the face recognizer to "
 "present the suggested matches again."
 msgstr ""
+"To bo izbrisalo vse zavrnjene zadetke obrazov, kar bo omogočilo "
+"razpoznavalniku obrazov ponovno predstavitev predlog zadetkov."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "Faces data management: "
+#, kde-format
 msgid "Face engine management"
-msgstr "Upravljanje podatkov obrazov: "
+msgstr "Upravljanje prepoznavanje obraza"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:249
 #, kde-format
@@ -61122,7 +61130,7 @@ msgstr "Preiskovanje: %1\n"
 msgid "Album Root: %1"
 msgstr "Koren albuma: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:210
 #, kde-format
 msgid ""
 "Scanned:\n"
@@ -61131,12 +61139,12 @@ msgstr ""
 "Preiskano:\n"
 " %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:232
 #, kde-format
 msgid "Items scanned for cataloging: %1"
 msgstr "Postavk preiskanih za katalog: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:236
 #, kde-format
 msgid "Item scanned for cataloging: %1"
 msgstr "Postavka preiskana za katalog: %1"
@@ -61146,17 +61154,17 @@ msgstr "Postavka preiskana za katalog: %1"
 msgid "Find duplicates items"
 msgstr "Najdi podvojene predmete"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:169
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:181
 #, kde-format
 msgid "Finding Duplicates: %1\n"
 msgstr "Iskanje dvojnikov: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:174
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
 #, kde-format
 msgid "No duplicate item"
 msgstr "Ni dvojnikov"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:178
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
 #, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
@@ -61165,27 +61173,27 @@ msgstr[1] "%1 dvojnik"
 msgstr[2] "%1 dvojnika"
 msgstr[3] "%1 dvojniki"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:206
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:218
 #, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "Postavk preiskanih za dvojnike: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:210
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:222
 #, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "Postavka preiskana za dvojnike: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:215
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
 #, kde-format
 msgid "Duplicates found: %1"
 msgstr "Najdenih dvojnikov: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:219
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:231
 #, kde-format
 msgid "Duplicate found: %1"
 msgstr "Najden dvojnik: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:211
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:130
 #, kde-format
 msgid ""
 "A face scan is already running. Only one face task can be running at a time. "
@@ -61194,74 +61202,74 @@ msgstr ""
 "Skeniranje obraza že poteka. Naenkrat se lahko izvaja samo eno opravilo "
 "skeniranja obraza. Počakajte, da se konča."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:336
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Preišči obraze v albumu: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:340
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:261
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Preišči obraze v %1 albumih"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:347
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:268
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Preišči obraze v sliki: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:351
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:272
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Preišči obraze v %1 slikah"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:356
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:277
 #, kde-format
 msgid "Updating faces database"
 msgstr "Posodabljanje podatkovne zbirke obrazov"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:377
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:405
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:487
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:298
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:326
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:408
 #, kde-format
 msgid "Error starting face detection."
 msgstr "Napaka pri zagonu zaznavanja obrazov."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:508
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:429
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Postavk preiskanih za obraze: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:512
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:433
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Postavka preiskana za obraze: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:517
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
 #, kde-format
 msgid "Faces found: %1"
 msgstr "Obrazov najdenih: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:521
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
 #, kde-format
 msgid "Face found: %1"
 msgstr "Obraz najden: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:555
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:476
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "Prečesavanje obraza: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:562
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
 #, kde-format
 msgid "Found %1 face."
 msgstr "Najden %1 obraz."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:566
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:487
 #, kde-format
 msgid "Found %1 faces."
 msgstr "Najdeno %1 obrazov."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:572
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:493
 #, kde-format
 msgid "Recognized: %1"
 msgstr "Razpoznano: %1"

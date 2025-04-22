@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-21 01:54+0000\n"
+"POT-Creation-Date: 2025-04-22 01:56+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -11455,7 +11455,7 @@ msgstr "Smeach go cothrománach"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:74
+#: core/utilities/maintenance/tools/facesmanagement/facesengine_p.cpp:31
 #: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
 msgid "OK"
@@ -40068,8 +40068,8 @@ msgid "Object Scanning: %1\n"
 msgstr "Cuardaigh i:"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:556
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -54121,35 +54121,40 @@ msgstr "Cealaigh"
 msgid "Confirming face"
 msgstr "Comhghaolú:"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:123
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Removing face"
 msgstr "Bain an chlib roghnaithe"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgid "Remove all faces"
 msgstr "Bain Clib"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:159
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Editing face tag"
 msgstr "Bunachar sonraí aghaidheanna á nuashonrú."
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:188
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:196
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgid "Editing face region"
 msgstr "Bain an Chlib Seo"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:223
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:233
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgid "Manually adding face"
 msgstr "De Láimh"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:271
+#, kde-format
+msgid "Clearing rejected face tag list."
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
@@ -63152,7 +63157,7 @@ msgstr "Cuardaigh i:"
 msgid "Album Root: %1"
 msgstr "Albam \"%1\""
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:210
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
@@ -63161,14 +63166,14 @@ msgid ""
 "%1"
 msgstr "Cuardaigh i:"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:232
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Items scanned for cataloging: %1"
 msgstr "Cuardaigh i:"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:236
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
@@ -63180,19 +63185,19 @@ msgstr "Cuardaigh i:"
 msgid "Find duplicates items"
 msgstr ""
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:169
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:181
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "Finding Duplicates: %1\n"
 msgstr "Amhráin Dúbailte"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:174
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "No duplicate item"
 msgstr "Amhráin Dúbailte"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:178
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "1 duplicate item"
@@ -63203,123 +63208,123 @@ msgstr[2] "Amhráin Dúbailte"
 msgstr[3] "Amhráin Dúbailte"
 msgstr[4] "Amhráin Dúbailte"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:206
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:218
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Items scanned for duplicates: %1\n"
 msgstr "Cuardaigh i:"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:210
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:222
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Item scanned for duplicates: %1\n"
 msgstr "Cuardaigh i:"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:215
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "Duplicates found: %1"
 msgstr "Amhráin Dúbailte"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:219
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:231
 #, fuzzy, kde-format
 #| msgid "Duplicates"
 msgid "Duplicate found: %1"
 msgstr "Amhráin Dúbailte"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:211
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:130
 #, kde-format
 msgid ""
 "A face scan is already running. Only one face task can be running at a time. "
 "Please wait until it is finished."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:336
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scan for faces in album: %1"
 msgstr "Cuardaigh i:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:340
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:261
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scan for faces in %1 albums"
 msgstr "Cuardaigh i:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:347
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:268
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in image: %1"
 msgstr "Scan le haghaidh Íomhánna Nua"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:351
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:272
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in %1 images"
 msgstr "Scan le haghaidh Íomhánna Nua"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:356
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:277
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Updating faces database"
 msgstr "Bunachar sonraí aghaidheanna á nuashonrú."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:377
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:405
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:487
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:298
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:326
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:408
 #, kde-format
 msgid "Error starting face detection."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:508
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:429
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Items scanned for faces: %1\n"
 msgstr "Cuardaigh i:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:512
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:433
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Item scanned for faces: %1\n"
 msgstr "Cuardaigh i:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:517
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "Aimsíodh íomhánna i %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:521
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "Aimsíodh íomhánna i %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:555
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:476
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Face Scanning: %1\n"
 msgstr "Cuardaigh i:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:562
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgid "Found %1 face."
 msgstr "Gan splanc"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:566
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:487
 #, kde-format
 msgid "Found %1 faces."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:572
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:493
 #, fuzzy, kde-format
 #| msgid "Size:"
 msgid "Recognized: %1"

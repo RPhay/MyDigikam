@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-21 01:54+0000\n"
+"POT-Creation-Date: 2025-04-22 01:56+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -10948,7 +10948,7 @@ msgstr "双地图 - 顶部和底部"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:74
+#: core/utilities/maintenance/tools/facesmanagement/facesengine_p.cpp:31
 #: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
 msgid "OK"
@@ -38392,8 +38392,8 @@ msgid "Object Scanning: %1\n"
 msgstr "正在扫描对象：%1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:170
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:556
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
@@ -50521,30 +50521,35 @@ msgstr "取消"
 msgid "Confirming face"
 msgstr "正在确认人脸"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:123
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
 #, kde-format
 msgid "Removing face"
 msgstr "正在移除人脸"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:137
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
 #, kde-format
 msgid "Remove all faces"
 msgstr "移除所有人脸"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:159
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
 #, kde-format
 msgid "Editing face tag"
 msgstr "正在编辑人脸标签"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:188
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:196
 #, kde-format
 msgid "Editing face region"
 msgstr "正在编辑人脸区域"
 
-#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:223
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:233
 #, kde-format
 msgid "Manually adding face"
 msgstr "正在手动添加人脸"
+
+#: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:271
+#, kde-format
+msgid "Clearing rejected face tag list."
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
@@ -59112,10 +59117,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "Faces data management: "
+#, kde-format
 msgid "Face engine management"
-msgstr "人脸数据管理："
+msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:249
 #, kde-format
@@ -59275,7 +59279,7 @@ msgstr "正在扫描：%1\n"
 msgid "Album Root: %1"
 msgstr "相册根目录：%1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:210
 #, kde-format
 msgid ""
 "Scanned:\n"
@@ -59284,12 +59288,12 @@ msgstr ""
 "已扫描：\n"
 "%1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:232
 #, kde-format
 msgid "Items scanned for cataloging: %1"
 msgstr "已扫描编目的项目：%1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:236
 #, kde-format
 msgid "Item scanned for cataloging: %1"
 msgstr "已扫描编目的项目：%1"
@@ -59299,43 +59303,43 @@ msgstr "已扫描编目的项目：%1"
 msgid "Find duplicates items"
 msgstr "查找重复项目"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:169
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:181
 #, kde-format
 msgid "Finding Duplicates: %1\n"
 msgstr "正在查找重复项：%1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:174
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
 #, kde-format
 msgid "No duplicate item"
 msgstr "没有重复项目"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:178
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
 #, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
 msgstr[0] "%1 个重复项目"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:206
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:218
 #, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "已扫描重复项的项目：%1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:210
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:222
 #, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "已扫描重复项的项目：%1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:215
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
 #, kde-format
 msgid "Duplicates found: %1"
 msgstr "已找到重复项：%1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:219
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:231
 #, kde-format
 msgid "Duplicate found: %1"
 msgstr "已找到重复项：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:211
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:130
 #, kde-format
 msgid ""
 "A face scan is already running. Only one face task can be running at a time. "
@@ -59344,74 +59348,74 @@ msgstr ""
 "已经有一个人脸扫描任务正在运行。每次只能运行一个人脸处理任务。请等待当前任务"
 "完成后重试。"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:336
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "扫描相册中的人脸：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:340
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:261
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "扫描 %1 个相册中的人脸"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:347
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:268
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "扫描图像中的人脸：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:351
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:272
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "扫描 %1 张图像中的人脸"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:356
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:277
 #, kde-format
 msgid "Updating faces database"
 msgstr "正在更新人脸数据库"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:377
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:405
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:487
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:298
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:326
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:408
 #, kde-format
 msgid "Error starting face detection."
 msgstr "启动人脸检测时出错。"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:508
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:429
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "已扫描人脸的项目：%1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:512
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:433
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "已扫描人脸的项目：%1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:517
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
 #, kde-format
 msgid "Faces found: %1"
 msgstr "已找到人脸：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:521
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
 #, kde-format
 msgid "Face found: %1"
 msgstr "已找到人脸：%1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:555
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:476
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "正在扫描人脸：%1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:562
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
 #, kde-format
 msgid "Found %1 face."
 msgstr "找到 %1 张人脸。"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:566
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:487
 #, kde-format
 msgid "Found %1 faces."
 msgstr "找到 %1 人脸。"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:572
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:493
 #, kde-format
 msgid "Recognized: %1"
 msgstr "已识别：%1"
@@ -64363,10 +64367,9 @@ msgid "Detect faces in newly added images"
 msgstr "检测新增图像中的人脸"
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
-#, fuzzy, kde-format
-#| msgid "Background face recognition scan"
+#, kde-format
 msgid "Enable background face recognition scan"
-msgstr "后台人脸识别扫描"
+msgstr ""
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format
@@ -65649,6 +65652,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgid "Detect and recognize Faces"
-#~ msgstr "检测与识别人脸"
