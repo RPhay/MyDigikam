@@ -72,15 +72,15 @@ public:
 
     /// KNN hyper-parameters
 
-    int                                     knn_defaultK            = 8;
-    cv::ml::KNearest::Types                 knn_algorithm           = cv::ml::KNearest::Types::BRUTE_FORCE;
+    const int                               knn_defaultK            = 8;
+    const cv::ml::KNearest::Types           knn_algorithm           = cv::ml::KNearest::Types::BRUTE_FORCE;
 
     /// SVM hyper-parameters
 
-    cv::ml::SVM::Types                      svm_type                = cv::ml::SVM::Types::C_SVC;
-    cv::ml::SVM::KernelTypes                svm_kernel              = cv::ml::SVM::KernelTypes::RBF;
-    double                                  svm_gamma               = 0.38;
-    double                                  svm_C                   = 10;
+    const cv::ml::SVM::Types                svm_type                = cv::ml::SVM::Types::C_SVC;
+    const cv::ml::SVM::KernelTypes          svm_kernel              = cv::ml::SVM::KernelTypes::RBF;
+    const double                            svm_gamma               = 0.38;
+    const double                            svm_C                   = 10;
 };
 
 class Q_DECL_HIDDEN FaceClassifierCreator
