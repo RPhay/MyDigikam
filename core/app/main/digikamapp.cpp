@@ -260,13 +260,15 @@ DigikamApp::~DigikamApp()
 
     ProgressManager::instance()->slotAbortAll();
 
+    FacePipelineEdit::instance()->cancel();
+
     FaceRecognitionBackgroundController::instance()->stop();
     FaceRecognitionBackgroundController::instance()->waitForDone();
 
-    FacePipelineEdit::instance()->cancel();
-
     IdentityProvider::instance()->cancel();
 
+    FaceClassifier::instance()->cancel();
+    
     ItemAttributesWatch::shutDown();
 
     // Close and delete image editor instance.

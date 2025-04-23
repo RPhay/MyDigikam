@@ -52,6 +52,8 @@ public:
 
     bool retrain()                                                      override;
 
+    void cancel();
+
 Q_SIGNALS:
 
     /**

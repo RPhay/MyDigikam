@@ -55,7 +55,7 @@ public:
     QHash<int, Identity>            identityCache;
 
     QReadWriteLock                  trainingLock;
-    RecognitionTrainingUpdateQueue  removeQueue;
+    RecognitionTrainingUpdateQueue* removeQueue;
     QThreadPool*                    removeThreadPool        = nullptr;
     QFuture<bool>                   removeThreadResult;
 };
@@ -82,6 +82,8 @@ IdentityProvider::IdentityProvider()
     prm.detectModel    = FaceScanSettings::FaceDetectionModel::YuNet;
     prm.recognizeModel = FaceScanSettings::FaceRecognitionModel::SFace;
     prm.writeToConfig();
+
+    d->removeQueue = new RecognitionTrainingUpdateQueue();
 
     // initialize the database
 
@@ -128,6 +130,14 @@ IdentityProvider::IdentityProvider()
 IdentityProvider::~IdentityProvider()
 {
     cancel();
+
+    // delete the remove queue
+
+    if (d->removeQueue)
+    {
+        delete d->removeQueue;
+        d->removeQueue = nullptr;
+    }
 
     // final cleanup
 
@@ -178,12 +188,15 @@ void IdentityProvider::cancel()
 
         // Signal the remove thread to terminate.
 
-        d->removeQueue.push(d->removeQueue.endSignal());
+        d->removeQueue->push(d->removeQueue->endSignal());
 
         // Wait for the remove thread to finish.
 
         d->removeThreadResult.waitForFinished();
     }
+
+    delete  d->removeQueue;
+    d->removeQueue = nullptr;
 }
 
 bool IdentityProvider::checkRetrainingRequired() const
@@ -666,11 +679,11 @@ bool IdentityProvider::trainingRemoveConcurrent()
 {
     QString hash;
 
-    while (true)
+    while (true && d->removeQueue)
     {
-        hash = d->removeQueue.pop_front();
+        hash = d->removeQueue->pop_front();
 
-        if (d->removeQueue.endSignal() != hash)
+        if (d->removeQueue && (d->removeQueue->endSignal() != hash))
         {
             clearTraining(hash);
             hash.clear();
@@ -681,7 +694,7 @@ bool IdentityProvider::trainingRemoveConcurrent()
         {
             // send the end signal if anyone else is listening
 
-            d->removeQueue.push(d->removeQueue.endSignal());
+            d->removeQueue->push(d->removeQueue->endSignal());
 
             break;
         }

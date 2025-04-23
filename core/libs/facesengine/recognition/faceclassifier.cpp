@@ -47,6 +47,7 @@ public:
 
     bool                                    ready                   = false;
     bool                                    trainingWaiting         = false;
+    bool                                    exiting                 = false;
     bool                                    useFullSearch           = true;
     bool                                    initialLoad             = true;
 
@@ -117,6 +118,21 @@ FaceClassifier* FaceClassifier::instance()
 bool FaceClassifier::ready() const
 {
     return d->ready;
+}
+
+void FaceClassifier::cancel()
+{
+    // Don't restart the training thread if we are exiting.
+
+    d->exiting = true;
+    d->trainingWaiting = false;
+
+    // stop the training thread
+
+    if (d->trainingFuture.isRunning())
+    {
+        d->trainingFuture.thread()->terminate();
+    }
 }
 
 void FaceClassifier::setParameters(const FaceScanSettings& parameters)
@@ -190,6 +206,13 @@ cv::Ptr<cv::ml::SVM> FaceClassifier::createSVM()
 bool FaceClassifier::retrain()
 {
     // Called to retrain the classifier.
+
+    if (d->exiting)
+    {
+        // don't retrain if we are exiting
+
+        return false;
+    }
 
     // lock the mutex
 
