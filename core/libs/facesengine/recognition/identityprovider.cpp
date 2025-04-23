@@ -195,8 +195,11 @@ void IdentityProvider::cancel()
         d->removeThreadResult.waitForFinished();
     }
 
-    delete  d->removeQueue;
-    d->removeQueue = nullptr;
+    if (d->removeQueue)
+    {
+        delete  d->removeQueue;
+        d->removeQueue = nullptr;    
+    }
 }
 
 bool IdentityProvider::checkRetrainingRequired() const
