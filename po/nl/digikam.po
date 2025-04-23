@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-22 01:56+0000\n"
-"PO-Revision-Date: 2025-04-21 14:55+0200\n"
+"PO-Revision-Date: 2025-04-22 11:30+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -52497,11 +52497,9 @@ msgid "Manually adding face"
 msgstr "Handmatig wordt gezicht toegevoegd"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:271
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Clear rejected face matches"
+#, kde-format
 msgid "Clearing rejected face tag list."
-msgstr "Afgewezen overeenkomsten in gezichten wissen"
+msgstr "Afgewezen overeenkomsten in gezichten worden gewist"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194

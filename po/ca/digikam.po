@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-22 01:56+0000\n"
-"PO-Revision-Date: 2025-04-21 10:50+0200\n"
+"PO-Revision-Date: 2025-04-22 09:43+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -52599,11 +52599,9 @@ msgid "Manually adding face"
 msgstr "Addició de cara manualment"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:271
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Clear rejected face matches"
+#, kde-format
 msgid "Clearing rejected face tag list."
-msgstr "Neteja les coincidències de cares rebutjades"
+msgstr "S'està netejant la llista d'etiquetes de cares rebutjades."
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194

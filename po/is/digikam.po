@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-22 01:56+0000\n"
-"PO-Revision-Date: 2025-04-09 15:42+0000\n"
+"PO-Revision-Date: 2025-04-22 12:47+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -51971,7 +51971,7 @@ msgstr "Bæta andliti við handvirkt"
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:271
 #, kde-format
 msgid "Clearing rejected face tag list."
-msgstr ""
+msgstr "Hreinsa lista yfir höfnuð andlitamerki."
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
@@ -60733,7 +60733,7 @@ msgstr "Þetta mun hreinsa út öll greind og merkt andlit."
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear rejected face matches"
-msgstr ""
+msgstr "Hreinsa samsvaranir andlita sem hefur verið hafnað"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:219
 #, kde-format
@@ -60742,12 +60742,13 @@ msgid ""
 "This will delete all rejected face matches allowing the face recognizer to "
 "present the suggested matches again."
 msgstr ""
+"Þetta mun eyða öllum höfnuðum samsvörunum andlita og gerir andlitakennslunum "
+"kleift að gera aftur tillögur um þessi andlit."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "Faces data management: "
+#, kde-format
 msgid "Face engine management"
-msgstr "Stjórnun andlitsgagna: "
+msgstr "Stjórnun andlitsgagnakerfis"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:249
 #, kde-format
@@ -66226,10 +66227,9 @@ msgid "Detect faces in newly added images"
 msgstr "Finna andlit í nýlega viðbættum myndum"
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
-#, fuzzy, kde-format
-#| msgid "Background face recognition scan"
+#, kde-format
 msgid "Enable background face recognition scan"
-msgstr "Andlitakennsl keyrð í bakgrunni"
+msgstr "Virkja keyrslu andlitakennsla í bakgrunni"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format
