@@ -703,7 +703,7 @@ bool IdentityProvider::trainingRemoveConcurrent()
         }
     }
 
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::trainingRemoveConcurrent thread terminated";
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::trainingRemoveConcurrent thread exited";
 
     return true;
 }

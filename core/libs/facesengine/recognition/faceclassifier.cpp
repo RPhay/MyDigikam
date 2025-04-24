@@ -58,6 +58,8 @@ public:
 
     QReadWriteLock                          trainingLock;
     QFutureWatcher<bool>                    trainingFuture;
+    QThread*                                trainingThread           = nullptr;
+    QMutex                                  trainingThreadMutex;
     QMutex                                  trainingMutex;
     QMap<int, QList<cv::Mat> >              identityFeatures;
 
@@ -129,10 +131,17 @@ void FaceClassifier::cancel()
 
     // stop the training thread
 
-    if (d->trainingFuture.isRunning())
+    QMutexLocker lock(&d->trainingThreadMutex);
+
+    if (d->trainingThread)
     {
-        d->trainingFuture.thread()->terminate();
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::cancel: forcing termination of training thread";
+        d->trainingThread->terminate();
+
+        QThread::msleep(100);
     }
+
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::cancel: cancel complete";
 }
 
 void FaceClassifier::setParameters(const FaceScanSettings& parameters)
@@ -257,8 +266,11 @@ bool FaceClassifier::retrain()
 bool FaceClassifier::loadTrainingData()
 {
     // Training thread to load the training data and should have a higher priority.
-
-    QThread::currentThread()->setPriority(QThread::Priority::HighPriority);
+    QMutexLocker threadLock(&d->trainingThreadMutex);
+    d->trainingThread = QThread::currentThread();
+    // d->trainingThread->setTerminationEnabled(true);
+    d->trainingThread->setPriority(QThread::Priority::HighPriority);
+    threadLock.unlock();
 
     QElapsedTimer timer;
     timer.start();
@@ -411,6 +423,9 @@ bool FaceClassifier::loadTrainingData()
     // emit the training complete signal
 
     Q_EMIT signalTrainingComplete();
+
+    threadLock.relock();
+    d->trainingThread = nullptr;
 
     return true;
 }
