@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-22 01:56+0000\n"
+"POT-Creation-Date: 2025-04-24 01:54+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -1462,7 +1462,7 @@ msgstr "បង្កើត​មូលដ្ឋាន​ទិន្នន័យ
 msgid "Loading albums..."
 msgstr "កំពុង​ផ្ទុក​ម៉ាស៊ីន​ថតរូប..."
 
-#: core/app/main/digikamapp.cpp:377
+#: core/app/main/digikamapp.cpp:379
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1473,7 +1473,7 @@ msgstr ""
 "ទីនេះ បើក​មិន​ដូច្នេះ​ទេ ជ្រើស \"ទេ\" និង​លក្ខណ​ពិសេស \"ការ​គ្រប់គ្រង​ពណ៌\" នឹង​ត្រូវ​បាន​បិទ ទាល់តែ​​អ្នក​"
 "ដោះស្រាយ​បញ្ហា​សិន ។</p>"
 
-#: core/app/main/digikamapp.cpp:433
+#: core/app/main/digikamapp.cpp:435
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1482,13 +1482,13 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:721 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:723 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "គ្មាន​ធាតុ​ដែល​​បាន​ជ្រើស​​ឡើយ (%1 ធាតុ)"
 
-#: core/app/main/digikamapp.cpp:727
+#: core/app/main/digikamapp.cpp:729
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1496,7 +1496,7 @@ msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "គ្មាន​ធាតុ​ដែល​​បាន​ជ្រើស​​ឡើយ (%1 ធាតុ)"
 
-#: core/app/main/digikamapp.cpp:732
+#: core/app/main/digikamapp.cpp:734
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1504,7 +1504,7 @@ msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "គ្មាន​ធាតុ​ដែល​​បាន​ជ្រើស​​ឡើយ (%1 ធាតុ)"
 
-#: core/app/main/digikamapp.cpp:743
+#: core/app/main/digikamapp.cpp:745
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1512,7 +1512,7 @@ msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%2/%1 ធាតុ​ដែល​បាន​ជ្រើស"
 
-#: core/app/main/digikamapp.cpp:756
+#: core/app/main/digikamapp.cpp:758
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1520,7 +1520,7 @@ msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%2/%1 ធាតុ​ដែល​បាន​ជ្រើស"
 
-#: core/app/main/digikamapp.cpp:764
+#: core/app/main/digikamapp.cpp:766
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1528,7 +1528,7 @@ msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "គ្មាន​ធាតុ​ដែល​​បាន​ជ្រើស​​ឡើយ (%1 ធាតុ)"
 
-#: core/app/main/digikamapp.cpp:772
+#: core/app/main/digikamapp.cpp:774
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1536,7 +1536,7 @@ msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%2/%1 ធាតុ​ដែល​បាន​ជ្រើស"
 
-#: core/app/main/digikamapp.cpp:781
+#: core/app/main/digikamapp.cpp:783
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1544,29 +1544,29 @@ msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "គ្មាន​ធាតុ​ដែល​​បាន​ជ្រើស​​ឡើយ (%1 ធាតុ)"
 
-#: core/app/main/digikamapp.cpp:812
+#: core/app/main/digikamapp.cpp:814
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 នៃ %2)"
 
-#: core/app/main/digikamapp.cpp:826
+#: core/app/main/digikamapp.cpp:828
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 នៃ %2)"
 
-#: core/app/main/digikamapp.cpp:830
+#: core/app/main/digikamapp.cpp:832
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:841
+#: core/app/main/digikamapp.cpp:843
 #, fuzzy, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%2/%1 ធាតុ​ដែល​បាន​ជ្រើស"
 
-#: core/app/main/digikamapp.cpp:900
+#: core/app/main/digikamapp.cpp:902
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -1574,7 +1574,7 @@ msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "សរសេរ​ទិន្នន័យ​មេតា​ទៅ​កាន់​រូបភាព​ដែល​បាន​ជ្រើស"
 
-#: core/app/main/digikamapp.cpp:902
+#: core/app/main/digikamapp.cpp:904
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Image"
 #| msgid_plural "Reread Metadata From Selected Images"
