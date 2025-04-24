@@ -178,8 +178,8 @@ BUGFIXES:
 159 ==> 502986 - MP4 previews not showing, screen remains blank.
 160 ==> 503069 - Build failed with : threadimageio/preview/previewtask.cpp:80:58.
 161 ==> 503021 - How do I get digikam to take the geoinformation from NEF files into account?
-162 ==> 
-163 ==> 
+162 ==> 502754 - digiKam remains in memory after quitting.
+163 ==> 503191 - digiKam notice, program is closing.
 164 ==> 
 165 ==> 
 166 ==> 
