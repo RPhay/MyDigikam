@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-24 01:54+0000\n"
-"PO-Revision-Date: 2025-04-20 08:51+0200\n"
+"PO-Revision-Date: 2025-04-23 11:44+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -52931,7 +52931,7 @@ msgstr "Ajout manuel d'un visage"
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:271
 #, kde-format
 msgid "Clearing rejected face tag list."
-msgstr ""
+msgstr "Effacement de la liste des rejets d'étiquettes de visages."
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
@@ -61832,7 +61832,7 @@ msgstr "Cela effacera tous les visages détectés et étiquetés."
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear rejected face matches"
-msgstr ""
+msgstr "Effacer les correspondances de visage rejetées."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:219
 #, kde-format
@@ -61841,12 +61841,14 @@ msgid ""
 "This will delete all rejected face matches allowing the face recognizer to "
 "present the suggested matches again."
 msgstr ""
+"Ceci supprimera toutes les correspondances de visage rejetées, permettant "
+"ainsi à l'outil de reconnaissance faciale de présenter à nouveau les "
+"correspondances suggérées."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "Faces data management: "
+#, kde-format
 msgid "Face engine management"
-msgstr "Gestion des données des visages :"
+msgstr "Gestion du moteur de reconnaissance faciale"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:249
 #, kde-format
