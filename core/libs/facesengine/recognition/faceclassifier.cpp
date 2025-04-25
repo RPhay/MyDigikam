@@ -26,6 +26,7 @@
 #include <QList>
 #include <QTimer>
 #include <QFile>
+#include <QApplication>
 
 // KDE includes
 
@@ -37,6 +38,7 @@
 #include "identityprovider.h"
 #include "dnnmodelmanager.h"
 #include "facebackgroundrecognition.h"
+#include "systemsettings.h"
 
 namespace Digikam
 {
@@ -50,6 +52,7 @@ public:
     bool                                    exiting                 = false;
     bool                                    useFullSearch           = true;
     bool                                    initialLoad             = true;
+    bool                                    debugLog                = SystemSettings(qApp->applicationName()).enableLogging;
 
     FaceScanSettings::FaceRecognitionModel  recognizeModel          = FaceScanSettings::FaceRecognitionModel::SFace;
     IdentityProvider*                       identityProvider        = nullptr;
@@ -81,8 +84,11 @@ public:
 
     const cv::ml::SVM::Types                svm_type                = cv::ml::SVM::Types::C_SVC;
     const cv::ml::SVM::KernelTypes          svm_kernel              = cv::ml::SVM::KernelTypes::RBF;
-    const double                            svm_gamma               = 0.38;
-    const double                            svm_C                   = 10;
+    const double                            svm_gamma               = 0.01;
+    const double                            svm_C                   = 150;
+    const double                            svm_epsilon             = 1e-5;
+    const int                               svm_minIterations       = 50;
+    const int                               svm_maxIterations       = 500;
 };
 
 class Q_DECL_HIDDEN FaceClassifierCreator
@@ -183,7 +189,7 @@ void FaceClassifier::setParameters(const FaceScanSettings& parameters)
     }
 }
 
-cv::Ptr<cv::ml::KNearest> FaceClassifier::createKNearest()
+cv::Ptr<cv::ml::KNearest> FaceClassifier::createKNearest() const
 {
     // Create the KNN classifier.
 
@@ -195,7 +201,7 @@ cv::Ptr<cv::ml::KNearest> FaceClassifier::createKNearest()
     return cvClassifier;
 }
 
-cv::Ptr<cv::ml::SVM> FaceClassifier::createSVM()
+cv::Ptr<cv::ml::SVM> FaceClassifier::createSVM(int iterations) const
 {
     // Create the SVM classifier.
 
@@ -206,8 +212,9 @@ cv::Ptr<cv::ml::SVM> FaceClassifier::createSVM()
     cvClassifier->setC(d->svm_C);
     cvClassifier->setTermCriteria(cvTermCriteria(
                                                  cv::TermCriteria::Type::MAX_ITER + cv::TermCriteria::Type::EPS,
-                                                 500, 1e-6)
-                                                );
+                                                 iterations,
+                                                 d->svm_epsilon
+                                                ));
 
     return cvClassifier;
 }
@@ -268,9 +275,10 @@ bool FaceClassifier::loadTrainingData()
     // Training thread to load the training data and should have a higher priority.
     QMutexLocker threadLock(&d->trainingThreadMutex);
     d->trainingThread = QThread::currentThread();
-    // d->trainingThread->setTerminationEnabled(true);
     d->trainingThread->setPriority(QThread::Priority::HighPriority);
     threadLock.unlock();
+
+    qint64 ceElapsed = 0;
 
     QElapsedTimer timer;
     timer.start();
@@ -294,9 +302,6 @@ bool FaceClassifier::loadTrainingData()
 
             QMap<int, QList<cv::Mat> > identityFeatures;
 
-            cv::Ptr<cv::ml::KNearest> knn = createKNearest();
-            cv::Ptr<cv::ml::SVM>      svm = createSVM();
-
             // get the training data from the identity provider
 
             cv::Ptr<cv::ml::TrainData> trainData = d->identityProvider->getTrainingData();
@@ -313,7 +318,17 @@ bool FaceClassifier::loadTrainingData()
                     int label = labels.at<int>(cv::Point(i, 0));
                     identityFeatures[label].append(samples.row(i));
                 }
+                int svm_iterations = qMin(
+                                          qMax(
+                                               20,
+                                               identityFeatures.count()
+                                              ),
+                                          d->svm_maxIterations
+                                         );
 
+                cv::Ptr<cv::ml::KNearest> knn = createKNearest();
+                cv::Ptr<cv::ml::SVM>      svm = createSVM(svm_iterations);
+        
                 if (d->initialLoad)
                 {
                     // clear initial load flag
@@ -352,9 +367,19 @@ bool FaceClassifier::loadTrainingData()
                 {
                     knn->train(trainData);
                     svm->train(trainData);
-
+                                                 
                     if(knn->isTrained() && svm->isTrained())
                     {
+                        if (d->debugLog)
+                        {
+                            QElapsedTimer ceTimer;
+                            ceTimer.start();
+                            float currentError = svm->calcError(trainData, false, cv::noArray());
+                            qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: SVM calcError is: "
+                                                             << QString::number(currentError, 'f', 6).toLatin1().constData();
+                            ceElapsed = ceTimer.elapsed();
+                        }
+
                         // we have enough samples to use the classifiers
 
                         useFullSearch = false;
@@ -418,7 +443,7 @@ bool FaceClassifier::loadTrainingData()
     while (d->trainingWaiting);
 
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::loadTrainingData: training completed in "
-                                     << timer.elapsed() << "ms";
+                                     << timer.elapsed() - ceElapsed << "ms";
 
     // emit the training complete signal
 

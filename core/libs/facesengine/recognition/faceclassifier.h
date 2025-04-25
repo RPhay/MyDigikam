@@ -69,8 +69,8 @@ protected:
 
 private:
 
-    cv::Ptr<cv::ml::KNearest> createKNearest();
-    cv::Ptr<cv::ml::SVM>      createSVM();
+    cv::Ptr<cv::ml::KNearest> createKNearest() const;
+    cv::Ptr<cv::ml::SVM>      createSVM(int iterations) const;
 
     int                       predictFullSearch(const cv::Mat& target, const QList<int>& exclusionLabelList)        const;
     int                       predictClassifier(const cv::Mat& target, const QList<int>& exclusionLabelList)        const;
