@@ -41,10 +41,11 @@ public:
 
     Private()
     {
-        globalOpenCL = SystemSettings(qApp->applicationName()).enableOpenCL;
+        SystemSettings system = SystemSettings(qApp->applicationName());
+        globalOpenCL = system.enableOpenCL;
 
-        dnnOpenCL = SystemSettings(qApp->applicationName()).enableOpenCL &&
-                    SystemSettings(qApp->applicationName()).enableDnnOpenCL;
+        dnnOpenCL = system.enableOpenCL &&
+                    system.enableDnnOpenCL;
     }
 };
 

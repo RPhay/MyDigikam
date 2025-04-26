@@ -22,6 +22,7 @@
 #include <QCheckBox>
 #include <QLabel>
 #include <QStyle>
+#include <QMessageBox>
 
 // KDE includes
 
@@ -35,6 +36,7 @@
 #include "systemsettings.h"
 #include "filesdownloader.h"
 #include "ui_proxysettingswidget.h"
+#include "ocvocldnntestdlg.h"
 
 namespace Digikam
 {
@@ -59,6 +61,9 @@ public:
     QCheckBox*              enableLoggingCheck     = nullptr;
     QCheckBox*              enableOpenCLCheck      = nullptr;
     QCheckBox*              enableOpenCLDNNCheck   = nullptr;
+    QPushButton*            openCLDNNTest          = nullptr;
+    OpenCVOpenCLDNNTestDlg* openCLDNNTestDlg       = nullptr;
+    bool                    openCLDNNTestResult    = false;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -101,7 +106,10 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     d->enableOpenCLDNNCheck   = new QCheckBox(i18n("Use OpenCL hardware acceleration for AI models"), this);
     d->enableOpenCLDNNCheck->setToolTip(i18n("This option is still experimental and "
                                         "may lead to crashes if the proper drivers are not installed."));
-                                      
+
+    d->openCLDNNTest          = new QPushButton(i18n("Test GPU AI compatibility"), this);
+    d->openCLDNNTest->setIcon(QIcon::fromTheme(QLatin1String("show-gpu-effects")));
+                                  
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     d->enableHWVideoCheck     = new QCheckBox(i18n("Use video hardware acceleration"), this);
@@ -146,6 +154,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     {
         d->enableOpenCLCheck->hide();
         d->enableOpenCLDNNCheck->hide();
+        d->openCLDNNTest->hide();
     }
 
     QLabel* const systemNote     = new QLabel(i18n("<b>Note: All changes to these settings only take effect "
@@ -165,7 +174,8 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
     layout->addWidget(d->softwareOpenGLCheck,    row++, 0, 1, 2);
     layout->addWidget(d->enableOpenCLCheck,      row++, 0, 1, 2);
-    layout->addWidget(d->enableOpenCLDNNCheck,   row++, 0, 1, 2);
+    layout->addWidget(d->enableOpenCLDNNCheck,   row, 0, 1, 2);
+    layout->addWidget(d->openCLDNNTest,          row++, 1, 1, 1);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -189,6 +199,12 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
     connect(d->enableOpenCLCheck, &QCheckBox::toggled,
             d->enableOpenCLDNNCheck, &QCheckBox::setEnabled);
+
+    connect(d->enableOpenCLCheck, &QCheckBox::toggled,
+            d->openCLDNNTest, &QPushButton::setEnabled);
+
+    connect(d->openCLDNNTest, &QPushButton::pressed,
+            this, &SystemSettingsWidget::slotOpenCLDNNTest);
 }
 
 SystemSettingsWidget::~SystemSettingsWidget()
@@ -211,7 +227,8 @@ void SystemSettingsWidget::readSettings()
     d->enableLoggingCheck->setChecked(system.enableLogging);
     d->enableOpenCLCheck->setChecked(system.enableOpenCL);
     d->enableOpenCLDNNCheck->setChecked(system.enableDnnOpenCL && system.enableOpenCL);
-    d->enableOpenCLDNNCheck->setEnabled(system.enableOpenCL);
+    d->enableOpenCLDNNCheck->setEnabled(system.enableOpenCL && system.dnnOpenCLTested);
+    d->openCLDNNTest->setEnabled(system.enableOpenCL);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -245,7 +262,8 @@ void SystemSettingsWidget::saveSettings()
     system.softwareOpenGL    = d->softwareOpenGLCheck->isChecked();
     system.enableLogging     = d->enableLoggingCheck->isChecked();
     system.enableOpenCL      = d->enableOpenCLCheck->isChecked();
-    system.enableDnnOpenCL   = d->enableOpenCLDNNCheck->isChecked() && system.enableOpenCL;
+    system.enableDnnOpenCL   = d->enableOpenCLDNNCheck->isChecked() && d->enableOpenCLCheck->isChecked() && d->openCLDNNTestResult;
+    system.dnnOpenCLTested   = d->openCLDNNTestResult;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -276,6 +294,38 @@ void SystemSettingsWidget::saveSettings()
 void SystemSettingsWidget::slotBinaryDownload()
 {
     d->filesDownloader->startDownload();
+}
+
+void SystemSettingsWidget::slotOpenCLDNNTest()
+{
+    d->openCLDNNTest->setEnabled(false);
+
+    d->openCLDNNTestDlg = new OpenCVOpenCLDNNTestDlg(this);
+    d->openCLDNNTestDlg->setAttribute(Qt::WA_DeleteOnClose);
+    d->openCLDNNTestDlg->setWindowModality(Qt::WindowModal);
+    
+    // Connect to the finished signal to get the test result
+
+    connect(d->openCLDNNTestDlg, &QDialog::finished, 
+            this, &SystemSettingsWidget::slotOpenCLDNNTestFinished);    
+
+    // display the test dialog
+
+    d->openCLDNNTestDlg->show();
+}
+
+void SystemSettingsWidget::slotOpenCLDNNTestFinished()
+{
+    // Re-enable the test button
+
+    d->openCLDNNTest->setEnabled(true);
+
+    // Process the dialog result
+
+    d->openCLDNNTestResult = (d->openCLDNNTestDlg->result() == QDialog::Accepted);
+
+    d->enableOpenCLDNNCheck->setEnabled(d->enableOpenCLCheck->isChecked() && d->openCLDNNTestResult);
+    d->enableOpenCLDNNCheck->setChecked(d->enableOpenCLCheck->isChecked() && d->openCLDNNTestResult);
 }
 
 } // namespace Digikam

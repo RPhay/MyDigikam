@@ -18,12 +18,14 @@
 
 #include <QFileInfo>
 #include <QStandardPaths>
+#include <QApplication>
 
 // Local includes
 
 #include "digikam_debug.h"
 #include "dnnmodelmanager.h"
 #include "dnnmodelinfocontainer.h"
+#include "systemsettings.h"
 
 namespace Digikam
 {
@@ -77,7 +79,14 @@ const QPair<int, int> DNNModelBase::getBackendAndTarget() const
 
     try
     {
-        if (cv::ocl::haveOpenCL() && cv::ocl::useOpenCL())
+        SystemSettings system(qApp->applicationName());
+
+        if (
+            system.enableOpenCL &&
+            system.enableDnnOpenCL &&
+            cv::ocl::haveOpenCL() && 
+            cv::ocl::useOpenCL()
+           )
         {
             // use OpenCL if available
 
