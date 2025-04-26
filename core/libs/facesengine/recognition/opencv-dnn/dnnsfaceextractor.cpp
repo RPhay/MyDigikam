@@ -33,6 +33,7 @@
 #include "dnnmodelmanager.h"
 #include "dnnmodelsface.h"
 #include "dnnmodelyunet.h"
+#include "ocvocldnnsetter.h"
 
 namespace Digikam
 {
@@ -182,6 +183,11 @@ const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::Mat&
 
     try
     {
+        /*
+         Note: Using an OpenCVOpenCDNNSetter is not needed when using a cv::Mat
+         because cv::Mat does not use OpenCL.
+        */
+
         // Add a border so there is room to rotate the image during alignment.
 
         cv::Mat borderFace;
@@ -279,6 +285,10 @@ const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::UMat
 
     try
     {
+        // lock OpenCV OpenCL DNN settings while using UMat
+
+        OpenCVOpenCLDNNSetter openCLDNNSetter;
+
         // Add a border so there is room to rotate the image during alignment.
 
         cv::UMat borderFace;

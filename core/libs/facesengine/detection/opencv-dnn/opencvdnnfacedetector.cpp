@@ -290,53 +290,6 @@ void OpenCVDNNFaceDetector::setFaceDetectionSize(FaceScanSettings::FaceDetection
     m_inferenceEngine->setFaceDetectionSize(size);
 }
 
-/**
- * There is no proof that doing this will help, since face can be detected at various positions (even half, masked faces
- * can be detected), not only frontal. Effort on doing this should be questioned.
- * TODO: Restructure and improve Face Detection module.
-
-void OpenCVDNNFaceDetector::resizeBboxToStandardHumanFace(int& width, int& height)
-{
-    // Human head sizes data.
-    // https://en.wikipedia.org/wiki/Human_head#Average_head_sizes
-
-    float maxRatioFrontalFace    = 15.4 / 15.5;
-    float minRatioNonFrontalFace = 8.6  / 21.6;
-
-    float r = width*1.0/height, rReference;
-
-    if      ((r >= minRatioNonFrontalFace*0.9) && r <= (maxRatioFrontalFace * 1.1))
-    {
-        rReference = r;
-    }
-    else if (r <= 0.25)
-    {
-        rReference = r * 1.5;
-    }
-    else if (r >= 4)
-    {
-        rReference = r / 1.5;
-    }
-    else if (r < minRatioNonFrontalFace * 0.9)
-    {
-        rReference = minRatioNonFrontalFace;
-    }
-    else if (r > maxRatioFrontalFace * 1.1)
-    {
-        rReference = maxRatioFrontalFace;
-    }
-
-    if (width > height)
-    {
-        height = width / rReference;
-    }
-    else
-    {
-        width = height * rReference;
-    }
-}
-*/
-
 QList<QRect> OpenCVDNNFaceDetector::detectFaces(const cv::Mat& inputImage,
                                                 const cv::Size& paddedSize)
 {
@@ -351,18 +304,8 @@ QList<QRect> OpenCVDNNFaceDetector::detectFaces(const cv::Mat& inputImage,
     {
         QRect rect(bbox.x, bbox.y, bbox.width, bbox.height);
         results << rect;
-/*
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << rect;
-        cv::rectangle(imageTest, cv::Rect(bbox.x + paddedSize.width,
-                                          bbox.y + paddedSize.height,
-                                          bbox.width, bbox.height), cv::Scalar(0, 128, 0));
-*/
     }
 
-/*
-    cv::imshow("image", imageTest);
-    cv::waitKey(0);
-*/
     return results;
 }
 

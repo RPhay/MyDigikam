@@ -58,6 +58,7 @@ public:
     QCheckBox*              softwareOpenGLCheck    = nullptr;
     QCheckBox*              enableLoggingCheck     = nullptr;
     QCheckBox*              enableOpenCLCheck      = nullptr;
+    QCheckBox*              enableOpenCLDNNCheck   = nullptr;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -93,15 +94,18 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #endif
 
-    d->softwareOpenGLCheck    = new QCheckBox(i18n("Use the software OpenGL for rendering"), this);
-    d->enableOpenCLCheck      = new QCheckBox(i18n("Use the OpenCL hardware acceleration"), this);
+    d->softwareOpenGLCheck    = new QCheckBox(i18n("Use software OpenGL for rendering"), this);
+    d->enableOpenCLCheck      = new QCheckBox(i18n("Use OpenCL hardware acceleration"), this);
     d->enableOpenCLCheck->setToolTip(i18n("This option is still experimental and "
                                           "requires that certain environment variables are set manually."));
-
+    d->enableOpenCLDNNCheck   = new QCheckBox(i18n("Use OpenCL hardware acceleration for AI models"), this);
+    d->enableOpenCLDNNCheck->setToolTip(i18n("This option is still experimental and "
+                                        "may lead to crashes if the proper drivers are not installed."));
+                                      
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    d->enableHWVideoCheck     = new QCheckBox(i18n("Use the video hardware acceleration"), this);
-    d->enableHWTConvCheck     = new QCheckBox(i18n("Use the video textures conversion"), this);
+    d->enableHWVideoCheck     = new QCheckBox(i18n("Use video hardware acceleration"), this);
+    d->enableHWTConvCheck     = new QCheckBox(i18n("Use video textures conversion"), this);
 
     QLabel* const videoLabel  = new QLabel(i18n("Decoding backend to render video:"), this);
 
@@ -141,6 +145,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     if (qApp->applicationName() == QLatin1String("showfoto"))
     {
         d->enableOpenCLCheck->hide();
+        d->enableOpenCLDNNCheck->hide();
     }
 
     QLabel* const systemNote     = new QLabel(i18n("<b>Note: All changes to these settings only take effect "
@@ -160,6 +165,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
     layout->addWidget(d->softwareOpenGLCheck,    row++, 0, 1, 2);
     layout->addWidget(d->enableOpenCLCheck,      row++, 0, 1, 2);
+    layout->addWidget(d->enableOpenCLDNNCheck,   row++, 0, 1, 2);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -180,6 +186,9 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
     connect(d->filesDownloadButton, &QPushButton::pressed,
             this, &SystemSettingsWidget::slotBinaryDownload);
+
+    connect(d->enableOpenCLCheck, &QCheckBox::toggled,
+            d->enableOpenCLDNNCheck, &QCheckBox::setEnabled);
 }
 
 SystemSettingsWidget::~SystemSettingsWidget()
@@ -201,6 +210,8 @@ void SystemSettingsWidget::readSettings()
     d->softwareOpenGLCheck->setChecked(system.softwareOpenGL);
     d->enableLoggingCheck->setChecked(system.enableLogging);
     d->enableOpenCLCheck->setChecked(system.enableOpenCL);
+    d->enableOpenCLDNNCheck->setChecked(system.enableDnnOpenCL && system.enableOpenCL);
+    d->enableOpenCLDNNCheck->setEnabled(system.enableOpenCL);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -234,6 +245,7 @@ void SystemSettingsWidget::saveSettings()
     system.softwareOpenGL    = d->softwareOpenGLCheck->isChecked();
     system.enableLogging     = d->enableLoggingCheck->isChecked();
     system.enableOpenCL      = d->enableOpenCLCheck->isChecked();
+    system.enableDnnOpenCL   = d->enableOpenCLDNNCheck->isChecked() && system.enableOpenCL;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 

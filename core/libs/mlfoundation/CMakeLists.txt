@@ -12,6 +12,7 @@ set(libmlpipeline_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/mlpipelinefoundation.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mlpipelinepackagenotify.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mlclassifierfoundation.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ocvocldnnsetter.cpp
 )
 
 include_directories(

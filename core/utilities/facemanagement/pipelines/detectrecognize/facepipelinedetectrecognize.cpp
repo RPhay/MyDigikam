@@ -44,6 +44,7 @@
 #include "faceclassifier.h"
 #include "identityprovider.h"
 #include "qtopencvimg.h"
+#include "ocvocldnnsetter.h"
 
 namespace Digikam
 {
@@ -364,6 +365,10 @@ bool FacePipelineDetectRecognize::extractor()
         // get reciprocal factor for resizing the face to back the original image size
 
         float reciprocalFactor      = 1.0F / resizeFactor;
+
+        // lock OpenCV OpenCL DNN settings while using UMat
+
+        OpenCVOpenCLDNNSetter openCLDNNSetter;;
 
         // detect any faces in the image
 

@@ -97,6 +97,9 @@ void SystemSettings::readSettings()
 
     enableLogging        = settings.value(QLatin1String("enableLogging"),     false).toBool();
     enableOpenCL         = settings.value(QLatin1String("enableOpenCL"),      false).toBool();
+    enableDnnOpenCL      = settings.value(QLatin1String("enableDnnOpenCL"),   false).toBool();
+    dnnOpenCLTested      = settings.value(QLatin1String("dnnOpenCLTested"),   false).toBool();
+
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -178,6 +181,8 @@ void SystemSettings::saveSettings()
     settings.setValue(QLatin1String("softwareOpenGL"),    softwareOpenGL);
     settings.setValue(QLatin1String("enableLogging"),     enableLogging);
     settings.setValue(QLatin1String("enableOpenCL"),      enableOpenCL);
+    settings.setValue(QLatin1String("enableDnnOpenCL"),   enableDnnOpenCL);
+    settings.setValue(QLatin1String("dnnOpenCLTested"),   dnnOpenCLTested);
 
     if (settings.contains(QLatin1String("disableFaceEngine")))
     {

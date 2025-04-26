@@ -13,6 +13,12 @@ Queue Manager:   New tool to perform auto-rotation based on content analysis usi
 Face Engine:     digiKam will automatically start a new face recognition scan when new faces are
                  confirmed/tagged. This feature can be controlled in Settings->Miscelaneous->
                  Behaviour->Background face recognition scan.
+                 digiKam now saves when a use rejects a suggest face match and will present the
+                 next best match if there is one to the user.
+                 Minor updates to the Face Classifier to improve performance and accuracy.
+OpenCV/OpenCL    The user can now turn off OpenCL for the AI models preventing crashes when the
+                 GPU drivers are not fully installed, but OpenCL can continued to be used elsewhere.
+                 See Settings->Miscellaneous->System.
 
 *****************************************************************************************************
 BUGFIXES:

@@ -63,7 +63,9 @@ public:
     bool    softwareOpenGL    = false;
     bool    enableLogging     = false;
     bool    enableOpenCL      = false;
-
+    bool    enableDnnOpenCL   = false;
+    bool    dnnOpenCLTested   = false;
+    
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     bool    enableHWVideo     = false;

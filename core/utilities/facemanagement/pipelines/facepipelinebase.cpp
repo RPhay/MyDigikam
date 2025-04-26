@@ -426,18 +426,6 @@ bool FacePipelineBase::commonFaceThumbnailExtractor(const QString& pipelineName,
                 QSize faceSize(qRound(package->info.dimensions().width() * xThumbnailPercent * xFaceAreaPercent),
                                qRound(package->info.dimensions().height() * yThumbnailPercent * yFaceAreaPercent));
 
-                // compute the of the extracted face in relation to the thumbnail image
-
-                qCDebug(DIGIKAM_FACESENGINE_LOG) << "FacePipelineBase::commonFaceThumbnailExtractor"
-                                                 << "xThumbnailPercent:" << xThumbnailPercent
-                                                 << "yThumbnailPercent:" << yThumbnailPercent
-                                                 << "xFaceAreaPercent:" << xFaceAreaPercent
-                                                 << "yFaceAreaPercent:" << yFaceAreaPercent
-                                                 << "faceSize:" << faceSize
-                                                 << "region:" << package->face.region().toRect()
-                                                 << "thumbnail:" << package->thumbnail.size()
-                                                 << "image:" << package->info.dimensions();
-
                 // check if the image is suitable for training
 
                 package->useForTraining = useForTraining(faceSize, cvImage);
