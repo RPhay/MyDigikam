@@ -172,7 +172,6 @@ cv::UMat DNNSFaceExtractor::alignFace(const cv::UMat& inputImage) const
 const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage) const
 {
     QPair<cv::Mat, cv::Mat> result;
-    cv::Mat paddedFace;
     cv::Mat normalized_descriptors = cv::Mat();
 
     QElapsedTimer timer;
@@ -197,8 +196,6 @@ const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::Mat&
                            60, 60,
                            cv::BORDER_CONSTANT,
                            cv::Scalar(0, 0, 0));
-
-        paddedFace.release();
 
         if (
             d->model                        &&
@@ -274,7 +271,6 @@ const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::Mat&
 const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::UMat& faceImage) const
 {
     QPair<cv::Mat, cv::Mat> result;
-    cv::UMat paddedFace;
     cv::Mat normalized_descriptors = cv::Mat();
 
     QElapsedTimer timer;
@@ -298,8 +294,6 @@ const QPair<cv::Mat, cv::Mat> DNNSFaceExtractor::getFaceEmbedding(const cv::UMat
                            60, 60,
                            cv::BORDER_CONSTANT,
                            cv::Scalar(0, 0, 0));
-
-        paddedFace.release();
 
         if (
             d->model                        &&
