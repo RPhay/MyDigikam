@@ -188,7 +188,7 @@ BUGFIXES:
 163 ==> 503191 - digiKam notice, program is closing.
 164 ==> 503296 - Create restart option.
 165 ==> 502925 - Automatic face recogntion gives up on some faces.
-166 ==> 
+166 ==> 503387 - Import creates bad directories and file names and confusing XMP handling.
 167 ==> 
 168 ==> 
 169 ==> 

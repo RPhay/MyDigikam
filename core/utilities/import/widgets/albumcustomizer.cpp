@@ -199,7 +199,16 @@ int AlbumCustomizer::folderDateFormat() const
 
 QString AlbumCustomizer::customDateFormat() const
 {
-    return d->customizer->text();
+    QString dateStr = d->customizer->text();
+
+#ifdef Q_OS_WIN
+
+    dateStr.replace(QLatin1Char('\\'),
+                    QLatin1Char('/'));
+
+#endif
+
+    return dateStr;
 }
 
 bool AlbumCustomizer::customDateFormatIsValid() const
