@@ -240,29 +240,29 @@ bool OpenCVOpenCLDNNTestDlg::runTest()
         Q_EMIT signalNotification(i18n("Checking for OpenCL GPU acceleration compatibility with AI models..."));
         cv::ocl::setUseOpenCL(true);
         
-        // if (cv::ocl::haveOpenCL())
-        // {
-        //     Q_EMIT signalNotification(i18n("OpenCL is available on this system."));
-        //     cv::ocl::Device device = cv::ocl::Device::getDefault();
-        //     if (
-        //         !device.empty() &&
-        //         device.available() &&
-        //         device.imageSupport() &&
-        //         (cv::ocl::Device::TYPE_CPU != device.type())
-        //        )
-        //     {
-        //         Q_EMIT signalNotification(i18n("OpenCL acceleration device is available."));
-        //         Q_EMIT signalNotification(i18n("Using device: %1", QString::fromStdString(device.name())));
-        //     }
-        //     else
-        //     {
-        //         throw std::runtime_error(i18n("OpenCL acceleration device is not available.").toStdString());
-        //     }
-        // }
-        // else
-        // {
-        //     throw std::runtime_error(i18n("OpenCL is not available on this system.").toStdString());
-        // }
+        if (cv::ocl::haveOpenCL())
+        {
+            Q_EMIT signalNotification(i18n("OpenCL is available on this system."));
+            cv::ocl::Device device = cv::ocl::Device::getDefault();
+            if (
+                !device.empty() &&
+                device.available() &&
+                device.imageSupport() &&
+                (cv::ocl::Device::TYPE_CPU != device.type())
+               )
+            {
+                Q_EMIT signalNotification(i18n("OpenCL acceleration device is available."));
+                Q_EMIT signalNotification(i18n("Using device: %1", QString::fromStdString(device.name())));
+            }
+            else
+            {
+                throw std::runtime_error(i18n("OpenCL acceleration device is not available.").toStdString());
+            }
+        }
+        else
+        {
+            throw std::runtime_error(i18n("OpenCL is not available on this system.").toStdString());
+        }
 
         // load the test file as QImage
 
