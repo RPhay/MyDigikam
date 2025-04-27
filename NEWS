@@ -194,11 +194,11 @@ BUGFIXES:
 168 ==> 434603 - Bugs and Features request in Faces Workflow
 169 ==> 428652 - Picture stays in people tag "Unknown" even though it was set to not contain a face
 170 ==> 428187 - first user experience scares (non technical) people away and picasa3 faces imported but not as faces
-171 ==> 
-172 ==> 
-173 ==> 
-174 ==> 
-175 ==> 
+171 ==> 416183 - Browsing albums/faces/ when running application on GPU only renders list but no thumbnails
+172 ==> 380336 - Suggested improvements of Face Tagging
+173 ==> 471335 - Tag a detected face but not use it for training
+174 ==> 432537 - Improve face-recognition accuracy by visually de-selecting "bad faces" to be used within the faces-engine
+175 ==> 434164 - Some proposals about face management
 176 ==> 
 177 ==> 
 178 ==> 
