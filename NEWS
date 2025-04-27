@@ -199,7 +199,7 @@ BUGFIXES:
 173 ==> 471335 - Tag a detected face but not use it for training
 174 ==> 432537 - Improve face-recognition accuracy by visually de-selecting "bad faces" to be used within the faces-engine
 175 ==> 434164 - Some proposals about face management
-176 ==> 
+176 ==> 213367 - Improving Kenburns effect from AdvancedSlideshow to use face regions
 177 ==> 
 178 ==> 
 179 ==> 
