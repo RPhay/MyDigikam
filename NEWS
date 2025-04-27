@@ -190,10 +190,10 @@ BUGFIXES:
 164 ==> 503296 - Create restart option.
 165 ==> 502925 - Automatic face recogntion gives up on some faces.
 166 ==> 503387 - Import creates bad directories and file names and confusing XMP handling.
-167 ==> 
-168 ==> 
-169 ==> 
-170 ==> 
+167 ==> 500012 - While Rebuilding the Training data It also detecting the Faces
+168 ==> 434603 - Bugs and Features request in Faces Workflow
+169 ==> 428652 - Picture stays in people tag "Unknown" even though it was set to not contain a face
+170 ==> 428187 - first user experience scares (non technical) people away and picasa3 faces imported but not as faces
 171 ==> 
 172 ==> 
 173 ==> 
