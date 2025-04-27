@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-24 01:54+0000\n"
+"POT-Creation-Date: 2025-04-27 01:57+0000\n"
 "PO-Revision-Date: 2025-04-22 09:21+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -81,6 +81,7 @@ msgid "Select the current day"
 msgstr "Вибір поточного дня"
 
 #: core/app/date/ddatepicker.cpp:574
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -29386,6 +29387,7 @@ msgstr "Міграція ->"
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:109
 #, kde-format
 msgid "Cancel"
 msgstr "Скасувати"
@@ -52723,6 +52725,7 @@ msgid "Begin"
 msgstr "Почати"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:86
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
@@ -61061,13 +61064,13 @@ msgid ""
 msgstr ""
 "Показати результат перетвореної дати 1968-12-26 на основі нетипового формату."
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:239
+#: core/utilities/import/widgets/albumcustomizer.cpp:248
 #, kde-format
 msgctxt "@info Example of custom date format for album naming"
 msgid "Ex.: %1"
 msgstr "Приклад: %1"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:243
+#: core/utilities/import/widgets/albumcustomizer.cpp:252
 #, kde-format
 msgctxt "@info Custom date format"
 msgid "Format is not valid..."
@@ -66998,6 +67001,182 @@ msgctxt "@title:tab"
 msgid "Sidecars"
 msgstr "Додаткові файли"
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:82
+#, kde-format
+msgctxt "@title:window"
+msgid "AI GPU Test"
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:85
+#, kde-format
+msgctxt "@info"
+msgid ""
+"This will check if your system is able to use GPU acceleration\n"
+"when running the AI models by validating OpenCV and OpenCL have the\n"
+"required libraries and drivers installed.\n"
+"\n"
+"Do you want to test your system now?"
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
+#, kde-format
+msgid "Start"
+msgstr "Почати"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
+#, fuzzy, kde-format
+#| msgid "Beta tester"
+msgctxt "@action:button"
+msgid "Begin test"
+msgstr "Тестування бета-версій"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:138
+#, fuzzy, kde-format
+#| msgid "Settings..."
+msgctxt "@action:button"
+msgid "Testing..."
+msgstr "Параметри…"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:144
+#, kde-format
+msgid "Starting OpenCV OpenCL DNN test..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:207
+#, kde-format
+msgid ""
+"Test completed successfully! Your system can use GPU acceleration for the AI "
+"models."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:211
+#, kde-format
+msgid ""
+"Test failed. Your system may not be able to use GPU acceleration for the AI "
+"models."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
+#, kde-format
+msgctxt "@action:button"
+msgid "Close the test dialog"
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:240
+#, kde-format
+msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:245
+#, fuzzy, kde-format
+#| msgid "OpenGL support is not available on your system."
+msgid "OpenCL is available on this system."
+msgstr "Вибачте. Ваша система не підтримує OpenGL."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#, kde-format
+msgid "OpenCL acceleration device is available."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:255
+#, fuzzy, kde-format
+#| msgctxt "@info: icc profile class"
+#| msgid "Link device"
+msgid "Using device: %1"
+msgstr "Пристрій зв'язку"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:259
+#, fuzzy, kde-format
+#| msgid "This collection is currently not available."
+msgid "OpenCL acceleration device is not available."
+msgstr "Ця збірка зараз недоступна."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:264
+#, fuzzy, kde-format
+#| msgid "OpenGL support is not available on your system."
+msgid "OpenCL is not available on this system."
+msgstr "Вибачте. Ваша система не підтримує OpenGL."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:269
+#, fuzzy, kde-format
+#| msgid "Loading image..."
+msgid "Loading test image..."
+msgstr "Завантаження зображення…"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:275
+#, fuzzy, kde-format
+#| msgid "Binary not found."
+msgid "Test image not found."
+msgstr "Виконуваного файла не знайдено"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to save image to %1"
+msgid "Failed to load test image from %1"
+msgstr "Не вдалося зберегти зображення до %1"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
+#, fuzzy, kde-format
+#| msgid "Pan the image to a region"
+msgid "Preparing the image for processing..."
+msgstr "Панорамувати зображення у область"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:314
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Initializing Main View..."
+msgid "Initializing face detection model..."
+msgstr "Започаткування головного вікна…"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:318
+#, fuzzy, kde-format
+#| msgid "Error starting face detection."
+msgid "Running face detection..."
+msgstr "Помилка під час спроби розпочати виявлення облич."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:334
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Initializing Main View..."
+msgid "Initializing feature extraction model..."
+msgstr "Започаткування головного вікна…"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:338
+#, fuzzy, kde-format
+#| msgid "Preparing collection scan..."
+msgid "Preparing face for feature extraction..."
+msgstr "Приготування до сканування збірки…"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:351
+#, kde-format
+msgid "Extracting face features..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:357
+#, fuzzy, kde-format
+#| msgid "Failed to create folder"
+msgid "Failed to extract face features."
+msgstr "Не вдалося створити теку"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
+#, fuzzy, kde-format
+#| msgid "Database copied successfully."
+msgid "All tests completed successfully!"
+msgstr "Базу даних успішно скопійовано."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:367
+#, fuzzy, kde-format
+#| msgid "Open error"
+msgid "OpenCV error: %1"
+msgstr "Помилка відкривання"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:372
+#, fuzzy, kde-format
+#| msgid "Error"
+msgid "Error: %1"
+msgstr "Помилка"
+
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
 #, kde-format
@@ -67374,27 +67553,29 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Групування"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:91
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Масштабування для високих роздільностей на основі коефіцієнта екрана"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:92
+#: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Растрові зображення із високою роздільністю"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:96
-#, kde-format
-msgid "Use the software OpenGL for rendering"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:102
+#, fuzzy, kde-format
+#| msgid "Use the software OpenGL for rendering"
+msgid "Use software OpenGL for rendering"
 msgstr "Використати програмну обробку OpenGL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, kde-format
-msgid "Use the OpenCL hardware acceleration"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#, fuzzy, kde-format
+#| msgid "Use the OpenCL hardware acceleration"
+msgid "Use OpenCL hardware acceleration"
 msgstr "Використати апаратне прискорення OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
+#: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -67403,57 +67584,82 @@ msgstr ""
 "Цей пункт усе ще є експериментальним і для його роботи потрібно "
 "встановлювати вручну значення змінних середовища."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#: core/utilities/setup/misc/systemsettingswidget.cpp:106
+#, fuzzy, kde-format
+#| msgid "Use the OpenCL hardware acceleration"
+msgid "Use OpenCL hardware acceleration for AI models"
+msgstr "Використати апаратне прискорення OpenCL"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
+#, fuzzy, kde-format
+#| msgid ""
+#| "This option is still experimental and requires that certain environment "
+#| "variables are set manually."
+msgid ""
+"This option is still experimental and may lead to crashes if the proper "
+"drivers are not installed."
+msgstr ""
+"Цей пункт усе ще є експериментальним і для його роботи потрібно "
+"встановлювати вручну значення змінних середовища."
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:110
 #, kde-format
-msgid "Use the video hardware acceleration"
+msgid "Test GPU AI compatibility"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#, fuzzy, kde-format
+#| msgid "Use the video hardware acceleration"
+msgid "Use video hardware acceleration"
 msgstr "Використати апаратне прискорення відео"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:104
-#, kde-format
-msgid "Use the video textures conversion"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:116
+#, fuzzy, kde-format
+#| msgid "Use the video textures conversion"
+msgid "Use video textures conversion"
 msgstr "Використати перетворення відеотекстур"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:106
+#: core/utilities/setup/misc/systemsettingswidget.cpp:118
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "Модуль декодування для показу відео:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:109
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (типовий)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:113
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (системний)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:117
+#: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (системний)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (системний)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#: core/utilities/setup/misc/systemsettingswidget.cpp:139
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Отримати потрібні двійкові дані:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:128
+#: core/utilities/setup/misc/systemsettingswidget.cpp:140
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "Відкрити вікно отримання даних…"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:143
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Увімкнути внутрішнє діагностичне ведення журналу"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:146
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -69945,9 +70151,6 @@ msgstr "Імпортовані пункти"
 #~ msgid "No error"
 #~ msgstr "Немає помилок"
 
-#~ msgid "Open error"
-#~ msgstr "Помилка відкривання"
-
 #~ msgid "Open timed out"
 #~ msgstr "Перевищено час очікування на відкриття"
 
@@ -71506,9 +71709,6 @@ msgstr "Імпортовані пункти"
 #~ msgstr ""
 #~ "Не знайдено підтримуваних кодеків. (Має бути встановлено до одного з "
 #~ "каталогів PATH бібліотеки ffmpeg/avconv.)"
-
-#~ msgid "Start"
-#~ msgstr "Почати"
 
 #~ msgid "Video writing failed."
 #~ msgstr "Спроба записати відео зазнала невдачі."

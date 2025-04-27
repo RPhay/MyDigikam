@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-24 01:54+0000\n"
+"POT-Creation-Date: 2025-04-27 01:57+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -76,6 +76,7 @@ msgid "Select the current day"
 msgstr "选择今天"
 
 #: core/app/date/ddatepicker.cpp:574
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -28004,6 +28005,7 @@ msgstr "迁移 ->"
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:109
 #, kde-format
 msgid "Cancel"
 msgstr "取消"
@@ -50511,6 +50513,7 @@ msgid "Begin"
 msgstr "开始"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:86
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
@@ -58552,13 +58555,13 @@ msgid ""
 "Show the result of converted date 1968-12-26 using your customized format."
 msgstr "使用您的自定义日期格式来演示 1968-12-26 这个日期的显示效果。"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:239
+#: core/utilities/import/widgets/albumcustomizer.cpp:248
 #, kde-format
 msgctxt "@info Example of custom date format for album naming"
 msgid "Ex.: %1"
 msgstr "例如：%1"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:243
+#: core/utilities/import/widgets/albumcustomizer.cpp:252
 #, kde-format
 msgctxt "@info Custom date format"
 msgid "Format is not valid..."
@@ -64148,6 +64151,184 @@ msgctxt "@title:tab"
 msgid "Sidecars"
 msgstr "附带文件"
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:82
+#, kde-format
+msgctxt "@title:window"
+msgid "AI GPU Test"
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:85
+#, kde-format
+msgctxt "@info"
+msgid ""
+"This will check if your system is able to use GPU acceleration\n"
+"when running the AI models by validating OpenCV and OpenCL have the\n"
+"required libraries and drivers installed.\n"
+"\n"
+"Do you want to test your system now?"
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "Start"
+msgid "Start"
+msgstr "启动"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
+#, fuzzy, kde-format
+#| msgid "Beta tester"
+msgctxt "@action:button"
+msgid "Begin test"
+msgstr "Beta 版本测试人员"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:138
+#, fuzzy, kde-format
+#| msgid "Settings..."
+msgctxt "@action:button"
+msgid "Testing..."
+msgstr "设置..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:144
+#, kde-format
+msgid "Starting OpenCV OpenCL DNN test..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:207
+#, kde-format
+msgid ""
+"Test completed successfully! Your system can use GPU acceleration for the AI "
+"models."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:211
+#, kde-format
+msgid ""
+"Test failed. Your system may not be able to use GPU acceleration for the AI "
+"models."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
+#, kde-format
+msgctxt "@action:button"
+msgid "Close the test dialog"
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:240
+#, kde-format
+msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:245
+#, fuzzy, kde-format
+#| msgid "OpenGL support is not available on your system."
+msgid "OpenCL is available on this system."
+msgstr "OpenGL 支持在本机系统中不可用。"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#, kde-format
+msgid "OpenCL acceleration device is available."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:255
+#, fuzzy, kde-format
+#| msgctxt "@info: icc profile class"
+#| msgid "Link device"
+msgid "Using device: %1"
+msgstr "关联设备"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:259
+#, fuzzy, kde-format
+#| msgid "This collection is currently not available."
+msgid "OpenCL acceleration device is not available."
+msgstr "此相册集合当前不可用。"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:264
+#, fuzzy, kde-format
+#| msgid "OpenGL support is not available on your system."
+msgid "OpenCL is not available on this system."
+msgstr "OpenGL 支持在本机系统中不可用。"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:269
+#, fuzzy, kde-format
+#| msgid "Loading image..."
+msgid "Loading test image..."
+msgstr "正在加载图像..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:275
+#, fuzzy, kde-format
+#| msgid "Binary not found."
+msgid "Test image not found."
+msgstr "未找到可执行文件。"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to save image to %1"
+msgid "Failed to load test image from %1"
+msgstr "无法保存照片到 %1"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
+#, fuzzy, kde-format
+#| msgid "Pan the image to a region"
+msgid "Preparing the image for processing..."
+msgstr "平移图像到区域"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:314
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Initializing Main View..."
+msgid "Initializing face detection model..."
+msgstr "正在初始化主视图..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:318
+#, fuzzy, kde-format
+#| msgid "Error starting face detection."
+msgid "Running face detection..."
+msgstr "启动人脸检测时出错。"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:334
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Initializing Main View..."
+msgid "Initializing feature extraction model..."
+msgstr "正在初始化主视图..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:338
+#, fuzzy, kde-format
+#| msgid "Preparing collection scan..."
+msgid "Preparing face for feature extraction..."
+msgstr "正在准备扫描相册集合..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:351
+#, kde-format
+msgid "Extracting face features..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:357
+#, fuzzy, kde-format
+#| msgid "Failed to create folder"
+msgid "Failed to extract face features."
+msgstr "无法创建文件夹"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
+#, fuzzy, kde-format
+#| msgid "Database copied successfully."
+msgid "All tests completed successfully!"
+msgstr "数据库复制成功。"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:367
+#, fuzzy, kde-format
+#| msgid "OpenGL Error"
+msgid "OpenCV error: %1"
+msgstr "OpenGL 错误"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:372
+#, fuzzy, kde-format
+#| msgid "Error"
+msgid "Error: %1"
+msgstr "错误"
+
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
 #, kde-format
@@ -64493,84 +64674,109 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "分组"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:91
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "按照系统屏幕缩放比率进行高分辨率缩放"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:92
+#: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "在高分辨率下使用像素映射"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:96
-#, kde-format
-msgid "Use the software OpenGL for rendering"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:102
+#, fuzzy, kde-format
+#| msgid "Use the software OpenGL for rendering"
+msgid "Use software OpenGL for rendering"
 msgstr "使用软件 OpenGL 渲染"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, kde-format
-msgid "Use the OpenCL hardware acceleration"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#, fuzzy, kde-format
+#| msgid "Use the OpenCL hardware acceleration"
+msgid "Use OpenCL hardware acceleration"
 msgstr "使用 OpenCL 硬件加速"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
+#: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr "此选项仍是实验性质，需手动设置某些环境变量才能生效。"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#: core/utilities/setup/misc/systemsettingswidget.cpp:106
+#, fuzzy, kde-format
+#| msgid "Use the OpenCL hardware acceleration"
+msgid "Use OpenCL hardware acceleration for AI models"
+msgstr "使用 OpenCL 硬件加速"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
+#, fuzzy, kde-format
+#| msgid ""
+#| "This option is still experimental and requires that certain environment "
+#| "variables are set manually."
+msgid ""
+"This option is still experimental and may lead to crashes if the proper "
+"drivers are not installed."
+msgstr "此选项仍是实验性质，需手动设置某些环境变量才能生效。"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:110
 #, kde-format
-msgid "Use the video hardware acceleration"
+msgid "Test GPU AI compatibility"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#, fuzzy, kde-format
+#| msgid "Use the video hardware acceleration"
+msgid "Use video hardware acceleration"
 msgstr "使用显卡硬件加速"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:104
-#, kde-format
-msgid "Use the video textures conversion"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:116
+#, fuzzy, kde-format
+#| msgid "Use the video textures conversion"
+msgid "Use video textures conversion"
 msgstr "使用显卡纹理转换"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:106
+#: core/utilities/setup/misc/systemsettingswidget.cpp:118
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "渲染视频使用的解码器后端程序："
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:109
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (默认)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:113
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (系统)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:117
+#: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (系统)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (系统)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#: core/utilities/setup/misc/systemsettingswidget.cpp:139
 #, kde-format
 msgid "Download required binary data:"
 msgstr "下载所需的软件包："
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:128
+#: core/utilities/setup/misc/systemsettingswidget.cpp:140
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "打开下载对话框..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:143
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "启用内部调试日志"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:146
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

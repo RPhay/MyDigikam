@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-24 01:54+0000\n"
+"POT-Creation-Date: 2025-04-27 01:57+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -106,6 +106,7 @@ msgid "Select the current day"
 msgstr "Norādīt šodienu"
 
 #: core/app/date/ddatepicker.cpp:574
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -28607,6 +28608,7 @@ msgstr ""
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:109
 #, kde-format
 msgid "Cancel"
 msgstr "Atcelt"
@@ -52587,6 +52589,7 @@ msgid "Begin"
 msgstr ""
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:86
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:110
 #, fuzzy, kde-format
 #| msgid "Cancel"
 msgctxt "@action:button"
@@ -60878,13 +60881,13 @@ msgid ""
 "Show the result of converted date 1968-12-26 using your customized format."
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:239
+#: core/utilities/import/widgets/albumcustomizer.cpp:248
 #, fuzzy, kde-format
 msgctxt "@info Example of custom date format for album naming"
 msgid "Ex.: %1"
 msgstr "mainīts: %1"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:243
+#: core/utilities/import/widgets/albumcustomizer.cpp:252
 #, fuzzy, kde-format
 msgctxt "@info Custom date format"
 msgid "Format is not valid..."
@@ -66582,6 +66585,179 @@ msgctxt "@title:tab"
 msgid "Sidecars"
 msgstr "Datu papildfaili"
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:82
+#, kde-format
+msgctxt "@title:window"
+msgid "AI GPU Test"
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:85
+#, kde-format
+msgctxt "@info"
+msgid ""
+"This will check if your system is able to use GPU acceleration\n"
+"when running the AI models by validating OpenCV and OpenCL have the\n"
+"required libraries and drivers installed.\n"
+"\n"
+"Do you want to test your system now?"
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "Start"
+msgid "Start"
+msgstr "Sākt"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
+#, fuzzy, kde-format
+#| msgid "Beta tester"
+msgctxt "@action:button"
+msgid "Begin test"
+msgstr "Beta testētājs"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:138
+#, fuzzy, kde-format
+#| msgid "Settings..."
+msgctxt "@action:button"
+msgid "Testing..."
+msgstr "Iestatījumi..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:144
+#, kde-format
+msgid "Starting OpenCV OpenCL DNN test..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:207
+#, kde-format
+msgid ""
+"Test completed successfully! Your system can use GPU acceleration for the AI "
+"models."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:211
+#, kde-format
+msgid ""
+"Test failed. Your system may not be able to use GPU acceleration for the AI "
+"models."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
+#, fuzzy, kde-format
+#| msgid "Close the theme designer"
+msgctxt "@action:button"
+msgid "Close the test dialog"
+msgstr "Aizvērt tēmu veidotāju"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:240
+#, kde-format
+msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:245
+#, fuzzy, kde-format
+#| msgid "OpenGL support is not available on your system."
+msgid "OpenCL is available on this system."
+msgstr "OpenGL jūsu sistēmā nav pieejams."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#, fuzzy, kde-format
+#| msgid "No options available"
+msgid "OpenCL acceleration device is available."
+msgstr "Nav opciju"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:255
+#, fuzzy, kde-format
+#| msgid "Link device"
+msgid "Using device: %1"
+msgstr "Savienojuma ierīce"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:259
+#, fuzzy, kde-format
+#| msgid "This collection is currently not available."
+msgid "OpenCL acceleration device is not available."
+msgstr "Šī kolekcija šobrīd nav pieejama."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:264
+#, fuzzy, kde-format
+#| msgid "OpenGL support is not available on your system."
+msgid "OpenCL is not available on this system."
+msgstr "OpenGL jūsu sistēmā nav pieejams."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:269
+#, fuzzy, kde-format
+#| msgid "Loading image..."
+msgid "Loading test image..."
+msgstr "Ielādē attēlu..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:275
+#, fuzzy, kde-format
+#| msgid "Collection not found"
+msgid "Test image not found."
+msgstr "Kolekcija nav atrasta"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
+#, fuzzy, kde-format
+msgid "Failed to load test image from %1"
+msgstr "Neizdevās saglabāt failu: %."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
+#, fuzzy, kde-format
+#| msgid "Pan the image to a region"
+msgid "Preparing the image for processing..."
+msgstr "Panoramēt attēlu uz apgabalu"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:314
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Initializing Main View..."
+msgid "Initializing face detection model..."
+msgstr "Inicializē galveno skatu..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:318
+#, fuzzy, kde-format
+msgid "Running face detection..."
+msgstr "Pretēja kārtība"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:334
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Initializing Main View..."
+msgid "Initializing feature extraction model..."
+msgstr "Inicializē galveno skatu..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:338
+#, fuzzy, kde-format
+msgid "Preparing face for feature extraction..."
+msgstr "Sagatavojas kolekcijas skenēšanai"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:351
+#, kde-format
+msgid "Extracting face features..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:357
+#, fuzzy, kde-format
+msgid "Failed to extract face features."
+msgstr "Neizdevās saglabāt attēlu..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
+#, fuzzy, kde-format
+msgid "All tests completed successfully!"
+msgstr "Attēls veiksmīgi apstrādāts..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:367
+#, fuzzy, kde-format
+#| msgid "OpenGL error"
+msgid "OpenCV error: %1"
+msgstr "OpenGL kļūda"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:372
+#, fuzzy, kde-format
+#| msgid "Error"
+msgid "Error: %1"
+msgstr "Kļūda"
+
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
 #, kde-format
@@ -66900,87 +67076,104 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Grupa"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:91
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:92
+#: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:96
+#: core/utilities/setup/misc/systemsettingswidget.cpp:102
 #, kde-format
-msgid "Use the software OpenGL for rendering"
+msgid "Use software OpenGL for rendering"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:97
+#: core/utilities/setup/misc/systemsettingswidget.cpp:103
 #, kde-format
-msgid "Use the OpenCL hardware acceleration"
+msgid "Use OpenCL hardware acceleration"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
+#: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, kde-format
-msgid "Use the video hardware acceleration"
-msgstr ""
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:104
-#, kde-format
-msgid "Use the video textures conversion"
-msgstr ""
-
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
+#, kde-format
+msgid "Use OpenCL hardware acceleration for AI models"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
+#, kde-format
+msgid ""
+"This option is still experimental and may lead to crashes if the proper "
+"drivers are not installed."
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:110
+#, kde-format
+msgid "Test GPU AI compatibility"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#, kde-format
+msgid "Use video hardware acceleration"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:116
+#, kde-format
+msgid "Use video textures conversion"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:118
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:109
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, fuzzy, kde-format
 #| msgctxt "@item: default raw plugin"
 #| msgid " (default)"
 msgid "FFmpeg (Default)"
 msgstr "(noklusējuma)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:113
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, kde-format
 msgid "GStreamer (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:117
+#: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, fuzzy, kde-format
 msgid "WMF (System)"
 msgstr "Dublin Core"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, fuzzy, kde-format
 msgid "AVFoundation (System)"
 msgstr "Dublin Core"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#: core/utilities/setup/misc/systemsettingswidget.cpp:139
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgid "Download required binary data:"
 msgstr "Ielādē failu %1..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:128
+#: core/utilities/setup/misc/systemsettingswidget.cpp:140
 #, fuzzy, kde-format
 msgid "Open Download Dialog..."
 msgstr "Atver ielādes logu"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:143
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:146
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -68779,11 +68972,6 @@ msgstr "&Kārtot attēlus"
 #~ msgstr "Eksportēt"
 
 #, fuzzy
-#~| msgid "OpenGL error"
-#~ msgid "Open error"
-#~ msgstr "OpenGL kļūda"
-
-#, fuzzy
 #~ msgid "Open timed out"
 #~ msgstr "Atvērt redaktorā"
 
@@ -69881,12 +70069,6 @@ msgstr "&Kārtot attēlus"
 #~| msgid "Searches"
 #~ msgid "Search Results"
 #~ msgstr "Meklēšanas"
-
-#, fuzzy
-#~| msgctxt "@action: button"
-#~| msgid "Start"
-#~ msgid "Start"
-#~ msgstr "Sākt"
 
 #, fuzzy
 #~| msgid "Show image creation date"
@@ -72856,11 +73038,6 @@ msgstr "&Kārtot attēlus"
 #~| msgid "Open in Terminal"
 #~ msgid "Open in Browser..."
 #~ msgstr "Atvērt terminālī"
-
-#, fuzzy
-#~| msgid "No options available"
-#~ msgid "No new version is available."
-#~ msgstr "Nav opciju"
 
 #~ msgid "Auto Correction"
 #~ msgstr "Automātiska korekcija"
@@ -75872,9 +76049,6 @@ msgstr "&Kārtot attēlus"
 
 #~ msgid "Theme color scheme file to open."
 #~ msgstr "Krāsu shēmas fails, ko atvērt."
-
-#~ msgid "Close the theme designer"
-#~ msgstr "Aizvērt tēmu veidotāju"
 
 #~ msgid "Property: "
 #~ msgstr "Īpašība: "
