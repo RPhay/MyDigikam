@@ -12,9 +12,8 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
-#pragma once
 
-// Qt includes
+#pragma once
 
 // Local includes
 
@@ -26,11 +25,11 @@ namespace Digikam
 /**
  * @brief This class is used to lock OpenCL in OpenCV when using DNN.
  * It is used to prevent OpenCL from being used when DNN is not compatible with it.
- * 
+ *
  * It's used much like a QMutexLocker. Simply create an instance of this class
  * and it will set OpenCV to use the correct OpenCL settings for DNN usage. When the
  * instance is destroyed, it will revert the OpenCL settings back to the global value.
- * 
+ *
  * @note OpenCV will use OpenCL only if using a cv::UMat. If using a cv::Mat, OpenCL
  * will not be used so there is no need to use this class with cv::Mat.
  */
@@ -38,6 +37,7 @@ namespace Digikam
 class DIGIKAM_EXPORT OpenCVOpenCLDNNSetter
 {
 public:
+
     OpenCVOpenCLDNNSetter();
     ~OpenCVOpenCLDNNSetter();
 
@@ -45,6 +45,7 @@ public:
     void relockOpenCL();
 
 private:
+
     bool locked             = false;
 
     class Private;

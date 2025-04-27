@@ -26,26 +26,29 @@
 #include "digikam_debug.h"
 #include "systemsettings.h"
 #include "digikam_opencv.h"
- 
+
 namespace Digikam
 {
 
 class Q_DECL_HIDDEN OpenCVOpenCLDNNSetter::Private
 {
 public:
+
     QMutex   openCLMutex;
     int      openCLRefCount         = 0;
     bool     dnnOpenCL              = false;
     bool     globalOpenCL           = false;
     int      ref                    = 0;
 
+public:
+
     Private()
     {
         SystemSettings system = SystemSettings(qApp->applicationName());
-        globalOpenCL = system.enableOpenCL;
+        globalOpenCL          = system.enableOpenCL;
 
-        dnnOpenCL = system.enableOpenCL &&
-                    system.enableDnnOpenCL;
+        dnnOpenCL             = system.enableOpenCL &&
+                                system.enableDnnOpenCL;
     }
 };
 
@@ -70,13 +73,15 @@ OpenCVOpenCLDNNSetter::~OpenCVOpenCLDNNSetter()
     if (d)
     {
         --(d->ref);
-
+/*
         // don't delete d. We need to keep it around for the next instance
-        // if (0 == d->ref)
-        // {
-        //     delete d;
-        //     d = nullptr;
-        // }
+
+        if (0 == d->ref)
+        {
+            delete d;
+            d = nullptr;
+        }
+*/
     }
 }
 

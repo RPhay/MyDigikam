@@ -96,8 +96,8 @@ OpenCVOpenCLDNNTestDlg::OpenCVOpenCLDNNTestDlg(QWidget* const parent)
 
     d->message          = new QLabel(messageString, this);
     d->message->setWordWrap(true);
-    
-    d->progressText      = new QTextEdit(this);
+
+    d->progressText     = new QTextEdit(this);
     d->progressText->setReadOnly(true);
     d->progressText->setFixedHeight(100);
     d->progressText->setVisible(false);  // Initially hidden until test starts
@@ -121,8 +121,9 @@ OpenCVOpenCLDNNTestDlg::OpenCVOpenCLDNNTestDlg(QWidget* const parent)
 
     connect(d->cancelButton, SIGNAL(clicked()),
             this, SLOT(slotCancel()));
-            
+
     // Connect the notification signal to its slot for progress updates
+
     connect(this, SIGNAL(signalNotification(QString)),
             this, SLOT(slotNotification(QString)));
 }
@@ -139,6 +140,7 @@ void OpenCVOpenCLDNNTestDlg::slotStart()
     d->cancelButton->setEnabled(false);
 
     // Clear and show the progress text area
+
     d->progressText->clear();
     d->progressText->setVisible(true);
     d->progressText->append(i18n("Starting OpenCV OpenCL DNN test..."));
@@ -163,11 +165,14 @@ void OpenCVOpenCLDNNTestDlg::slotStart()
                             ));
 
     connect(&d->testingWatcher, &QFutureWatcher<bool>::finished,
-            this, [this]() {
+            this, [this]()
+            {
                 // Get result directly from the watcher when it's finished
+
                 slotTestFinished(d->testingWatcher.result());
-            });
- 
+            }
+    );
+
     disconnect(d->startButton, SIGNAL(clicked()),
                this, SLOT(slotStart()));
 
@@ -200,8 +205,9 @@ void OpenCVOpenCLDNNTestDlg::slotTestFinished(bool result)
     d->tested = result;
 
     // Show test results in the progress text
+
     QString resultMessage;
-    
+
     if (d->tested)
     {
         resultMessage = i18n("Test completed successfully! Your system can use GPU acceleration for the AI models.");
@@ -210,9 +216,9 @@ void OpenCVOpenCLDNNTestDlg::slotTestFinished(bool result)
     {
         resultMessage = i18n("Test failed. Your system may not be able to use GPU acceleration for the AI models.");
     }
-    
+
     d->progressText->append(QLatin1String("\n") + resultMessage);
-    
+
     d->startButton->setText(i18nc("@action:button", "Close"));
     d->startButton->setToolTip(i18nc("@action:button", "Close the test dialog"));
     d->startButton->setEnabled(true);
@@ -221,9 +227,11 @@ void OpenCVOpenCLDNNTestDlg::slotTestFinished(bool result)
 void OpenCVOpenCLDNNTestDlg::slotNotification(const QString& message)
 {
     // Append to progress text instead of replacing the message
+
     d->progressText->append(message);
-    
+
     // Auto-scroll to the bottom
+
     QTextCursor cursor = d->progressText->textCursor();
     cursor.movePosition(QTextCursor::End);
     d->progressText->setTextCursor(cursor);
@@ -238,20 +246,24 @@ bool OpenCVOpenCLDNNTestDlg::runTest()
         // turn on OpenCL
 
         Q_EMIT signalNotification(i18n("Checking for OpenCL GPU acceleration compatibility with AI models..."));
+
         cv::ocl::setUseOpenCL(true);
-        
+
         if (cv::ocl::haveOpenCL())
         {
             Q_EMIT signalNotification(i18n("OpenCL is available on this system."));
+
             cv::ocl::Device device = cv::ocl::Device::getDefault();
+
             if (
-                !device.empty() &&
-                device.available() &&
-                device.imageSupport() &&
+                !device.empty()         &&
+                device.available()      &&
+                device.imageSupport()   &&
                 (cv::ocl::Device::TYPE_CPU != device.type())
                )
             {
                 Q_EMIT signalNotification(i18n("OpenCL acceleration device is available."));
+
                 Q_EMIT signalNotification(i18n("Using device: %1", QString::fromStdString(device.name())));
             }
             else
@@ -268,7 +280,10 @@ bool OpenCVOpenCLDNNTestDlg::runTest()
 
         Q_EMIT signalNotification(i18n("Loading test image..."));
 
-        DNNModelBase* testImage = DNNModelManager::instance()->getModel(QLatin1String("DNNTestImage"), DNNModelUsage::DNNUsageFaceDetection);
+        DNNModelBase* const testImage = DNNModelManager::instance()->getModel(
+                                                                              QLatin1String("DNNTestImage"),
+                                                                              DNNModelUsage::DNNUsageFaceDetection
+                                                                             );
 
         if (!QFileInfo::exists(testImage->getModelPath()))
         {
@@ -276,10 +291,11 @@ bool OpenCVOpenCLDNNTestDlg::runTest()
         }
 
         QImage inputImage(testImage->getModelPath());
-        
+
         if (inputImage.isNull())
         {
-            throw std::runtime_error(i18n("Failed to load test image from %1", testImage->getModelPath()).toStdString());
+            throw std::runtime_error(i18n("Failed to load test image from %1",
+                                     testImage->getModelPath()).toStdString());
         }
 
         Q_EMIT signalNotification(i18n("Preparing the image for processing..."));
@@ -292,12 +308,12 @@ bool OpenCVOpenCLDNNTestDlg::runTest()
         // create a cv::UMat image from the QImage
 
         cv::Mat cvImage  = cv::Mat(
-                                      inputImage.height(),
-                                      inputImage.width(),
-                                      CV_8UC3,
-                                      inputImage.scanLine(0),
-                                      inputImage.bytesPerLine()
-                                     );
+                                   inputImage.height(),
+                                   inputImage.width(),
+                                   CV_8UC3,
+                                   inputImage.scanLine(0),
+                                   inputImage.bytesPerLine()
+                                  );
 
         cv::UMat cvUImage = cvImage.getUMat(cv::ACCESS_READ);
 
@@ -312,8 +328,11 @@ bool OpenCVOpenCLDNNTestDlg::runTest()
         // find the face
 
         Q_EMIT signalNotification(i18n("Initializing face detection model..."));
-        
-        DNNModelYuNet* detectorModel = static_cast<DNNModelYuNet*>(DNNModelManager::instance()->getModel(QLatin1String("YuNet"), DNNModelUsage::DNNUsageFaceDetection));
+
+        DNNModelYuNet* detectorModel = static_cast<DNNModelYuNet*>(
+                                                                   DNNModelManager::instance()->getModel(QLatin1String("YuNet"),
+                                                                   DNNModelUsage::DNNUsageFaceDetection)
+                                                                  );
 
         Q_EMIT signalNotification(i18n("Running face detection..."));
 
@@ -333,7 +352,10 @@ bool OpenCVOpenCLDNNTestDlg::runTest()
 
         Q_EMIT signalNotification(i18n("Initializing feature extraction model..."));
 
-        DNNModelSFace* model = static_cast<DNNModelSFace*>(DNNModelManager::instance()->getModel(QLatin1String("SFace"), DNNModelUsage::DNNUsageFaceRecognition));
+        DNNModelSFace* model = static_cast<DNNModelSFace*>(
+                                                           DNNModelManager::instance()->getModel(QLatin1String("SFace"),
+                                                           DNNModelUsage::DNNUsageFaceRecognition)
+                                                          );
 
         Q_EMIT signalNotification(i18n("Preparing face for feature extraction..."));
 
@@ -360,19 +382,22 @@ bool OpenCVOpenCLDNNTestDlg::runTest()
         // everything passed successfully
 
         Q_EMIT signalNotification(i18n("All tests completed successfully!"));
+
         result = true;
     }
-    catch(const cv::Exception& e)
+    catch (const cv::Exception& e)
     {
         Q_EMIT signalNotification(i18n("OpenCV error: %1", QString::fromLatin1(e.what())));
+
         result = false;
     }
-    catch(const std::exception& e)
+    catch (const std::exception& e)
     {
         Q_EMIT signalNotification(i18n("Error: %1", QString::fromLatin1(e.what())));
+
         result = false;
     }
-    
+
     return result;
 }
 

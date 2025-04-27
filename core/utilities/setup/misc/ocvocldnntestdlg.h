@@ -57,6 +57,8 @@ private:
 
     bool runTest();
 
+private:
+
     class Private;
     Private* const d = nullptr;
 };
