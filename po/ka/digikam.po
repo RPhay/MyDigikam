@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-24 01:54+0000\n"
-"PO-Revision-Date: 2024-07-07 06:52+0200\n"
+"POT-Creation-Date: 2025-04-27 01:57+0000\n"
+"PO-Revision-Date: 2025-04-26 10:03+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -77,6 +77,7 @@ msgid "Select the current day"
 msgstr "აირჩიეთ მიმდინარე დღე"
 
 #: core/app/date/ddatepicker.cpp:574
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -311,13 +312,11 @@ msgid "M&erge Here"
 msgstr "აქ შერწყმა"
 
 #: core/app/dragdrop/tagdragdrop.cpp:251
-#, fuzzy, kde-format
-#| msgid "Change face name from '%2' to '%3'"
-#| msgid_plural "Change face names from '%2' to '%3'"
+#, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
-msgstr[0] "სახის ჭდის '%2'-დან '%3'-ზე შეცვლა"
-msgstr[1] "სახის ჭდის '%2'-დან '%3'-ზე შეცვლა"
+msgstr[0] "დაადასტურეთ სახის სახელი '%2' ელემენტისთვის"
+msgstr[1] "დაადასტურეთ სახის სახელი '%2' ელემენტისთვის"
 
 #: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:451
 #, kde-format
@@ -552,15 +551,12 @@ msgstr[0] "ნაგავში გადატანა"
 msgstr[1] "%1 ფაილის ნაგავში გადატანა"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
-msgstr[0] "გამოსახულების ხარისხის ტიპი"
-msgstr[1] "გამოსახულების ხარისხის ტიპი"
+msgstr[0] "გამოსახულების ხარისხის სკანირება"
+msgstr[1] "გამოსახულების ხარისხის სკანირება"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
 #, kde-format
@@ -902,11 +898,9 @@ msgstr[1] "%1 ელემენტი"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:297
 #: core/app/items/utils/itemcategorydrawer.cpp:306
-#, fuzzy, kde-format
-#| msgctxt "@info: media loading"
-#| msgid "Invalid media"
+#, kde-format
 msgid "Invalid date"
-msgstr "არასწორი მედია"
+msgstr "არასწორი თარიღი"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:337
 #, kde-format
@@ -1601,7 +1595,7 @@ msgstr "მონიშნული გამოსახულებები�
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Copy to..."
-msgstr "გადაკოპირება..."
+msgstr "&კოპირება..."
 
 #: core/app/main/digikamapp_setup.cpp:234
 #, kde-format
@@ -1706,7 +1700,7 @@ msgstr "ხედები"
 #, kde-format
 msgctxt "@action: Go to thumbnails (icon) view"
 msgid "Thumbnails"
-msgstr "ესკიზები"
+msgstr "მინატურები"
 
 #: core/app/main/digikamapp_setup.cpp:341
 #: core/app/views/stack/itemiconview_views.cpp:303
@@ -2124,12 +2118,10 @@ msgid "By Month"
 msgstr "თვით"
 
 #: core/app/main/digikamapp_setup.cpp:678
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Date"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Day"
-msgstr "თარიღით"
+msgstr "დღით"
 
 #: core/app/main/digikamapp_setup.cpp:709
 #, kde-format
@@ -2354,8 +2346,7 @@ msgid "Rotate"
 msgstr "შემობრუნება"
 
 #: core/app/main/digikamapp_setup.cpp:1069
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "ავტომატური მობრუნება"
@@ -2746,23 +2737,19 @@ msgid "Feedback: "
 msgstr ""
 
 #: core/app/utils/digikam_version.cpp:69
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgid "Documentation: "
-msgstr "დოკუმენტაცია"
+msgstr "დოკუმენტაცია: "
 
 #: core/app/utils/digikam_version.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@item: Set a fixed date"
-#| msgid "Fixed Date"
+#, kde-format
 msgid "Build Date: "
-msgstr "ფიქსირებული თარიღი"
+msgstr "აგების თარიღი: "
 
 #: core/app/utils/digikam_version.cpp:75
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgid "Build Target: "
-msgstr "სამიზნე წერტილი"
+msgstr "აგების სამიზნე: "
 
 #: core/app/utils/digikam_version.cpp:78
 #, kde-format
@@ -2770,11 +2757,9 @@ msgid "Build Architecture: "
 msgstr ""
 
 #: core/app/utils/digikam_version.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Dimensions: "
+#, kde-format
 msgid "Git Revision: "
-msgstr "ზომები: "
+msgstr "Git რევიზია: "
 
 #: core/app/utils/digikam_version.cpp:98
 #, kde-format
@@ -2868,20 +2853,17 @@ msgstr "რუკა"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:80
 #: core/app/views/sidebar/labelssidebarwidget.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality Scan"
-msgstr "გამოსახულების ხარისხის ტიპი"
+msgstr "გამოსახულების ხარისხის სკანირება"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to update all image fingerprints."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for image quality parsing"
-msgstr "გამოიყენეთ ეს ღილაკი ყველა გამოსახულების ანაბეჭდის განახლებისთვის."
+msgstr ""
+"გამოიყენეთ ეს ღილაკი მონიშნულ ალბომებში გამოსახულების ხარისხის დამუშავების "
+"სკანირებისთვის"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:130
@@ -2964,10 +2946,9 @@ msgstr "არსებული ჭდეები"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:133
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:144
-#, fuzzy, kde-format
-#| msgid "Auto-tags Assignment"
+#, kde-format
 msgid "Auto-tag Scan"
-msgstr "ჭდეების ავტომატური მინიჭება"
+msgstr "ავტოჭდეების სკანირება"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:146
 #, kde-format
@@ -3239,15 +3220,13 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr ""
 
 #: core/app/views/stack/trashview.cpp:447
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
-msgstr "არჩეული"
+msgstr "მონიშნული"
 
 #: core/app/views/stack/trashview.cpp:449
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "წაშლა"
@@ -5964,9 +5943,7 @@ msgid "Assign Tags"
 msgstr "ჭდეების მინიჭება"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign tags automatically to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically assign tags to images"
 msgstr "ხელსაწყო გამოსახულებისთვის ჭდეების ავტომატურად მისანიჭებლად"
@@ -6000,13 +5977,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgctxt "@title"
 msgid "Image Quality Scan"
-msgstr "გამოსახულების ხარისხის ტიპი"
+msgstr "გამოსახულების ხარისხის სკანირება"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:57
 #, kde-format
@@ -6250,19 +6224,16 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@title"
 msgid "Auto-Rotate"
 msgstr "ავტომატური მობრუნება"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign tags automatically to images"
+#, kde-format
 msgctxt "@info"
 msgid "AI tool to automatically rotate images"
-msgstr "ხელსაწყო გამოსახულებისთვის ჭდეების ავტომატურად მისანიჭებლად"
+msgstr "ხი-ის ხელსაწყო გამოსახულებების ავტომატურად შესაბრუნებლად"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
 #, kde-kuit-format
@@ -6415,37 +6386,30 @@ msgstr[0] "უზარმაზარი (1 პიქსელი)"
 msgstr[1] "უზარმაზარი (%1 პიქსელი)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:170
-#, fuzzy, kde-format
-#| msgid "Big (1 pixel)"
-#| msgid_plural "Big (%1 pixels)"
+#, kde-format
 msgid "QXGA (1 pixel)"
 msgid_plural "QXGA (%1 pixels)"
-msgstr[0] "დიდი (1 პიქსელი)"
-msgstr[1] "დიდი (%1 პიქსელი)"
+msgstr[0] "QXGA (1 პიქსელი)"
+msgstr[1] "QXGA (%1 პიქსელი)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:171
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "QHD (1 pixel)"
 msgid_plural "QHD (%1 pixels)"
-msgstr[0] "უზარმაზარი (1 პიქსელი)"
-msgstr[1] "უზარმაზარი (%1 პიქსელი)"
+msgstr[0] "QHD (1 პიქსელი)"
+msgstr[1] "QHD (%1 პიქსელი)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:172
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "UHD (1 pixel)"
 msgid_plural "UHD (%1 pixels)"
-msgstr[0] "უზარმაზარი (1 პიქსელი)"
-msgstr[1] "უზარმაზარი (%1 პიქსელი)"
+msgstr[0] "UHD (1 პიქსელი)"
+msgstr[1] "UHD (%1 პიქსელი)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:174
-#, fuzzy, kde-format
-#| msgid "Enlarge smaller images"
+#, kde-format
 msgid "Do Not Enlarge Small Images"
-msgstr "პატარა გამოსახულებების გადიდება"
+msgstr "არ გაადიდო პატარა გამოსახულებები"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:175
 #, kde-format
@@ -10750,7 +10714,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
-msgstr "შედომა"
+msgstr "შეცდომა"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
 #, kde-format
@@ -12682,7 +12646,7 @@ msgstr "ფლუორესცენტული"
 #, kde-format
 msgctxt "light source"
 msgid "Tungsten (incandescent light)"
-msgstr ""
+msgstr "ვოლფრამის (ვარვარების ნათურა)"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:135
 #, kde-format
@@ -16102,11 +16066,9 @@ msgstr "გამოსახულებების დაწყობის �
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:124
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:155
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Could not load XSL file '%1'"
+#, kde-format
 msgid "Could not copy image to file '%1'"
-msgstr "XSL ფაილის ჩატვირთვა შეუძლებელია: \"%1\"."
+msgstr "ვერ დავაკოპირე გამოსახულება ფაილში '%1'"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:172
 #, kde-format
@@ -16449,10 +16411,9 @@ msgstr "გამოსახულების შენახვა"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
-#, fuzzy, kde-format
-#| msgid "JPEG"
+#, kde-format
 msgid "JPG"
-msgstr "JPEG"
+msgstr "JPG"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
@@ -17950,7 +17911,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Error"
-msgstr "შედომა"
+msgstr "შეცდომა"
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:83
 #, kde-format
@@ -20986,9 +20947,7 @@ msgstr "სურათი მონიშნული არაა. ასა�
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:246
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:250
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Warning"
 msgstr "გაფრთხილება"
@@ -21008,8 +20967,7 @@ msgstr "ავთენტიკაციის შეცდომა. თავ
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:250
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:254
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:254
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Continue"
 msgstr "გაგრძელება"
@@ -21020,8 +20978,7 @@ msgstr "გაგრძელება"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:255
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button start transfert"
 msgid "Cancel"
 msgstr "გაუქმება"
@@ -22079,9 +22036,7 @@ msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgstr "%1-დან ფოტოსეტის ინფორმაციის მოთხოვის შეცდომა. %2\n"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:821
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window failed add photo"
 msgid "Warning"
 msgstr "გაფრთხილება"
@@ -22096,15 +22051,13 @@ msgstr ""
 "გნებავთ გავაგრძელო?"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:826
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Continue"
 msgstr "გაგრძელება"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:827
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button failed add photo"
 msgid "Cancel"
 msgstr "გაუქმება"
@@ -22398,40 +22351,32 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:238
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:242
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:242
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window start transfert"
 msgid "Error"
-msgstr "შედომა"
+msgstr "შეცდომა"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:634
-#, fuzzy, kde-format
-#| msgid "%v / %m"
+#, kde-format
 msgctxt "@info: progress bar start transfert"
 msgid "%v / %m"
 msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:643
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Drive export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Drive export"
 msgstr "Google Drive -ზე გატანა"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Google Photo export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Photo export"
 msgstr "Google Photo-ზე გატანა"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1007
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Warning"
 msgstr "გაფრთხილება"
@@ -22448,16 +22393,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:991
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1012
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Continue"
 msgstr "გაგრძელება"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:992
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1013
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button get photo done"
 msgid "Cancel"
 msgstr "გაუქმება"
@@ -22473,11 +22416,10 @@ msgstr ""
 "გნებავთ, გააგრძელოთ?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1034
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window get photo done"
 msgid "Error"
-msgstr "შედომა"
+msgstr "შეცდომა"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1035
 #, kde-format
@@ -22486,9 +22428,7 @@ msgid "Failed to save image to %1"
 msgstr "სურათის %1-ზე დამახსოვრების შეცდომა"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1056
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window add photo done"
 msgid "Warning"
 msgstr "გაფრთხილება"
@@ -22506,23 +22446,19 @@ msgstr ""
 "გნებავთ, გავაგრძელო?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1062
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Continue"
 msgstr "გაგრძელება"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1063
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button add photo done"
 msgid "Cancel"
 msgstr "გაუქმება"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1106
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window upload photo done"
 msgid "Warning"
 msgstr "გაფრთხილება"
@@ -22537,19 +22473,17 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1112
-#, fuzzy, kde-format
-#| msgid "OK"
+#, kde-format
 msgctxt "@action: button upload photo done"
 msgid "OK"
 msgstr "დიახ"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1265
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1282
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@title: window create folder"
 msgid "Error"
-msgstr "შედომა"
+msgstr "შეცდომა"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1266
 #, kde-format
@@ -22573,9 +22507,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1324
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:657
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window change user"
 msgid "Warning"
 msgstr "გაფრთხილება"
@@ -22590,16 +22522,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1329
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:662
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Continue"
 msgstr "გაგრძელება"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1330
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:663
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action: button change user"
 msgid "Cancel"
 msgstr "გაუქმება"
@@ -24192,7 +24122,7 @@ msgstr "სახელი:"
 #, kde-format
 msgctxt "piwigo url settings"
 msgid "Url:"
-msgstr ""
+msgstr "URL:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:179
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:96
@@ -25753,10 +25683,9 @@ msgstr ""
 
 #: core/libs/album/manager/albummanager_talbum.cpp:627
 #: core/libs/album/manager/albummanager_talbum.cpp:1141
-#, fuzzy, kde-format
-#| msgid "Do not ask again"
+#, kde-format
 msgid "Do not ask again at this session"
-msgstr "აღარ მკითხო"
+msgstr "აღარ მკითხო ამ სესიის მიმდინარეობის დროს"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:703
 #, kde-format
@@ -26295,20 +26224,16 @@ msgstr "ყველა ალბომი"
 
 #: core/libs/album/widgets/albumselectors.cpp:176
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@option"
 msgid "Recursive selection"
-msgstr "რეკურსიული მონიშვნა."
+msgstr "რეკურსიული მონიშვნა"
 
 #: core/libs/album/widgets/albumselectors.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive album selection."
-msgstr "რეკურსიული მონიშვნა."
+msgstr "რეკურსიული ალბომის მონიშვნა."
 
 #: core/libs/album/widgets/albumselectors.cpp:187
 #, kde-format
@@ -26335,12 +26260,10 @@ msgid "All tags"
 msgstr "ყველა ჭდე"
 
 #: core/libs/album/widgets/albumselectors.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive selection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive tags selection."
-msgstr "რეკურსიული მონიშვნა."
+msgstr "რეკურსიული ჭდეების მონიშვნა."
 
 #: core/libs/album/widgets/albumselectors.cpp:248
 #, kde-format
@@ -27174,7 +27097,7 @@ msgstr ""
 #: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "Error"
-msgstr "შედომა"
+msgstr "შეცდომა"
 
 #: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, kde-format
@@ -27200,6 +27123,7 @@ msgstr ""
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:109
 #, kde-format
 msgid "Cancel"
 msgstr "გაუქმება"
@@ -27998,7 +27922,7 @@ msgstr "აღარ მკითხო"
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, kde-format
@@ -30119,12 +30043,10 @@ msgstr ""
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:97
 #: core/utilities/import/widgets/freespacewidget.cpp:301
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1%"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:161
 #, kde-format
@@ -32280,9 +32202,7 @@ msgid "JPEG Quality:"
 msgstr "JPEG ხარისხი:"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "&Start"
+#, kde-format
 msgctxt "@action: button to start processing"
 msgid "&Start"
 msgstr "&გაშვება"
@@ -32555,33 +32475,28 @@ msgid "Search in"
 msgstr "სად ვეძებო"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Workflow"
+#, kde-format
 msgctxt "@label short translated text about the Face Worflow."
 msgid "Workflow:"
-msgstr "პროექტის დინება"
+msgstr "სამუშაო პროცესი:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:106
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan new images"
-msgstr "გამოსახულებების სკანირება"
+msgstr "ახალი გამოსახულებების სკანირება"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Scan Images"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Scan all images"
-msgstr "გამოსახულებების სკანირება"
+msgstr "ყველა გამოსახულების სკანირება"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Recognize Faces"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Recognize faces only"
-msgstr "ამოცნობილი სიტყვები"
+msgstr "მხოლოდ სახეების ამოცნობა"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:110
 #, kde-format
@@ -32599,11 +32514,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label short translated text about the Face Detection Accuracy"
 msgid "Accuracy:"
-msgstr "სიზუსტე"
+msgstr "სიზუსტე:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:135
 #, kde-format
@@ -32615,48 +32529,40 @@ msgid ""
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@option: audio"
-#| msgid "Frame size"
+#, kde-format
 msgctxt "@label with a short translated text about the face size for detection"
 msgid "Face size:"
-msgstr "კადრის ზომა"
+msgstr "სახის ზომა:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:144
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Small"
-msgstr "დამატებითი ჭდეები"
+msgstr "ძალიან პატარა"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:145
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Small"
-msgstr "დამატებითი ჭდეები"
+msgstr "პატარა"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Medium"
 msgstr "საშუალო"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:147
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Large"
-msgstr "სამიზნე წერტილი"
+msgstr "დიდი"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Extra tags"
+#, kde-format
 msgctxt "@label: listbox face size"
 msgid "Extra Large"
-msgstr "დამატებითი ჭდეები"
+msgstr "ძალიან დიდი"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:151
 #, kde-format
@@ -32678,17 +32584,15 @@ msgid ""
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "Face Detection Settings"
-msgstr "სახის ამოცნობა"
+msgstr "სახის ამოცნობის მორგება"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label short translated text about the Face Recognition Accuracy"
 msgid "Accuracy:"
-msgstr "სიზუსტე"
+msgstr "სიზუსტე:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:184
 #, kde-format
@@ -32718,11 +32622,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Text Recognition"
+#, kde-format
 msgid "Face Recognition Settings"
-msgstr "ტექსტის ამოცნობა"
+msgstr "სახის ამოცნობის მორგება"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
@@ -33207,19 +33109,16 @@ msgid "aesthetic image quality"
 msgstr "ესთეტიკური გამოსახულების ხარისხი"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Scan Mode: "
+#, kde-format
 msgctxt "@label: short translated text about the image quality scan mode"
 msgid "Scan Mode:"
-msgstr "სკანირების რეჟიმი: "
+msgstr "სკანირების რეჟიმი:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "In All"
+#, kde-format
 msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
-msgstr "ყველაში"
+msgstr "ყველა"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
 #, kde-format
@@ -33236,11 +33135,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign Low Quality to Rejected Label"
-msgstr "&მონიშნული ობიექტებისთვის ჭდის მინიჭება"
+msgstr "დაბალი ხარისხის მინიჭება უარყოფილი ჭდისთვის"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
@@ -33251,11 +33149,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign Medium Quality to Pending Label"
-msgstr "&მონიშნული ობიექტებისთვის ჭდის მინიჭება"
+msgstr "საშუალო ხარისხის მინიჭება დარჩენილი ჭდისთვის"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, kde-format
@@ -33266,11 +33163,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign High Quality to Accepted Label"
-msgstr "&მონიშნული ობიექტებისთვის ჭდის მინიჭება"
+msgstr "მაღალი ხარისხის მინიჭება დადასტურებული ჭდისთვის"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, kde-format
@@ -33281,11 +33177,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:137
-#, fuzzy, kde-format
-#| msgid "Quality:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Quality Engine:"
-msgstr "ხარისხი:"
+msgstr "ხარისხის ძრავა:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
 #, kde-format
@@ -33303,11 +33198,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
-#, fuzzy, kde-format
-#| msgid "Sparsity Factor: "
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Detect by Basic Factors"
-msgstr "იშვიათობის ფაქტორი: "
+msgstr "აღმოჩენა ბაზისური ფაქტორებით"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
 #, kde-format
@@ -33328,9 +33222,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Rejected threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Rejected threshold:"
 msgstr "უარყოფილი ზღვარი:"
@@ -33342,9 +33234,7 @@ msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Pending threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Pending threshold:"
 msgstr "დარჩენილი ზღვარი:"
@@ -33356,9 +33246,7 @@ msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Accepted threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Accepted threshold:"
 msgstr "მისაღები ზღვარი:"
@@ -33370,12 +33258,10 @@ msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Noise"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Blur"
-msgstr "ხმაურის გამოვლენა"
+msgstr "ბუნდოვნების აღმოჩენა"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, kde-format
@@ -33386,9 +33272,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:223
 #: core/libs/imgqsort/imagequalitywidget.cpp:234
 #: core/libs/imgqsort/imagequalitywidget.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Weight:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Weight:"
 msgstr "წონა:"
@@ -33400,9 +33284,7 @@ msgid "Weight to assign to Blur Algorithm"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Noise"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Noise"
 msgstr "ხმაურის გამოვლენა"
@@ -33420,9 +33302,7 @@ msgid "Weight to assign to Noise Algorithm"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Compression"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Compression"
 msgstr "შეკუმშვის გამოვლენა"
@@ -33452,11 +33332,10 @@ msgid "Detect if the images are under-exposed or over-exposed"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:285
-#, fuzzy, kde-format
-#| msgid "Sparsity Factor: "
+#, kde-format
 msgctxt "@title:tab"
 msgid "Basic Factors"
-msgstr "იშვიათობის ფაქტორი: "
+msgstr "ბაზისური ფაქტორები"
 
 #: core/libs/iojobs/iojob.cpp:64
 #, kde-format
@@ -36175,9 +36054,7 @@ msgid "Keywords: "
 msgstr "საკვანძო სიტყვები: "
 
 #: core/libs/properties/itempropertiestab.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Peoples: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
 msgstr "ხალხი: "
@@ -37179,16 +37056,14 @@ msgid "Autotags Assignment"
 msgstr "ჭდეების ავტომატური მინიჭება"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:117
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scan for objects in album: %1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "ობიექტების ძებნა ალბომში: %1"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:121
-#, fuzzy, kde-format
-#| msgid "Scan for faces in %1 albums"
+#, kde-format
 msgid "Scan for objects in %1 albums"
-msgstr "%1 ალბომის სკანირება სახეების მოსაძებნად"
+msgstr "%1 ალბომის სკანირება ობიექტების მოსაძებნად"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:202
 #, kde-format
@@ -37196,22 +37071,19 @@ msgid "Error starting object detection."
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:217
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for objects: %1\n"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "ობიექტები მოიძებნა ელემენტში: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:221
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for objects: %1\n"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "ობიექტები მოიძებნა ელემენტში: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:249
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Object Scanning: %1\n"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "ობიექტების სკანირება: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
@@ -37220,10 +37092,9 @@ msgstr "სკანირება სახეების მოსაძე�
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
+#, kde-format
 msgid "Album: %1\n"
-msgstr "ალბომი \"%1\""
+msgstr "ალბომი %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:256
 #, kde-format
@@ -37248,19 +37119,16 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Scan Mode: "
+#, kde-format
 msgctxt "@label with a short translated text about autotags scanning mode"
 msgid "Scan Mode:"
-msgstr "სკანირების რეჟიმი: "
+msgstr "სკანირების რეჟიმი:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "In All"
+#, kde-format
 msgctxt "@item: all items to scan with autotags"
 msgid "All"
-msgstr "ყველაში"
+msgstr "ყველა"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #, kde-format
@@ -37277,23 +37145,19 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "Auto-tagging mode: "
+#, kde-format
 msgctxt "@label with a short translated text "
 msgid "Auto-Tagging Mode:"
-msgstr "ავტომატური ჭდეების რეჟიმი: "
+msgstr "ავტომატური ჭდეების რეჟიმი:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#, fuzzy, kde-format
-#| msgid "Update only existing timestamps"
+#, kde-format
 msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
-msgstr "მხოლოდ არსებული დროის შტამპების განახლება"
+msgstr "არსებულის ჩანაცვლება"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Update"
+#, kde-format
 msgctxt "@item: update the autotags entries in database"
 msgid "Update"
 msgstr "განახლება"
@@ -37308,26 +37172,23 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Selection model: "
+#, kde-format
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
 msgid "Detection Model:"
-msgstr "მონიშვნის მოდელი: "
+msgstr "აღმოჩენის მოდელი:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
-#, fuzzy, kde-format
-#| msgid "No detail available"
+#, kde-format
 msgid "No models available"
-msgstr "დეტალები ხელმისაწვდომი არაა"
+msgstr "მოდელები ხელმისაწვდომი არაა"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Detection Accuracy:"
-msgstr "სიზუსტე"
+msgstr "აღმოჩენის სიზუსტე:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #, kde-format
@@ -37348,20 +37209,16 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Translate Tags to:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Translate Tags to:"
 msgstr "ჭდეების თარგმნა ენაზე:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Translate to:"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
-msgstr "თარგმნა ენაზე:"
+msgstr "თარგმნა"
 
 #: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, kde-format
@@ -39522,12 +39379,10 @@ msgid "Frame Backward"
 msgstr ""
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:295
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Forward"
+#, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
-msgstr "წინ"
+msgstr "კადრით წინ"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:300
 #, kde-format
@@ -39539,25 +39394,25 @@ msgstr ""
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
-msgstr ""
+msgstr "0.5x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:311
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
-msgstr ""
+msgstr "1.0x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:314
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
-msgstr ""
+msgstr "1.5x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:317
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
-msgstr ""
+msgstr "2.0x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:320
 #, kde-format
@@ -39983,7 +39838,7 @@ msgstr "შეფარდებით კოლორიმეტრული"
 #: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:254
 #, kde-format
 msgid "Absolute Colorimetric"
-msgstr ""
+msgstr "აბსოლუტური კოლორიმეტრული"
 
 #: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:255
 #, kde-format
@@ -40334,7 +40189,7 @@ msgstr "გაჯერებულობა"
 #, kde-format
 msgctxt "@info: icc profile redering"
 msgid "Absolute Colorimetric"
-msgstr ""
+msgstr "აბსოლუტური კოლორიმეტრული"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:548
 #, kde-format
@@ -40473,17 +40328,14 @@ msgid "Releases Manager"
 msgstr "Releases Manager"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:150
-#, fuzzy, kde-format
-#| msgid "Quality:"
+#, kde-format
 msgid "Quality Test Engineer"
-msgstr "ხარისხი:"
+msgstr "ხარისხის შემოწმების ინჟინერი"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "Output: PDF"
-#| msgid "Print to PDF"
+#, kde-format
 msgid "Port to Qt6"
-msgstr "PDF-ში დაბეჭდვა"
+msgstr "გადატანა Qt6-ზე"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:163
 #, kde-format
@@ -40548,12 +40400,9 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:225
 #: core/utilities/maintenance/main/maintenancedlg.cpp:273
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality Scanner"
-msgstr "გამოსახულების ხარისხის ტიპი"
+msgstr "გამოსახულების ხარისხის სკანერი"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:231
 #, kde-format
@@ -40707,10 +40556,9 @@ msgid "Developer (2004)"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:461
-#, fuzzy, kde-format
-#| msgid "Developer and Maintainer"
+#, kde-format
 msgid "Developer and Mentoring (2005-2012)"
-msgstr "პროგრამისტი და წამყვანი"
+msgstr "პროგრამისტი და წამყვანი (2005-2012)"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:87
 #, kde-format
@@ -40800,12 +40648,10 @@ msgstr "სტატუსის ზოლის ჩვენება"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:123
 #: core/libs/widgets/mainview/dzoombar.cpp:213
-#, fuzzy, kde-format
-#| msgctxt "@info: month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "%1 is the zoom percent value, % is the percent sign"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1%"
 
 #: core/libs/widgets/mainview/dzoombar.cpp:227
 #, kde-format
@@ -45345,8 +45191,7 @@ msgstr ""
 #: core/libs/widgets/text/donlinetranslator.cpp:132
 #: core/libs/widgets/text/donlinetranslator.cpp:215
 #: core/libs/widgets/text/donlinetranslator.cpp:232
-#, fuzzy, kde-format
-#| msgid "%1 URL can't be empty."
+#, kde-format
 msgid "%1 URL cannot be empty."
 msgstr "%1 URL ცარიელი ვერ იქნება."
 
@@ -49150,11 +48995,10 @@ msgid "No address book entries found"
 msgstr "მისამართების წიგნაკის ჩანაწერები ვერ მოიძებნა"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:62
-#, fuzzy, kde-format
-#| msgid "Selection model: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Facial Recognition Database"
-msgstr "მონიშვნის მოდელი: "
+msgstr "სახის ამოცნობის მონაცემთა ბაზა"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:65
 #, kde-format
@@ -49172,54 +49016,44 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin"
-msgstr ""
+msgstr "დაწყება"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:86
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "გაუქმება"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "Confirmed"
+#, kde-format
 msgid "Confirming face"
-msgstr "დადასტურდა"
+msgstr "სახის დადასტურება"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Renaming Images"
+#, kde-format
 msgid "Removing face"
-msgstr "სურათების გადარქმევა"
+msgstr "სახის წაშლა"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Remove all Faces"
+#, kde-format
 msgid "Remove all faces"
 msgstr "ყველა სახის წაშლა"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
-#, fuzzy, kde-format
-#| msgid "Updating faces database"
+#, kde-format
 msgid "Editing face tag"
-msgstr "სახეების ბაზის განახლება"
+msgstr "სახის ჭდის ჩასწორება"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove this face region"
+#, kde-format
 msgid "Editing face region"
-msgstr "ამ სახის რეგიონის წაშლა"
+msgstr "სახის რეგიონის ჩასწორება"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:233
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Manual and Name"
+#, kde-format
 msgid "Manually adding face"
-msgstr "ხელით და სახელით"
+msgstr "სახის ხელით ჩამატება"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:271
 #, kde-format
@@ -49632,9 +49466,7 @@ msgid "This shows all found duplicate items."
 msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@group"
-#| msgid "Reference Image Selection Method"
+#, kde-format
 msgctxt "@info"
 msgid "Reference Image Selection Method"
 msgstr "მიმართული გამოსახულების შერჩევის მეთოდი"
@@ -49676,27 +49508,22 @@ msgid "Select method for reference image selection"
 msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:144
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference Album:"
-msgstr "მიბმა:"
+msgstr "მიბმული ალბომი:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Reference"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Reference"
 msgstr "მითითება"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Restriction:"
+#, kde-format
 msgctxt "@label"
 msgid "Restrict Search to:"
-msgstr "შეზღუდვა:"
+msgstr "ძებნის შეზღუდვა:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, kde-format
@@ -49749,11 +49576,10 @@ msgid "Similarity range:"
 msgstr "მსგავსების დიაპაზონი:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:233
-#, fuzzy, kde-format
-#| msgid "Last Search"
+#, kde-format
 msgctxt "@label"
 msgid "Limit Search to:"
-msgstr "ბოლო ძებნა"
+msgstr "ძებნის შეზღუდვა:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:237
 #, kde-format
@@ -49762,11 +49588,10 @@ msgid "None"
 msgstr "არცერთი"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:238
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Reference Album only"
-msgstr "მიბმა:"
+msgstr "მხოლოდ ალბომზე მიმაგრება"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:239
 #, kde-format
@@ -50223,7 +50048,7 @@ msgstr "არა"
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, kde-format
 msgid "S"
-msgstr ""
+msgstr "შაბ"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:387
 #, kde-format
@@ -50532,7 +50357,7 @@ msgstr "იპოდრომი"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:634
 #, kde-format
 msgid "Trunk Link Road"
-msgstr ""
+msgstr "გადახვევა მაგისტრალური გზიდან"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:637
 #, kde-format
@@ -50542,7 +50367,7 @@ msgstr "მაგისტრალური გზა"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:640
 #, kde-format
 msgid "Motorway Link Road"
-msgstr ""
+msgstr "გადახვევა ავტომაგისტრალიდან"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:643
 #, kde-format
@@ -50827,7 +50652,7 @@ msgstr "გეითი"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:811
 #, kde-format
 msgid "Lift Gate"
-msgstr ""
+msgstr "შლაგბაუმი"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:814
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1438
@@ -50858,7 +50683,7 @@ msgstr "სასმელები"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:832
 #, kde-format
 msgid "Hifi"
-msgstr ""
+msgstr "HiFi-ის მაღაზია"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:835
 #, kde-format
@@ -51129,7 +50954,7 @@ msgstr "შუქურა"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:997
 #, kde-format
 msgid "Pier"
-msgstr ""
+msgstr "პირსი"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1000
 #, kde-format
@@ -51144,7 +50969,7 @@ msgstr "ქარის წისქვილი"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1006
 #, kde-format
 msgid "Communications Tower"
-msgstr ""
+msgstr "საკომუნიკაციო კოშკი"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1009
 #, kde-format
@@ -51214,7 +51039,7 @@ msgstr "ალპური ქოხი"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1048
 #, kde-format
 msgid "Wilderness Hut"
-msgstr ""
+msgstr "ტყის ქოხი"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1051
 #, kde-format
@@ -51229,7 +51054,7 @@ msgstr "აეროდრომი"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1057
 #, kde-format
 msgid "Helipad"
-msgstr ""
+msgstr "ჰელიპადი"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1060
 #, kde-format
@@ -51309,7 +51134,7 @@ msgstr "თხილამურების გაქირავება"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1105
 #, kde-format
 msgid "Taxi Rank"
-msgstr ""
+msgstr "ტაქსის გაჩერება"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1108
 #, kde-format
@@ -51334,7 +51159,7 @@ msgstr "მოტოციკლის პარკინგი"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1120
 #, kde-format
 msgid "Subway Entrance"
-msgstr ""
+msgstr "მეტროს შესასვლელი"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1123
 #, kde-format
@@ -51374,7 +51199,7 @@ msgstr "ინდური"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1144
 #, kde-format
 msgid "Jain"
-msgstr ""
+msgstr "ჯაინიზმის სალოცავი"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1147
 #, kde-format
@@ -51389,12 +51214,12 @@ msgstr "შინტო"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1153
 #, kde-format
 msgid "Sikh"
-msgstr ""
+msgstr "გურდვარა"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1156
 #, kde-format
 msgid "Taoist"
-msgstr ""
+msgstr "დაოსური სალოცავი"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1159
 #, kde-format
@@ -51637,17 +51462,17 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1303
 #, kde-format
 msgid "Drag Lift"
-msgstr ""
+msgstr "საციგურაო ლიფტი"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1306
 #, kde-format
 msgid "T-Bar"
-msgstr ""
+msgstr "T-ფორმის საბაგირო მოთხილამურეებისთვის"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1309
 #, kde-format
 msgid "J-Bar"
-msgstr ""
+msgstr "J-ფორმის საბაგირო მოთხილამურეებისთვის"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1312
 #, kde-format
@@ -51657,7 +51482,7 @@ msgstr "ფირფიტები"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1315
 #, kde-format
 msgid "Rope Tow"
-msgstr ""
+msgstr "თოკიანი საბაგირო მოთხილამურეებისთვის"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1318
 #, kde-format
@@ -51667,7 +51492,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1321
 #, kde-format
 msgid "Zip Line"
-msgstr ""
+msgstr "ზიპლაინი"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1324
 #, kde-format
@@ -51678,12 +51503,12 @@ msgstr "საქონელი"
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:348
 #, kde-format
 msgid "Downhill Piste"
-msgstr ""
+msgstr "ჩქაროსნული დაშვების ტრასა"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1330
 #, kde-format
 msgid "Nordic Piste"
-msgstr ""
+msgstr "სასეირნო ან სარბენი ციგურაობა"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1333
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:356
@@ -51694,22 +51519,22 @@ msgstr "სასრიალო"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1336
 #, kde-format
 msgid "Sled Piste"
-msgstr ""
+msgstr "დახრილი სასრიალო"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1339
 #, kde-format
 msgid "Winter Hike"
-msgstr ""
+msgstr "ზამთრის ლაშქრობის მარშრუტი"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1342
 #, kde-format
 msgid "Sleigh Piste"
-msgstr ""
+msgstr "ციგებით სრიალი"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1345
 #, kde-format
 msgid "Ice Skate"
-msgstr ""
+msgstr "ყინულზე სრიალი"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1348
 #, kde-format
@@ -51729,57 +51554,57 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1357
 #, kde-format
 msgid "Admin Boundary (Level 1)"
-msgstr ""
+msgstr "ადმინისტრაციული საზღვარი (დონე 1)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1360
 #, kde-format
 msgid "Admin Boundary (Level 2)"
-msgstr ""
+msgstr "ადმინისტრაციული საზღვარი (დონე 2)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1363
 #, kde-format
 msgid "Admin Boundary (Level 3)"
-msgstr ""
+msgstr "ადმინისტრაციული საზღვარი (დონე 3)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1366
 #, kde-format
 msgid "Admin Boundary (Level 4)"
-msgstr ""
+msgstr "ადმინისტრაციული საზღვარი (დონე 4)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1369
 #, kde-format
 msgid "Admin Boundary (Level 5)"
-msgstr ""
+msgstr "ადმინისტრაციული საზღვარი (დონე 5)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1372
 #, kde-format
 msgid "Admin Boundary (Level 6)"
-msgstr ""
+msgstr "ადმინისტრაციული საზღვარი (დონე 6)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1375
 #, kde-format
 msgid "Admin Boundary (Level 7)"
-msgstr ""
+msgstr "ადმინისტრაციული საზღვარი (დონე 7)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1378
 #, kde-format
 msgid "Admin Boundary (Level 8)"
-msgstr ""
+msgstr "ადმინისტრაციული საზღვარი (დონე 8)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1381
 #, kde-format
 msgid "Admin Boundary (Level 9)"
-msgstr ""
+msgstr "ადმინისტრაციული საზღვარი (დონე 9)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1384
 #, kde-format
 msgid "Admin Boundary (Level 10)"
-msgstr ""
+msgstr "ადმინისტრაციული საზღვარი (დონე 10)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1387
 #, kde-format
 msgid "Admin Boundary (Level 11)"
-msgstr ""
+msgstr "ადმინისტრაციული საზღვარი (დონე 11)"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1390
 #, kde-format
@@ -51789,7 +51614,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1393
 #, kde-format
 msgid "Land Mass"
-msgstr ""
+msgstr "ნიადაგი"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1396
 #, kde-format
@@ -51834,7 +51659,7 @@ msgstr "მდინარე"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1420
 #, kde-format
 msgid "Weir"
-msgstr ""
+msgstr "კაშხალი"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1423
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1426
@@ -51903,7 +51728,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:296
 #, kde-format
 msgid "Detour"
-msgstr ""
+msgstr "შემოვლითი გზა"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:300
 #, kde-format
@@ -51943,7 +51768,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:336
 #, kde-format
 msgid "Hiking Route"
-msgstr ""
+msgstr "სალაშქრო მარშრუტი"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:340
 #, kde-format
@@ -51953,12 +51778,12 @@ msgstr "საცხენოსნო ბილიკი"
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:344
 #, kde-format
 msgid "Inline Skates Route"
-msgstr ""
+msgstr "როლლერბლეიდინგის მარშრუტი"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:352
 #, kde-format
 msgid "Nordic Ski Trail"
-msgstr ""
+msgstr "სასეირნო ან სარბენი ბილიკი"
 
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:360
 #, kde-format
@@ -51969,11 +51794,13 @@ msgstr ""
 #, kde-format
 msgid "Could not convert <maximum> child text content to integer. Was: '%1'"
 msgstr ""
+"ვერ გადავიყვანე <maximum> შვილის ტექსტის შემცველობა მთელ რიცხვში. იყო: '%1'"
 
 #: core/utilities/geolocation/engine/geodata/handlers/dgml/DgmlMinimumTagHandler.cpp:59
 #, kde-format
 msgid "Could not convert <minimum> child text content to integer. Was: '%1'"
 msgstr ""
+"ვერ გადავიყვანე <minimum> შვილის ტექსტის შემცველობა მთელ რიცხვში. იყო: '%1'"
 
 #: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:111
 #, kde-format
@@ -51983,7 +51810,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:158
 #, kde-format
 msgid "Error parsing file at line: %1 and column %2 . "
-msgstr ""
+msgstr "ფაილის დამუშავების შეცდომა ხაზზე: %1 და სვეტზე %2. "
 
 #: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:160
 #, kde-format
@@ -52033,7 +51860,7 @@ msgstr "ჭდის ტიპი მითითებული არაა"
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:107
 #, kde-format
 msgid "Please add a type tag for this relation."
-msgstr ""
+msgstr "გთხოვთ, დაამატოთ ტიპის ჭდე ამ ურთიერთობისთვის."
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:86
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:98
@@ -52124,7 +51951,7 @@ msgstr "ატმოსფერო"
 #: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:78
 #, kde-format
 msgid "&Atmosphere"
-msgstr ""
+msgstr "&ატმოსფერო"
 
 #: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:93
 #, kde-format
@@ -52195,13 +52022,13 @@ msgstr "Crosshairs დამატების მორგება"
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsConfigWidget.ui:52
 #, kde-format
 msgid "Gun 1"
-msgstr ""
+msgstr "იარაღი 1"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsConfigWidget.ui:61
 #, kde-format
 msgid "Gun 2"
-msgstr ""
+msgstr "იარაღი 2"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsConfigWidget.ui:70
@@ -52223,7 +52050,7 @@ msgstr "გადაჯვარედინება"
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
 #, kde-format
 msgid "Cross&hairs"
-msgstr ""
+msgstr "&კურსორები"
 
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:108
 #, kde-format
@@ -52254,7 +52081,7 @@ msgstr "&ბადე:"
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:497
 #, kde-format
 msgid "Color of the coordinate grid."
-msgstr ""
+msgstr "კოორდინატების ბადის ფერი."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:922
@@ -52291,6 +52118,7 @@ msgstr "&სახელიანი ჭდეები"
 #, kde-format
 msgid "Show Labels for Prime meridian, Equator, Tropics."
 msgstr ""
+"ჭდეების ჩვენება ნულოვანი მერიდიანისთვის, ეკვატორისთვის და ტროპიკებისთვის."
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1415
@@ -52322,17 +52150,17 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:230
 #, kde-format
 msgid "Please choose the color for the coordinate grid."
-msgstr ""
+msgstr "აირჩიეთ ფერი კოორდინატების ბადისთვის."
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:242
 #, kde-format
 msgid "Please choose the color for the tropic circles."
-msgstr ""
+msgstr "აირჩიეთ ფერი ტროპიკული წრეებისთვის."
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:254
 #, kde-format
 msgid "Please choose the color for the equator."
-msgstr ""
+msgstr "აირჩიეთ ფერი ეკვატორისთვის."
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:337
 #, kde-format
@@ -52347,17 +52175,17 @@ msgstr "მთავარი მერიდიანი"
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:345
 #, kde-format
 msgid "Antimeridian"
-msgstr ""
+msgstr "180-ე მერიდიანი"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:440
 #, kde-format
 msgid "Tropic of Cancer"
-msgstr ""
+msgstr "კიბოს ტროპიკი"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:441
 #, kde-format
 msgid "Tropic of Capricorn"
-msgstr ""
+msgstr "თხის რქის ტროპიკი"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:444
 #, kde-format
@@ -52373,7 +52201,7 @@ msgstr "ანტარქტიკის წრე"
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleConfigWidget.ui:14
 #, kde-format
 msgid "Configure Scale Bar Plugin"
-msgstr ""
+msgstr "მასშტაბის ზოლის დამატების მორგება"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showRatioScaleCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleConfigWidget.ui:20
@@ -52445,7 +52273,7 @@ msgstr "გაზომვის ხელსაწყოს მორგებ�
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:20
 #, kde-format
 msgid "Ruler Type"
-msgstr ""
+msgstr "სახაზავის ტიპი"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_1)
@@ -52485,7 +52313,7 @@ msgstr "ჩასადები"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:80
 #, kde-format
 msgid "Bearing Change"
-msgstr ""
+msgstr "პელენგის შეცვლა"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showPerimeter)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:90
@@ -52526,7 +52354,7 @@ msgstr "&მანძილმზომი"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:118
 #, kde-format
 msgid "Measure distances between two or more points."
-msgstr ""
+msgstr "მანძილის გაზომვა ორ წერტილ შორის."
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:427
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:562
@@ -52573,7 +52401,7 @@ msgstr "სრული მანძილი: %1<br/>\n"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:684
 #, kde-format
 msgid "Area: %1<br/>\n"
-msgstr ""
+msgstr "ფართობი: %1<br/>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:666
 #, kde-format
@@ -52588,7 +52416,7 @@ msgstr "რადიუსი: %1<br/>\n"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:679
 #, kde-format
 msgid "Circumference: %1<br/>\n"
-msgstr ""
+msgstr "წრეწირის: %1<br/>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:734
 #, kde-format
@@ -52656,7 +52484,7 @@ msgstr "აირჩიეთ მიმოხილვის რუკა"
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:618
 #, kde-format
 msgid "Please choose the color for the position indicator"
-msgstr ""
+msgstr "აირჩიეთ ფერი მდებარეობის მაჩვენებლისთვის"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, OverviewMapConfigWidget)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:14
@@ -52790,7 +52618,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:39
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
-msgstr ""
+msgstr "OpenStreetMap Nominatim-ის უკუგეოკოდირება"
 
 #: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:44
 #, kde-format
@@ -52851,12 +52679,12 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:68
 #, kde-format
 msgid "Micro World Database II"
-msgstr ""
+msgstr "მონაცემთა ბაზა Micro World Database II"
 
 #: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:73
 #, kde-format
 msgid "Azimuthal Equidistant"
-msgstr ""
+msgstr "აზიმუტალური ეკვიდისტანტი"
 
 #: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:78
 #, kde-format
@@ -52865,6 +52693,9 @@ msgid ""
 "p><p>Applications: Display of seismic and radio data and for use in digital "
 "planetariums.</p>"
 msgstr ""
+"<p><b>აზიმუტური ეკვიდისტანტური პროექცია</b> (\"თევზის თვალი\")</"
+"p><p>პროგრამები: სეისმური და რადიო მონაცემების ჩვენება და ციფრულ "
+"პლანეტარიუმებში გამოსაყენებლად.</p>"
 
 #: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:49
 #, kde-format
@@ -52890,6 +52721,9 @@ msgid ""
 "displaying panorama photography. Also used for navigation, radio and seismic "
 "work.</p>"
 msgstr ""
+"<p><b>გნომონური პროექცია</b> (\"სწორი წრფივი\")</p><p>პროგრამები: "
+"გამოიყენება პანორამული ფოტოგრაფიის ჩვენებისთვის. ასევე გამოიყენება "
+"ნავიგაციის, რადიო და სეისმური სამუშაოებისთვის.</p>"
 
 #: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:78
 #, kde-format
@@ -52902,6 +52736,8 @@ msgid ""
 "<p><b>Lambert Azimuthal Equal-Area Projection</b></p><p>Applications: Used "
 "in structural geology to plot directional data.</p>"
 msgstr ""
+"<p><b>ლამბერტის ტოლდიდა აზიმუტის პროექცია</b></p><p>პროგრამები: გამოიყენება "
+"სტრუქტურულ გეოლოგიაში მიმართულებითი მონაცემების დასახაზად.</p>"
 
 #: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:56
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:357
@@ -52915,6 +52751,8 @@ msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
 "projection for navigation.</p>"
 msgstr ""
+"<p><b>მერკატორის პროექცია</b></p><p>პროგრამები: პოპულარული სტანდარტული რუკის "
+"პროექცია ნავიგაციისთვის.</p>"
 
 #: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:77
 #, kde-format
@@ -52928,6 +52766,9 @@ msgid ""
 "perspective projection that is used to display the hemisphere of a globe as "
 "it appears from outer space.</p>"
 msgstr ""
+"<p><b>ორთოგრაფიული პროექცია</b> (\"ორთოგონალური\")</p><p>პროგრამები: "
+"პერსპექტიული პროექცია, რომელიც გამოიყენება მსოფლიოს ნახევარსფეროს "
+"საჩვენებლად, როგორც ეს ჩანს გარე სივრციდან.</p>"
 
 #: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:79
 #, kde-format
@@ -52940,11 +52781,14 @@ msgid ""
 "<p><b>Stereographic Projection</b> (\"orthogonal\")</p><p>Applications: Used "
 "for planetary cartography, geology and panorama photography.</p>"
 msgstr ""
+"<p><b>სტერეოგრაფიული პროექცია</b> (\"ორთოგონალური\")</p><p>პროგრამები: "
+"გამოიყენება პლანეტარული კარტოგრაფიის, გეოლოგიისა და პანორამის "
+"ფოტოგრაფიისთვის.</p>"
 
 #: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:94
 #, kde-format
 msgid "Vertical Perspective Projection"
-msgstr ""
+msgstr "ვერტიკალური პერსპექტივის პროექცია"
 
 #: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:99
 #, kde-format
@@ -52989,12 +52833,12 @@ msgstr "კუთხე:"
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:120
 #, kde-format
 msgid "Degree (DMS)"
-msgstr ""
+msgstr "გრადუსი-წუთი-წამი"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:121
 #, kde-format
 msgid "Degree (Decimal)"
-msgstr ""
+msgstr "მეათედი გრადუსები"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:122
 #, kde-format
@@ -53083,7 +52927,7 @@ msgstr "გლობუსის ინერციული ბრუნვა"
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:167
 #, kde-format
 msgid "Use kinetic spinning when dragging the map"
-msgstr ""
+msgstr "კინეტიკური ტრიალის გამოყენება რუკის გადათრევისას"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:168
 #, kde-format
@@ -53093,7 +52937,7 @@ msgstr "თაგუნას ხედვის ტრიალი"
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:169
 #, kde-format
 msgid "Use right mouse button to rotate the camera around"
-msgstr ""
+msgstr "გამოიყენეთ თაგუნას მარჯვენა ღილაკი კამერის გარშემო ბრუნვისთვის"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:176
 #, kde-format
@@ -53248,7 +53092,7 @@ msgstr "გამშვების ხელსაწყოები"
 #: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:52
 #, kde-format
 msgid "Unable to insert data into cache"
-msgstr ""
+msgstr "კეშში მონაცემების ჩასმა შეუძლებელია"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:138
 #, kde-format
@@ -53283,7 +53127,7 @@ msgstr "მონიშვნის მოდელი"
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:200
 #, kde-format
 msgid "Number of tiles to download:"
-msgstr ""
+msgstr "გადმოსაწერი ფილების რაოდენობა:"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:254
 #, kde-format
@@ -53293,7 +53137,7 @@ msgstr "რეგიონის გადმოწერა"
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
 #, kde-format
 msgid "Tile type to be downloaded:"
-msgstr ""
+msgstr "გადმოსაწერი ფილების ტიპი:"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:258
 #, kde-format
@@ -53308,7 +53152,7 @@ msgstr "ვექტორული ფილები"
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:260
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
-msgstr ""
+msgstr "დაუშვებს არჩევანს ფენის ტიპებს შორის, რომლებიც ხილულად რენდერდება."
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:599
 #, kde-format
@@ -53323,12 +53167,12 @@ msgstr ""
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:617
 #, kde-format
 msgid "Estimated download size: %1 MB"
-msgstr ""
+msgstr "ჩამოტვირთვის სავარაუდო ზომა: %1 მბ"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
 #, kde-format
 msgid "Estimated download size: %1 kB"
-msgstr ""
+msgstr "ჩამოტვირთვის სავარაუდო ზომა: %1 კბ"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, LatLonBoxWidget)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:17
@@ -53394,7 +53238,7 @@ msgstr "სამხრეთ განედი"
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:222
 #, kde-format
 msgid "&S"
-msgstr ""
+msgstr "&ს"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, TileCreatorDialog)
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:20
@@ -53416,6 +53260,16 @@ msgid ""
 "seen from Space. The map is based on NASA's beautiful \"Blue Marble Next "
 "Generation\" pictures. Credits: NASA's Earth Observatory</p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /></head><body style=\" "
+"white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-"
+"weight:400; font-style:normal; text-decoration:none;\"><p style=\" margin-"
+"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">თანამგზავრული "
+"ხედი</span></p><p style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">დედამიწა, "
+"როგორც ჩანს კოსმოსიდან. რუკა დაფუძნებულია NASA- ს ულამაზეს \"Blue Marble "
+"Next Generation\" სურათებზე. კრედიტები: NASA- ს დედამიწის ობსერვატორია</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:544
@@ -53424,12 +53278,14 @@ msgid ""
 "Marble needs to create this map. This only needs to be done once and may "
 "take a few seconds."
 msgstr ""
+"Mable-ს ამ რუკის შექმნა სჭირდება. ეს, მხოლოდ, ერთხელ უნდა მოხდეს და "
+"რამდენიმე წამი სჭირდება."
 
 #. i18n: ectx: property (format), widget (QProgressBar, progressBar)
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:560
 #, no-c-format, kde-format
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:29
@@ -53447,7 +53303,7 @@ msgstr "&ფილის დონის შუალედი:"
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:47
 #, kde-format
 msgid "Minimum Tile Level"
-msgstr ""
+msgstr "მინიმალური ფილის დონე"
 
 #. i18n: ectx: property (text), widget (QLabel, toLabel)
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:63
@@ -55270,8 +55126,7 @@ msgid "Rotate Right"
 msgstr "მარჯვნივ შებრუნება"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:535
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
 msgstr "ავტომატური მობრუნება"
@@ -56287,7 +56142,7 @@ msgstr "ხედები"
 #, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
-msgstr "ესკიზები"
+msgstr "მინატურები"
 
 #: core/utilities/import/main/importui.cpp:383
 #, kde-format
@@ -56981,13 +56836,13 @@ msgid ""
 "Show the result of converted date 1968-12-26 using your customized format."
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:239
+#: core/utilities/import/widgets/albumcustomizer.cpp:248
 #, kde-format
 msgctxt "@info Example of custom date format for album naming"
 msgid "Ex.: %1"
 msgstr "მაგ: %1"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:243
+#: core/utilities/import/widgets/albumcustomizer.cpp:252
 #, kde-format
 msgctxt "@info Custom date format"
 msgid "Format is not valid..."
@@ -57499,12 +57354,10 @@ msgid "Find Duplicate Items"
 msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:207
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Reading and Writing Metadata"
+#, kde-format
 msgctxt "@option:check"
 msgid "Rebuild all training data"
-msgstr "მეტამონაცემების წაკითხვა და ჩაწერა"
+msgstr "ყველა ვარჯიშის მონაცემის თავიდან აგება"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:209
 #, kde-format
@@ -57514,11 +57367,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:212
-#, fuzzy, kde-format
-#| msgid "Clear all faces on this image"
+#, kde-format
 msgctxt "@option:check"
 msgid "Reset and clear all faces and training"
-msgstr "გამოსახულებიდან სახეების წაშლა"
+msgstr "ჩამოყრა და ყველა ნავარჯიშების და სახის გასუფთავება"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:214
 #, kde-format
@@ -57576,9 +57428,7 @@ msgid "Sync Metadata and Database"
 msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:354
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "გაფრთხილება"
@@ -57687,36 +57537,33 @@ msgid "Find new items"
 msgstr ""
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scanning: %1\n"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "სკანირება: %1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
+#, kde-format
 msgid "Album Root: %1"
-msgstr "ალბომი \"%1\""
+msgstr "ალბომის ძირითადი: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:210
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid ""
 "Scanned:\n"
 "%1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr ""
+"სკანირებულია:\n"
+"%1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:232
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for cataloging: %1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "კატალოგებისთვის დასკანირებულია ელემენტი: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:236
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for cataloging: %1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "კატალოგებისთვის დასკანირებულია ელემენტი: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:108
 #, kde-format
@@ -57724,53 +57571,41 @@ msgid "Find duplicates items"
 msgstr ""
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:181
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "Finding Duplicates: %1\n"
-msgstr "დუბლიკატების პოვნა"
+msgstr "დუბლიკატების ძებნა: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "No duplicate item"
-msgstr "დუბლიკატების პოვნა"
+msgstr "დუბლირებული ელემენტების გარეშე"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Find duplicates"
+#, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
-msgstr[0] "დუბლიკატების პოვნა"
-msgstr[1] "დუბლიკატების პოვნა"
+msgstr[0] "1 გამეორებული ელემენტი"
+msgstr[1] "%1 გამეორებული ელემენტი"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:218
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for duplicates: %1\n"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "გამეორებების მოსაძებნად დასკანირებულია ელემენტი: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:222
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for duplicates: %1\n"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "გამეორებების მოსაძებნად დასკანირებულია ელემენტი: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
-#, fuzzy, kde-format
-#| msgctxt "Find Duplicates Tab"
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicates found: %1"
-msgstr "დუბლიკატები"
+msgstr "აღმოჩენილი დუბლიკატები: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "Find Duplicates Tab"
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicate found: %1"
-msgstr "დუბლიკატები"
+msgstr "აღმოჩენილი დუბლიკატები: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:130
 #, kde-format
@@ -57812,41 +57647,34 @@ msgid "Error starting face detection."
 msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:429
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for faces: %1\n"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "სკანირება სახეების მოსაძებნად ელემენტში: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:433
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for faces: %1\n"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "სკანირება სახეების მოსაძებნად ელემენტში: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
-#, fuzzy, kde-format
-#| msgid "routes found: %1"
+#, kde-format
 msgid "Faces found: %1"
-msgstr "ნაპოვნი გზები: %1"
+msgstr "ნაპოვნი სახეები: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
-#, fuzzy, kde-format
-#| msgid "routes found: %1"
+#, kde-format
 msgid "Face found: %1"
-msgstr "ნაპოვნი გზები: %1"
+msgstr "ნაპოვნია სახე: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:476
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Face Scanning: %1\n"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "სახის სკანირება: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:483
-#, fuzzy, kde-format
-#| msgctxt "@item: filter model"
-#| msgid "No face"
+#, kde-format
 msgid "Found %1 face."
-msgstr "სახეების გარეშე"
+msgstr "აღმოჩენილია %1 სახე."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:487
 #, kde-format
@@ -57854,11 +57682,9 @@ msgid "Found %1 faces."
 msgstr ""
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:493
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Icon Size: %1"
+#, kde-format
 msgid "Recognized: %1"
-msgstr "ხატულის ზომა: %1"
+msgstr "ამოცნობილია: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:95
 #, kde-format
@@ -57866,55 +57692,44 @@ msgid "Finger-prints"
 msgstr ""
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Rebuild Fingerprint: %1\n"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "ანაბეჭდის თავიდან აშენება: %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
+#, kde-format
 msgid "Album: %1"
-msgstr "ალბომი \"%1\""
+msgstr "ალბომი: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:173
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for fingerprint: %1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "ანაბეჭდებისთვის სკანირებულია ელემენტი: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:177
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for fingerprint: %1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "ანაბეჭდებისთვის სკანირებულია ელემენტი: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality: %1\n"
-msgstr "გამოსახულების ხარისხის ტიპი"
+msgstr "გამოსახულების ხარისხის: %1\n"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:174
-#, fuzzy, kde-format
-#| msgctxt "@info: pick lablel selector"
-#| msgid "Pick Label: %1"
+#, kde-format
 msgid "Pick Label: %1"
 msgstr "აირჩიეთ ჭდე: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:189
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for quality: %1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "ხარისხისთვის სკანირებულია ელემენტი: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:193
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for quality: %1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "ხარისხისთვის სკანირებულია ელემენტი: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:186
 #, kde-format
@@ -57945,34 +57760,29 @@ msgstr ""
 "გნებავთ, გააგრძელოთ?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:236
-#, fuzzy, kde-format
-#| msgid "Upload the metadata of %1"
+#, kde-format
 msgid "Clear Metadata: %1\n"
-msgstr "%1-ის მეტამონაცემების ატვირთვა"
+msgstr "მეტამონაცემების გასუფთავება: %1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:250
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to remove faces: %1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "სახის წასაშლელად სკანირებულია ელემენტი: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:254
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to remove faces: %1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "სახის წასაშლელად სკანირებულია ელემენტი: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:263
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to remove tags: %1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "ჭდეების წასაშლელად სკანირებულია ელემენტი: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:267
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to remove tags: %1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "ჭდეების წასაშლელად სკანირებულია ელემენტი: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:192
 #, kde-format
@@ -57985,16 +57795,16 @@ msgid "Updating database from image metadata"
 msgstr ""
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:217
-#, fuzzy, kde-format
-#| msgid "Upload the metadata of %1"
+#, kde-format
 msgid "Metadata Sync: %1\n"
-msgstr "%1-ის მეტამონაცემების ატვირთვა"
+msgstr "მეტამონაცემების სინქრონიზაცია: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:231
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr ""
+"მეტამონაცემების მონაცემთა ბაზასთან სინქრონიზაციისთვის დასკანირებულია "
+"ელემენტი: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:235
 #, kde-format
@@ -58002,41 +57812,36 @@ msgid "Item scanned to synchronize metadata with database: %1"
 msgstr ""
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:244
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to update database with metadata: %1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr ""
+"მეტამონაცემების მონაცემთა ბაზის განახლებისთვის დასკანირებულია ელემენტი: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:248
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to update database with metadata: %1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr ""
+"მეტამონაცემების მონაცემთა ბაზის განახლებისთვის დასკანირებულია ელემენტი: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@action: Go to thumbnails (icon) view"
-#| msgid "Thumbnails"
+#, kde-format
 msgid "Generate Thumbnails"
-msgstr "ესკიზები"
+msgstr "მინიატურების შექმნა"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:224
-#, fuzzy, kde-format
-#| msgid "Thumbnail"
+#, kde-format
 msgid "Thumbnail: %1\n"
-msgstr "მინიატურა"
+msgstr "მინიატურა: %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:239
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for thumbnails: %1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "მინიატურებისთვის სკანირებულია ელემენტი: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:243
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for thumbnails: %1"
-msgstr "სკანირება სახეების მოსაძებნად საქაღალდეში: %1"
+msgstr "მინიატურებისთვის სკანირებულია ელემენტი: %1"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
 #, kde-format
@@ -59525,12 +59330,10 @@ msgid "New..."
 msgstr "ახალი..."
 
 #: core/utilities/searchwindow/searchfolderview.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "&Copy to..."
+#, kde-format
 msgctxt "Copy as new search"
 msgid "Copy..."
-msgstr "გადაკოპირება..."
+msgstr "კოპირება..."
 
 #: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format
@@ -60987,14 +60790,12 @@ msgid "Download Required Model Files"
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:160
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AI Auto-Tools features"
-msgstr "ჭდეების ავტომატური მინიჭების ფუნქციის გამოყენება"
+msgstr "ხი-ის ავტოფუნქციების გამოყენება"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:161
-#, fuzzy, kde-format
-#| msgid "Use Face Detection feature"
+#, kde-format
 msgid "Use Face Management feature"
 msgstr "სახის ამოცნობის ფუნქციის გამოყენება"
 
@@ -61004,16 +60805,14 @@ msgid "Use Aesthetic Detection feature"
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:163
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "ჭდეების ავტომატური მინიჭების ფუნქციის გამოყენება"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:243
-#, fuzzy, kde-format
-#| msgid "All files were downloaded successfully."
+#, kde-format
 msgid "All model files were downloaded successfully."
-msgstr "ყველა ფაილი წარმატებით გადმოიწერა."
+msgstr "ყველა მოდელი წარმატებით გადმოიწერა."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:252
 #, kde-format
@@ -62006,12 +61805,11 @@ msgid "Reading and Writing Metadata"
 msgstr "მეტამონაცემების წაკითხვა და ჩაწერა"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Remove metadata from file"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use ExifTool backend to read metadata from files"
-msgstr "ფაილიდან მეტამონაცემების წაშლა"
+msgstr ""
+"ფაილებიდან მეტამონაცემების წასაკითხად ExcifTool-ის უკანაბოლოს გამოყენება"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
 #, kde-format
@@ -62392,6 +62190,180 @@ msgctxt "@title:tab"
 msgid "Sidecars"
 msgstr ""
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:82
+#, kde-format
+msgctxt "@title:window"
+msgid "AI GPU Test"
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:85
+#, kde-format
+msgctxt "@info"
+msgid ""
+"This will check if your system is able to use GPU acceleration\n"
+"when running the AI models by validating OpenCV and OpenCL have the\n"
+"required libraries and drivers installed.\n"
+"\n"
+"Do you want to test your system now?"
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
+#, kde-format
+msgid "Start"
+msgstr "დაწყება"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
+#, fuzzy, kde-format
+#| msgid "Beta tester"
+msgctxt "@action:button"
+msgid "Begin test"
+msgstr "Beta tester"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:138
+#, fuzzy, kde-format
+#| msgid "Settings..."
+msgctxt "@action:button"
+msgid "Testing..."
+msgstr "მორგება..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:144
+#, kde-format
+msgid "Starting OpenCV OpenCL DNN test..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:207
+#, kde-format
+msgid ""
+"Test completed successfully! Your system can use GPU acceleration for the AI "
+"models."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:211
+#, kde-format
+msgid ""
+"Test failed. Your system may not be able to use GPU acceleration for the AI "
+"models."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
+#, kde-format
+msgctxt "@action:button"
+msgid "Close the test dialog"
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:240
+#, kde-format
+msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:245
+#, fuzzy, kde-format
+#| msgid "The service is not available at this time."
+msgid "OpenCL is available on this system."
+msgstr "სერვისი ახლა მიუწვდომელია."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#, kde-format
+msgid "OpenCL acceleration device is available."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:255
+#, fuzzy, kde-format
+#| msgid "Uploading file %1"
+msgid "Using device: %1"
+msgstr "%1 ფაილის ატვირთვა"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:259
+#, fuzzy, kde-format
+#| msgid "The service is not available at this time."
+msgid "OpenCL acceleration device is not available."
+msgstr "სერვისი ახლა მიუწვდომელია."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:264
+#, fuzzy, kde-format
+#| msgid "The service is not available at this time."
+msgid "OpenCL is not available on this system."
+msgstr "სერვისი ახლა მიუწვდომელია."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:269
+#, fuzzy, kde-format
+#| msgid "Loading image..."
+msgid "Loading test image..."
+msgstr "გამოსახულების ჩატვირთვა..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:275
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "This image is not color managed."
+msgid "Test image not found."
+msgstr "გამოსახულების ფერები მართული არაა."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to save image to %1"
+msgid "Failed to load test image from %1"
+msgstr "სურათის %1-ზე დამახსოვრების შეცდომა"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
+#, kde-format
+msgid "Preparing the image for processing..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:314
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Initializing Main View..."
+msgid "Initializing face detection model..."
+msgstr "მთავარი ხედის ინიციალიზაცია..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:318
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgid "Running face detection..."
+msgstr "სახის ამოცნობა"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:334
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Initializing Main View..."
+msgid "Initializing feature extraction model..."
+msgstr "მთავარი ხედის ინიციალიზაცია..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:338
+#, kde-format
+msgid "Preparing face for feature extraction..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:351
+#, kde-format
+msgid "Extracting face features..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:357
+#, fuzzy, kde-format
+#| msgid "Failed to create folder"
+msgid "Failed to extract face features."
+msgstr "საქაღალდის შექმნის შეცდომა"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
+#, fuzzy, kde-format
+#| msgid "%1 resized successfully"
+msgid "All tests completed successfully!"
+msgstr "%1-ის ზომა წარმატებით შეიცვალა"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:367
+#, fuzzy, kde-format
+#| msgid "Open error"
+msgid "OpenCV error: %1"
+msgstr "გახსნის შეცდომა"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:372
+#, fuzzy, kde-format
+#| msgid "Error"
+msgid "Error: %1"
+msgstr "შეცდომა"
+
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
 #, kde-format
@@ -62405,6 +62377,15 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
 "local intranet. Please leave empty if there is no proxy.</p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">პროქსის პარამეტრები თქვენი "
+"ადგილობრივი ინტრანეტისთვის. თუ პროქსი არ არსებობს, დატოვეთ ის ცარიელი.</p></"
+"body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:35
@@ -62591,10 +62572,9 @@ msgid "Detect faces in newly added images"
 msgstr ""
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
-#, fuzzy, kde-format
-#| msgid "Background Image Credits"
+#, kde-format
 msgid "Enable background face recognition scan"
-msgstr "ფონის სურათის საავტორო უფლებები"
+msgstr "სახის ამოცნობის სკანირების ფონურად გაშვების ჩართვა"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format
@@ -62705,87 +62685,101 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "დაჯგუფება"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:91
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:92
+#: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:96
+#: core/utilities/setup/misc/systemsettingswidget.cpp:102
 #, kde-format
-msgid "Use the software OpenGL for rendering"
+msgid "Use software OpenGL for rendering"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:97
+#: core/utilities/setup/misc/systemsettingswidget.cpp:103
 #, kde-format
-msgid "Use the OpenCL hardware acceleration"
+msgid "Use OpenCL hardware acceleration"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
+#: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, kde-format
-msgid "Use the video hardware acceleration"
-msgstr ""
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:104
-#, kde-format
-msgid "Use the video textures conversion"
-msgstr ""
-
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
+#, kde-format
+msgid "Use OpenCL hardware acceleration for AI models"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
+#, kde-format
+msgid ""
+"This option is still experimental and may lead to crashes if the proper "
+"drivers are not installed."
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:110
+#, kde-format
+msgid "Test GPU AI compatibility"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#, kde-format
+msgid "Use video hardware acceleration"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:116
+#, kde-format
+msgid "Use video textures conversion"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:118
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:109
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (ნაგულიხმევი)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:113
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, kde-format
 msgid "GStreamer (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "System"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:129
+#, kde-format
 msgid "WMF (System)"
-msgstr "სისტემა"
+msgstr "WMF (სისტემური)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#: core/utilities/setup/misc/systemsettingswidget.cpp:139
 #, kde-format
 msgid "Download required binary data:"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Opening Download Dialog..."
+#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#, kde-format
 msgid "Open Download Dialog..."
 msgstr "გადმოწერის ფანჯრის გახსნა..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:143
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:146
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -64395,9 +64389,6 @@ msgstr ""
 #~ msgid "No error"
 #~ msgstr "შეცდომის გარეშე"
 
-#~ msgid "Open error"
-#~ msgstr "გახსნის შეცდომა"
-
 #~ msgid "Read error"
 #~ msgstr "წაკითხვის შეცდომა"
 
@@ -65275,9 +65266,6 @@ msgstr ""
 
 #~ msgid "Search for '%1'"
 #~ msgstr "%1-იs მოძებნა"
-
-#~ msgid "Start"
-#~ msgstr "დაწყება"
 
 #~ msgid "Video writing failed."
 #~ msgstr "ვიდეოს ჩაწერის შეცდომა."

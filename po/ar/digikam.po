@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-24 01:54+0000\n"
+"POT-Creation-Date: 2025-04-27 01:57+0000\n"
 "PO-Revision-Date: 2025-01-29 17:11+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -84,6 +84,7 @@ msgid "Select the current day"
 msgstr "اختر اليوم اليوم"
 
 #: core/app/date/ddatepicker.cpp:574
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -28741,6 +28742,7 @@ msgstr "رحّل ←"
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:109
 #, kde-format
 msgid "Cancel"
 msgstr "ألغِ"
@@ -51431,6 +51433,7 @@ msgid "Begin"
 msgstr "البداية"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:86
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
@@ -59716,13 +59719,13 @@ msgid ""
 "Show the result of converted date 1968-12-26 using your customized format."
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:239
+#: core/utilities/import/widgets/albumcustomizer.cpp:248
 #, kde-format
 msgctxt "@info Example of custom date format for album naming"
 msgid "Ex.: %1"
 msgstr "مثال: %1"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:243
+#: core/utilities/import/widgets/albumcustomizer.cpp:252
 #, fuzzy, kde-format
 #| msgctxt "Custom date format"
 #| msgid "Format is not valid..."
@@ -65438,6 +65441,185 @@ msgctxt "@title:tab"
 msgid "Sidecars"
 msgstr ""
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:82
+#, kde-format
+msgctxt "@title:window"
+msgid "AI GPU Test"
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:85
+#, kde-format
+msgctxt "@info"
+msgid ""
+"This will check if your system is able to use GPU acceleration\n"
+"when running the AI models by validating OpenCV and OpenCL have the\n"
+"required libraries and drivers installed.\n"
+"\n"
+"Do you want to test your system now?"
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "Start"
+msgid "Start"
+msgstr "ابدأ"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Begin"
+msgctxt "@action:button"
+msgid "Begin test"
+msgstr "البداية"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:138
+#, fuzzy, kde-format
+#| msgid "Settings..."
+msgctxt "@action:button"
+msgid "Testing..."
+msgstr "إعدادات..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:144
+#, kde-format
+msgid "Starting OpenCV OpenCL DNN test..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:207
+#, kde-format
+msgid ""
+"Test completed successfully! Your system can use GPU acceleration for the AI "
+"models."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:211
+#, kde-format
+msgid ""
+"Test failed. Your system may not be able to use GPU acceleration for the AI "
+"models."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
+#, kde-format
+msgctxt "@action:button"
+msgid "Close the test dialog"
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:240
+#, kde-format
+msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:245
+#, fuzzy, kde-format
+#| msgid "OpenGL support is not available on your system."
+msgid "OpenCL is available on this system."
+msgstr "دعم «أوبن‌جي‌إل» غير متوفّر في النّظام."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#, fuzzy, kde-format
+#| msgid "No options available"
+msgid "OpenCL acceleration device is available."
+msgstr "لا خيارات متوفّرة"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:255
+#, fuzzy, kde-format
+#| msgid "Input device"
+msgid "Using device: %1"
+msgstr "جهاز الدّخل"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:259
+#, fuzzy, kde-format
+#| msgid "This collection is currently not available."
+msgid "OpenCL acceleration device is not available."
+msgstr "هذه التّجميعة غير متوفّرة حاليًّا."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:264
+#, fuzzy, kde-format
+#| msgid "OpenGL support is not available on your system."
+msgid "OpenCL is not available on this system."
+msgstr "دعم «أوبن‌جي‌إل» غير متوفّر في النّظام."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:269
+#, fuzzy, kde-format
+#| msgid "Loading image..."
+msgid "Loading test image..."
+msgstr "يحمّل الصّورة..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:275
+#, fuzzy, kde-format
+#| msgid "Binary not found."
+msgid "Test image not found."
+msgstr "لم يُعثر على الثّنائي."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to save image to %1"
+msgid "Failed to load test image from %1"
+msgstr "فشل حفظ الصّورة إلى %1"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
+#, fuzzy, kde-format
+#| msgid "No active process"
+msgid "Preparing the image for processing..."
+msgstr "لا عمليّات نشطة"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:314
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Initializing Main View..."
+msgid "Initializing face detection model..."
+msgstr "يمهّد النّافذة الرّئيسيّة..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:318
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgid "Running face detection..."
+msgstr "اكتشاف الوجوه"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:334
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Initializing Main View..."
+msgid "Initializing feature extraction model..."
+msgstr "يمهّد النّافذة الرّئيسيّة..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:338
+#, fuzzy, kde-format
+#| msgid "Preparing collection scan..."
+msgid "Preparing face for feature extraction..."
+msgstr "يحضّر لفحص التّجميعة..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:351
+#, kde-format
+msgid "Extracting face features..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:357
+#, fuzzy, kde-format
+#| msgid "Failed to create folder"
+msgid "Failed to extract face features."
+msgstr "فشل إنشاء المجلّد"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
+#, fuzzy, kde-format
+#| msgid "Database copied successfully."
+msgid "All tests completed successfully!"
+msgstr "نُسخت قاعدة البيانات بنجاح."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:367
+#, fuzzy, kde-format
+#| msgid "Export Tools"
+msgid "OpenCV error: %1"
+msgstr "أدوات التّصدير"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:372
+#, fuzzy, kde-format
+#| msgid "Error"
+msgid "Error: %1"
+msgstr "خطأ"
+
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
 #, fuzzy, kde-format
@@ -65770,89 +65952,109 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "يجمّع"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:91
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:92
+#: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:96
+#: core/utilities/setup/misc/systemsettingswidget.cpp:102
 #, kde-format
-msgid "Use the software OpenGL for rendering"
+msgid "Use software OpenGL for rendering"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, kde-format
-msgid "Use the OpenCL hardware acceleration"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#, fuzzy, kde-format
+#| msgid "Use the OpenCL hardware acceleration"
+msgid "Use OpenCL hardware acceleration"
 msgstr "استخدم تسريع الأجهزة OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
+#: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, kde-format
-msgid "Use the video hardware acceleration"
-msgstr ""
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:104
-#, kde-format
-msgid "Use the video textures conversion"
-msgstr ""
-
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
+#, fuzzy, kde-format
+#| msgid "Use the OpenCL hardware acceleration"
+msgid "Use OpenCL hardware acceleration for AI models"
+msgstr "استخدم تسريع الأجهزة OpenCL"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
+#, kde-format
+msgid ""
+"This option is still experimental and may lead to crashes if the proper "
+"drivers are not installed."
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:110
+#, kde-format
+msgid "Test GPU AI compatibility"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#, fuzzy, kde-format
+#| msgid "Use the OpenCL hardware acceleration"
+msgid "Use video hardware acceleration"
+msgstr "استخدم تسريع الأجهزة OpenCL"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:116
+#, kde-format
+msgid "Use video textures conversion"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:118
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:109
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, fuzzy, kde-format
 #| msgctxt "@item: default raw plugin"
 #| msgid " (default)"
 msgid "FFmpeg (Default)"
 msgstr " (المبدئيّ)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:113
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, kde-format
 msgid "GStreamer (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:117
+#: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, fuzzy, kde-format
 #| msgid "Windows (System)"
 msgid "WMF (System)"
 msgstr "ويندوز (نظام تشغيلي)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, fuzzy, kde-format
 #| msgid "Darwin Core"
 msgid "AVFoundation (System)"
 msgstr "لب داروين"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#: core/utilities/setup/misc/systemsettingswidget.cpp:139
 #, fuzzy, kde-format
 msgid "Download required binary data:"
 msgstr "يجري التنزيل ملفّ."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:128
+#: core/utilities/setup/misc/systemsettingswidget.cpp:140
 #, fuzzy, kde-format
 #| msgid "Opening Download Dialog..."
 msgid "Open Download Dialog..."
 msgstr "يفتح حواريّ التّنزيل..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:143
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:146
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -67703,11 +67905,6 @@ msgstr "استورد عناصر"
 #~ msgstr "لا أخطاء"
 
 #, fuzzy
-#~| msgid "Export Tools"
-#~ msgid "Open error"
-#~ msgstr "أدوات التّصدير"
-
-#, fuzzy
 #~| msgctxt "@action: setup"
 #~| msgid "Open the image editor."
 #~ msgid "Open timed out"
@@ -69255,12 +69452,6 @@ msgstr "استورد عناصر"
 #~| msgid "Save Result"
 #~ msgid "Search Results"
 #~ msgstr "احفظ النتيجة"
-
-#, fuzzy
-#~| msgctxt "@action: button"
-#~| msgid "Start"
-#~ msgid "Start"
-#~ msgstr "ابدأ"
 
 #, fuzzy
 #~| msgid "Tiff image creation failed."
@@ -72283,11 +72474,6 @@ msgstr "استورد عناصر"
 #~| msgid "Open folder"
 #~ msgid "Open in Browser..."
 #~ msgstr "افتح مجلّدًا"
-
-#, fuzzy
-#~| msgid "No options available"
-#~ msgid "No new version is available."
-#~ msgstr "لا خيارات متوفّرة"
 
 #~ msgid "Mysql Internal (experimental)"
 #~ msgstr "‏MySQL داخليّة (تجريبيّ)"

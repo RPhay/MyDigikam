@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-24 01:54+0000\n"
+"POT-Creation-Date: 2025-04-27 01:57+0000\n"
 "PO-Revision-Date: 2025-04-22 11:30+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -132,6 +132,7 @@ msgid "Select the current day"
 msgstr "Selecteer de huidige dag"
 
 #: core/app/date/ddatepicker.cpp:574
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -29267,6 +29268,7 @@ msgstr "Overplaatsen ->"
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:109
 #, kde-format
 msgid "Cancel"
 msgstr "Annuleren"
@@ -52461,6 +52463,7 @@ msgid "Begin"
 msgstr "Begin"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:86
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
@@ -60757,13 +60760,13 @@ msgstr ""
 "Het resultaat tonen van de geconverteerde datum 1968-12-26 met uw eigen "
 "opmaak."
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:239
+#: core/utilities/import/widgets/albumcustomizer.cpp:248
 #, kde-format
 msgctxt "@info Example of custom date format for album naming"
 msgid "Ex.: %1"
 msgstr "Vb.: %1"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:243
+#: core/utilities/import/widgets/albumcustomizer.cpp:252
 #, kde-format
 msgctxt "@info Custom date format"
 msgid "Format is not valid..."
@@ -66671,6 +66674,184 @@ msgctxt "@title:tab"
 msgid "Sidecars"
 msgstr "Aanhangsel-bestanden"
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:82
+#, kde-format
+msgctxt "@title:window"
+msgid "AI GPU Test"
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:85
+#, kde-format
+msgctxt "@info"
+msgid ""
+"This will check if your system is able to use GPU acceleration\n"
+"when running the AI models by validating OpenCV and OpenCL have the\n"
+"required libraries and drivers installed.\n"
+"\n"
+"Do you want to test your system now?"
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
+#, kde-format
+msgid "Start"
+msgstr "Begin"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
+#, fuzzy, kde-format
+#| msgid "Beta tester"
+msgctxt "@action:button"
+msgid "Begin test"
+msgstr "Betatester"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:138
+#, fuzzy, kde-format
+#| msgid "Settings..."
+msgctxt "@action:button"
+msgid "Testing..."
+msgstr "Instellingen..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:144
+#, kde-format
+msgid "Starting OpenCV OpenCL DNN test..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:207
+#, kde-format
+msgid ""
+"Test completed successfully! Your system can use GPU acceleration for the AI "
+"models."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:211
+#, kde-format
+msgid ""
+"Test failed. Your system may not be able to use GPU acceleration for the AI "
+"models."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
+#, fuzzy, kde-format
+#| msgid "Close the theme designer"
+msgctxt "@action:button"
+msgid "Close the test dialog"
+msgstr "De themaontwerper sluiten"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:240
+#, kde-format
+msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:245
+#, fuzzy, kde-format
+#| msgid "OpenGL support is not available on your system."
+msgid "OpenCL is available on this system."
+msgstr "OpenGL-ondersteuning is niet beschikbaar op uw computer"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#, fuzzy, kde-format
+#| msgid "No new version is available."
+msgid "OpenCL acceleration device is available."
+msgstr "Geen nieuwe versie beschikbaar."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:255
+#, fuzzy, kde-format
+#| msgctxt "@info: icc profile class"
+#| msgid "Link device"
+msgid "Using device: %1"
+msgstr "Koppelapparaat"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:259
+#, fuzzy, kde-format
+#| msgid "This collection is currently not available."
+msgid "OpenCL acceleration device is not available."
+msgstr "Deze verzameling is nu niet beschikbaar."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:264
+#, fuzzy, kde-format
+#| msgid "OpenGL support is not available on your system."
+msgid "OpenCL is not available on this system."
+msgstr "OpenGL-ondersteuning is niet beschikbaar op uw computer"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:269
+#, fuzzy, kde-format
+#| msgid "Loading image..."
+msgid "Loading test image..."
+msgstr "Afbeelding wordt geladen..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:275
+#, fuzzy, kde-format
+#| msgid "Binary not found."
+msgid "Test image not found."
+msgstr "Binair programma niet gevonden."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to save image to %1"
+msgid "Failed to load test image from %1"
+msgstr "Afbeelding opslaan naar %1 is mislukt"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
+#, fuzzy, kde-format
+#| msgid "Pan the image to a region"
+msgid "Preparing the image for processing..."
+msgstr "Afbeeldinggrootte op een gebied afstemmen"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:314
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Initializing Main View..."
+msgid "Initializing face detection model..."
+msgstr "Bezig met klaar maken van de hoofdpagina..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:318
+#, fuzzy, kde-format
+#| msgid "Error starting face detection."
+msgid "Running face detection..."
+msgstr "Fout bij starten van gezichtsherkenning."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:334
+#, fuzzy, kde-format
+#| msgctxt "@info: setup"
+#| msgid "Initializing Main View..."
+msgid "Initializing feature extraction model..."
+msgstr "Bezig met klaar maken van de hoofdpagina..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:338
+#, fuzzy, kde-format
+#| msgid "Preparing collection scan..."
+msgid "Preparing face for feature extraction..."
+msgstr "Voorbereiden van een verzamelingscan..."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:351
+#, kde-format
+msgid "Extracting face features..."
+msgstr ""
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:357
+#, fuzzy, kde-format
+#| msgid "Failed to create folder"
+msgid "Failed to extract face features."
+msgstr "Map kon niet aangemaakt worden"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
+#, fuzzy, kde-format
+#| msgid "Database copied successfully."
+msgid "All tests completed successfully!"
+msgstr "Database met succes gekopieerd."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:367
+#, fuzzy, kde-format
+#| msgid "Open error"
+msgid "OpenCV error: %1"
+msgstr "Fout bij openen"
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:372
+#, fuzzy, kde-format
+#| msgid "Error"
+msgid "Error: %1"
+msgstr "Fout"
+
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
 #, kde-format
@@ -67045,27 +67226,29 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Groepering"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:91
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Hoge DPI schaling gebruiken uit de schermfactor"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:92
+#: core/utilities/setup/misc/systemsettingswidget.cpp:98
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Pixmaps gebruiken met hoge DPI resolutie"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:96
-#, kde-format
-msgid "Use the software OpenGL for rendering"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:102
+#, fuzzy, kde-format
+#| msgid "Use the software OpenGL for rendering"
+msgid "Use software OpenGL for rendering"
 msgstr "Gebruik voor renderen de software OpenGL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, kde-format
-msgid "Use the OpenCL hardware acceleration"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#, fuzzy, kde-format
+#| msgid "Use the OpenCL hardware acceleration"
+msgid "Use OpenCL hardware acceleration"
 msgstr "Gebruik de hardware-versnelling OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
+#: core/utilities/setup/misc/systemsettingswidget.cpp:104
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -67074,57 +67257,82 @@ msgstr ""
 "Deze optie is nog steeds experimenteel en vereist dat bepaalde "
 "omgevingsvariabelen handmatig zijn ingesteld."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#: core/utilities/setup/misc/systemsettingswidget.cpp:106
+#, fuzzy, kde-format
+#| msgid "Use the OpenCL hardware acceleration"
+msgid "Use OpenCL hardware acceleration for AI models"
+msgstr "Gebruik de hardware-versnelling OpenCL"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
+#, fuzzy, kde-format
+#| msgid ""
+#| "This option is still experimental and requires that certain environment "
+#| "variables are set manually."
+msgid ""
+"This option is still experimental and may lead to crashes if the proper "
+"drivers are not installed."
+msgstr ""
+"Deze optie is nog steeds experimenteel en vereist dat bepaalde "
+"omgevingsvariabelen handmatig zijn ingesteld."
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:110
 #, kde-format
-msgid "Use the video hardware acceleration"
+msgid "Test GPU AI compatibility"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#, fuzzy, kde-format
+#| msgid "Use the video hardware acceleration"
+msgid "Use video hardware acceleration"
 msgstr "Gebruik de hardware-versnelling voor video"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:104
-#, kde-format
-msgid "Use the video textures conversion"
+#: core/utilities/setup/misc/systemsettingswidget.cpp:116
+#, fuzzy, kde-format
+#| msgid "Use the video textures conversion"
+msgid "Use video textures conversion"
 msgstr "Gebruik de conversie video-texturen"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:106
+#: core/utilities/setup/misc/systemsettingswidget.cpp:118
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "Decoderingsbackend voor renderen van video:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:109
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (standaard)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:113
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (systeem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:117
+#: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (systeem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (systeem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#: core/utilities/setup/misc/systemsettingswidget.cpp:139
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Vereiste binaire gegevens downloaden:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:128
+#: core/utilities/setup/misc/systemsettingswidget.cpp:140
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "Downloaddialoog openen..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:143
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Interne debug-loggen inschakelen"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:146
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -69574,9 +69782,6 @@ msgstr "Items importeren"
 #~ msgid "No error"
 #~ msgstr "Geen fout"
 
-#~ msgid "Open error"
-#~ msgstr "Fout bij openen"
-
 #~ msgid "Open timed out"
 #~ msgstr "Tijdslimiet bij openen overschreden"
 
@@ -71129,9 +71334,6 @@ msgstr "Items importeren"
 #~ msgstr ""
 #~ "Ondersteunde codecs zijn niet gevonden. (ffmpeg/avconv moet geïnstalleerd "
 #~ "worden in PATH.)"
-
-#~ msgid "Start"
-#~ msgstr "Begin"
 
 #~ msgid "Video writing failed."
 #~ msgstr "Schrijven video is mislukt"
@@ -75402,10 +75604,6 @@ msgstr "Items importeren"
 #~ msgid "Open in Browser..."
 #~ msgstr "In browser openen..."
 
-#~| msgid "No options available"
-#~ msgid "No new version is available."
-#~ msgstr "Geen nieuwe versie beschikbaar."
-
 #~ msgid "Auto Correction"
 #~ msgstr "Autocorrectie"
 
@@ -79402,9 +79600,6 @@ msgstr "Items importeren"
 
 #~ msgid "Theme color scheme file to open."
 #~ msgstr "Te openen bestand met themakleuren."
-
-#~ msgid "Close the theme designer"
-#~ msgstr "De themaontwerper sluiten"
 
 #~ msgid "Property: "
 #~ msgstr "Eigenschap: "
