@@ -200,8 +200,8 @@ BUGFIXES:
 174 ==> 432537 - Improve face-recognition accuracy by visually de-selecting "bad faces" to be used within the faces-engine
 175 ==> 434164 - Some proposals about face management
 176 ==> 213367 - Improving Kenburns effect from AdvancedSlideshow to use face regions
-177 ==> 
-178 ==> 
+177 ==> 503415 - Can't run OpenCL.
+178 ==> 502164 - Add the ability to show Headline properties on preview thumbnails.
 179 ==> 
 180 ==> 
 181 ==> 
