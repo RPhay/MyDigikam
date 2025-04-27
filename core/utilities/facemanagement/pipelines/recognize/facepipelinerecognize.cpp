@@ -115,14 +115,6 @@ bool FacePipelineRecognize::finder()
             QList<qlonglong> imageIds = CoreDbAccess().db()->getImageIds(album->id(),
                                                                          DatabaseItem::Status::Visible,
                                                                          true);
-
-            // quick check if we should add threads.
-
-            if (!moreCpu)
-            {
-                moreCpu = checkMoreWorkers(totalItemCount, imageIds.size(), settings.useFullCpu);
-            }
-
             // iterate over the image IDs and add unique IDs to the queue for processing
 
             for (qlonglong imageId : std::as_const(imageIds))
@@ -131,6 +123,13 @@ bool FacePipelineRecognize::finder()
 
                 if (!filter.contains(imageId))
                 {
+                    // quick check if we should add threads.
+
+                    if (!moreCpu)
+                    {
+                        moreCpu = checkMoreWorkers(totalItemCount, imageIds.size(), settings.useFullCpu);
+                    }
+
                     QList<FaceTagsIface> faces = utils.unconfirmedFaceTagsIfaces(imageId);
 
                     for (const FaceTagsIface& face : std::as_const(faces))

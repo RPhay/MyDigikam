@@ -159,13 +159,6 @@ bool FacePipelineDetectRecognize::finder()
                                                                          DatabaseItem::Status::Visible,
                                                                          (FaceScanSettings::AlreadyScannedHandling::Skip != settings.alreadyScannedHandling));
 
-            // quick check if we should add threads.
-
-            if (!moreCpu)
-            {
-                moreCpu = checkMoreWorkers(totalItemCount, imageIds.size(), settings.useFullCpu);
-            }
-
             // iterate over the image IDs and add unique IDs to the queue for processing
 
             for (qlonglong imageId : std::as_const(imageIds))
@@ -174,8 +167,18 @@ bool FacePipelineDetectRecognize::finder()
 
                 if (!filter.contains(imageId))
                 {
+                    // quick check if we should add threads.
+
+                    if (!moreCpu)
+                    {
+                        moreCpu = checkMoreWorkers(totalItemCount, imageIds.size(), settings.useFullCpu);
+                    }
+
                     ++totalItemCount;
                     filter << imageId;
+
+                    // add the image ID to the queue for processing
+
                     enqueue(nextQueue, new FacePipelinePackageBase(imageId, ++serialNumber));
                 }
             }
@@ -190,8 +193,18 @@ bool FacePipelineDetectRecognize::finder()
 
         if (!filter.contains(imageId))
         {
+            // quick check if we should add threads.
+
+            if (!moreCpu)
+            {
+                moreCpu = checkMoreWorkers(totalItemCount, settings.infos.size(), settings.useFullCpu);
+            }
+
             ++totalItemCount;
             filter << imageId;
+
+            // add the image ID to the queue for processing
+
             enqueue(nextQueue, new FacePipelinePackageBase(imageId, ++serialNumber));
         }
     }
