@@ -18,6 +18,7 @@ Face Engine:     digiKam will automatically start a new face recognition scan wh
                  Minor updates to the Face Classifier to improve performance and accuracy.
 OpenCV/OpenCL    The user can now turn off OpenCL for the AI models preventing crashes when the
                  GPU drivers are not fully installed, but OpenCL can continued to be used elsewhere.
+                 Added a test function to ensure OpenCL functionality with AI/ML functions.
                  See Settings->Miscellaneous->System.
 
 *****************************************************************************************************
