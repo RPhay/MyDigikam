@@ -202,7 +202,7 @@ BUGFIXES:
 176 ==> 213367 - Improving Kenburns effect from AdvancedSlideshow to use face regions
 177 ==> 503415 - Can't run OpenCL.
 178 ==> 502164 - Add the ability to show Headline properties on preview thumbnails.
-179 ==> 
+179 ==> 477631 - digiKam cannot decode Nikon Z8/Z9 NEF images in the HE/HE* formats.
 180 ==> 
 181 ==> 
 182 ==> 
