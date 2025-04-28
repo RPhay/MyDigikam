@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-27 01:57+0000\n"
+"POT-Creation-Date: 2025-04-28 01:57+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -109,7 +109,7 @@ msgid "Select the current day"
 msgstr "A mai nap kiválasztása"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:222
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -65452,150 +65452,150 @@ msgctxt "@action:button"
 msgid "Begin test"
 msgstr "Bétatesztelő"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:138
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:139
 #, fuzzy, kde-format
 #| msgid "Settings..."
 msgctxt "@action:button"
 msgid "Testing..."
 msgstr "Beállítások..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:144
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:146
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:207
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:213
 #, kde-format
 msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:211
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:223
 #, fuzzy, kde-format
 #| msgid "Close the theme designer"
 msgctxt "@action:button"
 msgid "Close the test dialog"
 msgstr "Tématervező bezárása"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:240
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:248
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:245
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is available on this system."
 msgstr "Az OpenGL támogatás nem érhető el a rendszerén."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:265
 #, fuzzy, kde-format
 #| msgid "No options available"
 msgid "OpenCL acceleration device is available."
 msgstr "Nincs beállítási lehetőség"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:255
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:267
 #, fuzzy, kde-format
 #| msgid "Parsing error: %1"
 msgid "Using device: %1"
 msgstr "Feldolgozási hiba: %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:259
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
 #, fuzzy, kde-format
 #| msgid "This collection is currently not available."
 msgid "OpenCL acceleration device is not available."
 msgstr "Ez a gyűjtemény jelenleg nem érhető el."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:264
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:276
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is not available on this system."
 msgstr "Az OpenGL támogatás nem érhető el a rendszerén."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:269
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:281
 #, fuzzy, kde-format
 #| msgid "Loading image..."
 msgid "Loading test image..."
 msgstr "Kép betöltése..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:275
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:290
 #, fuzzy, kde-format
 #| msgctxt "@info: country code"
 #| msgid "Eritrea"
 msgid "Test image not found."
 msgstr "Eritrea"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:297
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Failed to save image to %1."
 msgid "Failed to load test image from %1"
 msgstr "Nem sikerült menteni a képet a következőbe: %1."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:301
 #, fuzzy, kde-format
 #| msgid "Pan the image to a region"
 msgid "Preparing the image for processing..."
 msgstr "Húzza a képet egy részlethez"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:314
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:330
 #, fuzzy, kde-format
 #| msgctxt "@info: setup"
 #| msgid "Initializing Main View..."
 msgid "Initializing face detection model..."
 msgstr "A fő nézet inicializálása ..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:318
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:337
 #, fuzzy, kde-format
 #| msgid "Enable face detection"
 msgid "Running face detection..."
 msgstr "Arcfelismerés engedélyezése"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:334
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:353
 #, fuzzy, kde-format
 #| msgctxt "@info: setup"
 #| msgid "Initializing Main View..."
 msgid "Initializing feature extraction model..."
 msgstr "A fő nézet inicializálása ..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:338
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:360
 #, fuzzy, kde-format
 #| msgid "Preparing collection scan..."
 msgid "Preparing face for feature extraction..."
 msgstr "Gyűjteményvizsgálat előkészítése…"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:351
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:373
 #, kde-format
 msgid "Extracting face features..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:357
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
 #, fuzzy, kde-format
 #| msgid "Failed to create folder"
 msgid "Failed to extract face features."
 msgstr "Mappa létrehozása sikertelen"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:384
 #, fuzzy, kde-format
 #| msgid "Database copied successfully."
 msgid "All tests completed successfully!"
 msgstr "Az adatbázis másolása sikeresen megtörtént."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:367
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
 #, fuzzy, kde-format
 #| msgid "Internal error"
 msgid "OpenCV error: %1"
 msgstr "Belső hiba"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:372
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
 #, fuzzy, kde-format
 #| msgid "Error"
 msgid "Error: %1"

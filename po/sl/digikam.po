@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-27 01:57+0000\n"
-"PO-Revision-Date: 2025-04-22 06:22+0200\n"
+"POT-Creation-Date: 2025-04-28 01:57+0000\n"
+"PO-Revision-Date: 2025-04-27 08:03+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -108,7 +108,7 @@ msgid "Select the current day"
 msgstr "Izberi trenutni dan"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:222
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -66223,7 +66223,7 @@ msgstr "Priklopne datoteke"
 #, kde-format
 msgctxt "@title:window"
 msgid "AI GPU Test"
-msgstr ""
+msgstr "Preizkus UI na GPE"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:85
 #, kde-format
@@ -66235,6 +66235,11 @@ msgid ""
 "\n"
 "Do you want to test your system now?"
 msgstr ""
+"To bo preverilo, ali vaš sistem lahko uporablja GPE pri izvajanju modelov "
+"umetne inteligence, tako da potrdi, ali imata OpenCV in OpenCL nameščene "
+"potrebne knjižnice in gonilnike.\n"
+"\n"
+"Ali želite zdaj preizkusiti svoj sistem?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
 #, kde-format
@@ -66242,158 +66247,142 @@ msgid "Start"
 msgstr "Zaženi"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
-#, fuzzy, kde-format
-#| msgid "Beta tester"
+#, kde-format
 msgctxt "@action:button"
 msgid "Begin test"
-msgstr "Beta preizkuševalec"
+msgstr "Začetek preizkusa"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:138
-#, fuzzy, kde-format
-#| msgid "Settings..."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:139
+#, kde-format
 msgctxt "@action:button"
 msgid "Testing..."
-msgstr "Nastavitve ..."
+msgstr "Testiranje..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:144
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:146
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
-msgstr ""
+msgstr "Začetek testa OpenCV OpenCL DNN..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:207
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:213
 #, kde-format
 msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
 "models."
 msgstr ""
+"Preizkus je bil uspešno zaključen! Vaš sistem lahko uporablja GPe za modele "
+"umetne inteligence."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:211
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
 "models."
 msgstr ""
+"Preizkus ni uspel. Vaš sistem morda ne more uporabljati GPE za modele umetne "
+"inteligence."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Close the test dialog"
-msgstr ""
+msgstr "Zapri pogovorno okno preizkusa"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:240
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:248
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
-
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:245
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
-msgid "OpenCL is available on this system."
-msgstr "Vaš sistem nima podpore OpenGL."
+"Preverjanje združljivosti pospeševanja grafične kartice OpenCL z modeli "
+"umetne inteligence..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
 #, kde-format
+msgid "OpenCL is available on this system."
+msgstr "OpenCL je na voljo v tem sistemu."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:265
+#, kde-format
 msgid "OpenCL acceleration device is available."
-msgstr ""
+msgstr "Na voljo je naprava za pospeševanje OpenCL."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:255
-#, fuzzy, kde-format
-#| msgctxt "@info: icc profile class"
-#| msgid "Link device"
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:267
+#, kde-format
 msgid "Using device: %1"
-msgstr "Povezana naprava"
+msgstr "Uporaba naprave: %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:259
-#, fuzzy, kde-format
-#| msgid "This collection is currently not available."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
+#, kde-format
 msgid "OpenCL acceleration device is not available."
-msgstr "Ta zbirka je trenutno ni na voljo."
+msgstr "Naprava za pospeševanje OpenCL ni na voljo."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:264
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:276
+#, kde-format
 msgid "OpenCL is not available on this system."
-msgstr "Vaš sistem nima podpore OpenGL."
+msgstr "OpenCL ni na voljo v tem sistemu."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:269
-#, fuzzy, kde-format
-#| msgid "Loading image..."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:281
+#, kde-format
 msgid "Loading test image..."
-msgstr "Nalaganje slike ..."
+msgstr "Nalaganje testne slike..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:275
-#, fuzzy, kde-format
-#| msgid "Binary not found."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:290
+#, kde-format
 msgid "Test image not found."
-msgstr "Izvajalnega programa ni mogoče najti."
+msgstr "Testne slike ni bilo mogoče najti."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to save image to %1"
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:297
+#, kde-format
 msgid "Failed to load test image from %1"
-msgstr "Ni bilo mogoče shraniti slike v %1"
+msgstr "Nalaganje testne slike iz %1 ni uspelo"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
-#, fuzzy, kde-format
-#| msgid "Pan the image to a region"
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:301
+#, kde-format
 msgid "Preparing the image for processing..."
-msgstr "Zasuči sliko na območje"
+msgstr "Priprava slike za obdelavo..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:314
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Initializing Main View..."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:330
+#, kde-format
 msgid "Initializing face detection model..."
-msgstr "Začenjanje glavnega pogleda..."
+msgstr "Inicializacija modela zaznavanja obrazov..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:318
-#, fuzzy, kde-format
-#| msgid "Error starting face detection."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:337
+#, kde-format
 msgid "Running face detection..."
-msgstr "Napaka pri zagonu zaznavanja obrazov."
+msgstr "Zaznavanje obrazov v teku..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:334
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Initializing Main View..."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:353
+#, kde-format
 msgid "Initializing feature extraction model..."
-msgstr "Začenjanje glavnega pogleda..."
+msgstr "Inicializacija modela za ekstrakcijo značilnosti..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:338
-#, fuzzy, kde-format
-#| msgid "Preparing collection scan..."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:360
+#, kde-format
 msgid "Preparing face for feature extraction..."
-msgstr "Pripravljanje na preiskovanje zbirke ..."
+msgstr "Priprava obraza za ekstrakcijo značilnosti..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:351
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:373
 #, kde-format
 msgid "Extracting face features..."
-msgstr ""
+msgstr "Izločanje obraznih potez..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:357
-#, fuzzy, kde-format
-#| msgid "Failed to create folder"
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
+#, kde-format
 msgid "Failed to extract face features."
-msgstr "Ni mogoče ustvariti mape"
+msgstr "Izločanje obraznih potez ni uspelo."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
-#, fuzzy, kde-format
-#| msgid "Database copied successfully."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:384
+#, kde-format
 msgid "All tests completed successfully!"
-msgstr "Podatkovna zbirka je bila uspešno kopirana."
+msgstr "Vsi testi so bili uspešno opravljeni!"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:367
-#, fuzzy, kde-format
-#| msgid "Open error"
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
+#, kde-format
 msgid "OpenCV error: %1"
-msgstr "Napaka odpiranja"
+msgstr "Napaka OpenCV: %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:372
-#, fuzzy, kde-format
-#| msgid "Error"
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
+#, kde-format
 msgid "Error: %1"
-msgstr "Napaka"
+msgstr "Napaka: %1"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
@@ -66777,14 +66766,12 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Uporabi slikovne preslikave z visoko ločljivostjo DPI"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Use the software OpenGL for rendering"
+#, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "Uporabi programsko opremo OpenGL za upodabljanje"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "Uporabi s strojno pospeševanje OpenCL"
 
@@ -66798,37 +66785,31 @@ msgstr ""
 "okolja."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use OpenCL hardware acceleration for AI models"
-msgstr "Uporabi s strojno pospeševanje OpenCL"
+msgstr "Uporabi strojno pospeševanje OpenCL za modele umetne inteligence"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option is still experimental and requires that certain environment "
-#| "variables are set manually."
+#, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
 "drivers are not installed."
 msgstr ""
-"Ta možnost je še poskusna in zahteva ročno nastavitev nekaterih spremenljivk "
-"okolja."
+"Ta možnost je še vedno eksperimentalna in lahko povzroči sesutja, če niso "
+"nameščeni ustrezni gonilniki."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:110
 #, kde-format
 msgid "Test GPU AI compatibility"
-msgstr ""
+msgstr "Preizkus združljivosti GPE z umetno inteligenco"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Use the video hardware acceleration"
+#, kde-format
 msgid "Use video hardware acceleration"
-msgstr "Uporabi s strojno pospeševanje videa"
+msgstr "Uporabite strojno pospeševanje videa"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:116
-#, fuzzy, kde-format
-#| msgid "Use the video textures conversion"
+#, kde-format
 msgid "Use video textures conversion"
 msgstr "Uporabi konverzijo video tekstur"
 

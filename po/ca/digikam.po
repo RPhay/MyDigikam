@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-27 01:57+0000\n"
-"PO-Revision-Date: 2025-04-22 09:43+0200\n"
+"POT-Creation-Date: 2025-04-28 01:57+0000\n"
+"PO-Revision-Date: 2025-04-27 08:38+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -83,7 +83,7 @@ msgid "Select the current day"
 msgstr "Seleccioneu el dia actual"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:222
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -66804,7 +66804,7 @@ msgstr "Laterals"
 #, kde-format
 msgctxt "@title:window"
 msgid "AI GPU Test"
-msgstr ""
+msgstr "Prova la GPU d'IA"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:85
 #, kde-format
@@ -66816,167 +66816,154 @@ msgid ""
 "\n"
 "Do you want to test your system now?"
 msgstr ""
+"Això comprovarà si el sistema és capaç d'utilitzar l'acceleració de la GPU\n"
+"en executar els models d'IA validant que l'OpenCV i l'OpenCL tenen les\n"
+"biblioteques i controladors necessaris instal·lats.\n"
+"\n"
+"Voleu provar ara aquest sistema?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Start"
+#, kde-format
 msgid "Start"
 msgstr "Inicia"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
-#, fuzzy, kde-format
-#| msgid "Beta tester"
+#, kde-format
 msgctxt "@action:button"
 msgid "Begin test"
-msgstr "Provador"
+msgstr "Comença la prova"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:138
-#, fuzzy, kde-format
-#| msgid "Settings..."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:139
+#, kde-format
 msgctxt "@action:button"
 msgid "Testing..."
-msgstr "Configuració..."
+msgstr "Provant..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:144
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:146
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
-msgstr ""
+msgstr "S'està iniciant la prova DNN de l'OpenCV i l'OpenCL..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:207
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:213
 #, kde-format
 msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
 "models."
 msgstr ""
+"La prova s'ha completat correctament! Aquest sistema pot utilitzar "
+"l'acceleració de GPU per als models d'IA."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:211
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
 "models."
 msgstr ""
+"La prova ha fallat. Aquest sistema pot utilitzar pot no ser capaç de fer "
+"servir l'acceleració de GPU per als models d'IA."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Close the test dialog"
-msgstr ""
+msgstr "Tanca el diàleg de prova"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:240
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:248
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
-
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:245
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
-msgid "OpenCL is available on this system."
-msgstr "La implementació de l'OpenGL no està disponible en aquest sistema."
+"S'està comprovant la compatibilitat de l'acceleració de GPU de l'OpenCL amb "
+"els models d'IA..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
 #, kde-format
+msgid "OpenCL is available on this system."
+msgstr "L'OpenGL està disponible en aquest sistema."
+
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:265
+#, kde-format
 msgid "OpenCL acceleration device is available."
-msgstr ""
+msgstr "El dispositiu d'acceleració OpenCL està disponible."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:255
-#, fuzzy, kde-format
-#| msgctxt "@info: icc profile class"
-#| msgid "Link device"
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:267
+#, kde-format
 msgid "Using device: %1"
-msgstr "Dispositiu d'enllaç"
+msgstr "Dispositiu en ús: %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:259
-#, fuzzy, kde-format
-#| msgid "This collection is currently not available."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
+#, kde-format
 msgid "OpenCL acceleration device is not available."
-msgstr "Aquesta col·lecció actualment no està disponible."
+msgstr "El dispositiu d'acceleració OpenCL no està disponible."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:264
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:276
+#, kde-format
 msgid "OpenCL is not available on this system."
-msgstr "La implementació de l'OpenGL no està disponible en aquest sistema."
+msgstr "L'OpenGL no està disponible en aquest sistema."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:269
-#, fuzzy, kde-format
-#| msgid "Loading image..."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:281
+#, kde-format
 msgid "Loading test image..."
-msgstr "S'està carregant la imatge..."
+msgstr "S'està carregant una imatge de prova..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:275
-#, fuzzy, kde-format
-#| msgid "Binary not found."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:290
+#, kde-format
 msgid "Test image not found."
-msgstr "No s'ha trobat l'executable."
+msgstr "No s'ha trobat la imatge de prova."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to save image to %1"
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:297
+#, kde-format
 msgid "Failed to load test image from %1"
-msgstr "Ha fallat en desar la imatge a %1"
+msgstr "Ha fallat en carregar la imatge de prova des de %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
-#, fuzzy, kde-format
-#| msgid "Pan the image to a region"
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:301
+#, kde-format
 msgid "Preparing the image for processing..."
-msgstr "Desplaça la imatge a una regió"
+msgstr "S'està preparant la imatge per al processament..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:314
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Initializing Main View..."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:330
+#, kde-format
 msgid "Initializing face detection model..."
-msgstr "S'està inicialitzant la vista principal..."
+msgstr "S'està inicialitzant el model de detecció de cares..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:318
-#, fuzzy, kde-format
-#| msgid "Error starting face detection."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:337
+#, kde-format
 msgid "Running face detection..."
-msgstr "Error en iniciar la detecció de cares."
+msgstr "S'està executant la detecció de cares..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:334
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Initializing Main View..."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:353
+#, kde-format
 msgid "Initializing feature extraction model..."
-msgstr "S'està inicialitzant la vista principal..."
+msgstr "S'està inicialitzant el model d'extracció de característiques..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:338
-#, fuzzy, kde-format
-#| msgid "Preparing collection scan..."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:360
+#, kde-format
 msgid "Preparing face for feature extraction..."
-msgstr "S'està preparant l'exploració de la col·lecció..."
+msgstr "S'està preparant les cares per a l'extracció de característiques..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:351
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:373
 #, kde-format
 msgid "Extracting face features..."
-msgstr ""
+msgstr "S'estan extraient les característiques de cares..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:357
-#, fuzzy, kde-format
-#| msgid "Failed to create folder"
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
+#, kde-format
 msgid "Failed to extract face features."
-msgstr "Ha fallat en crear la carpeta"
+msgstr "Ha fallat en extreure les característiques de cares."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
-#, fuzzy, kde-format
-#| msgid "Database copied successfully."
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:384
+#, kde-format
 msgid "All tests completed successfully!"
-msgstr "La base de dades s'ha copiat amb èxit."
+msgstr "Totes les proves s'han completat correctament!"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:367
-#, fuzzy, kde-format
-#| msgid "OpenGL Error"
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
+#, kde-format
 msgid "OpenCV error: %1"
-msgstr "Error de l'OpenGL"
+msgstr "Error de l'OpenCV: %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:372
-#, fuzzy, kde-format
-#| msgid "Error"
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
+#, kde-format
 msgid "Error: %1"
-msgstr "Error"
+msgstr "Error: %1"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
@@ -67361,14 +67348,12 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Usa mapes de píxels amb resolucions de PPP alt"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Use the software OpenGL for rendering"
+#, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "Usa el programari OpenGL per a la renderització"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "Usa l'acceleració de maquinari OpenCL"
 
@@ -67382,37 +67367,31 @@ msgstr ""
 "d'entorn es defineixin manualment."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use OpenCL hardware acceleration for AI models"
-msgstr "Usa l'acceleració de maquinari OpenCL"
+msgstr "Usa l'acceleració de maquinari OpenCL per als models d'IA"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option is still experimental and requires that certain environment "
-#| "variables are set manually."
+#, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
 "drivers are not installed."
 msgstr ""
-"Aquesta opció encara és experimental i necessita que determinades variables "
-"d'entorn es defineixin manualment."
+"Aquesta opció encara és experimental i pot provocar fallades si no estan "
+"instal·lats els controladors adequats."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:110
 #, kde-format
 msgid "Test GPU AI compatibility"
-msgstr ""
+msgstr "Prova la compatibilitat de la IA de la GPU"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Use the video hardware acceleration"
+#, kde-format
 msgid "Use video hardware acceleration"
 msgstr "Usa l'acceleració de maquinari de vídeo"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:116
-#, fuzzy, kde-format
-#| msgid "Use the video textures conversion"
+#, kde-format
 msgid "Use video textures conversion"
 msgstr "Usa la conversió de textures de vídeo"
 

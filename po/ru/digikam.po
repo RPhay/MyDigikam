@@ -54,7 +54,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-27 01:57+0000\n"
+"POT-Creation-Date: 2025-04-28 01:57+0000\n"
 "PO-Revision-Date: 2025-03-17 11:19+0300\n"
 "Last-Translator: Mariya Shikunova <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -128,7 +128,7 @@ msgid "Select the current day"
 msgstr "Перейти к сегодняшнему дню"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:222
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -66778,149 +66778,149 @@ msgctxt "@action:button"
 msgid "Begin test"
 msgstr "Бета-тестер"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:138
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:139
 #, fuzzy, kde-format
 #| msgid "Settings..."
 msgctxt "@action:button"
 msgid "Testing..."
 msgstr "Параметры..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:144
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:146
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:207
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:213
 #, kde-format
 msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:211
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:223
 #, fuzzy, kde-format
 #| msgid "Close the theme designer"
 msgctxt "@action:button"
 msgid "Close the test dialog"
 msgstr "Закрыть дизайнер стиля оформления"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:240
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:248
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:245
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is available on this system."
 msgstr "Ваша система не поддерживает OpenGL."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:265
 #, fuzzy, kde-format
 msgid "OpenCL acceleration device is available."
 msgstr "Нет доступных параметров"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:255
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:267
 #, fuzzy, kde-format
 #| msgctxt "@info: icc profile class"
 #| msgid "Link device"
 msgid "Using device: %1"
 msgstr "Устройство связи"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:259
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
 #, fuzzy, kde-format
 #| msgid "This collection is currently not available."
 msgid "OpenCL acceleration device is not available."
 msgstr "Эта коллекция сейчас недоступна."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:264
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:276
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is not available on this system."
 msgstr "Ваша система не поддерживает OpenGL."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:269
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:281
 #, fuzzy, kde-format
 #| msgid "Loading image..."
 msgid "Loading test image..."
 msgstr "Загрузка изображения..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:275
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:290
 #, fuzzy, kde-format
 #| msgid "Binary not found."
 msgid "Test image not found."
 msgstr "Исполняемый файл не найден."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:297
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Failed to save image to %1"
 msgid "Failed to load test image from %1"
 msgstr "Не удалось сохранить изображение в %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:301
 #, fuzzy, kde-format
 #| msgid "Pan the image to a region"
 msgid "Preparing the image for processing..."
 msgstr "Прокрутить снимок до области"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:314
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:330
 #, fuzzy, kde-format
 #| msgctxt "@info: setup"
 #| msgid "Initializing Main View..."
 msgid "Initializing face detection model..."
 msgstr "Инициализация главного окна..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:318
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:337
 #, fuzzy, kde-format
 #| msgid "Error starting face detection."
 msgid "Running face detection..."
 msgstr "При начале определения лиц произошла ошибка."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:334
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:353
 #, fuzzy, kde-format
 #| msgctxt "@info: setup"
 #| msgid "Initializing Main View..."
 msgid "Initializing feature extraction model..."
 msgstr "Инициализация главного окна..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:338
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:360
 #, fuzzy, kde-format
 #| msgid "Preparing collection scan..."
 msgid "Preparing face for feature extraction..."
 msgstr "Подготовка к сканированию коллекции..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:351
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:373
 #, kde-format
 msgid "Extracting face features..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:357
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
 #, fuzzy, kde-format
 #| msgid "Failed to create folder"
 msgid "Failed to extract face features."
 msgstr "Не удалось создать папку"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:384
 #, fuzzy, kde-format
 #| msgid "Database copied successfully."
 msgid "All tests completed successfully!"
 msgstr "Копирование базы данных успешно завершено."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:367
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
 #, fuzzy, kde-format
 #| msgid "Open error"
 msgid "OpenCV error: %1"
 msgstr "Ошибка открытия"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:372
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
 #, fuzzy, kde-format
 #| msgid "Error"
 msgid "Error: %1"

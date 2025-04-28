@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-27 01:57+0000\n"
+"POT-Creation-Date: 2025-04-28 01:57+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -125,7 +125,7 @@ msgid "Select the current day"
 msgstr "យក​តម្រង​បច្ចុប្បន្ន​ចេញ"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:222
 #, fuzzy, kde-format
 #| msgid "Close-up"
 msgctxt "@action:button"
@@ -67162,143 +67162,143 @@ msgctxt "@action:button"
 msgid "Begin test"
 msgstr "Beta tester"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:138
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:139
 #, fuzzy, kde-format
 #| msgid "More Tags..."
 msgctxt "@action:button"
 msgid "Testing..."
 msgstr "ស្លាក​ច្រើន..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:144
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:146
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:207
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:213
 #, kde-format
 msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:211
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Close the test dialog"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:240
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:248
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:245
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is available on this system."
 msgstr "មិនមានការ​គាំទ្រ OpenGL នៅ​ក្នុង​ប្រព័ន្ធ​របស់​អ្នក​ទេ ។"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:265
 #, fuzzy, kde-format
 #| msgid "Not available"
 msgid "OpenCL acceleration device is available."
 msgstr "ដែល​មិន​អាច​រក​បាន​"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:255
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:267
 #, fuzzy, kde-format
 #| msgid "Parsing error: %1"
 msgid "Using device: %1"
 msgstr "កំហុស​​ដែល​ញែក ៖ %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:259
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL acceleration device is not available."
 msgstr "មិនមានការ​គាំទ្រ OpenGL នៅ​ក្នុង​ប្រព័ន្ធ​របស់​អ្នក​ទេ ។"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:264
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:276
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is not available on this system."
 msgstr "មិនមានការ​គាំទ្រ OpenGL នៅ​ក្នុង​ប្រព័ន្ធ​របស់​អ្នក​ទេ ។"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:269
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:281
 #, fuzzy, kde-format
 #| msgid "Scan Image"
 msgid "Loading test image..."
 msgstr "ស្កេន​រូបភាព"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:275
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:290
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgid "Test image not found."
 msgstr "រក​មិន​ឃើញ​សម្រាំង​ឡើយ"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:297
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "Failed to load test image from %1"
 msgstr "បាន​បរាជ័យ​ដើម្បី​រក្សាទុក​ស្លាក​ទៅកាន់​ឯកសារ ។"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:301
 #, fuzzy, kde-format
 #| msgid "Custom process"
 msgid "Preparing the image for processing..."
 msgstr "ដំណើរការ​ផ្ទាល់ខ្លួន​"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:314
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:330
 #, fuzzy, kde-format
 #| msgid "Initializing Main View..."
 msgid "Initializing face detection model..."
 msgstr "កំពុង​រៀបចំ​ទិដ្ឋភាព​ចម្បង..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:318
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:337
 #, fuzzy, kde-format
 msgid "Running face detection..."
 msgstr "គាំទ្រ​ការ​រក​ឃើញ​មុខ"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:334
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:353
 #, fuzzy, kde-format
 #| msgid "Initializing Main View..."
 msgid "Initializing feature extraction model..."
 msgstr "កំពុង​រៀបចំ​ទិដ្ឋភាព​ចម្បង..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:338
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:360
 #, fuzzy, kde-format
 #| msgid "Preparing collection scan..."
 msgid "Preparing face for feature extraction..."
 msgstr "កំពុង​រៀបចំ​វិភាគ​រក​សម្រាំង..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:351
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:373
 #, kde-format
 msgid "Extracting face features..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:357
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
 #, fuzzy, kde-format
 msgid "Failed to extract face features."
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​ថត"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:384
 #, fuzzy, kde-format
 #| msgid "Database copied successfully."
 msgid "All tests completed successfully!"
 msgstr "បាន​ចម្លង​មូលដ្ឋាន​ទិន្នន័យ​ដោយ​ជោគជ័យ ។"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:367
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "OpenCV error: %1"
 msgstr "នាំចេញ"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:372
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
 #, fuzzy, kde-format
 #| msgid "Error"
 msgid "Error: %1"

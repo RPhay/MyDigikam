@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-27 01:57+0000\n"
-"PO-Revision-Date: 2025-04-10 20:53+0200\n"
+"POT-Creation-Date: 2025-04-28 01:57+0000\n"
+"PO-Revision-Date: 2025-04-22 21:13+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -94,7 +94,7 @@ msgid "Select the current day"
 msgstr "Seleziona il giorno attuale"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:222
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -52601,7 +52601,7 @@ msgstr "Aggiunta manuale del volto"
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:271
 #, kde-format
 msgid "Clearing rejected face tag list."
-msgstr ""
+msgstr "Cancellazione elenco dei tag volto rifiutati."
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
@@ -61421,7 +61421,7 @@ msgstr "Questa opzione cancellerà tutti i volti rilevati e con tag."
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear rejected face matches"
-msgstr ""
+msgstr "Cancella corrispondenze volti rifiutate"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:219
 #, kde-format
@@ -61430,12 +61430,14 @@ msgid ""
 "This will delete all rejected face matches allowing the face recognizer to "
 "present the suggested matches again."
 msgstr ""
+"Questa azione eliminerà tutte le corrispondenze dei volti rifiutate, "
+"consentendo al riconoscimento facciale di presentare di nuovo le "
+"corrispondenze suggerite."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "Faces data management: "
+#, kde-format
 msgid "Face engine management"
-msgstr "Gestione dei dati dei volti: "
+msgstr "Gestione motore riconoscimento facciale"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:249
 #, kde-format
@@ -66796,9 +66798,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Start"
+#, kde-format
 msgid "Start"
 msgstr "Avvia"
 
@@ -66809,150 +66809,150 @@ msgctxt "@action:button"
 msgid "Begin test"
 msgstr "Beta tester"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:138
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:139
 #, fuzzy, kde-format
 #| msgid "Settings..."
 msgctxt "@action:button"
 msgid "Testing..."
 msgstr "Impostazioni..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:144
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:146
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:207
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:213
 #, kde-format
 msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:211
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:223
 #, fuzzy, kde-format
 #| msgid "Close the theme designer"
 msgctxt "@action:button"
 msgid "Close the test dialog"
 msgstr "Chiudi il generatore di temi"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:240
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:248
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:245
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is available on this system."
 msgstr "Il supporto OpenGL non è disponibile nel tuo sistema."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:265
 #, fuzzy, kde-format
 #| msgid "No options available"
 msgid "OpenCL acceleration device is available."
 msgstr "Nessuna opzione disponibile"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:255
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:267
 #, fuzzy, kde-format
 #| msgctxt "@info: icc profile class"
 #| msgid "Link device"
 msgid "Using device: %1"
 msgstr "Dispositivo di collegamento"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:259
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
 #, fuzzy, kde-format
 #| msgid "This collection is currently not available."
 msgid "OpenCL acceleration device is not available."
 msgstr "Questa raccolta non è attualmente disponibile."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:264
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:276
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is not available on this system."
 msgstr "Il supporto OpenGL non è disponibile nel tuo sistema."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:269
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:281
 #, fuzzy, kde-format
 #| msgid "Loading image..."
 msgid "Loading test image..."
 msgstr "Caricamento dell'immagine..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:275
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:290
 #, fuzzy, kde-format
 #| msgid "Binary not found."
 msgid "Test image not found."
 msgstr "Binario non trovato."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:297
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Failed to save image to %1"
 msgid "Failed to load test image from %1"
 msgstr "Salvataggio dell'immagine su %1 non riuscito"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:301
 #, fuzzy, kde-format
 #| msgid "Pan the image to a region"
 msgid "Preparing the image for processing..."
 msgstr "Scorri l'immagine a una regione"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:314
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:330
 #, fuzzy, kde-format
 #| msgctxt "@info: setup"
 #| msgid "Initializing Main View..."
 msgid "Initializing face detection model..."
 msgstr "Inizializzazione della vista principale..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:318
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:337
 #, fuzzy, kde-format
 #| msgid "Error starting face detection."
 msgid "Running face detection..."
 msgstr "Errore di avvio del rilevamento facciale."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:334
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:353
 #, fuzzy, kde-format
 #| msgctxt "@info: setup"
 #| msgid "Initializing Main View..."
 msgid "Initializing feature extraction model..."
 msgstr "Inizializzazione della vista principale..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:338
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:360
 #, fuzzy, kde-format
 #| msgid "Preparing collection scan..."
 msgid "Preparing face for feature extraction..."
 msgstr "Preparazione all'analisi della raccolta..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:351
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:373
 #, kde-format
 msgid "Extracting face features..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:357
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
 #, fuzzy, kde-format
 #| msgid "Failed to create folder"
 msgid "Failed to extract face features."
 msgstr "Creazione della cartella non riuscita"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:384
 #, fuzzy, kde-format
 #| msgid "Database copied successfully."
 msgid "All tests completed successfully!"
 msgstr "Banca dati copiata correttamente."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:367
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
 #, fuzzy, kde-format
 #| msgid "Open error"
 msgid "OpenCV error: %1"
 msgstr "errore di apertura"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:372
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
 #, fuzzy, kde-format
 #| msgid "Error"
 msgid "Error: %1"
@@ -67196,10 +67196,9 @@ msgid "Detect faces in newly added images"
 msgstr "Individua volti nelle immagini aggiunte di recente"
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
-#, fuzzy, kde-format
-#| msgid "Background face recognition scan"
+#, kde-format
 msgid "Enable background face recognition scan"
-msgstr "Analisi per il riconoscimento facciale in background"
+msgstr "Abilita l'analisi per il riconoscimento facciale in background"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format
