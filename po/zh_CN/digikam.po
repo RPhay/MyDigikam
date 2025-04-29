@@ -50552,7 +50552,7 @@ msgstr "正在手动添加人脸"
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:271
 #, kde-format
 msgid "Clearing rejected face tag list."
-msgstr ""
+msgstr "正在清除被否决的人脸标签列表。"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
@@ -59109,7 +59109,7 @@ msgstr "这将清除所有已检测和标记的人脸。"
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear rejected face matches"
-msgstr ""
+msgstr "清除被否决的人脸匹配"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:219
 #, kde-format
@@ -59117,12 +59117,12 @@ msgctxt "@info:tooltip"
 msgid ""
 "This will delete all rejected face matches allowing the face recognizer to "
 "present the suggested matches again."
-msgstr ""
+msgstr "这将删除所有被否决的人脸匹配，使人脸识别程序能够再次显示建议的匹配。"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:226
 #, kde-format
 msgid "Face engine management"
-msgstr ""
+msgstr "人脸引擎管理"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:249
 #, kde-format
@@ -64155,7 +64155,7 @@ msgstr "附带文件"
 #, kde-format
 msgctxt "@title:window"
 msgid "AI GPU Test"
-msgstr ""
+msgstr "AI GPU 测试"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:85
 #, kde-format
@@ -64167,167 +64167,148 @@ msgid ""
 "\n"
 "Do you want to test your system now?"
 msgstr ""
+"这将检查您的系统是否能够在运行 AI 模型时使用 GPU 加速。\n"
+"检查程序将验证 OpenCV 和 OpenCL 是否已安装所需的\n"
+"程序库和驱动程序。\n"
+"\n"
+"您想要立即测试您的系统吗？"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Start"
+#, kde-format
 msgid "Start"
-msgstr "启动"
+msgstr "开始"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
-#, fuzzy, kde-format
-#| msgid "Beta tester"
+#, kde-format
 msgctxt "@action:button"
 msgid "Begin test"
-msgstr "Beta 版本测试人员"
+msgstr "开始测试"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:139
-#, fuzzy, kde-format
-#| msgid "Settings..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Testing..."
-msgstr "设置..."
+msgstr "正在测试..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:146
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
-msgstr ""
+msgstr "正在启动 OpenCV OpenCL DNN 测试..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:213
 #, kde-format
 msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
 "models."
-msgstr ""
+msgstr "测试成功。您的系统能够使用 GPU 加速 AI 模型。"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
 "models."
-msgstr ""
+msgstr "测试失败。您的系统可能无法使用 GPU 加速 AI 模型。"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Close the test dialog"
-msgstr ""
+msgstr "关闭测试对话框"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:248
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
-msgstr ""
+msgstr "正在检查 OpenCL GPU 加速功能的 AI 模型兼容性..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
+#, kde-format
 msgid "OpenCL is available on this system."
-msgstr "OpenGL 支持在本机系统中不可用。"
+msgstr "OpenCL 在本机系统中可用。"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:265
 #, kde-format
 msgid "OpenCL acceleration device is available."
-msgstr ""
+msgstr "OpenCL 加速设备可用。"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "@info: icc profile class"
-#| msgid "Link device"
+#, kde-format
 msgid "Using device: %1"
-msgstr "关联设备"
+msgstr "使用设备：%1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
-#, fuzzy, kde-format
-#| msgid "This collection is currently not available."
+#, kde-format
 msgid "OpenCL acceleration device is not available."
-msgstr "此相册集合当前不可用。"
+msgstr "OpenCL 加速设备不可用。"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:276
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
+#, kde-format
 msgid "OpenCL is not available on this system."
-msgstr "OpenGL 支持在本机系统中不可用。"
+msgstr "OpenCL 在本机系统中不可用。"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:281
-#, fuzzy, kde-format
-#| msgid "Loading image..."
+#, kde-format
 msgid "Loading test image..."
-msgstr "正在加载图像..."
+msgstr "正在加载测试图像..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:290
-#, fuzzy, kde-format
-#| msgid "Binary not found."
+#, kde-format
 msgid "Test image not found."
-msgstr "未找到可执行文件。"
+msgstr "没有找到测试图像。"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:297
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to save image to %1"
+#, kde-format
 msgid "Failed to load test image from %1"
-msgstr "无法保存照片到 %1"
+msgstr "无法从 %1 加载测试图像"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:301
-#, fuzzy, kde-format
-#| msgid "Pan the image to a region"
+#, kde-format
 msgid "Preparing the image for processing..."
-msgstr "平移图像到区域"
+msgstr "正在准备图像以进行处理..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:330
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Initializing Main View..."
+#, kde-format
 msgid "Initializing face detection model..."
-msgstr "正在初始化主视图..."
+msgstr "正在初始化人脸检测模型..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:337
-#, fuzzy, kde-format
-#| msgid "Error starting face detection."
+#, kde-format
 msgid "Running face detection..."
-msgstr "启动人脸检测时出错。"
+msgstr "正在运行人脸检测..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:353
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Initializing Main View..."
+#, kde-format
 msgid "Initializing feature extraction model..."
-msgstr "正在初始化主视图..."
+msgstr "正在初始化特征提取模型..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:360
-#, fuzzy, kde-format
-#| msgid "Preparing collection scan..."
+#, kde-format
 msgid "Preparing face for feature extraction..."
-msgstr "正在准备扫描相册集合..."
+msgstr "正在准备人脸数据以特征提取..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:373
 #, kde-format
 msgid "Extracting face features..."
-msgstr ""
+msgstr "正在提取人脸特征..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
-#, fuzzy, kde-format
-#| msgid "Failed to create folder"
+#, kde-format
 msgid "Failed to extract face features."
-msgstr "无法创建文件夹"
+msgstr "提取人脸特征失败。"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:384
-#, fuzzy, kde-format
-#| msgid "Database copied successfully."
+#, kde-format
 msgid "All tests completed successfully!"
-msgstr "数据库复制成功。"
+msgstr "所有测试均已成功完成。"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
-#, fuzzy, kde-format
-#| msgid "OpenGL Error"
+#, kde-format
 msgid "OpenCV error: %1"
-msgstr "OpenGL 错误"
+msgstr "OpenCV 错误：%1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgid "Error: %1"
-msgstr "错误"
+msgstr "错误：%1"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
@@ -64550,7 +64531,7 @@ msgstr "检测新增图像中的人脸"
 #: core/utilities/setup/misc/setupmisc.cpp:84
 #, kde-format
 msgid "Enable background face recognition scan"
-msgstr ""
+msgstr "启用后台人脸识别扫描"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format
@@ -64685,14 +64666,12 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "在高分辨率下使用像素映射"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Use the software OpenGL for rendering"
+#, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "使用软件 OpenGL 渲染"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "使用 OpenCL 硬件加速"
 
@@ -64704,35 +64683,29 @@ msgid ""
 msgstr "此选项仍是实验性质，需手动设置某些环境变量才能生效。"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:106
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use OpenCL hardware acceleration for AI models"
-msgstr "使用 OpenCL 硬件加速"
+msgstr "使用 OpenCL 硬件加速处理 AI 模型"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option is still experimental and requires that certain environment "
-#| "variables are set manually."
+#, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
 "drivers are not installed."
-msgstr "此选项仍是实验性质，需手动设置某些环境变量才能生效。"
+msgstr "此选项仍处于试验阶段，如果没有安装适当的驱动程序，可能会导致程序崩溃。"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:110
 #, kde-format
 msgid "Test GPU AI compatibility"
-msgstr ""
+msgstr "测试 GPU 的 AI 兼容性"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Use the video hardware acceleration"
+#, kde-format
 msgid "Use video hardware acceleration"
 msgstr "使用显卡硬件加速"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:116
-#, fuzzy, kde-format
-#| msgid "Use the video textures conversion"
+#, kde-format
 msgid "Use video textures conversion"
 msgstr "使用显卡纹理转换"
 
