@@ -295,14 +295,14 @@ bool FacePipelineRecognize::writer()
             }
         }
 
-        if (utils.normalTagChanged())
-        {
-            MetadataHub hub;
-            hub.load(package->info);
+        // if (utils.normalTagChanged())
+        // {
+        //     MetadataHub hub;
+        //     hub.load(package->info);
 
-            ScanController::FileMetadataWrite writeScope(package->info);
-            writeScope.changed(hub.writeToMetadata(package->info, MetadataHub::WRITE_TAGS));
-        }
+        //     ScanController::FileMetadataWrite writeScope(package->info);
+        //     writeScope.changed(hub.writeToMetadata(package->info, MetadataHub::WRITE_TAGS));
+        // }
 
         QString albumName = CollectionManager::instance()->albumRootLabel(package->info.albumRootId());
 

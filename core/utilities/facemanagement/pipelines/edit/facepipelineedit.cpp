@@ -357,10 +357,14 @@ bool FacePipelineEdit::writer()
      */
 
     {
+        bool writeMetadata = false;
+
         switch (package->action)
         {
             case FacePipelinePackageBase::EditPipelineAction::Confirm:
             {
+                writeMetadata = true;
+
                 TagRegion confirmedRegion   = package->region.isValid() ? package->region
                                                                         : package->face.region();
                 FaceTagsIface confirmedFace = utils.confirmName(package->face, package->tagId, confirmedRegion);
@@ -388,12 +392,16 @@ bool FacePipelineEdit::writer()
 
             case FacePipelinePackageBase::EditPipelineAction::Remove:
             {
+                writeMetadata = true;
+                
                 utils.removeFace(package->face);
                 break;
             }
 
             case FacePipelinePackageBase::EditPipelineAction::RemoveAll:
             {
+                writeMetadata = true;
+                
                 utils.removeAllFaces(package->info.id());
                 break;
             }
@@ -408,12 +416,19 @@ bool FacePipelineEdit::writer()
                     (FaceTags::unknownPersonTagId() == package->tagId)
                    )
                 {
+                    writeMetadata = false;
+                    
                     // The face is unconfirmed and the tag is not the unknown person tag.
 
                     utils.rejectSuggestedTag(package->face);
                 }
                 else
                 {
+                    // don't write metadata if marking an unconfirmed face as ignored
+
+                    writeMetadata = !(package->face.isUnconfirmedName() &&
+                                      (FaceTags::ignoredPersonTagId() == package->tagId));
+                
                     utils.changeTag(package->face, package->tagId);
                 }
 
@@ -422,6 +437,8 @@ bool FacePipelineEdit::writer()
 
             case FacePipelinePackageBase::EditPipelineAction::EditRegion:
             {
+                writeMetadata = true;
+                
                 if (package->face.region() != package->region)
                 {
                     package->face = utils.changeRegion(package->face, package->region);
@@ -437,6 +454,8 @@ bool FacePipelineEdit::writer()
 
             case FacePipelinePackageBase::EditPipelineAction::AddManually:
             {
+                writeMetadata = true;
+                
                 utils.addManually(utils.unconfirmedEntry(package->info.id(), package->tagId,
                                                          package->region, package->face.rejectedFaceTagList()));
                 break;
@@ -451,7 +470,7 @@ bool FacePipelineEdit::writer()
 
         // update the tags
 
-        if (utils.normalTagChanged())
+        if (writeMetadata)
         {
             MetadataHub hub;
             hub.load(package->info);
