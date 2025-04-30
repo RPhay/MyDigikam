@@ -417,7 +417,7 @@ bool FacePipelineEdit::writer()
                    )
                 {
                     writeMetadata = false;
-                    
+
                     // The face is unconfirmed and the tag is not the unknown person tag.
 
                     utils.rejectSuggestedTag(package->face);
@@ -470,7 +470,7 @@ bool FacePipelineEdit::writer()
 
         // update the tags
 
-        if (writeMetadata)
+        if (writeMetadata && utils.normalTagChanged())
         {
             MetadataHub hub;
             hub.load(package->info);
