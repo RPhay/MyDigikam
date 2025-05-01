@@ -50,6 +50,7 @@ private Q_SLOTS:
     void slotStart();
     void slotCancel();
     void slotClose();
+    void slotHelp();
     void slotTestFinished(bool result);
     void slotNotification(const QString& message);
 
