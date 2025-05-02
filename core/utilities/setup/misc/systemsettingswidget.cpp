@@ -6,6 +6,8 @@
  * Date        : 2020-27-07
  * Description : system settings widget
  *
+ * SPDX-FileCopyrightText: 2025      by Michael Miller <michael underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2025      by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2020-2025 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -35,8 +37,9 @@
 #include "digikam_globals.h"
 #include "systemsettings.h"
 #include "filesdownloader.h"
-#include "ui_proxysettingswidget.h"
+#include "dexpanderbox.h"
 #include "ocvocldnntestdlg.h"
+#include "ui_proxysettingswidget.h"
 
 namespace Digikam
 {
@@ -50,6 +53,8 @@ public:
 
 public:
 
+    // Screen options
+
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 
     QCheckBox*              useHighDpiScalingCheck = nullptr;
@@ -58,12 +63,18 @@ public:
 #endif
 
     QCheckBox*              softwareOpenGLCheck    = nullptr;
-    QCheckBox*              enableLoggingCheck     = nullptr;
+
+    // OpenCV and AI options
+
     QCheckBox*              enableOpenCLCheck      = nullptr;
     QCheckBox*              enableOpenCLDNNCheck   = nullptr;
     QPushButton*            openCLDNNTest          = nullptr;
     OpenCVOpenCLDNNTestDlg* openCLDNNTestDlg       = nullptr;
     bool                    openCLDNNTestResult    = false;
+    QPushButton*            filesDownloadButton    = nullptr;
+    FilesDownloader*        filesDownloader        = nullptr;
+
+    // Video rendering options
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -74,9 +85,11 @@ public:
 
 #endif
 
-    QPushButton*            filesDownloadButton    = nullptr;
+    // Debug traces options
 
-    FilesDownloader*        filesDownloader        = nullptr;
+    QCheckBox*              enableLoggingCheck     = nullptr;
+
+    // Proxy settings options
 
     Ui::ProxySettingsWidget uiProxySettings;
 };
@@ -92,6 +105,8 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
     d->filesDownloader        = new FilesDownloader(this);
 
+    // Screen options
+
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 
     d->useHighDpiScalingCheck = new QCheckBox(i18n("Use high DPI scaling from the screen factor"), this);
@@ -100,16 +115,25 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 #endif
 
     d->softwareOpenGLCheck    = new QCheckBox(i18n("Use software OpenGL for rendering"), this);
+
+    // OpenCV and AI options
+
     d->enableOpenCLCheck      = new QCheckBox(i18n("Use OpenCL hardware acceleration"), this);
     d->enableOpenCLCheck->setToolTip(i18n("This option is still experimental and "
                                           "requires that certain environment variables are set manually."));
     d->enableOpenCLDNNCheck   = new QCheckBox(i18n("Use OpenCL hardware acceleration for AI models"), this);
     d->enableOpenCLDNNCheck->setToolTip(i18n("This option is still experimental and "
-                                        "may lead to crashes if the proper drivers are not installed."));
+                                             "may lead to crashes if the proper drivers are not installed."));
 
     d->openCLDNNTest          = new QPushButton(i18n("Test GPU AI compatibility"), this);
     d->openCLDNNTest->setIcon(QIcon::fromTheme(QLatin1String("show-gpu-effects")));
-                                  
+
+    QLabel* const filesLabel     = new QLabel(i18n("Download required binary data:"), this);
+    d->filesDownloadButton       = new QPushButton(i18n("Open Download Dialog..."), this);
+    d->filesDownloadButton->setIcon(QIcon::fromTheme(QLatin1String("download")));
+
+    // Video rendering options
+
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     d->enableHWVideoCheck     = new QCheckBox(i18n("Use video hardware acceleration"), this);
@@ -136,13 +160,11 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #endif
 
-    QLabel* const filesLabel     = new QLabel(i18n("Download required binary data:"), this);
-    d->filesDownloadButton       = new QPushButton(i18n("Open Download Dialog..."), this);
-    d->filesDownloadButton->setIcon(QIcon::fromTheme(QLatin1String("download")));
+    // Debug traces options
 
     d->enableLoggingCheck        = new QCheckBox(i18n("Enable internal debug logging"), this);
 
-    // Proxy Settings
+    // Proxy settings options
 
     QWidget* const proxySettings = new QWidget(this);
     d->uiProxySettings.setupUi(proxySettings);
@@ -163,34 +185,51 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     systemNote->setWordWrap(true);
     systemNote->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 
+    // ---
+
     int row = 0;
+
+    // Screen options
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 
-    layout->addWidget(d->useHighDpiScalingCheck, row++, 0, 1, 2);
-    layout->addWidget(d->useHighDpiPixmapsCheck, row++, 0, 1, 2);
+    layout->addWidget(d->useHighDpiScalingCheck,             row++, 0, 1, 2);
+    layout->addWidget(d->useHighDpiPixmapsCheck,             row++, 0, 1, 2);
 
 #endif
 
-    layout->addWidget(d->softwareOpenGLCheck,    row++, 0, 1, 2);
-    layout->addWidget(d->enableOpenCLCheck,      row++, 0, 1, 2);
-    layout->addWidget(d->enableOpenCLDNNCheck,   row, 0, 1, 2);
-    layout->addWidget(d->openCLDNNTest,          row++, 1, 1, 1);
+    layout->addWidget(d->softwareOpenGLCheck,                row++, 0, 1, 2);
+
+    // OpenCV and AI options
+
+    layout->addWidget(new DLineWidget(Qt::Horizontal, this), row++, 0, 1, 2);
+    layout->addWidget(d->enableOpenCLCheck,                  row++, 0, 1, 2);
+    layout->addWidget(d->enableOpenCLDNNCheck,               row,   0, 1, 2);
+    layout->addWidget(d->openCLDNNTest,                      row++, 1, 1, 1);
+    layout->addWidget(filesLabel,                            row,   0, 1, 1);
+    layout->addWidget(d->filesDownloadButton,                row++, 1, 1, 1);
+
+    // Video rendering options
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    layout->addWidget(d->enableHWVideoCheck,     row++, 0, 1, 2);
-    layout->addWidget(d->enableHWTConvCheck,     row++, 0, 1, 2);
-    layout->addWidget(videoLabel,                row,   0, 1, 1);
-    layout->addWidget(d->videoBackendCBox,       row++, 1, 1, 1);
+    layout->addWidget(new DLineWidget(Qt::Horizontal, this), row++, 0, 1, 2);
+    layout->addWidget(d->enableHWVideoCheck,                 row++, 0, 1, 2);
+    layout->addWidget(d->enableHWTConvCheck,                 row++, 0, 1, 2);
+    layout->addWidget(videoLabel,                            row,   0, 1, 1);
+    layout->addWidget(d->videoBackendCBox,                   row++, 1, 1, 1);
 
 #endif
 
-    layout->addWidget(filesLabel,                row,   0, 1, 1);
-    layout->addWidget(d->filesDownloadButton,    row++, 1, 1, 1);
-    layout->addWidget(d->enableLoggingCheck,     row++, 0, 1, 2);
-    layout->addWidget(proxySettings,             row++, 0, 1, 2);
-    layout->addWidget(systemNote,                row++, 0, 1, 2);
+    // Debug traces options
+
+    layout->addWidget(new DLineWidget(Qt::Horizontal, this), row++, 0, 1, 2);
+    layout->addWidget(d->enableLoggingCheck,                 row++, 0, 1, 2);
+
+    // Proxy settings options
+
+    layout->addWidget(proxySettings,                         row++, 0, 1, 2);
+    layout->addWidget(systemNote,                            row++, 0, 1, 2);
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
     layout->setRowStretch(row, 10);
 

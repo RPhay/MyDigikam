@@ -6,6 +6,8 @@
  * Date        : 2020-27-07
  * Description : system settings widget
  *
+ * SPDX-FileCopyrightText: 2025      by Michael Miller <michael underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2025      by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2020-2025 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
