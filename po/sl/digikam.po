@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-02 01:55+0000\n"
+"POT-Creation-Date: 2025-05-03 01:54+0000\n"
 "PO-Revision-Date: 2025-04-27 08:03+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -66753,27 +66753,27 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Združevanje"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:97
+#: core/utilities/setup/misc/systemsettingswidget.cpp:112
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Uporabite merilo visoke ločljivosti DPI glede na faktor zaslona"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
+#: core/utilities/setup/misc/systemsettingswidget.cpp:113
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Uporabi slikovne preslikave z visoko ločljivostjo DPI"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:102
+#: core/utilities/setup/misc/systemsettingswidget.cpp:117
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "Uporabi programsko opremo OpenGL za upodabljanje"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "Uporabi s strojno pospeševanje OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:104
+#: core/utilities/setup/misc/systemsettingswidget.cpp:122
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -66782,12 +66782,12 @@ msgstr ""
 "Ta možnost je še poskusna in zahteva ročno nastavitev nekaterih spremenljivk "
 "okolja."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:106
+#: core/utilities/setup/misc/systemsettingswidget.cpp:124
 #, kde-format
 msgid "Use OpenCL hardware acceleration for AI models"
 msgstr "Uporabi strojno pospeševanje OpenCL za modele umetne inteligence"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:107
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
@@ -66796,62 +66796,62 @@ msgstr ""
 "Ta možnost je še vedno eksperimentalna in lahko povzroči sesutja, če niso "
 "nameščeni ustrezni gonilniki."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:110
+#: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr "Preizkus združljivosti GPE z umetno inteligenco"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
-#, kde-format
-msgid "Use video hardware acceleration"
-msgstr "Uporabite strojno pospeševanje videa"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:116
-#, kde-format
-msgid "Use video textures conversion"
-msgstr "Uporabi konverzijo video tekstur"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:118
-#, kde-format
-msgid "Decoding backend to render video:"
-msgstr "Zaledje dekodiranja za upodabljanje videa:"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
-#, kde-format
-msgid "FFmpeg (Default)"
-msgstr "FFmpeg (privzeto)"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:125
-#, kde-format
-msgid "GStreamer (System)"
-msgstr "GStreamer (Sistem)"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:129
-#, kde-format
-msgid "WMF (System)"
-msgstr "WMF (Sistem)"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
-#, kde-format
-msgid "AVFoundation (System)"
-msgstr "AVFoundation (Sistem)"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:139
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Prenesi zahtevane binarne podatke:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#: core/utilities/setup/misc/systemsettingswidget.cpp:132
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "Odpri pogovorno okno prejema ..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:143
+#: core/utilities/setup/misc/systemsettingswidget.cpp:139
+#, kde-format
+msgid "Use video hardware acceleration"
+msgstr "Uporabite strojno pospeševanje videa"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#, kde-format
+msgid "Use video textures conversion"
+msgstr "Uporabi konverzijo video tekstur"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:142
+#, kde-format
+msgid "Decoding backend to render video:"
+msgstr "Zaledje dekodiranja za upodabljanje videa:"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#, kde-format
+msgid "FFmpeg (Default)"
+msgstr "FFmpeg (privzeto)"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:149
+#, kde-format
+msgid "GStreamer (System)"
+msgstr "GStreamer (Sistem)"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:153
+#, kde-format
+msgid "WMF (System)"
+msgstr "WMF (Sistem)"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:157
+#, kde-format
+msgid "AVFoundation (System)"
+msgstr "AVFoundation (Sistem)"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:165
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Omogoči notranje beleženje napak"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:160
+#: core/utilities/setup/misc/systemsettingswidget.cpp:182
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
