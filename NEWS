@@ -205,7 +205,7 @@ BUGFIXES:
 179 ==> 477631 - digiKam cannot decode Nikon Z8/Z9 NEF images in the HE/HE* formats.
 180 ==> 503470 - Wrong video orientation in media player Non-destructive video rotation.
 181 ==> 502743 - digiKam crash when launching faces database training : mesa libs are missing.
-182 ==> 
+182 ==> 503561 - 'Background face recognition scan' feature modifies thousands of files during scan.
 183 ==> 
 184 ==> 
 185 ==> 
