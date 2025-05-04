@@ -151,8 +151,8 @@ void ShowfotoStackViewList::setThumbbar(ShowfotoThumbnailBar* const thumbbar)
     connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
             this, SLOT(slotSelectionChanged(QTreeWidgetItem*)));
 
-    connect(this, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
-            this, SLOT(slotItemDoubleClicked(QTreeWidgetItem*)));
+    connect(this, SIGNAL(itemActivated(QTreeWidgetItem*,int)),
+            this, SLOT(slotItemActivated(QTreeWidgetItem*)));
 }
 
 void ShowfotoStackViewList::slotItemsAdded(const QList<ShowfotoItemInfo>& items)
@@ -246,7 +246,7 @@ void ShowfotoStackViewList::slotSelectionChanged(QTreeWidgetItem* item)
     }
 }
 
-void ShowfotoStackViewList::slotItemDoubleClicked(QTreeWidgetItem* item)
+void ShowfotoStackViewList::slotItemActivated(QTreeWidgetItem* item)
 {
     ShowfotoStackViewItem* const sitem = dynamic_cast<ShowfotoStackViewItem*>(item);
 

@@ -154,8 +154,8 @@ ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideB
     connect(d->bookmarksList, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotBookmarkSelectionChanged()));
 
-    connect(d->bookmarksList, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
-            this, SLOT(slotBookmarkDoubleClicked(QTreeWidgetItem*)));
+    connect(d->bookmarksList, SIGNAL(itemActivated(QTreeWidgetItem*,int)),
+            this, SLOT(slotBookmarkActivated(QTreeWidgetItem*)));
 
     connect(d->sidebar, SIGNAL(signalAddBookmark()),
             this, SLOT(slotAddBookmark()));
@@ -289,7 +289,7 @@ void ShowfotoFolderViewBookmarks::slotBookmarkSelectionChanged()
     d->edtBtn->setEnabled(b);
 }
 
-void ShowfotoFolderViewBookmarks::slotBookmarkDoubleClicked(QTreeWidgetItem* item)
+void ShowfotoFolderViewBookmarks::slotBookmarkActivated(QTreeWidgetItem* item)
 {
     ShowfotoFolderViewBookmarkItem* const bitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(item);
 

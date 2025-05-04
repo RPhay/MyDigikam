@@ -66,7 +66,6 @@ Q_SIGNALS:
 
 private:
 
-    void mouseDoubleClickEvent(QMouseEvent*)                            override;
     void contextMenuEvent(QContextMenuEvent*)                           override;
     void mouseMoveEvent(QMouseEvent*)                                   override;
     void wheelEvent(QWheelEvent*)                                       override;
@@ -81,6 +80,7 @@ private Q_SLOTS:
 
     void slotToolTip();
     void slotOpenInFileManager();
+    void slotActivated(const QModelIndex& index);
 
 private:
 

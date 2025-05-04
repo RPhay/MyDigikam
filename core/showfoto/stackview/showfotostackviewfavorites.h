@@ -65,7 +65,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void slotFavoriteDoubleClicked(QTreeWidgetItem*);
+    void slotFavoriteActivated(QTreeWidgetItem*);
     void slotItemSelectionChanged();
     void slotAddFavorite(const QList<QUrl>& newUrls, const QUrl& current);
     void slotAddFavorite();

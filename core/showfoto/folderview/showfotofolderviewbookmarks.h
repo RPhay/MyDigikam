@@ -53,7 +53,7 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotLoadContents(const QString& path);
-    void slotBookmarkDoubleClicked(QTreeWidgetItem*);
+    void slotBookmarkActivated(QTreeWidgetItem*);
     void slotBookmarkSelectionChanged();
     void slotAddBookmark(const QString&);
     void slotAddBookmark();

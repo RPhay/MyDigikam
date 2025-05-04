@@ -185,8 +185,8 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
     connect(d->favoritesList, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotItemSelectionChanged()));
 
-    connect(d->favoritesList, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
-            this, SLOT(slotFavoriteDoubleClicked(QTreeWidgetItem*)));
+    connect(d->favoritesList, SIGNAL(itemActivated(QTreeWidgetItem*,int)),
+            this, SLOT(slotFavoriteActivated(QTreeWidgetItem*)));
 
     connect(d->sidebar, SIGNAL(signalAddFavorite()),
             this, SLOT(slotAddFavorite()));
@@ -474,7 +474,7 @@ void ShowfotoStackViewFavorites::slotItemSelectionChanged()
     d->edtBtn->setEnabled(b);
 }
 
-void ShowfotoStackViewFavorites::slotFavoriteDoubleClicked(QTreeWidgetItem* item)
+void ShowfotoStackViewFavorites::slotFavoriteActivated(QTreeWidgetItem* item)
 {
     ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item);
 

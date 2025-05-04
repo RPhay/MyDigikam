@@ -106,7 +106,7 @@ private Q_SLOTS:
     void slotItemsSelected(const QList<ShowfotoItemInfo>& items);
     void slotItemsDeselected(const QList<ShowfotoItemInfo>& items);
     void slotSelectionChanged(QTreeWidgetItem*);
-    void slotItemDoubleClicked(QTreeWidgetItem*);
+    void slotItemActivated(QTreeWidgetItem*);
     void slotItemsListChanged();
     void slotRemoveItems();
 

@@ -88,6 +88,9 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
 
     connect(d->toolTipTimer, SIGNAL(timeout()),
             this, SLOT(slotToolTip()));
+
+    connect(this, &QTreeView::activated,
+            this, &ShowfotoFolderViewList::slotActivated);
 }
 
 ShowfotoFolderViewList::~ShowfotoFolderViewList()
@@ -166,11 +169,9 @@ void ShowfotoFolderViewList::contextMenuEvent(QContextMenuEvent* e)
     QTreeView::contextMenuEvent(e);
 }
 
-void ShowfotoFolderViewList::mouseDoubleClickEvent(QMouseEvent* e)
+void ShowfotoFolderViewList::slotActivated(const QModelIndex& index)
 {
-    d->view->loadContents(currentIndex());
-
-    QTreeView::mouseDoubleClickEvent(e);
+    d->view->loadContents(index);
 }
 
 void ShowfotoFolderViewList::hideToolTip()
