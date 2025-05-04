@@ -429,7 +429,10 @@ void EditorWindow::setupStandardActions()
 
     for (DPluginAction* const gac : std::as_const(gactions))
     {
-        gac->setEnabled(false);
+        if (gac->actionCategory() != DPluginAction::GenericImport)
+        {
+            gac->setEnabled(false);
+        }
     }
 
     QList<DPluginAction*> eactions = DPluginLoader::instance()->pluginsActions(DPluginAction::Editor, this);
@@ -1035,7 +1038,10 @@ void EditorWindow::toggleStandardActions(bool val)
 
     for (DPluginAction* const ac : std::as_const(actions))
     {
-        ac->setEnabled(val);
+        if (ac->actionCategory() != DPluginAction::GenericImport)
+        {
+            ac->setEnabled(val);
+        }
     }
 
     // these actions are special: They are turned off if val is false,

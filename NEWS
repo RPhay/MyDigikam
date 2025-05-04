@@ -207,7 +207,7 @@ BUGFIXES:
 181 ==> 502743 - digiKam crash when launching faces database training : mesa libs are missing.
 182 ==> 503561 - 'Background face recognition scan' feature modifies thousands of files during scan.
 183 ==> 503683 - Entire photo as face.
-184 ==> 
+184 ==> 503760 - Import menu unusable ( grey ) unless a file has been opened.
 185 ==> 
 186 ==> 
 187 ==> 
