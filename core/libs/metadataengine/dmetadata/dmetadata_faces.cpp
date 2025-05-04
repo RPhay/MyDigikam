@@ -70,21 +70,34 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
 
         if (list.size() < 4)
         {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "Cannot parse WLPG rectangle string" << rectString;
+            if (!rectString.isEmpty())
+            {
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "Cannot parse WLPG rectangle string" << rectString;
+            }
 
             faces.insert(person, QRectF());
 
             continue;
         }
 
-        QRectF rect(
-                    list.at(0).toFloat(),
-                    list.at(1).toFloat(),
-                    list.at(2).toFloat(),
-                    list.at(3).toFloat()
-                   );
+        float x = list.at(0).toFloat();
+        float y = list.at(1).toFloat();
+        float w = list.at(2).toFloat();
+        float h = list.at(3).toFloat();
 
-        faces.insert(person, rect);
+        if (qIsInf(x) || qIsInf(y) || qIsInf(w) || qIsInf(h))
+        {
+            continue;
+        }
+
+        QRectF rect(x, y, w, h);
+
+        if (rect.isValid())
+        {
+            faces.insert(person, rect);
+
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Found new WLPG rect:  " << person << rect;
+        }
     }
 
     /**
@@ -108,6 +121,11 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
 
         person.replace(QLatin1Char('/'), QLatin1Char('\\'));
 
+        if (person.isEmpty())
+        {
+            break;
+        }
+
         // x and y is the center point.
 
         float x = getXmpTagString(areaxTagKey.arg(i).toLatin1().constData(), false).toFloat();
@@ -115,21 +133,21 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
         float w = getXmpTagString(areawTagKey.arg(i).toLatin1().constData(), false).toFloat();
         float h = getXmpTagString(areahTagKey.arg(i).toLatin1().constData(), false).toFloat();
 
-        QRectF rect(x - w / 2, y - h / 2, w, h);
-
-        if (person.isEmpty() && !rect.isValid())
+        if (qIsInf(x) || qIsInf(y) || qIsInf(w) || qIsInf(h))
         {
-            break;
+            continue;
         }
+
+        QRectF rect(x - w / 2, y - h / 2, w, h);
 
         // Ignore the full size face region.
         // See bug 437708 (Lumia 930 Windows Phone).
 
-        if (rect != QRectF(0.0, 0.0, 1.0, 1.0))
+        if (rect.isValid() && (rect != QRectF(0.0, 0.0, 1.0, 1.0)))
         {
             faces.insert(person, rect);
 
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "Found new rect:" << person << rect;
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Found new MWG-RS rect:" << person << rect;
         }
     }
 
