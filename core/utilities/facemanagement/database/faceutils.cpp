@@ -333,20 +333,16 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
 {
     FaceTagsEditor::addNormalTag(imageId, tagId);
 
-    m_normalTagChanged = true;
+    m_normalTagChanged |= !FaceTags::isSystemPersonTagId(tagId);
 }
 
 void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
 {
     FaceTagsEditor::removeNormalTag(imageId, tagId);
 
-    m_normalTagChanged = true;
+    m_normalTagChanged |= !FaceTags::isSystemPersonTagId(tagId);
 
-    if (
-        !FaceTags::isTheIgnoredPerson(tagId)  &&
-        !FaceTags::isTheUnknownPerson(tagId)  &&
-        !FaceTags::isTheUnconfirmedPerson(tagId)
-       )
+    if (!FaceTags::isSystemPersonTagId(tagId))
     {
         qlonglong faceItemId = CoreDbAccess().db()->getFirstItemWithFaceTag(tagId);
 
@@ -376,7 +372,10 @@ void FaceUtils::removeNormalTags(qlonglong imageId, const QList<int>& tagIds)
 {
     FaceTagsEditor::removeNormalTags(imageId, tagIds);
 
-    m_normalTagChanged = true;
+    for (int tid : tagIds)
+    {
+        m_normalTagChanged |= !FaceTags::isSystemPersonTagId(tid);
+    }
 }
 
 // --- Utilities ---
