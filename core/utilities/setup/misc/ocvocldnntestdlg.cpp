@@ -26,9 +26,10 @@
 #include <QThread>
 #include <QFutureWatcher>
 #include <QGridLayout>
+#include <QDialogButtonBox>
 #include <QPushButton>
 #include <QLabel>
-#include <QTextEdit>
+#include <QTextBrowser>
 #include <QTextCursor>
 #include <QFileInfo>
 #include <QStandardPaths>
@@ -45,6 +46,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_opencv.h"
+#include "digikam_globals.h"
 #include "dnnmodelmanager.h"
 #include "dnnmodelsface.h"
 #include "dnnmodelyunet.h"
@@ -61,14 +63,12 @@ public:
 public:
 
     QWidget*                page                = nullptr;
-    QVBoxLayout*            verticalLayout      = nullptr;
     QGridLayout*            layoutGrid          = nullptr;
     QLabel*                 message             = nullptr;
     QLabel*                 icon                = nullptr;
-    QTextEdit*              progressText        = nullptr;
+    QTextBrowser*           progressText        = nullptr;
 
-    QPushButton*            startButton         = nullptr;
-    QPushButton*            cancelButton        = nullptr;
+    QDialogButtonBox*       buttons             = nullptr;
 
     bool                    tested              = false;
     QFutureWatcher<bool>    testingWatcher;
@@ -88,44 +88,46 @@ OpenCVOpenCLDNNTestDlg::OpenCVOpenCLDNNTestDlg(QWidget* const parent)
                                   "\n\nDo you want to test your system now?");
 
     d->page             = new QWidget(this);
-    d->verticalLayout   = new QVBoxLayout(d->page);
-    d->layoutGrid       = new QGridLayout(this);
+    d->layoutGrid       = new QGridLayout(d->page);
 
-    d->icon             = new QLabel(this);
+    d->icon             = new QLabel(d->page);
     d->icon->setPixmap(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(QSize(64, 64)));
 
-    d->message          = new QLabel(messageString, this);
+    d->message          = new QLabel(messageString, d->page);
     d->message->setWordWrap(true);
 
-    d->progressText     = new QTextEdit(this);
-    d->progressText->setReadOnly(true);
-    d->progressText->setFixedHeight(100);
+    d->progressText     = new QTextBrowser(d->page);
     d->progressText->setVisible(false);  // Initially hidden until test starts
 
-    d->startButton      = new QPushButton(QIcon::fromTheme(QLatin1String("dialog-ok-apply")), i18n("Start"), this);
-    d->startButton->setToolTip(i18nc("@action:button", "Begin test"));
-    d->startButton->setDefault(true);
+    d->buttons          = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->buttons->button(QDialogButtonBox::Ok)->setText(i18n("Start"));
+    d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
+    d->buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@action:button", "Begin test"));
 
-    d->cancelButton     = new QPushButton(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("Cancel"), this);
-    d->cancelButton->setToolTip(i18nc("@action:button", "Cancel"));
+    d->layoutGrid->addWidget(d->icon,          0, 0, 1, 1);
+    d->layoutGrid->addWidget(d->message,       0, 1, 1, 3);
+    d->layoutGrid->addWidget(d->buttons,       1, 1, 1, 3);
+    d->layoutGrid->addWidget(d->progressText,  2, 1, 1, 3);
+    d->layoutGrid->setRowStretch(2, 10);
+    d->layoutGrid->setColumnStretch(2, 10);
 
-    d->layoutGrid->addWidget(d->icon,          1, 0, 2, 2);
-    d->layoutGrid->addWidget(d->message,       0, 2, 5, 10);
-    d->layoutGrid->addWidget(d->progressText,  6, 2, 5, 10);
-    d->layoutGrid->addWidget(d->startButton,   11, 2, 1, 3);
-    d->layoutGrid->addWidget(d->cancelButton,  11, 8, 1, 3);
-    d->verticalLayout->addStretch();
-
-    connect(d->startButton, SIGNAL(clicked()),
+    connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(slotStart()));
 
-    connect(d->cancelButton, SIGNAL(clicked()),
+    connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             this, SLOT(slotCancel()));
+
+    connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+            this, SLOT(slotHelp()));
 
     // Connect the notification signal to its slot for progress updates
 
     connect(this, SIGNAL(signalNotification(QString)),
             this, SLOT(slotNotification(QString)));
+
+    setLayout(d->layoutGrid);
+
+    adjustSize();
 }
 
 OpenCVOpenCLDNNTestDlg::~OpenCVOpenCLDNNTestDlg()
@@ -135,15 +137,16 @@ OpenCVOpenCLDNNTestDlg::~OpenCVOpenCLDNNTestDlg()
 
 void OpenCVOpenCLDNNTestDlg::slotStart()
 {
-    d->startButton->setEnabled(false);
-    d->startButton->setText(i18nc("@action:button", "Testing..."));
-    d->cancelButton->setEnabled(false);
+    d->buttons->button(QDialogButtonBox::Ok)->setEnabled(false);
+    d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "Testing..."));
+    d->buttons->button(QDialogButtonBox::Cancel)->setEnabled(false);
 
     // Clear and show the progress text area
 
     d->progressText->clear();
     d->progressText->setVisible(true);
     d->progressText->append(i18n("Starting OpenCV OpenCL DNN test..."));
+    adjustSize();
 
     // run the test in a separate thread
 
@@ -173,13 +176,13 @@ void OpenCVOpenCLDNNTestDlg::slotStart()
             }
     );
 
-    disconnect(d->startButton, SIGNAL(clicked()),
+    disconnect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
                this, SLOT(slotStart()));
 
-    disconnect(d->cancelButton, SIGNAL(clicked()),
+    disconnect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
                this, SLOT(slotCancel()));
 
-    connect(d->startButton, SIGNAL(clicked()),
+    connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(slotClose()));
 }
 
@@ -219,9 +222,9 @@ void OpenCVOpenCLDNNTestDlg::slotTestFinished(bool result)
 
     d->progressText->append(QLatin1String("\n") + resultMessage);
 
-    d->startButton->setText(i18nc("@action:button", "Close"));
-    d->startButton->setToolTip(i18nc("@action:button", "Close the test dialog"));
-    d->startButton->setEnabled(true);
+    d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "Close"));
+    d->buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@action:button", "Close the test dialog"));
+    d->buttons->button(QDialogButtonBox::Ok)->setEnabled(true);
 }
 
 void OpenCVOpenCLDNNTestDlg::slotNotification(const QString& message)
@@ -399,6 +402,11 @@ bool OpenCVOpenCLDNNTestDlg::runTest()
     }
 
     return result;
+}
+
+void OpenCVOpenCLDNNTestDlg::slotHelp()
+{
+    openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("miscs_settings"));
 }
 
 } // namespace Digikam

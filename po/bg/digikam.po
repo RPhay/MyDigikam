@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-28 01:57+0000\n"
+"POT-Creation-Date: 2025-05-03 01:54+0000\n"
 "PO-Revision-Date: 2025-01-31 12:48+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -103,7 +103,7 @@ msgid "Select the current day"
 msgstr "Изберете текущия ден"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:222
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -29308,7 +29308,6 @@ msgstr "Мигриране ->"
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:109
 #, kde-format
 msgid "Cancel"
 msgstr "Отказ"
@@ -52651,7 +52650,6 @@ msgid "Begin"
 msgstr "Начало"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:86
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
@@ -66956,162 +66954,162 @@ msgid ""
 "Do you want to test your system now?"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
 #, fuzzy, kde-format
 #| msgctxt "@action: button"
 #| msgid "Start"
 msgid "Start"
 msgstr "Начало"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
 #, fuzzy, kde-format
 #| msgid "Beta tester"
 msgctxt "@action:button"
 msgid "Begin test"
 msgstr "Бета-тестове"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:139
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
 #, fuzzy, kde-format
 #| msgid "Settings..."
 msgctxt "@action:button"
 msgid "Testing..."
 msgstr "Настройки..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:146
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:148
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:213
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
 #, kde-format
 msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:220
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:223
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, kde-format
 msgctxt "@action:button"
 msgid "Close the test dialog"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:248
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:251
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is available on this system."
 msgstr "Поддръжката на OpenGL не е налична във вашата система."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:265
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:268
 #, kde-format
 msgid "OpenCL acceleration device is available."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:267
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:270
 #, fuzzy, kde-format
 #| msgctxt "@info: icc profile class"
 #| msgid "Link device"
 msgid "Using device: %1"
 msgstr "Свързване на устройство"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
 #, fuzzy, kde-format
 #| msgid "This collection is currently not available."
 msgid "OpenCL acceleration device is not available."
 msgstr "Тази колекция в момента не е налична."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:276
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:279
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is not available on this system."
 msgstr "Поддръжката на OpenGL не е налична във вашата система."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:281
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:284
 #, fuzzy, kde-format
 #| msgid "Loading image..."
 msgid "Loading test image..."
 msgstr "Зареждане на снимка..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:290
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:293
 #, fuzzy, kde-format
 #| msgid "Binary not found."
 msgid "Test image not found."
 msgstr "Не е намерен двоичен код."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:297
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:300
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Failed to save image to %1"
 msgid "Failed to load test image from %1"
 msgstr "Неуспешно запазване на изображение в %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:301
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:304
 #, fuzzy, kde-format
 #| msgid "Pan the image to a region"
 msgid "Preparing the image for processing..."
 msgstr "Преместване на изображението в дадена област"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:330
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:333
 #, fuzzy, kde-format
 #| msgctxt "@info: setup"
 #| msgid "Initializing Main View..."
 msgid "Initializing face detection model..."
 msgstr "Зареждане на основния прозорец..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:337
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:340
 #, fuzzy, kde-format
 #| msgid "Error starting face detection."
 msgid "Running face detection..."
 msgstr "Грешка при стартиране на разпознаването на лица."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:353
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:356
 #, fuzzy, kde-format
 #| msgctxt "@info: setup"
 #| msgid "Initializing Main View..."
 msgid "Initializing feature extraction model..."
 msgstr "Зареждане на основния прозорец..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:360
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:363
 #, fuzzy, kde-format
 #| msgid "Preparing collection scan..."
 msgid "Preparing face for feature extraction..."
 msgstr "Подготвя се сканиране на колекции..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:373
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:376
 #, kde-format
 msgid "Extracting face features..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
 #, fuzzy, kde-format
 #| msgid "Failed to create folder"
 msgid "Failed to extract face features."
 msgstr "Грешка при създаване на папка"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:384
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:387
 #, fuzzy, kde-format
 #| msgid "Database copied successfully."
 msgid "All tests completed successfully!"
 msgstr "Базата данни е копирана успешно."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
 #, fuzzy, kde-format
 #| msgid "OpenGL Error"
 msgid "OpenCV error: %1"
 msgstr "OpenGL грешка"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
 #, fuzzy, kde-format
 #| msgid "Error"
 msgid "Error: %1"
@@ -67489,30 +67487,30 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Групиране"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:97
+#: core/utilities/setup/misc/systemsettingswidget.cpp:112
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Използване на мащабиране с висок DPI от екранния фактор"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
+#: core/utilities/setup/misc/systemsettingswidget.cpp:113
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 "Използване на растерни изображения с висока разделителна способност DPI"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:102
+#: core/utilities/setup/misc/systemsettingswidget.cpp:117
 #, fuzzy, kde-format
 #| msgid "Use the software OpenGL for rendering"
 msgid "Use software OpenGL for rendering"
 msgstr "Използване на софтуер за изобразяване OpenGL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, fuzzy, kde-format
 #| msgid "Use the OpenCL hardware acceleration"
 msgid "Use OpenCL hardware acceleration"
 msgstr "Използване на хардуерното ускорение с OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:104
+#: core/utilities/setup/misc/systemsettingswidget.cpp:122
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -67521,13 +67519,13 @@ msgstr ""
 "Тази опция все още е експериментална и изисква определени променливи на "
 "средата да бъдат зададени ръчно."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:106
+#: core/utilities/setup/misc/systemsettingswidget.cpp:124
 #, fuzzy, kde-format
 #| msgid "Use the OpenCL hardware acceleration"
 msgid "Use OpenCL hardware acceleration for AI models"
 msgstr "Използване на хардуерното ускорение с OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:107
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, fuzzy, kde-format
 #| msgid ""
 #| "This option is still experimental and requires that certain environment "
@@ -67539,64 +67537,64 @@ msgstr ""
 "Тази опция все още е експериментална и изисква определени променливи на "
 "средата да бъдат зададени ръчно."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:110
+#: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#, kde-format
+msgid "Download required binary data:"
+msgstr "Изтегляне на необходимите двоични данни:"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:132
+#, kde-format
+msgid "Open Download Dialog..."
+msgstr "Отваряне на прозореца за изтегляне..."
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:139
 #, fuzzy, kde-format
 #| msgid "Use the video hardware acceleration"
 msgid "Use video hardware acceleration"
 msgstr "Използване на хардуерното ускорение"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:116
+#: core/utilities/setup/misc/systemsettingswidget.cpp:140
 #, fuzzy, kde-format
 #| msgid "Use the video textures conversion"
 msgid "Use video textures conversion"
 msgstr "Използване на преобразуване на видео текстури"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:118
+#: core/utilities/setup/misc/systemsettingswidget.cpp:142
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "Бекенд за декодиране на видео:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (по подразбиране)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:125
+#: core/utilities/setup/misc/systemsettingswidget.cpp:149
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (System)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:129
+#: core/utilities/setup/misc/systemsettingswidget.cpp:153
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (System)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
+#: core/utilities/setup/misc/systemsettingswidget.cpp:157
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (System)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:139
-#, kde-format
-msgid "Download required binary data:"
-msgstr "Изтегляне на необходимите двоични данни:"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:140
-#, kde-format
-msgid "Open Download Dialog..."
-msgstr "Отваряне на прозореца за изтегляне..."
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:143
+#: core/utilities/setup/misc/systemsettingswidget.cpp:165
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Активиране на вътрешно регистриране на грешки"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:160
+#: core/utilities/setup/misc/systemsettingswidget.cpp:182
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

@@ -280,9 +280,13 @@ void SlideVideo::slotMediaStatusChanged(QMediaPlayer::MediaStatus status)
 
             rotate     = (-rotate) + d->videoOrientation;
 
-            if ((rotate > 270) || (rotate < 0))
+            if      (rotate > 270)
             {
-                rotate = d->videoOrientation;
+                rotate = 0;
+            }
+            else if (rotate < 0)
+            {
+                rotate = 270;
             }
 
             d->setVideoItemOrientation(rotate);

@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-28 01:57+0000\n"
+"POT-Creation-Date: 2025-05-03 01:54+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -112,7 +112,7 @@ msgid "Select the current day"
 msgstr "वर्तमान गाळणी काढून टाका"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:222
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
 #, fuzzy, kde-format
 #| msgid "Close view"
 msgctxt "@action:button"
@@ -27890,7 +27890,6 @@ msgstr ""
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:109
 #, kde-format
 msgid "Cancel"
 msgstr "रद्द करा"
@@ -51124,7 +51123,6 @@ msgid "Begin"
 msgstr ""
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:86
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:110
 #, fuzzy, kde-format
 #| msgid "Cancel"
 msgctxt "@action:button"
@@ -64637,147 +64635,147 @@ msgid ""
 "Do you want to test your system now?"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
 #, fuzzy, kde-format
 msgid "Start"
 msgstr "सुरु करा"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@action:button"
 msgid "Begin test"
 msgstr "माहिती"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:139
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
 #, fuzzy, kde-format
 #| msgid "Settings..."
 msgctxt "@action:button"
 msgid "Testing..."
 msgstr "संयोजना..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:146
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:148
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:213
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
 #, kde-format
 msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:220
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
 "models."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:223
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, kde-format
 msgctxt "@action:button"
 msgid "Close the test dialog"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:248
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:251
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
 #, kde-format
 msgid "OpenCL is available on this system."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:265
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:268
 #, fuzzy, kde-format
 #| msgid "No description available"
 msgid "OpenCL acceleration device is available."
 msgstr "वर्णन उपलब्ध नाही"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:267
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:270
 #, fuzzy, kde-format
 #| msgid "Parsing error: %1"
 msgid "Using device: %1"
 msgstr "व्याख्या वाचताना त्रुटी : %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
 #, kde-format
 msgid "OpenCL acceleration device is not available."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:276
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:279
 #, kde-format
 msgid "OpenCL is not available on this system."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:281
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:284
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes"
 msgid "Loading test image..."
 msgstr "बदल साठवा"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:290
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:293
 #, fuzzy, kde-format
 #| msgid "Eritrea"
 msgid "Test image not found."
 msgstr "एरिट्रिआ"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:297
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:300
 #, fuzzy, kde-format
 msgid "Failed to load test image from %1"
 msgstr "%1: %2 हे डाउनलोड करण्यास अपयश"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:301
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:304
 #, fuzzy, kde-format
 #| msgid "&Fit image to page"
 msgid "Preparing the image for processing..."
 msgstr "पानावर प्रतिमा बसवा (&F)"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:330
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:333
 #, fuzzy, kde-format
 msgid "Initializing face detection model..."
 msgstr "सुरु करत आहे"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:337
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:340
 #, fuzzy, kde-format
 msgid "Running face detection..."
 msgstr "कार्यपद्धती :"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:353
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:356
 #, fuzzy, kde-format
 msgid "Initializing feature extraction model..."
 msgstr "सुरु करत आहे"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:360
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:363
 #, kde-format
 msgid "Preparing face for feature extraction..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:373
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:376
 #, kde-format
 msgid "Extracting face features..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
 #, fuzzy, kde-format
 msgid "Failed to extract face features."
 msgstr "उघडणे शक्य झाले नाही : %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:384
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:387
 #, kde-format
 msgid "All tests completed successfully!"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
 #, fuzzy, kde-format
 msgid "OpenCV error: %1"
 msgstr "निर्यात"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
 #, fuzzy, kde-format
 #| msgid "Error"
 msgid "Error: %1"
@@ -65103,103 +65101,103 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "समूह"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:97
+#: core/utilities/setup/misc/systemsettingswidget.cpp:112
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
+#: core/utilities/setup/misc/systemsettingswidget.cpp:113
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:102
+#: core/utilities/setup/misc/systemsettingswidget.cpp:117
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:104
+#: core/utilities/setup/misc/systemsettingswidget.cpp:122
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:106
+#: core/utilities/setup/misc/systemsettingswidget.cpp:124
 #, kde-format
 msgid "Use OpenCL hardware acceleration for AI models"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:107
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
 "drivers are not installed."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:110
+#: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#, fuzzy, kde-format
+msgid "Download required binary data:"
+msgstr "डाउनलोड केलेले"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:132
+#, kde-format
+msgid "Open Download Dialog..."
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:139
 #, kde-format
 msgid "Use video hardware acceleration"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:116
+#: core/utilities/setup/misc/systemsettingswidget.cpp:140
 #, kde-format
 msgid "Use video textures conversion"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:118
+#: core/utilities/setup/misc/systemsettingswidget.cpp:142
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, fuzzy, kde-format
 #| msgid "Default"
 msgid "FFmpeg (Default)"
 msgstr "मूलभूत"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:125
+#: core/utilities/setup/misc/systemsettingswidget.cpp:149
 #, kde-format
 msgid "GStreamer (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:129
+#: core/utilities/setup/misc/systemsettingswidget.cpp:153
 #, fuzzy, kde-format
 #| msgid "System Font"
 msgid "WMF (System)"
 msgstr "प्रणाली फॉन्ट"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
+#: core/utilities/setup/misc/systemsettingswidget.cpp:157
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:139
-#, fuzzy, kde-format
-msgid "Download required binary data:"
-msgstr "डाउनलोड केलेले"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:140
-#, kde-format
-msgid "Open Download Dialog..."
-msgstr ""
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:143
+#: core/utilities/setup/misc/systemsettingswidget.cpp:165
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:160
+#: core/utilities/setup/misc/systemsettingswidget.cpp:182
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

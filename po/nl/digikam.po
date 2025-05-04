@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-28 01:57+0000\n"
+"POT-Creation-Date: 2025-05-03 01:54+0000\n"
 "PO-Revision-Date: 2025-04-27 14:33+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -132,7 +132,7 @@ msgid "Select the current day"
 msgstr "Selecteer de huidige dag"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:222
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -29268,7 +29268,6 @@ msgstr "Overplaatsen ->"
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:109
 #, kde-format
 msgid "Cancel"
 msgstr "Annuleren"
@@ -52463,7 +52462,6 @@ msgid "Begin"
 msgstr "Begin"
 
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:86
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
@@ -66696,29 +66694,29 @@ msgstr ""
 "\n"
 "Wilt u uw systeem nu testen?"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
 #, kde-format
 msgid "Start"
 msgstr "Begin"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
 #, kde-format
 msgctxt "@action:button"
 msgid "Begin test"
 msgstr "Start van test"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:139
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
 #, kde-format
 msgctxt "@action:button"
 msgid "Testing..."
 msgstr "Bezig met testen..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:146
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:148
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
 msgstr "OpenCV OpenCL DNN-test wordt gestart..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:213
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
 #, kde-format
 msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
@@ -66727,7 +66725,7 @@ msgstr ""
 "Test met succes voltooid! Uw systeem kan GPU-versnelling voor de AI-modellen "
 "gebruiken."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:220
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
@@ -66736,104 +66734,104 @@ msgstr ""
 "Test is mislukt! Uw systeem kan misschien geen GPU-versnelling voor de AI-"
 "modellen gebruiken."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:223
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, kde-format
 msgctxt "@action:button"
 msgid "Close the test dialog"
 msgstr "De testdialoog sluiten"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:248
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:251
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 "Controleren op compatibiliteit met OpenCL GPU-versnelling met AI modellen..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
 #, kde-format
 msgid "OpenCL is available on this system."
 msgstr "OpenCL is beschikbaar op dit systeem."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:265
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:268
 #, kde-format
 msgid "OpenCL acceleration device is available."
 msgstr "OpenCL-versnellingsapparaat is beschikbaar."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:267
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:270
 #, kde-format
 msgid "Using device: %1"
 msgstr "Apparaat wordt gebruikt: %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
 #, kde-format
 msgid "OpenCL acceleration device is not available."
 msgstr "OpenCL-versnellingsapparaat is niet beschikbaar."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:276
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:279
 #, kde-format
 msgid "OpenCL is not available on this system."
 msgstr "OpenCL is niet beschikbaar op dit computer"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:281
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:284
 #, kde-format
 msgid "Loading test image..."
 msgstr "Testafbeelding wordt geladen..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:290
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:293
 #, kde-format
 msgid "Test image not found."
 msgstr "Testafbeelding niet gevonden."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:297
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:300
 #, kde-format
 msgid "Failed to load test image from %1"
 msgstr "Testafbeelding laden uit %1 is mislukt"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:301
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:304
 #, kde-format
 msgid "Preparing the image for processing..."
 msgstr "De afbeelding voorbereiden op verwerking..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:330
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:333
 #, kde-format
 msgid "Initializing face detection model..."
 msgstr "Gezichtsdetectiemodel wordt geïnitialiseerd..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:337
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:340
 #, kde-format
 msgid "Running face detection..."
 msgstr "Gezichtsdetectie wordt uitgevoerd..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:353
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:356
 #, kde-format
 msgid "Initializing feature extraction model..."
 msgstr "Kenmerkextractiemodel wordt geïnitialiseerd..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:360
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:363
 #, kde-format
 msgid "Preparing face for feature extraction..."
 msgstr "Gezicht voorbereiden van kenmerkextractie..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:373
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:376
 #, kde-format
 msgid "Extracting face features..."
 msgstr "Gezichtskenmerken worden geëxtraheerd.."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
 #, kde-format
 msgid "Failed to extract face features."
 msgstr "Gezichtskenmerken extraheren is mislukt."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:384
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:387
 #, kde-format
 msgid "All tests completed successfully!"
 msgstr "Alle testen met succes beëindigd!"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
 #, kde-format
 msgid "OpenCV error: %1"
 msgstr "OpenCV-fout: %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
 #, kde-format
 msgid "Error: %1"
 msgstr "Fout: %1"
@@ -67212,27 +67210,27 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Groepering"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:97
+#: core/utilities/setup/misc/systemsettingswidget.cpp:112
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Hoge DPI schaling gebruiken uit de schermfactor"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:98
+#: core/utilities/setup/misc/systemsettingswidget.cpp:113
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Pixmaps gebruiken met hoge DPI resolutie"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:102
+#: core/utilities/setup/misc/systemsettingswidget.cpp:117
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "Software OpenGL gebruiken voor renderen"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#: core/utilities/setup/misc/systemsettingswidget.cpp:121
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "OpenCL-hardware gebruiken voor versnelling"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:104
+#: core/utilities/setup/misc/systemsettingswidget.cpp:122
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -67241,12 +67239,12 @@ msgstr ""
 "Deze optie is nog steeds experimenteel en vereist dat bepaalde "
 "omgevingsvariabelen handmatig zijn ingesteld."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:106
+#: core/utilities/setup/misc/systemsettingswidget.cpp:124
 #, kde-format
 msgid "Use OpenCL hardware acceleration for AI models"
 msgstr "Gebruik OpenCL-hardware-versnelling voor AI-modellen"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:107
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
@@ -67255,62 +67253,62 @@ msgstr ""
 "Deze optie is nog steeds experimenteel en kan leiden tot crashes als de "
 "juiste stuurprogramma's niet zijn geïnstalleerd."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:110
+#: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr "GPU AI-compatibiliteit testen"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
-#, kde-format
-msgid "Use video hardware acceleration"
-msgstr "Video-hardwareversnelling gebruiken"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:116
-#, kde-format
-msgid "Use video textures conversion"
-msgstr "Conversie van video-texturen gebruiken"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:118
-#, kde-format
-msgid "Decoding backend to render video:"
-msgstr "Decoderingsbackend voor renderen van video:"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
-#, kde-format
-msgid "FFmpeg (Default)"
-msgstr "FFmpeg (standaard)"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:125
-#, kde-format
-msgid "GStreamer (System)"
-msgstr "GStreamer (systeem)"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:129
-#, kde-format
-msgid "WMF (System)"
-msgstr "WMF (systeem)"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:133
-#, kde-format
-msgid "AVFoundation (System)"
-msgstr "AVFoundation (systeem)"
-
-#: core/utilities/setup/misc/systemsettingswidget.cpp:139
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Vereiste binaire gegevens downloaden:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#: core/utilities/setup/misc/systemsettingswidget.cpp:132
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "Downloaddialoog openen..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:143
+#: core/utilities/setup/misc/systemsettingswidget.cpp:139
+#, kde-format
+msgid "Use video hardware acceleration"
+msgstr "Video-hardwareversnelling gebruiken"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#, kde-format
+msgid "Use video textures conversion"
+msgstr "Conversie van video-texturen gebruiken"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:142
+#, kde-format
+msgid "Decoding backend to render video:"
+msgstr "Decoderingsbackend voor renderen van video:"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#, kde-format
+msgid "FFmpeg (Default)"
+msgstr "FFmpeg (standaard)"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:149
+#, kde-format
+msgid "GStreamer (System)"
+msgstr "GStreamer (systeem)"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:153
+#, kde-format
+msgid "WMF (System)"
+msgstr "WMF (systeem)"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:157
+#, kde-format
+msgid "AVFoundation (System)"
+msgstr "AVFoundation (systeem)"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:165
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Interne debug-loggen inschakelen"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:160
+#: core/utilities/setup/misc/systemsettingswidget.cpp:182
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

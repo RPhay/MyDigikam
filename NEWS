@@ -203,8 +203,8 @@ BUGFIXES:
 177 ==> 503415 - Can't run OpenCL.
 178 ==> 502164 - Add the ability to show Headline properties on preview thumbnails.
 179 ==> 477631 - digiKam cannot decode Nikon Z8/Z9 NEF images in the HE/HE* formats.
-180 ==> 
-181 ==> 
+180 ==> 503470 - Wrong video orientation in media player Non-destructive video rotation.
+181 ==> 502743 - digiKam crash when launching faces database training : mesa libs are missing.
 182 ==> 
 183 ==> 
 184 ==> 
