@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-03 01:54+0000\n"
-"PO-Revision-Date: 2025-04-22 21:13+0200\n"
+"PO-Revision-Date: 2025-04-27 18:18+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -66782,7 +66782,7 @@ msgstr "Sidecar"
 #, kde-format
 msgctxt "@title:window"
 msgid "AI GPU Test"
-msgstr ""
+msgstr "Test sulla GPU per IA"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:85
 #, kde-format
@@ -66794,6 +66794,12 @@ msgid ""
 "\n"
 "Do you want to test your system now?"
 msgstr ""
+"Questo test verificherà se il tuo sistema è in grado di utilizzare "
+"l'accelerazione della GPU\n"
+"durante l'esecuzione dei modelli di IA, confermando che OpenCV e OpenCL\n"
+"hanno installato le librerie e i driver necessari.\n"
+"\n"
+"Vuoi eseguire il test del sistema adesso?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
 #, kde-format
@@ -66801,23 +66807,21 @@ msgid "Start"
 msgstr "Avvia"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
-#, fuzzy, kde-format
-#| msgid "Beta tester"
+#, kde-format
 msgctxt "@action:button"
 msgid "Begin test"
-msgstr "Beta tester"
+msgstr "Inizia test"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
-#, fuzzy, kde-format
-#| msgid "Settings..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Testing..."
-msgstr "Impostazioni..."
+msgstr "Test in esecuzione..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:148
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
-msgstr ""
+msgstr "Avvio del test OpenCV OpenCL DNN..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
 #, kde-format
@@ -66825,6 +66829,8 @@ msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
 "models."
 msgstr ""
+"Test completato correttamente! Il tuo sistema può utilizzare l'accelerazione "
+"GPU per i modelli di intelligenza artificiale."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:220
 #, kde-format
@@ -66832,129 +66838,111 @@ msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
 "models."
 msgstr ""
+"Test non riuscito. Il tuo sistema potrebbe non essere in grado di utilizzare "
+"l'accelerazione GPU per i modelli di intelligenza artificiale."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "Close the theme designer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Close the test dialog"
-msgstr "Chiudi il generatore di temi"
+msgstr "Chiudi la finestra del test"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:251
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
+"Controllo di compatibilità dell'accelerazione GPU OpenCL con i modelli di "
+"IA..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
+#, kde-format
 msgid "OpenCL is available on this system."
-msgstr "Il supporto OpenGL non è disponibile nel tuo sistema."
+msgstr "OpenCL è disponibile su questo sistema."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:268
-#, fuzzy, kde-format
-#| msgid "No options available"
+#, kde-format
 msgid "OpenCL acceleration device is available."
-msgstr "Nessuna opzione disponibile"
+msgstr "Il dispositivo per l'accelerazione OpenCL è disponibile."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:270
-#, fuzzy, kde-format
-#| msgctxt "@info: icc profile class"
-#| msgid "Link device"
+#, kde-format
 msgid "Using device: %1"
-msgstr "Dispositivo di collegamento"
+msgstr "Uso del dispositivo: %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
-#, fuzzy, kde-format
-#| msgid "This collection is currently not available."
+#, kde-format
 msgid "OpenCL acceleration device is not available."
-msgstr "Questa raccolta non è attualmente disponibile."
+msgstr "Il dispositivo per l'accelerazione OpenCL non è disponibile."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:279
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
+#, kde-format
 msgid "OpenCL is not available on this system."
-msgstr "Il supporto OpenGL non è disponibile nel tuo sistema."
+msgstr "OpenCL non è disponibile su questo sistema."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:284
-#, fuzzy, kde-format
-#| msgid "Loading image..."
+#, kde-format
 msgid "Loading test image..."
-msgstr "Caricamento dell'immagine..."
+msgstr "Caricamento dell'immagine di prova..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:293
-#, fuzzy, kde-format
-#| msgid "Binary not found."
+#, kde-format
 msgid "Test image not found."
-msgstr "Binario non trovato."
+msgstr "Immagine di prova non trovata."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:300
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to save image to %1"
+#, kde-format
 msgid "Failed to load test image from %1"
-msgstr "Salvataggio dell'immagine su %1 non riuscito"
+msgstr "Caricamento dell'immagine di prova da %1 non riuscito"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:304
-#, fuzzy, kde-format
-#| msgid "Pan the image to a region"
+#, kde-format
 msgid "Preparing the image for processing..."
-msgstr "Scorri l'immagine a una regione"
+msgstr "Preparazione dell'immagine per l'elaborazione..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:333
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Initializing Main View..."
+#, kde-format
 msgid "Initializing face detection model..."
-msgstr "Inizializzazione della vista principale..."
+msgstr "Inizializzazione del modello di rilevamento facciale..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:340
-#, fuzzy, kde-format
-#| msgid "Error starting face detection."
+#, kde-format
 msgid "Running face detection..."
-msgstr "Errore di avvio del rilevamento facciale."
+msgstr "Avvio del rilevamento facciale..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:356
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Initializing Main View..."
+#, kde-format
 msgid "Initializing feature extraction model..."
-msgstr "Inizializzazione della vista principale..."
+msgstr "Inizializzazione del modello di estrazione delle caratteristiche..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:363
-#, fuzzy, kde-format
-#| msgid "Preparing collection scan..."
+#, kde-format
 msgid "Preparing face for feature extraction..."
-msgstr "Preparazione all'analisi della raccolta..."
+msgstr "Preparazione del viso per l'estrazione delle caratteristiche..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:376
 #, kde-format
 msgid "Extracting face features..."
-msgstr ""
+msgstr "Estrazione delle caratteristiche facciali..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
-#, fuzzy, kde-format
-#| msgid "Failed to create folder"
+#, kde-format
 msgid "Failed to extract face features."
-msgstr "Creazione della cartella non riuscita"
+msgstr "Estrazione delle caratteristiche facciali non riuscita."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:387
-#, fuzzy, kde-format
-#| msgid "Database copied successfully."
+#, kde-format
 msgid "All tests completed successfully!"
-msgstr "Banca dati copiata correttamente."
+msgstr "Tutti i test sono stati completati correttamente."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
-#, fuzzy, kde-format
-#| msgid "Open error"
+#, kde-format
 msgid "OpenCV error: %1"
-msgstr "errore di apertura"
+msgstr "Errore OpenCV: %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgid "Error: %1"
-msgstr "Errore"
+msgstr "Errore: %1"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
@@ -67336,7 +67324,7 @@ msgstr "Raggruppamento"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:112
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
-msgstr "Usa il ridimensionamento High DPI dal fattore dello schermo"
+msgstr "Usa ridimensionamento High DPI dal fattore dello schermo"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:113
 #, kde-format
@@ -67344,16 +67332,14 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Usa mappe di pixel con risoluzione High DPI"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "Use the software OpenGL for rendering"
+#, kde-format
 msgid "Use software OpenGL for rendering"
-msgstr "Usa il software OpenGL per la resa"
+msgstr "Usa software OpenGL per la resa"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:121
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use OpenCL hardware acceleration"
-msgstr "Usa l'accelerazione hardware OpenCL"
+msgstr "Usa accelerazione hardware OpenCL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:122
 #, kde-format
@@ -67365,27 +67351,23 @@ msgstr ""
 "d'ambiente siano impostate manualmente."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use OpenCL hardware acceleration for AI models"
-msgstr "Usa l'accelerazione hardware OpenCL"
+msgstr "Usa l'accelerazione hardware OpenCL per i modelli di IA"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:125
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option is still experimental and requires that certain environment "
-#| "variables are set manually."
+#, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
 "drivers are not installed."
 msgstr ""
-"Questa opzione è ancora sperimentale e richiede anche che certe variabili "
-"d'ambiente siano impostate manualmente."
+"Questa opzione è ancora sperimentale e potrebbe causare blocchi se non sono "
+"installati i driver corretti."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format
 msgid "Test GPU AI compatibility"
-msgstr ""
+msgstr "Test GPU di compatibilità IA"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
@@ -67398,16 +67380,14 @@ msgid "Open Download Dialog..."
 msgstr "Apri finestra di dialogo dello scaricamento..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:139
-#, fuzzy, kde-format
-#| msgid "Use the video hardware acceleration"
+#, kde-format
 msgid "Use video hardware acceleration"
-msgstr "Usa l'accelerazione hardware della scheda video"
+msgstr "Usa accelerazione hardware della scheda video"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Use the video textures conversion"
+#, kde-format
 msgid "Use video textures conversion"
-msgstr "Usa la conversione delle trame video"
+msgstr "Usa conversione delle trame video"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:142
 #, kde-format

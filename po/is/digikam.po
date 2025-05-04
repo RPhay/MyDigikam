@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-03 01:54+0000\n"
-"PO-Revision-Date: 2025-04-22 12:47+0000\n"
+"PO-Revision-Date: 2025-05-03 14:35+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -66014,30 +66014,26 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Start"
+#, kde-format
 msgid "Start"
 msgstr "Byrja"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
-#, fuzzy, kde-format
-#| msgid "Beta tester"
+#, kde-format
 msgctxt "@action:button"
 msgid "Begin test"
-msgstr "Forprófun"
+msgstr "Byrja prófun"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
-#, fuzzy, kde-format
-#| msgid "Settings..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Testing..."
-msgstr "Stillingar..."
+msgstr "Prófa..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:148
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
-msgstr ""
+msgstr "Ræsi OpenCV OpenCL DNN prófun..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
 #, kde-format
@@ -66065,60 +66061,49 @@ msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
+#, kde-format
 msgid "OpenCL is available on this system."
-msgstr "OpenGL stuðningur er ekki tiltækur á kerfinu þínu."
+msgstr "OpenGL er tiltækt á þessu kerfi."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:268
-#, fuzzy, kde-format
-#| msgid "No options available"
+#, kde-format
 msgid "OpenCL acceleration device is available."
-msgstr "Engir valmöguleikar tiltækir"
+msgstr "Tæki fyrir OpenCL-vélbúnaðarhröðun er í boði."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:270
-#, fuzzy, kde-format
-#| msgctxt "@info: icc profile class"
-#| msgid "Link device"
+#, kde-format
 msgid "Using device: %1"
-msgstr "Tengt tæki"
+msgstr "Nota tæki: %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
-#, fuzzy, kde-format
-#| msgid "This collection is currently not available."
+#, kde-format
 msgid "OpenCL acceleration device is not available."
-msgstr "Þetta myndasafn er ekki tiltækt."
+msgstr "Tæki fyrir OpenCL-vélbúnaðarhröðun er ekki tiltækt."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:279
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
+#, kde-format
 msgid "OpenCL is not available on this system."
-msgstr "OpenGL stuðningur er ekki tiltækur á kerfinu þínu."
+msgstr "OpenGL er ekki tiltækt á þessu kerfi."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:284
-#, fuzzy, kde-format
-#| msgid "Loading image..."
+#, kde-format
 msgid "Loading test image..."
-msgstr "Hleð inn mynd..."
+msgstr "Hleð inn prófunarmynd..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:293
-#, fuzzy, kde-format
-#| msgid "Binary not found."
+#, kde-format
 msgid "Test image not found."
-msgstr "Tvíundarskrá fannst ekki."
+msgstr "Prófunarmynd fannst ekki."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:300
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to save image to %1"
+#, kde-format
 msgid "Failed to load test image from %1"
-msgstr "Tókst ekki að vista mynd í %1"
+msgstr "Mistókst að hlaða inn prófunarmynd úr %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:304
-#, fuzzy, kde-format
-#| msgid "Pan the image to a region"
+#, kde-format
 msgid "Preparing the image for processing..."
-msgstr "Hliðra mynd að svæði"
+msgstr "Undirbý mynd fyrir vinnslu..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:333
 #, fuzzy, kde-format
@@ -66128,10 +66113,9 @@ msgid "Initializing face detection model..."
 msgstr "Ræsi aðalskjámynd..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:340
-#, fuzzy, kde-format
-#| msgid "Error starting face detection."
+#, kde-format
 msgid "Running face detection..."
-msgstr "Villa við að ræsa andlitaskönnun."
+msgstr "Ræsi andlitagreiningu..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:356
 #, fuzzy, kde-format
@@ -66141,39 +66125,34 @@ msgid "Initializing feature extraction model..."
 msgstr "Ræsi aðalskjámynd..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:363
-#, fuzzy, kde-format
-#| msgid "Preparing collection scan..."
+#, kde-format
 msgid "Preparing face for feature extraction..."
-msgstr "Undirbý skönnun myndasafns..."
+msgstr "Undirbý andlit fyrir söfnun andlitsdrátta..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:376
 #, kde-format
 msgid "Extracting face features..."
-msgstr ""
+msgstr "Safna andlitsdráttum..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
-#, fuzzy, kde-format
-#| msgid "Failed to create folder"
+#, kde-format
 msgid "Failed to extract face features."
-msgstr "Mistókst að búa til möppu"
+msgstr "Mistókst að safna andlitsdráttum."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:387
-#, fuzzy, kde-format
-#| msgid "Database copied successfully."
+#, kde-format
 msgid "All tests completed successfully!"
-msgstr "Tókst að afrita gagnagrunn."
+msgstr "Tókst að ljúka öllum prófunum!"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
-#, fuzzy, kde-format
-#| msgid "Open error"
+#, kde-format
 msgid "OpenCV error: %1"
-msgstr "Villa við að opna"
+msgstr "Villa í OpenCV: %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgid "Error: %1"
-msgstr "Villa"
+msgstr "Villa: %1"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
@@ -66552,14 +66531,12 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Nota pixmaps með háupplausn"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "Use the software OpenGL for rendering"
+#, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "Nota hugbúnaðar-OpenGL til myndgerðar"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:121
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "Nota OpenCL-vélbúnaðarhröðun"
 
@@ -66573,22 +66550,18 @@ msgstr ""
 "umhverfisbreytur séu handstilltar."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use OpenCL hardware acceleration for AI models"
-msgstr "Nota OpenCL-vélbúnaðarhröðun"
+msgstr "Nota OpenCL-vélbúnaðarhröðun fyrir gervigreindarlíkön"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:125
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option is still experimental and requires that certain environment "
-#| "variables are set manually."
+#, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
 "drivers are not installed."
 msgstr ""
-"Þessi valkostur er enn á tilraunastigi og krefst líka að ýmsar "
-"umhverfisbreytur séu handstilltar."
+"Þessi valkostur er enn á tilraunastigi og getur valdið hruni séu réttir "
+"reklar ekki uppsettir."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format
@@ -66606,16 +66579,14 @@ msgid "Open Download Dialog..."
 msgstr "Opna niðurhalsglugga..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:139
-#, fuzzy, kde-format
-#| msgid "Use the video hardware acceleration"
+#, kde-format
 msgid "Use video hardware acceleration"
-msgstr "Nota vélbúnaðarhröðun fyrir myndskeið"
+msgstr "Nota vélbúnaðarhröðun fyrir myndmerki"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Use the video textures conversion"
+#, kde-format
 msgid "Use video textures conversion"
-msgstr "Nota umbreytingu efnisáferða fyrir myndskeið"
+msgstr "Nota umbreytingu efnisáferða fyrir myndmerki"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:142
 #, kde-format
