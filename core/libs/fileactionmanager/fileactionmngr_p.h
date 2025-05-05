@@ -29,6 +29,7 @@
 #include "databaseworkeriface.h"
 #include "metadatahub.h"
 #include "parallelworkers.h"
+#include "aitoolspipeline.h"
 
 namespace Digikam
 {
@@ -183,6 +184,8 @@ public:
 
     PrivateProgressItemCreator            dbProgress;
     PrivateProgressItemCreator            fileProgress;
+
+    AIToolsPipeline*                      aiToolsPipeline = nullptr;
 };
 
 } // namespace Digikam

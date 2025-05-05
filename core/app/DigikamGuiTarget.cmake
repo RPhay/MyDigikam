@@ -177,6 +177,8 @@ set(DIGIKAMGUI_OBJECTS
             $<TARGET_OBJECTS:gui_dtrash_obj>
             $<TARGET_OBJECTS:gui_imgqsort_obj>
             $<TARGET_OBJECTS:gui_digikamautotagassignment_obj>
+            $<TARGET_OBJECTS:gui_aitoolspipeline_obj>
+
 
             # Utilities
             $<TARGET_OBJECTS:gui_setup_obj>

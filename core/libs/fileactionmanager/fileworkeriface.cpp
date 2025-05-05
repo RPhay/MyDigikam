@@ -167,6 +167,19 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             break;
         }
 
+        if(MetaEngineRotation::RotateAuto == action)
+        {
+            if (!d->aiToolsPipeline->autoRotate(info))
+            {
+                qCDebug(DIGIKAM_GENERAL_LOG) << "AI Tools pipeline not available, auto-rotation skipped";
+
+                failedItems.append(info.name());
+            }
+
+            infos.writtenToOne();
+            continue;
+        }
+
         FileWriteLocker lock(info.filePath());
 
         QString format                                  = info.format();
@@ -231,14 +244,6 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
                     }
                 }
             }
-        }
-
-        if (MetaEngineRotation::TransformationAction::RotateAuto == action)
-        {
-            // Auto-rotate based on DNN model
-
-            AutoRotator autorotator;
-            action = autorotator.rotationOrientation(filePath, 10);
         }
 
         MetaEngineRotation matrix;

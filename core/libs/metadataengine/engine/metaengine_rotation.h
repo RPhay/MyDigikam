@@ -119,6 +119,12 @@ public:
      */
     static QTransform toTransform(MetaEngine::ImageOrientation orientation);
 
+    /**
+     * Converts a TransformationAction to a localized QString description.
+     * This is useful for debugging and UI display purposes.
+     */
+    static QString transformationActionToString(TransformationAction action);
+
 protected:
 
     void set(int m11, int m12, int m21, int m22);

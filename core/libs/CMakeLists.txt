@@ -59,6 +59,7 @@ add_subdirectory(dnnmodelmanager)
 add_subdirectory(mlfoundation)
 add_subdirectory(qtopencvimg)
 add_subdirectory(autorotator)
+add_subdirectory(aitoolspipeline)
 
 if(JXL_FOUND)
 
