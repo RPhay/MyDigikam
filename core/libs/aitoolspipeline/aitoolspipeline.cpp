@@ -325,10 +325,12 @@ bool AIToolsPipeline::classifier()
         else
         {
             // If the image is null, notify that the image could not be loaded
+            
+            QString albumName = CollectionManager::instance()->albumRootLabel(package->info.albumRootId());
 
             notify(MLPipelineNotification::notifySkipped,
                     package->info.name(),
-                    package->info.relativePath(),
+                    albumName + package->info.relativePath(),
                     i18n("Unable to load image"),
                     0,
                     QIcon::fromTheme(QLatin1String("image-missing")));
