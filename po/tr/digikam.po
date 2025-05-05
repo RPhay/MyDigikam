@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-03 01:54+0000\n"
+"POT-Creation-Date: 2025-05-05 01:58+0000\n"
 "PO-Revision-Date: 2025-04-28 10:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -887,7 +887,7 @@ msgstr "Aç…"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:47
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:156
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:159
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
 #: core/showfoto/stackview/showfotostackviewlist.cpp:409
 #, kde-format
@@ -2569,21 +2569,21 @@ msgid "Main Tools"
 msgstr "Ana Araçlar"
 
 #: core/app/main/digikamapp_tools.cpp:41
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2662
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2668
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Süreç Sonrası İşleme"
 
 #: core/app/main/digikamapp_tools.cpp:61
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2691
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2697
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Dışa Aktar"
 
 #: core/app/main/digikamapp_tools.cpp:72
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2702
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2708
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -11328,7 +11328,7 @@ msgstr "Görseller Tara"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1843
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1849
 #, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
@@ -11368,8 +11368,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2317
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2336
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2342
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
@@ -15915,7 +15915,7 @@ msgstr "Tarihi ve zamanı ayarla"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
-#: core/utilities/imageeditor/editor/editorwindow.cpp:582
+#: core/utilities/imageeditor/editor/editorwindow.cpp:585
 #, kde-format
 msgctxt "@action"
 msgid "Cancel"
@@ -26848,6 +26848,48 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW Dönüştürme"
 
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:332
+#, fuzzy, kde-format
+#| msgid "Failed to load image"
+msgid "Unable to load image"
+msgstr "Görsel yüklenemedi"
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:455
+#, fuzzy, kde-format
+#| msgid "Post Processing"
+msgid "AI Tools Processing"
+msgstr "Süreç Sonrası İşleme"
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:497
+#, fuzzy, kde-format
+#| msgid "Rating: %1\n"
+msgid "Auto-rotating: %1\n"
+msgstr "Derecelendirme: %1\n"
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:498
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
+#, kde-format
+msgid "Album: %1\n"
+msgstr "Albüm: %1\n"
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
+#, fuzzy, kde-format
+#| msgid "Rotation: "
+msgid "Rotation: %1\n"
+msgstr "Döndürme: "
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:522
+#, fuzzy, kde-format
+#| msgid "&Skip"
+msgid "Skipped"
+msgstr "&Atla"
+
 #: core/libs/album/engine/album.cpp:411
 #: core/libs/database/utils/ifaces/dio.cpp:959
 #, kde-format
@@ -34962,61 +35004,61 @@ msgstr "Dosya üst verisi yazılıyor…"
 msgid "Revising Exif Orientation tags"
 msgstr "Exif yönelimi künyeleri revize ediliyor…"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:81
+#: core/libs/fileactionmanager/fileactionmngr.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "Finishing tasks"
 msgstr "Görevler bitiriliyor…"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:131
+#: core/libs/fileactionmanager/fileactionmngr.cpp:138
 #, kde-format
 msgid "Assigning image tags"
 msgstr "Görsel künyeleri atanıyor…"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:153
+#: core/libs/fileactionmanager/fileactionmngr.cpp:160
 #, kde-format
 msgid "Removing image tags"
 msgstr "Görsel künyeleri kaldırılıyor…"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:170
+#: core/libs/fileactionmanager/fileactionmngr.cpp:177
 #, kde-format
 msgid "Assigning image pick label"
 msgstr "Görsel seçim etiketi atanıyor…"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:177
+#: core/libs/fileactionmanager/fileactionmngr.cpp:184
 #, kde-format
 msgid "Assigning image color label"
 msgstr "Görsel renk etiketi atanıyor…"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:189
+#: core/libs/fileactionmanager/fileactionmngr.cpp:196
 #, kde-format
 msgid "Assigning image ratings"
 msgstr "Görsel derecelendirmeleri atanıyor…"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:196
-#: core/libs/fileactionmanager/fileactionmngr.cpp:208
-#: core/libs/fileactionmanager/fileactionmngr.cpp:220
+#: core/libs/fileactionmanager/fileactionmngr.cpp:203
+#: core/libs/fileactionmanager/fileactionmngr.cpp:215
+#: core/libs/fileactionmanager/fileactionmngr.cpp:227
 #, kde-format
 msgid "Editing group"
 msgstr "Grup düzenleniyor…"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:227
+#: core/libs/fileactionmanager/fileactionmngr.cpp:234
 #, kde-format
 msgid "Updating orientation in database"
 msgstr "Veritabanındaki yönelim güncelleniyor…"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:245
-#: core/libs/fileactionmanager/fileactionmngr.cpp:263
+#: core/libs/fileactionmanager/fileactionmngr.cpp:252
+#: core/libs/fileactionmanager/fileactionmngr.cpp:270
 #, kde-format
 msgid "Applying metadata"
 msgstr "Üst veri uygulanıyor…"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:270
+#: core/libs/fileactionmanager/fileactionmngr.cpp:277
 #, kde-format
 msgid "Rotating images"
 msgstr "Görseller döndürülüyor…"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:286
+#: core/libs/fileactionmanager/fileactionmngr.cpp:293
 #, kde-format
 msgid "Copying attributes"
 msgstr "Öznitelikler kopyalanıyor…"
@@ -35031,7 +35073,7 @@ msgstr "Ögeleri İşle"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Şu dosyaların Exif yönelimi gözden geçirilemedi:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:366
+#: core/libs/fileactionmanager/fileworkeriface.cpp:371
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Şu dosyalar dönüştürülemedi:"
@@ -36945,6 +36987,57 @@ msgstr "Renk Etiketi"
 msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "%1 bayt ikili veri"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:400
+#, fuzzy, kde-format
+#| msgid "Crop Information"
+msgid "No Transformation"
+msgstr "Bilgiyi Kırp"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:402
+#, fuzzy, kde-format
+#| msgid "Flip Horizontally"
+msgid "Flip Horizontal"
+msgstr "Yatay Olarak Ters Çevir"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:404
+#, fuzzy, kde-format
+#| msgid "Flip Vertically"
+msgid "Flip Vertical"
+msgstr "Dikey Olarak Ters Çevir"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Rotate"
+msgid "Rotate 90°"
+msgstr "Döndür"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:408
+#, fuzzy, kde-format
+#| msgid "Rotate 180 degrees"
+msgid "Rotate 180°"
+msgstr "180 Derece Döndür"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:410
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Rotate"
+msgid "Rotate 270°"
+msgstr "Döndür"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:412
+#, fuzzy, kde-format
+#| msgctxt "@title:tab"
+#| msgid "Rotation"
+msgid "Auto Rotation"
+msgstr "Döndürme"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:414
+#, fuzzy, kde-format
+#| msgid "Unknown Format"
+msgid "Unknown Transformation"
+msgstr "Bilinmeyen Biçim"
 
 #: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:373
 #, kde-format
@@ -39684,17 +39777,6 @@ msgstr "Nesneler için taranan öge: %1\n"
 #, kde-format
 msgid "Object Scanning: %1\n"
 msgstr "Nesneler tarama: %1\n"
-
-#: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
-#, kde-format
-msgid "Album: %1\n"
-msgstr "Albüm: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:256
 #, kde-format
@@ -49533,19 +49615,19 @@ msgctxt "@title"
 msgid "Usual Places"
 msgstr "Olağan Yerler"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:130
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:133
 #, kde-format
 msgctxt "@title"
 msgid "Folder-View"
 msgstr "Klasör Görünümü"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:141
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:144
 #, kde-format
 msgctxt "@title"
 msgid "Stack"
 msgstr "Yığın"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:149
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:152
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add Bookmark"
@@ -49604,7 +49686,7 @@ msgid "Delete File"
 msgstr "Dosyayı Sil"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2363
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2369
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
@@ -52088,7 +52170,7 @@ msgstr "Reddedilen yüz künyesi listesi temizleniyor"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
-#: core/utilities/imageeditor/editor/editorwindow.cpp:576
+#: core/utilities/imageeditor/editor/editorwindow.cpp:579
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -58315,13 +58397,13 @@ msgid ""
 msgstr ""
 "Bu seçenek, görseli geçerli seçim alanına yakınlaştırmak için kullanılabilir."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:448
+#: core/utilities/imageeditor/editor/editorwindow.cpp:451
 #, kde-format
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "Yetersiz Pozlama Göstergesi"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:450
+#: core/utilities/imageeditor/editor/editorwindow.cpp:453
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58331,13 +58413,13 @@ msgstr ""
 "Görselin üzerinde siyah kaplama görüntülemek için bu seçeneği ayarlayın. Bu, "
 "görselin yetersiz pozlanmasını önlemenize yardımcı olacaktır."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:458
+#: core/utilities/imageeditor/editor/editorwindow.cpp:461
 #, kde-format
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "Fazla Pozlama Göstergesi"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:460
+#: core/utilities/imageeditor/editor/editorwindow.cpp:463
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58347,32 +58429,32 @@ msgstr ""
 "Görselin üzerinde beyaz kaplama görüntülemek için bu seçeneği ayarlayın. Bu, "
 "görselin yetersiz pozlanmasını önlemenize yardımcı olacaktır."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:468
+#: core/utilities/imageeditor/editor/editorwindow.cpp:471
 #: core/utilities/import/main/importui.cpp:506
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "Renk Yönetimli Görünüm"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:475
+#: core/utilities/imageeditor/editor/editorwindow.cpp:478
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr "Ekran Provası Seçenekleri…"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:480
+#: core/utilities/imageeditor/editor/editorwindow.cpp:483
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr "Ekran Provası Görünümü"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:488
+#: core/utilities/imageeditor/editor/editorwindow.cpp:491
 #, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr "Seçime Kırp"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:491
+#: core/utilities/imageeditor/editor/editorwindow.cpp:494
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58382,39 +58464,39 @@ msgstr ""
 "Bu seçenek görseli kırpmak için kullanılabilir. Bu eylemi etkinleştirmek "
 "için görselin bir bölgesini seçin."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:499
+#: core/utilities/imageeditor/editor/editorwindow.cpp:502
 #, kde-format
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "Yatay Ters Çevir"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:507
+#: core/utilities/imageeditor/editor/editorwindow.cpp:510
 #, kde-format
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "Dikey Ters Çevir"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:517
+#: core/utilities/imageeditor/editor/editorwindow.cpp:520
 #: core/utilities/import/views/importpreviewview.cpp:188
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
 msgstr "Sola Döndür"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:525
+#: core/utilities/imageeditor/editor/editorwindow.cpp:528
 #: core/utilities/import/views/importpreviewview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
 msgstr "Sağa Döndür"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:535
+#: core/utilities/imageeditor/editor/editorwindow.cpp:538
 #, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
 msgstr "Kendiliğinden Döndür"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:568
+#: core/utilities/imageeditor/editor/editorwindow.cpp:571
 #: core/utilities/import/main/importui.cpp:551
 #: core/utilities/import/main/importui.cpp:794
 #, kde-format
@@ -58422,37 +58504,37 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "Önceki Görsel"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:598
+#: core/utilities/imageeditor/editor/editorwindow.cpp:601
 #, kde-format
 msgctxt "@label"
 msgid "No selection"
 msgstr "Seçim yok"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:601
+#: core/utilities/imageeditor/editor/editorwindow.cpp:604
 #, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr "Geçerli görsel seçimi hakkında bilgi"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:606
+#: core/utilities/imageeditor/editor/editorwindow.cpp:609
 #, kde-format
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "Görsel boyutu hakkında bilgi"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1125
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1131
 #, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "Görsel Kaydediliyor"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1126
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1132
 #, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr "Lütfen görselin kaydedilmesini bekleyin…"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1147
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1153
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58462,13 +58544,13 @@ msgstr ""
 "“%1” dosyasının üzerine yazılacak\n"
 "Emin misiniz?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1152
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1158
 #, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Uyarı"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1262
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1268
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58478,7 +58560,7 @@ msgstr ""
 "“%1” görseli değiştirildi.\n"
 "Kaydetmek istiyor musunuz?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1413
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1419
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58488,25 +58570,25 @@ msgstr ""
 "“%1” görseli değiştirildi.\n"
 "Tüm değişiklikler kaybolacak."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1491
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1497
 #, kde-format
 msgctxt "@info"
 msgid "No selection"
 msgstr "Seçim yok"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1511
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1517
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
 msgstr "Yükleniyor:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1539
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1545
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr "“%1” yüklenemiyor"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1581
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1587
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58518,13 +58600,13 @@ msgstr ""
 "dönüşümü uygulanmayacaktır. Lütfen digiKam’ın kurulumundaki renk yönetimi "
 "yapılandırmasını denetleyin."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1638
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1644
 #, kde-format
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "Kaydediliyor:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1660
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1666
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58538,31 +58620,31 @@ msgstr ""
 " konumuna\n"
 "kaydedilemedi."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1793
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1799
 #, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "“%1” klasöründeki geçici dosya açılamadı: %2 (%3)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1989
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1995
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr "Hedef görselin kaydedileceği biçim algılanamıyor."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1996
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2002
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr "Kaydedilemiyor: Bulunan dosya yolu “%1” geçersiz."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2243
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2249
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr "“%1” dosyası önerilen sürüm dosyası adı “%2” olarak kaydedilemiyor"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2318
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2324
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58572,7 +58654,7 @@ msgstr ""
 "“%1” adlı dosya için yazma izniniz yok. Üzerine yazmak istediğinizden emin "
 "misiniz?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2337
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2343
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58581,25 +58663,25 @@ msgstr ""
 "“%1” adlı bir dosya halihazırda var. Üzerine yazmak istediğinizden emin "
 "misiniz?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2364
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2370
 #, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "Özgün dosyanın üzerine yazılamadı"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2443
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2449
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "Renk Yönetimli Görünüm etkin."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2447
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2453
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "Renk Yönetimli Görünüm devre dışı."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2452
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2458
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58608,74 +58690,74 @@ msgid ""
 msgstr ""
 "Renk Yönetimi yapılandırılmadığından Renk Yönetimli Görünüm kullanılamaz."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2488
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2494
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "Yetersiz Pozlama göstergesi etkin"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2489
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2495
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "Yetersiz Pozlama göstergesi devre dışı"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2503
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2509
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "Fazla Pozlama göstergesi etkin"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2504
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2510
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "Fazla Pozlama göstergesi devre dışı"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2595
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2601
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Dönüştür"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2618
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2624
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Süsle"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2629
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2635
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Efektler"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2640
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2646
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Renkler"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2651
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2657
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Pekiştir"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2841
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2892
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2847
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2898
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr "Birlikte Aç"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2853
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2859
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Diğer…"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2862
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2868
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."

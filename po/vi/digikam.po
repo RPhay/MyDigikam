@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-03 01:54+0000\n"
+"POT-Creation-Date: 2025-05-05 01:58+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -858,7 +858,7 @@ msgstr "Mở bằng"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:47
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:156
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:159
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
 #: core/showfoto/stackview/showfotostackviewlist.cpp:409
 #, fuzzy, kde-format
@@ -2557,14 +2557,14 @@ msgid "Main Tools"
 msgstr "Thanh công cụ chính"
 
 #: core/app/main/digikamapp_tools.cpp:41
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2662
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2668
 #, fuzzy, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Thuộc tính"
 
 #: core/app/main/digikamapp_tools.cpp:61
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2691
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2697
 #, fuzzy, kde-format
 #| msgid "Export"
 msgctxt "@title Export Tools"
@@ -2572,7 +2572,7 @@ msgid "Export"
 msgstr "Xuất"
 
 #: core/app/main/digikamapp_tools.cpp:72
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2702
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2708
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@title Import Tools"
@@ -11004,7 +11004,7 @@ msgstr "Chọn ảnh khung đen"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1843
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1849
 #, fuzzy, kde-format
 #| msgid "New Image File Name"
 msgctxt "@title:window"
@@ -11046,8 +11046,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2317
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2336
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2342
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
@@ -15499,7 +15499,7 @@ msgstr "Điều chỉnh:"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
-#: core/utilities/imageeditor/editor/editorwindow.cpp:582
+#: core/utilities/imageeditor/editor/editorwindow.cpp:585
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Cancel"
@@ -26077,6 +26077,45 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Miền màu"
 
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:332
+#, fuzzy, kde-format
+msgid "Unable to load image"
+msgstr "Lỗi nạp ảnh « %1 »"
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:455
+#, fuzzy, kde-format
+msgid "AI Tools Processing"
+msgstr "Thuộc tính"
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:497
+#, fuzzy, kde-format
+msgid "Auto-rotating: %1\n"
+msgstr "Chế độ cong bằng tay"
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:498
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
+#, fuzzy, kde-format
+#| msgid "Album \"%1\""
+msgid "Album: %1\n"
+msgstr "Tập « %1 »"
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
+#, fuzzy, kde-format
+#| msgid "Rotation:"
+msgid "Rotation: %1\n"
+msgstr "Độ xoay:"
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:522
+#, kde-format
+msgid "Skipped"
+msgstr ""
+
 #: core/libs/album/engine/album.cpp:411
 #: core/libs/database/utils/ifaces/dio.cpp:959
 #, kde-format
@@ -34013,61 +34052,61 @@ msgstr "Ghi siêu dữ liệu vào mỗi tệp"
 msgid "Revising Exif Orientation tags"
 msgstr "Đang xem lại các thẻ hướng EXIF. Hãy đời..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:81
+#: core/libs/fileactionmanager/fileactionmngr.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "Finishing tasks"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:131
+#: core/libs/fileactionmanager/fileactionmngr.cpp:138
 #, fuzzy, kde-format
 msgid "Assigning image tags"
 msgstr "Đang gán các thẻ ảnh. Hãy đời..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:153
+#: core/libs/fileactionmanager/fileactionmngr.cpp:160
 #, fuzzy, kde-format
 msgid "Removing image tags"
 msgstr "Tuỳ chọn thay tên tệp"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:170
+#: core/libs/fileactionmanager/fileactionmngr.cpp:177
 #, fuzzy, kde-format
 msgid "Assigning image pick label"
 msgstr "Đang gán các thẻ ảnh. Hãy đời..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:177
+#: core/libs/fileactionmanager/fileactionmngr.cpp:184
 #, fuzzy, kde-format
 msgid "Assigning image color label"
 msgstr "Đang gán các thẻ ảnh. Hãy đời..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:189
+#: core/libs/fileactionmanager/fileactionmngr.cpp:196
 #, fuzzy, kde-format
 msgid "Assigning image ratings"
 msgstr "Đang gán các đánh giá ảnh. Hãy đời..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:196
-#: core/libs/fileactionmanager/fileactionmngr.cpp:208
-#: core/libs/fileactionmanager/fileactionmngr.cpp:220
+#: core/libs/fileactionmanager/fileactionmngr.cpp:203
+#: core/libs/fileactionmanager/fileactionmngr.cpp:215
+#: core/libs/fileactionmanager/fileactionmngr.cpp:227
 #, fuzzy, kde-format
 msgid "Editing group"
 msgstr "Ảnh đầu"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:227
+#: core/libs/fileactionmanager/fileactionmngr.cpp:234
 #, fuzzy, kde-format
 msgid "Updating orientation in database"
 msgstr "<b>Đang cập nhật cơ sở dữ liệu ảnh mẫu. Hãy đợi...</b>"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:245
-#: core/libs/fileactionmanager/fileactionmngr.cpp:263
+#: core/libs/fileactionmanager/fileactionmngr.cpp:252
+#: core/libs/fileactionmanager/fileactionmngr.cpp:270
 #, fuzzy, kde-format
 msgid "Applying metadata"
 msgstr "Siêu dữ liệu"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:270
+#: core/libs/fileactionmanager/fileactionmngr.cpp:277
 #, fuzzy, kde-format
 msgid "Rotating images"
 msgstr "Lưu ảnh"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:286
+#: core/libs/fileactionmanager/fileactionmngr.cpp:293
 #, kde-format
 msgid "Copying attributes"
 msgstr ""
@@ -34082,7 +34121,7 @@ msgstr "Đang xử lí ảnh mẫu ít"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Lỗi xem lại hướng EXIF cho tệp %1."
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:366
+#: core/libs/fileactionmanager/fileworkeriface.cpp:371
 #, fuzzy, kde-format
 msgid "Failed to transform these files:"
 msgstr "Lỗi xem lại hướng EXIF cho tệp %1."
@@ -35949,6 +35988,49 @@ msgstr "Độ sâu màu :"
 msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr ""
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:400
+#, fuzzy, kde-format
+msgid "No Transformation"
+msgstr "Thông tin"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:402
+#, fuzzy, kde-format
+#| msgid "Flip Horizontally"
+msgid "Flip Horizontal"
+msgstr "Lật ngang"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:404
+#, fuzzy, kde-format
+#| msgid "Flip Vertically"
+msgid "Flip Vertical"
+msgstr "Lật dọc"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
+#, fuzzy, kde-format
+msgid "Rotate 90°"
+msgstr "Xoay trái"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:408
+#, fuzzy, kde-format
+#| msgid "Rotate 90 Degrees"
+msgid "Rotate 180°"
+msgstr "Xoay 90°"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:410
+#, fuzzy, kde-format
+msgid "Rotate 270°"
+msgstr "Xoay trái"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:412
+#, fuzzy, kde-format
+msgid "Auto Rotation"
+msgstr "Độ xoay:"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:414
+#, fuzzy, kde-format
+msgid "Unknown Transformation"
+msgstr "Không rõ"
 
 #: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:373
 #, fuzzy, kde-format
@@ -38527,18 +38609,6 @@ msgstr "Tìm kiếm:"
 #, fuzzy, kde-format
 msgid "Object Scanning: %1\n"
 msgstr "Tìm kiếm:"
-
-#: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
-msgid "Album: %1\n"
-msgstr "Tập « %1 »"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:256
 #, kde-format
@@ -48519,19 +48589,19 @@ msgctxt "@title"
 msgid "Usual Places"
 msgstr "Tương đối"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:130
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:133
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Folder-View"
 msgstr "Tuy chọn giao diện"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:141
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:144
 #, kde-format
 msgctxt "@title"
 msgid "Stack"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:149
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:152
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Add Bookmark"
@@ -48592,7 +48662,7 @@ msgid "Delete File"
 msgstr "Xoá tệp"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2363
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2369
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgctxt "@title:window"
@@ -51000,7 +51070,7 @@ msgstr ""
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
-#: core/utilities/imageeditor/editor/editorwindow.cpp:576
+#: core/utilities/imageeditor/editor/editorwindow.cpp:579
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -57060,14 +57130,14 @@ msgid ""
 msgstr ""
 "Tuỳ chọn này có thể được dùng để thu/phóng ảnh vào vùng chọn hiện thời."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:448
+#: core/utilities/imageeditor/editor/editorwindow.cpp:451
 #, fuzzy, kde-format
 #| msgid "Under-Exposure Indicator"
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "Cái chỉ chụp non"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:450
+#: core/utilities/imageeditor/editor/editorwindow.cpp:453
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57077,14 +57147,14 @@ msgstr ""
 "<p>Bật tuỳ chọn này để hiển thị toàn bộ màu đen trên ô xem thử, thì giúp đỡ "
 "bạn tránh chụp non ảnh."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:458
+#: core/utilities/imageeditor/editor/editorwindow.cpp:461
 #, fuzzy, kde-format
 #| msgid "Over-Exposure Indicator"
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "Cái chỉ phơi quá lâu"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:460
+#: core/utilities/imageeditor/editor/editorwindow.cpp:463
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57094,32 +57164,32 @@ msgstr ""
 "<p>Bật tuỳ chọn này để hiển thị toàn bộ màu trắng trên ô xem thử, thì giúp "
 "đỡ bạn tránh phơi ảnh quá lâu."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:468
+#: core/utilities/imageeditor/editor/editorwindow.cpp:471
 #: core/utilities/import/main/importui.cpp:506
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "Ô xem đã Quản lí Màu"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:475
+#: core/utilities/imageeditor/editor/editorwindow.cpp:478
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr "Kiểm lỗi mềm"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:480
+#: core/utilities/imageeditor/editor/editorwindow.cpp:483
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr "Kiểm lỗi mềm"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:488
+#: core/utilities/imageeditor/editor/editorwindow.cpp:491
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr "&Vừa khít vùng chọn"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:491
+#: core/utilities/imageeditor/editor/editorwindow.cpp:494
 #, fuzzy, kde-format
 #| msgid ""
 #| "This option can be used to crop the image. Select a region of the image "
@@ -57132,21 +57202,21 @@ msgstr ""
 "Tuỳ chọn này có thể được dùng để xén ảnh. Hãy chọn một vùng trên ảnh để bật "
 "hành động này."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:499
+#: core/utilities/imageeditor/editor/editorwindow.cpp:502
 #, fuzzy, kde-format
 #| msgid "Flip Horizontally"
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "Lật ngang"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:507
+#: core/utilities/imageeditor/editor/editorwindow.cpp:510
 #, fuzzy, kde-format
 #| msgid "Flip Vertically"
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "Lật dọc"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:517
+#: core/utilities/imageeditor/editor/editorwindow.cpp:520
 #: core/utilities/import/views/importpreviewview.cpp:188
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
@@ -57154,7 +57224,7 @@ msgctxt "@action"
 msgid "Rotate Left"
 msgstr "Xoay trái"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:525
+#: core/utilities/imageeditor/editor/editorwindow.cpp:528
 #: core/utilities/import/views/importpreviewview.cpp:189
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
@@ -57162,13 +57232,13 @@ msgctxt "@action"
 msgid "Rotate Right"
 msgstr "Xoay phải"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:535
+#: core/utilities/imageeditor/editor/editorwindow.cpp:538
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
 msgstr "Xo&ay tự động trang"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:568
+#: core/utilities/imageeditor/editor/editorwindow.cpp:571
 #: core/utilities/import/main/importui.cpp:551
 #: core/utilities/import/main/importui.cpp:794
 #, fuzzy, kde-format
@@ -57176,39 +57246,39 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "Ảnh trước"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:598
+#: core/utilities/imageeditor/editor/editorwindow.cpp:601
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgctxt "@label"
 msgid "No selection"
 msgstr "Chưa chọn gì"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:601
+#: core/utilities/imageeditor/editor/editorwindow.cpp:604
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr "Thông tin về vùng chọn hiện thời"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:606
+#: core/utilities/imageeditor/editor/editorwindow.cpp:609
 #, fuzzy, kde-format
 #| msgid "Information about image size"
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "Thông tin về kích cỡ của ảnh"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1125
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1131
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "Đang tải ảnh..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1126
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1132
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr "Hãy đời trong khi lưu ảnh..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1147
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1153
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57218,14 +57288,14 @@ msgstr ""
 "Sắp xoá tệp « %1 »\n"
 "Bạn có chắc chưa?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1152
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1158
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Cảnh báo"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1262
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1268
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57235,7 +57305,7 @@ msgstr ""
 "Ảnh « %1 » đã bị sửa đổi.\n"
 "Bạn có muốn lưu nó không?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1413
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1419
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57245,21 +57315,21 @@ msgstr ""
 "Ảnh « %1 » đã bị sửa đổi.\n"
 "Bạn có muốn lưu nó không?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1491
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1497
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgctxt "@info"
 msgid "No selection"
 msgstr "Chưa chọn gì"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1511
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1517
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgctxt "@label"
 msgid "Loading:"
 msgstr "Đang tải: "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1539
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1545
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cannot display picture\n"
@@ -57270,7 +57340,7 @@ msgstr ""
 "Không thể hiển thị ảnh\n"
 "« %1 »"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1581
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1587
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57283,14 +57353,14 @@ msgstr ""
 "kiểm tra lại cấu hình quản lí màu trong thiết lập của digiKam, để thẩm tra "
 "đường dẫn ICC."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1638
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1644
 #, fuzzy, kde-format
 #| msgid "Saving: "
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "Đang lưu: "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1660
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1666
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to save file\n"
@@ -57309,32 +57379,32 @@ msgstr ""
 "vào\n"
 "« %2 » ."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1793
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1799
 #, fuzzy, kde-format
 #| msgid "Failed to list files in %1"
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "Lỗi liệt kê tệp nằm trong %1"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1989
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1995
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr "<p>Ở đây hãy đặt cách điều chỉnh lại độ tương phản của ảnh đích."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1996
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2002
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2243
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2249
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2318
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2324
 #, fuzzy, kde-format
 #| msgid ""
 #| "You do not have write permissions for the file named \"%1\". Are you sure "
@@ -57346,7 +57416,7 @@ msgid ""
 msgstr ""
 "Bạn không có quyền ghi tệp tên « %1 ». Bạn có chắc muốn ghi đè lên nó không?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2337
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2343
 #, fuzzy, kde-format
 #| msgid ""
 #| "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -57355,26 +57425,26 @@ msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Tệp tên « %1 » đã có. Bạn có chắc muốn ghi đè lên nó không?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2364
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2370
 #, fuzzy, kde-format
 #| msgid "Failed to overwrite original file"
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "Lỗi ghi đè lên tệp gốc"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2443
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2449
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "Ô xem đả quản lí màu đã bật"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2447
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2453
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "Ô xem đả quản lí màu bị tắt"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2452
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2458
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57383,80 +57453,80 @@ msgid ""
 msgstr ""
 "Chưa cấu hình khả năng Quản lí Màu, vì vậy không có sẵn Ô xem đã Quản lí Màu."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2488
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2494
 #, fuzzy, kde-format
 #| msgid "Under-Exposure indicator is enabled"
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "Cái chỉ chụp non đã bật"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2489
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2495
 #, fuzzy, kde-format
 #| msgid "Under-Exposure indicator is disabled"
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "Cái chỉ chụp non bị tắt"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2503
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2509
 #, fuzzy, kde-format
 #| msgid "Over-Exposure indicator is enabled"
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "Cái chỉ phơi quá lâu đã bật"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2504
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2510
 #, fuzzy, kde-format
 #| msgid "Over-Exposure indicator is disabled"
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "Cái chỉ phơi quá lâu bị tắt"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2595
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2601
 #, fuzzy, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Chuyể&n dạng"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2618
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2624
 #, fuzzy, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "T&rang trí"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2629
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2635
 #, fuzzy, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Hiệu ứng che mờ"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2640
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2646
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Màu sắc"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2651
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2657
 #, fuzzy, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "&Tăng cường"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2841
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2892
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2847
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2898
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action"
 msgid "Open With"
 msgstr "Mở bằng"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2853
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2859
 #, fuzzy, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Kéo cắt..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2862
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2868
 #, fuzzy, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
@@ -66417,10 +66487,6 @@ msgstr "&Sắp xếp ảnh"
 #~ msgstr "Áp dụng thay đổi ?"
 
 #, fuzzy
-#~ msgid "Auto-tags for: %1\n"
-#~ msgstr "Chế độ cong bằng tay"
-
-#, fuzzy
 #~ msgid "Keywords: %1"
 #~ msgstr "Siêu dữ liệu"
 
@@ -68771,10 +68837,6 @@ msgstr "&Sắp xếp ảnh"
 #, fuzzy
 #~ msgid "Video renderer is "
 #~ msgstr "Tệp âm thanh"
-
-#, fuzzy
-#~ msgid "R: rotate 90"
-#~ msgstr "Xoay trái"
 
 #, fuzzy
 #~ msgctxt "@title:window"

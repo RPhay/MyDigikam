@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-03 01:54+0000\n"
+"POT-Creation-Date: 2025-05-05 01:58+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -851,7 +851,7 @@ msgstr "Otevřít..."
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:47
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:156
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:159
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
 #: core/showfoto/stackview/showfotostackviewlist.cpp:409
 #, kde-format
@@ -2546,21 +2546,21 @@ msgid "Main Tools"
 msgstr "Hlavní nástroje"
 
 #: core/app/main/digikamapp_tools.cpp:41
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2662
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2668
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Následné zpracování"
 
 #: core/app/main/digikamapp_tools.cpp:61
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2691
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2697
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Exportovat"
 
 #: core/app/main/digikamapp_tools.cpp:72
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2702
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2708
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -10812,7 +10812,7 @@ msgstr "Naskenovat obrázky"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1843
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1849
 #, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
@@ -10852,8 +10852,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2317
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2336
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2342
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
@@ -15336,7 +15336,7 @@ msgstr "Upravit datum a čas"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
-#: core/utilities/imageeditor/editor/editorwindow.cpp:582
+#: core/utilities/imageeditor/editor/editorwindow.cpp:585
 #, kde-format
 msgctxt "@action"
 msgid "Cancel"
@@ -25787,6 +25787,48 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Převod RAW UFRaw"
 
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:332
+#, fuzzy, kde-format
+#| msgid "Failed to load image"
+msgid "Unable to load image"
+msgstr "Chyba při načítání obrázku"
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:455
+#, fuzzy, kde-format
+#| msgid "Post Processing"
+msgid "AI Tools Processing"
+msgstr "Zpracování po načtení"
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:497
+#, fuzzy, kde-format
+#| msgid "Rating: %1\n"
+msgid "Auto-rotating: %1\n"
+msgstr "Hodnocení: %1\n"
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:498
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
+#, kde-format
+msgid "Album: %1\n"
+msgstr ""
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
+#, fuzzy, kde-format
+#| msgid "Rotation: "
+msgid "Rotation: %1\n"
+msgstr "Rotace: "
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:522
+#, fuzzy, kde-format
+#| msgid "&Skip"
+msgid "Skipped"
+msgstr "Pře&skočit"
+
 #: core/libs/album/engine/album.cpp:411
 #: core/libs/database/utils/ifaces/dio.cpp:959
 #, kde-format
@@ -33753,61 +33795,61 @@ msgstr "Zapsat metadata do souborů"
 msgid "Revising Exif Orientation tags"
 msgstr "Kontroluji Exif značky natočení obrázku"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:81
+#: core/libs/fileactionmanager/fileactionmngr.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "Finishing tasks"
 msgstr "Dokončení úloh"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:131
+#: core/libs/fileactionmanager/fileactionmngr.cpp:138
 #, kde-format
 msgid "Assigning image tags"
 msgstr "Přiřazování značek obrázkům"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:153
+#: core/libs/fileactionmanager/fileactionmngr.cpp:160
 #, kde-format
 msgid "Removing image tags"
 msgstr "Odstraňování značek obrázků"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:170
+#: core/libs/fileactionmanager/fileactionmngr.cpp:177
 #, kde-format
 msgid "Assigning image pick label"
 msgstr "Přiřazování popisku výběru k obrázku"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:177
+#: core/libs/fileactionmanager/fileactionmngr.cpp:184
 #, kde-format
 msgid "Assigning image color label"
 msgstr "Přiřazování barevného popisku k obrázku"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:189
+#: core/libs/fileactionmanager/fileactionmngr.cpp:196
 #, kde-format
 msgid "Assigning image ratings"
 msgstr "Přiřazování hodnocení obrázků"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:196
-#: core/libs/fileactionmanager/fileactionmngr.cpp:208
-#: core/libs/fileactionmanager/fileactionmngr.cpp:220
+#: core/libs/fileactionmanager/fileactionmngr.cpp:203
+#: core/libs/fileactionmanager/fileactionmngr.cpp:215
+#: core/libs/fileactionmanager/fileactionmngr.cpp:227
 #, kde-format
 msgid "Editing group"
 msgstr "Upravování skupiny"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:227
+#: core/libs/fileactionmanager/fileactionmngr.cpp:234
 #, kde-format
 msgid "Updating orientation in database"
 msgstr "Aktualizace orientace v databázi"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:245
-#: core/libs/fileactionmanager/fileactionmngr.cpp:263
+#: core/libs/fileactionmanager/fileactionmngr.cpp:252
+#: core/libs/fileactionmanager/fileactionmngr.cpp:270
 #, kde-format
 msgid "Applying metadata"
 msgstr "Aplikují se metadata"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:270
+#: core/libs/fileactionmanager/fileactionmngr.cpp:277
 #, kde-format
 msgid "Rotating images"
 msgstr "Otočit obrázky"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:286
+#: core/libs/fileactionmanager/fileactionmngr.cpp:293
 #, kde-format
 msgid "Copying attributes"
 msgstr "Kopíruji atributy"
@@ -33822,7 +33864,7 @@ msgstr "Zpracovat položky"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Nelze načíst Exif značku natočení obrázku následujících souborů:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:366
+#: core/libs/fileactionmanager/fileworkeriface.cpp:371
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Nelze transformovat tyto soubory:"
@@ -35740,6 +35782,57 @@ msgstr "Barevný popisek"
 msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr ""
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:400
+#, fuzzy, kde-format
+#| msgid "Crop Information"
+msgid "No Transformation"
+msgstr "Omezit informace"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:402
+#, fuzzy, kde-format
+#| msgid "Flip Horizontally"
+msgid "Flip Horizontal"
+msgstr "Převrátit vodorovně"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:404
+#, fuzzy, kde-format
+#| msgid "Flip Vertically"
+msgid "Flip Vertical"
+msgstr "Převrátit svisle"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Rotate"
+msgid "Rotate 90°"
+msgstr "Otočit"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:408
+#, fuzzy, kde-format
+#| msgid "Rotate 180 degrees"
+msgid "Rotate 180°"
+msgstr "Otočit o 180°"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:410
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Rotate"
+msgid "Rotate 270°"
+msgstr "Otočit"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:412
+#, fuzzy, kde-format
+#| msgctxt "@title:tab"
+#| msgid "Rotation"
+msgid "Auto Rotation"
+msgstr "Natočení"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:414
+#, fuzzy, kde-format
+#| msgid "Unknown Format"
+msgid "Unknown Transformation"
+msgstr "Neznámý formát"
 
 #: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:373
 #, kde-format
@@ -38338,17 +38431,6 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsengine.cpp:249
 #, kde-format
 msgid "Object Scanning: %1\n"
-msgstr ""
-
-#: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
-#, kde-format
-msgid "Album: %1\n"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:256
@@ -48111,19 +48193,19 @@ msgctxt "@title"
 msgid "Usual Places"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:130
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:133
 #, kde-format
 msgctxt "@title"
 msgid "Folder-View"
 msgstr "Pohled na složku"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:141
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:144
 #, kde-format
 msgctxt "@title"
 msgid "Stack"
 msgstr "Zásobník"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:149
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:152
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add Bookmark"
@@ -48182,7 +48264,7 @@ msgid "Delete File"
 msgstr "Smazat soubor"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2363
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2369
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
@@ -50596,7 +50678,7 @@ msgstr ""
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
-#: core/utilities/imageeditor/editor/editorwindow.cpp:576
+#: core/utilities/imageeditor/editor/editorwindow.cpp:579
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -56727,13 +56809,13 @@ msgstr ""
 "Tato volba slouží k nastavení takového přiblížení, aby se zobrazila celá "
 "plocha výběru v co největším měřítku."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:448
+#: core/utilities/imageeditor/editor/editorwindow.cpp:451
 #, kde-format
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "Ukazatel podsvětlení"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:450
+#: core/utilities/imageeditor/editor/editorwindow.cpp:453
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56743,13 +56825,13 @@ msgstr ""
 "Tato volba zobrazí černou vrstvu na náhledu. To vám pomůže vyhnout se "
 "podsvětlení obrázku."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:458
+#: core/utilities/imageeditor/editor/editorwindow.cpp:461
 #, kde-format
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "Ukazatel přesvětlení"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:460
+#: core/utilities/imageeditor/editor/editorwindow.cpp:463
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56759,32 +56841,32 @@ msgstr ""
 "Tato volba zobrazí bílou vrstvu na náhledu. To vám pomůže vyhnout se "
 "podsvětlení obrázku."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:468
+#: core/utilities/imageeditor/editor/editorwindow.cpp:471
 #: core/utilities/import/main/importui.cpp:506
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "Zobrazení se správou barev"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:475
+#: core/utilities/imageeditor/editor/editorwindow.cpp:478
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr "Volby softwarového náhledu..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:480
+#: core/utilities/imageeditor/editor/editorwindow.cpp:483
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr "Softwarový náhled tisku"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:488
+#: core/utilities/imageeditor/editor/editorwindow.cpp:491
 #, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr "Oříznout podle výběru"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:491
+#: core/utilities/imageeditor/editor/editorwindow.cpp:494
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56794,40 +56876,40 @@ msgstr ""
 "Tuto volbu můžete použít k ořezu obrázku. Před provedením činnosti je nutné "
 "zvolit oblast ořezu."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:499
+#: core/utilities/imageeditor/editor/editorwindow.cpp:502
 #, kde-format
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "Převrátit vodorovně"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:507
+#: core/utilities/imageeditor/editor/editorwindow.cpp:510
 #, kde-format
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "Převrátit svisle"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:517
+#: core/utilities/imageeditor/editor/editorwindow.cpp:520
 #: core/utilities/import/views/importpreviewview.cpp:188
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
 msgstr "Rotovat vlevo"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:525
+#: core/utilities/imageeditor/editor/editorwindow.cpp:528
 #: core/utilities/import/views/importpreviewview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
 msgstr "Rotovat vpravo"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:535
+#: core/utilities/imageeditor/editor/editorwindow.cpp:538
 #, fuzzy, kde-format
 #| msgid "Auto rotate"
 msgctxt "@action"
 msgid "Auto-Rotate"
 msgstr "Automaticky otočit"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:568
+#: core/utilities/imageeditor/editor/editorwindow.cpp:571
 #: core/utilities/import/main/importui.cpp:551
 #: core/utilities/import/main/importui.cpp:794
 #, kde-format
@@ -56835,37 +56917,37 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "Předchozí obrázek"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:598
+#: core/utilities/imageeditor/editor/editorwindow.cpp:601
 #, kde-format
 msgctxt "@label"
 msgid "No selection"
 msgstr "Žádný výběr"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:601
+#: core/utilities/imageeditor/editor/editorwindow.cpp:604
 #, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr "Informace o aktuálním výběru obrázků"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:606
+#: core/utilities/imageeditor/editor/editorwindow.cpp:609
 #, kde-format
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "Informace o velikosti obrázku"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1125
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1131
 #, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "Ukládání obrázku..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1126
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1132
 #, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr "Prosím, vyčkejte, než bude obrázek uložen..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1147
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1153
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56875,13 +56957,13 @@ msgstr ""
 "Opravdu si přejete přepsat soubor \n"
 " \"%1\"?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1152
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1158
 #, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Varování"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1262
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1268
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56889,7 +56971,7 @@ msgid ""
 "Do you want to save it?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1413
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1419
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56897,25 +56979,25 @@ msgid ""
 "All changes will be lost."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1491
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1497
 #, kde-format
 msgctxt "@info"
 msgid "No selection"
 msgstr "Žádný výběr"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1511
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1517
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
 msgstr "Načítá se:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1539
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1545
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr "Nelze přečíst \"%1\""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1581
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1587
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56927,13 +57009,13 @@ msgstr ""
 "žádná transformace barev. Prosím zkontrolujte nastavení správy barev v "
 "nastavení digiKamu."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1638
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1644
 #, kde-format
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "Ukládá se:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1660
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1666
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56947,31 +57029,31 @@ msgstr ""
 " do \n"
 "\"%2\"."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1793
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1799
 #, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "Nelze otevřít dočasný soubor ve složce \"%1\": %2 (%3)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1989
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1995
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr "Nelze určit formát k uložení s cílovým obrázkem."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1996
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2002
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr "Nelze uložit: Nalezená cesta k souboru \"%1\" není platná."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2243
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2249
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr "Nelze uložit soubor \"%1\" do navrženého názvu souboru verze \"%2\""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2318
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2324
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56980,32 +57062,32 @@ msgid ""
 msgstr ""
 "Nemáte oprávnění k zápisu do souboru \"%1\". Opravdu si jej přejete přepsat?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2337
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2343
 #, kde-format
 msgctxt "@info"
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Soubor s názvem \"%1\" již existuje. Opravdu si jej přejete přepsat?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2364
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2370
 #, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "Chyba při přepisování původního obrázku"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2443
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2449
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "Zobrazení se správou barev povoleno."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2447
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2453
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "Zobrazení se správou barev zakázáno."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2452
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2458
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57014,74 +57096,74 @@ msgid ""
 msgstr ""
 "Správa barev není nastavena, takže není dostupné zobrazení se správou barev."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2488
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2494
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "Ukazatel podsvětlení je zapnut"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2489
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2495
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "Ukazatel podsvětlení je vypnut"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2503
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2509
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "Ukazatel přesvětlení je zapnut"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2504
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2510
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "Ukazatel přesvětlení je vypnut"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2595
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2601
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Transformovat"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2618
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2624
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Ozdobit"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2629
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2635
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Efekty"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2640
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2646
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Barvy"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2651
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2657
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Vylepšit"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2841
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2892
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2847
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2898
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr "Otevřít pomocí"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2853
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2859
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Jiný..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2862
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2868
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."

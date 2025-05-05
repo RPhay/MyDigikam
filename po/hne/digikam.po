@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-03 01:54+0000\n"
+"POT-Creation-Date: 2025-05-05 01:58+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -899,7 +899,7 @@ msgstr "एखर साथ खोलव"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:47
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:156
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:159
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
 #: core/showfoto/stackview/showfotostackviewlist.cpp:409
 #, fuzzy, kde-format
@@ -2636,7 +2636,7 @@ msgid "Main Tools"
 msgstr "मुख्य औजार पट्टी"
 
 #: core/app/main/digikamapp_tools.cpp:41
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2662
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2668
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgctxt "@title Post Processing Tools"
@@ -2644,7 +2644,7 @@ msgid "Post-Processing"
 msgstr "पोस्ट प्रोसेसिंग"
 
 #: core/app/main/digikamapp_tools.cpp:61
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2691
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2697
 #, fuzzy, kde-format
 #| msgid "Export"
 msgctxt "@title Export Tools"
@@ -2652,7 +2652,7 @@ msgid "Export"
 msgstr "निर्यात"
 
 #: core/app/main/digikamapp_tools.cpp:72
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2702
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2708
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@title Import Tools"
@@ -10906,7 +10906,7 @@ msgstr "फोटू स्कैन करव"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1843
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1849
 #, fuzzy, kde-format
 #| msgid "New Image File Name"
 msgctxt "@title:window"
@@ -10947,8 +10947,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2317
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2336
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2342
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
@@ -15468,7 +15468,7 @@ msgstr "समायोजन:"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
-#: core/utilities/imageeditor/editor/editorwindow.cpp:582
+#: core/utilities/imageeditor/editor/editorwindow.cpp:585
 #, fuzzy, kde-format
 #| msgid "Cancel"
 msgctxt "@action"
@@ -26116,6 +26116,47 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "रंग जगह"
 
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:332
+#, fuzzy, kde-format
+msgid "Unable to load image"
+msgstr "%1 मं फाइल सूची बनाना फेल"
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:455
+#, fuzzy, kde-format
+#| msgid "Post Processing"
+msgid "AI Tools Processing"
+msgstr "पोस्ट प्रोसेसिंग"
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:497
+#, fuzzy, kde-format
+#| msgid "Metering mode:"
+msgid "Auto-rotating: %1\n"
+msgstr "मीटरिंग मोड"
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:498
+#: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
+#, fuzzy, kde-format
+#| msgid "Album \"%1\""
+msgid "Album: %1\n"
+msgstr "एल्बम \"%1\""
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
+#, fuzzy, kde-format
+#| msgid "Rotation:"
+msgid "Rotation: %1\n"
+msgstr "परिक्रमनः"
+
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:522
+#, kde-format
+msgid "Skipped"
+msgstr ""
+
 #: core/libs/album/engine/album.cpp:411
 #: core/libs/database/utils/ifaces/dio.cpp:959
 #, kde-format
@@ -33909,61 +33950,61 @@ msgstr "हर एक फाइल मं मेटाडाटा लिखव"
 msgid "Revising Exif Orientation tags"
 msgstr "एक्जिफ दिसा टैग पुनरावलोकन करत हे, किरपा करके, अगोरव..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:81
+#: core/libs/fileactionmanager/fileactionmngr.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "Finishing tasks"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:131
+#: core/libs/fileactionmanager/fileactionmngr.cpp:138
 #, fuzzy, kde-format
 msgid "Assigning image tags"
 msgstr "फोटू टैग आबंटित करत हे. किरपा करके, अगोरव..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:153
+#: core/libs/fileactionmanager/fileactionmngr.cpp:160
 #, fuzzy, kde-format
 msgid "Removing image tags"
 msgstr "फाइल नाम बदले के विकल्प"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:170
+#: core/libs/fileactionmanager/fileactionmngr.cpp:177
 #, fuzzy, kde-format
 msgid "Assigning image pick label"
 msgstr "फोटू टैग आबंटित करत हे. किरपा करके, अगोरव..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:177
+#: core/libs/fileactionmanager/fileactionmngr.cpp:184
 #, fuzzy, kde-format
 msgid "Assigning image color label"
 msgstr "फोटू टैग आबंटित करत हे. किरपा करके, अगोरव..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:189
+#: core/libs/fileactionmanager/fileactionmngr.cpp:196
 #, fuzzy, kde-format
 msgid "Assigning image ratings"
 msgstr "फोटू दरजा आबंटित करत हे. किरपा करके, अगोरव..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:196
-#: core/libs/fileactionmanager/fileactionmngr.cpp:208
-#: core/libs/fileactionmanager/fileactionmngr.cpp:220
+#: core/libs/fileactionmanager/fileactionmngr.cpp:203
+#: core/libs/fileactionmanager/fileactionmngr.cpp:215
+#: core/libs/fileactionmanager/fileactionmngr.cpp:227
 #, fuzzy, kde-format
 msgid "Editing group"
 msgstr "पहिली फोटू"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:227
+#: core/libs/fileactionmanager/fileactionmngr.cpp:234
 #, fuzzy, kde-format
 msgid "Updating orientation in database"
 msgstr "<b>फिंगरप्रिंट डाटाबेस ल अपडेट करत हे. किरपा करके, अगोरव...</b>"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:245
-#: core/libs/fileactionmanager/fileactionmngr.cpp:263
+#: core/libs/fileactionmanager/fileactionmngr.cpp:252
+#: core/libs/fileactionmanager/fileactionmngr.cpp:270
 #, fuzzy, kde-format
 msgid "Applying metadata"
 msgstr "मेटाडाटा सहेजव"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:270
+#: core/libs/fileactionmanager/fileactionmngr.cpp:277
 #, fuzzy, kde-format
 msgid "Rotating images"
 msgstr "फोटू चुनव"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:286
+#: core/libs/fileactionmanager/fileactionmngr.cpp:293
 #, fuzzy, kde-format
 msgid "Copying attributes"
 msgstr "सहयोग देव..."
@@ -33978,7 +34019,7 @@ msgstr "चीज मेटारव"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "ए फाइल मन बर एक्जइफ ओरिएन्टेसन सुधारने मं फेल:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:366
+#: core/libs/fileactionmanager/fileworkeriface.cpp:371
 #, fuzzy, kde-format
 msgid "Failed to transform these files:"
 msgstr "ए फाइल मन बर एक्जइफ ओरिएन्टेसन सुधारने मं फेल:"
@@ -35897,6 +35938,48 @@ msgstr "रंग विधि:"
 msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr ""
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:400
+#, fuzzy, kde-format
+msgid "No Transformation"
+msgstr "फोटू जानकारी"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:402
+#, kde-format
+msgid "Flip Horizontal"
+msgstr "आड़ा लहुटाव"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:404
+#, kde-format
+msgid "Flip Vertical"
+msgstr "खड़ा लहुटाव"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
+#, fuzzy, kde-format
+msgid "Rotate 90°"
+msgstr "180 डिग्री घुमाव"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:408
+#, fuzzy, kde-format
+#| msgid "Rotate 90 Degrees"
+msgid "Rotate 180°"
+msgstr "90 डिग्री घुमाव"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:410
+#, fuzzy, kde-format
+#| msgid "Rotate 270 Degrees"
+msgid "Rotate 270°"
+msgstr "270 डिग्री घुमाव"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:412
+#, fuzzy, kde-format
+msgid "Auto Rotation"
+msgstr "परिक्रमनः"
+
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:414
+#, fuzzy, kde-format
+msgid "Unknown Transformation"
+msgstr "अग्यात"
 
 #: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:373
 #, fuzzy, kde-format
@@ -38540,18 +38623,6 @@ msgstr "खोजव:"
 #, fuzzy, kde-format
 msgid "Object Scanning: %1\n"
 msgstr "खोजव:"
-
-#: core/libs/tags/autoassignment/autotagsengine.cpp:250
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:237
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:218
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:225
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
-msgid "Album: %1\n"
-msgstr "एल्बम \"%1\""
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:256
 #, kde-format
@@ -49183,19 +49254,19 @@ msgctxt "@title"
 msgid "Usual Places"
 msgstr "बदलव (&R)"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:130
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:133
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Folder-View"
 msgstr "इंटरफेस विकल्प"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:141
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:144
 #, kde-format
 msgctxt "@title"
 msgid "Stack"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:149
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:152
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Add Bookmark"
@@ -49253,7 +49324,7 @@ msgid "Delete File"
 msgstr "फाइल मेटाव"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2363
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2369
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgctxt "@title:window"
@@ -51661,7 +51732,7 @@ msgstr ""
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
-#: core/utilities/imageeditor/editor/editorwindow.cpp:576
+#: core/utilities/imageeditor/editor/editorwindow.cpp:579
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -57768,14 +57839,14 @@ msgid ""
 "This option can be used to zoom the image to the current selection area."
 msgstr "ये फोल्डर मं वहां कोनो फोटू नइ हे."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:448
+#: core/utilities/imageeditor/editor/editorwindow.cpp:451
 #, fuzzy, kde-format
 #| msgid "Exposure Indicators"
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "एक्सपोजर संकेतक"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:450
+#: core/utilities/imageeditor/editor/editorwindow.cpp:453
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57784,14 +57855,14 @@ msgid ""
 msgstr ""
 "फोटो खींचे बर उपयोग मं ले गे केमरा सफेद बैलेंस सेटिंग प्रदर्सित करे बर ए विकल्प सेट करव."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:458
+#: core/utilities/imageeditor/editor/editorwindow.cpp:461
 #, fuzzy, kde-format
 #| msgid "Exposure Indicators"
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "एक्सपोजर संकेतक"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:460
+#: core/utilities/imageeditor/editor/editorwindow.cpp:463
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57800,32 +57871,32 @@ msgid ""
 msgstr ""
 "फोटो खींचे बर उपयोग मं ले गे केमरा सफेद बैलेंस सेटिंग प्रदर्सित करे बर ए विकल्प सेट करव."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:468
+#: core/utilities/imageeditor/editor/editorwindow.cpp:471
 #: core/utilities/import/main/importui.cpp:506
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "रंग प्रबंधन"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:475
+#: core/utilities/imageeditor/editor/editorwindow.cpp:478
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr "साफ्ट-प्रूफिंग"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:480
+#: core/utilities/imageeditor/editor/editorwindow.cpp:483
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr "साफ्ट-प्रूफिंग"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:488
+#: core/utilities/imageeditor/editor/editorwindow.cpp:491
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr "चयन लहुटाव"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:491
+#: core/utilities/imageeditor/editor/editorwindow.cpp:494
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57833,21 +57904,21 @@ msgid ""
 "enable this action."
 msgstr "फोटू जब ले गे हे ओ तारीक ल प्रदर्सित करे बर ए विकल्प सेट करव."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:499
+#: core/utilities/imageeditor/editor/editorwindow.cpp:502
 #, fuzzy, kde-format
 #| msgid "Flip Horizontally"
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "आड़ा लहुटाव"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:507
+#: core/utilities/imageeditor/editor/editorwindow.cpp:510
 #, fuzzy, kde-format
 #| msgid "Flip Vertically"
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "खड़ा लहुटाव"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:517
+#: core/utilities/imageeditor/editor/editorwindow.cpp:520
 #: core/utilities/import/views/importpreviewview.cpp:188
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
@@ -57855,7 +57926,7 @@ msgctxt "@action"
 msgid "Rotate Left"
 msgstr "डेरी मुड़ें"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:525
+#: core/utilities/imageeditor/editor/editorwindow.cpp:528
 #: core/utilities/import/views/importpreviewview.cpp:189
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
@@ -57863,13 +57934,13 @@ msgctxt "@action"
 msgid "Rotate Right"
 msgstr "जेवनी मुड़ें"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:535
+#: core/utilities/imageeditor/editor/editorwindow.cpp:538
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
 msgstr "अपने अपन ब्रेकेट"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:568
+#: core/utilities/imageeditor/editor/editorwindow.cpp:571
 #: core/utilities/import/main/importui.cpp:551
 #: core/utilities/import/main/importui.cpp:794
 #, fuzzy, kde-format
@@ -57877,38 +57948,38 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "पिछला फोटू"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:598
+#: core/utilities/imageeditor/editor/editorwindow.cpp:601
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgctxt "@label"
 msgid "No selection"
 msgstr "कोई चयन नइ"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:601
+#: core/utilities/imageeditor/editor/editorwindow.cpp:604
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr "<p>अभी हाल के फोटू के रेंडरिंग छोड़व"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:606
+#: core/utilities/imageeditor/editor/editorwindow.cpp:609
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "<p>अभी हाल के फोटू के रेंडरिंग छोड़व"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1125
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1131
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "फोटू लोड करत हे ..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1126
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1132
 #, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1147
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1153
 #, fuzzy, kde-format
 #| msgid ""
 #| "About to delete file \"%1\"\n"
@@ -57921,14 +57992,14 @@ msgstr ""
 "आप फाइल \"%1\" ल मेटाय वाले हे.\n"
 "का आप मन सुनिस्चित हो?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1152
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1158
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "चेतावनी"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1262
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1268
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57938,7 +58009,7 @@ msgstr ""
 "फोटू '%1' सुधार दे गे हे.\n"
 "का आप मन एला सहेजना चाहू?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1413
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1419
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57948,21 +58019,21 @@ msgstr ""
 "फोटू '%1' सुधार दे गे हे.\n"
 "का आप मन एला सहेजना चाहू?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1491
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1497
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgctxt "@info"
 msgid "No selection"
 msgstr "कोई चयन नइ"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1511
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1517
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgctxt "@label"
 msgid "Loading:"
 msgstr "लोड करत हे:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1539
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1545
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cannot display image\n"
@@ -57973,7 +58044,7 @@ msgstr ""
 "फोटू प्रदर्सित नइ कर सकिस\n"
 "\"%1\""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1581
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1587
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57982,14 +58053,14 @@ msgid ""
 "configuration in digiKam's setup."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1638
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1644
 #, fuzzy, kde-format
 #| msgid "Saving: "
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "सहेजत हे:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1660
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1666
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to save file\n"
@@ -58008,31 +58079,31 @@ msgstr ""
 "से\n"
 "\"%2\" मं सहेजे मं असफल."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1793
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1799
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "फोटू '%1' के चिनहा ल '%2' मं सहेज नइ सकिस"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1989
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1995
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr "लक्छ्य फोटू के कंट्रास्ट फिर से समायोजन इहां सेट करव."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1996
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2002
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2243
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2249
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2318
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2324
 #, fuzzy, kde-format
 #| msgid ""
 #| "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -58043,7 +58114,7 @@ msgid ""
 msgstr ""
 "फाइल नाम \"%1\"  पहिली से ही अस्तित्व मं हे. का आप मन एखर ऊपर ही मेटाय के लिखना चाहू?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2337
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2343
 #, fuzzy, kde-format
 #| msgid ""
 #| "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -58053,26 +58124,26 @@ msgid ""
 msgstr ""
 "फाइल नाम \"%1\"  पहिली से ही अस्तित्व मं हे. का आप मन एखर ऊपर ही मेटाय के लिखना चाहू?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2364
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2370
 #, fuzzy, kde-format
 #| msgid "Failed to overwrite original file"
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "मूल फाइल ल मेटाय के लिखे मं फेल रहिस"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2443
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2449
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "रंग प्रबंधन"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2447
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2453
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "रंग प्रबंधन..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2452
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2458
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58080,80 +58151,80 @@ msgid ""
 "available."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2488
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2494
 #, fuzzy, kde-format
 #| msgid "Exposure Indicators"
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "एक्सपोजर संकेतक"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2489
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2495
 #, fuzzy, kde-format
 #| msgid "Exposure Indicators"
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "एक्सपोजर संकेतक"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2503
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2509
 #, fuzzy, kde-format
 #| msgid "Exposure Indicators"
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "एक्सपोजर संकेतक"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2504
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2510
 #, fuzzy, kde-format
 #| msgid "Exposure Indicators"
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "एक्सपोजर संकेतक"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2595
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2601
 #, fuzzy, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "ट्रांसफारम (&n)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2618
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2624
 #, fuzzy, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "डेकोरेट (&D)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2629
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2635
 #, fuzzy, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "धुंधला प्रभाव"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2640
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2646
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "रंग"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2651
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2657
 #, fuzzy, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "सुधार (&a)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2841
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2892
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2847
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2898
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action"
 msgid "Open With"
 msgstr "एखर साथ खोलव"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2853
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2859
 #, fuzzy, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "कतरें..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2862
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2868
 #, fuzzy, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
@@ -66979,11 +67050,6 @@ msgstr "फोटू छांटव (&S)"
 #~ msgstr "बदलाव लगाव?"
 
 #, fuzzy
-#~| msgid "Metering mode:"
-#~ msgid "Auto-tags for: %1\n"
-#~ msgstr "मीटरिंग मोड"
-
-#, fuzzy
 #~| msgid "Keywords"
 #~ msgid "Keywords: %1"
 #~ msgstr "की-वर्डस"
@@ -69490,10 +69556,6 @@ msgstr "फोटू छांटव (&S)"
 #, fuzzy
 #~ msgid "Video renderer is "
 #~ msgstr "आडियो फाइल मन ल"
-
-#, fuzzy
-#~ msgid "R: rotate 90"
-#~ msgstr "180 डिग्री घुमाव"
 
 #, fuzzy
 #~ msgctxt "@title:window"
@@ -72043,11 +72105,6 @@ msgstr "फोटू छांटव (&S)"
 #~ msgstr "फोटू जानकारी"
 
 #, fuzzy
-#~ msgctxt "@title Image transformations"
-#~ msgid "Basic Transformations"
-#~ msgstr "फोटू जानकारी"
-
-#, fuzzy
 #~ msgid "Loading Image Plugins..."
 #~ msgstr "फोटू प्लगइन लोड करत हे"
 
@@ -73047,15 +73104,6 @@ msgstr "फोटू छांटव (&S)"
 
 #~ msgid "Camera \"%1\""
 #~ msgstr "कैमरा \"%1\""
-
-#~ msgid "Rotate 270 Degrees"
-#~ msgstr "270 डिग्री घुमाव"
-
-#~ msgid "Flip Horizontal"
-#~ msgstr "आड़ा लहुटाव"
-
-#~ msgid "Flip Vertical"
-#~ msgstr "खड़ा लहुटाव"
 
 #~ msgid "Donate Money..."
 #~ msgstr "मुद्रा दानइ करव..."
