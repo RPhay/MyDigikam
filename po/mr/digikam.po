@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 01:58+0000\n"
+"POT-Creation-Date: 2025-05-06 01:57+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -25886,24 +25886,24 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr ""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:332
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:334
 #, fuzzy, kde-format
 msgid "Unable to load image"
 msgstr "%1: %2 हे डाउनलोड करण्यास अपयश"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:455
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:457
 #, fuzzy, kde-format
 #| msgid "Print Image"
 msgid "AI Tools Processing"
 msgstr "प्रतिमा छापा"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:497
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgid "Auto-rotating: %1\n"
 msgstr "गुणवत्ताश्रेणी: "
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:498
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:500
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -25915,13 +25915,13 @@ msgstr "गुणवत्ताश्रेणी: "
 msgid "Album: %1\n"
 msgstr "अल्बम"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:501
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "फिरवणे :"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:522
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:524
 #, kde-format
 msgid "Skipped"
 msgstr ""

@@ -46,8 +46,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 01:58+0000\n"
-"PO-Revision-Date: 2025-04-27 16:58+0100\n"
+"POT-Creation-Date: 2025-05-06 01:57+0000\n"
+"PO-Revision-Date: 2025-05-05 20:30+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -27113,25 +27113,22 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Conversión RAW de UFRaw"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:332
-#, fuzzy, kde-format
-#| msgid "Failed to load image"
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:334
+#, kde-format
 msgid "Unable to load image"
 msgstr "No se ha podido cargar la imagen"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:455
-#, fuzzy, kde-format
-#| msgid "Post Processing"
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:457
+#, kde-format
 msgid "AI Tools Processing"
-msgstr "Posprocesamiento"
+msgstr "Procesamiento con herramientas de IA"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:497
-#, fuzzy, kde-format
-#| msgid "Rating: %1\n"
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
+#, kde-format
 msgid "Auto-rotating: %1\n"
-msgstr "Puntuación: %1\n"
+msgstr "Girar automáticamente: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:498
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:500
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27143,17 +27140,15 @@ msgstr "Puntuación: %1\n"
 msgid "Album: %1\n"
 msgstr "Álbum: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
-#, fuzzy, kde-format
-#| msgid "Rotation: "
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:501
+#, kde-format
 msgid "Rotation: %1\n"
-msgstr "Rotación: "
+msgstr "Rotación: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:522
-#, fuzzy, kde-format
-#| msgid "&Skip"
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:524
+#, kde-format
 msgid "Skipped"
-msgstr "&Omitir"
+msgstr "Omitido"
 
 #: core/libs/album/engine/album.cpp:411
 #: core/libs/database/utils/ifaces/dio.cpp:959
@@ -37391,55 +37386,44 @@ msgid "Binary data %1 bytes"
 msgstr "Datos binarios %1 bytes"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:400
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#, kde-format
 msgid "No Transformation"
-msgstr "Información de recorte"
+msgstr "Sin transformación"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:402
-#, fuzzy, kde-format
-#| msgid "Flip Horizontally"
+#, kde-format
 msgid "Flip Horizontal"
 msgstr "Invertir horizontalmente"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:404
-#, fuzzy, kde-format
-#| msgid "Flip Vertically"
+#, kde-format
 msgid "Flip Vertical"
 msgstr "Invertir verticalmente"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Rotate"
+#, kde-format
 msgid "Rotate 90°"
-msgstr "Girar"
+msgstr "Girar 90°"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:408
-#, fuzzy, kde-format
-#| msgid "Rotate 180 degrees"
+#, kde-format
 msgid "Rotate 180°"
-msgstr "Girar 180 grados"
+msgstr "Girar 180°"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:410
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Rotate"
+#, kde-format
 msgid "Rotate 270°"
-msgstr "Girar"
+msgstr "Girar 270°"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:412
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Rotation"
+#, kde-format
 msgid "Auto Rotation"
-msgstr "Rotación"
+msgstr "Rotación automática"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:414
-#, fuzzy, kde-format
-#| msgid "Unknown Format"
+#, kde-format
 msgid "Unknown Transformation"
-msgstr "Formato desconocido"
+msgstr "Transformación desconocida"
 
 #: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:373
 #, kde-format

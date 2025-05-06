@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 01:58+0000\n"
+"POT-Creation-Date: 2025-05-06 01:57+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -27299,25 +27299,25 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr ""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:332
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:334
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Unable to load image"
 msgstr "Níorbh fhéidir an íomhá a luchtú"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:455
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:457
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "Iarphróiseáil"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:497
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-rotating: %1\n"
 msgstr "Mód méadraithe:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:498
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:500
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27330,13 +27330,13 @@ msgstr "Mód méadraithe:"
 msgid "Album: %1\n"
 msgstr "Albam \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:501
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "Rothlú:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:522
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:524
 #, kde-format
 msgid "Skipped"
 msgstr ""

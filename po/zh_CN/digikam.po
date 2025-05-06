@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 01:58+0000\n"
+"POT-Creation-Date: 2025-05-06 01:57+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -25934,25 +25934,25 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW 转换"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:332
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:334
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Unable to load image"
 msgstr "无法加载图像"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:455
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:457
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "后期处理"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:497
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
 #, fuzzy, kde-format
 #| msgid "Rating: %1\n"
 msgid "Auto-rotating: %1\n"
 msgstr "评分：%1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:498
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:500
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -25964,13 +25964,13 @@ msgstr "评分：%1\n"
 msgid "Album: %1\n"
 msgstr "相册：%1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:501
 #, fuzzy, kde-format
 #| msgid "Rotation: "
 msgid "Rotation: %1\n"
 msgstr "旋转："
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:522
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:524
 #, fuzzy, kde-format
 #| msgid "&Skip"
 msgid "Skipped"

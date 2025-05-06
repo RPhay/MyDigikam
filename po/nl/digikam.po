@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 01:58+0000\n"
-"PO-Revision-Date: 2025-04-27 14:33+0200\n"
+"POT-Creation-Date: 2025-05-06 01:57+0000\n"
+"PO-Revision-Date: 2025-05-05 10:02+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -27092,25 +27092,22 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Rawconversie UFRaw"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:332
-#, fuzzy, kde-format
-#| msgid "Failed to load image"
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:334
+#, kde-format
 msgid "Unable to load image"
 msgstr "Afbeelding kon niet worden geladen"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:455
-#, fuzzy, kde-format
-#| msgid "Post Processing"
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:457
+#, kde-format
 msgid "AI Tools Processing"
-msgstr "Nabewerking"
+msgstr "Verwerking met AI-hulpmiddelen"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:497
-#, fuzzy, kde-format
-#| msgid "Auto-tags for: %1\n"
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
+#, kde-format
 msgid "Auto-rotating: %1\n"
-msgstr "Automatische tags voor: %1\n"
+msgstr "Automatisch draaien: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:498
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:500
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27122,17 +27119,15 @@ msgstr "Automatische tags voor: %1\n"
 msgid "Album: %1\n"
 msgstr "Album: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
-#, fuzzy, kde-format
-#| msgid "Rotation: "
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:501
+#, kde-format
 msgid "Rotation: %1\n"
-msgstr "Rotatie: "
+msgstr "Draaiing: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:522
-#, fuzzy, kde-format
-#| msgid "Skip"
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:524
+#, kde-format
 msgid "Skipped"
-msgstr "Overslaan"
+msgstr "Overgeslagen"
 
 #: core/libs/album/engine/album.cpp:411
 #: core/libs/database/utils/ifaces/dio.cpp:959
@@ -37345,11 +37340,9 @@ msgid "Binary data %1 bytes"
 msgstr "Binaire gegevens %1 bytes"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:400
-#, fuzzy, kde-format
-#| msgctxt "@title Image transformations"
-#| msgid "Basic Transformations"
+#, kde-format
 msgid "No Transformation"
-msgstr "Basistransformaties"
+msgstr "Geen transformatie"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:402
 #, kde-format
@@ -37362,35 +37355,29 @@ msgid "Flip Vertical"
 msgstr "Verticaal spiegelen"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
-#, fuzzy, kde-format
-#| msgid "R: rotate 90"
+#, kde-format
 msgid "Rotate 90°"
-msgstr "R: 90 graden draaien"
+msgstr "Draaiing 90°"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:408
-#, fuzzy, kde-format
-#| msgid "Rotate 180 degrees"
+#, kde-format
 msgid "Rotate 180°"
-msgstr "180 graden draaien"
+msgstr "180° draaien"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:410
-#, fuzzy, kde-format
-#| msgid "Rotate 270 Degrees"
+#, kde-format
 msgid "Rotate 270°"
-msgstr "270 graden draaien"
+msgstr "Draaiing 270°"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:412
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Rotation"
+#, kde-format
 msgid "Auto Rotation"
-msgstr "Rotatie"
+msgstr "Automatische draaiing"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:414
-#, fuzzy, kde-format
-#| msgid "Unknown Format"
+#, kde-format
 msgid "Unknown Transformation"
-msgstr "Onbekend format"
+msgstr "Onbekend transformatie"
 
 #: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:373
 #, kde-format

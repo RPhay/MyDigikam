@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 01:58+0000\n"
+"POT-Creation-Date: 2025-05-06 01:57+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -26130,25 +26130,25 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr ""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:332
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:334
 #, fuzzy, kde-format
 #| msgid "File Name"
 msgid "Unable to load image"
 msgstr "फाइलक नाम"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:455
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:457
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "AI Tools Processing"
 msgstr "कैलेंडर"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:497
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgid "Auto-rotating: %1\n"
 msgstr "घुमाबू"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:498
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:500
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -26161,13 +26161,13 @@ msgstr "घुमाबू"
 msgid "Album: %1\n"
 msgstr "विकल्प"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:501
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgid "Rotation: %1\n"
 msgstr "घुमाबू"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:522
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:524
 #, kde-format
 msgid "Skipped"
 msgstr ""

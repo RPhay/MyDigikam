@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 01:58+0000\n"
+"POT-Creation-Date: 2025-05-06 01:57+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -28290,25 +28290,25 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Raw μετατροπή"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:332
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:334
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Unable to load image"
 msgstr "Αποτυχία φόρτωσης της εικόνας"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:455
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:457
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "Μετα-επεξεργασία"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:497
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-rotating: %1\n"
 msgstr "Λειτουργία μέτρησης:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:498
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:500
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -28321,13 +28321,13 @@ msgstr "Λειτουργία μέτρησης:"
 msgid "Album: %1\n"
 msgstr "Λεύκωμα \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:501
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "Περιστροφή:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:522
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:524
 #, kde-format
 msgid "Skipped"
 msgstr ""
