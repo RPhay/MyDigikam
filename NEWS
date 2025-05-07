@@ -209,7 +209,7 @@ BUGFIXES:
 183 ==> 503683 - Entire photo as face.
 184 ==> 503760 - Import menu unusable ( grey ) unless a file has been opened.
 185 ==> 503763 - File open/select function does not honour systemsetting.
-186 ==> 
+186 ==> 476908 - "Ignored" face regions are not written to file metadata.
 187 ==> 
 188 ==> 
 189 ==> 
