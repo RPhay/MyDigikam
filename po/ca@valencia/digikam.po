@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-06 01:57+0000\n"
-"PO-Revision-Date: 2025-04-27 08:38+0200\n"
+"PO-Revision-Date: 2025-05-05 12:42+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -9235,8 +9235,8 @@ msgid ""
 "<p>Color Management is disabled.</p> <p>You can enable it now by clicking on "
 "the \"Settings\" button.</p>"
 msgstr ""
-"<p>La gestió del color està desactivada.</p> <p>Podeu activar-la ara clicant "
-"en el botó «Configuració».</p>"
+"<p>La gestió del color està desactivada.</p> <p>Podeu activar-la ara fent "
+"clic en el botó «Configuració».</p>"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
@@ -10448,8 +10448,8 @@ msgid ""
 "horizontal or vertical lines.</p>"
 msgstr ""
 "<p>Corregix automàticament el gir de les vostres imatges assignant dos punts "
-"al giny de vista prèvia i clicant <i>Ajusta</i>.<br/>Podeu ajustar tant les "
-"línies horitzontals com les verticals.</p>"
+"al giny de vista prèvia i fent clic <i>Ajusta</i>.<br/>Podeu ajustar tant "
+"les línies horitzontals com les verticals.</p>"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:193
 #, kde-format
@@ -27067,22 +27067,19 @@ msgid "UFRaw Raw Conversion"
 msgstr "Conversió RAW d'UFRaw"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:334
-#, fuzzy, kde-format
-#| msgid "Failed to load image"
+#, kde-format
 msgid "Unable to load image"
 msgstr "No s'ha pogut carregar la imatge"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:457
-#, fuzzy, kde-format
-#| msgid "Post Processing"
+#, kde-format
 msgid "AI Tools Processing"
-msgstr "Postprocés"
+msgstr "Processament d'eines d'IA"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
-#, fuzzy, kde-format
-#| msgid "Rating: %1\n"
+#, kde-format
 msgid "Auto-rotating: %1\n"
-msgstr "Valoració: %1\n"
+msgstr "Gir automàtic: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:500
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
@@ -27097,16 +27094,14 @@ msgid "Album: %1\n"
 msgstr "Àlbum: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:501
-#, fuzzy, kde-format
-#| msgid "Rotation: "
+#, kde-format
 msgid "Rotation: %1\n"
-msgstr "Gir: "
+msgstr "Gir: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:524
-#, fuzzy, kde-format
-#| msgid "&Skip"
+#, kde-format
 msgid "Skipped"
-msgstr "&Omet"
+msgstr "S'ha omés"
 
 #: core/libs/album/engine/album.cpp:411
 #: core/libs/database/utils/ifaces/dio.cpp:959
@@ -37370,55 +37365,44 @@ msgid "Binary data %1 bytes"
 msgstr "Dades binàries %1 bytes"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:400
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#, kde-format
 msgid "No Transformation"
-msgstr "Informació d'escapçat"
+msgstr "Sense transformació"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:402
-#, fuzzy, kde-format
-#| msgid "Flip Horizontally"
+#, kde-format
 msgid "Flip Horizontal"
 msgstr "Invertix horitzontalment"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:404
-#, fuzzy, kde-format
-#| msgid "Flip Vertically"
+#, kde-format
 msgid "Flip Vertical"
 msgstr "Invertix verticalment"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Rotate"
+#, kde-format
 msgid "Rotate 90°"
-msgstr "Gira"
+msgstr "Gira 90°"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:408
-#, fuzzy, kde-format
-#| msgid "Rotate 180 degrees"
+#, kde-format
 msgid "Rotate 180°"
-msgstr "Gira 180 graus"
+msgstr "Gira 180°"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:410
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Rotate"
+#, kde-format
 msgid "Rotate 270°"
-msgstr "Gira"
+msgstr "Gira 270°"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:412
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Rotation"
+#, kde-format
 msgid "Auto Rotation"
-msgstr "Gir"
+msgstr "Gir automàtic"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:414
-#, fuzzy, kde-format
-#| msgid "Unknown Format"
+#, kde-format
 msgid "Unknown Transformation"
-msgstr "Format desconegut"
+msgstr "Transformació desconeguda"
 
 #: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:373
 #, kde-format
