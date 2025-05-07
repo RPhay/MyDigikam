@@ -135,7 +135,7 @@ FileActionMngr::Private::~Private()
 
 bool FileActionMngr::Private::isActive() const
 {
-    return dbProgress.activeProgressItems || fileProgress.activeProgressItems;
+    return (dbProgress.activeProgressItems || fileProgress.activeProgressItems);
 }
 
 bool FileActionMngr::Private::shallSendForWriting(qlonglong id)
@@ -212,7 +212,7 @@ PrivateProgressItemCreator* FileActionMngr::Private::fileProgressCreator()
 
 ProgressItem* PrivateProgressItemCreator::createProgressItem(const QString& action) const
 {
-    return new ProgressItem(nullptr, ProgressManager::instance()->getUniqueID(), action, QString(), true, true);
+    return (new ProgressItem(nullptr, ProgressManager::instance()->getUniqueID(), action, QString(), true, true));
 }
 
 void PrivateProgressItemCreator::addProgressItem(ProgressItem* const item)

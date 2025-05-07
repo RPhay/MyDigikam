@@ -6,7 +6,7 @@
  * Date        : 2025-05-02
  * Description : AI tools pipeline class
  *
- * SPDX-FileCopyrightText: 2025 by digiKam team <devs@digikam.org>
+ * SPDX-FileCopyrightText : 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
@@ -41,6 +41,7 @@ namespace Digikam
 class Q_DECL_HIDDEN AIToolsPipelineCreator
 {
 public:
+
     AIToolsPipeline object;
 };
 
@@ -51,6 +52,7 @@ Q_GLOBAL_STATIC(AIToolsPipelineCreator, aiToolsPipelineCreator)
 class Q_DECL_HIDDEN AIToolsPipeline::Private
 {
 public:
+
     bool            aiToolsEnabled  = false;
     bool            isStarted       = false;
     bool            batchCancelled  = false;
@@ -61,7 +63,7 @@ public:
 
 AIToolsPipeline::AIToolsPipeline(QObject* const parent)
     : MLPipelineFoundation(),
-      d(new Private)
+      d                   (new Private)
 {
     setParent(parent);
     d->aiToolsEnabled = SystemSettings(qApp->applicationName()).enableAIAutoTools;
@@ -102,11 +104,12 @@ bool AIToolsPipeline::start()
         {
             qCWarning(DIGIKAM_AUTOROTATE_LOG) << "Failed to load the AutoRotator model:" << e.what();
             d->isStarted = false;
+
             return false;
         }
 
         // this section is a block to release the mutex when done
-        
+
         {
             // use the mutex to synchronize the start of the threads
 
@@ -122,7 +125,7 @@ bool AIToolsPipeline::start()
 
         connect(this, SIGNAL(scheduled()),
                 this, SLOT(slotScheduled()));
-                
+
         connect(this, SIGNAL(started(const QString&)),
                 this, SLOT(slotStarted(const QString&)));
 
@@ -148,9 +151,9 @@ bool AIToolsPipeline::autoRotate(const ItemInfo& info, ProgressItem* const progr
     return process(info, AIToolsPipelinePackage::AITool::AutoRotate, progress);
 }
 
-bool AIToolsPipeline::process(const ItemInfo& info, 
-                             AIToolsPipelinePackage::AITool tool,
-                             ProgressItem* const progress)
+bool AIToolsPipeline::process(const ItemInfo& info,
+                              AIToolsPipelinePackage::AITool tool,
+                              ProgressItem* const progress)
 {
     // Make sure the pipeline is started
 
@@ -162,7 +165,7 @@ bool AIToolsPipeline::process(const ItemInfo& info,
     // Create a new package for processing
 
     AIToolsPipelinePackage* const package = new AIToolsPipelinePackage(tool, info, progress);
-    
+
     // Wait for the Loader queue to be ready
 
     while (nullptr == queues[MLPipelineStage::Loader])
@@ -172,7 +175,7 @@ bool AIToolsPipeline::process(const ItemInfo& info,
 
     Q_EMIT scheduled();
     Q_EMIT started(info.filePath());
-    
+
     // Submit the package to the loader stage
 
     return enqueue(queues[MLPipelineStage::Loader], package);
@@ -183,7 +186,7 @@ bool AIToolsPipeline::process(const DImg& image,
                               ProgressItem* const progress)
 {
     // Make sure the pipeline is started
-    
+
     if (!d->isStarted)
     {
         return false;
@@ -192,32 +195,32 @@ bool AIToolsPipeline::process(const DImg& image,
     // Create a new package for processing with the pre-loaded image
 
     AIToolsPipelinePackage* const package = new AIToolsPipelinePackage(tool, image, progress);
-    
+
     // Create a thumbnail from the DImg
-    
+
     if (!package->image.isNull())
     {
         // Create an icon from the thumbnail
-        
-        package->thumbnailIcon = package->thumbnailIcon = QIcon(package->image.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap());
+
+        package->thumbnailIcon = QIcon(package->image.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap());
     }
     else
     {
         // Set a default icon if the image is null
-        
+
         package->thumbnailIcon = QIcon::fromTheme(QLatin1String("image-x-generic"));
     }
-    
+
     // Wait for the Classifier queue to be ready
-    
+
     while (nullptr == queues[MLPipelineStage::Classifier])
     {
         QThread::msleep(10);
     }
-    
+
     Q_EMIT scheduled();
     Q_EMIT started(image.originalFilePath());
-    
+
     // Submit the package directly to the classifier stage, bypassing the loader
 
     return enqueue(queues[MLPipelineStage::Classifier], package);
@@ -262,12 +265,12 @@ bool AIToolsPipeline::loader()
         {
             // Create an icon from the thumbnail
 
-            package->thumbnailIcon = package->thumbnailIcon = QIcon(package->image.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap());
+            package->thumbnailIcon = QIcon(package->image.smoothScale(48, 48, Qt::KeepAspectRatio).convertToPixmap());
         }
 
         // Pass the package directly to the classifier stage, skipping extractor
 
-        enqueue(nextQueue, package);        
+        enqueue(nextQueue, package);
         package = nullptr;
     }
 
@@ -319,13 +322,13 @@ bool AIToolsPipeline::classifier()
             package->rotationTransformation = d->rotator->rotationOrientation(package->image, 10);
 
             // Pass the package to the next stage
-            
-            enqueue(nextQueue, package);        
+
+            enqueue(nextQueue, package);
         }
         else
         {
             // If the image is null, notify that the image could not be loaded
-            
+
             QString albumName = CollectionManager::instance()->albumRootLabel(package->info.albumRootId());
 
             notify(MLPipelineNotification::notifySkipped,
@@ -388,10 +391,13 @@ bool AIToolsPipeline::writer()
                 {
                     QList<ItemInfo> infos;
                     infos << package->info;
+
                     Q_EMIT signalTransform(infos, package->rotationTransformation);
                 }
+
                 break;
             }
+
             default:
             {
                 break;
@@ -402,14 +408,13 @@ bool AIToolsPipeline::writer()
 
         // send a notification that the image was processed
 
-        notify(MLPipelineNotification::notifyProcessed, 
+        notify(MLPipelineNotification::notifyProcessed,
                package->info.name(),
                albumName + package->info.relativePath(),
                MetaEngineRotation::transformationActionToString(package->rotationTransformation),
                1,
-               package->thumbnailIcon.isNull() ? 
-                   QIcon::fromTheme(QLatin1String("applications-science")) : 
-                   package->thumbnailIcon);
+               package->thumbnailIcon.isNull() ? QIcon::fromTheme(QLatin1String("applications-science"))
+                                               : package->thumbnailIcon);
 
         // Delete the package
 
@@ -435,7 +440,6 @@ bool AIToolsPipeline::writer()
 void AIToolsPipeline::addMoreWorkers()
 {
     // Add workers to each stage as needed
-
 }
 
 /**
@@ -446,30 +450,30 @@ void AIToolsPipeline::addMoreWorkers()
 ProgressItem* AIToolsPipeline::getProgressItem()
 {
     QMutexLocker lock(&d->progressMutex);
-    
+
     ProgressItem* item = ProgressManager::instance()->findItembyId(QLatin1String("AIToolPipeline"));
-    
+
     if (!item)
     {
         // Create a new progress item if one doesn't exist
 
-        item = ProgressManager::createProgressItem(QLatin1String("AIToolPipeline"), 
+        item = ProgressManager::createProgressItem(QLatin1String("AIToolPipeline"),
                                                   i18n("AI Tools Processing"),
-                                                  QString(), 
+                                                  QString(),
                                                   true,  // can be canceled
                                                   true); // has thumbnail
-        
+
         connect(item, SIGNAL(progressItemCanceled(ProgressItem*)),
                 this, SLOT(slotBatchCancel()));
     }
-    
+
     return item;
 }
 
 void AIToolsPipeline::slotScheduled()
 {
-    // getting the progress item will initialize it if it does not exist
-    
+    // Getting the progress item will initialize it if it does not exist
+
     d->batchCancelled = false;
 
     getProgressItem();
@@ -496,12 +500,11 @@ void AIToolsPipeline::slotProcessed(const MLPipelinePackageNotify::Ptr& package)
     ProgressItem* item = getProgressItem();
     item->setThumbnail(package->thumbnail);
 
-    QString lbl = i18n("Auto-rotating: %1\n", package->name);
+    QString lbl        = i18n("Auto-rotating: %1\n", package->name);
     lbl.append(i18n("Album: %1\n", package->path));
     lbl.append(i18n("Rotation: %1\n", package->displayData));
 
     item->setLabel(lbl);
-
     item->incCompletedItems(1);
     item->updateProgress();
 
@@ -548,7 +551,8 @@ void AIToolsPipeline::slotBatchCancel()
 
     // Only empty the Loader and Classifier queues
 
-    const QList<MLPipelineStage> stagesToClear = {
+    const QList<MLPipelineStage> stagesToClear =
+    {
         MLPipelineStage::Loader,
         MLPipelineStage::Classifier,
         MLPipelineStage::Writer
@@ -559,7 +563,7 @@ void AIToolsPipeline::slotBatchCancel()
     QMutexLocker lock(&d->progressMutex);
 
     ProgressItem* item = getProgressItem();
-    
+
     // Clear only the specified stages
 
     for (const MLPipelineStage& stage : stagesToClear)
@@ -569,13 +573,13 @@ void AIToolsPipeline::slotBatchCancel()
         if (queues.contains(stage))
         {
             MLPipelineQueue* queue = queues[stage];
-            
+
             // Clear the queue
 
             while (!queue->isEmpty())
             {
                 MLPipelinePackageFoundation* package = queue->pop_front();
-                
+
                 // Make sure we don't delete the queue end signal
 
                 if (queueEndSignal() != package)

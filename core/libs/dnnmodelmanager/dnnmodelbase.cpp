@@ -82,9 +82,9 @@ const QPair<int, int> DNNModelBase::getBackendAndTarget() const
         SystemSettings system(qApp->applicationName());
 
         if (
-            system.enableOpenCL &&
+            system.enableOpenCL    &&
             system.enableDnnOpenCL &&
-            cv::ocl::haveOpenCL() && 
+            cv::ocl::haveOpenCL()  &&
             cv::ocl::useOpenCL()
            )
         {
