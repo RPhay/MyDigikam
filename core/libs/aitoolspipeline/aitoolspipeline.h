@@ -33,7 +33,7 @@ namespace Digikam
  * @brief A class to handle AI tools processing pipeline
  */
 
-class DIGIKAM_EXPORT AIToolsPipeline : public MLPipelineFoundation
+class DIGIKAM_GUI_EXPORT AIToolsPipeline : public MLPipelineFoundation
 {
     Q_OBJECT
 

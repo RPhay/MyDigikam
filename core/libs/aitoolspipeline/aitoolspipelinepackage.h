@@ -34,7 +34,7 @@ namespace Digikam
  * @class AIToolsPipelinePackage
  * @brief A package class for the AIToolsPipeline, containing image data and processing information
  */
-class DIGIKAM_EXPORT AIToolsPipelinePackage : public MLPipelinePackageFoundation
+class DIGIKAM_GUI_EXPORT AIToolsPipelinePackage : public MLPipelinePackageFoundation
 {
 public:
     /**
