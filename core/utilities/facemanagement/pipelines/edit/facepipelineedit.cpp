@@ -506,7 +506,7 @@ bool FacePipelineEdit::writer()
      * End pipeline stage specific loop
      */
 
-    MLPIPELINE_LOOP_END(MLPipelineStage::Writer, "AutotagsPipelineObject::writer");
+    MLPIPELINE_LOOP_END(MLPipelineStage::Writer, "FacePipelineEdit::writer");
 
     /* =========================================================================================
      * Pipeline stage specific cleanup
