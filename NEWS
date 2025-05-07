@@ -210,7 +210,7 @@ BUGFIXES:
 184 ==> 503760 - Import menu unusable ( grey ) unless a file has been opened.
 185 ==> 503763 - File open/select function does not honour systemsetting.
 186 ==> 476908 - "Ignored" face regions are not written to file metadata.
-187 ==> 
+187 ==> 503860 - Some images with correct Geolocation data in exif tab in Metadata tab, shows "No geolocation information available" in map tab.
 188 ==> 
 189 ==> 
 190 ==> 
