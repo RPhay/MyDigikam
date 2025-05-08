@@ -145,20 +145,17 @@ if [[ $DK_QTVERSION == 5 ]] ; then
 
 else
 
-    # Use Qt 6.8 LTS for the moment.
-    MP_QTSUBVERSION="8"
-
     # KDE KF6 frameworks version.
     # See official release here: https://download.kde.org/stable/frameworks/
-    DK_KDE_VERSION="v6.12.0"
+    DK_KDE_VERSION="v6.13.0"
 
     # KDE Plasma version.
     # See official release here: https://download.kde.org/stable/plasma/
-    DK_KP_VERSION="v6.3.4"
+    DK_KP_VERSION="v6.3.5"
 
     # KDE Application version.
     # See official release here: https://download.kde.org/stable/release-service/
-    DK_KA_VERSION="v24.12.3"
+    DK_KA_VERSION="v25.04.1"
 
     DK_UPLOADDIR="/srv/archives/files/digikam/"
 
