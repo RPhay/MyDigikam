@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-06 01:57+0000\n"
+"POT-Creation-Date: 2025-05-08 01:54+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -27299,25 +27299,25 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr ""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:334
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:337
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Unable to load image"
 msgstr "Níorbh fhéidir an íomhá a luchtú"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:457
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:461
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "Iarphróiseáil"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:503
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-rotating: %1\n"
 msgstr "Mód méadraithe:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:500
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27330,13 +27330,13 @@ msgstr "Mód méadraithe:"
 msgid "Album: %1\n"
 msgstr "Albam \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:501
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "Rothlú:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:524
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:527
 #, kde-format
 msgid "Skipped"
 msgstr ""
@@ -37362,48 +37362,48 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr ""
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:400
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:401
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "No Transformation"
 msgstr "Eolas faoin Íomhá"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:402
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
 #, fuzzy, kde-format
 #| msgid "Flip Horizontally"
 msgid "Flip Horizontal"
 msgstr "Smeach go Cothrománach"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:404
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:411
 #, fuzzy, kde-format
 #| msgid "Flip Vertically"
 msgid "Flip Vertical"
 msgstr "Smeach go hIngearach"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:416
 #, fuzzy, kde-format
 #| msgid "Rotate 180°"
 msgid "Rotate 90°"
 msgstr "Rothlaigh 180°"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:408
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:421
 #, fuzzy, kde-format
 #| msgid "Rotate 90 Degrees"
 msgid "Rotate 180°"
 msgstr "Rothlaigh 90 Céim"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:410
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:426
 #, fuzzy, kde-format
 #| msgid "Rotate 270 Degrees"
 msgid "Rotate 270°"
 msgstr "Rothlaigh 270 Céim"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:412
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:431
 #, fuzzy, kde-format
 msgid "Auto Rotation"
 msgstr "Rothlú"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:414
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:436
 #, fuzzy, kde-format
 msgid "Unknown Transformation"
 msgstr "Uirlisí Anaithnide"

@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-06 01:57+0000\n"
+"POT-Creation-Date: 2025-05-08 01:54+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -28586,25 +28586,25 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Gruba konverzija"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:334
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:337
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Unable to load image"
 msgstr "Neuspjelo učitavanje slike"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:457
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:461
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "Kasnije procesiranje"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:503
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-rotating: %1\n"
 msgstr "Način mjerenja:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:500
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -28617,13 +28617,13 @@ msgstr "Način mjerenja:"
 msgid "Album: %1\n"
 msgstr "Album \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:501
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "Rotacija:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:524
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:527
 #, kde-format
 msgid "Skipped"
 msgstr ""
@@ -39393,51 +39393,51 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr ""
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:400
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:401
 #, fuzzy, kde-format
 #| msgctxt "@title Image transformations"
 #| msgid "Basic Transformations"
 msgid "No Transformation"
 msgstr "Osnovne transformacije"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:402
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
 #, fuzzy, kde-format
 #| msgid "Flip Horizontally"
 msgid "Flip Horizontal"
 msgstr "Prevrni vodoravno"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:404
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:411
 #, fuzzy, kde-format
 #| msgid "Flip Vertically"
 msgid "Flip Vertical"
 msgstr "Prevrni uspravno"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:416
 #, fuzzy, kde-format
 #| msgid "Rotate 180°"
 msgid "Rotate 90°"
 msgstr "Rotiraj za 180°"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:408
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:421
 #, fuzzy, kde-format
 #| msgid "Rotated by 180 Degrees"
 msgid "Rotate 180°"
 msgstr "Rotirano za 180 stepeni"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:410
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:426
 #, fuzzy, kde-format
 #| msgid "Rotate 180°"
 msgid "Rotate 270°"
 msgstr "Rotiraj za 180°"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:412
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:431
 #, fuzzy, kde-format
 #| msgctxt "@title:tab"
 #| msgid "Rotation"
 msgid "Auto Rotation"
 msgstr "Rotacija"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:414
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:436
 #, fuzzy, kde-format
 #| msgid "Unknown Format"
 msgid "Unknown Transformation"
