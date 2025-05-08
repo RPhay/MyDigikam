@@ -36,7 +36,7 @@
 ; We will use LZMA compression as 7Zip, with a dictionary size of 96Mb (to reproduce 7Zip Ultra compression mode)
 
     SetCompress force
-    SetCompressor /SOLID lzma
+    SetCompressor lzma
     SetDatablockOptimize on
     SetCompressorDictSize 96
 
