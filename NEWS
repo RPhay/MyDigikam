@@ -211,8 +211,8 @@ BUGFIXES:
 185 ==> 503763 - File open/select function does not honour systemsetting.
 186 ==> 476908 - "Ignored" face regions are not written to file metadata.
 187 ==> 503860 - Some images with correct Geolocation data in exif tab in Metadata tab, shows "No geolocation information available" in map tab.
-188 ==> 
-189 ==> 
+188 ==> 495010 - Thumbnails and Preview have incorrect colours.
+189 ==> 493936 - Colors of theme inverted or changed after moving photos to new album.
 190 ==> 
 191 ==> 
 192 ==> 
