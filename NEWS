@@ -214,7 +214,7 @@ BUGFIXES:
 188 ==> 495010 - Thumbnails and Preview have incorrect colours.
 189 ==> 493936 - Colors of theme inverted or changed after moving photos to new album.
 190 ==> 503900 - Does not download correct upgrade file.
-191 ==> 
+191 ==> 503894 - Unable to connect to MySQL database from digiKam on openSUSE Tumbleweed after update.
 192 ==> 
 193 ==> 
 194 ==> 
