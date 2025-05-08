@@ -397,21 +397,44 @@ QString MetaEngineRotation::transformationActionToString(TransformationAction ac
     switch (action)
     {
         case NoTransformation:
+        {
             return i18n("No Transformation");
+        }
+
         case FlipHorizontal:
+        {
             return i18n("Flip Horizontal");
+        }
+
         case FlipVertical:
+        {
             return i18n("Flip Vertical");
+        }
+
         case Rotate90:
+        {
             return i18n("Rotate 90°");
+        }
+
         case Rotate180:
+        {
             return i18n("Rotate 180°");
+        }
+
         case Rotate270:
+        {
             return i18n("Rotate 270°");
+        }
+
         case RotateAuto:
+        {
             return i18n("Auto Rotation");
+        }
+
         default:
+        {
             return i18n("Unknown Transformation");
+        }
     }
 }
 

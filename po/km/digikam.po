@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-06 01:57+0000\n"
+"POT-Creation-Date: 2025-05-08 01:54+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -27230,24 +27230,24 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr ""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:334
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:337
 #, fuzzy, kde-format
 msgid "Unable to load image"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:457
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:461
 #, fuzzy, kde-format
 #| msgid "Panorama Stitching"
 msgid "AI Tools Processing"
 msgstr "ថ្នេរ Panorama"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:503
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-rotating: %1\n"
 msgstr "របៀប​វាស់​ស្ទង់ ៖"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:500
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27260,13 +27260,13 @@ msgstr "របៀប​វាស់​ស្ទង់ ៖"
 msgid "Album: %1\n"
 msgstr "អាល់ប៊ុម \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:501
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "ការ​បង្វិល ៖"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:524
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:527
 #, kde-format
 msgid "Skipped"
 msgstr ""
@@ -37350,48 +37350,48 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr ""
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:400
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:401
 #, fuzzy, kde-format
 #| msgid "Crop Information"
 msgid "No Transformation"
 msgstr "ព័ត៌មាន​អំពី​ការ​ច្រឹប"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:402
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
 #, fuzzy, kde-format
 #| msgid "Flip horizontally"
 msgid "Flip Horizontal"
 msgstr "ត្រឡប់​ដោយ​ផ្ដេក"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:404
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:411
 #, fuzzy, kde-format
 #| msgid "Flip vertically"
 msgid "Flip Vertical"
 msgstr "ត្រឡប់​ដោយ​ផ្ដេក"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:416
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgid "Rotate 90°"
 msgstr "បង្វិល"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:408
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:421
 #, fuzzy, kde-format
 #| msgid "180 Degrees"
 msgid "Rotate 180°"
 msgstr "១៨០ ដឺក្រេ"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:410
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:426
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgid "Rotate 270°"
 msgstr "បង្វិល"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:412
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:431
 #, fuzzy, kde-format
 msgid "Auto Rotation"
 msgstr "ការ​បង្វិល ៖"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:414
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:436
 #, fuzzy, kde-format
 msgid "Unknown Transformation"
 msgstr "មិន​ស្គាល់"

@@ -6,7 +6,7 @@
  * Date        : 2025-05-02
  * Description : AI tools pipeline package class
  *
- * SPDX-FileCopyrightText: 2025 by digiKam team <devs@digikam.org>
+ * SPDX-FileCopyrightText : 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
@@ -23,6 +23,7 @@ namespace Digikam
 class Q_DECL_HIDDEN AIToolsPipelinePackage::Private
 {
 public:
+
     explicit Private()
     {
     }
@@ -30,21 +31,21 @@ public:
 
 AIToolsPipelinePackage::AIToolsPipelinePackage(AITool aiTool, const ItemInfo& info, ProgressItem* const progress)
     : MLPipelinePackageFoundation(),
-      info(info),
-      rotationTransformation(MetaEngineRotation::NoTransformation),
-      progress(progress),
-      tool(aiTool),
-      d(new Private)
+      info                       (info),
+      rotationTransformation     (MetaEngineRotation::NoTransformation),
+      progress                   (progress),
+      tool                       (aiTool),
+      d                          (new Private)
 {
 }
 
 AIToolsPipelinePackage::AIToolsPipelinePackage(AITool aiTool, const DImg& img, ProgressItem* const progress)
     : MLPipelinePackageFoundation(),
-      rotationTransformation(MetaEngineRotation::NoTransformation),
-      image(img),
-      progress(progress),
-      tool(aiTool),
-      d(new Private)
+      rotationTransformation     (MetaEngineRotation::NoTransformation),
+      image                      (img),
+      progress                   (progress),
+      tool                       (aiTool),
+      d                          (new Private)
 {
 }
 

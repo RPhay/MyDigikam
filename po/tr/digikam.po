@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-06 01:57+0000\n"
-"PO-Revision-Date: 2025-04-28 10:48+0300\n"
+"POT-Creation-Date: 2025-05-08 01:54+0000\n"
+"PO-Revision-Date: 2025-05-06 22:20+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -26848,25 +26848,22 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW Dönüştürme"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:334
-#, fuzzy, kde-format
-#| msgid "Failed to load image"
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:337
+#, kde-format
 msgid "Unable to load image"
-msgstr "Görsel yüklenemedi"
+msgstr "Görsel yüklenemiyor"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:457
-#, fuzzy, kde-format
-#| msgid "Post Processing"
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:461
+#, kde-format
 msgid "AI Tools Processing"
-msgstr "Süreç Sonrası İşleme"
+msgstr "Yapay Zekâ Araçları İşlemesi"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
-#, fuzzy, kde-format
-#| msgid "Rating: %1\n"
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:503
+#, kde-format
 msgid "Auto-rotating: %1\n"
-msgstr "Derecelendirme: %1\n"
+msgstr "Kendiliğinden döndüren: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:500
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -26878,17 +26875,15 @@ msgstr "Derecelendirme: %1\n"
 msgid "Album: %1\n"
 msgstr "Albüm: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:501
-#, fuzzy, kde-format
-#| msgid "Rotation: "
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
+#, kde-format
 msgid "Rotation: %1\n"
-msgstr "Döndürme: "
+msgstr "Döndürme: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:524
-#, fuzzy, kde-format
-#| msgid "&Skip"
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:527
+#, kde-format
 msgid "Skipped"
-msgstr "&Atla"
+msgstr "Atlandı"
 
 #: core/libs/album/engine/album.cpp:411
 #: core/libs/database/utils/ifaces/dio.cpp:959
@@ -36988,56 +36983,45 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "%1 bayt ikili veri"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:400
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:401
+#, kde-format
 msgid "No Transformation"
-msgstr "Bilgiyi Kırp"
+msgstr "Dönüşüm yok"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:402
-#, fuzzy, kde-format
-#| msgid "Flip Horizontally"
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
+#, kde-format
 msgid "Flip Horizontal"
 msgstr "Yatay Olarak Ters Çevir"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:404
-#, fuzzy, kde-format
-#| msgid "Flip Vertically"
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:411
+#, kde-format
 msgid "Flip Vertical"
 msgstr "Dikey Olarak Ters Çevir"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Rotate"
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:416
+#, kde-format
 msgid "Rotate 90°"
-msgstr "Döndür"
+msgstr "90° Döndür"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:408
-#, fuzzy, kde-format
-#| msgid "Rotate 180 degrees"
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:421
+#, kde-format
 msgid "Rotate 180°"
-msgstr "180 Derece Döndür"
+msgstr "180° Döndür"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:410
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Rotate"
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:426
+#, kde-format
 msgid "Rotate 270°"
-msgstr "Döndür"
+msgstr "270° Döndür"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:412
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Rotation"
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:431
+#, kde-format
 msgid "Auto Rotation"
-msgstr "Döndürme"
+msgstr "Kendiliğinden Döndür"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:414
-#, fuzzy, kde-format
-#| msgid "Unknown Format"
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:436
+#, kde-format
 msgid "Unknown Transformation"
-msgstr "Bilinmeyen Biçim"
+msgstr "Bilinmeyen dönüşüm"
 
 #: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:373
 #, kde-format

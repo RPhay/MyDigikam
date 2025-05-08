@@ -46,12 +46,12 @@ public:
      * @return float threshold to be used by processing (FaceDetector, FaceRecognizer, etc...).
      */
     float                       getThreshold(int uiThreshold = DNN_MODEL_THRESHOLD_NOT_SET)    const;
-    DownloadInfo                getDownloadInformation()                const;
+    DownloadInfo                getDownloadInformation()                                       const;
 
     /**
      * @return path to the model, or null string if path cannot be found.
      */
-    const QString               getModelPath()                          const;
+    const QString               getModelPath()                                                 const;
 
 public:
 

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-06 01:57+0000\n"
+"POT-Creation-Date: 2025-05-08 01:54+0000\n"
 "PO-Revision-Date: 2025-05-05 09:49+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -27217,22 +27217,22 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Перетворення цифрових негативів UFRaw"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:334
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:337
 #, kde-format
 msgid "Unable to load image"
 msgstr "Не вдалося завантажити зображення"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:457
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:461
 #, kde-format
 msgid "AI Tools Processing"
 msgstr "Обробка засобами ШІ"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:503
 #, kde-format
 msgid "Auto-rotating: %1\n"
 msgstr "Автообертання: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:500
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27244,12 +27244,12 @@ msgstr "Автообертання: %1\n"
 msgid "Album: %1\n"
 msgstr "Альбом: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:501
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
 #, kde-format
 msgid "Rotation: %1\n"
 msgstr "Обертання: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:524
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:527
 #, kde-format
 msgid "Skipped"
 msgstr "Пропустити"
@@ -37505,42 +37505,42 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "Двійкові дані, %1 байтів"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:400
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:401
 #, kde-format
 msgid "No Transformation"
 msgstr "Без перетворення"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:402
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
 #, kde-format
 msgid "Flip Horizontal"
 msgstr "Віддзеркалити горизонтально"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:404
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:411
 #, kde-format
 msgid "Flip Vertical"
 msgstr "Віддзеркалити вертикально"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:416
 #, kde-format
 msgid "Rotate 90°"
 msgstr "Обернути на 90°"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:408
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:421
 #, kde-format
 msgid "Rotate 180°"
 msgstr "Обернути на 180°"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:410
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:426
 #, kde-format
 msgid "Rotate 270°"
 msgstr "Обернути на 270°"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:412
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:431
 #, kde-format
 msgid "Auto Rotation"
 msgstr "Автообертання"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:414
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:436
 #, kde-format
 msgid "Unknown Transformation"
 msgstr "Невідоме перетворення"

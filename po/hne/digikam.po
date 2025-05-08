@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-06 01:57+0000\n"
+"POT-Creation-Date: 2025-05-08 01:54+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -26116,24 +26116,24 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "रंग जगह"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:334
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:337
 #, fuzzy, kde-format
 msgid "Unable to load image"
 msgstr "%1 मं फाइल सूची बनाना फेल"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:457
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:461
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "पोस्ट प्रोसेसिंग"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:499
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:503
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-rotating: %1\n"
 msgstr "मीटरिंग मोड"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:500
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -26146,13 +26146,13 @@ msgstr "मीटरिंग मोड"
 msgid "Album: %1\n"
 msgstr "एल्बम \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:501
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "परिक्रमनः"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:524
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:527
 #, kde-format
 msgid "Skipped"
 msgstr ""
@@ -35939,44 +35939,44 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr ""
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:400
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:401
 #, fuzzy, kde-format
 msgid "No Transformation"
 msgstr "फोटू जानकारी"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:402
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
 #, kde-format
 msgid "Flip Horizontal"
 msgstr "आड़ा लहुटाव"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:404
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:411
 #, kde-format
 msgid "Flip Vertical"
 msgstr "खड़ा लहुटाव"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:416
 #, fuzzy, kde-format
 msgid "Rotate 90°"
 msgstr "180 डिग्री घुमाव"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:408
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:421
 #, fuzzy, kde-format
 #| msgid "Rotate 90 Degrees"
 msgid "Rotate 180°"
 msgstr "90 डिग्री घुमाव"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:410
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:426
 #, fuzzy, kde-format
 #| msgid "Rotate 270 Degrees"
 msgid "Rotate 270°"
 msgstr "270 डिग्री घुमाव"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:412
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:431
 #, fuzzy, kde-format
 msgid "Auto Rotation"
 msgstr "परिक्रमनः"
 
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:414
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:436
 #, fuzzy, kde-format
 msgid "Unknown Transformation"
 msgstr "अग्यात"

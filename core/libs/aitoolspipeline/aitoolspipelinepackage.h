@@ -6,7 +6,7 @@
  * Date        : 2025-05-02
  * Description : AI tools pipeline package class
  *
- * SPDX-FileCopyrightText: 2025 by digiKam team <devs@digikam.org>
+ * SPDX-FileCopyrightText : 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
@@ -34,7 +34,7 @@ namespace Digikam
  * @class AIToolsPipelinePackage
  * @brief A package class for the AIToolsPipeline, containing image data and processing information
  */
-class DIGIKAM_EXPORT AIToolsPipelinePackage : public MLPipelinePackageFoundation
+class DIGIKAM_GUI_EXPORT AIToolsPipelinePackage : public MLPipelinePackageFoundation
 {
 public:
     /**
@@ -43,7 +43,9 @@ public:
     enum AITool
     {
         AutoRotate = 0,    ///< Auto rotation tool
-        // Add more tools here in the future
+
+        // NOTE: Add more tools here in the future
+
         Unknown            ///< Unknown or undefined tool
     };
 
@@ -54,7 +56,7 @@ public:
      * @param progress Optional progress item for tracking progress (nullptr by default)
      */
     explicit AIToolsPipelinePackage(AITool aiTool, const ItemInfo& info, ProgressItem* const progress = nullptr);
-    
+
     /**
      * @brief Constructor with AITool, DImg and optional ProgressItem
      * @param aiTool The AI tool to use for processing
@@ -62,12 +64,12 @@ public:
      * @param progress Optional progress item for tracking progress (nullptr by default)
      */
     explicit AIToolsPipelinePackage(AITool aiTool, const DImg& img, ProgressItem* const progress = nullptr);
-    
+
     /**
      * @brief Destructor
      */
     ~AIToolsPipelinePackage() override;
-    
+
     // Public properties
     ItemInfo                                    info;
     MetaEngineRotation::TransformationAction    rotationTransformation;
@@ -76,8 +78,9 @@ public:
     AITool                                      tool;
 
 private:
+
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam
