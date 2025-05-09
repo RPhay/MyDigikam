@@ -457,10 +457,14 @@ echo "---------- Create package post-install script"
 cat << EOF > "$PROJECTDIR/postinstall"
 #!/bin/bash
 
-# NOTE: Disabled with relocate bundle
-#for app in $INSTALL_PREFIX/Applications/digiKam/*.app ; do
-#    ln -s "\$app" /Applications/\${app##*/}
-#done
+# Store script traces in a log file.
+
+exec > >(tee $HOME/digiKam_postinstall.log) 2>&1
+
+# See bug https://bugs.kde.org/show_bug.cgi?id=496380
+
+sudo codesign --force --deep --sign - /Applications/digiKam.org/digikam.app/Contents/MacOS/digikam
+sudo codesign --force --deep --sign - /Applications/digiKam.org/showfoto.app/Contents/MacOS/showfoto
 EOF
 
 # Post-install script need to be executable
