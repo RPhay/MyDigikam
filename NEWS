@@ -217,9 +217,9 @@ BUGFIXES:
 191 ==> 503894 - Unable to connect to MySQL database from digiKam on openSUSE Tumbleweed after update.
 192 ==> 503917 - Writing GPS data into photo's Metadata does not work.
 193 ==> 503945 - MIME Type Filter: change order of RAW files in the combo-box.
-194 ==> 
-195 ==> 
-196 ==> 
+194 ==> 496380 - Cannot start app under MacOS Intel: The application dock does not have permission to open (null).
+195 ==> 496828 - After installation, launching fails with "The application 'Finder' does not have permission to open “(null).”".
+196 ==> 497285 - Program does not open after installation.
 197 ==> 
 198 ==> 
 199 ==> 
