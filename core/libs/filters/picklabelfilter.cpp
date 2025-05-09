@@ -34,10 +34,6 @@ PickLabelFilter::PickLabelFilter(QWidget* const parent)
             this, SLOT(slotPickLabelSelectionChanged()));
 }
 
-PickLabelFilter::~PickLabelFilter()
-{
-}
-
 void PickLabelFilter::reset()
 {
     setPickLabels(QList<PickLabel>());

@@ -49,6 +49,8 @@ public:
 
     Private() = default;
 
+public:
+
     int               status        = None;
 
     DAdjustableLabel* info          = nullptr;

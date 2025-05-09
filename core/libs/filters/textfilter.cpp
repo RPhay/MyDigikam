@@ -33,6 +33,8 @@ public:
 
     Private() = default;
 
+public:
+
     QAction*       itemNameAction           = nullptr;
     QAction*       itemTitleAction          = nullptr;
     QAction*       itemCommentAction        = nullptr;

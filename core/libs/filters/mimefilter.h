@@ -31,6 +31,8 @@ public:
     {
         AllFiles = 0,
         ImageFiles,
+        RAWFiles,            ///< All Raw file formats such as nef, cr2, arw, pef, etc..
+        DNGFiles,
         NoRAWFiles,
         JPGFiles,
         JPEG2000Files,
@@ -41,8 +43,6 @@ public:
         PGFFiles,
         HEIFFiles,           ///< HEVC H265 compression based containers.
         AVIFFiles,
-        DNGFiles,
-        RAWFiles,            ///< All Raw file formats such as nef, cr2, arw, pef, etc..
         MoviesFiles,
         AudioFiles,
         RasterGraphics       ///< PSD, XCF, etc...
@@ -51,7 +51,7 @@ public:
 public:
 
     explicit MimeFilter(QWidget* const parent);
-    ~MimeFilter() override;
+    ~MimeFilter() override = default;
 
     void setMimeFilter(int filter);
     int mimeFilter();

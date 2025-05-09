@@ -41,6 +41,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                                dirty           = false;
 
     DCursorTracker*                     ratingTracker   = nullptr;

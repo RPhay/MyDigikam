@@ -26,6 +26,8 @@ MimeFilter::MimeFilter(QWidget* const parent)
 {
     insertItem(AllFiles,       i18n("All Files"));
     insertItem(ImageFiles,     i18n("Image Files"));
+    insertItem(RAWFiles,       i18n("RAW Files"));
+    insertItem(DNGFiles,       i18n("DNG Files"));
     insertItem(NoRAWFiles,     i18n("No RAW Files"));
     insertItem(JPGFiles,       i18n("JPEG Files"));
     insertItem(JPEG2000Files,  i18n("JPEG-2000 Files"));
@@ -36,8 +38,6 @@ MimeFilter::MimeFilter(QWidget* const parent)
     insertItem(PGFFiles,       i18n("PGF Files"));
     insertItem(HEIFFiles,      i18n("HEIF Files"));
     insertItem(AVIFFiles,      i18n("AVIF Files"));
-    insertItem(DNGFiles,       i18n("DNG Files"));
-    insertItem(RAWFiles,       i18n("RAW Files"));
     insertItem(MoviesFiles,    i18n("Video Files"));
     insertItem(AudioFiles,     i18n("Audio Files"));
     insertItem(RasterGraphics, i18n("Raster Graphics"));
@@ -48,10 +48,6 @@ MimeFilter::MimeFilter(QWidget* const parent)
                       "such as Photoshop, The Gimp, Krita, etc."));
 
     setMimeFilter(AllFiles);
-}
-
-MimeFilter::~MimeFilter()
-{
 }
 
 void MimeFilter::setMimeFilter(int filter)

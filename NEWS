@@ -216,7 +216,7 @@ BUGFIXES:
 190 ==> 503900 - Does not download correct upgrade file.
 191 ==> 503894 - Unable to connect to MySQL database from digiKam on openSUSE Tumbleweed after update.
 192 ==> 503917 - Writing GPS data into photo's Metadata does not work.
-193 ==> 
+193 ==> 503945 - MIME Type Filter: change order of RAW files in the combo-box.
 194 ==> 
 195 ==> 
 196 ==> 

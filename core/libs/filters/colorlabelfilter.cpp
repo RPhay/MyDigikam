@@ -34,10 +34,6 @@ ColorLabelFilter::ColorLabelFilter(QWidget* const parent)
             this, SLOT(slotColorLabelSelectionChanged()));
 }
 
-ColorLabelFilter::~ColorLabelFilter()
-{
-}
-
 void ColorLabelFilter::reset()
 {
     setColorLabels(QList<ColorLabel>());

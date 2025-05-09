@@ -38,10 +38,6 @@ GeolocationFilter::GeolocationFilter(QWidget* const parent)
             this, SLOT(slotFilterChanged()));
 }
 
-GeolocationFilter::~GeolocationFilter()
-{
-}
-
 void GeolocationFilter::setGeolocationFilter(const ItemFilterSettings::GeolocationCondition& condition)
 {
     // findData does not seem to work...

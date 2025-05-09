@@ -35,7 +35,7 @@ class ColorLabelFilter : public ColorLabelWidget
 public:
 
     explicit ColorLabelFilter(QWidget* const parent = nullptr);
-    ~ColorLabelFilter() override;
+    ~ColorLabelFilter() override = default;
 
     QList<TAlbum*> getCheckedColorLabelTags();
 
