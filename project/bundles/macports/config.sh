@@ -94,6 +94,9 @@ DK_BUILDTEMP=~/dktemp
 #DK_QTVERSION="5"
 DK_QTVERSION="6"
 
+# Build universal bundle (arm64 + Intel architecture). Work only with Silicon computer.
+DK_UNIVERSAL=0
+
 # Mariadb version to install for Qt SQL plugin.
 DK_MARIADB_VERSION="10.11"
 
