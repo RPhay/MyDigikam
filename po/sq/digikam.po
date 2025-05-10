@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-08 01:54+0000\n"
+"POT-Creation-Date: 2025-05-10 01:59+0000\n"
 "PO-Revision-Date: 2023-12-13 03:27-0500\n"
 "Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
 "Language-Team: sq\n"
@@ -33715,7 +33715,7 @@ msgid_plural "%1 files await synchronization"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/filters/filterstatusbar.cpp:71
+#: core/libs/filters/filterstatusbar.cpp:73
 #, kde-format
 msgid ""
 "Background color indicates the global image filter status, encompassing all "
@@ -33730,72 +33730,72 @@ msgid ""
 "Press the Settings button from the right side to open the filters panel."
 msgstr ""
 
-#: core/libs/filters/filterstatusbar.cpp:82
+#: core/libs/filters/filterstatusbar.cpp:84
 #, kde-format
 msgid "Reset all active filters"
 msgstr ""
 
-#: core/libs/filters/filterstatusbar.cpp:88
+#: core/libs/filters/filterstatusbar.cpp:90
 #, kde-format
 msgid "Open filter settings panel"
 msgstr ""
 
-#: core/libs/filters/filterstatusbar.cpp:119
+#: core/libs/filters/filterstatusbar.cpp:121
 #, kde-format
 msgid "<br/><nobr><i>Text</i></nobr>"
 msgstr ""
 
-#: core/libs/filters/filterstatusbar.cpp:124
+#: core/libs/filters/filterstatusbar.cpp:126
 #, kde-format
 msgid "<br/><nobr><i>Mime Type</i></nobr>"
 msgstr ""
 
-#: core/libs/filters/filterstatusbar.cpp:129
+#: core/libs/filters/filterstatusbar.cpp:131
 #, kde-format
 msgid "<br/><nobr><i>Geolocation</i></nobr>"
 msgstr ""
 
-#: core/libs/filters/filterstatusbar.cpp:134
+#: core/libs/filters/filterstatusbar.cpp:136
 #, kde-format
 msgid "<br/><nobr><i>Rating</i></nobr>"
 msgstr ""
 
-#: core/libs/filters/filterstatusbar.cpp:139
+#: core/libs/filters/filterstatusbar.cpp:141
 #, kde-format
 msgid "<br/><nobr><i>Pick Labels</i></nobr>"
 msgstr ""
 
-#: core/libs/filters/filterstatusbar.cpp:144
+#: core/libs/filters/filterstatusbar.cpp:146
 #, kde-format
 msgid "<br/><nobr><i>Color Labels</i></nobr>"
 msgstr ""
 
-#: core/libs/filters/filterstatusbar.cpp:149
+#: core/libs/filters/filterstatusbar.cpp:151
 #, kde-format
 msgid "<br/><nobr><i>Tags</i></nobr>"
 msgstr ""
 
-#: core/libs/filters/filterstatusbar.cpp:154
+#: core/libs/filters/filterstatusbar.cpp:156
 #, kde-format
 msgid "<nobr><b>Active filters:</b></nobr>"
 msgstr ""
 
-#: core/libs/filters/filterstatusbar.cpp:158
+#: core/libs/filters/filterstatusbar.cpp:160
 #, kde-format
 msgid "<nobr><b>Active filter:</b></nobr>"
 msgstr ""
 
-#: core/libs/filters/filterstatusbar.cpp:165
+#: core/libs/filters/filterstatusbar.cpp:167
 #, kde-format
 msgid "No active filter"
 msgstr ""
 
-#: core/libs/filters/filterstatusbar.cpp:174
+#: core/libs/filters/filterstatusbar.cpp:176
 #, kde-format
 msgid "One active filter"
 msgstr ""
 
-#: core/libs/filters/filterstatusbar.cpp:178
+#: core/libs/filters/filterstatusbar.cpp:180
 #, kde-format
 msgid "1 active filter"
 msgid_plural "%1 active filters"
@@ -33840,69 +33840,69 @@ msgstr "Kartela Pamje"
 
 #: core/libs/filters/mimefilter.cpp:29
 #, kde-format
-msgid "No RAW Files"
+msgid "RAW Files"
 msgstr ""
 
 #: core/libs/filters/mimefilter.cpp:30
 #, kde-format
-msgid "JPEG Files"
+msgid "DNG Files"
 msgstr ""
 
 #: core/libs/filters/mimefilter.cpp:31
+#, kde-format
+msgid "No RAW Files"
+msgstr ""
+
+#: core/libs/filters/mimefilter.cpp:32
+#, kde-format
+msgid "JPEG Files"
+msgstr ""
+
+#: core/libs/filters/mimefilter.cpp:33
 #, fuzzy, kde-format
 #| msgid "PNG Files"
 msgid "JPEG-2000 Files"
 msgstr "Dokumentat PNG"
 
-#: core/libs/filters/mimefilter.cpp:32
+#: core/libs/filters/mimefilter.cpp:34
 #, fuzzy, kde-format
 #| msgid "PNG Files"
 msgid "JPEG-XL Files"
 msgstr "Dokumentat PNG"
 
-#: core/libs/filters/mimefilter.cpp:33
+#: core/libs/filters/mimefilter.cpp:35
 #, fuzzy, kde-format
 #| msgid "PNG Files"
 msgid "WEBP Files"
 msgstr "Dokumentat PNG"
 
-#: core/libs/filters/mimefilter.cpp:34
+#: core/libs/filters/mimefilter.cpp:36
 #, kde-format
 msgid "PNG Files"
 msgstr "Dokumentat PNG"
 
-#: core/libs/filters/mimefilter.cpp:35
+#: core/libs/filters/mimefilter.cpp:37
 #, kde-format
 msgid "TIFF Files"
 msgstr ""
 
-#: core/libs/filters/mimefilter.cpp:36
+#: core/libs/filters/mimefilter.cpp:38
 #, fuzzy, kde-format
 #| msgid "PNG Files"
 msgid "PGF Files"
 msgstr "Dokumentat PNG"
 
-#: core/libs/filters/mimefilter.cpp:37
+#: core/libs/filters/mimefilter.cpp:39
 #, fuzzy, kde-format
 #| msgid "Image Files"
 msgid "HEIF Files"
 msgstr "Kartela Pamje"
 
-#: core/libs/filters/mimefilter.cpp:38
+#: core/libs/filters/mimefilter.cpp:40
 #, fuzzy, kde-format
 #| msgid "Image Files"
 msgid "AVIF Files"
 msgstr "Kartela Pamje"
-
-#: core/libs/filters/mimefilter.cpp:39
-#, kde-format
-msgid "DNG Files"
-msgstr ""
-
-#: core/libs/filters/mimefilter.cpp:40
-#, kde-format
-msgid "RAW Files"
-msgstr ""
 
 #: core/libs/filters/mimefilter.cpp:41
 #: core/utilities/setup/album/setupmime.cpp:123
@@ -33934,121 +33934,121 @@ msgid ""
 "The Gimp, Krita, etc."
 msgstr ""
 
-#: core/libs/filters/ratingfilter.cpp:60
+#: core/libs/filters/ratingfilter.cpp:62
 #, kde-format
 msgid ""
 "Select the rating value used to filter albums' contents. Use the context pop-"
 "up menu to set rating filter conditions."
 msgstr ""
 
-#: core/libs/filters/ratingfilter.cpp:177
+#: core/libs/filters/ratingfilter.cpp:179
 #, kde-format
 msgid "Rating greater than or equal to %1."
 msgstr ""
 
-#: core/libs/filters/ratingfilter.cpp:183
+#: core/libs/filters/ratingfilter.cpp:185
 #, kde-format
 msgid "Rating equal to %1."
 msgstr ""
 
-#: core/libs/filters/ratingfilter.cpp:189
+#: core/libs/filters/ratingfilter.cpp:191
 #, kde-format
 msgid "Rating less than or equal to %1."
 msgstr ""
 
-#: core/libs/filters/ratingfilter.cpp:229
+#: core/libs/filters/ratingfilter.cpp:231
 #, fuzzy, kde-format
 msgid "Items Without Rating"
 msgstr "I Parazgjedhur"
 
-#: core/libs/filters/ratingfilter.cpp:233
+#: core/libs/filters/ratingfilter.cpp:235
 #, fuzzy, kde-format
 msgid "Rating Filter Options"
 msgstr "Mundësi Ndërfaqeje"
 
-#: core/libs/filters/ratingfilter.cpp:238
+#: core/libs/filters/ratingfilter.cpp:240
 #, kde-format
 msgid "Greater Than or Equals Condition"
 msgstr ""
 
-#: core/libs/filters/ratingfilter.cpp:240
+#: core/libs/filters/ratingfilter.cpp:242
 #, kde-format
 msgid "Equals Condition"
 msgstr ""
 
-#: core/libs/filters/ratingfilter.cpp:242
+#: core/libs/filters/ratingfilter.cpp:244
 #, kde-format
 msgid "Less Than or Equals Condition"
 msgstr ""
 
-#: core/libs/filters/ratingfilter.cpp:245
+#: core/libs/filters/ratingfilter.cpp:247
 #, kde-format
 msgid "Exclude Items Without Rating"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:59
+#: core/libs/filters/textfilter.cpp:61
 #, kde-format
 msgid "Text quick filter (search)"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:60
+#: core/libs/filters/textfilter.cpp:62
 #, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
 "(comments), and tags"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:64
+#: core/libs/filters/textfilter.cpp:66
 #, fuzzy, kde-format
 msgid "Text Search Fields"
 msgstr "Kërkime"
 
-#: core/libs/filters/textfilter.cpp:67
+#: core/libs/filters/textfilter.cpp:69
 #, kde-format
 msgid "Defines which fields to search for the text in."
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:70
+#: core/libs/filters/textfilter.cpp:72
 #, fuzzy, kde-format
 msgid "Item Name"
 msgstr "Kartela Pamje"
 
-#: core/libs/filters/textfilter.cpp:72
+#: core/libs/filters/textfilter.cpp:74
 #, fuzzy, kde-format
 msgid "Item Title"
 msgstr "Kartela Pamje"
 
-#: core/libs/filters/textfilter.cpp:74
+#: core/libs/filters/textfilter.cpp:76
 #, fuzzy, kde-format
 msgid "Item Comment"
 msgstr "Veti Pamjeje"
 
-#: core/libs/filters/textfilter.cpp:76
+#: core/libs/filters/textfilter.cpp:78
 #, fuzzy, kde-format
 msgid "Tag Name"
 msgstr "Emri"
 
-#: core/libs/filters/textfilter.cpp:78
+#: core/libs/filters/textfilter.cpp:80
 #, fuzzy, kde-format
 msgid "Album Name"
 msgstr "Albumi"
 
-#: core/libs/filters/textfilter.cpp:80
+#: core/libs/filters/textfilter.cpp:82
 #, fuzzy, kde-format
 msgid "Item Aspect Ratio"
 msgstr "Veti Pamjeje"
 
-#: core/libs/filters/textfilter.cpp:82
+#: core/libs/filters/textfilter.cpp:84
 #, fuzzy, kde-format
 msgid "Item Pixel Size"
 msgstr "Kartela Pamje"
 
-#: core/libs/filters/textfilter.cpp:85
+#: core/libs/filters/textfilter.cpp:87
 #, fuzzy, kde-format
 msgid "Clear All"
 msgstr "Zgjidhi të Gjitha"
 
-#: core/libs/filters/textfilter.cpp:87
+#: core/libs/filters/textfilter.cpp:89
 #, kde-format
 msgid "Select All"
 msgstr "Zgjidhi të Gjitha"
