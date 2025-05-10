@@ -410,6 +410,15 @@ echo "---------- Create package pre-install script"
 cat << EOF > "$PROJECTDIR/preinstall"
 #!/bin/bash
 
+# SPDX-FileCopyrightText: 2015-2025 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
+
+# Store script traces in a log file.
+
+exec > >(tee $HOME/digiKam_preinstall.log) 2>&1
+
 # This is the legacy install paths
 # TODO: remove this legacy rules in the future
 
@@ -433,9 +442,6 @@ if [ -d "/opt/digikam" ] ; then
     rm -rf "/opt/digikam"
 fi
 
-# NOTE: Use absolute path passed from the installer to store the relocatable application
-#       is stored in the env. var $DSTROOT
-
 if [ -d /Applications/digiKam.org ] ; then
     echo "Removing digiKam.org from Applications folder"
     rm -r /Applications/digiKam.org
@@ -457,14 +463,19 @@ echo "---------- Create package post-install script"
 cat << EOF > "$PROJECTDIR/postinstall"
 #!/bin/bash
 
+# SPDX-FileCopyrightText: 2015-2025 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
+
 # Store script traces in a log file.
 
 exec > >(tee $HOME/digiKam_postinstall.log) 2>&1
 
 # See bug https://bugs.kde.org/show_bug.cgi?id=496380
 
-sudo codesign --force --deep --sign - /Applications/digiKam.org/digikam.app/Contents/MacOS/digikam
-sudo codesign --force --deep --sign - /Applications/digiKam.org/showfoto.app/Contents/MacOS/showfoto
+sudo codesign --verbose --force --deep --sign - /Applications/digiKam.org/digikam.app/Contents/MacOS/digikam
+sudo codesign --verbose --force --deep --sign - /Applications/digiKam.org/showfoto.app/Contents/MacOS/showfoto
 EOF
 
 # Post-install script need to be executable
