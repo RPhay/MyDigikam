@@ -5,7 +5,7 @@ NEW FEATURES:
 
 Bundles:         Update to last ExifTool version 13.29.
 Bundles:         Update Linux AppImage to last frameworks Qt 6.8.3 and KDE 6.12.0
-Bundles:         Update MacOS Silicon to last frameworks Qt 6.9.0 and KDE 6.13.0
+Bundles:         Update MacOS Silicon to last frameworks Qt 6.9.0 and KDE 6.14.0
 Bundles:         Update Windows installer to last frameworks Qt 6.8.3 and KDE 6.12.0
 RawEngine:       Update internal Libraw to last 21.04 version.
 Video:           Update internal QtAVPlayer to last 20250416 upstream (Qt5 only).
