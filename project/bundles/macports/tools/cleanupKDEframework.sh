@@ -27,15 +27,14 @@ CommonChecks
 
 echo $INSTALL_PREFIX
 
-rm -vfr $INSTALL_PREFIX/lib/libKF5*
+rm -vfr $INSTALL_PREFIX/lib/libKF${DK_QTVERSION}*
 rm -vfr $INSTALL_PREFIX/share/ECM
-rm -vfr $INSTALL_PREFIX/include/KF5
-rm -vfr $INSTALL_PREFIX/lib/cmake/KF5*
-rm -vfr $INSTALL_PREFIX/include/astro
-rm -vfr $INSTALL_PREFIX/include/marble
-rm -vfr $INSTALL_PREFIX/data
-rm -vfr $INSTALL_PREFIX/lib/marble
-rm -vfr $INSTALL_PREFIX/lib/libastro*
-rm -vfr $INSTALL_PREFIX/lib/libmarble*
-#rm -vfr $INSTALL_PREFIX/lib/cmake/Marble
-#rm -vfr $INSTALL_PREFIX/lib/cmake/Astro
+rm -vfr $INSTALL_PREFIX/share/KF${DK_QTVERSION}
+rm -vfr $INSTALL_PREFIX/include/KF${DK_QTVERSION}
+rm -vfr $INSTALL_PREFIX/lib/cmake/KF${DK_QTVERSION}*
+rm -vfr $INSTALL_PREFIX/lib/libexec/KF${DK_QTVERSION}
+rm -vfr $INSTALL_PREFIX/lib/plugins/KF${DK_QTVERSION}
+rm -vfr $INSTALL_PREFIX/lib/plugins/imageformats/kimg*
+rm -vfr $INSTALL_PREFIX/lib/plugins/kiconthemes${DK_QTVERSION}
+rm -vfr $INSTALL_PREFIX/lib/plugins/styles
+rm -vfr $INSTALL_PREFIX/lib/pkgconfig/KF${DK_QTVERSION}*
