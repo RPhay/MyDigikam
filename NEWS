@@ -220,7 +220,7 @@ BUGFIXES:
 194 ==> 496380 - Cannot start app under MacOS Intel: The application dock does not have permission to open (null).
 195 ==> 496828 - After installation, launching fails with "The application 'Finder' does not have permission to open “(null).”".
 196 ==> 497285 - Program does not open after installation.
-197 ==> 
+197 ==> 504045 - Misleading Link on Support Page.
 198 ==> 
 199 ==> 
 200 ==> 
