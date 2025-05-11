@@ -221,7 +221,7 @@ BUGFIXES:
 195 ==> 496828 - After installation, launching fails with "The application 'Finder' does not have permission to open “(null).”".
 196 ==> 497285 - Program does not open after installation.
 197 ==> 504045 - Misleading Link on Support Page.
-198 ==> 
+198 ==> 504044 - Duplicate Result Table does not properly resize.
 199 ==> 
 200 ==> 
 201 ==> 

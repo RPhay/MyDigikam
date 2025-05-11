@@ -306,7 +306,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     mainLayout->addWidget(d->removeDuplicatesBtn,     4, 0, 1, 1);
 
     mainLayout->setRowStretch(0, 10);
-    mainLayout->setColumnStretch(2, 10);
+    mainLayout->setColumnStretch(0, 10);
     mainLayout->setContentsMargins(spacing, spacing, spacing, spacing);
     mainLayout->setSpacing(spacing);
     setLayout(mainLayout);
