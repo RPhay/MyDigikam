@@ -417,7 +417,7 @@ cat << EOF > "$PROJECTDIR/preinstall"
 
 # Store script traces in a log file.
 
-exec > >(tee $HOME/digiKam_install.log) 2>&1
+exec &> >(tee $HOME/digiKam_install.log) 2>&1
 
 echo "digiKam ${DK_VERSION} installation done at $(date)."
 
@@ -474,7 +474,7 @@ cat << EOF > "$PROJECTDIR/postinstall"
 
 # Store script traces in a log file.
 
-exec > >>(tee $HOME/digiKam_install.log) 2>&1
+exec &> >(tee -a $HOME/digiKam_install.log) 2>&1
 
 echo "Post-install operations:"
 
