@@ -417,7 +417,11 @@ cat << EOF > "$PROJECTDIR/preinstall"
 
 # Store script traces in a log file.
 
-exec > >(tee $HOME/digiKam_preinstall.log) 2>&1
+exec > >(tee $HOME/digiKam_install.log) 2>&1
+
+echo "digiKam ${DK_VERSION} installation done at $(date)."
+
+echo "Pre-install operations:"
 
 # This is the legacy install paths
 # TODO: remove this legacy rules in the future
@@ -470,7 +474,9 @@ cat << EOF > "$PROJECTDIR/postinstall"
 
 # Store script traces in a log file.
 
-exec > >(tee $HOME/digiKam_postinstall.log) 2>&1
+exec > >>(tee $HOME/digiKam_install.log) 2>&1
+
+echo "Post-install operations:"
 
 # See bug https://bugs.kde.org/show_bug.cgi?id=496380
 
