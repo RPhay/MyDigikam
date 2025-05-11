@@ -25788,10 +25788,9 @@ msgid "UFRaw Raw Conversion"
 msgstr "Převod RAW UFRaw"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:337
-#, fuzzy, kde-format
-#| msgid "Failed to load image"
+#, kde-format
 msgid "Unable to load image"
-msgstr "Chyba při načítání obrázku"
+msgstr "Nelze načíst obrázek"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:461
 #, fuzzy, kde-format
@@ -25824,10 +25823,9 @@ msgid "Rotation: %1\n"
 msgstr "Rotace: "
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:527
-#, fuzzy, kde-format
-#| msgid "&Skip"
+#, kde-format
 msgid "Skipped"
-msgstr "Pře&skočit"
+msgstr "Přeskočeno"
 
 #: core/libs/album/engine/album.cpp:411
 #: core/libs/database/utils/ifaces/dio.cpp:959
@@ -35790,16 +35788,14 @@ msgid "No Transformation"
 msgstr "Omezit informace"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
-#, fuzzy, kde-format
-#| msgid "Flip Horizontally"
+#, kde-format
 msgid "Flip Horizontal"
 msgstr "Převrátit vodorovně"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:411
-#, fuzzy, kde-format
-#| msgid "Flip Vertically"
+#, kde-format
 msgid "Flip Vertical"
-msgstr "Převrátit svisle"
+msgstr "Obrátit svisle"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:416
 #, fuzzy, kde-format
@@ -35809,8 +35805,7 @@ msgid "Rotate 90°"
 msgstr "Otočit"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:421
-#, fuzzy, kde-format
-#| msgid "Rotate 180 degrees"
+#, kde-format
 msgid "Rotate 180°"
 msgstr "Otočit o 180°"
 
@@ -64441,9 +64436,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Start"
+#, kde-format
 msgid "Start"
 msgstr "Spustit"
 
@@ -64596,10 +64589,9 @@ msgid "OpenCV error: %1"
 msgstr "Chyba OpenGL"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgid "Error: %1"
-msgstr "Chyba"
+msgstr "Chyba: %1"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
