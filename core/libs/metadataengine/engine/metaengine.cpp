@@ -84,6 +84,8 @@ bool MetaEngine::initializeExiv2()
         return false;
     }
 
+    // The spaces at the end of the URIs are absolutely necessary.
+
     registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/ "),            // krazy:exclude=insecurenet
                          QLatin1String("Container"));
 
