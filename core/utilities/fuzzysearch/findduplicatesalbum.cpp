@@ -54,7 +54,7 @@ FindDuplicatesAlbum::FindDuplicatesAlbum(QWidget* const parent)
 {
     d->thumbLoadThread = ThumbnailLoadThread::defaultThread();
 
-    setColumnCount(5);
+    setColumnCount(FindDuplicatesAlbumItem::NUMBER_COLUMNS);
     setSortingEnabled(true);
     setRootIsDecorated(false);
     setUniformRowHeights(true);
@@ -66,12 +66,12 @@ FindDuplicatesAlbum::FindDuplicatesAlbum(QWidget* const parent)
                                   << i18n("Ref. dates")
                                   << i18n("Ref. albums")
                                   << i18n("Items")
-                                  << i18n("Avg. similarity"));
-    header()->setSectionResizeMode(0, QHeaderView::Interactive);
-    header()->setSectionResizeMode(1, QHeaderView::Interactive);
-    header()->setSectionResizeMode(2, QHeaderView::Interactive);
-    header()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
-    header()->setSectionResizeMode(4, QHeaderView::ResizeToContents);
+                                  << i18n("Similarity"));
+    header()->setSectionResizeMode(FindDuplicatesAlbumItem::REFERENCE_IMAGE, QHeaderView::Interactive);
+    header()->setSectionResizeMode(FindDuplicatesAlbumItem::REFERENCE_DATE,  QHeaderView::Interactive);
+    header()->setSectionResizeMode(FindDuplicatesAlbumItem::REFERENCE_ALBUM, QHeaderView::Interactive);
+    header()->setSectionResizeMode(FindDuplicatesAlbumItem::RESULT_COUNT,    QHeaderView::ResizeToContents);
+    header()->setSectionResizeMode(FindDuplicatesAlbumItem::AVG_SIMILARITY,  QHeaderView::ResizeToContents);
     setWhatsThis(i18n("This shows all found duplicate items."));
 
     connect(d->thumbLoadThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),

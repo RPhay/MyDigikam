@@ -175,7 +175,7 @@ void FindDuplicatesAlbumItem::calculateInfos(const QList<qlonglong>& deletedImag
     }
 
     setText(Column::RESULT_COUNT,   QString::number(d->itemCount));
-    setText(Column::AVG_SIMILARITY, QString::number(avgSim, 'f', 2));
+    setText(Column::AVG_SIMILARITY, QString::fromLatin1("%1%").arg((int)(avgSim * 100)));
 }
 
 int FindDuplicatesAlbumItem::itemCount() const

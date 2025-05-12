@@ -36,17 +36,19 @@ public:
 
     enum Column
     {
-      REFERENCE_IMAGE = 0,
-      REFERENCE_DATE  = 1,
-      REFERENCE_ALBUM = 2,
-      RESULT_COUNT    = 3,
-      AVG_SIMILARITY  = 4
+        REFERENCE_IMAGE = 0,
+        REFERENCE_DATE,
+        REFERENCE_ALBUM,
+        RESULT_COUNT,
+        AVG_SIMILARITY,
+
+        NUMBER_COLUMNS          // Must be the last one.
     };
 
 public:
 
     explicit FindDuplicatesAlbumItem(QTreeWidget* const parent, SAlbum* const album);
-    ~FindDuplicatesAlbumItem()                        override;
+    ~FindDuplicatesAlbumItem()                         override;
 
     bool hasValidThumbnail()                     const;
 
