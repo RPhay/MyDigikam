@@ -20,6 +20,9 @@ include:
       # Validate synthax in XML files.
       - /gitlab-templates/xml-lint.yml
 
+      # run cppcheck in CI
+      - /gitlab-templates/cppcheck.yml
+
       # --- Continuous Integration Qt6 ---
 
       # Build Qt6 version under Linux and run unit-tests.
