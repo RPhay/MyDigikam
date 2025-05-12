@@ -222,7 +222,7 @@ BUGFIXES:
 196 ==> 497285 - Program does not open after installation.
 197 ==> 504045 - Misleading Link on Support Page.
 198 ==> 504044 - Duplicate Result Table does not properly resize.
-199 ==> 
+199 ==> 497588 - digiKam crashes when adjusting date and time for multiple photos consecutively without restarting the application.
 200 ==> 
 201 ==> 
 202 ==> 
