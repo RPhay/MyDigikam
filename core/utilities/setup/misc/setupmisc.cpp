@@ -35,6 +35,54 @@ SetupMisc::SetupMisc(QWidget* const parent)
     QWidget* const behaviourPanel     = new QWidget(d->tab);
     QGridLayout* const layout         = new QGridLayout(behaviourPanel);
 
+    d->scanAtStart                    = new QCheckBox(i18n("&Scan for new items at startup"), behaviourPanel);
+    d->scanAtStart->setToolTip(i18n("Set this option to force digiKam to scan all collections for new items to\n"
+                                    "register new elements in database. The scan is performed in the background through\n"
+                                    "the progress manager available in the statusbar\n when digiKam main interface\n"
+                                    "is loaded. If your computer is fast enough, this will have no effect on usability\n"
+                                    "of digiKam while scanning. If your collections are huge or if you use a remote database,\n"
+                                    "this can introduce low latency, and it is recommended to disable this option and to plan\n"
+                                    "a manual scan through the maintenance tool at the right moment."));
+
+    d->useFastScan                    = new QCheckBox(i18n("Fast scan (detects new, deleted and renamed items)"), behaviourPanel);
+    d->useFastScan->setToolTip(i18n("Set this option to significantly speed up the scan. New items, deleted and also\n"
+                                    "renamed items are found. In order to find items that have been changed, this\n"
+                                    "option must be deactivated."));
+
+    d->useFastScan->setEnabled(false);
+
+    d->detectFaces                    = new QCheckBox(i18n("Detect faces in newly added images"), behaviourPanel);
+    d->faceRecognitionBackgroundScan  = new QCheckBox(i18n("Enable background face recognition scan"), behaviourPanel);
+    d->faceRecognitionBackgroundScan->setToolTip(i18n("Set this option to automatically start a background face recognition scan\n"
+                                                     "when a new face is tagged. This will make the tagging process easier."));
+
+    d->cleanAtStart                   = new QCheckBox(i18n("Remove obsolete core database objects"), behaviourPanel);
+    d->cleanAtStart->setToolTip(i18n("Set this option to force digiKam to clean up the core database from obsolete item entries.\n"
+                                     "Entries are only deleted if the connected image/video/audio file was already removed, i.e.\n"
+                                     "the database object wastes space.\n"
+                                     "This option does not clean up other databases as the thumbnails or recognition db.\n"
+                                     "For clean up routines for other databases, please use the maintenance."));
+
+    QLabel* const startupNote = new QLabel(i18nc("@info", "<font color='red'><i>"
+                                                 "Warning: These settings makes startup slower!"
+                                                 "</i></font>"), this);
+    startupNote->setWordWrap(true);
+    startupNote->setFrameStyle(QFrame::Box | QFrame::Plain);
+    startupNote->setLineWidth(1);
+    startupNote->setFrameShape(QFrame::Box);
+
+    // ---------------------------------------------------------
+
+    d->showTrashDeleteDialogCheck             = new QCheckBox(i18n("Confirm when moving items to the &trash"), behaviourPanel);
+    d->showPermanentDeleteDialogCheck         = new QCheckBox(i18n("Confirm when permanently deleting items"), behaviourPanel);
+    d->sidebarApplyDirectlyCheck              = new QCheckBox(i18n("Do not confirm when applying changes in the &right sidebar"), behaviourPanel);
+    d->showOnlyPersonTagsInPeopleSidebarCheck = new QCheckBox(i18n("Show only face tags for assigning names in people sidebar"), behaviourPanel);
+    d->selectFirstAlbumItemCheck              = new QCheckBox(i18n("Initially select the first item in the album"), behaviourPanel);
+    d->expandNewCurrentItemCheck              = new QCheckBox(i18n("Expand current tree item with a single mouse click"), behaviourPanel);
+    d->scrollItemToCenterCheck                = new QCheckBox(i18n("Scroll current item to center of thumbbar"), behaviourPanel);
+
+    // ---------------------------------------------------------
+
     DHBox* const albumDateSourceHbox  = new DHBox(behaviourPanel);
     d->albumDateSourceLabel           = new QLabel(i18n("Get album date source:"), albumDateSourceHbox);
     d->albumDateSource                = new QComboBox(albumDateSourceHbox);
@@ -58,47 +106,6 @@ SetupMisc::SetupMisc(QWidget* const parent)
                                              "<b>Normal</b> uses a more technical approach. "
                                              "Use this style if you eg. want to entitle albums with ISO dates (201006 or 20090523) "
                                              "and the albums should be sorted according to these dates.</qt>"));
-
-    // --------------------------------------------------------
-
-    d->showTrashDeleteDialogCheck     = new QCheckBox(i18n("Confirm when moving items to the &trash"), behaviourPanel);
-    d->showPermanentDeleteDialogCheck = new QCheckBox(i18n("Confirm when permanently deleting items"), behaviourPanel);
-    d->sidebarApplyDirectlyCheck      = new QCheckBox(i18n("Do not confirm when applying changes in the &right sidebar"), behaviourPanel);
-    d->scanAtStart                    = new QCheckBox(i18n("&Scan for new items at startup (makes startup slower)"), behaviourPanel);
-    d->scanAtStart->setToolTip(i18n("Set this option to force digiKam to scan all collections for new items to\n"
-                                    "register new elements in database. The scan is performed in the background through\n"
-                                    "the progress manager available in the statusbar\n when digiKam main interface\n"
-                                    "is loaded. If your computer is fast enough, this will have no effect on usability\n"
-                                    "of digiKam while scanning. If your collections are huge or if you use a remote database,\n"
-                                    "this can introduce low latency, and it is recommended to disable this option and to plan\n"
-                                    "a manual scan through the maintenance tool at the right moment."));
-
-    d->useFastScan                    = new QCheckBox(i18n("Fast scan (detects new, deleted and renamed items)"), behaviourPanel);
-    d->useFastScan->setToolTip(i18n("Set this option to significantly speed up the scan. New items, deleted and also\n"
-                                    "renamed items are found. In order to find items that have been changed, this\n"
-                                    "option must be deactivated."));
-
-    d->useFastScan->setEnabled(false);
-
-    d->detectFaces                    = new QCheckBox(i18n("Detect faces in newly added images"), behaviourPanel);
-    d->faceRecognitionBackgroundScan  = new QCheckBox(i18n("Enable background face recognition scan"), behaviourPanel);
-    d->faceRecognitionBackgroundScan->setToolTip(i18n("Set this option to automatically start a background face recognition scan\n"
-                                                     "when a new face is tagged. This will make the tagging process easier."));
-
-    d->cleanAtStart                   = new QCheckBox(i18n("Remove obsolete core database objects (makes startup slower)"), behaviourPanel);
-    d->cleanAtStart->setToolTip(i18n("Set this option to force digiKam to clean up the core database from obsolete item entries.\n"
-                                     "Entries are only deleted if the connected image/video/audio file was already removed, i.e.\n"
-                                     "the database object wastes space.\n"
-                                     "This option does not clean up other databases as the thumbnails or recognition db.\n"
-                                     "For clean up routines for other databases, please use the maintenance."));
-
-    d->selectFirstAlbumItemCheck              = new QCheckBox(i18n("Initially select the first item in the album"), behaviourPanel);
-    d->expandNewCurrentItemCheck              = new QCheckBox(i18n("Expand current tree item with a single mouse click"), behaviourPanel);
-    d->scrollItemToCenterCheck                = new QCheckBox(i18n("Scroll current item to center of thumbbar"), behaviourPanel);
-    d->showOnlyPersonTagsInPeopleSidebarCheck = new QCheckBox(i18n("Show only face tags for assigning names in people sidebar"), behaviourPanel);
-
-
-    // ---------------------------------------------------------
 
     DHBox* const minSimilarityBoundHbox       = new DHBox(behaviourPanel);
     d->minSimilarityBoundLabel                = new QLabel(i18n("Lower bound for minimum similarity:"), minSimilarityBoundHbox);
@@ -171,20 +178,21 @@ SetupMisc::SetupMisc(QWidget* const parent)
     layout->addWidget(d->detectFaces,                             2, 0, 1, 4);
     layout->addWidget(d->faceRecognitionBackgroundScan,           3, 0, 1, 4);
     layout->addWidget(d->cleanAtStart,                            4, 0, 1, 4);
-    layout->addWidget(new DLineWidget(Qt::Horizontal),            5, 0, 1, 4);
-    layout->addWidget(d->showTrashDeleteDialogCheck,              6, 0, 1, 4);
-    layout->addWidget(d->showPermanentDeleteDialogCheck,          7, 0, 1, 4);
-    layout->addWidget(d->sidebarApplyDirectlyCheck,               8, 0, 1, 4);
-    layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck,  9, 0, 1, 4);
-    layout->addWidget(d->selectFirstAlbumItemCheck,              10, 0, 1, 4);
-    layout->addWidget(d->expandNewCurrentItemCheck,              11, 0, 1, 4);
-    layout->addWidget(d->scrollItemToCenterCheck,                12, 0, 1, 4);
-    layout->addWidget(albumDateSourceHbox,                       13, 0, 1, 4);
-    layout->addWidget(stringComparisonHbox,                      14, 0, 1, 4);
-    layout->addWidget(minSimilarityBoundHbox,                    15, 0, 1, 4);
-    layout->addWidget(upOptionsGroup,                            16, 0, 1, 4);
+    layout->addWidget(startupNote,                                5, 0, 1, 4);
+    layout->addWidget(new DLineWidget(Qt::Horizontal),            6, 0, 1, 4);
+    layout->addWidget(d->showTrashDeleteDialogCheck,              7, 0, 1, 4);
+    layout->addWidget(d->showPermanentDeleteDialogCheck,          8, 0, 1, 4);
+    layout->addWidget(d->sidebarApplyDirectlyCheck,               9, 0, 1, 4);
+    layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck, 10, 0, 1, 4);
+    layout->addWidget(d->selectFirstAlbumItemCheck,              11, 0, 1, 4);
+    layout->addWidget(d->expandNewCurrentItemCheck,              12, 0, 1, 4);
+    layout->addWidget(d->scrollItemToCenterCheck,                13, 0, 1, 4);
+    layout->addWidget(albumDateSourceHbox,                       14, 0, 1, 4);
+    layout->addWidget(stringComparisonHbox,                      15, 0, 1, 4);
+    layout->addWidget(minSimilarityBoundHbox,                    16, 0, 1, 4);
+    layout->addWidget(upOptionsGroup,                            17, 0, 1, 4);
     layout->setColumnStretch(3, 10);
-    layout->setRowStretch(17, 10);
+    layout->setRowStretch(18, 10);
 
     // --------------------------------------------------------
 
