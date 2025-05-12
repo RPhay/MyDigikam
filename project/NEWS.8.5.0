@@ -168,7 +168,7 @@ BUGFIXES:
 143 ==> 495269 - MXF files not displayed on digiKam.
 144 ==> 495428 - Binary file download is broken for digiKam >= 8.4.0.
 145 ==> 495523 - digiKam not opening on Mac Silicon.
-146 ==> 495508 - Crash in image editor wihile opening Color Auto Correction.
+146 ==> 495508 - Crash in image editor while opening Color Auto Correction.
 147 ==> 495628 - When starting digiKam the error appears: The application "Finder" does not have the permission to open "(null)".
 148 ==> 431788 - Add option available to not resample images in viewer.
 149 ==> 491580 - How can I see the pixels?
