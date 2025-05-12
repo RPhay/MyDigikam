@@ -226,7 +226,7 @@ BUGFIXES:
 200 ==> 504056 - View on small images doesnt scale above 100% automatically.
 201 ==> 504048 - Duplicate Result Table uses different Units than Search Dialogue.
 202 ==> 503731 - On launching Digikam-8.6.0-Qt6-Win64 follows msg '..large binary files not found' and Download results in error.
-203 ==> 
+203 ==> 503885 - Fails to write to sidecar file, leaving it corrupt.
 204 ==> 
 205 ==> 
 206 ==> 
