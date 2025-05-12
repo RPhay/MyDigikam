@@ -223,7 +223,7 @@ BUGFIXES:
 197 ==> 504045 - Misleading Link on Support Page.
 198 ==> 504044 - Duplicate Result Table does not properly resize.
 199 ==> 497588 - digiKam crashes when adjusting date and time for multiple photos consecutively without restarting the application.
-200 ==> 
+200 ==> 504056 - View on small images doesnt scale above 100% automatically.
 201 ==> 
 202 ==> 
 203 ==> 
