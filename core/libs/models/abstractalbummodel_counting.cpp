@@ -146,7 +146,14 @@ void AbstractCountingAlbumModel::updateCount(Album* const album)
 
     if (changed)
     {
-        Q_EMIT signalUpdateAlbumCount(album);
+        // update only if the model contains the album
+
+        QModelIndex index = indexForAlbum(album);
+
+        if (index.isValid())
+        {
+            Q_EMIT dataChanged(index, index);
+        }
     }
 }
 
@@ -186,7 +193,7 @@ void AbstractCountingAlbumModel::setCount(Album* album, int count)
 
     if (changed)
     {
-        Q_EMIT signalUpdateAlbumCount(album);
+        Q_EMIT dataChanged(index, index);
     }
 }
 

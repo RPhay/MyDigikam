@@ -285,10 +285,6 @@ public:
      */
     virtual int albumCount(Album* album)    const;
 
-Q_SIGNALS:
-
-    void signalUpdateAlbumCount(Album* album);
-
 protected:
 
     /**
