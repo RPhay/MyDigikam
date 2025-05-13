@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-10 01:59+0000\n"
+"POT-Creation-Date: 2025-05-13 02:07+0000\n"
 "PO-Revision-Date: 2025-03-20 08:27+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -4237,6 +4237,7 @@ msgstr "Proporcións"
 
 #: core/app/views/tableview/tableview_column_item.cpp:81
 #: core/app/views/tableview/tableview_column_item.cpp:142
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:69
 #, kde-format
 msgid "Similarity"
 msgstr "Semellanza"
@@ -50342,7 +50343,7 @@ msgid "Set this option to indicate if image has geolocation information."
 msgstr "Defina esta opción para indicar se a imaxe ten coordenadas."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:153
-#: core/utilities/setup/misc/setupmisc.cpp:97
+#: core/utilities/setup/misc/setupmisc.cpp:82
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr "Desprazar o elemento actual ao centro da barra de miniaturas."
@@ -50360,31 +50361,31 @@ msgstr ""
 "disco."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:165
-#: core/utilities/setup/misc/setupmisc.cpp:119
+#: core/utilities/setup/misc/setupmisc.cpp:126
 #, kde-format
 msgid "Updates"
 msgstr "Actualizacións"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:169
-#: core/utilities/setup/misc/setupmisc.cpp:123
+#: core/utilities/setup/misc/setupmisc.cpp:130
 #, kde-format
 msgid "Check for new version:"
 msgstr "Comprobación de nova versión:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:171
-#: core/utilities/setup/misc/setupmisc.cpp:125
+#: core/utilities/setup/misc/setupmisc.cpp:132
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr "Só para publicacións estábeis"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:172
-#: core/utilities/setup/misc/setupmisc.cpp:126
+#: core/utilities/setup/misc/setupmisc.cpp:133
 #, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "Pre-publicacións semanais"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:173
-#: core/utilities/setup/misc/setupmisc.cpp:127
+#: core/utilities/setup/misc/setupmisc.cpp:134
 #, kde-format
 msgid ""
 "Set this option to configure which kind of new versions must be check for "
@@ -50402,14 +50403,14 @@ msgstr ""
 "e non se recomendan en produción porque poden conter fallos."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:178
-#: core/utilities/setup/misc/setupmisc.cpp:132
+#: core/utilities/setup/misc/setupmisc.cpp:139
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr "Usar a versión  con símbolos de depuración."
 
 # skip-rule: trasno-check3_reverse
 #: core/showfoto/setup/showfotosetupmisc.cpp:179
-#: core/utilities/setup/misc/setupmisc.cpp:133
+#: core/utilities/setup/misc/setupmisc.cpp:140
 #, kde-format
 msgid ""
 "If this option is enabled, a version including debug symbols will be used "
@@ -50423,26 +50424,26 @@ msgstr ""
 "problemas no depurador."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:184
-#: core/utilities/setup/misc/setupmisc.cpp:138
+#: core/utilities/setup/misc/setupmisc.cpp:145
 #, kde-format
 msgid "Last check: %1"
 msgstr "Última comprobación: %1"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:185
-#: core/utilities/setup/misc/setupmisc.cpp:139
+#: core/utilities/setup/misc/setupmisc.cpp:146
 #, kde-format
 msgid "Check now..."
 msgstr "Comprobar agora…"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:213
-#: core/utilities/setup/misc/setupmisc.cpp:199
+#: core/utilities/setup/misc/setupmisc.cpp:207
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behaviour"
 msgstr "Comportamento"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:220
-#: core/utilities/setup/misc/setupmisc.cpp:206
+#: core/utilities/setup/misc/setupmisc.cpp:214
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "Amosar a pantalla de &benvida ao arrancar"
@@ -50453,19 +50454,19 @@ msgid "Use native file dialogs from the system"
 msgstr "Usar diálogos de ficheiros nativos do sistema"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:224
-#: core/utilities/setup/misc/setupmisc.cpp:211
+#: core/utilities/setup/misc/setupmisc.cpp:219
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "Título do separador da barra lateral:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:226
-#: core/utilities/setup/misc/setupmisc.cpp:213
+#: core/utilities/setup/misc/setupmisc.cpp:221
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "Só para o separador activo"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:227
-#: core/utilities/setup/misc/setupmisc.cpp:214
+#: core/utilities/setup/misc/setupmisc.cpp:222
 #, kde-format
 msgid "For All Tabs"
 msgstr "Para todos os separadores"
@@ -50478,13 +50479,13 @@ msgstr ""
 "barras laterais."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:231
-#: core/utilities/setup/misc/setupmisc.cpp:219
+#: core/utilities/setup/misc/setupmisc.cpp:227
 #, kde-format
 msgid "Widget style:"
 msgstr "Estilo dos trebellos:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:233
-#: core/utilities/setup/misc/setupmisc.cpp:221
+#: core/utilities/setup/misc/setupmisc.cpp:229
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr ""
@@ -50492,80 +50493,80 @@ msgstr ""
 "das xanelas."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:257
-#: core/utilities/setup/misc/setupmisc.cpp:244
+#: core/utilities/setup/misc/setupmisc.cpp:252
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "Tema de iconas (cambia tras reiniciar):"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:259
-#: core/utilities/setup/misc/setupmisc.cpp:246
+#: core/utilities/setup/misc/setupmisc.cpp:254
 #, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "Defina esta opción para escoller o tema de iconas predeterminado."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:263
-#: core/utilities/setup/misc/setupmisc.cpp:250
+#: core/utilities/setup/misc/setupmisc.cpp:258
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:264
-#: core/utilities/setup/misc/setupmisc.cpp:251
+#: core/utilities/setup/misc/setupmisc.cpp:259
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Breeze"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:265
-#: core/utilities/setup/misc/setupmisc.cpp:252
+#: core/utilities/setup/misc/setupmisc.cpp:260
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Breeze Dark"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:266
-#: core/utilities/setup/misc/setupmisc.cpp:253
+#: core/utilities/setup/misc/setupmisc.cpp:261
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:267
-#: core/utilities/setup/misc/setupmisc.cpp:254
+#: core/utilities/setup/misc/setupmisc.cpp:262
 #, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Ambiance"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:268
-#: core/utilities/setup/misc/setupmisc.cpp:255
+#: core/utilities/setup/misc/setupmisc.cpp:263
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "Humanity"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:269
-#: core/utilities/setup/misc/setupmisc.cpp:256
+#: core/utilities/setup/misc/setupmisc.cpp:264
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oxygen"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:294
-#: core/utilities/setup/misc/setupmisc.cpp:280
+#: core/utilities/setup/misc/setupmisc.cpp:288
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "Usar o tema de iconas do sistema"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:301
-#: core/utilities/setup/misc/setupmisc.cpp:287
+#: core/utilities/setup/misc/setupmisc.cpp:295
 #, kde-format
 msgid "Application font:"
 msgstr "Tipo de letra da aplicación:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:302
-#: core/utilities/setup/misc/setupmisc.cpp:288
+#: core/utilities/setup/misc/setupmisc.cpp:296
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr ""
@@ -50573,35 +50574,35 @@ msgstr ""
 "aplicación."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
-#: core/utilities/setup/misc/setupmisc.cpp:303
+#: core/utilities/setup/misc/setupmisc.cpp:311
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Aparencia"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:324
-#: core/utilities/setup/misc/setupmisc.cpp:370
+#: core/utilities/setup/misc/setupmisc.cpp:378
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Corrección ortográfica"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:330
-#: core/utilities/setup/misc/setupmisc.cpp:376
+#: core/utilities/setup/misc/setupmisc.cpp:384
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Localizar"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:336
-#: core/utilities/setup/misc/setupmisc.cpp:382
+#: core/utilities/setup/misc/setupmisc.cpp:390
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "Sistema"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:370
-#: core/utilities/setup/misc/setupmisc.cpp:417
+#: core/utilities/setup/misc/setupmisc.cpp:425
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
@@ -52929,11 +52930,6 @@ msgstr "Álbums de ref."
 #, kde-format
 msgid "Items"
 msgstr "Elementos"
-
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:69
-#, kde-format
-msgid "Avg. similarity"
-msgstr "Semellanza media"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:75
 #, kde-format
@@ -66821,107 +66817,13 @@ msgstr "Nome de u&suario:"
 msgid "&Password:"
 msgstr "&Contrasinal:"
 
+#: core/utilities/setup/misc/setupmisc.cpp:38
+#, fuzzy, kde-format
+#| msgid "Scan for new items"
+msgid "&Scan for new items at startup"
+msgstr "Examinar por novos elementos"
+
 #: core/utilities/setup/misc/setupmisc.cpp:39
-#, kde-format
-msgid "Get album date source:"
-msgstr "Obter a orixe da data do álbum:"
-
-#: core/utilities/setup/misc/setupmisc.cpp:41
-#, kde-format
-msgctxt "method to get the album date"
-msgid "From The Newest Item Date"
-msgstr "Desde a data de elemento máis recente"
-
-#: core/utilities/setup/misc/setupmisc.cpp:42
-#, kde-format
-msgctxt "method to get the album date"
-msgid "From The Oldest Item Date"
-msgstr "Desde a data de elemento máis vella"
-
-#: core/utilities/setup/misc/setupmisc.cpp:43
-#, kde-format
-msgctxt "method to get the album date"
-msgid "From The Average Date"
-msgstr "Desde a data media"
-
-#: core/utilities/setup/misc/setupmisc.cpp:44
-#, kde-format
-msgctxt "method to get the album date"
-msgid "From The Folder Date"
-msgstr "Desde a data do cartafol"
-
-#: core/utilities/setup/misc/setupmisc.cpp:45
-#, kde-format
-msgctxt "method to get the album date"
-msgid "No Change Of Date"
-msgstr "Sen cambio de data"
-
-#: core/utilities/setup/misc/setupmisc.cpp:46
-#, kde-format
-msgid ""
-"The album date is adjusted depending on the option set when new items are "
-"found during scanning."
-msgstr ""
-"A data do álbum axústase segundo a opción definida cando se atopan elementos "
-"novos durante un exame."
-
-#: core/utilities/setup/misc/setupmisc.cpp:50
-#, kde-format
-msgid "String comparison type:"
-msgstr "Tipo de comparación de cadeas:"
-
-#: core/utilities/setup/misc/setupmisc.cpp:52
-#, kde-format
-msgctxt "method to compare strings"
-msgid "Natural"
-msgstr "Natural"
-
-#: core/utilities/setup/misc/setupmisc.cpp:53
-#, kde-format
-msgctxt "method to compare strings"
-msgid "Normal"
-msgstr "Normal"
-
-#: core/utilities/setup/misc/setupmisc.cpp:54
-#, kde-format
-msgid ""
-"<qt>Sets the way in which strings are compared inside digiKam. This eg. "
-"influences the sorting of the tree views.<br/><b>Natural</b> tries to "
-"compare strings in a way that regards some normal conventions and will eg. "
-"result in sorting numbers naturally even if they have a different number of "
-"digits.<br/><b>Normal</b> uses a more technical approach. Use this style if "
-"you eg. want to entitle albums with ISO dates (201006 or 20090523) and the "
-"albums should be sorted according to these dates.</qt>"
-msgstr ""
-"<qt>Indica de que modo se comparan as cadeas en digiKam. Isto inflúe, por "
-"exemplo, na ordenación das vistas de árbore.<br/><b>Natural</b> intenta "
-"comparar as cadeas de xeito que se sigan certas convencións habituais, como "
-"ordenar os números naturalmente mesmo se tiveren un número de díxitos "
-"distinto.<br/><b>Normal</b> usa un enfoque máis técnico. Use este estilo se "
-"quere, por exemplo, que os títulos dos álbums sexan datas ISO (201006 ou "
-"20090523) e quere que os álbums se ordenen segundo estas datas.</qt>"
-
-#: core/utilities/setup/misc/setupmisc.cpp:64
-#, kde-format
-msgid "Confirm when moving items to the &trash"
-msgstr "Confirmar ao dei&tar elementos no lixo"
-
-#: core/utilities/setup/misc/setupmisc.cpp:65
-#, kde-format
-msgid "Confirm when permanently deleting items"
-msgstr "Confirmar ao eliminar elementos permanentemente"
-
-#: core/utilities/setup/misc/setupmisc.cpp:66
-#, kde-format
-msgid "Do not confirm when applying changes in the &right sidebar"
-msgstr "Non confirma&r ao aplicar os cambios na barra lateral da dereita"
-
-#: core/utilities/setup/misc/setupmisc.cpp:67
-#, kde-format
-msgid "&Scan for new items at startup (makes startup slower)"
-msgstr "&Buscar elementos novos no inicio (enlentece o arranque)."
-
-#: core/utilities/setup/misc/setupmisc.cpp:68
 #, kde-format
 msgid ""
 "Set this option to force digiKam to scan all collections for new items to\n"
@@ -66947,12 +66849,12 @@ msgstr ""
 "baixa latencia, e recoméndase desactivar esta opción e planificar un exame\n"
 "manual mediante a ferramenta de mantemento no momento axeitado."
 
-#: core/utilities/setup/misc/setupmisc.cpp:76
+#: core/utilities/setup/misc/setupmisc.cpp:47
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
 msgstr "Exame rápido (detecta elementos novos, eliminados e renomeados)"
 
-#: core/utilities/setup/misc/setupmisc.cpp:77
+#: core/utilities/setup/misc/setupmisc.cpp:48
 #, kde-format
 msgid ""
 "Set this option to significantly speed up the scan. New items, deleted and "
@@ -66965,32 +66867,33 @@ msgstr ""
 "elementos novos, eliminados e renomeados. Desactive esta opción para "
 "detectar elementos que cambiaron."
 
-#: core/utilities/setup/misc/setupmisc.cpp:83
+#: core/utilities/setup/misc/setupmisc.cpp:54
 #, kde-format
 msgid "Detect faces in newly added images"
 msgstr "Detectar caras nas imaxes novas que se engadan"
 
-#: core/utilities/setup/misc/setupmisc.cpp:84
+#: core/utilities/setup/misc/setupmisc.cpp:55
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Benchmark face recognition"
 msgid "Enable background face recognition scan"
 msgstr "Probar o rendemento do recoñecemento facial."
 
-#: core/utilities/setup/misc/setupmisc.cpp:85
+#: core/utilities/setup/misc/setupmisc.cpp:56
 #, kde-format
 msgid ""
 "Set this option to automatically start a background face recognition scan\n"
 "when a new face is tagged. This will make the tagging process easier."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:88
-#, kde-format
-msgid "Remove obsolete core database objects (makes startup slower)"
+#: core/utilities/setup/misc/setupmisc.cpp:59
+#, fuzzy, kde-format
+#| msgid "Remove obsolete core database objects (makes startup slower)"
+msgid "Remove obsolete core database objects"
 msgstr ""
 "Retirar os obxectos obsoletos da base de datos principal (lentifica o inicio)"
 
-#: core/utilities/setup/misc/setupmisc.cpp:89
+#: core/utilities/setup/misc/setupmisc.cpp:60
 #, kde-format
 msgid ""
 "Set this option to force digiKam to clean up the core database from obsolete "
@@ -67012,28 +66915,130 @@ msgstr ""
 "a de\n"
 "recoñecemento. Use o mantemento para limpar outras bases de datos."
 
-#: core/utilities/setup/misc/setupmisc.cpp:95
+#: core/utilities/setup/misc/setupmisc.cpp:66
 #, kde-format
-msgid "Initially select the first item in the album"
-msgstr "Seleccionar inicialmente o primeiro elemento do álbum"
+msgctxt "@info"
+msgid ""
+"<font color='red'><i>Warning: These settings makes startup slower!</i></font>"
+msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:96
+#: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format
-msgid "Expand current tree item with a single mouse click"
-msgstr "Expandir o elemento actual da árbore cun único clic do rato"
+msgid "Confirm when moving items to the &trash"
+msgstr "Confirmar ao dei&tar elementos no lixo"
 
-#: core/utilities/setup/misc/setupmisc.cpp:98
+#: core/utilities/setup/misc/setupmisc.cpp:77
+#, kde-format
+msgid "Confirm when permanently deleting items"
+msgstr "Confirmar ao eliminar elementos permanentemente"
+
+#: core/utilities/setup/misc/setupmisc.cpp:78
+#, kde-format
+msgid "Do not confirm when applying changes in the &right sidebar"
+msgstr "Non confirma&r ao aplicar os cambios na barra lateral da dereita"
+
+#: core/utilities/setup/misc/setupmisc.cpp:79
 #, kde-format
 msgid "Show only face tags for assigning names in people sidebar"
 msgstr ""
 "Amosar só etiquetas de caras para asignar nomes na barra lateral de persoas"
 
-#: core/utilities/setup/misc/setupmisc.cpp:104
+#: core/utilities/setup/misc/setupmisc.cpp:80
+#, kde-format
+msgid "Initially select the first item in the album"
+msgstr "Seleccionar inicialmente o primeiro elemento do álbum"
+
+#: core/utilities/setup/misc/setupmisc.cpp:81
+#, kde-format
+msgid "Expand current tree item with a single mouse click"
+msgstr "Expandir o elemento actual da árbore cun único clic do rato"
+
+#: core/utilities/setup/misc/setupmisc.cpp:87
+#, kde-format
+msgid "Get album date source:"
+msgstr "Obter a orixe da data do álbum:"
+
+#: core/utilities/setup/misc/setupmisc.cpp:89
+#, kde-format
+msgctxt "method to get the album date"
+msgid "From The Newest Item Date"
+msgstr "Desde a data de elemento máis recente"
+
+#: core/utilities/setup/misc/setupmisc.cpp:90
+#, kde-format
+msgctxt "method to get the album date"
+msgid "From The Oldest Item Date"
+msgstr "Desde a data de elemento máis vella"
+
+#: core/utilities/setup/misc/setupmisc.cpp:91
+#, kde-format
+msgctxt "method to get the album date"
+msgid "From The Average Date"
+msgstr "Desde a data media"
+
+#: core/utilities/setup/misc/setupmisc.cpp:92
+#, kde-format
+msgctxt "method to get the album date"
+msgid "From The Folder Date"
+msgstr "Desde a data do cartafol"
+
+#: core/utilities/setup/misc/setupmisc.cpp:93
+#, kde-format
+msgctxt "method to get the album date"
+msgid "No Change Of Date"
+msgstr "Sen cambio de data"
+
+#: core/utilities/setup/misc/setupmisc.cpp:94
+#, kde-format
+msgid ""
+"The album date is adjusted depending on the option set when new items are "
+"found during scanning."
+msgstr ""
+"A data do álbum axústase segundo a opción definida cando se atopan elementos "
+"novos durante un exame."
+
+#: core/utilities/setup/misc/setupmisc.cpp:98
+#, kde-format
+msgid "String comparison type:"
+msgstr "Tipo de comparación de cadeas:"
+
+#: core/utilities/setup/misc/setupmisc.cpp:100
+#, kde-format
+msgctxt "method to compare strings"
+msgid "Natural"
+msgstr "Natural"
+
+#: core/utilities/setup/misc/setupmisc.cpp:101
+#, kde-format
+msgctxt "method to compare strings"
+msgid "Normal"
+msgstr "Normal"
+
+#: core/utilities/setup/misc/setupmisc.cpp:102
+#, kde-format
+msgid ""
+"<qt>Sets the way in which strings are compared inside digiKam. This eg. "
+"influences the sorting of the tree views.<br/><b>Natural</b> tries to "
+"compare strings in a way that regards some normal conventions and will eg. "
+"result in sorting numbers naturally even if they have a different number of "
+"digits.<br/><b>Normal</b> uses a more technical approach. Use this style if "
+"you eg. want to entitle albums with ISO dates (201006 or 20090523) and the "
+"albums should be sorted according to these dates.</qt>"
+msgstr ""
+"<qt>Indica de que modo se comparan as cadeas en digiKam. Isto inflúe, por "
+"exemplo, na ordenación das vistas de árbore.<br/><b>Natural</b> intenta "
+"comparar as cadeas de xeito que se sigan certas convencións habituais, como "
+"ordenar os números naturalmente mesmo se tiveren un número de díxitos "
+"distinto.<br/><b>Normal</b> usa un enfoque máis técnico. Use este estilo se "
+"quere, por exemplo, que os títulos dos álbums sexan datas ISO (201006 ou "
+"20090523) e quere que os álbums se ordenen segundo estas datas.</qt>"
+
+#: core/utilities/setup/misc/setupmisc.cpp:111
 #, kde-format
 msgid "Lower bound for minimum similarity:"
 msgstr "Semellanza mínima:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:110
+#: core/utilities/setup/misc/setupmisc.cpp:117
 #, kde-format
 msgid ""
 "Select here the lower bound of the minimum similarity threshold for fuzzy "
@@ -67044,17 +67049,17 @@ msgstr ""
 "valor predeterminado é 40. Seleccionar un valor inferior a 40 pode facer que "
 "a busca sexa <b>moi</b> lenta."
 
-#: core/utilities/setup/misc/setupmisc.cpp:207
+#: core/utilities/setup/misc/setupmisc.cpp:215
 #, kde-format
 msgid "Use native file dialogs from system"
 msgstr "Usar diálogos de ficheiros do sistema"
 
-#: core/utilities/setup/misc/setupmisc.cpp:208
+#: core/utilities/setup/misc/setupmisc.cpp:216
 #, kde-format
 msgid "Draw frames around grouped items"
 msgstr "Debuxar marcos arredor dos elementos agrupados"
 
-#: core/utilities/setup/misc/setupmisc.cpp:215
+#: core/utilities/setup/misc/setupmisc.cpp:223
 #, kde-format
 msgid ""
 "Set this option to configure how sidebar tab titles are visible. Use \"Only "
@@ -67065,12 +67070,12 @@ msgstr ""
 "separadores da barra lateral. Use a opción «Só para o separador activo» se "
 "usa unha resolución de pantalla pequena, como a dun computador portátil."
 
-#: core/utilities/setup/misc/setupmisc.cpp:310
+#: core/utilities/setup/misc/setupmisc.cpp:318
 #, kde-format
 msgid "Perform the following operations on all group members:"
 msgstr "Realizar as seguintes operacións en todos os membros do grupo:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:311
+#: core/utilities/setup/misc/setupmisc.cpp:319
 #, kde-format
 msgid ""
 "When images are grouped the following operations<br/>are performed only on "
@@ -67083,25 +67088,25 @@ msgstr ""
 "grupo (Si).<br/> Se se selecciona «Preguntar», preguntarase cada vez<br/> "
 "que se execute esta operación."
 
-#: core/utilities/setup/misc/setupmisc.cpp:317
+#: core/utilities/setup/misc/setupmisc.cpp:325
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "No"
 msgstr "Non"
 
-#: core/utilities/setup/misc/setupmisc.cpp:318
+#: core/utilities/setup/misc/setupmisc.cpp:326
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Yes"
 msgstr "Si"
 
-#: core/utilities/setup/misc/setupmisc.cpp:319
+#: core/utilities/setup/misc/setupmisc.cpp:327
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Ask"
 msgstr "Preguntar"
 
-#: core/utilities/setup/misc/setupmisc.cpp:362
+#: core/utilities/setup/misc/setupmisc.cpp:370
 #, kde-format
 msgctxt "@title:tab"
 msgid "Grouping"
@@ -68364,6 +68369,12 @@ msgstr "Elementos do álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importar os elementos"
+
+#~ msgid "Avg. similarity"
+#~ msgstr "Semellanza media"
+
+#~ msgid "&Scan for new items at startup (makes startup slower)"
+#~ msgstr "&Buscar elementos novos no inicio (enlentece o arranque)."
 
 #~ msgid "Detect and recognize Faces"
 #~ msgstr "Detectar e recoñecer caras."

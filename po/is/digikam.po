@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-10 01:59+0000\n"
+"POT-Creation-Date: 2025-05-13 02:07+0000\n"
 "PO-Revision-Date: 2025-05-04 13:09+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -4158,6 +4158,7 @@ msgstr "Stærðarhlutföll"
 
 #: core/app/views/tableview/tableview_column_item.cpp:81
 #: core/app/views/tableview/tableview_column_item.cpp:142
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:69
 #, kde-format
 msgid "Similarity"
 msgstr "Líkindi"
@@ -49966,7 +49967,7 @@ msgstr ""
 "Veldu þetta til að sýna hvort mynd sé með hnattstaðsetningarupplýsingar."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:153
-#: core/utilities/setup/misc/setupmisc.cpp:97
+#: core/utilities/setup/misc/setupmisc.cpp:82
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr "Skruna þetta atriði á miðja smámyndastiku"
@@ -49984,31 +49985,31 @@ msgstr ""
 "diski."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:165
-#: core/utilities/setup/misc/setupmisc.cpp:119
+#: core/utilities/setup/misc/setupmisc.cpp:126
 #, kde-format
 msgid "Updates"
 msgstr "Uppfærslur"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:169
-#: core/utilities/setup/misc/setupmisc.cpp:123
+#: core/utilities/setup/misc/setupmisc.cpp:130
 #, kde-format
 msgid "Check for new version:"
 msgstr "Athuga með nýja útgáfu:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:171
-#: core/utilities/setup/misc/setupmisc.cpp:125
+#: core/utilities/setup/misc/setupmisc.cpp:132
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr "Aðeins fyrir stöðugar útgáfur"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:172
-#: core/utilities/setup/misc/setupmisc.cpp:126
+#: core/utilities/setup/misc/setupmisc.cpp:133
 #, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "Vikulegar forútgáfur"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:173
-#: core/utilities/setup/misc/setupmisc.cpp:127
+#: core/utilities/setup/misc/setupmisc.cpp:134
 #, kde-format
 msgid ""
 "Set this option to configure which kind of new versions must be check for "
@@ -50025,13 +50026,13 @@ msgstr ""
 "alltaf slæðst með."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:178
-#: core/utilities/setup/misc/setupmisc.cpp:132
+#: core/utilities/setup/misc/setupmisc.cpp:139
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr "Nota útgáfu með aflúsunartáknum"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:179
-#: core/utilities/setup/misc/setupmisc.cpp:133
+#: core/utilities/setup/misc/setupmisc.cpp:140
 #, kde-format
 msgid ""
 "If this option is enabled, a version including debug symbols will be used "
@@ -50045,26 +50046,26 @@ msgstr ""
 "gríðarlega við að finna galla."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:184
-#: core/utilities/setup/misc/setupmisc.cpp:138
+#: core/utilities/setup/misc/setupmisc.cpp:145
 #, kde-format
 msgid "Last check: %1"
 msgstr "Síðasta athugun: %1"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:185
-#: core/utilities/setup/misc/setupmisc.cpp:139
+#: core/utilities/setup/misc/setupmisc.cpp:146
 #, kde-format
 msgid "Check now..."
 msgstr "Kanna núna..."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:213
-#: core/utilities/setup/misc/setupmisc.cpp:199
+#: core/utilities/setup/misc/setupmisc.cpp:207
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behaviour"
 msgstr "Hegðun"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:220
-#: core/utilities/setup/misc/setupmisc.cpp:206
+#: core/utilities/setup/misc/setupmisc.cpp:214
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "&Sýna upphafsskjá við ræsingu"
@@ -50075,19 +50076,19 @@ msgid "Use native file dialogs from the system"
 msgstr "Nota innbyggða samskiptaglugga frá stýrikerfinu"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:224
-#: core/utilities/setup/misc/setupmisc.cpp:211
+#: core/utilities/setup/misc/setupmisc.cpp:219
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "Titill hliðarspjaldsflipa:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:226
-#: core/utilities/setup/misc/setupmisc.cpp:213
+#: core/utilities/setup/misc/setupmisc.cpp:221
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "Aðeins fyrir virkan flipa"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:227
-#: core/utilities/setup/misc/setupmisc.cpp:214
+#: core/utilities/setup/misc/setupmisc.cpp:222
 #, kde-format
 msgid "For All Tabs"
 msgstr "Fyrir alla flipa"
@@ -50098,126 +50099,126 @@ msgid "Set this option to configure how sidebars tab title are visible."
 msgstr "Veldu þetta til að stilla birtingu á titilflipum á hliðarspjaldi."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:231
-#: core/utilities/setup/misc/setupmisc.cpp:219
+#: core/utilities/setup/misc/setupmisc.cpp:227
 #, kde-format
 msgid "Widget style:"
 msgstr "Græjustíll:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:233
-#: core/utilities/setup/misc/setupmisc.cpp:221
+#: core/utilities/setup/misc/setupmisc.cpp:229
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr "Veldu þetta til að ákveða sjálfgefna gluggaskreytingu og útlit."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:257
-#: core/utilities/setup/misc/setupmisc.cpp:244
+#: core/utilities/setup/misc/setupmisc.cpp:252
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "Táknmyndaþema (breytingar krefjast endurræsingar):"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:259
-#: core/utilities/setup/misc/setupmisc.cpp:246
+#: core/utilities/setup/misc/setupmisc.cpp:254
 #, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "Veldu þetta til að stilla sjálfgefið táknmyndaþema."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:263
-#: core/utilities/setup/misc/setupmisc.cpp:250
+#: core/utilities/setup/misc/setupmisc.cpp:258
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:264
-#: core/utilities/setup/misc/setupmisc.cpp:251
+#: core/utilities/setup/misc/setupmisc.cpp:259
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Breeze"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:265
-#: core/utilities/setup/misc/setupmisc.cpp:252
+#: core/utilities/setup/misc/setupmisc.cpp:260
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Breeze dökkt"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:266
-#: core/utilities/setup/misc/setupmisc.cpp:253
+#: core/utilities/setup/misc/setupmisc.cpp:261
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:267
-#: core/utilities/setup/misc/setupmisc.cpp:254
+#: core/utilities/setup/misc/setupmisc.cpp:262
 #, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Ambiance"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:268
-#: core/utilities/setup/misc/setupmisc.cpp:255
+#: core/utilities/setup/misc/setupmisc.cpp:263
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "Humanity"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:269
-#: core/utilities/setup/misc/setupmisc.cpp:256
+#: core/utilities/setup/misc/setupmisc.cpp:264
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oxygen"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:294
-#: core/utilities/setup/misc/setupmisc.cpp:280
+#: core/utilities/setup/misc/setupmisc.cpp:288
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "Nota táknmyndaþema kerfisins"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:301
-#: core/utilities/setup/misc/setupmisc.cpp:287
+#: core/utilities/setup/misc/setupmisc.cpp:295
 #, kde-format
 msgid "Application font:"
 msgstr "Letur í forritinu:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:302
-#: core/utilities/setup/misc/setupmisc.cpp:288
+#: core/utilities/setup/misc/setupmisc.cpp:296
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr "Veldu hér letrið sem notað er við birtingu texta í öllu forritinu."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
-#: core/utilities/setup/misc/setupmisc.cpp:303
+#: core/utilities/setup/misc/setupmisc.cpp:311
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Útlit"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:324
-#: core/utilities/setup/misc/setupmisc.cpp:370
+#: core/utilities/setup/misc/setupmisc.cpp:378
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Stafsetningaryfirferð"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:330
-#: core/utilities/setup/misc/setupmisc.cpp:376
+#: core/utilities/setup/misc/setupmisc.cpp:384
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Staðfæra"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:336
-#: core/utilities/setup/misc/setupmisc.cpp:382
+#: core/utilities/setup/misc/setupmisc.cpp:390
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "Kerfi"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:370
-#: core/utilities/setup/misc/setupmisc.cpp:417
+#: core/utilities/setup/misc/setupmisc.cpp:425
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
@@ -52538,11 +52539,6 @@ msgstr "Viðmiðunaralbúm"
 #, kde-format
 msgid "Items"
 msgstr "Atriði"
-
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:69
-#, kde-format
-msgid "Avg. similarity"
-msgstr "Meðal-líkindi"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:75
 #, kde-format
@@ -66321,108 +66317,13 @@ msgstr "Notan&danafn:"
 msgid "&Password:"
 msgstr "&Lykilorð:"
 
+#: core/utilities/setup/misc/setupmisc.cpp:38
+#, fuzzy, kde-format
+#| msgid "Scan for new items"
+msgid "&Scan for new items at startup"
+msgstr "Leita að nýjum atriðum"
+
 #: core/utilities/setup/misc/setupmisc.cpp:39
-#, kde-format
-msgid "Get album date source:"
-msgstr "Ná í uppruna dagsetningar albúms:"
-
-#: core/utilities/setup/misc/setupmisc.cpp:41
-#, kde-format
-msgctxt "method to get the album date"
-msgid "From The Newest Item Date"
-msgstr "Úr dagsetningu nýjasta atriðisins"
-
-#: core/utilities/setup/misc/setupmisc.cpp:42
-#, kde-format
-msgctxt "method to get the album date"
-msgid "From The Oldest Item Date"
-msgstr "Úr dagsetningu elsta atriðisins"
-
-#: core/utilities/setup/misc/setupmisc.cpp:43
-#, kde-format
-msgctxt "method to get the album date"
-msgid "From The Average Date"
-msgstr "Úr meðaltalsdagsetningu"
-
-#: core/utilities/setup/misc/setupmisc.cpp:44
-#, kde-format
-msgctxt "method to get the album date"
-msgid "From The Folder Date"
-msgstr "Úr dagsetningu möppu"
-
-#: core/utilities/setup/misc/setupmisc.cpp:45
-#, kde-format
-msgctxt "method to get the album date"
-msgid "No Change Of Date"
-msgstr "Engin breyting á dagsetningu"
-
-#: core/utilities/setup/misc/setupmisc.cpp:46
-#, kde-format
-msgid ""
-"The album date is adjusted depending on the option set when new items are "
-"found during scanning."
-msgstr ""
-"Dagsetning albúms er aðlöguð samkvæmt stilltum valkosti þegar ný atriði "
-"finnast við skönnun."
-
-#: core/utilities/setup/misc/setupmisc.cpp:50
-#, kde-format
-msgid "String comparison type:"
-msgstr "Gerð samanburðar strengja:"
-
-#: core/utilities/setup/misc/setupmisc.cpp:52
-#, kde-format
-msgctxt "method to compare strings"
-msgid "Natural"
-msgstr "Náttúrulegt"
-
-#: core/utilities/setup/misc/setupmisc.cpp:53
-#, kde-format
-msgctxt "method to compare strings"
-msgid "Normal"
-msgstr "Venjulegt"
-
-#: core/utilities/setup/misc/setupmisc.cpp:54
-#, kde-format
-msgid ""
-"<qt>Sets the way in which strings are compared inside digiKam. This eg. "
-"influences the sorting of the tree views.<br/><b>Natural</b> tries to "
-"compare strings in a way that regards some normal conventions and will eg. "
-"result in sorting numbers naturally even if they have a different number of "
-"digits.<br/><b>Normal</b> uses a more technical approach. Use this style if "
-"you eg. want to entitle albums with ISO dates (201006 or 20090523) and the "
-"albums should be sorted according to these dates.</qt>"
-msgstr ""
-"<qt>Stillir með hvaða aðferð strengir eru bornir saman í digiKam. Þetta "
-"hefur meðal annars áhrif á hvernig albúmum er raðað í greinasýnum.<br/"
-"><b>Venjulegt</b> reynir að bera saman strengi miðað við ýmsar algengar "
-"venjur og mun til dæmis hafa það í för með sér að tölur raðast eðlilega "
-"þrátt fyrir að hafa misjafnan fjölda tölustafa (001, 2, 03, 010, 11...).<br/"
-"><b>Staðlað</b> er tæknilegri nálgun. Notaðu þessa aðferð ef þú vilt til "
-"dæmis nota ISO dagsetningar (201006 eða 20090523) í albúmaheitum og að þau "
-"eigi að raðast í samræmi við þær dagsetningar.</qt>"
-
-#: core/utilities/setup/misc/setupmisc.cpp:64
-#, kde-format
-msgid "Confirm when moving items to the &trash"
-msgstr "S&taðfesta þegar skrár eru fluttar í ruslið"
-
-#: core/utilities/setup/misc/setupmisc.cpp:65
-#, kde-format
-msgid "Confirm when permanently deleting items"
-msgstr "Staðfesta þegar skrám er endanlega eytt"
-
-#: core/utilities/setup/misc/setupmisc.cpp:66
-#, kde-format
-msgid "Do not confirm when applying changes in the &right sidebar"
-msgstr "Framkvæma b&reytingar á hægri hliðarspjaldi án staðfestingar"
-
-#: core/utilities/setup/misc/setupmisc.cpp:67
-#, kde-format
-msgid "&Scan for new items at startup (makes startup slower)"
-msgstr "&Skanna nýja hluti í ræsingu (hægir á ræsingu)"
-
-#: core/utilities/setup/misc/setupmisc.cpp:68
 #, kde-format
 msgid ""
 "Set this option to force digiKam to scan all collections for new items to\n"
@@ -66450,12 +66351,12 @@ msgstr ""
 "og áætla frekar handvirka skönnun á hentugum tíma í gegnum "
 "viðhaldsvalmyndina."
 
-#: core/utilities/setup/misc/setupmisc.cpp:76
+#: core/utilities/setup/misc/setupmisc.cpp:47
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
 msgstr "Hröð skönnun (finnur ný, eydd og endurnefnd atriði)"
 
-#: core/utilities/setup/misc/setupmisc.cpp:77
+#: core/utilities/setup/misc/setupmisc.cpp:48
 #, kde-format
 msgid ""
 "Set this option to significantly speed up the scan. New items, deleted and "
@@ -66468,17 +66369,17 @@ msgstr ""
 "eydd atriði og einnig endurnefnd atriði munu finnast. Til að finna atriði\n"
 "sem hafa breyst, verður að gera þetta óvirkt."
 
-#: core/utilities/setup/misc/setupmisc.cpp:83
+#: core/utilities/setup/misc/setupmisc.cpp:54
 #, kde-format
 msgid "Detect faces in newly added images"
 msgstr "Finna andlit í nýlega viðbættum myndum"
 
-#: core/utilities/setup/misc/setupmisc.cpp:84
+#: core/utilities/setup/misc/setupmisc.cpp:55
 #, kde-format
 msgid "Enable background face recognition scan"
 msgstr "Virkja keyrslu andlitakennsla í bakgrunni"
 
-#: core/utilities/setup/misc/setupmisc.cpp:85
+#: core/utilities/setup/misc/setupmisc.cpp:56
 #, kde-format
 msgid ""
 "Set this option to automatically start a background face recognition scan\n"
@@ -66487,12 +66388,13 @@ msgstr ""
 "Veldu þetta til að setja sjálfkrafa í gang andlitagreiningu í bakgrunni\n"
 "þegar nýtt andlit er merkt. Þetta mun einfalda ferlið við merkingar."
 
-#: core/utilities/setup/misc/setupmisc.cpp:88
-#, kde-format
-msgid "Remove obsolete core database objects (makes startup slower)"
+#: core/utilities/setup/misc/setupmisc.cpp:59
+#, fuzzy, kde-format
+#| msgid "Remove obsolete core database objects (makes startup slower)"
+msgid "Remove obsolete core database objects"
 msgstr "Fjarlægja úrelta gagnagrunnshluti (gerir ræsingu hægvirkari)"
 
-#: core/utilities/setup/misc/setupmisc.cpp:89
+#: core/utilities/setup/misc/setupmisc.cpp:60
 #, kde-format
 msgid ""
 "Set this option to force digiKam to clean up the core database from obsolete "
@@ -66513,28 +66415,131 @@ msgstr ""
 "andlitaskönnun.\n"
 "Til að hreinsa hina gagnagrunnana ætti að nota viðhaldsverkfærin."
 
-#: core/utilities/setup/misc/setupmisc.cpp:95
+#: core/utilities/setup/misc/setupmisc.cpp:66
 #, kde-format
-msgid "Initially select the first item in the album"
-msgstr "Byrjaður á að velja fyrsta atriðið í albúminu"
+msgctxt "@info"
+msgid ""
+"<font color='red'><i>Warning: These settings makes startup slower!</i></font>"
+msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:96
+#: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format
-msgid "Expand current tree item with a single mouse click"
-msgstr "Fletta út möppum með einum músarsmelli"
+msgid "Confirm when moving items to the &trash"
+msgstr "S&taðfesta þegar skrár eru fluttar í ruslið"
 
-#: core/utilities/setup/misc/setupmisc.cpp:98
+#: core/utilities/setup/misc/setupmisc.cpp:77
+#, kde-format
+msgid "Confirm when permanently deleting items"
+msgstr "Staðfesta þegar skrám er endanlega eytt"
+
+#: core/utilities/setup/misc/setupmisc.cpp:78
+#, kde-format
+msgid "Do not confirm when applying changes in the &right sidebar"
+msgstr "Framkvæma b&reytingar á hægri hliðarspjaldi án staðfestingar"
+
+#: core/utilities/setup/misc/setupmisc.cpp:79
 #, kde-format
 msgid "Show only face tags for assigning names in people sidebar"
 msgstr ""
 "Sýna einungis andlitamerki til að úthluta nöfnum á hliðarspjaldinu með fólki"
 
-#: core/utilities/setup/misc/setupmisc.cpp:104
+#: core/utilities/setup/misc/setupmisc.cpp:80
+#, kde-format
+msgid "Initially select the first item in the album"
+msgstr "Byrjaður á að velja fyrsta atriðið í albúminu"
+
+#: core/utilities/setup/misc/setupmisc.cpp:81
+#, kde-format
+msgid "Expand current tree item with a single mouse click"
+msgstr "Fletta út möppum með einum músarsmelli"
+
+#: core/utilities/setup/misc/setupmisc.cpp:87
+#, kde-format
+msgid "Get album date source:"
+msgstr "Ná í uppruna dagsetningar albúms:"
+
+#: core/utilities/setup/misc/setupmisc.cpp:89
+#, kde-format
+msgctxt "method to get the album date"
+msgid "From The Newest Item Date"
+msgstr "Úr dagsetningu nýjasta atriðisins"
+
+#: core/utilities/setup/misc/setupmisc.cpp:90
+#, kde-format
+msgctxt "method to get the album date"
+msgid "From The Oldest Item Date"
+msgstr "Úr dagsetningu elsta atriðisins"
+
+#: core/utilities/setup/misc/setupmisc.cpp:91
+#, kde-format
+msgctxt "method to get the album date"
+msgid "From The Average Date"
+msgstr "Úr meðaltalsdagsetningu"
+
+#: core/utilities/setup/misc/setupmisc.cpp:92
+#, kde-format
+msgctxt "method to get the album date"
+msgid "From The Folder Date"
+msgstr "Úr dagsetningu möppu"
+
+#: core/utilities/setup/misc/setupmisc.cpp:93
+#, kde-format
+msgctxt "method to get the album date"
+msgid "No Change Of Date"
+msgstr "Engin breyting á dagsetningu"
+
+#: core/utilities/setup/misc/setupmisc.cpp:94
+#, kde-format
+msgid ""
+"The album date is adjusted depending on the option set when new items are "
+"found during scanning."
+msgstr ""
+"Dagsetning albúms er aðlöguð samkvæmt stilltum valkosti þegar ný atriði "
+"finnast við skönnun."
+
+#: core/utilities/setup/misc/setupmisc.cpp:98
+#, kde-format
+msgid "String comparison type:"
+msgstr "Gerð samanburðar strengja:"
+
+#: core/utilities/setup/misc/setupmisc.cpp:100
+#, kde-format
+msgctxt "method to compare strings"
+msgid "Natural"
+msgstr "Náttúrulegt"
+
+#: core/utilities/setup/misc/setupmisc.cpp:101
+#, kde-format
+msgctxt "method to compare strings"
+msgid "Normal"
+msgstr "Venjulegt"
+
+#: core/utilities/setup/misc/setupmisc.cpp:102
+#, kde-format
+msgid ""
+"<qt>Sets the way in which strings are compared inside digiKam. This eg. "
+"influences the sorting of the tree views.<br/><b>Natural</b> tries to "
+"compare strings in a way that regards some normal conventions and will eg. "
+"result in sorting numbers naturally even if they have a different number of "
+"digits.<br/><b>Normal</b> uses a more technical approach. Use this style if "
+"you eg. want to entitle albums with ISO dates (201006 or 20090523) and the "
+"albums should be sorted according to these dates.</qt>"
+msgstr ""
+"<qt>Stillir með hvaða aðferð strengir eru bornir saman í digiKam. Þetta "
+"hefur meðal annars áhrif á hvernig albúmum er raðað í greinasýnum.<br/"
+"><b>Venjulegt</b> reynir að bera saman strengi miðað við ýmsar algengar "
+"venjur og mun til dæmis hafa það í för með sér að tölur raðast eðlilega "
+"þrátt fyrir að hafa misjafnan fjölda tölustafa (001, 2, 03, 010, 11...).<br/"
+"><b>Staðlað</b> er tæknilegri nálgun. Notaðu þessa aðferð ef þú vilt til "
+"dæmis nota ISO dagsetningar (201006 eða 20090523) í albúmaheitum og að þau "
+"eigi að raðast í samræmi við þær dagsetningar.</qt>"
+
+#: core/utilities/setup/misc/setupmisc.cpp:111
 #, kde-format
 msgid "Lower bound for minimum similarity:"
 msgstr "Lægri mörk fyrir lágmarkslíkindi:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:110
+#: core/utilities/setup/misc/setupmisc.cpp:117
 #, kde-format
 msgid ""
 "Select here the lower bound of the minimum similarity threshold for fuzzy "
@@ -66545,17 +66550,17 @@ msgstr ""
 "tvítökum. Sjálfgefið gildi er 40. Sé valið lægra gildi en 40 getur leitin "
 "orðið <b>mjög</b> hægvirk."
 
-#: core/utilities/setup/misc/setupmisc.cpp:207
+#: core/utilities/setup/misc/setupmisc.cpp:215
 #, kde-format
 msgid "Use native file dialogs from system"
 msgstr "Nota innbyggða samskiptaglugga frá stýrikerfinu"
 
-#: core/utilities/setup/misc/setupmisc.cpp:208
+#: core/utilities/setup/misc/setupmisc.cpp:216
 #, kde-format
 msgid "Draw frames around grouped items"
 msgstr "Teikna ramma í kringum hópuð atriði"
 
-#: core/utilities/setup/misc/setupmisc.cpp:215
+#: core/utilities/setup/misc/setupmisc.cpp:223
 #, kde-format
 msgid ""
 "Set this option to configure how sidebar tab titles are visible. Use \"Only "
@@ -66566,12 +66571,12 @@ msgstr ""
 "\"Aðeins fyrir virkan flipa\" ef þú ert með lága skjáupplausn eins og oft er "
 "með fartölvur."
 
-#: core/utilities/setup/misc/setupmisc.cpp:310
+#: core/utilities/setup/misc/setupmisc.cpp:318
 #, kde-format
 msgid "Perform the following operations on all group members:"
 msgstr "Framkvæma eftirfarandi aðgerðir á öll atriði hóps:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:311
+#: core/utilities/setup/misc/setupmisc.cpp:319
 #, kde-format
 msgid ""
 "When images are grouped the following operations<br/>are performed only on "
@@ -66584,25 +66589,25 @@ msgstr ""
 "<br/>Ef 'Spyrja' er valið, kemur upp kvaðningargluggi í hvert<br/>skipti sem "
 "aðgerðin er framkvæmd."
 
-#: core/utilities/setup/misc/setupmisc.cpp:317
+#: core/utilities/setup/misc/setupmisc.cpp:325
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "No"
 msgstr "Nei"
 
-#: core/utilities/setup/misc/setupmisc.cpp:318
+#: core/utilities/setup/misc/setupmisc.cpp:326
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Yes"
 msgstr "Já"
 
-#: core/utilities/setup/misc/setupmisc.cpp:319
+#: core/utilities/setup/misc/setupmisc.cpp:327
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Ask"
 msgstr "Spyrja"
 
-#: core/utilities/setup/misc/setupmisc.cpp:362
+#: core/utilities/setup/misc/setupmisc.cpp:370
 #, kde-format
 msgctxt "@title:tab"
 msgid "Grouping"
@@ -67847,6 +67852,12 @@ msgstr "Atriði í albúmi"
 #, kde-format
 msgid "Import Items"
 msgstr "Flytja inn atriði"
+
+#~ msgid "Avg. similarity"
+#~ msgstr "Meðal-líkindi"
+
+#~ msgid "&Scan for new items at startup (makes startup slower)"
+#~ msgstr "&Skanna nýja hluti í ræsingu (hægir á ræsingu)"
 
 #~ msgid "Detect and recognize Faces"
 #~ msgstr "Finna og þekkja andlit"

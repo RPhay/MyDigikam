@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-10 01:59+0000\n"
+"POT-Creation-Date: 2025-05-13 02:07+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -314,14 +314,12 @@ msgid "M&erge Here"
 msgstr "Sloučit s&em"
 
 #: core/app/dragdrop/tagdragdrop.cpp:251
-#, fuzzy, kde-format
-#| msgid "Change face name from '%2' to '%3'"
-#| msgid_plural "Change face names from '%2' to '%3'"
+#, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
-msgstr[0] "Změnit jméno tváře z '%2' na '%3'"
-msgstr[1] "Změnit jména tváří z '%2' na '%3'"
-msgstr[2] "Změnit jména tváří z '%2' na '%3'"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:451
 #, kde-format
@@ -561,16 +559,13 @@ msgstr[1] "Přesunout %1 soubory do koše"
 msgstr[2] "Přesunout %1 souborů do koše"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
-msgstr[0] "Řazení podle kvality obrázků"
-msgstr[1] "Řazení podle kvality obrázků"
-msgstr[2] "Řazení podle kvality obrázků"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
 #, kde-format
@@ -2399,11 +2394,10 @@ msgid "Rotate"
 msgstr "Otočit"
 
 #: core/app/main/digikamapp_setup.cpp:1069
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
-msgstr "Automaticky otočit"
+msgstr ""
 
 #: core/app/main/digikamapp_setup.cpp:1077
 #, kde-format
@@ -2954,12 +2948,10 @@ msgstr ""
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:168
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Color-Managed View is disabled."
+#, kde-format
 msgctxt "@info"
 msgid "Face engine is disabled"
-msgstr "Zobrazení se správou barev zakázáno."
+msgstr ""
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:204
 #, kde-format
@@ -4078,6 +4070,7 @@ msgstr "Poměr stran"
 
 #: core/app/views/tableview/tableview_column_item.cpp:81
 #: core/app/views/tableview/tableview_column_item.cpp:142
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:69
 #, kde-format
 msgid "Similarity"
 msgstr "Podobnost"
@@ -6086,12 +6079,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Image Quality Sort"
+#, kde-format
 msgctxt "@title"
 msgid "Image Quality Scan"
-msgstr "Řazení podle kvality obrázků"
+msgstr ""
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:57
 #, kde-format
@@ -6335,18 +6326,16 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@title"
 msgid "Auto-Rotate"
-msgstr "Automaticky otočit"
+msgstr ""
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgid "A tool to blend bracketed images"
+#, kde-format
 msgctxt "@info"
 msgid "AI tool to automatically rotate images"
-msgstr "Nástroj pro mísení sekvence obrázků"
+msgstr ""
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
 #, kde-kuit-format
@@ -25793,16 +25782,14 @@ msgid "Unable to load image"
 msgstr "Nelze načíst obrázek"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:461
-#, fuzzy, kde-format
-#| msgid "Post Processing"
+#, kde-format
 msgid "AI Tools Processing"
-msgstr "Zpracování po načtení"
+msgstr ""
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:503
-#, fuzzy, kde-format
-#| msgid "Rating: %1\n"
+#, kde-format
 msgid "Auto-rotating: %1\n"
-msgstr "Hodnocení: %1\n"
+msgstr ""
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
@@ -25817,10 +25804,9 @@ msgid "Album: %1\n"
 msgstr ""
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
-#, fuzzy, kde-format
-#| msgid "Rotation: "
+#, kde-format
 msgid "Rotation: %1\n"
-msgstr "Rotace: "
+msgstr ""
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:527
 #, kde-format
@@ -33609,11 +33595,10 @@ msgid "Search in"
 msgstr "Hledat v"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Workflow"
+#, kde-format
 msgctxt "@label short translated text about the Face Worflow."
 msgid "Workflow:"
-msgstr "Proces"
+msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:106
 #, kde-format
@@ -33649,11 +33634,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label short translated text about the Face Detection Accuracy"
 msgid "Accuracy:"
-msgstr "Přesnost"
+msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:135
 #, kde-format
@@ -33665,11 +33649,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Max size:"
+#, kde-format
 msgctxt "@label with a short translated text about the face size for detection"
 msgid "Face size:"
-msgstr "Max velikost:"
+msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:144
 #, kde-format
@@ -33726,11 +33709,10 @@ msgid "Face Detection Settings"
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label short translated text about the Face Recognition Accuracy"
 msgid "Accuracy:"
-msgstr "Přesnost"
+msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:184
 #, kde-format
@@ -33745,12 +33727,10 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Work on all processor cores"
-msgstr "Pracovat na všech jádrech procesoru"
+msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
 #, kde-format
@@ -34277,27 +34257,22 @@ msgid "aesthetic image quality"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label: short translated text about the image quality scan mode"
 msgid "Scan Mode:"
-msgstr "Model:"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "In All"
+#, kde-format
 msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
-msgstr "Ve všech"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgid "Assigned Tools"
+#, kde-format
 msgctxt "@item: image quality scan only non assigned items"
 msgid "Non-Assigned Only"
-msgstr "Přidělené nástroje"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:87
 #, kde-format
@@ -34308,11 +34283,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign Low Quality to Rejected Label"
-msgstr "Na&stavit značky označeným položkám"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
@@ -34351,18 +34325,16 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:137
-#, fuzzy, kde-format
-#| msgid "Quality:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Quality Engine:"
-msgstr "Kvalita:"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
-#, fuzzy, kde-format
-#| msgid "Reset contents"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Detect Aesthetic Contents"
-msgstr "Vymazat obsah"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
 #, kde-format
@@ -34389,29 +34361,19 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:165
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Quality detection is time-consuming tasks.\n"
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"Detekce obličeje je časově náročná úloha. Můžete si vybrat,\n"
-"zda si přejete použít všechna jádra procesoru vašeho systému,\n"
-"nebo pracovat pouze s jedním jádrem na pozadí."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Rejected threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Rejected threshold:"
-msgstr "Odmítnutý práh:"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -34420,12 +34382,10 @@ msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr "Prahová hodnota, pod níž budou obrázky označeny jako odmítnuté"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Pending threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Pending threshold:"
-msgstr "Práh čekání:"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -34434,12 +34394,10 @@ msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr "Prahová hodnota, pod níž budou obrázky označeny jako 'Čeká se'"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Accepted threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Accepted threshold:"
-msgstr "Přijatý práh:"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, kde-format
@@ -34448,12 +34406,10 @@ msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr "Prahová hodnota, nad níž budou obrázky označeny jako 'Přijato'"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Blur"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Blur"
-msgstr "Detekovat rozmazání"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, kde-format
@@ -34464,12 +34420,10 @@ msgstr "Detekovat množství rozmazání v předaných obrázcích"
 #: core/libs/imgqsort/imagequalitywidget.cpp:223
 #: core/libs/imgqsort/imagequalitywidget.cpp:234
 #: core/libs/imgqsort/imagequalitywidget.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Weight:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Weight:"
-msgstr "Váha:"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:228
 #, kde-format
@@ -34478,12 +34432,10 @@ msgid "Weight to assign to Blur Algorithm"
 msgstr "Váha přiřazena kritériu rozmazání"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Noise"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Noise"
-msgstr "Detekovat šum"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
@@ -34498,12 +34450,10 @@ msgid "Weight to assign to Noise Algorithm"
 msgstr "Váha přiřazena kritériu šum"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Compression"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Compression"
-msgstr "Detekovat kompresi"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
 #, kde-format
@@ -35782,10 +35732,9 @@ msgid "Binary data %1 bytes"
 msgstr ""
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:401
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#, kde-format
 msgid "No Transformation"
-msgstr "Omezit informace"
+msgstr ""
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
 #, kde-format
@@ -35798,11 +35747,9 @@ msgid "Flip Vertical"
 msgstr "Obrátit svisle"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:416
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Rotate"
+#, kde-format
 msgid "Rotate 90°"
-msgstr "Otočit"
+msgstr ""
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:421
 #, kde-format
@@ -35810,24 +35757,19 @@ msgid "Rotate 180°"
 msgstr "Otočit o 180°"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:426
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Rotate"
+#, kde-format
 msgid "Rotate 270°"
-msgstr "Otočit"
+msgstr ""
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:431
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Rotation"
+#, kde-format
 msgid "Auto Rotation"
-msgstr "Natočení"
+msgstr ""
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:436
-#, fuzzy, kde-format
-#| msgid "Unknown Format"
+#, kde-format
 msgid "Unknown Transformation"
-msgstr "Neznámý formát"
+msgstr ""
 
 #: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:373
 #, kde-format
@@ -38451,27 +38393,22 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt "@label with a short translated text about autotags scanning mode"
 msgid "Scan Mode:"
-msgstr "Model:"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "In All"
+#, kde-format
 msgctxt "@item: all items to scan with autotags"
 msgid "All"
-msgstr "Ve všech"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Assigned Tools"
+#, kde-format
 msgctxt "@item: autotags scan only non assigned items"
 msgid "Non-Assigned Only"
-msgstr "Přidělené nástroje"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:113
 #, kde-format
@@ -38488,19 +38425,16 @@ msgid "Auto-Tagging Mode:"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#, fuzzy, kde-format
-#| msgid "Replace"
+#, kde-format
 msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
-msgstr "Nahradit"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Update"
+#, kde-format
 msgctxt "@item: update the autotags entries in database"
 msgid "Update"
-msgstr "Aktualizace"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, kde-format
@@ -38512,13 +38446,12 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Selection Method"
+#, kde-format
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
 msgid "Detection Model:"
-msgstr "Metoda výběru"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, kde-format
@@ -38526,11 +38459,10 @@ msgid "No models available"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Selection Method"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Detection Accuracy:"
-msgstr "Metoda výběru"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #, kde-format
@@ -38551,12 +38483,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Translate to:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Translate Tags to:"
-msgstr "Přeložit do:"
+msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:185
 #, kde-format
@@ -41868,10 +41798,9 @@ msgid "Quality Test Engineer"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:157
-#, fuzzy, kde-format
-#| msgid "Port to Qt6,"
+#, kde-format
 msgid "Port to Qt6"
-msgstr "Portování na Qt6"
+msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:163
 #, kde-format
@@ -41936,10 +41865,9 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:225
 #: core/utilities/maintenance/main/maintenancedlg.cpp:273
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
-#, fuzzy, kde-format
-#| msgid "Image Quality Sorter"
+#, kde-format
 msgid "Image Quality Scanner"
-msgstr "Seřazovač kvality obrázků"
+msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:231
 #, kde-format
@@ -48633,7 +48561,7 @@ msgid "Set this option to indicate if image has geolocation information."
 msgstr "Zaškrtněte tuto volbu, aby se zobrazil ukazatel geolokace."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:153
-#: core/utilities/setup/misc/setupmisc.cpp:97
+#: core/utilities/setup/misc/setupmisc.cpp:82
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr ""
@@ -48649,31 +48577,31 @@ msgid "Disable this option if you do not want thumbnails to be cached on disk."
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:165
-#: core/utilities/setup/misc/setupmisc.cpp:119
+#: core/utilities/setup/misc/setupmisc.cpp:126
 #, kde-format
 msgid "Updates"
 msgstr "Aktualizace"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:169
-#: core/utilities/setup/misc/setupmisc.cpp:123
+#: core/utilities/setup/misc/setupmisc.cpp:130
 #, kde-format
 msgid "Check for new version:"
 msgstr "Zkontrolovat novou verzi:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:171
-#: core/utilities/setup/misc/setupmisc.cpp:125
+#: core/utilities/setup/misc/setupmisc.cpp:132
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr "Pouze pro stabilní vydání"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:172
-#: core/utilities/setup/misc/setupmisc.cpp:126
+#: core/utilities/setup/misc/setupmisc.cpp:133
 #, kde-format
 msgid "Weekly Pre-Releases"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:173
-#: core/utilities/setup/misc/setupmisc.cpp:127
+#: core/utilities/setup/misc/setupmisc.cpp:134
 #, kde-format
 msgid ""
 "Set this option to configure which kind of new versions must be check for "
@@ -48684,13 +48612,13 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:178
-#: core/utilities/setup/misc/setupmisc.cpp:132
+#: core/utilities/setup/misc/setupmisc.cpp:139
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr "Použít verzi s ladicími symboly"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:179
-#: core/utilities/setup/misc/setupmisc.cpp:133
+#: core/utilities/setup/misc/setupmisc.cpp:140
 #, kde-format
 msgid ""
 "If this option is enabled, a version including debug symbols will be used "
@@ -48700,26 +48628,26 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:184
-#: core/utilities/setup/misc/setupmisc.cpp:138
+#: core/utilities/setup/misc/setupmisc.cpp:145
 #, kde-format
 msgid "Last check: %1"
 msgstr "Poslední kontrola: %1"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:185
-#: core/utilities/setup/misc/setupmisc.cpp:139
+#: core/utilities/setup/misc/setupmisc.cpp:146
 #, kde-format
 msgid "Check now..."
 msgstr "Zkontrolovat nyní..."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:213
-#: core/utilities/setup/misc/setupmisc.cpp:199
+#: core/utilities/setup/misc/setupmisc.cpp:207
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behaviour"
 msgstr "Chování"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:220
-#: core/utilities/setup/misc/setupmisc.cpp:206
+#: core/utilities/setup/misc/setupmisc.cpp:214
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "&Při spuštění zobrazit úvodní obrazovku"
@@ -48730,19 +48658,19 @@ msgid "Use native file dialogs from the system"
 msgstr "Použít systémové souborové dialogy"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:224
-#: core/utilities/setup/misc/setupmisc.cpp:211
+#: core/utilities/setup/misc/setupmisc.cpp:219
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "Titulek postranního panelu:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:226
-#: core/utilities/setup/misc/setupmisc.cpp:213
+#: core/utilities/setup/misc/setupmisc.cpp:221
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "Jen pro aktivní kartu"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:227
-#: core/utilities/setup/misc/setupmisc.cpp:214
+#: core/utilities/setup/misc/setupmisc.cpp:222
 #, kde-format
 msgid "For All Tabs"
 msgstr "Pro všechny karty"
@@ -48755,126 +48683,126 @@ msgstr ""
 "panelů."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:231
-#: core/utilities/setup/misc/setupmisc.cpp:219
+#: core/utilities/setup/misc/setupmisc.cpp:227
 #, kde-format
 msgid "Widget style:"
 msgstr "Styl ovládacích prvků:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:233
-#: core/utilities/setup/misc/setupmisc.cpp:221
+#: core/utilities/setup/misc/setupmisc.cpp:229
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr "Tato volba umožní nastavit výchozí dekoraci oken a vzhled."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:257
-#: core/utilities/setup/misc/setupmisc.cpp:244
+#: core/utilities/setup/misc/setupmisc.cpp:252
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "Motiv ikon (změny se projeví po restartu):"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:259
-#: core/utilities/setup/misc/setupmisc.cpp:246
+#: core/utilities/setup/misc/setupmisc.cpp:254
 #, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "Tato volba umožní nastavit výchozí motiv ikon."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:263
-#: core/utilities/setup/misc/setupmisc.cpp:250
+#: core/utilities/setup/misc/setupmisc.cpp:258
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:264
-#: core/utilities/setup/misc/setupmisc.cpp:251
+#: core/utilities/setup/misc/setupmisc.cpp:259
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Breeze"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:265
-#: core/utilities/setup/misc/setupmisc.cpp:252
+#: core/utilities/setup/misc/setupmisc.cpp:260
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Breeze Tmavé"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:266
-#: core/utilities/setup/misc/setupmisc.cpp:253
+#: core/utilities/setup/misc/setupmisc.cpp:261
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:267
-#: core/utilities/setup/misc/setupmisc.cpp:254
+#: core/utilities/setup/misc/setupmisc.cpp:262
 #, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Ambiance"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:268
-#: core/utilities/setup/misc/setupmisc.cpp:255
+#: core/utilities/setup/misc/setupmisc.cpp:263
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "Humanity"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:269
-#: core/utilities/setup/misc/setupmisc.cpp:256
+#: core/utilities/setup/misc/setupmisc.cpp:264
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oxygen"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:294
-#: core/utilities/setup/misc/setupmisc.cpp:280
+#: core/utilities/setup/misc/setupmisc.cpp:288
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "Použít systémové téma ikon"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:301
-#: core/utilities/setup/misc/setupmisc.cpp:287
+#: core/utilities/setup/misc/setupmisc.cpp:295
 #, kde-format
 msgid "Application font:"
 msgstr "Písmo aplikace:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:302
-#: core/utilities/setup/misc/setupmisc.cpp:288
+#: core/utilities/setup/misc/setupmisc.cpp:296
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr "Zde můžete zvolit písmo použité v celé aplikaci."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
-#: core/utilities/setup/misc/setupmisc.cpp:303
+#: core/utilities/setup/misc/setupmisc.cpp:311
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Vzhled"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:324
-#: core/utilities/setup/misc/setupmisc.cpp:370
+#: core/utilities/setup/misc/setupmisc.cpp:378
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Kontrola pravopisu"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:330
-#: core/utilities/setup/misc/setupmisc.cpp:376
+#: core/utilities/setup/misc/setupmisc.cpp:384
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Překládání"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:336
-#: core/utilities/setup/misc/setupmisc.cpp:382
+#: core/utilities/setup/misc/setupmisc.cpp:390
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "Systém"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:370
-#: core/utilities/setup/misc/setupmisc.cpp:417
+#: core/utilities/setup/misc/setupmisc.cpp:425
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
@@ -50645,11 +50573,9 @@ msgid "Removing face"
 msgstr ""
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Remove all Faces"
+#, kde-format
 msgid "Remove all faces"
-msgstr "Odstranit všechny tváře"
+msgstr ""
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:165
 #, kde-format
@@ -51148,11 +51074,6 @@ msgstr "Ref. alba"
 msgid "Items"
 msgstr "Položky"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:69
-#, kde-format
-msgid "Avg. similarity"
-msgstr "Průměrná podobnost"
-
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:75
 #, kde-format
 msgid "This shows all found duplicate items."
@@ -51171,20 +51092,16 @@ msgid "Older or Larger"
 msgstr "Starší nebo větší"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:129
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity reference selection method"
-#| msgid "Prefer selected folder as reference"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected Album as reference"
-msgstr "Preferovat vybranou složku jako referenční"
+msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity reference selection method"
-#| msgid "Prefer other than selected folder as reference"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected Album as reference"
-msgstr "Preferovat starší než vybranou složku jako referenční"
+msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:135
 #, kde-format
@@ -51205,27 +51122,22 @@ msgid "Select method for reference image selection"
 msgstr "Vyberte metodu pro výběr referenčního obrázku"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:144
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference Album:"
-msgstr "Reference:"
+msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Reference"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Reference"
-msgstr "Reference"
+msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Restrict to:"
+#, kde-format
 msgctxt "@label"
 msgid "Restrict Search to:"
-msgstr "Omezit na:"
+msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, kde-format
@@ -51278,11 +51190,10 @@ msgid "Similarity range:"
 msgstr "Rozsah podobnosti:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:233
-#, fuzzy, kde-format
-#| msgid "Last Search"
+#, kde-format
 msgctxt "@label"
 msgid "Limit Search to:"
-msgstr "Poslední hledání"
+msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:237
 #, kde-format
@@ -51291,19 +51202,16 @@ msgid "None"
 msgstr "Žádný"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:238
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Reference Album only"
-msgstr "Reference:"
+msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:239
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity restriction"
-#| msgid "Exclude reference album"
+#, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference Album"
-msgstr "Vyjmout referenční album"
+msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:240
 #, kde-format
@@ -51382,19 +51290,12 @@ msgstr ""
 "otisky."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-#| "p><p>You can also use the context menu<br/> when browsing through your "
-#| "images.</p>"
+#, kde-format
 msgid ""
 "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
 "p><p>You can also use the context menu<br/>when browsing through<br/>your "
 "images.</p>"
 msgstr ""
-"<p>Sem přetáhněte obrázek<br/>podle kterého se budou<br/>vyhledávat podobné "
-"položky.</p><p>Při procházení vašich fotografií<br/> můžete použít "
-"kontextovou nabídku.</p>"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
 #, kde-format
@@ -56898,11 +56799,10 @@ msgid "Rotate Right"
 msgstr "Rotovat vpravo"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:538
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
-msgstr "Automaticky otočit"
+msgstr ""
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:571
 #: core/utilities/import/main/importui.cpp:551
@@ -59317,10 +59217,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "Faces data management: "
+#, kde-format
 msgid "Face engine management"
-msgstr "Správa obličejových dat"
+msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:249
 #, kde-format
@@ -62892,12 +62791,10 @@ msgid "Your collection will use this category:"
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Required Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
-msgstr "Stáhnout požadované soubory"
+msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:160
 #, kde-format
@@ -62920,10 +62817,9 @@ msgid "Use AutoTags Assignment feature"
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:243
-#, fuzzy, kde-format
-#| msgid "All files were downloaded successfully."
+#, kde-format
 msgid "All model files were downloaded successfully."
-msgstr "Všechny soubory byly úspěšně staženy."
+msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:252
 #, kde-format
@@ -64441,18 +64337,16 @@ msgid "Start"
 msgstr "Spustit"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
-#, fuzzy, kde-format
-#| msgid "Beta tester"
+#, kde-format
 msgctxt "@action:button"
 msgid "Begin test"
-msgstr "Beta tester"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
-#, fuzzy, kde-format
-#| msgid "Settings..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Testing..."
-msgstr "Nastavení..."
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:148
 #, kde-format
@@ -64485,10 +64379,9 @@ msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
+#, kde-format
 msgid "OpenCL is available on this system."
-msgstr "Na vašem systému není dostupná podpora OpenGL."
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:268
 #, kde-format
@@ -64496,74 +64389,59 @@ msgid "OpenCL acceleration device is available."
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:270
-#, fuzzy, kde-format
-#| msgctxt "@info: icc profile class"
-#| msgid "Link device"
+#, kde-format
 msgid "Using device: %1"
-msgstr "Spojovací zařízení"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
-#, fuzzy, kde-format
-#| msgid "This collection is currently not available."
+#, kde-format
 msgid "OpenCL acceleration device is not available."
-msgstr "Tato sbírka není momentálně dostupná."
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:279
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
+#, kde-format
 msgid "OpenCL is not available on this system."
-msgstr "Na vašem systému není dostupná podpora OpenGL."
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:284
-#, fuzzy, kde-format
-#| msgid "Loading image..."
+#, kde-format
 msgid "Loading test image..."
-msgstr "Načítání obrázku..."
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:293
-#, fuzzy, kde-format
-#| msgid "Binary not found."
+#, kde-format
 msgid "Test image not found."
-msgstr "Nenalezen spustitelný soubor."
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:300
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to save image to %1"
+#, kde-format
 msgid "Failed to load test image from %1"
-msgstr "Chyba při ukládání obrázku do %1"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:304
-#, fuzzy, kde-format
-#| msgid "Pan the image to a region"
+#, kde-format
 msgid "Preparing the image for processing..."
-msgstr "Posunout obrázek do oblasti"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:333
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Initializing Main View..."
+#, kde-format
 msgid "Initializing face detection model..."
-msgstr "Inicializace hlavního pohledu..."
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:340
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "Running face detection..."
-msgstr "Detekce obličeje"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:356
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Initializing Main View..."
+#, kde-format
 msgid "Initializing feature extraction model..."
-msgstr "Inicializace hlavního pohledu..."
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:363
-#, fuzzy, kde-format
-#| msgid "Preparing collection scan..."
+#, kde-format
 msgid "Preparing face for feature extraction..."
-msgstr "Příprava procházení sbírky..."
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:376
 #, kde-format
@@ -64571,22 +64449,19 @@ msgid "Extracting face features..."
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
-#, fuzzy, kde-format
-#| msgid "Failed to create folder"
+#, kde-format
 msgid "Failed to extract face features."
-msgstr "Nelze vytvořit složku"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:387
-#, fuzzy, kde-format
-#| msgid "Database copied successfully."
+#, kde-format
 msgid "All tests completed successfully!"
-msgstr "Databáze úspěšně zkopírována."
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
-#, fuzzy, kde-format
-#| msgid "OpenGL Error"
+#, kde-format
 msgid "OpenCV error: %1"
-msgstr "Chyba OpenGL"
+msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
 #, kde-format
@@ -64672,105 +64547,13 @@ msgstr "Jmé&no uživatele:"
 msgid "&Password:"
 msgstr "&Heslo:"
 
+#: core/utilities/setup/misc/setupmisc.cpp:38
+#, fuzzy, kde-format
+#| msgid "Scan for new items"
+msgid "&Scan for new items at startup"
+msgstr "Vyhledat nové položky"
+
 #: core/utilities/setup/misc/setupmisc.cpp:39
-#, kde-format
-msgid "Get album date source:"
-msgstr "Zdroj pro zjištění data alba:"
-
-#: core/utilities/setup/misc/setupmisc.cpp:41
-#, kde-format
-msgctxt "method to get the album date"
-msgid "From The Newest Item Date"
-msgstr "Podle nejnovější položky"
-
-#: core/utilities/setup/misc/setupmisc.cpp:42
-#, kde-format
-msgctxt "method to get the album date"
-msgid "From The Oldest Item Date"
-msgstr "Podle data nejstarší položky"
-
-#: core/utilities/setup/misc/setupmisc.cpp:43
-#, kde-format
-msgctxt "method to get the album date"
-msgid "From The Average Date"
-msgstr "Podle data průměrného data"
-
-#: core/utilities/setup/misc/setupmisc.cpp:44
-#, kde-format
-msgctxt "method to get the album date"
-msgid "From The Folder Date"
-msgstr "Podle data složky"
-
-#: core/utilities/setup/misc/setupmisc.cpp:45
-#, kde-format
-msgctxt "method to get the album date"
-msgid "No Change Of Date"
-msgstr ""
-
-#: core/utilities/setup/misc/setupmisc.cpp:46
-#, kde-format
-msgid ""
-"The album date is adjusted depending on the option set when new items are "
-"found during scanning."
-msgstr ""
-
-#: core/utilities/setup/misc/setupmisc.cpp:50
-#, kde-format
-msgid "String comparison type:"
-msgstr "Způsob porovnání řetězce:"
-
-#: core/utilities/setup/misc/setupmisc.cpp:52
-#, kde-format
-msgctxt "method to compare strings"
-msgid "Natural"
-msgstr "Přirozený"
-
-#: core/utilities/setup/misc/setupmisc.cpp:53
-#, kde-format
-msgctxt "method to compare strings"
-msgid "Normal"
-msgstr "Normální"
-
-#: core/utilities/setup/misc/setupmisc.cpp:54
-#, kde-format
-msgid ""
-"<qt>Sets the way in which strings are compared inside digiKam. This eg. "
-"influences the sorting of the tree views.<br/><b>Natural</b> tries to "
-"compare strings in a way that regards some normal conventions and will eg. "
-"result in sorting numbers naturally even if they have a different number of "
-"digits.<br/><b>Normal</b> uses a more technical approach. Use this style if "
-"you eg. want to entitle albums with ISO dates (201006 or 20090523) and the "
-"albums should be sorted according to these dates.</qt>"
-msgstr ""
-"<qt>Nastaví způsob, jakým budou porovnávány řetězce uvnitř digiKamu. To "
-"například ovlivní řazení ve stromovém pohledu.<br/><b>Přirozený</b> se "
-"pokusí porovnávat řetězce způsobem, který odpovídá běžným konvencím a např. "
-"výsledek řazení čísel bude přirozený, přestože počet číslic bude rozdílný."
-"<br/><b>Normální</b> používá více technické pojetí. Tento styl používejte, "
-"pokud např. si přejete alba pojmenovat daty dle ISO (201006 nebo 20090523) a "
-"alba mají být řazena podle těchto dat.</qt>"
-
-#: core/utilities/setup/misc/setupmisc.cpp:64
-#, kde-format
-msgid "Confirm when moving items to the &trash"
-msgstr "Potvrdit přesun položek do &koše"
-
-#: core/utilities/setup/misc/setupmisc.cpp:65
-#, kde-format
-msgid "Confirm when permanently deleting items"
-msgstr "Potvrdit &trvalé odstranění položek"
-
-#: core/utilities/setup/misc/setupmisc.cpp:66
-#, kde-format
-msgid "Do not confirm when applying changes in the &right sidebar"
-msgstr "Nepotv&rzovat uplatnění změn v pravém bočním panelu"
-
-#: core/utilities/setup/misc/setupmisc.cpp:67
-#, kde-format
-msgid "&Scan for new items at startup (makes startup slower)"
-msgstr "Vyhledávat nové položky při &spuštění (zpomaluje spuštění)"
-
-#: core/utilities/setup/misc/setupmisc.cpp:68
 #, kde-format
 msgid ""
 "Set this option to force digiKam to scan all collections for new items to\n"
@@ -64799,12 +64582,12 @@ msgstr ""
 "zakázat tuto možnost a naplánovat si ruční prohledání sbírek prostřednictvím "
 "nástroje správy."
 
-#: core/utilities/setup/misc/setupmisc.cpp:76
+#: core/utilities/setup/misc/setupmisc.cpp:47
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
 msgstr "Rychlá kontrola (zjišťuje nové, smazané a přejmenované položky)"
 
-#: core/utilities/setup/misc/setupmisc.cpp:77
+#: core/utilities/setup/misc/setupmisc.cpp:48
 #, kde-format
 msgid ""
 "Set this option to significantly speed up the scan. New items, deleted and "
@@ -64814,30 +64597,30 @@ msgid ""
 "option must be deactivated."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:83
+#: core/utilities/setup/misc/setupmisc.cpp:54
 #, kde-format
 msgid "Detect faces in newly added images"
 msgstr "Rozpoznat obličeje v nově přidaných obrázcích"
 
-#: core/utilities/setup/misc/setupmisc.cpp:84
-#, fuzzy, kde-format
-#| msgid "Background opacity: "
+#: core/utilities/setup/misc/setupmisc.cpp:55
+#, kde-format
 msgid "Enable background face recognition scan"
-msgstr "Krytí pozadí: "
+msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:85
+#: core/utilities/setup/misc/setupmisc.cpp:56
 #, kde-format
 msgid ""
 "Set this option to automatically start a background face recognition scan\n"
 "when a new face is tagged. This will make the tagging process easier."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:88
-#, kde-format
-msgid "Remove obsolete core database objects (makes startup slower)"
+#: core/utilities/setup/misc/setupmisc.cpp:59
+#, fuzzy, kde-format
+#| msgid "Remove obsolete core database objects (makes startup slower)"
+msgid "Remove obsolete core database objects"
 msgstr "Odstranit zastaralé objekty základní databáze (zpomaluje spuštění)"
 
-#: core/utilities/setup/misc/setupmisc.cpp:89
+#: core/utilities/setup/misc/setupmisc.cpp:60
 #, kde-format
 msgid ""
 "Set this option to force digiKam to clean up the core database from obsolete "
@@ -64857,27 +64640,127 @@ msgstr ""
 "databáze náhledů\n"
 "nebo obličejů. Pročištění těchto databázi naleznete v nabídce Správa."
 
-#: core/utilities/setup/misc/setupmisc.cpp:95
+#: core/utilities/setup/misc/setupmisc.cpp:66
 #, kde-format
-msgid "Initially select the first item in the album"
+msgctxt "@info"
+msgid ""
+"<font color='red'><i>Warning: These settings makes startup slower!</i></font>"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:96
+#: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format
-msgid "Expand current tree item with a single mouse click"
-msgstr ""
+msgid "Confirm when moving items to the &trash"
+msgstr "Potvrdit přesun položek do &koše"
 
-#: core/utilities/setup/misc/setupmisc.cpp:98
+#: core/utilities/setup/misc/setupmisc.cpp:77
+#, kde-format
+msgid "Confirm when permanently deleting items"
+msgstr "Potvrdit &trvalé odstranění položek"
+
+#: core/utilities/setup/misc/setupmisc.cpp:78
+#, kde-format
+msgid "Do not confirm when applying changes in the &right sidebar"
+msgstr "Nepotv&rzovat uplatnění změn v pravém bočním panelu"
+
+#: core/utilities/setup/misc/setupmisc.cpp:79
 #, kde-format
 msgid "Show only face tags for assigning names in people sidebar"
 msgstr "Na panelu Lidé zobrazovat pouze značky obličejů pro přiřazení jmen"
 
-#: core/utilities/setup/misc/setupmisc.cpp:104
+#: core/utilities/setup/misc/setupmisc.cpp:80
+#, kde-format
+msgid "Initially select the first item in the album"
+msgstr ""
+
+#: core/utilities/setup/misc/setupmisc.cpp:81
+#, kde-format
+msgid "Expand current tree item with a single mouse click"
+msgstr ""
+
+#: core/utilities/setup/misc/setupmisc.cpp:87
+#, kde-format
+msgid "Get album date source:"
+msgstr "Zdroj pro zjištění data alba:"
+
+#: core/utilities/setup/misc/setupmisc.cpp:89
+#, kde-format
+msgctxt "method to get the album date"
+msgid "From The Newest Item Date"
+msgstr "Podle nejnovější položky"
+
+#: core/utilities/setup/misc/setupmisc.cpp:90
+#, kde-format
+msgctxt "method to get the album date"
+msgid "From The Oldest Item Date"
+msgstr "Podle data nejstarší položky"
+
+#: core/utilities/setup/misc/setupmisc.cpp:91
+#, kde-format
+msgctxt "method to get the album date"
+msgid "From The Average Date"
+msgstr "Podle data průměrného data"
+
+#: core/utilities/setup/misc/setupmisc.cpp:92
+#, kde-format
+msgctxt "method to get the album date"
+msgid "From The Folder Date"
+msgstr "Podle data složky"
+
+#: core/utilities/setup/misc/setupmisc.cpp:93
+#, kde-format
+msgctxt "method to get the album date"
+msgid "No Change Of Date"
+msgstr ""
+
+#: core/utilities/setup/misc/setupmisc.cpp:94
+#, kde-format
+msgid ""
+"The album date is adjusted depending on the option set when new items are "
+"found during scanning."
+msgstr ""
+
+#: core/utilities/setup/misc/setupmisc.cpp:98
+#, kde-format
+msgid "String comparison type:"
+msgstr "Způsob porovnání řetězce:"
+
+#: core/utilities/setup/misc/setupmisc.cpp:100
+#, kde-format
+msgctxt "method to compare strings"
+msgid "Natural"
+msgstr "Přirozený"
+
+#: core/utilities/setup/misc/setupmisc.cpp:101
+#, kde-format
+msgctxt "method to compare strings"
+msgid "Normal"
+msgstr "Normální"
+
+#: core/utilities/setup/misc/setupmisc.cpp:102
+#, kde-format
+msgid ""
+"<qt>Sets the way in which strings are compared inside digiKam. This eg. "
+"influences the sorting of the tree views.<br/><b>Natural</b> tries to "
+"compare strings in a way that regards some normal conventions and will eg. "
+"result in sorting numbers naturally even if they have a different number of "
+"digits.<br/><b>Normal</b> uses a more technical approach. Use this style if "
+"you eg. want to entitle albums with ISO dates (201006 or 20090523) and the "
+"albums should be sorted according to these dates.</qt>"
+msgstr ""
+"<qt>Nastaví způsob, jakým budou porovnávány řetězce uvnitř digiKamu. To "
+"například ovlivní řazení ve stromovém pohledu.<br/><b>Přirozený</b> se "
+"pokusí porovnávat řetězce způsobem, který odpovídá běžným konvencím a např. "
+"výsledek řazení čísel bude přirozený, přestože počet číslic bude rozdílný."
+"<br/><b>Normální</b> používá více technické pojetí. Tento styl používejte, "
+"pokud např. si přejete alba pojmenovat daty dle ISO (201006 nebo 20090523) a "
+"alba mají být řazena podle těchto dat.</qt>"
+
+#: core/utilities/setup/misc/setupmisc.cpp:111
 #, kde-format
 msgid "Lower bound for minimum similarity:"
 msgstr "Spodní hranice minimální podobnosti:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:110
+#: core/utilities/setup/misc/setupmisc.cpp:117
 #, kde-format
 msgid ""
 "Select here the lower bound of the minimum similarity threshold for fuzzy "
@@ -64888,17 +64771,17 @@ msgstr ""
 "Výchozí hodnota je 40 a zadání hodnoty nižší, než 40, může hledání "
 "<b>výrazně</b> zpomalit."
 
-#: core/utilities/setup/misc/setupmisc.cpp:207
+#: core/utilities/setup/misc/setupmisc.cpp:215
 #, kde-format
 msgid "Use native file dialogs from system"
 msgstr "Použít systémové souborové dialogy"
 
-#: core/utilities/setup/misc/setupmisc.cpp:208
+#: core/utilities/setup/misc/setupmisc.cpp:216
 #, kde-format
 msgid "Draw frames around grouped items"
 msgstr "Kreslit rámečky okolo seskupených položek"
 
-#: core/utilities/setup/misc/setupmisc.cpp:215
+#: core/utilities/setup/misc/setupmisc.cpp:223
 #, kde-format
 msgid ""
 "Set this option to configure how sidebar tab titles are visible. Use \"Only "
@@ -64909,12 +64792,12 @@ msgstr ""
 "máte monitor s nižším rozlišením, jako například notebook, zvolte možnost "
 "\"Jen pro aktivní kartu\"."
 
-#: core/utilities/setup/misc/setupmisc.cpp:310
+#: core/utilities/setup/misc/setupmisc.cpp:318
 #, kde-format
 msgid "Perform the following operations on all group members:"
 msgstr "Provést následující operace na všech členech skupiny:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:311
+#: core/utilities/setup/misc/setupmisc.cpp:319
 #, kde-format
 msgid ""
 "When images are grouped the following operations<br/>are performed only on "
@@ -64923,25 +64806,25 @@ msgid ""
 "operation is executed."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:317
+#: core/utilities/setup/misc/setupmisc.cpp:325
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "No"
 msgstr "Ne"
 
-#: core/utilities/setup/misc/setupmisc.cpp:318
+#: core/utilities/setup/misc/setupmisc.cpp:326
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Yes"
 msgstr "Ano"
 
-#: core/utilities/setup/misc/setupmisc.cpp:319
+#: core/utilities/setup/misc/setupmisc.cpp:327
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Ask"
 msgstr "Dotázat se"
 
-#: core/utilities/setup/misc/setupmisc.cpp:362
+#: core/utilities/setup/misc/setupmisc.cpp:370
 #, kde-format
 msgctxt "@title:tab"
 msgid "Grouping"
@@ -66175,41 +66058,8 @@ msgstr "Alba"
 msgid "Import Items"
 msgstr "Importovat položky"
 
-#~ msgid "Detect and recognize Faces"
-#~ msgstr "Detekovat a rozeznat obličeje"
+#~ msgid "Avg. similarity"
+#~ msgstr "Průměrná podobnost"
 
-#, fuzzy
-#~| msgctxt "camera model"
-#~| msgid "Model:"
-#~ msgctxt "@label: autotags scanning mode"
-#~ msgid "Scan Mode:"
-#~ msgstr "Model:"
-
-#~ msgctxt "@label"
-#~ msgid "Restriction:"
-#~ msgstr "Omezení:"
-
-#, fuzzy
-#~| msgctxt "@label:listbox similarity restriction"
-#~| msgid "Restrict to reference album"
-#~ msgctxt "@label:listbox similarity restriction"
-#~ msgid "Restrict to reference Album"
-#~ msgstr "Omezit na referenční album"
-
-#~ msgctxt "@label"
-#~ msgid "Search in:"
-#~ msgstr "Hledat v:"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid ""
-#~ "digiKam can search for faces in your photos.\n"
-#~ "When you have identified your friends on a number of photos,\n"
-#~ "it can also recognize the people shown on your photos."
-#~ msgstr ""
-#~ "DigiKam může vyhledat ve vašich fotografiích obličeje.\n"
-#~ "Pokud jste identifikovali vaše přátele na více fotografiích,\n"
-#~ "mohou být tyto osoby rozeznány na vašich ostatních snímcích."
-
-#~ msgctxt "@title:tab"
-#~ msgid "Workflow"
-#~ msgstr "Proces"
+#~ msgid "&Scan for new items at startup (makes startup slower)"
+#~ msgstr "Vyhledávat nové položky při &spuštění (zpomaluje spuštění)"
