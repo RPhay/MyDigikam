@@ -433,7 +433,7 @@ bool FacePipelineDetectRecognize::extractor()
                 {
                     for (int j = 0; j < faces.size(); ++j)
                     {
-                        if (faces[j].region().intersects(TagRegion(rect), 0.85))
+                        if (faces[j].region().intersects(TagRegion(rect), 0.5))
                         {
                             if (faces[j].isConfirmedName() || faces[j].isIgnoredName())
                             {
