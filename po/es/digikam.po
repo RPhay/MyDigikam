@@ -47,14 +47,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-13 02:07+0000\n"
-"PO-Revision-Date: 2025-05-05 20:30+0100\n"
+"PO-Revision-Date: 2025-05-13 19:50+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.04.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -67096,10 +67096,9 @@ msgid "&Password:"
 msgstr "Con&traseña:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:38
-#, fuzzy, kde-format
-#| msgid "Scan for new items"
+#, kde-format
 msgid "&Scan for new items at startup"
-msgstr "Buscar elementos nuevos"
+msgstr "Bu&scar elementos nuevos durante el inicio"
 
 #: core/utilities/setup/misc/setupmisc.cpp:39
 #, kde-format
@@ -67174,12 +67173,9 @@ msgstr ""
 "cara. Esto hace que el proceso de etiquetado sea más fácil."
 
 #: core/utilities/setup/misc/setupmisc.cpp:59
-#, fuzzy, kde-format
-#| msgid "Remove obsolete core database objects (makes startup slower)"
+#, kde-format
 msgid "Remove obsolete core database objects"
-msgstr ""
-"Eliminar objetos de bases de datos principales obsoletos (hace que el inicio "
-"sea lento)"
+msgstr "Eliminar objetos de bases de datos principales obsoletos"
 
 #: core/utilities/setup/misc/setupmisc.cpp:60
 #, kde-format
@@ -67208,6 +67204,8 @@ msgctxt "@info"
 msgid ""
 "<font color='red'><i>Warning: These settings makes startup slower!</i></font>"
 msgstr ""
+"<font color='red'><i>Advertencia: Estos ajustes hacen que el inicio sea más "
+"lento.</i></font>"
 
 #: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format
@@ -68662,9 +68660,3 @@ msgstr "Elementos del álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementos importados"
-
-#~ msgid "Avg. similarity"
-#~ msgstr "Similitud media"
-
-#~ msgid "&Scan for new items at startup (makes startup slower)"
-#~ msgstr "&Buscar nuevos elementos durante el inicio (ralentiza el inicio)"

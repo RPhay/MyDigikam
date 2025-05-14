@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-13 02:07+0000\n"
-"PO-Revision-Date: 2025-05-05 09:49+0300\n"
+"PO-Revision-Date: 2025-05-13 09:20+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -67307,10 +67307,9 @@ msgid "&Password:"
 msgstr "П&ароль:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:38
-#, fuzzy, kde-format
-#| msgid "Scan for new items"
+#, kde-format
 msgid "&Scan for new items at startup"
-msgstr "Виявити нові зображення"
+msgstr "Ви&явити нові зображення при запуску"
 
 #: core/utilities/setup/misc/setupmisc.cpp:39
 #, kde-format
@@ -67385,10 +67384,9 @@ msgstr ""
 "встановлення міток."
 
 #: core/utilities/setup/misc/setupmisc.cpp:59
-#, fuzzy, kde-format
-#| msgid "Remove obsolete core database objects (makes startup slower)"
+#, kde-format
 msgid "Remove obsolete core database objects"
-msgstr "Вилучити застарілі об'єкти основної бази даних (сповільнює запуск)"
+msgstr "Вилучити застарілі об'єкти основної бази даних"
 
 #: core/utilities/setup/misc/setupmisc.cpp:60
 #, kde-format
@@ -67418,6 +67416,8 @@ msgctxt "@info"
 msgid ""
 "<font color='red'><i>Warning: These settings makes startup slower!</i></font>"
 msgstr ""
+"<font color='red'><i>Попередження: ці параметри уповільнюють запуск!</i></"
+"font>"
 
 #: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format

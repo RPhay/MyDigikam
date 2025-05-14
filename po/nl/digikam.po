@@ -63,14 +63,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-13 02:07+0000\n"
-"PO-Revision-Date: 2025-05-05 10:02+0200\n"
+"PO-Revision-Date: 2025-05-13 13:07+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.04.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -66977,10 +66977,9 @@ msgid "&Password:"
 msgstr "&Wachtwoord:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:38
-#, fuzzy, kde-format
-#| msgid "Scan for new items"
+#, kde-format
 msgid "&Scan for new items at startup"
-msgstr "Nieuwe items zoeken"
+msgstr "&Naar nieuwe items zoeken bij opstarten"
 
 #: core/utilities/setup/misc/setupmisc.cpp:39
 #, kde-format
@@ -67054,12 +67053,9 @@ msgstr ""
 "Dit zal het proces van tags toekennen vergemakkelijken."
 
 #: core/utilities/setup/misc/setupmisc.cpp:59
-#, fuzzy, kde-format
-#| msgid "Remove obsolete core database objects (makes startup slower)"
+#, kde-format
 msgid "Remove obsolete core database objects"
-msgstr ""
-"Verouderde objecten in de kern-database verwijderen (maakt opstarten "
-"langzamer)"
+msgstr "Verouderde objecten in de kern-database verwijderen"
 
 #: core/utilities/setup/misc/setupmisc.cpp:60
 #, kde-format
@@ -67088,6 +67084,8 @@ msgctxt "@info"
 msgid ""
 "<font color='red'><i>Warning: These settings makes startup slower!</i></font>"
 msgstr ""
+"<font color='red'><i>Waarschuwing: deze instellingen maken het opstarten "
+"langzamer!</i></font>"
 
 #: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format

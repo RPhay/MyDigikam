@@ -64449,10 +64449,9 @@ msgid "&Password:"
 msgstr "密码(&P)："
 
 #: core/utilities/setup/misc/setupmisc.cpp:38
-#, fuzzy, kde-format
-#| msgid "Scan for new items"
+#, kde-format
 msgid "&Scan for new items at startup"
-msgstr "扫描新增项目"
+msgstr ""
 
 #: core/utilities/setup/misc/setupmisc.cpp:39
 #, kde-format
@@ -64513,10 +64512,9 @@ msgstr ""
 "从而简化标签分配过程。"
 
 #: core/utilities/setup/misc/setupmisc.cpp:59
-#, fuzzy, kde-format
-#| msgid "Remove obsolete core database objects (makes startup slower)"
+#, kde-format
 msgid "Remove obsolete core database objects"
-msgstr "移除已失效的核心数据库条目 (会拖慢启动速度)"
+msgstr ""
 
 #: core/utilities/setup/misc/setupmisc.cpp:60
 #, kde-format
@@ -65900,9 +65898,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgid "Avg. similarity"
-#~ msgstr "平均相似度"
-
-#~ msgid "&Scan for new items at startup (makes startup slower)"
-#~ msgstr "启动时扫描新增项目(会拖慢启动过程) (&S)"

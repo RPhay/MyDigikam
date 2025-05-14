@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-13 02:07+0000\n"
-"PO-Revision-Date: 2025-05-05 07:18+0200\n"
+"PO-Revision-Date: 2025-05-13 06:42+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -66523,10 +66523,9 @@ msgid "&Password:"
 msgstr "Geslo:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:38
-#, fuzzy, kde-format
-#| msgid "Scan for new items"
+#, kde-format
 msgid "&Scan for new items at startup"
-msgstr "Preišči za novimi predmeti"
+msgstr "Prečeši za novimi predmeti ob zagonu"
 
 #: core/utilities/setup/misc/setupmisc.cpp:39
 #, kde-format
@@ -66598,11 +66597,9 @@ msgstr ""
 "ko je nov obraz označen. To bo olajšalo postopek označevanja."
 
 #: core/utilities/setup/misc/setupmisc.cpp:59
-#, fuzzy, kde-format
-#| msgid "Remove obsolete core database objects (makes startup slower)"
+#, kde-format
 msgid "Remove obsolete core database objects"
-msgstr ""
-"Odstranjevanje zastarelih predmetov jedrne baze (naredi zagon počasnejši)"
+msgstr "Odstrani zastarele osnovne objekte baze podatkov"
 
 #: core/utilities/setup/misc/setupmisc.cpp:60
 #, kde-format
@@ -66632,6 +66629,7 @@ msgctxt "@info"
 msgid ""
 "<font color='red'><i>Warning: These settings makes startup slower!</i></font>"
 msgstr ""
+"<font color='red'><i>Opozorilo: Te nastavitve upočasnijo zagon!</i></font>"
 
 #: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format
