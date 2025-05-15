@@ -64451,7 +64451,7 @@ msgstr "密码(&P)："
 #: core/utilities/setup/misc/setupmisc.cpp:38
 #, kde-format
 msgid "&Scan for new items at startup"
-msgstr ""
+msgstr "启动时扫描新项目(&S)"
 
 #: core/utilities/setup/misc/setupmisc.cpp:39
 #, kde-format
@@ -64514,7 +64514,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:59
 #, kde-format
 msgid "Remove obsolete core database objects"
-msgstr ""
+msgstr "移除过时的核心数据库对象"
 
 #: core/utilities/setup/misc/setupmisc.cpp:60
 #, kde-format
@@ -64539,7 +64539,7 @@ msgstr ""
 msgctxt "@info"
 msgid ""
 "<font color='red'><i>Warning: These settings makes startup slower!</i></font>"
-msgstr ""
+msgstr "<font color='red'><i>警告：这些设置会使启动速度变慢。</i></font>"
 
 #: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format
