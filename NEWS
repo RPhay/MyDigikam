@@ -20,6 +20,9 @@ OpenCV/OpenCL    The user can now turn off OpenCL for the AI models preventing c
                  GPU drivers are not fully installed, but OpenCL can continued to be used elsewhere.
                  Added a test function to ensure OpenCL functionality with AI/ML functions.
                  See Settings->Miscellaneous->System.
+Plugins:         New G'MIC Generic plugin working as layer mode from the stack of images (icon-view, Editor stack,
+                 Showfoto Stack, Light Table stack). This allow to assemble photos together,
+                 for exemple using the Montage G'MIC filter.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -230,8 +233,8 @@ BUGFIXES:
 204 ==> 504119 - OpenCL not recognized even if installed.
 205 ==> 504087 - Startup factor 4 slower than with previous versions.
 206 ==> 504019 - Create zoom modes.
-207 ==> 
-208 ==> 
+207 ==> 149936 - Allow to combine pictures in a new picture.
+208 ==> 451307 - Add support of multiple item selection in GMic-Qt to create collage with the "Montage" tool.
 209 ==> 
 210 ==> 
 211 ==> 
