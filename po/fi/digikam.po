@@ -37337,12 +37337,14 @@ msgid "No Transformation"
 msgstr "Perusmuunnokset"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Flip Horizontal"
 msgid "Flip Horizontal"
 msgstr "Peilaa vaakatasossa"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:411
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Flip Vertical"
 msgid "Flip Vertical"
 msgstr "Peilaa pystytasossa"
 
