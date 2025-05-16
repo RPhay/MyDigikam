@@ -229,7 +229,7 @@ BUGFIXES:
 203 ==> 503885 - Fails to write to sidecar file, leaving it corrupt.
 204 ==> 504119 - OpenCL not recognized even if installed.
 205 ==> 504087 - Startup factor 4 slower than with previous versions.
-206 ==> 
+206 ==> 504019 - Create zoom modes.
 207 ==> 
 208 ==> 
 209 ==> 
