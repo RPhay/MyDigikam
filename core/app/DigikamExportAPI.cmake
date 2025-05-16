@@ -97,6 +97,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/mainview/dactivelabel.h
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/itemview/ditemtooltip.h
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/files/filesaveconflictbox.h
+              ${CMAKE_SOURCE_DIR}/core/libs/widgets/files/dfiledialog.h
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/colors/dcolorselector.h
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/graphicsview/imagezoomsettings.h
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/graphicsview/previewlayout.h
