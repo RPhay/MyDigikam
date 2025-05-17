@@ -37230,10 +37230,9 @@ msgid "Rotate 90°"
 msgstr "Rotar 180°"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:421
-#, fuzzy, kde-format
-#| msgid "Rotate 180 degrees"
+#, kde-format
 msgid "Rotate 180°"
-msgstr "Rotar 180 graos"
+msgstr "Rotar 180°"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:426
 #, fuzzy, kde-format
