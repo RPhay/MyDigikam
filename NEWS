@@ -238,7 +238,7 @@ BUGFIXES:
 209 ==> 383082 - Collage feature like PICASA one.
 210 ==> 504456 - Confirming multiple correctly recognized faces at once does not exist.
 211 ==> 504359 - Using digiKam across two machines causes "storage location not available" error after switching machines.
-212 ==> 
+212 ==> 504482 - Crash on launch after install.
 213 ==> 
 214 ==> 
 215 ==> 
