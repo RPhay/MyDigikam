@@ -237,7 +237,7 @@ BUGFIXES:
 208 ==> 451307 - Add support of multiple item selection in GMic-Qt to create collage with the "Montage" tool.
 209 ==> 383082 - Collage feature like PICASA one.
 210 ==> 504456 - Confirming multiple correctly recognized faces at once does not exist.
-211 ==> 
+211 ==> 504359 - Using digiKam across two machines causes "storage location not available" error after switching machines.
 212 ==> 
 213 ==> 
 214 ==> 
