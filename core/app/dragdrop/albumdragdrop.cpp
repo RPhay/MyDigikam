@@ -55,7 +55,7 @@ AlbumModel* AlbumDragDropHandler::model() const
 }
 
 bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
-                                     const QDropEvent* e,
+                                     QDropEvent* e,
                                      const QModelIndex& droppedOn)
 {
     if (accepts(e, droppedOn) == Qt::IgnoreAction)
@@ -251,6 +251,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
         }
         else
         {
+            e->accept();
             QMenu popMenu(view);
             QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
             QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));

@@ -35,7 +35,7 @@ public:
     AlbumModel* model()                            const override;
 
     bool dropEvent(QAbstractItemView* view,
-                   const QDropEvent* e,
+                   QDropEvent* e,
                    const QModelIndex& droppedOn)         override;
 
     Qt::DropAction accepts(const QDropEvent* e,

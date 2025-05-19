@@ -37,7 +37,7 @@ QAbstractItemModel* AbstractItemDragDropHandler::model() const
     return m_model;
 }
 
-bool AbstractItemDragDropHandler::dropEvent(QAbstractItemView*, const QDropEvent*, const QModelIndex&)
+bool AbstractItemDragDropHandler::dropEvent(QAbstractItemView*, QDropEvent*, const QModelIndex&)
 {
     return false;
 }

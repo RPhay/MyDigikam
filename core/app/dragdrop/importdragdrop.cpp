@@ -174,7 +174,7 @@ static DropAction groupAction(const QDropEvent*, QWidget* view)
 */
 
 bool ImportDragDropHandler::dropEvent(QAbstractItemView* abstractview,
-                                      const QDropEvent* e,
+                                      QDropEvent* e,
                                       const QModelIndex& droppedOn)
 {
     ImportCategorizedView* const view = static_cast<ImportCategorizedView*>(abstractview);

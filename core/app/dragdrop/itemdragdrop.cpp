@@ -309,7 +309,9 @@ void ItemDragDropHandler::setReadOnlyDrop(bool readOnly)
     m_readOnly = readOnly;
 }
 
-bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDropEvent* e, const QModelIndex& droppedOn)
+bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview,
+                                    QDropEvent* e,
+                                    const QModelIndex& droppedOn)
 {
     Album* album = nullptr;
 
