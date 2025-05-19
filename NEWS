@@ -23,6 +23,7 @@ OpenCV/OpenCL    The user can now turn off OpenCL for the AI models preventing c
 Plugins:         New G'MIC Generic plugin working as layer mode from the stack of images (icon-view, Editor stack,
                  Showfoto Stack, Light Table stack). This allow to assemble photos together,
                  for exemple using the Montage G'MIC filter.
+                 G'MIC-Qt updated to last v3.5.0.
 
 *****************************************************************************************************
 BUGFIXES:
