@@ -53,7 +53,7 @@ TagModel* TagDragDropHandler::model() const
 }
 
 bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
-                                   QDropEvent* e,
+                                   const QDropEvent* e,
                                    const QModelIndex& droppedOn)
 {
     if (accepts(e, droppedOn) == Qt::IgnoreAction)
@@ -83,7 +83,6 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             return false;
         }
 
-        e->accept();
         QMenu popMenu(view);
         QAction* const gotoAction  = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")), i18n("&Move Here"));
         QAction* const mergeAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("merge")),   i18n("M&erge Here"));

@@ -49,7 +49,7 @@ QAction* ShowfotoDragDropHandler::addCancelAction(QMenu* const menu)
     return menu->addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18nc("@action", "C&ancel"));
 }
 
-bool ShowfotoDragDropHandler::dropEvent(QAbstractItemView* abstractview, QDropEvent* e, const QModelIndex& droppedOn)
+bool ShowfotoDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDropEvent* e, const QModelIndex& droppedOn)
 {
     Q_UNUSED(abstractview);
 

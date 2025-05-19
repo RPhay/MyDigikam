@@ -36,7 +36,7 @@ AbstractAlbumModel* AlbumModelDragDropHandler::model() const
     return m_model;
 }
 
-bool AlbumModelDragDropHandler::dropEvent(QAbstractItemView*, QDropEvent*, const QModelIndex&)
+bool AlbumModelDragDropHandler::dropEvent(QAbstractItemView*, const QDropEvent*, const QModelIndex&)
 {
     return false;
 }

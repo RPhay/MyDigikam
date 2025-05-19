@@ -45,7 +45,7 @@ public:
      * It may be invalid (dropped on decoration, viewport)
      * Returns true if the event is to be accepted.
      */
-    virtual bool dropEvent(QAbstractItemView* view, QDropEvent* e, const QModelIndex& droppedOn);
+    virtual bool dropEvent(QAbstractItemView* view, const QDropEvent* e, const QModelIndex& droppedOn);
 
     /**
      * Returns if the given mime data is accepted for drop on dropIndex.

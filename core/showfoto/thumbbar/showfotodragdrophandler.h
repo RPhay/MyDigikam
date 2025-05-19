@@ -37,7 +37,7 @@ public:
 
     ShowfotoItemModel* model()                                                                           const override;
 
-    bool           dropEvent(QAbstractItemView* view, QDropEvent* e, const QModelIndex& droppedOn)       override;
+    bool           dropEvent(QAbstractItemView* view, const QDropEvent* e, const QModelIndex& droppedOn)       override;
     Qt::DropAction accepts(const QDropEvent* e, const QModelIndex& dropIndex)                                  override;
     QStringList    mimeTypes()                                                                           const override;
     QMimeData*     createMimeData(const QList<QModelIndex>&)                                                   override;

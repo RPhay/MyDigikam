@@ -35,7 +35,7 @@ public:
     TagModel* model()                              const override;
 
     bool dropEvent(QAbstractItemView* view,
-                   QDropEvent* e,
+                   const QDropEvent* e,
                    const QModelIndex& droppedOn)         override;
 
     Qt::DropAction accepts(const QDropEvent* e,
