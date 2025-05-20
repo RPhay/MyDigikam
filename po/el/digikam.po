@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-13 02:07+0000\n"
+"POT-Creation-Date: 2025-05-20 01:59+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -250,8 +250,8 @@ msgstr "&Αντιγραφή εδώ"
 #: core/app/dragdrop/importdragdrop.cpp:57
 #: core/app/dragdrop/importdragdrop.cpp:196
 #: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:810
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:262
-#: core/app/dragdrop/tagdragdrop.cpp:329 core/app/dragdrop/tagdragdrop.cpp:455
+#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:264
+#: core/app/dragdrop/tagdragdrop.cpp:331 core/app/dragdrop/tagdragdrop.cpp:457
 #, kde-format
 msgid "C&ancel"
 msgstr "&Ακύρωση"
@@ -357,7 +357,7 @@ msgstr "Γίνεται εισαγωγή"
 msgid "M&erge Here"
 msgstr "Σ&υγχώνευση Εδώ"
 
-#: core/app/dragdrop/tagdragdrop.cpp:251
+#: core/app/dragdrop/tagdragdrop.cpp:253
 #, fuzzy, kde-format
 #| msgid "Change face name from '%2' to '%3'"
 #| msgid_plural "Change face names from '%2' to '%3'"
@@ -366,19 +366,19 @@ msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "Αλλαγή ονόματος προσώπου από '%2' σε '%3'"
 msgstr[1] "Αλλαγή ονομάτων προσώπου από '%2' σε '%3'"
 
-#: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:451
+#: core/app/dragdrop/tagdragdrop.cpp:260 core/app/dragdrop/tagdragdrop.cpp:453
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Ορισμός ως εικόνα επισκόπησης της ετικέτας"
 
-#: core/app/dragdrop/tagdragdrop.cpp:323
+#: core/app/dragdrop/tagdragdrop.cpp:325
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "Αλλαγή ονόματος προσώπου από '%2' σε '%3'"
 msgstr[1] "Αλλαγή ονομάτων προσώπου από '%2' σε '%3'"
 
-#: core/app/dragdrop/tagdragdrop.cpp:446
+#: core/app/dragdrop/tagdragdrop.cpp:448
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Αντιστοίχιση ετικετών '%1' στα αντικείμενα"
