@@ -83,25 +83,23 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             return false;
         }
 
-        QMenu* const popMenu       = new QMenu(view);
-        QAction* const gotoAction  = popMenu->addAction(QIcon::fromTheme(QLatin1String("go-jump")), i18n("&Move Here"));
-        QAction* const mergeAction = popMenu->addAction(QIcon::fromTheme(QLatin1String("merge")),   i18n("M&erge Here"));
-        popMenu->addSeparator();
-        popMenu->addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
-        popMenu->setMouseTracking(true);
+        QMenu popMenu(view);
+        QAction* const gotoAction  = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")), i18n("&Move Here"));
+        QAction* const mergeAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("merge")),   i18n("M&erge Here"));
+        popMenu.addSeparator();
+        popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
+        popMenu.setMouseTracking(true);
         qApp->restoreOverrideCursor();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-        QAction* const choice      = popMenu->exec(view->mapToGlobal(e->position().toPoint()));
+        QAction* const choice      = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
 
 #else
 
-        QAction* const choice      = popMenu->exec(view->mapToGlobal(e->pos()));
+        QAction* const choice      = popMenu.exec(view->mapToGlobal(e->pos()));
 
 #endif
-
-        delete popMenu;
 
         for (int index = 0 ; index < tagIDs.count() ; ++index)
         {
