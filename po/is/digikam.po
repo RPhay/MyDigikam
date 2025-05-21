@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-20 01:59+0000\n"
-"PO-Revision-Date: 2025-05-04 13:09+0000\n"
+"PO-Revision-Date: 2025-05-20 15:35+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -26731,22 +26731,19 @@ msgid "UFRaw Raw Conversion"
 msgstr "RAW-umbreyting UFRaw"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:337
-#, fuzzy, kde-format
-#| msgid "Failed to load image"
+#, kde-format
 msgid "Unable to load image"
-msgstr "Get ekki opnað myndina"
+msgstr "Tekst ekki að hlaða inn mynd"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:461
-#, fuzzy, kde-format
-#| msgid "Post Processing"
+#, kde-format
 msgid "AI Tools Processing"
-msgstr "Eftirvinnsla"
+msgstr "Vinnsla með gervigreindarverkfærum"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:503
-#, fuzzy, kde-format
-#| msgid "Auto-tags for: %1\n"
+#, kde-format
 msgid "Auto-rotating: %1\n"
-msgstr "Sjálfvirk úthlutun merkja fyrir: %1\n"
+msgstr "Sjálfvirkur snúningur: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
@@ -26761,16 +26758,14 @@ msgid "Album: %1\n"
 msgstr "Albúm: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
-#, fuzzy, kde-format
-#| msgid "Rotation: "
+#, kde-format
 msgid "Rotation: %1\n"
-msgstr "Snúningur: "
+msgstr "Snúningur: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:527
-#, fuzzy, kde-format
-#| msgid "&Skip"
+#, kde-format
 msgid "Skipped"
-msgstr "&Sleppa"
+msgstr "Sleppt"
 
 #: core/libs/album/engine/album.cpp:411
 #: core/libs/database/utils/ifaces/dio.cpp:959
@@ -36873,54 +36868,44 @@ msgid "Binary data %1 bytes"
 msgstr "Tvíundarkerfisgögn %1 bæti"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:401
-#, fuzzy, kde-format
-#| msgctxt "@title Image transformations"
-#| msgid "Basic Transformations"
+#, kde-format
 msgid "No Transformation"
-msgstr "Grunn-umbreytingar"
+msgstr "Engin umbreyting"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
-#, fuzzy, kde-format
-#| msgid "Flip Horizontally"
+#, kde-format
 msgid "Flip Horizontal"
-msgstr "Spegla lárétt"
+msgstr "Fletta lárétt"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:411
-#, fuzzy, kde-format
-#| msgid "Flip Vertically"
+#, kde-format
 msgid "Flip Vertical"
-msgstr "Spegla lóðrétt"
+msgstr "Fletta lóðrétt"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:416
-#, fuzzy, kde-format
-#| msgid "Rotate 180°"
+#, kde-format
 msgid "Rotate 90°"
-msgstr "Snúa 180°"
+msgstr "Snúa 90°"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:421
-#, fuzzy, kde-format
-#| msgid "Rotate 180 degrees"
+#, kde-format
 msgid "Rotate 180°"
-msgstr "Snúið um 180 gráður"
-
-#: core/libs/metadataengine/engine/metaengine_rotation.cpp:426
-#, fuzzy, kde-format
-#| msgid "Rotate 180°"
-msgid "Rotate 270°"
 msgstr "Snúa 180°"
 
+#: core/libs/metadataengine/engine/metaengine_rotation.cpp:426
+#, kde-format
+msgid "Rotate 270°"
+msgstr "Snúa 270°"
+
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:431
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Rotation"
+#, kde-format
 msgid "Auto Rotation"
-msgstr "Snúningur"
+msgstr "Sjálfvirkur snúningur"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:436
-#, fuzzy, kde-format
-#| msgid "Unknown Format"
+#, kde-format
 msgid "Unknown Transformation"
-msgstr "Óþekkt myndsnið"
+msgstr "Óþekkt ummyndun"
 
 #: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:373
 #, kde-format
@@ -66318,10 +66303,9 @@ msgid "&Password:"
 msgstr "&Lykilorð:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:38
-#, fuzzy, kde-format
-#| msgid "Scan for new items"
+#, kde-format
 msgid "&Scan for new items at startup"
-msgstr "Leita að nýjum atriðum"
+msgstr "&Skanna nýja hluti í ræsingu"
 
 #: core/utilities/setup/misc/setupmisc.cpp:39
 #, kde-format
@@ -66389,10 +66373,9 @@ msgstr ""
 "þegar nýtt andlit er merkt. Þetta mun einfalda ferlið við merkingar."
 
 #: core/utilities/setup/misc/setupmisc.cpp:59
-#, fuzzy, kde-format
-#| msgid "Remove obsolete core database objects (makes startup slower)"
+#, kde-format
 msgid "Remove obsolete core database objects"
-msgstr "Fjarlægja úrelta gagnagrunnshluti (gerir ræsingu hægvirkari)"
+msgstr "Fjarlægja úrelta kjarnahluti úr gagnagrunni"
 
 #: core/utilities/setup/misc/setupmisc.cpp:60
 #, kde-format
@@ -66421,6 +66404,7 @@ msgctxt "@info"
 msgid ""
 "<font color='red'><i>Warning: These settings makes startup slower!</i></font>"
 msgstr ""
+"<font color='red'><i>Aðvörun: þessar stillingar hægja á ræsingu!</i></font>"
 
 #: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format
