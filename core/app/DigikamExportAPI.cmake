@@ -86,9 +86,15 @@ install(FILES
 
               ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine.h
               ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine_data.h
+              ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaenginesettings.h
+              ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaenginesettingscontainer.h
+              ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/containers/videoinfocontainer.h
               ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/containers/photoinfocontainer.h
               ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/containers/metadatainfo.h
               ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/containers/captionvalues.h
+              ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadata.h
+              ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadatasettings.h
+              ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.h
 
               ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawdecoder.h
               ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawinfo.h
