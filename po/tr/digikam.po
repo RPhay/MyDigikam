@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-20 01:59+0000\n"
+"POT-Creation-Date: 2025-05-22 02:02+0000\n"
 "PO-Revision-Date: 2025-05-13 19:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -248,8 +248,8 @@ msgstr "Buraya &Kopyala"
 #: core/app/dragdrop/importdragdrop.cpp:57
 #: core/app/dragdrop/importdragdrop.cpp:196
 #: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:810
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:264
-#: core/app/dragdrop/tagdragdrop.cpp:331 core/app/dragdrop/tagdragdrop.cpp:457
+#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:262
+#: core/app/dragdrop/tagdragdrop.cpp:329 core/app/dragdrop/tagdragdrop.cpp:455
 #, kde-format
 msgid "C&ancel"
 msgstr "İ&ptal"
@@ -355,26 +355,26 @@ msgstr "İçe aktarılıyor"
 msgid "M&erge Here"
 msgstr "Buraya &Birleştir"
 
-#: core/app/dragdrop/tagdragdrop.cpp:253
+#: core/app/dragdrop/tagdragdrop.cpp:251
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "“%2” olan yüz adını Öge olarak onayla"
 msgstr[1] "“%2” olan yüz adlarını Ögeler olarak onayla"
 
-#: core/app/dragdrop/tagdragdrop.cpp:260 core/app/dragdrop/tagdragdrop.cpp:453
+#: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:451
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Künye Küçük Görseli Olarak Ayarla"
 
-#: core/app/dragdrop/tagdragdrop.cpp:325
+#: core/app/dragdrop/tagdragdrop.cpp:323
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "“%2” olan yüz adını “%3” olarak değiştir"
 msgstr[1] "“%2” olan yüz adlarını “%3” olarak değiştir"
 
-#: core/app/dragdrop/tagdragdrop.cpp:448
+#: core/app/dragdrop/tagdragdrop.cpp:446
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Ögelere “%1” Künyelerini Ata"

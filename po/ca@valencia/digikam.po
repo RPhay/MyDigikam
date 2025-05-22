@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-20 01:59+0000\n"
-"PO-Revision-Date: 2025-05-05 12:42+0200\n"
+"POT-Creation-Date: 2025-05-22 02:02+0000\n"
+"PO-Revision-Date: 2025-05-13 10:03+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -210,8 +210,8 @@ msgstr "&Copia ací"
 #: core/app/dragdrop/importdragdrop.cpp:57
 #: core/app/dragdrop/importdragdrop.cpp:196
 #: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:810
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:264
-#: core/app/dragdrop/tagdragdrop.cpp:331 core/app/dragdrop/tagdragdrop.cpp:457
+#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:262
+#: core/app/dragdrop/tagdragdrop.cpp:329 core/app/dragdrop/tagdragdrop.cpp:455
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancel·la"
@@ -317,26 +317,26 @@ msgstr "Importació"
 msgid "M&erge Here"
 msgstr "&Fusiona ací"
 
-#: core/app/dragdrop/tagdragdrop.cpp:253
+#: core/app/dragdrop/tagdragdrop.cpp:251
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] "Confirma el nom de la cara «%2» a l'element"
 msgstr[1] "Confirma el nom de la cara «%2» als elements"
 
-#: core/app/dragdrop/tagdragdrop.cpp:260 core/app/dragdrop/tagdragdrop.cpp:453
+#: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:451
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Establix com a miniatura de l'etiqueta"
 
-#: core/app/dragdrop/tagdragdrop.cpp:325
+#: core/app/dragdrop/tagdragdrop.cpp:323
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "Canvia el nom de la cara des de «%2» a «%3»"
 msgstr[1] "Canvia els noms de les cares des de «%2» a «%3»"
 
-#: core/app/dragdrop/tagdragdrop.cpp:448
+#: core/app/dragdrop/tagdragdrop.cpp:446
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Assigna les etiquetes «%1» als elements"
@@ -3089,7 +3089,7 @@ msgid ""
 "maximal counts are big; if it is used, all values (small and large) will be "
 "visible on the graph.</p>"
 msgstr ""
-"<p>Escolliu ací l'escala de l'histograma.</p><p>Si els valors màxims de la "
+"<p>Trieu ací l'escala de l'histograma.</p><p>Si els valors màxims de la "
 "imatge són baixos, podeu emprar l'escala lineal.</p><p>L'escala logarítmica "
 "s'utilitza quan els valors màxims són alts; si la utilitzeu, la gràfica "
 "mostrarà tots els valors, els baixos i els alts.</p>"
@@ -7977,7 +7977,7 @@ msgid ""
 "becomes as bright as possible without altering its hue. This is often a "
 "\"magic fix\" for images that are dim or washed out.</p>"
 msgstr ""
-"<b>Normalització</b>:<p>Esta opció escala els valors de lluminositat de la "
+"<b>Normalització</b>:<p>Esta opció escala els valors de brillantor de la "
 "imatge activa de manera que el punt més fosc esdevé negre, i el punt més "
 "brillant esdevé tan brillant com siga possible sense alterar el seu to. "
 "Sovint, açò és un «retoc màgic» per a les imatges que estan apagades o "
@@ -9236,8 +9236,8 @@ msgid ""
 "<p>Color Management is disabled.</p> <p>You can enable it now by clicking on "
 "the \"Settings\" button.</p>"
 msgstr ""
-"<p>La gestió del color està desactivada.</p> <p>Podeu activar-la ara fent "
-"clic en el botó «Configuració».</p>"
+"<p>La gestió del color està desactivada.</p> <p>Podeu activar-la ara clicant "
+"damunt del botó «Configuració».</p>"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
@@ -10126,9 +10126,9 @@ msgid ""
 "important.  These zones will be deleted when reducing the picture, or "
 "duplicated when enlarging the picture."
 msgstr ""
-"Cliqueu este botó per a dibuixar les zones que marcaran quines àrees de la "
-"imatge són menys importants. Estes zones se suprimiran quan es reduïsca la "
-"imatge o es duplicaran quan s'amplie."
+"Cliqueu damunt d'este botó per a dibuixar les zones que marcaran quines "
+"àrees de la imatge són menys importants. Estes zones se suprimiran quan es "
+"reduïsca la imatge o es duplicaran quan s'amplie."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:240
 #, kde-format
@@ -10146,8 +10146,8 @@ msgid ""
 "Click on this button to draw zones marking which areas of the image you want "
 "to preserve."
 msgstr ""
-"Cliqueu este botó per a dibuixar zones que marquen quines àrees de la imatge "
-"voleu conservar."
+"Cliqueu damunt d'este botó per a dibuixar zones que marquen quines àrees de "
+"la imatge voleu conservar."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:251
 #, kde-format
@@ -10162,7 +10162,7 @@ msgstr "Esborra la màscara"
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:257
 #, kde-format
 msgid "Click on this button to erase mask regions."
-msgstr "Cliqueu en este botó per a esborrar les regions de màscara."
+msgstr "Cliqueu damunt d'este botó per a esborrar les regions de màscara."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:266
 #, kde-format
@@ -10290,11 +10290,11 @@ msgid ""
 "switched automatically during rescaling, at the cost of slightly worse "
 "performance."
 msgstr ""
-"Durant el procés de tallar, trieu a cada pas la línia òptima per a ser "
+"Durant el procés de tallar, es tria a cada pas la línia òptima per a ser "
 "tallada basant-se en el valor de la rellevància per a cada píxel. Malgrat "
 "tot, en el cas en què dues línies són equivalents (el qual pot passar, per "
 "exemple quan parts grans de la imatge tenen el mateix color), l'algoritme "
-"sempre trieu les línies d'un costat. En alguns casos, açò pot plantejar "
+"sempre tria les línies d'un costat. En alguns casos, açò pot plantejar "
 "problemes, per exemple un objecte centrat en la imatge original pot no "
 "quedar centrat en la imatge resultant. Per tal de superar este efecte, esta "
 "opció permet canviar automàticament el costat afavorit durant el canvi "
@@ -10432,8 +10432,8 @@ msgid ""
 "Select a point in the preview widget, then click this button to assign the "
 "point for auto-correction."
 msgstr ""
-"Seleccioneu un punt al giny de vista prèvia i després cliqueu este botó per "
-"a assignar el punt per a la correcció automàtica."
+"Seleccioneu un punt al giny de vista prèvia i després cliqueu damunt d'este "
+"botó per a assignar el punt per a la correcció automàtica."
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:162
 #, kde-format
@@ -10449,8 +10449,8 @@ msgid ""
 "horizontal or vertical lines.</p>"
 msgstr ""
 "<p>Corregix automàticament el gir de les vostres imatges assignant dos punts "
-"al giny de vista prèvia i fent clic <i>Ajusta</i>.<br/>Podeu ajustar tant "
-"les línies horitzontals com les verticals.</p>"
+"al giny de vista prèvia i clicant damunt <i>Ajusta</i>.<br/>Podeu ajustar "
+"tant les línies horitzontals com les verticals.</p>"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:193
 #, kde-format
@@ -10627,8 +10627,8 @@ msgstr ""
 "<p>Ací veureu la vista prèvia de la selecció de la relació d'aspecte emprada "
 "en l'escapçat.</p><p>Utilitzeu el ratolí per a moure i modificar la mida de "
 "l'àrea escapçada.</p><p>Premeu i manteniu premuda la tecla <b>Ctrl</b> per a "
-"moure també el cantó oposada.</p><p>Premeu i manteniu premuda la tecla "
-"<b>Majús</b> per a moure el cantó més propera cap al punter del ratolí.</p>"
+"moure també el cantó oposat.</p><p>Premeu i manteniu premuda la tecla "
+"<b>Majús</b> per a moure el cantó més proper cap al punter del ratolí.</p>"
 
 # skip-rule: punctuation-period-no
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:174
@@ -11677,7 +11677,7 @@ msgstr "Latitud"
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Longitude"
-msgstr "Llargària"
+msgstr "Longitud"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
@@ -16387,7 +16387,7 @@ msgstr "Seleccioneu les imatges"
 msgid ""
 "Left click on a month to select an image, right click to clear an image."
 msgstr ""
-"Cliqueu amb el botó esquerre en els mesos per a seleccionar una imatge, "
+"Cliqueu amb el botó esquerre damunt dels mesos per a seleccionar una imatge, "
 "cliqueu amb el botó dret per a netejar una imatge."
 
 #: core/dplugins/generic/tools/calendar/wizard/calintropage.cpp:47
@@ -16476,8 +16476,8 @@ msgid ""
 "Click Next to start Printing<br/><br/>Following months will be printed for "
 "year %1:<br/>"
 msgstr ""
-"Cliqueu següent per a iniciar la impressió.<br/><br/>S'imprimiran els mesos "
-"següents de l'any %1:<br/>"
+"Cliqueu damunt «Següent» per a iniciar la impressió.<br/><br/>S'imprimiran "
+"els mesos següents de l'any %1:<br/>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:275
 #, kde-format
@@ -18659,9 +18659,9 @@ msgid ""
 "text here. You can review words and fix if necessary. Press the Save button "
 "to record your changes."
 msgstr ""
-"Després de processar el reconeixement, feu doble clic en un element per a "
-"mostrar el text reconegut ací. Podeu revisar les paraules i corregir-les, si "
-"cal. Premeu el botó Guarda per a enregistrar els canvis."
+"Després de processar el reconeixement, feu doble clic damunt d'un element "
+"per a mostrar el text reconegut ací. Podeu revisar les paraules i corregir-"
+"les, si cal. Premeu el botó «Guarda» per a enregistrar els canvis."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:215
 #, kde-format
@@ -19831,8 +19831,8 @@ msgid ""
 msgstr ""
 "Moveu el quadro per tal d'escapçar les fotografies i que encaixen dins la "
 "mida de fotografia que heu especificat.\n"
-"Podeu escapçar cada imatge per separat o clicar el botó «Següent» per a "
-"utilitzar la configuració predeterminada \n"
+"Podeu escapçar cada imatge per separat o clicar damunt del botó «Següent» "
+"per a utilitzar la configuració predeterminada \n"
 "per a l'escapçat de cada fotografia.\n"
 "Marqueu l'opció «No escapces» per a evitar escapçar totes les fotografies."
 
@@ -22643,7 +22643,7 @@ msgstr "Avís"
 msgctxt "@info"
 msgid "Authentication failed. Click \"Continue\" to authenticate."
 msgstr ""
-"No s'ha pogut fer l'autenticació. Cliqueu en «Continua» per a autenticar."
+"No s'ha pogut fer l'autenticació. Cliqueu damunt «Continua» per a autenticar."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:251
 #: core/dplugins/generic/webservices/google/gswindow.cpp:522
@@ -24271,8 +24271,8 @@ msgid ""
 "You will be logged out of your account, click \"Continue\" to authenticate "
 "for another account"
 msgstr ""
-"Es tancarà la sessió del compte, feu clic en «Continua» per a autenticar-vos "
-"amb un altre compte"
+"Es tancarà la sessió del compte, cliqueu damunt «Continua» per a autenticar-"
+"vos amb un altre compte"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1329
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:662
@@ -25759,7 +25759,7 @@ msgstr "Comença la pujada a Pinterest"
 #, kde-format
 msgid "Authentication failed. Click \"Continue\" to authenticate."
 msgstr ""
-"No s'ha pogut fer l'autenticació. Cliqueu en «Continua» per a autenticar."
+"No s'ha pogut fer l'autenticació. Cliqueu damunt «Continua» per a autenticar."
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:287
 #, kde-format
@@ -26517,8 +26517,8 @@ msgid ""
 "You will be logged out of your account, click \"Continue\" to authenticate "
 "for another account."
 msgstr ""
-"Es tancarà la sessió del compte, feu clic en «Continua» per a autenticar-vos "
-"amb un altre compte."
+"Es tancarà la sessió del compte, cliqueu damunt «Continua» per a autenticar-"
+"vos amb un altre compte."
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:750
 #, kde-format
@@ -27287,8 +27287,8 @@ msgstr ""
 "Cal tindre en compte que si heu canviat a un joc de caràcters de la base de "
 "dades que no permet algun dels noms de fitxer de la col·lecció, estos "
 "fitxers podrien no tornar-se a trobar en la col·lecció. Si segur que voleu "
-"continuar, cliqueu «Sí». Altrament, cliqueu «No» i corregiu el joc de "
-"caràcters de la base de dades abans de reiniciar digiKam."
+"continuar, cliqueu damunt «Sí». Altrament, cliqueu damunt «No» i corregiu el "
+"joc de caràcters de la base de dades abans de reiniciar digiKam."
 
 #: core/libs/album/manager/albummanager_database.cpp:309
 #, kde-format
@@ -27298,8 +27298,8 @@ msgid ""
 "situation:</p>"
 msgstr ""
 "<p>Actualment la col·lecció</p><p><b>%1</b><br/>(%2)</p><p> no es troba en "
-"el sistema.<br/> Escolliu l'opció més apropiada per a gestionar esta "
-"situació:</p>"
+"el sistema.<br/> Trieu l'opció més apropiada per a gestionar esta situació:</"
+"p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:328
 #, kde-format
@@ -33268,7 +33268,7 @@ msgid ""
 "can be used when the maximal counts are big; if it is used, all values "
 "(small and large) will be visible on the graph.</p>"
 msgstr ""
-"<p>Escolliu ací l'escala de l'histograma.</p><p>Si els valors màxims de la "
+"<p>Trieu ací l'escala de l'histograma.</p><p>Si els valors màxims de la "
 "imatge són baixos, podeu emprar l'escala <b>lineal</b>.</p><p>L'escala "
 "<b>logarítmica</b> s'utilitza quan els valors màxims són alts; si la "
 "utilitzeu, la gràfica mostrarà tots els valors, els baixos i els alts.</p>"
@@ -33309,7 +33309,7 @@ msgstr "Lluminositat"
 #: core/libs/dimg/filters/levels/histogrambox.cpp:279
 #, kde-format
 msgid "<b>Luminosity</b>: display the image's luminosity values."
-msgstr "<b>Lluminositat</b>: mostra els valors de lluminositat de la imatge."
+msgstr "<b>Lluminositat</b>: mostra els valors de brillantor de la imatge."
 
 #: core/libs/dimg/filters/levels/histogrambox.cpp:281
 #, kde-format
@@ -34704,7 +34704,7 @@ msgstr "Afig un altre compte"
 #: core/libs/dplugins/webservices/wsselectuserdlg.cpp:82
 #, kde-format
 msgid "Choose the %1 account to use for exporting images:"
-msgstr "Trieu el compte %1 per a exportar les imatges:"
+msgstr "Tria el compte %1 per a exportar les imatges:"
 
 #: core/libs/dplugins/webservices/wssettings.cpp:102
 #, kde-format
@@ -38223,7 +38223,7 @@ msgstr "<b>Latitud</b>:"
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:140
 #, kde-format
 msgid "<b>Longitude</b>:"
-msgstr "<b>Llargària</b>:"
+msgstr "<b>Longitud</b>:"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:141
 #, kde-format
@@ -41951,8 +41951,8 @@ msgid ""
 "A complete, cross-platform solution to record, convert and stream audio and "
 "video."
 msgstr ""
-"Una solució completa i multiplataforma per a enregistrar, convertir i "
-"transmetre àudio i vídeo."
+"Una solució completa i multiplataforma per a gravar, convertir i transmetre "
+"àudio i vídeo."
 
 #: core/libs/video/manager/vidslidesettings.cpp:469
 #, kde-format
@@ -42779,9 +42779,9 @@ msgid ""
 "download and install them to proceed.</font></p></qt>"
 msgstr ""
 "<qt><p><font color=\"red\"><b>Avís:</b> No s'han trobat en el sistema alguns "
-"executables necessaris. Si els teniu instal·lats, feu clic en el botó "
-"«Busca» per a ubicar-los en el sistema, en cas contrari, descarregueu i "
-"instal·leu per a continuar.</font></p></qt>"
+"executables necessaris. Si els teniu instal·lats, per favor, cliqueu damunt "
+"del botó «Busca» per a ubicar-los en el sistema, en cas contrari, "
+"descarregueu i instal·leu per a continuar.</font></p></qt>"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:171
 #, kde-format
@@ -51814,7 +51814,7 @@ msgstr "Establix un valor predeterminat per a les cadenes buides"
 #, kde-format
 msgctxt "The length of the string"
 msgid "Length:"
-msgstr "Longitud:"
+msgstr "Llargària:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/advancedrename/parser/modifiers/fillmodifierdialogwidget.ui:36
@@ -53964,7 +53964,7 @@ msgstr "Aigua"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:544
 #, kde-format
 msgid "Reef"
-msgstr "Trieu"
+msgstr "Tria"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:547
 #, kde-format
@@ -55908,17 +55908,17 @@ msgstr "Un connector que mostra una quadrícula de coordenades sobre el mapa."
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:230
 #, kde-format
 msgid "Please choose the color for the coordinate grid."
-msgstr "Escolliu el color de la quadrícula de coordenades."
+msgstr "Trieu el color de la quadrícula de coordenades."
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:242
 #, kde-format
 msgid "Please choose the color for the tropic circles."
-msgstr "Escolliu el color dels cercles dels tròpics."
+msgstr "Trieu el color dels cercles dels tròpics."
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:254
 #, kde-format
 msgid "Please choose the color for the equator."
-msgstr "Escolliu el color de la línia de l'equador."
+msgstr "Trieu el color de la línia de l'equador."
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:337
 #, kde-format
@@ -59466,7 +59466,7 @@ msgid ""
 "change the clip focus.</p>"
 msgstr ""
 "<p>Este és el tros de la imatge original que s'emprarà per al càlcul de la "
-"vista prèvia.</p><p>Feu clic i arrossegueu el cursor del ratolí damunt de la "
+"vista prèvia.</p><p>Cliqueu i arrossegueu el cursor del ratolí damunt de la "
 "imatge per a canviar el focus del tros.</p>"
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:96
@@ -62913,7 +62913,7 @@ msgstr "i"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, kde-format
 msgid "Find items with a height between"
-msgstr "Busca els elements amb alçades entre"
+msgstr "Busca els elements amb alçàries entre"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:231
 #, kde-format
@@ -64291,12 +64291,12 @@ msgid ""
 msgstr ""
 "<p>Ací podeu afegir extensions addicionals de fitxers de vídeo que es "
 "visualitzaran en la vista d'àlbums. Escriviu «xyz abc» per a acceptar "
-"fitxers amb les extensions *.xyz i *.abc. Clicant en estos fitxers es "
-"reproduiran amb un reproductor de vídeo incrustat.</p><p>També podeu "
-"eliminar els formats de fitxer acceptats de manera predeterminada afegint un "
-"signe menys al davant: p. ex., «-avi» eliminarà tots els fitxers AVI de la "
-"vista d'àlbums i qualsevol resta d'estos de la base de dades. Açò no "
-"suprimirà els fitxers, només deixaran de mostrar-se a digiKam.</"
+"fitxers amb les extensions *.xyz i *.abc. Quan es clique damunt d'estos "
+"fitxers es reproduiran amb un reproductor de vídeo incrustat.</p><p>També "
+"podeu eliminar els formats de fitxer acceptats de manera predeterminada "
+"afegint un signe menys al davant: p. ex., «-avi» eliminarà tots els fitxers "
+"AVI de la vista d'àlbums i qualsevol resta d'estos de la base de dades. Açò "
+"no suprimirà els fitxers, només deixaran de mostrar-se a digiKam.</"
 "p><p><b>Atenció:</b> l'eliminació dels fitxers de la base de dades comporta "
 "la pèrdua de totes les seues etiquetes i valoracions.</p>"
 
@@ -64329,14 +64329,14 @@ msgid ""
 msgstr ""
 "<p>Ací podeu afegir extensions addicionals de fitxers d'àudio que es "
 "visualitzaran en la vista d'àlbums. Escriviu «xyz abc» per a acceptar "
-"fitxers amb les extensions *.xyz i *.abc. Clicant en estos fitxers es "
-"reproduiran amb un reproductor d'àudio incrustat.</p><p>També podeu eliminar "
-"els formats de fitxer acceptats de manera predeterminada afegint un signe "
-"menys al davant: p. ex., «-ogg» eliminarà tots els fitxers OGG de la vista "
-"d'àlbums i qualsevol resta d'estos de la base de dades. Açò no suprimirà els "
-"fitxers, només deixaran de mostrar-se a digiKam.</p><p><b>Atenció:</b> "
-"l'eliminació dels fitxers de la base de dades comporta la pèrdua de totes "
-"les seues etiquetes i valoracions.</p>"
+"fitxers amb les extensions *.xyz i *.abc. Quan es clique damunt d'estos "
+"fitxers es reproduiran amb un reproductor d'àudio incrustat.</p><p>També "
+"podeu eliminar els formats de fitxer acceptats de manera predeterminada "
+"afegint un signe menys al davant: p. ex., «-ogg» eliminarà tots els fitxers "
+"OGG de la vista d'àlbums i qualsevol resta d'estos de la base de dades. Açò "
+"no suprimirà els fitxers, només deixaran de mostrar-se a digiKam.</"
+"p><p><b>Atenció:</b> l'eliminació dels fitxers de la base de dades comporta "
+"la pèrdua de totes les seues etiquetes i valoracions.</p>"
 
 #: core/utilities/setup/album/setupmime.cpp:181
 #, kde-format
@@ -65293,7 +65293,7 @@ msgid ""
 "p><p><b>You must restart digiKam after successfully downloading the files.</"
 "b></p>"
 msgstr ""
-"<p>No s'han trobat alguns d'estos fitxers. Feu clic en «Baixa» per a "
+"<p>No s'han trobat alguns d'estos fitxers. Cliqueu damunt «Baixa» per a "
 "començar a instal·lar els fitxers de model necessaris. Si tanqueu este "
 "diàleg, se vos tornarà a preguntar la propera vegada que inicieu digiKam. "
 "Les característiques seleccionades no funcionaran sense estos fitxers.</"
@@ -67106,10 +67106,9 @@ msgid "&Password:"
 msgstr "&Contrasenya:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:38
-#, fuzzy, kde-format
-#| msgid "Scan for new items"
+#, kde-format
 msgid "&Scan for new items at startup"
-msgstr "Explora buscant elements nous"
+msgstr "&Explora buscant elements nous en iniciar"
 
 #: core/utilities/setup/misc/setupmisc.cpp:39
 #, kde-format
@@ -67179,12 +67178,9 @@ msgstr ""
 "fàcil."
 
 #: core/utilities/setup/misc/setupmisc.cpp:59
-#, fuzzy, kde-format
-#| msgid "Remove obsolete core database objects (makes startup slower)"
+#, kde-format
 msgid "Remove obsolete core database objects"
-msgstr ""
-"Elimina objectes obsolets de la base de dades nucli (alentix la "
-"inicialització)"
+msgstr "Elimina objectes obsolets de la base de dades nucli"
 
 #: core/utilities/setup/misc/setupmisc.cpp:60
 #, kde-format
@@ -67213,7 +67209,7 @@ msgstr ""
 msgctxt "@info"
 msgid ""
 "<font color='red'><i>Warning: These settings makes startup slower!</i></font>"
-msgstr ""
+msgstr "<font color='red'><i>Avís: Estes opcions alentiran l'inici!</i></font>"
 
 #: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format
@@ -67819,7 +67815,7 @@ msgid ""
 "IEC61966-2.1</b></p>"
 msgstr ""
 "<p>Este és l'espai de color en què es convertiran totes les imatges quan "
-"s'òbriguen (si escolliu convertir-les) i el perfil que s'incrustarà quan es "
+"s'òbriguen (si trieu convertir-les) i el perfil que s'incrustarà quan es "
 "guarden. <b>Adobe RGB (1998)</b> i <b>sRGB IEC61966-2.1</b> són opcions "
 "bones i segures.</p>"
 
@@ -68671,10 +68667,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgid "Avg. similarity"
-#~ msgstr "Similitud mitjana"
-
-#~ msgid "&Scan for new items at startup (makes startup slower)"
-#~ msgstr ""
-#~ "&Explora buscant elements nous en iniciar (alentix la inicialització)"
