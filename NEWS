@@ -240,7 +240,7 @@ BUGFIXES:
 210 ==> 504456 - Confirming multiple correctly recognized faces at once does not exist.
 211 ==> 504359 - Using digiKam across two machines causes "storage location not available" error after switching machines.
 212 ==> 504506 - Photos cannot be open.
-213 ==> 
+213 ==> 504694 - Missing Flags in Left Label Menu and Right Filter Menu and Picture View.
 214 ==> 
 215 ==> 
 216 ==> 
