@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-20 01:59+0000\n"
+"POT-Creation-Date: 2025-05-22 02:02+0000\n"
 "PO-Revision-Date: 2007-09-11 22:44+0200\n"
 "Last-Translator: Northern Sami translation team <l10n-no@lister.huftis.org>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -202,8 +202,8 @@ msgstr ""
 #: core/app/dragdrop/importdragdrop.cpp:57
 #: core/app/dragdrop/importdragdrop.cpp:196
 #: core/app/dragdrop/itemdragdrop.cpp:85 core/app/dragdrop/itemdragdrop.cpp:810
-#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:264
-#: core/app/dragdrop/tagdragdrop.cpp:331 core/app/dragdrop/tagdragdrop.cpp:457
+#: core/app/dragdrop/tagdragdrop.cpp:90 core/app/dragdrop/tagdragdrop.cpp:262
+#: core/app/dragdrop/tagdragdrop.cpp:329 core/app/dragdrop/tagdragdrop.cpp:455
 #, kde-format
 msgid "C&ancel"
 msgstr ""
@@ -309,26 +309,26 @@ msgstr ""
 msgid "M&erge Here"
 msgstr ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:253
+#: core/app/dragdrop/tagdragdrop.cpp:251
 #, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:260 core/app/dragdrop/tagdragdrop.cpp:453
+#: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:451
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:325
+#: core/app/dragdrop/tagdragdrop.cpp:323
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:448
+#: core/app/dragdrop/tagdragdrop.cpp:446
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr ""
