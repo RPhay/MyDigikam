@@ -29809,7 +29809,7 @@ msgstr ""
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:619
 #, kde-format
 msgid "The server hostname is empty"
-msgstr "El nom de l'amfitrió del servidor està buit"
+msgstr "El nom d'amfitrió del servidor està buit"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:625
 #, kde-format
