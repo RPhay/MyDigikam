@@ -9,22 +9,22 @@
 # Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2012, 2013, 2015, 2016, 2020, 2021, 2022, 2023.
 # Torbjörn Klatt <torbjoern.k@googlemail.com>, 2011.
 # Herbert Kauer <herb.k@web.de>, 2021.
-# Alois Spitzbart <spitz234@hotmail.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2025 Alois Spitzbart <spitz234@hotmail.com>
 # Matthias Erich Popp <oquo8ugh@gmx.de>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-22 02:02+0000\n"
-"PO-Revision-Date: 2025-05-15 01:12+0200\n"
-"Last-Translator: Frank Steinmetzger <dev+kde@felsenfleischer.de>\n"
+"PO-Revision-Date: 2025-05-25 23:22+0200\n"
+"Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -66266,17 +66266,7 @@ msgstr ""
 "wikipedia.org/wiki/Portable_Network_Graphics'>dieser Seite</a>.</p>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:527
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to WEBP "
-#| "format.</para><para>WEBP is an image file format that Google has "
-#| "developed as a replacement for JPEG, PNG, and GIF file formats. WEBP "
-#| "yields files that are smaller for the same quality, or of higher quality "
-#| "for the same size. It supports both lossy and lossless compression, as "
-#| "well as animation and alpha transparency.</para><para>See details about "
-#| "this format from <a href='https://en.wikipedia.org/wiki/WebP'>this page</"
-#| "a>.</para>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>WEBP</emphasis>: It is an image file format "
@@ -66284,14 +66274,14 @@ msgid ""
 "formats. Files are smaller for the same quality, or of higher quality for "
 "the same size. It supports both lossy and lossless compression</item>"
 msgstr ""
-"<para>Dieses Werkzeug der Stapelverarbeitung kann ein Bild in das WEBP-"
-"Format überführen.</para><para>WEBP ist ein von Google entwickeltes "
-"Dateiformat, um die Formate JPEG, PNG und GIF abzulösen. WEBP ermöglicht "
-"kleinere Dateien bei gleichwertiger Qualität oder höhere Qualität bei "
-"gleichbleibender Dateigröße. Es unterstützt sowohl verlustfreie wie auch -"
-"behaftete Kompression sowie Animationen und Alpha-Transparenz.</"
-"para><para>Für weitere Details über dieses Format schauen Sie bitte auf <a "
-"href='https://de.wikipedia.org/wiki/WebP'>dieser Seite</a>.</para>"
+"<para>Dieses Stapelverarbeitungswerkzeug kann ein Bild in das WEBP-Format "
+"überführen.</para><para>WEBP ist ein von Google entwickeltes Dateiformat, um "
+"die Formate JPEG, PNG und GIF abzulösen. WEBP ermöglicht kleinere Dateien "
+"bei gleichwertiger Qualität oder höhere Qualität bei gleichbleibender "
+"Dateigröße. Es unterstützt sowohl verlustfreie wie auch -behaftete "
+"Kompression sowie Animationen und Alpha-Transparenz.</para><para>Für weitere "
+"Details über dieses Format schauen Sie bitte auf <a href='https://de."
+"wikipedia.org/wiki/WebP'>dieser Seite</a>.</para>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:538
 #, kde-kuit-format
