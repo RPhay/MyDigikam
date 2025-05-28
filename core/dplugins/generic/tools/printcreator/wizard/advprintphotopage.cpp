@@ -214,7 +214,7 @@ AdvPrintPhotoPage::AdvPrintPhotoPage(QWizard* const wizard, const QString& title
     // -----------------------------------
 
     setPageWidget(d->photoUi);
-    setLeftBottomPix(QIcon::fromTheme(QLatin1String("image-stack")));
+    setLeftBottomPix(QIcon::fromTheme(QLatin1String("view-list-details")));
 
     slotOutputChanged(d->photoUi->m_printer_choice->itemHighlighted());
 }

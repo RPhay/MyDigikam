@@ -65,7 +65,7 @@ MailImagesPage::MailImagesPage(QWizard* const dialog, const QString& title)
     d->imageList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
 
     setPageWidget(vbox);
-    setLeftBottomPix(QIcon::fromTheme(QLatin1String("image-stack")));
+    setLeftBottomPix(QIcon::fromTheme(QLatin1String("view-list-details")));
 
     connect(d->imageList, SIGNAL(signalImageListChanged()),
             this, SIGNAL(completeChanged()));

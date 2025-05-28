@@ -70,7 +70,7 @@ VidSlideImagesPage::VidSlideImagesPage(QWizard* const dialog, const QString& tit
     d->imageList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
 
     setPageWidget(vbox);
-    setLeftBottomPix(QIcon::fromTheme(QLatin1String("image-stack")));
+    setLeftBottomPix(QIcon::fromTheme(QLatin1String("view-list-details")));
 
     connect(d->imageList, SIGNAL(signalImageListChanged()),
             this, SIGNAL(completeChanged()));
