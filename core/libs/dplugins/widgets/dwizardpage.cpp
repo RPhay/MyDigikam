@@ -28,6 +28,7 @@
 // Local includes
 
 #include "digikam_globals.h"
+#include "dexpanderbox.h"
 
 namespace Digikam
 {
@@ -38,12 +39,15 @@ public:
 
     Private() = default;
 
+public:
+
     bool         isComplete      = true;
     int          id              = -1;
 
     QWidget*     leftView        = nullptr;
     QLabel*      logo            = nullptr;
     QLabel*      leftBottomPix   = nullptr;
+    DLineWidget* vline           = nullptr;
 
     QHBoxLayout* hlay            = nullptr;
 
@@ -56,11 +60,10 @@ DWizardPage::DWizardPage(QWizard* const dlg, const QString& title)
 {
     setTitle(title);
 
-    const int spacing     = layoutSpacing();
+    const int spacing          = layoutSpacing();
 
-
-    QScrollArea* const sv = new QScrollArea(this);
-    QWidget* const panel  = new QWidget(sv->viewport());
+    QScrollArea* const sv      = new QScrollArea(this);
+    QWidget* const panel       = new QWidget(sv->viewport());
     sv->setWidget(panel);
     sv->setWidgetResizable(true);
 
@@ -71,8 +74,8 @@ DWizardPage::DWizardPage(QWizard* const dlg, const QString& title)
     d->logo->setAlignment(Qt::AlignTop);
     d->logo->setPixmap(QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(128, 128)));
 
-    QWidget* const space = new QLabel(d->leftView);
-    d->leftBottomPix     = new QLabel(d->leftView);
+    QWidget* const space       = new QLabel(d->leftView);
+    d->leftBottomPix           = new QLabel(d->leftView);
     d->leftBottomPix->setAlignment(Qt::AlignBottom);
 
     vboxLay->addWidget(d->logo);
@@ -82,16 +85,10 @@ DWizardPage::DWizardPage(QWizard* const dlg, const QString& title)
     vboxLay->setContentsMargins(spacing, spacing, spacing, spacing);
     vboxLay->setSpacing(spacing);
 
-    QFrame* const vline = new QFrame(panel);
-    vline->setLineWidth(1);
-    vline->setMidLineWidth(0);
-    vline->setFrameShape(QFrame::VLine);
-    vline->setFrameShadow(QFrame::Sunken);
-    vline->setMinimumSize(2, 0);
-    vline->updateGeometry();
+    d->vline                   = new DLineWidget(Qt::Vertical, panel);
 
     d->hlay->addWidget(d->leftView);
-    d->hlay->addWidget(vline);
+    d->hlay->addWidget(d->vline);
     d->hlay->setContentsMargins(QMargins());
     d->hlay->setSpacing(spacing);
 
@@ -111,6 +108,7 @@ DWizardPage::~DWizardPage()
 void DWizardPage::setComplete(bool b)
 {
     d->isComplete = b;
+
     Q_EMIT completeChanged();
 }
 
@@ -127,6 +125,7 @@ int DWizardPage::id() const
 void DWizardPage::setShowLeftView(bool v)
 {
     d->leftView->setVisible(v);
+    d->vline->setVisible(v);
 }
 
 void DWizardPage::setPageWidget(QWidget* const w)

@@ -34,7 +34,7 @@ class DIGIKAM_EXPORT DWizardDlg : public QWizard
 public:
 
     explicit DWizardDlg(QWidget* const parent, const QString& objName);
-    ~DWizardDlg() override;
+    ~DWizardDlg()                   override;
 
     void setPlugin(DPlugin* const tool);
 
@@ -50,7 +50,7 @@ private Q_SLOTS:
 
 protected:
 
-    void showEvent(QShowEvent*) override;
+    void showEvent(QShowEvent*)     override;
 
 private:
 
