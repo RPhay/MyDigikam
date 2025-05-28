@@ -52,6 +52,8 @@ public:
     QHBoxLayout* hlay            = nullptr;
 
     QWizard*     dlg             = nullptr;
+
+    const int spacing            = layoutSpacing();
 };
 
 DWizardPage::DWizardPage(QWizard* const dlg, const QString& title)
@@ -59,8 +61,6 @@ DWizardPage::DWizardPage(QWizard* const dlg, const QString& title)
       d          (new Private)
 {
     setTitle(title);
-
-    const int spacing          = layoutSpacing();
 
     QScrollArea* const sv      = new QScrollArea(this);
     QWidget* const panel       = new QWidget(sv->viewport());
@@ -82,15 +82,15 @@ DWizardPage::DWizardPage(QWizard* const dlg, const QString& title)
     vboxLay->addWidget(space);
     vboxLay->addWidget(d->leftBottomPix);
     vboxLay->setStretchFactor(space, 10);
-    vboxLay->setContentsMargins(spacing, spacing, spacing, spacing);
-    vboxLay->setSpacing(spacing);
+    vboxLay->setContentsMargins(d->spacing, d->spacing, d->spacing, d->spacing);
+    vboxLay->setSpacing(d->spacing);
 
     d->vline                   = new DLineWidget(Qt::Vertical, panel);
 
     d->hlay->addWidget(d->leftView);
     d->hlay->addWidget(d->vline);
-    d->hlay->setContentsMargins(QMargins());
-    d->hlay->setSpacing(spacing);
+    d->hlay->setContentsMargins(QMargins(d->spacing, d->spacing, d->spacing, d->spacing));
+    d->hlay->setSpacing(d->spacing);
 
     QVBoxLayout* const layout = new QVBoxLayout;
     layout->addWidget(sv);
@@ -126,6 +126,17 @@ void DWizardPage::setShowLeftView(bool v)
 {
     d->leftView->setVisible(v);
     d->vline->setVisible(v);
+
+    if (v)
+    {
+        d->hlay->setContentsMargins(QMargins(d->spacing, d->spacing, d->spacing, d->spacing));
+        d->hlay->setSpacing(d->spacing);
+    }
+    else
+    {
+        d->hlay->setContentsMargins(QMargins(0, 0, 0, 0));
+        d->hlay->setSpacing(0);
+    }
 }
 
 void DWizardPage::setPageWidget(QWidget* const w)
