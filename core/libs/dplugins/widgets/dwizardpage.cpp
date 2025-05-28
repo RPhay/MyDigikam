@@ -50,8 +50,10 @@ public:
     DLineWidget* vline           = nullptr;
 
     QHBoxLayout* hlay            = nullptr;
+    QVBoxLayout* vlay            = nullptr;
 
     QWizard*     dlg             = nullptr;
+    QScrollArea* sv              = nullptr;
 
     const int spacing            = layoutSpacing();
 };
@@ -62,10 +64,10 @@ DWizardPage::DWizardPage(QWizard* const dlg, const QString& title)
 {
     setTitle(title);
 
-    QScrollArea* const sv      = new QScrollArea(this);
-    QWidget* const panel       = new QWidget(sv->viewport());
-    sv->setWidget(panel);
-    sv->setWidgetResizable(true);
+    d->sv      = new QScrollArea(this);
+    QWidget* const panel       = new QWidget(d->sv->viewport());
+    d->sv->setWidget(panel);
+    d->sv->setWidgetResizable(true);
 
     d->hlay                    = new QHBoxLayout(panel);
     d->leftView                = new QWidget(panel);
@@ -92,9 +94,9 @@ DWizardPage::DWizardPage(QWizard* const dlg, const QString& title)
     d->hlay->setContentsMargins(QMargins(d->spacing, d->spacing, d->spacing, d->spacing));
     d->hlay->setSpacing(d->spacing);
 
-    QVBoxLayout* const layout = new QVBoxLayout;
-    layout->addWidget(sv);
-    setLayout(layout);
+    d->vlay = new QVBoxLayout;
+    d->vlay->addWidget(d->sv);
+    setLayout(d->vlay);
 
     d->dlg = dlg;
     d->id  = d->dlg->addPage(this);
@@ -131,11 +133,17 @@ void DWizardPage::setShowLeftView(bool v)
     {
         d->hlay->setContentsMargins(QMargins(d->spacing, d->spacing, d->spacing, d->spacing));
         d->hlay->setSpacing(d->spacing);
+        d->sv->setContentsMargins(d->spacing, d->spacing, d->spacing, d->spacing);
+        d->vlay->setContentsMargins(QMargins(d->spacing, d->spacing, d->spacing, d->spacing));
+        d->vlay->setSpacing(d->spacing);
     }
     else
     {
         d->hlay->setContentsMargins(QMargins(0, 0, 0, 0));
         d->hlay->setSpacing(0);
+        d->sv->setContentsMargins(0, 0, 0, 0);
+        d->vlay->setContentsMargins(QMargins(0, 0, 0, 0));
+        d->vlay->setSpacing(0);
     }
 }
 
