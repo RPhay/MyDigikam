@@ -48,8 +48,8 @@ if [[ $ARCH_TARGET = "x86_64" ]] ; then
     OSX_MIN_TARGET="10.15"
 
     # Directory to build and install HomeBrew packages.
-    # INSTALL_PREFIX="/usr/local/homebrew"
-    INSTALL_PREFIX="/usr/local/hb-digikam.org.$ARCH_TARGET"
+    INSTALL_PREFIX="/usr/local/homebrew"
+    # INSTALL_PREFIX="/usr/local/hb-digikam.org.$ARCH_TARGET"
 
 elif [[ $ARCH_TARGET = "arm64" ]] ; then
 
@@ -57,8 +57,8 @@ elif [[ $ARCH_TARGET = "arm64" ]] ; then
     OSX_MIN_TARGET="11.3"
 
     # Directory to build and install HomeBrew packages.
-    # INSTALL_PREFIX="/opt/homebrew"
-    INSTALL_PREFIX="/opt/hb-digikam.org.$ARCH_TARGET"
+    INSTALL_PREFIX="/opt/homebrew"
+    # INSTALL_PREFIX="/opt/hb-digikam.org.$ARCH_TARGET"
 
 else
 
@@ -96,8 +96,8 @@ DK_QTVERSION="6"
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
 # If you want to package current implementation from git, use "master" as tag.
 #DK_VERSION=v8.5.0
-DK_VERSION=master
-#DK_VERSION="work/michmill/saverejectedfacedata"
+#DK_VERSION=master
+DK_VERSION="work/michmill/koboldllm"
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
 #DK_SUBVER="-01"
@@ -144,15 +144,15 @@ else
 
     # KDE KF6 frameworks version.
     # See official release here: https://download.kde.org/stable/frameworks/
-    DK_KDE_VERSION="v6.12.0"
+    DK_KDE_VERSION="v6.14.0"
 
     # KDE Plasma version.
     # See official release here: https://download.kde.org/stable/plasma/
-    DK_KP_VERSION="v6.3.4"
+    DK_KP_VERSION="v6.3.5"
 
     # KDE Application version.
     # See official release here: https://download.kde.org/stable/release-service/
-    DK_KA_VERSION="v24.12.3"
+    DK_KA_VERSION="v25.04.1"
 
     DK_UPLOADDIR="/srv/archives/files/digikam/unstable"
 

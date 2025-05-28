@@ -154,13 +154,13 @@ fi
 MARIADB_SOURCE_DIR="opt/mariadb"
 
 OTHER_APPS="\
-lib/plugins/imageformats/*.dylib \
-lib/plugins/styles/*.so \
-lib/plugins/digikam/bqm/*.so \
-lib/plugins/digikam/generic/*.so \
-lib/plugins/digikam/editor/*.so \
-lib/plugins/digikam/dimg/*.so \
-lib/plugins/digikam/rawimport/*.so \
+share/qt/plugins/imageformats/*.dylib \
+share/qt/plugins/styles/*.dylib \
+share/qt/plugins/digikam/bqm/*.so \
+share/qt/plugins/digikam/generic/*.so \
+share/qt/plugins/digikam/editor/*.so \
+share/qt/plugins/digikam/dimg/*.so \
+share/qt/plugins/digikam/rawimport/*.so \
 bin/kbuildsycoca$DK_QTVERSION \
 bin/solid-hardware$DK_QTVERSION \
 bin/ffmpeg \
@@ -182,6 +182,9 @@ if [[ $ARCH_TARGET = "x86_64" ]] ; then
     opt/zstd/lib/*.dylib \
     "
 fi
+#lib/plugins/imageformats/*.dylib \
+
+
 #opt/qt-mariadb/share/qt/plugins/sqldrivers/*.dylib \
 #lib/sane/*.so \
 # opt/mariadb/bin/mysql \
@@ -201,12 +204,10 @@ binaries="$OTHER_APPS"
 #       QtWebEngine runtime process and binary archives (.pak) are located in libexec/qt$DK_QTVERSION/lib/QtWebEngineCore.framework/
 #
 OTHER_DIRS="\
-opt/qt$DK_QTVERSION/share/qt/translations \
+share/qt/translations \
 share/qt/plugins \
 lib/libdigikam*.dSYM \
-lib/plugins \
-lib/libgphoto2 \
-lib/libgphoto2_port \
+Cellar/libgphoto2/2.5.31/lib \
 lib/ImageMagick* \
 share/ImageMagick* \
 etc/ImageMagick* \
@@ -430,7 +431,7 @@ done
 
 # Move Qt translation data files at the right place in the bundle. See Bug #438701.
 
-mv -v $TEMPROOT/opt/qt$DK_QTVERSION/share/qt/translations $TEMPROOT/$DK_APP_CONTENTS/Resources/
+mv -v $TEMPROOT/share/qt/translations $TEMPROOT/$DK_APP_CONTENTS/Resources/
 
 # To support localized system menu entries from MacOS. See bug #432650.
 
@@ -457,8 +458,8 @@ echo "---------- Move digiKam and KF6 run-time plugins\n"
 rm -fr $TEMPROOT/bin/digikam.app
 rm -fr $TEMPROOT/bin/showfoto.app
 
-cp -a  $TEMPROOT/lib/plugins/         $TEMPROOT/share/qt/plugins
-rm -rf $TEMPROOT/lib/plugins/
+# cp -a  $TEMPROOT/lib/plugins/         $TEMPROOT/share/qt/plugins
+# rm -rf $TEMPROOT/lib/plugins/
 
 #################################################################################################
 # Copy MariaDB 
