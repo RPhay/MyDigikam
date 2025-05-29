@@ -103,10 +103,17 @@ void RedEyeCorrectionFilter::filterImage()
     if (!d->model)
     {
         d->model = static_cast<DNNModelYuNet*>(DNNModelManager::instance()->getModel(QLatin1String("YuNet"), DNNModelUsage::DNNUsageFaceDetection));
+
+        if (!d->model)
+        {
+            qCDebug(DIGIKAM_DIMG_LOG) << "RedEyeCorrectionFilter::filterImage: Error get YuNet model";
+            return;
+        }
+
         d->model->getNet();
     }
 
-    if (!d->model && !d->model->modelLoaded)
+    if (!d->model->modelLoaded)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "RedEyeCorrectionFilter::filterImage: Error loading YuNet model";
         return;
