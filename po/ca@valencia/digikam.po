@@ -10390,8 +10390,9 @@ msgid ""
 msgstr ""
 "Esta és la vista prèvia de l'operació de gir lliure. Si moveu el cursor "
 "sobre esta vista prèvia, es dibuixarà una línia horitzontal i una vertical "
-"de ratlles per a guiar-vos en ajustar la correcció del gir lliure. Deixeu el "
-"botó esquerre del ratolí per a fixar la posició de la línia de ratlles."
+"de ratlles per a guiar-vos en ajustar la correcció del gir lliure. Deixeu "
+"anar el botó esquerre del ratolí per a fixar la posició de la línia de "
+"ratlles."
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:103
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:105
@@ -43679,7 +43680,7 @@ msgstr "Millores en l'eina de busques avançades"
 #: core/libs/widgets/mainview/daboutdata.cpp:142
 #, kde-format
 msgid "Releases Manager"
-msgstr "Gestor de llançaments"
+msgstr "Encarregat dels llançaments"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:150
 #, kde-format
@@ -43834,7 +43835,7 @@ msgstr "Reducció automàtica del soroll"
 #: core/libs/widgets/mainview/daboutdata.cpp:299
 #, kde-format
 msgid "Windows Port and Release Manager"
-msgstr "Adaptació a Windows i gestor de llançaments"
+msgstr "Adaptació a Windows i encarregat dels llançaments"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:310
 #, kde-format
@@ -57692,7 +57693,7 @@ msgstr "DOP: %1"
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:524
 #, kde-format
 msgid "Fix: %1d"
-msgstr "Fix: %1d"
+msgstr "Fix: %1 d"
 
 # Nre.= Abreviatura de nombre (sinònim de quantitat)
 # skip-rule: t-pu_sp

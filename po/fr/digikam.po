@@ -43926,7 +43926,7 @@ msgid ""
 ">with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
 "<qt><font color=\"white\"><b>Gestion professionnelle</b> de "
-"<b>photographies</b><br/> avec la puissances des<b>logiciels « Open Source » "
+"<b>photographies</b><br/> avec la puissance des <b>logiciels « Open Source » "
 "</b></font></qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:51
