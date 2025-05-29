@@ -243,7 +243,7 @@ BUGFIXES:
 213 ==> 504694 - Missing Flags in Left Label Menu and Right Filter Menu and Picture View.
 214 ==> 504728 - Caption is too short.
 215 ==> 504902 - digiKam crashes when removing red eye (without loading additional files).
-216 ==> 
+216 ==> 504947 - digiKam not signed under macOS.
 217 ==> 
 218 ==> 
 219 ==> 
