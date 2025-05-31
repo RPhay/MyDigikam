@@ -46,7 +46,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-22 02:02+0000\n"
-"PO-Revision-Date: 2025-02-08 11:19+0200\n"
+"PO-Revision-Date: 2025-05-29 15:07+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15535,7 +15535,7 @@ msgstr "Syötä tähän yhteystiedoista sähköpostiosoite."
 #: core/libs/template/templateviewer.cpp:166
 #, kde-format
 msgid "URL:"
-msgstr "URL:"
+msgstr "Verkko-osoite:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:108
 #, kde-format
@@ -18539,12 +18539,7 @@ msgstr ""
 "automaattisesti"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:80
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool permit to share items on the local network through a DLNA "
-#| "server.</p><p>Items to share can be selected one by one or by group "
-#| "through a selection of albums.</p><p>Many kind of electronic devices can "
-#| "support DLNA, as tablets, cellulars, TV, etc.</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The %1 server allows to share items through the local network using a web "
@@ -18555,10 +18550,13 @@ msgid ""
 "browser, just use http://address:port as url, with address the MJPEG server "
 "IP, and port the server port set in this config dialog."
 msgstr ""
-"<p>Tällä työkalulla voi jakaa kohteita paikallisverkkoon DLNA-palvelimen "
-"kautta.</p><p>Jaettavat kohteet voi valita yksittäin tai ryhminä "
-"albumivalinnan kautta.</p> <p>Monet laitteet kuten tabletit, matkapuhelimet, "
-"TV:t jne. tukevat DLNA:ta.</p>"
+"%1-palvelin mahdollistaa kohteiden jakamisen paikallisverkkoon "
+"verkkoselaimella. Video-JPEG on videopakkausmuoto, jossa jokainen videokuva "
+"tai digitaalivideosekvenssin lomitettu kenttä pakataan JPEG-kuvaksi "
+"erikseen. MJPEG-virrat ovat standardi, joka verkkoasiakasyhteydet "
+"lisämoduuleitta. Useimmat verkkoselaimet ja soittimet tukevat MJPEG-virtaa. "
+"Selaimesta virtaa voi käyttää verkko-osoitteesta http://osoite:portti, missä "
+"osoite on MJPEGin osoite ja portti asetuksissa määritetty MJPEG-portti."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:94
 #, kde-format
@@ -18719,12 +18717,7 @@ msgid "A tool to export items as MJPEG Stream"
 msgstr "Työkalu kohteiden MJPEG-suoratoistovientiin"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:82
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool permit to share items on the local network through a DLNA "
-#| "server.</p><p>Items to share can be selected one by one or by group "
-#| "through a selection of albums.</p><p>Many kind of electronic devices can "
-#| "support DLNA, as tablets, cellulars, TV, etc.</p>"
+#, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a "
 "MJPEG Stream server.</p><p>Items to share can be selected one by one or by "
@@ -18738,10 +18731,16 @@ msgid ""
 "dialog. More than one computer can be connected to the MJPEG server at the "
 "same time.</p>"
 msgstr ""
-"<p>Tällä työkalulla voi jakaa kohteita paikallisverkkoon DLNA-palvelimen "
-"kautta.</p><p>Jaettavat kohteet voi valita yksittäin tai ryhminä "
-"albumivalinnan kautta.</p> <p>Monet laitteet kuten tabletit, matkapuhelimet, "
-"TV:t jne. tukevat DLNA:ta.</p>"
+"<p>Tällä työkalulla voi MJPEG-suoratoistopalvelimella jakaa kohteita "
+"paikallisverkkoon.</p> <p>Jaettavat kohteet voi jakaa yksitellen tai "
+"albumivalinnan kautta ryhminä.</p><p>Video-JPEG on videopakkausmuoto, jossa "
+"jokainen videokuva tai digitaalivideosekvenssin lomitettu kenttä pakataan "
+"JPEG-kuvaksi erikseen. MJPEG-virrat ovat standardi, joka "
+"verkkoasiakasyhteydet lisämoduuleitta. Useimmat verkkoselaimet ja soittimet "
+"tukevat MJPEG-virtaa.</p><p>Selaimesta virtaa voi käyttää verkko-osoitteesta "
+"http://osoite:portti, missä osoite on MJPEGin osoite ja portti asetuksissa "
+"määritetty MJPEG-portti. Useampi tietokone voi yhdistää MJPEG-palvelimeen "
+"yhtä aikaa.</p>"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:99
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
@@ -48447,10 +48446,9 @@ msgstr "%2 ei tue valittua käyttöliittymäkieltä %1"
 #: core/libs/widgets/text/donlinetranslator.cpp:132
 #: core/libs/widgets/text/donlinetranslator.cpp:215
 #: core/libs/widgets/text/donlinetranslator.cpp:232
-#, fuzzy, kde-format
-#| msgid "%1 URL can't be empty."
+#, kde-format
 msgid "%1 URL cannot be empty."
-msgstr "%1-verkko-osoite ei voi olla tyhjä."
+msgstr "Verkko-osoite %1 ei voi olla tyhjä."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
 #, kde-format
