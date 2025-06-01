@@ -988,10 +988,12 @@ int getJpegQuality(const QString& file)
             }
         }
 
-        if ((jpeg_info.quant_tbl_ptrs[0] != nullptr) &&
-            (jpeg_info.quant_tbl_ptrs[1] != nullptr))
+        if (
+            (jpeg_info.quant_tbl_ptrs[0] != nullptr) &&
+            (jpeg_info.quant_tbl_ptrs[1] != nullptr)
+           )
         {
-            long hash[101] =
+            const long hash[101] =
                 {
                     1020, 1015,  932,  848,  780,  735,  702,  679,  660,  645,
                      632,  623,  613,  607,  600,  594,  589,  585,  581,  571,
@@ -1022,9 +1024,9 @@ int getJpegQuality(const QString& file)
                 };
 
             value = (long)(jpeg_info.quant_tbl_ptrs[0]->quantval[2]  +
-                        jpeg_info.quant_tbl_ptrs[0]->quantval[53] +
-                        jpeg_info.quant_tbl_ptrs[1]->quantval[0]  +
-                        jpeg_info.quant_tbl_ptrs[1]->quantval[DCTSIZE2 - 1]);
+                           jpeg_info.quant_tbl_ptrs[0]->quantval[53] +
+                           jpeg_info.quant_tbl_ptrs[1]->quantval[0]  +
+                           jpeg_info.quant_tbl_ptrs[1]->quantval[DCTSIZE2 - 1]);
 
             for (i = 0 ; i < 100 ; ++i)
             {
