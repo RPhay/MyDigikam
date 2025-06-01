@@ -345,7 +345,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
             this, SLOT(slotMetadataSetup()));
 
     connect(d->resetFaceDb, &QCheckBox::toggled,
-            [this] (bool on)
+            this, [this] (bool on)
         {
             if (on)
             {
