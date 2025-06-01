@@ -67,7 +67,7 @@ int DNGWriter::Private::backupRaw(DNGWriterHost& host,
         {
             int originalBlockLength = originalDataStream.readRawData(originalDataBlock.data(), DNGWriter::Private::CHUNK);
 
-            QByteArray compressedDataBlock = qCompress((const uchar*)originalDataBlock.data(), originalBlockLength, -1);
+            QByteArray compressedDataBlock = qCompress(reinterpret_cast<const uchar*>(originalDataBlock.data()), originalBlockLength, -1);
             compressedDataBlock.remove(0, 4);   // removes qCompress own header
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: compressed data block " << originalBlockLength << " -> " << compressedDataBlock.size();
 

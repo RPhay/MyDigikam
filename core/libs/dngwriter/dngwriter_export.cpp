@@ -91,8 +91,8 @@ int DNGWriter::Private::exportTarget(DNGWriterHost& host,
                                      (previewIndex > 0)
                                     );
 
-        AutoPtr<dng_preview> preview(useCompressedPreview ? (dng_preview*) new dng_jpeg_preview
-                                                          : (dng_preview*) new dng_image_preview);
+        AutoPtr<dng_preview> preview(useCompressedPreview ? reinterpret_cast<dng_preview*>(new dng_jpeg_preview)
+                                                          : reinterpret_cast<dng_preview*>(new dng_image_preview));
 
         preview->fInfo.fApplicationName.Set_ASCII(QString::fromLatin1("digiKam").toLatin1().constData());
         preview->fInfo.fApplicationVersion.Set_ASCII(digiKamVersion().toLatin1().constData());

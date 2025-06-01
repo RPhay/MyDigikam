@@ -263,7 +263,7 @@ int main(int argc, char** argv)
                         compressedDataBlock.prepend((uncompressedDataSize >> 24) & 0xFF);
                         forkLength -= uncompressedDataSize;
 
-                        QByteArray originalDataBlock = qUncompress((const uchar*)compressedDataBlock.data(), compressedDataBlock.size());
+                        QByteArray originalDataBlock = qUncompress(reinterpret_cast<const uchar*>(compressedDataBlock.data()), compressedDataBlock.size());
 /*
                         qCDebug(DIGIKAM_TESTS_LOG) << "compressed data block " << compressedDataBlock.size() << " -> " << originalDataBlock.size();
 */
