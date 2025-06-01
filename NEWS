@@ -245,7 +245,7 @@ BUGFIXES:
 215 ==> 504902 - digiKam crashes when removing red eye (without loading additional files).
 216 ==> 504947 - digiKam not signed under macOS.
 217 ==> 505093 - Import filter not showing CR3 files.
-218 ==> 
+218 ==> 505019 - Thumbnails not displayed.
 219 ==> 
 220 ==> 
 221 ==> 
