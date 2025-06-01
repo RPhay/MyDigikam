@@ -2709,7 +2709,9 @@ void ImportUI::slotCollectionLocationStatusChanged(const CollectionLocation&, in
 
 void ImportUI::slotToggleShowBar()
 {
-    showThumbBar(d->showBarAction->isChecked());
+    // Method called in contructor: use dynamic binding
+
+    this->showThumbBar(d->showBarAction->isChecked());
 }
 
 void ImportUI::slotLogMsg(const QString& msg, DHistoryView::EntryType type,
