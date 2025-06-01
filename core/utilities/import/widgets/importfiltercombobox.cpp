@@ -135,7 +135,7 @@ void ImportFilterComboBox::defaultFilters(FilterList* const filters)
                                          "image/x-kodak-k25;image/x-sony-arw;image/x-minolta-mrw;"
                                          "image/x-kodak-kdc;image/x-sigma-x3f;image/x-sony-srf;"
                                          "image/x-pentax-pef;image/x-panasonic-raw2;image/x-canon-crw;"
-                                         "image/x-sony-sr2;image/x-canon-cr2");
+                                         "image/x-sony-sr2;image/x-canon-cr2;image/x-canon-cr3");
         filters->append(f3);
 
         Filter* const f4 = new Filter;

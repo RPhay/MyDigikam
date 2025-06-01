@@ -83,6 +83,7 @@ private Q_SLOTS:
     void slotAddFilter();
     void slotRemoveFilter();
     void slotEditFilter();
+    void slotResetFilter();
     void slotPreviewItemsClicked();
     void slotPreviewFullImageSizeClicked();
 

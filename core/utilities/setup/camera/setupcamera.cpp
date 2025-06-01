@@ -183,6 +183,7 @@ public:
     QPushButton*         importAddButton            = nullptr;
     QPushButton*         importRemoveButton         = nullptr;
     QPushButton*         importEditButton           = nullptr;
+    QPushButton*         importResetButton          = nullptr;
 
     QRadioButton*        storeDiffButton            = nullptr;
     QRadioButton*        overwriteButton            = nullptr;
@@ -371,6 +372,7 @@ SetupCamera::SetupCamera(QWidget* const parent)
     d->importAddButton         = new QPushButton(panel3);
     d->importRemoveButton      = new QPushButton(panel3);
     d->importEditButton        = new QPushButton(panel3);
+    d->importResetButton       = new QPushButton(panel3);
     QSpacerItem* const spacer2 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
     QGroupBox* const groupBox         = new QGroupBox(panel3);
@@ -397,18 +399,21 @@ SetupCamera::SetupCamera(QWidget* const parent)
     d->importRemoveButton->setIcon(QIcon::fromTheme(QLatin1String("list-remove")));
     d->importEditButton->setText(i18n("&Edit..."));
     d->importEditButton->setIcon(QIcon::fromTheme(QLatin1String("configure")));
+    d->importResetButton->setText(i18n("&Defaults"));
+    d->importResetButton->setIcon(QIcon::fromTheme(QLatin1String("view-refresh")));
     d->importRemoveButton->setEnabled(false);
     d->importEditButton->setEnabled(false);
 
     importGrid->setContentsMargins(spacing, spacing, spacing, spacing);
     importGrid->setSpacing(spacing);
     importGrid->setAlignment(Qt::AlignTop);
-    importGrid->addWidget(d->importListView,     0, 0, 4, 1);
-    importGrid->addWidget(groupBox,              5, 0, 1, 1);
+    importGrid->addWidget(d->importListView,     0, 0, 5, 1);
+    importGrid->addWidget(groupBox,              6, 0, 1, 1);
     importGrid->addWidget(d->importAddButton,    0, 1, 1, 1);
     importGrid->addWidget(d->importRemoveButton, 1, 1, 1, 1);
     importGrid->addWidget(d->importEditButton,   2, 1, 1, 1);
-    importGrid->addItem(spacer2,                 3, 1, 1, 1);
+    importGrid->addWidget(d->importResetButton,  3, 1, 1, 1);
+    importGrid->addItem(spacer2,                 4, 1, 1, 1);
 
     d->tab->insertTab(ImportFilters, panel3, i18n("Import Filters"));
 
@@ -564,6 +569,9 @@ SetupCamera::SetupCamera(QWidget* const parent)
 
     connect(d->importEditButton, SIGNAL(clicked()),
             this, SLOT(slotEditFilter()));
+
+    connect(d->importResetButton, SIGNAL(clicked()),
+            this, SLOT(slotResetFilter()));
 
     // -------------------------------------------------------------
 
@@ -974,6 +982,25 @@ void SetupCamera::slotEditFilter()
             break;
         }
     }
+}
+
+void SetupCamera::slotResetFilter()
+{
+    d->importListView->clear();
+    qDeleteAll(d->filters);
+    d->filters.clear();
+
+    ImportFilterComboBox::defaultFilters(&d->filters);
+
+    for (Filter* const f : std::as_const(d->filters))
+    {
+        new QListWidgetItem(f->name, d->importListView);
+    }
+
+    d->importListView->sortItems();
+
+    d->ignoreNamesEdit->setText(ImportFilterComboBox::defaultIgnoreNames);
+    d->ignoreExtensionsEdit->setText(ImportFilterComboBox::defaultIgnoreExtensions);
 }
 
 void SetupCamera::slotPreviewItemsClicked()
