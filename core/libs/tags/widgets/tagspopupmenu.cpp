@@ -636,7 +636,7 @@ void TagsPopupMenu::iterateAndBuildMenu(QMenu* menu, TAlbum* album)
     for (QList<Album*>::const_iterator it = sortedTags.constBegin() ;
          it != sortedTags.constEnd() ; ++it)
     {
-        TAlbum* const a = (TAlbum*)(*it);
+        TAlbum* const a = dynamic_cast<TAlbum*>(*it);
 
         if (a->isInternalTag())
         {
