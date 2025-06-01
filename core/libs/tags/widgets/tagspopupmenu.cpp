@@ -638,7 +638,7 @@ void TagsPopupMenu::iterateAndBuildMenu(QMenu* menu, TAlbum* album)
     {
         TAlbum* const a = dynamic_cast<TAlbum*>(*it);
 
-        if (a->isInternalTag())
+        if (!a || a->isInternalTag())
         {
             continue;
         }
