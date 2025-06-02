@@ -43,15 +43,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 02:02+0000\n"
-"PO-Revision-Date: 2025-02-26 18:23+0100\n"
+"POT-Creation-Date: 2025-06-02 01:57+0000\n"
+"PO-Revision-Date: 2025-06-01 13:46+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 25.04.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -348,13 +348,11 @@ msgid "M&erge Here"
 msgstr "Samman&foga här"
 
 #: core/app/dragdrop/tagdragdrop.cpp:251
-#, fuzzy, kde-format
-#| msgid "Change face name from '%2' to '%3'"
-#| msgid_plural "Change face names from '%2' to '%3'"
+#, kde-format
 msgid "Confirm face name '%2' to Item"
 msgid_plural "Confirm face name '%2' to Items"
-msgstr[0] "Ändra ansiktsnamn från '%2' till '%3'"
-msgstr[1] "Ändra ansiktsnamn från '%2' till '%3'"
+msgstr[0] "Bekräfta ansiktsnamn '%2' för objektet"
+msgstr[1] "Bekräfta ansiktsnamn '%2' för objekten"
 
 #: core/app/dragdrop/tagdragdrop.cpp:258 core/app/dragdrop/tagdragdrop.cpp:451
 #, kde-format
@@ -591,8 +589,7 @@ msgstr[0] "Flytta till papperskorgen"
 msgstr[1] "Flytta %1 filer till papperskorgen"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
@@ -2416,8 +2413,7 @@ msgid "Rotate"
 msgstr "Rotera"
 
 #: core/app/main/digikamapp_setup.cpp:1069
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action: auto-rotate image"
 msgid "Auto-Rotate"
 msgstr "Rotera automatiskt"
@@ -2977,12 +2973,10 @@ msgstr "Använd knappen för att söka igenom markerade album efter ansikten"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:168
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Color-Managed View is disabled."
+#, kde-format
 msgctxt "@info"
 msgid "Face engine is disabled"
-msgstr "Färghanterad vy är inaktiv."
+msgstr "Ansiktsgränssnittet är inaktiverat"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:204
 #, kde-format
@@ -2995,16 +2989,13 @@ msgstr ""
 "sidopanelen."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:259
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face recognition is aborted, because there are no identities to "
-#| "recognize. Please add new identities."
+#, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
 msgstr ""
-"Ansiktsigenkänningen har avbrutits eftersom det inte finns några identiteter "
-"att känna igen. Lägg till nya identiteter."
+"Ansiktssökning har avbrutits eftersom det inte finns några identiteter att "
+"känna igen. Lägg till nya identiteter."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:279
 #, kde-format
@@ -3526,15 +3517,12 @@ msgstr ""
 "textredigeringskomponenten."
 
 #: core/app/views/stack/welcomepageview.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow to use Global or Customized Image Quality Sorting settings "
-#| "everywhere."
+#, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Scanning settings everywhere."
 msgstr ""
 "Tillåt användning av globala eller egna inställningar av "
-"bildkvalitetssortering överallt."
+"bildkvalitetssökning överallt."
 
 #: core/app/views/stack/welcomepageview.cpp:123
 #, kde-format
@@ -6358,8 +6346,7 @@ msgstr ""
 "bilder.</para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@title"
 msgid "Image Quality Scan"
 msgstr "Bildkvalitetssökning"
@@ -6616,33 +6603,26 @@ msgstr ""
 "alternativt språk i XMP-metadata från bilder.</para>"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@title"
 msgid "Auto-Rotate"
 msgstr "Rotera automatiskt"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to automatically assign tags to images"
+#, kde-format
 msgctxt "@info"
 msgid "AI tool to automatically rotate images"
-msgstr "Ett verktyg för att automatiskt tilldela etiketter till bilder"
+msgstr "Ett verktyg för att automatiskt rotera bilder"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can fix automatically lens artifacts "
-#| "over images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can automatically detect the correct "
 "orientation of an image and rotate the image.</para>"
 msgstr ""
-"<para>Hanteringsverktyget för bakgrundskö kan automatiskt korrigera "
-"linsförvrängningar på bilder.</para>"
+"<para>Hanteringsverktyget för bakgrundskö kan automatiskt detektera en bilds "
+"korrekta orientering och rotera bilden.</para>"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, kde-format
@@ -26814,22 +26794,19 @@ msgid "UFRaw Raw Conversion"
 msgstr "UFRaw konvertering av obehandlade bilder"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:337
-#, fuzzy, kde-format
-#| msgid "Failed to load image"
+#, kde-format
 msgid "Unable to load image"
-msgstr "Misslyckades läsa in bilden"
+msgstr "Kan inte läsa in bilden"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:461
-#, fuzzy, kde-format
-#| msgid "Post Processing"
+#, kde-format
 msgid "AI Tools Processing"
-msgstr "Efterbehandling"
+msgstr "Behandling med AI-verktyg"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:503
-#, fuzzy, kde-format
-#| msgid "Auto-tags for: %1\n"
+#, kde-format
 msgid "Auto-rotating: %1\n"
-msgstr "Automatiskt etiketteringsläge för: %1\n"
+msgstr "Rotera automatiskt: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
@@ -26844,16 +26821,14 @@ msgid "Album: %1\n"
 msgstr "Album: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
-#, fuzzy, kde-format
-#| msgid "Rotation: "
+#, kde-format
 msgid "Rotation: %1\n"
-msgstr "Rotation: "
+msgstr "Rotation: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:527
-#, fuzzy, kde-format
-#| msgid "&Skip"
+#, kde-format
 msgid "Skipped"
-msgstr "&Hoppa över"
+msgstr "Hoppades över"
 
 #: core/libs/album/engine/album.cpp:411
 #: core/libs/database/utils/ifaces/dio.cpp:959
@@ -28850,6 +28825,8 @@ msgid ""
 "A file operation using the same path is currently in progress. Please wait "
 "for the operation to complete and try again."
 msgstr ""
+"En åtgärd som använder samma sökväg pågår för närvarande. Vänta tills "
+"åtgärden är klar och försök igen."
 
 #: core/libs/database/utils/ifaces/dio.cpp:382
 #, kde-format
@@ -34767,9 +34744,7 @@ msgid "Search in"
 msgstr "Sök i"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@label Face Worflow"
-#| msgid "Workflow:"
+#, kde-format
 msgctxt "@label short translated text about the Face Worflow."
 msgid "Workflow:"
 msgstr "Arbetsflöde:"
@@ -34817,9 +34792,7 @@ msgstr ""
 "ansikten med bekräftade ansikten utan söka efter bildernas nya ansikten.</p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
-#, fuzzy, kde-format
-#| msgctxt "@label Face Detection Accuracy"
-#| msgid "Accuracy:"
+#, kde-format
 msgctxt "@label short translated text about the Face Detection Accuracy"
 msgid "Accuracy:"
 msgstr "Noggrannhet:"
@@ -34836,9 +34809,7 @@ msgstr ""
 "blir igenkänningen av ansikten, men färre ansikten känns igen."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@label face size for detection"
-#| msgid "Face size:"
+#, kde-format
 msgctxt "@label with a short translated text about the face size for detection"
 msgid "Face size:"
 msgstr "Ansiktsstorlek:"
@@ -34911,9 +34882,7 @@ msgid "Face Detection Settings"
 msgstr "Inställningar av ansiktsdetektering"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@label Face Detection Accuracy"
-#| msgid "Accuracy:"
+#, kde-format
 msgctxt "@label short translated text about the Face Recognition Accuracy"
 msgid "Accuracy:"
 msgstr "Noggrannhet:"
@@ -34935,9 +34904,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Work on all processor cores"
 msgstr "Använd alla processorkärnor"
@@ -35473,25 +35440,19 @@ msgid "aesthetic image quality"
 msgstr "estetisk bildkvalitet"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@label: image quality sort scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label: short translated text about the image quality scan mode"
 msgid "Scan Mode:"
 msgstr "Sökmetod:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@item: all items to scan with image quality sort"
-#| msgid "All"
+#, kde-format
 msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
 msgstr "Alla"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@item: image quality sort only non assigned items"
-#| msgid "Non-Assigned Only"
+#, kde-format
 msgctxt "@item: image quality scan only non assigned items"
 msgid "Non-Assigned Only"
 msgstr "Bara ej tilldelade"
@@ -35508,9 +35469,7 @@ msgstr ""
 "valda beteckningar.</p>"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign Low Quality to Rejected Label"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign Low Quality to Rejected Label"
 msgstr "Tilldela Låg kvalitet till Kasserad beteckning"
@@ -35526,9 +35485,7 @@ msgstr ""
 "tilldelas den valda beteckningen kasserad (röd flagga)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign Medium Quality to Pending Label"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign Medium Quality to Pending Label"
 msgstr "Tilldela Medelkvalitet till Obestämd beteckning"
@@ -35544,9 +35501,7 @@ msgstr ""
 "tilldelas den valda beteckningen obestämd (gul flagga)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Assign High Quality to Accepted Label"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Assign High Quality to Accepted Label"
 msgstr "Tilldela Hög kvalitet till Godkänd beteckning"
@@ -35562,17 +35517,13 @@ msgstr ""
 "tilldelas den valda beteckningen godkänd (grön flagga)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:137
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Quality Engine:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Quality Engine:"
 msgstr "Kvalitetsanalys:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Aesthetic Contents"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Detect Aesthetic Contents"
 msgstr "Detektera estetisk innehåll"
@@ -35590,9 +35541,7 @@ msgstr ""
 "djupinlärning för att klassificera bilder"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect by Basic Factors"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Detect by Basic Factors"
 msgstr "Detektera enligt grundfaktorer"
@@ -35622,9 +35571,7 @@ msgstr ""
 "i systemet eller arbeta i bakgrunden med bara en kärna."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Rejected threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Rejected threshold:"
 msgstr "Tröskel för kasserade:"
@@ -35636,9 +35583,7 @@ msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr "Undre tröskel för att tilldela bilder beteckningen Kasserad"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Pending threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Pending threshold:"
 msgstr "Tröskel för obestämda:"
@@ -35650,9 +35595,7 @@ msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr "Undre tröskel för att tilldela bilder beteckningen Obestämd"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Accepted threshold:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Accepted threshold:"
 msgstr "Tröskel för godkända:"
@@ -35664,9 +35607,7 @@ msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr "Undre tröskel för att tilldela bilder beteckningen Godkänd"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Blur"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Blur"
 msgstr "Detektera suddighet"
@@ -35680,9 +35621,7 @@ msgstr "Detekterar hur suddiga bilderna som skickas till den är"
 #: core/libs/imgqsort/imagequalitywidget.cpp:223
 #: core/libs/imgqsort/imagequalitywidget.cpp:234
 #: core/libs/imgqsort/imagequalitywidget.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Weight:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Weight:"
 msgstr "Vikt:"
@@ -35694,9 +35633,7 @@ msgid "Weight to assign to Blur Algorithm"
 msgstr "Vikt att tilldela till suddighetsalgoritmen"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Noise"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Noise"
 msgstr "Detektera brus"
@@ -35714,9 +35651,7 @@ msgid "Weight to assign to Noise Algorithm"
 msgstr "Vikt att tilldela till brusalgoritmen"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Compression"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Compression"
 msgstr "Detektera komprimering"
@@ -35734,9 +35669,7 @@ msgid "Weight to assign to Compression Algorithm"
 msgstr "Vikt att tilldela till komprimeringsalgoritmen"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Under and Over Exposure"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Detect Under and Over Exposure"
 msgstr "Detektera under- och överexponering"
@@ -37000,11 +36933,9 @@ msgid "Binary data %1 bytes"
 msgstr "Binärdata %1 byte"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:401
-#, fuzzy, kde-format
-#| msgctxt "@title Image transformations"
-#| msgid "Basic Transformations"
+#, kde-format
 msgid "No Transformation"
-msgstr "Grundtransformeringar"
+msgstr "Ingen transformering"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:406
 #, kde-format
@@ -37017,35 +36948,29 @@ msgid "Flip Vertical"
 msgstr "Vänd vertikalt"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:416
-#, fuzzy, kde-format
-#| msgid "Rotate 180°"
+#, kde-format
 msgid "Rotate 90°"
-msgstr "Rotera 180°"
+msgstr "Rotera 90°"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:421
-#, fuzzy, kde-format
-#| msgid "Rotate 180 degrees"
+#, kde-format
 msgid "Rotate 180°"
-msgstr "Rotera 180 grader"
+msgstr "Rotera 180°"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:426
-#, fuzzy, kde-format
-#| msgid "Rotate 270 Degrees"
+#, kde-format
 msgid "Rotate 270°"
-msgstr "Rotera 270 grader"
+msgstr "Rotera 270°"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:431
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Rotation"
+#, kde-format
 msgid "Auto Rotation"
-msgstr "Rotation"
+msgstr "Rotera automatiskt"
 
 #: core/libs/metadataengine/engine/metaengine_rotation.cpp:436
-#, fuzzy, kde-format
-#| msgid "Unknown Format"
+#, kde-format
 msgid "Unknown Transformation"
-msgstr "Okänt format"
+msgstr "Okänd transformering"
 
 #: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:373
 #, kde-format
@@ -39812,9 +39737,7 @@ msgstr ""
 "bildinnehållet och lagrar resultaten i databasen.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@label: image quality sort scan mode"
-#| msgid "Scan Mode:"
+#, kde-format
 msgctxt "@label with a short translated text about autotags scanning mode"
 msgid "Scan Mode:"
 msgstr "Sökmetod:"
@@ -39843,8 +39766,7 @@ msgstr ""
 "automatiska etiketter.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "Auto-Tagging Mode:"
+#, kde-format
 msgctxt "@label with a short translated text "
 msgid "Auto-Tagging Mode:"
 msgstr "Automatiskt etiketteringsläge: "
@@ -39875,9 +39797,7 @@ msgstr ""
 "etiketterna.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@label: deep learning model used to detect objects to auto-tag"
-#| msgid "Detection Model:"
+#, kde-format
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
@@ -39890,8 +39810,7 @@ msgid "No models available"
 msgstr "Inga modeller tillgängliga"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Detection Accuracy:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Detection Accuracy:"
 msgstr "Detekteringsnoggrannhet:"
@@ -39920,9 +39839,7 @@ msgstr ""
 "i systemet eller arbeta i bakgrunden med bara en kärna."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Translate Tags to:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Translate Tags to:"
 msgstr "Översätt etikett till:"
@@ -42389,19 +42306,19 @@ msgid "If Target File Exists:"
 msgstr "Om resultatfilen finns:"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:67
-#: core/utilities/setup/camera/setupcamera.cpp:330
+#: core/utilities/setup/camera/setupcamera.cpp:331
 #, kde-format
 msgid "Store as a different name"
 msgstr "Lagra med ett annat namn"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:68
-#: core/utilities/setup/camera/setupcamera.cpp:331
+#: core/utilities/setup/camera/setupcamera.cpp:332
 #, kde-format
 msgid "Overwrite automatically"
 msgstr "Skriv över automatiskt"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:69
-#: core/utilities/setup/camera/setupcamera.cpp:332
+#: core/utilities/setup/camera/setupcamera.cpp:333
 #, kde-format
 msgid "Skip automatically"
 msgstr "Hoppa över automatiskt"
@@ -43250,26 +43167,17 @@ msgid "Releases Manager"
 msgstr "Utgivningsansvarig"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Quality Engine:"
+#, kde-format
 msgid "Quality Test Engineer"
-msgstr "Kvalitetsanalys:"
+msgstr "Kvalitetstestingenjör"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:157
-#, fuzzy, kde-format
-#| msgid "Port to Qt6,"
+#, kde-format
 msgid "Port to Qt6"
-msgstr "Konvertering till Qt6,"
+msgstr "Konvertering till Qt6"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Rewrite Image Quality Sorter algorithms\n"
-#| "and Photo Focus Information Extraction.\n"
-#| "Aesthetic Detection to classify images\n"
-#| "using deep learning model.\n"
-#| "Slideshow and Presentation tools improvement"
+#, kde-format
 msgid ""
 "Rewrite Image Quality Scanner algorithms\n"
 "and Photo Focus Information Extraction.\n"
@@ -43277,7 +43185,7 @@ msgid ""
 "using deep learning model.\n"
 "Slideshow and Presentation tools improvement"
 msgstr ""
-"Omskrivning av sorteringsalgoritm för bildkvalitet\n"
+"Omskrivning av sökalgoritmer för bildkvalitet\n"
 "och extrahering av fokuseringsinformation,\n"
 "estetikdetektering för att klassificera bilder med\n"
 "en modell för djupinlärning.\n"
@@ -43346,8 +43254,7 @@ msgstr "Portering till modell/vy av bildeditorns duk"
 #: core/libs/widgets/mainview/daboutdata.cpp:225
 #: core/utilities/maintenance/main/maintenancedlg.cpp:273
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:93
-#, fuzzy, kde-format
-#| msgid "Image Quality Scan"
+#, kde-format
 msgid "Image Quality Scanner"
 msgstr "Bildkvalitetssökning"
 
@@ -50074,7 +49981,7 @@ msgid "&Show image Format"
 msgstr "Vi&sa bildformat"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:150
-#: core/utilities/setup/camera/setupcamera.cpp:441
+#: core/utilities/setup/camera/setupcamera.cpp:446
 #, kde-format
 msgid "Set this option to show image format over image thumbnail."
 msgstr "Aktivera alternativet för att visa bildformat ovanför miniatyrbilden."
@@ -50085,7 +49992,7 @@ msgid "&Show Geolocation Indicator"
 msgstr "Vi&sa geografisk lokaliseringsindikering"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:152
-#: core/utilities/setup/camera/setupcamera.cpp:444
+#: core/utilities/setup/camera/setupcamera.cpp:449
 #, kde-format
 msgid "Set this option to indicate if image has geolocation information."
 msgstr ""
@@ -52155,9 +52062,7 @@ msgid "Removing face"
 msgstr "Tar bort ansikte"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Remove all Faces"
+#, kde-format
 msgid "Remove all faces"
 msgstr "Ta bort alla ansikten"
 
@@ -52179,7 +52084,7 @@ msgstr "Lägger till ansikte manuellt"
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:271
 #, kde-format
 msgid "Clearing rejected face tag list."
-msgstr ""
+msgstr "Rensar listan över avvisade ansiktsetiketter."
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
@@ -56784,8 +56689,8 @@ msgstr "Redigera bokmärken för geografiska platser"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:223
 #: core/utilities/setup/album/setupcategory.cpp:95
-#: core/utilities/setup/camera/setupcamera.cpp:274
-#: core/utilities/setup/camera/setupcamera.cpp:396
+#: core/utilities/setup/camera/setupcamera.cpp:275
+#: core/utilities/setup/camera/setupcamera.cpp:398
 #: core/utilities/setup/setuptemplate.cpp:110
 #, kde-format
 msgid "&Remove"
@@ -58511,8 +58416,7 @@ msgid "Rotate Right"
 msgstr "Rotera åt höger"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:538
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
 msgstr "Rotera automatiskt"
@@ -60647,7 +60551,7 @@ msgid "Show item on right panel"
 msgstr "Visa objekt i högra rutan"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:67
-#: core/utilities/setup/camera/setupcamera.cpp:462
+#: core/utilities/setup/camera/setupcamera.cpp:467
 #, kde-format
 msgid "Open With Default Application"
 msgstr "Öppna med förvalt program"
@@ -60949,7 +60853,7 @@ msgstr "Rensar alla detekterade och etiketterade ansikten."
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear rejected face matches"
-msgstr ""
+msgstr "Rensa avvisade ansiktsmatchningar"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:219
 #, kde-format
@@ -60958,12 +60862,13 @@ msgid ""
 "This will delete all rejected face matches allowing the face recognizer to "
 "present the suggested matches again."
 msgstr ""
+"Raderar alla avvisade ansiktsmatchningar, vilket gör att "
+"ansiktsigenkänningen kan presentera de föreslagna matchningarna igen."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "Faces data management: "
+#, kde-format
 msgid "Face engine management"
-msgstr "Hantering av ansiktsdata: "
+msgstr "Hantering av ansiktsgränssnitt"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:249
 #, kde-format
@@ -61187,16 +61092,13 @@ msgid "Duplicate found: %1"
 msgstr "Funnen dubblett: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:130
-#, fuzzy, kde-format
-#| msgid ""
-#| "A face recognition task is already running. Only one task can be running "
-#| "at a time. Please wait until it is finished."
+#, kde-format
 msgid ""
 "A face scan is already running. Only one face task can be running at a time. "
 "Please wait until it is finished."
 msgstr ""
-"En ansiktsigenkänningsaktivitet pågår redan. Bara en aktivitet kan utföras "
-"åt gången. Vänta till den är klar."
+"En ansiktssökningsaktivitet pågår redan. Bara en ansiktsaktivitet kan "
+"utföras åt gången. Vänta till den är klar."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
 #, kde-format
@@ -61875,7 +61777,7 @@ msgstr ""
 "behandla mer än ett objekt i en kö samtidigt."
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:212
-#: core/utilities/setup/camera/setupcamera.cpp:349
+#: core/utilities/setup/camera/setupcamera.cpp:350
 #, kde-format
 msgid "Behavior"
 msgstr "Beteende"
@@ -63114,37 +63016,37 @@ msgid "Advanced Search"
 msgstr "Avancerad sökning"
 
 #: core/utilities/setup/album/setupalbumview.cpp:121
-#: core/utilities/setup/camera/setupcamera.cpp:424
+#: core/utilities/setup/camera/setupcamera.cpp:429
 #, kde-format
 msgid "Show file&name"
 msgstr "Visa fil&namn"
 
 #: core/utilities/setup/album/setupalbumview.cpp:122
-#: core/utilities/setup/camera/setupcamera.cpp:425
+#: core/utilities/setup/camera/setupcamera.cpp:430
 #, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
 msgstr "Aktivera alternativet för att visa filnamn under miniatyrbilden."
 
 #: core/utilities/setup/album/setupalbumview.cpp:124
-#: core/utilities/setup/camera/setupcamera.cpp:427
+#: core/utilities/setup/camera/setupcamera.cpp:432
 #, kde-format
 msgid "Show file si&ze"
 msgstr "Visa &filstorlek"
 
 #: core/utilities/setup/album/setupalbumview.cpp:125
-#: core/utilities/setup/camera/setupcamera.cpp:428
+#: core/utilities/setup/camera/setupcamera.cpp:433
 #, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
 msgstr "Aktivera alternativet för att visa filstorlek under miniatyrbilden."
 
 #: core/utilities/setup/album/setupalbumview.cpp:127
-#: core/utilities/setup/camera/setupcamera.cpp:430
+#: core/utilities/setup/camera/setupcamera.cpp:435
 #, kde-format
 msgid "Show camera creation &date"
 msgstr "Visa tillkomst&datum från kameran"
 
 #: core/utilities/setup/album/setupalbumview.cpp:128
-#: core/utilities/setup/camera/setupcamera.cpp:431
+#: core/utilities/setup/camera/setupcamera.cpp:436
 #, kde-format
 msgid ""
 "Set this option to show the camera creation date below the image thumbnail."
@@ -63227,7 +63129,7 @@ msgstr ""
 "Aktivera alternativet för att visa Digikams rubriker under miniatyrbilden."
 
 #: core/utilities/setup/album/setupalbumview.cpp:155
-#: core/utilities/setup/camera/setupcamera.cpp:446
+#: core/utilities/setup/camera/setupcamera.cpp:451
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "Visa Digikams e&tiketter"
@@ -63279,7 +63181,7 @@ msgstr ""
 "miniatyrbilden."
 
 #: core/utilities/setup/album/setupalbumview.cpp:171
-#: core/utilities/setup/camera/setupcamera.cpp:454
+#: core/utilities/setup/camera/setupcamera.cpp:459
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr "Visa överlagrade knappar för rotation"
@@ -63308,7 +63210,7 @@ msgstr ""
 "att visa den med fullskärm."
 
 #: core/utilities/setup/album/setupalbumview.cpp:179
-#: core/utilities/setup/camera/setupcamera.cpp:443
+#: core/utilities/setup/camera/setupcamera.cpp:448
 #, kde-format
 msgid "Show Geolocation Indicator"
 msgstr "Visa geografisk lokaliseringsindikering"
@@ -63323,7 +63225,7 @@ msgstr ""
 "geografisk lokaliseringsinformation."
 
 #: core/utilities/setup/album/setupalbumview.cpp:182
-#: core/utilities/setup/camera/setupcamera.cpp:458
+#: core/utilities/setup/camera/setupcamera.cpp:463
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "Klickåtgärd för miniatyrbild:"
@@ -63349,13 +63251,13 @@ msgid "Open with Default Application"
 msgstr "Öppna med förvalt program"
 
 #: core/utilities/setup/album/setupalbumview.cpp:188
-#: core/utilities/setup/camera/setupcamera.cpp:463
+#: core/utilities/setup/camera/setupcamera.cpp:468
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "Välj vad som ska hända när du klickar på en miniatyrbild här."
 
 #: core/utilities/setup/album/setupalbumview.cpp:190
-#: core/utilities/setup/camera/setupcamera.cpp:465
+#: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Icon View font:"
 msgstr "Teckensnitt för ikonvy:"
@@ -63535,13 +63437,13 @@ msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
 msgstr "Avmarkera om du inte vill använda kantutjämning för att skala upp."
 
 #: core/utilities/setup/album/setupalbumview.cpp:305
-#: core/utilities/setup/camera/setupcamera.cpp:502
+#: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Visa ikoner och text över förhandsgranskning"
 
 #: core/utilities/setup/album/setupalbumview.cpp:306
-#: core/utilities/setup/camera/setupcamera.cpp:503
+#: core/utilities/setup/camera/setupcamera.cpp:508
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to see icons and text in the image preview."
@@ -63607,8 +63509,8 @@ msgstr ""
 "förbättra hur dina album sorteras av Digikam."
 
 #: core/utilities/setup/album/setupcategory.cpp:94
-#: core/utilities/setup/camera/setupcamera.cpp:272
-#: core/utilities/setup/camera/setupcamera.cpp:394
+#: core/utilities/setup/camera/setupcamera.cpp:273
+#: core/utilities/setup/camera/setupcamera.cpp:396
 #: core/utilities/setup/setuptemplate.cpp:108
 #, kde-format
 msgid "&Add..."
@@ -64007,7 +63909,7 @@ msgstr "Välj Mime-typer som filtret ska använda."
 msgid "Select Mime Types"
 msgstr "Välj Mime-typer"
 
-#: core/utilities/setup/camera/setupcamera.cpp:251
+#: core/utilities/setup/camera/setupcamera.cpp:252
 #, kde-format
 msgid ""
 "Here you can see the digital camera list used by digiKam via the Gphoto "
@@ -64016,87 +63918,87 @@ msgstr ""
 "Här kan du se listan över digitalkameror som används av Digikam via Gphoto-"
 "gränssnittet."
 
-#: core/utilities/setup/camera/setupcamera.cpp:255
+#: core/utilities/setup/camera/setupcamera.cpp:256
 #, kde-format
 msgctxt "@title: camera title"
 msgid "Title"
 msgstr "Titel"
 
-#: core/utilities/setup/camera/setupcamera.cpp:256
+#: core/utilities/setup/camera/setupcamera.cpp:257
 #, kde-format
 msgctxt "@title: camera model"
 msgid "Model"
 msgstr "Modell"
 
-#: core/utilities/setup/camera/setupcamera.cpp:257
+#: core/utilities/setup/camera/setupcamera.cpp:258
 #, kde-format
 msgctxt "@title: camera port"
 msgid "Port"
 msgstr "Port"
 
-#: core/utilities/setup/camera/setupcamera.cpp:258
+#: core/utilities/setup/camera/setupcamera.cpp:259
 #, kde-format
 msgctxt "@title: camera mount path"
 msgid "Path"
 msgstr "Sökväg"
 
-#: core/utilities/setup/camera/setupcamera.cpp:276
-#: core/utilities/setup/camera/setupcamera.cpp:398
+#: core/utilities/setup/camera/setupcamera.cpp:277
+#: core/utilities/setup/camera/setupcamera.cpp:400
 #, kde-format
 msgid "&Edit..."
 msgstr "&Redigera..."
 
-#: core/utilities/setup/camera/setupcamera.cpp:278
+#: core/utilities/setup/camera/setupcamera.cpp:279
 #, kde-format
 msgid "Auto-&Detect"
 msgstr "Automatisk &identifiering"
 
-#: core/utilities/setup/camera/setupcamera.cpp:289
+#: core/utilities/setup/camera/setupcamera.cpp:290
 #, kde-format
 msgid "Visit Gphoto project website"
 msgstr "Besök Gphoto-projektets hemsida"
 
-#: core/utilities/setup/camera/setupcamera.cpp:312
+#: core/utilities/setup/camera/setupcamera.cpp:313
 #, kde-format
 msgid "Devices"
 msgstr "Enheter"
 
-#: core/utilities/setup/camera/setupcamera.cpp:319
+#: core/utilities/setup/camera/setupcamera.cpp:320
 #, kde-format
 msgid "Use file metadata (makes connection slower)"
 msgstr "Använd filens metadata (gör anslutningen långsammare)"
 
-#: core/utilities/setup/camera/setupcamera.cpp:320
+#: core/utilities/setup/camera/setupcamera.cpp:321
 #, kde-format
 msgid "Turn on high quality thumbnail loading (slower loading)"
 msgstr ""
 "Aktivera inläsning av miniatyrbilder med hög kvalitet (långsammare inläsning)"
 
-#: core/utilities/setup/camera/setupcamera.cpp:321
+#: core/utilities/setup/camera/setupcamera.cpp:322
 #, kde-format
 msgid "Use a default target album to download from camera"
 msgstr "Använd ett standardalbum för att ladda ner från kamera"
 
-#: core/utilities/setup/camera/setupcamera.cpp:327
+#: core/utilities/setup/camera/setupcamera.cpp:328
 #, kde-format
 msgid "If target file exists when downloaded from camera"
 msgstr "Om resultatfilen finns när den laddas ner från kameran"
 
-#: core/utilities/setup/camera/setupcamera.cpp:368
+#: core/utilities/setup/camera/setupcamera.cpp:369
 #, kde-format
 msgid ""
 "Here you can see filters that can be used to filter files in import dialog."
 msgstr ""
 "Här finns filter som kan användas för att filtrera filer i importdialogrutan."
 
-#: core/utilities/setup/camera/setupcamera.cpp:381
+#: core/utilities/setup/camera/setupcamera.cpp:383
 #, kde-format
 msgid "Use a space as a separator to specify multiple file names to ignore."
 msgstr ""
 "Använd ett mellanslag som skiljetecken för att ange flera filnamn att "
 "ignorera."
 
-#: core/utilities/setup/camera/setupcamera.cpp:387
+#: core/utilities/setup/camera/setupcamera.cpp:389
 #, kde-format
 msgid ""
 "Use a space as a separator to specify multiple file extensions to ignore."
@@ -64104,27 +64006,33 @@ msgstr ""
 "Använd ett mellanslag som skiljetecken för att ange flera filändelser att "
 "ignorera."
 
-#: core/utilities/setup/camera/setupcamera.cpp:391
+#: core/utilities/setup/camera/setupcamera.cpp:393
 #, kde-format
 msgid "Always ignore"
 msgstr "Ignorera alltid"
 
-#: core/utilities/setup/camera/setupcamera.cpp:392
+#: core/utilities/setup/camera/setupcamera.cpp:394
 #, kde-format
 msgid "Ignored file names:"
 msgstr "Ignorera filnamn:"
 
-#: core/utilities/setup/camera/setupcamera.cpp:393
+#: core/utilities/setup/camera/setupcamera.cpp:395
 #, kde-format
 msgid "Ignored file extensions:"
 msgstr "Ignorera filändelser:"
 
-#: core/utilities/setup/camera/setupcamera.cpp:413
+#: core/utilities/setup/camera/setupcamera.cpp:402
+#, fuzzy, kde-format
+#| msgid "Defaults"
+msgid "&Defaults"
+msgstr "Förval"
+
+#: core/utilities/setup/camera/setupcamera.cpp:418
 #, kde-format
 msgid "Import Filters"
 msgstr "Importfilter"
 
-#: core/utilities/setup/camera/setupcamera.cpp:421
+#: core/utilities/setup/camera/setupcamera.cpp:426
 #, kde-format
 msgid "Icon-View Options"
 msgstr "Ikonvyinställningar"
@@ -64133,29 +64041,29 @@ msgstr "Ikonvyinställningar"
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
 #.
-#: core/utilities/setup/camera/setupcamera.cpp:440
+#: core/utilities/setup/camera/setupcamera.cpp:445
 #, kde-format
 msgid "Show image Format"
 msgstr "Visa bildformat"
 
-#: core/utilities/setup/camera/setupcamera.cpp:447
+#: core/utilities/setup/camera/setupcamera.cpp:452
 #, kde-format
 msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgstr ""
 "Aktivera alternativet för att visa Digikams taggar under miniatyrbilden."
 
-#: core/utilities/setup/camera/setupcamera.cpp:450
+#: core/utilities/setup/camera/setupcamera.cpp:455
 #, kde-format
 msgid "Show item &rating"
 msgstr "Visa objektens &betyg"
 
-#: core/utilities/setup/camera/setupcamera.cpp:451
+#: core/utilities/setup/camera/setupcamera.cpp:456
 #, kde-format
 msgid "Set this option to show the item rating below the image thumbnail."
 msgstr ""
 "Aktivera alternativet för att visa objektens betyg under miniatyrbilden."
 
-#: core/utilities/setup/camera/setupcamera.cpp:455
+#: core/utilities/setup/camera/setupcamera.cpp:460
 #, kde-format
 msgid ""
 "Set this option to show overlay buttons on the image thumbnail for image "
@@ -64164,32 +64072,32 @@ msgstr ""
 "Aktivera alternativet för att visa överlagrade knappar på miniatyrbilden för "
 "rotation av bilden."
 
-#: core/utilities/setup/camera/setupcamera.cpp:460
+#: core/utilities/setup/camera/setupcamera.cpp:465
 #, kde-format
 msgid "Show embedded preview"
 msgstr "Visa inbäddad förhandsgranskning"
 
-#: core/utilities/setup/camera/setupcamera.cpp:461
+#: core/utilities/setup/camera/setupcamera.cpp:466
 #, kde-format
 msgid "Start image editor"
 msgstr "Starta bildeditorn"
 
-#: core/utilities/setup/camera/setupcamera.cpp:466
+#: core/utilities/setup/camera/setupcamera.cpp:471
 #, kde-format
 msgid "Select here the font used to display text in Icon Views."
 msgstr "Ställ in teckensnittet som används för att visa text i ikonvyer här."
 
-#: core/utilities/setup/camera/setupcamera.cpp:488
+#: core/utilities/setup/camera/setupcamera.cpp:493
 #, kde-format
 msgid "Preview Options"
 msgstr "Granskningsalternativ"
 
-#: core/utilities/setup/camera/setupcamera.cpp:491
+#: core/utilities/setup/camera/setupcamera.cpp:496
 #, kde-format
 msgid "Embedded preview loads full-sized images"
 msgstr "Inbäddad förhandsgranskning läser in bilder med full storlek"
 
-#: core/utilities/setup/camera/setupcamera.cpp:492
+#: core/utilities/setup/camera/setupcamera.cpp:497
 #, kde-format
 msgid ""
 "<p>Set this option to load images at their full size for preview, rather "
@@ -64205,25 +64113,25 @@ msgstr ""
 "används en version av obehandlad data med halv storlek istället för inbäddad "
 "förhandsgranskning med JPEG.</p>"
 
-#: core/utilities/setup/camera/setupcamera.cpp:499
+#: core/utilities/setup/camera/setupcamera.cpp:504
 #, kde-format
 msgid "Preview each item while downloading it"
 msgstr "Förhandsgranska varje objekt medan det laddas ner"
 
-#: core/utilities/setup/camera/setupcamera.cpp:500
+#: core/utilities/setup/camera/setupcamera.cpp:505
 #, kde-format
 msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr ""
 "<p>Aktivera alternativet för att förhandsgranska varje objekt vid "
 "nerladdning.</p>"
 
-#: core/utilities/setup/camera/setupcamera.cpp:522
+#: core/utilities/setup/camera/setupcamera.cpp:527
 #, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "Importfönster"
 
-#: core/utilities/setup/camera/setupcamera.cpp:786
+#: core/utilities/setup/camera/setupcamera.cpp:794
 #, kde-format
 msgid ""
 "No default target album have been selected to process download from camera "
@@ -64232,12 +64140,12 @@ msgstr ""
 "Något standardalbum har inte valts för att behandla nerladdningar från "
 "kameraenheter. Välj ett."
 
-#: core/utilities/setup/camera/setupcamera.cpp:874
+#: core/utilities/setup/camera/setupcamera.cpp:882
 #, kde-format
 msgid "Device detection under progress, please wait..."
 msgstr "Detektering av enhet pågår, vänta ..."
 
-#: core/utilities/setup/camera/setupcamera.cpp:885
+#: core/utilities/setup/camera/setupcamera.cpp:893
 #, kde-format
 msgid ""
 "Failed to auto-detect camera.\n"
@@ -64248,22 +64156,22 @@ msgstr ""
 "Kontrollera att kameran är påslagen och försök igen, eller försök ställa in "
 "den för hand."
 
-#: core/utilities/setup/camera/setupcamera.cpp:900
+#: core/utilities/setup/camera/setupcamera.cpp:908
 #, kde-format
 msgid "Camera '%1' (%2) is already in list."
 msgstr "Kameran '%1' (%2) finns redan i listan."
 
-#: core/utilities/setup/camera/setupcamera.cpp:904
+#: core/utilities/setup/camera/setupcamera.cpp:912
 #, kde-format
 msgid "Found camera '%1' (%2) and added it to the list."
 msgstr "Hittade kameran '%1' (%2) och lade till den i listan."
 
-#: core/utilities/setup/camera/setupcamera.cpp:920
+#: core/utilities/setup/camera/setupcamera.cpp:928
 #, kde-format
 msgid "Untitled"
 msgstr "Namnlös"
 
-#: core/utilities/setup/camera/setupcamera.cpp:984
+#: core/utilities/setup/camera/setupcamera.cpp:1011
 #, kde-format
 msgid ""
 "In order to enable this feature, the full-sized preview will be disabled."
@@ -64271,7 +64179,7 @@ msgstr ""
 "För att kunna aktivera funktionen kommer förhandsgranskningen med full "
 "storlek att inaktiveras."
 
-#: core/utilities/setup/camera/setupcamera.cpp:995
+#: core/utilities/setup/camera/setupcamera.cpp:1022
 #, kde-format
 msgid ""
 "If the full-sized preview is enabled it will affect the speed of previewing "
@@ -64574,18 +64482,15 @@ msgid "Your collection will use this category:"
 msgstr "Samlingen kommer att använda följande kategori:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Required Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
-msgstr "Laddar ner nödvändiga filer"
+msgstr "Laddar ner nödvändiga modellfiler"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:160
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AI Auto-Tools features"
-msgstr "Använd funktionen för automatisk tilldelning av etiketter"
+msgstr "Använd automatiska AI-verktygsfunktioner"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:161
 #, kde-format
@@ -64598,16 +64503,14 @@ msgid "Use Aesthetic Detection feature"
 msgstr "Använd funktionen för estetisk detektering"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:163
-#, fuzzy, kde-format
-#| msgid "Use Auto Tags Assignment feature"
+#, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Använd funktionen för automatisk tilldelning av etiketter"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:243
-#, fuzzy, kde-format
-#| msgid "All files were downloaded successfully."
+#, kde-format
 msgid "All model files were downloaded successfully."
-msgstr "Alla filer laddades ner med lyckat resultat."
+msgstr "Alla modellfiler laddades ner med lyckat resultat."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:252
 #, kde-format
@@ -64669,17 +64572,15 @@ msgid ""
 "to select the specific features you want to enable.</p><p><b>Note:</b> The "
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
+"<p>digiKam använder stora binära modellfiler för att driva funktioner som "
+"ansiktshantering, bildklassificering baserad på estetik, automatiska AI-"
+"verktyg som automatisk bildrotation och automatisk etikettilldelning. Det "
+"finns möjlighet att välja de specifika funktioner som ska aktiveras.</"
+"p><p><b>Observera:</b> Verktyget för borttagning av röda ögon kräver "
+"modellfiler för ansiktshantering.</p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:530
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>Some of these files were not found. Click “Download” to begin "
-#| "downloading the files you need. You can close this dialog, you will be "
-#| "asked again the next time you start digiKam. Without these files the "
-#| "selected features will not work.</p><p>The files will be downloaded to "
-#| "\"<i>%1</i>\".</p><p><b>After the successful download you have to restart "
-#| "digiKam.</b></p>"
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
@@ -64689,11 +64590,11 @@ msgid ""
 "p><p><b>You must restart digiKam after successfully downloading the files.</"
 "b></p>"
 msgstr ""
-"<p>Vissa av filerna hittade inte. Klicka på 'Ladda ner' för att börja "
-"nerladdning av filerna du behöver. Du kan stänga dialogrutan, du blir "
+"<p>Vissa nödvändiga filer saknas. Klicka på 'Ladda ner' för att börja "
+"installera nödvändiga modellfiler. Om du stänger dialogrutan, blir du "
 "tillfrågad igen nästa  gång Digikam startas. Utan filerna fungerar inte de "
-"valda funktionerna.</p><p>Filerna laddas ner till \"<i>%1</i>\".</"
-"p><p><b>Efter lyckad nerladdning måste Digikam startas om.</b></p>"
+"valda funktionerna.</p><p>Filerna laddas ner i \"<i>%1</i>\".</p><p><b>Efter "
+"lyckad nerladdning måste Digikam startas om.</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:538
 #, kde-format
@@ -64702,15 +64603,14 @@ msgid "The download requires %1 files with a size of %2."
 msgstr "Nedladdningen kräver %1 filer med storlek %2."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:546
-#, fuzzy, kde-format
-#| msgid "All files of the selected features were found."
+#, kde-format
 msgid "All files for the selected features were found."
 msgstr "Alla filer för de valda funktionerna hittades."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:566
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
-msgstr ""
+msgstr "Rensa bort oanvända AI/DNN-modellfiler..."
 
 #: core/utilities/setup/editor/setupeditor.cpp:65
 #, kde-format
@@ -66239,7 +66139,7 @@ msgstr "Associerade filer"
 #, kde-format
 msgctxt "@title:window"
 msgid "AI GPU Test"
-msgstr ""
+msgstr "AI-grafikprocessortest"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:85
 #, kde-format
@@ -66251,32 +66151,33 @@ msgid ""
 "\n"
 "Do you want to test your system now?"
 msgstr ""
+"Kontrollera om systemet kan använda acceleration med grafikprocessor\n"
+"när AI-modellerna körs genom att validera att OpenCV och OpenCL har\n"
+"de nödvändiga biblioteken och drivrutinerna installerade.\n"
+"\n"
+"Vill du testa systemet nu?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Start"
+#, kde-format
 msgid "Start"
 msgstr "Starta"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
-#, fuzzy, kde-format
-#| msgid "Beta tester"
+#, kde-format
 msgctxt "@action:button"
 msgid "Begin test"
-msgstr "Betatester"
+msgstr "Börja test"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
-#, fuzzy, kde-format
-#| msgid "Settings..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Testing..."
-msgstr "Inställningar..."
+msgstr "Testar..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:148
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
-msgstr ""
+msgstr "Startarg OpenCV OpenCL DNN-test..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
 #, kde-format
@@ -66284,6 +66185,8 @@ msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
 "models."
 msgstr ""
+"Testet är slutfört med lyckat resultat. Systemet kan använda acceleration "
+"med grafikprocessor för AI-modellerna."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:220
 #, kde-format
@@ -66291,129 +66194,111 @@ msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
 "models."
 msgstr ""
+"Testet misslyckades. Systemet kanske inte kan använda grafikprocessorn för "
+"acceleration för AI-modellerna."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "Close the theme designer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Close the test dialog"
-msgstr "Stäng temakonstruktion"
+msgstr "Stäng testdialogrutan"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:251
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
+"Kontrollerar kompatibilitet för OpenCL grafikprocessoracceleration med AI-"
+"modeller..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
+#, kde-format
 msgid "OpenCL is available on this system."
-msgstr "OpenGL-stöd är inte tillgängligt på systemet."
+msgstr "OpenCL är tillgängligt på systemet."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:268
-#, fuzzy, kde-format
-#| msgid "No new version is available."
+#, kde-format
 msgid "OpenCL acceleration device is available."
-msgstr "Ingen ny version är tillgänglig."
+msgstr "Accelerationsenhet för OpenCL är tillgänglig."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:270
-#, fuzzy, kde-format
-#| msgctxt "@info: icc profile class"
-#| msgid "Link device"
+#, kde-format
 msgid "Using device: %1"
-msgstr "Länkenhet"
+msgstr "Använder enhet: %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
-#, fuzzy, kde-format
-#| msgid "This collection is currently not available."
+#, kde-format
 msgid "OpenCL acceleration device is not available."
-msgstr "Samlingen är för närvarande inte tillgänglig."
+msgstr "Accelerationsenhet för OpenCL är inte tillgänglig."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:279
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
+#, kde-format
 msgid "OpenCL is not available on this system."
-msgstr "OpenGL-stöd är inte tillgängligt på systemet."
+msgstr "OpenCL är inte tillgängligt på systemet."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:284
-#, fuzzy, kde-format
-#| msgid "Loading image..."
+#, kde-format
 msgid "Loading test image..."
-msgstr "Läser in bild..."
+msgstr "Läser in testbild..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:293
-#, fuzzy, kde-format
-#| msgid "Binary not found."
+#, kde-format
 msgid "Test image not found."
-msgstr "Binär hittades inte."
+msgstr "Testbild hittades inte."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:300
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to save image to %1"
+#, kde-format
 msgid "Failed to load test image from %1"
-msgstr "Misslyckades spara bild i %1"
+msgstr "Misslyckades läsa in testbild från %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:304
-#, fuzzy, kde-format
-#| msgid "Pan the image to a region"
+#, kde-format
 msgid "Preparing the image for processing..."
-msgstr "Panorera bilden till ett område"
+msgstr "Förbereder bilden för behandling..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:333
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Initializing Main View..."
+#, kde-format
 msgid "Initializing face detection model..."
-msgstr "Initierar huvudvyn..."
+msgstr "Initierar ansiktsdetekteringsmodell..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:340
-#, fuzzy, kde-format
-#| msgid "Error starting face detection."
+#, kde-format
 msgid "Running face detection..."
-msgstr "Fel vid start av ansiktsdetektering."
+msgstr "Utför ansiktsdetektering..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:356
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Initializing Main View..."
+#, kde-format
 msgid "Initializing feature extraction model..."
-msgstr "Initierar huvudvyn..."
+msgstr "Initierar modellen för extrahering av ansiktsdrag..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:363
-#, fuzzy, kde-format
-#| msgid "Preparing collection scan..."
+#, kde-format
 msgid "Preparing face for feature extraction..."
-msgstr "Förbereder sökning av samling..."
+msgstr "Förbereder ansikte för extrahering av ansiktsdrag..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:376
 #, kde-format
 msgid "Extracting face features..."
-msgstr ""
+msgstr "Extraherar ansiktsdrag..."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
-#, fuzzy, kde-format
-#| msgid "Failed to create folder"
+#, kde-format
 msgid "Failed to extract face features."
-msgstr "Misslyckades skapa katalog"
+msgstr "Misslyckades extrahera ansiktsdrag."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:387
-#, fuzzy, kde-format
-#| msgid "Database copied successfully."
+#, kde-format
 msgid "All tests completed successfully!"
-msgstr "Databas kopierad med lyckat resultat."
+msgstr "Alla tester utfördes med lyckat resultat."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
-#, fuzzy, kde-format
-#| msgid "Open error"
+#, kde-format
 msgid "OpenCV error: %1"
-msgstr "Öppningsfel"
+msgstr "OpenCV-fel: %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgid "Error: %1"
-msgstr "Fel"
+msgstr "Fel: %1"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
@@ -66494,10 +66379,9 @@ msgid "&Password:"
 msgstr "&Lösenord:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:38
-#, fuzzy, kde-format
-#| msgid "Scan for new items"
+#, kde-format
 msgid "&Scan for new items at startup"
-msgstr "Sök efter nya objekt"
+msgstr "&Sök efter nya objekt vid start"
 
 #: core/utilities/setup/misc/setupmisc.cpp:39
 #, kde-format
@@ -66551,11 +66435,9 @@ msgid "Detect faces in newly added images"
 msgstr "Detektera ansikten i nytillagda bilder"
 
 #: core/utilities/setup/misc/setupmisc.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Benchmark face recognition"
+#, kde-format
 msgid "Enable background face recognition scan"
-msgstr "Mät ansiktsigenkänningens prestanda"
+msgstr "Aktivera ansiktsigenkänningssökning i bakgrunden"
 
 #: core/utilities/setup/misc/setupmisc.cpp:56
 #, kde-format
@@ -66563,13 +66445,14 @@ msgid ""
 "Set this option to automatically start a background face recognition scan\n"
 "when a new face is tagged. This will make the tagging process easier."
 msgstr ""
+"Aktivera alternativet för att automatiskt starta en bakgrundssökning med "
+"ansiktsigenkänning när ett nytt ansikte etiketteras. Det gör "
+"etiketteringsprocessen enklare."
 
 #: core/utilities/setup/misc/setupmisc.cpp:59
-#, fuzzy, kde-format
-#| msgid "Remove obsolete core database objects (makes startup slower)"
+#, kde-format
 msgid "Remove obsolete core database objects"
-msgstr ""
-"Ta bort föråldrade objekt i huvuddatabasen (leder till långsammare start)"
+msgstr "Ta bort föråldrade objekt i huvuddatabasen"
 
 #: core/utilities/setup/misc/setupmisc.cpp:60
 #, kde-format
@@ -66598,6 +66481,8 @@ msgctxt "@info"
 msgid ""
 "<font color='red'><i>Warning: These settings makes startup slower!</i></font>"
 msgstr ""
+"<font color='red'><i>Varning: Inställningarna gör start långsammare.</i></"
+"font>"
 
 #: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format
@@ -66799,14 +66684,12 @@ msgid "Use pixmaps with high DPI resolution"
 msgstr "Använd bildpunktsavbildningar med hög upplösning"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "Use the software OpenGL for rendering"
+#, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "Använd OpenGL-återgivning med programvara"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:121
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "Använd OpenCL maskinvaruacceleration"
 
@@ -66820,27 +66703,23 @@ msgstr ""
 "miljövariabler ställs in manuellt."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Use the OpenCL hardware acceleration"
+#, kde-format
 msgid "Use OpenCL hardware acceleration for AI models"
-msgstr "Använd OpenCL maskinvaruacceleration"
+msgstr "Använd OpenCL maskinvaruacceleration för AI-modeller"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:125
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option is still experimental and requires that certain environment "
-#| "variables are set manually."
+#, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
 "drivers are not installed."
 msgstr ""
-"Alternativet är fortfarande experimentellt och kräver att vissa "
-"miljövariabler ställs in manuellt."
+"Alternativet är fortfarande experimentellt och kan leda till krascher om "
+"lämpliga drivrutiner inte är installerade."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format
 msgid "Test GPU AI compatibility"
-msgstr ""
+msgstr "Testa grafikprocessorns AI-kompatibilitet"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
@@ -66853,16 +66732,14 @@ msgid "Open Download Dialog..."
 msgstr "Öppnar nerladdningsdialogruta..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:139
-#, fuzzy, kde-format
-#| msgid "Use the video hardware acceleration"
+#, kde-format
 msgid "Use video hardware acceleration"
-msgstr "Använd video maskinvaruacceleration"
+msgstr "Använd video-maskinvaruacceleration"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Use the video textures conversion"
+#, kde-format
 msgid "Use video textures conversion"
-msgstr "Använd video strukturkonversion"
+msgstr "Använd video-strukturkonversion"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:142
 #, kde-format

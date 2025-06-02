@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 02:02+0000\n"
+"POT-Creation-Date: 2025-06-02 01:57+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -40678,19 +40678,19 @@ msgid "If Target File Exists:"
 msgstr "छवि फाइल"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:67
-#: core/utilities/setup/camera/setupcamera.cpp:330
+#: core/utilities/setup/camera/setupcamera.cpp:331
 #, kde-format
 msgid "Store as a different name"
 msgstr ""
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:68
-#: core/utilities/setup/camera/setupcamera.cpp:331
+#: core/utilities/setup/camera/setupcamera.cpp:332
 #, fuzzy, kde-format
 msgid "Overwrite automatically"
 msgstr "फाइल अधिलेखन गर्नुहुन्छ ?"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:69
-#: core/utilities/setup/camera/setupcamera.cpp:332
+#: core/utilities/setup/camera/setupcamera.cpp:333
 #, fuzzy, kde-format
 msgid "Skip automatically"
 msgstr "फाइल अधिलेखन गर्नुहुन्छ ?"
@@ -48567,7 +48567,7 @@ msgid "&Show image Format"
 msgstr "तस्विर दर देखाउनुहोस्"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:150
-#: core/utilities/setup/camera/setupcamera.cpp:441
+#: core/utilities/setup/camera/setupcamera.cpp:446
 #, fuzzy, kde-format
 msgid "Set this option to show image format over image thumbnail."
 msgstr "<p>छवि थम्बनेल तल फाइल नाम देखाउन यो विकल्प सेट गर्नुहोस् ।"
@@ -48578,7 +48578,7 @@ msgid "&Show Geolocation Indicator"
 msgstr "हरियो फिल्टर"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:152
-#: core/utilities/setup/camera/setupcamera.cpp:444
+#: core/utilities/setup/camera/setupcamera.cpp:449
 #, fuzzy, kde-format
 msgid "Set this option to indicate if image has geolocation information."
 msgstr "<p>तस्विर टिप्पणी प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
@@ -55032,8 +55032,8 @@ msgstr "चयन"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:223
 #: core/utilities/setup/album/setupcategory.cpp:95
-#: core/utilities/setup/camera/setupcamera.cpp:274
-#: core/utilities/setup/camera/setupcamera.cpp:396
+#: core/utilities/setup/camera/setupcamera.cpp:275
+#: core/utilities/setup/camera/setupcamera.cpp:398
 #: core/utilities/setup/setuptemplate.cpp:110
 #, fuzzy, kde-format
 msgid "&Remove"
@@ -58873,7 +58873,7 @@ msgid "Show item on right panel"
 msgstr ""
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:67
-#: core/utilities/setup/camera/setupcamera.cpp:462
+#: core/utilities/setup/camera/setupcamera.cpp:467
 #, kde-format
 msgid "Open With Default Application"
 msgstr ""
@@ -60086,7 +60086,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:212
-#: core/utilities/setup/camera/setupcamera.cpp:349
+#: core/utilities/setup/camera/setupcamera.cpp:350
 #, fuzzy, kde-format
 msgid "Behavior"
 msgstr "व्यवहार"
@@ -61335,37 +61335,37 @@ msgid "Advanced Search"
 msgstr "उन्नत खोजी"
 
 #: core/utilities/setup/album/setupalbumview.cpp:121
-#: core/utilities/setup/camera/setupcamera.cpp:424
+#: core/utilities/setup/camera/setupcamera.cpp:429
 #, fuzzy, kde-format
 msgid "Show file&name"
 msgstr "फाइल नाम देखाउनुहोस्"
 
 #: core/utilities/setup/album/setupalbumview.cpp:122
-#: core/utilities/setup/camera/setupcamera.cpp:425
+#: core/utilities/setup/camera/setupcamera.cpp:430
 #, fuzzy, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
 msgstr "<p>छवि थम्बनेल तल फाइल नाम देखाउन यो विकल्प सेट गर्नुहोस् ।"
 
 #: core/utilities/setup/album/setupalbumview.cpp:124
-#: core/utilities/setup/camera/setupcamera.cpp:427
+#: core/utilities/setup/camera/setupcamera.cpp:432
 #, kde-format
 msgid "Show file si&ze"
 msgstr "फाइल साइज देखाउनुहोस्"
 
 #: core/utilities/setup/album/setupalbumview.cpp:125
-#: core/utilities/setup/camera/setupcamera.cpp:428
+#: core/utilities/setup/camera/setupcamera.cpp:433
 #, fuzzy, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
 msgstr "<p>छवि थम्बनेल तल फाइल साइज देखाउन यो विकल्प सेट गर्नुहोस् ।"
 
 #: core/utilities/setup/album/setupalbumview.cpp:127
-#: core/utilities/setup/camera/setupcamera.cpp:430
+#: core/utilities/setup/camera/setupcamera.cpp:435
 #, fuzzy, kde-format
 msgid "Show camera creation &date"
 msgstr "फाइल सिर्जना मिति देखाउनुहोस्"
 
 #: core/utilities/setup/album/setupalbumview.cpp:128
-#: core/utilities/setup/camera/setupcamera.cpp:431
+#: core/utilities/setup/camera/setupcamera.cpp:436
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show the camera creation date below the image thumbnail."
@@ -61437,7 +61437,7 @@ msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr "<p>छवि थम्बनेल तल डिजिक्याम दर देखाउन यो विकल्प सेट गर्नुहोस् ।"
 
 #: core/utilities/setup/album/setupalbumview.cpp:155
-#: core/utilities/setup/camera/setupcamera.cpp:446
+#: core/utilities/setup/camera/setupcamera.cpp:451
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "डिजिक्याम ट्याग देखाउनुहोस्"
@@ -61482,7 +61482,7 @@ msgid ""
 msgstr "<p>छवि थम्बनेल तल डिजिक्याम देखाउन यो विकल्प सेट गर्नुहोस् ।"
 
 #: core/utilities/setup/album/setupalbumview.cpp:171
-#: core/utilities/setup/camera/setupcamera.cpp:454
+#: core/utilities/setup/camera/setupcamera.cpp:459
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr ""
@@ -61507,7 +61507,7 @@ msgid ""
 msgstr "<p>छवि थम्बनेल तल डिजिक्याम दर देखाउन यो विकल्प सेट गर्नुहोस् ।"
 
 #: core/utilities/setup/album/setupalbumview.cpp:179
-#: core/utilities/setup/camera/setupcamera.cpp:443
+#: core/utilities/setup/camera/setupcamera.cpp:448
 #, fuzzy, kde-format
 msgid "Show Geolocation Indicator"
 msgstr "हरियो फिल्टर"
@@ -61520,7 +61520,7 @@ msgid ""
 msgstr "<p>छवि थम्बनेल तल डिजिक्याम दर देखाउन यो विकल्प सेट गर्नुहोस् ।"
 
 #: core/utilities/setup/album/setupalbumview.cpp:182
-#: core/utilities/setup/camera/setupcamera.cpp:458
+#: core/utilities/setup/camera/setupcamera.cpp:463
 #, fuzzy, kde-format
 msgid "Thumbnail click action:"
 msgstr "क्लिक कार्य:"
@@ -61547,13 +61547,13 @@ msgid "Open with Default Application"
 msgstr "<p>छवि सम्पादक क्षेत्रमा प्रयोग गर्नका लागि पृष्ठभूमि रङ अनुकूलन गर्नुहोस् ।"
 
 #: core/utilities/setup/album/setupalbumview.cpp:188
-#: core/utilities/setup/camera/setupcamera.cpp:463
+#: core/utilities/setup/camera/setupcamera.cpp:468
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:190
-#: core/utilities/setup/camera/setupcamera.cpp:465
+#: core/utilities/setup/camera/setupcamera.cpp:470
 #, fuzzy, kde-format
 msgid "Icon View font:"
 msgstr "इन्टरफेस विकल्प"
@@ -61715,13 +61715,13 @@ msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:305
-#: core/utilities/setup/camera/setupcamera.cpp:502
+#: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:306
-#: core/utilities/setup/camera/setupcamera.cpp:503
+#: core/utilities/setup/camera/setupcamera.cpp:508
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to see icons and text in the image preview."
@@ -61781,8 +61781,8 @@ msgstr ""
 "सक्नुहुन्छ ।"
 
 #: core/utilities/setup/album/setupcategory.cpp:94
-#: core/utilities/setup/camera/setupcamera.cpp:272
-#: core/utilities/setup/camera/setupcamera.cpp:394
+#: core/utilities/setup/camera/setupcamera.cpp:273
+#: core/utilities/setup/camera/setupcamera.cpp:396
 #: core/utilities/setup/setuptemplate.cpp:108
 #, kde-format
 msgid "&Add..."
@@ -62131,7 +62131,7 @@ msgstr ""
 msgid "Select Mime Types"
 msgstr "छवि बचत गर्नुहोस्"
 
-#: core/utilities/setup/camera/setupcamera.cpp:251
+#: core/utilities/setup/camera/setupcamera.cpp:252
 #, fuzzy, kde-format
 msgid ""
 "Here you can see the digital camera list used by digiKam via the Gphoto "
@@ -62140,76 +62140,76 @@ msgstr ""
 "<p>यहाँ तपाईँले जिफोटो इन्टरफेस हुँदै डिजिक्यामद्वारा प्रयोग गरिने डिजिटल क्यामेरा सूची हेर्न "
 "सक्नुहुन्छ ।"
 
-#: core/utilities/setup/camera/setupcamera.cpp:255
+#: core/utilities/setup/camera/setupcamera.cpp:256
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@title: camera title"
 msgid "Title"
 msgstr "शीर्षक"
 
-#: core/utilities/setup/camera/setupcamera.cpp:256
+#: core/utilities/setup/camera/setupcamera.cpp:257
 #, fuzzy, kde-format
 #| msgid "Model"
 msgctxt "@title: camera model"
 msgid "Model"
 msgstr "नमुना"
 
-#: core/utilities/setup/camera/setupcamera.cpp:257
+#: core/utilities/setup/camera/setupcamera.cpp:258
 #, fuzzy, kde-format
 #| msgid "Port"
 msgctxt "@title: camera port"
 msgid "Port"
 msgstr "पोर्ट"
 
-#: core/utilities/setup/camera/setupcamera.cpp:258
+#: core/utilities/setup/camera/setupcamera.cpp:259
 #, fuzzy, kde-format
 #| msgid "Path"
 msgctxt "@title: camera mount path"
 msgid "Path"
 msgstr "मार्ग"
 
-#: core/utilities/setup/camera/setupcamera.cpp:276
-#: core/utilities/setup/camera/setupcamera.cpp:398
+#: core/utilities/setup/camera/setupcamera.cpp:277
+#: core/utilities/setup/camera/setupcamera.cpp:400
 #, kde-format
 msgid "&Edit..."
 msgstr "सम्पादन..."
 
-#: core/utilities/setup/camera/setupcamera.cpp:278
+#: core/utilities/setup/camera/setupcamera.cpp:279
 #, kde-format
 msgid "Auto-&Detect"
 msgstr "स्वत: पत्ता"
 
-#: core/utilities/setup/camera/setupcamera.cpp:289
+#: core/utilities/setup/camera/setupcamera.cpp:290
 #, kde-format
 msgid "Visit Gphoto project website"
 msgstr "जिफोटो परियोजना वेबसाइट हेर्नुहोस्"
 
-#: core/utilities/setup/camera/setupcamera.cpp:312
+#: core/utilities/setup/camera/setupcamera.cpp:313
 #, fuzzy, kde-format
 msgid "Devices"
 msgstr "यन्त्र वर्ग"
 
-#: core/utilities/setup/camera/setupcamera.cpp:319
+#: core/utilities/setup/camera/setupcamera.cpp:320
 #, kde-format
 msgid "Use file metadata (makes connection slower)"
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:320
+#: core/utilities/setup/camera/setupcamera.cpp:321
 #, kde-format
 msgid "Turn on high quality thumbnail loading (slower loading)"
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:321
+#: core/utilities/setup/camera/setupcamera.cpp:322
 #, kde-format
 msgid "Use a default target album to download from camera"
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:327
+#: core/utilities/setup/camera/setupcamera.cpp:328
 #, fuzzy, kde-format
 msgid "If target file exists when downloaded from camera"
 msgstr "छवि फाइल"
 
-#: core/utilities/setup/camera/setupcamera.cpp:368
+#: core/utilities/setup/camera/setupcamera.cpp:369
 #, fuzzy, kde-format
 msgid ""
 "Here you can see filters that can be used to filter files in import dialog."
@@ -62217,38 +62217,43 @@ msgstr ""
 "<p>यहाँ तपाईँले एल्बम लाइब्रेरीमा खोजी गर्नका लागि वस्तु प्रक्रिया गर्न प्रयोग गरिने खोजी "
 "नियम सूची हेर्न सक्नुहुन्छ ।"
 
-#: core/utilities/setup/camera/setupcamera.cpp:381
+#: core/utilities/setup/camera/setupcamera.cpp:383
 #, kde-format
 msgid "Use a space as a separator to specify multiple file names to ignore."
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:387
+#: core/utilities/setup/camera/setupcamera.cpp:389
 #, kde-format
 msgid ""
 "Use a space as a separator to specify multiple file extensions to ignore."
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:391
+#: core/utilities/setup/camera/setupcamera.cpp:393
 #, kde-format
 msgid "Always ignore"
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:392
+#: core/utilities/setup/camera/setupcamera.cpp:394
 #, fuzzy, kde-format
 msgid "Ignored file names:"
 msgstr "फाइल नाम देखाउनुहोस्"
 
-#: core/utilities/setup/camera/setupcamera.cpp:393
+#: core/utilities/setup/camera/setupcamera.cpp:395
 #, fuzzy, kde-format
 msgid "Ignored file extensions:"
 msgstr "विस्तार भएको छवि फाइल मात्र देखाउनुहोस्"
 
-#: core/utilities/setup/camera/setupcamera.cpp:413
+#: core/utilities/setup/camera/setupcamera.cpp:402
+#, fuzzy, kde-format
+msgid "&Defaults"
+msgstr "पूर्वनिर्धारित प्रोफाइल प्रयोग गर्नुहोस्"
+
+#: core/utilities/setup/camera/setupcamera.cpp:418
 #, fuzzy, kde-format
 msgid "Import Filters"
 msgstr "फिल्टर"
 
-#: core/utilities/setup/camera/setupcamera.cpp:421
+#: core/utilities/setup/camera/setupcamera.cpp:426
 #, fuzzy, kde-format
 msgid "Icon-View Options"
 msgstr "इन्टरफेस विकल्प"
@@ -62257,59 +62262,59 @@ msgstr "इन्टरफेस विकल्प"
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
 #.
-#: core/utilities/setup/camera/setupcamera.cpp:440
+#: core/utilities/setup/camera/setupcamera.cpp:445
 #, fuzzy, kde-format
 msgid "Show image Format"
 msgstr "तस्विर दर देखाउनुहोस्"
 
-#: core/utilities/setup/camera/setupcamera.cpp:447
+#: core/utilities/setup/camera/setupcamera.cpp:452
 #, fuzzy, kde-format
 msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgstr "<p>छवि थम्बनेल तल डिजिक्याम देखाउन यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/utilities/setup/camera/setupcamera.cpp:450
+#: core/utilities/setup/camera/setupcamera.cpp:455
 #, fuzzy, kde-format
 msgid "Show item &rating"
 msgstr "डिजिक्याम दर देखाउनुहोस्"
 
-#: core/utilities/setup/camera/setupcamera.cpp:451
+#: core/utilities/setup/camera/setupcamera.cpp:456
 #, fuzzy, kde-format
 msgid "Set this option to show the item rating below the image thumbnail."
 msgstr "<p>छवि थम्बनेल तल डिजिक्याम दर देखाउन यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/utilities/setup/camera/setupcamera.cpp:455
+#: core/utilities/setup/camera/setupcamera.cpp:460
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show overlay buttons on the image thumbnail for image "
 "rotation."
 msgstr "<p>छवि थम्बनेल तल डिजिक्याम दर देखाउन यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/utilities/setup/camera/setupcamera.cpp:460
+#: core/utilities/setup/camera/setupcamera.cpp:465
 #, kde-format
 msgid "Show embedded preview"
 msgstr "सम्मिलित पूर्वावलोकन देखाउनुहोस्"
 
-#: core/utilities/setup/camera/setupcamera.cpp:461
+#: core/utilities/setup/camera/setupcamera.cpp:466
 #, kde-format
 msgid "Start image editor"
 msgstr "छवि सम्पादक सुरु गर्नुहोस्"
 
-#: core/utilities/setup/camera/setupcamera.cpp:466
+#: core/utilities/setup/camera/setupcamera.cpp:471
 #, fuzzy, kde-format
 msgid "Select here the font used to display text in Icon Views."
 msgstr "<p>मार्गदर्शन ड्यास-रेखा कोर्न प्रयोग गरिने रङ यहाँ सेट गर्नुहोस् ।"
 
-#: core/utilities/setup/camera/setupcamera.cpp:488
+#: core/utilities/setup/camera/setupcamera.cpp:493
 #, fuzzy, kde-format
 msgid "Preview Options"
 msgstr "इन्टरफेस विकल्प"
 
-#: core/utilities/setup/camera/setupcamera.cpp:491
+#: core/utilities/setup/camera/setupcamera.cpp:496
 #, kde-format
 msgid "Embedded preview loads full-sized images"
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:492
+#: core/utilities/setup/camera/setupcamera.cpp:497
 #, kde-format
 msgid ""
 "<p>Set this option to load images at their full size for preview, rather "
@@ -62319,35 +62324,35 @@ msgid ""
 "JPEG preview.</p>"
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:499
+#: core/utilities/setup/camera/setupcamera.cpp:504
 #, kde-format
 msgid "Preview each item while downloading it"
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:500
+#: core/utilities/setup/camera/setupcamera.cpp:505
 #, fuzzy, kde-format
 msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr "<p>तस्विर ट्याग प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/utilities/setup/camera/setupcamera.cpp:522
+#: core/utilities/setup/camera/setupcamera.cpp:527
 #, fuzzy, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "आयात"
 
-#: core/utilities/setup/camera/setupcamera.cpp:786
+#: core/utilities/setup/camera/setupcamera.cpp:794
 #, kde-format
 msgid ""
 "No default target album have been selected to process download from camera "
 "device. Please select one."
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:874
+#: core/utilities/setup/camera/setupcamera.cpp:882
 #, fuzzy, kde-format
 msgid "Device detection under progress, please wait..."
 msgstr "क्यामेराबाट जडान विच्छेदन गर्दैछ, कृपया प्रतिक्षा गर्नुहोस्..."
 
-#: core/utilities/setup/camera/setupcamera.cpp:885
+#: core/utilities/setup/camera/setupcamera.cpp:893
 #, kde-format
 msgid ""
 "Failed to auto-detect camera.\n"
@@ -62357,28 +62362,28 @@ msgstr ""
 "क्यामेरा स्वत: पत्ता लगाउन असफल ।\n"
 "कृपया तपाईँको क्यामेरा खुला छ छैन जाँच्नुहोस् र यसलाई म्यानुअली सेट गर्न पुन: प्रयास गर्नुहोस् ।"
 
-#: core/utilities/setup/camera/setupcamera.cpp:900
+#: core/utilities/setup/camera/setupcamera.cpp:908
 #, kde-format
 msgid "Camera '%1' (%2) is already in list."
 msgstr "'%1' (%2) क्यामेरा पहिल्यै सूचीमा छ ।"
 
-#: core/utilities/setup/camera/setupcamera.cpp:904
+#: core/utilities/setup/camera/setupcamera.cpp:912
 #, kde-format
 msgid "Found camera '%1' (%2) and added it to the list."
 msgstr "'%1' (%2) क्यामेरा फेला पर्यो र यसलाई सूचीमा थपियो ।"
 
-#: core/utilities/setup/camera/setupcamera.cpp:920
+#: core/utilities/setup/camera/setupcamera.cpp:928
 #, fuzzy, kde-format
 msgid "Untitled"
 msgstr "शीर्षक"
 
-#: core/utilities/setup/camera/setupcamera.cpp:984
+#: core/utilities/setup/camera/setupcamera.cpp:1011
 #, kde-format
 msgid ""
 "In order to enable this feature, the full-sized preview will be disabled."
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:995
+#: core/utilities/setup/camera/setupcamera.cpp:1022
 #, kde-format
 msgid ""
 "If the full-sized preview is enabled it will affect the speed of previewing "
