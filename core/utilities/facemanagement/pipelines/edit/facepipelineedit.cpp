@@ -244,7 +244,7 @@ QList<FaceTagsIface> FacePipelineEdit::deleteRejectedFaceTagLists(const ItemInfo
     QList<FaceTagsIface> result;
     QList<FaceTagsIface> faces             = utils.databaseFaces(info.id());
 
-    for (const FaceTagsIface& face : faces)
+    for (const FaceTagsIface& face : std::as_const(faces))
     {
         result << deleteRejectedFaceTagList(face);
     }
