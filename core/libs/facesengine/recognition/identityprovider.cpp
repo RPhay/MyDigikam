@@ -49,6 +49,10 @@ class Q_DECL_HIDDEN IdentityProvider::Private
 {
 public:
 
+    Private() = default;
+
+public:
+
     bool                            dbAvailable             = false;
     int                             seedMax                 = 0;
 
@@ -182,23 +186,26 @@ bool IdentityProvider::initialize()
 
 void IdentityProvider::cancel()
 {
-    if (d && d->removeThreadResult.isRunning())
+    if (d)
     {
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::cancel: sent queue end signal";
+        if (d->removeThreadResult.isRunning())
+        {
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::cancel: sent queue end signal";
 
-        // Signal the remove thread to terminate.
+            // Signal the remove thread to terminate.
 
-        d->removeQueue->push(d->removeQueue->endSignal());
+            d->removeQueue->push(d->removeQueue->endSignal());
 
-        // Wait for the remove thread to finish.
+            // Wait for the remove thread to finish.
 
-        d->removeThreadResult.waitForFinished();
-    }
+            d->removeThreadResult.waitForFinished();
+        }
 
-    if (d->removeQueue)
-    {
-        delete  d->removeQueue;
-        d->removeQueue = nullptr;    
+        if (d->removeQueue)
+        {
+            delete d->removeQueue;
+            d->removeQueue = nullptr;
+        }
     }
 }
 
