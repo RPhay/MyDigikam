@@ -44,7 +44,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-02 01:57+0000\n"
-"PO-Revision-Date: 2025-06-01 13:46+0200\n"
+"PO-Revision-Date: 2025-06-02 17:36+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -64022,10 +64022,9 @@ msgid "Ignored file extensions:"
 msgstr "Ignorera filändelser:"
 
 #: core/utilities/setup/camera/setupcamera.cpp:402
-#, fuzzy, kde-format
-#| msgid "Defaults"
+#, kde-format
 msgid "&Defaults"
-msgstr "Förval"
+msgstr "&Förval"
 
 #: core/utilities/setup/camera/setupcamera.cpp:418
 #, kde-format

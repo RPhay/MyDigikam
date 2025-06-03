@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-02 01:57+0000\n"
-"PO-Revision-Date: 2025-05-13 13:07+0200\n"
+"PO-Revision-Date: 2025-06-02 10:29+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -64592,10 +64592,9 @@ msgid "Ignored file extensions:"
 msgstr "Genegeerde bestandsextensies:"
 
 #: core/utilities/setup/camera/setupcamera.cpp:402
-#, fuzzy, kde-format
-#| msgid "Defaults"
+#, kde-format
 msgid "&Defaults"
-msgstr "Standaardinstellingen"
+msgstr "&Standaarden"
 
 #: core/utilities/setup/camera/setupcamera.cpp:418
 #, kde-format
