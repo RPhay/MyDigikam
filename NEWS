@@ -246,7 +246,7 @@ BUGFIXES:
 216 ==> 504947 - digiKam not signed under macOS.
 217 ==> 505093 - Import filter not showing CR3 files.
 218 ==> 505019 - Thumbnails not displayed.
-219 ==> 
+219 ==> 505161 - Mac version 8.6.0 will not load under Mac OS Sequoia 15.5 - could be a signing problem?
 220 ==> 
 221 ==> 
 222 ==> 
