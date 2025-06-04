@@ -24,6 +24,7 @@
 #include <QCheckBox>
 #include <QLabel>
 #include <QStyle>
+#include <QUrl>
 #include <QMessageBox>
 #include <QDesktopServices>
 
