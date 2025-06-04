@@ -100,7 +100,7 @@ OpenCVOpenCLDNNTestDlg::OpenCVOpenCLDNNTestDlg(QWidget* const parent)
     d->progressText->setVisible(false);  // Initially hidden until test starts
 
     d->buttons          = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    d->buttons->button(QDialogButtonBox::Ok)->setText(i18n("Start"));
+    d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "Start"));
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
     d->buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@action:button", "Begin test"));
 
