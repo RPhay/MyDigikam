@@ -126,14 +126,14 @@ bool AIToolsPipeline::start()
         connect(this, SIGNAL(scheduled()),
                 this, SLOT(slotScheduled()));
 
-        connect(this, SIGNAL(started(const QString&)),
-                this, SLOT(slotStarted(const QString&)));
+        connect(this, SIGNAL(started(QString)),
+                this, SLOT(slotStarted(QString)));
 
-        connect(this, SIGNAL(processed(const MLPipelinePackageNotify::Ptr&)),
-                this, SLOT(slotProcessed(const MLPipelinePackageNotify::Ptr&)));
+        connect(this, SIGNAL(processed(MLPipelinePackageNotify::Ptr)),
+                this, SLOT(slotProcessed(MLPipelinePackageNotify::Ptr)));
 
-        connect(this, SIGNAL(skipped(const MLPipelinePackageNotify::Ptr&)),
-                this, SLOT(slotSkipped(const MLPipelinePackageNotify::Ptr&)));
+        connect(this, SIGNAL(skipped(MLPipelinePackageNotify::Ptr)),
+                this, SLOT(slotSkipped(MLPipelinePackageNotify::Ptr)));
 
         connect(this, SIGNAL(finished()),
                 this, SLOT(slotFinished()));
