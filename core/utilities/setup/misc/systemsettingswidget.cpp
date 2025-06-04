@@ -25,6 +25,7 @@
 #include <QLabel>
 #include <QStyle>
 #include <QMessageBox>
+#include <QDesktopServices>
 
 // KDE includes
 
@@ -72,6 +73,7 @@ public:
     OpenCVOpenCLDNNTestDlg* openCLDNNTestDlg       = nullptr;
     bool                    openCLDNNTestResult    = false;
     QPushButton*            filesDownloadButton    = nullptr;
+    QPushButton*            openLocalStorageButton = nullptr;
     FilesDownloader*        filesDownloader        = nullptr;
 
     // Video rendering options
@@ -131,6 +133,10 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     QLabel* const filesLabel     = new QLabel(i18n("Download required binary data:"), this);
     d->filesDownloadButton       = new QPushButton(i18n("Open Download Dialog..."), this);
     d->filesDownloadButton->setIcon(QIcon::fromTheme(QLatin1String("download")));
+
+    d->openLocalStorageButton    = new QPushButton(i18n("Open Local Storage..."), this);
+    d->openLocalStorageButton->setIcon(QIcon::fromTheme(QLatin1String("folder-open")));
+    d->openLocalStorageButton->setToolTip(i18n("Open local directory used for the data files storage."));
 
     // Video rendering options
 
@@ -205,36 +211,40 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     layout->addWidget(new DLineWidget(Qt::Horizontal, this), row++, 0, 1, 2);
     layout->addWidget(d->enableOpenCLCheck,                  row++, 0, 1, 2);
     layout->addWidget(d->enableOpenCLDNNCheck,               row,   0, 1, 2);
-    layout->addWidget(d->openCLDNNTest,                      row++, 1, 1, 1);
+    layout->addWidget(d->openCLDNNTest,                      row++, 1, 1, 2);
     layout->addWidget(filesLabel,                            row,   0, 1, 1);
-    layout->addWidget(d->filesDownloadButton,                row++, 1, 1, 1);
+    layout->addWidget(d->filesDownloadButton,                row,   1, 1, 1);
+    layout->addWidget(d->openLocalStorageButton,             row++, 2, 1, 1);
 
     // Video rendering options
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    layout->addWidget(new DLineWidget(Qt::Horizontal, this), row++, 0, 1, 2);
-    layout->addWidget(d->enableHWVideoCheck,                 row++, 0, 1, 2);
-    layout->addWidget(d->enableHWTConvCheck,                 row++, 0, 1, 2);
+    layout->addWidget(new DLineWidget(Qt::Horizontal, this), row++, 0, 1, 3);
+    layout->addWidget(d->enableHWVideoCheck,                 row++, 0, 1, 3);
+    layout->addWidget(d->enableHWTConvCheck,                 row++, 0, 1, 3);
     layout->addWidget(videoLabel,                            row,   0, 1, 1);
-    layout->addWidget(d->videoBackendCBox,                   row++, 1, 1, 1);
+    layout->addWidget(d->videoBackendCBox,                   row++, 1, 1, 2);
 
 #endif
 
     // Debug traces options
 
-    layout->addWidget(new DLineWidget(Qt::Horizontal, this), row++, 0, 1, 2);
-    layout->addWidget(d->enableLoggingCheck,                 row++, 0, 1, 2);
+    layout->addWidget(new DLineWidget(Qt::Horizontal, this), row++, 0, 1, 3);
+    layout->addWidget(d->enableLoggingCheck,                 row++, 0, 1, 3);
 
     // Proxy settings options
 
-    layout->addWidget(proxySettings,                         row++, 0, 1, 2);
-    layout->addWidget(systemNote,                            row++, 0, 1, 2);
+    layout->addWidget(proxySettings,                         row++, 0, 1, 3);
+    layout->addWidget(systemNote,                            row++, 0, 1, 3);
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
     layout->setRowStretch(row, 10);
 
     connect(d->filesDownloadButton, &QPushButton::pressed,
             this, &SystemSettingsWidget::slotBinaryDownload);
+
+    connect(d->openLocalStorageButton, &QPushButton::pressed,
+            this, &SystemSettingsWidget::slotOpenLocalStorage);
 
     connect(d->enableOpenCLCheck, &QCheckBox::toggled,
             d->enableOpenCLDNNCheck, &QCheckBox::setEnabled);
@@ -342,7 +352,7 @@ void SystemSettingsWidget::slotOpenCLDNNTest()
     d->openCLDNNTestDlg = new OpenCVOpenCLDNNTestDlg(this);
     d->openCLDNNTestDlg->setAttribute(Qt::WA_DeleteOnClose);
     d->openCLDNNTestDlg->setWindowModality(Qt::WindowModal);
-    
+
     // Connect to the finished signal to get the test result
 
     connect(d->openCLDNNTestDlg, &QDialog::finished, 
@@ -365,6 +375,11 @@ void SystemSettingsWidget::slotOpenCLDNNTestFinished()
 
     d->enableOpenCLDNNCheck->setEnabled(d->enableOpenCLCheck->isChecked() && d->openCLDNNTestResult);
     d->enableOpenCLDNNCheck->setChecked(d->enableOpenCLCheck->isChecked() && d->openCLDNNTestResult);
+}
+
+void SystemSettingsWidget::slotOpenLocalStorage()
+{
+    QDesktopServices::openUrl(QUrl::fromLocalFile(FilesDownloader::getFacesEnginePath()));
 }
 
 } // namespace Digikam

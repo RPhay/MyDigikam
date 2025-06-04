@@ -152,7 +152,7 @@ void FilesDownloader::startDownload()
     d->buttons->button(QDialogButtonBox::Ok)->setText(i18n("Download"));
     d->buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
 
-    d->buttons->button(QDialogButtonBox::Open)->setText(i18n("Open local directory used for the data files storage."));
+    d->buttons->button(QDialogButtonBox::Open)->setToolTip(i18n("Open local directory used for the data files storage."));
 
     d->infoLabel         = new QLabel(mainWidget);
     d->loadLabel         = new QLabel(mainWidget);
@@ -465,7 +465,7 @@ void FilesDownloader::slotOpenLocalRepo()
     QDesktopServices::openUrl(QUrl::fromLocalFile(getFacesEnginePath()));
 }
 
-QString FilesDownloader::getFacesEnginePath() const
+QString FilesDownloader::getFacesEnginePath()
 {
     QString appPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
     appPath        += QLatin1String("/digikam/facesengine");

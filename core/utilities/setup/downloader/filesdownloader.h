@@ -79,6 +79,8 @@ public:
     bool checkDownloadFiles() const;
     void startDownload();
 
+    static QString getFacesEnginePath();
+
 private:
 
     void download();
@@ -88,7 +90,6 @@ private:
     bool downloadExists(const DownloadInfo& info) const;
     void deleteUnusedFiles()                      const;
 
-    QString getFacesEnginePath()                  const;
     void createDownloadInfo();
 
 private Q_SLOTS:

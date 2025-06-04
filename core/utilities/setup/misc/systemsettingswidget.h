@@ -46,6 +46,7 @@ private Q_SLOTS:
     void slotBinaryDownload();
     void slotOpenCLDNNTest();
     void slotOpenCLDNNTestFinished();
+    void slotOpenLocalStorage();
 
 private:
 
