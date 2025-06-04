@@ -74,7 +74,7 @@ class DIGIKAM_EXPORT FilesDownloader : public QDialog
 public:
 
     explicit FilesDownloader(QWidget* const parent = nullptr);
-    ~FilesDownloader() override;
+    ~FilesDownloader()  override;
 
     bool checkDownloadFiles() const;
     void startDownload();
@@ -93,12 +93,13 @@ private:
 
 private Q_SLOTS:
 
-    void reject() override;
+    void reject()       override;
     void slotDownload();
     void slotHelp();
     void slotUpdateDownloadInfo();
     void slotDownloaded(QNetworkReply* reply);
     void slotDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
+    void slotOpenLocalRepo();
 
 private:
 

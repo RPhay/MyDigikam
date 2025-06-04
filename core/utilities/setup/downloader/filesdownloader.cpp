@@ -31,6 +31,7 @@
 #include <QStandardPaths>
 #include <QNetworkReply>
 #include <QNetworkRequest>
+#include <QDesktopServices>
 #include <QDialogButtonBox>
 #include <QCryptographicHash>
 #include <QNetworkAccessManager>
@@ -143,12 +144,15 @@ void FilesDownloader::startDownload()
     QVBoxLayout* const vBox   = new QVBoxLayout(mainWidget);
 
     d->buttons                = new QDialogButtonBox(QDialogButtonBox::Help |
-                                                     QDialogButtonBox::Ok |
+                                                     QDialogButtonBox::Ok   |
+                                                     QDialogButtonBox::Open |
                                                      QDialogButtonBox::Close,
                                                      mainWidget);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
     d->buttons->button(QDialogButtonBox::Ok)->setText(i18n("Download"));
     d->buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
+
+    d->buttons->button(QDialogButtonBox::Open)->setText(i18n("Open local directory used for the data files storage."));
 
     d->infoLabel         = new QLabel(mainWidget);
     d->loadLabel         = new QLabel(mainWidget);
@@ -187,6 +191,9 @@ void FilesDownloader::startDownload()
 
     connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(slotDownload()));
+
+    connect(d->buttons->button(QDialogButtonBox::Open), SIGNAL(clicked()),
+            this, SLOT(slotOpenLocalRepo()));
 
     connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
             this, SLOT(slotHelp()));
@@ -451,6 +458,11 @@ void FilesDownloader::slotDownloadProgress(qint64 bytesReceived, qint64 bytesTot
 
     d->progress->setMaximum(bytesTotal);
     d->progress->setValue(bytesReceived);
+}
+
+void FilesDownloader::slotOpenLocalRepo()
+{
+    QDesktopServices::openUrl(QUrl::fromLocalFile(getFacesEnginePath()));
 }
 
 QString FilesDownloader::getFacesEnginePath() const
