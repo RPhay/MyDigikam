@@ -52,6 +52,8 @@ private:
     explicit FaceRecognitionBackgroundController(QObject*)                           = delete;
     FaceRecognitionBackgroundController(const FaceRecognitionBackgroundController&)  = delete;
 
+private:
+
     class Private;
     Private* const d = nullptr;
 

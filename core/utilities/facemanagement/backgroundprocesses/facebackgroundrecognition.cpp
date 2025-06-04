@@ -26,7 +26,7 @@
 
 #include <klocalizedstring.h>
 
-// local includes
+// Local includes
 
 #include "applicationsettings.h"
 #include "digikam_debug.h"
