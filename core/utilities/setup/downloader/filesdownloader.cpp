@@ -17,6 +17,7 @@
 // Qt includes
 
 #include <QDir>
+#include <QUrl>
 #include <QLabel>
 #include <QTimer>
 #include <QThread>
