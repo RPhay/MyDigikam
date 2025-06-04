@@ -20,9 +20,9 @@
  * ensure that the pipeline stages are consistent and easy to read.
  */
 
-#define MLPIPELINE_FINDER_START(threadPriority, nextStage)                                                              \
+#define MLPIPELINE_FINDER_START(threadPriority, nextStage)                                              \
             MLPipelineQueue *thisQueue = nullptr, *nextQueue = nullptr;                                 \
-            stageStart(threadPriority, MLPipelineStage::Finder, nextStage, thisQueue, nextQueue); \
+            stageStart(threadPriority, MLPipelineStage::Finder, nextStage, thisQueue, nextQueue);       \
             bool moreCpu = false;                                                                       \
             QElapsedTimer timer;                                                                        \
             pipelinePerformanceStart(MLPipelineStage::Finder, timer);
@@ -52,27 +52,27 @@
                     if (queueEndSignal() == mlpackage) { break; }                \
                     pipelinePerformanceStart(thisStage, timer);
 
-#define MLPIPELINE_LOOP_END(thisStage, pipelineStageName)                                                                                                     \
-                pipelinePerformanceEnd(thisStage, timer);                                                                                                     \
-            }                                                                                                                                                 \
-            catch(const std::exception& e)                                                                                                                    \
-            {                                                                                                                                                 \
-                qCCritical(DIGIKAM_MLPIPELINEFOUNDATION_LOG) << pipelineStageName << e.what() << " Restarting...";                                                     \
+#define MLPIPELINE_LOOP_END(thisStage, pipelineStageName)                                                                                                                \
+                pipelinePerformanceEnd(thisStage, timer);                                                                                                                \
+            }                                                                                                                                                            \
+            catch(const std::exception& e)                                                                                                                               \
+            {                                                                                                                                                            \
+                qCCritical(DIGIKAM_MLPIPELINEFOUNDATION_LOG) << pipelineStageName << e.what() << " Restarting...";                                                       \
                 notify(MLPipelineNotification::notifySkipped, i18n("Error"), QLatin1String(e.what()), QString(), 0, QIcon::fromTheme(QStringLiteral("error")));          \
-                if (package)                                                                                                                                  \
-                {                                                                                                                                             \
-                     delete package;                                                                                                                          \
-                     package = nullptr;                                                                                                                       \
-                }                                                                                                                                             \
-            }                                                                                                                                                 \
-            catch(...)                                                                                                                                        \
-            {                                                                                                                                                 \
-                qCCritical(DIGIKAM_MLPIPELINEFOUNDATION_LOG) << pipelineStageName << "  Restarting...";                                                                \
+                if (package)                                                                                                                                             \
+                {                                                                                                                                                        \
+                     delete package;                                                                                                                                     \
+                     package = nullptr;                                                                                                                                  \
+                }                                                                                                                                                        \
+            }                                                                                                                                                            \
+            catch(...)                                                                                                                                                   \
+            {                                                                                                                                                            \
+                qCCritical(DIGIKAM_MLPIPELINEFOUNDATION_LOG) << pipelineStageName << "  Restarting...";                                                                  \
                 notify(MLPipelineNotification::notifySkipped, i18n("Error"), QLatin1String(pipelineStageName), QString(), 0, QIcon::fromTheme(QStringLiteral("error"))); \
-                if (package)                                                                                                                                  \
-                {                                                                                                                                             \
-                    delete package;                                                                                                                           \
-                    package = nullptr;                                                                                                                        \
-                }                                                                                                                                             \
-            }                                                                                                                                                 \
+                if (package)                                                                                                                                             \
+                {                                                                                                                                                        \
+                    delete package;                                                                                                                                      \
+                    package = nullptr;                                                                                                                                   \
+                }                                                                                                                                                        \
+            }                                                                                                                                                            \
         }

@@ -97,12 +97,14 @@ public:
     int size()
     {
         QMutexLocker locker(&mutex_);
+
         return queue_.size();
     }
 
     bool isEmpty()
     {
         QMutexLocker locker(&mutex_);
+
         return queue_.isEmpty();
     }
 

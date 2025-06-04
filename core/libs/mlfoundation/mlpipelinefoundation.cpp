@@ -37,7 +37,7 @@ MLPipelineFoundation::MLPipelineFoundation()
     : QObject()
 {
     threadPool = new QThreadPool(this);
-    threadPool->setMaxThreadCount(qMax(8, QThread::idealThreadCount()*2));
+    threadPool->setMaxThreadCount(qMax(8, QThread::idealThreadCount() * 2));
 
     connect(this, &MLPipelineFoundation::signalAddMoreWorkers,
             this, &MLPipelineFoundation::slotAddMoreWorkers);
@@ -701,12 +701,13 @@ void MLPipelineFoundation::showPipelinePerformance() const
 
         if (profile.itemCount > 0)
         {
-            qCDebug(DIGIKAM_MLPIPELINEFOUNDATION_LOG) << "Stage:" << stage << " Items Processed:" << profile.itemCount
-                                                      << " Max Thread Count:" << profile.maxThreadCount
-                                                      << " Max Queue Depth:" << profile.maxQueueCount
-                                                      << " Total Elapsed:" << profile.elapsedTime
-                                                      << " Max Elapsed:" << profile.maxElapsedTime
-                                                      << " Avg Elapsed:" << profile.elapsedTime / profile.itemCount;
+            qCDebug(DIGIKAM_MLPIPELINEFOUNDATION_LOG) << "Stage:"               << stage
+                                                      << " Items Processed:"    << profile.itemCount
+                                                      << " Max Thread Count:"   << profile.maxThreadCount
+                                                      << " Max Queue Depth:"    << profile.maxQueueCount
+                                                      << " Total Elapsed:"      << profile.elapsedTime
+                                                      << " Max Elapsed:"        << profile.maxElapsedTime
+                                                      << " Avg Elapsed:"        << profile.elapsedTime / profile.itemCount;
         }
     }
 
