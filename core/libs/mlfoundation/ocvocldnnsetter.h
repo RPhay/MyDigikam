@@ -46,7 +46,13 @@ public:
 
 private:
 
-    bool locked             = false;
+    bool locked = false;
+
+private:
+
+    // Disable
+    OpenCVOpenCLDNNSetter(const OpenCVOpenCLDNNSetter&)            = delete;
+    OpenCVOpenCLDNNSetter& operator=(const OpenCVOpenCLDNNSetter&) = delete;
 
     class Private;
     static Private* d;

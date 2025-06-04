@@ -54,6 +54,8 @@ public:
 
 OpenCVOpenCLDNNSetter::Private* OpenCVOpenCLDNNSetter::d = nullptr;
 
+// ------------------------------------------------------------------------
+
 OpenCVOpenCLDNNSetter::OpenCVOpenCLDNNSetter()
 {
     if (!d)
