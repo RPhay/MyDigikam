@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-02 01:57+0000\n"
-"PO-Revision-Date: 2025-05-13 10:03+0200\n"
+"PO-Revision-Date: 2025-06-02 11:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -42289,13 +42289,13 @@ msgstr "UW16K - 15360x8640 - 16:9"
 #, kde-format
 msgctxt "Video Bit Rate 400000"
 msgid "400k"
-msgstr "400k"
+msgstr "400 k"
 
 #: core/libs/video/manager/vidslidesettings.cpp:747
 #, kde-format
 msgctxt "Video Bit Rate 500000"
 msgid "500k"
-msgstr "500k"
+msgstr "500 k"
 
 #: core/libs/video/manager/vidslidesettings.cpp:748
 #, kde-format
@@ -57693,7 +57693,7 @@ msgstr "DOP: %1"
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:524
 #, kde-format
 msgid "Fix: %1d"
-msgstr "Fix: %1 d"
+msgstr "Fix: %1d"
 
 # Nre.= Abreviatura de nombre (sinònim de quantitat)
 # skip-rule: t-pu_sp
@@ -64725,10 +64725,9 @@ msgid "Ignored file extensions:"
 msgstr "Extensions de fitxer ignorades:"
 
 #: core/utilities/setup/camera/setupcamera.cpp:402
-#, fuzzy, kde-format
-#| msgid "Defaults"
+#, kde-format
 msgid "&Defaults"
-msgstr "Predeterminat"
+msgstr "Valors pre&determinats"
 
 #: core/utilities/setup/camera/setupcamera.cpp:418
 #, kde-format
