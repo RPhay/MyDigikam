@@ -247,7 +247,7 @@ BUGFIXES:
 217 ==> 505093 - Import filter not showing CR3 files.
 218 ==> 505019 - Thumbnails not displayed.
 219 ==> 505161 - Mac version 8.6.0 will not load under Mac OS Sequoia 15.5 - could be a signing problem?
-220 ==> 
+220 ==> 505211 - Weird creation of files.
 221 ==> 
 222 ==> 
 223 ==> 
