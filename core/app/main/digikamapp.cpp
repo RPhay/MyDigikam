@@ -270,7 +270,7 @@ DigikamApp::~DigikamApp()
     IdentityProvider::instance()->cancel();
 
     FaceClassifier::instance()->cancel();
-    
+
     ItemAttributesWatch::shutDown();
 
     // Close and delete image editor instance.

@@ -249,7 +249,7 @@ void ItemIconView::refreshView()
 }
 
 void ItemIconView::slotShowContextMenu(QContextMenuEvent* event,
-                                      const QList<QAction*>& extraGroupingActions)
+                                       const QList<QAction*>& extraGroupingActions)
 {
     Album* const album = currentAlbum();
 
@@ -283,8 +283,8 @@ void ItemIconView::slotShowContextMenu(QContextMenuEvent* event,
 }
 
 void ItemIconView::slotShowContextMenuOnInfo(QContextMenuEvent* event, const ItemInfo& info,
-                                            const QList<QAction*>& extraGroupingActions,
-                                            ItemFilterModel* imageFilterModel)
+                                             const QList<QAction*>& extraGroupingActions,
+                                             ItemFilterModel* imageFilterModel)
 {
     QList<qlonglong> selectedImageIds = selectedInfoList(true, true).toImageIdList();
 
@@ -422,8 +422,8 @@ void ItemIconView::slotShowContextMenuOnInfo(QContextMenuEvent* event, const Ite
 }
 
 void ItemIconView::slotShowGroupContextMenu(QContextMenuEvent* event,
-                                           const QList<ItemInfo>& selectedInfos,
-                                           ItemFilterModel* imageFilterModel)
+                                            const QList<ItemInfo>& selectedInfos,
+                                            ItemFilterModel* imageFilterModel)
 {
     QList<qlonglong> selectedImageIDs;
 
