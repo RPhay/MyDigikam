@@ -251,6 +251,8 @@ DigikamApp::DigikamApp()
 
     setAutoSaveSettings(configGroupName(), true);
 
+    showMenuBarAction()->setChecked(!menuBar()->isHidden());  // NOTE: workaround for bug #171080
+
     setupSelectToolsAction();
 }
 

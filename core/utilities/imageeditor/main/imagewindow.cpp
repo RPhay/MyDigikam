@@ -64,8 +64,6 @@ ImageWindow::ImageWindow()
 
     cleanupActions();
 
-    showMenuBarAction()->setChecked(!menuBar()->isHidden());  // NOTE: workaround for bug #171080
-
     // Create tool selection view
 
     setupSelectToolsAction();
@@ -84,8 +82,6 @@ ImageWindow::ImageWindow()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupName());
 
-    applyMainWindowSettings(group);
-
     d->thumbBarDock->reInitialize();
     d->thumbBarDock->setShouldBeVisible(group.readEntry(d->configShowThumbbarEntry, false));
 
@@ -94,6 +90,8 @@ ImageWindow::ImageWindow()
     d->viewContainer->restoreState(QByteArray::fromBase64(thumbbarState));
 
     setAutoSaveSettings(configGroupName(), true);
+
+    showMenuBarAction()->setChecked(!menuBar()->isHidden());  // NOTE: workaround for bug #171080
 
     //-------------------------------------------------------------
 

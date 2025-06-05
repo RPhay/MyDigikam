@@ -69,6 +69,8 @@ ImportUI::ImportUI(const QString& cameraTitle, const QString& model,
 
     setAutoSaveSettings(configGroupName(), true);
 
+    showMenuBarAction()->setChecked(!menuBar()->isHidden());  // NOTE: workaround for bug #171080
+
     // -------------------------------------------------------------------
 /*
     d->historyUpdater = new CameraHistoryUpdater(this);
@@ -560,8 +562,6 @@ void ImportUI::setupActions()
 
     createGUI(xmlFile());
     cleanupActions();
-
-    showMenuBarAction()->setChecked(!menuBar()->isHidden());  // NOTE: workaround for bug #171080
 }
 
 void ImportUI::updateActions()

@@ -79,6 +79,8 @@ QueueMgrWindow::QueueMgrWindow()
 
     setAutoSaveSettings(configGroupName(), true);
 
+    showMenuBarAction()->setChecked(!menuBar()->isHidden());  // NOTE: workaround for bug #171080
+
     populateToolsList();
     slotQueueContentsChanged();
 }
@@ -375,8 +377,6 @@ void QueueMgrWindow::setupActions()
 
     createGUI(xmlFile());
     cleanupActions();
-
-    showMenuBarAction()->setChecked(!menuBar()->isHidden());  // NOTE: workaround for bug #171080
 }
 
 void QueueMgrWindow::refreshView()

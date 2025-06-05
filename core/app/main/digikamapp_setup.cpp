@@ -1191,7 +1191,6 @@ void DigikamApp::initGui()
     d->recurseAlbumsAction->setChecked(ApplicationSettings::instance()->getRecurseAlbums());
     d->recurseTagsAction->setChecked(ApplicationSettings::instance()->getRecurseTags());
     d->showBarAction->setChecked(ApplicationSettings::instance()->getShowThumbbar());
-    showMenuBarAction()->setChecked(!menuBar()->isHidden());                                                    // NOTE: workaround for bug #171080
 
     slotSwitchedToIconView();
 }
