@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 01:57+0000\n"
+"POT-Creation-Date: 2025-06-05 01:59+0000\n"
 "PO-Revision-Date: 2025-06-02 20:08+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -27085,22 +27085,22 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Conversión RAW de UFRaw"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:337
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:338
 #, kde-format
 msgid "Unable to load image"
 msgstr "No se ha podido cargar la imagen"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:461
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:462
 #, kde-format
 msgid "AI Tools Processing"
 msgstr "Procesamiento con herramientas de IA"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:503
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
 #, kde-format
 msgid "Auto-rotating: %1\n"
 msgstr "Girar automáticamente: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27112,12 +27112,12 @@ msgstr "Girar automáticamente: %1\n"
 msgid "Album: %1\n"
 msgstr "Álbum: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:506
 #, kde-format
 msgid "Rotation: %1\n"
 msgstr "Rotación: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:527
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:528
 #, kde-format
 msgid "Skipped"
 msgstr "Omitido"
@@ -30238,7 +30238,7 @@ msgstr "No volver a preguntar"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:166
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -37553,7 +37553,7 @@ msgstr ""
 "actualizaciones."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:150
+#: core/utilities/setup/downloader/filesdownloader.cpp:153
 #, kde-format
 msgid "Download"
 msgstr "Descargar"
@@ -65146,44 +65146,50 @@ msgstr "Seleccione categoría"
 msgid "Your collection will use this category:"
 msgstr "La colección usará esta categoría:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:138
+#: core/utilities/setup/downloader/filesdownloader.cpp:140
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
 msgstr "Descargar los archivos de modelos necesarios"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:160
+#: core/utilities/setup/downloader/filesdownloader.cpp:156
+#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#, kde-format
+msgid "Open local directory used for the data files storage."
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:165
 #, kde-format
 msgid "Use AI Auto-Tools features"
 msgstr "Usar funciones de herramientas automáticas de IA"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:161
+#: core/utilities/setup/downloader/filesdownloader.cpp:166
 #, kde-format
 msgid "Use Face Management feature"
 msgstr "Usar la función de gestión de caras"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#: core/utilities/setup/downloader/filesdownloader.cpp:167
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Usar la función de detección estética"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:163
+#: core/utilities/setup/downloader/filesdownloader.cpp:168
 #, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Usar la función de asignación automática de etiquetas"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:243
+#: core/utilities/setup/downloader/filesdownloader.cpp:251
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr "Todos los archivos de modelos se han descargado con éxito."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:252
+#: core/utilities/setup/downloader/filesdownloader.cpp:260
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Error de descarga"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:253
+#: core/utilities/setup/downloader/filesdownloader.cpp:261
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65202,33 +65208,33 @@ msgstr ""
 "\n"
 "Puede volver a intentarlo o continuar la descarga en el siguiente inicio."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:261
+#: core/utilities/setup/downloader/filesdownloader.cpp:269
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Volver a intentarlo"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:399
+#: core/utilities/setup/downloader/filesdownloader.cpp:407
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "La suma de verificación no es correcta."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:423
+#: core/utilities/setup/downloader/filesdownloader.cpp:431
 #, kde-format
 msgid "File write error."
 msgstr "Ha ocurrido un error de escritura de archivo."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:430
+#: core/utilities/setup/downloader/filesdownloader.cpp:438
 #, kde-format
 msgid "File open error."
 msgstr "Ha ocurrido un error de apertura de archivo."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:445
+#: core/utilities/setup/downloader/filesdownloader.cpp:453
 #, kde-format
 msgid "File on the server is too large."
 msgstr "El archivo del servidor es demasiado grande."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:524
+#: core/utilities/setup/downloader/filesdownloader.cpp:537
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -65245,7 +65251,7 @@ msgstr ""
 "La herramienta de eliminación de ojos rojos necesita archivos de modelos de "
 "gestión de caras.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:530
+#: core/utilities/setup/downloader/filesdownloader.cpp:543
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -65263,18 +65269,18 @@ msgstr ""
 "en «<i>%1</i>».</p><p><b>Debe reiniciar digiKam tras descargar los archivos "
 "correctamente.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:538
+#: core/utilities/setup/downloader/filesdownloader.cpp:551
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "La descarga necesita %1 archivos con un tamaño de %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:546
+#: core/utilities/setup/downloader/filesdownloader.cpp:559
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "Se han encontrado todos los archivos para las funciones seleccionadas."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:566
+#: core/utilities/setup/downloader/filesdownloader.cpp:579
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Borrar los archivos de modelos AI/DNN no usados…"
@@ -66851,7 +66857,9 @@ msgstr ""
 "¿Quiere comprobar su sistema ahora?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "@action:button"
 msgid "Start"
 msgstr "Iniciar"
 
@@ -67376,27 +67384,27 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Agrupación"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:112
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Usar el escalado de alta densidad de PPP del factor de pantalla"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:113
+#: core/utilities/setup/misc/systemsettingswidget.cpp:116
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Usar mapas de bits con alta resolución de PPP"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:117
+#: core/utilities/setup/misc/systemsettingswidget.cpp:120
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "Usar software OpenGL para renderizado"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#: core/utilities/setup/misc/systemsettingswidget.cpp:124
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "Usar aceleración OpenCL por hardware"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:122
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -67405,12 +67413,12 @@ msgstr ""
 "Esta opción sigue siendo experimental y no tiene función.\n"
 "También requiere que ciertas variables de entorno se definan de forma manual."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:124
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, kde-format
 msgid "Use OpenCL hardware acceleration for AI models"
 msgstr "Usar aceleración OpenCL por hardware para los modelos de IA"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:125
+#: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
@@ -67419,62 +67427,69 @@ msgstr ""
 "Esta opción sigue siendo experimental y puede ocasionar bloqueos si los "
 "controladores correctos no se han instalado."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:128
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr "Probar compatibilidad de la GPU con la IA"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Descargar los datos binarios requeridos:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:132
+#: core/utilities/setup/misc/systemsettingswidget.cpp:135
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "Abrir diálogo de descarga…"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:139
+#: core/utilities/setup/misc/systemsettingswidget.cpp:138
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Export to Local Storage"
+msgid "Open Local Storage..."
+msgstr "Exportar a almacenamiento local"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:146
 #, kde-format
 msgid "Use video hardware acceleration"
 msgstr "Usar aceleración de vídeo por hardware"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#: core/utilities/setup/misc/systemsettingswidget.cpp:147
 #, kde-format
 msgid "Use video textures conversion"
 msgstr "Usar conversión de texturas de vídeo"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:142
+#: core/utilities/setup/misc/systemsettingswidget.cpp:149
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "Motor de descodificación para renderizar vídeo:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (predeterminado)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:149
+#: core/utilities/setup/misc/systemsettingswidget.cpp:156
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (sistema)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:153
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (sistema)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:157
+#: core/utilities/setup/misc/systemsettingswidget.cpp:164
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (sistema)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:165
+#: core/utilities/setup/misc/systemsettingswidget.cpp:172
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Activar el registro de depuración interno"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:182
+#: core/utilities/setup/misc/systemsettingswidget.cpp:189
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

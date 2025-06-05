@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 01:57+0000\n"
+"POT-Creation-Date: 2025-06-05 01:59+0000\n"
 "PO-Revision-Date: 2025-06-02 11:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -27082,22 +27082,22 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Conversió RAW de l'UFRaw"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:337
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:338
 #, kde-format
 msgid "Unable to load image"
 msgstr "No s'ha pogut carregar la imatge"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:461
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:462
 #, kde-format
 msgid "AI Tools Processing"
 msgstr "Processament d'eines d'IA"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:503
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
 #, kde-format
 msgid "Auto-rotating: %1\n"
 msgstr "Gir automàtic: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27109,12 +27109,12 @@ msgstr "Gir automàtic: %1\n"
 msgid "Album: %1\n"
 msgstr "Àlbum: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:506
 #, kde-format
 msgid "Rotation: %1\n"
 msgstr "Gir: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:527
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:528
 #, kde-format
 msgid "Skipped"
 msgstr "S'ha omès"
@@ -30244,7 +30244,7 @@ msgstr "No ho tornis a preguntar"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:166
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -37572,7 +37572,7 @@ msgstr ""
 "actualitzacions."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:150
+#: core/utilities/setup/downloader/filesdownloader.cpp:153
 #, kde-format
 msgid "Download"
 msgstr "Baixa"
@@ -65184,44 +65184,50 @@ msgstr "Selecció de la categoria"
 msgid "Your collection will use this category:"
 msgstr "La col·lecció usarà aquesta categoria:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:138
+#: core/utilities/setup/downloader/filesdownloader.cpp:140
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
 msgstr "Baixada dels fitxers de model necessaris"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:160
+#: core/utilities/setup/downloader/filesdownloader.cpp:156
+#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#, kde-format
+msgid "Open local directory used for the data files storage."
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:165
 #, kde-format
 msgid "Use AI Auto-Tools features"
 msgstr "Usa característiques d'eines automàtiques d'IA"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:161
+#: core/utilities/setup/downloader/filesdownloader.cpp:166
 #, kde-format
 msgid "Use Face Management feature"
 msgstr "Usa la característica de gestió de cares"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#: core/utilities/setup/downloader/filesdownloader.cpp:167
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Usa la característica de detecció estètica"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:163
+#: core/utilities/setup/downloader/filesdownloader.cpp:168
 #, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Usa la característica d'assignació automàtica d'etiquetes"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:243
+#: core/utilities/setup/downloader/filesdownloader.cpp:251
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr "Tots els fitxers de model s'han descarregat correctament."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:252
+#: core/utilities/setup/downloader/filesdownloader.cpp:260
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Error de baixada"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:253
+#: core/utilities/setup/downloader/filesdownloader.cpp:261
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65240,33 +65246,33 @@ msgstr ""
 "\n"
 "Podeu intentar-ho de nou o continuar la descàrrega en el següent inici."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:261
+#: core/utilities/setup/downloader/filesdownloader.cpp:269
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Torneu-ho a intentar"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:399
+#: core/utilities/setup/downloader/filesdownloader.cpp:407
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "La suma de verificació no és correcta."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:423
+#: core/utilities/setup/downloader/filesdownloader.cpp:431
 #, kde-format
 msgid "File write error."
 msgstr "Error d'escriptura en el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:430
+#: core/utilities/setup/downloader/filesdownloader.cpp:438
 #, kde-format
 msgid "File open error."
 msgstr "Error en obrir el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:445
+#: core/utilities/setup/downloader/filesdownloader.cpp:453
 #, kde-format
 msgid "File on the server is too large."
 msgstr "El fitxer que hi ha en el servidor és massa gran."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:524
+#: core/utilities/setup/downloader/filesdownloader.cpp:537
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -65283,7 +65289,7 @@ msgstr ""
 "d'eliminació d'ulls vermells requereix els fitxers de model de gestió de "
 "cares.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:530
+#: core/utilities/setup/downloader/filesdownloader.cpp:543
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -65301,19 +65307,19 @@ msgstr ""
 "p><p>Els fitxers es baixaran a «<i>%1</i>».</p><p><b>Heu de reiniciar el "
 "digiKam després de baixar correctament els fitxers.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:538
+#: core/utilities/setup/downloader/filesdownloader.cpp:551
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "La baixada necessita %1 fitxers amb una mida de %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:546
+#: core/utilities/setup/downloader/filesdownloader.cpp:559
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""
 "S'han trobat tots els fitxers per a les característiques seleccionades."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:566
+#: core/utilities/setup/downloader/filesdownloader.cpp:579
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Neteja els fitxers de models AI/DNN no utilitzats..."
@@ -66888,7 +66894,9 @@ msgstr ""
 "Voleu provar ara aquest sistema?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "@action:button"
 msgid "Start"
 msgstr "Inicia"
 
@@ -67408,27 +67416,27 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Agrupament"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:112
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Usa l'escalat del PPP alt a partir del factor de pantalla"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:113
+#: core/utilities/setup/misc/systemsettingswidget.cpp:116
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Usa mapes de píxels amb resolucions de PPP alt"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:117
+#: core/utilities/setup/misc/systemsettingswidget.cpp:120
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "Usa el programari OpenGL per a la renderització"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#: core/utilities/setup/misc/systemsettingswidget.cpp:124
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "Usa l'acceleració de maquinari OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:122
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -67437,12 +67445,12 @@ msgstr ""
 "Aquesta opció encara és experimental i necessita que determinades variables "
 "d'entorn es defineixin manualment."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:124
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, kde-format
 msgid "Use OpenCL hardware acceleration for AI models"
 msgstr "Usa l'acceleració de maquinari OpenCL per als models d'IA"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:125
+#: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
@@ -67451,62 +67459,69 @@ msgstr ""
 "Aquesta opció encara és experimental i pot provocar fallades si no estan "
 "instal·lats els controladors adequats."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:128
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr "Prova la compatibilitat de la IA de la GPU"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Baixa les dades binàries requerides:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:132
+#: core/utilities/setup/misc/systemsettingswidget.cpp:135
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "Obre el diàleg de baixades..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:139
+#: core/utilities/setup/misc/systemsettingswidget.cpp:138
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Export to Local Storage"
+msgid "Open Local Storage..."
+msgstr "Exportació a un emmagatzematge local"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:146
 #, kde-format
 msgid "Use video hardware acceleration"
 msgstr "Usa l'acceleració de maquinari de vídeo"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#: core/utilities/setup/misc/systemsettingswidget.cpp:147
 #, kde-format
 msgid "Use video textures conversion"
 msgstr "Usa la conversió de textures de vídeo"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:142
+#: core/utilities/setup/misc/systemsettingswidget.cpp:149
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "Dorsal de descodificació per a renderitzar vídeo:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (predeterminat)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:149
+#: core/utilities/setup/misc/systemsettingswidget.cpp:156
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (Sistema)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:153
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (Sistema)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:157
+#: core/utilities/setup/misc/systemsettingswidget.cpp:164
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (Sistema)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:165
+#: core/utilities/setup/misc/systemsettingswidget.cpp:172
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Activa el registre intern de depuració"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:182
+#: core/utilities/setup/misc/systemsettingswidget.cpp:189
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

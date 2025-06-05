@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 01:57+0000\n"
+"POT-Creation-Date: 2025-06-05 01:59+0000\n"
 "PO-Revision-Date: 2025-06-02 06:53+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -26816,22 +26816,22 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw pretvorba surove"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:337
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:338
 #, kde-format
 msgid "Unable to load image"
 msgstr "Slike ni bilo mogoče naložiti"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:461
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:462
 #, kde-format
 msgid "AI Tools Processing"
 msgstr "Obdelovanje z orodji za umetno inteligenco"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:503
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
 #, kde-format
 msgid "Auto-rotating: %1\n"
 msgstr "Samodejno vrtenje: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -26843,12 +26843,12 @@ msgstr "Samodejno vrtenje: %1\n"
 msgid "Album: %1\n"
 msgstr "Album: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:506
 #, kde-format
 msgid "Rotation: %1\n"
 msgstr "Vrtenje: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:527
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:528
 #, kde-format
 msgid "Skipped"
 msgstr "Preskočeno"
@@ -29950,7 +29950,7 @@ msgstr "Ne vprašaj več"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:166
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -37201,7 +37201,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "Odpri pogovorno okno nastavitev za nastavljanje posodobitev."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:150
+#: core/utilities/setup/downloader/filesdownloader.cpp:153
 #, kde-format
 msgid "Download"
 msgstr "Prenesi sem"
@@ -64633,44 +64633,50 @@ msgstr "Izberite kategorijo"
 msgid "Your collection will use this category:"
 msgstr "Vaša nova zbirka bo uporabljala to kategorijo:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:138
+#: core/utilities/setup/downloader/filesdownloader.cpp:140
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
 msgstr "Prejmi zahtevane datoteke modela"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:160
+#: core/utilities/setup/downloader/filesdownloader.cpp:156
+#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#, kde-format
+msgid "Open local directory used for the data files storage."
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:165
 #, kde-format
 msgid "Use AI Auto-Tools features"
 msgstr "Uporabi zmožnosti samodejnih orodij umetne inteligence"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:161
+#: core/utilities/setup/downloader/filesdownloader.cpp:166
 #, kde-format
 msgid "Use Face Management feature"
 msgstr "Uporabi zmožnost upravljanja obrazov"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#: core/utilities/setup/downloader/filesdownloader.cpp:167
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Uporabi zmožnost estetske zaznave"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:163
+#: core/utilities/setup/downloader/filesdownloader.cpp:168
 #, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Uporabi zmožnosti dodeljevanja samodejnih oznak"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:243
+#: core/utilities/setup/downloader/filesdownloader.cpp:251
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr "Vse datoteke modela so bile uspešno prenesene."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:252
+#: core/utilities/setup/downloader/filesdownloader.cpp:260
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Napaka prenosa"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:253
+#: core/utilities/setup/downloader/filesdownloader.cpp:261
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -64689,33 +64695,33 @@ msgstr ""
 "\n"
 "Lahko ponovite ali nadaljujete prenos po novem zagonu."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:261
+#: core/utilities/setup/downloader/filesdownloader.cpp:269
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Poskusite znova"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:399
+#: core/utilities/setup/downloader/filesdownloader.cpp:407
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Kontrolna vsota ni pravilna."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:423
+#: core/utilities/setup/downloader/filesdownloader.cpp:431
 #, kde-format
 msgid "File write error."
 msgstr "Napaka pri pisanju datoteke."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:430
+#: core/utilities/setup/downloader/filesdownloader.cpp:438
 #, kde-format
 msgid "File open error."
 msgstr "Napaka pri odpiranju datoteke."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:445
+#: core/utilities/setup/downloader/filesdownloader.cpp:453
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Datoteka na strežniku je prevelika."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:524
+#: core/utilities/setup/downloader/filesdownloader.cpp:537
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -64731,7 +64737,7 @@ msgstr ""
 "ki jih želite omogočiti.</p><p><b>Opomba:</b> Orodje za odstranjevanje "
 "rdečih oči zahteva datoteke modela upravljanja obraza.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:530
+#: core/utilities/setup/downloader/filesdownloader.cpp:543
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -64748,18 +64754,18 @@ msgstr ""
 "delovale brez teh datotek.</p><p>Datoteke bodo prenesene v \"<i>%1</i>\".</"
 "p><p><b>Po uspešnem prenosu datotek morate znova zagnati digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:538
+#: core/utilities/setup/downloader/filesdownloader.cpp:551
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Prenos zahteva %1 datotek z velikostjo %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:546
+#: core/utilities/setup/downloader/filesdownloader.cpp:559
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "Vse datoteke za izbrane zmožnosti so bile najdene."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:566
+#: core/utilities/setup/downloader/filesdownloader.cpp:579
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Počisti neuporabljene datoteke modela AI/DNN..."
@@ -66307,7 +66313,9 @@ msgstr ""
 "Ali želite zdaj preizkusiti svoj sistem?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "@action:button"
 msgid "Start"
 msgstr "Zaženi"
 
@@ -66827,27 +66835,27 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Združevanje"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:112
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Uporabite merilo visoke ločljivosti DPI glede na faktor zaslona"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:113
+#: core/utilities/setup/misc/systemsettingswidget.cpp:116
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Uporabi slikovne preslikave z visoko ločljivostjo DPI"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:117
+#: core/utilities/setup/misc/systemsettingswidget.cpp:120
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "Uporabi programsko opremo OpenGL za upodabljanje"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#: core/utilities/setup/misc/systemsettingswidget.cpp:124
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "Uporabi s strojno pospeševanje OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:122
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -66856,12 +66864,12 @@ msgstr ""
 "Ta možnost je še poskusna in zahteva ročno nastavitev nekaterih spremenljivk "
 "okolja."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:124
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, kde-format
 msgid "Use OpenCL hardware acceleration for AI models"
 msgstr "Uporabi strojno pospeševanje OpenCL za modele umetne inteligence"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:125
+#: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
@@ -66870,62 +66878,69 @@ msgstr ""
 "Ta možnost je še vedno eksperimentalna in lahko povzroči sesutja, če niso "
 "nameščeni ustrezni gonilniki."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:128
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr "Preizkus združljivosti GPE z umetno inteligenco"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Prenesi zahtevane binarne podatke:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:132
+#: core/utilities/setup/misc/systemsettingswidget.cpp:135
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "Odpri pogovorno okno prejema ..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:139
+#: core/utilities/setup/misc/systemsettingswidget.cpp:138
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Export to Local Storage"
+msgid "Open Local Storage..."
+msgstr "Izvozi v lokalni medij"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:146
 #, kde-format
 msgid "Use video hardware acceleration"
 msgstr "Uporabite strojno pospeševanje videa"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#: core/utilities/setup/misc/systemsettingswidget.cpp:147
 #, kde-format
 msgid "Use video textures conversion"
 msgstr "Uporabi konverzijo video tekstur"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:142
+#: core/utilities/setup/misc/systemsettingswidget.cpp:149
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "Zaledje dekodiranja za upodabljanje videa:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (privzeto)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:149
+#: core/utilities/setup/misc/systemsettingswidget.cpp:156
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (Sistem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:153
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (Sistem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:157
+#: core/utilities/setup/misc/systemsettingswidget.cpp:164
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (Sistem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:165
+#: core/utilities/setup/misc/systemsettingswidget.cpp:172
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Omogoči notranje beleženje napak"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:182
+#: core/utilities/setup/misc/systemsettingswidget.cpp:189
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

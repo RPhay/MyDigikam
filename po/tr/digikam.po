@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 01:57+0000\n"
+"POT-Creation-Date: 2025-06-05 01:59+0000\n"
 "PO-Revision-Date: 2025-06-03 13:26+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -26849,22 +26849,22 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW Dönüştürme"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:337
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:338
 #, kde-format
 msgid "Unable to load image"
 msgstr "Görsel yüklenemiyor"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:461
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:462
 #, kde-format
 msgid "AI Tools Processing"
 msgstr "Yapay Zekâ Araçları İşlemesi"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:503
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
 #, kde-format
 msgid "Auto-rotating: %1\n"
 msgstr "Kendiliğinden döndüren: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -26876,12 +26876,12 @@ msgstr "Kendiliğinden döndüren: %1\n"
 msgid "Album: %1\n"
 msgstr "Albüm: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:506
 #, kde-format
 msgid "Rotation: %1\n"
 msgstr "Döndürme: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:527
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:528
 #, kde-format
 msgid "Skipped"
 msgstr "Atlandı"
@@ -29957,7 +29957,7 @@ msgstr "Bir daha sorma"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:166
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -37177,7 +37177,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "Güncellemeleri yapılandırmak için ayarlar iletişim kutusunu açın."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:150
+#: core/utilities/setup/downloader/filesdownloader.cpp:153
 #, kde-format
 msgid "Download"
 msgstr "İndir"
@@ -64564,44 +64564,50 @@ msgstr "Kategori Seç"
 msgid "Your collection will use this category:"
 msgstr "Yeni koleksiyonunuz şu kategoriyi kullanacak:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:138
+#: core/utilities/setup/downloader/filesdownloader.cpp:140
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
 msgstr "Gerekli Model Dosyalarını İndir"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:160
+#: core/utilities/setup/downloader/filesdownloader.cpp:156
+#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#, kde-format
+msgid "Open local directory used for the data files storage."
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:165
 #, kde-format
 msgid "Use AI Auto-Tools features"
 msgstr "AI Auto-Tools özelliklerini kullan"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:161
+#: core/utilities/setup/downloader/filesdownloader.cpp:166
 #, kde-format
 msgid "Use Face Management feature"
 msgstr "Yüz yönetimi özelliğini kullan"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#: core/utilities/setup/downloader/filesdownloader.cpp:167
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Estetik algılama özelliğini kullan"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:163
+#: core/utilities/setup/downloader/filesdownloader.cpp:168
 #, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Kendiliğinden künye atama özelliğini kullan"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:243
+#: core/utilities/setup/downloader/filesdownloader.cpp:251
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr "Tüm model dosyaları başarıyla indirildi."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:252
+#: core/utilities/setup/downloader/filesdownloader.cpp:260
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "İndirme Hatası"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:253
+#: core/utilities/setup/downloader/filesdownloader.cpp:261
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -64621,33 +64627,33 @@ msgstr ""
 "Yeniden deneyebilir veya bir sonraki başlatmada kaldığınız yerden "
 "sürdürebilirsiniz."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:261
+#: core/utilities/setup/downloader/filesdownloader.cpp:269
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Yeniden Dene"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:399
+#: core/utilities/setup/downloader/filesdownloader.cpp:407
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Sağlama toplamı doğru değil."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:423
+#: core/utilities/setup/downloader/filesdownloader.cpp:431
 #, kde-format
 msgid "File write error."
 msgstr "Dosya yazma hatası."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:430
+#: core/utilities/setup/downloader/filesdownloader.cpp:438
 #, kde-format
 msgid "File open error."
 msgstr "Dosya açma hatası."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:445
+#: core/utilities/setup/downloader/filesdownloader.cpp:453
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Sunucudaki dosya pek büyük."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:524
+#: core/utilities/setup/downloader/filesdownloader.cpp:537
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -64663,7 +64669,7 @@ msgstr ""
 "p><p><b>Not:</b> Kırmızı göz giderme aracı, yüz yönetimi modeli dosyaları "
 "gerektirir.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:530
+#: core/utilities/setup/downloader/filesdownloader.cpp:543
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -64681,18 +64687,18 @@ msgstr ""
 "indirilecektir.</p><p><b>Dosyaları başarılı bir şekilde indirdikten sonra "
 "digiKam’ı yeniden başlatmanız gerekir.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:538
+#: core/utilities/setup/downloader/filesdownloader.cpp:551
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "İndirme, %2 boyutunda %1 dosya gerektiriyor."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:546
+#: core/utilities/setup/downloader/filesdownloader.cpp:559
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "Seçili özellikler için olan bütün dosyalar bulunamadı."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:566
+#: core/utilities/setup/downloader/filesdownloader.cpp:579
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Kullanılmayan AI/DNN Modellerini Temizle…"
@@ -66244,7 +66250,9 @@ msgstr ""
 "Do you want to test your system now?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "@action:button"
 msgid "Start"
 msgstr "Başlat"
 
@@ -66758,27 +66766,27 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Gruplama"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:112
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Ekran çarpanından yüksek DPI’li ölçeklendirme kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:113
+#: core/utilities/setup/misc/systemsettingswidget.cpp:116
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Yüksek DPI çözünürlüğüne sahip piksel eşlemleri kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:117
+#: core/utilities/setup/misc/systemsettingswidget.cpp:120
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "Sunum için yazılım OpenGL kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#: core/utilities/setup/misc/systemsettingswidget.cpp:124
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "OpenCL donanım ivmelendirmesini kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:122
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -66787,12 +66795,12 @@ msgstr ""
 "Bu seçenek hâlâ deneyseldir ve çeşitli çevre değişkenlerinin elle "
 "ayarlanmasını gerektirir."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:124
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, kde-format
 msgid "Use OpenCL hardware acceleration for AI models"
 msgstr "Yapay zekâ modelleri için OpenCL donanım ivmelendirmesini kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:125
+#: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
@@ -66801,62 +66809,69 @@ msgstr ""
 "Bu seçenek hâlâ deneyseldir ve gerekli sürücüler kurulu değilse çökmelere "
 "neden olabilir."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:128
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr "GPU Yapay Zekâ Uyumluluğunu Sına"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Gerekli ikili veriyi indir:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:132
+#: core/utilities/setup/misc/systemsettingswidget.cpp:135
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "İndirme İletişim Kutusunu Aç…"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:139
+#: core/utilities/setup/misc/systemsettingswidget.cpp:138
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Export to Local Storage"
+msgid "Open Local Storage..."
+msgstr "Yerel Depolamaya Dışa Aktar"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:146
 #, kde-format
 msgid "Use video hardware acceleration"
 msgstr "Video donanım ivmelendirmesi kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#: core/utilities/setup/misc/systemsettingswidget.cpp:147
 #, kde-format
 msgid "Use video textures conversion"
 msgstr "Video dokuları dönüşümünü kullan"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:142
+#: core/utilities/setup/misc/systemsettingswidget.cpp:149
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "Video sunumu için kullanılan kod çözme arka ucu:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (Öntanımlı)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:149
+#: core/utilities/setup/misc/systemsettingswidget.cpp:156
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (Sistem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:153
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (Sistem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:157
+#: core/utilities/setup/misc/systemsettingswidget.cpp:164
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (Sistem)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:165
+#: core/utilities/setup/misc/systemsettingswidget.cpp:172
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "İçsel hata ayıklama günlüklemesini etkinleştir"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:182
+#: core/utilities/setup/misc/systemsettingswidget.cpp:189
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

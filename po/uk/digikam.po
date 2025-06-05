@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 01:57+0000\n"
+"POT-Creation-Date: 2025-06-05 01:59+0000\n"
 "PO-Revision-Date: 2025-06-02 09:50+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -27218,22 +27218,22 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Перетворення цифрових негативів UFRaw"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:337
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:338
 #, kde-format
 msgid "Unable to load image"
 msgstr "Не вдалося завантажити зображення"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:461
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:462
 #, kde-format
 msgid "AI Tools Processing"
 msgstr "Обробка засобами ШІ"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:503
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
 #, kde-format
 msgid "Auto-rotating: %1\n"
 msgstr "Автообертання: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27245,12 +27245,12 @@ msgstr "Автообертання: %1\n"
 msgid "Album: %1\n"
 msgstr "Альбом: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:506
 #, kde-format
 msgid "Rotation: %1\n"
 msgstr "Обертання: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:527
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:528
 #, kde-format
 msgid "Skipped"
 msgstr "Пропустити"
@@ -30369,7 +30369,7 @@ msgstr "Більше не питати"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:166
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -37702,7 +37702,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "Відкрити сторінку вікна налаштовування для налаштовування оновлень."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:150
+#: core/utilities/setup/downloader/filesdownloader.cpp:153
 #, kde-format
 msgid "Download"
 msgstr "Отримати"
@@ -65384,44 +65384,50 @@ msgstr "Виберіть категорію"
 msgid "Your collection will use this category:"
 msgstr "Для вашої збірки буде використано таку категорію:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:138
+#: core/utilities/setup/downloader/filesdownloader.cpp:140
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
 msgstr "Отримання потрібних файлів моделей"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:160
+#: core/utilities/setup/downloader/filesdownloader.cpp:156
+#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#, kde-format
+msgid "Open local directory used for the data files storage."
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:165
 #, kde-format
 msgid "Use AI Auto-Tools features"
 msgstr "Використати можливості автоматизації ШІ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:161
+#: core/utilities/setup/downloader/filesdownloader.cpp:166
 #, kde-format
 msgid "Use Face Management feature"
 msgstr "Використати можливість керування обличчями"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#: core/utilities/setup/downloader/filesdownloader.cpp:167
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Використати можливість визначення естетичності"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:163
+#: core/utilities/setup/downloader/filesdownloader.cpp:168
 #, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Використати можливість автоматичного призначення міток"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:243
+#: core/utilities/setup/downloader/filesdownloader.cpp:251
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr "Усі файли моделей було успішно отримано."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:252
+#: core/utilities/setup/downloader/filesdownloader.cpp:260
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Помилка під час отримання"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:253
+#: core/utilities/setup/downloader/filesdownloader.cpp:261
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65441,33 +65447,33 @@ msgstr ""
 "Ви можете повторити спробу або продовжити отримання даних під час наступного "
 "запуску."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:261
+#: core/utilities/setup/downloader/filesdownloader.cpp:269
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Спробувати ще раз"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:399
+#: core/utilities/setup/downloader/filesdownloader.cpp:407
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Неправильна контрольна сума."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:423
+#: core/utilities/setup/downloader/filesdownloader.cpp:431
 #, kde-format
 msgid "File write error."
 msgstr "Помилка запису до файла."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:430
+#: core/utilities/setup/downloader/filesdownloader.cpp:438
 #, kde-format
 msgid "File open error."
 msgstr "Помилка під час спроби відкрити файл."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:445
+#: core/utilities/setup/downloader/filesdownloader.cpp:453
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Файл на сервері є надто великим."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:524
+#: core/utilities/setup/downloader/filesdownloader.cpp:537
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -65484,7 +65490,7 @@ msgstr ""
 "ефекту «червоних» очей, потрібні будуть файли моделей керування записами "
 "облич.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:530
+#: core/utilities/setup/downloader/filesdownloader.cpp:543
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -65502,18 +65508,18 @@ msgstr ""
 "файлів.</p><p>Файли буде отримано до «<i>%1</i>».</p><p><b>Вам доведеться "
 "перезапустити digiKam після успішного отримання цих файлів.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:538
+#: core/utilities/setup/downloader/filesdownloader.cpp:551
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Для отримання даних потрібні дані %1 файлів розміром %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:546
+#: core/utilities/setup/downloader/filesdownloader.cpp:559
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "Знайдено усі файли для реалізації вибраних можливостей."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:566
+#: core/utilities/setup/downloader/filesdownloader.cpp:579
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Вилучення невикористаних файлів моделей ШІ/РНМ..."
@@ -67090,7 +67096,9 @@ msgstr ""
 "Хочете виконати перевірку системи негайно?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "@action:button"
 msgid "Start"
 msgstr "Почати"
 
@@ -67617,27 +67625,27 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Групування"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:112
+#: core/utilities/setup/misc/systemsettingswidget.cpp:115
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Масштабування для високих роздільностей на основі коефіцієнта екрана"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:113
+#: core/utilities/setup/misc/systemsettingswidget.cpp:116
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Растрові зображення із високою роздільністю"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:117
+#: core/utilities/setup/misc/systemsettingswidget.cpp:120
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "Використати програмну обробку OpenGL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:121
+#: core/utilities/setup/misc/systemsettingswidget.cpp:124
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "Використати апаратне прискорення OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:122
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -67646,12 +67654,12 @@ msgstr ""
 "Цей пункт усе ще є експериментальним і для його роботи потрібно "
 "встановлювати вручну значення змінних середовища."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:124
+#: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, kde-format
 msgid "Use OpenCL hardware acceleration for AI models"
 msgstr "Використати апаратне прискорення OpenCL для моделей ШІ"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:125
+#: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
@@ -67660,62 +67668,69 @@ msgstr ""
 "Цей пункт усе ще є експериментальним і може призводити до аварійного "
 "завершення роботи програми, якщо не встановлено належні драйвери."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:128
+#: core/utilities/setup/misc/systemsettingswidget.cpp:131
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr "Перевірка сумісності ГП із ШІ"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Отримати потрібні двійкові дані:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:132
+#: core/utilities/setup/misc/systemsettingswidget.cpp:135
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "Відкрити вікно отримання даних…"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:139
+#: core/utilities/setup/misc/systemsettingswidget.cpp:138
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Export to Local Storage"
+msgid "Open Local Storage..."
+msgstr "Експорт до локального сховища"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:146
 #, kde-format
 msgid "Use video hardware acceleration"
 msgstr "Використати апаратне прискорення відео"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#: core/utilities/setup/misc/systemsettingswidget.cpp:147
 #, kde-format
 msgid "Use video textures conversion"
 msgstr "Використати перетворення відеотекстур"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:142
+#: core/utilities/setup/misc/systemsettingswidget.cpp:149
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "Модуль декодування для показу відео:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:145
+#: core/utilities/setup/misc/systemsettingswidget.cpp:152
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (типовий)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:149
+#: core/utilities/setup/misc/systemsettingswidget.cpp:156
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (системний)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:153
+#: core/utilities/setup/misc/systemsettingswidget.cpp:160
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (системний)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:157
+#: core/utilities/setup/misc/systemsettingswidget.cpp:164
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (системний)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:165
+#: core/utilities/setup/misc/systemsettingswidget.cpp:172
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Увімкнути внутрішнє діагностичне ведення журналу"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:182
+#: core/utilities/setup/misc/systemsettingswidget.cpp:189
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
