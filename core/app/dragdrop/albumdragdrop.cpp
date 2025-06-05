@@ -93,7 +93,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
             return false;
         }
 
-        QMenu popMenu(view);
+        QMenu popMenu(qApp->activeWindow());
         QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
         QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
         popMenu.addSeparator();
@@ -177,7 +177,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
             }
             else
             {
-                QMenu popMenu(view);
+                QMenu popMenu(qApp->activeWindow());
                 QAction* setAction    = nullptr;
 
                 if (imageIDs.count() == 1)
@@ -251,7 +251,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
         }
         else
         {
-            QMenu popMenu(view);
+            QMenu popMenu(qApp->activeWindow());
             QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
             QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
             QAction* thumbnailAction  = nullptr;
@@ -323,7 +323,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
 
         if (ui)
         {
-            QMenu popMenu(view);
+            QMenu popMenu(qApp->activeWindow());
             QAction* const downAction    = popMenu.addAction(QIcon::fromTheme(QLatin1String("file-export")), i18n("Download From Camera"));
             QAction* const downDelAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("file-export")), i18n("Download && Delete From Camera"));
             popMenu.addSeparator();
@@ -398,7 +398,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
         }
         else
         {
-            QMenu popMenu(view);
+            QMenu popMenu(qApp->activeWindow());
             QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
             QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
             popMenu.addSeparator();

@@ -140,7 +140,7 @@ static DropAction copyOrMove(const QDropEvent* const e,
         }
     }
 
-    QMenu popMenu(view);
+    QMenu popMenu(qApp->activeWindow());
 
     QAction* moveAction         = nullptr;
 
@@ -199,7 +199,7 @@ static DropAction copyOrMove(const QDropEvent* const e,
 
 static DropAction tagAction(const QDropEvent* const e, QWidget* const view, bool askForGrouping)
 {
-    QMenu popMenu(view);
+    QMenu popMenu(qApp->activeWindow());
     QAction* const tagAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
                                                  i18n("Assign Tag to Dropped Items"));
     QAction* groupAction     = nullptr;
@@ -243,7 +243,7 @@ static DropAction s_groupAction(const QDropEvent* const e, QWidget* const view)
     ItemCategorizedView* const imgView = dynamic_cast<ItemCategorizedView*>(view);
     int sortOrder                      = ApplicationSettings::instance()->getImageSortOrder();
 
-    QMenu popMenu(view);
+    QMenu popMenu(qApp->activeWindow());
     QAction* sortAction                = nullptr;
 
     if (imgView &&
@@ -722,7 +722,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
         // Standard tags
 
-        QMenu popMenu(view);
+        QMenu popMenu(qApp->activeWindow());
 
         QList<ItemInfo> selectedInfos   = view->selectedItemInfosCurrentFirst();
         QAction* assignToSelectedAction = nullptr;
