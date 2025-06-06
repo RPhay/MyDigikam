@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-05 01:59+0000\n"
-"PO-Revision-Date: 2025-06-02 09:50+0300\n"
+"POT-Creation-Date: 2025-06-06 01:54+0000\n"
+"PO-Revision-Date: 2025-06-05 18:56+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1005,9 +1005,9 @@ msgstr ""
 "пересунути до нього вибрані зображення.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1120
-#: core/utilities/imageeditor/main/imagewindow.cpp:1145
-#: core/utilities/imageeditor/main/imagewindow.cpp:1177
+#: core/utilities/imageeditor/main/imagewindow.cpp:1118
+#: core/utilities/imageeditor/main/imagewindow.cpp:1143
+#: core/utilities/imageeditor/main/imagewindow.cpp:1175
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Альбом «%1»"
@@ -1372,7 +1372,7 @@ msgstr "Спорожнити базу даних…"
 msgid "Loading albums..."
 msgstr "Завантаження списку альбомів…"
 
-#: core/app/main/digikamapp.cpp:379
+#: core/app/main/digikamapp.cpp:381
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1384,7 +1384,7 @@ msgstr ""
 "цьому випадку, «Керування кольорами» буде вимкнено до того часу, коли ви "
 "розв'яжете цю проблему.</p>"
 
-#: core/app/main/digikamapp.cpp:435
+#: core/app/main/digikamapp.cpp:437
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1397,7 +1397,7 @@ msgstr ""
 "доступність виконуваного файла ExifTool у розділі метаданих.\n"
 "Повідомлення про помилку: %1"
 
-#: core/app/main/digikamapp.cpp:723 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:725 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1406,7 +1406,7 @@ msgstr[1] "Нічого не вибрано (%1 пункти)"
 msgstr[2] "Нічого не вибрано (%1 пунктів)"
 msgstr[3] "Нічого не вибрано (1 пункт)"
 
-#: core/app/main/digikamapp.cpp:729
+#: core/app/main/digikamapp.cpp:731
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1415,7 +1415,7 @@ msgstr[1] "Нічого не позначено (%1 [%2] записи)"
 msgstr[2] "Нічого не позначено (%1 [%2] записів)"
 msgstr[3] "Нічого не позначено (%1 [%2] запис)"
 
-#: core/app/main/digikamapp.cpp:734
+#: core/app/main/digikamapp.cpp:736
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1424,7 +1424,7 @@ msgstr[1] "Нічого не позначено (%1 записи. Зі згру�
 msgstr[2] "Нічого не позначено (%1 записів. Зі згрупованим записами: %2)"
 msgstr[3] "Нічого не позначено (%1 запис. Зі згрупованим записами: %2)"
 
-#: core/app/main/digikamapp.cpp:745
+#: core/app/main/digikamapp.cpp:747
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
@@ -1433,7 +1433,7 @@ msgstr[1] "Позначено %1 з %2 записів (%3 з %4)"
 msgstr[2] "Позначено %1 з %2 записів (%3 з %4)"
 msgstr[3] "Позначено один запис з %2 (%3 з %4)"
 
-#: core/app/main/digikamapp.cpp:758
+#: core/app/main/digikamapp.cpp:760
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
@@ -1442,7 +1442,7 @@ msgstr[1] "Позначено %1 з %2 [%3] записів (%4 з %5)"
 msgstr[2] "Позначено %1 з %2 [%3] записів (%4 з %5)"
 msgstr[3] "Позначено один запис з %2 [%3] (%4 з %5)"
 
-#: core/app/main/digikamapp.cpp:766
+#: core/app/main/digikamapp.cpp:768
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1451,7 +1451,7 @@ msgstr[1] "Позначено %1 із %2 записів. Загалом, зі з
 msgstr[2] "Позначено %1 із %2 записів. Загалом, зі згрупованими записами: %3"
 msgstr[3] "Позначено один запис з %2. Загалом, зі згрупованими записами: %3"
 
-#: core/app/main/digikamapp.cpp:774
+#: core/app/main/digikamapp.cpp:776
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
@@ -1460,7 +1460,7 @@ msgstr[1] "Позначено %1 з %2 [%3 з %4] записів (%5 з %6)"
 msgstr[2] "Позначено %1 з %2 [%3 з %4] записів (%5 з %6)"
 msgstr[3] "Позначено один запис з %2 [%3 з %4] (%5 з %6)"
 
-#: core/app/main/digikamapp.cpp:783
+#: core/app/main/digikamapp.cpp:785
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1469,22 +1469,22 @@ msgstr[1] "Позначено %1 із %2 записів. Зі згрупован
 msgstr[2] "Позначено %1 із %2 записів. Зі згрупованими записами: %3 із %4"
 msgstr[3] "Позначено один запис з %2. Зі згрупованими записами: %3 із %4"
 
-#: core/app/main/digikamapp.cpp:814
+#: core/app/main/digikamapp.cpp:816
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 з %2)"
 
-#: core/app/main/digikamapp.cpp:828
+#: core/app/main/digikamapp.cpp:830
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 з %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:832
+#: core/app/main/digikamapp.cpp:834
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 з %2. Загалом, зі згрупованими записами: %3)"
 
-#: core/app/main/digikamapp.cpp:843
+#: core/app/main/digikamapp.cpp:845
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
@@ -1493,7 +1493,7 @@ msgstr[1] "Приховано %1 записи"
 msgstr[2] "Приховано %1 записів"
 msgstr[3] "Приховано один запис"
 
-#: core/app/main/digikamapp.cpp:902
+#: core/app/main/digikamapp.cpp:904
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1502,7 +1502,7 @@ msgstr[1] "Записати метадані до позначених файл�
 msgstr[2] "Записати метадані до позначених файлів"
 msgstr[3] "Записати метадані до файла"
 
-#: core/app/main/digikamapp.cpp:904
+#: core/app/main/digikamapp.cpp:906
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -21711,7 +21711,7 @@ msgstr "Пуск"
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:292
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:294
 #, kde-format
 msgid "Stop"
 msgstr "Зупинити"
@@ -32656,7 +32656,7 @@ msgid "Remove Black Frame"
 msgstr "Вилучити чорний кадр"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:260
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:346
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:348
 #, kde-format
 msgid "Clear List"
 msgstr "Спорожнити список"
@@ -40180,7 +40180,7 @@ msgstr "Стіл з підсвічуванням"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:443
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:195
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:197
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Керування чергою обробки"
@@ -50300,7 +50300,7 @@ msgid "Unknown"
 msgstr "Невідомо"
 
 #: core/showfoto/main/showfoto.cpp:291
-#: core/utilities/imageeditor/main/imagewindow.cpp:505
+#: core/utilities/imageeditor/main/imagewindow.cpp:503
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -50329,8 +50329,8 @@ msgid "Remote file handling is not supported"
 msgstr "Підтримки обробки віддалених файлів не передбачено"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:588
-#: core/utilities/imageeditor/main/imagewindow.cpp:703
+#: core/utilities/imageeditor/main/imagewindow.cpp:586
+#: core/utilities/imageeditor/main/imagewindow.cpp:701
 #, kde-format
 msgid "Image saved successfully"
 msgstr "Зображення успішно збережено"
@@ -59163,7 +59163,7 @@ msgstr ""
 "допоможе вам уникнути ефекту переекспонованого зображення."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:471
-#: core/utilities/import/main/importui.cpp:506
+#: core/utilities/import/main/importui.cpp:508
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
@@ -59230,7 +59230,7 @@ msgid "Auto-Rotate"
 msgstr "Автоматичний поворот"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:571
-#: core/utilities/import/main/importui.cpp:551
+#: core/utilities/import/main/importui.cpp:553
 #: core/utilities/import/main/importui.cpp:794
 #, kde-format
 msgctxt "@action"
@@ -59496,34 +59496,34 @@ msgctxt "@action: open with desktop application"
 msgid "Open With..."
 msgstr "Відкрити за допомогою…"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:200
+#: core/utilities/imageeditor/main/imagewindow.cpp:198
 #, kde-format
 msgid "Image Editor - %1"
 msgstr "Редактор зображень — %1"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:204
+#: core/utilities/imageeditor/main/imagewindow.cpp:202
 #, kde-format
 msgid "Image Editor"
 msgstr "Редактор зображень"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:374
+#: core/utilities/imageeditor/main/imagewindow.cpp:372
 #, kde-format
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr "Невідоме"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:375
+#: core/utilities/imageeditor/main/imagewindow.cpp:373
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Мпк)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:948
+#: core/utilities/imageeditor/main/imagewindow.cpp:946
 #, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "У поточному альбомі немає зображень"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:949
+#: core/utilities/imageeditor/main/imagewindow.cpp:947
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -59532,13 +59532,13 @@ msgstr ""
 "В поточному альбомі немає зображень для показу.\n"
 "Редактор зображень буде закрито."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1222
+#: core/utilities/imageeditor/main/imagewindow.cpp:1220
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Файл недоступний"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1223
+#: core/utilities/imageeditor/main/imagewindow.cpp:1221
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -60141,7 +60141,7 @@ msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
 msgstr "Цей пункт вже було отримано"
 
-#: core/utilities/import/main/importui.cpp:156
+#: core/utilities/import/main/importui.cpp:158
 #, kde-format
 msgctxt "@info"
 msgid "Set how digiKam will rename files as they are downloaded."
@@ -60149,331 +60149,331 @@ msgstr ""
 "Тут ви можете встановити спосіб, яким digiKam буде перейменовувати файли "
 "після отримання."
 
-#: core/utilities/import/main/importui.cpp:157
+#: core/utilities/import/main/importui.cpp:159
 #, kde-format
 msgctxt "@item"
 msgid "File Renaming Options"
 msgstr "Параметри перейменування файлів"
 
-#: core/utilities/import/main/importui.cpp:163
+#: core/utilities/import/main/importui.cpp:165
 #, kde-format
 msgctxt "@item"
 msgid "Auto-creation of Albums"
 msgstr "Автостворення альбомів"
 
-#: core/utilities/import/main/importui.cpp:169
+#: core/utilities/import/main/importui.cpp:171
 #, kde-format
 msgctxt "@item"
 msgid "On the Fly Operations (JPEG only)"
 msgstr "Дії «на ходу» (тільки JPEG)"
 
-#: core/utilities/import/main/importui.cpp:177
+#: core/utilities/import/main/importui.cpp:179
 #, kde-format
 msgctxt "@item"
 msgid "DNG Convert Options"
 msgstr "Параметри перетворення на DNG"
 
-#: core/utilities/import/main/importui.cpp:185
+#: core/utilities/import/main/importui.cpp:187
 #, kde-format
 msgctxt "@item"
 msgid "Scripting"
 msgstr "Скрипти"
 
-#: core/utilities/import/main/importui.cpp:189
+#: core/utilities/import/main/importui.cpp:191
 #, kde-format
 msgctxt "@title"
 msgid "Settings"
 msgstr "Параметри"
 
-#: core/utilities/import/main/importui.cpp:204
+#: core/utilities/import/main/importui.cpp:206
 #, kde-format
 msgctxt "@action Cancel process"
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: core/utilities/import/main/importui.cpp:211
+#: core/utilities/import/main/importui.cpp:213
 #, kde-format
 msgctxt "@action Information about camera"
 msgid "Information"
 msgstr "Інформація"
 
-#: core/utilities/import/main/importui.cpp:218
+#: core/utilities/import/main/importui.cpp:220
 #, kde-format
 msgctxt "@action Capture photo from camera"
 msgid "Capture"
 msgstr "Захопити"
 
-#: core/utilities/import/main/importui.cpp:230
+#: core/utilities/import/main/importui.cpp:232
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
 msgstr "Вибрати все"
 
-#: core/utilities/import/main/importui.cpp:238
+#: core/utilities/import/main/importui.cpp:240
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
 msgstr "Скасувати вибір"
 
-#: core/utilities/import/main/importui.cpp:246
+#: core/utilities/import/main/importui.cpp:248
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Invert Selection"
 msgstr "Інвертувати вибір"
 
-#: core/utilities/import/main/importui.cpp:254
+#: core/utilities/import/main/importui.cpp:256
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
 msgstr "Вибрати нові записи"
 
-#: core/utilities/import/main/importui.cpp:261
+#: core/utilities/import/main/importui.cpp:263
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
 msgstr "Вибрати заблоковані записи"
 
-#: core/utilities/import/main/importui.cpp:269
+#: core/utilities/import/main/importui.cpp:271
 #, kde-format
 msgctxt "@title:menu"
 msgid "Download"
 msgstr "Отримати"
 
-#: core/utilities/import/main/importui.cpp:274
+#: core/utilities/import/main/importui.cpp:276
 #, kde-format
 msgctxt "@action"
 msgid "Download New"
 msgstr "Отримати нові"
 
-#: core/utilities/import/main/importui.cpp:284
+#: core/utilities/import/main/importui.cpp:286
 #, kde-format
 msgctxt "@action"
 msgid "Download Selected"
 msgstr "Отримати вибрані"
 
-#: core/utilities/import/main/importui.cpp:291
+#: core/utilities/import/main/importui.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "Download All"
 msgstr "Отримати всі"
 
-#: core/utilities/import/main/importui.cpp:299
+#: core/utilities/import/main/importui.cpp:301
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
 msgstr "Отримати і вилучити нові"
 
-#: core/utilities/import/main/importui.cpp:307
+#: core/utilities/import/main/importui.cpp:309
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
 msgstr "Отримати і вилучити позначені"
 
-#: core/utilities/import/main/importui.cpp:315
+#: core/utilities/import/main/importui.cpp:317
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
 msgstr "Отримати і вилучити усі"
 
-#: core/utilities/import/main/importui.cpp:322
+#: core/utilities/import/main/importui.cpp:324
 #, kde-format
 msgctxt "@action"
 msgid "Upload..."
 msgstr "Вивантажити…"
 
-#: core/utilities/import/main/importui.cpp:330
+#: core/utilities/import/main/importui.cpp:332
 #, kde-format
 msgctxt "@action"
 msgid "Toggle Lock"
 msgstr "Перемикнути блокування"
 
-#: core/utilities/import/main/importui.cpp:338
+#: core/utilities/import/main/importui.cpp:340
 #, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
 msgstr "Позначити як отримане"
 
-#: core/utilities/import/main/importui.cpp:345
+#: core/utilities/import/main/importui.cpp:347
 #, kde-format
 msgctxt "@title:menu"
 msgid "Delete"
 msgstr "Вилучення"
 
-#: core/utilities/import/main/importui.cpp:350
+#: core/utilities/import/main/importui.cpp:352
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
 msgstr "Вилучити вибрані"
 
-#: core/utilities/import/main/importui.cpp:358
+#: core/utilities/import/main/importui.cpp:360
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete All"
 msgstr "Вилучити все"
 
-#: core/utilities/import/main/importui.cpp:364
+#: core/utilities/import/main/importui.cpp:366
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete New"
 msgstr "Вилучити нові"
 
-#: core/utilities/import/main/importui.cpp:372
+#: core/utilities/import/main/importui.cpp:374
 #, kde-format
 msgctxt "@title:group"
 msgid "Views"
 msgstr "Режими перегляду"
 
-#: core/utilities/import/main/importui.cpp:376
+#: core/utilities/import/main/importui.cpp:378
 #, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Мініатюри"
 
-#: core/utilities/import/main/importui.cpp:383
+#: core/utilities/import/main/importui.cpp:385
 #, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
 msgstr "Попередній перегляд"
 
-#: core/utilities/import/main/importui.cpp:393
+#: core/utilities/import/main/importui.cpp:395
 #, kde-format
 msgctxt "@action Switch to map view"
 msgid "Map"
 msgstr "Карта"
 
-#: core/utilities/import/main/importui.cpp:405
+#: core/utilities/import/main/importui.cpp:407
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
 msgstr "&Впорядкування зображень"
 
-#: core/utilities/import/main/importui.cpp:406
+#: core/utilities/import/main/importui.cpp:408
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
 msgstr "Параметр, за яким буде впорядковано записи у перегляді мініатюр"
 
-#: core/utilities/import/main/importui.cpp:411
+#: core/utilities/import/main/importui.cpp:413
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
 msgstr "За назвою"
 
-#: core/utilities/import/main/importui.cpp:412
+#: core/utilities/import/main/importui.cpp:414
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Path"
 msgstr "За шляхом"
 
-#: core/utilities/import/main/importui.cpp:413
+#: core/utilities/import/main/importui.cpp:415
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Date"
 msgstr "За датою"
 
-#: core/utilities/import/main/importui.cpp:414
+#: core/utilities/import/main/importui.cpp:416
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Size"
 msgstr "За розміром файла"
 
-#: core/utilities/import/main/importui.cpp:415
+#: core/utilities/import/main/importui.cpp:417
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
 msgstr "За оцінкою"
 
-#: core/utilities/import/main/importui.cpp:416
+#: core/utilities/import/main/importui.cpp:418
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr "За станом отриманості"
 
-#: core/utilities/import/main/importui.cpp:440
+#: core/utilities/import/main/importui.cpp:442
 #, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr "&Порядок зображень"
 
-#: core/utilities/import/main/importui.cpp:441
+#: core/utilities/import/main/importui.cpp:443
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr "Визначає, як буде впорядковано записи: за спаданням чи за зростанням."
 
-#: core/utilities/import/main/importui.cpp:445
+#: core/utilities/import/main/importui.cpp:447
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr "За зростанням"
 
-#: core/utilities/import/main/importui.cpp:447
+#: core/utilities/import/main/importui.cpp:449
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "За спаданням"
 
-#: core/utilities/import/main/importui.cpp:459
+#: core/utilities/import/main/importui.cpp:461
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr "&Групування зображень"
 
-#: core/utilities/import/main/importui.cpp:460
+#: core/utilities/import/main/importui.cpp:462
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
 msgstr "Показані категорії зображень у перегляді мініатюр"
 
-#: core/utilities/import/main/importui.cpp:465
+#: core/utilities/import/main/importui.cpp:467
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "Плоский список"
 
-#: core/utilities/import/main/importui.cpp:466
+#: core/utilities/import/main/importui.cpp:468
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "За теками"
 
-#: core/utilities/import/main/importui.cpp:467
+#: core/utilities/import/main/importui.cpp:469
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "За форматом"
 
-#: core/utilities/import/main/importui.cpp:468
+#: core/utilities/import/main/importui.cpp:470
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "За датою"
 
-#: core/utilities/import/main/importui.cpp:494
+#: core/utilities/import/main/importui.cpp:496
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "Вмістити у &вікно"
 
-#: core/utilities/import/main/importui.cpp:499
+#: core/utilities/import/main/importui.cpp:501
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "Масштаб у 100%"
 
-#: core/utilities/import/main/importui.cpp:517
+#: core/utilities/import/main/importui.cpp:519
 #, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "Показати журнал"
 
-#: core/utilities/import/main/importui.cpp:523
+#: core/utilities/import/main/importui.cpp:525
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "Показати панель мініатюр"
 
-#: core/utilities/import/main/importui.cpp:558
+#: core/utilities/import/main/importui.cpp:560
 #, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
@@ -61353,7 +61353,7 @@ msgstr "Очистити все"
 msgid "Drag and drop images here"
 msgstr "Перетягніть і скиньте зображення тут"
 
-#: core/utilities/lighttable/lighttablewindow.cpp:200
+#: core/utilities/lighttable/lighttablewindow.cpp:202
 #, kde-format
 msgid "%1 item on Light Table"
 msgid_plural "%1 items on Light Table"
@@ -62179,82 +62179,82 @@ msgstr "Записів у пошуку для мініатюр: %1"
 msgid "Item scanned for thumbnails: %1"
 msgstr "Запис у пошуку для мініатюр: %1"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:128
 #, kde-format
 msgid "Queues"
 msgstr "Черги"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:135
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:137
 #, kde-format
 msgid "Queue Settings"
 msgstr "Параметри черги"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:144
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:146
 #, kde-format
 msgid "Control Panel"
 msgstr "Панель керування"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:153
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:155
 #, kde-format
 msgid "Assigned Tools"
 msgstr "Призначені інструменти"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:162
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:164
 #, kde-format
 msgid "Tool Settings"
 msgstr "Параметри інструментів"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:279
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:281
 #, kde-format
 msgid "Run"
 msgstr "Виконати"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:288
 #, kde-format
 msgid "Run all"
 msgstr "Виконати усі"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:298
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:300
 #, kde-format
 msgid "New Queue"
 msgstr "Створити чергу"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:302
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:304
 #, kde-format
 msgid "Remove Queue"
 msgstr "Вилучити чергу"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:308
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:310
 #, kde-format
 msgid "Save Workflow"
 msgstr "Зберегти процес"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:312
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:314
 #, kde-format
 msgid "Remove items"
 msgstr "Вилучити записи"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:318
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:320
 #, kde-format
 msgid "Remove processed items"
 msgstr "Вилучити оброблені записи"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:323
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:325
 #, kde-format
 msgid "Clear Queue"
 msgstr "Спорожнити чергу"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:334
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
 #, kde-format
 msgid "Move up"
 msgstr "Пересунути вгору"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:338
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:340
 #, kde-format
 msgid "Move down"
 msgstr "Пересунути вниз"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:342
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:344
 #, kde-format
 msgid "Remove tool"
 msgstr "Вилучити інструмент"
@@ -65395,6 +65395,8 @@ msgstr "Отримання потрібних файлів моделей"
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr ""
+"Відкрити локальний каталог, який використовується для зберігання файлів "
+"даних."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:165
 #, kde-format
@@ -67096,8 +67098,7 @@ msgstr ""
 "Хочете виконати перевірку системи негайно?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Почати"
@@ -67684,11 +67685,9 @@ msgid "Open Download Dialog..."
 msgstr "Відкрити вікно отримання даних…"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Local Storage"
+#, kde-format
 msgid "Open Local Storage..."
-msgstr "Експорт до локального сховища"
+msgstr "Відкрити локальне сховище…"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:146
 #, kde-format

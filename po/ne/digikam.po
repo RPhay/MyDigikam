@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-05 01:59+0000\n"
+"POT-Creation-Date: 2025-06-06 01:54+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1001,9 +1001,9 @@ msgstr ""
 "<p>क्यामेरा तस्विर आयात गर्न कृपया डिजिक्याम लाइब्रेरीबाट गन्तव्य एल्बम चयन गर्नुहोस् ।</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1120
-#: core/utilities/imageeditor/main/imagewindow.cpp:1145
-#: core/utilities/imageeditor/main/imagewindow.cpp:1177
+#: core/utilities/imageeditor/main/imagewindow.cpp:1118
+#: core/utilities/imageeditor/main/imagewindow.cpp:1143
+#: core/utilities/imageeditor/main/imagewindow.cpp:1175
 #, kde-format
 msgid "Album \"%1\""
 msgstr "एल्बम \"%1\""
@@ -1370,7 +1370,7 @@ msgstr "डाटाबेस पढाइ"
 msgid "Loading albums..."
 msgstr "सबै एल्बम पद वर्णन"
 
-#: core/app/main/digikamapp.cpp:379
+#: core/app/main/digikamapp.cpp:381
 #, fuzzy, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1381,7 +1381,7 @@ msgstr ""
 "भने, \"हो\" चयन गर्नुहोस्, अन्यथा \"होइन\" चयन गर्नुहोस् । यस्तो अवस्थामा, तपाईँले सो "
 "विषय समाधान नगरेसम्म \"रङ व्यवस्थापन\" सुविधा अक्षम गरिन्छ</p></qt>"
 
-#: core/app/main/digikamapp.cpp:435
+#: core/app/main/digikamapp.cpp:437
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1390,92 +1390,92 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:723 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:725 core/app/views/stack/trashview.cpp:509
 #, fuzzy, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "वस्तु चयन गरेको छैन"
 msgstr[1] "वस्तु चयन गरेको छैन"
 
-#: core/app/main/digikamapp.cpp:729
+#: core/app/main/digikamapp.cpp:731
 #, fuzzy, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "वस्तु चयन गरेको छैन"
 msgstr[1] "वस्तु चयन गरेको छैन"
 
-#: core/app/main/digikamapp.cpp:734
+#: core/app/main/digikamapp.cpp:736
 #, fuzzy, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "वस्तु चयन गरेको छैन"
 msgstr[1] "वस्तु चयन गरेको छैन"
 
-#: core/app/main/digikamapp.cpp:745
+#: core/app/main/digikamapp.cpp:747
 #, fuzzy, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1 वस्तु चयन गरेको छ"
 msgstr[1] "%1 वस्तु चयन गरेको छ"
 
-#: core/app/main/digikamapp.cpp:758
+#: core/app/main/digikamapp.cpp:760
 #, fuzzy, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1 वस्तु चयन गरेको छ"
 msgstr[1] "%1 वस्तु चयन गरेको छ"
 
-#: core/app/main/digikamapp.cpp:766
+#: core/app/main/digikamapp.cpp:768
 #, fuzzy, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "वस्तु चयन गरेको छैन"
 msgstr[1] "वस्तु चयन गरेको छैन"
 
-#: core/app/main/digikamapp.cpp:774
+#: core/app/main/digikamapp.cpp:776
 #, fuzzy, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1 वस्तु चयन गरेको छ"
 msgstr[1] "%1 वस्तु चयन गरेको छ"
 
-#: core/app/main/digikamapp.cpp:783
+#: core/app/main/digikamapp.cpp:785
 #, fuzzy, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "वस्तु चयन गरेको छैन"
 msgstr[1] "वस्तु चयन गरेको छैन"
 
-#: core/app/main/digikamapp.cpp:814
+#: core/app/main/digikamapp.cpp:816
 #, fuzzy, kde-format
 msgid " (%1 of %2)"
 msgstr " (%3 को %2)"
 
-#: core/app/main/digikamapp.cpp:828
+#: core/app/main/digikamapp.cpp:830
 #, fuzzy, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%3 को %2)"
 
-#: core/app/main/digikamapp.cpp:832
+#: core/app/main/digikamapp.cpp:834
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:843
+#: core/app/main/digikamapp.cpp:845
 #, fuzzy, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "१६ बिट"
 msgstr[1] "१६ बिट"
 
-#: core/app/main/digikamapp.cpp:902
+#: core/app/main/digikamapp.cpp:904
 #, fuzzy, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "प्रत्येक फाइलमा मेटाडेटा लेख्नुहोस्"
 msgstr[1] "प्रत्येक फाइलमा मेटाडेटा लेख्नुहोस्"
 
-#: core/app/main/digikamapp.cpp:904
+#: core/app/main/digikamapp.cpp:906
 #, fuzzy, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -20503,7 +20503,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:292
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:294
 #, fuzzy, kde-format
 msgid "Stop"
 msgstr "कुनै होइन"
@@ -30891,7 +30891,7 @@ msgid "Remove Black Frame"
 msgstr "श्यामश्वेत..."
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:260
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:346
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:348
 #, fuzzy, kde-format
 msgid "Clear List"
 msgstr "क्यामेरा सूची"
@@ -38013,7 +38013,7 @@ msgstr "प्रकाश"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:443
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:195
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:197
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr ""
@@ -48195,7 +48195,7 @@ msgid "Unknown"
 msgstr "अज्ञात"
 
 #: core/showfoto/main/showfoto.cpp:291
-#: core/utilities/imageeditor/main/imagewindow.cpp:505
+#: core/utilities/imageeditor/main/imagewindow.cpp:503
 #, fuzzy, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -48225,8 +48225,8 @@ msgid "Remote file handling is not supported"
 msgstr "लक्ष्य छवि फाइल ढाँचा \"%1\" समर्थन गर्दैन ।"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:588
-#: core/utilities/imageeditor/main/imagewindow.cpp:703
+#: core/utilities/imageeditor/main/imagewindow.cpp:586
+#: core/utilities/imageeditor/main/imagewindow.cpp:701
 #, fuzzy, kde-format
 msgid "Image saved successfully"
 msgstr "%1 फाइल डाउनलोड गर्दैछ..."
@@ -56662,7 +56662,7 @@ msgstr ""
 "बढि प्रर्दशन उपेक्षा गर्न मद्दत गर्दछ ।"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:471
-#: core/utilities/import/main/importui.cpp:506
+#: core/utilities/import/main/importui.cpp:508
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
@@ -56732,7 +56732,7 @@ msgid "Auto-Rotate"
 msgstr "स्वत: परिक्रमण पृष्ठ"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:571
-#: core/utilities/import/main/importui.cpp:551
+#: core/utilities/import/main/importui.cpp:553
 #: core/utilities/import/main/importui.cpp:794
 #, fuzzy, kde-format
 msgctxt "@action"
@@ -57019,36 +57019,36 @@ msgctxt "@action: open with desktop application"
 msgid "Open With..."
 msgstr "यससँग खोल्नुहोस्"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:200
+#: core/utilities/imageeditor/main/imagewindow.cpp:198
 #, fuzzy, kde-format
 msgid "Image Editor - %1"
 msgstr "छवि सम्पादक"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:204
+#: core/utilities/imageeditor/main/imagewindow.cpp:202
 #, kde-format
 msgid "Image Editor"
 msgstr "छवि सम्पादक"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:374
+#: core/utilities/imageeditor/main/imagewindow.cpp:372
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:375
+#: core/utilities/imageeditor/main/imagewindow.cpp:373
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:948
+#: core/utilities/imageeditor/main/imagewindow.cpp:946
 #, fuzzy, kde-format
 #| msgid "No Image in Current Album"
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "हालको एल्बममा छवि छैन"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:949
+#: core/utilities/imageeditor/main/imagewindow.cpp:947
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -57057,13 +57057,13 @@ msgstr ""
 "हालको एल्बममा देखाउनका लागि छवि छैन ।\n"
 "छवि सम्पादक बन्द गरिन्छ ।"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1222
+#: core/utilities/imageeditor/main/imagewindow.cpp:1220
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "प्रोफाइल उपलब्ध छैन..."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1223
+#: core/utilities/imageeditor/main/imagewindow.cpp:1221
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -57677,346 +57677,346 @@ msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:156
+#: core/utilities/import/main/importui.cpp:158
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Set how digiKam will rename files as they are downloaded."
 msgstr "<p>डाउनलोड भएपछि डिजिक्यामले तस्विर फाइल पुन: नामकरण गर्ने तरिका सेट गर्नुहोस् ।"
 
-#: core/utilities/import/main/importui.cpp:157
+#: core/utilities/import/main/importui.cpp:159
 #, fuzzy, kde-format
 #| msgid "File Renaming Options"
 msgctxt "@item"
 msgid "File Renaming Options"
 msgstr "फाइल पुन: नामकरण विकल्प"
 
-#: core/utilities/import/main/importui.cpp:163
+#: core/utilities/import/main/importui.cpp:165
 #, fuzzy, kde-format
 #| msgid "Auto-creation of Albums"
 msgctxt "@item"
 msgid "Auto-creation of Albums"
 msgstr "एल्बमको स्वत: सिर्जना"
 
-#: core/utilities/import/main/importui.cpp:169
+#: core/utilities/import/main/importui.cpp:171
 #, fuzzy, kde-format
 #| msgid "On the Fly Operations (JPEG only)"
 msgctxt "@item"
 msgid "On the Fly Operations (JPEG only)"
 msgstr "फ्लाइ सञ्चालन मात्र (JPEG मात्र)"
 
-#: core/utilities/import/main/importui.cpp:177
+#: core/utilities/import/main/importui.cpp:179
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "DNG Convert Options"
 msgstr "इन्टरफेस विकल्प"
 
-#: core/utilities/import/main/importui.cpp:185
+#: core/utilities/import/main/importui.cpp:187
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Scripting"
 msgstr "महिनपन:"
 
-#: core/utilities/import/main/importui.cpp:189
+#: core/utilities/import/main/importui.cpp:191
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title"
 msgid "Settings"
 msgstr "सेटिङ"
 
-#: core/utilities/import/main/importui.cpp:204
+#: core/utilities/import/main/importui.cpp:206
 #, fuzzy, kde-format
 msgctxt "@action Cancel process"
 msgid "Cancel"
 msgstr "रद्द गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:211
+#: core/utilities/import/main/importui.cpp:213
 #, fuzzy, kde-format
 msgctxt "@action Information about camera"
 msgid "Information"
 msgstr "छवि सूचना"
 
-#: core/utilities/import/main/importui.cpp:218
+#: core/utilities/import/main/importui.cpp:220
 #, fuzzy, kde-format
 msgctxt "@action Capture photo from camera"
 msgid "Capture"
 msgstr "प्रकृति"
 
-#: core/utilities/import/main/importui.cpp:230
+#: core/utilities/import/main/importui.cpp:232
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
 msgstr "सबै चयन गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:238
+#: core/utilities/import/main/importui.cpp:240
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
 msgstr "कुनै पनि चयन नगर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:246
+#: core/utilities/import/main/importui.cpp:248
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Invert Selection"
 msgstr "चयन उल्टाउनुहोस्"
 
-#: core/utilities/import/main/importui.cpp:254
+#: core/utilities/import/main/importui.cpp:256
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
 msgstr "नयाँ वस्तु चयन गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:261
+#: core/utilities/import/main/importui.cpp:263
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
 msgstr "नयाँ वस्तु चयन गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:269
+#: core/utilities/import/main/importui.cpp:271
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Download"
 msgstr "डाउनलोड गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:274
+#: core/utilities/import/main/importui.cpp:276
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download New"
 msgstr "डाउनलोड गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:284
+#: core/utilities/import/main/importui.cpp:286
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download Selected"
 msgstr "चयन गरेको डाउनलोड गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:291
+#: core/utilities/import/main/importui.cpp:293
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download All"
 msgstr "सबै डाउनलोड गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:299
+#: core/utilities/import/main/importui.cpp:301
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
 msgstr "सबै डाउनलोड गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:307
+#: core/utilities/import/main/importui.cpp:309
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
 msgstr "चयन गरेको डाउनलोड गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:315
+#: core/utilities/import/main/importui.cpp:317
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
 msgstr "सबै डाउनलोड गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:322
+#: core/utilities/import/main/importui.cpp:324
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Upload..."
 msgstr "अपलोड गर्नुहोस्..."
 
-#: core/utilities/import/main/importui.cpp:330
+#: core/utilities/import/main/importui.cpp:332
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Toggle Lock"
 msgstr "लक टगल गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:338
+#: core/utilities/import/main/importui.cpp:340
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
 msgstr "डाउनलोड गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:345
+#: core/utilities/import/main/importui.cpp:347
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Delete"
 msgstr "मेट्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:350
+#: core/utilities/import/main/importui.cpp:352
 #, fuzzy, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
 msgstr "चयन गरेको मेट्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:358
+#: core/utilities/import/main/importui.cpp:360
 #, fuzzy, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete All"
 msgstr "एल्बम मेट्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:364
+#: core/utilities/import/main/importui.cpp:366
 #, fuzzy, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete New"
 msgstr "फाइल मेट्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:372
+#: core/utilities/import/main/importui.cpp:374
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Views"
 msgstr "दृश्य..."
 
-#: core/utilities/import/main/importui.cpp:376
+#: core/utilities/import/main/importui.cpp:378
 #, fuzzy, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "थम्बनेल देखाउनुहोस्"
 
-#: core/utilities/import/main/importui.cpp:383
+#: core/utilities/import/main/importui.cpp:385
 #, fuzzy, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
 msgstr "छवि मुद्रण गर्नुहोस्..."
 
-#: core/utilities/import/main/importui.cpp:393
+#: core/utilities/import/main/importui.cpp:395
 #, kde-format
 msgctxt "@action Switch to map view"
 msgid "Map"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:405
+#: core/utilities/import/main/importui.cpp:407
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:406
+#: core/utilities/import/main/importui.cpp:408
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:411
+#: core/utilities/import/main/importui.cpp:413
 #, fuzzy, kde-format
 #| msgid "By Name"
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
 msgstr "नामद्वारा"
 
-#: core/utilities/import/main/importui.cpp:412
+#: core/utilities/import/main/importui.cpp:414
 #, fuzzy, kde-format
 #| msgid "By Path"
 msgctxt "@item:inmenu Sort by"
 msgid "By Path"
 msgstr "मार्गद्वारा"
 
-#: core/utilities/import/main/importui.cpp:413
+#: core/utilities/import/main/importui.cpp:415
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@item:inmenu Sort by"
 msgid "By Date"
 msgstr "मितिद्वारा"
 
-#: core/utilities/import/main/importui.cpp:414
+#: core/utilities/import/main/importui.cpp:416
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Size"
 msgstr "फाइल साइजद्वारा"
 
-#: core/utilities/import/main/importui.cpp:415
+#: core/utilities/import/main/importui.cpp:417
 #, fuzzy, kde-format
 #| msgid "By Rating"
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
 msgstr "दरद्वारा"
 
-#: core/utilities/import/main/importui.cpp:416
+#: core/utilities/import/main/importui.cpp:418
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr "चयन गरेको डाउनलोड गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:440
+#: core/utilities/import/main/importui.cpp:442
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr "छवि सेटिङ"
 
-#: core/utilities/import/main/importui.cpp:441
+#: core/utilities/import/main/importui.cpp:443
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:445
+#: core/utilities/import/main/importui.cpp:447
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr "कच्चा असङ्केतन"
 
-#: core/utilities/import/main/importui.cpp:447
+#: core/utilities/import/main/importui.cpp:449
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "कच्चा असङ्केतन"
 
-#: core/utilities/import/main/importui.cpp:459
+#: core/utilities/import/main/importui.cpp:461
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
 
-#: core/utilities/import/main/importui.cpp:460
+#: core/utilities/import/main/importui.cpp:462
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:465
+#: core/utilities/import/main/importui.cpp:467
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "क्यामेरा सूची"
 
-#: core/utilities/import/main/importui.cpp:466
+#: core/utilities/import/main/importui.cpp:468
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "फोल्डरद्वारा"
 
-#: core/utilities/import/main/importui.cpp:467
+#: core/utilities/import/main/importui.cpp:469
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "छवि मिति"
 
-#: core/utilities/import/main/importui.cpp:468
+#: core/utilities/import/main/importui.cpp:470
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "मितिद्वारा"
 
-#: core/utilities/import/main/importui.cpp:494
+#: core/utilities/import/main/importui.cpp:496
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "चयन"
 
-#: core/utilities/import/main/importui.cpp:499
+#: core/utilities/import/main/importui.cpp:501
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "जुम घटाउनुहोस्"
 
-#: core/utilities/import/main/importui.cpp:517
+#: core/utilities/import/main/importui.cpp:519
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "तस्विर दर देखाउनुहोस्"
 
-#: core/utilities/import/main/importui.cpp:523
+#: core/utilities/import/main/importui.cpp:525
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "थम्बनेल देखाउनुहोस्"
 
-#: core/utilities/import/main/importui.cpp:558
+#: core/utilities/import/main/importui.cpp:560
 #, fuzzy, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
@@ -58831,7 +58831,7 @@ msgstr "केन्द्र"
 msgid "Drag and drop images here"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablewindow.cpp:200
+#: core/utilities/lighttable/lighttablewindow.cpp:202
 #, fuzzy, kde-format
 msgid "%1 item on Light Table"
 msgid_plural "%1 items on Light Table"
@@ -59636,82 +59636,82 @@ msgstr "खोजी:"
 msgid "Item scanned for thumbnails: %1"
 msgstr "खोजी:"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:128
 #, kde-format
 msgid "Queues"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:135
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:137
 #, fuzzy, kde-format
 msgid "Queue Settings"
 msgstr "साधारण सेटिङ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:144
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:146
 #, kde-format
 msgid "Control Panel"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:153
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:155
 #, fuzzy, kde-format
 msgid "Assigned Tools"
 msgstr "मानाङ्कन गरेको ट्याग"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:162
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:164
 #, fuzzy, kde-format
 msgid "Tool Settings"
 msgstr "स्थानिय सेटिङ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:279
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:281
 #, kde-format
 msgid "Run"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:288
 #, kde-format
 msgid "Run all"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:298
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:300
 #, kde-format
 msgid "New Queue"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:302
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:304
 #, fuzzy, kde-format
 msgid "Remove Queue"
 msgstr "ट्याग हटाउनुहोस्"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:308
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:310
 #, kde-format
 msgid "Save Workflow"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:312
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:314
 #, fuzzy, kde-format
 msgid "Remove items"
 msgstr "ट्याग हटाउनुहोस्"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:318
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:320
 #, fuzzy, kde-format
 msgid "Remove processed items"
 msgstr "ट्याग हटाउनुहोस्"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:323
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:325
 #, fuzzy, kde-format
 msgid "Clear Queue"
 msgstr "मानक"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:334
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
 #, fuzzy, kde-format
 msgid "Move up"
 msgstr "बढि"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:338
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:340
 #, fuzzy, kde-format
 msgid "Move down"
 msgstr "बढि"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:342
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:344
 #, fuzzy, kde-format
 msgid "Remove tool"
 msgstr "ट्याग हटाउनुहोस्"
