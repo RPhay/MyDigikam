@@ -25,6 +25,7 @@
 #include <QPixmap>
 #include <QScreen>
 #include <QMenu>
+#include <QEventLoop>
 #include <QInputDialog>
 #include <QMessageBox>
 
@@ -275,8 +276,21 @@ void SlideToolBar::slotMenuSlideShowConfiguration()
     }
 
     QPointer<SetupSlideShowDialog> setup = new SetupSlideShowDialog(d->settings);
-    int ret                              = setup->exec();
-    delete setup;
+    int ret                              = QDialog::Rejected;
+    setup->show();
+
+    QEventLoop loop;
+
+    connect(setup, &QDialog::finished,
+            [this, &loop, setup, &ret](int result)
+        {
+            ret = result;
+            loop.quit();
+            delete setup;
+        }
+    );
+
+    loop.exec();
 
     d->parentWidget->setFocus();
 
@@ -303,8 +317,19 @@ void SlideToolBar::keyPressEvent(QKeyEvent* e)
         }
 
         QPointer<DPluginAboutDlg> help = new DPluginAboutDlg(d->settings->plugin);
-        help->exec();
-        delete help;
+        help->show();
+
+        QEventLoop loop;
+
+        connect(help, &QDialog::finished,
+                [this, &loop, help]()
+            {
+                loop.quit();
+                delete help;
+            }
+        );
+
+        loop.exec();
 
         d->parentWidget->setFocus();
 
