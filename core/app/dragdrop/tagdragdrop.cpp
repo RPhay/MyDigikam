@@ -83,7 +83,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             return false;
         }
 
-        QMenu popMenu(qApp->activeWindow());
+        QMenu popMenu(view);
         QAction* const gotoAction  = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")), i18n("&Move Here"));
         QAction* const mergeAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("merge")),   i18n("M&erge Here"));
         popMenu.addSeparator();
@@ -245,7 +245,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                     }
                     else
                     {
-                        QMenu popMenu(qApp->activeWindow());
+                        QMenu popMenu(view);
                         QAction* setAction           = nullptr;
                         QAction* const confirmAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
                                                                          i18np("Confirm face name '%2' to Item",
@@ -318,7 +318,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                     }
                     else
                     {
-                        QMenu popMenu(qApp->activeWindow());
+                        QMenu popMenu(view);
                         QAction* const assignAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
                                                                         i18np("Change face name from '%2' to '%3'",
                                                                               "Change face names from '%2' to '%3'",
@@ -440,7 +440,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
         }
         else
         {
-            QMenu popMenu(qApp->activeWindow());
+            QMenu popMenu(view);
             QAction* setAction          = nullptr;
             QAction* const assignAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
                                                             i18n("Assign Tag(s) '%1' to Items",

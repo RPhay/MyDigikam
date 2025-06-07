@@ -112,7 +112,7 @@ ImportDragDropHandler::DropAction ImportDragDropHandler::copyOrMove(const QDropE
         }
     }
 
-    QMenu popMenu(qApp->activeWindow());
+    QMenu popMenu(view);
 
     QAction* moveAction       = nullptr;
 
@@ -188,7 +188,7 @@ bool ImportDragDropHandler::dropEvent(QAbstractItemView* abstractview,
     {
         QList<QUrl> lst         = DigikamApp::instance()->view()->selectedUrls();
 
-        QMenu popMenu(qApp->activeWindow());
+        QMenu popMenu(view);
         popMenu.addSection(QIcon::fromTheme(QLatin1String("digikam")), i18n("Exporting"));
         QAction* const upAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("media-flash-sd-mmc")),
                                                     i18n("Upload to Camera"));
