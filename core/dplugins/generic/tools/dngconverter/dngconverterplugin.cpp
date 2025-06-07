@@ -34,6 +34,11 @@ DNGConverterPlugin::DNGConverterPlugin(QObject* const parent)
 {
 }
 
+void DNGConverterPlugin::cleanUp()
+{
+    delete m_toolDlg;
+}
+
 QString DNGConverterPlugin::name() const
 {
     return i18nc("@title", "DNG Converter");
@@ -69,6 +74,11 @@ QString DNGConverterPlugin::handbookSection() const
 
 QString DNGConverterPlugin::handbookChapter() const
 {
+    return QLatin1String("showfoto_tools");
+}
+
+QString DNGConverterPlugin::handbookReference() const
+{
     return QLatin1String("dng_converter");
 }
 
@@ -86,7 +96,7 @@ QList<DPluginAuthor> DNGConverterPlugin::authors() const
                              QString::fromUtf8("(C) 2008-2025"))
             << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
                              QString::fromUtf8("metzpinguin at gmail dot com"),
-                             QString::fromUtf8("(C) 2020-2024"))
+                             QString::fromUtf8("(C) 2020-2025"))
             ;
 }
 
@@ -106,10 +116,13 @@ void DNGConverterPlugin::setup(QObject* const parent)
 
 void DNGConverterPlugin::slotDNGConverter()
 {
-    QPointer<DNGConverterDialog> dialog = new DNGConverterDialog(nullptr, infoIface(sender()));
-    dialog->setPlugin(this);
-    dialog->exec();
-    delete dialog;
+    if (!reactivateToolDialog(m_toolDlg))
+    {
+        delete m_toolDlg;
+        m_toolDlg = new DNGConverterDialog(nullptr, infoIface(sender()));
+        m_toolDlg->setPlugin(this);
+        m_toolDlg->show();
+    }
 }
 
 } // namespace DigikamGenericDNGConverterPlugin

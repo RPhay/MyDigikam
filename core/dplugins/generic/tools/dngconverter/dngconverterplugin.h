@@ -25,6 +25,8 @@ using namespace Digikam;
 namespace DigikamGenericDNGConverterPlugin
 {
 
+class DNGConverterDialog;
+
 class DNGConverterPlugin : public DPluginGeneric
 {
     Q_OBJECT
@@ -44,12 +46,18 @@ public:
     QList<DPluginAuthor> authors() const override;
     QString handbookSection()      const override;
     QString handbookChapter()      const override;
+    QString handbookReference()    const override;
 
     void setup(QObject* const)           override;
+    void cleanUp()                       override;
 
 private Q_SLOTS:
 
     void slotDNGConverter();
+
+private:
+
+    QPointer<DNGConverterDialog> m_toolDlg;
 };
 
 } // namespace DigikamGenericDNGConverterPlugin
