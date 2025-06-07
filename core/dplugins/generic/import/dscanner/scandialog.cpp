@@ -48,6 +48,8 @@ public:
 
     Private() = default;
 
+public:
+
     QString            targetDir;
     StatusProgressBar* progress     = nullptr;
     KSaneWidget*       saneWidget   = nullptr;
@@ -59,6 +61,9 @@ ScanDialog::ScanDialog(KSaneWidget* const saneWdg, QWidget* const parent)
 {
     setWindowTitle(i18nc("@title:window", "Scan Image"));
     setModal(false);
+
+    m_buttons->addButton(QDialogButtonBox::Close);
+    m_buttons->button(QDialogButtonBox::Close)->setAutoDefault(false);
 
     d->saneWidget          = saneWdg;
     d->progress            = new StatusProgressBar(this);
@@ -94,6 +99,9 @@ ScanDialog::ScanDialog(KSaneWidget* const saneWdg, QWidget* const parent)
 
     connect(this, &QDialog::finished,
             this, &ScanDialog::slotDialogFinished);
+
+    connect(m_buttons->button(QDialogButtonBox::Close), &QPushButton::clicked,
+            this, &ScanDialog::close);
 }
 
 ScanDialog::~ScanDialog()

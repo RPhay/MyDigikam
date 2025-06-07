@@ -140,7 +140,7 @@ void DigitalScannerPlugin::slotDigitalScanner()
         }
 
         DInfoInterface* const iface = infoIface(sender());
-        ScanDialog* const dlg       = new ScanDialog(m_saneWidget);
+        QPointer<ScanDialog> dlg    = new ScanDialog(m_saneWidget);
 
         connect(dlg, &ScanDialog::signalImportedImage,
                 iface, &DInfoInterface::signalImportedImage);
