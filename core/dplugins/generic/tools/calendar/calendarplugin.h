@@ -25,6 +25,8 @@ using namespace Digikam;
 namespace DigikamGenericCalendarPlugin
 {
 
+class CalWizard;
+
 class CalendarPlugin : public DPluginGeneric
 {
     Q_OBJECT
@@ -50,6 +52,10 @@ public:
 private Q_SLOTS:
 
     void slotCalendar();
+
+private:
+
+    QPointer<CalWizard> m_toolDlg;
 };
 
 } // namespace DigikamGenericCalendarPlugin

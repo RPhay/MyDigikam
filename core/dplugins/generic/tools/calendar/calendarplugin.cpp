@@ -86,7 +86,7 @@ QList<DPluginAuthor> CalendarPlugin::authors() const
                              QString::fromUtf8("(C) 2006"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2024"),
+                             QString::fromUtf8("(C) 2004-2025"),
                              i18n("Developer and Maintainer"))
             ;
 }
@@ -107,10 +107,13 @@ void CalendarPlugin::setup(QObject* const parent)
 
 void CalendarPlugin::slotCalendar()
 {
-    QPointer<CalWizard> wzrd = new CalWizard(nullptr, infoIface(sender()));
-    wzrd->setPlugin(this);
-    wzrd->exec();
-    delete wzrd;
+    if (!reactivateToolDialog(m_toolDlg))
+    {
+        delete m_toolDlg;
+        m_toolDlg = new CalWizard(nullptr, infoIface(sender()));
+        m_toolDlg->setPlugin(this);
+        m_toolDlg->show();
+    }
 }
 
 } // namespace DigikamGenericCalendarPlugin
