@@ -25,6 +25,8 @@ using namespace Digikam;
 namespace DigikamGenericMediaServerPlugin
 {
 
+class DMediaServerDlg;
+
 class MediaServerPlugin : public DPluginGeneric
 {
     Q_OBJECT
@@ -51,6 +53,10 @@ public:
 private Q_SLOTS:
 
     void slotMediaServer();
+
+private:
+
+    QPointer<DMediaServerDlg> m_toolDlg;
 };
 
 } // namespace DigikamGenericMediaServerPlugin

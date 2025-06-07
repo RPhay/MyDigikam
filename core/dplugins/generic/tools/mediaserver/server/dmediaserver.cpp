@@ -111,6 +111,8 @@ public:
         logHandler->SetCustomHandlerFunction(&UPnPLogger);
     }
 
+public:
+
     PLT_UPnP*                   upnp            = nullptr;
     NPT_LogHandler*             logHandler      = nullptr;
     CDeviceHostReferenceHolder* serverHolder    = nullptr;

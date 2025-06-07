@@ -63,6 +63,8 @@ public:
 
     Private() = default;
 
+public:
+
     /// Configuration XML file to store albums map to share in case of restoring between sessions.
     QString              mapsConf;
 
