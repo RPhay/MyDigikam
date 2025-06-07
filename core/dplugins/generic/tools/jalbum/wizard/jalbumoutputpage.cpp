@@ -46,6 +46,8 @@ public:
 
     Private() = default;
 
+public:
+
     DFileSelector*  destUrl             = nullptr;
     QLabel*         titleLabel          = nullptr;
     DPlainTextEdit* imageSelectionTitle = nullptr;

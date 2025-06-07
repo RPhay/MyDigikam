@@ -51,6 +51,8 @@ public:
 
     Private() = default;
 
+public:
+
     DHistoryView* progressView  = nullptr;
     DProgressWdg* progressBar   = nullptr;
     bool          complete      = false;

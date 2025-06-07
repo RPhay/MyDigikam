@@ -73,7 +73,7 @@ QString JAlbumPlugin::handbookSection() const
 
 QString JAlbumPlugin::handbookChapter() const
 {
-    return QLatin1String("jalbum_tool");
+    return QLatin1String("jalbum_export");
 }
 
 QList<DPluginAuthor> JAlbumPlugin::authors() const

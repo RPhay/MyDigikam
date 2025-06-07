@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     JAlbumSettings*        settings         = nullptr;
 
     JAlbumIntroPage*       introPage        = nullptr;

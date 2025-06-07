@@ -44,6 +44,8 @@ public:
         }
     }
 
+public:
+
     bool            albumSupport    = false;
     QWidget*        albumSelector   = nullptr;
     DItemsList*     imageList       = nullptr;

@@ -46,6 +46,8 @@ public:
 
     Private() = default;
 
+public:
+
     JAlbumGenerator* that       = nullptr;
     JAlbumSettings*  settings   = nullptr;
     QList<QUrl>      urls;

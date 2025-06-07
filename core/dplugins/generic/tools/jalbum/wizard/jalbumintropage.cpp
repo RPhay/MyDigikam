@@ -55,6 +55,8 @@ public:
         }
     }
 
+public:
+
     QComboBox*       imageGetOption = nullptr;
     DHBox*           hbox           = nullptr;
     JAlbumWizard*    wizard         = nullptr;
