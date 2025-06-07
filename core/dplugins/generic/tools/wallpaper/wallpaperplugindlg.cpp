@@ -43,6 +43,8 @@ public:
 
     Private() = default;
 
+public:
+
     QComboBox* layoutCB = nullptr;
     QWidget*   page     = nullptr;
 };
@@ -51,6 +53,7 @@ WallpaperPluginDlg::WallpaperPluginDlg(DPlugin* const plugin, QWidget* const par
     : DPluginDialog(parent, QLatin1String("WallpaperPluginDlg")),
       d            (new Private)
 {
+    setModal(true);
     setPlugin(plugin);
     setWindowIcon(plugin->icon());
     setWindowTitle(i18nc("@title:window", "WallPaper Settings"));
@@ -58,17 +61,12 @@ WallpaperPluginDlg::WallpaperPluginDlg(DPlugin* const plugin, QWidget* const par
     m_buttons->addButton(QDialogButtonBox::Cancel);
     m_buttons->addButton(QDialogButtonBox::Ok);
     m_buttons->button(QDialogButtonBox::Ok)->setDefault(true);
-    d->page                  = new QWidget(this);
-    QVBoxLayout* const vbx   = new QVBoxLayout(this);
-    vbx->addWidget(d->page);
-    vbx->addWidget(m_buttons);
-    setLayout(vbx);
-    setModal(false);
-
-    // -------------------
 
     const int spacing       = layoutSpacing();
 
+    // -------------------
+
+    d->page                 = new QWidget(this);
     QGridLayout* const grid = new QGridLayout(d->page);
     QLabel* const lbl       = new QLabel(i18n("Wallpaper Layout:"), d->page);
     d->layoutCB             = new QComboBox(d->page);
@@ -87,24 +85,30 @@ WallpaperPluginDlg::WallpaperPluginDlg(DPlugin* const plugin, QWidget* const par
 
     grid->addWidget(lbl,         0, 0, 1, 1);
     grid->addWidget(d->layoutCB, 0, 1, 1, 1);
+    grid->addWidget(m_buttons,   1, 0, 1, 2);
     grid->setSpacing(spacing);
+    setLayout(grid);
 
-    // -------------------
+    // ---
 
     connect(m_buttons->button(QDialogButtonBox::Cancel), &QPushButton::clicked,
             this, &WallpaperPluginDlg::reject);
 
     connect(m_buttons->button(QDialogButtonBox::Ok), &QPushButton::clicked,
             this, &WallpaperPluginDlg::accept);
-
-    // -------------------
-
-    adjustSize();
 }
 
 WallpaperPluginDlg::~WallpaperPluginDlg()
 {
     delete d;
+}
+
+void WallpaperPluginDlg::showEvent(QShowEvent* e)
+{
+    // Default DPluginDialog::showEvent() is weird to adjust small dialog.
+
+    adjustSize();
+    QDialog::showEvent(e);
 }
 
 int WallpaperPluginDlg::wallpaperLayout() const

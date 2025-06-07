@@ -39,6 +39,10 @@ public:
 
 private:
 
+    void showEvent(QShowEvent*) override;
+
+private:
+
     class Private;
     Private* const d = nullptr;
 };

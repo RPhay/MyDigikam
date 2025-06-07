@@ -18,6 +18,7 @@
 // Qt includes
 
 #include <QPointer>
+#include <QEventLoop>
 
 // KDE includes
 
@@ -115,11 +116,24 @@ void WallpaperPlugin::slotWallpaper()
 #ifndef Q_OS_MACOS
 
         QPointer<WallpaperPluginDlg> dlg = new WallpaperPluginDlg(this);
+        dlg->show();
 
-        if (dlg->exec() == QDialog::Accepted)
-        {
-            setWallpaper(images[0].toString(), dlg->wallpaperLayout());
-        }
+        QEventLoop loop;
+
+        connect(dlg, &QDialog::finished,
+                [this, &loop, dlg, images](int result)
+            {
+                if (result == QDialog::Accepted)
+                {
+                    setWallpaper(images[0].toString(), dlg->wallpaperLayout());
+                }
+
+                loop.quit();
+                delete dlg;
+            }
+        );
+
+        loop.exec();
 
 #else
 
