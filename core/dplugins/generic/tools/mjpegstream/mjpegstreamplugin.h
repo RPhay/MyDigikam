@@ -25,6 +25,8 @@ using namespace Digikam;
 namespace DigikamGenericMjpegStreamPlugin
 {
 
+class MjpegStreamDlg;
+
 class MjpegStreamPlugin : public DPluginGeneric
 {
     Q_OBJECT
@@ -51,6 +53,10 @@ public:
 private Q_SLOTS:
 
     void slotMjpegStream();
+
+private:
+
+    QPointer<MjpegStreamDlg> m_toolDlg;
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin

@@ -54,6 +54,8 @@ public:
         endImg    = QIcon::fromTheme(QLatin1String("window-close")).pixmap(VidSlideSettings::videoSizeFromType(type)).toImage();
     }
 
+public:
+
     MjpegStreamSettings settings;               ///< The MJPEG stream settings.
     QImage              brokenImg;              ///< Image to push as frame if current item from list cannot be loaded.
     QImage              endImg;                 ///< Image to push as frame when stream is complete.

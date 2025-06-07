@@ -120,10 +120,13 @@ void MjpegStreamPlugin::setup(QObject* const parent)
 
 void MjpegStreamPlugin::slotMjpegStream()
 {
-    QPointer<MjpegStreamDlg> w = new MjpegStreamDlg(this, infoIface(sender()));
-    w->setPlugin(this);
-    w->exec();
-    delete w;
+    if (!reactivateToolDialog(m_toolDlg))
+    {
+        delete m_toolDlg;
+        m_toolDlg = new MjpegStreamDlg(nullptr, infoIface(sender()));
+        m_toolDlg->setPlugin(this);
+        m_toolDlg->show();
+    }
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
