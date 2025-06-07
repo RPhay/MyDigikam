@@ -44,7 +44,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-06 01:54+0000\n"
-"PO-Revision-Date: 2025-06-02 17:36+0200\n"
+"PO-Revision-Date: 2025-06-06 12:05+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -64490,7 +64490,7 @@ msgstr "Laddar ner nödvändiga modellfiler"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:140
 #, kde-format
 msgid "Open local directory used for the data files storage."
-msgstr ""
+msgstr "Öppna den lokala katalogen som används för lagring av datafiler."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:165
 #, kde-format
@@ -66163,8 +66163,7 @@ msgstr ""
 "Vill du testa systemet nu?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Starta"
@@ -66739,11 +66738,9 @@ msgid "Open Download Dialog..."
 msgstr "Öppnar nerladdningsdialogruta..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Local Storage"
+#, kde-format
 msgid "Open Local Storage..."
-msgstr "Exportera till lokal lagring"
+msgstr "Öppna lokal lagring..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:146
 #, kde-format
