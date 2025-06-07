@@ -26,6 +26,8 @@ using namespace Digikam;
 namespace DigikamGenericTextConverterPlugin
 {
 
+class TextConverterDialog;
+
 class TextConverterPlugin : public DPluginGeneric
 {
     Q_OBJECT
@@ -51,6 +53,10 @@ public:
 private Q_SLOTS:
 
     void slotTextConverter();
+
+private:
+
+    QPointer<TextConverterDialog> m_toolDlg;
 };
 
 } // namespace DigikamGenericTextConverterPlugin

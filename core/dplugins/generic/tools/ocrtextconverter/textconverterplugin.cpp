@@ -99,10 +99,13 @@ void TextConverterPlugin::setup(QObject* const parent)
 
 void TextConverterPlugin::slotTextConverter()
 {
-    QPointer<TextConverterDialog> dialog = new TextConverterDialog(nullptr, infoIface(sender()));
-    dialog->setPlugin(this);
-    dialog->exec();
-    delete dialog;
+    if (!reactivateToolDialog(m_toolDlg))
+    {
+        delete m_toolDlg;
+        m_toolDlg = new TextConverterDialog(nullptr, infoIface(sender()));
+        m_toolDlg->setPlugin(this);
+        m_toolDlg->show();
+    }
 }
 
 } // namespace DigikamGenericTextConverterPlugin

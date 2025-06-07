@@ -42,6 +42,8 @@ public:
 
     TextConverterActionData() = default;
 
+public:
+
     bool                 starting   = false;
     int                  result     = OcrTesseractEngine::PROCESS_COMPLETE;
 

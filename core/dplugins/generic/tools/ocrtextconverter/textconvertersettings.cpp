@@ -49,6 +49,8 @@ public:
 
     Private() = default;
 
+public:
+
     // Tesseract options
 
     DComboBox*            ocrTesseractLanguageMode  = nullptr;
