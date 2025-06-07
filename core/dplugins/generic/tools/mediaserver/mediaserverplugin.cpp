@@ -43,6 +43,8 @@ void MediaServerPlugin::cleanUp()
     // Stop the Media Server if necessary
 
     DMediaServerMngr::instance()->saveAtShutdown();
+
+    delete m_toolDlg;
 }
 
 QString MediaServerPlugin::name() const

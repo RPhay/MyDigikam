@@ -35,6 +35,11 @@ TextConverterPlugin::TextConverterPlugin(QObject* const parent)
 {
 }
 
+void TextConverterPlugin::cleanUp()
+{
+    delete m_toolDlg;
+}
+
 QString TextConverterPlugin::name() const
 {
     return i18nc("@title", "OCR Text Converter");

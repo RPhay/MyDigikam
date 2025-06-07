@@ -34,6 +34,11 @@ CalendarPlugin::CalendarPlugin(QObject* const parent)
 {
 }
 
+void CalendarPlugin::cleanUp()
+{
+    delete m_toolDlg;
+}
+
 QString CalendarPlugin::name() const
 {
     return i18n("Create Calendar");

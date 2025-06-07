@@ -44,6 +44,8 @@ void MjpegStreamPlugin::cleanUp()
     // Stop the MJPEG Server if necessary
 
     MjpegServerMngr::instance()->saveAtShutdown();
+
+    delete m_toolDlg;
 }
 
 QString MjpegStreamPlugin::name() const
