@@ -115,8 +115,8 @@ QDebug operator<<(QDebug dbg, const FaceScanSettings& s)
     dbg.nospace() << "Recognition Model       :" << s.recognizeModel         << Qt::endl;
     dbg.nospace() << "Recognition Accuracy    :" << s.recognizeAccuracy      << Qt::endl;
     dbg.nospace() << "Whole Albums            :" << s.wholeAlbums            << Qt::endl;
-    dbg.nospace() << "Albums                  :" << s.albums                 << Qt::endl;
-    dbg.nospace() << "Image Infos             :" << s.infos                  << Qt::endl;
+    dbg.nospace() << "Albums                  :" << s.albums.count()         << Qt::endl;
+    dbg.nospace() << "Image Infos             :" << s.infos.count()          << Qt::endl;
     dbg.nospace() << "Worker Thread Priority  :" << s.workerThreadPriority   << Qt::endl;
     dbg.nospace() << "Source                  :" << s.source                 << Qt::endl;
 

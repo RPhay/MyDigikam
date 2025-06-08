@@ -152,7 +152,7 @@ QDebug operator<<(QDebug dbg, const ImageQualitySettings& s)
     dbg.nospace() << "Compression Weight :" << s.compressionWeight  << Qt::endl;
     dbg.nospace() << "Exposure Weight    :" << s.exposureWeight     << Qt::endl;
     dbg.nospace() << "Whole Albums       :" << s.wholeAlbums        << Qt::endl;
-    dbg.nospace() << "Albums             :" << s.albums             << Qt::endl;
+    dbg.nospace() << "Albums             :" << s.albums.count()     << Qt::endl;
 
     return dbg.space();
 }

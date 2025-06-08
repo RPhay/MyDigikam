@@ -99,7 +99,7 @@ QDebug operator<<(QDebug dbg, const AutotagsScanSettings& s)
     dbg.nospace() << "Confidence Threshold      :" << s.uiConfidenceThreshold    << Qt::endl;
     dbg.nospace() << "Languages                 :" << s.languages                << Qt::endl;
     dbg.nospace() << "Whole Albums              :" << s.wholeAlbums              << Qt::endl;
-    dbg.nospace() << "Albums                    :" << s.albums                   << Qt::endl;
+    dbg.nospace() << "Albums                    :" << s.albums.count()           << Qt::endl;
     dbg.nospace() << "Bqm Mode                  :" << s.bqmMode                  << Qt::endl;
 
     return dbg.space();
