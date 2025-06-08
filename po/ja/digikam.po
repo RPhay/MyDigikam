@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-06 01:54+0000\n"
+"POT-Creation-Date: 2025-06-08 02:00+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -2880,7 +2880,7 @@ msgstr "フルスクリーンで表示"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:90
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
@@ -9306,7 +9306,7 @@ msgid "Frost Glass"
 msgstr "すりガラス"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:103
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:84
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:82
 #, kde-format
 msgid "Mosaic"
 msgstr "モザイク"
@@ -11266,20 +11266,20 @@ msgid ""
 "Please check your configuration"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:60
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:62
 #, fuzzy, kde-format
 #| msgid "Scan Image"
 msgctxt "@title:window"
 msgid "Scan Image"
 msgstr "画像スキャン"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:68
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:73
 #, fuzzy, kde-format
 #| msgid "Scan Image"
 msgid "Scan Images"
 msgstr "画像スキャン"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:163
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:171
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1849
 #, fuzzy, kde-format
@@ -11288,27 +11288,27 @@ msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "画像の新しいファイル名"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:211
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:219
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:148
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "不明なフォーマット"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:212
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:220
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:149
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "%1 ファイルフォーマットはサポートしていません。"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:224
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:232
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "ファイルの保存エラー"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:225
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:233
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:162
 #, kde-format
 msgid ""
@@ -11319,7 +11319,7 @@ msgstr ""
 "ファイル ‘%1’ を\n"
 "‘%2’ に保存できませんでした。"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:240
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:248
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2323
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2342
@@ -11329,25 +11329,25 @@ msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "ファイルを上書きしますか？"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:241
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:249
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:178
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "‘%1’ という名前のファイルは既に存在します。本当に上書きしますか？"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:292
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, fuzzy, kde-format
 msgid "Saving file %1 -"
 msgstr "画像ファイル"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:308
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "保存する XMP ファイル"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:308
 #, kde-format
 msgid "Cannot save \"%1\" file"
 msgstr ""
@@ -16278,18 +16278,18 @@ msgctxt "@action"
 msgid "Adjust Time && Date..."
 msgstr "ホワイトバランスを調整します。"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:39
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Created tables"
 msgid "Create Calendar"
 msgstr "テーブルを作成しました"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:54
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:59
 #, kde-format
 msgid "A tool to create calendar from images"
 msgstr ""
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:59
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to compose items and create a calendar with your "
@@ -16299,22 +16299,22 @@ msgid ""
 "in a PDF file.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:80
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:85
 #, fuzzy, kde-format
 #| msgid "Author"
 msgid "Former Author"
 msgstr "作者"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:95
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:92
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:102
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:105
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:96
 #, fuzzy, kde-format
 msgid "Developer and Maintainer"
 msgstr "主要開発者およびコーディネータ"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:98
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:103
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgctxt "@action"
@@ -16772,21 +16772,21 @@ msgstr "フォルダで"
 msgid "Camera"
 msgstr "カメラ"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:39
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title"
 msgid "DNG Converter"
 msgstr "変換"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:54
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "A tool to convert RAW images to DNG container"
 msgctxt "@info"
 msgid "A tool to batch convert RAW camera images to DNG"
 msgstr "RAW 画像を DNG フォーマットに変換するツール"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:59
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16797,7 +16797,7 @@ msgid ""
 "See details on this wikipedia entry about this format: %1"
 msgstr ""
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:97
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:107
 #, fuzzy, kde-format
 #| msgid "Color Space Conversion"
 msgctxt "@action"
@@ -17229,7 +17229,7 @@ msgstr ""
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:91
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:88
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:86
 #, kde-format
 msgid "Author and Maintainer"
 msgstr ""
@@ -17799,7 +17799,7 @@ msgid "Create Html gallery..."
 msgstr "スキーマを作成..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:98
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:97
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:99
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:122
@@ -17815,14 +17815,14 @@ msgid "Starting to generate gallery..."
 msgstr "スキーマを作成..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:122
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:119
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:121
 #, fuzzy, kde-format
 #| msgid "Custom process"
 msgid "%1 albums to process:"
 msgstr "カスタム処理"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:135
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:131
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:133
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:144
 #, fuzzy, kde-format
 #| msgid "Custom process"
@@ -17830,7 +17830,7 @@ msgid "%1 items to process"
 msgstr "カスタム処理"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:139
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:135
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:137
 #, fuzzy, kde-format
 msgid "Output directory: %1"
 msgstr "ディレクトリの作成に失敗しました。"
@@ -17923,7 +17923,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:86
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:84
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:91
@@ -17933,7 +17933,7 @@ msgid "&Choose image selection method:"
 msgstr "画像が選択されていません"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:89
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:91
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:87
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:94
@@ -18038,7 +18038,7 @@ msgid "Welcome to HTML Gallery Tool"
 msgstr "<b>パノラマツールへようこそ</b>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:75
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:77
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgid "Items Selection"
@@ -18071,34 +18071,34 @@ msgstr "キューの設定"
 msgid "Generating Gallery"
 msgstr "ファイルを回転させるとき"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:74
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:76
 #, fuzzy, kde-format
 msgid "Create directories"
 msgstr "このタグを付ける"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:78
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:80
 #, fuzzy, kde-format
 msgid "Could not create folder '%1'"
 msgstr "画像 “%1” の読み込みに失敗しました"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:118
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:120
 #, fuzzy, kde-format
 msgid "Create jAlbum project files"
 msgstr "画像ファイル"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:126
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:128
 #, fuzzy, kde-format
 #| msgid "Failed to create file..."
 msgid "Failed to create project files"
 msgstr "ファイルの作成に失敗しました..."
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:143
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:145
 #, fuzzy, kde-format
 #| msgid "Failed to create file..."
 msgid "Failed to create settings file"
 msgstr "ファイルの作成に失敗しました..."
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:157
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:159
 #, kde-format
 msgid "Launch jAlbum with new project files"
 msgstr ""
@@ -18136,24 +18136,24 @@ msgstr "スキーマを作成..."
 msgid "jAlbum Gallery Generator."
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:111
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:113
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgid "Starting to generate jAlbum..."
 msgstr "スキーマを作成..."
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:149
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:151
 #, kde-format
 msgid "Jalbum is completed, but some warnings occurred."
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:154
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:156
 #, fuzzy, kde-format
 #| msgid "Show album collection"
 msgid "Jalbum completed."
 msgstr "アルバムのコレクションを表示"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:77
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:79
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
@@ -18161,57 +18161,57 @@ msgid ""
 "project.</p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:97
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:99
 #, fuzzy, kde-format
 #| msgid "Album Name"
 msgctxt "@title:group"
 msgid "jAlbum Binaries"
 msgstr "アルバム名"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:66
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:68
 #, fuzzy, kde-format
 msgid "Project Title:"
 msgstr "画像ファイル"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:70
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:72
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the project title"
 msgstr "コンテンツのプロバイダを設定します。"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:77
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:79
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgid "Projects folder:"
 msgstr "フォルダで"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:80
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:82
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgctxt "@title:window"
 msgid "Projects Folder"
 msgstr "フォルダで"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:66
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:68
 #, fuzzy, kde-format
 #| msgid "Create New Album"
 msgctxt "@title:window"
 msgid "Create jAlbum Album"
 msgstr "新しいアルバムを作成"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:74
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:76
 #, fuzzy, kde-format
 #| msgid "<b>Welcome to Panorama Tool</b>"
 msgid "Welcome to jAlbum Export Tool"
 msgstr "<b>パノラマツールへようこそ</b>"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:76
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:78
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgid "Paths Selection"
 msgstr "選択|/|$[~setProps ~full 'スライドショー: 選択した画像']"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:77
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:79
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "When rotating a file"
@@ -18363,18 +18363,18 @@ msgctxt "@info"
 msgid "An error occurs while to start Media Server..."
 msgstr "メディアプレーヤーにエラーが発生しました..."
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:50
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:52
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "DLNA Export"
 msgstr "エクスポート"
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:65
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:67
 #, kde-format
 msgid "A tool to export items to a DLNA compatible device"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:70
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:72
 #, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a DLNA "
@@ -18383,34 +18383,34 @@ msgid ""
 "DLNA, as tablets, cellulars, TV, etc.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:108
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Share with DLNA..."
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:141
+#: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:143
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgid "%1 Media Server"
 msgstr "画像エディタを開く"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:154
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:156
 #, kde-format
 msgid "Media Server have been started"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:155
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:157
 #, kde-format
 msgid "Media Server cannot be started!"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:171
+#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:173
 #, kde-format
 msgid "MJPEG Server have been started"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:172
+#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:174
 #, kde-format
 msgid "MJPEG Server cannot be started!"
 msgstr ""
@@ -18619,18 +18619,18 @@ msgctxt "@title: On Screen Display"
 msgid "OSD"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:51
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:53
 #, kde-format
 msgid "MJPEG Stream Server"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:66
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:68
 #, fuzzy, kde-format
 #| msgid "Sort by rating"
 msgid "A tool to export items as MJPEG Stream"
 msgstr "評価でソート"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:82
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:84
 #, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a "
@@ -18646,7 +18646,7 @@ msgid ""
 "same time.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:99
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:101
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
 #: core/libs/widgets/mainview/daboutdata.cpp:107
 #: core/libs/widgets/mainview/daboutdata.cpp:125
@@ -18664,7 +18664,7 @@ msgstr ""
 msgid "Developer"
 msgstr "開発者"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:111
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Share as MJPEG Stream..."
@@ -18950,21 +18950,21 @@ msgstr "処理済みのアイテムを削除"
 msgid "Words"
 msgstr "キーワード"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:40
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:45
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title"
 msgid "OCR Text Converter"
 msgstr "変換"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:55
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "A tool to convert RAW images to DNG container"
 msgctxt "@info"
 msgid "A tool to batch convert documented images to text using OCR"
 msgstr "RAW 画像を DNG フォーマットに変換するツール"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:60
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18978,21 +18978,21 @@ msgid ""
 "See details on %1 for more information on Tesseract"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:90
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Color Space Conversion"
 msgctxt "@action"
 msgid "OCR Text Converter..."
 msgstr "カラースペースの変換"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:75
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:77
 #, fuzzy, kde-format
 #| msgid "Language:"
 msgctxt "@label"
 msgid "Languages:"
 msgstr "言語:"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:79
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:81
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19006,84 +19006,84 @@ msgid ""
 "languagemodule if available."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:88
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:90
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgctxt "@label"
 msgid "Segmentation mode:"
 msgstr "送り先:"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:102
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid "Specify page segmentation mode."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:106
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:108
 #, fuzzy, kde-format
 #| msgid "Exposure mode:"
 msgctxt "@label"
 msgid "Engine mode:"
 msgstr "露出モード:"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:120
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid "Specify OCR engine mode."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:124
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:126
 #, fuzzy, kde-format
 #| msgid "Resolution:"
 msgctxt "@label"
 msgid "Resolution Dpi:"
 msgstr "解像度:"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:127
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Specify DPI for input image."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:133
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:135
 #, kde-format
 msgctxt "@label"
 msgid "Store result in : "
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:134
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:136
 #, fuzzy, kde-format
 #| msgid "Text Filter"
 msgctxt "@option:check"
 msgid "Text file"
 msgstr "テキストフィルタ"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:135
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:137
 #, kde-format
 msgctxt "@info"
 msgid "Store OCR result in separated text file"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:138
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:140
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@option:check"
 msgid "Metadata"
 msgstr "メタデータ"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:139
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:141
 #, kde-format
 msgctxt "@info"
 msgid "Store OCR result in XMP metadata"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:145
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:147
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Multi-cores"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:146
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:148
 #, fuzzy, kde-format
 #| msgid ""
 #| "If this option is enabled, newly-loaded images will be sorted in "
@@ -19094,7 +19094,7 @@ msgstr ""
 "このオプションを有効にすると、新しく読み込んだ画像が降順にソートされます。"
 
 # Theme based on users' default color scheme
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:279
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:281
 #, fuzzy, kde-format
 #| msgctxt "default theme name"
 #| msgid "Default"
@@ -19102,13 +19102,13 @@ msgctxt "@option: default Tesseract mode"
 msgid "Default"
 msgstr "デフォルト"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:285
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:287
 #, kde-format
 msgctxt "@option: osd Tesseract mode"
 msgid "Orientation and Script Detection"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:304
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:306
 #, fuzzy, kde-format
 #| msgid "Rating equal to %1."
 msgctxt "@label"
@@ -21262,17 +21262,17 @@ msgstr "画像の設定"
 msgid "Generating Video Slideshow"
 msgstr "このタグを付ける"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:41
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:42
 #, fuzzy, kde-format
 msgid "Export as wallpaper"
 msgstr "エクスポート"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:56
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:57
 #, fuzzy, kde-format
 msgid "A tool to set image as wallpaper"
 msgstr "画像を PGF フォーマットに変換するツール"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:61
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:62
 #, kde-format
 msgid ""
 "<p>This tool changes background wallpaper to selected image for all desktops."
@@ -21280,7 +21280,7 @@ msgid ""
 "image is selected, the first one from current album will be used.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:92
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:93
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Set as wallpaper"
@@ -21349,37 +21349,37 @@ msgstr ""
 msgid "Cannot apply changes to desktop wallpaper."
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:56
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
 #, fuzzy, kde-format
 #| msgid "Image settings"
 msgctxt "@title:window"
 msgid "WallPaper Settings"
 msgstr "画像の設定"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:73
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:71
 #, kde-format
 msgid "Wallpaper Layout:"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:75
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:73
 #, fuzzy, kde-format
 #| msgctxt "Automatic Adjustment"
 #| msgid "Adjust"
 msgid "Adjusted"
 msgstr "調整"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:79
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:77
 #, fuzzy, kde-format
 msgid "Adjusted with Aspect ratio"
 msgstr "次のファイルフォーマットの画像を探す"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:80
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:78
 #, fuzzy, kde-format
 #| msgid "Adjustment:"
 msgid "Adjusted and cropped"
 msgstr "調整:"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:85
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:83
 #, fuzzy, kde-format
 #| msgid "Center"
 msgid "Centered"
@@ -22204,20 +22204,20 @@ msgid "Presentation..."
 msgstr "自由回転..."
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:241
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:242
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "このタグを付ける"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:225
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:242
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:243
 #, kde-format
 msgid "Delay:"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:398
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:423
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
@@ -22225,7 +22225,7 @@ msgid "Delete Image"
 msgstr "タグを削除"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:424
 #, fuzzy, kde-format
 #| msgid "Loading metadata - %p%"
 msgid "Do you want to move this image to the trash?"
@@ -22666,12 +22666,12 @@ msgid ""
 "%1"
 msgstr "メディアプレーヤーにエラーが発生しました..."
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:121
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:122
 #, kde-format
 msgid "Switch Screen"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:134
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:135
 #, kde-format
 msgctxt "%1 is the screen number (0, 1, ...)"
 msgid "Screen %1"

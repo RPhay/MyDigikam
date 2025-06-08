@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-06 01:54+0000\n"
+"POT-Creation-Date: 2025-06-08 02:00+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -841,7 +841,7 @@ msgstr "打开..."
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open in File Manager"
-msgstr "在文件管理器中打开"
+msgstr "用文件管理器打开"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:73
 #, kde-format
@@ -1657,7 +1657,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open in File Manager"
-msgstr "在文件管理器中打开"
+msgstr "用文件管理器打开"
 
 #: core/app/main/digikamapp_setup.cpp:294
 #, kde-format
@@ -2824,7 +2824,7 @@ msgstr "全屏显示"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:90
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
@@ -8942,7 +8942,7 @@ msgid "Frost Glass"
 msgstr "霜面玻璃"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:103
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:84
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:82
 #, kde-format
 msgid "Mosaic"
 msgstr "马赛克"
@@ -10822,18 +10822,18 @@ msgstr ""
 "无法打开扫描设备“%1”。\n"
 "请检查系统配置"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:60
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan Image"
 msgstr "扫描图像"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:68
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:73
 #, kde-format
 msgid "Scan Images"
 msgstr "扫描图像"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:163
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:171
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1849
 #, kde-format
@@ -10841,27 +10841,27 @@ msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "新图像文件名"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:211
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:219
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:148
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "不支持的格式"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:212
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:220
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:149
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "目标图像文件格式“%1”不受支持。"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:224
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:232
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "无法保存文件"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:225
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:233
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:162
 #, kde-format
 msgid ""
@@ -10873,7 +10873,7 @@ msgstr ""
 "“%1”到\n"
 "“%2”。"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:240
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:248
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2323
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2342
@@ -10882,25 +10882,25 @@ msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "覆盖文件吗？"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:241
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:249
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:178
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "文件“%1”已存在。您确定要覆盖它吗？"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:292
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, kde-format
 msgid "Saving file %1 -"
 msgstr "正在保存文件 %1 -"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:308
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "文件未保存"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:308
 #, kde-format
 msgid "Cannot save \"%1\" file"
 msgstr "无法保存“%1”文件"
@@ -15405,17 +15405,17 @@ msgctxt "@action"
 msgid "Adjust Time && Date..."
 msgstr "调整时间和日期..."
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:39
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:44
 #, kde-format
 msgid "Create Calendar"
 msgstr "创建日历"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:54
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:59
 #, kde-format
 msgid "A tool to create calendar from images"
 msgstr "用图像来制作日历"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:59
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to compose items and create a calendar with your "
@@ -15428,21 +15428,21 @@ msgstr ""
 "中整合日期来突出显示节假日。</p><p>此工具还可以将日历导出到打印机或者 PDF 文"
 "件。</p>"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:80
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:85
 #, kde-format
 msgid "Former Author"
 msgstr "前任开发人员"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:95
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:92
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:102
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:105
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:96
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr "开发人员与项目负责人"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:98
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Create Calendar..."
@@ -15853,19 +15853,19 @@ msgstr "目标文件"
 msgid "Camera"
 msgstr "相机"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:39
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "DNG Converter"
 msgstr "DNG 转换"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:54
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert RAW camera images to DNG"
 msgstr "批量转换 RAW 相机图像为 DNG"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:59
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -15881,7 +15881,7 @@ msgstr ""
 "\n"
 "如需了解详情，请访问该格式的介绍页面：%1"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:97
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "DNG Converter..."
@@ -16304,7 +16304,7 @@ msgstr ""
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:91
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:88
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:86
 #, kde-format
 msgid "Author and Maintainer"
 msgstr "开发人员和项目负责人"
@@ -16839,7 +16839,7 @@ msgid "Create Html gallery..."
 msgstr "创建 HTML 相册..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:98
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:97
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:99
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:122
@@ -16854,20 +16854,20 @@ msgid "Starting to generate gallery..."
 msgstr "正在开始生成画廊..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:122
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:119
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:121
 #, kde-format
 msgid "%1 albums to process:"
 msgstr "%1 个待处理相册："
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:135
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:131
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:133
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:144
 #, kde-format
 msgid "%1 items to process"
 msgstr "%1 个待处理项目"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:139
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:135
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:137
 #, kde-format
 msgid "Output directory: %1"
 msgstr "输出目录：%1"
@@ -16954,7 +16954,7 @@ msgstr ""
 "从多款美观的主题中任选一种对输出的相册进行自定义。</p></qt>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:86
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:84
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:91
@@ -16963,7 +16963,7 @@ msgid "&Choose image selection method:"
 msgstr "图像选择方式(&C)："
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:89
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:91
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:87
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:94
@@ -17057,7 +17057,7 @@ msgid "Welcome to HTML Gallery Tool"
 msgstr "欢迎使用 HTML 相册制作工具"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:75
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:77
 #, kde-format
 msgid "Items Selection"
 msgstr "项目选择"
@@ -17083,32 +17083,32 @@ msgstr "输出设置"
 msgid "Generating Gallery"
 msgstr "正在生成相册"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:74
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:76
 #, kde-format
 msgid "Create directories"
 msgstr "创建目录"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:78
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:80
 #, kde-format
 msgid "Could not create folder '%1'"
 msgstr "无法创建文件夹“%1”"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:118
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:120
 #, kde-format
 msgid "Create jAlbum project files"
 msgstr "创建 jAlbum 工程文件"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:126
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:128
 #, kde-format
 msgid "Failed to create project files"
 msgstr "无法创建工程文件"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:143
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:145
 #, kde-format
 msgid "Failed to create settings file"
 msgstr "无法创建设置文件"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:157
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:159
 #, kde-format
 msgid "Launch jAlbum with new project files"
 msgstr "用新工程文件启动 jAlbum"
@@ -17147,22 +17147,22 @@ msgstr "创建 jAlbum 相册..."
 msgid "jAlbum Gallery Generator."
 msgstr "jAlbum 相册生成器"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:111
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:113
 #, kde-format
 msgid "Starting to generate jAlbum..."
 msgstr "开始生成 jAlbum 相册..."
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:149
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:151
 #, kde-format
 msgid "Jalbum is completed, but some warnings occurred."
 msgstr "jAlbum 相册已制作完成，但制作过程中发生了一些警告。"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:154
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:156
 #, kde-format
 msgid "Jalbum completed."
 msgstr "jAlbum 相册已完成制作。"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:77
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:79
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
@@ -17172,50 +17172,50 @@ msgstr ""
 "<qt><p><h1><b>欢迎使用 jAlbum 导出工具</b></h1></p><p>此向导程序将引导您</"
 "p><p></p><p>将图像导出为 jAlbum 相册工程。</p></qt>"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:97
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:99
 #, kde-format
 msgctxt "@title:group"
 msgid "jAlbum Binaries"
 msgstr "jAlbum 可执行程序"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:66
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:68
 #, kde-format
 msgid "Project Title:"
 msgstr "工程标题："
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:70
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:72
 #, kde-format
 msgid "Set here the project title"
 msgstr "在此设置项目标题"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:77
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:79
 #, kde-format
 msgid "Projects folder:"
 msgstr "工程文件夹："
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:80
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Projects Folder"
 msgstr "工程文件夹"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:66
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:68
 #, kde-format
 msgctxt "@title:window"
 msgid "Create jAlbum Album"
 msgstr "创建 jAlbum 相册"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:74
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:76
 #, kde-format
 msgid "Welcome to jAlbum Export Tool"
 msgstr "欢迎使用 jAlbum 导出工具"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:76
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:78
 #, kde-format
 msgid "Paths Selection"
 msgstr "路径选择"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:77
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:79
 #, kde-format
 msgid "Generating jAlbum"
 msgstr "正在生成 jAlbum 相册"
@@ -17354,17 +17354,17 @@ msgctxt "@info"
 msgid "An error occurs while to start Media Server..."
 msgstr "启动媒体服务器时发生错误..."
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:50
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:52
 #, kde-format
 msgid "DLNA Export"
 msgstr "DLNA 导出"
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:65
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:67
 #, kde-format
 msgid "A tool to export items to a DLNA compatible device"
 msgstr "将项目导出到 DLNA 兼容设备"
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:70
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:72
 #, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a DLNA "
@@ -17376,33 +17376,33 @@ msgstr ""
 "按组在相册中选择。</p><p>许多智能设备均支持 DLNA，例如平板电脑、智能手机、智"
 "能电视等。</p>"
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:108
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Share with DLNA..."
 msgstr "共享到 DLNA..."
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:141
+#: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:143
 #, kde-format
 msgid "%1 Media Server"
 msgstr "%1 媒体服务器"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:154
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:156
 #, kde-format
 msgid "Media Server have been started"
 msgstr "媒体服务器已经启动"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:155
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:157
 #, kde-format
 msgid "Media Server cannot be started!"
 msgstr "媒体服务器无法启动。"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:171
+#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:173
 #, kde-format
 msgid "MJPEG Server have been started"
 msgstr "MJPEG 服务器已启动"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:172
+#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:174
 #, kde-format
 msgid "MJPEG Server cannot be started!"
 msgstr "MJPEG 服务器无法启动。"
@@ -17604,17 +17604,17 @@ msgctxt "@title: On Screen Display"
 msgid "OSD"
 msgstr "屏幕显示"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:51
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:53
 #, kde-format
 msgid "MJPEG Stream Server"
 msgstr "MJPEG 流服务器"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:66
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:68
 #, kde-format
 msgid "A tool to export items as MJPEG Stream"
 msgstr "导出项目为 MJPEG 流"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:82
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:84
 #, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a "
@@ -17637,7 +17637,7 @@ msgstr ""
 "URL 格式，地址请填写该 MJPEG 服务器的 IP 地址，端口请填写在本配置对话框设置的"
 "服务器端口。支持同时从多台计算机同时连接到该 MPEG 服务器。</p>"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:99
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:101
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
 #: core/libs/widgets/mainview/daboutdata.cpp:107
 #: core/libs/widgets/mainview/daboutdata.cpp:125
@@ -17655,7 +17655,7 @@ msgstr ""
 msgid "Developer"
 msgstr "开发人员"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:111
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Share as MJPEG Stream..."
@@ -17932,19 +17932,19 @@ msgstr "处理所选项目"
 msgid "Words"
 msgstr "词数"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:40
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "OCR Text Converter"
 msgstr "OCR 文本转换器"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:55
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert documented images to text using OCR"
 msgstr "使用 OCR 将文档图像批量转换为文字"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:60
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17964,19 +17964,19 @@ msgstr ""
 "\n"
 "Tesseract 的详情请见 %1"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:90
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "OCR Text Converter..."
 msgstr "OCR 文本转换器..."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:75
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:77
 #, kde-format
 msgctxt "@label"
 msgid "Languages:"
 msgstr "语言："
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:79
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:81
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17994,97 +17994,97 @@ msgstr ""
 "但它不兼容使用了象形文字的语言，例如中文、日语等。\n"
 "如果系统支持，您可以使用方向与书写检测模式或者特定的语言模块。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:88
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:90
 #, kde-format
 msgctxt "@label"
 msgid "Segmentation mode:"
 msgstr "分页模式："
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:102
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid "Specify page segmentation mode."
 msgstr "指定分页模式。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:106
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:108
 #, kde-format
 msgctxt "@label"
 msgid "Engine mode:"
 msgstr "引擎模式："
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:120
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid "Specify OCR engine mode."
 msgstr "指定 OCR 引擎模式。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:124
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:126
 #, kde-format
 msgctxt "@label"
 msgid "Resolution Dpi:"
 msgstr "分辨率 DPI："
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:127
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Specify DPI for input image."
 msgstr "指定输入图像的 DPI。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:133
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:135
 #, kde-format
 msgctxt "@label"
 msgid "Store result in : "
 msgstr "结果存储为："
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:134
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:136
 #, kde-format
 msgctxt "@option:check"
 msgid "Text file"
 msgstr "文本文件"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:135
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:137
 #, kde-format
 msgctxt "@info"
 msgid "Store OCR result in separated text file"
 msgstr "保存 OCR 结果到一个独立的文本文件"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:138
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:140
 #, kde-format
 msgctxt "@option:check"
 msgid "Metadata"
 msgstr "元数据"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:139
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:141
 #, kde-format
 msgctxt "@info"
 msgid "Store OCR result in XMP metadata"
 msgstr "保存 OCR 结果到 XMP 元数据"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:145
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:147
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Multi-cores"
 msgstr "使用多核处理。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:146
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:148
 #, kde-format
 msgctxt "@info"
 msgid "If this option is enabled, files will be processed in parallel"
 msgstr "如果启用此选项，文件将以多线程方式并行处理"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:279
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:281
 #, kde-format
 msgctxt "@option: default Tesseract mode"
 msgid "Default"
 msgstr "默认"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:285
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:287
 #, kde-format
 msgctxt "@option: osd Tesseract mode"
 msgid "Orientation and Script Detection"
 msgstr "方向和书写检测"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:304
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:306
 #, kde-format
 msgctxt "@label"
 msgid "Translate with %1:"
@@ -20150,17 +20150,17 @@ msgstr "视频设置"
 msgid "Generating Video Slideshow"
 msgstr "正在生成视频幻灯片"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:41
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:42
 #, kde-format
 msgid "Export as wallpaper"
 msgstr "设为壁纸"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:56
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:57
 #, kde-format
 msgid "A tool to set image as wallpaper"
 msgstr "将图像设置为壁纸"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:61
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:62
 #, kde-format
 msgid ""
 "<p>This tool changes background wallpaper to selected image for all desktops."
@@ -20170,7 +20170,7 @@ msgstr ""
 "<p>用于将当前所选图像设置为所有桌面的壁纸的工具。</p><p>如果选择了多张图像，"
 "将使用第一张图像。</p><p>如果没有选择图像，将使用当前相册的第一张图像。</p>"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:92
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "Set as wallpaper"
@@ -20250,33 +20250,33 @@ msgstr "无法设置壁纸属性。"
 msgid "Cannot apply changes to desktop wallpaper."
 msgstr "无法应用更改到桌面壁纸。"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:56
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "WallPaper Settings"
 msgstr "壁纸设置"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:73
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:71
 #, kde-format
 msgid "Wallpaper Layout:"
 msgstr "壁纸布局："
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:75
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:73
 #, kde-format
 msgid "Adjusted"
 msgstr "拉伸"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:79
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:77
 #, kde-format
 msgid "Adjusted with Aspect ratio"
 msgstr "拉伸并保持宽高比"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:80
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:78
 #, kde-format
 msgid "Adjusted and cropped"
 msgstr "拉伸并裁剪"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:85
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:83
 #, kde-format
 msgid "Centered"
 msgstr "居中"
@@ -21050,27 +21050,27 @@ msgid "Presentation..."
 msgstr "演示..."
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:241
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:242
 #, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "指定幻灯片放映延迟"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:225
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:242
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:243
 #, kde-format
 msgid "Delay:"
 msgstr "延迟："
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:398
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:423
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "删除图像"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:424
 #, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr "您想要将此图像移动至回收站吗？"
@@ -21501,12 +21501,12 @@ msgstr ""
 "显示以下项目时发生错误\n"
 "%1"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:121
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:122
 #, kde-format
 msgid "Switch Screen"
 msgstr "切换屏幕"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:134
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:135
 #, kde-format
 msgctxt "%1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
@@ -62225,10 +62225,9 @@ msgid "Ignored file extensions:"
 msgstr "忽略文件扩展名："
 
 #: core/utilities/setup/camera/setupcamera.cpp:402
-#, fuzzy, kde-format
-#| msgid "Defaults"
+#, kde-format
 msgid "&Defaults"
-msgstr "默认"
+msgstr "默认(&D)"
 
 #: core/utilities/setup/camera/setupcamera.cpp:418
 #, kde-format
@@ -62667,7 +62666,7 @@ msgstr "下载所需的模型文件"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:140
 #, kde-format
 msgid "Open local directory used for the data files storage."
-msgstr ""
+msgstr "打开用于存储数据文件的本地目录。"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:165
 #, kde-format
@@ -64246,8 +64245,7 @@ msgstr ""
 "您想要立即测试您的系统吗？"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "开始"
@@ -64791,11 +64789,9 @@ msgid "Open Download Dialog..."
 msgstr "打开下载对话框..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Local Storage"
+#, kde-format
 msgid "Open Local Storage..."
-msgstr "导出到本地存储"
+msgstr "打开本地存储..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:146
 #, kde-format

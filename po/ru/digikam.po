@@ -54,7 +54,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-06 01:54+0000\n"
+"POT-Creation-Date: 2025-06-08 02:00+0000\n"
 "PO-Revision-Date: 2025-05-30 21:57+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -2985,7 +2985,7 @@ msgstr "Полноэкранный режим"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:90
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
@@ -9506,7 +9506,7 @@ msgid "Frost Glass"
 msgstr "Замёрзшее стекло"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:103
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:84
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:82
 #, kde-format
 msgid "Mosaic"
 msgstr "Мозаика"
@@ -11490,18 +11490,18 @@ msgstr ""
 "Невозможно открыть сканер «%1».\n"
 "Проверьте параметры конфигурации"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:60
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan Image"
 msgstr "Сканирование изображений"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:68
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:73
 #, kde-format
 msgid "Scan Images"
 msgstr "Сканирование изображений"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:163
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:171
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1849
 #, kde-format
@@ -11509,27 +11509,27 @@ msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "Новое имя файла изображения"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:211
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:219
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:148
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Неподдерживаемый формат"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:212
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:220
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:149
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "Формат целевого изображения «%1» не поддерживается."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:224
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:232
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "Ошибка сохранения файла"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:225
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:233
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:162
 #, kde-format
 msgid ""
@@ -11541,7 +11541,7 @@ msgstr ""
 "«%1» в \n"
 "«%2»."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:240
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:248
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2323
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2342
@@ -11550,25 +11550,25 @@ msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Заменить файл?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:241
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:249
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:178
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Файл с именем «%1» уже существует. Заменить его?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:292
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, kde-format
 msgid "Saving file %1 -"
 msgstr "Сохранение файла %1 —"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:308
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "Файл не сохранён"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:308
 #, kde-format
 msgid "Cannot save \"%1\" file"
 msgstr "Не удалось сохранить файл «%1»"
@@ -16204,17 +16204,17 @@ msgctxt "@action"
 msgid "Adjust Time && Date..."
 msgstr "Ко&ррекция времени и даты..."
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:39
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:44
 #, kde-format
 msgid "Create Calendar"
 msgstr "Создание календаря"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:54
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:59
 #, kde-format
 msgid "A tool to create calendar from images"
 msgstr "Инструмент для создания календаря"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:59
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to compose items and create a calendar with your "
@@ -16228,21 +16228,21 @@ msgstr ""
 "в календарь список дат в формате ICS.</p><p>Инструмент также позволяет "
 "распечатать созданный календарь или сохранить его в файле PDF.</p>"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:80
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:85
 #, kde-format
 msgid "Former Author"
 msgstr "Бывший автор"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:95
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:92
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:102
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:105
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:96
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr "Разработчик и сопровождающий"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:98
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Create Calendar..."
@@ -16664,20 +16664,20 @@ msgstr "Выходной файл"
 msgid "Camera"
 msgstr "Камера"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:39
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "DNG Converter"
 msgstr "Преобразователь DNG"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:54
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert RAW camera images to DNG"
 msgstr ""
 "Инструмент для преобразования цифровых негативов RAW в формат контейнера DNG"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:59
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16693,7 +16693,7 @@ msgstr ""
 "потерь, созданном Adobe.\n"
 "Подробные сведения об этом формате доступны на этой странице: %1"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:97
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "DNG Converter..."
@@ -17139,7 +17139,7 @@ msgstr ""
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:91
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:88
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:86
 #, kde-format
 msgid "Author and Maintainer"
 msgstr "Автор и сопровождающий"
@@ -17693,7 +17693,7 @@ msgid "Create Html gallery..."
 msgstr "Создать галерею в формате HTML..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:98
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:97
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:99
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:122
@@ -17709,21 +17709,21 @@ msgstr "Начало создания галереи..."
 
 # BUGME: need plurals --aspotashev
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:122
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:119
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:121
 #, kde-format
 msgid "%1 albums to process:"
 msgstr "Альбомов для обработки: %1"
 
 # BUGME: need plurals --aspotashev
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:135
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:131
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:133
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:144
 #, kde-format
 msgid "%1 items to process"
 msgstr "Объектов для обработки: %1"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:139
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:135
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:137
 #, kde-format
 msgid "Output directory: %1"
 msgstr "Выходной каталог: %1"
@@ -17813,7 +17813,7 @@ msgstr ""
 "задать выбором одного из готовых оформлений и его настройкой.</p></qt>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:86
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:84
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:91
@@ -17823,7 +17823,7 @@ msgstr "&Способ выбора изображений:"
 
 # i18n: file ./digikam/digikamui.rc line 39
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:89
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:91
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:87
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:94
@@ -17920,7 +17920,7 @@ msgid "Welcome to HTML Gallery Tool"
 msgstr "Добро пожаловать в мастер галерей в формате HTML"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:75
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:77
 #, kde-format
 msgid "Items Selection"
 msgstr "Выбор объектов"
@@ -17946,32 +17946,32 @@ msgstr "Параметры вывода"
 msgid "Generating Gallery"
 msgstr "Создание галереи"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:74
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:76
 #, kde-format
 msgid "Create directories"
 msgstr "Создание каталогов"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:78
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:80
 #, kde-format
 msgid "Could not create folder '%1'"
 msgstr "Не удалось создать папку «%1»"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:118
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:120
 #, kde-format
 msgid "Create jAlbum project files"
 msgstr "Создать файлы проекта jAlbum"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:126
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:128
 #, kde-format
 msgid "Failed to create project files"
 msgstr "Не удалось создать файлы проекта"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:143
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:145
 #, kde-format
 msgid "Failed to create settings file"
 msgstr "Не удалось создать файл настроек"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:157
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:159
 #, kde-format
 msgid "Launch jAlbum with new project files"
 msgstr "Запустить jAlbum с файлами нового проекта"
@@ -18012,22 +18012,22 @@ msgstr "Создать галерею в формате jAlbum..."
 msgid "jAlbum Gallery Generator."
 msgstr "Создание галереи в формате jAlbum."
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:111
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:113
 #, kde-format
 msgid "Starting to generate jAlbum..."
 msgstr "Начало создания галереи jAlbum..."
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:149
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:151
 #, kde-format
 msgid "Jalbum is completed, but some warnings occurred."
 msgstr "Создание галереи jAlbum завершено. Проверьте уведомления."
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:154
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:156
 #, kde-format
 msgid "Jalbum completed."
 msgstr "Создание галереи jAlbum завершено."
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:77
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:79
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
@@ -18038,50 +18038,50 @@ msgstr ""
 "мастер поможет быстро выполнить экспорт изображений в</p><p></p><p>альбом "
 "jAlbum.</p></qt>"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:97
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:99
 #, kde-format
 msgctxt "@title:group"
 msgid "jAlbum Binaries"
 msgstr "Исполняемые файлы jAlbum"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:66
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:68
 #, kde-format
 msgid "Project Title:"
 msgstr "Название проекта:"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:70
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:72
 #, kde-format
 msgid "Set here the project title"
 msgstr "Укажите название проекта"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:77
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:79
 #, kde-format
 msgid "Projects folder:"
 msgstr "Папки проекта:"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:80
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Projects Folder"
 msgstr "Папка проекта"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:66
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:68
 #, kde-format
 msgctxt "@title:window"
 msgid "Create jAlbum Album"
 msgstr "Создание альбома jAlbum"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:74
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:76
 #, kde-format
 msgid "Welcome to jAlbum Export Tool"
 msgstr "Добро пожаловать в мастер экспорта jAlbum"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:76
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:78
 #, kde-format
 msgid "Paths Selection"
 msgstr "Выбор путей"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:77
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:79
 #, kde-format
 msgid "Generating jAlbum"
 msgstr "Создание jAlbum"
@@ -18234,17 +18234,17 @@ msgctxt "@info"
 msgid "An error occurs while to start Media Server..."
 msgstr "Ошибка при запуске медиасервера..."
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:50
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:52
 #, kde-format
 msgid "DLNA Export"
 msgstr "Экспорт по протоколу DLNA"
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:65
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:67
 #, kde-format
 msgid "A tool to export items to a DLNA compatible device"
 msgstr "Инструмент для экспорта на устройства, совместимые со стандартом DLNA"
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:70
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:72
 #, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a DLNA "
@@ -18259,33 +18259,33 @@ msgstr ""
 "электронными устройствами (планшеты, сотовые телефоны, телевизоры и так "
 "далее).</p>"
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:108
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Share with DLNA..."
 msgstr "Опубликовать по протоколу DLNA..."
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:141
+#: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:143
 #, kde-format
 msgid "%1 Media Server"
 msgstr "Сервер DLNA %1"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:154
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:156
 #, kde-format
 msgid "Media Server have been started"
 msgstr "Запущен сервер DLNA"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:155
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:157
 #, kde-format
 msgid "Media Server cannot be started!"
 msgstr "Не удалось запустить сервер DLNA."
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:171
+#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:173
 #, kde-format
 msgid "MJPEG Server have been started"
 msgstr "Запущен сервер MJPEG"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:172
+#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:174
 #, kde-format
 msgid "MJPEG Server cannot be started!"
 msgstr "Не удалось запустить сервер MJPEG."
@@ -18502,17 +18502,17 @@ msgctxt "@title: On Screen Display"
 msgid "OSD"
 msgstr "Индикатор на экране"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:51
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:53
 #, kde-format
 msgid "MJPEG Stream Server"
 msgstr "Сервер потока MJPEG"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:66
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:68
 #, kde-format
 msgid "A tool to export items as MJPEG Stream"
 msgstr "Инструмент для экспорта в поток MJPEG"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:82
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:84
 #, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a "
@@ -18540,7 +18540,7 @@ msgstr ""
 "сервера MJPEG, а порт — это тот порт, который указан в диалоге настройки. К "
 "серверу MJPEG одновременно может быть подключено несколько компьютеров.</p>"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:99
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:101
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
 #: core/libs/widgets/mainview/daboutdata.cpp:107
 #: core/libs/widgets/mainview/daboutdata.cpp:125
@@ -18558,7 +18558,7 @@ msgstr ""
 msgid "Developer"
 msgstr "Разработчик"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:111
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Share as MJPEG Stream..."
@@ -18843,13 +18843,13 @@ msgstr "Обработать выбранные объекты"
 msgid "Words"
 msgstr "Слова"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:40
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "OCR Text Converter"
 msgstr "Преобразователь распознанного текста"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:55
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert documented images to text using OCR"
@@ -18857,7 +18857,7 @@ msgstr ""
 "Инструмент для пакетного преобразования изображений в текстовые документы с "
 "помощью распознавателя текста"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:60
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18880,19 +18880,19 @@ msgstr ""
 "\n"
 "Подробнее о Tesseract: %1"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:90
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "OCR Text Converter..."
 msgstr "Преобразователь распознанного текста..."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:75
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:77
 #, kde-format
 msgctxt "@label"
 msgid "Languages:"
 msgstr "Языки:"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:79
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:81
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18914,97 +18914,97 @@ msgstr ""
 "использовать режим обнаружения ориентации и сценария или определённый\n"
 "языковой модуль, если он доступен."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:88
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:90
 #, kde-format
 msgctxt "@label"
 msgid "Segmentation mode:"
 msgstr "Режим сегментации:"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:102
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid "Specify page segmentation mode."
 msgstr "Укажите режим сегментации страницы."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:106
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:108
 #, kde-format
 msgctxt "@label"
 msgid "Engine mode:"
 msgstr "Режим движка:"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:120
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid "Specify OCR engine mode."
 msgstr "Определить режим движка распознавания текста."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:124
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:126
 #, kde-format
 msgctxt "@label"
 msgid "Resolution Dpi:"
 msgstr "Разрешение Dpi:"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:127
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Specify DPI for input image."
 msgstr "Укажите DPI входного изображения"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:133
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:135
 #, kde-format
 msgctxt "@label"
 msgid "Store result in : "
 msgstr "Хранить результат в : "
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:134
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:136
 #, kde-format
 msgctxt "@option:check"
 msgid "Text file"
 msgstr "Текстовый файл"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:135
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:137
 #, kde-format
 msgctxt "@info"
 msgid "Store OCR result in separated text file"
 msgstr "Хранить результат распознавания в отдельном текстовом файле"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:138
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:140
 #, kde-format
 msgctxt "@option:check"
 msgid "Metadata"
 msgstr "Метаданные"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:139
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:141
 #, kde-format
 msgctxt "@info"
 msgid "Store OCR result in XMP metadata"
 msgstr "Хранить результат распознавания в метаданных XMP"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:145
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:147
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Multi-cores"
 msgstr "Использовать многоядерные процессоры"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:146
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:148
 #, kde-format
 msgctxt "@info"
 msgid "If this option is enabled, files will be processed in parallel"
 msgstr "Если эта функция включена, файлы будут обрабатываться параллельно"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:279
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:281
 #, kde-format
 msgctxt "@option: default Tesseract mode"
 msgid "Default"
 msgstr "По умолчанию"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:285
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:287
 #, kde-format
 msgctxt "@option: osd Tesseract mode"
 msgid "Orientation and Script Detection"
 msgstr "Orientation and Script Detection"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:304
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:306
 #, kde-format
 msgctxt "@label"
 msgid "Translate with %1:"
@@ -21168,17 +21168,17 @@ msgstr "Параметры видео"
 msgid "Generating Video Slideshow"
 msgstr "Выполняется создание видео слайд-шоу"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:41
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:42
 #, kde-format
 msgid "Export as wallpaper"
 msgstr "Сделать фоном рабочего стола"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:56
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:57
 #, kde-format
 msgid "A tool to set image as wallpaper"
 msgstr "Инструмент для назначения изображения фоном рабочего стола"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:61
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:62
 #, kde-format
 msgid ""
 "<p>This tool changes background wallpaper to selected image for all desktops."
@@ -21190,7 +21190,7 @@ msgstr ""
 "использовано первое из них.</p><p>Если изображение не выбрано, будет "
 "использовано первое изображение из текущего альбома.</p>"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:92
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "Set as wallpaper"
@@ -21269,34 +21269,34 @@ msgstr "Не удалось назначить свойства фона раб�
 msgid "Cannot apply changes to desktop wallpaper."
 msgstr "Не удалось изменить фон рабочего стола."
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:56
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "WallPaper Settings"
 msgstr "Параметры обоев рабочего стола"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:73
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:71
 #, kde-format
 msgid "Wallpaper Layout:"
 msgstr "Размещение:"
 
 # выровнять? --aspotashev
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:75
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:73
 #, kde-format
 msgid "Adjusted"
 msgstr "Исправлено"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:79
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:77
 #, kde-format
 msgid "Adjusted with Aspect ratio"
 msgstr "Исправлено с соотношением сторон"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:80
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:78
 #, kde-format
 msgid "Adjusted and cropped"
 msgstr "Исправлено и кадрировано"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:85
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:83
 #, kde-format
 msgid "Centered"
 msgstr "По центру"
@@ -22108,27 +22108,27 @@ msgid "Presentation..."
 msgstr "Презентация..."
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:241
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:242
 #, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "Время задержки для слайд-шоу"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:225
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:242
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:243
 #, kde-format
 msgid "Delay:"
 msgstr "Задержка:"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:398
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:423
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "Удаление изображения"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:424
 #, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr "Переместить это изображение в корзину?"
@@ -22576,12 +22576,12 @@ msgstr ""
 "Произошла ошибка воспроизведения объекта\n"
 "%1"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:121
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:122
 #, kde-format
 msgid "Switch Screen"
 msgstr "Сменить экран"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:134
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:135
 #, kde-format
 msgctxt "%1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
