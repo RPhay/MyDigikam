@@ -248,7 +248,7 @@ BUGFIXES:
 218 ==> 505019 - Thumbnails not displayed.
 219 ==> 505161 - Mac version 8.6.0 will not load under Mac OS Sequoia 15.5 - could be a signing problem?
 220 ==> 505211 - Weird creation of files.
-221 ==> 
+221 ==> 500043 - GPS being deleted from .mp4 when I "Read metadata from file to database".
 222 ==> 
 223 ==> 
 224 ==> 
