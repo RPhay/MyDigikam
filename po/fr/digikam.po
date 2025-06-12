@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-08 02:00+0000\n"
-"PO-Revision-Date: 2025-05-14 08:50+0200\n"
+"PO-Revision-Date: 2025-06-10 08:15+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -79,7 +79,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 "X-Text-Markup: kde4\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -65134,10 +65134,9 @@ msgid "Ignored file extensions:"
 msgstr "Extensions des fichiers ignorés :"
 
 #: core/utilities/setup/camera/setupcamera.cpp:402
-#, fuzzy, kde-format
-#| msgid "Defaults"
+#, kde-format
 msgid "&Defaults"
-msgstr "Par défaut"
+msgstr "Par &défaut"
 
 #: core/utilities/setup/camera/setupcamera.cpp:418
 #, kde-format
@@ -65619,6 +65618,8 @@ msgstr "Télécharger les fichiers de modèles demandés"
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr ""
+"Ouvrir le dossier local utilisé pour l'enregistrement des fichiers de "
+"données."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:165
 #, kde-format
@@ -67349,8 +67350,7 @@ msgstr ""
 "Voulez-vous tester votre système maintenant ?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Début"
@@ -67941,11 +67941,9 @@ msgid "Open Download Dialog..."
 msgstr "Ouvrir la boîte de dialogue de téléchargement…"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Local Storage"
+#, kde-format
 msgid "Open Local Storage..."
-msgstr "Exporter vers un périphérique d'enregistrement local"
+msgstr "Ouvrir le media local"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:146
 #, kde-format

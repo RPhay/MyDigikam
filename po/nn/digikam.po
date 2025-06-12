@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-05 01:59+0000\n"
+"POT-Creation-Date: 2025-06-08 02:00+0000\n"
 "PO-Revision-Date: 2025-05-03 11:36+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -982,9 +982,9 @@ msgstr ""
 "p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1120
-#: core/utilities/imageeditor/main/imagewindow.cpp:1145
-#: core/utilities/imageeditor/main/imagewindow.cpp:1177
+#: core/utilities/imageeditor/main/imagewindow.cpp:1118
+#: core/utilities/imageeditor/main/imagewindow.cpp:1143
+#: core/utilities/imageeditor/main/imagewindow.cpp:1175
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Album «%1»"
@@ -1352,7 +1352,7 @@ msgstr ""
 msgid "Loading albums..."
 msgstr "Lastar album …"
 
-#: core/app/main/digikamapp.cpp:379
+#: core/app/main/digikamapp.cpp:381
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1363,7 +1363,7 @@ msgstr ""
 "på nytt og «Nei» elles. I så fall vert farge­handteringa slått av til du "
 "rettar opp i dette.</p>"
 
-#: core/app/main/digikamapp.cpp:435
+#: core/app/main/digikamapp.cpp:437
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1372,92 +1372,92 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:723 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:725 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Ingen merkte element (%1 element)"
 msgstr[1] "Ingen merkte element (%1 element)"
 
-#: core/app/main/digikamapp.cpp:729
+#: core/app/main/digikamapp.cpp:731
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Ingen merkte element (%1 [%2] element)"
 msgstr[1] "Ingen merkte element (%1 [%2] element)"
 
-#: core/app/main/digikamapp.cpp:734
+#: core/app/main/digikamapp.cpp:736
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Ingen merkte element (%1 element – med grupperte element: %2)"
 msgstr[1] "Ingen merkte element (%1 element – med grupperte element: %2)"
 
-#: core/app/main/digikamapp.cpp:745
+#: core/app/main/digikamapp.cpp:747
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 element merkt (%3/%4)"
 msgstr[1] "%1/%2 element merkte (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:758
+#: core/app/main/digikamapp.cpp:760
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] element merkt (%4/%5)"
 msgstr[1] "%1/%2 [%3] element merkte (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:766
+#: core/app/main/digikamapp.cpp:768
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "1/%2 element merkt. Til saman med grupperte element: %3"
 msgstr[1] "%1/%2 element merkte. Til saman med grupperte element: %3"
 
-#: core/app/main/digikamapp.cpp:774
+#: core/app/main/digikamapp.cpp:776
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] element merkt (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] element merkte (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:783
+#: core/app/main/digikamapp.cpp:785
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "1/%2 element merkt. Med grupperte element: %3/%4"
 msgstr[1] "%1/%2 element merkte. Med grupperte element: %3/%4"
 
-#: core/app/main/digikamapp.cpp:814
+#: core/app/main/digikamapp.cpp:816
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 av %2)"
 
-#: core/app/main/digikamapp.cpp:828
+#: core/app/main/digikamapp.cpp:830
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 av %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:832
+#: core/app/main/digikamapp.cpp:834
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 av %2. Til saman med grupperte element: %3)"
 
-#: core/app/main/digikamapp.cpp:843
+#: core/app/main/digikamapp.cpp:845
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 gøymd element"
 msgstr[1] "%1 gøymde element"
 
-#: core/app/main/digikamapp.cpp:902
+#: core/app/main/digikamapp.cpp:904
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Lagra metadata til biletfil"
 msgstr[1] "Lagra metadata til merkte biletfiler"
 
-#: core/app/main/digikamapp.cpp:904
+#: core/app/main/digikamapp.cpp:906
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2861,7 +2861,7 @@ msgstr "Vis i fullskjerm"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:90
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
@@ -8865,7 +8865,7 @@ msgid "Frost Glass"
 msgstr "Frosta glas"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:103
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:84
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:82
 #, kde-format
 msgid "Mosaic"
 msgstr "Mosaikk"
@@ -10811,18 +10811,18 @@ msgstr ""
 "Klarte ikkje opna skannaren «%1».\n"
 "Kontroller innstillingane."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:60
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan Image"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:68
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:73
 #, kde-format
 msgid "Scan Images"
 msgstr "Skann bilete"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:163
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:171
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1849
 #, kde-format
@@ -10830,27 +10830,27 @@ msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:211
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:219
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:148
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:212
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:220
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:149
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "Biletformatet «%1» er ikkje støtta."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:224
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:232
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:225
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:233
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:162
 #, kde-format
 msgid ""
@@ -10862,7 +10862,7 @@ msgstr ""
 "«%1» til\n"
 "«%2»."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:240
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:248
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2323
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2342
@@ -10871,25 +10871,25 @@ msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:241
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:249
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:178
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Fila «%1» finst frå før. Er du sikker på at du vil skriva over ho?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:292
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, kde-format
 msgid "Saving file %1 -"
 msgstr "Lagrar fila %1 –"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:308
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:308
 #, kde-format
 msgid "Cannot save \"%1\" file"
 msgstr "Klarta ikkje lagra fila «%1»"
@@ -15416,17 +15416,17 @@ msgctxt "@action"
 msgid "Adjust Time && Date..."
 msgstr "Juster dato og klokkeslett …"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:39
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:44
 #, kde-format
 msgid "Create Calendar"
 msgstr "Lag kalender"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:54
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:59
 #, kde-format
 msgid "A tool to create calendar from images"
 msgstr ""
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:59
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This tool allows users to compose items and create a calendar with your "
@@ -15436,21 +15436,21 @@ msgid ""
 "in a PDF file.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:80
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:85
 #, kde-format
 msgid "Former Author"
 msgstr ""
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:95
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:92
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:102
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:105
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:96
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr ""
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:98
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Create Calendar..."
@@ -15843,19 +15843,19 @@ msgstr ""
 msgid "Camera"
 msgstr "Kamera"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:39
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "DNG Converter"
 msgstr ""
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:54
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert RAW camera images to DNG"
 msgstr ""
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:59
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -15872,7 +15872,7 @@ msgstr ""
 "\n"
 "Du finn meir informasjon om formatet på denne Wikipedia-sida: %1"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:97
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "DNG Converter..."
@@ -16276,7 +16276,7 @@ msgstr ""
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:91
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:88
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:86
 #, kde-format
 msgid "Author and Maintainer"
 msgstr ""
@@ -16799,7 +16799,7 @@ msgid "Create Html gallery..."
 msgstr "Lag HTML-galleri …"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:98
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:97
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:99
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:122
@@ -16814,20 +16814,20 @@ msgid "Starting to generate gallery..."
 msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:122
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:119
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:121
 #, kde-format
 msgid "%1 albums to process:"
 msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:135
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:131
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:133
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:144
 #, kde-format
 msgid "%1 items to process"
 msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:139
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:135
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:137
 #, kde-format
 msgid "Output directory: %1"
 msgstr ""
@@ -16910,7 +16910,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:86
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:84
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:91
@@ -16919,7 +16919,7 @@ msgid "&Choose image selection method:"
 msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:89
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:91
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:87
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:94
@@ -17013,7 +17013,7 @@ msgid "Welcome to HTML Gallery Tool"
 msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:75
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:77
 #, kde-format
 msgid "Items Selection"
 msgstr ""
@@ -17039,32 +17039,32 @@ msgstr "Utskriftsinnstillingar"
 msgid "Generating Gallery"
 msgstr "Lagar galleri"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:74
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:76
 #, kde-format
 msgid "Create directories"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:78
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:80
 #, kde-format
 msgid "Could not create folder '%1'"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:118
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:120
 #, kde-format
 msgid "Create jAlbum project files"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:126
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:128
 #, kde-format
 msgid "Failed to create project files"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:143
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:145
 #, kde-format
 msgid "Failed to create settings file"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:157
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:159
 #, kde-format
 msgid "Launch jAlbum with new project files"
 msgstr ""
@@ -17100,22 +17100,22 @@ msgstr "Lag jAlbum-galleri …"
 msgid "jAlbum Gallery Generator."
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:111
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:113
 #, kde-format
 msgid "Starting to generate jAlbum..."
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:149
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:151
 #, kde-format
 msgid "Jalbum is completed, but some warnings occurred."
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:154
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:156
 #, kde-format
 msgid "Jalbum completed."
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:77
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:79
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
@@ -17123,50 +17123,50 @@ msgid ""
 "project.</p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:97
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:99
 #, kde-format
 msgctxt "@title:group"
 msgid "jAlbum Binaries"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:66
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:68
 #, kde-format
 msgid "Project Title:"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:70
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:72
 #, kde-format
 msgid "Set here the project title"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:77
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:79
 #, kde-format
 msgid "Projects folder:"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:80
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Projects Folder"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:66
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:68
 #, kde-format
 msgctxt "@title:window"
 msgid "Create jAlbum Album"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:74
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:76
 #, kde-format
 msgid "Welcome to jAlbum Export Tool"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:76
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:78
 #, kde-format
 msgid "Paths Selection"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:77
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:79
 #, kde-format
 msgid "Generating jAlbum"
 msgstr "Lagar jAlbum"
@@ -17303,17 +17303,17 @@ msgctxt "@info"
 msgid "An error occurs while to start Media Server..."
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:50
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:52
 #, kde-format
 msgid "DLNA Export"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:65
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:67
 #, kde-format
 msgid "A tool to export items to a DLNA compatible device"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:70
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:72
 #, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a DLNA "
@@ -17322,33 +17322,33 @@ msgid ""
 "DLNA, as tablets, cellulars, TV, etc.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:108
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Share with DLNA..."
 msgstr "Del med DLNA …"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:141
+#: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:143
 #, kde-format
 msgid "%1 Media Server"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:154
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:156
 #, kde-format
 msgid "Media Server have been started"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:155
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:157
 #, kde-format
 msgid "Media Server cannot be started!"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:171
+#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:173
 #, kde-format
 msgid "MJPEG Server have been started"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:172
+#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:174
 #, kde-format
 msgid "MJPEG Server cannot be started!"
 msgstr ""
@@ -17541,17 +17541,17 @@ msgctxt "@title: On Screen Display"
 msgid "OSD"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:51
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:53
 #, kde-format
 msgid "MJPEG Stream Server"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:66
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:68
 #, kde-format
 msgid "A tool to export items as MJPEG Stream"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:82
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:84
 #, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a "
@@ -17567,7 +17567,7 @@ msgid ""
 "same time.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:99
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:101
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
 #: core/libs/widgets/mainview/daboutdata.cpp:107
 #: core/libs/widgets/mainview/daboutdata.cpp:125
@@ -17585,7 +17585,7 @@ msgstr ""
 msgid "Developer"
 msgstr "Utviklar"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:111
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Share as MJPEG Stream..."
@@ -17856,19 +17856,19 @@ msgstr ""
 msgid "Words"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:40
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "OCR Text Converter"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:55
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert documented images to text using OCR"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:60
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17882,19 +17882,19 @@ msgid ""
 "See details on %1 for more information on Tesseract"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:90
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "OCR Text Converter..."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:75
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:77
 #, kde-format
 msgctxt "@label"
 msgid "Languages:"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:79
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:81
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17908,97 +17908,97 @@ msgid ""
 "languagemodule if available."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:88
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:90
 #, kde-format
 msgctxt "@label"
 msgid "Segmentation mode:"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:102
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid "Specify page segmentation mode."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:106
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:108
 #, kde-format
 msgctxt "@label"
 msgid "Engine mode:"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:120
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid "Specify OCR engine mode."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:124
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:126
 #, kde-format
 msgctxt "@label"
 msgid "Resolution Dpi:"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:127
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Specify DPI for input image."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:133
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:135
 #, kde-format
 msgctxt "@label"
 msgid "Store result in : "
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:134
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:136
 #, kde-format
 msgctxt "@option:check"
 msgid "Text file"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:135
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:137
 #, kde-format
 msgctxt "@info"
 msgid "Store OCR result in separated text file"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:138
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:140
 #, kde-format
 msgctxt "@option:check"
 msgid "Metadata"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:139
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:141
 #, kde-format
 msgctxt "@info"
 msgid "Store OCR result in XMP metadata"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:145
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:147
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Multi-cores"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:146
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:148
 #, kde-format
 msgctxt "@info"
 msgid "If this option is enabled, files will be processed in parallel"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:279
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:281
 #, kde-format
 msgctxt "@option: default Tesseract mode"
 msgid "Default"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:285
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:287
 #, kde-format
 msgctxt "@option: osd Tesseract mode"
 msgid "Orientation and Script Detection"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:304
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:306
 #, kde-format
 msgctxt "@label"
 msgid "Translate with %1:"
@@ -19976,17 +19976,17 @@ msgstr "Filminnstillingar"
 msgid "Generating Video Slideshow"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:41
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:42
 #, kde-format
 msgid "Export as wallpaper"
 msgstr "Eksporter som bakgrunnsbilete"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:56
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:57
 #, kde-format
 msgid "A tool to set image as wallpaper"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:61
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:62
 #, kde-format
 msgid ""
 "<p>This tool changes background wallpaper to selected image for all desktops."
@@ -19994,7 +19994,7 @@ msgid ""
 "image is selected, the first one from current album will be used.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:92
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "Set as wallpaper"
@@ -20062,33 +20062,33 @@ msgstr ""
 msgid "Cannot apply changes to desktop wallpaper."
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:56
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "WallPaper Settings"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:73
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:71
 #, kde-format
 msgid "Wallpaper Layout:"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:75
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:73
 #, kde-format
 msgid "Adjusted"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:79
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:77
 #, kde-format
 msgid "Adjusted with Aspect ratio"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:80
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:78
 #, kde-format
 msgid "Adjusted and cropped"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:85
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:83
 #, kde-format
 msgid "Centered"
 msgstr ""
@@ -20383,7 +20383,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:292
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:294
 #, kde-format
 msgid "Stop"
 msgstr ""
@@ -20842,27 +20842,27 @@ msgid "Presentation..."
 msgstr "Presentasjon …"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:241
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:242
 #, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:225
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:242
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:243
 #, kde-format
 msgid "Delay:"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:398
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:423
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:424
 #, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr ""
@@ -21265,12 +21265,12 @@ msgid ""
 "%1"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:121
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:122
 #, kde-format
 msgid "Switch Screen"
 msgstr "Byt skjerm"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:134
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:135
 #, kde-format
 msgctxt "%1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
@@ -30710,7 +30710,7 @@ msgid "Remove Black Frame"
 msgstr ""
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:260
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:346
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:348
 #, kde-format
 msgid "Clear List"
 msgstr ""
@@ -37680,7 +37680,7 @@ msgstr "Lysbord"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:443
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:50
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:195
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:197
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Kø­handsamar"
@@ -47432,7 +47432,7 @@ msgid "Unknown"
 msgstr "Ukjend"
 
 #: core/showfoto/main/showfoto.cpp:291
-#: core/utilities/imageeditor/main/imagewindow.cpp:505
+#: core/utilities/imageeditor/main/imagewindow.cpp:503
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -47461,8 +47461,8 @@ msgid "Remote file handling is not supported"
 msgstr ""
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:588
-#: core/utilities/imageeditor/main/imagewindow.cpp:703
+#: core/utilities/imageeditor/main/imagewindow.cpp:586
+#: core/utilities/imageeditor/main/imagewindow.cpp:701
 #, kde-format
 msgid "Image saved successfully"
 msgstr ""
@@ -55762,7 +55762,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:471
-#: core/utilities/import/main/importui.cpp:506
+#: core/utilities/import/main/importui.cpp:508
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
@@ -55827,7 +55827,7 @@ msgid "Auto-Rotate"
 msgstr ""
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:571
-#: core/utilities/import/main/importui.cpp:551
+#: core/utilities/import/main/importui.cpp:553
 #: core/utilities/import/main/importui.cpp:794
 #, kde-format
 msgctxt "@action"
@@ -56075,34 +56075,34 @@ msgctxt "@action: open with desktop application"
 msgid "Open With..."
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:200
+#: core/utilities/imageeditor/main/imagewindow.cpp:198
 #, kde-format
 msgid "Image Editor - %1"
 msgstr "Biletredigering – %1"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:204
+#: core/utilities/imageeditor/main/imagewindow.cpp:202
 #, kde-format
 msgid "Image Editor"
 msgstr "Bilet­redigering"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:374
+#: core/utilities/imageeditor/main/imagewindow.cpp:372
 #, kde-format
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:375
+#: core/utilities/imageeditor/main/imagewindow.cpp:373
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1 × %2 (%3 megapikslar)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:948
+#: core/utilities/imageeditor/main/imagewindow.cpp:946
 #, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:949
+#: core/utilities/imageeditor/main/imagewindow.cpp:947
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -56111,13 +56111,13 @@ msgstr ""
 "Det finst ingen bilete i dette albumet.\n"
 "Biletredigeringsprogrammet vert no lukka."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1222
+#: core/utilities/imageeditor/main/imagewindow.cpp:1220
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1223
+#: core/utilities/imageeditor/main/imagewindow.cpp:1221
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -56660,337 +56660,337 @@ msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:156
+#: core/utilities/import/main/importui.cpp:158
 #, kde-format
 msgctxt "@info"
 msgid "Set how digiKam will rename files as they are downloaded."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:157
+#: core/utilities/import/main/importui.cpp:159
 #, kde-format
 msgctxt "@item"
 msgid "File Renaming Options"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:163
+#: core/utilities/import/main/importui.cpp:165
 #, kde-format
 msgctxt "@item"
 msgid "Auto-creation of Albums"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:169
+#: core/utilities/import/main/importui.cpp:171
 #, kde-format
 msgctxt "@item"
 msgid "On the Fly Operations (JPEG only)"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:177
+#: core/utilities/import/main/importui.cpp:179
 #, kde-format
 msgctxt "@item"
 msgid "DNG Convert Options"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:185
+#: core/utilities/import/main/importui.cpp:187
 #, kde-format
 msgctxt "@item"
 msgid "Scripting"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:189
+#: core/utilities/import/main/importui.cpp:191
 #, kde-format
 msgctxt "@title"
 msgid "Settings"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:204
+#: core/utilities/import/main/importui.cpp:206
 #, kde-format
 msgctxt "@action Cancel process"
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: core/utilities/import/main/importui.cpp:211
+#: core/utilities/import/main/importui.cpp:213
 #, kde-format
 msgctxt "@action Information about camera"
 msgid "Information"
 msgstr "Informasjon"
 
-#: core/utilities/import/main/importui.cpp:218
+#: core/utilities/import/main/importui.cpp:220
 #, kde-format
 msgctxt "@action Capture photo from camera"
 msgid "Capture"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:230
+#: core/utilities/import/main/importui.cpp:232
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
 msgstr "Merk alle"
 
-#: core/utilities/import/main/importui.cpp:238
+#: core/utilities/import/main/importui.cpp:240
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
 msgstr "Fjern merking"
 
-#: core/utilities/import/main/importui.cpp:246
+#: core/utilities/import/main/importui.cpp:248
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Invert Selection"
 msgstr "Omvend merking"
 
-#: core/utilities/import/main/importui.cpp:254
+#: core/utilities/import/main/importui.cpp:256
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
 msgstr "Merk nye element"
 
-#: core/utilities/import/main/importui.cpp:261
+#: core/utilities/import/main/importui.cpp:263
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
 msgstr "Merk låste element"
 
-#: core/utilities/import/main/importui.cpp:269
+#: core/utilities/import/main/importui.cpp:271
 #, kde-format
 msgctxt "@title:menu"
 msgid "Download"
 msgstr "Last ned"
 
-#: core/utilities/import/main/importui.cpp:274
+#: core/utilities/import/main/importui.cpp:276
 #, kde-format
 msgctxt "@action"
 msgid "Download New"
 msgstr "Last ned nye"
 
-#: core/utilities/import/main/importui.cpp:284
+#: core/utilities/import/main/importui.cpp:286
 #, kde-format
 msgctxt "@action"
 msgid "Download Selected"
 msgstr "Last ned merkte"
 
-#: core/utilities/import/main/importui.cpp:291
+#: core/utilities/import/main/importui.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "Download All"
 msgstr "Last ned alle"
 
-#: core/utilities/import/main/importui.cpp:299
+#: core/utilities/import/main/importui.cpp:301
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
 msgstr "Last ned og slett nye"
 
-#: core/utilities/import/main/importui.cpp:307
+#: core/utilities/import/main/importui.cpp:309
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
 msgstr "Lasta ned og slett merkte"
 
-#: core/utilities/import/main/importui.cpp:315
+#: core/utilities/import/main/importui.cpp:317
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
 msgstr "Last ned og slett alle"
 
-#: core/utilities/import/main/importui.cpp:322
+#: core/utilities/import/main/importui.cpp:324
 #, kde-format
 msgctxt "@action"
 msgid "Upload..."
 msgstr "Last opp …"
 
-#: core/utilities/import/main/importui.cpp:330
+#: core/utilities/import/main/importui.cpp:332
 #, kde-format
 msgctxt "@action"
 msgid "Toggle Lock"
 msgstr "Lås på/av"
 
-#: core/utilities/import/main/importui.cpp:338
+#: core/utilities/import/main/importui.cpp:340
 #, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
 msgstr "Merk som nedlasta"
 
-#: core/utilities/import/main/importui.cpp:345
+#: core/utilities/import/main/importui.cpp:347
 #, kde-format
 msgctxt "@title:menu"
 msgid "Delete"
 msgstr "Slett"
 
-#: core/utilities/import/main/importui.cpp:350
+#: core/utilities/import/main/importui.cpp:352
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:358
+#: core/utilities/import/main/importui.cpp:360
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete All"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:364
+#: core/utilities/import/main/importui.cpp:366
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete New"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:372
+#: core/utilities/import/main/importui.cpp:374
 #, kde-format
 msgctxt "@title:group"
 msgid "Views"
 msgstr "Visingar"
 
-#: core/utilities/import/main/importui.cpp:376
+#: core/utilities/import/main/importui.cpp:378
 #, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Miniatyrbilete"
 
-#: core/utilities/import/main/importui.cpp:383
+#: core/utilities/import/main/importui.cpp:385
 #, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
 msgstr "Førehandsvis element"
 
-#: core/utilities/import/main/importui.cpp:393
+#: core/utilities/import/main/importui.cpp:395
 #, kde-format
 msgctxt "@action Switch to map view"
 msgid "Map"
 msgstr "Kart"
 
-#: core/utilities/import/main/importui.cpp:405
+#: core/utilities/import/main/importui.cpp:407
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
 msgstr "&Sorter element"
 
-#: core/utilities/import/main/importui.cpp:406
+#: core/utilities/import/main/importui.cpp:408
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:411
+#: core/utilities/import/main/importui.cpp:413
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:412
+#: core/utilities/import/main/importui.cpp:414
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Path"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:413
-#, kde-format
-msgctxt "@item:inmenu Sort by"
-msgid "By Date"
-msgstr ""
-
-#: core/utilities/import/main/importui.cpp:414
-#, kde-format
-msgctxt "@item:inmenu Sort by"
-msgid "By Size"
-msgstr ""
-
 #: core/utilities/import/main/importui.cpp:415
 #, kde-format
 msgctxt "@item:inmenu Sort by"
-msgid "By Rating"
+msgid "By Date"
 msgstr ""
 
 #: core/utilities/import/main/importui.cpp:416
 #, kde-format
 msgctxt "@item:inmenu Sort by"
+msgid "By Size"
+msgstr ""
+
+#: core/utilities/import/main/importui.cpp:417
+#, kde-format
+msgctxt "@item:inmenu Sort by"
+msgid "By Rating"
+msgstr ""
+
+#: core/utilities/import/main/importui.cpp:418
+#, kde-format
+msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:440
+#: core/utilities/import/main/importui.cpp:442
 #, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:441
+#: core/utilities/import/main/importui.cpp:443
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:445
+#: core/utilities/import/main/importui.cpp:447
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:447
+#: core/utilities/import/main/importui.cpp:449
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:459
+#: core/utilities/import/main/importui.cpp:461
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr "&Grupper element"
 
-#: core/utilities/import/main/importui.cpp:460
+#: core/utilities/import/main/importui.cpp:462
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:465
+#: core/utilities/import/main/importui.cpp:467
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "Flat liste"
 
-#: core/utilities/import/main/importui.cpp:466
+#: core/utilities/import/main/importui.cpp:468
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "Etter mappe"
 
-#: core/utilities/import/main/importui.cpp:467
+#: core/utilities/import/main/importui.cpp:469
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "Etter format"
 
-#: core/utilities/import/main/importui.cpp:468
+#: core/utilities/import/main/importui.cpp:470
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "Etter dato"
 
-#: core/utilities/import/main/importui.cpp:494
+#: core/utilities/import/main/importui.cpp:496
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "Tilpass til &vindauge"
 
-#: core/utilities/import/main/importui.cpp:499
+#: core/utilities/import/main/importui.cpp:501
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "Forstørr til 100 %"
 
-#: core/utilities/import/main/importui.cpp:517
+#: core/utilities/import/main/importui.cpp:519
 #, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "Vis historikk"
 
-#: core/utilities/import/main/importui.cpp:523
+#: core/utilities/import/main/importui.cpp:525
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "Vis miniatyrlinje"
 
-#: core/utilities/import/main/importui.cpp:558
+#: core/utilities/import/main/importui.cpp:560
 #, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
@@ -57754,7 +57754,7 @@ msgstr ""
 msgid "Drag and drop images here"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablewindow.cpp:200
+#: core/utilities/lighttable/lighttablewindow.cpp:202
 #, kde-format
 msgid "%1 item on Light Table"
 msgid_plural "%1 items on Light Table"
@@ -58542,82 +58542,82 @@ msgstr ""
 msgid "Item scanned for thumbnails: %1"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:126
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:128
 #, kde-format
 msgid "Queues"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:135
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:137
 #, kde-format
 msgid "Queue Settings"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:144
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:146
 #, kde-format
 msgid "Control Panel"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:153
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:155
 #, kde-format
 msgid "Assigned Tools"
 msgstr "Tilordna verktøy"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:162
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:164
 #, kde-format
 msgid "Tool Settings"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:279
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:281
 #, kde-format
 msgid "Run"
 msgstr "Køyr"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:288
 #, kde-format
 msgid "Run all"
 msgstr "Køyr alle"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:298
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:300
 #, kde-format
 msgid "New Queue"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:302
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:304
 #, kde-format
 msgid "Remove Queue"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:308
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:310
 #, kde-format
 msgid "Save Workflow"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:312
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:314
 #, kde-format
 msgid "Remove items"
 msgstr "Fjern element"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:318
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:320
 #, kde-format
 msgid "Remove processed items"
 msgstr "Fjern ferdige element"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:323
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:325
 #, kde-format
 msgid "Clear Queue"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:334
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
 #, kde-format
 msgid "Move up"
 msgstr "Flytt opp"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:338
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:340
 #, kde-format
 msgid "Move down"
 msgstr "Flytt ned"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:342
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:344
 #, kde-format
 msgid "Remove tool"
 msgstr "Fjern verktøy"
