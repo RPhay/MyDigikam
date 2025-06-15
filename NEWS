@@ -253,7 +253,7 @@ BUGFIXES:
 223 ==> 505212 - Faces read from xmp data is not shown correctly.
 224 ==> 505506 - OpenCV not detected at startup.
 225 ==> 503097 - Possibility to open folders including subfolders.
-226 ==> 
+226 ==> 505609 - 8bit JXL images with alpha have no transparency [patch].
 227 ==> 
 228 ==> 
 229 ==> 

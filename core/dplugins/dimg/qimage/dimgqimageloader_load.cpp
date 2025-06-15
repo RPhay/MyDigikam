@@ -146,11 +146,11 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
 
         for (uint i = 0 ; i < w * h ; ++i)
         {
-            QColor color(*sptr);
-            dptr[0] = color.blue();
-            dptr[1] = color.green();
-            dptr[2] = color.red();
-            dptr[3] = m_hasAlpha ? color.alpha() : 255;
+            QColor color = QColor::fromRgba(*sptr);
+            dptr[0]      = color.blue();
+            dptr[1]      = color.green();
+            dptr[2]      = color.red();
+            dptr[3]      = m_hasAlpha ? color.alpha() : 255;
 
             dptr   += 4;
             sptr++;
