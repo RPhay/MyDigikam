@@ -35,7 +35,7 @@ DLNAMediaServer::DLNAMediaServer(const char*  friendly_name,
 
 void DLNAMediaServer::addAlbumsOnServer(const MediaServerMap& map)
 {
-    static_cast<DLNAMediaServerDelegate*>(GetDelegate())->addAlbumsOnServer(map);
+    static_cast<DLNAMediaServerDelegate*>(GetDelegate())->DLNAMediaServerDelegate::addAlbumsOnServer(map);
 }
 
 NPT_Result DLNAMediaServer::SetupIcons()
