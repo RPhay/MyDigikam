@@ -16268,7 +16268,7 @@ msgstr "non valable"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:130
 #, kde-format
 msgid "Please wait ..."
-msgstr "Veuillez patienter..."
+msgstr "Veuillez patienter…"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
 #, kde-format
@@ -19023,7 +19023,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "OCR Text Converter..."
-msgstr "Convertisseur de texte par reconnaissance optique de caractères..."
+msgstr "Convertisseur de texte par reconnaissance optique de caractères…"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:77
 #, kde-format
@@ -29260,7 +29260,7 @@ msgstr ""
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr ""
 "La base de données MySQL interne est en cours d'initialisation. Veuillez "
-"patienter..."
+"patienter…"
 
 #: core/libs/database/server/databaseserver.cpp:549
 #, kde-format
@@ -35575,7 +35575,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, kde-format
 msgid "Face Detection Settings"
-msgstr "Configuration pour la reconnaissance de visages"
+msgstr "Configuration pour la détection de visages"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
 #, kde-format
@@ -35614,8 +35614,8 @@ msgid ""
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
-"La reconnaissance des visages est une tâche consommatrice de temps de "
-"traitement.\n"
+"La détection et la reconnaissance des visages sont des tâches consommatrices "
+"de temps de traitement.\n"
 "Vous pouvez décider d'utiliser ou non tous les cœurs de vos processeurs "
 "présents \n"
 "sur votre système ou travailler en tâche de fond uniquement sur un seul cœur."
@@ -42764,7 +42764,7 @@ msgstr "Erreur lors de la création d'un dossier temporaire %1 !"
 #: core/libs/video/manager/vidslidethread.cpp:95
 #, kde-format
 msgid "Encoding frames..."
-msgstr "Encodage des trames..."
+msgstr "Encodage des trames…"
 
 #: core/libs/video/manager/vidslidethread.cpp:133
 #, kde-format
@@ -49781,8 +49781,7 @@ msgstr "Nom"
 #, kde-format
 msgctxt "@info"
 msgid "Enter here a string to search in languages list..."
-msgstr ""
-"Saisissez ici une chaîne pour une recherche dans la liste des langues..."
+msgstr "Saisissez ici une chaîne pour une recherche dans la liste des langues…"
 
 #: core/libs/widgets/text/localizeconfig.cpp:144
 #, kde-format
@@ -51435,7 +51434,7 @@ msgstr "&Nom :"
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite entry name here..."
-msgstr "Saisissez ici le nom de l'entrée de favori..."
+msgstr "Saisissez ici le nom de l'entrée de favori…"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:130
 #, kde-format
@@ -53986,7 +53985,7 @@ msgstr "&Masquer"
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:437
 #, kde-format
 msgid "&Configure..."
-msgstr "&Configurer..."
+msgstr "&Configurer…"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:160
 #, kde-format
@@ -57599,7 +57598,7 @@ msgstr "Projection"
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:68
 #, kde-format
 msgid "Export as..."
-msgstr "Exporter comme..."
+msgstr "Exporter comme…"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:154
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:179
@@ -64032,7 +64031,7 @@ msgstr "Nouvelle recherche avancée…"
 #: core/utilities/searchwindow/searchtabheader.cpp:249
 #, kde-format
 msgid "Edit Current Search..."
-msgstr "Modifier la recherche actuelle..."
+msgstr "Modifier la recherche actuelle…"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:264
 #, kde-format
@@ -65634,7 +65633,7 @@ msgstr "Utiliser la fonctionnalité de reconnaissance faciale"
 #: core/utilities/setup/downloader/filesdownloader.cpp:167
 #, kde-format
 msgid "Use Aesthetic Detection feature"
-msgstr "Utiliser la fonctionnalité de reconnaissance esthétique"
+msgstr "Utiliser la fonctionnalité de détection esthétique"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:168
 #, kde-format
@@ -65750,7 +65749,7 @@ msgstr ""
 #: core/utilities/setup/downloader/filesdownloader.cpp:579
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
-msgstr "Nettoyer les fichiers de modèles « AI / DNN » inutilisés..."
+msgstr "Nettoyer les fichiers de modèles « AI / DNN » inutilisés…"
 
 #: core/utilities/setup/editor/setupeditor.cpp:65
 #, kde-format
@@ -67365,12 +67364,12 @@ msgstr "Commencer le test"
 #, kde-format
 msgctxt "@action:button"
 msgid "Testing..."
-msgstr "Test en cours..."
+msgstr "Test en cours…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:148
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
-msgstr "Démarrage du test « OpenCV OpenCL DNN »..."
+msgstr "Démarrage du test « OpenCV OpenCL DNN »…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:216
 #, kde-format
@@ -67402,7 +67401,7 @@ msgstr "Fermer la boîte de dialogue de test"
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 "Vérification en cours de la compatibilité de l'accélération matérielle avec "
-"le processeur graphique (GPU) pour OpenCL avec les modèles d'IA..."
+"le processeur graphique (GPU) pour OpenCL avec les modèles d'IA…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
 #, kde-format
@@ -67447,22 +67446,22 @@ msgstr "Impossible de charger une image de test à partir de %1"
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:304
 #, kde-format
 msgid "Preparing the image for processing..."
-msgstr "Préparation de l'image en cours pour traitement..."
+msgstr "Préparation de l'image en cours pour traitement…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:333
 #, kde-format
 msgid "Initializing face detection model..."
-msgstr "Initialisation du modèle de reconnaissance faciale..."
+msgstr "Initialisation du modèle de détection de faces…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:340
 #, kde-format
 msgid "Running face detection..."
-msgstr "Lancement de la reconnaissance faciale"
+msgstr "Lancement de la détection de faces…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:356
 #, kde-format
 msgid "Initializing feature extraction model..."
-msgstr "Initialisation du modèle d'extraction de traits en cours..."
+msgstr "Initialisation du modèle d'extraction de traits en cours…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:363
 #, kde-format
@@ -67472,7 +67471,7 @@ msgstr "Préparation en cours des visages pour extraction des traits…"
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:376
 #, kde-format
 msgid "Extracting face features..."
-msgstr "Extraction des traits du visage en cours..."
+msgstr "Extraction des traits du visage en cours…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
 #, kde-format

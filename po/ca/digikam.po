@@ -68685,13 +68685,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgid "Avg. similarity"
-#~ msgstr "Similitud mitjana"
-
-#~ msgid "&Scan for new items at startup (makes startup slower)"
-#~ msgstr ""
-#~ "&Explora cercant elements nous en iniciar (alenteix la inicialització)"
-
-#~ msgid "Detect and recognize Faces"
-#~ msgstr "Detecta i reconeix les cares"
