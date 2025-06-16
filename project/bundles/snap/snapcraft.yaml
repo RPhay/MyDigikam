@@ -328,8 +328,7 @@ parts:
       - cups-client
       - libxkbcommon0
       - bash
-    stage-snaps:
-      - exiftool
+      - libimage-exiftool-perl
     override-pull: |
         craftctl default
         patch -p0 < ${SNAPCRAFT_PROJECT_DIR}/project/bundles/snap/snap/local/digikam_magick_isnan.patch
