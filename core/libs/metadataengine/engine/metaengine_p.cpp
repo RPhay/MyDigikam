@@ -618,10 +618,10 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
         QByteArray rawComment(exifDatum.size(), '\0');
         exifDatum.copy(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(rawComment.data())), exifByteOrder());
 
-        if (
-            (rawComment.size() > 8) &&
-            rawComment.startsWith(QByteArray("UNICODE\0"))
-           )
+        if      (
+                 (rawComment.size() > 8) &&
+                  rawComment.startsWith(QByteArray("UNICODE\0"))
+                )
         {
             rawComment = rawComment.mid(8);
 
@@ -647,6 +647,13 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
             }
 
             return QString::fromUtf16(reinterpret_cast<char16_t*>(rawComment.data()), rawComment.size() / 2);
+        }
+        else if (
+                 (rawComment.size() > 8) &&
+                  rawComment.startsWith(QByteArray("ASCII\0\0\0"))
+                )
+        {
+            return QString::fromLatin1(rawComment.mid(8));
         }
 
         std::string comment;

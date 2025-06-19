@@ -256,7 +256,7 @@ BUGFIXES:
 226 ==> 505609 - 8bit JXL images with alpha have no transparency [patch].
 227 ==> 505632 - digikam crashes when trying to start a DLNA media server on mac.
 228 ==> 505669 - Crash on startup.
-229 ==> 
+229 ==> 480775 - ASCII in caption.
 230 ==> 
 231 ==> 
 232 ==> 
