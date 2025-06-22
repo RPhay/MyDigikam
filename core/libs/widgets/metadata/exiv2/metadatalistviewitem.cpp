@@ -35,7 +35,8 @@ namespace Digikam
 MetadataListViewItem::MetadataListViewItem(QTreeWidgetItem* const parent, const QString& key,
                                            const QString& title, const QString& value)
     : QTreeWidgetItem(parent),
-      m_key          (key)
+      m_key          (key),
+      m_value        (value)
 {
     setChildIndicatorPolicy(QTreeWidgetItem::DontShowIndicator);
     setText(0, title);
@@ -65,6 +66,7 @@ MetadataListViewItem::MetadataListViewItem(QTreeWidgetItem* const parent, const 
     setToolTip(0, title);
     setDisabled(true);
     setText(1, i18n("Unavailable"));
+    m_value   = text(1);
     QFont fnt = font(1);
     fnt.setItalic(true);
     setFont(1, fnt);
@@ -83,6 +85,11 @@ QString MetadataListViewItem::getTitle() const
 QString MetadataListViewItem::getValue() const
 {
     return text(1);
+}
+
+QString MetadataListViewItem::getFullValue() const
+{
+    return m_value;
 }
 
 } // namespace Digikam

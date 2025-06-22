@@ -41,6 +41,7 @@ public:
     QString getKey()         const;
     QString getTitle()       const;
     QString getValue()       const;
+    QString getFullValue()   const;
     QString getDescription() const;
 
 private:

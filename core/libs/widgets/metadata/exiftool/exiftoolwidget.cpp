@@ -317,9 +317,9 @@ QString ExifToolWidget::metadataToText() const
 
                     if (lvItem2)
                     {
-                        textmetadata.append(lvItem2->text(0));
+                        textmetadata.append(lvItem2->getTitle());
                         textmetadata.append(QLatin1String(" : "));
-                        textmetadata.append(lvItem2->text(1));
+                        textmetadata.append(lvItem2->getFullValue());
                         textmetadata.append(QLatin1Char('\n'));
                     }
                 }

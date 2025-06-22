@@ -40,13 +40,15 @@ public:
                          const QString& title);
     ~MetadataListViewItem() override = default;
 
-    QString getKey()   const;
-    QString getTitle() const;
-    QString getValue() const;
+    QString getKey()       const;
+    QString getTitle()     const;
+    QString getValue()     const;
+    QString getFullValue() const;
 
 private:
 
     QString m_key;
+    QString m_value;
 
 private:
 
