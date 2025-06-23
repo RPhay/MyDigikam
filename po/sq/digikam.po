@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-08 02:00+0000\n"
+"POT-Creation-Date: 2025-06-23 01:58+0000\n"
 "PO-Revision-Date: 2023-12-13 03:27-0500\n"
 "Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
 "Language-Team: sq\n"
@@ -42595,8 +42595,8 @@ msgstr ""
 msgid "ZIP Archive Information"
 msgstr "Informacioni i Imazhit"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:90
-#: core/libs/widgets/metadata/exiv2/metadatalistviewitem.cpp:67
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:93
+#: core/libs/widgets/metadata/exiv2/metadatalistviewitem.cpp:68
 #, kde-format
 msgid "Unavailable"
 msgstr ""

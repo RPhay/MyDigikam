@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-08 02:00+0000\n"
+"POT-Creation-Date: 2025-06-23 01:58+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -43043,8 +43043,8 @@ msgstr ""
 msgid "ZIP Archive Information"
 msgstr "Thông tin ảnh"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:90
-#: core/libs/widgets/metadata/exiv2/metadatalistviewitem.cpp:67
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:93
+#: core/libs/widgets/metadata/exiv2/metadatalistviewitem.cpp:68
 #, fuzzy, kde-format
 msgid "Unavailable"
 msgstr "không sẵn sàng"

@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-08 02:00+0000\n"
+"POT-Creation-Date: 2025-06-23 01:58+0000\n"
 "PO-Revision-Date: 2025-02-20 15:42+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -43897,8 +43897,8 @@ msgstr ""
 msgid "ZIP Archive Information"
 msgstr "ZIP 封存資訊"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:90
-#: core/libs/widgets/metadata/exiv2/metadatalistviewitem.cpp:67
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:93
+#: core/libs/widgets/metadata/exiv2/metadatalistviewitem.cpp:68
 #, kde-format
 msgid "Unavailable"
 msgstr "無法使用"

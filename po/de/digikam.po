@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-08 02:00+0000\n"
+"POT-Creation-Date: 2025-06-23 01:58+0000\n"
 "PO-Revision-Date: 2025-05-25 23:22+0200\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -44968,8 +44968,8 @@ msgstr "„Extensible Metadata Platform“ XMP-Metadaten"
 msgid "ZIP Archive Information"
 msgstr "ZIP-Archiv Metadaten"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:90
-#: core/libs/widgets/metadata/exiv2/metadatalistviewitem.cpp:67
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:93
+#: core/libs/widgets/metadata/exiv2/metadatalistviewitem.cpp:68
 #, kde-format
 msgid "Unavailable"
 msgstr "Nicht verfügbar"
