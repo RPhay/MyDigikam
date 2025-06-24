@@ -258,7 +258,7 @@ BUGFIXES:
 228 ==> 505669 - Crash on startup.
 229 ==> 480775 - ASCII in caption.
 230 ==> 505978 - Expose full PNG Parameters text and enable copy-to-clipboard in the Metadata sidebar.
-231 ==> 
+231 ==> 506063 - Faces not detected on JXL images.
 232 ==> 
 233 ==> 
 234 ==> 

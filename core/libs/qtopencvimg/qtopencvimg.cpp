@@ -245,10 +245,7 @@ cv::Mat QtOpenCVImg::image2Mat(const DImg& img, int requiredMatType, MatColorOrd
 
     try
     {
-        QScopedArrayPointer<uchar> data(new uchar[img.numBytes()] { 0 });
-        memcpy(data.data(), img.bits(), img.numBytes());
-
-        mat0 = cv::Mat(img.height(), img.width(), type, data.data());
+        mat0 = cv::Mat(img.height(), img.width(), type, img.bits()).clone();
 
         // apply scalar to 16-bit images
 
