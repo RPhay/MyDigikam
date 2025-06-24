@@ -209,9 +209,9 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
     // OpenCV and AI options
 
-    layout->addWidget(new DLineWidget(Qt::Horizontal, this), row++, 0, 1, 2);
+    layout->addWidget(new DLineWidget(Qt::Horizontal, this), row++, 0, 1, 3);
     layout->addWidget(d->enableOpenCLCheck,                  row++, 0, 1, 2);
-    layout->addWidget(d->enableOpenCLDNNCheck,               row,   0, 1, 2);
+    layout->addWidget(d->enableOpenCLDNNCheck,               row,   0, 1, 1);
     layout->addWidget(d->openCLDNNTest,                      row++, 1, 1, 2);
     layout->addWidget(filesLabel,                            row,   0, 1, 1);
     layout->addWidget(d->filesDownloadButton,                row,   1, 1, 1);
