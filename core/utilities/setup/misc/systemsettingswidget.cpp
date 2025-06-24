@@ -279,6 +279,7 @@ void SystemSettingsWidget::readSettings()
     d->enableOpenCLDNNCheck->setChecked(system.enableDnnOpenCL && system.enableOpenCL);
     d->enableOpenCLDNNCheck->setEnabled(system.enableOpenCL && system.dnnOpenCLTested);
     d->openCLDNNTest->setEnabled(system.enableOpenCL);
+    d->openCLDNNTestResult = system.dnnOpenCLTested;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
