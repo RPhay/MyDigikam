@@ -245,6 +245,8 @@ cv::Mat QtOpenCVImg::image2Mat(const DImg& img, int requiredMatType, MatColorOrd
 
     try
     {
+        // deep copy is necessary here otherwise the memory of DImg will be changed
+
         mat0 = cv::Mat(img.height(), img.width(), type, img.bits()).clone();
 
         // apply scalar to 16-bit images
