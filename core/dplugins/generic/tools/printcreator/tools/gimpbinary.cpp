@@ -23,21 +23,7 @@ namespace DigikamGenericPrintCreatorPlugin
 
 GimpBinary::GimpBinary(QObject* const)
     : DBinaryIface(
-
-#ifdef Q_OS_MACOS
-
-                   QLatin1String("GIMP-bin"),
-
-#elif defined Q_OS_WIN
-
                    QLatin1String("gimp"),
-
-#else
-
-                   QLatin1String("gimp"),
-
-#endif
-
                    QLatin1String("The Gimp"),
                    QLatin1String("https://www.gimp.org/downloads/"),
                    QLatin1String("PrintCreator"),
