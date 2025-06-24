@@ -261,7 +261,7 @@ BUGFIXES:
 231 ==> 506063 - Faces not detected on JXL images.
 232 ==> 504119 - OpenCL not recognized even if installed.
 233 ==> 506030 - Face recognition does not start in maintenance.
-234 ==> 
+234 ==> 505626 - Reverse Geocoding Fails to Write Location Data to IPTC/XMP in Image File (macOS 8.6.0).
 235 ==> 
 236 ==> 
 237 ==> 
