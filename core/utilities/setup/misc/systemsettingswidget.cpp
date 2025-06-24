@@ -124,7 +124,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     d->enableOpenCLCheck      = new QCheckBox(i18n("Use OpenCL hardware acceleration"), this);
     d->enableOpenCLCheck->setToolTip(i18n("This option is still experimental and "
                                           "requires that certain environment variables are set manually."));
-    d->enableOpenCLDNNCheck   = new QCheckBox(i18n("Use OpenCL hardware acceleration for AI models"), this);
+    d->enableOpenCLDNNCheck   = new QCheckBox(i18n("Use OpenCL acceleration for AI models"), this);
     d->enableOpenCLDNNCheck->setToolTip(i18n("This option is still experimental and "
                                              "may lead to crashes if the proper drivers are not installed."));
 
