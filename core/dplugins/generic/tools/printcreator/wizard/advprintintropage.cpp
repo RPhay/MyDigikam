@@ -112,8 +112,10 @@ AdvPrintIntroPage::AdvPrintIntroPage(QWizard* const dialog, const QString& title
 #ifdef Q_OS_WIN
 
     d->binSearch->addDirectory(QLatin1String("C:/Program Files/GIMP 2/bin"));
+    d->binSearch->addDirectory(QLatin1String("C:/Program Files/GIMP 3/bin"));
 
     d->binSearch->addDirectory(QLatin1String("C:/Program Files (x86)/GIMP 2/bin"));
+    d->binSearch->addDirectory(QLatin1String("C:/Program Files (x86)/GIMP 3/bin"));
 
 #endif
 

@@ -30,7 +30,7 @@ GimpBinary::GimpBinary(QObject* const)
 
 #elif defined Q_OS_WIN
 
-                   QLatin1String("gimp-2.10"),
+                   QLatin1String("gimp"),
 
 #else
 
