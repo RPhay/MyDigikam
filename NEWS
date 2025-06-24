@@ -260,7 +260,7 @@ BUGFIXES:
 230 ==> 505978 - Expose full PNG Parameters text and enable copy-to-clipboard in the Metadata sidebar.
 231 ==> 506063 - Faces not detected on JXL images.
 232 ==> 504119 - OpenCL not recognized even if installed.
-233 ==> 
+233 ==> 506030 - Face recognition does not start in maintenance.
 234 ==> 
 235 ==> 
 236 ==> 

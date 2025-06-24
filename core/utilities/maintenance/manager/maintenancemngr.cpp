@@ -344,6 +344,10 @@ void MaintenanceMngr::stage6()
                 d->facesDetector->setNotificationEnabled(false);
                 d->facesDetector->start();
             }
+            else
+            {
+                stage7();
+            }
         }
         catch (...)
         {
