@@ -146,7 +146,6 @@ parts:
     autotools-configure-parameters:
       - --prefix=/usr
       - --sysconfdir=/etc
-      - --with-api-spec=no
       - --with-avahi
     build-packages:
       # Everything of the build dependencies of the sane-backends
@@ -166,6 +165,11 @@ parts:
       - python3-minimal
       - autoconf-archive
       - rsync
+      - autotools-dev
+      - git
+      - gperf
+      - help2man
+      - texinfo
     stage-packages:
       - libexif12
       - libgphoto2-6
@@ -196,6 +200,7 @@ parts:
       - libpng-dev
       - libxml2-dev
       - libgnutls28-dev
+      - autotools-dev
   ksanecore:
     after:
       - libsane
@@ -332,6 +337,7 @@ parts:
     override-pull: |
         craftctl default
         patch -p0 < ${SNAPCRAFT_PROJECT_DIR}/project/bundles/snap/snap/local/digikam_magick_isnan.patch
+        patch -p0 < ${SNAPCRAFT_PROJECT_DIR}/project/bundles/snap/snap/local/6.9-build.patch
     prime:
       - -usr/lib/*/cmake/*
       - -usr/include/*
