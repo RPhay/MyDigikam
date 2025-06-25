@@ -263,7 +263,7 @@ BUGFIXES:
 233 ==> 506030 - Face recognition does not start in maintenance.
 234 ==> 505626 - Reverse Geocoding Fails to Write Location Data to IPTC/XMP in Image File (macOS 8.6.0).
 235 ==> 504699 - digiKam: Welcome screen inviting to initial setup while it was already done.
-236 ==> 
+236 ==> 504210 - Trying to re-learn face recognition model prior downloading the CV model.
 237 ==> 
 238 ==> 
 239 ==> 
