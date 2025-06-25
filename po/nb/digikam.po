@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-08 02:00+0000\n"
+"POT-Creation-Date: 2025-06-23 01:58+0000\n"
 "PO-Revision-Date: 2024-03-09 12:45+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -42211,8 +42211,8 @@ msgstr ""
 msgid "ZIP Archive Information"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:90
-#: core/libs/widgets/metadata/exiv2/metadatalistviewitem.cpp:67
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:93
+#: core/libs/widgets/metadata/exiv2/metadatalistviewitem.cpp:68
 #, kde-format
 msgid "Unavailable"
 msgstr "Utilgjengelig"

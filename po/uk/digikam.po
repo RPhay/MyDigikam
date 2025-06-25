@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-23 01:58+0000\n"
+"POT-Creation-Date: 2025-06-25 02:03+0000\n"
 "PO-Revision-Date: 2025-06-05 18:56+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -19858,7 +19858,7 @@ msgctxt "@action"
 msgid "Print Creator..."
 msgstr "Керування друком…"
 
-#: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:45
+#: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:31
 #, kde-format
 msgid "The GNU Image Manipulation Program."
 msgstr "GIMP (GNU Image Manipulation Program)."
@@ -61767,7 +61767,7 @@ msgstr ""
 "розмічення невідомих облич знову, перш ніж буде розпізнано якісь обличчя."
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:429
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:433
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -61776,7 +61776,7 @@ msgstr ""
 "Виконання всіх завдань завершено.\n"
 "Тривалість обробки: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:430
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:434
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Супровід даних digiKam"
@@ -67656,8 +67656,9 @@ msgstr ""
 "встановлювати вручну значення змінних середовища."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, kde-format
-msgid "Use OpenCL hardware acceleration for AI models"
+#, fuzzy, kde-format
+#| msgid "Use OpenCL hardware acceleration for AI models"
+msgid "Use OpenCL acceleration for AI models"
 msgstr "Використати апаратне прискорення OpenCL для моделей ШІ"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128

@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-23 01:58+0000\n"
+"POT-Creation-Date: 2025-06-25 02:03+0000\n"
 "PO-Revision-Date: 2025-02-20 15:42+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -19245,7 +19245,7 @@ msgctxt "@action"
 msgid "Print Creator..."
 msgstr "列印建立工具..."
 
-#: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:45
+#: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:31
 #, kde-format
 msgid "The GNU Image Manipulation Program."
 msgstr "GNU 影像處理程式"
@@ -60627,7 +60627,7 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:429
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:433
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -60636,7 +60636,7 @@ msgstr ""
 "所有操作均處理完畢。\n"
 "處理時間：%1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:430
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:434
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam 維護"
@@ -66324,7 +66324,7 @@ msgstr ""
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, fuzzy, kde-format
 #| msgid "Disable hardware acceleration OpenCL"
-msgid "Use OpenCL hardware acceleration for AI models"
+msgid "Use OpenCL acceleration for AI models"
 msgstr "停用 OpenCL 硬體加速"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128

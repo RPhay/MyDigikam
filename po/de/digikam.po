@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-23 01:58+0000\n"
+"POT-Creation-Date: 2025-06-25 02:03+0000\n"
 "PO-Revision-Date: 2025-05-25 23:22+0200\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -19834,7 +19834,7 @@ msgctxt "@action"
 msgid "Print Creator..."
 msgstr "Foto-Druck ..."
 
-#: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:45
+#: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:31
 #, kde-format
 msgid "The GNU Image Manipulation Program."
 msgstr "GIMP - GNU Image Manipulation Program."
@@ -61914,7 +61914,7 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:429
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:433
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -61923,7 +61923,7 @@ msgstr ""
 "Alle Vorgänge wurden abgeschlossen.\n"
 "Dauer: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:430
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:434
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam-Wartung"
@@ -67897,8 +67897,9 @@ msgstr ""
 "bestimmter Umgebungsvariablen."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, kde-format
-msgid "Use OpenCL hardware acceleration for AI models"
+#, fuzzy, kde-format
+#| msgid "Use OpenCL hardware acceleration for AI models"
+msgid "Use OpenCL acceleration for AI models"
 msgstr "Videohardware-Beschleunigung verwenden"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128

@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-23 01:58+0000\n"
+"POT-Creation-Date: 2025-06-25 02:03+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -19604,7 +19604,7 @@ msgctxt "@action"
 msgid "Print Creator..."
 msgstr "Calendar"
 
-#: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:45
+#: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:31
 #, kde-format
 msgid "The GNU Image Manipulation Program."
 msgstr ""
@@ -61786,14 +61786,14 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:429
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:433
 #, fuzzy, kde-format
 msgid ""
 "All operations are done.\n"
 "Duration: %1"
 msgstr "Baza de date cu miniaturi a fost actualizată."
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:430
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:434
 #, fuzzy, kde-format
 msgid "digiKam Maintenance"
 msgstr "Unghiul principal:"
@@ -67410,7 +67410,7 @@ msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, kde-format
-msgid "Use OpenCL hardware acceleration for AI models"
+msgid "Use OpenCL acceleration for AI models"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128

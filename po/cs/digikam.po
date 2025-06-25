@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-23 01:58+0000\n"
+"POT-Creation-Date: 2025-06-25 02:03+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -18796,7 +18796,7 @@ msgctxt "@action"
 msgid "Print Creator..."
 msgstr "Tvůrce výtisku..."
 
-#: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:45
+#: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:31
 #, kde-format
 msgid "The GNU Image Manipulation Program."
 msgstr "Program GNU pro práci s obrázky"
@@ -59266,7 +59266,7 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:429
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:433
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -59275,7 +59275,7 @@ msgstr ""
 "Všechny operace jsou dokončeny.\n"
 "Trvání: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:430
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:434
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Správa digiKamu"
@@ -64871,7 +64871,7 @@ msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, kde-format
-msgid "Use OpenCL hardware acceleration for AI models"
+msgid "Use OpenCL acceleration for AI models"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128

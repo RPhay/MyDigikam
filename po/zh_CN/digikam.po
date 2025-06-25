@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-23 01:58+0000\n"
+"POT-Creation-Date: 2025-06-25 02:03+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18813,7 +18813,7 @@ msgctxt "@action"
 msgid "Print Creator..."
 msgstr "打印创建工具..."
 
-#: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:45
+#: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:31
 #, kde-format
 msgid "The GNU Image Manipulation Program."
 msgstr "GIMP (GNU 图像编辑程序)。"
@@ -59231,7 +59231,7 @@ msgstr ""
 "知人脸分配标签，否则将无法识别任何人脸。"
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:429
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:433
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -59240,7 +59240,7 @@ msgstr ""
 "所有操作已完成。\n"
 "耗时：%1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:430
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:434
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam 系统维护"
@@ -64762,8 +64762,9 @@ msgid ""
 msgstr "此选项仍是实验性质，需手动设置某些环境变量才能生效。"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, kde-format
-msgid "Use OpenCL hardware acceleration for AI models"
+#, fuzzy, kde-format
+#| msgid "Use OpenCL hardware acceleration for AI models"
+msgid "Use OpenCL acceleration for AI models"
 msgstr "使用 OpenCL 硬件加速处理 AI 模型"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128

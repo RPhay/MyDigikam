@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-23 01:58+0000\n"
+"POT-Creation-Date: 2025-06-25 02:03+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -20026,7 +20026,7 @@ msgid "Print Creator..."
 msgstr "인쇄물 생성기..."
 
 # 한국어 김프 번역과 동기화. https://l10n.gnome.org/POT/gimp.master/gimp.master.ko.po
-#: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:45
+#: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:31
 #, kde-format
 msgid "The GNU Image Manipulation Program."
 msgstr "GNU 이미지 처리 프로그램."
@@ -62482,7 +62482,7 @@ msgid ""
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:429
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:433
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -62491,7 +62491,7 @@ msgstr ""
 "모든 작업을 완료했습니다.\n"
 "경과 시간: %1"
 
-#: core/utilities/maintenance/manager/maintenancemngr.cpp:430
+#: core/utilities/maintenance/manager/maintenancemngr.cpp:434
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr ""
@@ -67988,7 +67988,7 @@ msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
 #, kde-format
-msgid "Use OpenCL hardware acceleration for AI models"
+msgid "Use OpenCL acceleration for AI models"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128
