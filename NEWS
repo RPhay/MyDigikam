@@ -265,7 +265,7 @@ BUGFIXES:
 235 ==> 504699 - digiKam: Welcome screen inviting to initial setup while it was already done.
 236 ==> 504210 - Trying to re-learn face recognition model prior downloading the CV model.
 237 ==> 504135 - Fail to create sidecar file (Exiv2) for certain XMP block in metadata.
-238 ==> 
+238 ==> 506037 - Adding directory #recycle to ignore makes most directories dissappear from album collection.
 239 ==> 
 240 ==> 
 241 ==> 
