@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-25 02:03+0000\n"
-"PO-Revision-Date: 2025-06-05 18:56+0300\n"
+"PO-Revision-Date: 2025-06-25 09:49+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -67656,10 +67656,9 @@ msgstr ""
 "встановлювати вручну значення змінних середовища."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Use OpenCL hardware acceleration for AI models"
+#, kde-format
 msgid "Use OpenCL acceleration for AI models"
-msgstr "Використати апаратне прискорення OpenCL для моделей ШІ"
+msgstr "Використати прискорення OpenCL для моделей ШІ"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format

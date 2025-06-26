@@ -63,14 +63,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-25 02:03+0000\n"
-"PO-Revision-Date: 2025-06-05 10:14+0200\n"
+"PO-Revision-Date: 2025-06-25 11:41+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -67321,10 +67321,9 @@ msgstr ""
 "omgevingsvariabelen handmatig zijn ingesteld."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Use OpenCL hardware acceleration for AI models"
+#, kde-format
 msgid "Use OpenCL acceleration for AI models"
-msgstr "Gebruik OpenCL-hardware-versnelling voor AI-modellen"
+msgstr "Gebruik OpenCL-versnelling voor AI-modellen"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format

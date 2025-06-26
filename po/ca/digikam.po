@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-25 02:03+0000\n"
-"PO-Revision-Date: 2025-06-05 11:26+0200\n"
+"PO-Revision-Date: 2025-06-25 17:23+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -67446,10 +67446,9 @@ msgstr ""
 "d'entorn es defineixin manualment."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Use OpenCL hardware acceleration for AI models"
+#, kde-format
 msgid "Use OpenCL acceleration for AI models"
-msgstr "Usa l'acceleració de maquinari OpenCL per als models d'IA"
+msgstr "Usa l'acceleració OpenCL per als models d'IA"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format
