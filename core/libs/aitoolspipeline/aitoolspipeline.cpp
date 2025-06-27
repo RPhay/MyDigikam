@@ -59,7 +59,6 @@ public:
     bool            batchCancelled  = false;
     AutoRotator*    rotator         = nullptr;
     QRecursiveMutex progressMutex;
-
 };
 
 AIToolsPipeline::AIToolsPipeline(QObject* const parent)
@@ -67,6 +66,10 @@ AIToolsPipeline::AIToolsPipeline(QObject* const parent)
       d                   (new Private)
 {
     setParent(parent);
+
+    qRegisterMetaType<MLPipelinePackageNotify>("MLPipelinePackageNotify");
+    qRegisterMetaType<MLPipelinePackageNotify::Ptr>("MLPipelinePackageNotifyPtr");
+
     d->aiToolsEnabled = SystemSettings(qApp->applicationName()).enableAIAutoTools;
 }
 

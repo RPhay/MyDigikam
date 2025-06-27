@@ -19,6 +19,7 @@
 
 #include <QIcon>
 #include <QExplicitlySharedDataPointer>
+#include <QMetaType>
 
 // Local includes
 
@@ -63,3 +64,6 @@ private:
 };
 
 } // namespace Digikam
+
+/// To be able to use SettingsContainer with Qt signal/slots.
+Q_DECLARE_METATYPE(Digikam::MLPipelinePackageNotify::Ptr)
