@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 02:03+0000\n"
+"POT-Creation-Date: 2025-06-28 01:59+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -27231,24 +27231,24 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr ""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:338
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:341
 #, fuzzy, kde-format
 msgid "Unable to load image"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:462
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
 #, fuzzy, kde-format
 #| msgid "Panorama Stitching"
 msgid "AI Tools Processing"
 msgstr "ថ្នេរ Panorama"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-rotating: %1\n"
 msgstr "របៀប​វាស់​ស្ទង់ ៖"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27261,13 +27261,13 @@ msgstr "របៀប​វាស់​ស្ទង់ ៖"
 msgid "Album: %1\n"
 msgstr "អាល់ប៊ុម \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:506
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "ការ​បង្វិល ៖"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:528
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
 #, kde-format
 msgid "Skipped"
 msgstr ""

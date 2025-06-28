@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 02:03+0000\n"
+"POT-Creation-Date: 2025-06-28 01:59+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -26849,25 +26849,25 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Conversia spațiului colorimetric"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:338
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:341
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Unable to load image"
 msgstr "Încărcarea imaginii a eșuat"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:462
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
 #, fuzzy, kde-format
 #| msgctxt "@title Post Processing Tools"
 #| msgid "Post-Processing"
 msgid "AI Tools Processing"
 msgstr "Post-procesare"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
 #, fuzzy, kde-format
 msgid "Auto-rotating: %1\n"
 msgstr "Evaluare:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -26880,13 +26880,13 @@ msgstr "Evaluare:"
 msgid "Album: %1\n"
 msgstr "Album \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:506
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "Rotire:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:528
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
 #, kde-format
 msgid "Skipped"
 msgstr ""

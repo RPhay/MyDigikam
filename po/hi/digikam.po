@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 02:03+0000\n"
+"POT-Creation-Date: 2025-06-28 01:59+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -25938,23 +25938,23 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "रंग जगह"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:338
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:341
 #, fuzzy, kde-format
 msgid "Unable to load image"
 msgstr "%1 में फ़ाइल सूची बनाना असफल"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:462
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
 #, fuzzy, kde-format
 msgid "AI Tools Processing"
 msgstr "गुण..."
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-rotating: %1\n"
 msgstr "मीटरिंग मोड"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -25967,13 +25967,13 @@ msgstr "मीटरिंग मोड"
 msgid "Album: %1\n"
 msgstr "एल्बम \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:506
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "परिक्रमणः"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:528
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
 #, kde-format
 msgid "Skipped"
 msgstr ""

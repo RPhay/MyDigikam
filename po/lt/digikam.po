@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 02:03+0000\n"
+"POT-Creation-Date: 2025-06-28 01:59+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -27306,25 +27306,25 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Spalvų taisymas"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:338
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:341
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Unable to load image"
 msgstr "Nepavyko pakrauti paveikslėlio"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:462
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "Užbaigimas"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:504
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgid "Auto-rotating: %1\n"
 msgstr "Įvertinimas: "
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:505
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27337,13 +27337,13 @@ msgstr "Įvertinimas: "
 msgid "Album: %1\n"
 msgstr "Albumas „%1“"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:506
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "Sukimas:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:528
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
 #, kde-format
 msgid "Skipped"
 msgstr ""
