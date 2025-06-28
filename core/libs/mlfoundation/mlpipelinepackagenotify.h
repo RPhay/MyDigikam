@@ -31,7 +31,14 @@ namespace Digikam
 
 class DIGIKAM_EXPORT MLPipelinePackageNotify : public QSharedData
 {
+
 public:
+
+    typedef QExplicitlySharedDataPointer<MLPipelinePackageNotify> Ptr;
+
+public:
+
+    MLPipelinePackageNotify();
 
     explicit MLPipelinePackageNotify(const QString& _name,
                                      const QString& _path,
@@ -47,6 +54,9 @@ public:
 
     virtual ~MLPipelinePackageNotify()                        = default;
 
+    MLPipelinePackageNotify(const MLPipelinePackageNotify& other);
+//    MLPipelinePackageNotify& operator=(const MLPipelinePackageNotify& other);
+
 public:
 
     const QString   name;
@@ -54,13 +64,6 @@ public:
     const QString   displayData;
     int             processed       = 0;
     QIcon           thumbnail;
-
-    typedef QExplicitlySharedDataPointer<MLPipelinePackageNotify> Ptr;
-
-private:
-
-    MLPipelinePackageNotify()                                 = delete;
-    MLPipelinePackageNotify(const MLPipelinePackageNotify&)   = delete;
 };
 
 } // namespace Digikam
