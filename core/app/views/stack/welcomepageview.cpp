@@ -95,7 +95,7 @@ void WelcomePageView::slotUrlOpen(const QUrl& url)
 QStringList WelcomePageView::featuresTabContent() const
 {
     QStringList newFeatures;
-    newFeatures << i18n("More than 1500 user-reports closed on bugzilla.");
+    newFeatures << i18n("More than 1700 user-reports closed on bugzilla.");
     newFeatures << i18n("Port code to Qt6 framework (code still compatible with Qt5 API).");
     newFeatures << i18n("Windows Installer is now compiled natively with Microsoft VCPKG tool-chain and use Qt6 and KF6 frameworks.");
     newFeatures << i18n("Add JPEG-XL, WEBP, and AVIF export settings everywhere.");
@@ -128,17 +128,21 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Queue Manager: add new tool to assign rating, pick, and color labels in batch.");
     newFeatures << i18n("Queue Manager: add new tool to assign titles and captions in batch.");
     newFeatures << i18n("Queue Manager: add new tool to run G'MIC filters in batch.");
+    newFeatures << i18n("Queue Manager: add new tool to perform auto-rotation based on content analysis using DNN.");
     newFeatures << i18n("Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework.");
     newFeatures << i18n("Add new maintenance and Queue manager tools to assign tag automatically to images using deep learning neural network engine."
                         "<a href=\"https://community.kde.org/GSoc/2023/StatusReports/QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam\">See this GoSC-2023 report for details.</a>");
-    newFeatures << i18n("Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and improve stability of plugin.");
+    newFeatures << i18n("Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and improve stability of plugin.");
+    newFeatures << i18n("New G'MIC generic plugin working as layer mode from a stack of images.");
     newFeatures << i18n("Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support.");
     newFeatures << i18n("More compact icon-view thumbnails by using a simple horizontal line instead a frame "
                         "to render Color Labels.");
     newFeatures << i18n("Adding YuNet DNN model to process faces detection and replace older SSD model. "
                         "Adding Sface DNN model to process face recognition and replace older OpenFace model. "
                         "Both are faster and requires less memory at run-time with better faces-management results.");
-    newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2024-10-09.");
+    newFeatures << i18n("New option to scan image for recognize faces at startup.");
+    newFeatures << i18n("New option to turn on/off OpenCL support with face management.");
+    newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2025-05-12.");
     newFeatures << i18n("New RAW camera supported: "
                         "Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
                         "Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S."
