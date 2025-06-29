@@ -30,14 +30,15 @@ class DIGIKAM_EXPORT AutoRotator
 public:
 
     AutoRotator();
-    ~AutoRotator()                              = default;
+    ~AutoRotator()          = default;
 
     /**
      * @brief rotationAngle
      * @param img               The DImg file must be in the same rotation as what is displayed in the image viewer
      * @return                  The free rotation angle
      */
-    float                                     rotationAngle(const DImg& img, bool copyDImg = true);
+    float                                    rotationAngle(const DImg& img,
+                                                           bool copyDImg = true);
 
     /**
      * @brief rotationOrientation
@@ -45,7 +46,9 @@ public:
      * @param sensitivity       The sensitivity of the of the base angle
      * @return                  The rotation action to be taken
      */
-    MetaEngineRotation::TransformationAction    rotationOrientation(const DImg& img,    int sensitivity, bool copyDImg = true);
+    MetaEngineRotation::TransformationAction rotationOrientation(const DImg& img,
+                                                                 int sensitivity,
+                                                                 bool copyDImg = true);
 
     /**
      * @brief rotationOrientation
@@ -53,7 +56,8 @@ public:
      * @param sensitivity       The sensitivity of the of the base angle
      * @return                  The rotation action to be taken
      */
-    MetaEngineRotation::TransformationAction    rotationOrientation(const QString& img, int sensitivity);
+    MetaEngineRotation::TransformationAction rotationOrientation(const QString& img,
+                                                                 int sensitivity);
 
 protected:
 
