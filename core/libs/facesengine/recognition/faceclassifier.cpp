@@ -47,6 +47,10 @@ class Q_DECL_HIDDEN FaceClassifier::Private
 {
 public:
 
+    Private() = default;
+
+public:
+
     bool                                    ready                   = false;
     bool                                    trainingWaiting         = false;
     bool                                    exiting                 = false;
@@ -132,7 +136,7 @@ void FaceClassifier::cancel()
 {
     // Don't restart the training thread if we are exiting.
 
-    d->exiting = true;
+    d->exiting         = true;
     d->trainingWaiting = false;
 
     // stop the training thread
@@ -278,7 +282,7 @@ bool FaceClassifier::loadTrainingData()
     d->trainingThread->setPriority(QThread::Priority::HighPriority);
     threadLock.unlock();
 
-    qint64 ceElapsed = 0;
+    qint64 ceElapsed  = 0;
 
     QElapsedTimer timer;
     timer.start();
@@ -294,7 +298,7 @@ bool FaceClassifier::loadTrainingData()
 
         // clear the training waiting flag
 
-        d->trainingWaiting            = false;
+        d->trainingWaiting = false;
 
         try
         {
@@ -328,12 +332,12 @@ bool FaceClassifier::loadTrainingData()
 
                 cv::Ptr<cv::ml::KNearest> knn = createKNearest();
                 cv::Ptr<cv::ml::SVM>      svm = createSVM(svm_iterations);
-        
+
                 if (d->initialLoad)
                 {
                     // clear initial load flag
 
-                    d->initialLoad = false;
+                    d->initialLoad   = false;
 
                     // If this is the first time we are loading the training data,
                     // we can use the FaceClassifier with just the identity features if we use full search
@@ -367,8 +371,8 @@ bool FaceClassifier::loadTrainingData()
                 {
                     knn->train(trainData);
                     svm->train(trainData);
-                                                 
-                    if(knn->isTrained() && svm->isTrained())
+
+                    if (knn->isTrained() && svm->isTrained())
                     {
                         if (d->debugLog)
                         {

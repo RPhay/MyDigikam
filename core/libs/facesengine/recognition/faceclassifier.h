@@ -50,7 +50,7 @@ public:
     int predict(const cv::UMat& target, 
                 const QList<int>& exclusionLabelList = QList<int>())    const override;
 
-    bool retrain()                                                      override;
+    bool retrain()                                                            override;
 
     void cancel();
 
@@ -63,9 +63,11 @@ Q_SIGNALS:
 
 protected:
 
-    const float MAX_DISTANCE                                            = 1000.0f; // arbitrary max distance to start calculating distance
+    const float MAX_DISTANCE                                            = 1000.0F; // arbitrary max distance to start calculating distance
 
-    bool loadTrainingData()                                             override;
+protected:
+
+    bool loadTrainingData()                                                   override;
 
 private:
 

@@ -83,11 +83,11 @@ IdentityProvider::IdentityProvider()
 
     FaceScanSettings prm;
     prm.readFromConfig();
-    prm.detectModel    = FaceScanSettings::FaceDetectionModel::YuNet;
-    prm.recognizeModel = FaceScanSettings::FaceRecognitionModel::SFace;
+    prm.detectModel     = FaceScanSettings::FaceDetectionModel::YuNet;
+    prm.recognizeModel  = FaceScanSettings::FaceRecognitionModel::SFace;
     prm.writeToConfig();
 
-    d->removeQueue = new RecognitionTrainingUpdateQueue();
+    d->removeQueue      = new RecognitionTrainingUpdateQueue();
 
     // initialize the database
 
@@ -226,6 +226,7 @@ bool IdentityProvider::checkRetrainingRequired() const
         // write the current version to the database
 
         FaceDbAccess().db()->setTrainingVersionInfo(IdentityProvider::FaceTrainingVersion, IdentityProvider::ExtractorModel);
+
         return false;
     }
 
@@ -534,12 +535,12 @@ void IdentityProvider::renameIdentity(const QString& uuid, const QString& newNam
     {
         // remove the old name and fullName attributes
 
-        _identity.deleteAttributeValue(QLatin1String("name"), _identity.attribute(QLatin1String("name")));
+        _identity.deleteAttributeValue(QLatin1String("name"),     _identity.attribute(QLatin1String("name")));
         _identity.deleteAttributeValue(QLatin1String("fullName"), _identity.attribute(QLatin1String("fullName")));
 
         // add the new name and fullName attributes
 
-        _identity.setAttribute(QLatin1String("name"), newName);
+        _identity.setAttribute(QLatin1String("name"),     newName);
         _identity.setAttribute(QLatin1String("fullName"), newName);
 
         // lock for write
@@ -636,7 +637,7 @@ bool IdentityProvider::identityContains(const Identity& _identity,
 }
 
 Identity IdentityProvider::findByAttribute(const QString& attribute,
-                                        const QString& value) const
+                                           const QString& value) const
 {
     d->trainingLock.lockForRead();
 

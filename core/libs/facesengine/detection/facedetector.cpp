@@ -210,7 +210,6 @@ QList<QRectF> FaceDetector::detectFaces(const QString& imagePath)
         result                = toRelativeRects(absRects,
                                                 QSize(cvImage.cols - 2 * paddedSize.width,
                                                       cvImage.rows - 2 * paddedSize.height));
-
     }
     catch (cv::Exception& e)
     {

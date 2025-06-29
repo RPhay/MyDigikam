@@ -74,7 +74,7 @@ private:
 
 private:
 
-    DetectorNNModel      m_modelType;
+    DetectorNNModel      m_modelType       = DNNDetectorYuNet;
     DNNFaceDetectorBase* m_inferenceEngine = nullptr;
 };
 
