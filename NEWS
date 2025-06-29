@@ -266,8 +266,8 @@ BUGFIXES:
 236 ==> 504210 - Trying to re-learn face recognition model prior downloading the CV model.
 237 ==> 504135 - Fail to create sidecar file (Exiv2) for certain XMP block in metadata.
 238 ==> 506037 - Adding directory #recycle to ignore makes most directories dissappear from album collection.
-239 ==> 
-240 ==> 
+239 ==> 249932 - Add OpenGL image effects when loading next image.
+240 ==> 166614 - Animations on UI changes.
 241 ==> 
 242 ==> 
 243 ==> 
