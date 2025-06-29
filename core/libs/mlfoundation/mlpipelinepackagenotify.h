@@ -55,7 +55,6 @@ public:
     virtual ~MLPipelinePackageNotify()                        = default;
 
     MLPipelinePackageNotify(const MLPipelinePackageNotify& other);
-//    MLPipelinePackageNotify& operator=(const MLPipelinePackageNotify& other);
 
 public:
 

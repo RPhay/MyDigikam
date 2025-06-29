@@ -18,6 +18,7 @@
 
 // Qt includes
 
+#include <QObject>
 #include <QTransform>
 
 // Local includes
@@ -30,6 +31,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT MetaEngineRotation
 {
+    Q_GADGET
 
 public:
 
@@ -50,6 +52,7 @@ public:
         Rotate270        = 7, ///< 270-degree clockwise (or 90 ccw)
         RotateAuto       = 8  ///< auto-rotate based on AutoRotator class
     };
+    Q_ENUM(TransformationAction)
 
 public:
 

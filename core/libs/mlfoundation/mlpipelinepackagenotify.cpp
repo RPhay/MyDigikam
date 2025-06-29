@@ -63,16 +63,5 @@ MLPipelinePackageNotify::MLPipelinePackageNotify(const MLPipelinePackageNotify& 
       thumbnail  (other.thumbnail)
 {
 }
-/*
-MLPipelinePackageNotify& MLPipelinePackageNotify::operator=(const MLPipelinePackageNotify& other)
-{
-    name        = other.name;
-    path        = other.path;
-    displayData = other.displayData;
-    processed   = other.processed;
-    thumbnail   = other.thumbnail;
 
-    return this;
-}
-*/
 } // namesapce Digikam
