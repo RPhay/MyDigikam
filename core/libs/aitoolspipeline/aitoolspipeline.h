@@ -43,7 +43,7 @@ public:
     /**
      * @brief Destructor
      */
-    ~AIToolsPipeline() override;
+    ~AIToolsPipeline()      override;
 
     /**
      * @brief Returns the global AIToolsPipeline instance
@@ -55,7 +55,7 @@ public:
      * @brief Start the pipeline processing
      * @return True if the pipeline was started successfully
      */
-    bool start();
+    bool start()            override;
 
     /**
      * @brief Auto-rotate an image using AI-based rotation detection
@@ -191,7 +191,8 @@ Q_SIGNALS:
      * @param infos List of ItemInfos to transform
      * @param action Transformation action to apply
      */
-    void signalTransform(const QList<ItemInfo>& infos, MetaEngineRotation::TransformationAction action);
+    void signalTransform(const QList<ItemInfo>& infos,
+                         MetaEngineRotation::TransformationAction action);
 
 private:
 

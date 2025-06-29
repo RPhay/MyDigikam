@@ -54,6 +54,10 @@ class Q_DECL_HIDDEN AIToolsPipeline::Private
 {
 public:
 
+    Private() = default;
+
+public:
+
     bool            aiToolsEnabled  = false;
     bool            isStarted       = false;
     bool            batchCancelled  = false;
@@ -66,6 +70,8 @@ AIToolsPipeline::AIToolsPipeline(QObject* const parent)
       d                   (new Private)
 {
     setParent(parent);
+
+    // For the signal and slot usages.
 
     qRegisterMetaType<MLPipelinePackageNotify>("MLPipelinePackageNotify");
     qRegisterMetaType<MLPipelinePackageNotify::Ptr>("MLPipelinePackageNotifyPtr");
@@ -243,8 +249,8 @@ bool AIToolsPipeline::loader()
      * is at least 1. More instances are created by addMoreWorkers if needed.
      */
 
-    DNNModelBase* model = DNNModelManager::instance()->getModel(QLatin1String("AutoRotate"),
-                                                                DNNModelUsage::DNNUsageAutoRotate);
+    DNNModelBase* const model = DNNModelManager::instance()->getModel(QLatin1String("AutoRotate"),
+                                                                      DNNModelUsage::DNNUsageAutoRotate);
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Loader, thisQueue);
     package = static_cast<AIToolsPipelinePackage*>(mlpackage);
@@ -501,10 +507,10 @@ void AIToolsPipeline::slotProcessed(const MLPipelinePackageNotify::Ptr& package)
         return;
     }
 
-    ProgressItem* item = getProgressItem();
+    ProgressItem* const item = getProgressItem();
     item->setThumbnail(package->thumbnail);
 
-    QString lbl        = i18n("Auto-rotating: %1\n", package->name);
+    QString lbl              = i18n("Auto-rotating: %1\n", package->name);
     lbl.append(i18n("Album: %1\n", package->path));
     lbl.append(i18n("Rotation: %1\n", package->displayData));
 
@@ -541,7 +547,7 @@ void AIToolsPipeline::slotFinished()
         return;
     }
 
-    ProgressItem* item = getProgressItem();
+    ProgressItem* const item = getProgressItem();
 
     item->setComplete();
 }
@@ -566,7 +572,7 @@ void AIToolsPipeline::slotBatchCancel()
 
     QMutexLocker lock(&d->progressMutex);
 
-    ProgressItem* item = getProgressItem();
+    ProgressItem* const item = getProgressItem();
 
     // Clear only the specified stages
 
@@ -576,13 +582,13 @@ void AIToolsPipeline::slotBatchCancel()
 
         if (queues.contains(stage))
         {
-            MLPipelineQueue* queue = queues[stage];
+            MLPipelineQueue* const queue = queues[stage];
 
             // Clear the queue
 
             while (!queue->isEmpty())
             {
-                MLPipelinePackageFoundation* package = queue->pop_front();
+                MLPipelinePackageFoundation* const package = queue->pop_front();
 
                 // Make sure we don't delete the queue end signal
 
