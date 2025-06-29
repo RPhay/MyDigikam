@@ -70,7 +70,6 @@ private:
     bool            shouldRotate(int degrees, int sensitivity, int angle);
     float           privateRotationAngle(const DImg& img);
 
-
 private:
 
     const int       baseArc = 50;
