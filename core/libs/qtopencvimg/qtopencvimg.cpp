@@ -34,6 +34,7 @@ namespace Digikam
 cv::Mat QtOpenCVImg::argb2bgra(const cv::Mat& mat)
 {
     Q_ASSERT(mat.channels() == 4);
+
     cv::Mat newMat(mat.rows, mat.cols, mat.type());
     int from_to[] = { 0, 3, 1, 2, 2, 1, 3, 0 };
 
@@ -178,6 +179,7 @@ QImage::Format QtOpenCVImg::findClosestFormat(QImage::Format formatHint)
         case QImage::Format_RGB666:
         {
             format = QImage::Format_RGB888;
+
             break;
         }
 
@@ -228,6 +230,7 @@ cv::Mat QtOpenCVImg::image2Mat(const DImg& img, int requiredMatType, MatColorOrd
     int targetChannels = CV_MAT_CN(requiredMatType);
 
     Q_ASSERT((targetChannels == CV_CN_MAX) || (targetChannels == 1)   || (targetChannels == 3)  || (targetChannels == 4));
+
     Q_ASSERT((targetDepth == CV_8U)        || (targetDepth == CV_16U) || (targetDepth == CV_32F));
 
     if (img.isNull())
@@ -254,6 +257,7 @@ cv::Mat QtOpenCVImg::image2Mat(const DImg& img, int requiredMatType, MatColorOrd
         if (CV_16UC4 == type)
         {
             // 16 bits image
+
             mat0 = mat0 / 255;
         }
 
@@ -279,7 +283,7 @@ cv::Mat QtOpenCVImg::image2Mat(const DImg& img, int requiredMatType, MatColorOrd
             {
                 case 1:
                 {
-                    if (MCO_RGB == requiredOrder)
+                    if      (MCO_RGB == requiredOrder)
                     {
                         cv::cvtColor(mat0, mat0, CV_RGBA2GRAY);
                     }
@@ -292,7 +296,7 @@ cv::Mat QtOpenCVImg::image2Mat(const DImg& img, int requiredMatType, MatColorOrd
                 }
                 case 3:
                 {
-                    if (MCO_RGB == requiredOrder)
+                    if      (MCO_RGB == requiredOrder)
                     {
                         cv::cvtColor(mat0, mat0, CV_RGBA2RGB);
                     }
@@ -331,6 +335,7 @@ cv::Mat QtOpenCVImg::image2Mat(const QImage& img, int requiredMatType, MatColorO
     int targetChannels = CV_MAT_CN(requiredMatType);
 
     Q_ASSERT((targetChannels == CV_CN_MAX) || (targetChannels == 1)   || (targetChannels == 3)  || (targetChannels == 4));
+
     Q_ASSERT((targetDepth == CV_8U)        || (targetDepth == CV_16U) || (targetDepth == CV_32F));
 
     if (img.isNull())
@@ -523,6 +528,7 @@ cv::Mat QtOpenCVImg::image2Mat(const QImage& img, int requiredMatType, MatColorO
 QImage QtOpenCVImg::mat2Image(const cv::Mat& mat, MatColorOrder order, QImage::Format formatHint)
 {
     Q_ASSERT((mat.channels() == 1)  || (mat.channels() == 3)   || (mat.channels() == 4));
+
     Q_ASSERT((mat.depth() == CV_8U) || (mat.depth() == CV_16U) || (mat.depth() == CV_32F));
 
     try
