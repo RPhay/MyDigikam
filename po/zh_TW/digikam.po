@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-28 01:59+0000\n"
+"POT-Creation-Date: 2025-06-30 02:03+0000\n"
 "PO-Revision-Date: 2025-02-20 15:42+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1015,7 +1015,7 @@ msgstr "名稱："
 
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
-#: core/app/views/stack/welcomepageview.cpp:247
+#: core/app/views/stack/welcomepageview.cpp:251
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2637,7 +2637,7 @@ msgstr "說明(&H)"
 msgid "Main Toolbar"
 msgstr "主工具列"
 
-#: core/app/main/main.cpp:227 core/app/views/stack/welcomepageview.cpp:231
+#: core/app/main/main.cpp:227 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -3305,7 +3305,7 @@ msgstr "%1/%2 個已選項目"
 #: core/app/views/stack/welcomepageview.cpp:98
 #, fuzzy, kde-format
 #| msgid "More than 650 user-reports closed on bugzilla."
-msgid "More than 1500 user-reports closed on bugzilla."
+msgid "More than 1700 user-reports closed on bugzilla."
 msgstr "解決了 Bugzilla 上超過 650 個使用者議題報告。"
 
 #: core/app/views/stack/welcomepageview.cpp:99
@@ -3507,11 +3507,18 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
 msgid ""
+"Queue Manager: add new tool to perform auto-rotation based on content "
+"analysis using DNN."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:132
+#, kde-format
+msgid ""
 "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:132
+#: core/app/views/stack/welcomepageview.cpp:133
 #, kde-format
 msgid ""
 "Add new maintenance and Queue manager tools to assign tag automatically to "
@@ -3521,26 +3528,31 @@ msgid ""
 "\">See this GoSC-2023 report for details.</a>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:134
+#: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
 msgid ""
-"Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
+"Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:135
+#: core/app/views/stack/welcomepageview.cpp:136
+#, kde-format
+msgid "New G'MIC generic plugin working as layer mode from a stack of images."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
 msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:136
+#: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
 msgid ""
 "More compact icon-view thumbnails by using a simple horizontal line instead "
 "a frame to render Color Labels."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:138
+#: core/app/views/stack/welcomepageview.cpp:140
 #, kde-format
 msgid ""
 "Adding YuNet DNN model to process faces detection and replace older SSD "
@@ -3549,12 +3561,22 @@ msgid ""
 "better faces-management results."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:141
+#: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
+msgid "New option to scan image for recognize faces at startup."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:142
+#: core/app/views/stack/welcomepageview.cpp:144
+#, kde-format
+msgid "New option to turn on/off OpenCL support with face management."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:145
+#, kde-format
+msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid ""
 "New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, "
@@ -3565,45 +3587,45 @@ msgid ""
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:157
+#: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid "...and much more."
 msgstr "...以及更多。"
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:166
+#: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
 msgid "New Features"
 msgstr "新功能"
 
-#: core/app/views/stack/welcomepageview.cpp:168
+#: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:169
+#: core/app/views/stack/welcomepageview.cpp:173
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr "此版本某些新功能包含（相對與 digiKam 7）："
 
-#: core/app/views/stack/welcomepageview.cpp:177
+#: core/app/views/stack/welcomepageview.cpp:181
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "關於"
 
-#: core/app/views/stack/welcomepageview.cpp:179
+#: core/app/views/stack/welcomepageview.cpp:183
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:180
+#: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3613,7 +3635,7 @@ msgstr ""
 "digiKam 是一個開源相片管理應用程式，設計來匯入、管理、增強、搜尋或匯出您的數"
 "位影像。"
 
-#: core/app/views/stack/welcomepageview.cpp:181
+#: core/app/views/stack/welcomepageview.cpp:185
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3623,12 +3645,12 @@ msgstr ""
 "目前您正使用 digiKam 的相簿檢視。相簿是您的檔案儲存的位置，等同於硬碟上的資料"
 "夾。"
 
-#: core/app/views/stack/welcomepageview.cpp:182
+#: core/app/views/stack/welcomepageview.cpp:186
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:183
+#: core/app/views/stack/welcomepageview.cpp:187
 #, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
@@ -3637,7 +3659,7 @@ msgstr ""
 "digiKam 有很多強大的功能，在<a href=\"https://docs.digikam.org/en/index.html"
 "\">說明文件</a>當中有解說"
 
-#: core/app/views/stack/welcomepageview.cpp:184
+#: core/app/views/stack/welcomepageview.cpp:188
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3646,34 +3668,34 @@ msgstr ""
 "<a href=\"https://www.digikam.org\">digiKam 首頁</a>提供新版本 digiKam 的資"
 "訊。"
 
-#: core/app/views/stack/welcomepageview.cpp:239
+#: core/app/views/stack/welcomepageview.cpp:243
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "歡迎使用 digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:242
+#: core/app/views/stack/welcomepageview.cpp:246
 #, kde-format
 msgid "Background Image Credits"
 msgstr "背景影像致謝"
 
-#: core/app/views/stack/welcomepageview.cpp:245
+#: core/app/views/stack/welcomepageview.cpp:249
 #, kde-format
 msgid "Author:"
 msgstr "作者："
 
-#: core/app/views/stack/welcomepageview.cpp:246
+#: core/app/views/stack/welcomepageview.cpp:250
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "地點："
 
-#: core/app/views/stack/welcomepageview.cpp:248
+#: core/app/views/stack/welcomepageview.cpp:252
 #, kde-format
 msgid "Camera:"
 msgstr "相機："
 
-#: core/app/views/stack/welcomepageview.cpp:249
+#: core/app/views/stack/welcomepageview.cpp:253
 #, kde-format
 msgid "Lens:"
 msgstr "鏡頭："
@@ -26540,25 +26562,25 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw Raw 轉換"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:341
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:347
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Unable to load image"
 msgstr "載入影像失敗"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:471
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "後製"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
 #, fuzzy, kde-format
 #| msgid "Auto-tagging mode: "
 msgid "Auto-rotating: %1\n"
 msgstr "自動標籤模式："
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -26571,13 +26593,13 @@ msgstr "自動標籤模式："
 msgid "Album: %1\n"
 msgstr "相簿 \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #, fuzzy, kde-format
 #| msgid "Rotation: "
 msgid "Rotation: %1\n"
 msgstr "旋轉："
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:537
 #, fuzzy, kde-format
 #| msgid "&Skip"
 msgid "Skipped"

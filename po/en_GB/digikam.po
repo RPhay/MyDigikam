@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-28 01:59+0000\n"
+"POT-Creation-Date: 2025-06-30 02:03+0000\n"
 "PO-Revision-Date: 2024-11-23 12:48+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -1034,7 +1034,7 @@ msgstr "Name:"
 
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
-#: core/app/views/stack/welcomepageview.cpp:247
+#: core/app/views/stack/welcomepageview.cpp:251
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2676,7 +2676,7 @@ msgstr "&Help"
 msgid "Main Toolbar"
 msgstr "Main Toolbar"
 
-#: core/app/main/main.cpp:227 core/app/views/stack/welcomepageview.cpp:231
+#: core/app/main/main.cpp:227 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -3346,8 +3346,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 items selected"
 
 #: core/app/views/stack/welcomepageview.cpp:98
-#, kde-format
-msgid "More than 1500 user-reports closed on bugzilla."
+#, fuzzy, kde-format
+#| msgid "More than 1500 user-reports closed on bugzilla."
+msgid "More than 1700 user-reports closed on bugzilla."
 msgstr "More than 1500 user-reports closed on bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:99
@@ -3581,17 +3582,29 @@ msgid "Queue Manager: add new tool to run G'MIC filters in batch."
 msgstr "Queue Manager: add new tool to run G'MIC filters in batch."
 
 #: core/app/views/stack/welcomepageview.cpp:131
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Queue Manager: add new tool to assign rating, pick, and color labels in "
+#| "batch."
 msgid ""
-"Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
-"handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+"Queue Manager: add new tool to perform auto-rotation based on content "
+"analysis using DNN."
 msgstr ""
-"Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
-"handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+"Queue Manager: add new tool to assign rating, pick, and colour labels in "
+"batch."
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
 msgid ""
+"Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
+"handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+msgstr ""
+"Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
+"handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+
+#: core/app/views/stack/welcomepageview.cpp:133
+#, kde-format
+msgid ""
 "Add new maintenance and Queue manager tools to assign tag automatically to "
 "images using deep learning neural network engine.<a href=\"https://community."
 "kde.org/GSoc/2023/StatusReports/"
@@ -3604,21 +3617,29 @@ msgstr ""
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
 "\">See this GoSC-2023 report for details.</a>"
 
-#: core/app/views/stack/welcomepageview.cpp:134
-#, kde-format
+#: core/app/views/stack/welcomepageview.cpp:135
+#, fuzzy, kde-format
+#| msgid ""
+#| "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
+#| "improve stability of plugin."
 msgid ""
-"Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
+"Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
 "Update G'MIC-Qt tool to last version 3.4.0 and finalise MacOS port and "
 "improve stability of plugin."
 
-#: core/app/views/stack/welcomepageview.cpp:135
+#: core/app/views/stack/welcomepageview.cpp:136
+#, kde-format
+msgid "New G'MIC generic plugin working as layer mode from a stack of images."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
 msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 
-#: core/app/views/stack/welcomepageview.cpp:136
+#: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
 msgid ""
 "More compact icon-view thumbnails by using a simple horizontal line instead "
@@ -3627,7 +3648,7 @@ msgstr ""
 "More compact icon-view thumbnails by using a simple horizontal line instead "
 "a frame to render Colour Labels."
 
-#: core/app/views/stack/welcomepageview.cpp:138
+#: core/app/views/stack/welcomepageview.cpp:140
 #, kde-format
 msgid ""
 "Adding YuNet DNN model to process faces detection and replace older SSD "
@@ -3640,12 +3661,23 @@ msgstr ""
 "OpenFace model. Both are faster and requires less memory at run-time with "
 "better faces-management results."
 
-#: core/app/views/stack/welcomepageview.cpp:141
+#: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
+msgid "New option to scan image for recognize faces at startup."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:144
+#, kde-format
+msgid "New option to turn on/off OpenCL support with face management."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:145
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
+msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
 msgstr "Update internal RAW engine to last Libraw snapshot 2024-10-09."
 
-#: core/app/views/stack/welcomepageview.cpp:142
+#: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid ""
 "New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, "
@@ -3662,27 +3694,27 @@ msgstr ""
 "A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 
-#: core/app/views/stack/welcomepageview.cpp:157
+#: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid "...and much more."
 msgstr "...and much more."
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:166
+#: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
 msgid "New Features"
 msgstr "New Features"
 
-#: core/app/views/stack/welcomepageview.cpp:168
+#: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:169
+#: core/app/views/stack/welcomepageview.cpp:173
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
@@ -3691,18 +3723,18 @@ msgstr ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 
-#: core/app/views/stack/welcomepageview.cpp:177
+#: core/app/views/stack/welcomepageview.cpp:181
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "About"
 
-#: core/app/views/stack/welcomepageview.cpp:179
+#: core/app/views/stack/welcomepageview.cpp:183
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:180
+#: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3713,7 +3745,7 @@ msgstr ""
 "organise, enhance, search and export your digital images to and from your "
 "computer."
 
-#: core/app/views/stack/welcomepageview.cpp:181
+#: core/app/views/stack/welcomepageview.cpp:185
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3724,12 +3756,12 @@ msgstr ""
 "where your files are stored, and are identical to the folders on your hard "
 "disk."
 
-#: core/app/views/stack/welcomepageview.cpp:182
+#: core/app/views/stack/welcomepageview.cpp:186
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:183
+#: core/app/views/stack/welcomepageview.cpp:187
 #, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
@@ -3738,7 +3770,7 @@ msgstr ""
 "digiKam has many powerful features which are described in the <a href="
 "\"https://docs.digikam.org/en/index.html\">documentation</a>"
 
-#: core/app/views/stack/welcomepageview.cpp:184
+#: core/app/views/stack/welcomepageview.cpp:188
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3747,34 +3779,34 @@ msgstr ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
 "information about new versions of digiKam."
 
-#: core/app/views/stack/welcomepageview.cpp:239
+#: core/app/views/stack/welcomepageview.cpp:243
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Welcome to digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:242
+#: core/app/views/stack/welcomepageview.cpp:246
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Background Image Credits"
 
-#: core/app/views/stack/welcomepageview.cpp:245
+#: core/app/views/stack/welcomepageview.cpp:249
 #, kde-format
 msgid "Author:"
 msgstr "Author:"
 
-#: core/app/views/stack/welcomepageview.cpp:246
+#: core/app/views/stack/welcomepageview.cpp:250
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "Location:"
 
-#: core/app/views/stack/welcomepageview.cpp:248
+#: core/app/views/stack/welcomepageview.cpp:252
 #, kde-format
 msgid "Camera:"
 msgstr "Camera:"
 
-#: core/app/views/stack/welcomepageview.cpp:249
+#: core/app/views/stack/welcomepageview.cpp:253
 #, kde-format
 msgid "Lens:"
 msgstr "Lens:"
@@ -26729,25 +26761,25 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw Raw Conversion"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:341
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:347
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Unable to load image"
 msgstr "Failed to load image"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:471
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "Post Processing"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
 #, fuzzy, kde-format
 #| msgid "Auto-tags for: %1\n"
 msgid "Auto-rotating: %1\n"
 msgstr "Auto-tags for: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -26760,13 +26792,13 @@ msgstr "Auto-tags for: %1\n"
 msgid "Album: %1\n"
 msgstr "Album: %1"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #, fuzzy, kde-format
 #| msgid "Rotation: "
 msgid "Rotation: %1\n"
 msgstr "Rotation: "
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:537
 #, fuzzy, kde-format
 #| msgid "&Skip"
 msgid "Skipped"

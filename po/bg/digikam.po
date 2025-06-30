@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-28 01:59+0000\n"
+"POT-Creation-Date: 2025-06-30 02:03+0000\n"
 "PO-Revision-Date: 2025-05-17 21:36+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1029,7 +1029,7 @@ msgstr "Име:"
 
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
-#: core/app/views/stack/welcomepageview.cpp:247
+#: core/app/views/stack/welcomepageview.cpp:251
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2678,7 +2678,7 @@ msgstr "&Помощ"
 msgid "Main Toolbar"
 msgstr "Основна лента с инструменти"
 
-#: core/app/main/main.cpp:227 core/app/views/stack/welcomepageview.cpp:231
+#: core/app/main/main.cpp:227 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -3343,8 +3343,9 @@ msgid "%1/%2 items selected"
 msgstr "Маркирани са %1/%2 елемента"
 
 #: core/app/views/stack/welcomepageview.cpp:98
-#, kde-format
-msgid "More than 1500 user-reports closed on bugzilla."
+#, fuzzy, kde-format
+#| msgid "More than 1500 user-reports closed on bugzilla."
+msgid "More than 1700 user-reports closed on bugzilla."
 msgstr "Повече от 1500 потребителски доклада са завършени в bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:99
@@ -3597,6 +3598,18 @@ msgstr ""
 "Пакетна обработка: Добавяне на нов инструмент за прилагане на G'MIC филтри."
 
 #: core/app/views/stack/welcomepageview.cpp:131
+#, fuzzy, kde-format
+#| msgid ""
+#| "Queue Manager: add new tool to assign rating, pick, and color labels in "
+#| "batch."
+msgid ""
+"Queue Manager: add new tool to perform auto-rotation based on content "
+"analysis using DNN."
+msgstr ""
+"Пакетна обработка: Добавяне на нов инструмент за пакетно задаване на етикети "
+"за оценка, избор и цвят."
+
+#: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
 msgid ""
 "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
@@ -3605,7 +3618,7 @@ msgstr ""
 "Документация: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> от DocBook в Sphinx/ReStructuredText формат."
 
-#: core/app/views/stack/welcomepageview.cpp:132
+#: core/app/views/stack/welcomepageview.cpp:133
 #, kde-format
 msgid ""
 "Add new maintenance and Queue manager tools to assign tag automatically to "
@@ -3620,23 +3633,31 @@ msgstr ""
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
 "\">Вижте доклад GoSC-2023 за подробности.</a>"
 
-#: core/app/views/stack/welcomepageview.cpp:134
-#, kde-format
+#: core/app/views/stack/welcomepageview.cpp:135
+#, fuzzy, kde-format
+#| msgid ""
+#| "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
+#| "improve stability of plugin."
 msgid ""
-"Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
+"Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
 "Актуализиране на инструмента G'MIC-Qt до последна версия 3.4.0 и "
 "финализиране на порта за MacOS и подобряване на стабилността на приставката."
 
-#: core/app/views/stack/welcomepageview.cpp:135
+#: core/app/views/stack/welcomepageview.cpp:136
+#, kde-format
+msgid "New G'MIC generic plugin working as layer mode from a stack of images."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
 msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
 "Актуализиране на Adobe DNG SDK до последна версия 1.7.1 с поддръжка на JPEG-"
 "XL компресия."
 
-#: core/app/views/stack/welcomepageview.cpp:136
+#: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
 msgid ""
 "More compact icon-view thumbnails by using a simple horizontal line instead "
@@ -3645,7 +3666,7 @@ msgstr ""
 "По-компактни миниатюри за изглед на икони чрез използване на обикновена "
 "хоризонтална линия вместо рамка за изобразяване на цветни етикети."
 
-#: core/app/views/stack/welcomepageview.cpp:138
+#: core/app/views/stack/welcomepageview.cpp:140
 #, kde-format
 msgid ""
 "Adding YuNet DNN model to process faces detection and replace older SSD "
@@ -3659,14 +3680,25 @@ msgstr ""
 "бързи и изискват по-малко памет по време на изпълнение с по-добри резултати "
 "при управлението на лица."
 
-#: core/app/views/stack/welcomepageview.cpp:141
+#: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
+msgid "New option to scan image for recognize faces at startup."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:144
+#, kde-format
+msgid "New option to turn on/off OpenCL support with face management."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:145
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
+msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
 msgstr ""
 "Актуализиране на вътрешния RAW енджин до последната стабилна версия Libraw "
 "snapshot 2024-10-09."
 
-#: core/app/views/stack/welcomepageview.cpp:142
+#: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid ""
 "New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, "
@@ -3683,27 +3715,27 @@ msgstr ""
 "ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI и Skydio дронове. Множество смартфони със записан DNG формат."
 
-#: core/app/views/stack/welcomepageview.cpp:157
+#: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid "...and much more."
 msgstr "...и много други."
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:166
+#: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
 msgid "New Features"
 msgstr "Нови възможности"
 
-#: core/app/views/stack/welcomepageview.cpp:168
+#: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:169
+#: core/app/views/stack/welcomepageview.cpp:173
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
@@ -3712,18 +3744,18 @@ msgstr ""
 "Някои от новите функции в тази версия на digiKam включват (в сравнение с "
 "digiKam 7):"
 
-#: core/app/views/stack/welcomepageview.cpp:177
+#: core/app/views/stack/welcomepageview.cpp:181
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "Относно"
 
-#: core/app/views/stack/welcomepageview.cpp:179
+#: core/app/views/stack/welcomepageview.cpp:183
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:180
+#: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3734,7 +3766,7 @@ msgstr ""
 "импортиране, организиране, подобряване, търсене и експортиране на вашите "
 "цифрови изображения към и от вашия компютър."
 
-#: core/app/views/stack/welcomepageview.cpp:181
+#: core/app/views/stack/welcomepageview.cpp:185
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3745,12 +3777,12 @@ msgstr ""
 "местата, където се съхраняват вашите файлове, и са идентични с папките на "
 "вашия твърд диск."
 
-#: core/app/views/stack/welcomepageview.cpp:182
+#: core/app/views/stack/welcomepageview.cpp:186
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:183
+#: core/app/views/stack/welcomepageview.cpp:187
 #, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
@@ -3759,7 +3791,7 @@ msgstr ""
 "digiKam има много мощни функции, които са описани в <a href=\"https://docs."
 "digikam.org/en/index.html\">документацията</a>"
 
-#: core/app/views/stack/welcomepageview.cpp:184
+#: core/app/views/stack/welcomepageview.cpp:188
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3768,34 +3800,34 @@ msgstr ""
 "<a href=\"https://www.digikam.org\"> Начална страница на Digikam </a> "
 "предоставя информация за нови версии на Digikam."
 
-#: core/app/views/stack/welcomepageview.cpp:239
+#: core/app/views/stack/welcomepageview.cpp:243
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Добре дошли в digiKam %1!"
 
-#: core/app/views/stack/welcomepageview.cpp:242
+#: core/app/views/stack/welcomepageview.cpp:246
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Информация за изображението на фона"
 
-#: core/app/views/stack/welcomepageview.cpp:245
+#: core/app/views/stack/welcomepageview.cpp:249
 #, kde-format
 msgid "Author:"
 msgstr "Автор:"
 
-#: core/app/views/stack/welcomepageview.cpp:246
+#: core/app/views/stack/welcomepageview.cpp:250
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "Местоположение:"
 
-#: core/app/views/stack/welcomepageview.cpp:248
+#: core/app/views/stack/welcomepageview.cpp:252
 #, kde-format
 msgid "Camera:"
 msgstr "Камера:"
 
-#: core/app/views/stack/welcomepageview.cpp:249
+#: core/app/views/stack/welcomepageview.cpp:253
 #, kde-format
 msgid "Lens:"
 msgstr "Обектив:"
@@ -27100,22 +27132,22 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Конвертиране UFRaw Raw"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:341
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:347
 #, kde-format
 msgid "Unable to load image"
 msgstr "Не може да се зареди изображение"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:471
 #, kde-format
 msgid "AI Tools Processing"
 msgstr "ИИ инструменти за обработка"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
 #, kde-format
 msgid "Auto-rotating: %1\n"
 msgstr "Автоматично завъртане: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27127,12 +27159,12 @@ msgstr "Автоматично завъртане: %1\n"
 msgid "Album: %1\n"
 msgstr "Албум: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #, kde-format
 msgid "Rotation: %1\n"
 msgstr "Ротация: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:537
 #, kde-format
 msgid "Skipped"
 msgstr "Пропуснато"
