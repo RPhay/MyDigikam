@@ -44,7 +44,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-30 02:03+0000\n"
-"PO-Revision-Date: 2025-06-06 12:05+0200\n"
+"PO-Revision-Date: 2025-06-30 21:35+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -3335,10 +3335,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 objekt markerade"
 
 #: core/app/views/stack/welcomepageview.cpp:98
-#, fuzzy, kde-format
-#| msgid "More than 1500 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1700 user-reports closed on bugzilla."
-msgstr "Mer än 1500 användarrapporter stängda på bugzilla."
+msgstr "Mer än 1700 användarrapporter stängda på bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:99
 #, kde-format
@@ -3590,16 +3589,13 @@ msgstr ""
 "Köhantering: Lägg till nytt verktyg för att köra G'MIC-filter i bakgrunden."
 
 #: core/app/views/stack/welcomepageview.cpp:131
-#, fuzzy, kde-format
-#| msgid ""
-#| "Queue Manager: add new tool to assign rating, pick, and color labels in "
-#| "batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to perform auto-rotation based on content "
 "analysis using DNN."
 msgstr ""
-"Köhantering: Lägg till nytt verktyg för att tilldela betyg, urvalsbeteckning "
-"och färgbeteckning i bakgrunden."
+"Köhantering: Lägg till nytt verktyg för att utföra automatiskt rotation "
+"baserat på innehållsanalys med neurala nätverk."
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
@@ -3626,21 +3622,20 @@ msgstr ""
 "\">Se denna GoSC-2023 rapport för detaljerad information.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
-"Uppdatera G'MIC-Qt verktyget till senaste version 3.4.0 och slutför "
+"Uppdatera G'MIC-Qt verktyget till senaste version 3.5.0 och slutför "
 "konvertering till MacOS och förbättrad stabilitet för insticksprogram."
 
 #: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
 msgid "New G'MIC generic plugin working as layer mode from a stack of images."
 msgstr ""
+"Nytt generellt G'MIC-insticksprogram som fungerar som lagerläge från en "
+"stapel med bilder."
 
 #: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
@@ -3675,19 +3670,22 @@ msgstr ""
 #, kde-format
 msgid "New option to scan image for recognize faces at startup."
 msgstr ""
+"Nytt alternativ för att söka igenom bilder för att känna igen ansikten vid "
+"start."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid "New option to turn on/off OpenCL support with face management."
 msgstr ""
+"Nytt alternativ för att sätta på eller stänga av OpenCL-stöd med "
+"ansiktshantering."
 
 #: core/app/views/stack/welcomepageview.cpp:145
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
 msgstr ""
 "Uppdatering av internt gränssnitt för obehandlade bilder till senaste Libraw "
-"avbilden 2024-10-09."
+"avbilden 2025-05-12."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
@@ -66741,10 +66739,9 @@ msgstr ""
 "miljövariabler ställs in manuellt."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Use OpenCL hardware acceleration for AI models"
+#, kde-format
 msgid "Use OpenCL acceleration for AI models"
-msgstr "Använd OpenCL maskinvaruacceleration för AI-modeller"
+msgstr "Använd OpenCL-acceleration för AI-modeller"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:128
 #, kde-format
