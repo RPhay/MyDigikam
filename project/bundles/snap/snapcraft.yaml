@@ -33,7 +33,6 @@ apps:
     environment:
       DK_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins/digikam;$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/marble/plugins;$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins;$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins/digikam/marble$SNAP/kf6/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins"
       DICPATH: "$SNAP/usr/share/hunspell"
-      PERL5LIB: "$SNAP/usr/share/perl5"
       LD_LIBRARY_PATH: "$SNAP/usr/lib:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:$SNAP/ffmpeg-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:$SNAP/kf6/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:$LD_LIBRARY_PATH"
       PATH: $SNAP/ffmpeg-platform/usr/bin:$SNAP/usr/bin:$PATH
       ALSA_CONFIG_PATH: "$SNAP/kf6/etc/asound.conf"
@@ -41,8 +40,14 @@ apps:
       QT_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/marble/plugins:$SNAP/usr/lib/x86_64-linux-gnu/plugins:/snap/kf6-core24/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins"
       QTWEBENGINE_DISABLE_SANDBOX: 1
 layout:
-  /usr/bin/exiftool:
-    symlink: $SNAP/usr/bin/exiftool
+  /usr/bin/perl:
+    symlink: $SNAP/usr/bin/perl
+  /usr/share/perl:
+    symlink: $SNAP/usr/share/perl
+  /usr/share/perl5:
+    symlink: $SNAP/usr/share/perl5
+  /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/perl:
+    symlink: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/perl
   /usr/share/marble:
     symlink: $SNAP/usr/share/marble
   /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/marble:
@@ -333,7 +338,6 @@ parts:
       - cups-client
       - libxkbcommon0
       - bash
-      - libimage-exiftool-perl
     override-pull: |
         craftctl default
         patch -p0 < ${SNAPCRAFT_PROJECT_DIR}/project/bundles/snap/snap/local/digikam_magick_isnan.patch
@@ -347,6 +351,14 @@ parts:
       - -usr/lib/gcc/$CRAFT_ARCH_TRIPLET_BUILD_FOR/6.0.0
       - -usr/lib/aspell/*
       - -usr/share/lintian
+  exiftool:
+    plugin: nil
+    stage-packages:
+      - libimage-exiftool-perl
+      - perl
+      - perl-base
+      - perl-modules-5.38
+      - libperl5.38t64
   gpu-2404:
     after: [digikam]
     source: https://github.com/canonical/gpu-snap.git
