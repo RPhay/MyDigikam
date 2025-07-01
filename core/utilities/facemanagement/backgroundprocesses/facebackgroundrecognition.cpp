@@ -97,7 +97,7 @@ void FaceRecognitionBackgroundController::slotSetEnabled(bool enabled)
     if (enabled)
     {
         connect(FaceClassifier::instance(), &FaceClassifier::signalTrainingComplete,
-                this, &FaceRecognitionBackgroundController::slotRescan);    
+                this, &FaceRecognitionBackgroundController::slotRescan);
     }
     else
     {
