@@ -7,7 +7,7 @@ NEW FEATURES:
 *****************************************************************************************************
 BUGFIXES:
 
-001 ==>
+001 ==> 506429 - digiKam 8.6 DLNA server freezes after "upnp devices created: 0" (regression from 8.5).
 002 ==>
 003 ==>
 004 ==>
