@@ -221,7 +221,14 @@ void FilesDownloader::startDownload()
 
     slotUpdateDownloadInfo();
 
-    (void)exec();
+    QEventLoop loop;
+
+    connect(this, &QDialog::finished,
+            &loop, &QEventLoop::quit);
+
+    show();
+
+    loop.exec();
 }
 
 void FilesDownloader::slotDownload()
