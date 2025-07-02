@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 02:03+0000\n"
+"POT-Creation-Date: 2025-07-02 08:19+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -62693,7 +62693,7 @@ msgid "Download Required Model Files"
 msgstr "下载所需的模型文件"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:156
-#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#: core/utilities/setup/misc/systemsettingswidget.cpp:138
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr "打开用于存储数据文件的本地目录。"
@@ -62718,18 +62718,18 @@ msgstr "使用美感检测功能"
 msgid "Use AutoTags Assignment feature"
 msgstr "使用自动标签分配功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:251
+#: core/utilities/setup/downloader/filesdownloader.cpp:258
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr "已成功下载所有模型文件。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:260
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "下载错误"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:261
+#: core/utilities/setup/downloader/filesdownloader.cpp:268
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -62748,33 +62748,33 @@ msgstr ""
 "\n"
 "您可以现在重试，也可以在下次启动程序时继续下载。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:269
+#: core/utilities/setup/downloader/filesdownloader.cpp:276
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "重试"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:407
+#: core/utilities/setup/downloader/filesdownloader.cpp:414
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "文件的校验和不正确。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:431
+#: core/utilities/setup/downloader/filesdownloader.cpp:438
 #, kde-format
 msgid "File write error."
 msgstr "文件写入错误。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:438
+#: core/utilities/setup/downloader/filesdownloader.cpp:445
 #, kde-format
 msgid "File open error."
 msgstr "文件打开错误。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:453
+#: core/utilities/setup/downloader/filesdownloader.cpp:460
 #, kde-format
 msgid "File on the server is too large."
 msgstr "服务器提供的文件体积过大。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:537
+#: core/utilities/setup/downloader/filesdownloader.cpp:544
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -62787,7 +62787,7 @@ msgstr ""
 "于 AI 的自动工具 (如自动图像旋转和自动标签分配) 等功能。您可以选择要启用哪些"
 "功能。</p><p><b>注意：</b> 红眼消除工具需要人脸管理模型文件。</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:543
+#: core/utilities/setup/downloader/filesdownloader.cpp:550
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -62803,18 +62803,18 @@ msgstr ""
 "文件将下载到“<i>%1</i>”。</p><p><b>文件下载完成后，您必须重新启动 digiKam 以"
 "生效。</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:551
+#: core/utilities/setup/downloader/filesdownloader.cpp:558
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "需要下载 %1 个文件，占用 %2 大小的空间。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:559
+#: core/utilities/setup/downloader/filesdownloader.cpp:566
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "所选功能需要的所有文件均已找到。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:579
+#: core/utilities/setup/downloader/filesdownloader.cpp:586
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "清理未使用的 AI/DNN 模型文件..."
@@ -64764,107 +64764,107 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "分组"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#: core/utilities/setup/misc/systemsettingswidget.cpp:113
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "按照系统屏幕缩放比率进行高分辨率缩放"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:116
+#: core/utilities/setup/misc/systemsettingswidget.cpp:114
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "在高分辨率下使用像素映射"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:120
+#: core/utilities/setup/misc/systemsettingswidget.cpp:118
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "使用软件 OpenGL 渲染"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:124
+#: core/utilities/setup/misc/systemsettingswidget.cpp:122
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "使用 OpenCL 硬件加速"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:125
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr "此选项仍是实验性质，需手动设置某些环境变量才能生效。"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, fuzzy, kde-format
 #| msgid "Use OpenCL hardware acceleration for AI models"
 msgid "Use OpenCL acceleration for AI models"
 msgstr "使用 OpenCL 硬件加速处理 AI 模型"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:128
+#: core/utilities/setup/misc/systemsettingswidget.cpp:126
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
 "drivers are not installed."
 msgstr "此选项仍处于试验阶段，如果没有安装适当的驱动程序，可能会导致程序崩溃。"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr "测试 GPU 的 AI 兼容性"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#: core/utilities/setup/misc/systemsettingswidget.cpp:132
 #, kde-format
 msgid "Download required binary data:"
 msgstr "下载所需的软件包："
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:135
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "打开下载对话框..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:138
+#: core/utilities/setup/misc/systemsettingswidget.cpp:136
 #, kde-format
 msgid "Open Local Storage..."
 msgstr "打开本地存储..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:146
+#: core/utilities/setup/misc/systemsettingswidget.cpp:144
 #, kde-format
 msgid "Use video hardware acceleration"
 msgstr "使用显卡硬件加速"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:147
+#: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
 msgid "Use video textures conversion"
 msgstr "使用显卡纹理转换"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:149
+#: core/utilities/setup/misc/systemsettingswidget.cpp:147
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "渲染视频使用的解码器后端程序："
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:152
+#: core/utilities/setup/misc/systemsettingswidget.cpp:150
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (默认)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:156
+#: core/utilities/setup/misc/systemsettingswidget.cpp:154
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (系统)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:160
+#: core/utilities/setup/misc/systemsettingswidget.cpp:158
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (系统)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:164
+#: core/utilities/setup/misc/systemsettingswidget.cpp:162
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (系统)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:172
+#: core/utilities/setup/misc/systemsettingswidget.cpp:170
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "启用内部调试日志"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:189
+#: core/utilities/setup/misc/systemsettingswidget.cpp:187
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

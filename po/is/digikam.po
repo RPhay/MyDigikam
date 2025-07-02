@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 02:03+0000\n"
+"POT-Creation-Date: 2025-07-02 08:19+0000\n"
 "PO-Revision-Date: 2025-06-13 10:47+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -64451,7 +64451,7 @@ msgid "Download Required Model Files"
 msgstr "Sækja nauðsynlegar líkanaskrár"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:156
-#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#: core/utilities/setup/misc/systemsettingswidget.cpp:138
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr "Opna staðværu möppuna sem notuð er til að geyma gagnaskrárnar."
@@ -64476,18 +64476,18 @@ msgstr "Nota eiginleikann til að greina fagurfræði mynda"
 msgid "Use AutoTags Assignment feature"
 msgstr "Nota eiginleikann fyrir sjálfvirka úthlutun merkja"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:251
+#: core/utilities/setup/downloader/filesdownloader.cpp:258
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr "Tókst að hlaða inn öllum líkanaskrám."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:260
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Villa við að sækja gögn"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:261
+#: core/utilities/setup/downloader/filesdownloader.cpp:268
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -64506,33 +64506,33 @@ msgstr ""
 "\n"
 "Þú getur prófað aftur eða haldið áfram í næstu ræsingu."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:269
+#: core/utilities/setup/downloader/filesdownloader.cpp:276
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Reyna aftur"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:407
+#: core/utilities/setup/downloader/filesdownloader.cpp:414
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Gátsumma er ógild."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:431
+#: core/utilities/setup/downloader/filesdownloader.cpp:438
 #, kde-format
 msgid "File write error."
 msgstr "Villa við að skrifa í skrá."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:438
+#: core/utilities/setup/downloader/filesdownloader.cpp:445
 #, kde-format
 msgid "File open error."
 msgstr "Villa  við að opna skrá."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:453
+#: core/utilities/setup/downloader/filesdownloader.cpp:460
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Skrá á netþjóni er of stór."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:537
+#: core/utilities/setup/downloader/filesdownloader.cpp:544
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -64548,7 +64548,7 @@ msgstr ""
 "eiginleika þú vilt virkja.</p><p><b>Athugaðu:</b> Verkfærið til að fjarlægja "
 "rauð augu krefst uppsetningar á líkanaskrám fyrir andlitaumsýslu.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:543
+#: core/utilities/setup/downloader/filesdownloader.cpp:550
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -64566,18 +64566,18 @@ msgstr ""
 "p><p><b>Eftir að búið er að sækja skrárnar þarftu að endurræsa digiKam.</b></"
 "p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:551
+#: core/utilities/setup/downloader/filesdownloader.cpp:558
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Niðurhalið krefst %1 skráa af stærðinni %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:559
+#: core/utilities/setup/downloader/filesdownloader.cpp:566
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "Allar skrár valinna eiginleika fundust."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:579
+#: core/utilities/setup/downloader/filesdownloader.cpp:586
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Hreinsa ónotaðar AI/DNN-líkanaskrár..."
@@ -66641,27 +66641,27 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Hópun"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#: core/utilities/setup/misc/systemsettingswidget.cpp:113
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Nota mikla kvörðun mynddíla úr skjáhlutföllum"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:116
+#: core/utilities/setup/misc/systemsettingswidget.cpp:114
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Nota pixmaps með háupplausn"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:120
+#: core/utilities/setup/misc/systemsettingswidget.cpp:118
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr "Nota hugbúnaðar-OpenGL til myndgerðar"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:124
+#: core/utilities/setup/misc/systemsettingswidget.cpp:122
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr "Nota OpenCL-vélbúnaðarhröðun"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:125
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
@@ -66670,13 +66670,13 @@ msgstr ""
 "Þessi valkostur er enn á tilraunastigi og krefst líka að ýmsar "
 "umhverfisbreytur séu handstilltar."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, fuzzy, kde-format
 #| msgid "Use OpenCL hardware acceleration for AI models"
 msgid "Use OpenCL acceleration for AI models"
 msgstr "Nota OpenCL-vélbúnaðarhröðun fyrir gervigreindarlíkön"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:128
+#: core/utilities/setup/misc/systemsettingswidget.cpp:126
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
@@ -66685,67 +66685,67 @@ msgstr ""
 "Þessi valkostur er enn á tilraunastigi og getur valdið hruni séu réttir "
 "reklar ekki uppsettir."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr "Prófa samhæfni AI-gervigreindar á GPU-skjákortsörgjörva"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#: core/utilities/setup/misc/systemsettingswidget.cpp:132
 #, kde-format
 msgid "Download required binary data:"
 msgstr "Sækja nauðsynleg tvíundakerfisgögn:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:135
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr "Opna niðurhalsglugga..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:138
+#: core/utilities/setup/misc/systemsettingswidget.cpp:136
 #, kde-format
 msgid "Open Local Storage..."
 msgstr "Opna staðværa geymslu..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:146
+#: core/utilities/setup/misc/systemsettingswidget.cpp:144
 #, kde-format
 msgid "Use video hardware acceleration"
 msgstr "Nota vélbúnaðarhröðun fyrir myndmerki"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:147
+#: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
 msgid "Use video textures conversion"
 msgstr "Nota umbreytingu efnisáferða fyrir myndmerki"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:149
+#: core/utilities/setup/misc/systemsettingswidget.cpp:147
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr "Bakendi fyrir afkóðun myndmerkis:"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:152
+#: core/utilities/setup/misc/systemsettingswidget.cpp:150
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr "FFmpeg (sjálfgefið)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:156
+#: core/utilities/setup/misc/systemsettingswidget.cpp:154
 #, kde-format
 msgid "GStreamer (System)"
 msgstr "GStreamer (kerfis)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:160
+#: core/utilities/setup/misc/systemsettingswidget.cpp:158
 #, kde-format
 msgid "WMF (System)"
 msgstr "WMF (kerfis)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:164
+#: core/utilities/setup/misc/systemsettingswidget.cpp:162
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr "AVFoundation (kerfis)"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:172
+#: core/utilities/setup/misc/systemsettingswidget.cpp:170
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Virkja innri villuskráningu"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:189
+#: core/utilities/setup/misc/systemsettingswidget.cpp:187
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
