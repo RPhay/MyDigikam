@@ -240,7 +240,7 @@ parts:
       - libksane
     parse-info:
       - usr/share/metainfo/org.kde.digikam.appdata.xml
-    source: http://download.kde.org/stable/digikam/8.6.0/digiKam-8.6.0.tar.xz
+    source: http://download.kde.org/stable/digikam/8.7.0/digiKam-8.7.0.tar.xz
     plugin: cmake
     cmake-generator: Ninja
     cmake-parameters:
@@ -341,7 +341,6 @@ parts:
     override-pull: |
         craftctl default
         patch -p0 < ${SNAPCRAFT_PROJECT_DIR}/project/bundles/snap/snap/local/digikam_magick_isnan.patch
-        patch -p0 < ${SNAPCRAFT_PROJECT_DIR}/project/bundles/snap/snap/local/6.9-build.patch
     prime:
       - -usr/lib/*/cmake/*
       - -usr/include/*
