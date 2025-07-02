@@ -25,6 +25,7 @@
 #include <QLabel>
 #include <QStyle>
 #include <QUrl>
+#include <QPointer>
 #include <QMessageBox>
 #include <QDesktopServices>
 
@@ -75,7 +76,6 @@ public:
     bool                    openCLDNNTestResult    = false;
     QPushButton*            filesDownloadButton    = nullptr;
     QPushButton*            openLocalStorageButton = nullptr;
-    FilesDownloader*        filesDownloader        = nullptr;
 
     // Video rendering options
 
@@ -105,8 +105,6 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 
     QGridLayout* const layout = new QGridLayout(this);
-
-    d->filesDownloader        = new FilesDownloader(this);
 
     // Screen options
 
@@ -344,7 +342,9 @@ void SystemSettingsWidget::saveSettings()
 
 void SystemSettingsWidget::slotBinaryDownload()
 {
-    d->filesDownloader->startDownload();
+    QPointer<FilesDownloader> floader = new FilesDownloader(this);
+    floader->startDownload();
+    delete floader;
 }
 
 void SystemSettingsWidget::slotOpenCLDNNTest()
