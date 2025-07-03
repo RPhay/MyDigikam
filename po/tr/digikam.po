@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-02 08:19+0000\n"
-"PO-Revision-Date: 2025-06-29 18:48+0300\n"
+"PO-Revision-Date: 2025-07-02 16:41+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3339,10 +3339,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 öge seçili"
 
 #: core/app/views/stack/welcomepageview.cpp:98
-#, fuzzy, kde-format
-#| msgid "More than 1500 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1700 user-reports closed on bugzilla."
-msgstr "Bugzilla’da 1500’den fazla kullanıcı raporu kapatıldı."
+msgstr "Bugzilla’da 1700’den fazla kullanıcı raporu kapatıldı."
 
 #: core/app/views/stack/welcomepageview.cpp:99
 #, kde-format
@@ -3586,16 +3585,13 @@ msgstr ""
 "eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:131
-#, fuzzy, kde-format
-#| msgid ""
-#| "Queue Manager: add new tool to assign rating, pick, and color labels in "
-#| "batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to perform auto-rotation based on content "
 "analysis using DNN."
 msgstr ""
-"Kuyruk Yöneticisi: Toplu olarak derecelendirme, seçim ve renk etiketleri "
-"atamak için yeni bir araç eklendi."
+"Kuyruk Yöneticisi: DNN kullanarak içeriğe bağlı olarak kendiliğinden "
+"döndürmek için bir araç eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
@@ -3622,21 +3618,20 @@ msgstr ""
 "\">Ayrıntılar için bu GSoC 2023 raporuna bakın.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
-"G’MIC–Qt aracı güncel 3.4.0 sürümüne güncellenip macOS sürümü tamamlandı ve "
+"G’MIC–Qt aracı güncel 3.5.0 sürümüne güncellenip macOS sürümü tamamlandı ve "
 "eklentinin kararlılığı artırıldı."
 
 #: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
 msgid "New G'MIC generic plugin working as layer mode from a stack of images."
 msgstr ""
+"Yeni G’MIC genel eklentisi, bir görsel yığınından beklendiği üzere katman "
+"kipinde çalışıyor."
 
 #: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
@@ -3670,18 +3665,17 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid "New option to scan image for recognize faces at startup."
-msgstr ""
+msgstr "Başlangıçta görsellerden yüzleri taramak için bir seçenek eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid "New option to turn on/off OpenCL support with face management."
-msgstr ""
+msgstr "Yüz yönetimi ile ilgili OpenCL desteğini açıp kapatma desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:145
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
-msgstr "İçsel RAW işletkesi, güncel 2024-10-09 anlık görüntüsüne güncellendi."
+msgstr "İçsel RAW işletkesi, güncel 2025-05-12 anlık görüntüsüne güncellendi."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
