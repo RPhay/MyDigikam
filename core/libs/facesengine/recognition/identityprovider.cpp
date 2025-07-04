@@ -17,7 +17,6 @@
 
 // Qt includes
 
-#include <QException>
 #include <QReadWriteLock>
 #include <QUuid>
 #include <QThread>
@@ -215,8 +214,9 @@ bool IdentityProvider::checkRetrainingRequired() const
     {
         // don't use this if we're not initialized
 
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider not initialized or database not available";
-        QException().raise();
+        qCWarning(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider not initialized or database not available";
+
+        return false;
     }
 
     // return false if there are no identities in the database
@@ -517,6 +517,11 @@ void IdentityProvider::deleteIdentity(const Identity& identityToBeDeleted)
 
 void IdentityProvider::deleteIdentities(QList<Identity> identitiesToBeDeleted)
 {
+    if (!d->dbAvailable)
+    {
+        return;
+    }
+
     QList<Identity>::iterator _identity = identitiesToBeDeleted.begin();
 
     while (_identity != identitiesToBeDeleted.end())
@@ -529,6 +534,11 @@ void IdentityProvider::deleteIdentities(QList<Identity> identitiesToBeDeleted)
 
 void IdentityProvider::renameIdentity(const QString& uuid, const QString& newName)
 {
+    if (!d->dbAvailable)
+    {
+        return;
+    }
+
     Identity _identity = findIdentity(QLatin1String("uuid"), uuid);
 
     if (!_identity.isNull())
@@ -563,6 +573,11 @@ void IdentityProvider::renameIdentity(const QString& uuid, const QString& newNam
 
 bool IdentityProvider::clearTraining(const QString& hash)
 {
+    if (!d->dbAvailable)
+    {
+        return false;
+    }
+
     d->trainingLock.lockForWrite();
 
     bool result = FaceDbAccess().db()->removeFaceVector(hash);
@@ -590,6 +605,11 @@ void IdentityProvider::clearAllTraining()
 
 int IdentityProvider::addTraining(const Identity& identity, const QString& hash, const cv::Mat& feature)
 {
+    if (!d->dbAvailable)
+    {
+        return -1;
+    }
+
     d->trainingLock.lockForWrite();
 
     int result = FaceDbAccess().db()->insertFaceVector(feature, identity.id(), hash);
