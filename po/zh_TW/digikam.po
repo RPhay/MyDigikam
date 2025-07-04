@@ -34,7 +34,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-02 08:19+0000\n"
-"PO-Revision-Date: 2025-02-20 15:42+0900\n"
+"PO-Revision-Date: 2025-07-03 23:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.03.70\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -35829,14 +35829,14 @@ msgstr "藏語"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Breton"
-msgstr ""
+msgstr "布列塔尼語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:349
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:497
 #, kde-format
 msgctxt "@info: country code"
 msgid "Catalan"
-msgstr "加泰羅尼亞語"
+msgstr "加泰隆尼亞語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:350
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:498
@@ -44346,11 +44346,10 @@ msgid "Switch to %1"
 msgstr "切換到 %1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:422
-#, fuzzy, kde-format
-#| msgid "Failed to transform these files:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to Translate String with %1 Web-Service"
-msgstr "轉換這些檔案失敗："
+msgstr "利用 %1 線上服務翻譯字串失敗"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:424
 #, kde-format
@@ -44371,12 +44370,12 @@ msgstr "南非荷蘭語 (南非)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:44
 msgctxt "@info: country code"
 msgid "Amharic (Ethiopia)"
-msgstr "阿姆哈拉語（衣索比亞）"
+msgstr "阿姆哈拉語 (衣索比亞)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:45
 msgctxt "@info: country code"
 msgid "North Levantine Arabic (Turkey)"
-msgstr ""
+msgstr "北黎凡特阿拉伯語 (土耳其)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:46
 msgctxt "@info: country code"
@@ -44416,7 +44415,7 @@ msgstr "阿拉伯語 (約旦)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:53
 msgctxt "@info: country code"
 msgid "Arabic (Kuwait)"
-msgstr "阿拉伯語（科威特）"
+msgstr "阿拉伯語 (科威特)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:54
 msgctxt "@info: country code"
@@ -44441,7 +44440,7 @@ msgstr "阿拉伯語 (茅利塔尼亞)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:58
 msgctxt "@info: country code"
 msgid "Arabic (Palestinian West Bank and Gaza)"
-msgstr "阿拉伯語（巴勒斯坦約旦河西岸與加薩）"
+msgstr "阿拉伯語 (巴勒斯坦約旦河西岸與加薩)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:59
 msgctxt "@info: country code"
@@ -44496,12 +44495,12 @@ msgstr "阿薩姆語 (印度)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:69
 msgctxt "@info: country code"
 msgid "Azerbaijani (Republic of Azerbaijan)"
-msgstr "亞塞拜然語（亞塞拜然共和國）"
+msgstr "亞塞拜然語 (亞塞拜然共和國)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:70
 msgctxt "@info: country code"
 msgid "Bashkir (Russia)"
-msgstr "巴什喀爾語（俄羅斯）"
+msgstr "巴什喀爾語 (俄羅斯)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:71
 msgctxt "@info: country code"
@@ -44538,12 +44537,12 @@ msgstr "藏語 (不丹)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:78
 msgctxt "@info: country code"
 msgid "Tibetan (People's Republic of China)"
-msgstr ""
+msgstr "藏語 (中華人民共和國)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:79
 msgctxt "@info: country code"
 msgid "Breton (France)"
-msgstr "布里多尼語 (法國)"
+msgstr "布列塔尼語 (法國)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:80
 msgctxt "@info: country code"
@@ -44573,14 +44572,12 @@ msgstr "宿霧語（菲律賓）"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:86
 msgctxt "@info: country code"
 msgid "Chamorro (Guam)"
-msgstr ""
+msgstr "查摩洛語 (關島)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:87
-#, fuzzy
-#| msgid "Northern Mariana Islands"
 msgctxt "@info: country code"
 msgid "Chamorro (Northern Mariana Islands)"
-msgstr "北馬里亞納群島 "
+msgstr "查摩洛語 (北馬里亞納群島)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:88
 msgctxt "@info: country code"
@@ -44628,8 +44625,6 @@ msgid "German (Denmark)"
 msgstr "德語 (丹麥)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:97
-#, fuzzy
-#| msgid "German (Liechtenstein)"
 msgctxt "@info: country code"
 msgid "German (Liechtenstein)"
 msgstr "德語 (列支敦斯登)"
@@ -44770,11 +44765,9 @@ msgid "English (Gibraltar)"
 msgstr "英語（直布羅陀）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:125
-#, fuzzy
-#| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Gambia)"
-msgstr "英語 (牙買加)"
+msgstr "英語 (甘比亞)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:126
 msgctxt "@info: country code"
@@ -44782,11 +44775,9 @@ msgid "English (Guam)"
 msgstr "英語（關島）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:127
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Guyana)"
-msgstr "英語 (加拿大)"
+msgstr "英語 (蓋亞那)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:128
 msgctxt "@info: country code"
@@ -48096,7 +48087,7 @@ msgstr "保加利亞語"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Catalan"
-msgstr "加泰羅尼亞語"
+msgstr "加泰隆尼亞語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:145
 #, kde-format

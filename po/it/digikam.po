@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-02 08:19+0000\n"
-"PO-Revision-Date: 2025-06-26 19:54+0200\n"
+"PO-Revision-Date: 2025-07-01 19:49+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -3342,10 +3342,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 elementi selezionati"
 
 #: core/app/views/stack/welcomepageview.cpp:98
-#, fuzzy, kde-format
-#| msgid "More than 1500 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1700 user-reports closed on bugzilla."
-msgstr "Più di 1500 segnalazioni di errore di utenti chiuse in Bugzilla."
+msgstr "Più di 1700 segnalazioni di errore di utenti chiuse in Bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:99
 #, kde-format
@@ -3604,16 +3603,13 @@ msgstr ""
 "in serie."
 
 #: core/app/views/stack/welcomepageview.cpp:131
-#, fuzzy, kde-format
-#| msgid ""
-#| "Queue Manager: add new tool to assign rating, pick, and color labels in "
-#| "batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to perform auto-rotation based on content "
 "analysis using DNN."
 msgstr ""
-"Gestore elaborazione: aggiunto nuovo strumento per assegnare valutazioni, "
-"scelta ed etichette colorate in serie."
+"Gestore elaborazione: aggiunto nuovo strumento per eseguire la rotazione "
+"automatica in base all'analisi del contenuto tramite DNN."
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
@@ -3641,21 +3637,20 @@ msgstr ""
 "\">Vedi questo rapporto GoSC-2023 per i dettagli.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
-"Aggiornato lo strumento G'MIC-Qt all'ultima versione 3.4.0, terminata la "
+"Aggiornato lo strumento G'MIC-Qt all'ultima versione 3.5.0, terminata la "
 "conversione a MacOS e migliorata la stabilità dell'estensione."
 
 #: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
 msgid "New G'MIC generic plugin working as layer mode from a stack of images."
 msgstr ""
+"Nuova estensione G'MIC generica che funziona come modalità livello da una "
+"pila di immagini."
 
 #: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
@@ -3691,19 +3686,22 @@ msgstr ""
 #, kde-format
 msgid "New option to scan image for recognize faces at startup."
 msgstr ""
+"Nuova opzione di analisi dell'immagine per il riconoscimento facciale "
+"all'avvio."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid "New option to turn on/off OpenCL support with face management."
 msgstr ""
+"Nuova opzione per attivare/disattivare il supporto OpenCL con la gestione "
+"dei volti."
 
 #: core/app/views/stack/welcomepageview.cpp:145
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
 msgstr ""
 "Aggiornato il motore interno RAW all'ultimo rilascio di Libraw snapshot "
-"2024-10-09."
+"2025-05-12."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format

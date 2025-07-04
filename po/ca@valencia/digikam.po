@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-02 08:19+0000\n"
-"PO-Revision-Date: 2025-06-25 17:23+0200\n"
+"PO-Revision-Date: 2025-06-30 11:05+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -3328,10 +3328,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 elements seleccionats"
 
 #: core/app/views/stack/welcomepageview.cpp:98
-#, fuzzy, kde-format
-#| msgid "More than 1500 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1700 user-reports closed on bugzilla."
-msgstr "Més de 1500 informes d'usuari tancats en Bugzilla."
+msgstr "Més de 1700 informes d'usuari tancats en Bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:99
 #, kde-format
@@ -3586,16 +3585,13 @@ msgstr ""
 "Gestor de cues: una eina nova per a executar filtres de G'MIC per lots."
 
 #: core/app/views/stack/welcomepageview.cpp:131
-#, fuzzy, kde-format
-#| msgid ""
-#| "Queue Manager: add new tool to assign rating, pick, and color labels in "
-#| "batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to perform auto-rotation based on content "
 "analysis using DNN."
 msgstr ""
-"Gestor de cues: afegir una eina nova per a assignar valoracions, i rètols de "
-"selecció i color per lots."
+"Gestor de cues: afegir una eina nova per a realitzar un gir automàtic basat "
+"en l'anàlisi de contingut mitjançant DNN."
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
@@ -3624,21 +3620,20 @@ msgstr ""
 "\">Vegeu els detalls en este informe del GoSC-2023.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
-"Actualitzar l'eina G'MIC-Qt a l'última versió 3.4.0 i finalitzar l'adaptació "
+"Actualitzar l'eina G'MIC-Qt a l'última versió 3.5.0 i finalitzar l'adaptació "
 "a MacOS i millorar l'estabilitat del connector."
 
 #: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
 msgid "New G'MIC generic plugin working as layer mode from a stack of images."
 msgstr ""
+"Connector genèric nou de G'MIC que funciona com a mode capa des d'una pila "
+"d'imatges."
 
 #: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
@@ -3673,21 +3668,22 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid "New option to scan image for recognize faces at startup."
-msgstr ""
+msgstr "Opció nova per a escanejar imatges per a reconéixer cares en iniciar."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid "New option to turn on/off OpenCL support with face management."
 msgstr ""
+"Opció nova per a activar o desactivar el suport d'OpenCL amb la gestió de "
+"cares."
 
 # skip-rule: kct-snapshot
 #: core/app/views/stack/welcomepageview.cpp:145
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
 msgstr ""
 "Actualitzar el motor RAW intern a l'última instantània de la Libraw "
-"2024-10-09."
+"2025-05-12."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
@@ -11710,7 +11706,7 @@ msgstr "Latitud"
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Longitude"
-msgstr "Longitud"
+msgstr "Llargària"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
@@ -25243,7 +25239,7 @@ msgstr "Latitud:"
 #, kde-format
 msgctxt "@label: properties"
 msgid "Longitude:"
-msgstr "Longitud:"
+msgstr "Llargària:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:229
 #, kde-format
