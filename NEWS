@@ -9,7 +9,7 @@ BUGFIXES:
 
 001 ==> 506429 - digiKam 8.6 DLNA server freezes after "upnp devices created: 0" (regression from 8.5).
 002 ==> 506457 - The help window blocks digiKam at downloading AI models stage.
-003 ==>
+003 ==> 506577 - digiKam crashes after startup if database server is mysql 8.
 004 ==>
 005 ==>
 006 ==>
