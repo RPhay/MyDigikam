@@ -80,9 +80,9 @@ void ImageQualityWidget::setupUi()
     QWidget* const space8     = new QWidget(hlay0);
     hlay0->setStretchFactor(space8, 10);
 
-    d->scanMode               = new QComboBox(hlay0);
-    d->scanMode->addItem(i18nc("@item: all items to scan with image quality scan",  "All"),                ImageQualitySettings::ScanMode::AllItems);
-    d->scanMode->addItem(i18nc("@item: image quality scan only non assigned items", "Non-Assigned Only"),  ImageQualitySettings::ScanMode::NonAssignedItems);
+    d->scanMode               = new SqueezedComboBox(hlay0);
+    d->scanMode->addSqueezedItem(i18nc("@item: all items to scan with image quality scan",  "All"),                ImageQualitySettings::ScanMode::AllItems);
+    d->scanMode->addSqueezedItem(i18nc("@item: image quality scan only non assigned items", "Non-Assigned Only"),  ImageQualitySettings::ScanMode::NonAssignedItems);
     d->scanMode->setToolTip(i18nc("@info:tooltip",
                                   "<p><b>All</b>: re-scan all items for quality.</p>"
                                   "<p><b>Non-Assigned Only</b>: scan only the items with no assigned auto-pick labels.</p>"));
@@ -92,7 +92,7 @@ void ImageQualityWidget::setupUi()
     DHBox* const hlay1        = new DHBox(d->settingsView);
 
     d->setRejected            = new QCheckBox(i18nc("@option:check with a short translated text",
-                                                    "Assign Low Quality to Rejected Label"), hlay1);
+                                                    "Low as Rejected"), hlay1);
     d->setRejected->setToolTip(i18nc("@info:tooltip", "Low quality images detected by the quality engine\n"
                                      "will be assigned to the rejected pick label (red flag)."));
 
@@ -107,7 +107,7 @@ void ImageQualityWidget::setupUi()
     DHBox* const hlay2        = new DHBox(d->settingsView);
 
     d->setPending             = new QCheckBox(i18nc("@option:check with a short translated text",
-                                                    "Assign Medium Quality to Pending Label"), hlay2);
+                                                    "Medium as Pending"), hlay2);
     d->setPending->setToolTip(i18nc("@info:tooltip", "Medium quality images detected by the quality engine\n"
                                     "will be assigned to the pending pick label (yellow flag)."));
 
@@ -122,7 +122,7 @@ void ImageQualityWidget::setupUi()
     DHBox* const hlay3        = new DHBox(d->settingsView);
 
     d->setAccepted            = new QCheckBox(i18nc("@option:check with a short translated text",
-                                                    "Assign High Quality to Accepted Label"), hlay3);
+                                                    "High as Accepted"), hlay3);
     d->setAccepted->setToolTip(i18nc("@info:tooltip", "High quality images detected by the quality engine\n"
                                      "will be assigned to the accepted pick label (green flag)."));
 
@@ -140,14 +140,14 @@ void ImageQualityWidget::setupUi()
     d->detectButtonGroup->setExclusive(true);
 
     d->detectAesthetic        = new QRadioButton(i18nc("@option:radio with a short translated text",
-                                                       "Detect Aesthetic Contents"), this);
+                                                       "Aesthetic Contents"), this);
     d->detectAesthetic->setToolTip(i18nc("@info:tooltip", "Detect if the image has aesthetic contents.\n"
                                          "The aesthetic detection engine is based on a deep learning model to classify images."));
 
     d->detectButtonGroup->addButton(d->detectAesthetic, Private::AESTHETIC);
 
     d->detectBasicFactors     = new QRadioButton(i18nc("@option:radio with a short translated text",
-                                                       "Detect by Basic Factors"), this);
+                                                       "Basic Factors"), this);
     d->detectBasicFactors->setToolTip(i18nc("@info:tooltip", "Detect if the image is sabotaging using four basic factors\n"
                                             "eg. blur, noise, exposure (under / over), and compression levels.\n"
                                             "See the relevant settings from the next <b>Basic Factors</b> tab."));
@@ -160,7 +160,7 @@ void ImageQualityWidget::setupUi()
     DHBox* const hbox16         = new DHBox(d->settingsView);
     d->useFullCpuButton         = new QCheckBox(hbox16);
     d->useFullCpuButton->setText(i18nc("@option:check with a short translated text",
-                                       "Work on all processor cores"));
+                                       "Uses all processors"));
     d->useFullCpuButton->setToolTip(i18nc("@info:tooltip",
                                           "Quality detection is time-consuming tasks.\n"
                                           "You can choose if you wish to employ all processor cores\n"
@@ -189,7 +189,7 @@ void ImageQualityWidget::setupUi()
     QGridLayout* const grid1  = new QGridLayout(d->basicView);
 
     d->lbl2                   = new QLabel(i18nc("@label with a short translated text",
-                                                 "Rejected threshold:"), d->basicView);
+                                                 "Rejected:"), d->basicView);
     d->lbl2->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setRejectedThreshold   = new DIntNumInput(d->basicView);
     d->setRejectedThreshold->setDefaultValue(10);
@@ -198,7 +198,7 @@ void ImageQualityWidget::setupUi()
                                               "Threshold below which all pictures are assigned Rejected Label"));
 
     d->lbl3                   = new QLabel(i18nc("@label with a short translated text",
-                                                 "Pending threshold:"), d->basicView);
+                                                 "Pending:"), d->basicView);
     d->lbl3->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setPendingThreshold    = new DIntNumInput(d->basicView);
     d->setPendingThreshold->setDefaultValue(40);
@@ -207,7 +207,7 @@ void ImageQualityWidget::setupUi()
                                              "Threshold below which all pictures are assigned Pending Label"));
 
     d->lbl4                   = new QLabel(i18nc("@label with a short translated text",
-                                                 "Accepted threshold:"), d->basicView);
+                                                 "Accepted:"), d->basicView);
     d->lbl4->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setAcceptedThreshold   = new DIntNumInput(d->basicView);
     d->setAcceptedThreshold->setDefaultValue(60);
@@ -216,7 +216,7 @@ void ImageQualityWidget::setupUi()
                                               "Threshold above which all pictures are assigned Accepted Label"));
 
     d->detectBlur             = new QCheckBox(i18nc("@option:check with a short translated text",
-                                                    "Detect Blur"), d->basicView);
+                                                    "Blur"), d->basicView);
     d->detectBlur->setToolTip(i18nc("@info:tooltip", "Detect the amount of blur in the images passed to it"));
 
     d->lbl5                   = new QLabel(i18nc("@label with a short translated text",
@@ -227,7 +227,7 @@ void ImageQualityWidget::setupUi()
     d->setBlurWeight->setRange(1, 100, 1);
     d->setBlurWeight->setToolTip(i18nc("@info:tooltip", "Weight to assign to Blur Algorithm"));
 
-    d->detectNoise            = new QCheckBox(i18nc("@option:check with a short translated text", "Detect Noise"), d->basicView);
+    d->detectNoise            = new QCheckBox(i18nc("@option:check with a short translated text", "Noise"), d->basicView);
     d->detectNoise->setToolTip(i18nc("@info:tooltip", "Detect the amount of noise in the images passed to it"));
 
     d->lbl6                   = new QLabel(i18nc("@label with a short translated text",
@@ -239,7 +239,7 @@ void ImageQualityWidget::setupUi()
     d->setNoiseWeight->setToolTip(i18nc("@info:tooltip", "Weight to assign to Noise Algorithm"));
 
     d->detectCompression      = new QCheckBox(i18nc("@option:check with a short translated text",
-                                                    "Detect Compression"), d->basicView);
+                                                    "Compression"), d->basicView);
     d->detectCompression->setToolTip(i18nc("@info:tooltip", "Detect the amount of compression in the images passed to it"));
 
     d->lbl7                   = new QLabel(i18nc("@label with a short translated text",
@@ -251,7 +251,7 @@ void ImageQualityWidget::setupUi()
     d->setCompressionWeight->setToolTip(i18nc("@info:tooltip", "Weight to assign to Compression Algorithm"));
 
     d->detectExposure         = new QCheckBox(i18nc("@option:check with a short translated text",
-                                                    "Detect Under and Over Exposure"), d->basicView);
+                                                    "Exposure"), d->basicView);
     d->detectExposure->setToolTip(i18nc("@info:tooltip", "Detect if the images are under-exposed or over-exposed"));
 
     // ------------------------------------------------------------------------------

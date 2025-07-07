@@ -45,6 +45,7 @@
 #include "albummanager.h"
 #include "dlayoutbox.h"
 #include "picklabelwidget.h"
+#include "squeezedcombobox.h"
 #include "dnuminput.h"
 
 namespace Digikam
@@ -73,7 +74,7 @@ public:
     QWidget*                                  settingsView          = nullptr;
     QWidget*                                  basicView             = nullptr;
 
-    QComboBox*                                scanMode              = nullptr;
+    SqueezedComboBox*                         scanMode              = nullptr;
 
     QCheckBox*                                detectBlur            = nullptr;
     QCheckBox*                                detectNoise           = nullptr;

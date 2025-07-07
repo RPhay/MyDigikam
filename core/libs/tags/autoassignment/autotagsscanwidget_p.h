@@ -73,9 +73,9 @@ public:
 
     QWidget*          settingsTab                       = nullptr;
 
-    QComboBox*        scanMode                          = nullptr;
-    QComboBox*        tagMode                           = nullptr;
-    QComboBox*        objectDetectModel                 = nullptr;
+    SqueezedComboBox* scanMode                          = nullptr;
+    SqueezedComboBox* tagMode                           = nullptr;
+    SqueezedComboBox* objectDetectModel                 = nullptr;
     DIntNumInput*     accuracyInput                     = nullptr;
     QCheckBox*        useFullCpuButton                  = nullptr;
 

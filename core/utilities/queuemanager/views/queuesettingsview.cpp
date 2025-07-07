@@ -195,7 +195,7 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
     d->asNewVersion->setWhatsThis(i18n("Turn on this option to save the current modifications "
                                        "to a new version of the file"));
 
-    d->useMutiCoreCPU = new QCheckBox(i18nc("@option:check", "Work on all processor cores"), panel);
+    d->useMutiCoreCPU = new QCheckBox(i18nc("@option:check", "Uses all processors"), panel);
     d->useMutiCoreCPU->setWhatsThis(i18n("Turn on this option to use all CPU core from your computer "
                                          "to process more than one item from a queue at the same time."));
     // -------------

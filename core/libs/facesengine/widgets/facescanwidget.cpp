@@ -165,7 +165,7 @@ void FaceScanWidget::setupUi()
     detectGrid->addWidget(detectSizeLabel,          1, 0, 1, 1);
     detectGrid->addWidget(d->detectSizeBox,         1, 2, 1, 1);
 
-    expBox->addItem(detectWidget, i18n("Face Detection Settings"),
+    expBox->addItem(detectWidget, i18nc("@title short translated text", "Detection"),
                     QLatin1String("FaceDetectionSettings"), true);
 
     // --- Recognition settings ---
@@ -192,13 +192,13 @@ void FaceScanWidget::setupUi()
 
     d->useFullCpuButton                 = new QCheckBox(d->settingsTab);
     d->useFullCpuButton->setText(i18nc("@option:check with a short translated text",
-                                       "Work on all processor cores"));
+                                       "Uses all processors"));
     d->useFullCpuButton->setToolTip(i18nc("@info:tooltip",
                                           "Face detection and recognition are time-consuming tasks.\n"
                                           "You can choose if you wish to employ all processor cores\n"
                                           "on your system, or work in the background only on one core."));
 
-    expBox->addItem(recognizeWidget, i18n("Face Recognition Settings"),
+    expBox->addItem(recognizeWidget, i18nc("@title short translated text", "Recognition"),
                     QLatin1String("FaceRecognitionSettings"), false);
 
     expBox->addStretch();
