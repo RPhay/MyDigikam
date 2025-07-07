@@ -111,7 +111,7 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
     d->tagSearchBar->setFilterModel(d->tagFolderView->albumFilterModel());
 
     d->faceScanExpander            = new DLabelExpander(this);
-    d->faceScanExpander->setText(i18n("Scan collection for faces"));
+    d->faceScanExpander->setText(i18nc("@label short translated text about the scan for faces", "Scan for Faces"));
     d->faceScanExpander->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
     d->faceScanExpander->setObjectName(QLatin1String("FaceScanWidgetExpanded"));
 
@@ -122,7 +122,7 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
 
     DHBox* const hbox = new DHBox(this);
     d->rescanButton   = new QPushButton(hbox);
-    d->rescanButton->setText(i18n("Scan collection for faces"));
+    d->rescanButton->setText(i18nc("@label short translated text about the scan for faces", "Scan for Faces"));
     d->rescanButton->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
     d->rescanButton->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for faces"));
 
