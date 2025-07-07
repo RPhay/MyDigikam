@@ -775,7 +775,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
     {
         SearchFieldChoice* const field = new SearchFieldChoice(parent);
         field->setFieldName(name);
-        field->setText(i18n("Empty Text"), i18n("Return items without text in:"));
+        field->setText(i18n("Empty Text"), i18n("Return items without text in"));
         QStringList comments;
         comments << QLatin1String("creator")  << i18nc("@label: search items without creator property",  "Creator");
         comments << QLatin1String("comment")  << i18nc("@label: search items without caption property",  "Caption");

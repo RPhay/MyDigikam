@@ -79,7 +79,7 @@ void SearchGroup::setup(Type type)
     // ----- //
 
     label = new SearchFieldGroupLabel(this);
-    label->setTitle(i18n("Picture Properties"));
+    label->setTitle(i18n("Item Properties"));
     group = new SearchFieldGroup(this);
     group->setLabel(label);
 
