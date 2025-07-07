@@ -11,7 +11,7 @@ BUGFIXES:
 002 ==> 506457 - The help window blocks digiKam at downloading AI models stage.
 003 ==> 506577 - digiKam crashes after startup if database server is mysql 8.
 004 ==> 506671 - Split single digikam database into core/thumb/faces/similarity dbs.
-005 ==>
+005 ==> 506712 - Two small note about the "New Advanced Search" menu.
 006 ==>
 007 ==>
 008 ==>
