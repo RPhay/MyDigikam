@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 08:19+0000\n"
+"POT-Creation-Date: 2025-07-08 01:59+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -424,13 +424,13 @@ msgstr ""
 "φιλτράρισμα των εικόνων. Αυτό περιλαμβάνει και το '%1' κουτί ελέγχου."
 
 #: core/app/filters/filtersidebarwidget.cpp:156
-#: core/utilities/searchwindow/searchgroup_label.cpp:286
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "Ή"
 
 #: core/app/filters/filtersidebarwidget.cpp:159
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "ΚΑΙ"
@@ -3026,9 +3026,11 @@ msgstr "Τίτλοι"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, kde-format
-msgid "Scan collection for faces"
-msgstr "Αναζήτηση για πρόσωπα"
+#, fuzzy, kde-format
+#| msgid "Scan for New Images"
+msgctxt "@label short translated text about the scan for faces"
+msgid "Scan for Faces"
+msgstr "Αναζήτηση νέων εικόνων"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, fuzzy, kde-format
@@ -22508,7 +22510,7 @@ msgstr "Προεπισκόπηση"
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:199
+#: core/utilities/searchwindow/searchgroup_label.cpp:195
 #, kde-format
 msgid "Options"
 msgstr "Επιλογές"
@@ -37073,7 +37075,8 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, fuzzy, kde-format
 #| msgid "Face Detection"
-msgid "Face Detection Settings"
+msgctxt "@title short translated text"
+msgid "Detection"
 msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
@@ -37106,7 +37109,7 @@ msgstr ""
 #| msgctxt "@option:check"
 #| msgid "Work on all processor cores"
 msgctxt "@option:check with a short translated text"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr "Εργασία σε όλους τους πυρήνες του επεξεργαστή"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
@@ -37128,7 +37131,8 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, fuzzy, kde-format
-msgid "Face Recognition Settings"
+msgctxt "@title short translated text"
+msgid "Recognition"
 msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
@@ -37680,10 +37684,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgid "Rejected"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Low Quality to Rejected Label"
-msgstr "Ορισμός ετικετών στα ε&πιλεγμένα αντικείμενα"
+msgid "Low as Rejected"
+msgstr "Απορρίφθηκε"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
@@ -37695,10 +37699,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgid "Medium (1 pixel)"
+#| msgid_plural "Medium (%1 pixels)"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Medium Quality to Pending Label"
-msgstr "Ορισμός ετικετών στα ε&πιλεγμένα αντικείμενα"
+msgid "Medium as Pending"
+msgstr "Μεσαίο (1 εικονοστοιχείο)"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, kde-format
@@ -37710,10 +37715,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgid "Accepted"
 msgctxt "@option:check with a short translated text"
-msgid "Assign High Quality to Accepted Label"
-msgstr "Ορισμός ετικετών στα ε&πιλεγμένα αντικείμενα"
+msgid "High as Accepted"
+msgstr "Αποδεκτό"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, kde-format
@@ -37733,7 +37738,7 @@ msgstr "Ποιότητα PGF:"
 #, fuzzy, kde-format
 #| msgid "Reset contents"
 msgctxt "@option:radio with a short translated text"
-msgid "Detect Aesthetic Contents"
+msgid "Aesthetic Contents"
 msgstr "Μηδενισμός περιεχομένου"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
@@ -37748,7 +37753,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, fuzzy, kde-format
 msgctxt "@option:radio with a short translated text"
-msgid "Detect by Basic Factors"
+msgid "Basic Factors"
 msgstr "Mercator"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
@@ -37779,9 +37784,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, fuzzy, kde-format
+#| msgid "Rejected"
 msgctxt "@label with a short translated text"
-msgid "Rejected threshold:"
-msgstr "Κατώφλι:"
+msgid "Rejected:"
+msgstr "Απορρίφθηκε"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -37791,9 +37797,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, fuzzy, kde-format
+#| msgid "Pending"
 msgctxt "@label with a short translated text"
-msgid "Pending threshold:"
-msgstr "Κατώφλι:"
+msgid "Pending:"
+msgstr "Εκκρεμεί"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -37803,9 +37810,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, fuzzy, kde-format
+#| msgid "Accepted"
 msgctxt "@label with a short translated text"
-msgid "Accepted threshold:"
-msgstr "Κατώφλι:"
+msgid "Accepted:"
+msgstr "Αποδεκτό"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, kde-format
@@ -37815,9 +37823,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, fuzzy, kde-format
+#| msgid "Blur"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Blur"
-msgstr "Επιλογή λευκώματος"
+msgid "Blur"
+msgstr "Θάμπωμα"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, fuzzy, kde-format
@@ -37844,9 +37853,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
 #, fuzzy, kde-format
+#| msgid "Noise:"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Noise"
-msgstr "Χωρίς επιλογή"
+msgid "Noise"
+msgstr "Θόρυβος:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, fuzzy, kde-format
@@ -37865,7 +37875,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
 #, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Compression"
+msgid "Compression"
 msgstr "Συμπίεση PNG:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
@@ -37884,9 +37894,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
 #, fuzzy, kde-format
+#| msgid "Exposure"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Under and Over Exposure"
-msgstr "Χωρίς επιλογή"
+msgid "Exposure"
+msgstr "Έκθεση"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, kde-format
@@ -42195,7 +42206,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgctxt "@label with a short translated text "
-msgid "Auto-Tagging Mode:"
+msgid "Tagging Mode:"
 msgstr "Λειτουργία μέτρησης:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
@@ -42224,12 +42235,13 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, fuzzy, kde-format
-#| msgid "Destination:"
+#| msgctxt "camera model"
+#| msgid "Model:"
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
-msgid "Detection Model:"
-msgstr "Προορισμός:"
+msgid "Model:"
+msgstr "Μοντέλο:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, fuzzy, kde-format
@@ -42241,7 +42253,7 @@ msgstr "Κανένα διαθέσιμο εργαλείο"
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label with a short translated text"
-msgid "Detection Accuracy:"
+msgid "Accuracy:"
 msgstr "Ακρίβεια"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
@@ -66480,9 +66492,11 @@ msgid ""
 msgstr "Αποθήκευση των τρεχουσών τροποποιήσεων σε νέα έκδοση του αρχείου"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Work on all processor cores"
 msgctxt "@option:check"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr "Εργασία σε όλους τους πυρήνες του επεξεργαστή"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
@@ -67408,7 +67422,7 @@ msgstr "Απορρίμματα"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
-msgid "Return items without text in:"
+msgid "Return items without text in"
 msgstr "Επιστροφή φωτογραφιών με ετικέτα"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
@@ -67683,9 +67697,10 @@ msgid "File, Album, Tags"
 msgstr "Αρχείο, λεύκωμα, ετικέτες"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, kde-format
-msgid "Picture Properties"
-msgstr "Ιδιότητες φωτογραφίας"
+#, fuzzy, kde-format
+#| msgid "Item Properties"
+msgid "Item Properties"
+msgstr "Ιδιότητες αντικειμένου"
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
@@ -67728,10 +67743,7 @@ msgstr "Καμία από τις συνθήκες δεν τηρήθηκε"
 msgid "At least one of these conditions is not met"
 msgstr "Τουλάχιστον μία από τις συνθήκες δεν τηρείται"
 
-#. i18n("Find Pictures meeting all of these conditions"));
-#. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
-#.
-#: core/utilities/searchwindow/searchgroup_label.cpp:105
+#: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Search your collection<br/>for pictures meeting the following "
@@ -67743,12 +67755,12 @@ msgstr ""
 "<qt><p>Αναζήτηση της συλλογής σας<br/>για φωτογραφίες που τηρούν τις "
 "παρακάτω συνθήκες</p></qt>"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:143
+#: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
 msgid "Remove Group"
 msgstr "Αφαίρεση ομάδας"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:187
+#: core/utilities/searchwindow/searchgroup_label.cpp:183
 #, fuzzy, kde-format
 #| msgid "Hide Options <<"
 msgid "Hide Options"
@@ -73031,6 +73043,88 @@ msgstr "Αντικείμενα λευκώματος"
 #, kde-format
 msgid "Import Items"
 msgstr "Εισαγωγή αντικειμένων"
+
+#~ msgid "Scan collection for faces"
+#~ msgstr "Αναζήτηση για πρόσωπα"
+
+#, fuzzy
+#~| msgid "Face Detection"
+#~ msgid "Face Detection Settings"
+#~ msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
+
+#, fuzzy
+#~ msgid "Face Recognition Settings"
+#~ msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Low Quality to Rejected Label"
+#~ msgstr "Ορισμός ετικετών στα ε&πιλεγμένα αντικείμενα"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Medium Quality to Pending Label"
+#~ msgstr "Ορισμός ετικετών στα ε&πιλεγμένα αντικείμενα"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign High Quality to Accepted Label"
+#~ msgstr "Ορισμός ετικετών στα ε&πιλεγμένα αντικείμενα"
+
+#, fuzzy
+#~ msgctxt "@option:radio with a short translated text"
+#~ msgid "Detect by Basic Factors"
+#~ msgstr "Mercator"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Rejected threshold:"
+#~ msgstr "Κατώφλι:"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Pending threshold:"
+#~ msgstr "Κατώφλι:"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Accepted threshold:"
+#~ msgstr "Κατώφλι:"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Blur"
+#~ msgstr "Επιλογή λευκώματος"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Noise"
+#~ msgstr "Χωρίς επιλογή"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Under and Over Exposure"
+#~ msgstr "Χωρίς επιλογή"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgctxt ""
+#~ "@label with a short translated text about deep learning model used to "
+#~ "detect objects to auto-tag"
+#~ msgid "Detection Model:"
+#~ msgstr "Προορισμός:"
+
+#, fuzzy
+#~| msgid "Accuracy"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "Ακρίβεια"
+
+#~ msgid "Picture Properties"
+#~ msgstr "Ιδιότητες φωτογραφίας"
 
 #, fuzzy
 #~| msgid "Similarity:"
@@ -79726,14 +79820,6 @@ msgstr "Εισαγωγή αντικειμένων"
 #~ msgid_plural "Small (%1 x %2 pixels)"
 #~ msgstr[0] "Μικρό (1 εικονοστοιχείο)"
 #~ msgstr[1] "Μικρό (%1 εικονοστοιχεία)"
-
-#, fuzzy
-#~| msgid "Medium (1 pixel)"
-#~| msgid_plural "Medium (%1 pixels)"
-#~ msgid "Medium (size)"
-#~ msgid_plural "Medium (%1 x %2 pixels)"
-#~ msgstr[0] "Μεσαίο (1 εικονοστοιχείο)"
-#~ msgstr[1] "Μεσαίο (%1 εικονοστοιχεία)"
 
 #, fuzzy
 #~| msgid "Big (1 pixel)"

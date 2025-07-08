@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 08:19+0000\n"
+"POT-Creation-Date: 2025-07-08 01:59+0000\n"
 "PO-Revision-Date: 2025-05-29 15:07+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -421,13 +421,13 @@ msgstr ""
 "myös valintaruudun ”%1”."
 
 #: core/app/filters/filtersidebarwidget.cpp:156
-#: core/utilities/searchwindow/searchgroup_label.cpp:286
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "TAI"
 
 #: core/app/filters/filtersidebarwidget.cpp:159
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "JA"
@@ -3044,9 +3044,11 @@ msgstr "Merkit"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, kde-format
-msgid "Scan collection for faces"
-msgstr "Hae kasvoja kokoelmasta"
+#, fuzzy, kde-format
+#| msgid "Scan for Faces"
+msgctxt "@label short translated text about the scan for faces"
+msgid "Scan for Faces"
+msgstr "Etsi kasvoja"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, fuzzy, kde-format
@@ -21723,7 +21725,7 @@ msgstr "Esikatselu…"
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:199
+#: core/utilities/searchwindow/searchgroup_label.cpp:195
 #, kde-format
 msgid "Options"
 msgstr "Asetukset"
@@ -35269,7 +35271,8 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, fuzzy, kde-format
 #| msgid "Face Detection"
-msgid "Face Detection Settings"
+msgctxt "@title short translated text"
+msgid "Detection"
 msgstr "Kasvontunnistus"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
@@ -35296,7 +35299,7 @@ msgstr ""
 #| msgctxt "@option:check"
 #| msgid "Work on all processor cores"
 msgctxt "@option:check with a short translated text"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr "Käytä kaikkia suoritinytimiä"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
@@ -35314,7 +35317,8 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
-msgid "Face Recognition Settings"
+msgctxt "@title short translated text"
+msgid "Recognition"
 msgstr "Kasvontunnistus"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
@@ -35851,10 +35855,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgctxt "@info: tableview"
+#| msgid "Rejected"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Low Quality to Rejected Label"
-msgstr "Lisää tunnisteet &valittuihin kuviin"
+msgid "Low as Rejected"
+msgstr "Hylätty"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, fuzzy, kde-format
@@ -35871,10 +35876,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgid "Medium (1 pixel)"
+#| msgid_plural "Medium (%1 pixels)"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Medium Quality to Pending Label"
-msgstr "Lisää tunnisteet &valittuihin kuviin"
+msgid "Medium as Pending"
+msgstr "Keskikokoinen (Yksi pikseli)"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, fuzzy, kde-format
@@ -35891,10 +35897,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgctxt "@info: tableview"
+#| msgid "Accepted"
 msgctxt "@option:check with a short translated text"
-msgid "Assign High Quality to Accepted Label"
-msgstr "Lisää tunnisteet &valittuihin kuviin"
+msgid "High as Accepted"
+msgstr "Hyväksytty"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, fuzzy, kde-format
@@ -35921,7 +35928,7 @@ msgstr "Laatu:"
 #| msgctxt "@option:radio"
 #| msgid "Detect Aesthetic Image using Deep Learning"
 msgctxt "@option:radio with a short translated text"
-msgid "Detect Aesthetic Contents"
+msgid "Aesthetic Contents"
 msgstr "Tunnista kuvan esteettisyys syväoppivalla mallilla"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
@@ -35942,11 +35949,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Quality Using Basic Factors"
+#| msgid "Sparsity Factor: "
 msgctxt "@option:radio with a short translated text"
-msgid "Detect by Basic Factors"
-msgstr "Tunnista laatu perustekijöillä"
+msgid "Basic Factors"
+msgstr "Harvuuskerroin:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
 #, fuzzy, kde-format
@@ -35982,10 +35988,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, fuzzy, kde-format
-#| msgid "Rejected threshold:"
+#| msgctxt "@info: tableview"
+#| msgid "Rejected"
 msgctxt "@label with a short translated text"
-msgid "Rejected threshold:"
-msgstr "Hylkäämiskynnys:"
+msgid "Rejected:"
+msgstr "Hylätty"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, fuzzy, kde-format
@@ -35996,10 +36003,11 @@ msgstr "Kynnysarvo, jonka alle jäävät kuvat merkitään ratkaisua odottaviksi
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, fuzzy, kde-format
-#| msgid "Pending threshold:"
+#| msgctxt "@info: tableview"
+#| msgid "Pending"
 msgctxt "@label with a short translated text"
-msgid "Pending threshold:"
-msgstr "Odottavan kynnysarvo:"
+msgid "Pending:"
+msgstr "Odottaa"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, fuzzy, kde-format
@@ -36010,10 +36018,11 @@ msgstr "Kynnysarvo, jonka alle jäävät kuvat merkitään ratkaisua odottaviksi
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, fuzzy, kde-format
-#| msgid "Accepted threshold:"
+#| msgctxt "@info: tableview"
+#| msgid "Accepted"
 msgctxt "@label with a short translated text"
-msgid "Accepted threshold:"
-msgstr "Hyväksymisen kynnysarvo:"
+msgid "Accepted:"
+msgstr "Hyväksytty"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, fuzzy, kde-format
@@ -36024,10 +36033,11 @@ msgstr "Kynnysarvo, jonka yli pääsevät kuvat merkitään hyväksytyiksi"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, fuzzy, kde-format
-#| msgid "Detect Blur"
+#| msgctxt "@title"
+#| msgid "Blur"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Blur"
-msgstr "Tunnista sumeus"
+msgid "Blur"
+msgstr "Sumennus"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, fuzzy, kde-format
@@ -36053,10 +36063,10 @@ msgstr "Sumennusalgoritmille osoitettava painoarvo"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
 #, fuzzy, kde-format
-#| msgid "Detect Noise"
+#| msgid "Noise:"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Noise"
-msgstr "Tunnista kohina"
+msgid "Noise"
+msgstr "Kohina:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, fuzzy, kde-format
@@ -36075,7 +36085,7 @@ msgstr "Kohina-algoritmille osoitettava painoarvo"
 #, fuzzy, kde-format
 #| msgid "Detect Compression"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Compression"
+msgid "Compression"
 msgstr "Tunnista pakkaus"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
@@ -36093,10 +36103,10 @@ msgstr "Pakkausalgoritmille osoitettava painoarvo"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
 #, fuzzy, kde-format
-#| msgid "Detect Overexposure"
+#| msgid "Exposure"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Under and Over Exposure"
-msgstr "Tunnista ylivalotus"
+msgid "Exposure"
+msgstr "Valotus"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, fuzzy, kde-format
@@ -40197,7 +40207,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgctxt "@label with a short translated text "
-msgid "Auto-Tagging Mode:"
+msgid "Tagging Mode:"
 msgstr "Mittaustapa:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
@@ -40226,13 +40236,13 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Destination Folder:"
+#| msgctxt "camera model"
+#| msgid "Model:"
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
-msgid "Detection Model:"
-msgstr "Kohdekansio:"
+msgid "Model:"
+msgstr "Malli:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, fuzzy, kde-format
@@ -40242,11 +40252,10 @@ msgstr "Ei tietoja saatavilla"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Face Accuracy"
+#| msgid "Accuracy"
 msgctxt "@label with a short translated text"
-msgid "Detection Accuracy:"
-msgstr "Kasvojen tarkkuus"
+msgid "Accuracy:"
+msgstr "Tarkkuus"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #, kde-format
@@ -62236,9 +62245,11 @@ msgid ""
 msgstr "Aseta tämä valinta, niin muutettu kuva tallennetaan uuteen tiedostoon"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Work on all processor cores"
 msgctxt "@option:check"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr "Käytä kaikkia suoritinytimiä"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
@@ -63062,8 +63073,9 @@ msgid "Empty Text"
 msgstr "Tyhjä teksti"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
-#, kde-format
-msgid "Return items without text in:"
+#, fuzzy, kde-format
+#| msgid "Return items without text in:"
+msgid "Return items without text in"
 msgstr "Etsi tekstittömiä kohteita:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
@@ -63321,9 +63333,11 @@ msgid "File, Album, Tags"
 msgstr "Tiedosto, albumi, tunnisteet"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, kde-format
-msgid "Picture Properties"
-msgstr "Kuvan ominaisuudet"
+#, fuzzy, kde-format
+#| msgctxt "@title: item properties"
+#| msgid "Item Properties"
+msgid "Item Properties"
+msgstr "Kohteen ominaisuudet"
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
@@ -63365,10 +63379,7 @@ msgstr "Ei täytä mitään seuraavista ehdoista"
 msgid "At least one of these conditions is not met"
 msgstr "Ei täytä vähintään yhtä seuraavista ehdoista"
 
-#. i18n("Find Pictures meeting all of these conditions"));
-#. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
-#.
-#: core/utilities/searchwindow/searchgroup_label.cpp:105
+#: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, kde-format
 msgid ""
 "<qt><p>Search your collection<br/>for Items meeting the following "
@@ -63376,12 +63387,12 @@ msgid ""
 msgstr ""
 "<qt><p>Etsi kokoelmastasi<br/> seuraavat ehdot täyttäviä kohteita</p></qt>"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:143
+#: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
 msgid "Remove Group"
 msgstr "Poista ryhmä"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:187
+#: core/utilities/searchwindow/searchgroup_label.cpp:183
 #, kde-format
 msgid "Hide Options"
 msgstr "Piilota valinnat"
@@ -68242,6 +68253,99 @@ msgstr "Albumit"
 #, kde-format
 msgid "Import Items"
 msgstr "Tuo kohteet"
+
+#~ msgid "Scan collection for faces"
+#~ msgstr "Hae kasvoja kokoelmasta"
+
+#, fuzzy
+#~| msgid "Face Detection"
+#~ msgid "Face Detection Settings"
+#~ msgstr "Kasvontunnistus"
+
+#, fuzzy
+#~| msgid "Face Recognition"
+#~ msgid "Face Recognition Settings"
+#~ msgstr "Kasvontunnistus"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Low Quality to Rejected Label"
+#~ msgstr "Lisää tunnisteet &valittuihin kuviin"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Medium Quality to Pending Label"
+#~ msgstr "Lisää tunnisteet &valittuihin kuviin"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign High Quality to Accepted Label"
+#~ msgstr "Lisää tunnisteet &valittuihin kuviin"
+
+#, fuzzy
+#~| msgctxt "@option:radio"
+#~| msgid "Detect Quality Using Basic Factors"
+#~ msgctxt "@option:radio with a short translated text"
+#~ msgid "Detect by Basic Factors"
+#~ msgstr "Tunnista laatu perustekijöillä"
+
+#, fuzzy
+#~| msgid "Rejected threshold:"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Rejected threshold:"
+#~ msgstr "Hylkäämiskynnys:"
+
+#, fuzzy
+#~| msgid "Pending threshold:"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Pending threshold:"
+#~ msgstr "Odottavan kynnysarvo:"
+
+#, fuzzy
+#~| msgid "Accepted threshold:"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Accepted threshold:"
+#~ msgstr "Hyväksymisen kynnysarvo:"
+
+#, fuzzy
+#~| msgid "Detect Blur"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Blur"
+#~ msgstr "Tunnista sumeus"
+
+#, fuzzy
+#~| msgid "Detect Noise"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Noise"
+#~ msgstr "Tunnista kohina"
+
+#, fuzzy
+#~| msgid "Detect Overexposure"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Under and Over Exposure"
+#~ msgstr "Tunnista ylivalotus"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Destination Folder:"
+#~ msgctxt ""
+#~ "@label with a short translated text about deep learning model used to "
+#~ "detect objects to auto-tag"
+#~ msgid "Detection Model:"
+#~ msgstr "Kohdekansio:"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Face Accuracy"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "Kasvojen tarkkuus"
+
+#~ msgid "Picture Properties"
+#~ msgstr "Kuvan ominaisuudet"
 
 #~ msgid "Avg. similarity"
 #~ msgstr "Keskim. samankaltaisuus"
@@ -75051,14 +75155,6 @@ msgstr "Tuo kohteet"
 #~ msgid_plural "Small (%1 x %2 pixels)"
 #~ msgstr[0] "Pieni (Yksi pikseli)"
 #~ msgstr[1] "Pieni (%1 pikseliä)"
-
-#, fuzzy
-#~| msgid "Medium (1 pixel)"
-#~| msgid_plural "Medium (%1 pixels)"
-#~ msgid "Medium (size)"
-#~ msgid_plural "Medium (%1 x %2 pixels)"
-#~ msgstr[0] "Keskikokoinen (Yksi pikseli)"
-#~ msgstr[1] "Keskikokoinen (%1 pikseliä)"
 
 #, fuzzy
 #~| msgid "Big (1 pixel)"

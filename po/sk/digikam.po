@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 08:19+0000\n"
+"POT-Creation-Date: 2025-07-08 01:59+0000\n"
 "PO-Revision-Date: 2025-03-30 17:14+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -395,13 +395,13 @@ msgstr ""
 "obrázkov. To tiež zahŕňa začiarkavacie pole '%1'."
 
 #: core/app/filters/filtersidebarwidget.cpp:156
-#: core/utilities/searchwindow/searchgroup_label.cpp:286
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "ALEBO"
 
 #: core/app/filters/filtersidebarwidget.cpp:159
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "A"
@@ -2984,9 +2984,11 @@ msgstr "Menovky"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, kde-format
-msgid "Scan collection for faces"
-msgstr "Hľadať v kolekcii tváre"
+#, fuzzy, kde-format
+#| msgid "Scan for Faces"
+msgctxt "@label short translated text about the scan for faces"
+msgid "Scan for Faces"
+msgstr "Hľadať tváre"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, fuzzy, kde-format
@@ -21204,7 +21206,7 @@ msgstr "Náhľad..."
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:199
+#: core/utilities/searchwindow/searchgroup_label.cpp:195
 #, kde-format
 msgid "Options"
 msgstr "Možnosti"
@@ -34969,9 +34971,11 @@ msgid ""
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
-#, kde-format
-msgid "Face Detection Settings"
-msgstr "Nastavenia detekcie tvárí"
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgctxt "@title short translated text"
+msgid "Detection"
+msgstr "Detekcia tváre"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
 #, kde-format
@@ -34992,9 +34996,11 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check with a short translated text"
+#| msgid "Work on all processor cores"
 msgctxt "@option:check with a short translated text"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr "Pracovať na všetkých jadrách procesora"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
@@ -35010,9 +35016,10 @@ msgstr ""
 "alebo pracovať iba s jedným jadrom na pozadí."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
-#, kde-format
-msgid "Face Recognition Settings"
-msgstr "Nastavenia rozpoznávania tvárí"
+#, fuzzy, kde-format
+msgctxt "@title short translated text"
+msgid "Recognition"
+msgstr "Detekcia horného okraja"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
@@ -35559,10 +35566,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgctxt "@info: tableview"
+#| msgid "Rejected"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Low Quality to Rejected Label"
-msgstr "Prir&adiť štítky vybraným položkám"
+msgid "Low as Rejected"
+msgstr "Odmietnutý"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, fuzzy, kde-format
@@ -35579,10 +35587,9 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Medium Quality to Pending Label"
-msgstr "Prir&adiť štítky vybraným položkám"
+msgid "Medium as Pending"
+msgstr "Stredná (1 pixel):"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, fuzzy, kde-format
@@ -35599,10 +35606,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgctxt "@info: tableview"
+#| msgid "Accepted"
 msgctxt "@option:check with a short translated text"
-msgid "Assign High Quality to Accepted Label"
-msgstr "Prir&adiť štítky vybraným položkám"
+msgid "High as Accepted"
+msgstr "Akceptovaný"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, fuzzy, kde-format
@@ -35628,7 +35636,7 @@ msgstr "Kvalita:"
 #, fuzzy, kde-format
 #| msgid "Reset contents"
 msgctxt "@option:radio with a short translated text"
-msgid "Detect Aesthetic Contents"
+msgid "Aesthetic Contents"
 msgstr "Vynulovať obsah"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
@@ -35644,7 +35652,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Separator:"
 msgctxt "@option:radio with a short translated text"
-msgid "Detect by Basic Factors"
+msgid "Basic Factors"
 msgstr "Oddeľovač:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
@@ -35675,10 +35683,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, fuzzy, kde-format
-#| msgid "Rejected threshold:"
+#| msgctxt "@info: tableview"
+#| msgid "Rejected"
 msgctxt "@label with a short translated text"
-msgid "Rejected threshold:"
-msgstr "Prah odmietnutých:"
+msgid "Rejected:"
+msgstr "Odmietnutý"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, fuzzy, kde-format
@@ -35689,10 +35698,11 @@ msgstr "Prahová hodnota, pod ktorou budú obrázky označené ako odmietnuté"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, fuzzy, kde-format
-#| msgid "Pending threshold:"
+#| msgctxt "@info: tableview"
+#| msgid "Pending"
 msgctxt "@label with a short translated text"
-msgid "Pending threshold:"
-msgstr "Prah čakajúcich:"
+msgid "Pending:"
+msgstr "Čakajúci"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, fuzzy, kde-format
@@ -35703,10 +35713,11 @@ msgstr "Prahová hodnota, pod ktorou budú obrázky označené ako čakajúce"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, fuzzy, kde-format
-#| msgid "Accepted threshold:"
+#| msgctxt "@info: tableview"
+#| msgid "Accepted"
 msgctxt "@label with a short translated text"
-msgid "Accepted threshold:"
-msgstr "Prah akceptovaných:"
+msgid "Accepted:"
+msgstr "Akceptovaný"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, fuzzy, kde-format
@@ -35717,10 +35728,11 @@ msgstr "Prahová hodnota, nad ktorou budú obrázky označené ako akceptované"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, fuzzy, kde-format
-#| msgid "Detect Blur"
+#| msgctxt "@title"
+#| msgid "Blur"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Blur"
-msgstr "Detegovať rozmazanie"
+msgid "Blur"
+msgstr "Rozostrenie"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, fuzzy, kde-format
@@ -35747,10 +35759,10 @@ msgstr "Váha priradená kritériu rozmazania"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
 #, fuzzy, kde-format
-#| msgid "Detect Noise"
+#| msgid "Noise:"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Noise"
-msgstr "Detegovať šum"
+msgid "Noise"
+msgstr "Šum:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, fuzzy, kde-format
@@ -35769,7 +35781,7 @@ msgstr "Váha priradená kritériu šum"
 #, fuzzy, kde-format
 #| msgid "Detect Compression"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Compression"
+msgid "Compression"
 msgstr "Detegovať kompresiu"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
@@ -35788,10 +35800,10 @@ msgstr "Váha priradená kritériu kompresie"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
 #, fuzzy, kde-format
-#| msgid "Detect Under and Over Exposure"
+#| msgid "Exposure"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Under and Over Exposure"
-msgstr "Detegovať pre a podexponovanie"
+msgid "Exposure"
+msgstr "Expozícia"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, fuzzy, kde-format
@@ -40092,7 +40104,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgctxt "@label with a short translated text "
-msgid "Auto-Tagging Mode:"
+msgid "Tagging Mode:"
 msgstr "Režim merania:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
@@ -40121,13 +40133,13 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Destination Folder:"
+#| msgctxt "camera model"
+#| msgid "Model:"
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
-msgid "Detection Model:"
-msgstr "Cieľový priečinok:"
+msgid "Model:"
+msgstr "Model:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, fuzzy, kde-format
@@ -40135,10 +40147,11 @@ msgid "No models available"
 msgstr "Nie je dostupný popis."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Accuracy"
 msgctxt "@label with a short translated text"
-msgid "Detection Accuracy:"
-msgstr "Presnosť rozpoznávania tvárí:"
+msgid "Accuracy:"
+msgstr "Presnosť"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #, kde-format
@@ -63690,9 +63703,11 @@ msgid ""
 msgstr "Uložiť aktuálny výber do nového virtuálneho albumu"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Work on all processor cores"
 msgctxt "@option:check"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr "Pracovať na všetkých jadrách procesora"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
@@ -64539,8 +64554,9 @@ msgid "Empty Text"
 msgstr "Prázdny text"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
-#, kde-format
-msgid "Return items without text in:"
+#, fuzzy, kde-format
+#| msgid "Return items without text in:"
+msgid "Return items without text in"
 msgstr "Vrátiť položky bez textu v:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
@@ -64806,9 +64822,11 @@ msgid "File, Album, Tags"
 msgstr "Súbor, album, štítky"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, kde-format
-msgid "Picture Properties"
-msgstr "Vlastnosti obrázka"
+#, fuzzy, kde-format
+#| msgctxt "@title: item properties"
+#| msgid "Item Properties"
+msgid "Item Properties"
+msgstr "Vlastnosti položky"
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
@@ -64850,22 +64868,19 @@ msgstr "Žiadne z týchto kritérií nevyhovuje"
 msgid "At least one of these conditions is not met"
 msgstr "Aspoň jedno z týchto kritérií nevyhovuje"
 
-#. i18n("Find Pictures meeting all of these conditions"));
-#. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
-#.
-#: core/utilities/searchwindow/searchgroup_label.cpp:105
+#: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, fuzzy, kde-format
 msgid ""
 "<qt><p>Search your collection<br/>for Items meeting the following "
 "conditions</p></qt>"
 msgstr "Hľadať v kolekcii<br>obrázky zodpovedajúce nasledovným kritériám"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:143
+#: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
 msgid "Remove Group"
 msgstr "Odstrániť skupinu"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:187
+#: core/utilities/searchwindow/searchgroup_label.cpp:183
 #, kde-format
 msgid "Hide Options"
 msgstr "Skryť možnosti"
@@ -69939,6 +69954,91 @@ msgstr "Nastavenie albumu spracovaných položiek"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovať položky"
+
+#~ msgid "Scan collection for faces"
+#~ msgstr "Hľadať v kolekcii tváre"
+
+#~ msgid "Face Detection Settings"
+#~ msgstr "Nastavenia detekcie tvárí"
+
+#~ msgid "Face Recognition Settings"
+#~ msgstr "Nastavenia rozpoznávania tvárí"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Low Quality to Rejected Label"
+#~ msgstr "Prir&adiť štítky vybraným položkám"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Medium Quality to Pending Label"
+#~ msgstr "Prir&adiť štítky vybraným položkám"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign High Quality to Accepted Label"
+#~ msgstr "Prir&adiť štítky vybraným položkám"
+
+#, fuzzy
+#~| msgid "Separator:"
+#~ msgctxt "@option:radio with a short translated text"
+#~ msgid "Detect by Basic Factors"
+#~ msgstr "Oddeľovač:"
+
+#, fuzzy
+#~| msgid "Rejected threshold:"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Rejected threshold:"
+#~ msgstr "Prah odmietnutých:"
+
+#, fuzzy
+#~| msgid "Pending threshold:"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Pending threshold:"
+#~ msgstr "Prah čakajúcich:"
+
+#, fuzzy
+#~| msgid "Accepted threshold:"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Accepted threshold:"
+#~ msgstr "Prah akceptovaných:"
+
+#, fuzzy
+#~| msgid "Detect Blur"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Blur"
+#~ msgstr "Detegovať rozmazanie"
+
+#, fuzzy
+#~| msgid "Detect Noise"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Noise"
+#~ msgstr "Detegovať šum"
+
+#, fuzzy
+#~| msgid "Detect Under and Over Exposure"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Under and Over Exposure"
+#~ msgstr "Detegovať pre a podexponovanie"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Destination Folder:"
+#~ msgctxt ""
+#~ "@label with a short translated text about deep learning model used to "
+#~ "detect objects to auto-tag"
+#~ msgid "Detection Model:"
+#~ msgstr "Cieľový priečinok:"
+
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "Presnosť rozpoznávania tvárí:"
+
+#~ msgid "Picture Properties"
+#~ msgstr "Vlastnosti obrázka"
 
 #~ msgid "Avg. similarity"
 #~ msgstr "Priem. podobnosť"
@@ -76202,13 +76302,6 @@ msgstr "Importovať položky"
 #~ msgstr[0] "Malá (1 pixel):"
 #~ msgstr[1] "Malá (%1 pixle):"
 #~ msgstr[2] "Malá (%1 pixlov):"
-
-#, fuzzy
-#~ msgid "Medium (size)"
-#~ msgid_plural "Medium (%1 x %2 pixels)"
-#~ msgstr[0] "Stredná (1 pixel):"
-#~ msgstr[1] "Stredná (%1 pixle):"
-#~ msgstr[2] "Stredná (%1 pixlov):"
 
 #, fuzzy
 #~ msgid "Big (size)"

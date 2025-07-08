@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 08:19+0000\n"
+"POT-Creation-Date: 2025-07-08 01:59+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -406,13 +406,13 @@ msgid ""
 msgstr ""
 
 #: core/app/filters/filtersidebarwidget.cpp:156
-#: core/utilities/searchwindow/searchgroup_label.cpp:286
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "VAI"
 
 #: core/app/filters/filtersidebarwidget.cpp:159
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "UN"
@@ -3034,9 +3034,11 @@ msgstr "Iezīmes"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, kde-format
-msgid "Scan collection for faces"
-msgstr "Atrast kolekcijā sejas"
+#, fuzzy, kde-format
+#| msgid "Scan for Faces"
+msgctxt "@label short translated text about the scan for faces"
+msgid "Scan for Faces"
+msgstr "Atrast sejas"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, fuzzy, kde-format
@@ -20902,7 +20904,7 @@ msgstr "Priekšapskate"
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:199
+#: core/utilities/searchwindow/searchgroup_label.cpp:195
 #, kde-format
 msgid "Options"
 msgstr "Opcijas"
@@ -34516,7 +34518,8 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, fuzzy, kde-format
-msgid "Face Detection Settings"
+msgctxt "@title short translated text"
+msgid "Detection"
 msgstr "Pretēja kārtība"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
@@ -34538,10 +34541,10 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Work on all processor cores"
-msgstr ""
+msgid "Uses all processors"
+msgstr "Nav aktīva filtra"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
 #, kde-format
@@ -34555,7 +34558,8 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
-msgid "Face Recognition Settings"
+msgctxt "@title short translated text"
+msgid "Recognition"
 msgstr "Seju atpazīšana"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
@@ -35090,10 +35094,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgctxt "@info: tableview"
+#| msgid "Rejected"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Low Quality to Rejected Label"
-msgstr "Piešķirt tagus &izvēlētajām vienībām"
+msgid "Low as Rejected"
+msgstr "Noraidīts"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
@@ -35105,10 +35110,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgid "Medium (1 pixel)"
+#| msgid_plural "Medium (%1 pixels)"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Medium Quality to Pending Label"
-msgstr "Piešķirt tagus &izvēlētajām vienībām"
+msgid "Medium as Pending"
+msgstr "Vidējs (%1 pikselis)"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, kde-format
@@ -35120,10 +35126,9 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
 msgctxt "@option:check with a short translated text"
-msgid "Assign High Quality to Accepted Label"
-msgstr "Piešķirt tagus &izvēlētajām vienībām"
+msgid "High as Accepted"
+msgstr "Slieksnis:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, kde-format
@@ -35143,7 +35148,7 @@ msgstr "PGF kvalitāte:"
 #, fuzzy, kde-format
 #| msgid "Reset contents"
 msgctxt "@option:radio with a short translated text"
-msgid "Detect Aesthetic Contents"
+msgid "Aesthetic Contents"
 msgstr "Atstatīt saturu"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
@@ -35158,7 +35163,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, fuzzy, kde-format
 msgctxt "@option:radio with a short translated text"
-msgid "Detect by Basic Factors"
+msgid "Basic Factors"
 msgstr "Atslēgvārdu atdalītājs:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
@@ -35181,9 +35186,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, fuzzy, kde-format
+#| msgctxt "@info: tableview"
+#| msgid "Rejected"
 msgctxt "@label with a short translated text"
-msgid "Rejected threshold:"
-msgstr "Slieksnis:"
+msgid "Rejected:"
+msgstr "Noraidīts"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -35194,8 +35201,8 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Pending threshold:"
-msgstr "Slieksnis:"
+msgid "Pending:"
+msgstr "Augošā"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -35206,7 +35213,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Accepted threshold:"
+msgid "Accepted:"
 msgstr "Slieksnis:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
@@ -35217,9 +35224,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Blur"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Blur"
-msgstr "Izvēlieties albumu"
+msgid "Blur"
+msgstr "Aizmiglot"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, fuzzy, kde-format
@@ -35244,9 +35253,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
 #, fuzzy, kde-format
+#| msgid "Noise:"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Noise"
-msgstr "Notīrīt iezīmējumu"
+msgid "Noise"
+msgstr "Troksnis:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, fuzzy, kde-format
@@ -35263,7 +35273,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
 #, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Compression"
+msgid "Compression"
 msgstr "PNG saspiešana:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
@@ -35280,9 +35290,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
 #, fuzzy, kde-format
+#| msgid "Exposure"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Under and Over Exposure"
-msgstr "Notīrīt iezīmējumu"
+msgid "Exposure"
+msgstr "Ekspozīcija"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, kde-format
@@ -39338,7 +39349,7 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text "
-msgid "Auto-Tagging Mode:"
+msgid "Tagging Mode:"
 msgstr "Mērīšanas režīms"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
@@ -39367,11 +39378,13 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, fuzzy, kde-format
+#| msgctxt "camera model"
+#| msgid "Model:"
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
-msgid "Detection Model:"
-msgstr "Mērķa URL:"
+msgid "Model:"
+msgstr "Modelis:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, fuzzy, kde-format
@@ -39382,7 +39395,7 @@ msgstr "Nav opciju"
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Detection Accuracy:"
+msgid "Accuracy:"
 msgstr "Precīza"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
@@ -62519,10 +62532,10 @@ msgid ""
 msgstr "Saglabāt aktīvo izvēli jaunā virtuālajā albumā."
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr ""
+msgid "Uses all processors"
+msgstr "Nav aktīva filtra"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
 #, kde-format
@@ -63392,7 +63405,7 @@ msgstr ""
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
-msgid "Return items without text in:"
+msgid "Return items without text in"
 msgstr "Atrast attēlus ar tagu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
@@ -63662,8 +63675,10 @@ msgid "File, Album, Tags"
 msgstr "Fails, albums, tagi"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, kde-format
-msgid "Picture Properties"
+#, fuzzy, kde-format
+#| msgctxt "@title: item properties"
+#| msgid "Item Properties"
+msgid "Item Properties"
 msgstr "Attēla īpašības"
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
@@ -63707,22 +63722,19 @@ msgstr "Neviens no šiem nosacījumiem neatbilst"
 msgid "At least one of these conditions is not met"
 msgstr "Vismaz viens no šiem nosacījumiem neatbilst"
 
-#. i18n("Find Pictures meeting all of these conditions"));
-#. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
-#.
-#: core/utilities/searchwindow/searchgroup_label.cpp:105
+#: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, fuzzy, kde-format
 msgid ""
 "<qt><p>Search your collection<br/>for Items meeting the following "
 "conditions</p></qt>"
 msgstr "Meklēt kolekcijā attēlus,<br> kas atbilst šiem nosacījumiem"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:143
+#: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
 msgid "Remove Group"
 msgstr "Noņemt grupu"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:187
+#: core/utilities/searchwindow/searchgroup_label.cpp:183
 #, fuzzy, kde-format
 #| msgid "Hide Options <<"
 msgid "Hide Options"
@@ -68397,6 +68409,86 @@ msgstr "Albumu vienības"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Kārtot attēlus"
+
+#~ msgid "Scan collection for faces"
+#~ msgstr "Atrast kolekcijā sejas"
+
+#, fuzzy
+#~ msgid "Face Detection Settings"
+#~ msgstr "Pretēja kārtība"
+
+#, fuzzy
+#~| msgid "Face Recognition"
+#~ msgid "Face Recognition Settings"
+#~ msgstr "Seju atpazīšana"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Low Quality to Rejected Label"
+#~ msgstr "Piešķirt tagus &izvēlētajām vienībām"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Medium Quality to Pending Label"
+#~ msgstr "Piešķirt tagus &izvēlētajām vienībām"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign High Quality to Accepted Label"
+#~ msgstr "Piešķirt tagus &izvēlētajām vienībām"
+
+#, fuzzy
+#~ msgctxt "@option:radio with a short translated text"
+#~ msgid "Detect by Basic Factors"
+#~ msgstr "Atslēgvārdu atdalītājs:"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Rejected threshold:"
+#~ msgstr "Slieksnis:"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Pending threshold:"
+#~ msgstr "Slieksnis:"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Accepted threshold:"
+#~ msgstr "Slieksnis:"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Blur"
+#~ msgstr "Izvēlieties albumu"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Noise"
+#~ msgstr "Notīrīt iezīmējumu"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Under and Over Exposure"
+#~ msgstr "Notīrīt iezīmējumu"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "@label with a short translated text about deep learning model used to "
+#~ "detect objects to auto-tag"
+#~ msgid "Detection Model:"
+#~ msgstr "Mērķa URL:"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "Precīza"
+
+#~ msgid "Picture Properties"
+#~ msgstr "Attēla īpašības"
 
 #~ msgid "Avg. similarity"
 #~ msgstr "Vid. līdzība"
@@ -73395,15 +73487,6 @@ msgstr "&Kārtot attēlus"
 #~ msgstr[0] "Mazs (%1 pikselis)"
 #~ msgstr[1] "Mazs (%1 pikseļi)"
 #~ msgstr[2] "Mazs (%1 pikseļi)"
-
-#, fuzzy
-#~| msgid "Medium (1 pixel)"
-#~| msgid_plural "Medium (%1 pixels)"
-#~ msgid "Medium (size)"
-#~ msgid_plural "Medium (%1 x %2 pixels)"
-#~ msgstr[0] "Vidējs (%1 pikselis)"
-#~ msgstr[1] "Vidējs (%1 pikseļi)"
-#~ msgstr[2] "Vidējs (%1 pikseļi)"
 
 #, fuzzy
 #~| msgid "Big (1 pixel)"

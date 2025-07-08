@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 08:19+0000\n"
+"POT-Creation-Date: 2025-07-08 01:59+0000\n"
 "PO-Revision-Date: 2025-06-30 15:34+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -384,13 +384,13 @@ msgstr ""
 "зображень. Крім того, стосується поля «%1»."
 
 #: core/app/filters/filtersidebarwidget.cpp:156
-#: core/utilities/searchwindow/searchgroup_label.cpp:286
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "АБО"
 
 #: core/app/filters/filtersidebarwidget.cpp:159
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "ТА"
@@ -2987,9 +2987,11 @@ msgstr "Позначки"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, kde-format
-msgid "Scan collection for faces"
-msgstr "Шукати обличчя у збірці"
+#, fuzzy, kde-format
+#| msgid "Scan for Faces"
+msgctxt "@label short translated text about the scan for faces"
+msgid "Scan for Faces"
+msgstr "Шукати обличчя"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, kde-format
@@ -21663,7 +21665,7 @@ msgstr "Перегляд…"
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:199
+#: core/utilities/searchwindow/searchgroup_label.cpp:195
 #, kde-format
 msgid "Options"
 msgstr "Параметри"
@@ -35463,9 +35465,11 @@ msgstr ""
 "b> розмір обличчя.</p><p>Цей параметр можна застосовувати лише до YuNet.</p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
-#, kde-format
-msgid "Face Detection Settings"
-msgstr "Параметри виявлення облич"
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgctxt "@title short translated text"
+msgid "Detection"
+msgstr "Виявлення облич"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
 #, kde-format
@@ -35491,9 +35495,11 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check with a short translated text"
+#| msgid "Work on all processor cores"
 msgctxt "@option:check with a short translated text"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr "Використовувати всі ядра процесора"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
@@ -35510,9 +35516,11 @@ msgstr ""
 "процесора."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
-#, kde-format
-msgid "Face Recognition Settings"
-msgstr "Параметри розпізнавання облич"
+#, fuzzy, kde-format
+#| msgid "Face Recognition"
+msgctxt "@title short translated text"
+msgid "Recognition"
+msgstr "Виявлення облич"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
@@ -36065,10 +36073,12 @@ msgstr ""
 "без призначених автоматично міток.</p>"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: tableview"
+#| msgid "Rejected"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Low Quality to Rejected Label"
-msgstr "Призначати мітку «Низька якість» до відкинутих зображень"
+msgid "Low as Rejected"
+msgstr "Відкинуто"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
@@ -36083,8 +36093,8 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Assign Medium Quality to Pending Label"
-msgstr "Призначати мітку «Посередня якість» для мітки «Потребує обробки»"
+msgid "Medium as Pending"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, kde-format
@@ -36097,10 +36107,12 @@ msgstr ""
 "призначено мітку «Потребує обробки» (жовтий прапорець)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: tableview"
+#| msgid "Accepted"
 msgctxt "@option:check with a short translated text"
-msgid "Assign High Quality to Accepted Label"
-msgstr "Призначати мітку «Висока якість» для мітки «Прийнято»"
+msgid "High as Accepted"
+msgstr "Прийнято"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, kde-format
@@ -36119,9 +36131,11 @@ msgid "Quality Engine:"
 msgstr "Рушій якості:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:radio with a short translated text"
+#| msgid "Detect Aesthetic Contents"
 msgctxt "@option:radio with a short translated text"
-msgid "Detect Aesthetic Contents"
+msgid "Aesthetic Contents"
 msgstr "Виявити естетичні зображення"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
@@ -36137,10 +36151,12 @@ msgstr ""
 "класифікації зображень"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:tab"
+#| msgid "Basic Factors"
 msgctxt "@option:radio with a short translated text"
-msgid "Detect by Basic Factors"
-msgstr "Визначити на основі базових факторів"
+msgid "Basic Factors"
+msgstr "Базові фактори"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
 #, kde-format
@@ -36168,10 +36184,12 @@ msgstr ""
 "процесора."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: tableview"
+#| msgid "Rejected"
 msgctxt "@label with a short translated text"
-msgid "Rejected threshold:"
-msgstr "Порогове значення відкидання:"
+msgid "Rejected:"
+msgstr "Відкинуто"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -36182,10 +36200,12 @@ msgstr ""
 "мітку «Відкинуто»."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: tableview"
+#| msgid "Pending"
 msgctxt "@label with a short translated text"
-msgid "Pending threshold:"
-msgstr "Порогове значення потреби у обробці:"
+msgid "Pending:"
+msgstr "У черзі"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -36196,10 +36216,12 @@ msgstr ""
 "мітку «Потребує обробки»."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: tableview"
+#| msgid "Accepted"
 msgctxt "@label with a short translated text"
-msgid "Accepted threshold:"
-msgstr "Порогове значення прийняття:"
+msgid "Accepted:"
+msgstr "Прийнято"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, kde-format
@@ -36210,10 +36232,12 @@ msgstr ""
 "«Прийнято»."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Blur"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Blur"
-msgstr "Виявляти розмивання"
+msgid "Blur"
+msgstr "Розмивання"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, kde-format
@@ -36236,10 +36260,11 @@ msgid "Weight to assign to Blur Algorithm"
 msgstr "Значення ваги, яке буде використано для оцінки розмиття."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Noise:"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Noise"
-msgstr "Виявляти шум"
+msgid "Noise"
+msgstr "Шум:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
@@ -36254,9 +36279,11 @@ msgid "Weight to assign to Noise Algorithm"
 msgstr "Значення ваги, яке буде використано для оцінки стиснення."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check with a short translated text"
+#| msgid "Detect Compression"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Compression"
+msgid "Compression"
 msgstr "Виявляти стиснення"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
@@ -36272,10 +36299,11 @@ msgid "Weight to assign to Compression Algorithm"
 msgstr "Значення ваги, яке буде використано для оцінки стиснення."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Exposure"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Under and Over Exposure"
-msgstr "Виявляти надмірне і недостатнє експонування"
+msgid "Exposure"
+msgstr "Експозиція"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, kde-format
@@ -40414,9 +40442,11 @@ msgstr ""
 "без призначених автоміток.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label with a short translated text "
+#| msgid "Auto-Tagging Mode:"
 msgctxt "@label with a short translated text "
-msgid "Auto-Tagging Mode:"
+msgid "Tagging Mode:"
 msgstr "Режим автоміток: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
@@ -40444,12 +40474,14 @@ msgstr ""
 "наявних міток.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "camera model"
+#| msgid "Model:"
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
-msgid "Detection Model:"
-msgstr "Модель виявлення:"
+msgid "Model:"
+msgstr "Модель:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, kde-format
@@ -40457,10 +40489,12 @@ msgid "No models available"
 msgstr "Немає доступних моделей"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label short translated text about the Face Detection Accuracy"
+#| msgid "Accuracy:"
 msgctxt "@label with a short translated text"
-msgid "Detection Accuracy:"
-msgstr "Точність виявлення:"
+msgid "Accuracy:"
+msgstr "Точність:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #, kde-format
@@ -62656,9 +62690,11 @@ msgstr ""
 "файла"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Work on all processor cores"
 msgctxt "@option:check"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr "Використовувати всі ядра процесора"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
@@ -63484,8 +63520,9 @@ msgid "Empty Text"
 msgstr "Порожній текст"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
-#, kde-format
-msgid "Return items without text in:"
+#, fuzzy, kde-format
+#| msgid "Return items without text in:"
+msgid "Return items without text in"
 msgstr "Повернути записи без тексту у:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
@@ -63743,9 +63780,11 @@ msgid "File, Album, Tags"
 msgstr "Файл, Альбом, Мітки"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, kde-format
-msgid "Picture Properties"
-msgstr "Властивості знімка"
+#, fuzzy, kde-format
+#| msgctxt "@title: item properties"
+#| msgid "Item Properties"
+msgid "Item Properties"
+msgstr "Властивості зображення"
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
@@ -63787,10 +63826,7 @@ msgstr "Жодна з цих умов не виконується"
 msgid "At least one of these conditions is not met"
 msgstr "Принаймні одна з цих умов не виконується"
 
-#. i18n("Find Pictures meeting all of these conditions"));
-#. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
-#.
-#: core/utilities/searchwindow/searchgroup_label.cpp:105
+#: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, kde-format
 msgid ""
 "<qt><p>Search your collection<br/>for Items meeting the following "
@@ -63799,12 +63835,12 @@ msgstr ""
 "<qt><p>Знайти у вашій збірці<br/>записи, що відповідають наведеним нижче "
 "умовам</p></qt>"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:143
+#: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
 msgid "Remove Group"
 msgstr "Вилучити групу"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:187
+#: core/utilities/searchwindow/searchgroup_label.cpp:183
 #, kde-format
 msgid "Hide Options"
 msgstr "Сховати параметри"
@@ -68927,6 +68963,68 @@ msgstr "Пункти альбомів"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпортовані пункти"
+
+#~ msgid "Scan collection for faces"
+#~ msgstr "Шукати обличчя у збірці"
+
+#~ msgid "Face Detection Settings"
+#~ msgstr "Параметри виявлення облич"
+
+#~ msgid "Face Recognition Settings"
+#~ msgstr "Параметри розпізнавання облич"
+
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Low Quality to Rejected Label"
+#~ msgstr "Призначати мітку «Низька якість» до відкинутих зображень"
+
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Medium Quality to Pending Label"
+#~ msgstr "Призначати мітку «Посередня якість» для мітки «Потребує обробки»"
+
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign High Quality to Accepted Label"
+#~ msgstr "Призначати мітку «Висока якість» для мітки «Прийнято»"
+
+#~ msgctxt "@option:radio with a short translated text"
+#~ msgid "Detect by Basic Factors"
+#~ msgstr "Визначити на основі базових факторів"
+
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Rejected threshold:"
+#~ msgstr "Порогове значення відкидання:"
+
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Pending threshold:"
+#~ msgstr "Порогове значення потреби у обробці:"
+
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Accepted threshold:"
+#~ msgstr "Порогове значення прийняття:"
+
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Blur"
+#~ msgstr "Виявляти розмивання"
+
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Noise"
+#~ msgstr "Виявляти шум"
+
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Under and Over Exposure"
+#~ msgstr "Виявляти надмірне і недостатнє експонування"
+
+#~ msgctxt ""
+#~ "@label with a short translated text about deep learning model used to "
+#~ "detect objects to auto-tag"
+#~ msgid "Detection Model:"
+#~ msgstr "Модель виявлення:"
+
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "Точність виявлення:"
+
+#~ msgid "Picture Properties"
+#~ msgstr "Властивості знімка"
 
 #~ msgid "Avg. similarity"
 #~ msgstr "Середня подібність"

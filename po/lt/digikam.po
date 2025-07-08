@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 08:19+0000\n"
+"POT-Creation-Date: 2025-07-08 01:59+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -434,13 +434,13 @@ msgid ""
 msgstr ""
 
 #: core/app/filters/filtersidebarwidget.cpp:156
-#: core/utilities/searchwindow/searchgroup_label.cpp:286
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "ARBA"
 
 #: core/app/filters/filtersidebarwidget.cpp:159
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "IR"
@@ -3217,9 +3217,12 @@ msgstr "Etiketės"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, kde-format
-msgid "Scan collection for faces"
-msgstr "Skenuoti kolekcijas dėl veidų"
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Scanning faces"
+msgctxt "@label short translated text about the scan for faces"
+msgid "Scan for Faces"
+msgstr "Veidų skenavimas"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, fuzzy, kde-format
@@ -21607,7 +21610,7 @@ msgstr "Peržiūra"
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:199
+#: core/utilities/searchwindow/searchgroup_label.cpp:195
 #, kde-format
 msgid "Options"
 msgstr "Parinktys"
@@ -35309,7 +35312,8 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, fuzzy, kde-format
-msgid "Face Detection Settings"
+msgctxt "@title short translated text"
+msgid "Detection"
 msgstr "Veidų atpažinimo palaikymas;"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
@@ -35336,7 +35340,7 @@ msgstr ""
 #| msgctxt "@option:check"
 #| msgid "Work on all processor cores"
 msgctxt "@option:check with a short translated text"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr "Dirbti visose procesorių šerdyse"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
@@ -35358,7 +35362,8 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, fuzzy, kde-format
-msgid "Face Recognition Settings"
+msgctxt "@title short translated text"
+msgid "Recognition"
 msgstr "Veidų atpažinimo palaikymas;"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
@@ -35889,10 +35894,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgid "Rejected"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Low Quality to Rejected Label"
-msgstr "Priskirti žymas &pažymėtiems elementams"
+msgid "Low as Rejected"
+msgstr "Atmesta"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
@@ -35904,10 +35909,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgid "Medium (1 pixel)"
+#| msgid_plural "Medium (%1 pixels)"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Medium Quality to Pending Label"
-msgstr "Priskirti žymas &pažymėtiems elementams"
+msgid "Medium as Pending"
+msgstr "Vidutinis (%1 pikselis):"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, kde-format
@@ -35919,10 +35925,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgid "Accepted"
 msgctxt "@option:check with a short translated text"
-msgid "Assign High Quality to Accepted Label"
-msgstr "Priskirti žymas &pažymėtiems elementams"
+msgid "High as Accepted"
+msgstr "Priimta"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, kde-format
@@ -35941,7 +35947,7 @@ msgstr "PGF kokybė:"
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
 #, fuzzy, kde-format
 msgctxt "@option:radio with a short translated text"
-msgid "Detect Aesthetic Contents"
+msgid "Aesthetic Contents"
 msgstr "Pašalinti žymės ženkliuką"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
@@ -35956,7 +35962,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, fuzzy, kde-format
 msgctxt "@option:radio with a short translated text"
-msgid "Detect by Basic Factors"
+msgid "Basic Factors"
 msgstr "Merkatorius"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
@@ -35987,9 +35993,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, fuzzy, kde-format
+#| msgid "Rejected"
 msgctxt "@label with a short translated text"
-msgid "Rejected threshold:"
-msgstr "Slenkstis:"
+msgid "Rejected:"
+msgstr "Atmesta"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -35999,9 +36006,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, fuzzy, kde-format
+#| msgid "Pending"
 msgctxt "@label with a short translated text"
-msgid "Pending threshold:"
-msgstr "Slenkstis:"
+msgid "Pending:"
+msgstr "Laukiama"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -36011,9 +36019,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, fuzzy, kde-format
+#| msgid "Accepted"
 msgctxt "@label with a short translated text"
-msgid "Accepted threshold:"
-msgstr "Slenkstis:"
+msgid "Accepted:"
+msgstr "Priimta"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, kde-format
@@ -36023,9 +36032,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, fuzzy, kde-format
+#| msgid "Blur"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Blur"
-msgstr "Pažymėti albumą"
+msgid "Blur"
+msgstr "Suliejimas"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, fuzzy, kde-format
@@ -36050,9 +36060,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
 #, fuzzy, kde-format
+#| msgid "Noise:"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Noise"
-msgstr "Pasirinkti nieko"
+msgid "Noise"
+msgstr "Triukšmas:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, fuzzy, kde-format
@@ -36069,7 +36080,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
 #, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Compression"
+msgid "Compression"
 msgstr "PNG spaudimas:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
@@ -36086,9 +36097,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
 #, fuzzy, kde-format
+#| msgid "Exposure"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Under and Over Exposure"
-msgstr "Pasirinkti nieko"
+msgid "Exposure"
+msgstr "Išlaikymas"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, kde-format
@@ -40241,10 +40253,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label with a short translated text "
-msgid "Auto-Tagging Mode:"
-msgstr ""
+msgid "Tagging Mode:"
+msgstr "Modelis: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, fuzzy, kde-format
@@ -40271,12 +40283,13 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, fuzzy, kde-format
-#| msgid "Digitization date"
+#| msgctxt "camera model"
+#| msgid "Model:"
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
-msgid "Detection Model:"
-msgstr "Skaitmeninimo data"
+msgid "Model:"
+msgstr "Modelis:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, fuzzy, kde-format
@@ -40287,7 +40300,7 @@ msgstr "Nėra aprašymo"
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label with a short translated text"
-msgid "Detection Accuracy:"
+msgid "Accuracy:"
 msgstr "Tikslumas"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
@@ -63715,9 +63728,11 @@ msgid ""
 msgstr "Įrašyti dabartinį pažymėjimą į naują virtualų albumą"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Work on all processor cores"
 msgctxt "@option:check"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr "Dirbti visose procesorių šerdyse"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
@@ -64621,7 +64636,7 @@ msgstr ""
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
-msgid "Return items without text in:"
+msgid "Return items without text in"
 msgstr "Rodyti paveikslėlius su žymomis"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
@@ -64897,9 +64912,10 @@ msgid "File, Album, Tags"
 msgstr "Failas, albumas, žymos"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, kde-format
-msgid "Picture Properties"
-msgstr "Paveikslėlio savybės"
+#, fuzzy, kde-format
+#| msgid "Item Properties"
+msgid "Item Properties"
+msgstr "Nuotraukos savybės"
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
@@ -64941,10 +64957,7 @@ msgstr "Nei viena iš šių sąlygų atitinka"
 msgid "At least one of these conditions is not met"
 msgstr "Bent viena iš šių sąlygų ne atitinka"
 
-#. i18n("Find Pictures meeting all of these conditions"));
-#. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
-#.
-#: core/utilities/searchwindow/searchgroup_label.cpp:105
+#: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Search your collection<br/>for pictures meeting the following "
@@ -64956,12 +64969,12 @@ msgstr ""
 "<qt><p>Ieškoti jūsų kolekcijoje<br/>paveikslėlių atitinkančių sekančias "
 "sąlygas</p></qt>"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:143
+#: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
 msgid "Remove Group"
 msgstr "Šalinti grupę"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:187
+#: core/utilities/searchwindow/searchgroup_label.cpp:183
 #, fuzzy, kde-format
 #| msgid "Hide Options <<"
 msgid "Hide Options"
@@ -69711,6 +69724,87 @@ msgstr "Albumo objektai"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Rikiuoti paveikslėlius"
+
+#~ msgid "Scan collection for faces"
+#~ msgstr "Skenuoti kolekcijas dėl veidų"
+
+#, fuzzy
+#~ msgid "Face Detection Settings"
+#~ msgstr "Veidų atpažinimo palaikymas;"
+
+#, fuzzy
+#~ msgid "Face Recognition Settings"
+#~ msgstr "Veidų atpažinimo palaikymas;"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Low Quality to Rejected Label"
+#~ msgstr "Priskirti žymas &pažymėtiems elementams"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Medium Quality to Pending Label"
+#~ msgstr "Priskirti žymas &pažymėtiems elementams"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign High Quality to Accepted Label"
+#~ msgstr "Priskirti žymas &pažymėtiems elementams"
+
+#, fuzzy
+#~ msgctxt "@option:radio with a short translated text"
+#~ msgid "Detect by Basic Factors"
+#~ msgstr "Merkatorius"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Rejected threshold:"
+#~ msgstr "Slenkstis:"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Pending threshold:"
+#~ msgstr "Slenkstis:"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Accepted threshold:"
+#~ msgstr "Slenkstis:"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Blur"
+#~ msgstr "Pažymėti albumą"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Noise"
+#~ msgstr "Pasirinkti nieko"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Under and Over Exposure"
+#~ msgstr "Pasirinkti nieko"
+
+#, fuzzy
+#~| msgid "Digitization date"
+#~ msgctxt ""
+#~ "@label with a short translated text about deep learning model used to "
+#~ "detect objects to auto-tag"
+#~ msgid "Detection Model:"
+#~ msgstr "Skaitmeninimo data"
+
+#, fuzzy
+#~| msgid "Accuracy"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "Tikslumas"
+
+#~ msgid "Picture Properties"
+#~ msgstr "Paveikslėlio savybės"
 
 #, fuzzy
 #~| msgid "Similarity:"
@@ -75617,16 +75711,6 @@ msgstr "&Rikiuoti paveikslėlius"
 #~ msgstr[1] "Mažas (%1 pikselių)"
 #~ msgstr[2] "Mažas (%1 pikselių)"
 #~ msgstr[3] "Mažas (%1 pikselis)"
-
-#, fuzzy
-#~| msgid "Medium (1 pixel)"
-#~| msgid_plural "Medium (%1 pixels)"
-#~ msgid "Medium (size)"
-#~ msgid_plural "Medium (%1 x %2 pixels)"
-#~ msgstr[0] "Vidutinis (%1 pikselis):"
-#~ msgstr[1] "Vidutinis (%1 pikseliai):"
-#~ msgstr[2] "Vidutinis (%1 pikselių):"
-#~ msgstr[3] "Vidutinis (%1 pikselis):"
 
 #, fuzzy
 #~| msgid "Big (1 pixel)"

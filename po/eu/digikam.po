@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 08:19+0000\n"
+"POT-Creation-Date: 2025-07-08 01:59+0000\n"
 "PO-Revision-Date: 2025-01-19 14:15+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -409,13 +409,13 @@ msgstr ""
 "definitzen du. Honek '%1' kontrol-laukia barnean hartzen du."
 
 #: core/app/filters/filtersidebarwidget.cpp:156
-#: core/utilities/searchwindow/searchgroup_label.cpp:286
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "EDO"
 
 #: core/app/filters/filtersidebarwidget.cpp:159
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "ETA"
@@ -2983,9 +2983,11 @@ msgstr "Labelak"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, kde-format
-msgid "Scan collection for faces"
-msgstr "Miatu bilduma aurpegi bila"
+#, fuzzy, kde-format
+#| msgid "Scan for Faces"
+msgctxt "@label short translated text about the scan for faces"
+msgid "Scan for Faces"
+msgstr "Aztertu irudien bila"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, kde-format
@@ -21316,7 +21318,7 @@ msgstr "Aurreikuspegia"
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:199
+#: core/utilities/searchwindow/searchgroup_label.cpp:195
 #, kde-format
 msgid "Options"
 msgstr "Aukerak"
@@ -35617,7 +35619,8 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, fuzzy, kde-format
 #| msgid "Face Detection"
-msgid "Face Detection Settings"
+msgctxt "@title short translated text"
+msgid "Detection"
 msgstr "Aurpegia atzematea"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
@@ -35655,7 +35658,7 @@ msgstr ""
 #| msgctxt "@option:check"
 #| msgid "Work on all processor cores"
 msgctxt "@option:check with a short translated text"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr "Prozesatzailearen nukleo guztiekin lan egitea"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
@@ -35671,9 +35674,11 @@ msgstr ""
 "nukleo bakarrean lan egitea nahi duzun aukera dezakezu."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
-#, kde-format
-msgid "Face Recognition Settings"
-msgstr "Aurpegi ezagutza ezarpenak"
+#, fuzzy, kde-format
+#| msgid "Face Recognition"
+msgctxt "@title short translated text"
+msgid "Recognition"
+msgstr "Aurpegi ezagutza"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
@@ -36236,10 +36241,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgctxt "@info: tableview"
+#| msgid "Rejected"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Low Quality to Rejected Label"
-msgstr "Esleitu etiketak hau&tatutako elementuei"
+msgid "Low as Rejected"
+msgstr "Errefusatua"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, fuzzy, kde-format
@@ -36257,10 +36263,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgid "Medium (1 pixel)"
+#| msgid_plural "Medium (%1 pixels)"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Medium Quality to Pending Label"
-msgstr "Esleitu etiketak hau&tatutako elementuei"
+msgid "Medium as Pending"
+msgstr "Ertaina (1 pixel)"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, fuzzy, kde-format
@@ -36278,10 +36285,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgctxt "@info: tableview"
+#| msgid "Accepted"
 msgctxt "@option:check with a short translated text"
-msgid "Assign High Quality to Accepted Label"
-msgstr "Esleitu etiketak hau&tatutako elementuei"
+msgid "High as Accepted"
+msgstr "Onartua"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, fuzzy, kde-format
@@ -36308,7 +36316,7 @@ msgstr "Kalitatea:"
 #, fuzzy, kde-format
 #| msgid "Reset contents"
 msgctxt "@option:radio with a short translated text"
-msgid "Detect Aesthetic Contents"
+msgid "Aesthetic Contents"
 msgstr "Berrezarri edukia"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
@@ -36323,7 +36331,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, fuzzy, kde-format
 msgctxt "@option:radio with a short translated text"
-msgid "Detect by Basic Factors"
+msgid "Basic Factors"
 msgstr "Gako-hitzen bereizlea:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
@@ -36354,11 +36362,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Rejected threshold:"
+#| msgctxt "@info: tableview"
+#| msgid "Rejected"
 msgctxt "@label with a short translated text"
-msgid "Rejected threshold:"
-msgstr "Errefusatu atalasea:"
+msgid "Rejected:"
+msgstr "Errefusatua"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -36370,9 +36378,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, fuzzy, kde-format
+#| msgctxt "@info: tableview"
+#| msgid "Pending"
 msgctxt "@label with a short translated text"
-msgid "Pending threshold:"
-msgstr "Atalasea:"
+msgid "Pending:"
+msgstr "Zain"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -36382,9 +36392,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, fuzzy, kde-format
+#| msgctxt "@info: tableview"
+#| msgid "Accepted"
 msgctxt "@label with a short translated text"
-msgid "Accepted threshold:"
-msgstr "Atalasea:"
+msgid "Accepted:"
+msgstr "Onartua"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, kde-format
@@ -36394,9 +36406,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, fuzzy, kde-format
+#| msgid "Blur"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Blur"
-msgstr "Hautatu albuma"
+msgid "Blur"
+msgstr "Lausotu"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, fuzzy, kde-format
@@ -36423,9 +36436,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
 #, fuzzy, kde-format
+#| msgid "Noise:"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Noise"
-msgstr "Bat ere ez hautatu"
+msgid "Noise"
+msgstr "Zarata:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, fuzzy, kde-format
@@ -36444,7 +36458,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
 #, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Compression"
+msgid "Compression"
 msgstr "PNG konpresioa:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
@@ -36463,9 +36477,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
 #, fuzzy, kde-format
+#| msgid "Exposure"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Under and Over Exposure"
-msgstr "Bat ere ez hautatu"
+msgid "Exposure"
+msgstr "Esposizioa"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, kde-format
@@ -40500,7 +40515,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgctxt "@label with a short translated text "
-msgid "Auto-Tagging Mode:"
+msgid "Tagging Mode:"
 msgstr "Mode de mesure :"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
@@ -40529,12 +40544,13 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, fuzzy, kde-format
-#| msgid "Selection model: "
+#| msgctxt "camera model"
+#| msgid "Model:"
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
-msgid "Detection Model:"
-msgstr "Hautapen eredua: "
+msgid "Model:"
+msgstr "Modeloa:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, fuzzy, kde-format
@@ -40544,11 +40560,10 @@ msgstr "Aukera ez dago erabilgarri"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Face Accuracy"
+#| msgid "Accuracy"
 msgctxt "@label with a short translated text"
-msgid "Detection Accuracy:"
-msgstr "Aurpegien zehaztasuna"
+msgid "Accuracy:"
+msgstr "&Zehaztasuna:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #, fuzzy, kde-format
@@ -63352,9 +63367,11 @@ msgid ""
 msgstr "Gorde uneko hautapena album birtual berrian"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Work on all processor cores"
 msgctxt "@option:check"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr "Prozesatzailearen nukleo guztiekin lan egitea"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
@@ -64241,7 +64258,7 @@ msgstr "Testua hutsik"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
-msgid "Return items without text in:"
+msgid "Return items without text in"
 msgstr "Itzuli irudiak etiketekin"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
@@ -64512,8 +64529,8 @@ msgid "File, Album, Tags"
 msgstr "Fitxategia, albuma, etiketak"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, kde-format
-msgid "Picture Properties"
+#, fuzzy, kde-format
+msgid "Item Properties"
 msgstr "Irudiaren propietateak"
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
@@ -64557,10 +64574,7 @@ msgstr "Ez da baldintza hauetariko ezer bete"
 msgid "At least one of these conditions is not met"
 msgstr "Gutxienez baldintzetariko bat ez da bete"
 
-#. i18n("Find Pictures meeting all of these conditions"));
-#. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
-#.
-#: core/utilities/searchwindow/searchgroup_label.cpp:105
+#: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Search your collection<br/>for pictures meeting the following "
@@ -64572,12 +64586,12 @@ msgstr ""
 "<qt><p>Bilatu zure bilduma<br/>honako baldintzak betetzen dituzten "
 "irudientzako</p></qt>"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:143
+#: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
 msgid "Remove Group"
 msgstr "Kendu taldea"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:187
+#: core/utilities/searchwindow/searchgroup_label.cpp:183
 #, fuzzy, kde-format
 #| msgid "Hide Options <<"
 msgid "Hide Options"
@@ -69527,6 +69541,90 @@ msgstr "Album elementuak"
 #, kde-format
 msgid "Import Items"
 msgstr "Inportatu elementuak"
+
+#~ msgid "Scan collection for faces"
+#~ msgstr "Miatu bilduma aurpegi bila"
+
+#, fuzzy
+#~| msgid "Face Detection"
+#~ msgid "Face Detection Settings"
+#~ msgstr "Aurpegia atzematea"
+
+#~ msgid "Face Recognition Settings"
+#~ msgstr "Aurpegi ezagutza ezarpenak"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Low Quality to Rejected Label"
+#~ msgstr "Esleitu etiketak hau&tatutako elementuei"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Medium Quality to Pending Label"
+#~ msgstr "Esleitu etiketak hau&tatutako elementuei"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign High Quality to Accepted Label"
+#~ msgstr "Esleitu etiketak hau&tatutako elementuei"
+
+#, fuzzy
+#~ msgctxt "@option:radio with a short translated text"
+#~ msgid "Detect by Basic Factors"
+#~ msgstr "Gako-hitzen bereizlea:"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Rejected threshold:"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Rejected threshold:"
+#~ msgstr "Errefusatu atalasea:"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Pending threshold:"
+#~ msgstr "Atalasea:"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Accepted threshold:"
+#~ msgstr "Atalasea:"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Blur"
+#~ msgstr "Hautatu albuma"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Noise"
+#~ msgstr "Bat ere ez hautatu"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Under and Over Exposure"
+#~ msgstr "Bat ere ez hautatu"
+
+#, fuzzy
+#~| msgid "Selection model: "
+#~ msgctxt ""
+#~ "@label with a short translated text about deep learning model used to "
+#~ "detect objects to auto-tag"
+#~ msgid "Detection Model:"
+#~ msgstr "Hautapen eredua: "
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Face Accuracy"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "Aurpegien zehaztasuna"
+
+#~ msgid "Picture Properties"
+#~ msgstr "Irudiaren propietateak"
 
 #, fuzzy
 #~| msgid "Similarity:"
@@ -76121,14 +76219,6 @@ msgstr "Inportatu elementuak"
 #~ msgid_plural "Small (%1 x %2 pixels)"
 #~ msgstr[0] "Txikia (1 pixel)"
 #~ msgstr[1] "Txikia (%1 pixel)"
-
-#, fuzzy
-#~| msgid "Medium (1 pixel)"
-#~| msgid_plural "Medium (%1 pixels)"
-#~ msgid "Medium (size)"
-#~ msgid_plural "Medium (%1 x %2 pixels)"
-#~ msgstr[0] "Ertaina (1 pixel)"
-#~ msgstr[1] "Ertaina (%1 pixel)"
 
 #, fuzzy
 #~| msgid "Big (1 pixel)"

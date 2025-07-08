@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 08:19+0000\n"
+"POT-Creation-Date: 2025-07-08 01:59+0000\n"
 "PO-Revision-Date: 2025-04-26 10:03+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -374,13 +374,13 @@ msgid ""
 msgstr ""
 
 #: core/app/filters/filtersidebarwidget.cpp:156
-#: core/utilities/searchwindow/searchgroup_label.cpp:286
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "ან"
 
 #: core/app/filters/filtersidebarwidget.cpp:159
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "და"
@@ -2886,9 +2886,11 @@ msgstr "ჭდეები"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, kde-format
-msgid "Scan collection for faces"
-msgstr "კოლექციის სკანირება სახეების საპოვნელად"
+#, fuzzy, kde-format
+#| msgid "Scan for Faces"
+msgctxt "@label short translated text about the scan for faces"
+msgid "Scan for Faces"
+msgstr "სკანირება სახეების მოსაძებნად"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, kde-format
@@ -19907,7 +19909,7 @@ msgstr "გადახედვა..."
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:199
+#: core/utilities/searchwindow/searchgroup_label.cpp:195
 #, kde-format
 msgid "Options"
 msgstr "პარამეტრები"
@@ -32648,9 +32650,11 @@ msgid ""
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
-#, kde-format
-msgid "Face Detection Settings"
-msgstr "სახის ამოცნობის მორგება"
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgctxt "@title short translated text"
+msgid "Detection"
+msgstr "სახის ამოცნობა"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
 #, kde-format
@@ -32671,10 +32675,11 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Normal process"
 msgctxt "@option:check with a short translated text"
-msgid "Work on all processor cores"
-msgstr ""
+msgid "Uses all processors"
+msgstr "ნორმალური დამუშავება"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
 #, kde-format
@@ -32686,9 +32691,12 @@ msgid ""
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
-#, kde-format
-msgid "Face Recognition Settings"
-msgstr "სახის ამოცნობის მორგება"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Text Recognition"
+msgctxt "@title short translated text"
+msgid "Recognition"
+msgstr "ტექსტის ამოცნობა"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
@@ -33199,10 +33207,12 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: tableview"
+#| msgid "Rejected"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Low Quality to Rejected Label"
-msgstr "დაბალი ხარისხის მინიჭება უარყოფილი ჭდისთვის"
+msgid "Low as Rejected"
+msgstr "უარყოფილია"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
@@ -33215,8 +33225,8 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Assign Medium Quality to Pending Label"
-msgstr "საშუალო ხარისხის მინიჭება დარჩენილი ჭდისთვის"
+msgid "Medium as Pending"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, kde-format
@@ -33227,10 +33237,12 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: tableview"
+#| msgid "Accepted"
 msgctxt "@option:check with a short translated text"
-msgid "Assign High Quality to Accepted Label"
-msgstr "მაღალი ხარისხის მინიჭება დადასტურებული ჭდისთვის"
+msgid "High as Accepted"
+msgstr "მიღებულია"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, kde-format
@@ -33247,10 +33259,12 @@ msgid "Quality Engine:"
 msgstr "ხარისხის ძრავა:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Append Contents"
 msgctxt "@option:radio with a short translated text"
-msgid "Detect Aesthetic Contents"
-msgstr ""
+msgid "Aesthetic Contents"
+msgstr "შემცველობის ბოლოში მიწერა"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
 #, kde-format
@@ -33262,10 +33276,12 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:tab"
+#| msgid "Basic Factors"
 msgctxt "@option:radio with a short translated text"
-msgid "Detect by Basic Factors"
-msgstr "აღმოჩენა ბაზისური ფაქტორებით"
+msgid "Basic Factors"
+msgstr "ბაზისური ფაქტორები"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
 #, kde-format
@@ -33286,10 +33302,12 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: tableview"
+#| msgid "Rejected"
 msgctxt "@label with a short translated text"
-msgid "Rejected threshold:"
-msgstr "უარყოფილი ზღვარი:"
+msgid "Rejected:"
+msgstr "უარყოფილია"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -33298,10 +33316,12 @@ msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: tableview"
+#| msgid "Pending"
 msgctxt "@label with a short translated text"
-msgid "Pending threshold:"
-msgstr "დარჩენილი ზღვარი:"
+msgid "Pending:"
+msgstr "დარჩენილი"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -33310,10 +33330,12 @@ msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: tableview"
+#| msgid "Accepted"
 msgctxt "@label with a short translated text"
-msgid "Accepted threshold:"
-msgstr "მისაღები ზღვარი:"
+msgid "Accepted:"
+msgstr "მიღებულია"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, kde-format
@@ -33322,10 +33344,12 @@ msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Blur"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Blur"
-msgstr "ბუნდოვნების აღმოჩენა"
+msgid "Blur"
+msgstr "ბუნდოვნება"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, kde-format
@@ -33348,10 +33372,11 @@ msgid "Weight to assign to Blur Algorithm"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Noise:"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Noise"
-msgstr "ხმაურის გამოვლენა"
+msgid "Noise"
+msgstr "ხმაური:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
@@ -33366,9 +33391,11 @@ msgid "Weight to assign to Noise Algorithm"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check with a short translated text"
+#| msgid "Detect Compression"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Compression"
+msgid "Compression"
 msgstr "შეკუმშვის გამოვლენა"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
@@ -33384,10 +33411,11 @@ msgid "Weight to assign to Compression Algorithm"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Exposure"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Under and Over Exposure"
-msgstr ""
+msgid "Exposure"
+msgstr "ექსპოზიცია"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, kde-format
@@ -37250,9 +37278,11 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label with a short translated text "
+#| msgid "Auto-Tagging Mode:"
 msgctxt "@label with a short translated text "
-msgid "Auto-Tagging Mode:"
+msgid "Tagging Mode:"
 msgstr "ავტომატური ჭდეების რეჟიმი:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
@@ -37277,12 +37307,14 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "camera model"
+#| msgid "Model:"
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
-msgid "Detection Model:"
-msgstr "აღმოჩენის მოდელი:"
+msgid "Model:"
+msgstr "მოდელი:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, kde-format
@@ -37290,10 +37322,12 @@ msgid "No models available"
 msgstr "მოდელები ხელმისაწვდომი არაა"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label short translated text about the Face Detection Accuracy"
+#| msgid "Accuracy:"
 msgctxt "@label with a short translated text"
-msgid "Detection Accuracy:"
-msgstr "აღმოჩენის სიზუსტე:"
+msgid "Accuracy:"
+msgstr "სიზუსტე:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #, kde-format
@@ -58363,10 +58397,11 @@ msgid ""
 msgstr ""
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Normal process"
 msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr ""
+msgid "Uses all processors"
+msgstr "ნორმალური დამუშავება"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
 #, kde-format
@@ -59187,9 +59222,10 @@ msgid "Empty Text"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
-#, kde-format
-msgid "Return items without text in:"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Items Without Rating"
+msgid "Return items without text in"
+msgstr "ელემენტები რეიტინგის გარეშე"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
 #, kde-format
@@ -59446,9 +59482,11 @@ msgid "File, Album, Tags"
 msgstr ""
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, kde-format
-msgid "Picture Properties"
-msgstr "სურათის თვისებები"
+#, fuzzy, kde-format
+#| msgctxt "@title: item properties"
+#| msgid "Item Properties"
+msgid "Item Properties"
+msgstr "ობიექტის თვისებები"
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
@@ -59490,22 +59528,19 @@ msgstr ""
 msgid "At least one of these conditions is not met"
 msgstr ""
 
-#. i18n("Find Pictures meeting all of these conditions"));
-#. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
-#.
-#: core/utilities/searchwindow/searchgroup_label.cpp:105
+#: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, kde-format
 msgid ""
 "<qt><p>Search your collection<br/>for Items meeting the following "
 "conditions</p></qt>"
 msgstr ""
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:143
+#: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
 msgid "Remove Group"
 msgstr "ჯგუფის წაშლა"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:187
+#: core/utilities/searchwindow/searchgroup_label.cpp:183
 #, kde-format
 msgid "Hide Options"
 msgstr "პარამეტრების დამალვა"
@@ -63931,6 +63966,64 @@ msgstr ""
 #, kde-format
 msgid "Import Items"
 msgstr ""
+
+#~ msgid "Scan collection for faces"
+#~ msgstr "კოლექციის სკანირება სახეების საპოვნელად"
+
+#~ msgid "Face Detection Settings"
+#~ msgstr "სახის ამოცნობის მორგება"
+
+#~ msgid "Face Recognition Settings"
+#~ msgstr "სახის ამოცნობის მორგება"
+
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Low Quality to Rejected Label"
+#~ msgstr "დაბალი ხარისხის მინიჭება უარყოფილი ჭდისთვის"
+
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Medium Quality to Pending Label"
+#~ msgstr "საშუალო ხარისხის მინიჭება დარჩენილი ჭდისთვის"
+
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign High Quality to Accepted Label"
+#~ msgstr "მაღალი ხარისხის მინიჭება დადასტურებული ჭდისთვის"
+
+#~ msgctxt "@option:radio with a short translated text"
+#~ msgid "Detect by Basic Factors"
+#~ msgstr "აღმოჩენა ბაზისური ფაქტორებით"
+
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Rejected threshold:"
+#~ msgstr "უარყოფილი ზღვარი:"
+
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Pending threshold:"
+#~ msgstr "დარჩენილი ზღვარი:"
+
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Accepted threshold:"
+#~ msgstr "მისაღები ზღვარი:"
+
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Blur"
+#~ msgstr "ბუნდოვნების აღმოჩენა"
+
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Noise"
+#~ msgstr "ხმაურის გამოვლენა"
+
+#~ msgctxt ""
+#~ "@label with a short translated text about deep learning model used to "
+#~ "detect objects to auto-tag"
+#~ msgid "Detection Model:"
+#~ msgstr "აღმოჩენის მოდელი:"
+
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "აღმოჩენის სიზუსტე:"
+
+#~ msgid "Picture Properties"
+#~ msgstr "სურათის თვისებები"
 
 #, fuzzy
 #~| msgctxt "@label"

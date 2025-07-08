@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 08:19+0000\n"
+"POT-Creation-Date: 2025-07-08 01:59+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -382,13 +382,13 @@ msgid ""
 msgstr ""
 
 #: core/app/filters/filtersidebarwidget.cpp:156
-#: core/utilities/searchwindow/searchgroup_label.cpp:286
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr ""
 
 #: core/app/filters/filtersidebarwidget.cpp:159
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr ""
@@ -2955,8 +2955,10 @@ msgstr "Lab"
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
 #, fuzzy, kde-format
-msgid "Scan collection for faces"
-msgstr "Tập hợp tập ảnh"
+#| msgid "Scan for New Images"
+msgctxt "@label short translated text about the scan for faces"
+msgid "Scan for Faces"
+msgstr "Quét tìm ảnh mới"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, fuzzy, kde-format
@@ -20663,7 +20665,7 @@ msgstr "Xem thử"
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:199
+#: core/utilities/searchwindow/searchgroup_label.cpp:195
 #, fuzzy, kde-format
 msgid "Options"
 msgstr "Tuy chọn giao diện"
@@ -34009,7 +34011,8 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, fuzzy, kde-format
-msgid "Face Detection Settings"
+msgctxt "@title short translated text"
+msgid "Detection"
 msgstr "Chưa chọn gì"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
@@ -34031,10 +34034,10 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Work on all processor cores"
-msgstr ""
+msgid "Uses all processors"
+msgstr "Lọc nhiễu :"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
 #, kde-format
@@ -34047,7 +34050,8 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, fuzzy, kde-format
-msgid "Face Recognition Settings"
+msgctxt "@title short translated text"
+msgid "Recognition"
 msgstr "Chưa chọn gì"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
@@ -34560,10 +34564,9 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Low Quality to Rejected Label"
-msgstr "&Gán thẻ cho các mục đã chọn"
+msgid "Low as Rejected"
+msgstr "Đặt lại"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
@@ -34574,11 +34577,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Assign Medium Quality to Pending Label"
-msgstr "&Gán thẻ cho các mục đã chọn"
+msgid "Medium as Pending"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, kde-format
@@ -34590,10 +34592,9 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
 msgctxt "@option:check with a short translated text"
-msgid "Assign High Quality to Accepted Label"
-msgstr "&Gán thẻ cho các mục đã chọn"
+msgid "High as Accepted"
+msgstr "Ngưỡng:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, kde-format
@@ -34612,7 +34613,7 @@ msgstr "Chất lượng JPEG:"
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
 #, fuzzy, kde-format
 msgctxt "@option:radio with a short translated text"
-msgid "Detect Aesthetic Contents"
+msgid "Aesthetic Contents"
 msgstr "Đặt lại biểu tượng thẻ"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
@@ -34627,7 +34628,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, kde-format
 msgctxt "@option:radio with a short translated text"
-msgid "Detect by Basic Factors"
+msgid "Basic Factors"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
@@ -34651,8 +34652,8 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Rejected threshold:"
-msgstr "Ngưỡng:"
+msgid "Rejected:"
+msgstr "Đặt lại"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -34663,8 +34664,8 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Pending threshold:"
-msgstr "Ngưỡng:"
+msgid "Pending:"
+msgstr "Giải mã RAW"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -34675,7 +34676,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Accepted threshold:"
+msgid "Accepted:"
 msgstr "Ngưỡng:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
@@ -34687,8 +34688,8 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Blur"
-msgstr "Chọn tập ảnh"
+msgid "Blur"
+msgstr "Xanh"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, fuzzy, kde-format
@@ -34713,9 +34714,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
 #, fuzzy, kde-format
+#| msgid "Noise:"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Noise"
-msgstr "Chọn Không gì"
+msgid "Noise"
+msgstr "Ồn:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, fuzzy, kde-format
@@ -34732,7 +34734,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
 #, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Compression"
+msgid "Compression"
 msgstr "Nén PNG:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
@@ -34750,8 +34752,8 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
 #, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Under and Over Exposure"
-msgstr "Chọn Không gì"
+msgid "Exposure"
+msgstr "Tự động phơi nắng"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, kde-format
@@ -38684,7 +38686,7 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text "
-msgid "Auto-Tagging Mode:"
+msgid "Tagging Mode:"
 msgstr "Chế độ cong bằng tay"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
@@ -38713,8 +38715,8 @@ msgstr ""
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
-msgid "Detection Model:"
-msgstr "Mô tả"
+msgid "Model:"
+msgstr "Mô hình:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, fuzzy, kde-format
@@ -38724,7 +38726,7 @@ msgstr "Không có sẵn tuỳ chọn"
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Detection Accuracy:"
+msgid "Accuracy:"
 msgstr "Xo&ay tự động trang"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
@@ -60577,10 +60579,10 @@ msgstr ""
 "<p>Bật tuỳ chọn này để lưu ngày tháng và giờ của ảnh vào thẻ EXIF và IPTC."
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr ""
+msgid "Uses all processors"
+msgstr "Lọc nhiễu :"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
 #, kde-format
@@ -61414,7 +61416,7 @@ msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, fuzzy, kde-format
-msgid "Return items without text in:"
+msgid "Return items without text in"
 msgstr "Vẽ biếm hoạ"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
@@ -61675,8 +61677,8 @@ msgstr "Chuyển tập ảnh vào Sọt rác"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
 #, fuzzy, kde-format
-msgid "Picture Properties"
-msgstr "Thuộc tính tệp"
+msgid "Item Properties"
+msgstr "Thuộc tính"
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
@@ -61718,22 +61720,19 @@ msgstr ""
 msgid "At least one of these conditions is not met"
 msgstr ""
 
-#. i18n("Find Pictures meeting all of these conditions"));
-#. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
-#.
-#: core/utilities/searchwindow/searchgroup_label.cpp:105
+#: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, fuzzy, kde-format
 msgid ""
 "<qt><p>Search your collection<br/>for Items meeting the following "
 "conditions</p></qt>"
 msgstr "Điều kiện khớp"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:143
+#: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, fuzzy, kde-format
 msgid "Remove Group"
 msgstr "Bỏ"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:187
+#: core/utilities/searchwindow/searchgroup_label.cpp:183
 #, fuzzy, kde-format
 msgid "Hide Options"
 msgstr "Tuy chọn giao diện"
@@ -66303,6 +66302,82 @@ msgstr "Tập"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Sắp xếp ảnh"
+
+#, fuzzy
+#~ msgid "Scan collection for faces"
+#~ msgstr "Tập hợp tập ảnh"
+
+#, fuzzy
+#~ msgid "Face Detection Settings"
+#~ msgstr "Chưa chọn gì"
+
+#, fuzzy
+#~ msgid "Face Recognition Settings"
+#~ msgstr "Chưa chọn gì"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Low Quality to Rejected Label"
+#~ msgstr "&Gán thẻ cho các mục đã chọn"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Medium Quality to Pending Label"
+#~ msgstr "&Gán thẻ cho các mục đã chọn"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign High Quality to Accepted Label"
+#~ msgstr "&Gán thẻ cho các mục đã chọn"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Rejected threshold:"
+#~ msgstr "Ngưỡng:"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Pending threshold:"
+#~ msgstr "Ngưỡng:"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Accepted threshold:"
+#~ msgstr "Ngưỡng:"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Blur"
+#~ msgstr "Chọn tập ảnh"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Noise"
+#~ msgstr "Chọn Không gì"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Under and Over Exposure"
+#~ msgstr "Chọn Không gì"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "@label with a short translated text about deep learning model used to "
+#~ "detect objects to auto-tag"
+#~ msgid "Detection Model:"
+#~ msgstr "Mô tả"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "Xo&ay tự động trang"
+
+#, fuzzy
+#~ msgid "Picture Properties"
+#~ msgstr "Thuộc tính tệp"
 
 #, fuzzy
 #~ msgid "Avg. similarity"

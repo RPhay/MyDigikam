@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 08:19+0000\n"
+"POT-Creation-Date: 2025-07-08 01:59+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -418,13 +418,13 @@ msgid ""
 msgstr ""
 
 #: core/app/filters/filtersidebarwidget.cpp:156
-#: core/utilities/searchwindow/searchgroup_label.cpp:286
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, fuzzy, kde-format
 msgid "OR"
 msgstr "किंवा"
 
 #: core/app/filters/filtersidebarwidget.cpp:159
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "AND"
@@ -3025,9 +3025,10 @@ msgstr "लेबले"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, kde-format
-msgid "Scan collection for faces"
-msgstr ""
+#, fuzzy, kde-format
+msgctxt "@label short translated text about the scan for faces"
+msgid "Scan for Faces"
+msgstr "प्रतिमा"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, kde-format
@@ -20530,7 +20531,7 @@ msgstr "पूर्वावलोकन"
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:199
+#: core/utilities/searchwindow/searchgroup_label.cpp:195
 #, kde-format
 msgid "Options"
 msgstr "पर्याय"
@@ -33540,7 +33541,8 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, fuzzy, kde-format
-msgid "Face Detection Settings"
+msgctxt "@title short translated text"
+msgid "Detection"
 msgstr "कार्यपद्धती :"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
@@ -33564,7 +33566,7 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
 #, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
@@ -33578,7 +33580,8 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, fuzzy, kde-format
-msgid "Face Recognition Settings"
+msgctxt "@title short translated text"
+msgid "Recognition"
 msgstr "प्रतिमेचे स्थान"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
@@ -34097,10 +34100,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Assign Low Quality to Rejected Label"
-msgstr ""
+msgid "Low as Rejected"
+msgstr "माइम प्रकार निवडा"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
@@ -34113,7 +34116,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Assign Medium Quality to Pending Label"
+msgid "Medium as Pending"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
@@ -34125,10 +34128,11 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Accepted"
 msgctxt "@option:check with a short translated text"
-msgid "Assign High Quality to Accepted Label"
-msgstr ""
+msgid "High as Accepted"
+msgstr "स्वीकृत"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, kde-format
@@ -34145,10 +34149,11 @@ msgid "Quality Engine:"
 msgstr "शहर :"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Content"
 msgctxt "@option:radio with a short translated text"
-msgid "Detect Aesthetic Contents"
-msgstr ""
+msgid "Aesthetic Contents"
+msgstr "मजकूर"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
 #, kde-format
@@ -34162,7 +34167,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, kde-format
 msgctxt "@option:radio with a short translated text"
-msgid "Detect by Basic Factors"
+msgid "Basic Factors"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
@@ -34186,8 +34191,8 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Rejected threshold:"
-msgstr "सीमा :"
+msgid "Rejected:"
+msgstr "माइम प्रकार निवडा"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -34197,9 +34202,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, fuzzy, kde-format
+#| msgid "Pending"
 msgctxt "@label with a short translated text"
-msgid "Pending threshold:"
-msgstr "सीमा :"
+msgid "Pending:"
+msgstr "अनिर्णायक"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -34209,9 +34215,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, fuzzy, kde-format
+#| msgid "Accepted"
 msgctxt "@label with a short translated text"
-msgid "Accepted threshold:"
-msgstr "सीमा :"
+msgid "Accepted:"
+msgstr "स्वीकृत"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, kde-format
@@ -34221,9 +34228,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, fuzzy, kde-format
+#| msgid "Blur"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Blur"
-msgstr "कार्यपद्धती :"
+msgid "Blur"
+msgstr "पुसट"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, kde-format
@@ -34248,8 +34256,8 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
 #, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Noise"
-msgstr "निवड"
+msgid "Noise"
+msgstr "नॉइज़"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
@@ -34266,7 +34274,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
 #, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Compression"
+msgid "Compression"
 msgstr "कार्यपद्धती :"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
@@ -34282,10 +34290,10 @@ msgid "Weight to assign to Compression Algorithm"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Under and Over Exposure"
-msgstr ""
+msgid "Exposure"
+msgstr "एक्सपोजर वेळ :"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, kde-format
@@ -38260,10 +38268,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label with a short translated text "
-msgid "Auto-Tagging Mode:"
-msgstr ""
+msgid "Tagging Mode:"
+msgstr "मॉडेल"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, fuzzy, kde-format
@@ -38290,12 +38298,13 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, fuzzy, kde-format
-#| msgid "Destination:"
+#| msgctxt "camera model"
+#| msgid "Model:"
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
-msgid "Detection Model:"
-msgstr "लक्ष्य :"
+msgid "Model:"
+msgstr "मॉडेल"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, fuzzy, kde-format
@@ -38306,7 +38315,7 @@ msgstr "उपलब्ध नाही"
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Detection Accuracy:"
+msgid "Accuracy:"
 msgstr "प्रतिमेचे स्थान"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
@@ -60697,7 +60706,7 @@ msgstr ""
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr ""
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
@@ -61553,7 +61562,7 @@ msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, fuzzy, kde-format
-msgid "Return items without text in:"
+msgid "Return items without text in"
 msgstr "ऑडिओ फाईल्स"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
@@ -61822,9 +61831,9 @@ msgid "File, Album, Tags"
 msgstr ""
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, kde-format
-msgid "Picture Properties"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Item Properties"
+msgstr "गुणधर्म"
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
@@ -61867,22 +61876,19 @@ msgstr ""
 msgid "At least one of these conditions is not met"
 msgstr ""
 
-#. i18n("Find Pictures meeting all of these conditions"));
-#. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
-#.
-#: core/utilities/searchwindow/searchgroup_label.cpp:105
+#: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, kde-format
 msgid ""
 "<qt><p>Search your collection<br/>for Items meeting the following "
 "conditions</p></qt>"
 msgstr ""
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:143
+#: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
 msgid "Remove Group"
 msgstr "समूह काढून टाका"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:187
+#: core/utilities/searchwindow/searchgroup_label.cpp:183
 #, fuzzy, kde-format
 msgid "Hide Options"
 msgstr "जादा पर्याय"
@@ -66362,6 +66368,52 @@ msgstr ""
 #, kde-format
 msgid "Import Items"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Face Detection Settings"
+#~ msgstr "कार्यपद्धती :"
+
+#, fuzzy
+#~ msgid "Face Recognition Settings"
+#~ msgstr "प्रतिमेचे स्थान"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Rejected threshold:"
+#~ msgstr "सीमा :"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Pending threshold:"
+#~ msgstr "सीमा :"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Accepted threshold:"
+#~ msgstr "सीमा :"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Blur"
+#~ msgstr "कार्यपद्धती :"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Noise"
+#~ msgstr "निवड"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgctxt ""
+#~ "@label with a short translated text about deep learning model used to "
+#~ "detect objects to auto-tag"
+#~ msgid "Detection Model:"
+#~ msgstr "लक्ष्य :"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "प्रतिमेचे स्थान"
 
 #, fuzzy
 #~| msgid "Synchronize"

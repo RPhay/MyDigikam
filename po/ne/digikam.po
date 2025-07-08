@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 08:19+0000\n"
+"POT-Creation-Date: 2025-07-08 01:59+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -384,13 +384,13 @@ msgid ""
 msgstr ""
 
 #: core/app/filters/filtersidebarwidget.cpp:156
-#: core/utilities/searchwindow/searchgroup_label.cpp:286
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr ""
 
 #: core/app/filters/filtersidebarwidget.cpp:159
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr ""
@@ -2957,8 +2957,10 @@ msgstr "ल्याब"
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
 #, fuzzy, kde-format
-msgid "Scan collection for faces"
-msgstr "एल्बम सङ्कलन"
+#| msgid "Scan for New Images"
+msgctxt "@label short translated text about the scan for faces"
+msgid "Scan for Faces"
+msgstr "नयाँ छविका लागि स्क्यान गर्नुहोस्"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, fuzzy, kde-format
@@ -20449,7 +20451,7 @@ msgstr "पूर्वावलोकन अन्त्य गर्नुह�
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:199
+#: core/utilities/searchwindow/searchgroup_label.cpp:195
 #, fuzzy, kde-format
 msgid "Options"
 msgstr "इन्टरफेस विकल्प"
@@ -33525,7 +33527,8 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, fuzzy, kde-format
-msgid "Face Detection Settings"
+msgctxt "@title short translated text"
+msgid "Detection"
 msgstr "चयन"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
@@ -33547,10 +33550,10 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Work on all processor cores"
-msgstr ""
+msgid "Uses all processors"
+msgstr "टोन फिल्टर होइन"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
 #, kde-format
@@ -33563,7 +33566,8 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, fuzzy, kde-format
-msgid "Face Recognition Settings"
+msgctxt "@title short translated text"
+msgid "Recognition"
 msgstr "चयन"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
@@ -34080,10 +34084,9 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Low Quality to Rejected Label"
-msgstr "चयन गरेको वस्तुमा ट्याग मानाङ्कन गर्नुहोस्"
+msgid "Low as Rejected"
+msgstr "रिसेट गर्नुहोस्"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
@@ -34095,10 +34098,9 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Medium Quality to Pending Label"
-msgstr "चयन गरेको वस्तुमा ट्याग मानाङ्कन गर्नुहोस्"
+msgid "Medium as Pending"
+msgstr "चौडाइ (%):"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, kde-format
@@ -34110,10 +34112,9 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
 msgctxt "@option:check with a short translated text"
-msgid "Assign High Quality to Accepted Label"
-msgstr "चयन गरेको वस्तुमा ट्याग मानाङ्कन गर्नुहोस्"
+msgid "High as Accepted"
+msgstr "रिसेट गर्नुहोस्"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, kde-format
@@ -34132,7 +34133,7 @@ msgstr "जेपीईजी गुणस्तर:"
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
 #, fuzzy, kde-format
 msgctxt "@option:radio with a short translated text"
-msgid "Detect Aesthetic Contents"
+msgid "Aesthetic Contents"
 msgstr "ट्याग प्रतिमा रिसेट गर्नुहोस्"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
@@ -34148,7 +34149,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Colors:"
 msgctxt "@option:radio with a short translated text"
-msgid "Detect by Basic Factors"
+msgid "Basic Factors"
 msgstr "रङ:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
@@ -34172,8 +34173,8 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Rejected threshold:"
-msgstr "रेन्डरिङ इन्टेन्ट:"
+msgid "Rejected:"
+msgstr "रिसेट गर्नुहोस्"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -34184,8 +34185,8 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Pending threshold:"
-msgstr "रेन्डरिङ इन्टेन्ट:"
+msgid "Pending:"
+msgstr "कच्चा असङ्केतन"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -34196,8 +34197,8 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Accepted threshold:"
-msgstr "रेन्डरिङ इन्टेन्ट:"
+msgid "Accepted:"
+msgstr "रिसेट गर्नुहोस्"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, kde-format
@@ -34208,8 +34209,8 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Blur"
-msgstr "एल्बम चयन गर्नुहोस्"
+msgid "Blur"
+msgstr "निलो"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, fuzzy, kde-format
@@ -34235,8 +34236,8 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
 #, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Noise"
-msgstr "कुनै पनि चयन नगर्नुहोस्"
+msgid "Noise"
+msgstr "कुनै होइन"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, fuzzy, kde-format
@@ -34253,7 +34254,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
 #, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Compression"
+msgid "Compression"
 msgstr "PNG सङ्कुचन:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
@@ -34271,8 +34272,8 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
 #, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Under and Over Exposure"
-msgstr "कुनै पनि चयन नगर्नुहोस्"
+msgid "Exposure"
+msgstr "स्वत: प्रर्दशन"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, kde-format
@@ -38233,10 +38234,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label with a short translated text "
-msgid "Auto-Tagging Mode:"
-msgstr ""
+msgid "Tagging Mode:"
+msgstr "नमुना:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, fuzzy, kde-format
@@ -38264,8 +38265,8 @@ msgstr ""
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
-msgid "Detection Model:"
-msgstr "वर्णन"
+msgid "Model:"
+msgstr "नमुना:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, fuzzy, kde-format
@@ -38275,7 +38276,7 @@ msgstr "विकल्प उपलब्ध छैन"
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Detection Accuracy:"
+msgid "Accuracy:"
 msgstr "स्वत: परिक्रमण पृष्ठ"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
@@ -60095,10 +60096,10 @@ msgid ""
 msgstr "<p>EXIF र IPTC ट्यागमा छवि मिति र समय भण्डारण गर्न यो विकल्प खोल्नुहोस् ।"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr ""
+msgid "Uses all processors"
+msgstr "टोन फिल्टर होइन"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
 #, kde-format
@@ -60931,7 +60932,7 @@ msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, fuzzy, kde-format
-msgid "Return items without text in:"
+msgid "Return items without text in"
 msgstr "प्रकृति"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
@@ -61193,7 +61194,7 @@ msgstr "एल्बमलाई रद्दीटोकरीमा सार�
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
 #, fuzzy, kde-format
-msgid "Picture Properties"
+msgid "Item Properties"
 msgstr "फाइल गुण"
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
@@ -61236,22 +61237,19 @@ msgstr ""
 msgid "At least one of these conditions is not met"
 msgstr ""
 
-#. i18n("Find Pictures meeting all of these conditions"));
-#. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
-#.
-#: core/utilities/searchwindow/searchgroup_label.cpp:105
+#: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, fuzzy, kde-format
 msgid ""
 "<qt><p>Search your collection<br/>for Items meeting the following "
 "conditions</p></qt>"
 msgstr "मिलाउने सर्त"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:143
+#: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, fuzzy, kde-format
 msgid "Remove Group"
 msgstr "ट्याग हटाउनुहोस्"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:187
+#: core/utilities/searchwindow/searchgroup_label.cpp:183
 #, fuzzy, kde-format
 msgid "Hide Options"
 msgstr "इन्टरफेस विकल्प"
@@ -65752,6 +65750,88 @@ msgid "Import Items"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
 
 #, fuzzy
+#~ msgid "Scan collection for faces"
+#~ msgstr "एल्बम सङ्कलन"
+
+#, fuzzy
+#~ msgid "Face Detection Settings"
+#~ msgstr "चयन"
+
+#, fuzzy
+#~ msgid "Face Recognition Settings"
+#~ msgstr "चयन"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Low Quality to Rejected Label"
+#~ msgstr "चयन गरेको वस्तुमा ट्याग मानाङ्कन गर्नुहोस्"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Medium Quality to Pending Label"
+#~ msgstr "चयन गरेको वस्तुमा ट्याग मानाङ्कन गर्नुहोस्"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign High Quality to Accepted Label"
+#~ msgstr "चयन गरेको वस्तुमा ट्याग मानाङ्कन गर्नुहोस्"
+
+#, fuzzy
+#~| msgid "Colors:"
+#~ msgctxt "@option:radio with a short translated text"
+#~ msgid "Detect by Basic Factors"
+#~ msgstr "रङ:"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Rejected threshold:"
+#~ msgstr "रेन्डरिङ इन्टेन्ट:"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Pending threshold:"
+#~ msgstr "रेन्डरिङ इन्टेन्ट:"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Accepted threshold:"
+#~ msgstr "रेन्डरिङ इन्टेन्ट:"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Blur"
+#~ msgstr "एल्बम चयन गर्नुहोस्"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Noise"
+#~ msgstr "कुनै पनि चयन नगर्नुहोस्"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Under and Over Exposure"
+#~ msgstr "कुनै पनि चयन नगर्नुहोस्"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "@label with a short translated text about deep learning model used to "
+#~ "detect objects to auto-tag"
+#~ msgid "Detection Model:"
+#~ msgstr "वर्णन"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "स्वत: परिक्रमण पृष्ठ"
+
+#, fuzzy
+#~ msgid "Picture Properties"
+#~ msgstr "फाइल गुण"
+
+#, fuzzy
 #~ msgid "Avg. similarity"
 #~ msgstr "गुणस्तर:"
 
@@ -70004,12 +70084,6 @@ msgstr "छवि क्रमबद्ध गर्नुहोस्"
 #, fuzzy
 #~ msgid "Small (size)"
 #~ msgid_plural "Small (%1 x %2 pixels)"
-#~ msgstr[0] "चौडाइ (%):"
-#~ msgstr[1] "चौडाइ (%):"
-
-#, fuzzy
-#~ msgid "Medium (size)"
-#~ msgid_plural "Medium (%1 x %2 pixels)"
 #~ msgstr[0] "चौडाइ (%):"
 #~ msgstr[1] "चौडाइ (%):"
 

@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 08:19+0000\n"
+"POT-Creation-Date: 2025-07-08 01:59+0000\n"
 "PO-Revision-Date: 2024-11-23 12:48+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -406,13 +406,13 @@ msgstr ""
 "This also includes the '%1' tick box."
 
 #: core/app/filters/filtersidebarwidget.cpp:156
-#: core/utilities/searchwindow/searchgroup_label.cpp:286
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "OR"
 
 #: core/app/filters/filtersidebarwidget.cpp:159
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "AND"
@@ -2966,9 +2966,11 @@ msgstr "Labels"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, kde-format
-msgid "Scan collection for faces"
-msgstr "Scan collection for faces"
+#, fuzzy, kde-format
+#| msgid "Scan for Faces"
+msgctxt "@label short translated text about the scan for faces"
+msgid "Scan for Faces"
+msgstr "Scan for Faces"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, kde-format
@@ -21239,7 +21241,7 @@ msgstr "Preview..."
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:199
+#: core/utilities/searchwindow/searchgroup_label.cpp:195
 #, kde-format
 msgid "Options"
 msgstr "Options"
@@ -34866,9 +34868,11 @@ msgstr ""
 "p><p>This setting applies only to YuNet.</p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
-#, kde-format
-msgid "Face Detection Settings"
-msgstr "Face Detection Settings"
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgctxt "@title short translated text"
+msgid "Detection"
+msgstr "Face Detection"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
 #, fuzzy, kde-format
@@ -34899,7 +34903,7 @@ msgstr ""
 #| msgctxt "@option:check"
 #| msgid "Work on all processor cores"
 msgctxt "@option:check with a short translated text"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr "Work on all processor cores"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
@@ -34915,9 +34919,11 @@ msgstr ""
 "on your system, or work in the background only on one core."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
-#, kde-format
-msgid "Face Recognition Settings"
-msgstr "Face Recognition Settings"
+#, fuzzy, kde-format
+#| msgid "Face Recognition"
+msgctxt "@title short translated text"
+msgid "Recognition"
+msgstr "Face Recognition"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
@@ -35481,10 +35487,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgctxt "@info: tableview"
+#| msgid "Rejected"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Low Quality to Rejected Label"
-msgstr "Assign Tags to &Selected Items"
+msgid "Low as Rejected"
+msgstr "Rejected"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, fuzzy, kde-format
@@ -35502,10 +35509,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgid "Medium (1 pixel)"
+#| msgid_plural "Medium (%1 pixels)"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Medium Quality to Pending Label"
-msgstr "Assign Tags to &Selected Items"
+msgid "Medium as Pending"
+msgstr "Medium (1 pixel)"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, fuzzy, kde-format
@@ -35523,10 +35531,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgctxt "@info: tableview"
+#| msgid "Accepted"
 msgctxt "@option:check with a short translated text"
-msgid "Assign High Quality to Accepted Label"
-msgstr "Assign Tags to &Selected Items"
+msgid "High as Accepted"
+msgstr "Accepted"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, fuzzy, kde-format
@@ -35554,7 +35563,7 @@ msgstr "Quality:"
 #| msgctxt "@option:radio"
 #| msgid "Detect Aesthetic Image using Deep Learning"
 msgctxt "@option:radio with a short translated text"
-msgid "Detect Aesthetic Contents"
+msgid "Aesthetic Contents"
 msgstr "Detect Aesthetic Image using Deep Learning"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
@@ -35574,11 +35583,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Quality Using Basic Factors"
+#| msgid "Sparsity Factor: "
 msgctxt "@option:radio with a short translated text"
-msgid "Detect by Basic Factors"
-msgstr "Detect Quality Using Basic Factors"
+msgid "Basic Factors"
+msgstr "Sparsity Factor: "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
 #, fuzzy, kde-format
@@ -35614,11 +35622,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Rejected threshold:"
+#| msgctxt "@info: tableview"
+#| msgid "Rejected"
 msgctxt "@label with a short translated text"
-msgid "Rejected threshold:"
-msgstr "Rejected threshold:"
+msgid "Rejected:"
+msgstr "Rejected"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -35628,11 +35636,11 @@ msgstr "Threshold below which all pictures are assigned Rejected Label"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Pending threshold:"
+#| msgctxt "@info: tableview"
+#| msgid "Pending"
 msgctxt "@label with a short translated text"
-msgid "Pending threshold:"
-msgstr "Pending threshold:"
+msgid "Pending:"
+msgstr "Pending"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -35642,11 +35650,11 @@ msgstr "Threshold below which all pictures are assigned Pending Label"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Accepted threshold:"
+#| msgctxt "@info: tableview"
+#| msgid "Accepted"
 msgctxt "@label with a short translated text"
-msgid "Accepted threshold:"
-msgstr "Accepted threshold:"
+msgid "Accepted:"
+msgstr "Accepted"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, kde-format
@@ -35656,11 +35664,11 @@ msgstr "Threshold above which all pictures are assigned Accepted Label"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Blur"
+#| msgctxt "@title"
+#| msgid "Blur"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Blur"
-msgstr "Detect Blur"
+msgid "Blur"
+msgstr "Blur"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, kde-format
@@ -35686,11 +35694,10 @@ msgstr "Weight to assign to Blur Algorithm"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
 #, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Noise"
+#| msgid "Noise:"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Noise"
-msgstr "Detect Noise"
+msgid "Noise"
+msgstr "Noise:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
@@ -35709,7 +35716,7 @@ msgstr "Weight to assign to Noise Algorithm"
 #| msgctxt "@option:check"
 #| msgid "Detect Compression"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Compression"
+msgid "Compression"
 msgstr "Detect Compression"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
@@ -35726,11 +35733,10 @@ msgstr "Weight to assign to Compression Algorithm"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
 #, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect Under and Over Exposure"
+#| msgid "Exposure"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Under and Over Exposure"
-msgstr "Detect Under and Over Exposure"
+msgid "Exposure"
+msgstr "Exposure"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, kde-format
@@ -39863,7 +39869,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Auto-tagging mode: "
 msgctxt "@label with a short translated text "
-msgid "Auto-Tagging Mode:"
+msgid "Tagging Mode:"
 msgstr "Auto-tagging mode: "
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
@@ -39892,12 +39898,13 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, fuzzy, kde-format
-#| msgid "Selection model: "
+#| msgctxt "camera model"
+#| msgid "Model:"
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
-msgid "Detection Model:"
-msgstr "Selection model: "
+msgid "Model:"
+msgstr "Model:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, fuzzy, kde-format
@@ -39907,11 +39914,11 @@ msgstr "No detail available"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Face Accuracy"
+#| msgctxt "@label Face Detection Accuracy"
+#| msgid "Accuracy:"
 msgctxt "@label with a short translated text"
-msgid "Detection Accuracy:"
-msgstr "Face Accuracy"
+msgid "Accuracy:"
+msgstr "Accuracy:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #, fuzzy, kde-format
@@ -61927,9 +61934,11 @@ msgstr ""
 "the file"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Work on all processor cores"
 msgctxt "@option:check"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr "Work on all processor cores"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
@@ -62755,8 +62764,9 @@ msgid "Empty Text"
 msgstr "Empty Text"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
-#, kde-format
-msgid "Return items without text in:"
+#, fuzzy, kde-format
+#| msgid "Return items without text in:"
+msgid "Return items without text in"
 msgstr "Return items without text in:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
@@ -63014,9 +63024,11 @@ msgid "File, Album, Tags"
 msgstr "File, Album, Tags"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, kde-format
-msgid "Picture Properties"
-msgstr "Picture Properties"
+#, fuzzy, kde-format
+#| msgctxt "@title: item properties"
+#| msgid "Item Properties"
+msgid "Item Properties"
+msgstr "Item Properties"
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
@@ -63058,10 +63070,7 @@ msgstr "None of these conditions are met"
 msgid "At least one of these conditions is not met"
 msgstr "At least one of these conditions is not met"
 
-#. i18n("Find Pictures meeting all of these conditions"));
-#. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
-#.
-#: core/utilities/searchwindow/searchgroup_label.cpp:105
+#: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, kde-format
 msgid ""
 "<qt><p>Search your collection<br/>for Items meeting the following "
@@ -63070,12 +63079,12 @@ msgstr ""
 "<qt><p>Search your collection<br/>for Items meeting the following "
 "conditions</p></qt>"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:143
+#: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
 msgid "Remove Group"
 msgstr "Remove Group"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:187
+#: core/utilities/searchwindow/searchgroup_label.cpp:183
 #, kde-format
 msgid "Hide Options"
 msgstr "Hide Options"
@@ -68113,6 +68122,100 @@ msgstr "Album Items"
 #, kde-format
 msgid "Import Items"
 msgstr "Import Items"
+
+#~ msgid "Scan collection for faces"
+#~ msgstr "Scan collection for faces"
+
+#~ msgid "Face Detection Settings"
+#~ msgstr "Face Detection Settings"
+
+#~ msgid "Face Recognition Settings"
+#~ msgstr "Face Recognition Settings"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Low Quality to Rejected Label"
+#~ msgstr "Assign Tags to &Selected Items"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Medium Quality to Pending Label"
+#~ msgstr "Assign Tags to &Selected Items"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign High Quality to Accepted Label"
+#~ msgstr "Assign Tags to &Selected Items"
+
+#, fuzzy
+#~| msgctxt "@option:radio"
+#~| msgid "Detect Quality Using Basic Factors"
+#~ msgctxt "@option:radio with a short translated text"
+#~ msgid "Detect by Basic Factors"
+#~ msgstr "Detect Quality Using Basic Factors"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Rejected threshold:"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Rejected threshold:"
+#~ msgstr "Rejected threshold:"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Pending threshold:"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Pending threshold:"
+#~ msgstr "Pending threshold:"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Accepted threshold:"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Accepted threshold:"
+#~ msgstr "Accepted threshold:"
+
+#, fuzzy
+#~| msgctxt "@option:check"
+#~| msgid "Detect Blur"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Blur"
+#~ msgstr "Detect Blur"
+
+#, fuzzy
+#~| msgctxt "@option:check"
+#~| msgid "Detect Noise"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Noise"
+#~ msgstr "Detect Noise"
+
+#, fuzzy
+#~| msgctxt "@option:check"
+#~| msgid "Detect Under and Over Exposure"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Under and Over Exposure"
+#~ msgstr "Detect Under and Over Exposure"
+
+#, fuzzy
+#~| msgid "Selection model: "
+#~ msgctxt ""
+#~ "@label with a short translated text about deep learning model used to "
+#~ "detect objects to auto-tag"
+#~ msgid "Detection Model:"
+#~ msgstr "Selection model: "
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Face Accuracy"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "Face Accuracy"
+
+#~ msgid "Picture Properties"
+#~ msgstr "Picture Properties"
 
 #~ msgid "Avg. similarity"
 #~ msgstr "Avg. similarity"
@@ -75875,14 +75978,6 @@ msgstr "Import Items"
 #~ msgid_plural "Small (%1 x %2 pixels)"
 #~ msgstr[0] "Small (1 pixel)"
 #~ msgstr[1] "Small (%1 pixels)"
-
-#, fuzzy
-#~| msgid "Medium (1 pixel)"
-#~| msgid_plural "Medium (%1 pixels)"
-#~ msgid "Medium (size)"
-#~ msgid_plural "Medium (%1 x %2 pixels)"
-#~ msgstr[0] "Medium (1 pixel)"
-#~ msgstr[1] "Medium (%1 pixels)"
 
 #, fuzzy
 #~| msgid "Big (1 pixel)"

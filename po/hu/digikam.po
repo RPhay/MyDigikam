@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 08:19+0000\n"
+"POT-Creation-Date: 2025-07-08 01:59+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -406,13 +406,13 @@ msgstr ""
 "Tartalmazza a(z) '%1' jelölőnégyzetet."
 
 #: core/app/filters/filtersidebarwidget.cpp:156
-#: core/utilities/searchwindow/searchgroup_label.cpp:286
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "VAGY"
 
 #: core/app/filters/filtersidebarwidget.cpp:159
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "ÉS"
@@ -2976,9 +2976,11 @@ msgstr "Címkék"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, kde-format
-msgid "Scan collection for faces"
-msgstr "Arcok keresése a gyűjteményben"
+#, fuzzy, kde-format
+#| msgid "Scan for Faces"
+msgctxt "@label short translated text about the scan for faces"
+msgid "Scan for Faces"
+msgstr "Arcok keresése"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, fuzzy, kde-format
@@ -20765,7 +20767,7 @@ msgstr ""
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:199
+#: core/utilities/searchwindow/searchgroup_label.cpp:195
 #, kde-format
 msgid "Options"
 msgstr "Opciók"
@@ -33741,7 +33743,8 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, fuzzy, kde-format
 #| msgid "Face Detection"
-msgid "Face Detection Settings"
+msgctxt "@title short translated text"
+msgid "Detection"
 msgstr "Arcfelismerés"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
@@ -33774,7 +33777,7 @@ msgstr ""
 #| msgctxt "@option:check"
 #| msgid "Work on all processor cores"
 msgctxt "@option:check with a short translated text"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr "Munka minden processzormagon"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
@@ -33789,7 +33792,8 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
-msgid "Face Recognition Settings"
+msgctxt "@title short translated text"
+msgid "Recognition"
 msgstr "Arcfelismerés"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
@@ -34311,10 +34315,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgid "No Tag Selected"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Low Quality to Rejected Label"
-msgstr "Címkék hozzárendelé&se a kijelölt elemekhez"
+msgid "Low as Rejected"
+msgstr "Nincs címke kijelölve"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, fuzzy, kde-format
@@ -34331,10 +34335,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#| msgid "Medium (1 pixel)"
+#| msgid_plural "Medium (%1 pixels)"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Medium Quality to Pending Label"
-msgstr "Címkék hozzárendelé&se a kijelölt elemekhez"
+msgid "Medium as Pending"
+msgstr "Közepes (1 képpont)"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, fuzzy, kde-format
@@ -34350,11 +34355,10 @@ msgstr ""
 "képekhez hozzá lesz rendelve a Függőben címke."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Assign High Quality to Accepted Label"
-msgstr "Címkék hozzárendelé&se a kijelölt elemekhez"
+msgid "High as Accepted"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, fuzzy, kde-format
@@ -34381,7 +34385,7 @@ msgstr "JPEG minőség:"
 #, fuzzy, kde-format
 #| msgid "Reset contents"
 msgctxt "@option:radio with a short translated text"
-msgid "Detect Aesthetic Contents"
+msgid "Aesthetic Contents"
 msgstr "Tartalmak alaphelyzetbe állítása"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
@@ -34397,7 +34401,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Separator:"
 msgctxt "@option:radio with a short translated text"
-msgid "Detect by Basic Factors"
+msgid "Basic Factors"
 msgstr "Elválasztó:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
@@ -34428,10 +34432,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, fuzzy, kde-format
-#| msgid "Rejected threshold:"
+#| msgid "Rejected"
 msgctxt "@label with a short translated text"
-msgid "Rejected threshold:"
-msgstr "Visszautasított küszöb:"
+msgid "Rejected:"
+msgstr "Elutasított"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -34441,10 +34445,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, fuzzy, kde-format
-#| msgid "Pending threshold:"
+#| msgctxt "@info: tableview"
+#| msgid "Pending"
 msgctxt "@label with a short translated text"
-msgid "Pending threshold:"
-msgstr "Függőben lévő küszöb:"
+msgid "Pending:"
+msgstr "Függőben"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -34454,10 +34459,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, fuzzy, kde-format
-#| msgid "Accepted threshold:"
+#| msgctxt "@item: pick tree"
+#| msgid "Accepted Item"
 msgctxt "@label with a short translated text"
-msgid "Accepted threshold:"
-msgstr "Elfogadott küszöb:"
+msgid "Accepted:"
+msgstr "Elfogadott elem"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, kde-format
@@ -34467,10 +34473,11 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, fuzzy, kde-format
-#| msgid "Detect Blur"
+#| msgctxt "@title"
+#| msgid "Blur"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Blur"
-msgstr "Elmosás felismerése"
+msgid "Blur"
+msgstr "Elmosás"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, kde-format
@@ -34496,10 +34503,10 @@ msgstr "Az elmosódás algoritmushoz rendelt súly"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
 #, fuzzy, kde-format
-#| msgid "Detect Noise"
+#| msgid "Noise:"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Noise"
-msgstr "Zaj felismerése"
+msgid "Noise"
+msgstr "Zaj:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
@@ -34518,7 +34525,7 @@ msgstr "A zaj algoritmushoz rendelt súly"
 #, fuzzy, kde-format
 #| msgid "Detect Compression"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Compression"
+msgid "Compression"
 msgstr "Tömörítés felismerése"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
@@ -34535,10 +34542,11 @@ msgid "Weight to assign to Compression Algorithm"
 msgstr "A tömörítés algoritmushoz rendelt súly"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Exposure"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Under and Over Exposure"
-msgstr ""
+msgid "Exposure"
+msgstr "Exponálás"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, kde-format
@@ -38754,7 +38762,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgctxt "@label with a short translated text "
-msgid "Auto-Tagging Mode:"
+msgid "Tagging Mode:"
 msgstr "Mérési mód:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
@@ -38783,13 +38791,13 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Destination Folder:"
+#| msgctxt "camera model"
+#| msgid "Model:"
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
-msgid "Detection Model:"
-msgstr "Cél mappa:"
+msgid "Model:"
+msgstr "Modell:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, fuzzy, kde-format
@@ -38799,11 +38807,10 @@ msgstr "Nem érhető el"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Face Accuracy"
+#| msgid "Accuracy"
 msgctxt "@label with a short translated text"
-msgid "Detection Accuracy:"
-msgstr "Arc pontossága"
+msgid "Accuracy:"
+msgstr "Pontosság"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
 #, fuzzy, kde-format
@@ -61455,9 +61462,11 @@ msgid ""
 msgstr ""
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Work on all processor cores"
 msgctxt "@option:check"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr "Munka minden processzormagon"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
@@ -62298,9 +62307,10 @@ msgid "Empty Text"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
-#, kde-format
-msgid "Return items without text in:"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Return video with the frame rate"
+msgid "Return items without text in"
+msgstr "Videó visszaadása a képkockaszámmal"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
 #, kde-format
@@ -62565,9 +62575,11 @@ msgid "File, Album, Tags"
 msgstr "Fájl, album, címkék"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, kde-format
-msgid "Picture Properties"
-msgstr "Kép tulajdonságok"
+#, fuzzy, kde-format
+#| msgctxt "@item"
+#| msgid "Items Properties"
+msgid "Item Properties"
+msgstr "Tételek tulajdonságai"
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
@@ -62610,22 +62622,19 @@ msgstr "Egyik feltétel sem teljesül"
 msgid "At least one of these conditions is not met"
 msgstr "Legalább egy feltétel teljesül"
 
-#. i18n("Find Pictures meeting all of these conditions"));
-#. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
-#.
-#: core/utilities/searchwindow/searchgroup_label.cpp:105
+#: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, kde-format
 msgid ""
 "<qt><p>Search your collection<br/>for Items meeting the following "
 "conditions</p></qt>"
 msgstr ""
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:143
+#: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
 msgid "Remove Group"
 msgstr "Csoport eltávolítása"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:187
+#: core/utilities/searchwindow/searchgroup_label.cpp:183
 #, kde-format
 msgid "Hide Options"
 msgstr ""
@@ -67258,6 +67267,92 @@ msgstr "Album elemek"
 msgid "Import Items"
 msgstr "Elemek importálása"
 
+#~ msgid "Scan collection for faces"
+#~ msgstr "Arcok keresése a gyűjteményben"
+
+#, fuzzy
+#~| msgid "Face Detection"
+#~ msgid "Face Detection Settings"
+#~ msgstr "Arcfelismerés"
+
+#, fuzzy
+#~| msgid "Face Recognition"
+#~ msgid "Face Recognition Settings"
+#~ msgstr "Arcfelismerés"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Low Quality to Rejected Label"
+#~ msgstr "Címkék hozzárendelé&se a kijelölt elemekhez"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Medium Quality to Pending Label"
+#~ msgstr "Címkék hozzárendelé&se a kijelölt elemekhez"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign High Quality to Accepted Label"
+#~ msgstr "Címkék hozzárendelé&se a kijelölt elemekhez"
+
+#, fuzzy
+#~| msgid "Separator:"
+#~ msgctxt "@option:radio with a short translated text"
+#~ msgid "Detect by Basic Factors"
+#~ msgstr "Elválasztó:"
+
+#, fuzzy
+#~| msgid "Rejected threshold:"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Rejected threshold:"
+#~ msgstr "Visszautasított küszöb:"
+
+#, fuzzy
+#~| msgid "Pending threshold:"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Pending threshold:"
+#~ msgstr "Függőben lévő küszöb:"
+
+#, fuzzy
+#~| msgid "Accepted threshold:"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Accepted threshold:"
+#~ msgstr "Elfogadott küszöb:"
+
+#, fuzzy
+#~| msgid "Detect Blur"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Blur"
+#~ msgstr "Elmosás felismerése"
+
+#, fuzzy
+#~| msgid "Detect Noise"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Noise"
+#~ msgstr "Zaj felismerése"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Destination Folder:"
+#~ msgctxt ""
+#~ "@label with a short translated text about deep learning model used to "
+#~ "detect objects to auto-tag"
+#~ msgid "Detection Model:"
+#~ msgstr "Cél mappa:"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Face Accuracy"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "Arc pontossága"
+
+#~ msgid "Picture Properties"
+#~ msgstr "Kép tulajdonságok"
+
 #~ msgid "Avg. similarity"
 #~ msgstr "Átl. hasonlóság"
 
@@ -70868,12 +70963,6 @@ msgstr "Elemek importálása"
 #~ msgstr "Monitor profil:"
 
 #, fuzzy
-#~| msgid "Rejected"
-#~ msgctxt "@action"
-#~ msgid "Reject"
-#~ msgstr "Elutasított"
-
-#, fuzzy
 #~| msgid "Metadata..."
 #~ msgid "binary data..."
 #~ msgstr "Metaadat"
@@ -72063,14 +72152,6 @@ msgstr "Elemek importálása"
 #~ msgid_plural "Small (%1 x %2 pixels)"
 #~ msgstr[0] "Kicsi (1 képpont)"
 #~ msgstr[1] "Kicsi (%1 képpont)"
-
-#, fuzzy
-#~| msgid "Medium (1 pixel)"
-#~| msgid_plural "Medium (%1 pixels)"
-#~ msgid "Medium (size)"
-#~ msgid_plural "Medium (%1 x %2 pixels)"
-#~ msgstr[0] "Közepes (1 képpont)"
-#~ msgstr[1] "Közepes (%1 képpont)"
 
 #, fuzzy
 #~| msgid "Big (1 pixel)"

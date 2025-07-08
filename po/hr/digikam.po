@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 08:19+0000\n"
+"POT-Creation-Date: 2025-07-08 01:59+0000\n"
 "PO-Revision-Date: 2011-03-11 10:04+0100\n"
 "Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -396,13 +396,13 @@ msgid ""
 msgstr ""
 
 #: core/app/filters/filtersidebarwidget.cpp:156
-#: core/utilities/searchwindow/searchgroup_label.cpp:286
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr ""
 
 #: core/app/filters/filtersidebarwidget.cpp:159
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr ""
@@ -2931,9 +2931,10 @@ msgstr ""
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, kde-format
-msgid "Scan collection for faces"
-msgstr ""
+#, fuzzy, kde-format
+msgctxt "@label short translated text about the scan for faces"
+msgid "Scan for Faces"
+msgstr "Datoteka: "
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, kde-format
@@ -20012,7 +20013,7 @@ msgstr ""
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:199
+#: core/utilities/searchwindow/searchgroup_label.cpp:195
 #, kde-format
 msgid "Options"
 msgstr ""
@@ -32769,8 +32770,9 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, fuzzy, kde-format
-msgid "Face Detection Settings"
-msgstr "Zadani jezik"
+msgctxt "@title short translated text"
+msgid "Detection"
+msgstr "Orijentacija:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
 #, kde-format
@@ -32793,7 +32795,7 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
 #, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
@@ -32807,8 +32809,9 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, fuzzy, kde-format
-msgid "Face Recognition Settings"
-msgstr "Zadani jezik"
+msgctxt "@title short translated text"
+msgid "Recognition"
+msgstr "Orijentacija:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
@@ -33321,10 +33324,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Assign Low Quality to Rejected Label"
-msgstr ""
+msgid "Low as Rejected"
+msgstr "Koreliraj"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
@@ -33337,7 +33340,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Assign Medium Quality to Pending Label"
+msgid "Medium as Pending"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
@@ -33349,10 +33352,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Assign High Quality to Accepted Label"
-msgstr ""
+msgid "High as Accepted"
+msgstr "Datoteka: "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, kde-format
@@ -33369,10 +33372,10 @@ msgid "Quality Engine:"
 msgstr "Neprozirnost:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@option:radio with a short translated text"
-msgid "Detect Aesthetic Contents"
-msgstr ""
+msgid "Aesthetic Contents"
+msgstr "Datoteka: "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
 #, kde-format
@@ -33386,7 +33389,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, kde-format
 msgctxt "@option:radio with a short translated text"
-msgid "Detect by Basic Factors"
+msgid "Basic Factors"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
@@ -33410,8 +33413,8 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Rejected threshold:"
-msgstr "Datoteka: "
+msgid "Rejected:"
+msgstr "Koreliraj"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -33422,7 +33425,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Pending threshold:"
+msgid "Pending:"
 msgstr "Širina"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
@@ -33434,7 +33437,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Accepted threshold:"
+msgid "Accepted:"
 msgstr "Datoteka: "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
@@ -33446,7 +33449,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Blur"
+msgid "Blur"
 msgstr "Datoteka: "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
@@ -33470,10 +33473,10 @@ msgid "Weight to assign to Blur Algorithm"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Noise"
-msgstr "Datoteka: "
+msgid "Noise"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
@@ -33490,7 +33493,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
 #, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Compression"
+msgid "Compression"
 msgstr "Kompresija PNG-a:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
@@ -33506,10 +33509,10 @@ msgid "Weight to assign to Compression Algorithm"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Under and Over Exposure"
-msgstr ""
+msgid "Exposure"
+msgstr "Postavke"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, kde-format
@@ -37416,10 +37419,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label with a short translated text "
-msgid "Auto-Tagging Mode:"
-msgstr ""
+msgid "Tagging Mode:"
+msgstr "Geolokacija"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, fuzzy, kde-format
@@ -37447,7 +37450,7 @@ msgstr ""
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
-msgid "Detection Model:"
+msgid "Model:"
 msgstr "Geolokacija"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
@@ -37459,7 +37462,7 @@ msgstr "Nije dostupno"
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Detection Accuracy:"
+msgid "Accuracy:"
 msgstr "Geolokacija"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
@@ -59636,7 +59639,7 @@ msgstr ""
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr ""
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
@@ -60460,9 +60463,9 @@ msgid "Empty Text"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
-#, kde-format
-msgid "Return items without text in:"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Return items without text in"
+msgstr "Širina"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
 #, fuzzy, kde-format
@@ -60721,9 +60724,9 @@ msgid "File, Album, Tags"
 msgstr ""
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, kde-format
-msgid "Picture Properties"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Item Properties"
+msgstr "Datoteka: "
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
@@ -60765,22 +60768,19 @@ msgstr ""
 msgid "At least one of these conditions is not met"
 msgstr ""
 
-#. i18n("Find Pictures meeting all of these conditions"));
-#. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
-#.
-#: core/utilities/searchwindow/searchgroup_label.cpp:105
+#: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, kde-format
 msgid ""
 "<qt><p>Search your collection<br/>for Items meeting the following "
 "conditions</p></qt>"
 msgstr ""
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:143
+#: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
 msgid "Remove Group"
 msgstr ""
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:187
+#: core/utilities/searchwindow/searchgroup_label.cpp:183
 #, fuzzy, kde-format
 msgid "Hide Options"
 msgstr "Ujedinjeni narodi"
@@ -65187,6 +65187,46 @@ msgid "Import Items"
 msgstr "Datoteka: "
 
 #, fuzzy
+#~ msgid "Face Detection Settings"
+#~ msgstr "Zadani jezik"
+
+#, fuzzy
+#~ msgid "Face Recognition Settings"
+#~ msgstr "Zadani jezik"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Rejected threshold:"
+#~ msgstr "Datoteka: "
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Pending threshold:"
+#~ msgstr "Širina"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Accepted threshold:"
+#~ msgstr "Datoteka: "
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Blur"
+#~ msgstr "Datoteka: "
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Noise"
+#~ msgstr "Datoteka: "
+
+#, fuzzy
+#~ msgctxt ""
+#~ "@label with a short translated text about deep learning model used to "
+#~ "detect objects to auto-tag"
+#~ msgid "Detection Model:"
+#~ msgstr "Geolokacija"
+
+#, fuzzy
 #~ msgid "Detect and recognize Faces"
 #~ msgstr "Datoteka: "
 
@@ -66268,10 +66308,6 @@ msgstr "Datoteka: "
 #, fuzzy
 #~ msgid "Save Tour As"
 #~ msgstr "Datoteka: "
-
-#, fuzzy
-#~ msgid "Direction"
-#~ msgstr "Orijentacija:"
 
 #, fuzzy
 #~ msgid "Precision"

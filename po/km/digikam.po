@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 08:19+0000\n"
+"POT-Creation-Date: 2025-07-08 01:59+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -445,13 +445,13 @@ msgid ""
 msgstr "កំណត់​វិធី​ស្លាក​ដែល​​បាន​ជ្រើស​ដែល​ត្រូវ​បន្សំ​ទៅ​កាន់​​តម្រង​រូបភាព ។ រួម​នឹង​ប្រអប់​ '%1' ផងដែរ ។"
 
 #: core/app/filters/filtersidebarwidget.cpp:156
-#: core/utilities/searchwindow/searchgroup_label.cpp:286
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "ឬ"
 
 #: core/app/filters/filtersidebarwidget.cpp:159
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "និង"
@@ -3201,8 +3201,10 @@ msgstr ""
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, kde-format
-msgid "Scan collection for faces"
+#, fuzzy, kde-format
+#| msgid "Scan collection for faces"
+msgctxt "@label short translated text about the scan for faces"
+msgid "Scan for Faces"
 msgstr "វិភាគ​រក​សម្រាំង​សម្រាប់​មុខ"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
@@ -21669,7 +21671,7 @@ msgstr "មើល​ជាមុន"
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:199
+#: core/utilities/searchwindow/searchgroup_label.cpp:195
 #, kde-format
 msgid "Options"
 msgstr "ជម្រើស"
@@ -35286,7 +35288,8 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, fuzzy, kde-format
-msgid "Face Detection Settings"
+msgctxt "@title short translated text"
+msgid "Detection"
 msgstr "គាំទ្រ​ការ​រក​ឃើញ​មុខ"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
@@ -35309,10 +35312,11 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Normal process"
 msgctxt "@option:check with a short translated text"
-msgid "Work on all processor cores"
-msgstr ""
+msgid "Uses all processors"
+msgstr "ដំណើរការ​ធម្មតា​"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
 #, kde-format
@@ -35325,7 +35329,8 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, fuzzy, kde-format
-msgid "Face Recognition Settings"
+msgctxt "@title short translated text"
+msgid "Recognition"
 msgstr "ការ​បង្វិល​សេរី"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
@@ -35866,10 +35871,9 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
 msgctxt "@option:check with a short translated text"
-msgid "Assign Low Quality to Rejected Label"
-msgstr "កំណត់​ស្លាក​ទៅកាន់​ធាតុ​ដែល​បាន​ជ្រើស"
+msgid "Low as Rejected"
+msgstr "ជ្រើស​ធាតុ"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
@@ -35880,11 +35884,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Assign Medium Quality to Pending Label"
-msgstr "កំណត់​ស្លាក​ទៅកាន់​ធាតុ​ដែល​បាន​ជ្រើស"
+msgid "Medium as Pending"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, kde-format
@@ -35896,10 +35899,9 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
 #, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
 msgctxt "@option:check with a short translated text"
-msgid "Assign High Quality to Accepted Label"
-msgstr "កំណត់​ស្លាក​ទៅកាន់​ធាតុ​ដែល​បាន​ជ្រើស"
+msgid "High as Accepted"
+msgstr "ជ្រើស​ធាតុ"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, kde-format
@@ -35916,10 +35918,11 @@ msgid "Quality Engine:"
 msgstr "ទីក្រុង​ ៖​"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Content"
 msgctxt "@option:radio with a short translated text"
-msgid "Detect Aesthetic Contents"
-msgstr ""
+msgid "Aesthetic Contents"
+msgstr "មាតិកា​"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
 #, kde-format
@@ -35933,7 +35936,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, fuzzy, kde-format
 msgctxt "@option:radio with a short translated text"
-msgid "Detect by Basic Factors"
+msgid "Basic Factors"
 msgstr "មេកាទ័រ"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
@@ -35957,7 +35960,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Rejected threshold:"
+msgid "Rejected:"
 msgstr "ជ្រើស​ធាតុ"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
@@ -35968,10 +35971,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, fuzzy, kde-format
-#| msgid "Sensing method:"
+#| msgid "Ascending"
 msgctxt "@label with a short translated text"
-msgid "Pending threshold:"
-msgstr "វិធីសាស្ត្រ​ចាប់​យក​សញ្ញា​ ៖"
+msgid "Pending:"
+msgstr "លំដាប់​ឡើង"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -35982,7 +35985,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, fuzzy, kde-format
 msgctxt "@label with a short translated text"
-msgid "Accepted threshold:"
+msgid "Accepted:"
 msgstr "ជ្រើស​ធាតុ"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
@@ -35993,9 +35996,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, fuzzy, kde-format
+#| msgid "Blur"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Blur"
-msgstr "ជ្រើស​អាល់ប៊ុម"
+msgid "Blur"
+msgstr "ព្រិល"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, kde-format
@@ -36019,10 +36023,10 @@ msgid "Weight to assign to Blur Algorithm"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Noise"
-msgstr "ជ្រើស​គ្មាន"
+msgid "Noise"
+msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
@@ -36040,7 +36044,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Lossless Compression"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Compression"
+msgid "Compression"
 msgstr "ការ​បង្ហាប់​ដែល​គ្មាន​ការ​បាត់​បង់"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
@@ -36057,9 +36061,10 @@ msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
 #, fuzzy, kde-format
+#| msgid "Exposure mode:"
 msgctxt "@option:check with a short translated text"
-msgid "Detect Under and Over Exposure"
-msgstr "ជ្រើស​គ្មាន"
+msgid "Exposure"
+msgstr "របៀប​ដាក់​ឲ្យ​ត្រូវ​ ៖"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, kde-format
@@ -40131,7 +40136,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgctxt "@label with a short translated text "
-msgid "Auto-Tagging Mode:"
+msgid "Tagging Mode:"
 msgstr "របៀប​វាស់​ស្ទង់ ៖"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
@@ -40161,12 +40166,12 @@ msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, fuzzy, kde-format
-#| msgid "Destination:"
+#| msgid "Modern"
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
-msgid "Detection Model:"
-msgstr "ទិសដៅ​ ៖"
+msgid "Model:"
+msgstr "ទំនើប"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, fuzzy, kde-format
@@ -40178,7 +40183,7 @@ msgstr "ដែល​មិន​អាច​រក​បាន​"
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label with a short translated text"
-msgid "Detection Accuracy:"
+msgid "Accuracy:"
 msgstr "សុក្រឹតភាព​"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
@@ -63186,10 +63191,11 @@ msgid ""
 msgstr "កំណត់​ជម្រើស​នេះ​ចំពោះ​ការ​កែ​រូបភាព​​ត្រូវ​បាន​អនុវត្ត ។"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Normal process"
 msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr ""
+msgid "Uses all processors"
+msgstr "ដំណើរការ​ធម្មតា​"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
 #, kde-format
@@ -64051,7 +64057,7 @@ msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, fuzzy, kde-format
-msgid "Return items without text in:"
+msgid "Return items without text in"
 msgstr "សមាមាត្រ​បច្ចុប្បន្ន"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
@@ -64318,9 +64324,9 @@ msgid "File, Album, Tags"
 msgstr ""
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, kde-format
-msgid "Picture Properties"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Item Properties"
+msgstr "លក្ខណ​សម្បត្តិ​ឯកសារ"
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
@@ -64364,22 +64370,19 @@ msgstr ""
 msgid "At least one of these conditions is not met"
 msgstr ""
 
-#. i18n("Find Pictures meeting all of these conditions"));
-#. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
-#.
-#: core/utilities/searchwindow/searchgroup_label.cpp:105
+#: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, kde-format
 msgid ""
 "<qt><p>Search your collection<br/>for Items meeting the following "
 "conditions</p></qt>"
 msgstr ""
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:143
+#: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
 msgid "Remove Group"
 msgstr ""
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:187
+#: core/utilities/searchwindow/searchgroup_label.cpp:183
 #, fuzzy, kde-format
 msgid "Hide Options"
 msgstr "ជម្រើស​បន្ថែម​"
@@ -68977,6 +68980,85 @@ msgstr ""
 msgid "Import Items"
 msgstr "តម្រៀប​រូបភាព"
 
+#~ msgid "Scan collection for faces"
+#~ msgstr "វិភាគ​រក​សម្រាំង​សម្រាប់​មុខ"
+
+#, fuzzy
+#~ msgid "Face Detection Settings"
+#~ msgstr "គាំទ្រ​ការ​រក​ឃើញ​មុខ"
+
+#, fuzzy
+#~ msgid "Face Recognition Settings"
+#~ msgstr "ការ​បង្វិល​សេរី"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Low Quality to Rejected Label"
+#~ msgstr "កំណត់​ស្លាក​ទៅកាន់​ធាតុ​ដែល​បាន​ជ្រើស"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign Medium Quality to Pending Label"
+#~ msgstr "កំណត់​ស្លាក​ទៅកាន់​ធាតុ​ដែល​បាន​ជ្រើស"
+
+#, fuzzy
+#~| msgid "Assign Tags to &Selected Items"
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Assign High Quality to Accepted Label"
+#~ msgstr "កំណត់​ស្លាក​ទៅកាន់​ធាតុ​ដែល​បាន​ជ្រើស"
+
+#, fuzzy
+#~ msgctxt "@option:radio with a short translated text"
+#~ msgid "Detect by Basic Factors"
+#~ msgstr "មេកាទ័រ"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Rejected threshold:"
+#~ msgstr "ជ្រើស​ធាតុ"
+
+#, fuzzy
+#~| msgid "Sensing method:"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Pending threshold:"
+#~ msgstr "វិធីសាស្ត្រ​ចាប់​យក​សញ្ញា​ ៖"
+
+#, fuzzy
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Accepted threshold:"
+#~ msgstr "ជ្រើស​ធាតុ"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Blur"
+#~ msgstr "ជ្រើស​អាល់ប៊ុម"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Noise"
+#~ msgstr "ជ្រើស​គ្មាន"
+
+#, fuzzy
+#~ msgctxt "@option:check with a short translated text"
+#~ msgid "Detect Under and Over Exposure"
+#~ msgstr "ជ្រើស​គ្មាន"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgctxt ""
+#~ "@label with a short translated text about deep learning model used to "
+#~ "detect objects to auto-tag"
+#~ msgid "Detection Model:"
+#~ msgstr "ទិសដៅ​ ៖"
+
+#, fuzzy
+#~| msgid "Accuracy"
+#~ msgctxt "@label with a short translated text"
+#~ msgid "Detection Accuracy:"
+#~ msgstr "សុក្រឹតភាព​"
+
 #, fuzzy
 #~ msgid "Detect and recognize Faces"
 #~ msgstr "ជ្រើស​គ្មាន"
@@ -69288,12 +69370,6 @@ msgstr "តម្រៀប​រូបភាព"
 #~| msgid "Create new album"
 #~ msgid "Scanned for objects: %1\n"
 #~ msgstr "បង្កើត​អាល់ប៊ុម​ថ្មី"
-
-#, fuzzy
-#~| msgid "Modern"
-#~ msgctxt "@label AI model used for face detection"
-#~ msgid "Model:"
-#~ msgstr "ទំនើប"
 
 #, fuzzy
 #~| msgid "OSM"
