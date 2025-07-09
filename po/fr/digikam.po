@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-08 01:59+0000\n"
-"PO-Revision-Date: 2025-06-26 11:40+0200\n"
+"PO-Revision-Date: 2025-07-02 08:44+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -437,7 +437,7 @@ msgid ""
 "This also includes the '%1' check box."
 msgstr ""
 "Définit de quelle manière les étiquettes sélectionnées sont combinées pour "
-"filtrer les images. Inclut également la case à cocher « %1 »."
+"filtrer les images. Inclut également la case à cocher « %1 »"
 
 #: core/app/filters/filtersidebarwidget.cpp:156
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
@@ -823,7 +823,7 @@ msgstr "Propriétés…"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Unmark Tag As Face"
-msgstr "Démarquer comme étiquette de visage"
+msgstr "Supprimer l'étiquette de visage"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:95
 #, kde-format
@@ -840,7 +840,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Unmark Tags As Face"
-msgstr "Démarquer comme étiquettes de visage"
+msgstr "Supprimer les étiquettes de visage"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:109
 #, kde-format
@@ -1040,7 +1040,7 @@ msgid ""
 "selected images into.</p>"
 msgstr ""
 "<p>Veuillez choisir l'album de destination à partir de la bibliothèque de "
-"DigiKam pour y insérer les images sélectionnées.</p>"
+"digiKam pour y insérer les images sélectionnées.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
 #: core/utilities/imageeditor/main/imagewindow.cpp:1118
@@ -1267,7 +1267,7 @@ msgstr "Codec audio : "
 #: core/app/items/utils/tooltipfiller.cpp:457
 #, kde-format
 msgid "digiKam Properties"
-msgstr "Propriétés de DigiKam"
+msgstr "Propriétés de digiKam"
 
 #: core/app/items/utils/tooltipfiller.cpp:468
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:199
@@ -1419,7 +1419,7 @@ msgid ""
 msgstr ""
 "<p>Le dossier des profils ICC semble n'être pas valable.</p><p>Si vous "
 "voulez essayer de le définir à nouveau, choisissez ici « Oui », sinon "
-"« Non ». La fonctionnalité « Gestion de la couleur » sera désactivée jusqu'à "
+"« Non » La fonctionnalité « Gestion de la couleur » sera désactivée jusqu'à "
 "ce que vous résolviez ce problème.</p>"
 
 #: core/app/main/digikamapp.cpp:437
@@ -1592,7 +1592,7 @@ msgid ""
 msgstr ""
 "Vous avez sélectionné un thème de couleurs lumineuses. Il y a un basculement "
 "vers un thème d'icônes sombres. Celui-ci ne sera effectif qu'après un re-"
-"démarrage de DigiKam."
+"démarrage de digiKam."
 
 #: core/app/main/digikamapp_config.cpp:125
 #: core/showfoto/main/showfoto_config.cpp:204
@@ -1603,7 +1603,7 @@ msgid ""
 msgstr ""
 "Vous avez sélectionné un thème de couleurs sombres. Il y a un basculement "
 "vers un thème d'icônes lumineuses. Celui-ci ne sera effectif qu'après un re-"
-"démarrage de DigiKam."
+"démarrage de digiKam."
 
 #: core/app/main/digikamapp_import.cpp:95
 #, kde-format
@@ -1623,7 +1623,7 @@ msgid ""
 "<p>Please select the destination album from the digiKam library to import "
 "folders into.</p>"
 msgstr ""
-"<p>Veuillez choisir l'album de destination depuis la bibliothèque de DigiKam "
+"<p>Veuillez choisir l'album de destination depuis la bibliothèque de digiKam "
 "pour y importer les dossiers.</p>"
 
 #: core/app/main/digikamapp_import.cpp:186
@@ -1742,7 +1742,7 @@ msgid ""
 "database (file metadata will be overwritten with data from the database)."
 msgstr ""
 "Met à jour les métadonnées des fichiers de l'album actuel avec le contenu de "
-"la base de données de DigiKam (Les métadonnées des fichiers seront écrasées "
+"la base de données de digiKam (Les métadonnées des fichiers seront écrasées "
 "par les données provenant de la base de données)."
 
 #: core/app/main/digikamapp_setup.cpp:276
@@ -1760,7 +1760,7 @@ msgid ""
 "album (information in the database will be overwritten with data from the "
 "files' metadata)."
 msgstr ""
-"Met à jour la base de données de DigiKam à partir des métadonnées des "
+"Met à jour la base de données de digiKam à partir des métadonnées des "
 "fichiers de l'album actuel (Les informations présentes dans la base de "
 "données seront écrasées par les données provenant des métadonnées des "
 "fichiers)."
@@ -2082,8 +2082,7 @@ msgstr "Afficher tous les éléments regroupés comme « Ouvert »"
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr ""
-"Activer cette option pour afficher tous les éléments groupés comme "
-"« Ouvert »."
+"Activer cette option pour afficher tous les éléments groupés comme « Ouvert »"
 
 #: core/app/main/digikamapp_setup.cpp:588
 #, kde-format
@@ -2744,7 +2743,7 @@ msgstr "Barre principale"
 #: core/libs/timeadjust/timeadjustsettings.cpp:134
 #, kde-format
 msgid "digiKam"
-msgstr "DigiKam"
+msgstr "digiKam"
 
 #: core/app/main/main.cpp:236 core/showfoto/main/main.cpp:211
 #, kde-format
@@ -2777,20 +2776,20 @@ msgstr ""
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr ""
 "Détecter et ouvrir automatiquement un appareil photo connecté utilisant la "
-"bibliothèque « gPhoto2 »."
+"bibliothèque « gPhoto2 »"
 
 #: core/app/main/main.cpp:253
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
-"Démarrer DigiKam avec le fichier de base de données SQLite trouvé dans le "
-"dossier « dir »."
+"Démarrer digiKam avec le fichier de base de données SQLite trouvé dans le "
+"dossier « dir »"
 
 #: core/app/main/main.cpp:256
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
-msgstr "Démarrer DigiKam avec le fichier configuration « config »"
+msgstr "Démarrer digiKam avec le fichier configuration « config »"
 
 #: core/app/main/main.cpp:289
 #, kde-format
@@ -3058,7 +3057,7 @@ msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
-"Bienvenu dans le gestionnaire de reconnaissance faciale de DigiKam. Si c'est "
+"Bienvenu dans le gestionnaire de reconnaissance faciale de digiKam. Si c'est "
 "votre première utilisation de cette fonctionnalité, veuillez utiliser la "
 "boîte de dialogue d'aide dans le panneau latéral inférieur gauche."
 
@@ -3415,10 +3414,10 @@ msgid "%1/%2 items selected"
 msgstr "%1 / %2 éléments sélectionnés"
 
 #: core/app/views/stack/welcomepageview.cpp:98
-#, fuzzy, kde-format
-#| msgid "More than 1500 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1700 user-reports closed on bugzilla."
-msgstr "Plus de 1500 rapports de bogue fermés dans Bugzilla."
+msgstr ""
+"Plus de 1700 rapports de bogue des utilisateurs ont été fermés dans Bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:99
 #, kde-format
@@ -3482,7 +3481,7 @@ msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr ""
 "Métadonnées : activer cette option pour écrire des métadonnées dans le "
-"moteur « ExifTool »."
+"moteur « ExifTool »"
 
 #: core/app/views/stack/welcomepageview.cpp:107
 #, kde-format
@@ -3492,7 +3491,7 @@ msgid ""
 msgstr ""
 "Métadonnées : les opérations optionnelles pour l'écriture des métadonnées "
 "dans des fichiers « RAW » et « DNG » sont maintenant toujours déléguées au "
-"moteur « ExifTool »."
+"moteur « ExifTool »"
 
 #: core/app/views/stack/welcomepageview.cpp:108
 #, kde-format
@@ -3582,7 +3581,7 @@ msgid ""
 "Showfoto."
 msgstr ""
 "Ajouter un panneau de configuration pour la vérification orthographique dans "
-"Configuration / Divers pour les logiciels DigiKam et ShowFoto."
+"Configuration / Divers pour les logiciels digiKam et ShowFoto."
 
 #: core/app/views/stack/welcomepageview.cpp:119
 #, kde-format
@@ -3598,7 +3597,7 @@ msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
 "Ajouter un panneau de configuration de localisation dans Configuration / "
-"Divers pour les logiciels DigiKam et ShowFoto."
+"Divers pour les logiciels digiKam et ShowFoto."
 
 #: core/app/views/stack/welcomepageview.cpp:121
 #, kde-format
@@ -3629,7 +3628,7 @@ msgstr ""
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
 "Ajoutez une prise en charge des images au format « float16 » (Half Float) "
-"dans le chargeur « TIFF »."
+"dans le chargeur « TIFF »"
 
 #: core/app/views/stack/welcomepageview.cpp:125
 #, kde-format
@@ -3686,16 +3685,13 @@ msgstr ""
 "« G'MIC » par lot de travaux."
 
 #: core/app/views/stack/welcomepageview.cpp:131
-#, fuzzy, kde-format
-#| msgid ""
-#| "Queue Manager: add new tool to assign rating, pick, and color labels in "
-#| "batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to perform auto-rotation based on content "
 "analysis using DNN."
 msgstr ""
-"Gestionnaire de file : ajoute un nouvel outil pour attribuer des étiquettes "
-"de notation, de sélection et de couleurs par lot."
+"Gestionnaire de file : ajout d'un nouvel outil pour réaliser une rotation "
+"automatique selon l'analyse du contenu effectuée avec DNN."
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
@@ -3705,7 +3701,7 @@ msgid ""
 msgstr ""
 "Documentation : <a href=\" https://docs.digikam.org/en/index.html\"> Ré-"
 "écriture du manuel </a> de DocBook à Sphinx / Environnement de développement "
-"« ReStructuredText »."
+"« ReStructuredText »"
 
 #: core/app/views/stack/welcomepageview.cpp:133
 #, kde-format
@@ -3724,15 +3720,12 @@ msgstr ""
 "\">Veuillez consulter ce rapport du GoSC 2023 pour plus de détails.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
-"Mise à jour de l'outil « G'MIC-Qt » vers la dernière version 3.4.0, "
+"Mise à jour de l'outil « G'MIC-Qt » vers sa dernière version 3.4.0, "
 "finalisation du portage vers macOS et amélioration de la stabilité du module "
 "externe."
 
@@ -3740,13 +3733,15 @@ msgstr ""
 #, kde-format
 msgid "New G'MIC generic plugin working as layer mode from a stack of images."
 msgstr ""
+"Nouveau module externe générique pour G'MIC fonctionnant selon un mode en "
+"calques à partir d'une pile d'images."
 
 #: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
 msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
 "Mise à jour du SDK « Adobe DNG » vers la version 1.7.1 avec la prise en "
-"charge de la compression « JPEG-XL »."
+"charge de la compression « JPEG-XL »"
 
 #: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
@@ -3767,28 +3762,31 @@ msgid ""
 "better faces-management results."
 msgstr ""
 "Ajout du modèle « DNN YuNet » pour traiter la reconnaissance faciale et "
-"remplacer l'ancien modèle « SSD ». Ajout du modèle « Sface DNN » pour "
-"traiter la reconnaissance faciale et remplacer l'ancien modèle « OpenFace ». "
-"Les deux sont plus rapides et nécessitent moins de mémoire durant "
-"l'exécution avec de meilleurs résultats pour la gestion des visages."
+"remplacer l'ancien modèle « SSD » Ajout du modèle « Sface DNN » pour traiter "
+"la reconnaissance faciale et remplacer l'ancien modèle « OpenFace » Les deux "
+"sont plus rapides et nécessitent moins de mémoire durant l'exécution avec de "
+"meilleurs résultats pour la gestion des visages."
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid "New option to scan image for recognize faces at startup."
 msgstr ""
+"Nouvelle option pour analyser l'image pour la reconnaissance des visages au "
+"démarrage."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid "New option to turn on/off OpenCL support with face management."
 msgstr ""
+"Nouvelle option pour activer / désactiver la prise en charge de OpenCL avec "
+"la gestion des visages."
 
 #: core/app/views/stack/welcomepageview.cpp:145
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
 msgstr ""
 "Mise à jour du moteur interne « RAW » vers la dernière version de la "
-"bibliothèque « libraw » en date du 09 Septembre 2024."
+"bibliothèque « libraw » en date du 12 Mai 2025."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
@@ -3806,7 +3804,7 @@ msgstr ""
 "OM-5.Panasonic DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-"
 "S5-II, DC-GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-"
 "V), ILME-FX30, DSC-HX95, A1.Nombreux drones DJI et Skvdio. Nombreux "
-"téléphones avec enregistrement au format « DNG »."
+"téléphones avec enregistrement au format « DNG »"
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
@@ -3835,7 +3833,7 @@ msgid ""
 "digiKam 7):"
 msgstr ""
 "Voici quelques-unes des nouvelles fonctionnalités intégrées dans cette "
-"version de DigiKam (Comparées à DigiKam 7) :"
+"version de digiKam (Comparées à digiKam 7) :"
 
 #: core/app/views/stack/welcomepageview.cpp:181
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
@@ -3855,7 +3853,7 @@ msgid ""
 "organize, enhance, search and export your digital images to and from your "
 "computer."
 msgstr ""
-"DigiKam est un programme de gestion de photos open source conçu pour "
+"digiKam est un programme de gestion de photos open source conçu pour "
 "importer, organiser, améliorer, chercher et exporter vos images numériques "
 "dans votre ordinateur."
 
@@ -3866,7 +3864,7 @@ msgid ""
 "where your files are stored, and are identical to the folders on your hard "
 "disk."
 msgstr ""
-"Vous êtes actuellement dans la vue « Album » de DigiKam. Les albums sont "
+"Vous êtes actuellement dans la vue « Album » de digiKam. Les albums sont "
 "l'endroit où vos fichiers sont stockés, et sont identiques aux dossiers de "
 "votre disque dur."
 
@@ -3881,7 +3879,7 @@ msgid ""
 "digiKam has many powerful features which are described in the <a href="
 "\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
-"DigiKam possède un grand nombre de puissantes fonctionnalités, décrites dans "
+"digiKam possède un grand nombre de puissantes fonctionnalités, décrites dans "
 "sa <a href=\"https://docs.digikam.org/en/index.html\">documentation</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:188
@@ -3890,14 +3888,14 @@ msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
 "information about new versions of digiKam."
 msgstr ""
-"La <a href=\"https://www.digikam.org\">page d'accueil de DigiKam</a> fournit "
-"des informations sur les nouvelles versions de DigiKam."
+"La <a href=\"https://www.digikam.org\">page d'accueil de digiKam</a> fournit "
+"des informations sur les nouvelles versions de digiKam."
 
 #: core/app/views/stack/welcomepageview.cpp:243
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
-msgstr "Bienvenue dans DigiKam %1"
+msgstr "Bienvenue dans digiKam %1"
 
 #: core/app/views/stack/welcomepageview.cpp:246
 #, kde-format
@@ -3993,7 +3991,7 @@ msgstr "Configurer la colonne « %1 »"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "digiKam properties"
-msgstr "Propriétés de DigiKam"
+msgstr "Propriétés de digiKam"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:67
 #, kde-format
@@ -5104,10 +5102,10 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</para>"
 msgstr ""
 "<para>Ce gestionnaire de traitement par lot peut convertir les images au "
-"format « AVIF ».</para><para>Le format « AVIF » (AV1 Image File) est un "
+"format « AVIF »</para><para>Le format « AVIF » (AV1 Image File) est un "
 "format de fichier d'image pouvant enregistrer des images ou des séquences "
 "d'images compressées avec le codec « AV1 » dans un format de conteneur "
-"« ISOBMFF ».</para><para>Veuillez consulter les détails sur ce format sur <a "
+"« ISOBMFF »</para><para>Veuillez consulter les détails sur ce format sur <a "
 "href='https://fr.wikipedia.org/wiki/AVIF'>cette page</a>.</para>"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:42
@@ -5134,7 +5132,7 @@ msgid ""
 "wikipedia.org/wiki/Digital_Negative'>this page</a>.</para>"
 msgstr ""
 "<para>Cet outil générique peut convertir des images du format « RAW » au "
-"format « DNG ».</para><para>Le négatif numérique est un format d'image "
+"format « DNG »</para><para>Le négatif numérique est un format d'image "
 "« RAW » sans perte créé par Adobe.</para><para>Consultez les détails sur ce "
 "format sur <a href='https://fr.wikipedia.org/wiki/Digital_Negative'>cette "
 "page</a>.</para>"
@@ -5149,7 +5147,7 @@ msgstr "Convertir en « HEIF »"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to HEIF format"
-msgstr "Un outil pour convertir des images au format « HEIF »."
+msgstr "Un outil pour convertir des images au format « HEIF »"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:62
 #, kde-kuit-format
@@ -5167,7 +5165,7 @@ msgid ""
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
 "<para>Ce gestionnaire de traitement par lot peut convertir des données "
-"d'images vers le format « HEIF ».</para><para>Le format « HEIF » (High "
+"d'images vers le format « HEIF »</para><para>Le format « HEIF » (High "
 "Efficiency Image File Format), aussi connu comme « HEIC » (High Efficiency "
 "Image Coding), est un format de fichier pour les images individuelles ou des "
 "séquences d'images. Il a été développé par le groupe « MPEG » (Moving "
@@ -5190,7 +5188,7 @@ msgstr "Convertir en « JP2 »"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JPEG-2000 format"
-msgstr "Un outil pour convertir des images au format « JPEG-2000 »."
+msgstr "Un outil pour convertir des images au format « JPEG-2000 »"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:62
 #, kde-kuit-format
@@ -5205,7 +5203,7 @@ msgid ""
 "wikipedia.org/wiki/JPEG_2000'>this page</a>.</para>"
 msgstr ""
 "<para>Ce gestionnaire de traitement par lots peut convertir des images au "
-"format « JPEG-2000 ».</para><para>Il s'agit d'un standard de compression et "
+"format « JPEG-2000 »</para><para>Il s'agit d'un standard de compression et "
 "d'encodage d'images. Il a été créé par le comité « JPEG » (Joint "
 "Photographic Experts Group) en 2000 pour rendre obsolète leur format "
 "« JPEG » standard (créé en 1992). Il repose sur une transformation par "
@@ -5223,7 +5221,7 @@ msgstr "Convertir en « JPEG »"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JPEG format"
-msgstr "Un outil pour convertir des images au format « JPEG »."
+msgstr "Un outil pour convertir des images au format « JPEG »"
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:62
 #, kde-kuit-format
@@ -5237,7 +5235,7 @@ msgid ""
 "para>"
 msgstr ""
 "<para>Ce gestionnaire de traitement par lots peut convertir des images au "
-"format « JPEG ».</para><para>Le format « JPEG » (Joint Photographic Experts "
+"format « JPEG »</para><para>Le format « JPEG » (Joint Photographic Experts "
 "Group) est une méthode très utilisée pour la compression avec perte d'images "
 "numériques, particulièrement celles produites par les appareils photo "
 "numériques.</para><para>Veuillez consulter les détails sur ce format sur <a "
@@ -5253,7 +5251,7 @@ msgstr "Convertir en « JXL »"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JXL format"
-msgstr "Un outil pour convertir des images au format « JXL »."
+msgstr "Un outil pour convertir des images au format « JXL »"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:62
 #, kde-kuit-format
@@ -5267,11 +5265,11 @@ msgid ""
 "en.wikipedia.org/wiki/JPEG_XL'>this page</a>.</para>"
 msgstr ""
 "<para>Ce gestionnaire de traitement par lots peut convertir des images au "
-"format « JPEG-XL ».</para><para>Le format « JPEG-XL » est un format "
-"matriciel d'images sans droit d'utilisation, prenant en charge la "
-"compression avec et sans perte.</para><para>Veuillez consulter les détails "
-"sur ce format sur <a href='https://fr.wikipedia.org/wiki/"
-"Portable_Network_Graphics'>cette page</a>.</para>"
+"format « JPEG-XL »</para><para>Le format « JPEG-XL » est un format matriciel "
+"d'images sans droit d'utilisation, prenant en charge la compression avec et "
+"sans perte.</para><para>Veuillez consulter les détails sur ce format sur <a "
+"href='https://fr.wikipedia.org/wiki/Portable_Network_Graphics'>cette page</"
+"a>.</para>"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:42
 #, kde-format
@@ -5283,7 +5281,7 @@ msgstr "Convertir en « PGF »"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to PGF format"
-msgstr "Un outil pour convertir des images au format « PGF »."
+msgstr "Un outil pour convertir des images au format « PGF »"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:62
 #, kde-kuit-format
@@ -5296,8 +5294,8 @@ msgid ""
 "Progressive_Graphics_File'>this page</a>.</para>"
 msgstr ""
 "<para>Ce gestionnaire de traitement par lots peut convertir les images au "
-"format « PGF ».</para><para>Le format « PGF » (Progressive Graphics File) "
-"est un format matriciel d'image, reposant sur des ondelettes permettant une "
+"format « PGF »</para><para>Le format « PGF » (Progressive Graphics File) est "
+"un format matriciel d'image, reposant sur des ondelettes permettant une "
 "compression avec et sans perte.</para><para>Veuillez consulter les détails "
 "sur ce format sur <a href='https://fr.wikipedia.org/wiki/"
 "Progressive_Graphics_File'>cette page</a>.</para>"
@@ -5324,7 +5322,7 @@ msgstr "Convertir en « PNG »"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to PNG format"
-msgstr "Un outil pour convertir des images au format « PNG »."
+msgstr "Un outil pour convertir des images au format « PNG »"
 
 #: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:62
 #, kde-kuit-format
@@ -5337,7 +5335,7 @@ msgid ""
 "Portable_Network_Graphics'>this page</a>.</para>"
 msgstr ""
 "<p>Ce gestionnaire de traitement par lots peut convertir des images au "
-"format « PNG ».</p><p>Le format « Portable Network Graphics » est un format "
+"format « PNG »</p><p>Le format « Portable Network Graphics » est un format "
 "matriciel de fichier d'image utilisant la compression sans perte.</"
 "p><p>Consultez les détails sur ce format sur <a href='https://fr.wikipedia."
 "org/wiki/Portable_Network_Graphics'>cette page</a>.</p>"
@@ -5352,7 +5350,7 @@ msgstr "Convertir en « TIFF »"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to TIFF format"
-msgstr "Un outil pour convertir des images au format « TIFF »."
+msgstr "Un outil pour convertir des images au format « TIFF »"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:62
 #, kde-kuit-format
@@ -5366,7 +5364,7 @@ msgid ""
 "para>"
 msgstr ""
 "<para>Ce gestionnaire de traitement par lot peut convertir les images au "
-"format « TIFF ».</para><para>Le format « TIFF » (Tagged Image File Format) "
+"format « TIFF »</para><para>Le format « TIFF » (Tagged Image File Format) "
 "est un format de fichier pour l'enregistrement d'images matricielles, très "
 "populaire dans le milieu artistique, de la publication et parmi les "
 "photographes.</para><para>Lisez les détails sur ce format sur <a "
@@ -5382,7 +5380,7 @@ msgstr "Convertir en « WebP »"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to WEBP format"
-msgstr "Un outil pour convertir des images au format « WebP »."
+msgstr "Un outil pour convertir des images au format « WebP »"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:62
 #, kde-kuit-format
@@ -5397,9 +5395,9 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/WebP'>this page</a>.</para>"
 msgstr ""
 "<para>Ce gestionnaire de traitement par lots peut convertir des images au "
-"format « WebP ».</para><para>Le format « WebP » est un format de fichier "
+"format « WebP »</para><para>Le format « WebP » est un format de fichier "
 "d'images développés par Google en remplacement des formats de fichiers "
-"« JPEG », « PNG » et « GIF ». Il autorise des fichiers plus petits en taille "
+"« JPEG », « PNG » et « GIF » Il autorise des fichiers plus petits en taille "
 "pour une qualité équivalente ou une plus grande qualité à taille "
 "équivalente. Il prend en charge la compression avec et sans perte, ainsi que "
 "l'animation et la transparence Alpha.</para><para>Veuillez consulter les "
@@ -5556,7 +5554,7 @@ msgstr ""
 "spéciaux d'échappement). Ceux-ci seraient remplacés avant l'exécution du "
 "shell. </para><para>Utilise <b>$TITLE</b>, <b>$COMMENTS</b>, <b>$COLORLABEL</"
 "b>, <b>$PICKLABEL</b>, <b>$RATING</b> et <b>$TAGSPATH</b> pour gérer les "
-"propriétés de DigiKam. </para>"
+"propriétés de digiKam. </para>"
 
 #: core/dplugins/bqm/decorate/border/borderplugin.cpp:42
 #: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:40
@@ -6161,7 +6159,7 @@ msgctxt "@info"
 msgid "A tool to automatically detect and correct red eye effect"
 msgstr ""
 "Un outil de reconnaissance et de correction automatique de l'effet « Yeux "
-"rouges »."
+"rouges »"
 
 #: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:62
 #, kde-kuit-format
@@ -6230,7 +6228,7 @@ msgctxt "@info"
 msgid "A tool to restore images using Greystoration algorithm"
 msgstr ""
 "Un outil pour restaurer des images en utilisant l'algorithme "
-"« Greystoration »."
+"« Greystoration »"
 
 #: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:62
 #, kde-kuit-format
@@ -6240,7 +6238,7 @@ msgid ""
 "algorithm.</para>"
 msgstr ""
 "<p>Ce gestionnaire de traitement par lots peut restaurer des images en "
-"utilisant l'algorithme « Greystoration ».</p>"
+"utilisant l'algorithme « Greystoration »</p>"
 
 #: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:42
 #, kde-format
@@ -6336,7 +6334,7 @@ msgctxt "@info"
 msgid "Apply Metadata: File name not exist in JSON file."
 msgstr ""
 "Appliquer les métadonnées : le nom du fichier n'existe pas dans le fichier "
-"« JSON »."
+"« JSON »"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:209
 #, kde-format
@@ -6356,7 +6354,7 @@ msgctxt "@info"
 msgid "A tool to apply metadata from a image or JSON file with ExifTool"
 msgstr ""
 "Un outil pour appliquer des métadonnées à partir d'une image ou d'un fichier "
-"« JSON » avec l'outil « ExifTool »."
+"« JSON » avec l'outil « ExifTool »"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:62
 #, kde-kuit-format
@@ -6366,7 +6364,7 @@ msgid ""
 "file with ExifTool.</para>"
 msgstr ""
 "<p>Ce gestionnaire de traitement par lots peut appliquer des métadonnées à "
-"partir d'une image ou d'un fichier « JSON » avec l'outil « ExifTool ».</p>"
+"partir d'une image ou d'un fichier « JSON » avec l'outil « ExifTool »</p>"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
 #, kde-format
@@ -6626,19 +6624,19 @@ msgstr "Date"
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
-msgstr "Totalité de DigiKam"
+msgstr "Totalité de digiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
-msgstr "Historique des images de DigiKam"
+msgstr "Historique des images de digiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:119
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
-msgstr "Image d'aperçu de DigiKam"
+msgstr "Image d'aperçu de digiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
@@ -6794,7 +6792,7 @@ msgid ""
 "orientation of an image and rotate the image.</para>"
 msgstr ""
 "<para>Ce gestionnaire de traitement par lots peut détecter automatiquement "
-"l'orientation correcte d’une image et faire pivoter l’image. </para>"
+"l'orientation correcte d'une image et faire pivoter l'image. </para>"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, kde-format
@@ -7074,9 +7072,9 @@ msgid ""
 "<p>Toggle lossless compression for HEIF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress HEIF pictures.</p>"
 msgstr ""
-"<p>Activer / Désactiver la compression sans perte pour les images « HEIF ».</"
+"<p>Activer / Désactiver la compression sans perte pour les images « HEIF »</"
 "p><p>Si cette option est activée, une méthode sans perte sera utilisée pour "
-"compresser les images « HEIF ».</p>"
+"compresser les images « HEIF »</p>"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:71
 #, kde-format
@@ -7109,7 +7107,7 @@ msgstr "Chargeur « HEIF »"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libheif codec"
-msgstr "Un chargeur d'images reposant sur le codec « Libheif »."
+msgstr "Un chargeur d'images reposant sur le codec « Libheif »"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:63
 #, kde-format
@@ -7154,7 +7152,7 @@ msgid ""
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
 "<para>Ce module externe permet aux utilisateurs de charger et d'enregistrer "
-"des images en utilisant le codec « Libheif ».</para><para>Le format "
+"des images en utilisant le codec « Libheif »</para><para>Le format "
 "« HEIF ciency Image File), connu par ailleurs comme « HEIC » (High "
 "Efficiency Image Coding) est un format de fichier pour les images "
 "individuelles et les séquences d'images. Il a été développé par le groupe "
@@ -7324,7 +7322,7 @@ msgstr "Chargeur « JPEG »"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjpeg codec"
-msgstr "Un chargeur d'images reposant sur le codec « libjpeg »."
+msgstr "Un chargeur d'images reposant sur le codec « libjpeg »"
 
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:63
 #, kde-kuit-format
@@ -7339,7 +7337,7 @@ msgid ""
 "Photographic Experts Group documentation</a> for details.</para>"
 msgstr ""
 "<para> Ce module externe permet aux utilisateurs de charger et d'enregistrer "
-"des images en utilisant le codec « libjpeg ».</para><para>Le format "
+"des images en utilisant le codec « libjpeg »</para><para>Le format "
 "« JPEG » (Joint Photographic Experts Group) est une méthode largement "
 "utilisée pour la compression avec perte pour les images numériques, en "
 "particulier, pour les images fournies par les appareils photo numériques. Le "
@@ -7403,7 +7401,7 @@ msgstr "Chargeur « JPEG-2000 »"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
-msgstr "Un chargeur d'images reposant sur le codec « libjasper »."
+msgstr "Un chargeur d'images reposant sur le codec « libjasper »"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:101
 #, kde-kuit-format
@@ -7419,7 +7417,7 @@ msgid ""
 "Group documentation</a> for details.</para>"
 msgstr ""
 "<para> Ce module externe permet aux utilisateurs de charger et d'enregistrer "
-"des images en utilisant le codec « libjasper ».</para><para>Le standard "
+"des images en utilisant le codec « libjasper »</para><para>Le standard "
 "« JPEG 2000 » (Joint Photographic Experts Group), finalisé en 2001, propose "
 "un schéma d'encodage d'image utilisant des techniques de pointe pour la "
 "compression à partir de la technologie des ondelettes. Cette architecture de "
@@ -7459,7 +7457,7 @@ msgstr "Chargeur « ImageMagick »"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on ImageMagick coders"
-msgstr "Un chargeur d'images reposant sur les encodeurs « ImageMagick »."
+msgstr "Un chargeur d'images reposant sur les encodeurs « ImageMagick »"
 
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:102
 #, kde-kuit-format
@@ -7472,7 +7470,7 @@ msgid ""
 "wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
 msgstr ""
 "<para>Ce module externe permet aux utilisateurs de charger et d'enregistrer "
-"une image en utilisant les encodeurs « ImageMagick ».</para><para>Le module "
+"une image en utilisant les encodeurs « ImageMagick »</para><para>Le module "
 "« ImageMagick » est une suite de logiciels libres et « Open Source » pour la "
 "conversion des fichiers d'images brutes et des images vectorielles. Il peut "
 "lire et écrire plus de 200 formats de fichiers d'images.</"
@@ -7533,7 +7531,7 @@ msgstr "Chargeur « PGF »"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libpgf codec"
-msgstr "Un chargeur d'images reposant sur le codec « Libpgf »."
+msgstr "Un chargeur d'images reposant sur le codec « Libpgf »"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:78
 #, kde-kuit-format
@@ -7549,13 +7547,13 @@ msgid ""
 "a> for details.</para>"
 msgstr ""
 "<para> Ce module externe permet aux utilisateurs de charger et d'enregistrer "
-"des images en utilisant le codec « libpgf ».</para><para>Le format "
+"des images en utilisant le codec « libpgf »</para><para>Le format "
 "« Progressive Graphics File » (PGF) est un puissant format de fichier "
 "d'images, reposant sur une transformation rapide et discrète en ondelettes "
 "avec des fonctionnalités d'encodage progressif. Le format « PGF » peut être "
 "utilisé pour des compressions avec ou sans perte. Il est le plus adapté pour "
 "les images naturelles. Il peut être utilisé comme une solution de "
-"remplacement très efficace et très rapide du format « JPEG-2000 ».</"
+"remplacement très efficace et très rapide du format « JPEG-2000 »</"
 "para><para>Veuillez consulter la documentation du format <a href='https://fr."
 "wikipedia.org/wiki/Progressive_Graphics_File'> « Progressive Graphics File » "
 "</a> pour plus de détails.</para>"
@@ -7597,7 +7595,7 @@ msgstr "Chargeur « PNG »"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libpng codec"
-msgstr "Un chargeur d'images reposant sur le codec « Libpng »."
+msgstr "Un chargeur d'images reposant sur le codec « Libpng »"
 
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:63
 #, kde-kuit-format
@@ -7611,7 +7609,7 @@ msgid ""
 "Network Graphics documentation</a> for details.</para>"
 msgstr ""
 "<p> Ce module externe permet aux utilisateurs de charger et d'enregistrer "
-"des images en utilisant le codec « libpng ».</p><p>Le format "
+"des images en utilisant le codec « libpng »</p><p>Le format "
 "« PNG » (Portable Network Graphics) est un format matriciel de fichier "
 "d'image prenant en charge la compression de données sans perte. Le format "
 "« PNG » a été développé comme une amélioration pour le remplacement sans "
@@ -7637,9 +7635,9 @@ msgid ""
 "<p>Toggle lossless compression for AVIF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress JPEG XL pictures.</p>"
 msgstr ""
-"<p>Activer ou non la compression sans pertes pour les images « AVIF ».</"
+"<p>Activer ou non la compression sans pertes pour les images « AVIF »</"
 "p><p>Si cette option est sélectionnée, une méthode sans perte sera utilisée "
-"pour compresser les images « JPEG XL ».</p>"
+"pour compresser les images « JPEG XL »</p>"
 
 #: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:71
 #, kde-format
@@ -7673,9 +7671,9 @@ msgid ""
 "<p>Toggle lossless compression for JPEG XL images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress JPEG XL pictures.</p>"
 msgstr ""
-"<p>Activer ou non la compression sans pertes pour les images « JPEG XL ».</"
+"<p>Activer ou non la compression sans pertes pour les images « JPEG XL »</"
 "p><p>Si cette option est sélectionnée, une méthode sans perte sera utilisée "
-"pour compresser les images « JPEG XL ».</p>"
+"pour compresser les images « JPEG XL »</p>"
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:71
 #, kde-format
@@ -7708,7 +7706,7 @@ msgstr "Chargeur « QImage »"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on QImage plugins"
-msgstr "Un chargeur d'images reposant sur les modules externes « QImage »."
+msgstr "Un chargeur d'images reposant sur les modules externes « QImage »"
 
 #: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:66
 #, kde-kuit-format
@@ -7742,9 +7740,9 @@ msgid ""
 "<p>Toggle lossless compression for WEBP images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress WEBP pictures.</p>"
 msgstr ""
-"<p>Activer ou non la compression sans pertes pour les images « WebP ».</"
+"<p>Activer ou non la compression sans pertes pour les images « WebP »</"
 "p><p>Si cette option est sélectionnée, une méthode sans perte sera utilisée "
-"pour compresser les images « WebP ».</p>"
+"pour compresser les images « WebP »</p>"
 
 #: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:71
 #, kde-format
@@ -7777,7 +7775,7 @@ msgstr "Chargeur « RAW »"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libraw codec"
-msgstr "Un chargeur d'images reposant sur le codec « Libraw »."
+msgstr "Un chargeur d'images reposant sur le codec « Libraw »"
 
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:63
 #, kde-kuit-format
@@ -7796,7 +7794,7 @@ msgid ""
 "details.</para>"
 msgstr ""
 "<para>Ce module externe permet aux utilisateurs de charger et d'enregistrer "
-"des images en utilisation du codec « Libraw ».</para><para> Une image brute "
+"des images en utilisation du codec « Libraw »</para><para> Une image brute "
 "d'un appareil photo contient, à minima, les données traitées par le senseur, "
 "soit d'un appareil photo numérique, soit d'un appareil de numérisation de "
 "films ou un périphérique de numérisation d'images. Les fichiers bruts ne "
@@ -7843,7 +7841,7 @@ msgstr "Chargeur « TIFF »"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libtiff codec"
-msgstr "Un chargeur d'images reposant sur le codec « libtiff »."
+msgstr "Un chargeur d'images reposant sur le codec « libtiff »"
 
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:63
 #, kde-kuit-format
@@ -7859,7 +7857,7 @@ msgid ""
 "TIFF'>Tagged Image File Format documentation</a> for details.</para>"
 msgstr ""
 "<p> Ce module externe permet aux utilisateurs de charger et d'enregistrer "
-"des images en utilisant le codec « libtiff ».</p><p>Le format « TIFF » ou "
+"des images en utilisant le codec « libtiff »</p><p>Le format « TIFF » ou "
 "« TIF » (Tagged Image File Format) est un format de fichier pour enregistrer "
 "des images numériques brutes. Il est populaire parmi les graphistes, "
 "l'industrie de l'édition et les photographes. Le format « TIFF » est "
@@ -8915,7 +8913,7 @@ msgstr ""
 "Sélection d'un polygone avec un lasso.\n"
 "Raccourci : « L » \n"
 "Pour continuer le polygone, soit appuyer sur « L » soit double cliquer.\n"
-"Pour annuler, appuyez sur « ESC »."
+"Pour annuler, appuyez sur « ESC »"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:168
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:169
@@ -9192,7 +9190,7 @@ msgid ""
 "Here you can see the image selection preview with red eye reduction applied."
 msgstr ""
 "Vous pouvez voir ici l'aperçu de la sélection de l'image après application "
-"de la réduction de l'effet « yeux rouges »."
+"de la réduction de l'effet « yeux rouges »"
 
 #: core/dplugins/editor/enhance/redeye/redeyetool.cpp:167
 #, kde-format
@@ -9319,7 +9317,7 @@ msgid ""
 "This Image Editor tool can restore an image using Greystoration algorithm."
 msgstr ""
 "Cet outil d'édition d'image peut restaurer une image en utilisant "
-"l'algorithme « Greystoration »."
+"l'algorithme « Greystoration »"
 
 #: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:91
 #, kde-format
@@ -9408,7 +9406,7 @@ msgid ""
 "the \"Settings\" button.</p>"
 msgstr ""
 "<p>Le gestionnaire de couleurs est désactivé.</p> <p>Vous pouvez l'activer "
-"maintenant en cliquant sur le bouton « Paramètres ».</p>"
+"maintenant en cliquant sur le bouton « Paramètres »</p>"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
@@ -9916,7 +9914,7 @@ msgstr ""
 "autre variation de la déformation par des ondes circulaires.</"
 "p><p><b>Coordonnées polaires</b> : convertit la photo à partir de "
 "coordonnées rectangulaires en coordonnées polaires.</p><p><b>Coordonnées non "
-"polaires</b> : l'effet inversé des « coordonnées polaires ».</"
+"polaires</b> : l'effet inversé des « coordonnées polaires »</"
 "p><p><b>Mosaïque</b> : scinde la photo en blocs carrés et les déplace "
 "aléatoirement à l'intérieur de l'image.</p>"
 
@@ -9942,7 +9940,7 @@ msgid ""
 "This value controls the iterations to use for Waves, Tile, and Neon effects."
 msgstr ""
 "Cette valeur contrôle les itérations à utiliser pour les effets « Ondes », "
-"« Mosaïque » et « Néon »."
+"« Mosaïque » et « Néon »"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:329
 #, kde-format
@@ -10099,7 +10097,7 @@ msgid ""
 "can use this method to disable the Raindrops effect on a human face, for "
 "example.</p>"
 msgstr ""
-"Il s'agit de l'aperçu de l'effet « gouttes de pluie ». <p>Remarque : si vous "
+"Il s'agit de l'aperçu de l'effet « gouttes de pluie » <p>Remarque : si vous "
 "avez précédemment sélectionné une zone dans l'éditeur, celle-ci ne sera pas "
 "affectée par le filtre. Vous pouvez utiliser cette méthode pour désactiver "
 "l'effet « gouttes de pluie » sur un visage humain, par exemple.</p>"
@@ -10134,7 +10132,7 @@ msgstr "Yeux de poisson :"
 msgid "This value is the fish-eye-effect optical distortion coefficient."
 msgstr ""
 "Cette valeur correspond au coefficient de distorsion optique de l'effet "
-"« yeux de poisson »."
+"« yeux de poisson »"
 
 #: core/dplugins/editor/filters/raindrop/raindroptool.cpp:219
 #, kde-format
@@ -11575,7 +11573,7 @@ msgid ""
 "Cannot open scanner device \"%1\".\n"
 "Please check your configuration"
 msgstr ""
-"Impossible d'ouvrir le périphérique de numérisation « %1 ».\n"
+"Impossible d'ouvrir le périphérique de numérisation « %1 »\n"
 "Veuillez vérifier votre configuration."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:62
@@ -14716,7 +14714,7 @@ msgstr "ID du service :"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:186
 #, kde-format
 msgid "Set here the service identifier"
-msgstr "Saisissez ici l'identifiant du service."
+msgstr "Saisissez ici l'identifiant du service"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:187
 #, kde-format
@@ -14733,7 +14731,7 @@ msgstr "ID de l'enveloppe :"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:196
 #, kde-format
 msgid "Set here the envelope identifier"
-msgstr "Saisissez ici l'identifiant de l'enveloppe."
+msgstr "Saisissez ici l'identifiant de l'enveloppe"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:197
 #, kde-format
@@ -14836,7 +14834,7 @@ msgstr "Utilisez des mots clés pour retrouver les informations :"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:72
 #, kde-format
 msgid "Set here a keyword"
-msgstr "Saisissez ici un mot clé."
+msgstr "Saisissez ici un mot clé"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:73
 #, kde-format
@@ -14926,7 +14924,7 @@ msgstr "Ville :"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:166
 #, kde-format
 msgid "Set here the city of the content"
-msgstr "Saisissez ici la ville du contenu."
+msgstr "Saisissez ici la ville du contenu"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:167
 #, kde-format
@@ -14947,7 +14945,7 @@ msgstr "Lieu :"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:176
 #, kde-format
 msgid "Set here the content location"
-msgstr "Saisissez ici l'emplacement du contenu."
+msgstr "Saisissez ici l'emplacement du contenu"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:177
 #, kde-format
@@ -14971,7 +14969,7 @@ msgstr "État / Province :"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:186
 #, kde-format
 msgid "Set here the Province or State of the content"
-msgstr "Saisissez ici la province ou le pays du contenu."
+msgstr "Saisissez ici la province ou le pays du contenu"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:187
 #, kde-format
@@ -15143,7 +15141,7 @@ msgstr "Sélectionnez ici le cycle éditorial du contenu."
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:198
 #, kde-format
 msgid "Set here the content type"
-msgstr "Saisissez ici le type de contenu."
+msgstr "Saisissez ici le type de contenu"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:201
 #, kde-format
@@ -15280,7 +15278,7 @@ msgid ""
 msgstr ""
 "Saisir ici l'« IPR » (« Informative Provider Reference »), un nom enregistré "
 "par « IPTC » / « NAA », identifiant le fournisseur d'un indicateur de "
-"contenu. La valeur par défaut de « IPR ». est « IPTC » si un code de "
+"contenu. La valeur par défaut de « IPR » est « IPTC » si un code de "
 "référence standard est utilisé. Ce champ est limité à 32 caractères."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:45
@@ -15301,7 +15299,7 @@ msgstr ""
 "service. La référence du sujet est un nombre compris entre « 01000000 » et "
 "« 17999999 » représentant une référence internationale indépendante de la "
 "langue d'un sujet. Un sujet est identifié par son numéro de référence et les "
-"noms correspondants tirés de listes standards fournis par « XMP » / « NAA ». "
+"noms correspondants tirés de listes standards fournis par « XMP » / « NAA » "
 "Si un code de référence standard est utilisé, ces listes constituent les "
 "versions de référence de l'anglais. Ce champ est limité à un code à "
 "8 chiffres."
@@ -15368,8 +15366,7 @@ msgstr ""
 "standardisées.\n"
 "\n"
 "Pour les agences photo, des sujets préconfigurés peuvent être utilisés pour "
-"décrire le contenu des éléments, reposant sur des codes de référence "
-"« Iptc »."
+"décrire le contenu des éléments, reposant sur des codes de référence « Iptc »"
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:101
 #, kde-format
@@ -15416,7 +15413,7 @@ msgstr "Saisissez ici la mention nécessaire du droit d'auteur."
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:101
 #, kde-format
 msgid "Sync Exif Copyright"
-msgstr "Synchroniser la licence « EXIF »."
+msgstr "Synchroniser la licence « EXIF »"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:103
 #: core/libs/template/templatepanel.cpp:152
@@ -16362,7 +16359,7 @@ msgstr ""
 "mises en page de calendriers sont disponibles et vous pouvez intégrer une "
 "liste de dates depuis un fichier « ICS » pour mettre en avant les dates de "
 "vacances.</p><p>Finalement, l'outil propose d'exporter le résultat vers "
-"votre imprimante ou vers un fichier « PDF ».</p>"
+"votre imprimante ou vers un fichier « PDF »</p>"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:85
 #, kde-format
@@ -17219,7 +17216,7 @@ msgstr "Messages de traitement du module « Enfuse »"
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1."
-msgstr "Impossible d'enregistrer l'image dans « %1 »."
+msgstr "Impossible d'enregistrer l'image dans « %1 »"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:536
 #, kde-format
@@ -17285,9 +17282,9 @@ msgstr ""
 "p><p>Pour créer une image à grande gamme dynamique, vous devez disposer "
 "d'images du même sujet prises avec un trépied en utilisant différents "
 "réglages d'exposition.</p><p>Pour produire une image avec de meilleurs "
-"résultats, vous pouvez utiliser le format brut au lieu de « JPEG ». En "
-"effet, la profondeur de couleurs gérée est plus grande et plus bien adaptée "
-"pour fusionner pixel par pixel.</p>"
+"résultats, vous pouvez utiliser le format brut au lieu de « JPEG » En effet, "
+"la profondeur de couleurs gérée est plus grande et plus bien adaptée pour "
+"fusionner pixel par pixel.</p>"
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:85
@@ -18149,7 +18146,7 @@ msgid ""
 "layout. See the jAlbum web-site for details: https://jalbum.net/.</p>"
 msgstr ""
 "<p>Cet outil permet aux utilisateurs d'exporter des éléments vers le "
-"générateur de galerie « HTML jAlbum ».</p><p>Les éléments à traiter peuvent "
+"générateur de galerie « HTML jAlbum »</p><p>Les éléments à traiter peuvent "
 "être sélectionnés un par un ou par groupe dans une sélection d'albums.</"
 "p><p>jAlbum prend en charge différents modèles de thèmes et de mise en "
 "forme. Veuillez consulter le site Internet de jAlbum pour plus de détails : "
@@ -18189,9 +18186,9 @@ msgid ""
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Bienvenue dans l'outil d'album « jAlbum ».</b></h1></p><p>Cet "
+"<qt><p><h1><b>Bienvenue dans l'outil d'album « jAlbum »</b></h1></p><p>Cet "
 "assistant vous guidera pour exporter rapidement</p><p></p><p>vos images "
-"comme projet d'album « jAlbum ».</p></qt>"
+"comme projet d'album « jAlbum »</p></qt>"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:99
 #, kde-format
@@ -18404,10 +18401,10 @@ msgid ""
 "DLNA, as tablets, cellulars, TV, etc.</p>"
 msgstr ""
 "<p>Cet outil permet aux utilisateurs de partager des éléments sur un réseau "
-"local grâce à un serveur « DLNA ».</p><p>Les éléments à partager peuvent "
-"être sélectionnés un par un ou par groupe dans une sélection d'albums.</"
-"p><p>De nombreux périphériques électroniques, comme les tablettes, "
-"téléphones et télévisions, sont compatibles avec « DLNA ».</p>"
+"local grâce à un serveur « DLNA »</p><p>Les éléments à partager peuvent être "
+"sélectionnés un par un ou par groupe dans une sélection d'albums.</p><p>De "
+"nombreux périphériques électroniques, comme les tablettes, téléphones et "
+"télévisions, sont compatibles avec « DLNA »</p>"
 
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:110
 #, kde-format
@@ -18472,7 +18469,7 @@ msgstr "Port du serveur :"
 #, kde-format
 msgctxt "@info"
 msgid "The MJPEG server IP port."
-msgstr "Le port IP du serveur « MJPEG »."
+msgstr "Le port IP du serveur « MJPEG »"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:69
 #, kde-format
@@ -18499,13 +18496,13 @@ msgstr ""
 "Le serveur %1 permet de partager des éléments via le réseau local à l'aide "
 "d'un navigateur Internet. Le format « Motion JPEG » permet de compresser une "
 "vidéo où chaque image vidéo est compressée séparément sous forme d'image "
-"« JPEG ». Les flux « MJPEG » sont conformes à une norme, permettant de "
+"« JPEG » Les flux « MJPEG » sont conformes à une norme, permettant de "
 "connecter les clients du réseau sans module supplémentaire. La plupart des "
 "principaux navigateurs Internet et des lecteurs prennent en charge le flux "
-"« MJPEG ». Pour accéder au flux depuis votre navigateur, il suffit "
-"d'utiliser l'URL « http : //adresse : port », où le paramètre « adresse » "
-"est l'adresse IP du serveur « MJPEG » et le paramètre « port » est le port "
-"du serveur défini, dans cette boîte de dialogue de configuration."
+"« MJPEG » Pour accéder au flux depuis votre navigateur, il suffit d'utiliser "
+"l'URL « http : //adresse : port », où le paramètre « adresse » est l'adresse "
+"IP du serveur « MJPEG » et le paramètre « port » est le port du serveur "
+"défini, dans cette boîte de dialogue de configuration."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:94
 #, kde-format
@@ -18643,7 +18640,7 @@ msgid ""
 "displayed in MJPEG stream."
 msgstr ""
 "Un effet est un panorama ou un zoom visuel, appliqué pendant l'affichage "
-"d'une image dans un flux « MJPEG »."
+"d'une image dans un flux « MJPEG »"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:294
 #, kde-format
@@ -18683,19 +18680,19 @@ msgid ""
 "same time.</p>"
 msgstr ""
 "<p>Cet outil permet aux utilisateurs de partager des éléments sur un réseau "
-"local grâce à un serveur de flux « MJPEG ».</p><p>Les éléments à partager "
+"local grâce à un serveur de flux « MJPEG »</p><p>Les éléments à partager "
 "peuvent être sélectionnés un par un ou par groupe dans une sélection "
 "d'albums.</p><p>le format « Motion JPEG » est un format de compression dans "
 "lequel chaque trame vidéo ou champ entrelacé d'une séquence de vidéo "
-"numérique est compressé séparément en image « JPEG ». Les flux « MJPEG » est "
+"numérique est compressé séparément en image « JPEG » Les flux « MJPEG » est "
 "un standard permettant à des clients sur un réseau d'être connectés sans "
 "module supplémentaire. La plupart des principaux navigateurs Internet et "
-"lecteurs prennent en charge les flux « MJPEG ». </p><p>Pour accéder à un "
-"flux à partir de votre navigateur, veuillez utiliser l'URL http://adresse : "
-"port, où le paramètre « adresse » se réfère à l'adresse « MJPEG » et le "
-"paramètre « port » est le port « MJPEG » défini dans la boîte de dialogue de "
+"lecteurs prennent en charge les flux « MJPEG » </p><p>Pour accéder à un flux "
+"à partir de votre navigateur, veuillez utiliser l'URL http://adresse : port, "
+"où le paramètre « adresse » se réfère à l'adresse « MJPEG » et le paramètre "
+"« port » est le port « MJPEG » défini dans la boîte de dialogue de "
 "configuration. Plusieurs ordinateurs peuvent être connectés en même temps, "
-"au serveur « MJPEG ».</p>"
+"au serveur « MJPEG »</p>"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:101
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
@@ -18836,7 +18833,7 @@ msgstr "Moteur de réseaux neuronaux « LSTM » uniquement."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy + LSTM engines."
-msgstr "Moteurs anciens et « LSTM »."
+msgstr "Moteurs anciens et « LSTM »"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:99
 #, kde-format
@@ -19505,8 +19502,8 @@ msgstr ""
 "« Modèle de nom de fichier » : définissez ici le nom de base des fichiers à "
 "enregistrer. Par exemple, si votre modèle est « panorama » et si vous "
 "choisissez une sortie « JPEG », alors votre panorama sera enregistré sous le "
-"nom « panorama.jpg ». Si vous préférez enregistrer également le fichier de "
-"projet, il portera le nom « panorama.pto »."
+"nom « panorama.jpg » Si vous préférez enregistrer également le fichier de "
+"projet, il portera le nom « panorama.pto »"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:100
 #, kde-format
@@ -19520,7 +19517,7 @@ msgctxt "@info:tooltip"
 msgid "Save the project file for further processing within Hugin GUI."
 msgstr ""
 "Enregistre le fichier de projet en vue d'un traitement ultérieur dans une "
-"interface utilisateur « Hugin »."
+"interface utilisateur « Hugin »"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:103
 #, kde-format
@@ -20707,7 +20704,7 @@ msgstr ""
 #, kde-format
 msgid "Failed to start \"%1\" program. Check your system."
 msgstr ""
-"Échec du démarrage du programme « %1 ». Veuillez vérifier votre système."
+"Échec du démarrage du programme « %1 » Veuillez vérifier votre système."
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:661
 #, kde-format
@@ -21525,7 +21522,7 @@ msgid ""
 "table>"
 msgstr ""
 "<p>Cet outil donne un aperçu d'une série d'éléments utilisant des effets "
-"« OpenGL ».</p><p><u>Usage : </u></p><table><tr><td colspan="
+"« OpenGL »</p><p><u>Usage : </u></p><table><tr><td colspan="
 "\"2\"><nobr><center><b><h1>Accès à l'élément</h1></b></center></nobr></td></"
 "tr><tr><td>Élément précédent :</td><td>Touche <i> « Flèche vers le haut » </"
 "i></td></tr><tr><td></td><td>Touche <i> « Page Supérieure » </i></td></"
@@ -21680,7 +21677,7 @@ msgstr "Enregistrer une liste de la lecture"
 #, kde-format
 msgid "Cannot access file \"%1\". Please check the path is correct."
 msgstr ""
-"Impossible d'accéder au fichier « %1 ». Veuillez vérifier que l'emplacement "
+"Impossible d'accéder au fichier « %1 » Veuillez vérifier que l'emplacement "
 "est correct."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:608
@@ -22000,7 +21997,7 @@ msgstr[1] "%1 images"
 #, kde-format
 msgid "Cannot access file %1. Please check the path is correct."
 msgstr ""
-"Impossible d'accéder au fichier « %1 ». Veuillez vérifier que l'emplacement "
+"Impossible d'accéder au fichier « %1 » Veuillez vérifier que l'emplacement "
 "est correct."
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:415
@@ -22271,7 +22268,7 @@ msgstr ""
 "Cet outil permet le rendu d'une série d'éléments sous forme de diaporama "
 "avancé.\n"
 "De nombreux effets de transition sont disponibles et s'appuient sur OpenGL "
-"et le célèbre effet « Ken Burns ».\n"
+"et le célèbre effet « Ken Burns »\n"
 "\n"
 "Vous pouvez ajouter une piste audio à jouer pendant la présentation."
 
@@ -22564,7 +22561,7 @@ msgstr "Afficher les étiquettes de l'image"
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
 #, kde-format
 msgid "Show the digiKam image tag names at the bottom of the screen."
-msgstr "Affiche les noms d'étiquettes DigiKam de l'image au bas de l'écran."
+msgstr "Affiche les noms d'étiquettes digiKam de l'image au bas de l'écran."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
 #, kde-format
@@ -22577,7 +22574,7 @@ msgid ""
 "Show the digiKam image color label and pick label at the bottom of the "
 "screen."
 msgstr ""
-"Affiche le libellé de couleur et de désignation de l'image DigiKam au bas de "
+"Affiche le libellé de couleur et de désignation de l'image digiKam au bas de "
 "l'écran."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:150
@@ -22588,7 +22585,7 @@ msgstr "Afficher la note de l'image"
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
 #, kde-format
 msgid "Show the digiKam image rating at the bottom of the screen."
-msgstr "Affiche la note DigiKam de l'image au bas de l'écran."
+msgstr "Affiche la note digiKam de l'image au bas de l'écran."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
 #, kde-format
@@ -22640,7 +22637,7 @@ msgid ""
 "with the F2 key.</b>"
 msgstr ""
 "<b>Remarque : cette boîte de dialogue « Paramètres du diaporama » peut être "
-"ouverte à tout moment par un appui sur la la touche « F2 ».</b>"
+"ouverte à tout moment par un appui sur la la touche « F2 » </b>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:50
 #, kde-format
@@ -22791,7 +22788,7 @@ msgid ""
 "See Box web site for details: %1"
 msgstr ""
 "Cet outil permet aux utilisateurs d'exporter des éléments vers le service "
-"Internet « Box ». \n"
+"Internet « Box » \n"
 "\n"
 "Veuillez consulter le site Internet de « Box » pour plus de détails : %1"
 
@@ -23005,7 +23002,7 @@ msgid ""
 "See Dropbox web site for details: %1"
 msgstr ""
 "Cet outil permet aux utilisateurs d'exporter des éléments vers le service "
-"Internet « DropBox ». \n"
+"Internet « DropBox » \n"
 "\n"
 "Veuillez consulter le site Internet de « DropBox » pour plus de détails : %1"
 
@@ -23124,7 +23121,7 @@ msgid ""
 "www.facebook.com/</a></p>"
 msgstr ""
 "<p>Cet outil permet aux utilisateurs d'exporter des éléments vers le service "
-"Internet « Facebook ».</p><p>Veuillez consulter le site Internet de "
+"Internet « Facebook »</p><p>Veuillez consulter le site Internet de "
 "« Facebook » pour plus de détails : <a href='https://www.facebook."
 "com/'>https://www.facebook.com/</a></p>"
 
@@ -23409,7 +23406,7 @@ msgid ""
 msgstr ""
 "Définit l'adresse cible vers laquelle envoyer les images. Ceci peut être "
 "n'importe quelle adresse utilisable dans Dolphin ou dans Konqueror, par "
-"exemple, « ftp://mon.serveur.org/sous/dossier »."
+"exemple, « ftp://mon.serveur.org/sous/dossier »"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:77
 #, kde-format
@@ -23629,7 +23626,7 @@ msgid ""
 "See Flickr web site for details: %1"
 msgstr ""
 "Cet outil permet aux utilisateurs d'exporter des éléments vers le service "
-"Internet « Flickr ». \n"
+"Internet « Flickr » \n"
 "\n"
 "Veuillez consulter le site Internet de « Flickr » pour plus de détails : %1"
 
@@ -24145,7 +24142,7 @@ msgid ""
 "See Google web sites for details: %1"
 msgstr ""
 "Cet outil permet aux utilisateurs d'exporter et d'importer des éléments vers "
-"le service Internet « Google ».\n"
+"le service Internet « Google »\n"
 "\n"
 "Les services Internet « Google Photo » et « Google Drive » sont pris en "
 "charge.\n"
@@ -24542,7 +24539,7 @@ msgid ""
 "See ImageShack web site for details: %1"
 msgstr ""
 "Cet outil permet aux utilisateurs d'exporter des éléments vers le service "
-"Internet « ImageShack ». \n"
+"Internet « ImageShack » \n"
 "\n"
 "Veuillez consulter le site Internet de « ImageShack » pour plus de détails : "
 "%1"
@@ -24697,7 +24694,7 @@ msgid ""
 "See ImgUr web site for details: %1"
 msgstr ""
 "Cet outil permet aux utilisateurs d'exporter des éléments vers le service "
-"Internet « Imgur ».\n"
+"Internet « Imgur »\n"
 "\n"
 "Vous pouvez exporter des éléments de façon anonyme ou grâce à un compte "
 "utilisateur. \n"
@@ -25294,7 +25291,7 @@ msgid ""
 "See IPFS web site for details: %1"
 msgstr ""
 "Cet outil permet aux utilisateurs d'exporter des éléments vers le service "
-"Internet « IPFS ». \n"
+"Internet « IPFS » \n"
 "\n"
 "Veuillez consulter le site Internet de « IPFS » pour plus de détails : %1"
 
@@ -25360,7 +25357,7 @@ msgid ""
 "See MediaWiki web site for details: %1"
 msgstr ""
 "Cet outil permet aux utilisateurs d'exporter des éléments vers le service "
-"Internet « MediaWiki ». \n"
+"Internet « MediaWiki » \n"
 "\n"
 "Veuillez consulter le site Internet de « MediaWiki » pour plus de détails : "
 "%1"
@@ -25384,7 +25381,7 @@ msgstr "Erreur sur le fichier « %1 » : %2\n"
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:154
 #, kde-format
 msgid "Uploaded via digiKam uploader"
-msgstr "Importé avec l'outil de DigiKam"
+msgstr "Importé avec l'outil de digiKam"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:109
 #, kde-format
@@ -25781,7 +25778,7 @@ msgid ""
 msgstr ""
 "Il s'agit d'une zone de saisie pour du texte qui sera utilisé comme "
 "commentaire pour l'envoi. La chaîne par défaut « Envoi avec l'outil "
-"DigiKam » sera utilisée si elle est laissée vide."
+"digiKam » sera utilisée si elle est laissée vide."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:426
 #, kde-format
@@ -25893,7 +25890,7 @@ msgid ""
 "See OneDrive web site for details: %1"
 msgstr ""
 "Cet outil permet aux utilisateurs d'exporter des éléments vers le service "
-"Internet « OneDrive ». \n"
+"Internet « OneDrive » \n"
 "\n"
 "Veuillez consulter le site Internet de « OneDrive » pour plus de détails : %1"
 
@@ -25965,7 +25962,7 @@ msgid ""
 "See Pinterest web site for details: %1"
 msgstr ""
 "Cet outil permet aux utilisateurs d'exporter des éléments vers le service "
-"Internet « Pinterest ». \n"
+"Internet « Pinterest » \n"
 "\n"
 "Veuillez consulter le site Internet de « Pinterest » pour plus de détails : "
 "%1"
@@ -26070,7 +26067,7 @@ msgid ""
 "site for details: %1"
 msgstr ""
 "Cet outil permet aux utilisateurs d'exporter des éléments vers le service "
-"Internet « Piwigo ». Veuillez consulter le site Internet de « Piwigo » pour "
+"Internet « Piwigo » Veuillez consulter le site Internet de « Piwigo » pour "
 "plus de détails : %1"
 
 #: core/dplugins/generic/webservices/piwigo/piwigoplugin.cpp:104
@@ -26232,7 +26229,7 @@ msgstr "Modifier les données « Piwigo »"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:411
 #, kde-format
 msgid "Failed to login into remote piwigo. "
-msgstr "Impossible de se connecter au serveur distant « Piwigo ». "
+msgstr "Impossible de se connecter au serveur distant « Piwigo » "
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:412
 #, kde-format
@@ -26325,7 +26322,7 @@ msgid ""
 "See Rajce web site for details: %1"
 msgstr ""
 "Cet outil permet aux utilisateurs d'exporter des éléments vers le service "
-"Internet « Rajce ». \n"
+"Internet « Rajce » \n"
 "\n"
 "Veuillez consulter le site Internet de « Rajce » pour plus de détails : %1"
 
@@ -26447,7 +26444,7 @@ msgstr "Nouvel album « SmugMug »"
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:81
 #, kde-format
 msgid "These are basic settings for the new SmugMug album."
-msgstr "Il s'agit des paramètres de base du nouvel album « SmugMug »."
+msgstr "Il s'agit des paramètres de base du nouvel album « SmugMug »"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:84
 #, kde-format
@@ -26495,7 +26492,7 @@ msgstr "Sécurité et confidentialité"
 msgid "These are security and privacy settings for the new SmugMug album."
 msgstr ""
 "Il s'agit des paramètres relatifs à la sécurité et à la confidentialité pour "
-"le nouvel album « SmugMug »."
+"le nouvel album « SmugMug »"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:123
 #, kde-format
@@ -26506,7 +26503,7 @@ msgstr "Public"
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:125
 #, kde-format
 msgid "Public album is listed on your public SmugMug page."
-msgstr "L'album public est répertorié dans votre page publique « SmugMug »."
+msgstr "L'album public est répertorié dans votre page publique « SmugMug »"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:126
 #, kde-format
@@ -26550,7 +26547,7 @@ msgctxt "@info"
 msgid "A tool to export and import items with SmugMug web-service"
 msgstr ""
 "Un outil d'exportation et d'importation d'éléments vers / depuis le service "
-"Internet « SmugMug »."
+"Internet « SmugMug »"
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:65
 #, kde-format
@@ -26561,7 +26558,7 @@ msgid ""
 "See SmugMug web site for details: %1"
 msgstr ""
 "Cet outil permet aux utilisateurs d'exporter des éléments vers le service "
-"Internet « SmugMug ». \n"
+"Internet « SmugMug » \n"
 "\n"
 "Veuillez consulter le site Internet de « SmugMug » pour plus de détails : %1"
 
@@ -26606,7 +26603,7 @@ msgstr "Impossible de lister les modèles d'albums"
 #, kde-format
 msgid "This is the list of images to upload to your SmugMug account."
 msgstr ""
-"Il s'agit de la liste des images à envoyer sur votre compte « SmugMug »."
+"Il s'agit de la liste des images à envoyer sur votre compte « SmugMug »"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:74
 #, kde-format
@@ -26637,7 +26634,7 @@ msgstr "Anonyme"
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:85
 #, kde-format
 msgid "Login as anonymous to SmugMug web service."
-msgstr "Connexion anonyme au service Web « SmugMug »."
+msgstr "Connexion anonyme au service Web « SmugMug »"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:87
 #, kde-format
@@ -26700,7 +26697,7 @@ msgstr "Mot de passe de l'album :"
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:126
 #, kde-format
 msgid "Password for SmugMug album."
-msgstr "Mot de passe pour l'album « SmugMug »."
+msgstr "Mot de passe pour l'album « SmugMug »"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:129
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:203
@@ -26837,7 +26834,7 @@ msgid ""
 "See Twitter web site for details: %1"
 msgstr ""
 "Cet outil permet aux utilisateurs d'exporter des éléments vers le service "
-"Internet « Twitter ». \n"
+"Internet « Twitter » \n"
 "\n"
 "Veuillez consulter le site Internet de « Twitter » pour plus de détails : %1"
 
@@ -27084,7 +27081,7 @@ msgid ""
 "Error to import RAW image with ART\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
-"Erreur lors de l'importation d'une image « RAW » avec « ART ».\n"
+"Erreur lors de l'importation d'une image « RAW » avec « ART »\n"
 "Veuillez fermer cette boîte de dialogue pour charger une image « RAW » avec "
 "l'outil natif d'importation."
 
@@ -27302,7 +27299,7 @@ msgid ""
 "Error to import RAW image with RawTherapee\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
-"Erreur lors de l'importation d'une image « Raw » avec « RawTherapee ».\n"
+"Erreur lors de l'importation d'une image « Raw » avec « RawTherapee »\n"
 "Veuillez fermer cette boîte de dialogue pour charger une image « Raw » avec "
 "l'outil natif d'importation."
 
@@ -27317,7 +27314,7 @@ msgid ""
 "Error to import RAW image with UFRaw\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
-"Erreur lors de l'importation d'une image « Raw » avec « UFRaw ».\n"
+"Erreur lors de l'importation d'une image « Raw » avec « UFRaw »\n"
 "Veuillez fermer cette boîte de dialogue pour charger une image « Raw » avec "
 "l'outil natif d'importation."
 
@@ -27406,7 +27403,7 @@ msgid ""
 "in digiKam.</p><p>Do you want to continue?</p>"
 msgstr ""
 "<p>Le dossier que voulez supprimer contient des fichiers (%1), non affichés "
-"dans DigiKam.</p><p>Voulez-vous vraiment continuer ? </p>"
+"dans digiKam.</p><p>Voulez-vous vraiment continuer ? </p>"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:253
 #, kde-format
@@ -27495,7 +27492,7 @@ msgid ""
 "<p>digiKam will attempt to start now, but it will <b>not</b> be functional.</"
 "p>"
 msgstr ""
-"<p>DigiKam tentera de démarrer maintenant mais il ne sera <b>pas</b> "
+"<p>digiKam tentera de démarrer maintenant mais il ne sera <b>pas</b> "
 "fonctionnel.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:215
@@ -27507,7 +27504,7 @@ msgid ""
 "menu</b>.</p>"
 msgstr ""
 "<p>Impossible d'ouvrir la base de données.</p><p>Vous ne pouvez utiliser "
-"DigiKam sans base de données opérationnelle. DigiKam tentera de démarrer "
+"digiKam sans base de données opérationnelle. digiKam tentera de démarrer "
 "maintenant mais ne sera <b>pas</b> fonctionnel. Veuillez vérifier la "
 "configuration de la base de données dans le <b>menu de configuration</b>.</p>"
 
@@ -27520,8 +27517,8 @@ msgid ""
 "database settings in the <b>configuration menu</b>.</p>"
 msgstr ""
 "<p>L'ouverture de la base de données a échoué. Message d'erreur de la base "
-"de données :</p> <p><b>%1</b></p><p>Impossible d'utiliser DigiKam sans une "
-"base de données opérationnelle. DigiKam va tenter de démarrer maintenant, "
+"de données :</p> <p><b>%1</b></p><p>Impossible d'utiliser digiKam sans une "
+"base de données opérationnelle. digiKam va tenter de démarrer maintenant, "
 "mais il ne sera <b>pas</b> fonctionnel. Veuillez vérifier la configuration "
 "de la base de données dans le <b>menu de configuration</b>.</p>"
 
@@ -27551,9 +27548,9 @@ msgstr ""
 "Veuillez noter que si vous avez basculé vers une base de données de jeu de "
 "caractères ne prenant pas en charge certains des noms de fichiers présents "
 "dans votre collection, ces fichiers risquent d'être introuvables dans la "
-"collection. Si vous voulez vraiment continuer, cliquez sur « Oui ». Sinon, "
+"collection. Si vous voulez vraiment continuer, cliquez sur « Oui » Sinon, "
 "cliquez sur « Non » et corrigez votre base de données de jeu de caractères "
-"avant de redémarrer DigiKam."
+"avant de redémarrer digiKam."
 
 #: core/libs/album/manager/albummanager_database.cpp:309
 #, kde-format
@@ -27619,7 +27616,7 @@ msgid ""
 msgstr ""
 "<p>Vous avez choisi le dossier « %1 » comme l'endroit où stocker la base de "
 "données. Un fichier de base de données provenant d'une version antérieure de "
-"DigiKam a été trouvé dans ce dossier.</p> <p>Voulez-vous mettre à niveau "
+"digiKam a été trouvé dans ce dossier.</p> <p>Voulez-vous mettre à niveau "
 "l'ancien fichier de base de données - en confirmant que ce fichier de base "
 "de données a été effectivement créé pour les images situées dans le dossier "
 "« %2 » - ou ignorer l'ancien fichier et démarrer avec une nouvelle base de "
@@ -27662,7 +27659,7 @@ msgid ""
 msgstr ""
 "<p>Vous avez choisi le dossier « %1 » comme nouvel endroit où stocker la "
 "base de données. Un fichier de base de données provenant d'une version "
-"antérieure de DigiKam a été trouvé dans ce dossier</p> <p>Voulez-vous mettre "
+"antérieure de digiKam a été trouvé dans ce dossier</p> <p>Voulez-vous mettre "
 "à niveau l'ancien fichier de base de données, démarrer avec une nouvelle "
 "base de données ou copier la base de données actuelle dans cet emplacement "
 "et continuer à l'utiliser ?</p>"
@@ -27685,7 +27682,7 @@ msgid ""
 msgstr ""
 "<p>Vous avez choisi le dossier « %1 » comme nouvel endroit où stocker la "
 "base de données. Un fichier de base de données provenant d'une version "
-"antérieure de DigiKam a été trouvé dans ce dossier</p> <p>Voulez-vous mettre "
+"antérieure de digiKam a été trouvé dans ce dossier</p> <p>Voulez-vous mettre "
 "à niveau l'ancien fichier de base de données ou démarrer avec une nouvelle "
 "base de données ?</p>"
 
@@ -27788,7 +27785,7 @@ msgstr "Impossible que le nom de l'album soit vide."
 #: core/libs/album/manager/albummanager_palbum.cpp:389
 #, kde-format
 msgid "Album name cannot contain '/'."
-msgstr "Impossible que le nom de l'album contienne le caractère « / »."
+msgstr "Impossible que le nom de l'album contienne le caractère « / »"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:395
 #, kde-format
@@ -27804,7 +27801,7 @@ msgstr "Un autre album du même nom existe déjà."
 #: core/libs/album/manager/albummanager_palbum.cpp:427
 #, kde-format
 msgid "Failed to create directory '%1'"
-msgstr "Impossible de créer le dossier « %1 »."
+msgstr "Impossible de créer le dossier « %1 »"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:436
 #, kde-format
@@ -28598,7 +28595,7 @@ msgstr "Créer un nouvel album"
 #, kde-format
 msgid "Sorry, digiKam does not support remote URLs as collections."
 msgstr ""
-"Désolé, DigiKam ne prend pas en charge les URL distantes en tant que "
+"Désolé, digiKam ne prend pas en charge les URL distantes en tant que "
 "collections."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:247
@@ -28638,7 +28635,7 @@ msgstr ""
 "dans le dossier de premier niveau, n'ajoutez pas de fichiers à la fin du CD, "
 "sinon il ne sera pas reconnu. À l'avenir, veuillez définir une étiquette "
 "unique sur vos CD et DVD si vous avez l'intention de les utiliser avec "
-"DigiKam."
+"digiKam."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:351
 #, kde-format
@@ -28649,7 +28646,7 @@ msgid ""
 msgstr ""
 "Il s'agit d'un CD / DVD. Il sera identifié par l'étiquette (« %1 ») que vous "
 "avez définie dans votre application de gravure de CD. Si vous créez d'autres "
-"CD à utiliser avec DigiKam à l'avenir, n'oubliez pas de leur donner une "
+"CD à utiliser avec digiKam à l'avenir, n'oubliez pas de leur donner une "
 "étiquette unique également."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:367
@@ -28689,7 +28686,7 @@ msgid ""
 "You need to locally mount your Samba share. Sorry, digiKam does currently "
 "not support smb:// URLs. "
 msgstr ""
-"Vous devez monter localement votre partage Samba. Désolé, DigiKam ne prend "
+"Vous devez monter localement votre partage Samba. Désolé, digiKam ne prend "
 "actuellement pas en charge les URL smb://. "
 
 #: core/libs/database/collection/collectionmanager_location.cpp:430
@@ -28700,7 +28697,7 @@ msgid ""
 msgstr ""
 "Votre stockage sur le réseau doit être configuré de façon à être accessible "
 "sous la forme de fichiers et de dossiers au travers du système de fichiers. "
-"DigiKam ne prend pas en charge les « URL » distantes."
+"digiKam ne prend pas en charge les « URL » distantes."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:467
 #, kde-format
@@ -28807,7 +28804,7 @@ msgstr ""
 "Vous disposez de privilèges insuffisants sur la base de données.\n"
 "Les privilèges suivants ne vous sont pas accordés :\n"
 " %1\n"
-"Vérifiez vos privilèges sur la base de données et redémarrez DigiKam."
+"Vérifiez vos privilèges sur la base de données et redémarrez digiKam."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:235
 #, kde-format
@@ -28828,11 +28825,11 @@ msgid ""
 "(This means this digiKam version is too old, or the database format is too "
 "recent.) Please use the more recent version of digiKam that you used before. "
 msgstr ""
-"La base de données a été utilisée avec une version plus récente de DigiKam "
+"La base de données a été utilisée avec une version plus récente de digiKam "
 "et a été mise à jour vers un schéma de base de données qu'il n'est pas "
 "possible d'employer avec cette version (cela signifie que la version de "
-"DigiKam est trop ancienne ou que le format de la base de données est trop "
-"récent). Veuillez utiliser la version de DigiKam postérieure à celle que "
+"digiKam est trop ancienne ou que le format de la base de données est trop "
+"récent). Veuillez utiliser la version de digiKam postérieure à celle que "
 "vous aviez auparavant. "
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:328
@@ -28859,9 +28856,9 @@ msgstr ""
 "base de données « %1 », ce qui est inhabituel. Veuillez vérifier que vous "
 "pouvez accéder au fichier et qu'aucun autre processus n'a actuellement "
 "verrouillé le fichier. Si le problème persiste, vous pouvez obtenir de "
-"l'aide de la liste de diffusion des développeurs de DigiKam (voir www."
+"l'aide de la liste de diffusion des développeurs de digiKam (voir www."
 "digikam.org/support). Veuillez également jeter un coup d'œil aux messages "
-"que DigiKam affiche sur la console. "
+"que digiKam affiche sur la console. "
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:412
 #, kde-format
@@ -28878,8 +28875,8 @@ msgstr ""
 "ancienne base de données et démarrer avec une vide (dans ce cas, veuillez "
 "déplacer les fichiers des bases de données « %1 » et « %2 » » depuis le "
 "dossier « %3 »). Vous serez très probablement amené à signaler cette erreur "
-"sur la liste de diffusion des développeurs de DigiKam (voir www.digikam.org/"
-"support). Veuillez également jeter un coup d'œil aux messages que DigiKam "
+"sur la liste de diffusion des développeurs de digiKam (voir www.digikam.org/"
+"support). Veuillez également jeter un coup d'œil aux messages que digiKam "
 "affiche sur la console. "
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:450
@@ -28893,7 +28890,7 @@ msgstr ""
 "Impossible d'effectuer la mise à jour du schéma de base de données de la "
 "version %1 vers la version %2. \n"
 "La raison pourrait être une mise à jour manquante de la base de données vers "
-"la version actuelle du serveur. Veuillez redémarrer maintenant DigiKam pour "
+"la version actuelle du serveur. Veuillez redémarrer maintenant digiKam pour "
 "réaliser la mise à jour nécessaire de la base de données."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:459
@@ -28916,7 +28913,7 @@ msgid ""
 "place. "
 msgstr ""
 "L'action de mise à jour de la base de données est introuvable. Veuillez "
-"vérifier que le fichier dbconfig.xml de la version actuelle de DigiKam est "
+"vérifier que le fichier dbconfig.xml de la version actuelle de digiKam est "
 "installé à l'endroit approprié."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:711
@@ -28932,7 +28929,7 @@ msgid ""
 "delete it."
 msgstr ""
 "Impossible de copier le fichier de l'ancienne base de données (« %1 ») dans "
-"son nouvel emplacement (« %2 »). Message d'erreur : « %3 ». Veuillez vous "
+"son nouvel emplacement (« %2 »). Message d'erreur : « %3 » Veuillez vous "
 "assurer que le fichier peut être copié, sinon supprimez-le."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:881
@@ -28995,7 +28992,7 @@ msgstr ""
 "qu'il y a un problème avec votre installation. Si vous travaillez sous "
 "Linux, vérifiez que HAL est installé et fonctionne. Quoi qu'il en soit, vous "
 "pouvez demander conseil sur la liste de diffusion des développeurs de "
-"DigiKam (Veuillez consulter la pages « www.digikam.org/support »). Le "
+"digiKam (Veuillez consulter la pages « www.digikam.org/support »). Le "
 "processus de mise à jour de la base de données va maintenant s'interrompre "
 "car nous ne voulons pas créer une nouvelle base de données reposant sur des "
 "suppositions fausses provenant d'une installation défectueuse."
@@ -29057,7 +29054,7 @@ msgid ""
 "digiKam depends on the drivers provided by the Qt::SQL module."
 msgstr ""
 "Le pilote « SQLite » pour les bases de données SQLite n'est pas disponible.\n"
-"DigiKam dépend des pilotes fournis par le module Qt::SQL."
+"digiKam dépend des pilotes fournis par le module Qt::SQL."
 
 #: core/libs/database/engine/dbengineaccess.cpp:70
 #, kde-format
@@ -29066,7 +29063,7 @@ msgid ""
 "digiKam depends on the drivers provided by the Qt::SQL module."
 msgstr ""
 "Le pilote « MySQL » pour les bases de données MySQL n'est pas disponible.\n"
-"DigiKam dépend des pilotes fournis par le module « Qt::SQL.MySQL »"
+"digiKam dépend des pilotes fournis par le module « Qt::SQL.MySQL »"
 
 #: core/libs/database/engine/dbengineconfigloader.cpp:170
 #, kde-format
@@ -29075,9 +29072,9 @@ msgid ""
 "the digikam application and is absolutely required to run digikam. Please "
 "check your installation."
 msgstr ""
-"Impossible d'ouvrir le fichier de configuration « %1 ». Ce fichier est "
-"installé avec l'application DigiKam et est absolument nécessaire pour lancer "
-"DigiKam. Veuillez vérifier votre installation."
+"Impossible d'ouvrir le fichier de configuration « %1 » Ce fichier est "
+"installé avec l'application digiKam et est absolument nécessaire pour lancer "
+"digiKam. Veuillez vérifier votre installation."
 
 #: core/libs/database/engine/dbengineconfigloader.cpp:179
 #, kde-format
@@ -29117,7 +29114,7 @@ msgid ""
 "that the version released with the running version of digiKam is installed. "
 msgstr ""
 "Une ancienne version du fichier de configuration <b>%1</b> a été trouvée. "
-"Veuillez vérifier que la version diffusée avec la version active de DigiKam "
+"Veuillez vérifier que la version diffusée avec la version active de digiKam "
 "est installée. "
 
 #: core/libs/database/engine/dbengineguierrorhandler.cpp:206
@@ -29127,7 +29124,7 @@ msgid ""
 "digiKam will try to automatically reconnect to the database."
 msgstr ""
 "Erreur lors de l'ouverture de la base de données.\n"
-"DigiKam tentera de se reconnecter automatiquement à la base de données."
+"digiKam tentera de se reconnecter automatiquement à la base de données."
 
 #: core/libs/database/engine/dbengineguierrorhandler.cpp:238
 #, kde-format
@@ -29370,11 +29367,11 @@ msgid ""
 "(This means this digiKam version is too old, or the database format is to "
 "recent) Please use the more recent version of digikam that you used before. "
 msgstr ""
-"La base de données a été utilisée avec une version plus récente de DigiKam "
+"La base de données a été utilisée avec une version plus récente de digiKam "
 "et a été mise à jour vers un schéma de base de données qu'il n'est pas "
 "possible d'employer avec cette version (cela signifie que la version de "
-"DigiKam est trop ancienne ou que le format de la base de données est trop "
-"récent). Veuillez utiliser la version de DigiKam postérieure à celle que "
+"digiKam est trop ancienne ou que le format de la base de données est trop "
+"récent). Veuillez utiliser la version de digiKam postérieure à celle que "
 "vous aviez auparavant. "
 
 #: core/libs/database/tags/facetags.cpp:420
@@ -29698,7 +29695,7 @@ msgstr ""
 "reconnaissance faciale et une pour l'enregistrement pour les empreintes "
 "digitales similaires.<br/>L'accès en écriture est nécessaire pour pouvoir "
 "modifier les propriétés des images.</p><p>Les bases de données sont les "
-"moteurs de DigiKam. Veuillez vous assurer d'utiliser un matériel rapide "
+"moteurs de digiKam. Veuillez vous assurer d'utiliser un matériel rapide "
 "(comme un disque « SSD » ou « NVME ») avec suffisamment d'espace libre, en "
 "particulier pour la base de données des vignettes.</p><p>Remarque : il n'est "
 "pas possible d'utiliser un système de fichiers distant comme « NFS » ici. "
@@ -29745,7 +29742,7 @@ msgid ""
 "digiKam will try to find these binaries automatically if they are already "
 "installed on your computer.</p>"
 msgstr ""
-"<p>Vous pouvez configurer ici les emplacements des binaires MySQL. DigiKam "
+"<p>Vous pouvez configurer ici les emplacements des binaires MySQL. digiKam "
 "essaiera de trouver automatiquement ces binaires s'ils sont déjà installés "
 "sur votre ordinateur.</p>"
 
@@ -29819,7 +29816,7 @@ msgid ""
 "MySQL server when database have been created."
 msgstr ""
 "Définir le nom du compte pour le serveur MySQL\n"
-"que DigiKam utilisera pour s'y connecter.\n"
+"que digiKam utilisera pour s'y connecter.\n"
 "Ce compte doit exister sur le serveur MySQL distant\n"
 "lorsque la base de données a été créée."
 
@@ -29831,7 +29828,7 @@ msgid ""
 "You can left this field empty to use an account set without password."
 msgstr ""
 "Définir le mot de passe de l'utilisateur du serveur MySQL\n"
-"que DigiKam utilisera pour se connecter.\n"
+"que digiKam utilisera pour se connecter.\n"
 "Vous pouvez laisser ce champ vide si vous utilisez un compte sans mot de "
 "passe."
 
@@ -29879,7 +29876,7 @@ msgid ""
 "The core database is lead digiKam container used to store\n"
 "albums, items, and searches metadata."
 msgstr ""
-"La base de données principale est utilisée par DigiKam pour stocker\n"
+"La base de données principale est utilisée par digiKam pour stocker\n"
 "les albums, les éléments et les métadonnées de recherche."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:237
@@ -29903,11 +29900,11 @@ msgid ""
 "especially if you have huge collections.\n"
 "Choose a local folder to use a SQLite database."
 msgstr ""
-"La base de données des vignettes est utilisée par DigiKam pour stocker\n"
+"La base de données des vignettes est utilisée par digiKam pour stocker\n"
 "les vignettes des images en utilisant la compression par ondelettes.\n"
 "Cette base peut rapidement prendre beaucoup d'espace,\n"
 "en particulier pour les grandes collections.\n"
-"Sélectionnez un dossier local pour utiliser une base de données « SQLite »."
+"Sélectionnez un dossier local pour utiliser une base de données « SQLite »"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:248
 #, kde-format
@@ -29927,7 +29924,7 @@ msgid ""
 "This one can use quickly a lots of space, especially\n"
 "if you a lots of image with people faces detected and tagged."
 msgstr ""
-"La base de données des images est utilisée par DigiKam pour stocker les "
+"La base de données des images est utilisée par digiKam pour stocker les "
 "histogrammes des images\n"
 "dédiés au processus de reconnaissance faciale.\n"
 "Cette base peut rapidement prendre beaucoup d'espace,\n"
@@ -29949,7 +29946,7 @@ msgid ""
 "The similarity database is used by digiKam to host\n"
 "image Haar matrix data for the similarity search."
 msgstr ""
-"La base de données de similarité est utilisée par DigiKam pour héberger les\n"
+"La base de données de similarité est utilisée par digiKam pour héberger les\n"
 " données des matrices de Haar pour la recherche par similarité."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:264
@@ -29982,7 +29979,7 @@ msgid ""
 "following SQL commands (after replacing the <b><i>password</i></b> with the "
 "correct one).</p>"
 msgstr ""
-"<p>DigiKam s'attend à ce que la base de données existe déjà, avec un compte "
+"<p>digiKam s'attend à ce que la base de données existe déjà, avec un compte "
 "utilisateur dédié. Cet utilisateur <i>digikam</i> a besoin d'un accès "
 "complet à la base de données.<br/>Si votre base de données n'est pas encore "
 "configurée, nous pouvez utiliser les commandes SQL suivantes (après avoir "
@@ -30006,7 +30003,7 @@ msgstr ""
 "initialisée avec les commandes suivantes :</p><p># su</p><p># systemctl "
 "restart mysqld</p><p># mysql -u root</p><p>...</p><p>Veuillez saisir le code "
 "« SQL » dans l'invite de MySQL pour initialiser les bases de données de "
-"DigiKam avec les permissions correspondantes (Voir ci-dessous)</p><p>...</"
+"digiKam avec les permissions correspondantes (Voir ci-dessous)</p><p>...</"
 "p><p>Quitter</p><p>Remarque : si vous rencontrez des problèmes avec un "
 "serveur MySQL s'exécutant sur un système sous Ubuntu Linux, veuillez "
 "utiliser la commande d'addition sur la ligne de commandes de MySQL "
@@ -30014,7 +30011,7 @@ msgstr ""
 "log_bin_trust_function_creators=1 ; </p><p>Remarque : si vous possédez une "
 "énorme collection, vous devriez lancer le serveur MySQL avec l'option "
 "« mysql --max_allowed_packet=128M » ou changer ces paramètres dans « my."
-"ini » ou « ~/.my.cnf ».</p>"
+"ini » ou « ~/.my.cnf »</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
 #, kde-format
@@ -30055,7 +30052,7 @@ msgstr ""
 "vignettes compressées, et une pour stocker les métadonnées de reconnaissance "
 "faciale.</p><p>À la différence de SQLite ou du serveur MySQL interne, vous "
 "pouvez personnaliser le nom de vos bases pour simplifier vos sauvegardes.</"
-"p><p>Les bases de données sont le moteur de DigiKam. Pour éviter des "
+"p><p>Les bases de données sont le moteur de digiKam. Pour éviter des "
 "problèmes de performances, assurez-vous d'utiliser un réseau rapide entre "
 "l'ordinateur client et l'ordinateur serveur. Il est également recommandé "
 "d'héberger les fichiers de bases de données sur du matériel rapide (comme "
@@ -30164,7 +30161,7 @@ msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
 "database file."
 msgstr ""
-"Vous devez choisir un dossier pour que DigiKam stocke les informations et "
+"Vous devez choisir un dossier pour que digiKam stocke les informations et "
 "les métadonnées dans un fichier de base de données."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
@@ -30180,7 +30177,7 @@ msgid ""
 "b></p>Would you like digiKam to create it for you?"
 msgstr ""
 "<p>Il semble que le dossier dans lequel placer votre base de données "
-"n'existe pas :</p><p><b>%1</b></p>Voulez-vous que DigiKam le crée pour vous ?"
+"n'existe pas :</p><p><b>%1</b></p>Voulez-vous que digiKam le crée pour vous ?"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:905
 #, kde-format
@@ -30194,7 +30191,7 @@ msgid ""
 "<p>digiKam could not create the folder to host your database file.\n"
 "Please select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"<p>Impossible pour DigiKam de créer le dossier pour héberger votre fichier "
+"<p>Impossible pour digiKam de créer le dossier pour héberger votre fichier "
 "de base de données.\n"
 "Veuillez choisir un autre emplacement.</p><p><b>%1</b></p>"
 
@@ -30323,7 +30320,7 @@ msgid ""
 "This binary file is used to manage a dedicated instance of MariaDB server."
 msgstr ""
 "Ce fichier binaire est utilisé pour gérer une instance dédiée du serveur "
-"« MariaDB »."
+"« MariaDB »"
 
 #: core/libs/database/utils/widgets/mysqlinitbinary.cpp:34
 #, kde-format
@@ -32330,7 +32327,7 @@ msgstr ""
 " fluorescente.\n"
 "« Détection des contours » : détecte les contours d'une photographie\n"
 " et leur force.\n"
-"« Lut3D » : colore les images avec les filtres « Lut3D »."
+"« Lut3D » : colore les images avec les filtres « Lut3D »"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:133
 #, kde-format
@@ -32358,7 +32355,7 @@ msgid ""
 "Edges effects."
 msgstr ""
 "Cette valeur contrôle le nombre d'itérations à utiliser avec les effets "
-"« Néon » et « Détecter les contours »."
+"« Néon » et « Détecter les contours »"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:175
 #, kde-format
@@ -32887,7 +32884,7 @@ msgstr ""
 "<p> Utiliser ce bouton pour ajouter une nouvelle trame noire, qui sera "
 "utilisée par le filtre de suppression des pixels chauds.</p><p> La méthode "
 "de soustraction de trames noires est la méthode de suppression la plus "
-"précise pour les « pixels chauds » et les « pixels forcés ». Tout d'abord, "
+"précise pour les « pixels chauds » et les « pixels forcés » Tout d'abord, "
 "vous devez créer une « trame noire » comme référence. Ceci est facile à "
 "faire. Quand vous avez fini de prendre vos clichés à longue exposition, "
 "mettez le cache sur l'objectif de la caméra et prenez une image « noire » "
@@ -34589,7 +34586,7 @@ msgstr ""
 "exceptionnelle. Cependant, il peut rater l'identification de nombreux objets "
 "dans les images. Yolo peut détecter plusieurs objets dans une image. Il est "
 "formé pour reconnaître 80 objets différents à l'aide de l'ensemble de "
-"données « COCO ».</p>"
+"données « COCO »</p>"
 
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:354
 #, kde-format
@@ -34609,7 +34606,7 @@ msgstr ""
 "précision. Il détectera plus d'objets dans les images que YOLOv11 Nano, mais "
 "il est plus lent. Yolo peut détecter plusieurs objets dans une image. Il est "
 "formé pour reconnaître 80 objets différents à l'aide de l'ensemble de "
-"données « COCO ».</p>"
+"données « COCO »</p>"
 
 #: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:361
 #, kde-format
@@ -35396,16 +35393,16 @@ msgid ""
 "the largest files, without losing quality. Image is not compressed.</p>"
 msgstr ""
 "<p>Définissez le format du fichier de sortie à utiliser ici :</p><p><b>JPEG</"
-"b> : convertit une image donnée en format « JPEG ». Ce format donnera des "
+"b> : convertit une image donnée en format « JPEG » Ce format donnera des "
 "fichiers de taille plus petite.</p><p><b>Avertissement : en raison de son "
 "algorithme de compression destructif, le format « JPEG » est un format de "
 "qualité mais avec perte.</b></p><p><b>TIFF</b> : convertit une image donnée "
-"en format « TIFF ». Celui-ci génère des fichiers volumineux, sans perte de "
+"en format « TIFF » Celui-ci génère des fichiers volumineux, sans perte de "
 "qualité. L'image est comprimée.</p><p><b>PNG</b> : convertit une image "
-"donnée en format « PNG ». Celui-ci génère des fichiers volumineux, sans "
-"perte de qualité.</p><p><b>PPM</b> : convertit une image donnée en format "
-"« PPM ». Celui-ci génère les plus gros fichiers, sans perte de qualité. "
-"L'image n'est pas comprimée.</p>"
+"donnée en format « PNG » Celui-ci génère des fichiers volumineux, sans perte "
+"de qualité.</p><p><b>PPM</b> : convertit une image donnée en format « PPM » "
+"Celui-ci génère les plus gros fichiers, sans perte de qualité. L'image n'est "
+"pas comprimée.</p>"
 
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:62
 #, kde-format
@@ -35442,11 +35439,11 @@ msgid ""
 "(This means this digiKam version is too old, or the database format is to "
 "recent.) Please use the more recent version of digiKam that you used before."
 msgstr ""
-"La base de données a été utilisée avec une version plus récente de DigiKam "
+"La base de données a été utilisée avec une version plus récente de digiKam "
 "et a été mise à jour vers un schéma de base de données qu'il n'est pas "
 "possible d'employer avec cette version (cela signifie que la version de "
-"DigiKam est trop ancienne ou que le format de la base de données est trop "
-"récent). Veuillez utiliser une version de DigiKam plus récente."
+"digiKam est trop ancienne ou que le format de la base de données est trop "
+"récent). Veuillez utiliser une version de digiKam plus récente."
 
 #: core/libs/facesengine/facedb/facedbschemaupdater.cpp:194
 #, kde-format
@@ -35504,15 +35501,15 @@ msgid ""
 "p><p><b>Recognize faces only</b> will try to match unknown faces with "
 "confirmed faces without scanning images new faces.</p>"
 msgstr ""
-"DigiKam peut rechercher des visages dans vos photos. \n"
+"digiKam peut rechercher des visages dans vos photos. \n"
 "Lorsque vous avez identifié vos ami(e)s sur un certain nombre de photos, \n"
-"il peut aussi reconnaître les personnes figurant sur vos photos.  \n"
+"il peut aussi reconnaître les personnes figurant sur vos photos. \n"
 "<p><b>Analyser de nouvelles images</b> fera une recherche de visages et "
 "tentera une reconnaissance dans toutes les nouvelles images trouvées dans "
-"les albums sélectionnés dans l’onglet \"Rechercher dans\". </"
+"les albums sélectionnés dans l’onglet « Rechercher dans ». </"
 "p><p><b>Analyser toutes les images</b> fera une recherche de visages et "
 "tentera une reconnaissance dans toutes les images trouvées dans les albums "
-"sélectionnés dans l’onglet \"Rechercher dans\". </p><p><b>Reconnaître "
+"sélectionnés dans l'onglet « Rechercher dans ». </p><p><b>Reconnaître "
 "uniquement les visages</b> essaiera de faire correspondre des visages "
 "inconnus avec des visages confirmés sans analyser de nouveaux visages dans "
 "les images. </p>"
@@ -36167,7 +36164,7 @@ msgid ""
 msgstr ""
 "Ces paramètres déterminent la qualité d'une image et la convertissent en une "
 "note, enregistrée dans la base de données comme propriété « Étiquette de "
-"sélection ». Cette information peut être calculée de deux manières : en "
+"sélection » Cette information peut être calculée de deux manières : en "
 "utilisant quatre facteurs standards dégradant les images (Flou, bruit, "
 "exposition et compression) ou en utilisant un moteur de réseau neuronal "
 "d'apprentissage profond. La première méthode permet de déterminer si les "
@@ -36230,7 +36227,7 @@ msgid ""
 "will be assigned to the rejected pick label (red flag)."
 msgstr ""
 "Les images considérées de mauvaise qualité par l'analyse du moteur\n"
-"de qualité seront affectées à l'étiquette « Rejeté »."
+"de qualité seront affectées à l'étiquette « Rejeté »"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, fuzzy, kde-format
@@ -36485,7 +36482,7 @@ msgstr ""
 #: core/libs/iojobs/iojob.cpp:135
 #, kde-format
 msgid "A file or folder named %1 already exists in %2"
-msgstr "Un fichier ou dossier nommé « %1 » existe déjà dans « %2 »."
+msgstr "Un fichier ou dossier nommé « %1 » existe déjà dans « %2 »"
 
 #: core/libs/iojobs/iojob.cpp:165
 #, kde-format
@@ -36498,7 +36495,7 @@ msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr ""
-"Impossible de déplacer le dossier « %1 » dans l'album « %2 ». Le dossier "
+"Impossible de déplacer le dossier « %1 » dans l'album « %2 » Le dossier "
 "« %1 » a été copié dans l'album « %2 »"
 
 #: core/libs/iojobs/iojob.cpp:184
@@ -38202,7 +38199,7 @@ msgstr "Impossible d'ouvrir le fichier cible."
 #: core/libs/progressmanager/dlogoaction.cpp:138
 #, kde-format
 msgid "Visit digiKam project website"
-msgstr "Visitez le site web du projet DigiKam"
+msgstr "Visitez le site web du projet digiKam"
 
 #: core/libs/progressmanager/progressmanager.cpp:160
 #, kde-format
@@ -39319,7 +39316,7 @@ msgstr "Groupé :"
 #, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
-msgstr "Propriétés de DigiKam"
+msgstr "Propriétés de digiKam"
 
 #: core/libs/properties/itempropertiestab.cpp:286
 #, kde-format
@@ -39561,8 +39558,8 @@ msgstr ""
 "des capteurs filtrés par couleur, utilisés en interne par beaucoup "
 "d'appareils photo, sous forme d'une matrice de pixels colorés. Aussi connue "
 "sous le nom d'interpolation CFA ou reconstruction des couleurs, un nom "
-"couramment employé est « dématriçage ». Les méthodes suivantes sont "
-"utilisées pour dématricer les images RAW :</para><para><list><item><emphasis "
+"couramment employé est « dématriçage » Les méthodes suivantes sont utilisées "
+"pour dématricer les images RAW :</para><para><list><item><emphasis "
 "strong='true'>Bilinéaire</emphasis> : utiliser une interpolation rapide mais "
 "de faible qualité (par défaut, pour les ordinateurs lents). Avec cette "
 "méthode, la valeur de rouge pour les pixels non rouges est calculée comme la "
@@ -41026,7 +41023,7 @@ msgid ""
 "> You may <b>lose tags</b> if you did not read tags before (by calling Read "
 "Tags from Image).<br/> Do you want to continue?</qt>"
 msgstr ""
-"<qt>DigiKam va nettoyer les métadonnées avant d'établir les étiquettes à "
+"<qt>digiKam va nettoyer les métadonnées avant d'établir les étiquettes à "
 "partir de la base de données.<br/> You pouvez <b>perdre des étiquettes</b> "
 "si vous n'aviez pas lu les étiquettes auparavant (en appelant « Lire les "
 "étiquettes de l'image »).<br/> Voulez-vous continuer ?</qt>"
@@ -41245,9 +41242,9 @@ msgid ""
 msgstr ""
 "<p>Pour créer de nouvelles étiquettes, vous pouvez utiliser les règles "
 "suivantes : </p><p><ul><li> « / » peut être employé pour créer une "
-"hiérarchie d'étiquettes.<br/>Ex. : « Pays / Ville / Paris ».</li><li> « , » "
+"hiérarchie d'étiquettes.<br/>Ex. : « Pays / Ville / Paris »</li><li> « , » "
 "peut servir pour créer plus d'une hiérarchie d'étiquettes en même temps.<br/"
-">Ex. : « Ville / Paris, Monument / Notre-Dame ».</li><li> Si une hiérarchie "
+">Ex. : « Ville / Paris, Monument / Notre-Dame »</li><li> Si une hiérarchie "
 "d'étiquettes commence par « / », l'album comportant l'étiquette racine est "
 "utilisé comme parent.</li></ul></p>"
 
@@ -41419,7 +41416,7 @@ msgstr ""
 msgctxt "@info"
 msgid "Here you can see the metadata template list managed by digiKam."
 msgstr ""
-"Vous pouvez ici voir la liste des modèles de métadonnées gérés par DigiKam."
+"Vous pouvez ici voir la liste des modèles de métadonnées gérés par digiKam."
 
 #: core/libs/template/templatelist.cpp:73
 #, kde-format
@@ -41560,7 +41557,7 @@ msgstr ""
 "employé ou dans le cadre d'un contrat de commande (« work-for-hire »), "
 "alors, l'agence ou la société devra être mentionnée. Utilisez la forme "
 "appropriée à votre pays. États-Unis : &copy; {date de première publication} "
-"nom du propriétaire de la licence, comme dans « &copy;2005 Jean Dupont ». "
+"nom du propriétaire de la licence, comme dans « &copy;2005 Jean Dupont » "
 "Remarque : le mot « licence » ou son abréviation en anglais « copr » peut "
 "être utilisée à la place du symbole &copy;. Dans certains pays étrangers, "
 "seul le symbole de licence est reconnu et l'abréviation n'est pas acceptée. "
@@ -41574,10 +41571,9 @@ msgstr ""
 "Au Japon, pour une protection maximale, les trois éléments suivants devront "
 "apparaître dans le champ « Copyright » du cœur « IPTC » : (a) le mot, "
 "« Copyright », (b) année de première publication et (c) nom de l'auteur. "
-"Vous pouvez également inclure la phrase « Tous droits réservés ».</p> "
-"<p>Avec « XMP », vous pouvez inclure plus d'une chaîne de licence dans "
-"différentes langues.</p><p>Avec IPTC, ce champ est limité à 128 caractères.</"
-"p>"
+"Vous pouvez également inclure la phrase « Tous droits réservés »</p> <p>Avec "
+"« XMP », vous pouvez inclure plus d'une chaîne de licence dans différentes "
+"langues.</p><p>Avec IPTC, ce champ est limité à 128 caractères.</p>"
 
 #: core/libs/template/templatepanel.cpp:154
 #, kde-format
@@ -41635,9 +41631,9 @@ msgstr ""
 "source peut être un individu, une agence ou un membre d'une agence. Pour "
 "faciliter des recherches futures, il est conseillé de séparer tout caractère "
 "« / » par un caractère d'espacement. Utilisez le format « photographe / "
-"agence » plutôt que « photographe / agence ». La source peut également être "
-"différente de « Créateur » et des noms listés dans la « mention de licence »."
-"</p> <p>Avec « IPTC », ce champ est limité à 32 caractères.</p>"
+"agence » plutôt que « photographe / agence » La source peut également être "
+"différente de « Créateur » et des noms listés dans la « mention de "
+"licence »</p> <p>Avec « IPTC », ce champ est limité à 32 caractères.</p>"
 
 #: core/libs/template/templatepanel.cpp:179
 #: core/libs/template/templateviewer.cpp:114
@@ -41866,7 +41862,7 @@ msgstr ""
 "<p>Choisissez ici l'action à effectuer à l'aide du modèle de métadonnées.</"
 "p><p><b>Supprimer</b> : supprime un modèle déjà attribué.</p><p><b>Ne pas "
 "changer</b> : ne touche pas aux informations sur le modèle.</p><p>Toutes les "
-"autres valeurs sont des titres de modèles gérés par DigiKam. En sélectionner "
+"autres valeurs sont des titres de modèles gérés par digiKam. En sélectionner "
 "un attribuera des informations également.</p>"
 
 #: core/libs/template/templateselector.cpp:103
@@ -42967,7 +42963,7 @@ msgstr "Afficher la note de l'image"
 #, kde-format
 msgctxt "@info"
 msgid "Show the digiKam image rating at the bottom of the screen."
-msgstr "Affiche la note de DigiKam pour l'image au bas de l'écran."
+msgstr "Affiche la note de digiKam pour l'image au bas de l'écran."
 
 #: core/libs/video/osd/frameosdwidget.cpp:88
 #, kde-format
@@ -42980,7 +42976,7 @@ msgstr "Afficher les étiquettes de l'image"
 msgctxt "@info"
 msgid "Show the digiKam image tag names at the bottom of the screen."
 msgstr ""
-"Affiche les noms des étiquettes de DigiKam pour l'image au bas de l'écran."
+"Affiche les noms des étiquettes de digiKam pour l'image au bas de l'écran."
 
 #: core/libs/video/osd/frameosdwidget.cpp:91
 #, kde-format
@@ -44010,7 +44006,7 @@ msgstr "Une projet de la famille KDE"
 #: core/libs/widgets/mainview/daboutdata.cpp:61
 #, kde-format
 msgid "(c) 2001-2025, digiKam developers team"
-msgstr "(c) 2001 - 2025 L'équipe de développement de DigiKam"
+msgstr "(c) 2001 - 2025 L'équipe de développement de digiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:74
 #, kde-format
@@ -44035,7 +44031,7 @@ msgstr ""
 "Intégration des modèles DNN SFace et YuNet. \n"
 "dans la processus de traitement des visages.\n"
 "Améliorations de la gestion des visages et de l'étiquettage automatique.\n"
-"Détection par AI de l'effet « Yeux rouges »."
+"Détection par AI de l'effet « Yeux rouges »"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:113
 #, kde-format
@@ -44048,7 +44044,7 @@ msgstr ""
 "Encadrement, portage d'outils pour des services Internet « OAuth », \n"
 "outils de factorisation de services Internet,\n"
 "portage d'un moteur de reconnaissance faciale vers \n"
-"le réseau neuronal « OpenCV »."
+"le réseau neuronal « OpenCV »"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:137
 #, kde-format
@@ -44274,7 +44270,7 @@ msgstr "Retours utilisateurs et correctifs. Rédacteur du manuel utilisateur"
 #: core/libs/widgets/mainview/daboutdata.cpp:415
 #, kde-format
 msgid "digiKam website banner and application icons"
-msgstr "Bannière du site web de DigiKam et icônes de l'application"
+msgstr "Bannière du site web de digiKam et icônes de l'application"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:420
 #, kde-format
@@ -44288,7 +44284,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:426
 #, kde-format
 msgid "digiKam website, Feedback"
-msgstr "Site web de DigiKam, retours utilisateurs"
+msgstr "Site web de digiKam, retours utilisateurs"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:431
 #, kde-format
@@ -45352,7 +45348,7 @@ msgstr "Dublin Core"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:93
 #, kde-format
 msgid "digiKam schema"
-msgstr "Schéma DigiKam"
+msgstr "Schéma digiKam"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:97
 #, kde-format
@@ -50452,7 +50448,7 @@ msgid ""
 msgstr ""
 "Ce signet pointant sur\n"
 "%1\n"
-"existe déjà dans la liste avec le nom « %2 »."
+"existe déjà dans la liste avec le nom « %2 »"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:244
 #, kde-format
@@ -50527,7 +50523,7 @@ msgid ""
 "Management\" feature will be disabled until you solve this issue</p>"
 msgstr ""
 "<p>L'emplacement du profil ICC semble n'être pas valable. </p><p>Si vous "
-"voulez le définir maintenant, cliquez sur « Oui », sinon choisissez « Non ». "
+"voulez le définir maintenant, cliquez sur « Oui », sinon choisissez « Non » "
 "Dans ce cas, la fonctionnalité « Gestion de la couleur » sera désactivée "
 "jusqu'à ce vous résolviez ce problème.</p>"
 
@@ -50845,7 +50841,7 @@ msgctxt "@info"
 msgid "a new standard used in digital photography, designed to replace IPTC."
 msgstr ""
 "un nouveau standard utilisé en photographie numérique, conçu pour remplacer "
-"« IPTC »."
+"« IPTC »"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
@@ -52054,7 +52050,7 @@ msgid ""
 msgstr ""
 "<p>Saisissez ici votre motif de renommage. Utilisez les boutons d'accès pour "
 "ajouter rapidement des options de renommage et des modificateurs. Pour plus "
-"d'explications, cliquez sur le bouton « Informations ».</p>"
+"d'explications, cliquez sur le bouton « Informations »</p>"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:338
 #: core/utilities/import/widgets/scriptingsettings.cpp:79
@@ -53013,8 +53009,8 @@ msgid ""
 "\n"
 "Do you want to retrain your database now?"
 msgstr ""
-"Votre base de données de reconnaissance faciale est obsolète et nécessite  "
-"un nouvel entraînement. Ce processus pourrait prendre de quelques secondes à "
+"Votre base de données de reconnaissance faciale est obsolète et nécessite un "
+"nouvel entraînement. Ce processus pourrait prendre de quelques secondes à "
 "quelques minutes. La reconnaissance faciale ne sera pas fiable tant que son "
 "entraînement ne soit terminé. Celui-ci s'effectuera en arrière-plan et vous "
 "pourrez continuer à utiliser digiKam.\n"
@@ -53178,7 +53174,7 @@ msgid ""
 "You must select a folder for digiKam to use as the root album. All of your "
 "images will go there."
 msgstr ""
-"Vous devez choisir un dossier que DigiKam utilisera comme emplacement "
+"Vous devez choisir un dossier que digiKam utilisera comme emplacement "
 "d'albums racine. Toutes vos images y prendront place."
 
 #: core/utilities/firstrun/collectionpage.cpp:176
@@ -53194,7 +53190,7 @@ msgid ""
 "p>Would you like digiKam to create it for you?"
 msgstr ""
 "<p>Le dossier à employer comme emplacement d'album racine n'existe pas :</"
-"p><p><b>%1</b></p>Voulez-vous que DigiKam le crée pour vous ?"
+"p><p><b>%1</b></p>Voulez-vous que digiKam le crée pour vous ?"
 
 #: core/utilities/firstrun/collectionpage.cpp:189
 #, kde-format
@@ -53208,7 +53204,7 @@ msgid ""
 "<p>digiKam could not create the folder to use as the root album.\n"
 "Please select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"Impossible pour DigiKam de créer le dossier à utiliser comme emplacement "
+"Impossible pour digiKam de créer le dossier à utiliser comme emplacement "
 "d'albums racine.\n"
 "Veuillez choisir un autre emplacement.<p><b>%1</b></p>"
 
@@ -53242,7 +53238,7 @@ msgid ""
 "management programs:</p></qt>"
 msgstr ""
 "<qt><p>Décidez ici si vous voulez mémoriser les informations affectées à des "
-"éléments de DigiKam dans les métadonnées des fichiers, pour améliorer "
+"éléments de digiKam dans les métadonnées des fichiers, pour améliorer "
 "l'interopérabilité avec d'autres programmes de gestion de photos :</p></qt>"
 
 #: core/utilities/firstrun/metadatapage.cpp:69
@@ -53268,7 +53264,7 @@ msgstr ""
 #: core/utilities/firstrun/migratefromdigikam4page.cpp:64
 #, kde-format
 msgid "Migration from digiKam 4"
-msgstr "Migration depuis DigiKam 4"
+msgstr "Migration depuis digiKam 4"
 
 #: core/utilities/firstrun/migratefromdigikam4page.cpp:72
 #, kde-format
@@ -53284,21 +53280,21 @@ msgid ""
 "and databases before proceeding.</p></qt>"
 msgstr ""
 "<qt><p><h1><b>Migration de la configuration et des métadonnées depuis "
-"DigiKam 4</b></h1></p><p>Vous pouvez choisir si vous utiliserez la "
-"configuration et les albums de DigiKam 4 dans le nouveau DigiKam. Prenez en "
+"digiKam 4</b></h1></p><p>Vous pouvez choisir si vous utiliserez la "
+"configuration et les albums de digiKam 4 dans le nouveau digiKam. Prenez en "
 "compte les avertissements suivants :</p><p>La migration se fait <b>à vos "
-"risques et périls</b>. Les développeurs de DigiKam ne la recommandent pas et "
+"risques et périls</b>. Les développeurs de digiKam ne la recommandent pas et "
 "n'en assurent pas la prise en charge. D'autre part, la création d'une "
 "nouvelle configuration peut entraîner une perte d'étiquettes et d'autres "
 "métadonnées qui ne seraient pas sauvegardées dans les photos ou qui "
-"n'existeraient que dans la base de DigiKam 4.</p><p>Dans tous les cas, il "
+"n'existeraient que dans la base de digiKam 4.</p><p>Dans tous les cas, il "
 "est recommandé de sauvegarder les fichiers de configuration et la base de "
 "données avant de continuer.</p></qt>"
 
 #: core/utilities/firstrun/migratefromdigikam4page.cpp:89
 #, kde-format
 msgid "Migrate configuration from digiKam 4"
-msgstr "Migration de la configuration depuis DigiKam 4"
+msgstr "Migration de la configuration depuis digiKam 4"
 
 #: core/utilities/firstrun/migratefromdigikam4page.cpp:98
 #, kde-format
@@ -53447,21 +53443,21 @@ msgid ""
 msgstr ""
 "<qt><p>Félicitations. Votre configuration minimale est terminée.</"
 "p><p>Rappelez-vous que vous pouvez personnaliser plus de paramètres à l'aide "
-"du panneau de configuration de DigiKam. Pour en savoir plus sur le monde de "
-"DigiKam, nous vous recommandons la lecture du <b>manuel utilisateur de "
-"DigiKam</b> disponible via la ligne de menu <b>Aide / Manuel utilisateur</b> "
-"(Vous devez installer séparément le paquet de la documentation de DigiKam). "
+"du panneau de configuration de digiKam. Pour en savoir plus sur le monde de "
+"digiKam, nous vous recommandons la lecture du <b>manuel utilisateur de "
+"digiKam</b> disponible via la ligne de menu <b>Aide / Manuel utilisateur</b> "
+"(Vous devez installer séparément le paquet de la documentation de digiKam). "
 "Vous pouvez également consulter le manuel utilisateur en ligne sur le <a "
 "href='https://docs.digikam.org/en/index.html'>site Internet correspondant</"
-"a>.</p><p>Cliquez sur <b>Terminer</b> pour fermer cet assistant. DigiKam "
+"a>.</p><p>Cliquez sur <b>Terminer</b> pour fermer cet assistant. digiKam "
 "analysera votre collection pour enregistrer tous les albums dans la base de "
 "données. Les éléments inclus dans des albums sont collectés après l'étape de "
 "démarrage en arrière-plan.</p><p><i>Remarque :</i> selon la taille de votre "
 "collection, cette opération peut prendre un certain temps. Si vous annulez "
 "l'opération d'analyse, elle redémarrera lors de la prochaine session de "
-"DigiKam.</p><p>Lorsque l'analyse est achevée, au prochain redémarrage, "
-"DigiKam ne vérifiera votre collection que pour identifier de nouveaux albums "
-"- ce qui est beaucoup plus rapide. Vous pouvez forcer manuellement DigiKam à "
+"digiKam.</p><p>Lorsque l'analyse est achevée, au prochain redémarrage, "
+"digiKam ne vérifiera votre collection que pour identifier de nouveaux albums "
+"- ce qui est beaucoup plus rapide. Vous pouvez forcer manuellement digiKam à "
 "analyser de nouveaux éléments à l'aide de la ligne de menu <b>Outils / "
 "Maintenance / Rechercher de nouveaux éléments</b>.</p></qt>"
 
@@ -53500,12 +53496,12 @@ msgid ""
 "</p></qt>"
 msgstr ""
 "<qt><p><i>Remarque :</i> les infobulles affichent la photographie et les "
-"métadonnées de DigiKam à la volée, lorsque le pointeur de la souris passe "
+"métadonnées de digiKam à la volée, lorsque le pointeur de la souris passe "
 "sur les éléments. Cette fonction peut s'avérer utile quand on sélectionne "
 "des éléments. Les infobulles sont affichées dans la vue en dossiers de "
 "l'album, la vue en icônes de l'album, la vue en icônes de l'appareil photo, "
 "la liste des files d'attente de traitement par lots et la barre de "
-"vignettes. Depuis la boîte de dialogue de configuration de DigiKam, vous "
+"vignettes. Depuis la boîte de dialogue de configuration de digiKam, vous "
 "pouvez personnaliser le contenu de ces infobulles et les polices utilisées.</"
 "p></qt>"
 
@@ -53517,10 +53513,10 @@ msgid ""
 "assistant will help you to configure first run settings to be able to use "
 "digiKam quickly.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Bienvenue dans DigiKam %1</b></h1></p><p>DigiKam est une "
+"<qt><p><h1><b>Bienvenue dans digiKam %1</b></h1></p><p>digiKam est une "
 "application de gestion de photos numériques sophistiquée diffusée en mode "
-"« open source ».</p><p>Cet assistant va vous aider à configurer les premiers "
-"réglages d'exécution pour que vous puissiez utiliser DigiKam rapidement.</"
+"« open source »</p><p>Cet assistant va vous aider à configurer les premiers "
+"réglages d'exécution pour que vous puissiez utiliser digiKam rapidement.</"
 "p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
@@ -53536,9 +53532,9 @@ msgid ""
 "files, so it is not recommended to do it for the moment, and at your own "
 "risk.</p></qt>"
 msgstr ""
-"<qt><br/><p>Vous pouvez ignorer ceci si vous utilisez DigiKam pour la "
-"première fois :</p><p><b>Transition depuis DigiKam 4</b></p><p>Les fichiers "
-"de configuration de DigiKam 4 ne sont pas migrés. Le anciennes bases de "
+"<qt><br/><p>Vous pouvez ignorer ceci si vous utilisez digiKam pour la "
+"première fois :</p><p><b>Transition depuis digiKam 4</b></p><p>Les fichiers "
+"de configuration de digiKam 4 ne sont pas migrés. Le anciennes bases de "
 "données peuvent encore être utilisées, il suffit de choisir le même "
 "emplacement pour les collections et la base de données dans les fenêtres "
 "suivantes. Il est recommandé de sauvegarder votre base de données avant de "
@@ -53676,15 +53672,15 @@ msgid ""
 "\"Tags but not albums\": images must be in the selected tags but not albums."
 msgstr ""
 "Utilisez cette option pour décider de la relation entre les albums et les "
-"étiquettes sélectionnés.  \n"
-"« Uniquement l'onglet sélectionné » : seul l’onglet sélectionné comme "
-"« Rechercher dans » est utilisé.  \n"
+"étiquettes sélectionnés. \n"
+"« Uniquement l'onglet sélectionné » : seul l'onglet sélectionné comme "
+"« Rechercher dans » est utilisé. \n"
 "« Un parmi » : les images sont, soit dans les albums ou soit dans les "
-"étiquettes sélectionnés.  \n"
+"étiquettes sélectionnés. \n"
 "« Les deux » : les images sont à la fois dans les albums et dans les "
-"étiquettes sélectionnés.  \n"
+"étiquettes sélectionnés. \n"
 "« Albums mais pas les étiquettes » : les images doivent être dans les "
-"étiquettes sélectionnés mais pas dans les étiquettes.  \n"
+"étiquettes sélectionnés mais pas dans les étiquettes. \n"
 "« Étiquettes mais pas dans les albums » : les images doivent être dans les "
 "étiquettes sélectionnées mais pas dans les albums."
 
@@ -53844,7 +53840,7 @@ msgid ""
 "\"Similarity Searches\" view."
 msgstr ""
 "Saisissez le nom de la recherche actuelle d'images similaires à enregistrer "
-"dans la vue « Recherches par similarité »."
+"dans la vue « Recherches par similarité »"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:89
 #, kde-format
@@ -53924,7 +53920,7 @@ msgid ""
 "Searches\" view."
 msgstr ""
 "Saisissez le nom de la recherche du croquis actuel pour l'enregistrer dans "
-"la vue « Recherches par similarité »."
+"la vue « Recherches par similarité »"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:115
 #, kde-format
@@ -53949,7 +53945,7 @@ msgid ""
 "will displays the best matches in thumbnail view."
 msgstr ""
 "Dessinez simplement ici un croquis de ce que vous souhaitez trouver et "
-"DigiKam affichera les meilleures réponses dans la vue en vignettes."
+"digiKam affichera les meilleures réponses dans la vue en vignettes."
 
 #: core/utilities/fuzzysearch/sketchwidget.cpp:621
 #, kde-format
@@ -56752,7 +56748,7 @@ msgstr "Analyseur de fichiers « gpx »"
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr ""
 "Un module externe pour le chargement de données de géolocalisation à partir "
-"d'un fichier de données au format « gpx »."
+"d'un fichier de données au format « gpx »"
 
 #: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:68
 #, kde-format
@@ -56769,7 +56765,7 @@ msgstr "Analyseur de fichiers « GeoJSON »"
 msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
 msgstr ""
 "Un module externe pour le chargement de données de géolocalisation à partir "
-"d'un fichier de données au format « GeoJSON »."
+"d'un fichier de données au format « GeoJSON »"
 
 #: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:69
 #, kde-format
@@ -56787,7 +56783,7 @@ msgid ""
 "A plugin to load Geolocation Data from the KML and KMZ data file format."
 msgstr ""
 "Un module externe pour le chargement de données de géolocalisation à partir "
-"d'un fichier de données au format « kml » et « kmz »."
+"d'un fichier de données au format « kml » et « kmz »"
 
 #: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:69
 #, kde-format
@@ -56824,7 +56820,7 @@ msgid ""
 "A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
 "Un module externe pour le chargement de données de géolocalisation à partir "
-"d'un fichier de données au format « OpenStreetMap »."
+"d'un fichier de données au format « OpenStreetMap »"
 
 #: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:69
 #, kde-format
@@ -57511,7 +57507,7 @@ msgstr ""
 "mode Satellite</span></p><p style=\" margin-top:0px; margin-bottom:0px; "
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">La "
 "Terre vue de l'espace. La carte est construite à partir des magnifiques "
-"images de la NASA « Blue Marble Next Generation ». Remerciements à "
+"images de la NASA « Blue Marble Next Generation » Remerciements à "
 "l'observatoire de la Terre de la NASA.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
@@ -57925,7 +57921,7 @@ msgstr ""
 "prise de vue, de manière à ce que l'horodatage des images puisse être "
 "converti en GMT pour correspondre à la référence horaire GPS.</"
 "p><p>Remarque : les décalages positifs se comptent vers l'est depuis la "
-"longitude zéro (GMT), ils sont « en avance ».</p>"
+"longitude zéro (GMT), ils sont « en avance »</p>"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:161
 #, kde-format
@@ -58535,7 +58531,7 @@ msgstr "Le fichier est vide."
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:281
 #, kde-format
 msgid "Probably not a GPX file."
-msgstr "Probablement pas d'un fichier « GPX »."
+msgstr "Probablement pas d'un fichier « GPX »"
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:293
 #, kde-format
@@ -58672,7 +58668,7 @@ msgid ""
 "view."
 msgstr ""
 "Saisissez le nom de la recherche sur la carte actuelle à enregistrer dans la "
-"vue « Recherches sur une carte »."
+"vue « Recherches sur une carte »"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
 #, kde-format
@@ -59580,7 +59576,7 @@ msgid ""
 msgstr ""
 "Impossible d'ouvrir le profil d'espace de travail spécifié (« %1 »). Aucune "
 "transformation de couleurs ne sera appliquée. Veuillez vérifier la "
-"configuration de la gestion des couleurs dans le paramétrage de DigiKam."
+"configuration de la gestion des couleurs dans le paramétrage de digiKam."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1644
 #, kde-format
@@ -59600,7 +59596,7 @@ msgstr ""
 "Impossible d'enregistrer le fichier\n"
 "« %1 »\n"
 "dans\n"
-"« %2 »."
+"« %2 »"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1799
 #, kde-format
@@ -59639,7 +59635,7 @@ msgid ""
 "You do not have write permissions for the file named \"%1\". Are you sure "
 "you want to overwrite it?"
 msgstr ""
-"Vous ne disposez pas des droits d'écriture sur le fichier nommé « %1 ». "
+"Vous ne disposez pas des droits d'écriture sur le fichier nommé « %1 » "
 "Voulez-vous vraiment l'écraser ?"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2343
@@ -60091,7 +60087,7 @@ msgstr "Impossible de démarrer le script pour <filename>%1</filename>"
 #: core/utilities/import/backend/cameracontroller.cpp:1021
 #, kde-format
 msgid "Failed to download file <b>%1</b>."
-msgstr "Impossible de télécharger le fichier « %1 »."
+msgstr "Impossible de télécharger le fichier « %1 »"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1025
 #, kde-format
@@ -60285,7 +60281,7 @@ msgid ""
 msgstr ""
 "Pour plus d'informations sur le pilote « Appareil photo monté », veuillez "
 "consulter la section « Appareils photographiques numériques fixes pris en "
-"charge » dans le manuel utilisateur de DigiKam."
+"charge » dans le manuel utilisateur de digiKam."
 
 #: core/utilities/import/backend/umscamera.cpp:606
 #, kde-format
@@ -60304,10 +60300,10 @@ msgstr ""
 "Le pilote « Appareil photo monté » est une interface simple à un appareil "
 "photo monté localement sur votre système.\n"
 "\n"
-"Il n'utilise pas les pilotes « libgphoto2 ».\n"
+"Il n'utilise pas les pilotes « libgphoto2 »\n"
 "\n"
 "Pour signaler tout problème concernant ce pilote, veuillez contacter "
-"l'équipe de DigiKam à l'adresse : \n"
+"l'équipe de digiKam à l'adresse : \n"
 "\n"
 "https://www.digikam.org/?q=contact"
 
@@ -60401,7 +60397,7 @@ msgstr "Cet élément a déjà jamais été téléchargé"
 msgctxt "@info"
 msgid "Set how digiKam will rename files as they are downloaded."
 msgstr ""
-"Définissez la façon dont DigiKam devra renommer les fichiers lorsqu'ils sont "
+"Définissez la façon dont digiKam devra renommer les fichiers lorsqu'ils sont "
 "téléchargés."
 
 #: core/utilities/import/main/importui.cpp:159
@@ -60825,7 +60821,7 @@ msgid ""
 "Camera Folder \"%1\" already contains the item \"%2\".\n"
 "Please enter a new filename (without extension):"
 msgstr ""
-"Le dossier de l'appareil photo « %1 » contient déjà l'élément « %2 ». \n"
+"Le dossier de l'appareil photo « %1 » contient déjà l'élément « %2 » \n"
 "Veuillez saisir un nouveau nom de fichier (sans extension) :"
 
 #: core/utilities/import/main/importui.cpp:1289
@@ -60875,7 +60871,7 @@ msgid ""
 "Please select the destination album from the digiKam library to import the "
 "camera pictures into."
 msgstr ""
-"Veuillez choisir l'album de destination depuis la bibliothèque de DigiKam "
+"Veuillez choisir l'album de destination depuis la bibliothèque de digiKam "
 "vers lequel importer les photos de l'appareil."
 
 #: core/utilities/import/main/importui.cpp:1463
@@ -61024,13 +61020,13 @@ msgstr "Le téléchargement des images est terminé"
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
-msgstr "Un fichier du même nom (« %1 ») existe déjà dans le dossier « %2 »."
+msgstr "Un fichier du même nom (« %1 ») existe déjà dans le dossier « %2 »"
 
 #: core/utilities/import/main/importui.cpp:2602
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
-msgstr "Impossible de trouver l'album pour l'emplacement « %1 »."
+msgstr "Impossible de trouver l'album pour l'emplacement « %1 »"
 
 #. i18n: ectx: Menu (Device)
 #: core/utilities/import/main/importui5.rc:6
@@ -61190,7 +61186,7 @@ msgid ""
 "document name is the original file name of the imported file."
 msgstr ""
 "Activer cette option pour écrire le nom du document dans les métadonnées "
-"« EXIF ». Le nom du document est le nom de fichier d'origine du fichier "
+"« EXIF » Le nom du document est le nom de fichier d'origine du fichier "
 "importé."
 
 #: core/utilities/import/widgets/advancedsettings.cpp:138
@@ -61206,7 +61202,7 @@ msgstr ""
 "date et l'heure à des valeurs correctes, si votre appareil photo ne le fait "
 "pas lors des prises de photos. Les valeurs seront enregistrées dans les "
 "étiquettes « EXIF », « XMP » et « IPTC » comme « DateTimeDigitized » et "
-"« DateTimeCreated »."
+"« DateTimeCreated »"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:142
 #, kde-format
@@ -61327,7 +61323,7 @@ msgstr "Afficher une liste de toutes les options disponibles."
 msgctxt "@info"
 msgid "Set how digiKam creates albums automatically when downloading."
 msgstr ""
-"Définissez la façon dont DigiKam crée des albums automatiquement pendant le "
+"Définissez la façon dont digiKam crée des albums automatiquement pendant le "
 "téléchargement."
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:126
@@ -61433,7 +61429,7 @@ msgid ""
 "Enable this option to convert RAW images to DNG container automatically."
 msgstr ""
 "Activez cette option pour convertir automatiquement les images brutes vers "
-"un conteneur « DNG »."
+"un conteneur « DNG »"
 
 #: core/utilities/import/widgets/freespacewidget.cpp:316
 #, kde-format
@@ -61846,7 +61842,7 @@ msgstr ""
 "<qt><i>Remarque : si ceci est activé, la base principale est toujours "
 "nettoyée. Vous pouvez sélectionner d'autres bases à nettoyer.<br/> Si vous "
 "sélectionnez l'une des options ci-dessous, le processus peut prendre plus de "
-"temps et geler temporairement DigiKam pour s'assurer qu'aucune corruption de "
+"temps et geler temporairement digiKam pour s'assurer qu'aucune corruption de "
 "base de données ne survienne.</i></qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:96
@@ -62040,7 +62036,7 @@ msgstr ""
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:434
 #, kde-format
 msgid "digiKam Maintenance"
-msgstr "Maintenance de DigiKam"
+msgstr "Maintenance de digiKam"
 
 #: core/utilities/maintenance/manager/maintenancetool.cpp:109
 #, kde-format
@@ -62103,7 +62099,7 @@ msgstr ""
 "<p>Réduction en cours de la base de données.</p><p>Vos bases de données sont "
 "en train d'être réduites. Ceci peut prendre du temps, en fonction de la "
 "taille de vos bases de données.</p><p>Nous devons geler temporairement "
-"DigiKam pour éviter une corruption de la base. Ce message disparaîtra "
+"digiKam pour éviter une corruption de la base. Ce message disparaîtra "
 "lorsque le processus de réduction sera terminé.</p>État actuel :"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:79
@@ -62622,7 +62618,7 @@ msgid ""
 msgstr ""
 "L'album destiné à héberger les éléments traités à partir de la file "
 "d'attente « %1 » n'est pas défini. Veuillez en sélectionner un depuis le "
-"panneau « Paramètres des files d'attente »."
+"panneau « Paramètres des files d'attente »"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:875
 #, kde-format
@@ -62632,7 +62628,7 @@ msgid ""
 msgstr ""
 "L'album destiné à héberger les éléments traités à partir de la liste "
 "d'attente « %1 » n'est pas disponible ou n'est pas inscriptible. Veuillez en "
-"définir un autre à partir du panneau « Paramètres des files d'attente »."
+"définir un autre à partir du panneau « Paramètres des files d'attente »"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:954
 #, kde-format
@@ -62806,10 +62802,10 @@ msgid_plural ""
 "There are still %1 unprocessed items in \"%2\".\n"
 "Do you want to close this queue?"
 msgstr[0] ""
-"Il existe encore 1 élément non traité dans « %2 ».\n"
+"Il existe encore 1 élément non traité dans « %2 »\n"
 "Voulez-vous fermer cette file d'attente ?"
 msgstr[1] ""
-"Il existe encore %1 éléments non traités dans « %2 ».\n"
+"Il existe encore %1 éléments non traités dans « %2 »\n"
 "Voulez-vous fermer cette file d'attente ?"
 
 #: core/utilities/queuemanager/views/queuepool.cpp:498
@@ -62984,7 +62980,7 @@ msgstr "Affecter des outils"
 #, kde-format
 msgid "This is the list of digiKam batch tools available."
 msgstr ""
-"Voici la liste des outils de traitement par lots disponibles de DigiKam."
+"Voici la liste des outils de traitement par lots disponibles de digiKam."
 
 #: core/utilities/queuemanager/views/toolsview.cpp:67
 #, kde-format
@@ -64257,70 +64253,70 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:147
 #, kde-format
 msgid "Show digiKam tit&le"
-msgstr "Afficher &le titre de DigiKam"
+msgstr "Afficher &le titre de digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:148
 #, kde-format
 msgid "Set this option to show the digiKam title below the image thumbnail."
 msgstr ""
-"Cochez cette option pour afficher le titre de DigiKam sous la vignette de "
+"Cochez cette option pour afficher le titre de digiKam sous la vignette de "
 "l'image."
 
 #: core/utilities/setup/album/setupalbumview.cpp:151
 #, kde-format
 msgid "Show digiKam &captions"
-msgstr "Affiche&r les légendes de DigiKam"
+msgstr "Affiche&r les légendes de digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
 #, kde-format
 msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr ""
-"Cochez cette option pour afficher les légendes de DigiKam sous la vignette "
+"Cochez cette option pour afficher les légendes de digiKam sous la vignette "
 "de l'image."
 
 #: core/utilities/setup/album/setupalbumview.cpp:155
 #: core/utilities/setup/camera/setupcamera.cpp:451
 #, kde-format
 msgid "Show digiKam &tags"
-msgstr "Afficher les é&tiquettes de DigiKam"
+msgstr "Afficher les é&tiquettes de digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
 #, kde-format
 msgid ""
 "Set this option to show the digiKam tags list below the image thumbnail."
 msgstr ""
-"Cochez cette option pour afficher la liste des étiquettes de DigiKam sous la "
+"Cochez cette option pour afficher la liste des étiquettes de digiKam sous la "
 "vignette de l'image."
 
 #: core/utilities/setup/album/setupalbumview.cpp:159
 #, kde-format
 msgid "Show digiKam &rating"
-msgstr "Affiche&r la note de DigiKam"
+msgstr "Affiche&r la note de digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:160
 #, kde-format
 msgid "Set this option to show the digiKam rating below the image thumbnail."
 msgstr ""
-"Cochez cette option pour afficher la note de DigiKam sous la vignette de "
+"Cochez cette option pour afficher la note de digiKam sous la vignette de "
 "l'image."
 
 #: core/utilities/setup/album/setupalbumview.cpp:163
 #, kde-format
 msgid "Show digiKam &pick label"
-msgstr "Afficher l'éti&quette de sélection de DigiKam"
+msgstr "Afficher l'éti&quette de sélection de digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:164
 #, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr ""
-"Cochez cette option pour afficher l'étiquette de sélection de DigiKam sous "
+"Cochez cette option pour afficher l'étiquette de sélection de digiKam sous "
 "la vignette de l'image."
 
 #: core/utilities/setup/album/setupalbumview.cpp:167
 #, kde-format
 msgid "Show digiKam color &label"
-msgstr "Afficher l'étiquette de couleur de DigiKam"
+msgstr "Afficher l'étiquette de couleur de digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
 #, kde-format
@@ -64328,7 +64324,7 @@ msgid ""
 "Set this option to show the digiKam color label as a border around the "
 "thumbnail."
 msgstr ""
-"Cochez cette option pour afficher l'étiquette de couleur de DigiKam comme "
+"Cochez cette option pour afficher l'étiquette de couleur de digiKam comme "
 "une bordure autour de la vignette."
 
 #: core/utilities/setup/album/setupalbumview.cpp:171
@@ -64445,7 +64441,7 @@ msgstr ""
 "est limitée à 256x256 pixels. Quand cette option est activée, la taille des "
 "vignettes peut être augmentée à 512x512 pixels.\n"
 "Cette option a pour effet de stocker plus de données dans la base de donnée "
-"des vignettes et donc d'utiliser plus de mémoire du système. DigiKam doit "
+"des vignettes et donc d'utiliser plus de mémoire du système. digiKam doit "
 "être redémarré pour qu'elle soit prise en compte, et la fonction "
 "Reconstruire les vignettes de l'outil Maintenance doit être exécuté sur "
 "toutes les collections."
@@ -64468,7 +64464,7 @@ msgid ""
 "digiKam's sidebars."
 msgstr ""
 "Définissez ici la configuration de la taille en pixels des vignettes de la "
-"vue en arbre dans les barres latérales de DigiKam."
+"vue en arbre dans les barres latérales de digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:246
 #, kde-format
@@ -64482,7 +64478,7 @@ msgid ""
 "digiKam's people sidebar."
 msgstr ""
 "Activez cette option pour configurer la taille en pixels de l'affichage en "
-"arborescence dans la barre latérale des personnes de DigiKam."
+"arborescence dans la barre latérale des personnes de digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:257
 #, kde-format
@@ -64645,7 +64641,7 @@ msgid ""
 "Maintenance</interface> menu."
 msgstr ""
 "Cette option change la taille dans laquelle les vignettes sont générées. "
-"Vous devez redémarrer DigiKam pour que cette option soit prise en compte. De "
+"Vous devez redémarrer digiKam pour que cette option soit prise en compte. De "
 "plus, vous devez régénérer toutes les vignettes déjà enregistrées en "
 "utilisant le menu <interface>Outils / Maintenance</interface>."
 
@@ -64667,7 +64663,7 @@ msgid ""
 "are sorted in digiKam."
 msgstr ""
 "Vous pouvez ajouter ou supprimer ici des types de catégories d'albums pour "
-"améliorer la manière de trier vos albums dans DigiKam."
+"améliorer la manière de trier vos albums dans digiKam."
 
 #: core/utilities/setup/album/setupcategory.cpp:94
 #: core/utilities/setup/camera/setupcamera.cpp:273
@@ -64689,10 +64685,10 @@ msgid ""
 "in this view will perform a database rescan in the background.</b></p>"
 msgstr ""
 "<p>Ajouter de nouveaux types de fichiers à afficher dans les éléments des "
-"albums.</p><p>DigiKam essaie de prendre en charge tous les formats d'images "
+"albums.</p><p>digiKam essaie de prendre en charge tous les formats d'images "
 "que produisent les appareils photo numériques, tout en étant capable de "
 "gérer quelques autres formats vidéo et audio.</p> <p>Vous pouvez ajouter à "
-"la liste déjà appréciable de formats pris en charge par DigiKam l'extension "
+"la liste déjà appréciable de formats pris en charge par digiKam l'extension "
 "du type que vous souhaitez. Les extensions multiples doivent être séparées "
 "par un espace.</p> <p><b><u>Remarque :</u> les changements effectués dans "
 "cet écran produiront une nouvelle analyse de la base, en arrière-plan.</b></"
@@ -64720,13 +64716,13 @@ msgid ""
 "means losing all of their tags and ratings.</p>"
 msgstr ""
 "<p>Vous pouvez ajouter ici les extensions de fichiers image (y compris les "
-"fichiers RAW) à afficher dans la vue « Album ». Saisissez simplement « xyz "
+"fichiers RAW) à afficher dans la vue « Album » Saisissez simplement « xyz "
 "abc » pour afficher des fichiers portant les extensions « xyz » et « abc » "
-"dans la vue « Album ».</p><p>Vous pouvez également supprimer les formats de "
+"dans la vue « Album »</p><p>Vous pouvez également supprimer les formats de "
 "fichiers affichés par défaut en plaçant un signe « moins » devant "
 "l'extension : ex. « -gif » retirera tous les fichiers GIF de votre vue "
 "« Album » et toute trace de ceux-ci dans votre base de données. Ils ne "
-"seront pas supprimés, simplement ils ne seront pas affichés dans DigiKam.</"
+"seront pas supprimés, simplement ils ne seront pas affichés dans digiKam.</"
 "p><p><b> Avertissement : </b>la suppression de fichiers de la base de "
 "données signifie la perte de toutes leurs étiquettes et notes.</p>"
 
@@ -64758,16 +64754,16 @@ msgid ""
 "their tags and ratings.</p>"
 msgstr ""
 "<p>Vous pouvez ajouter ici des extensions supplémentaires de fichiers vidéo "
-"à afficher dans la vue « Album ». Saisissez simplement « xyz abc » pour "
-"gérer les fichiers portant les extensions « xyz » et « abc ». Cliquer sur "
-"ces fichiers permet de les lire dans un lecteur multimédia intégré.</"
-"p><p>Vous pouvez également supprimer des formats de fichiers pris en charge "
-"par défaut en plaçant un signe « moins » devant l'extension : ex. « -avi » "
-"retirera tous les fichiers AVI de votre vue « Album » et toute trace de ceux-"
-"ci dans votre base de données. Ils ne seront pas supprimés, simplement ils "
-"ne seront pas affichés dans DigiKam.</p><p><b> Avertissement : </b>la "
-"suppression de fichiers de la base de données signifie la perte de toutes "
-"leurs étiquettes et notes.</p>"
+"à afficher dans la vue « Album » Saisissez simplement « xyz abc » pour gérer "
+"les fichiers portant les extensions « xyz » et « abc » Cliquer sur ces "
+"fichiers permet de les lire dans un lecteur multimédia intégré.</p><p>Vous "
+"pouvez également supprimer des formats de fichiers pris en charge par défaut "
+"en plaçant un signe « moins » devant l'extension : ex. « -avi » retirera "
+"tous les fichiers AVI de votre vue « Album » et toute trace de ceux-ci dans "
+"votre base de données. Ils ne seront pas supprimés, simplement ils ne seront "
+"pas affichés dans digiKam.</p><p><b> Avertissement : </b>la suppression de "
+"fichiers de la base de données signifie la perte de toutes leurs étiquettes "
+"et notes.</p>"
 
 #: core/utilities/setup/album/setupmime.cpp:146
 #, kde-format
@@ -64797,16 +64793,16 @@ msgid ""
 "their tags and ratings.</p>"
 msgstr ""
 "<p>Vous pouvez ajouter ici des extensions supplémentaires de fichiers vidéo "
-"à afficher dans la vue « Album ». Saisissez simplement « xyz abc » pour "
-"gérer les fichiers portant les extensions « xyz » et « abc ». Cliquer sur "
-"ces fichiers permet de les lire dans un lecteur multimédia intégré.</"
-"p><p>Vous pouvez également supprimer des formats de fichiers pris en charge "
-"par défaut en plaçant un signe « moins » devant l'extension : ex. « -ogg » "
-"retirera tous les fichiers OGG de votre vue « Album » et toute trace de ceux-"
-"ci dans votre base de données. Ils ne seront pas supprimés, simplement ils "
-"ne seront pas affichés dans DigiKam.</p><p><b> Avertissement : </b>la "
-"suppression de fichiers de la base de données signifie la perte de toutes "
-"leurs étiquettes et notes.</p>"
+"à afficher dans la vue « Album » Saisissez simplement « xyz abc » pour gérer "
+"les fichiers portant les extensions « xyz » et « abc » Cliquer sur ces "
+"fichiers permet de les lire dans un lecteur multimédia intégré.</p><p>Vous "
+"pouvez également supprimer des formats de fichiers pris en charge par défaut "
+"en plaçant un signe « moins » devant l'extension : ex. « -ogg » retirera "
+"tous les fichiers OGG de votre vue « Album » et toute trace de ceux-ci dans "
+"votre base de données. Ils ne seront pas supprimés, simplement ils ne seront "
+"pas affichés dans digiKam.</p><p><b> Avertissement : </b>la suppression de "
+"fichiers de la base de données signifie la perte de toutes leurs étiquettes "
+"et notes.</p>"
 
 #: core/utilities/setup/album/setupmime.cpp:181
 #, kde-format
@@ -64907,7 +64903,7 @@ msgstr "Nom de l'appareil photo"
 msgid ""
 "<p>Set here the name used in digiKam interface to identify this camera.</p>"
 msgstr ""
-"<p>Définissez ici le nom utilisé dans l'interface DigiKam pour identifier "
+"<p>Définissez ici le nom utilisé dans l'interface digiKam pour identifier "
 "cet appareil photo.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:142
@@ -65093,7 +65089,7 @@ msgid ""
 "interface."
 msgstr ""
 "Vous pouvez voir ici la liste des appareils photo numériques utilisés par "
-"DigiKam via l'interface « gPhoto »."
+"digiKam via l'interface « gPhoto »"
 
 #: core/utilities/setup/camera/setupcamera.cpp:256
 #, kde-format
@@ -65230,7 +65226,7 @@ msgstr "Afficher le format de l'image"
 #, kde-format
 msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgstr ""
-"Cochez cette option pour afficher les étiquettes de DigiKam sous la vignette "
+"Cochez cette option pour afficher les étiquettes de digiKam sous la vignette "
 "de l'image."
 
 #: core/utilities/setup/camera/setupcamera.cpp:455
@@ -65416,7 +65412,7 @@ msgid ""
 "activate album monitoring.</b>"
 msgstr ""
 "<b>Remarque : la surveillance des albums consomme beaucoup de ressources du "
-"système et peut ralentir DigiKam. Si vous utilisez macOS et des collections "
+"système et peut ralentir digiKam. Si vous utilisez macOS et des collections "
 "sur le réseau, vous ne devriez pas activer la surveillance des albums.</b>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:129
@@ -65442,7 +65438,7 @@ msgstr ""
 "séparés par un point-virgule.</p><p>Ceci est utile par exemple lorsque vous "
 "stockez vos photos sur un NAS (Network Attached Storage) Synology. Ce "
 "système crée dans chaque dossier un sous-dossier nommé @eaDir où il stocke "
-"les vignettes. Pour éviter d'ajouter inutilement ces vignettes à DigiKam, "
+"les vignettes. Pour éviter d'ajouter inutilement ces vignettes à digiKam, "
 "@eaDir est ignoré par défaut.</p><p>Pour ré-inclure des dossiers qui sont "
 "ignorés par défaut, préfixez-les avec un signe moins, ex : -@eaDir.</p>"
 
@@ -65494,7 +65490,7 @@ msgstr "Met à jour l'emplacement de la collection."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Removes the collection from digiKam."
-msgstr "Supprime la collection de DigiKam."
+msgstr "Supprime la collection de digiKam."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:629
 #, kde-format
@@ -65629,7 +65625,7 @@ msgstr "État"
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr ""
 "Vous avez précédemment ajouté une collection contenant toujours "
-"l'emplacement « %1 »."
+"l'emplacement « %1 »"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1593
 #, kde-format
@@ -65775,7 +65771,7 @@ msgid ""
 "to select the specific features you want to enable.</p><p><b>Note:</b> The "
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
-"<p>DigiKam s'appuie sur de grands fichiers de modèles binaires pour "
+"<p>digiKam s'appuie sur de grands fichiers de modèles binaires pour "
 "alimenter des fonctionnalités telles que la gestion des visages, la "
 "classification des images en fonction de l'esthétique, les outils "
 "automatiques d'IA tels que la rotation automatique d'images et l'association "
@@ -65798,10 +65794,10 @@ msgstr ""
 "<p>Il a été impossible de trouver certains des fichiers nécessaires. "
 "Veuillez cliquer sur « Télécharger » pour lancer l'installation des fichiers "
 "nécessaires. Si vous fermez cette boîte de dialogue, elle vous sera "
-"présentée à nouveau lors du prochain démarrage de DigiKam. Sans ces "
+"présentée à nouveau lors du prochain démarrage de digiKam. Sans ces "
 "fichiers, les fonctionnalités sélectionnées ne pourront fonctionner. </"
-"p><p>Les fichiers seront téléchargés vers « <i>%1</i> ».</p><p><b>Après un "
-"téléchargement réussi de ces fichiers, vous devrez re-démarrer DigiKam.</b></"
+"p><p>Les fichiers seront téléchargés vers « <i>%1</i> »</p><p><b>Après un "
+"téléchargement réussi de ces fichiers, vous devrez re-démarrer digiKam.</b></"
 "p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:558
@@ -66167,7 +66163,7 @@ msgstr ""
 "est créé : la <interface>version actuelle</interface>.</para> <para>Vous "
 "pouvez également créer de multiples <interface>versions</interface> dérivant "
 "de la même <interface>image originale</interface>.</para> <para>En plus de "
-"ces fichiers représentant une version actuelle, DigiKam peut prendre et "
+"ces fichiers représentant une version actuelle, digiKam peut prendre et "
 "conserver des <interface>instantanés intermédiaires</interface> pendant le "
 "processus d'édition. Cette fonction peut être utile si vous voulez préserver "
 "les étapes intermédiaires pour un accès ultérieur, par exemple s'il est "
@@ -66291,10 +66287,10 @@ msgid ""
 "JPEG, PNG or TIFF. </item>"
 msgstr ""
 "<item><emphasis strong='true'>JPEG-2000</emphasis> : il est similaire au "
-"format « PGF ». Le chargement ou l'enregistrement sont plus lents, le taux "
-"de compression est meilleur et le format est plus largement pris en charge. "
+"format « PGF » Le chargement ou l'enregistrement sont plus lents, le taux de "
+"compression est meilleur et le format est plus largement pris en charge. "
 "Cependant, il n'est toujours pas encore comparable aux formats traditionnels "
-"« JPEG », « PNG » ou « TIFF ».</item>"
+"« JPEG », « PNG » ou « TIFF »</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:506
 #, kde-kuit-format
@@ -66336,7 +66332,7 @@ msgid ""
 msgstr ""
 "<item><emphasis strong='true'>WebP</emphasis> : il s'agit d'un format de "
 "fichier d'image que Google a développé en remplacement des formats de "
-"fichiers « JPEG », « PNG » et « GIF ». Les fichiers sont plus petits en "
+"fichiers « JPEG », « PNG » et « GIF » Les fichiers sont plus petits en "
 "taille pour la même qualité ou de meilleure qualité pour la même taille. Il "
 "prend en charge la compression, à la fois, avec et sans perte.</item>"
 
@@ -66392,7 +66388,7 @@ msgid ""
 "b>Order is important when reading metadata"
 msgstr ""
 "Le menu de configuration avancée vous permet de gérer les espaces ne noms "
-"des métadonnées utilisés par DigiKam pour stocker et retrouver les "
+"des métadonnées utilisés par digiKam pour stocker et retrouver les "
 "étiquettes, notes et commentaires.<br/><b>Remarque : </b>l'ordre est "
 "important dans la lecture des métadonnées."
 
@@ -66490,7 +66486,7 @@ msgid ""
 msgstr ""
 "<p>Pour créer de nouveaux espaces de noms, vous devez spécifier des "
 "paramètres :</p><p><ul><li>Espace de nom avec des points.<br/>Ex. : <i> "
-"« Xmp.DigiKam.TagsList » </i></li> <li>Paramètre de séparateur utilisé par "
+"« Xmp.digiKam.TagsList » </i></li> <li>Paramètre de séparateur utilisé par "
 "les arborescences d'étiquettes<br/>Ex. : « Ville/Paris » ou « Ville|Paris »</"
 "li><li>Spécifiez si le mot clé seul ou toute l'arborescence doit être écrite."
 "</li></ul></p>"
@@ -66568,32 +66564,32 @@ msgstr "Le nom de l'espace est requis"
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:574
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
-msgstr "Le nom de l'espace « EXIF » doit commencer par « EXIF »."
+msgstr "Le nom de l'espace « EXIF » doit commencer par « EXIF »"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:584
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
-msgstr "Le nom de l'espace alternatif EXIF doit commencer par « EXIF »."
+msgstr "Le nom de l'espace alternatif EXIF doit commencer par « EXIF »"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:596
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
-msgstr "Le nom de l'espace IPTC doit commencer par « Iptc »."
+msgstr "Le nom de l'espace IPTC doit commencer par « Iptc »"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:606
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
-msgstr "Le nom de l'espace alternatif IPTC doit commencer par « Iptc »."
+msgstr "Le nom de l'espace alternatif IPTC doit commencer par « Iptc »"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:618
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
-msgstr "Le nom de l'espace XMP doit commencer par « XMP »."
+msgstr "Le nom de l'espace XMP doit commencer par « XMP »"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:628
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
-msgstr "Le nom de l'espace alternatif XMP doit commencer par « XMP »."
+msgstr "Le nom de l'espace alternatif XMP doit commencer par « XMP »"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:649
 #, kde-format
@@ -66623,7 +66619,7 @@ msgid ""
 msgstr ""
 "Vous ne devriez activer cette option que si vous échangez des métadonnées "
 "d'image avec des programmes qui utilisent le format « sidecar » « BASENAME."
-"xmp ». Si vous avez des images avec le même nom de base (par exemple, Image."
+"xmp » Si vous avez des images avec le même nom de base (par exemple, Image."
 "CR2 et Image.JPG), le format « sidecar » ne peut plus être attribué de "
 "manière unique et sera utilisé pour les deux images, ce qui peut entraîner "
 "des problèmes de métadonnées."
@@ -66651,7 +66647,7 @@ msgid ""
 "recommend not to enable this option."
 msgstr ""
 "Voulez-vous vraiment activer l'écriture des métadonnées vers les fichiers "
-"bruts ? DigiKam délègue cette tâche au moteur « ExifTool ». \n"
+"bruts ? digiKam délègue cette tâche au moteur « ExifTool » \n"
 "Avec les différents formats de fichiers bruts, des problèmes peuvent se "
 "produire et conduire à la corruption des fichiers bruts. \n"
 "Si vous choisissez de continuer, veuillez faire une sauvegarde de vos "
@@ -66681,7 +66677,7 @@ msgid ""
 "that?"
 msgstr ""
 "Une extension de fichier « RAW » a été ajoutée à la liste des formats pris "
-"en charge. Il existe un risque de suppression accidentelle d'images « RAW ». "
+"en charge. Il existe un risque de suppression accidentelle d'images « RAW » "
 "Voulez-vous vraiment faire ça ?"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:31
@@ -66694,7 +66690,7 @@ msgstr "Recherche sur le bureau avec Baloo"
 #, kde-format
 msgctxt "@option"
 msgid "Store metadata from digiKam in Baloo"
-msgstr "Enregistrer les métadonnées de DigiKam dans Baloo"
+msgstr "Enregistrer les métadonnées de digiKam dans Baloo"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:36
 #, kde-format
@@ -66704,7 +66700,7 @@ msgid ""
 "Baloo storage"
 msgstr ""
 "Sélectionnez cette option pour envoyer la notation, les commentaires et les "
-"étiquettes provenant de DigiKam pour être enregistrés dans les données de "
+"étiquettes provenant de digiKam pour être enregistrés dans les données de "
 "Baloo."
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:40
@@ -66723,7 +66719,7 @@ msgid ""
 msgstr ""
 "Sélectionnez cette option si vous voulez appliquer des modifications, à la "
 "notation, aux commentaires et aux étiquettes, produites dans Baloo et pour "
-"le stockage de métadonnées de DigiKam. Veuillez noter que les métadonnées de "
+"le stockage de métadonnées de digiKam. Veuillez noter que les métadonnées de "
 "l'image ne seront pas modifiées automatiquement."
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:63
@@ -66738,7 +66734,7 @@ msgstr ""
 "fournit la base nécessaire pour gérer tous les types de métadonnées sur le "
 "bureau KDE d'une façon générique. Il permet d'étiqueter, noter et commenter "
 "les fichiers dans des applications KDE comme Dolphin. Veuillez décider ici "
-"si vous voulez synchroniser les métadonnées stockées par DigiKam sur "
+"si vous voulez synchroniser les métadonnées stockées par digiKam sur "
 "l'ensemble du bureau avec la recherche sur le bureau Baloo."
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:84
@@ -66759,7 +66755,7 @@ msgid ""
 msgstr ""
 "<para>En plus du contenu des pixels, les fichiers image contiennent "
 "habituellement une diversité de métadonnées. Beaucoup des paramètres qu'on "
-"peut employer dans DigiKam pour gérer des fichiers, tels qu'une note ou un "
+"peut employer dans digiKam pour gérer des fichiers, tels qu'une note ou un "
 "commentaire, peuvent être écrits dans les métadonnées des fichiers.</para> "
 "<para>La mémorisation des métadonnées permet de préserver ces informations "
 "lorsqu'on déplace ou qu'on envoie les fichiers à différents systèmes.</para>"
@@ -66799,7 +66795,7 @@ msgid ""
 msgstr ""
 "Activer cette option pour enregistrer la légende et le titre de l'élément "
 "dans la section « Commentaire JFIF », l'étiquette « EXIF », l'étiquette "
-"« XMP » et l'étiquette « IPTC »."
+"« XMP » et l'étiquette « IPTC »"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:60
 #, kde-format
@@ -66815,7 +66811,7 @@ msgid ""
 "tags."
 msgstr ""
 "Activer cette option pour enregistrer la note de l'élément dans l'étiquette "
-"« EXIF » et les étiquettes « XMP »."
+"« EXIF » et les étiquettes « XMP »"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:65
 #, kde-format
@@ -66907,7 +66903,7 @@ msgid ""
 "XMP tags."
 msgstr ""
 "Activer cette option pour enregistrer les informations de géolocalisation "
-"dans l'étiquette « EXIF » et les étiquettes « XMP »."
+"dans l'étiquette « EXIF » et les étiquettes « XMP »"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:115
 #, kde-format
@@ -66931,7 +66927,7 @@ msgid ""
 "metadata with database."
 msgstr ""
 "Activez cette option pour écrire les métadonnées vers des fichiers avec le "
-"moteur « ExifTool » au lieu de « Exiv2 ». Ceci ralentira un peu la "
+"moteur « ExifTool » au lieu de « Exiv2 » Ceci ralentira un peu la "
 "synchronisation des métadonnées des fichiers avec la base de données."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
@@ -66951,7 +66947,7 @@ msgid ""
 "with database."
 msgstr ""
 "Activez cette option pour écrire les métadonnées vers des fichiers avec le "
-"moteur « ExifTool » au lieu de « Exiv2 ». Ceci ralentira un peu la "
+"moteur « ExifTool » au lieu de « Exiv2 » Ceci ralentira un peu la "
 "synchronisation des métadonnées des fichiers avec la base de données."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:132
@@ -66965,13 +66961,13 @@ msgstr "Écrire les métadonnées dans des fichiers « DNG »"
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to write metadata into DNG files."
 msgstr ""
-"Activer cette option pour écrire les métadonnées dans les fichiers « DNG »."
+"Activer cette option pour écrire les métadonnées dans les fichiers « DNG »"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:136
 #, kde-format
 msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
-msgstr "Si possible, écrire les métadonnées dans des fichiers « RAW »."
+msgstr "Si possible, écrire les métadonnées dans des fichiers « RAW »"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:137
 #, kde-format
@@ -66980,7 +66976,7 @@ msgid ""
 "Turn on this option to write metadata into RAW files. This feature is "
 "delegate to ExifTool backend and is disabled by default."
 msgstr ""
-"Activez cette option pour écrire des métadonnées dans des fichiers « RAW ». "
+"Activez cette option pour écrire des métadonnées dans des fichiers « RAW » "
 "Cette fonctionnalité est déléguée au moteur « ExifTool » et est désactivée "
 "par défaut."
 
@@ -67039,10 +67035,10 @@ msgid ""
 "last modified timestamp has changed, a rescan of that file will be performed "
 "when digiKam starts."
 msgstr ""
-"En activant cette option, vous forcez DigiKam à réanalyser les fichiers qui "
-"ont été modifiés en dehors de DigiKam. Si un fichier a vu sa taille ou son "
+"En activant cette option, vous forcez digiKam à réanalyser les fichiers qui "
+"ont été modifiés en dehors de digiKam. Si un fichier a vu sa taille ou son "
 "horodatage de dernière modification modifié, une nouvelle analyse de ce "
-"fichier sera effectuée lorsque DigiKam démarre."
+"fichier sera effectuée lorsque digiKam démarre."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:235
 #, kde-format
@@ -67143,7 +67139,7 @@ msgstr ""
 "option si vous voulez définir uniquement un indicateur, ce qui est moins "
 "gênant mais nécessite une prise en charge si on accède au fichier avec un "
 "autre logiciel. Veillez à autoriser le paramétrage de l'indicateur dans les "
-"métadonnées si vous voulez partager vos fichiers en dehors de DigiKam.</para>"
+"métadonnées si vous voulez partager vos fichiers en dehors de digiKam.</para>"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:61
 #, kde-format
@@ -67347,9 +67343,9 @@ msgid ""
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
 "Ajoutez les types de fichiers à reconnaître comme associés.\n"
-"DigiKam peut (optionnellement) écrire les métadonnées dans des fichiers "
-"associés « *.xmp ». D'autres logiciels peuvent utiliser d'autres types, à "
-"spécifier ci-dessous. DigiKam ne les affichera pas, ne les lira pas et "
+"digiKam peut (optionnellement) écrire les métadonnées dans des fichiers "
+"associés « *.xmp » D'autres logiciels peuvent utiliser d'autres types, à "
+"spécifier ci-dessous. digiKam ne les affichera pas, ne les lira pas et "
 "n'écrira pas dedans. Mais si un élément correspondant d'album (par exemple, "
 "« image.dng » pour « image.dng.pp3 ») est renommé, déplacé, copié ou "
 "supprimé, la même opération sera effectuée sur ses fichiers associés.\n"
@@ -67372,7 +67368,7 @@ msgstr ""
 " associés, à traiter avec les éléments normaux. Ces fichiers ne seront pas\n"
 " visibles mais traités comme une extension du fichier principal. Écrivez\n"
 " simplement « xyz abc » pour la prise en charge des fichiers avec les\n"
-" extensions « *.xyz » et « *.abc ». Le type de fichier\n"
+" extensions « *.xyz » et « *.abc » Le type de fichier\n"
 " associé « *.xmp » est\n"
 " toujours inclus. "
 
@@ -67663,12 +67659,12 @@ msgid ""
 "and to plan\n"
 "a manual scan through the maintenance tool at the right moment."
 msgstr ""
-"Utilisez cette option pour forcer DigiKam à analyse toutes les collections "
+"Utilisez cette option pour forcer digiKam à analyse toutes les collections "
 "pour détecter de nouveaux éléments à ajouter à la base de données.\n"
 "Cette tâche est effectuée en arrière-plan comme processus du gestionnaire "
-"visible dans la barre d'état de l'interface principale de DigiKam.\n"
+"visible dans la barre d'état de l'interface principale de digiKam.\n"
 "Si votre ordinateur est suffisamment performant, vous pourrez utiliser "
-"DigiKam normalement pendant l'analyse.\n"
+"digiKam normalement pendant l'analyse.\n"
 "Si vos collections sont grandes ou que vous utilisez une base de données "
 "distante,\n"
 "ceci peut introduire une faible latence, et il est alors recommandé de "
@@ -67715,7 +67711,7 @@ msgstr ""
 "Définissez cette option pour démarrer automatiquement une analyse de "
 "reconnaissance faciale en arrière-plan\n"
 "lorsqu'un nouveau visage est étiqueté. Cela facilitera le processus "
-"l’étiquettage."
+"l'étiquettage."
 
 #: core/utilities/setup/misc/setupmisc.cpp:59
 #, kde-format
@@ -67734,7 +67730,7 @@ msgid ""
 "recognition db.\n"
 "For clean up routines for other databases, please use the maintenance."
 msgstr ""
-"Utilisez cette option pour forcer DigiKam à nettoyer la base de données "
+"Utilisez cette option pour forcer digiKam à nettoyer la base de données "
 "principale de ses entrées obsolètes.\n"
 "Les entrées ne sont supprimées que si le fichier image/vidéo/audio lié a "
 "déjà été supprimé, c'est-à-dire\n"
@@ -67859,7 +67855,7 @@ msgid ""
 "albums should be sorted according to these dates.</qt>"
 msgstr ""
 "<qt>Définit la manière dont les chaînes de texte sont comparées au sein de "
-"DigiKam. Cette fonction influence, par exemple, le tri des vues en arbre.<br/"
+"digiKam. Cette fonction influence, par exemple, le tri des vues en arbre.<br/"
 "><b>Naturel</b> essaie de comparer les chaînes de texte d'une façon qui "
 "prend en considération certaines conventions normales et a pour résultat, "
 "par exemple, un tri naturel des nombres, même s'ils comportent un nombre de "
@@ -68012,7 +68008,7 @@ msgstr "Ouvrir la boîte de dialogue de téléchargement…"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:136
 #, kde-format
 msgid "Open Local Storage..."
-msgstr "Ouvrir le media local"
+msgstr "Ouvrir le média local"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:144
 #, kde-format
@@ -68254,7 +68250,7 @@ msgid ""
 "Customize behavior of the other parts of digiKam"
 msgstr ""
 "Paramètres divers\n"
-"Personnalisez le comportement des autres composants de DigiKam"
+"Personnalisez le comportement des autres composants de digiKam"
 
 #: core/utilities/setup/setupdatabase.cpp:171
 #, kde-format
@@ -68272,7 +68268,7 @@ msgstr ""
 "Veuillez vérifier que toute collection importante se trouvant sur des média "
 "amovibles est accessible.\n"
 "Après la mise à jour, il vous sera impossible d'utiliser votre base de "
-"données avec une version de DigiKam antérieure à la version 8.5.0.\n"
+"données avec une version de digiKam antérieure à la version 8.5.0.\n"
 " Voulez-vous vraiment lancer la mise à jour ?"
 
 #: core/utilities/setup/setupdatabase.cpp:185
@@ -68304,7 +68300,7 @@ msgstr ""
 "encore parfaitement bien, aussi, il est recommandé de procéder à cette mise "
 "à niveau, mais sans obligation.\n"
 "Après la mise à niveau, il vous sera impossible d'utiliser votre base de "
-"données avec une version de DigiKam antérieure à la version 8.5.0."
+"données avec une version de digiKam antérieure à la version 8.5.0."
 
 #: core/utilities/setup/setupdatabase.cpp:199
 #, kde-format
@@ -68332,7 +68328,7 @@ msgstr ""
 "Pour travailler confortablement, Google Maps nécessite l'utilisation d'une "
 "clé API que les utilisateurs finaux doivent acheter en ligne pour obtenir "
 "des identifiants. Sans cette clé, Google Maps est toujours utilisable mais "
-"avec un filigrane « Pour le développement uniquement ». Pour plus "
+"avec un filigrane « Pour le développement uniquement » Pour plus "
 "d'informations, veuillez consulter la <a href='https://mapsplatform.google."
 "com/pricing/'>page de Google</a> concernant les utilisations, les modes "
 "opératoires et les prix."
@@ -68406,7 +68402,7 @@ msgid ""
 "one.</p>"
 msgstr ""
 "<p>Si une image présente un profil colorimétrique intégré ne correspondant "
-"pas au profil de l'espace colorimétrique de travail, DigiKam vous demandera "
+"pas au profil de l'espace colorimétrique de travail, digiKam vous demandera "
 "si vous voulez le convertir vers l'espace de travail, en conservant le "
 "profil intégré ou bien si vous préférez abandonner le profil intégré et en "
 "affecter un autre.</p>"
@@ -68425,7 +68421,7 @@ msgid ""
 "image.</p>"
 msgstr ""
 "<p>Si une image présente un profil colorimétrique intégré ne correspondant "
-"pas au profil de l'espace colorimétrique de travail, DigiKam convertira les "
+"pas au profil de l'espace colorimétrique de travail, digiKam convertira les "
 "informations de couleurs de l'image vers l'espace colorimétrique de travail. "
 "Cette fonction change les données relatives aux pixels mais non l'apparence "
 "de l'image.</p>"
@@ -68443,7 +68439,7 @@ msgid ""
 "space shall be used to interpret the image and to which color space it shall "
 "be transformed for editing.</p>"
 msgstr ""
-"<p>Si une image ne présente pas de profil colorimétrique intégré, DigiKam "
+"<p>Si une image ne présente pas de profil colorimétrique intégré, digiKam "
 "demandera quel espace colorimétrique devra être utilisé pour interpréter "
 "l'image et vers quel espace colorimétrique elle devra être transformée pour "
 "édition.</p>"
@@ -68615,7 +68611,7 @@ msgid ""
 "digiKam looks for ICC profiles in a number of <a href='default'>default "
 "locations</a>. You can specify an additional folder:"
 msgstr ""
-"DigiKam cherche des profils ICC dans un certain nombre d'<a "
+"digiKam cherche des profils ICC dans un certain nombre d'<a "
 "href='default'>emplacements par défaut</a> Vous pouvez indiquer un dossier "
 "supplémentaire :"
 
@@ -68626,7 +68622,7 @@ msgid ""
 "a few selected profiles. Store all your additional color profiles in the "
 "directory set here.</p>"
 msgstr ""
-"<p>DigiKam recherche des profils ICC dans les dossiers système par défaut et "
+"<p>digiKam recherche des profils ICC dans les dossiers système par défaut et "
 "s'approprie quelques profils sélectionnés. Stockez tous vos profils "
 "colorimétriques additionnels dans le dossier défini ici.</p>"
 
@@ -68843,7 +68839,7 @@ msgstr ""
 "étiquettes <b><a href='https://fr.wikipedia.org/wiki/"
 "Extensible_Metadata_Platform'> « XMP » </a></b> et <b><a href='https://fr."
 "wikipedia.org/wiki/IPTC'> « IPTC » </a></b>. Il n'existe aucune limitation "
-"avec « XMP ». Mais, veuillez noter que les tailles des étiquettes textuelles "
+"avec « XMP » Mais, veuillez noter que les tailles des étiquettes textuelles "
 "« IPTC » sont limitées. Veuillez utiliser l'aide contextuelle pour plus de "
 "détails.</b>"
 
@@ -68973,7 +68969,7 @@ msgstr "Paramètres de balance des blancs"
 #: core/utilities/setup/setuptooltip.cpp:225
 #, kde-format
 msgid "digiKam Information"
-msgstr "Informations sur DigiKam"
+msgstr "Informations sur digiKam"
 
 #: core/utilities/setup/setuptooltip.cpp:228
 #: core/utilities/setup/setuptooltip.cpp:301
@@ -69219,7 +69215,7 @@ msgid ""
 msgstr ""
 "Remarque : ces paramètres nécessitent l'option « Utiliser les métadonnées "
 "des fichiers » de la page « Comportement de la configuration de l'appareil "
-"photo »."
+"photo »"
 
 #: core/utilities/setup/setuptooltip.cpp:408
 #, kde-format
