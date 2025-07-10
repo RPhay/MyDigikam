@@ -765,9 +765,15 @@ QUrl DBInfoIface::defaultUploadUrl() const
         place = QUrl::fromLocalFile(pics.first());
     }
 
-    Album* const album = AlbumManager::instance()->currentAlbums().first();
+    QList<Album*> albumList = AlbumManager::instance()->currentAlbums();
+    Album* album            = nullptr;
 
-    if (album->type() == Album::PHYSICAL)
+    if (!albumList.isEmpty())
+    {
+        album = albumList.first();
+    }
+
+    if (album && (album->type() == Album::PHYSICAL))
     {
         PAlbum* const p = dynamic_cast<PAlbum*>(album);
 
