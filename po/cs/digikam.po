@@ -61248,9 +61248,7 @@ msgid "File, Album, Tags"
 msgstr "Soubor, album, značky"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@title: item properties"
-#| msgid "Item Properties"
+#, kde-format
 msgid "Item Properties"
 msgstr "Vlastnosti položky"
 
