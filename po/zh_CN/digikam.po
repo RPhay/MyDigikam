@@ -2889,8 +2889,7 @@ msgstr "标记"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, fuzzy, kde-format
-#| msgid "Scan for Faces"
+#, kde-format
 msgctxt "@label short translated text about the scan for faces"
 msgid "Scan for Faces"
 msgstr "扫描人脸"
@@ -3247,10 +3246,9 @@ msgid "%1/%2 items selected"
 msgstr "已选中 %1 项，共 %2 项"
 
 #: core/app/views/stack/welcomepageview.cpp:98
-#, fuzzy, kde-format
-#| msgid "More than 1500 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1700 user-reports closed on bugzilla."
-msgstr "解决了 1500 多个用户上报的程序缺陷。"
+msgstr "解决了 1700 多个用户上报的程序缺陷。"
 
 #: core/app/views/stack/welcomepageview.cpp:99
 #, kde-format
@@ -3458,14 +3456,11 @@ msgid "Queue Manager: add new tool to run G'MIC filters in batch."
 msgstr "批处理管理：新增了批量运行 G'MIC 滤镜的工具。"
 
 #: core/app/views/stack/welcomepageview.cpp:131
-#, fuzzy, kde-format
-#| msgid ""
-#| "Queue Manager: add new tool to assign rating, pick, and color labels in "
-#| "batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to perform auto-rotation based on content "
 "analysis using DNN."
-msgstr "队列管理器：新增用于批量分配评分、挑选标记、颜色标记的新工具。"
+msgstr "队列管理器：新增工具以执行基于深度神经网络内容分析的自动旋转。"
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
@@ -3491,21 +3486,18 @@ msgstr ""
 "\">详情请见 GoSC-2023 的报告。</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
-"更新 G'MIC-Qt 工具到最新的 3.4.0 版，完成相关插件的 macOS 移植，改善其稳定"
+"更新 G'MIC-Qt 工具到最新的 3.5.0 版，完成相关插件的 macOS 移植，改善其稳定"
 "性。"
 
 #: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
 msgid "New G'MIC generic plugin working as layer mode from a stack of images."
-msgstr ""
+msgstr "新版 G'MIC 常规插件，可作为图层模式从一组图像中运行。"
 
 #: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
@@ -3535,18 +3527,17 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid "New option to scan image for recognize faces at startup."
-msgstr ""
+msgstr "新增选项：启动时扫描图像以识别人脸。"
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid "New option to turn on/off OpenCL support with face management."
-msgstr ""
+msgstr "新增选项：打开/关闭人脸管理的 OpenCL 支持。"
 
 #: core/app/views/stack/welcomepageview.cpp:145
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
-msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 2024-10-09。"
+msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 2025-05-12。"
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
@@ -33761,11 +33752,10 @@ msgstr ""
 "置仅适用于 YuNet。</p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgctxt "@title short translated text"
 msgid "Detection"
-msgstr "人脸检测"
+msgstr "检测"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
 #, kde-format
@@ -33789,12 +33779,10 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@option:check with a short translated text"
-#| msgid "Work on all processor cores"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Uses all processors"
-msgstr "使用全部处理器核心"
+msgstr "使用所有处理器"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
 #, kde-format
@@ -33809,11 +33797,10 @@ msgstr ""
 "或者选择在后台使用单一处理器内核以减少卡顿。"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#, kde-format
 msgctxt "@title short translated text"
 msgid "Recognition"
-msgstr "人脸识别"
+msgstr "识别"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
@@ -34341,12 +34328,10 @@ msgstr ""
 "b>：仅扫描没有自动挑选标记的项目。</p>"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rejected"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Low as Rejected"
-msgstr "否决"
+msgstr "低品质分类到否决"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
@@ -34362,7 +34347,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Medium as Pending"
-msgstr ""
+msgstr "中品质分类到待定"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, kde-format
@@ -34375,12 +34360,10 @@ msgstr ""
 "将分配“待定”挑选标签 (黄标)。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Accepted"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "High as Accepted"
-msgstr "接受"
+msgstr "高品质分类到接受"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, kde-format
@@ -34399,12 +34382,10 @@ msgid "Quality Engine:"
 msgstr "图像品质检测引擎："
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@option:radio with a short translated text"
-#| msgid "Detect Aesthetic Contents"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Aesthetic Contents"
-msgstr "检测内容美感"
+msgstr "内容美感"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
 #, kde-format
@@ -34418,9 +34399,7 @@ msgstr ""
 "美感检测引擎基于深度学习模型来对图像进行分类。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Basic Factors"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Basic Factors"
 msgstr "主要劣化因素 "
@@ -34450,12 +34429,10 @@ msgstr ""
 "或者选择在后台使用单一处理器内核以减少卡顿。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rejected"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Rejected:"
-msgstr "否决"
+msgstr "否决："
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -34464,12 +34441,10 @@ msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr "低于此阈值的所有图像将被指定“否决”标记。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Pending"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Pending:"
-msgstr "待定"
+msgstr "待定："
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -34478,12 +34453,10 @@ msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr "低于此阈值的所有图像将被指定“待定”标记。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Accepted"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Accepted:"
-msgstr "接受"
+msgstr "接受："
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, kde-format
@@ -34492,9 +34465,7 @@ msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr "高于此阈值的所有图像将被指定“接受”标记。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Blur"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Blur"
 msgstr "模糊"
@@ -34520,11 +34491,10 @@ msgid "Weight to assign to Blur Algorithm"
 msgstr "模糊检测算法的权重"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
-#, fuzzy, kde-format
-#| msgid "Noise:"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Noise"
-msgstr "噪点："
+msgstr "噪点"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
@@ -34539,18 +34509,16 @@ msgid "Weight to assign to Noise Algorithm"
 msgstr "噪点检测算法的权重"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
-#, fuzzy, kde-format
-#| msgctxt "@option:check with a short translated text"
-#| msgid "Detect Compression"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Compression"
-msgstr "检测有损压缩"
+msgstr "压缩"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
-msgstr "检测图像的压缩级别。"
+msgstr "检测图像的压缩劣化。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:251
 #, kde-format
@@ -34559,11 +34527,10 @@ msgid "Weight to assign to Compression Algorithm"
 msgstr "压缩检测算法的权重"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
-#, fuzzy, kde-format
-#| msgid "Exposure"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Exposure"
-msgstr "曝光时间"
+msgstr "曝光"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
 #, kde-format
@@ -38583,12 +38550,10 @@ msgstr ""
 "b>：仅扫描没有自动分配标签的项目。</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@label with a short translated text "
-#| msgid "Auto-Tagging Mode:"
+#, kde-format
 msgctxt "@label with a short translated text "
 msgid "Tagging Mode:"
-msgstr "自动标签模式："
+msgstr "标签模式："
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
@@ -38614,14 +38579,12 @@ msgstr ""
 "p><p><b>附加</b>：将扫描发现的新自动标签附加到已有的自动标签中。</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
 msgid "Model:"
-msgstr "型号："
+msgstr "模型："
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
 #, kde-format
@@ -38629,9 +38592,7 @@ msgid "No models available"
 msgstr "没有可用的模型"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@label short translated text about the Face Detection Accuracy"
-#| msgid "Accuracy:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Accuracy:"
 msgstr "精度："
@@ -60122,12 +60083,10 @@ msgid ""
 msgstr "启用此选项将保存当前更改到文件的新建版本"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores"
+#, kde-format
 msgctxt "@option:check"
 msgid "Uses all processors"
-msgstr "使用全部处理器核心"
+msgstr ""
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
 #, kde-format
@@ -60948,10 +60907,9 @@ msgid "Empty Text"
 msgstr "空白文字"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
-#, fuzzy, kde-format
-#| msgid "Return items without text in:"
+#, kde-format
 msgid "Return items without text in"
-msgstr "返回不含以下文字的项目："
+msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
 #, kde-format
@@ -61208,11 +61166,9 @@ msgid "File, Album, Tags"
 msgstr "文件 / 相册 / 标签"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@title: item properties"
-#| msgid "Item Properties"
+#, kde-format
 msgid "Item Properties"
-msgstr "项目属性"
+msgstr ""
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
@@ -64828,10 +64784,9 @@ msgid ""
 msgstr "此选项仍是实验性质，需手动设置某些环境变量才能生效。"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:125
-#, fuzzy, kde-format
-#| msgid "Use OpenCL hardware acceleration for AI models"
+#, kde-format
 msgid "Use OpenCL acceleration for AI models"
-msgstr "使用 OpenCL 硬件加速处理 AI 模型"
+msgstr "使用 OpenCL 加速 AI 模型"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:126
 #, kde-format
@@ -65982,65 +65937,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgid "Scan collection for faces"
-#~ msgstr "扫描相册集合中的人脸"
-
-#~ msgid "Face Detection Settings"
-#~ msgstr "人脸检测设置"
-
-#~ msgid "Face Recognition Settings"
-#~ msgstr "人脸检测设置"
-
-#~ msgctxt "@option:check with a short translated text"
-#~ msgid "Assign Low Quality to Rejected Label"
-#~ msgstr "分配否决标记给低品质项目"
-
-#~ msgctxt "@option:check with a short translated text"
-#~ msgid "Assign Medium Quality to Pending Label"
-#~ msgstr "分配待定标记给中品质项目"
-
-#~ msgctxt "@option:check with a short translated text"
-#~ msgid "Assign High Quality to Accepted Label"
-#~ msgstr "分配接受标记给高品质项目"
-
-#~ msgctxt "@option:radio with a short translated text"
-#~ msgid "Detect by Basic Factors"
-#~ msgstr "检测主要劣化因素"
-
-#~ msgctxt "@label with a short translated text"
-#~ msgid "Rejected threshold:"
-#~ msgstr "否决阈值："
-
-#~ msgctxt "@label with a short translated text"
-#~ msgid "Pending threshold:"
-#~ msgstr "待定阈值："
-
-#~ msgctxt "@label with a short translated text"
-#~ msgid "Accepted threshold:"
-#~ msgstr "接受阈值："
-
-#~ msgctxt "@option:check with a short translated text"
-#~ msgid "Detect Blur"
-#~ msgstr "检测模糊"
-
-#~ msgctxt "@option:check with a short translated text"
-#~ msgid "Detect Noise"
-#~ msgstr "检测噪点"
-
-#~ msgctxt "@option:check with a short translated text"
-#~ msgid "Detect Under and Over Exposure"
-#~ msgstr "检测曝光不足/过度"
-
-#~ msgctxt ""
-#~ "@label with a short translated text about deep learning model used to "
-#~ "detect objects to auto-tag"
-#~ msgid "Detection Model:"
-#~ msgstr "检测模型："
-
-#~ msgctxt "@label with a short translated text"
-#~ msgid "Detection Accuracy:"
-#~ msgstr "检测精度："
-
-#~ msgid "Picture Properties"
-#~ msgstr "图像属性"

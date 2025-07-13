@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 02:03+0000\n"
+"POT-Creation-Date: 2025-07-08 01:59+0000\n"
 "PO-Revision-Date: 2024-03-09 12:45+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -376,13 +376,13 @@ msgstr ""
 "Dette inkluderer også avkryssingsboksen «%1»."
 
 #: core/app/filters/filtersidebarwidget.cpp:156
-#: core/utilities/searchwindow/searchgroup_label.cpp:286
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "OR"
 msgstr "OR"
 
 #: core/app/filters/filtersidebarwidget.cpp:159
-#: core/utilities/searchwindow/searchgroup_label.cpp:282
+#: core/utilities/searchwindow/searchgroup_label.cpp:278
 #, kde-format
 msgid "AND"
 msgstr "AND"
@@ -2898,8 +2898,9 @@ msgstr "Etiketter"
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
 #, kde-format
-msgid "Scan collection for faces"
-msgstr "Skann samlingen etter ansikter"
+msgctxt "@label short translated text about the scan for faces"
+msgid "Scan for Faces"
+msgstr ""
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, kde-format
@@ -20225,7 +20226,7 @@ msgstr ""
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:199
+#: core/utilities/searchwindow/searchgroup_label.cpp:195
 #, kde-format
 msgid "Options"
 msgstr "Valg"
@@ -33240,7 +33241,8 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
 #, kde-format
-msgid "Face Detection Settings"
+msgctxt "@title short translated text"
+msgid "Detection"
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
@@ -33264,7 +33266,7 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
 #, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Work on all processor cores"
+msgid "Uses all processors"
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
@@ -33278,7 +33280,8 @@ msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, kde-format
-msgid "Face Recognition Settings"
+msgctxt "@title short translated text"
+msgid "Recognition"
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
@@ -33807,7 +33810,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
 #, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Assign Low Quality to Rejected Label"
+msgid "Low as Rejected"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
@@ -33821,7 +33824,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Assign Medium Quality to Pending Label"
+msgid "Medium as Pending"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
@@ -33835,7 +33838,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
 #, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Assign High Quality to Accepted Label"
+msgid "High as Accepted"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
@@ -33855,7 +33858,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
 #, kde-format
 msgctxt "@option:radio with a short translated text"
-msgid "Detect Aesthetic Contents"
+msgid "Aesthetic Contents"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
@@ -33870,7 +33873,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, kde-format
 msgctxt "@option:radio with a short translated text"
-msgid "Detect by Basic Factors"
+msgid "Basic Factors"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
@@ -33894,7 +33897,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, kde-format
 msgctxt "@label with a short translated text"
-msgid "Rejected threshold:"
+msgid "Rejected:"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
@@ -33906,7 +33909,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
 #, kde-format
 msgctxt "@label with a short translated text"
-msgid "Pending threshold:"
+msgid "Pending:"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
@@ -33918,7 +33921,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
 #, kde-format
 msgctxt "@label with a short translated text"
-msgid "Accepted threshold:"
+msgid "Accepted:"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
@@ -33930,7 +33933,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
 #, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Blur"
+msgid "Blur"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
@@ -33956,7 +33959,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
 #, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Noise"
+msgid "Noise"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
@@ -33974,7 +33977,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
 #, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Compression"
+msgid "Compression"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
@@ -33992,7 +33995,7 @@ msgstr ""
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
 #, kde-format
 msgctxt "@option:check with a short translated text"
-msgid "Detect Under and Over Exposure"
+msgid "Exposure"
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:255
@@ -37946,7 +37949,7 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
 #, kde-format
 msgctxt "@label with a short translated text "
-msgid "Auto-Tagging Mode:"
+msgid "Tagging Mode:"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
@@ -37975,7 +37978,7 @@ msgstr ""
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
-msgid "Detection Model:"
+msgid "Model:"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
@@ -37986,7 +37989,7 @@ msgstr ""
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
 #, kde-format
 msgctxt "@label with a short translated text"
-msgid "Detection Accuracy:"
+msgid "Accuracy:"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
@@ -59278,8 +59281,8 @@ msgstr ""
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
-msgid "Work on all processor cores"
-msgstr "Arbeid på alle prosessorkjerner"
+msgid "Uses all processors"
+msgstr ""
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
 #, kde-format
@@ -60103,7 +60106,7 @@ msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, kde-format
-msgid "Return items without text in:"
+msgid "Return items without text in"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
@@ -60362,8 +60365,8 @@ msgstr "Fil, album, etiketter"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
 #, kde-format
-msgid "Picture Properties"
-msgstr "Bildeegenskaper"
+msgid "Item Properties"
+msgstr ""
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
@@ -60405,22 +60408,19 @@ msgstr "Ingen av disse betingelsene er oppfylt"
 msgid "At least one of these conditions is not met"
 msgstr "Minst en av disse betingelsene er ikke oppfylt"
 
-#. i18n("Find Pictures meeting all of these conditions"));
-#. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
-#.
-#: core/utilities/searchwindow/searchgroup_label.cpp:105
+#: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, kde-format
 msgid ""
 "<qt><p>Search your collection<br/>for Items meeting the following "
 "conditions</p></qt>"
 msgstr ""
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:143
+#: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
 msgid "Remove Group"
 msgstr "Fjern gruppe"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:187
+#: core/utilities/searchwindow/searchgroup_label.cpp:183
 #, kde-format
 msgid "Hide Options"
 msgstr ""
@@ -61877,7 +61877,7 @@ msgid "Download Required Model Files"
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:156
-#: core/utilities/setup/misc/systemsettingswidget.cpp:140
+#: core/utilities/setup/misc/systemsettingswidget.cpp:138
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr ""
@@ -61902,18 +61902,18 @@ msgstr ""
 msgid "Use AutoTags Assignment feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:251
+#: core/utilities/setup/downloader/filesdownloader.cpp:258
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:260
+#: core/utilities/setup/downloader/filesdownloader.cpp:267
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:261
+#: core/utilities/setup/downloader/filesdownloader.cpp:268
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61925,33 +61925,33 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:269
+#: core/utilities/setup/downloader/filesdownloader.cpp:276
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:407
+#: core/utilities/setup/downloader/filesdownloader.cpp:414
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:431
+#: core/utilities/setup/downloader/filesdownloader.cpp:438
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:438
+#: core/utilities/setup/downloader/filesdownloader.cpp:445
 #, kde-format
 msgid "File open error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:453
+#: core/utilities/setup/downloader/filesdownloader.cpp:460
 #, kde-format
 msgid "File on the server is too large."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:537
+#: core/utilities/setup/downloader/filesdownloader.cpp:544
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -61961,7 +61961,7 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:543
+#: core/utilities/setup/downloader/filesdownloader.cpp:550
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -61973,18 +61973,18 @@ msgid ""
 "b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:551
+#: core/utilities/setup/downloader/filesdownloader.cpp:558
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:559
+#: core/utilities/setup/downloader/filesdownloader.cpp:566
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:579
+#: core/utilities/setup/downloader/filesdownloader.cpp:586
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""
@@ -63803,106 +63803,106 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:115
+#: core/utilities/setup/misc/systemsettingswidget.cpp:113
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:116
+#: core/utilities/setup/misc/systemsettingswidget.cpp:114
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:120
+#: core/utilities/setup/misc/systemsettingswidget.cpp:118
 #, kde-format
 msgid "Use software OpenGL for rendering"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:124
+#: core/utilities/setup/misc/systemsettingswidget.cpp:122
 #, kde-format
 msgid "Use OpenCL hardware acceleration"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:125
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, kde-format
 msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:127
+#: core/utilities/setup/misc/systemsettingswidget.cpp:125
 #, kde-format
 msgid "Use OpenCL acceleration for AI models"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:128
+#: core/utilities/setup/misc/systemsettingswidget.cpp:126
 #, kde-format
 msgid ""
 "This option is still experimental and may lead to crashes if the proper "
 "drivers are not installed."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:131
+#: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
 msgid "Test GPU AI compatibility"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:134
+#: core/utilities/setup/misc/systemsettingswidget.cpp:132
 #, kde-format
 msgid "Download required binary data:"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:135
+#: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
 msgid "Open Download Dialog..."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:138
+#: core/utilities/setup/misc/systemsettingswidget.cpp:136
 #, kde-format
 msgid "Open Local Storage..."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:146
+#: core/utilities/setup/misc/systemsettingswidget.cpp:144
 #, kde-format
 msgid "Use video hardware acceleration"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:147
+#: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
 msgid "Use video textures conversion"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:149
+#: core/utilities/setup/misc/systemsettingswidget.cpp:147
 #, kde-format
 msgid "Decoding backend to render video:"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:152
+#: core/utilities/setup/misc/systemsettingswidget.cpp:150
 #, kde-format
 msgid "FFmpeg (Default)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:156
+#: core/utilities/setup/misc/systemsettingswidget.cpp:154
 #, kde-format
 msgid "GStreamer (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:160
+#: core/utilities/setup/misc/systemsettingswidget.cpp:158
 #, kde-format
 msgid "WMF (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:164
+#: core/utilities/setup/misc/systemsettingswidget.cpp:162
 #, kde-format
 msgid "AVFoundation (System)"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:172
+#: core/utilities/setup/misc/systemsettingswidget.cpp:170
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:189
+#: core/utilities/setup/misc/systemsettingswidget.cpp:187
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
