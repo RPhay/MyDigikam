@@ -230,7 +230,7 @@ void ApplicationSettings::readSettings()
     d->scrollItemToCenter                = group.readEntry(d->configScrollItemToCenterEntry,                          false);
     d->showOnlyPersonTagsInPeopleSidebar = group.readEntry(d->configShowOnlyPersonTagsInPeopleSidebarEntry,           true);
     d->detectFacesInNewImages            = group.readEntry(d->configDetectFacesInNewImagesEntry,                      false);
-    d->faceRecognitionBackgroundScan     = group.readEntry(d->configFaceRecognitionBackgroundScanEntry,               true);
+    d->faceRecognitionBackgroundScan     = group.readEntry(d->configFaceRecognitionBackgroundScanEntry,               false);
     d->stringComparisonType              = (StringComparisonType)
                                                group.readEntry(d->configStringComparisonTypeEntry,                    (int) Natural);
 

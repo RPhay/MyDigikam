@@ -215,7 +215,7 @@ public:
     bool                                         showOnlyPersonTagsInPeopleSidebar                  = false;
 
     bool                                         detectFacesInNewImages                             = false;
-    bool                                         faceRecognitionBackgroundScan                      = true;
+    bool                                         faceRecognitionBackgroundScan                      = false;
 
     /// icon view settings
     bool                                         iconShowName                                       = true;
