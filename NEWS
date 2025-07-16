@@ -17,7 +17,7 @@ BUGFIXES:
 006 ==> 506861 - digiKam crashes when trying to start scanning, if no album is selected.
 007 ==> 507071 - Build failed with : error: ‘QString::QString(const char*)’.
 008 ==> 507092 - Small fault in the Tooltip text.
-009 ==>
+009 ==> 507064 - Crash at start due to enabled video hardware acceleration.
 010 ==>
 011 ==>
 012 ==>
