@@ -18,7 +18,7 @@ BUGFIXES:
 007 ==> 507071 - Build failed with : error: ‘QString::QString(const char*)’.
 008 ==> 507092 - Small fault in the Tooltip text.
 009 ==> 507064 - Crash at start due to enabled video hardware acceleration.
-010 ==>
+010 ==> 479792 - In "digiKam Properties" sidebar, double quotes in caption are displayed as &quot;
 011 ==>
 012 ==>
 013 ==>
