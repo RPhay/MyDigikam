@@ -322,6 +322,7 @@ bool FaceClassifier::loadTrainingData()
                     int label = labels.at<int>(i);
                     identityFeatures[label].append(samples.row(i));
                 }
+
                 int svm_iterations = qMin(
                                           qMax(
                                                20,
