@@ -35,15 +35,15 @@ BEGIN
     BEGIN
         BLOCK "040904E4"
         BEGIN
-            VALUE "CompanyName", "digiKam.org"
-            VALUE "FileDescription", "${BUNDLE_APP_DESCRIPTION_STRING}"
-            VALUE "Comments", "$BUNDLE_COMMENTS_STRING}"
-            VALUE "FileVersion", "${BUNDLE_SHORT_VERSION_STRING}"
-            VALUE "InternalName", "${BUNDLE_APP_NAME_STRING}"
-            VALUE "LegalCopyright", "${BUNDLE_LEGAL_COPYRIGHT_STRING}"
-            VALUE "OriginalFilename", "${BUNDLE_APP_NAME_STRING}.exe"
-            VALUE "ProductName", "${BUNDLE_APP_NAME_STRING}"
-            VALUE "ProductVersion", "${BUNDLE_LONG_VERSION_STRING}"
+            VALUE "CompanyName",        "digiKam.org"
+            VALUE "FileDescription",    "${BUNDLE_APP_DESCRIPTION_STRING}"
+            VALUE "Comments",           "${BUNDLE_COMMENTS_STRING}"
+            VALUE "FileVersion",        "${BUNDLE_SHORT_VERSION_STRING}"
+            VALUE "InternalName",       "${BUNDLE_APP_NAME_STRING}"
+            VALUE "LegalCopyright",     "${BUNDLE_LEGAL_COPYRIGHT_STRING}"
+            VALUE "OriginalFilename",   "${BUNDLE_APP_NAME_STRING}.exe"
+            VALUE "ProductName",        "${BUNDLE_APP_NAME_STRING}"
+            VALUE "ProductVersion",     "${BUNDLE_LONG_VERSION_STRING}"
         END
     END
     BLOCK "VarFileInfo"
