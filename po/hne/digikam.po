@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 01:59+0000\n"
+"POT-Creation-Date: 2025-07-16 02:31+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -4542,8 +4542,8 @@ msgstr "आडियो फाइल मन ल"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
-#: core/libs/dialogs/libsinfodlg.cpp:628
+#: core/libs/dialogs/libsinfodlg.cpp:554 core/libs/dialogs/libsinfodlg.cpp:560
+#: core/libs/dialogs/libsinfodlg.cpp:635
 #, fuzzy, kde-format
 msgid "no entry"
 msgstr "गननाः"
@@ -29158,40 +29158,40 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "अग्यात"
 
-#: core/libs/dialogs/libsinfodlg.cpp:436
+#: core/libs/dialogs/libsinfodlg.cpp:443
 #, fuzzy, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "अग्यात"
 
-#: core/libs/dialogs/libsinfodlg.cpp:466
+#: core/libs/dialogs/libsinfodlg.cpp:473
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:500
+#: core/libs/dialogs/libsinfodlg.cpp:507
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "कैमरा कान्फिगरेसन"
 
-#: core/libs/dialogs/libsinfodlg.cpp:696
+#: core/libs/dialogs/libsinfodlg.cpp:703
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "हाँ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:701
+#: core/libs/dialogs/libsinfodlg.cpp:708
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "नइ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:706
+#: core/libs/dialogs/libsinfodlg.cpp:713
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"

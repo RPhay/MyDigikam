@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 01:59+0000\n"
+"POT-Creation-Date: 2025-07-16 02:31+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -4703,8 +4703,8 @@ msgstr "Descodificadores de Vídeo"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
-#: core/libs/dialogs/libsinfodlg.cpp:628
+#: core/libs/dialogs/libsinfodlg.cpp:554 core/libs/dialogs/libsinfodlg.cpp:560
+#: core/libs/dialogs/libsinfodlg.cpp:635
 #, fuzzy, kde-format
 #| msgid "Country"
 msgid "no entry"
@@ -30673,37 +30673,37 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Desconhecida"
 
-#: core/libs/dialogs/libsinfodlg.cpp:436
+#: core/libs/dialogs/libsinfodlg.cpp:443
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Desconhecida"
 
-#: core/libs/dialogs/libsinfodlg.cpp:466
+#: core/libs/dialogs/libsinfodlg.cpp:473
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifestos"
 
-#: core/libs/dialogs/libsinfodlg.cpp:500
+#: core/libs/dialogs/libsinfodlg.cpp:507
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Configuração do OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:696
+#: core/libs/dialogs/libsinfodlg.cpp:703
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Sim"
 
-#: core/libs/dialogs/libsinfodlg.cpp:701
+#: core/libs/dialogs/libsinfodlg.cpp:708
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Não"
 
-#: core/libs/dialogs/libsinfodlg.cpp:706
+#: core/libs/dialogs/libsinfodlg.cpp:713
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"

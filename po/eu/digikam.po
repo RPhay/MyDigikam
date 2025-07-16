@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 01:59+0000\n"
+"POT-Creation-Date: 2025-07-16 02:31+0000\n"
 "PO-Revision-Date: 2025-01-19 14:15+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -4565,8 +4565,8 @@ msgstr "Bideo deskodetzaileak"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
-#: core/libs/dialogs/libsinfodlg.cpp:628
+#: core/libs/dialogs/libsinfodlg.cpp:554 core/libs/dialogs/libsinfodlg.cpp:560
+#: core/libs/dialogs/libsinfodlg.cpp:635
 #, kde-format
 msgid "no entry"
 msgstr "sarrerarik ez"
@@ -30495,7 +30495,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Ezezaguna"
 
-#: core/libs/dialogs/libsinfodlg.cpp:436
+#: core/libs/dialogs/libsinfodlg.cpp:443
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30503,13 +30503,13 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Ezezaguna"
 
-#: core/libs/dialogs/libsinfodlg.cpp:466
+#: core/libs/dialogs/libsinfodlg.cpp:473
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:500
+#: core/libs/dialogs/libsinfodlg.cpp:507
 #, fuzzy, kde-format
 #| msgctxt "@item: component info"
 #| msgid "FFmpeg Configuration"
@@ -30517,21 +30517,21 @@ msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "FFmpeg konfigurazioa"
 
-#: core/libs/dialogs/libsinfodlg.cpp:696
+#: core/libs/dialogs/libsinfodlg.cpp:703
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Bai"
 
-#: core/libs/dialogs/libsinfodlg.cpp:701
+#: core/libs/dialogs/libsinfodlg.cpp:708
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ez"
 
-#: core/libs/dialogs/libsinfodlg.cpp:706
+#: core/libs/dialogs/libsinfodlg.cpp:713
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"

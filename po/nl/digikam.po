@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 01:59+0000\n"
+"POT-Creation-Date: 2025-07-16 02:31+0000\n"
 "PO-Revision-Date: 2025-07-08 14:20+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -4586,8 +4586,8 @@ msgstr "Video-decoders"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
-#: core/libs/dialogs/libsinfodlg.cpp:628
+#: core/libs/dialogs/libsinfodlg.cpp:554 core/libs/dialogs/libsinfodlg.cpp:560
+#: core/libs/dialogs/libsinfodlg.cpp:635
 #, kde-format
 msgid "no entry"
 msgstr "geen item"
@@ -30436,37 +30436,37 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: core/libs/dialogs/libsinfodlg.cpp:436
+#: core/libs/dialogs/libsinfodlg.cpp:443
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: core/libs/dialogs/libsinfodlg.cpp:466
+#: core/libs/dialogs/libsinfodlg.cpp:473
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifesten"
 
-#: core/libs/dialogs/libsinfodlg.cpp:500
+#: core/libs/dialogs/libsinfodlg.cpp:507
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV-configuratie"
 
-#: core/libs/dialogs/libsinfodlg.cpp:696
+#: core/libs/dialogs/libsinfodlg.cpp:703
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Ja"
 
-#: core/libs/dialogs/libsinfodlg.cpp:701
+#: core/libs/dialogs/libsinfodlg.cpp:708
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Nee"
 
-#: core/libs/dialogs/libsinfodlg.cpp:706
+#: core/libs/dialogs/libsinfodlg.cpp:713
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"

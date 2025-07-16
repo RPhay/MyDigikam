@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 01:59+0000\n"
+"POT-Creation-Date: 2025-07-16 02:31+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -4463,8 +4463,8 @@ msgstr "Videó kodek"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
-#: core/libs/dialogs/libsinfodlg.cpp:628
+#: core/libs/dialogs/libsinfodlg.cpp:554 core/libs/dialogs/libsinfodlg.cpp:560
+#: core/libs/dialogs/libsinfodlg.cpp:635
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "no entry"
@@ -29176,7 +29176,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: core/libs/dialogs/libsinfodlg.cpp:436
+#: core/libs/dialogs/libsinfodlg.cpp:443
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -29184,32 +29184,32 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: core/libs/dialogs/libsinfodlg.cpp:466
+#: core/libs/dialogs/libsinfodlg.cpp:473
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:500
+#: core/libs/dialogs/libsinfodlg.cpp:507
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Kamera konfiguráció"
 
-#: core/libs/dialogs/libsinfodlg.cpp:696
+#: core/libs/dialogs/libsinfodlg.cpp:703
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Igen"
 
-#: core/libs/dialogs/libsinfodlg.cpp:701
+#: core/libs/dialogs/libsinfodlg.cpp:708
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:706
+#: core/libs/dialogs/libsinfodlg.cpp:713
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"

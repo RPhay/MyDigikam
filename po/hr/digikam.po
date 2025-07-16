@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 01:59+0000\n"
+"POT-Creation-Date: 2025-07-16 02:31+0000\n"
 "PO-Revision-Date: 2011-03-11 10:04+0100\n"
 "Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -4394,8 +4394,8 @@ msgstr "Datoteka: "
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
-#: core/libs/dialogs/libsinfodlg.cpp:628
+#: core/libs/dialogs/libsinfodlg.cpp:554 core/libs/dialogs/libsinfodlg.cpp:560
+#: core/libs/dialogs/libsinfodlg.cpp:635
 #, fuzzy, kde-format
 msgid "no entry"
 msgstr "Datoteka: "
@@ -28247,37 +28247,37 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Nepoznato"
 
-#: core/libs/dialogs/libsinfodlg.cpp:436
+#: core/libs/dialogs/libsinfodlg.cpp:443
 #, fuzzy, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Nepoznato"
 
-#: core/libs/dialogs/libsinfodlg.cpp:466
+#: core/libs/dialogs/libsinfodlg.cpp:473
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:500
+#: core/libs/dialogs/libsinfodlg.cpp:507
 #, fuzzy, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Ukloni koordinate…"
 
-#: core/libs/dialogs/libsinfodlg.cpp:696
+#: core/libs/dialogs/libsinfodlg.cpp:703
 #, fuzzy, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Da"
 
-#: core/libs/dialogs/libsinfodlg.cpp:701
+#: core/libs/dialogs/libsinfodlg.cpp:708
 #, fuzzy, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:706
+#: core/libs/dialogs/libsinfodlg.cpp:713
 #, fuzzy, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"

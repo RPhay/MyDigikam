@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 01:59+0000\n"
+"POT-Creation-Date: 2025-07-16 02:31+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -4733,8 +4733,8 @@ msgstr "<i>ម៉ូដែល ៖</i>"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
-#: core/libs/dialogs/libsinfodlg.cpp:628
+#: core/libs/dialogs/libsinfodlg.cpp:554 core/libs/dialogs/libsinfodlg.cpp:560
+#: core/libs/dialogs/libsinfodlg.cpp:635
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "no entry"
@@ -30530,7 +30530,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "មិន​ស្គាល់"
 
-#: core/libs/dialogs/libsinfodlg.cpp:436
+#: core/libs/dialogs/libsinfodlg.cpp:443
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30538,34 +30538,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "មិន​ស្គាល់"
 
-#: core/libs/dialogs/libsinfodlg.cpp:466
+#: core/libs/dialogs/libsinfodlg.cpp:473
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:500
+#: core/libs/dialogs/libsinfodlg.cpp:507
 #, fuzzy, kde-format
 #| msgid "Database Migration..."
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "ប្ដូរ​កន្លែង​មូលដ្ឋាន​ទិន្នន័យ..."
 
-#: core/libs/dialogs/libsinfodlg.cpp:696
+#: core/libs/dialogs/libsinfodlg.cpp:703
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "បាទ/ចាស"
 
-#: core/libs/dialogs/libsinfodlg.cpp:701
+#: core/libs/dialogs/libsinfodlg.cpp:708
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "ទេ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:706
+#: core/libs/dialogs/libsinfodlg.cpp:713
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
