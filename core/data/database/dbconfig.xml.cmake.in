@@ -580,8 +580,7 @@
             </dbaction>
 
             <dbaction name="RenameFaceDBFaceMatrices_contextcolumn_V5" mode="transaction">
-                <statement mode="plain">ALTER TABLE FaceMatrices
-                                        RENAME COLUMN `context` TO removeHash;
+                <statement mode="plain">ALTER TABLE FaceMatrices CHANGE `context` removeHash TEXT;
                 </statement>
             </dbaction>
 
