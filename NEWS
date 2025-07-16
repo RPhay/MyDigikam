@@ -16,7 +16,7 @@ BUGFIXES:
 005 ==> 506712 - Two small note about the "New Advanced Search" menu.
 006 ==> 506861 - digiKam crashes when trying to start scanning, if no album is selected.
 007 ==> 507071 - Build failed with : error: ‘QString::QString(const char*)’.
-008 ==>
+008 ==> 507092 - Small fault in the Tooltip text.
 009 ==>
 010 ==>
 011 ==>

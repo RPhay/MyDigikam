@@ -150,7 +150,7 @@ void ImageQualityWidget::setupUi()
                                                        "Basic Factors"), this);
     d->detectBasicFactors->setToolTip(i18nc("@info:tooltip", "Detect if the image is sabotaging using four basic factors\n"
                                             "eg. blur, noise, exposure (under / over), and compression levels.\n"
-                                            "See the relevant settings from the next <b>Basic Factors</b> tab."));
+                                            "See the relevant settings from the next \"Basic Factors\" tab."));
 
     d->detectButtonGroup->addButton(d->detectBasicFactors, Private::BASICFACTORS);
     d->detectAesthetic->setChecked(true);
