@@ -15,7 +15,7 @@ BUGFIXES:
 004 ==> 506671 - Split single digikam database into core/thumb/faces/similarity dbs.
 005 ==> 506712 - Two small note about the "New Advanced Search" menu.
 006 ==> 506861 - digiKam crashes when trying to start scanning, if no album is selected.
-007 ==>
+007 ==> 507071 - Build failed with : error: ‘QString::QString(const char*)’.
 008 ==>
 009 ==>
 010 ==>

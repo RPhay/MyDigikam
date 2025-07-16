@@ -419,12 +419,12 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18ncp(CONTEXT, "CPU core", "CPU cores", nbcore) << QString::fromLatin1("%1").arg(nbcore));
 
-    new QTreeWidgetItem(m_features, QStringList() <<
+    new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "Cmake")                  <<         QLatin1String(CMAKE_VERSION_STRING));
 
-    new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Compiler")               <<         QString::fromLatin1("%1 - %2").arg(CMAKE_CXX_COMPILER_ID)
-                                                                                                          .arg(CMAKE_CXX_COMPILER_VERSION));
+    new QTreeWidgetItem(m_libraries, QStringList() <<
+                        i18nc(CONTEXT, "Compiler")               <<         QString::fromLatin1("%1 - %2").arg(QLatin1String(CMAKE_CXX_COMPILER_ID))
+                                                                                                          .arg(QLatin1String(CMAKE_CXX_COMPILER_VERSION)));
 
     KMemoryInfo memInfo;
 
