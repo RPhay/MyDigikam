@@ -93,7 +93,7 @@ void ImageQualityWidget::setupUi()
 
     d->setRejected            = new QCheckBox(i18nc("@option:check with a short translated text",
                                                     "Low as Rejected"), hlay1);
-    d->setRejected->setToolTip(i18nc("@info:tooltip", "Low quality images detected by the quality engine\n"
+    d->setRejected->setToolTip(i18nc("@info:tooltip", "Low quality images detected by the quality engine<br>"
                                      "will be assigned to the rejected pick label (red flag)."));
 
     QWidget* const hspace1    = new QWidget(hlay1);
@@ -108,7 +108,7 @@ void ImageQualityWidget::setupUi()
 
     d->setPending             = new QCheckBox(i18nc("@option:check with a short translated text",
                                                     "Medium as Pending"), hlay2);
-    d->setPending->setToolTip(i18nc("@info:tooltip", "Medium quality images detected by the quality engine\n"
+    d->setPending->setToolTip(i18nc("@info:tooltip", "Medium quality images detected by the quality engine<br>"
                                     "will be assigned to the pending pick label (yellow flag)."));
 
     QWidget* const hspace2    = new QWidget(hlay2);
@@ -123,7 +123,7 @@ void ImageQualityWidget::setupUi()
 
     d->setAccepted            = new QCheckBox(i18nc("@option:check with a short translated text",
                                                     "High as Accepted"), hlay3);
-    d->setAccepted->setToolTip(i18nc("@info:tooltip", "High quality images detected by the quality engine\n"
+    d->setAccepted->setToolTip(i18nc("@info:tooltip", "High quality images detected by the quality engine<br>"
                                      "will be assigned to the accepted pick label (green flag)."));
 
     QWidget* const hspace3    = new QWidget(hlay3);
@@ -141,16 +141,16 @@ void ImageQualityWidget::setupUi()
 
     d->detectAesthetic        = new QRadioButton(i18nc("@option:radio with a short translated text",
                                                        "Aesthetic Contents"), this);
-    d->detectAesthetic->setToolTip(i18nc("@info:tooltip", "Detect if the image has aesthetic contents.\n"
+    d->detectAesthetic->setToolTip(i18nc("@info:tooltip", "Detect if the image has aesthetic contents.<br>"
                                          "The aesthetic detection engine is based on a deep learning model to classify images."));
 
     d->detectButtonGroup->addButton(d->detectAesthetic, Private::AESTHETIC);
 
     d->detectBasicFactors     = new QRadioButton(i18nc("@option:radio with a short translated text",
                                                        "Basic Factors"), this);
-    d->detectBasicFactors->setToolTip(i18nc("@info:tooltip", "Detect if the image is sabotaging using four basic factors\n"
-                                            "eg. blur, noise, exposure (under / over), and compression levels.\n"
-                                            "See the relevant settings from the next \"Basic Factors\" tab."));
+    d->detectBasicFactors->setToolTip(i18nc("@info:tooltip", "Detect if the image is sabotaging using four basic factors<br>"
+                                            "eg. blur, noise, exposure (under / over), and compression levels.<br>"
+                                            "See the relevant settings from the next <b>Basic Factors</b> tab."));
 
     d->detectButtonGroup->addButton(d->detectBasicFactors, Private::BASICFACTORS);
     d->detectAesthetic->setChecked(true);
@@ -162,8 +162,8 @@ void ImageQualityWidget::setupUi()
     d->useFullCpuButton->setText(i18nc("@option:check with a short translated text",
                                        "Uses all processors"));
     d->useFullCpuButton->setToolTip(i18nc("@info:tooltip",
-                                          "Quality detection is time-consuming tasks.\n"
-                                          "You can choose if you wish to employ all processor cores\n"
+                                          "Quality detection is time-consuming tasks.<br>"
+                                          "You can choose if you wish to employ all processor cores<br>"
                                           "on your system, or work in the background only on one core."));
 
     // ------------------------------------------------------------------------------

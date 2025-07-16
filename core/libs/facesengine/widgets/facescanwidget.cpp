@@ -107,9 +107,9 @@ void FaceScanWidget::setupUi()
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan all images"),           FaceScanSettings::Rescan);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Recognize faces only"),      FaceScanSettings::RecognizeOnly);
     d->alreadyScannedBox->setToolTip(i18nc("@info:tooltip",
-                                           "digiKam can search for faces in your photos.\n"
-                                           "When you have identified your friends on a number of photos,\n"
-                                           "it can also recognize the people shown on your photos.\n"
+                                           "digiKam can search for faces in your photos.<br>"
+                                           "When you have identified your friends on a number of photos,<br>"
+                                           "it can also recognize the people shown on your photos."
                                            "<p><b>Scan new images</b> will scan for faces and attempt recognition for new images found in the albums selected in the \"Search in\" tab.</p>"
                                            "<p><b>Scan all images</b> will scan for faces and attempt recognition for all images found in the albums selected in the \"Search in\" tab.</p>"
                                            "<p><b>Recognize faces only</b> will try to match unknown faces with confirmed faces without scanning images new faces.</p>"));
@@ -133,7 +133,7 @@ void FaceScanWidget::setupUi()
     d->detectAccuracyInput->setRange(1, 10, 1);
     d->detectAccuracyInput->setToolTip(i18nc("@info:tooltip",
                                              "Adjust sensitivity versus specificity: the higher the value, "
-                                             "the more accurately faces will\n"
+                                             "the more accurately faces will<br>"
                                              "be detected, but less faces will be detected."));
 
     QLabel* const detectSizeLabel       = new QLabel(i18nc("@label with a short translated text about the face size for detection",
@@ -181,8 +181,8 @@ void FaceScanWidget::setupUi()
     d->recognizeAccuracyInput->setDefaultValue(7);
     d->recognizeAccuracyInput->setRange(1, 10, 1);
     d->recognizeAccuracyInput->setToolTip(i18nc("@info:tooltip",
-                                                "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will\n"
-                                                "be recognized, but less faces will be recognized.\n"
+                                                "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will<br>"
+                                                "be recognized, but less faces will be recognized.<br>"
                                                 "Note: only faces that are very similar to pre-tagged faces are recognized."));
 
     recognizeGrid->addWidget(recognizeAccuracyLabel,    0, 0, 1, 1);
@@ -194,8 +194,8 @@ void FaceScanWidget::setupUi()
     d->useFullCpuButton->setText(i18nc("@option:check with a short translated text",
                                        "Uses all processors"));
     d->useFullCpuButton->setToolTip(i18nc("@info:tooltip",
-                                          "Face detection and recognition are time-consuming tasks.\n"
-                                          "You can choose if you wish to employ all processor cores\n"
+                                          "Face detection and recognition are time-consuming tasks.<br>"
+                                          "You can choose if you wish to employ all processor cores<br>"
                                           "on your system, or work in the background only on one core."));
 
     expBox->addItem(recognizeWidget, i18nc("@title short translated text", "Recognition"),

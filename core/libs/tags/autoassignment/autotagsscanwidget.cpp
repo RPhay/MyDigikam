@@ -150,15 +150,15 @@ void AutotagsScanWidget::setupUi()
     d->accuracyInput->setDefaultValue(7);
     d->accuracyInput->setRange(1, 10, 1);
     d->accuracyInput->setToolTip(i18nc("@info:tooltip",
-                                       "Adjust sensitivity versus specificity: the higher the value, the more accurately objects will\n"
-                                       "be recognized, but fewer objects will be recognized.\n"));
+                                       "Adjust sensitivity versus specificity: the higher the value, the more accurately objects will<br>"
+                                       "be recognized, but fewer objects will be recognized.<br>"));
 
     d->useFullCpuButton     = new QCheckBox(d->settingsTab);
     d->useFullCpuButton->setText(i18nc("@option:check with a short translated text",
                                        "Uses all processors"));
     d->useFullCpuButton->setToolTip(i18nc("@info:tooltip",
-                                          "Object detection and auto-tagging are time-consuming tasks.\n"
-                                          "You can choose if you wish to employ all processor cores\n"
+                                          "Object detection and auto-tagging are time-consuming tasks.<br>"
+                                          "You can choose if you wish to employ all processor cores<br>"
                                           "on your system, or work in the background only on one core."));
 
     grid->addWidget(title,                0, 0, 1, 2);
