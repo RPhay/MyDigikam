@@ -240,14 +240,14 @@ void ItemPropertiesTab::setTitle(const QString& str)
 {
     // NOTE: special case for the title. See bug #460134
 
-    d->labelTitle->setText(d->cnt.breakString((str.size() > 100) ? str.left(100) + QLatin1String("...") : str));
+    d->labelTitle->setText((str.size() > 200) ? str.left(200) + QLatin1String("...") : str);
 }
 
 void ItemPropertiesTab::setCaption(const QString& str)
 {
     // NOTE: special case for the caption. See bug #460134
 
-    d->labelCaption->setText(d->cnt.breakString((str.size() > 100) ? str.left(100) + QLatin1String("...") : str));
+    d->labelCaption->setText((str.size() > 200) ? str.left(200) + QLatin1String("...") : str);
 }
 
 void ItemPropertiesTab::setColorLabel(int colorId)

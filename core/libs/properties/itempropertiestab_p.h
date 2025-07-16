@@ -42,7 +42,6 @@
 #include "itempropertiestxtlabel.h"
 #include "picklabelwidget.h"
 #include "colorlabelwidget.h"
-#include "ditemtooltip.h"
 
 namespace Digikam
 {
@@ -115,8 +114,6 @@ public:
     DTextLabelValue*   labelVideoAudioBitRate       = nullptr;
     DTextLabelValue*   labelVideoAudioChannelType   = nullptr;
     DTextLabelValue*   labelVideoAudioCodec         = nullptr;
-
-    DToolTipStyleSheet cnt;
 };
 
 } // namespace Digikam
