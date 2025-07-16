@@ -319,7 +319,7 @@ bool FaceClassifier::loadTrainingData()
 
                 for (int i = 0 ; i < labels.rows ; ++i)
                 {
-                    int label = labels.at<int>(cv::Point(i, 0));
+                    int label = labels.at<int>(i);
                     identityFeatures[label].append(samples.row(i));
                 }
                 int svm_iterations = qMin(
