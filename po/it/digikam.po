@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-16 02:31+0000\n"
-"PO-Revision-Date: 2025-07-01 19:49+0200\n"
+"POT-Creation-Date: 2025-07-17 01:57+0000\n"
+"PO-Revision-Date: 2025-07-12 20:41+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -2965,8 +2965,7 @@ msgstr "Etichette"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, fuzzy, kde-format
-#| msgid "Scan for Faces"
+#, kde-format
 msgctxt "@label short translated text about the scan for faces"
 msgid "Scan for Faces"
 msgstr "Analizza i volti"
@@ -35253,18 +35252,28 @@ msgid "Recognize faces only"
 msgstr "Riconosci solo i volti"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:110
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "digiKam can search for faces in your photos.\n"
+#| "When you have identified your friends on a number of photos,\n"
+#| "it can also recognize the people shown on your photos.\n"
+#| "<p><b>Scan new images</b> will scan for faces and attempt recognition for "
+#| "new images found in the albums selected in the \"Search in\" tab.</"
+#| "p><p><b>Scan all images</b> will scan for faces and attempt recognition "
+#| "for all images found in the albums selected in the \"Search in\" tab.</"
+#| "p><p><b>Recognize faces only</b> will try to match unknown faces with "
+#| "confirmed faces without scanning images new faces.</p>"
 msgctxt "@info:tooltip"
 msgid ""
-"digiKam can search for faces in your photos.\n"
-"When you have identified your friends on a number of photos,\n"
-"it can also recognize the people shown on your photos.\n"
-"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
-"new images found in the albums selected in the \"Search in\" tab.</"
-"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
-"all images found in the albums selected in the \"Search in\" tab.</"
-"p><p><b>Recognize faces only</b> will try to match unknown faces with "
-"confirmed faces without scanning images new faces.</p>"
+"digiKam can search for faces in your photos.<br>When you have identified "
+"your friends on a number of photos,<br>it can also recognize the people "
+"shown on your photos.<p><b>Scan new images</b> will scan for faces and "
+"attempt recognition for new images found in the albums selected in the "
+"\"Search in\" tab.</p><p><b>Scan all images</b> will scan for faces and "
+"attempt recognition for all images found in the albums selected in the "
+"\"Search in\" tab.</p><p><b>Recognize faces only</b> will try to match "
+"unknown faces with confirmed faces without scanning images new faces.</p>"
 msgstr ""
 "digiKam è in grado di ricercare volti nelle tue fotografie.\n"
 "Una volta che hai individuato i tuoi amici in alcune foto,\n"
@@ -35284,12 +35293,16 @@ msgid "Accuracy:"
 msgstr "Accuratezza:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:135
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Adjust sensitivity versus specificity: the higher the value, the more "
+#| "accurately faces will\n"
+#| "be detected, but less faces will be detected."
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will\n"
-"be detected, but less faces will be detected."
+"accurately faces will<br>be detected, but less faces will be detected."
 msgstr ""
 "Regola la sensibilità rispetto alla specificità: più alto è il valore, più "
 "accuratamente\n"
@@ -35364,11 +35377,10 @@ msgstr ""
 "o <b>Grande</b>.</p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgctxt "@title short translated text"
 msgid "Detection"
-msgstr "Rilevamento facciale"
+msgstr "Rilevamento"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
 #, kde-format
@@ -35377,13 +35389,19 @@ msgid "Accuracy:"
 msgstr "Accuratezza:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:184
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Adjust sensitivity versus specificity: the higher the value, the more "
+#| "accurately faces will\n"
+#| "be recognized, but less faces will be recognized.\n"
+#| "Note: only faces that are very similar to pre-tagged faces are recognized."
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will\n"
-"be recognized, but less faces will be recognized.\n"
-"Note: only faces that are very similar to pre-tagged faces are recognized."
+"accurately faces will<br>be recognized, but less faces will be recognized."
+"<br>Note: only faces that are very similar to pre-tagged faces are "
+"recognized."
 msgstr ""
 "Regola la sensibilità rispetto alla specificità: più alto è il valore, più "
 "accuratamente\n"
@@ -35394,20 +35412,23 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@option:check with a short translated text"
-#| msgid "Work on all processor cores"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Uses all processors"
-msgstr "Lavora con tutti i core del processore"
+msgstr "Usa tutti i processori"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Face detection and recognition are time-consuming tasks.\n"
+#| "You can choose if you wish to employ all processor cores\n"
+#| "on your system, or work in the background only on one core."
 msgctxt "@info:tooltip"
 msgid ""
-"Face detection and recognition are time-consuming tasks.\n"
-"You can choose if you wish to employ all processor cores\n"
-"on your system, or work in the background only on one core."
+"Face detection and recognition are time-consuming tasks.<br>You can choose "
+"if you wish to employ all processor cores<br>on your system, or work in the "
+"background only on one core."
 msgstr ""
 "Il rilevamento e il riconoscimento facciale sono processi che richiedono "
 "tempo.\n"
@@ -35415,11 +35436,10 @@ msgstr ""
 "o lavorare sullo sfondo usando un solo core."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#, kde-format
 msgctxt "@title short translated text"
 msgid "Recognition"
-msgstr "Riconoscimento facciale"
+msgstr "Riconoscimento"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
@@ -35971,55 +35991,61 @@ msgstr ""
 "scelta automatiche non assegnate.</p>"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rejected"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Low as Rejected"
-msgstr "Rifiutata"
+msgstr "Bassa poiché rifiutata"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Low quality images detected by the quality engine\n"
+#| "will be assigned to the rejected pick label (red flag)."
 msgctxt "@info:tooltip"
 msgid ""
-"Low quality images detected by the quality engine\n"
-"will be assigned to the rejected pick label (red flag)."
+"Low quality images detected by the quality engine<br>will be assigned to the "
+"rejected pick label (red flag)."
 msgstr ""
 "Le immagini di bassa qualità rilevate dal motore della qualità\n"
 "saranno assegnate all'etichetta di scelta Rifiutata (contrassegno rosso)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Medium (1 pixel)"
-#| msgid_plural "Medium (%1 pixels)"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Medium as Pending"
-msgstr "Medio (un pixel):"
+msgstr "Media poiché in sospeso"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Medium quality images detected by the quality engine\n"
+#| "will be assigned to the pending pick label (yellow flag)."
 msgctxt "@info:tooltip"
 msgid ""
-"Medium quality images detected by the quality engine\n"
-"will be assigned to the pending pick label (yellow flag)."
+"Medium quality images detected by the quality engine<br>will be assigned to "
+"the pending pick label (yellow flag)."
 msgstr ""
 "Le immagini di media qualità rilevate dal motore della qualità\n"
 "saranno assegnate all'etichetta di scelta In sospeso (contrassegno giallo)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Accepted"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "High as Accepted"
-msgstr "Accettata"
+msgstr "Alta poiché accettata"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "High quality images detected by the quality engine\n"
+#| "will be assigned to the accepted pick label (green flag)."
 msgctxt "@info:tooltip"
 msgid ""
-"High quality images detected by the quality engine\n"
-"will be assigned to the accepted pick label (green flag)."
+"High quality images detected by the quality engine<br>will be assigned to "
+"the accepted pick label (green flag)."
 msgstr ""
 "Le immagini di alta qualità rilevate dal motore della qualità\n"
 "saranno assegnate all'etichetta di scelta Accettata (contrassegno verde)."
@@ -36031,40 +36057,45 @@ msgid "Quality Engine:"
 msgstr "Motore della qualità:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@option:radio with a short translated text"
-#| msgid "Detect Aesthetic Contents"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Aesthetic Contents"
-msgstr "Rileva contenuti estetici"
+msgstr "Contenuti estetici"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Detect if the image has aesthetic contents.\n"
+#| "The aesthetic detection engine is based on a deep learning model to "
+#| "classify images."
 msgctxt "@info:tooltip"
 msgid ""
-"Detect if the image has aesthetic contents.\n"
-"The aesthetic detection engine is based on a deep learning model to classify "
-"images."
+"Detect if the image has aesthetic contents.<br>The aesthetic detection "
+"engine is based on a deep learning model to classify images."
 msgstr ""
 "Rileva se l'immagine ha dei contenuti estetici.\n"
 "Il motore di rilevamento estetico si basa su un modello di apprendimento "
 "profondo per classificare le immagini."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Basic Factors"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Basic Factors"
 msgstr "Fattori di base"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Detect if the image is sabotaging using four basic factors\n"
+#| "eg. blur, noise, exposure (under / over), and compression levels.\n"
+#| "See the relevant settings from the next <b>Basic Factors</b> tab."
 msgctxt "@info:tooltip"
 msgid ""
-"Detect if the image is sabotaging using four basic factors\n"
-"eg. blur, noise, exposure (under / over), and compression levels.\n"
-"See the relevant settings from the next <b>Basic Factors</b> tab."
+"Detect if the image is sabotaging using four basic factors<br>eg. blur, "
+"noise, exposure (under / over), and compression levels.<br>See the relevant "
+"settings from the next <b>Basic Factors</b> tab."
 msgstr ""
 "Rileva se l'immagine viene compromessa utilizzando quattro fattori di base\n"
 "per es. i livelli sfocatura, rumore, (sovra/sotto) esposizione e "
@@ -36073,24 +36104,27 @@ msgstr ""
 "successiva."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:165
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Quality detection is time-consuming tasks.\n"
+#| "You can choose if you wish to employ all processor cores\n"
+#| "on your system, or work in the background only on one core."
 msgctxt "@info:tooltip"
 msgid ""
-"Quality detection is time-consuming tasks.\n"
-"You can choose if you wish to employ all processor cores\n"
-"on your system, or work in the background only on one core."
+"Quality detection is time-consuming tasks.<br>You can choose if you wish to "
+"employ all processor cores<br>on your system, or work in the background only "
+"on one core."
 msgstr ""
 "Il rilevamento di qualità è un processo che richiede tempo.\n"
 "Puoi scegliere se impiegare tutti i core del tuo processore\n"
 "o lavorare sullo sfondo usando un solo core."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rejected"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Rejected:"
-msgstr "Rifiutata"
+msgstr "Rifiutata:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
@@ -36100,12 +36134,10 @@ msgstr ""
 "Soglia sotto cui a tutte le immagini viene assegnata l'etichetta «Rifiutata»"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Pending"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Pending:"
-msgstr "In sospeso"
+msgstr "In sospeso:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
@@ -36115,12 +36147,10 @@ msgstr ""
 "Soglia sotto cui a tutte le immagini viene assegnata l'etichetta «In sospeso»"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Accepted"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Accepted:"
-msgstr "Accettata"
+msgstr "Accettata:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, kde-format
@@ -36130,9 +36160,7 @@ msgstr ""
 "Soglia sotto cui a tutte le immagini viene assegnata l'etichetta «Accettata»"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Blur"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Blur"
 msgstr "Sfoca"
@@ -36159,11 +36187,10 @@ msgid "Weight to assign to Blur Algorithm"
 msgstr "Peso da assegnare all'algoritmo della sfocatura"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
-#, fuzzy, kde-format
-#| msgid "Noise:"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Noise"
-msgstr "Rumore:"
+msgstr "Rumore"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
@@ -36179,12 +36206,10 @@ msgid "Weight to assign to Noise Algorithm"
 msgstr "Peso da assegnare all'algoritmo del rumore"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
-#, fuzzy, kde-format
-#| msgctxt "@option:check with a short translated text"
-#| msgid "Detect Compression"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Compression"
-msgstr "Rileva compressione"
+msgstr "Compressione"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
 #, kde-format
@@ -36201,8 +36226,7 @@ msgid "Weight to assign to Compression Algorithm"
 msgstr "Peso da assegnare all'algoritmo della compressione"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
-#, fuzzy, kde-format
-#| msgid "Exposure"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Exposure"
 msgstr "Esposizione"
@@ -40322,12 +40346,10 @@ msgstr ""
 "automatici non assegnati.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@label with a short translated text "
-#| msgid "Auto-Tagging Mode:"
+#, kde-format
 msgctxt "@label with a short translated text "
 msgid "Tagging Mode:"
-msgstr "Modalità assegnazione tag automatici:"
+msgstr "Modalità assegnazione tag:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
 #, kde-format
@@ -40354,9 +40376,7 @@ msgstr ""
 "qualsiasi tag automatico nuovo individuato ai tag automatici esistenti.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
@@ -40369,32 +40389,40 @@ msgid "No models available"
 msgstr "Nessun modello disponibile"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@label short translated text about the Face Detection Accuracy"
-#| msgid "Accuracy:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Accuracy:"
 msgstr "Accuratezza:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Adjust sensitivity versus specificity: the higher the value, the more "
+#| "accurately objects will\n"
+#| "be recognized, but fewer objects will be recognized.\n"
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately objects will\n"
-"be recognized, but fewer objects will be recognized.\n"
+"accurately objects will<br>be recognized, but fewer objects will be "
+"recognized.<br>"
 msgstr ""
 "Regola la sensibilità rispetto alla specificità: più alto è il valore, più "
 "accuratamente\n"
 "saranno riconosciuti gli oggetti, ma ne saranno riconosciuti di meno.\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Object detection and auto-tagging are time-consuming tasks.\n"
+#| "You can choose if you wish to employ all processor cores\n"
+#| "on your system, or work in the background only on one core."
 msgctxt "@info:tooltip"
 msgid ""
-"Object detection and auto-tagging are time-consuming tasks.\n"
-"You can choose if you wish to employ all processor cores\n"
-"on your system, or work in the background only on one core."
+"Object detection and auto-tagging are time-consuming tasks.<br>You can "
+"choose if you wish to employ all processor cores<br>on your system, or work "
+"in the background only on one core."
 msgstr ""
 "Il rilevamento degli oggetti e l'assegnazione di tag automatici sono "
 "processi che richiedono tempo.\n"
@@ -62465,12 +62493,10 @@ msgstr ""
 "del file"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores"
+#, kde-format
 msgctxt "@option:check"
 msgid "Uses all processors"
-msgstr "Lavora con tutti i core del processore"
+msgstr "Usa tutti i processori"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
 #, kde-format
@@ -63304,10 +63330,9 @@ msgid "Empty Text"
 msgstr "Svuota il testo"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
-#, fuzzy, kde-format
-#| msgid "Return items without text in:"
+#, kde-format
 msgid "Return items without text in"
-msgstr "Restituisci gli elementi senza testo in:"
+msgstr "Restituisci gli elementi senza testo in"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
 #, kde-format
@@ -63564,9 +63589,7 @@ msgid "File, Album, Tags"
 msgstr "File, album, tag"
 
 #: core/utilities/searchwindow/searchgroup.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@title: item properties"
-#| msgid "Item Properties"
+#, kde-format
 msgid "Item Properties"
 msgstr "Proprietà dell'elemento"
 

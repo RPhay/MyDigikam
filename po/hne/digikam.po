@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-16 02:31+0000\n"
+"POT-Creation-Date: 2025-07-17 01:57+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -33824,15 +33824,14 @@ msgstr "सिंक्रोनाइज"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"digiKam can search for faces in your photos.\n"
-"When you have identified your friends on a number of photos,\n"
-"it can also recognize the people shown on your photos.\n"
-"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
-"new images found in the albums selected in the \"Search in\" tab.</"
-"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
-"all images found in the albums selected in the \"Search in\" tab.</"
-"p><p><b>Recognize faces only</b> will try to match unknown faces with "
-"confirmed faces without scanning images new faces.</p>"
+"digiKam can search for faces in your photos.<br>When you have identified "
+"your friends on a number of photos,<br>it can also recognize the people "
+"shown on your photos.<p><b>Scan new images</b> will scan for faces and "
+"attempt recognition for new images found in the albums selected in the "
+"\"Search in\" tab.</p><p><b>Scan all images</b> will scan for faces and "
+"attempt recognition for all images found in the albums selected in the "
+"\"Search in\" tab.</p><p><b>Recognize faces only</b> will try to match "
+"unknown faces with confirmed faces without scanning images new faces.</p>"
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
@@ -33846,8 +33845,7 @@ msgstr "उलटा अनुक्रम"
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will\n"
-"be detected, but less faces will be detected."
+"accurately faces will<br>be detected, but less faces will be detected."
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:140
@@ -33924,9 +33922,9 @@ msgstr "उलटा अनुक्रम"
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will\n"
-"be recognized, but less faces will be recognized.\n"
-"Note: only faces that are very similar to pre-tagged faces are recognized."
+"accurately faces will<br>be recognized, but less faces will be recognized."
+"<br>Note: only faces that are very similar to pre-tagged faces are "
+"recognized."
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
@@ -33942,9 +33940,9 @@ msgstr "सामान्य काम"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Face detection and recognition are time-consuming tasks.\n"
-"You can choose if you wish to employ all processor cores\n"
-"on your system, or work in the background only on one core."
+"Face detection and recognition are time-consuming tasks.<br>You can choose "
+"if you wish to employ all processor cores<br>on your system, or work in the "
+"background only on one core."
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
@@ -34475,8 +34473,8 @@ msgstr "रीसेट"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Low quality images detected by the quality engine\n"
-"will be assigned to the rejected pick label (red flag)."
+"Low quality images detected by the quality engine<br>will be assigned to the "
+"rejected pick label (red flag)."
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
@@ -34489,8 +34487,8 @@ msgstr "चौड़ाई ( पिक्सेल्स):"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Medium quality images detected by the quality engine\n"
-"will be assigned to the pending pick label (yellow flag)."
+"Medium quality images detected by the quality engine<br>will be assigned to "
+"the pending pick label (yellow flag)."
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
@@ -34503,8 +34501,8 @@ msgstr "देहलीज:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"High quality images detected by the quality engine\n"
-"will be assigned to the accepted pick label (green flag)."
+"High quality images detected by the quality engine<br>will be assigned to "
+"the accepted pick label (green flag)."
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:137
@@ -34524,9 +34522,8 @@ msgstr "विसय सूची रीसेट करव"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Detect if the image has aesthetic contents.\n"
-"The aesthetic detection engine is based on a deep learning model to classify "
-"images."
+"Detect if the image has aesthetic contents.<br>The aesthetic detection "
+"engine is based on a deep learning model to classify images."
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
@@ -34539,18 +34536,18 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Detect if the image is sabotaging using four basic factors\n"
-"eg. blur, noise, exposure (under / over), and compression levels.\n"
-"See the relevant settings from the next <b>Basic Factors</b> tab."
+"Detect if the image is sabotaging using four basic factors<br>eg. blur, "
+"noise, exposure (under / over), and compression levels.<br>See the relevant "
+"settings from the next <b>Basic Factors</b> tab."
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Quality detection is time-consuming tasks.\n"
-"You can choose if you wish to employ all processor cores\n"
-"on your system, or work in the background only on one core."
+"Quality detection is time-consuming tasks.<br>You can choose if you wish to "
+"employ all processor cores<br>on your system, or work in the background only "
+"on one core."
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
@@ -38754,17 +38751,17 @@ msgstr "उलटा अनुक्रम"
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately objects will\n"
-"be recognized, but fewer objects will be recognized.\n"
+"accurately objects will<br>be recognized, but fewer objects will be "
+"recognized.<br>"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Object detection and auto-tagging are time-consuming tasks.\n"
-"You can choose if you wish to employ all processor cores\n"
-"on your system, or work in the background only on one core."
+"Object detection and auto-tagging are time-consuming tasks.<br>You can "
+"choose if you wish to employ all processor cores<br>on your system, or work "
+"in the background only on one core."
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
