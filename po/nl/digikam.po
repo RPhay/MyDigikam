@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-17 01:57+0000\n"
-"PO-Revision-Date: 2025-07-08 14:20+0200\n"
+"PO-Revision-Date: 2025-07-17 12:33+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -35193,18 +35193,7 @@ msgid "Recognize faces only"
 msgstr "Alleen gezichten herkennen"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "digiKam can search for faces in your photos.\n"
-#| "When you have identified your friends on a number of photos,\n"
-#| "it can also recognize the people shown on your photos.\n"
-#| "<p><b>Scan new images</b> will scan for faces and attempt recognition for "
-#| "new images found in the albums selected in the \"Search in\" tab.</"
-#| "p><p><b>Scan all images</b> will scan for faces and attempt recognition "
-#| "for all images found in the albums selected in the \"Search in\" tab.</"
-#| "p><p><b>Recognize faces only</b> will try to match unknown faces with "
-#| "confirmed faces without scanning images new faces.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "digiKam can search for faces in your photos.<br>When you have identified "
@@ -35216,16 +35205,16 @@ msgid ""
 "\"Search in\" tab.</p><p><b>Recognize faces only</b> will try to match "
 "unknown faces with confirmed faces without scanning images new faces.</p>"
 msgstr ""
-"digiKam kan naar gezichten in uw foto's zoeken.\n"
-"Wanneer u uw vrienden op een aantal foto's hebt geïdentificeerd,\n"
-"kan het ook de mensen tonen op uw foto's.\n"
-"<p><b>Scan nieuwe afbeeldingen</b> zal op gezichten scannen en deze proberen "
-"te herkennen op nieuw gevonden afbeeldingen in de geselecteerde albums in "
-"tabblad \"Zoeken in\".</p><p><b>Scan alle afbeeldingen</b> zal scannen op "
-"gezichten en deze proberen te herkenning op alle afbeeldingen in de gevonden "
-"albums geselecteerd in het tabblad \"Zoeken in\".</p><p><b>Alleen gezichten "
-"herkennen</b> zal proberen onbekende gezichten te herkennen met bevestigde "
-"gezichten zonder het scannen van nieuwe gezichten in afbeeldingen.</p>"
+"digiKam kan naar gezichten in uw foto's zoeken.<br>Wanneer u uw vrienden op "
+"een aantal foto's hebt geïdentificeerd,<br>kan het ook de mensen tonen op uw "
+"foto's.<p><b>Scan nieuwe afbeeldingen</b> zal op gezichten scannen en deze "
+"proberen te herkennen op nieuw gevonden afbeeldingen in de geselecteerde "
+"albums in tabblad \"Zoeken in\".</p><p><b>Scan alle afbeeldingen</b> zal "
+"scannen op gezichten en deze proberen te herkenning op alle afbeeldingen in "
+"de gevonden albums geselecteerd in het tabblad \"Zoeken in\".</"
+"p><p><b>Alleen gezichten herkennen</b> zal proberen onbekende gezichten te "
+"herkennen met bevestigde gezichten zonder het scannen van nieuwe gezichten "
+"in afbeeldingen.</p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
 #, kde-format
@@ -35234,20 +35223,15 @@ msgid "Accuracy:"
 msgstr "Nauwkeurigheid:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be detected, but less faces will be detected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately faces will<br>be detected, but less faces will be detected."
 msgstr ""
 "Pas gevoeligheid tegen specifiekheid aan: hoe hoger de waarde, hoe meer "
-"accuraat gezichten zullen\n"
-"worden gedetecteerd, maar minder gezichten zullen gedetecteerd worden."
+"accuraat gezichten zullen<br>worden gedetecteerd, maar minder gezichten "
+"zullen gedetecteerd worden."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:140
 #, kde-format
@@ -35331,13 +35315,7 @@ msgid "Accuracy:"
 msgstr "Nauwkeurigheid:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:184
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized.\n"
-#| "Note: only faces that are very similar to pre-tagged faces are recognized."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -35346,10 +35324,9 @@ msgid ""
 "recognized."
 msgstr ""
 "Pas gevoeligheid tegen specifiekheid aan: hoe hoger de waarde, hoe meer "
-"accuraat gezichten zullen\n"
-"worden herkend, maar minder gezichten zullen herkend worden.\n"
-"Opmerking: alleen gezichten die erg gelijken op gezichten met een eerdere "
-"tag worden herkend."
+"accuraat gezichten zullen<br>worden herkend, maar minder gezichten zullen "
+"herkend worden.<br>Opmerking: alleen gezichten die erg gelijken op gezichten "
+"met een eerdere tag worden herkend."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
@@ -35360,21 +35337,16 @@ msgid "Uses all processors"
 msgstr "Gebruik alle processoren"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Face detection and recognition are time-consuming tasks.<br>You can choose "
 "if you wish to employ all processor cores<br>on your system, or work in the "
 "background only on one core."
 msgstr ""
-"Gezichtsdetectie en herkennen is een tijdrovende taak.\n"
-"U kunt kiezen of u alle processorkernen in uw systeem wilt\n"
-"gebruiken of alleen in de achtergrond wilt werken in één kern."
+"Gezichtsdetectie en herkennen is een tijdrovende taak.<br>U kunt kiezen of u "
+"alle processorkernen in uw systeem wilt<br>gebruiken of alleen in de "
+"achtergrond wilt werken in één kern."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, kde-format
@@ -35936,18 +35908,15 @@ msgid "Low as Rejected"
 msgstr "Laag zoals afgewezen"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Low quality images detected by the quality engine\n"
-#| "will be assigned to the rejected pick label (red flag)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Low quality images detected by the quality engine<br>will be assigned to the "
 "rejected pick label (red flag)."
 msgstr ""
-"Afbeeldingen met lage kwaliteit gedetecteerd door de kwaliteitsengine\n"
-"zullen toegekend worden aan het keuzelabel afgewezen (rode vlag)."
+"Afbeeldingen met lage kwaliteit gedetecteerd door de "
+"kwaliteitsengine<br>zullen toegekend worden aan het keuzelabel afgewezen "
+"(rode vlag)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, kde-format
@@ -35956,19 +35925,15 @@ msgid "Medium as Pending"
 msgstr "Middel als in behandeling"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Medium quality images detected by the quality engine\n"
-#| "will be assigned to the pending pick label (yellow flag)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Medium quality images detected by the quality engine<br>will be assigned to "
 "the pending pick label (yellow flag)."
 msgstr ""
 "Afbeeldingen met middelmatige kwaliteit gedetecteerd door de "
-"kwaliteitsengine\n"
-"zullen toegekend worden aan het keuzelabel label Afwachten (gele vlag)."
+"kwaliteitsengine<br>zullen toegekend worden aan het keuzelabel label "
+"Afwachten (gele vlag)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
 #, kde-format
@@ -35977,18 +35942,15 @@ msgid "High as Accepted"
 msgstr "Hoof als geaccepteerd"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "High quality images detected by the quality engine\n"
-#| "will be assigned to the accepted pick label (green flag)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "High quality images detected by the quality engine<br>will be assigned to "
 "the accepted pick label (green flag)."
 msgstr ""
-"Afbeeldingen met hoge kwaliteit gedetecteerd door de kwaliteitsengine\n"
-"zullen toegekend worden aan het label Geaccepteerd (groene vlag)."
+"Afbeeldingen met hoge kwaliteit gedetecteerd door de "
+"kwaliteitsengine<br>zullen toegekend worden aan het label Geaccepteerd "
+"(groene vlag)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:137
 #, kde-format
@@ -36003,20 +35965,15 @@ msgid "Aesthetic Contents"
 msgstr "Esthetische inhoud"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detect if the image has aesthetic contents.\n"
-#| "The aesthetic detection engine is based on a deep learning model to "
-#| "classify images."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image has aesthetic contents.<br>The aesthetic detection "
 "engine is based on a deep learning model to classify images."
 msgstr ""
-"Detecteren of de afbeelding esthetisch inhoud heeft.\n"
-"De engine voor detecteren van esthetische waarde is gebaseerd op een model "
-"deep learning om afbeeldingen te classificeren"
+"Detecteren of de afbeelding esthetisch inhoud heeft.<br>De engine voor "
+"detecteren van esthetische waarde is gebaseerd op een model deep learning om "
+"afbeeldingen te classificeren"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, kde-format
@@ -36025,38 +35982,28 @@ msgid "Basic Factors"
 msgstr "Basisfactoren"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detect if the image is sabotaging using four basic factors\n"
-#| "eg. blur, noise, exposure (under / over), and compression levels.\n"
-#| "See the relevant settings from the next <b>Basic Factors</b> tab."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image is sabotaging using four basic factors<br>eg. blur, "
 "noise, exposure (under / over), and compression levels.<br>See the relevant "
 "settings from the next <b>Basic Factors</b> tab."
 msgstr ""
-"Detecteren of de afbeelding is gesaboteerd door vier basis factoren\n"
-"bijv. vervaging, ruis, belichting (over /onder) en compressieniveaus.\n"
-"Zie de relevante instellingen in het volgende tabblad <b>Basisfactoren</b>."
+"Detecteren of de afbeelding is gesaboteerd door vier basis factoren<br>bijv. "
+"vervaging, ruis, belichting (over /onder) en compressieniveaus.<br>Zie de "
+"relevante instellingen in het volgende tabblad <b>Basisfactoren</b>."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:165
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Quality detection is time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Quality detection is time-consuming tasks.<br>You can choose if you wish to "
 "employ all processor cores<br>on your system, or work in the background only "
 "on one core."
 msgstr ""
-"Kwaliteitsdetectie is een tijdrovende taak.\n"
-"U kunt kiezen of u alle processorkernen in uw systeem wilt\n"
-"gebruiken of alleen in de achtergrond wilt werken in één kern."
+"Kwaliteitsdetectie is een tijdrovende taak.<br>U kunt kiezen of u alle "
+"processorkernen in uw systeem wilt<br>gebruiken of alleen in de achtergrond "
+"wilt werken in één kern."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, kde-format
@@ -40326,12 +40273,7 @@ msgid "Accuracy:"
 msgstr "Nauwkeurigheid:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately objects will\n"
-#| "be recognized, but fewer objects will be recognized.\n"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -40339,25 +40281,20 @@ msgid ""
 "recognized.<br>"
 msgstr ""
 "Pas gevoeligheid tegen specifiekheid aan: hoe hoger de waarde, hoe meer "
-"accuraat objecten herkent\n"
-"zullen worden, maar minder objecten zullen herkend worden.\n"
+"accuraat objecten herkent<br>zullen worden, maar minder objecten zullen "
+"herkend worden.<br>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Object detection and auto-tagging are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Object detection and auto-tagging are time-consuming tasks.<br>You can "
 "choose if you wish to employ all processor cores<br>on your system, or work "
 "in the background only on one core."
 msgstr ""
-"Objectdetectie en automatisch toekennen van tags is een tijdrovende taak.\n"
-"U kunt kiezen of u alle processorkernen in uw systeem wilt\n"
-"gebruiken of alleen in de achtergrond wilt werken in één kern."
+"Objectdetectie en automatisch toekennen van tags is een tijdrovende taak."
+"<br>U kunt kiezen of u alle processorkernen in uw systeem wilt<br>gebruiken "
+"of alleen in de achtergrond wilt werken in één kern."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
 #, kde-format
