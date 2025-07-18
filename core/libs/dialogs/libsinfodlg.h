@@ -43,8 +43,9 @@ public:
 
 protected:
 
-    QTreeWidgetItem* m_features  = nullptr;
-    QTreeWidgetItem* m_libraries = nullptr;
+    QTreeWidgetItem* m_features   = nullptr;
+    QTreeWidgetItem* m_libraries  = nullptr;
+    QTreeWidgetItem* m_buildtools = nullptr;
 
 private:
 

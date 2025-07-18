@@ -122,6 +122,7 @@ include(FeatureSummary)
 # Local macros
 include(MacroUtils)
 include(MacroCompiler)
+include(MacroCcache)
 include(MacroOpenCV)
 include(MacroJPEG)
 include(MacroBoolTo01)

@@ -150,9 +150,7 @@ find_package(GLIB2)
 
 if(BUILD_WITH_CCACHE)
 
-    message(STATUS "Looking for ccache...")
-    find_program(CCACHE_FOUND ccache)
-    message(STATUS "ccache program found: ${CCACHE_FOUND}...")
+    MACRO_COMPILER_CCACHE()
 
 endif()
 
@@ -386,8 +384,7 @@ if(DIGIKAM_CAN_BE_COMPILED)
     if(HAVE_CCACHE)
 
         message(STATUS "Using ccache to speed-up compilations..... YES")
-        set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
-        set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK    ccache)
+        add_definitions(-DCCACHE_VERSION="${CCACHE_VERSION}")
 
     else()
 

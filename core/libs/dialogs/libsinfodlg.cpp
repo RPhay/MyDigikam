@@ -419,12 +419,26 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18ncp(CONTEXT, "CPU core", "CPU cores", nbcore) << QString::fromLatin1("%1").arg(nbcore));
 
-    new QTreeWidgetItem(m_libraries, QStringList() <<
+    m_buildtools       = new QTreeWidgetItem(listView(), QStringList() << i18nc("@title", "Build Tools"));
+    listView()->addTopLevelItem(m_buildtools);
+
+    new QTreeWidgetItem(m_buildtools, QStringList() <<
                         i18nc(CONTEXT, "Cmake")                  <<         QLatin1String(CMAKE_VERSION_STRING));
 
-    new QTreeWidgetItem(m_libraries, QStringList() <<
+    new QTreeWidgetItem(m_buildtools, QStringList() <<
                         i18nc(CONTEXT, "Compiler")               <<         QString::fromLatin1("%1 - %2").arg(QLatin1String(CMAKE_CXX_COMPILER_ID))
+
+#ifdef CCACHE_VERSION
                                                                                                           .arg(QLatin1String(CMAKE_CXX_COMPILER_VERSION)));
+    new QTreeWidgetItem(m_buildtools, QStringList() <<
+                        i18nc(CONTEXT, "Ccache")                 <<         QLatin1String(CCACHE_VERSION));
+
+#else
+
+    new QTreeWidgetItem(m_buildtools, QStringList() <<
+                        i18nc(CONTEXT, "Ccache support")         <<         SUPPORTED_NO);
+
+#endif
 
     KMemoryInfo memInfo;
 
