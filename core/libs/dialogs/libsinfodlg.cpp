@@ -427,9 +427,9 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
     new QTreeWidgetItem(m_buildtools, QStringList() <<
                         i18nc(CONTEXT, "Compiler")               <<         QString::fromLatin1("%1 - %2").arg(QLatin1String(CMAKE_CXX_COMPILER_ID))
-
-#ifdef CCACHE_VERSION
                                                                                                           .arg(QLatin1String(CMAKE_CXX_COMPILER_VERSION)));
+#ifdef CCACHE_VERSION
+
     new QTreeWidgetItem(m_buildtools, QStringList() <<
                         i18nc(CONTEXT, "Ccache")                 <<         QLatin1String(CCACHE_VERSION));
 
