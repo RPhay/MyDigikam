@@ -85,6 +85,10 @@ FaceRecognitionBackgroundController::~FaceRecognitionBackgroundController()
         d->facesEngine->cancel();
         waitForDone();
     }
+
+    delete d;
+
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceRecognitionBackgroundController::delete";
 }
 
 FaceRecognitionBackgroundController* FaceRecognitionBackgroundController::instance()

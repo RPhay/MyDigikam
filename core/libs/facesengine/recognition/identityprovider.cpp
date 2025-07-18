@@ -134,17 +134,11 @@ IdentityProvider::~IdentityProvider()
 {
     cancel();
 
-    // delete the remove queue
-
-    if (d->removeQueue)
-    {
-        delete d->removeQueue;
-        d->removeQueue = nullptr;
-    }
-
     // final cleanup
 
     delete d;
+
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::delete";
 }
 
 IdentityProvider* IdentityProvider::instance()
@@ -185,26 +179,25 @@ bool IdentityProvider::initialize()
 
 void IdentityProvider::cancel()
 {
-    if (d)
+    if (d->removeThreadResult.isRunning())
     {
-        if (d->removeThreadResult.isRunning())
-        {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::cancel: sent queue end signal";
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::cancel: sent queue end signal";
 
-            // Signal the remove thread to terminate.
+        // Signal the remove thread to terminate.
 
-            d->removeQueue->push(d->removeQueue->endSignal());
+        d->removeQueue->push(d->removeQueue->endSignal());
 
-            // Wait for the remove thread to finish.
+        // Wait for the remove thread to finish.
 
-            d->removeThreadResult.waitForFinished();
-        }
+        d->removeThreadResult.waitForFinished();
+    }
 
-        if (d->removeQueue)
-        {
-            delete d->removeQueue;
-            d->removeQueue = nullptr;
-        }
+    // delete the remove queue
+
+    if (d->removeQueue)
+    {
+        delete d->removeQueue;
+        d->removeQueue = nullptr;
     }
 }
 

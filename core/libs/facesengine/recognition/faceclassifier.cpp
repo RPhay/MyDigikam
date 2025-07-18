@@ -120,6 +120,8 @@ FaceClassifier::FaceClassifier()
 FaceClassifier::~FaceClassifier()
 {
     delete d;
+
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceClassifier::delete";
 }
 
 FaceClassifier* FaceClassifier::instance()
