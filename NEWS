@@ -19,7 +19,7 @@ BUGFIXES:
 008 ==> 507092 - Small fault in the Tooltip text.
 009 ==> 507064 - Crash at start due to enabled video hardware acceleration.
 010 ==> 479792 - In "digiKam Properties" sidebar, double quotes in caption are displayed as &quot;
-011 ==>
+011 ==> 507051 - Portable archive for 8.7.0 (digiKam-8.7.0-Qt6-Win64.tar.xz) is missing as a download option.
 012 ==>
 013 ==>
 014 ==>
