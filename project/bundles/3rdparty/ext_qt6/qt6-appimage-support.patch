@@ -1,8 +1,8 @@
-diff --git a/src/gui/platform/unix/qgenericunixservices.cpp b/src/gui/platform/unix/qgenericunixservices.cpp
-index 708ce0d9c8d..952dee17c6e 100644
---- a/qtbase/src/gui/platform/unix/qgenericunixservices.cpp
-+++ b/qtbase/src/gui/platform/unix/qgenericunixservices.cpp
-@@ -153,12 +153,79 @@ static inline bool launch(const QString &launcher, const QUrl &url,
+diff --git a/src/gui/platform/unix/qdesktopunixservices.cpp b/src/gui/platform/unix/qdesktopunixservices.cpp
+index a4fff9b11ca..88e8cfe90f2 100644
+--- a/src/gui/platform/unix/qdesktopunixservices.cpp
++++ b/src/gui/platform/unix/qdesktopunixservices.cpp
+@@ -153,11 +153,78 @@ static inline bool launch(const QString &launcher, const QUrl &url,
          process.setProgram(program);
          process.setArguments(args);
  
@@ -14,7 +14,6 @@ index 708ce0d9c8d..952dee17c6e 100644
              env.insert(u"XDG_ACTIVATION_TOKEN"_s, xdgActivationToken);
 -            process.setEnvironment(env.toStringList());
          }
--        ok = process.startDetached(nullptr);
 +
 +        // If we are running into AppImage bundle, switch env var to the right values.
 +        if (env.contains(QLatin1String("APPIMAGE_ORIGINAL_LD_LIBRARY_PATH")) &&
@@ -81,7 +80,6 @@ index 708ce0d9c8d..952dee17c6e 100644
 +        process.setProcessEnvironment(env);
 +        process.setProgram(program);
 +        process.setArguments(args);
-+        ok = process.startDetached();
+         ok = process.startDetached(nullptr);
      }
  #  endif
-     if (!ok)
