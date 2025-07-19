@@ -1,7 +1,7 @@
 diff --git a/src/gui/platform/unix/qdesktopunixservices.cpp b/src/gui/platform/unix/qdesktopunixservices.cpp
 index a4fff9b11ca..88e8cfe90f2 100644
---- a/src/gui/platform/unix/qdesktopunixservices.cpp
-+++ b/src/gui/platform/unix/qdesktopunixservices.cpp
+--- a/qtbase/src/gui/platform/unix/qdesktopunixservices.cpp
++++ b/qtbase/src/gui/platform/unix/qdesktopunixservices.cpp
 @@ -153,11 +153,78 @@ static inline bool launch(const QString &launcher, const QUrl &url,
          process.setProgram(program);
          process.setArguments(args);
