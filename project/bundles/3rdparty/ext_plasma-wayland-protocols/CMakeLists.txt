@@ -12,7 +12,7 @@ ExternalProject_Add(ext_plasma-wayland-protocols
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
     GIT_REPOSITORY https://invent.kde.org/libraries/plasma-wayland-protocols.git
-    GIT_TAG v1.10.0
+    GIT_TAG v1.18.0
 
     INSTALL_DIR ${EXTPREFIX_waylandprotocols}
     CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_waylandprotocols}
