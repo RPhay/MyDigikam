@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-17 01:57+0000\n"
-"PO-Revision-Date: 2025-07-08 10:14+0200\n"
+"POT-Creation-Date: 2025-07-19 06:34+0000\n"
+"PO-Revision-Date: 2025-07-17 10:26+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -4542,8 +4542,8 @@ msgstr "Descodificadors de vídeo"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:554 core/libs/dialogs/libsinfodlg.cpp:560
-#: core/libs/dialogs/libsinfodlg.cpp:635
+#: core/libs/dialogs/libsinfodlg.cpp:568 core/libs/dialogs/libsinfodlg.cpp:574
+#: core/libs/dialogs/libsinfodlg.cpp:649
 #, kde-format
 msgid "no entry"
 msgstr "sense entrada"
@@ -30419,37 +30419,44 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: core/libs/dialogs/libsinfodlg.cpp:443
+#: core/libs/dialogs/libsinfodlg.cpp:422
+#, fuzzy, kde-format
+#| msgid "Base Tools"
+msgctxt "@title"
+msgid "Build Tools"
+msgstr "Eines base"
+
+#: core/libs/dialogs/libsinfodlg.cpp:457
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: core/libs/dialogs/libsinfodlg.cpp:473
+#: core/libs/dialogs/libsinfodlg.cpp:487
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifests"
 
-#: core/libs/dialogs/libsinfodlg.cpp:507
+#: core/libs/dialogs/libsinfodlg.cpp:521
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Configureu l'OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:703
+#: core/libs/dialogs/libsinfodlg.cpp:717
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Sí"
 
-#: core/libs/dialogs/libsinfodlg.cpp:708
+#: core/libs/dialogs/libsinfodlg.cpp:722
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "No"
 
-#: core/libs/dialogs/libsinfodlg.cpp:713
+#: core/libs/dialogs/libsinfodlg.cpp:727
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -34298,12 +34305,12 @@ msgstr ""
 "Avís: ExifTool no està disponible per a postprocessar les metadades. Sense, "
 "els DNG no inclouran totes les propietats de les fonts RAW."
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:347
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr "YOLOv11 Nano"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:351
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34318,12 +34325,12 @@ msgstr ""
 "per a reconéixer 80 objectes diferents utilitzant el conjunt de dades COCO.</"
 "p>"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:354
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr "YOLOv11 XLarge"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:358
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34338,12 +34345,12 @@ msgstr ""
 "per a reconéixer 80 objectes diferents utilitzant el conjunt de dades COCO.</"
 "p>"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:361
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
 #, kde-format
 msgid "EfficientNet B7"
 msgstr "EfficientNet B7"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:365
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35216,18 +35223,7 @@ msgid "Recognize faces only"
 msgstr "Reconeix només les cares"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "digiKam can search for faces in your photos.\n"
-#| "When you have identified your friends on a number of photos,\n"
-#| "it can also recognize the people shown on your photos.\n"
-#| "<p><b>Scan new images</b> will scan for faces and attempt recognition for "
-#| "new images found in the albums selected in the \"Search in\" tab.</"
-#| "p><p><b>Scan all images</b> will scan for faces and attempt recognition "
-#| "for all images found in the albums selected in the \"Search in\" tab.</"
-#| "p><p><b>Recognize faces only</b> will try to match unknown faces with "
-#| "confirmed faces without scanning images new faces.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "digiKam can search for faces in your photos.<br>When you have identified "
@@ -35239,16 +35235,15 @@ msgid ""
 "\"Search in\" tab.</p><p><b>Recognize faces only</b> will try to match "
 "unknown faces with confirmed faces without scanning images new faces.</p>"
 msgstr ""
-"digiKam pot buscar cares a les vostres fotos.\n"
-"Quan hàgeu identificat els vostres amics en una sèrie de fotos,\n"
-"també podrà reconéixer les persones que es mostren a les fotos.\n"
-"<p><b>Explora les imatges noves</b> buscarà les cares i intentarà el "
-"reconeixement de les imatges noves trobades als àlbums seleccionats a la "
-"pestanya «Busca a».</p><p><b>Explora totes les imatges</b> buscarà les cares "
-"i intentarà el reconeixement de totes les imatges trobades als àlbums "
-"seleccionats a la pestanya «Busca a».</p><p><b>Reconeix només les cares</b> "
-"intentarà fer coincidir les cares desconegudes amb les cares confirmades "
-"sense explorar cares noves de les imatges.</p>"
+"digiKam pot buscar cares a les vostres fotos.<br>Quan hàgeu identificat els "
+"vostres amics en una sèrie de fotos,<br>també podrà reconéixer les persones "
+"que es mostren a les fotos.<p><b>Explora les imatges noves</b> buscarà les "
+"cares i intentarà el reconeixement de les imatges noves trobades als àlbums "
+"seleccionats a la pestanya «Busca a».</p><p><b>Explora totes les imatges</b> "
+"buscarà les cares i intentarà el reconeixement de totes les imatges trobades "
+"als àlbums seleccionats a la pestanya «Busca a».</p><p><b>Reconeix només les "
+"cares</b> intentarà fer coincidir les cares desconegudes amb les cares "
+"confirmades sense explorar cares noves de les imatges.</p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
 #, kde-format
@@ -35257,20 +35252,15 @@ msgid "Accuracy:"
 msgstr "Precisió:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be detected, but less faces will be detected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately faces will<br>be detected, but less faces will be detected."
 msgstr ""
 "Ajusteu la sensibilitat davant de l'especificitat: com més gran siga el "
-"valor, amb més precisió\n"
-"es detectaran les cares, però es reconeixeran menys cares."
+"valor, amb més precisió<br>es detectaran les cares, però es reconeixeran "
+"menys cares."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:140
 #, kde-format
@@ -35353,13 +35343,7 @@ msgid "Accuracy:"
 msgstr "Precisió:"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:184
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized.\n"
-#| "Note: only faces that are very similar to pre-tagged faces are recognized."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -35368,10 +35352,9 @@ msgid ""
 "recognized."
 msgstr ""
 "Ajusteu la sensibilitat davant de l'especificitat: com més gran siga el "
-"valor, s'haurà de reconéixer\n"
-"amb més precisió les cares, però es reconeixeran menys cares.\n"
-"Nota: només es reconeixeran les cares que siguen molt similars a les cares "
-"etiquetades amb anterioritat."
+"valor, s'haurà de reconéixer<br>amb més precisió les cares, però es "
+"reconeixeran menys cares.<br>Nota: només es reconeixeran les cares que "
+"siguen molt similars a les cares etiquetades amb anterioritat."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
@@ -35382,21 +35365,16 @@ msgid "Uses all processors"
 msgstr "Utilitza tots els processadors"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Face detection and recognition are time-consuming tasks.<br>You can choose "
 "if you wish to employ all processor cores<br>on your system, or work in the "
 "background only on one core."
 msgstr ""
-"La detecció i reconeixement de cares són tasques que consumixen temps.\n"
-"Podeu triar si voleu emprar tots els nuclis del processador del sistema\n"
-"o treballar en segon pla, amb només un nucli."
+"La detecció i reconeixement de cares són tasques que consumixen temps."
+"<br>Podeu triar si voleu emprar tots els nuclis del processador del "
+"sistema<br>o treballar en segon pla, amb només un nucli."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, kde-format
@@ -35956,18 +35934,14 @@ msgid "Low as Rejected"
 msgstr "Baixa com a Rebutjada"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Low quality images detected by the quality engine\n"
-#| "will be assigned to the rejected pick label (red flag)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Low quality images detected by the quality engine<br>will be assigned to the "
 "rejected pick label (red flag)."
 msgstr ""
-"Les imatges de qualitat baixa detectades pel motor de qualitat\n"
-"se'ls assignarà el rètol de selecció «Rebutjada» (indicador roig)."
+"Les imatges de qualitat baixa detectades pel motor de qualitat<br> se'ls "
+"assignarà el rètol de selecció «Rebutjada» (indicador roig)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, kde-format
@@ -35976,18 +35950,14 @@ msgid "Medium as Pending"
 msgstr "Mitjana com a Pendent"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Medium quality images detected by the quality engine\n"
-#| "will be assigned to the pending pick label (yellow flag)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Medium quality images detected by the quality engine<br>will be assigned to "
 "the pending pick label (yellow flag)."
 msgstr ""
-"Les imatges de qualitat mitjana detectades pel motor de qualitat\n"
-"se'ls assignarà el rètol de selecció «Pendent» (indicador groc)."
+"Les imatges de qualitat mitjana detectades pel motor de qualitat<br>se'ls "
+"assignarà el rètol de selecció «Pendent» (indicador groc)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
 #, kde-format
@@ -35996,18 +35966,14 @@ msgid "High as Accepted"
 msgstr "Alta com a Acceptada"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "High quality images detected by the quality engine\n"
-#| "will be assigned to the accepted pick label (green flag)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "High quality images detected by the quality engine<br>will be assigned to "
 "the accepted pick label (green flag)."
 msgstr ""
-"Les imatges de qualitat alta detectades pel motor de qualitat\n"
-"se'ls assignarà el rètol de selecció «Acceptada» (indicador verd)."
+"Les imatges de qualitat alta detectades pel motor de qualitat<br>se'ls "
+"assignarà el rètol de selecció «Acceptada» (indicador verd)."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:137
 #, kde-format
@@ -36022,20 +35988,14 @@ msgid "Aesthetic Contents"
 msgstr "Contingut estètic"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detect if the image has aesthetic contents.\n"
-#| "The aesthetic detection engine is based on a deep learning model to "
-#| "classify images."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image has aesthetic contents.<br>The aesthetic detection "
 "engine is based on a deep learning model to classify images."
 msgstr ""
-"Detecta si la imatge té contingut estètic.\n"
-"El motor de detecció estètica està basat en un model d'aprenentatge profund "
-"per a classificar les imatges."
+"Detecta si la imatge té contingut estètic.<br>El motor de detecció estètica "
+"està basat en un model d'aprenentatge profund per a classificar les imatges."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, kde-format
@@ -36044,39 +36004,29 @@ msgid "Basic Factors"
 msgstr "Factors bàsics"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detect if the image is sabotaging using four basic factors\n"
-#| "eg. blur, noise, exposure (under / over), and compression levels.\n"
-#| "See the relevant settings from the next <b>Basic Factors</b> tab."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image is sabotaging using four basic factors<br>eg. blur, "
 "noise, exposure (under / over), and compression levels.<br>See the relevant "
 "settings from the next <b>Basic Factors</b> tab."
 msgstr ""
-"Detecta si la imatge està alterada utilitzant quatre factors bàsics:\n"
-"difuminat, soroll, exposició (sub i sobre) i nivells de compressió.\n"
-"Vegeu la configuració important cap a la pestanya següent <b>Factors bàsics</"
-"b>."
+"Detecta si la imatge està alterada utilitzant quatre factors bàsics:"
+"<br>difuminat, soroll, exposició (sub i sobre) i nivells de compressió."
+"<br>Vegeu la configuració important cap a la pestanya següent <b>Factors "
+"bàsics</b>."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:165
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Quality detection is time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Quality detection is time-consuming tasks.<br>You can choose if you wish to "
 "employ all processor cores<br>on your system, or work in the background only "
 "on one core."
 msgstr ""
-"La detecció de la qualitat és una tasca que consumix temps.\n"
-"Podeu triar si voleu emprar tots els nuclis del processador del sistema\n"
-"o treballar en segon pla, amb només un nucli."
+"La detecció de la qualitat és una tasca que consumix temps.<br>Podeu triar "
+"si voleu emprar tots els nuclis del processador del sistema<br>o treballar "
+"en segon pla, amb només un nucli."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, kde-format
@@ -40355,12 +40305,7 @@ msgid "Accuracy:"
 msgstr "Precisió:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately objects will\n"
-#| "be recognized, but fewer objects will be recognized.\n"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -40368,16 +40313,11 @@ msgid ""
 "recognized.<br>"
 msgstr ""
 "Ajusteu la sensibilitat davant de l'especificitat: com més gran siga el "
-"valor, amb més precisió\n"
-"es detectaran els objectes, però es reconeixeran menys objectes.\n"
+"valor, amb més precisió<br>es detectaran els objectes, però es reconeixeran "
+"menys objectes.<br>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Object detection and auto-tagging are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Object detection and auto-tagging are time-consuming tasks.<br>You can "
@@ -40385,9 +40325,8 @@ msgid ""
 "in the background only on one core."
 msgstr ""
 "La detecció i l'etiquetatge automàtic d'objectes són tasques que consumixen "
-"temps.\n"
-"Podeu triar si voleu emprar tots els nuclis del processador del sistema\n"
-"o treballar en segon pla, amb només un nucli."
+"temps.<br>Podeu triar si voleu emprar tots els nuclis del processador del "
+"sistema<br>o treballar en segon pla, amb només un nucli."
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
 #, kde-format

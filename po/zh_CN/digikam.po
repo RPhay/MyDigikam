@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-17 01:57+0000\n"
+"POT-Creation-Date: 2025-07-19 06:34+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -4391,8 +4391,8 @@ msgstr "视频解码器"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:554 core/libs/dialogs/libsinfodlg.cpp:560
-#: core/libs/dialogs/libsinfodlg.cpp:635
+#: core/libs/dialogs/libsinfodlg.cpp:568 core/libs/dialogs/libsinfodlg.cpp:574
+#: core/libs/dialogs/libsinfodlg.cpp:649
 #, kde-format
 msgid "no entry"
 msgstr "没有条目"
@@ -29096,37 +29096,44 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/libs/dialogs/libsinfodlg.cpp:443
+#: core/libs/dialogs/libsinfodlg.cpp:422
+#, fuzzy, kde-format
+#| msgid "Base Tools"
+msgctxt "@title"
+msgid "Build Tools"
+msgstr "基础工具"
+
+#: core/libs/dialogs/libsinfodlg.cpp:457
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/libs/dialogs/libsinfodlg.cpp:473
+#: core/libs/dialogs/libsinfodlg.cpp:487
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "清单"
 
-#: core/libs/dialogs/libsinfodlg.cpp:507
+#: core/libs/dialogs/libsinfodlg.cpp:521
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV 配置"
 
-#: core/libs/dialogs/libsinfodlg.cpp:703
+#: core/libs/dialogs/libsinfodlg.cpp:717
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "是"
 
-#: core/libs/dialogs/libsinfodlg.cpp:708
+#: core/libs/dialogs/libsinfodlg.cpp:722
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "否"
 
-#: core/libs/dialogs/libsinfodlg.cpp:713
+#: core/libs/dialogs/libsinfodlg.cpp:727
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -32757,12 +32764,12 @@ msgstr ""
 "警告：ExifTool 当前不可用。digiKam 需要使用 ExifTool 管理后期处理元数据。没"
 "有 ExifTool，DNG 文件将不包含所有 RAW 来源属性。"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:347
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr "YOLOv11 Nano"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:351
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -32775,12 +32782,12 @@ msgstr ""
 "多对象。YOLO 能够检测图像中的多个对象。它使用 COCO 数据集训练，能够识别 80 种"
 "不同对象。</p>"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:354
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr "YOLOv11 XLarge"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:358
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -32793,12 +32800,12 @@ msgstr ""
 "相比，它能在图像中检测到更多的对象，但速度较慢。YOLO 能够检测图像中的多个对"
 "象。它使用 COCO 数据集训练，能够识别 80 种不同对象。</p>"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:361
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
 #, kde-format
 msgid "EfficientNet B7"
 msgstr "EfficientNet B7"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:365
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33651,18 +33658,7 @@ msgid "Recognize faces only"
 msgstr "仅识别人脸"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "digiKam can search for faces in your photos.\n"
-#| "When you have identified your friends on a number of photos,\n"
-#| "it can also recognize the people shown on your photos.\n"
-#| "<p><b>Scan new images</b> will scan for faces and attempt recognition for "
-#| "new images found in the albums selected in the \"Search in\" tab.</"
-#| "p><p><b>Scan all images</b> will scan for faces and attempt recognition "
-#| "for all images found in the albums selected in the \"Search in\" tab.</"
-#| "p><p><b>Recognize faces only</b> will try to match unknown faces with "
-#| "confirmed faces without scanning images new faces.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "digiKam can search for faces in your photos.<br>When you have identified "
@@ -33674,13 +33670,6 @@ msgid ""
 "\"Search in\" tab.</p><p><b>Recognize faces only</b> will try to match "
 "unknown faces with confirmed faces without scanning images new faces.</p>"
 msgstr ""
-"digiKam 能够搜索照片中的人脸。\n"
-"只要您在一定数量的照片中标识了认识的人，\n"
-"它便能识别出照片中的人物。\n"
-"<p><b>扫描新图像</b> 将扫描并尝试识别在“扫描范围”标签页中选中的相册中发现的新"
-"图像中的人脸。</p><p><b>扫描所有图像</b> 将扫描并尝试识别在“扫描范围”标签页中"
-"选中的相册中发现的所有图像中的人脸。</p><p><b>仅识别人脸</b> 将尝试将未知人脸"
-"与已确认的人脸进行匹配，而不会扫描图像中的新人脸。</p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
 #, kde-format
@@ -33689,18 +33678,12 @@ msgid "Accuracy:"
 msgstr "精度："
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be detected, but less faces will be detected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately faces will<br>be detected, but less faces will be detected."
 msgstr ""
-"调整灵敏度与特异性：数值越高，检测到的人脸越准确，但检测到的人脸数量会减少。"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:140
 #, kde-format
@@ -33778,13 +33761,7 @@ msgid "Accuracy:"
 msgstr "精度："
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:184
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately faces will\n"
-#| "be recognized, but less faces will be recognized.\n"
-#| "Note: only faces that are very similar to pre-tagged faces are recognized."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -33792,9 +33769,6 @@ msgid ""
 "<br>Note: only faces that are very similar to pre-tagged faces are "
 "recognized."
 msgstr ""
-"调整人脸识别的宽泛-精确程度：\n"
-"数值越高，识别精度越高，识别到的人脸也越少。\n"
-"提示：只有与同一人物标签的已有人脸高度相似的人脸才会被识别。"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
@@ -33805,21 +33779,13 @@ msgid "Uses all processors"
 msgstr "使用所有处理器"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Face detection and recognition are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Face detection and recognition are time-consuming tasks.<br>You can choose "
 "if you wish to employ all processor cores<br>on your system, or work in the "
 "background only on one core."
 msgstr ""
-"人脸检测和识别任务耗时较长。\n"
-"您可以选择使用系统的所有处理器内核以提升速度，\n"
-"或者选择在后台使用单一处理器内核以减少卡顿。"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, kde-format
@@ -34359,18 +34325,12 @@ msgid "Low as Rejected"
 msgstr "低品质分类到否决"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Low quality images detected by the quality engine\n"
-#| "will be assigned to the rejected pick label (red flag)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Low quality images detected by the quality engine<br>will be assigned to the "
 "rejected pick label (red flag)."
 msgstr ""
-"图像品质检测引擎检测到的低品质图像\n"
-"将分配“否决”挑选标签 (红标)。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, kde-format
@@ -34379,18 +34339,12 @@ msgid "Medium as Pending"
 msgstr "中品质分类到待定"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Medium quality images detected by the quality engine\n"
-#| "will be assigned to the pending pick label (yellow flag)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Medium quality images detected by the quality engine<br>will be assigned to "
 "the pending pick label (yellow flag)."
 msgstr ""
-"图像品质检测引擎检测到的中品质图像\n"
-"将分配“待定”挑选标签 (黄标)。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
 #, kde-format
@@ -34399,18 +34353,12 @@ msgid "High as Accepted"
 msgstr "高品质分类到接受"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "High quality images detected by the quality engine\n"
-#| "will be assigned to the accepted pick label (green flag)."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "High quality images detected by the quality engine<br>will be assigned to "
 "the accepted pick label (green flag)."
 msgstr ""
-"图像品质检测引擎检测到的高品质图像\n"
-"将分配“接受”挑选标签 (绿标)。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:137
 #, kde-format
@@ -34425,19 +34373,12 @@ msgid "Aesthetic Contents"
 msgstr "内容美感"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detect if the image has aesthetic contents.\n"
-#| "The aesthetic detection engine is based on a deep learning model to "
-#| "classify images."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image has aesthetic contents.<br>The aesthetic detection "
 "engine is based on a deep learning model to classify images."
 msgstr ""
-"检测图像内容是否具有美感。\n"
-"美感检测引擎基于深度学习模型来对图像进行分类。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, kde-format
@@ -34446,38 +34387,22 @@ msgid "Basic Factors"
 msgstr "主要劣化因素 "
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Detect if the image is sabotaging using four basic factors\n"
-#| "eg. blur, noise, exposure (under / over), and compression levels.\n"
-#| "See the relevant settings from the next <b>Basic Factors</b> tab."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image is sabotaging using four basic factors<br>eg. blur, "
 "noise, exposure (under / over), and compression levels.<br>See the relevant "
 "settings from the next <b>Basic Factors</b> tab."
 msgstr ""
-"检测图像是否被四大主要劣化因素破坏，\n"
-"例如：模糊、噪点、曝光 (曝光过度/不足)、压缩级别。\n"
-"请在下一个<b>主要劣化因素</b>标签页中查看相关设置。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:165
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Quality detection is time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Quality detection is time-consuming tasks.<br>You can choose if you wish to "
 "employ all processor cores<br>on your system, or work in the background only "
 "on one core."
 msgstr ""
-"图像品质检测任务耗时较长。\n"
-"您可以选择使用系统的所有处理器内核以提升速度，\n"
-"或者选择在后台使用单一处理器内核以减少卡顿。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, kde-format
@@ -38649,37 +38574,22 @@ msgid "Accuracy:"
 msgstr "精度："
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:153
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: the higher the value, the more "
-#| "accurately objects will\n"
-#| "be recognized, but fewer objects will be recognized.\n"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately objects will<br>be recognized, but fewer objects will be "
 "recognized.<br>"
 msgstr ""
-"调整灵敏度与特异性：数值越高，检测到的对象越准确，但检测到的对象数量会减"
-"少。\n"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Object detection and auto-tagging are time-consuming tasks.\n"
-#| "You can choose if you wish to employ all processor cores\n"
-#| "on your system, or work in the background only on one core."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Object detection and auto-tagging are time-consuming tasks.<br>You can "
 "choose if you wish to employ all processor cores<br>on your system, or work "
 "in the background only on one core."
 msgstr ""
-"对象检测和自动分配标签任务耗时较长。\n"
-"您可以选择使用系统的所有处理器内核以提升速度，\n"
-"或者选择在后台使用单一处理器内核以减少卡顿。"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
 #, kde-format

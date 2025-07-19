@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-17 01:57+0000\n"
+"POT-Creation-Date: 2025-07-19 06:34+0000\n"
 "PO-Revision-Date: 2024-11-23 12:48+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -4534,8 +4534,8 @@ msgstr "Video Decoders"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:554 core/libs/dialogs/libsinfodlg.cpp:560
-#: core/libs/dialogs/libsinfodlg.cpp:635
+#: core/libs/dialogs/libsinfodlg.cpp:568 core/libs/dialogs/libsinfodlg.cpp:574
+#: core/libs/dialogs/libsinfodlg.cpp:649
 #, kde-format
 msgid "no entry"
 msgstr "no entry"
@@ -30042,37 +30042,44 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Unknown"
 
-#: core/libs/dialogs/libsinfodlg.cpp:443
+#: core/libs/dialogs/libsinfodlg.cpp:422
+#, fuzzy, kde-format
+#| msgid "Base Tools"
+msgctxt "@title"
+msgid "Build Tools"
+msgstr "Base Tools"
+
+#: core/libs/dialogs/libsinfodlg.cpp:457
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Unknown"
 
-#: core/libs/dialogs/libsinfodlg.cpp:473
+#: core/libs/dialogs/libsinfodlg.cpp:487
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifests"
 
-#: core/libs/dialogs/libsinfodlg.cpp:507
+#: core/libs/dialogs/libsinfodlg.cpp:521
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV Configuration"
 
-#: core/libs/dialogs/libsinfodlg.cpp:703
+#: core/libs/dialogs/libsinfodlg.cpp:717
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Yes"
 
-#: core/libs/dialogs/libsinfodlg.cpp:708
+#: core/libs/dialogs/libsinfodlg.cpp:722
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "No"
 
-#: core/libs/dialogs/libsinfodlg.cpp:713
+#: core/libs/dialogs/libsinfodlg.cpp:727
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -33831,13 +33838,13 @@ msgstr ""
 "Warning: ExifTool is not available to post-process metadata. Without "
 "ExifTool, DNG will not include all RAW source properties."
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:347
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
 #, fuzzy, kde-format
 #| msgid "YOLOv5 Nano"
 msgid "YOLOv11 Nano"
 msgstr "YOLOv5 Nano"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:351
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33847,13 +33854,13 @@ msgid ""
 "objects using the COCO dataset.</p>"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:354
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
 #, fuzzy, kde-format
 #| msgid "YOLOv5 XLarge"
 msgid "YOLOv11 XLarge"
 msgstr "YOLOv5 XLarge"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:358
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33863,12 +33870,12 @@ msgid ""
 "recognize 80 different objects using the COCO dataset.</p>"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:361
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
 #, kde-format
 msgid "EfficientNet B7"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:365
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""

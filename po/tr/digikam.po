@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-17 01:57+0000\n"
+"POT-Creation-Date: 2025-07-19 06:34+0000\n"
 "PO-Revision-Date: 2025-07-17 22:44+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -4533,8 +4533,8 @@ msgstr "Video Kod Çözücüleri"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:554 core/libs/dialogs/libsinfodlg.cpp:560
-#: core/libs/dialogs/libsinfodlg.cpp:635
+#: core/libs/dialogs/libsinfodlg.cpp:568 core/libs/dialogs/libsinfodlg.cpp:574
+#: core/libs/dialogs/libsinfodlg.cpp:649
 #, kde-format
 msgid "no entry"
 msgstr "girdi yok"
@@ -30141,37 +30141,44 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
-#: core/libs/dialogs/libsinfodlg.cpp:443
+#: core/libs/dialogs/libsinfodlg.cpp:422
+#, fuzzy, kde-format
+#| msgid "Base Tools"
+msgctxt "@title"
+msgid "Build Tools"
+msgstr "Temel Araçlar"
+
+#: core/libs/dialogs/libsinfodlg.cpp:457
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
-#: core/libs/dialogs/libsinfodlg.cpp:473
+#: core/libs/dialogs/libsinfodlg.cpp:487
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Bildiriler"
 
-#: core/libs/dialogs/libsinfodlg.cpp:507
+#: core/libs/dialogs/libsinfodlg.cpp:521
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV Yapılandırması"
 
-#: core/libs/dialogs/libsinfodlg.cpp:703
+#: core/libs/dialogs/libsinfodlg.cpp:717
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Evet"
 
-#: core/libs/dialogs/libsinfodlg.cpp:708
+#: core/libs/dialogs/libsinfodlg.cpp:722
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Hayır"
 
-#: core/libs/dialogs/libsinfodlg.cpp:713
+#: core/libs/dialogs/libsinfodlg.cpp:727
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -33936,12 +33943,12 @@ msgstr ""
 "Uyarı: ExifTool, işlem sonrası üst veriler için kullanılamaz. ExifTool "
 "olmadan DNG, tüm RAW kaynak özelliklerini içermez."
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:347
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr "YOLOv11 Nano"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:351
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33955,12 +33962,12 @@ msgstr ""
 "görseldeki birden çok nesneyi algılayabilir. COCO veri kümesi kullanılarak "
 "80 farklı nesneyi tanımak üzere eğitilmiştir.</p>"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:354
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr "YOLOv11 XLarge"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:358
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33974,12 +33981,12 @@ msgstr ""
 "yavaştır. YOLO bir görseldeki birden çok nesneyi algılayabilir. COCO veri "
 "kümesi kullanılarak 80 farklı nesneyi tanımak üzere eğitilmiştir.</p>"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:361
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
 #, kde-format
 msgid "EfficientNet B7"
 msgstr "EfficientNet B7"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:365
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
