@@ -34,6 +34,8 @@ class DIGIKAM_GUI_EXPORT IdentityProvider : public QObject
 
 public:
 
+    ~IdentityProvider() override;
+
     static IdentityProvider* instance();
     static QString FaceTrainingVersion;
     static QString ExtractorModel;
@@ -167,11 +169,10 @@ private:
 private:
 
     IdentityProvider();
-    ~IdentityProvider();
 
     // Disable
-    explicit IdentityProvider(QObject*)                           = delete;
-    IdentityProvider(const IdentityProvider&)                     = delete;
+    explicit IdentityProvider(QObject*)       = delete;
+    IdentityProvider(const IdentityProvider&) = delete;
 
 private:
 

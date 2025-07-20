@@ -121,10 +121,11 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
     DIO();
+
+    // Disable
     explicit DIO(QObject*) = delete;
-    ~DIO() override = default;
+    ~DIO() override        = default;
 
 private:
 
