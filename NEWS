@@ -22,7 +22,7 @@ BUGFIXES:
 011 ==> 507051 - Portable archive for 8.7.0 (digiKam-8.7.0-Qt6-Win64.tar.xz) is missing as a download option.
 012 ==> 506663 - Face recognition finds nothing.
 013 ==> 507101 - OpenCV 4.12 exception and face classifier not working.
-014 ==>
+014 ==> 507113 - Face recognition does not identify faces even after scanning hundreds of faces.
 015 ==>
 016 ==>
 017 ==>
