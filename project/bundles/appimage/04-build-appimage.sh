@@ -661,13 +661,16 @@ cp /usr/share/applications/org.kde.digikam.desktop      ./
 cp /usr/share/applications/org.kde.showfoto.desktop     ./
 
 cp /usr/share/icons/hicolor/256x256/apps/digikam.png    ./digikam.png
+cp /usr/share/icons/hicolor/256x256/apps/showfoto.png   ./showfoto.png
 cp /usr/share/icons/hicolor/256x256/apps/digikam.png    ./.DirIcon
 
 mkdir -p $APP_IMG_DIR/usr/share/icons/default/128x128/apps
 cp -r /usr/share/icons/hicolor/128x128/apps/digikam.png ./usr/share/icons/default/128x128/apps/digikam.png
+cp -r /usr/share/icons/hicolor/128x128/apps/showfoto.png ./usr/share/icons/default/128x128/apps/showfoto.png
 
 mkdir -p $APP_IMG_DIR/usr/share/icons/default/128x128/mimetypes
 cp -r /usr/share/icons/hicolor/128x128/apps/digikam.png ./usr/share/icons/default/128x128/mimetypes/application-vnd.digikam.png
+cp -r /usr/share/icons/hicolor/128x128/apps/showfoto.png ./usr/share/icons/default/128x128/mimetypes/application-vnd.showfoto.png
 
 mkdir -p $ORIG_WD/bundle
 
