@@ -4,6 +4,7 @@ digiKam 8.8.0 - Release date: 2025-11-xx
 NEW FEATURES:
 
 Bundles:         Update to last ExifTool version 13.32.
+Bundles:         Update Qt6 based Linux AppImage to last frameworks Qt 6.9.1, KDE 6.16.0, and OpenCV 4.12.
 
 
 *****************************************************************************************************
