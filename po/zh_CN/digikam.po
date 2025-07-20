@@ -1,3 +1,4 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
@@ -11,11 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: /kf5-trunk/messages/digikam/digikam.pot\n"
 "X-Crowdin-File-ID: 4777\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -29097,11 +29098,10 @@ msgid "Unknown"
 msgstr "未知"
 
 #: core/libs/dialogs/libsinfodlg.cpp:422
-#, fuzzy, kde-format
-#| msgid "Base Tools"
+#, kde-format
 msgctxt "@title"
 msgid "Build Tools"
-msgstr "基础工具"
+msgstr ""
 
 #: core/libs/dialogs/libsinfodlg.cpp:457
 #, kde-format
@@ -33670,6 +33670,12 @@ msgid ""
 "\"Search in\" tab.</p><p><b>Recognize faces only</b> will try to match "
 "unknown faces with confirmed faces without scanning images new faces.</p>"
 msgstr ""
+"digiKam 能够搜索照片中的人脸。<br>只要您在一定数量的照片中标识了认识的人，"
+"<br>它便能识别出照片中的人物。<p><b>扫描新图像</b> 将扫描并尝试识别在“扫描范"
+"围”标签页中选中的相册中发现的新图像中的人脸。</p><p><b>扫描所有图像</b> 将扫"
+"描并尝试识别在“扫描范围”标签页中选中的相册中发现的所有图像中的人脸。</"
+"p><p><b>仅识别人脸</b> 将尝试将未知人脸与已确认的人脸进行匹配，而不会扫描图像"
+"中的新人脸。</p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
 #, kde-format
@@ -33684,6 +33690,8 @@ msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
 "accurately faces will<br>be detected, but less faces will be detected."
 msgstr ""
+"调整灵敏度与特异性：数值越高，检测到的人脸越准确，<br>但检测到的人脸数量会减"
+"少。"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:140
 #, kde-format
@@ -33769,6 +33777,8 @@ msgid ""
 "<br>Note: only faces that are very similar to pre-tagged faces are "
 "recognized."
 msgstr ""
+"调整人脸识别的宽泛-精确程度：<br>数值越高，识别精度越高，识别到的人脸也越少。"
+"<br>提示：只有与同一人物标签的已有人脸高度相似的人脸才会被识别。"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
@@ -33786,6 +33796,8 @@ msgid ""
 "if you wish to employ all processor cores<br>on your system, or work in the "
 "background only on one core."
 msgstr ""
+"人脸检测和识别任务耗时较长。<br>您可以选择使用系统的所有处理器内核以提升速"
+"度，<br>或者选择在后台使用单一处理器内核以减少卡顿。"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
 #, kde-format
@@ -34330,7 +34342,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "Low quality images detected by the quality engine<br>will be assigned to the "
 "rejected pick label (red flag)."
-msgstr ""
+msgstr "图像品质检测引擎检测到的低品质图像<br>将分配“否决”挑选标签 (红标)。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
 #, kde-format
@@ -34344,7 +34356,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "Medium quality images detected by the quality engine<br>will be assigned to "
 "the pending pick label (yellow flag)."
-msgstr ""
+msgstr "图像品质检测引擎检测到的中品质图像<br>将分配“待定”挑选标签 (黄标)。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
 #, kde-format
@@ -34358,7 +34370,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "High quality images detected by the quality engine<br>will be assigned to "
 "the accepted pick label (green flag)."
-msgstr ""
+msgstr "图像品质检测引擎检测到的高品质图像<br>将分配“接受”挑选标签 (绿标)。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:137
 #, kde-format
@@ -34379,6 +34391,7 @@ msgid ""
 "Detect if the image has aesthetic contents.<br>The aesthetic detection "
 "engine is based on a deep learning model to classify images."
 msgstr ""
+"检测图像内容是否具有美感。<br>美感检测引擎基于深度学习模型来对图像进行分类。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
 #, kde-format
@@ -34394,6 +34407,8 @@ msgid ""
 "noise, exposure (under / over), and compression levels.<br>See the relevant "
 "settings from the next <b>Basic Factors</b> tab."
 msgstr ""
+"检测图像是否被四大主要劣化因素破坏，<br>例如：模糊、噪点、曝光 (曝光过度/不"
+"足)、压缩级别。<br>请在下一个<b>主要劣化因素</b>标签页中查看相关设置。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:165
 #, kde-format
@@ -34403,6 +34418,8 @@ msgid ""
 "employ all processor cores<br>on your system, or work in the background only "
 "on one core."
 msgstr ""
+"图像品质检测任务耗时较长。<br>您可以选择使用系统的所有处理器内核以提升速度，"
+"<br>或者选择在后台使用单一处理器内核以减少卡顿。"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
 #, kde-format
@@ -38581,6 +38598,8 @@ msgid ""
 "accurately objects will<br>be recognized, but fewer objects will be "
 "recognized.<br>"
 msgstr ""
+"调整灵敏度与特异性：数值越高，检测到的对象越准确，<br>但检测到的对象数量会减"
+"少。<br>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
 #, kde-format
@@ -38590,6 +38609,8 @@ msgid ""
 "choose if you wish to employ all processor cores<br>on your system, or work "
 "in the background only on one core."
 msgstr ""
+"对象检测和自动分配标签任务耗时较长。<br>您可以选择使用系统的所有处理器内核以"
+"提升速度，<br>或者选择在后台使用单一处理器内核以减少卡顿。"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183
 #, kde-format
@@ -60057,7 +60078,7 @@ msgstr "启用此选项将保存当前更改到文件的新建版本"
 #, kde-format
 msgctxt "@option:check"
 msgid "Uses all processors"
-msgstr ""
+msgstr "使用所有处理器"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
 #, kde-format
@@ -60875,12 +60896,12 @@ msgstr "包含全部关键词："
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, kde-format
 msgid "Empty Text"
-msgstr "空白文字"
+msgstr "空白文本"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, kde-format
 msgid "Return items without text in"
-msgstr ""
+msgstr "返回在这些字段中不含文本的项目"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
 #, kde-format
@@ -61139,7 +61160,7 @@ msgstr "文件 / 相册 / 标签"
 #: core/utilities/searchwindow/searchgroup.cpp:82
 #, kde-format
 msgid "Item Properties"
-msgstr ""
+msgstr "项目属性"
 
 #: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format

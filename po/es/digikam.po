@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-19 06:34+0000\n"
-"PO-Revision-Date: 2025-07-17 19:25+0100\n"
+"PO-Revision-Date: 2025-07-19 12:13+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -30427,11 +30427,10 @@ msgid "Unknown"
 msgstr "Desconocida"
 
 #: core/libs/dialogs/libsinfodlg.cpp:422
-#, fuzzy, kde-format
-#| msgid "Base Tools"
+#, kde-format
 msgctxt "@title"
 msgid "Build Tools"
-msgstr "Herramientas de base"
+msgstr "Herramientas de construcción"
 
 #: core/libs/dialogs/libsinfodlg.cpp:457
 #, kde-format

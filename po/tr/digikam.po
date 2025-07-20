@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-19 06:34+0000\n"
-"PO-Revision-Date: 2025-07-17 22:44+0300\n"
+"PO-Revision-Date: 2025-07-19 22:20+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -30142,11 +30142,10 @@ msgid "Unknown"
 msgstr "Bilinmiyor"
 
 #: core/libs/dialogs/libsinfodlg.cpp:422
-#, fuzzy, kde-format
-#| msgid "Base Tools"
+#, kde-format
 msgctxt "@title"
 msgid "Build Tools"
-msgstr "Temel Araçlar"
+msgstr "Yapı Araçları"
 
 #: core/libs/dialogs/libsinfodlg.cpp:457
 #, kde-format
