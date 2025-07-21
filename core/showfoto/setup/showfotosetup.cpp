@@ -202,7 +202,7 @@ ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
 
 #endif
 
-        d->miscPage->setActiveTab((ShowfotoSetupMisc::MiscTab)group.readEntry(QLatin1String("Misc Tab"), (int)ShowfotoSetupMisc::Behaviour));
+        d->miscPage->setActiveTab((ShowfotoSetupMisc::MiscTab)group.readEntry(QLatin1String("Misc Tab"), (int)ShowfotoSetupMisc::Behavior));
     }
     else
     {

@@ -116,12 +116,12 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
 
     // -- Application Behavior Options --------------------------------------------------------
 
-    QWidget* const behaviourPanel = new QWidget(d->tab);
-    QVBoxLayout* const layout     = new QVBoxLayout(behaviourPanel);
+    QWidget* const behaviorPanel = new QWidget(d->tab);
+    QVBoxLayout* const layout     = new QVBoxLayout(behaviorPanel);
 
     // -- Sort Order Options ----------------------------------
 
-    QGroupBox* const sortOptionsGroup = new QGroupBox(i18n("Thumbbar, Folder-View, and Stack-View Items Sort Order"), behaviourPanel);
+    QGroupBox* const sortOptionsGroup = new QGroupBox(i18n("Thumbbar, Folder-View, and Stack-View Items Sort Order"), behaviorPanel);
     QVBoxLayout* const gLayout4       = new QVBoxLayout();
 
     DHBox* const sortBox = new DHBox(sortOptionsGroup);
@@ -143,7 +143,7 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
 
     // Thumbnails Options -------------------------------------
 
-    QGroupBox* const thOptionsGroup = new QGroupBox(i18n("Thumbbar Items"), behaviourPanel);
+    QGroupBox* const thOptionsGroup = new QGroupBox(i18n("Thumbbar Items"), behaviorPanel);
     QVBoxLayout* const gLayout3     = new QVBoxLayout();
 
     d->showMimeOverImage = new QCheckBox(i18n("&Show image Format"),          thOptionsGroup);
@@ -162,7 +162,7 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
 
     // Update Options ----------------------------------------
 
-    QGroupBox* const upOptionsGroup = new QGroupBox(i18n("Updates"), behaviourPanel);
+    QGroupBox* const upOptionsGroup = new QGroupBox(i18n("Updates"), behaviorPanel);
     QVBoxLayout* const gLayout5     = new QVBoxLayout();
 
     DHBox* const updateHbox = new DHBox(upOptionsGroup);
@@ -210,7 +210,7 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
     layout->addWidget(upOptionsGroup);
     layout->addStretch();
 
-    d->tab->insertTab(Behaviour, behaviourPanel, i18nc("@title:tab", "Behaviour"));
+    d->tab->insertTab(Behavior, behaviorPanel, i18nc("@title:tab", "Behavior"));
 
     // -- Application Appearance Options --------------------------------------------------------
 

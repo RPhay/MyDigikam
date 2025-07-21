@@ -31,7 +31,7 @@ public:
 
     enum MiscTab
     {
-        Behaviour = 0,
+        Behavior = 0,
         Appearance,
         Grouping,
         SpellCheck,
