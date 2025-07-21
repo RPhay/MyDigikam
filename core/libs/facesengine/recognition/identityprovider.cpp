@@ -138,7 +138,7 @@ IdentityProvider::~IdentityProvider()
 
     delete d;
 
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << "IdentityProvider::delete";
+    qDebug() << "IdentityProvider::delete";
 }
 
 IdentityProvider* IdentityProvider::instance()

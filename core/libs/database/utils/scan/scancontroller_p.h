@@ -161,13 +161,4 @@ public:
     QList<qlonglong>                newIdsList;
 };
 
-// ------------------------------------------------------------------------------
-
-class Q_DECL_HIDDEN ScanControllerCreator
-{
-public:
-
-    ScanController object;
-};
-
 } // namespace Digikam

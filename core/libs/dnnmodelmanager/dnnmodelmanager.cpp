@@ -78,7 +78,7 @@ DNNModelManager::~DNNModelManager()
 {
     delete d;
 
-    qCDebug(DIGIKAM_DNNMODELMNGR_LOG) << "DNNModelManager::delete";
+    qDebug() << "DNNModelManager::delete";
 }
 
 DNNModelManager* DNNModelManager::instance()

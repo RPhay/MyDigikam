@@ -37,6 +37,13 @@ ScanController::FileMetadataWrite::~FileMetadataWrite()
 
 // ----------------------------------------------------------------------------
 
+class Q_DECL_HIDDEN ScanControllerCreator
+{
+public:
+
+    ScanController object;
+};
+
 Q_GLOBAL_STATIC(ScanControllerCreator, creator)
 
 // ----------------------------------------------------------------------------
@@ -106,7 +113,10 @@ ScanController::~ScanController()
 
     delete d->progressDialog;
     delete d->hints;
+
     delete d;
+
+    qDebug() << "ScanController::delete";
 }
 
 ScanController* ScanController::instance()
