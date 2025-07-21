@@ -34,6 +34,7 @@ class DIGIKAM_GUI_EXPORT IdentityProvider : public QObject
 
 public:
 
+    IdentityProvider();
     ~IdentityProvider() override;
 
     static IdentityProvider* instance();
@@ -167,8 +168,6 @@ private:
     bool trainingRemoveConcurrent();
 
 private:
-
-    IdentityProvider();
 
     // Disable
     explicit IdentityProvider(QObject*)       = delete;

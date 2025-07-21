@@ -29,6 +29,7 @@ class DIGIKAM_GUI_EXPORT FaceClassifier : public FaceClassifierBase
 
 public:
 
+    FaceClassifier();
     ~FaceClassifier()                                                         override;
 
     static FaceClassifier* instance();
@@ -91,8 +92,6 @@ private:
     Private* const d = nullptr;
 
 private:
-
-    FaceClassifier();
 
     // Disable
     explicit FaceClassifier(QObject*)     = delete;
