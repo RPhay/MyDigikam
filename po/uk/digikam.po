@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-19 06:34+0000\n"
-"PO-Revision-Date: 2025-07-17 08:16+0300\n"
+"PO-Revision-Date: 2025-07-20 15:46+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -30555,11 +30555,10 @@ msgid "Unknown"
 msgstr "Невідома"
 
 #: core/libs/dialogs/libsinfodlg.cpp:422
-#, fuzzy, kde-format
-#| msgid "Base Tools"
+#, kde-format
 msgctxt "@title"
 msgid "Build Tools"
-msgstr "Базові інструменти"
+msgstr "Інструменти для збирання"
 
 #: core/libs/dialogs/libsinfodlg.cpp:457
 #, kde-format

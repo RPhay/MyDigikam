@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 01:59+0000\n"
+"POT-Creation-Date: 2025-07-19 06:34+0000\n"
 "PO-Revision-Date: 2024-03-09 12:45+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -4364,8 +4364,8 @@ msgstr ""
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
-#: core/libs/dialogs/libsinfodlg.cpp:628
+#: core/libs/dialogs/libsinfodlg.cpp:568 core/libs/dialogs/libsinfodlg.cpp:574
+#: core/libs/dialogs/libsinfodlg.cpp:649
 #, kde-format
 msgid "no entry"
 msgstr ""
@@ -28556,37 +28556,43 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:436
+#: core/libs/dialogs/libsinfodlg.cpp:422
+#, kde-format
+msgctxt "@title"
+msgid "Build Tools"
+msgstr ""
+
+#: core/libs/dialogs/libsinfodlg.cpp:457
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:466
+#: core/libs/dialogs/libsinfodlg.cpp:487
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:500
+#: core/libs/dialogs/libsinfodlg.cpp:521
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:696
+#: core/libs/dialogs/libsinfodlg.cpp:717
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:701
+#: core/libs/dialogs/libsinfodlg.cpp:722
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:706
+#: core/libs/dialogs/libsinfodlg.cpp:727
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -32268,12 +32274,12 @@ msgid ""
 "ExifTool, DNG will not include all RAW source properties."
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:347
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:351
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -32283,12 +32289,12 @@ msgid ""
 "objects using the COCO dataset.</p>"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:354
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:358
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -32298,12 +32304,12 @@ msgid ""
 "recognize 80 different objects using the COCO dataset.</p>"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:361
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
 #, kde-format
 msgid "EfficientNet B7"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:365
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33158,15 +33164,14 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"digiKam can search for faces in your photos.\n"
-"When you have identified your friends on a number of photos,\n"
-"it can also recognize the people shown on your photos.\n"
-"<p><b>Scan new images</b> will scan for faces and attempt recognition for "
-"new images found in the albums selected in the \"Search in\" tab.</"
-"p><p><b>Scan all images</b> will scan for faces and attempt recognition for "
-"all images found in the albums selected in the \"Search in\" tab.</"
-"p><p><b>Recognize faces only</b> will try to match unknown faces with "
-"confirmed faces without scanning images new faces.</p>"
+"digiKam can search for faces in your photos.<br>When you have identified "
+"your friends on a number of photos,<br>it can also recognize the people "
+"shown on your photos.<p><b>Scan new images</b> will scan for faces and "
+"attempt recognition for new images found in the albums selected in the "
+"\"Search in\" tab.</p><p><b>Scan all images</b> will scan for faces and "
+"attempt recognition for all images found in the albums selected in the "
+"\"Search in\" tab.</p><p><b>Recognize faces only</b> will try to match "
+"unknown faces with confirmed faces without scanning images new faces.</p>"
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:128
@@ -33180,8 +33185,7 @@ msgstr ""
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will\n"
-"be detected, but less faces will be detected."
+"accurately faces will<br>be detected, but less faces will be detected."
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:140
@@ -33256,9 +33260,9 @@ msgstr ""
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately faces will\n"
-"be recognized, but less faces will be recognized.\n"
-"Note: only faces that are very similar to pre-tagged faces are recognized."
+"accurately faces will<br>be recognized, but less faces will be recognized."
+"<br>Note: only faces that are very similar to pre-tagged faces are "
+"recognized."
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
@@ -33273,9 +33277,9 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Face detection and recognition are time-consuming tasks.\n"
-"You can choose if you wish to employ all processor cores\n"
-"on your system, or work in the background only on one core."
+"Face detection and recognition are time-consuming tasks.<br>You can choose "
+"if you wish to employ all processor cores<br>on your system, or work in the "
+"background only on one core."
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
@@ -33817,8 +33821,8 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Low quality images detected by the quality engine\n"
-"will be assigned to the rejected pick label (red flag)."
+"Low quality images detected by the quality engine<br>will be assigned to the "
+"rejected pick label (red flag)."
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:110
@@ -33831,8 +33835,8 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Medium quality images detected by the quality engine\n"
-"will be assigned to the pending pick label (yellow flag)."
+"Medium quality images detected by the quality engine<br>will be assigned to "
+"the pending pick label (yellow flag)."
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
@@ -33845,8 +33849,8 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"High quality images detected by the quality engine\n"
-"will be assigned to the accepted pick label (green flag)."
+"High quality images detected by the quality engine<br>will be assigned to "
+"the accepted pick label (green flag)."
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:137
@@ -33865,9 +33869,8 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Detect if the image has aesthetic contents.\n"
-"The aesthetic detection engine is based on a deep learning model to classify "
-"images."
+"Detect if the image has aesthetic contents.<br>The aesthetic detection "
+"engine is based on a deep learning model to classify images."
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
@@ -33880,18 +33883,18 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Detect if the image is sabotaging using four basic factors\n"
-"eg. blur, noise, exposure (under / over), and compression levels.\n"
-"See the relevant settings from the next <b>Basic Factors</b> tab."
+"Detect if the image is sabotaging using four basic factors<br>eg. blur, "
+"noise, exposure (under / over), and compression levels.<br>See the relevant "
+"settings from the next <b>Basic Factors</b> tab."
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Quality detection is time-consuming tasks.\n"
-"You can choose if you wish to employ all processor cores\n"
-"on your system, or work in the background only on one core."
+"Quality detection is time-consuming tasks.<br>You can choose if you wish to "
+"employ all processor cores<br>on your system, or work in the background only "
+"on one core."
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
@@ -37997,17 +38000,17 @@ msgstr ""
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
-"accurately objects will\n"
-"be recognized, but fewer objects will be recognized.\n"
+"accurately objects will<br>be recognized, but fewer objects will be "
+"recognized.<br>"
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Object detection and auto-tagging are time-consuming tasks.\n"
-"You can choose if you wish to employ all processor cores\n"
-"on your system, or work in the background only on one core."
+"Object detection and auto-tagging are time-consuming tasks.<br>You can "
+"choose if you wish to employ all processor cores<br>on your system, or work "
+"in the background only on one core."
 msgstr ""
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:183

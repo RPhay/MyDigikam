@@ -7,13 +7,13 @@
 # Joan Sanz i Rabadan <joansanzrab@gmail.com>, 2005, 2006.
 # Joan Maspons <joanmaspons@gmail.com>, 2009, 2010.
 # Orestes Mas <orestes@tsc.upc.edu>, 2014.
-# Josep M. Ferrer <txemaq@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025.
+# SPDX-FileCopyrightText: 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-19 06:34+0000\n"
-"PO-Revision-Date: 2025-07-17 10:26+0200\n"
+"PO-Revision-Date: 2025-07-19 10:05+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -30420,11 +30420,10 @@ msgid "Unknown"
 msgstr "Desconeguda"
 
 #: core/libs/dialogs/libsinfodlg.cpp:422
-#, fuzzy, kde-format
-#| msgid "Base Tools"
+#, kde-format
 msgctxt "@title"
 msgid "Build Tools"
-msgstr "Eines base"
+msgstr "Eines de construcció"
 
 #: core/libs/dialogs/libsinfodlg.cpp:457
 #, kde-format
