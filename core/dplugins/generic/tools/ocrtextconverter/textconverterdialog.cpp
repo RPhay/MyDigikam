@@ -149,7 +149,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     QScrollArea* const recsv      = new QScrollArea(d->tabView);
     DVBox* const recognitionTab   = new DVBox(recsv->viewport());
-    QLabel* const tesseractLabel  = new QLabel(i18nc("@label", "This tool use the %1 open-source "
+    QLabel* const tesseractLabel  = new QLabel(i18nc("@label", "This tool uses the %1 open-source "
                                                "engine to perform Optical Characters Recognition. "
                                                "Tesseract program and the desired languages modules must "
                                                "be installed on your system.",
@@ -203,7 +203,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     DVBox* const reviewTab = new DVBox(d->tabView);
     d->textedit            = new DTextEdit(0, reviewTab);
-    d->textedit->setPlaceholderText(i18nc("@info", "After to process recognition, "
+    d->textedit->setPlaceholderText(i18nc("@info", "After processing recognition, "
                                                    "double-click on one item to "
                                                    "display recognized text here. "
                                                    "You can review words and fix "

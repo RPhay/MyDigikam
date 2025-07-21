@@ -84,10 +84,10 @@ QString MjpegStreamPlugin::details() const
         "<p>This tool allows users to share items on the local network through a MJPEG Stream server.</p>"
         "<p>Items to share can be selected one by one or by group through a selection of albums.</p>"
         "<p>Motion JPEG is a video compression format in which each video frame or interlaced field of "
-        "a digital video sequence is compressed separately as a JPEG image. MJPEG streams is a standard "
+        "a digital video sequence is compressed separately as a JPEG image. MJPEG stream is a standard "
         "which allows network clients to be connected without additional module. Most major web browsers "
         "and players support MJPEG stream.</p>"
-        "<p>To access to stream from your browser, use http://address:port as url, with address the MJPEG address, "   // krazy:exclude=insecurenet
+        "<p>To access the stream from your browser, use http://address:port as url, with address the MJPEG address, "   // krazy:exclude=insecurenet
         "and port the MJPEG port set in config dialog. More than one computer can be connected to the MJPEG server "
         "at the same time.</p>");
 }

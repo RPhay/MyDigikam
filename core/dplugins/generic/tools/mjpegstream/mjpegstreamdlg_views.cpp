@@ -79,9 +79,9 @@ void MjpegStreamDlg::setupServerView()
     explanation->setText(i18nc("@info",
         "The %1 server allows to share items through the local network using a web browser. "
         "Motion JPEG is a video compression format in which each video frame is compressed "
-        "separately as a JPEG image. MJPEG streams is a standard which allows network clients to be "
+        "separately as a JPEG image. MJPEG stream is a standard which allows network clients to be "
         "connected without additional module. Most major web browsers and players support MJPEG stream. "
-        "To access to stream from your browser, just use http://address:port as url, with address "       // krazy:exclude=insecurenet
+        "To access the stream from your browser, just use http://address:port as url, with address "       // krazy:exclude=insecurenet
         "the MJPEG server IP, and port the server port set in this config dialog.",
         QLatin1String("<a href='https://en.wikipedia.org/wiki/Motion_JPEG'>Motion JPEG</a>")));
 
@@ -129,7 +129,7 @@ void MjpegStreamDlg::setupStreamView()
     d->quality->setDefaultValue(75);
     d->quality->setRange(50, 100, 1);
     d->quality->setWhatsThis(i18nc("@info", "The JPEG quality [50:lower - 100:higher]. "
-                                            "Warning: better quality require more network bandwidth"));
+                                            "Warning: better quality requires more network bandwidth"));
 
     qualityLbl->setBuddy(d->quality);
 
@@ -152,7 +152,7 @@ void MjpegStreamDlg::setupStreamView()
 
     d->typeVal->setDefaultIndex(VidSlideSettings::BLUERAY);
     d->typeVal->setWhatsThis(i18nc("@info", "The JPEG image size in pixels, using standard screen resolutions. "
-                                            "Warning: larger size require more network bandwidth"));
+                                            "Warning: larger size requires more network bandwidth"));
     typeLabel->setBuddy(d->typeVal);
 
     // ---
@@ -169,12 +169,12 @@ void MjpegStreamDlg::setupStreamView()
     d->rate->setDefaultValue(10);
     d->rate->setRange(5, 24, 1);
     d->rate->setWhatsThis(i18nc("@info", "The number of frames by second to render the stream. "
-                                         "Warning: larger rate require more network bandwidth"));
+                                         "Warning: larger rate requires more network bandwidth"));
     rateLbl->setBuddy(d->rate);
 
     d->streamLoop             = new QCheckBox(i18nc("@option:check", "Stream in Loop"), d->streamSettings);
     d->streamLoop->setChecked(true);
-    d->streamLoop->setWhatsThis(i18nc("@info", "The MJPEG stream will be played in loop instead once."));
+    d->streamLoop->setWhatsThis(i18nc("@info", "The MJPEG stream will be played in loop instead of playing once."));
 
     QGridLayout* const grid2  = new QGridLayout(d->streamSettings);
     grid2->addWidget(qualityLbl,    0, 0, 1, 1);
@@ -230,9 +230,9 @@ void MjpegStreamDlg::setupTransitionView()
 
     QLabel* const transNote  = new QLabel(transitionSettings);
     transNote->setWordWrap(true);
-    transNote->setText(i18nc("@label", "A transition is an visual effect applied between two images. "
-                                       "For some effects, the duration can depend of random values and "
-                                       "can change while the stream."));
+    transNote->setText(i18nc("@label", "A transition is a visual effect applied between two images. "
+                                       "For some effects, the duration can depend on random values and "
+                                       "can change while the stream is playing."));
 
     d->transPreview              = new TransitionPreview(transitionSettings);
     d->transPreview->setImagesList(QList<QUrl>());
@@ -276,7 +276,7 @@ void MjpegStreamDlg::setupEffectView()
 
     QLabel* const effNote      = new QLabel(effectSettings);
     effNote->setWordWrap(true);
-    effNote->setText(i18nc("@label", "An effect is an visual panning or zooming applied while an image "
+    effNote->setText(i18nc("@label", "An effect is a visual panning or zooming applied while an image "
                                      "is displayed in MJPEG stream."));
 
     d->effPreview              = new EffectPreview(effectSettings);

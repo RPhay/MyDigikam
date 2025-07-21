@@ -47,6 +47,8 @@ public:
 
     Private() = default;
 
+public:
+
     QStringList       oldValues;
 
     QPushButton*      addValueButton    = nullptr;
@@ -102,10 +104,10 @@ ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, int size)
     d->dataList->addSqueezedItem(QLatin1String("007 - ") + i18nc("Content type", "History"));
     d->dataList->addSqueezedItem(QLatin1String("008 - ") + i18nc("Content type", "Obituary"));
     d->dataList->addSqueezedItem(QLatin1String("009 - ") + i18nc("Content type", "Opinion"));
-    d->dataList->addSqueezedItem(QLatin1String("010 - ") + i18nc("Content type", "Polls & Surveys"));
+    d->dataList->addSqueezedItem(QLatin1String("010 - ") + i18nc("Content type", "Polls and Surveys"));
     d->dataList->addSqueezedItem(QLatin1String("011 - ") + i18nc("Content type", "Profile"));
-    d->dataList->addSqueezedItem(QLatin1String("012 - ") + i18nc("Content type", "Results Listings & Table"));
-    d->dataList->addSqueezedItem(QLatin1String("013 - ") + i18nc("Content type", "Side bar & Supporting information"));
+    d->dataList->addSqueezedItem(QLatin1String("012 - ") + i18nc("Content type", "Results Listings and Table"));
+    d->dataList->addSqueezedItem(QLatin1String("013 - ") + i18nc("Content type", "Side bar and Supporting information"));
     d->dataList->addSqueezedItem(QLatin1String("014 - ") + i18nc("Content type", "Summary"));
     d->dataList->addSqueezedItem(QLatin1String("015 - ") + i18nc("Content type", "Transcript & Verbatim"));
     d->dataList->addSqueezedItem(QLatin1String("016 - ") + i18nc("Content type", "Interview"));
