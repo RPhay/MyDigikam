@@ -35,6 +35,7 @@ class DIGIKAM_EXPORT DNNModelManager : public QObject
 
 public:
 
+    DNNModelManager();
     ~DNNModelManager() override;
 
     /**
@@ -63,8 +64,6 @@ public:
     DNNModelBase* getModel(const QString& modelName, DNNModelUsage usage) const;
 
 private:
-
-    DNNModelManager();
 
     // Disable
     explicit DNNModelManager(QObject*) = delete;

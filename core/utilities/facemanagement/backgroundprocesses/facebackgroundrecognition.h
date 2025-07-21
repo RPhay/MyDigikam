@@ -32,6 +32,7 @@ class DIGIKAM_GUI_EXPORT FaceRecognitionBackgroundController : public QObject
 
 public:
 
+    FaceRecognitionBackgroundController();
     ~FaceRecognitionBackgroundController() override;
 
     static FaceRecognitionBackgroundController* instance();
@@ -46,8 +47,6 @@ private Q_SLOTS:
     void slotScanDone();
 
 private:
-
-    FaceRecognitionBackgroundController();
 
     // Disable
     explicit FaceRecognitionBackgroundController(QObject*)                           = delete;
