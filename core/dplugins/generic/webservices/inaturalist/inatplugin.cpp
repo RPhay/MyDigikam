@@ -63,7 +63,7 @@ QString INatPlugin::description() const
 QString INatPlugin::details() const
 {
     return i18nc("@info",
-                 "This tool exports photos as iNaturalist observations.\n\n"
+                 "This tool exports photos as iNaturalist observations.<br><br>"
                  "See iNaturalist web site for details: %1.",
                  QLatin1String("<a href='https://www.inaturalist.org/'>"
                                "https://www.inaturalist.org/</a>"));

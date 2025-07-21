@@ -61,8 +61,9 @@ QString DBPlugin::description() const
 
 QString DBPlugin::details() const
 {
-    return i18nc("@info", "This tool allows users to export items to Dropbox web-service.\n\n"
-                 "See Dropbox web site for details: %1", QLatin1String("<a href='https://www.dropbox.com/'>https://www.dropbox.com/</a>"));
+    return i18nc("@info", "This tool allows users to export items to Dropbox web-service.<br><br>"
+                 "See Dropbox web site for details: %1",
+                 QLatin1String("<a href='https://www.dropbox.com/'>https://www.dropbox.com/</a>"));
 }
 
 QString DBPlugin::handbookSection() const

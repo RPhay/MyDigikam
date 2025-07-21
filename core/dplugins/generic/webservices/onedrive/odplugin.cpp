@@ -61,7 +61,7 @@ QString ODPlugin::description() const
 
 QString ODPlugin::details() const
 {
-    return i18nc("@info", "This tool allows users to export items to OneDrive web-service.\n\n"
+    return i18nc("@info", "This tool allows users to export items to OneDrive web-service.<br><br>"
                  "See OneDrive web site for details: %1",
                  QLatin1String("<a href='https://onedrive.live.com/'>https://onedrive.live.com/</a>"));
 }
