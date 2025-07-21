@@ -20,12 +20,14 @@
 namespace Digikam
 {
 
-Q_GLOBAL_STATIC(AlbumManagerCreator, creator)
+class Q_DECL_HIDDEN AlbumManagerCreator
+{
+public:
 
-/**
- * A friend-class shortcut to circumvent accessing this from within the destructor
- */
-AlbumManager* AlbumManager::internalInstance = nullptr;
+    AlbumManager object;
+};
+
+Q_GLOBAL_STATIC(AlbumManagerCreator, creator)
 
 AlbumManager* AlbumManager::instance()
 {
@@ -43,7 +45,6 @@ AlbumManager::AlbumManager()
     qRegisterMetaType<QHash<int,int>>("QHash<int,int>");
     qRegisterMetaType<QMap<QString,QHash<int,int> >>("QMap<QString,QHash<int,int> >");
 
-    internalInstance    = this;
     d->albumWatch       = new AlbumWatch(this);
 
     // these operations are pretty fast, no need for long queuing
@@ -110,8 +111,6 @@ AlbumManager::~AlbumManager()
     delete d->rootTAlbum;
     delete d->rootDAlbum;
     delete d->rootSAlbum;
-
-    internalInstance = nullptr;
 
     delete d;
 }

@@ -180,7 +180,6 @@ private:
 
 private:
 
-    friend class IdentityProviderCreator;
     friend class Identity;
     friend class FaceClassifier;
 };

@@ -142,11 +142,6 @@ Q_GLOBAL_STATIC(ShowfotoSettingsCreator, creator)
 
 // -------------------------------------------------------------------------------------------------
 
-ShowfotoSettings* ShowfotoSettings::instance()
-{
-    return &creator->object;
-}
-
 ShowfotoSettings::ShowfotoSettings()
     : QObject(),
       d      (new Private)
@@ -159,6 +154,11 @@ ShowfotoSettings::ShowfotoSettings()
 ShowfotoSettings::~ShowfotoSettings()
 {
     delete d;
+}
+
+ShowfotoSettings* ShowfotoSettings::instance()
+{
+    return &creator->object;
 }
 
 void ShowfotoSettings::readSettings()

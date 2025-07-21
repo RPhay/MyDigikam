@@ -35,6 +35,12 @@ class DMediaServerMngr : public QObject
 
 public:
 
+    DMediaServerMngr();
+    ~DMediaServerMngr() override;
+
+    /// This manager is a singleton. Use this method to control the DLNA server instance.
+    static DMediaServerMngr* instance();
+
     /// Setup the list of items to share with the DLNA server into a single album.
     void setItemsList(const QString& aname, const QList<QUrl>& urls);
 
@@ -75,22 +81,12 @@ public:
     /// Send a notification message if MediaServer have been started or not.
     void mediaServerNotification(bool started);
 
-public:
-
-    /// This manager is a singleton. Use this method to control the DLNA server instance.
-    static DMediaServerMngr* instance();
-
 private:
 
     // Disable
-
-    DMediaServerMngr();
     explicit DMediaServerMngr(QObject*) = delete;
-    ~DMediaServerMngr() override;
 
 private:
-
-    friend class DMediaServerMngrCreator;
 
     class Private;
     Private* const d = nullptr;

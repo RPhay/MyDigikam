@@ -33,6 +33,9 @@ class DIGIKAM_EXPORT DMetadataSettings : public QObject
 
 public:
 
+    DMetadataSettings();
+    ~DMetadataSettings() override;
+
     /**
      * Global container for Metadata settings. All accessor methods are thread-safe.
      */
@@ -56,9 +59,7 @@ Q_SIGNALS:
 
 private:
 
-    DMetadataSettings();
     explicit DMetadataSettings(QObject*);
-    ~DMetadataSettings() override;
 
     void readFromConfig();
 
@@ -66,8 +67,6 @@ private:
 
     class Private;
     Private* const d = nullptr;
-
-    friend class DMetadataSettingsCreator;
 };
 
 } // namespace Digikam

@@ -220,13 +220,4 @@ public:
     AlbumManager::Private* const d = nullptr;
 };
 
-// -----------------------------------------------------------------------------------
-
-class Q_DECL_HIDDEN AlbumManagerCreator
-{
-public:
-
-    AlbumManager object;
-};
-
 } // namespace Digikam

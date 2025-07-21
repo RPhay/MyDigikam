@@ -34,6 +34,9 @@ class DIGIKAM_EXPORT DatabaseServerStarter : public QObject
 
 public:
 
+    DatabaseServerStarter();
+    ~DatabaseServerStarter() override;
+
     /**
      * Global instance of internal server starter. All accessor methods are thread-safe.
      */
@@ -45,16 +48,12 @@ public:
 private:
 
     // Disable
-    DatabaseServerStarter();
     explicit DatabaseServerStarter(QObject*) = delete;
-    ~DatabaseServerStarter() override;
 
 private:
 
     class Private;
     Private* const d = nullptr;
-
-    friend class DatabaseServerStarterCreator;
 };
 
 } // namespace Digikam

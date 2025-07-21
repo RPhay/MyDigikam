@@ -56,8 +56,6 @@ private:
 
     class Private;
     Private* const d = nullptr;
-
-    friend class FaceRecognitionBackgroundControllerCreator;
 };
 
 } // namespace Digikam

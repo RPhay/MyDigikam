@@ -87,14 +87,9 @@ public:
     DMetadataSettings object;
 };
 
-Q_GLOBAL_STATIC(DMetadataSettingsCreator, dmetatadaSettingsCreator)
+Q_GLOBAL_STATIC(DMetadataSettingsCreator, creator)
 
 // -----------------------------------------------------------------------------------------------
-
-DMetadataSettings* DMetadataSettings::instance()
-{
-    return &dmetatadaSettingsCreator->object;
-}
 
 DMetadataSettings::DMetadataSettings()
     : QObject(),
@@ -107,6 +102,11 @@ DMetadataSettings::DMetadataSettings()
 DMetadataSettings::~DMetadataSettings()
 {
     delete d;
+}
+
+DMetadataSettings* DMetadataSettings::instance()
+{
+    return &creator->object;
 }
 
 DMetadataSettingsContainer DMetadataSettings::settings() const

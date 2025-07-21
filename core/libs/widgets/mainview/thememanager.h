@@ -38,7 +38,9 @@ class DIGIKAM_EXPORT ThemeManager : public QObject
 
 public:
 
+    ThemeManager();
     ~ThemeManager()                   override;
+
     static ThemeManager* instance();
 
     QString currentThemeName() const;
@@ -62,7 +64,6 @@ private Q_SLOTS:
 private:
 
     // Disable
-    ThemeManager();
     explicit ThemeManager(QObject*);
 
     void    populateThemeMenu();
@@ -70,8 +71,6 @@ private:
     void    updateCurrentDesktopDefaultThemePreview();
 
 private:
-
-    friend class ThemeManagerCreator;
 
     class Private;
     Private* const d = nullptr;

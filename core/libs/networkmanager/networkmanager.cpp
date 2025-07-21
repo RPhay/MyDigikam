@@ -39,7 +39,7 @@ public:
     NetworkManager object;
 };
 
-Q_GLOBAL_STATIC(NetworkManagerCreator, networkManagerCreator)
+Q_GLOBAL_STATIC(NetworkManagerCreator, creator)
 
 // -----------------------------------------------------------------------------------------------
 
@@ -57,7 +57,7 @@ NetworkManager::~NetworkManager()
 
 NetworkManager* NetworkManager::instance()
 {
-    return &networkManagerCreator->object;
+    return &creator->object;
 }
 
 QNetworkAccessManager* NetworkManager::getNetworkManager(QObject* const object) const

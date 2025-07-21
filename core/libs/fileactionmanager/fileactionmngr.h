@@ -43,6 +43,9 @@ public:
 
 public:
 
+    FileActionMngr();
+    ~FileActionMngr() override;
+
     static FileActionMngr* instance();
 
     bool requestShutDown();
@@ -106,13 +109,9 @@ public:
 private:
 
     // Disable
-    FileActionMngr();
     explicit FileActionMngr(QObject*);
-    ~FileActionMngr() override;
 
     Private* const d = nullptr;
-
-    friend class FileActionMngrCreator;
 };
 
 } // namespace Digikam

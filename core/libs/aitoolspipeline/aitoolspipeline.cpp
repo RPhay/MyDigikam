@@ -46,7 +46,7 @@ public:
     AIToolsPipeline object;
 };
 
-Q_GLOBAL_STATIC(AIToolsPipelineCreator, aiToolsPipelineCreator)
+Q_GLOBAL_STATIC(AIToolsPipelineCreator, creator)
 
 // -----------------------------------------------------------------------------------------------
 
@@ -86,7 +86,7 @@ AIToolsPipeline::~AIToolsPipeline()
 
 AIToolsPipeline* AIToolsPipeline::instance()
 {
-    return &aiToolsPipelineCreator->object;
+    return &creator->object;
 }
 
 bool AIToolsPipeline::start()

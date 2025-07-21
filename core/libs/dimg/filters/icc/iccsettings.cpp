@@ -28,11 +28,6 @@ public:
 
 Q_GLOBAL_STATIC(IccSettingsCreator, creator)
 
-IccSettings* IccSettings::instance()
-{
-    return &creator->object;
-}
-
 // -----------------------------------------------------------------------------------------------
 
 IccSettings::IccSettings()
@@ -47,6 +42,11 @@ IccSettings::IccSettings()
 IccSettings::~IccSettings()
 {
     delete d;
+}
+
+IccSettings* IccSettings::instance()
+{
+    return &creator->object;
 }
 
 ICCSettingsContainer IccSettings::settings()

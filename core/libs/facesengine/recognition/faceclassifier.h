@@ -96,10 +96,6 @@ private:
     // Disable
     explicit FaceClassifier(QObject*)     = delete;
     FaceClassifier(const FaceClassifier&) = delete;
-
-private:
-
-    friend class FaceClassifierCreator;
 };
 
 } // namespace Digikam

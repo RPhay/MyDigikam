@@ -56,9 +56,10 @@ class WorkflowManager : public QObject
 
 public:
 
-    static WorkflowManager* instance();
+    WorkflowManager();
+    ~WorkflowManager()                                override;
 
-public:
+    static WorkflowManager* instance();
 
     /**
      * Load all Workflow from XML settings file. Fill 'failed' list with incompatible Workflow
@@ -91,13 +92,9 @@ private:
 private:
 
     // Disable
-    WorkflowManager();
     WorkflowManager(QObject*) = delete;
-    ~WorkflowManager()                                override;
 
 private:
-
-    friend class WorkflowManagerCreator;
 
     class Private;
     Private* const d = nullptr;

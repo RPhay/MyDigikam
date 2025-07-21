@@ -41,6 +41,12 @@ class DIGIKAM_GUI_EXPORT AIToolsPipeline : public MLPipelineFoundation
 public:
 
     /**
+     * @brief Constructor
+     * @param parent Parent object
+     */
+    explicit AIToolsPipeline(QObject* const parent = nullptr);
+
+    /**
      * @brief Destructor
      */
     ~AIToolsPipeline()      override;
@@ -195,12 +201,6 @@ Q_SIGNALS:
                          MetaEngineRotation::TransformationAction action);
 
 private:
-
-    /**
-     * @brief Constructor
-     * @param parent Parent object
-     */
-    explicit AIToolsPipeline(QObject* const parent = nullptr);
 
     class Private;
     Private* const d = nullptr;

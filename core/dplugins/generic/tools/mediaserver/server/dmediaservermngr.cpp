@@ -78,11 +78,6 @@ public:
     const QString configStartServerOnStartupEntry   = QLatin1String("Start MediaServer At Startup");
 };
 
-DMediaServerMngr* DMediaServerMngr::instance()
-{
-    return &creator->object;
-}
-
 DMediaServerMngr::DMediaServerMngr()
     : QObject(),
       d      (new Private)
@@ -94,6 +89,11 @@ DMediaServerMngr::DMediaServerMngr()
 DMediaServerMngr::~DMediaServerMngr()
 {
     delete d;
+}
+
+DMediaServerMngr* DMediaServerMngr::instance()
+{
+    return &creator->object;
 }
 
 QString DMediaServerMngr::configGroupName() const

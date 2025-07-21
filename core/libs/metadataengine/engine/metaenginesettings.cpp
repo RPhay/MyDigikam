@@ -86,14 +86,9 @@ public:
     MetaEngineSettings object;
 };
 
-Q_GLOBAL_STATIC(MetaEngineSettingsCreator, metaEngineSettingsCreator)
+Q_GLOBAL_STATIC(MetaEngineSettingsCreator, creator)
 
 // -----------------------------------------------------------------------------------------------
-
-MetaEngineSettings* MetaEngineSettings::instance()
-{
-    return &metaEngineSettingsCreator->object;
-}
 
 MetaEngineSettings::MetaEngineSettings()
     : QObject(),
@@ -106,6 +101,11 @@ MetaEngineSettings::MetaEngineSettings()
 MetaEngineSettings::~MetaEngineSettings()
 {
     delete d;
+}
+
+MetaEngineSettings* MetaEngineSettings::instance()
+{
+    return &creator->object;
 }
 
 MetaEngineSettingsContainer MetaEngineSettings::settings() const

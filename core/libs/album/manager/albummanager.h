@@ -65,6 +65,9 @@ class DIGIKAM_GUI_EXPORT AlbumManager : public QObject
 
 public:
 
+    AlbumManager();
+    ~AlbumManager() override;
+
     /**
      * A convenience function to get the instance of the AlbumManager
      */
@@ -870,13 +873,7 @@ Q_SIGNALS:
 private:
 
     // Disable
-    AlbumManager();
     explicit AlbumManager(QObject*) = delete;
-    ~AlbumManager() override;
-
-    friend class AlbumManagerCreator;
-
-    static AlbumManager* internalInstance;
 
 public:
 

@@ -144,11 +144,6 @@ Q_GLOBAL_STATIC(ImportSettingsCreator, creator)
 
 // -------------------------------------------------------------------------------------------------
 
-ImportSettings* ImportSettings::instance()
-{
-    return &creator->object;
-}
-
 ImportSettings::ImportSettings()
     : QObject(),
       d      (new Private)
@@ -160,6 +155,11 @@ ImportSettings::ImportSettings()
 ImportSettings::~ImportSettings()
 {
     delete d;
+}
+
+ImportSettings* ImportSettings::instance()
+{
+    return &creator->object;
 }
 
 void ImportSettings::readSettings()

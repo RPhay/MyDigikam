@@ -47,6 +47,11 @@ public:
 
 public:
 
+    TagsCache();
+    ~TagsCache() override;
+
+    static TagsCache* instance();
+
     /**
      * Returns the name of the tag with the given id.
      * For the tag Places/Cities/Paris, this is Paris.
@@ -278,8 +283,6 @@ public:
 
 public:
 
-    static TagsCache* instance();
-
     static QLatin1String tagPathOfDigikamInternalTags(LeadingSlashPolicy slashPolicy = IncludeLeadingSlash);
     static QLatin1String propertyNameDigikamInternalTag();
     static QLatin1String propertyNameExcludedFromWriting();
@@ -302,9 +305,7 @@ private Q_SLOTS:
 private:
 
     // Disable
-    TagsCache();
     explicit TagsCache(QObject*) = delete;
-    ~TagsCache() override;
 
     void initialize();
     void invalidate();
@@ -312,7 +313,6 @@ private:
 private:
 
     friend class CoreDbAccess;
-    friend class TagsCacheCreator;
     friend class ChangingDB;
 
 private:

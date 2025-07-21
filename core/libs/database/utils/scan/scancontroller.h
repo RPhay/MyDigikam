@@ -85,6 +85,9 @@ public:
 
 public:
 
+    ScanController();
+    ~ScanController() override;
+
     static ScanController* instance();
 
     /**
@@ -114,9 +117,6 @@ protected:
     void run() override;
 
 private:
-
-    ScanController();
-    ~ScanController() override;
 
     void setInitializationMessage();
     void createProgressDialog();
@@ -396,8 +396,6 @@ private:
     ScanController& operator=(const ScanController&) = delete;
 
 private:
-
-    friend class ScanControllerCreator;
 
     class Private;
     Private* const d = nullptr;

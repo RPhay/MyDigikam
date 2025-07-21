@@ -287,6 +287,14 @@ class DIGIKAM_EXPORT ProgressManager : public QObject
 
 public:
 
+    ProgressManager();
+    ~ProgressManager() override;
+
+    /**
+     * @return The singleton instance of this class.
+     */
+    static ProgressManager* instance();
+
     /**
      * @return true when there are no more progress items.
      */
@@ -305,11 +313,6 @@ public:
      *         the overall progress.
      */
     ProgressItem* singleItem()                      const;
-
-    /**
-     * @return The singleton instance of this class.
-     */
-    static ProgressManager* instance();
 
     /**
      * @brief Use this to acquire a unique id number which can be used to discern
@@ -490,10 +493,8 @@ private Q_SLOTS:
 private:
 
     // Disable
-    ProgressManager();
     ProgressManager(QObject*);
     ProgressManager(const ProgressManager&);
-    ~ProgressManager() override;
 
     void emitShowProgressViewImpl();
 
@@ -517,8 +518,6 @@ private:
 
     class Private;
     Private* const d = nullptr;
-
-    friend class ProgressManagerCreator;
 };
 
 } // namespace Digikam

@@ -97,6 +97,9 @@ class DIGIKAM_EXPORT GeoIfaceGlobalObject : public QObject
 
 public:
 
+    GeoIfaceGlobalObject();
+    ~GeoIfaceGlobalObject() override;
+
     static GeoIfaceGlobalObject* instance();
 
     /// @name Shared pixmaps
@@ -119,8 +122,6 @@ private:
 
     // Disable
     explicit GeoIfaceGlobalObject(QObject*) = delete;
-    GeoIfaceGlobalObject();
-    ~GeoIfaceGlobalObject() override;
 
     Q_DISABLE_COPY(GeoIfaceGlobalObject)
 

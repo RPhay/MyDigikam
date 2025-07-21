@@ -135,14 +135,9 @@ public:
     GeolocationSettings object;
 };
 
-Q_GLOBAL_STATIC(GeolocationSettingsCreator, geolocationSettingsCreator)
+Q_GLOBAL_STATIC(GeolocationSettingsCreator, creator)
 
 // -----------------------------------------------------------------------------------------------
-
-GeolocationSettings* GeolocationSettings::instance()
-{
-    return &geolocationSettingsCreator->object;
-}
 
 GeolocationSettings::GeolocationSettings()
     : d(new Private)
@@ -154,6 +149,11 @@ GeolocationSettings::GeolocationSettings()
 GeolocationSettings::~GeolocationSettings()
 {
     delete d;
+}
+
+GeolocationSettings* GeolocationSettings::instance()
+{
+    return &creator->object;
 }
 
 void GeolocationSettings::registerWidget(MapWidget* const widget)

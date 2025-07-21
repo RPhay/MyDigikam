@@ -37,6 +37,8 @@ class DIGIKAM_GUI_EXPORT IOJobsManager : public QObject
 
 public:
 
+    IOJobsManager();
+
     /**
      * @brief instance: returns the singleton of IO Jobs Manager
      * @return IOJobsManager global instance
@@ -66,10 +68,7 @@ public:
 private:
 
     // Disable
-    IOJobsManager();
     explicit IOJobsManager(QObject*);
-
-    friend class IOJobsManagerCreator;
 };
 
 } // namespace Digikam

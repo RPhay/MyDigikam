@@ -33,11 +33,6 @@ Q_GLOBAL_STATIC(ApplicationSettingsCreator, creator)
 
 // -------------------------------------------------------------------------------------------------
 
-ApplicationSettings* ApplicationSettings::instance()
-{
-    return &creator->object;
-}
-
 ApplicationSettings::ApplicationSettings()
     : QObject(),
       d      (new Private(this))
@@ -54,6 +49,11 @@ ApplicationSettings::ApplicationSettings()
 ApplicationSettings::~ApplicationSettings()
 {
     delete d;
+}
+
+ApplicationSettings* ApplicationSettings::instance()
+{
+    return &creator->object;
 }
 
 QString ApplicationSettings::generalConfigGroupName() const

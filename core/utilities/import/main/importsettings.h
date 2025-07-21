@@ -46,6 +46,9 @@ Q_SIGNALS:
 
 public:
 
+    ImportSettings();
+    ~ImportSettings()                             override;
+
     static ImportSettings* instance();
 
     void readSettings();
@@ -162,15 +165,10 @@ private:
     // Disable;
     explicit ImportSettings(QObject*) = delete;
 
-    ImportSettings();
-    ~ImportSettings()                             override;
-
 private:
 
     class Private;
     Private* const d = nullptr;
-
-    friend class ImportSettingsCreator;
 };
 
 } // namespace Digikam

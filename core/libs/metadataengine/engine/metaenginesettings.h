@@ -32,6 +32,9 @@ class DIGIKAM_EXPORT MetaEngineSettings : public QObject
 
 public:
 
+    MetaEngineSettings();
+    ~MetaEngineSettings() override;
+
     /**
      * Global container for Metadata settings. All accessor methods are thread-safe.
      */
@@ -62,9 +65,7 @@ Q_SIGNALS:
 private:
 
     // Disabled
-    MetaEngineSettings();
     explicit MetaEngineSettings(QObject*);
-    ~MetaEngineSettings() override;
 
     void readFromConfig();
 
@@ -72,8 +73,6 @@ private:
 
     class Private;
     Private* const d = nullptr;
-
-    friend class MetaEngineSettingsCreator;
 };
 
 } // namespace Digikam

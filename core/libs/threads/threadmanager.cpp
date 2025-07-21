@@ -250,11 +250,6 @@ Q_GLOBAL_STATIC(ThreadManagerCreator, creator)
 
 // -------------------------------------------------------------------------------------------------
 
-ThreadManager* ThreadManager::instance()
-{
-    return (&creator->object);
-}
-
 ThreadManager::ThreadManager()
     : QObject(),
       d      (new Private)
@@ -270,6 +265,11 @@ ThreadManager::~ThreadManager()
     d->pool->waitForDone();
 
     delete d;
+}
+
+ThreadManager* ThreadManager::instance()
+{
+    return (&creator->object);
 }
 
 void ThreadManager::initialize(WorkerObject* const object)

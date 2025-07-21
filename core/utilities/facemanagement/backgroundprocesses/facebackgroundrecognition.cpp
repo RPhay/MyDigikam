@@ -55,7 +55,9 @@ public:
     FaceRecognitionBackgroundController object;
 };
 
-Q_GLOBAL_STATIC(FaceRecognitionBackgroundControllerCreator, faceBackgroundRecognitionControllerCreator)
+Q_GLOBAL_STATIC(FaceRecognitionBackgroundControllerCreator, creator)
+
+// -----------------------------------------------------------------
 
 FaceRecognitionBackgroundController::FaceRecognitionBackgroundController()
     : QObject(),
@@ -93,7 +95,7 @@ FaceRecognitionBackgroundController::~FaceRecognitionBackgroundController()
 
 FaceRecognitionBackgroundController* FaceRecognitionBackgroundController::instance()
 {
-    return (&faceBackgroundRecognitionControllerCreator->object);
+    return &creator->object;
 }
 
 void FaceRecognitionBackgroundController::slotSetEnabled(bool enabled)

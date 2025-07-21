@@ -96,8 +96,6 @@ private:
 
     class Private;
     Private* const d = nullptr;
-
-    friend class DNNModelManagerCreator;
 };
 
 } // namespace Digikam

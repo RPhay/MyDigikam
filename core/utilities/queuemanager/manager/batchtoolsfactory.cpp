@@ -46,14 +46,9 @@ public:
     BatchToolsFactory object;
 };
 
-Q_GLOBAL_STATIC(BatchToolsFactoryCreator, batchToolsManagerCreator)
+Q_GLOBAL_STATIC(BatchToolsFactoryCreator, creator)
 
 // --------------------------------------------------------------------------------
-
-BatchToolsFactory* BatchToolsFactory::instance()
-{
-    return &batchToolsManagerCreator->object;
-}
 
 BatchToolsFactory::BatchToolsFactory()
     : QObject(),
@@ -117,6 +112,11 @@ BatchToolsFactory::BatchToolsFactory()
 BatchToolsFactory::~BatchToolsFactory()
 {
     delete d;
+}
+
+BatchToolsFactory* BatchToolsFactory::instance()
+{
+    return &creator->object;
 }
 
 BatchToolsList BatchToolsFactory::toolsList() const

@@ -45,12 +45,9 @@ public:
     FileActionMngr object;
 };
 
-Q_GLOBAL_STATIC(FileActionMngrCreator, metadataManagercreator)
+Q_GLOBAL_STATIC(FileActionMngrCreator, creator)
 
-FileActionMngr* FileActionMngr::instance()
-{
-    return &metadataManagercreator->object;
-}
+// --------------------------------------------
 
 FileActionMngr::FileActionMngr()
     : QObject(),
@@ -71,6 +68,11 @@ FileActionMngr::~FileActionMngr()
 {
     shutDown();
     delete d;
+}
+
+FileActionMngr* FileActionMngr::instance()
+{
+    return &creator->object;
 }
 
 bool FileActionMngr::requestShutDown()

@@ -36,6 +36,14 @@ class MjpegServerMngr : public QObject
 
 public:
 
+    MjpegServerMngr();
+    ~MjpegServerMngr() override;
+
+    /**
+     * This manager is a singleton. Use this method to control the MJPEG server instance.
+     */
+    static MjpegServerMngr* instance();
+
     /**
      * Setup the list of items to share with the MJPEG server into a single album.
      */
@@ -110,23 +118,12 @@ public:
      */
     void mjpegServerNotification(bool started);
 
-public:
-
-    /**
-     * This manager is a singleton. Use this method to control the MJPEG server instance.
-     */
-    static MjpegServerMngr* instance();
-
 private:
 
     // Disable
-    MjpegServerMngr();
     explicit MjpegServerMngr(QObject*) = delete;
-    ~MjpegServerMngr() override;
 
 private:
-
-    friend class MjpegServerMngrCreator;
 
     class Private;
     Private* const d = nullptr;

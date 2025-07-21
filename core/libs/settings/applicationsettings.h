@@ -100,6 +100,9 @@ Q_SIGNALS:
 
 public:
 
+    ApplicationSettings();
+    ~ApplicationSettings() override;
+
     static ApplicationSettings* instance();
 
     void readSettings();
@@ -550,15 +553,11 @@ private Q_SLOTS:
 private:
 
     // Disabled
-    ApplicationSettings();
     explicit ApplicationSettings(QObject*) = delete;
-    ~ApplicationSettings() override;
 
     KConfigGroup generalConfigGroup() const;
 
 private:
-
-    friend class ApplicationSettingsCreator;
 
     class Private;
     Private* const d = nullptr;

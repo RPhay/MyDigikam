@@ -336,11 +336,6 @@ Q_GLOBAL_STATIC(TagsCacheCreator, creator)
 
 // ------------------------------------------------------------------------------------------
 
-TagsCache* TagsCache::instance()
-{
-    return &creator->object;
-}
-
 TagsCache::TagsCache()
     : QObject(),
       d      (new Private(this))
@@ -350,6 +345,11 @@ TagsCache::TagsCache()
 TagsCache::~TagsCache()
 {
     delete d;
+}
+
+TagsCache* TagsCache::instance()
+{
+    return &creator->object;
 }
 
 void TagsCache::initialize()

@@ -103,14 +103,9 @@ public:
     LocalizeSettings object;
 };
 
-Q_GLOBAL_STATIC(LocalizeSettingsCreator, localizeSettingsCreator)
+Q_GLOBAL_STATIC(LocalizeSettingsCreator, creator)
 
 // -----------------------------------------------------------------------------------------------
-
-LocalizeSettings* LocalizeSettings::instance()
-{
-    return &localizeSettingsCreator->object;
-}
 
 LocalizeSettings::LocalizeSettings()
     : QObject(),
@@ -123,6 +118,11 @@ LocalizeSettings::LocalizeSettings()
 LocalizeSettings::~LocalizeSettings()
 {
     delete d;
+}
+
+LocalizeSettings* LocalizeSettings::instance()
+{
+    return &creator->object;
 }
 
 void LocalizeSettings::openLocalizeSetup()

@@ -56,7 +56,7 @@ public:
     ItemSortCollator object;
 };
 
-Q_GLOBAL_STATIC(ItemSortCollatorCreator, itemSortCollatorCreator)
+Q_GLOBAL_STATIC(ItemSortCollatorCreator, creator)
 
 // -----------------------------------------------------------------------------------------------
 
@@ -73,7 +73,7 @@ ItemSortCollator::~ItemSortCollator()
 
 ItemSortCollator* ItemSortCollator::instance()
 {
-    return &itemSortCollatorCreator->object;
+    return &creator->object;
 }
 
 int ItemSortCollator::itemCompare(const QString& a,

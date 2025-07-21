@@ -41,6 +41,9 @@ public:
 
 public:
 
+    LocalizeSettings();
+    ~LocalizeSettings() override;
+
     /**
      * Global container for spell-check and localize settings. All accessor methods are thread-safe.
      */
@@ -66,9 +69,7 @@ Q_SIGNALS:
 private:
 
     // Disabled
-    LocalizeSettings();
     explicit LocalizeSettings(QObject*);
-    ~LocalizeSettings() override;
 
     void readFromConfig();
 
@@ -76,8 +77,6 @@ private:
 
     class Private;
     Private* const d = nullptr;
-
-    friend class LocalizeSettingsCreator;
 };
 
 } // namespace Digikam

@@ -79,8 +79,6 @@ public:
 private:
 
     explicit DBJobsManager(QObject*) = delete;
-
-    friend class DBJobsManagerCreator;
 };
 
 } // namespace Digikam

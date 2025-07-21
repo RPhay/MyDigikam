@@ -35,6 +35,9 @@ class DIGIKAM_EXPORT DImgFilterManager : public DImgFilterGenerator
 {
 public:
 
+    DImgFilterManager();
+    ~DImgFilterManager()                                            override;
+
     static DImgFilterManager* instance();
 
     /**
@@ -100,8 +103,6 @@ public:
 private:
 
     // Disable
-    DImgFilterManager();
-    ~DImgFilterManager()                                            override;
     DImgFilterManager(const DImgFilterManager&)            = delete;
     DImgFilterManager& operator=(const DImgFilterManager&) = delete;
 

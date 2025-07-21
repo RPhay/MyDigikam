@@ -35,6 +35,9 @@ class DIGIKAM_EXPORT ThreadManager : public QObject
 
 public:
 
+    explicit ThreadManager();
+    ~ThreadManager() override;
+
     static ThreadManager* instance();
 
     void initialize(WorkerObject* const object);
@@ -49,11 +52,6 @@ protected Q_SLOTS:
 
     void slotDestroyed(QObject* object);
 
-protected:
-
-    explicit ThreadManager();
-    ~ThreadManager() override;
-
 private:
 
     // Disable
@@ -62,8 +60,6 @@ private:
     ThreadManager& operator=(const ThreadManager&) = delete;
 
 private:
-
-    friend class ThreadManagerCreator;
 
     class Private;
     Private* const d = nullptr;

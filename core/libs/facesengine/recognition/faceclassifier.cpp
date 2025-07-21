@@ -102,7 +102,7 @@ public:
     FaceClassifier object;
 };
 
-Q_GLOBAL_STATIC(FaceClassifierCreator, faceClassifierCreator)
+Q_GLOBAL_STATIC(FaceClassifierCreator, creator)
 
 // -----------------------------------------------------------
 
@@ -126,7 +126,7 @@ FaceClassifier::~FaceClassifier()
 
 FaceClassifier* FaceClassifier::instance()
 {
-    return &faceClassifierCreator->object;
+    return &creator->object;
 }
 
 bool FaceClassifier::ready() const

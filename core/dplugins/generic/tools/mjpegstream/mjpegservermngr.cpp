@@ -84,11 +84,6 @@ public:
     const QString configStartServerOnStartupEntry   = QLatin1String("Start MjpegServer At Startup");
 };
 
-MjpegServerMngr* MjpegServerMngr::instance()
-{
-    return &creator->object;
-}
-
 MjpegServerMngr::MjpegServerMngr()
     : QObject(),
       d      (new Private)
@@ -100,6 +95,11 @@ MjpegServerMngr::MjpegServerMngr()
 MjpegServerMngr::~MjpegServerMngr()
 {
     delete d;
+}
+
+MjpegServerMngr* MjpegServerMngr::instance()
+{
+    return &creator->object;
 }
 
 QString MjpegServerMngr::configGroupName() const

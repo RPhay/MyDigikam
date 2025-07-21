@@ -60,10 +60,7 @@ public:
 
 Q_GLOBAL_STATIC(TemplateManagerCreator, creator)
 
-TemplateManager* TemplateManager::defaultManager()
-{
-    return &creator->object;
-}
+// -------------------------------------------------------------------------------------------------
 
 TemplateManager::TemplateManager()
     : QObject(),
@@ -79,6 +76,11 @@ TemplateManager::~TemplateManager()
     save();
     clear();
     delete d;
+}
+
+TemplateManager* TemplateManager::defaultManager()
+{
+    return &creator->object;
 }
 
 bool TemplateManager::load()

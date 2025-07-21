@@ -45,7 +45,7 @@ Album::~Album()
 {
     prepareForDeletion();
 
-    AlbumManager::internalInstance->notifyAlbumDeletion(this);
+    AlbumManager::instance()->notifyAlbumDeletion(this);
 }
 
 void Album::setParent(Album* const parent)

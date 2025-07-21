@@ -36,6 +36,11 @@ class DIGIKAM_GUI_EXPORT TemplateManager : public QObject
 
 public:
 
+    TemplateManager();
+    ~TemplateManager() override;
+
+    static TemplateManager* defaultManager();
+
     bool load();
     bool save();
     void clear();
@@ -47,8 +52,6 @@ public:
     Template findByTitle(const QString& title)    const;
     Template findByContents(const Template& tref) const;
     QList<Template> templateList()                const;
-
-    static TemplateManager* defaultManager();
 
 Q_SIGNALS:
 
@@ -63,13 +66,9 @@ private:
 private:
 
     // Disable
-    TemplateManager();
     explicit TemplateManager(QObject*);
-    ~TemplateManager() override;
 
 private:
-
-    friend class TemplateManagerCreator;
 
     class Private;
     Private* const d = nullptr;

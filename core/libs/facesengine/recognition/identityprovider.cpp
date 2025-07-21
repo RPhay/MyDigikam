@@ -70,7 +70,7 @@ public:
     IdentityProvider object;
 };
 
-Q_GLOBAL_STATIC(IdentityProviderCreator, identityProviderCreator)
+Q_GLOBAL_STATIC(IdentityProviderCreator, creator)
 
 // ---------------------------------------------------------------------------
 
@@ -143,7 +143,7 @@ IdentityProvider::~IdentityProvider()
 
 IdentityProvider* IdentityProvider::instance()
 {
-    return &identityProviderCreator->object;
+    return &creator->object;
 }
 
 bool IdentityProvider::initialize()

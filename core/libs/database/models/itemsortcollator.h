@@ -32,6 +32,9 @@ class DIGIKAM_DATABASE_EXPORT ItemSortCollator : public QObject
 
 public:
 
+    ItemSortCollator();
+    ~ItemSortCollator() override;
+
     /**
      * @brief Global instance of internal item sort collator.
      * All accessor methods are thread-safe.
@@ -47,18 +50,12 @@ public:
 private:
 
     // Disable
-
-    ItemSortCollator();
     explicit ItemSortCollator(QObject*) = delete;
-
-    ~ItemSortCollator() override;
 
 private:
 
     class Private;
     Private* const d = nullptr;
-
-    friend class ItemSortCollatorCreator;
 };
 
 } // namespace Digikam

@@ -102,6 +102,15 @@ AlbumThumbnailLoader* AlbumThumbnailLoader::instance()
     return &creator->object;
 }
 
+AlbumThumbnailLoader::~AlbumThumbnailLoader()
+{
+    delete d->iconAlbumThumbThread;
+    delete d->iconFaceThumbThread;
+    delete d->iconTagThumbThread;
+
+    delete d;
+}
+
 AlbumThumbnailLoader::AlbumThumbnailLoader()
     : QObject(),
       d      (new Private)
@@ -121,14 +130,6 @@ AlbumThumbnailLoader::AlbumThumbnailLoader()
             d->iconCache.clear();
         }
     );
-}
-
-AlbumThumbnailLoader::~AlbumThumbnailLoader()
-{
-    delete d->iconAlbumThumbThread;
-    delete d->iconFaceThumbThread;
-    delete d->iconTagThumbThread;
-    delete d;
 }
 
 void AlbumThumbnailLoader::cleanUp()

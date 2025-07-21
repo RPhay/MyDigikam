@@ -32,6 +32,9 @@ class DIGIKAM_EXPORT NetworkManager : public QObject
 
 public:
 
+    NetworkManager();
+    ~NetworkManager() override;
+
     /**
      * Global instance of internal network manager.
      * All accessor methods are thread-safe.
@@ -48,18 +51,12 @@ public:
 private:
 
     // Disable
-
-    NetworkManager();
     explicit NetworkManager(QObject*) = delete;
-
-    ~NetworkManager() override;
 
 private:
 
     class Private;
     Private* const d = nullptr;
-
-    friend class NetworkManagerCreator;
 };
 
 } // namespace Digikam

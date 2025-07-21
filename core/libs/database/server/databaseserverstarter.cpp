@@ -45,7 +45,7 @@ public:
     DatabaseServerStarter object;
 };
 
-Q_GLOBAL_STATIC(DatabaseServerStarterCreator, databaseServerStarterCreator)
+Q_GLOBAL_STATIC(DatabaseServerStarterCreator, creator)
 
 // -----------------------------------------------------------------------------------------------
 
@@ -62,7 +62,7 @@ DatabaseServerStarter::~DatabaseServerStarter()
 
 DatabaseServerStarter* DatabaseServerStarter::instance()
 {
-    return &databaseServerStarterCreator->object;
+    return &creator->object;
 }
 
 DatabaseServerError DatabaseServerStarter::startServerManagerProcess(const DbEngineParameters& parameters) const

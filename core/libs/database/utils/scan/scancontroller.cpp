@@ -39,11 +39,6 @@ ScanController::FileMetadataWrite::~FileMetadataWrite()
 
 Q_GLOBAL_STATIC(ScanControllerCreator, creator)
 
-ScanController* ScanController::instance()
-{
-    return &creator->object;
-}
-
 // ----------------------------------------------------------------------------
 
 ScanController::ScanController()
@@ -112,6 +107,11 @@ ScanController::~ScanController()
     delete d->progressDialog;
     delete d->hints;
     delete d;
+}
+
+ScanController* ScanController::instance()
+{
+    return &creator->object;
 }
 
 void ScanController::setInitializationMessage()

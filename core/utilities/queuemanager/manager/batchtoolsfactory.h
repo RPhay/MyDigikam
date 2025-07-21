@@ -34,9 +34,10 @@ class BatchToolsFactory : public QObject
 
 public:
 
-    static BatchToolsFactory* instance();
+    BatchToolsFactory();
+    ~BatchToolsFactory() override;
 
-public:
+    static BatchToolsFactory* instance();
 
     void           registerTool(BatchTool* const tool);
     BatchTool*     findTool(const QString& name, BatchTool::BatchToolGroup group) const;
@@ -46,9 +47,6 @@ public:
 private:
 
     // Disable
-    BatchToolsFactory();
-    ~BatchToolsFactory() override;
-
     explicit BatchToolsFactory(QObject*) = delete;
 
 private:

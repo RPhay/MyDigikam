@@ -59,7 +59,7 @@ public:
     DNNModelManager object;
 };
 
-Q_GLOBAL_STATIC(DNNModelManagerCreator, dnnModelManagerCreator)
+Q_GLOBAL_STATIC(DNNModelManagerCreator, creator)
 
 // -----------------------------------------------------------------------------------------------
 
@@ -83,7 +83,7 @@ DNNModelManager::~DNNModelManager()
 
 DNNModelManager* DNNModelManager::instance()
 {
-    return &dnnModelManagerCreator->object;
+    return &creator->object;
 }
 
 const QList<DownloadInfo>& DNNModelManager::getDownloadInformation(DNNModelUsage usage)

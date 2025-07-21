@@ -36,6 +36,9 @@ class DIGIKAM_EXPORT IccSettings : public QObject
 
 public:
 
+    IccSettings();
+    ~IccSettings() override;
+
     /**
      * Global container for ICC settings. All accessor methods are thread-safe.
      */
@@ -125,9 +128,7 @@ Q_SIGNALS:
 
 private:
 
-    IccSettings();
     explicit IccSettings(QObject*);
-    ~IccSettings() override;
 
     void readFromConfig();
 
@@ -137,7 +138,6 @@ private:
     Private* const d = nullptr;
 
     friend class Private;
-    friend class IccSettingsCreator;
 };
 
 } // namespace Digikam

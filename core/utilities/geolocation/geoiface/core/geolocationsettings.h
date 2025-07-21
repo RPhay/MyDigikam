@@ -42,6 +42,9 @@ class DIGIKAM_EXPORT GeolocationSettings : public QObject
 
 public:
 
+    GeolocationSettings();
+    ~GeolocationSettings() override;
+
     /**
      * Global container for Metadata settings. All accessor methods are thread-safe.
      */
@@ -94,9 +97,7 @@ Q_SIGNALS:
 private:
 
     // Disabled
-    GeolocationSettings();
     explicit GeolocationSettings(QObject*);
-    ~GeolocationSettings() override;
 
     void readFromConfig();
 
@@ -106,8 +107,6 @@ private:
 
     class Private;
     Private* const d = nullptr;
-
-    friend class GeolocationSettingsCreator;
 };
 
 } // namespace Digikam

@@ -30,6 +30,9 @@ class ShowfotoSettings : public QObject
 
 public:
 
+    ShowfotoSettings();
+    ~ShowfotoSettings() override;
+
     static ShowfotoSettings* instance();
 
     void readSettings();
@@ -138,16 +141,12 @@ public:
 private:
 
     // Disable
-    ShowfotoSettings();
     explicit ShowfotoSettings(QObject*) = delete;
-    ~ShowfotoSettings() override;
 
 private:
 
     class Private;
     Private* const d = nullptr;
-
-    friend class ShowfotoSettingsCreator;
 };
 
 } // namespace Showfoto

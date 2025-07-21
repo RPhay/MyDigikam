@@ -40,7 +40,7 @@ IOJobsManager::IOJobsManager()
 
 IOJobsManager* IOJobsManager::instance()
 {
-    return (&creator->object);
+    return &creator->object;
 }
 
 IOJobsThread* IOJobsManager::startIOJobs(IOJobData* const data)

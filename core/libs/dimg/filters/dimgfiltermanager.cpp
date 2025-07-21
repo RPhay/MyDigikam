@@ -269,10 +269,7 @@ public:
 
 Q_GLOBAL_STATIC(DImgFilterManagerCreator, creator)
 
-DImgFilterManager* DImgFilterManager::instance()
-{
-    return &creator->object;
-}
+// -----------------------------------------------------------------------------------------
 
 DImgFilterManager::DImgFilterManager()
     : d(new Private)
@@ -291,6 +288,11 @@ DImgFilterManager::DImgFilterManager()
 DImgFilterManager::~DImgFilterManager()
 {
     delete d;
+}
+
+DImgFilterManager* DImgFilterManager::instance()
+{
+    return &creator->object;
 }
 
 void DImgFilterManager::addGenerator(DImgFilterGenerator* const generator)

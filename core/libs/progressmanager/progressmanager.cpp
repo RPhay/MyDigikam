@@ -401,6 +401,11 @@ ProgressManager::~ProgressManager()
     delete d;
 }
 
+ProgressManager* ProgressManager::instance()
+{
+    return (creator.isDestroyed() ? nullptr : &creator->object);
+}
+
 bool ProgressManager::isEmpty() const
 {
     return d->transactions.isEmpty();
@@ -421,11 +426,6 @@ ProgressItem* ProgressManager::findItembyId(const QString& id) const
 QString ProgressManager::getUniqueID()
 {
     return QString::number(d->uID.fetchAndAddOrdered(1));
-}
-
-ProgressManager* ProgressManager::instance()
-{
-    return (creator.isDestroyed() ? nullptr : &creator->object);
 }
 
 ProgressItem* ProgressManager::createProgressItemImpl(ProgressItem* const parent,

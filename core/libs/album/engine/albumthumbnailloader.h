@@ -54,6 +54,11 @@ public:
 
 public:
 
+    AlbumThumbnailLoader();
+    ~AlbumThumbnailLoader() override;
+
+    static AlbumThumbnailLoader* instance();
+
     void cleanUp();
 
     /**
@@ -151,10 +156,6 @@ public:
     QImage getAlbumPreviewDirectly(PAlbum* const album, int size);
 */
 
-public:
-
-    static AlbumThumbnailLoader* instance();
-
 Q_SIGNALS:
 
     /**
@@ -190,9 +191,7 @@ protected Q_SLOTS:
 private:
 
     // Disable
-    AlbumThumbnailLoader();
     explicit AlbumThumbnailLoader(QObject*) = delete;
-    ~AlbumThumbnailLoader() override;
 
     void    addUrl(Album* const album, qlonglong id);
     QPixmap loadIcon(const QString& name, int size = 0) const;
@@ -200,8 +199,6 @@ private:
     int     computeFaceSize(RelativeSize size)          const;
 
 private:
-
-    friend class AlbumThumbnailLoaderCreator;
 
     class Private;
     Private* const d = nullptr;

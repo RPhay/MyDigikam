@@ -69,15 +69,15 @@ Q_GLOBAL_STATIC(DIOCreator, creator)
 
 // ------------------------------------------------------------------------------------------------
 
-DIO* DIO::instance()
-{
-    return &creator->object;
-}
-
 DIO::DIO()
     : QObject()
 {
     qRegisterMetaType<QMap<QString,int> >("QMap<QString,int>");
+}
+
+DIO* DIO::instance()
+{
+    return &creator->object;
 }
 
 void DIO::cleanUp()
