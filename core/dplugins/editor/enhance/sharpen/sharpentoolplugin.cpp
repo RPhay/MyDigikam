@@ -52,7 +52,7 @@ QIcon SharpenToolPlugin::icon() const
 
 QString SharpenToolPlugin::description() const
 {
-    return i18nc("@info", "A tool to sharp an image");
+    return i18nc("@info", "A tool to sharpen an image");
 }
 
 QString SharpenToolPlugin::details() const
