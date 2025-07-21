@@ -25,7 +25,7 @@ BUGFIXES:
 012 ==> 506663 - Face recognition finds nothing.
 013 ==> 507101 - OpenCV 4.12 exception and face classifier not working.
 014 ==> 507113 - Face recognition does not identify faces even after scanning hundreds of faces.
-015 ==>
+015 ==> 507299 - Typo: Settings tab is named "Behaviour" even when the locale is en_US.
 016 ==>
 017 ==>
 018 ==>
