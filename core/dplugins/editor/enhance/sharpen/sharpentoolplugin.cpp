@@ -57,7 +57,7 @@ QString SharpenToolPlugin::description() const
 
 QString SharpenToolPlugin::details() const
 {
-    return i18nc("@info", "This Image Editor tool can sharp an image.");
+    return i18nc("@info", "This Image Editor tool can sharpen an image.");
 }
 
 QString SharpenToolPlugin::handbookSection() const
@@ -80,7 +80,7 @@ QList<DPluginAuthor> SharpenToolPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2024"))
+                             QString::fromUtf8("(C) 2004-2025"))
             ;
 }
 
