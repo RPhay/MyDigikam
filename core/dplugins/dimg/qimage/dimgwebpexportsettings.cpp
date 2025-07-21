@@ -38,10 +38,11 @@ namespace Digikam
 
 class Q_DECL_HIDDEN DImgWEBPExportSettings::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     QGridLayout*  WEBPGrid              = nullptr;
 
@@ -65,12 +66,12 @@ DImgWEBPExportSettings::DImgWEBPExportSettings(QWidget* const parent)
                                        "<p>If this option is enabled, a lossless method will be used "
                                        "to compress WEBP pictures.</p>"));
 
-    d->WEBPcompression = new DIntNumInput(this);
+    d->WEBPcompression      = new DIntNumInput(this);
     d->WEBPcompression->setDefaultValue(75);
     d->WEBPcompression->setRange(1, 99, 1);
     d->labelWEBPcompression = new QLabel(i18n("WEBP quality:"), this);
 
-    d->WEBPcompression->setWhatsThis(i18n("<p>The quality value for WEB images:</p>"
+    d->WEBPcompression->setWhatsThis(i18n("<p>The quality value for WEBP images:</p>"
                                           "<p><b>1</b>: low quality (high compression and small "
                                           "file size)<br/>"
                                           "<b>50</b>: medium quality<br/>"
