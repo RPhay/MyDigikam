@@ -168,7 +168,8 @@ void ScanDialog::slotSaveImage(const QImage& image_data)
     QLatin1String defaultMimeType("image/png");
     QLatin1String defaultFileName("image.png");
 
-    QPointer<DFileDialog> imageFileSaveDialog = new DFileDialog(nullptr, i18nc("@title:window", "New Image File Name"), d->targetDir);
+    QPointer<DFileDialog> imageFileSaveDialog = new DFileDialog(nullptr, i18nc("@title:window",
+                                                                "New Image File Name"), d->targetDir);
     imageFileSaveDialog->setAcceptMode(QFileDialog::AcceptSave);
     imageFileSaveDialog->setMimeTypeFilters(writableMimetypes);
     imageFileSaveDialog->selectMimeTypeFilter(defaultMimeType);
@@ -305,7 +306,8 @@ void ScanDialog::slotThreadDone(const QUrl& url, bool success)
 {
     if (!success)
     {
-        QMessageBox::critical(nullptr, i18nc("@title:window", "File Not Saved"), i18n("Cannot save \"%1\" file", url.fileName()));
+        QMessageBox::critical(nullptr, i18nc("@title:window", "File Not Saved"),
+                              i18n("Cannot save \"%1\" file", url.fileName()));
     }
 
     d->progress->setProgressText(QString());
