@@ -186,7 +186,7 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
     d->tiffRadioButton          = new QRadioButton(i18nc("@option: radio", "TIFF output"), d->formatGroupBox);
     d->tiffRadioButton->setToolTip(i18nc("@info: tooltip", "Selects a TIFF output compressed using the LZW algorithm "
                                          "(lossless compression, bigger size)."));
-    d->tiffRadioButton->setWhatsThis(i18nc("@info: whatsthis", "\"TIFF output\": Using TIFF output, you get the same color depth than "
+    d->tiffRadioButton->setWhatsThis(i18nc("@info: whatsthis", "\"TIFF output\": Using TIFF output, you get the same color depth as "
                                            "your original photos using RAW images at the cost of a bigger panorama file."));
     formatVBox->addWidget(d->tiffRadioButton);
     group->addButton(d->tiffRadioButton);

@@ -89,7 +89,7 @@ void ODPlugin::setup(QObject* const parent)
 {
     DPluginAction* const ac = new DPluginAction(parent);
     ac->setIcon(icon());
-    ac->setText(i18nc("@action", "Export to &Onedrive..."));
+    ac->setText(i18nc("@action", "Export to &OneDrive..."));
     ac->setObjectName(QLatin1String("export_onedrive"));
     ac->setActionCategory(DPluginAction::GenericExport);
     ac->setShortcut(Qt::CTRL | Qt::ALT | Qt::SHIFT | Qt::Key_O);

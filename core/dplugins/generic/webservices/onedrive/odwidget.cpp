@@ -42,7 +42,7 @@ void ODWidget::updateLabels(const QString& name, const QString& url)
 
     getHeaderLbl()->setText(QString::fromLatin1(
         "<b><h2><a href='%1'>"
-        "<font color=\"#9ACD32\">Onedrive</font>"
+        "<font color=\"#9ACD32\">OneDrive</font>"
         "</a></h2></b>").arg(web));
 
     if (name.isEmpty())

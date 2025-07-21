@@ -567,7 +567,7 @@ void GSWindow::slotStartTransfer()
 
             if (d->service == GoogleService::GPhotoImport)
             {
-                qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Google Photo Transfer invoked";
+                qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Google Photos Transfer invoked";
 
                 // list photos of the album, then start download
 
@@ -648,7 +648,7 @@ void GSWindow::slotStartTransfer()
 
         default:
         {
-            d->widget->progressBar()->progressScheduled(i18nc("@info: start transfert", "Google Photo export"), true, true);
+            d->widget->progressBar()->progressScheduled(i18nc("@info: start transfert", "Google Photos export"), true, true);
             d->widget->progressBar()->progressThumbnailChanged(
                 QIcon::fromTheme((QLatin1String("dk-googlephoto"))).pixmap(22, 22));
             break;

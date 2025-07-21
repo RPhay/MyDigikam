@@ -142,7 +142,7 @@ MixerSettings::MixerSettings(QWidget* const parent)
     // -------------------------------------------------------------
 
     d->preserveLuminosity = new QCheckBox(i18nc("@option", "Preserve luminosity"));
-    d->preserveLuminosity->setWhatsThis(i18nc("@info", "Enable this option is you want preserve "
+    d->preserveLuminosity->setWhatsThis(i18nc("@info", "Enable this option if you want preserve "
                                               "the image luminosity."));
 
     // -------------------------------------------------------------

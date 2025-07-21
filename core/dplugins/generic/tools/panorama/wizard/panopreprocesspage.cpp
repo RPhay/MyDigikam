@@ -188,7 +188,7 @@ void PanoPreProcessPage::initializePage()
                       .arg(i18nc("@info", "Now, we will pre-process images before stitching them."))
                       .arg(i18nc("@info", "Pre-processing operations include Raw demosaicing. Raw images will be converted "
                                           "to 16-bit sRGB images with auto-gamma."))
-                      .arg(i18nc("@info", "Pre-processing also include a calculation of some control points to match "
+                      .arg(i18nc("@info", "Pre-processing also includes a calculation of some control points to match "
                                           "overlaps between images. For that purpose, the \"%1\" program will be used.",
                                           QDir::toNativeSeparators(d->mngr->cpFindBinary().path())))
                       .arg(i18nc("@info", "Press the \"Next\" button to start pre-processing.")));

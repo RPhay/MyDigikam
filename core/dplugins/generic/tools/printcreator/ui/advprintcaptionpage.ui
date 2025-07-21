@@ -82,7 +82,7 @@
                     <string>print file name
 print camera exposure time
 print item comment
-print ISO sensibility from camera
+print ISO sensitivity from camera
 print date and time from camera</string>
                    </property>
                    <property name="alignment">
