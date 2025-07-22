@@ -419,8 +419,11 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18ncp(CONTEXT, "CPU core", "CPU cores", nbcore) << QString::fromLatin1("%1").arg(nbcore));
 
-    m_buildtools       = new QTreeWidgetItem(listView(), QStringList() << i18nc("@title", "Build Tools"));
+    m_buildtools       = new QTreeWidgetItem(listView(), QStringList() << i18nc("@title", "Build Environnement"));
     listView()->addTopLevelItem(m_buildtools);
+
+    new QTreeWidgetItem(m_buildtools, QStringList() <<
+                        i18nc(CONTEXT, "Host")                   <<         QLatin1String(CMAKE_HOST_PRETTY_NAME));
 
     new QTreeWidgetItem(m_buildtools, QStringList() <<
                         i18nc(CONTEXT, "Cmake")                  <<         QLatin1String(CMAKE_VERSION_STRING));

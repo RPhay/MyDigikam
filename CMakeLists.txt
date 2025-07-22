@@ -10,6 +10,11 @@ cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
 message(STATUS "CMake version: ${CMAKE_VERSION}")
 
+# -- Check host computer info used to compile ----------------------------------
+
+cmake_host_system_information(RESULT CMAKE_HOST_PRETTY_NAME QUERY DISTRIB_PRETTY_NAME)
+message(STATUS "Host used to compike: ${CMAKE_HOST_PRETTY_NAME}")
+
 # ==============================================================================
 # Information to update before to release this package.
 

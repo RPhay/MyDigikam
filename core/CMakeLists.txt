@@ -194,7 +194,6 @@ include(RulesLibraw)
 
 MACOS_DEBUG_POLICIES()
 
-
 # -- Compilation options definitions -------------------------------------------
 
 message(STATUS "--------------------------------------------------")
