@@ -499,7 +499,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     }
 
     int ret = app.exec();
-    qDebug() << "App leaves main eventloop";
+
     CoreDbAccess::cleanUpDatabase();
     ThumbsDbAccess::cleanUpDatabase();
     FaceDbAccess::cleanUpDatabase();
@@ -520,6 +520,6 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
 #   endif
 #endif
-    qDebug() << "App leaves main now";
+
     return ret;
 }
