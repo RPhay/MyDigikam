@@ -43,9 +43,6 @@ FileActionMngr::Private::Private(FileActionMngr* const qq)
     dbWorker   = new FileActionMngrDatabaseWorker(this);
     fileWorker = new ParallelAdapter<FileWorkerInterface>();
 
-    aiToolsPipeline = AIToolsPipeline::instance();
-    aiToolsPipeline->start();
-
     while (!fileWorker->optimalWorkerCountReached())
     {
         fileWorker->add(new FileActionMngrFileWorker(this));
@@ -123,12 +120,6 @@ void FileActionMngr::Private::connectDatabaseToFileWorker()
 
 FileActionMngr::Private::~Private()
 {
-    aiToolsPipeline->cancel();
-    while (!aiToolsPipeline->hasFinished())
-    {
-        QCoreApplication::processEvents();
-    }
-
     delete dbWorker;
     delete fileWorker;
 }

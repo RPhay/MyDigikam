@@ -58,7 +58,7 @@ FileActionMngr::FileActionMngr()
 
     // connect AI Tools pipeline signals to the file worker
 
-    connect(d->aiToolsPipeline, SIGNAL(signalTransform(QList<ItemInfo>,MetaEngineRotation::TransformationAction)),
+    connect(AIToolsPipeline::instance(), SIGNAL(signalTransform(QList<ItemInfo>,MetaEngineRotation::TransformationAction)),
             this, SLOT(transform(QList<ItemInfo>,MetaEngineRotation::TransformationAction)));
 
     // add other AI Tools connections here as other AI tools are added

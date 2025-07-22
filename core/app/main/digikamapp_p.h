@@ -152,6 +152,7 @@
 #include "faceclassifier.h"
 #include "facesengine.h"
 #include "identityprovider.h"
+#include "aitoolspipeline.h"
 
 #ifdef HAVE_GEOLOCATION
 #   include "geolocationsettings.h"

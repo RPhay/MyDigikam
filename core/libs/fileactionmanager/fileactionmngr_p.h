@@ -184,8 +184,6 @@ public:
 
     PrivateProgressItemCreator            dbProgress;
     PrivateProgressItemCreator            fileProgress;
-
-    AIToolsPipeline*                      aiToolsPipeline = nullptr;
 };
 
 } // namespace Digikam

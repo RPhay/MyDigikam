@@ -94,6 +94,7 @@ DigikamApp::DigikamApp()
     NetworkManager::instance();
     IdentityProvider::instance();
     FaceClassifier::instance();
+    AIToolsPipeline::instance()->start();
     FaceRecognitionBackgroundController::instance();
 
 #ifdef HAVE_GEOLOCATION
@@ -261,6 +262,15 @@ DigikamApp::~DigikamApp()
     d->terminating = true;
 
     ProgressManager::instance()->slotAbortAll();
+
+    AIToolsPipeline::instance()->cancel();
+
+/*
+    while (!aiToolsPipeline->hasFinished())
+    {
+        QCoreApplication::processEvents();
+    }
+*/
 
     FacePipelineEdit::instance()->cancel();
 
