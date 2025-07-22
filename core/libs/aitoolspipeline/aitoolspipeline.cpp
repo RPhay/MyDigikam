@@ -17,10 +17,9 @@
 // Qt includes
 
 #include <QApplication>
-#include <QDebug>
 #include <QFileInfo>
-#include <QList>
 #include <QString>
+#include <QList>
 
 // KDE includes
 
