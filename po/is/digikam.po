@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-19 06:34+0000\n"
+"POT-Creation-Date: 2025-07-22 02:02+0000\n"
 "PO-Revision-Date: 2025-06-13 10:47+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -2888,7 +2888,7 @@ msgstr "Birta á öllum skjánum"
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:486
-#: core/libs/album/manager/albummanager.cpp:179
+#: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
@@ -3033,7 +3033,7 @@ msgstr "Ekkert merkingaalbúm"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:352
 #: core/libs/album/engine/album.cpp:553
-#: core/libs/album/manager/albummanager.cpp:182
+#: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
@@ -7530,12 +7530,12 @@ msgstr ""
 "kimageformats/-/blob/master/README.md'>KDE Framework hjálparskjölin</a> til "
 "að sjá ítarlegri lista yfir studd snið.</para>"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:62
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:63
 #, kde-format
 msgid "Lossless WEBP files"
 msgstr "Taplausar WEBP-skrár"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:64
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:65
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for WEBP images.</p><p>If this option is "
@@ -7544,15 +7544,21 @@ msgstr ""
 "<p>Víxla á/af taplausri þjöppun fyrir WEBP myndir.</p><p>Sé þetta valið "
 "verður taplaus þjöppun notuð til að minnka stærð WEBP skráa.</p>"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:71
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:72
 #, kde-format
 msgid "WEBP quality:"
 msgstr "WEBP gæði:"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:73
-#, kde-format
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:74
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The quality value for WEB images:</p><p><b>1</b>: low quality (high "
+#| "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
+#| "b>: good quality (default)<br/><b>99</b>: high quality (no compression "
+#| "and large file size)</p><p><b>Note: WEBP is not a lossless image "
+#| "compression format when you use this setting.</b></p>"
 msgid ""
-"<p>The quality value for WEB images:</p><p><b>1</b>: low quality (high "
+"<p>The quality value for WEBP images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
 "b>: good quality (default)<br/><b>99</b>: high quality (no compression and "
 "large file size)</p><p><b>Note: WEBP is not a lossless image compression "
@@ -9093,15 +9099,19 @@ msgid "Sharpen"
 msgstr "Skerpa"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "A tool to sharp an image"
 msgctxt "@info"
-msgid "A tool to sharp an image"
+msgid "A tool to sharpen an image"
 msgstr "Verkfæri til að skerpa mynd"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "This Image Editor tool can sharp an image."
 msgctxt "@info"
-msgid "This Image Editor tool can sharp an image."
+msgid "This Image Editor tool can sharpen an image."
 msgstr "Þetta myndvinnsluverkfæri getur skerpt myndir."
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:91
@@ -11283,7 +11293,7 @@ msgstr "Skanna mynd"
 msgid "Scan Images"
 msgstr "Skanna myndir"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:171
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:172
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1849
 #, kde-format
@@ -11291,27 +11301,27 @@ msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "Heiti nýrrar myndskráar"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:219
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:220
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:148
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Óstutt myndsnið"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:220
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:221
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:149
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "Stuðningur við úttakssnið skrárinnar \"%1\" er ekki fyrir hendi."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:232
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:233
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "Gat ekki vistað skrá"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:233
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:234
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:162
 #, kde-format
 msgid ""
@@ -11323,7 +11333,7 @@ msgstr ""
 "\"%1\" í\n"
 "\"%2\"."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:248
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:249
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2323
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2342
@@ -11332,7 +11342,7 @@ msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Skrifa yfir skrá?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:249
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:250
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:178
 #, kde-format
 msgid ""
@@ -11341,18 +11351,18 @@ msgstr ""
 "Skrá með nafninu \"%1\" er þegar til. Ertu viss um að þú viljir skrifa yfir "
 "hana?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:301
 #, kde-format
 msgid "Saving file %1 -"
 msgstr "Vista skrá %1 - "
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:308
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:309
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "Skrá ekki vistuð"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:308
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:310
 #, kde-format
 msgid "Cannot save \"%1\" file"
 msgstr "Gat ekki vistað \"%1\" skrána"
@@ -12212,21 +12222,21 @@ msgstr "%1 (%2/%3) - Breyta lýsigögnum"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:76
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:83
 #, kde-format
 msgid "Add a new value to the list"
 msgstr "Bæta nýju gildi á listann"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:79
 #: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:77
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:84
 #, kde-format
 msgid "Remove the current selected value from the list"
 msgstr "Fjarlægja valið gildi af listanum"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:78
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:85
 #, kde-format
 msgid "Replace the current selected value from the list"
 msgstr "Skipta út völdu gildi á listanum"
@@ -12244,7 +12254,7 @@ msgstr[0] "<p>1 staf.</p>"
 msgstr[1] "<p>%1 stafi.</p>"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:283
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:337
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:339
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:272
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:430
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:415
@@ -12257,166 +12267,172 @@ msgid_plural "%1 characters left"
 msgstr[0] "%1 stafur eftir"
 msgstr[1] "%1 stafir eftir"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:73
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:75
 #, kde-format
 msgid "Attribute:"
 msgstr "Eigindi:"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:97
 #, kde-format
 msgid "Select here the editorial attribute of content."
 msgstr "Veldu hér ritstjórnarlega lýsingu á eiginleikum efnisins."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:98
 #, kde-format
 msgctxt "Content type"
 msgid "Current"
 msgstr "Efst á baugi"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:99
 #, kde-format
 msgctxt "Content type"
 msgid "Analysis"
 msgstr "Greiningar"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:100
 #, kde-format
 msgctxt "Content type"
 msgid "Archive material"
 msgstr "Safnaefni"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:101
 #, kde-format
 msgctxt "Content type"
 msgid "Background"
 msgstr "Bakgrunnur"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:102
 #, kde-format
 msgctxt "Content type"
 msgid "Feature"
 msgstr "Sérkenni"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
 #, kde-format
 msgctxt "Content type"
 msgid "Forecast"
 msgstr "Spár"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
 #, kde-format
 msgctxt "Content type"
 msgid "History"
 msgstr "Sagnfræði"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:105
 #, kde-format
 msgctxt "Content type"
 msgid "Obituary"
 msgstr "Minningargreinar"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:106
 #, kde-format
 msgctxt "Content type"
 msgid "Opinion"
 msgstr "Skoðanir"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:105
-#, kde-format
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:107
+#, fuzzy, kde-format
+#| msgctxt "Content type"
+#| msgid "Polls & Surveys"
 msgctxt "Content type"
-msgid "Polls & Surveys"
+msgid "Polls and Surveys"
 msgstr "Kannanir & rannsóknir"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
 #, kde-format
 msgctxt "Content type"
 msgid "Profile"
 msgstr "Mannlýsingar"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:107
-#, kde-format
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:109
+#, fuzzy, kde-format
+#| msgctxt "Content type"
+#| msgid "Results Listings & Table"
 msgctxt "Content type"
-msgid "Results Listings & Table"
+msgid "Results Listings and Table"
 msgstr "Úrslit & töflur"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
-#, kde-format
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:110
+#, fuzzy, kde-format
+#| msgctxt "Content type"
+#| msgid "Side bar & Supporting information"
 msgctxt "Content type"
-msgid "Side bar & Supporting information"
+msgid "Side bar and Supporting information"
 msgstr "Hliðardálkar & stuðningstextar"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:111
 #, kde-format
 msgctxt "Content type"
 msgid "Summary"
 msgstr "Yfirlit"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:112
 #, kde-format
 msgctxt "Content type"
 msgid "Transcript & Verbatim"
 msgstr "Handrit & frumheimildir"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:113
 #, kde-format
 msgctxt "Content type"
 msgid "Interview"
 msgstr "Viðtöl"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:114
 #, kde-format
 msgctxt "Content type"
 msgid "From the Scene"
 msgstr "Vettvangsrannsóknir"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:115
 #, kde-format
 msgctxt "Content type"
 msgid "Retrospective"
 msgstr "Endurskoðun"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:116
 #, kde-format
 msgctxt "Content type"
 msgid "Statistics"
 msgstr "Tölfræði"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:117
 #, kde-format
 msgctxt "Content type"
 msgid "Update"
 msgstr "Uppfærslur"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:118
 #, kde-format
 msgctxt "Content type"
 msgid "Wrap-up"
 msgstr "Samantektir"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:119
 #, kde-format
 msgctxt "Content type"
 msgid "Press Release"
 msgstr "Fréttatilkynningar"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:125
 #, kde-format
 msgid "Set here the editorial attribute description of content."
 msgstr "Settu hér ritstjórnarlega lýsingu á eiginleikum efnisins."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:128
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:130
 #, kde-format
 msgid " This field is limited to "
 msgstr " Þessi reitur er takmarkaður við "
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:132
 #, kde-format
 msgid "%1 character."
 msgid_plural "%1 characters."
 msgstr[0] "%1 staf."
 msgstr[1] "%1 stafi."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:139
 #, kde-format
 msgid "Set here the editorial description"
 msgstr "Settu hér ritstjórnarlega lýsingu"
@@ -15121,8 +15137,9 @@ msgid "Phone:"
 msgstr "Sími:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:113
-#, kde-format
-msgid "Set here the contact 'phone number."
+#, fuzzy, kde-format
+#| msgid "Set here the contact 'phone number."
+msgid "Set here the contact phone number."
 msgstr "Settu hér inn símanúmer tengiliðar."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:115
@@ -17044,31 +17061,33 @@ msgctxt "@title: column"
 msgid "Exposure (EV)"
 msgstr "Lýsingartími (EV)"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:48
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:50
 #, kde-format
 msgctxt "@title:window"
 msgid "Pre-Processing is Complete"
 msgstr "Forvinnslu er lokið"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:62
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid "Bracketed Images Pre-Processing is Done"
 msgstr "Forvinnslu myndaraðar er lokið"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:63
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are ready to be fused."
 msgstr "Til hamingju. Myndirnar eru núna tilbúnar til að verða blandað saman."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:64
-#, kde-format
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:66
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "To perform this operation, Enblend program from will be used."
 msgctxt "@info"
-msgid "To perform this operation, Enblend program from will be used."
+msgid "To perform this operation, Enblend program will be used."
 msgstr "Til að framkvæma þessa aðgerð verður Enblend-forritið notað."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:65
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid "Press \"Finish\" button to fuse your items and make a pseudo HDR image."
@@ -18079,16 +18098,26 @@ msgstr ""
 "í gang"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "The %1 server allows to share items through the local network using a web "
+#| "browser. Motion JPEG is a video compression format in which each video "
+#| "frame is compressed separately as a JPEG image. MJPEG streams is a "
+#| "standard which allows network clients to be connected without additional "
+#| "module. Most major web browsers and players support MJPEG stream. To "
+#| "access to stream from your browser, just use http://address:port as url, "
+#| "with address the MJPEG server IP, and port the server port set in this "
+#| "config dialog."
 msgctxt "@info"
 msgid ""
 "The %1 server allows to share items through the local network using a web "
 "browser. Motion JPEG is a video compression format in which each video frame "
-"is compressed separately as a JPEG image. MJPEG streams is a standard which "
+"is compressed separately as a JPEG image. MJPEG stream is a standard which "
 "allows network clients to be connected without additional module. Most major "
-"web browsers and players support MJPEG stream. To access to stream from your "
-"browser, just use http://address:port as url, with address the MJPEG server "
-"IP, and port the server port set in this config dialog."
+"web browsers and players support MJPEG stream. To access the stream from "
+"your browser, just use http://address:port as url, with address the MJPEG "
+"server IP, and port the server port set in this config dialog."
 msgstr ""
 "%1 þjónninn gerir kleift að deila efni um staðarnetið í gegnum vafra. Motion "
 "JPEG er þjöppunarsnið fyrir myndskeið þar sem hverjum ramma myndskeiðs er "
@@ -18125,10 +18154,14 @@ msgid "JPEG Quality:"
 msgstr "JPEG gæði:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:131
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "The JPEG quality [50:lower - 100:higher]. Warning: better quality require "
+#| "more network bandwidth"
 msgctxt "@info"
 msgid ""
-"The JPEG quality [50:lower - 100:higher]. Warning: better quality require "
+"The JPEG quality [50:lower - 100:higher]. Warning: better quality requires "
 "more network bandwidth"
 msgstr ""
 "JPEG-myndgæði [50:lægri - 100:hærri]. Aðvörun: betri gæði krefjast meiri "
@@ -18141,11 +18174,15 @@ msgid "JPEG Size:"
 msgstr "JPEG stærð:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:154
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "The JPEG image size in pixels, using standard screen resolutions. "
+#| "Warning: larger size require more network bandwidth"
 msgctxt "@info"
 msgid ""
 "The JPEG image size in pixels, using standard screen resolutions. Warning: "
-"larger size require more network bandwidth"
+"larger size requires more network bandwidth"
 msgstr ""
 "Stærð JPEG-myndar í mynddílum, miðað við staðlaðar skjáupplausnir. Aðvörun: "
 "betri gæði krefjast meiri bandbreiddar á netkerfi"
@@ -18169,11 +18206,15 @@ msgid "Frames by Second:"
 msgstr "Rammar á sekúndu:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:171
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "The number of frames by second to render the stream. Warning: larger rate "
+#| "require more network bandwidth"
 msgctxt "@info"
 msgid ""
 "The number of frames by second to render the stream. Warning: larger rate "
-"require more network bandwidth"
+"requires more network bandwidth"
 msgstr ""
 "Fjöldi ramma á sekúndu til að myndgera streymið. Aðvörun: hærra hlutfall "
 "ramma krefst meiri bandbreiddar á netkerfi"
@@ -18185,9 +18226,11 @@ msgid "Stream in Loop"
 msgstr "Streyma endurtekið"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:177
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "The MJPEG stream will be played in loop instead once."
 msgctxt "@info"
-msgid "The MJPEG stream will be played in loop instead once."
+msgid "The MJPEG stream will be played in loop instead of playing once."
 msgstr ""
 "MJPEG-streymið verður spilað endurtekið í staðinn fyrir bara einu sinni."
 
@@ -18207,12 +18250,17 @@ msgid "Type:"
 msgstr "Tegund:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:233
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "A transition is an visual effect applied between two images. For some "
+#| "effects, the duration can depend of random values and can change while "
+#| "the stream."
 msgctxt "@label"
 msgid ""
-"A transition is an visual effect applied between two images. For some "
-"effects, the duration can depend of random values and can change while the "
-"stream."
+"A transition is a visual effect applied between two images. For some "
+"effects, the duration can depend on random values and can change while the "
+"stream is playing."
 msgstr ""
 "Millifærslur eru sjónræn áhrif sem beitt er milli tveggja mynda. Fyrir sum "
 "slík áhrif, getur tímalengdin ráðist af handahófskenndum gildum sem geta "
@@ -18225,11 +18273,15 @@ msgid "Transition"
 msgstr "Millifærsla"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:279
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "An effect is an visual panning or zooming applied while an image is "
+#| "displayed in MJPEG stream."
 msgctxt "@label"
 msgid ""
-"An effect is an visual panning or zooming applied while an image is "
-"displayed in MJPEG stream."
+"An effect is a visual panning or zooming applied while an image is displayed "
+"in MJPEG stream."
 msgstr ""
 "Millifærsla er sjónræn hliðrun eða aðdráttur sem beitt er á meðan mynd er "
 "birt í MJPEG-streymi."
@@ -18257,16 +18309,28 @@ msgid "A tool to export items as MJPEG Stream"
 msgstr "Verkfæri til að flytja atriði út sem MJPEG-streymi"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:84
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>This tool allows users to share items on the local network through a "
+#| "MJPEG Stream server.</p><p>Items to share can be selected one by one or "
+#| "by group through a selection of albums.</p><p>Motion JPEG is a video "
+#| "compression format in which each video frame or interlaced field of a "
+#| "digital video sequence is compressed separately as a JPEG image. MJPEG "
+#| "streams is a standard which allows network clients to be connected "
+#| "without additional module. Most major web browsers and players support "
+#| "MJPEG stream.</p><p>To access to stream from your browser, use http://"
+#| "address:port as url, with address the MJPEG address, and port the MJPEG "
+#| "port set in config dialog. More than one computer can be connected to the "
+#| "MJPEG server at the same time.</p>"
 msgid ""
 "<p>This tool allows users to share items on the local network through a "
 "MJPEG Stream server.</p><p>Items to share can be selected one by one or by "
 "group through a selection of albums.</p><p>Motion JPEG is a video "
 "compression format in which each video frame or interlaced field of a "
 "digital video sequence is compressed separately as a JPEG image. MJPEG "
-"streams is a standard which allows network clients to be connected without "
+"stream is a standard which allows network clients to be connected without "
 "additional module. Most major web browsers and players support MJPEG stream."
-"</p><p>To access to stream from your browser, use http://address:port as "
+"</p><p>To access the stream from your browser, use http://address:port as "
 "url, with address the MJPEG address, and port the MJPEG port set in config "
 "dialog. More than one computer can be connected to the MJPEG server at the "
 "same time.</p>"
@@ -18445,10 +18509,15 @@ msgid "&Start OCR"
 msgstr "Ræ&sa OCR-ljóslestur"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:152
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "This tool use the %1 open-source engine to perform Optical Characters "
+#| "Recognition. Tesseract program and the desired languages modules must be "
+#| "installed on your system."
 msgctxt "@label"
 msgid ""
-"This tool use the %1 open-source engine to perform Optical Characters "
+"This tool uses the %1 open-source engine to perform Optical Characters "
 "Recognition. Tesseract program and the desired languages modules must be "
 "installed on your system."
 msgstr ""
@@ -18463,10 +18532,15 @@ msgid "Text Recognition"
 msgstr "Textagreining"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:206
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "After to process recognition, double-click on one item to display "
+#| "recognized text here. You can review words and fix if necessary. Press "
+#| "the Save button to record your changes."
 msgctxt "@info"
 msgid ""
-"After to process recognition, double-click on one item to display recognized "
+"After processing recognition, double-click on one item to display recognized "
 "text here. You can review words and fix if necessary. Press the Save button "
 "to record your changes."
 msgstr ""
@@ -18638,7 +18712,17 @@ msgid "Languages:"
 msgstr "Tungumál:"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:81
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Specify the language used for OCR. In the Default mode of Language "
+#| "settings for digital text with multiple languages, \n"
+#| "Tesseract can automatically recognize languages using Latin alphabets "
+#| "such as English or French, \n"
+#| "but is not compatible with languages using hieroglyphs such as Chinese, "
+#| "Japanese.\n"
+#| "You can use the Orientation and Script Detection mode instead or a "
+#| "specific languagemodule if available."
 msgctxt "@info"
 msgid ""
 "Specify the language used for OCR. In the Default mode of Language settings "
@@ -18648,7 +18732,7 @@ msgid ""
 "but is not compatible with languages using hieroglyphs such as Chinese, "
 "Japanese.\n"
 "You can use the Orientation and Script Detection mode instead or a specific "
-"languagemodule if available."
+"language module if available."
 msgstr ""
 "Tilgreindu tungumálið sem á að nota við OCR-ljóslestur. Í sjálfgefnum ham "
 "tungumálasillinga fyrir stafrænan texta með mörgum tungumálum getur "
@@ -18766,13 +18850,20 @@ msgid "A tool to create panorama"
 msgstr "Verkfæri til að búa til víðmynd"
 
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:67
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>This tool allows users to assemble images together to create large "
+#| "panorama.</p><p>To create panorama image, you need to use images taken "
+#| "from same point of view with a tripod and exposed with same settings.</"
+#| "p><p>The tool is able to assemble shot taken horizontally, vertically, or "
+#| "as a matrix. Take a care that target image will become huge and require a "
+#| "lots of memory to be processed.</p>"
 msgid ""
 "<p>This tool allows users to assemble images together to create large "
 "panorama.</p><p>To create panorama image, you need to use images taken from "
 "same point of view with a tripod and exposed with same settings.</p><p>The "
-"tool is able to assemble shot taken horizontally, vertically, or as a "
-"matrix. Take a care that target image will become huge and require a lots of "
+"tool is able to assemble shots taken horizontally, vertically, or as a "
+"matrix. Take care that target image will become huge and require a lot of "
 "memory to be processed.</p>"
 msgstr ""
 "<p>Þetta verkfæri nýtist til að setja saman myndir og þannig útbúa stóra "
@@ -18800,8 +18891,9 @@ msgid "<b>Cannot run <i>%1</i>:</b><p>%2</p>"
 msgstr "<b>Get ekki keyrt <i>%1</i>:</b><p>%2</p>"
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:67
-#, kde-format
-msgid "Temporary panorama file does not exists."
+#, fuzzy, kde-format
+#| msgid "Temporary panorama file does not exists."
+msgid "Temporary panorama file does not exist."
 msgstr "Bráðabirgða víðmyndarskrá er ekki til staðar."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:75
@@ -18815,8 +18907,9 @@ msgid "Temporary project file does not exist."
 msgstr "Bráðabirgða verkefniskrá er ekki til."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:91
-#, kde-format
-msgid "A project file named <filename>%1</filename> already exists."
+#, fuzzy, kde-format
+#| msgid "A project file named <filename>%1</filename> already exists."
+msgid "A project file named <filename>%1</filename> already exist."
 msgstr "Nú þegar er til verkefnisskrá sem heitir <filename>%1</filename>."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:165
@@ -18983,10 +19076,15 @@ msgstr ""
 "stærð)."
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:189
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: whatsthis"
+#| msgid ""
+#| "\"TIFF output\": Using TIFF output, you get the same color depth than "
+#| "your original photos using RAW images at the cost of a bigger panorama "
+#| "file."
 msgctxt "@info: whatsthis"
 msgid ""
-"\"TIFF output\": Using TIFF output, you get the same color depth than your "
+"\"TIFF output\": Using TIFF output, you get the same color depth as your "
 "original photos using RAW images at the cost of a bigger panorama file."
 msgstr ""
 "\"TIFF úttak\": Við að nota TIFF úttak færðu sömu litadýpt og úr RAW-"
@@ -19279,10 +19377,15 @@ msgid "Now, we will pre-process images before stitching them."
 msgstr "Núna verða myndirnar forunnar áður en þeim er skeytt saman."
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Pre-processing also include a calculation of some control points to match "
+#| "overlaps between images. For that purpose, the \"%1\" program will be "
+#| "used."
 msgctxt "@info"
 msgid ""
-"Pre-processing also include a calculation of some control points to match "
+"Pre-processing also includes a calculation of some control points to match "
 "overlaps between images. For that purpose, the \"%1\" program will be used."
 msgstr ""
 "Forvinnslan innifelur líka útreikning á nokkrum stýripunktum til að samsvara "
@@ -19490,12 +19593,17 @@ msgid "A tool to create print composition from images"
 msgstr "Verkfæri til að útbúa prentsamsetningar úr myndum"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>This tool allows users to back-process items (as assemble) before to "
+#| "print.</p><p>Items to process can be selected one by one or by group "
+#| "through a selection of albums.</p><p>Different pre-defined paper sizes "
+#| "and layouts can be used to process files.</p>"
 msgid ""
-"<p>This tool allows users to back-process items (as assemble) before to "
-"print.</p><p>Items to process can be selected one by one or by group through "
-"a selection of albums.</p><p>Different pre-defined paper sizes and layouts "
-"can be used to process files.</p>"
+"<p>This tool allows users to back-process items (e.g., assemble them) before "
+"to print.</p><p>Items to process can be selected one by one or by group "
+"through a selection of albums.</p><p>Different pre-defined paper sizes and "
+"layouts can be used to process files.</p>"
 msgstr ""
 "<p>Þetta verkfæri gerir notendum kleift að eftirvinna atriði (raða saman) "
 "fyrir prentun.</p><p>Atriðin sem á að vinna er hægt að velja eitt og eitt "
@@ -19532,12 +19640,18 @@ msgstr "Gerð skýringatexta:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:86
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "print file name\n"
+#| "print camera exposure time\n"
+#| "print item comment\n"
+#| "print ISO sensibility from camera\n"
+#| "print date and time from camera"
 msgid ""
 "print file name\n"
 "print camera exposure time\n"
 "print item comment\n"
-"print ISO sensibility from camera\n"
+"print ISO sensitivity from camera\n"
 "print date and time from camera"
 msgstr ""
 "birta skráarheiti\n"
@@ -22502,18 +22616,22 @@ msgid "A tool to export to Dropbox web-service"
 msgstr "Verkfæri til að senda myndir á Dropbox-vefþjónustu"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This tool allows users to export items to Dropbox web-service.\n"
+#| "\n"
+#| "See Dropbox web site for details: %1"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Dropbox web-service.\n"
-"\n"
-"See Dropbox web site for details: %1"
+"This tool allows users to export items to Dropbox web-service.<br><br>See "
+"Dropbox web site for details: %1"
 msgstr ""
 "Þetta verkfæri gerir kleift að flytja atriði út á Dropbox-vefþjónustuna.\n"
 "\n"
 "Skoðaðu vefsvæði Dropbox til að sjá nánari upplýsingar: %1"
 
-#: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:94
+#: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Dropbox..."
@@ -23622,12 +23740,20 @@ msgid "A tool to export and import items with Google web-service"
 msgstr "Verkfæri til að flytja inn og senda atriði á Google-vefþjónustu"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:66
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This tool allows users to export and import items with Google web-"
+#| "services.\n"
+#| "\n"
+#| "Google Photo and Google Drive web services are supported.\n"
+#| "\n"
+#| "See Google web sites for details: %1"
 msgctxt "@info"
 msgid ""
 "This tool allows users to export and import items with Google web-services.\n"
 "\n"
-"Google Photo and Google Drive web services are supported.\n"
+"Google Photos and Google Drive web services are supported.\n"
 "\n"
 "See Google web sites for details: %1"
 msgstr ""
@@ -23832,9 +23958,11 @@ msgid "Google Drive export"
 msgstr "Google Drive útflutningur"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info: start transfert"
+#| msgid "Google Photo export"
 msgctxt "@info: start transfert"
-msgid "Google Photo export"
+msgid "Google Photos export"
 msgstr "Google Photo útflutningur"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
@@ -24166,14 +24294,19 @@ msgid "A tool to export to ImgUr web-service"
 msgstr "Verkfæri til að senda myndir á Imgur vefþjónustu"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This tool allows users to export items to ImgUr web-service.\n"
+#| "\n"
+#| "You can export items as anonymous or with an user account.\n"
+#| "\n"
+#| "See ImgUr web site for details: %1"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to ImgUr web-service.\n"
-"\n"
-"You can export items as anonymous or with an user account.\n"
-"\n"
-"See ImgUr web site for details: %1"
+"This tool allows users to export items to ImgUr web-service.<br><br>You can "
+"export items as anonymous or with an user account.<br><br>See ImgUr web site "
+"for details: %1"
 msgstr ""
 "Þetta verkfæri gerir kleift að flytja atriði út á ImgUr-vefþjónustu.\n"
 "\n"
@@ -24280,12 +24413,16 @@ msgid "A tool to export photos as iNaturalist observations."
 msgstr "Verkfæri til að flytja út myndir sem iNaturalist-athuganir"
 
 #: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:66
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This tool exports photos as iNaturalist observations.\n"
+#| "\n"
+#| "See iNaturalist web site for details: %1."
 msgctxt "@info"
 msgid ""
-"This tool exports photos as iNaturalist observations.\n"
-"\n"
-"See iNaturalist web site for details: %1."
+"This tool exports photos as iNaturalist observations.<br><br>See iNaturalist "
+"web site for details: %1."
 msgstr ""
 "Þetta verkfæri gerir kleift að flytja atriði út sem iNaturalist-athuganir.\n"
 "\n"
@@ -25352,39 +25489,51 @@ msgid "A tool to export to OneDrive web-service"
 msgstr "Verkfæri til að senda myndir á OneDrive-vefþjónustu"
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This tool allows users to export items to OneDrive web-service.\n"
+#| "\n"
+#| "See OneDrive web site for details: %1"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to OneDrive web-service.\n"
-"\n"
-"See OneDrive web site for details: %1"
+"This tool allows users to export items to OneDrive web-service.<br><br>See "
+"OneDrive web site for details: %1"
 msgstr ""
 "Þetta verkfæri gerir kleift að flytja atriði út á OneDrive-vefþjónustu.\n"
 "\n"
 "Skoðaðu vefsvæði OneDrive til að sjá nánari upplýsingar: %1"
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Export to &Onedrive..."
 msgctxt "@action"
-msgid "Export to &Onedrive..."
+msgid "Export to &OneDrive..."
 msgstr "Flytja út á &OneDrive..."
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Export to Onedrive"
 msgctxt "@title:window"
-msgid "Export to Onedrive"
+msgid "Export to OneDrive"
 msgstr "Flytja út á OneDrive"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:78
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip, button"
+#| msgid "Start upload to Onedrive"
 msgctxt "@info:tooltip, button"
-msgid "Start upload to Onedrive"
+msgid "Start upload to OneDrive"
 msgstr "Hefja sendingu á OneDrive"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:283
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Onedrive export"
 msgctxt "@info"
-msgid "Onedrive export"
+msgid "OneDrive export"
 msgstr "OneDrive útflutningur"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:320
@@ -25401,10 +25550,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:394
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:399
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Onedrive call failed:\n"
+#| "%1"
 msgctxt "@info"
 msgid ""
-"Onedrive call failed:\n"
+"OneDrive call failed:\n"
 "%1"
 msgstr ""
 "OneDrive skipun mistókst: \n"
@@ -26271,12 +26424,16 @@ msgid "A tool to export to Twitter web-service"
 msgstr "Verkfæri til að senda myndir á Twitter-vefþjónustu"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This tool allows users to export items to Twitter web-service.\n"
+#| "\n"
+#| "See Twitter web site for details: %1"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.\n"
-"\n"
-"See Twitter web site for details: %1"
+"This tool allows users to export items to Twitter web-service.<br><br>See "
+"Twitter web site for details: %1"
 msgstr ""
 "Þetta verkfæri gerir kleift að flytja atriði út á Twitter-vefþjónustuna.\n"
 "\n"
@@ -26392,12 +26549,16 @@ msgid "A tool to export items to web-services"
 msgstr "Verkfæri til að senda myndir á vefþjónustur"
 
 #: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This tool allows users to export items to many web-services.\n"
+#| "\n"
+#| "This is a unified tool, grouping many tools in one."
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to many web-services.\n"
-"\n"
-"This is a unified tool, grouping many tools in one."
+"This tool allows users to export items to many web-services.<br><br>This is "
+"a unified tool, grouping many tools in one."
 msgstr ""
 "Þetta verkfæri gerir kleift að flytja atriði út á margar vefþjónustur.\n"
 "\n"
@@ -26878,7 +27039,7 @@ msgstr "Settu inn nafn á albúminu:"
 msgid "Scanning albums"
 msgstr "Leita að albúmum"
 
-#: core/libs/album/manager/albummanager.cpp:185
+#: core/libs/album/manager/albummanager.cpp:184
 #: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:72
@@ -28882,19 +29043,19 @@ msgstr "Eyða"
 msgid "Restore Trash"
 msgstr "Endurheimta úr ruslinu"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:119
+#: core/libs/database/utils/scan/scancontroller.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Undirbý gagnagrunn..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:145
+#: core/libs/database/utils/scan/scancontroller.cpp:155
 #, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "Skanna myndasöfn, bíddu aðeins..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:147
+#: core/libs/database/utils/scan/scancontroller.cpp:157
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28906,7 +29067,7 @@ msgstr ""
 "diskinum skráðar í gagnagrunn. Athugaðu: þessi gluggi getur birst sjálfkrafa "
 "ef fyrri skönnun á myndasöfnun hefur ekki lokið að fullu."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:266
+#: core/libs/database/utils/scan/scancontroller.cpp:276
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -30937,9 +31098,11 @@ msgid "Preserve luminosity"
 msgstr "Varðveita birtustig"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Enable this option is you want preserve the image luminosity."
 msgctxt "@info"
-msgid "Enable this option is you want preserve the image luminosity."
+msgid "Enable this option if you want preserve the image luminosity."
 msgstr "Virkjaðu þetta val ef þú vilt varðveita birtustig myndarinnar."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:150
@@ -31573,7 +31736,7 @@ msgctxt "Convert image bit depth"
 msgid "Convert Depth"
 msgstr "Umbreyta litadýpt"
 
-#: core/libs/dimg/filters/dimgfiltermanager.cpp:427
+#: core/libs/dimg/filters/dimgfiltermanager.cpp:429
 #, kde-format
 msgid "Unknown filter"
 msgstr "Óþekkt sía"
@@ -34958,61 +35121,61 @@ msgstr "Skrifa lýsigögn í skrár"
 msgid "Revising Exif Orientation tags"
 msgstr "Sný við EXIF stefnumerkjum"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:88
+#: core/libs/fileactionmanager/fileactionmngr.cpp:90
 #, kde-format
 msgctxt "@label"
 msgid "Finishing tasks"
 msgstr "Lýk verkum"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:138
+#: core/libs/fileactionmanager/fileactionmngr.cpp:140
 #, kde-format
 msgid "Assigning image tags"
 msgstr "Úthluta merkjum á myndir"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:160
+#: core/libs/fileactionmanager/fileactionmngr.cpp:162
 #, kde-format
 msgid "Removing image tags"
 msgstr "Fjarlægi merki af myndum"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:177
+#: core/libs/fileactionmanager/fileactionmngr.cpp:179
 #, kde-format
 msgid "Assigning image pick label"
 msgstr "Úthluta sérmerkingu á myndir"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:184
+#: core/libs/fileactionmanager/fileactionmngr.cpp:186
 #, kde-format
 msgid "Assigning image color label"
 msgstr "Úthluta litmerki á myndir"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:196
+#: core/libs/fileactionmanager/fileactionmngr.cpp:198
 #, kde-format
 msgid "Assigning image ratings"
 msgstr "Úthluta einkunnum á myndir"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:203
-#: core/libs/fileactionmanager/fileactionmngr.cpp:215
-#: core/libs/fileactionmanager/fileactionmngr.cpp:227
+#: core/libs/fileactionmanager/fileactionmngr.cpp:205
+#: core/libs/fileactionmanager/fileactionmngr.cpp:217
+#: core/libs/fileactionmanager/fileactionmngr.cpp:229
 #, kde-format
 msgid "Editing group"
 msgstr "Breyti hóp"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:234
+#: core/libs/fileactionmanager/fileactionmngr.cpp:236
 #, kde-format
 msgid "Updating orientation in database"
 msgstr "Uppfærsla stefnumerkja gagnagrunns í gangi"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:252
-#: core/libs/fileactionmanager/fileactionmngr.cpp:270
+#: core/libs/fileactionmanager/fileactionmngr.cpp:254
+#: core/libs/fileactionmanager/fileactionmngr.cpp:272
 #, kde-format
 msgid "Applying metadata"
 msgstr "Vista lýsigögn"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:277
+#: core/libs/fileactionmanager/fileactionmngr.cpp:279
 #, kde-format
 msgid "Rotating images"
 msgstr "Sný myndum"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:293
+#: core/libs/fileactionmanager/fileactionmngr.cpp:295
 #, kde-format
 msgid "Copying attributes"
 msgstr "Afrita eigindi"
@@ -49995,7 +50158,9 @@ msgstr ""
 "stað IPTC."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
+#: core/showfoto/setup/showfotosetupmisc.cpp:213
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
+#: core/utilities/setup/misc/setupmisc.cpp:207
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
@@ -50177,13 +50342,6 @@ msgstr "Síðasta athugun: %1"
 #, kde-format
 msgid "Check now..."
 msgstr "Kanna núna..."
-
-#: core/showfoto/setup/showfotosetupmisc.cpp:213
-#: core/utilities/setup/misc/setupmisc.cpp:207
-#, kde-format
-msgctxt "@title:tab"
-msgid "Behaviour"
-msgstr "Hegðun"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:220
 #: core/utilities/setup/misc/setupmisc.cpp:214
@@ -67992,6 +68150,10 @@ msgstr "Atriði í albúmi"
 #, kde-format
 msgid "Import Items"
 msgstr "Flytja inn atriði"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Behaviour"
+#~ msgstr "Hegðun"
 
 #~ msgid "Scan collection for faces"
 #~ msgstr "Skanna andlit í myndasafninu"

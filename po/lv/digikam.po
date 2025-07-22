@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-19 06:34+0000\n"
+"POT-Creation-Date: 2025-07-22 02:02+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -2971,7 +2971,7 @@ msgstr "Rādīt pilnekrāna režīmā"
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:486
-#: core/libs/album/manager/albummanager.cpp:179
+#: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
@@ -3121,7 +3121,7 @@ msgstr "Mani albumi"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:352
 #: core/libs/album/engine/album.cpp:553
-#: core/libs/album/manager/albummanager.cpp:182
+#: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
@@ -7506,13 +7506,13 @@ msgid ""
 "Framework documentation</a> for extended list of formats supported.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:62
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:63
 #, fuzzy, kde-format
 #| msgid "Lossless PGF files"
 msgid "Lossless WEBP files"
 msgstr "Bezzudumu PGF faili"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:64
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:65
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Toggle lossless compression for PGF images.</p><p>If this option is "
@@ -7524,13 +7524,13 @@ msgstr ""
 "<p>Ieslēgt bezzudumu saspiešanu PGF attēliem.</p><p>Ieslēdzot šo iespēju, "
 "PGF attēliem tiks izmantota bezzudumu saspiešana.</p>"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:71
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:72
 #, fuzzy, kde-format
 #| msgid "PGF quality:"
 msgid "WEBP quality:"
 msgstr "PGF kvalitāte:"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:73
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:74
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality "
@@ -7539,7 +7539,7 @@ msgstr "PGF kvalitāte:"
 #| "compression and large file size)</p><p><b>Note: JPEG 2000 is not a "
 #| "lossless image compression format when you use this setting.</b></p>"
 msgid ""
-"<p>The quality value for WEB images:</p><p><b>1</b>: low quality (high "
+"<p>The quality value for WEBP images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
 "b>: good quality (default)<br/><b>99</b>: high quality (no compression and "
 "large file size)</p><p><b>Note: WEBP is not a lossless image compression "
@@ -9055,14 +9055,14 @@ msgstr "Asināt"
 #, fuzzy, kde-format
 #| msgid "A tool to sharpen images"
 msgctxt "@info"
-msgid "A tool to sharp an image"
+msgid "A tool to sharpen an image"
 msgstr "Rīks attēlu asināšanai"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This image is not color managed."
 msgctxt "@info"
-msgid "This Image Editor tool can sharp an image."
+msgid "This Image Editor tool can sharpen an image."
 msgstr "Šajā attēlā krāsu pārvaldība ir izslēgta."
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:91
@@ -11184,7 +11184,7 @@ msgstr "Skenēt attēlu"
 msgid "Scan Images"
 msgstr "Skenēt attēlus"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:171
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:172
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1849
 #, fuzzy, kde-format
@@ -11193,27 +11193,27 @@ msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "Jaunā attēla faila nosaukums"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:219
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:220
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:148
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Nezināms"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:220
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:221
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:149
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "Mērķa attēla formāts \"%1\" nav atbalstīts."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:232
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:233
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "Neizdevās parsēt %1 GPX failu!"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:233
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:234
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:162
 #, kde-format
 msgid ""
@@ -11225,7 +11225,7 @@ msgstr ""
 "\"%1\" mapē\n"
 "\"%2\"."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:248
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:249
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2323
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2342
@@ -11235,26 +11235,26 @@ msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Pārrakstīt failu?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:249
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:250
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:178
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Fails ar nosaukumu \"%1\" jau pastāv. Vai vēlaties to pārrakstīt?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:301
 #, fuzzy, kde-format
 msgid "Saving file %1 -"
 msgstr "Attēlu faili"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:308
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:309
 #, fuzzy, kde-format
 #| msgid "File Not Saved"
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "Fails nav saglabāts"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:308
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:310
 #, kde-format
 msgid "Cannot save \"%1\" file"
 msgstr ""
@@ -12112,21 +12112,21 @@ msgstr "Metadati..."
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:76
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:83
 #, fuzzy, kde-format
 msgid "Add a new value to the list"
 msgstr "Pievienot sarakstam Raw failus"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:79
 #: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:77
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:84
 #, fuzzy, kde-format
 msgid "Remove the current selected value from the list"
 msgstr "Izņemt izvēlētos Raw failus no saraksta"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:78
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:85
 #, fuzzy, kde-format
 msgid "Replace the current selected value from the list"
 msgstr "Izņemt izvēlētos Raw failus no saraksta"
@@ -12145,7 +12145,7 @@ msgstr[1] ""
 msgstr[2] ""
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:283
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:337
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:339
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:272
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:430
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:415
@@ -12159,159 +12159,159 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:73
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:75
 #, fuzzy, kde-format
 msgid "Attribute:"
 msgstr "Piedalīties..."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:97
 #, fuzzy, kde-format
 msgid "Select here the editorial attribute of content."
 msgstr "Šeit norādiet fontu, ar kādu attēlot tekstu ikonu skatos."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:98
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "Current"
 msgstr "Skaits:"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:99
 #, kde-format
 msgctxt "Content type"
 msgid "Analysis"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:100
 #, kde-format
 msgctxt "Content type"
 msgid "Archive material"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:101
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "Background"
 msgstr "&Izmantot aktīvās tēmas fona krāsu"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:102
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "Feature"
 msgstr "Daba"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
 #, kde-format
 msgctxt "Content type"
 msgid "Forecast"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "History"
 msgstr "Vēsture"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:105
 #, kde-format
 msgctxt "Content type"
 msgid "Obituary"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:106
 #, kde-format
 msgctxt "Content type"
 msgid "Opinion"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:105
-#, kde-format
-msgctxt "Content type"
-msgid "Polls & Surveys"
-msgstr ""
-
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:106
-#, fuzzy, kde-format
-msgctxt "Content type"
-msgid "Profile"
-msgstr "Profili"
-
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:107
 #, kde-format
 msgctxt "Content type"
-msgid "Results Listings & Table"
+msgid "Polls and Surveys"
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
 #, fuzzy, kde-format
 msgctxt "Content type"
-msgid "Side bar & Supporting information"
-msgstr "Pievienot datuma un laika informāciju"
+msgid "Profile"
+msgstr "Profili"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:109
+#, kde-format
+msgctxt "Content type"
+msgid "Results Listings and Table"
+msgstr ""
+
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:110
+#, fuzzy, kde-format
+msgctxt "Content type"
+msgid "Side bar and Supporting information"
+msgstr "Pievienot datuma un laika informāciju"
+
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:111
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "Summary"
 msgstr "Kopsavilkums"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:112
 #, kde-format
 msgctxt "Content type"
 msgid "Transcript & Verbatim"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:113
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "Interview"
 msgstr "Priekšapskate"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:114
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "From the Scene"
 msgstr "līdz beigām"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:115
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "Retrospective"
 msgstr "Perspektīva"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:116
 #, kde-format
 msgctxt "Content type"
 msgid "Statistics"
 msgstr "Statistika"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:117
 #, kde-format
 msgctxt "Content type"
 msgid "Update"
 msgstr "Atjaunināt"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:118
 #, kde-format
 msgctxt "Content type"
 msgid "Wrap-up"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:119
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "Press Release"
 msgstr "Izņemt apstrādātās vienības"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:125
 #, fuzzy, kde-format
 msgid "Set here the editorial attribute description of content."
 msgstr "Šeit norādiet krāsu piesātinājuma korekciju."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:128
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:130
 #, kde-format
 msgid " This field is limited to "
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:132
 #, fuzzy, kde-format
 #| msgctxt "The character the string should be filled with"
 #| msgid "Character:"
@@ -12321,7 +12321,7 @@ msgstr[0] "Rakstzīme:"
 msgstr[1] "Rakstzīme:"
 msgstr[2] "Rakstzīme:"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:139
 #, fuzzy, kde-format
 msgid "Set here the editorial description"
 msgstr "Šeit norādiet krāsu piesātinājuma korekciju."
@@ -14940,7 +14940,7 @@ msgstr "Telefons:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:113
 #, fuzzy, kde-format
-msgid "Set here the contact 'phone number."
+msgid "Set here the contact phone number."
 msgstr "Šeit var norādīt teksta krāsu."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:115
@@ -16799,33 +16799,34 @@ msgctxt "@title: column"
 msgid "Exposure (EV)"
 msgstr "Ekspozīcija (E.V):"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:48
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:50
 #, fuzzy, kde-format
 #| msgid "Previews single images"
 msgctxt "@title:window"
 msgid "Pre-Processing is Complete"
 msgstr "Priekšapskatīt atsevišķus attēlus"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:62
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:64
 #, fuzzy, kde-format
 #| msgid "Previews single images"
 msgctxt "@info"
 msgid "Bracketed Images Pre-Processing is Done"
 msgstr "Priekšapskatīt atsevišķus attēlus"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:63
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are ready to be fused."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:64
-#, kde-format
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:66
+#, fuzzy, kde-format
+#| msgid "If this option is enabled, the original image will be shown."
 msgctxt "@info"
-msgid "To perform this operation, Enblend program from will be used."
-msgstr ""
+msgid "To perform this operation, Enblend program will be used."
+msgstr "Ieslēdzot šo iespēju, tiks rādīts oriģinālais attēls."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:65
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid "Press \"Finish\" button to fuse your items and make a pseudo HDR image."
@@ -17858,11 +17859,11 @@ msgctxt "@info"
 msgid ""
 "The %1 server allows to share items through the local network using a web "
 "browser. Motion JPEG is a video compression format in which each video frame "
-"is compressed separately as a JPEG image. MJPEG streams is a standard which "
+"is compressed separately as a JPEG image. MJPEG stream is a standard which "
 "allows network clients to be connected without additional module. Most major "
-"web browsers and players support MJPEG stream. To access to stream from your "
-"browser, just use http://address:port as url, with address the MJPEG server "
-"IP, and port the server port set in this config dialog."
+"web browsers and players support MJPEG stream. To access the stream from "
+"your browser, just use http://address:port as url, with address the MJPEG "
+"server IP, and port the server port set in this config dialog."
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:94
@@ -17896,7 +17897,7 @@ msgstr "JPEG kvalitāte:"
 #, kde-format
 msgctxt "@info"
 msgid ""
-"The JPEG quality [50:lower - 100:higher]. Warning: better quality require "
+"The JPEG quality [50:lower - 100:higher]. Warning: better quality requires "
 "more network bandwidth"
 msgstr ""
 
@@ -17912,7 +17913,7 @@ msgstr "JPEG faili"
 msgctxt "@info"
 msgid ""
 "The JPEG image size in pixels, using standard screen resolutions. Warning: "
-"larger size require more network bandwidth"
+"larger size requires more network bandwidth"
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:160
@@ -17939,7 +17940,7 @@ msgstr ""
 msgctxt "@info"
 msgid ""
 "The number of frames by second to render the stream. Warning: larger rate "
-"require more network bandwidth"
+"requires more network bandwidth"
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:175
@@ -17952,7 +17953,7 @@ msgstr "Eritreja"
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:177
 #, kde-format
 msgctxt "@info"
-msgid "The MJPEG stream will be played in loop instead once."
+msgid "The MJPEG stream will be played in loop instead of playing once."
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:191
@@ -17975,9 +17976,9 @@ msgstr "Tips:"
 #, kde-format
 msgctxt "@label"
 msgid ""
-"A transition is an visual effect applied between two images. For some "
-"effects, the duration can depend of random values and can change while the "
-"stream."
+"A transition is a visual effect applied between two images. For some "
+"effects, the duration can depend on random values and can change while the "
+"stream is playing."
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:249
@@ -17991,8 +17992,8 @@ msgstr "Novietojums:"
 #, kde-format
 msgctxt "@label"
 msgid ""
-"An effect is an visual panning or zooming applied while an image is "
-"displayed in MJPEG stream."
+"An effect is a visual panning or zooming applied while an image is displayed "
+"in MJPEG stream."
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:294
@@ -18025,9 +18026,9 @@ msgid ""
 "group through a selection of albums.</p><p>Motion JPEG is a video "
 "compression format in which each video frame or interlaced field of a "
 "digital video sequence is compressed separately as a JPEG image. MJPEG "
-"streams is a standard which allows network clients to be connected without "
+"stream is a standard which allows network clients to be connected without "
 "additional module. Most major web browsers and players support MJPEG stream."
-"</p><p>To access to stream from your browser, use http://address:port as "
+"</p><p>To access the stream from your browser, use http://address:port as "
 "url, with address the MJPEG address, and port the MJPEG port set in config "
 "dialog. More than one computer can be connected to the MJPEG server at the "
 "same time.</p>"
@@ -18197,7 +18198,7 @@ msgstr "Sākums:"
 #, kde-format
 msgctxt "@label"
 msgid ""
-"This tool use the %1 open-source engine to perform Optical Characters "
+"This tool uses the %1 open-source engine to perform Optical Characters "
 "Recognition. Tesseract program and the desired languages modules must be "
 "installed on your system."
 msgstr ""
@@ -18213,7 +18214,7 @@ msgstr "Seju atpazīšana"
 #, kde-format
 msgctxt "@info"
 msgid ""
-"After to process recognition, double-click on one item to display recognized "
+"After processing recognition, double-click on one item to display recognized "
 "text here. You can review words and fix if necessary. Press the Save button "
 "to record your changes."
 msgstr ""
@@ -18390,7 +18391,7 @@ msgid ""
 "but is not compatible with languages using hieroglyphs such as Chinese, "
 "Japanese.\n"
 "You can use the Orientation and Script Detection mode instead or a specific "
-"languagemodule if available."
+"language module if available."
 msgstr ""
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:90
@@ -18510,8 +18511,8 @@ msgid ""
 "<p>This tool allows users to assemble images together to create large "
 "panorama.</p><p>To create panorama image, you need to use images taken from "
 "same point of view with a tripod and exposed with same settings.</p><p>The "
-"tool is able to assemble shot taken horizontally, vertically, or as a "
-"matrix. Take a care that target image will become huge and require a lots of "
+"tool is able to assemble shots taken horizontally, vertically, or as a "
+"matrix. Take care that target image will become huge and require a lot of "
 "memory to be processed.</p>"
 msgstr ""
 
@@ -18534,7 +18535,7 @@ msgstr ""
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:67
 #, fuzzy, kde-format
 #| msgid "File does not exist"
-msgid "Temporary panorama file does not exists."
+msgid "Temporary panorama file does not exist."
 msgstr "Fails nepastāv"
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:75
@@ -18552,7 +18553,7 @@ msgstr "Fails nepastāv"
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:91
 #, fuzzy, kde-format
 #| msgid "Failed to upload file \"%1\"."
-msgid "A project file named <filename>%1</filename> already exists."
+msgid "A project file named <filename>%1</filename> already exist."
 msgstr "Neizdevās augšupielādēt failu \"%1\"."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:165
@@ -18712,7 +18713,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
-"\"TIFF output\": Using TIFF output, you get the same color depth than your "
+"\"TIFF output\": Using TIFF output, you get the same color depth as your "
 "original photos using RAW images at the cost of a bigger panorama file."
 msgstr ""
 
@@ -18985,7 +18986,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid ""
-"Pre-processing also include a calculation of some control points to match "
+"Pre-processing also includes a calculation of some control points to match "
 "overlaps between images. For that purpose, the \"%1\" program will be used."
 msgstr ""
 
@@ -19201,10 +19202,10 @@ msgstr "Rīks attēlu asināšanai"
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:64
 #, kde-format
 msgid ""
-"<p>This tool allows users to back-process items (as assemble) before to "
-"print.</p><p>Items to process can be selected one by one or by group through "
-"a selection of albums.</p><p>Different pre-defined paper sizes and layouts "
-"can be used to process files.</p>"
+"<p>This tool allows users to back-process items (e.g., assemble them) before "
+"to print.</p><p>Items to process can be selected one by one or by group "
+"through a selection of albums.</p><p>Different pre-defined paper sizes and "
+"layouts can be used to process files.</p>"
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
@@ -19244,7 +19245,7 @@ msgid ""
 "print file name\n"
 "print camera exposure time\n"
 "print item comment\n"
-"print ISO sensibility from camera\n"
+"print ISO sensitivity from camera\n"
 "print date and time from camera"
 msgstr ""
 
@@ -22150,12 +22151,11 @@ msgstr "Importēti vērtējumi"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Dropbox web-service.\n"
-"\n"
-"See Dropbox web site for details: %1"
+"This tool allows users to export items to Dropbox web-service.<br><br>See "
+"Dropbox web site for details: %1"
 msgstr "Importēti vērtējumi"
 
-#: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:94
+#: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Dropbox..."
@@ -23284,7 +23284,7 @@ msgctxt "@info"
 msgid ""
 "This tool allows users to export and import items with Google web-services.\n"
 "\n"
-"Google Photo and Google Drive web services are supported.\n"
+"Google Photos and Google Drive web services are supported.\n"
 "\n"
 "See Google web sites for details: %1"
 msgstr "Importēti vērtējumi"
@@ -23497,7 +23497,7 @@ msgstr "Eksports uz Google disku"
 #| msgctxt "@info"
 #| msgid "Google Photo export"
 msgctxt "@info: start transfert"
-msgid "Google Photo export"
+msgid "Google Photos export"
 msgstr "Eksports uz Google fotoattēliem"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
@@ -23839,11 +23839,9 @@ msgstr "Importēti vērtējumi"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to ImgUr web-service.\n"
-"\n"
-"You can export items as anonymous or with an user account.\n"
-"\n"
-"See ImgUr web site for details: %1"
+"This tool allows users to export items to ImgUr web-service.<br><br>You can "
+"export items as anonymous or with an user account.<br><br>See ImgUr web site "
+"for details: %1"
 msgstr "Importēti vērtējumi"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:102
@@ -23960,9 +23958,8 @@ msgstr "Importēti vērtējumi"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool exports photos as iNaturalist observations.\n"
-"\n"
-"See iNaturalist web site for details: %1."
+"This tool exports photos as iNaturalist observations.<br><br>See iNaturalist "
+"web site for details: %1."
 msgstr "Importēti vērtējumi"
 
 #: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:94
@@ -25065,15 +25062,16 @@ msgstr "Importēti vērtējumi"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to OneDrive web-service.\n"
-"\n"
-"See OneDrive web site for details: %1"
+"This tool allows users to export items to OneDrive web-service.<br><br>See "
+"OneDrive web site for details: %1"
 msgstr "Importēti vērtējumi"
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Export to &Onedrive..."
 msgctxt "@action"
-msgid "Export to &Onedrive..."
+msgid "Export to &OneDrive..."
 msgstr "Eksportēt uz &OneDrive..."
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:75
@@ -25081,19 +25079,21 @@ msgstr "Eksportēt uz &OneDrive..."
 #| msgctxt "@title"
 #| msgid "Export to Onedrive"
 msgctxt "@title:window"
-msgid "Export to Onedrive"
+msgid "Export to OneDrive"
 msgstr "Eksportēt uz OneDrive"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:78
 #, fuzzy, kde-format
 msgctxt "@info:tooltip, button"
-msgid "Start upload to Onedrive"
+msgid "Start upload to OneDrive"
 msgstr "Izvēlieties augšupielādējamo attēlu"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:283
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Onedrive export"
 msgctxt "@info"
-msgid "Onedrive export"
+msgid "OneDrive export"
 msgstr "Eksports uz OneDrive"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:320
@@ -25110,7 +25110,7 @@ msgstr "Tags '%2' piešķirts %1 failam. Vai vēlaties turpināt?"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"Onedrive call failed:\n"
+"OneDrive call failed:\n"
 "%1"
 msgstr "Augstums"
 
@@ -25986,9 +25986,8 @@ msgstr "Importēti vērtējumi"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.\n"
-"\n"
-"See Twitter web site for details: %1"
+"This tool allows users to export items to Twitter web-service.<br><br>See "
+"Twitter web site for details: %1"
 msgstr "Importēti vērtējumi"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
@@ -26105,9 +26104,8 @@ msgstr "Importēti vērtējumi"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to many web-services.\n"
-"\n"
-"This is a unified tool, grouping many tools in one."
+"This tool allows users to export items to many web-services.<br><br>This is "
+"a unified tool, grouping many tools in one."
 msgstr "Importēti vērtējumi"
 
 #: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:93
@@ -26563,7 +26561,7 @@ msgstr "Ievadiet albuma nosaukumu:"
 msgid "Scanning albums"
 msgstr "Skenēt albumus"
 
-#: core/libs/album/manager/albummanager.cpp:185
+#: core/libs/album/manager/albummanager.cpp:184
 #: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:72
@@ -28611,19 +28609,19 @@ msgstr "Dzēst"
 msgid "Restore Trash"
 msgstr "Atjaunošana"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:119
+#: core/libs/database/utils/scan/scancontroller.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Inicializē datubāzi..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:145
+#: core/libs/database/utils/scan/scancontroller.cpp:155
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "Meklē jaunus failus, lūdzu, uzgaidiet..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:147
+#: core/libs/database/utils/scan/scancontroller.cpp:157
 #, fuzzy, kde-format
 #| msgid ""
 #| "This shows the progress of the scan. During the scan, all files on disk "
@@ -28637,7 +28635,7 @@ msgstr ""
 "Šis parāda skenēšanas progresu. Skenēšanas laikā visi uz diska esošie faili "
 "tiek reģistrēti datubāzē."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:266
+#: core/libs/database/utils/scan/scancontroller.cpp:276
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -30596,7 +30594,7 @@ msgstr "Saglabāt spilgtumu"
 #, fuzzy, kde-format
 #| msgid "Enable this option is you want preserve the image luminosity."
 msgctxt "@info"
-msgid "Enable this option is you want preserve the image luminosity."
+msgid "Enable this option if you want preserve the image luminosity."
 msgstr "Ieslēdziet šo iespēju, ja vēlaties saglabāt attēla kopējo spilgtumu."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:150
@@ -31249,7 +31247,7 @@ msgctxt "Convert image bit depth"
 msgid "Convert Depth"
 msgstr "Pārveidot uz:"
 
-#: core/libs/dimg/filters/dimgfiltermanager.cpp:427
+#: core/libs/dimg/filters/dimgfiltermanager.cpp:429
 #, kde-format
 msgid "Unknown filter"
 msgstr "Nezināms filtrs"
@@ -34591,61 +34589,61 @@ msgstr "Metadati tiek rakstīti failos"
 msgid "Revising Exif Orientation tags"
 msgstr "Analizē Exif orientācijas tagus. Lūdzu, uzgaidiet..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:88
+#: core/libs/fileactionmanager/fileactionmngr.cpp:90
 #, kde-format
 msgctxt "@label"
 msgid "Finishing tasks"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:138
+#: core/libs/fileactionmanager/fileactionmngr.cpp:140
 #, kde-format
 msgid "Assigning image tags"
 msgstr "Attēlam tiek piešķirti tagi"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:160
+#: core/libs/fileactionmanager/fileactionmngr.cpp:162
 #, fuzzy, kde-format
 msgid "Removing image tags"
 msgstr "Pārdēvēšanas opcijas"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:177
+#: core/libs/fileactionmanager/fileactionmngr.cpp:179
 #, fuzzy, kde-format
 msgid "Assigning image pick label"
 msgstr "Piešķir tagus attēlam. Lūdzu, uzgaidiet..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:184
+#: core/libs/fileactionmanager/fileactionmngr.cpp:186
 #, fuzzy, kde-format
 msgid "Assigning image color label"
 msgstr "Piešķir tagus attēlam. Lūdzu, uzgaidiet..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:196
+#: core/libs/fileactionmanager/fileactionmngr.cpp:198
 #, kde-format
 msgid "Assigning image ratings"
 msgstr "Attēlam tiek piešķirti vērtējumi"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:203
-#: core/libs/fileactionmanager/fileactionmngr.cpp:215
-#: core/libs/fileactionmanager/fileactionmngr.cpp:227
+#: core/libs/fileactionmanager/fileactionmngr.cpp:205
+#: core/libs/fileactionmanager/fileactionmngr.cpp:217
+#: core/libs/fileactionmanager/fileactionmngr.cpp:229
 #, fuzzy, kde-format
 msgid "Editing group"
 msgstr "Pirmais attēls"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:234
+#: core/libs/fileactionmanager/fileactionmngr.cpp:236
 #, kde-format
 msgid "Updating orientation in database"
 msgstr "Orientācijas atjaunināšana datubāzē"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:252
-#: core/libs/fileactionmanager/fileactionmngr.cpp:270
+#: core/libs/fileactionmanager/fileactionmngr.cpp:254
+#: core/libs/fileactionmanager/fileactionmngr.cpp:272
 #, fuzzy, kde-format
 msgid "Applying metadata"
 msgstr "Saglabāt metadatus"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:277
+#: core/libs/fileactionmanager/fileactionmngr.cpp:279
 #, fuzzy, kde-format
 msgid "Rotating images"
 msgstr "Par. attēli"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:293
+#: core/libs/fileactionmanager/fileactionmngr.cpp:295
 #, fuzzy, kde-format
 msgid "Copying attributes"
 msgstr "Piedalīties..."
@@ -50553,7 +50551,9 @@ msgstr ""
 "aizstātu IPTC.</p>"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
+#: core/showfoto/setup/showfotosetupmisc.cpp:213
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
+#: core/utilities/setup/misc/setupmisc.cpp:207
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
@@ -50722,14 +50722,6 @@ msgstr ""
 #| msgid "Checking dcraw version"
 msgid "Check now..."
 msgstr "Pārbauda dcraw versiju"
-
-#: core/showfoto/setup/showfotosetupmisc.cpp:213
-#: core/utilities/setup/misc/setupmisc.cpp:207
-#, fuzzy, kde-format
-#| msgid "Behavior"
-msgctxt "@title:tab"
-msgid "Behaviour"
-msgstr "Izturēšanās"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:220
 #: core/utilities/setup/misc/setupmisc.cpp:214
@@ -68413,6 +68405,12 @@ msgstr "Albumu vienības"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Kārtot attēlus"
+
+#, fuzzy
+#~| msgid "Behavior"
+#~ msgctxt "@title:tab"
+#~ msgid "Behaviour"
+#~ msgstr "Izturēšanās"
 
 #~ msgid "Scan collection for faces"
 #~ msgstr "Atrast kolekcijā sejas"

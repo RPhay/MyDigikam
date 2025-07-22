@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-19 06:34+0000\n"
+"POT-Creation-Date: 2025-07-22 02:02+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -3100,7 +3100,7 @@ msgstr "ਪੂਰੀ ਸਕਰੀਨ ਮੋਡ ਬੰਦ ਕਰੋ"
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:486
-#: core/libs/album/manager/albummanager.cpp:179
+#: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
@@ -3242,7 +3242,7 @@ msgstr "ਐਲਬਮ ਉੱਤੇ ਜਾਓ"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:352
 #: core/libs/album/engine/album.cpp:553
-#: core/libs/album/manager/albummanager.cpp:182
+#: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
@@ -7625,26 +7625,26 @@ msgid ""
 "Framework documentation</a> for extended list of formats supported.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:62
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:63
 #, fuzzy, kde-format
 #| msgid "Lossless PGF files"
 msgid "Lossless WEBP files"
 msgstr "ਲੂਜ਼ਲਿਸ PGF ਫਾਇਲਾਂ"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:64
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:65
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for WEBP images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress WEBP pictures.</p>"
 msgstr ""
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:71
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:72
 #, fuzzy, kde-format
 #| msgid "PGF quality:"
 msgid "WEBP quality:"
 msgstr "PGF ਕੁਆਲਟੀ:"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:73
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:74
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality "
@@ -7653,7 +7653,7 @@ msgstr "PGF ਕੁਆਲਟੀ:"
 #| "compression and large file size)</p><p><b>Note: JPEG 2000 is not a "
 #| "lossless image compression format when you use this setting.</b></p>"
 msgid ""
-"<p>The quality value for WEB images:</p><p><b>1</b>: low quality (high "
+"<p>The quality value for WEBP images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
 "b>: good quality (default)<br/><b>99</b>: high quality (no compression and "
 "large file size)</p><p><b>Note: WEBP is not a lossless image compression "
@@ -9144,13 +9144,13 @@ msgstr "ਉਘੜਵਾਂ"
 #, fuzzy, kde-format
 #| msgid "Color Space"
 msgctxt "@info"
-msgid "A tool to sharp an image"
+msgid "A tool to sharpen an image"
 msgstr "ਰੰਗ ਥਾਂ"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:60
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "This Image Editor tool can sharp an image."
+msgid "This Image Editor tool can sharpen an image."
 msgstr "ਇਹ ਉਹਨਾਂ ਆਈਟਮਾਂ ਦੀ ਲਿਸਟ ਹੈ, ਜਿੰਨ੍ਹਾਂ ਨੂੰ ਹਟਾਇਆ ਜਾਣਾ ਹੈ।"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:91
@@ -11256,7 +11256,7 @@ msgstr "ਚਿੱਤਰ ਸਕੈਨ ਕਰੋ"
 msgid "Scan Images"
 msgstr "ਚਿੱਤਰ ਸਕੈਨ ਕਰੋ"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:171
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:172
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1849
 #, fuzzy, kde-format
@@ -11265,27 +11265,27 @@ msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "ਨਵਾਂ ਚਿੱਤਰ ਫਾਇਲ ਨਾਂ"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:219
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:220
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:148
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "ਅਣਜਾਣ ਟੂਲ"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:220
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:221
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:149
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:232
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:233
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "\"%1\" ਫਾਇਲ ਸੰਭਾਲੀ ਨਹੀਂ ਜਾ ਸਕਦੀ"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:233
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:234
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:162
 #, kde-format
 msgid ""
@@ -11297,7 +11297,7 @@ msgstr ""
 "\"%2\"\n"
 "ਲਈ ਸੰਭਾਲਣ ਅਸਫ਼ਲ ਹੈ।"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:248
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:249
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2323
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2342
@@ -11307,25 +11307,25 @@ msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "ਕੀ ਫਾਇਲ ਉੱਤੇ ਲਿਖਣਾ?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:249
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:250
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:178
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "ਫਾਇਲ ਨਾਂ \"%1\" ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ। ਕੀ ਤੁਸੀਂ ਇਸ ਉੱਤੇ ਲਿਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:301
 #, fuzzy, kde-format
 msgid "Saving file %1 -"
 msgstr "ਫਾਇਲਾਂ ਇੰਝ ਸੰਭਾਲੋ"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:308
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:309
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "ਸੰਭਾਲਣ ਲਈ XMP ਫਾਇਲ"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:308
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:310
 #, kde-format
 msgid "Cannot save \"%1\" file"
 msgstr "\"%1\" ਫਾਇਲ ਸੰਭਾਲੀ ਨਹੀਂ ਜਾ ਸਕਦੀ"
@@ -12188,21 +12188,21 @@ msgstr "ਮੇਟਾਡਾਟਾ ਸੋਧ"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:76
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:83
 #, kde-format
 msgid "Add a new value to the list"
 msgstr "ਲਿਸਟ ਵਿੱਚ ਨਵਾਂ ਮੁੱਲ ਸ਼ਾਮਲ ਕਰੋ"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:79
 #: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:77
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:84
 #, kde-format
 msgid "Remove the current selected value from the list"
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:78
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:85
 #, kde-format
 msgid "Replace the current selected value from the list"
 msgstr ""
@@ -12220,7 +12220,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:283
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:337
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:339
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:272
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:430
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:415
@@ -12233,159 +12233,159 @@ msgid_plural "%1 characters left"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:73
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:75
 #, kde-format
 msgid "Attribute:"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:97
 #, kde-format
 msgid "Select here the editorial attribute of content."
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:98
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "Current"
 msgstr "ਮੌਜੂਦਾ"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:99
 #, kde-format
 msgctxt "Content type"
 msgid "Analysis"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:100
 #, kde-format
 msgctxt "Content type"
 msgid "Archive material"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:101
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "Background"
 msgstr "ਬੈਂਕਗਰਾਊਂਡ"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:102
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "Feature"
 msgstr "ਫੀਚਰ"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "Forecast"
 msgstr "ਕੋਰੀਆ"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "History"
 msgstr "ਅਤੀਤ"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:105
 #, kde-format
 msgctxt "Content type"
 msgid "Obituary"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:106
 #, kde-format
 msgctxt "Content type"
 msgid "Opinion"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:105
-#, kde-format
-msgctxt "Content type"
-msgid "Polls & Surveys"
-msgstr ""
-
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:106
-#, fuzzy, kde-format
-msgctxt "Content type"
-msgid "Profile"
-msgstr "ਪਰੋਫਾਇਲ"
-
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:107
 #, kde-format
 msgctxt "Content type"
-msgid "Results Listings & Table"
+msgid "Polls and Surveys"
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
 #, fuzzy, kde-format
 msgctxt "Content type"
-msgid "Side bar & Supporting information"
-msgstr "ਸੁਰਖੀ ਜਾਣਕਾਰੀ"
+msgid "Profile"
+msgstr "ਪਰੋਫਾਇਲ"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:109
+#, kde-format
+msgctxt "Content type"
+msgid "Results Listings and Table"
+msgstr ""
+
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:110
+#, fuzzy, kde-format
+msgctxt "Content type"
+msgid "Side bar and Supporting information"
+msgstr "ਸੁਰਖੀ ਜਾਣਕਾਰੀ"
+
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:111
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "Summary"
 msgstr "ਸੰਖੇਪ"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:112
 #, kde-format
 msgctxt "Content type"
 msgid "Transcript & Verbatim"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:113
 #, kde-format
 msgctxt "Content type"
 msgid "Interview"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:114
 #, kde-format
 msgctxt "Content type"
 msgid "From the Scene"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:115
 #, kde-format
 msgctxt "Content type"
 msgid "Retrospective"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:116
 #, kde-format
 msgctxt "Content type"
 msgid "Statistics"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:117
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "Update"
 msgstr "ਅੱਪਡੇਟ"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:118
 #, kde-format
 msgctxt "Content type"
 msgid "Wrap-up"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:119
 #, kde-format
 msgctxt "Content type"
 msgid "Press Release"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:125
 #, fuzzy, kde-format
 msgid "Set here the editorial attribute description of content."
 msgstr "<p>ਸਤ੍ਰਿਪਤਾ ਲਈ ਮੁੱਲ ਇੱਥੇ ਦਿਓ।"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:128
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:130
 #, fuzzy, kde-format
 msgid " This field is limited to "
 msgstr "ਇਹ ਉਹਨਾਂ ਆਈਟਮਾਂ ਦੀ ਲਿਸਟ ਹੈ, ਜਿੰਨ੍ਹਾਂ ਨੂੰ ਹਟਾਇਆ ਜਾਣਾ ਹੈ।"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:132
 #, fuzzy, kde-format
 #| msgctxt "The character the string should be filled with"
 #| msgid "Character:"
@@ -12394,7 +12394,7 @@ msgid_plural "%1 characters."
 msgstr[0] "ਅੱਖਰ:"
 msgstr[1] "ਅੱਖਰ:"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:139
 #, fuzzy, kde-format
 msgid "Set here the editorial description"
 msgstr "<p>ਸਤ੍ਰਿਪਤਾ ਲਈ ਮੁੱਲ ਇੱਥੇ ਦਿਓ।"
@@ -15060,9 +15060,9 @@ msgid "Phone:"
 msgstr "ਫੋਨ:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:113
-#, kde-format
-msgid "Set here the contact 'phone number."
-msgstr ""
+#, fuzzy, kde-format
+msgid "Set here the contact phone number."
+msgstr "<p>ਇੱਥੇ ਚਿੱਤਰ ਦੇ ਦੁਆਲੇ ਲੱਗਣ ਵਾਲੇ ਹਾਸ਼ੀਏ ਦੀ ਕਿਸਮ ਦੀ ਚੋਣ ਕਰੋ।"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:115
 #, kde-format
@@ -16990,33 +16990,34 @@ msgctxt "@title: column"
 msgid "Exposure (EV)"
 msgstr "ਐਕਸਪੋਜ਼ਰ (E.V):"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:48
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:50
 #, fuzzy, kde-format
 #| msgid "Previews single images"
 msgctxt "@title:window"
 msgid "Pre-Processing is Complete"
 msgstr "ਇਕੱਲੇ ਚਿੱਤਰ ਝਲਕ"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:62
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:64
 #, fuzzy, kde-format
 #| msgid "Previews single images"
 msgctxt "@info"
 msgid "Bracketed Images Pre-Processing is Done"
 msgstr "ਇਕੱਲੇ ਚਿੱਤਰ ਝਲਕ"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:63
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are ready to be fused."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:64
-#, kde-format
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:66
+#, fuzzy, kde-format
+#| msgid "If this option is enabled, the original image will be shown."
 msgctxt "@info"
-msgid "To perform this operation, Enblend program from will be used."
-msgstr ""
+msgid "To perform this operation, Enblend program will be used."
+msgstr "ਜੇ ਇਹ ਚੋਣ ਕੀਤੀ ਤਾਂ ਅਸਲੀ ਚਿੱਤਰ ਵੇਖਾਇਆ ਜਾਵੇਗਾ।"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:65
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid "Press \"Finish\" button to fuse your items and make a pseudo HDR image."
@@ -18079,11 +18080,11 @@ msgctxt "@info"
 msgid ""
 "The %1 server allows to share items through the local network using a web "
 "browser. Motion JPEG is a video compression format in which each video frame "
-"is compressed separately as a JPEG image. MJPEG streams is a standard which "
+"is compressed separately as a JPEG image. MJPEG stream is a standard which "
 "allows network clients to be connected without additional module. Most major "
-"web browsers and players support MJPEG stream. To access to stream from your "
-"browser, just use http://address:port as url, with address the MJPEG server "
-"IP, and port the server port set in this config dialog."
+"web browsers and players support MJPEG stream. To access the stream from "
+"your browser, just use http://address:port as url, with address the MJPEG "
+"server IP, and port the server port set in this config dialog."
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:94
@@ -18117,7 +18118,7 @@ msgstr "JPEG ਕੁਆਲਟੀ:"
 #, kde-format
 msgctxt "@info"
 msgid ""
-"The JPEG quality [50:lower - 100:higher]. Warning: better quality require "
+"The JPEG quality [50:lower - 100:higher]. Warning: better quality requires "
 "more network bandwidth"
 msgstr ""
 
@@ -18133,7 +18134,7 @@ msgstr "JPEG ਫਾਇਲਾਂ"
 msgctxt "@info"
 msgid ""
 "The JPEG image size in pixels, using standard screen resolutions. Warning: "
-"larger size require more network bandwidth"
+"larger size requires more network bandwidth"
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:160
@@ -18160,7 +18161,7 @@ msgstr ""
 msgctxt "@info"
 msgid ""
 "The number of frames by second to render the stream. Warning: larger rate "
-"require more network bandwidth"
+"requires more network bandwidth"
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:175
@@ -18172,7 +18173,7 @@ msgstr ""
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:177
 #, kde-format
 msgctxt "@info"
-msgid "The MJPEG stream will be played in loop instead once."
+msgid "The MJPEG stream will be played in loop instead of playing once."
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:191
@@ -18195,9 +18196,9 @@ msgstr "ਕਿਸਮ:"
 #, kde-format
 msgctxt "@label"
 msgid ""
-"A transition is an visual effect applied between two images. For some "
-"effects, the duration can depend of random values and can change while the "
-"stream."
+"A transition is a visual effect applied between two images. For some "
+"effects, the duration can depend on random values and can change while the "
+"stream is playing."
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:249
@@ -18211,8 +18212,8 @@ msgstr "ਸਥਿਤੀ:"
 #, kde-format
 msgctxt "@label"
 msgid ""
-"An effect is an visual panning or zooming applied while an image is "
-"displayed in MJPEG stream."
+"An effect is a visual panning or zooming applied while an image is displayed "
+"in MJPEG stream."
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:294
@@ -18246,9 +18247,9 @@ msgid ""
 "group through a selection of albums.</p><p>Motion JPEG is a video "
 "compression format in which each video frame or interlaced field of a "
 "digital video sequence is compressed separately as a JPEG image. MJPEG "
-"streams is a standard which allows network clients to be connected without "
+"stream is a standard which allows network clients to be connected without "
 "additional module. Most major web browsers and players support MJPEG stream."
-"</p><p>To access to stream from your browser, use http://address:port as "
+"</p><p>To access the stream from your browser, use http://address:port as "
 "url, with address the MJPEG address, and port the MJPEG port set in config "
 "dialog. More than one computer can be connected to the MJPEG server at the "
 "same time.</p>"
@@ -18422,7 +18423,7 @@ msgstr "ਸ਼ੁਰੂ:"
 #, kde-format
 msgctxt "@label"
 msgid ""
-"This tool use the %1 open-source engine to perform Optical Characters "
+"This tool uses the %1 open-source engine to perform Optical Characters "
 "Recognition. Tesseract program and the desired languages modules must be "
 "installed on your system."
 msgstr ""
@@ -18437,7 +18438,7 @@ msgstr "ਉਲਟ ਕ੍ਰਮ"
 #, kde-format
 msgctxt "@info"
 msgid ""
-"After to process recognition, double-click on one item to display recognized "
+"After processing recognition, double-click on one item to display recognized "
 "text here. You can review words and fix if necessary. Press the Save button "
 "to record your changes."
 msgstr ""
@@ -18615,7 +18616,7 @@ msgid ""
 "but is not compatible with languages using hieroglyphs such as Chinese, "
 "Japanese.\n"
 "You can use the Orientation and Script Detection mode instead or a specific "
-"languagemodule if available."
+"language module if available."
 msgstr ""
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:90
@@ -18742,8 +18743,8 @@ msgid ""
 "<p>This tool allows users to assemble images together to create large "
 "panorama.</p><p>To create panorama image, you need to use images taken from "
 "same point of view with a tripod and exposed with same settings.</p><p>The "
-"tool is able to assemble shot taken horizontally, vertically, or as a "
-"matrix. Take a care that target image will become huge and require a lots of "
+"tool is able to assemble shots taken horizontally, vertically, or as a "
+"matrix. Take care that target image will become huge and require a lot of "
 "memory to be processed.</p>"
 msgstr ""
 
@@ -18768,7 +18769,7 @@ msgstr ""
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:67
 #, fuzzy, kde-format
 #| msgid "File does not exist"
-msgid "Temporary panorama file does not exists."
+msgid "Temporary panorama file does not exist."
 msgstr "ਫਾਇਲ ਮੌਜੂਦ ਨਹੀ ਹੈ"
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:75
@@ -18786,7 +18787,7 @@ msgstr "ਫਾਇਲ ਮੌਜੂਦ ਨਹੀ ਹੈ"
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:91
 #, fuzzy, kde-format
 #| msgid "Failed to upload file \"%1\"."
-msgid "A project file named <filename>%1</filename> already exists."
+msgid "A project file named <filename>%1</filename> already exist."
 msgstr "ਫਾਇਲ \"%1\" ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:165
@@ -18947,7 +18948,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
-"\"TIFF output\": Using TIFF output, you get the same color depth than your "
+"\"TIFF output\": Using TIFF output, you get the same color depth as your "
 "original photos using RAW images at the cost of a bigger panorama file."
 msgstr ""
 
@@ -19222,7 +19223,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid ""
-"Pre-processing also include a calculation of some control points to match "
+"Pre-processing also includes a calculation of some control points to match "
 "overlaps between images. For that purpose, the \"%1\" program will be used."
 msgstr ""
 
@@ -19445,10 +19446,10 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:64
 #, kde-format
 msgid ""
-"<p>This tool allows users to back-process items (as assemble) before to "
-"print.</p><p>Items to process can be selected one by one or by group through "
-"a selection of albums.</p><p>Different pre-defined paper sizes and layouts "
-"can be used to process files.</p>"
+"<p>This tool allows users to back-process items (e.g., assemble them) before "
+"to print.</p><p>Items to process can be selected one by one or by group "
+"through a selection of albums.</p><p>Different pre-defined paper sizes and "
+"layouts can be used to process files.</p>"
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
@@ -19489,7 +19490,7 @@ msgid ""
 "print file name\n"
 "print camera exposure time\n"
 "print item comment\n"
-"print ISO sensibility from camera\n"
+"print ISO sensitivity from camera\n"
 "print date and time from camera"
 msgstr ""
 
@@ -22449,12 +22450,11 @@ msgstr "ਰੇਟਿੰਗ ਇੰਪੋਰਟ ਕੀਤੀ"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Dropbox web-service.\n"
-"\n"
-"See Dropbox web site for details: %1"
+"This tool allows users to export items to Dropbox web-service.<br><br>See "
+"Dropbox web site for details: %1"
 msgstr "ਰੇਟਿੰਗ ਇੰਪੋਰਟ ਕੀਤੀ"
 
-#: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:94
+#: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgctxt "@action"
@@ -23590,7 +23590,7 @@ msgctxt "@info"
 msgid ""
 "This tool allows users to export and import items with Google web-services.\n"
 "\n"
-"Google Photo and Google Drive web services are supported.\n"
+"Google Photos and Google Drive web services are supported.\n"
 "\n"
 "See Google web sites for details: %1"
 msgstr "ਰੇਟਿੰਗ ਇੰਪੋਰਟ ਕੀਤੀ"
@@ -23803,7 +23803,7 @@ msgstr "ਗੂਗਲ ਨਕਸ਼ਾ"
 #, fuzzy, kde-format
 #| msgid "Google Maps"
 msgctxt "@info: start transfert"
-msgid "Google Photo export"
+msgid "Google Photos export"
 msgstr "ਗੂਗਲ ਨਕਸ਼ਾ"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
@@ -24153,11 +24153,9 @@ msgstr "ਰੇਟਿੰਗ ਇੰਪੋਰਟ ਕੀਤੀ"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to ImgUr web-service.\n"
-"\n"
-"You can export items as anonymous or with an user account.\n"
-"\n"
-"See ImgUr web site for details: %1"
+"This tool allows users to export items to ImgUr web-service.<br><br>You can "
+"export items as anonymous or with an user account.<br><br>See ImgUr web site "
+"for details: %1"
 msgstr "ਰੇਟਿੰਗ ਇੰਪੋਰਟ ਕੀਤੀ"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:102
@@ -24277,9 +24275,8 @@ msgstr "ਰੇਟਿੰਗ ਇੰਪੋਰਟ ਕੀਤੀ"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool exports photos as iNaturalist observations.\n"
-"\n"
-"See iNaturalist web site for details: %1."
+"This tool exports photos as iNaturalist observations.<br><br>See iNaturalist "
+"web site for details: %1."
 msgstr "ਰੇਟਿੰਗ ਇੰਪੋਰਟ ਕੀਤੀ"
 
 #: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:94
@@ -25401,36 +25398,35 @@ msgstr "ਰੇਟਿੰਗ ਇੰਪੋਰਟ ਕੀਤੀ"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to OneDrive web-service.\n"
-"\n"
-"See OneDrive web site for details: %1"
+"This tool allows users to export items to OneDrive web-service.<br><br>See "
+"OneDrive web site for details: %1"
 msgstr "ਰੇਟਿੰਗ ਇੰਪੋਰਟ ਕੀਤੀ"
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:92
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgctxt "@action"
-msgid "Export to &Onedrive..."
+msgid "Export to &OneDrive..."
 msgstr "ਐਕਸਪੋਰਟ ਟੂਲ"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:75
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgctxt "@title:window"
-msgid "Export to Onedrive"
+msgid "Export to OneDrive"
 msgstr "ਐਕਸਪੋਰਟ ਟੂਲ"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:78
 #, fuzzy, kde-format
 msgctxt "@info:tooltip, button"
-msgid "Start upload to Onedrive"
+msgid "Start upload to OneDrive"
 msgstr "ਅੱਪਲੋਡ ਲਈ ਚਿੱਤਰ ਚੁਣੋ"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:283
 #, fuzzy, kde-format
 #| msgid "LibLqr"
 msgctxt "@info"
-msgid "Onedrive export"
+msgid "OneDrive export"
 msgstr "LibLqr"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:320
@@ -25449,7 +25445,7 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"Onedrive call failed:\n"
+"OneDrive call failed:\n"
 "%1"
 msgstr "ਉਚਾਈ"
 
@@ -26349,9 +26345,8 @@ msgstr "ਰੇਟਿੰਗ ਇੰਪੋਰਟ ਕੀਤੀ"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Twitter web-service.\n"
-"\n"
-"See Twitter web site for details: %1"
+"This tool allows users to export items to Twitter web-service.<br><br>See "
+"Twitter web site for details: %1"
 msgstr "ਰੇਟਿੰਗ ਇੰਪੋਰਟ ਕੀਤੀ"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
@@ -26474,9 +26469,8 @@ msgstr "ਰੇਟਿੰਗ ਇੰਪੋਰਟ ਕੀਤੀ"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to many web-services.\n"
-"\n"
-"This is a unified tool, grouping many tools in one."
+"This tool allows users to export items to many web-services.<br><br>This is "
+"a unified tool, grouping many tools in one."
 msgstr "ਰੇਟਿੰਗ ਇੰਪੋਰਟ ਕੀਤੀ"
 
 #: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:93
@@ -26937,7 +26931,7 @@ msgstr "ਨਵਾਂ ਐਲਬਮ ਨਾਂ ਦਿਓ:"
 msgid "Scanning albums"
 msgstr "ਐਲਬਮਾਂ ਜਾਂਚੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ..."
 
-#: core/libs/album/manager/albummanager.cpp:185
+#: core/libs/album/manager/albummanager.cpp:184
 #: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:72
@@ -28883,21 +28877,21 @@ msgstr "ਹਟਾਓ"
 msgid "Restore Trash"
 msgstr "ਰੀ-ਸਟੋਰੇਸ਼ਨ"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:119
+#: core/libs/database/utils/scan/scancontroller.cpp:129
 #, fuzzy, kde-format
 #| msgid "Initializing database..."
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "ਡਾਟਾਬੇਸ ਸ਼ੁਰੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:145
+#: core/libs/database/utils/scan/scancontroller.cpp:155
 #, fuzzy, kde-format
 #| msgid "<b>Scanning collections, please wait...</b>"
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "<b>ਭੰਡਾਰ ਦੀ ਜਾਂਚ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ, ਉਡੀਕੋ ਜੀ...</b>"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:147
+#: core/libs/database/utils/scan/scancontroller.cpp:157
 #, fuzzy, kde-format
 #| msgid ""
 #| "This shows the progress of the scan. During the scan, all files on disk "
@@ -28911,7 +28905,7 @@ msgstr ""
 "ਇਹ ਜਾਂਚ ਨੂੰ ਵੇਖਾਉਦਾ ਹੈ, ਜੋ ਕਿ ਹਾਲੀਂ ਜਾਰੀ ਹੈ। ਜਾਂਚ ਦੌਰਾਨ, ਡਿਸਕ ਉੱਤੇ ਮੌਜੂਦ ਸਭ ਫਾਇਲਾਂ ਨੂੰ ਇੱਕ "
 "ਡਾਟਾਬੇਸ 'ਚ ਜੋੜਿਆ ਜਾਵੇਗਾ।"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:266
+#: core/libs/database/utils/scan/scancontroller.cpp:276
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -30835,7 +30829,7 @@ msgstr "ਹਰੀ ਟੋਨ"
 #: core/libs/dimg/filters/bw/mixersettings.cpp:145
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "Enable this option is you want preserve the image luminosity."
+msgid "Enable this option if you want preserve the image luminosity."
 msgstr "<p>ਇਹ ਚੋਣ ਸਥਿਤੀ ਲਈ ਆਟੋਮੈਟਿਕ ਸੈਟਿੰਗ ਯੋਗ ਕਰਦੀ ਹੈ।"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:150
@@ -31482,7 +31476,7 @@ msgctxt "Convert image bit depth"
 msgid "Convert Depth"
 msgstr "ਡੂੰਘਾਈ ਬਦਲੋ"
 
-#: core/libs/dimg/filters/dimgfiltermanager.cpp:427
+#: core/libs/dimg/filters/dimgfiltermanager.cpp:429
 #, kde-format
 msgid "Unknown filter"
 msgstr "ਅਣਜਾਣ ਫਿਲਟਰ"
@@ -34831,61 +34825,61 @@ msgstr "ਫਾਇਲਾਂ ਲਈ ਮੇਟਾਡਾਟਾ ਲਿਖੋ"
 msgid "Revising Exif Orientation tags"
 msgstr "Exif ਸਥਿਤੀ ਟੈਗ ਮੁੜ-ਵੇਖੇ ਜਾ ਰਹੇ ਹਨ। ਉਡੀਕੋ ਜੀ..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:88
+#: core/libs/fileactionmanager/fileactionmngr.cpp:90
 #, kde-format
 msgctxt "@label"
 msgid "Finishing tasks"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:138
+#: core/libs/fileactionmanager/fileactionmngr.cpp:140
 #, kde-format
 msgid "Assigning image tags"
 msgstr "ਚਿੱਤਰ ਟੈਗ ਦਿੱਤੇ ਜਾ ਰਹੇ ਹਨ"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:160
+#: core/libs/fileactionmanager/fileactionmngr.cpp:162
 #, kde-format
 msgid "Removing image tags"
 msgstr "ਚਿੱਤਰ ਟੈਗ ਹਟਾਏ ਜਾ ਰਹੇ ਹਨ"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:177
+#: core/libs/fileactionmanager/fileactionmngr.cpp:179
 #, fuzzy, kde-format
 msgid "Assigning image pick label"
 msgstr "ਤਸਵੀਰਾਂ ਨੂੰ ਟੈਗ ਲਾਇਆ ਜਾ ਰਿਹਾ ਹੈ। ਉਡੀਕੋ ਜੀ..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:184
+#: core/libs/fileactionmanager/fileactionmngr.cpp:186
 #, fuzzy, kde-format
 msgid "Assigning image color label"
 msgstr "ਤਸਵੀਰਾਂ ਨੂੰ ਟੈਗ ਲਾਇਆ ਜਾ ਰਿਹਾ ਹੈ। ਉਡੀਕੋ ਜੀ..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:196
+#: core/libs/fileactionmanager/fileactionmngr.cpp:198
 #, kde-format
 msgid "Assigning image ratings"
 msgstr "ਚਿੱਤਰ ਰੇਟਿੰਗ ਦਿੱਤੀ ਜਾ ਰਹੀ ਹੈ"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:203
-#: core/libs/fileactionmanager/fileactionmngr.cpp:215
-#: core/libs/fileactionmanager/fileactionmngr.cpp:227
+#: core/libs/fileactionmanager/fileactionmngr.cpp:205
+#: core/libs/fileactionmanager/fileactionmngr.cpp:217
+#: core/libs/fileactionmanager/fileactionmngr.cpp:229
 #, kde-format
 msgid "Editing group"
 msgstr "ਗਰੁੱਪ ਸੋਧਿਆ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:234
+#: core/libs/fileactionmanager/fileactionmngr.cpp:236
 #, kde-format
 msgid "Updating orientation in database"
 msgstr "ਡਾਟਾਬੇਸ ਵਿੱਚ ਸਥਿਤੀ ਅੱਪਡੇਟ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:252
-#: core/libs/fileactionmanager/fileactionmngr.cpp:270
+#: core/libs/fileactionmanager/fileactionmngr.cpp:254
+#: core/libs/fileactionmanager/fileactionmngr.cpp:272
 #, kde-format
 msgid "Applying metadata"
 msgstr "ਮੇਟਾਡਾਟਾ ਲਾਗੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:277
+#: core/libs/fileactionmanager/fileactionmngr.cpp:279
 #, kde-format
 msgid "Rotating images"
 msgstr "ਚਿੱਤਰ ਘੁੰਮਾਏ ਜਾ ਰਹੇ ਹਨ"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:293
+#: core/libs/fileactionmanager/fileactionmngr.cpp:295
 #, kde-format
 msgid "Copying attributes"
 msgstr "ਗੁਣ ਕਾਪੀ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ"
@@ -50730,7 +50724,9 @@ msgstr ""
 "ਕਿ IPTC ਨੂੰ ਬਦਣ ਵਾਸਤੇ ਤਿਆਰ ਕੀਤਾ ਗਿਆ ਹੈ।"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
+#: core/showfoto/setup/showfotosetupmisc.cpp:213
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
+#: core/utilities/setup/misc/setupmisc.cpp:207
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
@@ -50906,14 +50902,6 @@ msgstr ""
 #| msgid "Save New Version As..."
 msgid "Check now..."
 msgstr "...ਨਵੇਂ ਵਰਜਨ ਵਜੋਂ ਸੰਭਾਲੋ"
-
-#: core/showfoto/setup/showfotosetupmisc.cpp:213
-#: core/utilities/setup/misc/setupmisc.cpp:207
-#, fuzzy, kde-format
-#| msgid "Behavior"
-msgctxt "@title:tab"
-msgid "Behaviour"
-msgstr "ਰਵੱਈਆ"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:220
 #: core/utilities/setup/misc/setupmisc.cpp:214
@@ -68453,6 +68441,12 @@ msgstr "ਐਲਬਮ ਆਈਟਮਾਂ"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "ਚਿੱਤਰ ਲੜੀਬੱਧ(&S)"
+
+#, fuzzy
+#~| msgid "Behavior"
+#~ msgctxt "@title:tab"
+#~ msgid "Behaviour"
+#~ msgstr "ਰਵੱਈਆ"
 
 #~ msgid "Scan collection for faces"
 #~ msgstr "ਚਿਹਰਿਆਂ ਲਈ ਭੰਡਾਰ ਦੀ ਜਾਂਚ"
