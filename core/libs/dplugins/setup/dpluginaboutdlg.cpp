@@ -93,7 +93,7 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
     details->setTextInteractionFlags(Qt::LinksAccessibleByMouse);
 
     QString txtDetails = tool->details();
-    txtDetails.replace(QLatin1String("\n"), QLatin1String("<br/>"));
+    txtDetails.replace(QLatin1String("\n"), QLatin1String("<br>"));
     details->setText(txtDetails);
 
     tab->addTab(details, i18nc("@title", "Details"));
@@ -113,7 +113,7 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
         alist += QString::fromUtf8("<b>%1</b><ul>"
                                    "<li><i>%2</i></li>"
                                    "<li>%3</li>"
-                                   "<li>%4</li></ul><br/>")
+                                   "<li>%4</li></ul><br>")
                  .arg(auth.name)
                  .arg(auth.email)
                  .arg(auth.years)

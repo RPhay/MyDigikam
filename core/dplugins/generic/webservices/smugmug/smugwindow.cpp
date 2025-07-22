@@ -426,7 +426,9 @@ void SmugWindow::slotLoginDone(int errCode, const QString& errMsg)
     }
     else
     {
-        QMessageBox::critical(QApplication::activeWindow(), i18nc("@title:window", "Error"), i18n("SmugMug call failed: %1\n", errMsg));
+        QMessageBox::critical(QApplication::activeWindow(),
+                              i18nc("@title:window", "Error"),
+                              i18n("SmugMug call failed: %1\n", errMsg));
     }
 }
 
@@ -435,7 +437,9 @@ void SmugWindow::slotListAlbumsDone(int errCode, const QString& errMsg,
 {
     if (errCode != 0)
     {
-        QMessageBox::critical(QApplication::activeWindow(), i18nc("@title:window", "Error"), i18n("SmugMug call failed: %1\n", errMsg));
+        QMessageBox::critical(QApplication::activeWindow(),
+                              i18nc("@title:window", "Error"),
+                              i18n("SmugMug call failed: %1\n", errMsg));
         return;
     }
 
@@ -473,7 +477,9 @@ void SmugWindow::slotListPhotosDone(int errCode, const QString& errMsg,
 {
     if (errCode != 0)
     {
-        QMessageBox::critical(QApplication::activeWindow(), i18nc("@title:window", "Error"), i18n("SmugMug call failed: %1\n", errMsg));
+        QMessageBox::critical(QApplication::activeWindow(),
+                              i18nc("@title:window", "Error"),
+                              i18n("SmugMug call failed: %1\n", errMsg));
         return;
     }
 
@@ -510,7 +516,9 @@ void SmugWindow::slotListAlbumTmplDone(int errCode, const QString& errMsg,
 
     if (errCode != 0)
     {
-        QMessageBox::critical(QApplication::activeWindow(), i18nc("@title:window", "Error"), i18n("SmugMug call failed: %1\n", errMsg));
+        QMessageBox::critical(QApplication::activeWindow(),
+                              i18nc("@title:window", "Error"),
+                              i18n("SmugMug call failed: %1\n", errMsg));
         return;
     }
 

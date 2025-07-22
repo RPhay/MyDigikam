@@ -236,7 +236,7 @@ void DbEngineGuiErrorHandler::consultUserForError(DbEngineErrorAnswer* answer, c
     // Handle all other database errors
 
     QString message = i18n("<p><b>A database error occurred.</b></p>"
-                           "Details:\n %1", error.text());
+                           "Details:<br> %1", error.text());
     QMessageBox::critical(parent, qApp->applicationName(), message);
     answer->connectionErrorAbortQueries();
 }

@@ -63,8 +63,8 @@ QString GSPlugin::description() const
 
 QString GSPlugin::details() const
 {
-    return i18nc("@info", "This tool allows users to export and import items with Google web-services.\n\n"
-                 "Google Photos and Google Drive web services are supported.\n\n"
+    return i18nc("@info", "This tool allows users to export and import items with Google web-services.<br><br>"
+                 "Google Photos and Google Drive web services are supported.<br><br>"
                  "See Google web sites for details: %1",
                  QLatin1String("</ br><a href='https://photos.google.com'>https://photos.google.com</a></ br><a href='https://www.google.com/drive/'>https://www.google.com/drive/</a>"));
 }
@@ -90,10 +90,10 @@ QList<DPluginAuthor> GSPlugin::authors() const
                              QString::fromUtf8("(C) 2015"))
             << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
                              QString::fromUtf8("metzpinguin at gmail dot com"),
-                             QString::fromUtf8("(C) 2017-2021"))
+                             QString::fromUtf8("(C) 2017-2025"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2013-2024"))
+                             QString::fromUtf8("(C) 2013-2025"))
             ;
 }
 

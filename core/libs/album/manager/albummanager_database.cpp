@@ -155,7 +155,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         if (result.getErrorType() != DatabaseServerError::NoErrors)
         {
             databaseError = i18n("An error occurred during the internal server start."
-                                 "<p>Details:\n%1</p>", result.getErrorText());
+                                 "<p>Details:<br>%1</p>", result.getErrorText());
 
             return showDatabaseSetupPage(databaseError, priority, suggestedAlbumRoot);
         }
@@ -295,7 +295,8 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         QString locDescription;
         QStringList candidateIds, candidateDescriptions;
         CollectionManager::instance()->migrationCandidates(loc, &locDescription, &candidateIds, &candidateDescriptions);
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Migration candidates for" << locDescription << ":" << candidateIds << candidateDescriptions;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Migration candidates for" << locDescription
+                                     << ":" << candidateIds << candidateDescriptions;
 
         QDialog* const dialog         = new QDialog;
         QWidget* const widget         = new QWidget(dialog);
@@ -325,9 +326,9 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         if (!candidateIds.isEmpty())
         {
             migrateButton              = new QRadioButton;
-            QLabel* const migrateLabel = new QLabel(i18n("<p>The collection is still available, but the identifier changed.<br/>"
+            QLabel* const migrateLabel = new QLabel(i18n("<p>The collection is still available, but the identifier changed.<br>"
                                                          "This can be caused by restoring a backup, changing the partition layout "
-                                                         "or the file system settings.<br/>"
+                                                         "or the file system settings.<br>"
                                                          "The collection is now located at this place:</p>"));
             migrateLabel->setWordWrap(true);
 

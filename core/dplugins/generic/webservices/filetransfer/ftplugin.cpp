@@ -63,7 +63,7 @@ QString FTPlugin::description() const
 
 QString FTPlugin::details() const
 {
-    return i18nc("@info", "This tool allows users to export and import items with a remote location.\n\n"
+    return i18nc("@info", "This tool allows users to export and import items with a remote location.<br><br>"
                  "Many protocols can be used, as FTP, SFTP, SAMBA, etc.");
 }
 
@@ -88,7 +88,7 @@ QList<DPluginAuthor> FTPlugin::authors() const
                              QString::fromUtf8("(C) 2017-2021"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2024"))
+                             QString::fromUtf8("(C) 2010-2025"))
             ;
 }
 

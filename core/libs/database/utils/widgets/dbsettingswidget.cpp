@@ -288,7 +288,7 @@ void DatabaseSettingsWidget::setupMainArea()
     d->dbNoticeBox           = new QGroupBox(i18n("Database Server Instructions"), this);
     QVBoxLayout* const vlay2 = new QVBoxLayout(d->dbNoticeBox);
     QLabel* const notice     = new QLabel(i18n("<p>digiKam expects that database is already created with a dedicated user account. "
-                                               "This user name <i>digikam</i> will require full access to the database.<br/>"
+                                               "This user name <i>digikam</i> will require full access to the database.<br>"
                                                "If your database is not already set up, you can use the following SQL commands "
                                                "(after replacing the <b><i>password</i></b> with the correct one).</p>"),
                                           d->dbNoticeBox);
@@ -309,7 +309,7 @@ void DatabaseSettingsWidget::setupMainArea()
                           "<p>...</p>"
                           "<p>quit</p>"
                           "<p>NOTE: If you have problems with a MySQL server on Ubuntu based Linux system, "
-                          "use the addition command in the mysql prompt to be able to create MySQL triggers.<br/>"
+                          "use the addition command in the mysql prompt to be able to create MySQL triggers.<br>"
                           "SET GLOBAL log_bin_trust_function_creators=1;</p>"
                           "<p>NOTE: If you have an enormous collection, you should start MySQL server with "
                           "mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"));
@@ -903,7 +903,7 @@ bool DatabaseSettingsWidget::checkDatabasePath()
         if (!targetPath.mkpath(dbFolder))
         {
             QMessageBox::information(qApp->activeWindow(), i18nc("@title:window", "Create Database Folder Failed"),
-                                    i18n("<p>digiKam could not create the folder to host your database file.\n"
+                                    i18n("<p>digiKam could not create the folder to host your database file.<br>"
                                          "Please select a different location.</p>"
                                          "<p><b>%1</b></p>", dbFolder));
             return false;
@@ -930,7 +930,7 @@ bool DatabaseSettingsWidget::checkDatabasePath()
     {
         QMessageBox::information(qApp->activeWindow(), i18nc("@title:window", "No Database Write Access"),
                                  i18n("<p>You do not seem to have write access "
-                                      "for the folder to host the database file.<br/>"
+                                      "for the folder to host the database file.<br>"
                                       "Please select a different location.</p>"
                                       "<p><b>%1</b></p>", dbFolder));
         return false;

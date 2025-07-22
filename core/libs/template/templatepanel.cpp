@@ -138,8 +138,8 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
                                         "In some foreign countries only the copyright symbol is recognized and the abbreviation does not work. "
                                         "Furthermore the copyright symbol must be a full circle with a \"c\" inside; using something like (c) "
                                         "where the parentheses form a partial circle is not sufficient. For additional protection worldwide, "
-                                        "use of the phrase, \"all rights reserved\" following the notice above is encouraged. \nIn Europe "
-                                        "you would use: Copyright {Year} {Copyright owner}, all rights reserved. \nIn Japan, for maximum "
+                                        "use of the phrase, \"all rights reserved\" following the notice above is encouraged. <br>In Europe "
+                                        "you would use: Copyright {Year} {Copyright owner}, all rights reserved. <br>In Japan, for maximum "
                                         "protection, the following three items should appear in the copyright field of the IPTC Core: "
                                         "(a) the word, Copyright; (b) year of the first publication; and (c) name of the author. "
                                         "You may also wish to include the phrase \"all rights reserved\".</p>"
@@ -230,7 +230,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
     d->locationSublocationEdit->setPlaceholderText(i18n("Enter the city sublocation of contents here."));
     label10->setBuddy(d->locationSublocationEdit);
     d->locationSublocationEdit->setWhatsThis(i18n("<p>This field should contain the sublocation of the city "
-            "where the photograph was taken.</p>"));
+                                                  "where the photograph was taken.</p>"));
 
     // --------------------------------------------------------
 
@@ -240,7 +240,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
     d->locationProvinceStateEdit->setPlaceholderText(i18n("Enter the province or state of contents here."));
     label11->setBuddy(d->locationProvinceStateEdit);
     d->locationProvinceStateEdit->setWhatsThis(i18n("<p>This field should contain the province or state "
-            "where the photograph was taken.</p>"));
+                                                    "where the photograph was taken.</p>"));
 
     // --------------------------------------------------------
 
@@ -248,7 +248,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
     d->locationCountryCodeEdit = new CountrySelector(page2);
     label12->setBuddy(d->locationCountryCodeEdit);
     d->locationCountryCodeEdit->setWhatsThis(i18n("<p>Select here the country "
-            "where the photograph was taken.</p>"));
+                                                  "where the photograph was taken.</p>"));
 
     // --------------------------------------------------------
 
@@ -294,7 +294,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
     d->contactCountryEdit->setPlaceholderText(i18n("Enter the country name of the lead author here."));
     label14->setBuddy(d->contactCountryEdit);
     d->contactCountryEdit->setWhatsThis(i18n("<p>This field should contain the country name "
-                                        "where the lead author lives.</p>"));
+                                             "where the lead author lives.</p>"));
 
     // --------------------------------------------------------
 
@@ -304,7 +304,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
     d->contactAddressEdit->setPlaceholderText(i18n("Enter the address of the lead author here."));
     label15->setBuddy(d->contactAddressEdit);
     d->contactAddressEdit->setWhatsThis(i18n("<p>This field should contain the address "
-                                        "where the lead author lives.</p>"));
+                                             "where the lead author lives.</p>"));
 
     // --------------------------------------------------------
 
@@ -314,7 +314,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
     d->contactPostalCodeEdit->setPlaceholderText(i18n("Enter the postal code of the lead author here."));
     label16->setBuddy(d->contactPostalCodeEdit);
     d->contactPostalCodeEdit->setWhatsThis(i18n("<p>This field should contain the postal code "
-                                           "where the lead author lives.</p>"));
+                                                "where the lead author lives.</p>"));
 
     // --------------------------------------------------------
 
@@ -324,7 +324,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
     d->contactProvinceStateEdit->setPlaceholderText(i18n("Enter the province of the lead author here."));
     label17->setBuddy(d->contactProvinceStateEdit);
     d->contactProvinceStateEdit->setWhatsThis(i18n("<p>This field should contain the province "
-            "where the lead author lives.</p>"));
+                                                   "where the lead author lives.</p>"));
 
     // --------------------------------------------------------
 

@@ -62,8 +62,8 @@ QString TimeAdjustPlugin::description() const
 
 QString TimeAdjustPlugin::details() const
 {
-    return i18nc("@info", "This tool allows users to adjust date time-stamp of items in batch.\n\n"
-                 "Many source of original time-stamp can be selected from original items, or a from a common file.\n\n"
+    return i18nc("@info", "This tool allows users to adjust date time-stamp of items in batch.<br><br>"
+                 "Many source of original time-stamp can be selected from original items, or a from a common file.<br><br>"
                  "Many metadata time-stamp can be adjusted or left untouched. The adjustment can be an offset of time or a specific date.");
 }
 
@@ -91,10 +91,10 @@ QList<DPluginAuthor> TimeAdjustPlugin::authors() const
                              QString::fromUtf8("(C) 2008"))
             << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
                              QString::fromUtf8("metzpinguin at gmail dot com"),
-                             QString::fromUtf8("(C) 2018-2024"))
+                             QString::fromUtf8("(C) 2018-2025"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2024"))
+                             QString::fromUtf8("(C) 2006-2025"))
             ;
 }
 

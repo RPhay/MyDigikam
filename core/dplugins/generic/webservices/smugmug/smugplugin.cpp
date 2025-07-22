@@ -62,7 +62,7 @@ QString SmugPlugin::description() const
 
 QString SmugPlugin::details() const
 {
-    return i18nc("@info", "This tool allows users to export and import items with SmugMug web-service.\n\n"
+    return i18nc("@info", "This tool allows users to export and import items with SmugMug web-service.<br><br>"
                  "See SmugMug web site for details: %1",
                  QLatin1String("<a href='https://www.smugmug.com'>https://www.smugmug.com</a></p>"));
 }

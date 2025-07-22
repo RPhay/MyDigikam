@@ -61,7 +61,7 @@ QString MediaWikiPlugin::description() const
 
 QString MediaWikiPlugin::details() const
 {
-    return i18nc("@info", "This tool allows users to export items to MediaWiki web-service.\n\n"
+    return i18nc("@info", "This tool allows users to export items to MediaWiki web-service.<br><br>"
                  "See MediaWiki web site for details: %1",
                  QLatin1String("<a href='https://www.mediawiki.org/'>https://www.mediawiki.org/</a>"));
 }
@@ -90,7 +90,7 @@ QList<DPluginAuthor> MediaWikiPlugin::authors() const
                              QString::fromUtf8("(C) 2013"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2011-2024"))
+                             QString::fromUtf8("(C) 2011-2025"))
             ;
 }
 
