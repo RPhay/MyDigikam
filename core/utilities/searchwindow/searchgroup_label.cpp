@@ -98,7 +98,7 @@ SearchGroupLabel::SearchGroupLabel(SearchViewThemedPartsCache* const cache, Sear
         QWidget* const simpleHeader     = new QWidget;
         QVBoxLayout* const headerLayout = new QVBoxLayout;
         QLabel* const simpleLabel1      = new QLabel;
-        simpleLabel1->setText(i18n("<qt><p>Search your collection<br/>for Items meeting the following conditions</p></qt>"));
+        simpleLabel1->setText(i18n("<qt><p>Search your collection<br>for Items meeting the following conditions</p></qt>"));
         simpleLabel1->setObjectName(QLatin1String("SearchGroupLabel_SimpleLabel"));
         headerLayout->addStretch(3);
         headerLayout->addWidget(simpleLabel1);

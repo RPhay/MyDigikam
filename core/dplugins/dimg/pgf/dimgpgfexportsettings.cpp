@@ -74,9 +74,9 @@ DImgPGFExportSettings::DImgPGFExportSettings(QWidget* const parent)
 
     d->PGFcompression->setWhatsThis(i18n("<p>The quality value for PGF images:</p>"
                                          "<p><b>1</b>: high quality (no compression and "
-                                         "large file size)<br/>"
-                                         "<b>3</b>: good quality (default)<br/>"
-                                         "<b>6</b>: medium quality<br/>"
+                                         "large file size)<br>"
+                                         "<b>3</b>: good quality (default)<br>"
+                                         "<b>6</b>: medium quality<br>"
                                          "<b>9</b>: low quality (high compression and small "
                                          "file size)</p>"
                                          "<p><b>Note: PGF is not a lossless image "

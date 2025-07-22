@@ -222,9 +222,9 @@ void SuggestTaxonCompletion::taxon2Item(const Taxon& taxon,
                                         QTreeWidgetItem* item,
                                         const QString& info)
 {
-    QString htmlText = taxon.htmlName() + QLatin1String("<br/>") +
+    QString htmlText = taxon.htmlName() + QLatin1String("<br>") +
                        taxon.commonName() +
-                       QLatin1String("<br/><font color=\"#74ac00\">") +
+                       QLatin1String("<br><font color=\"#74ac00\">") +
                        info + QLatin1String("</font>");
     d->popup->setItemWidget(item, ITEM_NAME_IDX, new QLabel(htmlText));
 

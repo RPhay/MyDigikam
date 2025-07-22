@@ -128,9 +128,9 @@ RestorationTool::RestorationTool(QObject* const parent)
     d->restorationTypeCB->addItem( i18n("Reduce Texturing") );
     d->restorationTypeCB->addItem( i18nc("custom restoration settings", "Custom") );
     d->restorationTypeCB->setWhatsThis(i18n("<p>Select the filter preset to use for photograph restoration here:</p>"
-                                            "<p><b>Reduce Uniform Noise</b>: reduce small image artifacts such as sensor noise.<br/>"
-                                            "<b>Reduce JPEG Artifacts</b>: reduce large image artifacts, such as a JPEG compression mosaic.<br/>"
-                                            "<b>Reduce Texturing</b>: reduce image artifacts, such as paper texture, or Moire patterns on scanned images.<br/>"
+                                            "<p><b>Reduce Uniform Noise</b>: reduce small image artifacts such as sensor noise.<br>"
+                                            "<b>Reduce JPEG Artifacts</b>: reduce large image artifacts, such as a JPEG compression mosaic.<br>"
+                                            "<b>Reduce Texturing</b>: reduce image artifacts, such as paper texture, or Moire patterns on scanned images.<br>"
                                             "<b>Custom</b>: Puts settings to most common values, fully customizable.</p>"));
 
     const int spacing = d->gboxSettings->spacingHint();

@@ -103,37 +103,37 @@ ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
 
     d->editorIfacePage  = new Digikam::SetupEditorIface();
     d->page_editorIface = addPage(d->editorIfacePage, i18n("Editor Window"));
-    d->page_editorIface->setHeader(i18n("<qt>Editor Window Settings<br/>"
+    d->page_editorIface->setHeader(i18n("<qt>Editor Window Settings<br>"
                                    "<i>Customize editor window behavior</i></qt>"));
     d->page_editorIface->setIcon(QIcon::fromTheme(QLatin1String("document-edit")));
 
     d->metadataPage   = new ShowfotoSetupMetadata();
     d->page_metadata  = addPage(d->metadataPage, i18n("Metadata"));
-    d->page_metadata->setHeader(i18n("<qt>Embedded Image Information Management<br/>"
+    d->page_metadata->setHeader(i18n("<qt>Embedded Image Information Management<br>"
                                      "<i>Setup relations between images and metadata</i></qt>"));
     d->page_metadata->setIcon(QIcon::fromTheme(QLatin1String("format-text-code"))); // krazy:exclude=iconnames
 
     d->toolTipPage    = new ShowfotoSetupToolTip();
     d->page_tooltip   = addPage(d->toolTipPage, i18n("Tool Tip"));
-    d->page_tooltip->setHeader(i18n("<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/>"
+    d->page_tooltip->setHeader(i18n("<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br>"
                                     "<i>Customize information in tool-tips</i></qt>"));
     d->page_tooltip->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
 
     d->rawPage        = new ShowfotoSetupRaw();
     d->page_raw       = addPage(d->rawPage, i18n("RAW Decoding"));
-    d->page_raw->setHeader(i18n("<qt>RAW Files Decoding Settings<br/>"
+    d->page_raw->setHeader(i18n("<qt>RAW Files Decoding Settings<br>"
                                   "<i>Customize default RAW decoding settings</i></qt>"));
     d->page_raw->setIcon(QIcon::fromTheme(QLatin1String("image-x-adobe-dng")));
 
     d->iccPage        = new Digikam::SetupICC(buttonBox());
     d->page_icc       = addPage(d->iccPage, i18n("Color Management"));
-    d->page_icc->setHeader(i18n("<qt>Settings for Color Management<br/>"
+    d->page_icc->setHeader(i18n("<qt>Settings for Color Management<br>"
                                 "<i>Customize color management settings</i></qt>"));
     d->page_icc->setIcon(QIcon::fromTheme(QLatin1String("preferences-desktop-display-color")));
 
     d->iofilesPage    = new Digikam::SetupIOFiles();
     d->page_iofiles   = addPage(d->iofilesPage, i18n("Save Images"));
-    d->page_iofiles->setHeader(i18n("<qt>Settings for Saving Image Files<br/>"
+    d->page_iofiles->setHeader(i18n("<qt>Settings for Saving Image Files<br>"
                                     "<i>Set default configuration used to save images</i></qt>"));
     d->page_iofiles->setIcon(QIcon::fromTheme(QLatin1String("document-save-all")));
 
@@ -148,13 +148,13 @@ ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
 
     d->pluginsPage    = new ShowfotoSetupPlugins();
     d->page_plugins   = addPage(d->pluginsPage, i18n("Plugins"));
-    d->page_plugins->setHeader(i18n("<qt>Main Interface Plug-in Settings<br/>"
+    d->page_plugins->setHeader(i18n("<qt>Main Interface Plug-in Settings<br>"
                                     "<i>Set which plugins will be accessible from application</i></qt>"));
     d->page_plugins->setIcon(QIcon::fromTheme(QLatin1String("preferences-plugin")));
 
     d->miscPage       = new ShowfotoSetupMisc(this);
     d->page_misc      = addPage(d->miscPage, i18nc("@title: misc setup options page", "Miscellaneous"));
-    d->page_misc->setHeader(i18n("<qt>Miscellaneous Settings<br/>"
+    d->page_misc->setHeader(i18n("<qt>Miscellaneous Settings<br>"
                                  "<i>Customize behavior of the other parts of Showfoto</i></qt>"));
     d->page_misc->setIcon(QIcon::fromTheme(QLatin1String("preferences-other")));
 

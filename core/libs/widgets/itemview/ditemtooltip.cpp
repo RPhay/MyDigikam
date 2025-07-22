@@ -119,7 +119,7 @@ QString DToolTipStyleSheet::breakString(const QString& input) const
         if ((count >= maxStringLength) && str.at(i).isSpace())
         {
             count = 0;
-            br.append(QLatin1String("<br/>"));
+            br.append(QLatin1String("<br>"));
         }
         else
         {

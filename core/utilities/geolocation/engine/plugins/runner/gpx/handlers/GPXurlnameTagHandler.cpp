@@ -49,7 +49,7 @@ GeoNode* GPXurlnameTagHandler::parse(GeoParser& parser) const
         //         extendedData.addValue(GeoDataData("urlname", text));
         //         placemark->setExtendedData(extendedData);
 
-        const QString link = QStringLiteral("<br/>Link: <a href=\"%1\">%2</a>")
+        const QString link = QStringLiteral("<br>Link: <a href=\"%1\">%2</a>")
                              .arg(placemark->extendedData().value(QStringLiteral("url")).value().toString())
                              .arg(text);
         placemark->setDescription(placemark->description().append(link));

@@ -76,7 +76,7 @@ GeoPluginAboutDlg::GeoPluginAboutDlg(PluginInterface* const tool, QWidget* const
 
     QLabel* const header            = new QLabel(page);
     header->setWordWrap(true);
-    header->setText(QString::fromUtf8("<font size=\"5\">%1</font><br/>"
+    header->setText(QString::fromUtf8("<font size=\"5\">%1</font><br>"
                                       "<b>%2 %3</b>"
                                       "<p>%4</p>")
                     .arg(m_tool->name())
@@ -100,7 +100,7 @@ GeoPluginAboutDlg::GeoPluginAboutDlg(PluginInterface* const tool, QWidget* const
     {
         alist += QString::fromUtf8("<b>%1</b><ul>"
                                    "<li><i>%2</i></li>"
-                                   "<li>%3</li></ul><br/>")
+                                   "<li>%3</li></ul><br>")
                  .arg(auth.name)
                  .arg(auth.email)
                  .arg(auth.task);

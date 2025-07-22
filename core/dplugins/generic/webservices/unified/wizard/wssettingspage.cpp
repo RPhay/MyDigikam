@@ -134,10 +134,10 @@ WSSettingsPage::WSSettingsPage(QWizard* const dialog, const QString& title)
     d->imageCompression->setSingleStep(1);
     d->imageCompression->setValue(75);
     QString whatsThis = i18n("<p>The new compression value of JPEG images to be sent:</p>");
-    whatsThis         = whatsThis + i18n("<p><b>1</b>: very high compression<br/>"
-                                         "<b>25</b>: high compression<br/>"
-                                         "<b>50</b>: medium compression<br/>"
-                                         "<b>75</b>: low compression (default value)<br/>"
+    whatsThis         = whatsThis + i18n("<p><b>1</b>: very high compression<br>"
+                                         "<b>25</b>: high compression<br>"
+                                         "<b>50</b>: medium compression<br>"
+                                         "<b>75</b>: low compression (default value)<br>"
                                          "<b>100</b>: no compression</p>");
 
     d->imageCompression->setWhatsThis(whatsThis);

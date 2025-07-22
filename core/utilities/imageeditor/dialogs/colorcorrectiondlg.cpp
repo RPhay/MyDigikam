@@ -201,20 +201,20 @@ QLayout* ColorCorrectionDlg::createHeading() const
 
     if      (d->mode == ProfileMismatch)
     {
-        message->setText(i18n("<p>This image has an <b>embedded color profile</b><br/> "
-                              "which does not match your working space color profile.<br/>"
+        message->setText(i18n("<p>This image has an <b>embedded color profile</b><br> "
+                              "which does not match your working space color profile.<br>"
                               "How do you want to proceed?</p>"));
     }
     else if (d->mode == MissingProfile)
     {
-        message->setText(i18n("<p>This image has <b>no information about the color space</b><br/>"
-                              "that was used when creating the image. <br/>"
+        message->setText(i18n("<p>This image has <b>no information about the color space</b><br>"
+                              "that was used when creating the image. <br>"
                               "How do you want to proceed?</p>"));
 
     }
     else if (d->mode == UncalibratedColor)
     {
-        message->setText(i18n("<p>The color information of this image is uncalibrated.<br/>"
+        message->setText(i18n("<p>The color information of this image is uncalibrated.<br>"
                               "How do you want to proceed?</p>"));
     }
 

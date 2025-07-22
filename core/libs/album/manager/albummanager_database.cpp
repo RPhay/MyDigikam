@@ -142,7 +142,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
                                                     QLatin1String("digikamrc"));
 
         databaseError     += i18n("<p>If you want to start with a new configuration and "
-                                  "with a first run wizard, delete the file:<br/>%1</p>",
+                                  "with a first run wizard, delete the file:<br>%1</p>",
                                   QDir::toNativeSeparators(configPath));
 
         return showDatabaseSetupPage(databaseError, priority, suggestedAlbumRoot);
@@ -307,8 +307,8 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         deviceIconLabel->setPixmap(QIcon::fromTheme(QLatin1String("drive-harddisk")).pixmap(64));
         mainLayout->addWidget(deviceIconLabel, 0, 0);
 
-        QLabel* const mainLabel       = new QLabel(i18n("<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently "
-                                                        "not found on your system.<br/> Please choose the most "
+        QLabel* const mainLabel       = new QLabel(i18n("<p>The collection </p><p><b>%1</b><br>(%2)</p><p> is currently "
+                                                        "not found on your system.<br> Please choose the most "
                                                         "appropriate  option to handle this situation:</p>",
                                                    loc.label(), QDir::toNativeSeparators(locDescription)));
         mainLabel->setWordWrap(true);

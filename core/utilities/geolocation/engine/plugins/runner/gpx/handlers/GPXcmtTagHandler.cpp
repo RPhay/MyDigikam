@@ -52,10 +52,10 @@ GeoNode* GPXcmtTagHandler::parse(GeoParser& parser) const
 
             if (!desc.isEmpty())
             {
-                desc += QLatin1String("<br/>");
+                desc += QLatin1String("<br>");
             }
 
-            placemark->setDescription(desc.append(cmt.replace(QLatin1Char('\n'), QLatin1String("\n<br/>"))));
+            placemark->setDescription(desc.append(cmt.replace(QLatin1Char('\n'), QLatin1String("\n<br>"))));
             placemark->setDescriptionCDATA(true);
         }
     }

@@ -162,32 +162,32 @@ void EXIFEditWidget::saveSettings()
 void EXIFEditWidget::slotItemChanged()
 {
     d->page_caption->setHeader(d->dlg->currentItemTitleHeader(
-                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                   QString::fromUtf8("<qt>%1<br><i>%2</i></qt>")
                                        .arg(i18nc("@title", "Caption Information"))
                                        .arg(i18nc("@title", "Record technical descriptions"))));
 
     d->page_datetime->setHeader(d->dlg->currentItemTitleHeader(
-                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                   QString::fromUtf8("<qt>%1<br><i>%2</i></qt>")
                                        .arg(i18nc("@title", "Date and Time Information"))
                                        .arg(i18nc("@title", "Record camera time-stamp properties"))));
 
     d->page_lens->setHeader(d->dlg->currentItemTitleHeader(
-                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                   QString::fromUtf8("<qt>%1<br><i>%2</i></qt>")
                                        .arg(i18nc("@title", "Lens Settings"))
                                        .arg(i18nc("@title", "Record lens details used with camera"))));
 
     d->page_device->setHeader(d->dlg->currentItemTitleHeader(
-                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                   QString::fromUtf8("<qt>%1<br><i>%2</i></qt>")
                                        .arg(i18nc("@title", "Capture Device Settings"))
                                        .arg(i18nc("@title", "Record shot conditions used by camera"))));
 
     d->page_light->setHeader(d->dlg->currentItemTitleHeader(
-                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                   QString::fromUtf8("<qt>%1<br><i>%2</i></qt>")
                                        .arg(i18nc("@title", "Light Source Information"))
                                        .arg(i18nc("@title", "Record ambient condition captured by camera"))));
 
     d->page_adjust->setHeader(d->dlg->currentItemTitleHeader(
-                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                   QString::fromUtf8("<qt>%1<br><i>%2</i></qt>")
                                        .arg(i18nc("@title", "Pictures Adjustments"))
                                        .arg(i18nc("@title", "Record technical details used by camera"))));
 

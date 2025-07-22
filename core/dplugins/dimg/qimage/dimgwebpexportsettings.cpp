@@ -73,9 +73,9 @@ DImgWEBPExportSettings::DImgWEBPExportSettings(QWidget* const parent)
 
     d->WEBPcompression->setWhatsThis(i18n("<p>The quality value for WEBP images:</p>"
                                           "<p><b>1</b>: low quality (high compression and small "
-                                          "file size)<br/>"
-                                          "<b>50</b>: medium quality<br/>"
-                                          "<b>75</b>: good quality (default)<br/>"
+                                          "file size)<br>"
+                                          "<b>50</b>: medium quality<br>"
+                                          "<b>75</b>: good quality (default)<br>"
                                           "<b>99</b>: high quality (no compression and "
                                           "large file size)</p>"
                                           "<p><b>Note: WEBP is not a lossless image "

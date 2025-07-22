@@ -42,9 +42,9 @@ QString RecognitionBenchmarker::result() const
     }
 
     QString s = QString::fromUtf8("<p>"
-                                  "<u>Collection Properties:</u><br/>"
-                                  "%1 Images <br/>"
-                                  "%2 Identities <br/>"
+                                  "<u>Collection Properties:</u><br>"
+                                  "%1 Images <br>"
+                                  "%2 Identities <br>"
                                   "</p><p>").arg(totalImages).arg(results.size());
 
     for (QMap<int, Statistics>::const_iterator it = results.begin() ;
@@ -53,7 +53,7 @@ QString RecognitionBenchmarker::result() const
         const Statistics& stat = it.value();
         double correctRate     = double(stat.correctlyRecognized) / stat.knownFaces;
         s                     += TagsCache::instance()->tagName(it.key());
-        s                     += QString::fromUtf8(": %1 faces, %2 (%3%) correctly recognized<br/>")
+        s                     += QString::fromUtf8(": %1 faces, %2 (%3%) correctly recognized<br>")
                                  .arg(stat.knownFaces).arg(stat.correctlyRecognized).arg(correctRate * 100);
     }
 

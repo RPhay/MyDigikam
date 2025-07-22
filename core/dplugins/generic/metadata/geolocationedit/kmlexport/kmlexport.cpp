@@ -306,7 +306,7 @@ void KmlExport::generateImagesthumb(const QUrl& imageURL, QDomElement& kmlAlbum)
             my_description = QLatin1String("<img src=\"") + m_imageDirBasename + QLatin1Char('/') + fullFileName + QLatin1String("\">");
         }
 
-        my_description += QLatin1String("<br/>") + info.comment() ;
+        my_description += QLatin1String("<br>") + info.comment() ;
 
         addKmlTextElement(kmlPlacemark, QLatin1String("description"), my_description);
         logInfo(i18n("Creation of placemark '%1'", fullFileName));

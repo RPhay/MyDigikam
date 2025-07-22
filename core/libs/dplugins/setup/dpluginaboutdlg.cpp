@@ -74,7 +74,7 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
 
     QLabel* const header            = new QLabel(page);
     header->setWordWrap(true);
-    header->setText(QString::fromUtf8("<font size=\"5\">%1</font><br/>"
+    header->setText(QString::fromUtf8("<font size=\"5\">%1</font><br>"
                                       "<b>%2 %3</b>"
                                       "<p>%4</p>")
                     .arg(tool->name())

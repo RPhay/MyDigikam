@@ -118,37 +118,37 @@ void FilterStatusBar::slotFilterMatches(bool match)
 
     if (d->settings.isFilteringByText())
     {
-        filtersList.append(i18n("<br/><nobr><i>Text</i></nobr>"));
+        filtersList.append(i18n("<br><nobr><i>Text</i></nobr>"));
     }
 
     if (d->settings.isFilteringByTypeMime())
     {
-        filtersList.append(i18n("<br/><nobr><i>Mime Type</i></nobr>"));
+        filtersList.append(i18n("<br><nobr><i>Mime Type</i></nobr>"));
     }
 
     if (d->settings.isFilteringByGeolocation())
     {
-        filtersList.append(i18n("<br/><nobr><i>Geolocation</i></nobr>"));
+        filtersList.append(i18n("<br><nobr><i>Geolocation</i></nobr>"));
     }
 
     if (d->settings.isFilteringByRating())
     {
-        filtersList.append(i18n("<br/><nobr><i>Rating</i></nobr>"));
+        filtersList.append(i18n("<br><nobr><i>Rating</i></nobr>"));
     }
 
     if (d->settings.isFilteringByPickLabels())
     {
-        filtersList.append(i18n("<br/><nobr><i>Pick Labels</i></nobr>"));
+        filtersList.append(i18n("<br><nobr><i>Pick Labels</i></nobr>"));
     }
 
     if (d->settings.isFilteringByColorLabels())
     {
-        filtersList.append(i18n("<br/><nobr><i>Color Labels</i></nobr>"));
+        filtersList.append(i18n("<br><nobr><i>Color Labels</i></nobr>"));
     }
 
     if (d->settings.isFilteringByTags())
     {
-        filtersList.append(i18n("<br/><nobr><i>Tags</i></nobr>"));
+        filtersList.append(i18n("<br><nobr><i>Tags</i></nobr>"));
     }
 
     if (filtersList.count() > 1)

@@ -63,7 +63,7 @@ WelcomePage::WelcomePage(QWizard* const dlg)
 #endif
 
     text.append(i18n(
-                     "<qt><br/>"
+                     "<qt><br>"
                      "<p>You can ignore the following if you use digiKam "
                      "for the first time:</p>"
                      "<p><b>Transition from digiKam 4</b></p>"

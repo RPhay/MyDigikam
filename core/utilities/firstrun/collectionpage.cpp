@@ -76,7 +76,7 @@ CollectionPage::CollectionPage(QWizard* const dlg)
 
     QString message             = i18n("<p>Please enter a location where you keep your images.</p> "
                                        "<p>You can choose any local folder, even one that already contains images."
-                                       "<br/> "
+                                       "<br> "
                                        "More folders can be added later under the <i>Settings</i> menu. "
                                        "</p> ");
 

@@ -166,10 +166,10 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->imageCompression->setSingleStep(1);
     d->imageCompression->setValue(75);
     d->imageCompression->setWhatsThis(i18n("<p>The new compression value of JPEG images to be sent:</p>"
-                                           "<p><b>1</b>: very high compression<br/>"
-                                           "<b>25</b>: high compression<br/>"
-                                           "<b>50</b>: medium compression<br/>"
-                                           "<b>75</b>: low compression (default value)<br/>"
+                                           "<p><b>1</b>: very high compression<br>"
+                                           "<b>25</b>: high compression<br>"
+                                           "<b>50</b>: medium compression<br>"
+                                           "<b>75</b>: low compression (default value)<br>"
                                            "<b>100</b>: no compression</p>"));
 
     QLabel* const labelImageCompression = new QLabel(i18n("Image quality:"), d->imageChangeGroupBox);

@@ -96,7 +96,7 @@ void DatabaseSettingsWidget::setupMainArea()
                                      "one for all collections properties, "
                                      "one to store compressed thumbnails, "
                                      "one to store faces recognition metadata, "
-                                     "and one to store similarity fingerprints.<br/>"
+                                     "and one to store similarity fingerprints.<br>"
                                      "Write access is required to be able to edit image properties.</p>"
                                      "<p>Databases are digiKam core engines. Take care to use a place hosted by fast "
                                      "hardware (eg. SSD or NVMe) with enough free space especially for thumbnails database.</p>"
@@ -853,7 +853,7 @@ bool DatabaseSettingsWidget::checkDatabaseSettings()
             if (!checkMysqlServerDbNamesConfig(error))
             {
                 QMessageBox::critical(qApp->activeWindow(), i18nc("@title:window", "Database Configuration"),
-                                      i18n("The database names configuration is not valid. Error is <br/><p>%1</p><br/>"
+                                      i18n("The database names configuration is not valid. Error is <br><p>%1</p><br>"
                                            "Please check your configuration.",
                                            error));
                 return false;
@@ -862,7 +862,7 @@ bool DatabaseSettingsWidget::checkDatabaseSettings()
             if (!checkMysqlServerConnection(error))
             {
                 QMessageBox::critical(qApp->activeWindow(), i18nc("@title:window", "Database Connection Test"),
-                                      i18n("Testing database connection has failed with error<br/><p>%1</p><br/>"
+                                      i18n("Testing database connection has failed with error<br><p>%1</p><br>"
                                            "Please check your configuration.",
                                            error));
                 return false;

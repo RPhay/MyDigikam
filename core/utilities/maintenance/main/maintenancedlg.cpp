@@ -75,7 +75,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     d->expanderBox->insertItem(
                                Private::NewItems,
-                               new QLabel(i18n("<qt>No option<br/>"
+                               new QLabel(i18n("<qt>No option<br>"
                                                "<i>Note: only Albums Collection are processed by this tool.</i></qt>")),
                                QIcon::fromTheme(QLatin1String("view-refresh")),
                                i18n("Scan for new items"),
@@ -89,7 +89,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     d->vbox3                   = new DVBox;
     new QLabel(i18n("<qt><i>Note: If activated, the core database is always cleaned. "
-                    "You can select additional databases for cleaning.<br/>"
+                    "You can select additional databases for cleaning.<br>"
                     "If you select one of the options below, the process may take "
                     "much time and can freeze digiKam temporarily "
                     "in order to make sure that no database corruption occurs.</i></qt>"), d->vbox3);

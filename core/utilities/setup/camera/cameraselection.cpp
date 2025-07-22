@@ -208,27 +208,27 @@ CameraSelection::CameraSelection(QWidget* const parent)
     logo->setPixmap(QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(48,48)));
 
     QLabel* const link = new QLabel(box2);
-    link->setText(i18n("<p>To set a <b>USB Mass Storage</b> camera<br/>"
-                       "(which looks like a removable drive when mounted<br/>"
-                       "on your desktop), please use<br/>"
+    link->setText(i18n("<p>To set a <b>USB Mass Storage</b> camera<br>"
+                       "(which looks like a removable drive when mounted<br>"
+                       "on your desktop), please use<br>"
                        "<a href=\"umscamera\">%1</a> from the camera list.</p>",
                        d->UMSCameraNameShown));
 
     QLabel* const link2 = new QLabel(box2);
-    link2->setText(i18n("<p>To set a <b>Generic PTP USB Device</b><br/>"
-                        "(which uses Picture Transfer Protocol), please<br/>"
+    link2->setText(i18n("<p>To set a <b>Generic PTP USB Device</b><br>"
+                        "(which uses Picture Transfer Protocol), please<br>"
                         "use <a href=\"ptpcamera\">%1</a> from the camera list.</p>",
                         d->PTPCameraNameShown));
 
     QLabel* const link3 = new QLabel(box2);
-    link3->setText(i18n("<p>To set a <b>Generic PTP/IP Network Device</b><br/>"
-                        "(which uses Picture Transfer Protocol), please<br/>"
+    link3->setText(i18n("<p>To set a <b>Generic PTP/IP Network Device</b><br>"
+                        "(which uses Picture Transfer Protocol), please<br>"
                         "use <a href=\"ptpipcamera\">%1</a> from the camera list.</p>",
                         d->PTPIPCameraNameShown));
 
     QLabel* const explanation = new QLabel(box2);
     explanation->setOpenExternalLinks(true);
-    explanation->setText(i18n("<p>A complete list of camera settings to use is<br/>"
+    explanation->setText(i18n("<p>A complete list of camera settings to use is<br>"
                               "available at <a href='https://www.figuiere.net/digicam/'>"
                               "this URL</a>.</p>"));
 

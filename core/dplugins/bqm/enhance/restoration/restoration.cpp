@@ -59,9 +59,9 @@ void Restoration::registerSettingsWidget()
     m_comboBox->insertItem(ReduceJPEGArtefacts, i18n("Reduce JPEG Artifacts"));
     m_comboBox->insertItem(ReduceTexturing,     i18n("Reduce Texturing"));
     m_comboBox->setWhatsThis(i18n("<p>Select the filter preset to use for photograph restoration here:</p>"
-                                  "<p><b>None</b>: Most common values. Puts settings to default.<br/>"
-                                  "<b>Reduce Uniform Noise</b>: reduce small image artifacts such as sensor noise.<br/>"
-                                  "<b>Reduce JPEG Artifacts</b>: reduce large image artifacts, such as a JPEG compression mosaic.<br/>"
+                                  "<p><b>None</b>: Most common values. Puts settings to default.<br>"
+                                  "<b>Reduce Uniform Noise</b>: reduce small image artifacts such as sensor noise.<br>"
+                                  "<b>Reduce JPEG Artifacts</b>: reduce large image artifacts, such as a JPEG compression mosaic.<br>"
                                   "<b>Reduce Texturing</b>: reduce image artifacts, such as paper texture, or Moire patterns "
                                   "on scanned images.</p>"));
 
