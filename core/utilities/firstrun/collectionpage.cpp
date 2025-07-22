@@ -187,7 +187,7 @@ bool CollectionPage::checkRootAlbum(QString& rootAlbumFolder)
         if (!targetPath.mkpath(rootAlbumFolder))
         {
             QMessageBox::information(this, i18nc("@title:window", "Create Root Album Folder Failed"),
-                                     i18n("<p>digiKam could not create the folder to use as the root album.\n"
+                                     i18n("<p>digiKam could not create the folder to use as the root album.<br>"
                                           "Please select a different location.</p>"
                                           "<p><b>%1</b></p>", QDir::toNativeSeparators(rootAlbumFolder)));
             return false;

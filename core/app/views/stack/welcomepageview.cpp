@@ -164,7 +164,7 @@ QStringList WelcomePageView::featuresTabContent() const
 
     for (int i = 0 ; i < newFeatures.count() ; ++i)
     {
-        featureItems += i18n("<li>%1</li>\n", newFeatures.at(i));
+        featureItems += i18n("<li>%1</li><br>", newFeatures.at(i));
     }
 
     QString tabHeader  = i18n("New Features");

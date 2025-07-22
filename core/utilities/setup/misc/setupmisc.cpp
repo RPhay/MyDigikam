@@ -316,10 +316,10 @@ SetupMisc::SetupMisc(QWidget* const parent)
     QGridLayout* const grid      = new QGridLayout(groupingPanel);
 
     QLabel* const description    = new QLabel(i18n("Perform the following operations on all group members:"), groupingPanel);
-    description->setToolTip(i18n("When images are grouped the following operations<br/>"
-                                 "are performed only on the displayed item (No)<br/>"
-                                 "or on all the hidden items in the group as well (Yes).<br/>"
-                                 "If Ask is selected, there will be a prompt every<br/>"
+    description->setToolTip(i18n("When images are grouped the following operations<br>"
+                                 "are performed only on the displayed item (No)<br>"
+                                 "or on all the hidden items in the group as well (Yes).<br>"
+                                 "If Ask is selected, there will be a prompt every<br>"
                                  "time this operation is executed."));
 
     QLabel* const noLabel        = new QLabel(i18nc("@label: grouped image ops", "No"),  groupingPanel);
