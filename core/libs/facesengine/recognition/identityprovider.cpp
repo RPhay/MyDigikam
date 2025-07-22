@@ -137,8 +137,6 @@ IdentityProvider::~IdentityProvider()
     // final cleanup
 
     delete d;
-
-    qDebug() << "IdentityProvider::delete";
 }
 
 IdentityProvider* IdentityProvider::instance()

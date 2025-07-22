@@ -89,8 +89,6 @@ FaceRecognitionBackgroundController::~FaceRecognitionBackgroundController()
     }
 
     delete d;
-
-    qDebug() << "FaceRecognitionBackgroundController::delete";
 }
 
 FaceRecognitionBackgroundController* FaceRecognitionBackgroundController::instance()

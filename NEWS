@@ -27,7 +27,7 @@ BUGFIXES:
 014 ==> 507113 - Face recognition does not identify faces even after scanning hundreds of faces.
 015 ==> 507299 - Typo: Settings tab is named "Behaviour" even when the locale is en_US.
 016 ==> 507279 - Small typos and grammatical errors in the English text.
-017 ==>
+017 ==> 505199 - System shows 607MB RAM allocation that is not returned to the OS without a physical end task (or restart of system).
 018 ==>
 019 ==>
 020 ==>

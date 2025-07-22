@@ -120,8 +120,6 @@ FaceClassifier::FaceClassifier()
 FaceClassifier::~FaceClassifier()
 {
     delete d;
-
-    qDebug() << "FaceClassifier::delete";
 }
 
 FaceClassifier* FaceClassifier::instance()

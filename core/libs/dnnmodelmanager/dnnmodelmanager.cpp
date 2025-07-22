@@ -77,8 +77,6 @@ DNNModelManager::DNNModelManager()
 DNNModelManager::~DNNModelManager()
 {
     delete d;
-
-    qDebug() << "DNNModelManager::delete";
 }
 
 DNNModelManager* DNNModelManager::instance()
