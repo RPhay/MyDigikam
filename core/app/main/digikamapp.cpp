@@ -258,6 +258,7 @@ DigikamApp::DigikamApp()
 
 DigikamApp::~DigikamApp()
 {
+    qDebug() << "DigikamApp destructor called 1";
     d->terminating = true;
 
     ProgressManager::instance()->slotAbortAll();
@@ -272,7 +273,7 @@ DigikamApp::~DigikamApp()
     FaceClassifier::instance()->cancel();
 
     ItemAttributesWatch::shutDown();
-
+    qDebug() << "DigikamApp destructor called 2";
     // Close and delete image editor instance.
 
     if (ImageWindow::imageWindowCreated())
@@ -299,7 +300,7 @@ DigikamApp::~DigikamApp()
         QueueMgrWindow::queueManagerWindow()->close();
         qApp->processEvents();
     }
-
+    qDebug() << "DigikamApp destructor called 3";
     // Close and delete Tags Manager instance.
 
     if (TagsManager::isCreated())
@@ -312,7 +313,7 @@ DigikamApp::~DigikamApp()
     {
         delete MetadataHubMngr::internalPtr;
     }
-
+    qDebug() << "DigikamApp destructor called 4";
 #ifdef HAVE_KFILEMETADATA
 
     if (BalooWrap::isCreated())
@@ -326,7 +327,7 @@ DigikamApp::~DigikamApp()
     d->view = nullptr;
 
     DPluginLoader::instance()->cleanUp();
-
+    qDebug() << "DigikamApp destructor called 5";
     ApplicationSettings::instance()->setRecurseAlbums(d->recurseAlbumsAction->isChecked());
     ApplicationSettings::instance()->setRecurseTags(d->recurseTagsAction->isChecked());
     ApplicationSettings::instance()->setShowThumbbar(d->showBarAction->isChecked());
@@ -339,7 +340,7 @@ DigikamApp::~DigikamApp()
     ThumbnailLoadThread::cleanUp();
     LoadingCacheInterface::cleanUp();
     DIO::cleanUp();
-
+    qDebug() << "DigikamApp destructor called 6";
     // close database server
 
     DatabaseServerStarter::instance()->stopServerManagerProcess();
@@ -349,6 +350,7 @@ DigikamApp::~DigikamApp()
     m_instance = nullptr;
 
     delete d;
+    qDebug() << "DigikamApp destructor called 7";
 }
 
 DigikamApp* DigikamApp::instance()
