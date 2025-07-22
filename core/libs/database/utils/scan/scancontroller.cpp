@@ -115,8 +115,6 @@ ScanController::~ScanController()
     delete d->hints;
 
     delete d;
-
-    qDebug() << "ScanController::delete";
 }
 
 ScanController* ScanController::instance()

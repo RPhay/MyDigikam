@@ -69,8 +69,6 @@ ItemSortCollator::ItemSortCollator()
 ItemSortCollator::~ItemSortCollator()
 {
     delete d;
-
-    qDebug() << "ItemSortCollator::delete";
 }
 
 ItemSortCollator* ItemSortCollator::instance()
