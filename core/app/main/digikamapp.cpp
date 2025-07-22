@@ -92,9 +92,10 @@ DigikamApp::DigikamApp()
     DIO::instance();
     LocalizeSettings::instance();
     NetworkManager::instance();
+
+    AIToolsPipeline::instance()->start();
     IdentityProvider::instance();
     FaceClassifier::instance();
-    AIToolsPipeline::instance()->start();
     FaceRecognitionBackgroundController::instance();
 
 #ifdef HAVE_GEOLOCATION
