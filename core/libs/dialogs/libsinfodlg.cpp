@@ -419,7 +419,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18ncp(CONTEXT, "CPU core", "CPU cores", nbcore) << QString::fromLatin1("%1").arg(nbcore));
 
-    m_buildtools       = new QTreeWidgetItem(listView(), QStringList() << i18nc("@title", "Build Environnement"));
+    m_buildtools       = new QTreeWidgetItem(listView(), QStringList() << i18nc("@title", "Build Environment"));
     listView()->addTopLevelItem(m_buildtools);
 
     new QTreeWidgetItem(m_buildtools, QStringList() <<
