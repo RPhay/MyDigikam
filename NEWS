@@ -28,14 +28,14 @@ BUGFIXES:
 015 ==> 507299 - Typo: Settings tab is named "Behaviour" even when the locale is en_US.
 016 ==> 507279 - Small typos and grammatical errors in the English text.
 017 ==> 505199 - System shows 607MB RAM allocation that is not returned to the OS without a physical end task (or restart of system).
-018 ==>
-019 ==>
-020 ==>
-021 ==>
-022 ==>
-023 ==>
-024 ==>
-025 ==>
+018 ==> 507190 - On Windows 11, digiKam background process remains running after app close.
+019 ==> 506775 - digikam.exe process never closes after closing the window.
+020 ==> 
+021 ==> 
+022 ==> 
+023 ==> 
+024 ==> 
+025 ==> 
 026 ==>
 027 ==>
 028 ==>
