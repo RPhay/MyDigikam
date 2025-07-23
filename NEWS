@@ -32,7 +32,7 @@ BUGFIXES:
 019 ==> 506775 - digikam.exe process never closes after closing the window.
 020 ==> 487911 - Tag but do not train.
 021 ==> 479404 - Add delete button to People search filter field.
-022 ==> 
+022 ==> 506073 - Automatic update doesn't work because no sha256 files on server.
 023 ==> 
 024 ==> 
 025 ==> 
