@@ -33,7 +33,7 @@ BUGFIXES:
 020 ==> 487911 - Tag but do not train.
 021 ==> 479404 - Add delete button to People search filter field.
 022 ==> 506073 - Automatic update doesn't work because no sha256 files on server.
-023 ==> 
+023 ==> 468867 - Face detection and recognition.
 024 ==> 
 025 ==> 
 026 ==> 
