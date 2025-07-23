@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-22 02:02+0000\n"
+"POT-Creation-Date: 2025-07-23 01:59+0000\n"
 "PO-Revision-Date: 2025-05-29 15:07+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1398,29 +1398,29 @@ msgstr "<i>Binaaridataa</i>"
 msgid "Initializing..."
 msgstr "Alustetaan…"
 
-#: core/app/main/digikamapp.cpp:161 core/showfoto/main/showfoto.cpp:110
+#: core/app/main/digikamapp.cpp:163 core/showfoto/main/showfoto.cpp:110
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Ladataan liitännäisiä…"
 
-#: core/app/main/digikamapp.cpp:185 core/showfoto/main/showfoto.cpp:92
+#: core/app/main/digikamapp.cpp:187 core/showfoto/main/showfoto.cpp:92
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Tarkistetaan ICC-kantaa…"
 
-#: core/app/main/digikamapp.cpp:199
+#: core/app/main/digikamapp.cpp:201
 #, fuzzy, kde-format
 #| msgid "Reading database..."
 msgid "Clean up Database..."
 msgstr "Luetaan tietokantaa…"
 
-#: core/app/main/digikamapp.cpp:221
+#: core/app/main/digikamapp.cpp:223
 #, fuzzy, kde-format
 #| msgid "Loading albums %v%"
 msgid "Loading albums..."
 msgstr "Luetaan albumeja %v %"
 
-#: core/app/main/digikamapp.cpp:381
+#: core/app/main/digikamapp.cpp:392
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1431,7 +1431,7 @@ msgstr ""
 "valitse ”Kyllä”, muuten valitse ”Ei”. Värinhallinta -ominaisuus on poissa "
 "käytöstä kunnes tämä ongelma on ratkaistu.</p>"
 
-#: core/app/main/digikamapp.cpp:437
+#: core/app/main/digikamapp.cpp:448
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1444,21 +1444,21 @@ msgstr ""
 "ohjelmatiedosto käytettävissä.\n"
 "Virheviesti: %1"
 
-#: core/app/main/digikamapp.cpp:725 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:736 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Ei valittua kohdetta (%1 kohde)"
 msgstr[1] "Ei valittua kohdetta (%1 kohdetta)"
 
-#: core/app/main/digikamapp.cpp:731
+#: core/app/main/digikamapp.cpp:742
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Ei valittuja kohteita (%1 [%2] kohde)"
 msgstr[1] "Ei valittuja kohteita (%1 [%2] kohdetta)"
 
-#: core/app/main/digikamapp.cpp:736
+#: core/app/main/digikamapp.cpp:747
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1467,71 +1467,71 @@ msgstr[0] ""
 msgstr[1] ""
 "Ei valittuja kohteita (%1 kohdetta. Ryhmiteltyjen kohteiden kanssa: %2)"
 
-#: core/app/main/digikamapp.cpp:747
+#: core/app/main/digikamapp.cpp:758
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1/%2 kohde valittu (%3/%4)"
 msgstr[1] "%1/%2 kohdetta valittu (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:760
+#: core/app/main/digikamapp.cpp:771
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1/%2 [%3] kohde valittu (%4/%5)"
 msgstr[1] "%1/%2 [%3] kohdetta valittu (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:768
+#: core/app/main/digikamapp.cpp:779
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "%1/%2 kohde valittu. Ryhmiteltyjen kohteiden kanssa yhteensä: %3"
 msgstr[1] "%1/%2 kohdetta valittu. Ryhmiteltyjen kohteiden kanssa yhteensä: %3"
 
-#: core/app/main/digikamapp.cpp:776
+#: core/app/main/digikamapp.cpp:787
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1/%2 [%3/%4] kohde valittu (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] kohdetta valittu (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:785
+#: core/app/main/digikamapp.cpp:796
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "%1/%2 kohde valittu. Ryhmiteltyjen kohteiden kanssa: %3/%4"
 msgstr[1] "%1/%2 kohdetta valittu. Ryhmiteltyjen kohteiden kanssa: %3/%4"
 
-#: core/app/main/digikamapp.cpp:816
+#: core/app/main/digikamapp.cpp:827
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 / %2)"
 
-#: core/app/main/digikamapp.cpp:830
+#: core/app/main/digikamapp.cpp:841
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr "(%1/%2 [%3])"
 
-#: core/app/main/digikamapp.cpp:834
+#: core/app/main/digikamapp.cpp:845
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1/%2. Ryhmiteltyjen kohteiden kanssa yhteensä: %3)"
 
-#: core/app/main/digikamapp.cpp:845
+#: core/app/main/digikamapp.cpp:856
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "Yksi piilotettu kohde"
 msgstr[1] "%1 piilotettua kohdetta"
 
-#: core/app/main/digikamapp.cpp:904
+#: core/app/main/digikamapp.cpp:915
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Kirjoita metatiedot tiedostoon"
 msgstr[1] "Kirjoita metatiedot valittuihin tiedostoihin"
 
-#: core/app/main/digikamapp.cpp:906
+#: core/app/main/digikamapp.cpp:917
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -3794,8 +3794,9 @@ msgid "...and much more."
 msgstr "…sekä paljon muuta."
 
 #: core/app/views/stack/welcomepageview.cpp:167
-#, kde-format
-msgid "<li>%1</li>\n"
+#, fuzzy, kde-format
+#| msgid "<li>%1</li>\n"
+msgid "<li>%1</li><br>"
 msgstr "<li>%1</li>\n"
 
 #: core/app/views/stack/welcomepageview.cpp:170
@@ -4641,8 +4642,8 @@ msgstr "Videokoodauksen purkajat"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:568 core/libs/dialogs/libsinfodlg.cpp:574
-#: core/libs/dialogs/libsinfodlg.cpp:649
+#: core/libs/dialogs/libsinfodlg.cpp:571 core/libs/dialogs/libsinfodlg.cpp:577
+#: core/libs/dialogs/libsinfodlg.cpp:652
 #, fuzzy, kde-format
 #| msgid "Country"
 msgid "no entry"
@@ -6221,14 +6222,22 @@ msgid "Reduce Texturing"
 msgstr "Vähennä pintakuviointia"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:61
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Select the filter preset to use for photograph restoration here:</"
+#| "p><p><b>None</b>: Most common values. Puts settings to default.<br/"
+#| "><b>Reduce Uniform Noise</b>: reduce small image artifacts such as sensor "
+#| "noise.<br/><b>Reduce JPEG Artifacts</b>: reduce large image artifacts, "
+#| "such as a JPEG compression mosaic.<br/><b>Reduce Texturing</b>: reduce "
+#| "image artifacts, such as paper texture, or Moire patterns on scanned "
+#| "images.</p>"
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
-"p><p><b>None</b>: Most common values. Puts settings to default.<br/"
-"><b>Reduce Uniform Noise</b>: reduce small image artifacts such as sensor "
-"noise.<br/><b>Reduce JPEG Artifacts</b>: reduce large image artifacts, such "
-"as a JPEG compression mosaic.<br/><b>Reduce Texturing</b>: reduce image "
-"artifacts, such as paper texture, or Moire patterns on scanned images.</p>"
+"p><p><b>None</b>: Most common values. Puts settings to default.<br><b>Reduce "
+"Uniform Noise</b>: reduce small image artifacts such as sensor noise."
+"<br><b>Reduce JPEG Artifacts</b>: reduce large image artifacts, such as a "
+"JPEG compression mosaic.<br><b>Reduce Texturing</b>: reduce image artifacts, "
+"such as paper texture, or Moire patterns on scanned images.</p>"
 msgstr ""
 "<p>Valitse valokuvan palauttamisessa käytettävä suodinasetus tässä:</"
 "p><p><b>Ei mitään</b>: Yleisimmät arvot. Asettaa arvot oletuksikseen.<br/"
@@ -7188,13 +7197,19 @@ msgid "HEIF quality:"
 msgstr "HEIF-laatu:"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:73
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
+#| "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
+#| "b>: good quality (default)<br/><b>100</b>: high quality (no compression "
+#| "and large file size)</p><p><b>Note: HEIF is not a lossless image "
+#| "compression format when you use this setting.</b></p>"
 msgid ""
 "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
-"compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-"b>: good quality (default)<br/><b>100</b>: high quality (no compression and "
-"large file size)</p><p><b>Note: HEIF is not a lossless image compression "
-"format when you use this setting.</b></p>"
+"compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
+"good quality (default)<br><b>100</b>: high quality (no compression and large "
+"file size)</p><p><b>Note: HEIF is not a lossless image compression format "
+"when you use this setting.</b></p>"
 msgstr ""
 "<p>HEIF-kuvien laatutasot:</p><p><b>1</b>: huonolaatuinen (tiukka pakkaus ja "
 "pieni tiedostokoko)<br/><b>50</b>: keskilaatuinen<br/><b>75</b>: hyvä laatu "
@@ -7359,11 +7374,16 @@ msgid "JPEG quality:"
 msgstr "JPEG-laatu:"
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The JPEG quality:</p><p><b>1</b>: low quality (high compression and "
+#| "small file size)<br/><b>50</b>: medium quality<br/><b>75</b>: good "
+#| "quality (default)<br/><b>100</b>: high quality (no compression and large "
+#| "file size)</p><p><b>Note: JPEG always uses lossy compression.</b></p>"
 msgid ""
 "<p>The JPEG quality:</p><p><b>1</b>: low quality (high compression and small "
-"file size)<br/><b>50</b>: medium quality<br/><b>75</b>: good quality "
-"(default)<br/><b>100</b>: high quality (no compression and large file size)</"
+"file size)<br><b>50</b>: medium quality<br><b>75</b>: good quality "
+"(default)<br><b>100</b>: high quality (no compression and large file size)</"
 "p><p><b>Note: JPEG always uses lossy compression.</b></p>"
 msgstr ""
 "<p>JPEG-laatutasot:</p><p><b>1</b>: huono laatu (pieni tiedosto, tiivis "
@@ -7488,13 +7508,19 @@ msgid "JPEG 2000 quality:"
 msgstr "JPEG2000-laatu:"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:73
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality "
+#| "(high compression and small file size)<br/><b>50</b>: medium quality<br/"
+#| "><b>75</b>: good quality (default)<br/><b>100</b>: high quality (no "
+#| "compression and large file size)</p><p><b>Note: JPEG 2000 is not a "
+#| "lossless image compression format when you use this setting.</b></p>"
 msgid ""
 "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality (high "
-"compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-"b>: good quality (default)<br/><b>100</b>: high quality (no compression and "
-"large file size)</p><p><b>Note: JPEG 2000 is not a lossless image "
-"compression format when you use this setting.</b></p>"
+"compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
+"good quality (default)<br><b>100</b>: high quality (no compression and large "
+"file size)</p><p><b>Note: JPEG 2000 is not a lossless image compression "
+"format when you use this setting.</b></p>"
 msgstr ""
 "<p>JPEG2000-kuvapakkausasteen tasot:</p><p><b>1</b>: huono laatu (pieni "
 "tiedosto, tiivis pakkaus)<br /><b>50</b>: yleisin pakkaus<br /><b>75</b>: "
@@ -7625,13 +7651,19 @@ msgid "PGF quality:"
 msgstr "PGF-pakkausaste:"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "
+#| "compression and large file size)<br/><b>3</b>: good quality (default)<br/"
+#| "><b>6</b>: medium quality<br/><b>9</b>: low quality (high compression and "
+#| "small file size)</p><p><b>Note: PGF is not a lossless image compression "
+#| "format when you use this setting.</b></p>"
 msgid ""
 "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "
-"compression and large file size)<br/><b>3</b>: good quality (default)<br/"
-"><b>6</b>: medium quality<br/><b>9</b>: low quality (high compression and "
-"small file size)</p><p><b>Note: PGF is not a lossless image compression "
-"format when you use this setting.</b></p>"
+"compression and large file size)<br><b>3</b>: good quality "
+"(default)<br><b>6</b>: medium quality<br><b>9</b>: low quality (high "
+"compression and small file size)</p><p><b>Note: PGF is not a lossless image "
+"compression format when you use this setting.</b></p>"
 msgstr ""
 "<p>PGF-kuvien pakkausasteen tasot:</p><p><b>1</b>: korkea laatu (suuri "
 "tiedosto, ei pakkausta)<br/><b>3</b>: hyvä laatu (oletus)<br/><b>6</b>: "
@@ -7689,11 +7721,17 @@ msgid "PNG compression:"
 msgstr "Png-pakkausaste:"
 
 #: core/dplugins/dimg/png/dimgpngexportsettings.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The compression value for PNG images:</p><p><b>1</b>: low compression "
+#| "(large file size but short compression duration - default)<br/><b>5</b>: "
+#| "medium compression<br/><b>9</b>: high compression (small file size but "
+#| "long compression duration)</p><p><b>Note: PNG is always a lossless image "
+#| "compression format.</b></p>"
 msgid ""
 "<p>The compression value for PNG images:</p><p><b>1</b>: low compression "
-"(large file size but short compression duration - default)<br/><b>5</b>: "
-"medium compression<br/><b>9</b>: high compression (small file size but long "
+"(large file size but short compression duration - default)<br><b>5</b>: "
+"medium compression<br><b>9</b>: high compression (small file size but long "
 "compression duration)</p><p><b>Note: PNG is always a lossless image "
 "compression format.</b></p>"
 msgstr ""
@@ -7776,10 +7814,10 @@ msgstr "AVIF-laatu:"
 #| "compression format when you use this setting.</b></p>"
 msgid ""
 "<p>The quality value for AVIF images:</p><p><b>1</b>: low quality (high "
-"compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-"b>: good quality (default)<br/><b>99</b>: high quality (no compression and "
-"large file size)</p><p><b>Note: AVIF is not a lossless image compression "
-"format when you use this setting.</b></p>"
+"compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
+"good quality (default)<br><b>99</b>: high quality (no compression and large "
+"file size)</p><p><b>Note: AVIF is not a lossless image compression format "
+"when you use this setting.</b></p>"
 msgstr ""
 "<p>HEIF-kuvien laatutasot:</p><p><b>1</b>: huonolaatuinen (tiukka pakkaus ja "
 "pieni tiedostokoko)<br/><b>50</b>: keskilaatuinen<br/><b>75</b>: hyvä laatu "
@@ -7811,13 +7849,19 @@ msgid "JPEG XL quality:"
 msgstr "JPEG XL -laatu:"
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:73
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The quality value for JPEG XL images:</p><p><b>1</b>: low quality "
+#| "(high compression and small file size)<br/><b>50</b>: medium quality<br/"
+#| "><b>75</b>: good quality (default)<br/><b>99</b>: high quality (no "
+#| "compression and large file size)</p><p><b>Note: JPEG XL is not a lossless "
+#| "image compression format when you use this setting.</b></p>"
 msgid ""
 "<p>The quality value for JPEG XL images:</p><p><b>1</b>: low quality (high "
-"compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-"b>: good quality (default)<br/><b>99</b>: high quality (no compression and "
-"large file size)</p><p><b>Note: JPEG XL is not a lossless image compression "
-"format when you use this setting.</b></p>"
+"compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
+"good quality (default)<br><b>99</b>: high quality (no compression and large "
+"file size)</p><p><b>Note: JPEG XL is not a lossless image compression format "
+"when you use this setting.</b></p>"
 msgstr ""
 "<p>JPEG XL -kuvapakkausasteen tasot:</p><p><b>1</b>: huono laatu (tiivis "
 "pakkaus ja pieni tiedostokoko)<br /><b>50</b>: keskitasoinen laatu<br /"
@@ -7880,10 +7924,10 @@ msgstr "WebP-laatu:"
 #| "compression format when you use this setting.</b></p>"
 msgid ""
 "<p>The quality value for WEBP images:</p><p><b>1</b>: low quality (high "
-"compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-"b>: good quality (default)<br/><b>99</b>: high quality (no compression and "
-"large file size)</p><p><b>Note: WEBP is not a lossless image compression "
-"format when you use this setting.</b></p>"
+"compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
+"good quality (default)<br><b>99</b>: high quality (no compression and large "
+"file size)</p><p><b>Note: WEBP is not a lossless image compression format "
+"when you use this setting.</b></p>"
 msgstr ""
 "<p>WebP-kuvien laatutasot:</p><p><b>1</b>: huono laatu (tiukka pakkaus ja "
 "pieni tiedostokoko)<br/><b>50</b>: keskitaso<br/><b>75</b>: hyvä laatu "
@@ -9051,15 +9095,24 @@ msgstr ""
 "Pikanäppäin: Ctrl-Y"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>How To Use:<br/><br/>* Press <b>s</b> to switch to source-selection "
+#| "mode, and select source point on image.<br/>* Press <b>s</b> again and "
+#| "start cloning.<br/>* Press <b>[</b> and <b>]</b> to change brush size.<br/"
+#| ">* Press <b>CTRL+Mousewheel</b> to zoom in/out.<br/>* Press <b>m</b> to "
+#| "pan the image if image is larger than viewport.<br/>* Press <b>l</b> to "
+#| "start lasso mode. Start drawing lasso boundary either continuously or "
+#| "discretely, then double-click or press l again to close the boundary.<br/"
+#| ">* Inside lasso mode, you can clone only inside the lasso region.</p>"
 msgid ""
-"<p>How To Use:<br/><br/>* Press <b>s</b> to switch to source-selection mode, "
-"and select source point on image.<br/>* Press <b>s</b> again and start "
-"cloning.<br/>* Press <b>[</b> and <b>]</b> to change brush size.<br/>* Press "
-"<b>CTRL+Mousewheel</b> to zoom in/out.<br/>* Press <b>m</b> to pan the image "
-"if image is larger than viewport.<br/>* Press <b>l</b> to start lasso mode. "
+"<p>How To Use:<br><br>* Press <b>s</b> to switch to source-selection mode, "
+"and select source point on image.<br>* Press <b>s</b> again and start "
+"cloning.<br>* Press <b>[</b> and <b>]</b> to change brush size.<br>* Press "
+"<b>CTRL+Mousewheel</b> to zoom in/out.<br>* Press <b>m</b> to pan the image "
+"if image is larger than viewport.<br>* Press <b>l</b> to start lasso mode. "
 "Start drawing lasso boundary either continuously or discretely, then double-"
-"click or press l again to close the boundary.<br/>* Inside lasso mode, you "
+"click or press l again to close the boundary.<br>* Inside lasso mode, you "
 "can clone only inside the lasso region.</p>"
 msgstr ""
 "<p>Käyttöohjeet:<br/><br/>* Vaihda lähteenvalintatilaan painamalla <b>s</b> "
@@ -9361,15 +9414,23 @@ msgid "Custom"
 msgstr "Mukautettu"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:130
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Select the filter preset to use for photograph restoration here:</"
+#| "p><p><b>Reduce Uniform Noise</b>: reduce small image artifacts such as "
+#| "sensor noise.<br/><b>Reduce JPEG Artifacts</b>: reduce large image "
+#| "artifacts, such as a JPEG compression mosaic.<br/><b>Reduce Texturing</"
+#| "b>: reduce image artifacts, such as paper texture, or Moire patterns on "
+#| "scanned images.<br/><b>Custom</b>: Puts settings to most common values, "
+#| "fully customizable.</p>"
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
 "p><p><b>Reduce Uniform Noise</b>: reduce small image artifacts such as "
-"sensor noise.<br/><b>Reduce JPEG Artifacts</b>: reduce large image "
-"artifacts, such as a JPEG compression mosaic.<br/><b>Reduce Texturing</b>: "
-"reduce image artifacts, such as paper texture, or Moire patterns on scanned "
-"images.<br/><b>Custom</b>: Puts settings to most common values, fully "
-"customizable.</p>"
+"sensor noise.<br><b>Reduce JPEG Artifacts</b>: reduce large image artifacts, "
+"such as a JPEG compression mosaic.<br><b>Reduce Texturing</b>: reduce image "
+"artifacts, such as paper texture, or Moire patterns on scanned images."
+"<br><b>Custom</b>: Puts settings to most common values, fully customizable.</"
+"p>"
 msgstr ""
 "<p>Valitse valokuvan palauttamisessa käytettävä suodinasetus tässä:</"
 "p><p><b>Vähennä tasaista kohinaa</b>: vähentää pieniä kuvavääristymiä kuten "
@@ -10645,10 +10706,14 @@ msgid "Adjust"
 msgstr "Säädä"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:171
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Correct the rotation of your images automatically by assigning two "
+#| "points in the preview widget and clicking <i>Adjust</i>.<br/>You can "
+#| "either adjust horizontal or vertical lines.</p>"
 msgid ""
 "<p>Correct the rotation of your images automatically by assigning two points "
-"in the preview widget and clicking <i>Adjust</i>.<br/>You can either adjust "
+"in the preview widget and clicking <i>Adjust</i>.<br>You can either adjust "
 "horizontal or vertical lines.</p>"
 msgstr ""
 "<p>Korjaa kuvien suunta automaattisesti osoittamalla esikatselusovelmasta "
@@ -11847,11 +11912,11 @@ msgstr "Tallennetaan muutoksia –"
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:401
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:373
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:741
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:429
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:438
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:476
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:513
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1008
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:430
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:441
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:481
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:520
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1016
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:661
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:351
 #: core/libs/dplugins/webservices/wslogindialog.cpp:159
@@ -11954,16 +12019,12 @@ msgstr "Työkalu maantieteellisen sijaintitiedon muokkaamiseen"
 #| "GPS device.</p>"
 msgctxt "@info"
 msgid ""
-"This tool allows users to change geolocation information from items.\n"
-"\n"
-"This tool can edit GPS data, manually or over a map. Reverse geo-coding is "
-"also available through web services.\n"
-"\n"
-"This tool has also an export function to KML to store map traces in Google "
-"format.\n"
-"\n"
-"Finally, this tool is able to read a GPS trace from a device to synchronize "
-"geo-location of items if you camera do not have an embedded GPS device."
+"This tool allows users to change geolocation information from items."
+"<br><br>This tool can edit GPS data, manually or over a map. Reverse geo-"
+"coding is also available through web services.<br><br>This tool has also an "
+"export function to KML to store map traces in Google format.<br><br>Finally, "
+"this tool is able to read a GPS trace from a device to synchronize geo-"
+"location of items if you camera do not have an embedded GPS device."
 msgstr ""
 "<p>Tällä työkalulla voi muuttaa kohteiden maantieteellistä sijaintitietoa.</"
 "p><p>Työkalulla voi muokata GPS-tietoa käsin tai kartalla. Verkkopalveluiden "
@@ -15464,13 +15525,10 @@ msgstr "Työkalu metatietojen muokkaukseen"
 #| "Iptc reference codes.</p>"
 msgctxt "@info"
 msgid ""
-"This tool allows users to changes plenty of metadata from items.\n"
-"\n"
-"Most common Exif, Iptc, and Xmp tags used in photography are listed for "
-"editing with standardized values.\n"
-"\n"
-"For photo agencies, pre-configured subjects can be used to describe the "
-"items contents based on Iptc reference codes."
+"This tool allows users to changes plenty of metadata from items.<br><br>Most "
+"common Exif, Iptc, and Xmp tags used in photography are listed for editing "
+"with standardized values.<br><br>For photo agencies, pre-configured subjects "
+"can be used to describe the items contents based on Iptc reference codes."
 msgstr ""
 "<p>Tällä työkalulla voi tehdä monia muutoksia kohteiden metatietoihin.</"
 "p><p>Valokuvauksessa yleisimmin käytetyt Exif-, IPTC- ja XMP-luokitukset "
@@ -16430,16 +16488,23 @@ msgstr "Työkalu kohteiden päiväystietojen muuttamiseen"
 
 # Keskimmäinen kappale on id:ssäkin vaikea ymmärtää!
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This tool allows users to adjust date time-stamp of items in batch.\n"
+#| "\n"
+#| "Many source of original time-stamp can be selected from original items, "
+#| "or a from a common file.\n"
+#| "\n"
+#| "Many metadata time-stamp can be adjusted or left untouched. The "
+#| "adjustment can be an offset of time or a specific date."
 msgctxt "@info"
 msgid ""
-"This tool allows users to adjust date time-stamp of items in batch.\n"
-"\n"
-"Many source of original time-stamp can be selected from original items, or a "
-"from a common file.\n"
-"\n"
-"Many metadata time-stamp can be adjusted or left untouched. The adjustment "
-"can be an offset of time or a specific date."
+"This tool allows users to adjust date time-stamp of items in batch."
+"<br><br>Many source of original time-stamp can be selected from original "
+"items, or a from a common file.<br><br>Many metadata time-stamp can be "
+"adjusted or left untouched. The adjustment can be an offset of time or a "
+"specific date."
 msgstr ""
 "Tällä työkalulla voi säätää eräajona kohteiden aikaleimoja.\n"
 "\n"
@@ -16776,26 +16841,33 @@ msgid "Select Calendar Data File"
 msgstr "Valitse kalenteritiedon tiedosto"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:202
-#, kde-format
-msgid "No valid images selected for months<br/>Click Back to select images"
+#, fuzzy, kde-format
+#| msgid "No valid images selected for months<br/>Click Back to select images"
+msgid "No valid images selected for months<br>Click Back to select images"
 msgstr ""
 "Kuukausille ei valittu kelvollisia kuvia<br/>Valitse kuvat napsauttamalla "
 "Takaisin"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:217
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Please note that you are making a calendar for<br/>the current year or a "
+#| "year in the past."
 msgid ""
-"Please note that you are making a calendar for<br/>the current year or a "
-"year in the past."
+"Please note that you are making a calendar for<br>the current year or a year "
+"in the past."
 msgstr ""
 "Huomaa, että olet tekemässä kalenteria kuluvasta<br/>tai menneisyyden "
 "vuodesta."
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:224
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Click Next to start Printing<br/><br/>Following months will be printed "
+#| "for year %1:<br/>"
 msgid ""
-"Click Next to start Printing<br/><br/>Following months will be printed for "
-"year %1:<br/>"
+"Click Next to start Printing<br><br>Following months will be printed for "
+"year %1:<br>"
 msgstr ""
 "Aloita tulostaminen napsauttamalla Seuraava<br/><br/>Vuodelle %1 tulostetaan "
 "seuraavat kuukaudet:<br/>"
@@ -16954,11 +17026,9 @@ msgstr "Työkalu RAW-kuvien muuntamiseksi DNG:ksi"
 #| "wikipedia.org/wiki/Digital_Negative'>this page</a>.</p>"
 msgctxt "@info"
 msgid ""
-"This Generic tool can convert RAW images data to DNG format.\n"
-"\n"
-"The Digital Negative is a lossless RAW image format created by Adobe.\n"
-"\n"
-"See details on this wikipedia entry about this format: %1"
+"This Generic tool can convert RAW images data to DNG format.<br><br>The "
+"Digital Negative is a lossless RAW image format created by Adobe.<br><br>See "
+"details on this wikipedia entry about this format: %1"
 msgstr ""
 "<p>Tällä eräajotyökalulla voi muuntaa RAW-kuvatietoa DNG-muotoon.</p><p>DNG "
 "(digitaalinen negatiivi) on Adoben luoma häviötön RAW-kuvamuoto.</"
@@ -18140,8 +18210,9 @@ msgid "no customization available"
 msgstr "mukautus ei käytettävissä"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
-#, kde-format
-msgid "Author: %1<br/><br/>"
+#, fuzzy, kde-format
+#| msgid "Author: %1<br/><br/>"
+msgid "Author: %1<br><br>"
 msgstr "Tekijä: %1<br/><br/>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
@@ -18356,10 +18427,9 @@ msgctxt "@info"
 msgid ""
 "The media server allows to share items through the local network using %1 "
 "standard and %2 protocol. Many kind of electronic devices can support DLNA, "
-"as tablets, cellulars, TV, etc.\n"
-"\n"
-"Note: depending of the network features and the configuration, the delay to "
-"discover the server on client devices can take a while."
+"as tablets, cellulars, TV, etc.<br><br>Note: depending of the network "
+"features and the configuration, the delay to discover the server on client "
+"devices can take a while."
 msgstr ""
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:209
@@ -19146,12 +19216,9 @@ msgctxt "@info"
 msgid ""
 "This tool can convert documented images data to Text format by using "
 "Tesseract, an open-source Optical Characters Recognition engine, originally "
-"developed at HP labs and now sponsored by Google.\n"
-"\n"
-"It supports multiple languages and scripts (including right-to-left text) "
-"and page layout analysis.\n"
-"\n"
-"See details on %1 for more information on Tesseract"
+"developed at HP labs and now sponsored by Google.<br><br>It supports "
+"multiple languages and scripts (including right-to-left text) and page "
+"layout analysis.<br><br>See details on %1 for more information on Tesseract"
 msgstr ""
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:95
@@ -20773,8 +20840,8 @@ msgid "Image properties file done"
 msgstr "Kuvien kuvaustiedosto on luotu"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:345
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:974
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:987
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:982
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:995
 #, kde-format
 msgctxt "@title:window"
 msgid "Processing Failed"
@@ -21076,11 +21143,15 @@ msgstr "<p>Lähetettävien JPEG-kuvien uusi pakkaustaso:</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:175
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:137
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p><b>1</b>: very high compression<br/><b>25</b>: high compression<br/"
+#| "><b>50</b>: medium compression<br/><b>75</b>: low compression (default "
+#| "value)<br/><b>100</b>: no compression</p>"
 msgid ""
-"<p><b>1</b>: very high compression<br/><b>25</b>: high compression<br/"
-"><b>50</b>: medium compression<br/><b>75</b>: low compression (default "
-"value)<br/><b>100</b>: no compression</p>"
+"<p><b>1</b>: very high compression<br><b>25</b>: high compression<br><b>50</"
+"b>: medium compression<br><b>75</b>: low compression (default "
+"value)<br><b>100</b>: no compression</p>"
 msgstr ""
 "<p><b>1</b>: hyvin ankara pakkaus<br/><b>25</b>: ankara pakkaus<br/><b>50</"
 "b>: keskitasoinen pakkaus<br/><b>75</b>: vähäinen pakkaus (oletusarvo)<br/"
@@ -22305,15 +22376,21 @@ msgid "A tool to render presentation"
 msgstr "Työkalu diaesityksen luomiseksi"
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This tool render a series of items as an advanced slide-show.\n"
+#| "\n"
+#| "Plenty of transition effects are available are ones based on OpenGL and "
+#| "the famous Ken Burns effect.\n"
+#| "\n"
+#| "You can add a sound-track in background while your presentation."
 msgctxt "@info"
 msgid ""
-"This tool render a series of items as an advanced slide-show.\n"
-"\n"
-"Plenty of transition effects are available are ones based on OpenGL and the "
-"famous Ken Burns effect.\n"
-"\n"
-"You can add a sound-track in background while your presentation."
+"This tool render a series of items as an advanced slide-show.<br><br>Plenty "
+"of transition effects are available are ones based on OpenGL and the famous "
+"Ken Burns effect.<br><br>You can add a sound-track in background while your "
+"presentation."
 msgstr ""
 "Tämä työkalu hahmontaa kohdejoukon näyttäväksi diaesitykseksi.\n"
 "\n"
@@ -22797,9 +22874,8 @@ msgstr "Järjestä arvion mukaan"
 #| "web site for details: <a href='https://ipfs.io/'>https://ipfs.io/</a></p>"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Box web-service.\n"
-"\n"
-"See Box web site for details: %1"
+"This tool allows users to export items to Box web-service.<br><br>See Box "
+"web site for details: %1"
 msgstr ""
 "<p>Tällä työkalulla voi kohteita viedä IPFS-verkkopalveluun.</"
 "p><p>Lisätietoa löytyy IPFS:n verkkosivuilta: <a href='https://ipfs."
@@ -22944,7 +23020,7 @@ msgstr "Box-vienti"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:319
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:323
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:638
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:907
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:915
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:322
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:440
 #, kde-format
@@ -23058,8 +23134,8 @@ msgstr "Todennus epäonnistui. Haluatko yrittää uudelleen?"
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:481
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:230
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:283
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:747
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:783
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:755
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:791
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:283
 #, kde-format
 msgid "%v / %m"
@@ -23165,8 +23241,8 @@ msgstr ""
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:462
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:428
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:586
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:869
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:883
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:877
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:891
 #, kde-format
 msgid "Cannot open file"
 msgstr "Tiedostoa ei voi avata"
@@ -23332,12 +23408,17 @@ msgid "Use the album path of the items in the target"
 msgstr "Käytä kohteessa tiedostojen albumin sijaintia"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: "
+#| "very high compression<br/><b>25</b>: high compression<br/><b>50</b>: "
+#| "medium compression<br/><b>75</b>: low compression (default value)<br/"
+#| "><b>100</b>: no compression</p>"
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
-"high compression<br/><b>25</b>: high compression<br/><b>50</b>: medium "
-"compression<br/><b>75</b>: low compression (default value)<br/><b>100</b>: "
-"no compression</p>"
+"high compression<br><b>25</b>: high compression<br><b>50</b>: medium "
+"compression<br><b>75</b>: low compression (default value)<br><b>100</b>: no "
+"compression</p>"
 msgstr ""
 "<p>Lähetettävien JPEG-kuvien uusi pakkausarvo:</p><p><b>1</b>: hyvin ankara "
 "pakkaus<br/><b>25</b>: ankara pakkaus<br/><b>50</b>: keskitasoinen "
@@ -23537,9 +23618,8 @@ msgstr "Työkalu kohteiden viemiseksi ja tuomiseksi etätallennusvälineiltä"
 #| "p><p>Many protocols can be used, as FTP, SFTP, SAMBA, etc.</p>"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export and import items with a remote location.\n"
-"\n"
-"Many protocols can be used, as FTP, SFTP, SAMBA, etc."
+"This tool allows users to export and import items with a remote location."
+"<br><br>Many protocols can be used, as FTP, SFTP, SAMBA, etc."
 msgstr ""
 "<p>Tällä työkalulla voi kohteita viedä ja tuoda etätallennusvälineiltä.</"
 "p><p>Valita voi eri yhteyskäytäntöjä kuten FTP, SFTP, Samba jne.</p>"
@@ -23626,9 +23706,8 @@ msgstr "Työkalu Flickr-verkkopalveluvientiin"
 #| "www.flickr.com/</a></p>"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Flickr web-service.\n"
-"\n"
-"See Flickr web site for details: %1"
+"This tool allows users to export items to Flickr web-service.<br><br>See "
+"Flickr web site for details: %1"
 msgstr ""
 "<p>Tällä työkalulla voi viedä kohteita Flickr-verkkopalveluun.</"
 "p><p>Lisätietoa Flickrin verkkosivulta: <a href='https://www.flickr."
@@ -24150,11 +24229,9 @@ msgstr "Työkalu kohteiden viemiseksi ja tuomiseksi Googlen verkkopalvelusta"
 #| "google.com/drive/</a></p>"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export and import items with Google web-services.\n"
-"\n"
-"Google Photos and Google Drive web services are supported.\n"
-"\n"
-"See Google web sites for details: %1"
+"This tool allows users to export and import items with Google web-services."
+"<br><br>Google Photos and Google Drive web services are supported."
+"<br><br>See Google web sites for details: %1"
 msgstr ""
 "<p>Tällä työkalulla voi viedä ja tuoda kuvia Googlen verkkopalvelusta.</"
 "p>Google Photo- ja Google Drive -verkkopalvelut ovat tuettuja.<p>Lisätietoa "
@@ -24512,7 +24589,7 @@ msgstr ""
 "%1"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1324
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:657
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:665
 #, fuzzy, kde-format
 #| msgctxt "@title: dialog"
 #| msgid "Warning"
@@ -24531,7 +24608,7 @@ msgstr ""
 "”Jatka”"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1329
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:662
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
 #, fuzzy, kde-format
 #| msgid "Continue"
 msgctxt "@action: button change user"
@@ -24539,7 +24616,7 @@ msgid "Continue"
 msgstr "Jatka"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1330
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:663
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:671
 #, fuzzy, kde-format
 #| msgid "Cancel"
 msgctxt "@action: button change user"
@@ -25343,12 +25420,16 @@ msgid "A tool to export to IPFS web-service"
 msgstr "Työkalu IPFS-verkkopalveluvientiin"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This tool allows users to export items to IPFS web-service.\n"
+#| "\n"
+#| "See IPFS web site for details: %1"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to IPFS web-service.\n"
-"\n"
-"See IPFS web site for details: %1"
+"This tool allows users to export items to IPFS web-service.<br><br>See IPFS "
+"web site for details: %1"
 msgstr ""
 "Tällä työkalulla voi kohteita viedä IPFS-verkkopalveluun.\n"
 "\n"
@@ -25406,12 +25487,16 @@ msgid "A tool to export to MediaWiki web-service"
 msgstr "Työkalu MediaWiki-verkkopalveluvientiin"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This tool allows users to export items to MediaWiki web-service.\n"
+#| "\n"
+#| "See MediaWiki web site for details: %1"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to MediaWiki web-service.\n"
-"\n"
-"See MediaWiki web site for details: %1"
+"This tool allows users to export items to MediaWiki web-service.<br><br>See "
+"MediaWiki web site for details: %1"
 msgstr ""
 "Tällä työkalulla voi kohteita viedä MediaWiki-verkkopalveluun.\n"
 "\n"
@@ -26034,9 +26119,8 @@ msgstr "Työkalu Pinterest-verkkopalveluvientiin"
 #| "twitter.com/</a></p>"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Pinterest web-service.\n"
-"\n"
-"See Pinterest web site for details: %1"
+"This tool allows users to export items to Pinterest web-service.<br><br>See "
+"Pinterest web site for details: %1"
 msgstr ""
 "<p>Tällä työkalulla voi kohteita viedä Twitter-verkkopalveluun.</"
 "p><p>Lisätietoa löytyy Twitterin verkkosivuilta: <a href='https://twitter."
@@ -26390,12 +26474,16 @@ msgid "A tool to export to Rajce web-service"
 msgstr "Työkalu Rajce-verkkopalveluvientiin"
 
 #: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This tool allows users to export items to Rajce web-service.\n"
+#| "\n"
+#| "See Rajce web site for details: %1"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Rajce web-service.\n"
-"\n"
-"See Rajce web site for details: %1"
+"This tool allows users to export items to Rajce web-service.<br><br>See "
+"Rajce web site for details: %1"
 msgstr ""
 "Tällä työkalulla voi kohteita viedä Rajce-verkkopalveluun.\n"
 "Rajce-sivustolta löytyy lisätietoa: %1"
@@ -26628,9 +26716,8 @@ msgstr "Työkalu kohteiden viemiseksi ja tuomiseksi SmugMug-verkkopalvelusta"
 #| "com'>https://www.smugmug.com</a></p>"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export and import items with SmugMug web-service.\n"
-"\n"
-"See SmugMug web site for details: %1"
+"This tool allows users to export and import items with SmugMug web-service."
+"<br><br>See SmugMug web site for details: %1"
 msgstr ""
 "<p>Tällä työkalulla voi kohteita viedä ja tuoda SmugMug-verkkopalvelusta.</"
 "p><p>Lisätietoa löytyy SmugMugin verkkosivuilta: <a href='https://www."
@@ -26816,21 +26903,21 @@ msgctxt "@info:tooltip, button"
 msgid "Start upload to SmugMug web service"
 msgstr "Aloita lähetys SmugMug-verkkopalveluun"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:429
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:438
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:476
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:513
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1008
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:431
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:482
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:521
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1016
 #, kde-format
 msgid "SmugMug call failed: %1\n"
 msgstr "SmugMug-kutsu epäonnistui: %1\n"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:509
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:515
 #, kde-format
 msgid "&lt;none&gt;"
 msgstr "&lt;ei mitään&gt;"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:658
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:666
 #, kde-format
 msgid ""
 "You will be logged out of your account, click \"Continue\" to authenticate "
@@ -26839,17 +26926,17 @@ msgstr ""
 "Sinut kirjataan ulos tililtä: kirjaudu toiselle tilille napsauttamalla "
 "”Jatka”."
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:750
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:758
 #, kde-format
 msgid "SmugMug Import"
 msgstr "SmugMug-tuonti"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:786
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:794
 #, kde-format
 msgid "SmugMug Export"
 msgstr "SmugMug-vienti"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:908
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:916
 #, kde-format
 msgid ""
 "Failed to upload photo to SmugMug.\n"
@@ -26860,7 +26947,7 @@ msgstr ""
 "%1\n"
 "Haluatko jatkaa?"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:975
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:983
 #, kde-format
 msgid ""
 "Failed to save photo: %1\n"
@@ -26869,7 +26956,7 @@ msgstr ""
 "Ei onnistuttu tallentamaan kuvaa: %1\n"
 "Haluatko jatkaa?"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:988
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:996
 #, kde-format
 msgid ""
 "Failed to download photo: %1\n"
@@ -27381,25 +27468,25 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW -muunnos"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:347
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:346
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Unable to load image"
 msgstr "Kuvan lataus epäonnistui"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:471
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:470
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "Jälkikäsittely"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:512
 #, fuzzy, kde-format
 #| msgid "Auto-tags for: %1\n"
 msgid "Auto-rotating: %1\n"
 msgstr "Automaattiset luokitukset kohteelle: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27412,13 +27499,13 @@ msgstr "Automaattiset luokitukset kohteelle: %1\n"
 msgid "Album: %1\n"
 msgstr "Albumi: %1"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
 #, fuzzy, kde-format
 #| msgid "Rotation: "
 msgid "Rotation: %1\n"
 msgstr "Kääntö: "
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:537
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:536
 #, fuzzy, kde-format
 #| msgid "&Skip"
 msgid "Skipped"
@@ -27534,7 +27621,7 @@ msgstr "Perustietokannan nimi on tyhjä"
 #, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
-"wizard, delete the file:<br/>%1</p>"
+"wizard, delete the file:<br>%1</p>"
 msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:157
@@ -27545,8 +27632,7 @@ msgstr ""
 #| "Details:\n"
 #| "%1"
 msgid ""
-"An error occurred during the internal server start.<p>Details:\n"
-"%1</p>"
+"An error occurred during the internal server start.<p>Details:<br>%1</p>"
 msgstr ""
 "Sisäisen palvelimen käynnistyksessä sattui virhe.\n"
 "\n"
@@ -27619,28 +27705,37 @@ msgstr ""
 "jatkaa, valitse ”Kyllä”. Muussa tapauksessa napsauta ”Ei”, tarkista "
 "merkistöasetus ja käynnistä digiKam uudelleen."
 
-#: core/libs/album/manager/albummanager_database.cpp:309
-#, kde-format
+#: core/libs/album/manager/albummanager_database.cpp:310
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
+#| "on your system.<br/> Please choose the most appropriate  option to handle "
+#| "this situation:</p>"
 msgid ""
-"<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
-"your system.<br/> Please choose the most appropriate  option to handle this "
+"<p>The collection </p><p><b>%1</b><br>(%2)</p><p> is currently not found on "
+"your system.<br> Please choose the most appropriate  option to handle this "
 "situation:</p>"
 msgstr ""
 "<p>Kokoelmaa</p><p><b>%1</b><br/>(%2)</p><p>ei tällä hetkellä löydy "
 "järjestelmästä.<br/>Valitse sopivin tapa jatkaa tilanteessa:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:328
-#, kde-format
+#: core/libs/album/manager/albummanager_database.cpp:329
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The collection is still available, but the identifier changed.<br/"
+#| ">This can be caused by restoring a backup, changing the partition layout "
+#| "or the file system settings.<br/>The collection is now located at this "
+#| "place:</p>"
 msgid ""
-"<p>The collection is still available, but the identifier changed.<br/>This "
+"<p>The collection is still available, but the identifier changed.<br>This "
 "can be caused by restoring a backup, changing the partition layout or the "
-"file system settings.<br/>The collection is now located at this place:</p>"
+"file system settings.<br>The collection is now located at this place:</p>"
 msgstr ""
 "<p>Kokoelma on käytettävissä, mutta sen tunniste on muuttunut.<br/>Tämän voi "
 "aiheuttaa varmuuskopion palauttaminen tai levyosioiden tai "
 "tiedostojärjestelmien muutokset.<br/>Kokoelman sijainti on nyt:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:347
+#: core/libs/album/manager/albummanager_database.cpp:348
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -27649,7 +27744,7 @@ msgstr ""
 "Kokoelma on tallennuslaitteella, jota ei aina ole liitetty. Merkitse "
 "kokoelman tyyppi siirrettäväksi."
 
-#: core/libs/album/manager/albummanager_database.cpp:354
+#: core/libs/album/manager/albummanager_database.cpp:355
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -27657,19 +27752,19 @@ msgid ""
 msgstr ""
 "Älä tee mitään nyt. Ratkaisen ongelman tuonnempana itse asetusikkunassa"
 
-#: core/libs/album/manager/albummanager_database.cpp:368
+#: core/libs/album/manager/albummanager_database.cpp:369
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "Kokoelmaa ei löytynyt"
 
-#: core/libs/album/manager/albummanager_database.cpp:474
+#: core/libs/album/manager/albummanager_database.cpp:475
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Tietokantakansio"
 
-#: core/libs/album/manager/albummanager_database.cpp:475
+#: core/libs/album/manager/albummanager_database.cpp:476
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -27683,33 +27778,33 @@ msgstr ""
 "vanhan tietokantatiedoston ja vahvistaa että se tilastoi kansion ”%2” kuvat? "
 "Voit myös alustaa uuden tietokannan.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:485
-#: core/libs/album/manager/albummanager_database.cpp:552
-#: core/libs/album/manager/albummanager_database.cpp:574
+#: core/libs/album/manager/albummanager_database.cpp:486
+#: core/libs/album/manager/albummanager_database.cpp:553
+#: core/libs/album/manager/albummanager_database.cpp:575
 #, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Päivitä tietokanta"
 
-#: core/libs/album/manager/albummanager_database.cpp:487
-#: core/libs/album/manager/albummanager_database.cpp:554
-#: core/libs/album/manager/albummanager_database.cpp:576
-#: core/libs/album/manager/albummanager_database.cpp:624
+#: core/libs/album/manager/albummanager_database.cpp:488
+#: core/libs/album/manager/albummanager_database.cpp:555
+#: core/libs/album/manager/albummanager_database.cpp:577
+#: core/libs/album/manager/albummanager_database.cpp:625
 #, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Luo uusi tietokanta"
 
-#: core/libs/album/manager/albummanager_database.cpp:543
-#: core/libs/album/manager/albummanager_database.cpp:566
-#: core/libs/album/manager/albummanager_database.cpp:616
-#: core/libs/album/manager/albummanager_database.cpp:648
+#: core/libs/album/manager/albummanager_database.cpp:544
+#: core/libs/album/manager/albummanager_database.cpp:567
+#: core/libs/album/manager/albummanager_database.cpp:617
+#: core/libs/album/manager/albummanager_database.cpp:649
 #, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Uuden tietokannan kansio"
 
-#: core/libs/album/manager/albummanager_database.cpp:544
+#: core/libs/album/manager/albummanager_database.cpp:545
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27723,15 +27818,15 @@ msgstr ""
 "päivittää vanhan, luoda uuden vai kopioida nykyisen tietokannan tähän "
 "sijaintiin?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:556
-#: core/libs/album/manager/albummanager_database.cpp:626
-#: core/libs/album/manager/albummanager_database.cpp:657
+#: core/libs/album/manager/albummanager_database.cpp:557
+#: core/libs/album/manager/albummanager_database.cpp:627
+#: core/libs/album/manager/albummanager_database.cpp:658
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Kopioi nykyinen tietokanta"
 
-#: core/libs/album/manager/albummanager_database.cpp:567
+#: core/libs/album/manager/albummanager_database.cpp:568
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27743,7 +27838,7 @@ msgstr ""
 "Tässä kansiossa on vanha versio digiKamin tietokannasta.</p><p>Haluatko "
 "päivittää vanhan vai luoda uuden tietokannan?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:602
+#: core/libs/album/manager/albummanager_database.cpp:603
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27752,7 +27847,7 @@ msgstr ""
 "Tietokantatiedoston ”%1” kopiointi uudelle nimelle ”%2” epäonnistui. "
 "Yritetään päivittää vanha tietokanta."
 
-#: core/libs/album/manager/albummanager_database.cpp:617
+#: core/libs/album/manager/albummanager_database.cpp:618
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -27763,7 +27858,7 @@ msgstr ""
 "p><p>Haluatko luoda uuden vai kopioida nykyisen tietokannan tähän sijaintiin?"
 "</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:649
+#: core/libs/album/manager/albummanager_database.cpp:650
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27776,13 +27871,13 @@ msgstr ""
 "olevaa, vai poistaa sen ja kopioida nykyisen tietokannan tähän sijaintiin?</"
 "p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:659
+#: core/libs/album/manager/albummanager_database.cpp:660
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Käytä olemassa olevaa tiedostoa"
 
-#: core/libs/album/manager/albummanager_database.cpp:714
+#: core/libs/album/manager/albummanager_database.cpp:715
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -27791,7 +27886,7 @@ msgstr ""
 "Tietokantatiedoston ”%1” varmuuskopiointi epäonnistui. Tiedoston korvausta "
 "ei yritetä, vaan jatketaan vanhan tiedoston käyttämistä."
 
-#: core/libs/album/manager/albummanager_database.cpp:732
+#: core/libs/album/manager/albummanager_database.cpp:733
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27800,12 +27895,12 @@ msgstr ""
 "Tietokantatiedoston ”%1” kopiointi uudelle nimelle ”%2” epäonnistui. "
 "Käynnistetään tyhjällä tietokannalla."
 
-#: core/libs/album/manager/albummanager_database.cpp:755
+#: core/libs/album/manager/albummanager_database.cpp:756
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:771
+#: core/libs/album/manager/albummanager_database.cpp:772
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
@@ -29165,10 +29260,11 @@ msgstr ""
 "DigiKam yrittää uudelleen yhdistää tietokantaan."
 
 #: core/libs/database/engine/dbengineguierrorhandler.cpp:238
-#, kde-format
-msgid ""
-"<p><b>A database error occurred.</b></p>Details:\n"
-" %1"
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p><b>A database error occurred.</b></p>Details:\n"
+#| " %1"
+msgid "<p><b>A database error occurred.</b></p>Details:<br> %1"
 msgstr ""
 "<p><b>Tietokantavirhe.</b></p>Tiedot:\n"
 " %1"
@@ -29528,19 +29624,19 @@ msgstr "Poista"
 msgid "Restore Trash"
 msgstr "Palauta roskakori"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:129
+#: core/libs/database/utils/scan/scancontroller.cpp:127
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Valmistellaan tietokantaa…"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:155
+#: core/libs/database/utils/scan/scancontroller.cpp:153
 #, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "Tutkitaan kokoelmia, odota…"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:157
+#: core/libs/database/utils/scan/scancontroller.cpp:155
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -29552,7 +29648,7 @@ msgstr ""
 "kirjataan tietokantaan. Huomaa: tämä ikkuna ilmestyy automaattisesti, ellei "
 "kokoelmien aiempaa tutkimista ollut saatettu loppuun."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:276
+#: core/libs/database/utils/scan/scancontroller.cpp:274
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -29710,12 +29806,12 @@ msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
 "store compressed thumbnails, one to store faces recognition metadata, and "
-"one to store similarity fingerprints.<br/>Write access is required to be "
-"able to edit image properties.</p><p>Databases are digiKam core engines. "
-"Take care to use a place hosted by fast hardware (eg. SSD or NVMe) with "
-"enough free space especially for thumbnails database.</p><p>Note: a remote "
-"file system such as NFS, cannot be used here. For performance reasons, it is "
-"also recommended not to use network storage media.</p><p></p>"
+"one to store similarity fingerprints.<br>Write access is required to be able "
+"to edit image properties.</p><p>Databases are digiKam core engines. Take "
+"care to use a place hosted by fast hardware (eg. SSD or NVMe) with enough "
+"free space especially for thumbnails database.</p><p>Note: a remote file "
+"system such as NFS, cannot be used here. For performance reasons, it is also "
+"recommended not to use network storage media.</p><p></p>"
 msgstr ""
 "<p>>Aseta tässä, minne tietokantatiedostosi koneellasi sijoitetaan. "
 "Tietokantoja on kolme: yksi kokoelmien ominaisuuksille, toinen pakatuille "
@@ -29984,11 +30080,17 @@ msgid "Database Server Instructions"
 msgstr "Tietokantapalvelinohjeet"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:290
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>digiKam expects that database is already created with a dedicated user "
+#| "account. This user name <i>digikam</i> will require full access to the "
+#| "database.<br/>If your database is not already set up, you can use the "
+#| "following SQL commands (after replacing the <b><i>password</i></b> with "
+#| "the correct one).</p>"
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
 "account. This user name <i>digikam</i> will require full access to the "
-"database.<br/>If your database is not already set up, you can use the "
+"database.<br>If your database is not already set up, you can use the "
 "following SQL commands (after replacing the <b><i>password</i></b> with the "
 "correct one).</p>"
 msgstr ""
@@ -30014,10 +30116,9 @@ msgid ""
 "databases with grant privileges (see behind)</p><p>...</p><p>quit</"
 "p><p>NOTE: If you have problems with a MySQL server on Ubuntu based Linux "
 "system, use the addition command in the mysql prompt to be able to create "
-"MySQL triggers.<br/>SET GLOBAL log_bin_trust_function_creators=1;</"
-"p><p>NOTE: If you have an enormous collection, you should start MySQL server "
-"with mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the "
-"settings</p>"
+"MySQL triggers.<br>SET GLOBAL log_bin_trust_function_creators=1;</p><p>NOTE: "
+"If you have an enormous collection, you should start MySQL server with mysql "
+"--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
 "<p>Huomaa: Linux-palvelimessa tietokannan voi alustaa seuraavin komennoin:</"
 "p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u root</p><p>…</"
@@ -30145,18 +30246,24 @@ msgid "Database Configuration"
 msgstr "Tietokanta-asetukset"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
+#| ">Please check your configuration."
 msgid ""
-"The database names configuration is not valid. Error is <br/><p>%1</p><br/"
-">Please check your configuration."
+"The database names configuration is not valid. Error is <br><p>%1</"
+"p><br>Please check your configuration."
 msgstr ""
 "Tietokantojen nimien asetus ei ole kelvollinen. Virhe on<br/><p>%1</p><br/"
 ">Tarkista asetukset."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:865
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Testing database connection has failed with error<br/><p>%1</p><br/"
+#| ">Please check your configuration."
 msgid ""
-"Testing database connection has failed with error<br/><p>%1</p><br/>Please "
+"Testing database connection has failed with error<br><p>%1</p><br>Please "
 "check your configuration."
 msgstr ""
 "Tietokantayhteyden kokeilu epäonnistui: virhe on<br/><p>%1</p><br/>Tarkista "
@@ -30191,10 +30298,13 @@ msgid "Create Database Folder Failed"
 msgstr "Tietokantakansion luominen epäonnistui"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:906
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>digiKam could not create the folder to host your database file.\n"
+#| "Please select a different location.</p><p><b>%1</b></p>"
 msgid ""
-"<p>digiKam could not create the folder to host your database file.\n"
-"Please select a different location.</p><p><b>%1</b></p>"
+"<p>digiKam could not create the folder to host your database file.<br>Please "
+"select a different location.</p><p><b>%1</b></p>"
 msgstr ""
 "<p>Kansiota <p>”<b>%1</b>”</p> ei voitu luoda. Valitse uusi kansio.</p>"
 
@@ -30205,10 +30315,13 @@ msgid "No Database Write Access"
 msgstr "Tietokantaan ei ole kirjoitusoikeutta"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:932
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>You do not seem to have write access for the folder to host the "
+#| "database file.<br/>Please select a different location.</p><p><b>%1</b></p>"
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
-"file.<br/>Please select a different location.</p><p><b>%1</b></p>"
+"file.<br>Please select a different location.</p><p><b>%1</b></p>"
 msgstr ""
 "<p>Kirjoitusoikeutta ei ole kansioon <p>”<b>%1</b>”</p><br/>Valitse toinen "
 "kansio.</p>"
@@ -30636,9 +30749,11 @@ msgid "Copy to Clipboard"
 msgstr "Kopioi leikepöydälle"
 
 #: core/libs/dialogs/infodlg.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
 msgid ""
-"<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
+"<font size=\"5\">%1</font><br><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
 msgstr ""
 "<font size=\"5\">%1</font><br/><b>Versio %2</b><p>%3</p><p><i>%4</i></p>"
 
@@ -30679,42 +30794,42 @@ msgstr "Tuntematon"
 
 #: core/libs/dialogs/libsinfodlg.cpp:422
 #, fuzzy, kde-format
-#| msgid "Base Tools"
+#| msgid "Build version"
 msgctxt "@title"
-msgid "Build Tools"
-msgstr "Perustyökalut"
+msgid "Build Environnement"
+msgstr "Koosteversio"
 
-#: core/libs/dialogs/libsinfodlg.cpp:457
+#: core/libs/dialogs/libsinfodlg.cpp:460
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: core/libs/dialogs/libsinfodlg.cpp:487
+#: core/libs/dialogs/libsinfodlg.cpp:490
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:521
+#: core/libs/dialogs/libsinfodlg.cpp:524
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV-asetukset"
 
-#: core/libs/dialogs/libsinfodlg.cpp:717
+#: core/libs/dialogs/libsinfodlg.cpp:720
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Kyllä"
 
-#: core/libs/dialogs/libsinfodlg.cpp:722
+#: core/libs/dialogs/libsinfodlg.cpp:725
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ei"
 
-#: core/libs/dialogs/libsinfodlg.cpp:727
+#: core/libs/dialogs/libsinfodlg.cpp:730
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -30727,16 +30842,20 @@ msgid "List of Supported RAW Cameras"
 msgstr "Tuettujen RAW-kameroiden luettelo"
 
 #: core/libs/dialogs/rawcameradlg.cpp:125
-#, kde-format
-msgid "Using LibRaw version %2<br/>1 model on the list"
-msgid_plural "Using LibRaw version %2<br/>%1 models on the list"
+#, fuzzy, kde-format
+#| msgid "Using LibRaw version %2<br/>1 model on the list"
+#| msgid_plural "Using LibRaw version %2<br/>%1 models on the list"
+msgid "Using LibRaw version %2<br>1 model on the list"
+msgid_plural "Using LibRaw version %2<br>%1 models on the list"
 msgstr[0] "Käytössä LibRaw’n versio %2<br/>Luettelossa 1 malli"
 msgstr[1] "Käytössä LibRaw’n versio %2<br/>Luettelossa %1 mallia"
 
 #: core/libs/dialogs/rawcameradlg.cpp:135
-#, kde-format
-msgid "Using LibRaw version %2<br/>1 model on the list (found: %3)"
-msgid_plural "Using LibRaw version %2<br/>%1 models on the list (found: %3)"
+#, fuzzy, kde-format
+#| msgid "Using LibRaw version %2<br/>1 model on the list (found: %3)"
+#| msgid_plural "Using LibRaw version %2<br/>%1 models on the list (found: %3)"
+msgid "Using LibRaw version %2<br>1 model on the list (found: %3)"
+msgid_plural "Using LibRaw version %2<br>%1 models on the list (found: %3)"
 msgstr[0] "Käytössä LibRaw’n versio %2<br/>Luettelossa 1 malli (löytyi: %3)"
 msgstr[1] "Käytössä LibRaw’n versio %2<br/>Luettelossa %1 mallia (löytyi: %3)"
 
@@ -34373,13 +34492,13 @@ msgstr ""
 "Varoitus: ExifTool ei ole käytettävissä metatietojen jälkikäsittelyyn. Ilman "
 "sitä DNG ei sisällä kaikkia RAW-lähteen ominaisuuksia."
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:347
 #, fuzzy, kde-format
 #| msgid "YOLOv5 Nano"
 msgid "YOLOv11 Nano"
 msgstr "YOLOv5 Nano"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:351
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34389,13 +34508,13 @@ msgid ""
 "objects using the COCO dataset.</p>"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:354
 #, fuzzy, kde-format
 #| msgid "YOLOv5 XLarge"
 msgid "YOLOv11 XLarge"
 msgstr "YOLOv5 XLarge"
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:358
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34405,12 +34524,12 @@ msgid ""
 "recognize 80 different objects using the COCO dataset.</p>"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:361
 #, kde-format
 msgid "EfficientNet B7"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:365
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35521,7 +35640,7 @@ msgstr "Käsittele kohteet"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Seuraavien kuvien Exif-suuntien korjaus epäonnistui:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:371
+#: core/libs/fileactionmanager/fileworkeriface.cpp:378
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Seuraavien kuvien muunnos epäonnistui:"
@@ -35595,38 +35714,45 @@ msgid "Open filter settings panel"
 msgstr "Avaa suodatuspaneeli"
 
 #: core/libs/filters/filterstatusbar.cpp:121
-#, kde-format
-msgid "<br/><nobr><i>Text</i></nobr>"
+#, fuzzy, kde-format
+#| msgid "<br/><nobr><i>Text</i></nobr>"
+msgid "<br><nobr><i>Text</i></nobr>"
 msgstr "<br /><nobr><i>Teksti</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:126
-#, kde-format
-msgid "<br/><nobr><i>Mime Type</i></nobr>"
+#, fuzzy, kde-format
+#| msgid "<br/><nobr><i>Mime Type</i></nobr>"
+msgid "<br><nobr><i>Mime Type</i></nobr>"
 msgstr "<br /><nobr><i>MIME-tyyppi</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:131
-#, kde-format
-msgid "<br/><nobr><i>Geolocation</i></nobr>"
+#, fuzzy, kde-format
+#| msgid "<br/><nobr><i>Geolocation</i></nobr>"
+msgid "<br><nobr><i>Geolocation</i></nobr>"
 msgstr "<br/><nobr><i>Paikkasijainti</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:136
-#, kde-format
-msgid "<br/><nobr><i>Rating</i></nobr>"
+#, fuzzy, kde-format
+#| msgid "<br/><nobr><i>Rating</i></nobr>"
+msgid "<br><nobr><i>Rating</i></nobr>"
 msgstr "<br /><nobr><i>Arvio</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:141
-#, kde-format
-msgid "<br/><nobr><i>Pick Labels</i></nobr>"
+#, fuzzy, kde-format
+#| msgid "<br/><nobr><i>Pick Labels</i></nobr>"
+msgid "<br><nobr><i>Pick Labels</i></nobr>"
 msgstr "<br /><nobr><i>Poimintamerkit</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:146
-#, kde-format
-msgid "<br/><nobr><i>Color Labels</i></nobr>"
+#, fuzzy, kde-format
+#| msgid "<br/><nobr><i>Color Labels</i></nobr>"
+msgid "<br><nobr><i>Color Labels</i></nobr>"
 msgstr "<br /><nobr><i>Värimerkit</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:151
-#, kde-format
-msgid "<br/><nobr><i>Tags</i></nobr>"
+#, fuzzy, kde-format
+#| msgid "<br/><nobr><i>Tags</i></nobr>"
+msgid "<br><nobr><i>Tags</i></nobr>"
 msgstr "<br /><nobr><i>Tunnisteet</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:156
@@ -37686,7 +37812,7 @@ msgid ""
 "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
 "built on <i>%3</i> is available on this <a href='%4'>repository</a>.</"
 "p><p>Press <b>Download</b> to get the file...</p><p>Note: from Setup/Misc "
-"panel, you can switch to check for stable release only.<br/>Stable versions "
+"panel, you can switch to check for stable release only.<br>Stable versions "
 "are safe to use in production.</p><p>Press <b>Configure</b> if you want to "
 "customize update options from setup dialog.</p>"
 msgstr ""
@@ -37697,9 +37823,9 @@ msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
 "%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
 "<b>Download</b> to get the file...</p><p>Note: from Setup/Misc panel, you "
-"can switch to check for weekly pre-release.<br/>Pre-release versions are "
-"dedicated to test quickly new features.<br/>It is not recommended to use pre-"
-"releases in production as bugs can remain,<br/>unless you know what you are "
+"can switch to check for weekly pre-release.<br>Pre-release versions are "
+"dedicated to test quickly new features.<br>It is not recommended to use pre-"
+"releases in production as bugs can remain,<br>unless you know what you are "
 "doing.</p><p>Press <b>Configure</b> if you want to customize update options "
 "from setup dialog.</p>"
 msgstr ""
@@ -40737,11 +40863,15 @@ msgstr[0] "Poista luokitus"
 msgstr[1] "Poista luokitukset"
 
 #: core/libs/tags/manager/tagsmanager.cpp:492
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>digiKam will clean up tag metadata before setting tags from database."
+#| "<br/> You may <b>lose tags</b> if you did not read tags before (by "
+#| "calling Read Tags from Image).<br/> Do you want to continue?</qt>"
 msgid ""
-"<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
-"> You may <b>lose tags</b> if you did not read tags before (by calling Read "
-"Tags from Image).<br/> Do you want to continue?</qt>"
+"<qt>digiKam will clean up tag metadata before setting tags from database."
+"<br> You may <b>lose tags</b> if you did not read tags before (by calling "
+"Read Tags from Image).<br> Do you want to continue?</qt>"
 msgstr ""
 "<qt>digiKam siivoa luokitusmetatiedon ennen luokitusten asettamista "
 "tietokannasta.<br/>Luokituksia <b>voidaan menettää</b>, ellei niitä ole "
@@ -40939,12 +41069,19 @@ msgid "Enter tag name here..."
 msgstr "Anna tunnisteelle nimi…"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:138
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
+#| "can be used to create a tags hierarchy.<br/>Ex.: <i>\"Country/City/Paris"
+#| "\"</i></li><li>',' can be used to create more than one tags hierarchy at "
+#| "the same time.<br/>Ex.: <i>\"City/Paris, Monument/Notre-Dame\"</i></"
+#| "li><li>If a tag hierarchy starts with '/', root tag album is used as "
+#| "parent.</li></ul></p>"
 msgid ""
 "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
-"can be used to create a tags hierarchy.<br/>Ex.: <i>\"Country/City/Paris\"</"
+"can be used to create a tags hierarchy.<br>Ex.: <i>\"Country/City/Paris\"</"
 "i></li><li>',' can be used to create more than one tags hierarchy at the "
-"same time.<br/>Ex.: <i>\"City/Paris, Monument/Notre-Dame\"</i></li><li>If a "
+"same time.<br>Ex.: <i>\"City/Paris, Monument/Notre-Dame\"</i></li><li>If a "
 "tag hierarchy starts with '/', root tag album is used as parent.</li></ul></"
 "p>"
 msgstr ""
@@ -40981,13 +41118,15 @@ msgid "<b>Create New Tag</b>"
 msgstr "<b>Luo uusi tunniste</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:337
-#, kde-format
-msgid "<b>Create New Tag in<br/>\"%1\"</b>"
+#, fuzzy, kde-format
+#| msgid "<b>Create New Tag in<br/>\"%1\"</b>"
+msgid "<b>Create New Tag in<br>\"%1\"</b>"
 msgstr "<b>Luo uusi tunniste kohteeseen<br/>”%1”</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:343
-#, kde-format
-msgid "<b>Properties of Tag<br/>\"%1\"</b>"
+#, fuzzy, kde-format
+#| msgid "<b>Properties of Tag<br/>\"%1\"</b>"
+msgid "<b>Properties of Tag<br>\"%1\"</b>"
 msgstr "<b>Tunnisteen ”%1” ominaisuudet</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:515
@@ -41229,15 +41368,14 @@ msgid ""
 "circle with a \"c\" inside; using something like (c) where the parentheses "
 "form a partial circle is not sufficient. For additional protection "
 "worldwide, use of the phrase, \"all rights reserved\" following the notice "
-"above is encouraged. \n"
-"In Europe you would use: Copyright {Year} {Copyright owner}, all rights "
-"reserved. \n"
-"In Japan, for maximum protection, the following three items should appear in "
-"the copyright field of the IPTC Core: (a) the word, Copyright; (b) year of "
-"the first publication; and (c) name of the author. You may also wish to "
-"include the phrase \"all rights reserved\".</p><p>With XMP, you can include "
-"more than one copyright string using different languages.</p><p>With IPTC, "
-"this field is limited to 128 characters.</p>"
+"above is encouraged. <br>In Europe you would use: Copyright {Year} "
+"{Copyright owner}, all rights reserved. <br>In Japan, for maximum "
+"protection, the following three items should appear in the copyright field "
+"of the IPTC Core: (a) the word, Copyright; (b) year of the first "
+"publication; and (c) name of the author. You may also wish to include the "
+"phrase \"all rights reserved\".</p><p>With XMP, you can include more than "
+"one copyright string using different languages.</p><p>With IPTC, this field "
+"is limited to 128 characters.</p>"
 msgstr ""
 
 #: core/libs/template/templatepanel.cpp:154
@@ -41600,8 +41738,9 @@ msgstr ""
 "Kamerasi sisäisen kellon erot määritetään tällä asetuksella."
 
 #: core/libs/timeadjust/clockphotodialog.cpp:167
-#, kde-format
-msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
+#, fuzzy, kde-format
+#| msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
+msgid "<font color=\"red\"><b>Could not load<br>image %1.</b></font>"
 msgstr "<font color=\"red\"><b>Ei voitu ladata<br/>kuvaa %1.</b></font>"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:183
@@ -43606,8 +43745,8 @@ msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
 msgid ""
-"<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b><br/"
-">with the Power of <b>Open Source</b></font></qt>"
+"<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</"
+"b><br>with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
 "<qt><font color=\"white\">Hallitse <b>valokuviasi</b> ammattilaisen "
 "tavoin<br/><b>avoimen lähdekoodin</b> ohjelmalla.</font></qt>"
@@ -50252,17 +50391,23 @@ msgid "Editor Window"
 msgstr "Muokkausikkuna"
 
 #: core/showfoto/setup/showfotosetup.cpp:106
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></"
+#| "qt>"
 msgid ""
-"<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
+"<qt>Editor Window Settings<br><i>Customize editor window behavior</i></qt>"
 msgstr ""
 "<qt>Muokkausikkunan asetukset<br/><i>Mukauta muokkausikkunan toimintaa</i></"
 "qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:112
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
+#| "images and metadata</i></qt>"
 msgid ""
-"<qt>Embedded Image Information Management<br/><i>Setup relations between "
+"<qt>Embedded Image Information Management<br><i>Setup relations between "
 "images and metadata</i></qt>"
 msgstr ""
 "<qt>Metatietojen asetukset<br/><i>Valokuviin talletettujen metatietojen "
@@ -50279,7 +50424,7 @@ msgstr "Vihjeet"
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
 #| "tips</i></qt>"
 msgid ""
-"<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
+"<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br><i>Customize "
 "information in tool-tips</i></qt>"
 msgstr ""
 "<qt>Pienoiskuvien työkaluvihjeiden asetukset<br/><i>Mukauta työkaluvihjeissä "
@@ -50292,19 +50437,25 @@ msgid "RAW Decoding"
 msgstr "RAW-kuvatiedostot"
 
 #: core/showfoto/setup/showfotosetup.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
+#| "settings</i></qt>"
 msgid ""
-"<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
+"<qt>RAW Files Decoding Settings<br><i>Customize default RAW decoding "
 "settings</i></qt>"
 msgstr ""
 "<qt>RAW-kuvatiedostojen käsittely<br/><i>Määrittele raakakuvien "
 "käsittelytoiminnot</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:130
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Settings for Color Management<br/><i>Customize color management "
+#| "settings</i></qt>"
 msgid ""
-"<qt>Settings for Color Management<br/><i>Customize color management "
-"settings</i></qt>"
+"<qt>Settings for Color Management<br><i>Customize color management settings</"
+"i></qt>"
 msgstr ""
 "<qt>Värinhallinta-asetukset<br/><i>Määritä omat värinhallinta-asetukset</i></"
 "qt>"
@@ -50315,9 +50466,12 @@ msgid "Save Images"
 msgstr "Kuvien tallennus"
 
 #: core/showfoto/setup/showfotosetup.cpp:136
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Settings for Saving Image Files<br/><i>Set default configuration used "
+#| "to save images</i></qt>"
 msgid ""
-"<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
+"<qt>Settings for Saving Image Files<br><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr ""
 "<qt>Kuvien tallennuksen asetukset<br /><i>Määrittele oletusasetukset, joita "
@@ -50355,7 +50509,7 @@ msgstr "Liitännäiset"
 #| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
 #| "accessible from the main interface</i></qt>"
 msgid ""
-"<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
+"<qt>Main Interface Plug-in Settings<br><i>Set which plugins will be "
 "accessible from application</i></qt>"
 msgstr "<qt>Liitännäiset<br/><i>Määrittele käytettävät liitännäiset</i></qt>"
 
@@ -50366,9 +50520,12 @@ msgid "Miscellaneous"
 msgstr "Sekalaista"
 
 #: core/showfoto/setup/showfotosetup.cpp:157
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
+#| "of Showfoto</i></qt>"
 msgid ""
-"<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
+"<qt>Miscellaneous Settings<br><i>Customize behavior of the other parts of "
 "Showfoto</i></qt>"
 msgstr ""
 "<qt>Sekalaiset asetukset<br/><i>Mukauta Showfoton muiden osien toimintaa.</"
@@ -51680,9 +51837,13 @@ msgid "Default Value"
 msgstr "Oletusarvo"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Set a default value for empty strings.<br/>When applied to a renaming "
+#| "option, an empty string will be replaced by the value you specify here.</"
+#| "p>"
 msgid ""
-"<p>Set a default value for empty strings.<br/>When applied to a renaming "
+"<p>Set a default value for empty strings.<br>When applied to a renaming "
 "option, an empty string will be replaced by the value you specify here.</p>"
 msgstr ""
 "<p>Aseta tyhjien merkkijonojen oletusarvo.<br/>Nimiä muutettaessa tyhjä "
@@ -52637,10 +52798,14 @@ msgid "/Pictures"
 msgstr "/Valokuvat"
 
 #: core/utilities/firstrun/collectionpage.cpp:77
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Please enter a location where you keep your images.</p> <p>You can "
+#| "choose any local folder, even one that already contains images.<br/> More "
+#| "folders can be added later under the <i>Settings</i> menu. </p> "
 msgid ""
 "<p>Please enter a location where you keep your images.</p> <p>You can choose "
-"any local folder, even one that already contains images.<br/> More folders "
+"any local folder, even one that already contains images.<br> More folders "
 "can be added later under the <i>Settings</i> menu. </p> "
 msgstr ""
 "<p>Valitse sijainti, jossa säilytät kuviasi.</p><p>Voit valita minkä tahansa "
@@ -52688,10 +52853,13 @@ msgid "Create Root Album Folder Failed"
 msgstr "Juurialbumin luonti epäonnistui"
 
 #: core/utilities/firstrun/collectionpage.cpp:190
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>digiKam could not create the folder to use as the root album.\n"
+#| "Please select a different location.</p><p><b>%1</b></p>"
 msgid ""
-"<p>digiKam could not create the folder to use as the root album.\n"
-"Please select a different location.</p><p><b>%1</b></p>"
+"<p>digiKam could not create the folder to use as the root album.<br>Please "
+"select a different location.</p><p><b>%1</b></p>"
 msgstr ""
 "<p>Juurialbumia <p>”<b>%1</b>”</p> ei voitu luoda. Valitse uusi kansio "
 "juurialbumiksi.</p>"
@@ -52998,9 +53166,19 @@ msgstr ""
 "<p>Tämä on digiKamin versio %1.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><br/><p>You can ignore the following if you use digiKam for the first "
+#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
+#| "from digiKam 4 are not migrated. The old database can still be used, you "
+#| "just need to choose the same locations for collections and database in "
+#| "the following dialogs. It is recommended to create a backup of your "
+#| "database before proceeding.</p><p>The new location for configuration "
+#| "files is %1 (old %2). There are unresolved problems reported when re-"
+#| "using old configuration files, so it is not recommended to do it for the "
+#| "moment, and at your own risk.</p></qt>"
 msgid ""
-"<qt><br/><p>You can ignore the following if you use digiKam for the first "
+"<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
 "digiKam 4 are not migrated. The old database can still be used, you just "
 "need to choose the same locations for collections and database in the "
@@ -53299,8 +53477,8 @@ msgstr ""
 #| "p><p>You can also use the context menu<br/> when browsing through your "
 #| "images.</p>"
 msgid ""
-"<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-"p><p>You can also use the context menu<br/>when browsing through<br/>your "
+"<p>Drag & drop an image here<br>to perform similar<br>items search.</"
+"p><p>You can also use the context menu<br>when browsing through<br>your "
 "images.</p>"
 msgstr ""
 "<p>Voit hakea samankaltaisia kuvia<br/>pudottamalla kuvan tähän.</p> "
@@ -56136,30 +56314,39 @@ msgid "Circle Ruler"
 msgstr "Ympyräviivain"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:657
-#, kde-format
-msgid "Total Distance: %1<br/>\n"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Radius: %1<br/>\n"
+msgid "Total Distance: %1<br>\n"
+msgstr "Säde: %1<br/>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:661
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:684
-#, kde-format
-msgid "Area: %1<br/>\n"
+#, fuzzy, kde-format
+#| msgid "Area: %1<br/>\n"
+msgid "Area: %1<br>\n"
 msgstr "Ala: %1<br/>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:666
-#, kde-format
-msgid "Perimeter: %1<br/>\n"
+#, fuzzy, kde-format
+#| msgid ""
+#| "Perimeter:\n"
+#| "%1"
+msgid "Perimeter: %1<br>\n"
 msgstr ""
+"Piiri:\n"
+"%1"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:674
-#, kde-format
-msgid "Radius: %1<br/>\n"
+#, fuzzy, kde-format
+#| msgid "Radius: %1<br/>\n"
+msgid "Radius: %1<br>\n"
 msgstr "Säde: %1<br/>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:679
-#, kde-format
-msgid "Circumference: %1<br/>\n"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Circumference"
+msgid "Circumference: %1<br>\n"
+msgstr "Ympärysmitta"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:734
 #, kde-format
@@ -58268,25 +58455,35 @@ msgid "%1 - %2"
 msgstr "%1 – %2"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:204
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>This image has an <b>embedded color profile</b><br/> which does not "
+#| "match your working space color profile.<br/>How do you want to proceed?</"
+#| "p>"
 msgid ""
-"<p>This image has an <b>embedded color profile</b><br/> which does not match "
-"your working space color profile.<br/>How do you want to proceed?</p>"
+"<p>This image has an <b>embedded color profile</b><br> which does not match "
+"your working space color profile.<br>How do you want to proceed?</p>"
 msgstr ""
 "<p>Tällä kuvalla on <b>upotettu väriprofiili</b>,<br/> joka on eri kuin "
 "työtilasi väriprofiili.<br/>Miten haluat jatkaa?</p>"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:210
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>This image has an <b>embedded color profile</b><br/> which does not "
+#| "match your working space color profile.<br/>How do you want to proceed?</"
+#| "p>"
 msgid ""
-"<p>This image has <b>no information about the color space</b><br/>that was "
-"used when creating the image. <br/>How do you want to proceed?</p>"
+"<p>This image has <b>no information about the color space</b><br>that was "
+"used when creating the image. <br>How do you want to proceed?</p>"
 msgstr ""
+"<p>Tällä kuvalla on <b>upotettu väriprofiili</b>,<br/> joka on eri kuin "
+"työtilasi väriprofiili.<br/>Miten haluat jatkaa?</p>"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:217
 #, kde-format
 msgid ""
-"<p>The color information of this image is uncalibrated.<br/>How do you want "
+"<p>The color information of this image is uncalibrated.<br>How do you want "
 "to proceed?</p>"
 msgstr ""
 
@@ -61246,9 +61443,12 @@ msgid "Common Options"
 msgstr "Yleisasetukset"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:78
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>No option<br/><i>Note: only Albums Collection are processed by this "
+#| "tool.</i></qt>"
 msgid ""
-"<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
+"<qt>No option<br><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
 msgstr ""
 "<qt>Ei valintaa<br/><i>Huomaa: tämä työkalu käsittelee vain albumikokoelmia."
@@ -61263,7 +61463,7 @@ msgstr "Etsi uusia kuvia"
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
-"select additional databases for cleaning.<br/>If you select one of the "
+"select additional databases for cleaning.<br>If you select one of the "
 "options below, the process may take much time and can freeze digiKam "
 "temporarily in order to make sure that no database corruption occurs.</i></"
 "qt>"
@@ -63481,10 +63681,13 @@ msgid "At least one of these conditions is not met"
 msgstr "Ei täytä vähintään yhtä seuraavista ehdoista"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p>Search your collection<br/>for Items meeting the following "
+#| "conditions</p></qt>"
 msgid ""
-"<qt><p>Search your collection<br/>for Items meeting the following "
-"conditions</p></qt>"
+"<qt><p>Search your collection<br>for Items meeting the following conditions</"
+"p></qt>"
 msgstr ""
 "<qt><p>Etsi kokoelmastasi<br/> seuraavat ehdot täyttäviä kohteita</p></qt>"
 
@@ -64180,28 +64383,37 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/album/setupmime.cpp:302
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Files with these extensions will be recognized as images and included "
+#| "into the database:<br/> <code>%1</code></p>"
 msgid ""
 "<p>Files with these extensions will be recognized as images and included "
-"into the database:<br/> <code>%1</code></p>"
+"into the database:<br> <code>%1</code></p>"
 msgstr ""
 "<p>Tiedostot, joiden nimissä on nämä päätteet, tunnistetaan kuvatiedostoiksi "
 "ja sisällytetään tietokantaan:<br/> <code>%1</code></p>"
 
 #: core/utilities/setup/album/setupmime.cpp:312
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Files with these extensions will be recognized as video files and "
+#| "included into the database:<br/> <code>%1</code></p>"
 msgid ""
 "<p>Files with these extensions will be recognized as video files and "
-"included into the database:<br/> <code>%1</code></p>"
+"included into the database:<br> <code>%1</code></p>"
 msgstr ""
 "<p>Tiedostot, joiden nimissä on nämä päätteet, tunnistetaan "
 "videotiedostoiksi ja sisällytetään tietokantaan:<br/> <code>%1</code></p>"
 
 #: core/utilities/setup/album/setupmime.cpp:322
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Files with these extensions will be recognized as audio files and "
+#| "included into the database:<br/> <code>%1</code></p>"
 msgid ""
 "<p>Files with these extensions will be recognized as audio files and "
-"included into the database:<br/> <code>%1</code></p>"
+"included into the database:<br> <code>%1</code></p>"
 msgstr ""
 "<p>Tiedostot, joiden nimissä on nämä päätteet, tunnistetaan äänitiedostoiksi "
 "ja sisällytetään tietokantaan:<br/> <code>%1</code></p>"
@@ -64332,30 +64544,42 @@ msgstr ""
 "tähän kameran liitospiste.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:211
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>To set a <b>USB Mass Storage</b> camera<br/>(which looks like a "
+#| "removable drive when mounted<br/>on your desktop), please use<br/><a href="
+#| "\"umscamera\">%1</a> from the camera list.</p>"
 msgid ""
-"<p>To set a <b>USB Mass Storage</b> camera<br/>(which looks like a removable "
-"drive when mounted<br/>on your desktop), please use<br/><a href=\"umscamera"
-"\">%1</a> from the camera list.</p>"
+"<p>To set a <b>USB Mass Storage</b> camera<br>(which looks like a removable "
+"drive when mounted<br>on your desktop), please use<br><a href=\"umscamera\">"
+"%1</a> from the camera list.</p>"
 msgstr ""
 "<p>Jos kamera toimii <b>massamuistilaitteen</b> tavoin<br/>(muistikortti "
 "näkyy levyasemana), valitse luettelosta<br/><a href=\"umscamera\">%1</a>.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:218
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>To set a <b>Generic PTP USB Device</b><br/>(which uses Picture "
+#| "Transfer Protocol), please<br/>use <a href=\"ptpcamera\">%1</a> from the "
+#| "camera list.</p>"
 msgid ""
-"<p>To set a <b>Generic PTP USB Device</b><br/>(which uses Picture Transfer "
-"Protocol), please<br/>use <a href=\"ptpcamera\">%1</a> from the camera list."
-"</p>"
+"<p>To set a <b>Generic PTP USB Device</b><br>(which uses Picture Transfer "
+"Protocol), please<br>use <a href=\"ptpcamera\">%1</a> from the camera list.</"
+"p>"
 msgstr ""
 "<p>Mikäli kamerasi on yleinen <b>Picture Transfer Procotol</b> (PTP)-laite,"
 "<br />valitse luettelosta <a href=\"ptpcamera\">%1</a> .</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:224
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>To set a <b>Generic PTP/IP Network Device</b><br/>(which uses Picture "
+#| "Transfer Protocol), please<br/>use <a href=\"ptpipcamera\">%1</a> from "
+#| "the camera list.</p>"
 msgid ""
-"<p>To set a <b>Generic PTP/IP Network Device</b><br/>(which uses Picture "
-"Transfer Protocol), please<br/>use <a href=\"ptpipcamera\">%1</a> from the "
+"<p>To set a <b>Generic PTP/IP Network Device</b><br>(which uses Picture "
+"Transfer Protocol), please<br>use <a href=\"ptpipcamera\">%1</a> from the "
 "camera list.</p>"
 msgstr ""
 "<p>Asettaaksesi <b>yleisen PTP/IP-verkkolaitteen</b><br/>(joka käyttää "
@@ -64363,9 +64587,12 @@ msgstr ""
 "\"ptpipcamera\">%1</a>.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:231
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>A complete list of camera settings to use is<br/>available at <a "
+#| "href='https://www.figuiere.net/digicam/'>this URL</a>.</p>"
 msgid ""
-"<p>A complete list of camera settings to use is<br/>available at <a "
+"<p>A complete list of camera settings to use is<br>available at <a "
 "href='https://www.figuiere.net/digicam/'>this URL</a>.</p>"
 msgstr ""
 "<p>Käytettävien kamera-asetusten täyden luettelon<br/>löytää <a "
@@ -64765,7 +64992,7 @@ msgstr "Ohitetut kansiot"
 #: core/utilities/setup/collections/setupcollections.cpp:246
 #, kde-format
 msgid ""
-"<p>Directories starting with a dot are ignored by default.<br/> <code>%1</"
+"<p>Directories starting with a dot are ignored by default.<br> <code>%1</"
 "code></p>"
 msgstr ""
 
@@ -65632,10 +65859,14 @@ msgstr ""
 "Haluatko jatkaa?"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:395
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Advanced configuration menu allow you to manage metadata namespaces used "
+#| "by digiKam to store and retrieve tags, rating and comments.<br/><b>Note: "
+#| "</b>Order is important when reading metadata"
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
-"digiKam to store and retrieve tags, rating and comments.<br/><b>Note: </"
+"digiKam to store and retrieve tags, rating and comments.<br><b>Note: </"
 "b>Order is important when reading metadata"
 msgstr ""
 "Lisäasetusvalikosta hallitaan digiKamin luokitusten, arvostelujen ja "
@@ -65727,12 +65958,18 @@ msgid "Name:"
 msgstr "Nimi:"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:230
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>To create new namespaces, you need to specify parameters:</"
+#| "p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.digiKam.TagsList"
+#| "\"</i></li><li>Separator parameter, used by tag paths <br/>Ex.: \"City/"
+#| "Paris\" or \"City|Paris\"</li><li>Specify if only keyword or the whole "
+#| "path must be written.</li></ul></p>"
 msgid ""
 "<p>To create new namespaces, you need to specify parameters:</"
-"p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.digiKam.TagsList\"</"
-"i></li><li>Separator parameter, used by tag paths <br/>Ex.: \"City/Paris\" "
-"or \"City|Paris\"</li><li>Specify if only keyword or the whole path must be "
+"p><p><ul><li>Namespace name with dots.<br>Ex.: <i>\"Xmp.digiKam.TagsList\"</"
+"i></li><li>Separator parameter, used by tag paths <br>Ex.: \"City/Paris\" or "
+"\"City|Paris\"</li><li>Specify if only keyword or the whole path must be "
 "written.</li></ul></p>"
 msgstr ""
 "<p>Uusia nimiavaruuksia luotaessa vaaditaan parametrit:</"
@@ -65742,22 +65979,44 @@ msgstr ""
 "kirjoitetaanko vain hakusana vai koko sijainti.</li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:241
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>To create new namespaces, you need to specify parameters:</"
+#| "p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.digiKam.TagsList"
+#| "\"</i></li><li>Separator parameter, used by tag paths <br/>Ex.: \"City/"
+#| "Paris\" or \"City|Paris\"</li><li>Specify if only keyword or the whole "
+#| "path must be written.</li></ul></p>"
 msgid ""
 "<p>To create new rating namespaces, you need to specify parameters:</"
-"p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.xmp.Rating\"</i></"
-"li><li>Rating mappings, if namespace need other values than 0-5 <br/>Ex.: "
+"p><p><ul><li>Namespace name with dots.<br>Ex.: <i>\"Xmp.xmp.Rating\"</i></"
+"li><li>Rating mappings, if namespace need other values than 0-5 <br>Ex.: "
 "Microsoft uses 0 1 25 50 75 99</li><li>Select the correct namespace option "
 "from list.</li></ul></p>"
 msgstr ""
+"<p>Uusia nimiavaruuksia luotaessa vaaditaan parametrit:</"
+"p><p><ul><li>nimiavaruuden nimi (pistein)<br/>esim. <i>”Xmp.digiKam."
+"Luokitusluettelo”</i></li><li>luokituspolkujen käyttämä erotinparametri<br/"
+">esim. ”Kaupunki/Pariisi” tai ”Kaupunki|Pariisi”</li><li>Aseta, "
+"kirjoitetaanko vain hakusana vai koko sijainti.</li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:252
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>To create new namespaces, you need to specify parameters:</"
+#| "p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.digiKam.TagsList"
+#| "\"</i></li><li>Separator parameter, used by tag paths <br/>Ex.: \"City/"
+#| "Paris\" or \"City|Paris\"</li><li>Specify if only keyword or the whole "
+#| "path must be written.</li></ul></p>"
 msgid ""
 "<p>To create new comment namespaces, you need to specify parameters:</"
-"p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.xmp.Comment\"</i></"
+"p><p><ul><li>Namespace name with dots.<br>Ex.: <i>\"Xmp.xmp.Comment\"</i></"
 "li><li>Select the correct namespace option from list.</li></ul></p>"
 msgstr ""
+"<p>Uusia nimiavaruuksia luotaessa vaaditaan parametrit:</"
+"p><p><ul><li>nimiavaruuden nimi (pistein)<br/>esim. <i>”Xmp.digiKam."
+"Luokitusluettelo”</i></li><li>luokituspolkujen käyttämä erotinparametri<br/"
+">esim. ”Kaupunki/Pariisi” tai ”Kaupunki|Pariisi”</li><li>Aseta, "
+"kirjoitetaanko vain hakusana vai koko sijainti.</li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:261
 #, kde-format
@@ -67020,12 +67279,12 @@ msgstr "Tavallinen"
 #, kde-format
 msgid ""
 "<qt>Sets the way in which strings are compared inside digiKam. This eg. "
-"influences the sorting of the tree views.<br/><b>Natural</b> tries to "
-"compare strings in a way that regards some normal conventions and will eg. "
-"result in sorting numbers naturally even if they have a different number of "
-"digits.<br/><b>Normal</b> uses a more technical approach. Use this style if "
-"you eg. want to entitle albums with ISO dates (201006 or 20090523) and the "
-"albums should be sorted according to these dates.</qt>"
+"influences the sorting of the tree views.<br><b>Natural</b> tries to compare "
+"strings in a way that regards some normal conventions and will eg. result in "
+"sorting numbers naturally even if they have a different number of digits."
+"<br><b>Normal</b> uses a more technical approach. Use this style if you eg. "
+"want to entitle albums with ISO dates (201006 or 20090523) and the albums "
+"should be sorted according to these dates.</qt>"
 msgstr ""
 
 #: core/utilities/setup/misc/setupmisc.cpp:111
@@ -67068,11 +67327,16 @@ msgid "Perform the following operations on all group members:"
 msgstr "Tee kaikille ryhmän jäsenille seuraavat toimenpiteet:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:319
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "When images are grouped the following operations<br/>are performed only "
+#| "on the displayed item (No)<br/>or on all the hidden items in the group as "
+#| "well (Yes).<br/>If Ask is selected, there will be a prompt every<br/>time "
+#| "this operation is executed."
 msgid ""
-"When images are grouped the following operations<br/>are performed only on "
-"the displayed item (No)<br/>or on all the hidden items in the group as well "
-"(Yes).<br/>If Ask is selected, there will be a prompt every<br/>time this "
+"When images are grouped the following operations<br>are performed only on "
+"the displayed item (No)<br>or on all the hidden items in the group as well "
+"(Yes).<br>If Ask is selected, there will be a prompt every<br>time this "
 "operation is executed."
 msgstr ""
 "Kuvia ryhmiteltäessä seuraavat toimenpiteet tehdään<br/>näytetylle kohteelle "
@@ -68355,6 +68619,33 @@ msgstr "Albumit"
 msgid "Import Items"
 msgstr "Tuo kohteet"
 
+# Suomenkielisestä Wikipediasta löytyy toistaiseksi vain lyhyt alaluku RAW-kuvamuodon sivulta
+#, fuzzy
+#~| msgid ""
+#~| "<p>This Batch Queue Manager tool can convert RAW images data to DNG "
+#~| "format.</p><p>The Digital Negative is a lossless RAW image format "
+#~| "created by Adobe.</p><p>See details about this format from <a "
+#~| "href='https://en.wikipedia.org/wiki/Digital_Negative'>this page</a>.</p>"
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "This Generic tool can convert RAW images data to DNG format.\n"
+#~ "\n"
+#~ "The Digital Negative is a lossless RAW image format created by Adobe.\n"
+#~ "\n"
+#~ "See details on this wikipedia entry about this format: %1"
+#~ msgstr ""
+#~ "<p>Tällä eräajotyökalulla voi muuntaa RAW-kuvatietoa DNG-muotoon.</"
+#~ "p><p>DNG (digitaalinen negatiivi) on Adoben luoma häviötön RAW-kuvamuoto."
+#~ "</p><p>Lisätietoa tiedostomuodosta löytyy englanninkielisestä<a "
+#~ "href='https://en.wikipedia.org/wiki/Digital_Negative'>Wikipediasta</a>.</"
+#~ "p>"
+
+#, fuzzy
+#~| msgid "Base Tools"
+#~ msgctxt "@title"
+#~ msgid "Build Tools"
+#~ msgstr "Perustyökalut"
+
 #~ msgctxt "@title:tab"
 #~ msgid "Behaviour"
 #~ msgstr "Toiminta"
@@ -69509,9 +69800,6 @@ msgstr "Tuo kohteet"
 
 #~ msgid "Options:"
 #~ msgstr "Valinnat:"
-
-#~ msgid "Build version"
-#~ msgstr "Koosteversio"
 
 #~ msgid "Runtime version"
 #~ msgstr "Ajonaikaisversio"
@@ -73721,27 +74009,6 @@ msgstr "Tuo kohteet"
 #~ msgctxt "@action"
 #~ msgid "Reject"
 #~ msgstr "Hylätty"
-
-# Suomenkielisestä Wikipediasta löytyy toistaiseksi vain lyhyt alaluku RAW-kuvamuodon sivulta
-#, fuzzy
-#~| msgid ""
-#~| "<p>This Batch Queue Manager tool can convert RAW images data to DNG "
-#~| "format.</p><p>The Digital Negative is a lossless RAW image format "
-#~| "created by Adobe.</p><p>See details about this format from <a "
-#~| "href='https://en.wikipedia.org/wiki/Digital_Negative'>this page</a>.</p>"
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "This Generic tool can convert RAW images data to DNG format.\n"
-#~ "\n"
-#~ "<p>The Digital Negative is a lossless RAW image format created by Adobe.\n"
-#~ "\n"
-#~ "<p>See details on this wikipedia entry about this format: %1"
-#~ msgstr ""
-#~ "<p>Tällä eräajotyökalulla voi muuntaa RAW-kuvatietoa DNG-muotoon.</"
-#~ "p><p>DNG (digitaalinen negatiivi) on Adoben luoma häviötön RAW-kuvamuoto."
-#~ "</p><p>Lisätietoa tiedostomuodosta löytyy englanninkielisestä<a "
-#~ "href='https://en.wikipedia.org/wiki/Digital_Negative'>Wikipediasta</a>.</"
-#~ "p>"
 
 #, fuzzy
 #~| msgid "Metadata..."

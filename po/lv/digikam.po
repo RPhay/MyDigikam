@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-22 02:02+0000\n"
+"POT-Creation-Date: 2025-07-23 01:59+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1367,27 +1367,27 @@ msgstr "<i>nav pieejams</i>"
 msgid "Initializing..."
 msgstr "Inicializē..."
 
-#: core/app/main/digikamapp.cpp:161 core/showfoto/main/showfoto.cpp:110
+#: core/app/main/digikamapp.cpp:163 core/showfoto/main/showfoto.cpp:110
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Ielādē spraudņus..."
 
-#: core/app/main/digikamapp.cpp:185 core/showfoto/main/showfoto.cpp:92
+#: core/app/main/digikamapp.cpp:187 core/showfoto/main/showfoto.cpp:92
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Pārbauda ICC repozitoriju..."
 
-#: core/app/main/digikamapp.cpp:199
+#: core/app/main/digikamapp.cpp:201
 #, fuzzy, kde-format
 msgid "Clean up Database..."
 msgstr "Lasa datubāzi"
 
-#: core/app/main/digikamapp.cpp:221
+#: core/app/main/digikamapp.cpp:223
 #, kde-format
 msgid "Loading albums..."
 msgstr "Ielādē albumus..."
 
-#: core/app/main/digikamapp.cpp:381
+#: core/app/main/digikamapp.cpp:392
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1398,7 +1398,7 @@ msgstr ""
 "izvēlieties \"Jā\", pretējā gadījumā izvēlieties \"Nē\", un \"Krāsu "
 "pārvaldība\" tiks atslēgta, līdz jūs atrisināsiet šo problēmu.</p>"
 
-#: core/app/main/digikamapp.cpp:437
+#: core/app/main/digikamapp.cpp:448
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1407,7 +1407,7 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:725 core/app/views/stack/trashview.cpp:509
+#: core/app/main/digikamapp.cpp:736 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1415,7 +1415,7 @@ msgstr[0] "Nekas nav atlasīts (no %1)"
 msgstr[1] "Nekas nav atlasīts (no %1)"
 msgstr[2] "Nekas nav atlasīts (no %1)"
 
-#: core/app/main/digikamapp.cpp:731
+#: core/app/main/digikamapp.cpp:742
 #, fuzzy, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1423,7 +1423,7 @@ msgstr[0] "Nekas nav izvēlēts"
 msgstr[1] "Nekas nav izvēlēts"
 msgstr[2] "Nekas nav izvēlēts"
 
-#: core/app/main/digikamapp.cpp:736
+#: core/app/main/digikamapp.cpp:747
 #, fuzzy, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1431,7 +1431,7 @@ msgstr[0] "Nekas nav izvēlēts"
 msgstr[1] "Nekas nav izvēlēts"
 msgstr[2] "Nekas nav izvēlēts"
 
-#: core/app/main/digikamapp.cpp:747
+#: core/app/main/digikamapp.cpp:758
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1441,7 +1441,7 @@ msgstr[0] "izvēlēts %1/%2"
 msgstr[1] "izvēlēts %1/%2"
 msgstr[2] "izvēlēts %1/%2"
 
-#: core/app/main/digikamapp.cpp:760
+#: core/app/main/digikamapp.cpp:771
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1451,7 +1451,7 @@ msgstr[0] "izvēlēts %1/%2"
 msgstr[1] "izvēlēts %1/%2"
 msgstr[2] "izvēlēts %1/%2"
 
-#: core/app/main/digikamapp.cpp:768
+#: core/app/main/digikamapp.cpp:779
 #, fuzzy, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1459,7 +1459,7 @@ msgstr[0] "Nekas nav izvēlēts"
 msgstr[1] "Nekas nav izvēlēts"
 msgstr[2] "Nekas nav izvēlēts"
 
-#: core/app/main/digikamapp.cpp:776
+#: core/app/main/digikamapp.cpp:787
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1469,7 +1469,7 @@ msgstr[0] "izvēlēts %1/%2"
 msgstr[1] "izvēlēts %1/%2"
 msgstr[2] "izvēlēts %1/%2"
 
-#: core/app/main/digikamapp.cpp:785
+#: core/app/main/digikamapp.cpp:796
 #, fuzzy, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1477,22 +1477,22 @@ msgstr[0] "Nekas nav izvēlēts"
 msgstr[1] "Nekas nav izvēlēts"
 msgstr[2] "Nekas nav izvēlēts"
 
-#: core/app/main/digikamapp.cpp:816
+#: core/app/main/digikamapp.cpp:827
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1. no %2)"
 
-#: core/app/main/digikamapp.cpp:830
+#: core/app/main/digikamapp.cpp:841
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1. no %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:834
+#: core/app/main/digikamapp.cpp:845
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:845
+#: core/app/main/digikamapp.cpp:856
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1502,7 +1502,7 @@ msgstr[0] "%1 vienība"
 msgstr[1] "%1 vienības"
 msgstr[2] "%1 vienību"
 
-#: core/app/main/digikamapp.cpp:904
+#: core/app/main/digikamapp.cpp:915
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1510,7 +1510,7 @@ msgstr[0] "Ierakstīt metadatus attēlā"
 msgstr[1] "Ierakstīt metadatus atlasītajos attēlos"
 msgstr[2] "Ierakstīt metadatus atlasītajos attēlos"
 
-#: core/app/main/digikamapp.cpp:906
+#: core/app/main/digikamapp.cpp:917
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -3708,8 +3708,9 @@ msgid "...and much more."
 msgstr "...un daudz kā cita."
 
 #: core/app/views/stack/welcomepageview.cpp:167
-#, kde-format
-msgid "<li>%1</li>\n"
+#, fuzzy, kde-format
+#| msgid "<li>%1</li>\n"
+msgid "<li>%1</li><br>"
 msgstr "<li>%1</li>\n"
 
 #: core/app/views/stack/welcomepageview.cpp:170
@@ -4550,8 +4551,8 @@ msgstr ""
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:568 core/libs/dialogs/libsinfodlg.cpp:574
-#: core/libs/dialogs/libsinfodlg.cpp:649
+#: core/libs/dialogs/libsinfodlg.cpp:571 core/libs/dialogs/libsinfodlg.cpp:577
+#: core/libs/dialogs/libsinfodlg.cpp:652
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "no entry"
@@ -6005,11 +6006,11 @@ msgstr "Samazināt tekstūru"
 #, kde-format
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
-"p><p><b>None</b>: Most common values. Puts settings to default.<br/"
-"><b>Reduce Uniform Noise</b>: reduce small image artifacts such as sensor "
-"noise.<br/><b>Reduce JPEG Artifacts</b>: reduce large image artifacts, such "
-"as a JPEG compression mosaic.<br/><b>Reduce Texturing</b>: reduce image "
-"artifacts, such as paper texture, or Moire patterns on scanned images.</p>"
+"p><p><b>None</b>: Most common values. Puts settings to default.<br><b>Reduce "
+"Uniform Noise</b>: reduce small image artifacts such as sensor noise."
+"<br><b>Reduce JPEG Artifacts</b>: reduce large image artifacts, such as a "
+"JPEG compression mosaic.<br><b>Reduce Texturing</b>: reduce image artifacts, "
+"such as paper texture, or Moire patterns on scanned images.</p>"
 msgstr ""
 
 #: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:42
@@ -6914,10 +6915,10 @@ msgstr "PGF kvalitāte:"
 #| "lossless image compression format when you use this setting.</b></p>"
 msgid ""
 "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
-"compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-"b>: good quality (default)<br/><b>100</b>: high quality (no compression and "
-"large file size)</p><p><b>Note: HEIF is not a lossless image compression "
-"format when you use this setting.</b></p>"
+"compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
+"good quality (default)<br><b>100</b>: high quality (no compression and large "
+"file size)</p><p><b>Note: HEIF is not a lossless image compression format "
+"when you use this setting.</b></p>"
 msgstr ""
 "<p>JPEG 2000 attēlu kvalitāte:</p><p><b>1</b>: zema kvalitāte (augsta "
 "saspiešana un mazs faila izmērs)<br/><b>50</b>: vidēja kvalitāte </"
@@ -7054,11 +7055,16 @@ msgid "JPEG quality:"
 msgstr "JPEG kvalitāte:"
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The JPEG quality:</p><p><b>1</b>: low quality (high compression and "
+#| "small file size)<br/><b>50</b>: medium quality<br/><b>75</b>: good "
+#| "quality (default)<br/><b>100</b>: high quality (no compression and large "
+#| "file size)</p><p><b>Note: JPEG always uses lossy compression.</b></p>"
 msgid ""
 "<p>The JPEG quality:</p><p><b>1</b>: low quality (high compression and small "
-"file size)<br/><b>50</b>: medium quality<br/><b>75</b>: good quality "
-"(default)<br/><b>100</b>: high quality (no compression and large file size)</"
+"file size)<br><b>50</b>: medium quality<br><b>75</b>: good quality "
+"(default)<br><b>100</b>: high quality (no compression and large file size)</"
 "p><p><b>Note: JPEG always uses lossy compression.</b></p>"
 msgstr ""
 "<p>JPEG attēlu kvalitāte:</p><p><b>1</b>: zema kvalitāte (augsta saspiešanas "
@@ -7171,13 +7177,19 @@ msgid "JPEG 2000 quality:"
 msgstr "JPEG 2000 kvalitāte:"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:73
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality "
+#| "(high compression and small file size)<br/><b>50</b>: medium quality<br/"
+#| "><b>75</b>: good quality (default)<br/><b>100</b>: high quality (no "
+#| "compression and large file size)</p><p><b>Note: JPEG 2000 is not a "
+#| "lossless image compression format when you use this setting.</b></p>"
 msgid ""
 "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality (high "
-"compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-"b>: good quality (default)<br/><b>100</b>: high quality (no compression and "
-"large file size)</p><p><b>Note: JPEG 2000 is not a lossless image "
-"compression format when you use this setting.</b></p>"
+"compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
+"good quality (default)<br><b>100</b>: high quality (no compression and large "
+"file size)</p><p><b>Note: JPEG 2000 is not a lossless image compression "
+"format when you use this setting.</b></p>"
 msgstr ""
 "<p>JPEG 2000 attēlu kvalitāte:</p><p><b>1</b>: zema kvalitāte (augsta "
 "saspiešana un mazs faila izmērs)<br/><b>50</b>: vidēja kvalitāte </"
@@ -7290,13 +7302,19 @@ msgid "PGF quality:"
 msgstr "PGF kvalitāte:"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "
+#| "compression and large file size)<br/><b>3</b>: good quality (default)<br/"
+#| "><b>6</b>: medium quality<br/><b>9</b>: low quality (high compression and "
+#| "small file size)</p><p><b>Note: PGF is not a lossless image compression "
+#| "format when you use this setting.</b></p>"
 msgid ""
 "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "
-"compression and large file size)<br/><b>3</b>: good quality (default)<br/"
-"><b>6</b>: medium quality<br/><b>9</b>: low quality (high compression and "
-"small file size)</p><p><b>Note: PGF is not a lossless image compression "
-"format when you use this setting.</b></p>"
+"compression and large file size)<br><b>3</b>: good quality "
+"(default)<br><b>6</b>: medium quality<br><b>9</b>: low quality (high "
+"compression and small file size)</p><p><b>Note: PGF is not a lossless image "
+"compression format when you use this setting.</b></p>"
 msgstr ""
 "<p>PGF attēlu kvalitāte:</p><p><b>1</b>: zema kvalitāte (augsta saspiešana "
 "un mazs faila izmērs)<br/><b>50</b>: vidēja kvalitāte </p><p><b>75</b>: laba "
@@ -7344,11 +7362,17 @@ msgid "PNG compression:"
 msgstr "PNG saspiešana:"
 
 #: core/dplugins/dimg/png/dimgpngexportsettings.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The compression value for PNG images:</p><p><b>1</b>: low compression "
+#| "(large file size but short compression duration - default)<br/><b>5</b>: "
+#| "medium compression<br/><b>9</b>: high compression (small file size but "
+#| "long compression duration)</p><p><b>Note: PNG is always a lossless image "
+#| "compression format.</b></p>"
 msgid ""
 "<p>The compression value for PNG images:</p><p><b>1</b>: low compression "
-"(large file size but short compression duration - default)<br/><b>5</b>: "
-"medium compression<br/><b>9</b>: high compression (small file size but long "
+"(large file size but short compression duration - default)<br><b>5</b>: "
+"medium compression<br><b>9</b>: high compression (small file size but long "
 "compression duration)</p><p><b>Note: PNG is always a lossless image "
 "compression format.</b></p>"
 msgstr ""
@@ -7422,10 +7446,10 @@ msgstr "PGF kvalitāte:"
 #| "lossless image compression format when you use this setting.</b></p>"
 msgid ""
 "<p>The quality value for AVIF images:</p><p><b>1</b>: low quality (high "
-"compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-"b>: good quality (default)<br/><b>99</b>: high quality (no compression and "
-"large file size)</p><p><b>Note: AVIF is not a lossless image compression "
-"format when you use this setting.</b></p>"
+"compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
+"good quality (default)<br><b>99</b>: high quality (no compression and large "
+"file size)</p><p><b>Note: AVIF is not a lossless image compression format "
+"when you use this setting.</b></p>"
 msgstr ""
 "<p>JPEG 2000 attēlu kvalitāte:</p><p><b>1</b>: zema kvalitāte (augsta "
 "saspiešana un mazs faila izmērs)<br/><b>50</b>: vidēja kvalitāte </"
@@ -7469,10 +7493,10 @@ msgstr "JPEG kvalitāte:"
 #| "lossless image compression format when you use this setting.</b></p>"
 msgid ""
 "<p>The quality value for JPEG XL images:</p><p><b>1</b>: low quality (high "
-"compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-"b>: good quality (default)<br/><b>99</b>: high quality (no compression and "
-"large file size)</p><p><b>Note: JPEG XL is not a lossless image compression "
-"format when you use this setting.</b></p>"
+"compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
+"good quality (default)<br><b>99</b>: high quality (no compression and large "
+"file size)</p><p><b>Note: JPEG XL is not a lossless image compression format "
+"when you use this setting.</b></p>"
 msgstr ""
 "<p>JPEG 2000 attēlu kvalitāte:</p><p><b>1</b>: zema kvalitāte (augsta "
 "saspiešana un mazs faila izmērs)<br/><b>50</b>: vidēja kvalitāte </"
@@ -7540,10 +7564,10 @@ msgstr "PGF kvalitāte:"
 #| "lossless image compression format when you use this setting.</b></p>"
 msgid ""
 "<p>The quality value for WEBP images:</p><p><b>1</b>: low quality (high "
-"compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-"b>: good quality (default)<br/><b>99</b>: high quality (no compression and "
-"large file size)</p><p><b>Note: WEBP is not a lossless image compression "
-"format when you use this setting.</b></p>"
+"compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
+"good quality (default)<br><b>99</b>: high quality (no compression and large "
+"file size)</p><p><b>Note: WEBP is not a lossless image compression format "
+"when you use this setting.</b></p>"
 msgstr ""
 "<p>JPEG 2000 attēlu kvalitāte:</p><p><b>1</b>: zema kvalitāte (augsta "
 "saspiešana un mazs faila izmērs)<br/><b>50</b>: vidēja kvalitāte </"
@@ -8668,13 +8692,13 @@ msgstr ""
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:191
 #, kde-format
 msgid ""
-"<p>How To Use:<br/><br/>* Press <b>s</b> to switch to source-selection mode, "
-"and select source point on image.<br/>* Press <b>s</b> again and start "
-"cloning.<br/>* Press <b>[</b> and <b>]</b> to change brush size.<br/>* Press "
-"<b>CTRL+Mousewheel</b> to zoom in/out.<br/>* Press <b>m</b> to pan the image "
-"if image is larger than viewport.<br/>* Press <b>l</b> to start lasso mode. "
+"<p>How To Use:<br><br>* Press <b>s</b> to switch to source-selection mode, "
+"and select source point on image.<br>* Press <b>s</b> again and start "
+"cloning.<br>* Press <b>[</b> and <b>]</b> to change brush size.<br>* Press "
+"<b>CTRL+Mousewheel</b> to zoom in/out.<br>* Press <b>m</b> to pan the image "
+"if image is larger than viewport.<br>* Press <b>l</b> to start lasso mode. "
 "Start drawing lasso boundary either continuously or discretely, then double-"
-"click or press l again to close the boundary.<br/>* Inside lasso mode, you "
+"click or press l again to close the boundary.<br>* Inside lasso mode, you "
 "can clone only inside the lasso region.</p>"
 msgstr ""
 
@@ -8964,11 +8988,11 @@ msgstr "Pielāgoti"
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
 "p><p><b>Reduce Uniform Noise</b>: reduce small image artifacts such as "
-"sensor noise.<br/><b>Reduce JPEG Artifacts</b>: reduce large image "
-"artifacts, such as a JPEG compression mosaic.<br/><b>Reduce Texturing</b>: "
-"reduce image artifacts, such as paper texture, or Moire patterns on scanned "
-"images.<br/><b>Custom</b>: Puts settings to most common values, fully "
-"customizable.</p>"
+"sensor noise.<br><b>Reduce JPEG Artifacts</b>: reduce large image artifacts, "
+"such as a JPEG compression mosaic.<br><b>Reduce Texturing</b>: reduce image "
+"artifacts, such as paper texture, or Moire patterns on scanned images."
+"<br><b>Custom</b>: Puts settings to most common values, fully customizable.</"
+"p>"
 msgstr ""
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:321
@@ -10238,7 +10262,7 @@ msgstr "Koriģēt"
 #, kde-format
 msgid ""
 "<p>Correct the rotation of your images automatically by assigning two points "
-"in the preview widget and clicking <i>Adjust</i>.<br/>You can either adjust "
+"in the preview widget and clicking <i>Adjust</i>.<br>You can either adjust "
 "horizontal or vertical lines.</p>"
 msgstr ""
 
@@ -11425,11 +11449,11 @@ msgstr "Attēlu saglabāšana"
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:401
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:373
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:741
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:429
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:438
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:476
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:513
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1008
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:430
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:441
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:481
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:520
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1016
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:661
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:351
 #: core/libs/dplugins/webservices/wslogindialog.cpp:159
@@ -11523,16 +11547,12 @@ msgstr "Pievienot filmas graudainību"
 #, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to change geolocation information from items.\n"
-"\n"
-"This tool can edit GPS data, manually or over a map. Reverse geo-coding is "
-"also available through web services.\n"
-"\n"
-"This tool has also an export function to KML to store map traces in Google "
-"format.\n"
-"\n"
-"Finally, this tool is able to read a GPS trace from a device to synchronize "
-"geo-location of items if you camera do not have an embedded GPS device."
+"This tool allows users to change geolocation information from items."
+"<br><br>This tool can edit GPS data, manually or over a map. Reverse geo-"
+"coding is also available through web services.<br><br>This tool has also an "
+"export function to KML to store map traces in Google format.<br><br>Finally, "
+"this tool is able to read a GPS trace from a device to synchronize geo-"
+"location of items if you camera do not have an embedded GPS device."
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:103
@@ -14813,13 +14833,10 @@ msgstr "Rīks metadatu sagataves pielietošanai"
 #, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to changes plenty of metadata from items.\n"
-"\n"
-"Most common Exif, Iptc, and Xmp tags used in photography are listed for "
-"editing with standardized values.\n"
-"\n"
-"For photo agencies, pre-configured subjects can be used to describe the "
-"items contents based on Iptc reference codes."
+"This tool allows users to changes plenty of metadata from items.<br><br>Most "
+"common Exif, Iptc, and Xmp tags used in photography are listed for editing "
+"with standardized values.<br><br>For photo agencies, pre-configured subjects "
+"can be used to describe the items contents based on Iptc reference codes."
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:101
@@ -15759,13 +15776,11 @@ msgstr "Pievienot filmas graudainību"
 #, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to adjust date time-stamp of items in batch.\n"
-"\n"
-"Many source of original time-stamp can be selected from original items, or a "
-"from a common file.\n"
-"\n"
-"Many metadata time-stamp can be adjusted or left untouched. The adjustment "
-"can be an offset of time or a specific date."
+"This tool allows users to adjust date time-stamp of items in batch."
+"<br><br>Many source of original time-stamp can be selected from original "
+"items, or a from a common file.<br><br>Many metadata time-stamp can be "
+"adjusted or left untouched. The adjustment can be an offset of time or a "
+"specific date."
 msgstr ""
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:105
@@ -16065,21 +16080,21 @@ msgstr "%1 - izvēlieties fotoaparāta mapi"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:202
 #, kde-format
-msgid "No valid images selected for months<br/>Click Back to select images"
+msgid "No valid images selected for months<br>Click Back to select images"
 msgstr ""
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:217
 #, kde-format
 msgid ""
-"Please note that you are making a calendar for<br/>the current year or a "
-"year in the past."
+"Please note that you are making a calendar for<br>the current year or a year "
+"in the past."
 msgstr ""
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:224
 #, kde-format
 msgid ""
-"Click Next to start Printing<br/><br/>Following months will be printed for "
-"year %1:<br/>"
+"Click Next to start Printing<br><br>Following months will be printed for "
+"year %1:<br>"
 msgstr ""
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:275
@@ -16234,11 +16249,9 @@ msgstr "Rīks attēlu pārveidošanai uz PNG formātu."
 #, kde-format
 msgctxt "@info"
 msgid ""
-"This Generic tool can convert RAW images data to DNG format.\n"
-"\n"
-"The Digital Negative is a lossless RAW image format created by Adobe.\n"
-"\n"
-"See details on this wikipedia entry about this format: %1"
+"This Generic tool can convert RAW images data to DNG format.<br><br>The "
+"Digital Negative is a lossless RAW image format created by Adobe.<br><br>See "
+"details on this wikipedia entry about this format: %1"
 msgstr ""
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:107
@@ -17425,8 +17438,9 @@ msgid "no customization available"
 msgstr "Nav opciju"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
-#, kde-format
-msgid "Author: %1<br/><br/>"
+#, fuzzy, kde-format
+#| msgid "Author: %1<br/><br/>"
+msgid "Author: %1<br><br>"
 msgstr "Autors: %1<br/><br/>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
@@ -17640,10 +17654,9 @@ msgctxt "@info"
 msgid ""
 "The media server allows to share items through the local network using %1 "
 "standard and %2 protocol. Many kind of electronic devices can support DLNA, "
-"as tablets, cellulars, TV, etc.\n"
-"\n"
-"Note: depending of the network features and the configuration, the delay to "
-"discover the server on client devices can take a while."
+"as tablets, cellulars, TV, etc.<br><br>Note: depending of the network "
+"features and the configuration, the delay to discover the server on client "
+"devices can take a while."
 msgstr ""
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:209
@@ -18359,12 +18372,9 @@ msgctxt "@info"
 msgid ""
 "This tool can convert documented images data to Text format by using "
 "Tesseract, an open-source Optical Characters Recognition engine, originally "
-"developed at HP labs and now sponsored by Google.\n"
-"\n"
-"It supports multiple languages and scripts (including right-to-left text) "
-"and page layout analysis.\n"
-"\n"
-"See details on %1 for more information on Tesseract"
+"developed at HP labs and now sponsored by Google.<br><br>It supports "
+"multiple languages and scripts (including right-to-left text) and page "
+"layout analysis.<br><br>See details on %1 for more information on Tesseract"
 msgstr ""
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:95
@@ -19934,8 +19944,8 @@ msgid "Image properties file done"
 msgstr "Attēla īpašības"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:345
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:974
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:987
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:982
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:995
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Processing Failed"
@@ -20221,12 +20231,22 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:175
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:137
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The compression value for PNG images:</p><p><b>1</b>: low compression "
+#| "(large file size but short compression duration - default)<br/><b>5</b>: "
+#| "medium compression<br/><b>9</b>: high compression (small file size but "
+#| "long compression duration)</p><p><b>Note: PNG is always a lossless image "
+#| "compression format.</b></p>"
 msgid ""
-"<p><b>1</b>: very high compression<br/><b>25</b>: high compression<br/"
-"><b>50</b>: medium compression<br/><b>75</b>: low compression (default "
-"value)<br/><b>100</b>: no compression</p>"
+"<p><b>1</b>: very high compression<br><b>25</b>: high compression<br><b>50</"
+"b>: medium compression<br><b>75</b>: low compression (default "
+"value)<br><b>100</b>: no compression</p>"
 msgstr ""
+"<p>PNG attēlu saspiešanas pakāpe:</p><p><b>1</b>: neliela (liels faila "
+"izmērs, bet ātra saspiešana - noklusētais)<br/><b>5</b>: vidēja<br/><b>9</"
+"b>: augsta (mazs fails, bet ilga saspiešana)</p><p><b>Piezīme: PNG vienmēr "
+"ir bezzudumu attēlu saspiešanas formāts.</b></p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
@@ -21456,12 +21476,10 @@ msgstr "Tvert attēlu..."
 #, kde-format
 msgctxt "@info"
 msgid ""
-"This tool render a series of items as an advanced slide-show.\n"
-"\n"
-"Plenty of transition effects are available are ones based on OpenGL and the "
-"famous Ken Burns effect.\n"
-"\n"
-"You can add a sound-track in background while your presentation."
+"This tool render a series of items as an advanced slide-show.<br><br>Plenty "
+"of transition effects are available are ones based on OpenGL and the famous "
+"Ken Burns effect.<br><br>You can add a sound-track in background while your "
+"presentation."
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:104
@@ -21943,9 +21961,8 @@ msgstr "Importēti vērtējumi"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Box web-service.\n"
-"\n"
-"See Box web site for details: %1"
+"This tool allows users to export items to Box web-service.<br><br>See Box "
+"web site for details: %1"
 msgstr "Importēti vērtējumi"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:91
@@ -22090,7 +22107,7 @@ msgstr "Sākuma indekss:"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:319
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:323
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:638
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:907
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:915
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:322
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:440
 #, fuzzy, kde-format
@@ -22193,8 +22210,8 @@ msgstr ""
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:481
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:230
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:283
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:747
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:783
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:755
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:791
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:283
 #, kde-format
 msgid "%v / %m"
@@ -22291,8 +22308,8 @@ msgstr ""
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:462
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:428
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:586
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:869
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:883
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:877
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:891
 #, fuzzy, kde-format
 msgid "Cannot open file"
 msgstr "Neizdevās parsēt %1 GPX failu!"
@@ -22473,9 +22490,9 @@ msgstr "Doties uz pirmo vienību"
 #| "compression format.</b></p>"
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
-"high compression<br/><b>25</b>: high compression<br/><b>50</b>: medium "
-"compression<br/><b>75</b>: low compression (default value)<br/><b>100</b>: "
-"no compression</p>"
+"high compression<br><b>25</b>: high compression<br><b>50</b>: medium "
+"compression<br><b>75</b>: low compression (default value)<br><b>100</b>: no "
+"compression</p>"
 msgstr ""
 "<p>PNG attēlu saspiešanas pakāpe:</p><p><b>1</b>: neliela (liels faila "
 "izmērs, bet ātra saspiešana - noklusētais)<br/><b>5</b>: vidēja<br/><b>9</"
@@ -22677,9 +22694,8 @@ msgstr "Pievienot filmas graudainību"
 #| msgid "Add film grain"
 msgctxt "@info"
 msgid ""
-"This tool allows users to export and import items with a remote location.\n"
-"\n"
-"Many protocols can be used, as FTP, SFTP, SAMBA, etc."
+"This tool allows users to export and import items with a remote location."
+"<br><br>Many protocols can be used, as FTP, SFTP, SAMBA, etc."
 msgstr "Pievienot filmas graudainību"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
@@ -22757,9 +22773,8 @@ msgstr "Rīks attēlu pārveidošanai uz PGF formātu."
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Flickr web-service.\n"
-"\n"
-"See Flickr web site for details: %1"
+"This tool allows users to export items to Flickr web-service.<br><br>See "
+"Flickr web site for details: %1"
 msgstr "Importēti vērtējumi"
 
 #: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:104
@@ -23282,11 +23297,9 @@ msgstr "Importēti vērtējumi"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export and import items with Google web-services.\n"
-"\n"
-"Google Photos and Google Drive web services are supported.\n"
-"\n"
-"See Google web sites for details: %1"
+"This tool allows users to export and import items with Google web-services."
+"<br><br>Google Photos and Google Drive web services are supported."
+"<br><br>See Google web sites for details: %1"
 msgstr "Importēti vērtējumi"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:104
@@ -23634,7 +23647,7 @@ msgid ""
 msgstr "Augstums"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1324
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:657
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:665
 #, fuzzy, kde-format
 #| msgctxt "@title: dialog"
 #| msgid "Warning"
@@ -23651,7 +23664,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1329
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:662
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
 #, fuzzy, kde-format
 #| msgid "Continue"
 msgctxt "@action: button change user"
@@ -23659,7 +23672,7 @@ msgid "Continue"
 msgstr "Turpināt"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1330
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:663
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:671
 #, fuzzy, kde-format
 #| msgid "Cancel"
 msgctxt "@action: button change user"
@@ -24465,9 +24478,8 @@ msgstr "Importēti vērtējumi"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to IPFS web-service.\n"
-"\n"
-"See IPFS web site for details: %1"
+"This tool allows users to export items to IPFS web-service.<br><br>See IPFS "
+"web site for details: %1"
 msgstr "Importēti vērtējumi"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:96
@@ -24529,9 +24541,8 @@ msgstr "Importēti vērtējumi"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to MediaWiki web-service.\n"
-"\n"
-"See MediaWiki web site for details: %1"
+"This tool allows users to export items to MediaWiki web-service.<br><br>See "
+"MediaWiki web site for details: %1"
 msgstr "Importēti vērtējumi"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:101
@@ -25131,9 +25142,8 @@ msgstr "Importēti vērtējumi"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Pinterest web-service.\n"
-"\n"
-"See Pinterest web site for details: %1"
+"This tool allows users to export items to Pinterest web-service.<br><br>See "
+"Pinterest web site for details: %1"
 msgstr "Importēti vērtējumi"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:92
@@ -25488,9 +25498,8 @@ msgstr "Importēti vērtējumi"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export items to Rajce web-service.\n"
-"\n"
-"See Rajce web site for details: %1"
+"This tool allows users to export items to Rajce web-service.<br><br>See "
+"Rajce web site for details: %1"
 msgstr "Importēti vērtējumi"
 
 #: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:96
@@ -25724,9 +25733,8 @@ msgstr "Importēti vērtējumi"
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
-"This tool allows users to export and import items with SmugMug web-service.\n"
-"\n"
-"See SmugMug web site for details: %1"
+"This tool allows users to export and import items with SmugMug web-service."
+"<br><br>See SmugMug web site for details: %1"
 msgstr "Importēti vērtējumi"
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:102
@@ -25915,40 +25923,40 @@ msgctxt "@info:tooltip, button"
 msgid "Start upload to SmugMug web service"
 msgstr "Izvēlieties augšupielādējamo attēlu"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:429
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:438
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:476
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:513
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1008
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:431
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:482
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:521
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1016
 #, fuzzy, kde-format
 msgid "SmugMug call failed: %1\n"
 msgstr "Augstums"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:509
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:515
 #, kde-format
 msgid "&lt;none&gt;"
 msgstr ""
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:658
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:666
 #, kde-format
 msgid ""
 "You will be logged out of your account, click \"Continue\" to authenticate "
 "for another account."
 msgstr ""
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:750
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:758
 #, fuzzy, kde-format
 #| msgid "Import"
 msgid "SmugMug Import"
 msgstr "Importēt"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:786
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:794
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "SmugMug Export"
 msgstr "Eksportēt"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:908
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:916
 #, fuzzy, kde-format
 msgid ""
 "Failed to upload photo to SmugMug.\n"
@@ -25956,14 +25964,14 @@ msgid ""
 "Do you want to continue?"
 msgstr "Tags '%2' piešķirts %1 failam. Vai vēlaties turpināt?"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:975
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:983
 #, fuzzy, kde-format
 msgid ""
 "Failed to save photo: %1\n"
 "Do you want to continue?"
 msgstr "Tags '%2' piešķirts %1 failam. Vai vēlaties turpināt?"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:988
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:996
 #, fuzzy, kde-format
 msgid ""
 "Failed to download photo: %1\n"
@@ -26443,25 +26451,25 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Krāsu telpas pārveide"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:347
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:346
 #, fuzzy, kde-format
 msgid "Unable to load image"
 msgstr ""
 "Neizdevās ielādēt attēlu\n"
 "\"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:471
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:470
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "Pēcapstrāde"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:512
 #, fuzzy, kde-format
 msgid "Auto-rotating: %1\n"
 msgstr "Mērīšanas režīms"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -26474,13 +26482,13 @@ msgstr "Mērīšanas režīms"
 msgid "Album: %1\n"
 msgstr "Albums \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "Pagriešana:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:537
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:536
 #, kde-format
 msgid "Skipped"
 msgstr ""
@@ -26588,14 +26596,13 @@ msgstr "Šeit var norādīt teksta krāsu."
 #, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
-"wizard, delete the file:<br/>%1</p>"
+"wizard, delete the file:<br>%1</p>"
 msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:157
 #, fuzzy, kde-format
 msgid ""
-"An error occurred during the internal server start.<p>Details:\n"
-"%1</p>"
+"An error occurred during the internal server start.<p>Details:<br>%1</p>"
 msgstr ""
 "Kļūda atverot datubāzes aizmuguri.\n"
 " "
@@ -26675,33 +26682,38 @@ msgstr ""
 "spiediet 'Nē' un izlabojiet jūsu lokāles iestatījumu, tad pārstartējiet "
 "digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:309
+#: core/libs/album/manager/albummanager_database.cpp:310
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
 #| "on your system.<br/> Please choose the most appropriate option to handle "
 #| "this situation:</p>"
 msgid ""
-"<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
-"your system.<br/> Please choose the most appropriate  option to handle this "
+"<p>The collection </p><p><b>%1</b><br>(%2)</p><p> is currently not found on "
+"your system.<br> Please choose the most appropriate  option to handle this "
 "situation:</p>"
 msgstr ""
 "<p>Kolekcija</p><p><b>%1</b><br/>(%2)</p><p> jūsu datorā nav atrasta. <br/> "
 "Lūdzu, izvēlieties piemērotāko opciju, kā rīkoties šajā situācijā:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:328
-#, kde-format
+#: core/libs/album/manager/albummanager_database.cpp:329
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The collection is still available, but the identifier changed.<br/"
+#| ">This can be caused by restoring a backup, changing the partition layout "
+#| "or the file system settings.<br/>The collection is now located at this "
+#| "place:</p>"
 msgid ""
-"<p>The collection is still available, but the identifier changed.<br/>This "
+"<p>The collection is still available, but the identifier changed.<br>This "
 "can be caused by restoring a backup, changing the partition layout or the "
-"file system settings.<br/>The collection is now located at this place:</p>"
+"file system settings.<br>The collection is now located at this place:</p>"
 msgstr ""
 "<p>Kolekcija vēl joprojām ir pieejama, bet identifikators ir mainījies.<br/"
 ">Tā iemesls varētu būt rezerves kopijas atjaunošana, diska sadaļu "
 "izvietojuma maiņa vai arī failu sistēmas iestatījumi.<br/> Kolekcija pašreiz "
 "atrodas šajā vietā:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:347
+#: core/libs/album/manager/albummanager_database.cpp:348
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -26710,7 +26722,7 @@ msgstr ""
 "Kolekcija atrodas glabāšanas ierīcē, kura ne vienmēr ir pievienota. "
 "Atzīmējiet kolekciju kā noņemamo."
 
-#: core/libs/album/manager/albummanager_database.cpp:354
+#: core/libs/album/manager/albummanager_database.cpp:355
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -26719,21 +26731,21 @@ msgstr ""
 "Pašreiz nesākt nekādu darbību. Es vēlētos problēmu risināt vēlāk, izmantojot "
 "iestatīšanas dialoglogu"
 
-#: core/libs/album/manager/albummanager_database.cpp:368
+#: core/libs/album/manager/albummanager_database.cpp:369
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "Kolekcija nav atrasta"
 
-#: core/libs/album/manager/albummanager_database.cpp:474
+#: core/libs/album/manager/albummanager_database.cpp:475
 #, fuzzy, kde-format
 #| msgid "Database Folder"
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Datubāzes mape"
 
-#: core/libs/album/manager/albummanager_database.cpp:475
+#: core/libs/album/manager/albummanager_database.cpp:476
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -26748,36 +26760,36 @@ msgstr ""
 "attēliem, kuri atrodas mapē \"%2\"), vai arī ignorēt veco failu un sākt ar "
 "jaunu datubāzi?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:485
-#: core/libs/album/manager/albummanager_database.cpp:552
-#: core/libs/album/manager/albummanager_database.cpp:574
+#: core/libs/album/manager/albummanager_database.cpp:486
+#: core/libs/album/manager/albummanager_database.cpp:553
+#: core/libs/album/manager/albummanager_database.cpp:575
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Modernizēt datubāzi"
 
-#: core/libs/album/manager/albummanager_database.cpp:487
-#: core/libs/album/manager/albummanager_database.cpp:554
-#: core/libs/album/manager/albummanager_database.cpp:576
-#: core/libs/album/manager/albummanager_database.cpp:624
+#: core/libs/album/manager/albummanager_database.cpp:488
+#: core/libs/album/manager/albummanager_database.cpp:555
+#: core/libs/album/manager/albummanager_database.cpp:577
+#: core/libs/album/manager/albummanager_database.cpp:625
 #, fuzzy, kde-format
 #| msgid "Create New Database"
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Izveidot jaunu datubāzi"
 
-#: core/libs/album/manager/albummanager_database.cpp:543
-#: core/libs/album/manager/albummanager_database.cpp:566
-#: core/libs/album/manager/albummanager_database.cpp:616
-#: core/libs/album/manager/albummanager_database.cpp:648
+#: core/libs/album/manager/albummanager_database.cpp:544
+#: core/libs/album/manager/albummanager_database.cpp:567
+#: core/libs/album/manager/albummanager_database.cpp:617
+#: core/libs/album/manager/albummanager_database.cpp:649
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Jauna datubāzes mape"
 
-#: core/libs/album/manager/albummanager_database.cpp:544
+#: core/libs/album/manager/albummanager_database.cpp:545
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26791,16 +26803,16 @@ msgstr ""
 "veco datubāzes failu, vai sākt ar jaunu datubāzi, vai arī pārkopēt esošo "
 "datubāzi uz šo vietu un turpināt lietot to?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:556
-#: core/libs/album/manager/albummanager_database.cpp:626
-#: core/libs/album/manager/albummanager_database.cpp:657
+#: core/libs/album/manager/albummanager_database.cpp:557
+#: core/libs/album/manager/albummanager_database.cpp:627
+#: core/libs/album/manager/albummanager_database.cpp:658
 #, fuzzy, kde-format
 #| msgid "Copy Current Database"
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Kopēt esošo datubāzi"
 
-#: core/libs/album/manager/albummanager_database.cpp:567
+#: core/libs/album/manager/albummanager_database.cpp:568
 #, fuzzy, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26813,7 +26825,7 @@ msgstr ""
 "veco datubāzes failu, vai sākt ar jaunu datubāzi, vai arī pārkopēt esošo "
 "datubāzi uz šo vietu un turpināt lietot to?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:602
+#: core/libs/album/manager/albummanager_database.cpp:603
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26822,7 +26834,7 @@ msgstr ""
 "Neizdevās nokopēt veco datubāzes failu (\"%1\") uz jauno vietu (\"%2\")."
 "Mēģina modernizēt veco datubāzi."
 
-#: core/libs/album/manager/albummanager_database.cpp:617
+#: core/libs/album/manager/albummanager_database.cpp:618
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -26833,7 +26845,7 @@ msgstr ""
 "vēlaties pārkopēt esošo datubāzi uz šo vietu un turpināt lietot to vai sākt "
 "ar jaunu datubāzi?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:649
+#: core/libs/album/manager/albummanager_database.cpp:650
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26846,14 +26858,14 @@ msgstr ""
 "vai sākt ar jaunu datubāzi, vai izdzēst to un pārkopēt pašreizējo datubāzi "
 "uz šo vietu?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:659
+#: core/libs/album/manager/albummanager_database.cpp:660
 #, fuzzy, kde-format
 #| msgid "Use Existing File"
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Lietot esošo failu"
 
-#: core/libs/album/manager/albummanager_database.cpp:714
+#: core/libs/album/manager/albummanager_database.cpp:715
 #, fuzzy, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -26863,7 +26875,7 @@ msgstr ""
 "Aizvietošana netiks veikta, pirms nav izveidota rezerves kopija, tiks "
 "lietots esošais fails."
 
-#: core/libs/album/manager/albummanager_database.cpp:732
+#: core/libs/album/manager/albummanager_database.cpp:733
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26872,12 +26884,12 @@ msgstr ""
 "Neizdevās nokopēt veco datubāzes failu (\"%1\") uz jauno vietu (\"%2\"). Sāk "
 "ar tukšu datubāzi."
 
-#: core/libs/album/manager/albummanager_database.cpp:755
+#: core/libs/album/manager/albummanager_database.cpp:756
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:771
+#: core/libs/album/manager/albummanager_database.cpp:772
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@action:button"
@@ -28256,11 +28268,11 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/engine/dbengineguierrorhandler.cpp:238
-#, kde-format
-msgid ""
-"<p><b>A database error occurred.</b></p>Details:\n"
-" %1"
+#, fuzzy, kde-format
+msgid "<p><b>A database error occurred.</b></p>Details:<br> %1"
 msgstr ""
+"Kļūda atverot datubāzes aizmuguri.\n"
+" "
 
 #: core/libs/database/history/itemhistorygraphmodel.cpp:454
 #, fuzzy, kde-format
@@ -28609,19 +28621,19 @@ msgstr "Dzēst"
 msgid "Restore Trash"
 msgstr "Atjaunošana"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:129
+#: core/libs/database/utils/scan/scancontroller.cpp:127
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Inicializē datubāzi..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:155
+#: core/libs/database/utils/scan/scancontroller.cpp:153
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "Meklē jaunus failus, lūdzu, uzgaidiet..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:157
+#: core/libs/database/utils/scan/scancontroller.cpp:155
 #, fuzzy, kde-format
 #| msgid ""
 #| "This shows the progress of the scan. During the scan, all files on disk "
@@ -28635,7 +28647,7 @@ msgstr ""
 "Šis parāda skenēšanas progresu. Skenēšanas laikā visi uz diska esošie faili "
 "tiek reģistrēti datubāzē."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:276
+#: core/libs/database/utils/scan/scancontroller.cpp:274
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -28778,12 +28790,12 @@ msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
 "store compressed thumbnails, one to store faces recognition metadata, and "
-"one to store similarity fingerprints.<br/>Write access is required to be "
-"able to edit image properties.</p><p>Databases are digiKam core engines. "
-"Take care to use a place hosted by fast hardware (eg. SSD or NVMe) with "
-"enough free space especially for thumbnails database.</p><p>Note: a remote "
-"file system such as NFS, cannot be used here. For performance reasons, it is "
-"also recommended not to use network storage media.</p><p></p>"
+"one to store similarity fingerprints.<br>Write access is required to be able "
+"to edit image properties.</p><p>Databases are digiKam core engines. Take "
+"care to use a place hosted by fast hardware (eg. SSD or NVMe) with enough "
+"free space especially for thumbnails database.</p><p>Note: a remote file "
+"system such as NFS, cannot be used here. For performance reasons, it is also "
+"recommended not to use network storage media.</p><p></p>"
 msgstr ""
 "<p>Šī ir vieta, kur tiek glabāts datubāzes fails. Visiem saknes albumiem "
 "tiek lietots viens kopīgs datubāzes fails.<br/>Attēlu atribūtu rediģēšanai "
@@ -29017,7 +29029,7 @@ msgstr "Datubāzes statistika"
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
 "account. This user name <i>digikam</i> will require full access to the "
-"database.<br/>If your database is not already set up, you can use the "
+"database.<br>If your database is not already set up, you can use the "
 "following SQL commands (after replacing the <b><i>password</i></b> with the "
 "correct one).</p>"
 msgstr ""
@@ -29031,10 +29043,9 @@ msgid ""
 "databases with grant privileges (see behind)</p><p>...</p><p>quit</"
 "p><p>NOTE: If you have problems with a MySQL server on Ubuntu based Linux "
 "system, use the addition command in the mysql prompt to be able to create "
-"MySQL triggers.<br/>SET GLOBAL log_bin_trust_function_creators=1;</"
-"p><p>NOTE: If you have an enormous collection, you should start MySQL server "
-"with mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the "
-"settings</p>"
+"MySQL triggers.<br>SET GLOBAL log_bin_trust_function_creators=1;</p><p>NOTE: "
+"If you have an enormous collection, you should start MySQL server with mysql "
+"--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
@@ -29150,14 +29161,14 @@ msgstr "Datubāzes konfigurācija"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
 #, kde-format
 msgid ""
-"The database names configuration is not valid. Error is <br/><p>%1</p><br/"
-">Please check your configuration."
+"The database names configuration is not valid. Error is <br><p>%1</"
+"p><br>Please check your configuration."
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:865
 #, kde-format
 msgid ""
-"Testing database connection has failed with error<br/><p>%1</p><br/>Please "
+"Testing database connection has failed with error<br><p>%1</p><br>Please "
 "check your configuration."
 msgstr ""
 
@@ -29194,10 +29205,13 @@ msgid "Create Database Folder Failed"
 msgstr "Neizdevās izveidot datubāzes mapi"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:906
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>digiKam could not create the folder to host your database file.\n"
+#| "Please select a different location.</p><p><b>%1</b></p>"
 msgid ""
-"<p>digiKam could not create the folder to host your database file.\n"
-"Please select a different location.</p><p><b>%1</b></p>"
+"<p>digiKam could not create the folder to host your database file.<br>Please "
+"select a different location.</p><p><b>%1</b></p>"
 msgstr ""
 "<p>digiKam neizdevās izveidot mapi datubāzes glabāšanai.\n"
 "Lūdzu, izvēlieties citu vietu.</p><p><b>%1</b></p>"
@@ -29210,10 +29224,13 @@ msgid "No Database Write Access"
 msgstr "Nav rakstīšanas atļauju datubāzē"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:932
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>You do not seem to have write access for the folder to host the "
+#| "database file.<br/>Please select a different location.</p><p><b>%1</b></p>"
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
-"file.<br/>Please select a different location.</p><p><b>%1</b></p>"
+"file.<br>Please select a different location.</p><p><b>%1</b></p>"
 msgstr ""
 "<p>Jums nav rakstīšanas atļauju mapē, lai varētu tur glabāt datubāzes failu."
 "<br/> Lūdzu, izvēlieties citu vietu.</p><p><b>%1</b></p>"
@@ -29649,7 +29666,7 @@ msgstr "Kopēt uz starpliktuvi"
 #, fuzzy, kde-format
 #| msgid "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p>"
 msgid ""
-"<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
+"<font size=\"5\">%1</font><br><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
 msgstr "<font size=\"5\">%1</font><br/><b>Versija %2</b><p>%3</p>"
 
 #: core/libs/dialogs/infodlg.cpp:113
@@ -29691,44 +29708,44 @@ msgstr "Nezināma"
 
 #: core/libs/dialogs/libsinfodlg.cpp:422
 #, fuzzy, kde-format
-#| msgid "Base Tools"
+#| msgid "Profile Version"
 msgctxt "@title"
-msgid "Build Tools"
-msgstr "Pamata rīki"
+msgid "Build Environnement"
+msgstr "Profila versija"
 
-#: core/libs/dialogs/libsinfodlg.cpp:457
+#: core/libs/dialogs/libsinfodlg.cpp:460
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Nezināms"
 
-#: core/libs/dialogs/libsinfodlg.cpp:487
+#: core/libs/dialogs/libsinfodlg.cpp:490
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:521
+#: core/libs/dialogs/libsinfodlg.cpp:524
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Fotoaparāta konfigurācija"
 
-#: core/libs/dialogs/libsinfodlg.cpp:717
+#: core/libs/dialogs/libsinfodlg.cpp:720
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Jā"
 
-#: core/libs/dialogs/libsinfodlg.cpp:722
+#: core/libs/dialogs/libsinfodlg.cpp:725
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Nē"
 
-#: core/libs/dialogs/libsinfodlg.cpp:727
+#: core/libs/dialogs/libsinfodlg.cpp:730
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -29743,8 +29760,8 @@ msgstr "RAW režīmā atbalstīto fotoaparātu saraksts"
 
 #: core/libs/dialogs/rawcameradlg.cpp:125
 #, fuzzy, kde-format
-msgid "Using LibRaw version %2<br/>1 model on the list"
-msgid_plural "Using LibRaw version %2<br/>%1 models on the list"
+msgid "Using LibRaw version %2<br>1 model on the list"
+msgid_plural "Using LibRaw version %2<br>%1 models on the list"
 msgstr[0] ""
 "<p>Izmanto KDcraw bibliotēkas versiju %2<br/>Izmanto LibRaw versiju %3<br/"
 ">Sarakstā ir %1 modelis</p>"
@@ -29757,8 +29774,8 @@ msgstr[2] ""
 
 #: core/libs/dialogs/rawcameradlg.cpp:135
 #, fuzzy, kde-format
-msgid "Using LibRaw version %2<br/>1 model on the list (found: %3)"
-msgid_plural "Using LibRaw version %2<br/>%1 models on the list (found: %3)"
+msgid "Using LibRaw version %2<br>1 model on the list (found: %3)"
+msgid_plural "Using LibRaw version %2<br>%1 models on the list (found: %3)"
 msgstr[0] ""
 "<p>Izmanto KDcraw bibliotēkas versiju %2<br/>Izmanto LibRaw versiju %3<br/"
 ">Sarakstā ir %1 modelis</p>"
@@ -33487,12 +33504,12 @@ msgid ""
 "ExifTool, DNG will not include all RAW source properties."
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:347
 #, kde-format
 msgid "YOLOv11 Nano"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:351
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:349
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33502,12 +33519,12 @@ msgid ""
 "objects using the COCO dataset.</p>"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:354
 #, kde-format
 msgid "YOLOv11 XLarge"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:358
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:356
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33517,12 +33534,12 @@ msgid ""
 "recognize 80 different objects using the COCO dataset.</p>"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:361
 #, kde-format
 msgid "EfficientNet B7"
 msgstr ""
 
-#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:365
+#: core/libs/dnnmodelmanager/dnnmodelmanager.cpp:363
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -34658,7 +34675,7 @@ msgstr "Apstrādā attēlus"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Neizdevās mainīt Exif orientāciju šiem failiem:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:371
+#: core/libs/fileactionmanager/fileworkeriface.cpp:378
 #, fuzzy, kde-format
 msgid "Failed to transform these files:"
 msgstr "Neizdevās mainīt Exif orientāciju šiem failiem:"
@@ -34729,38 +34746,43 @@ msgid "Open filter settings panel"
 msgstr "Atvērt filtru iestatījumu paneli"
 
 #: core/libs/filters/filterstatusbar.cpp:121
-#, kde-format
-msgid "<br/><nobr><i>Text</i></nobr>"
+#, fuzzy, kde-format
+#| msgid "<br/><nobr><i>Text</i></nobr>"
+msgid "<br><nobr><i>Text</i></nobr>"
 msgstr "<br/><nobr><i>Teksts</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:126
-#, kde-format
-msgid "<br/><nobr><i>Mime Type</i></nobr>"
+#, fuzzy, kde-format
+#| msgid "<br/><nobr><i>Mime Type</i></nobr>"
+msgid "<br><nobr><i>Mime Type</i></nobr>"
 msgstr "<br/><nobr><i>Mime tips</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:131
 #, fuzzy, kde-format
-msgid "<br/><nobr><i>Geolocation</i></nobr>"
+msgid "<br><nobr><i>Geolocation</i></nobr>"
 msgstr "<br/><nobr><i>Vērtējums</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:136
-#, kde-format
-msgid "<br/><nobr><i>Rating</i></nobr>"
+#, fuzzy, kde-format
+#| msgid "<br/><nobr><i>Rating</i></nobr>"
+msgid "<br><nobr><i>Rating</i></nobr>"
 msgstr "<br/><nobr><i>Vērtējums</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:141
-#, kde-format
-msgid "<br/><nobr><i>Pick Labels</i></nobr>"
+#, fuzzy, kde-format
+#| msgid "<br/><nobr><i>Pick Labels</i></nobr>"
+msgid "<br><nobr><i>Pick Labels</i></nobr>"
 msgstr "<br/><nobr><i>Atlases iezīmes</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:146
 #, fuzzy, kde-format
-msgid "<br/><nobr><i>Color Labels</i></nobr>"
+msgid "<br><nobr><i>Color Labels</i></nobr>"
 msgstr "<br/><nobr><i>Tagi</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:151
-#, kde-format
-msgid "<br/><nobr><i>Tags</i></nobr>"
+#, fuzzy, kde-format
+#| msgid "<br/><nobr><i>Tags</i></nobr>"
+msgid "<br><nobr><i>Tags</i></nobr>"
 msgstr "<br/><nobr><i>Tagi</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:156
@@ -36812,7 +36834,7 @@ msgid ""
 "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
 "built on <i>%3</i> is available on this <a href='%4'>repository</a>.</"
 "p><p>Press <b>Download</b> to get the file...</p><p>Note: from Setup/Misc "
-"panel, you can switch to check for stable release only.<br/>Stable versions "
+"panel, you can switch to check for stable release only.<br>Stable versions "
 "are safe to use in production.</p><p>Press <b>Configure</b> if you want to "
 "customize update options from setup dialog.</p>"
 msgstr ""
@@ -36823,9 +36845,9 @@ msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
 "%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
 "<b>Download</b> to get the file...</p><p>Note: from Setup/Misc panel, you "
-"can switch to check for weekly pre-release.<br/>Pre-release versions are "
-"dedicated to test quickly new features.<br/>It is not recommended to use pre-"
-"releases in production as bugs can remain,<br/>unless you know what you are "
+"can switch to check for weekly pre-release.<br>Pre-release versions are "
+"dedicated to test quickly new features.<br>It is not recommended to use pre-"
+"releases in production as bugs can remain,<br>unless you know what you are "
 "doing.</p><p>Press <b>Configure</b> if you want to customize update options "
 "from setup dialog.</p>"
 msgstr ""
@@ -39776,9 +39798,9 @@ msgstr[2] "Dzēst tagu"
 #: core/libs/tags/manager/tagsmanager.cpp:492
 #, kde-format
 msgid ""
-"<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
-"> You may <b>lose tags</b> if you did not read tags before (by calling Read "
-"Tags from Image).<br/> Do you want to continue?</qt>"
+"<qt>digiKam will clean up tag metadata before setting tags from database."
+"<br> You may <b>lose tags</b> if you did not read tags before (by calling "
+"Read Tags from Image).<br> Do you want to continue?</qt>"
 msgstr ""
 
 #: core/libs/tags/manager/tagsmanager.cpp:504
@@ -39961,12 +39983,19 @@ msgid "Enter tag name here..."
 msgstr "Ievadiet tagu šeit..."
 
 #: core/libs/tags/widgets/tageditdlg.cpp:138
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
+#| "can be used to create a tags hierarchy.<br/>Ex.: <i>\"Country/City/Paris"
+#| "\"</i></li><li>',' can be used to create more than one tags hierarchy at "
+#| "the same time.<br/>Ex.: <i>\"City/Paris, Monument/Notre-Dame\"</i></"
+#| "li><li>If a tag hierarchy starts with '/', root tag album is used as "
+#| "parent.</li></ul></p>"
 msgid ""
 "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
-"can be used to create a tags hierarchy.<br/>Ex.: <i>\"Country/City/Paris\"</"
+"can be used to create a tags hierarchy.<br>Ex.: <i>\"Country/City/Paris\"</"
 "i></li><li>',' can be used to create more than one tags hierarchy at the "
-"same time.<br/>Ex.: <i>\"City/Paris, Monument/Notre-Dame\"</i></li><li>If a "
+"same time.<br>Ex.: <i>\"City/Paris, Monument/Notre-Dame\"</i></li><li>If a "
 "tag hierarchy starts with '/', root tag album is used as parent.</li></ul></"
 "p>"
 msgstr ""
@@ -40002,12 +40031,12 @@ msgstr "<b>Izveidot jaunu tagu</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:337
 #, fuzzy, kde-format
-msgid "<b>Create New Tag in<br/>\"%1\"</b>"
+msgid "<b>Create New Tag in<br>\"%1\"</b>"
 msgstr "<b>Izveidot jaunu tagu iekš <i>\"%1\"</i></b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:343
 #, fuzzy, kde-format
-msgid "<b>Properties of Tag<br/>\"%1\"</b>"
+msgid "<b>Properties of Tag<br>\"%1\"</b>"
 msgstr "<b>Taga <i>\"%1\"</i> īpašības</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:515
@@ -40270,15 +40299,14 @@ msgid ""
 "circle with a \"c\" inside; using something like (c) where the parentheses "
 "form a partial circle is not sufficient. For additional protection "
 "worldwide, use of the phrase, \"all rights reserved\" following the notice "
-"above is encouraged. \n"
-"In Europe you would use: Copyright {Year} {Copyright owner}, all rights "
-"reserved. \n"
-"In Japan, for maximum protection, the following three items should appear in "
-"the copyright field of the IPTC Core: (a) the word, Copyright; (b) year of "
-"the first publication; and (c) name of the author. You may also wish to "
-"include the phrase \"all rights reserved\".</p><p>With XMP, you can include "
-"more than one copyright string using different languages.</p><p>With IPTC, "
-"this field is limited to 128 characters.</p>"
+"above is encouraged. <br>In Europe you would use: Copyright {Year} "
+"{Copyright owner}, all rights reserved. <br>In Japan, for maximum "
+"protection, the following three items should appear in the copyright field "
+"of the IPTC Core: (a) the word, Copyright; (b) year of the first "
+"publication; and (c) name of the author. You may also wish to include the "
+"phrase \"all rights reserved\".</p><p>With XMP, you can include more than "
+"one copyright string using different languages.</p><p>With IPTC, this field "
+"is limited to 128 characters.</p>"
 msgstr ""
 
 #: core/libs/template/templatepanel.cpp:154
@@ -40628,7 +40656,7 @@ msgstr ""
 
 #: core/libs/timeadjust/clockphotodialog.cpp:167
 #, kde-format
-msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
+msgid "<font color=\"red\"><b>Could not load<br>image %1.</b></font>"
 msgstr ""
 
 #: core/libs/timeadjust/clockphotodialog.cpp:183
@@ -42734,8 +42762,8 @@ msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
 msgid ""
-"<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b><br/"
-">with the Power of <b>Open Source</b></font></qt>"
+"<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</"
+"b><br>with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
 "<qt><font color=\"white\"><b>Profesionāli pārvaldiet</b> savas "
 "<b>fotogrāfijas</b> ar <b>atvērtā pirmkoda</b> spēku.</font></qt>"
@@ -50369,15 +50397,18 @@ msgstr "Ietilpināt &logā"
 #: core/showfoto/setup/showfotosetup.cpp:106
 #, fuzzy, kde-format
 msgid ""
-"<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
+"<qt>Editor Window Settings<br><i>Customize editor window behavior</i></qt>"
 msgstr ""
 "<qt>Attēlu redaktora iestatījumi<br/><i>Pielāgo attēlu redaktora uzvedību</"
 "i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:112
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
+#| "images and metadata</i></qt>"
 msgid ""
-"<qt>Embedded Image Information Management<br/><i>Setup relations between "
+"<qt>Embedded Image Information Management<br><i>Setup relations between "
 "images and metadata</i></qt>"
 msgstr ""
 "<qt>Attēlos iegultās informācijas pārvaldība<br/><i>Konfigurēt atbilstību "
@@ -50394,7 +50425,7 @@ msgstr "Izlecošie padomi"
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
 #| "tips</i></qt>"
 msgid ""
-"<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
+"<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br><i>Customize "
 "information in tool-tips</i></qt>"
 msgstr ""
 "<qt>Sīktēlu izlecošo padomu iestatījumi<br/><i>Pielāgo padomos rādīto "
@@ -50406,19 +50437,25 @@ msgid "RAW Decoding"
 msgstr "RAW dekodēšana"
 
 #: core/showfoto/setup/showfotosetup.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
+#| "settings</i></qt>"
 msgid ""
-"<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
+"<qt>RAW Files Decoding Settings<br><i>Customize default RAW decoding "
 "settings</i></qt>"
 msgstr ""
 "<qt>RAW fail atkodēšanas iestatījumi<br/><i>Pielāgo noklusētos RAW "
 "atkodēšanas iestatījumus</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:130
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Settings for Color Management<br/><i>Customize color management "
+#| "settings</i></qt>"
 msgid ""
-"<qt>Settings for Color Management<br/><i>Customize color management "
-"settings</i></qt>"
+"<qt>Settings for Color Management<br><i>Customize color management settings</"
+"i></qt>"
 msgstr ""
 "<qt>Krāsu pārvaldības iestatījumi<br/><i>Pielāgo krāsu pārvaldības "
 "iestatījumus</i></qt>"
@@ -50429,9 +50466,12 @@ msgid "Save Images"
 msgstr "Attēlu saglabāšana"
 
 #: core/showfoto/setup/showfotosetup.cpp:136
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Settings for Saving Image Files<br/><i>Set default configuration used "
+#| "to save images</i></qt>"
 msgid ""
-"<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
+"<qt>Settings for Saving Image Files<br><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr ""
 "<qt>Attēlu saglabāšanas iestatījumi<br/><i>Iestata noklusēto attēlu "
@@ -50462,11 +50502,16 @@ msgid "Plugins"
 msgstr "Spraudņi"
 
 #: core/showfoto/setup/showfotosetup.cpp:151
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Plug-in Settings<br/><i>Set which plugins will be accessible from "
+#| "application</i></qt>"
 msgid ""
-"<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
+"<qt>Main Interface Plug-in Settings<br><i>Set which plugins will be "
 "accessible from application</i></qt>"
 msgstr ""
+"<qt>Spraudņu atlase<br/><i>Norādiet, kuri spraudņi lietotnē būs pieejami</"
+"i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:156
 #, fuzzy, kde-format
@@ -50478,7 +50523,7 @@ msgstr "Dažādi"
 #: core/showfoto/setup/showfotosetup.cpp:157
 #, fuzzy, kde-format
 msgid ""
-"<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
+"<qt>Miscellaneous Settings<br><i>Customize behavior of the other parts of "
 "Showfoto</i></qt>"
 msgstr ""
 "<qt>Dažādi iestatījumi<br/><i>Pielāgo citu digiKam daļu uzvedību</i></qt>"
@@ -51863,7 +51908,7 @@ msgstr "Noklusētā vērtība"
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:48
 #, kde-format
 msgid ""
-"<p>Set a default value for empty strings.<br/>When applied to a renaming "
+"<p>Set a default value for empty strings.<br>When applied to a renaming "
 "option, an empty string will be replaced by the value you specify here.</p>"
 msgstr ""
 
@@ -52828,7 +52873,7 @@ msgstr "/Attēli"
 #, fuzzy, kde-format
 msgid ""
 "<p>Please enter a location where you keep your images.</p> <p>You can choose "
-"any local folder, even one that already contains images.<br/> More folders "
+"any local folder, even one that already contains images.<br> More folders "
 "can be added later under the <i>Settings</i> menu. </p> "
 msgstr ""
 "<p>Lūdzu, ievadiet vietu, kurā vēlaties glabāt attēlus.</p> <p>Varat "
@@ -52880,10 +52925,13 @@ msgid "Create Root Album Folder Failed"
 msgstr "Neizdevās izveidot albumu saknes mapi"
 
 #: core/utilities/firstrun/collectionpage.cpp:190
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>digiKam could not create the folder to use as the root album.\n"
+#| "Please select a different location.</p><p><b>%1</b></p>"
 msgid ""
-"<p>digiKam could not create the folder to use as the root album.\n"
-"Please select a different location.</p><p><b>%1</b></p>"
+"<p>digiKam could not create the folder to use as the root album.<br>Please "
+"select a different location.</p><p><b>%1</b></p>"
 msgstr ""
 "<p>digiKam neizdevās izveidot albumu saknes mapi.\n"
 "Lūdzu, izvēlieties citu vietu.</p><p><b>%1</b></p>"
@@ -53126,7 +53174,7 @@ msgstr ""
 #: core/utilities/firstrun/welcomepage.cpp:66
 #, kde-format
 msgid ""
-"<qt><br/><p>You can ignore the following if you use digiKam for the first "
+"<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
 "digiKam 4 are not migrated. The old database can still be used, you just "
 "need to choose the same locations for collections and database in the "
@@ -53398,8 +53446,8 @@ msgstr ""
 #| "p><p>You can also use the context menu<br/> when browsing through your "
 #| "images.</p>"
 msgid ""
-"<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-"p><p>You can also use the context menu<br/>when browsing through<br/>your "
+"<p>Drag & drop an image here<br>to perform similar<br>items search.</"
+"p><p>You can also use the context menu<br>when browsing through<br>your "
 "images.</p>"
 msgstr ""
 "<p>Velciet un nometiet attēlu šeit, <br/>lai veiktu līdzīgo<br/> attēlu "
@@ -56274,32 +56322,34 @@ msgid "Circle Ruler"
 msgstr "Rinķis ārā"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:657
-#, kde-format
-msgid "Total Distance: %1<br/>\n"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Radius:"
+msgid "Total Distance: %1<br>\n"
+msgstr "Rādiuss:"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:661
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:684
 #, fuzzy, kde-format
 #| msgid "Author: %1<br/><br/>"
-msgid "Area: %1<br/>\n"
+msgid "Area: %1<br>\n"
 msgstr "Autors: %1<br/><br/>"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:666
-#, kde-format
-msgid "Perimeter: %1<br/>\n"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Perimeter: %1<br>\n"
+msgstr "Vecāki"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:674
 #, fuzzy, kde-format
 #| msgid "Radius:"
-msgid "Radius: %1<br/>\n"
+msgid "Radius: %1<br>\n"
 msgstr "Rādiuss:"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:679
-#, kde-format
-msgid "Circumference: %1<br/>\n"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Reference:"
+msgid "Circumference: %1<br>\n"
+msgstr "Atsauce:"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:734
 #, fuzzy, kde-format
@@ -58438,21 +58488,21 @@ msgstr "%1 - %2"
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:204
 #, kde-format
 msgid ""
-"<p>This image has an <b>embedded color profile</b><br/> which does not match "
-"your working space color profile.<br/>How do you want to proceed?</p>"
+"<p>This image has an <b>embedded color profile</b><br> which does not match "
+"your working space color profile.<br>How do you want to proceed?</p>"
 msgstr ""
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:210
 #, kde-format
 msgid ""
-"<p>This image has <b>no information about the color space</b><br/>that was "
-"used when creating the image. <br/>How do you want to proceed?</p>"
+"<p>This image has <b>no information about the color space</b><br>that was "
+"used when creating the image. <br>How do you want to proceed?</p>"
 msgstr ""
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:217
 #, kde-format
 msgid ""
-"<p>The color information of this image is uncalibrated.<br/>How do you want "
+"<p>The color information of this image is uncalibrated.<br>How do you want "
 "to proceed?</p>"
 msgstr ""
 
@@ -61414,7 +61464,7 @@ msgstr "Apciršanas iestatījumi"
 #: core/utilities/maintenance/main/maintenancedlg.cpp:78
 #, kde-format
 msgid ""
-"<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
+"<qt>No option<br><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
 msgstr ""
 
@@ -61427,7 +61477,7 @@ msgstr "Meklēt jaunus failus"
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
-"select additional databases for cleaning.<br/>If you select one of the "
+"select additional databases for cleaning.<br>If you select one of the "
 "options below, the process may take much time and can freeze digiKam "
 "temporarily in order to make sure that no database corruption occurs.</i></"
 "qt>"
@@ -63721,8 +63771,8 @@ msgstr "Vismaz viens no šiem nosacījumiem neatbilst"
 #: core/utilities/searchwindow/searchgroup_label.cpp:101
 #, fuzzy, kde-format
 msgid ""
-"<qt><p>Search your collection<br/>for Items meeting the following "
-"conditions</p></qt>"
+"<qt><p>Search your collection<br>for Items meeting the following conditions</"
+"p></qt>"
 msgstr "Meklēt kolekcijā attēlus,<br> kas atbilst šiem nosacījumiem"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:139
@@ -64437,10 +64487,13 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/album/setupmime.cpp:302
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Files with these extensions will be recognized as images and included "
+#| "into the database:<br/> <code>%1</code></p>"
 msgid ""
 "<p>Files with these extensions will be recognized as images and included "
-"into the database:<br/> <code>%1</code></p>"
+"into the database:<br> <code>%1</code></p>"
 msgstr ""
 "<p>Faili ar šiem paplašinājumiem tika atpazīti kā attēlu faili un "
 "automātiski iekļauti datubāzē:<br/> <code>%1</code></p>"
@@ -64452,16 +64505,19 @@ msgstr ""
 #| "included into the database:<br/> <code>%1</code></p>"
 msgid ""
 "<p>Files with these extensions will be recognized as video files and "
-"included into the database:<br/> <code>%1</code></p>"
+"included into the database:<br> <code>%1</code></p>"
 msgstr ""
 "<p>Faili ar šiem paplašinājumiem tika atpazīti kā video faili un automātiski "
 "iekļauti datubāzē:<br/> <code>%1</code></p>"
 
 #: core/utilities/setup/album/setupmime.cpp:322
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Files with these extensions will be recognized as audio files and "
+#| "included into the database:<br/> <code>%1</code></p>"
 msgid ""
 "<p>Files with these extensions will be recognized as audio files and "
-"included into the database:<br/> <code>%1</code></p>"
+"included into the database:<br> <code>%1</code></p>"
 msgstr ""
 "<p>Faili ar šiem paplašinājumiem tika atpazīti kā audio faili un automātiski "
 "iekļauti datubāzē:<br/> <code>%1</code></p>"
@@ -64587,24 +64643,24 @@ msgstr ""
 #: core/utilities/setup/camera/cameraselection.cpp:211
 #, kde-format
 msgid ""
-"<p>To set a <b>USB Mass Storage</b> camera<br/>(which looks like a removable "
-"drive when mounted<br/>on your desktop), please use<br/><a href=\"umscamera"
-"\">%1</a> from the camera list.</p>"
+"<p>To set a <b>USB Mass Storage</b> camera<br>(which looks like a removable "
+"drive when mounted<br>on your desktop), please use<br><a href=\"umscamera\">"
+"%1</a> from the camera list.</p>"
 msgstr ""
 
 #: core/utilities/setup/camera/cameraselection.cpp:218
 #, kde-format
 msgid ""
-"<p>To set a <b>Generic PTP USB Device</b><br/>(which uses Picture Transfer "
-"Protocol), please<br/>use <a href=\"ptpcamera\">%1</a> from the camera list."
-"</p>"
+"<p>To set a <b>Generic PTP USB Device</b><br>(which uses Picture Transfer "
+"Protocol), please<br>use <a href=\"ptpcamera\">%1</a> from the camera list.</"
+"p>"
 msgstr ""
 
 #: core/utilities/setup/camera/cameraselection.cpp:224
 #, kde-format
 msgid ""
-"<p>To set a <b>Generic PTP/IP Network Device</b><br/>(which uses Picture "
-"Transfer Protocol), please<br/>use <a href=\"ptpipcamera\">%1</a> from the "
+"<p>To set a <b>Generic PTP/IP Network Device</b><br>(which uses Picture "
+"Transfer Protocol), please<br>use <a href=\"ptpipcamera\">%1</a> from the "
 "camera list.</p>"
 msgstr ""
 
@@ -64615,7 +64671,7 @@ msgstr ""
 #| "href='http://www.teaser.fr/~hfiguiere/linux/digicam.html'>this URL</a>.</"
 #| "p>"
 msgid ""
-"<p>A complete list of camera settings to use is<br/>available at <a "
+"<p>A complete list of camera settings to use is<br>available at <a "
 "href='https://www.figuiere.net/digicam/'>this URL</a>.</p>"
 msgstr ""
 "<p>Pilns fotoaparātu iestatījumu saraksts ir <br/>pieejams <a href='http://"
@@ -65028,7 +65084,7 @@ msgstr "Piešķirt šo tagu"
 #| "<p>Files with these extensions will be recognized as movie files and "
 #| "included into the database:<br/> <code>%1</code></p>"
 msgid ""
-"<p>Directories starting with a dot are ignored by default.<br/> <code>%1</"
+"<p>Directories starting with a dot are ignored by default.<br> <code>%1</"
 "code></p>"
 msgstr ""
 "<p>Faili ar šiem paplašinājumiem tika atpazīti kā video faili un automātiski "
@@ -65840,7 +65896,7 @@ msgstr "Šī darbība samazinās attēla krāsu kvalitāti. Vai vēlaties turpin
 #, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
-"digiKam to store and retrieve tags, rating and comments.<br/><b>Note: </"
+"digiKam to store and retrieve tags, rating and comments.<br><b>Note: </"
 "b>Order is important when reading metadata"
 msgstr ""
 
@@ -65933,9 +65989,9 @@ msgstr "Nosaukums:"
 #, kde-format
 msgid ""
 "<p>To create new namespaces, you need to specify parameters:</"
-"p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.digiKam.TagsList\"</"
-"i></li><li>Separator parameter, used by tag paths <br/>Ex.: \"City/Paris\" "
-"or \"City|Paris\"</li><li>Specify if only keyword or the whole path must be "
+"p><p><ul><li>Namespace name with dots.<br>Ex.: <i>\"Xmp.digiKam.TagsList\"</"
+"i></li><li>Separator parameter, used by tag paths <br>Ex.: \"City/Paris\" or "
+"\"City|Paris\"</li><li>Specify if only keyword or the whole path must be "
 "written.</li></ul></p>"
 msgstr ""
 
@@ -65943,8 +65999,8 @@ msgstr ""
 #, kde-format
 msgid ""
 "<p>To create new rating namespaces, you need to specify parameters:</"
-"p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.xmp.Rating\"</i></"
-"li><li>Rating mappings, if namespace need other values than 0-5 <br/>Ex.: "
+"p><p><ul><li>Namespace name with dots.<br>Ex.: <i>\"Xmp.xmp.Rating\"</i></"
+"li><li>Rating mappings, if namespace need other values than 0-5 <br>Ex.: "
 "Microsoft uses 0 1 25 50 75 99</li><li>Select the correct namespace option "
 "from list.</li></ul></p>"
 msgstr ""
@@ -65953,7 +66009,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "<p>To create new comment namespaces, you need to specify parameters:</"
-"p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.xmp.Comment\"</i></"
+"p><p><ul><li>Namespace name with dots.<br>Ex.: <i>\"Xmp.xmp.Comment\"</i></"
 "li><li>Select the correct namespace option from list.</li></ul></p>"
 msgstr ""
 
@@ -67116,12 +67172,12 @@ msgstr "Normāls"
 #, kde-format
 msgid ""
 "<qt>Sets the way in which strings are compared inside digiKam. This eg. "
-"influences the sorting of the tree views.<br/><b>Natural</b> tries to "
-"compare strings in a way that regards some normal conventions and will eg. "
-"result in sorting numbers naturally even if they have a different number of "
-"digits.<br/><b>Normal</b> uses a more technical approach. Use this style if "
-"you eg. want to entitle albums with ISO dates (201006 or 20090523) and the "
-"albums should be sorted according to these dates.</qt>"
+"influences the sorting of the tree views.<br><b>Natural</b> tries to compare "
+"strings in a way that regards some normal conventions and will eg. result in "
+"sorting numbers naturally even if they have a different number of digits."
+"<br><b>Normal</b> uses a more technical approach. Use this style if you eg. "
+"want to entitle albums with ISO dates (201006 or 20090523) and the albums "
+"should be sorted according to these dates.</qt>"
 msgstr ""
 
 #: core/utilities/setup/misc/setupmisc.cpp:111
@@ -67163,9 +67219,9 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:319
 #, kde-format
 msgid ""
-"When images are grouped the following operations<br/>are performed only on "
-"the displayed item (No)<br/>or on all the hidden items in the group as well "
-"(Yes).<br/>If Ask is selected, there will be a prompt every<br/>time this "
+"When images are grouped the following operations<br>are performed only on "
+"the displayed item (No)<br>or on all the hidden items in the group as well "
+"(Yes).<br>If Ask is selected, there will be a prompt every<br>time this "
 "operation is executed."
 msgstr ""
 
@@ -68407,6 +68463,12 @@ msgid "Import Items"
 msgstr "&Kārtot attēlus"
 
 #, fuzzy
+#~| msgid "Base Tools"
+#~ msgctxt "@title"
+#~ msgid "Build Tools"
+#~ msgstr "Pamata rīki"
+
+#, fuzzy
 #~| msgid "Behavior"
 #~ msgctxt "@title:tab"
 #~ msgid "Behaviour"
@@ -69243,11 +69305,6 @@ msgstr "&Kārtot attēlus"
 #~| msgid "Options"
 #~ msgid "Options:"
 #~ msgstr "Opcijas"
-
-#, fuzzy
-#~| msgid "Profile Version"
-#~ msgid "Build version"
-#~ msgstr "Profila versija"
 
 #, fuzzy
 #~| msgid "Profile Version"
@@ -74313,14 +74370,6 @@ msgstr "&Kārtot attēlus"
 #, fuzzy
 #~ msgid "Path to Mysql database initializer:"
 #~ msgstr "Neizdevās aprēķināt vidējo."
-
-#, fuzzy
-#~ msgid ""
-#~ "<p><b>Error while calling the database server starter.</b></p>Details:\n"
-#~ " %1"
-#~ msgstr ""
-#~ "Kļūda atverot datubāzes aizmuguri.\n"
-#~ " "
 
 #~ msgid "&Deleted items should go to the trash"
 #~ msgstr "&Dzēstās vienības pārvietot uz miskasti"
