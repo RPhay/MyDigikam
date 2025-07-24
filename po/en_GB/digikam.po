@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 01:59+0000\n"
+"POT-Creation-Date: 2025-07-24 02:03+0000\n"
 "PO-Revision-Date: 2024-11-23 12:48+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -30411,7 +30411,7 @@ msgstr "Unknown"
 #, fuzzy, kde-format
 #| msgid "Build version"
 msgctxt "@title"
-msgid "Build Environnement"
+msgid "Build Environment"
 msgstr "Build version"
 
 #: core/libs/dialogs/libsinfodlg.cpp:460

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 01:59+0000\n"
+"POT-Creation-Date: 2025-07-24 02:03+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -28872,7 +28872,7 @@ msgstr "अज्ञात"
 #, fuzzy, kde-format
 #| msgid "Profile Version"
 msgctxt "@title"
-msgid "Build Environnement"
+msgid "Build Environment"
 msgstr "प्रोफाइल संस्करण"
 
 #: core/libs/dialogs/libsinfodlg.cpp:460

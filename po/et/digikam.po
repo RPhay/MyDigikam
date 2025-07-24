@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 01:59+0000\n"
+"POT-Creation-Date: 2025-07-24 02:03+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -32200,7 +32200,7 @@ msgstr "Tundmatu"
 #, fuzzy, kde-format
 #| msgid "Profile Version"
 msgctxt "@title"
-msgid "Build Environnement"
+msgid "Build Environment"
 msgstr "Profiili versioon"
 
 #: core/libs/dialogs/libsinfodlg.cpp:460

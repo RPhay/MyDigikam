@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 01:59+0000\n"
+"POT-Creation-Date: 2025-07-24 02:03+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -28496,6 +28496,16 @@ msgid ""
 "If you have an enormous collection, you should start MySQL server with mysql "
 "--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
+"<p>Poznámka: Na Linuxu můžete databázi vytvořit následujícími příkazy:</"
+"p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u root</p><p>...</"
+"p><p>Do příkazové řádky MySQL vložte výše uvedený SQL kód pro vytvoření "
+"databáze digiKamu se správnými právy</p><p>...</p><p>quit</p><p>Poznámka: "
+"Pokud máte na Ubuntu problém se serverem MySQL, zadejte, použijte další "
+"příkaz v příkazové řádce mysql, abyste vytvořili spouštěče MySQL.<br>SET "
+"GLOBAL log_bin_trust_function_creators=1;<br><p>Poznámka: Pokud máte "
+"obrovskou sbírku obrázků, můžete spustit MySQL server příkazem mysql --"
+"max_allowed_packet=128M nebo v souboru my.ini či ~/.my.cnf změnit nastavení</"
+"p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
 #, kde-format
@@ -29167,7 +29177,7 @@ msgstr "Neznámý"
 #: core/libs/dialogs/libsinfodlg.cpp:422
 #, kde-format
 msgctxt "@title"
-msgid "Build Environnement"
+msgid "Build Environment"
 msgstr ""
 
 #: core/libs/dialogs/libsinfodlg.cpp:460
@@ -40014,10 +40024,9 @@ msgstr ""
 "tohoto nastavení."
 
 #: core/libs/timeadjust/clockphotodialog.cpp:167
-#, fuzzy, kde-format
-#| msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
+#, kde-format
 msgid "<font color=\"red\"><b>Could not load<br>image %1.</b></font>"
-msgstr "<font color=\"red\"><b>Nelze načíst<br/>obrázek %1.</b></font>"
+msgstr "<font color=\"red\"><b>Nelze načíst<br>obrázek %1.</b></font>"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:183
 #, kde-format

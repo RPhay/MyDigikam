@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 01:59+0000\n"
-"PO-Revision-Date: 2025-07-23 00:44+0100\n"
+"POT-Creation-Date: 2025-07-24 02:03+0000\n"
+"PO-Revision-Date: 2025-07-24 01:36+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -3731,10 +3731,9 @@ msgid "...and much more."
 msgstr "…y mucho más."
 
 #: core/app/views/stack/welcomepageview.cpp:167
-#, fuzzy, kde-format
-#| msgid "<li>%1</li>\n"
+#, kde-format
 msgid "<li>%1</li><br>"
-msgstr "<li>%1</li>\n"
+msgstr "<li>%1</li><br>"
 
 #: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
@@ -6108,15 +6107,7 @@ msgid "Reduce Texturing"
 msgstr "Reducir la texturización"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Select the filter preset to use for photograph restoration here:</"
-#| "p><p><b>None</b>: Most common values. Puts settings to default.<br/"
-#| "><b>Reduce Uniform Noise</b>: reduce small image artifacts such as sensor "
-#| "noise.<br/><b>Reduce JPEG Artifacts</b>: reduce large image artifacts, "
-#| "such as a JPEG compression mosaic.<br/><b>Reduce Texturing</b>: reduce "
-#| "image artifacts, such as paper texture, or Moire patterns on scanned "
-#| "images.</p>"
+#, kde-format
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
 "p><p><b>None</b>: Most common values. Puts settings to default.<br><b>Reduce "
@@ -6127,10 +6118,10 @@ msgid ""
 msgstr ""
 "<p>Seleccione aquí el preajuste de filtro a usar en la restauración "
 "fotográfica:</p><p><b>Ninguno</b>: valores más usuales. Inicializa la "
-"configuración a los valores por omisión.<br/><b>Reducir ruido uniforme</b>: "
-"reduce pequeños artefactos de la imagen, como el ruido del sensor.<br/"
-"><b>Reducir artefactos JPEG</b>: reduce artefactos grandes de la imagen, "
-"como el mosaico de compresión JPEG.<br/><b>Reducir texturización</b>: reduce "
+"configuración a los valores por omisión.<br><b>Reducir ruido uniforme</b>: "
+"reduce pequeños artefactos de la imagen, como el ruido del sensor."
+"<br><b>Reducir artefactos JPEG</b>: reduce artefactos grandes de la imagen, "
+"como el mosaico de compresión JPEG.<br><b>Reducir texturización</b>: reduce "
 "artefactos grandes de la imagen, como la textura del papel o los patrones "
 "Moire de una imagen escaneada.</p>"
 
@@ -6997,13 +6988,7 @@ msgid "HEIF quality:"
 msgstr "Calidad de HEIF:"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
-#| "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-#| "b>: good quality (default)<br/><b>100</b>: high quality (no compression "
-#| "and large file size)</p><p><b>Note: HEIF is not a lossless image "
-#| "compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -7012,10 +6997,10 @@ msgid ""
 "when you use this setting.</b></p>"
 msgstr ""
 "<p>La calidad de las imágenes HEIF:</p><p><b>1</b>: calidad baja (compresión "
-"alta y tamaño de archivo pequeño)<br/><b>50</b>: calidad media<br/><b>75</"
-"b>: buena calidad (predeterminada)<br/><b>100</b>: alta calidad (sin "
-"compresión y tamaño de archivo grande)</p> <p><b>Nota: HEIF no es un formato "
-"de compresión de imágenes sin pérdida cuando use esta configuración.</b></p>"
+"alta y tamaño de archivo pequeño)<br><b>50</b>: calidad media<br><b>75</b>: "
+"buena calidad (predeterminada)<br><b>100</b>: alta calidad (sin compresión y "
+"tamaño de archivo grande)</p> <p><b>Nota: HEIF no es un formato de "
+"compresión de imágenes sin pérdida cuando use esta configuración.</b></p>"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:43
 #, kde-format
@@ -7153,12 +7138,7 @@ msgid "JPEG quality:"
 msgstr "Calidad del JPEG:"
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The JPEG quality:</p><p><b>1</b>: low quality (high compression and "
-#| "small file size)<br/><b>50</b>: medium quality<br/><b>75</b>: good "
-#| "quality (default)<br/><b>100</b>: high quality (no compression and large "
-#| "file size)</p><p><b>Note: JPEG always uses lossy compression.</b></p>"
+#, kde-format
 msgid ""
 "<p>The JPEG quality:</p><p><b>1</b>: low quality (high compression and small "
 "file size)<br><b>50</b>: medium quality<br><b>75</b>: good quality "
@@ -7166,10 +7146,10 @@ msgid ""
 "p><p><b>Note: JPEG always uses lossy compression.</b></p>"
 msgstr ""
 "<p>La calidad de las imágenes JPEG:</p><p><b>1</b>: calidad baja (compresión "
-"alta y tamaño de archivo pequeño)<br/><b>50</b>: calidad media<br/><b>75</"
-"b>: buena calidad (predeterminada)<br/><b>100</b>: alta calidad (sin "
-"compresión y tamaño de archivo grande) </p><p><b>Nota: JPEG usa un algoritmo "
-"de compresión con pérdidas.</b></p>"
+"alta y tamaño de archivo pequeño)<br><b>50</b>: calidad media<br><b>75</b>: "
+"buena calidad (predeterminada)<br><b>100</b>: alta calidad (sin compresión y "
+"tamaño de archivo grande) </p><p><b>Nota: JPEG usa un algoritmo de "
+"compresión con pérdidas.</b></p>"
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:79
 #, kde-format
@@ -7295,13 +7275,7 @@ msgid "JPEG 2000 quality:"
 msgstr "Calidad del JPEG 2000:"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality "
-#| "(high compression and small file size)<br/><b>50</b>: medium quality<br/"
-#| "><b>75</b>: good quality (default)<br/><b>100</b>: high quality (no "
-#| "compression and large file size)</p><p><b>Note: JPEG 2000 is not a "
-#| "lossless image compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -7310,8 +7284,8 @@ msgid ""
 "format when you use this setting.</b></p>"
 msgstr ""
 "<p>La calidad de las imágenes JPEG 2000:</p><p><b>1</b>: calidad baja "
-"(compresión alta y tamaño de archivo pequeño)<br/><b>50</b>: calidad "
-"media<br/><b>75</b>: buena calidad (predeterminada)<br/><b>100</b>: alta "
+"(compresión alta y tamaño de archivo pequeño)<br><b>50</b>: calidad "
+"media<br><b>75</b>: buena calidad (predeterminada)<br><b>100</b>: alta "
 "calidad (sin compresión y tamaño de archivo grande)</p> <p><b>Nota: JPEG "
 "2000 no es un formato de compresión de imágenes sin pérdida cuando use esta "
 "configuración.</b></p>"
@@ -7429,13 +7403,7 @@ msgid "PGF quality:"
 msgstr "Calidad del PGF:"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "
-#| "compression and large file size)<br/><b>3</b>: good quality (default)<br/"
-#| "><b>6</b>: medium quality<br/><b>9</b>: low quality (high compression and "
-#| "small file size)</p><p><b>Note: PGF is not a lossless image compression "
-#| "format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "
 "compression and large file size)<br><b>3</b>: good quality "
@@ -7444,8 +7412,8 @@ msgid ""
 "compression format when you use this setting.</b></p>"
 msgstr ""
 "<p>La calidad de las imágenes PGF:</p><p><b>1</b>: calidad alta (sin "
-"compresión y tamaño de archivo grande)<br/><b>3</b>: calidad buena "
-"(predeterminada)<br/><b>6</b>: calidad media<br/><b>9</b>: calidad baja "
+"compresión y tamaño de archivo grande)<br><b>3</b>: calidad buena "
+"(predeterminada)<br><b>6</b>: calidad media<br><b>9</b>: calidad baja "
 "(compresión alta y tamaño de archivo pequeño)</p> <p><b>Nota: PGF no será un "
 "formato de compresión sin pérdida cuando use esta configuración.</b></p>"
 
@@ -7496,13 +7464,7 @@ msgid "PNG compression:"
 msgstr "Compresión PNG:"
 
 #: core/dplugins/dimg/png/dimgpngexportsettings.cpp:64
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The compression value for PNG images:</p><p><b>1</b>: low compression "
-#| "(large file size but short compression duration - default)<br/><b>5</b>: "
-#| "medium compression<br/><b>9</b>: high compression (small file size but "
-#| "long compression duration)</p><p><b>Note: PNG is always a lossless image "
-#| "compression format.</b></p>"
+#, kde-format
 msgid ""
 "<p>The compression value for PNG images:</p><p><b>1</b>: low compression "
 "(large file size but short compression duration - default)<br><b>5</b>: "
@@ -7512,7 +7474,7 @@ msgid ""
 msgstr ""
 "<p>Los valores de compresión de las imágenes PNG:</p><p><b>1</b>: compresión "
 "baja (tamaño de archivo grande pero compresión rápida - valor "
-"predeterminado)<br/><b>5</b>: compresión media<br/><b>9</b>: compresión alta "
+"predeterminado)<br><b>5</b>: compresión media<br><b>9</b>: compresión alta "
 "(tamaño de archivo pequeño pero compresión lenta)</p><p><b>Nota: PNG es "
 "siempre un formato de compresión sin pérdida.</b></p>"
 
@@ -7575,13 +7537,7 @@ msgid "AVIF quality:"
 msgstr "Calidad de AVIF:"
 
 #: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for AVIF images:</p><p><b>1</b>: low quality (high "
-#| "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-#| "b>: good quality (default)<br/><b>99</b>: high quality (no compression "
-#| "and large file size)</p><p><b>Note: AVIF is not a lossless image "
-#| "compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for AVIF images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -7590,10 +7546,10 @@ msgid ""
 "when you use this setting.</b></p>"
 msgstr ""
 "<p>La calidad de las imágenes AVIF:</p><p><b>1</b>: calidad baja (compresión "
-"alta y tamaño de archivo pequeño)<br/><b>50</b>: calidad media<br/><b>75</"
-"b>: buena calidad (predeterminada)<br/><b>99</b>: alta calidad (sin "
-"compresión y tamaño de archivo grande)</p> <p><b>Nota: AVIF no es un formato "
-"de compresión de imágenes sin pérdida cuando use esta configuración.</b></p>"
+"alta y tamaño de archivo pequeño)<br><b>50</b>: calidad media<br><b>75</b>: "
+"buena calidad (predeterminada)<br><b>99</b>: alta calidad (sin compresión y "
+"tamaño de archivo grande)</p> <p><b>Nota: AVIF no es un formato de "
+"compresión de imágenes sin pérdida cuando use esta configuración.</b></p>"
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:62
 #, kde-format
@@ -7615,13 +7571,7 @@ msgid "JPEG XL quality:"
 msgstr "Calidad de JPEG XL:"
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for JPEG XL images:</p><p><b>1</b>: low quality "
-#| "(high compression and small file size)<br/><b>50</b>: medium quality<br/"
-#| "><b>75</b>: good quality (default)<br/><b>99</b>: high quality (no "
-#| "compression and large file size)</p><p><b>Note: JPEG XL is not a lossless "
-#| "image compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for JPEG XL images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -7630,8 +7580,8 @@ msgid ""
 "when you use this setting.</b></p>"
 msgstr ""
 "<p>La calidad de las imágenes JPEG XL:</p><p><b>1</b>: calidad baja "
-"(compresión alta y tamaño de archivo pequeño)<br/><b>50</b>: calidad "
-"media<br/><b>75</b>: buena calidad (predeterminada)<br/><b>99</b>: alta "
+"(compresión alta y tamaño de archivo pequeño)<br><b>50</b>: calidad "
+"media<br><b>75</b>: buena calidad (predeterminada)<br><b>99</b>: alta "
 "calidad (sin compresión y tamaño de archivo grande)</p> <p><b>Nota: JPEG XL "
 "no es un formato de compresión de imágenes sin pérdida cuando use esta "
 "configuración.</b></p>"
@@ -7688,13 +7638,7 @@ msgid "WEBP quality:"
 msgstr "Calidad de WEBP:"
 
 #: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for WEBP images:</p><p><b>1</b>: low quality (high "
-#| "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-#| "b>: good quality (default)<br/><b>99</b>: high quality (no compression "
-#| "and large file size)</p><p><b>Note: WEBP is not a lossless image "
-#| "compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for WEBP images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -7703,10 +7647,10 @@ msgid ""
 "when you use this setting.</b></p>"
 msgstr ""
 "<p>La calidad de las imágenes WEBP:</p><p><b>1</b>: calidad baja (compresión "
-"alta y tamaño de archivo pequeño)<br/><b>50</b>: calidad media<br/><b>75</"
-"b>: buena calidad (predeterminada)<br/><b>99</b>: alta calidad (sin "
-"compresión y tamaño de archivo grande)</p> <p><b>Nota: WEBP no es un formato "
-"de compresión de imágenes sin pérdida cuando use esta configuración.</b></p>"
+"alta y tamaño de archivo pequeño)<br><b>50</b>: calidad media<br><b>75</b>: "
+"buena calidad (predeterminada)<br><b>99</b>: alta calidad (sin compresión y "
+"tamaño de archivo grande)</p> <p><b>Nota: WEBP no es un formato de "
+"compresión de imágenes sin pérdida cuando use esta configuración.</b></p>"
 
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:43
 #, kde-format
@@ -8886,16 +8830,7 @@ msgstr ""
 "Acceso rápido: Ctrl+Y"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:191
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>How To Use:<br/><br/>* Press <b>s</b> to switch to source-selection "
-#| "mode, and select source point on image.<br/>* Press <b>s</b> again and "
-#| "start cloning.<br/>* Press <b>[</b> and <b>]</b> to change brush size.<br/"
-#| ">* Press <b>CTRL+Mousewheel</b> to zoom in/out.<br/>* Press <b>m</b> to "
-#| "pan the image if image is larger than viewport.<br/>* Press <b>l</b> to "
-#| "start lasso mode. Start drawing lasso boundary either continuously or "
-#| "discretely, then double-click or press l again to close the boundary.<br/"
-#| ">* Inside lasso mode, you can clone only inside the lasso region.</p>"
+#, kde-format
 msgid ""
 "<p>How To Use:<br><br>* Press <b>s</b> to switch to source-selection mode, "
 "and select source point on image.<br>* Press <b>s</b> again and start "
@@ -8906,14 +8841,14 @@ msgid ""
 "click or press l again to close the boundary.<br>* Inside lasso mode, you "
 "can clone only inside the lasso region.</p>"
 msgstr ""
-"<p>Cómo se usa:<br/><br/>* Pulse <b>s</b> para cambiar al modo de selección "
-"del origen y seleccione el punto de origen en la imagen.<br/>* Pulse <b>s</"
-"b> de nuevo y empiece a clonar.<br/>* Pulse <b>[</b> y <b>]</b> para cambiar "
-"el tamaño del pincel.<br/>* Pulse <b>Ctrl+Rueda del ratón</b> para ampliar o "
-"reducir.<br/>* Pulse <b>m</b> para ajustar la imagen si es mayor que el "
-"lienzo.<br/>* Pulse <b>l</b> para iniciar el modo de lazo. Empiece a dibujar "
+"<p>Cómo se usa:<br><br>* Pulse <b>s</b> para cambiar al modo de selección "
+"del origen y seleccione el punto de origen en la imagen.<br>* Pulse <b>s</b> "
+"de nuevo y empiece a clonar.<br>* Pulse <b>[</b> y <b>]</b> para cambiar el "
+"tamaño del pincel.<br>* Pulse <b>Ctrl+Rueda del ratón</b> para ampliar o "
+"reducir.<br>* Pulse <b>m</b> para ajustar la imagen si es mayor que el "
+"lienzo.<br>* Pulse <b>l</b> para iniciar el modo de lazo. Empiece a dibujar "
 "el contorno del lazo de forma continua o discreta; a continuación haga doble "
-"clic o vuelva a pulsar <b>l</b> para cerrar el contorno.<br/>* En el modo de "
+"clic o vuelva a pulsar <b>l</b> para cerrar el contorno.<br>* En el modo de "
 "lazo solo podrá clonar dentro le la región enlazada.</p>"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:324
@@ -9194,15 +9129,7 @@ msgid "Custom"
 msgstr "Personalizado"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:130
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Select the filter preset to use for photograph restoration here:</"
-#| "p><p><b>Reduce Uniform Noise</b>: reduce small image artifacts such as "
-#| "sensor noise.<br/><b>Reduce JPEG Artifacts</b>: reduce large image "
-#| "artifacts, such as a JPEG compression mosaic.<br/><b>Reduce Texturing</"
-#| "b>: reduce image artifacts, such as paper texture, or Moire patterns on "
-#| "scanned images.<br/><b>Custom</b>: Puts settings to most common values, "
-#| "fully customizable.</p>"
+#, kde-format
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
 "p><p><b>Reduce Uniform Noise</b>: reduce small image artifacts such as "
@@ -9214,12 +9141,12 @@ msgid ""
 msgstr ""
 "<p>Seleccione aquí el preajuste de filtro a usar en la restauración "
 "fotográfica:</p><p><b>Reducir ruido uniforme</b>: reduce pequeños artefactos "
-"de la imagen, como el ruido del sensor.<br/><b>Reducir artefactos JPEG</b>: "
+"de la imagen, como el ruido del sensor.<br><b>Reducir artefactos JPEG</b>: "
 "reduce artefactos grandes de la imagen, como el mosaico de compresión JPEG."
-"<br/><b>Reducir texturización</b>: reduce artefactos de la imagen, como la "
-"textura del papel o los patrones Moire de una imagen escaneada.<br/"
-"><b>Personalizado</b>: establece las preferencias a los valores más comunes, "
-"totalmente personalizable.</p>"
+"<br><b>Reducir texturización</b>: reduce artefactos de la imagen, como la "
+"textura del papel o los patrones Moire de una imagen escaneada."
+"<br><b>Personalizado</b>: establece las preferencias a los valores más "
+"comunes, totalmente personalizable.</p>"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:321
 #, kde-format
@@ -10566,18 +10493,14 @@ msgid "Adjust"
 msgstr "Ajuste"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:171
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Correct the rotation of your images automatically by assigning two "
-#| "points in the preview widget and clicking <i>Adjust</i>.<br/>You can "
-#| "either adjust horizontal or vertical lines.</p>"
+#, kde-format
 msgid ""
 "<p>Correct the rotation of your images automatically by assigning two points "
 "in the preview widget and clicking <i>Adjust</i>.<br>You can either adjust "
 "horizontal or vertical lines.</p>"
 msgstr ""
 "<p>Corrija la rotación de sus imágenes automáticamente, asignando dos puntos "
-"en la vista previa y presionando en <i>Ajustar</i>.<br/>Podrá ajustar tanto "
+"en la vista previa y presionando en <i>Ajustar</i>.<br>Podrá ajustar tanto "
 "las líneas horizontales como las verticales.</p>"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:193
@@ -11867,20 +11790,7 @@ msgid "A tool to edit items geolocation"
 msgstr "Herramienta para editar la geolocalización de elementos"
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to change geolocation information from items.\n"
-#| "\n"
-#| "This tool can edit GPS data, manually or over a map. Reverse geo-coding "
-#| "is also available through web services.\n"
-#| "\n"
-#| "This tool has also an export function to KML to store map traces in "
-#| "Google format.\n"
-#| "\n"
-#| "Finally, this tool is able to read a GPS trace from a device to "
-#| "synchronize geo-location of items if you camera do not have an embedded "
-#| "GPS device."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to change geolocation information from items."
@@ -11891,17 +11801,13 @@ msgid ""
 "location of items if you camera do not have an embedded GPS device."
 msgstr ""
 "Esta herramienta permite al usuario cambiar la información de "
-"geolocalización de elementos.\n"
-"\n"
-"Puede editar datos de GPS de forma manual o sobre un mapa. También dispone "
-"de geocodificación inversa mediante servicios web.\n"
-"\n"
-"Esta herramienta también dispone de una función de exportación a KML para "
-"guardar rutas de mapas en el formato de Google.\n"
-"\n"
-"Por último, esta herramienta es capaz de leer rutas GPS de un dispositivo "
-"para sincronizar los datos de geolocalización de los elementos si su cámara "
-"no dispone de un dispositivo GPS integrado."
+"geolocalización de elementos.<br><br>Puede editar datos de GPS de forma "
+"manual o sobre un mapa. También dispone de geocodificación inversa mediante "
+"servicios web.<br><br>Esta herramienta también dispone de una función de "
+"exportación a KML para guardar rutas de mapas en el formato de Google."
+"<br><br>Por último, esta herramienta es capaz de leer rutas GPS de un "
+"dispositivo para sincronizar los datos de geolocalización de los elementos "
+"si su cámara no dispone de un dispositivo GPS integrado."
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:103
 #, kde-format
@@ -15293,16 +15199,7 @@ msgid "A tool to edit items metadata"
 msgstr "Herramienta para editar metadatos de elementos"
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to changes plenty of metadata from items.\n"
-#| "\n"
-#| "Most common Exif, Iptc, and Xmp tags used in photography are listed for "
-#| "editing with standardized values.\n"
-#| "\n"
-#| "For photo agencies, pre-configured subjects can be used to describe the "
-#| "items contents based on Iptc reference codes."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to changes plenty of metadata from items.<br><br>Most "
@@ -15311,13 +15208,10 @@ msgid ""
 "can be used to describe the items contents based on Iptc reference codes."
 msgstr ""
 "Esta herramienta permite al usuario modificar gran cantidad de metadatos de "
-"los elementos.\n"
-"\n"
-"La mayoría de las etiquetas Exif, Iptc y Xmp que se usan en fotografía se "
-"listan para su edición con valores estandarizados.\n"
-"\n"
-"Las agencias fotográficas pueden usar temas preconfigurados para describir "
-"el contenido de elementos basados en códigos de referencias Iptc."
+"los elementos.<br><br>La mayoría de las etiquetas Exif, Iptc y Xmp que se "
+"usan en fotografía se listan para su edición con valores estandarizados."
+"<br><br>Las agencias fotográficas pueden usar temas preconfigurados para "
+"describir el contenido de elementos basados en códigos de referencias Iptc."
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:101
 #, kde-format
@@ -16258,16 +16152,7 @@ msgid "A tool to adjust items date-time"
 msgstr "Herramienta para ajustar la fecha y la hora de elementos"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to adjust date time-stamp of items in batch.\n"
-#| "\n"
-#| "Many source of original time-stamp can be selected from original items, "
-#| "or a from a common file.\n"
-#| "\n"
-#| "Many metadata time-stamp can be adjusted or left untouched. The "
-#| "adjustment can be an offset of time or a specific date."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to adjust date time-stamp of items in batch."
@@ -16277,13 +16162,11 @@ msgid ""
 "specific date."
 msgstr ""
 "Esta herramienta permite al usuario ajustar marcas de fecha y hora de "
-"elementos por lotes.\n"
-"\n"
-"Puede seleccionar muchas fuentes de marcas de fecha originales de los "
-"elementos originales o de un archivo común.\n"
-"\n"
-"Puede ajustar muchas marcas de fecha de metadatos o dejarlas sin modificar. "
-"El ajuste puede ser un desplazamiento de tiempo o una fecha concreta."
+"elementos por lotes.<br><br>Puede seleccionar muchas fuentes de marcas de "
+"fecha originales de los elementos originales o de un archivo común."
+"<br><br>Puede ajustar muchas marcas de fecha de metadatos o dejarlas sin "
+"modificar. El ajuste puede ser un desplazamiento de tiempo o una fecha "
+"concreta."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:105
 #, kde-format
@@ -16606,36 +16489,29 @@ msgid "Select Calendar Data File"
 msgstr "Seleccione archivo de datos de calendario"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:202
-#, fuzzy, kde-format
-#| msgid "No valid images selected for months<br/>Click Back to select images"
+#, kde-format
 msgid "No valid images selected for months<br>Click Back to select images"
 msgstr ""
-"No se han seleccionado imágenes válidas para los meses<br/>Pulse «Atrás» "
-"para seleccionar imágenes"
+"No se han seleccionado imágenes válidas para los meses<br>Pulse «Atrás» para "
+"seleccionar imágenes"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:217
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please note that you are making a calendar for<br/>the current year or a "
-#| "year in the past."
+#, kde-format
 msgid ""
 "Please note that you are making a calendar for<br>the current year or a year "
 "in the past."
 msgstr ""
-"Tenga en cuenta que está haciendo un calendario<br/>para el año en curso o "
+"Tenga en cuenta que está haciendo un calendario<br>para el año en curso o "
 "para un año anterior."
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Click Next to start Printing<br/><br/>Following months will be printed "
-#| "for year %1:<br/>"
+#, kde-format
 msgid ""
 "Click Next to start Printing<br><br>Following months will be printed for "
 "year %1:<br>"
 msgstr ""
-"Pulse «Siguiente» para comenzar a imprimir<br/><br/>Se imprimirán los "
-"siguientes meses para el año %1:<br/>"
+"Pulse «Siguiente» para comenzar a imprimir<br><br>Se imprimirán los "
+"siguientes meses para el año %1:<br>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:275
 #, kde-format
@@ -16779,14 +16655,7 @@ msgid "A tool to batch convert RAW camera images to DNG"
 msgstr "Herramienta para convertir lotes de imágenes RAW de la cámara a DNG"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This Generic tool can convert RAW images data to DNG format.\n"
-#| "\n"
-#| "The Digital Negative is a lossless RAW image format created by Adobe.\n"
-#| "\n"
-#| "See details on this wikipedia entry about this format: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Generic tool can convert RAW images data to DNG format.<br><br>The "
@@ -16794,12 +16663,9 @@ msgid ""
 "details on this wikipedia entry about this format: %1"
 msgstr ""
 "Esta herramienta genérica puede convertir datos de imágenes RAW al formato "
-"DNG.\n"
-"\n"
-"El negativo digital es un formato de imagen RAW sin pérdidas creado por "
-"Adobe.\n"
-"\n"
-"Consulte los detalles sobre este formato en esta página de la Wikipedia: %1"
+"DNG.<br><br>El negativo digital es un formato de imagen RAW sin pérdidas "
+"creado por Adobe.<br><br>Consulte los detalles sobre este formato en esta "
+"página de la Wikipedia: %1"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:107
 #, kde-format
@@ -18007,10 +17873,9 @@ msgid "no customization available"
 msgstr "no se puede personalizar"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
-#, fuzzy, kde-format
-#| msgid "Author: %1<br/><br/>"
+#, kde-format
 msgid "Author: %1<br><br>"
-msgstr "Autor: %1<br/><br/>"
+msgstr "Autor: %1<br><br>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
 #, kde-format
@@ -18214,15 +18079,7 @@ msgstr ""
 "arranque la aplicación"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The media server allows to share items through the local network using %1 "
-#| "standard and %2 protocol. Many kind of electronic devices can support "
-#| "DLNA, as tablets, cellulars, TV, etc.\n"
-#| "\n"
-#| "Note: depending of the network features and the configuration, the delay "
-#| "to discover the server on client devices can take a while."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The media server allows to share items through the local network using %1 "
@@ -18234,11 +18091,9 @@ msgstr ""
 "El servidor multimedia permite compartir elementos a través de la red local "
 "usando el estándar %1 y el protocolo %2. Muchos tipos de dispositivos "
 "electrónicos permiten el uso de DLNA, como tablets, teléfonos móviles, "
-"televisores, etc.\n"
-"\n"
-"Nota: dependiendo de las características de la red y de la configuración, el "
-"tiempo necesario para detectar el servidor en los dispositivos clientes "
-"puede ser alto."
+"televisores, etc.<br><br>Nota: dependiendo de las características de la red "
+"y de la configuración, el tiempo necesario para detectar el servidor en los "
+"dispositivos clientes puede ser alto."
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:209
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:284
@@ -18973,17 +18828,7 @@ msgstr ""
 "OCR"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool can convert documented images data to Text format by using "
-#| "Tesseract, an open-source Optical Characters Recognition engine, "
-#| "originally developed at HP labs and now sponsored by Google.\n"
-#| "\n"
-#| "It supports multiple languages and scripts (including right-to-left text) "
-#| "and page layout analysis.\n"
-#| "\n"
-#| "See details on %1 for more information on Tesseract"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool can convert documented images data to Text format by using "
@@ -18995,12 +18840,10 @@ msgstr ""
 "Esta herramienta convierte datos de imágenes documentadas en formato de "
 "texto mediante el uso de Tesseract, un motor de reconocimiento óptico de "
 "caracteres de código abierto, desarrollado originalmente en los laboratorios "
-"de HP y que en la actualidad está patrocinado por Google.\n"
-"\n"
-"Permite el uso de múltiples idiomas y guiones (incluido el texto de derecha "
-"a izquierda), así como análisis de estructuras de página.\n"
-"\n"
-"Consulte los detalles en %1 para más información sobre Tesseract."
+"de HP y que en la actualidad está patrocinado por Google.<br><br>Permite el "
+"uso de múltiples idiomas y guiones (incluido el texto de derecha a "
+"izquierda), así como análisis de estructuras de página.<br><br>Consulte los "
+"detalles en %1 para más información sobre Tesseract."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:95
 #, kde-format
@@ -20926,19 +20769,15 @@ msgstr "<p>El nuevo valor de compresión de las imágenes JPEG a enviar:</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:175
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:137
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><b>1</b>: very high compression<br/><b>25</b>: high compression<br/"
-#| "><b>50</b>: medium compression<br/><b>75</b>: low compression (default "
-#| "value)<br/><b>100</b>: no compression</p>"
+#, kde-format
 msgid ""
 "<p><b>1</b>: very high compression<br><b>25</b>: high compression<br><b>50</"
 "b>: medium compression<br><b>75</b>: low compression (default "
 "value)<br><b>100</b>: no compression</p>"
 msgstr ""
-"<p><b>1</b>: compresión muy alta<br/><b>25</b>: compresión alta<br/><b>50</"
-"b>: compresión media<br/><b>75</b>: compresión baja (valor por omisión)<br/"
-"><b>100</b>: sin compresión</p>"
+"<p><b>1</b>: compresión muy alta<br><b>25</b>: compresión alta<br><b>50</b>: "
+"compresión media<br><b>75</b>: compresión baja (valor por "
+"omisión)<br><b>100</b>: sin compresión</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
@@ -22200,15 +22039,7 @@ msgid "A tool to render presentation"
 msgstr "Herramienta para mostrar una presentación"
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool render a series of items as an advanced slide-show.\n"
-#| "\n"
-#| "Plenty of transition effects are available are ones based on OpenGL and "
-#| "the famous Ken Burns effect.\n"
-#| "\n"
-#| "You can add a sound-track in background while your presentation."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool render a series of items as an advanced slide-show.<br><br>Plenty "
@@ -22217,12 +22048,9 @@ msgid ""
 "presentation."
 msgstr ""
 "Esta herramienta muestra una serie de elementos como una presentación "
-"avanzada.\n"
-"\n"
-"Dispone de numerosos efectos de transición basados en OpenGL y del famoso "
-"efecto Ken Burns.\n"
-"\n"
-"Puede añadir una pista de sonido de fondo a la presentación."
+"avanzada.<br><br>Dispone de numerosos efectos de transición basados en "
+"OpenGL y del famoso efecto Ken Burns.<br><br>Puede añadir una pista de "
+"sonido de fondo a la presentación."
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:104
 #, kde-format
@@ -22745,20 +22573,14 @@ msgid "A tool to export to Box web-service"
 msgstr "Herramienta para exportar al servicio web Box"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to Box web-service.\n"
-#| "\n"
-#| "See Box web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Box web-service.<br><br>See Box "
 "web site for details: %1"
 msgstr ""
-"Esta herramienta permite al usuario exportar elementos al servicio web Box.\n"
-"\n"
-"Consulte el sitio web de Box para más detalles: %1"
+"Esta herramienta permite al usuario exportar elementos al servicio web Box."
+"<br><br>Consulte el sitio web de Box para más detalles: %1"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:91
 #, kde-format
@@ -23280,12 +23102,7 @@ msgid "Use the album path of the items in the target"
 msgstr "Usar la ruta del álbum de los elementos de destino"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: "
-#| "very high compression<br/><b>25</b>: high compression<br/><b>50</b>: "
-#| "medium compression<br/><b>75</b>: low compression (default value)<br/"
-#| "><b>100</b>: no compression</p>"
+#, kde-format
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
 "high compression<br><b>25</b>: high compression<br><b>50</b>: medium "
@@ -23293,9 +23110,9 @@ msgid ""
 "compression</p>"
 msgstr ""
 "<p>El nuevo valor de compresión para las imágenes JPEG a enviar:</p><p><b>1</"
-"b>: compresión muy alta<br/><b>25</b>: compresión alta<br/><b>50</b>: "
-"compresión media<br/><b>75</b>: compresión baja (valor por omisión)<br/"
-"><b>100</b>: sin compresión</p>"
+"b>: compresión muy alta<br><b>25</b>: compresión alta<br><b>50</b>: "
+"compresión media<br><b>75</b>: compresión baja (valor por "
+"omisión)<br><b>100</b>: sin compresión</p>"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, kde-format
@@ -23487,22 +23304,15 @@ msgstr ""
 "Herramienta para exportar e importar elementos con una ubicación remota"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export and import items with a remote "
-#| "location.\n"
-#| "\n"
-#| "Many protocols can be used, as FTP, SFTP, SAMBA, etc."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export and import items with a remote location."
 "<br><br>Many protocols can be used, as FTP, SFTP, SAMBA, etc."
 msgstr ""
 "Esta herramienta permite al usuario exportar e importar elementos con una "
-"ubicación remota.\n"
-"\n"
-"Puede usar diversos protocolos, como FTP, SFTP, SAMBA, etc."
+"ubicación remota.<br><br>Puede usar diversos protocolos, como FTP, SFTP, "
+"SAMBA, etc."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
 #, kde-format
@@ -23587,21 +23397,14 @@ msgid "A tool to export to Flickr web-service"
 msgstr "Herramienta para exportar al servicio Web Flickr"
 
 #: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to Flickr web-service.\n"
-#| "\n"
-#| "See Flickr web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Flickr web-service.<br><br>See "
 "Flickr web site for details: %1"
 msgstr ""
 "Esta herramienta permite al usuario exportar elementos al servicio web "
-"Flickr.\n"
-"\n"
-"Consulte el sitio web de Flickr para más detalles: %1"
+"Flickr.<br><br>Consulte el sitio web de Flickr para más detalles: %1"
 
 #: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:104
 #, kde-format
@@ -24105,15 +23908,7 @@ msgstr ""
 "Herramienta para exportar e importar elementos con el servicio web Google"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export and import items with Google web-"
-#| "services.\n"
-#| "\n"
-#| "Google Photos and Google Drive web services are supported.\n"
-#| "\n"
-#| "See Google web sites for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export and import items with Google web-services."
@@ -24121,11 +23916,9 @@ msgid ""
 "<br><br>See Google web sites for details: %1"
 msgstr ""
 "Esta herramienta permite al usuario exportar e importar elementos de los "
-"servicios web de Google.\n"
-"\n"
-"Puede usar los servicios web de Google Photos y Google Drive.\n"
-"\n"
-"Consulte los sitios web de Google para más detalles: %1"
+"servicios web de Google.<br><br>Puede usar los servicios web de Google "
+"Photos y Google Drive.<br><br>Consulte los sitios web de Google para más "
+"detalles: %1"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:104
 #, kde-format
@@ -25249,21 +25042,14 @@ msgid "A tool to export to IPFS web-service"
 msgstr "Herramienta para exportar al servicio web IPFS"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to IPFS web-service.\n"
-#| "\n"
-#| "See IPFS web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to IPFS web-service.<br><br>See IPFS "
 "web site for details: %1"
 msgstr ""
-"Esta herramienta permite al usuario exportar elementos al servicio web "
-"IPFS.\n"
-"\n"
-"Consulte el sitio web de IPFS para más detalles: %1"
+"Esta herramienta permite al usuario exportar elementos al servicio web IPFS."
+"<br><br>Consulte el sitio web de IPFS para más detalles: %1"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:96
 #, kde-format
@@ -25319,21 +25105,14 @@ msgid "A tool to export to MediaWiki web-service"
 msgstr "Herramienta para exportar al servicio web MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to MediaWiki web-service.\n"
-#| "\n"
-#| "See MediaWiki web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to MediaWiki web-service.<br><br>See "
 "MediaWiki web site for details: %1"
 msgstr ""
 "Esta herramienta permite al usuario exportar elementos al servicio web "
-"MediaWiki.\n"
-"\n"
-"Consulte el sitio web de MediaWiki para más detalles: %1"
+"MediaWiki.<br><br>Consulte el sitio web de MediaWiki para más detalles: %1"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:101
 #, kde-format
@@ -25917,21 +25696,14 @@ msgid "A tool to export to Pinterest web-service"
 msgstr "Herramienta para exportar al servicio web Pinterest"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to Pinterest web-service.\n"
-#| "\n"
-#| "See Pinterest web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Pinterest web-service.<br><br>See "
 "Pinterest web site for details: %1"
 msgstr ""
 "Esta herramienta permite al usuario exportar elementos al servicio web "
-"Pinterest.\n"
-"\n"
-"Consulte el sitio web de Pinterest para más detalles: %1"
+"Pinterest.<br><br>Consulte el sitio web de Pinterest para más detalles: %1"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:92
 #, kde-format
@@ -26277,21 +26049,14 @@ msgid "A tool to export to Rajce web-service"
 msgstr "Herramienta para exportar al servicio web Rajce"
 
 #: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to Rajce web-service.\n"
-#| "\n"
-#| "See Rajce web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Rajce web-service.<br><br>See "
 "Rajce web site for details: %1"
 msgstr ""
-"Esta herramienta permite al usuario exportar elementos al servicio web "
-"Rajce.\n"
-"\n"
-"Consulte el sitio web de Rajce para más detalles: %1"
+"Esta herramienta permite al usuario exportar elementos al servicio web Rajce."
+"<br><br>Consulte el sitio web de Rajce para más detalles: %1"
 
 #: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:96
 #, kde-format
@@ -26515,22 +26280,15 @@ msgstr ""
 "Herramienta para exportar e importar elementos con el servicio web SmugMug"
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export and import items with SmugMug web-"
-#| "service.\n"
-#| "\n"
-#| "See SmugMug web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export and import items with SmugMug web-service."
 "<br><br>See SmugMug web site for details: %1"
 msgstr ""
 "Esta herramienta permite al usuario exportar e importar elementos con el "
-"servicio web SmugMug.\n"
-"\n"
-"Consulte el sitio web de SmugMug para más detalles: %1"
+"servicio web SmugMug.<br><br>Consulte el sitio web de SmugMug para más "
+"detalles: %1"
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:102
 #, kde-format
@@ -27417,27 +27175,21 @@ msgid "The SQLite core database was not found."
 msgstr "No se ha encontrado la base de datos principal de SQLite."
 
 #: core/libs/album/manager/albummanager_database.cpp:144
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file:<br/>%1</p>"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br>%1</p>"
 msgstr ""
 "<p>Si quiere empezar con una configuración nueva y con el asistente de la "
-"primera ejecución, borre el archivo:<br/>%1</p>"
+"primera ejecución, borre el archivo:<br>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:157
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the internal server start.<p>Details:\n"
-#| "%1</p>"
+#, kde-format
 msgid ""
 "An error occurred during the internal server start.<p>Details:<br>%1</p>"
 msgstr ""
-"Ha ocurrido un error durante el arranque del servidor interno.<p>Detalles:\n"
-"%1</p>"
+"Ha ocurrido un error durante el arranque del servidor interno.<p>Detalles:"
+"<br>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -27510,36 +27262,26 @@ msgstr ""
 "datos antes de reiniciar digiKam."
 
 #: core/libs/album/manager/albummanager_database.cpp:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
-#| "on your system.<br/> Please choose the most appropriate  option to handle "
-#| "this situation:</p>"
+#, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br>(%2)</p><p> is currently not found on "
 "your system.<br> Please choose the most appropriate  option to handle this "
 "situation:</p>"
 msgstr ""
-"<p>No se ha encontrado la colección </p><p><b>%1</b><br/>(%2)</p><p> en su "
-"sistema.<br/> Seleccione la opción más adecuada para manejar la situación:</"
-"p>"
+"<p>No se ha encontrado la colección </p><p><b>%1</b><br>(%2)</p><p> en su "
+"sistema.<br> Seleccione la opción más adecuada para manejar la situación:</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:329
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The collection is still available, but the identifier changed.<br/"
-#| ">This can be caused by restoring a backup, changing the partition layout "
-#| "or the file system settings.<br/>The collection is now located at this "
-#| "place:</p>"
+#, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br>This "
 "can be caused by restoring a backup, changing the partition layout or the "
 "file system settings.<br>The collection is now located at this place:</p>"
 msgstr ""
-"<p>La colección aún está disponible, pero su identificador ha cambiado.<br/"
-">Esto puede deberse a la restauración de una copia de respaldo, o un cambio "
-"en el esquema de particiones o en las preferencias del sistema.<br/>Ahora, "
-"la colección está ubicada en:</p>"
+"<p>La colección aún está disponible, pero su identificador ha cambiado."
+"<br>Esto puede deberse a la restauración de una copia de respaldo, o un "
+"cambio en el esquema de particiones o en las preferencias del sistema."
+"<br>Ahora, la colección está ubicada en:</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:348
 #, kde-format
@@ -29058,14 +28800,10 @@ msgstr ""
 "digiKam intentará reconectarse automáticamente a la base de datos."
 
 #: core/libs/database/engine/dbengineguierrorhandler.cpp:238
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><b>A database error occurred.</b></p>Details:\n"
-#| " %1"
+#, kde-format
 msgid "<p><b>A database error occurred.</b></p>Details:<br> %1"
 msgstr ""
-"<p><b>Ha ocurrido un error en la base de datos.</b></p>Detalles:\n"
-" %1"
+"<p><b>Ha ocurrido un error en la base de datos.</b></p>Detalles:<br> %1"
 
 #: core/libs/database/history/itemhistorygraphmodel.cpp:454
 #, kde-format
@@ -29610,18 +29348,7 @@ msgstr ""
 "elementos.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set here the location where the database files will be stored on your "
-#| "system. There are four databases: one for all collections properties, one "
-#| "to store compressed thumbnails, one to store faces recognition metadata, "
-#| "and one to store similarity fingerprints.<br/>Write access is required to "
-#| "be able to edit image properties.</p><p>Databases are digiKam core "
-#| "engines. Take care to use a place hosted by fast hardware (eg. SSD or "
-#| "NVMe) with enough free space especially for thumbnails database.</"
-#| "p><p>Note: a remote file system such as NFS, cannot be used here. For "
-#| "performance reasons, it is also recommended not to use network storage "
-#| "media.</p><p></p>"
+#, kde-format
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -29637,7 +29364,7 @@ msgstr ""
 "las bases de datos. Existen cuatro bases de datos: una para las propiedades "
 "de todas las colecciones, otra para guardar miniaturas comprimidas, otra "
 "para guardar los metadatos de reconocimiento facial y otra para guardar "
-"huellas digitales de similitud.<br/>Se necesita permiso de escritura para "
+"huellas digitales de similitud.<br>Se necesita permiso de escritura para "
 "poder editar las propiedades de las imágenes.</p><p>Las bases de datos son "
 "los motores principales de digiKam. Debería usar un lugar situado en un "
 "dispositivo rápido (como un disco SSD o NVMe) con suficiente espacio libre, "
@@ -29912,13 +29639,7 @@ msgid "Database Server Instructions"
 msgstr "Instrucciones del servidor de base de datos"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:290
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>digiKam expects that database is already created with a dedicated user "
-#| "account. This user name <i>digikam</i> will require full access to the "
-#| "database.<br/>If your database is not already set up, you can use the "
-#| "following SQL commands (after replacing the <b><i>password</i></b> with "
-#| "the correct one).</p>"
+#, kde-format
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
 "account. This user name <i>digikam</i> will require full access to the "
@@ -29928,23 +29649,12 @@ msgid ""
 msgstr ""
 "<p>digiKam espera que se ya se hubiera creado la base de datos con una "
 "cuenta de usuario dedicada. Dicho usuario, llamado <i>digikam</i>, debe "
-"tener acceso completo a la base de datos.<br/>Si todavía no ha configurado "
-"la base de datos, puede usar las siguientes órdenes de SQL (tras sustituir "
-"la <b><i>contraseña</i></b> con la correcta).</p>"
+"tener acceso completo a la base de datos.<br>Si todavía no ha configurado la "
+"base de datos, puede usar las siguientes órdenes de SQL (tras sustituir la "
+"<b><i>contraseña</i></b> con la correcta).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have problems with a MySQL server on Ubuntu "
-#| "based Linux system, use the addition command in the mysql prompt to be "
-#| "able to create MySQL triggers.<br/>SET GLOBAL "
-#| "log_bin_trust_function_creators=1;</p><p>NOTE: If you have an enormous "
-#| "collection, you should start MySQL server with mysql --"
-#| "max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -29962,7 +29672,7 @@ msgstr ""
 "iniciar las bases de datos de digiKam con los privilegios adecuados (ver más "
 "atrás)</p><p>…</p><p>quit</p><p>Nota: Si tiene problemas con un servidor "
 "MySQL en un sistema Linux con Ubuntu, use la orden de adición en el punto de "
-"entrada de mysql para poder crear disparadores de MySQL.<br/>SET GLOBAL "
+"entrada de mysql para poder crear disparadores de MySQL.<br>SET GLOBAL "
 "log_bin_trust_function_creators=1;</p><p>Nota: Si posee una colección de "
 "fotos muy grande, debería iniciar el servidor MySQL con mysql --"
 "max_allowed_packet=128M, o bien cambiando las preferencias en uno de los "
@@ -30092,28 +29802,22 @@ msgid "Database Configuration"
 msgstr "Configuración de la base de datos"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
-#, fuzzy, kde-format
-#| msgid ""
-#| "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
-#| ">Please check your configuration."
+#, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br><p>%1</"
 "p><br>Please check your configuration."
 msgstr ""
 "La configuración de los nombres de las bases de datos no es válida. El error "
-"es <br/><p>%1</p><br/>Compruebe la configuración."
+"es <br><p>%1</p><br>Compruebe la configuración."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:865
-#, fuzzy, kde-format
-#| msgid ""
-#| "Testing database connection has failed with error<br/><p>%1</p><br/"
-#| ">Please check your configuration."
+#, kde-format
 msgid ""
 "Testing database connection has failed with error<br><p>%1</p><br>Please "
 "check your configuration."
 msgstr ""
-"La prueba de conexión con la base de datos ha fallado con el error<br/><p>"
-"%1</p><br/>Compruebe la configuración."
+"La prueba de conexión con la base de datos ha fallado con el error<br><p>%1</"
+"p><br>Compruebe la configuración."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:884
 #, kde-format
@@ -30146,16 +29850,13 @@ msgid "Create Database Folder Failed"
 msgstr "La creación de la carpeta de la base de datos ha fallado"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:906
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>digiKam could not create the folder to host your database file.\n"
-#| "Please select a different location.</p><p><b>%1</b></p>"
+#, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.<br>Please "
 "select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"<p>digiKam no ha podido crear la carpeta para guardar su base de datos.\n"
-"Seleccione una ubicación diferente.</p><p><b>%1</b></p>"
+"<p>digiKam no ha podido crear la carpeta para guardar su base de datos."
+"<br>Seleccione una ubicación diferente.</p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:931
 #, kde-format
@@ -30164,16 +29865,13 @@ msgid "No Database Write Access"
 msgstr "Sin acceso de escritura a la base de datos"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:932
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>You do not seem to have write access for the folder to host the "
-#| "database file.<br/>Please select a different location.</p><p><b>%1</b></p>"
+#, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
 "file.<br>Please select a different location.</p><p><b>%1</b></p>"
 msgstr ""
 "<p>digiKam no tiene acceso de escritura a la carpeta donde poner la base de "
-"datos.<br/>Seleccione una ubicación diferente.</p><p><b>%1</b></p>"
+"datos.<br>Seleccione una ubicación diferente.</p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:46
 #, kde-format
@@ -30602,13 +30300,11 @@ msgid "Copy to Clipboard"
 msgstr "Copiar al portapapeles"
 
 #: core/libs/dialogs/infodlg.cpp:92
-#, fuzzy, kde-format
-#| msgid ""
-#| "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
+#, kde-format
 msgid ""
 "<font size=\"5\">%1</font><br><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
 msgstr ""
-"<font size=\"5\">%1</font><br/><b>Versión %2</b><p>%3</p><p><i>%4</i></p>"
+"<font size=\"5\">%1</font><br><b>Versión %2</b><p>%3</p><p><i>%4</i></p>"
 
 #: core/libs/dialogs/infodlg.cpp:113
 #, kde-format
@@ -30646,10 +30342,12 @@ msgid "Unknown"
 msgstr "Desconocida"
 
 #: core/libs/dialogs/libsinfodlg.cpp:422
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Build Environnement"
 msgctxt "@title"
-msgid "Build Environnement"
-msgstr ""
+msgid "Build Environment"
+msgstr "Entorno de compilación"
 
 #: core/libs/dialogs/libsinfodlg.cpp:460
 #, kde-format
@@ -30694,24 +30392,20 @@ msgid "List of Supported RAW Cameras"
 msgstr "Lista de cámaras RAW permitidas"
 
 #: core/libs/dialogs/rawcameradlg.cpp:125
-#, fuzzy, kde-format
-#| msgid "Using LibRaw version %2<br/>1 model on the list"
-#| msgid_plural "Using LibRaw version %2<br/>%1 models on the list"
+#, kde-format
 msgid "Using LibRaw version %2<br>1 model on the list"
 msgid_plural "Using LibRaw version %2<br>%1 models on the list"
-msgstr[0] "Usando la versión %2 de la LibRaw<br/>%1 modelo en la lista"
-msgstr[1] "Usando la versión %2 de la LibRaw<br/>%1 modelos en la lista"
+msgstr[0] "Usando 1 modelo de<br>LibRaw versión %2 en la lista"
+msgstr[1] "Usando %1 modelos de<br>LibRaw versión %2 en la lista"
 
 #: core/libs/dialogs/rawcameradlg.cpp:135
-#, fuzzy, kde-format
-#| msgid "Using LibRaw version %2<br/>1 model on the list (found: %3)"
-#| msgid_plural "Using LibRaw version %2<br/>%1 models on the list (found: %3)"
+#, kde-format
 msgid "Using LibRaw version %2<br>1 model on the list (found: %3)"
 msgid_plural "Using LibRaw version %2<br>%1 models on the list (found: %3)"
 msgstr[0] ""
-"Usando la versión %2 de LibRaw<br/>1 modelo en la lista (encontrados: %3)"
+"Usando 1 modelo de LibRaw versión %2<br>en la lista (encontrados: %3)"
 msgstr[1] ""
-"Usando la versión %2 de LibRaw<br/>%1 modelos en la lista (encontrados: %3)"
+"Usando %1 modelos de LibRaw versión %2<br>en la lista (encontrados: %3)"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:78
 #, kde-format
@@ -35768,46 +35462,39 @@ msgid "Open filter settings panel"
 msgstr "Abrir panel de configuración de filtros"
 
 #: core/libs/filters/filterstatusbar.cpp:121
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Text</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Text</i></nobr>"
-msgstr "<br/><nobr><i>Texto</i></nobr>"
+msgstr "<br><nobr><i>Texto</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:126
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Mime Type</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Mime Type</i></nobr>"
-msgstr "<br/><nobr><i>Tipo mime</i></nobr>"
+msgstr "<br><nobr><i>Tipo MIME</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:131
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Geolocation</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Geolocation</i></nobr>"
-msgstr "<br/><nobr><i>Geolocalización</i></nobr>"
+msgstr "<br><nobr><i>Geolocalización</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:136
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Rating</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Rating</i></nobr>"
-msgstr "<br/><nobr><i>Puntuación</i></nobr>"
+msgstr "<br><nobr><i>Puntuación</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:141
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Pick Labels</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Pick Labels</i></nobr>"
-msgstr "<br/><nobr><i>Emblemas de elección</i></nobr>"
+msgstr "<br><nobr><i>Emblemas de elección</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:146
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Color Labels</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Color Labels</i></nobr>"
-msgstr "<br/><nobr><i>Emblemas de color</i></nobr>"
+msgstr "<br><nobr><i>Emblemas de color</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:151
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Tags</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Tags</i></nobr>"
-msgstr "<br/><nobr><i>Etiquetas</i></nobr>"
+msgstr "<br><nobr><i>Etiquetas</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:156
 #, kde-format
@@ -37823,14 +37510,7 @@ msgid "Download"
 msgstr "Descargar"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:274
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
-#| "built on <i>%3</i> is available on this <a href='%4'>repository</a>.</"
-#| "p><p>Press <b>Download</b> to get the file...</p><p>Note: from Setup/Misc "
-#| "panel, you can switch to check for stable release only.<br/>Stable "
-#| "versions are safe to use in production.</p><p>Press <b>Configure</b> if "
-#| "you want to customize update options from setup dialog.</p>"
+#, kde-format
 msgid ""
 "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
 "built on <i>%3</i> is available on this <a href='%4'>repository</a>.</"
@@ -37843,22 +37523,13 @@ msgstr ""
 "p><p>Está disponible una nueva versión preliminar compilada el <i>%3</i> en "
 "este <a href='%4'>repositorio</a>.</p><p>Pulse <b>Descargar</b> para obtener "
 "el archivo.</p><p>Nota: puede hacer que se compruebe solo la existencia de "
-"versiones estables en el panel de «Configuración/Varios».<br/>Las versiones "
+"versiones estables en el panel de «Configuración/Varios».<br>Las versiones "
 "estables se pueden usar con seguridad en sistemas de producción.</p><p>Pulse "
 "<b>Configurar</b> si desea personalizar las opciones de actualización del "
 "diálogo de configuración.</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:287
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version "
-#| "<i>%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
-#| "<b>Download</b> to get the file...</p><p>Note: from Setup/Misc panel, you "
-#| "can switch to check for weekly pre-release.<br/>Pre-release versions are "
-#| "dedicated to test quickly new features.<br/>It is not recommended to use "
-#| "pre-releases in production as bugs can remain,<br/>unless you know what "
-#| "you are doing.</p><p>Press <b>Configure</b> if you want to customize "
-#| "update options from setup dialog.</p>"
+#, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
 "%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
@@ -37873,10 +37544,10 @@ msgstr ""
 "la nueva versión estable <i>%3</i> en este <a href='%4'>repositorio</a>.</"
 "p><p>Pulse <b>Descargar</b> para obtener el archivo.</p><p>Nota: puede hacer "
 "que se compruebe la existencia de versiones preliminares semanales en el "
-"panel de «Configuración/Varios».<br/>Las versiones preliminares tienen como "
-"objeto probar rápidamente las nuevas funcionalidades.<br/>No se recomienda "
-"el uso de versiones preliminares en sistemas de producción,<br/>ya que "
-"pueden contener errores, a menos que sepa lo que está haciendo.</p><p>Pulse "
+"panel de «Configuración/Varios».<br>Las versiones preliminares tienen como "
+"objeto probar rápidamente las nuevas funcionalidades.<br>No se recomienda el "
+"uso de versiones preliminares en sistemas de producción,<br>ya que pueden "
+"contener errores, a menos que sepa lo que está haciendo.</p><p>Pulse "
 "<b>Configurar</b> si desea personalizar las opciones de actualización del "
 "diálogo de configuración.</p>"
 
@@ -40925,20 +40596,16 @@ msgstr[0] "Borrar etiqueta"
 msgstr[1] "Borrar etiquetas"
 
 #: core/libs/tags/manager/tagsmanager.cpp:492
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>digiKam will clean up tag metadata before setting tags from database."
-#| "<br/> You may <b>lose tags</b> if you did not read tags before (by "
-#| "calling Read Tags from Image).<br/> Do you want to continue?</qt>"
+#, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database."
 "<br> You may <b>lose tags</b> if you did not read tags before (by calling "
 "Read Tags from Image).<br> Do you want to continue?</qt>"
 msgstr ""
 "<qt>digiKam limpiará todos los metadatos de etiquetas antes de asignar "
-"etiquetas desde la base de datos.<br/>Puede <b>perder etiquetas</b> si no "
-"las ha leído antes (usando «Leer etiquetas de la imagen»).<br/>¿Desea "
-"continuar?</qt>"
+"etiquetas desde la base de datos.<br>Puede <b>perder etiquetas</b> si no las "
+"ha leído antes (usando «Leer etiquetas de la imagen»).<br>¿Desea continuar?</"
+"qt>"
 
 #: core/libs/tags/manager/tagsmanager.cpp:504
 #: core/libs/tags/manager/tagsmanager.cpp:523
@@ -41139,14 +40806,7 @@ msgid "Enter tag name here..."
 msgstr "Introduzca el nombre de la etiqueta…"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:138
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
-#| "can be used to create a tags hierarchy.<br/>Ex.: <i>\"Country/City/Paris"
-#| "\"</i></li><li>',' can be used to create more than one tags hierarchy at "
-#| "the same time.<br/>Ex.: <i>\"City/Paris, Monument/Notre-Dame\"</i></"
-#| "li><li>If a tag hierarchy starts with '/', root tag album is used as "
-#| "parent.</li></ul></p>"
+#, kde-format
 msgid ""
 "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
 "can be used to create a tags hierarchy.<br>Ex.: <i>\"Country/City/Paris\"</"
@@ -41157,8 +40817,8 @@ msgid ""
 msgstr ""
 "<p>Para crear etiquetas nuevas, podrá usar las siguientes reglas:</"
 "p><p><ul><li>el «/» puede ser usado para crear una jerarquía de etiquetas."
-"<br/>Ej.: <i>«País/Ciudad/París»</i></li><li>«,» puede usarse para crear más "
-"de una jerarquía de etiquetas al mismo tiempo.<br/>Ej.: <i>«Ciudad/París, "
+"<br>Ej.: <i>«País/Ciudad/París»</i></li><li>«,» puede usarse para crear más "
+"de una jerarquía de etiquetas al mismo tiempo.<br>Ej.: <i>«Ciudad/París, "
 "Monumento/Notre-Dame»</i></li><li>Si una jerarquía de etiquetas comienza por "
 "«/», se usará el álbum de etiquetas raíz como padre.</li></ul></p>"
 
@@ -41187,16 +40847,14 @@ msgid "<b>Create New Tag</b>"
 msgstr "<b>Crear nueva etiqueta</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:337
-#, fuzzy, kde-format
-#| msgid "<b>Create New Tag in<br/>\"%1\"</b>"
+#, kde-format
 msgid "<b>Create New Tag in<br>\"%1\"</b>"
-msgstr "<b>Crear nueva etiqueta en<br/>«%1»</b>"
+msgstr "<b>Crear nueva etiqueta en<br>«%1»</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:343
-#, fuzzy, kde-format
-#| msgid "<b>Properties of Tag<br/>\"%1\"</b>"
+#, kde-format
 msgid "<b>Properties of Tag<br>\"%1\"</b>"
-msgstr "<b>Propiedades de la etiqueta<br/>«%1»</b>"
+msgstr "<b>Propiedades de la etiqueta<br>«%1»</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:515
 #, kde-format
@@ -41437,30 +41095,7 @@ msgstr ""
 "propietarios de dichos derechos."
 
 #: core/libs/template/templatepanel.cpp:132
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The Copyright Notice should contain any necessary copyright notice for "
-#| "claiming the intellectual property, and should identify the current "
-#| "owner(s) of the copyright for the photograph. Usually, this would be the "
-#| "photographer, but if the image was done by an employee or as work-for-"
-#| "hire, then the agency or company should be listed. Use the form "
-#| "appropriate to your country. USA: &copy; {date of first publication} name "
-#| "of copyright owner, as in \"&copy;2005 John Doe.\" Note, the word "
-#| "\"copyright\" or the abbreviation \"copr\" may be used in place of the "
-#| "&copy; symbol. In some foreign countries only the copyright symbol is "
-#| "recognized and the abbreviation does not work. Furthermore the copyright "
-#| "symbol must be a full circle with a \"c\" inside; using something like "
-#| "(c) where the parentheses form a partial circle is not sufficient. For "
-#| "additional protection worldwide, use of the phrase, \"all rights reserved"
-#| "\" following the notice above is encouraged. \n"
-#| "In Europe you would use: Copyright {Year} {Copyright owner}, all rights "
-#| "reserved. \n"
-#| "In Japan, for maximum protection, the following three items should appear "
-#| "in the copyright field of the IPTC Core: (a) the word, Copyright; (b) "
-#| "year of the first publication; and (c) name of the author. You may also "
-#| "wish to include the phrase \"all rights reserved\".</p><p>With XMP, you "
-#| "can include more than one copyright string using different languages.</"
-#| "p><p>With IPTC, this field is limited to 128 characters.</p>"
+#, kde-format
 msgid ""
 "<p>The Copyright Notice should contain any necessary copyright notice for "
 "claiming the intellectual property, and should identify the current owner(s) "
@@ -41498,14 +41133,13 @@ msgstr ""
 "circunferencia completa con un «c» dentro; usar algo del tipo «(c)», donde "
 "los paréntesis forman parcialmente esa circunferencia, no es suficiente. "
 "Para protección adicional en todo el mundo se debe usar «todos los derechos "
-"reservados».\n"
-"En Europa habría que usar: Copyright {Año} {Detentor de los derechos}, todos "
-"los derechos reservados.\n"
-"En Japón, para la protección máxima, deberían aparecer los tres siguientes "
-"elementos en el campo de «copyright» de los datos de IPTC: (a) la palabra, "
-"Copyright; (b) el año de la primera publicación; y (c) el nombre del autor. "
-"Podrá también incluir la frase «todos los derechos reservados.»</p><p>En "
-"IPTC, este campo está limitado a 128 caracteres.</p>"
+"reservados».<br>En Europa habría que usar: Copyright {Año} {Detentor de los "
+"derechos}, todos los derechos reservados.<br>En Japón, para la protección "
+"máxima, deberían aparecer los tres siguientes elementos en el campo de "
+"«copyright» de los datos de IPTC: (a) la palabra, Copyright; (b) el año de "
+"la primera publicación; y (c) el nombre del autor. Podrá también incluir la "
+"frase «todos los derechos reservados.»</p><p>En IPTC, este campo está "
+"limitado a 128 caracteres.</p>"
 
 #: core/libs/template/templatepanel.cpp:154
 #, kde-format
@@ -41872,11 +41506,10 @@ msgstr ""
 "preferencia."
 
 #: core/libs/timeadjust/clockphotodialog.cpp:167
-#, fuzzy, kde-format
-#| msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
+#, kde-format
 msgid "<font color=\"red\"><b>Could not load<br>image %1.</b></font>"
 msgstr ""
-"<font color=\"red\"><b>No se ha podido cargar<br/>la imagen %1.</b></font>"
+"<font color=\"red\"><b>No se ha podido cargar<br>la imagen %1.</b></font>"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:183
 #, kde-format
@@ -43920,13 +43553,7 @@ msgid "Show Thumbbar"
 msgstr "Mostrar la barra de miniaturas"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the slogan formatted string displayed in splashscreen. Please "
-#| "translate using short words else the slogan can be truncated."
-#| msgid ""
-#| "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b><br/"
-#| ">with the Power of <b>Open Source</b></font></qt>"
+#, kde-format
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
@@ -43934,7 +43561,7 @@ msgid ""
 "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</"
 "b><br>with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
-"<qt><font color=\"white\"><b>Gestión</b> de fotos <b>profesional</b><br/>con "
+"<qt><font color=\"white\"><b>Gestión</b> de fotos <b>profesional</b><br>con "
 "la potencia del <b>software de código abierto</b></font></qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:51
@@ -50603,26 +50230,20 @@ msgid "Editor Window"
 msgstr "Ventana de edición"
 
 #: core/showfoto/setup/showfotosetup.cpp:106
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></"
-#| "qt>"
+#, kde-format
 msgid ""
 "<qt>Editor Window Settings<br><i>Customize editor window behavior</i></qt>"
 msgstr ""
-"<qt>Preferencias de la ventana del editor<br/><i>Personalizar el "
+"<qt>Preferencias de la ventana del editor<br><i>Personalizar el "
 "comportamiento de la ventana del editor</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:112
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
-#| "images and metadata</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br><i>Setup relations between "
 "images and metadata</i></qt>"
 msgstr ""
-"<qt>Gestión de la información incorporada en la imagen<br/><i>Configura las "
+"<qt>Gestión de la información incorporada en la imagen<br><i>Configura las "
 "relaciones entre las imágenes y los metadatos</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:117
@@ -50631,16 +50252,13 @@ msgid "Tool Tip"
 msgstr "Descripción emergente"
 
 #: core/showfoto/setup/showfotosetup.cpp:118
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
-#| "information in tool-tips</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br><i>Customize "
 "information in tool-tips</i></qt>"
 msgstr ""
 "<qt>Preferencias de las descripciones emergentes de los elementos de la "
-"barra de miniaturas y de la vista de carpetas<br/><i>Configurar la "
+"barra de miniaturas y de la vista de carpetas<br><i>Configurar la "
 "información de las descripciones emergentes</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:123
@@ -50649,27 +50267,21 @@ msgid "RAW Decoding"
 msgstr "Descodificación RAW"
 
 #: core/showfoto/setup/showfotosetup.cpp:124
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
-#| "settings</i></qt>"
+#, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br><i>Customize default RAW decoding "
 "settings</i></qt>"
 msgstr ""
-"<qt>Preferencias de descodificación de archivos RAW<br/><i>Configurar la "
+"<qt>Preferencias de descodificación de archivos RAW<br><i>Configurar la "
 "descodificación RAW predeterminada</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:130
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Settings for Color Management<br/><i>Customize color management "
-#| "settings</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Settings for Color Management<br><i>Customize color management settings</"
 "i></qt>"
 msgstr ""
-"<qt>Preferencias de gestión del color<br/><i>Configurar las preferencias de "
+"<qt>Preferencias de gestión del color<br><i>Configurar las preferencias de "
 "la gestión del color</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:135
@@ -50678,15 +50290,12 @@ msgid "Save Images"
 msgstr "Guardar las imágenes"
 
 #: core/showfoto/setup/showfotosetup.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Settings for Saving Image Files<br/><i>Set default configuration used "
-#| "to save images</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr ""
-"<qt>Preferencias de guardado de archivos de imágenes<br/><i>Establecer la "
+"<qt>Preferencias de guardado de archivos de imágenes<br><i>Establecer la "
 "configuración por defecto para guardar imágenes</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
@@ -50711,15 +50320,12 @@ msgid "Plugins"
 msgstr "Complementos"
 
 #: core/showfoto/setup/showfotosetup.cpp:151
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
-#| "accessible from application</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br><i>Set which plugins will be "
 "accessible from application</i></qt>"
 msgstr ""
-"<qt>Preferencias de los complementos de la interfaz principal<br/><i>Indicar "
+"<qt>Preferencias de los complementos de la interfaz principal<br><i>Indicar "
 "los complementos a los que podrá acceder la aplicación</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:156
@@ -50729,15 +50335,12 @@ msgid "Miscellaneous"
 msgstr "Otros"
 
 #: core/showfoto/setup/showfotosetup.cpp:157
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
-#| "of Showfoto</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br><i>Customize behavior of the other parts of "
 "Showfoto</i></qt>"
 msgstr ""
-"<qt>Otras preferencias<br/><i>Personalizar el comportamiento de otras partes "
+"<qt>Otras preferencias<br><i>Personalizar el comportamiento de otras partes "
 "de Showfoto</i></qt>"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:84
@@ -52115,18 +51718,14 @@ msgid "Default Value"
 msgstr "Valor por defecto"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:48
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set a default value for empty strings.<br/>When applied to a renaming "
-#| "option, an empty string will be replaced by the value you specify here.</"
-#| "p>"
+#, kde-format
 msgid ""
 "<p>Set a default value for empty strings.<br>When applied to a renaming "
 "option, an empty string will be replaced by the value you specify here.</p>"
 msgstr ""
-"<p>Define un valor por omisión para las cadenas vacías.<br/>Cuando se "
-"aplique a una opción de cambio de nombre, una cadena vacía será sustituida "
-"por el valor que se indique aquí.</p>"
+"<p>Define un valor por omisión para las cadenas vacías.<br>Cuando se aplique "
+"a una opción de cambio de nombre, una cadena vacía será sustituida por el "
+"valor que se indique aquí.</p>"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:73
 #, kde-format
@@ -53085,11 +52684,7 @@ msgid "/Pictures"
 msgstr "/Imágenes"
 
 #: core/utilities/firstrun/collectionpage.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Please enter a location where you keep your images.</p> <p>You can "
-#| "choose any local folder, even one that already contains images.<br/> More "
-#| "folders can be added later under the <i>Settings</i> menu. </p> "
+#, kde-format
 msgid ""
 "<p>Please enter a location where you keep your images.</p> <p>You can choose "
 "any local folder, even one that already contains images.<br> More folders "
@@ -53097,8 +52692,8 @@ msgid ""
 msgstr ""
 "<p>Introduzca la ubicación donde desea mantener las imágenes.</p> <p>Puede "
 "seleccionar cualquiera carpeta local, incluso una que ya contenga imágenes."
-"<br/> Puede añadir más carpetas posteriormente a través del menú "
-"<i>Preferencias</i>. </p> "
+"<br> Puede añadir más carpetas posteriormente a través del menú "
+"<i>Preferencias</i>.</p> "
 
 #: core/utilities/firstrun/collectionpage.cpp:85
 #, kde-format
@@ -53141,16 +52736,13 @@ msgid "Create Root Album Folder Failed"
 msgstr "La creación de la carpeta del álbum raíz ha fallado"
 
 #: core/utilities/firstrun/collectionpage.cpp:190
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>digiKam could not create the folder to use as the root album.\n"
-#| "Please select a different location.</p><p><b>%1</b></p>"
+#, kde-format
 msgid ""
 "<p>digiKam could not create the folder to use as the root album.<br>Please "
 "select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"<p>digiKam no ha podido crear la carpeta a usar como álbum raíz.\n"
-"Seleccione una ubicación diferente.</p><p><b>%1</b></p>"
+"<p>digiKam no ha podido crear la carpeta a usar como álbum raíz."
+"<br>Seleccione una ubicación diferente.</p><p><b>%1</b></p>"
 
 #: core/utilities/firstrun/collectionpage.cpp:215
 #, kde-format
@@ -53456,17 +53048,7 @@ msgstr ""
 "arranque, para que pueda usar digiKam rápidamente.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br/><p>You can ignore the following if you use digiKam for the first "
-#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
-#| "from digiKam 4 are not migrated. The old database can still be used, you "
-#| "just need to choose the same locations for collections and database in "
-#| "the following dialogs. It is recommended to create a backup of your "
-#| "database before proceeding.</p><p>The new location for configuration "
-#| "files is %1 (old %2). There are unresolved problems reported when re-"
-#| "using old configuration files, so it is not recommended to do it for the "
-#| "moment, and at your own risk.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -53478,8 +53060,8 @@ msgid ""
 "files, so it is not recommended to do it for the moment, and at your own "
 "risk.</p></qt>"
 msgstr ""
-"<qt><br/><p>Puede ignorar lo siguiente si es la primera vez que usa digiKam:"
-"</p><p><b>Transición desde digiKam 4</b></p><p>Los archivos de configuración "
+"<qt><br><p>Puede ignorar lo siguiente si es la primera vez que usa digiKam:</"
+"p><p><b>Transición desde digiKam 4</b></p><p>Los archivos de configuración "
 "de digiKam 4 no se han migrado. Todavía puede usar la base de datos antigua, "
 "para lo que solo necesita escoger las mismas ubicaciones para las "
 "colecciones y para la base de datos en los siguientes diálogos. Se "
@@ -53741,19 +53323,15 @@ msgstr ""
 "sin generar estas huellas digitales. Genere las huellas digitales primero."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-#| "p><p>You can also use the context menu<br/>when browsing through<br/>your "
-#| "images.</p>"
+#, kde-format
 msgid ""
 "<p>Drag & drop an image here<br>to perform similar<br>items search.</"
 "p><p>You can also use the context menu<br>when browsing through<br>your "
 "images.</p>"
 msgstr ""
-"<p>Arrastre y suelte aquí una imagen<br/>para efectuar una búsqueda<br/>de "
-"elementos semejantes.</p><p>También podrá usar el menú<br/>de contexto al "
-"navegar<br/>por sus imágenes.</p>"
+"<p>Arrastre y suelte aquí una imagen<br>para efectuar una búsqueda<br>de "
+"elementos semejantes.</p><p>También podrá usar el menú<br>de contexto al "
+"navegar<br>por sus imágenes.</p>"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
 #, kde-format
@@ -56492,35 +56070,30 @@ msgid "Circle Ruler"
 msgstr "Regla circular"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:657
-#, fuzzy, kde-format
-#| msgid "Total Distance: %1<br/>\n"
+#, kde-format
 msgid "Total Distance: %1<br>\n"
-msgstr "Distancia total: %1<br/>\n"
+msgstr "Distancia total: %1<br>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:661
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:684
-#, fuzzy, kde-format
-#| msgid "Area: %1<br/>\n"
+#, kde-format
 msgid "Area: %1<br>\n"
-msgstr "Área: %1<br/>\n"
+msgstr "Área: %1<br>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:666
-#, fuzzy, kde-format
-#| msgid "Perimeter: %1<br/>\n"
+#, kde-format
 msgid "Perimeter: %1<br>\n"
-msgstr "Perímetro: %1<br/>\n"
+msgstr "Perímetro: %1<br>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:674
-#, fuzzy, kde-format
-#| msgid "Radius: %1<br/>\n"
+#, kde-format
 msgid "Radius: %1<br>\n"
-msgstr "Radio: %1<br/>\n"
+msgstr "Radio: %1<br>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:679
-#, fuzzy, kde-format
-#| msgid "Circumference: %1<br/>\n"
+#, kde-format
 msgid "Circumference: %1<br>\n"
-msgstr "Circunferencia: %1<br/>\n"
+msgstr "Circunferencia: %1<br>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:734
 #, kde-format
@@ -58698,41 +58271,31 @@ msgid "%1 - %2"
 msgstr "%1 - %2"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:204
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This image has an <b>embedded color profile</b><br/> which does not "
-#| "match your working space color profile.<br/>How do you want to proceed?</"
-#| "p>"
+#, kde-format
 msgid ""
 "<p>This image has an <b>embedded color profile</b><br> which does not match "
 "your working space color profile.<br>How do you want to proceed?</p>"
 msgstr ""
-"<p>Esta imagen tiene un <b>perfil de colores incorporado</b><br/> que no se "
-"corresponde con el perfil de color de su espacio de trabajo.<br/>¿Como desea "
+"<p>Esta imagen tiene un <b>perfil de colores incorporado</b><br> que no se "
+"corresponde con el perfil de color de su espacio de trabajo.<br>¿Como desea "
 "proseguir?</p>"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This image has <b>no information about the color space</b><br/>that "
-#| "was used when creating the image. <br/>How do you want to proceed?</p>"
+#, kde-format
 msgid ""
 "<p>This image has <b>no information about the color space</b><br>that was "
 "used when creating the image. <br>How do you want to proceed?</p>"
 msgstr ""
-"<p>Esta imagen <b>no tiene información sobre el espacio de colores</b><br/"
-">usado al crear la imagen. <br/>¿Como desea proceder?</p>"
+"<p>Esta imagen <b>no tiene información sobre el espacio de colores</"
+"b><br>usado al crear la imagen.<br>¿Como desea proceder?</p>"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:217
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The color information of this image is uncalibrated.<br/>How do you "
-#| "want to proceed?</p>"
+#, kde-format
 msgid ""
 "<p>The color information of this image is uncalibrated.<br>How do you want "
 "to proceed?</p>"
 msgstr ""
-"<p>La información de color de esta imagen no está calibrada.<br/>¿Qué desea "
+"<p>La información de color de esta imagen no está calibrada.<br>¿Qué desea "
 "hacer?</p>"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:248
@@ -61719,15 +61282,12 @@ msgid "Common Options"
 msgstr "Opciones comunes"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:78
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>No option<br/><i>Note: only Albums Collection are processed by this "
-#| "tool.</i></qt>"
+#, kde-format
 msgid ""
 "<qt>No option<br><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
 msgstr ""
-"<qt>Ninguna opción<br/><i>Nota: esta herramienta solo puede procesar la "
+"<qt>Ninguna opción<br><i>Nota: esta herramienta solo puede procesar la "
 "colección de álbumes.</i></qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:81
@@ -61736,13 +61296,7 @@ msgid "Scan for new items"
 msgstr "Buscar elementos nuevos"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:91
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><i>Note: If activated, the core database is always cleaned. You can "
-#| "select additional databases for cleaning.<br/>If you select one of the "
-#| "options below, the process may take much time and can freeze digiKam "
-#| "temporarily in order to make sure that no database corruption occurs.</"
-#| "i></qt>"
+#, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
 "select additional databases for cleaning.<br>If you select one of the "
@@ -61751,7 +61305,7 @@ msgid ""
 "qt>"
 msgstr ""
 "<qt><i>Nota: Si se activa, la base de datos central siempre se limpia. Puede "
-"seleccionar bases de datos adicionales para su limpieza.<br/>Si selecciona "
+"seleccionar bases de datos adicionales para su limpieza.<br>Si selecciona "
 "alguna de las opciones inferiores, el proceso puede tardar más tiempo y "
 "«congelar» digiKam temporalmente para asegurar que no se daña ninguna base "
 "de datos.</i></qt>"
@@ -63921,15 +63475,12 @@ msgid "At least one of these conditions is not met"
 msgstr "Que no cumplan una o más de estas condiciones"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:101
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p>Search your collection<br/>for Items meeting the following "
-#| "conditions</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p>Search your collection<br>for Items meeting the following conditions</"
 "p></qt>"
 msgstr ""
-"<qt><p>Busque en su colección<br/>elementos que cumplan estas condiciones</"
+"<qt><p>Busque en su colección<br>elementos que cumplan estas condiciones</"
 "p></qt>"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:139
@@ -64709,42 +64260,31 @@ msgstr ""
 "sus alteraciones sobre los formatos de imágenes permitidos?</p>"
 
 #: core/utilities/setup/album/setupmime.cpp:302
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as images and included "
-#| "into the database:<br/> <code>%1</code></p>"
+#, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as images and included "
 "into the database:<br> <code>%1</code></p>"
 msgstr ""
 "<p>Los archivos con las extensiones siguientes serán reconocidos como "
-"imágenes y se incluirán en la base de datos:<br/> <code>%1</code></p>"
+"imágenes y se incluirán en la base de datos:<br> <code>%1</code></p>"
 
 #: core/utilities/setup/album/setupmime.cpp:312
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as video files and "
-#| "included into the database:<br/> <code>%1</code></p>"
+#, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as video files and "
 "included into the database:<br> <code>%1</code></p>"
 msgstr ""
 "<p>Los archivos con las extensiones siguientes serán reconocidos como "
-"archivos de vídeo y se incluirán en la base de datos:<br/> <code>%1</code></"
-"p>"
+"archivos de vídeo y se incluirán en la base de datos:<br> <code>%1</code></p>"
 
 #: core/utilities/setup/album/setupmime.cpp:322
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as audio files and "
-#| "included into the database:<br/> <code>%1</code></p>"
+#, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as audio files and "
 "included into the database:<br> <code>%1</code></p>"
 msgstr ""
 "<p>Los archivos con las extensiones siguientes serán reconocidos como "
-"archivos de audio y se incluirán en la base de datos:<br/> <code>%1</code></"
-"p>"
+"archivos de audio y se incluirán en la base de datos:<br> <code>%1</code></p>"
 
 #: core/utilities/setup/camera/cameralist.cpp:288
 #, kde-format
@@ -64879,60 +64419,45 @@ msgstr ""
 "necesaria si usa una cámara con <b>Almacenamiento masivo USB</b>.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:211
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To set a <b>USB Mass Storage</b> camera<br/>(which looks like a "
-#| "removable drive when mounted<br/>on your desktop), please use<br/><a href="
-#| "\"umscamera\">%1</a> from the camera list.</p>"
+#, kde-format
 msgid ""
 "<p>To set a <b>USB Mass Storage</b> camera<br>(which looks like a removable "
 "drive when mounted<br>on your desktop), please use<br><a href=\"umscamera\">"
 "%1</a> from the camera list.</p>"
 msgstr ""
 "<p>Para configurar una cámara fotográfica de <b>Almacenamiento masivo USB</"
-"b><br/>(que aparece como una unidad extraíble),<br/>use <a href=\"umscamera"
-"\">%1</a><br/>en la lista de cámaras.</p>"
+"b><br>(que aparece como una unidad extraíble),<br>use <a href=\"umscamera\">"
+"%1</a><br>en la lista de cámaras.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:218
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To set a <b>Generic PTP USB Device</b><br/>(which uses Picture "
-#| "Transfer Protocol), please<br/>use <a href=\"ptpcamera\">%1</a> from the "
-#| "camera list.</p>"
+#, kde-format
 msgid ""
 "<p>To set a <b>Generic PTP USB Device</b><br>(which uses Picture Transfer "
 "Protocol), please<br>use <a href=\"ptpcamera\">%1</a> from the camera list.</"
 "p>"
 msgstr ""
-"<p>Para configurar un <b>Dispositivo USB PTP genérico</b><br/>(que usa el "
-"Picture Transfer Protocol), use<br/><a href=\"ptpcamera\">%1</a> en la lista "
+"<p>Para configurar un <b>Dispositivo USB PTP genérico</b><br>(que usa el "
+"Picture Transfer Protocol), use<br><a href=\"ptpcamera\">%1</a> en la lista "
 "de cámaras.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To set a <b>Generic PTP/IP Network Device</b><br/>(which uses Picture "
-#| "Transfer Protocol), please<br/>use <a href=\"ptpipcamera\">%1</a> from "
-#| "the camera list.</p>"
+#, kde-format
 msgid ""
 "<p>To set a <b>Generic PTP/IP Network Device</b><br>(which uses Picture "
 "Transfer Protocol), please<br>use <a href=\"ptpipcamera\">%1</a> from the "
 "camera list.</p>"
 msgstr ""
-"<p>Para configurar un <b>Dispositivo PTP/IP genérico</b><br/>(que usa el "
-"Picture Transfer Protocol), use<br/><a href=\"ptpipcamera\">%1</a> en la "
+"<p>Para configurar un <b>Dispositivo PTP/IP genérico</b><br>(que usa el "
+"Picture Transfer Protocol), use<br><a href=\"ptpipcamera\">%1</a> en la "
 "lista de cámaras.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:231
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>A complete list of camera settings to use is<br/>available at <a "
-#| "href='https://www.figuiere.net/digicam/'>this URL</a>.</p>"
+#, kde-format
 msgid ""
 "<p>A complete list of camera settings to use is<br>available at <a "
 "href='https://www.figuiere.net/digicam/'>this URL</a>.</p>"
 msgstr ""
-"<p>Para ver una lista actualizada de configuración<br/>de las cámaras "
+"<p>Para ver una lista actualizada de configuración<br>de las cámaras "
 "permitidas, visite <a href='https://www.figuiere.net/digicam/'>esta URL</a>."
 "</p>"
 
@@ -65361,15 +64886,12 @@ msgid "Ignored Directories"
 msgstr "Directorios ignorados"
 
 #: core/utilities/setup/collections/setupcollections.cpp:246
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Directories starting with a dot are ignored by default.<br/> <code>%1</"
-#| "code></p>"
+#, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br> <code>%1</"
 "code></p>"
 msgstr ""
-"<p>Los directorios que comienzan por un punto se ignoran por omisión.<br/> "
+"<p>Los directorios que comienzan por un punto se ignoran por omisión.<br> "
 "<code>%1</code></p>"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:107
@@ -66256,11 +65778,7 @@ msgstr ""
 "¿Seguro que desea continuar?"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:395
-#, fuzzy, kde-format
-#| msgid ""
-#| "Advanced configuration menu allow you to manage metadata namespaces used "
-#| "by digiKam to store and retrieve tags, rating and comments.<br/><b>Note: "
-#| "</b>Order is important when reading metadata"
+#, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
 "digiKam to store and retrieve tags, rating and comments.<br><b>Note: </"
@@ -66268,7 +65786,7 @@ msgid ""
 msgstr ""
 "El menú de configuración avanzada le permite gestionar los espacios de "
 "nombres de los metadatos que usa digiKam para almacenar y obtener etiquetas, "
-"puntuaciones y comentarios.<br/><b>Nota:</b> el orden es importante al leer "
+"puntuaciones y comentarios.<br><b>Nota:</b> el orden es importante al leer "
 "metadatos."
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:405
@@ -66355,13 +65873,7 @@ msgid "Name:"
 msgstr "Nombre:"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:230
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To create new namespaces, you need to specify parameters:</"
-#| "p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.digiKam.TagsList"
-#| "\"</i></li><li>Separator parameter, used by tag paths <br/>Ex.: \"City/"
-#| "Paris\" or \"City|Paris\"</li><li>Specify if only keyword or the whole "
-#| "path must be written.</li></ul></p>"
+#, kde-format
 msgid ""
 "<p>To create new namespaces, you need to specify parameters:</"
 "p><p><ul><li>Namespace name with dots.<br>Ex.: <i>\"Xmp.digiKam.TagsList\"</"
@@ -66370,20 +65882,14 @@ msgid ""
 "written.</li></ul></p>"
 msgstr ""
 "<p>Para crear nuevos espacios de nombres, debe indicar los parámetros:</"
-"p><p><ul><li>Nombre del espacio de nombres con puntos.<br/>Por ejemplo, "
+"p><p><ul><li>Nombre del espacio de nombres con puntos.<br>Por ejemplo, "
 "<i>«Xmp.digiKam.TagsList»</i></li><li>Parámetro separador, usado por las "
-"rutas de etiquetas<br/>Por ejemplo, «Ciudad/París» o «Ciudad|París»</"
+"rutas de etiquetas<br>Por ejemplo, «Ciudad/París» o «Ciudad|París»</"
 "li><li>Indique si se debe escribir solo una palabra clave o toda la ruta.</"
 "li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:241
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To create new rating namespaces, you need to specify parameters:</"
-#| "p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.xmp.Rating\"</"
-#| "i></li><li>Rating mappings, if namespace need other values than 0-5 <br/"
-#| ">Ex.: Microsoft uses 0 1 25 50 75 99</li><li>Select the correct namespace "
-#| "option from list.</li></ul></p>"
+#, kde-format
 msgid ""
 "<p>To create new rating namespaces, you need to specify parameters:</"
 "p><p><ul><li>Namespace name with dots.<br>Ex.: <i>\"Xmp.xmp.Rating\"</i></"
@@ -66392,25 +65898,21 @@ msgid ""
 "from list.</li></ul></p>"
 msgstr ""
 "<p>Para crear nuevos espacios de nombres de puntuación, debe indicar los "
-"parámetros:</p><p><ul><li>Nombre del espacio de nombres con puntos.<br/>Por "
+"parámetros:</p><p><ul><li>Nombre del espacio de nombres con puntos.<br>Por "
 "ejemplo, <i>«Xmp.xmp.Rating»</i></li><li>Mapeos de puntuación, si el espacio "
-"de nombres necesita valores distintos de 0 a 5.<br/>Por ejemplo, Microsoft "
+"de nombres necesita valores distintos de 0 a 5.<br>Por ejemplo, Microsoft "
 "usa 0 1 25 50 75 99</li><li>Seleccione la opción de espacio de nombres "
 "correcta de la lista.</li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:252
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To create new comment namespaces, you need to specify parameters:</"
-#| "p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.xmp.Comment\"</"
-#| "i></li><li>Select the correct namespace option from list.</li></ul></p>"
+#, kde-format
 msgid ""
 "<p>To create new comment namespaces, you need to specify parameters:</"
 "p><p><ul><li>Namespace name with dots.<br>Ex.: <i>\"Xmp.xmp.Comment\"</i></"
 "li><li>Select the correct namespace option from list.</li></ul></p>"
 msgstr ""
 "<p>Para crear nuevos espacios de nombres de comentarios, debe indicar los "
-"parámetros:</p><p><ul><li>Nombre del espacio de nombres con puntos.<br/>Por "
+"parámetros:</p><p><ul><li>Nombre del espacio de nombres con puntos.<br>Por "
 "ejemplo, <i>«Xmp.xmp.Comment</i></li><li>Seleccione la opción de espacio de "
 "nombres correcta de la lista.</li></ul></p>"
 
@@ -67723,15 +67225,7 @@ msgid "Normal"
 msgstr "Normal"
 
 #: core/utilities/setup/misc/setupmisc.cpp:102
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Sets the way in which strings are compared inside digiKam. This eg. "
-#| "influences the sorting of the tree views.<br/><b>Natural</b> tries to "
-#| "compare strings in a way that regards some normal conventions and will "
-#| "eg. result in sorting numbers naturally even if they have a different "
-#| "number of digits.<br/><b>Normal</b> uses a more technical approach. Use "
-#| "this style if you eg. want to entitle albums with ISO dates (201006 or "
-#| "20090523) and the albums should be sorted according to these dates.</qt>"
+#, kde-format
 msgid ""
 "<qt>Sets the way in which strings are compared inside digiKam. This eg. "
 "influences the sorting of the tree views.<br><b>Natural</b> tries to compare "
@@ -67742,10 +67236,10 @@ msgid ""
 "should be sorted according to these dates.</qt>"
 msgstr ""
 "<qt>Define la forma de comparar cadenas de texto dentro de digiKam. Esto "
-"influencia por ejemplo la ordenación de las árboles.<br/><b>Natural</b> "
+"influencia por ejemplo la ordenación de las árboles.<br><b>Natural</b> "
 "compara los textos siguiendo algunas convenciones normales y p. ej. "
 "resultará en que los números sean ordenados naturalmente, incluso cuando "
-"tengan un número de dígitos diferentes.<br/><b>Normal</b> usa una convención "
+"tengan un número de dígitos diferentes.<br><b>Normal</b> usa una convención "
 "mas técnica. Use este estilo si p. ej. quisiera titular los álbumes con "
 "fechas ISO (201006 o 20090523) y si los álbumes debieran ordenarse de "
 "acuerdo con estas fechas.</qt>"
@@ -67794,22 +67288,17 @@ msgid "Perform the following operations on all group members:"
 msgstr "Realizar las siguientes operaciones en todos los miembros del grupo:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:319
-#, fuzzy, kde-format
-#| msgid ""
-#| "When images are grouped the following operations<br/>are performed only "
-#| "on the displayed item (No)<br/>or on all the hidden items in the group as "
-#| "well (Yes).<br/>If Ask is selected, there will be a prompt every<br/>time "
-#| "this operation is executed."
+#, kde-format
 msgid ""
 "When images are grouped the following operations<br>are performed only on "
 "the displayed item (No)<br>or on all the hidden items in the group as well "
 "(Yes).<br>If Ask is selected, there will be a prompt every<br>time this "
 "operation is executed."
 msgstr ""
-"Cuando las imágenes están agrupadas, se realizan las<br/>siguientes "
-"operaciones solo en los elementos mostrados (No)<br/>o también en todos los "
-"elementos ocultos del grupo (Sí).<br/>Si selecciona «Preguntar», se le "
-"solicitará una acción<br/>cada vez que se ejecute esta operación."
+"Cuando las imágenes están agrupadas, se realizan las<br>siguientes "
+"operaciones solo en los elementos mostrados (No)<br>o también en todos los "
+"elementos ocultos del grupo (Sí).<br>Si selecciona «Preguntar», se le "
+"solicitará una acción<br>cada vez que se ejecute esta operación."
 
 #: core/utilities/setup/misc/setupmisc.cpp:325
 #, kde-format
@@ -69100,7 +68589,3 @@ msgstr "Elementos del álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementos importados"
-
-#~ msgctxt "@title"
-#~ msgid "Build Tools"
-#~ msgstr "Herramientas de construcción"

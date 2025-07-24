@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 01:59+0000\n"
+"POT-Creation-Date: 2025-07-24 02:03+0000\n"
 "PO-Revision-Date: 2024-11-16 08:32+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -29577,7 +29577,7 @@ msgstr "Tak diketahui"
 #, fuzzy, kde-format
 #| msgid "Profiles"
 msgctxt "@title"
-msgid "Build Environnement"
+msgid "Build Environment"
 msgstr "Profil"
 
 #: core/libs/dialogs/libsinfodlg.cpp:460

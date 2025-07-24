@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 01:59+0000\n"
+"POT-Creation-Date: 2025-07-24 02:03+0000\n"
 "PO-Revision-Date: 2010-08-27 21:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -27982,7 +27982,7 @@ msgstr "Tidak diketahui"
 #: core/libs/dialogs/libsinfodlg.cpp:422
 #, fuzzy, kde-format
 msgctxt "@title"
-msgid "Build Environnement"
+msgid "Build Environment"
 msgstr "&Salin di Sini"
 
 #: core/libs/dialogs/libsinfodlg.cpp:460

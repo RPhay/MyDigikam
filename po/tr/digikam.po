@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 01:59+0000\n"
+"POT-Creation-Date: 2025-07-24 02:03+0000\n"
 "PO-Revision-Date: 2025-07-22 21:37+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -30362,7 +30362,7 @@ msgstr "Bilinmiyor"
 #: core/libs/dialogs/libsinfodlg.cpp:422
 #, kde-format
 msgctxt "@title"
-msgid "Build Environnement"
+msgid "Build Environment"
 msgstr ""
 
 #: core/libs/dialogs/libsinfodlg.cpp:460

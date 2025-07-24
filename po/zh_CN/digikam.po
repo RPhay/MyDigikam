@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 01:59+0000\n"
+"POT-Creation-Date: 2025-07-24 02:03+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3563,10 +3563,9 @@ msgid "...and much more."
 msgstr "...更多详情请访问 digiKam 官方网站查看。"
 
 #: core/app/views/stack/welcomepageview.cpp:167
-#, fuzzy, kde-format
-#| msgid "<li>%1</li>\n"
+#, kde-format
 msgid "<li>%1</li><br>"
-msgstr "<li>%1</li>\n"
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
@@ -5841,15 +5840,7 @@ msgid "Reduce Texturing"
 msgstr "减少纹理"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Select the filter preset to use for photograph restoration here:</"
-#| "p><p><b>None</b>: Most common values. Puts settings to default.<br/"
-#| "><b>Reduce Uniform Noise</b>: reduce small image artifacts such as sensor "
-#| "noise.<br/><b>Reduce JPEG Artifacts</b>: reduce large image artifacts, "
-#| "such as a JPEG compression mosaic.<br/><b>Reduce Texturing</b>: reduce "
-#| "image artifacts, such as paper texture, or Moire patterns on scanned "
-#| "images.</p>"
+#, kde-format
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
 "p><p><b>None</b>: Most common values. Puts settings to default.<br><b>Reduce "
@@ -5858,10 +5849,6 @@ msgid ""
 "JPEG compression mosaic.<br><b>Reduce Texturing</b>: reduce image artifacts, "
 "such as paper texture, or Moire patterns on scanned images.</p>"
 msgstr ""
-"<p>选择用于照片修复的滤镜预设：</p><p><b>无</b>：最常用的值。将使用默认设置。"
-"<br/><b>减少均匀噪点</b>：减少微小的图像瑕疵，如传感器噪点。<br/><b>减少 "
-"JPEG 杂色</b>：减少大块的图像瑕疵，如 JPEG 压缩特有的马赛克色斑。<br/><b>减少"
-"纹理</b>：减少扫描图像时引入的纸张纹理或者摩尔纹。</p>"
 
 #: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:42
 #: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:40
@@ -6672,13 +6659,7 @@ msgid "HEIF quality:"
 msgstr "HEIF 画质："
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
-#| "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-#| "b>: good quality (default)<br/><b>100</b>: high quality (no compression "
-#| "and large file size)</p><p><b>Note: HEIF is not a lossless image "
-#| "compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -6686,10 +6667,6 @@ msgid ""
 "file size)</p><p><b>Note: HEIF is not a lossless image compression format "
 "when you use this setting.</b></p>"
 msgstr ""
-"<p>HEIF 图像的画质参数：</p><p><b>1</b>：低画质 (高压缩率和小文件体积)<br/"
-"><b>50</b>：中等画质<br/><b>75</b>：较高画质 (默认值)<br/><b>100</b>：最高画"
-"质 (无压缩和大文件体积)</p><p><b>提示：在使用此选项时，HEIF 格式并非使用无损"
-"方式压缩图像。</b></p>"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:43
 #, kde-format
@@ -6820,22 +6797,13 @@ msgid "JPEG quality:"
 msgstr "JPEG 图像品质："
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The JPEG quality:</p><p><b>1</b>: low quality (high compression and "
-#| "small file size)<br/><b>50</b>: medium quality<br/><b>75</b>: good "
-#| "quality (default)<br/><b>100</b>: high quality (no compression and large "
-#| "file size)</p><p><b>Note: JPEG always uses lossy compression.</b></p>"
+#, kde-format
 msgid ""
 "<p>The JPEG quality:</p><p><b>1</b>: low quality (high compression and small "
 "file size)<br><b>50</b>: medium quality<br><b>75</b>: good quality "
 "(default)<br><b>100</b>: high quality (no compression and large file size)</"
 "p><p><b>Note: JPEG always uses lossy compression.</b></p>"
 msgstr ""
-"<p>JPEG 图像的画质参数：</p><p><b>1</b>：低画质 (高压缩率和小文件体积)<br/"
-"><b>50</b>：中等画质<br/><b>75</b>：较高画质 (默认值)<br/><b>100</b>：最高画"
-"质 (无压缩和大文件体积)</p><p><b>提示：JPEG 总是使用有损方式压缩图像。</b></"
-"p>"
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:79
 #, kde-format
@@ -6951,13 +6919,7 @@ msgid "JPEG 2000 quality:"
 msgstr "JPEG 2000 画质："
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality "
-#| "(high compression and small file size)<br/><b>50</b>: medium quality<br/"
-#| "><b>75</b>: good quality (default)<br/><b>100</b>: high quality (no "
-#| "compression and large file size)</p><p><b>Note: JPEG 2000 is not a "
-#| "lossless image compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -6965,10 +6927,6 @@ msgid ""
 "file size)</p><p><b>Note: JPEG 2000 is not a lossless image compression "
 "format when you use this setting.</b></p>"
 msgstr ""
-"<p>JPEG 2000 图像的画质参数：</p><p><b>1</b>：低画质 (高压缩率和小文件体"
-"积)<br/><b>50</b>：中等画质<br/><b>75</b>：较高画质 (默认值)<br/><b>100</b>："
-"最高画质 (无压缩和大文件体积)</p><p><b>提示：在使用此选项时，JPEG 2000 格式并"
-"非使用无损方式压缩图像。</b></p>"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:81
 #, kde-format
@@ -7077,13 +7035,7 @@ msgid "PGF quality:"
 msgstr "PGF 画质："
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "
-#| "compression and large file size)<br/><b>3</b>: good quality (default)<br/"
-#| "><b>6</b>: medium quality<br/><b>9</b>: low quality (high compression and "
-#| "small file size)</p><p><b>Note: PGF is not a lossless image compression "
-#| "format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "
 "compression and large file size)<br><b>3</b>: good quality "
@@ -7091,10 +7043,6 @@ msgid ""
 "compression and small file size)</p><p><b>Note: PGF is not a lossless image "
 "compression format when you use this setting.</b></p>"
 msgstr ""
-"<p>PGF 图像的画质参数：</p><p><b>1</b>：最高画质 (无压缩和大文件体积)<br/"
-"><b>3</b>：较高画质 (默认值)<br/><b>6</b>：中等画质<br/><b>9</b>：低画质 (高"
-"压缩率和小文件体积)</p><p><b>提示：在使用此选项时，PGF 格式并非使用无损方式压"
-"缩图像。</b></p>"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:43
 #, kde-format
@@ -7140,13 +7088,7 @@ msgid "PNG compression:"
 msgstr "PNG 压缩率："
 
 #: core/dplugins/dimg/png/dimgpngexportsettings.cpp:64
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The compression value for PNG images:</p><p><b>1</b>: low compression "
-#| "(large file size but short compression duration - default)<br/><b>5</b>: "
-#| "medium compression<br/><b>9</b>: high compression (small file size but "
-#| "long compression duration)</p><p><b>Note: PNG is always a lossless image "
-#| "compression format.</b></p>"
+#, kde-format
 msgid ""
 "<p>The compression value for PNG images:</p><p><b>1</b>: low compression "
 "(large file size but short compression duration - default)<br><b>5</b>: "
@@ -7154,9 +7096,6 @@ msgid ""
 "compression duration)</p><p><b>Note: PNG is always a lossless image "
 "compression format.</b></p>"
 msgstr ""
-"<p>PNG 图像压缩率：</p><p><b>1</b>：低压缩率 (文件体积较大，压缩耗时较短 - 默"
-"认值)<br/><b>5</b>：中等压缩率<br/><b>9</b>：高压缩率 (文件体积较小，压缩耗时"
-"较长)</p><p><b>提示：PNG 是一种无损图像压缩格式。</b></p>"
 
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:43
 #, kde-format
@@ -7212,13 +7151,7 @@ msgid "AVIF quality:"
 msgstr "AVIF 画质："
 
 #: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for AVIF images:</p><p><b>1</b>: low quality (high "
-#| "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-#| "b>: good quality (default)<br/><b>99</b>: high quality (no compression "
-#| "and large file size)</p><p><b>Note: AVIF is not a lossless image "
-#| "compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for AVIF images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -7226,10 +7159,6 @@ msgid ""
 "file size)</p><p><b>Note: AVIF is not a lossless image compression format "
 "when you use this setting.</b></p>"
 msgstr ""
-"<p>AVIF 图像的画质参数：</p><p><b>1</b>：低画质 (高压缩率和小文件体积)<br/"
-"><b>50</b>：中等画质<br/><b>75</b>：较高画质 (默认值)<br/><b>99</b>：最高画"
-"质 (无压缩和大文件体积)</p><p><b>提示：在使用此选项时，AVIF 格式并非使用无损"
-"方式压缩图像。</b></p>"
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:62
 #, kde-format
@@ -7251,13 +7180,7 @@ msgid "JPEG XL quality:"
 msgstr "JPEG XL 画质："
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for JPEG XL images:</p><p><b>1</b>: low quality "
-#| "(high compression and small file size)<br/><b>50</b>: medium quality<br/"
-#| "><b>75</b>: good quality (default)<br/><b>99</b>: high quality (no "
-#| "compression and large file size)</p><p><b>Note: JPEG XL is not a lossless "
-#| "image compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for JPEG XL images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -7265,10 +7188,6 @@ msgid ""
 "file size)</p><p><b>Note: JPEG XL is not a lossless image compression format "
 "when you use this setting.</b></p>"
 msgstr ""
-"<p>JPEG XL 图像的画质参数：</p><p><b>1</b>：低画质 (高压缩率和小文件体积)<br/"
-"><b>50</b>：中等画质<br/><b>99</b>：较高画质 (默认值)<br/><b></b>：最高画质 "
-"(无压缩和大文件体积)</p><p><b>提示：在使用此选项时，JPEG XL 格式并非使用无损"
-"方式压缩图像。</b></p>"
 
 #: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:46
 #, kde-format
@@ -7319,13 +7238,7 @@ msgid "WEBP quality:"
 msgstr "WEBP 画质："
 
 #: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for WEB images:</p><p><b>1</b>: low quality (high "
-#| "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-#| "b>: good quality (default)<br/><b>99</b>: high quality (no compression "
-#| "and large file size)</p><p><b>Note: WEBP is not a lossless image "
-#| "compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for WEBP images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -7333,10 +7246,6 @@ msgid ""
 "file size)</p><p><b>Note: WEBP is not a lossless image compression format "
 "when you use this setting.</b></p>"
 msgstr ""
-"<p>WEBP 图像的画质参数：</p><p><b>1</b>：低画质 (高压缩率和小文件体积)<br/"
-"><b>50</b>：中等画质<br/><b>75</b>：较高画质 (默认值)<br/><b>99</b>：最高画"
-"质 (无压缩和大文件体积)</p><p><b>提示：在使用此选项时，WEBP 格式并非使用无损"
-"方式压缩图像。</b></p>"
 
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:43
 #, kde-format
@@ -8444,16 +8353,7 @@ msgstr ""
 "快捷键：CTRL+Y"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:191
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>How To Use:<br/><br/>* Press <b>s</b> to switch to source-selection "
-#| "mode, and select source point on image.<br/>* Press <b>s</b> again and "
-#| "start cloning.<br/>* Press <b>[</b> and <b>]</b> to change brush size.<br/"
-#| ">* Press <b>CTRL+Mousewheel</b> to zoom in/out.<br/>* Press <b>m</b> to "
-#| "pan the image if image is larger than viewport.<br/>* Press <b>l</b> to "
-#| "start lasso mode. Start drawing lasso boundary either continuously or "
-#| "discretely, then double-click or press l again to close the boundary.<br/"
-#| ">* Inside lasso mode, you can clone only inside the lasso region.</p>"
+#, kde-format
 msgid ""
 "<p>How To Use:<br><br>* Press <b>s</b> to switch to source-selection mode, "
 "and select source point on image.<br>* Press <b>s</b> again and start "
@@ -8464,12 +8364,6 @@ msgid ""
 "click or press l again to close the boundary.<br>* Inside lasso mode, you "
 "can clone only inside the lasso region.</p>"
 msgstr ""
-"<p>使用说明：<br/><br/>* 按 <b>S</b> 切换到来源选择模式，在图像上选择仿制图像"
-"的来源点位置。<br/>* 再按 <b>S</b> 进入仿制图像的绘制模式。<br/>* 按 <b>[</"
-"b> 和 <b>]</b> (方括号键) 更改笔刷大小。<br/>* 按 <b>Ctrl+鼠标滚轮</b> 放大/"
-"缩小视图。<br/>* 按 <b>M</b> 平移视图，图像必须已放大至超出视图大小。<br/>* "
-"按 <b>L</b> 建立多边形/自由选区 (套索)，再按 L 或双击可封闭选区。<br/>* 在选"
-"区模式中，您只能将内容仿制到选区之内。</p>"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:324
 #, kde-format
@@ -8726,15 +8620,7 @@ msgid "Custom"
 msgstr "自定义"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:130
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Select the filter preset to use for photograph restoration here:</"
-#| "p><p><b>Reduce Uniform Noise</b>: reduce small image artifacts such as "
-#| "sensor noise.<br/><b>Reduce JPEG Artifacts</b>: reduce large image "
-#| "artifacts, such as a JPEG compression mosaic.<br/><b>Reduce Texturing</"
-#| "b>: reduce image artifacts, such as paper texture, or Moire patterns on "
-#| "scanned images.<br/><b>Custom</b>: Puts settings to most common values, "
-#| "fully customizable.</p>"
+#, kde-format
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
 "p><p><b>Reduce Uniform Noise</b>: reduce small image artifacts such as "
@@ -8744,10 +8630,6 @@ msgid ""
 "<br><b>Custom</b>: Puts settings to most common values, fully customizable.</"
 "p>"
 msgstr ""
-"<p>选择用于照片修复的滤镜预设：</p><p><b>减少均匀噪点</b>：减少微小的图像瑕"
-"疵，如传感器噪点。<br/><b>减少 JPEG 杂色</b>：减少大块的图像瑕疵，如 JPEG 压"
-"缩特有的马赛克色斑。<br/><b>减少纹理</b>：减少扫描图像时引入的纸张纹理或者摩"
-"尔纹。<br/><b>自定义</b>：可调整所有选项，并默认设为最常用的值。</p>"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:321
 #, kde-format
@@ -8825,20 +8707,16 @@ msgid "Sharpen"
 msgstr "锐化"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to sharp an image"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to sharpen an image"
-msgstr "对图像进行锐化处理"
+msgstr ""
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "This Image Editor tool can sharp an image."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can sharpen an image."
-msgstr "用于对图像进行锐化处理的图像编辑器工具。"
+msgstr ""
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:91
 #, kde-format
@@ -10008,18 +9886,12 @@ msgid "Adjust"
 msgstr "调整图像"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:171
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Correct the rotation of your images automatically by assigning two "
-#| "points in the preview widget and clicking <i>Adjust</i>.<br/>You can "
-#| "either adjust horizontal or vertical lines.</p>"
+#, kde-format
 msgid ""
 "<p>Correct the rotation of your images automatically by assigning two points "
 "in the preview widget and clicking <i>Adjust</i>.<br>You can either adjust "
 "horizontal or vertical lines.</p>"
 msgstr ""
-"<p>请先在预览视图中指定两个参考点，然后点击<b>调整图像</b>按钮。<br/>参考点连"
-"线可以是水平方向的，也可以是垂直方向的。</p>"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:193
 #, kde-format
@@ -11264,20 +11136,7 @@ msgid "A tool to edit items geolocation"
 msgstr "对项目的元数据进行编辑"
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to change geolocation information from items.\n"
-#| "\n"
-#| "This tool can edit GPS data, manually or over a map. Reverse geo-coding "
-#| "is also available through web services.\n"
-#| "\n"
-#| "This tool has also an export function to KML to store map traces in "
-#| "Google format.\n"
-#| "\n"
-#| "Finally, this tool is able to read a GPS trace from a device to "
-#| "synchronize geo-location of items if you camera do not have an embedded "
-#| "GPS device."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to change geolocation information from items."
@@ -11287,15 +11146,6 @@ msgid ""
 "this tool is able to read a GPS trace from a device to synchronize geo-"
 "location of items if you camera do not have an embedded GPS device."
 msgstr ""
-"此工具用于更改项目的地理位置信息。\n"
-"\n"
-"它可以通过对话框或直接在地图上编辑 GPS 数据。反向地理编码可通过联网服务使"
-"用。\n"
-"\n"
-"它还可以导出地图轨迹到谷歌的 KML 格式文件。\n"
-"\n"
-"此工具还可以从设备读取 GPS 信息，并与没有内建 GPS 功能的相机拍摄的照片进行关"
-"联处理。"
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:103
 #, kde-format
@@ -11972,12 +11822,10 @@ msgid "Opinion"
 msgstr "观点"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Polls & Surveys"
+#, kde-format
 msgctxt "Content type"
 msgid "Polls and Surveys"
-msgstr "投票和调查"
+msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
 #, kde-format
@@ -11986,20 +11834,16 @@ msgid "Profile"
 msgstr "档案"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Results Listings & Table"
+#, kde-format
 msgctxt "Content type"
 msgid "Results Listings and Table"
-msgstr "结果列表和表格"
+msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Side bar & Supporting information"
+#, kde-format
 msgctxt "Content type"
 msgid "Side bar and Supporting information"
-msgstr "侧栏和支持信息"
+msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:111
 #, kde-format
@@ -14553,16 +14397,7 @@ msgid "A tool to edit items metadata"
 msgstr "对项目的元数据进行编辑"
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to changes plenty of metadata from items.\n"
-#| "\n"
-#| "Most common Exif, Iptc, and Xmp tags used in photography are listed for "
-#| "editing with standardized values.\n"
-#| "\n"
-#| "For photo agencies, pre-configured subjects can be used to describe the "
-#| "items contents based on Iptc reference codes."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to changes plenty of metadata from items.<br><br>Most "
@@ -14570,11 +14405,6 @@ msgid ""
 "with standardized values.<br><br>For photo agencies, pre-configured subjects "
 "can be used to describe the items contents based on Iptc reference codes."
 msgstr ""
-"用于从项目更改大量元数据的工具。\n"
-"\n"
-"摄影行业最常见的 EXIF、IPTC、XMP 标签已按标准数值列出以供编辑。\n"
-"\n"
-"通讯社机构还可以使用基于 IPTC 引用码的预设主题来描述项目。"
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:101
 #, kde-format
@@ -14688,10 +14518,9 @@ msgid "Phone:"
 msgstr "电话："
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:113
-#, fuzzy, kde-format
-#| msgid "Set here the contact 'phone number."
+#, kde-format
 msgid "Set here the contact phone number."
-msgstr "在此设置用于联系的电话号码。"
+msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:115
 #, kde-format
@@ -15508,16 +15337,7 @@ msgid "A tool to adjust items date-time"
 msgstr "调整项目的日期时间"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to adjust date time-stamp of items in batch.\n"
-#| "\n"
-#| "Many source of original time-stamp can be selected from original items, "
-#| "or a from a common file.\n"
-#| "\n"
-#| "Many metadata time-stamp can be adjusted or left untouched. The "
-#| "adjustment can be an offset of time or a specific date."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to adjust date time-stamp of items in batch."
@@ -15526,12 +15346,6 @@ msgid ""
 "adjusted or left untouched. The adjustment can be an offset of time or a "
 "specific date."
 msgstr ""
-"用于批量调整项目的日期和时间戳的工具。\n"
-"\n"
-"可以从原始项目或单个共通项目中选择多种原始时间戳来源。\n"
-"\n"
-"元数据时间戳可被调整或者保护。调整操作既可以基于时间偏移量，也可以基于特定日"
-"期和时间。"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:105
 #, kde-format
@@ -15840,30 +15654,23 @@ msgid "Select Calendar Data File"
 msgstr "选择日历数据文件"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:202
-#, fuzzy, kde-format
-#| msgid "No valid images selected for months<br/>Click Back to select images"
+#, kde-format
 msgid "No valid images selected for months<br>Click Back to select images"
-msgstr "尚未给所有月份选择有效图像<br/>请点击后退以选择图像"
+msgstr ""
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:217
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please note that you are making a calendar for<br/>the current year or a "
-#| "year in the past."
+#, kde-format
 msgid ""
 "Please note that you are making a calendar for<br>the current year or a year "
 "in the past."
-msgstr "提示：您正在制作的是<br/>今年或往年的日历。"
+msgstr ""
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Click Next to start Printing<br/><br/>Following months will be printed "
-#| "for year %1:<br/>"
+#, kde-format
 msgid ""
 "Click Next to start Printing<br><br>Following months will be printed for "
 "year %1:<br>"
-msgstr "点击下一步开始打印<br/><br/>以下月份将按照 %1 年进行打印：<br/>"
+msgstr ""
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:275
 #, kde-format
@@ -16007,25 +15814,13 @@ msgid "A tool to batch convert RAW camera images to DNG"
 msgstr "批量转换 RAW 相机图像为 DNG"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This Generic tool can convert RAW images data to DNG format.\n"
-#| "\n"
-#| "The Digital Negative is a lossless RAW image format created by Adobe.\n"
-#| "\n"
-#| "See details on this wikipedia entry about this format: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Generic tool can convert RAW images data to DNG format.<br><br>The "
 "Digital Negative is a lossless RAW image format created by Adobe.<br><br>See "
 "details on this wikipedia entry about this format: %1"
 msgstr ""
-"用于转换 RAW 图像数据为 DNG 格式的通用工具。\n"
-"\n"
-"Digital Negative (数字负片) 是由 Adobe 公司开发的一种无损 RAW 图像格式。\n"
-"\n"
-"如需了解详情，请访问该格式的介绍页面：%1"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:107
 #, kde-format
@@ -16601,12 +16396,10 @@ msgid "Congratulations. Your images are ready to be fused."
 msgstr "您的图像已经准备好进行合成。"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "To perform this operation, Enblend program from will be used."
+#, kde-format
 msgctxt "@info"
 msgid "To perform this operation, Enblend program will be used."
-msgstr "将使用 Enblend 程序执行此操作。"
+msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:67
 #, kde-format
@@ -17189,10 +16982,9 @@ msgid "no customization available"
 msgstr "没有可用的自定义选项"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
-#, fuzzy, kde-format
-#| msgid "Author: %1<br/><br/>"
+#, kde-format
 msgid "Author: %1<br><br>"
-msgstr "作者：%1<br/><br/>"
+msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
 #, kde-format
@@ -17391,15 +17183,7 @@ msgid ""
 msgstr "勾选此项后，在应用程序启动的同时将自动启动 DLNA 服务器"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The media server allows to share items through the local network using %1 "
-#| "standard and %2 protocol. Many kind of electronic devices can support "
-#| "DLNA, as tablets, cellulars, TV, etc.\n"
-#| "\n"
-#| "Note: depending of the network features and the configuration, the delay "
-#| "to discover the server on client devices can take a while."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The media server allows to share items through the local network using %1 "
@@ -17408,10 +17192,6 @@ msgid ""
 "features and the configuration, the delay to discover the server on client "
 "devices can take a while."
 msgstr ""
-"本媒体服务器使用 %1 标准和 %2 协议在本地网络上共享项目。支持 DLNA 的电子设备"
-"多种多样，包括平板电脑、笔记本电脑和电视等。\n"
-"\n"
-"提示：根据网络的特性和配置，在客户端设备上发现服务器的延迟可能需要一段时间。"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:209
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:284
@@ -17604,17 +17384,7 @@ msgid ""
 msgstr "勾选此项后，在应用程序启动的同时将自动启动 MJPEG 服务器"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The %1 server allows to share items through the local network using a web "
-#| "browser. Motion JPEG is a video compression format in which each video "
-#| "frame is compressed separately as a JPEG image. MJPEG streams is a "
-#| "standard which allows network clients to be connected without additional "
-#| "module. Most major web browsers and players support MJPEG stream. To "
-#| "access to stream from your browser, just use http://address:port as url, "
-#| "with address the MJPEG server IP, and port the server port set in this "
-#| "config dialog."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The %1 server allows to share items through the local network using a web "
@@ -17625,11 +17395,6 @@ msgid ""
 "your browser, just use http://address:port as url, with address the MJPEG "
 "server IP, and port the server port set in this config dialog."
 msgstr ""
-"%1 服务器可以通过网页浏览器在本地网络分享项目。MJPEG 是一种视频压缩格式，它生"
-"成的视频文件的每一帧均为单独压缩的 JPEG 图像。MJPEG 流标准可以让网络客户端在"
-"无需安装额外模块的前提下连接其内容。大多数主流网页浏览器和播放器均支持 MJPEG "
-"流。要从您的浏览器访问流，请使用 http://地址:端口 作为 URL 格式，地址请填写"
-"该 MJPEG 服务器的 IP 地址，端口请填写在本配置对话框设置的服务器端口。"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:94
 #, kde-format
@@ -17657,16 +17422,12 @@ msgid "JPEG Quality:"
 msgstr "JPEG 画质："
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:131
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The JPEG quality [50:lower - 100:higher]. Warning: better quality require "
-#| "more network bandwidth"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The JPEG quality [50:lower - 100:higher]. Warning: better quality requires "
 "more network bandwidth"
-msgstr "JPEG 画质 [50：较低 - 100：较高]。警告：画质越高，所需的网络带宽也越高"
+msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:140
 #, kde-format
@@ -17675,18 +17436,12 @@ msgid "JPEG Size:"
 msgstr "JPEG 大小："
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:154
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The JPEG image size in pixels, using standard screen resolutions. "
-#| "Warning: larger size require more network bandwidth"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The JPEG image size in pixels, using standard screen resolutions. Warning: "
 "larger size requires more network bandwidth"
 msgstr ""
-"JPEG 图像大小，单位为像素，使用标准屏幕分辨率。警告：尺寸越大，所需的网络带宽"
-"也越高"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:160
 #, kde-format
@@ -17707,16 +17462,12 @@ msgid "Frames by Second:"
 msgstr "帧率："
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The number of frames by second to render the stream. Warning: larger rate "
-#| "require more network bandwidth"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The number of frames by second to render the stream. Warning: larger rate "
 "requires more network bandwidth"
-msgstr "渲染流的每秒帧数。警告：帧率越高，所需的网络带宽也越高"
+msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:175
 #, kde-format
@@ -17725,12 +17476,10 @@ msgid "Stream in Loop"
 msgstr "流内容循环"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "The MJPEG stream will be played in loop instead once."
+#, kde-format
 msgctxt "@info"
 msgid "The MJPEG stream will be played in loop instead of playing once."
-msgstr "MJPEG 流将循环播放，而不是仅播放一次。"
+msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:191
 #, kde-format
@@ -17748,20 +17497,13 @@ msgid "Type:"
 msgstr "类型："
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:233
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "A transition is an visual effect applied between two images. For some "
-#| "effects, the duration can depend of random values and can change while "
-#| "the stream."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "A transition is a visual effect applied between two images. For some "
 "effects, the duration can depend on random values and can change while the "
 "stream is playing."
 msgstr ""
-"转场是指两张图像在切换时的过渡特效。某些特效的时间长度是随机的，可能会在幻灯"
-"片中发生变化。"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:249
 #, kde-format
@@ -17770,16 +17512,12 @@ msgid "Transition"
 msgstr "转场"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "An effect is an visual panning or zooming applied while an image is "
-#| "displayed in MJPEG stream."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "An effect is a visual panning or zooming applied while an image is displayed "
 "in MJPEG stream."
-msgstr "效果是指图像在 MJPEG 流中显示时所应用的视觉平移和缩放效果。"
+msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:294
 #, kde-format
@@ -17804,19 +17542,7 @@ msgid "A tool to export items as MJPEG Stream"
 msgstr "导出项目为 MJPEG 流"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:84
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool allows users to share items on the local network through a "
-#| "MJPEG Stream server.</p><p>Items to share can be selected one by one or "
-#| "by group through a selection of albums.</p><p>Motion JPEG is a video "
-#| "compression format in which each video frame or interlaced field of a "
-#| "digital video sequence is compressed separately as a JPEG image. MJPEG "
-#| "streams is a standard which allows network clients to be connected "
-#| "without additional module. Most major web browsers and players support "
-#| "MJPEG stream.</p><p>To access to stream from your browser, use http://"
-#| "address:port as url, with address the MJPEG address, and port the MJPEG "
-#| "port set in config dialog. More than one computer can be connected to the "
-#| "MJPEG server at the same time.</p>"
+#, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a "
 "MJPEG Stream server.</p><p>Items to share can be selected one by one or by "
@@ -17830,13 +17556,6 @@ msgid ""
 "dialog. More than one computer can be connected to the MJPEG server at the "
 "same time.</p>"
 msgstr ""
-"<p>用于通过 MJPEG 流服务器在本地网络分享项目的工具。</p><p>您可以逐个选择要分"
-"享的项目，也可以在各个相册中按分组选择。</p><p>MJPEG 是一种视频压缩格式，它生"
-"成文件的每一帧或数字视频序列交织场均为单独压缩的 JPEG 图像。MJPEG 流标准可以"
-"让网络客户端在无需安装额外模块的前提下连接其内容。大多数主流网页浏览器和播放"
-"器均支持 MJPEG 流。</p><p>要从您的浏览器访问流，请使用 http://地址:端口 作为 "
-"URL 格式，地址请填写该 MJPEG 服务器的 IP 地址，端口请填写在本配置对话框设置的"
-"服务器端口。支持同时从多台计算机同时连接到该 MPEG 服务器。</p>"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:101
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
@@ -17992,20 +17711,13 @@ msgid "&Start OCR"
 msgstr "开始 OCR(&S)"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:152
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "This tool use the %1 open-source engine to perform Optical Characters "
-#| "Recognition. Tesseract program and the desired languages modules must be "
-#| "installed on your system."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This tool uses the %1 open-source engine to perform Optical Characters "
 "Recognition. Tesseract program and the desired languages modules must be "
 "installed on your system."
 msgstr ""
-"此工具使用 %1 开源引擎来进行光学字符识别。Tesseract 程序和所需的语言模块必须"
-"安装到本机系统中。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:200
 #, kde-format
@@ -18014,20 +17726,13 @@ msgid "Text Recognition"
 msgstr "文字识别"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:206
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "After to process recognition, double-click on one item to display "
-#| "recognized text here. You can review words and fix if necessary. Press "
-#| "the Save button to record your changes."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "After processing recognition, double-click on one item to display recognized "
 "text here. You can review words and fix if necessary. Press the Save button "
 "to record your changes."
 msgstr ""
-"在识别处理完成后，双击一个项目即可在此显示识别到的文字。您可以检查识别到的单"
-"词并进行必要的修订。点击保存按钮以记录您的更改。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:215
 #, kde-format
@@ -18156,17 +17861,7 @@ msgid "A tool to batch convert documented images to text using OCR"
 msgstr "使用 OCR 将文档图像批量转换为文字"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool can convert documented images data to Text format by using "
-#| "Tesseract, an open-source Optical Characters Recognition engine, "
-#| "originally developed at HP labs and now sponsored by Google.\n"
-#| "\n"
-#| "It supports multiple languages and scripts (including right-to-left text) "
-#| "and page layout analysis.\n"
-#| "\n"
-#| "See details on %1 for more information on Tesseract"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool can convert documented images data to Text format by using "
@@ -18175,12 +17870,6 @@ msgid ""
 "multiple languages and scripts (including right-to-left text) and page "
 "layout analysis.<br><br>See details on %1 for more information on Tesseract"
 msgstr ""
-"此工具可以将文档图像的数据转换为文本格式。它使用一款名为 Tesseract 的开源光学"
-"字符识别引擎，该引擎最初由 HP 实验室开发，目前由 Google 赞助开发。\n"
-"\n"
-"它支持多种语言和书写方式 (包括从右到左书写的文字) 和页面布局分析功能。\n"
-"\n"
-"Tesseract 的详情请见 %1"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:95
 #, kde-format
@@ -18195,17 +17884,7 @@ msgid "Languages:"
 msgstr "语言："
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Specify the language used for OCR. In the Default mode of Language "
-#| "settings for digital text with multiple languages, \n"
-#| "Tesseract can automatically recognize languages using Latin alphabets "
-#| "such as English or French, \n"
-#| "but is not compatible with languages using hieroglyphs such as Chinese, "
-#| "Japanese.\n"
-#| "You can use the Orientation and Script Detection mode instead or a "
-#| "specific languagemodule if available."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Specify the language used for OCR. In the Default mode of Language settings "
@@ -18217,10 +17896,6 @@ msgid ""
 "You can use the Orientation and Script Detection mode instead or a specific "
 "language module if available."
 msgstr ""
-"指定 OCR 使用的语言。在数字文字多语言的语言设置的默认模式下， \n"
-"Tesseract 可以自动识别使用拉丁字母的语言，例如英语、法语等，\n"
-"但它不兼容使用了象形文字的语言，例如中文、日语等。\n"
-"如果系统支持，您可以使用方向与书写检测模式或者特定的语言模块。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:90
 #, kde-format
@@ -18329,14 +18004,7 @@ msgid "A tool to create panorama"
 msgstr "拼接图像为全景图"
 
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:67
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool allows users to assemble images together to create large "
-#| "panorama.</p><p>To create panorama image, you need to use images taken "
-#| "from same point of view with a tripod and exposed with same settings.</"
-#| "p><p>The tool is able to assemble shot taken horizontally, vertically, or "
-#| "as a matrix. Take a care that target image will become huge and require a "
-#| "lots of memory to be processed.</p>"
+#, kde-format
 msgid ""
 "<p>This tool allows users to assemble images together to create large "
 "panorama.</p><p>To create panorama image, you need to use images taken from "
@@ -18345,9 +18013,6 @@ msgid ""
 "matrix. Take care that target image will become huge and require a lot of "
 "memory to be processed.</p>"
 msgstr ""
-"<p>用于拼接多张图像为一张全景图的工具。</p><p>要创建全景图，您需要使用三脚架"
-"在同一位置以相同曝光方式拍摄多张相邻画面。</p><p>此工具可以按照水平、垂直和矩"
-"阵方式拼接画面。注意：拼接生成的图像将非常巨大，且处理时需要大量内存。</p>"
 
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:102
 #, kde-format
@@ -18366,10 +18031,9 @@ msgid "<b>Cannot run <i>%1</i>:</b><p>%2</p>"
 msgstr "<b>无法执行 %1：</b><p>%2</p>"
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:67
-#, fuzzy, kde-format
-#| msgid "Temporary panorama file does not exists."
+#, kde-format
 msgid "Temporary panorama file does not exist."
-msgstr "临时全景文件不存在。"
+msgstr ""
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:75
 #, kde-format
@@ -18382,10 +18046,9 @@ msgid "Temporary project file does not exist."
 msgstr "临时工程文件不存在。"
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:91
-#, fuzzy, kde-format
-#| msgid "A project file named <filename>%1</filename> already exists."
+#, kde-format
 msgid "A project file named <filename>%1</filename> already exist."
-msgstr "名为 <filename>%1</filename> 的工程文件已经存在。"
+msgstr ""
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:165
 #, kde-format
@@ -18540,19 +18203,12 @@ msgid ""
 msgstr "选择使用 LZW 算法压缩的 TIFF 输出方式 (无损压缩，文件尺寸较大)。"
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "@info: whatsthis"
-#| msgid ""
-#| "\"TIFF output\": Using TIFF output, you get the same color depth than "
-#| "your original photos using RAW images at the cost of a bigger panorama "
-#| "file."
+#, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
 "\"TIFF output\": Using TIFF output, you get the same color depth as your "
 "original photos using RAW images at the cost of a bigger panorama file."
 msgstr ""
-"“TIFF 输出”：使用 TIFF 输出时将获得与原始照片 RAW 图像相同的色彩深度，但代价"
-"是生成的全景图文件体积庞大。"
 
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:52
 #, kde-format
@@ -18818,19 +18474,12 @@ msgid "Now, we will pre-process images before stitching them."
 msgstr "现在我们将在拼接图像之前对它们进行预处理。"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:191
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Pre-processing also include a calculation of some control points to match "
-#| "overlaps between images. For that purpose, the \"%1\" program will be "
-#| "used."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Pre-processing also includes a calculation of some control points to match "
 "overlaps between images. For that purpose, the \"%1\" program will be used."
 msgstr ""
-"预处理过程还包括对某些控制点进行计算以匹配图像的重叠区域，这需要使用“%1”程"
-"序。"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:81
 #, kde-format
@@ -19033,20 +18682,13 @@ msgid "A tool to create print composition from images"
 msgstr "对图像进行汇编排版以便创建打印任务"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool allows users to back-process items (as assemble) before to "
-#| "print.</p><p>Items to process can be selected one by one or by group "
-#| "through a selection of albums.</p><p>Different pre-defined paper sizes "
-#| "and layouts can be used to process files.</p>"
+#, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (e.g., assemble them) before "
 "to print.</p><p>Items to process can be selected one by one or by group "
 "through a selection of albums.</p><p>Different pre-defined paper sizes and "
 "layouts can be used to process files.</p>"
 msgstr ""
-"<p>用于在打印前对图像进行汇编和排版的工具。</p><p>要处理的项目可按张或者按组"
-"在相册中选择。</p><p>可以使用多种纸张尺寸预设和布局方式来处理图像文件。</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
 #: core/utilities/searchwindow/searchfields_createfield.cpp:746
@@ -19078,13 +18720,7 @@ msgstr "说明文字类型："
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:86
-#, fuzzy, kde-format
-#| msgid ""
-#| "print file name\n"
-#| "print camera exposure time\n"
-#| "print item comment\n"
-#| "print ISO sensibility from camera\n"
-#| "print date and time from camera"
+#, kde-format
 msgid ""
 "print file name\n"
 "print camera exposure time\n"
@@ -19092,11 +18728,6 @@ msgid ""
 "print ISO sensitivity from camera\n"
 "print date and time from camera"
 msgstr ""
-"打印文件名\n"
-"打印相机曝光时间\n"
-"打印项目注释\n"
-"打印相机 ISO 感光度\n"
-"打印相机拍摄日期和时间"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:99
@@ -20061,18 +19692,12 @@ msgstr "<p>待发送 JPEG 图像的新压缩率数值：</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:175
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:137
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><b>1</b>: very high compression<br/><b>25</b>: high compression<br/"
-#| "><b>50</b>: medium compression<br/><b>75</b>: low compression (default "
-#| "value)<br/><b>100</b>: no compression</p>"
+#, kde-format
 msgid ""
 "<p><b>1</b>: very high compression<br><b>25</b>: high compression<br><b>50</"
 "b>: medium compression<br><b>75</b>: low compression (default "
 "value)<br><b>100</b>: no compression</p>"
 msgstr ""
-"<p><b>1</b>：极高压缩率<br/><b>25</b>：较高压缩率<br/><b>50</b>：中等压缩率"
-"<br/><b>75</b>：较低压缩率 (默认值)<br/><b>100</b>：无压缩</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
@@ -21289,15 +20914,7 @@ msgid "A tool to render presentation"
 msgstr "进行图像和背景音乐演示"
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool render a series of items as an advanced slide-show.\n"
-#| "\n"
-#| "Plenty of transition effects are available are ones based on OpenGL and "
-#| "the famous Ken Burns effect.\n"
-#| "\n"
-#| "You can add a sound-track in background while your presentation."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool render a series of items as an advanced slide-show.<br><br>Plenty "
@@ -21305,11 +20922,6 @@ msgid ""
 "Ken Burns effect.<br><br>You can add a sound-track in background while your "
 "presentation."
 msgstr ""
-"用于放映复杂幻灯片的工具。\n"
-"\n"
-"它提供了基于 OpenGL 的众多过渡特效，包括著名的肯·伯恩斯变焦特效。\n"
-"\n"
-"您还可以为幻灯片添加背景音乐。"
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:104
 #, kde-format
@@ -21793,20 +21405,12 @@ msgid "A tool to export to Box web-service"
 msgstr "导出项目到 Box 在线服务"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to Box web-service.\n"
-#| "\n"
-#| "See Box web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Box web-service.<br><br>See Box "
 "web site for details: %1"
 msgstr ""
-"用于导出项目到 Box 在线服务的工具。\n"
-"\n"
-"请访问 Box 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:91
 #, kde-format
@@ -22006,20 +21610,12 @@ msgid "A tool to export to Dropbox web-service"
 msgstr "导出项目到 Dropbox 在线服务"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to Dropbox web-service.\n"
-#| "\n"
-#| "See Dropbox web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Dropbox web-service.<br><br>See "
 "Dropbox web site for details: %1"
 msgstr ""
-"用于导出项目到 Dropbox 在线服务的工具。\n"
-"\n"
-"请访问 Dropbox 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:95
 #, kde-format
@@ -22328,22 +21924,13 @@ msgid "Use the album path of the items in the target"
 msgstr "使用目标项目的相册路径"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: "
-#| "very high compression<br/><b>25</b>: high compression<br/><b>50</b>: "
-#| "medium compression<br/><b>75</b>: low compression (default value)<br/"
-#| "><b>100</b>: no compression</p>"
+#, kde-format
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
 "high compression<br><b>25</b>: high compression<br><b>50</b>: medium "
 "compression<br><b>75</b>: low compression (default value)<br><b>100</b>: no "
 "compression</p>"
 msgstr ""
-"<p>要发送的 JPEG 图像的压缩率：</p><p><b>1</b>：最高压缩率，最差画质<br/"
-"><b>25</b>：较高压缩率，较差画质<br/><b>50</b>：中等压缩率，中等画质<br/"
-"><b>75</b>：较低压缩率，较好画质 (默认值)<br/><b>100</b>：最低压缩率，最好画"
-"质</p>"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, kde-format
@@ -22522,21 +22109,12 @@ msgid "A tool to export and import items with a remote location"
 msgstr "导入/导出远程位置项目"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export and import items with a remote "
-#| "location.\n"
-#| "\n"
-#| "Many protocols can be used, as FTP, SFTP, SAMBA, etc."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export and import items with a remote location."
 "<br><br>Many protocols can be used, as FTP, SFTP, SAMBA, etc."
 msgstr ""
-"用于导入和导出远程位置文件的工具。\n"
-"\n"
-"它支持多种文件传输协议，包括 FTP、SFTP、SAMBA 等。"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
 #, kde-format
@@ -22615,20 +22193,12 @@ msgid "A tool to export to Flickr web-service"
 msgstr "导出项目到 Flickr 在线服务"
 
 #: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to Flickr web-service.\n"
-#| "\n"
-#| "See Flickr web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Flickr web-service.<br><br>See "
 "Flickr web site for details: %1"
 msgstr ""
-"用于导出项目到 Flickr 在线服务的工具。\n"
-"\n"
-"请访问 Flickr 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:104
 #, kde-format
@@ -23125,26 +22695,13 @@ msgid "A tool to export and import items with Google web-service"
 msgstr "导入/导出项目到 Google 在线服务"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export and import items with Google web-"
-#| "services.\n"
-#| "\n"
-#| "Google Photo and Google Drive web services are supported.\n"
-#| "\n"
-#| "See Google web sites for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export and import items with Google web-services."
 "<br><br>Google Photos and Google Drive web services are supported."
 "<br><br>See Google web sites for details: %1"
 msgstr ""
-"用于导入/导出项目到 Google 在线服务的工具。\n"
-"\n"
-"支持使用 Google Photo 和 Google Drive 在线服务。\n"
-"\n"
-"请访问 Google 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:104
 #, kde-format
@@ -23338,12 +22895,10 @@ msgid "Google Drive export"
 msgstr "Google Drive 导出"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:651
-#, fuzzy, kde-format
-#| msgctxt "@info: start transfert"
-#| msgid "Google Photo export"
+#, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Photos export"
-msgstr "Google Photos 导出"
+msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1007
@@ -23672,25 +23227,13 @@ msgid "A tool to export to ImgUr web-service"
 msgstr "导出项目到 ImgUr 在线服务"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to ImgUr web-service.\n"
-#| "\n"
-#| "You can export items as anonymous or with an user account.\n"
-#| "\n"
-#| "See ImgUr web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to ImgUr web-service.<br><br>You can "
 "export items as anonymous or with an user account.<br><br>See ImgUr web site "
 "for details: %1"
 msgstr ""
-"用于导出项目到 ImgUr 在线服务的工具。\n"
-"\n"
-"您可以导出项目到用户账户，也可以匿名导出项目。\n"
-"\n"
-"详情请访问 ImgUr 网站：%1"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:102
 #, kde-format
@@ -23791,20 +23334,12 @@ msgid "A tool to export photos as iNaturalist observations."
 msgstr "导出照片到 iNaturalist 观察记录"
 
 #: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool exports photos as iNaturalist observations.\n"
-#| "\n"
-#| "See iNaturalist web site for details: %1."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool exports photos as iNaturalist observations.<br><br>See iNaturalist "
 "web site for details: %1."
 msgstr ""
-"用于导出照片到 iNaturalist 观察记录的工具。\n"
-"\n"
-"请访问 iNaturalist 网站了解详情：%1。"
 
 #: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:94
 #, kde-format
@@ -24273,20 +23808,12 @@ msgid "A tool to export to IPFS web-service"
 msgstr "导出项目到 IPFS 在线服务"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to IPFS web-service.\n"
-#| "\n"
-#| "See IPFS web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to IPFS web-service.<br><br>See IPFS "
 "web site for details: %1"
 msgstr ""
-"用于导出项目到 IPFS 在线服务的工具。\n"
-"\n"
-"请访问 IPFS 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:96
 #, kde-format
@@ -24340,20 +23867,12 @@ msgid "A tool to export to MediaWiki web-service"
 msgstr "导出项目到 MediaWiki 在线服务"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to MediaWiki web-service.\n"
-#| "\n"
-#| "See MediaWiki web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to MediaWiki web-service.<br><br>See "
 "MediaWiki web site for details: %1"
 msgstr ""
-"用于导出项目到 MediaWiki 在线服务的工具。\n"
-"\n"
-"请访问 MediaWiki 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:101
 #, kde-format
@@ -24858,52 +24377,36 @@ msgid "A tool to export to OneDrive web-service"
 msgstr "导出项目到 OneDrive 在线服务"
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to OneDrive web-service.\n"
-#| "\n"
-#| "See OneDrive web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to OneDrive web-service.<br><br>See "
 "OneDrive web site for details: %1"
 msgstr ""
-"用于导出项目到 OneDrive 在线服务的工具。\n"
-"\n"
-"请访问 OneDrive 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export to &Onedrive..."
+#, kde-format
 msgctxt "@action"
 msgid "Export to &OneDrive..."
-msgstr "导出到 Onedrive(&O)..."
+msgstr ""
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Onedrive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to OneDrive"
-msgstr "导出到 OneDrive"
+msgstr ""
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip, button"
-#| msgid "Start upload to Onedrive"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to OneDrive"
-msgstr "开始上传到 Onedrive"
+msgstr ""
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:283
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Onedrive export"
+#, kde-format
 msgctxt "@info"
 msgid "OneDrive export"
-msgstr "OneDrive 导出"
+msgstr ""
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:320
 #, kde-format
@@ -24919,18 +24422,12 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:394
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:399
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Onedrive call failed:\n"
-#| "%1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "OneDrive call failed:\n"
 "%1"
 msgstr ""
-"Onedrive 调用失败：\n"
-"%1"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:44
 #, kde-format
@@ -24945,20 +24442,12 @@ msgid "A tool to export to Pinterest web-service"
 msgstr "导出项目到 Pinterest 在线服务"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to Pinterest web-service.\n"
-#| "\n"
-#| "See Pinterest web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Pinterest web-service.<br><br>See "
 "Pinterest web site for details: %1"
 msgstr ""
-"用于导出项目到 Pinterest 在线服务的工具。\n"
-"\n"
-"请访问 Pinterest 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:92
 #, kde-format
@@ -25300,20 +24789,12 @@ msgid "A tool to export to Rajce web-service"
 msgstr "导出项目到 Rajce 在线服务"
 
 #: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to Rajce web-service.\n"
-#| "\n"
-#| "See Rajce web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Rajce web-service.<br><br>See "
 "Rajce web site for details: %1"
 msgstr ""
-"用于导出项目到 Rajce 在线服务的工具。\n"
-"\n"
-"请访问 Rajce 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:96
 #, kde-format
@@ -25533,21 +25014,12 @@ msgid "A tool to export and import items with SmugMug web-service"
 msgstr "导入/导出项目到 SmugMug 在线服务"
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export and import items with SmugMug web-"
-#| "service.\n"
-#| "\n"
-#| "See SmugMug web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export and import items with SmugMug web-service."
 "<br><br>See SmugMug web site for details: %1"
 msgstr ""
-"用于导出项目到 SmugMug 在线服务的工具。\n"
-"\n"
-"请访问 SmugMug 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:102
 #, kde-format
@@ -25799,20 +25271,12 @@ msgid "A tool to export to Twitter web-service"
 msgstr "导出项目到 Twitter 在线服务"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to Twitter web-service.\n"
-#| "\n"
-#| "See Twitter web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Twitter web-service.<br><br>See "
 "Twitter web site for details: %1"
 msgstr ""
-"用于导出项目到 Twitter 在线服务的工具。\n"
-"\n"
-"请访问 Twitter 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
 #, kde-format
@@ -25924,20 +25388,12 @@ msgid "A tool to export items to web-services"
 msgstr "导出项目到多个在线服务"
 
 #: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to many web-services.\n"
-#| "\n"
-#| "This is a unified tool, grouping many tools in one."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to many web-services.<br><br>This is "
 "a unified tool, grouping many tools in one."
 msgstr ""
-"用于导出项目到多种在线服务的工具。\n"
-"\n"
-"这是一个整合式工具，它包含多个子工具。"
 
 #: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:93
 #, kde-format
@@ -26424,27 +25880,17 @@ msgid "The SQLite core database was not found."
 msgstr "找不到 SQLite 核心数据库。"
 
 #: core/libs/album/manager/albummanager_database.cpp:144
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file:<br/>%1</p>"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br>%1</p>"
 msgstr ""
-"<p>如果您想要使用全新的配置文件启动并打开首次运行配置向导，请删除文件：<br/>"
-"%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:157
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the internal server start.<p>Details:\n"
-#| "%1</p>"
+#, kde-format
 msgid ""
 "An error occurred during the internal server start.<p>Details:<br>%1</p>"
 msgstr ""
-"内建服务器启动时发生错误。<p>详细信息：\n"
-"%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -26508,33 +25954,20 @@ msgstr ""
 "新启动 digiKam 之前更改您的数据库字符集设置。"
 
 #: core/libs/album/manager/albummanager_database.cpp:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
-#| "on your system.<br/> Please choose the most appropriate  option to handle "
-#| "this situation:</p>"
+#, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br>(%2)</p><p> is currently not found on "
 "your system.<br> Please choose the most appropriate  option to handle this "
 "situation:</p>"
 msgstr ""
-"<p>相册集合</p><p><b>%1</b><br/>(%2)</p><p>当前无法在本机系统中找到。<br/>请"
-"选择合适的处理方式：</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:329
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The collection is still available, but the identifier changed.<br/"
-#| ">This can be caused by restoring a backup, changing the partition layout "
-#| "or the file system settings.<br/>The collection is now located at this "
-#| "place:</p>"
+#, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br>This "
 "can be caused by restoring a backup, changing the partition layout or the "
 "file system settings.<br>The collection is now located at this place:</p>"
 msgstr ""
-"<p>该相册集合依然存在，但它的标识符已被改变。<br/>这可能是由于恢复备份、更改"
-"存储分区布局或者文件系统设置造成的。<br/>该相册集合现在的位置是：</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:348
 #, kde-format
@@ -28000,14 +27433,9 @@ msgstr ""
 "digiKam 将尝试自动重新连接数据库。"
 
 #: core/libs/database/engine/dbengineguierrorhandler.cpp:238
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><b>A database error occurred.</b></p>Details:\n"
-#| " %1"
+#, kde-format
 msgid "<p><b>A database error occurred.</b></p>Details:<br> %1"
 msgstr ""
-"<p><b>数据库发生错误。</b></p>详细情况：\n"
-" %1"
 
 #: core/libs/database/history/itemhistorygraphmodel.cpp:454
 #, kde-format
@@ -28512,18 +27940,7 @@ msgstr ""
 "p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set here the location where the database files will be stored on your "
-#| "system. There are four databases: one for all collections properties, one "
-#| "to store compressed thumbnails, one to store faces recognition metadata, "
-#| "and one to store similarity fingerprints.<br/>Write access is required to "
-#| "be able to edit image properties.</p><p>Databases are digiKam core "
-#| "engines. Take care to use a place hosted by fast hardware (eg. SSD or "
-#| "NVMe) with enough free space especially for thumbnails database.</"
-#| "p><p>Note: a remote file system such as NFS, cannot be used here. For "
-#| "performance reasons, it is also recommended not to use network storage "
-#| "media.</p><p></p>"
+#, kde-format
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -28535,13 +27952,6 @@ msgid ""
 "system such as NFS, cannot be used here. For performance reasons, it is also "
 "recommended not to use network storage media.</p><p></p>"
 msgstr ""
-"<p>请在此设置数据库文件的存储位置。digiKam 会建立 4 个数据库：一个用于存储所"
-"有相册集合的属性、一个用于存储压缩后的缩略图、一个用于存储人脸识别元数据、一"
-"个用于存储文件相似度指纹数据。<br/>注意：要编辑图像属性，必须具备写入权限。</"
-"p><p>数据库属于 digiKam 核心引擎的一部分，为了提高性能，请尽可能把数据库保存"
-"在高速存储设备上 (如 SSD 或者 NVMe 等)。为了保证缩略图数据库能正常工作，请预"
-"留足够的存储空间。</p><p>注意：为了避免性能低下，不可使用诸如 NFS 等远程文件"
-"系统来存储数据库，也不建议使用任何网络存储媒介。</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
@@ -28795,13 +28205,7 @@ msgid "Database Server Instructions"
 msgstr "数据库服务器使用说明"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:290
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>digiKam expects that database is already created with a dedicated user "
-#| "account. This user name <i>digikam</i> will require full access to the "
-#| "database.<br/>If your database is not already set up, you can use the "
-#| "following SQL commands (after replacing the <b><i>password</i></b> with "
-#| "the correct one).</p>"
+#, kde-format
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
 "account. This user name <i>digikam</i> will require full access to the "
@@ -28809,23 +28213,9 @@ msgid ""
 "following SQL commands (after replacing the <b><i>password</i></b> with the "
 "correct one).</p>"
 msgstr ""
-"<p>digiKam 将假设数据库已经使用专用的用户账户完成了创建。此用户名为 digikam，"
-"它需要数据库的完全访问权限。<br/>如果该数据库尚未建立，您可以使用下面的 SQL\n"
-"命令建立它 (记得将 <b>password</b> 替换为实际密码)。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have problems with a MySQL server on Ubuntu "
-#| "based Linux system, use the addition command in the mysql prompt to be "
-#| "able to create MySQL triggers.<br/>SET GLOBAL "
-#| "log_bin_trust_function_creators=1;</p><p>NOTE: If you have an enormous "
-#| "collection, you should start MySQL server with mysql --"
-#| "max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -28837,14 +28227,6 @@ msgid ""
 "If you have an enormous collection, you should start MySQL server with mysql "
 "--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
-"<p>提示：在 Linux 服务器上，可以使用以下命令初始化数据库：</p><p># su</"
-"p><p># systemctl restart mysqld</p><p># mysql -u root</p><p>...</p><p>在 SQL "
-"提示符下输入以下 SQL 命令初始化 digiKam 数据库并授予所需权限 (详见后文)</"
-"p><p>...</p><p>quit</p><p>提示：如果您在基于 Ubuntu 的发行版中遇到了 MySQL 服"
-"务器问题，请在 MySQL 的命令行模式中输入以下的附加命令来创建 MySQL 触发器 ："
-"<br/>SET GLOBAL log_bin_trust_function_creators=1;</p><p>提示：如果您的相册集"
-"合规模庞大，请在启动 MySQL 服务器时使用 mysql --max_allowed_packet=128M 命"
-"令，也可以在 my.ini 或 ~/.my.cnf 中更改相关设置。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
 #, kde-format
@@ -28960,24 +28342,18 @@ msgid "Database Configuration"
 msgstr "数据库配置"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
-#, fuzzy, kde-format
-#| msgid ""
-#| "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
-#| ">Please check your configuration."
+#, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br><p>%1</"
 "p><br>Please check your configuration."
-msgstr "数据库名称配置无效。错误：<br/><p>%1</p><br/>请检查您的配置是否正确。"
+msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:865
-#, fuzzy, kde-format
-#| msgid ""
-#| "Testing database connection has failed with error<br/><p>%1</p><br/"
-#| ">Please check your configuration."
+#, kde-format
 msgid ""
 "Testing database connection has failed with error<br><p>%1</p><br>Please "
 "check your configuration."
-msgstr "数据库连接测试失败，错误：<br/><p>%1</p><br/>请检查您的配置是否正确。"
+msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:884
 #, kde-format
@@ -29008,16 +28384,11 @@ msgid "Create Database Folder Failed"
 msgstr "创建数据库文件夹失败"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:906
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>digiKam could not create the folder to host your database file.\n"
-#| "Please select a different location.</p><p><b>%1</b></p>"
+#, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.<br>Please "
 "select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"<p>digiKam 无法创建用于存储数据库文件的文件夹。\n"
-"请选择一个不同的位置。</p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:931
 #, kde-format
@@ -29026,16 +28397,11 @@ msgid "No Database Write Access"
 msgstr "没有数据库写入权限"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:932
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>You do not seem to have write access for the folder to host the "
-#| "database file.<br/>Please select a different location.</p><p><b>%1</b></p>"
+#, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
 "file.<br>Please select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"<p>您不具备数据库存储文件夹的写入权限。<br/>请选择一个不同的位置。</p><p><b>"
-"%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:46
 #, kde-format
@@ -29439,12 +28805,10 @@ msgid "Copy to Clipboard"
 msgstr "复制到剪贴板"
 
 #: core/libs/dialogs/infodlg.cpp:92
-#, fuzzy, kde-format
-#| msgid ""
-#| "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
+#, kde-format
 msgid ""
 "<font size=\"5\">%1</font><br><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
-msgstr "<font size=\"5\">%1</font><br/><b>版本 %2</b><p>%3</p><p><i>%4</i></p>"
+msgstr ""
 
 #: core/libs/dialogs/infodlg.cpp:113
 #, kde-format
@@ -29484,7 +28848,7 @@ msgstr "未知"
 #: core/libs/dialogs/libsinfodlg.cpp:422
 #, kde-format
 msgctxt "@title"
-msgid "Build Environnement"
+msgid "Build Environment"
 msgstr ""
 
 #: core/libs/dialogs/libsinfodlg.cpp:460
@@ -29530,20 +28894,16 @@ msgid "List of Supported RAW Cameras"
 msgstr "支持的 RAW 相机列表"
 
 #: core/libs/dialogs/rawcameradlg.cpp:125
-#, fuzzy, kde-format
-#| msgid "Using LibRaw version %2<br/>1 model on the list"
-#| msgid_plural "Using LibRaw version %2<br/>%1 models on the list"
+#, kde-format
 msgid "Using LibRaw version %2<br>1 model on the list"
 msgid_plural "Using LibRaw version %2<br>%1 models on the list"
-msgstr[0] "正在使用 LibRaw 版本 %2<br/>列表中有 %1 种型号"
+msgstr[0] ""
 
 #: core/libs/dialogs/rawcameradlg.cpp:135
-#, fuzzy, kde-format
-#| msgid "Using LibRaw version %2<br/>1 model on the list (found: %3)"
-#| msgid_plural "Using LibRaw version %2<br/>%1 models on the list (found: %3)"
+#, kde-format
 msgid "Using LibRaw version %2<br>1 model on the list (found: %3)"
 msgid_plural "Using LibRaw version %2<br>%1 models on the list (found: %3)"
-msgstr[0] "正在使用 LibRaw 版本 %2<br/>列表中有 %1 种型号 (检测到：%3 种)"
+msgstr[0] ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:78
 #, kde-format
@@ -30342,12 +29702,10 @@ msgid "Preserve luminosity"
 msgstr "保持亮度 (HSY' 光度)"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Enable this option is you want preserve the image luminosity."
+#, kde-format
 msgctxt "@info"
 msgid "Enable this option if you want preserve the image luminosity."
-msgstr "勾选此项后，在调整色调时将维持图像的亮度 (HSY' 光度)。"
+msgstr ""
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:150
 #, kde-format
@@ -34358,46 +33716,39 @@ msgid "Open filter settings panel"
 msgstr "打开过滤器面板"
 
 #: core/libs/filters/filterstatusbar.cpp:121
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Text</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Text</i></nobr>"
-msgstr "<br/><nobr>文本</nobr>"
+msgstr ""
 
 #: core/libs/filters/filterstatusbar.cpp:126
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Mime Type</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Mime Type</i></nobr>"
-msgstr "<br/><nobr>MIME 类型</nobr>"
+msgstr ""
 
 #: core/libs/filters/filterstatusbar.cpp:131
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Geolocation</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Geolocation</i></nobr>"
-msgstr "<br/><nobr>地理位置</nobr>"
+msgstr ""
 
 #: core/libs/filters/filterstatusbar.cpp:136
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Rating</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Rating</i></nobr>"
-msgstr "<br/><nobr>评分</nobr>"
+msgstr ""
 
 #: core/libs/filters/filterstatusbar.cpp:141
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Pick Labels</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Pick Labels</i></nobr>"
-msgstr "<br/><nobr>挑选标记</nobr>"
+msgstr ""
 
 #: core/libs/filters/filterstatusbar.cpp:146
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Color Labels</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Color Labels</i></nobr>"
-msgstr "<br/><nobr>颜色标记</nobr>"
+msgstr ""
 
 #: core/libs/filters/filterstatusbar.cpp:151
-#, fuzzy, kde-format
-#| msgid "<br/><nobr><i>Tags</i></nobr>"
+#, kde-format
 msgid "<br><nobr><i>Tags</i></nobr>"
-msgstr "<br/><nobr>标签</nobr>"
+msgstr ""
 
 #: core/libs/filters/filterstatusbar.cpp:156
 #, kde-format
@@ -36373,14 +35724,7 @@ msgid "Download"
 msgstr "下载"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:274
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
-#| "built on <i>%3</i> is available on this <a href='%4'>repository</a>.</"
-#| "p><p>Press <b>Download</b> to get the file...</p><p>Note: from Setup/Misc "
-#| "panel, you can switch to check for stable release only.<br/>Stable "
-#| "versions are safe to use in production.</p><p>Press <b>Configure</b> if "
-#| "you want to customize update options from setup dialog.</p>"
+#, kde-format
 msgid ""
 "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
 "built on <i>%3</i> is available on this <a href='%4'>repository</a>.</"
@@ -36389,23 +35733,9 @@ msgid ""
 "are safe to use in production.</p><p>Press <b>Configure</b> if you want to "
 "customize update options from setup dialog.</p>"
 msgstr ""
-"<p>当前使用的 <b>%1</b> 测试版本构建于 <i>%2</i>。</p><p>最新的测试版本构建"
-"于 <i>%3</i>，已上传到<a href='%4'>此软件仓库</a>。</p><p>请点击<b>下载</b>获"
-"取安装程序。</p><p>提示：在配置/其他页面您可以设置更新程序只检查稳定版本的更"
-"新。<br/>稳定版本可以更为安全地用于生产用途。</p><p>点击<b>配置</b>可在设置对"
-"话框中配置更新选项。</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:287
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version "
-#| "<i>%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
-#| "<b>Download</b> to get the file...</p><p>Note: from Setup/Misc panel, you "
-#| "can switch to check for weekly pre-release.<br/>Pre-release versions are "
-#| "dedicated to test quickly new features.<br/>It is not recommended to use "
-#| "pre-releases in production as bugs can remain,<br/>unless you know what "
-#| "you are doing.</p><p>Press <b>Configure</b> if you want to customize "
-#| "update options from setup dialog.</p>"
+#, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
 "%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
@@ -36416,12 +35746,6 @@ msgid ""
 "doing.</p><p>Press <b>Configure</b> if you want to customize update options "
 "from setup dialog.</p>"
 msgstr ""
-"<p>当前使用的 <b>%1</b> 稳定版本为 <i>%2</i></p><p>最新的稳定版本为 <i>%3</"
-"i>，已上传到<a href='%4'>此软件仓库</a>。</p><p>请点击<b>下载</b>获取安装程"
-"序。</p><p>提示：在配置/其他页面您可以设置更新程序检查每周测试版本的更新。"
-"<br/>测试版本用于对正在开发的新功能进行前期测试。<br/>测试版本可能存在尚未修"
-"复的严重缺陷，不建议用于生产用途。<br/>请在了解具体情况和风险自担的前提下使用"
-"测试版本。</p><p>点击 <b>配置</b>可在设置对话框中配置更新选项。</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:315
 #, kde-format
@@ -39342,19 +38666,12 @@ msgid_plural "Delete tags"
 msgstr[0] "删除标签"
 
 #: core/libs/tags/manager/tagsmanager.cpp:492
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>digiKam will clean up tag metadata before setting tags from database."
-#| "<br/> You may <b>lose tags</b> if you did not read tags before (by "
-#| "calling Read Tags from Image).<br/> Do you want to continue?</qt>"
+#, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database."
 "<br> You may <b>lose tags</b> if you did not read tags before (by calling "
 "Read Tags from Image).<br> Do you want to continue?</qt>"
 msgstr ""
-"<qt>digiKam 将在设置来自数据库的标签之前清理文件的标签元数据。<br/> 如果您在"
-"这之前没有读取过文件的标签 (通过调用“读取图像标签”操作)，您可能会<b>丢失标签"
-"</b>。<br/> 您想要继续吗？</qt>"
 
 #: core/libs/tags/manager/tagsmanager.cpp:504
 #: core/libs/tags/manager/tagsmanager.cpp:523
@@ -39537,14 +38854,7 @@ msgid "Enter tag name here..."
 msgstr "在此输入标签名称..."
 
 #: core/libs/tags/widgets/tageditdlg.cpp:138
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
-#| "can be used to create a tags hierarchy.<br/>Ex.: <i>\"Country/City/Paris"
-#| "\"</i></li><li>',' can be used to create more than one tags hierarchy at "
-#| "the same time.<br/>Ex.: <i>\"City/Paris, Monument/Notre-Dame\"</i></"
-#| "li><li>If a tag hierarchy starts with '/', root tag album is used as "
-#| "parent.</li></ul></p>"
+#, kde-format
 msgid ""
 "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
 "can be used to create a tags hierarchy.<br>Ex.: <i>\"Country/City/Paris\"</"
@@ -39553,10 +38863,6 @@ msgid ""
 "tag hierarchy starts with '/', root tag album is used as parent.</li></ul></"
 "p>"
 msgstr ""
-"<p>要创建新标签，您可以使用以下规则：</p><p><ul><li>“/”可用于创建标签的层级结"
-"构。<br/>例如：<i>“国家/城市/巴黎”</i></li><li>“,”可用于同时创建多个标签层"
-"级。<br/>例如：<i>“城市/巴黎, 纪念性建筑/巴黎圣母院”</i></li><li>如果标签层级"
-"以“/”开头，则将根标签作为其父标签。</li></ul></p>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:172
 #, kde-format
@@ -39581,16 +38887,14 @@ msgid "<b>Create New Tag</b>"
 msgstr "<b>创建新标签</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:337
-#, fuzzy, kde-format
-#| msgid "<b>Create New Tag in<br/>\"%1\"</b>"
+#, kde-format
 msgid "<b>Create New Tag in<br>\"%1\"</b>"
-msgstr "<b>创建新标签到<br/>“%1”之下</b>"
+msgstr ""
 
 #: core/libs/tags/widgets/tageditdlg.cpp:343
-#, fuzzy, kde-format
-#| msgid "<b>Properties of Tag<br/>\"%1\"</b>"
+#, kde-format
 msgid "<b>Properties of Tag<br>\"%1\"</b>"
-msgstr "<b>标签<br/>“%1”的属性</b>"
+msgstr ""
 
 #: core/libs/tags/widgets/tageditdlg.cpp:515
 #, kde-format
@@ -39808,30 +39112,7 @@ msgid ""
 msgstr "在此输入用于识别当前版权所有者的版权声明。"
 
 #: core/libs/template/templatepanel.cpp:132
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The Copyright Notice should contain any necessary copyright notice for "
-#| "claiming the intellectual property, and should identify the current "
-#| "owner(s) of the copyright for the photograph. Usually, this would be the "
-#| "photographer, but if the image was done by an employee or as work-for-"
-#| "hire, then the agency or company should be listed. Use the form "
-#| "appropriate to your country. USA: &copy; {date of first publication} name "
-#| "of copyright owner, as in \"&copy;2005 John Doe.\" Note, the word "
-#| "\"copyright\" or the abbreviation \"copr\" may be used in place of the "
-#| "&copy; symbol. In some foreign countries only the copyright symbol is "
-#| "recognized and the abbreviation does not work. Furthermore the copyright "
-#| "symbol must be a full circle with a \"c\" inside; using something like "
-#| "(c) where the parentheses form a partial circle is not sufficient. For "
-#| "additional protection worldwide, use of the phrase, \"all rights reserved"
-#| "\" following the notice above is encouraged. \n"
-#| "In Europe you would use: Copyright {Year} {Copyright owner}, all rights "
-#| "reserved. \n"
-#| "In Japan, for maximum protection, the following three items should appear "
-#| "in the copyright field of the IPTC Core: (a) the word, Copyright; (b) "
-#| "year of the first publication; and (c) name of the author. You may also "
-#| "wish to include the phrase \"all rights reserved\".</p><p>With XMP, you "
-#| "can include more than one copyright string using different languages.</"
-#| "p><p>With IPTC, this field is limited to 128 characters.</p>"
+#, kde-format
 msgid ""
 "<p>The Copyright Notice should contain any necessary copyright notice for "
 "claiming the intellectual property, and should identify the current owner(s) "
@@ -39855,19 +39136,6 @@ msgid ""
 "one copyright string using different languages.</p><p>With IPTC, this field "
 "is limited to 128 characters.</p>"
 msgstr ""
-"<p>版权声明应当包含所有相关知识产权的版权声明，并标识该照片的当前版权所有者。"
-"一般而言这应该是摄影师本人，但如果图像是由某个企业或者通讯社的雇员、临时工或"
-"者外包人员拍摄，那么该机构应当在此列出。请按照本国所需格式进行填写。美国："
-"&copy; {出版日期} 版权所有者，例如“&copy;2005 John Doe.”提示：“copyright (版"
-"权)”或缩写的“copr”可用于替代 &copy; 符号。某些国家或地区只认可版权符号，不认"
-"可单词缩写。除此之外，版权符号必须是一个完整的圆圈，内写一个 c 字母。使用 "
-"(c) 之类的圆括号包含是不稳妥的。为了在全世界范围内提供可靠的版权保护，建议在"
-"前方标识之后再加上“all rights reserved (版权所有)”短句。\n"
-"对于欧洲，可使用：Copyright {年份} {版权所有者}, all rights reserved. \n"
-"对于日本，为了最大化的版权保护，以下三项必须出现在 IPTC 核心区的版权字段："
-"(a) 版权字样、(b) 初次出版日期、(c) 作者姓名。您可能还要包含“版权所有”字样。"
-"</p><p>在 XMP 规范下，可以包含不同语言的多条版权字段。</p><p>IPTC 规范下，此"
-"字段不得输入超过 32 个字符。"
 
 #: core/libs/template/templatepanel.cpp:154
 #, kde-format
@@ -40202,10 +39470,9 @@ msgstr ""
 "钟的时间差也将根据此设置确定。"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:167
-#, fuzzy, kde-format
-#| msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
+#, kde-format
 msgid "<font color=\"red\"><b>Could not load<br>image %1.</b></font>"
-msgstr "<font color=\"red\"><b>无法加载<br/>图像 %1。</b></font>"
+msgstr ""
 
 #: core/libs/timeadjust/clockphotodialog.cpp:183
 #, kde-format
@@ -42193,13 +41460,7 @@ msgid "Show Thumbbar"
 msgstr "显示缩略图栏"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the slogan formatted string displayed in splashscreen. Please "
-#| "translate using short words else the slogan can be truncated."
-#| msgid ""
-#| "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</b><br/"
-#| ">with the Power of <b>Open Source</b></font></qt>"
+#, kde-format
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
 "translate using short words else the slogan can be truncated."
@@ -42207,8 +41468,6 @@ msgid ""
 "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</"
 "b><br>with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
-"<qt><font color=\"white\"><b>自由开源</b>的<br/><b>专业</b>照片<b>管理工具</"
-"b></font></qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
@@ -48830,23 +48089,17 @@ msgid "Editor Window"
 msgstr "编辑器窗口"
 
 #: core/showfoto/setup/showfotosetup.cpp:106
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></"
-#| "qt>"
+#, kde-format
 msgid ""
 "<qt>Editor Window Settings<br><i>Customize editor window behavior</i></qt>"
-msgstr "<qt>编辑器窗口设置</qt>"
+msgstr ""
 
 #: core/showfoto/setup/showfotosetup.cpp:112
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
-#| "images and metadata</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br><i>Setup relations between "
 "images and metadata</i></qt>"
-msgstr "<qt>图像元数据管理设置</qt>"
+msgstr ""
 
 #: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
@@ -48854,14 +48107,11 @@ msgid "Tool Tip"
 msgstr "悬停信息框"
 
 #: core/showfoto/setup/showfotosetup.cpp:118
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
-#| "information in tool-tips</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br><i>Customize "
 "information in tool-tips</i></qt>"
-msgstr "<qt>缩略图栏和文件夹视图项目悬停信息框设置</qt>"
+msgstr ""
 
 #: core/showfoto/setup/showfotosetup.cpp:123
 #, kde-format
@@ -48869,24 +48119,18 @@ msgid "RAW Decoding"
 msgstr "RAW 解码"
 
 #: core/showfoto/setup/showfotosetup.cpp:124
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
-#| "settings</i></qt>"
+#, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br><i>Customize default RAW decoding "
 "settings</i></qt>"
-msgstr "<qt>RAW 图像解码设置</qt>"
+msgstr ""
 
 #: core/showfoto/setup/showfotosetup.cpp:130
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Settings for Color Management<br/><i>Customize color management "
-#| "settings</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Settings for Color Management<br><i>Customize color management settings</"
 "i></qt>"
-msgstr "<qt>色彩管理设置</qt>"
+msgstr ""
 
 #: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
@@ -48894,14 +48138,11 @@ msgid "Save Images"
 msgstr "保存图像"
 
 #: core/showfoto/setup/showfotosetup.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Settings for Saving Image Files<br/><i>Set default configuration used "
-#| "to save images</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br><i>Set default configuration used to "
 "save images</i></qt>"
-msgstr "<qt>图像文件的保存方式设置<br/></qt>"
+msgstr ""
 
 #: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
 #, kde-format
@@ -48923,14 +48164,11 @@ msgid "Plugins"
 msgstr "插件"
 
 #: core/showfoto/setup/showfotosetup.cpp:151
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
-#| "accessible from application</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br><i>Set which plugins will be "
 "accessible from application</i></qt>"
-msgstr "<qt>插件设置</qt>"
+msgstr ""
 
 #: core/showfoto/setup/showfotosetup.cpp:156
 #, kde-format
@@ -48939,14 +48177,11 @@ msgid "Miscellaneous"
 msgstr "其他"
 
 #: core/showfoto/setup/showfotosetup.cpp:157
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
-#| "of Showfoto</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br><i>Customize behavior of the other parts of "
 "Showfoto</i></qt>"
-msgstr "<qt>其他设置</qt>"
+msgstr ""
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:84
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:102
@@ -50243,17 +49478,11 @@ msgid "Default Value"
 msgstr "默认值"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:48
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set a default value for empty strings.<br/>When applied to a renaming "
-#| "option, an empty string will be replaced by the value you specify here.</"
-#| "p>"
+#, kde-format
 msgid ""
 "<p>Set a default value for empty strings.<br>When applied to a renaming "
 "option, an empty string will be replaced by the value you specify here.</p>"
 msgstr ""
-"<p>设置空字符串的默认值。<br/>当空字符串被应用到重命名选项时，它将被替换为此"
-"处指定的值。</p>"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:73
 #, kde-format
@@ -51197,19 +50426,12 @@ msgid "/Pictures"
 msgstr "/Pictures"
 
 #: core/utilities/firstrun/collectionpage.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Please enter a location where you keep your images.</p> <p>You can "
-#| "choose any local folder, even one that already contains images.<br/> More "
-#| "folders can be added later under the <i>Settings</i> menu. </p> "
+#, kde-format
 msgid ""
 "<p>Please enter a location where you keep your images.</p> <p>You can choose "
 "any local folder, even one that already contains images.<br> More folders "
 "can be added later under the <i>Settings</i> menu. </p> "
 msgstr ""
-"<p>请设置您保存图像的位置。</p> <p>可选择任意一个本地文件夹，它可以是空文件"
-"夹，也可以包含图像。<br/>您日后还可以在 <b>设置</b> 菜单的 <b>配置</b> 对话框"
-"添加更多文件夹。</p> "
 
 #: core/utilities/firstrun/collectionpage.cpp:85
 #, kde-format
@@ -51251,16 +50473,11 @@ msgid "Create Root Album Folder Failed"
 msgstr "创建根相册文件夹失败"
 
 #: core/utilities/firstrun/collectionpage.cpp:190
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>digiKam could not create the folder to use as the root album.\n"
-#| "Please select a different location.</p><p><b>%1</b></p>"
+#, kde-format
 msgid ""
 "<p>digiKam could not create the folder to use as the root album.<br>Please "
 "select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"<p>digiKam 无法创建用作根相册的文件夹。\n"
-"请选择一个不同的位置。</p><p><b>%1</b></p>"
 
 #: core/utilities/firstrun/collectionpage.cpp:215
 #, kde-format
@@ -51531,17 +50748,7 @@ msgstr ""
 "照片管理程序。</p><p>请点击“下一步”，对 digiKam 进行初始设置。</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br/><p>You can ignore the following if you use digiKam for the first "
-#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
-#| "from digiKam 4 are not migrated. The old database can still be used, you "
-#| "just need to choose the same locations for collections and database in "
-#| "the following dialogs. It is recommended to create a backup of your "
-#| "database before proceeding.</p><p>The new location for configuration "
-#| "files is %1 (old %2). There are unresolved problems reported when re-"
-#| "using old configuration files, so it is not recommended to do it for the "
-#| "moment, and at your own risk.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -51553,12 +50760,6 @@ msgid ""
 "files, so it is not recommended to do it for the moment, and at your own "
 "risk.</p></qt>"
 msgstr ""
-"<qt><br/><p>如果这是您第一次使用 digiKam，请忽略下述内容：</p><p><b>digiKam "
-"4 升级迁移</b></p><p>digiKam 4 的旧版配置文件尚未迁移。新版 digiKam 仍然可以"
-"继续使用旧版数据库，只需在接下来的对话框中为相册集合和数据库选择与旧版相同的"
-"位置即可。建议在继续操作之前备份您的数据库。</p><p>新版配置文件的位置在 %1 "
-"(旧版配置文件在 %2)。继续使用旧版配置文件将会遇到许多问题，因此不建议使用旧版"
-"配置文件，否则风险自负。</p></qt>"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
 #, kde-format
@@ -51801,18 +51002,12 @@ msgstr ""
 "图像指纹。"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-#| "p><p>You can also use the context menu<br/>when browsing through<br/>your "
-#| "images.</p>"
+#, kde-format
 msgid ""
 "<p>Drag & drop an image here<br>to perform similar<br>items search.</"
 "p><p>You can also use the context menu<br>when browsing through<br>your "
 "images.</p>"
 msgstr ""
-"<p>拖放一张图像到这里<br/>以进行相似<br/>项搜索。</p><p>您也可在浏览图像时"
-"<br/>使用右键菜单<br/>使搜索某张图像。</p>"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
 #, kde-format
@@ -54532,35 +53727,30 @@ msgid "Circle Ruler"
 msgstr "圆形尺规"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:657
-#, fuzzy, kde-format
-#| msgid "Total Distance: %1<br/>\n"
+#, kde-format
 msgid "Total Distance: %1<br>\n"
-msgstr "总距离：%1<br/>\n"
+msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:661
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:684
-#, fuzzy, kde-format
-#| msgid "Area: %1<br/>\n"
+#, kde-format
 msgid "Area: %1<br>\n"
-msgstr "面积：%1<br/>\n"
+msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:666
-#, fuzzy, kde-format
-#| msgid "Perimeter: %1<br/>\n"
+#, kde-format
 msgid "Perimeter: %1<br>\n"
-msgstr "周长：%1<br/>\n"
+msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:674
-#, fuzzy, kde-format
-#| msgid "Radius: %1<br/>\n"
+#, kde-format
 msgid "Radius: %1<br>\n"
-msgstr "半径：%1<br/>\n"
+msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:679
-#, fuzzy, kde-format
-#| msgid "Circumference: %1<br/>\n"
+#, kde-format
 msgid "Circumference: %1<br>\n"
-msgstr "圆周长：%1<br/>\n"
+msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:734
 #, kde-format
@@ -56657,38 +55847,25 @@ msgid "%1 - %2"
 msgstr "%1 - %2"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:204
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This image has an <b>embedded color profile</b><br/> which does not "
-#| "match your working space color profile.<br/>How do you want to proceed?</"
-#| "p>"
+#, kde-format
 msgid ""
 "<p>This image has an <b>embedded color profile</b><br> which does not match "
 "your working space color profile.<br>How do you want to proceed?</p>"
 msgstr ""
-"<p>此图像的<b>内嵌色彩特性文件</b><br/>与您工作空间的色彩特性文件不匹配。<br/"
-">您想要如何处理？</p>"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This image has <b>no information about the color space</b><br/>that "
-#| "was used when creating the image. <br/>How do you want to proceed?</p>"
+#, kde-format
 msgid ""
 "<p>This image has <b>no information about the color space</b><br>that was "
 "used when creating the image. <br>How do you want to proceed?</p>"
 msgstr ""
-"<p>此图像在创建时<b>并未包含色彩特性信息</b>。<br/>您想要如何处理？</p>"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:217
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The color information of this image is uncalibrated.<br/>How do you "
-#| "want to proceed?</p>"
+#, kde-format
 msgid ""
 "<p>The color information of this image is uncalibrated.<br>How do you want "
 "to proceed?</p>"
-msgstr "<p>此图像的颜色信息尚未校准。<br/>您想要如何处理？</p>"
+msgstr ""
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:248
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:616
@@ -59567,14 +58744,11 @@ msgid "Common Options"
 msgstr "通用选项"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:78
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>No option<br/><i>Note: only Albums Collection are processed by this "
-#| "tool.</i></qt>"
+#, kde-format
 msgid ""
 "<qt>No option<br><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
-msgstr "<qt>无选项<br/><b>提示：</b>此工具只会扫描相册集合的文件夹。</qt>"
+msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:81
 #, kde-format
@@ -59582,13 +58756,7 @@ msgid "Scan for new items"
 msgstr "扫描新增项目"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:91
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><i>Note: If activated, the core database is always cleaned. You can "
-#| "select additional databases for cleaning.<br/>If you select one of the "
-#| "options below, the process may take much time and can freeze digiKam "
-#| "temporarily in order to make sure that no database corruption occurs.</"
-#| "i></qt>"
+#, kde-format
 msgid ""
 "<qt><i>Note: If activated, the core database is always cleaned. You can "
 "select additional databases for cleaning.<br>If you select one of the "
@@ -59596,9 +58764,6 @@ msgid ""
 "temporarily in order to make sure that no database corruption occurs.</i></"
 "qt>"
 msgstr ""
-"<qt><b>提示：</b>选择此项后，digiKam 将对它的核心数据库进行清理。您还可以额外"
-"选择要清理的其他数据库。<br/>如果选择了下面的任意一项，清理将需要更长时间才能"
-"完成，digiKam 可能会暂时停止响应以防止数据库在清理过程中损坏。</qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:96
 #, kde-format
@@ -61726,14 +60891,11 @@ msgid "At least one of these conditions is not met"
 msgstr "不符合至少一项条件"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:101
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p>Search your collection<br/>for Items meeting the following "
-#| "conditions</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p>Search your collection<br>for Items meeting the following conditions</"
 "p></qt>"
-msgstr "<qt><p>搜索相册集合<br/>查找符合以下条件的项目</p></qt>"
+msgstr ""
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
@@ -62433,37 +61595,25 @@ msgstr ""
 "像格式的支持吗？</p>"
 
 #: core/utilities/setup/album/setupmime.cpp:302
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as images and included "
-#| "into the database:<br/> <code>%1</code></p>"
+#, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as images and included "
 "into the database:<br> <code>%1</code></p>"
 msgstr ""
-"<p>具有下列扩展名的文件将被作为图像收录到数据库：<br/> <code>%1</code></p>"
 
 #: core/utilities/setup/album/setupmime.cpp:312
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as video files and "
-#| "included into the database:<br/> <code>%1</code></p>"
+#, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as video files and "
 "included into the database:<br> <code>%1</code></p>"
 msgstr ""
-"<p>具有下列扩展名的文件将被作为视频收录到数据库：<br/> <code>%1</code></p>"
 
 #: core/utilities/setup/album/setupmime.cpp:322
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Files with these extensions will be recognized as audio files and "
-#| "included into the database:<br/> <code>%1</code></p>"
+#, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as audio files and "
 "included into the database:<br> <code>%1</code></p>"
 msgstr ""
-"<p>具有下列扩展名的文件将被作为音频收录到数据库：<br/> <code>%1</code></p>"
 
 #: core/utilities/setup/camera/cameralist.cpp:288
 #, kde-format
@@ -62584,58 +61734,35 @@ msgstr ""
 "储设备</b>类相机。</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:211
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To set a <b>USB Mass Storage</b> camera<br/>(which looks like a "
-#| "removable drive when mounted<br/>on your desktop), please use<br/><a href="
-#| "\"umscamera\">%1</a> from the camera list.</p>"
+#, kde-format
 msgid ""
 "<p>To set a <b>USB Mass Storage</b> camera<br>(which looks like a removable "
 "drive when mounted<br>on your desktop), please use<br><a href=\"umscamera\">"
 "%1</a> from the camera list.</p>"
 msgstr ""
-"<p>要设置 <b>USB 大容量存储设备</b> 类相机<br/>(在文件管理器中显示为可移动驱"
-"动器)，<br/>请在相机列表中选用：<br/><a href=\"umscamera\">%1</a>。</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:218
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To set a <b>Generic PTP USB Device</b><br/>(which uses Picture "
-#| "Transfer Protocol), please<br/>use <a href=\"ptpcamera\">%1</a> from the "
-#| "camera list.</p>"
+#, kde-format
 msgid ""
 "<p>To set a <b>Generic PTP USB Device</b><br>(which uses Picture Transfer "
 "Protocol), please<br>use <a href=\"ptpcamera\">%1</a> from the camera list.</"
 "p>"
 msgstr ""
-"<p>要设置<b>通用 PTP USB 设备</b>类相机<br/>(使用 PTP 协议)，<br/>请在相机列"
-"表中选用：<a href=\"ptpcamera\">%1</a>。</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To set a <b>Generic PTP/IP Network Device</b><br/>(which uses Picture "
-#| "Transfer Protocol), please<br/>use <a href=\"ptpipcamera\">%1</a> from "
-#| "the camera list.</p>"
+#, kde-format
 msgid ""
 "<p>To set a <b>Generic PTP/IP Network Device</b><br>(which uses Picture "
 "Transfer Protocol), please<br>use <a href=\"ptpipcamera\">%1</a> from the "
 "camera list.</p>"
 msgstr ""
-"<p>要设置<b>通用 PTP/IP Network 设备</b>类相机<br/>(使用 PTP 协议)，<br/>请在"
-"相机列表中选用：<a href=\"ptpipcamera\">%1</a>。</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:231
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>A complete list of camera settings to use is<br/>available at <a "
-#| "href='https://www.figuiere.net/digicam/'>this URL</a>.</p>"
+#, kde-format
 msgid ""
 "<p>A complete list of camera settings to use is<br>available at <a "
 "href='https://www.figuiere.net/digicam/'>this URL</a>.</p>"
 msgstr ""
-"<p>完整的相机设置列表<br/>请访问<a href='https://www.figuiere.net/digicam/'>"
-"此页面地址获取</a>。</p>"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:74
 #, kde-format
@@ -63023,14 +62150,11 @@ msgid "Ignored Directories"
 msgstr "已忽略目录"
 
 #: core/utilities/setup/collections/setupcollections.cpp:246
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Directories starting with a dot are ignored by default.<br/> <code>%1</"
-#| "code></p>"
+#, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br> <code>%1</"
 "code></p>"
-msgstr "<p>目录名以半角句号开头时将被默认忽略<br/> <code>%1</code></p>"
+msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:107
 #, kde-format
@@ -63868,18 +62992,12 @@ msgstr ""
 "您想要继续操作吗？"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:395
-#, fuzzy, kde-format
-#| msgid ""
-#| "Advanced configuration menu allow you to manage metadata namespaces used "
-#| "by digiKam to store and retrieve tags, rating and comments.<br/><b>Note: "
-#| "</b>Order is important when reading metadata"
+#, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
 "digiKam to store and retrieve tags, rating and comments.<br><b>Note: </"
 "b>Order is important when reading metadata"
 msgstr ""
-"高级配置页面可以管理 digiKam 读写标签、评分和注释时使用的元数据命名空间。<br/"
-"><b>提示：</b>元数据的读取顺序有重要作用。"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:405
 #, kde-format
@@ -63965,13 +63083,7 @@ msgid "Name:"
 msgstr "名称："
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:230
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To create new namespaces, you need to specify parameters:</"
-#| "p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.digiKam.TagsList"
-#| "\"</i></li><li>Separator parameter, used by tag paths <br/>Ex.: \"City/"
-#| "Paris\" or \"City|Paris\"</li><li>Specify if only keyword or the whole "
-#| "path must be written.</li></ul></p>"
+#, kde-format
 msgid ""
 "<p>To create new namespaces, you need to specify parameters:</"
 "p><p><ul><li>Namespace name with dots.<br>Ex.: <i>\"Xmp.digiKam.TagsList\"</"
@@ -63979,19 +63091,9 @@ msgid ""
 "\"City|Paris\"</li><li>Specify if only keyword or the whole path must be "
 "written.</li></ul></p>"
 msgstr ""
-"<p>要创建新的命名空间，您需要指定下列参数：</p><p><ul><li>命名空间参数，以半"
-"角句号分隔。<br/>例如：“Xmp.digiKam.TagsList”</i></li><li>分隔符参数，用于标"
-"签路径<br/>例如：“City/Paris”或“City|Paris”</li><li>指定是否仅写入关键字抑或"
-"是必须写入完整路径。</li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:241
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To create new rating namespaces, you need to specify parameters:</"
-#| "p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.xmp.Rating\"</"
-#| "i></li><li>Rating mappings, if namespace need other values than 0-5 <br/"
-#| ">Ex.: Microsoft uses 0 1 25 50 75 99</li><li>Select the correct namespace "
-#| "option from list.</li></ul></p>"
+#, kde-format
 msgid ""
 "<p>To create new rating namespaces, you need to specify parameters:</"
 "p><p><ul><li>Namespace name with dots.<br>Ex.: <i>\"Xmp.xmp.Rating\"</i></"
@@ -63999,25 +63101,14 @@ msgid ""
 "Microsoft uses 0 1 25 50 75 99</li><li>Select the correct namespace option "
 "from list.</li></ul></p>"
 msgstr ""
-"<p>要创建新的评分命名空间，您需要指定下列参数：</p><p><ul><li>命名空间参数，"
-"以半角句号分隔。<br/>例如：“Xmp.xmp.Rating”</li><li>评分映射参数，当该命名空"
-"间需要 0-5 以外的数值时。<br/>例如：微软使用的数值是 0 1 25 50 75 99</li><li>"
-"从列表中选择正确的命名空间选项。</li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:252
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To create new comment namespaces, you need to specify parameters:</"
-#| "p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.xmp.Comment\"</"
-#| "i></li><li>Select the correct namespace option from list.</li></ul></p>"
+#, kde-format
 msgid ""
 "<p>To create new comment namespaces, you need to specify parameters:</"
 "p><p><ul><li>Namespace name with dots.<br>Ex.: <i>\"Xmp.xmp.Comment\"</i></"
 "li><li>Select the correct namespace option from list.</li></ul></p>"
 msgstr ""
-"<p>要创建新的注释命名空间，您需要指定下列参数：</p><p><ul><li>命名空间参数，"
-"以半角句号分隔。<br/>例如：“Xmp.xmp.Comment”</li><li>从列表中选择正确的命名空"
-"间选项。</li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:261
 #, kde-format
@@ -65230,15 +64321,7 @@ msgid "Normal"
 msgstr "正常规范排序"
 
 #: core/utilities/setup/misc/setupmisc.cpp:102
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Sets the way in which strings are compared inside digiKam. This eg. "
-#| "influences the sorting of the tree views.<br/><b>Natural</b> tries to "
-#| "compare strings in a way that regards some normal conventions and will "
-#| "eg. result in sorting numbers naturally even if they have a different "
-#| "number of digits.<br/><b>Normal</b> uses a more technical approach. Use "
-#| "this style if you eg. want to entitle albums with ISO dates (201006 or "
-#| "20090523) and the albums should be sorted according to these dates.</qt>"
+#, kde-format
 msgid ""
 "<qt>Sets the way in which strings are compared inside digiKam. This eg. "
 "influences the sorting of the tree views.<br><b>Natural</b> tries to compare "
@@ -65248,11 +64331,6 @@ msgid ""
 "want to entitle albums with ISO dates (201006 or 20090523) and the albums "
 "should be sorted according to these dates.</qt>"
 msgstr ""
-"<qt>设置字符串在 digiKam 中的比较和排序方式。这将影响例如树形视图等项目的排"
-"序。<br/><b>自然习惯排序</b>尝试按照一般惯例来对字符串进行比较和排序，例如比"
-"较位数不同的数字等。<br/><b>正常规范排序</b>在技术层面更加严格。例如您将整个"
-"相册的项目按照 ISO 日期格式 (201006 或 20090523) 进行了命名，可以选用此方式进"
-"行排序。</qt>"
 
 #: core/utilities/setup/misc/setupmisc.cpp:111
 #, kde-format
@@ -65295,20 +64373,13 @@ msgid "Perform the following operations on all group members:"
 msgstr "是否对分组的全部子项目执行下列操作："
 
 #: core/utilities/setup/misc/setupmisc.cpp:319
-#, fuzzy, kde-format
-#| msgid ""
-#| "When images are grouped the following operations<br/>are performed only "
-#| "on the displayed item (No)<br/>or on all the hidden items in the group as "
-#| "well (Yes).<br/>If Ask is selected, there will be a prompt every<br/>time "
-#| "this operation is executed."
+#, kde-format
 msgid ""
 "When images are grouped the following operations<br>are performed only on "
 "the displayed item (No)<br>or on all the hidden items in the group as well "
 "(Yes).<br>If Ask is selected, there will be a prompt every<br>time this "
 "operation is executed."
 msgstr ""
-"图像分组后，下列操作是否对分组的全部子项目执行：<br/>否：仅对显示的分组子项目"
-"执行。<br/>是：对分组所有子项目执行。<br/>询问：每次操作时询问用户如何处理。"
 
 #: core/utilities/setup/misc/setupmisc.cpp:325
 #, kde-format
@@ -66515,11 +65586,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgctxt "@title"
-#~ msgid "Build Tools"
-#~ msgstr "构建工具"
-
-#~ msgctxt "@title:tab"
-#~ msgid "Behaviour"
-#~ msgstr "行为"
