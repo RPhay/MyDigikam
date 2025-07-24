@@ -36,7 +36,7 @@ BUGFIXES:
 023 ==> 468867 - Face detection and recognition.
 024 ==> 446729 - Crashes with error: The Wayland connection broken. Did the Wayland compositor die?
 025 ==> 507417 - Binary data seems gobbled by captions parsing.
-026 ==> 
+026 ==> 503251 - Faces recognition stopped working.
 027 ==> 
 028 ==> 
 029 ==> 
