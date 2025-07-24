@@ -35,7 +35,7 @@ BUGFIXES:
 022 ==> 506073 - Automatic update doesn't work because no sha256 files on server.
 023 ==> 468867 - Face detection and recognition.
 024 ==> 446729 - Crashes with error: The Wayland connection broken. Did the Wayland compositor die?
-025 ==> 
+025 ==> 507417 - Binary data seems gobbled by captions parsing.
 026 ==> 
 027 ==> 
 028 ==> 
