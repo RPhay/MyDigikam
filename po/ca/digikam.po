@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-24 02:03+0000\n"
-"PO-Revision-Date: 2025-07-23 17:49+0200\n"
+"PO-Revision-Date: 2025-07-24 10:13+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -30348,9 +30348,7 @@ msgid "Unknown"
 msgstr "Desconeguda"
 
 #: core/libs/dialogs/libsinfodlg.cpp:422
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Build Environnement"
+#, kde-format
 msgctxt "@title"
 msgid "Build Environment"
 msgstr "Entorn de construcció"

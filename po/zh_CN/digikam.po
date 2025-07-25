@@ -3565,7 +3565,7 @@ msgstr "...更多详情请访问 digiKam 官方网站查看。"
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid "<li>%1</li><br>"
-msgstr ""
+msgstr "<li>%1</li><br>"
 
 #: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
@@ -5849,6 +5849,10 @@ msgid ""
 "JPEG compression mosaic.<br><b>Reduce Texturing</b>: reduce image artifacts, "
 "such as paper texture, or Moire patterns on scanned images.</p>"
 msgstr ""
+"<p>选择用于照片修复的滤镜预设：</p><p><b>无</b>：最常用的值。将使用默认设置。"
+"<br><b>减少均匀噪点</b>：减少微小的图像瑕疵，如传感器噪点。<br><b>减少 JPEG "
+"杂色</b>：减少大块的图像瑕疵，如 JPEG 压缩特有的马赛克色斑。<br><b>减少纹理</"
+"b>：减少扫描图像时引入的纸张纹理或者摩尔纹。</p>"
 
 #: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:42
 #: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:40
@@ -6667,6 +6671,10 @@ msgid ""
 "file size)</p><p><b>Note: HEIF is not a lossless image compression format "
 "when you use this setting.</b></p>"
 msgstr ""
+"<p>HEIF 图像的画质参数：</p><p><b>1</b>：低画质 (高压缩率和小文件体"
+"积)<br><b>50</b>：中等画质<br><b>75</b>：较高画质 (默认值)<br><b>100</b>：最"
+"高画质 (无压缩和大文件体积)</p><p><b>提示：在使用此选项时，HEIF 格式并非使用"
+"无损方式压缩图像。</b></p>"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:43
 #, kde-format
@@ -6804,6 +6812,10 @@ msgid ""
 "(default)<br><b>100</b>: high quality (no compression and large file size)</"
 "p><p><b>Note: JPEG always uses lossy compression.</b></p>"
 msgstr ""
+"<p>JPEG 图像的画质参数：</p><p><b>1</b>：低画质 (高压缩率和小文件体"
+"积)<br><b>50</b>：中等画质<br><b>75</b>：较高画质 (默认值)<br><b>100</b>：最"
+"高画质 (无压缩和大文件体积)</p><p><b>提示：JPEG 总是使用有损方式压缩图像。</"
+"b></p>"
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:79
 #, kde-format
@@ -6927,6 +6939,10 @@ msgid ""
 "file size)</p><p><b>Note: JPEG 2000 is not a lossless image compression "
 "format when you use this setting.</b></p>"
 msgstr ""
+"<p>JPEG 2000 图像的画质参数：</p><p><b>1</b>：低画质 (高压缩率和小文件体"
+"积)<br><b>50</b>：中等画质<br><b>75</b>：较高画质 (默认值)<br><b>100</b>：最"
+"高画质 (无压缩和大文件体积)</p><p><b>提示：在使用此选项时，JPEG 2000 格式并非"
+"使用无损方式压缩图像。</b></p>"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:81
 #, kde-format
@@ -7043,6 +7059,10 @@ msgid ""
 "compression and small file size)</p><p><b>Note: PGF is not a lossless image "
 "compression format when you use this setting.</b></p>"
 msgstr ""
+"<p>PGF 图像的画质参数：</p><p><b>1</b>：最高画质 (无压缩和大文件体"
+"积)<br><b>3</b>：较高画质 (默认值)<br><b>6</b>：中等画质<br><b>9</b>：低画质 "
+"(高压缩率和小文件体积)</p><p><b>提示：在使用此选项时，PGF 格式并非使用无损方"
+"式压缩图像。</b></p>"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:43
 #, kde-format
@@ -7096,6 +7116,9 @@ msgid ""
 "compression duration)</p><p><b>Note: PNG is always a lossless image "
 "compression format.</b></p>"
 msgstr ""
+"<p>PNG 图像压缩率：</p><p><b>1</b>：低压缩率 (文件体积较大，压缩耗时较短 - 默"
+"认值)<br><b>5</b>：中等压缩率<br><b>9</b>：高压缩率 (文件体积较小，压缩耗时较"
+"长)</p><p><b>提示：PNG 是一种无损图像压缩格式。</b></p>"
 
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:43
 #, kde-format
@@ -7159,6 +7182,10 @@ msgid ""
 "file size)</p><p><b>Note: AVIF is not a lossless image compression format "
 "when you use this setting.</b></p>"
 msgstr ""
+"<p>AVIF 图像的画质参数：</p><p><b>1</b>：低画质 (高压缩率和小文件体"
+"积)<br><b>50</b>：中等画质<br><b>75</b>：较高画质 (默认值)<br><b>99</b>：最高"
+"画质 (无压缩和大文件体积)</p><p><b>提示：在使用此选项时，AVIF 格式并非使用无"
+"损方式压缩图像。</b></p>"
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:62
 #, kde-format
@@ -7188,6 +7215,10 @@ msgid ""
 "file size)</p><p><b>Note: JPEG XL is not a lossless image compression format "
 "when you use this setting.</b></p>"
 msgstr ""
+"<p>JPEG XL 图像的画质参数：</p><p><b>1</b>：低画质 (高压缩率和小文件体"
+"积)<br><b>50</b>：中等画质<br><b>99</b>：较高画质 (默认值)<br><b></b>：最高画"
+"质 (无压缩和大文件体积)</p><p><b>提示：在使用此选项时，JPEG XL 格式并非使用无"
+"损方式压缩图像。</b></p>"
 
 #: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:46
 #, kde-format
@@ -7246,6 +7277,10 @@ msgid ""
 "file size)</p><p><b>Note: WEBP is not a lossless image compression format "
 "when you use this setting.</b></p>"
 msgstr ""
+"<p>WEBP 图像的画质参数：</p><p><b>1</b>：低画质 (高压缩率和小文件体"
+"积)<br><b>50</b>：中等画质<br><b>75</b>：较高画质 (默认值)<br><b>99</b>：最高"
+"画质 (无压缩和大文件体积)</p><p><b>提示：在使用此选项时，WEBP 格式并非使用无"
+"损方式压缩图像。</b></p>"
 
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:43
 #, kde-format
@@ -8364,6 +8399,12 @@ msgid ""
 "click or press l again to close the boundary.<br>* Inside lasso mode, you "
 "can clone only inside the lasso region.</p>"
 msgstr ""
+"<p>使用说明：<br><br>* 按 <b>S</b> 切换到来源选择模式，在图像上选择仿制图像的"
+"来源点位置。<br>* 再按 <b>S</b> 进入仿制图像的绘制模式。<br>* 按 <b>[</b> 和 "
+"<b>]</b> (方括号键) 更改笔刷大小。<br>* 按 <b>Ctrl+鼠标滚轮</b> 放大/缩小视"
+"图。<br>* 按 <b>M</b> 平移视图，图像必须已放大至超出视图大小。<br>* 按 <b>L</"
+"b> 建立多边形/自由选区 (套索)，再按 L 或双击可封闭选区。<br>* 在选区模式中，"
+"您只能将内容仿制到选区之内。</p>"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:324
 #, kde-format
@@ -8630,6 +8671,10 @@ msgid ""
 "<br><b>Custom</b>: Puts settings to most common values, fully customizable.</"
 "p>"
 msgstr ""
+"<p>选择用于照片修复的滤镜预设：</p><p><b>减少均匀噪点</b>：减少微小的图像瑕"
+"疵，如传感器噪点。<br><b>减少 JPEG 杂色</b>：减少大块的图像瑕疵，如 JPEG 压缩"
+"特有的马赛克色斑。<br><b>减少纹理</b>：减少扫描图像时引入的纸张纹理或者摩尔"
+"纹。<br><b>自定义</b>：可调整所有选项，并默认设为最常用的值。</p>"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:321
 #, kde-format
@@ -8710,13 +8755,13 @@ msgstr "锐化"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to sharpen an image"
-msgstr ""
+msgstr "对图像进行锐化处理"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can sharpen an image."
-msgstr ""
+msgstr "用于对图像进行锐化处理的图像编辑器工具。"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:91
 #, kde-format
@@ -9892,6 +9937,8 @@ msgid ""
 "in the preview widget and clicking <i>Adjust</i>.<br>You can either adjust "
 "horizontal or vertical lines.</p>"
 msgstr ""
+"<p>请先在预览视图中指定两个参考点，然后点击<b>调整图像</b>按钮。<br>参考点连"
+"线可以是水平方向的，也可以是垂直方向的。</p>"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:193
 #, kde-format
@@ -11146,6 +11193,10 @@ msgid ""
 "this tool is able to read a GPS trace from a device to synchronize geo-"
 "location of items if you camera do not have an embedded GPS device."
 msgstr ""
+"此工具用于更改项目的地理位置信息。<br><br>它可以通过对话框或直接在地图上编辑 "
+"GPS 数据。反向地理编码可通过联网服务使用。<br><br>它还可以导出地图轨迹到谷歌"
+"的 KML 格式文件。<br><br>此工具还可以从设备读取 GPS 信息，并与没有内建 GPS 功"
+"能的相机拍摄的照片进行关联处理。"
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:103
 #, kde-format
@@ -11825,7 +11876,7 @@ msgstr "观点"
 #, kde-format
 msgctxt "Content type"
 msgid "Polls and Surveys"
-msgstr ""
+msgstr "投票和调查"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
 #, kde-format
@@ -11837,13 +11888,13 @@ msgstr "档案"
 #, kde-format
 msgctxt "Content type"
 msgid "Results Listings and Table"
-msgstr ""
+msgstr "结果列表和表格"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:110
 #, kde-format
 msgctxt "Content type"
 msgid "Side bar and Supporting information"
-msgstr ""
+msgstr "侧边栏和支持信息"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:111
 #, kde-format
@@ -14405,6 +14456,9 @@ msgid ""
 "with standardized values.<br><br>For photo agencies, pre-configured subjects "
 "can be used to describe the items contents based on Iptc reference codes."
 msgstr ""
+"用于从项目更改大量元数据的工具。<br><br>摄影行业最常见的 EXIF、IPTC、XMP 标签"
+"已按标准数值列出以供编辑。<br><br>通讯社机构还可以使用基于 IPTC 引用码的预设"
+"主题来描述项目。"
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:101
 #, kde-format
@@ -14520,7 +14574,7 @@ msgstr "电话："
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:113
 #, kde-format
 msgid "Set here the contact phone number."
-msgstr ""
+msgstr "在此设置用于联系的电话号码。"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:115
 #, kde-format
@@ -15346,6 +15400,9 @@ msgid ""
 "adjusted or left untouched. The adjustment can be an offset of time or a "
 "specific date."
 msgstr ""
+"用于批量调整项目的日期和时间戳的工具。<br><br>可以从原始项目或单个共通项目中"
+"选择多种原始时间戳来源。<br><br>元数据时间戳可被调整或者保护。调整操作既可以"
+"基于时间偏移量，也可以基于特定日期和时间。"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:105
 #, kde-format
@@ -15656,21 +15713,21 @@ msgstr "选择日历数据文件"
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:202
 #, kde-format
 msgid "No valid images selected for months<br>Click Back to select images"
-msgstr ""
+msgstr "尚未给所有月份选择有效图像<br>请点击后退以选择图像"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:217
 #, kde-format
 msgid ""
 "Please note that you are making a calendar for<br>the current year or a year "
 "in the past."
-msgstr ""
+msgstr "提示：您正在制作的是<br>今年或往年的日历。"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:224
 #, kde-format
 msgid ""
 "Click Next to start Printing<br><br>Following months will be printed for "
 "year %1:<br>"
-msgstr ""
+msgstr "点击下一步开始打印<br><br>以下月份将按照 %1 年进行打印：<br>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:275
 #, kde-format
@@ -15821,6 +15878,9 @@ msgid ""
 "Digital Negative is a lossless RAW image format created by Adobe.<br><br>See "
 "details on this wikipedia entry about this format: %1"
 msgstr ""
+"用于转换 RAW 图像数据为 DNG 格式的通用工具。<br><br>Digital Negative (数字负"
+"片) 是由 Adobe 公司开发的一种无损 RAW 图像格式。<br><br>如需了解详情，请访"
+"问：DNG 格式介绍页面：%1"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:107
 #, kde-format
@@ -16399,7 +16459,7 @@ msgstr "您的图像已经准备好进行合成。"
 #, kde-format
 msgctxt "@info"
 msgid "To perform this operation, Enblend program will be used."
-msgstr ""
+msgstr "将使用 Enblend 程序执行此操作。"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:67
 #, kde-format
@@ -16984,7 +17044,7 @@ msgstr "没有可用的自定义选项"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
 #, kde-format
 msgid "Author: %1<br><br>"
-msgstr ""
+msgstr "作者：%1<br><br>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
 #, kde-format
@@ -17192,6 +17252,9 @@ msgid ""
 "features and the configuration, the delay to discover the server on client "
 "devices can take a while."
 msgstr ""
+"本媒体服务器使用 %1 标准和 %2 协议在本地网络上共享项目。支持 DLNA 的电子设备"
+"多种多样，包括平板电脑、笔记本电脑和电视等。<br><br>提示：根据网络的特性和配"
+"置，在客户端设备上发现服务器的延迟可能需要一段时间。"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:209
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:284
@@ -17395,6 +17458,11 @@ msgid ""
 "your browser, just use http://address:port as url, with address the MJPEG "
 "server IP, and port the server port set in this config dialog."
 msgstr ""
+"%1 服务器可以通过网页浏览器在本地网络分享项目。MJPEG 是一种视频压缩格式，它生"
+"成的视频文件的每一帧均为单独压缩的 JPEG 图像。MJPEG 流标准可以让网络客户端在"
+"无需安装额外模块的前提下连接其内容。大多数主流网页浏览器和播放器均支持 MJPEG "
+"流。要从您的浏览器访问流，请使用 http://地址:端口 作为 URL 格式，地址请填写"
+"该 MJPEG 服务器的 IP 地址，端口请填写在本配置对话框设置的服务器端口。"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:94
 #, kde-format
@@ -17427,7 +17495,7 @@ msgctxt "@info"
 msgid ""
 "The JPEG quality [50:lower - 100:higher]. Warning: better quality requires "
 "more network bandwidth"
-msgstr ""
+msgstr "JPEG 画质 [50：较低 - 100：较高]。警告：画质越高，所需的网络带宽也越高"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:140
 #, kde-format
@@ -17442,6 +17510,8 @@ msgid ""
 "The JPEG image size in pixels, using standard screen resolutions. Warning: "
 "larger size requires more network bandwidth"
 msgstr ""
+"JPEG 图像大小，单位为像素，使用标准屏幕分辨率。警告：尺寸越大，所需的网络带宽"
+"也越高"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:160
 #, kde-format
@@ -17467,7 +17537,7 @@ msgctxt "@info"
 msgid ""
 "The number of frames by second to render the stream. Warning: larger rate "
 "requires more network bandwidth"
-msgstr ""
+msgstr "渲染流的每秒帧数。警告：帧率越高，所需的网络带宽也越高"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:175
 #, kde-format
@@ -17479,7 +17549,7 @@ msgstr "流内容循环"
 #, kde-format
 msgctxt "@info"
 msgid "The MJPEG stream will be played in loop instead of playing once."
-msgstr ""
+msgstr "MJPEG 流将循环播放，而不是仅播放一次。"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:191
 #, kde-format
@@ -17504,6 +17574,8 @@ msgid ""
 "effects, the duration can depend on random values and can change while the "
 "stream is playing."
 msgstr ""
+"转场是指两张图像在切换时的过渡特效。某些特效的时间长度是随机的，可能会在幻灯"
+"片的播放过程中发生变化。"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:249
 #, kde-format
@@ -17517,7 +17589,7 @@ msgctxt "@label"
 msgid ""
 "An effect is a visual panning or zooming applied while an image is displayed "
 "in MJPEG stream."
-msgstr ""
+msgstr "效果是指图像在 MJPEG 流中显示时所应用的视觉平移和缩放效果。"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:294
 #, kde-format
@@ -17556,6 +17628,13 @@ msgid ""
 "dialog. More than one computer can be connected to the MJPEG server at the "
 "same time.</p>"
 msgstr ""
+"<p>用于通过 MJPEG 流服务器在本地网络分享项目的工具。</p><p>您可以逐个选择要分"
+"享的项目，也可以在各个相册中按分组选择。</p><p>MJPEG 是一种视频压缩格式，它生"
+"成文件的每一帧或数字视频序列交织场均为单独压缩的 JPEG 图像。MJPEG 流标准可以"
+"让网络客户端在无需安装额外模块的前提下连接其内容。大多数主流网页浏览器和播放"
+"器均支持 MJPEG 流。</p><p>要从您的浏览器访问流，请使用 http://地址:端口 作为 "
+"URL 格式，地址请填写该 MJPEG 服务器的 IP 地址，端口请填写在本配置对话框设置的"
+"服务器端口。支持同时从多台计算机同时连接到该 MPEG 服务器。</p>"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:101
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
@@ -17718,6 +17797,8 @@ msgid ""
 "Recognition. Tesseract program and the desired languages modules must be "
 "installed on your system."
 msgstr ""
+"此工具使用 %1 开源引擎来进行光学字符识别。Tesseract 程序和所需的语言模块必须"
+"安装到本机系统中。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:200
 #, kde-format
@@ -17733,6 +17814,8 @@ msgid ""
 "text here. You can review words and fix if necessary. Press the Save button "
 "to record your changes."
 msgstr ""
+"在识别处理完成后，双击一个项目即可在此显示识别到的文字。您可以检查识别到的单"
+"词并进行必要的修订。点击保存按钮以记录您的更改。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:215
 #, kde-format
@@ -17870,6 +17953,10 @@ msgid ""
 "multiple languages and scripts (including right-to-left text) and page "
 "layout analysis.<br><br>See details on %1 for more information on Tesseract"
 msgstr ""
+"此工具可以将文档图像的数据转换为文本格式。它使用一款名为 Tesseract 的开源光学"
+"字符识别引擎，该引擎最初由 HP 实验室开发，目前由 Google 赞助开发。<br><br>它"
+"支持多种语言和书写方式 (包括从右到左书写的文字) 和页面布局分析功能。"
+"<br><br>Tesseract 的详情请见 %1"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:95
 #, kde-format
@@ -17896,6 +17983,10 @@ msgid ""
 "You can use the Orientation and Script Detection mode instead or a specific "
 "language module if available."
 msgstr ""
+"指定 OCR 使用的语言。在数字文字多语言的语言设置的默认模式下， \n"
+"Tesseract 可以自动识别使用拉丁字母的语言，例如英语、法语等，\n"
+"但它不兼容使用了象形文字的语言，例如中文、日语等。\n"
+"如果系统支持，您可以使用方向与书写检测模式或者特定的语言模块。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:90
 #, kde-format
@@ -18013,6 +18104,9 @@ msgid ""
 "matrix. Take care that target image will become huge and require a lot of "
 "memory to be processed.</p>"
 msgstr ""
+"<p>用于拼接多张图像为一张全景图的工具。</p><p>要创建全景图，您需要使用三脚架"
+"在同一位置以相同曝光方式拍摄多张相邻画面。</p><p>此工具可以按照水平、垂直和矩"
+"阵方式拼接画面。注意：拼接生成的图像将非常巨大，且处理时需要大量内存。</p>"
 
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:102
 #, kde-format
@@ -18033,7 +18127,7 @@ msgstr "<b>无法执行 %1：</b><p>%2</p>"
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:67
 #, kde-format
 msgid "Temporary panorama file does not exist."
-msgstr ""
+msgstr "临时全景文件不存在。"
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:75
 #, kde-format
@@ -18048,7 +18142,7 @@ msgstr "临时工程文件不存在。"
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:91
 #, kde-format
 msgid "A project file named <filename>%1</filename> already exist."
-msgstr ""
+msgstr "名为 <filename>%1</filename> 的工程文件已经存在。"
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:165
 #, kde-format
@@ -18209,6 +18303,8 @@ msgid ""
 "\"TIFF output\": Using TIFF output, you get the same color depth as your "
 "original photos using RAW images at the cost of a bigger panorama file."
 msgstr ""
+"“TIFF 输出”：使用 TIFF 输出时将获得与原始照片 RAW 图像相同的色彩深度，但代价"
+"是生成的全景图文件体积庞大。"
 
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:52
 #, kde-format
@@ -18480,6 +18576,8 @@ msgid ""
 "Pre-processing also includes a calculation of some control points to match "
 "overlaps between images. For that purpose, the \"%1\" program will be used."
 msgstr ""
+"预处理过程还包括对某些控制点进行计算以匹配图像的重叠区域，这需要使用“%1”程"
+"序。"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:81
 #, kde-format
@@ -18689,6 +18787,9 @@ msgid ""
 "through a selection of albums.</p><p>Different pre-defined paper sizes and "
 "layouts can be used to process files.</p>"
 msgstr ""
+"<p>用于在打印前对图像进行汇编和排版等处理的工具。</p><p>要处理的项目可按张或"
+"者按组在相册中选择。</p><p>可以使用多种纸张尺寸预设和布局方式来处理图像文件。"
+"</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
 #: core/utilities/searchwindow/searchfields_createfield.cpp:746
@@ -18728,6 +18829,11 @@ msgid ""
 "print ISO sensitivity from camera\n"
 "print date and time from camera"
 msgstr ""
+"打印文件名\n"
+"打印相机曝光时间\n"
+"打印项目注释\n"
+"打印相机 ISO 感光度\n"
+"打印相机拍摄日期和时间"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:99
@@ -19698,6 +19804,8 @@ msgid ""
 "b>: medium compression<br><b>75</b>: low compression (default "
 "value)<br><b>100</b>: no compression</p>"
 msgstr ""
+"<p><b>1</b>：极高压缩率<br><b>25</b>：较高压缩率<br><b>50</b>：中等压缩率"
+"<br><b>75</b>：较低压缩率 (默认值)<br><b>100</b>：无压缩</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
@@ -20922,6 +21030,8 @@ msgid ""
 "Ken Burns effect.<br><br>You can add a sound-track in background while your "
 "presentation."
 msgstr ""
+"用于放映复杂幻灯片的工具。<br><br>它提供了基于 OpenGL 的众多过渡特效，包括著"
+"名的肯·伯恩斯特效。<br><br>您还可以为幻灯片添加背景音乐。"
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:104
 #, kde-format
@@ -21410,7 +21520,7 @@ msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Box web-service.<br><br>See Box "
 "web site for details: %1"
-msgstr ""
+msgstr "用于导出项目到 Box 在线服务的工具。<br><br>请访问 Box 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:91
 #, kde-format
@@ -21616,6 +21726,8 @@ msgid ""
 "This tool allows users to export items to Dropbox web-service.<br><br>See "
 "Dropbox web site for details: %1"
 msgstr ""
+"用于导出项目到 Dropbox 在线服务的工具。<br><br>请访问 Dropbox 网站了解详情："
+"%1"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:95
 #, kde-format
@@ -21931,6 +22043,10 @@ msgid ""
 "compression<br><b>75</b>: low compression (default value)<br><b>100</b>: no "
 "compression</p>"
 msgstr ""
+"<p>要发送的 JPEG 图像的压缩率：</p><p><b>1</b>：最高压缩率，最差画质"
+"<br><b>25</b>：较高压缩率，较差画质<br><b>50</b>：中等压缩率，中等画质"
+"<br><b>75</b>：较低压缩率，较好画质 (默认值)<br><b>100</b>：最低压缩率，最好"
+"画质</p>"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, kde-format
@@ -22115,6 +22231,8 @@ msgid ""
 "This tool allows users to export and import items with a remote location."
 "<br><br>Many protocols can be used, as FTP, SFTP, SAMBA, etc."
 msgstr ""
+"用于导入和导出远程位置文件的工具。<br><br>它支持多种文件传输协议，包括 FTP、"
+"SFTP、SAMBA 等。"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
 #, kde-format
@@ -22199,6 +22317,7 @@ msgid ""
 "This tool allows users to export items to Flickr web-service.<br><br>See "
 "Flickr web site for details: %1"
 msgstr ""
+"用于导出项目到 Flickr 在线服务的工具。<br><br>请访问 Flickr 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:104
 #, kde-format
@@ -22702,6 +22821,8 @@ msgid ""
 "<br><br>Google Photos and Google Drive web services are supported."
 "<br><br>See Google web sites for details: %1"
 msgstr ""
+"用于导入/导出项目到 Google 在线服务的工具。<br><br>支持使用 Google Photo 和 "
+"Google Drive 在线服务。<br><br>请访问 Google 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:104
 #, kde-format
@@ -22898,7 +23019,7 @@ msgstr "Google Drive 导出"
 #, kde-format
 msgctxt "@info: start transfert"
 msgid "Google Photos export"
-msgstr ""
+msgstr "Google Photos 导出"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:986
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1007
@@ -23234,6 +23355,8 @@ msgid ""
 "export items as anonymous or with an user account.<br><br>See ImgUr web site "
 "for details: %1"
 msgstr ""
+"用于导出项目到 ImgUr 在线服务的工具。<br><br>您可以导出项目到用户账户，也可以"
+"匿名导出项目。<br><br>详情请访问 ImgUr 网站：%1"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:102
 #, kde-format
@@ -23340,6 +23463,8 @@ msgid ""
 "This tool exports photos as iNaturalist observations.<br><br>See iNaturalist "
 "web site for details: %1."
 msgstr ""
+"用于导出照片到 iNaturalist 观察记录的工具。<br><br>请访问 iNaturalist 网站了"
+"解详情：%1。"
 
 #: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:94
 #, kde-format
@@ -23814,6 +23939,7 @@ msgid ""
 "This tool allows users to export items to IPFS web-service.<br><br>See IPFS "
 "web site for details: %1"
 msgstr ""
+"用于导出项目到 IPFS 在线服务的工具。<br><br>请访问 IPFS 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:96
 #, kde-format
@@ -23873,6 +23999,8 @@ msgid ""
 "This tool allows users to export items to MediaWiki web-service.<br><br>See "
 "MediaWiki web site for details: %1"
 msgstr ""
+"用于导出项目到 MediaWiki 在线服务的工具。<br><br>请访问 MediaWiki 网站了解详"
+"情：%1"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:101
 #, kde-format
@@ -24383,30 +24511,32 @@ msgid ""
 "This tool allows users to export items to OneDrive web-service.<br><br>See "
 "OneDrive web site for details: %1"
 msgstr ""
+"用于导出项目到 OneDrive 在线服务的工具。<br><br>请访问 OneDrive 网站了解详"
+"情：%1"
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Export to &OneDrive..."
-msgstr ""
+msgstr "导出到 OneDrive(&O)..."
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to OneDrive"
-msgstr ""
+msgstr "导出到 OneDrive"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:78
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to OneDrive"
-msgstr ""
+msgstr "开始上传到 OneDrive"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:283
 #, kde-format
 msgctxt "@info"
 msgid "OneDrive export"
-msgstr ""
+msgstr "OneDrive 导出"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:320
 #, kde-format
@@ -24428,6 +24558,8 @@ msgid ""
 "OneDrive call failed:\n"
 "%1"
 msgstr ""
+"OneDrive 调用失败：\n"
+"%1"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:44
 #, kde-format
@@ -24448,6 +24580,8 @@ msgid ""
 "This tool allows users to export items to Pinterest web-service.<br><br>See "
 "Pinterest web site for details: %1"
 msgstr ""
+"用于导出项目到 Pinterest 在线服务的工具。<br><br>请访问 Pinterest 网站了解详"
+"情：%1"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:92
 #, kde-format
@@ -24795,6 +24929,7 @@ msgid ""
 "This tool allows users to export items to Rajce web-service.<br><br>See "
 "Rajce web site for details: %1"
 msgstr ""
+"用于导出项目到 Rajce 在线服务的工具。<br><br>请访问 Rajce 网站了解详情：%1"
 
 #: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:96
 #, kde-format
@@ -25020,6 +25155,8 @@ msgid ""
 "This tool allows users to export and import items with SmugMug web-service."
 "<br><br>See SmugMug web site for details: %1"
 msgstr ""
+"用于导出项目到 SmugMug 在线服务的工具。<br><br>请访问 SmugMug 网站了解详情："
+"%1"
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:102
 #, kde-format
@@ -25277,6 +25414,8 @@ msgid ""
 "This tool allows users to export items to Twitter web-service.<br><br>See "
 "Twitter web site for details: %1"
 msgstr ""
+"用于导出项目到 Twitter 在线服务的工具。<br><br>请访问 Twitter 网站了解详情："
+"%1"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
 #, kde-format
@@ -25394,6 +25533,8 @@ msgid ""
 "This tool allows users to export items to many web-services.<br><br>This is "
 "a unified tool, grouping many tools in one."
 msgstr ""
+"用于导出项目到多种在线服务的工具。<br><br>这是一个整合式工具，它包含多个子工"
+"具。"
 
 #: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:93
 #, kde-format
@@ -25885,12 +26026,14 @@ msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br>%1</p>"
 msgstr ""
+"<p>如果您想要使用全新的配置文件启动并打开首次运行配置向导，请删除文件：<br>"
+"%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:157
 #, kde-format
 msgid ""
 "An error occurred during the internal server start.<p>Details:<br>%1</p>"
-msgstr ""
+msgstr "内建服务器启动时发生错误。<p>详细信息：<br>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -25960,6 +26103,8 @@ msgid ""
 "your system.<br> Please choose the most appropriate  option to handle this "
 "situation:</p>"
 msgstr ""
+"<p>相册集合</p><p><b>%1</b><br>(%2)</p><p>当前无法在本机系统中找到。<br>请选"
+"择合适的处理方式：</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:329
 #, kde-format
@@ -25968,6 +26113,8 @@ msgid ""
 "can be caused by restoring a backup, changing the partition layout or the "
 "file system settings.<br>The collection is now located at this place:</p>"
 msgstr ""
+"<p>该相册集合依然存在，但它的标识符已被改变。<br>这可能是由于恢复备份、更改存"
+"储分区布局或者文件系统设置造成的。<br>该相册集合现在的位置是：</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:348
 #, kde-format
@@ -27435,7 +27582,7 @@ msgstr ""
 #: core/libs/database/engine/dbengineguierrorhandler.cpp:238
 #, kde-format
 msgid "<p><b>A database error occurred.</b></p>Details:<br> %1"
-msgstr ""
+msgstr "<p><b>数据库发生错误。</b></p>详细情况：<br> %1"
 
 #: core/libs/database/history/itemhistorygraphmodel.cpp:454
 #, kde-format
@@ -27952,6 +28099,13 @@ msgid ""
 "system such as NFS, cannot be used here. For performance reasons, it is also "
 "recommended not to use network storage media.</p><p></p>"
 msgstr ""
+"<p>请在此设置数据库文件的存储位置。digiKam 会建立 4 个数据库：一个用于存储所"
+"有相册集合的属性、一个用于存储压缩后的缩略图、一个用于存储人脸识别元数据、一"
+"个用于存储文件相似度指纹数据。<br>注意：要编辑图像属性，必须具备写入权限。</"
+"p><p>数据库属于 digiKam 核心引擎的一部分，为了提高性能，请尽可能把数据库保存"
+"在高速存储设备上 (如 SSD 或者 NVMe 等)。为了保证缩略图数据库能正常工作，请预"
+"留足够的存储空间。</p><p>注意：为了避免性能低下，不可使用诸如 NFS 等远程文件"
+"系统来存储数据库，也不建议使用任何网络存储媒介。</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
@@ -28213,6 +28367,9 @@ msgid ""
 "following SQL commands (after replacing the <b><i>password</i></b> with the "
 "correct one).</p>"
 msgstr ""
+"<p>digiKam 将假设数据库已经使用专用的用户账户完成了创建。此用户名为 digikam，"
+"它需要数据库的完全访问权限。<br>如果该数据库尚未建立，您可以使用下面的 SQL\n"
+"命令建立它 (记得将 <b>password</b> 替换为实际密码)。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
 #, kde-format
@@ -28227,6 +28384,14 @@ msgid ""
 "If you have an enormous collection, you should start MySQL server with mysql "
 "--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
+"<p>提示：在 Linux 服务器上，可以使用以下命令初始化数据库：</p><p># su</"
+"p><p># systemctl restart mysqld</p><p># mysql -u root</p><p>...</p><p>在 SQL "
+"提示符下输入以下 SQL 命令初始化 digiKam 数据库并授予所需权限 (详见后文)</"
+"p><p>...</p><p>quit</p><p>提示：如果您在基于 Ubuntu 的发行版中遇到了 MySQL 服"
+"务器问题，请在 MySQL 的命令行模式中输入以下的附加命令来创建 MySQL 触发器 ："
+"<br>SET GLOBAL log_bin_trust_function_creators=1;</p><p>提示：如果您的相册集"
+"合规模庞大，请在启动 MySQL 服务器时使用 mysql --max_allowed_packet=128M 命"
+"令，也可以在 my.ini 或 ~/.my.cnf 中更改相关设置。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
 #, kde-format
@@ -28346,14 +28511,14 @@ msgstr "数据库配置"
 msgid ""
 "The database names configuration is not valid. Error is <br><p>%1</"
 "p><br>Please check your configuration."
-msgstr ""
+msgstr "数据库名称配置无效。错误：<br><p>%1</p><br>请检查您的配置是否正确。"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:865
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br><p>%1</p><br>Please "
 "check your configuration."
-msgstr ""
+msgstr "数据库连接测试失败，错误：<br><p>%1</p><br>请检查您的配置是否正确。"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:884
 #, kde-format
@@ -28389,6 +28554,8 @@ msgid ""
 "<p>digiKam could not create the folder to host your database file.<br>Please "
 "select a different location.</p><p><b>%1</b></p>"
 msgstr ""
+"<p>digiKam 无法创建用于存储您数据库文件的文件夹。<br>请选择一个不同的位置。</"
+"p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:931
 #, kde-format
@@ -28402,6 +28569,8 @@ msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
 "file.<br>Please select a different location.</p><p><b>%1</b></p>"
 msgstr ""
+"<p>您不具备数据库存储文件夹的写入权限。<br>请选择一个不同的位置。</p><p><b>"
+"%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:46
 #, kde-format
@@ -28808,7 +28977,7 @@ msgstr "复制到剪贴板"
 #, kde-format
 msgid ""
 "<font size=\"5\">%1</font><br><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
-msgstr ""
+msgstr "<font size=\"5\">%1</font><br><b>版本 %2</b><p>%3</p><p><i>%4</i></p>"
 
 #: core/libs/dialogs/infodlg.cpp:113
 #, kde-format
@@ -28897,13 +29066,13 @@ msgstr "支持的 RAW 相机列表"
 #, kde-format
 msgid "Using LibRaw version %2<br>1 model on the list"
 msgid_plural "Using LibRaw version %2<br>%1 models on the list"
-msgstr[0] ""
+msgstr[0] "正在使用 LibRaw 版本 %2<br>列表中有 %1 种型号"
 
 #: core/libs/dialogs/rawcameradlg.cpp:135
 #, kde-format
 msgid "Using LibRaw version %2<br>1 model on the list (found: %3)"
 msgid_plural "Using LibRaw version %2<br>%1 models on the list (found: %3)"
-msgstr[0] ""
+msgstr[0] "正在使用 LibRaw 版本 %2<br>列表中有 %1 种型号 (检测到：%3 种)"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:78
 #, kde-format
@@ -29705,7 +29874,7 @@ msgstr "保持亮度 (HSY' 光度)"
 #, kde-format
 msgctxt "@info"
 msgid "Enable this option if you want preserve the image luminosity."
-msgstr ""
+msgstr "勾选此项后，在调整色调时将维持图像的亮度 (HSY' 光度)。"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:150
 #, kde-format
@@ -33718,37 +33887,37 @@ msgstr "打开过滤器面板"
 #: core/libs/filters/filterstatusbar.cpp:121
 #, kde-format
 msgid "<br><nobr><i>Text</i></nobr>"
-msgstr ""
+msgstr "<br><nobr><i>文本</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:126
 #, kde-format
 msgid "<br><nobr><i>Mime Type</i></nobr>"
-msgstr ""
+msgstr "<br><nobr><i>MIME 类型</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:131
 #, kde-format
 msgid "<br><nobr><i>Geolocation</i></nobr>"
-msgstr ""
+msgstr "<br><nobr><i>地理位置</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:136
 #, kde-format
 msgid "<br><nobr><i>Rating</i></nobr>"
-msgstr ""
+msgstr "<br><nobr><i>评分</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:141
 #, kde-format
 msgid "<br><nobr><i>Pick Labels</i></nobr>"
-msgstr ""
+msgstr "<br><nobr><i>挑选标记</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:146
 #, kde-format
 msgid "<br><nobr><i>Color Labels</i></nobr>"
-msgstr ""
+msgstr "<br><nobr><i>颜色标记</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:151
 #, kde-format
 msgid "<br><nobr><i>Tags</i></nobr>"
-msgstr ""
+msgstr "<br><nobr><i>标签</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:156
 #, kde-format
@@ -35733,6 +35902,11 @@ msgid ""
 "are safe to use in production.</p><p>Press <b>Configure</b> if you want to "
 "customize update options from setup dialog.</p>"
 msgstr ""
+"<p>当前使用的 <b>%1</b> 测试版本构建于 <i>%2</i>。</p><p>最新的测试版本构建"
+"于 <i>%3</i>，已上传到<a href='%4'>此软件仓库</a>。</p><p>请点击<b>下载</b>获"
+"取安装程序。</p><p>提示：在配置/其他页面您可以设置更新程序只检查稳定版本的更"
+"新。<br>稳定版本可以更为安全地用于生产用途。</p><p>点击<b>配置</b>可在设置对"
+"话框中配置更新选项。</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:287
 #, kde-format
@@ -35746,6 +35920,12 @@ msgid ""
 "doing.</p><p>Press <b>Configure</b> if you want to customize update options "
 "from setup dialog.</p>"
 msgstr ""
+"<p>当前使用的 <b>%1</b> 稳定版本为 <i>%2</i></p><p>最新的稳定版本为 <i>%3</"
+"i>，已上传到<a href='%4'>此软件仓库</a>。</p><p>请点击<b>下载</b>获取安装程"
+"序。</p><p>提示：在配置/其他页面您可以设置更新程序检查每周测试版本的更新。"
+"<br>测试版本用于对正在开发的新功能进行前期测试。<br>测试版本可能存在尚未修复"
+"的严重缺陷，不建议用于生产用途。<br>请在了解具体情况和风险自担的前提下使用测"
+"试版本。</p><p>点击 <b>配置</b>可在设置对话框中配置更新选项。</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:315
 #, kde-format
@@ -38672,6 +38852,9 @@ msgid ""
 "<br> You may <b>lose tags</b> if you did not read tags before (by calling "
 "Read Tags from Image).<br> Do you want to continue?</qt>"
 msgstr ""
+"<qt>digiKam 将在设置来自数据库的标签之前清理文件的标签元数据。<br> 如果您在这"
+"之前没有读取过文件的标签 (通过调用“读取图像标签”操作)，您可能会<b>丢失标签</"
+"b>。<br> 您想要继续吗？</qt>"
 
 #: core/libs/tags/manager/tagsmanager.cpp:504
 #: core/libs/tags/manager/tagsmanager.cpp:523
@@ -38863,6 +39046,10 @@ msgid ""
 "tag hierarchy starts with '/', root tag album is used as parent.</li></ul></"
 "p>"
 msgstr ""
+"<p>要创建新标签，您可以使用以下规则：</p><p><ul><li>“/”可用于创建标签的层级结"
+"构。<br>例如：<i>“国家/城市/巴黎”</i></li><li>“,”可用于同时创建多个标签层级。"
+"<br>例如：<i>“城市/巴黎, 纪念性建筑/巴黎圣母院”</i></li><li>如果标签层级"
+"以“/”开头，则将根标签作为其父标签。</li></ul></p>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:172
 #, kde-format
@@ -38889,12 +39076,12 @@ msgstr "<b>创建新标签</b>"
 #: core/libs/tags/widgets/tageditdlg.cpp:337
 #, kde-format
 msgid "<b>Create New Tag in<br>\"%1\"</b>"
-msgstr ""
+msgstr "<b>创建新标签到<br>“%1”之中</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:343
 #, kde-format
 msgid "<b>Properties of Tag<br>\"%1\"</b>"
-msgstr ""
+msgstr "<b>标签<br>“%1”的属性</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:515
 #, kde-format
@@ -39136,6 +39323,19 @@ msgid ""
 "one copyright string using different languages.</p><p>With IPTC, this field "
 "is limited to 128 characters.</p>"
 msgstr ""
+"<p>版权声明应当包含所有相关知识产权的版权声明，并标识该照片的当前版权所有者。"
+"一般而言这应该是摄影师本人，但如果图像是由某个企业或者通讯社的雇员、临时工或"
+"者外包人员拍摄，那么该机构应当在此列出。请按照本国所需格式进行填写。美国："
+"&copy; {出版日期} 版权所有者，例如“&copy;2005 John Doe.”提示：“copyright (版"
+"权)”或缩写的“copr”可用于替代 &copy; 符号。某些国家或地区只认可版权符号，不认"
+"可单词缩写。除此之外，版权符号必须是一个完整的圆圈，内写一个 c 字母。使用 "
+"(c) 之类的圆括号包含是不稳妥的。为了在全世界范围内提供可靠的版权保护，建议在"
+"前方标识之后再加上“all rights reserved (版权所有)”短句。<br>对于欧洲，可使"
+"用：Copyright {年份} {版权所有者}, all rights reserved. <br>对于日本，为了最"
+"大化的版权保护，以下三项必须出现在 IPTC 核心区的版权字段：(a) 版权字样、(b) "
+"初次出版日期、(c) 作者姓名。您可能还要包含“版权所有”字样。</p><p>在 XMP 规范"
+"下，可以包含不同语言的多条版权字段。</p><p>IPTC 规范下，此字段不得输入超过 "
+"32 个字符。"
 
 #: core/libs/template/templatepanel.cpp:154
 #, kde-format
@@ -39472,7 +39672,7 @@ msgstr ""
 #: core/libs/timeadjust/clockphotodialog.cpp:167
 #, kde-format
 msgid "<font color=\"red\"><b>Could not load<br>image %1.</b></font>"
-msgstr ""
+msgstr "<font color=\"red\"><b>无法加载<br>图像 %1。</b></font>"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:183
 #, kde-format
@@ -41468,6 +41668,8 @@ msgid ""
 "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</"
 "b><br>with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
+"<qt><font color=\"white\"><b>自由开源</b>的<br><b>专业</b>照片<b>管理工具</"
+"b></font></qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
@@ -48092,14 +48294,14 @@ msgstr "编辑器窗口"
 #, kde-format
 msgid ""
 "<qt>Editor Window Settings<br><i>Customize editor window behavior</i></qt>"
-msgstr ""
+msgstr "<qt>编辑器窗口设置</qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:112
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br><i>Setup relations between "
 "images and metadata</i></qt>"
-msgstr ""
+msgstr "<qt>图像元数据管理设置</qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
@@ -48111,7 +48313,7 @@ msgstr "悬停信息框"
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br><i>Customize "
 "information in tool-tips</i></qt>"
-msgstr ""
+msgstr "<qt>缩略图栏和文件夹视图项目悬停信息框设置</qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:123
 #, kde-format
@@ -48123,14 +48325,14 @@ msgstr "RAW 解码"
 msgid ""
 "<qt>RAW Files Decoding Settings<br><i>Customize default RAW decoding "
 "settings</i></qt>"
-msgstr ""
+msgstr "<qt>RAW 图像解码设置</qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:130
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br><i>Customize color management settings</"
 "i></qt>"
-msgstr ""
+msgstr "<qt>色彩管理设置</qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
@@ -48142,7 +48344,7 @@ msgstr "保存图像"
 msgid ""
 "<qt>Settings for Saving Image Files<br><i>Set default configuration used to "
 "save images</i></qt>"
-msgstr ""
+msgstr "<qt>图像文件的保存方式设置</qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
 #, kde-format
@@ -48168,7 +48370,7 @@ msgstr "插件"
 msgid ""
 "<qt>Main Interface Plug-in Settings<br><i>Set which plugins will be "
 "accessible from application</i></qt>"
-msgstr ""
+msgstr "<qt>插件设置</qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:156
 #, kde-format
@@ -48181,7 +48383,7 @@ msgstr "其他"
 msgid ""
 "<qt>Miscellaneous Settings<br><i>Customize behavior of the other parts of "
 "Showfoto</i></qt>"
-msgstr ""
+msgstr "<qt>其他设置</qt>"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:84
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:102
@@ -49483,6 +49685,8 @@ msgid ""
 "<p>Set a default value for empty strings.<br>When applied to a renaming "
 "option, an empty string will be replaced by the value you specify here.</p>"
 msgstr ""
+"<p>设置空字符串的默认值。<br>在应用于重命名选项时，空字符串将被替换为此处指定"
+"的值。</p>"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:73
 #, kde-format
@@ -50432,6 +50636,9 @@ msgid ""
 "any local folder, even one that already contains images.<br> More folders "
 "can be added later under the <i>Settings</i> menu. </p> "
 msgstr ""
+"<p>请设置您保存图像的位置。</p> <p>可选择任意一个本地文件夹，它可以是空文件"
+"夹，也可以包含图像。<br>您日后还可以在 <b>设置</b> 菜单的 <b>配置</b> 对话框"
+"添加更多文件夹。</p> "
 
 #: core/utilities/firstrun/collectionpage.cpp:85
 #, kde-format
@@ -50478,6 +50685,8 @@ msgid ""
 "<p>digiKam could not create the folder to use as the root album.<br>Please "
 "select a different location.</p><p><b>%1</b></p>"
 msgstr ""
+"<p>digiKam 无法创建用作根相册路径的文件夹。<br>请选择一个不同的位置。</"
+"p><p><b>%1</b></p>"
 
 #: core/utilities/firstrun/collectionpage.cpp:215
 #, kde-format
@@ -50760,6 +50969,12 @@ msgid ""
 "files, so it is not recommended to do it for the moment, and at your own "
 "risk.</p></qt>"
 msgstr ""
+"<qt><br><p>如果这是您第一次使用 digiKam，请忽略下述内容：</p><p><b>digiKam 4 "
+"升级迁移</b></p><p>digiKam 4 的旧版配置文件尚未迁移。新版 digiKam 仍然可以继"
+"续使用旧版数据库，只需在接下来的对话框中为相册集合和数据库选择与旧版相同的位"
+"置即可。建议在继续操作之前备份您的数据库。</p><p>新版配置文件的位置在 %1 (旧"
+"版配置文件在 %2)。继续使用旧版配置文件将会遇到许多问题，因此不建议使用旧版配"
+"置文件，否则风险自负。</p></qt>"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
 #, kde-format
@@ -51008,6 +51223,8 @@ msgid ""
 "p><p>You can also use the context menu<br>when browsing through<br>your "
 "images.</p>"
 msgstr ""
+"<p>拖放一张图像到这里<br>以进行相似<br>项搜索。</p><p>您也可在浏览图像时<br>"
+"使用右键菜单<br>使搜索某张图像。</p>"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
 #, kde-format
@@ -53729,28 +53946,28 @@ msgstr "圆形尺规"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:657
 #, kde-format
 msgid "Total Distance: %1<br>\n"
-msgstr ""
+msgstr "总距离：%1<br>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:661
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:684
 #, kde-format
 msgid "Area: %1<br>\n"
-msgstr ""
+msgstr "面积：%1<br>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:666
 #, kde-format
 msgid "Perimeter: %1<br>\n"
-msgstr ""
+msgstr "周长：%1<br>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:674
 #, kde-format
 msgid "Radius: %1<br>\n"
-msgstr ""
+msgstr "半径：%1<br>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:679
 #, kde-format
 msgid "Circumference: %1<br>\n"
-msgstr ""
+msgstr "圆周长：%1<br>\n"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:734
 #, kde-format
@@ -55852,6 +56069,8 @@ msgid ""
 "<p>This image has an <b>embedded color profile</b><br> which does not match "
 "your working space color profile.<br>How do you want to proceed?</p>"
 msgstr ""
+"<p>此图像的<b>内嵌色彩特性文件</b><br>与您工作空间的色彩特性文件不匹配。<br>"
+"您想要如何处理？</p>"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:210
 #, kde-format
@@ -55859,13 +56078,14 @@ msgid ""
 "<p>This image has <b>no information about the color space</b><br>that was "
 "used when creating the image. <br>How do you want to proceed?</p>"
 msgstr ""
+"<p>此图像在创建时<br><b>并未包含色彩特性信息</b><br>您想要如何处理？</p>"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:217
 #, kde-format
 msgid ""
 "<p>The color information of this image is uncalibrated.<br>How do you want "
 "to proceed?</p>"
-msgstr ""
+msgstr "<p>此图像的颜色信息尚未校准。<br>您想要如何处理？</p>"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:248
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:616
@@ -58748,7 +58968,7 @@ msgstr "通用选项"
 msgid ""
 "<qt>No option<br><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
-msgstr ""
+msgstr "<qt>无选项<br><b>提示：</b>此工具只处理相册集合的文件夹。</qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:81
 #, kde-format
@@ -58764,6 +58984,9 @@ msgid ""
 "temporarily in order to make sure that no database corruption occurs.</i></"
 "qt>"
 msgstr ""
+"<qt><b>提示：</b>选择此项后，digiKam 将对它的核心数据库进行清理。您还可以额外"
+"选择要清理的其他数据库。<br>如果选择了下面的任意一项，清理将需要更长时间才能"
+"完成，digiKam 可能会暂时停止响应以防止数据库在清理过程中损坏。</qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:96
 #, kde-format
@@ -60895,7 +61118,7 @@ msgstr "不符合至少一项条件"
 msgid ""
 "<qt><p>Search your collection<br>for Items meeting the following conditions</"
 "p></qt>"
-msgstr ""
+msgstr "<qt><p>搜索相册集合<br>查找符合以下条件的项目</p></qt>"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:139
 #, kde-format
@@ -61600,6 +61823,7 @@ msgid ""
 "<p>Files with these extensions will be recognized as images and included "
 "into the database:<br> <code>%1</code></p>"
 msgstr ""
+"<p>这些扩展名的文件将被识别为图像并收录到数据库：<br> <code>%1</code></p>"
 
 #: core/utilities/setup/album/setupmime.cpp:312
 #, kde-format
@@ -61607,6 +61831,7 @@ msgid ""
 "<p>Files with these extensions will be recognized as video files and "
 "included into the database:<br> <code>%1</code></p>"
 msgstr ""
+"<p>这些扩展名的文件将被识别为视频并收录到数据库：<br> <code>%1</code></p>"
 
 #: core/utilities/setup/album/setupmime.cpp:322
 #, kde-format
@@ -61614,6 +61839,7 @@ msgid ""
 "<p>Files with these extensions will be recognized as audio files and "
 "included into the database:<br> <code>%1</code></p>"
 msgstr ""
+"<p>这些扩展名的文件将被识别为音频并收录到数据库：<br> <code>%1</code></p>"
 
 #: core/utilities/setup/camera/cameralist.cpp:288
 #, kde-format
@@ -61740,6 +61966,8 @@ msgid ""
 "drive when mounted<br>on your desktop), please use<br><a href=\"umscamera\">"
 "%1</a> from the camera list.</p>"
 msgstr ""
+"<p>要设置 <b>USB 大容量存储设备</b> 类相机<br>(在文件管理器中显示为可移动驱动"
+"器)，<br>请在相机列表中选用：<br><a href=\"umscamera\">%1</a>。</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:218
 #, kde-format
@@ -61748,6 +61976,8 @@ msgid ""
 "Protocol), please<br>use <a href=\"ptpcamera\">%1</a> from the camera list.</"
 "p>"
 msgstr ""
+"<p>要设置<b>通用 PTP USB 设备</b>类相机<br>(使用 PTP 协议)，<br>请在相机列表"
+"中选用：<a href=\"ptpcamera\">%1</a>。</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:224
 #, kde-format
@@ -61756,6 +61986,8 @@ msgid ""
 "Transfer Protocol), please<br>use <a href=\"ptpipcamera\">%1</a> from the "
 "camera list.</p>"
 msgstr ""
+"<p>要设置<b>通用 PTP/IP Network 设备</b>类相机<br>(使用 PTP 协议)，<br>请在相"
+"机列表中选用：<a href=\"ptpipcamera\">%1</a>。</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:231
 #, kde-format
@@ -61763,6 +61995,8 @@ msgid ""
 "<p>A complete list of camera settings to use is<br>available at <a "
 "href='https://www.figuiere.net/digicam/'>this URL</a>.</p>"
 msgstr ""
+"<p>完整的相机设置列表<br>请访问<a href='https://www.figuiere.net/digicam/'>此"
+"页面获取</a>。</p>"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:74
 #, kde-format
@@ -62154,7 +62388,7 @@ msgstr "已忽略目录"
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br> <code>%1</"
 "code></p>"
-msgstr ""
+msgstr "<p>目录名以半角句号开头时将被默认忽略<br> <code>%1</code></p>"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:107
 #, kde-format
@@ -62998,6 +63232,8 @@ msgid ""
 "digiKam to store and retrieve tags, rating and comments.<br><b>Note: </"
 "b>Order is important when reading metadata"
 msgstr ""
+"高级配置页面可以管理 digiKam 读写标签、评分和注释时使用的元数据命名空间。"
+"<br><b>提示：</b>元数据的读取顺序有重要作用。"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:405
 #, kde-format
@@ -63091,6 +63327,10 @@ msgid ""
 "\"City|Paris\"</li><li>Specify if only keyword or the whole path must be "
 "written.</li></ul></p>"
 msgstr ""
+"<p>要创建新的命名空间，您需要指定下列参数：</p><p><ul><li>命名空间参数，以半"
+"角句号分隔。<br>例如：<i>“Xmp.digiKam.TagsList”</i></li><li>分隔符参数，用于"
+"标签路径<br>例如：“City/Paris”或“City|Paris”</li><li>指定是否仅写入关键字抑或"
+"是必须写入完整路径。</li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:241
 #, kde-format
@@ -63101,6 +63341,10 @@ msgid ""
 "Microsoft uses 0 1 25 50 75 99</li><li>Select the correct namespace option "
 "from list.</li></ul></p>"
 msgstr ""
+"<p>要创建新的评分命名空间，您需要指定下列参数：</p><p><ul><li>命名空间参数，"
+"以半角句号分隔。<br>例如：<i>“Xmp.xmp.Rating”</i></li><li>评分映射参数，当该"
+"命名空间需要 0-5 以外的数值时。<br>例如：微软使用的数值是 0 1 25 50 75 99</"
+"li><li>从列表中选择正确的命名空间选项。</li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:252
 #, kde-format
@@ -63109,6 +63353,9 @@ msgid ""
 "p><p><ul><li>Namespace name with dots.<br>Ex.: <i>\"Xmp.xmp.Comment\"</i></"
 "li><li>Select the correct namespace option from list.</li></ul></p>"
 msgstr ""
+"<p>要创建新的注释命名空间，您需要指定下列参数：</p><p><ul><li>命名空间参数，"
+"以半角句号分隔。<br>例如：<i>“Xmp.xmp.Comment”</i></li><li>从列表中选择正确的"
+"命名空间选项。</li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:261
 #, kde-format
@@ -64331,6 +64578,11 @@ msgid ""
 "want to entitle albums with ISO dates (201006 or 20090523) and the albums "
 "should be sorted according to these dates.</qt>"
 msgstr ""
+"<qt>设置字符串在 digiKam 中的比较和排序方式。这将影响例如树形视图等项目的排"
+"序。<br><b>自然习惯排序</b>尝试按照一般惯例来对字符串进行比较和排序，例如比较"
+"位数不同的数字等。<br><b>正常规范排序</b>在技术层面更加严格。例如您将整个相册"
+"的项目按照 ISO 日期格式 (201006 或 20090523) 进行了命名，可以选用此方式进行排"
+"序。</qt>"
 
 #: core/utilities/setup/misc/setupmisc.cpp:111
 #, kde-format
@@ -64380,6 +64632,8 @@ msgid ""
 "(Yes).<br>If Ask is selected, there will be a prompt every<br>time this "
 "operation is executed."
 msgstr ""
+"图像分组后，下列操作是否对分组的全部子项目执行：<br>否：仅对显示的分组子项目"
+"执行。<br>是：对分组所有子项目执行。<br>询问：每次操作时询问用户如何处理。"
 
 #: core/utilities/setup/misc/setupmisc.cpp:325
 #, kde-format
