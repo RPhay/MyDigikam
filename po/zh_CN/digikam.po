@@ -29018,7 +29018,7 @@ msgstr "未知"
 #, kde-format
 msgctxt "@title"
 msgid "Build Environment"
-msgstr ""
+msgstr "构建环境"
 
 #: core/libs/dialogs/libsinfodlg.cpp:460
 #, kde-format
