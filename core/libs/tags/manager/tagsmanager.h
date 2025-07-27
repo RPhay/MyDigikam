@@ -116,6 +116,12 @@ private Q_SLOTS:
     void slotWipeAll();
 
     /**
+     * @brief slotSaveTags        - connected to saveTags action and will
+     *                              export all tags to a file
+     */
+    void slotSaveTags();
+
+    /**
      * @brief slotRemoveTagsFromImg - will remove selected tags from all
      *                                images that have them.
      */
