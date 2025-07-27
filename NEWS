@@ -42,7 +42,7 @@ BUGFIXES:
 027 ==> 507449 - Do not allow running multple instances.
 028 ==> 507467 - Switching from lazy synchronization mode aborts remaining lazy sync.
 029 ==> 507356 - Deleted 'Behaviour' term causes problem in language translation.
-030 ==> 
+030 ==> 507485 - Editing Advanced Search doesn't work.
 031 ==> 
 032 ==> 
 033 ==> 
