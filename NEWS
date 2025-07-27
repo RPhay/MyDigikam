@@ -7,6 +7,7 @@ Bundles:         Update to last ExifTool version 13.32.
 Bundles:         Update Qt6 based Linux AppImage to last frameworks Qt 6.9.1, KDE 6.16.0, ffmpeg 7.1, and OpenCV 4.12.
 Bundles:         Update Qt5 based Linux AppImage to last frameworks Qt 5.15.17, ffmpeg 7.1, and OpenCV 4.12.
 RawEngine:       Update internal Libraw to last 20250725 upstream.
+Video:           Update internal QtAVPlayer to last 20250725 upstream (Qt5 only).
 
 *****************************************************************************************************
 BUGFIXES:
