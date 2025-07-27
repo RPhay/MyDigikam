@@ -122,6 +122,12 @@ private Q_SLOTS:
     void slotSaveTags();
 
     /**
+     * @brief slotLoadTags        - connected to loadTags action and will
+     *                              import all tags from a file
+     */
+    void slotLoadTags();
+
+    /**
      * @brief slotRemoveTagsFromImg - will remove selected tags from all
      *                                images that have them.
      */

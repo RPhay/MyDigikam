@@ -69,6 +69,7 @@
 #include "fileactionmngr.h"
 #include "metaenginesettings.h"
 #include "dfiledialog.h"
+#include "tagscache.h"
 
 #ifdef HAVE_AKONADICONTACT
 #   include "akonadiiface.h"
@@ -612,7 +613,7 @@ void TagsManager::slotSaveTags()
     QString tagsPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
 
     QString savePath = DFileDialog::getSaveFileName(qApp->activeWindow(),
-                                                    i18nc("@title:window", "Export all Tags to a file"),
+                                                    i18nc("@title:window", "Choose Export Tag File"),
                                                     tagsPath, QLatin1String("*.dktag"), nullptr,
                                                     QFileDialog::DontConfirmOverwrite);
 
@@ -669,6 +670,65 @@ void TagsManager::slotSaveTags()
     for (const QString& spath : std::as_const(sortedPaths))
     {
         tagStream << spath << Qt::endl;
+    }
+
+    tagFile.close();
+
+    QApplication::restoreOverrideCursor();
+}
+
+void TagsManager::slotLoadTags()
+{
+    QString tagsPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+
+    QString loadPath = DFileDialog::getOpenFileName(qApp->activeWindow(),
+                                                    i18nc("@title:window", "Choose Import Tag File"),
+                                                    tagsPath, QLatin1String("*.dktag"));
+
+    if (loadPath.isEmpty())
+    {
+        return;
+    }
+
+    QFile tagFile(loadPath);
+
+    if (!tagFile.open(QIODevice::ReadOnly))
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot open file to import all tags" << loadPath;
+
+        return;
+    }
+
+    QTextStream tagStream(&tagFile);
+
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+
+    // In Qt5 only. Qt6 uses UTF-8 by default.
+
+    tagStream.setCodec(QTextCodec::codecForName("UTF-8"));
+
+#endif
+
+    tagStream.setAutoDetectUnicode(true);
+
+    QString line;
+    tagStream.readLineInto(&line);
+
+    if (line != QLatin1String("TAGVersion=1"))
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Invalid tag file or version" << line;
+
+        return;
+    }
+
+    QApplication::setOverrideCursor(Qt::WaitCursor);
+
+    while (tagStream.readLineInto(&line))
+    {
+        if (line.startsWith(QLatin1Char('/')))
+        {
+            TagsCache::instance()->getOrCreateTag(line);
+        }
     }
 
     tagFile.close();
@@ -899,8 +959,11 @@ void TagsManager::setupActions()
     QAction* const wipeAll      = new QAction(QIcon::fromTheme(QLatin1String("draw-eraser")),
                                               i18n("Wipe all tags from Database only"), this);
 
-    QAction* const saveTags     = new QAction(QIcon::fromTheme(QLatin1String("document-save")),
+    QAction* const saveTags     = new QAction(QIcon::fromTheme(QLatin1String("document-export")),
                                               i18n("Export all tags to a file"), this);
+
+    QAction* const loadTags     = new QAction(QIcon::fromTheme(QLatin1String("document-import")),
+                                              i18n("Import all tags from a file"), this);
 
     setHelpText(wrDbImg, i18n("Write Tags Metadata to Image."));
 
@@ -911,6 +974,8 @@ void TagsManager::setupActions()
                               "Proceed with caution."));
 
     setHelpText(saveTags, i18n("Export all tags to a file to keep a backup."));
+
+    setHelpText(loadTags, i18n("Import all tags from a file to restore a backup."));
 
     connect(wrDbImg, SIGNAL(triggered()),
             this, SLOT(slotWriteToImg()));
@@ -924,10 +989,14 @@ void TagsManager::setupActions()
     connect(saveTags, SIGNAL(triggered()),
             this, SLOT(slotSaveTags()));
 
+    connect(loadTags, SIGNAL(triggered()),
+            this, SLOT(slotLoadTags()));
+
     syncexportMenu->addAction(wrDbImg);
     syncexportMenu->addAction(readTags);
     syncexportMenu->addAction(wipeAll);
     syncexportMenu->addAction(saveTags);
+    syncexportMenu->addAction(loadTags);
 
     d->mainToolbar->addAction(d->addAction);
     d->mainToolbar->addAction(d->delAction);
