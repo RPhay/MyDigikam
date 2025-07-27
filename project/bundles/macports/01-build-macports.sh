@@ -313,7 +313,6 @@ port install xvid
 port install libass
 port install opus-tools
 port install libvpx
-port install x264
 port install aom
 port install libusb
 port install libgphoto2
