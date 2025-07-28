@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-24 02:03+0000\n"
+"POT-Creation-Date: 2025-07-28 01:56+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -3577,7 +3577,7 @@ msgid "Tools"
 msgstr "Alati"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:851
+#: core/libs/tags/manager/tagsmanager.cpp:1006
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgid "Help"
@@ -29502,7 +29502,7 @@ msgstr "Album oznaka"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:157
-#: core/libs/tags/manager/tagsmanager.cpp:736
+#: core/libs/tags/manager/tagsmanager.cpp:873
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -42644,40 +42644,40 @@ msgid "Delete Tags"
 msgstr "Izbriši oznake"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:147
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:860
 #, fuzzy, kde-format
 #| msgid "Edit Titles"
 msgid "Edit Tag Title"
 msgstr "Izmjeni naslove"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:151
-#: core/libs/tags/manager/tagsmanager.cpp:727
+#: core/libs/tags/manager/tagsmanager.cpp:864
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Resetuj ikonu oznake"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:154
-#: core/libs/tags/manager/tagsmanager.cpp:733
+#: core/libs/tags/manager/tagsmanager.cpp:870
 #, kde-format
 msgid "Invert Selection"
 msgstr "Obrni izbor"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:160
-#: core/libs/tags/manager/tagsmanager.cpp:739
+#: core/libs/tags/manager/tagsmanager.cpp:876
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Proširi stablo oznaka"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:163
-#: core/libs/tags/manager/tagsmanager.cpp:742
+#: core/libs/tags/manager/tagsmanager.cpp:879
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Collapse Tag Tree"
 msgstr "Po albumu"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:166
-#: core/libs/tags/manager/tagsmanager.cpp:745
+#: core/libs/tags/manager/tagsmanager.cpp:882
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Ukloni oznaku sa slika"
@@ -42763,7 +42763,7 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "Prethodne oznake su izmijenjene. Spasiti izmjene? "
 
-#: core/libs/tags/manager/tagsmanager.cpp:171
+#: core/libs/tags/manager/tagsmanager.cpp:180
 #, fuzzy, kde-format
 #| msgid "Tags Manager"
 msgctxt "@title:window"
@@ -42771,7 +42771,7 @@ msgid "Tags Manager"
 msgstr "Upravitelj oznaka"
 
 #         translations.
-#: core/libs/tags/manager/tagsmanager.cpp:331
+#: core/libs/tags/manager/tagsmanager.cpp:340
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -42791,7 +42791,7 @@ msgstr[2] ""
 "podoznake. Da li želite nastaviti?"
 
 #         translations.
-#: core/libs/tags/manager/tagsmanager.cpp:354
+#: core/libs/tags/manager/tagsmanager.cpp:363
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -42805,7 +42805,7 @@ msgstr[2] ""
 "Oznake %2 su dodijeljene jednoj ili više stavki. Da li ih želite obrisati?"
 
 #         translations.
-#: core/libs/tags/manager/tagsmanager.cpp:364
+#: core/libs/tags/manager/tagsmanager.cpp:373
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -42814,7 +42814,7 @@ msgstr[0] "Brisanje oznake %2?"
 msgstr[1] "Brisanje oznaka %2?"
 msgstr[2] "Brisanje oznaka %2?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:370
+#: core/libs/tags/manager/tagsmanager.cpp:379
 #, fuzzy, kde-format
 #| msgid "Delete tag"
 #| msgid_plural "Delete tags"
@@ -42825,7 +42825,7 @@ msgstr[0] "Obriši oznaku"
 msgstr[1] "Obriši oznake"
 msgstr[2] "Obriši oznake"
 
-#: core/libs/tags/manager/tagsmanager.cpp:492
+#: core/libs/tags/manager/tagsmanager.cpp:501
 #, fuzzy, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database."
@@ -42836,8 +42836,8 @@ msgstr ""
 "podataka.<br> Mogli bi <b>izgubiti oznake</b> ako niste prije pročitali "
 "oznake (pozivom Čitaj oznake iz Slike).<br> Da li želite nastaviti?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:504
-#: core/libs/tags/manager/tagsmanager.cpp:523
+#: core/libs/tags/manager/tagsmanager.cpp:513
+#: core/libs/tags/manager/tagsmanager.cpp:532
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -42846,7 +42846,7 @@ msgstr ""
 "Ova operacija može trajati dugo vremena, zavisno od veličine kolekcije.\n"
 "Da li želite nastaviti?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:543
+#: core/libs/tags/manager/tagsmanager.cpp:552
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -42858,8 +42858,22 @@ msgstr ""
 "podataka u datoteku kasnije.\n"
 "Da li želite nastaviti?"
 
+#: core/libs/tags/manager/tagsmanager.cpp:616
+#, fuzzy, kde-format
+#| msgid "Use Existing File"
+msgctxt "@title:window"
+msgid "Choose Export Tag File"
+msgstr "Koristi postojeći fajl"
+
+#: core/libs/tags/manager/tagsmanager.cpp:685
+#, fuzzy, kde-format
+#| msgid "Close view"
+msgctxt "@title:window"
+msgid "Choose Import Tag File"
+msgstr "Blizak pogled"
+
 #         translations.
-#: core/libs/tags/manager/tagsmanager.cpp:607
+#: core/libs/tags/manager/tagsmanager.cpp:744
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -42867,7 +42881,7 @@ msgstr[0] "Da li stvarno želite ukloniti izabranu oznaku sa svih slika?"
 msgstr[1] "Da li stvarno želite ukloniti izabrane oznake sa svih slika?"
 msgstr[2] "Da li stvarno želite ukloniti izabrane oznake sa svih slika?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:699
+#: core/libs/tags/manager/tagsmanager.cpp:836
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Organize"
@@ -42875,26 +42889,26 @@ msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organiziraj"
 
-#: core/libs/tags/manager/tagsmanager.cpp:702
+#: core/libs/tags/manager/tagsmanager.cpp:839
 #, fuzzy, kde-format
 #| msgid "Sync &Export"
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Sinhronizacija i izvoz"
 
-#: core/libs/tags/manager/tagsmanager.cpp:730
+#: core/libs/tags/manager/tagsmanager.cpp:867
 #, fuzzy, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Nedavno pridružene oznake"
 
-#: core/libs/tags/manager/tagsmanager.cpp:750
+#: core/libs/tags/manager/tagsmanager.cpp:887
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Dodaj novu oznaku na trenutnu oznaku. Trenutna oznaka je posljednja kliknuta "
 "oznaka."
 
-#: core/libs/tags/manager/tagsmanager.cpp:753
+#: core/libs/tags/manager/tagsmanager.cpp:890
 #, fuzzy, kde-format
 #| msgid ""
 #| "Delete selected items. Also work with multiple items, but won't delete "
@@ -42906,72 +42920,84 @@ msgstr ""
 "Izbriši označene stavke. Radi i sa višestrukim stavkama, bez brisanja "
 "korjenske oznake."
 
-#: core/libs/tags/manager/tagsmanager.cpp:757
+#: core/libs/tags/manager/tagsmanager.cpp:894
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Edit title from selected tag."
 msgstr "Ukloni odabranu oznaku"
 
-#: core/libs/tags/manager/tagsmanager.cpp:759
+#: core/libs/tags/manager/tagsmanager.cpp:896
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "Ponovo namjesti ikonu sa odabranim oznakama. Radi sa više odabira."
 
-#: core/libs/tags/manager/tagsmanager.cpp:762
+#: core/libs/tags/manager/tagsmanager.cpp:899
 #, fuzzy, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 "Obrišite sve oznake samo iz baze podataka. Neće se sinhronizovati sa "
 "datotekama. Nastavite uz oprez."
 
-#: core/libs/tags/manager/tagsmanager.cpp:764
+#: core/libs/tags/manager/tagsmanager.cpp:901
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Okreni odabir. Samo vidljive stavke će biti odabrane."
 
-#: core/libs/tags/manager/tagsmanager.cpp:767
+#: core/libs/tags/manager/tagsmanager.cpp:904
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Odabrane stavke će biti proširene"
 
-#: core/libs/tags/manager/tagsmanager.cpp:769
+#: core/libs/tags/manager/tagsmanager.cpp:906
 #, fuzzy, kde-format
 #| msgid "Expand tag tree by one level"
 msgid "Expand tag tree completely"
 msgstr "Proširi stablo oznaka za još jedan nivo"
 
-#: core/libs/tags/manager/tagsmanager.cpp:771
+#: core/libs/tags/manager/tagsmanager.cpp:908
 #, fuzzy, kde-format
 #| msgid "Slideshow Usage"
 msgid "Collapse tag tree completely"
 msgstr "Iskoristivost projekcije slajdova"
 
-#: core/libs/tags/manager/tagsmanager.cpp:773
+#: core/libs/tags/manager/tagsmanager.cpp:910
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr "Izbriši odabranu(e) oznaku(e) sa slika. Radi sa više odabira."
 
-#: core/libs/tags/manager/tagsmanager.cpp:817
+#: core/libs/tags/manager/tagsmanager.cpp:954
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Prepiši oznake iz baze podataka na sliku"
 
-#: core/libs/tags/manager/tagsmanager.cpp:820
+#: core/libs/tags/manager/tagsmanager.cpp:957
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Pročitaj oznake sa slike"
 
-#: core/libs/tags/manager/tagsmanager.cpp:823
+#: core/libs/tags/manager/tagsmanager.cpp:960
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Brisanje svih oznaka samo iz baze podataka"
 
-#: core/libs/tags/manager/tagsmanager.cpp:825
+#: core/libs/tags/manager/tagsmanager.cpp:963
+#, fuzzy, kde-format
+#| msgid "Write metadata to each file"
+msgid "Export all tags to a file"
+msgstr "Upiši metapodatke u svaku datoteku"
+
+#: core/libs/tags/manager/tagsmanager.cpp:966
+#, fuzzy, kde-format
+#| msgid "Remove Tag from Images"
+msgid "Import all tags from a file"
+msgstr "Ukloni oznaku sa slika"
+
+#: core/libs/tags/manager/tagsmanager.cpp:968
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Prepiši oznake metapodataka na sliku."
 
-#: core/libs/tags/manager/tagsmanager.cpp:827
+#: core/libs/tags/manager/tagsmanager.cpp:970
 #, fuzzy, kde-format
 #| msgid "Read tags from Images into Database. Existing tags won't be affected"
 msgid "Read tags from Images into Database. Existing tags will not be affected"
@@ -42979,7 +43005,7 @@ msgstr ""
 "Pročitaj oznake sa slika u bazu podataka. To neće utjecati na postojeće "
 "oznake."
 
-#: core/libs/tags/manager/tagsmanager.cpp:830
+#: core/libs/tags/manager/tagsmanager.cpp:973
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -42988,7 +43014,17 @@ msgstr ""
 "Obrišite sve oznake samo iz baze podataka. Neće se sinhronizovati sa "
 "datotekama. Nastavite uz oprez."
 
-#: core/libs/tags/manager/tagsmanager.cpp:852
+#: core/libs/tags/manager/tagsmanager.cpp:976
+#, kde-format
+msgid "Export all tags to a file to keep a backup."
+msgstr ""
+
+#: core/libs/tags/manager/tagsmanager.cpp:978
+#, kde-format
+msgid "Import all tags from a file to restore a backup."
+msgstr ""
+
+#: core/libs/tags/manager/tagsmanager.cpp:1007
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -76092,11 +76128,6 @@ msgstr "Uvozni predmeti"
 #~| msgid "Current Map Search"
 #~ msgid "Current map center"
 #~ msgstr "Pretraga po trenutnoj mapi"
-
-#, fuzzy
-#~| msgid "Close view"
-#~ msgid "Choose image"
-#~ msgstr "Blizak pogled"
 
 #, fuzzy
 #~ msgid "All Supported Files (*.png *.jpg *.jpeg)"
