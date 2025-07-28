@@ -49,6 +49,8 @@ public:
     };
     DatabaseServerStateEnum databaseServerStateEnum;
 
+    Q_ENUM(DatabaseServerStateEnum);
+
 public:
 
     explicit DatabaseServer(const DbEngineParameters& params,
