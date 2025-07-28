@@ -653,7 +653,10 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
                   rawComment.startsWith(QByteArray("ASCII\0\0\0"))
                 )
         {
-            return QString::fromLatin1(rawComment.mid(8));
+            if (rawComment.mid(8).at(0) != '\0')
+            {
+                return QString::fromLatin1(rawComment.mid(8));
+            }
         }
 
         std::string comment;
