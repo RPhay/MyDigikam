@@ -44,7 +44,7 @@ BUGFIXES:
 029 ==> 507356 - Deleted 'Behaviour' term causes problem in language translation.
 030 ==> 507485 - Editing Advanced Search doesn't work.
 031 ==> 507576 - digiKam User Comment Exif displaying incorrect characters for Nikon images.
-032 ==> 
+032 ==> 507582 - digiKam process does not terminate when window is closed.
 033 ==> 
 034 ==> 
 035 ==> 
