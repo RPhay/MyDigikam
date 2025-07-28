@@ -57,6 +57,8 @@ public:
 
     Private() = default;
 
+public:
+
     QLabel*             topLabel        = nullptr;
 
     QString             icon;
@@ -143,7 +145,7 @@ TagPropWidget::TagPropWidget(QWidget* const parent)
     QLabel* const tipLabel2    = new QLabel(this);
     tipLabel2->setTextFormat(Qt::RichText);
     tipLabel2->setWordWrap(true);
-    tipLabel2->setText(QString::fromUtf8("<p><b>%1:</b> <i>%2.</i></p>")
+    tipLabel2->setText(QString::fromUtf8("<p><b>%1:</b> <i>%2</i></p>")
                        .arg(i18nc("@label", "Note"))
                        .arg(i18nc("@label", "This shortcut can be used "
                                   "to assign or unassign tag to items.")));

@@ -40,6 +40,7 @@ public:
         EnabledAll,
         IconOnly
     };
+    Q_ENUM(ItemsEnable);
 
 public:
 

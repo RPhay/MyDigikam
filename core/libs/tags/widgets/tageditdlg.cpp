@@ -72,6 +72,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                create          = false;
 
     QLabel*             topLabel        = nullptr;

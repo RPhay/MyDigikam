@@ -45,7 +45,7 @@ BUGFIXES:
 030 ==> 507485 - Editing Advanced Search doesn't work.
 031 ==> 507576 - digiKam User Comment Exif displaying incorrect characters for Nikon images.
 032 ==> 507582 - digiKam process does not terminate when window is closed.
-033 ==> 
+033 ==> 507591 - Small fault: superfluous dot at the end of the sentence.
 034 ==> 
 035 ==> 
 036 ==> 
