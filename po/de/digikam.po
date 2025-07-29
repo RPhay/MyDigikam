@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-28 01:56+0000\n"
+"POT-Creation-Date: 2025-07-29 02:01+0000\n"
 "PO-Revision-Date: 2025-07-02 02:12+0200\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -27325,7 +27325,7 @@ msgstr "Dies ist die „Farbkurve“ für die Leuchtkraft des Bildes"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
-#: core/libs/tags/widgets/tageditdlg.cpp:183
+#: core/libs/tags/widgets/tageditdlg.cpp:185
 #: core/utilities/searchwindow/searchview.cpp:503
 #, kde-format
 msgid "Reset"
@@ -27962,7 +27962,7 @@ msgid "Tag name cannot contain '/'"
 msgstr "Der Name des Stichwortes darf keinen Schrägstrich („/“) enthalten."
 
 #: core/libs/album/manager/albummanager_talbum.cpp:312
-#: core/libs/tags/widgets/tageditdlg.cpp:462
+#: core/libs/tags/widgets/tageditdlg.cpp:464
 #, kde-format
 msgid "Tag name already exists"
 msgstr "Ein Stichwort mit diesem Namen ist bereits vorhanden."
@@ -29322,47 +29322,47 @@ msgstr "Es ist kein Bild ausgewählt"
 msgid "This is the original image"
 msgstr "Das ist das Originalbild"
 
-#: core/libs/database/server/databaseserver.cpp:150
+#: core/libs/database/server/databaseserver.cpp:152
 #, kde-format
 msgid "Database type is not supported."
 msgstr "Der Datenbanktyp wird nicht unterstützt."
 
-#: core/libs/database/server/databaseserver.cpp:291
+#: core/libs/database/server/databaseserver.cpp:293
 #, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr ""
 "In der Einrichtungsdatei ist kein Befehl für die mysql-Aktualisierung "
 "eingegeben worden."
 
-#: core/libs/database/server/databaseserver.cpp:300
+#: core/libs/database/server/databaseserver.cpp:302
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr ""
 "In der Einrichtungsdatei ist kein Pfad zum „mysqld“-Serverbefehl eingegeben "
 "worden."
 
-#: core/libs/database/server/databaseserver.cpp:309
+#: core/libs/database/server/databaseserver.cpp:311
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr ""
 "In der Einrichtungsdatei ist kein Pfad zum „mysql“-Initialisierungsbefehl "
 "eingegeben worden."
 
-#: core/libs/database/server/databaseserver.cpp:318
+#: core/libs/database/server/databaseserver.cpp:320
 #, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr ""
 "In der Einrichtungsdatei ist kein Pfad zum „mysql“-Initialisierungsbefehl "
 "eingegeben worden."
 
-#: core/libs/database/server/databaseserver.cpp:328
-#: core/libs/database/server/databaseserver.cpp:338
-#: core/libs/database/server/databaseserver.cpp:348
+#: core/libs/database/server/databaseserver.cpp:330
+#: core/libs/database/server/databaseserver.cpp:340
+#: core/libs/database/server/databaseserver.cpp:350
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "Der Ordner %1 lässt sich nicht erstellen"
 
-#: core/libs/database/server/databaseserver.cpp:432
+#: core/libs/database/server/databaseserver.cpp:434
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -29374,48 +29374,48 @@ msgstr ""
 "p><p>nicht lesbar ist oder die Zieldatei</p><p>%2</p><p>nicht geschrieben "
 "werden kann.</p>"
 
-#: core/libs/database/server/databaseserver.cpp:454
+#: core/libs/database/server/databaseserver.cpp:456
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 "Die Standard-Einrichtung des MySQL-Servers (mysql-global.conf) wurde nicht "
 "gefunden."
 
-#: core/libs/database/server/databaseserver.cpp:501
+#: core/libs/database/server/databaseserver.cpp:503
 #, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "Die interne MySQL-Datenbank wird eingerichtet, bitte warten …"
 
-#: core/libs/database/server/databaseserver.cpp:549
+#: core/libs/database/server/databaseserver.cpp:551
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Die Datenbank-Initialisierung kann nicht gestartet werden."
 
-#: core/libs/database/server/databaseserver.cpp:612
+#: core/libs/database/server/databaseserver.cpp:614
 #, kde-format
 msgid "Could not start database server."
 msgstr "Der Datenbank-Server kann nicht gestartet werden."
 
-#: core/libs/database/server/databaseserver.cpp:654
+#: core/libs/database/server/databaseserver.cpp:656
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "Ungültiges Datenbankobjekt bei Starten des Datenbankservers"
 
-#: core/libs/database/server/databaseserver.cpp:684
+#: core/libs/database/server/databaseserver.cpp:686
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 "Der Datenbank-Prozess ist während der Verbindungsherstellung unerwartet "
 "beendet worden."
 
-#: core/libs/database/server/databaseserver.cpp:690
+#: core/libs/database/server/databaseserver.cpp:692
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 "Die Verbindung zur Datenbank konnte innerhalb von 60 Sekunden nicht "
 "hergestellt werden."
 
-#: core/libs/database/server/databaseserver.cpp:723
+#: core/libs/database/server/databaseserver.cpp:725
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -29423,18 +29423,18 @@ msgstr ""
 "Die Datenbank kann nicht erstellt werden<p>Abfragefehler: %1</p><p>Datenbank-"
 "Fehler: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:747
+#: core/libs/database/server/databaseserver.cpp:749
 #, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr ""
 "Es wird eine MySQL-Datenbankaktualisierung durchgeführt, bitte warten …"
 
-#: core/libs/database/server/databaseserver.cpp:791
+#: core/libs/database/server/databaseserver.cpp:793
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "Die Aktualisierung der Datenbank ist fehlgeschlagen."
 
-#: core/libs/database/server/databaseserver.cpp:827
+#: core/libs/database/server/databaseserver.cpp:829
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr "%1<p>Programm: %2</p><p>Argumente: %3</p><p>Prozess-Fehler: %4</p>"
@@ -29633,7 +29633,7 @@ msgstr "Sammlung erfassen"
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
 #: core/libs/mlfoundation/mlpipelinemacros.h:71
-#: core/libs/tags/widgets/tageditdlg.cpp:531
+#: core/libs/tags/widgets/tageditdlg.cpp:533
 #, kde-format
 msgid "Error"
 msgstr "Fehler"
@@ -41008,50 +41008,50 @@ msgstr "Stichwortbaum einklappen"
 msgid "Remove Tag from Images"
 msgstr "Stichwort von Bildern entfernen"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:85
+#: core/libs/tags/manager/tagpropwidget.cpp:87
 #, kde-format
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr "Stichworteigenschaften"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:94
-#: core/libs/tags/widgets/tageditdlg.cpp:129
+#: core/libs/tags/manager/tagpropwidget.cpp:96
+#: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr "&Titel:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:99
+#: core/libs/tags/manager/tagpropwidget.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr "Geben Sie den Namen des Stichworts hier"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:112
+#: core/libs/tags/manager/tagpropwidget.cpp:114
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr "&Symbol:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:121
+#: core/libs/tags/manager/tagpropwidget.cpp:123
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:134
+#: core/libs/tags/manager/tagpropwidget.cpp:136
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr "&Kurzbefehl:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:147
+#: core/libs/tags/manager/tagpropwidget.cpp:149
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr "Hinweis"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:148
+#: core/libs/tags/manager/tagpropwidget.cpp:150
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
@@ -41059,19 +41059,19 @@ msgstr ""
 "Dieses Tastenkürzel kann für das Zuweisen und Zurücknehmen von Stichwörtern "
 "zu Einträgen verwendet werden."
 
-#: core/libs/tags/manager/tagpropwidget.cpp:153
+#: core/libs/tags/manager/tagpropwidget.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "Speichern"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:154
+#: core/libs/tags/manager/tagpropwidget.cpp:156
 #, kde-format
 msgctxt "@action"
 msgid "Discard"
 msgstr "Verwerfen"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:221
+#: core/libs/tags/manager/tagpropwidget.cpp:223
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
@@ -41366,24 +41366,24 @@ msgctxt "toggle child and parent tags"
 msgid "Both"
 msgstr "Alle Stichwörter"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:103
+#: core/libs/tags/widgets/tageditdlg.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "New Tag"
 msgstr "Neues Stichwort"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:107
+#: core/libs/tags/widgets/tageditdlg.cpp:109
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "Stichwort bearbeiten"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:131
+#: core/libs/tags/widgets/tageditdlg.cpp:133
 #, kde-format
 msgid "Enter tag name here..."
 msgstr "Geben Sie das neue Stichwort ein ..."
 
-#: core/libs/tags/widgets/tageditdlg.cpp:138
+#: core/libs/tags/widgets/tageditdlg.cpp:140
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
@@ -41408,17 +41408,17 @@ msgstr ""
 "„/“ beginnen, wird die Hierarchie direkt unter dem Basisstichwort "
 "eingeordnet.</li></ul></p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:172
+#: core/libs/tags/widgets/tageditdlg.cpp:174
 #, kde-format
 msgid "&Icon:"
 msgstr "&Symbol:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:196
+#: core/libs/tags/widgets/tageditdlg.cpp:198
 #, kde-format
 msgid "&Shortcut:"
 msgstr "&Kurzbefehl:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:216
+#: core/libs/tags/widgets/tageditdlg.cpp:218
 #, kde-format
 msgid ""
 "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to items."
@@ -41427,35 +41427,35 @@ msgstr ""
 "<p><b>Hinweis</b>: Dieses Tastenkürzel kann für das Zuweisen und "
 "Zurücknehmen von Stichwörtern zu Einträgen verwendet werden.</p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:333
+#: core/libs/tags/widgets/tageditdlg.cpp:335
 #, kde-format
 msgid "<b>Create New Tag</b>"
 msgstr "<b>Neues Stichwort erstellen</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:337
+#: core/libs/tags/widgets/tageditdlg.cpp:339
 #, fuzzy, kde-format
 #| msgid "<b>Create New Tag in<br/>\"%1\"</b>"
 msgid "<b>Create New Tag in<br>\"%1\"</b>"
 msgstr "<b>Neues Stichwort in<br/>„%1“ erstellen</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:343
+#: core/libs/tags/widgets/tageditdlg.cpp:345
 #, fuzzy, kde-format
 #| msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgid "<b>Properties of Tag<br>\"%1\"</b>"
 msgstr "<b>Eigenschaften des Stichwortes<br/>„%1“</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:515
+#: core/libs/tags/widgets/tageditdlg.cpp:517
 #, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Fehler bei der Erstellung des Stichwortes"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:529
+#: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "Bei der Erstellung des Stichwortes ist ein Fehler aufgetreten:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:531
+#: core/libs/tags/widgets/tageditdlg.cpp:533
 #, kde-format
 msgid "Tag Path"
 msgstr "Stichworthierarchie"

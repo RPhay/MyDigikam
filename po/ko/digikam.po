@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-28 01:56+0000\n"
+"POT-Creation-Date: 2025-07-29 02:01+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27444,7 +27444,7 @@ msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
-#: core/libs/tags/widgets/tageditdlg.cpp:183
+#: core/libs/tags/widgets/tageditdlg.cpp:185
 #: core/utilities/searchwindow/searchview.cpp:503
 #, kde-format
 msgid "Reset"
@@ -28000,7 +28000,7 @@ msgid "Tag name cannot contain '/'"
 msgstr ""
 
 #: core/libs/album/manager/albummanager_talbum.cpp:312
-#: core/libs/tags/widgets/tageditdlg.cpp:462
+#: core/libs/tags/widgets/tageditdlg.cpp:464
 #, kde-format
 msgid "Tag name already exists"
 msgstr ""
@@ -29263,43 +29263,43 @@ msgstr "선택한 그림 없음"
 msgid "This is the original image"
 msgstr "메타데이터"
 
-#: core/libs/database/server/databaseserver.cpp:150
+#: core/libs/database/server/databaseserver.cpp:152
 #, kde-format
 msgid "Database type is not supported."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:291
+#: core/libs/database/server/databaseserver.cpp:293
 #, fuzzy, kde-format
 #| msgid "No path to mysql server command set in configuration file!"
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr "설정 파일에 mysql 서버 명령을 지정하지 않았습니다!"
 
-#: core/libs/database/server/databaseserver.cpp:300
+#: core/libs/database/server/databaseserver.cpp:302
 #, fuzzy, kde-format
 #| msgid "No path to mysql server command set in configuration file!"
 msgid "No path to mysql server command set in configuration file."
 msgstr "설정 파일에 mysql 서버 명령을 지정하지 않았습니다!"
 
-#: core/libs/database/server/databaseserver.cpp:309
+#: core/libs/database/server/databaseserver.cpp:311
 #, fuzzy, kde-format
 #| msgid "No path to mysql initialization command set in configuration file!."
 msgid "No path to mysql administration command set in configuration file."
 msgstr "설정 파일에 mysql 초기화 명령을 지정하지 않았습니다!"
 
-#: core/libs/database/server/databaseserver.cpp:318
+#: core/libs/database/server/databaseserver.cpp:320
 #, fuzzy, kde-format
 #| msgid "No path to mysql initialization command set in configuration file!."
 msgid "No path to mysql initialization command set in configuration file."
 msgstr "설정 파일에 mysql 초기화 명령을 지정하지 않았습니다!"
 
-#: core/libs/database/server/databaseserver.cpp:328
-#: core/libs/database/server/databaseserver.cpp:338
-#: core/libs/database/server/databaseserver.cpp:348
+#: core/libs/database/server/databaseserver.cpp:330
+#: core/libs/database/server/databaseserver.cpp:340
+#: core/libs/database/server/databaseserver.cpp:350
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "%1 디렉터리를 만들 수 없음"
 
-#: core/libs/database/server/databaseserver.cpp:432
+#: core/libs/database/server/databaseserver.cpp:434
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -29309,59 +29309,59 @@ msgstr ""
 "MySQL 서버 설정 파일을 만들 수 없습니다.<p> 기본 설정 파일</p><p>%1</p><p>에"
 "서읽을 수 없거나 대상 파일</p><p>%2</p><p>에 쓸 수 없었습니다.</p>"
 
-#: core/libs/database/server/databaseserver.cpp:454
+#: core/libs/database/server/databaseserver.cpp:456
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "MySQL 서버 기본 설정(mysql-global.conf)을 찾을 수 없습니다."
 
-#: core/libs/database/server/databaseserver.cpp:501
+#: core/libs/database/server/databaseserver.cpp:503
 #, fuzzy, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/libs/database/server/databaseserver.cpp:549
+#: core/libs/database/server/databaseserver.cpp:551
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "데이터베이스 초기화 프로그램을 시작할 수 없습니다."
 
-#: core/libs/database/server/databaseserver.cpp:612
+#: core/libs/database/server/databaseserver.cpp:614
 #, kde-format
 msgid "Could not start database server."
 msgstr "데이터베이스 서버를 시작할 수 없습니다."
 
-#: core/libs/database/server/databaseserver.cpp:654
+#: core/libs/database/server/databaseserver.cpp:656
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "데이터베이스 서버 시작 중 잘못된 데이터베이스 객체"
 
-#: core/libs/database/server/databaseserver.cpp:684
+#: core/libs/database/server/databaseserver.cpp:686
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:690
+#: core/libs/database/server/databaseserver.cpp:692
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:723
+#: core/libs/database/server/databaseserver.cpp:725
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:747
+#: core/libs/database/server/databaseserver.cpp:749
 #, fuzzy, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/libs/database/server/databaseserver.cpp:791
+#: core/libs/database/server/databaseserver.cpp:793
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not upgrade database."
 msgstr "데이터베이스 서버를 시작할 수 없습니다."
 
-#: core/libs/database/server/databaseserver.cpp:827
+#: core/libs/database/server/databaseserver.cpp:829
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
@@ -29541,7 +29541,7 @@ msgstr "선택 반전"
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
 #: core/libs/mlfoundation/mlpipelinemacros.h:71
-#: core/libs/tags/widgets/tageditdlg.cpp:531
+#: core/libs/tags/widgets/tageditdlg.cpp:533
 #, kde-format
 msgid "Error"
 msgstr "오류"
@@ -40707,72 +40707,72 @@ msgstr "값 복사"
 msgid "Remove Tag from Images"
 msgstr "이미지에서 태그 삭제"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:85
+#: core/libs/tags/manager/tagpropwidget.cpp:87
 #, fuzzy, kde-format
 #| msgid "Tag Properties"
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr "태그 속성"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:94
-#: core/libs/tags/widgets/tageditdlg.cpp:129
+#: core/libs/tags/manager/tagpropwidget.cpp:96
+#: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr "제목(&T):"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:99
+#: core/libs/tags/manager/tagpropwidget.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr "태그 이름을 입력하십시오"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:112
+#: core/libs/tags/manager/tagpropwidget.cpp:114
 #, fuzzy, kde-format
 #| msgid "&Icon:"
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr "아이콘(&I):"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:121
+#: core/libs/tags/manager/tagpropwidget.cpp:123
 #, fuzzy, kde-format
 #| msgid "Reset"
 msgctxt "@action"
 msgid "Reset"
 msgstr "초기화"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:134
+#: core/libs/tags/manager/tagpropwidget.cpp:136
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr "단축키(&S):"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:147
+#: core/libs/tags/manager/tagpropwidget.cpp:149
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:148
+#: core/libs/tags/manager/tagpropwidget.cpp:150
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:153
+#: core/libs/tags/manager/tagpropwidget.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "저장"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:154
+#: core/libs/tags/manager/tagpropwidget.cpp:156
 #, fuzzy, kde-format
 #| msgid "Discard"
 msgctxt "@action"
 msgid "Discard"
 msgstr "무시"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:221
+#: core/libs/tags/manager/tagpropwidget.cpp:223
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
@@ -41029,26 +41029,26 @@ msgctxt "toggle child and parent tags"
 msgid "Both"
 msgstr "모두"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:103
+#: core/libs/tags/widgets/tageditdlg.cpp:105
 #, fuzzy, kde-format
 #| msgid "New Tag"
 msgctxt "@title:window"
 msgid "New Tag"
 msgstr "새 태그"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:107
+#: core/libs/tags/widgets/tageditdlg.cpp:109
 #, fuzzy, kde-format
 #| msgid "Edit Tag"
 msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "태그 편집"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:131
+#: core/libs/tags/widgets/tageditdlg.cpp:133
 #, kde-format
 msgid "Enter tag name here..."
 msgstr "태그 이름을 입력하십시오..."
 
-#: core/libs/tags/widgets/tageditdlg.cpp:138
+#: core/libs/tags/widgets/tageditdlg.cpp:140
 #, kde-format
 msgid ""
 "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
@@ -41059,51 +41059,51 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/libs/tags/widgets/tageditdlg.cpp:172
+#: core/libs/tags/widgets/tageditdlg.cpp:174
 #, kde-format
 msgid "&Icon:"
 msgstr "아이콘(&I):"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:196
+#: core/libs/tags/widgets/tageditdlg.cpp:198
 #, kde-format
 msgid "&Shortcut:"
 msgstr "단축키(&S):"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:216
+#: core/libs/tags/widgets/tageditdlg.cpp:218
 #, kde-format
 msgid ""
 "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to items."
 "</p>"
 msgstr ""
 
-#: core/libs/tags/widgets/tageditdlg.cpp:333
+#: core/libs/tags/widgets/tageditdlg.cpp:335
 #, kde-format
 msgid "<b>Create New Tag</b>"
 msgstr "<b>새 태그 만들기</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:337
+#: core/libs/tags/widgets/tageditdlg.cpp:339
 #, fuzzy, kde-format
 msgid "<b>Create New Tag in<br>\"%1\"</b>"
 msgstr "<b>만든 날짜</b>:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:343
+#: core/libs/tags/widgets/tageditdlg.cpp:345
 #, fuzzy, kde-format
 msgid "<b>Properties of Tag<br>\"%1\"</b>"
 msgstr "<b>만든 날짜</b>:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:515
+#: core/libs/tags/widgets/tageditdlg.cpp:517
 #, fuzzy, kde-format
 #| msgid "Login Error"
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "로그인 오류"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:529
+#: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr ""
 
-#: core/libs/tags/widgets/tageditdlg.cpp:531
+#: core/libs/tags/widgets/tageditdlg.cpp:533
 #, kde-format
 msgid "Tag Path"
 msgstr "태그 경로"

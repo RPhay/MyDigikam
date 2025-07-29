@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-28 01:56+0000\n"
-"PO-Revision-Date: 2025-07-24 10:13+0200\n"
+"POT-Creation-Date: 2025-07-29 02:01+0000\n"
+"PO-Revision-Date: 2025-07-28 10:12+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -5595,7 +5595,7 @@ msgstr "Text de la marca d'aigua: "
 #, kde-format
 msgid "Choose the font type and style. Size is auto calculated."
 msgstr ""
-"Seleccioneu el tipus i l'estil del tipus de lletra, la mida es calcularà "
+"Trieu el tipus i l'estil del tipus de lletra, la mida es calcularà "
 "automàticament."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
@@ -5635,7 +5635,7 @@ msgstr "Utilitza un fons"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:293
 #, kde-format
 msgid "Choose the color of the watermark background."
-msgstr "Seleccioneu el color del fons de la marca d'aigua."
+msgstr "Trieu el color del fons de la marca d'aigua."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:294
 #, kde-format
@@ -12036,7 +12036,7 @@ msgstr "Format d'intercanvi GPS (*.gpx)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GPX File to Load"
-msgstr "Seleccioneu el fitxer GPX que s'ha de carregar"
+msgstr "Trieu el fitxer GPX que s'ha de carregar"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:165
 #, kde-format
@@ -16210,7 +16210,7 @@ msgstr "Esdeveniments del calendari"
 #: core/dplugins/generic/tools/calendar/ui/calevents.ui:26
 #, kde-format
 msgid "Select an optional calendar file with the official holidays"
-msgstr "Seleccioneu un fitxer opcional de calendari amb els festius oficials"
+msgstr "Trieu un fitxer opcional de calendari amb els festius oficials"
 
 #. i18n: ectx: property (text), widget (QLabel, ohExplainLabel)
 #: core/dplugins/generic/tools/calendar/ui/calevents.ui:46
@@ -16253,8 +16253,7 @@ msgstr ""
 #: core/dplugins/generic/tools/calendar/ui/calevents.ui:75
 #, kde-format
 msgid "Select an optional calendar file with your \"family holidays\""
-msgstr ""
-"Seleccioneu un fitxer opcional de calendari amb els «festius de la família»"
+msgstr "Trieu un fitxer opcional de calendari amb els «festius de la família»"
 
 #. i18n: ectx: property (text), widget (QLabel, fhExplainLabel)
 #: core/dplugins/generic/tools/calendar/ui/calevents.ui:94
@@ -20082,8 +20081,7 @@ msgstr "Inseriu el nombre de columnes"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:42
 #, kde-format
 msgid "Choose to have a custom photo size album"
-msgstr ""
-"Seleccioneu per a tindre un àlbum de fotografies amb mida personalitzada"
+msgstr "Trieu per a tindre un àlbum de fotografies amb mida personalitzada"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:43
 #, kde-format
@@ -26937,7 +26935,7 @@ msgstr "Este és l'ajust de la corba de la lluminositat en la imatge"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
-#: core/libs/tags/widgets/tageditdlg.cpp:183
+#: core/libs/tags/widgets/tageditdlg.cpp:185
 #: core/utilities/searchwindow/searchview.cpp:503
 #, kde-format
 msgid "Reset"
@@ -27525,7 +27523,7 @@ msgid ""
 "Please choose another name."
 msgstr ""
 "Ja hi ha un altre àlbum amb el mateix nom.\n"
-"Seleccioneu-ne un altre."
+"Trieu-ne un altre."
 
 #: core/libs/album/manager/albummanager_palbum.cpp:508
 #, kde-format
@@ -27554,7 +27552,7 @@ msgid "Tag name cannot contain '/'"
 msgstr "El nom de l'etiqueta no pot contindre «/»"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:312
-#: core/libs/tags/widgets/tageditdlg.cpp:462
+#: core/libs/tags/widgets/tageditdlg.cpp:464
 #, kde-format
 msgid "Tag name already exists"
 msgstr "El nom de l'etiqueta ja existix"
@@ -27587,7 +27585,7 @@ msgid ""
 "Please choose another name."
 msgstr ""
 "Ja hi ha una altra etiqueta amb el mateix nom.\n"
-"Seleccioneu-ne un altre."
+"Trieu-ne un altre."
 
 #: core/libs/album/manager/albummanager_talbum.cpp:510
 #, kde-format
@@ -28896,19 +28894,19 @@ msgstr "No s'ha seleccionat cap imatge"
 msgid "This is the original image"
 msgstr "Esta és la imatge original"
 
-#: core/libs/database/server/databaseserver.cpp:150
+#: core/libs/database/server/databaseserver.cpp:152
 #, kde-format
 msgid "Database type is not supported."
 msgstr "El tipus de base de dades està admés."
 
-#: core/libs/database/server/databaseserver.cpp:291
+#: core/libs/database/server/databaseserver.cpp:293
 #, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr ""
 "No s'ha establit cap camí cap a l'ordre d'actualització de «mysql» en el "
 "fitxer de configuració."
 
-#: core/libs/database/server/databaseserver.cpp:300
+#: core/libs/database/server/databaseserver.cpp:302
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr ""
@@ -28916,7 +28914,7 @@ msgstr ""
 "configuració."
 
 # skip-rule: punctuation-period
-#: core/libs/database/server/databaseserver.cpp:309
+#: core/libs/database/server/databaseserver.cpp:311
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr ""
@@ -28924,21 +28922,21 @@ msgstr ""
 "fitxer de configuració."
 
 # skip-rule: punctuation-period
-#: core/libs/database/server/databaseserver.cpp:318
+#: core/libs/database/server/databaseserver.cpp:320
 #, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr ""
 "No s'ha establit cap camí cap a l'ordre d'inicialització de «mysql» en el "
 "fitxer de configuració."
 
-#: core/libs/database/server/databaseserver.cpp:328
-#: core/libs/database/server/databaseserver.cpp:338
-#: core/libs/database/server/databaseserver.cpp:348
+#: core/libs/database/server/databaseserver.cpp:330
+#: core/libs/database/server/databaseserver.cpp:340
+#: core/libs/database/server/databaseserver.cpp:350
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "No s'ha pogut crear el directori %1"
 
-#: core/libs/database/server/databaseserver.cpp:432
+#: core/libs/database/server/databaseserver.cpp:434
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -28949,50 +28947,50 @@ msgstr ""
 "vol dir que el fitxer de configuració predeterminat</p><p>%1</p><p>no es pot "
 "llegir o el fitxer de destinació</p><p>%2</p><p>no es pot escriure.</p>"
 
-#: core/libs/database/server/databaseserver.cpp:454
+#: core/libs/database/server/databaseserver.cpp:456
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 "No s'ha trobat cap configuració predeterminada del servidor de MySQL (mysql-"
 "global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:501
+#: core/libs/database/server/databaseserver.cpp:503
 #, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "La base de dades MySQL interna s'està inicialitzant, espereu…"
 
-#: core/libs/database/server/databaseserver.cpp:549
+#: core/libs/database/server/databaseserver.cpp:551
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "No s'ha pogut iniciar l'iniciador de la base de dades."
 
-#: core/libs/database/server/databaseserver.cpp:612
+#: core/libs/database/server/databaseserver.cpp:614
 #, kde-format
 msgid "Could not start database server."
 msgstr "No s'ha pogut iniciar el servidor de base de dades."
 
-#: core/libs/database/server/databaseserver.cpp:654
+#: core/libs/database/server/databaseserver.cpp:656
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 "L'objecte de base de dades no és vàlid durant l'inici del servidor de base "
 "de dades"
 
-#: core/libs/database/server/databaseserver.cpp:684
+#: core/libs/database/server/databaseserver.cpp:686
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 "El procés de la base de dades ha acabat inesperadament durant la connexió "
 "inicial."
 
-#: core/libs/database/server/databaseserver.cpp:690
+#: core/libs/database/server/databaseserver.cpp:692
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 "No s'ha pogut connectar amb la base de dades després d'intentar-ho durant 60 "
 "segons."
 
-#: core/libs/database/server/databaseserver.cpp:723
+#: core/libs/database/server/databaseserver.cpp:725
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -29000,17 +28998,17 @@ msgstr ""
 "No s'ha pogut crear la base de dades<p>S'ha produït un error de la "
 "interrogació: %1</p><p>S'ha produït un error de la base de dades: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:747
+#: core/libs/database/server/databaseserver.cpp:749
 #, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "Hi ha una actualització de la base de dades MySQL en curs, espereu…"
 
-#: core/libs/database/server/databaseserver.cpp:791
+#: core/libs/database/server/databaseserver.cpp:793
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "No s'ha pogut actualitzar la base de dades."
 
-#: core/libs/database/server/databaseserver.cpp:827
+#: core/libs/database/server/databaseserver.cpp:829
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
@@ -29209,7 +29207,7 @@ msgstr "S'està explorant la col·lecció"
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
 #: core/libs/mlfoundation/mlpipelinemacros.h:71
-#: core/libs/tags/widgets/tageditdlg.cpp:531
+#: core/libs/tags/widgets/tageditdlg.cpp:533
 #, kde-format
 msgid "Error"
 msgstr "S'ha produït un error"
@@ -29567,7 +29565,7 @@ msgstr ""
 "allotjar miniatures d'imatges amb compressió per ondetes.\n"
 "Açò pot utilitzar ràpidament molt espai, especialment si\n"
 "hi ha col·leccions molt grans.\n"
-"Seleccioneu una carpeta local per a emprar una base de dades SQLite."
+"Trieu una carpeta local per a emprar una base de dades SQLite."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:248
 #, kde-format
@@ -40478,50 +40476,50 @@ msgstr "Reduïx l'arbre d'etiquetes"
 msgid "Remove Tag from Images"
 msgstr "Elimina les etiquetes de les imatges"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:85
+#: core/libs/tags/manager/tagpropwidget.cpp:87
 #, kde-format
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr "Propietats de l'etiqueta"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:94
-#: core/libs/tags/widgets/tageditdlg.cpp:129
+#: core/libs/tags/manager/tagpropwidget.cpp:96
+#: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr "&Títol:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:99
+#: core/libs/tags/manager/tagpropwidget.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr "Introduïu ací el nom de l'etiqueta"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:112
+#: core/libs/tags/manager/tagpropwidget.cpp:114
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr "&Icona:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:121
+#: core/libs/tags/manager/tagpropwidget.cpp:123
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
 msgstr "Restablix"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:134
+#: core/libs/tags/manager/tagpropwidget.cpp:136
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr "&Drecera:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:147
+#: core/libs/tags/manager/tagpropwidget.cpp:149
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr "Nota"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:148
+#: core/libs/tags/manager/tagpropwidget.cpp:150
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
@@ -40529,19 +40527,19 @@ msgstr ""
 "Esta drecera es pot utilitzar per a assignar o traure l'assignació "
 "d'etiquetes als elements."
 
-#: core/libs/tags/manager/tagpropwidget.cpp:153
+#: core/libs/tags/manager/tagpropwidget.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "Guarda"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:154
+#: core/libs/tags/manager/tagpropwidget.cpp:156
 #, kde-format
 msgctxt "@action"
 msgid "Discard"
 msgstr "Descarta"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:221
+#: core/libs/tags/manager/tagpropwidget.cpp:223
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
@@ -40631,18 +40629,16 @@ msgstr ""
 "Voleu continuar?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:616
-#, fuzzy, kde-format
-#| msgid "Choose your grid size"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose Export Tag File"
-msgstr "Seleccioneu la mida de la quadrícula"
+msgstr "Trieu un fitxer d'etiquetes que s'ha d'exportar"
 
 #: core/libs/tags/manager/tagsmanager.cpp:685
-#, fuzzy, kde-format
-#| msgid "Choose your grid size"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose Import Tag File"
-msgstr "Seleccioneu la mida de la quadrícula"
+msgstr "Trieu un fitxer d'etiquetes que s'ha d'importar"
 
 #: core/libs/tags/manager/tagsmanager.cpp:744
 #, kde-format
@@ -40746,17 +40742,14 @@ msgid "Wipe all tags from Database only"
 msgstr "Esborra totes les etiquetes només de la base de dades"
 
 #: core/libs/tags/manager/tagsmanager.cpp:963
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Write metadata to each file"
+#, kde-format
 msgid "Export all tags to a file"
-msgstr "Escriu les metadades a cada fitxer"
+msgstr "Exporta totes les etiquetes a un fitxer"
 
 #: core/libs/tags/manager/tagsmanager.cpp:966
-#, fuzzy, kde-format
-#| msgid "Remove all tags from image"
+#, kde-format
 msgid "Import all tags from a file"
-msgstr "Elimina totes les etiquetes de les imatges"
+msgstr "Importa totes les etiquetes des d'un fitxer"
 
 #: core/libs/tags/manager/tagsmanager.cpp:968
 #, kde-format
@@ -40783,11 +40776,14 @@ msgstr ""
 #, kde-format
 msgid "Export all tags to a file to keep a backup."
 msgstr ""
+"Exporta totes les etiquetes a un fitxer per a tindre una còpia de seguretat."
 
 #: core/libs/tags/manager/tagsmanager.cpp:978
 #, kde-format
 msgid "Import all tags from a file to restore a backup."
 msgstr ""
+"Importa totes les etiquetes des d'un fitxer per a restaurar una còpia de "
+"seguretat."
 
 #: core/libs/tags/manager/tagsmanager.cpp:1007
 #, kde-format
@@ -40824,24 +40820,24 @@ msgctxt "toggle child and parent tags"
 msgid "Both"
 msgstr "Ambdós"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:103
+#: core/libs/tags/widgets/tageditdlg.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "New Tag"
 msgstr "Etiqueta nova"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:107
+#: core/libs/tags/widgets/tageditdlg.cpp:109
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "Editeu l'etiqueta"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:131
+#: core/libs/tags/widgets/tageditdlg.cpp:133
 #, kde-format
 msgid "Enter tag name here..."
 msgstr "Introduïu ací el nom de l'etiqueta…"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:138
+#: core/libs/tags/widgets/tageditdlg.cpp:140
 #, kde-format
 msgid ""
 "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
@@ -40858,17 +40854,17 @@ msgstr ""
 "Monument/Notre-Dame»</i></li><li>Si una jerarquia d'etiquetes comença per "
 "«/», s'utilitza l'àlbum d'etiqueta arrel com a pare.</li></ul></p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:172
+#: core/libs/tags/widgets/tageditdlg.cpp:174
 #, kde-format
 msgid "&Icon:"
 msgstr "&Icona:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:196
+#: core/libs/tags/widgets/tageditdlg.cpp:198
 #, kde-format
 msgid "&Shortcut:"
 msgstr "&Drecera:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:216
+#: core/libs/tags/widgets/tageditdlg.cpp:218
 #, kde-format
 msgid ""
 "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to items."
@@ -40877,33 +40873,33 @@ msgstr ""
 "<p><b>Nota</b>: es pot utilitzar esta drecera per a assignar o traure "
 "l'assignació d'etiquetes als elements.</p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:333
+#: core/libs/tags/widgets/tageditdlg.cpp:335
 #, kde-format
 msgid "<b>Create New Tag</b>"
 msgstr "<b>Crea una etiqueta nova</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:337
+#: core/libs/tags/widgets/tageditdlg.cpp:339
 #, kde-format
 msgid "<b>Create New Tag in<br>\"%1\"</b>"
 msgstr "<b>Crea una etiqueta nova a<br>«%1»</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:343
+#: core/libs/tags/widgets/tageditdlg.cpp:345
 #, kde-format
 msgid "<b>Properties of Tag<br>\"%1\"</b>"
 msgstr "<b>Propietats de l'etiqueta<br>«%1»</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:515
+#: core/libs/tags/widgets/tageditdlg.cpp:517
 #, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "S'ha produït un error en la creació de l'etiqueta"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:529
+#: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "S'ha detectat un error durant la creació de l'etiqueta:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:531
+#: core/libs/tags/widgets/tageditdlg.cpp:533
 #, kde-format
 msgid "Tag Path"
 msgstr "Camí de l'etiqueta"
@@ -56225,7 +56221,7 @@ msgstr "Tria el mapa general"
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:618
 #, kde-format
 msgid "Please choose the color for the position indicator"
-msgstr "Seleccioneu el color de l'indicador de posició"
+msgstr "Trieu el color de l'indicador de posició"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, OverviewMapConfigWidget)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:14

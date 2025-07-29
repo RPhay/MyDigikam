@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-28 01:56+0000\n"
+"POT-Creation-Date: 2025-07-29 02:01+0000\n"
 "PO-Revision-Date: 2025-07-03 23:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -26606,7 +26606,7 @@ msgstr "這是影像明度的曲線調整。"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
-#: core/libs/tags/widgets/tageditdlg.cpp:183
+#: core/libs/tags/widgets/tageditdlg.cpp:185
 #: core/utilities/searchwindow/searchview.cpp:503
 #, kde-format
 msgid "Reset"
@@ -27224,7 +27224,7 @@ msgid "Tag name cannot contain '/'"
 msgstr "標籤名稱不能包含「/」"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:312
-#: core/libs/tags/widgets/tageditdlg.cpp:462
+#: core/libs/tags/widgets/tageditdlg.cpp:464
 #, kde-format
 msgid "Tag name already exists"
 msgstr "標籤名稱已經存在"
@@ -28556,44 +28556,44 @@ msgstr "沒有選擇影像"
 msgid "This is the original image"
 msgstr "這是原始影像"
 
-#: core/libs/database/server/databaseserver.cpp:150
+#: core/libs/database/server/databaseserver.cpp:152
 #, fuzzy, kde-format
 #| msgid "Filter identifier or version is not supported"
 msgid "Database type is not supported."
 msgstr "濾鏡的識別子或版號不被支援"
 
-#: core/libs/database/server/databaseserver.cpp:291
+#: core/libs/database/server/databaseserver.cpp:293
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr "在伺服器組態設定裡沒有 mysqld 設定的路徑。"
 
-#: core/libs/database/server/databaseserver.cpp:300
+#: core/libs/database/server/databaseserver.cpp:302
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql server command set in configuration file."
 msgstr "在伺服器組態設定裡沒有 mysqld 設定的路徑。"
 
-#: core/libs/database/server/databaseserver.cpp:309
+#: core/libs/database/server/databaseserver.cpp:311
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql administration command set in configuration file."
 msgstr "在伺服器組態設定裡沒有 mysqld 設定的路徑。"
 
-#: core/libs/database/server/databaseserver.cpp:318
+#: core/libs/database/server/databaseserver.cpp:320
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql initialization command set in configuration file."
 msgstr "在伺服器組態設定裡沒有 mysqld 設定的路徑。"
 
-#: core/libs/database/server/databaseserver.cpp:328
-#: core/libs/database/server/databaseserver.cpp:338
-#: core/libs/database/server/databaseserver.cpp:348
+#: core/libs/database/server/databaseserver.cpp:330
+#: core/libs/database/server/databaseserver.cpp:340
+#: core/libs/database/server/databaseserver.cpp:350
 #, fuzzy, kde-format
 msgid "Cannot create directory %1"
 msgstr "建立目錄失敗。"
 
-#: core/libs/database/server/databaseserver.cpp:432
+#: core/libs/database/server/databaseserver.cpp:434
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to create MySQL server configuration file.\n"
@@ -28609,35 +28609,35 @@ msgstr ""
 "這表示無法讀取預設的組態設定檔 (mysql-global.conf) 或者目標檔案 (mysql.conf) "
 "無法寫入。"
 
-#: core/libs/database/server/databaseserver.cpp:454
+#: core/libs/database/server/databaseserver.cpp:456
 #, fuzzy, kde-format
 #| msgid "Did not find MySQL server default configuration (mysql-global.conf)."
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "找不到 MySQL 伺服器預設的組態設定 (mysql-global.conf)。"
 
-#: core/libs/database/server/databaseserver.cpp:501
+#: core/libs/database/server/databaseserver.cpp:503
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "進行裝置偵測，請稍候..."
 
-#: core/libs/database/server/databaseserver.cpp:549
+#: core/libs/database/server/databaseserver.cpp:551
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not start database initializer."
 msgstr "無法啟動資料庫伺服器。"
 
-#: core/libs/database/server/databaseserver.cpp:612
+#: core/libs/database/server/databaseserver.cpp:614
 #, kde-format
 msgid "Could not start database server."
 msgstr "無法啟動資料庫伺服器。"
 
-#: core/libs/database/server/databaseserver.cpp:654
+#: core/libs/database/server/databaseserver.cpp:656
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:684
+#: core/libs/database/server/databaseserver.cpp:686
 #, fuzzy, kde-format
 #| msgid ""
 #| "Database process exited unexpectedly during initial connection."
@@ -28646,30 +28646,30 @@ msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 "資料庫處理在初始化校正期間意外地停止。<p>可執行檔：%1</p>”<p>處理錯誤：%2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:690
+#: core/libs/database/server/databaseserver.cpp:692
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:723
+#: core/libs/database/server/databaseserver.cpp:725
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr "建立資料庫失敗<p>查詢錯誤：%1</p><p>資料庫錯誤：%2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:747
+#: core/libs/database/server/databaseserver.cpp:749
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "進行裝置偵測，請稍候..."
 
-#: core/libs/database/server/databaseserver.cpp:791
+#: core/libs/database/server/databaseserver.cpp:793
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not upgrade database."
 msgstr "無法啟動資料庫伺服器。"
 
-#: core/libs/database/server/databaseserver.cpp:827
+#: core/libs/database/server/databaseserver.cpp:829
 #, fuzzy, kde-format
 #| msgid ""
 #| "Database process exited unexpectedly during initial connection."
@@ -28855,7 +28855,7 @@ msgstr "掃描收藏中"
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
 #: core/libs/mlfoundation/mlpipelinemacros.h:71
-#: core/libs/tags/widgets/tageditdlg.cpp:531
+#: core/libs/tags/widgets/tageditdlg.cpp:533
 #, kde-format
 msgid "Error"
 msgstr "錯誤"
@@ -39909,68 +39909,68 @@ msgstr "折疊標籤樹狀圖"
 msgid "Remove Tag from Images"
 msgstr "從影像移除標籤"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:85
+#: core/libs/tags/manager/tagpropwidget.cpp:87
 #, kde-format
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr "標籤屬性"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:94
-#: core/libs/tags/widgets/tageditdlg.cpp:129
+#: core/libs/tags/manager/tagpropwidget.cpp:96
+#: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr "標題(&T)："
 
-#: core/libs/tags/manager/tagpropwidget.cpp:99
+#: core/libs/tags/manager/tagpropwidget.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr "在這裡輸入標籤名稱"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:112
+#: core/libs/tags/manager/tagpropwidget.cpp:114
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr "圖示(&I)："
 
-#: core/libs/tags/manager/tagpropwidget.cpp:121
+#: core/libs/tags/manager/tagpropwidget.cpp:123
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
 msgstr "重設"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:134
+#: core/libs/tags/manager/tagpropwidget.cpp:136
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr "快捷鍵(&S)："
 
-#: core/libs/tags/manager/tagpropwidget.cpp:147
+#: core/libs/tags/manager/tagpropwidget.cpp:149
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr "備註"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:148
+#: core/libs/tags/manager/tagpropwidget.cpp:150
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
 msgstr "此快捷鍵可以用於指派標籤給項目，或是從項目移除標籤。"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:153
+#: core/libs/tags/manager/tagpropwidget.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "儲存"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:154
+#: core/libs/tags/manager/tagpropwidget.cpp:156
 #, kde-format
 msgctxt "@action"
 msgid "Discard"
 msgstr "捨棄"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:221
+#: core/libs/tags/manager/tagpropwidget.cpp:223
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
@@ -40229,24 +40229,24 @@ msgctxt "toggle child and parent tags"
 msgid "Both"
 msgstr "全部"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:103
+#: core/libs/tags/widgets/tageditdlg.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "New Tag"
 msgstr "新增標籤"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:107
+#: core/libs/tags/widgets/tageditdlg.cpp:109
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "編輯標籤"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:131
+#: core/libs/tags/widgets/tageditdlg.cpp:133
 #, kde-format
 msgid "Enter tag name here..."
 msgstr "在這裡輸入標籤名稱..."
 
-#: core/libs/tags/widgets/tageditdlg.cpp:138
+#: core/libs/tags/widgets/tageditdlg.cpp:140
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
@@ -40268,52 +40268,52 @@ msgstr ""
 "級。<br/>例如：<i>「城市/巴黎, 紀念像/聖母瑪利亞」</i></li><li>如果標籤層級"
 "以 '/' 開始，根標籤相簿可作為母層使用。</li></ul></p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:172
+#: core/libs/tags/widgets/tageditdlg.cpp:174
 #, kde-format
 msgid "&Icon:"
 msgstr "圖示(&I)："
 
-#: core/libs/tags/widgets/tageditdlg.cpp:196
+#: core/libs/tags/widgets/tageditdlg.cpp:198
 #, kde-format
 msgid "&Shortcut:"
 msgstr "快捷鍵(&S)："
 
-#: core/libs/tags/widgets/tageditdlg.cpp:216
+#: core/libs/tags/widgets/tageditdlg.cpp:218
 #, kde-format
 msgid ""
 "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to items."
 "</p>"
 msgstr "<p><b>注意</b>：此捷徑可以用於指定或取消指定項目的標籤。</p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:333
+#: core/libs/tags/widgets/tageditdlg.cpp:335
 #, kde-format
 msgid "<b>Create New Tag</b>"
 msgstr "<b>建立新的標籤</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:337
+#: core/libs/tags/widgets/tageditdlg.cpp:339
 #, fuzzy, kde-format
 #| msgid "<b>Create New Tag in<br/>\"%1\"</b>"
 msgid "<b>Create New Tag in<br>\"%1\"</b>"
 msgstr "<b>在 「%1」中<br/>建立新的標籤</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:343
+#: core/libs/tags/widgets/tageditdlg.cpp:345
 #, fuzzy, kde-format
 #| msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgid "<b>Properties of Tag<br>\"%1\"</b>"
 msgstr "<b>在「%1」中<br/>標籤的屬性</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:515
+#: core/libs/tags/widgets/tageditdlg.cpp:517
 #, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "標籤建立錯誤"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:529
+#: core/libs/tags/widgets/tageditdlg.cpp:531
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "標籤建立期間發生錯誤："
 
-#: core/libs/tags/widgets/tageditdlg.cpp:531
+#: core/libs/tags/widgets/tageditdlg.cpp:533
 #, kde-format
 msgid "Tag Path"
 msgstr "標籤路徑"
