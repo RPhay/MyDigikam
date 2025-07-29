@@ -74,9 +74,7 @@ public:
                                  QUrl& previewUrl,
                                  const PanoramaItemUrlsMap& preProcessedUrlsMap,
                                  const QString& makePath,
-                                 const QString& pto2mkPath,
                                  const QString& huginExecutorPath,
-                                 bool hugin2015,
                                  const QString& enblendPath,
                                  const QString& nonaPath);
 
@@ -88,9 +86,7 @@ public:
                         PanoramaFileType fileType,
                         const QRect& crop,
                         const QString& makePath,
-                        const QString& pto2mkPath,
                         const QString& huginExecutorPath,
-                        bool hugin2015,
                         const QString& enblendPath,
                         const QString& nonaPath);
 
@@ -121,20 +117,6 @@ private Q_SLOTS:
     void slotDone(ThreadWeaver::JobPointer j);
     void slotStepDone(ThreadWeaver::JobPointer j);
     void slotStarting(ThreadWeaver::JobPointer j);
-
-private:
-
-    void appendStitchingJobs(const QSharedPointer<ThreadWeaver::Sequence>& js,
-                             const QUrl& ptoUrl,
-                             QUrl& mkUrl,
-                             QUrl& outputUrl,
-                             const PanoramaItemUrlsMap& preProcessedUrlsMap,
-                             PanoramaFileType fileType,
-                             const QString& makePath,
-                             const QString& pto2mkPath,
-                             const QString& enblendPath,
-                             const QString& nonaPath,
-                             bool preview);
 
 private:
 

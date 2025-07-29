@@ -38,7 +38,6 @@
 #include "enblendbinary.h"
 #include "makebinary.h"
 #include "nonabinary.h"
-#include "pto2mkbinary.h"
 #include "huginexecutorbinary.h"
 #include "dlayoutbox.h"
 
@@ -141,9 +140,7 @@ void PanoPreviewPage::computePreview()
                                                d->mngr->previewUrl(),
                                                d->mngr->preProcessedMap(),
                                                d->mngr->makeBinary().path(),
-                                               d->mngr->pto2MkBinary().path(),
                                                d->mngr->huginExecutorBinary().path(),
-                                               d->mngr->hugin2015(),
                                                d->mngr->enblendBinary().path(),
                                                d->mngr->nonaBinary().path());
 }
@@ -176,15 +173,7 @@ void PanoPreviewPage::startStitching()
     d->canceled      = false;
     d->stitchingBusy = true;
     d->curProgress   = 0;
-
-    if (d->mngr->hugin2015())
-    {
-        d->totalProgress = 1;
-    }
-    else
-    {
-        d->totalProgress = d->mngr->preProcessedMap().size() + 1;
-    }
+    d->totalProgress = 1;
 
     d->previewWidget->hide();
 
@@ -231,9 +220,7 @@ void PanoPreviewPage::startStitching()
                                       d->mngr->format(),
                                       panoSelection,
                                       d->mngr->makeBinary().path(),
-                                      d->mngr->pto2MkBinary().path(),
                                       d->mngr->huginExecutorBinary().path(),
-                                      d->mngr->hugin2015(),
                                       d->mngr->enblendBinary().path(),
                                       d->mngr->nonaBinary().path());
 }

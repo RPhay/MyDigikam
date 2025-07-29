@@ -39,7 +39,6 @@ class EnblendBinary;
 class MakeBinary;
 class NonaBinary;
 class PanoModifyBinary;
-class Pto2MkBinary;
 class HuginExecutorBinary;
 
 class PanoManager : public QObject
@@ -60,9 +59,6 @@ public:
 public:
 
     bool checkBinaries();
-
-    void checkForHugin2015();
-    bool hugin2015()                                    const;
 
     void setGPano(bool gPano);
     bool gPano() const;
@@ -120,7 +116,6 @@ public:
     MakeBinary&             makeBinary()                const;
     NonaBinary&             nonaBinary()                const;
     PanoModifyBinary&       panoModifyBinary()          const;
-    Pto2MkBinary&           pto2MkBinary()              const;
     HuginExecutorBinary&    huginExecutorBinary()       const;
 
     void run();

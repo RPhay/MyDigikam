@@ -235,9 +235,7 @@ void PanoActionThread::generatePanoramaPreview(QSharedPointer<const PTOType> pto
                                                QUrl& previewUrl,
                                                const PanoramaItemUrlsMap& preProcessedUrlsMap,
                                                const QString& makePath,
-                                               const QString& pto2mkPath,
                                                const QString& huginExecutorPath,
-                                               bool hugin2015,
                                                const QString& enblendPath,
                                                const QString& nonaPath)
 {
@@ -256,37 +254,20 @@ void PanoActionThread::generatePanoramaPreview(QSharedPointer<const PTOType> pto
 
     (*jobs) << ptoTask;
 
-    if (!hugin2015)
-    {
-        appendStitchingJobs(jobs,
-                            previewPtoUrl,
-                            previewMkUrl,
-                            previewUrl,
-                            preProcessedUrlsMap,
-                            JPEG,
-                            makePath,
-                            pto2mkPath,
-                            enblendPath,
-                            nonaPath,
-                            true);
-    }
-    else
-    {
-        QObjectDecorator* const huginExecutorTask = new QObjectDecorator(new HuginExecutorTask(d->preprocessingTmpPath,
-                                                                         previewPtoUrl,
-                                                                         previewUrl,
-                                                                         JPEG,
-                                                                         huginExecutorPath,
-                                                                         true));
+    QObjectDecorator* const huginExecutorTask = new QObjectDecorator(new HuginExecutorTask(d->preprocessingTmpPath,
+                                                                     previewPtoUrl,
+                                                                     previewUrl,
+                                                                     JPEG,
+                                                                     huginExecutorPath,
+                                                                     true));
 
-        connect(huginExecutorTask, SIGNAL(started(ThreadWeaver::JobPointer)),
-                this, SLOT(slotStarting(ThreadWeaver::JobPointer)));
+    connect(huginExecutorTask, SIGNAL(started(ThreadWeaver::JobPointer)),
+            this, SLOT(slotStarting(ThreadWeaver::JobPointer)));
 
-        connect(huginExecutorTask, SIGNAL(done(ThreadWeaver::JobPointer)),
-                this, SLOT(slotStepDone(ThreadWeaver::JobPointer)));
+    connect(huginExecutorTask, SIGNAL(done(ThreadWeaver::JobPointer)),
+            this, SLOT(slotStepDone(ThreadWeaver::JobPointer)));
 
-        (*jobs) << huginExecutorTask;
-    }
+    (*jobs) << huginExecutorTask;
 
     d->threadQueue->enqueue(jobs);
 }
@@ -299,9 +280,7 @@ void PanoActionThread::compileProject(QSharedPointer<const PTOType> basePtoData,
                                       PanoramaFileType fileType,
                                       const QRect& crop,
                                       const QString& makePath,
-                                      const QString& pto2mkPath,
                                       const QString& huginExecutorPath,
-                                      bool hugin2015,
                                       const QString& enblendPath,
                                       const QString& nonaPath)
 {
@@ -320,37 +299,20 @@ void PanoActionThread::compileProject(QSharedPointer<const PTOType> basePtoData,
 
     (*jobs) << ptoTask;
 
-    if (!hugin2015)
-    {
-        appendStitchingJobs(jobs,
-                            panoPtoUrl,
-                            mkUrl,
-                            panoUrl,
-                            preProcessedUrlsMap,
-                            fileType,
-                            makePath,
-                            pto2mkPath,
-                            enblendPath,
-                            nonaPath,
-                            false);
-    }
-    else
-    {
-        QObjectDecorator* const huginExecutorTask = new QObjectDecorator(new HuginExecutorTask(d->preprocessingTmpPath,
-                                                                         panoPtoUrl,
-                                                                         panoUrl,
-                                                                         fileType,
-                                                                         huginExecutorPath,
-                                                                         false));
+    QObjectDecorator* const huginExecutorTask = new QObjectDecorator(new HuginExecutorTask(d->preprocessingTmpPath,
+                                                                     panoPtoUrl,
+                                                                     panoUrl,
+                                                                     fileType,
+                                                                     huginExecutorPath,
+                                                                     false));
 
-        connect(huginExecutorTask, SIGNAL(started(ThreadWeaver::JobPointer)),
-                this, SLOT(slotStarting(ThreadWeaver::JobPointer)));
+    connect(huginExecutorTask, SIGNAL(started(ThreadWeaver::JobPointer)),
+            this, SLOT(slotStarting(ThreadWeaver::JobPointer)));
 
-        connect(huginExecutorTask, SIGNAL(done(ThreadWeaver::JobPointer)),
-                this, SLOT(slotStepDone(ThreadWeaver::JobPointer)));
+    connect(huginExecutorTask, SIGNAL(done(ThreadWeaver::JobPointer)),
+            this, SLOT(slotStepDone(ThreadWeaver::JobPointer)));
 
-        (*jobs) << huginExecutorTask;
-    }
+    (*jobs) << huginExecutorTask;
 
     d->threadQueue->enqueue(jobs);
 }
@@ -465,74 +427,6 @@ void PanoActionThread::slotDone(JobPointer j)
     }
 
     Q_EMIT jobCollectionFinished(ad);
-}
-
-void PanoActionThread::appendStitchingJobs(const QSharedPointer<Sequence>& js,
-                                           const QUrl& ptoUrl,
-                                           QUrl& mkUrl,
-                                           QUrl& outputUrl,
-                                           const PanoramaItemUrlsMap& preProcessedUrlsMap,
-                                           PanoramaFileType fileType,
-                                           const QString& makePath,
-                                           const QString& pto2mkPath,
-                                           const QString& enblendPath,
-                                           const QString& nonaPath,
-                                           bool preview)
-{
-    QSharedPointer<Sequence> jobs(new Sequence());
-
-    QObjectDecorator* const createMKTask = new QObjectDecorator(new CreateMKTask(d->preprocessingTmpPath,
-                                                                ptoUrl,
-                                                                mkUrl,
-                                                                outputUrl,
-                                                                fileType,
-                                                                pto2mkPath,
-                                                                preview));
-
-    connect(createMKTask, SIGNAL(started(ThreadWeaver::JobPointer)),
-            this, SLOT(slotStarting(ThreadWeaver::JobPointer)));
-
-    connect(createMKTask, SIGNAL(done(ThreadWeaver::JobPointer)),
-            this, SLOT(slotStepDone(ThreadWeaver::JobPointer)));
-
-    (*jobs) << createMKTask;
-
-    for (int i = 0 ; i < preProcessedUrlsMap.size() ; ++i)
-    {
-        QObjectDecorator* const t = new QObjectDecorator(new CompileMKStepTask(d->preprocessingTmpPath,
-                                                         i,
-                                                         mkUrl,
-                                                         nonaPath,
-                                                         enblendPath,
-                                                         makePath,
-                                                         preview));
-
-        connect(t, SIGNAL(started(ThreadWeaver::JobPointer)),
-                this, SLOT(slotStarting(ThreadWeaver::JobPointer)));
-
-        connect(t, SIGNAL(done(ThreadWeaver::JobPointer)),
-                this, SLOT(slotStepDone(ThreadWeaver::JobPointer)));
-
-        (*jobs) << t;
-    }
-
-    QObjectDecorator* const compileMKTask = new QObjectDecorator(new CompileMKTask(d->preprocessingTmpPath,
-                                                                 mkUrl,
-                                                                 outputUrl,
-                                                                 nonaPath,
-                                                                 enblendPath,
-                                                                 makePath,
-                                                                 preview));
-
-    connect(compileMKTask, SIGNAL(started(ThreadWeaver::JobPointer)),
-            this, SLOT(slotStarting(ThreadWeaver::JobPointer)));
-
-    connect(compileMKTask, SIGNAL(done(ThreadWeaver::JobPointer)),
-            this, SLOT(slotDone(ThreadWeaver::JobPointer)));
-
-    (*jobs) << compileMKTask;
-
-    (*js) << jobs;
 }
 
 } // namespace DigikamGenericPanoramaPlugin

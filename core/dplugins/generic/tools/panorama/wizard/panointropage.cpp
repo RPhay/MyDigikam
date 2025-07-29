@@ -43,7 +43,6 @@
 #include "makebinary.h"
 #include "nonabinary.h"
 #include "panomodifybinary.h"
-#include "pto2mkbinary.h"
 #include "huginexecutorbinary.h"
 #include "dlayoutbox.h"
 
@@ -110,17 +109,7 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
     d->binariesWidget->addBinary(d->mngr->makeBinary());
     d->binariesWidget->addBinary(d->mngr->nonaBinary());
     d->binariesWidget->addBinary(d->mngr->panoModifyBinary());
-
-    d->mngr->checkForHugin2015();
-
-    if (d->mngr->hugin2015())
-    {
-        d->binariesWidget->addBinary(d->mngr->huginExecutorBinary());
-    }
-    else
-    {
-        d->binariesWidget->addBinary(d->mngr->pto2MkBinary());
-    }
+    d->binariesWidget->addBinary(d->mngr->huginExecutorBinary());
 
     d->mngr->checkBinaries();
 
