@@ -503,7 +503,7 @@ void delayForRemoteDebuging()
 
     if (remoteDebug.toUpper() == "ON")
     {
-        qDebug() << "Waiting" << delaySecs << "seconds for a remote debugging...";
+        qDebug() << "Waiting" << delaySecs << "seconds for remote debugging...";
         qDebug() << "Current process ID           :" << qApp->applicationPid();
         qDebug() << "Current process binary path  :" << qApp->applicationFilePath();
 
