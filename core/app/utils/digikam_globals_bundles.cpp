@@ -488,13 +488,51 @@ void setMacOSEnvironment()
 
 void setWindowsEnvironment(QApplication& app)
 {
-
     // michmill - should probably remove QApplication app from function signature and use
     // QCoreApplication::applicationDirPath() below but I don't have a Windows
     // machine to test with
 
     qputenv("MAGICK_CODER_MODULE_PATH", app.applicationDirPath().toUtf8());
     qputenv("MAGICK_CODER_FILTER_PATH", app.applicationDirPath().toUtf8());
+}
+
+void delayForRemoteDebuging()
+{
+    const int delaySecs          = 30;                          ///< Waiting time in seconds.
+    const QByteArray remoteDebug = qgetenv("DIGIKAM_REMOTE_DEBUG");
+
+    if (remoteDebug.toUpper() == "ON")
+    {
+        qDebug() << "Waiting" << delaySecs << "for a remote debugging...";
+        qDebug() << "Current process ID           :" << qApp->applicationPid();
+        qDebug() << "Current process binary path  :" << qApp->applicationFilePath();
+
+#if not defined Q_OS_WIN
+
+        qDebug() << "Command line to attach to GDB:" ;
+        qDebug() << "sudo gdb" << qApp->applicationFilePath() <<"-p"<< qApp->applicationPid();
+
+#endif
+
+        QTime dwellTime = QTime::currentTime().addSecs(delaySecs);
+        int diff        = 0;
+        QElapsedTimer etimer;
+        etimer.start();
+
+        do
+        {
+            diff = QTime::currentTime().secsTo(dwellTime);
+
+            if (etimer.elapsed() > 1000)
+            {
+                printf("Countdown: %i  \r", diff);
+                fflush(stdout);
+                QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+                etimer.restart();
+            }
+        }
+        while (diff > 0);
+    }
 }
 
 } // namespace Digikam

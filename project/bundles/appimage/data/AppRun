@@ -221,23 +221,25 @@ if   [[ $1 == "showfoto" ]] ; then
 
 elif [[ $1 == "debug" ]] ; then
 
+    export DIGIKAM_REMOTE_DEBUG=ON
+
     if   [[ $2 == "showfoto" ]] ; then
 
         # Showfoto in debug mode.
 
-        echo "Starting Showfoto into GDB..."
+        echo "Starting delayed Showfoto for remote debuging..."
         echo "Use 'bt' command on debugger prompt to get a crash backtrace."
         echo "Use 'q' command to quit debugger session."
-        gdb -ex=r --args showfoto ${@:3}
+        showfoto ${@:3}
 
     else
 
         # digiKam in debug mode.
 
-        echo "Starting digiKam into GDB..."
+        echo "Starting delayed digiKam for remote debuging..."
         echo "Use 'bt' command on debugger prompt to get a crash backtrace."
         echo "Use 'q' command to quit debugger session."
-        gdb -ex=r --args digikam ${@:2}
+        digikam ${@:2}
 
     fi
 
@@ -248,8 +250,8 @@ elif [[ $1 == "help" ]] ; then
     echo "digiKam AppImage bundle CLI options:"
     echo " without option       : run digiKam."
     echo " <showfoto>           : run Showfoto instead digiKam."
-    echo " <debug>              : run digiKam into GDB."
-    echo " <debug> <showfoto>   : run Showfoto into GDB."
+    echo " <debug>              : run digiKam and wait at startup to be attached to a remote GDB instance (only suitable with the AppImage compiled with debug symbols)."
+    echo " <debug> <showfoto>   : run Showfoto and wait at startup to be attached to a remote GDB instance (only suitable with the AppImage compiled with debug symbols)."
     echo " <help>               : show these information."
 
 else

@@ -192,6 +192,8 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     QApplication app(argc, argv);
 
+    delayForRemoteDebuging();
+
     digikamSetDebugFilterRules(system.enableLogging);
 
 #ifdef HAVE_IMAGE_MAGICK

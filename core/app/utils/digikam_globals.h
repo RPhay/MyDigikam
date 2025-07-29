@@ -295,4 +295,11 @@ DIGIKAM_EXPORT QDateTime asDateTimeLocal(const QDateTime& dt);
  */
 DIGIKAM_EXPORT void openOnlineDocumentation(const QString& section = QString(), const QString& chapter = QString(), const QString& reference = QString());
 
+/**
+ * @brief function to wait attachement from a remote debugger before to continue execution.
+ * This method must be called just after the QApplication instance.
+ * This method is only active if the DIGIKAM_REMOTE_DEBUG env.var is declared to ON before to start the program.
+ */
+DIGIKAM_EXPORT void delayForRemoteDebuging()
+
 } // namespace Digikam
