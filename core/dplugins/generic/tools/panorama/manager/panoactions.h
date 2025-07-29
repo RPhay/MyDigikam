@@ -36,16 +36,15 @@ enum PanoAction
     PANO_OPTIMIZE,                   // 5
     PANO_AUTOCROP,                   // 6
     PANO_CREATEPREVIEWPTO,           // 7
-    PANO_CREATEMK,                   // 8
-    PANO_CREATEMKPREVIEW,            // 9
-    PANO_CREATEFINALPTO,             // 10
-    PANO_NONAFILE,                   // 11
-    PANO_NONAFILEPREVIEW,            // 12
-    PANO_STITCH,                     // 13
-    PANO_STITCHPREVIEW,              // 14
-    PANO_HUGINEXECUTOR,              // 15
-    PANO_HUGINEXECUTORPREVIEW,       // 16
-    PANO_COPY                        // 17
+    PANO_CREATEMKPREVIEW,            // 8
+    PANO_CREATEFINALPTO,             // 9
+    PANO_NONAFILE,                   // 10
+    PANO_NONAFILEPREVIEW,            // 11
+    PANO_STITCH,                     // 12
+    PANO_STITCHPREVIEW,              // 13
+    PANO_HUGINEXECUTOR,              // 14
+    PANO_HUGINEXECUTORPREVIEW,       // 15
+    PANO_COPY                        // 16
 };
 
 typedef enum

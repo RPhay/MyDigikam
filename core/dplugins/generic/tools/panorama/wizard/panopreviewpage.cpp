@@ -362,36 +362,6 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     break;
                 }
 
-                case PANO_CREATEMK:
-                {
-                    if (!d->stitchingBusy)
-                    {
-                        return;
-                    }
-
-                    disconnect(d->mngr->thread(), SIGNAL(starting(DigikamGenericPanoramaPlugin::PanoActionData)),
-                               this, SLOT(slotPanoAction(DigikamGenericPanoramaPlugin::PanoActionData)));
-
-                    disconnect(d->mngr->thread(), SIGNAL(stepFinished(DigikamGenericPanoramaPlugin::PanoActionData)),
-                               this, SLOT(slotPanoAction(DigikamGenericPanoramaPlugin::PanoActionData)));
-
-                    disconnect(d->mngr->thread(), SIGNAL(jobCollectionFinished(DigikamGenericPanoramaPlugin::PanoActionData)),
-                               this, SLOT(slotPanoAction(DigikamGenericPanoramaPlugin::PanoActionData)));
-
-                    d->stitchingBusy = false;
-                    QString message  = i18nc("Here a makefile is a script for GNU Make",
-                                             "<p><b>Cannot create makefile: </b></p><p>%1</p>",
-                                             ad.message);
-                    qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "pto2mk call failed";
-                    d->postProcessing->addEntry(message, DHistoryView::ErrorEntry);
-
-                    setComplete(false);
-
-                    Q_EMIT completeChanged();
-
-                    break;
-                }
-
                 case PANO_CREATEFINALPTO:
                 {
                     if (!d->stitchingBusy)
@@ -499,7 +469,6 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                 case PANO_CREATEMKPREVIEW:
                 case PANO_NONAFILEPREVIEW:
                 case PANO_CREATEFINALPTO:
-                case PANO_CREATEMK:
                 {
                     // Nothing to do yet, a step is finished, that's all
 
@@ -615,7 +584,6 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
             case PANO_NONAFILEPREVIEW:
             case PANO_STITCHPREVIEW:
             case PANO_CREATEFINALPTO:
-            case PANO_CREATEMK:
             case PANO_HUGINEXECUTORPREVIEW:
             {
                 // Nothing to do...
