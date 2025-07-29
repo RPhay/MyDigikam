@@ -52,8 +52,6 @@ bool AutoRotator::loadModel()
             // verify we can get the underlying neural net
 
             model->getNet();
-
-            qCDebug(DIGIKAM_AUTOROTATE_LOG) << "AutoRotator::loadModel: AutoRotate model loaded";
         }
         catch (cv::Exception& e)
         {

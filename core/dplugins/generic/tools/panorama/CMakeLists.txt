@@ -96,7 +96,6 @@ set(panoramaplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/cpcleantask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/optimisationtask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/autocroptask.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/tasks/createmktask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/compilemksteptask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/compilemktask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/huginexecutortask.cpp
