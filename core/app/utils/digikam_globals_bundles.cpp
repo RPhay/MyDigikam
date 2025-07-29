@@ -507,7 +507,7 @@ void delayForRemoteDebuging()
         qDebug() << "Current process ID           :" << qApp->applicationPid();
         qDebug() << "Current process binary path  :" << qApp->applicationFilePath();
 
-#if not defined Q_OS_WIN
+#ifndef Q_OS_WIN
 
         qDebug() << "Command line to attach to GDB:" ;
         qDebug() << "sudo gdb" << qApp->applicationFilePath() <<"-p"<< qApp->applicationPid();

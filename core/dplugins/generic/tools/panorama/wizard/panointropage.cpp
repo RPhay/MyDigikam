@@ -253,7 +253,7 @@ bool PanoIntroPage::binariesFound()
 
 void PanoIntroPage::slotToggleGPano(int state)
 {
-    d->mngr->setGPano(state);
+    d->mngr->setGPano((bool)state);
 }
 
 void PanoIntroPage::slotChangeFileFormat(QAbstractButton* button)

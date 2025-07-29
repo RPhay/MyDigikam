@@ -88,7 +88,7 @@ public:
     QUrl                           mkUrl;
     QUrl                           panoUrl;
 
-    bool                           gPano;
+    bool                           gPano                        = false;
 /*
     bool                           hdr;
 */
