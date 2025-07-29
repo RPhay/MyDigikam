@@ -659,7 +659,12 @@ void TagsManager::slotSaveTags()
     {
         TAlbum* const tag = static_cast<TAlbum*>(*it);
 
-        if (tag && !tag->isRoot() && !tag->isInternalTag())
+        if (
+            tag                                    &&
+            !tag->isRoot()                         &&
+            !tag->isInternalTag()                  &&
+            !FaceTags::isSystemPersonTagId(tag->id())
+           )
         {
             sortedPaths << tag->tagPath();
         }
