@@ -496,21 +496,35 @@ void setWindowsEnvironment(QApplication& app)
     qputenv("MAGICK_CODER_FILTER_PATH", app.applicationDirPath().toUtf8());
 }
 
-void delayForRemoteDebuging()
+void delayForRemoteDebuging(int delaySecs)
 {
-    const int delaySecs          = 30;                          ///< Waiting time in seconds.
     const QByteArray remoteDebug = qgetenv("DIGIKAM_REMOTE_DEBUG");
 
     if (remoteDebug.toUpper() == "ON")
     {
         qDebug() << "Waiting" << delaySecs << "seconds for remote debugging...";
-        qDebug() << "Current process ID           :" << qApp->applicationPid();
-        qDebug() << "Current process binary path  :" << qApp->applicationFilePath();
+        qDebug() << "Current process ID         :" << qApp->applicationPid();
+        qDebug() << "Current process binary path:" << qApp->applicationFilePath();
 
 #ifndef Q_OS_WIN
 
-        qDebug() << "Command line to attach to GDB:" ;
-        qDebug() << "sudo gdb" << qApp->applicationFilePath() <<"-p"<< qApp->applicationPid();
+        QString appImageGDBOpt1;
+        QString appImageGDBOpt2;
+
+        if (isRunningInAppImageBundle())
+        {
+            appImageGDBOpt1 = QString::fromUtf8("-ex \"set sysroot %1/../..\"").arg(qApp->applicationDirPath());
+            appImageGDBOpt2 = QString::fromUtf8("-ex \"set solib-search-path %1/../lib\"").arg(qApp->applicationDirPath());
+        }
+
+        qDebug() << "Command line to attach GDB :"
+                 << "sudo gdb" << qApp->applicationFilePath()                   // Absolute path to the binary.
+                               << "-p"<< qApp->applicationPid()                 // Process PID.
+                               << "-ex \"catch throw\""                         // Handle the C++ exceptions.
+                               << appImageGDBOpt1.toUtf8().constData()          // Extra option for AppImage: sandboxed area root path.
+                               << appImageGDBOpt2.toUtf8().constData()          // Extra option for AppImage: internal path to shared libs.
+                               << "-ex c"                                       // Continue the execution.
+        ;
 
 #endif
 

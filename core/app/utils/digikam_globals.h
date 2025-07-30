@@ -300,6 +300,6 @@ DIGIKAM_EXPORT void openOnlineDocumentation(const QString& section = QString(), 
  * This method must be called just after the QApplication instance.
  * This method is only active if the DIGIKAM_REMOTE_DEBUG env.var is declared to ON before to start the program.
  */
-DIGIKAM_EXPORT void delayForRemoteDebuging();
+DIGIKAM_EXPORT void delayForRemoteDebuging(int delaySecs = 30);
 
 } // namespace Digikam
