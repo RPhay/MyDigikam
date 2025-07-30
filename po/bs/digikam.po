@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 02:01+0000\n"
+"POT-Creation-Date: 2025-07-30 01:58+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -2992,7 +2992,7 @@ msgstr "&Pomoć"
 msgid "Main Toolbar"
 msgstr "Glavna alatna traka"
 
-#: core/app/main/main.cpp:227 core/app/views/stack/welcomepageview.cpp:235
+#: core/app/main/main.cpp:229 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -3002,7 +3002,7 @@ msgstr "Glavna alatna traka"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:236 core/showfoto/main/main.cpp:211
+#: core/app/main/main.cpp:238 core/showfoto/main/main.cpp:213
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -3011,7 +3011,7 @@ msgstr ""
 "Amila Dzano,Amir Šabanović,Arnela Besic,Nermina Ahmić,Vedran Ljubovic,Boja "
 "Nermin"
 
-#: core/app/main/main.cpp:237 core/showfoto/main/main.cpp:212
+#: core/app/main/main.cpp:239 core/showfoto/main/main.cpp:214
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -3020,24 +3020,24 @@ msgstr ""
 "asalkanovi2@etf.unsa.ba,adzano1@etf.unsa.ba,asabanovic3@etf.unsa.ba,archy-"
 "b@hotmail.com,na@etf.unsa.ba,vljubovic@smartnet.ba,nboja1@etf.unsa.ba"
 
-#: core/app/main/main.cpp:245
+#: core/app/main/main.cpp:247
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "Otvori dijalog za fotoaparat na <putanji>"
 
-#: core/app/main/main.cpp:248
+#: core/app/main/main.cpp:250
 #, fuzzy, kde-format
 #| msgid "Open camera dialog for the device with Solid UDI <udi>"
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Otvori dijalog za kameru za uređaj sa Solid UDI<udi>"
 
-#: core/app/main/main.cpp:251
+#: core/app/main/main.cpp:253
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Automatski otkrij i otvori povezanu gphoto2 kameru"
 
-#: core/app/main/main.cpp:253
+#: core/app/main/main.cpp:255
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start digikam with the SQLite database file found in the directory <dir>"
@@ -3047,7 +3047,7 @@ msgstr ""
 "Pokreni digikam sa SQLite datotekom baze podataka pronađenoj u direktoriju "
 "<dir>"
 
-#: core/app/main/main.cpp:256
+#: core/app/main/main.cpp:258
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start digikam with the SQLite database file found in the directory <dir>"
@@ -3056,7 +3056,7 @@ msgstr ""
 "Pokreni digikam sa SQLite datotekom baze podataka pronađenoj u direktoriju "
 "<dir>"
 
-#: core/app/main/main.cpp:289
+#: core/app/main/main.cpp:291
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -3067,7 +3067,7 @@ msgstr ""
 "molimo, instalirajte ga.\n"
 "Ne postoji instaliran dodatak za baze podataka na vašem računaru."
 
-#: core/app/main/main.cpp:298
+#: core/app/main/main.cpp:300
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -3078,7 +3078,7 @@ msgstr ""
 "molimo, instalirajte ga.\n"
 "Dodaci za baze podataka instalirani na vašem računaru su izlistani ispod:"
 
-#: core/app/main/main.cpp:342
+#: core/app/main/main.cpp:344
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3577,7 +3577,7 @@ msgid "Tools"
 msgstr "Alati"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:1006
+#: core/libs/tags/manager/tagsmanager.cpp:1011
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgid "Help"
@@ -18053,7 +18053,7 @@ msgid "Revert current settings to default values."
 msgstr "Resetujte trenutne postavke alata na zadane vrijednosti."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:93
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:92
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@action:button"
@@ -18241,7 +18241,7 @@ msgid "For more information, please take a look at"
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:99
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
 #, fuzzy, kde-format
 #| msgid "Next Image"
 msgctxt "@info"
@@ -20203,21 +20203,21 @@ msgstr "Prikažite datum stvaranja slike"
 msgid "Raw file conversion failed."
 msgstr "Konverzija baze podataka otkazana."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:79
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:78
 #, fuzzy, kde-format
 #| msgid "<b>Welcome to Panorama Tool</b>"
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "<b>Dobrodošli u Panorama alat</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
 #, fuzzy, kde-format
 #| msgid "<b>Welcome to Panorama Tool</b>"
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "<b>Dobrodošli u Panorama alat</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -20225,7 +20225,7 @@ msgid ""
 "seam between images not visible."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -20233,40 +20233,40 @@ msgid ""
 "stitching them into a panorama."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:104
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:103
 #, fuzzy, kde-format
 #| msgid "Panoramic view"
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "Panoramski pogled"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:158
 #, fuzzy, kde-format
 #| msgid "File Format"
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "Format datoteke"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:173
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:162
 #, fuzzy, kde-format
 #| msgid "JPEG output"
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "JPEG izlaz"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:167
 #, fuzzy, no-c-format, kde-format
 #| msgid ""
 #| "Selects a JPEG output with 90% compression rate (lossy compression, "
@@ -20279,7 +20279,7 @@ msgstr ""
 "Odaberite JPEG izlaz sa 90% kompresije (kompresija sa gubitkom, manja "
 "veličina)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:180
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>JPEG output</b>: Using JPEG output, the panorama file will be smaller "
@@ -20295,14 +20295,14 @@ msgstr ""
 "zamjenu za gubitak informacija tokom kompresije. Ovo je najlakši naćin za "
 "dijeljenje rezultata, ili printanje online ili u prodavnici."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:186
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:175
 #, fuzzy, kde-format
 #| msgid "TIFF Properties"
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "TIFF osobine"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:187
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:176
 #, fuzzy, kde-format
 #| msgid ""
 #| "Selects a TIFF output compressed using the LZW algorithm (lossless "
@@ -20315,7 +20315,7 @@ msgstr ""
 "Odaberite TIFF izlaz kopresovan LZW algoritmom (manji gubitak informacija, "
 "veća veličina)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:189
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>TIFF output</b>: Using TIFF output, you get the same color depth than "
@@ -20676,70 +20676,64 @@ msgid ""
 "overlaps between images. For that purpose, the \"%1\" program will be used."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:81
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:80
 #, fuzzy, kde-format
 #| msgid "<b>Preview and Post-Processing</b>"
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>Pregled i završna obrada</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:131
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:130
 #, fuzzy, kde-format
 #| msgid "Processing..."
 msgid "Processing Panorama Preview..."
 msgstr "Obrađujem..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:212
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:201
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>Panorama završna obrada</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:218
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:207
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "Kasnije procesiranje"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:300
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:287
 #, fuzzy, kde-format
 #| msgid "Process Cancelled..."
 msgid "Preview Processing Cancelled."
 msgstr "Proces otkazan..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:362
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:349
 #, fuzzy, kde-format
 #| msgid "<qt><h2><b>Error</b></h2><p>%1</p></qt>"
 msgid "<h1><b>Error</b></h1><p>%1</p>"
 msgstr "<qt><h2><b>Greška</b></h2><p>%1</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:396
-#, kde-format
-msgctxt "Here a makefile is a script for GNU Make"
-msgid "<p><b>Cannot create makefile: </b></p><p>%1</p>"
-msgstr ""
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:426
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:383
 #, kde-format
 msgctxt "a project file is a .pto file, as given to hugin to build a panorama"
 msgid "<p><b>Cannot create project file: </b></p><p>%1</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:456
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:413
 #, fuzzy, kde-format
 #| msgid "Processing file %1 / %2: %3"
 msgctxt "Error message for image file number %1 out of %2"
 msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
 msgstr "Procesuiranje datoteka %1 / %2: %3"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:489
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:446
 #, fuzzy, kde-format
 #| msgid "Panorama compilation: %1"
 msgctxt "Error message for panorama compilation"
 msgid "<p><b>Panorama compilation: </b></p><p>%1</p>"
 msgstr "Panorama kompilacija: %1"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:541
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:497
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p><h1>Panorama Preview</h1></p><p>Draw a rectangle if you want to "
@@ -20754,26 +20748,26 @@ msgstr ""
 "sliku.</p><p>Pritiskom na <i>Sljedeći</i> dugme će pokrenuti završni proces "
 "spajanja.</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:568
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:524
 #, fuzzy, kde-format
 msgctxt "Success for image file number %1 out of %2"
 msgid "Processing file %1 / %2"
 msgstr "Spasi u datoteku"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:597
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:553
 #, fuzzy, kde-format
 #| msgid "Panorama Tool and Mentoring"
 msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
 msgstr "Panorama alat i mentorstvo"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:642
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:597
 #, fuzzy, kde-format
 msgctxt "Compilation started for image file number %1 out of %2"
 msgid "Processing file %1 / %2"
 msgstr "Spasi u datoteku"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:654
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:609
 #, fuzzy, kde-format
 #| msgid "Panorama Tool and Mentoring"
 msgctxt "Panorama compilation started"
@@ -29502,7 +29496,7 @@ msgstr "Album oznaka"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:157
-#: core/libs/tags/manager/tagsmanager.cpp:873
+#: core/libs/tags/manager/tagsmanager.cpp:878
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -42644,40 +42638,40 @@ msgid "Delete Tags"
 msgstr "Izbriši oznake"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:147
-#: core/libs/tags/manager/tagsmanager.cpp:860
+#: core/libs/tags/manager/tagsmanager.cpp:865
 #, fuzzy, kde-format
 #| msgid "Edit Titles"
 msgid "Edit Tag Title"
 msgstr "Izmjeni naslove"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:151
-#: core/libs/tags/manager/tagsmanager.cpp:864
+#: core/libs/tags/manager/tagsmanager.cpp:869
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Resetuj ikonu oznake"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:154
-#: core/libs/tags/manager/tagsmanager.cpp:870
+#: core/libs/tags/manager/tagsmanager.cpp:875
 #, kde-format
 msgid "Invert Selection"
 msgstr "Obrni izbor"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:160
-#: core/libs/tags/manager/tagsmanager.cpp:876
+#: core/libs/tags/manager/tagsmanager.cpp:881
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Proširi stablo oznaka"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:163
-#: core/libs/tags/manager/tagsmanager.cpp:879
+#: core/libs/tags/manager/tagsmanager.cpp:884
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Collapse Tag Tree"
 msgstr "Po albumu"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:166
-#: core/libs/tags/manager/tagsmanager.cpp:882
+#: core/libs/tags/manager/tagsmanager.cpp:887
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Ukloni oznaku sa slika"
@@ -42865,7 +42859,7 @@ msgctxt "@title:window"
 msgid "Choose Export Tag File"
 msgstr "Koristi postojeći fajl"
 
-#: core/libs/tags/manager/tagsmanager.cpp:685
+#: core/libs/tags/manager/tagsmanager.cpp:690
 #, fuzzy, kde-format
 #| msgid "Close view"
 msgctxt "@title:window"
@@ -42873,7 +42867,7 @@ msgid "Choose Import Tag File"
 msgstr "Blizak pogled"
 
 #         translations.
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -42881,7 +42875,7 @@ msgstr[0] "Da li stvarno želite ukloniti izabranu oznaku sa svih slika?"
 msgstr[1] "Da li stvarno želite ukloniti izabrane oznake sa svih slika?"
 msgstr[2] "Da li stvarno želite ukloniti izabrane oznake sa svih slika?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:836
+#: core/libs/tags/manager/tagsmanager.cpp:841
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Organize"
@@ -42889,26 +42883,26 @@ msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organiziraj"
 
-#: core/libs/tags/manager/tagsmanager.cpp:839
+#: core/libs/tags/manager/tagsmanager.cpp:844
 #, fuzzy, kde-format
 #| msgid "Sync &Export"
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Sinhronizacija i izvoz"
 
-#: core/libs/tags/manager/tagsmanager.cpp:867
+#: core/libs/tags/manager/tagsmanager.cpp:872
 #, fuzzy, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Nedavno pridružene oznake"
 
-#: core/libs/tags/manager/tagsmanager.cpp:887
+#: core/libs/tags/manager/tagsmanager.cpp:892
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Dodaj novu oznaku na trenutnu oznaku. Trenutna oznaka je posljednja kliknuta "
 "oznaka."
 
-#: core/libs/tags/manager/tagsmanager.cpp:890
+#: core/libs/tags/manager/tagsmanager.cpp:895
 #, fuzzy, kde-format
 #| msgid ""
 #| "Delete selected items. Also work with multiple items, but won't delete "
@@ -42920,84 +42914,84 @@ msgstr ""
 "Izbriši označene stavke. Radi i sa višestrukim stavkama, bez brisanja "
 "korjenske oznake."
 
-#: core/libs/tags/manager/tagsmanager.cpp:894
+#: core/libs/tags/manager/tagsmanager.cpp:899
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Edit title from selected tag."
 msgstr "Ukloni odabranu oznaku"
 
-#: core/libs/tags/manager/tagsmanager.cpp:896
+#: core/libs/tags/manager/tagsmanager.cpp:901
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "Ponovo namjesti ikonu sa odabranim oznakama. Radi sa više odabira."
 
-#: core/libs/tags/manager/tagsmanager.cpp:899
+#: core/libs/tags/manager/tagsmanager.cpp:904
 #, fuzzy, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 "Obrišite sve oznake samo iz baze podataka. Neće se sinhronizovati sa "
 "datotekama. Nastavite uz oprez."
 
-#: core/libs/tags/manager/tagsmanager.cpp:901
+#: core/libs/tags/manager/tagsmanager.cpp:906
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Okreni odabir. Samo vidljive stavke će biti odabrane."
 
-#: core/libs/tags/manager/tagsmanager.cpp:904
+#: core/libs/tags/manager/tagsmanager.cpp:909
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Odabrane stavke će biti proširene"
 
-#: core/libs/tags/manager/tagsmanager.cpp:906
+#: core/libs/tags/manager/tagsmanager.cpp:911
 #, fuzzy, kde-format
 #| msgid "Expand tag tree by one level"
 msgid "Expand tag tree completely"
 msgstr "Proširi stablo oznaka za još jedan nivo"
 
-#: core/libs/tags/manager/tagsmanager.cpp:908
+#: core/libs/tags/manager/tagsmanager.cpp:913
 #, fuzzy, kde-format
 #| msgid "Slideshow Usage"
 msgid "Collapse tag tree completely"
 msgstr "Iskoristivost projekcije slajdova"
 
-#: core/libs/tags/manager/tagsmanager.cpp:910
+#: core/libs/tags/manager/tagsmanager.cpp:915
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr "Izbriši odabranu(e) oznaku(e) sa slika. Radi sa više odabira."
 
-#: core/libs/tags/manager/tagsmanager.cpp:954
+#: core/libs/tags/manager/tagsmanager.cpp:959
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Prepiši oznake iz baze podataka na sliku"
 
-#: core/libs/tags/manager/tagsmanager.cpp:957
+#: core/libs/tags/manager/tagsmanager.cpp:962
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Pročitaj oznake sa slike"
 
-#: core/libs/tags/manager/tagsmanager.cpp:960
+#: core/libs/tags/manager/tagsmanager.cpp:965
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Brisanje svih oznaka samo iz baze podataka"
 
-#: core/libs/tags/manager/tagsmanager.cpp:963
+#: core/libs/tags/manager/tagsmanager.cpp:968
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgid "Export all tags to a file"
 msgstr "Upiši metapodatke u svaku datoteku"
 
-#: core/libs/tags/manager/tagsmanager.cpp:966
+#: core/libs/tags/manager/tagsmanager.cpp:971
 #, fuzzy, kde-format
 #| msgid "Remove Tag from Images"
 msgid "Import all tags from a file"
 msgstr "Ukloni oznaku sa slika"
 
-#: core/libs/tags/manager/tagsmanager.cpp:968
+#: core/libs/tags/manager/tagsmanager.cpp:973
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Prepiši oznake metapodataka na sliku."
 
-#: core/libs/tags/manager/tagsmanager.cpp:970
+#: core/libs/tags/manager/tagsmanager.cpp:975
 #, fuzzy, kde-format
 #| msgid "Read tags from Images into Database. Existing tags won't be affected"
 msgid "Read tags from Images into Database. Existing tags will not be affected"
@@ -43005,7 +42999,7 @@ msgstr ""
 "Pročitaj oznake sa slika u bazu podataka. To neće utjecati na postojeće "
 "oznake."
 
-#: core/libs/tags/manager/tagsmanager.cpp:973
+#: core/libs/tags/manager/tagsmanager.cpp:978
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -43014,17 +43008,17 @@ msgstr ""
 "Obrišite sve oznake samo iz baze podataka. Neće se sinhronizovati sa "
 "datotekama. Nastavite uz oprez."
 
-#: core/libs/tags/manager/tagsmanager.cpp:976
+#: core/libs/tags/manager/tagsmanager.cpp:981
 #, kde-format
 msgid "Export all tags to a file to keep a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:978
+#: core/libs/tags/manager/tagsmanager.cpp:983
 #, kde-format
 msgid "Import all tags from a file to restore a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1007
+#: core/libs/tags/manager/tagsmanager.cpp:1012
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -53683,13 +53677,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Direktorij: "
 
-#: core/showfoto/main/main.cpp:202
+#: core/showfoto/main/main.cpp:204
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:220
+#: core/showfoto/main/main.cpp:222
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"

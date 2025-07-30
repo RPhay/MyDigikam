@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 02:01+0000\n"
+"POT-Creation-Date: 2025-07-30 01:58+0000\n"
 "PO-Revision-Date: 2025-07-27 19:36+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2682,7 +2682,7 @@ msgstr "&Laguntza"
 msgid "Main Toolbar"
 msgstr "Tresna-barra nagusia"
 
-#: core/app/main/main.cpp:227 core/app/views/stack/welcomepageview.cpp:235
+#: core/app/main/main.cpp:229 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2692,34 +2692,34 @@ msgstr "Tresna-barra nagusia"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:236 core/showfoto/main/main.cpp:211
+#: core/app/main/main.cpp:238 core/showfoto/main/main.cpp:213
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Iñaki Larrañaga Murgoitio;Iñigo Salvador Azurmendi"
 
-#: core/app/main/main.cpp:237 core/showfoto/main/main.cpp:212
+#: core/app/main/main.cpp:239 core/showfoto/main/main.cpp:214
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "dooteo@euskalgnu.org;xalba@ni.eus"
 
-#: core/app/main/main.cpp:245
+#: core/app/main/main.cpp:247
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Ireki kameraren elkarrizketa-koadroa \"bide-izenen\"ean"
 
-#: core/app/main/main.cpp:248
+#: core/app/main/main.cpp:250
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Ireki kameraren elkarrizketa-koadroa Solid UDI \"udi\" erabiliz"
 
-#: core/app/main/main.cpp:251
+#: core/app/main/main.cpp:253
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Automatikoki antzeman eta ireki konektatutako gphoto2 kamera bat"
 
-#: core/app/main/main.cpp:253
+#: core/app/main/main.cpp:255
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2727,12 +2727,12 @@ msgstr ""
 "Abiarazi digiKam \"dir\" direktorioan aurkitutako SQLite datu-base "
 "fitxategiarekin"
 
-#: core/app/main/main.cpp:256
+#: core/app/main/main.cpp:258
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Abiarazi digiKam konfiguratzeko \"config\" fitxategiarekin"
 
-#: core/app/main/main.cpp:289
+#: core/app/main/main.cpp:291
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2743,7 +2743,7 @@ msgstr ""
 "Mesedez, instalatu ezazu.\n"
 "Zure ordenagailuan ez dago instalatuta datu-base pluginik."
 
-#: core/app/main/main.cpp:298
+#: core/app/main/main.cpp:300
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2755,7 +2755,7 @@ msgstr ""
 "Zure ordenagailuan instalatutako datu-base pluginak behean zerrendatuta "
 "daude."
 
-#: core/app/main/main.cpp:342
+#: core/app/main/main.cpp:344
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3239,7 +3239,7 @@ msgid "Tools"
 msgstr "Tresnak"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:1006
+#: core/libs/tags/manager/tagsmanager.cpp:1011
 #, kde-format
 msgid "Help"
 msgstr "Laguntza"
@@ -16974,7 +16974,7 @@ msgid "Revert current settings to default values."
 msgstr "Uneko ezarpenak lehenetsitako balioetara lehengoratu."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:93
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:92
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
@@ -17154,7 +17154,7 @@ msgid "For more information, please take a look at"
 msgstr "Informazio gehiago nahi izanez gero, begiratu hemen"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:99
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "this page"
@@ -18998,20 +18998,20 @@ msgstr "Tiff irudi sorrerak huts egin du."
 msgid "Raw file conversion failed."
 msgstr "Raw fitxategi bihurketak huts egin du."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:79
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:78
 #, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "Ongi etorri Panorama tresnara"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
 #, fuzzy, kde-format
 #| msgid "Welcome to digiKam %1"
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "Ongi etorri digiKam %1 bertsiora"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19019,7 +19019,7 @@ msgid ""
 "seam between images not visible."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19027,40 +19027,40 @@ msgid ""
 "stitching them into a panorama."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:104
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:103
 #, fuzzy, kde-format
 #| msgid "Panoramic view"
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "Vue panoramique"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:158
 #, fuzzy, kde-format
 #| msgid "File Format"
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "Fitxategi-formatua"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:173
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:162
 #, fuzzy, kde-format
 #| msgid "TIFF Properties"
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "TIFFen propietateak"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:167
 #, no-c-format, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19068,7 +19068,7 @@ msgid ""
 "size)."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:180
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -19077,14 +19077,14 @@ msgid ""
 "share the result, or print it online or in a shop."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:186
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:175
 #, fuzzy, kde-format
 #| msgid "TIFF Properties"
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "TIFFen propietateak"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:187
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:176
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19092,7 +19092,7 @@ msgid ""
 "compression, bigger size)."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:189
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19375,66 +19375,60 @@ msgid ""
 "overlaps between images. For that purpose, the \"%1\" program will be used."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:81
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:80
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:131
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:130
 #, fuzzy, kde-format
 #| msgid "Processing..."
 msgid "Processing Panorama Preview..."
 msgstr "Prozesatzen..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:212
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:201
 #, fuzzy, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "Prozesamenduaren ondorengoa"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:218
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:207
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "Prozesamenduaren ondorengoa"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:300
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:287
 #, fuzzy, kde-format
 #| msgid "Process Cancelled..."
 msgid "Preview Processing Cancelled."
 msgstr "Prozesua bertan behera utzita..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:362
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:349
 #, fuzzy, kde-format
 msgid "<h1><b>Error</b></h1><p>%1</p>"
 msgstr "Errorea"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:396
-#, kde-format
-msgctxt "Here a makefile is a script for GNU Make"
-msgid "<p><b>Cannot create makefile: </b></p><p>%1</p>"
-msgstr ""
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:426
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:383
 #, kde-format
 msgctxt "a project file is a .pto file, as given to hugin to build a panorama"
 msgid "<p><b>Cannot create project file: </b></p><p>%1</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:456
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:413
 #, fuzzy, kde-format
 msgctxt "Error message for image file number %1 out of %2"
 msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
 msgstr "Filma-fitxategiak"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:489
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:446
 #, fuzzy, kde-format
 msgctxt "Error message for panorama compilation"
 msgid "<p><b>Panorama compilation: </b></p><p>%1</p>"
 msgstr "Garatzaile nagusia eta koordinatzailea"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:541
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:497
 #, kde-format
 msgid ""
 "<qt><h1>Panorama Preview</h1><p>Draw a rectangle if you want to crop the "
@@ -19442,25 +19436,25 @@ msgid ""
 "stitching process.</p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:568
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:524
 #, fuzzy, kde-format
 msgctxt "Success for image file number %1 out of %2"
 msgid "Processing file %1 / %2"
 msgstr "Filma-fitxategiak"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:597
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:553
 #, fuzzy, kde-format
 msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
 msgstr "Garatzaile nagusia eta koordinatzailea"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:642
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:597
 #, fuzzy, kde-format
 msgctxt "Compilation started for image file number %1 out of %2"
 msgid "Processing file %1 / %2"
 msgstr "Filma-fitxategiak"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:654
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:609
 #, fuzzy, kde-format
 msgctxt "Panorama compilation started"
 msgid "Panorama compilation"
@@ -28019,7 +28013,7 @@ msgstr "Etiketen albuma"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:157
-#: core/libs/tags/manager/tagsmanager.cpp:873
+#: core/libs/tags/manager/tagsmanager.cpp:878
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, fuzzy, kde-format
 msgid "Expand Selected Nodes"
@@ -40990,38 +40984,38 @@ msgid "Delete Tags"
 msgstr "Ezabatu etiketak"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:147
-#: core/libs/tags/manager/tagsmanager.cpp:860
+#: core/libs/tags/manager/tagsmanager.cpp:865
 #, fuzzy, kde-format
 msgid "Edit Tag Title"
 msgstr "Irudi-fitxategiak"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:151
-#: core/libs/tags/manager/tagsmanager.cpp:864
+#: core/libs/tags/manager/tagsmanager.cpp:869
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Berrezarri etiketaren ikonoa"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:154
-#: core/libs/tags/manager/tagsmanager.cpp:870
+#: core/libs/tags/manager/tagsmanager.cpp:875
 #, kde-format
 msgid "Invert Selection"
 msgstr "Alderantzikatu hautapena"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:160
-#: core/libs/tags/manager/tagsmanager.cpp:876
+#: core/libs/tags/manager/tagsmanager.cpp:881
 #, fuzzy, kde-format
 msgid "Expand Tag Tree"
 msgstr "Sartu etiketen azpi-zuhaitza"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:163
-#: core/libs/tags/manager/tagsmanager.cpp:879
+#: core/libs/tags/manager/tagsmanager.cpp:884
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Tolestu etiketa-zuhaitza"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:166
-#: core/libs/tags/manager/tagsmanager.cpp:882
+#: core/libs/tags/manager/tagsmanager.cpp:887
 #, fuzzy, kde-format
 msgid "Remove Tag from Images"
 msgstr "Irakurri berriro metadatuak irudietatik"
@@ -41173,142 +41167,142 @@ msgctxt "@title:window"
 msgid "Choose Export Tag File"
 msgstr "Aukeratu zure sareta-neurria"
 
-#: core/libs/tags/manager/tagsmanager.cpp:685
+#: core/libs/tags/manager/tagsmanager.cpp:690
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Choose Import Tag File"
 msgstr "Aukeratu zure sareta-neurria"
 
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, fuzzy, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "\"%1\" bilduma bildumen zerrendatik kentzea nahi duzu?"
 msgstr[1] "\"%1\" bilduma bildumen zerrendatik kentzea nahi duzu?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:836
+#: core/libs/tags/manager/tagsmanager.cpp:841
 #, fuzzy, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Antolatu"
 
-#: core/libs/tags/manager/tagsmanager.cpp:839
+#: core/libs/tags/manager/tagsmanager.cpp:844
 #, fuzzy, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "E&sportatu"
 
-#: core/libs/tags/manager/tagsmanager.cpp:867
+#: core/libs/tags/manager/tagsmanager.cpp:872
 #, fuzzy, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Oraintsu esleitutako etiketarik ez"
 
-#: core/libs/tags/manager/tagsmanager.cpp:887
+#: core/libs/tags/manager/tagsmanager.cpp:892
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:890
+#: core/libs/tags/manager/tagsmanager.cpp:895
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:894
+#: core/libs/tags/manager/tagsmanager.cpp:899
 #, fuzzy, kde-format
 msgid "Edit title from selected tag."
 msgstr "Lerrokatu testua ezkerrean"
 
-#: core/libs/tags/manager/tagsmanager.cpp:896
+#: core/libs/tags/manager/tagsmanager.cpp:901
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:899
+#: core/libs/tags/manager/tagsmanager.cpp:904
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:901
+#: core/libs/tags/manager/tagsmanager.cpp:906
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:904
+#: core/libs/tags/manager/tagsmanager.cpp:909
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:906
+#: core/libs/tags/manager/tagsmanager.cpp:911
 #, fuzzy, kde-format
 msgid "Expand tag tree completely"
 msgstr "Sartu etiketen azpi-zuhaitza"
 
-#: core/libs/tags/manager/tagsmanager.cpp:908
+#: core/libs/tags/manager/tagsmanager.cpp:913
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Tolestu erabat etiketa-zuhaitza"
 
-#: core/libs/tags/manager/tagsmanager.cpp:910
+#: core/libs/tags/manager/tagsmanager.cpp:915
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:954
+#: core/libs/tags/manager/tagsmanager.cpp:959
 #, fuzzy, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Idatzi metadatuak irudian"
 
-#: core/libs/tags/manager/tagsmanager.cpp:957
+#: core/libs/tags/manager/tagsmanager.cpp:962
 #, fuzzy, kde-format
 msgid "Read Tags from Image"
 msgstr "Irakurri metadatuak berriro iruditik"
 
-#: core/libs/tags/manager/tagsmanager.cpp:960
+#: core/libs/tags/manager/tagsmanager.cpp:965
 #, fuzzy, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Idatzi metadatuak irudian"
 
-#: core/libs/tags/manager/tagsmanager.cpp:963
+#: core/libs/tags/manager/tagsmanager.cpp:968
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgid "Export all tags to a file"
 msgstr "Idatzi metadatuak fitxategi bakoitzean"
 
-#: core/libs/tags/manager/tagsmanager.cpp:966
+#: core/libs/tags/manager/tagsmanager.cpp:971
 #, fuzzy, kde-format
 msgid "Import all tags from a file"
 msgstr "Irakurri berriro metadatuak irudietatik"
 
-#: core/libs/tags/manager/tagsmanager.cpp:968
+#: core/libs/tags/manager/tagsmanager.cpp:973
 #, fuzzy, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Idatzi metadatuak irudian"
 
-#: core/libs/tags/manager/tagsmanager.cpp:970
+#: core/libs/tags/manager/tagsmanager.cpp:975
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:973
+#: core/libs/tags/manager/tagsmanager.cpp:978
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:976
+#: core/libs/tags/manager/tagsmanager.cpp:981
 #, kde-format
 msgid "Export all tags to a file to keep a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:978
+#: core/libs/tags/manager/tagsmanager.cpp:983
 #, kde-format
 msgid "Import all tags from a file to restore a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1007
+#: core/libs/tags/manager/tagsmanager.cpp:1012
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -51114,14 +51108,14 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Karpetak"
 
-#: core/showfoto/main/main.cpp:202
+#: core/showfoto/main/main.cpp:204
 #, fuzzy, kde-format
 #| msgid "Showfoto"
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:220
+#: core/showfoto/main/main.cpp:222
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"

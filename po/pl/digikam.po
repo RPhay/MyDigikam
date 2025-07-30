@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 02:01+0000\n"
+"POT-Creation-Date: 2025-07-30 01:58+0000\n"
 "PO-Revision-Date: 2024-08-24 11:18+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -2723,7 +2723,7 @@ msgstr "Pomo&c"
 msgid "Main Toolbar"
 msgstr "Główny pasek narzędzi"
 
-#: core/app/main/main.cpp:227 core/app/views/stack/welcomepageview.cpp:235
+#: core/app/main/main.cpp:229 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2733,7 +2733,7 @@ msgstr "Główny pasek narzędzi"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:236 core/showfoto/main/main.cpp:211
+#: core/app/main/main.cpp:238 core/showfoto/main/main.cpp:213
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -2741,7 +2741,7 @@ msgstr ""
 "Mikołaj Machowski, Anna Sawicka, Robert Gomułka, Michał Smoczyk, Łukasz "
 "Wojniłowicz, Marcin Stanclik"
 
-#: core/app/main/main.cpp:237 core/showfoto/main/main.cpp:212
+#: core/app/main/main.cpp:239 core/showfoto/main/main.cpp:214
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -2749,34 +2749,34 @@ msgstr ""
 "mikmach@wp.pl, ania@kajak.org.pl, carramba@epf.pl, msmoczyk@wp.pl, lukasz."
 "wojnilowicz@gmail.com, mstanclik@yahoo.com"
 
-#: core/app/main/main.cpp:245
+#: core/app/main/main.cpp:247
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Otwórz okno dialogowe aparatu w \"ścieżce\""
 
-#: core/app/main/main.cpp:248
+#: core/app/main/main.cpp:250
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Otwórz okno dialogowe aparatu dla urządzenia z Solid UDI \"udi\""
 
-#: core/app/main/main.cpp:251
+#: core/app/main/main.cpp:253
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Samoczynnie wykryj i otwórz podłączony aparat gphoto2"
 
-#: core/app/main/main.cpp:253
+#: core/app/main/main.cpp:255
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 "Uruchom digikam z plikiem bazy danych SQLite znalezionym w katalogu \"dir\""
 
-#: core/app/main/main.cpp:256
+#: core/app/main/main.cpp:258
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Uruchom digikam z plikiem ustawień \"config\""
 
-#: core/app/main/main.cpp:289
+#: core/app/main/main.cpp:291
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2787,7 +2787,7 @@ msgstr ""
 "niedostępna - proszę je zainstalować.\n"
 "Brak wtyczki bazy danych na twoim komputerze."
 
-#: core/app/main/main.cpp:298
+#: core/app/main/main.cpp:300
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2798,7 +2798,7 @@ msgstr ""
 "niedostępna - proszę je zainstalować.\n"
 "Wtyczki baz danych na twoim komputerze wymieniono poniżej:"
 
-#: core/app/main/main.cpp:342
+#: core/app/main/main.cpp:344
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3307,7 +3307,7 @@ msgid "Tools"
 msgstr "Narzędzia"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:1006
+#: core/libs/tags/manager/tagsmanager.cpp:1011
 #, kde-format
 msgid "Help"
 msgstr "Pomoc"
@@ -17107,7 +17107,7 @@ msgid "Revert current settings to default values."
 msgstr "Przywróć bieżące ustawienia do domyślnych wartości."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:93
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:92
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
@@ -17292,7 +17292,7 @@ msgid "For more information, please take a look at"
 msgstr "Po więcej szczegółów, zajrzyj na"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:99
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "this page"
@@ -19279,19 +19279,19 @@ msgstr "Nieudane tworzenie obrazu Tiff."
 msgid "Raw file conversion failed."
 msgstr "Nieudane przekształcenie pliku Raw."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:79
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:78
 #, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "Witaj w narzędziu panoramy"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "Witaj w narzędziu panoramy"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19301,7 +19301,7 @@ msgstr ""
 "To narzędzie zszywa ze sobą kilka obrazów, aby utworzyć panoramę, czyniąc "
 "szew pomiędzy nimi niewidocznym."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19311,37 +19311,37 @@ msgstr ""
 "Ten pomocnik pomoże ustawić sposób importowania obrazów przed zszyciem ich w "
 "panoramę."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr "Zdjęcia muszą być wykonane z tego samego punktu widokowego."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr "Po więcej szczegółów, zajrzyj na "
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:104
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:103
 #, kde-format
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "Narzędzia panoramy"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:158
 #, kde-format
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "Format pliku"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:173
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:162
 #, kde-format
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "Wynik jako JPEG"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:167
 #, no-c-format, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19351,7 +19351,7 @@ msgstr ""
 "Wybiera wynik jako JPEG z 90% stopniem kompresji (stratna kompresja, "
 "mniejszy rozmiar)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:180
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -19364,13 +19364,13 @@ msgstr ""
 "sposób na udostępnianie wyniku lub wydrukowanie go w internecie lub w "
 "sklepie."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:186
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:175
 #, kde-format
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "Wynik jako TIFF"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:187
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:176
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19380,7 +19380,7 @@ msgstr ""
 "Wybiera wynik jako TIFF skompresowane przy użyciu algorytmu LZW (bezstratna "
 "kompresja, większy rozmiar)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:189
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
 #, fuzzy, kde-format
 #| msgctxt "@info: whatsthis"
 #| msgid ""
@@ -19694,63 +19694,57 @@ msgstr ""
 "sprawdzić nachodzenie pomiędzy obrazami. Do tego celu zostanie użyty program "
 "\"%1\"."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:81
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:80
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>Podgląd i dalsze przetwarzanie</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:131
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:130
 #, kde-format
 msgid "Processing Panorama Preview..."
 msgstr "Przetwarzanie podglądu panoramy..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:212
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:201
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>Dalsze przetwarzanie panoramy</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:218
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:207
 #, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "Końcowe przetwarzanie panoramy"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:300
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:287
 #, kde-format
 msgid "Preview Processing Cancelled."
 msgstr "Porzucono podgląd przetwarzania"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:362
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:349
 #, kde-format
 msgid "<h1><b>Error</b></h1><p>%1</p>"
 msgstr "<h1><b>Błąd</b></h1><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:396
-#, kde-format
-msgctxt "Here a makefile is a script for GNU Make"
-msgid "<p><b>Cannot create makefile: </b></p><p>%1</p>"
-msgstr "<p><b>Nie można utworzyć pliku makefile: </b></p><p>%1</p>"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:426
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:383
 #, kde-format
 msgctxt "a project file is a .pto file, as given to hugin to build a panorama"
 msgid "<p><b>Cannot create project file: </b></p><p>%1</p>"
 msgstr "<p><b>Nie można utworzyć pliku projektu: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:456
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:413
 #, kde-format
 msgctxt "Error message for image file number %1 out of %2"
 msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
 msgstr "<p><b>Przetwarzanie pliku %1 / %2: </b></p><p>%3</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:489
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:446
 #, kde-format
 msgctxt "Error message for panorama compilation"
 msgid "<p><b>Panorama compilation: </b></p><p>%1</p>"
 msgstr "<p><b>Kompilacja panoramy: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:541
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:497
 #, kde-format
 msgid ""
 "<qt><h1>Panorama Preview</h1><p>Draw a rectangle if you want to crop the "
@@ -19761,25 +19755,25 @@ msgstr ""
 "obraz. </p><p>Naciśnięcie przycisku <i>Dalej</i> uruchamia końcowy proces "
 "zszywania.</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:568
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:524
 #, kde-format
 msgctxt "Success for image file number %1 out of %2"
 msgid "Processing file %1 / %2"
 msgstr "Przetwarzanie pliku %1 / %2"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:597
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:553
 #, kde-format
 msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
 msgstr "Kompilacja panoramy"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:642
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:597
 #, kde-format
 msgctxt "Compilation started for image file number %1 out of %2"
 msgid "Processing file %1 / %2"
 msgstr "Przetwarzanie pliku %1 / %2"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:654
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:609
 #, kde-format
 msgctxt "Panorama compilation started"
 msgid "Panorama compilation"
@@ -28159,7 +28153,7 @@ msgstr "Album etykiet"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:157
-#: core/libs/tags/manager/tagsmanager.cpp:873
+#: core/libs/tags/manager/tagsmanager.cpp:878
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -40909,38 +40903,38 @@ msgid "Delete Tags"
 msgstr "Usuń znaczniki"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:147
-#: core/libs/tags/manager/tagsmanager.cpp:860
+#: core/libs/tags/manager/tagsmanager.cpp:865
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Edytuj tytuł znacznika"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:151
-#: core/libs/tags/manager/tagsmanager.cpp:864
+#: core/libs/tags/manager/tagsmanager.cpp:869
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Wyzeruj ikonę znacznika"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:154
-#: core/libs/tags/manager/tagsmanager.cpp:870
+#: core/libs/tags/manager/tagsmanager.cpp:875
 #, kde-format
 msgid "Invert Selection"
 msgstr "Odwróć zaznaczenie"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:160
-#: core/libs/tags/manager/tagsmanager.cpp:876
+#: core/libs/tags/manager/tagsmanager.cpp:881
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Rozwiń drzewo znaczników"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:163
-#: core/libs/tags/manager/tagsmanager.cpp:879
+#: core/libs/tags/manager/tagsmanager.cpp:884
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Zwiń drzewo znaczników"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:166
-#: core/libs/tags/manager/tagsmanager.cpp:882
+#: core/libs/tags/manager/tagsmanager.cpp:887
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Usuń znacznik z obrazów"
@@ -41117,14 +41111,14 @@ msgctxt "@title:window"
 msgid "Choose Export Tag File"
 msgstr "Wybierz rozmiar swojej siatki"
 
-#: core/libs/tags/manager/tagsmanager.cpp:685
+#: core/libs/tags/manager/tagsmanager.cpp:690
 #, fuzzy, kde-format
 #| msgid "Choose your grid size"
 msgctxt "@title:window"
 msgid "Choose Import Tag File"
 msgstr "Wybierz rozmiar swojej siatki"
 
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -41132,31 +41126,31 @@ msgstr[0] "Czy na pewno chcesz usunąć wybrany znacznik ze wszystkich obrazów?
 msgstr[1] "Czy na pewno chcesz usunąć wybrane znaczniki ze wszystkich obrazów?"
 msgstr[2] "Czy na pewno chcesz usunąć wybrane znaczniki ze wszystkich obrazów?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:836
+#: core/libs/tags/manager/tagsmanager.cpp:841
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Uporządkuj"
 
-#: core/libs/tags/manager/tagsmanager.cpp:839
+#: core/libs/tags/manager/tagsmanager.cpp:844
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Synchronizuj &eksport"
 
-#: core/libs/tags/manager/tagsmanager.cpp:867
+#: core/libs/tags/manager/tagsmanager.cpp:872
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Zaznacz nieprzypisane znaczniki"
 
-#: core/libs/tags/manager/tagsmanager.cpp:887
+#: core/libs/tags/manager/tagsmanager.cpp:892
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Dodaj nowy znacznik do bieżącego znacznika. Bieżący znacznik jest ostatnio "
 "naciśniętym znacznikiem."
 
-#: core/libs/tags/manager/tagsmanager.cpp:890
+#: core/libs/tags/manager/tagsmanager.cpp:895
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -41165,90 +41159,90 @@ msgstr ""
 "Usuń wybrane rzeczy. Działa także z wieloma rzeczami, lecz nie usunie "
 "głównego znacznika."
 
-#: core/libs/tags/manager/tagsmanager.cpp:894
+#: core/libs/tags/manager/tagsmanager.cpp:899
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Edytuj tytuł z wybranego znacznika."
 
-#: core/libs/tags/manager/tagsmanager.cpp:896
+#: core/libs/tags/manager/tagsmanager.cpp:901
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Wyzeruj ikonę do wybranych znaczników. Działa także z wielokrotnym "
 "zaznaczeniem."
 
-#: core/libs/tags/manager/tagsmanager.cpp:899
+#: core/libs/tags/manager/tagsmanager.cpp:904
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Zaznacz wszystkie znaczniki, które nie są przypisane do obrazów."
 
-#: core/libs/tags/manager/tagsmanager.cpp:901
+#: core/libs/tags/manager/tagsmanager.cpp:906
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Odwróć zaznaczenie. Tylko widoczne rzeczy zostaną zaznaczone"
 
-#: core/libs/tags/manager/tagsmanager.cpp:904
+#: core/libs/tags/manager/tagsmanager.cpp:909
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Wybrane rzeczy zostaną rozwinięte"
 
-#: core/libs/tags/manager/tagsmanager.cpp:906
+#: core/libs/tags/manager/tagsmanager.cpp:911
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Całkowicie rozwiń drzewo znaczników"
 
-#: core/libs/tags/manager/tagsmanager.cpp:908
+#: core/libs/tags/manager/tagsmanager.cpp:913
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Całkowicie zwiń drzewo znaczników"
 
-#: core/libs/tags/manager/tagsmanager.cpp:910
+#: core/libs/tags/manager/tagsmanager.cpp:915
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Usuń wybrany znacznik(i) z obrazów. Działa także z wielokrotnym zaznaczeniem."
 
-#: core/libs/tags/manager/tagsmanager.cpp:954
+#: core/libs/tags/manager/tagsmanager.cpp:959
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Zapisz znaczniki z bazy danych do obrazu"
 
-#: core/libs/tags/manager/tagsmanager.cpp:957
+#: core/libs/tags/manager/tagsmanager.cpp:962
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Odczytaj znaczniki z obrazu"
 
-#: core/libs/tags/manager/tagsmanager.cpp:960
+#: core/libs/tags/manager/tagsmanager.cpp:965
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Wymaż wszystkie znaczniki jedynie z bazy danych"
 
-#: core/libs/tags/manager/tagsmanager.cpp:963
+#: core/libs/tags/manager/tagsmanager.cpp:968
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Write metadata to each file"
 msgid "Export all tags to a file"
 msgstr "Zapisz metadane do każdego pliku"
 
-#: core/libs/tags/manager/tagsmanager.cpp:966
+#: core/libs/tags/manager/tagsmanager.cpp:971
 #, fuzzy, kde-format
 #| msgid "Remove all tags from image"
 msgid "Import all tags from a file"
 msgstr "Usuń wszystkie znaczniki z obrazu"
 
-#: core/libs/tags/manager/tagsmanager.cpp:968
+#: core/libs/tags/manager/tagsmanager.cpp:973
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Zapisz metadane znaczników do obrazu."
 
-#: core/libs/tags/manager/tagsmanager.cpp:970
+#: core/libs/tags/manager/tagsmanager.cpp:975
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Wczytaj znaczniki z obrazów do bazy danych. Nie będzie miało to wpływu na "
 "obecne znaczniki."
 
-#: core/libs/tags/manager/tagsmanager.cpp:973
+#: core/libs/tags/manager/tagsmanager.cpp:978
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -41257,17 +41251,17 @@ msgstr ""
 "Usuń wszystkie znaczniki jedynie z bazy danych. Nie nastąpi synchronizacja z "
 "plikami. Zachowaj ostrożność."
 
-#: core/libs/tags/manager/tagsmanager.cpp:976
+#: core/libs/tags/manager/tagsmanager.cpp:981
 #, kde-format
 msgid "Export all tags to a file to keep a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:978
+#: core/libs/tags/manager/tagsmanager.cpp:983
 #, kde-format
 msgid "Import all tags from a file to restore a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1007
+#: core/libs/tags/manager/tagsmanager.cpp:1012
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -50550,13 +50544,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Katalogi"
 
-#: core/showfoto/main/main.cpp:202
+#: core/showfoto/main/main.cpp:204
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:220
+#: core/showfoto/main/main.cpp:222
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
@@ -69250,6 +69244,10 @@ msgstr "Rzeczy będące albumami"
 #, kde-format
 msgid "Import Items"
 msgstr "Rzeczy do zaimportowania"
+
+#~ msgctxt "Here a makefile is a script for GNU Make"
+#~ msgid "<p><b>Cannot create makefile: </b></p><p>%1</p>"
+#~ msgstr "<p><b>Nie można utworzyć pliku makefile: </b></p><p>%1</p>"
 
 #, fuzzy
 #~| msgid "Base Tools"
