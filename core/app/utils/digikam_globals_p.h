@@ -37,6 +37,7 @@
 #include <QSysInfo>
 #include <QMimeType>
 #include <QMimeDatabase>
+#include <QElapsedTimer>
 
 // KDE includes
 
