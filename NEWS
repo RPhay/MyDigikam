@@ -50,7 +50,7 @@ BUGFIXES:
 035 ==> 507355 - Suggestion for improvement re positioning of small icons in Preview window.
 036 ==> 455226 - Panorama Tool needs the Hugin pto2mk software.
 037 ==> 507647 - Language cannot be chosen - only US_English available.
-038 ==> 
+038 ==> 507657 - app/utils/digikam_globals_bundles.cpp build failled with error.
 039 ==> 
 040 ==> 
 041 ==> 
