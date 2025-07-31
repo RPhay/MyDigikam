@@ -55,19 +55,15 @@ public:
     virtual ~MLPipelinePackageNotify() = default;
 
     MLPipelinePackageNotify(const MLPipelinePackageNotify& other);
+    MLPipelinePackageNotify& operator=(const MLPipelinePackageNotify&);
 
 public:
 
-    const QString   name;
-    const QString   path;
-    const QString   displayData;
-    int             processed       = 0;
-    QIcon           thumbnail;
-
-private:
-
-    // Disable
-    MLPipelinePackageNotify& operator=(const MLPipelinePackageNotify&);
+    QString name;
+    QString path;
+    QString displayData;
+    int     processed       = 0;
+    QIcon   thumbnail;
 };
 
 } // namespace Digikam
