@@ -2618,18 +2618,18 @@ msgstr "digiKam"
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
-"Tyson Tan (谭代山/钛山), CoelacanthusHex, Feng Chao, Funda Wang, Guo Yunhe, "
-"millionart, Ni Hui, sanfanling, Weng Xuetian, YFdyh000, 李子"
+"Acresoffilm, CoelacanthusHex, Feng Chao, Funda Wang, Guo Yunhe, millionart, "
+"Ni Hui, sanfanling, Tyson Tan (谭代山/钛山), Weng Xuetian, YFdyh000, 李子"
 
 #: core/app/main/main.cpp:239 core/showfoto/main/main.cpp:214
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
-"tds00@qq.com, CoelacanthusHex@kde.org, chaofeng111@gmail.com, "
+"acresoffilm@kde.org, CoelacanthusHex@kde.org, chaofeng111@gmail.com, "
 "fundawang@linux.net.cn, i@guoyunhe.me, millionart@kde.org, "
-"shuizhuyuanluo@126.com, xujia19@gmail.com, wengxt@gmail.com, YFdyh000@kde."
-"org, bingling00@kde.org"
+"shuizhuyuanluo@126.com, tds00@qq.com, xujia19@gmail.com, wengxt@gmail.com, "
+"YFdyh000@kde.org, bingling00@kde.org"
 
 #: core/app/main/main.cpp:247
 #, kde-format
@@ -38875,13 +38875,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose Export Tag File"
-msgstr ""
+msgstr "选择导出标签文件"
 
 #: core/libs/tags/manager/tagsmanager.cpp:690
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose Import Tag File"
-msgstr ""
+msgstr "选择导入标签文件"
 
 #: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
@@ -38976,12 +38976,12 @@ msgstr "仅从数据库清除所有标签"
 #: core/libs/tags/manager/tagsmanager.cpp:968
 #, kde-format
 msgid "Export all tags to a file"
-msgstr ""
+msgstr "导出所有标签到文件"
 
 #: core/libs/tags/manager/tagsmanager.cpp:971
 #, kde-format
 msgid "Import all tags from a file"
-msgstr ""
+msgstr "导入文件的所有标签"
 
 #: core/libs/tags/manager/tagsmanager.cpp:973
 #, kde-format
@@ -39003,12 +39003,12 @@ msgstr "删除数据库中的所有标签。更改不会同步到文件。请谨
 #: core/libs/tags/manager/tagsmanager.cpp:981
 #, kde-format
 msgid "Export all tags to a file to keep a backup."
-msgstr ""
+msgstr "导出所有标签到一个文件以保留备份。"
 
 #: core/libs/tags/manager/tagsmanager.cpp:983
 #, kde-format
 msgid "Import all tags from a file to restore a backup."
-msgstr ""
+msgstr "导入一个文件中的所有标签以还原备份。"
 
 #: core/libs/tags/manager/tagsmanager.cpp:1012
 #, kde-format
@@ -65866,7 +65866,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgctxt "Here a makefile is a script for GNU Make"
-#~ msgid "<p><b>Cannot create makefile: </b></p><p>%1</p>"
-#~ msgstr "<p><b>无法创建 makefile 文件：</b></p><p>%1</p>"
