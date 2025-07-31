@@ -72,5 +72,5 @@ private:
 
 } // namespace Digikam
 
-/// To be able to use SettingsContainer with Qt signal/slots.
+/// To be able to use MLPipelinePackageNotify::Ptr with Qt signal/slots.
 Q_DECLARE_METATYPE(Digikam::MLPipelinePackageNotify::Ptr)

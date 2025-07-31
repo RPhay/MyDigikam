@@ -54,6 +54,8 @@ private:
     OpenCVOpenCLDNNSetter(const OpenCVOpenCLDNNSetter&)            = delete;
     OpenCVOpenCLDNNSetter& operator=(const OpenCVOpenCLDNNSetter&) = delete;
 
+private:
+
     class Private;
     static Private* d;
 };

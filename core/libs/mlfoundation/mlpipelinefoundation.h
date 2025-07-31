@@ -153,7 +153,7 @@ protected:
     virtual bool finder()                                        = 0;
     virtual bool loader()                                        = 0;
     virtual bool extractor()                                     = 0;
-    virtual bool classifier()                                    = 0;       // TODO: rename to postprocessor
+    virtual bool classifier()                                    = 0;       ///< @todo rename to postprocessor
     virtual bool trainer()                                       = 0;
     virtual bool writer()                                        = 0;
 
@@ -161,7 +161,9 @@ protected:
 
     bool checkMoreWorkers(int totalItemCount, int currentItemCount, bool useFullCpu);
 
-    // Queue helper functions
+    /**
+     * @brief Queue helper functions
+     */
 
     MLPipelinePackageFoundation* queueEndSignal() const
     {
@@ -214,8 +216,9 @@ protected:
      */
     void emitSignalUpdateItemCount(const qlonglong itemCount);
 
-    // Pipeline performance profiling
-
+    /**
+     * @brief Methods to profile the Pipeline performance.
+     */
     void pipelinePerformanceStart(const MLPipelineStage& stage, QElapsedTimer& timer);
     void pipelinePerformanceEnd(const MLPipelineStage& stage, QElapsedTimer& timer);
     void pipelinePerformanceEnd(const MLPipelineStage& stage, int totalItemCount, QElapsedTimer& timer);
