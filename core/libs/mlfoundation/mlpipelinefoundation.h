@@ -224,7 +224,7 @@ protected:
 private:
 
     // Disable
-    MLPipelineFoundation(QObject* const)                         = delete;
+    explicit MLPipelineFoundation(QObject* const)                = delete;
     MLPipelineFoundation(const MLPipelineFoundation&)            = delete;
     MLPipelineFoundation& operator=(const MLPipelineFoundation&) = delete;
 };

@@ -52,7 +52,7 @@ public:
                                      int _processed,
                                      const QIcon& _thumbnail);
 
-    virtual ~MLPipelinePackageNotify()                        = default;
+    virtual ~MLPipelinePackageNotify() = default;
 
     MLPipelinePackageNotify(const MLPipelinePackageNotify& other);
 
@@ -63,6 +63,11 @@ public:
     const QString   displayData;
     int             processed       = 0;
     QIcon           thumbnail;
+
+private:
+
+    // Disable
+    MLPipelinePackageNotify& operator=(const MLPipelinePackageNotify&);
 };
 
 } // namespace Digikam
