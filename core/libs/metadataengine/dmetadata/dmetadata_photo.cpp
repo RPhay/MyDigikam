@@ -282,7 +282,11 @@ QString DMetadata::getLensDescription() const
     QString make      = getExifTagString("Exif.Image.Make");
     QString lensModel = QLatin1String("Exif.Photo.LensModel");
 
-    if      (make.contains(QLatin1String("SONY"), Qt::CaseInsensitive))
+    if      (
+             make.contains(QLatin1String("SONY"), Qt::CaseInsensitive)  ||
+             make.contains(QLatin1String("RICOH"), Qt::CaseInsensitive) ||
+             make.contains(QLatin1String("PENTAX"), Qt::CaseInsensitive)
+            )
     {
         lensExifTags.prepend(lensModel);
     }
