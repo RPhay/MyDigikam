@@ -121,7 +121,7 @@ void WallpaperPlugin::slotWallpaper()
         QEventLoop loop;
 
         connect(dlg, &QDialog::finished,
-                [this, &loop, dlg, images](int result)
+                this, [this, &loop, dlg, images](int result)
             {
                 if (result == QDialog::Accepted)
                 {
