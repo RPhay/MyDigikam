@@ -203,6 +203,12 @@ protected Q_SLOTS:
 
 private:
 
+    // Disable
+    ItemVisibilityController(const ItemVisibilityController&)                         = delete;
+    ItemVisibilityController& operator=(const ItemVisibilityController&)              = delete;
+
+private:
+
     class Private;
     Private* const d = nullptr;
 };
