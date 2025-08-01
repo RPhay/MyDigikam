@@ -38,15 +38,16 @@ namespace Digikam
 class DIGIKAM_GUI_EXPORT AIToolsPipelinePackage : public MLPipelinePackageFoundation
 {
 public:
+
     /**
      * @brief Enum defining the AI tools available in the pipeline
      */
     enum AITool
     {
         AutoRotate = 0,    ///< Auto rotation tool
-
-        // NOTE: Add more tools here in the future
-
+        /**
+         * @note add more tools here in the future
+         */
         Unknown            ///< Unknown or undefined tool
     };
 
@@ -71,7 +72,9 @@ public:
      */
     ~AIToolsPipelinePackage() override;
 
-    // Public properties
+    /**
+     * @brief Public properties
+     */
     ItemInfo                                    info;
     MetaEngineRotation::TransformationAction    rotationTransformation;
     DImg                                        image;

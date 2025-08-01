@@ -102,23 +102,35 @@ public:
 
 Q_SIGNALS:
 
-    /// @brief Emitted when processing is scheduled.
+    /**
+     * @brief Emitted when processing is scheduled.
+     */
     void scheduled();
 
-    /// @brief Emitted when processing has started.
+    /**
+     * @brief Emitted when processing has started.
+     */
     void started(const QString& message);
 
-    /// @brief Emitted when one package begins processing.
+    /**
+     * @brief Emitted when one package begins processing.
+     */
     void processing(const MLPipelinePackageNotify::Ptr& package);
 
-    /// @brief Emitted when one package has finished processing.
+    /**
+     * @brief Emitted when one package has finished processing.
+     */
     void processed(const MLPipelinePackageNotify::Ptr& package);
     void progressValueChanged(float progress);
 
-    /// @brief Emitted when the last package has finished processing.
+    /**
+     * @brief Emitted when the last package has finished processing.
+     */
     void finished();
 
-    /// @brief Emitted when one or several packages were skipped, usually because they have already been scanned.
+    /**
+     * @brief Emitted when one or several packages were skipped, usually because they have already been scanned.
+     */
     void skipped(const MLPipelinePackageNotify::Ptr& package);
 
     void signalAddMoreWorkers();

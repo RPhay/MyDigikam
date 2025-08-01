@@ -37,6 +37,8 @@ public:
     IdentityProvider();
     ~IdentityProvider() override;
 
+public:
+
     static IdentityProvider* instance();
     static QString FaceTrainingVersion;
     static QString ExtractorModel;

@@ -451,11 +451,6 @@ void AIToolsPipeline::addMoreWorkers()
     // Add workers to each stage as needed
 }
 
-/**
- * Check if there's an existing progress item for AIToolPipeline.
- * If not found, create a new one.
- * @return The existing or newly created ProgressItem
- */
 ProgressItem* AIToolsPipeline::getProgressItem()
 {
     QMutexLocker lock(&d->progressMutex);

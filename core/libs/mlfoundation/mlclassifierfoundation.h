@@ -85,8 +85,8 @@ protected:
 
     public:
 
-        VotingGroups()                  = default;
-        ~VotingGroups()                 = default;
+        VotingGroups()  = default;
+        ~VotingGroups() = default;
 
     public:
 

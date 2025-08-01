@@ -66,7 +66,10 @@ Q_SIGNALS:
 
 protected:
 
-    const float MAX_DISTANCE                                            = 1000.0F; // arbitrary max distance to start calculating distance
+    /**
+     * arbitrary max distance to start calculating distance.
+     */
+    const float MAX_DISTANCE = 1000.0F;
 
 protected:
 

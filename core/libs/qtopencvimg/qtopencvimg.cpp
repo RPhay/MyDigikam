@@ -28,9 +28,6 @@
 namespace Digikam
 {
 
-/**
- * Convert ARGB to BGRA
- */
 cv::Mat QtOpenCVImg::argb2bgra(const cv::Mat& mat)
 {
     Q_ASSERT(mat.channels() == 4);
@@ -221,9 +218,6 @@ QtOpenCVImg::MatColorOrder QtOpenCVImg::getColorOrderOfRGB32Format()
 
 }
 
-/**
- * Convert DImg to cv::Mat
- */
 cv::Mat QtOpenCVImg::image2Mat(const DImg& img, int requiredMatType, MatColorOrder requiredOrder)
 {
     int targetDepth    = CV_MAT_DEPTH(requiredMatType);
@@ -326,9 +320,6 @@ cv::Mat QtOpenCVImg::image2Mat(const DImg& img, int requiredMatType, MatColorOrd
     return mat0;
 }
 
-/**
- * Convert QImage to cv::Mat
- */
 cv::Mat QtOpenCVImg::image2Mat(const QImage& img, int requiredMatType, MatColorOrder requriedOrder)
 {
     int targetDepth    = CV_MAT_DEPTH(requiredMatType);
@@ -522,9 +513,6 @@ cv::Mat QtOpenCVImg::image2Mat(const QImage& img, int requiredMatType, MatColorO
     return mat_adjustDepth;
 }
 
-/**
- * Convert cv::Mat to QImage
- */
 QImage QtOpenCVImg::mat2Image(const cv::Mat& mat, MatColorOrder order, QImage::Format formatHint)
 {
     Q_ASSERT((mat.channels() == 1)  || (mat.channels() == 3)   || (mat.channels() == 4));
@@ -697,9 +685,6 @@ QImage QtOpenCVImg::mat2Image(const cv::Mat& mat, MatColorOrder order, QImage::F
     }
 }
 
-/**
- * Convert QImage to cv::Mat without data copy
- */
 cv::Mat QtOpenCVImg::image2Mat_shared(const QImage& img, MatColorOrder* const order)
 {
     if (img.isNull())
@@ -796,9 +781,6 @@ cv::Mat QtOpenCVImg::image2Mat_shared(const QImage& img, MatColorOrder* const or
     }
 }
 
-/**
- * Convert cv::Mat to QImage without data copy
- */
 QImage QtOpenCVImg::mat2Image_shared(const cv::Mat& mat, QImage::Format formatHint)
 {
     Q_ASSERT((mat.type() == CV_8UC1) || (mat.type() == CV_8UC3) || (mat.type() == CV_8UC4));

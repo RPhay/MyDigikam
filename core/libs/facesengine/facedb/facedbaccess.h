@@ -38,7 +38,7 @@ public:
     /**
      * @brief This class is written in analogy to CoreDbAccess
      * (some features stripped off).
-     * For documentation, see coredbaccess.h
+     * For advanced documentation, see at coredbaccess.h
      */
     FaceDbAccess();
     ~FaceDbAccess();
