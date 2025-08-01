@@ -53,7 +53,7 @@ BUGFIXES:
 038 ==> 507657 - app/utils/digikam_globals_bundles.cpp build failled with error.
 039 ==> 507668 - Prioritize user-added metadata over the ones in MakerNotes.
 040 ==> 507713 - Incorrect sorting of picture names.
-041 ==> 
+041 ==> 507661 - Portrait videos are displayed horizontally in presentation mode.
 042 ==> 
 043 ==> 
 044 ==> 

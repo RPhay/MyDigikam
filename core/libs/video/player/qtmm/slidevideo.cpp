@@ -50,6 +50,8 @@ public:
 
     DInfoInterface*      iface            = nullptr;
 
+    QUrl                 currentUrl;
+
     QGraphicsScene*      videoScene       = nullptr;
     QGraphicsView*       videoView        = nullptr;
     QGraphicsVideoItem*  videoItem        = nullptr;
@@ -207,6 +209,7 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
     d->player->stop();
 
     int orientation = 0;
+    d->currentUrl   = url;
 
     if (d->iface)
     {
@@ -273,6 +276,11 @@ void SlideVideo::slotMediaStatusChanged(QMediaPlayer::MediaStatus status)
 
         case QMediaPlayer::LoadedMedia:
         {
+            if (d->currentUrl != d->player->source())
+            {
+                return;
+            }
+
             int rotate = d->videoMediaOrientation();
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
