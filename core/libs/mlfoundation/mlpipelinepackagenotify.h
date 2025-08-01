@@ -52,7 +52,7 @@ public:
                                      int _processed,
                                      const QIcon& _thumbnail);
 
-    virtual ~MLPipelinePackageNotify() = default;
+    ~MLPipelinePackageNotify() = default;
 
     MLPipelinePackageNotify(const MLPipelinePackageNotify& other);
     MLPipelinePackageNotify& operator=(const MLPipelinePackageNotify&);
