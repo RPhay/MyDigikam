@@ -54,8 +54,8 @@ BUGFIXES:
 039 ==> 507668 - Prioritize user-added metadata over the ones in MakerNotes.
 040 ==> 507713 - Incorrect sorting of picture names.
 041 ==> 507661 - Portrait videos are displayed horizontally in presentation mode.
-042 ==> 
-043 ==> 
+042 ==> 507749 - Sort Items by Name in Thumbnails View.
+043 ==>
 044 ==> 
 045 ==> 
 046 ==> 

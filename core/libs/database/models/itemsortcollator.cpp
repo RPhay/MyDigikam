@@ -40,11 +40,12 @@ public:
 
 public:
 
-    const QString            versionStr     = QLatin1String("_v");
-    const QRegularExpression versionExp     = QRegularExpression(QRegularExpression::anchoredPattern(QLatin1String("(.+)_v(\\d+)(\\..+)?")));
+    const QString               versionStr   = QLatin1String("_v");
+    const QRegularExpression    versionExp   = QRegularExpression(QRegularExpression::anchoredPattern(QLatin1String("(.+)_v(\\d+)(\\..+)?")));
+    const QString::SectionFlags sectionFlags = (QString::SectionSkipEmpty | QString::SectionIncludeLeadingSep);
 
-    QCollator                itemCollator;
-    QCollator                albumCollator;
+    QCollator                   itemCollator;
+    QCollator                   albumCollator;
 };
 
 // -----------------------------------------------------------------------------------------------
@@ -86,13 +87,13 @@ int ItemSortCollator::itemCompare(const QString& a,
         // Check if version string is included, this is
         // faster than always using QRegularExpression.
 
+        QString aa = a;
+        QString bb = b;
+
         d->itemCollator.setCaseSensitivity(caseSensitive);
 
         if (a.contains(d->versionStr) || b.contains(d->versionStr))
         {
-            QString aa = a;
-            QString bb = b;
-
             QRegularExpressionMatch aMatch = d->versionExp.match(a);
             QRegularExpressionMatch bMatch = d->versionExp.match(b);
 
@@ -107,11 +108,26 @@ int ItemSortCollator::itemCompare(const QString& a,
                 bb = bMatch.captured(1) + QLatin1String("@@") +
                      bMatch.captured(2) + bMatch.captured(3);
             }
-
-            return d->itemCollator.compare(aa, bb);
         }
 
-        return d->itemCollator.compare(a, b);
+        // This QCollator sort fix is inspired by Dolphin.
+
+        const QString aaBaseName = aa.section(QLatin1Char('.'), 0, 0, d->sectionFlags);
+        const QString bbBaseName = bb.section(QLatin1Char('.'), 0, 0, d->sectionFlags);
+
+        const int res            = d->itemCollator.compare(aaBaseName, bbBaseName);
+
+        if (
+            (res != 0)                            ||
+            ((aaBaseName.length() == aa.length()) &&
+             (bbBaseName.length() == bb.length()))
+           )
+        {
+            return res;
+        }
+
+        return d->itemCollator.compare(aa.right(aa.length() - aaBaseName.length()),
+                                       bb.right(bb.length() - bbBaseName.length()));
     }
 
     return QString::compare(a, b, caseSensitive);
