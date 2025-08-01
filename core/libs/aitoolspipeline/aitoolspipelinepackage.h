@@ -6,7 +6,7 @@
  * Date        : 2025-05-02
  * Description : AI tools pipeline package class
  *
- * SPDX-FileCopyrightText : 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2024-2025 by Michael Miller <michael underscore miller at msn dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
