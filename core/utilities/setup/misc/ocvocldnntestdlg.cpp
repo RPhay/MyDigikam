@@ -100,9 +100,9 @@ OpenCVOpenCLDNNTestDlg::OpenCVOpenCLDNNTestDlg(QWidget* const parent)
     d->progressText->setVisible(false);  // Initially hidden until test starts
 
     d->buttons          = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "Start"));
+    d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button start the AI GUP test", "Start"));
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
-    d->buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@action:button", "Begin test"));
+    d->buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@action:button start the AI GUP test", "Begin test"));
 
     d->layoutGrid->addWidget(d->icon,          0, 0, 1, 1);
     d->layoutGrid->addWidget(d->message,       0, 1, 1, 3);
@@ -138,7 +138,7 @@ OpenCVOpenCLDNNTestDlg::~OpenCVOpenCLDNNTestDlg()
 void OpenCVOpenCLDNNTestDlg::slotStart()
 {
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(false);
-    d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "Testing..."));
+    d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button start the AI GUP test", "Testing..."));
     d->buttons->button(QDialogButtonBox::Cancel)->setEnabled(false);
 
     // Clear and show the progress text area
@@ -222,8 +222,8 @@ void OpenCVOpenCLDNNTestDlg::slotTestFinished(bool result)
 
     d->progressText->append(QLatin1String("\n") + resultMessage);
 
-    d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "Close"));
-    d->buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@action:button", "Close the test dialog"));
+    d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button start the AI GUP test", "Close"));
+    d->buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@action:button start the AI GUP test", "Close the test dialog"));
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(true);
 }
 
