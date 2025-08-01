@@ -2626,10 +2626,10 @@ msgstr ""
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
-"acresoffilm@kde.org, CoelacanthusHex@kde.org, chaofeng111@gmail.com, "
-"fundawang@linux.net.cn, i@guoyunhe.me, millionart@kde.org, "
-"shuizhuyuanluo@126.com, tds00@qq.com, xujia19@gmail.com, wengxt@gmail.com, "
-"YFdyh000@kde.org, bingling00@kde.org"
+"acresoffilm@kde.org, CoelacanthusHex@kde.org, EricZhao20060708@kde.org, "
+"chaofeng111@gmail.com, fundawang@linux.net.cn, i@guoyunhe.me, millionart@kde."
+"org, shuizhuyuanluo@126.com, tds00@qq.com, xujia19@gmail.com, wengxt@gmail."
+"com, YFdyh000@kde.org, bingling00@kde.org"
 
 #: core/app/main/main.cpp:247
 #, kde-format
@@ -41105,9 +41105,7 @@ msgstr "在此选择要使用的字体大小。"
 #, kde-format
 msgctxt "@info: font properties"
 msgid "The Quick Brown Fox Jumps Over The Lazy Dog"
-msgstr ""
-"The Quick Brown Fox Jumps Over The Lazy Dog\n"
-"龙跳天门，虎卧凰阁"
+msgstr "The Quick Brown Fox Jumps Over The Lazy Dog 龙跳天门 虎卧凰阁"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:474
 #, kde-format
