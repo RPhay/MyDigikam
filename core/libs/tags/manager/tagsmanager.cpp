@@ -747,8 +747,8 @@ void TagsManager::slotLoadTags()
                 startPos = i;
             }
 
-                currTag.append(line.at(i));
-            }
+            currTag.append(line.at(i));
+        }
 
         if (!currTag.isEmpty())
         {
