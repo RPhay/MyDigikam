@@ -26,13 +26,13 @@ for patchfile in $FILES ; do
 
     if [[ $pfile == "Portfile.patch" ]] ; then
 
-        echo "Apply patch: $patchfile [$pfile | $pdir]"
+        echo "> Apply patch: $patchfile"
         patch -u $INSTALL_PREFIX/var/macports/sources/rsync.macports.org/macports/release/tarballs/ports/$pdir/Portfile -i $patchfile
 
     else
 
-        echo "Copy patch: $patchfile [$pfile | $pdir]"
-        cp $patchfile $INSTALL_PREFIX/var/macports/sources/rsync.macports.org/macports/release/tarballs/ports/
+        echo "> Copy patch: $patchfile"
+        cp -v $patchfile $INSTALL_PREFIX/var/macports/sources/rsync.macports.org/macports/release/tarballs/ports/$pdir
 
     fi
 

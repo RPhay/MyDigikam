@@ -297,9 +297,6 @@ port install lcms2
 port install expat
 port install libxml2
 port install libxslt
-port install py311-wheel
-port install py312-wheel
-port install py313-gobject3
 port install avahi +python27
 port install libical
 port install bison
