@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-30 01:58+0000\n"
+"POT-Creation-Date: 2025-08-02 01:57+0000\n"
 "PO-Revision-Date: 2025-03-30 17:14+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -94,7 +94,6 @@ msgid "Select the current day"
 msgstr "Vybrať dnešný deň"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -26791,19 +26790,19 @@ msgstr "Prevod do RAW"
 msgid "Unable to load image"
 msgstr "Nepodarilo sa načítať obrázok"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:470
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "Postprocessing"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:512
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-rotating: %1\n"
 msgstr "Režim merania:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -26816,13 +26815,13 @@ msgstr "Režim merania:"
 msgid "Album: %1\n"
 msgstr "Album „%1“"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "Otočenie:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:536
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
 #, fuzzy, kde-format
 #| msgid "&Skip"
 msgid "Skipped"
@@ -68347,21 +68346,21 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@action: button"
 #| msgid "Start"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "Spustiť"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
 #, fuzzy, kde-format
 #| msgid "Beta tester"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "Beta tester"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
 #, fuzzy, kde-format
 #| msgid "Settings..."
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "Nastavenia..."
 
@@ -68384,9 +68383,16 @@ msgid ""
 "models."
 msgstr ""
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@action:button start the AI GUP test"
+msgid "Close"
+msgstr "Zavrieť"
+
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, kde-format
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr ""
 
@@ -70183,6 +70189,13 @@ msgstr "Nastavenie albumu spracovaných položiek"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovať položky"
+
+#, fuzzy
+#~| msgctxt "@action: button"
+#~| msgid "Start"
+#~ msgctxt "@action:button"
+#~ msgid "Start"
+#~ msgstr "Spustiť"
 
 #~ msgctxt "Here a makefile is a script for GNU Make"
 #~ msgid "<p><b>Cannot create makefile: </b></p><p>%1</p>"

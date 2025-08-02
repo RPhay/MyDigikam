@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-30 01:58+0000\n"
+"POT-Creation-Date: 2025-08-02 01:57+0000\n"
 "PO-Revision-Date: 2023-12-13 03:27-0500\n"
 "Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
 "Language-Team: sq\n"
@@ -108,7 +108,6 @@ msgid "Select the current day"
 msgstr "Zhduke Etiketën"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
 #, fuzzy, kde-format
 #| msgid "&Close"
 msgctxt "@action:button"
@@ -25925,18 +25924,18 @@ msgstr ""
 msgid "Unable to load image"
 msgstr "Zhduke Etiketën"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:470
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
 #, fuzzy, kde-format
 #| msgid "Select Images"
 msgid "AI Tools Processing"
 msgstr "Zgjidh Imazhet"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:512
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
 #, fuzzy, kde-format
 msgid "Auto-rotating: %1\n"
 msgstr "Vlerësimi:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -25949,13 +25948,13 @@ msgstr "Vlerësimi:"
 msgid "Album: %1\n"
 msgstr "Albumi:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "Rrotullimi;"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:536
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
 #, kde-format
 msgid "Skipped"
 msgstr ""
@@ -64436,20 +64435,20 @@ msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
 #, fuzzy, kde-format
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "Zgjidh Imazhet"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
 #, fuzzy, kde-format
 #| msgid "Beta tester"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "Beta testues"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
 #, fuzzy, kde-format
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "Duke u ngarkuar: "
 
@@ -64472,9 +64471,16 @@ msgid ""
 "models."
 msgstr ""
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
+#, fuzzy, kde-format
+#| msgid "&Close"
+msgctxt "@action:button start the AI GUP test"
+msgid "Close"
+msgstr "&Mbylle"
+
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, kde-format
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr ""
 
@@ -66074,6 +66080,11 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "Zgjidh Imazhet"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Start"
+#~ msgstr "Zgjidh Imazhet"
 
 #, fuzzy
 #~ msgctxt "@title"

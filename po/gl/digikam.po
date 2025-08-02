@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-30 01:58+0000\n"
+"POT-Creation-Date: 2025-08-02 01:57+0000\n"
 "PO-Revision-Date: 2025-06-21 12:28+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -134,7 +134,6 @@ msgid "Select the current day"
 msgstr "Escolla o día actual"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -27350,19 +27349,19 @@ msgstr "Conversión de cru de UFRaw"
 msgid "Unable to load image"
 msgstr "Non foi posíbel cargar a imaxe"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:470
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "Posprocesamento"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:512
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
 #, fuzzy, kde-format
 #| msgid "Auto-tags for: %1\n"
 msgid "Auto-rotating: %1\n"
 msgstr "Etiquetas automáticas para: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27374,13 +27373,13 @@ msgstr "Etiquetas automáticas para: %1\n"
 msgid "Album: %1\n"
 msgstr "Álbum: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
 #, fuzzy, kde-format
 #| msgid "Rotation: "
 msgid "Rotation: %1\n"
 msgstr "Rotación: "
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:536
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
 #, fuzzy, kde-format
 #| msgid "&Skip"
 msgid "Skipped"
@@ -67329,22 +67328,24 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, kde-format
-msgctxt "@action:button"
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "Start"
+msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "Iniciar"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
 #, fuzzy, kde-format
 #| msgid "Beta tester"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "Probas."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
 #, fuzzy, kde-format
 #| msgid "Settings..."
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "Configuración…"
 
@@ -67367,9 +67368,16 @@ msgid ""
 "models."
 msgstr ""
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@action:button start the AI GUP test"
+msgid "Close"
+msgstr "Pechar"
+
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, kde-format
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr ""
 
@@ -69140,6 +69148,10 @@ msgstr "Elementos do álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importar os elementos"
+
+#~ msgctxt "@action:button"
+#~ msgid "Start"
+#~ msgstr "Iniciar"
 
 #~ msgctxt "Here a makefile is a script for GNU Make"
 #~ msgid "<p><b>Cannot create makefile: </b></p><p>%1</p>"

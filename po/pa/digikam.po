@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-30 01:58+0000\n"
+"POT-Creation-Date: 2025-08-02 01:57+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -113,7 +113,6 @@ msgid "Select the current day"
 msgstr "ਮੌਜੂਦਾ ਦਿਨ ਚੁਣੋ"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -26801,19 +26800,19 @@ msgstr "ਰੰਗ ਥਾਂ"
 msgid "Unable to load image"
 msgstr "ਚਿੱਤਰ ਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:470
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "ਬਾਅਦ ਵਿੱਚ ਪਰੋਸੈਸਿੰਗ"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:512
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgid "Auto-rotating: %1\n"
 msgstr "ਰੇਟਿੰਗ:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -26826,13 +26825,13 @@ msgstr "ਰੇਟਿੰਗ:"
 msgid "Album: %1\n"
 msgstr "ਐਲਬਮ \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "ਘੁੰਮਾਉ:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:536
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
 #, kde-format
 msgid "Skipped"
 msgstr ""
@@ -66814,21 +66813,21 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "Start index for custom range"
 #| msgid "Start:"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "ਸ਼ੁਰੂ:"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
 #, fuzzy, kde-format
 #| msgid "Beta tester"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "ਬੀਟਾ ਟੈਸਟਰ"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
 #, fuzzy, kde-format
 #| msgid "Settings..."
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "ਸੈਟਿੰਗ..."
 
@@ -66851,10 +66850,17 @@ msgid ""
 "models."
 msgstr ""
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
+#, fuzzy, kde-format
+#| msgid "&Close"
+msgctxt "@action:button start the AI GUP test"
+msgid "Close"
+msgstr "ਬੰਦ ਕਰੋ(&C)"
+
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, fuzzy, kde-format
 #| msgid "Close the theme designer"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr "ਥੀਮ ਡਿਜ਼ਾਇਨਰ ਬੰਦ ਕਰੋ"
 
@@ -68493,6 +68499,13 @@ msgstr "ਐਲਬਮ ਆਈਟਮਾਂ"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "ਚਿੱਤਰ ਲੜੀਬੱਧ(&S)"
+
+#, fuzzy
+#~| msgctxt "Start index for custom range"
+#~| msgid "Start:"
+#~ msgctxt "@action:button"
+#~ msgid "Start"
+#~ msgstr "ਸ਼ੁਰੂ:"
 
 #, fuzzy
 #~| msgid "Base Tools"

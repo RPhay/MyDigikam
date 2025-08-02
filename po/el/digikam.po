@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-30 01:58+0000\n"
+"POT-Creation-Date: 2025-08-02 01:57+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -123,7 +123,6 @@ msgid "Select the current day"
 msgstr "Επιλέξτε την τρέχουσα ημέρα"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -28345,19 +28344,19 @@ msgstr "Raw μετατροπή"
 msgid "Unable to load image"
 msgstr "Αποτυχία φόρτωσης της εικόνας"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:470
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "Μετα-επεξεργασία"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:512
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-rotating: %1\n"
 msgstr "Λειτουργία μέτρησης:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -28370,13 +28369,13 @@ msgstr "Λειτουργία μέτρησης:"
 msgid "Album: %1\n"
 msgstr "Λεύκωμα \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "Περιστροφή:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:536
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
 #, kde-format
 msgid "Skipped"
 msgstr ""
@@ -71327,21 +71326,21 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "Start index for custom range"
 #| msgid "Start:"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "Αρχικό:"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
 #, fuzzy, kde-format
 #| msgid "Beta tester"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "Δοκιμαστής beta"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
 #, fuzzy, kde-format
 #| msgid "Settings..."
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "Ρυθμίσεις..."
 
@@ -71364,9 +71363,16 @@ msgid ""
 "models."
 msgstr ""
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
+#, fuzzy, kde-format
+#| msgid "&Close"
+msgctxt "@action:button start the AI GUP test"
+msgid "Close"
+msgstr "&Κλείσιμο"
+
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, kde-format
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr ""
 
@@ -73189,6 +73195,13 @@ msgstr "Αντικείμενα λευκώματος"
 #, kde-format
 msgid "Import Items"
 msgstr "Εισαγωγή αντικειμένων"
+
+#, fuzzy
+#~| msgctxt "Start index for custom range"
+#~| msgid "Start:"
+#~ msgctxt "@action:button"
+#~ msgid "Start"
+#~ msgstr "Αρχικό:"
 
 #, fuzzy
 #~| msgid "Cannot create Makefile."

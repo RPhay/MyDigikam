@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-30 01:58+0000\n"
+"POT-Creation-Date: 2025-08-02 01:57+0000\n"
 "PO-Revision-Date: 2025-07-28 10:12+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -83,7 +83,6 @@ msgid "Select the current day"
 msgstr "Seleccioneu el dia actual"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -27020,17 +27019,17 @@ msgstr "Conversió RAW d'UFRaw"
 msgid "Unable to load image"
 msgstr "No s'ha pogut carregar la imatge"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:470
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
 #, kde-format
 msgid "AI Tools Processing"
 msgstr "Processament d'eines d'IA"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:512
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
 #, kde-format
 msgid "Auto-rotating: %1\n"
 msgstr "Gir automàtic: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27042,12 +27041,12 @@ msgstr "Gir automàtic: %1\n"
 msgid "Album: %1\n"
 msgstr "Àlbum: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
 #, kde-format
 msgid "Rotation: %1\n"
 msgstr "Gir: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:536
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
 #, kde-format
 msgid "Skipped"
 msgstr "S'ha omés"
@@ -66861,20 +66860,26 @@ msgstr ""
 "Voleu provar ara este sistema?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, kde-format
-msgctxt "@action:button"
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "Start"
+msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "Inicia"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
-#, kde-format
-msgctxt "@action:button"
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Begin test"
+msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "Comença la prova"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
-#, kde-format
-msgctxt "@action:button"
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Testing..."
+msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "Provant…"
 
@@ -66901,9 +66906,18 @@ msgstr ""
 "La prova ha fallat. Este sistema pot utilitzar pot no ser capaç d'utilitzar "
 "l'acceleració de GPU per als models d'IA."
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@action:button start the AI GUP test"
+msgid "Close"
+msgstr "Tanca"
+
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
-#, kde-format
-msgctxt "@action:button"
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Close the test dialog"
+msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr "Tanca el diàleg de prova"
 
@@ -68650,6 +68664,10 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
+
+#~ msgctxt "@action:button"
+#~ msgid "Start"
+#~ msgstr "Inicia"
 
 #~ msgctxt "Here a makefile is a script for GNU Make"
 #~ msgid "<p><b>Cannot create makefile: </b></p><p>%1</p>"

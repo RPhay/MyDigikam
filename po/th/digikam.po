@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-30 01:58+0000\n"
+"POT-Creation-Date: 2025-08-02 01:57+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -105,7 +105,6 @@ msgid "Select the current day"
 msgstr "เริ่มนำเสนอภาพด้วยภาพปัจจุบัน"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
 #, fuzzy, kde-format
 #| msgid "&Close"
 msgctxt "@action:button"
@@ -27103,19 +27102,19 @@ msgstr ""
 "ล้มเหลวในการโหลดภาพ\n"
 "\"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:470
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "กำลังประมวลผลหลังการกระทำ"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:512
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-rotating: %1\n"
 msgstr "โหมดการวัดแสง:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27128,13 +27127,13 @@ msgstr "โหมดการวัดแสง:"
 msgid "Album: %1\n"
 msgstr "อัลบั้ม \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "การหมุน:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:536
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
 #, kde-format
 msgid "Skipped"
 msgstr ""
@@ -67795,21 +67794,21 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "Start index for custom range"
 #| msgid "Start:"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "เริ่ม:"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
 #, fuzzy, kde-format
 #| msgid "Beta tester"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "ทดสอบรุ่นเบต้า"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
 #, fuzzy, kde-format
 #| msgid "Settings..."
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "ตั้งค่าต่าง ๆ ..."
 
@@ -67832,10 +67831,17 @@ msgid ""
 "models."
 msgstr ""
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
+#, fuzzy, kde-format
+#| msgid "&Close"
+msgctxt "@action:button start the AI GUP test"
+msgid "Close"
+msgstr "ปิ&ด"
+
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, fuzzy, kde-format
 #| msgid "Close the theme designer"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr "ปิดเครื่องมือออกแบบชุดตกแต่ง"
 
@@ -69566,6 +69572,13 @@ msgstr "รายการอัลบั้มต่าง ๆ"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "จัดเ&รียงรูปภาพ"
+
+#, fuzzy
+#~| msgctxt "Start index for custom range"
+#~| msgid "Start:"
+#~ msgctxt "@action:button"
+#~ msgid "Start"
+#~ msgstr "เริ่ม:"
 
 #, fuzzy
 #~| msgid "Base Tools"

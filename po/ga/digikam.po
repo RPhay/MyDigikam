@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-30 01:58+0000\n"
+"POT-Creation-Date: 2025-08-02 01:57+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -113,7 +113,6 @@ msgid "Select the current day"
 msgstr "Tosaigh leis an íomhá reatha"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
 #, fuzzy, kde-format
 #| msgid "&Close"
 msgctxt "@action:button"
@@ -27296,19 +27295,19 @@ msgstr ""
 msgid "Unable to load image"
 msgstr "Níorbh fhéidir an íomhá a luchtú"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:470
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "Iarphróiseáil"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:512
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-rotating: %1\n"
 msgstr "Mód méadraithe:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27321,13 +27320,13 @@ msgstr "Mód méadraithe:"
 msgid "Album: %1\n"
 msgstr "Albam \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "Rothlú:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:536
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
 #, kde-format
 msgid "Skipped"
 msgstr ""
@@ -68304,21 +68303,21 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "Start index for custom range"
 #| msgid "Start:"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "Tosach:"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
 #, fuzzy, kde-format
 #| msgid "Beta tester"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "Tástálaí béite"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
 #, fuzzy, kde-format
 #| msgid "Settings..."
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "Socruithe..."
 
@@ -68341,9 +68340,16 @@ msgid ""
 "models."
 msgstr ""
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
+#, fuzzy, kde-format
+#| msgid "&Close"
+msgctxt "@action:button start the AI GUP test"
+msgid "Close"
+msgstr "&Dún"
+
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, kde-format
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr ""
 
@@ -69969,6 +69975,13 @@ msgstr "Míreanna Albaim"
 #, kde-format
 msgid "Import Items"
 msgstr "Iompórtáil Íomhánna"
+
+#, fuzzy
+#~| msgctxt "Start index for custom range"
+#~| msgid "Start:"
+#~ msgctxt "@action:button"
+#~ msgid "Start"
+#~ msgstr "Tosach:"
 
 #, fuzzy
 #~| msgid "Base Tools"

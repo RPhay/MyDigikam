@@ -55,7 +55,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-30 01:58+0000\n"
+"POT-Creation-Date: 2025-08-02 01:57+0000\n"
 "PO-Revision-Date: 2025-07-30 13:43+0300\n"
 "Last-Translator: Mariya Shikunova <maremarie@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -129,7 +129,6 @@ msgid "Select the current day"
 msgstr "Перейти к сегодняшнему дню"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -27065,17 +27064,17 @@ msgstr "Преобразование «цифрового негатива» UFR
 msgid "Unable to load image"
 msgstr "Не удалось загрузить изображение"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:470
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
 #, kde-format
 msgid "AI Tools Processing"
 msgstr "Обработка инструментов искусственного интеллекта"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:512
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
 #, kde-format
 msgid "Auto-rotating: %1\n"
 msgstr "Автоматическое вращение: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -27087,12 +27086,12 @@ msgstr "Автоматическое вращение: %1\n"
 msgid "Album: %1\n"
 msgstr "Альбом: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
 #, kde-format
 msgid "Rotation: %1\n"
 msgstr "Вращение: %1\n"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:536
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
 #, kde-format
 msgid "Skipped"
 msgstr "Пропущено"
@@ -66785,20 +66784,26 @@ msgstr ""
 "Проверить систему сейчас?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, kde-format
-msgctxt "@action:button"
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "Start"
+msgctxt "@action:button start the AI GUP test"
 msgid "Start"
-msgstr "Начать"
+msgstr "Запустить"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
-#, kde-format
-msgctxt "@action:button"
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Begin test"
+msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "Начать проверку"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
-#, kde-format
-msgctxt "@action:button"
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Testing..."
+msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "Проверка..."
 
@@ -66825,9 +66830,18 @@ msgstr ""
 "Проверка не пройдена. Возможно, в вашей системе не удастся использовать "
 "ускорение графического процессора для моделей искусственного интеллекта."
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@action:button start the AI GUP test"
+msgid "Close"
+msgstr "Закрыть"
+
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
-#, kde-format
-msgctxt "@action:button"
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Close the test dialog"
+msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr "Закрыть диалог проверки"
 
@@ -68579,6 +68593,10 @@ msgstr "Альбомы"
 #, kde-format
 msgid "Import Items"
 msgstr "Импорт"
+
+#~ msgctxt "@action:button"
+#~ msgid "Start"
+#~ msgstr "Начать"
 
 #~ msgctxt "Here a makefile is a script for GNU Make"
 #~ msgid "<p><b>Cannot create makefile: </b></p><p>%1</p>"

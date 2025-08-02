@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-30 01:58+0000\n"
+"POT-Creation-Date: 2025-08-02 01:57+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -125,7 +125,6 @@ msgid "Select the current day"
 msgstr "Počni sa trenutnom slikom"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
 #, fuzzy, kde-format
 #| msgid "Close-up"
 msgctxt "@action:button"
@@ -28653,19 +28652,19 @@ msgstr "Gruba konverzija"
 msgid "Unable to load image"
 msgstr "Neuspjelo učitavanje slike"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:470
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "Kasnije procesiranje"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:512
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
 #, fuzzy, kde-format
 #| msgid "Metering mode:"
 msgid "Auto-rotating: %1\n"
 msgstr "Način mjerenja:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -28678,13 +28677,13 @@ msgstr "Način mjerenja:"
 msgid "Album: %1\n"
 msgstr "Album \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "Rotacija:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:536
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
 #, kde-format
 msgid "Skipped"
 msgstr ""
@@ -71549,21 +71548,21 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "Start index for custom range"
 #| msgid "Start:"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "Početak:"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
 #, fuzzy, kde-format
 #| msgid "Beta tester"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "Testiranje"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
 #, fuzzy, kde-format
 #| msgid "Settings..."
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "Podešavanja..."
 
@@ -71586,9 +71585,16 @@ msgid ""
 "models."
 msgstr ""
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
+#, fuzzy, kde-format
+#| msgid "Close-up"
+msgctxt "@action:button start the AI GUP test"
+msgid "Close"
+msgstr "Snimak iz blizine"
+
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, kde-format
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr ""
 
@@ -73448,6 +73454,13 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Uvozni predmeti"
+
+#, fuzzy
+#~| msgctxt "Start index for custom range"
+#~| msgid "Start:"
+#~ msgctxt "@action:button"
+#~ msgid "Start"
+#~ msgstr "Početak:"
 
 #, fuzzy
 #~| msgid "Base Tools"

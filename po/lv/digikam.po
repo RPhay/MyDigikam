@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-30 01:58+0000\n"
+"POT-Creation-Date: 2025-08-02 01:57+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -106,7 +106,6 @@ msgid "Select the current day"
 msgstr "Norādīt šodienu"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -26452,18 +26451,18 @@ msgstr ""
 "Neizdevās ielādēt attēlu\n"
 "\"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:470
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgid "AI Tools Processing"
 msgstr "Pēcapstrāde"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:512
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
 #, fuzzy, kde-format
 msgid "Auto-rotating: %1\n"
 msgstr "Mērīšanas režīms"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -26476,13 +26475,13 @@ msgstr "Mērīšanas režīms"
 msgid "Album: %1\n"
 msgstr "Albums \"%1\""
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "Pagriešana:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:536
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
 #, kde-format
 msgid "Skipped"
 msgstr ""
@@ -66801,21 +66800,21 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@action: button"
 #| msgid "Start"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "Sākt"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
 #, fuzzy, kde-format
 #| msgid "Beta tester"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "Beta testētājs"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
 #, fuzzy, kde-format
 #| msgid "Settings..."
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "Iestatījumi..."
 
@@ -66838,10 +66837,17 @@ msgid ""
 "models."
 msgstr ""
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@action:button start the AI GUP test"
+msgid "Close"
+msgstr "Aizvērt"
+
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, fuzzy, kde-format
 #| msgid "Close the theme designer"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr "Aizvērt tēmu veidotāju"
 
@@ -68491,6 +68497,13 @@ msgstr "Albumu vienības"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Kārtot attēlus"
+
+#, fuzzy
+#~| msgctxt "@action: button"
+#~| msgid "Start"
+#~ msgctxt "@action:button"
+#~ msgid "Start"
+#~ msgstr "Sākt"
 
 #, fuzzy
 #~| msgid "Base Tools"

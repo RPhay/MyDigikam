@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-30 01:58+0000\n"
+"POT-Creation-Date: 2025-08-02 01:57+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -451,7 +451,6 @@ msgid "Select the current day"
 msgstr "آغاز با تصویر جاری"
 
 #: core/app/date/ddatepicker.cpp:574
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -26646,17 +26645,17 @@ msgstr "فاصله رنگ"
 msgid "Unable to load image"
 msgstr "خرابی در بارگذاری تصویر"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:470
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:465
 #, fuzzy, kde-format
 msgid "AI Tools Processing"
 msgstr "ویژگیها"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:512
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:507
 #, fuzzy, kde-format
 msgid "Auto-rotating: %1\n"
 msgstr "حالت اندازه‌گیری:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:513
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
 #: core/libs/tags/autoassignment/autotagsengine.cpp:250
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
@@ -26669,13 +26668,13 @@ msgstr "حالت اندازه‌گیری:"
 msgid "Album: %1\n"
 msgstr "آلبوم »%1«"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:514
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:509
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: %1\n"
 msgstr "چرخش:"
 
-#: core/libs/aitoolspipeline/aitoolspipeline.cpp:536
+#: core/libs/aitoolspipeline/aitoolspipeline.cpp:531
 #, kde-format
 msgid "Skipped"
 msgstr ""
@@ -65508,21 +65507,21 @@ msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
 #, fuzzy, kde-format
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "آغاز"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
 #, fuzzy, kde-format
 #| msgid "Beta tester"
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "آزماینده بتا"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
 #, fuzzy, kde-format
 #| msgid "Settings..."
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "تنظیمات..."
 
@@ -65545,9 +65544,15 @@ msgid ""
 "models."
 msgstr ""
 
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
+#, fuzzy, kde-format
+msgctxt "@action:button start the AI GUP test"
+msgid "Close"
+msgstr "&بستن‌"
+
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
 #, kde-format
-msgctxt "@action:button"
+msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr ""
 
@@ -67153,6 +67158,11 @@ msgstr "آلبومها"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&مرتب‌سازی تصاویر‌"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Start"
+#~ msgstr "آغاز"
 
 #, fuzzy
 #~ msgctxt "@title"
