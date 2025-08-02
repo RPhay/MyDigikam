@@ -297,7 +297,6 @@ port install lcms2
 port install expat
 port install libxml2
 port install libxslt
-port install avahi +python27
 port install libical
 port install bison
 port install x265
