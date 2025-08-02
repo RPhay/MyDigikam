@@ -688,7 +688,7 @@ void TagsManager::slotLoadTags()
 
     QString loadPath = DFileDialog::getOpenFileName(qApp->activeWindow(),
                                                     i18nc("@title:window", "Choose Import Tag File"),
-                                                    tagsPath, QLatin1String("*.dktag"));
+                                                    tagsPath, QLatin1String("CVKC (*.txt)"));
 
     if (loadPath.isEmpty())
     {
@@ -714,25 +714,57 @@ void TagsManager::slotLoadTags()
 
 #endif
 
-    tagStream.setAutoDetectUnicode(true);
-
-    QString line;
-    tagStream.readLineInto(&line);
-
-    if (line != QLatin1String("TAGVersion=1"))
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Invalid tag file or version" << line;
-
-        return;
-    }
-
     QApplication::setOverrideCursor(Qt::WaitCursor);
+
+    tagStream.setAutoDetectUnicode(true);
+    QStringList tagPathList;
+    int startPos = -1;
+    QString line;
 
     while (tagStream.readLineInto(&line))
     {
-        if (line.startsWith(QLatin1Char('/')))
+        QString currTag;
+        int tabPos = 0;
+
+        for (int i = 0 ; i < line.size() ; ++i)
         {
-            TagsCache::instance()->getOrCreateTag(line);
+            if (
+                (line.at(i) == QLatin1Char('[')) ||
+                (line.at(i) == QLatin1Char('{'))
+               )
+            {
+                break;
+            }
+
+            if (line.at(i) == QLatin1Char('\t'))
+            {
+                ++tabPos;
+                continue;
+            }
+
+            if (startPos == -1)
+            {
+                startPos = i;
+            }
+
+                currTag.append(line.at(i));
+            }
+
+        if (!currTag.isEmpty())
+        {
+            const int count = tabPos - startPos;
+
+            while (!tagPathList.isEmpty() && (tagPathList.size() > count))
+            {
+                tagPathList.removeLast();
+            }
+
+            QString tagPath;
+            tagPathList.append(currTag);
+            tagPath.append(QLatin1Char('/'));
+            tagPath.append(tagPathList.join(QLatin1Char('/')));
+
+            TagsCache::instance()->getOrCreateTag(tagPath);
         }
     }
 
