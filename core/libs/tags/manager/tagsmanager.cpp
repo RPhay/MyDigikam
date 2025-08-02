@@ -1032,7 +1032,7 @@ void TagsManager::setupActions()
     syncexportMenu->addAction(wrDbImg);
     syncexportMenu->addAction(readTags);
     syncexportMenu->addAction(wipeAll);
-    syncexportMenu->addAction(saveTags);
+//    syncexportMenu->addAction(saveTags);
     syncexportMenu->addAction(loadTags);
 
     d->mainToolbar->addAction(d->addAction);
