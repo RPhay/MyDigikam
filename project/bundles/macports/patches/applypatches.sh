@@ -17,10 +17,23 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
 . ../config.sh
 
-for patchfile in `find -iname \*.patch`; do
+FILES=$(find . -iname "*.patch")
+
+for patchfile in $FILES ; do
 
     pfile="$(basename "$patchfile")"
-    echo "Apply patch: $patchfile"
-    patch --verbose -u $INSTALL_PREFIX/var/macports/sources/rsync.macports.org/macports/release/tarballs/ports/$pdir/Portfile -i $patchfile
+    pdir="$(dirname "$patchfile")"
+
+    if [[ $pfile == "Portfile.patch" ]] ; then
+
+        echo "Apply patch: $patchfile [$pfile | $pdir]"
+        patch -u $INSTALL_PREFIX/var/macports/sources/rsync.macports.org/macports/release/tarballs/ports/$pdir/Portfile -i $patchfile
+
+    else
+
+        echo "Copy patch: $patchfile [$pfile | $pdir]"
+        cp $patchfile $INSTALL_PREFIX/var/macports/sources/rsync.macports.org/macports/release/tarballs/ports/
+
+    fi
 
 done
