@@ -150,15 +150,15 @@ else
 
     # KDE KF6 frameworks version.
     # See official release here: https://download.kde.org/stable/frameworks/
-    DK_KDE_VERSION="v6.14.0"
+    DK_KDE_VERSION="v6.16.0"
 
     # KDE Plasma version.
     # See official release here: https://download.kde.org/stable/plasma/
-    DK_KP_VERSION="v6.3.5"
+    DK_KP_VERSION="v6.4.3"
 
     # KDE Application version.
     # See official release here: https://download.kde.org/stable/release-service/
-    DK_KA_VERSION="v25.04.1"
+    DK_KA_VERSION="v25.04.3"
 
     DK_UPLOADDIR="/srv/archives/files/digikam/"
 
