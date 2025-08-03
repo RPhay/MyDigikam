@@ -17,30 +17,31 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 # Pre-processing checks
 
 . ../common.sh
+. ../config.sh
 ChecksRunAsRoot
 
-rm -vfr /usr/lib64/libKF*
-rm -vfr /usr/share/ECM
-rm -vfr /usr/include/KF*
-rm -vfr /usr/lib/x86_64-linux-gnu/cmake/KF*
-rm -vfr /usr/include/astro
-rm -vfr /usr/include/marble
-rm -vfr /usr/share/marble
-rm -vfr /usr/share/k*5
-rm -vfr /usr/plugins/k*5
-rm -vfr /usr/share/k*6
-rm -vfr /usr/plugins/k*6
-rm -vfr /usr/plugins/imageformats/kimg*
-rm -vfr /usr/plugins/kauth
-rm -vfr /usr/plugins/plasma
-rm -vfr /usr/plugins/styles/breeze*
-rm -vfr /usr/plugins/iconengines/KIcon*
-rm -vfr /usr/plugins/designer/k*
-rm -vfr /usr/plugins/org.kde*
-rm -vfr /usr/plugins/marble*
-rm -vfr /usr/plugins/kcm*
-rm -vfr /usr/lib64/marble
-rm -vfr /usr/lib64/libastro*
-rm -vfr /usr/lib64/libmarble*
-rm -vfr /usr/lib64/cmake/Marble
-rm -vfr /usr/lib64/cmake/Astro
+rm -vfr $INSTALL_DIR/lib64/libKF*
+rm -vfr $INSTALL_DIR/share/ECM
+rm -vfr $INSTALL_DIR/include/KF*
+rm -vfr $INSTALL_DIR/lib/x86_64-linux-gnu/cmake/KF*
+rm -vfr $INSTALL_DIR/include/astro
+rm -vfr $INSTALL_DIR/include/marble
+rm -vfr $INSTALL_DIR/share/marble
+rm -vfr $INSTALL_DIR/share/k*5
+rm -vfr $INSTALL_DIR/plugins/k*5
+rm -vfr $INSTALL_DIR/share/k*6
+rm -vfr $INSTALL_DIR/plugins/k*6
+rm -vfr $INSTALL_DIR/plugins/imageformats/kimg*
+rm -vfr $INSTALL_DIR/plugins/kauth
+rm -vfr $INSTALL_DIR/plugins/plasma
+rm -vfr $INSTALL_DIR/plugins/styles/breeze*
+rm -vfr $INSTALL_DIR/plugins/iconengines/KIcon*
+rm -vfr $INSTALL_DIR/plugins/designer/k*
+rm -vfr $INSTALL_DIR/plugins/org.kde*
+rm -vfr $INSTALL_DIR/plugins/marble*
+rm -vfr $INSTALL_DIR/plugins/kcm*
+rm -vfr $INSTALL_DIR/lib64/marble
+rm -vfr $INSTALL_DIR/lib64/libastro*
+rm -vfr $INSTALL_DIR/lib64/libmarble*
+rm -vfr $INSTALL_DIR/lib64/cmake/Marble
+rm -vfr $INSTALL_DIR/lib64/cmake/Astro
