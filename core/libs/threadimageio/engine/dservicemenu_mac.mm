@@ -60,12 +60,15 @@ QList<QUrl> DServiceMenu::MacApplicationForFileExtension(const QString& suffix)
     CFStringRef extensionRef          = suffix.toCFString();
     CFStringRef uniformTypeIdentifier = UTTypeCreatePreferredIdentifierForTag(
 
-#if MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_12_0
-                                                                              kUTTagClassFilenameExtension,
-#else
-                                                                              UTTagClassFilenameExtension,
-#endif
+#if defined(MAC_OS_X_VERSION_MIN_REQUIRED) && MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_12_0
 
+                                                                              kUTTagClassFilenameExtension,
+
+#else
+
+                                                                              UTTagClassFilenameExtension,
+
+#endif
                                                                               extensionRef,
                                                                               nullptr
                                                                              );
