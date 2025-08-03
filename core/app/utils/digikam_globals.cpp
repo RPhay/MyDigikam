@@ -202,27 +202,27 @@ QString toolButtonStyleSheet()
 {
     return QLatin1String("QToolButton { padding: 1px; background-color: "
                          "  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, "
-                         "  stop: 0 rgba(100, 100, 100, 80%), "
-                         "  stop: 1 rgba(170, 170, 170, 80%)); "
+                         "  stop: 0 rgba(100, 100, 100, 70%), "
+                         "  stop: 1 rgba(170, 170, 170, 70%)); "
                          "border: 1px solid rgba(170, 170, 170, 10%); } "
 
                          "QToolButton:hover { border-color: white; } "
 
                          "QToolButton:pressed { background-color: "
                          "  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, "
-                         "  stop: 0 rgba(40, 40, 40, 80%), "
-                         "  stop: 1 rgba(90, 90, 90, 80%)); "
+                         "  stop: 0 rgba(40, 40, 40, 70%), "
+                         "  stop: 1 rgba(90, 90, 90, 70%)); "
                          "border-color: white; } "
 
                          "QToolButton:checked { background-color: "
                          "  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, "
-                         "  stop: 0 rgba(40, 40, 40, 80%), "
-                         "  stop: 1 rgba(90, 90, 90, 80%)); } "
+                         "  stop: 0 rgba(40, 40, 40, 70%), "
+                         "  stop: 1 rgba(90, 90, 90, 70%)); } "
 
                          "QToolButton:disabled { background-color: "
                          "  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, "
-                         "  stop: 0 rgba(40, 40, 40, 80%), "
-                         "  stop: 1 rgba(50, 50, 50, 80%)); }");
+                         "  stop: 0 rgba(40, 40, 40, 70%), "
+                         "  stop: 1 rgba(50, 50, 50, 70%)); }");
 }
 
 int layoutSpacing()
