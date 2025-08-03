@@ -77,18 +77,18 @@ TagPropWidget::TagPropWidget(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    const int spacing = layoutSpacing();
-    const int cmargin = layoutMargin();
-    QGridLayout* const grid = new QGridLayout(this);
-    QLabel* const logo      = new QLabel(this);
+    const int spacing        = layoutSpacing();
+    const int cmargin        = layoutMargin();
+    QGridLayout* const grid  = new QGridLayout(this);
+    QLabel* const logo       = new QLabel(this);
 
     logo->setPixmap(QIcon::fromTheme(QLatin1String("tag-properties")).pixmap(30,30));
-    d->topLabel             = new QLabel(this);
+    d->topLabel              = new QLabel(this);
     d->topLabel->setText(i18nc("@label", "Tag Properties"));
     d->topLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->topLabel->setWordWrap(false);
 
-    DLineWidget* const line = new DLineWidget(Qt::Horizontal, this);
+    DLineWidget* const line  = new DLineWidget(Qt::Horizontal, this);
 
     // --------------------------------------------------------
 
@@ -139,7 +139,17 @@ TagPropWidget::TagPropWidget(QWidget* const parent)
 
     d->keySeqWidget            = new KKeySequenceWidget(this);
     kscTextLabel->setBuddy(d->keySeqWidget);
+
+#if (KXMLGUI_VERSION >= QT_VERSION_CHECK(6, 12, 0))
+
+    d->keySeqWidget->setPatterns(d->keySeqWidget->patterns() | KKeySequenceRecorder::Modifier);
+
+#else
+
     d->keySeqWidget->setModifierlessAllowed(true);
+
+#endif
+
     d->keySeqWidget->setCheckActionCollections(TagsActionMngr::defaultManager()->actionCollections());
 
     QLabel* const tipLabel2    = new QLabel(this);
