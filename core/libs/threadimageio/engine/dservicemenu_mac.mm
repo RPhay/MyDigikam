@@ -25,7 +25,7 @@
 #include <QPixmap>
 #include <QSize>
 
-// MacOS header
+// MacOS includes
 
 #include <AppKit/AppKit.h>
 #import <Foundation/Foundation.h>
@@ -58,11 +58,16 @@ QList<QUrl> DServiceMenu::MacApplicationForFileExtension(const QString& suffix)
 
     CFArrayRef  bundleIDs             = nullptr;
     CFStringRef extensionRef          = suffix.toCFString();
-    CFStringRef uniformTypeIdentifier = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, extensionRef, nullptr);
+    CFStringRef uniformTypeIdentifier = UTTypeCreatePreferredIdentifierForTag(
+                                                                              kUTTagClassFilenameExtension,
+                                                                              extensionRef,
+                                                                              nullptr
+                                                                             );
 
     if (!uniformTypeIdentifier)
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot get the Uniform Type Identifier for" << suffix;
+
         return appUrls;
     }
 
@@ -103,12 +108,19 @@ QList<QUrl> DServiceMenu::MacApplicationForFileExtension(const QString& suffix)
                         }
                         else
                         {
-                            qCWarning(DIGIKAM_GENERAL_LOG) << "Application Bundle Property type is not CFURL:" << typeId << "(" << QString::fromCFString(CFCopyTypeIDDescription(typeId)) << ")";
+                            qCWarning(DIGIKAM_GENERAL_LOG) << "Application Bundle Property type is not CFURL:"
+                                                           << typeId
+                                                           << "("
+                                                           << QString::fromCFString(CFCopyTypeIDDescription(typeId))
+                                                           << ")";
                         }
                     }
                     else
                     {
-                        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot get url" << j << "for application" << i;
+                        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot get url"
+                                                       << j
+                                                       << "for application"
+                                                       << i;
                     }
                 }
 
@@ -150,8 +162,10 @@ bool DServiceMenu::MacOpenFilesWithApplication(const QList<QUrl>& fileUrls, cons
 
     lspec.appURL          = appUrl.toCFURL();
     lspec.itemURLs        = arrayref;
-//    lspec.passThruParams  = params;
-//    lspec.launchFlags     = flags;
+/*
+    lspec.passThruParams  = params;
+    lspec.launchFlags     = flags;
+*/
     lspec.asyncRefCon     = nullptr;
 
     OSStatus status       = LSOpenFromURLSpec(&lspec, nullptr);
@@ -159,7 +173,8 @@ bool DServiceMenu::MacOpenFilesWithApplication(const QList<QUrl>& fileUrls, cons
     if (status != noErr)
     {
         success = false;
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot start Application Bundle url" << appUrl << "for files" << fileUrls;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot start Application Bundle url"
+                                       << appUrl << "for files" << fileUrls;
     }
 
     if (arrayref)
