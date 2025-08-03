@@ -231,13 +231,13 @@ void PanoActionThread::optimizeProject(const QUrl& ptoUrl,
 
 void PanoActionThread::generatePanoramaPreview(QSharedPointer<const PTOType> ptoData,
                                                QUrl& previewPtoUrl,
-                                               QUrl& previewMkUrl,
+                                               QUrl& /*previewMkUrl*/,
                                                QUrl& previewUrl,
                                                const PanoramaItemUrlsMap& preProcessedUrlsMap,
-                                               const QString& makePath,
+                                               const QString& /*makePath*/,
                                                const QString& huginExecutorPath,
-                                               const QString& enblendPath,
-                                               const QString& nonaPath)
+                                               const QString& /*enblendPath*/,
+                                               const QString& /*nonaPath*/)
 {
     QSharedPointer<Sequence> jobs(new Sequence());
 
@@ -274,15 +274,15 @@ void PanoActionThread::generatePanoramaPreview(QSharedPointer<const PTOType> pto
 
 void PanoActionThread::compileProject(QSharedPointer<const PTOType> basePtoData,
                                       QUrl& panoPtoUrl,
-                                      QUrl& mkUrl,
+                                      QUrl& /*mkUrl*/,
                                       QUrl& panoUrl,
-                                      const PanoramaItemUrlsMap& preProcessedUrlsMap,
+                                      const PanoramaItemUrlsMap& /*preProcessedUrlsMap*/,
                                       PanoramaFileType fileType,
                                       const QRect& crop,
-                                      const QString& makePath,
+                                      const QString& /*makePath*/,
                                       const QString& huginExecutorPath,
-                                      const QString& enblendPath,
-                                      const QString& nonaPath)
+                                      const QString& /*enblendPath*/,
+                                      const QString& /*nonaPath*/)
 {
     QSharedPointer<Sequence> jobs(new Sequence());
 
@@ -379,7 +379,8 @@ void PanoActionThread::slotStepDone(JobPointer j)
     ad.success      = t->success();
     ad.message      = t->errString;
 
-    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Step done (PanoAction Thread) (action, success):" << ad.action << ad.success;
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Step done (PanoAction Thread) (action, success):"
+                                         << ad.action << ad.success;
 
     if      (t->action == PANO_NONAFILE)
     {
@@ -413,7 +414,7 @@ void PanoActionThread::slotDone(JobPointer j)
     ad.message      = t->errString;
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Done (PanoAction Thread) (action, success):"
-                                 << ad.action << ad.success;
+                                         << ad.action << ad.success;
 
     if      (t->action == PANO_NONAFILE)
     {

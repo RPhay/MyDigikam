@@ -151,13 +151,15 @@ bool PanoManager::isCreated()
 
 bool PanoManager::checkBinaries()
 {
-    return (d->autoOptimiserBinary.recheckDirectories() &&
+    return (
+            d->autoOptimiserBinary.recheckDirectories() &&
             d->cpCleanBinary.recheckDirectories()       &&
             d->cpFindBinary.recheckDirectories()        &&
             d->enblendBinary.recheckDirectories()       &&
             d->makeBinary.recheckDirectories()          &&
             d->nonaBinary.recheckDirectories()          &&
-            d->huginExecutorBinary.recheckDirectories());
+            d->huginExecutorBinary.recheckDirectories()
+           );
 }
 
 void PanoManager::setGPano(bool gPano)
