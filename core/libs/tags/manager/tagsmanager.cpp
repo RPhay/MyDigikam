@@ -831,7 +831,7 @@ void TagsManager::slotLoadTags()
 
             if (baseTag != QLatin1String("/"))
             {
-                tagPath.append(QLatin1Char('/'));;
+                tagPath.append(QLatin1Char('/'));
             }
 
             tagPath.append(tagPathList.join(QLatin1Char('/')));
