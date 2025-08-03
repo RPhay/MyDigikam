@@ -57,7 +57,7 @@ BUGFIXES:
 042 ==> 507749 - Sort Items by Name in Thumbnails View.
 043 ==> 444966 - Request for Keyword Import in Database Capability.
 044 ==> 507524 - Feature Request - Import Structured Keyword List Text File.
-045 ==> 
+045 ==> 507798 - .digikam_ignore file fails to prevent scanning of subdirectories on Windows.
 046 ==> 
 047 ==> 
 048 ==> 
