@@ -610,6 +610,26 @@ void TagsManager::slotWipeAll()
 
 void TagsManager::slotSaveTags()
 {
+    QList<Album*> selectedTags = d->tagMngrView->selectedTags();
+
+    if ((selectedTags.size() != 1) || !selectedTags.constFirst())
+    {
+        QMessageBox::information(this, qApp->applicationName(),
+                                 i18n("Select a base tag from which the tags should be exported."));
+
+        return;
+    }
+
+    QString baseTag  = static_cast<TAlbum*>(selectedTags.constFirst())->tagPath();
+
+    if (baseTag.count(QLatin1Char('/')) > 1)
+    {
+        QMessageBox::warning(this, qApp->applicationName(),
+                                 i18n("Selected tag is not a base tag at the top of the hierarchy."));
+
+        return;
+    }
+
     QString tagsPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
 
     QString savePath = DFileDialog::getSaveFileName(qApp->activeWindow(),
@@ -631,7 +651,7 @@ void TagsManager::slotSaveTags()
 
     if (!tagFile.open(QIODevice::WriteOnly))
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot open file to export all tags" << savePath;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot open file to export tags" << savePath;
 
         return;
     }
@@ -665,7 +685,14 @@ void TagsManager::slotSaveTags()
             !FaceTags::isSystemPersonTagId(tag->id())
            )
         {
-            sortedTagList << tag->tagPath();
+            if (
+                (baseTag == tag->tagPath())                        ||
+                (baseTag == QLatin1String("/"))                    ||
+                tag->tagPath().startsWith(baseTag + QLatin1Char('/'))
+               )
+            {
+                sortedTagList << tag->tagPath();
+            }
         }
     }
 
@@ -700,6 +727,17 @@ void TagsManager::slotSaveTags()
 
 void TagsManager::slotLoadTags()
 {
+    QList<Album*> selectedTags = d->tagMngrView->selectedTags();
+
+    if ((selectedTags.size() != 1) || !selectedTags.constFirst())
+    {
+        QMessageBox::information(this, qApp->applicationName(),
+                                 i18n("Select a tag into which the tags should be imported."));
+
+        return;
+    }
+
+    QString baseTag  = static_cast<TAlbum*>(selectedTags.constFirst())->tagPath();
     QString tagsPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
 
     QString loadPath = DFileDialog::getOpenFileName(qApp->activeWindow(),
@@ -715,7 +753,7 @@ void TagsManager::slotLoadTags()
 
     if (!tagFile.open(QIODevice::ReadOnly))
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot open file to import all tags" << loadPath;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot open file to import tags" << loadPath;
 
         return;
     }
@@ -764,7 +802,7 @@ void TagsManager::slotLoadTags()
                 startPos = i;
             }
 
-            currTag.append(line.mid(i));
+            currTag = line.mid(i);
             break;
         }
 
@@ -777,9 +815,15 @@ void TagsManager::slotLoadTags()
                 tagPathList.removeLast();
             }
 
-            QString tagPath;
+            QString tagPath = baseTag;
+
             tagPathList.append(currTag);
-            tagPath.append(QLatin1Char('/'));
+
+            if (baseTag != QLatin1String("/"))
+            {
+                tagPath.append(QLatin1Char('/'));;
+            }
+
             tagPath.append(tagPathList.join(QLatin1Char('/')));
 
             TagsCache::instance()->getOrCreateTag(tagPath);
@@ -1015,10 +1059,10 @@ void TagsManager::setupActions()
                                               i18n("Wipe all tags from Database only"), this);
 
     QAction* const saveTags     = new QAction(QIcon::fromTheme(QLatin1String("document-export")),
-                                              i18n("Export all tags to a file"), this);
+                                              i18n("Export tags to a file from selected tag"), this);
 
     QAction* const loadTags     = new QAction(QIcon::fromTheme(QLatin1String("document-import")),
-                                              i18n("Import all tags from a file"), this);
+                                              i18n("Import tags from a file to selected tag"), this);
 
     setHelpText(wrDbImg, i18n("Write Tags Metadata to Image."));
 
