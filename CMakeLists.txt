@@ -8,12 +8,35 @@ set(CMAKE_MIN_VERSION   "3.16")
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
-message(STATUS "CMake version: ${CMAKE_VERSION}")
+message(STATUS "CMake version       : ${CMAKE_VERSION}")
 
 # -- Check host computer info used to compile ----------------------------------
 
-cmake_host_system_information(RESULT CMAKE_HOST_PRETTY_NAME QUERY DISTRIB_PRETTY_NAME)
-message(STATUS "Host used to compike: ${CMAKE_HOST_PRETTY_NAME}")
+if(APPLE)
+
+    # NOTE: cmake 3.31 return an empty string with cmake_host_system_information()
+
+    execute_process(
+      COMMAND sw_vers -productName
+      OUTPUT_VARIABLE MACOS_PRODUCT_NAME
+      OUTPUT_STRIP_TRAILING_WHITESPACE
+    )
+
+    execute_process(
+      COMMAND sw_vers -productVersion
+      OUTPUT_VARIABLE MACOS_PRODUCT_VERSION
+      OUTPUT_STRIP_TRAILING_WHITESPACE
+    )
+
+    set(CMAKE_HOST_PRETTY_NAME "${MACOS_PRODUCT_NAME} ${MACOS_PRODUCT_VERSION}")
+
+else()
+
+    cmake_host_system_information(RESULT CMAKE_HOST_PRETTY_NAME QUERY DISTRIB_PRETTY_NAME)
+
+endif()
+
+message(STATUS "Host used to compile: ${CMAKE_HOST_PRETTY_NAME}")
 
 # ==============================================================================
 # Information to update before to release this package.
