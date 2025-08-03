@@ -21,6 +21,7 @@
 #include <QLayout>
 #include <QLabel>
 #include <QCheckBox>
+#include <QToolButton>
 #include <QRadioButton>
 #include <QButtonGroup>
 #include <QIcon>
@@ -95,9 +96,10 @@ public:
     ModelClearButton*            albumClearButton           = nullptr;
     ModelClearButton*            tagClearButton             = nullptr;
 
-    QCheckBox*                   recursiveSelectionAlbum    = nullptr;
+    QToolButton*                 recursiveSelectionAlbum    = nullptr;
+    QToolButton*                 recursiveSelectionTags     = nullptr;
+
     QCheckBox*                   wholeAlbums                = nullptr;
-    QCheckBox*                   recursiveSelectionTags     = nullptr;
     QCheckBox*                   wholeTags                  = nullptr;
 
     QTabWidget*                  tabWidget                  = nullptr;
@@ -173,8 +175,10 @@ void AlbumSelectors::initAlbumWidget()
 {
     d->albumWidget             = new QWidget(this);
     d->wholeAlbums             = new QCheckBox(i18nc("@option", "All albums"), d->albumWidget);
-    d->recursiveSelectionAlbum = new QCheckBox(i18nc("@option", "Recursive selection"), d->albumWidget);
-    d->recursiveSelectionAlbum->setToolTip(i18nc("@info:tooltip", "Recursive album selection."));
+    d->recursiveSelectionAlbum = new QToolButton(d->albumWidget);
+    d->recursiveSelectionAlbum->setToolTip(i18nc("@info", "Toggle recursive album selection."));
+    d->recursiveSelectionAlbum->setIcon(QIcon::fromTheme(QLatin1String("object-order-back")));
+    d->recursiveSelectionAlbum->setCheckable(true);
     d->recursiveSelectionAlbum->setChecked(true);
 
     if (!d->allowRecursive)
@@ -200,7 +204,6 @@ void AlbumSelectors::initAlbumWidget()
     l->addWidget(d->wholeAlbums);
     l->addStretch(10);
     l->addWidget(d->recursiveSelectionAlbum);
-    l->addStretch(5);
 
     QGridLayout* const pAlbumsGrid = new QGridLayout(d->albumWidget);
     pAlbumsGrid->addLayout(l,                   0, 0, 1, 2);
@@ -215,7 +218,7 @@ void AlbumSelectors::initAlbumWidget()
     connect(d->wholeAlbums, SIGNAL(toggled(bool)),
             this, SIGNAL(signalSelectionChanged()));
 
-    connect(d->recursiveSelectionAlbum, &QCheckBox::clicked,
+    connect(d->recursiveSelectionAlbum, &QToolButton::toggled,
             d->recursiveSelectionAlbum, [this] (bool checked)
         {
             d->albumSelectCB->setRecursive(checked);
@@ -234,8 +237,10 @@ void AlbumSelectors::initTagWidget()
 {
     d->tagWidget              = new QWidget(this);
     d->wholeTags              = new QCheckBox(i18nc("@option", "All tags"), d->tagWidget);
-    d->recursiveSelectionTags = new QCheckBox(i18nc("@option", "Recursive selection"), d->albumWidget);
-    d->recursiveSelectionTags->setToolTip(i18nc("@info:tooltip", "Recursive tags selection."));
+    d->recursiveSelectionTags = new QToolButton(d->tagWidget);
+    d->recursiveSelectionTags->setToolTip(i18nc("@info", "Toggle recursive tags selection."));
+    d->recursiveSelectionTags->setIcon(QIcon::fromTheme(QLatin1String("object-order-back")));
+    d->recursiveSelectionTags->setCheckable(true);
     d->recursiveSelectionTags->setChecked(true);
 
     if (!d->allowRecursive)
@@ -258,7 +263,6 @@ void AlbumSelectors::initTagWidget()
     l->addWidget(d->wholeTags);
     l->addStretch(10);
     l->addWidget(d->recursiveSelectionTags);
-    l->addStretch(5);
 
     QGridLayout* const tAlbumsGrid = new QGridLayout(d->tagWidget);
     tAlbumsGrid->addLayout(l,                 0, 0, 1, 2);
@@ -276,7 +280,7 @@ void AlbumSelectors::initTagWidget()
     connect(d->tagSelectCB->treeView()->albumModel(), SIGNAL(checkStateChanged(Album*,Qt::CheckState)),
             this, SLOT(slotUpdateClearButtons()));
 
-    connect(d->recursiveSelectionTags, &QCheckBox::clicked,
+    connect(d->recursiveSelectionTags, &QToolButton::toggled,
             d->recursiveSelectionTags, [this] (bool checked)
         {
             d->tagSelectCB->setRecursive(checked);

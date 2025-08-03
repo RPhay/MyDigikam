@@ -620,7 +620,7 @@ void TagsManager::slotSaveTags()
         return;
     }
 
-    QString baseTag  = static_cast<TAlbum*>(selectedTags.constFirst())->tagPath();
+    QString baseTag = static_cast<TAlbum*>(selectedTags.constFirst())->tagPath();
 
     if (baseTag.count(QLatin1Char('/')) > 1)
     {
@@ -737,7 +737,17 @@ void TagsManager::slotLoadTags()
         return;
     }
 
-    QString baseTag  = static_cast<TAlbum*>(selectedTags.constFirst())->tagPath();
+    TAlbum* const selTag = static_cast<TAlbum*>(selectedTags.constFirst());
+
+    if (FaceTags::isSystemPersonTagId(selTag->id()))
+    {
+        QMessageBox::warning(this, qApp->applicationName(),
+                             i18n("No tags can be imported to the selected face tag."));
+
+        return;
+    }
+
+    QString baseTag  = selTag->tagPath();
     QString tagsPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
 
     QString loadPath = DFileDialog::getOpenFileName(qApp->activeWindow(),
@@ -821,7 +831,7 @@ void TagsManager::slotLoadTags()
 
             if (baseTag != QLatin1String("/"))
             {
-                tagPath.append(QLatin1Char('/'));;
+                tagPath.append(QLatin1Char('/'));
             }
 
             tagPath.append(tagPathList.join(QLatin1Char('/')));
