@@ -613,8 +613,8 @@ void TagsManager::slotSaveTags()
     QString tagsPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
 
     QString savePath = DFileDialog::getSaveFileName(qApp->activeWindow(),
-                                                    i18nc("@title:window", "Choose Export Tag File"),
-                                                    tagsPath, QLatin1String("*.dktag"), nullptr,
+                                                    i18nc("@title:window", "Export Controlled Vocabulary Tag File"),
+                                                    tagsPath, i18n("Text File (*.txt)"), nullptr,
                                                     QFileDialog::DontConfirmOverwrite);
 
     if (savePath.isEmpty())
@@ -622,9 +622,9 @@ void TagsManager::slotSaveTags()
         return;
     }
 
-    if (!savePath.endsWith(QLatin1String(".dktag")))
+    if (!savePath.endsWith(QLatin1String(".txt"), Qt::CaseInsensitive))
     {
-        savePath.append(QLatin1String(".dktag"));
+        savePath.append(QLatin1String(".txt"));
     }
 
     QFile tagFile(savePath);
@@ -646,12 +646,11 @@ void TagsManager::slotSaveTags()
 
 #endif
 
-    tagStream.setAutoDetectUnicode(true);
-    tagStream << QLatin1String("TAGVersion=1") << Qt::endl;
-
     QApplication::setOverrideCursor(Qt::WaitCursor);
 
-    QStringList sortedPaths;
+    tagStream.setAutoDetectUnicode(true);
+
+    QStringList sortedTagList;
     AlbumList::const_iterator it;
     AlbumList tList = AlbumManager::instance()->allTAlbums();
 
@@ -666,15 +665,32 @@ void TagsManager::slotSaveTags()
             !FaceTags::isSystemPersonTagId(tag->id())
            )
         {
-            sortedPaths << tag->tagPath();
+            sortedTagList << tag->tagPath();
         }
     }
 
-    sortedPaths.sort();
+    sortedTagList.sort();
 
-    for (const QString& spath : std::as_const(sortedPaths))
+    for (const QString& stag : std::as_const(sortedTagList))
     {
-        tagStream << spath << Qt::endl;
+        QStringList tagPathList = stag.split(QLatin1Char('/'),
+                                             Qt::SkipEmptyParts);
+
+        if (tagPathList.isEmpty())
+        {
+            continue;
+        }
+
+        QString ctag = tagPathList.takeLast();
+        int tabs     = tagPathList.size();
+
+        while (tabs > 0)
+        {
+            tagStream << QLatin1Char('\t');
+            --tabs;
+        }
+
+        tagStream << ctag << Qt::endl;
     }
 
     tagFile.close();
@@ -687,8 +703,8 @@ void TagsManager::slotLoadTags()
     QString tagsPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
 
     QString loadPath = DFileDialog::getOpenFileName(qApp->activeWindow(),
-                                                    i18nc("@title:window", "Choose Import Tag File"),
-                                                    tagsPath, QLatin1String("CVKC (*.txt)"));
+                                                    i18nc("@title:window", "Import Controlled Vocabulary Tag File"),
+                                                    tagsPath, i18n("Text File (*.txt)"));
 
     if (loadPath.isEmpty())
     {
@@ -717,6 +733,7 @@ void TagsManager::slotLoadTags()
     QApplication::setOverrideCursor(Qt::WaitCursor);
 
     tagStream.setAutoDetectUnicode(true);
+
     QStringList tagPathList;
     int startPos = -1;
     QString line;
@@ -747,7 +764,8 @@ void TagsManager::slotLoadTags()
                 startPos = i;
             }
 
-            currTag.append(line.at(i));
+            currTag.append(line.mid(i));
+            break;
         }
 
         if (!currTag.isEmpty())
@@ -1032,7 +1050,7 @@ void TagsManager::setupActions()
     syncexportMenu->addAction(wrDbImg);
     syncexportMenu->addAction(readTags);
     syncexportMenu->addAction(wipeAll);
-//    syncexportMenu->addAction(saveTags);
+    syncexportMenu->addAction(saveTags);
     syncexportMenu->addAction(loadTags);
 
     d->mainToolbar->addAction(d->addAction);

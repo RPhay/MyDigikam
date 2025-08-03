@@ -55,8 +55,8 @@ BUGFIXES:
 040 ==> 507713 - Incorrect sorting of picture names.
 041 ==> 507661 - Portrait videos are displayed horizontally in presentation mode.
 042 ==> 507749 - Sort Items by Name in Thumbnails View.
-043 ==>
-044 ==> 
+043 ==> 444966 - Request for Keyword Import in Database Capability.
+044 ==> 507524 - Feature Request - Import Structured Keyword List Text File.
 045 ==> 
 046 ==> 
 047 ==> 
