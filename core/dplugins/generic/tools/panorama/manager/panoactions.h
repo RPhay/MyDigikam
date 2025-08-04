@@ -35,16 +35,11 @@ enum PanoAction
     PANO_CPCLEAN,                    // 4
     PANO_OPTIMIZE,                   // 5
     PANO_AUTOCROP,                   // 6
-    PANO_CREATEPREVIEWPTO,           // 7
-    PANO_CREATEMKPREVIEW,            // 8
-    PANO_CREATEFINALPTO,             // 9
-    PANO_NONAFILE,                   // 10
-    PANO_NONAFILEPREVIEW,            // 11
-    PANO_STITCH,                     // 12
-    PANO_STITCHPREVIEW,              // 13
-    PANO_HUGINEXECUTOR,              // 14
-    PANO_HUGINEXECUTORPREVIEW,       // 15
-    PANO_COPY                        // 16
+    PANO_CREATEMKPREVIEW,            // 7
+    PANO_CREATEFINALPTO,             // 8
+    PANO_HUGINEXECUTOR,              // 9
+    PANO_HUGINEXECUTORPREVIEW,       // 10
+    PANO_COPY                        // 11
 };
 
 typedef enum

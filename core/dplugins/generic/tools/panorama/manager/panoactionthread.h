@@ -70,25 +70,16 @@ public:
 
     void generatePanoramaPreview(QSharedPointer<const PTOType> ptoData,
                                  QUrl& previewPtoUrl,
-                                 QUrl& previewMkUrl,
                                  QUrl& previewUrl,
                                  const PanoramaItemUrlsMap& preProcessedUrlsMap,
-                                 const QString& makePath,
-                                 const QString& huginExecutorPath,
-                                 const QString& enblendPath,
-                                 const QString& nonaPath);
+                                 const QString& huginExecutorPath);
 
     void compileProject(QSharedPointer<const PTOType> basePtoData,
                         QUrl& panoPtoUrl,
-                        QUrl& mkUrl,
                         QUrl& panoUrl,
-                        const PanoramaItemUrlsMap& preProcessedUrlsMap,
                         PanoramaFileType fileType,
                         const QRect& crop,
-                        const QString& makePath,
-                        const QString& huginExecutorPath,
-                        const QString& enblendPath,
-                        const QString& nonaPath);
+                        const QString& huginExecutorPath);
 
     void copyFiles(const QUrl& ptoUrl,
                    const QUrl& panoUrl,

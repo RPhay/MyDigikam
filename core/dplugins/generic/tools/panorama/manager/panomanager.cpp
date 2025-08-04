@@ -33,9 +33,6 @@
 #include "autooptimiserbinary.h"
 #include "cpcleanbinary.h"
 #include "cpfindbinary.h"
-#include "enblendbinary.h"
-#include "makebinary.h"
-#include "nonabinary.h"
 #include "panomodifybinary.h"
 #include "huginexecutorbinary.h"
 #include "ptofile.h"
@@ -83,9 +80,7 @@ public:
     QUrl                           panoPtoUrl;
     QSharedPointer<PTOType>        panoPtoData                  = nullptr;
 
-    QUrl                           previewMkUrl;
     QUrl                           previewUrl;
-    QUrl                           mkUrl;
     QUrl                           panoUrl;
 
     bool                           gPano                        = false;
@@ -104,9 +99,6 @@ public:
     AutoOptimiserBinary            autoOptimiserBinary;
     CPCleanBinary                  cpCleanBinary;
     CPFindBinary                   cpFindBinary;
-    EnblendBinary                  enblendBinary;
-    MakeBinary                     makeBinary;
-    NonaBinary                     nonaBinary;
     PanoModifyBinary               panoModifyBinary;
     HuginExecutorBinary            huginExecutorBinary;
 
@@ -155,9 +147,6 @@ bool PanoManager::checkBinaries()
             d->autoOptimiserBinary.recheckDirectories() &&
             d->cpCleanBinary.recheckDirectories()       &&
             d->cpFindBinary.recheckDirectories()        &&
-            d->enblendBinary.recheckDirectories()       &&
-            d->makeBinary.recheckDirectories()          &&
-            d->nonaBinary.recheckDirectories()          &&
             d->huginExecutorBinary.recheckDirectories()
            );
 }
@@ -217,21 +206,6 @@ CPCleanBinary& PanoManager::cpCleanBinary() const
 CPFindBinary& PanoManager::cpFindBinary() const
 {
     return d->cpFindBinary;
-}
-
-EnblendBinary& PanoManager::enblendBinary() const
-{
-    return d->enblendBinary;
-}
-
-MakeBinary& PanoManager::makeBinary() const
-{
-    return d->makeBinary;
-}
-
-NonaBinary& PanoManager::nonaBinary() const
-{
-    return d->nonaBinary;
 }
 
 PanoModifyBinary& PanoManager::panoModifyBinary() const
@@ -496,23 +470,6 @@ void PanoManager::resetPanoPto()
     d->panoPtoUrl.clear();
 }
 
-QUrl& PanoManager::previewMkUrl() const
-{
-    return d->previewMkUrl;
-}
-
-void PanoManager::resetPreviewMkUrl()
-{
-    QFile pto(d->previewMkUrl.toLocalFile());
-
-    if (pto.exists())
-    {
-        pto.remove();
-    }
-
-    d->previewMkUrl.clear();
-}
-
 QUrl& PanoManager::previewUrl() const
 {
     return d->previewUrl;
@@ -528,23 +485,6 @@ void PanoManager::resetPreviewUrl()
     }
 
     d->previewUrl.clear();
-}
-
-QUrl& PanoManager::mkUrl() const
-{
-    return d->mkUrl;
-}
-
-void PanoManager::resetMkUrl()
-{
-    QFile pto(d->mkUrl.toLocalFile());
-
-    if (pto.exists())
-    {
-        pto.remove();
-    }
-
-    d->mkUrl.clear();
 }
 
 QUrl& PanoManager::panoUrl() const

@@ -39,9 +39,6 @@
 #include "autooptimiserbinary.h"
 #include "cpcleanbinary.h"
 #include "cpfindbinary.h"
-#include "enblendbinary.h"
-#include "makebinary.h"
-#include "nonabinary.h"
 #include "panomodifybinary.h"
 #include "huginexecutorbinary.h"
 #include "dlayoutbox.h"
@@ -105,9 +102,6 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
     d->binariesWidget->addBinary(d->mngr->autoOptimiserBinary());
     d->binariesWidget->addBinary(d->mngr->cpCleanBinary());
     d->binariesWidget->addBinary(d->mngr->cpFindBinary());
-    d->binariesWidget->addBinary(d->mngr->enblendBinary());
-    d->binariesWidget->addBinary(d->mngr->makeBinary());
-    d->binariesWidget->addBinary(d->mngr->nonaBinary());
     d->binariesWidget->addBinary(d->mngr->panoModifyBinary());
     d->binariesWidget->addBinary(d->mngr->huginExecutorBinary());
 

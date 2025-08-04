@@ -96,8 +96,6 @@ set(panoramaplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/cpcleantask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/optimisationtask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/autocroptask.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/tasks/compilemksteptask.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/tasks/compilemktask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/huginexecutortask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/copyfilestask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/createpreviewtask.cpp
@@ -106,10 +104,7 @@ set(panoramaplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/autooptimiserbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/cpcleanbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/cpfindbinary.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/tools/enblendbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/huginexecutorbinary.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/tools/makebinary.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/tools/nonabinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/panomodifybinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/panoactionthread.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/panomanager.cpp

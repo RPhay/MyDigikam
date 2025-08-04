@@ -98,12 +98,8 @@ public:
     QSharedPointer<PTOType> panoPtoData();
     void                    resetPanoPto();
 
-    QUrl&                   previewMkUrl()              const;
-    void                    resetPreviewMkUrl();
     QUrl&                   previewUrl()                const;
     void                    resetPreviewUrl();
-    QUrl&                   mkUrl()                     const;
-    void                    resetMkUrl();
     QUrl&                   panoUrl()                   const;
     void                    resetPanoUrl();
 
@@ -112,9 +108,6 @@ public:
     AutoOptimiserBinary&    autoOptimiserBinary()       const;
     CPCleanBinary&          cpCleanBinary()             const;
     CPFindBinary&           cpFindBinary()              const;
-    EnblendBinary&          enblendBinary()             const;
-    MakeBinary&             makeBinary()                const;
-    NonaBinary&             nonaBinary()                const;
     PanoModifyBinary&       panoModifyBinary()          const;
     HuginExecutorBinary&    huginExecutorBinary()       const;
 

@@ -231,13 +231,9 @@ void PanoActionThread::optimizeProject(const QUrl& ptoUrl,
 
 void PanoActionThread::generatePanoramaPreview(QSharedPointer<const PTOType> ptoData,
                                                QUrl& previewPtoUrl,
-                                               QUrl& /*previewMkUrl*/,
                                                QUrl& previewUrl,
                                                const PanoramaItemUrlsMap& preProcessedUrlsMap,
-                                               const QString& /*makePath*/,
-                                               const QString& huginExecutorPath,
-                                               const QString& /*enblendPath*/,
-                                               const QString& /*nonaPath*/)
+                                               const QString& huginExecutorPath)
 {
     QSharedPointer<Sequence> jobs(new Sequence());
 
@@ -274,15 +270,10 @@ void PanoActionThread::generatePanoramaPreview(QSharedPointer<const PTOType> pto
 
 void PanoActionThread::compileProject(QSharedPointer<const PTOType> basePtoData,
                                       QUrl& panoPtoUrl,
-                                      QUrl& /*mkUrl*/,
                                       QUrl& panoUrl,
-                                      const PanoramaItemUrlsMap& /*preProcessedUrlsMap*/,
                                       PanoramaFileType fileType,
                                       const QRect& crop,
-                                      const QString& /*makePath*/,
-                                      const QString& huginExecutorPath,
-                                      const QString& /*enblendPath*/,
-                                      const QString& /*nonaPath*/)
+                                      const QString& huginExecutorPath)
 {
     QSharedPointer<Sequence> jobs(new Sequence());
 
@@ -353,12 +344,7 @@ void PanoActionThread::slotStarting(JobPointer j)
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Starting (PanoAction Thread) (action):" << ad.action;
 
-    if      (t->action == PANO_NONAFILE)
-    {
-        CompileMKStepTask* const c = static_cast<CompileMKStepTask*>(t);
-        ad.id                      = c->id;
-    }
-    else if (t->action == PANO_PREPROCESS_INPUT)
+    if (t->action == PANO_PREPROCESS_INPUT)
     {
         PreProcessTask* const p = static_cast<PreProcessTask*>(t);
         ad.id                   = p->id;
@@ -382,12 +368,7 @@ void PanoActionThread::slotStepDone(JobPointer j)
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Step done (PanoAction Thread) (action, success):"
                                          << ad.action << ad.success;
 
-    if      (t->action == PANO_NONAFILE)
-    {
-        CompileMKStepTask* const c = static_cast<CompileMKStepTask*>(t);
-        ad.id                      = c->id;
-    }
-    else if (t->action == PANO_PREPROCESS_INPUT)
+    if (t->action == PANO_PREPROCESS_INPUT)
     {
         PreProcessTask* const p = static_cast<PreProcessTask*>(t);
         ad.id                   = p->id;
@@ -416,12 +397,7 @@ void PanoActionThread::slotDone(JobPointer j)
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Done (PanoAction Thread) (action, success):"
                                          << ad.action << ad.success;
 
-    if      (t->action == PANO_NONAFILE)
-    {
-        CompileMKStepTask* const c = static_cast<CompileMKStepTask*>(t);
-        ad.id                      = c->id;
-    }
-    else if (t->action == PANO_PREPROCESS_INPUT)
+    if (t->action == PANO_PREPROCESS_INPUT)
     {
         PreProcessTask* const p = static_cast<PreProcessTask*>(t);
         ad.id                   = p->id;
