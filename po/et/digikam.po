@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-03 02:01+0000\n"
+"POT-Creation-Date: 2025-08-04 02:13+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -3494,7 +3494,7 @@ msgid "Tools"
 msgstr "Tööriistad"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:1043
+#: core/libs/tags/manager/tagsmanager.cpp:1115
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgid "Help"
@@ -29588,7 +29588,7 @@ msgstr "Kustuta album"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:157
-#: core/libs/tags/manager/tagsmanager.cpp:910
+#: core/libs/tags/manager/tagsmanager.cpp:982
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -29999,110 +29999,102 @@ msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Albumi valik"
 
-#: core/libs/album/widgets/albumselectors.cpp:140
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:142
+#: core/libs/album/widgets/albumselectors.cpp:554
 #, fuzzy, kde-format
 #| msgid "Album is full."
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "Album on täis."
 
-#: core/libs/album/widgets/albumselectors.cpp:143
+#: core/libs/album/widgets/albumselectors.cpp:145
 #, fuzzy, kde-format
 #| msgid "Tags: "
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Sildid: "
 
-#: core/libs/album/widgets/albumselectors.cpp:175
+#: core/libs/album/widgets/albumselectors.cpp:177
 #, fuzzy, kde-format
 #| msgid "All Albums"
 msgctxt "@option"
 msgid "All albums"
 msgstr "Kõik albumid"
 
-#: core/libs/album/widgets/albumselectors.cpp:176
-#: core/libs/album/widgets/albumselectors.cpp:237
+#: core/libs/album/widgets/albumselectors.cpp:179
 #, fuzzy, kde-format
 #| msgid "Theme Selection"
-msgctxt "@option"
-msgid "Recursive selection"
+msgctxt "@info"
+msgid "Toggle recursive album selection."
 msgstr "Teema valimine"
 
-#: core/libs/album/widgets/albumselectors.cpp:177
-#, fuzzy, kde-format
-#| msgid "Theme Selection"
-msgctxt "@info:tooltip"
-msgid "Recursive album selection."
-msgstr "Teema valimine"
-
-#: core/libs/album/widgets/albumselectors.cpp:187
+#: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Kõigi töödeldavate albumite valimine."
 
-#: core/libs/album/widgets/albumselectors.cpp:190
+#: core/libs/album/widgets/albumselectors.cpp:194
 #, fuzzy, kde-format
 #| msgid "No Album Selected"
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Albumit pole valitud"
 
-#: core/libs/album/widgets/albumselectors.cpp:197
+#: core/libs/album/widgets/albumselectors.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Valitud albumite lähtestamine"
 
-#: core/libs/album/widgets/albumselectors.cpp:236
+#: core/libs/album/widgets/albumselectors.cpp:239
 #, fuzzy, kde-format
 #| msgid "All Tags"
 msgctxt "@option"
 msgid "All tags"
 msgstr "Kõik sildid"
 
-#: core/libs/album/widgets/albumselectors.cpp:238
+#: core/libs/album/widgets/albumselectors.cpp:241
 #, fuzzy, kde-format
 #| msgid "Theme Selection"
-msgctxt "@info:tooltip"
-msgid "Recursive tags selection."
+msgctxt "@info"
+msgid "Toggle recursive tags selection."
 msgstr "Teema valimine"
 
-#: core/libs/album/widgets/albumselectors.cpp:248
+#: core/libs/album/widgets/albumselectors.cpp:253
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Kõigi töödeldavate siltide valimine."
 
-#: core/libs/album/widgets/albumselectors.cpp:251
+#: core/libs/album/widgets/albumselectors.cpp:256
 #, fuzzy, kde-format
 #| msgid "No Tag Selected"
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Silti pole valitud"
 
-#: core/libs/album/widgets/albumselectors.cpp:255
+#: core/libs/album/widgets/albumselectors.cpp:260
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Valitud siltide lähtestamine"
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:555
 #, fuzzy, kde-format
 #| msgid "Album is full."
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Album on täis."
 
-#: core/libs/album/widgets/albumselectors.cpp:554
+#: core/libs/album/widgets/albumselectors.cpp:558
 #, fuzzy, kde-format
 #| msgid "Tags: "
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Sildid: "
 
-#: core/libs/album/widgets/albumselectors.cpp:555
+#: core/libs/album/widgets/albumselectors.cpp:559
 #, fuzzy, kde-format
 #| msgid "Tags: %1\n"
 msgctxt "@title"
@@ -42696,39 +42688,39 @@ msgid "Delete Tags"
 msgstr "Kustuta sildid"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:147
-#: core/libs/tags/manager/tagsmanager.cpp:897
+#: core/libs/tags/manager/tagsmanager.cpp:969
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Muuda sildi pealkirja"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:151
-#: core/libs/tags/manager/tagsmanager.cpp:901
+#: core/libs/tags/manager/tagsmanager.cpp:973
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Lähtesta sildi ikoon"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:154
-#: core/libs/tags/manager/tagsmanager.cpp:907
+#: core/libs/tags/manager/tagsmanager.cpp:979
 #, kde-format
 msgid "Invert Selection"
 msgstr "Vaheta valik"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:160
-#: core/libs/tags/manager/tagsmanager.cpp:913
+#: core/libs/tags/manager/tagsmanager.cpp:985
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Ava sildipuu"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:163
-#: core/libs/tags/manager/tagsmanager.cpp:916
+#: core/libs/tags/manager/tagsmanager.cpp:988
 #, fuzzy, kde-format
 #| msgid "Copy Album"
 msgid "Collapse Tag Tree"
 msgstr "Albumi kopeerimine"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:166
-#: core/libs/tags/manager/tagsmanager.cpp:919
+#: core/libs/tags/manager/tagsmanager.cpp:991
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Eemalda silt piltidest"
@@ -42776,13 +42768,13 @@ msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr "&Kiirklahv:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:149
+#: core/libs/tags/manager/tagpropwidget.cpp:159
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:150
+#: core/libs/tags/manager/tagpropwidget.cpp:160
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to "
@@ -42793,21 +42785,21 @@ msgstr ""
 "<p><b>Märkus</b>: seda kiirklahvi saab kasutada sildi omistamiseks "
 "elementidele või selle omistuse eemaldamiseks.</p>"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:155
+#: core/libs/tags/manager/tagpropwidget.cpp:165
 #, fuzzy, kde-format
 #| msgid "Save"
 msgctxt "@action"
 msgid "Save"
 msgstr "Salvesta"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:156
+#: core/libs/tags/manager/tagpropwidget.cpp:166
 #, fuzzy, kde-format
 #| msgid "Discard"
 msgctxt "@action"
 msgid "Discard"
 msgstr "Hülga"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:223
+#: core/libs/tags/manager/tagpropwidget.cpp:233
 #, fuzzy, kde-format
 #| msgid "Previous tags were changed. Save changes? "
 msgctxt "@info"
@@ -42902,54 +42894,84 @@ msgstr ""
 "Muudatuste rakendamiseks failides tuleb hiljem metaandmed faili kirjutada.\n"
 "Kas jätkata?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:616
+#: core/libs/tags/manager/tagsmanager.cpp:618
 #, fuzzy, kde-format
-#| msgid "Choose your grid size"
-msgctxt "@title:window"
-msgid "Choose Export Tag File"
-msgstr "Alusvõrgu suuruse valimine"
+#| msgctxt "@info:tooltip"
+#| msgid "Select all tags that should be processed."
+msgid "Select a base tag from which the tags should be exported."
+msgstr "Kõigi töödeldavate siltide valimine."
 
-#: core/libs/tags/manager/tagsmanager.cpp:690
+#: core/libs/tags/manager/tagsmanager.cpp:628
+#, kde-format
+msgid "Selected tag is not a base tag at the top of the hierarchy."
+msgstr ""
+
+#: core/libs/tags/manager/tagsmanager.cpp:636
 #, fuzzy, kde-format
-#| msgid "Choose your grid size"
+#| msgid "Export to Local Storage"
 msgctxt "@title:window"
-msgid "Choose Import Tag File"
-msgstr "Alusvõrgu suuruse valimine"
+msgid "Export Controlled Vocabulary Tag File"
+msgstr "Eksport kohalikku salvestisse"
 
-#: core/libs/tags/manager/tagsmanager.cpp:781
+#: core/libs/tags/manager/tagsmanager.cpp:637
+#: core/libs/tags/manager/tagsmanager.cpp:755
+#, fuzzy, kde-format
+#| msgid "XMP text Files (*.xmp)"
+msgid "Text File (*.txt)"
+msgstr "XMP tekstifailid (*.xmp)"
+
+#: core/libs/tags/manager/tagsmanager.cpp:735
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Select all tags that should be processed."
+msgid "Select a tag into which the tags should be imported."
+msgstr "Kõigi töödeldavate siltide valimine."
+
+#: core/libs/tags/manager/tagsmanager.cpp:745
+#, kde-format
+msgid "No tags can be imported to the selected face tag."
+msgstr ""
+
+#: core/libs/tags/manager/tagsmanager.cpp:754
+#, kde-format
+msgctxt "@title:window"
+msgid "Import Controlled Vocabulary Tag File"
+msgstr ""
+
+#: core/libs/tags/manager/tagsmanager.cpp:853
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "Kas tõesti eemaldada valitud silt kõigist piltidest?"
 msgstr[1] "Kas tõesti eemaldada valitud sildid kõigist piltidest?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:873
+#: core/libs/tags/manager/tagsmanager.cpp:945
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:876
+#: core/libs/tags/manager/tagsmanager.cpp:948
 #, fuzzy, kde-format
 #| msgid "Sync &Export"
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "&Ekspordi sünkroonimine"
 
-#: core/libs/tags/manager/tagsmanager.cpp:904
+#: core/libs/tags/manager/tagsmanager.cpp:976
 #, fuzzy, kde-format
 #| msgid "Delete Unassigned Tags"
 msgid "Mark Unassigned Tags"
 msgstr "Kustuta omistamata sildid"
 
-#: core/libs/tags/manager/tagsmanager.cpp:924
+#: core/libs/tags/manager/tagsmanager.cpp:996
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Uue sildi lisamine aktiivsesse silti. Aktiivne silt on viimati klõpsatud "
 "silt."
 
-#: core/libs/tags/manager/tagsmanager.cpp:927
+#: core/libs/tags/manager/tagsmanager.cpp:999
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -42958,17 +42980,17 @@ msgstr ""
 "Valitud elementide kustutamine. Toimib ka mitme elemendi puhul, kuid "
 "juursilti siiski kustutada ei saa."
 
-#: core/libs/tags/manager/tagsmanager.cpp:931
+#: core/libs/tags/manager/tagsmanager.cpp:1003
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Valitud sildi pealkirja muutmine."
 
-#: core/libs/tags/manager/tagsmanager.cpp:933
+#: core/libs/tags/manager/tagsmanager.cpp:1005
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "Valitud siltide ikooni lähtestamine, Toimib ka mitmikvaliku korral."
 
-#: core/libs/tags/manager/tagsmanager.cpp:936
+#: core/libs/tags/manager/tagsmanager.cpp:1008
 #, fuzzy, kde-format
 #| msgid "Delete all tags that are not assigned to images. Use with caution."
 msgid "Mark all tags that are not assigned to images."
@@ -42976,72 +42998,72 @@ msgstr ""
 "Kõigi siltide kustutamine, mida ei ole piltidele omistatud. Ole selle "
 "võimalusega ettevaatlik."
 
-#: core/libs/tags/manager/tagsmanager.cpp:938
+#: core/libs/tags/manager/tagsmanager.cpp:1010
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Valik teistpidi. Valitakse ainult nähtavaid elemente."
 
-#: core/libs/tags/manager/tagsmanager.cpp:941
+#: core/libs/tags/manager/tagsmanager.cpp:1013
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Valitud elementide avamine"
 
-#: core/libs/tags/manager/tagsmanager.cpp:943
+#: core/libs/tags/manager/tagsmanager.cpp:1015
 #, fuzzy, kde-format
 #| msgid "Expand tag tree by one level"
 msgid "Expand tag tree completely"
 msgstr "Sildipuu avamine ühe tasandi võrra"
 
-#: core/libs/tags/manager/tagsmanager.cpp:945
+#: core/libs/tags/manager/tagsmanager.cpp:1017
 #, fuzzy, kde-format
 #| msgid "Copy not completed"
 msgid "Collapse tag tree completely"
 msgstr "Kopeerimine ei ole valmis"
 
-#: core/libs/tags/manager/tagsmanager.cpp:947
+#: core/libs/tags/manager/tagsmanager.cpp:1019
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr "Valitud siltide kustutamine piltidest. Toimib ka mitmikvaliku korral."
 
-#: core/libs/tags/manager/tagsmanager.cpp:991
+#: core/libs/tags/manager/tagsmanager.cpp:1063
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Kirjuta sildid andmebaasist pilti"
 
-#: core/libs/tags/manager/tagsmanager.cpp:994
+#: core/libs/tags/manager/tagsmanager.cpp:1066
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Loe sildid pildist"
 
-#: core/libs/tags/manager/tagsmanager.cpp:997
+#: core/libs/tags/manager/tagsmanager.cpp:1069
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Kustuta kõik sildid ainult andmebaasist"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1000
+#: core/libs/tags/manager/tagsmanager.cpp:1072
 #, fuzzy, kde-format
-#| msgid "Write metadata to each file"
-msgid "Export all tags to a file"
-msgstr "Metaandmete kirjutamine kõigisse failidesse"
+#| msgid "Edit title from selected tag."
+msgid "Export tags to a file from selected tag"
+msgstr "Valitud sildi pealkirja muutmine."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1003
+#: core/libs/tags/manager/tagsmanager.cpp:1075
 #, fuzzy, kde-format
 #| msgid "Remove Tag from Images"
-msgid "Import all tags from a file"
+msgid "Import tags from a file to selected tag"
 msgstr "Eemalda silt piltidest"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1005
+#: core/libs/tags/manager/tagsmanager.cpp:1077
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Siltide metaandmete kirjutamine pilti."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1007
+#: core/libs/tags/manager/tagsmanager.cpp:1079
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Siltide lugemine piltidest andmebaasi. Olemasolevaid silte see ei mõjuta"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1010
+#: core/libs/tags/manager/tagsmanager.cpp:1082
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -43050,17 +43072,17 @@ msgstr ""
 "Kõigi siltide kustutamine ainult andmebaasis. Failidega sünkroonimist ei "
 "sooritata. Kasuta seda võimalust ettevaatlikult."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1013
+#: core/libs/tags/manager/tagsmanager.cpp:1085
 #, kde-format
 msgid "Export all tags to a file to keep a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1015
+#: core/libs/tags/manager/tagsmanager.cpp:1087
 #, kde-format
 msgid "Import all tags from a file to restore a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1044
+#: core/libs/tags/manager/tagsmanager.cpp:1116
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -73288,6 +73310,29 @@ msgstr "Albumielemendid"
 #, kde-format
 msgid "Import Items"
 msgstr "Impordi elemendid"
+
+#, fuzzy
+#~| msgid "Theme Selection"
+#~ msgctxt "@option"
+#~ msgid "Recursive selection"
+#~ msgstr "Teema valimine"
+
+#, fuzzy
+#~| msgid "Choose your grid size"
+#~ msgctxt "@title:window"
+#~ msgid "Choose Export Tag File"
+#~ msgstr "Alusvõrgu suuruse valimine"
+
+#, fuzzy
+#~| msgid "Choose your grid size"
+#~ msgctxt "@title:window"
+#~ msgid "Choose Import Tag File"
+#~ msgstr "Alusvõrgu suuruse valimine"
+
+#, fuzzy
+#~| msgid "Write metadata to each file"
+#~ msgid "Export all tags to a file"
+#~ msgstr "Metaandmete kirjutamine kõigisse failidesse"
 
 #, fuzzy
 #~| msgid "Start"

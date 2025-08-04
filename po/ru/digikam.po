@@ -55,7 +55,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-03 02:01+0000\n"
+"POT-Creation-Date: 2025-08-04 02:13+0000\n"
 "PO-Revision-Date: 2025-07-30 13:43+0300\n"
 "Last-Translator: Mariya Shikunova <maremarie@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -3321,7 +3321,7 @@ msgid "Tools"
 msgstr "Инструменты"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:1043
+#: core/libs/tags/manager/tagsmanager.cpp:1115
 #, kde-format
 msgid "Help"
 msgstr "Справка"
@@ -27823,7 +27823,7 @@ msgstr "Альбом по ярлыкам"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:157
-#: core/libs/tags/manager/tagsmanager.cpp:910
+#: core/libs/tags/manager/tagsmanager.cpp:982
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -28197,99 +28197,96 @@ msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Выбор альбома"
 
-#: core/libs/album/widgets/albumselectors.cpp:140
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:142
+#: core/libs/album/widgets/albumselectors.cpp:554
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "Альбомы (Все)"
 
-#: core/libs/album/widgets/albumselectors.cpp:143
+#: core/libs/album/widgets/albumselectors.cpp:145
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Метки (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:175
+#: core/libs/album/widgets/albumselectors.cpp:177
 #, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "Все альбомы"
 
-#: core/libs/album/widgets/albumselectors.cpp:176
-#: core/libs/album/widgets/albumselectors.cpp:237
-#, kde-format
-msgctxt "@option"
-msgid "Recursive selection"
-msgstr "Выбор в обратном порядке"
-
-#: core/libs/album/widgets/albumselectors.cpp:177
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Recursive album selection."
+#: core/libs/album/widgets/albumselectors.cpp:179
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Recursive album selection."
+msgctxt "@info"
+msgid "Toggle recursive album selection."
 msgstr "Выбор альбома в обратном порядке."
 
-#: core/libs/album/widgets/albumselectors.cpp:187
+#: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Выбрать все альбомы, которые нужно обработать"
 
-#: core/libs/album/widgets/albumselectors.cpp:190
+#: core/libs/album/widgets/albumselectors.cpp:194
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Нет выбранных альбомов"
 
-#: core/libs/album/widgets/albumselectors.cpp:197
+#: core/libs/album/widgets/albumselectors.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Сбросить выбор альбомов"
 
-#: core/libs/album/widgets/albumselectors.cpp:236
+#: core/libs/album/widgets/albumselectors.cpp:239
 #, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "Все метки"
 
-#: core/libs/album/widgets/albumselectors.cpp:238
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Recursive tags selection."
+#: core/libs/album/widgets/albumselectors.cpp:241
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Recursive tags selection."
+msgctxt "@info"
+msgid "Toggle recursive tags selection."
 msgstr "Выбор меток в обратном порядке."
 
-#: core/libs/album/widgets/albumselectors.cpp:248
+#: core/libs/album/widgets/albumselectors.cpp:253
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Выбрать все метки, которые нужно обработать"
 
-#: core/libs/album/widgets/albumselectors.cpp:251
+#: core/libs/album/widgets/albumselectors.cpp:256
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Нет выбранных меток"
 
-#: core/libs/album/widgets/albumselectors.cpp:255
+#: core/libs/album/widgets/albumselectors.cpp:260
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Сбросить выбранные метки"
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:555
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Альбомы (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:554
+#: core/libs/album/widgets/albumselectors.cpp:558
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Метки (Все)"
 
-#: core/libs/album/widgets/albumselectors.cpp:555
+#: core/libs/album/widgets/albumselectors.cpp:559
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -40433,38 +40430,38 @@ msgid "Delete Tags"
 msgstr "Удалить метки"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:147
-#: core/libs/tags/manager/tagsmanager.cpp:897
+#: core/libs/tags/manager/tagsmanager.cpp:969
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Переименовать метку..."
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:151
-#: core/libs/tags/manager/tagsmanager.cpp:901
+#: core/libs/tags/manager/tagsmanager.cpp:973
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Сбросить значок метки"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:154
-#: core/libs/tags/manager/tagsmanager.cpp:907
+#: core/libs/tags/manager/tagsmanager.cpp:979
 #, kde-format
 msgid "Invert Selection"
 msgstr "Обратить выделение"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:160
-#: core/libs/tags/manager/tagsmanager.cpp:913
+#: core/libs/tags/manager/tagsmanager.cpp:985
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Развернуть дерево меток"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:163
-#: core/libs/tags/manager/tagsmanager.cpp:916
+#: core/libs/tags/manager/tagsmanager.cpp:988
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Свернуть дерево меток"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:166
-#: core/libs/tags/manager/tagsmanager.cpp:919
+#: core/libs/tags/manager/tagsmanager.cpp:991
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Удалить метку с изображений"
@@ -40506,13 +40503,13 @@ msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr "&Комбинация клавиш:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:149
+#: core/libs/tags/manager/tagpropwidget.cpp:159
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr "Примечание"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:150
+#: core/libs/tags/manager/tagpropwidget.cpp:160
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
@@ -40520,19 +40517,19 @@ msgstr ""
 "Эту комбинацию клавиш можно использовать для присваивания меток изображениям "
 "или их снятия."
 
-#: core/libs/tags/manager/tagpropwidget.cpp:155
+#: core/libs/tags/manager/tagpropwidget.cpp:165
 #, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "Сохранить"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:156
+#: core/libs/tags/manager/tagpropwidget.cpp:166
 #, kde-format
 msgctxt "@action"
 msgid "Discard"
 msgstr "Отклонить"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:223
+#: core/libs/tags/manager/tagpropwidget.cpp:233
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
@@ -40635,19 +40632,52 @@ msgstr ""
 "метаданных в файл.\n"
 "Продолжить?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:616
+#: core/libs/tags/manager/tagsmanager.cpp:618
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Select all tags that should be processed."
+msgid "Select a base tag from which the tags should be exported."
+msgstr "Выбрать все метки, которые нужно обработать"
+
+#: core/libs/tags/manager/tagsmanager.cpp:628
+#, kde-format
+msgid "Selected tag is not a base tag at the top of the hierarchy."
+msgstr ""
+
+#: core/libs/tags/manager/tagsmanager.cpp:636
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Export to Local Storage"
+msgctxt "@title:window"
+msgid "Export Controlled Vocabulary Tag File"
+msgstr "Экспорт в локальное хранилище"
+
+#: core/libs/tags/manager/tagsmanager.cpp:637
+#: core/libs/tags/manager/tagsmanager.cpp:755
+#, fuzzy, kde-format
+#| msgid "XMP text Files (*.xmp)"
+msgid "Text File (*.txt)"
+msgstr "Текстовые файлы XMP (*.xmp)"
+
+#: core/libs/tags/manager/tagsmanager.cpp:735
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Select all tags that should be processed."
+msgid "Select a tag into which the tags should be imported."
+msgstr "Выбрать все метки, которые нужно обработать"
+
+#: core/libs/tags/manager/tagsmanager.cpp:745
+#, kde-format
+msgid "No tags can be imported to the selected face tag."
+msgstr ""
+
+#: core/libs/tags/manager/tagsmanager.cpp:754
 #, kde-format
 msgctxt "@title:window"
-msgid "Choose Export Tag File"
-msgstr "Выбор файла метки для экспорта"
+msgid "Import Controlled Vocabulary Tag File"
+msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:690
-#, kde-format
-msgctxt "@title:window"
-msgid "Choose Import Tag File"
-msgstr "Выбор файла метки для импорта"
-
-#: core/libs/tags/manager/tagsmanager.cpp:781
+#: core/libs/tags/manager/tagsmanager.cpp:853
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -40656,31 +40686,31 @@ msgstr[1] "Удалить выбранные метки со всех изобр
 msgstr[2] "Удалить выбранные метки со всех изображений?"
 msgstr[3] "Удалить выбранную метку со всех изображений?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:873
+#: core/libs/tags/manager/tagsmanager.cpp:945
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Управление"
 
-#: core/libs/tags/manager/tagsmanager.cpp:876
+#: core/libs/tags/manager/tagsmanager.cpp:948
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Синхронизация и экспорт"
 
-#: core/libs/tags/manager/tagsmanager.cpp:904
+#: core/libs/tags/manager/tagsmanager.cpp:976
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Отметить неиспользуемые метки"
 
-#: core/libs/tags/manager/tagsmanager.cpp:924
+#: core/libs/tags/manager/tagsmanager.cpp:996
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Добавить новую метку к текущей. Текущей меткой является та, по которой был "
 "произведён последний щелчок."
 
-#: core/libs/tags/manager/tagsmanager.cpp:927
+#: core/libs/tags/manager/tagsmanager.cpp:999
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -40689,87 +40719,89 @@ msgstr ""
 "Удалить выбранные объекты. Работает также с несколькими метками, но корневая "
 "метка не будет удалена."
 
-#: core/libs/tags/manager/tagsmanager.cpp:931
+#: core/libs/tags/manager/tagsmanager.cpp:1003
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Изменить название выбранной метки."
 
-#: core/libs/tags/manager/tagsmanager.cpp:933
+#: core/libs/tags/manager/tagsmanager.cpp:1005
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Сбросить значок у выбранных меток. Работает и с множественными выделениями"
 
-#: core/libs/tags/manager/tagsmanager.cpp:936
+#: core/libs/tags/manager/tagsmanager.cpp:1008
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Отметить все метки, которые не связаны с изображениями."
 
-#: core/libs/tags/manager/tagsmanager.cpp:938
+#: core/libs/tags/manager/tagsmanager.cpp:1010
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Инвертировать выбор. Будут выбраны только видимые объекты."
 
-#: core/libs/tags/manager/tagsmanager.cpp:941
+#: core/libs/tags/manager/tagsmanager.cpp:1013
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Выбранные элементы будут развёрнуты"
 
-#: core/libs/tags/manager/tagsmanager.cpp:943
+#: core/libs/tags/manager/tagsmanager.cpp:1015
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Полностью развернуть дерево меток"
 
-#: core/libs/tags/manager/tagsmanager.cpp:945
+#: core/libs/tags/manager/tagsmanager.cpp:1017
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Полностью свернуть дерево меток"
 
-#: core/libs/tags/manager/tagsmanager.cpp:947
+#: core/libs/tags/manager/tagsmanager.cpp:1019
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Удалить выбранную метку(и) из изображений. Работает и с несколькими "
 "выбранными объектами."
 
-#: core/libs/tags/manager/tagsmanager.cpp:991
+#: core/libs/tags/manager/tagsmanager.cpp:1063
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Записать метки из базы данных в изображение"
 
-#: core/libs/tags/manager/tagsmanager.cpp:994
+#: core/libs/tags/manager/tagsmanager.cpp:1066
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Считать метки с изображения"
 
-#: core/libs/tags/manager/tagsmanager.cpp:997
+#: core/libs/tags/manager/tagsmanager.cpp:1069
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Удалить все метки только из базы данных"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1000
-#, kde-format
-msgid "Export all tags to a file"
-msgstr "Экспорт всех меток в файл"
+#: core/libs/tags/manager/tagsmanager.cpp:1072
+#, fuzzy, kde-format
+#| msgid "Edit title from selected tag."
+msgid "Export tags to a file from selected tag"
+msgstr "Изменить название выбранной метки."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1003
-#, kde-format
-msgid "Import all tags from a file"
-msgstr "Импорт всех меток из файла"
+#: core/libs/tags/manager/tagsmanager.cpp:1075
+#, fuzzy, kde-format
+#| msgid "Import all tags from a file to restore a backup."
+msgid "Import tags from a file to selected tag"
+msgstr "Импорт всех меток из файла для восстановления резервной копии."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1005
+#: core/libs/tags/manager/tagsmanager.cpp:1077
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Записать метаданные меток в изображение"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1007
+#: core/libs/tags/manager/tagsmanager.cpp:1079
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Считать метки из изображений в базу данных. Существующие метки не будут "
 "затронуты."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1010
+#: core/libs/tags/manager/tagsmanager.cpp:1082
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -40778,17 +40810,17 @@ msgstr ""
 "Удалить все метки только из базы данных. Синхронизация с файлами не будет "
 "выполнена. Продолжайте с осторожностью."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1013
+#: core/libs/tags/manager/tagsmanager.cpp:1085
 #, kde-format
 msgid "Export all tags to a file to keep a backup."
 msgstr "Экспорт всех меток из файла для сохранения резервной копии."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1015
+#: core/libs/tags/manager/tagsmanager.cpp:1087
 #, kde-format
 msgid "Import all tags from a file to restore a backup."
 msgstr "Импорт всех меток из файла для восстановления резервной копии."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1044
+#: core/libs/tags/manager/tagsmanager.cpp:1116
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -68593,6 +68625,24 @@ msgstr "Альбомы"
 #, kde-format
 msgid "Import Items"
 msgstr "Импорт"
+
+#~ msgctxt "@option"
+#~ msgid "Recursive selection"
+#~ msgstr "Выбор в обратном порядке"
+
+#~ msgctxt "@title:window"
+#~ msgid "Choose Export Tag File"
+#~ msgstr "Выбор файла метки для экспорта"
+
+#~ msgctxt "@title:window"
+#~ msgid "Choose Import Tag File"
+#~ msgstr "Выбор файла метки для импорта"
+
+#~ msgid "Export all tags to a file"
+#~ msgstr "Экспорт всех меток в файл"
+
+#~ msgid "Import all tags from a file"
+#~ msgstr "Импорт всех меток из файла"
 
 #~ msgctxt "@action:button"
 #~ msgid "Start"
