@@ -1,7 +1,7 @@
 ################################################################################
 #
 # Script to build Qt 6 - config for MacOS
-# See option details on configure-help text file
+# See option details on config-help text file
 #
 # Copyright (c) 2015-2025 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
