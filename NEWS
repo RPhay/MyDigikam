@@ -10,6 +10,7 @@ Bundles:         Update Qt6 based MacOS Silicon PKG to last frameworks KDE 6.16.
 Bundles:         Update Qt5 based MacOS Intel PKG to last OpenCV 4.12.
 RawEngine:       Update internal Libraw to last 20250727 upstream.
 Video:           Update internal QtAVPlayer to last 20250727 upstream (Qt5 only).
+Plugins:         G'MIC-Qt updated to last v3.6.0.
 TagsManager:     Add options to import or export tag-hierarchies to text files.
                  Controlled Vocabulary Keyword Catalogue format is supported (https://www.controlledvocabulary.com/products/index.html).
 
