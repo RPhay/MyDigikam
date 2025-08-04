@@ -33,7 +33,7 @@ CreatePreviewTask::CreatePreviewTask(const QString& workDirPath,
                                      QSharedPointer<const PTOType> inputPTO,
                                      QUrl& previewPtoUrl,
                                      const PanoramaItemUrlsMap& preProcessedUrlsMap)
-    : PanoTask           (PANO_CREATEMKPREVIEW, workDirPath),
+    : PanoTask           (PANO_CREATEPREVIEW, workDirPath),
       previewPtoUrl      (previewPtoUrl),
       ptoData            (inputPTO),
       preProcessedUrlsMap(preProcessedUrlsMap)

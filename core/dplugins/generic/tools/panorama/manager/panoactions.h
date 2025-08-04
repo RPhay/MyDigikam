@@ -35,7 +35,7 @@ enum PanoAction
     PANO_CPCLEAN,                    // 4
     PANO_OPTIMIZE,                   // 5
     PANO_AUTOCROP,                   // 6
-    PANO_CREATEMKPREVIEW,            // 7
+    PANO_CREATEPREVIEW,              // 7
     PANO_CREATEFINALPTO,             // 8
     PANO_HUGINEXECUTOR,              // 9
     PANO_HUGINEXECUTORPREVIEW,       // 10

@@ -306,7 +306,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
         {
             switch (ad.action)
             {
-                case PANO_CREATEMKPREVIEW:
+                case PANO_CREATEPREVIEW:
                 case PANO_HUGINEXECUTORPREVIEW:
                 {
                     if (!d->previewBusy)
@@ -415,7 +415,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
         {
             switch (ad.action)
             {
-                case PANO_CREATEMKPREVIEW:
+                case PANO_CREATEPREVIEW:
                 case PANO_CREATEFINALPTO:
                 {
                     // Nothing to do yet, a step is finished, that's all
@@ -511,7 +511,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
     {
         switch (ad.action)
         {
-            case PANO_CREATEMKPREVIEW:
+            case PANO_CREATEPREVIEW:
             case PANO_CREATEFINALPTO:
             case PANO_HUGINEXECUTORPREVIEW:
             {
