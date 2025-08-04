@@ -137,7 +137,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     heif_item_id primary_image_id;
 
     struct heif_context* const heif_context = heif_context_alloc();
-
+/*
     heif_reader reader;
     reader.reader_api_version = 1;
     reader.get_position       = heifQIODeviceDImgGetPosition;
@@ -149,6 +149,10 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                                                               &reader,
                                                               reinterpret_cast<void*>(&readFile),
                                                               nullptr);
+*/
+    struct heif_error error = heif_context_read_from_file(heif_context,
+                                                          filePath.toUtf8().constData(),
+                                                          nullptr);
 
     if (!isHeifSuccess(&error))
     {
