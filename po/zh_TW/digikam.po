@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-04 02:13+0000\n"
+"POT-Creation-Date: 2025-08-05 02:23+0000\n"
 "PO-Revision-Date: 2025-07-03 23:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -16616,7 +16616,7 @@ msgid "Revert current settings to default values."
 msgstr "將目前設定重設為預設值。"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:92
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:89
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@action:button"
@@ -16799,7 +16799,7 @@ msgid "For more information, please take a look at"
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid "this page"
@@ -18674,7 +18674,7 @@ msgstr "顯示影像建立日期"
 msgid "Raw file conversion failed."
 msgstr "資料庫轉換已取消。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:78
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:75
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "<b>Welcome to Panorama Tool</b>"
@@ -18682,7 +18682,7 @@ msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "<b>歡迎使用全景圖製作工具</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:90
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "<b>Welcome to Panorama Tool</b>"
@@ -18690,7 +18690,7 @@ msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "<b>歡迎使用全景圖製作工具</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:91
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18698,7 +18698,7 @@ msgid ""
 "seam between images not visible."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18706,33 +18706,33 @@ msgid ""
 "stitching them into a panorama."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:100
 #, fuzzy, kde-format
 #| msgid "Panoramic view"
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "全景"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:158
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:152
 #, fuzzy, kde-format
 #| msgid "File Format"
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "檔案格式"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:162
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:156
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "JPEG output"
@@ -18740,7 +18740,7 @@ msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "JPEG 輸出"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:167
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:161
 #, fuzzy, no-c-format, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -18752,7 +18752,7 @@ msgid ""
 "size)."
 msgstr "選擇 JPEG 輸出，壓縮率 90%（較失真，檔案較小）"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:163
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -18768,14 +18768,14 @@ msgstr ""
 "<b>JPEG 輸出</b>：使用 JPEG 格式輸出，全景圖檔會較小，但是壓縮期間損失的資訊"
 "較多。這是要將做出來的全景圖分享出去，或是列印出來最容易的方式。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:175
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, fuzzy, kde-format
 #| msgid "TIFF Properties"
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "TIFF 屬性"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:176
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:170
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -18787,7 +18787,7 @@ msgid ""
 "compression, bigger size)."
 msgstr "選擇 TIFF 輸出，使用 LZW 演算法壓縮（較不失真，檔案較大）"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:172
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -19134,64 +19134,57 @@ msgid ""
 "overlaps between images. For that purpose, the \"%1\" program will be used."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:80
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>預覽與後製處理</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:130
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:127
 #, fuzzy, kde-format
 #| msgid "Processing..."
 msgid "Processing Panorama Preview..."
 msgstr "正在處理..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:201
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:193
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>全景圖後製處理</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:207
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:199
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "後製"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:287
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:273
 #, fuzzy, kde-format
 #| msgid "Process Cancelled..."
 msgid "Preview Processing Cancelled."
 msgstr "已取消處理..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:349
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:332
 #, fuzzy, kde-format
 #| msgid "<qt><h2><b>Error</b></h2><p>%1</p></qt>"
 msgid "<h1><b>Error</b></h1><p>%1</p>"
 msgstr "<qt><h2><b>錯誤</b></h2><p>%1</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:383
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:366
 #, fuzzy, kde-format
 #| msgid "Cannot read project file."
 msgctxt "a project file is a .pto file, as given to hugin to build a panorama"
 msgid "<p><b>Cannot create project file: </b></p><p>%1</p>"
 msgstr "無法讀取專案檔。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:413
-#, fuzzy, kde-format
-#| msgid "Processing file %1 / %2: %3"
-msgctxt "Error message for image file number %1 out of %2"
-msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
-msgstr "處理檔案 %1 / %2 中：%3"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:446
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:396
 #, fuzzy, kde-format
 #| msgid "Panorama compilation: %1"
 msgctxt "Error message for panorama compilation"
 msgid "<p><b>Panorama compilation: </b></p><p>%1</p>"
 msgstr "全景圖編譯：%1"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:497
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:444
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p><h1>Panorama Preview</h1></p><p>Draw a rectangle if you want to "
@@ -19205,26 +19198,14 @@ msgstr ""
 "<qt><p><h1>全景圖預覽</h1></p><p>請繪出您要裁切的影像矩形區域。</p><p>按「下"
 "一步」會啟動最終連結程序。</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:524
-#, fuzzy, kde-format
-msgctxt "Success for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "儲存於檔案"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:553
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:485
 #, fuzzy, kde-format
 #| msgid "Panorama Tool and Mentoring"
 msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
 msgstr "全景圖工具；指導者"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:597
-#, fuzzy, kde-format
-msgctxt "Compilation started for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "儲存於檔案"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:609
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:526
 #, fuzzy, kde-format
 #| msgid "Panorama Tool and Mentoring"
 msgctxt "Panorama compilation started"
@@ -67832,6 +67813,22 @@ msgstr "相簿項目"
 #, kde-format
 msgid "Import Items"
 msgstr "匯入項目"
+
+#, fuzzy
+#~| msgid "Processing file %1 / %2: %3"
+#~ msgctxt "Error message for image file number %1 out of %2"
+#~ msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
+#~ msgstr "處理檔案 %1 / %2 中：%3"
+
+#, fuzzy
+#~ msgctxt "Success for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "儲存於檔案"
+
+#, fuzzy
+#~ msgctxt "Compilation started for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "儲存於檔案"
 
 #, fuzzy
 #~| msgctxt "@info:tooltip"

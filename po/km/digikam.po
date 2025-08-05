@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-04 02:13+0000\n"
+"POT-Creation-Date: 2025-08-05 02:23+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -17216,7 +17216,7 @@ msgid "Revert current settings to default values."
 msgstr "កំណត់​តម្លៃ​របស់​កម្រិត​ឆានែល​បច្ចុប្បន្ន​ឡើងវិញ ។"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:92
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:89
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@action:button"
@@ -17405,7 +17405,7 @@ msgid "For more information, please take a look at"
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
 #, fuzzy, kde-format
 #| msgid "Next Image"
 msgctxt "@info"
@@ -19313,21 +19313,21 @@ msgstr "បាន​បរាជ័យ​ការ​​ជាប់​ទាក
 msgid "Raw file conversion failed."
 msgstr "បាន​បោះបង់​ការ​បម្លែង​មូលដ្ឋាន​ទិន្នន័យ ។"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:78
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:75
 #, fuzzy, kde-format
 #| msgid "<b>Welcome to Panorama Tool</b>"
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "<b>សូម​ស្វាគមន៍​មក​កាន់​​ឧបករណ៍​ទស្សនីយភាព</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:90
 #, fuzzy, kde-format
 #| msgid "<b>Welcome to Panorama Tool</b>"
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "<b>សូម​ស្វាគមន៍​មក​កាន់​​ឧបករណ៍​ទស្សនីយភាព</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:91
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19335,7 +19335,7 @@ msgid ""
 "seam between images not visible."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19343,40 +19343,40 @@ msgid ""
 "stitching them into a panorama."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:100
 #, fuzzy, kde-format
 #| msgid "Panoramic view"
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "ទិដ្ឋភាព​ធំ​ទូលាយ​"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:158
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:152
 #, fuzzy, kde-format
 #| msgid "Format"
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "ទ្រង់ទ្រាយ"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:162
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:156
 #, fuzzy, kde-format
 #| msgid "JPEG output"
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "លទ្ធផល JPEG"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:167
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:161
 #, fuzzy, no-c-format, kde-format
 #| msgid ""
 #| "Selects a JPEG output with 90% compression rate (lossy compression, "
@@ -19387,7 +19387,7 @@ msgid ""
 "size)."
 msgstr "ជ្រើស​លទ្ធផល JPEG ដែល​មាន​​អត្រា​បង្ហាប់ ៩០% (ការ​បង្ហាប់មាន​កា​របាត់បង់ ទំហំ​តូច)  ។"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:163
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -19396,14 +19396,14 @@ msgid ""
 "share the result, or print it online or in a shop."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:175
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, fuzzy, kde-format
 #| msgid "TIFF output"
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "លទ្ធផល TIFF"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:176
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:170
 #, fuzzy, kde-format
 #| msgid ""
 #| "Selects a TIFF output compressed using the LZW algorithm (lossless "
@@ -19416,7 +19416,7 @@ msgstr ""
 "ជ្រើស​លទ្ធផល TIFF ដែល​បាន​បង្ហាប់ ដោយ​ប្រើ​ក្បួន​ដោះស្រាយ LZW (ការ​បង្ហាប់​គ្មាន​កា​របាត់បង់ ទំហំ​កាន់​តែ​"
 "ធំ) ។"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:172
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19706,64 +19706,57 @@ msgid ""
 "overlaps between images. For that purpose, the \"%1\" program will be used."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:80
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:77
 #, fuzzy, kde-format
 #| msgid "<b>Preview and Post-Processing</b>"
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>មើល​​ជា​មុន និង​ដំណើរកា​រ​ជា​ក្រោយ</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:130
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:127
 #, kde-format
 msgid "Processing Panorama Preview..."
 msgstr "កំពុង​ដំណើរការ​ការ​មើល​ទស្សនីយភាព​ជា​មុន..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:201
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:193
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>ដំណើរការ​ទស្សនីយភាព​ក្រោយ</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:207
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:199
 #, fuzzy, kde-format
 #| msgid "Panorama Stitching"
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "ថ្នេរ Panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:287
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:273
 #, fuzzy, kde-format
 #| msgid "Rotating images"
 msgid "Preview Processing Cancelled."
 msgstr "បង្វិល​រូបភាព"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:349
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:332
 #, fuzzy, kde-format
 #| msgid "<qt><h2><b>Error</b></h2><p>%1</p></qt>"
 msgid "<h1><b>Error</b></h1><p>%1</p>"
 msgstr "<qt><h2><b>កំហុស</b></h2><p>%1</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:383
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:366
 #, fuzzy, kde-format
 #| msgid "Cannot read project file."
 msgctxt "a project file is a .pto file, as given to hugin to build a panorama"
 msgid "<p><b>Cannot create project file: </b></p><p>%1</p>"
 msgstr "មិនអាច​អាន​ឯកសារ​គម្រោង​បាន​ទេ ។"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:413
-#, fuzzy, kde-format
-#| msgid "Processing file %1 / %2: %3"
-msgctxt "Error message for image file number %1 out of %2"
-msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
-msgstr "ដំណើរការ​ឯកសារ %1 / %2: %3"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:446
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:396
 #, fuzzy, kde-format
 #| msgid "Panorama compilation: %1"
 msgctxt "Error message for panorama compilation"
 msgid "<p><b>Panorama compilation: </b></p><p>%1</p>"
 msgstr "ការ​ចងក្រង​ទស្សនីយភាព ៖ %1"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:497
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:444
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p><h1>Panorama Preview</h1></p><p>Pressing the <i>Next</i> button "
@@ -19776,27 +19769,13 @@ msgstr ""
 "<qt><p><h1>មើល​ទស្សនីយភាព​ជា​មុន</h1></p><p>ចុច​ប៊ូតុង <i>បន្ទាប់</i> ដើម្បី​ចាប់ផ្ដើម​ដំណើរការ​"
 "ភ្ជាប់​ចុងក្រោយ ។</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:524
-#, fuzzy, kde-format
-#| msgid "Processing file %1 / %2"
-msgctxt "Success for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "ដំណើរការ​ឯកសារ %1 / %2"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:553
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:485
 #, fuzzy, kde-format
 msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
 msgstr "អ្នក​សម្របសម្រួល និង​អ្នក​អភិវឌ្ឍន៍​ចម្បង"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:597
-#, fuzzy, kde-format
-#| msgid "Processing file %1 / %2"
-msgctxt "Compilation started for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "ដំណើរការ​ឯកសារ %1 / %2"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:609
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:526
 #, fuzzy, kde-format
 msgctxt "Panorama compilation started"
 msgid "Panorama compilation"
@@ -69057,6 +69036,24 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "តម្រៀប​រូបភាព"
+
+#, fuzzy
+#~| msgid "Processing file %1 / %2: %3"
+#~ msgctxt "Error message for image file number %1 out of %2"
+#~ msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
+#~ msgstr "ដំណើរការ​ឯកសារ %1 / %2: %3"
+
+#, fuzzy
+#~| msgid "Processing file %1 / %2"
+#~ msgctxt "Success for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "ដំណើរការ​ឯកសារ %1 / %2"
+
+#, fuzzy
+#~| msgid "Processing file %1 / %2"
+#~ msgctxt "Compilation started for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "ដំណើរការ​ឯកសារ %1 / %2"
 
 #, fuzzy
 #~| msgid "Selection"

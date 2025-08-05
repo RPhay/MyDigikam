@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-04 02:13+0000\n"
-"PO-Revision-Date: 2025-07-02 02:12+0200\n"
+"POT-Creation-Date: 2025-08-05 02:23+0000\n"
+"PO-Revision-Date: 2025-07-21 23:21+0200\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -2796,12 +2796,12 @@ msgstr "Alle unterstützten Dateien (%1)"
 #: core/app/utils/digikam_version.cpp:63
 #, kde-format
 msgid "IRC: "
-msgstr ""
+msgstr "IRC: "
 
 #: core/app/utils/digikam_version.cpp:66
 #, kde-format
 msgid "Feedback: "
-msgstr ""
+msgstr "Rückmeldungen: "
 
 #: core/app/utils/digikam_version.cpp:69
 #, kde-format
@@ -2831,7 +2831,7 @@ msgstr "Git-Revision: "
 #: core/app/utils/digikam_version.cpp:98
 #, kde-format
 msgid "Git Branch: "
-msgstr ""
+msgstr "Git-Branch: "
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
@@ -2925,14 +2925,12 @@ msgid "Image Quality Scan"
 msgstr "Bildqualitäts-Analyse"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for image quality parsing"
 msgstr ""
-"Benutzen Sie diesen Knopf, um die ausgewählten Alben nach doppelten "
-"Einträgen zu durchsuchen."
+"Benutzen Sie diesen Knopf, um in den ausgewählten Alben die Bildqualität zu "
+"analysieren"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:130
@@ -2955,8 +2953,7 @@ msgstr "Markierungen"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
-#, fuzzy, kde-format
-#| msgid "Scan for Faces"
+#, kde-format
 msgctxt "@label short translated text about the scan for faces"
 msgid "Scan for Faces"
 msgstr "Nach Gesichtern suchen"
@@ -3024,10 +3021,9 @@ msgstr "Vorhandene Stichwörter"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:133
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:144
-#, fuzzy, kde-format
-#| msgid "Automatic Adjustment"
+#, kde-format
 msgid "Auto-tag Scan"
-msgstr "Automatische Anpassung"
+msgstr "Durchsuchen für automatische Stichwörter"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:146
 #, kde-format
@@ -3337,10 +3333,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 Einträge ausgewählt"
 
 #: core/app/views/stack/welcomepageview.cpp:98
-#, fuzzy, kde-format
-#| msgid "More than 400 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1700 user-reports closed on bugzilla."
-msgstr "Mehr als 400 Meldungen von Anwendern wurden in Bugzilla geschlossen."
+msgstr "Mehr als 1700 Meldungen von Anwendern wurden in Bugzilla geschlossen."
 
 #: core/app/views/stack/welcomepageview.cpp:99
 #, kde-format
@@ -3353,6 +3348,8 @@ msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
 "and use Qt6 and KF6 frameworks."
 msgstr ""
+"Der Windows-Installer wird nun nativ mit der Microsoft VCPKG-Toolchain "
+"kompiliert und verwendet die Qt6- und KF6-Frameworks."
 
 #: core/app/views/stack/welcomepageview.cpp:101
 #, kde-format
@@ -3528,11 +3525,15 @@ msgstr ""
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
+"Einstellungen für Symbolansicht hinzugefügt, um die Sichtbarkeit von "
+"Markierungen über Vorschaubildern anzupassen."
 
 #: core/app/views/stack/welcomepageview.cpp:124
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
+"Unterstützung für float16 (half float)-Bilder im TIFF-Ladeprogramm "
+"hinzugefügt."
 
 #: core/app/views/stack/welcomepageview.cpp:125
 #, kde-format
@@ -3588,14 +3589,13 @@ msgstr ""
 "per Stapelverarbeitung hinzugefügt."
 
 #: core/app/views/stack/welcomepageview.cpp:131
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign rating, pick, and color labels in batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to perform auto-rotation based on content "
 "analysis using DNN."
 msgstr ""
-"Neues Werkzeug zur Zuweisung von Bewertung, Auswahl- und Farbmarkierungen in "
-"der Stapelverarbeitung hinzugefügt."
+"Warteschlangenverwaltung: Neues Werkzeug für automatische Rotation mittels "
+"Inhaltsanalyse durch DNN hinzugefügt."
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
@@ -3615,6 +3615,11 @@ msgid ""
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
 "\">See this GoSC-2023 report for details.</a>"
 msgstr ""
+"Wartung und Warteschlangenverwaltung: Neue Werkzeuge für die automatische "
+"Stichwortzuweisung mittels Deep Learning Neural Network Engine. <a href="
+"\"https://community.kde.org/GSoc/2023/StatusReports/"
+"QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
+"\">Für mehr Details siehe dieser GoSC-2023-Bericht.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
@@ -3622,6 +3627,8 @@ msgid ""
 "Update G'MIC-Qt tool to last version 3.5.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
+"G’MIC-Qt-Werkzeug auf die neueste Version 3.5.0 aktualisiert, MacOS-"
+"Portierung abgeschlossen und Stabilität des Moduls verbessert."
 
 #: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
@@ -3632,6 +3639,8 @@ msgstr ""
 #, kde-format
 msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
+"Adobe DNG-SDK auf die neueste Version 1.7.1 mit JPEG-XL-Kompression "
+"aktualisiert."
 
 #: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
@@ -3639,6 +3648,9 @@ msgid ""
 "More compact icon-view thumbnails by using a simple horizontal line instead "
 "a frame to render Color Labels."
 msgstr ""
+"Kompaktere Vorschauen in der Symbolansicht dank der Verwendung einer "
+"einfachen horizontalen Linie statt eines Rahmens zur Darstellung von "
+"Farbmarkierungen."
 
 #: core/app/views/stack/welcomepageview.cpp:140
 #, kde-format
@@ -3648,23 +3660,27 @@ msgid ""
 "OpenFace model. Both are faster and requires less memory at run-time with "
 "better faces-management results."
 msgstr ""
+"YuNet-DNN-Modell für die Gesichtsentdeckung hinzugefügt, was das ältere SSD-"
+"Modell ersetzt. Sface-DNN-Modell für die Gesichtserkennung hinzugefügt, was "
+"das ältere OpenFace-Modell ersetzt. Beide sind schneller und benötigen "
+"weniger Speicher zur Laufzeit, bieten aber dennoch bessere Ergebnisse."
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid "New option to scan image for recognize faces at startup."
-msgstr ""
+msgstr "Neue Option, beim Starten Bilder nach Gesichtern abzusuchen."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid "New option to turn on/off OpenCL support with face management."
 msgstr ""
+"Neue Option, OpenCL-Nutzung bei der Gesichtserkennung an- oder auszuschalten."
 
 #: core/app/views/stack/welcomepageview.cpp:145
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last stable Libraw 0.21.1."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
 msgstr ""
-"Interne RAW-Verarbeitung auf die neueste stabile Version Libraw 0.21.1 "
+"Interne RAW-Verarbeitung auf die neueste Version Libraw Snapshot 2025-05-12 "
 "aktualisiert."
 
 #: core/app/views/stack/welcomepageview.cpp:146
@@ -3677,6 +3693,13 @@ msgid ""
 "A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
+"Neue RAW-Kameraunterstützung: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS "
+"R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad "
+"X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-"
+"G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6."
+"Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, "
+"DSC-HX95, A1. Mehrere DJI- und Skydio-Drohnen. Mehrere Smartphones mit DNG-"
+"Format."
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
@@ -4486,7 +4509,7 @@ msgstr "LibOpenCV"
 #, kde-format
 msgctxt "@item: component info"
 msgid "Qt Sql drivers"
-msgstr ""
+msgstr "Qt-Sql-Treiber"
 
 #: core/app/views/utils/componentsinfodlg.cpp:198
 #, kde-format
@@ -6381,13 +6404,10 @@ msgstr ""
 "einer Metadaten-Vorlage zuweisen.</para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgctxt "@title"
 msgid "Image Quality Scan"
-msgstr "Sortieren nach Bildqualität"
+msgstr "Bildqualitätsanalyse"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:57
 #, kde-format
@@ -17134,7 +17154,7 @@ msgid "Revert current settings to default values."
 msgstr "Setzt die aktuellen Einstellungen auf die Standardwerte zurück."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:92
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:89
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
@@ -17329,7 +17349,7 @@ msgid "For more information, please take a look at"
 msgstr "Für mehr Information schauen Sie auf"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid "this page"
@@ -19322,19 +19342,19 @@ msgstr "Das Erstellen des Tiff-Bildes ist fehlgeschlagen."
 msgid "Raw file conversion failed."
 msgstr "Die Konvertierung der RAW-Datei ist fehlgeschlagen."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:78
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:75
 #, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "Willkommen bei der Panorama-Erstellung"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:90
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "Willkommen bei der Panorama-Erstellung"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:91
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19344,7 +19364,7 @@ msgstr ""
 "Dieses Werkzeug fügt mehrere Bilder zu einem Panorama ohne sichtbare "
 "Übergänge zusammen."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19354,37 +19374,37 @@ msgstr ""
 "Dieser Assistent hilft Ihnen bei der Zusammenstellung der Bilder bevor diese "
 "zu einem Panorama zusammengefügt werden."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr "Alle Bilder müssen vom selben Punkt aus aufgenommen worden sein."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr "Für weitere Information schauen Sie bitte auf "
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:100
 #, kde-format
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "Panorama-Binärdateien"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:158
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:152
 #, kde-format
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "Dateiformat"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:162
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:156
 #, kde-format
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "Ausgabe als JPEG"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:167
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:161
 #, no-c-format, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19394,7 +19414,7 @@ msgstr ""
 "Wählt als Ausgabeformat JPEG mit einer Komprimierungsrate von 90 % "
 "(verlustbehaftete Komprimierung, kleinere Datei)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:163
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -19407,13 +19427,13 @@ msgstr ""
 "Komprimierung. Dies ist die empfohlene Einstellung, um das Ergebnis "
 "weiterzugeben, es zu drucken oder es im Internet online bereitzustellen."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:175
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, kde-format
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "Ausgabe als TIFF"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:176
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:170
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19423,7 +19443,7 @@ msgstr ""
 "Wählt als Ausgabeformat TIFF mit einer Komprimierung durch den LZW-"
 "Algorithmus (verlustfreie Komprimierung, größere Datei)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:172
 #, fuzzy, kde-format
 #| msgctxt "@info: whatsthis"
 #| msgid ""
@@ -19743,57 +19763,51 @@ msgstr ""
 "Überlappungen aneinander auszurichten. Dafür wird das Programm „%1“ "
 "verwendet."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:80
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>Vorschau und Fertigstellung</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:130
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:127
 #, kde-format
 msgid "Processing Panorama Preview..."
 msgstr "Vorbereitung der Panoramavorschau läuft ..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:201
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:193
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>Panorama-Fertigstellung</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:207
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:199
 #, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "Panorama-Fertigstellung"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:287
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:273
 #, kde-format
 msgid "Preview Processing Cancelled."
 msgstr "Vorbereitung der Vorschau wurde abgebrochen."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:349
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:332
 #, kde-format
 msgid "<h1><b>Error</b></h1><p>%1</p>"
 msgstr "<h1><b>Fehler</b></h1><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:383
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:366
 #, kde-format
 msgctxt "a project file is a .pto file, as given to hugin to build a panorama"
 msgid "<p><b>Cannot create project file: </b></p><p>%1</p>"
 msgstr "<p><b>Projektdatei kann nicht erstellt werden: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:413
-#, kde-format
-msgctxt "Error message for image file number %1 out of %2"
-msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
-msgstr "<p><b>Datei %1/%2 wird bearbeitet: </b></p><p>%3</p>"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:446
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:396
 #, kde-format
 msgctxt "Error message for panorama compilation"
 msgid "<p><b>Panorama compilation: </b></p><p>%1</p>"
 msgstr "<p><b>Panorama-Fertigstellung: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:497
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:444
 #, kde-format
 msgid ""
 "<qt><h1>Panorama Preview</h1><p>Draw a rectangle if you want to crop the "
@@ -19804,25 +19818,13 @@ msgstr ""
 "Bild zuschneiden möchten.</p><p>Drücken Sie auf <i>Weiter</i>, um den "
 "endgültigen Prozess des Zusammenfügens zu starten.</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:524
-#, kde-format
-msgctxt "Success for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "Datei %1/%2 wird verarbeitet"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:553
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:485
 #, kde-format
 msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
 msgstr "Panorama-Kompilierung"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:597
-#, kde-format
-msgctxt "Compilation started for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "Datei %1/%2 wird verarbeitet"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:609
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:526
 #, kde-format
 msgctxt "Panorama compilation started"
 msgid "Panorama compilation"
@@ -35664,11 +35666,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgctxt "@title short translated text"
 msgid "Detection"
-msgstr "Gesichter entdecken"
+msgstr "Entdeckung"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:177
 #, kde-format
@@ -35700,9 +35701,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:195
 #: core/libs/imgqsort/imagequalitywidget.cpp:163
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@option:check with a short translated text"
-#| msgid "Work on all processor cores"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Uses all processors"
 msgstr "Alle Prozessorkerne nutzen"
@@ -35726,11 +35725,10 @@ msgstr ""
 "soll."
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:201
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#, kde-format
 msgctxt "@title short translated text"
 msgid "Recognition"
-msgstr "Gesichter erkennen"
+msgstr "Erkennung"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
@@ -36227,19 +36225,7 @@ msgid "Select All"
 msgstr "Alle auswählen"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "These settings determines the quality of an image and convert it into a "
-#| "score, stored in database as Pick Label property. This information can be "
-#| "evaluated by two ways: using four basic factors sabotaging the images "
-#| "(blur, noise, exposure, and compression), or using a deep learning neural "
-#| "network engine. The first one helps to determine whether images are "
-#| "distorted by the basic factors, however it demands some drawbacks as fine-"
-#| "tuning from the user’s side and it cannot work along the aesthetic image "
-#| "processing. The second one uses an IA approach based on %1 model to "
-#| "predict the score. As deep learning is an end-to-end solution, it doesn’t "
-#| "require hyper-parameter settings, and make this feature easier to use."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "These settings determine the quality of an image and convert it into a score "
@@ -36252,17 +36238,18 @@ msgid ""
 "model to predict the score. As deep learning is an end-to-end solution, it "
 "doesn’t require adjusting the settings, and makes this feature easier to use."
 msgstr ""
-"Diese Einstellung ermittelt die Qualität eines Bildes und bildet daraus eine "
-"Note, die in der Datenbank als Auswahlmarkierung gespeichert wird. Diese "
-"Information kann auf zwei Arten bestimmt werden: unter Zuhilfenahme von vier "
-"einfachen Kennwerten (Unschärfe, Rauschen, Belichtung und Komprimierung), "
+"Diese Einstellungen ermitteln die Qualität eines Bildes und bilden daraus "
+"eine Bewertung, die in der Datenbank als Auswahlmarkierung gespeichert wird. "
+"Diese Information kann auf zwei Arten bestimmt werden: Unter Zuhilfenahme "
+"von vier Kennwerten (Unschärfe, Rauschen, Belichtung und Komprimierung), "
 "oder mittels eines Deep-Learning-Neuronalnetzes. Ersteres dient der "
 "Ermittlung, ob Bilder durch diese Grundeigenschaften gestört sind, bedarf "
 "als Nachteil aber der Feineinstellung durch den Benutzer und funktioniert "
 "nicht zusammen mit der ästhetischen Bildqualität. Zweiteres verwendet einen "
 "KI-Ansatz auf Basis des %1-Modells, um einen Punktewert zu ermitteln. Da "
-"Lernalorithmen eine Ende-zu-Ende-Lösung darstellen, müssen hier keine "
-"Parameter angepasst werden, wodurch diese Funktion einfacher zu benutzen ist."
+"Lernalgorithmen eine Ende-zu-Ende-Lösung darstellen, müssen hier keine "
+"Parameter angepasst werden, wodurch diese Funktion einfacher zu verwenden "
+"ist."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:76
 #, kde-format
@@ -36297,12 +36284,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rejected"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Low as Rejected"
-msgstr "Abgelehnt"
+msgstr "Niedrig wird zu Abgelehnt"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, fuzzy, kde-format
@@ -36322,7 +36307,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Medium as Pending"
-msgstr ""
+msgstr "Mittel wird zu Ausstehend"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, fuzzy, kde-format
@@ -36339,12 +36324,10 @@ msgstr ""
 "und Komprimierung ermittelt wird, erhalten die Markierung „Ausstehend“."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Accepted"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "High as Accepted"
-msgstr "Angenommen"
+msgstr "Hoch wird zu Angenommen"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, fuzzy, kde-format
@@ -36361,19 +36344,16 @@ msgstr ""
 "Komprimierung ermittelt wird, erhalten die Markierung „Angenommen“."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:137
-#, fuzzy, kde-format
-#| msgid "Quality:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Quality Engine:"
-msgstr "Qualität:"
+msgstr "Qualitäts-Engine:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect Aesthetic Image using Deep Learning"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Aesthetic Contents"
-msgstr "Ästhetisches Bild mit Deep Learning erkennen"
+msgstr "Ästhetischer Inhalt"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:144
 #, fuzzy, kde-format
@@ -36391,12 +36371,10 @@ msgstr ""
 "zur Klassifizierung von Bildern"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Basic Factors"
+#, kde-format
 msgctxt "@option:radio with a short translated text"
 msgid "Basic Factors"
-msgstr "Grundeinstellungen"
+msgstr "Kennwerte"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:151
 #, kde-format
@@ -36426,42 +36404,36 @@ msgstr ""
 "soll."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rejected"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Rejected:"
-msgstr "Abgelehnt"
+msgstr "Abgelehnt:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:198
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr ""
-"Grenzwert, über dem allen Bilder die Markierung „Abgelehnt“ zugewiesen wird"
+"Grenzwert, unter dem allen Bilder die Markierung „Abgelehnt“ zugewiesen wird"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:201
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Pending"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Pending:"
-msgstr "Ausstehend"
+msgstr "Ausstehend:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:207
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr ""
-"Grenzwert, über dem allen Bilder die Markierung „Ausstehend“ zugewiesen wird"
+"Grenzwert, unter dem allen Bilder die Markierung „Ausstehend“ zugewiesen wird"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Accepted"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Accepted:"
-msgstr "Angenommen"
+msgstr "Angenommen:"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:216
 #, kde-format
@@ -36471,9 +36443,7 @@ msgstr ""
 "Grenzwert, über dem allen Bilder die Markierung „Angenommen“ zugewiesen wird"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Blur"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Blur"
 msgstr "Unschärfe"
@@ -36499,11 +36469,10 @@ msgid "Weight to assign to Blur Algorithm"
 msgstr "Gewichtung, die dem Unschärfe-Algorithmus zugewiesen wird"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
-#, fuzzy, kde-format
-#| msgid "Noise:"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Noise"
-msgstr "Rauschen:"
+msgstr "Rauschen"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:231
 #, kde-format
@@ -36518,12 +36487,10 @@ msgid "Weight to assign to Noise Algorithm"
 msgstr "Gewichtung, die dem Rausch-Algorithmus zugewiesen wird"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:242
-#, fuzzy, kde-format
-#| msgctxt "@option:check with a short translated text"
-#| msgid "Detect Compression"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Compression"
-msgstr "Komprimierung erkennen"
+msgstr "Komprimierung"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:243
 #, kde-format
@@ -36538,8 +36505,7 @@ msgid "Weight to assign to Compression Algorithm"
 msgstr "Gewichtung, die dem Komprimierungs-Algorithmus zugewiesen wird"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:254
-#, fuzzy, kde-format
-#| msgid "Exposure"
+#, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Exposure"
 msgstr "Belichtung"
@@ -36548,13 +36514,13 @@ msgstr "Belichtung"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
-msgstr "Erkennt, ob Bilder über oder unterbelichtet sind"
+msgstr "Erkennt, ob Bilder über- oder unterbelichtet sind"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:285
 #, kde-format
 msgctxt "@title:tab"
 msgid "Basic Factors"
-msgstr "Grundeinstellungen"
+msgstr "Kennwerte"
 
 #: core/libs/iojobs/iojob.cpp:64
 #, kde-format
@@ -40570,29 +40536,24 @@ msgid "Miscellaneous"
 msgstr "Verschiedenes"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:108
-#, fuzzy, kde-format
-#| msgid "Automatic Adjustment"
+#, kde-format
 msgid "Autotags Assignment"
-msgstr "Automatische Anpassung"
+msgstr "Automatische Stichwortzuweisung"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
+#, kde-format
 msgid "Scan for objects in album: %1"
-msgstr "Suchen in Alben:"
+msgstr "Suche nach Objekten in Album: %1"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
+#, kde-format
 msgid "Scan for objects in %1 albums"
-msgstr "Suchen in Alben:"
+msgstr "Suche nach Objekten in %1 Alben"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:202
 #, kde-format
 msgid "Error starting object detection."
-msgstr ""
+msgstr "Fehler beim Start der Objekterkennung."
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:217
 #, kde-format
@@ -40600,28 +40561,24 @@ msgid "Items scanned for objects: %1\n"
 msgstr "Nach Objekten abgesuchte Einträge: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:221
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
+#, kde-format
 msgid "Item scanned for objects: %1\n"
-msgstr "Suchen in Alben:"
+msgstr "Nach Objekten abgesuchter Eintrag: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:249
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
+#, kde-format
 msgid "Object Scanning: %1\n"
-msgstr "Suchen in Alben:"
+msgstr "Suche nach Objekten: %1\n"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:256
 #, kde-format
 msgid "Found %1 object. Tag: %2"
-msgstr ""
+msgstr "%1 Objekt gefunden. Stichwort: %2"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:260
 #, kde-format
 msgid "Found %1 objects. Tags: %2"
-msgstr ""
+msgstr "%1 Objekte gefunden. Stichworte: %2"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:99
 #, kde-format
@@ -40634,6 +40591,12 @@ msgid ""
 "descriptive tags for the image contents and store the results in the "
 "database.</p>"
 msgstr ""
+"<p><b>Dieses Werkzeug weist Bildern automatisch Stichworte zu, indem es sie "
+"mit einem Deep-Learning-Neuralnetz-Modell analysiert.</b></p><p>Die unten "
+"stehenden Einstellungen steuern das KI-Modell, das für die Analyse der "
+"Bilder und zur Objekterkennung eingesetzt wird. Das KI-Neuralnetz erstellt "
+"automatisch beschreibende Stichwörter passend zum Bildinhalt und speichert "
+"das Ergebnis in der Datenbank.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:107
 #, kde-format
@@ -40660,29 +40623,27 @@ msgid ""
 "<p><b>All</b>: re-scan all items for tags.</p><p><b>Non-Assigned Only</b>: "
 "scan only the items with no assigned autotags.</p>"
 msgstr ""
+"<p><b>Alle</b>: Alle Einträge für Stichwörter erneut analysieren.</"
+"p><p><b>Nur nicht zugewiesene</b>: Nur Einträge analysieren, denen noch "
+"keine automatischen Stichwörter zugewiesen sind.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@label with a short translated text "
-#| msgid "Auto-Tagging Mode:"
+#, kde-format
 msgctxt "@label with a short translated text "
 msgid "Tagging Mode:"
-msgstr "Modus der automatischen Stichwortzuweisung:"
+msgstr "Modus der Stichwortzuweisung:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:120
-#, fuzzy, kde-format
-#| msgid "Update only existing timestamps"
+#, kde-format
 msgctxt "@item: remplace existing autotags entries in database"
 msgid "Replace Existing"
-msgstr "Nur vorhandene Zeitstempel aktualisieren"
+msgstr "Existierende ersetzen"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Update"
+#, kde-format
 msgctxt "@item: update the autotags entries in database"
 msgid "Update"
-msgstr "Aktualisierung"
+msgstr "Aktualisieren"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:123
 #, kde-format
@@ -40692,11 +40653,13 @@ msgid ""
 "results of the scan.</p><p><b>Update</b>: add any new auto-tags found to the "
 "existing auto-tags.</p>"
 msgstr ""
+"<p><b>Existierende ersetzen</b>: Bereits bestehende Auto-Stichwörter löschen "
+"und mit dem Ergebnis der neuen Analyse ersetzen.</p><p><b>Update</b>: "
+"Jedwede neu gefundenen automatischen Stichwörter zu bereits bestehenden "
+"hinzufügen.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "camera model"
-#| msgid "Model:"
+#, kde-format
 msgctxt ""
 "@label with a short translated text about deep learning model used to detect "
 "objects to auto-tag"
@@ -40704,15 +40667,12 @@ msgid "Model:"
 msgstr "Modell:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:135
-#, fuzzy, kde-format
-#| msgid "No detail available"
+#, kde-format
 msgid "No models available"
-msgstr "Keine Details verfügbar"
+msgstr "Keine Modelle verfügbar"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@label short translated text about the Face Detection Accuracy"
-#| msgid "Accuracy:"
+#, kde-format
 msgctxt "@label with a short translated text"
 msgid "Accuracy:"
 msgstr "Genauigkeit:"
@@ -40760,12 +40720,10 @@ msgid "Translate Tags to:"
 msgstr "Stichwörter übersetzen nach:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Translate to:"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
-msgstr "Übersetzen nach:"
+msgstr "Übersetzen"
 
 #: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, kde-format
@@ -40844,15 +40802,7 @@ msgid "Delete '%1' tag(s)?"
 msgstr "Stichwort „%1“ löschen?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:573
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' has at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' have at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
 "the children.\n"
@@ -40862,12 +40812,13 @@ msgid_plural ""
 "remove the children.\n"
 "Do you want to continue?"
 msgstr[0] ""
-"Die Gesichtsmarkierung „%2“ enthält eine weitere Markierung. Wenn sie "
-"gelöscht wird, wird diese enthaltenen Markierung ebenfalls gelöscht. Möchten "
-"Sie fortfahren?"
+"Die Gesichtsmarkierung „%2“ enthält mindestens eine Untermarkierung. Wenn "
+"sie gelöscht wird, werden die Untermarkierungen ebenfalls gelöscht.\n"
+"Möchten Sie fortfahren?"
 msgstr[1] ""
-"Die Gesichtsmarkierungen „%2“ enthalten weitere Markierungen. Wenn sie "
-"gelöscht wird, werden diese enthaltenen Markierungen ebenfalls gelöscht. "
+"Die Gesichtsmarkierungen „%2“ enthalten mindestens eine Untermarkierung. "
+"Wenn sie gelöscht werden, werden diese enthaltenen Untermarkierungen "
+"ebenfalls gelöscht.\n"
 "Möchten Sie fortfahren?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:595
@@ -40905,13 +40856,12 @@ msgstr[1] ""
 #: core/libs/tags/engine/tagsactionmngr.cpp:218
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
-msgstr "Bewertung: %1 Stern(e)"
+msgstr "Bewertung „%1 Stern(e)“ zuweisen"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:234
-#, fuzzy, kde-format
-#| msgid "Assign Rating \"%1 Star\""
+#, kde-format
 msgid "Assign Rating \"%1 Star\" (no toggle)"
-msgstr "Bewertung: %1 Stern(e)"
+msgstr "Bewertung „%1 Stern(e)“ zuweisen (ohne Umschaltung)"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:255
 #, kde-format
@@ -44213,7 +44163,7 @@ msgstr "Ein Projekt der KDE-Gemeinschaft"
 #: core/libs/widgets/mainview/daboutdata.cpp:61
 #, kde-format
 msgid "(c) 2001-2025, digiKam developers team"
-msgstr "Copyright © 2001–2025, digiKam-Entwicklerteam"
+msgstr "© 2001–2025, digiKam-Entwicklungsteam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:74
 #, kde-format
@@ -44237,18 +44187,16 @@ msgid ""
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:113
-#, fuzzy, kde-format
-#| msgid ""
-#| "Mentoring, Port web-service tools to OAuth, factoring web service tools, "
-#| "and port faces recognition engine to OpenCV neural network"
+#, kde-format
 msgid ""
 "Mentoring, Port web-service tools to OAuth,\n"
 "factoring web service tools,\n"
 "and port faces recognition engine\n"
 "to OpenCV neural network"
 msgstr ""
-"Mentor, Portierung der Web-Dienste nach OAuth, Werkzeuge für Web-Dienste und "
-"Portierung der Gesichtserkennung nach dem neuronalen Netzwerk OpenCV"
+"Mentor, Portierung der Web-Dienste nach OAuth,\n"
+"Wartung der Werkzeuge für Web-Dienste,\n"
+"Portierung der Gesichtserkennung auf neuronales Netzwerk von OpenCV"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:137
 #, kde-format
@@ -44292,17 +44240,15 @@ msgstr ""
 "Automatische Stichwortzuweisung"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:181
-#, fuzzy, kde-format
-#| msgid ""
-#| "Clustering support and improvement for Face Engine, Port Slideshow tool "
-#| "to plugins interface"
+#, kde-format
 msgid ""
 "Face workflow Clustering support,\n"
 "improvement for Face Engine,\n"
 "Port Slideshow tool to plugins interface"
 msgstr ""
-"Zusammenführen und Verbessern der Gesichtserkennung, Portierung der Diaschau "
-"als Zusatzmodul"
+"Zusammenführen und Verbessern\n"
+"der Gesichtserkennung,\n"
+"Portierung der Diaschau als Zusatzmodul"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:189
 #, kde-format
@@ -49972,45 +49918,40 @@ msgid "Zulu"
 msgstr "Zulu"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:48
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected engine %1 does not support voice settings"
-msgstr "Entfernte Dateien werden nicht unterstützt"
+msgstr "Die gewählte Engine %1 unterstützt keine Stimmen-Einstellungen"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:55
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected engine %1 does not support emotion settings"
-msgstr "Entfernte Dateien werden nicht unterstützt"
+msgstr "Die gewählte Engine %1 unterstützt keine Emotions-Einstellungen"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:162
 #, kde-format
 msgctxt "@info"
 msgid "%1 engine does not support TTS"
-msgstr ""
+msgstr "Die Engine %1 unterstützt kein TTS"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:260
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected language %1 is not supported for %2"
-msgstr "Entfernte Dateien werden nicht unterstützt"
+msgstr "Die ausgewählte Sprache %1 wird für %2 nicht unterstützt"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:279
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected voice %1 is not supported for %2"
-msgstr "Entfernte Dateien werden nicht unterstützt"
+msgstr "Die ausgewählte Stimme %1 wird für %2 nicht unterstützt"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:298
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected emotion %1 is not supported for %2"
-msgstr "Entfernte Dateien werden nicht unterstützt"
+msgstr "Die ausgewählte Emotion %1 wird für %2 nicht unterstützt"
 
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:60
 #, kde-format
@@ -50038,34 +49979,31 @@ msgstr "Name"
 #, kde-format
 msgctxt "@info"
 msgid "Enter here a string to search in languages list..."
-msgstr ""
+msgstr "Geben Sie hier einen Begriff für die Suche in der Sprachliste ein …"
 
 #: core/libs/widgets/text/localizeconfig.cpp:144
-#, fuzzy, kde-format
-#| msgid "Show Non-Geolocated Items"
+#, kde-format
 msgctxt "@info"
 msgid "Show only selected items (%1/%2)"
-msgstr "Einträge ohne Geolokalisierungs-Informationen anzeigen"
+msgstr "Nur ausgewählte Einträge anzeigen (%1/%2)"
 
 #: core/libs/widgets/text/localizeconfig.cpp:216
-#, fuzzy, kde-format
-#| msgid "Select here the language of content."
+#, kde-format
 msgctxt "@title"
 msgid "Select Alternative Languages To Edit Text"
-msgstr "Geben Sie hier die Sprache des Inhalts aus."
+msgstr "Alternative Sprache für Textbearbeitung auswählen"
 
 #: core/libs/widgets/text/localizeconfig.cpp:221
 #, kde-format
 msgctxt "@label"
 msgid "Online Translator:"
-msgstr ""
+msgstr "Online-Übersetzer:"
 
 #: core/libs/widgets/text/localizeconfig.cpp:223
-#, fuzzy, kde-format
-#| msgid "Select here the editorial type of content."
+#, kde-format
 msgctxt "@option"
 msgid "Select here the online engine to translate text"
-msgstr "Geben Sie hier den redaktionellen Typ des Inhalts an."
+msgstr "Wählen Sie hier den Online-Dienst zur Textübersetzung aus"
 
 #: core/libs/widgets/text/localizeconfig.cpp:230
 #, kde-kuit-format
@@ -50081,12 +50019,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/widgets/text/localizeconfig.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Wiktionary"
+#, kde-format
 msgctxt "@title"
 msgid "Available Translator Languages (%1/%2)"
-msgstr "Wiktionary"
+msgstr "Verfügbare Übersetzungssprachen (%1/%2)"
 
 #: core/libs/widgets/text/localizeselector.cpp:107
 #, kde-format
@@ -50095,18 +50031,16 @@ msgid "Open localize setup"
 msgstr ""
 
 #: core/libs/widgets/text/localizeselector.cpp:146
-#, fuzzy, kde-format
-#| msgid "Navigate to %1"
+#, kde-format
 msgctxt "@info"
 msgid "Translate to %1"
-msgstr "Zu %1 gehen"
+msgstr "Nach %1 übersetzen"
 
 #: core/libs/widgets/text/localizeselector.cpp:159
-#, fuzzy, kde-format
-#| msgid "Select here the language of content."
+#, kde-format
 msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
-msgstr "Geben Sie hier die Sprache des Inhalts aus."
+msgstr "Sprache für Übersetzung mit %1 auswählen"
 
 #: core/libs/widgets/text/localizeselector.cpp:259
 #, kde-format
@@ -50136,7 +50070,7 @@ msgstr "Groß-/Kleinschreibung beachten"
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
-msgstr ""
+msgstr "Hintergrund-Rechtschreibprüfung während Texteingabe aktivieren"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:103
 #, kde-kuit-format
@@ -50174,15 +50108,13 @@ msgstr "Automatisch erkennen"
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
-msgstr ""
+msgstr "Sprache automatisch durch Inhaltsanalyse erkennen"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:134
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Wiktionary"
+#, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
-msgstr "Wiktionary"
+msgstr "Verfügbare Sprachwörterbücher"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:147
 #, kde-format
@@ -50209,13 +50141,12 @@ msgid "Ignored Words"
 msgstr "Ignorierte Wörter"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:180
-#, fuzzy, kde-format
-#| msgid "Set here the number of items to find using sketch."
+#, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr ""
-"Legen Sie hier die Anzahl der Einträge fest, die anhand der Skizze gefunden "
-"werden müssen."
+"Geben Sie hier ein neues Wort ein, das bei der Rechtschreibprüfung ignoriert "
+"werden soll"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:183
 #, kde-format
@@ -50948,18 +50879,14 @@ msgid "Geolocation"
 msgstr "Geolokalisierung"
 
 #: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Application Views Settings\n"
-#| "Customize the look of the views"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Geolocation Settings\n"
 "Customize view to geolocalize items"
 msgstr ""
-"Einstellungen der Albenansicht\n"
-"Aussehen der Albenliste anpassen"
+"Einstellungen der Geolokalisierung\n"
+"Aussehen der Geolokalisierungsansicht anpassen"
 
 #: core/showfoto/setup/showfotosetup.cpp:150
 #, kde-format
@@ -63225,9 +63152,7 @@ msgstr ""
 "Version dieser Datei zu speichern."
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores"
+#, kde-format
 msgctxt "@option:check"
 msgid "Uses all processors"
 msgstr "Alle Prozessorkerne nutzen"
@@ -63433,11 +63358,10 @@ msgid "Edit Workflow"
 msgstr "Arbeitsablauf bearbeiten"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:283
-#, fuzzy, kde-format
-#| msgid "Save Workflow"
+#, kde-format
 msgctxt "@action"
 msgid "Update Workflow"
-msgstr "Arbeitsablauf speichern"
+msgstr "Arbeitsablauf aktualisieren"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:284
 #, kde-format
@@ -64068,10 +63992,9 @@ msgid "Empty Text"
 msgstr "Leerer Text"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:778
-#, fuzzy, kde-format
-#| msgid "Return items without text in:"
+#, kde-format
 msgid "Return items without text in"
-msgstr "Einträge zurückgeben ohne Text in:"
+msgstr "Einträge zurückgeben ohne Text in"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
 #, kde-format
@@ -64254,10 +64177,9 @@ msgid "Faces"
 msgstr "Gesichter"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Return items whose file name contains"
+#, kde-format
 msgid "Return items by number of face regions"
-msgstr "Einträge zurückgeben, deren Dateiname folgendes enthält"
+msgstr "Einträge nach Anzahl der Gesichtsregionen zurückgeben"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1073
 #, kde-format
@@ -64266,16 +64188,14 @@ msgid "and"
 msgstr "und"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1082
-#, fuzzy, kde-format
-#| msgid "Return items without text in:"
+#, kde-format
 msgid "Return items without face regions"
-msgstr "Einträge zurückgeben ohne Text in:"
+msgstr "Einträge ohne Gesichtsregionen zurückgeben"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1083
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#, kde-format
 msgid "No Face Regions"
-msgstr "Gesichter erkennen"
+msgstr "Keine Gesichtsregionen"
 
 #: core/utilities/searchwindow/searchfields_monthday.cpp:31
 #, kde-format
@@ -64314,12 +64234,10 @@ msgid "New..."
 msgstr "Neu ..."
 
 #: core/utilities/searchwindow/searchfolderview.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "&Copy to..."
+#, kde-format
 msgctxt "Copy as new search"
 msgid "Copy..."
-msgstr "&Kopieren nach ..."
+msgstr "Kopieren …"
 
 #: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format
@@ -64350,10 +64268,9 @@ msgid "Geographic position"
 msgstr "Geografische Position"
 
 #: core/utilities/searchwindow/searchgroup.cpp:205
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#, kde-format
 msgid "Face regions"
-msgstr "Gesichter erkennen"
+msgstr "Gesichtsregionen"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:54
 #, kde-format
@@ -64745,10 +64662,9 @@ msgid "Start Image Editor"
 msgstr "Bildbearbeitung starten"
 
 #: core/utilities/setup/album/setupalbumview.cpp:186
-#, fuzzy, kde-format
-#| msgid "Show on right panel"
+#, kde-format
 msgid "Show on Light Table"
-msgstr "Im rechten Fensterbereich anzeigen"
+msgstr "Auf Leuchttisch anzeigen"
 
 #: core/utilities/setup/album/setupalbumview.cpp:187
 #, kde-format
@@ -64936,21 +64852,16 @@ msgstr ""
 "Fenstergröße vergrößert haben möchten."
 
 #: core/utilities/setup/album/setupalbumview.cpp:302
-#, fuzzy, kde-format
-#| msgid "Preview image is converted to 8 bits for a faster viewing"
+#, kde-format
 msgid "Preview image use Anti-aliasing to scale up"
-msgstr ""
-"Das Vorschaubild ist zur schnelleren Anzeige in 8-Bit umgewandelt worden"
+msgstr "Vergrößern des Vorschaubilds mit Kantenglättung"
 
 #: core/utilities/setup/album/setupalbumview.cpp:303
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
-#| "bits."
+#, kde-format
 msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
 msgstr ""
-"Deaktivieren Sie diese Einstellung, wenn Sie ein Vorschaubild nicht von 16-"
-"Bit in 8-Bit umwandeln möchten."
+"Deaktivieren Sie diese Einstellung, wenn Sie beim Vergrößern keine "
+"Kantenglättung einsetzen möchten."
 
 #: core/utilities/setup/album/setupalbumview.cpp:305
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -65567,10 +65478,9 @@ msgid "Ignored file extensions:"
 msgstr "Ignorierte Dateierweiterungen:"
 
 #: core/utilities/setup/camera/setupcamera.cpp:402
-#, fuzzy, kde-format
-#| msgid "Defaults"
+#, kde-format
 msgid "&Defaults"
-msgstr "Voreinstellungen"
+msgstr "&Voreinstellungen"
 
 #: core/utilities/setup/camera/setupcamera.cpp:418
 #, kde-format
@@ -67811,108 +67721,89 @@ msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
+#, kde-format
 msgid "OpenCL is available on this system."
-msgstr "Auf Ihrem System steht keine OpenGL-Unterstützung zur Verfügung."
+msgstr "OpenCL ist auf diesem System verfügbar."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:268
 #, kde-format
 msgid "OpenCL acceleration device is available."
-msgstr ""
+msgstr "OpenCL-Beschleunigergerät ist verfügbar."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:270
-#, fuzzy, kde-format
-#| msgctxt "@info: icc profile class"
-#| msgid "Link device"
+#, kde-format
 msgid "Using device: %1"
-msgstr "Farbtransformations-Profil"
+msgstr "Verwendung von Gerät: %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
-#, fuzzy, kde-format
-#| msgid "This collection is currently not available."
+#, kde-format
 msgid "OpenCL acceleration device is not available."
-msgstr "Diese Sammlung ist momentan nicht verfügbar."
+msgstr "OpenCL-Beschleunigergerät ist nicht verfügbar."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:279
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
+#, kde-format
 msgid "OpenCL is not available on this system."
-msgstr "Auf Ihrem System steht keine OpenGL-Unterstützung zur Verfügung."
+msgstr "Auf Ihrem System steht OpenCL nicht zur Verfügung."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:284
-#, fuzzy, kde-format
-#| msgid "Loading image..."
+#, kde-format
 msgid "Loading test image..."
-msgstr "Bild wird geladen ..."
+msgstr "Testbild wird geladen …"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:293
-#, fuzzy, kde-format
-#| msgid "Binary not found."
+#, kde-format
 msgid "Test image not found."
-msgstr "Die Programmdatei wurde nicht gefunden."
+msgstr "Testbild nicht gefunden."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:300
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to save image to %1"
+#, kde-format
 msgid "Failed to load test image from %1"
-msgstr "Das Speichern des Bilds in %1 ist fehlgeschlagen"
+msgstr "Das Laden des Testbilds von %1 ist fehlgeschlagen"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:304
-#, fuzzy, kde-format
-#| msgid "Pan the image to a region"
+#, kde-format
 msgid "Preparing the image for processing..."
-msgstr "Das Bild in einen Bereich verformen"
+msgstr "Bild wird für Verarbeitung vorbereitet …"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:333
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Initializing Main View..."
+#, kde-format
 msgid "Initializing face detection model..."
-msgstr "Hauptansicht wird gestartet ..."
+msgstr "Gesichtserkennungsmodell wird initialisiert …"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:340
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "Running face detection..."
-msgstr "Gesichter entdecken"
+msgstr "Gesichtserkennung läuft …"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:356
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Initializing Main View..."
+#, kde-format
 msgid "Initializing feature extraction model..."
-msgstr "Hauptansicht wird gestartet ..."
+msgstr "Merkmalsextraktionsmodell wird initialisiert …"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:363
-#, fuzzy, kde-format
-#| msgid "Preparing collection scan..."
+#, kde-format
 msgid "Preparing face for feature extraction..."
-msgstr "Erfassen der Sammlung wird vorbereitet ..."
+msgstr "Gesicht wird für Merkmalsextraktion vorbereitet …"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:376
 #, kde-format
 msgid "Extracting face features..."
-msgstr ""
+msgstr "Gesichtsmerkmale werden extrahiert …"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
-#, fuzzy, kde-format
-#| msgid "Failed to create folder"
+#, kde-format
 msgid "Failed to extract face features."
-msgstr "Der Ordner kann nicht erstellt werden"
+msgstr "Die Extraktion von Gesichtsmerkmalen ist fehlgeschlagen."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:387
-#, fuzzy, kde-format
-#| msgid "Database copied successfully."
+#, kde-format
 msgid "All tests completed successfully!"
-msgstr "Datenbank erfolgreich kopiert."
+msgstr "Alle Tests erfolgreich abgeschlossen!"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
-#, fuzzy, kde-format
-#| msgid "OpenGL error"
+#, kde-format
 msgid "OpenCV error: %1"
-msgstr "OpenGL-Fehler"
+msgstr "OpenCV-Fehler: %1"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
 #, kde-format
@@ -68334,10 +68225,9 @@ msgstr ""
 "bestimmter Umgebungsvariablen."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:125
-#, fuzzy, kde-format
-#| msgid "Use OpenCL hardware acceleration for AI models"
+#, kde-format
 msgid "Use OpenCL acceleration for AI models"
-msgstr "Videohardware-Beschleunigung verwenden"
+msgstr "OpenCL-Beschleunigung für KI-Modelle verwenden"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:126
 #, kde-format
@@ -68349,7 +68239,7 @@ msgstr "Video-Texturkonversion verwenden"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
 msgid "Test GPU AI compatibility"
-msgstr ""
+msgstr "KI-Kompatibilität der GPU prüfen"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:132
 #, kde-format
@@ -68362,17 +68252,14 @@ msgid "Open Download Dialog..."
 msgstr "Herunterladen-Dialog öffnen ..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Local Storage"
+#, kde-format
 msgid "Open Local Storage..."
-msgstr "Export zu lokalem Speicher"
+msgstr "Lokalen Speicher öffnen …"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:144
-#, fuzzy, kde-format
-#| msgid "Disable hardware acceleration OpenCL"
+#, kde-format
 msgid "Use video hardware acceleration"
-msgstr "Hardware-Beschleunigung OpenCL ausschalten"
+msgstr "Videohardware-Beschleunigung verwenden"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
@@ -69575,6 +69462,18 @@ msgstr "Albumeinträge"
 #, kde-format
 msgid "Import Items"
 msgstr "Einträge importieren "
+
+#~ msgctxt "Error message for image file number %1 out of %2"
+#~ msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
+#~ msgstr "<p><b>Datei %1/%2 wird bearbeitet: </b></p><p>%3</p>"
+
+#~ msgctxt "Success for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "Datei %1/%2 wird verarbeitet"
+
+#~ msgctxt "Compilation started for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "Datei %1/%2 wird verarbeitet"
 
 #~ msgctxt "@option"
 #~ msgid "Recursive selection"

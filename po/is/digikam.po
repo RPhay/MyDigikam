@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-04 02:13+0000\n"
+"POT-Creation-Date: 2025-08-05 02:23+0000\n"
 "PO-Revision-Date: 2025-07-29 15:40+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -16855,7 +16855,7 @@ msgid "Revert current settings to default values."
 msgstr "Frumstilla allar stillingar á sjálfgefin gildi."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:92
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:89
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
@@ -17041,7 +17041,7 @@ msgid "For more information, please take a look at"
 msgstr "Til að sjá nánari upplýsingar, skoðaðu"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid "this page"
@@ -18943,19 +18943,19 @@ msgstr "Það mistókst að búa til TIFF-mynd."
 msgid "Raw file conversion failed."
 msgstr "Umbreyting RAW-skrár mistókst."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:78
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:75
 #, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "Velkomin í víðmyndasamsetningarverkfærið"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:90
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "Velkomin í víðmyndasamsetningarverkfærið"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:91
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18965,7 +18965,7 @@ msgstr ""
 "Þetta verkfæri setur saman margar myndir til að framkalla víðmynd, þannig að "
 "samskeyti myndanna verði ekki sýnileg."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18975,37 +18975,37 @@ msgstr ""
 "Þessi leiðarvísir mun hjálpa þér við að stilla hvernig flytja eigi inn "
 "myndir til að sauma þær saman í víðmynd."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr "Myndirnar verða að vera teknar frá sama sjónarhorni."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr "Til að sjá nánari upplýsingar, skoðaðu "
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:100
 #, kde-format
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "Keyrsluskrár Panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:158
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:152
 #, kde-format
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "Skráarsnið"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:162
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:156
 #, kde-format
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "JPEG úttak"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:167
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:161
 #, no-c-format, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19015,7 +19015,7 @@ msgstr ""
 "Velur JPEG úttak með 90% þjöppunarstuðli (þjöppun með gagnatapi, minni "
 "stærð)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:163
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -19028,13 +19028,13 @@ msgstr ""
 "auðveld leið til að deila útkomunni, eða til að prenta á netinu eða hjá "
 "prentþjónustu."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:175
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, kde-format
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "TIFF úttak"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:176
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:170
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19044,7 +19044,7 @@ msgstr ""
 "Velur TIFF úttak þjappað með LZW útreikningi (þjöppun án gagnatap, meiri "
 "stærð)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:172
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19350,57 +19350,51 @@ msgstr ""
 "Forvinnslan innifelur líka útreikning á nokkrum stýripunktum til að samsvara "
 "skörun á myndum. Í þeim tilgangi er stuðst við \"%1\" hugbúnaðinn."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:80
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>Forskoðun og eftirvinnsla</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:130
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:127
 #, kde-format
 msgid "Processing Panorama Preview..."
 msgstr "Vinn forskoðun víðmyndar..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:201
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:193
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>Eftirvinnsla víðmyndar</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:207
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:199
 #, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "Eftirvinnsla víðmyndar"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:287
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:273
 #, kde-format
 msgid "Preview Processing Cancelled."
 msgstr "Hætt við vinnslu forskoðunar."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:349
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:332
 #, kde-format
 msgid "<h1><b>Error</b></h1><p>%1</p>"
 msgstr "<h1><b>Villa</b></h1><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:383
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:366
 #, kde-format
 msgctxt "a project file is a .pto file, as given to hugin to build a panorama"
 msgid "<p><b>Cannot create project file: </b></p><p>%1</p>"
 msgstr "<p><b>Get ekki búið til verkefnisskrá: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:413
-#, kde-format
-msgctxt "Error message for image file number %1 out of %2"
-msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
-msgstr "<p><b>Vinn með skrá %1 / %2: </b></p><p>%3</p>"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:446
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:396
 #, kde-format
 msgctxt "Error message for panorama compilation"
 msgid "<p><b>Panorama compilation: </b></p><p>%1</p>"
 msgstr "<p><b>Frágangur víðmyndar: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:497
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:444
 #, kde-format
 msgid ""
 "<qt><h1>Panorama Preview</h1><p>Draw a rectangle if you want to crop the "
@@ -19411,25 +19405,13 @@ msgstr ""
 "utan af myndinni.</p><p>Þegar ýtt er á <i>Næst</i> hnappinn verður ræst "
 "aðgerðin við að sauma myndirnar endanlega saman.</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:524
-#, kde-format
-msgctxt "Success for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "Vinn með skrá %1 / %2"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:553
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:485
 #, kde-format
 msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
 msgstr "Frágangur víðmyndar"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:597
-#, kde-format
-msgctxt "Compilation started for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "Vinn með skrá %1 / %2"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:609
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:526
 #, kde-format
 msgctxt "Panorama compilation started"
 msgid "Panorama compilation"
@@ -68041,6 +68023,18 @@ msgstr "Atriði í albúmi"
 #, kde-format
 msgid "Import Items"
 msgstr "Flytja inn atriði"
+
+#~ msgctxt "Error message for image file number %1 out of %2"
+#~ msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
+#~ msgstr "<p><b>Vinn með skrá %1 / %2: </b></p><p>%3</p>"
+
+#~ msgctxt "Success for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "Vinn með skrá %1 / %2"
+
+#~ msgctxt "Compilation started for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "Vinn með skrá %1 / %2"
 
 #~ msgctxt "@option"
 #~ msgid "Recursive selection"

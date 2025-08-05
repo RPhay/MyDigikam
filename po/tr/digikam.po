@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-04 02:13+0000\n"
-"PO-Revision-Date: 2025-08-02 17:57+0300\n"
+"POT-Creation-Date: 2025-08-05 02:23+0000\n"
+"PO-Revision-Date: 2025-08-04 13:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16863,7 +16863,7 @@ msgid "Revert current settings to default values."
 msgstr "Geçerli ayarları öntanımlı değerlere geri döndürün."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:92
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:89
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
@@ -17049,7 +17049,7 @@ msgid "For more information, please take a look at"
 msgstr "Daha fazla bilgi için lütfen şuraya göz atın"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid "this page"
@@ -18929,19 +18929,19 @@ msgstr "Tiff görseli oluşturulamadı."
 msgid "Raw file conversion failed."
 msgstr "Ham dosya dönüştürülemedi."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:78
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:75
 #, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "<b>Panorama Aracına Hoş Geldiniz</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:90
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "<b>Panorama aracına hoş geldiniz</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:91
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18951,7 +18951,7 @@ msgstr ""
 "Bu araç, bir panorama oluşturmak için birkaç görseli bir araya getirir ve "
 "görseller arasındaki dikişin görünmez olmasını sağlar."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18961,37 +18961,37 @@ msgstr ""
 "Bu yardımcı, görselleri bir panoramaya birleştirmeden önce nasıl içe "
 "aktaracağınızı yapılandırmanıza yardımcı olur."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr "Fotoğraflar aynı bakış açısıyla çekilmelidir."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr "Daha fazla bilgi için lütfen şuna bir göz atın: "
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:100
 #, kde-format
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "Panorama İkilileri"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:158
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:152
 #, kde-format
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "Dosya Biçimi"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:162
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:156
 #, kde-format
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "JPEG çıktısı"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:167
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:161
 #, no-c-format, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19001,7 +19001,7 @@ msgstr ""
 "%​90 sıkıştırma oranına (kayıplı sıkıştırma, daha küçük boyut) sahip bir JPEG "
 "çıktısı seçer."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:163
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -19013,13 +19013,13 @@ msgstr ""
 "kaybı pahasına panorama dosyası daha küçük olacaktır. Bu, sonucu paylaşmanın "
 "veya çevrimiçi olarak veya bir fotoğrafçıda bastırmanın en kolay yoludur."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:175
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, kde-format
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "TIFF çıktısı"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:176
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:170
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19029,7 +19029,7 @@ msgstr ""
 "LZW algoritması (kayıpsız sıkıştırma, daha büyük boyut) kullanılarak "
 "sıkıştırılmış bir TIFF çıktısı seçer."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:172
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19333,57 +19333,51 @@ msgstr ""
 "denetim noktalarının hesaplanmasını da içerir. Bu amaçla “%1” programı "
 "kullanılacaktır."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:80
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>Önizleme ve Son İşlemesi</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:130
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:127
 #, kde-format
 msgid "Processing Panorama Preview..."
 msgstr "Panorama önizlemesi işleniyor…"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:201
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:193
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>Panorama Son İşlemesi</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:207
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:199
 #, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "Panorama Son İşlemesi"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:287
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:273
 #, kde-format
 msgid "Preview Processing Cancelled."
 msgstr "Önizleme işlemesi iptal edildi."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:349
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:332
 #, kde-format
 msgid "<h1><b>Error</b></h1><p>%1</p>"
 msgstr "<h1><b>Hata</b></h1><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:383
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:366
 #, kde-format
 msgctxt "a project file is a .pto file, as given to hugin to build a panorama"
 msgid "<p><b>Cannot create project file: </b></p><p>%1</p>"
 msgstr "<p><b>Proje dosyası oluşturulamıyor: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:413
-#, kde-format
-msgctxt "Error message for image file number %1 out of %2"
-msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
-msgstr "<p><b>%1/%2 dosya işleniyor: </b></p><p>%3</p>"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:446
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:396
 #, kde-format
 msgctxt "Error message for panorama compilation"
 msgid "<p><b>Panorama compilation: </b></p><p>%1</p>"
 msgstr "<p><b>Panorama derlemesi: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:497
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:444
 #, kde-format
 msgid ""
 "<qt><h1>Panorama Preview</h1><p>Draw a rectangle if you want to crop the "
@@ -19394,25 +19388,13 @@ msgstr ""
 "dikdörtgen çizin.</p><p>Ardından <i>Sonraki</i> düğmesine basıldığında son "
 "dikiş işlemi başlatılacaktır.</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:524
-#, kde-format
-msgctxt "Success for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "%1/%2 dosya işleniyor"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:553
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:485
 #, kde-format
 msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
 msgstr "Panorama derlemesi"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:597
-#, kde-format
-msgctxt "Compilation started for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "%1/%2 dosya işleniyor"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:609
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:526
 #, kde-format
 msgctxt "Panorama compilation started"
 msgid "Panorama compilation"
@@ -27938,12 +27920,10 @@ msgid "All albums"
 msgstr "Tüm albümler"
 
 #: core/libs/album/widgets/albumselectors.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive album selection."
+#, kde-format
 msgctxt "@info"
 msgid "Toggle recursive album selection."
-msgstr "Özyineli albüm seçimi"
+msgstr "Özyineli albüm seçimini açın/kapatın."
 
 #: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
@@ -27970,12 +27950,10 @@ msgid "All tags"
 msgstr "Tüm künyeler"
 
 #: core/libs/album/widgets/albumselectors.cpp:241
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive tags selection."
+#, kde-format
 msgctxt "@info"
 msgid "Toggle recursive tags selection."
-msgstr "Özyineli künye seçimi"
+msgstr "Özyineli künye seçiminı açın/kapatın."
 
 #: core/libs/album/widgets/albumselectors.cpp:253
 #, kde-format
@@ -40200,49 +40178,42 @@ msgstr ""
 "Sürdürmek istiyor musunuz?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:618
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all tags that should be processed."
+#, kde-format
 msgid "Select a base tag from which the tags should be exported."
-msgstr "İşlenmesi gereken tüm künyeleri seçin."
+msgstr "Künyelerin dışa aktarılması gereken bir taban künye seçin."
 
 #: core/libs/tags/manager/tagsmanager.cpp:628
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
-msgstr ""
+msgstr "Seçili künye, hiyerarşinin tepesindeki bir taban künye değil."
 
 #: core/libs/tags/manager/tagsmanager.cpp:636
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Local Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
-msgstr "Yerel Depolamaya Dışa Aktar"
+msgstr "Denetlenmiş Söz Dağarcığı Künyesi Dosyasını Dışa Aktar"
 
 #: core/libs/tags/manager/tagsmanager.cpp:637
 #: core/libs/tags/manager/tagsmanager.cpp:755
-#, fuzzy, kde-format
-#| msgid "XMP text Files (*.xmp)"
+#, kde-format
 msgid "Text File (*.txt)"
-msgstr "XMP Metin Dosyaları (*.xmp)"
+msgstr "Metin dosyası (*.txt)"
 
 #: core/libs/tags/manager/tagsmanager.cpp:735
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all tags that should be processed."
+#, kde-format
 msgid "Select a tag into which the tags should be imported."
-msgstr "İşlenmesi gereken tüm künyeleri seçin."
+msgstr "Künyelerin içine aktarılması gereken bir künye seçin."
 
 #: core/libs/tags/manager/tagsmanager.cpp:745
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
-msgstr ""
+msgstr "Seçili yüz künyesine içe aktarılabilecek bir künye yok."
 
 #: core/libs/tags/manager/tagsmanager.cpp:754
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
-msgstr ""
+msgstr "Denetlenmiş Söz Dağarcığı Künyesi Dosyası İçe Aktar"
 
 #: core/libs/tags/manager/tagsmanager.cpp:853
 #, kde-format
@@ -40341,16 +40312,14 @@ msgid "Wipe all tags from Database only"
 msgstr "Tüm Künyeleri Yalnızca Veritabanından Sil"
 
 #: core/libs/tags/manager/tagsmanager.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Edit title from selected tag."
+#, kde-format
 msgid "Export tags to a file from selected tag"
-msgstr "Seçili künyedeki başlığı düzenleyin."
+msgstr "Seçili künyeden künyeleri bir dosyaya dışa aktar"
 
 #: core/libs/tags/manager/tagsmanager.cpp:1075
-#, fuzzy, kde-format
-#| msgid "Import all tags from a file to restore a backup."
+#, kde-format
 msgid "Import tags from a file to selected tag"
-msgstr "Bir yedekten geri yüklemek için bir dosyadan künyeler içe aktarın."
+msgstr "Bir dosyadan künyeleri seçili künyeye içe aktar"
 
 #: core/libs/tags/manager/tagsmanager.cpp:1077
 #, kde-format
@@ -68004,6 +67973,18 @@ msgstr "Albüm Ögeleri"
 #, kde-format
 msgid "Import Items"
 msgstr "İçe Aktarılan Ögeler"
+
+#~ msgctxt "Error message for image file number %1 out of %2"
+#~ msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
+#~ msgstr "<p><b>%1/%2 dosya işleniyor: </b></p><p>%3</p>"
+
+#~ msgctxt "Success for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "%1/%2 dosya işleniyor"
+
+#~ msgctxt "Compilation started for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "%1/%2 dosya işleniyor"
 
 #~ msgctxt "@option"
 #~ msgid "Recursive selection"

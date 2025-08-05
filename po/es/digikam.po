@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-04 02:13+0000\n"
+"POT-Creation-Date: 2025-08-05 02:23+0000\n"
 "PO-Revision-Date: 2025-08-02 11:36+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -17016,7 +17016,7 @@ msgid "Revert current settings to default values."
 msgstr "Revertir las preferencias actuales a sus valores por omisión."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:92
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:89
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
@@ -17202,7 +17202,7 @@ msgid "For more information, please take a look at"
 msgstr "Para más información, consulte"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid "this page"
@@ -19105,19 +19105,19 @@ msgstr "Ha fallado la creación de la imagen Tiff."
 msgid "Raw file conversion failed."
 msgstr "Ha fallado la conversión del archivo Raw."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:78
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:75
 #, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "Bienvenido a la herramienta de panoramas"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:90
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "Bienvenido a la herramienta de panoramas"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:91
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19127,7 +19127,7 @@ msgstr ""
 "Esta herramienta une varias imágenes para crear un panorama, haciendo que la "
 "unión entre ellas no sea visible."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19137,37 +19137,37 @@ msgstr ""
 "Este asistente le ayudará a configurar cómo se deben importar las imágenes "
 "antes de unirlas en un panorama."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr "Las imágenes se deben capturar desde el mismo punto de vista."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr "Para más información, consulte "
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:100
 #, kde-format
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "Binarios de panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:158
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:152
 #, kde-format
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "Formato de archivo"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:162
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:156
 #, kde-format
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "Salida en JPEG"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:167
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:161
 #, no-c-format, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19177,7 +19177,7 @@ msgstr ""
 "Selecciona una salida en JPEG con una compresión del 90 % (compresión con "
 "pérdidas, menor tamaño)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:163
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -19189,13 +19189,13 @@ msgstr ""
 "menor a costa de perder información durante la compresión. Esta es la forma "
 "más fácil de compartir el resultado o de imprimirlo en línea o en una tienda."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:175
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, kde-format
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "Salida en TIFF"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:176
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:170
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19205,7 +19205,7 @@ msgstr ""
 "Selecciona una salida en TIFF comprimido usando el algoritmo LZW (compresión "
 "sin pérdidas, mayor tamaño)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:172
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19512,57 +19512,51 @@ msgstr ""
 "para hacer coincidir las superposiciones entre imágenes. Para ello se usará "
 "el programa «%1»."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:80
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>Vista previa y posprocesamiento</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:130
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:127
 #, kde-format
 msgid "Processing Panorama Preview..."
 msgstr "Procesando vista previa del panorama…"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:201
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:193
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>Posprocesamiento del panorama</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:207
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:199
 #, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "Posprocesamiento del panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:287
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:273
 #, kde-format
 msgid "Preview Processing Cancelled."
 msgstr "Proceso de vista previa cancelado."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:349
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:332
 #, kde-format
 msgid "<h1><b>Error</b></h1><p>%1</p>"
 msgstr "<h1><b>Error</b></h1><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:383
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:366
 #, kde-format
 msgctxt "a project file is a .pto file, as given to hugin to build a panorama"
 msgid "<p><b>Cannot create project file: </b></p><p>%1</p>"
 msgstr "<p><b>No se ha podido crear el archivo del proyecto: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:413
-#, kde-format
-msgctxt "Error message for image file number %1 out of %2"
-msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
-msgstr "<p><b>Procesando el archivo %1 / %2: </b></p><p>%3</p>"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:446
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:396
 #, kde-format
 msgctxt "Error message for panorama compilation"
 msgid "<p><b>Panorama compilation: </b></p><p>%1</p>"
 msgstr "<p><b>Compilación de panorama: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:497
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:444
 #, kde-format
 msgid ""
 "<qt><h1>Panorama Preview</h1><p>Draw a rectangle if you want to crop the "
@@ -19573,25 +19567,13 @@ msgstr ""
 "recortar la imagen.</p><p>Si pulsa el botón <i>Siguiente</i>, se lanzará el "
 "proceso de acoplamiento final.</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:524
-#, kde-format
-msgctxt "Success for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "Procesando el archivo %1 / %2"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:553
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:485
 #, kde-format
 msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
 msgstr "Compilación de panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:597
-#, kde-format
-msgctxt "Compilation started for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "Procesando el archivo %1 / %2"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:609
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:526
 #, kde-format
 msgctxt "Panorama compilation started"
 msgid "Panorama compilation"
@@ -68656,6 +68638,18 @@ msgstr "Elementos del álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementos importados"
+
+#~ msgctxt "Error message for image file number %1 out of %2"
+#~ msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
+#~ msgstr "<p><b>Procesando el archivo %1 / %2: </b></p><p>%3</p>"
+
+#~ msgctxt "Success for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "Procesando el archivo %1 / %2"
+
+#~ msgctxt "Compilation started for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "Procesando el archivo %1 / %2"
 
 #~ msgctxt "@option"
 #~ msgid "Recursive selection"

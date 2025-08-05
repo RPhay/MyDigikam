@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-04 02:13+0000\n"
-"PO-Revision-Date: 2025-08-02 17:45+0200\n"
+"POT-Creation-Date: 2025-08-05 02:23+0000\n"
+"PO-Revision-Date: 2025-08-04 09:31+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -17027,7 +17027,7 @@ msgid "Revert current settings to default values."
 msgstr "Huidige instellingen terugzetten naar hun standaard waarden."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:92
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:89
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
@@ -17214,7 +17214,7 @@ msgid "For more information, please take a look at"
 msgstr "Voor meer informatie, kijk op"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid "this page"
@@ -19119,19 +19119,19 @@ msgstr "Aanmaken van tiff-bestand is mislukt."
 msgid "Raw file conversion failed."
 msgstr "De conversie van het raw-bestand is mislukt."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:78
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:75
 #, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "Welkom bij het Panoramahulpmiddel"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:90
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "Welkom bij het Panoramahulpmiddel"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:91
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19141,7 +19141,7 @@ msgstr ""
 "Dit hulpmiddel plakt verschillende afbeeldingen samen om een panorama te "
 "maken, waarbij de naad tussen afbeeldingen onzichtbaar is."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19151,37 +19151,37 @@ msgstr ""
 "Deze assistent helpt u bij het configureren over hoe afbeeldingen te "
 "importeren voor het samen plakken ervan in een panorama."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr "Afbeeldingen moeten vanuit hetzelfde gezichtspunt genomen worden."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr "Voor meer informatie, kijk op "
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:100
 #, kde-format
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "Binaire programma's voor Panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:158
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:152
 #, kde-format
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "Bestandsformaat"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:162
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:156
 #, kde-format
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "JPEG-uitvoer"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:167
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:161
 #, no-c-format, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19191,7 +19191,7 @@ msgstr ""
 "Selecteert JPEG-uitvoer met 90% compressie (compressie met verlies, kleinere "
 "grootte)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:163
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -19204,13 +19204,13 @@ msgstr ""
 "gemakkelijkste manier om het resultaat te delen of online af te drukken of "
 "in een winkel."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:175
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, kde-format
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "TIFF-uitvoer"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:176
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:170
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19220,7 +19220,7 @@ msgstr ""
 "Selecteert TIFF-uitvoer gecomprimeerd met het LZW-algorithme (compressie "
 "zonder verlies, groter bestand)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:172
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19534,57 +19534,51 @@ msgstr ""
 "tussen afbeeldingen overeen te laten komen. Daarvoor zal het programma "
 "\"%1\" worden gebruikt."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:80
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>Voorbeeld en nabewerking</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:130
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:127
 #, kde-format
 msgid "Processing Panorama Preview..."
 msgstr "Bezig met de bewerking van het voorbeeld..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:201
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:193
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>Nabewerking van het panorama</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:207
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:199
 #, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "Nabewerking van het panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:287
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:273
 #, kde-format
 msgid "Preview Processing Cancelled."
 msgstr "Bewerking voor voorbeeld is geannuleerd."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:349
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:332
 #, kde-format
 msgid "<h1><b>Error</b></h1><p>%1</p>"
 msgstr "<h1><b>Fout</b></h1><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:383
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:366
 #, kde-format
 msgctxt "a project file is a .pto file, as given to hugin to build a panorama"
 msgid "<p><b>Cannot create project file: </b></p><p>%1</p>"
 msgstr "<p><b>Kan projectbestand niet aanmaken: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:413
-#, kde-format
-msgctxt "Error message for image file number %1 out of %2"
-msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
-msgstr "<p><b>Verwerken van bestand %1 / %2: </b></p><p>%3</p>"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:446
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:396
 #, kde-format
 msgctxt "Error message for panorama compilation"
 msgid "<p><b>Panorama compilation: </b></p><p>%1</p>"
 msgstr "<p><b>Samenstellen van een panorama:  </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:497
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:444
 #, kde-format
 msgid ""
 "<qt><h1>Panorama Preview</h1><p>Draw a rectangle if you want to crop the "
@@ -19595,25 +19589,13 @@ msgstr ""
 "wilt afsnijden.</p><p>Op de knop <i>Volgende</i> drukken zal het "
 "uiteindelijke proces van aan elkaar plakken starten.</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:524
-#, kde-format
-msgctxt "Success for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "Verwerken van bestand %1 / %2"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:553
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:485
 #, kde-format
 msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
 msgstr "Samenstellen van een panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:597
-#, kde-format
-msgctxt "Compilation started for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "Verwerken van bestand %1 / %2"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:609
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:526
 #, kde-format
 msgctxt "Panorama compilation started"
 msgid "Panorama compilation"
@@ -28195,12 +28177,10 @@ msgid "All albums"
 msgstr "Alle albums"
 
 #: core/libs/album/widgets/albumselectors.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive album selection."
+#, kde-format
 msgctxt "@info"
 msgid "Toggle recursive album selection."
-msgstr "Recursieve selectie van album."
+msgstr "Recursieve selectie van album aan/uit."
 
 #: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
@@ -28227,12 +28207,10 @@ msgid "All tags"
 msgstr "Alle tags"
 
 #: core/libs/album/widgets/albumselectors.cpp:241
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive tags selection."
+#, kde-format
 msgctxt "@info"
 msgid "Toggle recursive tags selection."
-msgstr "Recursieve selectie van tags."
+msgstr "Recursieve selectie van tags aan/uit."
 
 #: core/libs/album/widgets/albumselectors.cpp:253
 #, kde-format
@@ -40588,49 +40566,43 @@ msgstr ""
 "Wilt u doorgaan?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:618
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all tags that should be processed."
+#, kde-format
 msgid "Select a base tag from which the tags should be exported."
-msgstr "Selecteer alle tags waarop gewerkt zou moeten worden."
+msgstr "Selecteer een basis tag waarvan af de tags geëxporteerd moeten worden."
 
 #: core/libs/tags/manager/tagsmanager.cpp:628
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
-msgstr ""
+msgstr "Geselecteerde tag is geen basis tag bovenaan de hiërarchie."
 
 #: core/libs/tags/manager/tagsmanager.cpp:636
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Local Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
-msgstr "Naar lokale opslag exporteren"
+msgstr "Gecontroleerde woordenschattagbestand exporteren"
 
 #: core/libs/tags/manager/tagsmanager.cpp:637
 #: core/libs/tags/manager/tagsmanager.cpp:755
-#, fuzzy, kde-format
-#| msgid "XMP text Files (*.xmp)"
+#, kde-format
 msgid "Text File (*.txt)"
-msgstr "XMP-tekstbestanden (*.xmp)"
+msgstr "Tekstbestand (*.txt)"
 
 #: core/libs/tags/manager/tagsmanager.cpp:735
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all tags that should be processed."
+#, kde-format
 msgid "Select a tag into which the tags should be imported."
-msgstr "Selecteer alle tags waarop gewerkt zou moeten worden."
+msgstr "Selecteer een tag waarin de tags geïmporteerd zouden moeten worden."
 
 #: core/libs/tags/manager/tagsmanager.cpp:745
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
 msgstr ""
+"Geen tags kunnen geïmporteerd worden naar de geselecteerde gezichtstag."
 
 #: core/libs/tags/manager/tagsmanager.cpp:754
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
-msgstr ""
+msgstr "Gecontroleerde woordenschattagbestand importeren"
 
 #: core/libs/tags/manager/tagsmanager.cpp:853
 #, kde-format
@@ -40731,17 +40703,14 @@ msgid "Wipe all tags from Database only"
 msgstr "Alle tags alleen uit de database wissen"
 
 #: core/libs/tags/manager/tagsmanager.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Edit title from selected tag."
+#, kde-format
 msgid "Export tags to a file from selected tag"
-msgstr "De titel van de geselecteerde tag bewerken"
+msgstr "Tags exporteren uit geselecteerde tag naar een bestand"
 
 #: core/libs/tags/manager/tagsmanager.cpp:1075
-#, fuzzy, kde-format
-#| msgid "Import all tags from a file to restore a backup."
+#, kde-format
 msgid "Import tags from a file to selected tag"
-msgstr ""
-"All tags uit een bestand importeren om vanuit een reservekopie te herstellen."
+msgstr "Tags importeren uit een bestand naar geselecteerde tag."
 
 #: core/libs/tags/manager/tagsmanager.cpp:1077
 #, kde-format
@@ -68554,6 +68523,18 @@ msgstr "Album-items"
 #, kde-format
 msgid "Import Items"
 msgstr "Items importeren"
+
+#~ msgctxt "Error message for image file number %1 out of %2"
+#~ msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
+#~ msgstr "<p><b>Verwerken van bestand %1 / %2: </b></p><p>%3</p>"
+
+#~ msgctxt "Success for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "Verwerken van bestand %1 / %2"
+
+#~ msgctxt "Compilation started for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "Verwerken van bestand %1 / %2"
 
 #~ msgctxt "@option"
 #~ msgid "Recursive selection"

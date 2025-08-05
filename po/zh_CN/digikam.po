@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-04 02:13+0000\n"
+"POT-Creation-Date: 2025-08-05 02:23+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -16208,7 +16208,7 @@ msgid "Revert current settings to default values."
 msgstr "重置当前设置为默认值。"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:92
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:89
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
@@ -16385,7 +16385,7 @@ msgid "For more information, please take a look at"
 msgstr "更多相关信息请访问"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid "this page"
@@ -18204,19 +18204,19 @@ msgstr "TIFF 图像创建失败。"
 msgid "Raw file conversion failed."
 msgstr "RAW 文件转换失败。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:78
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:75
 #, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "欢迎使用全景图拼接工具"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:90
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "欢迎使用全景图拼接工具"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:91
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18224,7 +18224,7 @@ msgid ""
 "seam between images not visible."
 msgstr "用于拼接多张图像为一张全景图，原始图像之间不会留下明显接缝。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18232,37 +18232,37 @@ msgid ""
 "stitching them into a panorama."
 msgstr "此向导程序将引导您配置导入图像以拼接为一张全景图。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr "图像必须从同一视角进行拍摄。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr "要了解更多信息，请访问"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:100
 #, kde-format
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "全景图拼接所需外挂程序"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:158
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:152
 #, kde-format
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "文件格式"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:162
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:156
 #, kde-format
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "JPEG 输出"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:167
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:161
 #, no-c-format, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -18270,7 +18270,7 @@ msgid ""
 "size)."
 msgstr "选择压缩率为 90% 的 JPEG 输出方式 (有损压缩，文件体积较小)。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:163
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -18281,13 +18281,13 @@ msgstr ""
 "“JPEG 输出”：使用 JPEG 输出时将生成体积较小的全景图文件，但代价是画质将因为有"
 "损压缩而变差。此格式在分享成品或在影像店打印时最为便利。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:175
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, kde-format
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "TIFF 输出"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:176
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:170
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -18295,7 +18295,7 @@ msgid ""
 "compression, bigger size)."
 msgstr "选择使用 LZW 算法压缩的 TIFF 输出方式 (无损压缩，文件尺寸较大)。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:172
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -18578,57 +18578,51 @@ msgstr ""
 "预处理过程还包括对某些控制点进行计算以匹配图像的重叠区域，这需要使用“%1”程"
 "序。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:80
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>预览和后期处理</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:130
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:127
 #, kde-format
 msgid "Processing Panorama Preview..."
 msgstr "正在处理全景图预览..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:201
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:193
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>全景图后期处理</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:207
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:199
 #, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "全景图后期处理"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:287
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:273
 #, kde-format
 msgid "Preview Processing Cancelled."
 msgstr "预览处理已取消。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:349
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:332
 #, kde-format
 msgid "<h1><b>Error</b></h1><p>%1</p>"
 msgstr "<h1><b>错误</b></h1><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:383
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:366
 #, kde-format
 msgctxt "a project file is a .pto file, as given to hugin to build a panorama"
 msgid "<p><b>Cannot create project file: </b></p><p>%1</p>"
 msgstr "<p><b>无法创建工程文件：</b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:413
-#, kde-format
-msgctxt "Error message for image file number %1 out of %2"
-msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
-msgstr "<p><b>正在处理文件 %1 / %2：</b></p><p>%3</p>"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:446
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:396
 #, kde-format
 msgctxt "Error message for panorama compilation"
 msgid "<p><b>Panorama compilation: </b></p><p>%1</p>"
 msgstr "<p><b>全景图编译：</b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:497
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:444
 #, kde-format
 msgid ""
 "<qt><h1>Panorama Preview</h1><p>Draw a rectangle if you want to crop the "
@@ -18638,25 +18632,13 @@ msgstr ""
 "<qt><h1>全景图预览</h1><p>如果您想要对该图像进行裁剪，请绘制一个矩形范围。</"
 "p><p>点击 <b>下一步</b> 按钮将进行最终拼接处理。</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:524
-#, kde-format
-msgctxt "Success for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "正在处理文件 %1 / %2"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:553
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:485
 #, kde-format
 msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
 msgstr "全景图编译"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:597
-#, kde-format
-msgctxt "Compilation started for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "正在处理文件 %1 / %2"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:609
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:526
 #, kde-format
 msgctxt "Panorama compilation started"
 msgid "Panorama compilation"
@@ -26993,12 +26975,10 @@ msgid "All albums"
 msgstr "所有相册"
 
 #: core/libs/album/widgets/albumselectors.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive album selection."
+#, kde-format
 msgctxt "@info"
 msgid "Toggle recursive album selection."
-msgstr "递归式相册选择"
+msgstr ""
 
 #: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
@@ -27025,12 +27005,10 @@ msgid "All tags"
 msgstr "所有标签"
 
 #: core/libs/album/widgets/albumselectors.cpp:241
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive tags selection."
+#, kde-format
 msgctxt "@info"
 msgid "Toggle recursive tags selection."
-msgstr "递归式标签选择"
+msgstr ""
 
 #: core/libs/album/widgets/albumselectors.cpp:253
 #, kde-format
@@ -38868,11 +38846,9 @@ msgstr ""
 "您想要继续吗？"
 
 #: core/libs/tags/manager/tagsmanager.cpp:618
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all tags that should be processed."
+#, kde-format
 msgid "Select a base tag from which the tags should be exported."
-msgstr "选择需要处理的全部标签。"
+msgstr ""
 
 #: core/libs/tags/manager/tagsmanager.cpp:628
 #, kde-format
@@ -38880,26 +38856,21 @@ msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr ""
 
 #: core/libs/tags/manager/tagsmanager.cpp:636
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Local Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
-msgstr "导出到本地存储"
+msgstr ""
 
 #: core/libs/tags/manager/tagsmanager.cpp:637
 #: core/libs/tags/manager/tagsmanager.cpp:755
-#, fuzzy, kde-format
-#| msgid "XMP text Files (*.xmp)"
+#, kde-format
 msgid "Text File (*.txt)"
-msgstr "XMP 文本文件 (*.xmp)"
+msgstr ""
 
 #: core/libs/tags/manager/tagsmanager.cpp:735
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all tags that should be processed."
+#, kde-format
 msgid "Select a tag into which the tags should be imported."
-msgstr "选择需要处理的全部标签。"
+msgstr ""
 
 #: core/libs/tags/manager/tagsmanager.cpp:745
 #, kde-format
@@ -39003,16 +38974,14 @@ msgid "Wipe all tags from Database only"
 msgstr "仅从数据库清除所有标签"
 
 #: core/libs/tags/manager/tagsmanager.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Edit title from selected tag."
+#, kde-format
 msgid "Export tags to a file from selected tag"
-msgstr "编辑所选标签的标题"
+msgstr ""
 
 #: core/libs/tags/manager/tagsmanager.cpp:1075
-#, fuzzy, kde-format
-#| msgid "Import all tags from a file to restore a backup."
+#, kde-format
 msgid "Import tags from a file to selected tag"
-msgstr "导入一个文件中的所有标签以还原备份。"
+msgstr ""
 
 #: core/libs/tags/manager/tagsmanager.cpp:1077
 #, kde-format
@@ -65902,20 +65871,14 @@ msgstr "相册视图项目"
 msgid "Import Items"
 msgstr "导入视图项目"
 
-#~ msgctxt "@option"
-#~ msgid "Recursive selection"
-#~ msgstr "递归式选择"
+#~ msgctxt "Error message for image file number %1 out of %2"
+#~ msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
+#~ msgstr "<p><b>正在处理文件 %1 / %2：</b></p><p>%3</p>"
 
-#~ msgctxt "@title:window"
-#~ msgid "Choose Export Tag File"
-#~ msgstr "选择导出标签文件"
+#~ msgctxt "Success for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "正在处理文件 %1 / %2"
 
-#~ msgctxt "@title:window"
-#~ msgid "Choose Import Tag File"
-#~ msgstr "选择导入标签文件"
-
-#~ msgid "Export all tags to a file"
-#~ msgstr "导出所有标签到文件"
-
-#~ msgid "Import all tags from a file"
-#~ msgstr "导入文件的所有标签"
+#~ msgctxt "Compilation started for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "正在处理文件 %1 / %2"

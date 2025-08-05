@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-04 02:13+0000\n"
+"POT-Creation-Date: 2025-08-05 02:23+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -18052,7 +18052,7 @@ msgid "Revert current settings to default values."
 msgstr "Resetujte trenutne postavke alata na zadane vrijednosti."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:92
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:89
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@action:button"
@@ -18240,7 +18240,7 @@ msgid "For more information, please take a look at"
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
 #, fuzzy, kde-format
 #| msgid "Next Image"
 msgctxt "@info"
@@ -20202,21 +20202,21 @@ msgstr "Prikažite datum stvaranja slike"
 msgid "Raw file conversion failed."
 msgstr "Konverzija baze podataka otkazana."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:78
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:75
 #, fuzzy, kde-format
 #| msgid "<b>Welcome to Panorama Tool</b>"
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "<b>Dobrodošli u Panorama alat</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:90
 #, fuzzy, kde-format
 #| msgid "<b>Welcome to Panorama Tool</b>"
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "<b>Dobrodošli u Panorama alat</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:91
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -20224,7 +20224,7 @@ msgid ""
 "seam between images not visible."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -20232,40 +20232,40 @@ msgid ""
 "stitching them into a panorama."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:100
 #, fuzzy, kde-format
 #| msgid "Panoramic view"
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "Panoramski pogled"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:158
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:152
 #, fuzzy, kde-format
 #| msgid "File Format"
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "Format datoteke"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:162
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:156
 #, fuzzy, kde-format
 #| msgid "JPEG output"
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "JPEG izlaz"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:167
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:161
 #, fuzzy, no-c-format, kde-format
 #| msgid ""
 #| "Selects a JPEG output with 90% compression rate (lossy compression, "
@@ -20278,7 +20278,7 @@ msgstr ""
 "Odaberite JPEG izlaz sa 90% kompresije (kompresija sa gubitkom, manja "
 "veličina)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:163
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>JPEG output</b>: Using JPEG output, the panorama file will be smaller "
@@ -20294,14 +20294,14 @@ msgstr ""
 "zamjenu za gubitak informacija tokom kompresije. Ovo je najlakši naćin za "
 "dijeljenje rezultata, ili printanje online ili u prodavnici."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:175
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, fuzzy, kde-format
 #| msgid "TIFF Properties"
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "TIFF osobine"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:176
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:170
 #, fuzzy, kde-format
 #| msgid ""
 #| "Selects a TIFF output compressed using the LZW algorithm (lossless "
@@ -20314,7 +20314,7 @@ msgstr ""
 "Odaberite TIFF izlaz kopresovan LZW algoritmom (manji gubitak informacija, "
 "veća veličina)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:172
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>TIFF output</b>: Using TIFF output, you get the same color depth than "
@@ -20675,64 +20675,57 @@ msgid ""
 "overlaps between images. For that purpose, the \"%1\" program will be used."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:80
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:77
 #, fuzzy, kde-format
 #| msgid "<b>Preview and Post-Processing</b>"
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>Pregled i završna obrada</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:130
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:127
 #, fuzzy, kde-format
 #| msgid "Processing..."
 msgid "Processing Panorama Preview..."
 msgstr "Obrađujem..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:201
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:193
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>Panorama završna obrada</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:207
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:199
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "Kasnije procesiranje"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:287
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:273
 #, fuzzy, kde-format
 #| msgid "Process Cancelled..."
 msgid "Preview Processing Cancelled."
 msgstr "Proces otkazan..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:349
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:332
 #, fuzzy, kde-format
 #| msgid "<qt><h2><b>Error</b></h2><p>%1</p></qt>"
 msgid "<h1><b>Error</b></h1><p>%1</p>"
 msgstr "<qt><h2><b>Greška</b></h2><p>%1</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:383
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:366
 #, kde-format
 msgctxt "a project file is a .pto file, as given to hugin to build a panorama"
 msgid "<p><b>Cannot create project file: </b></p><p>%1</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:413
-#, fuzzy, kde-format
-#| msgid "Processing file %1 / %2: %3"
-msgctxt "Error message for image file number %1 out of %2"
-msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
-msgstr "Procesuiranje datoteka %1 / %2: %3"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:446
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:396
 #, fuzzy, kde-format
 #| msgid "Panorama compilation: %1"
 msgctxt "Error message for panorama compilation"
 msgid "<p><b>Panorama compilation: </b></p><p>%1</p>"
 msgstr "Panorama kompilacija: %1"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:497
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:444
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p><h1>Panorama Preview</h1></p><p>Draw a rectangle if you want to "
@@ -20747,26 +20740,14 @@ msgstr ""
 "sliku.</p><p>Pritiskom na <i>Sljedeći</i> dugme će pokrenuti završni proces "
 "spajanja.</p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:524
-#, fuzzy, kde-format
-msgctxt "Success for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "Spasi u datoteku"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:553
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:485
 #, fuzzy, kde-format
 #| msgid "Panorama Tool and Mentoring"
 msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
 msgstr "Panorama alat i mentorstvo"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:597
-#, fuzzy, kde-format
-msgctxt "Compilation started for image file number %1 out of %2"
-msgid "Processing file %1 / %2"
-msgstr "Spasi u datoteku"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:609
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:526
 #, fuzzy, kde-format
 #| msgid "Panorama Tool and Mentoring"
 msgctxt "Panorama compilation started"
@@ -73476,6 +73457,22 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Uvozni predmeti"
+
+#, fuzzy
+#~| msgid "Processing file %1 / %2: %3"
+#~ msgctxt "Error message for image file number %1 out of %2"
+#~ msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
+#~ msgstr "Procesuiranje datoteka %1 / %2: %3"
+
+#, fuzzy
+#~ msgctxt "Success for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "Spasi u datoteku"
+
+#, fuzzy
+#~ msgctxt "Compilation started for image file number %1 out of %2"
+#~ msgid "Processing file %1 / %2"
+#~ msgstr "Spasi u datoteku"
 
 #, fuzzy
 #~| msgid "Selection"
