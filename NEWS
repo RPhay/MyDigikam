@@ -65,7 +65,7 @@ BUGFIXES:
 046 ==> 459913 - Tag manager does not support export the tags to a text file.
 047 ==> 507575 - Gmic plugins using Category dropdown and Preset dropdown to select not working.
 048 ==> 491687 - G'MIC-Qt plugin "Color Presets" not working properly - LUTs Pack cannot be changed.
-049 ==> 
+049 ==> 505486 - Loading HEIC photos from SMB shares is very slow.
 050 ==> 
 051 ==> 
 052 ==> 

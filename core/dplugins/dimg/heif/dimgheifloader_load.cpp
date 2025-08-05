@@ -23,7 +23,6 @@
 #include <QFile>
 #include <QVariant>
 #include <QByteArray>
-#include <QTextStream>
 #include <qplatformdefs.h>
 
 // Local includes
@@ -36,46 +35,6 @@
 
 namespace Digikam
 {
-
-static int64_t heifQIODeviceDImgGetPosition(void* userdata)                                     // krazy:exclude=typedefs
-{
-    QFile* const file = static_cast<QFile*>(userdata);
-
-    return (int64_t)file->pos();
-}
-
-static int heifQIODeviceDImgRead(void* data, size_t size, void* userdata)
-{
-    QFile* const file = static_cast<QFile*>(userdata);
-
-    if ((file->pos() + (qint64)size) > file->size())
-    {
-        return 0;
-    }
-
-    qint64 bytes = file->read(reinterpret_cast<char*>(data), size);
-
-    return (int)((file->error() != QFileDevice::NoError) || (bytes != (qint64)size));
-}
-
-static int heifQIODeviceDImgSeek(int64_t position, void* userdata)                              // krazy:exclude=typedefs
-{
-    QFile* const file = static_cast<QFile*>(userdata);
-
-    return (int)!file->seek(position);
-}
-
-static heif_reader_grow_status heifQIODeviceDImgWait(int64_t target_size, void* userdata)       // krazy:exclude=typedefs
-{
-    QFile* const file = static_cast<QFile*>(userdata);
-
-    if ((qint64)target_size > file->size())
-    {
-        return heif_reader_grow_status_size_beyond_eof;
-    }
-
-    return heif_reader_grow_status_size_reached;
-}
 
 bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
@@ -118,7 +77,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         return false;
     }
 
-    readFile.reset();
+    readFile.close();
 
     if (observer)
     {
@@ -137,22 +96,10 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     heif_item_id primary_image_id;
 
     struct heif_context* const heif_context = heif_context_alloc();
-/*
-    heif_reader reader;
-    reader.reader_api_version = 1;
-    reader.get_position       = heifQIODeviceDImgGetPosition;
-    reader.read               = heifQIODeviceDImgRead;
-    reader.seek               = heifQIODeviceDImgSeek;
-    reader.wait_for_file_size = heifQIODeviceDImgWait;
 
-    struct heif_error error   = heif_context_read_from_reader(heif_context,
-                                                              &reader,
-                                                              reinterpret_cast<void*>(&readFile),
-                                                              nullptr);
-*/
-    struct heif_error error = heif_context_read_from_file(heif_context,
-                                                          filePath.toUtf8().constData(),
-                                                          nullptr);
+    struct heif_error error                 = heif_context_read_from_file(heif_context,
+                                                                          filePath.toUtf8().constData(),
+                                                                          nullptr);
 
     if (!isHeifSuccess(&error))
     {

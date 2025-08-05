@@ -16,10 +16,8 @@
 
 // Qt includes
 
-#include <QFile>
 #include <QVariant>
 #include <QByteArray>
-#include <QTextStream>
 #include <QElapsedTimer>
 #include <qplatformdefs.h>
 #include <QScopedPointer>
@@ -51,43 +49,6 @@
 
 namespace Digikam
 {
-
-static struct heif_error heifQIODeviceWriter(struct heif_context* /* ctx */,
-                                             const void* data, size_t size, void* userdata)  // cppcheck-suppress constParameterCallback
-
-{
-    QFile saveFile(QString::fromUtf8(static_cast<const char*>(userdata)));
-    heif_error error;
-
-    if (!saveFile.open(QIODevice::WriteOnly))
-    {
-        qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "Cannot open target image file:"
-                                         << saveFile.fileName();
-
-        error.code    = heif_error_Encoding_error;
-        error.subcode = heif_suberror_Cannot_write_output_data;
-        error.message = QByteArray("File open error").constData();
-
-        return error;
-    }
-
-    error.code          = heif_error_Ok;
-    error.subcode       = heif_suberror_Unspecified;
-    error.message       = QByteArray("Success").constData();
-
-    qint64 bytesWritten = saveFile.write(reinterpret_cast<const char*>(data), size);
-
-    if (bytesWritten < (qint64)size)
-    {
-        error.code    = heif_error_Encoding_error;
-        error.subcode = heif_suberror_Cannot_write_output_data;
-        error.message = QByteArray("File write error").constData();
-    }
-
-    saveFile.close();
-
-    return error;
-}
 
 int DImgHEIFLoader::x265MaxBitsDepth()
 {
@@ -500,12 +461,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "HEIF flush to file...";
     qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "HEIF encoding took:" << timer.elapsed() << "ms";
 
-    heif_writer writer;
-    writer.writer_api_version = 1;
-    writer.write              = heifQIODeviceWriter;
-
-    error                     = heif_context_write(ctx, &writer,
-                                                   reinterpret_cast<void*>(const_cast<char*>(filePath.toUtf8().constData())));
+    error = heif_context_write_to_file(ctx, filePath.toUtf8().constData());
 
     if (!isHeifSuccess(&error))
     {
