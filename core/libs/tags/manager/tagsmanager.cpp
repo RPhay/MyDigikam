@@ -32,6 +32,7 @@
 #include <QStandardPaths>
 #include <QPushButton>
 #include <QToolBar>
+#include <QToolButton>
 #include <QScreen>
 #include <QWindow>
 #include <QAction>
@@ -939,16 +940,24 @@ void TagsManager::setupActions()
     d->mainToolbar->addSeparator();
 
     d->addAction                 = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
-                                               QLatin1String(""), this);
+                                               i18nc("@action: button", "Add Tag"), this);
+    QToolButton* const addBtn    = new QToolButton(this);
+    addBtn->setDefaultAction(d->addAction);
+    addBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
     d->delAction                 = new QAction(QIcon::fromTheme(QLatin1String("list-remove")),
-                                               QLatin1String(""), this);
+                                               i18nc("@action: button", "Remove Tag"), this);
+    QToolButton* const delBtn    = new QToolButton(this);
+    delBtn->setDefaultAction(d->delAction);
+    delBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
     d->organizeButton            = new QPushButton(i18nc("@action: button", "Organize"), this);
     d->organizeButton->setIcon(QIcon::fromTheme(QLatin1String("autocorrection")));
+    d->organizeButton->setFlat(true);
 
     d->syncexportButton          = new QPushButton(i18nc("@action: button", "Sync &Export"), this);
     d->syncexportButton->setIcon(QIcon::fromTheme(QLatin1String("network-server-database")));
+    d->syncexportButton->setFlat(true);
 
     /**
      * organize group
@@ -1109,13 +1118,14 @@ void TagsManager::setupActions()
     syncexportMenu->addAction(saveTags);
     syncexportMenu->addAction(loadTags);
 
-    d->mainToolbar->addAction(d->addAction);
-    d->mainToolbar->addAction(d->delAction);
+    d->mainToolbar->addWidget(addBtn);
+    d->mainToolbar->addWidget(delBtn);
     d->mainToolbar->addWidget(d->organizeButton);
     d->mainToolbar->addWidget(d->syncexportButton);
 
     QPushButton* const helpButton = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), i18n("Help"));
     helpButton->setToolTip(i18nc("@info", "Online help about tags management"));
+    helpButton->setFlat(true);
 
     connect(helpButton, &QPushButton::clicked,
             this, []()
