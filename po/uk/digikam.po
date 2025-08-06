@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-05 02:23+0000\n"
+"POT-Creation-Date: 2025-08-06 02:09+0000\n"
 "PO-Revision-Date: 2025-08-04 08:58+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -3261,7 +3261,7 @@ msgid "Tools"
 msgstr "Інструменти"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:1115
+#: core/libs/tags/manager/tagsmanager.cpp:1126
 #, kde-format
 msgid "Help"
 msgstr "Довідка"
@@ -27907,8 +27907,8 @@ msgid "Labels Album"
 msgstr "Альбом з позначками"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
-#: core/libs/tags/manager/tagmngrtreeview.cpp:157
-#: core/libs/tags/manager/tagsmanager.cpp:982
+#: core/libs/tags/manager/tagmngrtreeview.cpp:159
+#: core/libs/tags/manager/tagsmanager.cpp:993
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -40555,120 +40555,120 @@ msgstr "Призначення позначки кольору «%1»"
 msgid "Assign Tag \"%1\""
 msgstr "Призначити мітку «%1»"
 
-#: core/libs/tags/manager/models/tagmngrlistitem.cpp:154
+#: core/libs/tags/manager/models/tagmngrlistitem.cpp:156
 #, kde-format
 msgctxt "@info"
 msgid "All Tags"
 msgstr "Всі мітки"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:290
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:292
 #, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
 msgstr "Список швидкого доступу"
 
-#: core/libs/tags/manager/models/tagmngrlistview.cpp:155
+#: core/libs/tags/manager/models/tagmngrlistview.cpp:157
 #, kde-format
 msgctxt "@action"
 msgid "Delete Selected from List"
 msgstr "Вилучити позначені зі списку"
 
-#: core/libs/tags/manager/taglist.cpp:61
+#: core/libs/tags/manager/taglist.cpp:63
 #, kde-format
 msgid "Add to List"
 msgstr "Додати до списку"
 
-#: core/libs/tags/manager/taglist.cpp:62
+#: core/libs/tags/manager/taglist.cpp:64
 #, kde-format
 msgid "Add selected tags to Quick Access List"
 msgstr "Додати позначені мітки до списку швидкого доступу"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:139
+#: core/libs/tags/manager/tagmngrtreeview.cpp:141
 #, kde-format
 msgid "Delete Tags"
 msgstr "Вилучити мітки"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:147
-#: core/libs/tags/manager/tagsmanager.cpp:969
+#: core/libs/tags/manager/tagmngrtreeview.cpp:149
+#: core/libs/tags/manager/tagsmanager.cpp:980
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Редагувати заголовок мітки"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:151
-#: core/libs/tags/manager/tagsmanager.cpp:973
+#: core/libs/tags/manager/tagmngrtreeview.cpp:153
+#: core/libs/tags/manager/tagsmanager.cpp:984
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Скинути піктограму мітки"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:154
-#: core/libs/tags/manager/tagsmanager.cpp:979
+#: core/libs/tags/manager/tagmngrtreeview.cpp:156
+#: core/libs/tags/manager/tagsmanager.cpp:990
 #, kde-format
 msgid "Invert Selection"
 msgstr "Інвертувати вибір"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:160
-#: core/libs/tags/manager/tagsmanager.cpp:985
+#: core/libs/tags/manager/tagmngrtreeview.cpp:162
+#: core/libs/tags/manager/tagsmanager.cpp:996
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Розгорнути ієрархію міток"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:163
-#: core/libs/tags/manager/tagsmanager.cpp:988
+#: core/libs/tags/manager/tagmngrtreeview.cpp:165
+#: core/libs/tags/manager/tagsmanager.cpp:999
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Згорнути ієрархію міток"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:166
-#: core/libs/tags/manager/tagsmanager.cpp:991
+#: core/libs/tags/manager/tagmngrtreeview.cpp:168
+#: core/libs/tags/manager/tagsmanager.cpp:1002
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Вилучити мітку з зображень"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:87
+#: core/libs/tags/manager/tagpropwidget.cpp:89
 #, kde-format
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr "Властивості міток"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:96
+#: core/libs/tags/manager/tagpropwidget.cpp:98
 #: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr "&Заголовок:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:101
+#: core/libs/tags/manager/tagpropwidget.cpp:103
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr "Тут введіть назву мітки"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:114
+#: core/libs/tags/manager/tagpropwidget.cpp:116
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr "П&іктограма:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:123
+#: core/libs/tags/manager/tagpropwidget.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
 msgstr "Скинути"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:136
+#: core/libs/tags/manager/tagpropwidget.cpp:138
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr "С&корочення:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:159
+#: core/libs/tags/manager/tagpropwidget.cpp:161
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr "Нотатка"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:160
+#: core/libs/tags/manager/tagpropwidget.cpp:162
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
@@ -40676,31 +40676,31 @@ msgstr ""
 "Цим клавіатурним скороченням можна скористатися для призначення або "
 "скасування призначення мітки."
 
-#: core/libs/tags/manager/tagpropwidget.cpp:165
+#: core/libs/tags/manager/tagpropwidget.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "Зберегти"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:166
+#: core/libs/tags/manager/tagpropwidget.cpp:168
 #, kde-format
 msgctxt "@action"
 msgid "Discard"
 msgstr "Відкинути"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:233
+#: core/libs/tags/manager/tagpropwidget.cpp:235
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "До міток було внесено зміни. Зберегти ці зміни?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:180
+#: core/libs/tags/manager/tagsmanager.cpp:183
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Керування мітками"
 
-#: core/libs/tags/manager/tagsmanager.cpp:340
+#: core/libs/tags/manager/tagsmanager.cpp:343
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -40722,7 +40722,7 @@ msgstr[3] ""
 "Мітка %2 містить одну або декілька підміток. Вилучення мітки призведе до "
 "вилучення підміток. Продовжити виконання дії?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:363
+#: core/libs/tags/manager/tagsmanager.cpp:366
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -40741,7 +40741,7 @@ msgstr[3] ""
 "Мітку %2 призначено до одного або декількох зображень. Продовжити виконання "
 "дії?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:373
+#: core/libs/tags/manager/tagsmanager.cpp:376
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -40751,7 +40751,7 @@ msgstr[1] "Вилучити мітки %2?"
 msgstr[2] "Вилучити мітки %2?"
 msgstr[3] "Вилучити мітку %2?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:379
+#: core/libs/tags/manager/tagsmanager.cpp:382
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -40761,7 +40761,7 @@ msgstr[1] "Вилучення міток"
 msgstr[2] "Вилучення міток"
 msgstr[3] "Вилучення мітки"
 
-#: core/libs/tags/manager/tagsmanager.cpp:501
+#: core/libs/tags/manager/tagsmanager.cpp:504
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database."
@@ -40774,8 +40774,8 @@ msgstr ""
 "«Прочитати мітки» з меню «Зображення»).<br> Виконати встановлення міток на "
 "основі бази даних?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:513
-#: core/libs/tags/manager/tagsmanager.cpp:532
+#: core/libs/tags/manager/tagsmanager.cpp:516
+#: core/libs/tags/manager/tagsmanager.cpp:535
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -40784,7 +40784,7 @@ msgstr ""
 "Виконання цієї дії може бути тривалим у великих збірках.\n"
 "Хочете продовжити?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:552
+#: core/libs/tags/manager/tagsmanager.cpp:555
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -40796,45 +40796,45 @@ msgstr ""
 "програми записати метадані до файлів.\n"
 "Продовжити виконання цієї дії?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:618
+#: core/libs/tags/manager/tagsmanager.cpp:621
 #, kde-format
 msgid "Select a base tag from which the tags should be exported."
 msgstr "Виберіть базову мітку, з якої має бути експортовано мітки."
 
-#: core/libs/tags/manager/tagsmanager.cpp:628
+#: core/libs/tags/manager/tagsmanager.cpp:631
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr "Вибрана мітка не є базовою міткою на вершині ієрархії."
 
-#: core/libs/tags/manager/tagsmanager.cpp:636
+#: core/libs/tags/manager/tagsmanager.cpp:639
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
 msgstr "Експорт файла міток контрольованого словника"
 
-#: core/libs/tags/manager/tagsmanager.cpp:637
-#: core/libs/tags/manager/tagsmanager.cpp:755
+#: core/libs/tags/manager/tagsmanager.cpp:640
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, kde-format
 msgid "Text File (*.txt)"
 msgstr "текстовий файл (*.txt)"
 
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:738
 #, kde-format
 msgid "Select a tag into which the tags should be imported."
 msgstr "Виберіть мітку, до якої має бути імпортовано мітки."
 
-#: core/libs/tags/manager/tagsmanager.cpp:745
+#: core/libs/tags/manager/tagsmanager.cpp:748
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
 msgstr "До вибраної мітки обличчя не може бути імпортовано жодну мітку."
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:757
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
 msgstr "Імпорт файла міток контрольованого словника"
 
-#: core/libs/tags/manager/tagsmanager.cpp:853
+#: core/libs/tags/manager/tagsmanager.cpp:856
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -40843,31 +40843,46 @@ msgstr[1] "Ви справді хочете вилучити позначені 
 msgstr[2] "Ви справді хочете вилучити позначені мітки з усіх зображень?"
 msgstr[3] "Ви справді хочете вилучити позначену мітку з усіх зображень?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:945
+#: core/libs/tags/manager/tagsmanager.cpp:943
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add New Tag"
+msgctxt "@action: button"
+msgid "Add Tag"
+msgstr "Додавання нової мітки"
+
+#: core/libs/tags/manager/tagsmanager.cpp:949
+#, fuzzy, kde-format
+#| msgid "Remove Tag"
+msgctxt "@action: button"
+msgid "Remove Tag"
+msgstr "Вилучити мітку"
+
+#: core/libs/tags/manager/tagsmanager.cpp:954
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Впорядкувати"
 
-#: core/libs/tags/manager/tagsmanager.cpp:948
+#: core/libs/tags/manager/tagsmanager.cpp:958
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Синхронізувати &експортовані дані"
 
-#: core/libs/tags/manager/tagsmanager.cpp:976
+#: core/libs/tags/manager/tagsmanager.cpp:987
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Позначити непризначені мітки"
 
-#: core/libs/tags/manager/tagsmanager.cpp:996
+#: core/libs/tags/manager/tagsmanager.cpp:1007
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Додати нову мітку до поточної мітки. Поточною є мітка, яку було натиснуто "
 "останньою."
 
-#: core/libs/tags/manager/tagsmanager.cpp:999
+#: core/libs/tags/manager/tagsmanager.cpp:1010
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -40876,87 +40891,87 @@ msgstr ""
 "Вилучити позначені записи. Працює для декількох записів, але не зможе "
 "вилучити кореневу мітку."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1003
+#: core/libs/tags/manager/tagsmanager.cpp:1014
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Редагувати заголовок з позначеної мітки."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1005
+#: core/libs/tags/manager/tagsmanager.cpp:1016
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Відновити типову піктограму для позначених міток. Цю дію можна виконувати "
 "над декількома мітками одночасно."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1008
+#: core/libs/tags/manager/tagsmanager.cpp:1019
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Позначити усі мітки, які не пов'язано із зображеннями."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1010
+#: core/libs/tags/manager/tagsmanager.cpp:1021
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Інвертувати позначення. Буде позначено лише видимі записи."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1013
+#: core/libs/tags/manager/tagsmanager.cpp:1024
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Позначені пункти буде розгорнуто"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1015
+#: core/libs/tags/manager/tagsmanager.cpp:1026
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Розгорнути ієрархію міток повністю"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1017
+#: core/libs/tags/manager/tagsmanager.cpp:1028
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Згорнути ієрархію міток повністю"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1019
+#: core/libs/tags/manager/tagsmanager.cpp:1030
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Вилучити позначені мітки з зображень. Цю дію можна виконувати над декількома "
 "зображенням одночасно."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1063
+#: core/libs/tags/manager/tagsmanager.cpp:1074
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Записати мітки з бази даних до зображень"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1066
+#: core/libs/tags/manager/tagsmanager.cpp:1077
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Прочитати мітки з файлів зображень"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1069
+#: core/libs/tags/manager/tagsmanager.cpp:1080
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Витерти усі мітки лише з бази даних"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1072
+#: core/libs/tags/manager/tagsmanager.cpp:1083
 #, kde-format
 msgid "Export tags to a file from selected tag"
 msgstr "Експортувати мітки до файла з вибраної мітки"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1075
+#: core/libs/tags/manager/tagsmanager.cpp:1086
 #, kde-format
 msgid "Import tags from a file to selected tag"
 msgstr "Імпортувати мітки з файла до вибраної мітки"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1077
+#: core/libs/tags/manager/tagsmanager.cpp:1088
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Записати метадані міток до зображень."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1079
+#: core/libs/tags/manager/tagsmanager.cpp:1090
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Прочитати мітки з зображень до бази даних. Наявні мітки змінено не буде."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1082
+#: core/libs/tags/manager/tagsmanager.cpp:1093
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -40965,17 +40980,17 @@ msgstr ""
 "Вилучити усі мітки лише з бази даних. Синхронізація з файлами не "
 "виконуватиметься. Будьте обережні!"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1085
+#: core/libs/tags/manager/tagsmanager.cpp:1096
 #, kde-format
 msgid "Export all tags to a file to keep a backup."
 msgstr "Експортувати усі мітки до файла для резервного копіювання."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1087
+#: core/libs/tags/manager/tagsmanager.cpp:1098
 #, kde-format
 msgid "Import all tags from a file to restore a backup."
 msgstr "Імпортувати усі мітки з файла для відновлення резервної копії."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1116
+#: core/libs/tags/manager/tagsmanager.cpp:1127
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"

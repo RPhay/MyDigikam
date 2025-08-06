@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-05 02:23+0000\n"
+"POT-Creation-Date: 2025-08-06 02:09+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -3228,7 +3228,7 @@ msgid "Tools"
 msgstr "Eszközök"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:1115
+#: core/libs/tags/manager/tagsmanager.cpp:1126
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Help"
@@ -26851,8 +26851,8 @@ msgid "Labels Album"
 msgstr "Címkék"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
-#: core/libs/tags/manager/tagmngrtreeview.cpp:157
-#: core/libs/tags/manager/tagsmanager.cpp:982
+#: core/libs/tags/manager/tagmngrtreeview.cpp:159
+#: core/libs/tags/manager/tagsmanager.cpp:993
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -38990,122 +38990,122 @@ msgstr ""
 msgid "Assign Tag \"%1\""
 msgstr "„%1” címke hozzárendelése"
 
-#: core/libs/tags/manager/models/tagmngrlistitem.cpp:154
+#: core/libs/tags/manager/models/tagmngrlistitem.cpp:156
 #, kde-format
 msgctxt "@info"
 msgid "All Tags"
 msgstr "Minden címke"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:290
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:292
 #, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
 msgstr ""
 
-#: core/libs/tags/manager/models/tagmngrlistview.cpp:155
+#: core/libs/tags/manager/models/tagmngrlistview.cpp:157
 #, kde-format
 msgctxt "@action"
 msgid "Delete Selected from List"
 msgstr "A kiválasztott elemek törlése a listából"
 
-#: core/libs/tags/manager/taglist.cpp:61
+#: core/libs/tags/manager/taglist.cpp:63
 #, kde-format
 msgid "Add to List"
 msgstr "Hozzáadás a listához"
 
-#: core/libs/tags/manager/taglist.cpp:62
+#: core/libs/tags/manager/taglist.cpp:64
 #, kde-format
 msgid "Add selected tags to Quick Access List"
 msgstr "A kijelölt címkék hozzáadása a Gyors hozzáférési listához"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:139
+#: core/libs/tags/manager/tagmngrtreeview.cpp:141
 #, kde-format
 msgid "Delete Tags"
 msgstr "Címkék törlése"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:147
-#: core/libs/tags/manager/tagsmanager.cpp:969
+#: core/libs/tags/manager/tagmngrtreeview.cpp:149
+#: core/libs/tags/manager/tagsmanager.cpp:980
 #, kde-format
 msgid "Edit Tag Title"
 msgstr ""
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:151
-#: core/libs/tags/manager/tagsmanager.cpp:973
+#: core/libs/tags/manager/tagmngrtreeview.cpp:153
+#: core/libs/tags/manager/tagsmanager.cpp:984
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Címkeikon alaphelyzetbe"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:154
-#: core/libs/tags/manager/tagsmanager.cpp:979
+#: core/libs/tags/manager/tagmngrtreeview.cpp:156
+#: core/libs/tags/manager/tagsmanager.cpp:990
 #, kde-format
 msgid "Invert Selection"
 msgstr "Kijelölés megfordítása"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:160
-#: core/libs/tags/manager/tagsmanager.cpp:985
+#: core/libs/tags/manager/tagmngrtreeview.cpp:162
+#: core/libs/tags/manager/tagsmanager.cpp:996
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Címkefa kinyitása"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:163
-#: core/libs/tags/manager/tagsmanager.cpp:988
+#: core/libs/tags/manager/tagmngrtreeview.cpp:165
+#: core/libs/tags/manager/tagsmanager.cpp:999
 #, fuzzy, kde-format
 #| msgctxt "@action: context menu"
 #| msgid "All Albums"
 msgid "Collapse Tag Tree"
 msgstr "Minden album"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:166
-#: core/libs/tags/manager/tagsmanager.cpp:991
+#: core/libs/tags/manager/tagmngrtreeview.cpp:168
+#: core/libs/tags/manager/tagsmanager.cpp:1002
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Címke eltávolítása a képekből"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:87
+#: core/libs/tags/manager/tagpropwidget.cpp:89
 #, kde-format
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr "Címke tulajdonságai"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:96
+#: core/libs/tags/manager/tagpropwidget.cpp:98
 #: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr "&Cím:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:101
+#: core/libs/tags/manager/tagpropwidget.cpp:103
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:114
+#: core/libs/tags/manager/tagpropwidget.cpp:116
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr "&Ikon:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:123
+#: core/libs/tags/manager/tagpropwidget.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
 msgstr "Visszaállítás"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:136
+#: core/libs/tags/manager/tagpropwidget.cpp:138
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr "Billentyű&parancs:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:159
+#: core/libs/tags/manager/tagpropwidget.cpp:161
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr "Megjegyzés"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:160
+#: core/libs/tags/manager/tagpropwidget.cpp:162
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
@@ -39113,32 +39113,32 @@ msgstr ""
 "Ez a billentyűparancs címkék hozzárendeléséhez vagy hozzárendelésének "
 "eltávolításához használható."
 
-#: core/libs/tags/manager/tagpropwidget.cpp:165
+#: core/libs/tags/manager/tagpropwidget.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "Mentés"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:166
+#: core/libs/tags/manager/tagpropwidget.cpp:168
 #, kde-format
 msgctxt "@action"
 msgid "Discard"
 msgstr "Elvetés"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:233
+#: core/libs/tags/manager/tagpropwidget.cpp:235
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:180
+#: core/libs/tags/manager/tagsmanager.cpp:183
 #, fuzzy, kde-format
 #| msgid "Tags Manager"
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Címkekezelő"
 
-#: core/libs/tags/manager/tagsmanager.cpp:340
+#: core/libs/tags/manager/tagsmanager.cpp:343
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -39150,7 +39150,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:363
+#: core/libs/tags/manager/tagsmanager.cpp:366
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -39159,7 +39159,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:373
+#: core/libs/tags/manager/tagsmanager.cpp:376
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -39167,7 +39167,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:379
+#: core/libs/tags/manager/tagsmanager.cpp:382
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
@@ -39176,7 +39176,7 @@ msgid_plural "Delete tags"
 msgstr[0] "Címke törlése"
 msgstr[1] "Címke törlése"
 
-#: core/libs/tags/manager/tagsmanager.cpp:501
+#: core/libs/tags/manager/tagsmanager.cpp:504
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database."
@@ -39184,8 +39184,8 @@ msgid ""
 "Read Tags from Image).<br> Do you want to continue?</qt>"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:513
-#: core/libs/tags/manager/tagsmanager.cpp:532
+#: core/libs/tags/manager/tagsmanager.cpp:516
+#: core/libs/tags/manager/tagsmanager.cpp:535
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -39194,7 +39194,7 @@ msgstr ""
 "Ez a művelet hosszú ideig is eltarthat a gyűjtemény méretétől függően.\n"
 "Szeretné folytatni?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:552
+#: core/libs/tags/manager/tagsmanager.cpp:555
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39202,19 +39202,19 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:618
+#: core/libs/tags/manager/tagsmanager.cpp:621
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Select all tags that should be processed."
 msgid "Select a base tag from which the tags should be exported."
 msgstr "Jelöljön ki minden olyan címkét, melyet fel kell dolgozni."
 
-#: core/libs/tags/manager/tagsmanager.cpp:628
+#: core/libs/tags/manager/tagsmanager.cpp:631
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:636
+#: core/libs/tags/manager/tagsmanager.cpp:639
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Export to local storage..."
@@ -39222,151 +39222,165 @@ msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
 msgstr "Exportálás helyi tárolóba ..."
 
-#: core/libs/tags/manager/tagsmanager.cpp:637
-#: core/libs/tags/manager/tagsmanager.cpp:755
+#: core/libs/tags/manager/tagsmanager.cpp:640
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, fuzzy, kde-format
 #| msgid "XMP text Files (*.xmp)"
 msgid "Text File (*.txt)"
 msgstr "XMP szöveg fájlok (*.xmp)"
 
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:738
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Select all tags that should be processed."
 msgid "Select a tag into which the tags should be imported."
 msgstr "Jelöljön ki minden olyan címkét, melyet fel kell dolgozni."
 
-#: core/libs/tags/manager/tagsmanager.cpp:745
+#: core/libs/tags/manager/tagsmanager.cpp:748
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:757
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:853
+#: core/libs/tags/manager/tagsmanager.cpp:856
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:945
+#: core/libs/tags/manager/tagsmanager.cpp:943
+#, fuzzy, kde-format
+#| msgid "Add New Tag..."
+msgctxt "@action: button"
+msgid "Add Tag"
+msgstr "Új címke hozzáadása…"
+
+#: core/libs/tags/manager/tagsmanager.cpp:949
+#, fuzzy, kde-format
+#| msgid "Remove Tag"
+msgctxt "@action: button"
+msgid "Remove Tag"
+msgstr "Címke eltávolítása"
+
+#: core/libs/tags/manager/tagsmanager.cpp:954
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Szervezés"
 
-#: core/libs/tags/manager/tagsmanager.cpp:948
+#: core/libs/tags/manager/tagsmanager.cpp:958
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Exportálás szinkronizálása"
 
-#: core/libs/tags/manager/tagsmanager.cpp:976
+#: core/libs/tags/manager/tagsmanager.cpp:987
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:996
+#: core/libs/tags/manager/tagsmanager.cpp:1007
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Új címke hozzáadása a jelenlegi címkéhez. A jelenlegi címke a legutoljára "
 "kattintott címke."
 
-#: core/libs/tags/manager/tagsmanager.cpp:999
+#: core/libs/tags/manager/tagsmanager.cpp:1010
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1003
+#: core/libs/tags/manager/tagsmanager.cpp:1014
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1005
+#: core/libs/tags/manager/tagsmanager.cpp:1016
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "A kijelölt címkék ikonjának visszaállítása. Működik többszörös kijelöléssel "
 "is."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1008
+#: core/libs/tags/manager/tagsmanager.cpp:1019
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1010
+#: core/libs/tags/manager/tagsmanager.cpp:1021
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Kijelölés megfordítása. Csak a látható elemek lesznek kiválasztva"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1013
+#: core/libs/tags/manager/tagsmanager.cpp:1024
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "A kijelölt elemek ki lesznek nyitva"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1015
+#: core/libs/tags/manager/tagsmanager.cpp:1026
 #, fuzzy, kde-format
 #| msgid "Expand tag tree by one level"
 msgid "Expand tag tree completely"
 msgstr "Címkefa kinyitása egy szinttel"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1017
+#: core/libs/tags/manager/tagsmanager.cpp:1028
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1019
+#: core/libs/tags/manager/tagsmanager.cpp:1030
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "A kijelölt címkék törlése a képekből. Működik többszörös kijelöléssel is."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1063
+#: core/libs/tags/manager/tagsmanager.cpp:1074
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Címkék írása adatbázisból a képbe"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1066
+#: core/libs/tags/manager/tagsmanager.cpp:1077
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Címkék olvasása a képből"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1069
+#: core/libs/tags/manager/tagsmanager.cpp:1080
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Minden címke törlése az adatbázisból"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1072
+#: core/libs/tags/manager/tagsmanager.cpp:1083
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgid "Export tags to a file from selected tag"
 msgstr "Metaadat írása minden fájlba"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1075
+#: core/libs/tags/manager/tagsmanager.cpp:1086
 #, fuzzy, kde-format
 #| msgid "Remove Tag from Images"
 msgid "Import tags from a file to selected tag"
 msgstr "Címke eltávolítása a képekből"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1077
+#: core/libs/tags/manager/tagsmanager.cpp:1088
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Címke metaadatainak írása a képbe."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1079
+#: core/libs/tags/manager/tagsmanager.cpp:1090
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1082
+#: core/libs/tags/manager/tagsmanager.cpp:1093
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -39375,17 +39389,17 @@ msgstr ""
 "Minden címke törlése az adatbázisból, de nem szinkronizálja a fájlokat. "
 "Óvatosan járjon el a folytatással."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1085
+#: core/libs/tags/manager/tagsmanager.cpp:1096
 #, kde-format
 msgid "Export all tags to a file to keep a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1087
+#: core/libs/tags/manager/tagsmanager.cpp:1098
 #, kde-format
 msgid "Import all tags from a file to restore a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1116
+#: core/libs/tags/manager/tagsmanager.cpp:1127
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
