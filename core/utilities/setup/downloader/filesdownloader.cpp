@@ -45,6 +45,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
+#include "dfileselector.h"
 #include "dxmlguiwindow.h"
 #include "systemsettings.h"
 #include "dnnmodelmanager.h"
@@ -80,11 +81,12 @@ public:
     QLabel*                infoLabel        = nullptr;
     QLabel*                loadLabel        = nullptr;
     QLabel*                sizeLabel        = nullptr;
+    QLabel*                pathLabel        = nullptr;
+
+    DFileSelector*         selector         = nullptr;
 
     QNetworkReply*         reply            = nullptr;
     QNetworkAccessManager* netMngr          = nullptr;
-
-    SystemSettings         system           = SystemSettings(qApp->applicationName());
 
     QString                error;
     const QString          downloadUrl      = QLatin1String("https://files.kde.org/digikam/");
@@ -113,8 +115,7 @@ FilesDownloader::~FilesDownloader()
 
 bool FilesDownloader::checkDownloadFiles() const
 {
-    SystemSettings system(QLatin1String("digikam"));
-    QString path = system.getModelDataPath();
+    QString path = getFacesEnginePath();
 
     if (path.isEmpty())
     {
@@ -154,29 +155,40 @@ void FilesDownloader::startDownload()
 
     d->buttons->button(QDialogButtonBox::Open)->setToolTip(i18n("Open local directory used for the data files storage."));
 
-    d->infoLabel         = new QLabel(mainWidget);
-    d->loadLabel         = new QLabel(mainWidget);
-    d->sizeLabel         = new QLabel(mainWidget);
+    d->infoLabel        = new QLabel(mainWidget);
+    d->loadLabel        = new QLabel(mainWidget);
+    d->sizeLabel        = new QLabel(mainWidget);
+    d->pathLabel        = new QLabel(mainWidget);
+    d->pathLabel->setText(i18n("Location of the face management model files:"));
 
     d->infoLabel->setWordWrap(true);
     d->loadLabel->setWordWrap(true);
+
+    d->selector         = new DFileSelector(mainWidget);
+    d->selector->setFileDlgMode(QFileDialog::Directory);
+    d->selector->setFileDlgOptions(QFileDialog::ShowDirsOnly);
+    d->selector->setFileDlgTitle(i18nc("@title:window", "Face Management Model Target"));
+    d->selector->setWhatsThis(i18n("Sets the target address to download the face management model files to."));
 
     d->aiAutoToolsCheck = new QCheckBox(i18n("Use AI Auto-Tools features"),       mainWidget);
     d->faceEngineCheck  = new QCheckBox(i18n("Use Face Management feature"),      mainWidget);
     d->aestheticCheck   = new QCheckBox(i18n("Use Aesthetic Detection feature"),  mainWidget);
     d->autoTagsCheck    = new QCheckBox(i18n("Use AutoTags Assignment feature"),  mainWidget);
 
-    d->progress          = new QProgressBar(mainWidget);
+    d->progress         = new QProgressBar(mainWidget);
     d->progress->setFormat(i18nc("%p is the percent value, % is the percent sign", "%p%"));
     d->progress->setMinimum(0);
     d->progress->setMaximum(1);
     d->progress->setValue(0);
 
-    d->nameLabel         = new QLabel(mainWidget);
+    d->nameLabel        = new QLabel(mainWidget);
 
     vBox->addWidget(d->infoLabel);
     vBox->addWidget(d->loadLabel);
     vBox->addWidget(d->sizeLabel);
+    vBox->addStretch(1);
+    vBox->addWidget(d->pathLabel);
+    vBox->addWidget(d->selector);
     vBox->addStretch(1);
     vBox->addWidget(d->aiAutoToolsCheck);
     vBox->addWidget(d->faceEngineCheck);
@@ -201,10 +213,24 @@ void FilesDownloader::startDownload()
     connect(d->buttons->button(QDialogButtonBox::Close), SIGNAL(clicked()),
             this, SLOT(reject()));
 
-    d->aiAutoToolsCheck->setChecked(d->system.enableAIAutoTools);
-    d->faceEngineCheck->setChecked(d->system.enableFaceEngine);
-    d->aestheticCheck->setChecked(d->system.enableAesthetic);
-    d->autoTagsCheck->setChecked(d->system.enableAutoTags);
+    {
+        SystemSettings appSystem(qApp->applicationName());
+
+        d->aiAutoToolsCheck->setChecked(appSystem.enableAIAutoTools);
+        d->faceEngineCheck->setChecked(appSystem.enableFaceEngine);
+        d->aestheticCheck->setChecked(appSystem.enableAesthetic);
+        d->autoTagsCheck->setChecked(appSystem.enableAutoTags);
+    }
+
+    {
+        d->selector->setFileDlgPath(getFacesEnginePath());
+    }
+
+    connect(d->selector->lineEdit(), SIGNAL(textEdited(QString)),
+            this, SLOT(slotModelDataPathChanged()));
+
+    connect(d->selector, SIGNAL(signalUrlSelected(QUrl)),
+            this, SLOT(slotModelDataPathChanged()));
 
     connect(d->aiAutoToolsCheck, SIGNAL(toggled(bool)),
             this, SLOT(slotUpdateDownloadInfo()));
@@ -237,6 +263,7 @@ void FilesDownloader::slotDownload()
     d->faceEngineCheck->setEnabled(false);
     d->aestheticCheck->setEnabled(false);
     d->autoTagsCheck->setEnabled(false);
+    d->selector->setEnabled(false);
 
     if (d->error.isEmpty())
     {
@@ -467,6 +494,24 @@ void FilesDownloader::slotDownloadProgress(qint64 bytesReceived, qint64 bytesTot
     d->progress->setValue(bytesReceived);
 }
 
+void FilesDownloader::slotModelDataPathChanged()
+{
+    QString path = d->selector->fileDlgPath();
+
+    if (path.isEmpty())
+    {
+        return;
+    }
+
+    {
+        SystemSettings system(QLatin1String("digikam"));
+        system.modelDataPath = path;
+        system.saveSettings();
+    }
+
+    slotUpdateDownloadInfo();
+}
+
 void FilesDownloader::slotOpenLocalRepo()
 {
     QDesktopServices::openUrl(QUrl::fromLocalFile(getFacesEnginePath()));
@@ -475,9 +520,8 @@ void FilesDownloader::slotOpenLocalRepo()
 QString FilesDownloader::getFacesEnginePath()
 {
     SystemSettings system(QLatin1String("digikam"));
-    QString path = system.getModelDataPath();
 
-    return path;
+    return system.getModelDataPath();
 }
 
 void FilesDownloader::slotHelp()
@@ -491,23 +535,25 @@ void FilesDownloader::createDownloadInfo()
 {
     d->files.clear();
 
-    if (d->system.enableFaceEngine)
+    SystemSettings appSystem(qApp->applicationName());
+
+    if (appSystem.enableFaceEngine)
     {
         d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageFaceDetection);
         d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageFaceRecognition);
     }
 
-    if (d->system.enableAesthetic)
+    if (appSystem.enableAesthetic)
     {
         d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageAesthetics);
     }
 
-    if (d->system.enableAIAutoTools)
+    if (appSystem.enableAIAutoTools)
     {
         d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageAutoRotate);
     }
 
-    if (d->system.enableAutoTags)
+    if (appSystem.enableAutoTags)
     {
         d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageObjectDetection);
         d->files << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageImageClassification);
@@ -516,12 +562,15 @@ void FilesDownloader::createDownloadInfo()
 
 void FilesDownloader::slotUpdateDownloadInfo()
 {
-    QString path                = QDir::toNativeSeparators(getFacesEnginePath());
-    d->system.enableAIAutoTools = d->aiAutoToolsCheck->isChecked();
-    d->system.enableFaceEngine  = d->faceEngineCheck->isChecked();
-    d->system.enableAesthetic   = d->aestheticCheck->isChecked();
-    d->system.enableAutoTags    = d->autoTagsCheck->isChecked();
-    d->system.saveSettings();
+    {
+        SystemSettings appSystem(qApp->applicationName());
+
+        appSystem.enableAIAutoTools = d->aiAutoToolsCheck->isChecked();
+        appSystem.enableFaceEngine  = d->faceEngineCheck->isChecked();
+        appSystem.enableAesthetic   = d->aestheticCheck->isChecked();
+        appSystem.enableAutoTags    = d->autoTagsCheck->isChecked();
+        appSystem.saveSettings();
+    }
 
     createDownloadInfo();
 
@@ -545,12 +594,10 @@ void FilesDownloader::slotUpdateDownloadInfo()
                                "and automatic tag assignment. You have the option to select the specific features you want to "
                                "enable.</p><p><b>Note:</b> The red-eye removal tool requires face management model files.</p>"));
 
-    d->loadLabel->setText(i18nc("%1: folder path",
-                                "<p>Some required files are missing. Click “Download” to start installing the necessary model files. "
-                                "If you close this dialog you will be prompted again the next time you launch digiKam. The "
-                                "selected features will not function without these files.</p>"
-                                "<p>The files will be downloaded to \"<i>%1</i>\".</p>"
-                                "<p><b>You must restart digiKam after successfully downloading the files.</b></p>", path));
+    d->loadLabel->setText(i18n("<p>Some required files are missing. Click “Download” to start installing the necessary model files. "
+                               "If you close this dialog you will be prompted again the next time you launch digiKam. The "
+                               "selected features will not function without these files.</p>"
+                               "<p><b>You must restart digiKam after successfully downloading the files.</b></p>"));
     if (size > 0)
     {
         d->sizeLabel->setText(i18nc("%1: file counter, %2: disk size with unit",
@@ -572,9 +619,7 @@ void FilesDownloader::slotUpdateDownloadInfo()
 
 void FilesDownloader::deleteUnusedFiles() const
 {
-    QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                          QLatin1String("digikam/facesengine"),
-                                          QStandardPaths::LocateDirectory);
+    QString path = getFacesEnginePath();
 
     if (!path.isEmpty())
     {

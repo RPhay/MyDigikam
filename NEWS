@@ -67,7 +67,7 @@ BUGFIXES:
 048 ==> 491687 - G'MIC-Qt plugin "Color Presets" not working properly - LUTs Pack cannot be changed.
 049 ==> 505486 - Loading HEIC photos from SMB shares is very slow.
 050 ==> 453768 - File import error when path > MAX_PATH(260).
-051 ==> 
+051 ==> 507909 - Change location of AI model files download.
 052 ==> 
 053 ==> 
 054 ==> 
