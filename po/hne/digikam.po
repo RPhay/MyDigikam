@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-05 02:23+0000\n"
+"POT-Creation-Date: 2025-08-06 02:09+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -3286,7 +3286,7 @@ msgid "Tools"
 msgstr "औजार (&T)"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:1115
+#: core/libs/tags/manager/tagsmanager.cpp:1126
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgid "Help"
@@ -26799,8 +26799,8 @@ msgid "Labels Album"
 msgstr "नवा एलबम"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
-#: core/libs/tags/manager/tagmngrtreeview.cpp:157
-#: core/libs/tags/manager/tagsmanager.cpp:982
+#: core/libs/tags/manager/tagmngrtreeview.cpp:159
+#: core/libs/tags/manager/tagsmanager.cpp:993
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, fuzzy, kde-format
 msgid "Expand Selected Nodes"
@@ -38855,85 +38855,85 @@ msgstr "प्रोफाइल आवंटित करव"
 msgid "Assign Tag \"%1\""
 msgstr "टैग आवंटित करव"
 
-#: core/libs/tags/manager/models/tagmngrlistitem.cpp:154
+#: core/libs/tags/manager/models/tagmngrlistitem.cpp:156
 #, fuzzy, kde-format
 #| msgid "All Tags"
 msgctxt "@info"
 msgid "All Tags"
 msgstr "सब्बो टैग"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:290
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:292
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
 msgstr "जल्दी खोज"
 
-#: core/libs/tags/manager/models/tagmngrlistview.cpp:155
+#: core/libs/tags/manager/models/tagmngrlistview.cpp:157
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Delete Selected from List"
 msgstr "चुने गे ल मेटाव"
 
-#: core/libs/tags/manager/taglist.cpp:61
+#: core/libs/tags/manager/taglist.cpp:63
 #, fuzzy, kde-format
 msgid "Add to List"
 msgstr "लाइट टेबल मं जोड़व"
 
-#: core/libs/tags/manager/taglist.cpp:62
+#: core/libs/tags/manager/taglist.cpp:64
 #, kde-format
 msgid "Add selected tags to Quick Access List"
 msgstr ""
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:139
+#: core/libs/tags/manager/tagmngrtreeview.cpp:141
 #, fuzzy, kde-format
 msgid "Delete Tags"
 msgstr "टैग मेटाव"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:147
-#: core/libs/tags/manager/tagsmanager.cpp:969
+#: core/libs/tags/manager/tagmngrtreeview.cpp:149
+#: core/libs/tags/manager/tagsmanager.cpp:980
 #, fuzzy, kde-format
 msgid "Edit Tag Title"
 msgstr "फोटू फाइल मन ल"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:151
-#: core/libs/tags/manager/tagsmanager.cpp:973
+#: core/libs/tags/manager/tagmngrtreeview.cpp:153
+#: core/libs/tags/manager/tagsmanager.cpp:984
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "टैग चिनहा रीसेट करव"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:154
-#: core/libs/tags/manager/tagsmanager.cpp:979
+#: core/libs/tags/manager/tagmngrtreeview.cpp:156
+#: core/libs/tags/manager/tagsmanager.cpp:990
 #, kde-format
 msgid "Invert Selection"
 msgstr "चयन लहुटाव"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:160
-#: core/libs/tags/manager/tagsmanager.cpp:985
+#: core/libs/tags/manager/tagmngrtreeview.cpp:162
+#: core/libs/tags/manager/tagsmanager.cpp:996
 #, fuzzy, kde-format
 msgid "Expand Tag Tree"
 msgstr "टैग उप-साखा सामिल करव"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:163
-#: core/libs/tags/manager/tagsmanager.cpp:988
+#: core/libs/tags/manager/tagmngrtreeview.cpp:165
+#: core/libs/tags/manager/tagsmanager.cpp:999
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Collapse Tag Tree"
 msgstr "मोर एलबम"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:166
-#: core/libs/tags/manager/tagsmanager.cpp:991
+#: core/libs/tags/manager/tagmngrtreeview.cpp:168
+#: core/libs/tags/manager/tagsmanager.cpp:1002
 #, fuzzy, kde-format
 msgid "Remove Tag from Images"
 msgstr "फाइल से डाटाबेस मं मेटाडाटा पढ़व"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:87
+#: core/libs/tags/manager/tagpropwidget.cpp:89
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr "गुन"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:96
+#: core/libs/tags/manager/tagpropwidget.cpp:98
 #: core/libs/tags/widgets/tageditdlg.cpp:131
 #, fuzzy, kde-format
 #| msgid "&Title:"
@@ -38941,69 +38941,69 @@ msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr "सीर्सकः (&T)"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:101
+#: core/libs/tags/manager/tagpropwidget.cpp:103
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr "अपन टैग नाम इहां भरव..."
 
-#: core/libs/tags/manager/tagpropwidget.cpp:114
+#: core/libs/tags/manager/tagpropwidget.cpp:116
 #, fuzzy, kde-format
 #| msgid "&Icon:"
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr "चिनहाः (&I)"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:123
+#: core/libs/tags/manager/tagpropwidget.cpp:125
 #, fuzzy, kde-format
 #| msgid "Reset"
 msgctxt "@action"
 msgid "Reset"
 msgstr "रीसेट"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:136
+#: core/libs/tags/manager/tagpropwidget.cpp:138
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:159
+#: core/libs/tags/manager/tagpropwidget.cpp:161
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:160
+#: core/libs/tags/manager/tagpropwidget.cpp:162
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:165
+#: core/libs/tags/manager/tagpropwidget.cpp:167
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "सहेजव (&S)"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:166
+#: core/libs/tags/manager/tagpropwidget.cpp:168
 #, kde-format
 msgctxt "@action"
 msgid "Discard"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:233
+#: core/libs/tags/manager/tagpropwidget.cpp:235
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:180
+#: core/libs/tags/manager/tagsmanager.cpp:183
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "रंग प्रबंधन"
 
-#: core/libs/tags/manager/tagsmanager.cpp:340
+#: core/libs/tags/manager/tagsmanager.cpp:343
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -39015,7 +39015,7 @@ msgid_plural ""
 msgstr[0] "टैग '%2' ह एक वस्तु मं संबंधित हे. का आप मन जारी रखना चाहथो?"
 msgstr[1] "टैग '%2' ह एक वस्तु मं संबंधित हे. का आप मन जारी रखना चाहथो?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:363
+#: core/libs/tags/manager/tagsmanager.cpp:366
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -39024,7 +39024,7 @@ msgid_plural ""
 msgstr[0] "टैग '%2' ह एक वस्तु मं संबंधित हे. का आप मन जारी रखना चाहथो?"
 msgstr[1] "टैग '%2' ह एक वस्तु मं संबंधित हे. का आप मन जारी रखना चाहथो?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:373
+#: core/libs/tags/manager/tagsmanager.cpp:376
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -39032,7 +39032,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "टैग मेटाव"
 msgstr[1] "टैग मेटाव"
 
-#: core/libs/tags/manager/tagsmanager.cpp:379
+#: core/libs/tags/manager/tagsmanager.cpp:382
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -39040,7 +39040,7 @@ msgid_plural "Delete tags"
 msgstr[0] "टैग मेटाव"
 msgstr[1] "टैग मेटाव"
 
-#: core/libs/tags/manager/tagsmanager.cpp:501
+#: core/libs/tags/manager/tagsmanager.cpp:504
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database."
@@ -39048,15 +39048,15 @@ msgid ""
 "Read Tags from Image).<br> Do you want to continue?</qt>"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:513
-#: core/libs/tags/manager/tagsmanager.cpp:532
+#: core/libs/tags/manager/tagsmanager.cpp:516
+#: core/libs/tags/manager/tagsmanager.cpp:535
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:552
+#: core/libs/tags/manager/tagsmanager.cpp:555
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39064,175 +39064,189 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:618
+#: core/libs/tags/manager/tagsmanager.cpp:621
 #, kde-format
 msgid "Select a base tag from which the tags should be exported."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:628
+#: core/libs/tags/manager/tagsmanager.cpp:631
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:636
+#: core/libs/tags/manager/tagsmanager.cpp:639
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
 msgstr "निर्यात"
 
-#: core/libs/tags/manager/tagsmanager.cpp:637
-#: core/libs/tags/manager/tagsmanager.cpp:755
+#: core/libs/tags/manager/tagsmanager.cpp:640
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, fuzzy, kde-format
 #| msgid "XMP text Files (*.xmp)"
 msgid "Text File (*.txt)"
 msgstr "एक्सएमपी पाठ फाइल मन ल (*.xmp)"
 
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:738
 #, kde-format
 msgid "Select a tag into which the tags should be imported."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:745
+#: core/libs/tags/manager/tagsmanager.cpp:748
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:757
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:853
+#: core/libs/tags/manager/tagsmanager.cpp:856
 #, fuzzy, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "का आप मन संग्रह \"%1\" ल अपन संग्रह सूची से मिटाना चाहथो ?"
 msgstr[1] "का आप मन संग्रह \"%1\" ल अपन संग्रह सूची से मिटाना चाहथो ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:945
+#: core/libs/tags/manager/tagsmanager.cpp:943
+#, fuzzy, kde-format
+#| msgid "Add New Tag..."
+msgctxt "@action: button"
+msgid "Add Tag"
+msgstr "नवा टैग जोड़व..."
+
+#: core/libs/tags/manager/tagsmanager.cpp:949
+#, fuzzy, kde-format
+#| msgid "Remove Tag"
+msgctxt "@action: button"
+msgid "Remove Tag"
+msgstr "टैग हटाव"
+
+#: core/libs/tags/manager/tagsmanager.cpp:954
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:948
+#: core/libs/tags/manager/tagsmanager.cpp:958
 #, fuzzy, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "निर्यात (&E)"
 
-#: core/libs/tags/manager/tagsmanager.cpp:976
+#: core/libs/tags/manager/tagsmanager.cpp:987
 #, fuzzy, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "हाल ही मं आबंटित कोनो टैग नइ हे"
 
-#: core/libs/tags/manager/tagsmanager.cpp:996
+#: core/libs/tags/manager/tagsmanager.cpp:1007
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:999
+#: core/libs/tags/manager/tagsmanager.cpp:1010
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1003
+#: core/libs/tags/manager/tagsmanager.cpp:1014
 #, fuzzy, kde-format
 msgid "Edit title from selected tag."
 msgstr "पाठ ल डेरी तरफ जमाव"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1005
+#: core/libs/tags/manager/tagsmanager.cpp:1016
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1008
+#: core/libs/tags/manager/tagsmanager.cpp:1019
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1010
+#: core/libs/tags/manager/tagsmanager.cpp:1021
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1013
+#: core/libs/tags/manager/tagsmanager.cpp:1024
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1015
+#: core/libs/tags/manager/tagsmanager.cpp:1026
 #, fuzzy, kde-format
 msgid "Expand tag tree completely"
 msgstr "टैग उप-साखा सामिल करव"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1017
+#: core/libs/tags/manager/tagsmanager.cpp:1028
 #, fuzzy, kde-format
 #| msgid "Download Selected"
 msgid "Collapse tag tree completely"
 msgstr "चुने गे डाउनलोड करव"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1019
+#: core/libs/tags/manager/tagsmanager.cpp:1030
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1063
+#: core/libs/tags/manager/tagsmanager.cpp:1074
 #, fuzzy, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "हर एक फाइल मं मेटाडाटा लिखव"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1066
+#: core/libs/tags/manager/tagsmanager.cpp:1077
 #, fuzzy, kde-format
 msgid "Read Tags from Image"
 msgstr "फाइल से डाटाबेस मं मेटाडाटा पढ़व"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1069
+#: core/libs/tags/manager/tagsmanager.cpp:1080
 #, fuzzy, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "हर एक फाइल मं मेटाडाटा लिखव"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1072
+#: core/libs/tags/manager/tagsmanager.cpp:1083
 #, fuzzy, kde-format
 msgid "Export tags to a file from selected tag"
 msgstr "पाठ ल डेरी तरफ जमाव"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1075
+#: core/libs/tags/manager/tagsmanager.cpp:1086
 #, fuzzy, kde-format
 msgid "Import tags from a file to selected tag"
 msgstr "फाइल से डाटाबेस मं मेटाडाटा पढ़व"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1077
+#: core/libs/tags/manager/tagsmanager.cpp:1088
 #, fuzzy, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "हर एक फाइल मं मेटाडाटा लिखव"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1079
+#: core/libs/tags/manager/tagsmanager.cpp:1090
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1082
+#: core/libs/tags/manager/tagsmanager.cpp:1093
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1085
+#: core/libs/tags/manager/tagsmanager.cpp:1096
 #, kde-format
 msgid "Export all tags to a file to keep a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1087
+#: core/libs/tags/manager/tagsmanager.cpp:1098
 #, kde-format
 msgid "Import all tags from a file to restore a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1116
+#: core/libs/tags/manager/tagsmanager.cpp:1127
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"

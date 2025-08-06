@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-05 02:23+0000\n"
-"PO-Revision-Date: 2025-08-02 11:36+0100\n"
+"POT-Creation-Date: 2025-08-06 02:09+0000\n"
+"PO-Revision-Date: 2025-08-06 00:17+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -3232,7 +3232,7 @@ msgid "Tools"
 msgstr "Herramientas"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:1115
+#: core/libs/tags/manager/tagsmanager.cpp:1126
 #, kde-format
 msgid "Help"
 msgstr "Ayuda"
@@ -27780,8 +27780,8 @@ msgid "Labels Album"
 msgstr "Emblemas del álbum"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
-#: core/libs/tags/manager/tagmngrtreeview.cpp:157
-#: core/libs/tags/manager/tagsmanager.cpp:982
+#: core/libs/tags/manager/tagmngrtreeview.cpp:159
+#: core/libs/tags/manager/tagsmanager.cpp:993
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -28166,12 +28166,10 @@ msgid "All albums"
 msgstr "Todos los álbumes"
 
 #: core/libs/album/widgets/albumselectors.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive album selection."
+#, kde-format
 msgctxt "@info"
 msgid "Toggle recursive album selection."
-msgstr "Selección de álbum recursiva."
+msgstr "Conmutar la selección recursiva de álbumes."
 
 #: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
@@ -28198,12 +28196,10 @@ msgid "All tags"
 msgstr "Todas las etiquetas"
 
 #: core/libs/album/widgets/albumselectors.cpp:241
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive tags selection."
+#, kde-format
 msgctxt "@info"
 msgid "Toggle recursive tags selection."
-msgstr "Selección de etiquetas recursiva."
+msgstr "Conmutar la selección recursiva de etiquetas."
 
 #: core/libs/album/widgets/albumselectors.cpp:253
 #, kde-format
@@ -40374,120 +40370,120 @@ msgstr "Asignar el emblema de color «%1»"
 msgid "Assign Tag \"%1\""
 msgstr "Asignar etiqueta «%1»"
 
-#: core/libs/tags/manager/models/tagmngrlistitem.cpp:154
+#: core/libs/tags/manager/models/tagmngrlistitem.cpp:156
 #, kde-format
 msgctxt "@info"
 msgid "All Tags"
 msgstr "Todas las etiquetas"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:290
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:292
 #, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
 msgstr "Lista de acceso rápido"
 
-#: core/libs/tags/manager/models/tagmngrlistview.cpp:155
+#: core/libs/tags/manager/models/tagmngrlistview.cpp:157
 #, kde-format
 msgctxt "@action"
 msgid "Delete Selected from List"
 msgstr "Borrar la selección de la lista"
 
-#: core/libs/tags/manager/taglist.cpp:61
+#: core/libs/tags/manager/taglist.cpp:63
 #, kde-format
 msgid "Add to List"
 msgstr "Añadir a la lista"
 
-#: core/libs/tags/manager/taglist.cpp:62
+#: core/libs/tags/manager/taglist.cpp:64
 #, kde-format
 msgid "Add selected tags to Quick Access List"
 msgstr "Añadir las etiquetas seleccionadas a la lista de acceso rápido"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:139
+#: core/libs/tags/manager/tagmngrtreeview.cpp:141
 #, kde-format
 msgid "Delete Tags"
 msgstr "Borrar etiquetas"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:147
-#: core/libs/tags/manager/tagsmanager.cpp:969
+#: core/libs/tags/manager/tagmngrtreeview.cpp:149
+#: core/libs/tags/manager/tagsmanager.cpp:980
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Editar título de la etiqueta"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:151
-#: core/libs/tags/manager/tagsmanager.cpp:973
+#: core/libs/tags/manager/tagmngrtreeview.cpp:153
+#: core/libs/tags/manager/tagsmanager.cpp:984
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Restablecer icono de etiquetas"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:154
-#: core/libs/tags/manager/tagsmanager.cpp:979
+#: core/libs/tags/manager/tagmngrtreeview.cpp:156
+#: core/libs/tags/manager/tagsmanager.cpp:990
 #, kde-format
 msgid "Invert Selection"
 msgstr "Invertir la selección"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:160
-#: core/libs/tags/manager/tagsmanager.cpp:985
+#: core/libs/tags/manager/tagmngrtreeview.cpp:162
+#: core/libs/tags/manager/tagsmanager.cpp:996
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Expandir árbol de etiquetas"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:163
-#: core/libs/tags/manager/tagsmanager.cpp:988
+#: core/libs/tags/manager/tagmngrtreeview.cpp:165
+#: core/libs/tags/manager/tagsmanager.cpp:999
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Contraer el árbol de etiquetas"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:166
-#: core/libs/tags/manager/tagsmanager.cpp:991
+#: core/libs/tags/manager/tagmngrtreeview.cpp:168
+#: core/libs/tags/manager/tagsmanager.cpp:1002
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Eliminar etiqueta de las imágenes"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:87
+#: core/libs/tags/manager/tagpropwidget.cpp:89
 #, kde-format
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr "Propiedades de la etiqueta"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:96
+#: core/libs/tags/manager/tagpropwidget.cpp:98
 #: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr "&Título:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:101
+#: core/libs/tags/manager/tagpropwidget.cpp:103
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr "Introduzca aquí el nombre de la etiqueta"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:114
+#: core/libs/tags/manager/tagpropwidget.cpp:116
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr "&Icono:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:123
+#: core/libs/tags/manager/tagpropwidget.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
 msgstr "Reiniciar"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:136
+#: core/libs/tags/manager/tagpropwidget.cpp:138
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr "Acce&so rápido:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:159
+#: core/libs/tags/manager/tagpropwidget.cpp:161
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr "Nota"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:160
+#: core/libs/tags/manager/tagpropwidget.cpp:162
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
@@ -40495,32 +40491,32 @@ msgstr ""
 "Este acceso rápido se puede usar para asignar o quitar una etiqueta de los "
 "elementos."
 
-#: core/libs/tags/manager/tagpropwidget.cpp:165
+#: core/libs/tags/manager/tagpropwidget.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "Guardar"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:166
+#: core/libs/tags/manager/tagpropwidget.cpp:168
 #, kde-format
 msgctxt "@action"
 msgid "Discard"
 msgstr "Descartar"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:233
+#: core/libs/tags/manager/tagpropwidget.cpp:235
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr ""
 "Las etiquetas anteriores se han modificado. ¿Desea guardar los cambios?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:180
+#: core/libs/tags/manager/tagsmanager.cpp:183
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Gestor de etiquetas"
 
-#: core/libs/tags/manager/tagsmanager.cpp:340
+#: core/libs/tags/manager/tagsmanager.cpp:343
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -40536,7 +40532,7 @@ msgstr[1] ""
 "Las etiquetas %2 tienen una o más subetiquetas. Si las borra, borrará "
 "también las subetiquetas. ¿Seguro que desea continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:363
+#: core/libs/tags/manager/tagsmanager.cpp:366
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -40549,7 +40545,7 @@ msgstr[1] ""
 "Las etiquetas %2 están asignadas a uno o más elementos. ¿Seguro que desea "
 "borrarlas?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:373
+#: core/libs/tags/manager/tagsmanager.cpp:376
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -40557,7 +40553,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "¿Borrar la etiqueta %2?"
 msgstr[1] "¿Borrar las etiquetas %2?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:379
+#: core/libs/tags/manager/tagsmanager.cpp:382
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -40565,7 +40561,7 @@ msgid_plural "Delete tags"
 msgstr[0] "Borrar etiqueta"
 msgstr[1] "Borrar etiquetas"
 
-#: core/libs/tags/manager/tagsmanager.cpp:501
+#: core/libs/tags/manager/tagsmanager.cpp:504
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database."
@@ -40577,8 +40573,8 @@ msgstr ""
 "ha leído antes (usando «Leer etiquetas de la imagen»).<br>¿Desea continuar?</"
 "qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:513
-#: core/libs/tags/manager/tagsmanager.cpp:532
+#: core/libs/tags/manager/tagsmanager.cpp:516
+#: core/libs/tags/manager/tagsmanager.cpp:535
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -40588,7 +40584,7 @@ msgstr ""
 "colección.\n"
 "¿Seguro que quiere continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:552
+#: core/libs/tags/manager/tagsmanager.cpp:555
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -40600,52 +40596,49 @@ msgstr ""
 "metadatos en los archivos más tarde.\n"
 "¿Seguro que quiere continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:618
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all tags that should be processed."
+#: core/libs/tags/manager/tagsmanager.cpp:621
+#, kde-format
 msgid "Select a base tag from which the tags should be exported."
-msgstr "Seleccione todas las etiquetas que se deben procesar."
+msgstr ""
+"Seleccionar una etiqueta base desde la que se deben exportar las etiquetas."
 
-#: core/libs/tags/manager/tagsmanager.cpp:628
+#: core/libs/tags/manager/tagsmanager.cpp:631
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr ""
+"La etiqueta seleccionada no es una etiqueta base en la parte superior de la "
+"jerarquía."
 
-#: core/libs/tags/manager/tagsmanager.cpp:636
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Local Storage"
+#: core/libs/tags/manager/tagsmanager.cpp:639
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
-msgstr "Exportar a almacenamiento local"
+msgstr "Exportar archivo de etiquetas de vocabulario controlado"
 
-#: core/libs/tags/manager/tagsmanager.cpp:637
-#: core/libs/tags/manager/tagsmanager.cpp:755
-#, fuzzy, kde-format
-#| msgid "XMP text Files (*.xmp)"
+#: core/libs/tags/manager/tagsmanager.cpp:640
+#: core/libs/tags/manager/tagsmanager.cpp:758
+#, kde-format
 msgid "Text File (*.txt)"
-msgstr "Archivos de texto XMP (*.xmp)"
+msgstr "Archivo de texto (*.txt)"
 
-#: core/libs/tags/manager/tagsmanager.cpp:735
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all tags that should be processed."
+#: core/libs/tags/manager/tagsmanager.cpp:738
+#, kde-format
 msgid "Select a tag into which the tags should be imported."
-msgstr "Seleccione todas las etiquetas que se deben procesar."
+msgstr "Seleccione la etiqueta a la que se deben importar las etiquetas."
 
-#: core/libs/tags/manager/tagsmanager.cpp:745
+#: core/libs/tags/manager/tagsmanager.cpp:748
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
 msgstr ""
+"No se puede importar ninguna etiqueta en la etiqueta de cara seleccionada."
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:757
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
-msgstr ""
+msgstr "Importara archivo de etiquetas de vocabulario controlado"
 
-#: core/libs/tags/manager/tagsmanager.cpp:853
+#: core/libs/tags/manager/tagsmanager.cpp:856
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -40654,31 +40647,46 @@ msgstr[0] ""
 msgstr[1] ""
 "¿Realmente desea eliminar las etiquetas seleccionadas de todas las imágenes?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:945
+#: core/libs/tags/manager/tagsmanager.cpp:943
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add New Tag"
+msgctxt "@action: button"
+msgid "Add Tag"
+msgstr "Añadir nueva etiqueta"
+
+#: core/libs/tags/manager/tagsmanager.cpp:949
+#, fuzzy, kde-format
+#| msgid "Remove Tag"
+msgctxt "@action: button"
+msgid "Remove Tag"
+msgstr "Eliminar una etiqueta"
+
+#: core/libs/tags/manager/tagsmanager.cpp:954
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organizar"
 
-#: core/libs/tags/manager/tagsmanager.cpp:948
+#: core/libs/tags/manager/tagsmanager.cpp:958
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Sincronizar &exportación"
 
-#: core/libs/tags/manager/tagsmanager.cpp:976
+#: core/libs/tags/manager/tagsmanager.cpp:987
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Marcar etiquetas sin asignar"
 
-#: core/libs/tags/manager/tagsmanager.cpp:996
+#: core/libs/tags/manager/tagsmanager.cpp:1007
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Añadir nueva etiqueta a la etiqueta actual. La etiqueta actual es la última "
 "sobre la que ha pulsado."
 
-#: core/libs/tags/manager/tagsmanager.cpp:999
+#: core/libs/tags/manager/tagsmanager.cpp:1010
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -40687,93 +40695,89 @@ msgstr ""
 "Borrar los elementos seleccionados. También funciona con múltiples "
 "elementos, pero no borrará la etiqueta raíz."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1003
+#: core/libs/tags/manager/tagsmanager.cpp:1014
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Editar el título de la etiqueta seleccionada."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1005
+#: core/libs/tags/manager/tagsmanager.cpp:1016
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Reiniciar el icono de las etiquetas seleccionadas. Funciona con selección "
 "múltiple."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1008
+#: core/libs/tags/manager/tagsmanager.cpp:1019
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Marcar todas las etiquetas que no estén asignadas a imágenes."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1010
+#: core/libs/tags/manager/tagsmanager.cpp:1021
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Invertir selección. Solo se seleccionarán los elementos visibles."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1013
+#: core/libs/tags/manager/tagsmanager.cpp:1024
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Los elementos seleccionados se expandirán"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1015
+#: core/libs/tags/manager/tagsmanager.cpp:1026
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Expandir el árbol de etiquetas completamente"
 
 # TODO - Una mejor de tooltip
-#: core/libs/tags/manager/tagsmanager.cpp:1017
+#: core/libs/tags/manager/tagsmanager.cpp:1028
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Contraer el árbol de etiquetas completamente"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1019
+#: core/libs/tags/manager/tagsmanager.cpp:1030
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Borrar las etiquetas seleccionadas de las imágenes. Funciona con selección "
 "múltiple."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1063
+#: core/libs/tags/manager/tagsmanager.cpp:1074
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Escribir etiquetas de la base de datos en la imagen"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1066
+#: core/libs/tags/manager/tagsmanager.cpp:1077
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Leer etiquetas de la imagen"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1069
+#: core/libs/tags/manager/tagsmanager.cpp:1080
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Borrar todas las etiquetas solo en la base de datos"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Edit title from selected tag."
+#: core/libs/tags/manager/tagsmanager.cpp:1083
+#, kde-format
 msgid "Export tags to a file from selected tag"
-msgstr "Editar el título de la etiqueta seleccionada."
+msgstr "Exportar etiquetas a un archivo a partir de la etiqueta seleccionada"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1075
-#, fuzzy, kde-format
-#| msgid "Import all tags from a file to restore a backup."
+#: core/libs/tags/manager/tagsmanager.cpp:1086
+#, kde-format
 msgid "Import tags from a file to selected tag"
-msgstr ""
-"Importar todas las etiquetas de un archivo para restaurar una copia de "
-"seguridad."
+msgstr "Importar etiquetas de un archivo a la etiqueta seleccionada"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1077
+#: core/libs/tags/manager/tagsmanager.cpp:1088
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Escribir metadatos de etiquetas en la imagen"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1079
+#: core/libs/tags/manager/tagsmanager.cpp:1090
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Leer etiquetas de las imágenes en la base de datos. Las etiquetas existentes "
 "no se verán afectadas."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1082
+#: core/libs/tags/manager/tagsmanager.cpp:1093
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -40782,21 +40786,21 @@ msgstr ""
 "Borrar todas las etiquetas solo en la base de datos. No se sincronizará con "
 "los archivos. Continúe con precaución."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1085
+#: core/libs/tags/manager/tagsmanager.cpp:1096
 #, kde-format
 msgid "Export all tags to a file to keep a backup."
 msgstr ""
 "Exportar todas las etiquetas a un archivo para conservar una copia de "
 "seguridad."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1087
+#: core/libs/tags/manager/tagsmanager.cpp:1098
 #, kde-format
 msgid "Import all tags from a file to restore a backup."
 msgstr ""
 "Importar todas las etiquetas de un archivo para restaurar una copia de "
 "seguridad."
 
-#: core/libs/tags/manager/tagsmanager.cpp:1116
+#: core/libs/tags/manager/tagsmanager.cpp:1127
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -68638,33 +68642,3 @@ msgstr "Elementos del álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementos importados"
-
-#~ msgctxt "Error message for image file number %1 out of %2"
-#~ msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
-#~ msgstr "<p><b>Procesando el archivo %1 / %2: </b></p><p>%3</p>"
-
-#~ msgctxt "Success for image file number %1 out of %2"
-#~ msgid "Processing file %1 / %2"
-#~ msgstr "Procesando el archivo %1 / %2"
-
-#~ msgctxt "Compilation started for image file number %1 out of %2"
-#~ msgid "Processing file %1 / %2"
-#~ msgstr "Procesando el archivo %1 / %2"
-
-#~ msgctxt "@option"
-#~ msgid "Recursive selection"
-#~ msgstr "Selección recursiva"
-
-#~ msgctxt "@title:window"
-#~ msgid "Choose Export Tag File"
-#~ msgstr "Escoger archivo de etiquetas para exportar"
-
-#~ msgctxt "@title:window"
-#~ msgid "Choose Import Tag File"
-#~ msgstr "Escoger archivo de etiquetas para importar"
-
-#~ msgid "Export all tags to a file"
-#~ msgstr "Exportar todas las etiquetas a un archivo"
-
-#~ msgid "Import all tags from a file"
-#~ msgstr "Importar todas las etiquetas de un archivo"
