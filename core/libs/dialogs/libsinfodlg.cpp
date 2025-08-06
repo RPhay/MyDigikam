@@ -166,6 +166,9 @@ extern "C"
 #endif
 
 #include "digikam_opencv.h"
+#include "digikam_gitversion.h"
+#include "digikam_builddate.h"
+#include "digikam_version.h"
 
 // NOTE: defined in OpenCV core/private.hpp.
 
@@ -332,7 +335,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "Libx265") <<             (x265api ? QLatin1String(x265api->version_str)
-                                                                          : i18nc("@info: version", "Unknown")));
+                                                                          : i18nc("@info: libx265 version", "Unknown")));
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "HEIF writing support") <<           SUPPORTED_YES);
 
@@ -442,6 +445,52 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                         i18nc(CONTEXT, "Ccache support")         <<         SUPPORTED_NO);
 
 #endif
+
+    new QTreeWidgetItem(m_buildtools, QStringList() <<
+                        i18nc(CONTEXT, "Build date")             <<         QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat));
+
+    new QTreeWidgetItem(m_buildtools, QStringList() <<
+                        i18nc(CONTEXT, "Build target")           <<         QLatin1String(digikam_build_type));
+
+    new QTreeWidgetItem(m_buildtools, QStringList() <<
+                        i18nc(CONTEXT, "Build architecture")     <<         QSysInfo::buildCpuArchitecture());
+
+    QString gitRev     = QLatin1String(GITVERSION);
+    QString gitBra     = QLatin1String(GITBRANCH);
+
+    if (
+        !gitRev.isEmpty()                           &&
+        !gitBra.isEmpty()                           &&
+        !gitRev.startsWith(QLatin1String("unknow")) &&
+        !gitRev.startsWith(QLatin1String("export")) &&
+        !gitBra.startsWith(QLatin1String("unknow"))
+       )
+    {
+        const int maxStringLength         = 10;
+        QString gitVer                    = gitRev.left(maxStringLength / 2 - 2) +
+                                            QLatin1String("...")                 +
+                                            gitRev.right(maxStringLength / 2 - 1);
+
+        QLabel* const gitRevLbl           = new QLabel(QString::fromLatin1("<a href='https://invent.kde.org/graphics/digikam/commit/%1'>%2</a>")
+                                                       .arg(gitRev).arg(gitVer),
+                                                       listView());
+        gitRevLbl->setOpenExternalLinks(true);
+
+        QTreeWidgetItem* const gitRevItem = new QTreeWidgetItem(m_buildtools);
+        gitRevItem->setText(0, i18nc(CONTEXT, "Git revision"));
+        listView()->setItemWidget(gitRevItem, 1, gitRevLbl);
+
+        new QTreeWidgetItem(m_buildtools, QStringList()    <<
+                            i18nc(CONTEXT, "Git branch")   << gitBra);
+    }
+    else
+    {
+        new QTreeWidgetItem(m_buildtools, QStringList()    <<
+                            i18nc(CONTEXT, "Git revision") << i18nc("@info: git revision", "Unknown"));
+
+        new QTreeWidgetItem(m_buildtools, QStringList()    <<
+                            i18nc(CONTEXT, "Git branch")   << i18nc("@info: git branch", "Unknown"));
+    }
 
     KMemoryInfo memInfo;
 
