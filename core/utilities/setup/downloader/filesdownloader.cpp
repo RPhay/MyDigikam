@@ -113,9 +113,8 @@ FilesDownloader::~FilesDownloader()
 
 bool FilesDownloader::checkDownloadFiles() const
 {
-    QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                          QLatin1String("digikam/facesengine"),
-                                          QStandardPaths::LocateDirectory);
+    SystemSettings system(QLatin1String("digikam"));
+    QString path = system.getModelDataPath();
 
     if (path.isEmpty())
     {
@@ -475,10 +474,10 @@ void FilesDownloader::slotOpenLocalRepo()
 
 QString FilesDownloader::getFacesEnginePath()
 {
-    QString appPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
-    appPath        += QLatin1String("/digikam/facesengine");
+    SystemSettings system(QLatin1String("digikam"));
+    QString path = system.getModelDataPath();
 
-    return appPath;
+    return path;
 }
 
 void FilesDownloader::slotHelp()

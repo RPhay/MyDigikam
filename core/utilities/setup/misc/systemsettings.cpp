@@ -108,6 +108,18 @@ void SystemSettings::readSettings()
     videoBackend         = settings.value(QLatin1String("videoBackend"),      QLatin1String("ffmpeg")).toString();
 
 #endif
+    // Faces Engine
+
+    QString dataPath     = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                  QLatin1String("digikam/facesengine"),
+                                                  QStandardPaths::LocateDirectory);
+    if (dataPath.isEmpty())
+    {
+        dataPath         = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
+        dataPath        += QLatin1String("/digikam/facesengine");
+    }
+
+    modelDataPath        = settings.value(QLatin1String("modelDataPath"),    dataPath).toString();
 
     // Proxy Settings
 
@@ -197,6 +209,8 @@ void SystemSettings::saveSettings()
 
 #endif
 
+    settings.setValue(QLatin1String("modelDataPath"),     modelDataPath);
+
     settings.setValue(QLatin1String("proxyUrl"),          proxyUrl);
     settings.setValue(QLatin1String("proxyPort"),         proxyPort);
     settings.setValue(QLatin1String("proxyType"),         proxyType);
@@ -213,6 +227,22 @@ void SystemSettings::saveSettings()
     }
 
     settings.endGroup();
+}
+
+QString SystemSettings::getModelDataPath() const
+{
+    // Check if Faces Engine model data already exists in the system.
+
+    QString sysPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QLatin1String("digikam/facesengine"),
+                                             QStandardPaths::LocateDirectory);
+
+    if (!sysPath.isEmpty() && (sysPath == modelDataPath))
+    {
+        return sysPath;
+    }
+
+    return modelDataPath;
 }
 
 } // namespace Digikam

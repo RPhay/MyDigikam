@@ -23,6 +23,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "systemsettings.h"
 
 namespace Digikam
 {
@@ -136,9 +137,8 @@ bool AestheticDetector::s_loadModel()
             return true;
         }
 
-        QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                 QLatin1String("digikam/facesengine"),
-                                                 QStandardPaths::LocateDirectory);
+        SystemSettings system(QLatin1String("digikam"));
+        QString appPath = system.getModelDataPath();
 
         QString model   = QLatin1String("weights_inceptionv3_299.pb");
         QString nnmodel = appPath + QLatin1Char('/') + model;

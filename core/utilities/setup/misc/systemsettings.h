@@ -45,7 +45,8 @@ public:
 
 public:
 
-    void saveSettings();
+    void    saveSettings();
+    QString getModelDataPath() const;
 
 public:
 
@@ -74,6 +75,10 @@ public:
     QString videoBackend      = QLatin1String("ffmpeg");
 
 #endif
+
+    // Faces Engine path.
+
+    QString modelDataPath;
 
     // Proxy Settings.
 
