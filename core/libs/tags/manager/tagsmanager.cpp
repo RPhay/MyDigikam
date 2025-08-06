@@ -1118,7 +1118,9 @@ void TagsManager::setupActions()
     connect(helpButton, &QPushButton::clicked,
             this, []()
         {
-            openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("tags_view"), QLatin1String("tags-manager"));
+            openOnlineDocumentation(QLatin1String("left_sidebar"),
+                                    QLatin1String("tags_view"),
+                                    QLatin1String("tags-manager"));
         }
     );
 
