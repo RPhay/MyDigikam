@@ -6,8 +6,10 @@
  * Date        : 20013-07-03
  * Description : Tag Manager main class
  *
- * SPDX-FileCopyrightText: 2013 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
- * SPDX-FileCopyrightText: 2014 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText:      2013 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
+ * SPDX-FileCopyrightText:      2014 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2015-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2025 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -1134,7 +1136,6 @@ void TagsManager::setupActions()
     d->rootDisabledOptions.append(delTagFromImg);
 }
 
-/// helper based on KAction::setHelpText
 void TagsManager::setHelpText(QAction* const action, const QString& text)
 {
     action->setStatusTip(text);
