@@ -66,7 +66,7 @@ BUGFIXES:
 047 ==> 507575 - Gmic plugins using Category dropdown and Preset dropdown to select not working.
 048 ==> 491687 - G'MIC-Qt plugin "Color Presets" not working properly - LUTs Pack cannot be changed.
 049 ==> 505486 - Loading HEIC photos from SMB shares is very slow.
-050 ==> 
+050 ==> 453768 - File import error when path > MAX_PATH(260).
 051 ==> 
 052 ==> 
 053 ==> 
