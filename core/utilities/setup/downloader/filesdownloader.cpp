@@ -139,8 +139,8 @@ bool FilesDownloader::checkDownloadFiles() const
 void FilesDownloader::startDownload()
 {
     setWindowTitle(i18nc("@title:window", "Download Required Model Files"));
-    setMinimumHeight(250);
-    setMinimumWidth(600);
+    setMinimumHeight(580);
+    setMinimumWidth(650);
 
     QWidget* const mainWidget = new QWidget(this);
     QVBoxLayout* const vBox   = new QVBoxLayout(mainWidget);
@@ -499,13 +499,13 @@ void FilesDownloader::slotFacesEnginePathChanged()
 {
     QString path = d->selector->fileDlgPath();
 
-    if (path.isEmpty())
-    {
-        return;
-    }
-
     while (!path.isEmpty() && path.endsWith(QLatin1Char('/')))
     {
+        if (path.length() == 1)
+        {
+            break;
+        }
+
         path.chop(1);
     }
 
@@ -610,17 +610,27 @@ void FilesDownloader::slotUpdateDownloadInfo()
                                     "The download requires %1 files with a size of %2.",
                                     d->total, sizeString));
 
-        d->loadLabel->setEnabled(true);
+        d->loadLabel->setVisible(true);
 
-        QFileInfo info(getFacesEnginePath());
-        d->buttons->button(QDialogButtonBox::Ok)->setEnabled(info.isDir() && info.isWritable());
+        QDir dir(getFacesEnginePath());
+
+        while (!dir.isRoot() && !dir.exists())
+        {
+            dir.cdUp();
+        }
+
+        QFileInfo info(dir.path());
+        d->buttons->button(QDialogButtonBox::Ok)->setEnabled(
+                                                             info.exists()                   &&
+                                                             info.isWritable()               &&
+                                                             (dir.path() != QLatin1String("."))
+                                                            );
     }
     else
     {
         d->sizeLabel->setText(i18n("All files for the selected features were found."));
 
-        d->loadLabel->setEnabled(false);
-        d->loadLabel->hide();
+        d->loadLabel->setVisible(false);
         d->buttons->button(QDialogButtonBox::Ok)->setEnabled(false);
     }
 }
