@@ -42,6 +42,11 @@ set(libdialogs_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/infodlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/libsinfodlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/libsinfodlg_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/libsinfodlg_features.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/libsinfodlg_libraries.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/libsinfodlg_buildtools.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/libsinfodlg_manifest.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/libsinfodlg_opencv.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/rawcameradlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/solidhardwaredlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dconfigdlg.cpp

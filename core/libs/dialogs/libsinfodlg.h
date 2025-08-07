@@ -47,6 +47,14 @@ protected:
     QTreeWidgetItem* m_libraries  = nullptr;
     QTreeWidgetItem* m_buildtools = nullptr;
 
+protected:
+
+    void populateFeatures();
+    void populateLibraries();
+    void populateBuildTools();
+    void populateManifest();
+    void populateOpenCV();
+
 private:
 
     class Private;

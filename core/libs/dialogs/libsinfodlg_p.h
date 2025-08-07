@@ -205,7 +205,6 @@ public:
 public:
 
     QString checkTriState(int value)                const;
-
     QString openCVBytesToStringRepr(size_t value)   const;
     QString openCVGetDeviceTypeString(const cv::ocl::Device& device);
 };
