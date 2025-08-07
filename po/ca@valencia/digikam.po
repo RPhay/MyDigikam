@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 02:03+0000\n"
+"POT-Creation-Date: 2025-08-07 19:47+0000\n"
 "PO-Revision-Date: 2025-08-06 08:47+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2659,7 +2659,7 @@ msgstr "A&juda"
 msgid "Main Toolbar"
 msgstr "Barra d'eines principal"
 
-#: core/app/main/main.cpp:229 core/app/views/stack/welcomepageview.cpp:235
+#: core/app/main/main.cpp:231 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2669,34 +2669,34 @@ msgstr "Barra d'eines principal"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:238 core/showfoto/main/main.cpp:213
+#: core/app/main/main.cpp:240 core/showfoto/main/main.cpp:215
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Josep M. Ferrer, Joan Maspons Ventura"
 
-#: core/app/main/main.cpp:239 core/showfoto/main/main.cpp:214
+#: core/app/main/main.cpp:241 core/showfoto/main/main.cpp:216
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com, joanmaspons@gmail.com"
 
-#: core/app/main/main.cpp:247
+#: core/app/main/main.cpp:249
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Obri el diàleg de la càmera al «camí»"
 
-#: core/app/main/main.cpp:250
+#: core/app/main/main.cpp:252
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Obri el diàleg de càmera per al dispositiu amb UDI de Solid «udi»"
 
-#: core/app/main/main.cpp:253
+#: core/app/main/main.cpp:255
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Detecta i obri automàticament una càmera gphoto2 connectada"
 
-#: core/app/main/main.cpp:255
+#: core/app/main/main.cpp:257
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2704,12 +2704,12 @@ msgstr ""
 "Inicia digiKam amb el fitxer de base de dades SQLite trobat en el directori "
 "«dir»"
 
-#: core/app/main/main.cpp:258
+#: core/app/main/main.cpp:260
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Inicia digiKam amb el fitxer de configuració «config»"
 
-#: core/app/main/main.cpp:291
+#: core/app/main/main.cpp:293
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2720,7 +2720,7 @@ msgstr ""
 "no està disponible. Instal·leu-lo.\n"
 "No hi ha cap connector de base de dades instal·lat en l'ordinador."
 
-#: core/app/main/main.cpp:300
+#: core/app/main/main.cpp:302
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2732,7 +2732,7 @@ msgstr ""
 "Els connectors de base de dades instal·lats en el vostre ordinador es "
 "llisten a continuació."
 
-#: core/app/main/main.cpp:344
+#: core/app/main/main.cpp:346
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -30122,7 +30122,7 @@ msgstr "No ho tornes a preguntar"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:179
+#: core/utilities/setup/downloader/filesdownloader.cpp:180
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -30255,7 +30255,7 @@ msgctxt "@title"
 msgid "Build Environment"
 msgstr "Entorn de construcció"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:86
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:90
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30263,7 +30263,7 @@ msgctxt "@info: git revision"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:89
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:93
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -37475,7 +37475,7 @@ msgstr ""
 "actualitzacions."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:153
+#: core/utilities/setup/downloader/filesdownloader.cpp:154
 #, kde-format
 msgid "Download"
 msgstr "Baixa"
@@ -50104,13 +50104,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Carpetes"
 
-#: core/showfoto/main/main.cpp:204
+#: core/showfoto/main/main.cpp:206
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:222
+#: core/showfoto/main/main.cpp:224
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
@@ -65164,69 +65164,69 @@ msgstr "Seleccioneu la categoria"
 msgid "Your collection will use this category:"
 msgstr "La col·lecció utilitzarà esta categoria:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:140
+#: core/utilities/setup/downloader/filesdownloader.cpp:141
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
 msgstr "Baixada dels fitxers de model necessaris"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:156
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #: core/utilities/setup/misc/systemsettingswidget.cpp:138
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr ""
 "Obri el directori local utilitzat per a l'emmagatzematge de fitxers de dades."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#: core/utilities/setup/downloader/filesdownloader.cpp:163
 #, kde-format
 msgid "Location of the face management model files:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:170
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
 #, fuzzy, kde-format
 #| msgid "Use Face Management feature"
 msgctxt "@title:window"
 msgid "Face Management Model Target"
 msgstr "Utilitza la característica de gestió de cares"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader.cpp:172
 #, fuzzy, kde-format
 #| msgid "Sets the target address to copy the items to."
 msgid "Sets the target address to download the face management model files to."
 msgstr "Establix l'adreça de destinació a on s'han de copiar els elements."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:173
+#: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, kde-format
 msgid "Use AI Auto-Tools features"
 msgstr "Utilitza característiques d'eines automàtiques d'IA"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:174
+#: core/utilities/setup/downloader/filesdownloader.cpp:175
 #, kde-format
 msgid "Use Face Management feature"
 msgstr "Utilitza la característica de gestió de cares"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:175
+#: core/utilities/setup/downloader/filesdownloader.cpp:176
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Utilitza la característica de detecció estètica"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:176
+#: core/utilities/setup/downloader/filesdownloader.cpp:177
 #, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Utilitza la característica d'assignació automàtica d'etiquetes"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:284
+#: core/utilities/setup/downloader/filesdownloader.cpp:285
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr "Tots els fitxers de model s'han descarregat correctament."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:293
+#: core/utilities/setup/downloader/filesdownloader.cpp:294
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "S'ha produït un error de baixada"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:294
+#: core/utilities/setup/downloader/filesdownloader.cpp:295
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65245,33 +65245,33 @@ msgstr ""
 "\n"
 "Podeu intentar-ho de nou o continuar la descàrrega en el següent inici."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:302
+#: core/utilities/setup/downloader/filesdownloader.cpp:303
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Torneu-ho a provar"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:440
+#: core/utilities/setup/downloader/filesdownloader.cpp:441
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "La suma de verificació no és correcta."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:464
+#: core/utilities/setup/downloader/filesdownloader.cpp:465
 #, kde-format
 msgid "File write error."
 msgstr "S'ha produït un error mentre s'escrivia en el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:471
+#: core/utilities/setup/downloader/filesdownloader.cpp:472
 #, kde-format
 msgid "File open error."
 msgstr "S'ha produït un error en obrir el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:486
+#: core/utilities/setup/downloader/filesdownloader.cpp:487
 #, kde-format
 msgid "File on the server is too large."
 msgstr "El fitxer que hi ha en el servidor és massa gran."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:592
+#: core/utilities/setup/downloader/filesdownloader.cpp:598
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -65288,7 +65288,7 @@ msgstr ""
 "d'eliminació d'ulls rojos requerix els fitxers de model de gestió de cares.</"
 "p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:597
+#: core/utilities/setup/downloader/filesdownloader.cpp:603
 #, fuzzy, kde-format
 #| msgctxt "%1: folder path"
 #| msgid ""
@@ -65312,19 +65312,19 @@ msgstr ""
 "p><p>Els fitxers es baixaran a «<i>%1</i>».</p><p><b>Heu de reiniciar "
 "digiKam després de baixar correctament els fitxers.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:604
+#: core/utilities/setup/downloader/filesdownloader.cpp:610
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "La baixada necessita %1 fitxers amb una mida de %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:612
+#: core/utilities/setup/downloader/filesdownloader.cpp:620
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""
 "S'han trobat tots els fitxers per a les característiques seleccionades."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:630
+#: core/utilities/setup/downloader/filesdownloader.cpp:638
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Neteja els fitxers de models AI/DNN no utilitzats…"

@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 02:03+0000\n"
+"POT-Creation-Date: 2025-08-07 19:47+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -2653,7 +2653,7 @@ msgstr "ヘルプ(&H)"
 msgid "Main Toolbar"
 msgstr "メインツールバー"
 
-#: core/app/main/main.cpp:229 core/app/views/stack/welcomepageview.cpp:235
+#: core/app/main/main.cpp:231 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2663,46 +2663,46 @@ msgstr "メインツールバー"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:238 core/showfoto/main/main.cpp:213
+#: core/app/main/main.cpp:240 core/showfoto/main/main.cpp:215
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Yukiko Bando"
 
-#: core/app/main/main.cpp:239 core/showfoto/main/main.cpp:214
+#: core/app/main/main.cpp:241 core/showfoto/main/main.cpp:216
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ybando@k6.dion.ne.jp"
 
-#: core/app/main/main.cpp:247
+#: core/app/main/main.cpp:249
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "カメラダイアログを \"path\" で開く"
 
-#: core/app/main/main.cpp:250
+#: core/app/main/main.cpp:252
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Solid UDI \"udi\" のデバイスのためにカメラダイアログを開く"
 
-#: core/app/main/main.cpp:253
+#: core/app/main/main.cpp:255
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "接続されている gphoto2 カメラを自動的に検出して開く"
 
-#: core/app/main/main.cpp:255
+#: core/app/main/main.cpp:257
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 "ディレクトリ \"dir\" にある SQLite データベースファイルで digiKam を起動"
 
-#: core/app/main/main.cpp:258
+#: core/app/main/main.cpp:260
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "設定ファイル \"config\" で digiKam を起動"
 
-#: core/app/main/main.cpp:291
+#: core/app/main/main.cpp:293
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2713,7 +2713,7 @@ msgstr ""
 "ンストールしてください。\n"
 "コンピュータにインストールされているデータベースプラグインはありません。"
 
-#: core/app/main/main.cpp:300
+#: core/app/main/main.cpp:302
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2725,7 +2725,7 @@ msgstr ""
 "コンピュータにインストールされているデータベースプラグインは以下のとおりで"
 "す。"
 
-#: core/app/main/main.cpp:344
+#: core/app/main/main.cpp:346
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -30506,7 +30506,7 @@ msgstr "次回から確認しない"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:179
+#: core/utilities/setup/downloader/filesdownloader.cpp:180
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -30644,7 +30644,7 @@ msgctxt "@title"
 msgid "Build Environment"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:86
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:90
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30652,7 +30652,7 @@ msgctxt "@info: git revision"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:89
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:93
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -38020,7 +38020,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:153
+#: core/utilities/setup/downloader/filesdownloader.cpp:154
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Download"
@@ -51693,13 +51693,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "フォルダ: "
 
-#: core/showfoto/main/main.cpp:204
+#: core/showfoto/main/main.cpp:206
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:222
+#: core/showfoto/main/main.cpp:224
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
@@ -67106,7 +67106,7 @@ msgstr "カテゴリを選択"
 msgid "Your collection will use this category:"
 msgstr "このカテゴリをコレクションに使用します:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:140
+#: core/utilities/setup/downloader/filesdownloader.cpp:141
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Download Required Files"
@@ -67114,59 +67114,59 @@ msgctxt "@title:window"
 msgid "Download Required Model Files"
 msgstr "必要なファイルをダウンロードする"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:156
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #: core/utilities/setup/misc/systemsettingswidget.cpp:138
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#: core/utilities/setup/downloader/filesdownloader.cpp:163
 #, kde-format
 msgid "Location of the face management model files:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:170
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
 #, fuzzy, kde-format
 #| msgid "Use Face Detection feature"
 msgctxt "@title:window"
 msgid "Face Management Model Target"
 msgstr "顔検出の機能を使用する"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader.cpp:172
 #, fuzzy, kde-format
 #| msgid "Set this option to display the item date."
 msgid "Sets the target address to download the face management model files to."
 msgstr "アイテムの日付を表示するには、このオプションを有効にします。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:173
+#: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use AI Auto-Tools features"
 msgstr "自動調整"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:174
+#: core/utilities/setup/downloader/filesdownloader.cpp:175
 #, fuzzy, kde-format
 #| msgid "Use Face Detection feature"
 msgid "Use Face Management feature"
 msgstr "顔検出の機能を使用する"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:175
+#: core/utilities/setup/downloader/filesdownloader.cpp:176
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:176
+#: core/utilities/setup/downloader/filesdownloader.cpp:177
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use AutoTags Assignment feature"
 msgstr "自動調整"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:284
+#: core/utilities/setup/downloader/filesdownloader.cpp:285
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:293
+#: core/utilities/setup/downloader/filesdownloader.cpp:294
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Download New"
@@ -67174,7 +67174,7 @@ msgctxt "@title:window"
 msgid "Download Error"
 msgstr "新しいものをダウンロード"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:294
+#: core/utilities/setup/downloader/filesdownloader.cpp:295
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -67186,35 +67186,35 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:302
+#: core/utilities/setup/downloader/filesdownloader.cpp:303
 #, fuzzy, kde-format
 #| msgid "Add film grain"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "フィルム粒子を加える"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:440
+#: core/utilities/setup/downloader/filesdownloader.cpp:441
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:464
+#: core/utilities/setup/downloader/filesdownloader.cpp:465
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:471
+#: core/utilities/setup/downloader/filesdownloader.cpp:472
 #, fuzzy, kde-format
 msgid "File open error."
 msgstr "エクスポート"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:486
+#: core/utilities/setup/downloader/filesdownloader.cpp:487
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "File on the server is too large."
 msgstr "タグをファイルに保存できませんでした。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:592
+#: core/utilities/setup/downloader/filesdownloader.cpp:598
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -67224,7 +67224,7 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:597
+#: core/utilities/setup/downloader/filesdownloader.cpp:603
 #, kde-format
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
@@ -67234,18 +67234,18 @@ msgid ""
 "downloading the files.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:604
+#: core/utilities/setup/downloader/filesdownloader.cpp:610
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:612
+#: core/utilities/setup/downloader/filesdownloader.cpp:620
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:630
+#: core/utilities/setup/downloader/filesdownloader.cpp:638
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""

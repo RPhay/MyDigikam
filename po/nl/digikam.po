@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 02:03+0000\n"
-"PO-Revision-Date: 2025-08-06 10:11+0200\n"
+"POT-Creation-Date: 2025-08-07 19:47+0000\n"
+"PO-Revision-Date: 2025-08-07 13:32+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2707,7 +2707,7 @@ msgstr "&Help"
 msgid "Main Toolbar"
 msgstr "Hoofdwerkbalk"
 
-#: core/app/main/main.cpp:229 core/app/views/stack/welcomepageview.cpp:235
+#: core/app/main/main.cpp:231 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2717,7 +2717,7 @@ msgstr "Hoofdwerkbalk"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:238 core/showfoto/main/main.cpp:213
+#: core/app/main/main.cpp:240 core/showfoto/main/main.cpp:215
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -2725,39 +2725,39 @@ msgstr ""
 "Jasper van der Marel,Rinse de Vries,Sander Devrieze,Freek de Kruijf - 2006 t/"
 "m 2022"
 
-#: core/app/main/main.cpp:239 core/showfoto/main/main.cpp:214
+#: core/app/main/main.cpp:241 core/showfoto/main/main.cpp:216
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ",rinsedevries@kde.nl,s.devrieze@pandora.be,freekdekruijf@kde.nl"
 
-#: core/app/main/main.cpp:247
+#: core/app/main/main.cpp:249
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Cameradialoog openen op \"pad\""
 
-#: core/app/main/main.cpp:250
+#: core/app/main/main.cpp:252
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Open de cameradialoog voor het apparaat met Solid-UDI \"udi\""
 
-#: core/app/main/main.cpp:253
+#: core/app/main/main.cpp:255
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Een verbonden gphoto2-camera automatisch vinden en openen"
 
-#: core/app/main/main.cpp:255
+#: core/app/main/main.cpp:257
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "digiKam starten met het SQLite databasebestand uit de map \"dir\""
 
-#: core/app/main/main.cpp:258
+#: core/app/main/main.cpp:260
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "digiKam starten met het configuratiebestand \"config\""
 
-#: core/app/main/main.cpp:291
+#: core/app/main/main.cpp:293
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2768,7 +2768,7 @@ msgstr ""
 "installeren.\n"
 "Er is geen geïnstalleerde database-plugin op uw computer."
 
-#: core/app/main/main.cpp:300
+#: core/app/main/main.cpp:302
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2779,7 +2779,7 @@ msgstr ""
 "installeren.\n"
 "Geïnstalleerde database-plugins zijn:"
 
-#: core/app/main/main.cpp:344
+#: core/app/main/main.cpp:346
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -30138,7 +30138,7 @@ msgstr "Deze vraag niet meer stellen"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:179
+#: core/utilities/setup/downloader/filesdownloader.cpp:180
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -30271,16 +30271,14 @@ msgctxt "@title"
 msgid "Build Environment"
 msgstr "Bouwomgeving"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:86
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:90
+#, kde-format
 msgctxt "@info: git revision"
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:89
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:93
+#, kde-format
 msgctxt "@info: git branch"
 msgid "Unknown"
 msgstr "Onbekend"
@@ -30304,8 +30302,7 @@ msgid "Libraries"
 msgstr "Bibliotheken"
 
 #: core/libs/dialogs/libsinfodlg_libraries.cpp:114
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: libx265 version"
 msgid "Unknown"
 msgstr "Onbekend"
@@ -37444,7 +37441,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "De pagina instellingendialoog openen om bijwerken te configureren."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:153
+#: core/utilities/setup/downloader/filesdownloader.cpp:154
 #, kde-format
 msgid "Download"
 msgstr "Downloaden"
@@ -50006,13 +50003,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Mappen"
 
-#: core/showfoto/main/main.cpp:204
+#: core/showfoto/main/main.cpp:206
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:222
+#: core/showfoto/main/main.cpp:224
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
@@ -65031,68 +65028,68 @@ msgstr "Categorie selecteren"
 msgid "Your collection will use this category:"
 msgstr "Uw verzameling zal deze categorie gebruiken:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:140
+#: core/utilities/setup/downloader/filesdownloader.cpp:141
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
 msgstr "Vereiste modelbestanden downloaden"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:156
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #: core/utilities/setup/misc/systemsettingswidget.cpp:138
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr "Lokale map openen gebruikt voor de opslag van gegevensbestanden."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#: core/utilities/setup/downloader/filesdownloader.cpp:163
 #, kde-format
 msgid "Location of the face management model files:"
-msgstr ""
-
-#: core/utilities/setup/downloader/filesdownloader.cpp:170
-#, fuzzy, kde-format
-#| msgid "Use Face Management feature"
-msgctxt "@title:window"
-msgid "Face Management Model Target"
-msgstr "Functie beheer van gezichten gebruiken"
+msgstr "Locatie van de modelbestanden voor het beheer van gezichten:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:171
-#, fuzzy, kde-format
-#| msgid "Sets the target address to copy the items to."
-msgid "Sets the target address to download the face management model files to."
-msgstr "Stelt het doeladres in om de items naartoe te kopiëren."
+#, kde-format
+msgctxt "@title:window"
+msgid "Face Management Model Target"
+msgstr "Modeldoel van beheer van gezichten"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:173
+#: core/utilities/setup/downloader/filesdownloader.cpp:172
+#, kde-format
+msgid "Sets the target address to download the face management model files to."
+msgstr ""
+"Stelt het doeladres in om de modelbestanden van het beheer van gezichten "
+"naartoe te downloaden."
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, kde-format
 msgid "Use AI Auto-Tools features"
 msgstr "Functie automatische AI-hulpmiddelen gebruiken"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:174
+#: core/utilities/setup/downloader/filesdownloader.cpp:175
 #, kde-format
 msgid "Use Face Management feature"
 msgstr "Functie beheer van gezichten gebruiken"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:175
+#: core/utilities/setup/downloader/filesdownloader.cpp:176
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Functie esthetische detectie gebruiken"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:176
+#: core/utilities/setup/downloader/filesdownloader.cpp:177
 #, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Functie automatisch toekennen van tags gebruiken"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:284
+#: core/utilities/setup/downloader/filesdownloader.cpp:285
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr "Alle modelbestanden zijn met succes gedownload."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:293
+#: core/utilities/setup/downloader/filesdownloader.cpp:294
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Fout bij downloaden"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:294
+#: core/utilities/setup/downloader/filesdownloader.cpp:295
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65111,33 +65108,33 @@ msgstr ""
 "\n"
 "U kunt het opnieuw proberen of doorgaan met downloaden bij de volgende start."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:302
+#: core/utilities/setup/downloader/filesdownloader.cpp:303
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Opnieuw proberen"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:440
+#: core/utilities/setup/downloader/filesdownloader.cpp:441
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Controlesom is onjuist."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:464
+#: core/utilities/setup/downloader/filesdownloader.cpp:465
 #, kde-format
 msgid "File write error."
 msgstr "Schrijffout bestand."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:471
+#: core/utilities/setup/downloader/filesdownloader.cpp:472
 #, kde-format
 msgid "File open error."
 msgstr "Fout bij openen van bestand."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:486
+#: core/utilities/setup/downloader/filesdownloader.cpp:487
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Bestand op de server is te groot."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:592
+#: core/utilities/setup/downloader/filesdownloader.cpp:598
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -65154,16 +65151,8 @@ msgstr ""
 "voor verwijderen van rode ogen vereist modelbestanden voor beheer van "
 "gezichten.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:597
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>Some required files are missing. Click “Download” to start installing "
-#| "the necessary model files. If you close this dialog you will be prompted "
-#| "again the next time you launch digiKam. The selected features will not "
-#| "function without these files.</p><p>The files will be downloaded to \"<i>"
-#| "%1</i>\".</p><p><b>You must restart digiKam after successfully "
-#| "downloading the files.</b></p>"
+#: core/utilities/setup/downloader/filesdownloader.cpp:603
+#, kde-format
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
 "necessary model files. If you close this dialog you will be prompted again "
@@ -65175,22 +65164,21 @@ msgstr ""
 "installeren van de noodzakelijke modelbestanden te starten. Als u deze "
 "dialoog sluit zult u opnieuw gevraagd worden bij de volgende keer dat u "
 "digiKam start. De geselecteerde functies zullen niet functioneren zonder "
-"deze bestanden.</p><p>De bestanden zullen gedownload worden in \"<i>%1</i>\"."
-"</p><p><b>U moet digiKam opnieuw starten na met succes downloaden van de "
-"bestanden.</b></p>"
+"deze bestanden.</p><p><b>U moet digiKam opnieuw starten na met succes "
+"downloaden van de bestanden.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:604
+#: core/utilities/setup/downloader/filesdownloader.cpp:610
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Het downloaden vereist %1 bestanden met een grootte van %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:612
+#: core/utilities/setup/downloader/filesdownloader.cpp:620
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "Alle bestanden van de geselecteerde functies zijn gevonden."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:630
+#: core/utilities/setup/downloader/filesdownloader.cpp:638
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Ongebruikte AI/DNN-modelbestanden opschonen..."

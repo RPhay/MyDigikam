@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 02:03+0000\n"
-"PO-Revision-Date: 2025-08-06 06:59+0200\n"
+"POT-Creation-Date: 2025-08-07 19:47+0000\n"
+"PO-Revision-Date: 2025-08-07 06:54+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2714,7 +2714,7 @@ msgstr "Pomoč"
 msgid "Main Toolbar"
 msgstr "Glavna orodna vrstica"
 
-#: core/app/main/main.cpp:229 core/app/views/stack/welcomepageview.cpp:235
+#: core/app/main/main.cpp:231 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2724,13 +2724,13 @@ msgstr "Glavna orodna vrstica"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:238 core/showfoto/main/main.cpp:213
+#: core/app/main/main.cpp:240 core/showfoto/main/main.cpp:215
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Gregor Rakar,Mihael Simonič,Andrej Mernik,Matjaž Jeran"
 
-#: core/app/main/main.cpp:239 core/showfoto/main/main.cpp:214
+#: core/app/main/main.cpp:241 core/showfoto/main/main.cpp:216
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -2738,22 +2738,22 @@ msgstr ""
 "gregor.rakar@kiss.si,smihael@gmail.com,andrejm@ubuntu.si,matjaz.jeran@amis."
 "net"
 
-#: core/app/main/main.cpp:247
+#: core/app/main/main.cpp:249
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Odpri pogovorno okno za fotoaparat na \"path\""
 
-#: core/app/main/main.cpp:250
+#: core/app/main/main.cpp:252
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Odpri pogovorno okno za napravo z Solid UDI \"udi\""
 
-#: core/app/main/main.cpp:253
+#: core/app/main/main.cpp:255
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Samodejno zaznaj in odpri povezan fotoaparat gphoto2"
 
-#: core/app/main/main.cpp:255
+#: core/app/main/main.cpp:257
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2761,12 +2761,12 @@ msgstr ""
 "Zaženi digikam s podatkovno zbirko SQLite v datoteki, ki se nahaja v mapi "
 "»dir«"
 
-#: core/app/main/main.cpp:258
+#: core/app/main/main.cpp:260
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Zaženi digikam z nastavitveno datoteko \"config\""
 
-#: core/app/main/main.cpp:291
+#: core/app/main/main.cpp:293
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2777,7 +2777,7 @@ msgstr ""
 "namestite ga.\n"
 "Na vašem računalniku ni nameščen noben vstavek za podatkovne zbirke."
 
-#: core/app/main/main.cpp:300
+#: core/app/main/main.cpp:302
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2788,7 +2788,7 @@ msgstr ""
 "Prosim namestite ga.\n"
 "Nameščeni vstavki so na spodnjem seznamu."
 
-#: core/app/main/main.cpp:344
+#: core/app/main/main.cpp:346
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -29847,7 +29847,7 @@ msgstr "Ne vprašaj več"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:179
+#: core/utilities/setup/downloader/filesdownloader.cpp:180
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -29980,16 +29980,14 @@ msgctxt "@title"
 msgid "Build Environment"
 msgstr "Okolje izgradnje"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:86
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:90
+#, kde-format
 msgctxt "@info: git revision"
 msgid "Unknown"
 msgstr "Neznano"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:89
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:93
+#, kde-format
 msgctxt "@info: git branch"
 msgid "Unknown"
 msgstr "Neznano"
@@ -30013,8 +30011,7 @@ msgid "Libraries"
 msgstr "Knjižnice"
 
 #: core/libs/dialogs/libsinfodlg_libraries.cpp:114
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: libx265 version"
 msgid "Unknown"
 msgstr "Neznano"
@@ -37114,7 +37111,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "Odpri pogovorno okno nastavitev za nastavljanje posodobitev."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:153
+#: core/utilities/setup/downloader/filesdownloader.cpp:154
 #, kde-format
 msgid "Download"
 msgstr "Prenesi sem"
@@ -49689,13 +49686,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Mape"
 
-#: core/showfoto/main/main.cpp:204
+#: core/showfoto/main/main.cpp:206
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:222
+#: core/showfoto/main/main.cpp:224
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
@@ -64604,69 +64601,67 @@ msgstr "Izberite kategorijo"
 msgid "Your collection will use this category:"
 msgstr "Vaša nova zbirka bo uporabljala to kategorijo:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:140
+#: core/utilities/setup/downloader/filesdownloader.cpp:141
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
 msgstr "Prejmi zahtevane datoteke modela"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:156
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #: core/utilities/setup/misc/systemsettingswidget.cpp:138
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr ""
 "Odpri lokalni imenik, ki se uporablja za shranjevanje podatkovnih datotek."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#: core/utilities/setup/downloader/filesdownloader.cpp:163
 #, kde-format
 msgid "Location of the face management model files:"
-msgstr ""
-
-#: core/utilities/setup/downloader/filesdownloader.cpp:170
-#, fuzzy, kde-format
-#| msgid "Use Face Management feature"
-msgctxt "@title:window"
-msgid "Face Management Model Target"
-msgstr "Uporabi zmožnost upravljanja obrazov"
+msgstr "Lokacija datotek modela upravljanja obrazov:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:171
-#, fuzzy, kde-format
-#| msgid "Sets the target address to copy the items to."
-msgid "Sets the target address to download the face management model files to."
-msgstr "Nastavi ciljni naslov za kopiranje predmetov."
+#, kde-format
+msgctxt "@title:window"
+msgid "Face Management Model Target"
+msgstr "Cilj modela upravljanja obrazov"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:173
+#: core/utilities/setup/downloader/filesdownloader.cpp:172
+#, kde-format
+msgid "Sets the target address to download the face management model files to."
+msgstr "Nastavi ciljni naslov za prenos datotek modela upravljanja obrazov."
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, kde-format
 msgid "Use AI Auto-Tools features"
 msgstr "Uporabi zmožnosti samodejnih orodij umetne inteligence"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:174
+#: core/utilities/setup/downloader/filesdownloader.cpp:175
 #, kde-format
 msgid "Use Face Management feature"
 msgstr "Uporabi zmožnost upravljanja obrazov"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:175
+#: core/utilities/setup/downloader/filesdownloader.cpp:176
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Uporabi zmožnost estetske zaznave"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:176
+#: core/utilities/setup/downloader/filesdownloader.cpp:177
 #, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Uporabi zmožnosti dodeljevanja samodejnih oznak"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:284
+#: core/utilities/setup/downloader/filesdownloader.cpp:285
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr "Vse datoteke modela so bile uspešno prenesene."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:293
+#: core/utilities/setup/downloader/filesdownloader.cpp:294
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Napaka prenosa"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:294
+#: core/utilities/setup/downloader/filesdownloader.cpp:295
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -64685,33 +64680,33 @@ msgstr ""
 "\n"
 "Lahko ponovite ali nadaljujete prenos po novem zagonu."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:302
+#: core/utilities/setup/downloader/filesdownloader.cpp:303
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Poskusite znova"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:440
+#: core/utilities/setup/downloader/filesdownloader.cpp:441
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Kontrolna vsota ni pravilna."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:464
+#: core/utilities/setup/downloader/filesdownloader.cpp:465
 #, kde-format
 msgid "File write error."
 msgstr "Napaka pri pisanju datoteke."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:471
+#: core/utilities/setup/downloader/filesdownloader.cpp:472
 #, kde-format
 msgid "File open error."
 msgstr "Napaka pri odpiranju datoteke."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:486
+#: core/utilities/setup/downloader/filesdownloader.cpp:487
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Datoteka na strežniku je prevelika."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:592
+#: core/utilities/setup/downloader/filesdownloader.cpp:598
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -64727,16 +64722,8 @@ msgstr ""
 "ki jih želite omogočiti.</p><p><b>Opomba:</b> Orodje za odstranjevanje "
 "rdečih oči zahteva datoteke modela upravljanja obraza.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:597
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>Some required files are missing. Click “Download” to start installing "
-#| "the necessary model files. If you close this dialog you will be prompted "
-#| "again the next time you launch digiKam. The selected features will not "
-#| "function without these files.</p><p>The files will be downloaded to \"<i>"
-#| "%1</i>\".</p><p><b>You must restart digiKam after successfully "
-#| "downloading the files.</b></p>"
+#: core/utilities/setup/downloader/filesdownloader.cpp:603
+#, kde-format
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
 "necessary model files. If you close this dialog you will be prompted again "
@@ -64747,21 +64734,21 @@ msgstr ""
 "<p>Manjka nekaj zahtevanih datotek. Kliknite \"Prenesi\" za začetek "
 "namestitve potrebnih datotek modela. Če zaprete to pogovorno okno, boste "
 "znova pozvani naslednjič, ko zaženete digiKam. Izbrane zmožnosti ne bodo "
-"delovale brez teh datotek.</p><p>Datoteke bodo prenesene v \"<i>%1</i>\".</"
-"p><p><b>Po uspešnem prenosu datotek morate znova zagnati digiKam.</b></p>"
+"delovale brez teh datotek.</p><p><b>Po uspešnem prenosu datotek morate znova "
+"zagnati digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:604
+#: core/utilities/setup/downloader/filesdownloader.cpp:610
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Prenos zahteva %1 datotek z velikostjo %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:612
+#: core/utilities/setup/downloader/filesdownloader.cpp:620
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "Vse datoteke za izbrane zmožnosti so bile najdene."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:630
+#: core/utilities/setup/downloader/filesdownloader.cpp:638
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Počisti neuporabljene datoteke modela AI/DNN..."
