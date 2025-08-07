@@ -192,6 +192,10 @@ elif [[ $MAJOR_OSX_VERSION == "14" ]]
     then OSX_CODE_NAME="Sonoma"
 fi
 
+elif [[ $MAJOR_OSX_VERSION == "15" ]]
+    then OSX_CODE_NAME="Sequoia"
+fi
+
 echo -e "---------- Detected OSX version $MAJOR_OSX_VERSION.$MINOR_OSX_VERSION and code name $OSX_CODE_NAME"
 
 }
