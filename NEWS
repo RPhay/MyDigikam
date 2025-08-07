@@ -68,7 +68,7 @@ BUGFIXES:
 049 ==> 505486 - Loading HEIC photos from SMB shares is very slow.
 050 ==> 453768 - File import error when path > MAX_PATH(260).
 051 ==> 507909 - Change location of AI model files download.
-052 ==> 
+052 ==> 507953 - Building CXX object core/.../digikam_version.cpp.o failed with Qt5.
 053 ==> 
 054 ==> 
 055 ==> 
