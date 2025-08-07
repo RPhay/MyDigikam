@@ -610,8 +610,6 @@ void FilesDownloader::slotUpdateDownloadInfo()
                                     "The download requires %1 files with a size of %2.",
                                     d->total, sizeString));
 
-        d->loadLabel->setVisible(true);
-
         QDir dir(getFacesEnginePath());
 
         while (!dir.isRoot() && !dir.exists())
@@ -620,6 +618,7 @@ void FilesDownloader::slotUpdateDownloadInfo()
         }
 
         QFileInfo info(dir.path());
+        d->loadLabel->setForegroundRole(foregroundRole());
         d->buttons->button(QDialogButtonBox::Ok)->setEnabled(
                                                              info.exists()                   &&
                                                              info.isWritable()               &&
@@ -630,7 +629,7 @@ void FilesDownloader::slotUpdateDownloadInfo()
     {
         d->sizeLabel->setText(i18n("All files for the selected features were found."));
 
-        d->loadLabel->setVisible(false);
+        d->loadLabel->setForegroundRole(backgroundRole());
         d->buttons->button(QDialogButtonBox::Ok)->setEnabled(false);
     }
 }
