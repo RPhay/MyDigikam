@@ -190,7 +190,6 @@ elif [[ $MAJOR_OSX_VERSION == "13" ]]
 
 elif [[ $MAJOR_OSX_VERSION == "14" ]]
     then OSX_CODE_NAME="Sonoma"
-fi
 
 elif [[ $MAJOR_OSX_VERSION == "15" ]]
     then OSX_CODE_NAME="Sequoia"
