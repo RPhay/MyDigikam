@@ -16,7 +16,6 @@
 
 // Qt includes
 
-#include <QDir>
 #include <QSettings>
 #include <QStandardPaths>
 #include <QNetworkProxy>
@@ -34,7 +33,7 @@ SystemSettings::SystemSettings(const QString& name)
     if (!name.isEmpty())
     {
         m_path = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) +
-                 QDir::separator() + name + QLatin1String("_systemrc");
+                 QLatin1Char('/') + name + QLatin1String("_systemrc");
     }
 
     readSettings();
