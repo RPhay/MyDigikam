@@ -119,7 +119,7 @@ void SystemSettings::readSettings()
         dataPath        += QLatin1String("/digikam/facesengine");
     }
 
-    modelDataPath        = settings.value(QLatin1String("modelDataPath"),    dataPath).toString();
+    facesEnginePath      = settings.value(QLatin1String("facesEnginePath"),   dataPath).toString();
 
     // Proxy Settings
 
@@ -209,7 +209,7 @@ void SystemSettings::saveSettings()
 
 #endif
 
-    settings.setValue(QLatin1String("modelDataPath"),     modelDataPath);
+    settings.setValue(QLatin1String("facesEnginePath"),   facesEnginePath);
 
     settings.setValue(QLatin1String("proxyUrl"),          proxyUrl);
     settings.setValue(QLatin1String("proxyPort"),         proxyPort);
@@ -229,7 +229,7 @@ void SystemSettings::saveSettings()
     settings.endGroup();
 }
 
-QString SystemSettings::getModelDataPath() const
+QString SystemSettings::getFacesEnginePath() const
 {
     // Check if Faces Engine model data already exists in the system.
 
@@ -237,12 +237,12 @@ QString SystemSettings::getModelDataPath() const
                                              QLatin1String("digikam/facesengine"),
                                              QStandardPaths::LocateDirectory);
 
-    if (!sysPath.isEmpty() && (sysPath == modelDataPath))
+    if (!sysPath.isEmpty() && (sysPath == facesEnginePath))
     {
         return sysPath;
     }
 
-    return modelDataPath;
+    return facesEnginePath;
 }
 
 } // namespace Digikam

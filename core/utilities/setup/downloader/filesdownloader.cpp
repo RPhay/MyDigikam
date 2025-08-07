@@ -228,10 +228,10 @@ void FilesDownloader::startDownload()
     }
 
     connect(d->selector->lineEdit(), SIGNAL(textEdited(QString)),
-            this, SLOT(slotModelDataPathChanged()));
+            this, SLOT(slotFacesEnginePathChanged()));
 
     connect(d->selector, SIGNAL(signalUrlSelected(QUrl)),
-            this, SLOT(slotModelDataPathChanged()));
+            this, SLOT(slotFacesEnginePathChanged()));
 
     connect(d->aiAutoToolsCheck, SIGNAL(toggled(bool)),
             this, SLOT(slotUpdateDownloadInfo()));
@@ -495,7 +495,7 @@ void FilesDownloader::slotDownloadProgress(qint64 bytesReceived, qint64 bytesTot
     d->progress->setValue(bytesReceived);
 }
 
-void FilesDownloader::slotModelDataPathChanged()
+void FilesDownloader::slotFacesEnginePathChanged()
 {
     QString path = d->selector->fileDlgPath();
 
@@ -511,7 +511,7 @@ void FilesDownloader::slotModelDataPathChanged()
 
     {
         SystemSettings system(QLatin1String("digikam"));
-        system.modelDataPath = path;
+        system.facesEnginePath = path;
         system.saveSettings();
     }
 
@@ -527,7 +527,7 @@ QString FilesDownloader::getFacesEnginePath()
 {
     SystemSettings system(QLatin1String("digikam"));
 
-    return system.getModelDataPath();
+    return system.getFacesEnginePath();
 }
 
 void FilesDownloader::slotHelp()

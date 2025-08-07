@@ -100,7 +100,7 @@ private Q_SLOTS:
     void slotUpdateDownloadInfo();
     void slotDownloaded(QNetworkReply* reply);
     void slotDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
-    void slotModelDataPathChanged();
+    void slotFacesEnginePathChanged();
     void slotOpenLocalRepo();
 
 private:

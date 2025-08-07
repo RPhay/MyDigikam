@@ -138,7 +138,7 @@ bool AestheticDetector::s_loadModel()
         }
 
         SystemSettings system(QLatin1String("digikam"));
-        QString appPath = system.getModelDataPath();
+        QString appPath = system.getFacesEnginePath();
 
         QString model   = QLatin1String("weights_inceptionv3_299.pb");
         QString nnmodel = appPath + QLatin1Char('/') + model;

@@ -55,7 +55,7 @@ bool DNNModelBase::checkFilename() const
 const QString DNNModelBase::getModelPath() const
 {
     SystemSettings system(QLatin1String("digikam"));
-    QString appPath = system.getModelDataPath();
+    QString appPath = system.getFacesEnginePath();
 
     if (!appPath.isEmpty())
     {

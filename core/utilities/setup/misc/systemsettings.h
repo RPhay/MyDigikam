@@ -46,7 +46,7 @@ public:
 public:
 
     void    saveSettings();
-    QString getModelDataPath() const;
+    QString getFacesEnginePath() const;
 
 public:
 
@@ -78,7 +78,7 @@ public:
 
     // Faces Engine path.
 
-    QString modelDataPath;
+    QString facesEnginePath;
 
     // Proxy Settings.
 
