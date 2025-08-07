@@ -128,43 +128,8 @@ void SystemSettings::readSettings()
     proxyPass            = settings.value(QLatin1String("proxyPass"),         QString()).toString();
     proxyType            = settings.value(QLatin1String("proxyType"),         HttpProxy).toInt();
     proxyAuth            = settings.value(QLatin1String("proxyAuth"),         false).toBool();
+
     settings.endGroup();
-
-    QNetworkProxy proxy;
-
-    // Make sure that no proxy is used for an empty string or the default value:
-
-    if (proxyUrl.isEmpty() || (proxyUrl == QLatin1String("http://")))
-    {
-        proxy.setType(QNetworkProxy::NoProxy);
-    }
-    else
-    {
-        if      (proxyType == Socks5Proxy)
-        {
-            proxy.setType(QNetworkProxy::Socks5Proxy);
-        }
-        else if (proxyType == HttpProxy)
-        {
-            proxy.setType(QNetworkProxy::HttpProxy);
-        }
-        else
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Unknown proxy type! Using Http Proxy instead.";
-            proxy.setType(QNetworkProxy::HttpProxy);
-        }
-    }
-
-    proxy.setHostName(proxyUrl);
-    proxy.setPort(proxyPort);
-
-    if (proxyAuth)
-    {
-        proxy.setUser(proxyUser);
-        proxy.setPassword(proxyPass);
-    }
-
-    QNetworkProxy::setApplicationProxy(proxy);
 }
 
 void SystemSettings::saveSettings()
@@ -226,6 +191,45 @@ void SystemSettings::saveSettings()
     }
 
     settings.endGroup();
+}
+
+void SystemSettings::applyProxySettings()
+{
+    QNetworkProxy proxy;
+
+    // Make sure that no proxy is used for an empty string or the default value:
+
+    if (proxyUrl.isEmpty() || (proxyUrl == QLatin1String("http://")))
+    {
+        proxy.setType(QNetworkProxy::NoProxy);
+    }
+    else
+    {
+        if      (proxyType == Socks5Proxy)
+        {
+            proxy.setType(QNetworkProxy::Socks5Proxy);
+        }
+        else if (proxyType == HttpProxy)
+        {
+            proxy.setType(QNetworkProxy::HttpProxy);
+        }
+        else
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Unknown proxy type! Using Http Proxy instead.";
+            proxy.setType(QNetworkProxy::HttpProxy);
+        }
+    }
+
+    proxy.setHostName(proxyUrl);
+    proxy.setPort(proxyPort);
+
+    if (proxyAuth)
+    {
+        proxy.setUser(proxyUser);
+        proxy.setPassword(proxyPass);
+    }
+
+    QNetworkProxy::setApplicationProxy(proxy);
 }
 
 QString SystemSettings::getFacesEnginePath() const

@@ -194,6 +194,8 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     delayForRemoteDebuging();
 
+    system.applyProxySettings();
+
     digikamSetDebugFilterRules(system.enableLogging);
 
 #ifdef HAVE_IMAGE_MAGICK

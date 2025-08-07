@@ -46,6 +46,7 @@ public:
 public:
 
     void    saveSettings();
+    void    applyProxySettings();
     QString getFacesEnginePath() const;
 
 public:

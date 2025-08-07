@@ -338,6 +338,7 @@ void SystemSettingsWidget::saveSettings()
     }
 
     system.saveSettings();
+    system.applyProxySettings();
 }
 
 void SystemSettingsWidget::slotBinaryDownload()
