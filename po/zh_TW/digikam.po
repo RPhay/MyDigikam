@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 02:09+0000\n"
+"POT-Creation-Date: 2025-08-07 02:03+0000\n"
 "PO-Revision-Date: 2025-07-03 23:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2763,53 +2763,22 @@ msgstr "Raw 影像 (%1)"
 msgid "All supported files (%1)"
 msgstr "所有支援的檔案 (%1)"
 
-#: core/app/utils/digikam_version.cpp:63
+#: core/app/utils/digikam_version.cpp:60
 #, kde-format
 msgid "IRC: "
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:66
+#: core/app/utils/digikam_version.cpp:63
 #, kde-format
 msgid "Feedback: "
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:69
+#: core/app/utils/digikam_version.cpp:66
 #, fuzzy, kde-format
 #| msgctxt "type is a document"
 #| msgid "Document"
 msgid "Documentation: "
 msgstr "文件"
-
-#: core/app/utils/digikam_version.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "File Date"
-msgid "Build Date: "
-msgstr "檔案日期"
-
-#: core/app/utils/digikam_version.cpp:75
-#, fuzzy, kde-format
-#| msgid "Target"
-msgid "Build Target: "
-msgstr "目標"
-
-#: core/app/utils/digikam_version.cpp:78
-#, fuzzy, kde-format
-#| msgid "Unsupported Architecture: %1"
-msgid "Build Architecture: "
-msgstr "不支援的系統架構：%1"
-
-#: core/app/utils/digikam_version.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@label: color properties"
-#| msgid "Std. deviation: "
-msgid "Git Revision: "
-msgstr "標準差："
-
-#: core/app/utils/digikam_version.cpp:98
-#, kde-format
-msgid "Git Branch: "
-msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
@@ -4423,8 +4392,9 @@ msgstr "視訊解碼器"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:571 core/libs/dialogs/libsinfodlg.cpp:577
-#: core/libs/dialogs/libsinfodlg.cpp:652
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:69
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:75
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:150
 #, kde-format
 msgid "no entry"
 msgstr "無項目"
@@ -29726,7 +29696,7 @@ msgstr "不要再詢問"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader.cpp:179
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -29831,7 +29801,7 @@ msgstr "<i>影格率：</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>影像編解碼器：</i>"
 
-#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:185
+#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:24
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -29858,19 +29828,30 @@ msgstr "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p>"
 msgid "Items List"
 msgstr "影像歷史紀錄"
 
-#: core/libs/dialogs/libsinfodlg.cpp:188
-#, kde-format
-msgctxt "@item: component is supported/available"
-msgid "Yes"
-msgstr "是"
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:22
+#, fuzzy, kde-format
+#| msgid "Profile Version"
+msgctxt "@title"
+msgid "Build Environment"
+msgstr "描述檔版本"
 
-#: core/libs/dialogs/libsinfodlg.cpp:189
-#, kde-format
-msgctxt "@item: component is not available/supported"
-msgid "No"
-msgstr "否"
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:86
+#, fuzzy, kde-format
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: git revision"
+msgid "Unknown"
+msgstr "不明"
 
-#: core/libs/dialogs/libsinfodlg.cpp:203
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: git branch"
+msgid "Unknown"
+msgstr "不明"
+
+#: core/libs/dialogs/libsinfodlg_features.cpp:24
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -29878,57 +29859,64 @@ msgctxt "@title"
 msgid "Features"
 msgstr "專題"
 
-#: core/libs/dialogs/libsinfodlg.cpp:232
+#: core/libs/dialogs/libsinfodlg_features.cpp:93
+#, kde-format
+msgctxt "@item: information about memory"
+msgid "Unknown"
+msgstr "不明"
+
+#: core/libs/dialogs/libsinfodlg_libraries.cpp:22
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "相簿櫃"
 
-#: core/libs/dialogs/libsinfodlg.cpp:335
-#, kde-format
-msgctxt "@info: version"
-msgid "Unknown"
-msgstr "不明"
-
-#: core/libs/dialogs/libsinfodlg.cpp:422
+#: core/libs/dialogs/libsinfodlg_libraries.cpp:114
 #, fuzzy, kde-format
-#| msgid "Profile Version"
-msgctxt "@title"
-msgid "Build Environment"
-msgstr "描述檔版本"
-
-#: core/libs/dialogs/libsinfodlg.cpp:460
-#, kde-format
-msgctxt "@item: information about memory"
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: libx265 version"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/libs/dialogs/libsinfodlg.cpp:490
+#: core/libs/dialogs/libsinfodlg_manifest.cpp:43
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:524
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:22
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV 設定"
 
-#: core/libs/dialogs/libsinfodlg.cpp:720
+#: core/libs/dialogs/libsinfodlg_p.cpp:21
+#, kde-format
+msgctxt "@item: component is supported/available"
+msgid "Yes"
+msgstr "是"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:22
+#, kde-format
+msgctxt "@item: component is not available/supported"
+msgid "No"
+msgstr "否"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:30
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "是"
 
-#: core/libs/dialogs/libsinfodlg.cpp:725
+#: core/libs/dialogs/libsinfodlg_p.cpp:35
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "否"
 
-#: core/libs/dialogs/libsinfodlg.cpp:730
+#: core/libs/dialogs/libsinfodlg_p.cpp:40
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -64521,42 +64509,60 @@ msgstr "下載需要的檔案"
 msgid "Open local directory used for the data files storage."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:165
+#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#, kde-format
+msgid "Location of the face management model files:"
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:170
+#, fuzzy, kde-format
+#| msgid "Use Face Detection feature"
+msgctxt "@title:window"
+msgid "Face Management Model Target"
+msgstr "使用臉孔偵測功能"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#, fuzzy, kde-format
+#| msgid "Set this option to display the item date."
+msgid "Sets the target address to download the face management model files to."
+msgstr "設定此選項會顯示項目日期。"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:173
 #, fuzzy, kde-format
 #| msgid "Use Auto Tags Assignment feature"
 msgid "Use AI Auto-Tools features"
 msgstr "使用自動標籤指定功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:166
+#: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, fuzzy, kde-format
 #| msgid "Use Face Detection feature"
 msgid "Use Face Management feature"
 msgstr "使用臉孔偵測功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:167
+#: core/utilities/setup/downloader/filesdownloader.cpp:175
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "使用美感偵測功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:168
+#: core/utilities/setup/downloader/filesdownloader.cpp:176
 #, fuzzy, kde-format
 #| msgid "Use Auto Tags Assignment feature"
 msgid "Use AutoTags Assignment feature"
 msgstr "使用自動標籤指定功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:258
+#: core/utilities/setup/downloader/filesdownloader.cpp:284
 #, fuzzy, kde-format
 #| msgid "All files were downloaded successfully."
 msgid "All model files were downloaded successfully."
 msgstr "已成功下載所有檔案。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:267
+#: core/utilities/setup/downloader/filesdownloader.cpp:293
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "下載錯誤"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:268
+#: core/utilities/setup/downloader/filesdownloader.cpp:294
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -64568,34 +64574,34 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:276
+#: core/utilities/setup/downloader/filesdownloader.cpp:302
 #, fuzzy, kde-format
 #| msgid "Add film grain"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "加入膠片顆粒"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:414
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:438
+#: core/utilities/setup/downloader/filesdownloader.cpp:464
 #, kde-format
 msgid "File write error."
 msgstr "檔案寫入錯誤。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:445
+#: core/utilities/setup/downloader/filesdownloader.cpp:471
 #, kde-format
 msgid "File open error."
 msgstr "檔案開啟錯誤。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:460
+#: core/utilities/setup/downloader/filesdownloader.cpp:486
 #, kde-format
 msgid "File on the server is too large."
 msgstr "伺服器上的檔案太大了。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:544
+#: core/utilities/setup/downloader/filesdownloader.cpp:592
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -64605,7 +64611,7 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:550
+#: core/utilities/setup/downloader/filesdownloader.cpp:597
 #, fuzzy, kde-format
 #| msgctxt "%1: folder path"
 #| msgid ""
@@ -64618,14 +64624,12 @@ msgstr ""
 #| "these files the selected features will not work.</p><p>The files will be "
 #| "downloaded to %1.</p><p><b>After the successful download you have to "
 #| "restart digiKam.</b></p>"
-msgctxt "%1: folder path"
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
 "necessary model files. If you close this dialog you will be prompted again "
 "the next time you launch digiKam. The selected features will not function "
-"without these files.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
-"p><p><b>You must restart digiKam after successfully downloading the files.</"
-"b></p>"
+"without these files.</p><p><b>You must restart digiKam after successfully "
+"downloading the files.</b></p>"
 msgstr ""
 "<p>對於臉孔辨識、紅眼移除工具、影像美感分類，以及影像標籤自動指派功能，"
 "digiKam 會需要一些極大的二進制檔案。您可以選擇您想要使用哪些功能。</p><p>這些"
@@ -64634,19 +64638,19 @@ msgstr ""
 "法正常運作。</p><p>這些檔案會下載到 %1。</p><p><b>下載成功後您將會需要重新啟"
 "動 digiKam。</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:558
+#: core/utilities/setup/downloader/filesdownloader.cpp:604
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:566
+#: core/utilities/setup/downloader/filesdownloader.cpp:612
 #, fuzzy, kde-format
 #| msgid "All files of the selected features were found."
 msgid "All files for the selected features were found."
 msgstr "所選功能的所有檔案皆已找到。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:586
+#: core/utilities/setup/downloader/filesdownloader.cpp:630
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""
@@ -67830,6 +67834,32 @@ msgid "Import Items"
 msgstr "匯入項目"
 
 #, fuzzy
+#~| msgctxt "@item"
+#~| msgid "File Date"
+#~ msgid "Build Date: "
+#~ msgstr "檔案日期"
+
+#, fuzzy
+#~| msgid "Target"
+#~ msgid "Build Target: "
+#~ msgstr "目標"
+
+#, fuzzy
+#~| msgid "Unsupported Architecture: %1"
+#~ msgid "Build Architecture: "
+#~ msgstr "不支援的系統架構：%1"
+
+#, fuzzy
+#~| msgctxt "@label: color properties"
+#~| msgid "Std. deviation: "
+#~ msgid "Git Revision: "
+#~ msgstr "標準差："
+
+#~ msgctxt "@info: version"
+#~ msgid "Unknown"
+#~ msgstr "不明"
+
+#, fuzzy
 #~| msgid "Processing file %1 / %2: %3"
 #~ msgctxt "Error message for image file number %1 out of %2"
 #~ msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
@@ -69606,12 +69636,6 @@ msgstr "匯入項目"
 #~| msgid "Cycle:"
 #~ msgid "Bicycle"
 #~ msgstr "週期："
-
-#, fuzzy
-#~| msgctxt "unknown / invalid image dimension"
-#~| msgid "Unknown"
-#~ msgid "Unknown"
-#~ msgstr "不明"
 
 #, fuzzy
 #~ msgid "New Profile"

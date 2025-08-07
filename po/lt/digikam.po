@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 02:09+0000\n"
+"POT-Creation-Date: 2025-08-07 02:03+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -3050,49 +3050,21 @@ msgstr "Susiję paveikslėliai"
 msgid "All supported files (%1)"
 msgstr "Failas %1 praleistas"
 
-#: core/app/utils/digikam_version.cpp:63
+#: core/app/utils/digikam_version.cpp:60
 #, kde-format
 msgid "IRC: "
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:66
+#: core/app/utils/digikam_version.cpp:63
 #, kde-format
 msgid "Feedback: "
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:69
+#: core/app/utils/digikam_version.cpp:66
 #, fuzzy, kde-format
 #| msgid "Orientation"
 msgid "Documentation: "
 msgstr "Orientacija"
-
-#: core/app/utils/digikam_version.cpp:72
-#, fuzzy, kde-format
-#| msgid "File Name"
-msgid "Build Date: "
-msgstr "Failo pavadinimas"
-
-#: core/app/utils/digikam_version.cpp:75
-#, fuzzy, kde-format
-#| msgid "Target"
-msgid "Build Target: "
-msgstr "Tikslas"
-
-#: core/app/utils/digikam_version.cpp:78
-#, fuzzy, kde-format
-msgid "Build Architecture: "
-msgstr "Nežinomas formatas"
-
-#: core/app/utils/digikam_version.cpp:95
-#, fuzzy, kde-format
-#| msgid "Std. deviation: "
-msgid "Git Revision: "
-msgstr "Std. nuokrypis: "
-
-#: core/app/utils/digikam_version.cpp:98
-#, kde-format
-msgid "Git Branch: "
-msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
@@ -4781,8 +4753,9 @@ msgstr "Video kodekas"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:571 core/libs/dialogs/libsinfodlg.cpp:577
-#: core/libs/dialogs/libsinfodlg.cpp:652
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:69
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:75
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:150
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "no entry"
@@ -30295,7 +30268,7 @@ msgstr "Daugiau nebeklausti"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader.cpp:179
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -30402,7 +30375,7 @@ msgstr "<i>Kadrų dažnis:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Video kodekas:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:185
+#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:24
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -30428,50 +30401,37 @@ msgstr "Versija"
 msgid "Items List"
 msgstr "Paveikslėlių istorija"
 
-#: core/libs/dialogs/libsinfodlg.cpp:188
-#, fuzzy, kde-format
-#| msgid "Yes"
-msgctxt "@item: component is supported/available"
-msgid "Yes"
-msgstr "Taip"
-
-#: core/libs/dialogs/libsinfodlg.cpp:189
-#, fuzzy, kde-format
-#| msgid "No"
-msgctxt "@item: component is not available/supported"
-msgid "No"
-msgstr "Ne"
-
-#: core/libs/dialogs/libsinfodlg.cpp:203
-#, fuzzy, kde-format
-#| msgid "Nature"
-msgctxt "@title"
-msgid "Features"
-msgstr "Gamta"
-
-#: core/libs/dialogs/libsinfodlg.cpp:232
-#, fuzzy, kde-format
-#| msgid "Gibraltar"
-msgctxt "@title"
-msgid "Libraries"
-msgstr "Gibraltaras"
-
-#: core/libs/dialogs/libsinfodlg.cpp:335
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
-msgctxt "@info: version"
-msgid "Unknown"
-msgstr "Nežinoma"
-
-#: core/libs/dialogs/libsinfodlg.cpp:422
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:22
 #, fuzzy, kde-format
 #| msgid "Color Profile Conversion"
 msgctxt "@title"
 msgid "Build Environment"
 msgstr "Spalvų profilio konvertavimas"
 
-#: core/libs/dialogs/libsinfodlg.cpp:460
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:86
+#, fuzzy, kde-format
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: git revision"
+msgid "Unknown"
+msgstr "Nežinoma"
+
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: git branch"
+msgid "Unknown"
+msgstr "Nežinoma"
+
+#: core/libs/dialogs/libsinfodlg_features.cpp:24
+#, fuzzy, kde-format
+#| msgid "Nature"
+msgctxt "@title"
+msgid "Features"
+msgstr "Gamta"
+
+#: core/libs/dialogs/libsinfodlg_features.cpp:93
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30479,34 +30439,63 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Nežinoma"
 
-#: core/libs/dialogs/libsinfodlg.cpp:490
+#: core/libs/dialogs/libsinfodlg_libraries.cpp:22
+#, fuzzy, kde-format
+#| msgid "Gibraltar"
+msgctxt "@title"
+msgid "Libraries"
+msgstr "Gibraltaras"
+
+#: core/libs/dialogs/libsinfodlg_libraries.cpp:114
+#, fuzzy, kde-format
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: libx265 version"
+msgid "Unknown"
+msgstr "Nežinoma"
+
+#: core/libs/dialogs/libsinfodlg_manifest.cpp:43
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:524
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:22
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Fotoaparato konfigūravimas"
 
-#: core/libs/dialogs/libsinfodlg.cpp:720
+#: core/libs/dialogs/libsinfodlg_p.cpp:21
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@item: component is supported/available"
+msgid "Yes"
+msgstr "Taip"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:22
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@item: component is not available/supported"
+msgid "No"
+msgstr "Ne"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:30
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Taip"
 
-#: core/libs/dialogs/libsinfodlg.cpp:725
+#: core/libs/dialogs/libsinfodlg_p.cpp:35
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:730
+#: core/libs/dialogs/libsinfodlg_p.cpp:40
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -66570,35 +66559,51 @@ msgstr "Atsiunčiamas failas %1..."
 msgid "Open local directory used for the data files storage."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:165
+#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#, kde-format
+msgid "Location of the face management model files:"
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:170
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Face Management Model Target"
+msgstr "Veidų atpažinimo palaikymas;"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#, fuzzy, kde-format
+msgid "Sets the target address to download the face management model files to."
+msgstr "Įjunkite šią parinktį, jei norite rodyti albumo datą."
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:173
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use AI Auto-Tools features"
 msgstr "Automatinė korekcija"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:166
+#: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, fuzzy, kde-format
 msgid "Use Face Management feature"
 msgstr "Veidų atpažinimo palaikymas;"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:167
+#: core/utilities/setup/downloader/filesdownloader.cpp:175
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:168
+#: core/utilities/setup/downloader/filesdownloader.cpp:176
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use AutoTags Assignment feature"
 msgstr "Automatinė korekcija"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:258
+#: core/utilities/setup/downloader/filesdownloader.cpp:284
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgid "All model files were downloaded successfully."
 msgstr "Atsiunčiamas failas %1..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:267
+#: core/utilities/setup/downloader/filesdownloader.cpp:293
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Download New"
@@ -66606,7 +66611,7 @@ msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Atsisiųsti naują"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:268
+#: core/utilities/setup/downloader/filesdownloader.cpp:294
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -66618,33 +66623,33 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:276
+#: core/utilities/setup/downloader/filesdownloader.cpp:302
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Pridėti failo savybių"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:414
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:438
+#: core/utilities/setup/downloader/filesdownloader.cpp:464
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:445
+#: core/utilities/setup/downloader/filesdownloader.cpp:471
 #, fuzzy, kde-format
 msgid "File open error."
 msgstr "Eksportuoti"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:460
+#: core/utilities/setup/downloader/filesdownloader.cpp:486
 #, kde-format
 msgid "File on the server is too large."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:544
+#: core/utilities/setup/downloader/filesdownloader.cpp:592
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -66654,30 +66659,28 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:550
+#: core/utilities/setup/downloader/filesdownloader.cpp:597
 #, kde-format
-msgctxt "%1: folder path"
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
 "necessary model files. If you close this dialog you will be prompted again "
 "the next time you launch digiKam. The selected features will not function "
-"without these files.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
-"p><p><b>You must restart digiKam after successfully downloading the files.</"
-"b></p>"
+"without these files.</p><p><b>You must restart digiKam after successfully "
+"downloading the files.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:558
+#: core/utilities/setup/downloader/filesdownloader.cpp:604
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:566
+#: core/utilities/setup/downloader/filesdownloader.cpp:612
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:586
+#: core/utilities/setup/downloader/filesdownloader.cpp:630
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""
@@ -69818,6 +69821,32 @@ msgid "Import Items"
 msgstr "&Rikiuoti paveikslėlius"
 
 #, fuzzy
+#~| msgid "File Name"
+#~ msgid "Build Date: "
+#~ msgstr "Failo pavadinimas"
+
+#, fuzzy
+#~| msgid "Target"
+#~ msgid "Build Target: "
+#~ msgstr "Tikslas"
+
+#, fuzzy
+#~ msgid "Build Architecture: "
+#~ msgstr "Nežinomas formatas"
+
+#, fuzzy
+#~| msgid "Std. deviation: "
+#~ msgid "Git Revision: "
+#~ msgstr "Std. nuokrypis: "
+
+#, fuzzy
+#~| msgctxt "unknown / invalid image dimension"
+#~| msgid "Unknown"
+#~ msgctxt "@info: version"
+#~ msgid "Unknown"
+#~ msgstr "Nežinoma"
+
+#, fuzzy
 #~ msgctxt "Success for image file number %1 out of %2"
 #~ msgid "Processing file %1 / %2"
 #~ msgstr "Saugoti failus kaip"
@@ -71909,12 +71938,6 @@ msgstr "&Rikiuoti paveikslėlius"
 #, fuzzy
 #~ msgid "Select Service to Configure"
 #~ msgstr "Pasirinkite paveikslėlius"
-
-#, fuzzy
-#~| msgctxt "unknown / invalid image dimension"
-#~| msgid "Unknown"
-#~ msgid "Unknown"
-#~ msgstr "Nežinoma"
 
 #, fuzzy
 #~ msgid "New Profile"

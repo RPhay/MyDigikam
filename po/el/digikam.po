@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 02:09+0000\n"
+"POT-Creation-Date: 2025-08-07 02:03+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -2856,49 +2856,21 @@ msgstr "Ακατέργαστες εικόνες (%1)"
 msgid "All supported files (%1)"
 msgstr "Όλα τα υποστηριζόμενα αρχεία (%1)"
 
-#: core/app/utils/digikam_version.cpp:63
+#: core/app/utils/digikam_version.cpp:60
 #, kde-format
 msgid "IRC: "
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:66
+#: core/app/utils/digikam_version.cpp:63
 #, kde-format
 msgid "Feedback: "
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:69
+#: core/app/utils/digikam_version.cpp:66
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgid "Documentation: "
 msgstr "Τεκμηρίωση"
-
-#: core/app/utils/digikam_version.cpp:72
-#, fuzzy, kde-format
-#| msgid "File Name"
-msgid "Build Date: "
-msgstr "Όνομα αρχείου"
-
-#: core/app/utils/digikam_version.cpp:75
-#, fuzzy, kde-format
-#| msgid "Target"
-msgid "Build Target: "
-msgstr "Προορισμός"
-
-#: core/app/utils/digikam_version.cpp:78
-#, fuzzy, kde-format
-msgid "Build Architecture: "
-msgstr "Άγνωστος τύπος αποθήκευσης"
-
-#: core/app/utils/digikam_version.cpp:95
-#, fuzzy, kde-format
-#| msgid "Std. deviation: "
-msgid "Git Revision: "
-msgstr "Τυπική απόκλιση: "
-
-#: core/app/utils/digikam_version.cpp:98
-#, kde-format
-msgid "Git Branch: "
-msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
@@ -4651,8 +4623,9 @@ msgstr "Τύπος συμπίεσης βίντεο"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:571 core/libs/dialogs/libsinfodlg.cpp:577
-#: core/libs/dialogs/libsinfodlg.cpp:652
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:69
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:75
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:150
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "no entry"
@@ -31733,7 +31706,7 @@ msgstr "Να μη γίνει ερώτηση ξανά"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader.cpp:179
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -31840,7 +31813,7 @@ msgstr "<i>FrameRate:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>VideoCodec:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:185
+#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:24
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -31867,21 +31840,30 @@ msgstr "<font size=\"5\">%1</font><br/><b>Έκδοση %2</b><p>%3</p>"
 msgid "Items List"
 msgstr "Ιστορικό εικόνων"
 
-#: core/libs/dialogs/libsinfodlg.cpp:188
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:22
 #, fuzzy, kde-format
-#| msgid "Yes"
-msgctxt "@item: component is supported/available"
-msgid "Yes"
-msgstr "Ναι"
+#| msgid "Profile Version"
+msgctxt "@title"
+msgid "Build Environment"
+msgstr "Έκδοση προφίλ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:189
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:86
 #, fuzzy, kde-format
-#| msgid "No"
-msgctxt "@item: component is not available/supported"
-msgid "No"
-msgstr "Όχι"
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: git revision"
+msgid "Unknown"
+msgstr "Άγνωστο"
 
-#: core/libs/dialogs/libsinfodlg.cpp:203
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: git branch"
+msgid "Unknown"
+msgstr "Άγνωστο"
+
+#: core/libs/dialogs/libsinfodlg_features.cpp:24
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -31889,29 +31871,7 @@ msgctxt "@title"
 msgid "Features"
 msgstr "Χαρακτηριστικό"
 
-#: core/libs/dialogs/libsinfodlg.cpp:232
-#, fuzzy, kde-format
-#| msgid "Album Library"
-msgctxt "@title"
-msgid "Libraries"
-msgstr "Βιβλιοθήκη λευκωμάτων"
-
-#: core/libs/dialogs/libsinfodlg.cpp:335
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
-msgctxt "@info: version"
-msgid "Unknown"
-msgstr "Άγνωστο"
-
-#: core/libs/dialogs/libsinfodlg.cpp:422
-#, fuzzy, kde-format
-#| msgid "Profile Version"
-msgctxt "@title"
-msgid "Build Environment"
-msgstr "Έκδοση προφίλ"
-
-#: core/libs/dialogs/libsinfodlg.cpp:460
+#: core/libs/dialogs/libsinfodlg_features.cpp:93
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31919,34 +31879,63 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: core/libs/dialogs/libsinfodlg.cpp:490
+#: core/libs/dialogs/libsinfodlg_libraries.cpp:22
+#, fuzzy, kde-format
+#| msgid "Album Library"
+msgctxt "@title"
+msgid "Libraries"
+msgstr "Βιβλιοθήκη λευκωμάτων"
+
+#: core/libs/dialogs/libsinfodlg_libraries.cpp:114
+#, fuzzy, kde-format
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: libx265 version"
+msgid "Unknown"
+msgstr "Άγνωστο"
+
+#: core/libs/dialogs/libsinfodlg_manifest.cpp:43
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:524
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:22
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Διαμόρφωση φωτογραφικής μηχανής"
 
-#: core/libs/dialogs/libsinfodlg.cpp:720
+#: core/libs/dialogs/libsinfodlg_p.cpp:21
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@item: component is supported/available"
+msgid "Yes"
+msgstr "Ναι"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:22
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@item: component is not available/supported"
+msgid "No"
+msgstr "Όχι"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:30
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Ναι"
 
-#: core/libs/dialogs/libsinfodlg.cpp:725
+#: core/libs/dialogs/libsinfodlg_p.cpp:35
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Όχι"
 
-#: core/libs/dialogs/libsinfodlg.cpp:730
+#: core/libs/dialogs/libsinfodlg_p.cpp:40
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -69634,42 +69623,62 @@ msgstr "Λήψη αρχείου %1..."
 msgid "Open local directory used for the data files storage."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:165
+#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#, kde-format
+msgid "Location of the face management model files:"
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:170
+#, fuzzy, kde-format
+#| msgid "Face Detection"
+msgctxt "@title:window"
+msgid "Face Management Model Target"
+msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#, fuzzy, kde-format
+#| msgid "Set this option to display the item date."
+msgid "Sets the target address to download the face management model files to."
+msgstr ""
+"Ενεργοποιήστε αυτή την επιλογή για να εμφανιστεί η ημερομηνία του "
+"αντικειμένου."
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:173
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use AI Auto-Tools features"
 msgstr "Αυτόματη προσαρμογή"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:166
+#: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Use Face Management feature"
 msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:167
+#: core/utilities/setup/downloader/filesdownloader.cpp:175
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:168
+#: core/utilities/setup/downloader/filesdownloader.cpp:176
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use AutoTags Assignment feature"
 msgstr "Αυτόματη προσαρμογή"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:258
+#: core/utilities/setup/downloader/filesdownloader.cpp:284
 #, fuzzy, kde-format
 #| msgid "Download successfully %1..."
 msgid "All model files were downloaded successfully."
 msgstr "Επιτυχής λήψη %1..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:267
+#: core/utilities/setup/downloader/filesdownloader.cpp:293
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Λήψη νέου"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:268
+#: core/utilities/setup/downloader/filesdownloader.cpp:294
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -69681,36 +69690,36 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:276
+#: core/utilities/setup/downloader/filesdownloader.cpp:302
 #, fuzzy, kde-format
 #| msgid "Add film grain"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Προσθήκη κόκκων στο φιλμ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:414
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:438
+#: core/utilities/setup/downloader/filesdownloader.cpp:464
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:445
+#: core/utilities/setup/downloader/filesdownloader.cpp:471
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "File open error."
 msgstr "Εργαλεία εξαγωγής"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:460
+#: core/utilities/setup/downloader/filesdownloader.cpp:486
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "File on the server is too large."
 msgstr "Αποτυχία αποθήκευσης ετικετών στο αρχείο."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:544
+#: core/utilities/setup/downloader/filesdownloader.cpp:592
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -69720,30 +69729,28 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:550
+#: core/utilities/setup/downloader/filesdownloader.cpp:597
 #, kde-format
-msgctxt "%1: folder path"
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
 "necessary model files. If you close this dialog you will be prompted again "
 "the next time you launch digiKam. The selected features will not function "
-"without these files.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
-"p><p><b>You must restart digiKam after successfully downloading the files.</"
-"b></p>"
+"without these files.</p><p><b>You must restart digiKam after successfully "
+"downloading the files.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:558
+#: core/utilities/setup/downloader/filesdownloader.cpp:604
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:566
+#: core/utilities/setup/downloader/filesdownloader.cpp:612
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:586
+#: core/utilities/setup/downloader/filesdownloader.cpp:630
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""
@@ -73214,6 +73221,32 @@ msgid "Import Items"
 msgstr "Εισαγωγή αντικειμένων"
 
 #, fuzzy
+#~| msgid "File Name"
+#~ msgid "Build Date: "
+#~ msgstr "Όνομα αρχείου"
+
+#, fuzzy
+#~| msgid "Target"
+#~ msgid "Build Target: "
+#~ msgstr "Προορισμός"
+
+#, fuzzy
+#~ msgid "Build Architecture: "
+#~ msgstr "Άγνωστος τύπος αποθήκευσης"
+
+#, fuzzy
+#~| msgid "Std. deviation: "
+#~ msgid "Git Revision: "
+#~ msgstr "Τυπική απόκλιση: "
+
+#, fuzzy
+#~| msgctxt "unknown / invalid image dimension"
+#~| msgid "Unknown"
+#~ msgctxt "@info: version"
+#~ msgid "Unknown"
+#~ msgstr "Άγνωστο"
+
+#, fuzzy
 #~| msgid "Processing file %1 / %2: %3"
 #~ msgctxt "Error message for image file number %1 out of %2"
 #~ msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
@@ -75518,12 +75551,6 @@ msgstr "Εισαγωγή αντικειμένων"
 #~| msgid "Cycle:"
 #~ msgid "Bicycle"
 #~ msgstr "Κύκλος:"
-
-#, fuzzy
-#~| msgctxt "unknown / invalid image dimension"
-#~| msgid "Unknown"
-#~ msgid "Unknown"
-#~ msgstr "Άγνωστο"
 
 #, fuzzy
 #~ msgid "New Profile"

@@ -43,8 +43,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 02:09+0000\n"
-"PO-Revision-Date: 2025-08-04 08:25+0200\n"
+"POT-Creation-Date: 2025-08-07 02:03+0000\n"
+"PO-Revision-Date: 2025-08-06 13:00+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -2801,45 +2801,20 @@ msgstr "Obehandlade bilder (%1)"
 msgid "All supported files (%1)"
 msgstr "Alla filer som stöds (%1)"
 
-#: core/app/utils/digikam_version.cpp:63
+#: core/app/utils/digikam_version.cpp:60
 #, kde-format
 msgid "IRC: "
 msgstr "IRC: "
 
-#: core/app/utils/digikam_version.cpp:66
+#: core/app/utils/digikam_version.cpp:63
 #, kde-format
 msgid "Feedback: "
 msgstr "Återkoppling: "
 
-#: core/app/utils/digikam_version.cpp:69
+#: core/app/utils/digikam_version.cpp:66
 #, kde-format
 msgid "Documentation: "
 msgstr "Dokumentation: "
-
-#: core/app/utils/digikam_version.cpp:72
-#, kde-format
-msgid "Build Date: "
-msgstr "Byggdatum: "
-
-#: core/app/utils/digikam_version.cpp:75
-#, kde-format
-msgid "Build Target: "
-msgstr "Byggmål: "
-
-#: core/app/utils/digikam_version.cpp:78
-#, kde-format
-msgid "Build Architecture: "
-msgstr "Byggarkitektur: "
-
-#: core/app/utils/digikam_version.cpp:95
-#, kde-format
-msgid "Git Revision: "
-msgstr "Git-version: "
-
-#: core/app/utils/digikam_version.cpp:98
-#, kde-format
-msgid "Git Branch: "
-msgstr "Git-gren: "
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
@@ -4542,8 +4517,9 @@ msgstr "Videoavkodare"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:571 core/libs/dialogs/libsinfodlg.cpp:577
-#: core/libs/dialogs/libsinfodlg.cpp:652
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:69
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:75
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:150
 #, kde-format
 msgid "no entry"
 msgstr "ingen post"
@@ -29813,7 +29789,7 @@ msgstr "Fråga inte igen"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader.cpp:179
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -29916,7 +29892,7 @@ msgstr "<i>Bildfrekvens:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Videokodare:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:185
+#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -29940,73 +29916,91 @@ msgstr ""
 msgid "Items List"
 msgstr "Objektlista"
 
-#: core/libs/dialogs/libsinfodlg.cpp:188
-#, kde-format
-msgctxt "@item: component is supported/available"
-msgid "Yes"
-msgstr "Ja"
-
-#: core/libs/dialogs/libsinfodlg.cpp:189
-#, kde-format
-msgctxt "@item: component is not available/supported"
-msgid "No"
-msgstr "Nej"
-
-#: core/libs/dialogs/libsinfodlg.cpp:203
-#, kde-format
-msgctxt "@title"
-msgid "Features"
-msgstr "Funktioner"
-
-#: core/libs/dialogs/libsinfodlg.cpp:232
-#, kde-format
-msgctxt "@title"
-msgid "Libraries"
-msgstr "Bibliotek"
-
-#: core/libs/dialogs/libsinfodlg.cpp:335
-#, kde-format
-msgctxt "@info: version"
-msgid "Unknown"
-msgstr "Okänd"
-
-#: core/libs/dialogs/libsinfodlg.cpp:422
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:22
 #, kde-format
 msgctxt "@title"
 msgid "Build Environment"
 msgstr "Byggmiljö"
 
-#: core/libs/dialogs/libsinfodlg.cpp:460
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:86
+#, fuzzy, kde-format
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: git revision"
+msgid "Unknown"
+msgstr "Okänd"
+
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: git branch"
+msgid "Unknown"
+msgstr "Okänd"
+
+#: core/libs/dialogs/libsinfodlg_features.cpp:24
+#, kde-format
+msgctxt "@title"
+msgid "Features"
+msgstr "Funktioner"
+
+#: core/libs/dialogs/libsinfodlg_features.cpp:93
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Okänd"
 
-#: core/libs/dialogs/libsinfodlg.cpp:490
+#: core/libs/dialogs/libsinfodlg_libraries.cpp:22
+#, kde-format
+msgctxt "@title"
+msgid "Libraries"
+msgstr "Bibliotek"
+
+#: core/libs/dialogs/libsinfodlg_libraries.cpp:114
+#, fuzzy, kde-format
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: libx265 version"
+msgid "Unknown"
+msgstr "Okänd"
+
+#: core/libs/dialogs/libsinfodlg_manifest.cpp:43
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifest"
 
-#: core/libs/dialogs/libsinfodlg.cpp:524
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:22
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Inställning av OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:720
+#: core/libs/dialogs/libsinfodlg_p.cpp:21
+#, kde-format
+msgctxt "@item: component is supported/available"
+msgid "Yes"
+msgstr "Ja"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:22
+#, kde-format
+msgctxt "@item: component is not available/supported"
+msgid "No"
+msgstr "Nej"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:30
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Ja"
 
-#: core/libs/dialogs/libsinfodlg.cpp:725
+#: core/libs/dialogs/libsinfodlg_p.cpp:35
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Nej"
 
-#: core/libs/dialogs/libsinfodlg.cpp:730
+#: core/libs/dialogs/libsinfodlg_p.cpp:40
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -40189,16 +40183,13 @@ msgstr[0] "Vill du ta bort den markerade etiketten från alla bilder?"
 msgstr[1] "Vill du ta bort de markerade etiketterna från alla bilder?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:943
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add New Tag"
+#, kde-format
 msgctxt "@action: button"
 msgid "Add Tag"
-msgstr "Lägg till ny etikett"
+msgstr "Lägg till etikett"
 
 #: core/libs/tags/manager/tagsmanager.cpp:949
-#, fuzzy, kde-format
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action: button"
 msgid "Remove Tag"
 msgstr "Ta bort etikett"
@@ -64477,38 +64468,56 @@ msgstr "Laddar ner nödvändiga modellfiler"
 msgid "Open local directory used for the data files storage."
 msgstr "Öppna den lokala katalogen som används för lagring av datafiler."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:165
+#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#, kde-format
+msgid "Location of the face management model files:"
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:170
+#, fuzzy, kde-format
+#| msgid "Use Face Management feature"
+msgctxt "@title:window"
+msgid "Face Management Model Target"
+msgstr "Använd funktionen för ansiktshantering"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#, fuzzy, kde-format
+#| msgid "Sets the target address to copy the items to."
+msgid "Sets the target address to download the face management model files to."
+msgstr "Anger måladressen att kopiera objekten till."
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:173
 #, kde-format
 msgid "Use AI Auto-Tools features"
 msgstr "Använd automatiska AI-verktygsfunktioner"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:166
+#: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, kde-format
 msgid "Use Face Management feature"
 msgstr "Använd funktionen för ansiktshantering"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:167
+#: core/utilities/setup/downloader/filesdownloader.cpp:175
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Använd funktionen för estetisk detektering"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:168
+#: core/utilities/setup/downloader/filesdownloader.cpp:176
 #, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Använd funktionen för automatisk tilldelning av etiketter"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:258
+#: core/utilities/setup/downloader/filesdownloader.cpp:284
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr "Alla modellfiler laddades ner med lyckat resultat."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:267
+#: core/utilities/setup/downloader/filesdownloader.cpp:293
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Nerladdningsfel"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:268
+#: core/utilities/setup/downloader/filesdownloader.cpp:294
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -64527,33 +64536,33 @@ msgstr ""
 "\n"
 "Du kan försöka igen eller fortsätta nerladdningen efter nästa start."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:276
+#: core/utilities/setup/downloader/filesdownloader.cpp:302
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Försök igen"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:414
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Checksumman är felaktig."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:438
+#: core/utilities/setup/downloader/filesdownloader.cpp:464
 #, kde-format
 msgid "File write error."
 msgstr "Filskrivfel."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:445
+#: core/utilities/setup/downloader/filesdownloader.cpp:471
 #, kde-format
 msgid "File open error."
 msgstr "Filöppningsfel."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:460
+#: core/utilities/setup/downloader/filesdownloader.cpp:486
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Filen på servern är för stor."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:544
+#: core/utilities/setup/downloader/filesdownloader.cpp:592
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -64569,16 +64578,22 @@ msgstr ""
 "p><p><b>Observera:</b> Verktyget för borttagning av röda ögon kräver "
 "modellfiler för ansiktshantering.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:550
-#, kde-format
-msgctxt "%1: folder path"
+#: core/utilities/setup/downloader/filesdownloader.cpp:597
+#, fuzzy, kde-format
+#| msgctxt "%1: folder path"
+#| msgid ""
+#| "<p>Some required files are missing. Click “Download” to start installing "
+#| "the necessary model files. If you close this dialog you will be prompted "
+#| "again the next time you launch digiKam. The selected features will not "
+#| "function without these files.</p><p>The files will be downloaded to \"<i>"
+#| "%1</i>\".</p><p><b>You must restart digiKam after successfully "
+#| "downloading the files.</b></p>"
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
 "necessary model files. If you close this dialog you will be prompted again "
 "the next time you launch digiKam. The selected features will not function "
-"without these files.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
-"p><p><b>You must restart digiKam after successfully downloading the files.</"
-"b></p>"
+"without these files.</p><p><b>You must restart digiKam after successfully "
+"downloading the files.</b></p>"
 msgstr ""
 "<p>Vissa nödvändiga filer saknas. Klicka på 'Ladda ner' för att börja "
 "installera nödvändiga modellfiler. Om du stänger dialogrutan, blir du "
@@ -64586,18 +64601,18 @@ msgstr ""
 "valda funktionerna.</p><p>Filerna laddas ner i \"<i>%1</i>\".</p><p><b>Efter "
 "lyckad nerladdning måste Digikam startas om.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:558
+#: core/utilities/setup/downloader/filesdownloader.cpp:604
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Nedladdningen kräver %1 filer med storlek %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:566
+#: core/utilities/setup/downloader/filesdownloader.cpp:612
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "Alla filer för de valda funktionerna hittades."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:586
+#: core/utilities/setup/downloader/filesdownloader.cpp:630
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Rensa bort oanvända AI/DNN-modellfiler..."
@@ -67921,6 +67936,25 @@ msgstr "Albumobjekt"
 msgid "Import Items"
 msgstr "Importera objekt"
 
+#~ msgid "Build Date: "
+#~ msgstr "Byggdatum: "
+
+#~ msgid "Build Target: "
+#~ msgstr "Byggmål: "
+
+#~ msgid "Build Architecture: "
+#~ msgstr "Byggarkitektur: "
+
+#~ msgid "Git Revision: "
+#~ msgstr "Git-version: "
+
+#~ msgid "Git Branch: "
+#~ msgstr "Git-gren: "
+
+#~ msgctxt "@info: version"
+#~ msgid "Unknown"
+#~ msgstr "Okänd"
+
 #~ msgctxt "Error message for image file number %1 out of %2"
 #~ msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
 #~ msgstr "<p><b>Behandlar fil %1 / %2: </b></p><p>%3</p>"
@@ -70600,12 +70634,6 @@ msgstr "Importera objekt"
 #~| msgid "Cycle:"
 #~ msgid "Bicycle"
 #~ msgstr "Cykel:"
-
-#, fuzzy
-#~| msgctxt "unknown / invalid image dimension"
-#~| msgid "Unknown"
-#~ msgid "Unknown"
-#~ msgstr "Okänd"
 
 #, fuzzy
 #~| msgid "Save Profile"

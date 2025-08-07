@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 02:09+0000\n"
+"POT-Creation-Date: 2025-08-07 02:03+0000\n"
 "PO-Revision-Date: 2025-05-17 21:36+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -2805,45 +2805,20 @@ msgstr "Raw изображения (%1)"
 msgid "All supported files (%1)"
 msgstr "Всички поддържани файлове (%1)"
 
-#: core/app/utils/digikam_version.cpp:63
+#: core/app/utils/digikam_version.cpp:60
 #, kde-format
 msgid "IRC: "
 msgstr "IRC: "
 
-#: core/app/utils/digikam_version.cpp:66
+#: core/app/utils/digikam_version.cpp:63
 #, kde-format
 msgid "Feedback: "
 msgstr "Обратна връзка: "
 
-#: core/app/utils/digikam_version.cpp:69
+#: core/app/utils/digikam_version.cpp:66
 #, kde-format
 msgid "Documentation: "
 msgstr "Документация: "
-
-#: core/app/utils/digikam_version.cpp:72
-#, kde-format
-msgid "Build Date: "
-msgstr "Дата на изграждане: "
-
-#: core/app/utils/digikam_version.cpp:75
-#, kde-format
-msgid "Build Target: "
-msgstr "Цел на изграждане: "
-
-#: core/app/utils/digikam_version.cpp:78
-#, kde-format
-msgid "Build Architecture: "
-msgstr "Архитектура на изграждане: "
-
-#: core/app/utils/digikam_version.cpp:95
-#, kde-format
-msgid "Git Revision: "
-msgstr "Ревизия на Git: "
-
-#: core/app/utils/digikam_version.cpp:98
-#, kde-format
-msgid "Git Branch: "
-msgstr "Клон на Git: "
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
@@ -4555,8 +4530,9 @@ msgstr "Видеодекодери"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:571 core/libs/dialogs/libsinfodlg.cpp:577
-#: core/libs/dialogs/libsinfodlg.cpp:652
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:69
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:75
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:150
 #, kde-format
 msgid "no entry"
 msgstr "няма запис"
@@ -30641,7 +30617,7 @@ msgstr "Изключване на въпроса"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader.cpp:179
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -30744,7 +30720,7 @@ msgstr "<i>Скорост на кадрите:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Видео кодек:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:185
+#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -30770,73 +30746,91 @@ msgstr ""
 msgid "Items List"
 msgstr "Списък с елементи"
 
-#: core/libs/dialogs/libsinfodlg.cpp:188
-#, kde-format
-msgctxt "@item: component is supported/available"
-msgid "Yes"
-msgstr "Да"
-
-#: core/libs/dialogs/libsinfodlg.cpp:189
-#, kde-format
-msgctxt "@item: component is not available/supported"
-msgid "No"
-msgstr "Не"
-
-#: core/libs/dialogs/libsinfodlg.cpp:203
-#, kde-format
-msgctxt "@title"
-msgid "Features"
-msgstr "Свойства"
-
-#: core/libs/dialogs/libsinfodlg.cpp:232
-#, kde-format
-msgctxt "@title"
-msgid "Libraries"
-msgstr "Библиотеки"
-
-#: core/libs/dialogs/libsinfodlg.cpp:335
-#, kde-format
-msgctxt "@info: version"
-msgid "Unknown"
-msgstr "Неизвестно"
-
-#: core/libs/dialogs/libsinfodlg.cpp:422
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:22
 #, kde-format
 msgctxt "@title"
 msgid "Build Environment"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:460
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:86
+#, fuzzy, kde-format
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: git revision"
+msgid "Unknown"
+msgstr "Непознат"
+
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: git branch"
+msgid "Unknown"
+msgstr "Непознат"
+
+#: core/libs/dialogs/libsinfodlg_features.cpp:24
+#, kde-format
+msgctxt "@title"
+msgid "Features"
+msgstr "Свойства"
+
+#: core/libs/dialogs/libsinfodlg_features.cpp:93
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/libs/dialogs/libsinfodlg.cpp:490
+#: core/libs/dialogs/libsinfodlg_libraries.cpp:22
+#, kde-format
+msgctxt "@title"
+msgid "Libraries"
+msgstr "Библиотеки"
+
+#: core/libs/dialogs/libsinfodlg_libraries.cpp:114
+#, fuzzy, kde-format
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: libx265 version"
+msgid "Unknown"
+msgstr "Непознат"
+
+#: core/libs/dialogs/libsinfodlg_manifest.cpp:43
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Манифести"
 
-#: core/libs/dialogs/libsinfodlg.cpp:524
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:22
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Конфигурация на OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:720
+#: core/libs/dialogs/libsinfodlg_p.cpp:21
+#, kde-format
+msgctxt "@item: component is supported/available"
+msgid "Yes"
+msgstr "Да"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:22
+#, kde-format
+msgctxt "@item: component is not available/supported"
+msgid "No"
+msgstr "Не"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:30
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Да"
 
-#: core/libs/dialogs/libsinfodlg.cpp:725
+#: core/libs/dialogs/libsinfodlg_p.cpp:35
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Не"
 
-#: core/libs/dialogs/libsinfodlg.cpp:730
+#: core/libs/dialogs/libsinfodlg_p.cpp:40
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -65881,38 +65875,56 @@ msgstr "Изтегляне на необходимите файлове с мо�
 msgid "Open local directory used for the data files storage."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:165
+#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#, kde-format
+msgid "Location of the face management model files:"
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:170
+#, fuzzy, kde-format
+#| msgid "Use Face Management feature"
+msgctxt "@title:window"
+msgid "Face Management Model Target"
+msgstr "Използване на функцията за откриване на лица"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#, fuzzy, kde-format
+#| msgid "Sets the target address to copy the items to."
+msgid "Sets the target address to download the face management model files to."
+msgstr "Задава целевия адрес, на който да се копират елементите."
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:173
 #, kde-format
 msgid "Use AI Auto-Tools features"
 msgstr "Използване на функциите на AI Auto-Tools"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:166
+#: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, kde-format
 msgid "Use Face Management feature"
 msgstr "Използване на функцията за откриване на лица"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:167
+#: core/utilities/setup/downloader/filesdownloader.cpp:175
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr "Използване на функция за естетическо откриване"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:168
+#: core/utilities/setup/downloader/filesdownloader.cpp:176
 #, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr "Използване на функцията за автоматично присвояване на етикети"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:258
+#: core/utilities/setup/downloader/filesdownloader.cpp:284
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr "Всички файлове с модели бяха успешно изтеглени."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:267
+#: core/utilities/setup/downloader/filesdownloader.cpp:293
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Грешка при изтегляне"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:268
+#: core/utilities/setup/downloader/filesdownloader.cpp:294
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65932,33 +65944,33 @@ msgstr ""
 "Можете да опитате отново или да продължите изтеглянето при следващото "
 "стартиране."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:276
+#: core/utilities/setup/downloader/filesdownloader.cpp:302
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Повторно опитване"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:414
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Контролната сума е неправилна."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:438
+#: core/utilities/setup/downloader/filesdownloader.cpp:464
 #, kde-format
 msgid "File write error."
 msgstr "Грешка при запис на файл."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:445
+#: core/utilities/setup/downloader/filesdownloader.cpp:471
 #, kde-format
 msgid "File open error."
 msgstr "Грешка при отваряне на файл."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:460
+#: core/utilities/setup/downloader/filesdownloader.cpp:486
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Файлът на сървъра е твърде голям."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:544
+#: core/utilities/setup/downloader/filesdownloader.cpp:592
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -65974,16 +65986,22 @@ msgstr ""
 "функции, които искате да активирате.</p><p><b>Забележка:</b> Инструментът за "
 "премахване на червени очи изисква файлове с модели за управление на лица.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:550
-#, kde-format
-msgctxt "%1: folder path"
+#: core/utilities/setup/downloader/filesdownloader.cpp:597
+#, fuzzy, kde-format
+#| msgctxt "%1: folder path"
+#| msgid ""
+#| "<p>Some required files are missing. Click “Download” to start installing "
+#| "the necessary model files. If you close this dialog you will be prompted "
+#| "again the next time you launch digiKam. The selected features will not "
+#| "function without these files.</p><p>The files will be downloaded to \"<i>"
+#| "%1</i>\".</p><p><b>You must restart digiKam after successfully "
+#| "downloading the files.</b></p>"
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
 "necessary model files. If you close this dialog you will be prompted again "
 "the next time you launch digiKam. The selected features will not function "
-"without these files.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
-"p><p><b>You must restart digiKam after successfully downloading the files.</"
-"b></p>"
+"without these files.</p><p><b>You must restart digiKam after successfully "
+"downloading the files.</b></p>"
 msgstr ""
 "<p>Някои необходими файлове липсват. Кликнете върху „Изтегляне“, за да "
 "започнете инсталирането на необходимите файлове за модела. Ако затворите "
@@ -65992,18 +66010,18 @@ msgstr ""
 "p><p>Файловете ще бъдат изтеглени в \"<i>%1</i>\".</p><p><b>Трябва да "
 "рестартирате digiKam след успешно изтегляне на файловете.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:558
+#: core/utilities/setup/downloader/filesdownloader.cpp:604
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Изтеглянето изисква %1 файлове с размер %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:566
+#: core/utilities/setup/downloader/filesdownloader.cpp:612
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "Всички файлове за избраните функции бяха намерени."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:586
+#: core/utilities/setup/downloader/filesdownloader.cpp:630
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Почистване на неизползвани файлове с AI/DNN модели..."
@@ -69435,6 +69453,25 @@ msgstr "Елементи на албуми"
 #, kde-format
 msgid "Import Items"
 msgstr "Импортиране на елементи"
+
+#~ msgid "Build Date: "
+#~ msgstr "Дата на изграждане: "
+
+#~ msgid "Build Target: "
+#~ msgstr "Цел на изграждане: "
+
+#~ msgid "Build Architecture: "
+#~ msgstr "Архитектура на изграждане: "
+
+#~ msgid "Git Revision: "
+#~ msgstr "Ревизия на Git: "
+
+#~ msgid "Git Branch: "
+#~ msgstr "Клон на Git: "
+
+#~ msgctxt "@info: version"
+#~ msgid "Unknown"
+#~ msgstr "Неизвестно"
 
 #~ msgctxt "Error message for image file number %1 out of %2"
 #~ msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"

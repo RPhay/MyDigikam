@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 02:09+0000\n"
+"POT-Creation-Date: 2025-08-07 02:03+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -2937,50 +2937,22 @@ msgstr "ภาพอ้างอิง"
 msgid "All supported files (%1)"
 msgstr "ข้ามแฟ้ม %1"
 
-#: core/app/utils/digikam_version.cpp:63
+#: core/app/utils/digikam_version.cpp:60
 #, kde-format
 msgid "IRC: "
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:66
+#: core/app/utils/digikam_version.cpp:63
 #, kde-format
 msgid "Feedback: "
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:69
+#: core/app/utils/digikam_version.cpp:66
 #, fuzzy, kde-format
 #| msgctxt "type is a document"
 #| msgid "Document"
 msgid "Documentation: "
 msgstr "เอกสาร"
-
-#: core/app/utils/digikam_version.cpp:72
-#, fuzzy, kde-format
-#| msgid "File Name"
-msgid "Build Date: "
-msgstr "ชื่อของแฟ้ม"
-
-#: core/app/utils/digikam_version.cpp:75
-#, fuzzy, kde-format
-#| msgid "Target"
-msgid "Build Target: "
-msgstr "ภาพเป้าหมาย"
-
-#: core/app/utils/digikam_version.cpp:78
-#, fuzzy, kde-format
-msgid "Build Architecture: "
-msgstr "ไม่ทราบ"
-
-#: core/app/utils/digikam_version.cpp:95
-#, fuzzy, kde-format
-#| msgid "Std. deviation: "
-msgid "Git Revision: "
-msgstr "ค่าเบี่ยงเบนมาตรฐาน: "
-
-#: core/app/utils/digikam_version.cpp:98
-#, kde-format
-msgid "Git Branch: "
-msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
@@ -4627,8 +4599,9 @@ msgstr "แฟ้มเสียง"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:571 core/libs/dialogs/libsinfodlg.cpp:577
-#: core/libs/dialogs/libsinfodlg.cpp:652
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:69
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:75
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:150
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "no entry"
@@ -30165,7 +30138,7 @@ msgstr "ไม่ต้องทำการ&ถามอีก"
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader.cpp:179
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -30271,7 +30244,7 @@ msgstr "<i>สร้างเมื่อ:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>รุ่น:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:185
+#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:24
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -30296,21 +30269,30 @@ msgstr "<font size=\"5\">%1</font><br/><b>รุ่น %2</b><p>%3</p>"
 msgid "Items List"
 msgstr "เครื่องมือแก้ไขภาพ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:188
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:22
 #, fuzzy, kde-format
-#| msgid "Yes"
-msgctxt "@item: component is supported/available"
-msgid "Yes"
-msgstr "ใช่"
+#| msgid "Profile Version"
+msgctxt "@title"
+msgid "Build Environment"
+msgstr "รุ่นของโพรไฟล์"
 
-#: core/libs/dialogs/libsinfodlg.cpp:189
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:86
 #, fuzzy, kde-format
-#| msgid "No"
-msgctxt "@item: component is not available/supported"
-msgid "No"
-msgstr "ไม่ใช่"
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: git revision"
+msgid "Unknown"
+msgstr "ไม่ทราบ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:203
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: git branch"
+msgid "Unknown"
+msgstr "ไม่ทราบ"
+
+#: core/libs/dialogs/libsinfodlg_features.cpp:24
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -30318,29 +30300,7 @@ msgctxt "@title"
 msgid "Features"
 msgstr "สารคดีพิเศษ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:232
-#, fuzzy, kde-format
-#| msgid "Album Library"
-msgctxt "@title"
-msgid "Libraries"
-msgstr "คลังอัลบั้ม"
-
-#: core/libs/dialogs/libsinfodlg.cpp:335
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
-msgctxt "@info: version"
-msgid "Unknown"
-msgstr "ไม่ทราบ"
-
-#: core/libs/dialogs/libsinfodlg.cpp:422
-#, fuzzy, kde-format
-#| msgid "Profile Version"
-msgctxt "@title"
-msgid "Build Environment"
-msgstr "รุ่นของโพรไฟล์"
-
-#: core/libs/dialogs/libsinfodlg.cpp:460
+#: core/libs/dialogs/libsinfodlg_features.cpp:93
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30348,34 +30308,63 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "ไม่ทราบ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:490
+#: core/libs/dialogs/libsinfodlg_libraries.cpp:22
+#, fuzzy, kde-format
+#| msgid "Album Library"
+msgctxt "@title"
+msgid "Libraries"
+msgstr "คลังอัลบั้ม"
+
+#: core/libs/dialogs/libsinfodlg_libraries.cpp:114
+#, fuzzy, kde-format
+#| msgctxt "unknown / invalid image dimension"
+#| msgid "Unknown"
+msgctxt "@info: libx265 version"
+msgid "Unknown"
+msgstr "ไม่ทราบ"
+
+#: core/libs/dialogs/libsinfodlg_manifest.cpp:43
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:524
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:22
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "การปรับแต่งค่ากล้อง"
 
-#: core/libs/dialogs/libsinfodlg.cpp:720
+#: core/libs/dialogs/libsinfodlg_p.cpp:21
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@item: component is supported/available"
+msgid "Yes"
+msgstr "ใช่"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:22
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@item: component is not available/supported"
+msgid "No"
+msgstr "ไม่ใช่"
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:30
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "ใช่"
 
-#: core/libs/dialogs/libsinfodlg.cpp:725
+#: core/libs/dialogs/libsinfodlg_p.cpp:35
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "ไม่ใช่"
 
-#: core/libs/dialogs/libsinfodlg.cpp:730
+#: core/libs/dialogs/libsinfodlg_p.cpp:40
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -66334,41 +66323,57 @@ msgstr "กำลังดาวน์โหลดแฟ้ม %1..."
 msgid "Open local directory used for the data files storage."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:165
+#: core/utilities/setup/downloader/filesdownloader.cpp:162
+#, kde-format
+msgid "Location of the face management model files:"
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:170
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Face Management Model Target"
+msgstr "กลับค่าการเรียงลำดับ"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#, fuzzy, kde-format
+msgid "Sets the target address to download the face management model files to."
+msgstr "เปิดใช้ตัวเลือกนี้ เพื่อให้มีการแสดงวันที่ของอัลบั้มด้วย"
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:173
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use AI Auto-Tools features"
 msgstr "ปรับแก้อัตโนมัติ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:166
+#: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, fuzzy, kde-format
 msgid "Use Face Management feature"
 msgstr "กลับค่าการเรียงลำดับ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:167
+#: core/utilities/setup/downloader/filesdownloader.cpp:175
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:168
+#: core/utilities/setup/downloader/filesdownloader.cpp:176
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use AutoTags Assignment feature"
 msgstr "ปรับแก้อัตโนมัติ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:258
+#: core/utilities/setup/downloader/filesdownloader.cpp:284
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgid "All model files were downloaded successfully."
 msgstr "กำลังดาวน์โหลดแฟ้ม %1..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:267
+#: core/utilities/setup/downloader/filesdownloader.cpp:293
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "ดาวน์โหลด"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:268
+#: core/utilities/setup/downloader/filesdownloader.cpp:294
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -66380,33 +66385,33 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:276
+#: core/utilities/setup/downloader/filesdownloader.cpp:302
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "เพิ่มเกรนของฟิล์ม..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:414
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:438
+#: core/utilities/setup/downloader/filesdownloader.cpp:464
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:445
+#: core/utilities/setup/downloader/filesdownloader.cpp:471
 #, fuzzy, kde-format
 msgid "File open error."
 msgstr "ส่งออก"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:460
+#: core/utilities/setup/downloader/filesdownloader.cpp:486
 #, kde-format
 msgid "File on the server is too large."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:544
+#: core/utilities/setup/downloader/filesdownloader.cpp:592
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -66416,30 +66421,28 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:550
+#: core/utilities/setup/downloader/filesdownloader.cpp:597
 #, kde-format
-msgctxt "%1: folder path"
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
 "necessary model files. If you close this dialog you will be prompted again "
 "the next time you launch digiKam. The selected features will not function "
-"without these files.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
-"p><p><b>You must restart digiKam after successfully downloading the files.</"
-"b></p>"
+"without these files.</p><p><b>You must restart digiKam after successfully "
+"downloading the files.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:558
+#: core/utilities/setup/downloader/filesdownloader.cpp:604
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:566
+#: core/utilities/setup/downloader/filesdownloader.cpp:612
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:586
+#: core/utilities/setup/downloader/filesdownloader.cpp:630
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""
@@ -69587,6 +69590,32 @@ msgid "Import Items"
 msgstr "จัดเ&รียงรูปภาพ"
 
 #, fuzzy
+#~| msgid "File Name"
+#~ msgid "Build Date: "
+#~ msgstr "ชื่อของแฟ้ม"
+
+#, fuzzy
+#~| msgid "Target"
+#~ msgid "Build Target: "
+#~ msgstr "ภาพเป้าหมาย"
+
+#, fuzzy
+#~ msgid "Build Architecture: "
+#~ msgstr "ไม่ทราบ"
+
+#, fuzzy
+#~| msgid "Std. deviation: "
+#~ msgid "Git Revision: "
+#~ msgstr "ค่าเบี่ยงเบนมาตรฐาน: "
+
+#, fuzzy
+#~| msgctxt "unknown / invalid image dimension"
+#~| msgid "Unknown"
+#~ msgctxt "@info: version"
+#~ msgid "Unknown"
+#~ msgstr "ไม่ทราบ"
+
+#, fuzzy
 #~ msgctxt "Success for image file number %1 out of %2"
 #~ msgid "Processing file %1 / %2"
 #~ msgstr "แฟ้มภาพยนตร์"
@@ -71645,12 +71674,6 @@ msgstr "จัดเ&รียงรูปภาพ"
 #~| msgid "Cycle:"
 #~ msgid "Bicycle"
 #~ msgstr "ช่วง:"
-
-#, fuzzy
-#~| msgctxt "unknown / invalid image dimension"
-#~| msgid "Unknown"
-#~ msgid "Unknown"
-#~ msgstr "ไม่ทราบ"
 
 #, fuzzy
 #~ msgid "New Profile"
