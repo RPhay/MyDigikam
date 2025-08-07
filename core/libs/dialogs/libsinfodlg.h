@@ -39,7 +39,7 @@ class DIGIKAM_EXPORT LibsInfoDlg : public InfoDlg
 public:
 
     explicit LibsInfoDlg(QWidget* const parent);
-    ~LibsInfoDlg() = default;
+    ~LibsInfoDlg();
 
 protected:
 
@@ -49,10 +49,8 @@ protected:
 
 private:
 
-    QString checkTriState(int value)                const;
-
-    QString openCVBytesToStringRepr(size_t value)   const;
-    QString openCVGetDeviceTypeString(const cv::ocl::Device& device);
+    class Private;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

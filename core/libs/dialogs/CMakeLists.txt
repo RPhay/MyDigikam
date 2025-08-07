@@ -41,6 +41,7 @@ set(libdialogs_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/imagedialog_tooltip.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/infodlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/libsinfodlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/libsinfodlg_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/rawcameradlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/solidhardwaredlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dconfigdlg.cpp
