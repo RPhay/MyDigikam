@@ -22,6 +22,7 @@
 #include <QTimer>
 #include <QThread>
 #include <QPointer>
+#include <QFileInfo>
 #include <QCheckBox>
 #include <QByteArray>
 #include <QMessageBox>
@@ -503,6 +504,11 @@ void FilesDownloader::slotModelDataPathChanged()
         return;
     }
 
+    while (!path.isEmpty() && path.endsWith(QLatin1Char('/')))
+    {
+        path.chop(1);
+    }
+
     {
         SystemSettings system(QLatin1String("digikam"));
         system.modelDataPath = path;
@@ -605,7 +611,9 @@ void FilesDownloader::slotUpdateDownloadInfo()
                                     d->total, sizeString));
 
         d->loadLabel->setEnabled(true);
-        d->buttons->button(QDialogButtonBox::Ok)->setEnabled(true);
+
+        QFileInfo info(getFacesEnginePath());
+        d->buttons->button(QDialogButtonBox::Ok)->setEnabled(info.isDir() && info.isWritable());
     }
     else
     {
