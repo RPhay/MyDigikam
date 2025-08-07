@@ -23,34 +23,38 @@ void LibsInfoDlg::populateBuildTools()
     listView()->addTopLevelItem(m_buildtools);
 
     new QTreeWidgetItem(m_buildtools, QStringList() <<
-                        i18nc(Private::CONTEXT, "Host")                   <<         QLatin1String(CMAKE_HOST_PRETTY_NAME));
+                        i18nc(Private::CONTEXT, "Host")                      << QLatin1String(CMAKE_HOST_PRETTY_NAME));
 
     new QTreeWidgetItem(m_buildtools, QStringList() <<
-                        i18nc(Private::CONTEXT, "Cmake")                  <<         QLatin1String(CMAKE_VERSION_STRING));
+                        i18nc(Private::CONTEXT, "Cmake")                     << QLatin1String(CMAKE_VERSION_STRING));
 
     new QTreeWidgetItem(m_buildtools, QStringList() <<
-                        i18nc(Private::CONTEXT, "Compiler")               <<         QString::fromLatin1("%1 - %2").arg(QLatin1String(CMAKE_CXX_COMPILER_ID))
-                                                                                                          .arg(QLatin1String(CMAKE_CXX_COMPILER_VERSION)));
+                        i18nc(Private::CONTEXT, "Compiler")                  << QString::fromLatin1("%1 - %2")
+                                                                                .arg(QLatin1String(CMAKE_CXX_COMPILER_ID))
+                                                                                .arg(QLatin1String(CMAKE_CXX_COMPILER_VERSION)));
 #ifdef CCACHE_VERSION
 
     new QTreeWidgetItem(m_buildtools, QStringList() <<
-                        i18nc(Private::CONTEXT, "Ccache")                 <<         QLatin1String(CCACHE_VERSION));
+                        i18nc(Private::CONTEXT, "Ccache")                    << QLatin1String(CCACHE_VERSION));
 
 #else
 
     new QTreeWidgetItem(m_buildtools, QStringList() <<
-                        i18nc(Private::CONTEXT, "Ccache support")         <<         Private::SUPPORTED_NO);
+                        i18nc(Private::CONTEXT, "Ccache support")            << Private::SUPPORTED_NO);
 
 #endif
 
     new QTreeWidgetItem(m_buildtools, QStringList() <<
-                        i18nc(Private::CONTEXT, "Build date")             <<         QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat));
+                        i18nc(Private::CONTEXT, "Build date")                << QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat));
 
     new QTreeWidgetItem(m_buildtools, QStringList() <<
-                        i18nc(Private::CONTEXT, "Build target")           <<         QLatin1String(digikam_build_type));
+                        i18nc(Private::CONTEXT, "Build target")              << QLatin1String(digikam_build_type));
 
     new QTreeWidgetItem(m_buildtools, QStringList() <<
-                        i18nc(Private::CONTEXT, "Build architecture")     <<         QSysInfo::buildCpuArchitecture());
+                        i18nc(Private::CONTEXT, "Build host architecture")   << QLatin1String(CMAKE_HOST_SYSTEM_PROCESSOR));
+
+    new QTreeWidgetItem(m_buildtools, QStringList() <<
+                        i18nc(Private::CONTEXT, "Build target architecture") << QLatin1String(CMAKE_SYSTEM_PROCESSOR));
 
     QString gitRev     = QLatin1String(GITVERSION);
     QString gitBra     = QLatin1String(GITBRANCH);
