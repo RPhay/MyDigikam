@@ -393,7 +393,7 @@ void TagsManager::slotInvertSelection()
     }
 }
 
-void TagsManager::slotWriteToImg()
+void TagsManager::slotWriteToImage()
 {
     int result = QMessageBox::warning(this, qApp->applicationName(),
                                       i18n("<qt>digiKam will clean up tag metadata before setting "
@@ -424,7 +424,7 @@ void TagsManager::slotWriteToImg()
     tool->start();
 }
 
-void TagsManager::slotReadFromImg()
+void TagsManager::slotReadFromImage()
 {
     int result = QMessageBox::warning(this, qApp->applicationName(),
                                       i18n("This operation can take long time "
@@ -743,7 +743,7 @@ void TagsManager::slotLoadTags()
     QApplication::restoreOverrideCursor();
 }
 
-void TagsManager::slotRemoveTagsFromImgs()
+void TagsManager::slotRemoveTagsFromImages()
 {
     const QModelIndexList selList = d->tagMngrView->selectionModel()->selectedIndexes();
 

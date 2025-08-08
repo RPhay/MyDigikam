@@ -84,14 +84,14 @@ void TagsManager::Private::setupActions()
     mainToolbar->addSeparator();
 
     addAction                 = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
-                                               i18nc("@action: button", "Add Tag"), dd);
-    QToolButton* const addBtn    = new QToolButton(dd);
+                                            i18nc("@action: button", "Add Tag"), dd);
+    QToolButton* const addBtn = new QToolButton(dd);
     addBtn->setDefaultAction(addAction);
     addBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
     delAction                 = new QAction(QIcon::fromTheme(QLatin1String("list-remove")),
                                                i18nc("@action: button", "Remove Tag"), dd);
-    QToolButton* const delBtn    = new QToolButton(dd);
+    QToolButton* const delBtn = new QToolButton(dd);
     delBtn->setDefaultAction(delAction);
     delBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
@@ -113,8 +113,8 @@ void TagsManager::Private::setupActions()
 
     AkonadiIface* const abc      = new AkonadiIface(organizeMenu);
 
-    connect(abc, SIGNAL(signalContactTriggered(QString)),
-            tagMngrView, SLOT(slotTagNewFromABCMenu(QString)));
+    dd->connect(abc, SIGNAL(signalContactTriggered(QString)),
+                tagMngrView, SLOT(slotTagNewFromABCMenu(QString)));
 
     // AkonadiIface instance will be deleted with organizeMenu.
 
@@ -174,29 +174,29 @@ void TagsManager::Private::setupActions()
     setHelpText(delTagFromImg, i18n("Delete selected tag(s) from images. "
                                     "Works with multiple selection."));
 
-    connect(titleEdit, SIGNAL(triggered()),
-            dd, SLOT(slotEditTagTitle()));
+    dd->connect(titleEdit, SIGNAL(triggered()),
+                dd, SLOT(slotEditTagTitle()));
 
-    connect(resetIcon, SIGNAL(triggered()),
-            dd, SLOT(slotResetTagIcon()));
+    dd->connect(resetIcon, SIGNAL(triggered()),
+                dd, SLOT(slotResetTagIcon()));
 
-    connect(invSel, SIGNAL(triggered()),
-            dd, SLOT(slotInvertSelection()));
+    dd->connect(invSel, SIGNAL(triggered()),
+                dd, SLOT(slotInvertSelection()));
 
-    connect(expandSel, SIGNAL(triggered()),
-            tagMngrView, SLOT(slotExpandNode()));
+    dd->connect(expandSel, SIGNAL(triggered()),
+                tagMngrView, SLOT(slotExpandNode()));
 
-    connect(expandAll, SIGNAL(triggered()),
-            tagMngrView, SLOT(expandAll()));
+    dd->connect(expandAll, SIGNAL(triggered()),
+                tagMngrView, SLOT(expandAll()));
 
-    connect(collapseAll, SIGNAL(triggered()),
-            tagMngrView, SLOT(slotCollapseAllNodes()));
+    dd->connect(collapseAll, SIGNAL(triggered()),
+                tagMngrView, SLOT(slotCollapseAllNodes()));
 
-    connect(delTagFromImg, SIGNAL(triggered()),
-            dd, SLOT(slotRemoveTagsFromImgs()));
+    dd->connect(delTagFromImg, SIGNAL(triggered()),
+                dd, SLOT(slotRemoveTagsFromImages()));
 
-    connect(markUnused, SIGNAL(triggered()),
-            dd, SLOT(slotMarkNotAssignedTags()));
+    dd->connect(markUnused, SIGNAL(triggered()),
+                dd, SLOT(slotMarkNotAssignedTags()));
 
     organizeMenu->addAction(titleEdit);
     organizeMenu->addAction(resetIcon);
@@ -241,20 +241,20 @@ void TagsManager::Private::setupActions()
 
     setHelpText(loadTags, i18n("Import all tags from a file to restore a backup."));
 
-    connect(wrDbImg, SIGNAL(triggered()),
-            dd, SLOT(slotWriteToImg()));
+    dd->connect(wrDbImg, SIGNAL(triggered()),
+                dd, SLOT(slotWriteToImage()));
 
-    connect(readTags, SIGNAL(triggered()),
-            dd, SLOT(slotReadFromImg()));
+    dd->connect(readTags, SIGNAL(triggered()),
+                dd, SLOT(slotReadFromImage()));
 
-    connect(wipeAll, SIGNAL(triggered()),
-            dd, SLOT(slotWipeAll()));
+    dd->connect(wipeAll, SIGNAL(triggered()),
+                dd, SLOT(slotWipeAll()));
 
-    connect(saveTags, SIGNAL(triggered()),
-            dd, SLOT(slotSaveTags()));
+    dd->connect(saveTags, SIGNAL(triggered()),
+                dd, SLOT(slotSaveTags()));
 
-    connect(loadTags, SIGNAL(triggered()),
-            dd, SLOT(slotLoadTags()));
+    dd->connect(loadTags, SIGNAL(triggered()),
+                dd, SLOT(slotLoadTags()));
 
     syncexportMenu->addAction(wrDbImg);
     syncexportMenu->addAction(readTags);
@@ -271,8 +271,8 @@ void TagsManager::Private::setupActions()
     helpButton->setToolTip(i18nc("@info", "Online help about tags management"));
     helpButton->setFlat(true);
 
-    connect(helpButton, &QPushButton::clicked,
-            dd, []()
+    dd->connect(helpButton, &QPushButton::clicked,
+                dd, []()
         {
             openOnlineDocumentation(QLatin1String("left_sidebar"),
                                     QLatin1String("tags_view"),

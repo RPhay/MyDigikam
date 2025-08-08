@@ -167,13 +167,13 @@ void TagMngrTreeView::setContexMenuItems(ContextMenuHelper& cmh, const QList<TAl
     QAction* const delTagFromImg = new QAction(QIcon::fromTheme(QLatin1String("tag-delete")),
                                                i18n("Remove Tag from Images"), this);
 
-    cmh.addAction(titleEdit,     d->tagMngr, SLOT(slotEditTagTitle()),       false);
-    cmh.addAction(resetIcon,     d->tagMngr, SLOT(slotResetTagIcon()),       false);
-    cmh.addAction(invSel,        d->tagMngr, SLOT(slotInvertSelection()),    false);
-    cmh.addAction(expandSel,     this ,      SLOT(slotExpandNode()),         false);
-    cmh.addAction(expandAll,     this,       SLOT(expandAll()),              false);
-    cmh.addAction(collapseAll,   this,       SLOT(slotCollapseAllNodes()),   false);
-    cmh.addAction(delTagFromImg, d->tagMngr, SLOT(slotRemoveTagsFromImgs()), false);
+    cmh.addAction(titleEdit,     d->tagMngr, SLOT(slotEditTagTitle()),         false);
+    cmh.addAction(resetIcon,     d->tagMngr, SLOT(slotResetTagIcon()),         false);
+    cmh.addAction(invSel,        d->tagMngr, SLOT(slotInvertSelection()),      false);
+    cmh.addAction(expandSel,     this ,      SLOT(slotExpandNode()),           false);
+    cmh.addAction(expandAll,     this,       SLOT(expandAll()),                false);
+    cmh.addAction(collapseAll,   this,       SLOT(slotCollapseAllNodes()),     false);
+    cmh.addAction(delTagFromImg, d->tagMngr, SLOT(slotRemoveTagsFromImages()), false);
 
     if (isRoot)
     {

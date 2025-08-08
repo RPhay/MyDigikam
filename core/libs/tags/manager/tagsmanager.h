@@ -92,14 +92,24 @@ private Q_SLOTS:
      void slotTitleEditReady();
 
     /**
+     * @brief mark all tags that are not assigned to images.
+     */
+    void slotMarkNotAssignedTags();
+
+    /**
      * @brief connected to wrDbImg action and will write all metadata from database to images.
      */
-    void slotWriteToImg();
+    void slotWriteToImage();
 
     /**
      * @brief coonected to readTags action and will reread all images metadata into database.
      */
-    void slotReadFromImg();
+    void slotReadFromImage();
+
+    /**
+     * @brief will remove selected tags from all images that have them.
+     */
+    void slotRemoveTagsFromImages();
 
     /**
      * @brief connected to wipeAll action and will wipe all tag related data from database
@@ -117,15 +127,6 @@ private Q_SLOTS:
      */
     void slotLoadTags();
 
-    /**
-     * @brief will remove selected tags from all images that have them.
-     */
-    void slotRemoveTagsFromImgs();
-
-    /**
-     * @brief mark all tags that are not assigned to images.
-     */
-    void slotMarkNotAssignedTags();
 
 protected:
 
