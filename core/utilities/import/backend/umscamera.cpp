@@ -564,26 +564,26 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
 bool UMSCamera::cameraSummary(QString& summary)
 {
     summary =  QString(i18nc("@info", "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and "
-                                      "Flash disk card readers.\n\n"));
+                                      "Flash disk card readers.<br><br>"));
 
     // we do not expect title/model/etc. to contain newlines,
     // so we just escape HTML characters
 
     summary += i18nc("@info List of device properties",
-                     "Title: \"%1\"\n"
-                     "Model: \"%2\"\n"
-                     "Port: \"%3\"\n"
-                     "Path: \"%4\"\n"
-                     "UUID: \"%5\"\n\n",
+                     "Title: \"%1\"<br>"
+                     "Model: \"%2\"<br>"
+                     "Port: \"%3\"<br>"
+                     "Path: \"%4\"<br>"
+                     "UUID: \"%5\"<br><br>",
                      title(), model(), port(), path(), uuid());
 
     summary += i18nc("@info List of supported device operations",
-                     "Thumbnails: \"%1\"\n"
-                     "Capture image: \"%2\"\n"
-                     "Delete items: \"%3\"\n"
-                     "Upload items: \"%4\"\n"
-                     "Create directories: \"%5\"\n"
-                     "Delete directories: \"%6\"\n\n",
+                     "Thumbnails: \"%1\"<br>"
+                     "Capture image: \"%2\"<br>"
+                     "Delete items: \"%3\"<br>"
+                     "Upload items: \"%4\"<br>"
+                     "Create directories: \"%5\"<br>"
+                     "Delete directories: \"%6\"<br><br>",
                      thumbnailSupport()    ? i18nc("@info: ums backend feature", "yes") : i18nc("@info: ums backend feature", "no"),
                      captureImageSupport() ? i18nc("@info: ums backend feature", "yes") : i18nc("@info: ums backend feature", "no"),
                      deleteSupport()       ? i18nc("@info: ums backend feature", "yes") : i18nc("@info: ums backend feature", "no"),
@@ -604,9 +604,9 @@ bool UMSCamera::cameraManual(QString& manual)
 bool UMSCamera::cameraAbout(QString& about)
 {
     about = QString(i18nc("@info", "The \"Mounted Camera\" driver is a simple interface to a camera disk "
-                                   "mounted locally on your system.\n\n"
-                                   "It does not use libgphoto2 drivers.\n\n"
-                                   "To report any problems with this driver, please contact the digiKam team at:\n\n"
+                                   "mounted locally on your system.<br><br>"
+                                   "It does not use libgphoto2 drivers.<br><br>"
+                                   "To report any problems with this driver, please contact the digiKam team at:<br><br>"
                                    "https://www.digikam.org/?q=contact"));
     return true;
 }

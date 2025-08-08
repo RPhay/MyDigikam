@@ -1613,19 +1613,19 @@ bool GPCamera::cameraSummary(QString& summary)
     // so we just escape HTML characters
 
     summary =  i18nc("@info List of device properties",
-                     "Title: \"%1\"\n"
-                     "Model: \"%2\"\n"
-                     "Port: \"%3\"\n"
-                     "Path: \"%4\"\n\n",
+                     "Title: \"%1\"<br>"
+                     "Model: \"%2\"<br>"
+                     "Port: \"%3\"<br>"
+                     "Path: \"%4\"<br><br>",
                      title(), model(), port(), path());
 
     summary += i18nc("@info List of supported device operations",
-                     "Thumbnails: \"%1\"\n"
-                     "Capture image: \"%2\"\n"
-                     "Delete items: \"%3\"\n"
-                     "Upload items: \"%4\"\n"
-                     "Create directories: \"%5\"\n"
-                     "Delete Directories: \"%6\"\n\n",
+                     "Thumbnails: \"%1\"<br>"
+                     "Capture image: \"%2\"<br>"
+                     "Delete items: \"%3\"<br>"
+                     "Upload items: \"%4\"<br>"
+                     "Create directories: \"%5\"<br>"
+                     "Delete Directories: \"%6\"<br><br>",
                      thumbnailSupport()    ? i18nc("@info: gphoto backend feature", "yes") : i18nc("@info: gphoto backend feature", "no"),
                      captureImageSupport() ? i18nc("@info: gphoto backend feature", "yes") : i18nc("@info: gphoto backend feature", "no"),
                      deleteSupport()       ? i18nc("@info: gphoto backend feature", "yes") : i18nc("@info: gphoto backend feature", "no"),
