@@ -607,7 +607,7 @@ bool UMSCamera::cameraAbout(QString& about)
                                    "mounted locally on your system.<br><br>"
                                    "It does not use libgphoto2 drivers.<br><br>"
                                    "To report any problems with this driver, please contact the digiKam team at:<br><br>"
-                                   "https://www.digikam.org/?q=contact"));
+                                   "https://www.digikam.org/support/contact/"));
     return true;
 }
 
