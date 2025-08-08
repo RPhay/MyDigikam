@@ -15,125 +15,15 @@
  *
  * ============================================================ */
 
-#include "tagsmanager.h"
-
-// C++ includes
-
-#include <iterator>
-
-// Qt includes
-
-#include <QQueue>
-#include <QTreeView>
-#include <QLabel>
-#include <QHBoxLayout>
-#include <QSplitter>
-#include <QApplication>
-#include <QStandardPaths>
-#include <QPushButton>
-#include <QToolBar>
-#include <QToolButton>
-#include <QScreen>
-#include <QWindow>
-#include <QAction>
-#include <QMessageBox>
-#include <QTextStream>
-#include <QFile>
-#include <QMenu>
-#include <QIcon>
-
-#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
-#   include <QTextCodec>
-#endif
-
-// KDE includes
-
-#include <kconfiggroup.h>
-#include <klocalizedstring.h>
-
-// Local includes
-
-#include "digikam_debug.h"
-#include "digikam_config.h"
-#include "digikam_globals.h"
-#include "dmessagebox.h"
-#include "dxmlguiwindow.h"
-#include "tagpropwidget.h"
-#include "tagmngrtreeview.h"
-#include "taglist.h"
-#include "tagfolderview.h"
-#include "ddragobjects.h"
-#include "searchtextbardb.h"
-#include "tageditdlg.h"
-#include "coredb.h"
-#include "facetags.h"
-#include "dlogoaction.h"
-#include "metadatasynchronizer.h"
-#include "fileactionmngr.h"
-#include "metaenginesettings.h"
-#include "dfiledialog.h"
-#include "tagscache.h"
-
-#ifdef HAVE_AKONADICONTACT
-#   include "akonadiiface.h"
-#endif
-
-namespace
-{
-
-QString JoinTagNamesToList(const QStringList& stringList)
-{
-    const QString joinedStringList = stringList.join(QLatin1String("', '"));
-
-    return QLatin1Char('\'') + joinedStringList + QLatin1Char('\'');
-}
-
-} // namespace
+#include "tagsmanager_p.h"
 
 namespace Digikam
 {
 
-QPointer<TagsManager> TagsManager::internalPtr = QPointer<TagsManager>();
-
-class Q_DECL_HIDDEN TagsManager::Private
-{
-public:
-
-    Private() = default;
-
-public:
-
-    TagMngrTreeView* tagMngrView        = nullptr;
-    QLabel*          tagPixmap          = nullptr;
-    SearchTextBarDb* searchBar          = nullptr;
-
-    QSplitter*       splitter           = nullptr;
-    QWidget*         treeWindow         = nullptr;
-    QToolBar*        mainToolbar        = nullptr;
-    QPushButton*     organizeButton     = nullptr;
-    QPushButton*     syncexportButton   = nullptr;
-    QAction*         tagProperties      = nullptr;
-    QAction*         addAction          = nullptr;
-    QAction*         delAction          = nullptr;
-    QAction*         titleEdit          = nullptr;
-
-    /**
-     * Options unavailable for root tag
-     */
-    QList<QAction*>  rootDisabledOptions;
-
-    TagList*         listView           = nullptr;
-    TagPropWidget*   tagPropWidget      = nullptr;
-    TagModel*        tagModel           = nullptr;
-
-    bool             tagPropVisible     = false;
-    bool             firstShowEvent     = true;
-};
-
 TagsManager::TagsManager()
     : QMainWindow      (nullptr),
       StateSavingObject(this),
-      d                (new Private)
+      d                (new Private(this))
 {
     setObjectName(QLatin1String("Tags Manager"));
     d->tagModel = new TagModel(AbstractAlbumModel::IncludeRootAlbum, this);
@@ -178,6 +68,11 @@ TagsManager* TagsManager::instance()
     return TagsManager::internalPtr;
 }
 
+bool TagsManager::isCreated()
+{
+    return !internalPtr.isNull();
+}
+
 void TagsManager::setupUi()
 {
     setWindowTitle(i18nc("@title:window", "Tags Manager"));
@@ -198,7 +93,7 @@ void TagsManager::setupUi()
     d->searchBar->setMaximumWidth(200);
     d->searchBar->setFilterModel(d->tagMngrView->albumFilterModel());
 
-    setupActions();
+    d->setupActions();
 
     // Tree Widget + Actions + Tag Properties
 
@@ -228,21 +123,17 @@ void TagsManager::slotSelectionChanged()
 
     if (selectedTags.isEmpty() || ((selectedTags.size() == 1) && selectedTags.at(0)->isRoot()))
     {
-        enableRootTagActions(false);
+        d->enableRootTagActions(false);
         d->listView->enableAddButton(false);
     }
     else
     {
-        enableRootTagActions(true);
+        d->enableRootTagActions(true);
         d->listView->enableAddButton(true);
         d->titleEdit->setEnabled((selectedTags.size() == 1));
     }
 
     d->tagPropWidget->slotSelectionChanged(selectedTags);
-}
-
-void TagsManager::slotItemChanged()
-{
 }
 
 void TagsManager::slotAddAction()
@@ -264,7 +155,9 @@ void TagsManager::slotAddAction()
 
     QMap<QString, QString> errMap;
     AlbumList tList = TagEditDlg::createTAlbum(parent, title, icon, ks, errMap);
+
     Q_UNUSED(tList);
+
     TagEditDlg::showtagsListCreationError(qApp->activeWindow(), errMap);
 }
 
@@ -349,7 +242,7 @@ void TagsManager::slotDeleteAction()
                                                        "the subtags. "
                                                        "Do you want to continue?",
                                                        tagsWithChildren.count(),
-                                                       JoinTagNamesToList(tagsWithChildren)),
+                                                       d->joinTagNamesToList(tagsWithChildren)),
                                                 QMessageBox::Yes | QMessageBox::Cancel);
 
         if (result != QMessageBox::Yes)
@@ -368,7 +261,7 @@ void TagsManager::slotDeleteAction()
                          "Tags %2 are assigned to one or more items. "
                          "Do you want to delete them?",
                          tagsWithImages.count(),
-                         JoinTagNamesToList(tagsWithImages));
+                         d->joinTagNamesToList(tagsWithImages));
     }
     else
     {
@@ -376,7 +269,7 @@ void TagsManager::slotDeleteAction()
                          "Delete tag %2?",
                          "Delete tags %2?",
                          tagNames.count(),
-                         JoinTagNamesToList(tagNames));
+                         d->joinTagNamesToList(tagNames));
     }
 
     const int result = QMessageBox::warning(this, i18ncp("@title:window", "Delete tag", "Delete tags", tagNames.count()),
@@ -914,262 +807,6 @@ void TagsManager::showEvent(QShowEvent* event)
     move(screen->geometry().center() - rect().center());
 
     QMainWindow::showEvent(event);
-}
-
-void TagsManager::setupActions()
-{
-    d->mainToolbar = new QToolBar(this);
-    d->mainToolbar->setMovable(false);
-    d->mainToolbar->setFloatable(false);
-    d->mainToolbar->setContextMenuPolicy(Qt::PreventContextMenu);
-    const int cmargin = qMin(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
-                             qMin(style()->pixelMetric(QStyle::PM_LayoutTopMargin),
-                                  qMin(style()->pixelMetric(QStyle::PM_LayoutRightMargin),
-                                       style()->pixelMetric(QStyle::PM_LayoutBottomMargin))));
-    d->mainToolbar->layout()->setContentsMargins(cmargin, cmargin, cmargin, cmargin);
-
-    QWidgetAction* const pixMapAction = new QWidgetAction(this);
-    pixMapAction->setDefaultWidget(d->tagPixmap);
-
-    QWidgetAction* const searchAction = new QWidgetAction(this);
-    searchAction->setDefaultWidget(d->searchBar);
-
-    d->mainToolbar->addAction(pixMapAction);
-    d->mainToolbar->addAction(searchAction);
-
-    d->mainToolbar->addSeparator();
-
-    d->addAction                 = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
-                                               i18nc("@action: button", "Add Tag"), this);
-    QToolButton* const addBtn    = new QToolButton(this);
-    addBtn->setDefaultAction(d->addAction);
-    addBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-
-    d->delAction                 = new QAction(QIcon::fromTheme(QLatin1String("list-remove")),
-                                               i18nc("@action: button", "Remove Tag"), this);
-    QToolButton* const delBtn    = new QToolButton(this);
-    delBtn->setDefaultAction(d->delAction);
-    delBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-
-    d->organizeButton            = new QPushButton(i18nc("@action: button", "Organize"), this);
-    d->organizeButton->setIcon(QIcon::fromTheme(QLatin1String("autocorrection")));
-    d->organizeButton->setFlat(true);
-
-    d->syncexportButton          = new QPushButton(i18nc("@action: button", "Sync &Export"), this);
-    d->syncexportButton->setIcon(QIcon::fromTheme(QLatin1String("network-server-database")));
-    d->syncexportButton->setFlat(true);
-
-    /**
-     * organize group
-     */
-    QMenu* const organizeMenu    = new QMenu(d->organizeButton);
-    d->organizeButton->setMenu(organizeMenu);
-
-#ifdef HAVE_AKONADICONTACT
-
-    AkonadiIface* const abc      = new AkonadiIface(organizeMenu);
-
-    connect(abc, SIGNAL(signalContactTriggered(QString)),
-            d->tagMngrView, SLOT(slotTagNewFromABCMenu(QString)));
-
-    // AkonadiIface instance will be deleted with organizeMenu.
-
-#endif
-
-    d->titleEdit                 = new QAction(QIcon::fromTheme(QLatin1String("document-edit")),
-                                               i18n("Edit Tag Title"), this);
-    d->titleEdit->setShortcut(QKeySequence(Qt::Key_F2));
-
-    QAction* const resetIcon     = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),
-                                               i18n("Reset Tag Icon"), this);
-
-    QAction* const markUnused    = new QAction(QIcon::fromTheme(QLatin1String("edit-select")),
-                                               i18n("Mark Unassigned Tags"), this);
-
-    QAction* const invSel        = new QAction(QIcon::fromTheme(QLatin1String("tag-reset")),
-                                               i18n("Invert Selection"), this);
-
-    QAction* const expandSel     = new QAction(QIcon::fromTheme(QLatin1String("go-down")),
-                                               i18n("Expand Selected Nodes"), this);
-
-    QAction* const expandAll     = new QAction(QIcon::fromTheme(QLatin1String("expand-all")),
-                                               i18n("Expand Tag Tree"), this);
-
-    QAction* const collapseAll   = new QAction(QIcon::fromTheme(QLatin1String("collapse-all")),
-                                               i18n("Collapse Tag Tree"), this);
-
-    QAction* const delTagFromImg = new QAction(QIcon::fromTheme(QLatin1String("tag-delete")),
-                                               i18n("Remove Tag from Images"), this);
-
-    /**
-     * Tool tips
-     */
-    setHelpText(d->addAction, i18n("Add new tag to current tag. "
-                                   "Current tag is last clicked tag."));
-
-    setHelpText(d->delAction, i18n("Delete selected items. "
-                                   "Also work with multiple items, "
-                                   "but will not delete the root tag."));
-
-    setHelpText(d->titleEdit, i18n("Edit title from selected tag."));
-
-    setHelpText(resetIcon, i18n("Reset icon to selected tags. "
-                                "Works with multiple selection."));
-
-    setHelpText(markUnused, i18n("Mark all tags that are not assigned to images."));
-
-    setHelpText(invSel, i18n("Invert selection. "
-                             "Only visible items will be selected"));
-
-    setHelpText(expandSel, i18n("Selected items will be expanded"));
-
-    setHelpText(expandAll, i18n("Expand tag tree completely"));
-
-    setHelpText(collapseAll, i18n("Collapse tag tree completely"));
-
-    setHelpText(delTagFromImg, i18n("Delete selected tag(s) from images. "
-                                    "Works with multiple selection."));
-
-    connect(d->titleEdit, SIGNAL(triggered()),
-            this, SLOT(slotEditTagTitle()));
-
-    connect(resetIcon, SIGNAL(triggered()),
-            this, SLOT(slotResetTagIcon()));
-
-    connect(invSel, SIGNAL(triggered()),
-            this, SLOT(slotInvertSel()));
-
-    connect(expandSel, SIGNAL(triggered()),
-            d->tagMngrView, SLOT(slotExpandNode()));
-
-    connect(expandAll, SIGNAL(triggered()),
-            d->tagMngrView, SLOT(expandAll()));
-
-    connect(collapseAll, SIGNAL(triggered()),
-            d->tagMngrView, SLOT(slotCollapseAllNodes()));
-
-    connect(delTagFromImg, SIGNAL(triggered()),
-            this, SLOT(slotRemoveTagsFromImgs()));
-
-    connect(markUnused, SIGNAL(triggered()),
-            this, SLOT(slotMarkNotAssignedTags()));
-
-    organizeMenu->addAction(d->titleEdit);
-    organizeMenu->addAction(resetIcon);
-    organizeMenu->addAction(markUnused);
-    organizeMenu->addAction(invSel);
-    organizeMenu->addAction(expandSel);
-    organizeMenu->addAction(expandAll);
-    organizeMenu->addAction(collapseAll);
-    organizeMenu->addAction(delTagFromImg);
-
-    /**
-     * Sync & Export Group
-     */
-
-    QMenu* const syncexportMenu = new QMenu(d->syncexportButton);
-    d->syncexportButton->setMenu(syncexportMenu);
-
-    QAction* const wrDbImg      = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),
-                                              i18n("Write Tags from Database to Image"), this);
-
-    QAction* const readTags     = new QAction(QIcon::fromTheme(QLatin1String("tag-new")),
-                                              i18n("Read Tags from Image"), this);
-
-    QAction* const wipeAll      = new QAction(QIcon::fromTheme(QLatin1String("draw-eraser")),
-                                              i18n("Wipe all tags from Database only"), this);
-
-    QAction* const saveTags     = new QAction(QIcon::fromTheme(QLatin1String("document-export")),
-                                              i18n("Export tags to a file from selected tag"), this);
-
-    QAction* const loadTags     = new QAction(QIcon::fromTheme(QLatin1String("document-import")),
-                                              i18n("Import tags from a file to selected tag"), this);
-
-    setHelpText(wrDbImg, i18n("Write Tags Metadata to Image."));
-
-    setHelpText(readTags, i18n("Read tags from Images into Database. "
-                               "Existing tags will not be affected"));
-
-    setHelpText(wipeAll, i18n("Delete all tags from database only. Will not sync with files. "
-                              "Proceed with caution."));
-
-    setHelpText(saveTags, i18n("Export all tags to a file to keep a backup."));
-
-    setHelpText(loadTags, i18n("Import all tags from a file to restore a backup."));
-
-    connect(wrDbImg, SIGNAL(triggered()),
-            this, SLOT(slotWriteToImg()));
-
-    connect(readTags, SIGNAL(triggered()),
-            this, SLOT(slotReadFromImg()));
-
-    connect(wipeAll, SIGNAL(triggered()),
-            this, SLOT(slotWipeAll()));
-
-    connect(saveTags, SIGNAL(triggered()),
-            this, SLOT(slotSaveTags()));
-
-    connect(loadTags, SIGNAL(triggered()),
-            this, SLOT(slotLoadTags()));
-
-    syncexportMenu->addAction(wrDbImg);
-    syncexportMenu->addAction(readTags);
-    syncexportMenu->addAction(wipeAll);
-    syncexportMenu->addAction(saveTags);
-    syncexportMenu->addAction(loadTags);
-
-    d->mainToolbar->addWidget(addBtn);
-    d->mainToolbar->addWidget(delBtn);
-    d->mainToolbar->addWidget(d->organizeButton);
-    d->mainToolbar->addWidget(d->syncexportButton);
-
-    QPushButton* const helpButton = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), i18n("Help"));
-    helpButton->setToolTip(i18nc("@info", "Online help about tags management"));
-    helpButton->setFlat(true);
-
-    connect(helpButton, &QPushButton::clicked,
-            this, []()
-        {
-            openOnlineDocumentation(QLatin1String("left_sidebar"),
-                                    QLatin1String("tags_view"),
-                                    QLatin1String("tags-manager"));
-        }
-    );
-
-    d->mainToolbar->addWidget(helpButton);
-    d->mainToolbar->addAction(new DLogoAction(this));
-    addToolBar(d->mainToolbar);
-
-    d->rootDisabledOptions.append(d->delAction);
-    d->rootDisabledOptions.append(d->titleEdit);
-    d->rootDisabledOptions.append(resetIcon);
-    d->rootDisabledOptions.append(delTagFromImg);
-}
-
-void TagsManager::setHelpText(QAction* const action, const QString& text)
-{
-    action->setStatusTip(text);
-    action->setToolTip(text);
-
-    if (action->whatsThis().isEmpty())
-    {
-        action->setWhatsThis(text);
-    }
-}
-
-void TagsManager::enableRootTagActions(bool value)
-{
-    for (QAction* const action : std::as_const(d->rootDisabledOptions))
-    {
-        if (value)
-        {
-            action->setEnabled(true);
-        }
-        else
-        {
-            action->setEnabled(false);
-        }
-    }
 }
 
 void TagsManager::doLoadState()
