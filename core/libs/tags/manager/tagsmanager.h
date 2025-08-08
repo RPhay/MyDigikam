@@ -42,7 +42,7 @@ public:
     ~TagsManager()                      override;
 
     /**
-     * @brief setup all gui elements for Tag Manager.
+     * @brief setup all gui elements for Tags Manager.
      */
     void setupUi();
 

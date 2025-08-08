@@ -37,19 +37,19 @@ public:
     ~TagList() override;
 
     /**
-     * @brief saveSettings   - save settings to digiKam_tagsmanagerrc KConfig
+     * @brief save settings to digiKam_tagsmanagerrc KConfig.
      */
     void saveSettings();
 
     /**
-     * @brief restoreSettings - read settings from digikam_tagsmanagerrc
-     *                          config and populate model with data
+     * @brief read settings from digikam_tagsmanagerrc
+     *        config and populate model with data.
      */
     void restoreSettings();
 
     /**
-     * @brief enableAddButton - disable Add Button when selection is empty
-     *                           or only root tag is selected
+     * @brief disable Add Button when selection is empty
+     *        or only root tag is selected.
      */
     void enableAddButton(bool value);
 

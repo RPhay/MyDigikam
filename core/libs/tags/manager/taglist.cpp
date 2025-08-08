@@ -47,6 +47,8 @@ public:
 
     Private() = default;
 
+public:
+
     QPushButton*                 addButton      = nullptr;
     TagMngrListView*             tagList        = nullptr;
     TagMngrListModel*            tagListModel   = nullptr;

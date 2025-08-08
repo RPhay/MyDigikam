@@ -92,7 +92,7 @@ public:
     QString joinTagNamesToList(const QStringList& stringList);
 
     /**
-     * @brief enable or disable options when only root tag is selected
+     * @brief enable or disable options when only root tag is selected.
      */
     void enableRootTagActions(bool value);
 

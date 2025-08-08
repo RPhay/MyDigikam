@@ -70,10 +70,10 @@ private Q_SLOTS:
 private:
 
     /**
-     * @brief enableItems - enable items based on selection.
-     *                      If no item is selected, disable all,
-     *                      if one item selected, enable all,
-     *                      if multiple selected, enable icon & icon button
+     * @brief enable items based on selection.
+     *        If no item is selected, disable all.
+     *        If one item selected, enable all.
+     *        If multiple selected, enable icon & icon button.
      */
     void enableItems(ItemsEnable value);
 

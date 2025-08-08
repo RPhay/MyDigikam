@@ -52,20 +52,20 @@ public:
 protected:
 
     /**
-     * @brief setContexMenuItems Reimplemented method from TagsFolderView.
-     *                           Will set custom actions for Tags Manager.
-     *                           Some actions are also available in toolbar
+     * @brief reimplemented method from TagsFolderView.
+     *        Will set custom actions for Tags Manager.
+     *        Some actions are also available in toolbar.
      *
-     * @param cmh                ContextMenuHelper class to help setting some basic actions
-     * @param albums             List of currently selected albums
+     * @param cmh    ContextMenuHelper class to help setting some basic actions.
+     * @param albums list of currently selected albums.
      */
     void setContexMenuItems(ContextMenuHelper& cmh, const QList<TAlbum*>& albums) override;
 
     /**
-     * @brief contextMenuEvent   Reimplement contextMenuEvent from AbstractAlbumTree
-     *                           to support multiple selection
+     * @brief reimplement contextMenuEvent from AbstractAlbumTree
+     *        to support multiple selection.
      *
-     * @param event context menu event triggered by right click
+     * @param event context menu event triggered by right click.
      */
     void contextMenuEvent(QContextMenuEvent* event) override;
 

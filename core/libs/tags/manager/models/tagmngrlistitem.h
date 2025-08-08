@@ -52,12 +52,12 @@ public:
     bool equal(ListItem* const item)             const;
 
     /**
-     * @brief containsItem  - search child items if contains a ListItem with
-     *                        the same data as item
-     * @param item          - ListItem pointer for which we should search if there
-     *                        is a similar item
-     * @return              - NULL if no similar item was found and a valid ListItem
-     *                        if a ListItem with the same data was found
+     * @brief search child items if contains a ListItem with
+     *        the same data as item.
+     * @param item ListItem pointer for which we should search if there
+     *             is a similar item.
+     * @return nullptr if no similar item was found and a valid ListItem
+     *         if a ListItem with the same data was found.
      */
     ListItem* containsItem(ListItem* const item) const;
 

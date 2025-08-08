@@ -37,23 +37,22 @@ public:
     ~TagMngrListModel() override;
 
     /**
-     * @brief addItem   - add new item to list
-     * @param values    - A list of data for item: Name as QString, QBrush as
-     *                    background and qlonglong as id
-     * @return          - pointer to newly created listitem
+     * @brief add new item to list.
+     * @param values A list of data for item: Name as QString, QBrush as
+     *               background and qlonglong as id.
+     * @return pointer to newly created listitem.
      */
     ListItem* addItem(QList<QVariant> values);
 
     /**
-     * @brief allItems  - return all items from List, usually to be saved
-     *                    in KConfig
+     * @brief return all items from List, usually to be saved in KConfig.
      */
     QList<ListItem*> allItems()                                                                 const;
 
     void deleteItem(ListItem* const item);
 
     /**
-     * Standard methods to be implemented when subcassing QAbstractItemModel
+     * Standard methods to be implemented when subcassing QAbstractItemModel.
      */
     QVariant data(const QModelIndex& index, int role)                                           const override;
 
@@ -72,8 +71,7 @@ public:
     bool setData(const QModelIndex& index, const QVariant& value, int role) override;
 
     /**
-     * Reimplemented methods for handling drag-n-drop, encoding and decoding
-     * mime types
+     * Reimplemented methods for handling drag-n-drop, encoding and decoding mime types.
      */
     Qt::DropActions supportedDropActions()                                                      const override;
     QStringList mimeTypes()                                                                     const override;

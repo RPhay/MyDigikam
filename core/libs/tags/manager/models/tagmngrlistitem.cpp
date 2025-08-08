@@ -35,6 +35,8 @@ public:
 
     Private() = default;
 
+public:
+
     QList<ListItem*> childItems;
     QList<ListItem*> toDelItems;
     QList<QVariant>  itemData;
@@ -192,7 +194,7 @@ int ListItem::row() const
 
 ListItem* ListItem::containsItem(ListItem* const item) const
 {
-    // We need to compare items and not pointers
+    // NOTE: We need to compare items and not pointers
 
     for (int it = 0 ; it < d->childItems.size() ; ++it)
     {
