@@ -314,7 +314,7 @@ bool UMSCamera::getThumbnail(const QString& folder, const QString& itemName, QIm
 
     // Finally, we trying to get thumbnail using DImg API (slow).
 
-    qCDebug(DIGIKAM_IMPORTUI_LOG) << "Use DImg loader to get thumbnail from : " << path;
+    qCDebug(DIGIKAM_IMPORTUI_LOG) << "Use DImg loader to get thumbnail from:" << path;
 
     DImg dimgThumb;
 
@@ -425,7 +425,7 @@ bool UMSCamera::setLockItem(const QString& folder, const QString& itemName, bool
     {
         // Lock the file to set read only flag
 
-        if (::chmod(QFile::encodeName(src).constData(), S_IREAD) == -1)
+        if (::chmod(src.toUtf8().constData(), S_IREAD) == -1)
         {
             return false;
         }
@@ -434,7 +434,7 @@ bool UMSCamera::setLockItem(const QString& folder, const QString& itemName, bool
     {
         // Unlock the file to set read/write flag
 
-        if (::chmod(QFile::encodeName(src).constData(), S_IREAD | S_IWRITE) == -1)
+        if (::chmod(src.toUtf8().constData(), S_IREAD | S_IWRITE) == -1)
         {
             return false;
         }
@@ -483,7 +483,7 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
 
     if (!sFile.open(QIODevice::ReadOnly))
     {
-        qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open source file for reading: " << src;
+        qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open source file for reading:" << src;
 
         return false;
     }
@@ -491,7 +491,7 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
     if (!dFile.open(QIODevice::WriteOnly))
     {
         sFile.close();
-        qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open destination file for writing: " << dest;
+        qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open destination file for writing:" << dest;
 
         return false;
     }
