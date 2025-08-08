@@ -26,10 +26,8 @@ class AbstractAlbumModel;
 class AlbumFilterModel;
 
 /**
- * A text input for searching entries with visual feedback.
+ * @brief a text input for searching entries with visual feedback.
  * Can be used on Database Models.
- *
- * @author Gilles Caulier
  */
 class DIGIKAM_GUI_EXPORT SearchTextBarDb : public SearchTextBar
 {
@@ -43,7 +41,7 @@ public:
     ~SearchTextBarDb() override;
 
     /**
-     * If the given model is != null, the model is used to populate the
+     * @brief if the given model is != null, the model is used to populate the
      * completion for this text field.
      *
      * @param model to fill from or null for manual mode
@@ -53,7 +51,7 @@ public:
     void setModel(QAbstractItemModel* model, int uniqueIdRole, int displayRole = Qt::DisplayRole);
 
     /**
-     * Sets the album model this text bar shall use to invoke filtering on and
+     * @brief sets the album model this text bar shall use to invoke filtering on and
      * reading the result for highlighting from.
      *
      * @param model album model to use for filtering. <code>null</code>
@@ -64,7 +62,7 @@ public:
     void setModel(AbstractAlbumModel* const model);
 
     /**
-     * Sets the filter model this text bar shall use to invoke filtering on and
+     * @brief sets the filter model this text bar shall use to invoke filtering on and
      * reading the result for highlighting from.
      *
      * @param filterModel filter model to use for filtering. <code>null</code>

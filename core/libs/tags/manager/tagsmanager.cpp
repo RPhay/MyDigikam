@@ -85,7 +85,9 @@ void TagsManager::setupUi()
     d->tagMngrView = new TagMngrTreeView(this, d->tagModel);
     d->tagMngrView->setConfigGroup(getConfigGroup());
 
-    d->searchBar   = new SearchTextBarDb(this, QLatin1String("ItemIconViewTagSearchBar"));
+    d->searchBar   = new SearchTextBarDb(this,
+                                         QLatin1String("ItemIconViewTagSearchBar"),
+                                         i18n("Search for tags..."));
     d->searchBar->setHighlightOnResult(true);
     d->searchBar->setModel(d->tagMngrView->filteredModel(),
                            AbstractAlbumModel::AlbumIdRole,

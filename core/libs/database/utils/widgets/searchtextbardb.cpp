@@ -42,6 +42,8 @@ public:
 
     Private() = default;
 
+public:
+
     QPointer<AlbumFilterModel> filterModel = nullptr;
 };
 
@@ -70,7 +72,7 @@ void SearchTextBarDb::setModel(AbstractAlbumModel* const model)
 
 void SearchTextBarDb::setFilterModel(AlbumFilterModel* const filterModel)
 {
-    // if there already was a model, disconnect from this model
+    // If there already was a model, disconnect from this model
 
     if (d->filterModel)
     {
@@ -79,7 +81,7 @@ void SearchTextBarDb::setFilterModel(AlbumFilterModel* const filterModel)
 
     d->filterModel = filterModel;
 
-    // connect to new model if desired
+    // Connect to new model if desired
 
     if (d->filterModel)
     {

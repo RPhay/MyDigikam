@@ -31,10 +31,11 @@ namespace Digikam
 
 class DIGIKAM_EXPORT SearchTextSettings
 {
-
 public:
 
     SearchTextSettings() = default;
+
+public:
 
     Qt::CaseSensitivity caseSensitive = Qt::CaseInsensitive;
 
@@ -44,7 +45,7 @@ public:
 bool DIGIKAM_EXPORT operator==(const SearchTextSettings& a, const SearchTextSettings& b);
 
 /**
- * A text input for searching entries with visual feedback.
+ * @brief a text input for searching entries with visual feedback.
  * Can be used on QAbstractItemModels.
  */
 class DIGIKAM_EXPORT SearchTextBar : public QLineEdit,
@@ -55,7 +56,7 @@ class DIGIKAM_EXPORT SearchTextBar : public QLineEdit,
 public:
 
     /**
-     * Possible highlighting states a SearchTextBar can have.
+     * @brief Possible highlighting states a SearchTextBar can have.
      */
     enum HighlightState
     {
@@ -88,7 +89,7 @@ public:
     bool hasTextQueryCompletion()               const;
 
     /**
-     * Tells whether highlighting for found search results shall be used or not
+     * @brief tells whether highlighting for found search results shall be used or not
      * (green and red).
      *
      * Default behavior has highlighting enabled.
@@ -100,7 +101,7 @@ public:
     void setHighlightOnResult(bool highlight);
 
     /**
-     * Tells the current highlighting state of the text input indicated via the
+     * @brief tells the current highlighting state of the text input indicated via the
      * background color.
      *
      * @return current highlight state
@@ -108,7 +109,7 @@ public:
     HighlightState getCurrentHighlightState()   const;
 
     /**
-     * Indicate whether this search text bar can be toggled to between case-
+     * @brief indicate whether this search text bar can be toggled to between case-
      * sensitive and -insensitive or if always case-insensitive shall be
      * used.
      *
@@ -147,7 +148,7 @@ private:
     void contextMenuEvent(QContextMenuEvent* e)       override;
 
     /**
-     * If hasCaseSensitive returns <code>true</code> this tells the search
+     * @brief if hasCaseSensitive returns <code>true</code> this tells the search
      * text bar whether to ignore case or not.
      *
      * @param ignore if <code>true</code>, case is ignored in the emitted

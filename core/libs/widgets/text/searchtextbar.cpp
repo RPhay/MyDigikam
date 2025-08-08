@@ -48,6 +48,8 @@ public:
 
     Private() = default;
 
+public:
+
     QString            optionAutoCompletionModeEntry    = QLatin1String("AutoCompletionMode");
     QString            optionCaseSensitiveEntry         = QLatin1String("CaseSensitive");
 
@@ -232,7 +234,7 @@ void SearchTextBar::slotTextChanged()
 
 void SearchTextBar::slotSearchResult(bool match)
 {
-    // only highlight if text is not empty or highlighting is disabled.
+    // Only highlight if text is not empty or highlighting is disabled.
 
     if (text().isEmpty() || !d->highlightOnResult)
     {
