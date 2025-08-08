@@ -194,7 +194,7 @@ elif [[ $MAJOR_OSX_VERSION == "14" ]]
 elif [[ $MAJOR_OSX_VERSION == "15" ]]
     then OSX_CODE_NAME="Sequoia"
 
-elif [[ $MAJOR_OSX_VERSION == "16" ]]
+elif [[ $MAJOR_OSX_VERSION == "26" ]]
     then OSX_CODE_NAME="Tahoe"
 
 fi
