@@ -41,20 +41,34 @@ public:
     TagsManager();
     ~TagsManager()                      override;
 
+public:
+
+    static QPointer<TagsManager> internalPtr;
+    static TagsManager* instance();
+    static bool isCreated();
+
+public:
+
     /**
      * @brief setup all gui elements for Tags Manager.
      */
     void setupUi();
 
-    static QPointer<TagsManager> internalPtr;
-    static TagsManager* instance();
-    static bool isCreated();
+protected:
+
+    void closeEvent(QCloseEvent* event) override;
+    void showEvent(QShowEvent* event)   override;
+
+    void doLoadState()                  override;
+    void doSaveState()                  override;
 
 Q_SIGNALS:
 
     void signalSelectionChanged(TAlbum* album);
 
 private Q_SLOTS:
+
+    // --- Action Slots.
 
     /**
      * @brief update tag properties in tagPropWidget when different item is selected.
@@ -76,6 +90,8 @@ private Q_SLOTS:
      */
     void slotDeleteAction();
 
+    // --- Properties slots.
+
     /**
      * @brief connected to resetTagIcon action and will reset icon to all selected tags.
      */
@@ -95,6 +111,8 @@ private Q_SLOTS:
      * @brief mark all tags that are not assigned to images.
      */
     void slotMarkNotAssignedTags();
+
+    // --- Inpout / Output slots.
 
     /**
      * @brief connected to wrDbImg action and will write all metadata from database to images.
@@ -126,15 +144,6 @@ private Q_SLOTS:
      * @brief connected to loadTags action and will import all tags from a file.
      */
     void slotLoadTags();
-
-
-protected:
-
-    void closeEvent(QCloseEvent* event) override;
-    void showEvent(QShowEvent* event)   override;
-
-    void doLoadState()                  override;
-    void doSaveState()                  override;
 
 private:
 

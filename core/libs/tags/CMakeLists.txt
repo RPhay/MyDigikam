@@ -43,6 +43,10 @@ set(libtags_SRCS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/tagsmanager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/tagsmanager_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/tagsmanager_io.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/tagsmanager_gui.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/tagsmanager_properties.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/tagsmanager_actions.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/tagpropwidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/taglist.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/tagmngrtreeview.cpp
