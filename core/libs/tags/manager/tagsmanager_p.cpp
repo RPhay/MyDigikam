@@ -181,7 +181,7 @@ void TagsManager::Private::setupActions()
             dd, SLOT(slotResetTagIcon()));
 
     connect(invSel, SIGNAL(triggered()),
-            dd, SLOT(slotInvertSel()));
+            dd, SLOT(slotInvertSelection()));
 
     connect(expandSel, SIGNAL(triggered()),
             tagMngrView, SLOT(slotExpandNode()));

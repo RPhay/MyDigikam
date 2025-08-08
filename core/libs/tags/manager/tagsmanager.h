@@ -62,6 +62,11 @@ private Q_SLOTS:
     void slotSelectionChanged();
 
     /**
+     * @brief connected to invSel action and will invert selection of current items.
+     */
+    void slotInvertSelection();
+
+    /**
      * @brief add new tag when addAction(+) is triggered.
      */
     void slotAddAction();
@@ -85,11 +90,6 @@ private Q_SLOTS:
      * @brief title edit from Tag Properties was return button pressed.
      */
      void slotTitleEditReady();
-
-    /**
-     * @brief connected to invSel action and will invert selection of current items.
-     */
-    void slotInvertSel();
 
     /**
      * @brief connected to wrDbImg action and will write all metadata from database to images.

@@ -341,7 +341,7 @@ void TagsManager::slotResetTagIcon()
     }
 }
 
-void TagsManager::slotInvertSel()
+void TagsManager::slotInvertSelection()
 {
     QModelIndex root                 = d->tagMngrView->model()->index(0, 0);
     QItemSelectionModel* const model = d->tagMngrView->selectionModel();

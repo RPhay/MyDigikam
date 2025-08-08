@@ -169,7 +169,7 @@ void TagMngrTreeView::setContexMenuItems(ContextMenuHelper& cmh, const QList<TAl
 
     cmh.addAction(titleEdit,     d->tagMngr, SLOT(slotEditTagTitle()),       false);
     cmh.addAction(resetIcon,     d->tagMngr, SLOT(slotResetTagIcon()),       false);
-    cmh.addAction(invSel,        d->tagMngr, SLOT(slotInvertSel()),          false);
+    cmh.addAction(invSel,        d->tagMngr, SLOT(slotInvertSelection()),    false);
     cmh.addAction(expandSel,     this ,      SLOT(slotExpandNode()),         false);
     cmh.addAction(expandAll,     this,       SLOT(expandAll()),              false);
     cmh.addAction(collapseAll,   this,       SLOT(slotCollapseAllNodes()),   false);
