@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 19:47+0000\n"
+"POT-Creation-Date: 2025-08-09 01:57+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -3193,7 +3193,7 @@ msgid "Tools"
 msgstr "ツール"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:1126
+#: core/libs/tags/manager/tagsmanager_p.cpp:270
 #, kde-format
 msgid "Help"
 msgstr "ヘルプ"
@@ -28124,7 +28124,7 @@ msgstr "新しいアルバム"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:993
+#: core/libs/tags/manager/tagsmanager_p.cpp:137
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, fuzzy, kde-format
 msgid "Expand Selected Nodes"
@@ -40847,14 +40847,14 @@ msgstr "色ラベル \"%1\" を付ける"
 msgid "Assign Tag \"%1\""
 msgstr "タグ \"%1\" を付ける"
 
-#: core/libs/tags/manager/models/tagmngrlistitem.cpp:156
+#: core/libs/tags/manager/models/tagmngrlistitem.cpp:158
 #, fuzzy, kde-format
 #| msgid "All Tags"
 msgctxt "@info"
 msgid "All Tags"
 msgstr "すべてのタグ"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:292
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:294
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@info"
@@ -40868,12 +40868,12 @@ msgctxt "@action"
 msgid "Delete Selected from List"
 msgstr "選択したものをリストから削除"
 
-#: core/libs/tags/manager/taglist.cpp:63
+#: core/libs/tags/manager/taglist.cpp:65
 #, kde-format
 msgid "Add to List"
 msgstr "リストに追加"
 
-#: core/libs/tags/manager/taglist.cpp:64
+#: core/libs/tags/manager/taglist.cpp:66
 #, kde-format
 msgid "Add selected tags to Quick Access List"
 msgstr ""
@@ -40884,39 +40884,39 @@ msgid "Delete Tags"
 msgstr "タグを削除"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:980
+#: core/libs/tags/manager/tagsmanager_p.cpp:124
 #, fuzzy, kde-format
 msgid "Edit Tag Title"
 msgstr "画像ファイル"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:984
+#: core/libs/tags/manager/tagsmanager_p.cpp:128
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "タグのアイコンをリセット"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:990
+#: core/libs/tags/manager/tagsmanager_p.cpp:134
 #, kde-format
 msgid "Invert Selection"
 msgstr "選択反転"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:996
+#: core/libs/tags/manager/tagsmanager_p.cpp:140
 #, fuzzy, kde-format
 msgid "Expand Tag Tree"
 msgstr "サブタグを含める"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:999
+#: core/libs/tags/manager/tagsmanager_p.cpp:143
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Collapse Tag Tree"
 msgstr "アルバムで"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:168
-#: core/libs/tags/manager/tagsmanager.cpp:1002
+#: core/libs/tags/manager/tagsmanager_p.cpp:146
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "画像からタグを取り除く"
@@ -40995,14 +40995,7 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr ""
 
-# XMP の仕様書に定義されているメタデータスキーマの名前なので原文のままにしています
-#: core/libs/tags/manager/tagsmanager.cpp:183
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Tags Manager"
-msgstr "Rights Management"
-
-#: core/libs/tags/manager/tagsmanager.cpp:343
+#: core/libs/tags/manager/tagsmanager_actions.cpp:139
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -41015,7 +41008,7 @@ msgstr[0] ""
 "タグ %2 には 1 個以上のサブタグがあります。これらを削除するとサブタグも削除さ"
 "れます。続行しますか？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:366
+#: core/libs/tags/manager/tagsmanager_actions.cpp:162
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -41023,14 +41016,14 @@ msgid_plural ""
 "Tags %2 are assigned to one or more items. Do you want to delete them?"
 msgstr[0] "タグ %2 が付けられているアイテムがあります。続けますか？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:376
+#: core/libs/tags/manager/tagsmanager_actions.cpp:172
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
 msgid_plural "Delete tags %2?"
 msgstr[0] "タグ %2 を削除しますか？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:382
+#: core/libs/tags/manager/tagsmanager_actions.cpp:178
 #, fuzzy, kde-format
 #| msgid "Delete tag"
 #| msgid_plural "Delete tags"
@@ -41039,7 +41032,19 @@ msgid "Delete tag"
 msgid_plural "Delete tags"
 msgstr[0] "タグを削除"
 
-#: core/libs/tags/manager/tagsmanager.cpp:504
+# XMP の仕様書に定義されているメタデータスキーマの名前なので原文のままにしています
+#: core/libs/tags/manager/tagsmanager_gui.cpp:25
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Tags Manager"
+msgstr "Rights Management"
+
+#: core/libs/tags/manager/tagsmanager_gui.cpp:37
+#, fuzzy, kde-format
+msgid "Search for tags..."
+msgstr "検索:"
+
+#: core/libs/tags/manager/tagsmanager_io.cpp:26
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database."
@@ -41047,8 +41052,8 @@ msgid ""
 "Read Tags from Image).<br> Do you want to continue?</qt>"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:516
-#: core/libs/tags/manager/tagsmanager.cpp:535
+#: core/libs/tags/manager/tagsmanager_io.cpp:38
+#: core/libs/tags/manager/tagsmanager_io.cpp:57
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -41058,7 +41063,7 @@ msgstr ""
 "す。\n"
 "続けますか？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:555
+#: core/libs/tags/manager/tagsmanager_io.cpp:77
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -41066,66 +41071,66 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:621
+#: core/libs/tags/manager/tagsmanager_io.cpp:143
 #, kde-format
 msgid "Select a base tag from which the tags should be exported."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:631
+#: core/libs/tags/manager/tagsmanager_io.cpp:153
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:639
+#: core/libs/tags/manager/tagsmanager_io.cpp:161
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
 msgstr "エクスポート"
 
-#: core/libs/tags/manager/tagsmanager.cpp:640
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager_io.cpp:162
+#: core/libs/tags/manager/tagsmanager_io.cpp:280
 #, fuzzy, kde-format
 #| msgid "XMP text Files (*.xmp)"
 msgid "Text File (*.txt)"
 msgstr "XMP テキストファイル (*.xmp)"
 
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagsmanager_io.cpp:260
 #, kde-format
 msgid "Select a tag into which the tags should be imported."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:748
+#: core/libs/tags/manager/tagsmanager_io.cpp:270
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:757
+#: core/libs/tags/manager/tagsmanager_io.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:856
+#: core/libs/tags/manager/tagsmanager_io.cpp:378
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:943
+#: core/libs/tags/manager/tagsmanager_p.cpp:87
 #, fuzzy, kde-format
 #| msgid "Add New Tag..."
 msgctxt "@action: button"
 msgid "Add Tag"
 msgstr "新しいタグを追加..."
 
-#: core/libs/tags/manager/tagsmanager.cpp:949
+#: core/libs/tags/manager/tagsmanager_p.cpp:93
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgctxt "@action: button"
 msgid "Remove Tag"
 msgstr "タグを取り除く"
 
-#: core/libs/tags/manager/tagsmanager.cpp:954
+#: core/libs/tags/manager/tagsmanager_p.cpp:98
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Organize"
@@ -41134,125 +41139,125 @@ msgid "Organize"
 msgstr "管理"
 
 # ACCELERATOR changed by translator
-#: core/libs/tags/manager/tagsmanager.cpp:958
+#: core/libs/tags/manager/tagsmanager_p.cpp:102
 #, fuzzy, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "エクスポート(&X)"
 
-#: core/libs/tags/manager/tagsmanager.cpp:987
+#: core/libs/tags/manager/tagsmanager_p.cpp:131
 #, fuzzy, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "最近付けられたタグ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1007
+#: core/libs/tags/manager/tagsmanager_p.cpp:151
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1010
+#: core/libs/tags/manager/tagsmanager_p.cpp:154
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1014
+#: core/libs/tags/manager/tagsmanager_p.cpp:158
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Edit title from selected tag."
 msgstr "選択したタグを削除"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1016
+#: core/libs/tags/manager/tagsmanager_p.cpp:160
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1019
+#: core/libs/tags/manager/tagsmanager_p.cpp:163
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1021
+#: core/libs/tags/manager/tagsmanager_p.cpp:165
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "選択範囲を反転します。可視状態のアイテムのみが選択されます"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1024
+#: core/libs/tags/manager/tagsmanager_p.cpp:168
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1026
+#: core/libs/tags/manager/tagsmanager_p.cpp:170
 #, fuzzy, kde-format
 msgid "Expand tag tree completely"
 msgstr "サブタグを含める"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1028
+#: core/libs/tags/manager/tagsmanager_p.cpp:172
 #, fuzzy, kde-format
 msgid "Collapse tag tree completely"
 msgstr "スライドショー"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1030
+#: core/libs/tags/manager/tagsmanager_p.cpp:174
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1074
+#: core/libs/tags/manager/tagsmanager_p.cpp:218
 #, fuzzy, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "画像にメタデータを書き込み"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1077
+#: core/libs/tags/manager/tagsmanager_p.cpp:221
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "画像からタグを読み取り"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1080
+#: core/libs/tags/manager/tagsmanager_p.cpp:224
 #, fuzzy, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "画像にメタデータを書き込み"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1083
+#: core/libs/tags/manager/tagsmanager_p.cpp:227
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Export tags to a file from selected tag"
 msgstr "選択したタグを削除"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1086
+#: core/libs/tags/manager/tagsmanager_p.cpp:230
 #, fuzzy, kde-format
 #| msgid "Remove Tag from Images"
 msgid "Import tags from a file to selected tag"
 msgstr "画像からタグを取り除く"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1088
+#: core/libs/tags/manager/tagsmanager_p.cpp:232
 #, fuzzy, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "画像にメタデータを書き込み"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1090
+#: core/libs/tags/manager/tagsmanager_p.cpp:234
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1093
+#: core/libs/tags/manager/tagsmanager_p.cpp:237
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1096
+#: core/libs/tags/manager/tagsmanager_p.cpp:240
 #, kde-format
 msgid "Export all tags to a file to keep a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1098
+#: core/libs/tags/manager/tagsmanager_p.cpp:242
 #, kde-format
 msgid "Import all tags from a file to restore a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1127
+#: core/libs/tags/manager/tagsmanager_p.cpp:271
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -51088,13 +51093,13 @@ msgctxt "@action"
 msgid "Clear List"
 msgstr "リストをクリア"
 
-#: core/libs/widgets/text/searchtextbar.cpp:75
+#: core/libs/widgets/text/searchtextbar.cpp:77
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Search..."
 msgstr "検索..."
 
-#: core/libs/widgets/text/searchtextbar.cpp:258
+#: core/libs/widgets/text/searchtextbar.cpp:260
 #, fuzzy, kde-format
 msgctxt "@info: search text bar"
 msgid "Case sensitive"
@@ -61469,12 +61474,7 @@ msgstr ""
 #: core/utilities/import/backend/gpcamera.cpp:1616
 #, kde-format
 msgctxt "@info List of device properties"
-msgid ""
-"Title: \"%1\"\n"
-"Model: \"%2\"\n"
-"Port: \"%3\"\n"
-"Path: \"%4\"\n"
-"\n"
+msgid "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br><br>"
 msgstr ""
 
 # dummy markup
@@ -61482,13 +61482,9 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
-"Thumbnails: \"%1\"\n"
-"Capture image: \"%2\"\n"
-"Delete items: \"%3\"\n"
-"Upload items: \"%4\"\n"
-"Create directories: \"%5\"\n"
-"Delete Directories: \"%6\"\n"
-"\n"
+"Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
+"\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
+"Directories: \"%6\"<br><br>"
 msgstr ""
 "<i></i>サムネイル: %1<br/>画像キャプチャ: %2<br/>アイテムの削除: %3<br/>アイ"
 "テムのアップロード: %4<br/>ディレクトリの作成: %5<br/>ディレクトリの削除: "
@@ -61527,8 +61523,7 @@ msgstr "なし"
 msgctxt "@info"
 msgid ""
 "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
-"disk card readers.\n"
-"\n"
+"disk card readers.<br><br>"
 msgstr ""
 "<i></i>USB/IEEE1394 大容量ストレージカメラとフラッシュディスク・カードリー"
 "ダーのための「マウントされたカメラ」ドライバ。<br/><br/>"
@@ -61537,12 +61532,8 @@ msgstr ""
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
-"Title: \"%1\"\n"
-"Model: \"%2\"\n"
-"Port: \"%3\"\n"
-"Path: \"%4\"\n"
-"UUID: \"%5\"\n"
-"\n"
+"Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br>UUID: "
+"\"%5\"<br><br>"
 msgstr ""
 
 # dummy markup
@@ -61550,13 +61541,9 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
-"Thumbnails: \"%1\"\n"
-"Capture image: \"%2\"\n"
-"Delete items: \"%3\"\n"
-"Upload items: \"%4\"\n"
-"Create directories: \"%5\"\n"
-"Delete directories: \"%6\"\n"
-"\n"
+"Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
+"\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
+"directories: \"%6\"<br><br>"
 msgstr ""
 "<i></i>サムネイル: %1<br/>画像キャプチャ: %2<br/>アイテムの削除: %3<br/>アイ"
 "テムのアップロード: %4<br/>ディレクトリの作成: %5<br/>ディレクトリの削除: "
@@ -61609,14 +61596,9 @@ msgstr ""
 msgctxt "@info"
 msgid ""
 "The \"Mounted Camera\" driver is a simple interface to a camera disk mounted "
-"locally on your system.\n"
-"\n"
-"It does not use libgphoto2 drivers.\n"
-"\n"
-"To report any problems with this driver, please contact the digiKam team "
-"at:\n"
-"\n"
-"https://www.digikam.org/?q=contact"
+"locally on your system.<br><br>It does not use libgphoto2 drivers.<br><br>To "
+"report any problems with this driver, please contact the digiKam team at:"
+"<br><br>https://www.digikam.org/support/contact/"
 msgstr ""
 "<p>「マウントされたカメラ」ドライバは、あなたのシステムにローカルにマウントさ"
 "れたカメラディスクのシンプルなインターフェースです。これは libgphoto2 ドライ"
@@ -67240,12 +67222,12 @@ msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:620
+#: core/utilities/setup/downloader/filesdownloader.cpp:630
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:638
+#: core/utilities/setup/downloader/filesdownloader.cpp:647
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""
