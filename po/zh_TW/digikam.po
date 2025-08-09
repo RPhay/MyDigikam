@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 19:47+0000\n"
+"POT-Creation-Date: 2025-08-09 01:57+0000\n"
 "PO-Revision-Date: 2025-07-03 23:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -3168,7 +3168,7 @@ msgid "Tools"
 msgstr "工具"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:1126
+#: core/libs/tags/manager/tagsmanager_p.cpp:270
 #, kde-format
 msgid "Help"
 msgstr "說明"
@@ -27411,7 +27411,7 @@ msgstr "旗標相簿"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:993
+#: core/libs/tags/manager/tagsmanager_p.cpp:137
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -39791,13 +39791,13 @@ msgstr "指定色彩旗標「%1」"
 msgid "Assign Tag \"%1\""
 msgstr "指定標籤 \"%1\""
 
-#: core/libs/tags/manager/models/tagmngrlistitem.cpp:156
+#: core/libs/tags/manager/models/tagmngrlistitem.cpp:158
 #, kde-format
 msgctxt "@info"
 msgid "All Tags"
 msgstr "所有標籤"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:292
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
@@ -39809,12 +39809,12 @@ msgctxt "@action"
 msgid "Delete Selected from List"
 msgstr "從清單中刪除選擇的項目"
 
-#: core/libs/tags/manager/taglist.cpp:63
+#: core/libs/tags/manager/taglist.cpp:65
 #, kde-format
 msgid "Add to List"
 msgstr "新增到清單"
 
-#: core/libs/tags/manager/taglist.cpp:64
+#: core/libs/tags/manager/taglist.cpp:66
 #, kde-format
 msgid "Add selected tags to Quick Access List"
 msgstr "將選取的標籤新增到快速存取清單中"
@@ -39825,38 +39825,38 @@ msgid "Delete Tags"
 msgstr "刪除標籤"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:980
+#: core/libs/tags/manager/tagsmanager_p.cpp:124
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "編輯標籤標題"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:984
+#: core/libs/tags/manager/tagsmanager_p.cpp:128
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "重設標籤圖示"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:990
+#: core/libs/tags/manager/tagsmanager_p.cpp:134
 #, kde-format
 msgid "Invert Selection"
 msgstr "反相選擇"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:996
+#: core/libs/tags/manager/tagsmanager_p.cpp:140
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "展開標籤樹狀圖"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:999
+#: core/libs/tags/manager/tagsmanager_p.cpp:143
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "折疊標籤樹狀圖"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:168
-#: core/libs/tags/manager/tagsmanager.cpp:1002
+#: core/libs/tags/manager/tagsmanager_p.cpp:146
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "從影像移除標籤"
@@ -39928,13 +39928,7 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "先前的標籤已變更。要儲存變更嗎？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:183
-#, kde-format
-msgctxt "@title:window"
-msgid "Tags Manager"
-msgstr "標籤管理員"
-
-#: core/libs/tags/manager/tagsmanager.cpp:343
+#: core/libs/tags/manager/tagsmanager_actions.cpp:139
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -39946,7 +39940,7 @@ msgid_plural ""
 msgstr[0] ""
 "標籤 %2 有一個以上的子標籤。刪除這些標籤也會刪除子標籤們。您確定要繼續嗎？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:366
+#: core/libs/tags/manager/tagsmanager_actions.cpp:162
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -39954,21 +39948,34 @@ msgid_plural ""
 "Tags %2 are assigned to one or more items. Do you want to delete them?"
 msgstr[0] "標籤 '%2' 已指定到一個以上的項目。您確定要刪除它們嗎？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:376
+#: core/libs/tags/manager/tagsmanager_actions.cpp:172
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
 msgid_plural "Delete tags %2?"
 msgstr[0] "刪除標籤 %2？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:382
+#: core/libs/tags/manager/tagsmanager_actions.cpp:178
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
 msgstr[0] "刪除標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:504
+#: core/libs/tags/manager/tagsmanager_gui.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Tags Manager"
+msgstr "標籤管理員"
+
+#: core/libs/tags/manager/tagsmanager_gui.cpp:37
+#, fuzzy, kde-format
+#| msgctxt "@info: search text bar"
+#| msgid "Search in Favorites..."
+msgid "Search for tags..."
+msgstr "在最愛中搜尋..."
+
+#: core/libs/tags/manager/tagsmanager_io.cpp:26
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>digiKam will clean up tag metadata before setting tags from database."
@@ -39983,15 +39990,15 @@ msgstr ""
 "「從影像讀取標籤」讀取過標籤的話您可能會<b>喪失標籤資訊</b>。<br/>您確定要繼"
 "續嗎？</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:516
-#: core/libs/tags/manager/tagsmanager.cpp:535
+#: core/libs/tags/manager/tagsmanager_io.cpp:38
+#: core/libs/tags/manager/tagsmanager_io.cpp:57
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
 "Do you want to continue?"
 msgstr "這項操作依照收藏的大小，可能會花很長的時間。您確定要繼續嗎？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:555
+#: core/libs/tags/manager/tagsmanager_io.cpp:77
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -40002,19 +40009,19 @@ msgstr ""
 "要套用變更到檔案，您必須稍後選擇將中繼資料寫入檔案。\n"
 "您要繼續嗎？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:621
+#: core/libs/tags/manager/tagsmanager_io.cpp:143
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Select all tags that should be processed."
 msgid "Select a base tag from which the tags should be exported."
 msgstr "選擇要處理的所有標籤。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:631
+#: core/libs/tags/manager/tagsmanager_io.cpp:153
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:639
+#: core/libs/tags/manager/tagsmanager_io.cpp:161
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Export to Local Storage"
@@ -40022,38 +40029,38 @@ msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
 msgstr "匯出到本機儲存"
 
-#: core/libs/tags/manager/tagsmanager.cpp:640
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager_io.cpp:162
+#: core/libs/tags/manager/tagsmanager_io.cpp:280
 #, fuzzy, kde-format
 #| msgid "XMP text Files (*.xmp)"
 msgid "Text File (*.txt)"
 msgstr "XMP 純文字檔 (*.xmp)"
 
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagsmanager_io.cpp:260
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Select all tags that should be processed."
 msgid "Select a tag into which the tags should be imported."
 msgstr "選擇要處理的所有標籤。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:748
+#: core/libs/tags/manager/tagsmanager_io.cpp:270
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:757
+#: core/libs/tags/manager/tagsmanager_io.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:856
+#: core/libs/tags/manager/tagsmanager_io.cpp:378
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "您確定要將所選的標籤從所有影像上移除嗎？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:943
+#: core/libs/tags/manager/tagsmanager_p.cpp:87
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Add New Tag"
@@ -40061,137 +40068,137 @@ msgctxt "@action: button"
 msgid "Add Tag"
 msgstr "新增標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:949
+#: core/libs/tags/manager/tagsmanager_p.cpp:93
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgctxt "@action: button"
 msgid "Remove Tag"
 msgstr "移除標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:954
+#: core/libs/tags/manager/tagsmanager_p.cpp:98
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "管理"
 
-#: core/libs/tags/manager/tagsmanager.cpp:958
+#: core/libs/tags/manager/tagsmanager_p.cpp:102
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "同步匯出(&E)"
 
-#: core/libs/tags/manager/tagsmanager.cpp:987
+#: core/libs/tags/manager/tagsmanager_p.cpp:131
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "標記未指定的標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1007
+#: core/libs/tags/manager/tagsmanager_p.cpp:151
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr "將標籤新增到上次點擊的標籤。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1010
+#: core/libs/tags/manager/tagsmanager_p.cpp:154
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr "刪除選取的項目。也可以刪除多個項目，但不會刪除根標籤。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1014
+#: core/libs/tags/manager/tagsmanager_p.cpp:158
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "編輯所選標籤的標題。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1016
+#: core/libs/tags/manager/tagsmanager_p.cpp:160
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "重設選取的標籤圖示。可以用於多個選取標籤。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1019
+#: core/libs/tags/manager/tagsmanager_p.cpp:163
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "標記所有未被指定到任何影像上的標籤。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1021
+#: core/libs/tags/manager/tagsmanager_p.cpp:165
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "轉換選取的項目。只有可見的項目會被選取。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1024
+#: core/libs/tags/manager/tagsmanager_p.cpp:168
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "選取的項目會被展開"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1026
+#: core/libs/tags/manager/tagsmanager_p.cpp:170
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "完全展開標籤樹狀圖"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1028
+#: core/libs/tags/manager/tagsmanager_p.cpp:172
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "完全折疊標籤樹狀圖"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1030
+#: core/libs/tags/manager/tagsmanager_p.cpp:174
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr "從影像刪除選取的標籤。可以用於多個選取標籤。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1074
+#: core/libs/tags/manager/tagsmanager_p.cpp:218
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "將標籤從資料庫寫入到影像"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1077
+#: core/libs/tags/manager/tagsmanager_p.cpp:221
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "從影像讀取標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1080
+#: core/libs/tags/manager/tagsmanager_p.cpp:224
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "只抹除資料庫中的所有標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1083
+#: core/libs/tags/manager/tagsmanager_p.cpp:227
 #, fuzzy, kde-format
 #| msgid "Edit title from selected tag."
 msgid "Export tags to a file from selected tag"
 msgstr "編輯所選標籤的標題。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1086
+#: core/libs/tags/manager/tagsmanager_p.cpp:230
 #, fuzzy, kde-format
 #| msgid "Remove all tags from image"
 msgid "Import tags from a file to selected tag"
 msgstr "從影像移除所有標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1088
+#: core/libs/tags/manager/tagsmanager_p.cpp:232
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "將標籤中繼資料寫入影像。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1090
+#: core/libs/tags/manager/tagsmanager_p.cpp:234
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr "從影像讀取標籤再寫入資料庫。現有的標籤不會受到影響"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1093
+#: core/libs/tags/manager/tagsmanager_p.cpp:237
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr "只會從資料庫刪除所有的標籤，而不會與檔案同步。請小心使用。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:1096
+#: core/libs/tags/manager/tagsmanager_p.cpp:240
 #, kde-format
 msgid "Export all tags to a file to keep a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1098
+#: core/libs/tags/manager/tagsmanager_p.cpp:242
 #, kde-format
 msgid "Import all tags from a file to restore a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1127
+#: core/libs/tags/manager/tagsmanager_p.cpp:271
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -49114,13 +49121,13 @@ msgctxt "@action"
 msgid "Clear List"
 msgstr "清除清單"
 
-#: core/libs/widgets/text/searchtextbar.cpp:75
+#: core/libs/widgets/text/searchtextbar.cpp:77
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Search..."
 msgstr "搜尋..."
 
-#: core/libs/widgets/text/searchtextbar.cpp:258
+#: core/libs/widgets/text/searchtextbar.cpp:260
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Case sensitive"
@@ -59067,27 +59074,33 @@ msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "切換檔案 <b>%1</b> 的鎖定失敗。您要繼續嗎？"
 
 #: core/utilities/import/backend/gpcamera.cpp:1616
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info List of device properties"
+#| msgid ""
+#| "Title: <b>%1</b><br/>Model: <b>%2</b><br/>Port: <b>%3</b><br/>Path: <b>"
+#| "%4</b><br/><br/>"
 msgctxt "@info List of device properties"
-msgid ""
-"Title: \"%1\"\n"
-"Model: \"%2\"\n"
-"Port: \"%3\"\n"
-"Path: \"%4\"\n"
-"\n"
+msgid "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br><br>"
 msgstr ""
+"標題：<b>%1</b><br/>型號：<b>%2</b><br/>連接埠：<b>%3</b><br/>路徑：<b>%4</"
+"b><br/><br/>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1623
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info List of supported device operations"
+#| msgid ""
+#| "Thumbnails: \"%1\"\n"
+#| "Capture image: \"%2\"\n"
+#| "Delete items: \"%3\"\n"
+#| "Upload items: \"%4\"\n"
+#| "Create directories: \"%5\"\n"
+#| "Delete Directories: \"%6\"\n"
+#| "\n"
 msgctxt "@info List of supported device operations"
 msgid ""
-"Thumbnails: \"%1\"\n"
-"Capture image: \"%2\"\n"
-"Delete items: \"%3\"\n"
-"Upload items: \"%4\"\n"
-"Create directories: \"%5\"\n"
-"Delete Directories: \"%6\"\n"
-"\n"
+"Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
+"\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
+"Directories: \"%6\"<br><br>"
 msgstr ""
 "縮圖：\"%1\"\n"
 "擷取影像：\"%2\"\n"
@@ -59120,39 +59133,50 @@ msgid "no"
 msgstr "否"
 
 #: core/utilities/import/backend/umscamera.cpp:566
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
+#| "disk card readers.\n"
+#| "\n"
 msgctxt "@info"
 msgid ""
 "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
-"disk card readers.\n"
-"\n"
+"disk card readers.<br><br>"
 msgstr ""
 "USB/IEEE1394 儲存裝置相機和快閃磁碟讀卡機的 \"相機掛載\" 驅動。\n"
 "\n"
 
 #: core/utilities/import/backend/umscamera.cpp:573
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info List of device properties"
+#| msgid ""
+#| "Title: <b>%1</b><br/>Model: <b>%2</b><br/>Port: <b>%3</b><br/>Path: <b>"
+#| "%4</b><br/>UUID: <b>%5</b><br/><br/>"
 msgctxt "@info List of device properties"
 msgid ""
-"Title: \"%1\"\n"
-"Model: \"%2\"\n"
-"Port: \"%3\"\n"
-"Path: \"%4\"\n"
-"UUID: \"%5\"\n"
-"\n"
+"Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br>UUID: "
+"\"%5\"<br><br>"
 msgstr ""
+"標題：<b>%1</b><br/>型號：<b>%2</b><br/>連接埠：<b>%3</b><br/>路徑：<b>%4</"
+"b><br/>UUID: <b>%5</b><br/><br/>"
 
 #: core/utilities/import/backend/umscamera.cpp:581
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info List of supported device operations"
+#| msgid ""
+#| "Thumbnails: \"%1\"\n"
+#| "Capture image: \"%2\"\n"
+#| "Delete items: \"%3\"\n"
+#| "Upload items: \"%4\"\n"
+#| "Create directories: \"%5\"\n"
+#| "Delete directories: \"%6\"\n"
+#| "\n"
 msgctxt "@info List of supported device operations"
 msgid ""
-"Thumbnails: \"%1\"\n"
-"Capture image: \"%2\"\n"
-"Delete items: \"%3\"\n"
-"Upload items: \"%4\"\n"
-"Create directories: \"%5\"\n"
-"Delete directories: \"%6\"\n"
-"\n"
+"Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
+"\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
+"directories: \"%6\"<br><br>"
 msgstr ""
 "縮圖：\"%1\"\n"
 "擷取影像：\"%2\"\n"
@@ -59195,18 +59219,24 @@ msgstr ""
 "</b>驅動的相關資訊。"
 
 #: core/utilities/import/backend/umscamera.cpp:606
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "The \"Mounted Camera\" driver is a simple interface to a camera disk "
+#| "mounted locally on your system.\n"
+#| "\n"
+#| "It does not use libgphoto2 drivers.\n"
+#| "\n"
+#| "To report any problems with this driver, please contact the digiKam team "
+#| "at:\n"
+#| "\n"
+#| "https://www.digikam.org/?q=contact"
 msgctxt "@info"
 msgid ""
 "The \"Mounted Camera\" driver is a simple interface to a camera disk mounted "
-"locally on your system.\n"
-"\n"
-"It does not use libgphoto2 drivers.\n"
-"\n"
-"To report any problems with this driver, please contact the digiKam team "
-"at:\n"
-"\n"
-"https://www.digikam.org/?q=contact"
+"locally on your system.<br><br>It does not use libgphoto2 drivers.<br><br>To "
+"report any problems with this driver, please contact the digiKam team at:"
+"<br><br>https://www.digikam.org/support/contact/"
 msgstr ""
 "<b>相機掛載</b>驅動是將相機磁碟掛載到您系統上的簡單介面。<br/><br/>它不使用 "
 "libgphoto2 驅動程式。<br/><br/>要回報這個驅動的任何問題，請與 digiKam 團隊連"
@@ -64644,13 +64674,13 @@ msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:620
+#: core/utilities/setup/downloader/filesdownloader.cpp:630
 #, fuzzy, kde-format
 #| msgid "All files of the selected features were found."
 msgid "All files for the selected features were found."
 msgstr "所選功能的所有檔案皆已找到。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:638
+#: core/utilities/setup/downloader/filesdownloader.cpp:647
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""
@@ -73444,22 +73474,6 @@ msgstr "匯入項目"
 #~ msgctxt "Create a selection containing the full image"
 #~ msgid "Select All"
 #~ msgstr "全部選擇"
-
-#~ msgctxt "@info List of device properties"
-#~ msgid ""
-#~ "Title: <b>%1</b><br/>Model: <b>%2</b><br/>Port: <b>%3</b><br/>Path: <b>"
-#~ "%4</b><br/><br/>"
-#~ msgstr ""
-#~ "標題：<b>%1</b><br/>型號：<b>%2</b><br/>連接埠：<b>%3</b><br/>路徑：<b>"
-#~ "%4</b><br/><br/>"
-
-#~ msgctxt "@info List of device properties"
-#~ msgid ""
-#~ "Title: <b>%1</b><br/>Model: <b>%2</b><br/>Port: <b>%3</b><br/>Path: <b>"
-#~ "%4</b><br/>UUID: <b>%5</b><br/><br/>"
-#~ msgstr ""
-#~ "標題：<b>%1</b><br/>型號：<b>%2</b><br/>連接埠：<b>%3</b><br/>路徑：<b>"
-#~ "%4</b><br/>UUID: <b>%5</b><br/><br/>"
 
 #, fuzzy
 #~ msgid "Slideshow Usage"
