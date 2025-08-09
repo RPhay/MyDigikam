@@ -215,6 +215,8 @@ echo -e "\n"
 echo "---------- Updating MacPorts"
 port -v selfupdate
 
+./patches/applypatches.sh
+
 if [[ $CONTINUE_INSTALL == 0 ]]; then
 
 #    port -v upgrade outdated
