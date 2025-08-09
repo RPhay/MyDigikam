@@ -139,7 +139,7 @@ double LensFunIface::Private::checkSimilarity(const QString& a, const QString& b
     QString aa      = spaces + a + spaces;
     QString bb      = spaces + b + spaces;
 
-    for (int i = 0 ; i < (aa.count() - (chars - 1)) ; ++i)
+    for (int i = 0 ; i < (aa.size() - (chars - 1)) ; ++i)
     {
         QString part = aa.mid(i, chars);
 
