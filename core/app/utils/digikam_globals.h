@@ -86,6 +86,23 @@ static const int AUTOEXPANDDELAY    = 800;
 
 // --------------------------------------------------------
 
+/**
+ * Color label in enum order as text
+ */
+static const QStringList ColorLabelAsText({QLatin1String("NoColor"),
+                                           QLatin1String("Red"),
+                                           QLatin1String("Orange"),
+                                           QLatin1String("Yellow"),
+                                           QLatin1String("Green"),
+                                           QLatin1String("Blue"),
+                                           QLatin1String("Purple"),
+                                           QLatin1String("Gray"),
+                                           QLatin1String("Black"),
+                                           QLatin1String("White")}
+                                         );
+
+// --------------------------------------------------------
+
 enum ColorLabel
 {
     NoColorLabel        = 0,
