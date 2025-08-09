@@ -246,7 +246,11 @@ QString DConfigDlgTitle::comment() const
 QPixmap DConfigDlgTitle::pixmap() const
 {
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 9, 2))
+
+    return d->imageLabel->pixmap();
+
+#elif (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
 
     return d->imageLabel->pixmap(Qt::ReturnByValue);
 
