@@ -1,5 +1,14 @@
---- Portfile.old	2025-08-09 08:41:50.000000000 +0200
-+++ Portfile	2025-08-09 08:46:24.000000000 +0200
+--- Portfile.old	2025-08-09 21:30:34.000000000 +0200
++++ Portfile	2025-08-09 21:37:56.000000000 +0200
+@@ -111,7 +111,7 @@
+ }
+ 
+ # MacPorts LLVM/Clang version to use when required.
+-set llvm_version 19
++set llvm_version 20
+ 
+ ############################################################################### Modules Not Considered
+ #
 @@ -676,7 +676,7 @@
      qtwebengine {
          {}
@@ -9,16 +18,17 @@
          "qtdeclarative qtquickcontrols qtquickcontrols2 qtlocation qtwebchannel qttools"
          {"Qt WebEngine"}
          "very large and relatively new"
-@@ -1726,6 +1726,8 @@
+@@ -1726,6 +1726,9 @@
                  # do not opportunistically find MacPorts libraries (e.g. X11 libraries)
                  patchfiles-append patch-qtwebengine_tests.diff
  
 +                patchfiles-append patch-qtwebengine-spellcheck.patch
++                patchfiles-append gperf.patch
 +
                  # Fix warning in ht-ff.cc causing error
                  # Fix based on https://github.com/harfbuzz/harfbuzz/commit/d88269c827895b38f99f7cf741fa60210d4d5169
                  # See: https://trac.macports.org/ticket/70850
-@@ -1761,11 +1763,10 @@
+@@ -1761,11 +1764,10 @@
                  # see config_help.txt
                  configure.post_args-append         \
                      --                             \
