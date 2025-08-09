@@ -13,7 +13,7 @@
                  # do not opportunistically find MacPorts libraries (e.g. X11 libraries)
                  patchfiles-append patch-qtwebengine_tests.diff
  
-+                patchfiles-append patch-qtwebengine_spellcheck.diff
++                patchfiles-append patch-qtwebengine_spellcheck.patch
 +
                  # Fix warning in ht-ff.cc causing error
                  # Fix based on https://github.com/harfbuzz/harfbuzz/commit/d88269c827895b38f99f7cf741fa60210d4d5169
