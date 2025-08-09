@@ -40,6 +40,16 @@ include(RulesQtFramework)
 
 include(RulesKDEFramework)
 
+# Add rules to control the minimal Qt and KDE frameworks version 6 to support at compile time.
+
+include(ECMDeprecationSettings)
+
+ecm_set_disabled_deprecation_versions(
+    QT 6.9.1
+#    QT 6.10.0
+    KF 6.17.0
+)
+
 # ==============================================================================
 # Dependencies Rules
 
@@ -441,8 +451,6 @@ if(DIGIKAM_CAN_BE_COMPILED)
                     -DQT_NO_URL_CAST_FROM_STRING
                     -DQT_STRICT_ITERATORS
                     -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT
-                    -DQT_DEPRECATED_WARNINGS_SINCE=0x060000
-                    -DQT_DISABLE_DEPRECATED_BEFORE=0x050E00
                     -DQT_NO_KEYWORDS
                     -DQT_NO_FOREACH
     )
