@@ -14,6 +14,10 @@
 
 #include "gpsimageitem_utest.h"
 
+// C++ includes
+
+#include <memory>
+
 // Qt includes
 
 #include <QDateTime>
@@ -42,7 +46,7 @@ void TestGPSItemContainer::cleanupTestCase()
 }
 
 /**
- * @brief Return the path of the directory containing the test data
+ * @return the path of the directory containing the test data.
  */
 QString GetTestDataDirectory()
 {
@@ -55,11 +59,11 @@ QString GetTestDataDirectory()
 
 GPSItemContainer* ItemFromFile(const QUrl& url)
 {
-    QScopedPointer<GPSItemContainer> imageItem(new GPSItemContainer(url));
+    std::unique_ptr<GPSItemContainer> imageItem(new GPSItemContainer(url));
 
     if (imageItem->loadImageData())
     {
-        return imageItem.take();
+        return imageItem.release();
     }
 
     return nullptr;
@@ -76,6 +80,7 @@ void TestGPSItemContainer::testBasicLoading()
 {
     {
         // test failure on not-existing file
+
         QUrl testDataDir = QUrl::fromLocalFile(GetTestDataDirectory() + QLatin1String("not-existing"));
         QScopedPointer<GPSItemContainer> imageItem(ItemFromFile(testDataDir));
         QVERIFY(!imageItem);
@@ -83,6 +88,7 @@ void TestGPSItemContainer::testBasicLoading()
 
     {
         // load a file without GPS info
+
         QUrl testDataDir = QUrl::fromLocalFile(GetTestDataDirectory() + QLatin1String("exiftest-nogps.png"));
         QScopedPointer<GPSItemContainer> imageItem(ItemFromFile(testDataDir));
         QVERIFY(imageItem);
@@ -97,6 +103,7 @@ void TestGPSItemContainer::testBasicLoading()
 
     {
         // load a file with geo:5,15,25
+
         QUrl testDataDir = QUrl::fromLocalFile(GetTestDataDirectory() + QLatin1String("exiftest-5_15_25.jpg"));
         QScopedPointer<GPSItemContainer> imageItem(ItemFromFile(testDataDir));
         QVERIFY(imageItem);
