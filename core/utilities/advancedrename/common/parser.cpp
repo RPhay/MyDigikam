@@ -45,6 +45,8 @@ public:
 
     Private() = default;
 
+public:
+
     RulesList options;
     RulesList modifiers;
 };
@@ -326,7 +328,7 @@ ParseResults Parser::applyModifiers(const ParseSettings& _settings, ParseResults
         int off  = results.offset(key);
         int diff = 0;
 
-        for (int pos = off ; pos < _settings.parseString.count() ; )
+        for (int pos = off ; pos < _settings.parseString.size() ; )
         {
             if (modifierResults.hasKeyAtPosition(pos))
             {
@@ -365,7 +367,7 @@ ParseResults Parser::applyModifiers(const ParseSettings& _settings, ParseResults
                 ParseResults::ResultsValue modifierValue(modToken, modResult);
 
                 appliedModifiers.deleteEntry(modifierKey);
-                modifierKey.second += modToken.count();
+                modifierKey.second += modToken.size();
                 appliedModifiers.addEntry(modifierKey, modifierValue);
 
                 // set position to the next possible token

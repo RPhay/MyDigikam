@@ -34,6 +34,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                    useTokenMenu = false;
 
     QString                 description;
@@ -277,7 +279,7 @@ ParseResults Rule::parse(ParseSettings& settings)
         {
             QString result = parseOperation(settings, match);
 
-            ParseResults::ResultsKey   k(pos, match.captured(0).count());
+            ParseResults::ResultsKey   k(pos, match.captured(0).size());
             ParseResults::ResultsValue v(match.captured(0), result);
             parsedResults.addEntry(k, v);
             pos           += match.capturedLength();
