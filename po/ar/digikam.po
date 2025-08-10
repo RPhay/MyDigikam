@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-09 01:57+0000\n"
-"PO-Revision-Date: 2025-08-05 12:38+0400\n"
+"PO-Revision-Date: 2025-08-09 23:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -4559,7 +4559,7 @@ msgstr "مرماز الفيديو"
 #, kde-format
 msgctxt "@item: component info"
 msgid "Audio Decoders"
-msgstr "فك تشفير الصوت"
+msgstr "فك ترميز الصوت"
 
 #: core/app/views/utils/componentsinfodlg.cpp:271
 #, kde-format
@@ -12060,7 +12060,7 @@ msgstr ""
 #, kde-format
 msgctxt "Content type"
 msgid "Profile"
-msgstr "اللاحة"
+msgstr "ملف شخصي"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:109
 #, kde-format
@@ -15018,7 +15018,7 @@ msgstr "الطّول البؤريّ"
 #, kde-format
 msgctxt "@item: side view of a person"
 msgid "Profile"
-msgstr "اللاحة"
+msgstr "الملف الشخصي"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:56
 #, fuzzy, kde-format
@@ -15399,7 +15399,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Profile"
-msgstr "اللاحة"
+msgstr "الملف الشخصي"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:217
 #, kde-format
@@ -41961,7 +41961,7 @@ msgid ""
 "dynamically and adjusted to changing environment (e.g. widget dimensions, "
 "paper size)."
 msgstr ""
-"هنا يمكنك التبديل بين حجم الخط الثابت وحجم الخط ليتم حسابه ديناميكيًا وتعديله "
+"هنا يمكنك التبديل بين حجم الخط الثابت وحجم الخط الذي يُحسب ديناميكيًا ويُعدل "
 "وفقًا للبيئة المتغيرة (مثل أبعاد الأداة وحجم الورق)."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:431
@@ -65598,25 +65598,19 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "ابدأ"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Begin test"
+#, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "ابدأ الاختبار"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Testing..."
+#, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "يختبر..."
@@ -65641,8 +65635,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Close"
 msgstr "أغلق"
@@ -65792,7 +65785,7 @@ msgstr "إعدادات الخادوم البعيد"
 #: core/utilities/setup/misc/proxysettingswidget.ui:43
 #, kde-format
 msgid "&Proxy:"
-msgstr "ال&وسيط:"
+msgstr "ال&وكيل:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
 #: core/utilities/setup/misc/proxysettingswidget.ui:60

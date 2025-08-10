@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-09 01:57+0000\n"
-"PO-Revision-Date: 2025-08-07 20:42+0200\n"
+"PO-Revision-Date: 2025-08-09 08:51+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -40559,11 +40559,9 @@ msgid "Tags Manager"
 msgstr "Gestor d'etiquetes"
 
 #: core/libs/tags/manager/tagsmanager_gui.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@info: search text bar"
-#| msgid "Search in Favorites..."
+#, kde-format
 msgid "Search for tags..."
-msgstr "Cerca a les preferides..."
+msgstr "Cerca etiquetes..."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:26
 #, kde-format
@@ -59695,47 +59693,22 @@ msgstr ""
 "Ha fallat en commutar el fitxer de bloqueig <b>%1</b>. Voleu continuar?"
 
 #: core/utilities/import/backend/gpcamera.cpp:1616
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br><br>"
-msgstr ""
-"Títol: «%1»\n"
-"Model: «%2»\n"
-"Port: «%3»\n"
-"Camí: «%4»\n"
-"\n"
+msgstr "Títol: «%1»<br>Model: «%2»<br>Port: «%3»<br>Camí: «%4»<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1623
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete Directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "Directories: \"%6\"<br><br>"
 msgstr ""
-"Miniatures: «%1»\n"
-"Captura d'imatges: «%2»\n"
-"Supressió d'elements: «%3»\n"
-"Càrrega d'elements: «%4»\n"
-"Creació de directoris: «%5»\n"
-"Supressió de directoris: «%6»\n"
-"\n"
+"Miniatures: «%1»<br>Captura d'imatges: «%2»<br>Supressió d'elements: "
+"«%3»<br>Càrrega d'elements: «%4»<br>Creació de directoris: «%5»<br>Supressió "
+"de directoris: «%6»<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
@@ -59760,67 +59733,35 @@ msgid "no"
 msgstr "no"
 
 #: core/utilities/import/backend/umscamera.cpp:566
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
-#| "disk card readers.\n"
-#| "\n"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
 "disk card readers.<br><br>"
 msgstr ""
 "«Càmera muntada» controlador per a càmeres USB/IEEE1394 d'emmagatzematge "
-"massiu i lectors de targetes de disc flaix.\n"
-"\n"
+"massiu i lectors de targetes de disc flaix.<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:573
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "UUID: \"%5\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid ""
 "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br>UUID: "
 "\"%5\"<br><br>"
 msgstr ""
-"Títol: «%1»\n"
-"Model: «%2»\n"
-"Port: «%3»\n"
-"Camí: «%4»\n"
-"UUID: «%5»\n"
-"\n"
+"Títol: «%1»<br>Model: «%2»<br>Port: «%3»<br>Camí: «%4»<br>UUID: «%5»<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "directories: \"%6\"<br><br>"
 msgstr ""
-"Miniatures: «%1»\n"
-"Captura d'imatges: «%2»\n"
-"Supressió d'elements: «%3»\n"
-"Càrrega d'elements: «%4»\n"
-"Creació de directoris: «%5»\n"
-"Supressió de directoris: «%6»\n"
-"\n"
+"Miniatures: «%1»<br>Captura d'imatges: «%2»<br>Supressió d'elements: "
+"«%3»<br>Càrrega d'elements: «%4»<br>Creació de directoris: «%5»<br>Supressió "
+"de directoris: «%6»<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:587
 #: core/utilities/import/backend/umscamera.cpp:588
@@ -59855,18 +59796,7 @@ msgstr ""
 "«Càmeres fotogràfiques digitals admeses» al manual del digiKam."
 
 #: core/utilities/import/backend/umscamera.cpp:606
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The \"Mounted Camera\" driver is a simple interface to a camera disk "
-#| "mounted locally on your system.\n"
-#| "\n"
-#| "It does not use libgphoto2 drivers.\n"
-#| "\n"
-#| "To report any problems with this driver, please contact the digiKam team "
-#| "at:\n"
-#| "\n"
-#| "https://www.digikam.org/?q=contact"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The \"Mounted Camera\" driver is a simple interface to a camera disk mounted "
@@ -59875,14 +59805,10 @@ msgid ""
 "<br><br>https://www.digikam.org/support/contact/"
 msgstr ""
 "El controlador «Càmera muntada» és una interfície senzilla per a un disc de "
-"càmera muntat localment al vostre sistema.\n"
-"\n"
-"No usa cap controlador de la libgphoto2.\n"
-"\n"
-"Per a informar de qualsevol problema amb aquest controlador, contacteu amb "
-"l'equip del digiKam a:\n"
-"\n"
-"https://www.digikam.org/?q=contact"
+"càmera muntat localment al vostre sistema.<br><br>No usa cap controlador de "
+"la libgphoto2.<br><br>Per a informar de qualsevol problema amb aquest "
+"controlador, contacteu amb l'equip del digiKam a:<br><br>https://www.digikam."
+"org/?q=contact"
 
 #: core/utilities/import/dialogs/camerafolderdialog.cpp:62
 #, kde-format

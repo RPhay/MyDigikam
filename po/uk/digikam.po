@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-09 01:57+0000\n"
-"PO-Revision-Date: 2025-08-07 08:17+0300\n"
+"PO-Revision-Date: 2025-08-09 19:28+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -40750,11 +40750,9 @@ msgid "Tags Manager"
 msgstr "Керування мітками"
 
 #: core/libs/tags/manager/tagsmanager_gui.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@info: search text bar"
-#| msgid "Search in Favorites..."
+#, kde-format
 msgid "Search for tags..."
-msgstr "Шукати серед «Улюблених»…"
+msgstr "Шукати мітки…"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:26
 #, kde-format
@@ -59857,47 +59855,22 @@ msgstr ""
 "виконання дії?"
 
 #: core/utilities/import/backend/gpcamera.cpp:1616
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br><br>"
-msgstr ""
-"Назва: «%1»\n"
-"Модель: «%2»\n"
-"Порт: «%3»\n"
-"Шлях: «%4»\n"
-"\n"
+msgstr "Назва: «%1»<br>Модель: «%2»<br>Порт: «%3»<br>Шлях: «%4»<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1623
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete Directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "Directories: \"%6\"<br><br>"
 msgstr ""
-"Мініатюри: «%1»\n"
-"Захоплення зображень: «%2»\n"
-"Вилучення записів: «%3»\n"
-"Вивантаження записів: «%4»\n"
-"Створення тек: «%5»\n"
-"Вилучення тек: «%6»\n"
-"\n"
+"Мініатюри: «%1»<br>Захоплення зображень: «%2»<br>Вилучення записів: "
+"«%3»<br>Вивантаження записів: «%4»<br>Створення тек: «%5»<br>Вилучення тек: "
+"«%6»<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
@@ -59922,67 +59895,35 @@ msgid "no"
 msgstr "ні"
 
 #: core/utilities/import/backend/umscamera.cpp:566
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
-#| "disk card readers.\n"
-#| "\n"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
 "disk card readers.<br><br>"
 msgstr ""
 "Драйвер «Змонтованого фотоапарата» для пристроїв збереження фотоапаратів USB/"
-"IEEE1394 і зчитувачів карток флеш-дисків.\n"
-"\n"
+"IEEE1394 і зчитувачів карток флеш-дисків.<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:573
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "UUID: \"%5\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid ""
 "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br>UUID: "
 "\"%5\"<br><br>"
 msgstr ""
-"Назва: «%1»\n"
-"Модель: «%2»\n"
-"Порт: «%3»\n"
-"Шлях: «%4»\n"
-"UUID: «%5»\n"
-"\n"
+"Назва: «%1»<br>Модель: «%2»<br>Порт: «%3»<br>Шлях: «%4»<br>UUID: «%5»<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "directories: \"%6\"<br><br>"
 msgstr ""
-"Мініатюри: «%1»\n"
-"Захоплення зображень: «%2»\n"
-"Вилучення записів: «%3»\n"
-"Вивантаження записів: «%4»\n"
-"Створення тек: «%5»\n"
-"Вилучення тек: «%6»\n"
-"\n"
+"Мініатюри: «%1»<br>Захоплення зображень: «%2»<br>Вилучення записів: "
+"«%3»<br>Вивантаження записів: «%4»<br>Створення тек: «%5»<br>Вилучення тек: "
+"«%6»<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:587
 #: core/utilities/import/backend/umscamera.cpp:588
@@ -60018,18 +59959,7 @@ msgstr ""
 "цифрові фотоапарати»."
 
 #: core/utilities/import/backend/umscamera.cpp:606
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The \"Mounted Camera\" driver is a simple interface to a camera disk "
-#| "mounted locally on your system.\n"
-#| "\n"
-#| "It does not use libgphoto2 drivers.\n"
-#| "\n"
-#| "To report any problems with this driver, please contact the digiKam team "
-#| "at:\n"
-#| "\n"
-#| "https://www.digikam.org/?q=contact"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The \"Mounted Camera\" driver is a simple interface to a camera disk mounted "
@@ -60038,14 +59968,11 @@ msgid ""
 "<br><br>https://www.digikam.org/support/contact/"
 msgstr ""
 "Драйвер «Змонтованого фотоапарата» — це простий інтерфейс до диска "
-"фотоапарата, локально змонтованого на вашій системі.\n"
-"\n"
-"Він не використовує жоден з драйверів libgphoto2.\n"
-"\n"
-"Щоб повідомити про будь-які проблеми, пов'язані з драйвером, будь ласка, "
-"зв'яжіться з командою розробки digiKam за адресою:\n"
-"\n"
-"https://www.digikam.org/?q=contact"
+"фотоапарата, локально змонтованого на вашій системі.<br><br>Він не "
+"використовує жоден з драйверів libgphoto2.<br><br>Щоб повідомити про будь-"
+"які проблеми, пов'язані з драйвером, будь ласка, зв'яжіться з командою "
+"розробників digiKam за адресою:<br><br>https://www.digikam.org/support/"
+"contact/"
 
 #: core/utilities/import/dialogs/camerafolderdialog.cpp:62
 #, kde-format

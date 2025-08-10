@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-09 01:57+0000\n"
-"PO-Revision-Date: 2025-08-07 22:29+0300\n"
+"PO-Revision-Date: 2025-08-09 21:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -40132,11 +40132,9 @@ msgid "Tags Manager"
 msgstr "Künyeler Yöneticisi"
 
 #: core/libs/tags/manager/tagsmanager_gui.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@info: search text bar"
-#| msgid "Search in Favorites..."
+#, kde-format
 msgid "Search for tags..."
-msgstr "Sık kullanılanlarda ara…"
+msgstr "Künyeleri ara…"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:26
 #, kde-format
@@ -59096,47 +59094,21 @@ msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "<b>%1</b> kilit dosyası devreye alınamadı. Sürdürmek istiyor musunuz?"
 
 #: core/utilities/import/backend/gpcamera.cpp:1616
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br><br>"
-msgstr ""
-"Başlık: “%1”\n"
-"Model: “%2”\n"
-"Kapı: “%3”\n"
-"Yol: “%4”\n"
-"\n"
+msgstr "Başlık: “%1”<br>Model: “%2”<br>Kapı: “%3”<br>Yol: “%4”<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1623
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete Directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "Directories: \"%6\"<br><br>"
 msgstr ""
-"Küçük görseller: “%1”\n"
-"Yakalama görseli: “%2”\n"
-"Ögeleri sil: “%3”\n"
-"Ögeleri karşıya yükle: “%4”\n"
-"Dizinler oluştur: “%5”\n"
-"Dizinleri sil: “%6”\n"
-"\n"
+"Küçük görseller: “%1”<br>Görsel yakala: “%2”<br>Ögeleri sil: “%3”<br>Ögeleri "
+"karşıya yükle: “%4”<br>Dizinler oluştur: “%5”<br>Dizinleri sil: “%6”<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
@@ -59161,67 +59133,34 @@ msgid "no"
 msgstr "hayır"
 
 #: core/utilities/import/backend/umscamera.cpp:566
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
-#| "disk card readers.\n"
-#| "\n"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
 "disk card readers.<br><br>"
 msgstr ""
 "USB/IEEE1394 yığın depolama kameraları ve Flash disk kartı okuyucuları için "
-"“Bağlı Kamera” sürücüsü.\n"
-"\n"
+"“Bağlı Kamera” sürücüsü.<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:573
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "UUID: \"%5\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid ""
 "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br>UUID: "
 "\"%5\"<br><br>"
 msgstr ""
-"Başlık: “%1”\n"
-"Model: “%2”\n"
-"Kapı: “%3”\n"
-"Yol: “%4”\n"
-"UUID: “%5”\n"
-"\n"
+"Başlık: “%1”<br>Model: “%2”<br>Kapı: “%3”<br>Yol: “%4”<br>UUID: “%5”<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "directories: \"%6\"<br><br>"
 msgstr ""
-"Küçük görseller: “%1”\n"
-"Yakalama görseli: “%2”\n"
-"Ögeleri sil: “%3”\n"
-"Ögeleri karşıya yükle: “%4”\n"
-"Dizinler oluştur: “%5”\n"
-"Dizinleri sil: “%6”\n"
-"\n"
+"Küçük görseller: “%1”<br>Görsel yakala: “%2”<br>Ögeleri sil: “%3”<br>Ögeleri "
+"karşıya yükle: “%4”<br>Dizinler oluştur: “%5”<br>Dizinleri sil: “%6”<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:587
 #: core/utilities/import/backend/umscamera.cpp:588
@@ -59256,18 +59195,7 @@ msgstr ""
 "kılavuzundaki “Desteklenen Sayısal Sabit Kameralar” bölümünü okuyun."
 
 #: core/utilities/import/backend/umscamera.cpp:606
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The \"Mounted Camera\" driver is a simple interface to a camera disk "
-#| "mounted locally on your system.\n"
-#| "\n"
-#| "It does not use libgphoto2 drivers.\n"
-#| "\n"
-#| "To report any problems with this driver, please contact the digiKam team "
-#| "at:\n"
-#| "\n"
-#| "https://www.digikam.org/?q=contact"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The \"Mounted Camera\" driver is a simple interface to a camera disk mounted "
@@ -59276,14 +59204,10 @@ msgid ""
 "<br><br>https://www.digikam.org/support/contact/"
 msgstr ""
 "“Bağlı Kamera” sürücüsü, sisteminize yerel olarak takılı bir kamera diskine "
-"yönelik basit bir arayüzdür.\n"
-"\n"
-"Libgphoto2 sürücülerini kullanmaz.\n"
-"\n"
-"Bu sürücüyle ilgili herhangi bir sorunu bildirmek için lütfen şu adresten "
-"digiKam takımıyla iletişime geçin:\n"
-"\n"
-"https://www.digikam.org/?q=contact"
+"yönelik basit bir arayüzdür.<br><br>Libgphoto2 sürücülerini kullanmaz."
+"<br><br>Bu sürücüyle ilgili herhangi bir sorunu bildirmek için lütfen şu "
+"adresten digiKam takımıyla iletişime geçin:<br><br>https://www.digikam.org/?"
+"q=contact"
 
 #: core/utilities/import/dialogs/camerafolderdialog.cpp:62
 #, kde-format

@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-09 01:57+0000\n"
-"PO-Revision-Date: 2025-08-08 00:26+0200\n"
+"PO-Revision-Date: 2025-08-09 11:33+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -40550,11 +40550,9 @@ msgid "Tags Manager"
 msgstr "Gestor de etiquetas"
 
 #: core/libs/tags/manager/tagsmanager_gui.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@info: search text bar"
-#| msgid "Search in Favorites..."
+#, kde-format
 msgid "Search for tags..."
-msgstr "Buscar en favoritos…"
+msgstr "Buscar etiquetas…"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:26
 #, kde-format
@@ -59668,47 +59666,22 @@ msgstr ""
 "continuar?"
 
 #: core/utilities/import/backend/gpcamera.cpp:1616
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br><br>"
-msgstr ""
-"Título: «%1»\n"
-"Modelo: «%2»\n"
-"Puerto: «%3»\n"
-"Ruta: «%4»\n"
-"\n"
+msgstr "Título: «%1»<br>Modelo: «%2»<br>Puerto: «%3»<br>Ruta: «%4»<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1623
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete Directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "Directories: \"%6\"<br><br>"
 msgstr ""
-"Miniaturas: «%1»\n"
-"Capturar imagen: «%2»\n"
-"Borrar elementos: «%3»\n"
-"Enviar elementos: «%4»\n"
-"Crear directorios: «%5»\n"
-"Borrar directorios: «%6»\n"
-"\n"
+"Miniaturas: «%1»<br>Capturar imagen: «%2»<br>Borrar elementos: "
+"«%3»<br>Enviar elementos: «%4»<br>Crear directorios: «%5»<br>Borrar "
+"directorios: «%6»<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
@@ -59733,67 +59706,36 @@ msgid "no"
 msgstr "no"
 
 #: core/utilities/import/backend/umscamera.cpp:566
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
-#| "disk card readers.\n"
-#| "\n"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
 "disk card readers.<br><br>"
 msgstr ""
 "Controlador de la «cámara montada» para cámaras de almacenamiento masivo USB/"
-"IEEE1394 y lectores de tarjetas Flash.\n"
-"\n"
+"IEEE1394 y lectores de tarjetas Flash.<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:573
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "UUID: \"%5\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid ""
 "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br>UUID: "
 "\"%5\"<br><br>"
 msgstr ""
-"Título: «%1»\n"
-"Modelo: «%2»\n"
-"Puerto: «%3»\n"
-"Ruta: «%4»\n"
-"UUID: «%5»\n"
-"\n"
+"Título: «%1»<br>Modelo: «%2»<br>Puerto: «%3»<br>Ruta: «%4»<br>UUID: "
+"«%5»<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "directories: \"%6\"<br><br>"
 msgstr ""
-"Miniaturas: «%1»\n"
-"Capturar imagen: «%2»\n"
-"Borrar elementos: «%3»\n"
-"Enviar elementos: «%4»\n"
-"Crear directorios: «%5»\n"
-"Borrar directorios: «%6»\n"
-"\n"
+"Miniaturas: «%1»<br>Capturar imagen: «%2»<br>Borrar elementos: "
+"«%3»<br>Enviar elementos: «%4»<br>Crear directorios: «%5»<br>Borrar "
+"directorios: «%6»<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:587
 #: core/utilities/import/backend/umscamera.cpp:588
@@ -59829,18 +59771,7 @@ msgstr ""
 "del manual de digiKam."
 
 #: core/utilities/import/backend/umscamera.cpp:606
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The \"Mounted Camera\" driver is a simple interface to a camera disk "
-#| "mounted locally on your system.\n"
-#| "\n"
-#| "It does not use libgphoto2 drivers.\n"
-#| "\n"
-#| "To report any problems with this driver, please contact the digiKam team "
-#| "at:\n"
-#| "\n"
-#| "https://www.digikam.org/?q=contact"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The \"Mounted Camera\" driver is a simple interface to a camera disk mounted "
@@ -59849,14 +59780,10 @@ msgid ""
 "<br><br>https://www.digikam.org/support/contact/"
 msgstr ""
 "El controlador de la «cámara montada» es una interfaz sencilla para el disco "
-"de una cámara montada localmente en el sistema.\n"
-"\n"
-"No usa controladores de «libgphoto2».\n"
-"\n"
-"Para comunicar cualquier problema con este controlador, contacte con el "
-"equipo de digiKam en:\n"
-"\n"
-"https://www.digikam.org/?q=contact"
+"de una cámara montada localmente en el sistema.<br><br>No usa controladores "
+"de «libgphoto2».<br><br>Para comunicar cualquier problema con este "
+"controlador, contacte con el equipo de digiKam en:<br><br>https://www."
+"digikam.org/support/contact/"
 
 #: core/utilities/import/dialogs/camerafolderdialog.cpp:62
 #, kde-format
