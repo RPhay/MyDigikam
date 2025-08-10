@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-09 01:57+0000\n"
-"PO-Revision-Date: 2025-08-07 06:54+0200\n"
+"PO-Revision-Date: 2025-08-09 08:55+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -40238,11 +40238,9 @@ msgid "Tags Manager"
 msgstr "Upravljalnik oznak"
 
 #: core/libs/tags/manager/tagsmanager_gui.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@info: search text bar"
-#| msgid "Search in Favorites..."
+#, kde-format
 msgid "Search for tags..."
-msgstr "Preišči med priljubljenimi..."
+msgstr "Preišči oznake..."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:26
 #, kde-format
@@ -59202,47 +59200,23 @@ msgstr ""
 "Ni bilo mogoče preklopiti datoteke zaklepa <b>%1</b>. Ali želite nadaljevati?"
 
 #: core/utilities/import/backend/gpcamera.cpp:1616
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br><br>"
 msgstr ""
-"Naslov: \"%1\"\n"
-"Model: \"%2\"\n"
-"Vrata: \"%3\"\n"
-"Pot: \"%4\"\n"
-"\n"
+"Naslov: \"%1\"<br>Model: \"%2\"<br>Vrata: \"%3\"<br>Pot: \"%4\"<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1623
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete Directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "Directories: \"%6\"<br><br>"
 msgstr ""
-"Sličice: \"%1\"\n"
-"Napis pod sliko \"%2\"\n"
-"Izbriši predmete: \"%3\"\n"
-"Pošlji predmete: \"%4\"\n"
-"Ustvari mape: \"%5\"\n"
-"Izbriši mape: \"%6\"\n"
-"\n"
+"Sličice: \"%1\"<br>Napis pod sliko \"%2\"<br>Izbriši predmete: "
+"\"%3\"<br>Pošlji predmete: \"%4\"<br>Ustvari mape: \"%5\"<br>Izbriši mape: "
+"\"%6\"<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
@@ -59267,66 +59241,36 @@ msgid "no"
 msgstr "ne"
 
 #: core/utilities/import/backend/umscamera.cpp:566
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
-#| "disk card readers.\n"
-#| "\n"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
 "disk card readers.<br><br>"
 msgstr ""
 "Gonilnik \"priklopljenega fotoaparata\" USB/IEEE1394 za hranilnike podatkov "
-"fotoaparatov in bralnike kartic flash.\n"
+"fotoaparatov in bralnike kartic flash.<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:573
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "UUID: \"%5\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid ""
 "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br>UUID: "
 "\"%5\"<br><br>"
 msgstr ""
-"Naslov: \"%1\"\n"
-"Model: \"%2\"\n"
-"Vrata: \"%3\"\n"
-"Pot: \"%4\"\n"
-"UUID: \"%5\"\n"
-"\n"
+"Naslov: \"%1\"<br>Model: \"%2\"<br>Vrata: \"%3\"<br>Pot: \"%4\"<br>UUID: "
+"\"%5\"<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "directories: \"%6\"<br><br>"
 msgstr ""
-"Sličice: \"%1\"\n"
-"Zajemi slike: \"%2\"\n"
-"Izbriši predmete: \"%3\"\n"
-"Pošlji predmete: \"%4\"\n"
-"Ustvari mape: \"%5\"\n"
-"Izbriši mape: \"%6\"\n"
-"\n"
+"Sličice: \"%1\"<br>Zajemi slike: \"%2\"<br>Izbriši predmete: "
+"\"%3\"<br>Pošlji predmete: \"%4\"<br>Ustvari mape: \"%5\"<br>Izbriši mape: "
+"\"%6\"<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:587
 #: core/utilities/import/backend/umscamera.cpp:588
@@ -59361,18 +59305,7 @@ msgstr ""
 "odsek priročnika digiKam imenovan Podprti digitalni fotoaparati."
 
 #: core/utilities/import/backend/umscamera.cpp:606
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The \"Mounted Camera\" driver is a simple interface to a camera disk "
-#| "mounted locally on your system.\n"
-#| "\n"
-#| "It does not use libgphoto2 drivers.\n"
-#| "\n"
-#| "To report any problems with this driver, please contact the digiKam team "
-#| "at:\n"
-#| "\n"
-#| "https://www.digikam.org/?q=contact"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The \"Mounted Camera\" driver is a simple interface to a camera disk mounted "
@@ -59381,11 +59314,10 @@ msgid ""
 "<br><br>https://www.digikam.org/support/contact/"
 msgstr ""
 "Gonilnik \"priklopljenega fotoaparata\" je preprost vmesnik do diska "
-"fotoaparata, ki je priklopljena krajevno na vaš sistem.\n"
-"\n"
-"Ne uporablja gonilnikov libgphoto2.\n"
-"Da poročate o težavah s tem gonilnikom, stopite v stik z ekipo digiKama na: "
-"http://www.digikam.org/?q=contact"
+"fotoaparata, ki je priklopljena krajevno na vaš sistem.<br><br>Ne uporablja "
+"gonilnikov libgphoto2.<br><br>Da poročate o težavah s tem gonilnikom, "
+"stopite v stik z ekipo digiKama na:<br><br>https://www.digikam.org/support/"
+"contact/"
 
 #: core/utilities/import/dialogs/camerafolderdialog.cpp:62
 #, kde-format

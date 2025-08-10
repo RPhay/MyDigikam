@@ -76,7 +76,7 @@ Applications/digiKam.org \
 
 # Other apps - non-MacOS binaries & libraries to be included with required dylibs
 
-if [[ $ARCH_TARGET = "x86_64" ]] ; then
+if [[ $TARGET_ARCH = "x86_64" ]] ; then
     QT_PLUGIN_EXT="so"
 else
     QT_PLUGIN_EXT="dylib"
@@ -783,7 +783,7 @@ else
 
 fi
 
-TARGET_INSTALLER=digiKam-$DKRELEASEID$DK_SUBVER$QT_SUF-MacOS-$ARCH_TARGET$DEBUG_SUF.pkg
+TARGET_INSTALLER=digiKam-$DKRELEASEID$DK_SUBVER$QT_SUF-MacOS-$TARGET_ARCH$DEBUG_SUF.pkg
 TARGET_PKG_FILE=$BUILDDIR/bundle/$TARGET_INSTALLER
 echo -e "Target PKG file : $TARGET_PKG_FILE"
 

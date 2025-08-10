@@ -44,7 +44,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-09 01:57+0000\n"
-"PO-Revision-Date: 2025-08-06 13:00+0200\n"
+"PO-Revision-Date: 2025-08-09 22:09+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -29923,17 +29923,13 @@ msgid "Build Environment"
 msgstr "Byggmiljö"
 
 #: core/libs/dialogs/libsinfodlg_buildtools.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: git revision"
 msgid "Unknown"
 msgstr "Okänd"
 
 #: core/libs/dialogs/libsinfodlg_buildtools.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: git branch"
 msgid "Unknown"
 msgstr "Okänd"
@@ -29957,9 +29953,7 @@ msgid "Libraries"
 msgstr "Bibliotek"
 
 #: core/libs/dialogs/libsinfodlg_libraries.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: libx265 version"
 msgid "Unknown"
 msgstr "Okänd"
@@ -40104,11 +40098,9 @@ msgid "Tags Manager"
 msgstr "Etiketthantering"
 
 #: core/libs/tags/manager/tagsmanager_gui.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@info: search text bar"
-#| msgid "Search in Favorites..."
+#, kde-format
 msgid "Search for tags..."
-msgstr "Sök i favoriter..."
+msgstr "Sök efter etiketter..."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:26
 #, kde-format
@@ -59065,47 +59057,23 @@ msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "Misslyckades ändra låsfilen <b>%1</b>. Vill du fortsätta?"
 
 #: core/utilities/import/backend/gpcamera.cpp:1616
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br><br>"
 msgstr ""
-"Titel: \"%1\"\n"
-"Modell: \"%2\"\n"
-"Port: \"%3\"\n"
-"Sökväg: \"%4\"\n"
-"\n"
+"Titel: \"%1\"<br>Modell: \"%2\"<br>Port: \"%3\"<br>Sökväg: \"%4\"<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1623
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete Directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "Directories: \"%6\"<br><br>"
 msgstr ""
-"Miniatyrbilder: \"%1\"\n"
-"Ta bild: \"%2\"\n"
-"Ta bort objekt: \"%3\"\n"
-"Ladda upp objekt: \"%4\"\n"
-"Skapa kataloger: \"%5\"\n"
-"Ta bort kataloger: \"%6\"\n"
-"\n"
+"Miniatyrbilder: \"%1\"<br>Ta bild: \"%2\"<br>Ta bort objekt: \"%3\"<br>Ladda "
+"upp objekt: \"%4\"<br>Skapa kataloger: \"%5\"<br>Ta bort kataloger: "
+"\"%6\"<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
@@ -59130,67 +59098,36 @@ msgid "no"
 msgstr "nej"
 
 #: core/utilities/import/backend/umscamera.cpp:566
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
-#| "disk card readers.\n"
-#| "\n"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
 "disk card readers.<br><br>"
 msgstr ""
 "Drivrutin för \"monterad kamera\" för USB eller IEEE1394 masslagringskameror "
-"och Flashdisk-kortläsare.\n"
-"\n"
+"och Flashdisk-kortläsare.<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:573
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "UUID: \"%5\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid ""
 "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br>UUID: "
 "\"%5\"<br><br>"
 msgstr ""
-"Titel: \"%1\"\n"
-"Modell: \"%2\"\n"
-"Port: \"%3\"\n"
-"Sökväg: \"%4\"\n"
-"UUID: \"%5\"\n"
-"\n"
+"Titel: \"%1\"<br>Modell: \"%2\"<br>Port: \"%3\"<br>Sökväg: \"%4\"<br>UUID: "
+"\"%5\"<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "directories: \"%6\"<br><br>"
 msgstr ""
-"Miniatyrbilder: \"%1\"\n"
-"Ta bild: \"%2\"\n"
-"Ta bort objekt: \"%3\"\n"
-"Ladda upp objekt: \"%4\"\n"
-"Skapa kataloger: \"%5\"\n"
-"Ta bort kataloger: \"%6\"\n"
-"\n"
+"Miniatyrbilder: \"%1\"<br>Ta bild: \"%2\"<br>Ta bort objekt: \"%3\"<br>Ladda "
+"upp objekt: \"%4\"<br>Skapa kataloger: \"%5\"<br>Ta bort kataloger: "
+"\"%6\"<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:587
 #: core/utilities/import/backend/umscamera.cpp:588
@@ -59225,18 +59162,7 @@ msgstr ""
 "\"Digitala stillbildskameror som stöds\" i Digikams handbok."
 
 #: core/utilities/import/backend/umscamera.cpp:606
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The \"Mounted Camera\" driver is a simple interface to a camera disk "
-#| "mounted locally on your system.\n"
-#| "\n"
-#| "It does not use libgphoto2 drivers.\n"
-#| "\n"
-#| "To report any problems with this driver, please contact the digiKam team "
-#| "at:\n"
-#| "\n"
-#| "https://www.digikam.org/?q=contact"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The \"Mounted Camera\" driver is a simple interface to a camera disk mounted "
@@ -59245,14 +59171,9 @@ msgid ""
 "<br><br>https://www.digikam.org/support/contact/"
 msgstr ""
 "Drivrutinen \"Monterad kamera\" är ett enkelt gränssnitt för en kameradisk "
-"monterad lokalt på datorn.\n"
-"\n"
-"Den använder inte libgphoto2-drivrutinerna.\n"
-"\n"
-"För att rapportera eventuella problem med drivrutinen, kontakta Digikam-"
-"gruppen på:\n"
-"\n"
-"https://www.digikam.org/?q=contact"
+"monterad lokalt på datorn.<br><br>Den använder inte libgphoto2-drivrutinerna."
+"<br><br>För att rapportera eventuella problem med drivrutinen, kontakta "
+"Digikam-gruppen på:<br><br>https://www.digikam.org/?q=contact"
 
 #: core/utilities/import/dialogs/camerafolderdialog.cpp:62
 #, kde-format
@@ -64504,20 +64425,18 @@ msgstr "Öppna den lokala katalogen som används för lagring av datafiler."
 #: core/utilities/setup/downloader/filesdownloader.cpp:163
 #, kde-format
 msgid "Location of the face management model files:"
-msgstr ""
+msgstr "Plats för ansiktshanteringens modellfiler:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:171
-#, fuzzy, kde-format
-#| msgid "Use Face Management feature"
+#, kde-format
 msgctxt "@title:window"
 msgid "Face Management Model Target"
-msgstr "Använd funktionen för ansiktshantering"
+msgstr "Ansiktshanteringens modellmål"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:172
-#, fuzzy, kde-format
-#| msgid "Sets the target address to copy the items to."
+#, kde-format
 msgid "Sets the target address to download the face management model files to."
-msgstr "Anger måladressen att kopiera objekten till."
+msgstr "Anger måladressen att ladda ner ansiktshanteringens modellfiler till."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, kde-format
@@ -64612,15 +64531,7 @@ msgstr ""
 "modellfiler för ansiktshantering.</p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:603
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>Some required files are missing. Click “Download” to start installing "
-#| "the necessary model files. If you close this dialog you will be prompted "
-#| "again the next time you launch digiKam. The selected features will not "
-#| "function without these files.</p><p>The files will be downloaded to \"<i>"
-#| "%1</i>\".</p><p><b>You must restart digiKam after successfully "
-#| "downloading the files.</b></p>"
+#, kde-format
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
 "necessary model files. If you close this dialog you will be prompted again "
@@ -64631,8 +64542,8 @@ msgstr ""
 "<p>Vissa nödvändiga filer saknas. Klicka på 'Ladda ner' för att börja "
 "installera nödvändiga modellfiler. Om du stänger dialogrutan, blir du "
 "tillfrågad igen nästa  gång Digikam startas. Utan filerna fungerar inte de "
-"valda funktionerna.</p><p>Filerna laddas ner i \"<i>%1</i>\".</p><p><b>Efter "
-"lyckad nerladdning måste Digikam startas om.</b></p>"
+"valda funktionerna.</p><p><b>Efter lyckad nerladdning måste Digikam startas "
+"om.</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:610
 #, kde-format

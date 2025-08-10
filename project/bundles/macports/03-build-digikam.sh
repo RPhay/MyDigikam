@@ -63,7 +63,7 @@ cmake $ORIG_WD/../3rdparty \
        -DKDE_VERSION=$DK_KDE_VERSION \
        -DENABLE_QTVERSION=$DK_QTVERSION \
        -DMACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET \
-       -DARCH_TARGET=$ARCH_TARGET \
+       -DARCH_TARGET=$TARGET_ARCH \
        -DDK_APPLE_PACKAGE_MANAGER=$DK_APPLE_PACKAGE_MANAGER \
        -Wno-dev
 
@@ -154,7 +154,7 @@ cp -f $ORIG_WD/fixbundledatapath.sh $DK_BUILDTEMP/digikam-$DK_VERSION
 
 ./fixbundledatapath.sh
 
-./bootstrap.macports "$INSTALL_PREFIX" "Debug" "$ARCH_TARGET" "-Wno-dev"
+./bootstrap.macports "$INSTALL_PREFIX" "Debug" "$TARGET_ARCH" "-Wno-dev"
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot configure digiKam $DK_VERSION."
@@ -220,7 +220,7 @@ cmake $ORIG_WD/../3rdparty \
        -DKDE_VERSION=$DK_KDE_VERSION \
        -DENABLE_QTVERSION=$DK_QTVERSION \
        -DMACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET \
-       -DARCH_TARGET=$ARCH_TARGET \
+       -DARCH_TARGET=$TARGET_ARCH \
        -DDK_APPLE_PACKAGE_MANAGER=$DK_APPLE_PACKAGE_MANAGER \
        -Wno-dev
 
