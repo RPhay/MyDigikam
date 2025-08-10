@@ -1,5 +1,15 @@
---- gperf.py.old	2025-08-10 17:59:44.000000000 +0200
-+++ gperf.py	2025-08-10 18:01:24.000000000 +0200
+From https://chromium-review.googlesource.com/c/chromium/src/+/6445471
+
+Don't apply /*FALLTHROUGH*/ edit to gperf 3.2 output
+
+The gperf issue at https://savannah.gnu.org/bugs/index.php?53029
+has been resolved as of the 3.2 release, and not only is the
+/*FALLTHROUGH*/ comment replacement no longer needed, it now
+breaks the build with "error: fallthrough annotation does not
+directly precede switch label". Only do the edit for 3.1.
+
+--- src/3rdparty/chromium/third_party/blink/renderer/build/scripts/gperf.py
++++ src/3rdparty/chromium/third_party/blink/renderer/build/scripts/gperf.py
 @@ -36,10 +36,11 @@
          # https://savannah.gnu.org/bugs/index.php?53028
          gperf_output = re.sub(r'\bregister ', '', gperf_output)
