@@ -189,7 +189,17 @@ bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
     // now perform the copy action
 
     QList<QString> columnNames;
-    QSqlQuery      result        = fromDBbackend.execDBActionQuery(fromDBbackend.getDBAction(fromActionName), bindingMap) ;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 2, 0))
+
+    QSqlQuery      result        = std::move(fromDBbackend.execDBActionQuery(fromDBbackend.getDBAction(fromActionName), bindingMap));
+
+#else
+
+    QSqlQuery      result        = fromDBbackend.execDBActionQuery(fromDBbackend.getDBAction(fromActionName), bindingMap);
+
+#endif
+
     int            resultSize    = -1;
     bool           isForwardOnly = result.isForwardOnly();
 
@@ -226,7 +236,17 @@ bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
     if (isForwardOnly)
     {
         result.finish();
-        result = fromDBbackend.execDBActionQuery(fromDBbackend.getDBAction(fromActionName), bindingMap) ;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 2, 0))
+
+        result = std::move(fromDBbackend.execDBActionQuery(fromDBbackend.getDBAction(fromActionName), bindingMap));
+
+#else
+
+        result = fromDBbackend.execDBActionQuery(fromDBbackend.getDBAction(fromActionName), bindingMap);
+
+#endif
+
     }
 
     int columnCount = result.record().count();

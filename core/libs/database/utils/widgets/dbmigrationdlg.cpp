@@ -21,9 +21,7 @@
 #include <QGridLayout>
 #include <QWidget>
 #include <QList>
-#include <QSqlQuery>
 #include <QMap>
-#include <QSqlError>
 #include <QLabel>
 #include <QGroupBox>
 #include <QDialogButtonBox>
