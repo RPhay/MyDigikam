@@ -15,6 +15,10 @@
 
 #pragma once
 
+// C++ includes
+
+#include <memory>
+
 // Qt includes
 
 #include <QImage>
@@ -53,7 +57,7 @@ public:
 
     virtual bool start()                                                            override;
 
-    virtual void bqmSendOne(QScopedPointer<DMetadata>& _bqmMeta,
+    virtual void bqmSendOne(std::unique_ptr<DMetadata>& _bqmMeta,
                             const ItemInfo& info,
                             const QUrl& outputUrl,
                             const DImg& image);
@@ -86,7 +90,7 @@ protected:
     const QList<AlbumRootInfo>  albumRoots;
 
     // Batch Queue Manager
-    QScopedPointer<DMetadata>   bqmMeta;
+    std::unique_ptr<DMetadata>  bqmMeta;
     QSemaphore                  bqmSemaphore;
     QUrl                        bqmOutputUrl;
 

@@ -138,12 +138,12 @@ QString RangeModifier::parseOperation(ParseSettings& settings, const QRegularExp
 
     // replace the string according to the given range
 
-    if (start > settings.str2Modify.count())
+    if (start > settings.str2Modify.size())
     {
         return QString();
     }
 
-    if (stop > settings.str2Modify.count())
+    if (stop > settings.str2Modify.size())
     {
         stop = -1;
     }

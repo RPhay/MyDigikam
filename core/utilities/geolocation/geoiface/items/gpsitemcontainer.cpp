@@ -15,6 +15,10 @@
 
 #include "gpsitemcontainer.h"
 
+// C++ includes
+
+#include <memory>
+
 // Qt includes
 
 #include <QBrush>
@@ -218,7 +222,7 @@ GPSItemContainer::GPSItemContainer(const QUrl& url)
 
 DMetadata* GPSItemContainer::getMetadataForFile() const
 {
-    QScopedPointer<DMetadata> meta(new DMetadata);
+    std::unique_ptr<DMetadata> meta(new DMetadata);
 
     if (!meta->load(m_url.toLocalFile()))
     {
@@ -231,7 +235,7 @@ DMetadata* GPSItemContainer::getMetadataForFile() const
         }
     }
 
-    return meta.take();
+    return meta.release();
 }
 
 int getWarningLevelFromGPSDataContainer(const GPSDataContainer& data)
