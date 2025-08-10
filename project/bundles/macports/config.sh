@@ -16,7 +16,7 @@ BUILDING_DIR="`pwd`/temp.build"
 ########################################################################
 
 # Build universal bundle (arm64 + Intel architecture). Work only with Silicon computer.
-MP_UNIVERSAL=1
+MP_UNIVERSAL=0
 
 # Target macOS architecture: "x86_64" for Intel 64 bits, or "arm64" for Apple Silicon 64 bits.
 # Used with the macport configuration.
