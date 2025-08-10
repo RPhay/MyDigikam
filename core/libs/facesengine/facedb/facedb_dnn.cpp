@@ -30,7 +30,7 @@ int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
     bindingValues << hash;
     bindingValues << QByteArray::fromRawData(reinterpret_cast<const char*>(faceEmbedding.ptr<float>()), (sizeof(float) * 128));
 
-    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("INSERT INTO FaceMatrices (identity, removeHash, embedding) "
+    QSqlQuery query = d->db->execQuery(QLatin1String("INSERT INTO FaceMatrices (identity, removeHash, embedding) "
                                                             "VALUES (?,?,?);"),
                                               bindingValues);
 
@@ -63,7 +63,7 @@ bool FaceDb::removeFaceVector(const int nodeId) const
 
 bool FaceDb::removeFaceVector(const QString& hash) const
 {
-    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("DELETE FROM FaceMatrices WHERE removeHash=?;"), hash);
+    QSqlQuery query = d->db->execQuery(QLatin1String("DELETE FROM FaceMatrices WHERE removeHash=?;"), hash);
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Deleted hash " << hash << " from FaceMatricies";
 
@@ -75,7 +75,7 @@ bool FaceDb::removeFaceVector(const QString& hash) const
 cv::Ptr<cv::ml::TrainData> FaceDb::trainData() const
 {
     cv::Mat feature, label;
-    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT identity, embedding "
+    QSqlQuery query = d->db->execQuery(QLatin1String("SELECT identity, embedding "
                                                             "FROM FaceMatrices;"));
 
     while (query.next())

@@ -49,7 +49,6 @@ set(libdatabasecore_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/dbengineguierrorhandler.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/dbengineparameters.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/dbenginebackend.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/engine/dbenginesqlquery.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/dbengineaccess.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/tags/tagregion.cpp

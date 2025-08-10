@@ -1,4 +1,4 @@
-/* ============================================================
+ /* ============================================================
  *
  * This file is a part of digiKam project
  * https://www.digikam.org
@@ -80,29 +80,29 @@ public:
     bool incrementTransactionCount();
     bool decrementTransactionCount();
 
-    bool isInMainThread()                                            const;
-    bool isInUIThread()                                              const;
+    bool isInMainThread()                                         const;
+    bool isInUIThread()                                           const;
 
-    bool reconnectOnError()                                          const;
-    bool isSQLiteLockError(const DbEngineSqlQuery& query)            const;
-    bool isSQLiteLockTransactionError(const QSqlError& lastError)    const;
-    bool isConnectionError(const DbEngineSqlQuery& query)            const;
-    bool needToConsultUserForError(const DbEngineSqlQuery& query)    const;
-    bool needToHandleWithErrorHandler(const DbEngineSqlQuery& query) const;
-    void debugOutputFailedQuery(const QSqlQuery& query)              const;
-    void debugOutputFailedTransaction(const QSqlError& error)        const;
+    bool reconnectOnError()                                       const;
+    bool isSQLiteLockError(const QSqlQuery& query)                const;
+    bool isSQLiteLockTransactionError(const QSqlError& lastError) const;
+    bool isConnectionError(const QSqlQuery& query)                const;
+    bool needToConsultUserForError(const QSqlQuery& query)        const;
+    bool needToHandleWithErrorHandler(const QSqlQuery& query)     const;
+    void debugOutputFailedQuery(const QSqlQuery& query)           const;
+    void debugOutputFailedTransaction(const QSqlError& error)     const;
 
     bool checkRetrySQLiteLockError(int retries);
     bool checkOperationStatus();
-    bool handleWithErrorHandler(const DbEngineSqlQuery* const query);
+    bool handleWithErrorHandler(const QSqlQuery* const query);
     void setQueryOperationFlag(BdEngineBackend::QueryOperationStatus status);
     void queryOperationWakeAll(BdEngineBackend::QueryOperationStatus status);
 
     /**
      * called by DbEngineErrorHandler, implementing DbEngineErrorAnswer.
      */
-    void connectionErrorContinueQueries()                                  override;
-    void connectionErrorAbortQueries()                                     override;
+    void connectionErrorContinueQueries()                         override;
+    void connectionErrorAbortQueries()                            override;
 
     virtual void transactionFinished();
 

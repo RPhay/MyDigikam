@@ -21,7 +21,6 @@
 #include "coredbaccess.h"
 #include "coredbconstants.h"
 #include "coredbbackend.h"
-#include "dbenginesqlquery.h"
 #include "coredboperationgroup.h"
 #include "iteminfo.h"
 #include "itemtagpair.h"
@@ -761,7 +760,7 @@ void FaceTagsEditor::removeAllRejectedFaceTags()
     CoreDbOperationGroup group;
     group.setMaximumTime(200);
 
-    DbEngineSqlQuery result = CoreDbAccess().backend()->execQuery(QLatin1String("SELECT imageid from ImageTagProperties where property='") +
+    QSqlQuery result = CoreDbAccess().backend()->execQuery(QLatin1String("SELECT imageid from ImageTagProperties where property='") +
                                                                                 ImageTagPropertyName::faceTagExtendedData()                +
                                                                                 QLatin1String("';"));
     while (result.next())

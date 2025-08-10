@@ -47,7 +47,6 @@
 #include "coredb.h"
 #include "coredbbackend.h"
 #include "coredbsearchxml.h"
-#include "dbenginesqlquery.h"
 #include "similaritydb.h"
 #include "similaritydbaccess.h"
 

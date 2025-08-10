@@ -213,12 +213,12 @@ QList<int> ThumbsDb::findAll()
 
 QHash<QString, int> ThumbsDb::getFilePathsWithThumbnail()
 {
-    DbEngineSqlQuery query = d->db->prepareQuery(QString::fromLatin1("SELECT path, thumbId "
-                                                        "FROM FilePaths "
-                                                        " INNER JOIN Thumbnails ON thumbId = id "
-                                                        "  WHERE type BETWEEN %1 AND %2;")
-                                                 .arg(DatabaseThumbnail::PGF)
-                                                 .arg(DatabaseThumbnail::PNG));
+    QSqlQuery query = d->db->prepareQuery(QString::fromLatin1("SELECT path, thumbId "
+                                                              "FROM FilePaths "
+                                                              " INNER JOIN Thumbnails ON thumbId = id "
+                                                              "  WHERE type BETWEEN %1 AND %2;")
+                                          .arg(DatabaseThumbnail::PGF)
+                                          .arg(DatabaseThumbnail::PNG));
 
     if (!d->db->exec(query))
     {

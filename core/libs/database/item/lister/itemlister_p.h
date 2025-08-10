@@ -47,7 +47,6 @@
 #include "itemquerybuilder.h"
 #include "dmetadata.h"
 #include "haariface.h"
-#include "dbenginesqlquery.h"
 #include "tagscache.h"
 #include "itemtagpair.h"
 #include "dbjobsthread.h"

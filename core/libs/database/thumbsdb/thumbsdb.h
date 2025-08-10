@@ -24,7 +24,6 @@
 
 // Local includes
 
-#include "dbenginesqlquery.h"
 #include "thumbsdbbackend.h"
 #include "thumbsdbaccess.h"
 #include "digikam_export.h"

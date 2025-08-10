@@ -304,17 +304,17 @@ void ItemLister::listFromHaarSearch(ItemListerReceiver* const receiver,
         // Generate the query that returns the similarity as constant for a given image id.
 
         CoreDbAccess access;
-        DbEngineSqlQuery query = access.backend()->prepareQuery(QString::fromUtf8(
-                             "SELECT DISTINCT Images.id, Images.name, Images.album, "
-                             "       Albums.albumRoot, "
-                             "       ImageInformation.rating, Images.category, "
-                             "       ImageInformation.format, ImageInformation.creationDate, "
-                             "       Images.modificationDate, Images.fileSize, "
-                             "       ImageInformation.width, ImageInformation.height "
-                             " FROM Images "
-                             "       LEFT JOIN ImageInformation ON Images.id=ImageInformation.imageid "
-                             "       LEFT JOIN Albums ON Albums.id=Images.album "
-                             " WHERE Images.status=1 AND Images.id = ?;"));
+        QSqlQuery query = access.backend()->prepareQuery(QString::fromUtf8(
+                              "SELECT DISTINCT Images.id, Images.name, Images.album, "
+                              "       Albums.albumRoot, "
+                              "       ImageInformation.rating, Images.category, "
+                              "       ImageInformation.format, ImageInformation.creationDate, "
+                              "       Images.modificationDate, Images.fileSize, "
+                              "       ImageInformation.width, ImageInformation.height "
+                              " FROM Images "
+                              "       LEFT JOIN ImageInformation ON Images.id=ImageInformation.imageid "
+                              "       LEFT JOIN Albums ON Albums.id=Images.album "
+                              " WHERE Images.status=1 AND Images.id = ?;"));
 
         qlonglong imageId;
         double similarity;

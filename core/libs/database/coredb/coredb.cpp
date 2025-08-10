@@ -52,7 +52,7 @@ public:
 public:
 
     QString constructRelatedImagesSQL(bool fromOrTo, DatabaseRelation::Type type, bool boolean);
-    QList<qlonglong> execRelatedImagesQuery(DbEngineSqlQuery& query, qlonglong id, DatabaseRelation::Type type);
+    QList<qlonglong> execRelatedImagesQuery(QSqlQuery& query, qlonglong id, DatabaseRelation::Type type);
 };
 
 QString CoreDB::Private::constructRelatedImagesSQL(bool fromOrTo, DatabaseRelation::Type type, bool boolean)
@@ -93,7 +93,7 @@ QString CoreDB::Private::constructRelatedImagesSQL(bool fromOrTo, DatabaseRelati
     return sql;
 }
 
-QList<qlonglong> CoreDB::Private::execRelatedImagesQuery(DbEngineSqlQuery& query, qlonglong id, DatabaseRelation::Type type)
+QList<qlonglong> CoreDB::Private::execRelatedImagesQuery(QSqlQuery& query, qlonglong id, DatabaseRelation::Type type)
 {
     QVariantList values;
 
@@ -1261,8 +1261,8 @@ QVector<QList<int> > CoreDB::getItemsTagIDs(const QList<qlonglong>& imageIds) co
         return QVector<QList<int> >();
     }
 
+    QSqlQuery query = d->db->prepareQuery(QString::fromUtf8("SELECT tagid FROM ImageTags WHERE imageID=?;"));
     QVector<QList<int> > results(imageIds.size());
-    DbEngineSqlQuery query = d->db->prepareQuery(QString::fromUtf8("SELECT tagid FROM ImageTags WHERE imageID=?;"));
     QVariantList values;
 
     for (int i = 0 ; i < imageIds.size() ; ++i)
@@ -1682,7 +1682,7 @@ QVariantList CoreDB::getItemPositions(const QList<qlonglong>& imageIDs, Database
         sql                   += fieldNames.join(QString::fromUtf8(", "));
         sql                   += QString::fromUtf8(" FROM ImagePositions WHERE imageid=?;");
 
-        DbEngineSqlQuery query = d->db->prepareQuery(sql);
+        QSqlQuery query        = d->db->prepareQuery(sql);
 
         for (const qlonglong& imageid : std::as_const(imageIDs))
         {
@@ -2377,8 +2377,8 @@ void CoreDB::addImageRelation(qlonglong subjectId, qlonglong objectId, DatabaseR
 void CoreDB::addImageRelations(const QList<qlonglong>& subjectIds,
                                const QList<qlonglong>& objectIds, DatabaseRelation::Type type)
 {
-    DbEngineSqlQuery query = d->db->prepareQuery(QString::fromUtf8("REPLACE INTO ImageRelations (subject, object, type) "
-                                                                   "VALUES (?, ?, ?);"));
+    QSqlQuery query = d->db->prepareQuery(QString::fromUtf8("REPLACE INTO ImageRelations (subject, object, type) "
+                                                            "VALUES (?, ?, ?);"));
 
     QVariantList subjects, objects, types;
 
@@ -2486,8 +2486,8 @@ bool CoreDB::hasImagesRelatingTo(qlonglong objectId, DatabaseRelation::Type type
 
 QList<qlonglong> CoreDB::getRelatedImages(qlonglong id, bool fromOrTo, DatabaseRelation::Type type, bool boolean) const
 {
-    QString sql            = d->constructRelatedImagesSQL(fromOrTo, type, boolean);
-    DbEngineSqlQuery query = d->db->prepareQuery(sql);
+    QString sql     = d->constructRelatedImagesSQL(fromOrTo, type, boolean);
+    QSqlQuery query = d->db->prepareQuery(sql);
 
     return d->execRelatedImagesQuery(query, id, type);
 }
@@ -2502,8 +2502,8 @@ QVector<QList<qlonglong> > CoreDB::getRelatedImages(QList<qlonglong> ids,
 
     QVector<QList<qlonglong> > result(ids.size());
 
-    QString sql            = d->constructRelatedImagesSQL(fromOrTo, type, boolean);
-    DbEngineSqlQuery query = d->db->prepareQuery(sql);
+    QString sql     = d->constructRelatedImagesSQL(fromOrTo, type, boolean);
+    QSqlQuery query = d->db->prepareQuery(sql);
 
     for (int i = 0 ; i < ids.size() ; ++i)
     {
@@ -2537,7 +2537,7 @@ QList<QPair<qlonglong, qlonglong> > CoreDB::getRelationCloud(qlonglong imageId, 
         sql = sql.arg(QString::fromUtf8("AND type=?"));
     }
 
-    DbEngineSqlQuery query = d->db->prepareQuery(sql);
+    QSqlQuery query = d->db->prepareQuery(sql);
 
     QList<QVariant> values;
     qlonglong subject, object;
@@ -2601,9 +2601,9 @@ QList<qlonglong> CoreDB::getOneRelatedImageEach(const QList<qlonglong>& ids, Dat
         sql = sql.arg(QString::fromUtf8("AND type=?"));
     }
 
-    DbEngineSqlQuery query = d->db->prepareQuery(sql);
-    QSet<qlonglong>  result;
-    QList<QVariant>  values;
+    QSqlQuery query = d->db->prepareQuery(sql);
+    QSet<qlonglong> result;
+    QList<QVariant> values;
 
     for (const qlonglong& id : std::as_const(ids))
     {
@@ -3268,7 +3268,7 @@ void CoreDB::addTagsToItems(const QList<qlonglong>& imageIDs, const QList<int>& 
         return;
     }
 
-    DbEngineSqlQuery query = d->db->prepareQuery(QString::fromUtf8("REPLACE INTO ImageTags (imageid, tagid) "
+    QSqlQuery query = d->db->prepareQuery(QString::fromUtf8("REPLACE INTO ImageTags (imageid, tagid) "
                                                                    "VALUES(?, ?);"));
     QVariantList images;
     QVariantList tags;
@@ -3318,9 +3318,9 @@ void CoreDB::removeTagsFromItems(const QList<qlonglong>& imageIDs, const QList<i
         return;
     }
 
-    DbEngineSqlQuery query = d->db->prepareQuery(QString::fromUtf8("DELETE FROM ImageTags WHERE imageID=? AND tagid=?;"));
-    QVariantList     images;
-    QVariantList     tags;
+    QSqlQuery query = d->db->prepareQuery(QString::fromUtf8("DELETE FROM ImageTags WHERE imageID=? AND tagid=?;"));
+    QVariantList images;
+    QVariantList tags;
 
     for (const qlonglong& imageid : std::as_const(imageIDs))
     {
@@ -3680,7 +3680,7 @@ QMap<QString, int> CoreDB::getFormatStatistics(DatabaseItem::Category category) 
     queryString.append(QString::fromUtf8("GROUP BY II.format;"));
     qCDebug(DIGIKAM_DATABASE_LOG) << queryString;
 
-    DbEngineSqlQuery query = d->db->prepareQuery(queryString);
+    QSqlQuery query = d->db->prepareQuery(queryString);
 
     if (d->db->exec(query))
     {
@@ -4134,7 +4134,7 @@ QList<ItemScanInfo> CoreDB::getItemScanInfos(int albumID) const
     QString sql = QString::fromUtf8("SELECT id, album, name, status, category, modificationDate, fileSize, uniqueHash "
                                     "FROM Images WHERE album=?;");
 
-    DbEngineSqlQuery query = d->db->prepareQuery(sql);
+    QSqlQuery query = d->db->prepareQuery(sql);
     query.addBindValue(albumID);
 
     if (d->db->exec(query))
@@ -4416,7 +4416,7 @@ void CoreDB::removeItemsFromAlbum(int albumID, const QList<qlonglong>& ids_forIn
 
 void CoreDB::removeItems(const QList<qlonglong>& itemIDs, const QList<int>& albumIDs)
 {
-    DbEngineSqlQuery query = d->db->prepareQuery(QString::fromUtf8("UPDATE Images SET status=?, album=NULL WHERE id=?;"));
+    QSqlQuery query = d->db->prepareQuery(QString::fromUtf8("UPDATE Images SET status=?, album=NULL WHERE id=?;"));
 
     QVariantList imageIds;
     QVariantList status;
@@ -4436,7 +4436,7 @@ void CoreDB::removeItems(const QList<qlonglong>& itemIDs, const QList<int>& albu
 
 void CoreDB::removeItemsPermanently(const QList<qlonglong>& itemIDs, const QList<int>& albumIDs)
 {
-    DbEngineSqlQuery query = d->db->prepareQuery(QString::fromUtf8("UPDATE Images SET status=?, album=NULL WHERE id=?;"));
+    QSqlQuery query = d->db->prepareQuery(QString::fromUtf8("UPDATE Images SET status=?, album=NULL WHERE id=?;"));
 
     QVariantList imageIds;
     QVariantList status;

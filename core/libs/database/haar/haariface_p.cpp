@@ -111,7 +111,7 @@ void HaarIface::Private::rebuildSignatureCache(const QSet<qlonglong>& imageIds)
     SignatureCache& sigCache = *m_signatureCache;
     AlbumCache&     albCache = *m_albumCache;
 
-    DbEngineSqlQuery query   = SimilarityDbAccess().backend()->prepareQuery(signatureQuery);
+    QSqlQuery query          = SimilarityDbAccess().backend()->prepareQuery(signatureQuery);
 
     if (!SimilarityDbAccess().backend()->exec(query))
     {

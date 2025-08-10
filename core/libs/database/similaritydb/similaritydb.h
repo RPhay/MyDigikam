@@ -27,7 +27,6 @@
 
 // Local includes
 
-#include "dbenginesqlquery.h"
 #include "similaritydbbackend.h"
 #include "similaritydbaccess.h"
 #include "digikam_export.h"
