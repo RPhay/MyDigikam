@@ -355,7 +355,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
     // -------------------------------------------------------------------
     // Get image data.
 
-    QScopedArrayPointer<uchar> data;
+    std::unique_ptr<uchar> data;
 
     if (m_loadFlags & LoadImageData)
     {
@@ -385,8 +385,8 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
         }
 
         uint   checkPoint     = 0;
-        uchar* dst            = data.data();
-        unsigned short* dst16 = reinterpret_cast<unsigned short*>(data.data());
+        uchar* dst            = data.get();
+        unsigned short* dst16 = reinterpret_cast<unsigned short*>(data.get());
 
         for (y = 0 ; y < (long)imageHeight() ; ++y)
         {
@@ -604,7 +604,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
         observer->progressInfo(1.0F);
     }
 
-    imageData() = data.take();
+    imageData() = data.release();
     imageSetAttribute(QLatin1String("originalColorModel"), colorModel);
     imageSetAttribute(QLatin1String("originalBitDepth"),   maximum_component_depth);
     imageSetAttribute(QLatin1String("originalSize"),       QSize(imageWidth(), imageHeight()));

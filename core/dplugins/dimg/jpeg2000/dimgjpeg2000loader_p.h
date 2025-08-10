@@ -16,6 +16,10 @@
 
 #include "dimgjpeg2000loader.h"
 
+// C++ includes
+
+#include <memory>
+
 // Qt includes
 
 #include <QFile>
