@@ -761,8 +761,8 @@ void FaceTagsEditor::removeAllRejectedFaceTags()
     group.setMaximumTime(200);
 
     QSqlQuery result = CoreDbAccess().backend()->execQuery(QLatin1String("SELECT imageid from ImageTagProperties where property='") +
-                                                                                ImageTagPropertyName::faceTagExtendedData()                +
-                                                                                QLatin1String("';"));
+                                                                         ImageTagPropertyName::faceTagExtendedData()                +
+                                                                         QLatin1String("';"));
     while (result.next())
     {
         QList<FaceTagsIface> faces = databaseFaces(result.value(0).toLongLong());
