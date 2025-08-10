@@ -407,7 +407,7 @@ void SketchWidget::addPath(QXmlStreamReader& reader)
 
     if (!color.isEmpty())
     {
-        event.penColor.setNamedColor(color.toString());
+        event.penColor.fromString(color.toString());
     }
 
     QPointF begin(0, 0), end(0, 0);
