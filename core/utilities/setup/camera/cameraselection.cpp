@@ -382,7 +382,7 @@ void CameraSelection::slotNetworkEditChanged(const QString& text)
     {
         bool ok;
 
-        for (int a = ipRanges.at(i).count() ; a < 3 ; ++a)
+        for (int a = ipRanges.at(i).size() ; a < 3 ; ++a)
         {
             ipRanges[i].append(QLatin1Char('0'));
         }
