@@ -16,6 +16,10 @@
 
 #include "assigntags.h"
 
+// C++ includes
+
+#include <memory>
+
 // Qt includes
 
 #include <QComboBox>
@@ -155,7 +159,7 @@ bool AssignTags::toolOperations()
     }
 
     bool ret = true;
-    QScopedPointer<DMetadata> meta(new DMetadata);
+    std::unique_ptr<DMetadata> meta(new DMetadata);
 
     if (image().isNull())
     {
