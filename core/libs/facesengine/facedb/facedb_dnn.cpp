@@ -31,7 +31,7 @@ int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
     bindingValues << QByteArray::fromRawData(reinterpret_cast<const char*>(faceEmbedding.ptr<float>()), (sizeof(float) * 128));
 
     QSqlQuery query = d->db->execQuery(QLatin1String("INSERT INTO FaceMatrices (identity, removeHash, embedding) "
-                                                            "VALUES (?,?,?);"),
+                                                     "VALUES (?,?,?);"),
                                               bindingValues);
 
     if (query.lastInsertId().isNull())
@@ -76,7 +76,7 @@ cv::Ptr<cv::ml::TrainData> FaceDb::trainData() const
 {
     cv::Mat feature, label;
     QSqlQuery query = d->db->execQuery(QLatin1String("SELECT identity, embedding "
-                                                            "FROM FaceMatrices;"));
+                                                     "FROM FaceMatrices;"));
 
     while (query.next())
     {
