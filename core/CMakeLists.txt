@@ -45,8 +45,8 @@ include(RulesKDEFramework)
 include(ECMDeprecationSettings)
 
 ecm_set_disabled_deprecation_versions(
-    QT 6.9.1
-#    QT 6.10.0
+# FIXME: some Qt6 API will be remove in Qt7 eg. QSqlQuery copy constructor.
+#    QT 6.9.1
     KF 6.17.0
 )
 
