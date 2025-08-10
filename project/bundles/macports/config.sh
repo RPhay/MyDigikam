@@ -16,7 +16,7 @@ BUILDING_DIR="`pwd`/temp.build"
 ########################################################################
 
 # Build universal bundle (arm64 + Intel architecture). Work only with Silicon computer.
-MP_UNIVERSAL=0
+MP_UNIVERSAL=1
 
 # Target macOS architecture: "x86_64" for Intel 64 bits, or "arm64" for Apple Silicon 64 bits.
 # Used with the macport configuration.
@@ -61,7 +61,7 @@ elif [[ $HOST_ARCH = "arm64" ]] ; then
     # Apple Silicon is supported since macOS BigSur
     OSX_MIN_TARGET="11.3"
 
-    if [[ MP_UNIVERSAL = 1 ]] ; then
+    if [[ $MP_UNIVERSAL = 1 ]] ; then
 
         TARGET_ARCH=universal
 
@@ -74,7 +74,8 @@ else
 
 fi
 
-echo "Target Architecture: $HOST_ARCH"
+echo "Host Architecture  : $HOST_ARCH"
+echo "Target Architecture: $TARGET_ARCH"
 
 # Directory to build and install Macports packages.
 INSTALL_PREFIX="/opt/digikam.org.$TARGET_ARCH"
