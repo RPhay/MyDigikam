@@ -193,10 +193,10 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
 startupitem_type none
 startupitem_install no
 macosx_deployment_target $OSX_MIN_TARGET
-build_arch $ARCH_TARGET
+build_arch $HOST_ARCH
 EOF
 
-    if [[ $ARCH_TARGET = "arm64" && $DK_UNIVERSAL == 1 ]] ; then
+    if [[ $HOST_ARCH = "arm64" && $MP_UNIVERSAL == 1 ]] ; then
 
         # Build with both architectures embeded (x86 and ARM) for Apple Silicon target
 
@@ -267,7 +267,7 @@ fi
 
 echo -e "\n"
 
-if [[ $ARCH_TARGET = "x86_64" ]] ; then
+if [[ $HOST_ARCH = "x86_64" ]] ; then
 
     port install ld64 +ld64_xcode
 
@@ -360,7 +360,7 @@ cmake $ORIG_WD/../3rdparty \
        -DKDE_VERSION=$DK_KDE_VERSION \
        -DENABLE_QTVERSION=$DK_QTVERSION \
        -DDK_APPLE_PACKAGE_MANAGER=$DK_APPLE_PACKAGE_MANAGER \
-       -DARCH_TARGET=$ARCH_TARGET \
+       -DARCH_TARGET=$TARGET_ARCH \
        -Wno-dev
 
 cmake --build . --config RelWithDebInfo --target ext_opencv      -- -j$CPU_CORES
