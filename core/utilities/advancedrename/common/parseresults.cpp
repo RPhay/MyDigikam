@@ -171,7 +171,7 @@ QString ParseResults::replaceTokens(const QString& markedString) const
 {
     QString result;
 
-    for (int i = 0 ; i < markedString.count() ; )
+    for (int i = 0 ; i < markedString.size() ; )
     {
         if (hasKeyAtPosition(i))
         {
