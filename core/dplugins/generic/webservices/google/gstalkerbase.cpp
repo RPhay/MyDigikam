@@ -43,6 +43,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                   linked       = false;
 
     QString                authUrl      = QLatin1String("https://accounts.google.com/o/oauth2/auth");
@@ -66,7 +68,24 @@ GSTalkerBase::GSTalkerBase(QObject* const parent, const QStringList& scope, cons
     m_service->setClientIdentifierSharedKey(WSToolUtils::decodeKey(d->sharedKey));
     m_service->setClientIdentifier(WSToolUtils::decodeKey(d->identity));
     m_service->setContentType(QAbstractOAuth::ContentType::Json);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 9, 0))
+
+    QSet<QByteArray> scopeba;
+
+    for (const QString& scp : m_scope)
+    {
+        scopeba.insert(scp.toLatin1());
+    }
+
+    m_service->setRequestedScopeTokens(scopeba);
+
+#else
+
     m_service->setScope(m_scope.join(QLatin1String(" ")));
+
+#endif
+
     m_service->setAuthorizationUrl(QUrl(d->authUrl));
     m_service->setAccessTokenUrl(QUrl(d->tokenUrl));
 
