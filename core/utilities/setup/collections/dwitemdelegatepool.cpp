@@ -203,7 +203,14 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
             {
                 QMouseEvent* const mouseEvent = static_cast<QMouseEvent*>(event);
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 4, 0))
+
+                QMouseEvent evt(event->type(), viewport->mapFromGlobal(mouseEvent->globalPosition().toPoint()),
+                                mouseEvent->globalPosition().toPoint(), mouseEvent->button(),
+                                mouseEvent->buttons(), mouseEvent->modifiers());
+
+#elif (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
                 QMouseEvent evt(event->type(), viewport->mapFromGlobal(mouseEvent->globalPosition().toPoint()),
                                 mouseEvent->button(), mouseEvent->buttons(), mouseEvent->modifiers());
