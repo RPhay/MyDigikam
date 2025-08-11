@@ -122,7 +122,8 @@ QString RangeModifier::parseOperation(ParseSettings& settings, const QRegularExp
     if (!match.captured(3).isEmpty())
     {
         ok   = true;
-        stop = (match.captured(4).isEmpty()) ? -1 : match.captured(5).simplified().toInt(&ok);
+        stop = (match.captured(4).isEmpty()) ? -1
+                                             : match.captured(5).simplified().toInt(&ok);
     }
     else
     {
@@ -162,7 +163,7 @@ QString RangeModifier::parseOperation(ParseSettings& settings, const QRegularExp
 
     if (stop == -1)
     {
-        stop = settings.str2Modify.count() - 1;
+        stop = settings.str2Modify.size() - 1;
     }
 
     QString result;
