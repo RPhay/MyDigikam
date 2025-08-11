@@ -16,14 +16,18 @@
  *
  * ============================================================ */
 
+// C++ includes
+
+#include <memory>
+
+// Qt includes
+
 #include <qglobal.h>
 
 #ifndef QT_NO_TEXTODFWRITER
 
 #   include "MarbleZipReader.h"
 #   include "MarbleZipWriter.h"
-
-// Qt includes
 
 #   include <QDateTime>
 #   include <qplatformdefs.h>
@@ -933,7 +937,7 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
 */
 MarbleZipReader::MarbleZipReader(const QString& archive, QIODevice::OpenMode mode)
 {
-    QScopedPointer<QFile> f(new QFile(archive));
+    std::unique_ptr<QFile> f(new QFile(archive));
     f->open(mode);
     MarbleZipReader::Status status;
 
@@ -965,8 +969,8 @@ MarbleZipReader::MarbleZipReader(const QString& archive, QIODevice::OpenMode mod
         }
     }
 
-    d = new MarbleZipReaderPrivate(f.data(), /*ownDevice=*/true);
-    f.take();
+    d = new MarbleZipReaderPrivate(f.get(), /*ownDevice=*/true);
+    f.release();
     d->status = status;
 }
 
