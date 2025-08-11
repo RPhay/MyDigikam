@@ -78,6 +78,9 @@ FCExportWindow::FCExportWindow(DInfoInterface* const iface, QWidget* const /*par
     startButton()->setText(i18nc("@action:button", "Start Export"));
     startButton()->setToolTip(i18nc("@info:tooltip, button", "Start export to the specified target"));
 
+    connect(this, SIGNAL(cancelClicked()),
+            this, SLOT(slotCancelCopy()));
+
     connect(startButton(), SIGNAL(clicked()),
             this, SLOT(slotCopy()));
 
@@ -99,12 +102,6 @@ FCExportWindow::FCExportWindow(DInfoInterface* const iface, QWidget* const /*par
 FCExportWindow::~FCExportWindow()
 {
     delete d;
-}
-
-void FCExportWindow::slotFinished()
-{
-    saveSettings();
-    d->exportWidget->imagesList()->listView()->clear();
 }
 
 void FCExportWindow::closeEvent(QCloseEvent* e)
@@ -165,6 +162,37 @@ void FCExportWindow::saveSettings()
     group.writeEntry(d->CHANGE_IMAGE_PROPERTIES,       settings.changeImageProperties);
 }
 
+void FCExportWindow::slotCopy()
+{
+    saveSettings();
+
+    // start copying and react on signals
+
+    startButton()->setEnabled(false);
+    d->exportWidget->setEnabled(false);
+    setRejectButtonMode(QDialogButtonBox::Cancel);
+
+    if (d->thread)
+    {
+        d->thread->cancel();
+    }
+    else
+    {
+        d->thread = new FCThread(this);
+
+        connect(d->thread, SIGNAL(finished()),
+                this, SLOT(slotCopyingFinished()));
+
+        connect(d->thread, SIGNAL(signalUrlProcessed(QUrl,QUrl)),
+                this, SLOT(slotCopyingDone(QUrl,QUrl)));
+    }
+
+    d->thread->createCopyJobs(d->exportWidget->imagesList()->imageUrls(),
+                              d->exportWidget->getSettings());
+
+    d->thread->start();
+}
+
 void FCExportWindow::slotImageListChanged()
 {
     updateUploadButton();
@@ -191,12 +219,16 @@ void FCExportWindow::slotCopyingDone(const QUrl& from, const QUrl& to)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Copied to:" << to.toLocalFile();
 
+    d->exportWidget->imagesList()->blockSignals(true);
     d->exportWidget->imagesList()->removeItemByUrl(from);
+    d->exportWidget->imagesList()->blockSignals(false);
 }
 
 void FCExportWindow::slotCopyingFinished()
 {
-    setEnabled(true);
+    updateUploadButton();
+    d->exportWidget->setEnabled(true);
+    setRejectButtonMode(QDialogButtonBox::Close);
 
     if (!d->exportWidget->imagesList()->imageUrls().isEmpty())
     {
@@ -207,33 +239,19 @@ void FCExportWindow::slotCopyingFinished()
     }
 }
 
-void FCExportWindow::slotCopy()
+void FCExportWindow::slotCancelCopy()
 {
-    saveSettings();
-
-    // start copying and react on signals
-
-    setEnabled(false);
-
     if (d->thread)
     {
         d->thread->cancel();
     }
-    else
-    {
-        d->thread = new FCThread(this);
+}
 
-        connect(d->thread, SIGNAL(finished()),
-                this, SLOT(slotCopyingFinished()));
-
-        connect(d->thread, SIGNAL(signalUrlProcessed(QUrl,QUrl)),
-                this, SLOT(slotCopyingDone(QUrl,QUrl)));
-    }
-
-    d->thread->createCopyJobs(d->exportWidget->imagesList()->imageUrls(),
-                              d->exportWidget->getSettings());
-
-    d->thread->start();
+void FCExportWindow::slotFinished()
+{
+    saveSettings();
+    updateUploadButton();
+    d->exportWidget->imagesList()->listView()->clear();
 }
 
 } // namespace DigikamGenericFileCopyPlugin

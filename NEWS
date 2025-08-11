@@ -71,7 +71,7 @@ BUGFIXES:
 052 ==> 507953 - Building CXX object core/.../digikam_version.cpp.o failed with Qt5.
 053 ==> 508042 - Setting some ColorLabel does not work.
 054 ==> 508047 - Reverse geocoding set number street twice into XMP-lr:HierarchicalSubject.
-055 ==> 
+055 ==> 508076 - No abort button while exporting to filesystem.
 056 ==> 
 057 ==> 
 058 ==> 

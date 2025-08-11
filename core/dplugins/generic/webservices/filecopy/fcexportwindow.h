@@ -63,14 +63,14 @@ public:
 private Q_SLOTS:
 
     /**
-     * Processes changes on the image list.
-     */
-    void slotImageListChanged();
-
-    /**
      * Starts copy the selected images.
      */
     void slotCopy();
+
+    /**
+     * Processes changes on the image list.
+     */
+    void slotImageListChanged();
 
     /**
      * Processes changes in the target url.
@@ -87,6 +87,11 @@ private Q_SLOTS:
      * something didn't work.
      */
     void slotCopyingFinished();
+
+    /**
+     * Re-enables the dialog after cancel clicked.
+     */
+    void slotCancelCopy();
 
     void slotFinished();
 
