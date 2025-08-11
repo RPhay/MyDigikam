@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-09 01:57+0000\n"
+"POT-Creation-Date: 2025-08-11 02:02+0000\n"
 "PO-Revision-Date: 2025-06-21 12:28+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -3070,7 +3070,7 @@ msgstr "Álbum sen etiquetas"
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -4083,7 +4083,7 @@ msgstr "Propiedades do ficheiro"
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:46
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:674
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:678
 #, kde-format
 msgid "Filename"
 msgstr "Nome do ficheiro"
@@ -4148,7 +4148,7 @@ msgstr "Coordenadas"
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:678
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
 #, kde-format
 msgid "Altitude"
 msgstr "Altitude"
@@ -4405,7 +4405,7 @@ msgstr "Unidade"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:260
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:673
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Thumbnail"
 msgstr "Miniatura"
@@ -11779,31 +11779,31 @@ msgid "Edit Geolocation"
 msgstr "Editar a localización xeográfica"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:676
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
 #, kde-format
 msgid "Latitude"
 msgstr "Latitude"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
 #, kde-format
 msgid "Longitude"
 msgstr "Lonxitude"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:687
 #, kde-format
 msgid "Speed"
 msgstr "Velocidade"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:121
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:686
 #, kde-format
 msgid "# satellites"
 msgstr "número de satélites"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:127
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
 #, kde-format
 msgid "Fix type"
 msgstr "Tipo de fix"
@@ -11819,7 +11819,7 @@ msgid "3-d"
 msgstr "3-d"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:133
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -16184,7 +16184,7 @@ msgstr "Actualizouse a marca temporal"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:688
 #, kde-format
 msgid "Status"
 msgstr "Estado"
@@ -52730,7 +52730,7 @@ msgid "Tilt"
 msgstr "Inclinación"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:63
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:679
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
 #, kde-format
 msgid "Accuracy"
 msgstr "Precisión"
@@ -53989,7 +53989,7 @@ msgstr ""
 "Arrastre para aquí un bosquexo do que quere atopar e digiKam amosará na "
 "vista de miniaturas as mellores aproximacións."
 
-#: core/utilities/fuzzysearch/sketchwidget.cpp:621
+#: core/utilities/fuzzysearch/sketchwidget.cpp:631
 #, kde-format
 msgid ""
 "Draw a sketch here\n"
@@ -58115,64 +58115,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "#puntos"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:480
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:484
 #, kde-format
 msgid "Not available"
 msgstr "Non dispoñíbel"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:519
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:523
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:524
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:528
 #, kde-format
 msgid "Fix: %1d"
 msgstr "Fix: %1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:529
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:533
 #, kde-format
 msgid "#Sat: %1"
 msgstr "nºSat: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:582
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:586
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:610
 #, kde-format
 msgid "Modified"
 msgstr "Modificado"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:675
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:679
 #, kde-format
 msgid "Date and time"
 msgstr "Data e hora"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:928
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:932
 #, kde-format
 msgid "Failed to open file."
 msgstr "Non foi posíbel abrir o ficheiro."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1000
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1004
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "Non foi posíbel engadir a información de GPS á imaxe."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1012
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1016
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "Non foi posíbel retirar a información de GPS da imaxe"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1047
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1055
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1078
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1051
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1059
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1082
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Non foi posíbel gardar as etiquetas no ficheiro."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1090
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1094
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Non é posíbel gardar os cambios no ficheiro"

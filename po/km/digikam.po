@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-09 01:57+0000\n"
+"POT-Creation-Date: 2025-08-11 02:02+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -3258,7 +3258,7 @@ msgstr "គ្មាន​អាល់ប៊ុម​ឡើង"
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -4182,7 +4182,7 @@ msgstr "លក្ខណ​សម្បត្តិ​ឯកសារ"
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:46
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:674
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:678
 #, kde-format
 msgid "Filename"
 msgstr "ឈ្មោះ​ឯកសារ​"
@@ -4247,7 +4247,7 @@ msgstr "Polar Coordinates"
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:678
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
 #, kde-format
 msgid "Altitude"
 msgstr "រយៈ​កម្ពស់​​​​"
@@ -4520,7 +4520,7 @@ msgstr "ពេលវេលា​រហូត​ដល់ ៖"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:260
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:673
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Thumbnail"
 msgstr "រូបភាព​តូច"
@@ -11584,31 +11584,31 @@ msgid "Edit Geolocation"
 msgstr "ទីតាំង​ភូមិសាស្ត្រ"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:676
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
 #, kde-format
 msgid "Latitude"
 msgstr "រយៈទទឹង​​"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
 #, kde-format
 msgid "Longitude"
 msgstr "រយៈបណ្ដោយ​​"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:687
 #, kde-format
 msgid "Speed"
 msgstr "ល្បឿន​"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:121
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:686
 #, kde-format
 msgid "# satellites"
 msgstr "# satellites"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:127
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
 #, kde-format
 msgid "Fix type"
 msgstr "ប្រភេទ​ថេរ"
@@ -11624,7 +11624,7 @@ msgid "3-d"
 msgstr "ត្រីមាត្រ"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:133
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -16229,7 +16229,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:688
 #, kde-format
 msgid "Status"
 msgstr "ស្ថានភាព"
@@ -53132,7 +53132,7 @@ msgid "Tilt"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:63
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:679
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
 #, kde-format
 msgid "Accuracy"
 msgstr "សុក្រឹតភាព​"
@@ -54286,7 +54286,7 @@ msgid ""
 "will displays the best matches in thumbnail view."
 msgstr ""
 
-#: core/utilities/fuzzysearch/sketchwidget.cpp:621
+#: core/utilities/fuzzysearch/sketchwidget.cpp:631
 #, kde-format
 msgid ""
 "Draw a sketch here\n"
@@ -58595,64 +58595,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "#points"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:480
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:484
 #, kde-format
 msgid "Not available"
 msgstr "ដែល​មិន​អាច​រក​បាន​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:519
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:523
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:524
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:528
 #, kde-format
 msgid "Fix: %1d"
 msgstr "ថេរ ៖ %1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:529
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:533
 #, kde-format
 msgid "#Sat: %1"
 msgstr "#Sat: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:582
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:586
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:610
 #, kde-format
 msgid "Modified"
 msgstr "បាន​កែប្រែ​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:675
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:679
 #, kde-format
 msgid "Date and time"
 msgstr "កាលបរិច្ឆេទ និង​ពេលវេលា​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:928
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:932
 #, kde-format
 msgid "Failed to open file."
 msgstr "បាន​បរាជ័យ​ដើម្បី​បើក​ឯកសារ ។"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1000
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1004
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "បាន​បរាជ័យ​ដើម្បី​បន្ថែម​ព័ត៌មាន​អំពី​ GPS ទៅ​កាន់​រូបភាព ។"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1012
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1016
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "បាន​បរាជ័យ​ដើម្បី​​យក​ព័ត៌មាន​អំពី​ GPS ចេញ​ពី​រូបភាព​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1047
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1055
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1078
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1051
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1059
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1082
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "បាន​បរាជ័យ​ដើម្បី​រក្សាទុក​ស្លាក​ទៅកាន់​ឯកសារ ។"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1090
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1094
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "មិន​អាច​រក្សាទុក​ការ​ផ្លាស់ប្ដូរ​ទៅ​កាន់​​ឯកសារ​បាន​ឡើយ"

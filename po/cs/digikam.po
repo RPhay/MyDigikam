@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-09 01:57+0000\n"
+"POT-Creation-Date: 2025-08-11 02:02+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2993,7 +2993,7 @@ msgstr "Album bez značek"
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3906,7 +3906,7 @@ msgstr "Vlastnosti souboru"
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:46
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:674
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:678
 #, kde-format
 msgid "Filename"
 msgstr "Název souboru"
@@ -3971,7 +3971,7 @@ msgstr "Souřadnice"
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:678
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
 #, kde-format
 msgid "Altitude"
 msgstr "Výška"
@@ -4228,7 +4228,7 @@ msgstr "Jednotka"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:260
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:673
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Thumbnail"
 msgstr "Náhled"
@@ -11131,31 +11131,31 @@ msgid "Edit Geolocation"
 msgstr "Upravit geolokaci"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:676
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
 #, kde-format
 msgid "Latitude"
 msgstr "Zem. šířka"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
 #, kde-format
 msgid "Longitude"
 msgstr "Zem. délka"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:687
 #, kde-format
 msgid "Speed"
 msgstr "Rychlost"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:121
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:686
 #, kde-format
 msgid "# satellites"
 msgstr "# družic"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:127
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
 #, kde-format
 msgid "Fix type"
 msgstr "Typ fixace"
@@ -11171,7 +11171,7 @@ msgid "3-d"
 msgstr "3-d"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:133
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -15439,7 +15439,7 @@ msgstr "Časové razítko bylo aktualizováno"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:688
 #, kde-format
 msgid "Status"
 msgstr "Stav"
@@ -50607,7 +50607,7 @@ msgid "Tilt"
 msgstr "Náklon"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:63
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:679
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
 #, kde-format
 msgid "Accuracy"
 msgstr "Přesnost"
@@ -51829,7 +51829,7 @@ msgstr ""
 "Nakreslete sem hrubý náčrt toho, co se na obrázku má nacházet a digiKam "
 "zobrazí nejpodobnější obrázky ve formě náhledů."
 
-#: core/utilities/fuzzysearch/sketchwidget.cpp:621
+#: core/utilities/fuzzysearch/sketchwidget.cpp:631
 #, kde-format
 msgid ""
 "Draw a sketch here\n"
@@ -55848,64 +55848,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "#body"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:480
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:484
 #, kde-format
 msgid "Not available"
 msgstr "Není k dispozici"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:519
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:523
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:524
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:528
 #, kde-format
 msgid "Fix: %1d"
 msgstr "Fix: %1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:529
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:533
 #, kde-format
 msgid "#Sat: %1"
 msgstr "#Sat: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:582
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:586
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:610
 #, kde-format
 msgid "Modified"
 msgstr "Změněno"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:675
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:679
 #, kde-format
 msgid "Date and time"
 msgstr "Datum a čas"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:928
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:932
 #, kde-format
 msgid "Failed to open file."
 msgstr "Nelze otevřít soubor."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1000
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1004
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "Ukládání informací GPS do obrázku selhalo."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1012
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1016
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "Odstranění informací GPS z obrázku selhalo"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1047
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1055
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1078
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1051
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1059
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1082
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Ukládání značek do souboru selhalo."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1090
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1094
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Nelze uložit změny do souboru"

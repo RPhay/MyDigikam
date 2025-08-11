@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-09 01:57+0000\n"
+"POT-Creation-Date: 2025-08-11 02:02+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2617,8 +2617,9 @@ msgstr "digiKam"
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
-"Acresoffilm, CoelacanthusHex, Feng Chao, Funda Wang, Guo Yunhe, millionart, "
-"Ni Hui, sanfanling, Tyson Tan (谭代山/钛山), Weng Xuetian, YFdyh000, 李子"
+"Acresoffilm, CoelacanthusHex, Eric Zhao, Feng Chao, Funda Wang, Guo Yunhe, "
+"millionart, Ni Hui, sanfanling, Tyson Tan (谭代山/钛山), Weng Xuetian, "
+"YFdyh000, 李子"
 
 #: core/app/main/main.cpp:241 core/showfoto/main/main.cpp:216
 #, kde-format
@@ -2948,7 +2949,7 @@ msgstr "无标签相册"
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3876,7 +3877,7 @@ msgstr "文件属性"
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:46
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:674
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:678
 #, kde-format
 msgid "Filename"
 msgstr "文件名"
@@ -3941,7 +3942,7 @@ msgstr "坐标"
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:678
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
 #, kde-format
 msgid "Altitude"
 msgstr "海拔"
@@ -4198,7 +4199,7 @@ msgstr "单位"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:260
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:673
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Thumbnail"
 msgstr "缩略图"
@@ -11090,31 +11091,31 @@ msgid "Edit Geolocation"
 msgstr "编辑地理位置"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:676
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
 #, kde-format
 msgid "Latitude"
 msgstr "纬度"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
 #, kde-format
 msgid "Longitude"
 msgstr "经度"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:687
 #, kde-format
 msgid "Speed"
 msgstr "速度"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:121
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:686
 #, kde-format
 msgid "# satellites"
 msgstr "卫星数量"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:127
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
 #, kde-format
 msgid "Fix type"
 msgstr "定位模式"
@@ -11130,7 +11131,7 @@ msgid "3-d"
 msgstr "三维"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:133
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
 #, kde-format
 msgid "DOP"
 msgstr "精度因子"
@@ -15322,7 +15323,7 @@ msgstr "已更新时间戳"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:688
 #, kde-format
 msgid "Status"
 msgstr "状态"
@@ -28935,17 +28936,13 @@ msgid "Build Environment"
 msgstr "构建环境"
 
 #: core/libs/dialogs/libsinfodlg_buildtools.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: git revision"
 msgid "Unknown"
 msgstr "未知"
 
 #: core/libs/dialogs/libsinfodlg_buildtools.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: git branch"
 msgid "Unknown"
 msgstr "未知"
@@ -28969,9 +28966,7 @@ msgid "Libraries"
 msgstr "程序库"
 
 #: core/libs/dialogs/libsinfodlg_libraries.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: libx265 version"
 msgid "Unknown"
 msgstr "未知"
@@ -38808,11 +38803,9 @@ msgid "Tags Manager"
 msgstr "标签管理器"
 
 #: core/libs/tags/manager/tagsmanager_gui.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@info: search text bar"
-#| msgid "Search in Favorites..."
+#, kde-format
 msgid "Search for tags..."
-msgstr "搜索收藏图集..."
+msgstr ""
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:26
 #, kde-format
@@ -38891,16 +38884,13 @@ msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "您确定要从所有图像中移除所选标签吗？"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add New Tag"
+#, kde-format
 msgctxt "@action: button"
 msgid "Add Tag"
-msgstr "添加新标签"
+msgstr "添加标签"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:93
-#, fuzzy, kde-format
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action: button"
 msgid "Remove Tag"
 msgstr "移除标签"
@@ -50211,7 +50201,7 @@ msgid "Tilt"
 msgstr "俯仰"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:63
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:679
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
 #, kde-format
 msgid "Accuracy"
 msgstr "精度"
@@ -51391,7 +51381,7 @@ msgid ""
 msgstr ""
 "请在此粗略绘制一张参考图，digiKam 将在缩略图视图显示与它最为匹配的项目。"
 
-#: core/utilities/fuzzysearch/sketchwidget.cpp:621
+#: core/utilities/fuzzysearch/sketchwidget.cpp:631
 #, kde-format
 msgid ""
 "Draw a sketch here\n"
@@ -55439,64 +55429,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "轨迹点数量"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:480
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:484
 #, kde-format
 msgid "Not available"
 msgstr "不可用"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:519
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:523
 #, kde-format
 msgid "DOP: %1"
 msgstr "精度因子：%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:524
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:528
 #, kde-format
 msgid "Fix: %1d"
 msgstr "定位模式：%1 维"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:529
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:533
 #, kde-format
 msgid "#Sat: %1"
 msgstr "卫星数量：%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:582
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:586
 #, kde-format
 msgid "%1d"
 msgstr "%1 维"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:610
 #, kde-format
 msgid "Modified"
 msgstr "修改时间"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:675
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:679
 #, kde-format
 msgid "Date and time"
 msgstr "日期和时间"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:928
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:932
 #, kde-format
 msgid "Failed to open file."
 msgstr "无法打开文件。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1000
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1004
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "无法添加 GPS 信息到图像。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1012
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1016
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "无法移除图像 GPS 信息。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1047
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1055
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1078
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1051
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1059
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1082
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "无法保存标签到文件。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1090
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1094
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "无法保存更改到文件。"
@@ -57418,47 +57408,19 @@ msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "无法切换文件 <b>%1</b> 的锁定状态。您想要继续吗？"
 
 #: core/utilities/import/backend/gpcamera.cpp:1616
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br><br>"
 msgstr ""
-"标题：“%1”\n"
-"型号：“%2”\n"
-"端口：“%3”\n"
-"路径：“%4”\n"
-"\n"
 
 #: core/utilities/import/backend/gpcamera.cpp:1623
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete Directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "Directories: \"%6\"<br><br>"
 msgstr ""
-"缩略图：“%1”\n"
-"捕获图像：“%2”\n"
-"删除项目：“%3”\n"
-"上传项目：“%4”\n"
-"创建目录：“%5”\n"
-"删除目录：“%6”\n"
-"\n"
 
 #: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
@@ -57483,66 +57445,29 @@ msgid "no"
 msgstr "否"
 
 #: core/utilities/import/backend/umscamera.cpp:566
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
-#| "disk card readers.\n"
-#| "\n"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
 "disk card readers.<br><br>"
 msgstr ""
-"“已挂载相机”的 USB/IEEE1394 大容量存储设备类相机和闪存卡读卡器驱动程序。\n"
-"\n"
 
 #: core/utilities/import/backend/umscamera.cpp:573
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "UUID: \"%5\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid ""
 "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br>UUID: "
 "\"%5\"<br><br>"
 msgstr ""
-"标题：“%1”\n"
-"型号：“%2”\n"
-"端口：“%3”\n"
-"路径：“%4”\n"
-"UUID：“%5”\n"
-"\n"
 
 #: core/utilities/import/backend/umscamera.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "directories: \"%6\"<br><br>"
 msgstr ""
-"缩略图：“%1”\n"
-"捕获图像：“%2”\n"
-"删除项目：“%3”\n"
-"上传项目：“%4”\n"
-"创建目录：“%5”\n"
-"删除目录：“%6”\n"
-"\n"
 
 #: core/utilities/import/backend/umscamera.cpp:587
 #: core/utilities/import/backend/umscamera.cpp:588
@@ -57577,18 +57502,7 @@ msgstr ""
 "相机章节。"
 
 #: core/utilities/import/backend/umscamera.cpp:606
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The \"Mounted Camera\" driver is a simple interface to a camera disk "
-#| "mounted locally on your system.\n"
-#| "\n"
-#| "It does not use libgphoto2 drivers.\n"
-#| "\n"
-#| "To report any problems with this driver, please contact the digiKam team "
-#| "at:\n"
-#| "\n"
-#| "https://www.digikam.org/?q=contact"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The \"Mounted Camera\" driver is a simple interface to a camera disk mounted "
@@ -57596,9 +57510,6 @@ msgid ""
 "report any problems with this driver, please contact the digiKam team at:"
 "<br><br>https://www.digikam.org/support/contact/"
 msgstr ""
-"\"已挂载相机\"驱动程序是一套简易程序接口，相机存储设备通过它挂载到本地系统。"
-"它并不使用 libgphoto2 驱动程序。要报告此驱动程序的问题，请联系 digiKam 团队："
-"https://www.digikam.org/?q=contact"
 
 #: core/utilities/import/dialogs/camerafolderdialog.cpp:62
 #, kde-format
@@ -62662,20 +62573,18 @@ msgstr "打开用于存储数据文件的本地目录。"
 #: core/utilities/setup/downloader/filesdownloader.cpp:163
 #, kde-format
 msgid "Location of the face management model files:"
-msgstr ""
+msgstr "人脸管理模型文件位置："
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:171
-#, fuzzy, kde-format
-#| msgid "Use Face Management feature"
+#, kde-format
 msgctxt "@title:window"
 msgid "Face Management Model Target"
-msgstr "使用人脸管理功能"
+msgstr "人脸管理模型目标"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:172
-#, fuzzy, kde-format
-#| msgid "Sets the target address to copy the items to."
+#, kde-format
 msgid "Sets the target address to download the face management model files to."
-msgstr "设置要复制项目的目标地址。"
+msgstr "设置人脸管理模型文件的下载目标地址。"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, kde-format
@@ -62767,15 +62676,7 @@ msgstr ""
 "功能。</p><p><b>注意：</b> 红眼消除工具需要人脸管理模型文件。</p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:603
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>Some required files are missing. Click “Download” to start installing "
-#| "the necessary model files. If you close this dialog you will be prompted "
-#| "again the next time you launch digiKam. The selected features will not "
-#| "function without these files.</p><p>The files will be downloaded to \"<i>"
-#| "%1</i>\".</p><p><b>You must restart digiKam after successfully "
-#| "downloading the files.</b></p>"
+#, kde-format
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
 "necessary model files. If you close this dialog you will be prompted again "
@@ -62784,9 +62685,8 @@ msgid ""
 "downloading the files.</b></p>"
 msgstr ""
 "<p>缺少某些必需文件。点击“下载”开始安装必要的模型文件。如果您关闭此对话框，下"
-"次启动 digiKam 时程序将再次提示您。没有这些文件，所选功能将无法使用。</p><p>"
-"文件将下载到“<i>%1</i>”。</p><p><b>文件下载完成后，您必须重新启动 digiKam 以"
-"生效。</b></p>"
+"次启动 digiKam 时程序将再次提示您。没有这些文件，所选功能将无法使用。</"
+"p><p><b>文件下载完成后，您必须重新启动 digiKam 以生效。</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:610
 #, kde-format
@@ -65936,22 +65836,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgid "Build Date: "
-#~ msgstr "构建日期："
-
-#~ msgid "Build Target: "
-#~ msgstr "构建目标："
-
-#~ msgid "Build Architecture: "
-#~ msgstr "构建架构："
-
-#~ msgid "Git Revision: "
-#~ msgstr "Git 版本："
-
-#~ msgid "Git Branch: "
-#~ msgstr "Git 分支："
-
-#~ msgctxt "@info: version"
-#~ msgid "Unknown"
-#~ msgstr "未知"
