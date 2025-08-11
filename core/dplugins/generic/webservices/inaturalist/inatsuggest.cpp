@@ -368,7 +368,7 @@ void SuggestTaxonCompletion::slotAutoSuggest()
 {
     QString str = getText();
 
-    if (str.count() > 0)
+    if (str.size() > 0)
     {
         d->talker->taxonAutoCompletions(str);
     }
