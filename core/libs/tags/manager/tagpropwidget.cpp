@@ -32,6 +32,7 @@
 
 #include <klocalizedstring.h>
 #include <kkeysequencewidget.h>
+#include <kxmlgui_version.h>
 
 #ifdef HAVE_KICONTHEMES
 #   include <kicondialog.h>
