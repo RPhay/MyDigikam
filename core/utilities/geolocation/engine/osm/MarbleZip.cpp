@@ -1312,7 +1312,7 @@ void MarbleZipReader::close()
 */
 MarbleZipWriter::MarbleZipWriter(const QString& fileName, QIODevice::OpenMode mode)
 {
-    QScopedPointer<QFile> f(new QFile(fileName));
+    std::unique_ptr<QFile> f(new QFile(fileName));
     f->open(mode);
     MarbleZipWriter::Status status;
 
@@ -1344,8 +1344,8 @@ MarbleZipWriter::MarbleZipWriter(const QString& fileName, QIODevice::OpenMode mo
         }
     }
 
-    d = new MarbleZipWriterPrivate(f.data(), /*ownDevice=*/true);
-    f.take();
+    d = new MarbleZipWriterPrivate(f.get(), /*ownDevice=*/true);
+    f.release();
     d->status = status;
 }
 
