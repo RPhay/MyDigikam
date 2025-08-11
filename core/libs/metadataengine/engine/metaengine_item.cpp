@@ -1346,50 +1346,108 @@ bool MetaEngine::getItemPreview(QImage& preview) const
                 if (QStringLiteral("dkdtLuaThumbnail") == imgDataSource)
                 {
                     // The preview is a dkdt Lua thumbnail, we need to rotate opposite direction based on the orientation tag in the metadata.
-                    
+
                     int orientation = getItemOrientation();
+
                     switch (orientation)
                     {
                         case MetaEngine::ORIENTATION_UNSPECIFIED:
+                        {
                             break;
+                        }
 
                         case MetaEngine::ORIENTATION_NORMAL:
+                        {
                             break;
+                        }
 
                         case MetaEngine::ORIENTATION_HFLIP:
+                        {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 13, 0))
+
+                            preview = preview.flipped(Qt::Horizontal);
+
+#else
+
                             preview = preview.mirrored(true, false);
+
+#endif
                             break;
+                        }
 
                         case MetaEngine::ORIENTATION_VFLIP:
+                        {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 13, 0))
+
+                            preview = preview.flipped(Qt::Vertical);
+
+#else
+
                             preview = preview.mirrored(false, true);
+
+#endif
+
                             break;
+                        }
 
                         case MetaEngine::ORIENTATION_ROT_180:
+                        {
                             preview = preview.transformed(QTransform().rotate(180));
                             break;
+                        }
 
                         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
+                        {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 13, 0))
+
+                            preview = preview.transformed(QTransform().rotate(270)).flipped(Qt::Horizontal);
+
+#else
+
                             preview = preview.transformed(QTransform().rotate(270)).mirrored(true, false);
+
+#endif
                             break;
+                        }
 
                         case MetaEngine::ORIENTATION_ROT_90:
+                        {
                             preview = preview.transformed(QTransform().rotate(270));
                             break;
+                        }
 
                         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+                        {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 13, 0))
+
+                            preview = preview.transformed(QTransform().rotate(270)).flipped(Qt::Vertical);
+
+#else
+
                             preview = preview.transformed(QTransform().rotate(270)).mirrored(false, true);
+
+#endif
+
                             break;
+                        }
 
                         case MetaEngine::ORIENTATION_ROT_270:
+                        {
                             preview = preview.transformed(QTransform().rotate(90));
                             break;
+                        }
 
                         default:
+                        {
                             break;
-
+                        }
                     }
                 }
-                
+
                 return true;
             }
         }
