@@ -56,6 +56,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString         configGroupName       = QLatin1String("freerotation Tool");
 
     QLabel*               newHeightLabel        = nullptr;
@@ -135,6 +137,7 @@ FreeRotationTool::FreeRotationTool(QObject* const parent)
     // --------------------------------------------------------
 
     // try to determine the maximum text width, to set the button minwidth
+
     QPoint p;
     setPointInvalid(p);
     QString invalidText = generateButtonLabel(p);
@@ -142,15 +145,16 @@ FreeRotationTool::FreeRotationTool(QObject* const parent)
     p.setY(2);
     QString validText   = generateButtonLabel(p);
 
-    QFont fnt = d->autoAdjustPoint1Btn->font();
+    QFont fnt           = d->autoAdjustPoint1Btn->font();
     QFontMetrics fm(fnt);
 
-    const int offset = (pm1.width() * 2) + 10;
-    int minWidth1    = fm.horizontalAdvance(invalidText) + offset;
-    int minWidth2    = fm.horizontalAdvance(validText) + offset;
-    int minWidth     = qMax<int>(minWidth1, minWidth2);
+    const int offset    = (pm1.width() * 2) + 10;
+    int minWidth1       = fm.horizontalAdvance(invalidText) + offset;
+    int minWidth2       = fm.horizontalAdvance(validText) + offset;
+    int minWidth        = qMax<int>(minWidth1, minWidth2);
 
     // set new minwidth
+
     d->autoAdjustPoint1Btn->setMinimumWidth(minWidth);
     d->autoAdjustPoint2Btn->setMinimumWidth(minWidth);
 
@@ -174,7 +178,7 @@ FreeRotationTool::FreeRotationTool(QObject* const parent)
     autoDescr->setAlignment(Qt::AlignJustify);
     autoDescr->setWordWrap(true);
 
-    const int cmargin = layoutMargin();
+    const int cmargin                   = layoutMargin();
 
     containerLayout2->addWidget(autoDescr,              0, 0, 1, -1);
     containerLayout2->addWidget(d->autoAdjustPoint1Btn, 1, 0, 1,  1);
@@ -335,9 +339,9 @@ QString FreeRotationTool::generateButtonLabel(const QPoint& p) const
 {
     QString clickToSet     = i18n("Click to set");
     QString isOk           = i18nc("point has been set and is valid", "Okay");
-    bool clickToSetIsWider = clickToSet.count() >= isOk.count();
+    bool clickToSetIsWider = clickToSet.size() >= isOk.size();
     QString widestString   = clickToSetIsWider ? clickToSet : isOk;
-    int maxLength          = widestString.count();
+    int maxLength          = widestString.size();
     QString label          = clickToSetIsWider ? clickToSet : centerString(clickToSet, maxLength);
 
     if (pointIsValid(p))
@@ -351,12 +355,12 @@ QString FreeRotationTool::generateButtonLabel(const QPoint& p) const
 QString FreeRotationTool::centerString(const QString& str, int maxLength) const
 {
     QString tmp = str;
-    int max     = (maxLength == -1) ? tmp.count() : maxLength;
+    int max     = (maxLength == -1) ? tmp.size() : maxLength;
 
     // fill with additional whitespace, to match the original label length and center
     // the text, without moving the button icon
 
-    int diff = qAbs<int>(max - str.count());
+    int diff = qAbs<int>(max - str.size());
 
     if (diff > 0)
     {
@@ -366,15 +370,15 @@ QString FreeRotationTool::centerString(const QString& str, int maxLength) const
         tmp.prepend(delimiter.repeated(times));
         tmp.append(delimiter.repeated(times));
 
-        diff = qAbs<int>(maxLength - tmp.count());
+        diff = qAbs<int>(maxLength - tmp.size());
 
         if (diff != 0)
         {
-            if      (tmp.count() > maxLength)   // too long?
+            if      (tmp.size() > maxLength)   // too long?
             {
                 tmp.chop(diff);
             }
-            else if (tmp.count() < maxLength)   // too short?
+            else if (tmp.size() < maxLength)   // too short?
             {
                 tmp.append(delimiter.repeated(diff));
             }
@@ -478,7 +482,7 @@ void FreeRotationTool::slotAutoAdjustClicked()
 
     // try to set the angle widgets with the extracted values
 
-    if (anglesList.count() == 2)
+    if (anglesList.size() == 2)
     {
         bool ok       = false;
         int mainAngle = anglesList.at(0).toInt(&ok);
