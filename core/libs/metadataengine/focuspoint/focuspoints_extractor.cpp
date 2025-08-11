@@ -176,6 +176,13 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::findAFPoints() const
             return getAFPoints_canon();
         }
 
+        if (d->make == QLatin1String("FUJIFILM"))
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Fujifilm makernotes";
+
+            return getAFPoints_fujifilm();
+        }
+
         if (d->make == QLatin1String("NIKON"))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Nikon makernotes";

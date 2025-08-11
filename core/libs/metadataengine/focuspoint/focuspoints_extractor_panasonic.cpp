@@ -22,7 +22,7 @@
 namespace Digikam
 {
 
-const float RATIO_POINT_IMAGE = 1 / 120; // this is a guess
+const float RATIO_POINT_IMAGE = 1.0 / 120.0; // this is a guess
 
 // Internal function to create af point from meta data
 namespace PanasonicInternal
@@ -64,7 +64,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_panasonic()
 
     QStringList af_position = findValue(TagNameRoot, QLatin1String("AFPointPosition")).toString().split(QLatin1String(" "));
 
-    if (af_position.isEmpty() || (af_position.count() == 1))
+    if (af_position.isEmpty() || (af_position.size() == 1))
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid positions from Panasonic makernotes.";
 
