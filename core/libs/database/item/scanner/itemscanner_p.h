@@ -132,22 +132,23 @@ public:
 
 public:
 
-    bool                   hasImage             = false;
-    bool                   hasMetadata          = false;
-    bool                   loadedFromDisk       = false;
+    bool                        hasImage             = false;
+    bool                        hasMetadata          = false;
+    bool                        loadedFromDisk       = false;
 
-    QFileInfo              fileInfo;
+    QFileInfo                   fileInfo;
 
-    DMetadata*             metadata             = nullptr;
-    DImg                   img;
-    ItemScanInfo           scanInfo;
-    ItemScanner::ScanMode  scanMode             = ModifiedScan;
+    DMetadata*                  metadata             = nullptr;
+    DImg                        img;
+    ItemScanInfo                scanInfo;
+    ItemScanner::ScanMode       scanMode             = ModifiedScan;
+    MetaEngineSettingsContainer settings             = MetaEngineSettings::instance()->settings();
 
-    bool                   hasHistoryToResolve  = false;
+    bool                        hasHistoryToResolve  = false;
 
-    ItemScannerCommit      commit;
+    ItemScannerCommit            commit;
 
-    QElapsedTimer          timer;
+    QElapsedTimer                timer;
 };
 
 } // namespace Digikam

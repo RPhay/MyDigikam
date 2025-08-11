@@ -73,7 +73,7 @@ BUGFIXES:
 054 ==> 508047 - Reverse geocoding set number street twice into XMP-lr:HierarchicalSubject.
 055 ==> 508076 - No abort button while exporting to filesystem.
 056 ==> 508123 - digiKam crashes on startup with remote Mariadb or Mysql database.
-057 ==> 
+057 ==> 508060 - When adding a new collection, tags are not associated with images when using sidecars file and tags hierarchy.
 058 ==> 
 059 ==> 
 060 ==> 
