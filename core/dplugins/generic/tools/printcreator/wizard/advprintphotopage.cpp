@@ -420,7 +420,17 @@ void AdvPrintPhotoPage::slotXMLLoadElement(QXmlStreamReader& xmlReader)
                 if (!attr.isEmpty())
                 {
                     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << " found " << attr.toString();
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 6, 0))
+
+                    pPhoto->m_pAdvPrintCaptionInfo->m_captionColor.fromString(attr.toString());
+
+#else
+
                     pPhoto->m_pAdvPrintCaptionInfo->m_captionColor.setNamedColor(attr.toString());
+
+#endif
+
                 }
 
                 attr = attrs.value(QLatin1String("size"));

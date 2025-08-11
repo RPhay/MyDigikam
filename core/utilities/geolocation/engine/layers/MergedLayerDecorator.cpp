@@ -570,16 +570,32 @@ void MergedLayerDecorator::Private::paintTileId(QImage* tileImage, const TileId&
     if (((qreal)(id.x()) / 2 == id.x() / 2 && (qreal)(id.y()) / 2 == id.y() / 2)
         || ((qreal)(id.x()) / 2 != id.x() / 2 && (qreal)(id.y()) / 2 != id.y() / 2)
        )
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 6, 0))
+
+    {
+        foreground.fromString(QString::fromUtf8("#FFFFFF"));
+        background.fromString(QString::fromUtf8("#000000"));
+    }
+    else
+    {
+        foreground.fromString(QString::fromUtf8("#000000"));
+        background.fromString(QString::fromUtf8("#FFFFFF"));
+    }
+
+#else
+
     {
         foreground.setNamedColor(QString::fromUtf8("#FFFFFF"));
         background.setNamedColor(QString::fromUtf8("#000000"));
     }
-
     else
     {
         foreground.setNamedColor(QString::fromUtf8("#000000"));
         background.setNamedColor(QString::fromUtf8("#FFFFFF"));
     }
+
+#endif
 
     int   strokeWidth = 10;
     QPen  testPen(foreground);

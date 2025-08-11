@@ -45,11 +45,21 @@ GeoNode* DgmlIconTagHandler::parse(GeoParser& parser) const
     QString pixmapRelativePath  = parser.attribute(dgmlAttr_pixmap).trimmed();
 
     QColor color;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 6, 0))
+
+    color.fromString(parser.attribute(dgmlAttr_color).trimmed());
+
+#else
+
     color.setNamedColor(parser.attribute(dgmlAttr_color).trimmed());
+
+#endif
 
     GeoSceneIcon* icon = nullptr;
 
     // Checking for parent item
+
     GeoStackItem parentItem = parser.parentElement();
 
     if (parentItem.represents(dgmlTag_Head))

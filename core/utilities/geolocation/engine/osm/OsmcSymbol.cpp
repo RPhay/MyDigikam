@@ -87,9 +87,20 @@ bool OsmcSymbol::parseTag(const QString& tag)
     }
 
     // Determine way color
+
     if (QColor::isValidColor(parts.at(0)))
     {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 6, 0))
+
+        m_wayColor.fromString(parts.at(0));
+
+#else
+
         m_wayColor.setNamedColor(parts.at(0));
+
+#endif
+
     }
 
     else
@@ -146,7 +157,16 @@ bool OsmcSymbol::parseTag(const QString& tag)
         if (QColor::isValidColor(parts.at(5)))
         {
             m_text = parts.at(4);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 6, 0))
+
+            m_textColor.fromString(parts.at(5));
+
+#else
+
             m_textColor.setNamedColor(parts.at(5));
+
+#endif
         }
 
         else
@@ -174,15 +194,36 @@ bool OsmcSymbol::parseBackground(const QString& bg)
     }
 
     // Plain color was provided
-    if (type.isEmpty())
+
+    if      (type.isEmpty())
     {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 6, 0))
+
+        m_backgroundColor.fromString(color);
+
+#else
+
         m_backgroundColor.setNamedColor(color);
+
+#endif
+
         m_backgroundType = type;
     }
 
     else if (m_backgroundTypes.contains(type))
     {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 6, 0))
+
+        m_backgroundColor.fromString(color);
+
+#else
+
         m_backgroundColor.setNamedColor(color);
+
+#endif
+
         m_backgroundType = type;
     }
 
