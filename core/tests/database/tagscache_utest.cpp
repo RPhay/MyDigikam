@@ -22,6 +22,7 @@
 
 #include <QString>
 #include <QDebug>
+#include <QSqlDatabase>
 
 // Local includes
 
