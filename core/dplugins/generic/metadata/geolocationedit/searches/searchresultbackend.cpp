@@ -132,7 +132,7 @@ void SearchResultBackend::slotFinished(QNetworkReply* reply)
 
     d->searchData.append(reply->readAll());
 
-    const QString resultString = QString::fromUtf8(d->searchData.constData(), d->searchData.count());
+    const QString resultString = QString::fromUtf8(d->searchData.constData(), d->searchData.size());
 
     if      (d->runningBackend == QLatin1String("osm"))
     {
