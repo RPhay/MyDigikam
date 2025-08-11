@@ -529,7 +529,7 @@ QByteArray DImg::createUniqueHash(const QString& filePath, const QByteArray& ba)
 
     QFile qfile(filePath);
 
-    char databuf[8192];
+    char databuf[8192] = { 0 };
     QByteArray hash;
 
     if (qfile.open(QIODevice::Unbuffered | QIODevice::ReadOnly))
@@ -538,9 +538,20 @@ QByteArray DImg::createUniqueHash(const QString& filePath, const QByteArray& ba)
 
         if ((readlen = qfile.read(databuf, 8192)) > 0)
         {
-            QByteArray size;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 3, 0))
+
+            md5.addData(QByteArrayView(databuf, readlen));
+
+#else
+
             md5.addData(databuf, readlen);
+
+#endif
+
+            QByteArray size;
             md5.addData(size.setNum(qfile.size()));
+
             hash = md5.result().toHex();
         }
 
@@ -575,7 +586,17 @@ QByteArray DImg::createUniqueHashV2(const QString& filePath)
 
         if ((read = file.read(databuf.data(), size)) > 0)
         {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 3, 0))
+
+            md5.addData(QByteArrayView(databuf.data(), read));
+
+#else
+
             md5.addData(databuf.data(), read);
+
+#endif
+
         }
 
         // Read last 100 kB
