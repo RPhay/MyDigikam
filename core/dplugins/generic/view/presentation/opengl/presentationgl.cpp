@@ -656,7 +656,17 @@ void PresentationGL::loadImage()
         /* create the texture */
 
         d->texture[a]->destroy();
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 9, 0))
+
+        d->texture[a]->setData(black.flipped());
+
+#else
+
         d->texture[a]->setData(black.mirrored());
+
+#endif
+
         d->texture[a]->setMinificationFilter(QOpenGLTexture::LinearMipMapLinear);
         d->texture[a]->setMagnificationFilter(QOpenGLTexture::Linear);
         d->texture[a]->bind();
@@ -856,7 +866,17 @@ void PresentationGL::showEndOfShow()
     /* create the texture */
 
     d->texture[2]->destroy();
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 9, 0))
+
+    d->texture[2]->setData(image.flipped());
+
+#else
+
     d->texture[2]->setData(image.mirrored());
+
+#endif
+
     d->texture[2]->setMinificationFilter(QOpenGLTexture::LinearMipMapLinear);
     d->texture[2]->setMagnificationFilter(QOpenGLTexture::Linear);
     d->texture[2]->bind();
