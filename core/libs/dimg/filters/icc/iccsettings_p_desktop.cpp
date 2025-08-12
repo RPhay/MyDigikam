@@ -41,6 +41,7 @@
 #ifdef Q_OS_WIN
 #   include <Windows.h>
 #   include <WcsPlugin.h>
+#   include <winuser.h>
 #   include <icm.h>
 #endif
 
@@ -171,7 +172,7 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
     // Get the handle for the wanted screen device.
 
     HMONITOR hMonitor  = MonitorFromPoint(POINT{screenNumber * GetSystemMetrics(SM_CXSCREEN), 0},
-                                            MONITOR_DEFAULTTONEAREST);
+                                          MONITOR_DEFAULTTONEAREST);
     MONITORINFOEX monitorInfo;
     monitorInfo.cbSize = sizeof(MONITORINFOEX);
     GetMonitorInfo(hMonitor, &monitorInfo);
