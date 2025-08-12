@@ -51,11 +51,20 @@ public:
 
     Private();
 
+    /**
+     * Method to scan profile from the disk.
+     */
     QList<IccProfile>    scanDirectories(const QStringList& dirs);
     void                 scanDirectory(const QString& path, const QStringList& filter, QList<IccProfile>* const profiles);
 
+    /**
+     * @return the desktop profile used to render the @param widget on screen.
+     */
     IccProfile           profileFromWindowSystem(QWidget* const widget);
 
+    /**
+     * Methods to manage the configuration file.
+     */
     ICCSettingsContainer readFromConfig()               const;
     void                 writeToConfig()                const;
     void                 writeManagedViewToConfig()     const;
@@ -63,14 +72,14 @@ public:
 
 public:
 
-    ICCSettingsContainer   settings;
-    QMutex                 mutex;
+    ICCSettingsContainer   settings;            ///< The color profiles configuration container.
+    QMutex                 mutex;               ///< Access protection to the @param settings container.
 
-    QList<IccProfile>      profiles;
+    QList<IccProfile>      profiles;            ///< List of all profiles available from disk.
 
-    QHash<int, IccProfile> screenProfiles;
+    QHash<int, IccProfile> screenProfiles;      ///< Hash-table of Color Profile by screen ID populated by @method profileFromWindowSystem().
 
-    const QString          configGroup;
+    const QString          configGroup;         ///< The configuration group used to store the settings on disk.
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 

@@ -38,6 +38,11 @@
 #   endif
 #endif // HAVE_X11
 
+#ifdef Q_OS_WIN
+#   include <Windows.h>
+#   include <WcsPlugin.h>
+#endif
+
 #if defined(Q_CC_CLANG)
 #    pragma clang diagnostic pop
 #endif
@@ -45,24 +50,9 @@
 namespace Digikam
 {
 
-/*
- * From koffice/libs/pigment/colorprofiles/KoLcmsColorProfileContainer.cpp
-*/
 IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 {
-
-#ifdef HAVE_X11
-
-    if ((qApp->platformName() == QLatin1String("wayland")) || !QX11Info::isPlatformX11())
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Desktop platform is not X11";
-
-        return IccProfile();
-    }
-
-    QString       atomName;
-    unsigned long appRootWindow = 0;
-    QScreen* const screen       = qApp->primaryScreen();
+    QScreen* const screen = qApp->primaryScreen();
 
     if (!screen)
     {
@@ -71,7 +61,7 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
         return IccProfile();
     }
 
-    QScreen* widgetScreen       = screen;
+    QScreen* widgetScreen = screen;
 
     if (widget)
     {
@@ -101,6 +91,22 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
         {
             return screenProfiles.value(screenNumber);
         }
+    }
+
+#ifdef HAVE_X11
+
+    /*
+     * From koffice/libs/pigment/colorprofiles/KoLcmsColorProfileContainer.cpp
+     */
+
+    QString       atomName;
+    unsigned long appRootWindow = 0;
+
+    if ((qApp->platformName() == QLatin1String("wayland")) || !QX11Info::isPlatformX11())
+    {
+        qCDebug(DIGIKAM_DIMG_LOG) << "Desktop platform is not X11";
+
+        return IccProfile();
     }
 
     if (screen->virtualSiblings().size() > 1)
@@ -153,19 +159,10 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
         qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get X.org XICC profile for screen " << screenNumber;
     }
 
-    // Insert to cache even if null
-    {
-        QMutexLocker lock(&mutex);
-        screenProfiles.insert(screenNumber, profile);
-    }
 
 #elif defined Q_OS_WIN
 
 /*
-
-    #include <Windows.h>
-    #include <WcsPlugin.h>
-
     QByteArray getScreenColorProfileAsByteArray()
     {
         // Get the handle from the screen device.
@@ -230,23 +227,26 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
     }
 */
 
-    Q_UNUSED(widget);
-
 #elif defined Q_OS_MACOS
 
     // TODO
-
-    Q_UNUSED(widget);
 
 #else
 
     // Unsupported platform
 
-    Q_UNUSED(widget);
+    qCWarning(DIGIKAM_DIMG_LOG) << "The platform to return the screen color profile is not supported!";
 
 #endif
 
-    return IccProfile();
+    // Insert the profile to cache even if null.
+
+    {
+        QMutexLocker lock(&mutex);
+        screenProfiles.insert(screenNumber, profile);
+    }
+
+    return profile;
 }
 
 } // namespace Digikam
