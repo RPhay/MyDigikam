@@ -22,7 +22,7 @@
 namespace Digikam
 {
 
-const float RATIO_POINT_IMAGE = 1.0 / 120.0; // this is a guess
+const float RATIO_POINT_IMAGE = 1.0F / 120.0F; // this is a guess
 
 // Internal function to create af point from meta data
 namespace PanasonicInternal

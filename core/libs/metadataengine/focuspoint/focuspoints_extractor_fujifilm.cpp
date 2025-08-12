@@ -23,7 +23,7 @@
 namespace Digikam
 {
 
-const float RATIO_POINT_IMAGE = 1.0 / 12000.0; // this is a guess
+const float RATIO_POINT_IMAGE = 1.0F / 12.0F; // this is a guess
 
 // Internal function to create af point from meta data
 namespace FujifilmInternal
@@ -34,10 +34,12 @@ FocusPoint create_af_point(float imageWidth,
                            float af_x_position,
                            float af_y_position)
 {
+    float minSize = qMin(imageWidth, imageHeight);
+
     return FocusPoint(af_x_position / imageWidth,
                       af_y_position / imageHeight,
-                      qMin(imageWidth, imageHeight) * RATIO_POINT_IMAGE,
-                      qMin(imageWidth, imageHeight) * RATIO_POINT_IMAGE,
+                      minSize * RATIO_POINT_IMAGE / imageWidth,
+                      minSize * RATIO_POINT_IMAGE / imageHeight,
                       FocusPoint::TypePoint::SelectedInFocus);
 }
 
@@ -45,12 +47,12 @@ FocusPoint create_af_point(float imageWidth,
 
 FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_fujifilm() const
 {
-    QString TagNameRoot     = QLatin1String("MakerNotes.FujiFilm.Camera");
+    QString TagNameRoot  = QLatin1String("MakerNotes.FujiFilm.Camera");
 
     // Get size image
 
-    QVariant imageWidth     = findValue(QLatin1String("File.File.Image.ImageWidth"));
-    QVariant imageHeight    = findValue(QLatin1String("File.File.Image.ImageHeight"));
+    QVariant imageWidth  = findValue(QLatin1String("File.File.Image.ImageWidth"));
+    QVariant imageHeight = findValue(QLatin1String("File.File.Image.ImageHeight"));
 
     if (imageWidth.isNull() || imageHeight.isNull())
     {
