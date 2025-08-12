@@ -42,7 +42,8 @@
 #   include <Windows.h>
 #   include <WcsPlugin.h>
 #   include <winuser.h>
-#   include <icm.h>
+#   include <ICM.h>
+#   include <Wingdi.h>
 #endif
 
 #if defined(Q_CC_CLANG)
