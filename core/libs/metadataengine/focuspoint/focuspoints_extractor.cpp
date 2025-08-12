@@ -162,42 +162,42 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::findAFPoints() const
 
     if (!d->make.isNull())
     {
-        if (d->make == QLatin1String("APPLE"))
+        if (d->make.contains(QLatin1String("APPLE"), Qt::CaseInsensitive))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Apple Exif metadata";
 
             return getAFPoints_exif();
         }
 
-        if (d->make == QLatin1String("CANON"))
+        if (d->make.contains(QLatin1String("CANON"), Qt::CaseInsensitive))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Canon makernotes";
 
             return getAFPoints_canon();
         }
 
-        if (d->make == QLatin1String("FUJIFILM"))
+        if (d->make.contains(QLatin1String("FUJIFILM"), Qt::CaseInsensitive))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Fujifilm makernotes";
 
             return getAFPoints_fujifilm();
         }
 
-        if (d->make == QLatin1String("NIKON"))
+        if (d->make.contains(QLatin1String("NIKON"), Qt::CaseInsensitive))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Nikon makernotes";
 
             return getAFPoints_nikon();
         }
 
-        if (d->make == QLatin1String("PANASONIC"))
+        if (d->make.contains(QLatin1String("PANASONIC"), Qt::CaseInsensitive))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Panasonic makernotes";
 
             return getAFPoints_panasonic();
         }
 
-        if (d->make == QLatin1String("SONY"))
+        if (d->make.contains(QLatin1String("SONY"), Qt::CaseInsensitive))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Sony makernotes";
 

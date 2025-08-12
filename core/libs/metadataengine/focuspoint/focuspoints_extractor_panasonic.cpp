@@ -22,34 +22,36 @@
 namespace Digikam
 {
 
-const float RATIO_POINT_IMAGE = 1.0F / 120.0F; // this is a guess
+const float RATIO_POINT_IMAGE = 1.0F / 12.0F; // this is a guess
 
 // Internal function to create af point from meta data
 namespace PanasonicInternal
 {
 
-FocusPoint create_af_point(float af_x_position,
-                           float af_y_position,
-                           float afPointWidth,
-                           float afPointHeight)
-{
-    return FocusPoint(af_x_position,
-                      af_y_position,
-                      afPointWidth  * RATIO_POINT_IMAGE,
-                      afPointHeight * RATIO_POINT_IMAGE,
-                      FocusPoint::TypePoint::SelectedInFocus);
+    FocusPoint create_af_point(float imageWidth,
+                               float imageHeight,
+                               float af_x_position,
+                               float af_y_position)
+    {
+        float minSize = qMin(imageWidth, imageHeight);
+
+        return FocusPoint(af_x_position,
+                          af_y_position,
+                          minSize * RATIO_POINT_IMAGE / imageWidth,
+                          minSize * RATIO_POINT_IMAGE / imageHeight,
+                          FocusPoint::TypePoint::SelectedInFocus);
 }
 
 } // namespace PanasonicInternal
 
 FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_panasonic() const
 {
-    QString TagNameRoot     = QLatin1String("MakerNotes.Panasonic.Camera");
+    QString TagNameRoot  = QLatin1String("MakerNotes.Panasonic.Camera");
 
     // Get size image
 
-    QVariant imageWidth     = findValue(QLatin1String("File.File.Image.ImageWidth"));
-    QVariant imageHeight    = findValue(QLatin1String("File.File.Image.ImageHeight"));
+    QVariant imageWidth  = findValue(QLatin1String("File.File.Image.ImageWidth"));
+    QVariant imageHeight = findValue(QLatin1String("File.File.Image.ImageHeight"));
 
     if (imageWidth.isNull() || imageHeight.isNull())
     {
@@ -62,7 +64,16 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_panasonic()
 
     // Get af point
 
-    QStringList af_position = findValue(TagNameRoot, QLatin1String("AFPointPosition")).toString().split(QLatin1String(" "));
+    QStringList af_position = findValue(TagNameRoot, QLatin1String("AFPointPosition")).toString().split(QLatin1String(","));
+
+    if (af_position.size() == 2)
+    {
+        af_position = af_position.at(0).split(QLatin1String(" "));
+    }
+    else
+    {
+        af_position = findValue(TagNameRoot, QLatin1String("AFPointPosition")).toString().split(QLatin1String(" "));
+    }
 
     if (af_position.isEmpty() || (af_position.size() == 1))
     {
@@ -71,24 +82,20 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_panasonic()
         return getAFPoints_exif();
     }
 
+
     qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Panasonic Makernotes Focus Location:" << af_position;
 
     float af_x_position = af_position[0].toFloat();
     float af_y_position = af_position[1].toFloat();
 
-    // Get size of af points
-
-    float afPointWidth  = imageWidth.toFloat()  * RATIO_POINT_IMAGE;
-    float afPointHeight = imageHeight.toFloat() * RATIO_POINT_IMAGE;
-
     // Add point
 
     ListAFPoints points;
     FocusPoint afpoint  = PanasonicInternal::create_af_point(
+                                                             imageWidth.toFloat(),
+                                                             imageHeight.toFloat(),
                                                              af_x_position,
-                                                             af_y_position,
-                                                             afPointWidth,
-                                                             afPointHeight
+                                                             af_y_position
                                                             );
 
     if (afpoint.getRect().isValid())
