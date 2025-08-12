@@ -41,6 +41,7 @@
 #ifdef Q_OS_WIN
 #   include <Windows.h>
 #   include <WcsPlugin.h>
+#   include <icm.h>
 #endif
 
 #if defined(Q_CC_CLANG)
@@ -164,7 +165,6 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get X.org XICC profile for screen " << screenNumber;
     }
-
 
 #elif defined Q_OS_WIN
 
