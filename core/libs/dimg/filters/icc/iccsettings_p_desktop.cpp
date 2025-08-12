@@ -83,6 +83,8 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
     int screenNumber = qMax(qApp->screens().indexOf(widgetScreen), 0);
 
+    // Look in the hash-table cache to see if profile do not exists yet.
+
     IccProfile profile;
     {
         QMutexLocker lock(&mutex);
