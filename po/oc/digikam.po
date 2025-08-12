@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-11 02:02+0000\n"
+"POT-Creation-Date: 2025-08-12 02:03+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -9913,7 +9913,7 @@ msgctxt "@action"
 msgid "Liquid Rescale..."
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:85
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:87
 #, kde-format
 msgid ""
 "This is the free rotation operation preview. If you move the mouse cursor on "
@@ -9922,17 +9922,17 @@ msgid ""
 "to freeze the dashed line's position."
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:103
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:105
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:105
 #: core/dplugins/editor/transform/shear/sheartool.cpp:102
 #, kde-format
 msgid "New width:"
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:104
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:108
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:322
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:323
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:106
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:110
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:326
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:327
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:106
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:110
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:235
@@ -9948,27 +9948,27 @@ msgstr ""
 msgid " px"
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:107
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:109
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:109
 #: core/dplugins/editor/transform/shear/sheartool.cpp:106
 #, kde-format
 msgid "New height:"
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:113
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:115
 #, kde-format
 msgid ""
 "Select a point in the preview widget, then click this button to assign the "
 "point for auto-correction."
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:162
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:166
 #, kde-format
 msgctxt "Automatic Adjustment"
 msgid "Adjust"
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:171
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:175
 #, kde-format
 msgid ""
 "<p>Correct the rotation of your images automatically by assigning two points "
@@ -9976,30 +9976,30 @@ msgid ""
 "horizontal or vertical lines.</p>"
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:193
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:197
 #, kde-format
 msgid "Automatic Adjustment"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:195
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:199
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
 #, kde-format
 msgid "Settings"
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:331
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:335
 #: core/libs/dimg/filters/transform/freerotationfilter.cpp:65
 #, kde-format
 msgid "Free Rotation"
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:336
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:340
 #, kde-format
 msgid "Click to set"
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:337
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:341
 #, kde-format
 msgctxt "point has been set and is valid"
 msgid "Okay"
@@ -19082,7 +19082,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:957
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:967
 #, kde-format
 msgid "cm"
 msgstr ""
@@ -19095,7 +19095,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:213
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:952
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:962
 #, kde-format
 msgid "inches"
 msgstr ""
@@ -19385,12 +19385,12 @@ msgctxt "@info"
 msgid "Select your preferred print output."
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:498
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:508
 #, kde-format
 msgid "Add again"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:512
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:522
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:370
@@ -19398,19 +19398,19 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1125
 #, fuzzy, kde-format
 #| msgid "Custom"
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "Personalizat"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1116
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1126
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1348
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1358
 #, fuzzy, kde-format
 #| msgid "Custom"
 msgid ""
@@ -20828,7 +20828,7 @@ msgid "Image #%1"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:449
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:657
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:677
 #, kde-format
 msgid "Ken Burns"
 msgstr ""
@@ -21048,20 +21048,20 @@ msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "Aleatòri"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:844
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:854
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:826
 #, kde-format
 msgid "Slideshow Completed"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:845
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:610
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:855
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:620
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:827
 #, kde-format
 msgid "Click to Exit..."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:609
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:619
 #, fuzzy, kde-format
 #| msgid "Slide Show"
 msgid "SlideShow Completed"
@@ -22134,14 +22134,14 @@ msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "እንደገና አስጀምሩ"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:203
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:235
 #, fuzzy, kde-format
 #| msgid "Slide Show"
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "Diaporama"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:204
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:236
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -38589,71 +38589,71 @@ msgstr "imatges"
 msgid "Remove Tag from Images"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:89
+#: core/libs/tags/manager/tagpropwidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "images"
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr "imatges"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:98
+#: core/libs/tags/manager/tagpropwidget.cpp:99
 #: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:103
+#: core/libs/tags/manager/tagpropwidget.cpp:104
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr "Colors"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:116
+#: core/libs/tags/manager/tagpropwidget.cpp:117
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:125
+#: core/libs/tags/manager/tagpropwidget.cpp:126
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:138
+#: core/libs/tags/manager/tagpropwidget.cpp:139
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:161
+#: core/libs/tags/manager/tagpropwidget.cpp:162
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:162
+#: core/libs/tags/manager/tagpropwidget.cpp:163
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:167
+#: core/libs/tags/manager/tagpropwidget.cpp:168
 #, fuzzy, kde-format
 #| msgid "images"
 msgctxt "@action"
 msgid "Save"
 msgstr "imatges"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:168
+#: core/libs/tags/manager/tagpropwidget.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Discard"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:235
+#: core/libs/tags/manager/tagpropwidget.cpp:236
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "

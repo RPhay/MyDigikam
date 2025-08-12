@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-11 02:02+0000\n"
+"POT-Creation-Date: 2025-08-12 02:03+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -10272,7 +10272,7 @@ msgctxt "@action"
 msgid "Liquid Rescale..."
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:85
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:87
 #, kde-format
 msgid ""
 "This is the free rotation operation preview. If you move the mouse cursor on "
@@ -10283,17 +10283,17 @@ msgstr ""
 "自由回転操作のプレビューです。画像の上をクリックしてマウスを動かすと縦横のガ"
 "イド線が動き、マウスの左ボタンを放すと位置が固定されます。"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:103
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:105
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:105
 #: core/dplugins/editor/transform/shear/sheartool.cpp:102
 #, kde-format
 msgid "New width:"
 msgstr "変換後の幅:"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:104
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:108
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:322
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:323
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:106
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:110
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:326
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:327
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:106
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:110
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:235
@@ -10309,27 +10309,27 @@ msgstr "変換後の幅:"
 msgid " px"
 msgstr " px"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:107
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:109
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:109
 #: core/dplugins/editor/transform/shear/sheartool.cpp:106
 #, kde-format
 msgid "New height:"
 msgstr "変換後の高さ:"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:113
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:115
 #, kde-format
 msgid ""
 "Select a point in the preview widget, then click this button to assign the "
 "point for auto-correction."
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:162
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:166
 #, kde-format
 msgctxt "Automatic Adjustment"
 msgid "Adjust"
 msgstr "調整"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:171
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:175
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Correct the rotation of your images automatically by assigning two "
@@ -10344,30 +10344,30 @@ msgstr ""
 "画像の回転を自動的に補正します。<br/>水平線、垂直線のどちらも補正できます。</"
 "p>"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:193
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:197
 #, kde-format
 msgid "Automatic Adjustment"
 msgstr "自動調整"
 
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:195
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:199
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
 #, kde-format
 msgid "Settings"
 msgstr "設定"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:331
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:335
 #: core/libs/dimg/filters/transform/freerotationfilter.cpp:65
 #, kde-format
 msgid "Free Rotation"
 msgstr "自由回転"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:336
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:340
 #, kde-format
 msgid "Click to set"
 msgstr "クリックで指定"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:337
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:341
 #, kde-format
 msgctxt "point has been set and is valid"
 msgid "Okay"
@@ -20104,7 +20104,7 @@ msgstr "写真のフラッシュ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:957
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:967
 #, kde-format
 msgid "cm"
 msgstr ""
@@ -20117,7 +20117,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:213
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:952
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:962
 #, fuzzy, kde-format
 #| msgid "Inches"
 msgid "inches"
@@ -20419,14 +20419,14 @@ msgctxt "@info"
 msgid "Select your preferred print output."
 msgstr "変換先カラースペースのプロファイルを選択します。"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:498
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:508
 #, fuzzy, kde-format
 #| msgid "Add film grain"
 msgid "Add again"
 msgstr "フィルム粒子を加える"
 
 # ACCELERATOR changed by translator
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:512
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:522
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:370
@@ -20434,19 +20434,19 @@ msgstr "フィルム粒子を加える"
 msgid "Remove"
 msgstr "削除(&D)"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1125
 #, fuzzy, kde-format
 #| msgid "Custom Font"
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "カスタムフォント"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1116
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1126
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1348
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1358
 #, fuzzy, kde-format
 #| msgid "Custom Font"
 msgid ""
@@ -21922,7 +21922,7 @@ msgid "Image #%1"
 msgstr "%1 の画像"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:449
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:657
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:677
 #, fuzzy, kde-format
 msgid "Ken Burns"
 msgstr "Ken Burns"
@@ -22150,21 +22150,21 @@ msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "ランダム"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:844
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:854
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:826
 #, fuzzy, kde-format
 msgid "Slideshow Completed"
 msgstr "スライドショー"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:845
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:610
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:855
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:620
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:827
 #, fuzzy, kde-format
 #| msgid "Click to set"
 msgid "Click to Exit..."
 msgstr "クリックで指定"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:609
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:619
 #, fuzzy, kde-format
 #| msgid "Slide Show"
 msgid "SlideShow Completed"
@@ -23284,13 +23284,13 @@ msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "テキストを左揃え"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:203
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:235
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "スライドショー"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:204
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:236
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -40921,14 +40921,14 @@ msgstr "アルバムで"
 msgid "Remove Tag from Images"
 msgstr "画像からタグを取り除く"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:89
+#: core/libs/tags/manager/tagpropwidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Tag Properties"
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr "タグのプロパティ"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:98
+#: core/libs/tags/manager/tagpropwidget.cpp:99
 #: core/libs/tags/widgets/tageditdlg.cpp:131
 #, fuzzy, kde-format
 #| msgid "&Title:"
@@ -40936,52 +40936,52 @@ msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr "タイトル(&T):"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:103
+#: core/libs/tags/manager/tagpropwidget.cpp:104
 #, fuzzy, kde-format
 #| msgid "Enter tag name here"
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr "ここにタグの名前を入力します"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:116
+#: core/libs/tags/manager/tagpropwidget.cpp:117
 #, fuzzy, kde-format
 #| msgid "&Icon:"
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr "アイコン(&I):"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:125
+#: core/libs/tags/manager/tagpropwidget.cpp:126
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
 msgstr "リセット"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:138
+#: core/libs/tags/manager/tagpropwidget.cpp:139
 #, fuzzy, kde-format
 #| msgid "&Shortcut:"
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr "ショートカット(&S):"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:161
+#: core/libs/tags/manager/tagpropwidget.cpp:162
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:162
+#: core/libs/tags/manager/tagpropwidget.cpp:163
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:167
+#: core/libs/tags/manager/tagpropwidget.cpp:168
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "画像ファイル"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:168
+#: core/libs/tags/manager/tagpropwidget.cpp:169
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Discard Changes"
@@ -40989,7 +40989,7 @@ msgctxt "@action"
 msgid "Discard"
 msgstr "変更を破棄"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:235
+#: core/libs/tags/manager/tagpropwidget.cpp:236
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "

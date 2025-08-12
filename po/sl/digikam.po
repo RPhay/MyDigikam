@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-11 02:02+0000\n"
+"POT-Creation-Date: 2025-08-12 02:03+0000\n"
 "PO-Revision-Date: 2025-08-09 08:55+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -10314,7 +10314,7 @@ msgctxt "@action"
 msgid "Liquid Rescale..."
 msgstr "Tekoča sprememba velikosti..."
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:85
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:87
 #, kde-format
 msgid ""
 "This is the free rotation operation preview. If you move the mouse cursor on "
@@ -10327,17 +10327,17 @@ msgstr ""
 "vodile med nastavljanjem popravka vrtenja. Spustite levi miškin gumb, da "
 "zamrznete položaj črtkane črte."
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:103
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:105
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:105
 #: core/dplugins/editor/transform/shear/sheartool.cpp:102
 #, kde-format
 msgid "New width:"
 msgstr "Nova širina:"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:104
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:108
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:322
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:323
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:106
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:110
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:326
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:327
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:106
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:110
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:235
@@ -10353,14 +10353,14 @@ msgstr "Nova širina:"
 msgid " px"
 msgstr " px"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:107
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:109
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:109
 #: core/dplugins/editor/transform/shear/sheartool.cpp:106
 #, kde-format
 msgid "New height:"
 msgstr "Nova višina:"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:113
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:115
 #, kde-format
 msgid ""
 "Select a point in the preview widget, then click this button to assign the "
@@ -10369,13 +10369,13 @@ msgstr ""
 "Izberite točko v gradniku predogleda in kliknite ta gumb, da dodelite točko "
 "za samodejno popravljanje."
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:162
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:166
 #, kde-format
 msgctxt "Automatic Adjustment"
 msgid "Adjust"
 msgstr "Prilagodi"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:171
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:175
 #, kde-format
 msgid ""
 "<p>Correct the rotation of your images automatically by assigning two points "
@@ -10386,30 +10386,30 @@ msgstr ""
 "gradniku predogleda in kliknete <i>Prilagodi</i>.<br>Prilagodite lahko "
 "navpične in vodoravne črte..</p>"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:193
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:197
 #, kde-format
 msgid "Automatic Adjustment"
 msgstr "Samodejna prilagoditev"
 
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:195
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:199
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
 #, kde-format
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:331
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:335
 #: core/libs/dimg/filters/transform/freerotationfilter.cpp:65
 #, kde-format
 msgid "Free Rotation"
 msgstr "Prosto vrtenje"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:336
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:340
 #, kde-format
 msgid "Click to set"
 msgstr "Kliknite za nastavitev"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:337
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:341
 #, kde-format
 msgctxt "point has been set and is valid"
 msgid "Okay"
@@ -19736,7 +19736,7 @@ msgstr "Velikost slike"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:957
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:967
 #, kde-format
 msgid "cm"
 msgstr "cm"
@@ -19749,7 +19749,7 @@ msgstr "mm"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:213
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:952
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:962
 #, kde-format
 msgid "inches"
 msgstr "palcev"
@@ -20039,12 +20039,12 @@ msgctxt "@info"
 msgid "Select your preferred print output."
 msgstr "Izberite želeni izhod tiska."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:498
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:508
 #, kde-format
 msgid "Add again"
 msgstr "Dodaj spet"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:512
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:522
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:370
@@ -20052,20 +20052,20 @@ msgstr "Dodaj spet"
 msgid "Remove"
 msgstr "Odstrani"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1125
 #, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "Oblika po meri"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1116
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1126
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr ""
 "Izbrane velikosti fotografije po meri ni mogoče uporabiti za to velikost "
 "papirja."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1348
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1358
 #, kde-format
 msgid ""
 "Custom\n"
@@ -21547,7 +21547,7 @@ msgid "Image #%1"
 msgstr "Slika #%1"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:449
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:657
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:677
 #, kde-format
 msgid "Ken Burns"
 msgstr "Ken Burns"
@@ -21752,20 +21752,20 @@ msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "Naključen"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:844
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:854
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:826
 #, kde-format
 msgid "Slideshow Completed"
 msgstr "Predstavitev končana"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:845
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:610
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:855
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:620
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:827
 #, kde-format
 msgid "Click to Exit..."
 msgstr "Kliknite za izhod..."
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:609
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:619
 #, kde-format
 msgid "SlideShow Completed"
 msgstr "Predstavitev končana"
@@ -22863,13 +22863,13 @@ msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "Začni izvoz v določen cilj"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:203
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:235
 #, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "Kopiranje ni bilo dokončano"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:204
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:236
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -40106,69 +40106,69 @@ msgstr "Strni drevo značk"
 msgid "Remove Tag from Images"
 msgstr "Odstrani značko iz slik"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:89
+#: core/libs/tags/manager/tagpropwidget.cpp:90
 #, kde-format
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr "Lastnosti oznake"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:98
+#: core/libs/tags/manager/tagpropwidget.cpp:99
 #: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr "Naslov:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:103
+#: core/libs/tags/manager/tagpropwidget.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr "Sem vnesite ime značke"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:116
+#: core/libs/tags/manager/tagpropwidget.cpp:117
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr "&Ikona:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:125
+#: core/libs/tags/manager/tagpropwidget.cpp:126
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
 msgstr "Ponastavi"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:138
+#: core/libs/tags/manager/tagpropwidget.cpp:139
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr "Bližnjica:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:161
+#: core/libs/tags/manager/tagpropwidget.cpp:162
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr "Opomba"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:162
+#: core/libs/tags/manager/tagpropwidget.cpp:163
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
 msgstr ""
 "To bližnjico lahko uporabite, da dodelite ali odstranite značko predmetom."
 
-#: core/libs/tags/manager/tagpropwidget.cpp:167
+#: core/libs/tags/manager/tagpropwidget.cpp:168
 #, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "Shrani"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:168
+#: core/libs/tags/manager/tagpropwidget.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Discard"
 msgstr "Zavrzi"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:235
+#: core/libs/tags/manager/tagpropwidget.cpp:236
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-11 02:02+0000\n"
+"POT-Creation-Date: 2025-08-12 02:03+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -10500,7 +10500,7 @@ msgctxt "@action"
 msgid "Liquid Rescale..."
 msgstr "액체 크기 조절..."
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:85
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:87
 #, kde-format
 msgid ""
 "This is the free rotation operation preview. If you move the mouse cursor on "
@@ -10512,17 +10512,17 @@ msgstr ""
 "회전 보정을 조정하는 데 지침이 되는 수직 및 수평 점선이 그려집니다. 왼쪽 마우"
 "스 단추를 놓으면 점선 위치를 고정합니다."
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:103
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:105
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:105
 #: core/dplugins/editor/transform/shear/sheartool.cpp:102
 #, kde-format
 msgid "New width:"
 msgstr "새 너비:"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:104
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:108
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:322
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:323
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:106
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:110
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:326
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:327
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:106
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:110
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:235
@@ -10538,14 +10538,14 @@ msgstr "새 너비:"
 msgid " px"
 msgstr " 픽셀"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:107
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:109
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:109
 #: core/dplugins/editor/transform/shear/sheartool.cpp:106
 #, kde-format
 msgid "New height:"
 msgstr "새 높이:"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:113
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:115
 #, kde-format
 msgid ""
 "Select a point in the preview widget, then click this button to assign the "
@@ -10554,13 +10554,13 @@ msgstr ""
 "미리 보기 위젯에서 점을 선택한 후, 이 단추를 클릭하여 자동 보정을 위한 점을 "
 "할당하십시오."
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:162
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:166
 #, kde-format
 msgctxt "Automatic Adjustment"
 msgid "Adjust"
 msgstr "조정"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:171
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:175
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Correct the rotation of your images automatically by assigning two "
@@ -10574,30 +10574,30 @@ msgstr ""
 "<p>미리 보기 위젯에서 두 지점을 할당하고 <i>조정</i>을 클릭하여 이미지 회전"
 "을 조정할 수 있습니다.<br/>수평선이나 수직선을 조정할 수 있습니다.</p>"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:193
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:197
 #, kde-format
 msgid "Automatic Adjustment"
 msgstr "자동 조정"
 
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:195
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:199
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
 #, kde-format
 msgid "Settings"
 msgstr "설정"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:331
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:335
 #: core/libs/dimg/filters/transform/freerotationfilter.cpp:65
 #, kde-format
 msgid "Free Rotation"
 msgstr "자유 회전"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:336
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:340
 #, kde-format
 msgid "Click to set"
 msgstr "클릭하여 설정"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:337
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:341
 #, kde-format
 msgctxt "point has been set and is valid"
 msgid "Okay"
@@ -20278,7 +20278,7 @@ msgstr "사진 크기"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:957
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:967
 #, kde-format
 msgid "cm"
 msgstr "cm"
@@ -20291,7 +20291,7 @@ msgstr "mm"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:213
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:952
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:962
 #, kde-format
 msgid "inches"
 msgstr "인치"
@@ -20581,12 +20581,12 @@ msgctxt "@info"
 msgid "Select your preferred print output."
 msgstr "원하는 인쇄 출력을 선택하십시오."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:498
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:508
 #, kde-format
 msgid "Add again"
 msgstr "다시 추가"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:512
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:522
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:370
@@ -20594,19 +20594,19 @@ msgstr "다시 추가"
 msgid "Remove"
 msgstr "삭제"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1125
 #, fuzzy, kde-format
 #| msgid "Custom layout"
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "사용자 정의 레이아웃"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1116
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1126
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr "선택한 사용자 정의 사진 크기는 용지 크기에 사용할 수 없습니다."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1348
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1358
 #, kde-format
 msgid ""
 "Custom\n"
@@ -22066,7 +22066,7 @@ msgid "Image #%1"
 msgstr "이미지 #%1"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:449
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:657
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:677
 #, fuzzy, kde-format
 msgid "Ken Burns"
 msgstr "Ken Burns"
@@ -22278,20 +22278,20 @@ msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "무작위"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:844
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:854
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:826
 #, kde-format
 msgid "Slideshow Completed"
 msgstr "슬라이드 쇼 완료됨"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:845
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:610
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:855
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:620
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:827
 #, kde-format
 msgid "Click to Exit..."
 msgstr "종료하려면 클릭하십시오..."
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:609
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:619
 #, kde-format
 msgid "SlideShow Completed"
 msgstr "슬라이드 쇼 완료됨"
@@ -23390,14 +23390,14 @@ msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "지정한 대상 위치로 내보내기 시작"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:203
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:235
 #, fuzzy, kde-format
 #| msgid "Copy not completed"
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "복사 완료되지 않음"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:204
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:236
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -40660,72 +40660,72 @@ msgstr "값 복사"
 msgid "Remove Tag from Images"
 msgstr "이미지에서 태그 삭제"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:89
+#: core/libs/tags/manager/tagpropwidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Tag Properties"
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr "태그 속성"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:98
+#: core/libs/tags/manager/tagpropwidget.cpp:99
 #: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr "제목(&T):"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:103
+#: core/libs/tags/manager/tagpropwidget.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr "태그 이름을 입력하십시오"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:116
+#: core/libs/tags/manager/tagpropwidget.cpp:117
 #, fuzzy, kde-format
 #| msgid "&Icon:"
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr "아이콘(&I):"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:125
+#: core/libs/tags/manager/tagpropwidget.cpp:126
 #, fuzzy, kde-format
 #| msgid "Reset"
 msgctxt "@action"
 msgid "Reset"
 msgstr "초기화"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:138
+#: core/libs/tags/manager/tagpropwidget.cpp:139
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr "단축키(&S):"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:161
+#: core/libs/tags/manager/tagpropwidget.cpp:162
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:162
+#: core/libs/tags/manager/tagpropwidget.cpp:163
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:167
+#: core/libs/tags/manager/tagpropwidget.cpp:168
 #, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "저장"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:168
+#: core/libs/tags/manager/tagpropwidget.cpp:169
 #, fuzzy, kde-format
 #| msgid "Discard"
 msgctxt "@action"
 msgid "Discard"
 msgstr "무시"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:235
+#: core/libs/tags/manager/tagpropwidget.cpp:236
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
