@@ -162,7 +162,74 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
 #elif defined Q_OS_WIN
 
-    // TODO
+/*
+
+    #include <Windows.h>
+    #include <WcsPlugin.h>
+
+    QByteArray getScreenColorProfileAsByteArray()
+    {
+        // Get the handle from the screen device.
+
+        HDC hdcScreen = GetDC(NULL);
+
+        if (hdcScreen == NULL)
+        {
+            qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen handle";
+            return QByteArray();
+        }
+
+        // Get the screen color profile
+
+        WCS_PROFILE_MANAGEMENT_SCOPE scope = WCS_PROFILE_MANAGEMENT_SCOPE_DEFAULT;
+        DWORD bufferSize = 0;
+
+        // Look at the required buffer size.
+
+        if (!GetMonitorProfile(hdcScreen, scope, NULL, &bufferSize))
+        {
+            DWORD error = GetLastError();
+
+            if (error != ERROR_INSUFFICIENT_BUFFER)
+            {
+                qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen profile size";
+                ReleaseDC(NULL, hdcScreen);
+                return QByteArray();
+            }
+        }
+
+        // Buffer alloc.
+
+        std::vector<WCHAR> profilePath(bufferSize);
+
+        if (!GetMonitorProfile(hdcScreen, scope, profilePath.data(), &bufferSize))
+        {
+            qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen profile path";
+            ReleaseDC(NULL, hdcScreen);
+            return QByteArray();
+        }
+
+        // Read the color profile file on disk.
+
+        QFile profileFile(QString::fromWCharArray(profilePath.data()));
+
+        if (!profileFile.open(QIODevice::ReadOnly))
+        {
+            qCDebug(DIGIKAM_DIMG_LOG) << "Cannot open the screen profile file";
+            ReleaseDC(NULL, hdcScreen);
+            return QByteArray();
+        }
+
+        QByteArray profileData = profileFile.readAll();
+        profileFile.close();
+
+        // Free the memory
+
+        ReleaseDC(NULL, hdcScreen);
+
+        return profileData;
+    }
+*/
 
     Q_UNUSED(widget);
 
