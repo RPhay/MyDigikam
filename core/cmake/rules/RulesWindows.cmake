@@ -18,6 +18,10 @@ if(MSVC)
     set(USEENV_LIBRARY   userenv)
     set(PSAPI_LIBRARY    psapi)
 
+    # For the color Managament
+
+    set(MSCMS_LIBRARY     mscms)
+
     # Increase the stack size to prevent crashes with GMic-qt.
 
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /STACK:16777216")

@@ -435,6 +435,7 @@ if(WIN32)
                           ${NETAPI32_LIBRARY}
                           ${USEENV_LIBRARY}
                           ${PSAPI_LIBRARY}
+                          ${MSCMS_LIBRARY}
     )
 
 endif()
