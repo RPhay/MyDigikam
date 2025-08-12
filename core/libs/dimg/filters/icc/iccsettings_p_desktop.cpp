@@ -106,6 +106,10 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Desktop platform is not X11";
 
+        /**
+         * @todo Add Wayland support.
+         */
+
         return IccProfile();
     }
 
