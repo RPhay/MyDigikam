@@ -53,10 +53,8 @@ FocusPointsExtractor::FocusPointsExtractor(QObject* const parent,const QString& 
 
     d->exifToolAvailable = parser->exifToolAvailable();
     d->metadata          = parser->currentData();
-    d->make              = findValue(QLatin1String("EXIF.IFD0.Camera.Make")).toString();
-    d->make              = d->make.split(QLatin1String(" "))[0].toUpper();
-    d->model             = findValue(QLatin1String("EXIF.IFD0.Camera.Model")).toString();
-    d->model             = d->model.split(QLatin1String(" "))[0].toUpper();
+    d->make              = findValue(QLatin1String("EXIF.IFD0.Camera.Make")).toString().toUpper();
+    d->model             = findValue(QLatin1String("EXIF.IFD0.Camera.Model")).toString().toUpper();
 
     // NOTE: init image size properties with generic values taken from file by default,
     //       this will be overwrited by delegate with findADPoints().
@@ -162,42 +160,42 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::findAFPoints() const
 
     if (!d->make.isNull())
     {
-        if (d->make.contains(QLatin1String("APPLE"), Qt::CaseInsensitive))
+        if (d->make.contains(QLatin1String("APPLE")))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Apple Exif metadata";
 
             return getAFPoints_exif();
         }
 
-        if (d->make.contains(QLatin1String("CANON"), Qt::CaseInsensitive))
+        if (d->make.contains(QLatin1String("CANON")))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Canon makernotes";
 
             return getAFPoints_canon();
         }
 
-        if (d->make.contains(QLatin1String("FUJIFILM"), Qt::CaseInsensitive))
+        if (d->make.contains(QLatin1String("FUJIFILM")))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Fujifilm makernotes";
 
             return getAFPoints_fujifilm();
         }
 
-        if (d->make.contains(QLatin1String("NIKON"), Qt::CaseInsensitive))
+        if (d->make.contains(QLatin1String("NIKON")))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Nikon makernotes";
 
             return getAFPoints_nikon();
         }
 
-        if (d->make.contains(QLatin1String("PANASONIC"), Qt::CaseInsensitive))
+        if (d->make.contains(QLatin1String("PANASONIC")))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Panasonic makernotes";
 
             return getAFPoints_panasonic();
         }
 
-        if (d->make.contains(QLatin1String("SONY"), Qt::CaseInsensitive))
+        if (d->make.contains(QLatin1String("SONY")))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Sony makernotes";
 

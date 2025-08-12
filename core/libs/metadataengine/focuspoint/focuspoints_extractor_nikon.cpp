@@ -49,9 +49,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
 
     // Filter model
 
-    QString model       = findValue(QLatin1String("EXIF.IFD0.Camera.Model")).toString().toLower();
-
-    if (!model.contains(QLatin1String("nikon z"), Qt::CaseInsensitive))
+    if (!model().contains(QLatin1String("NIKON Z")))
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: unsupported Nikon Camera.";
 
@@ -83,7 +81,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
 
     setOriginalSize(QSize(imageWidth.toInt(), imageHeight.toInt()));
 
-    if (model.compare(QLatin1String("nikon z 5"), Qt::CaseInsensitive) == 0)
+    if (model().compare(QLatin1String("NIKON Z 5")) == 0)
     {
         QStringList afPointUsed = findValueFirstMatch(
                                                       QStringList()
