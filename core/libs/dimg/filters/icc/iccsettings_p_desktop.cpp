@@ -172,11 +172,20 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
     // Get the handle for the wanted screen device.
 
-    HMONITOR hMonitor  = MonitorFromPoint(POINT{screenNumber * GetSystemMetrics(SM_CXSCREEN), 0},
-                                          MONITOR_DEFAULTTONEAREST);
+    POINT pt;
+    pt.x = screenNumber * GetSystemMetrics(SM_CXSCREEN);
+    pt.y = 0;
+    HMONITOR hMonitor = MonitorFromPoint(pt, MONITOR_DEFAULTTONEAREST);
+
     MONITORINFOEX monitorInfo;
     monitorInfo.cbSize = sizeof(MONITORINFOEX);
-    GetMonitorInfo(hMonitor, &monitorInfo);
+
+    if (!GetMonitorInfo(hMonitor, &monitorInfo))
+    {
+        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen information";
+
+        return IccProfile();
+    }
 
     HDC hdcScreen      = CreateDC(NULL, monitorInfo.szDevice, NULL, NULL);
 
@@ -189,8 +198,8 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
     // Get the screen color profile
 
-    WCS_PROFILE_MANAGEMENT_SCOPE scope = WCS_PROFILE_MANAGEMENT_SCOPE_DEFAULT;
-    DWORD bufferSize                   = 0;
+    DWORD scope      = 0; // WCS_PROFILE_MANAGEMENT_SCOPE_DEFAULT
+    DWORD bufferSize = 0;
 
     // Look at the required buffer size.
 
@@ -234,7 +243,7 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
     QByteArray profileData = profileFile.readAll();
     profileFile.close();
 
-    if (!bytes.isEmpty())
+    if (!profileData.isEmpty())
     {
         profile = IccProfile(profileData);
     }
