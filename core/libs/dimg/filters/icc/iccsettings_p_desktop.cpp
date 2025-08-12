@@ -168,80 +168,94 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
 #elif defined Q_OS_WIN
 
-/*
-    QByteArray getScreenColorProfileAsByteArray()
+    // Get the handle for the wanted screen device.
+
+    HMONITOR hMonitor  = MonitorFromPoint(POINT{screenNumber * GetSystemMetrics(SM_CXSCREEN), 0},
+                                            MONITOR_DEFAULTTONEAREST);
+    MONITORINFOEX monitorInfo;
+    monitorInfo.cbSize = sizeof(MONITORINFOEX);
+    GetMonitorInfo(hMonitor, &monitorInfo);
+
+    HDC hdcScreen      = CreateDC(NULL, monitorInfo.szDevice, NULL, NULL);
+
+    if (hdcScreen == NULL)
     {
-        // Get the handle from the screen device.
+        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen handle";
 
-        HDC hdcScreen = GetDC(NULL);
+        return IccProfile();
+    }
 
-        if (hdcScreen == NULL)
+    // Get the screen color profile
+
+    WCS_PROFILE_MANAGEMENT_SCOPE scope = WCS_PROFILE_MANAGEMENT_SCOPE_DEFAULT;
+    DWORD bufferSize                   = 0;
+
+    // Look at the required buffer size.
+
+    if (!GetMonitorProfile(hdcScreen, scope, NULL, &bufferSize))
+    {
+        DWORD error = GetLastError();
+
+        if (error != ERROR_INSUFFICIENT_BUFFER)
         {
-            qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen handle";
-            return QByteArray();
-        }
-
-        // Get the screen color profile
-
-        WCS_PROFILE_MANAGEMENT_SCOPE scope = WCS_PROFILE_MANAGEMENT_SCOPE_DEFAULT;
-        DWORD bufferSize = 0;
-
-        // Look at the required buffer size.
-
-        if (!GetMonitorProfile(hdcScreen, scope, NULL, &bufferSize))
-        {
-            DWORD error = GetLastError();
-
-            if (error != ERROR_INSUFFICIENT_BUFFER)
-            {
-                qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen profile size";
-                ReleaseDC(NULL, hdcScreen);
-                return QByteArray();
-            }
-        }
-
-        // Buffer alloc.
-
-        std::vector<WCHAR> profilePath(bufferSize);
-
-        if (!GetMonitorProfile(hdcScreen, scope, profilePath.data(), &bufferSize))
-        {
-            qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen profile path";
+            qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen profile size";
             ReleaseDC(NULL, hdcScreen);
-            return QByteArray();
+
+            return IccProfile();
         }
+    }
 
-        // Read the color profile file on disk.
+    // Buffer alloc.
 
-        QFile profileFile(QString::fromWCharArray(profilePath.data()));
+    std::vector<WCHAR> profilePath(bufferSize);
 
-        if (!profileFile.open(QIODevice::ReadOnly))
-        {
-            qCDebug(DIGIKAM_DIMG_LOG) << "Cannot open the screen profile file";
-            ReleaseDC(NULL, hdcScreen);
-            return QByteArray();
-        }
-
-        QByteArray profileData = profileFile.readAll();
-        profileFile.close();
-
-        // Free the memory
-
+    if (!GetMonitorProfile(hdcScreen, scope, profilePath.data(), &bufferSize))
+    {
+        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen profile path";
         ReleaseDC(NULL, hdcScreen);
 
-        return profileData;
+        return IccProfile();
     }
-*/
+
+    // Read the color profile file on disk.
+
+    QFile profileFile(QString::fromWCharArray(profilePath.data()));
+
+    if (!profileFile.open(QIODevice::ReadOnly))
+    {
+        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot open the screen profile file";
+        ReleaseDC(NULL, hdcScreen);
+
+        return IccProfile();
+    }
+
+    QByteArray profileData = profileFile.readAll();
+    profileFile.close();
+
+    if (!bytes.isEmpty())
+    {
+        profile = IccProfile(profileData);
+    }
+
+    qCDebug(DIGIKAM_DIMG_LOG) << "Found Windows monitor profile " << profile.description();
+
+    // Free the memory
+
+    ReleaseDC(NULL, hdcScreen);
 
 #elif defined Q_OS_MACOS
 
     // TODO
 
+    return IccProfile();
+
 #else
 
     // Unsupported platform
 
-    qCWarning(DIGIKAM_DIMG_LOG) << "The platform to return the screen color profile is not supported!";
+    qCWarning(DIGIKAM_DIMG_LOG) << "The Screen color profile platform is not supported!";
+
+    return IccProfile();
 
 #endif
 
