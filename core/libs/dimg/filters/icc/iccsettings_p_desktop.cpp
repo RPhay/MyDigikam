@@ -198,24 +198,19 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
     // Get the screen color profile
 
-    WCS_PROFILE_MANAGEMENT_SCOPE scope = WCS_PROFILE_MANAGEMENT_SCOPE_SYSTEM_WIDE;
-    DWORD bufferSize                   = 0;
+    WCHAR profilePath[MAX_PATH];
 
-    // Look at the required buffer size.
-
-    if (!WcsGetDefaultColorProfileSize(scope, NULL, CPT_ICC, CPST_RGB_WORKING_SPACE, 0, &bufferSize))
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen profile size";
-        ReleaseDC(NULL, hdcScreen);
-
-        return IccProfile();
-    }
-
-    // Buffer alloc.
-
-    std::vector<WCHAR> profilePath(bufferSize);
-
-    if (!WcsGetDefaultColorProfile(scope, NULL, CPT_ICC, CPST_RGB_WORKING_SPACE, 0, profilePath.data(), &bufferSize))
+    if (
+        !WcsGetDefaultColorProfile(
+                                   WCS_PROFILE_MANAGEMENT_SCOPE_CURRENT_USER,
+                                   NULL,
+                                   CPT_ICC,
+                                   CPST_RGB_WORKING_SPACE,
+                                   0,
+                                   MAX_PATH * sizeof(WCHAR),
+                                   profilePath
+                                  )
+       )
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen profile path";
         ReleaseDC(NULL, hdcScreen);
@@ -223,9 +218,11 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
         return IccProfile();
     }
 
+    qCDebug(DIGIKAM_DIMG_LOG) << "Screen profile path:" << QString::fromWCharArray(profilePath);
+
     // Read the color profile file on disk.
 
-    QFile profileFile(QString::fromWCharArray(profilePath.data()));
+    QFile profileFile(QString::fromWCharArray(profilePath));
 
     if (!profileFile.open(QIODevice::ReadOnly))
     {
