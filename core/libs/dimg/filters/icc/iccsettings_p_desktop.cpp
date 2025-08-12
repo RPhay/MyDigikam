@@ -198,7 +198,7 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
     // Get the screen color profile
 
-    WCS_PROFILE_MANAGEMENT_SCOPE scope = 0; // WCS_PROFILE_MANAGEMENT_SCOPE_DEFAULT
+    WCS_PROFILE_MANAGEMENT_SCOPE scope = WCS_PROFILE_MANAGEMENT_SCOPE_SYSTEM_WIDE;
     DWORD bufferSize                   = 0;
 
     // Look at the required buffer size.
