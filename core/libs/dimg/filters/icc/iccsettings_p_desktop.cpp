@@ -6,9 +6,14 @@
  * Date        : 2009-08-09
  * Description : central place for ICC settings
  *
+ * SPDX-FileCopyrightText: 2000      by Matthias Elter <elter at kde dot org>
+ * SPDX-FileCopyrightText: 2001      by John Califf <jcaliff at compuzone dot net>
+ * SPDX-FileCopyrightText: 2004      by Boudewijn Rempt <boud at valdyas dot org>
+ * SPDX-FileCopyrightText: 2007      by Thomas Zander <zander at kde dot org>
+ * SPDX-FileCopyrightText: 2007      by Adrian Page <adrian at pagenet dot plus dot com>
  * SPDX-FileCopyrightText: 2005-2006 by F.J. Cruz <fj dot cruz at supercable dot es>
- * SPDX-FileCopyrightText: 2005-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2005-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -42,11 +47,6 @@ namespace Digikam
 
 /*
  * From koffice/libs/pigment/colorprofiles/KoLcmsColorProfileContainer.cpp
- * SPDX-FileCopyrightText: 2000 Matthias Elter <elter at kde dot org>
- *               2001 John Califf
- *               2004 Boudewijn Rempt <boud at valdyas dot org>
- * SPDX-FileCopyrightText: 2007 Thomas Zander <zander at kde dot org>
- * SPDX-FileCopyrightText: 2007 Adrian Page <adrian at pagenet dot plus dot com>
 */
 IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 {
@@ -60,10 +60,9 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
         return IccProfile();
     }
 
-    unsigned long appRootWindow = 0;
     QString       atomName;
-
-    QScreen* const screen = qApp->primaryScreen();
+    unsigned long appRootWindow = 0;
+    QScreen* const screen       = qApp->primaryScreen();
 
     if (!screen)
     {
@@ -72,7 +71,7 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
         return IccProfile();
     }
 
-    QScreen* widgetScreen = screen;
+    QScreen* widgetScreen       = screen;
 
     if (widget)
     {
