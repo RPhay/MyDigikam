@@ -203,24 +203,19 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
     // Look at the required buffer size.
 
-    if (!GetMonitorProfile(hdcScreen, scope, NULL, &bufferSize))
+    if (!WcsGetDefaultColorProfileSize(scope, NULL, CPT_ICC, CPST_RGB_WORKING_SPACE, 0, &bufferSize))
     {
-        DWORD error = GetLastError();
+        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen profile size";
+        ReleaseDC(NULL, hdcScreen);
 
-        if (error != ERROR_INSUFFICIENT_BUFFER)
-        {
-            qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen profile size";
-            ReleaseDC(NULL, hdcScreen);
-
-            return IccProfile();
-        }
+        return IccProfile();
     }
 
     // Buffer alloc.
 
     std::vector<WCHAR> profilePath(bufferSize);
 
-    if (!GetMonitorProfile(hdcScreen, scope, profilePath.data(), &bufferSize))
+    if (!WcsGetDefaultColorProfile(scope, NULL, CPT_ICC, CPST_RGB_WORKING_SPACE, 0, profilePath.data(), &bufferSize))
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen profile path";
         ReleaseDC(NULL, hdcScreen);
