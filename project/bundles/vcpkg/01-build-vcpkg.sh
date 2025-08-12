@@ -145,7 +145,7 @@ else
 
 fi
 
-$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install opencv[opencl,cuda,dnn,dnn-cuda]
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install opencv[opencl]
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install boost
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install lcms
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install eigen3
