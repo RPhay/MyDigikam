@@ -65,15 +65,35 @@ public:
 
     /**
      * @return the desktop profile used to render the @param widget on screen.
+     *         This method deleagte the job to the right method adapted to the window backend.
      */
     IccProfile           profileFromDesktop(QWidget* const widget);
 
+
+    /**
+     * @brief delegate method to populate the monitor color @param profile for the screen number @param screenNumber
+     *        managed by the Wayland backend. Internally the D-Bus and colord service are used to get the profile data.
+     */
     bool                 profileFromWayland(QScreen* const screen, int screenNumber, IccProfile& profile);
+
+    /**
+     * @brief delegate method to populate the monitor color @param profile for the screen number @param screenNumber
+     *        managed by the X11 backend.
+     */
     bool                 profileFromX11(QScreen* const screen, int screenNumber, IccProfile& profile);
+
+    /**
+     * @brief delegate method to populate the monitor color @param profile for the screen number @param screenNumber
+     *        managed by the Windows backend.
+     */
     bool                 profileFromWindows(QScreen* const screen, int screenNumber, IccProfile& profile);
 
 #ifdef Q_OS_DARWIN
 
+    /**
+     * @brief delegate method to populate the monitor color @param profile for the screen number @param screenNumber
+     *        managed by the macOS backend.
+     */
     bool                 profileFromMacos(QScreen* const screen, int screenNumber, IccProfile& profile);
 
 #endif
@@ -96,29 +116,6 @@ public:
     QHash<int, IccProfile> screenProfiles;      ///< Hash-table of Color Profile by screen ID populated by @method profileFromWindowSystem().
 
     const QString          configGroup;         ///< The configuration group used to store the settings on disk.
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-#   ifdef HAVE_X11
-
-private:
-
-    // X11 helper functions for Qt6 support.
-    // Imported from https://code.qt.io/cgit/qt/qtx11extras.git/tree/src/x11extras/qx11info_x11.cpp?h=v5.15.2#n92
-
-    // TODO: these functions use private API from Qt6 (QPlatformNativeInterface) and need to be ported later to XCB API.
-    //       See this url for details: https://www.x.org/releases/X11R7.6/doc/libxcb/tutorial/index.html#screenofdisplay
-
-    bool     isX11()                            const;
-    quint32  getAppRootWindow(int)              const;
-    QScreen* findScreenForVirtualDesktop(int)   const;
-    int      appScreen()                        const;
-    Display* display()                          const;
-
-#   endif
-
-#endif
-
 };
 
 } // namespace Digikam
