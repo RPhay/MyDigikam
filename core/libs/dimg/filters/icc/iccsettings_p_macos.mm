@@ -27,16 +27,6 @@ bool IccSettings::Private::profileFromMacos(QScreen* const screen,
                                             IccProfile& profile)
 {
     Q_UNUSED(screen);
-    Q_UNUSED(screenNumber);
-    Q_UNUSED(profile);
-
-/*
-
-// Fonction to get all monitor color profiles from active screens.
-
-QMap<int, QByteArray> getAllScreenColorProfiles()
-{
-    QMap<int, QByteArray> profiles;
 
     // Get the number of active screens.
 
@@ -47,7 +37,14 @@ QMap<int, QByteArray> getAllScreenColorProfiles()
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the number of screens";
 
-        return profiles;
+        return false;
+    }
+
+    if ((screenNumber < 0) || (screenNumber >= displayCount))
+    {
+        qCDebug(DIGIKAM_DIMG_LOG) << "Screen number is out of range";
+
+        return false;
     }
 
     // Allocate an array to store the screen IDs
@@ -59,59 +56,54 @@ QMap<int, QByteArray> getAllScreenColorProfiles()
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the list of screens";
 
-        return profiles;
+        return false;
     }
 
-    // Scan all screens.
+    // Screens profile extraction.
 
-    for (uint32_t i = 0; i < displayCount; ++i)
+    CGDirectDisplayID displayID = displayIDs[screenNumber];
+    ColorSyncProfileRef profile = CGDisplayCopyColorSyncProfile(displayID);
+
+    if (!profile)
     {
-        CGDirectDisplayID displayID = displayIDs[i];
-        ColorSyncProfileRef profile = CGDisplayCopyColorSyncProfile(displayID);
+        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the monitor color profile handle" << screenNumber;
 
-        if (!profile)
-        {
-            qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the monitor color profile handle" << i;
-
-            continue;
-        }
-
-        // Get the monitor color profile binary data.
-
-        CFDataRef profileData = ColorSyncProfileGetData(profile);
-
-        if (!profileData)
-        {
-            qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the monitor color profile binary data" << i;
-            CFRelease(profile);
-
-            continue;
-        }
-
-        // Convert CFData to QByteArray
-
-        QByteArray profileBytes
-        (
-            reinterpret_cast<const char*>(CFDataGetBytePtr(profileData)),
-            static_cast<int>(CFDataGetLength(profileData))
-        );
-
-        // Append the profile to the map.
-
-        profiles.insert(static_cast<int>(i), profileBytes);
-
-        // Free memory
-
-        CFRelease(profileData);
-        CFRelease(profile);
+        continue;
     }
 
-    return profiles;
-}
+    // Get the monitor color profile binary data.
 
-*/
+    CFDataRef profileData = ColorSyncProfileGetData(profile);
 
-    return false;
+    if (!profileData)
+    {
+        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the monitor color profile binary data" << screenNumber;
+        CFRelease(profile);
+
+        return false;
+    }
+
+    // Convert CFData to QByteArray
+
+    QByteArray profileBytes
+    (
+        reinterpret_cast<const char*>(CFDataGetBytePtr(profileData)),
+        static_cast<int>(CFDataGetLength(profileData))
+    );
+
+    // Populate the profile from the byte-array
+
+    if (!profileBytes.isEmpty())
+    {
+        profile = IccProfile(profileBytes);
+    }
+
+    // Free memory
+
+    CFRelease(profileData);
+    CFRelease(profile);
+
+    return true;
 }
 
 } // namespace Digikam
