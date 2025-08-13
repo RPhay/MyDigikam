@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 02:09+0000\n"
+"POT-Creation-Date: 2025-08-12 02:03+0000\n"
 "PO-Revision-Date: 2007-09-11 22:44+0200\n"
 "Last-Translator: Northern Sami translation team <l10n-no@lister.huftis.org>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -2605,7 +2605,7 @@ msgstr ""
 msgid "Main Toolbar"
 msgstr ""
 
-#: core/app/main/main.cpp:229 core/app/views/stack/welcomepageview.cpp:235
+#: core/app/main/main.cpp:231 core/app/views/stack/welcomepageview.cpp:235
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2615,45 +2615,45 @@ msgstr ""
 msgid "digiKam"
 msgstr ""
 
-#: core/app/main/main.cpp:238 core/showfoto/main/main.cpp:213
+#: core/app/main/main.cpp:240 core/showfoto/main/main.cpp:215
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: core/app/main/main.cpp:239 core/showfoto/main/main.cpp:214
+#: core/app/main/main.cpp:241 core/showfoto/main/main.cpp:216
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: core/app/main/main.cpp:247
+#: core/app/main/main.cpp:249
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr ""
 
-#: core/app/main/main.cpp:250
+#: core/app/main/main.cpp:252
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr ""
 
-#: core/app/main/main.cpp:253
+#: core/app/main/main.cpp:255
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr ""
 
-#: core/app/main/main.cpp:255
+#: core/app/main/main.cpp:257
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 
-#: core/app/main/main.cpp:258
+#: core/app/main/main.cpp:260
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr ""
 
-#: core/app/main/main.cpp:291
+#: core/app/main/main.cpp:293
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2661,7 +2661,7 @@ msgid ""
 "There is no database plugin installed on your computer."
 msgstr ""
 
-#: core/app/main/main.cpp:300
+#: core/app/main/main.cpp:302
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2669,7 +2669,7 @@ msgid ""
 "Database plugins installed on your computer are listed below."
 msgstr ""
 
-#: core/app/main/main.cpp:344
+#: core/app/main/main.cpp:346
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2722,44 +2722,19 @@ msgstr ""
 msgid "All supported files (%1)"
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:63
+#: core/app/utils/digikam_version.cpp:60
 #, kde-format
 msgid "IRC: "
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:66
+#: core/app/utils/digikam_version.cpp:63
 #, kde-format
 msgid "Feedback: "
 msgstr ""
 
-#: core/app/utils/digikam_version.cpp:69
+#: core/app/utils/digikam_version.cpp:66
 #, kde-format
 msgid "Documentation: "
-msgstr ""
-
-#: core/app/utils/digikam_version.cpp:72
-#, kde-format
-msgid "Build Date: "
-msgstr ""
-
-#: core/app/utils/digikam_version.cpp:75
-#, kde-format
-msgid "Build Target: "
-msgstr ""
-
-#: core/app/utils/digikam_version.cpp:78
-#, kde-format
-msgid "Build Architecture: "
-msgstr ""
-
-#: core/app/utils/digikam_version.cpp:95
-#, kde-format
-msgid "Git Revision: "
-msgstr ""
-
-#: core/app/utils/digikam_version.cpp:98
-#, kde-format
-msgid "Git Branch: "
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
@@ -2962,7 +2937,7 @@ msgstr ""
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3127,7 +3102,7 @@ msgid "Tools"
 msgstr ""
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:1126
+#: core/libs/tags/manager/tagsmanager_p.cpp:270
 #, kde-format
 msgid "Help"
 msgstr ""
@@ -3848,7 +3823,7 @@ msgstr ""
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:46
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:674
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:678
 #, fuzzy, kde-format
 msgid "Filename"
 msgstr "Fiilanamma"
@@ -3913,7 +3888,7 @@ msgstr ""
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:678
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
 #, kde-format
 msgid "Altitude"
 msgstr ""
@@ -4170,7 +4145,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:260
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:673
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Thumbnail"
 msgstr ""
@@ -4338,8 +4313,9 @@ msgstr ""
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:571 core/libs/dialogs/libsinfodlg.cpp:577
-#: core/libs/dialogs/libsinfodlg.cpp:652
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:69
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:75
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:150
 #, kde-format
 msgid "no entry"
 msgstr ""
@@ -9534,7 +9510,7 @@ msgctxt "@action"
 msgid "Liquid Rescale..."
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:85
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:87
 #, kde-format
 msgid ""
 "This is the free rotation operation preview. If you move the mouse cursor on "
@@ -9543,17 +9519,17 @@ msgid ""
 "to freeze the dashed line's position."
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:103
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:105
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:105
 #: core/dplugins/editor/transform/shear/sheartool.cpp:102
 #, kde-format
 msgid "New width:"
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:104
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:108
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:322
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:323
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:106
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:110
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:326
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:327
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:106
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:110
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:235
@@ -9569,27 +9545,27 @@ msgstr ""
 msgid " px"
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:107
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:109
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:109
 #: core/dplugins/editor/transform/shear/sheartool.cpp:106
 #, kde-format
 msgid "New height:"
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:113
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:115
 #, kde-format
 msgid ""
 "Select a point in the preview widget, then click this button to assign the "
 "point for auto-correction."
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:162
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:166
 #, kde-format
 msgctxt "Automatic Adjustment"
 msgid "Adjust"
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:171
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:175
 #, kde-format
 msgid ""
 "<p>Correct the rotation of your images automatically by assigning two points "
@@ -9597,30 +9573,30 @@ msgid ""
 "horizontal or vertical lines.</p>"
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:193
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:197
 #, kde-format
 msgid "Automatic Adjustment"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:195
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:199
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
 #, kde-format
 msgid "Settings"
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:331
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:335
 #: core/libs/dimg/filters/transform/freerotationfilter.cpp:65
 #, kde-format
 msgid "Free Rotation"
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:336
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:340
 #, kde-format
 msgid "Click to set"
 msgstr ""
 
-#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:337
+#: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:341
 #, kde-format
 msgctxt "point has been set and is valid"
 msgid "Okay"
@@ -10744,31 +10720,31 @@ msgid "Edit Geolocation"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:676
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
 #, kde-format
 msgid "Latitude"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
 #, kde-format
 msgid "Longitude"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:687
 #, kde-format
 msgid "Speed"
 msgstr "Leaktu"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:121
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:686
 #, kde-format
 msgid "# satellites"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:127
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
 #, kde-format
 msgid "Fix type"
 msgstr ""
@@ -10784,7 +10760,7 @@ msgid "3-d"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:133
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -14912,7 +14888,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:688
 #, kde-format
 msgid "Status"
 msgstr ""
@@ -18414,7 +18390,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:957
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:967
 #, kde-format
 msgid "cm"
 msgstr ""
@@ -18427,7 +18403,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:213
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:952
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:962
 #, kde-format
 msgid "inches"
 msgstr ""
@@ -18706,12 +18682,12 @@ msgctxt "@info"
 msgid "Select your preferred print output."
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:498
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:508
 #, kde-format
 msgid "Add again"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:512
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:522
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:370
@@ -18719,18 +18695,18 @@ msgstr ""
 msgid "Remove"
 msgstr "Váldde eret"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1125
 #, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1116
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1126
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1348
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1358
 #, kde-format
 msgid ""
 "Custom\n"
@@ -20094,7 +20070,7 @@ msgid "Image #%1"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:449
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:657
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:677
 #, kde-format
 msgid "Ken Burns"
 msgstr ""
@@ -20299,20 +20275,20 @@ msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:844
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:854
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:826
 #, kde-format
 msgid "Slideshow Completed"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:845
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:610
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:855
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:620
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:827
 #, kde-format
 msgid "Click to Exit..."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:609
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:619
 #, kde-format
 msgid "SlideShow Completed"
 msgstr ""
@@ -21338,13 +21314,13 @@ msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:203
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:235
 #, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:204
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:236
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -25727,7 +25703,7 @@ msgstr ""
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:993
+#: core/libs/tags/manager/tagsmanager_p.cpp:137
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -27785,7 +27761,7 @@ msgstr ""
 #: core/libs/onlineversion/onlineversiondlg.cpp:194
 #: core/libs/progressmanager/progressview.cpp:197
 #: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader.cpp:180
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
@@ -27888,7 +27864,7 @@ msgstr ""
 msgid "<i>VideoCodec:</i>"
 msgstr ""
 
-#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:185
+#: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -27911,73 +27887,85 @@ msgstr ""
 msgid "Items List"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:188
-#, kde-format
-msgctxt "@item: component is supported/available"
-msgid "Yes"
-msgstr ""
-
-#: core/libs/dialogs/libsinfodlg.cpp:189
-#, kde-format
-msgctxt "@item: component is not available/supported"
-msgid "No"
-msgstr ""
-
-#: core/libs/dialogs/libsinfodlg.cpp:203
-#, kde-format
-msgctxt "@title"
-msgid "Features"
-msgstr ""
-
-#: core/libs/dialogs/libsinfodlg.cpp:232
-#, kde-format
-msgctxt "@title"
-msgid "Libraries"
-msgstr ""
-
-#: core/libs/dialogs/libsinfodlg.cpp:335
-#, kde-format
-msgctxt "@info: version"
-msgid "Unknown"
-msgstr ""
-
-#: core/libs/dialogs/libsinfodlg.cpp:422
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:22
 #, kde-format
 msgctxt "@title"
 msgid "Build Environment"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:460
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:90
+#, kde-format
+msgctxt "@info: git revision"
+msgid "Unknown"
+msgstr ""
+
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:93
+#, kde-format
+msgctxt "@info: git branch"
+msgid "Unknown"
+msgstr ""
+
+#: core/libs/dialogs/libsinfodlg_features.cpp:24
+#, kde-format
+msgctxt "@title"
+msgid "Features"
+msgstr ""
+
+#: core/libs/dialogs/libsinfodlg_features.cpp:93
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:490
+#: core/libs/dialogs/libsinfodlg_libraries.cpp:22
+#, kde-format
+msgctxt "@title"
+msgid "Libraries"
+msgstr ""
+
+#: core/libs/dialogs/libsinfodlg_libraries.cpp:114
+#, kde-format
+msgctxt "@info: libx265 version"
+msgid "Unknown"
+msgstr ""
+
+#: core/libs/dialogs/libsinfodlg_manifest.cpp:43
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:524
+#: core/libs/dialogs/libsinfodlg_opencv.cpp:22
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:720
+#: core/libs/dialogs/libsinfodlg_p.cpp:21
+#, kde-format
+msgctxt "@item: component is supported/available"
+msgid "Yes"
+msgstr ""
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:22
+#, kde-format
+msgctxt "@item: component is not available/supported"
+msgid "No"
+msgstr ""
+
+#: core/libs/dialogs/libsinfodlg_p.cpp:30
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:725
+#: core/libs/dialogs/libsinfodlg_p.cpp:35
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:730
+#: core/libs/dialogs/libsinfodlg_p.cpp:40
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -34616,7 +34604,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:261
-#: core/utilities/setup/downloader/filesdownloader.cpp:153
+#: core/utilities/setup/downloader/filesdownloader.cpp:154
 #, kde-format
 msgid "Download"
 msgstr ""
@@ -37227,13 +37215,13 @@ msgstr ""
 msgid "Assign Tag \"%1\""
 msgstr ""
 
-#: core/libs/tags/manager/models/tagmngrlistitem.cpp:156
+#: core/libs/tags/manager/models/tagmngrlistitem.cpp:158
 #, kde-format
 msgctxt "@info"
 msgid "All Tags"
 msgstr ""
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:292
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
@@ -37245,12 +37233,12 @@ msgctxt "@action"
 msgid "Delete Selected from List"
 msgstr ""
 
-#: core/libs/tags/manager/taglist.cpp:63
+#: core/libs/tags/manager/taglist.cpp:65
 #, kde-format
 msgid "Add to List"
 msgstr ""
 
-#: core/libs/tags/manager/taglist.cpp:64
+#: core/libs/tags/manager/taglist.cpp:66
 #, kde-format
 msgid "Add selected tags to Quick Access List"
 msgstr ""
@@ -37261,116 +37249,110 @@ msgid "Delete Tags"
 msgstr ""
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:980
+#: core/libs/tags/manager/tagsmanager_p.cpp:124
 #, kde-format
 msgid "Edit Tag Title"
 msgstr ""
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:984
+#: core/libs/tags/manager/tagsmanager_p.cpp:128
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr ""
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:990
+#: core/libs/tags/manager/tagsmanager_p.cpp:134
 #, kde-format
 msgid "Invert Selection"
 msgstr ""
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:996
+#: core/libs/tags/manager/tagsmanager_p.cpp:140
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr ""
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:999
+#: core/libs/tags/manager/tagsmanager_p.cpp:143
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr ""
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:168
-#: core/libs/tags/manager/tagsmanager.cpp:1002
+#: core/libs/tags/manager/tagsmanager_p.cpp:146
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:89
+#: core/libs/tags/manager/tagpropwidget.cpp:90
 #, kde-format
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:98
+#: core/libs/tags/manager/tagpropwidget.cpp:99
 #: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:103
+#: core/libs/tags/manager/tagpropwidget.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:116
+#: core/libs/tags/manager/tagpropwidget.cpp:117
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:125
+#: core/libs/tags/manager/tagpropwidget.cpp:126
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:138
+#: core/libs/tags/manager/tagpropwidget.cpp:139
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:161
+#: core/libs/tags/manager/tagpropwidget.cpp:162
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:162
+#: core/libs/tags/manager/tagpropwidget.cpp:163
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:167
+#: core/libs/tags/manager/tagpropwidget.cpp:168
 #, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:168
+#: core/libs/tags/manager/tagpropwidget.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Discard"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:235
+#: core/libs/tags/manager/tagpropwidget.cpp:236
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:183
-#, kde-format
-msgctxt "@title:window"
-msgid "Tags Manager"
-msgstr ""
-
-#: core/libs/tags/manager/tagsmanager.cpp:343
+#: core/libs/tags/manager/tagsmanager_actions.cpp:139
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -37382,7 +37364,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:366
+#: core/libs/tags/manager/tagsmanager_actions.cpp:162
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -37391,7 +37373,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:376
+#: core/libs/tags/manager/tagsmanager_actions.cpp:172
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -37399,7 +37381,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:382
+#: core/libs/tags/manager/tagsmanager_actions.cpp:178
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -37407,7 +37389,18 @@ msgid_plural "Delete tags"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:504
+#: core/libs/tags/manager/tagsmanager_gui.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Tags Manager"
+msgstr ""
+
+#: core/libs/tags/manager/tagsmanager_gui.cpp:37
+#, kde-format
+msgid "Search for tags..."
+msgstr ""
+
+#: core/libs/tags/manager/tagsmanager_io.cpp:26
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database."
@@ -37415,15 +37408,15 @@ msgid ""
 "Read Tags from Image).<br> Do you want to continue?</qt>"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:516
-#: core/libs/tags/manager/tagsmanager.cpp:535
+#: core/libs/tags/manager/tagsmanager_io.cpp:38
+#: core/libs/tags/manager/tagsmanager_io.cpp:57
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:555
+#: core/libs/tags/manager/tagsmanager_io.cpp:77
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -37431,185 +37424,185 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:621
+#: core/libs/tags/manager/tagsmanager_io.cpp:143
 #, kde-format
 msgid "Select a base tag from which the tags should be exported."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:631
+#: core/libs/tags/manager/tagsmanager_io.cpp:153
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:639
+#: core/libs/tags/manager/tagsmanager_io.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:640
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager_io.cpp:162
+#: core/libs/tags/manager/tagsmanager_io.cpp:280
 #, kde-format
 msgid "Text File (*.txt)"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagsmanager_io.cpp:260
 #, kde-format
 msgid "Select a tag into which the tags should be imported."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:748
+#: core/libs/tags/manager/tagsmanager_io.cpp:270
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:757
+#: core/libs/tags/manager/tagsmanager_io.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:856
+#: core/libs/tags/manager/tagsmanager_io.cpp:378
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:943
+#: core/libs/tags/manager/tagsmanager_p.cpp:87
 #, kde-format
 msgctxt "@action: button"
 msgid "Add Tag"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:949
+#: core/libs/tags/manager/tagsmanager_p.cpp:93
 #, kde-format
 msgctxt "@action: button"
 msgid "Remove Tag"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:954
+#: core/libs/tags/manager/tagsmanager_p.cpp:98
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:958
+#: core/libs/tags/manager/tagsmanager_p.cpp:102
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:987
+#: core/libs/tags/manager/tagsmanager_p.cpp:131
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1007
+#: core/libs/tags/manager/tagsmanager_p.cpp:151
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1010
+#: core/libs/tags/manager/tagsmanager_p.cpp:154
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1014
+#: core/libs/tags/manager/tagsmanager_p.cpp:158
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1016
+#: core/libs/tags/manager/tagsmanager_p.cpp:160
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1019
+#: core/libs/tags/manager/tagsmanager_p.cpp:163
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1021
+#: core/libs/tags/manager/tagsmanager_p.cpp:165
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1024
+#: core/libs/tags/manager/tagsmanager_p.cpp:168
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1026
+#: core/libs/tags/manager/tagsmanager_p.cpp:170
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1028
+#: core/libs/tags/manager/tagsmanager_p.cpp:172
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1030
+#: core/libs/tags/manager/tagsmanager_p.cpp:174
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1074
+#: core/libs/tags/manager/tagsmanager_p.cpp:218
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1077
+#: core/libs/tags/manager/tagsmanager_p.cpp:221
 #, kde-format
 msgid "Read Tags from Image"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1080
+#: core/libs/tags/manager/tagsmanager_p.cpp:224
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1083
+#: core/libs/tags/manager/tagsmanager_p.cpp:227
 #, kde-format
 msgid "Export tags to a file from selected tag"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1086
+#: core/libs/tags/manager/tagsmanager_p.cpp:230
 #, kde-format
 msgid "Import tags from a file to selected tag"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1088
+#: core/libs/tags/manager/tagsmanager_p.cpp:232
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1090
+#: core/libs/tags/manager/tagsmanager_p.cpp:234
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1093
+#: core/libs/tags/manager/tagsmanager_p.cpp:237
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1096
+#: core/libs/tags/manager/tagsmanager_p.cpp:240
 #, kde-format
 msgid "Export all tags to a file to keep a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1098
+#: core/libs/tags/manager/tagsmanager_p.cpp:242
 #, kde-format
 msgid "Import all tags from a file to restore a backup."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:1127
+#: core/libs/tags/manager/tagsmanager_p.cpp:271
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -46066,13 +46059,13 @@ msgctxt "@action"
 msgid "Clear List"
 msgstr ""
 
-#: core/libs/widgets/text/searchtextbar.cpp:75
+#: core/libs/widgets/text/searchtextbar.cpp:77
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Search..."
 msgstr ""
 
-#: core/libs/widgets/text/searchtextbar.cpp:258
+#: core/libs/widgets/text/searchtextbar.cpp:260
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Case sensitive"
@@ -46609,13 +46602,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:204
+#: core/showfoto/main/main.cpp:206
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:222
+#: core/showfoto/main/main.cpp:224
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
@@ -48623,7 +48616,7 @@ msgid "Tilt"
 msgstr "E-boasta"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:63
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:679
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:683
 #, kde-format
 msgid "Accuracy"
 msgstr ""
@@ -49726,7 +49719,7 @@ msgid ""
 "will displays the best matches in thumbnail view."
 msgstr ""
 
-#: core/utilities/fuzzysearch/sketchwidget.cpp:621
+#: core/utilities/fuzzysearch/sketchwidget.cpp:631
 #, kde-format
 msgid ""
 "Draw a sketch here\n"
@@ -53698,64 +53691,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:480
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:484
 #, kde-format
 msgid "Not available"
 msgstr "Ii olamuttus"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:519
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:523
 #, kde-format
 msgid "DOP: %1"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:524
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:528
 #, kde-format
 msgid "Fix: %1d"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:529
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:533
 #, kde-format
 msgid "#Sat: %1"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:582
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:586
 #, kde-format
 msgid "%1d"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:610
 #, kde-format
 msgid "Modified"
 msgstr "Rievdaduvvon"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:675
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:679
 #, kde-format
 msgid "Date and time"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:928
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:932
 #, kde-format
 msgid "Failed to open file."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1000
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1004
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1012
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1016
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1047
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1055
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1078
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1051
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1059
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1082
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1090
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1094
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr ""
@@ -55641,25 +55634,16 @@ msgstr ""
 #: core/utilities/import/backend/gpcamera.cpp:1616
 #, kde-format
 msgctxt "@info List of device properties"
-msgid ""
-"Title: \"%1\"\n"
-"Model: \"%2\"\n"
-"Port: \"%3\"\n"
-"Path: \"%4\"\n"
-"\n"
+msgid "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br><br>"
 msgstr ""
 
 #: core/utilities/import/backend/gpcamera.cpp:1623
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
-"Thumbnails: \"%1\"\n"
-"Capture image: \"%2\"\n"
-"Delete items: \"%3\"\n"
-"Upload items: \"%4\"\n"
-"Create directories: \"%5\"\n"
-"Delete Directories: \"%6\"\n"
-"\n"
+"Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
+"\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
+"Directories: \"%6\"<br><br>"
 msgstr ""
 
 #: core/utilities/import/backend/gpcamera.cpp:1629
@@ -55689,33 +55673,24 @@ msgstr ""
 msgctxt "@info"
 msgid ""
 "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
-"disk card readers.\n"
-"\n"
+"disk card readers.<br><br>"
 msgstr ""
 
 #: core/utilities/import/backend/umscamera.cpp:573
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
-"Title: \"%1\"\n"
-"Model: \"%2\"\n"
-"Port: \"%3\"\n"
-"Path: \"%4\"\n"
-"UUID: \"%5\"\n"
-"\n"
+"Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br>UUID: "
+"\"%5\"<br><br>"
 msgstr ""
 
 #: core/utilities/import/backend/umscamera.cpp:581
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
-"Thumbnails: \"%1\"\n"
-"Capture image: \"%2\"\n"
-"Delete items: \"%3\"\n"
-"Upload items: \"%4\"\n"
-"Create directories: \"%5\"\n"
-"Delete directories: \"%6\"\n"
-"\n"
+"Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
+"\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
+"directories: \"%6\"<br><br>"
 msgstr ""
 
 #: core/utilities/import/backend/umscamera.cpp:587
@@ -55753,14 +55728,9 @@ msgstr ""
 msgctxt "@info"
 msgid ""
 "The \"Mounted Camera\" driver is a simple interface to a camera disk mounted "
-"locally on your system.\n"
-"\n"
-"It does not use libgphoto2 drivers.\n"
-"\n"
-"To report any problems with this driver, please contact the digiKam team "
-"at:\n"
-"\n"
-"https://www.digikam.org/?q=contact"
+"locally on your system.<br><br>It does not use libgphoto2 drivers.<br><br>To "
+"report any problems with this driver, please contact the digiKam team at:"
+"<br><br>https://www.digikam.org/support/contact/"
 msgstr ""
 
 #: core/utilities/import/dialogs/camerafolderdialog.cpp:62
@@ -60664,50 +60634,66 @@ msgstr ""
 msgid "Your collection will use this category:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:140
+#: core/utilities/setup/downloader/filesdownloader.cpp:141
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:156
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #: core/utilities/setup/misc/systemsettingswidget.cpp:138
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:165
+#: core/utilities/setup/downloader/filesdownloader.cpp:163
+#, kde-format
+msgid "Location of the face management model files:"
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#, kde-format
+msgctxt "@title:window"
+msgid "Face Management Model Target"
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:172
+#, kde-format
+msgid "Sets the target address to download the face management model files to."
+msgstr ""
+
+#: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, kde-format
 msgid "Use AI Auto-Tools features"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:166
+#: core/utilities/setup/downloader/filesdownloader.cpp:175
 #, kde-format
 msgid "Use Face Management feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:167
+#: core/utilities/setup/downloader/filesdownloader.cpp:176
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:168
+#: core/utilities/setup/downloader/filesdownloader.cpp:177
 #, kde-format
 msgid "Use AutoTags Assignment feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:258
+#: core/utilities/setup/downloader/filesdownloader.cpp:285
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:267
+#: core/utilities/setup/downloader/filesdownloader.cpp:294
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:268
+#: core/utilities/setup/downloader/filesdownloader.cpp:295
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -60719,33 +60705,33 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:276
+#: core/utilities/setup/downloader/filesdownloader.cpp:303
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:414
+#: core/utilities/setup/downloader/filesdownloader.cpp:441
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:438
+#: core/utilities/setup/downloader/filesdownloader.cpp:465
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:445
+#: core/utilities/setup/downloader/filesdownloader.cpp:472
 #, kde-format
 msgid "File open error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:460
+#: core/utilities/setup/downloader/filesdownloader.cpp:487
 #, kde-format
 msgid "File on the server is too large."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:544
+#: core/utilities/setup/downloader/filesdownloader.cpp:598
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -60755,30 +60741,28 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:550
+#: core/utilities/setup/downloader/filesdownloader.cpp:603
 #, kde-format
-msgctxt "%1: folder path"
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
 "necessary model files. If you close this dialog you will be prompted again "
 "the next time you launch digiKam. The selected features will not function "
-"without these files.</p><p>The files will be downloaded to \"<i>%1</i>\".</"
-"p><p><b>You must restart digiKam after successfully downloading the files.</"
-"b></p>"
+"without these files.</p><p><b>You must restart digiKam after successfully "
+"downloading the files.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:558
+#: core/utilities/setup/downloader/filesdownloader.cpp:610
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:566
+#: core/utilities/setup/downloader/filesdownloader.cpp:630
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:586
+#: core/utilities/setup/downloader/filesdownloader.cpp:647
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""
