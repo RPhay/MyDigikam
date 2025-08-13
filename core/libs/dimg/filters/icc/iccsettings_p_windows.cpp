@@ -60,7 +60,11 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
         return false;
     }
 
-    // Get the screen color profile
+    /**
+     * Get the screen color profile.
+     * Unlike Linux/X11, under Windows only the system path to the profile file can be handled,
+     * not the binary data already loaded in the memory.
+     */
 
     WCHAR profilePath[MAX_PATH];
 
