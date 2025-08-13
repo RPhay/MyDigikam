@@ -100,7 +100,8 @@ IccProfile IccSettings::Private::profileFromDesktop(QWidget* const widget)
 
     // Unsupported platform
 
-    qCWarning(DIGIKAM_DIMG_LOG) << "The Screen color profile platform is not supported!";
+    qCWarning(DIGIKAM_DIMG_LOG) << "The color management from this screen platform is not supported:"
+                                << qApp->platformName();
 
     return IccProfile();
 

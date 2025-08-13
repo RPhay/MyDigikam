@@ -61,7 +61,7 @@ bool IccSettings::Private::profileFromX11(QScreen* const screen,
 
     if ((qApp->platformName() == QLatin1String("wayland")) || !QX11Info::isPlatformX11())
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Desktop platform is not X11";
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM X11: desktop platform is not X11";
 
         return false;
     }
@@ -104,21 +104,21 @@ bool IccSettings::Private::profileFromX11(QScreen* const screen,
                 profile = IccProfile(bytes);
             }
 
-            qCDebug(DIGIKAM_DIMG_LOG) << "Found X.org XICC monitor profile for screen" << screenNumber
+            qCDebug(DIGIKAM_DIMG_LOG) << "ICM X11: found monitor profile for screen" << screenNumber
                                       << ":" << profile.description();
 
             return true;
         }
         else
         {
-            qCDebug(DIGIKAM_DIMG_LOG) << "No X.org XICC monitor profile installed for screen " << screenNumber;
+            qCDebug(DIGIKAM_DIMG_LOG) << "ICM X11: no monitor profile installed for screen " << screenNumber;
 
             return true;
         }
     }
     else
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get X.org XICC monitor profile for screen " << screenNumber;
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM X11: cannot get monitor profile for screen " << screenNumber;
     }
 
     return false;

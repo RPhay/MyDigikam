@@ -35,14 +35,14 @@ bool IccSettings::Private::profileFromMacos(QScreen* const screen,
 
     if (error != CGDisplayNoErr)
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the number of screens";
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM macOS: cannot get the number of screens";
 
         return false;
     }
 
     if (screenNumber >= (int)displayCount)
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Screen number is out of range";
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM macOS: screen number is out of range";
 
         return false;
     }
@@ -54,7 +54,7 @@ bool IccSettings::Private::profileFromMacos(QScreen* const screen,
 
     if (error != CGDisplayNoErr)
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the list of screens";
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM macOS: cannot get the list of screens";
 
         return false;
     }
@@ -66,7 +66,7 @@ bool IccSettings::Private::profileFromMacos(QScreen* const screen,
 
     if (!csprof)
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the monitor color profile handle" << screenNumber;
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM macOS: cannot get the monitor color profile handle" << screenNumber;
 
         return false;
     }
@@ -77,7 +77,7 @@ bool IccSettings::Private::profileFromMacos(QScreen* const screen,
 
     if (!profileData)
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the monitor color profile binary data" << screenNumber;
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM macOS: cannot get the monitor color profile binary data" << screenNumber;
         CFRelease(csprof);
 
         return false;
@@ -96,6 +96,9 @@ bool IccSettings::Private::profileFromMacos(QScreen* const screen,
     if (!profileBytes.isEmpty())
     {
         profile = IccProfile(profileBytes);
+
+        qCDebug(DIGIKAM_DIMG_LOG) << "ICM macOS: found monitor profile for screen" << screenNumber
+                                  << ":" << profile.description();
     }
 
     // Free memory

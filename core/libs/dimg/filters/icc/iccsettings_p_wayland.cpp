@@ -31,7 +31,7 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
 
     if (!bus.isConnected())
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Cannot open a connexion to D-Bus system.";
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM Wayland: cannot open a connexion to D-Bus system.";
 
         return false;
     }
@@ -48,7 +48,7 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
 
     if (!colordInterface.isValid())
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Cannot dial with the colord service:" << bus.lastError().message();
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM Wayland: cannot dial with the colord service:" << bus.lastError().message();
 
         return false;
     }
@@ -59,7 +59,7 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
 
     if (!devicesReply.isValid())
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Error while to get the screens list:" << devicesReply.error().message();
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM Wayland: error while to get the screens list:" << devicesReply.error().message();
 
         return false;
     }
@@ -68,7 +68,7 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
 
     if ((screenNumber < 0) || (screenNumber >= devicesReply.value().size()))
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Invalid screen number:" << screenNumber;
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM Wayland: invalid screen number:" << screenNumber;
 
         return false;
     }
@@ -87,7 +87,7 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
 
     if (!deviceInterface.isValid())
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Device interface invalid:" << devicePath.path();
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM Wayland: device interface invalid:" << devicePath.path();
 
         return false;
     }
@@ -98,7 +98,7 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
 
     if (!kindVariant.isValid() || (kindVariant.toString() != QLatin1String("display")))
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "The device is not a screen:" << devicePath.path();
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM Wayland: the device is not a screen:" << devicePath.path();
 
         return false;
     }
@@ -109,7 +109,7 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
 
     if (!profilePathReply.isValid())
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Cannot get the profil data for" << devicePath.path();
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM Wayland: cannot get the profil data for" << devicePath.path();
 
         return false;
     }
@@ -124,7 +124,7 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
 
     if (!profileInterface.isValid())
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Invalid interface for the profil:" << profilePathReply.value().path();
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM Wayland: invalid interface for the profil:" << profilePathReply.value().path();
 
         return false;
     }
@@ -135,7 +135,7 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
 
     if (!iccDataReply.isValid())
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Cannot get the profile" << profilePathReply.value().path();
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM Wayland: cannot get the profile" << profilePathReply.value().path();
 
         return false;
     }
@@ -143,6 +143,9 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
     if (!iccDataReply.value().isEmpty())
     {
         profile = IccProfile(iccDataReply.value());
+
+        qCDebug(DIGIKAM_DIMG_LOG) << "ICM Wayland: found monitor profile for screen" << screenNumber
+                                  << ":" << profile.description();
     }
 
     return true;

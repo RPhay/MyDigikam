@@ -46,7 +46,7 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
 
     if (!GetMonitorInfo(hMonitor, &monitorInfo))
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen information";
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM Windows: cannot get the screen information";
 
         return false;
     }
@@ -55,7 +55,7 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
 
     if (hdcScreen == NULL)
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen handle";
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM Windows: cannot get the screen handle";
 
         return false;
     }
@@ -80,13 +80,13 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
                                   )
        )
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen profile path";
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM Windows: cannot get the screen profile path";
         ReleaseDC(NULL, hdcScreen);
 
         return false;
     }
 
-    qCDebug(DIGIKAM_DIMG_LOG) << "Screen profile path:" << QString::fromWCharArray(profilePath);
+    qCDebug(DIGIKAM_DIMG_LOG) << "ICM Windows: screen profile path:" << QString::fromWCharArray(profilePath);
 
     // Read the color profile file on disk.
 
@@ -94,7 +94,7 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
 
     if (!profileFile.open(QIODevice::ReadOnly))
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot open the screen profile file";
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM Windows: cannot open the screen profile file";
         ReleaseDC(NULL, hdcScreen);
 
         return false;
@@ -106,9 +106,10 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
     if (!profileData.isEmpty())
     {
         profile = IccProfile(profileData);
-    }
 
-    qCDebug(DIGIKAM_DIMG_LOG) << "Found Windows monitor profile " << profile.description();
+        qCDebug(DIGIKAM_DIMG_LOG) << "ICM Windows: found monitor profile for screen" << screenNumber
+                                  << ":" << profile.description();
+    }
 
     // Free the memory
 
