@@ -1,0 +1,127 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2009-08-09
+ * Description : central place for ICC settings
+ *
+ * SPDX-FileCopyrightText: 2005-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * ============================================================ */
+
+#include "iccsettings_p.h"
+
+#ifdef Q_OS_WIN
+#   include <Windows.h>
+#   include <WcsPlugin.h>
+#   include <winuser.h>
+#   include <ICM.h>
+#   include <Wingdi.h>
+#endif
+
+namespace Digikam
+{
+
+bool IccSettings::Private::profileFromWindows(QScreen* const screen,
+                                              int screenNumber,
+                                              IccProfile& profile)
+{
+
+#ifdef Q_OS_WIN
+
+    Q_UNUSED(screen);
+
+    // Get the handle for the wanted screen device.
+
+    POINT pt;
+    pt.x = screenNumber * GetSystemMetrics(SM_CXSCREEN);
+    pt.y = 0;
+    HMONITOR hMonitor = MonitorFromPoint(pt, MONITOR_DEFAULTTONEAREST);
+
+    MONITORINFOEX monitorInfo;
+    monitorInfo.cbSize = sizeof(MONITORINFOEX);
+
+    if (!GetMonitorInfo(hMonitor, &monitorInfo))
+    {
+        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen information";
+
+        return false;
+    }
+
+    HDC hdcScreen      = CreateDC(NULL, monitorInfo.szDevice, NULL, NULL);
+
+    if (hdcScreen == NULL)
+    {
+        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen handle";
+
+        return false;
+    }
+
+    // Get the screen color profile
+
+    WCHAR profilePath[MAX_PATH];
+
+    if (
+        !WcsGetDefaultColorProfile(
+                                   WCS_PROFILE_MANAGEMENT_SCOPE_CURRENT_USER,
+                                   NULL,
+                                   CPT_ICC,
+                                   CPST_RGB_WORKING_SPACE,
+                                   0,
+                                   MAX_PATH * sizeof(WCHAR),
+                                   profilePath
+                                  )
+       )
+    {
+        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the screen profile path";
+        ReleaseDC(NULL, hdcScreen);
+
+        return false;
+    }
+
+    qCDebug(DIGIKAM_DIMG_LOG) << "Screen profile path:" << QString::fromWCharArray(profilePath);
+
+    // Read the color profile file on disk.
+
+    QFile profileFile(QString::fromWCharArray(profilePath));
+
+    if (!profileFile.open(QIODevice::ReadOnly))
+    {
+        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot open the screen profile file";
+        ReleaseDC(NULL, hdcScreen);
+
+        return false;
+    }
+
+    QByteArray profileData = profileFile.readAll();
+    profileFile.close();
+
+    if (!profileData.isEmpty())
+    {
+        profile = IccProfile(profileData);
+    }
+
+    qCDebug(DIGIKAM_DIMG_LOG) << "Found Windows monitor profile " << profile.description();
+
+    // Free the memory
+
+    ReleaseDC(NULL, hdcScreen);
+
+    return true;
+
+#else
+
+    Q_UNUSED(screen);
+    Q_UNUSED(screenNumber);
+    Q_UNUSED(profile);
+
+    return false;
+
+#endif
+
+}
+
+} // namespace Digikam

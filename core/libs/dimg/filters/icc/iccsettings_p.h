@@ -60,7 +60,10 @@ public:
     /**
      * @return the desktop profile used to render the @param widget on screen.
      */
-    IccProfile           profileFromWindowSystem(QWidget* const widget);
+    IccProfile           profileFromDesktop(QWidget* const widget);
+
+    bool                 profileFromX11(QScreen* const screen, int screenNumber, IccProfile& profile);
+    bool                 profileFromWindows(QScreen* const screen, int screenNumber, IccProfile& profile);
 
     /**
      * Methods to manage the configuration file.

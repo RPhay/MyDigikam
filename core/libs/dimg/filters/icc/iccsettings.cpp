@@ -61,7 +61,7 @@ IccProfile IccSettings::monitorProfile(QWidget* const widget)
 {
     // system-wide profile set?
 
-    IccProfile profile = d->profileFromWindowSystem(widget);
+    IccProfile profile = d->profileFromDesktop(widget);
 
     if (!profile.isNull())
     {
@@ -102,7 +102,7 @@ bool IccSettings::monitorProfileFromSystem() const
 
     for (QWidget* const widget : std::as_const(topLevels))
     {
-        if (!d->profileFromWindowSystem(widget).isNull())
+        if (!d->profileFromDesktop(widget).isNull())
         {
             return true;
         }
