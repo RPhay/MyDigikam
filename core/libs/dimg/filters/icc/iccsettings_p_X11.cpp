@@ -61,7 +61,7 @@ bool IccSettings::Private::profileFromX11(QScreen* const screen,
 
     if ((qApp->platformName() == QLatin1String("wayland")) || !QX11Info::isPlatformX11())
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Desktop platform is not X11";
+        qCWarning(DIGIKAM_DIMG_LOG) << "Desktop platform is not X11";
 
         /**
          * @todo Add Wayland support.
