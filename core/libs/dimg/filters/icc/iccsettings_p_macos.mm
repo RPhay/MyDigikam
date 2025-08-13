@@ -62,7 +62,7 @@ bool IccSettings::Private::profileFromMacos(QScreen* const screen,
     // Screens profile extraction.
 
     CGDirectDisplayID displayID = displayIDs[screenNumber];
-    ColorSyncProfileRef csprof  = CGDisplayCopyColorSyncProfile(displayID);
+    ColorSyncProfileRef csprof  = CGColorSpaceCopyICCProfile(displayID);
 
     if (!csprof)
     {
