@@ -294,7 +294,9 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
 
 #ifdef Q_OS_WIN
 
+    QFileInfo info(path);
     QString dopusPath = findExecutable(QLatin1String("DOpus"));
+    QString winPath   = QDir::toNativeSeparators(info.absoluteFilePath());
 
     if (!dopusPath.isEmpty())
     {
@@ -309,7 +311,7 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
                 QProcess process;
                 process.setProgram(dopusrt.filePath());
                 process.setNativeArguments(QString::fromUtf8("/CMD Go \"%1\"")
-                                           .arg(QDir::toNativeSeparators(path)));
+                                           .arg(winPath));
 
                 if (process.startDetached())
                 {
@@ -319,26 +321,19 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
         }
     }
 
-    QStringList args;
-    QFileInfo info(path);
+    QString arg;
 
     if (info.isFile())
     {
-        args << QLatin1String("/select,");
+        arg = QString::fromUtf8("/select, \"%1\"").arg(winPath);
     }
-
-    QString winPath = QDir::toNativeSeparators(info.absoluteFilePath());
-
-    if (!winPath.contains(QLatin1Char(' ')))
+    else
     {
-        winPath.prepend(QLatin1Char('"'));
-        winPath.append(QLatin1Char('"'));
+        arg = QString::fromUtf8("\"%1\"").arg(winPath);
     }
-
-    args << winPath;
 
     QProcess process;
-    process.setArguments(args);
+    process.setNativeArguments(arg);
     process.setProgram(QLatin1String("explorer.exe"));
 
     if (process.startDetached())
