@@ -21,7 +21,10 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
                                               int screenNumber,
                                               IccProfile& profile)
 {
-/*
+    Q_UNUSED(screen);
+
+#ifdef HAVE_DBUS
+
     // Connecting to D-Bus system.
 
     QDBusConnection bus = QDBusConnection::systemBus();
@@ -30,16 +33,16 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Cannot open a connexion to D-Bus system.";
 
-        return QByteArray();
+        return false;
     }
 
     // D-Bus colord interface.
 
     QDBusInterface colordInterface
     (
-        "org.freedesktop.ColorManager",
-        "/org/freedesktop/ColorManager",
-        "org.freedesktop.ColorManager",
+        QLatin1String("org.freedesktop.ColorManager"),
+        QLatin1String("/org/freedesktop/ColorManager"),
+        QLatin1String("org.freedesktop.ColorManager"),
         bus
     );
 
@@ -47,18 +50,18 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Cannot dial with the colord service:" << bus.lastError().message();
 
-        return QByteArray();
+        return false;
     }
 
     // Get the screens list
 
-    QDBusReply<QList<QDBusObjectPath>> devicesReply = colordInterface.call("GetDevices");
+    QDBusReply<QList<QDBusObjectPath>> devicesReply = colordInterface.call(QLatin1String("GetDevices"));
 
     if (!devicesReply.isValid())
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Error while to get the screens list:" << devicesReply.error().message();
 
-        return QByteArray();
+        return false;
     }
 
     // Check if the screen number is valid.
@@ -67,7 +70,7 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Invalid screen number:" << screenNumber;
 
-        return QByteArray();
+        return false;
     }
 
     // Get the device corresponding to the screen number.
@@ -76,44 +79,46 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
 
     QDBusInterface deviceInterface
     (
-        "org.freedesktop.ColorManager",
+        QLatin1String("org.freedesktop.ColorManager"),
         devicePath.path(),
-        "org.freedesktop.ColorManager.Device",
+        QLatin1String("org.freedesktop.ColorManager.Device"),
         bus
     );
 
     if (!deviceInterface.isValid())
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Device interface invalid:" << devicePath.path();
-        return QByteArray();
+
+        return false;
     }
 
     // Check if the device is a monitor.
 
-    QDBusReply<QString> kindReply = deviceInterface.property("Kind");
+    QVariant kindVariant = deviceInterface.property("Kind");
 
-    if (!kindReply.isValid() || kindReply.value() != "display")
+    if (!kindVariant.isValid() || (kindVariant.toString() != QLatin1String("display")))
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "The device is not a screen:" << devicePath.path();
-        return QByteArray();
+
+        return false;
     }
 
     // Get the default profile.
 
-    QDBusReply<QDBusObjectPath> profilePathReply = deviceInterface.call("GetProfile");
+    QDBusReply<QDBusObjectPath> profilePathReply = deviceInterface.call(QLatin1String("GetProfile"));
 
     if (!profilePathReply.isValid())
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Cannot get the profil data for" << devicePath.path();
 
-        return QByteArray();
+        return false;
     }
 
     QDBusInterface profileInterface
     (
-        "org.freedesktop.ColorManager",
+        QLatin1String("org.freedesktop.ColorManager"),
         profilePathReply.value().path(),
-        "org.freedesktop.ColorManager.Profile",
+        QLatin1String("org.freedesktop.ColorManager.Profile"),
         bus
     );
 
@@ -121,22 +126,37 @@ bool IccSettings::Private::profileFromWayland(QScreen* const screen,
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Invalid interface for the profil:" << profilePathReply.value().path();
 
-        return QByteArray();
+        return false;
     }
 
     // Get the profile data.
 
-    QDBusReply<QByteArray> iccDataReply = profileInterface.call("GetData");
+    QDBusReply<QByteArray> iccDataReply = profileInterface.call(QLatin1String("GetData"));
 
     if (!iccDataReply.isValid())
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Cannot get the profile" << profilePathReply.value().path();
 
-        return QByteArray();
+        return false;
     }
 
-    return iccDataReply.value();
-*/
+    if (!iccDataReply.value().isEmpty())
+    {
+        profile = IccProfile(iccDataReply.value());
+    }
+
+    return true;
+
+#else
+
+    Q_UNUSED(screen);
+    Q_UNUSED(screenNumber);
+    Q_UNUSED(profile);
+
+    return false;
+
+#endif
+
 }
 
 } // namespace Digikam

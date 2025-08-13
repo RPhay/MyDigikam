@@ -63,10 +63,6 @@ bool IccSettings::Private::profileFromX11(QScreen* const screen,
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Desktop platform is not X11";
 
-        /**
-         * @todo Add Wayland support.
-         */
-
         return false;
     }
 

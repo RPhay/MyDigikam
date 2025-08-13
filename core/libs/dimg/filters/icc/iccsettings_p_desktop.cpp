@@ -62,12 +62,25 @@ IccProfile IccSettings::Private::profileFromDesktop(QWidget* const widget)
         }
     }
 
-#ifdef HAVE_X11
+#ifdef Q_OS_UNIX
+
+#   ifdef HAVE_X11
 
     if (!profileFromX11(screen, screenNumber, profile))
     {
         return IccProfile();
     }
+
+#   endif
+
+#   ifdef HAVE_DBUS
+
+    if (!profileFromWayland(screen, screenNumber, profile))
+    {
+        return IccProfile();
+    }
+
+#   endif
 
 #elif defined Q_OS_WIN
 

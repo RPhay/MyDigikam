@@ -31,6 +31,12 @@
 #include <QMutex>
 #include <QMutexLocker>
 
+#ifdef HAVE_DBUS
+#   include <QDBusConnection>
+#   include <QDBusConnectionInterface>
+#   include <QDBusInterface>
+#endif
+
 // KDE includes
 
 #include <kconfiggroup.h>
@@ -62,6 +68,7 @@ public:
      */
     IccProfile           profileFromDesktop(QWidget* const widget);
 
+    bool                 profileFromWayland(QScreen* const screen, int screenNumber, IccProfile& profile);
     bool                 profileFromX11(QScreen* const screen, int screenNumber, IccProfile& profile);
     bool                 profileFromWindows(QScreen* const screen, int screenNumber, IccProfile& profile);
 

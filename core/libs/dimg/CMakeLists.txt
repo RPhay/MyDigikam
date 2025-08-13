@@ -100,6 +100,7 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings_p_desktop.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings_p_X11.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings_p_Wayland.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings_p_windows.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettingscontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/digikam-lcms.cpp
@@ -224,6 +225,12 @@ endif()
 if(X11_FOUND)
 
     include_directories(${Qt${QT_VERSION_MAJOR}Gui_PRIVATE_INCLUDE_DIRS})
+
+endif()
+
+if(ENABLE_DBUS)
+
+    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 
 endif()
 
