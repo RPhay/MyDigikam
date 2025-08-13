@@ -40,7 +40,7 @@ bool IccSettings::Private::profileFromMacos(QScreen* const screen,
         return false;
     }
 
-    if (screenNumber >= displayCount)
+    if (screenNumber >= (int)displayCount)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Screen number is out of range";
 
@@ -62,18 +62,18 @@ bool IccSettings::Private::profileFromMacos(QScreen* const screen,
     // Screens profile extraction.
 
     CGDirectDisplayID displayID = displayIDs[screenNumber];
-    ColorSyncProfileRef csprof  = CGColorSpaceCopyICCProfile(displayID);
+    CGColorSpaceRef csprof      = CGDisplayCopyColorSpace(displayID);
 
     if (!csprof)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get the monitor color profile handle" << screenNumber;
 
-        continue;
+        return false;
     }
 
     // Get the monitor color profile binary data.
 
-    CFDataRef profileData = ColorSyncProfileGetData(csprof);
+    CFDataRef profileData = CGColorSpaceCopyICCData(csprof);
 
     if (!profileData)
     {
