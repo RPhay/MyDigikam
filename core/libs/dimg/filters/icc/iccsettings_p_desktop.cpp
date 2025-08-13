@@ -78,7 +78,7 @@ IccProfile IccSettings::Private::profileFromDesktop(QWidget* const widget)
 
 #elif defined Q_OS_DARWIN
 
-    if (!profileFromMAcos(screen, screenNumber, profile))
+    if (!profileFromMacos(screen, screenNumber, profile))
     {
         return IccProfile();
     }
