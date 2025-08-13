@@ -65,6 +65,12 @@ public:
     bool                 profileFromX11(QScreen* const screen, int screenNumber, IccProfile& profile);
     bool                 profileFromWindows(QScreen* const screen, int screenNumber, IccProfile& profile);
 
+#ifdef Q_OS_DARWIN
+
+    bool                 profileFromMacos(QScreen* const screen, int screenNumber, IccProfile& profile);
+
+#endif
+
     /**
      * Methods to manage the configuration file.
      */

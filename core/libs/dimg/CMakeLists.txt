@@ -142,6 +142,13 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/redeye/redeyecorrectioncontainer.cpp
 )
 
+if(APPLE)
+    set(libdimgfilters_SRCS
+        ${libdimgfilters_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings_p_macos.mm
+    )
+endif()
+
 if(GLIB2_FOUND)
 
     set(libdimgfilters_SRCS

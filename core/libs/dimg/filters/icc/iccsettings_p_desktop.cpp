@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2009-08-09
- * Description : central place for ICC settings
+ * Description : route to the right wrapper to capture the monitor profile from the desktop.
  *
  * SPDX-FileCopyrightText: 2005-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -76,11 +76,12 @@ IccProfile IccSettings::Private::profileFromDesktop(QWidget* const widget)
         return IccProfile();
     }
 
-#elif defined Q_OS_MACOS
+#elif defined Q_OS_DARWIN
 
-    // TODO
-
-    return IccProfile();
+    if (!profileFromMAcos(screen, screenNumber, profile))
+    {
+        return IccProfile();
+    }
 
 #else
 

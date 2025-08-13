@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2009-08-09
- * Description : central place for ICC settings
+ * Description : wrapper to capture the monitor profile under Windows.
  *
  * SPDX-FileCopyrightText: 2005-2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2009-08-09
- * Description : central place for ICC settings
+ * Description : wrapper to capture the monitor profile under Linux/X11.
  *
  * SPDX-FileCopyrightText: 2000      by Matthias Elter <elter at kde dot org>
  * SPDX-FileCopyrightText: 2001      by John Califf <jcaliff at compuzone dot net>
