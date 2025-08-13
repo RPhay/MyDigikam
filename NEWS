@@ -14,6 +14,7 @@ Plugins:         G'MIC-Qt updated to last v3.6.0.
 TagsManager:     Add options to import or export tag-hierarchies to text files.
                  Controlled Vocabulary Keyword Catalogue format is supported (https://www.controlledvocabulary.com/products/index.html).
 Preview:         Add support to the FujiFilm camera focus points.
+ColorManagement: Use monitor color profile set under Windows, macOS, and Wayland.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -75,7 +76,7 @@ BUGFIXES:
 055 ==> 508076 - No abort button while exporting to filesystem.
 056 ==> 508123 - digiKam crashes on startup with remote Mariadb or Mysql database.
 057 ==> 508060 - When adding a new collection, tags are not associated with images when using sidecars file and tags hierarchy.
-058 ==> 
+058 ==> 436526 - Use native Color Management settings from Windows and MacOS.
 059 ==> 
 060 ==> 
 061 ==> 
