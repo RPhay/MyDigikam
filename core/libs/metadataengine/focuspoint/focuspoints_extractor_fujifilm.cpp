@@ -23,8 +23,6 @@
 namespace Digikam
 {
 
-const float RATIO_POINT_IMAGE = 1.0F / 12.0F; // this is a guess
-
 // Internal function to create af point from meta data
 namespace FujifilmInternal
 {
@@ -34,12 +32,14 @@ FocusPoint create_af_point(float imageWidth,
                            float af_x_position,
                            float af_y_position)
 {
-    float minSize = qMin(imageWidth, imageHeight);
+    float maxSize       = imageWidth + imageHeight;
+    float af_point_size = maxSize * 5.5F / 100.0F;
+
 
     return FocusPoint(af_x_position / imageWidth,
                       af_y_position / imageHeight,
-                      minSize * RATIO_POINT_IMAGE / imageWidth,
-                      minSize * RATIO_POINT_IMAGE / imageHeight,
+                      af_point_size / imageWidth,
+                      af_point_size / imageHeight,
                       FocusPoint::TypePoint::SelectedInFocus);
 }
 
