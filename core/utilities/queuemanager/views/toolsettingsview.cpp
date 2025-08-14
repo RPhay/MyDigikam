@@ -31,6 +31,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dlayoutbox.h"
 #include "thememanager.h"
 #include "batchtoolsfactory.h"
@@ -182,14 +183,7 @@ void ToolSettingsView::slotAboutPlugin()
         if (d->tool->plugin())
         {
             QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(dynamic_cast<DPlugin*>(d->tool->plugin()));
-
-            QEventLoop loop;
-
-            connect(dlg, &QDialog::finished,
-                    &loop, &QEventLoop::quit);
-
-            dlg->show();
-            loop.exec();
+            dialogExec(dlg);
 
             delete dlg;
         }

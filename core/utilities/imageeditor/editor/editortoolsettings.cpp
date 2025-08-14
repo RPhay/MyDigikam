@@ -39,6 +39,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dlayoutbox.h"
 #include "dnuminput.h"
 #include "colorgradientwidget.h"
@@ -429,14 +430,7 @@ void EditorToolSettings::slotAboutPlugin()
         if (d->tool->plugin())
         {
             QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(d->tool->plugin());
-
-            QEventLoop loop;
-
-            connect(dlg, &QDialog::finished,
-                    &loop, &QEventLoop::quit);
-
-            dlg->show();
-            loop.exec();
+            dialogExec(dlg);
 
             delete dlg;
         }

@@ -369,22 +369,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     {
         FirstRunDlg firstRun;
 
-        QEventLoop loop;
-        bool rejected = true;
-
-        QObject::connect(&firstRun, &QDialog::finished,
-                         &firstRun, [&loop, &rejected](int result)
-            {
-                rejected = (result == QDialog::Rejected);
-                loop.quit();
-            }
-        );
-
-        firstRun.open();
-
-        loop.exec();
-
-        if (rejected)
+        if (dialogExec(&firstRun) == QDialog::Rejected)
         {
             return 1;
         }

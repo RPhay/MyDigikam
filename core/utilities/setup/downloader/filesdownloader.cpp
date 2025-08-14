@@ -247,13 +247,7 @@ void FilesDownloader::startDownload()
 
     slotUpdateDownloadInfo();
 
-    QEventLoop loop;
-
-    connect(this, &QDialog::finished,
-            &loop, &QEventLoop::quit);
-
-    show();
-    loop.exec();
+    dialogExec(this);
 }
 
 void FilesDownloader::slotDownload()
