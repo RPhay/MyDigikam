@@ -43,7 +43,6 @@ SequenceNumberDialog::SequenceNumberDialog(Rule* const parent)
     ui->setupUi(mainWidget);
     setSettingsWidget(mainWidget);
     ui->digits->setFocus();
-    setModal(true);
 }
 
 SequenceNumberDialog::~SequenceNumberDialog()
