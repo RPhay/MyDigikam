@@ -429,7 +429,15 @@ void EditorToolSettings::slotAboutPlugin()
         if (d->tool->plugin())
         {
             QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(d->tool->plugin());
-            dlg->exec();
+
+            QEventLoop loop;
+
+            connect(dlg, &QDialog::finished,
+                    &loop, &QEventLoop::quit);
+
+            dlg->show();
+            loop.exec();
+
             delete dlg;
         }
     }
