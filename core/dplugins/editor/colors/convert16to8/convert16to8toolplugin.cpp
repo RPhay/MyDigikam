@@ -68,7 +68,7 @@ QString Convert16To8ToolPlugin::handbookSection() const
 
 QString Convert16To8ToolPlugin::handbookChapter() const
 {
-    return QLatin1String("color_tools");
+    return QLatin1String("colors_tools");
 }
 
 QString Convert16To8ToolPlugin::handbookReference() const

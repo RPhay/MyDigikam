@@ -67,7 +67,7 @@ QString InvertToolPlugin::handbookSection() const
 
 QString InvertToolPlugin::handbookChapter() const
 {
-    return QLatin1String("color_tools");
+    return QLatin1String("colors_tools");
 }
 
 QString InvertToolPlugin::handbookReference() const

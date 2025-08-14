@@ -67,7 +67,7 @@ QString BWSepiaToolPlugin::handbookSection() const
 
 QString BWSepiaToolPlugin::handbookChapter() const
 {
-    return QLatin1String("color_tools");
+    return QLatin1String("colors_tools");
 }
 
 QString BWSepiaToolPlugin::handbookReference() const

@@ -67,7 +67,7 @@ QString FilmToolPlugin::handbookSection() const
 
 QString FilmToolPlugin::handbookChapter() const
 {
-    return QLatin1String("color_tools");
+    return QLatin1String("colors_tools");
 }
 
 QString FilmToolPlugin::handbookReference() const

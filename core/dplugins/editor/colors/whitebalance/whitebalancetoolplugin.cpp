@@ -67,7 +67,7 @@ QString WhiteBalanceToolPlugin::handbookSection() const
 
 QString WhiteBalanceToolPlugin::handbookChapter() const
 {
-    return QLatin1String("color_tools");
+    return QLatin1String("colors_tools");
 }
 
 QString WhiteBalanceToolPlugin::handbookReference() const

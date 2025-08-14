@@ -67,7 +67,7 @@ QString ChannelMixerToolPlugin::handbookSection() const
 
 QString ChannelMixerToolPlugin::handbookChapter() const
 {
-    return QLatin1String("color_tools");
+    return QLatin1String("colors_tools");
 }
 
 QString ChannelMixerToolPlugin::handbookReference() const

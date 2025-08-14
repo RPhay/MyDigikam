@@ -67,7 +67,7 @@ QString BCGToolPlugin::handbookSection() const
 
 QString BCGToolPlugin::handbookChapter() const
 {
-    return QLatin1String("color_tools");
+    return QLatin1String("colors_tools");
 }
 
 QString BCGToolPlugin::handbookReference() const
