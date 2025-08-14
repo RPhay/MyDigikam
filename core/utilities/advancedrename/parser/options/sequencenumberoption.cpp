@@ -29,6 +29,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "ui_sequencenumberoptiondialogwidget.h"
 
 namespace Digikam
@@ -83,15 +84,8 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
     QPointer<SequenceNumberDialog> dlg = new SequenceNumberDialog(this);
 
     QString result;
-    QEventLoop loop;
 
-    connect(dlg, &QDialog::finished,
-            &loop, &QEventLoop::quit);
-
-    dlg->show();
-    loop.exec();
-
-    if (dlg && (dlg->result() == QDialog::Accepted))
+    if (dialogExec(dlg) == QDialog::Accepted)
     {
         int digits          = dlg->ui->digits->value();
         int start           = dlg->ui->start->value();

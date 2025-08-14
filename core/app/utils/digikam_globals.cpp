@@ -250,8 +250,8 @@ int dialogExec(QDialog* const dlg)
 {
     QEventLoop loop;
 
-    connect(dlg, &QDialog::finished,
-            &loop, &QEventLoop::quit);
+    QObject::connect(dlg, &QDialog::finished,
+                     &loop, &QEventLoop::quit);
 
     dlg->show();
     loop.exec();
