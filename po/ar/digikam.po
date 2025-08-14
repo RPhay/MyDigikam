@@ -29431,7 +29431,7 @@ msgstr "يُستخدم الملفّ الثّنائيّ لتمهيد ملفّات
 #, kde-format
 msgid ""
 "This binary file is used to start a dedicated instance of MariaDB server."
-msgstr "يُستخدم الملفّ الثّنائيّ لبدء سيرورة مخصّصة لخادوم MariaDB."
+msgstr "يُستخدم الملفّ الثّنائيّ لبدء نسخة مخصّصة لخادوم MariaDB."
 
 #: core/libs/database/utils/widgets/mysqlupgradebinary.cpp:34
 #, fuzzy, kde-format
@@ -45652,12 +45652,12 @@ msgstr "سامي (شمال فنلندا)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:344
 msgctxt "@info: country code"
 msgid "Sami (Northern, Norway)"
-msgstr "السامية (الشمال ، النرويج)"
+msgstr "السامية (الشمال، النرويج)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:345
 msgctxt "@info: country code"
 msgid "Sami (Northern, Sweden)"
-msgstr "السامية (الشمال ، السويد)"
+msgstr "السامية (الشمال، السويد)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:346
 msgctxt "@info: country code"
@@ -51756,8 +51756,8 @@ msgid ""
 "album.\n"
 "Warning: Without write access, items cannot be edited."
 msgstr ""
-"لا يبدو أن لديك تصريحًا بالكتابة في المجلّد الذي حدّدته ليكون الألبوم الجذر.\n"
-"تحذير: دون تصريح الكتابة لا يمكن تحرير العناصر."
+"لا يبدو أن لديك إذْنًا بالكتابة في المجلّد الذي حدّدته ليكون الألبوم الجذر.\n"
+"تحذير: دون إذْن الكتابة لا يمكن تحرير العناصر."
 
 #: core/utilities/firstrun/databasepage.cpp:49
 #, kde-format
@@ -55540,7 +55540,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:114
 #, kde-format
 msgid "Miles, Feet"
-msgstr "ميل ، قدم"
+msgstr "ميل، قدم"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:115
 #, kde-format
