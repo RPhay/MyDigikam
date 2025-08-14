@@ -19,11 +19,13 @@ namespace Digikam
 
 IccProfile IccSettings::Private::profileFromDesktop(QWidget* const widget)
 {
+    qCDebug(DIGIKAM_DIMG_LOG) << "ICM Desktop: screen platform is" << qApp->platformName();
+
     QScreen* const screen = qApp->primaryScreen();
 
     if (!screen)
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "No screen available for application";
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM Desktop: no screen instance available for the application";
 
         return IccProfile();
     }
@@ -58,29 +60,45 @@ IccProfile IccSettings::Private::profileFromDesktop(QWidget* const widget)
 
         if (screenProfiles.contains(screenNumber))
         {
-            return screenProfiles.value(screenNumber);
+            profile = screenProfiles.value(screenNumber);
+
+            qCDebug(DIGIKAM_DIMG_LOG) << "ICM Desktop: found monitor profile in the cache for screen"
+                                      << screenNumber << ":" << profile.description();
+
+            return profile;
         }
     }
 
+    qCDebug(DIGIKAM_DIMG_LOG) << "ICM Desktop: looking for the monitor color profile...";
+
 #ifdef Q_OS_UNIX
+
+    if      ((qApp->platformName() != QLatin1String("wayland")) && QX11Info::isPlatformX11())
+    {
 
 #   ifdef HAVE_X11
 
-    if (!profileFromX11(screen, screenNumber, profile))
-    {
-        return IccProfile();
-    }
+        if (!profileFromX11(screen, screenNumber, profile))
+        {
+            return IccProfile();
+        }
 
 #   endif
+
+    }
+    else if (qApp->platformName() == QLatin1String("wayland"))
+    {
 
 #   ifdef HAVE_DBUS
 
-    if (!profileFromWayland(screen, screenNumber, profile))
-    {
-        return IccProfile();
-    }
+        if (!profileFromWayland(screen, screenNumber, profile))
+        {
+            return IccProfile();
+        }
 
 #   endif
+
+    }
 
 #elif defined Q_OS_WIN
 
@@ -100,8 +118,7 @@ IccProfile IccSettings::Private::profileFromDesktop(QWidget* const widget)
 
     // Unsupported platform
 
-    qCWarning(DIGIKAM_DIMG_LOG) << "The color management from this screen platform is not supported:"
-                                << qApp->platformName();
+    qCWarning(DIGIKAM_DIMG_LOG) << "ICM Desktop: the color management from this screen platform is not supported";
 
     return IccProfile();
 

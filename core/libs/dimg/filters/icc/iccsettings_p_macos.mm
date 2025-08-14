@@ -28,6 +28,9 @@ bool IccSettings::Private::profileFromMacos(QScreen* const screen,
 {
     Q_UNUSED(screen);
 
+    qCDebug(DIGIKAM_DIMG_LOG) << "ICM macOS: check the monitor profile for screen"
+                              << screenNumber;
+
     // Get the number of active screens.
 
     uint32_t displayCount = 0;

@@ -34,6 +34,9 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
 
     Q_UNUSED(screen);
 
+    qCDebug(DIGIKAM_DIMG_LOG) << "ICM Windows: check the monitor profile for screen"
+                              << screenNumber;
+
     // Get the handle for the wanted screen device.
 
     POINT pt;

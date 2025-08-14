@@ -31,11 +31,6 @@
 #   include <climits>
 #   include <X11/Xlib.h>
 #   include <X11/Xatom.h>
-#   if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#       include <private/qtx11extras_p.h>
-#   else
-#       include <QX11Info>
-#   endif
 #endif // HAVE_X11
 
 #if defined(Q_CC_CLANG)
@@ -52,19 +47,15 @@ bool IccSettings::Private::profileFromX11(QScreen* const screen,
 
 #ifdef HAVE_X11
 
+    qCDebug(DIGIKAM_DIMG_LOG) << "ICM X11: check the monitor profile for screen"
+                              << screenNumber;
+
     /*
      * From koffice/libs/pigment/colorprofiles/KoLcmsColorProfileContainer.cpp
      */
 
     QString       atomName;
     unsigned long appRootWindow = 0;
-
-    if ((qApp->platformName() == QLatin1String("wayland")) || !QX11Info::isPlatformX11())
-    {
-        qCWarning(DIGIKAM_DIMG_LOG) << "ICM X11: desktop platform is not X11";
-
-        return false;
-    }
 
     if (screen->virtualSiblings().size() > 1)
     {
@@ -104,21 +95,23 @@ bool IccSettings::Private::profileFromX11(QScreen* const screen,
                 profile = IccProfile(bytes);
             }
 
-            qCDebug(DIGIKAM_DIMG_LOG) << "ICM X11: found monitor profile for screen" << screenNumber
-                                      << ":" << profile.description();
+            qCDebug(DIGIKAM_DIMG_LOG) << "ICM X11: found monitor profile for screen"
+                                      << screenNumber << ":" << profile.description();
 
             return true;
         }
         else
         {
-            qCDebug(DIGIKAM_DIMG_LOG) << "ICM X11: no monitor profile installed for screen " << screenNumber;
+            qCDebug(DIGIKAM_DIMG_LOG) << "ICM X11: no monitor profile installed for screen"
+                                      << screenNumber;
 
             return true;
         }
     }
     else
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "ICM X11: cannot get monitor profile for screen " << screenNumber;
+        qCWarning(DIGIKAM_DIMG_LOG) << "ICM X11: cannot get monitor profile for screen"
+                                    << screenNumber;
     }
 
     return false;
