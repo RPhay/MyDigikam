@@ -78,7 +78,7 @@ BUGFIXES:
 057 ==> 508060 - When adding a new collection, tags are not associated with images when using sidecars file and tags hierarchy.
 058 ==> 436526 - Use native Color Management settings from Windows and MacOS.
 059 ==> 508104 - Add Fujifilm focus-point extractor support to digiKam.
-060 ==> 
+060 ==> 508242 - Crash while needing help about numerotation.
 061 ==> 
 062 ==> 
 063 ==> 
