@@ -25,6 +25,7 @@ namespace Digikam
 const float RATIO_POINT_IMAGE = 120; // this is a guess
 
 // Internal function to create af point from meta data
+
 namespace SonyInternal
 {
 

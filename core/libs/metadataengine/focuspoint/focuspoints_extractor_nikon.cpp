@@ -23,6 +23,7 @@ namespace Digikam
 {
 
 // Internal function to create af point from meta data
+
 namespace NikonInternal
 {
 
