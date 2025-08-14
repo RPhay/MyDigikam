@@ -827,7 +827,14 @@ void SetupICC::profileInfo(const IccProfile& profile)
     }
 
     ICCProfileInfoDlg infoDlg(this, profile.filePath(), profile);
-    infoDlg.exec();
+
+    QEventLoop loop;
+
+    connect(&infoDlg, &QDialog::finished,
+            &loop, &QEventLoop::quit);
+
+    infoDlg.show();
+    loop.exec();
 }
 
 void SetupICC::slotMissingToggled(bool on)
