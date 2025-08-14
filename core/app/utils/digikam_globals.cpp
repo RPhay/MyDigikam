@@ -246,6 +246,24 @@ int layoutMargin()
            );
 }
 
+int dialogExec(QDialog* const dlg)
+{
+    QEventLoop loop;
+
+    connect(dlg, &QDialog::finished,
+            &loop, &QEventLoop::quit);
+
+    dlg->show();
+    loop.exec();
+
+    if (dlg)
+    {
+        return dlg->result();
+    }
+
+    return QDialog::Rejected;
+}
+
 QDateTime startOfDay(const QDate& date)
 {
     return date.startOfDay();

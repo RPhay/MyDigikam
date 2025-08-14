@@ -17,21 +17,22 @@
 
 // Qt includes
 
-#include <QStringList>
 #include <QDateTime>
 #include <QIODevice>
+#include <QStringList>
 #include <QProcessEnvironment>
 
 // Local includes
 
 #include "digikam_export.h"
 
+class QDate;
 class QWidget;
 class QObject;
+class QDialog;
 class QShortcut;
 class QKeySequence;
 class QApplication;
-class QDate;
 
 /**
  * Macros for image filters.
@@ -225,6 +226,11 @@ DIGIKAM_EXPORT int layoutSpacing();
  * Default margin to use in layout.
  */
 DIGIKAM_EXPORT int layoutMargin();
+
+/**
+ * Show a QDialog with show() and wait for the result.
+ */
+DIGIKAM_EXPORT int dialogExec(QDialog* const dlg);
 
 // --- Static functions for the bundles ---
 
