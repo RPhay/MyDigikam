@@ -253,7 +253,6 @@ void FilesDownloader::startDownload()
             &loop, &QEventLoop::quit);
 
     show();
-
     loop.exec();
 }
 

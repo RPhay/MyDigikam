@@ -42,6 +42,7 @@ SequenceNumberDialog::SequenceNumberDialog(Rule* const parent)
     ui->setupUi(mainWidget);
     setSettingsWidget(mainWidget);
     ui->digits->setFocus();
+    setModal(true);
 }
 
 SequenceNumberDialog::~SequenceNumberDialog()
@@ -82,8 +83,15 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
     QPointer<SequenceNumberDialog> dlg = new SequenceNumberDialog(this);
 
     QString result;
+    QEventLoop loop;
 
-    if (dlg->exec() == QDialog::Accepted)
+    connect(dlg, &QDialog::finished,
+            &loop, &QEventLoop::quit);
+
+    dlg->show();
+    loop.exec();
+
+    if (dlg && (dlg->result() == QDialog::Accepted))
     {
         int digits          = dlg->ui->digits->value();
         int start           = dlg->ui->start->value();
