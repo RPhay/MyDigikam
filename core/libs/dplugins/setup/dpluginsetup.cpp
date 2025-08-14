@@ -128,7 +128,14 @@ void DPluginSetup::slotAboutPlugin(QTreeWidgetItem* item, int)
     }
 
     QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(d->pluginsList->plugin(item));
-    dlg->exec();
+
+    QEventLoop loop;
+
+    connect(dlg, &QDialog::finished,
+            &loop, &QEventLoop::quit);
+
+    dlg->show();
+    loop.exec();
 
     delete dlg;
 }
