@@ -71,7 +71,7 @@ IccProfile IccSettings::Private::profileFromDesktop(QWidget* const widget)
 
     qCDebug(DIGIKAM_DIMG_LOG) << "ICM Desktop: looking for the monitor color profile...";
 
-#ifdef Q_OS_UNIX
+#if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
 
     if      ((qApp->platformName() != QLatin1String("wayland")) && QX11Info::isPlatformX11())
     {
