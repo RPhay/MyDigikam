@@ -1666,7 +1666,8 @@
                 The face database file contains the tables listed below:
                 Identities:         contains a list of identities with type.
                 IdentityAttributes: contains identity attributes as text name and UUID.
-                FaceMatrices:       contains face matrices data for each identity for the DNN recognition algorithm that was used when the training was done.
+                FaceMatrices:       contains face matrices data for each identity for the DNN
+                                    recognition algorithm that was used when the training was done.
                 Settings:           includes database version rules.
             -->
 
@@ -1701,14 +1702,16 @@
                     identity INTEGER NOT NULL,
                     removeHash LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
                     embedding BLOB NOT NULL,
-                    CONSTRAINT FaceEmbedding_Identities FOREIGN KEY (identity) REFERENCES Identities (id) ON DELETE CASCADE ON UPDATE CASCADE)
+                    CONSTRAINT FaceEmbedding_Identities FOREIGN KEY (identity) REFERENCES Identities (id) ON DELETE CASCADE ON UPDATE CASCADE,
+                    UNIQUE(removeHash(255)))
                     ENGINE InnoDB;
                 </statement>
             </dbaction>
 
             <dbaction name="RenameFaceDBFaceMatrices_contextcolumn_V5" mode="transaction">
                 <statement mode="plain">ALTER TABLE FaceMatrices
-                                        CHANGE `context` removeHash LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+                                        CHANGE `context` removeHash LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+                                        ADD UNIQUE(removeHash(255));
                 </statement>
             </dbaction>
 
