@@ -23,11 +23,6 @@
 #include <QStandardPaths>
 #include <QIcon>
 
-#ifdef HAVE_DBUS
-#   include <QDBusConnection>
-#   include <QDBusConnectionInterface>
-#endif
-
 // KDE includes
 
 #ifdef HAVE_KNOTIFICATIONS
@@ -79,31 +74,6 @@ private:
 
 // ----------------------------------------------------------------------------------------------
 
-#if defined HAVE_KNOTIFICATIONS && defined HAVE_DBUS
-
-static inline bool detectKDEDesktopIsRunning()
-{
-    const QByteArray xdgCurrentDesktop = qgetenv("XDG_CURRENT_DESKTOP");
-
-    if (!xdgCurrentDesktop.isEmpty())
-    {
-        return (xdgCurrentDesktop.toUpper() == "KDE");
-    }
-
-    // Classic fallbacks
-
-    if (!qEnvironmentVariableIsEmpty("KDE_FULL_SESSION"))
-    {
-        return true;
-    }
-
-    return false;
-}
-
-#endif
-
-// ----------------------------------------------------------------------------------------------
-
 void DNotificationWrapper(const QString& eventId, const QString& message,
                           QWidget* const parent, const QString& windowTitle,
                           const QPixmap& pixmap)
@@ -122,103 +92,73 @@ void DNotificationWrapper(const QString& eventId, const QString& message,
         }
     }
 
-#if defined HAVE_KNOTIFICATIONS && defined HAVE_DBUS
+#if defined HAVE_KNOTIFICATIONS
 
-    // NOTE: This detection of KDE desktop is not perfect because KNotification service may never be started.
-    //       But in a regular KDE session, KNotification service should be running already.
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Event is dispatched using KDE desktop notifier";
 
-    if (detectKDEDesktopIsRunning() &&
-        QDBusConnection::sessionBus().interface()->
-            isServiceRegistered(QLatin1String("org.kde.StatusNotifierWatcher")).value())
+    if (eventId.isEmpty())
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Event is dispatched to KDE desktop notifier";
 
-        if (eventId.isEmpty())
-        {
+#   if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+        KNotification::event(KNotification::Notification, message, logoPixmap);
 
-            KNotification::event(KNotification::Notification, message, logoPixmap);
+#   else
 
-#else
+        KNotification::event(KNotification::Notification, message, logoPixmap, parent);
 
-            KNotification::event(KNotification::Notification, message, logoPixmap, parent);
+#   endif
 
-#endif
-
-        }
-        else
-        {
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-            KNotification::event(eventId, message, logoPixmap);
-
-#else
-
-            KNotification::event(eventId, message, logoPixmap, parent);
-
-#endif
-
-        }
     }
     else
+    {
+
+#   if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        KNotification::event(eventId, message, logoPixmap);
+
+#   else
+
+        KNotification::event(eventId, message, logoPixmap, parent);
+
+#   endif
+
+    }
 
 #else
 
+    QProcess proc;
+
+    proc.setProcessEnvironment(adjustedEnvironmentForAppImage());
+    proc.start(QLatin1String("notify-send"),
+               QStringList() << windowTitle
+                             << message
+                             << QLatin1String("-a")
+                             << QApplication::applicationName());
+
+    if (proc.waitForFinished() && proc.exitCode() == 0)
     {
-        Q_UNUSED(eventId);
-    }
-
-#endif
-
-#ifdef Q_OS_DARWIN
-
-    // OSX support
-
-    if (MacNativeDispatchNotify(windowTitle, message))
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Event is dispatched to OSX desktop notifier";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Event is dispatched to the low level desktop notifier through DBUS";
 
         return;
     }
     else
-
-#endif // Q_OS_DARWIN
-
     {
-        // Other Linux Desktops
-
-        QProcess proc;
-
-        proc.setProcessEnvironment(adjustedEnvironmentForAppImage());
-        proc.start(QLatin1String("notify-send"),
-                   QStringList() << windowTitle
-                                 << message
-                                 << QLatin1String("-a")
-                                 << QApplication::applicationName());
-
-        if (proc.waitForFinished() && proc.exitCode() == 0)
+        if (!parent)
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Event is dispatched to desktop notifier through DBUS";
+            qCWarning(DIGIKAM_GENERAL_LOG) << "parent is null";
 
             return;
         }
-        else
-        {
-            if (!parent)
-            {
-                qCWarning(DIGIKAM_GENERAL_LOG) << "parent is null";
 
-                return;
-            }
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Event is dispatched through a passive pop-up";
 
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Event is dispatched through a passive pop-up";
-
-            NotificationPassivePopup* const popup = new NotificationPassivePopup(parent);
-            popup->showNotification(windowTitle, message, logoPixmap);
-        }
+        NotificationPassivePopup* const popup = new NotificationPassivePopup(parent);
+        popup->showNotification(windowTitle, message, logoPixmap);
     }
+
+#endif
+
 }
 
 } // namespace Digikam

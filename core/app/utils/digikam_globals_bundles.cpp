@@ -549,4 +549,23 @@ void delayForRemoteDebuging(int delaySecs)
     }
 }
 
+bool detectKDEDesktopIsRunning()
+{
+    const QByteArray xdgCurrentDesktop = qgetenv("XDG_CURRENT_DESKTOP");
+
+    if (!xdgCurrentDesktop.isEmpty())
+    {
+        return (xdgCurrentDesktop.toUpper() == "KDE");
+    }
+
+    // Classic fallbacks
+
+    if (!qEnvironmentVariableIsEmpty("KDE_FULL_SESSION"))
+    {
+        return true;
+    }
+
+    return false;
+}
+
 } // namespace Digikam

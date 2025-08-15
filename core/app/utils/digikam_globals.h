@@ -325,4 +325,9 @@ DIGIKAM_EXPORT void openOnlineDocumentation(const QString& section = QString(), 
  */
 DIGIKAM_EXPORT void delayForRemoteDebuging(int delaySecs = 30);
 
+/**
+ * @return true if the KDE desktop (eg. Plasma) is running.
+ */
+DIGIKAM_EXPORT bool detectKDEDesktopIsRunning();
+
 } // namespace Digikam

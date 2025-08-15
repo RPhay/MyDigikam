@@ -43,9 +43,3 @@ void DIGIKAM_EXPORT DNotificationWrapper(const QString& eventId, const QString& 
                                          QWidget* const parent, const QString& windowTitle,
                                          const QPixmap& pixmap = QPixmap());
 } // namespace Digikam
-
-#ifdef Q_OS_DARWIN
-
-bool MacNativeDispatchNotify(const QString& summary, const QString& message);
-
-#endif
