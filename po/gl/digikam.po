@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-12 02:03+0000\n"
+"POT-Creation-Date: 2025-08-15 02:17+0000\n"
 "PO-Revision-Date: 2025-06-21 12:28+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -11636,7 +11636,7 @@ msgstr "Dous mapas — arriba e abaixo"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:180
 #: core/utilities/maintenance/tools/facesmanagement/facesengine_p.cpp:31
 #: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
@@ -29517,7 +29517,7 @@ msgstr "Migrar ->"
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:184
 #, kde-format
 msgid "Cancel"
 msgstr "Cancelar"
@@ -52925,23 +52925,23 @@ msgstr "Metadatos…"
 msgid "Add metadata information"
 msgstr "Engadir a información dos metadatos"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:55
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
 #, kde-format
 msgctxt "Sequence Number"
 msgid "Number..."
 msgstr "Número…"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:57
 #, kde-format
 msgid "Add a sequence number"
 msgstr "Engadir un número de secuencia"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:59
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
 #, kde-format
 msgid "Sequence number"
 msgstr "Número de secuencia"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:61
 #, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
@@ -52953,17 +52953,17 @@ msgstr ""
 "a aleatoriedade, ||ce|| = recoñece a extensión e o contador, ||re|| = "
 "recoñece a aleatoriedade e a extensión)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
 #, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Número de secuencia (inicio personalizado) ||opcións||: ||e||, ||f||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:70
 #, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Número de secuencia (paso personalizado) ||opcións||: ||c||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:72
 #, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr ""
@@ -59115,74 +59115,74 @@ msgstr "(%1,%2) RGBA:%3,%4,%5,%6"
 msgid "Tools"
 msgstr "Ferramentas"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:122
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:106
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:123
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:107
 #, kde-format
 msgid "About this tool..."
 msgstr "Sobre esta ferramenta…"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:126
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:102
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:127
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:103
 #, kde-format
 msgid "Tool online handbook..."
 msgstr "Manual da ferramenta en Internet…"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:158
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:159
 #, kde-format
 msgid "Guide:"
 msgstr "Guía:"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:162
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:163
 #, kde-format
 msgid "Set here the color used to draw dashed guide lines."
 msgstr "Escolla aquí a cor empregada para debuxar liñas de guía a trazos."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:167
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:168
 #, kde-format
 msgid "Set here the width in pixels used to draw dashed guide lines."
 msgstr ""
 "Escolla aquí a anchura, en píxeles, usado para debuxar as liñas de guía a "
 "trazos."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:175
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:176
 #, kde-format
 msgid "Defaults"
 msgstr "Valores predeterminados"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:177
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:178
 #, kde-format
 msgid "Reset all settings to their default values."
 msgstr "Reiniciar todos os parámetros aos valores predeterminados."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:194
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:195
 #, kde-format
 msgctxt "@action: load previously saved filter settings"
 msgid "Load..."
 msgstr "Cargar…"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:196
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:197
 #, kde-format
 msgid "Load all parameters from settings text file."
 msgstr "Cargar todos os parámetros do ficheiro de configuración."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:198
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:199
 #, kde-format
 msgctxt "@action: save current filter settings"
 msgid "Save As..."
 msgstr "Gardar como…"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:200
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:201
 #, kde-format
 msgid "Save all parameters to settings text file."
 msgstr "Gardar todos os parámetros nun ficheiro de configuración."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:203
 #, kde-format
 msgctxt "@action: try current filter settings"
 msgid "Try"
 msgstr "Probar"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:204
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:205
 #, kde-format
 msgid "Try all settings."
 msgstr "Probar todas as configuracións."
@@ -62921,7 +62921,7 @@ msgstr "Comportamento"
 msgid "Saving Images"
 msgstr "Garda das imaxes"
 
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:98
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:99
 #, kde-format
 msgid "Reset current tool settings to default values."
 msgstr ""
@@ -65703,19 +65703,19 @@ msgstr "Usar a funcionalidade de detección estética"
 msgid "Use AutoTags Assignment feature"
 msgstr "Usar a funcionalidade de asignación de etiquetas automáticas"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:285
+#: core/utilities/setup/downloader/filesdownloader.cpp:278
 #, fuzzy, kde-format
 #| msgid "All files were downloaded successfully."
 msgid "All model files were downloaded successfully."
 msgstr "Descargáronse todos os ficheiros."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:294
+#: core/utilities/setup/downloader/filesdownloader.cpp:287
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Produciuse un erro na descarga"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:295
+#: core/utilities/setup/downloader/filesdownloader.cpp:288
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65734,33 +65734,33 @@ msgstr ""
 "\n"
 "Pode intentalo de novo ou continuar a descarga no seguinte inicio."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:303
+#: core/utilities/setup/downloader/filesdownloader.cpp:296
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Intentalo de novo"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:434
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "A suma de comprobación é incorrecta."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:465
+#: core/utilities/setup/downloader/filesdownloader.cpp:458
 #, kde-format
 msgid "File write error."
 msgstr "Erro de escritura de ficheiro."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:472
+#: core/utilities/setup/downloader/filesdownloader.cpp:465
 #, kde-format
 msgid "File open error."
 msgstr "Erro ao abrir o ficheiro."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:487
+#: core/utilities/setup/downloader/filesdownloader.cpp:480
 #, kde-format
 msgid "File on the server is too large."
 msgstr "O ficheiro do servidor é grande de máis."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:598
+#: core/utilities/setup/downloader/filesdownloader.cpp:591
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -65770,7 +65770,7 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:603
+#: core/utilities/setup/downloader/filesdownloader.cpp:596
 #, fuzzy, kde-format
 #| msgctxt "%1: folder path"
 #| msgid ""
@@ -65793,19 +65793,19 @@ msgstr ""
 "seleccionada non funcionará.</p><p>O ficheiros descargaranse en «<i>%1</i>»."
 "</p><p><b>Tras a descarga ten que reiniciar digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:610
+#: core/utilities/setup/downloader/filesdownloader.cpp:603
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "A descarga require %1 ficheiros cun tamaño de %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:630
+#: core/utilities/setup/downloader/filesdownloader.cpp:623
 #, fuzzy, kde-format
 #| msgid "All files of the selected features were found."
 msgid "All files for the selected features were found."
 msgstr "Atopáronse todos os ficheiros das funcionalidades seleccionadas."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:647
+#: core/utilities/setup/downloader/filesdownloader.cpp:640
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""

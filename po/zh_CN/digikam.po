@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-12 02:03+0000\n"
+"POT-Creation-Date: 2025-08-15 02:17+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -10949,7 +10949,7 @@ msgstr "双地图 - 顶部和底部"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:180
 #: core/utilities/maintenance/tools/facesmanagement/facesengine_p.cpp:31
 #: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
@@ -27929,7 +27929,7 @@ msgstr "迁移 ->"
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:184
 #, kde-format
 msgid "Cancel"
 msgstr "取消"
@@ -50392,23 +50392,23 @@ msgstr "元数据..."
 msgid "Add metadata information"
 msgstr "添加元数据信息"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:55
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
 #, kde-format
 msgctxt "Sequence Number"
 msgid "Number..."
 msgstr "编号..."
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:57
 #, kde-format
 msgid "Add a sequence number"
 msgstr "添加序列编号"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:59
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
 #, kde-format
 msgid "Sequence number"
 msgstr "序列编号"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:61
 #, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
@@ -50419,17 +50419,17 @@ msgstr ""
 "夹感知，||r|| = 随机感知，||ce|| = 文件计数器和扩展名感知，||re|| = 随机和扩"
 "展名感知)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
 #, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "序列编号 (自定义起点) ||options||: ||e||, ||f||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:70
 #, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "序列编号 (自定义步长) ||options||: ||c||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:72
 #, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr "序列编号 (自定义起点 + 步长)  ||options||: ||e||, ||f||"
@@ -56397,72 +56397,72 @@ msgstr "(%1,%2) RGBA：%3,%4,%5,%6"
 msgid "Tools"
 msgstr "工具"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:122
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:106
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:123
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:107
 #, kde-format
 msgid "About this tool..."
 msgstr "关于此工具..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:126
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:102
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:127
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:103
 #, kde-format
 msgid "Tool online handbook..."
 msgstr "工具的在线使用手册..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:158
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:159
 #, kde-format
 msgid "Guide:"
 msgstr "参考线："
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:162
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:163
 #, kde-format
 msgid "Set here the color used to draw dashed guide lines."
 msgstr "选择辅助线的颜色。"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:167
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:168
 #, kde-format
 msgid "Set here the width in pixels used to draw dashed guide lines."
 msgstr "选择辅助线的宽度，单位为像素。"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:175
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:176
 #, kde-format
 msgid "Defaults"
 msgstr "默认"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:177
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:178
 #, kde-format
 msgid "Reset all settings to their default values."
 msgstr "重置所有设置为默认值。"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:194
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:195
 #, kde-format
 msgctxt "@action: load previously saved filter settings"
 msgid "Load..."
 msgstr "加载..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:196
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:197
 #, kde-format
 msgid "Load all parameters from settings text file."
 msgstr "加载设置文本文件中的所有参数。"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:198
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:199
 #, kde-format
 msgctxt "@action: save current filter settings"
 msgid "Save As..."
 msgstr "另存为..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:200
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:201
 #, kde-format
 msgid "Save all parameters to settings text file."
 msgstr "保存所有参数至设置文本文件。"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:203
 #, kde-format
 msgctxt "@action: try current filter settings"
 msgid "Try"
 msgstr "试用"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:204
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:205
 #, kde-format
 msgid "Try all settings."
 msgstr "试用所有设置。"
@@ -59996,7 +59996,7 @@ msgstr "行为"
 msgid "Saving Images"
 msgstr "保存图像"
 
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:98
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:99
 #, kde-format
 msgid "Reset current tool settings to default values."
 msgstr "重置当前工具的设置为默认值。"
@@ -62616,18 +62616,18 @@ msgstr "使用美感检测功能"
 msgid "Use AutoTags Assignment feature"
 msgstr "使用自动标签分配功能"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:285
+#: core/utilities/setup/downloader/filesdownloader.cpp:278
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr "已成功下载所有模型文件。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:294
+#: core/utilities/setup/downloader/filesdownloader.cpp:287
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "下载错误"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:295
+#: core/utilities/setup/downloader/filesdownloader.cpp:288
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -62646,33 +62646,33 @@ msgstr ""
 "\n"
 "您可以现在重试，也可以在下次启动程序时继续下载。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:303
+#: core/utilities/setup/downloader/filesdownloader.cpp:296
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "重试"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:434
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "文件的校验和不正确。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:465
+#: core/utilities/setup/downloader/filesdownloader.cpp:458
 #, kde-format
 msgid "File write error."
 msgstr "文件写入错误。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:472
+#: core/utilities/setup/downloader/filesdownloader.cpp:465
 #, kde-format
 msgid "File open error."
 msgstr "文件打开错误。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:487
+#: core/utilities/setup/downloader/filesdownloader.cpp:480
 #, kde-format
 msgid "File on the server is too large."
 msgstr "服务器提供的文件体积过大。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:598
+#: core/utilities/setup/downloader/filesdownloader.cpp:591
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -62685,7 +62685,7 @@ msgstr ""
 "于 AI 的自动工具 (如自动图像旋转和自动标签分配) 等功能。您可以选择要启用哪些"
 "功能。</p><p><b>注意：</b> 红眼消除工具需要人脸管理模型文件。</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:603
+#: core/utilities/setup/downloader/filesdownloader.cpp:596
 #, kde-format
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
@@ -62698,18 +62698,18 @@ msgstr ""
 "次启动 digiKam 时程序将再次提示您。没有这些文件，所选功能将无法使用。</"
 "p><p><b>文件下载完成后，您必须重新启动 digiKam 以生效。</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:610
+#: core/utilities/setup/downloader/filesdownloader.cpp:603
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "需要下载 %1 个文件，占用 %2 大小的空间。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:630
+#: core/utilities/setup/downloader/filesdownloader.cpp:623
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "所选功能需要的所有文件均已找到。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:647
+#: core/utilities/setup/downloader/filesdownloader.cpp:640
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "清理未使用的 AI/DNN 模型文件..."

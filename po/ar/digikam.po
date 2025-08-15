@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-12 02:03+0000\n"
+"POT-Creation-Date: 2025-08-15 02:17+0000\n"
 "PO-Revision-Date: 2025-08-10 22:30+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -11103,7 +11103,7 @@ msgstr "خريطتان - أفقيّ"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:180
 #: core/utilities/maintenance/tools/facesmanagement/facesengine_p.cpp:31
 #: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
@@ -18522,7 +18522,7 @@ msgstr "ملفّ الصّورة البانوراميّة المؤقّت غير �
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:75
 #, kde-format
 msgid "A panorama file named <filename>%1</filename> already exists."
-msgstr "هناك ملفّ صورة بانورميّة له الاسم <filename>%1</filename> بالفعل."
+msgstr "هناك ملفّ صورة بانورميّة له الاسم <filename>%1</filename> فعلًا."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:83
 #, kde-format
@@ -26938,7 +26938,7 @@ msgid ""
 "current database to this place?</p> "
 msgstr ""
 "<p>لقد اخترت المجلّد ”%1“ كمكان جديد لتخزين قاعدة البيانات. هناك ملفّ قاعدة "
-"بيانات في هذا المكان بالفعل.</p><p>أتريد استخدام الملفّ الموجود كقاعدة بيانات "
+"بيانات في هذا المكان فعلًا.</p><p>أتريد استخدام الملفّ الموجود كقاعدة بيانات "
 "جديدة، أو إزالته ونسخ قاعدة البيانات الحاليّة إلى هناك؟</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:660
@@ -27049,7 +27049,7 @@ msgid ""
 "Another album with the same name already exists.\n"
 "Please choose another name."
 msgstr ""
-"هناك ألبوم آخر له نفس الاسم بالفعل.\n"
+"هناك ألبوم آخر له نفس الاسم فعلًا.\n"
 "رجاء اختر اسمًا آخر."
 
 #: core/libs/album/manager/albummanager_palbum.cpp:508
@@ -27082,7 +27082,7 @@ msgstr "لا يمكن أن يحتوي اسم الوسم على ’/‘"
 #: core/libs/tags/widgets/tageditdlg.cpp:464
 #, kde-format
 msgid "Tag name already exists"
-msgstr "اسم الوسم موجود بالفعل"
+msgstr "اسم الوسم موجود فعلًا"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:321
 #, kde-format
@@ -27113,7 +27113,7 @@ msgid ""
 "Another tag with the same name already exists.\n"
 "Please choose another name."
 msgstr ""
-"هناك وسم آخر له نفس الاسم بالفعل.\n"
+"هناك وسم آخر له نفس الاسم فعلًا.\n"
 "رجاء اختر اسمًا آخر."
 
 #: core/libs/album/manager/albummanager_talbum.cpp:510
@@ -27854,7 +27854,7 @@ msgstr "المجلّد المحدّد غير موجود أو أن قراءته �
 #: core/libs/database/collection/collectionmanager_location.cpp:262
 #, kde-format
 msgid "There is already a collection containing the folder \"%1\""
-msgstr "هناك تجميعة تحوي المجلّد ”%1“ بالفعل"
+msgstr "هناك تجميعة تحوي المجلّد ”%1“ فعلًا"
 
 #: core/libs/database/collection/collectionmanager_location.cpp:284
 #, kde-format
@@ -28722,7 +28722,7 @@ msgstr "رحّل ←"
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:184
 #, kde-format
 msgid "Cancel"
 msgstr "ألغِ"
@@ -28882,7 +28882,7 @@ msgid ""
 "installed on your computer.</p>"
 msgstr ""
 "<p>يمكنك هنا ضبط أماكن وجود أدوات MySQL الثّنائيّة. سيحاول «دِجي‌كام» العثور على "
-"هذه الثّنائيّات آليًّا إن كانت مثبّتة بالفعل على حاسوبك.</p>"
+"هذه الثّنائيّات آليًّا إن كانت مثبّتة فعلًا على حاسوبك.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:140
 #, kde-format
@@ -35243,7 +35243,7 @@ msgstr ""
 #: core/libs/iojobs/iojob.cpp:135
 #, kde-format
 msgid "A file or folder named %1 already exists in %2"
-msgstr "هناك ملفّ أو مجلّد له الاسم %1 في %2 بالفعل"
+msgstr "هناك ملفّ أو مجلّد له الاسم %1 في %2 فعلًا"
 
 #: core/libs/iojobs/iojob.cpp:165
 #, kde-format
@@ -35329,7 +35329,7 @@ msgstr "تعذّر نقل المجلّد %1 إلى مهملات التّجميع
 #: core/libs/iojobs/iojob.cpp:400
 #, kde-format
 msgid "Image with the same name %1 already there"
-msgstr "هناك صورة بنفس الاسم %1 بالفعل"
+msgstr "هناك صورة بنفس الاسم %1 فعلًا"
 
 #: core/libs/iojobs/iojob.cpp:418
 #, kde-format
@@ -47459,7 +47459,7 @@ msgstr "استخدم التعريف المخصص"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Informative Provider Reference"
-msgstr "قم بتعيين مرجع مزود المعلومات هنا"
+msgstr "عيّن مرجع مزود المعلومات هنا"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:164
 #, kde-format
@@ -47483,7 +47483,7 @@ msgstr "ضع هنا اسم الموضوع"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Detail Name"
-msgstr "قم بتعيين اسم تفاصيل الموضوع هنا"
+msgstr "عيّن اسم تفاصيل الموضوع هنا"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:209
 #, kde-format
@@ -50628,7 +50628,7 @@ msgid ""
 "cursor behind a renaming option or an already assigned modifier.</p>"
 msgstr ""
 "<p>أضف معدِّلًا على خيار التّسمية. لتفعيل هذا الزّر، ضع المؤشّر خلف أحد خيارات "
-"التّسمة أو خلف معدِّل مسند بالفعل.</p>"
+"التّسمة أو خلف معدِّل مسند فعلًا.</p>"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:358
 #, kde-format
@@ -51416,23 +51416,23 @@ msgstr "البيانات الوصفيّة..."
 msgid "Add metadata information"
 msgstr "أضف معلومات البيانات الوصفيّة"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:55
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
 #, kde-format
 msgctxt "Sequence Number"
 msgid "Number..."
 msgstr "عدد..."
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:57
 #, kde-format
 msgid "Add a sequence number"
 msgstr "أضف عددًا تسلسليًّا"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:59
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
 #, kde-format
 msgid "Sequence number"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:61
 #, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
@@ -51440,17 +51440,17 @@ msgid ""
 "extension aware, ||re|| = random and extension aware)"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
 #, fuzzy, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "إضافة السلسلة الرقم"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:70
 #, fuzzy, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "إضافة السلسلة الرقم"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:72
 #, fuzzy, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr "إضافة السلسلة الرقم"
@@ -57240,7 +57240,7 @@ msgid ""
 "Search name already exists.\n"
 "Please enter a new name:"
 msgstr ""
-"اسم البحث موجود بالفعل.\n"
+"اسم البحث موجود فعلًا.\n"
 "رجاء أدخل اسمًا جديدًا:"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:530
@@ -57616,72 +57616,72 @@ msgstr ""
 msgid "Tools"
 msgstr "أدوات"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:122
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:106
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:123
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:107
 #, kde-format
 msgid "About this tool..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:126
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:102
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:127
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:103
 #, fuzzy, kde-format
 msgid "Tool online handbook..."
 msgstr "ملحقات كتيب"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:158
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:159
 #, kde-format
 msgid "Guide:"
 msgstr "الموجه:"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:162
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:163
 #, kde-format
 msgid "Set here the color used to draw dashed guide lines."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:167
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:168
 #, kde-format
 msgid "Set here the width in pixels used to draw dashed guide lines."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:175
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:176
 #, kde-format
 msgid "Defaults"
 msgstr "المبدئيات"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:177
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:178
 #, kde-format
 msgid "Reset all settings to their default values."
 msgstr "صفّر كلّ الإعدادات إلى قيمها المبدئية."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:194
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:195
 #, kde-format
 msgctxt "@action: load previously saved filter settings"
 msgid "Load..."
 msgstr "حمّل..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:196
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:197
 #, kde-format
 msgid "Load all parameters from settings text file."
 msgstr "حمّل كلّ المعاملات من ملفّ الإعدادات النّصّيّ."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:198
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:199
 #, kde-format
 msgctxt "@action: save current filter settings"
 msgid "Save As..."
 msgstr "احفظ كَ‍..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:200
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:201
 #, fuzzy, kde-format
 msgid "Save all parameters to settings text file."
 msgstr "احفظ كلّ المعاملات في ملفّ إعدادات نصّيّ."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:203
 #, kde-format
 msgctxt "@action: try current filter settings"
 msgid "Try"
 msgstr "جرّب"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:204
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:205
 #, kde-format
 msgid "Try all settings."
 msgstr "جرّب كلّ الإعدادات."
@@ -58852,7 +58852,7 @@ msgstr "لم يُنزّل هذا العنصر أبدًا"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
-msgstr "نُزّل هذا العنصر بالفعل"
+msgstr "نُزّل هذا العنصر فعلًا"
 
 #: core/utilities/import/main/importui.cpp:158
 #, fuzzy, kde-format
@@ -59294,7 +59294,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
-msgstr "الملفّ موجود بالفعل"
+msgstr "الملفّ موجود فعلًا"
 
 #: core/utilities/import/main/importui.cpp:1358
 #, fuzzy, kde-format
@@ -61398,7 +61398,7 @@ msgstr "السّلوك"
 msgid "Saving Images"
 msgstr "حفظ الصّور"
 
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:98
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:99
 #, kde-format
 msgid "Reset current tool settings to default values."
 msgstr "صفّر إعدادات الأداة الحاليّة إلى قيمها المبدئية."
@@ -63727,7 +63727,7 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:908
 #, kde-format
 msgid "Camera '%1' (%2) is already in list."
-msgstr "الكمرة ’%1‘‏ (%2) في القائمة بالفعل."
+msgstr "الكمرة ’%1‘‏ (%2) في القائمة فعلًا."
 
 #: core/utilities/setup/camera/setupcamera.cpp:912
 #, kde-format
@@ -64095,18 +64095,18 @@ msgstr ""
 msgid "Use AutoTags Assignment feature"
 msgstr "اكتشاف الوجوه"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:285
+#: core/utilities/setup/downloader/filesdownloader.cpp:278
 #, fuzzy, kde-format
 msgid "All model files were downloaded successfully."
 msgstr "يجري التنزيل ملفّ."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:294
+#: core/utilities/setup/downloader/filesdownloader.cpp:287
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "خطأ في التحميل"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:295
+#: core/utilities/setup/downloader/filesdownloader.cpp:288
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -64118,35 +64118,35 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:303
+#: core/utilities/setup/downloader/filesdownloader.cpp:296
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "جرّب مجدّدًا"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:434
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:465
+#: core/utilities/setup/downloader/filesdownloader.cpp:458
 #, kde-format
 msgid "File write error."
 msgstr "خطأ كتابة الملف."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:472
+#: core/utilities/setup/downloader/filesdownloader.cpp:465
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "File open error."
 msgstr "أدوات التّصدير"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:487
+#: core/utilities/setup/downloader/filesdownloader.cpp:480
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "File on the server is too large."
 msgstr "فشل حفظ الوسوم في الملفّ."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:598
+#: core/utilities/setup/downloader/filesdownloader.cpp:591
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -64156,7 +64156,7 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:603
+#: core/utilities/setup/downloader/filesdownloader.cpp:596
 #, kde-format
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
@@ -64166,18 +64166,18 @@ msgid ""
 "downloading the files.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:610
+#: core/utilities/setup/downloader/filesdownloader.cpp:603
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:630
+#: core/utilities/setup/downloader/filesdownloader.cpp:623
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:647
+#: core/utilities/setup/downloader/filesdownloader.cpp:640
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""
@@ -66888,7 +66888,7 @@ msgstr "لا يمكن تسجيل قالب بيانات وصفيّة جديد د�
 #: core/utilities/setup/setuptemplate.cpp:254
 #, kde-format
 msgid "A metadata template named '%1' already exists."
-msgstr "هناك قالب بيانات وصفيّة بالاسم ’%1‘ بالفعل."
+msgstr "هناك قالب بيانات وصفيّة بالاسم ’%1‘ فعلًا."
 
 #: core/utilities/setup/setuptooltip.cpp:133
 #, kde-format
