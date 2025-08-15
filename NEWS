@@ -8,6 +8,7 @@ Bundles:         Update Qt6 based Linux AppImage to last frameworks Qt 6.9.1, KD
 Bundles:         Update Qt5 based Linux AppImage to last frameworks Qt 5.15.17, ffmpeg 7.1, and OpenCV 4.12.
 Bundles:         Update Qt6 based MacOS Silicon PKG to last frameworks Qt 6.9.1, KDE 6.17.0 and OpenCV 4.12.
 Bundles:         Update Qt5 based MacOS Intel PKG to last framework OpenCV 4.12.
+Bundles:         Support for long file paths in Windows 10/11 when enabled.
 RawEngine:       Update internal Libraw to last 20250727 upstream.
 Video:           Update internal QtAVPlayer to last 20250727 upstream (Qt5 only).
 Plugins:         G'MIC-Qt updated to last v3.6.0.
