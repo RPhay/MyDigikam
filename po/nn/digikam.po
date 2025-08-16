@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-12 02:03+0000\n"
+"POT-Creation-Date: 2025-08-15 02:17+0000\n"
 "PO-Revision-Date: 2025-05-03 11:36+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -3428,9 +3428,9 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:125
 #, kde-format
 msgid ""
-"Add new maintenance tool to perform <a href=\"https://community.kde.org/"
-"GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
-"images using deep learning model</a>."
+"Add new maintenance tool to perform <a href=\"https://community.kde.org/GSoc/"
+"2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify images "
+"using deep learning model</a>."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:126
@@ -3482,8 +3482,8 @@ msgstr ""
 #, kde-format
 msgid ""
 "Add new maintenance and Queue manager tools to assign tag automatically to "
-"images using deep learning neural network engine.<a href=\"https://community."
-"kde.org/GSoc/2023/StatusReports/"
+"images using deep learning neural network engine.<a href=\"https://"
+"community.kde.org/GSoc/2023/StatusReports/"
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam\">See "
 "this GoSC-2023 report for details.</a>"
 msgstr ""
@@ -3540,11 +3540,12 @@ msgstr ""
 #, kde-format
 msgid ""
 "New RAW camera supported: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, "
-"EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c."
-"Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-"
-"ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, "
-"A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
-"Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
+"EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad "
+"X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-"
+"G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-"
+"GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-"
+"FX30, DSC-HX95, A1.Multiple DJI and Skydio drones.Multiple smartphones with "
+"DNG format recorded."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:161
@@ -4838,8 +4839,8 @@ msgctxt "@info"
 msgid ""
 "<para>This Generic tool can convert RAW images data to DNG format.</"
 "para><para>The Digital Negative is a lossless RAW image format created by "
-"Adobe.</para><para>See details about this format from <a href='https://en."
-"wikipedia.org/wiki/Digital_Negative'>this page</a>.</para>"
+"Adobe.</para><para>See details about this format from <a href='https://"
+"en.wikipedia.org/wiki/Digital_Negative'>this page</a>.</para>"
 msgstr ""
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:42
@@ -4891,8 +4892,8 @@ msgid ""
 "It was created by the Joint Photographic Experts Group committee in 2000 "
 "with the intention of superseding their original discrete cosine transform-"
 "based JPEG standard (created in 1992) with a newly designed, wavelet-based "
-"method.</para><para>See details about this format from <a href='https://en."
-"wikipedia.org/wiki/JPEG_2000'>this page</a>.</para>"
+"method.</para><para>See details about this format from <a href='https://"
+"en.wikipedia.org/wiki/JPEG_2000'>this page</a>.</para>"
 msgstr ""
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:42
@@ -6988,9 +6989,9 @@ msgid ""
 "format, that is based on a fast, discrete wavelet transform with progressive "
 "coding features. PGF can be used for lossless and lossy compression. It is "
 "most suitable for natural images. PGF can be used as a very efficient and "
-"fast replacement of JPEG-2000.</para><para>See <a href='https://en.wikipedia."
-"org/wiki/Progressive_Graphics_File'>Progressive Graphics File documentation</"
-"a> for details.</para>"
+"fast replacement of JPEG-2000.</para><para>See <a href='https://"
+"en.wikipedia.org/wiki/Progressive_Graphics_File'>Progressive Graphics File "
+"documentation</a> for details.</para>"
 msgstr ""
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:106
@@ -7115,9 +7116,9 @@ msgstr ""
 msgctxt "@info"
 msgid ""
 "<para>This plugin allows users to load and save image using QImage plugins "
-"from Qt Framework.</para><para>See <a href='https://doc.qt.io/qt-5/qimage."
-"html#reading-and-writing-image-files'>Qt Framework documentation</a> for "
-"main native list of format supported.</para><para>See <a href='https://"
+"from Qt Framework.</para><para>See <a href='https://doc.qt.io/qt-5/"
+"qimage.html#reading-and-writing-image-files'>Qt Framework documentation</a> "
+"for main native list of format supported.</para><para>See <a href='https://"
 "invent.kde.org/frameworks/kimageformats/-/blob/master/README.md'>KDE "
 "Framework documentation</a> for extended list of formats supported.</para>"
 msgstr ""
@@ -7173,8 +7174,8 @@ msgid ""
 "processed by a raw converter in a wide-gamut internal color space where "
 "precise adjustments can be made before conversion to a TIFF or JPEG for "
 "storage, printing, or further manipulation. This often encodes the image in "
-"a device-dependent color space.</para><para>See <a href='https://en."
-"wikipedia.org/wiki/Raw_image_format'>Raw Image File documentation</a> for "
+"a device-dependent color space.</para><para>See <a href='https://"
+"en.wikipedia.org/wiki/Raw_image_format'>Raw Image File documentation</a> for "
 "details.</para>"
 msgstr ""
 
@@ -10918,7 +10919,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:81
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:180
 #: core/utilities/maintenance/tools/facesmanagement/facesengine_p.cpp:31
 #: core/utilities/searchwindow/searchutilities.cpp:643
 #, kde-format
@@ -12231,8 +12232,8 @@ msgstr "Synkroniser IPTC-bilettekst (åtvaring: avgrensa til 2000 teikn)"
 #, kde-format
 msgid ""
 "<b>Note:</b> <b><a href='https://en.wikipedia.org/wiki/EXIF'>Exif</a></b> "
-"text tags marked by (*) only support printable <b><a href='https://en."
-"wikipedia.org/wiki/Ascii'>ASCII</a></b> characters."
+"text tags marked by (*) only support printable <b><a href='https://"
+"en.wikipedia.org/wiki/Ascii'>ASCII</a></b> characters."
 msgstr ""
 "<b>Merk:</b> <b><a href='https://en.wikipedia.org/wiki/EXIF'>Exif</a></b>-"
 "felt merkte med «(*)» støttar berre <b><a href='https://nn.wikipedia.org/"
@@ -13292,8 +13293,8 @@ msgstr "&Byt ut"
 msgid ""
 "<b>Note: <a href='https://en.wikipedia.org/wiki/"
 "IPTC_Information_Interchange_Model'>IPTC</a> text tags are limited string "
-"sizes. Use contextual help for details. Consider to use <a href='https://en."
-"wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"
+"sizes. Use contextual help for details. Consider to use <a href='https://"
+"en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:69
@@ -18224,8 +18225,8 @@ msgid ""
 "\"File name template\": Set here the base name of the files that will be "
 "saved. For example, if your template is \"panorama\" and if you chose a JPEG "
 "output, then your panorama will be saved with the name \"panorama.jpg\". If "
-"you choose to save also the project file, it will have the name \"panorama."
-"pto\"."
+"you choose to save also the project file, it will have the name "
+"\"panorama.pto\"."
 msgstr ""
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:100
@@ -26905,9 +26906,9 @@ msgstr ""
 "På grunn av ein uventa feil var oppdateringa av skjema frå versjon 4 til 6 "
 "mislukka. Du kan prøva å fjerna den gamle databasen og byrja med ein tom. "
 "(Flytt då databasefilene «%1» og «%2» vekk frå mappa «%3».) Truleg bør du "
-"heller melda frå om feilen til e-postlista for digiKam-utviklinga (sjå www."
-"digikam.org/support). Sjå òg på eventuelle meldingar som digiKam har skrive "
-"på terminalen. "
+"heller melda frå om feilen til e-postlista for digiKam-utviklinga (sjå "
+"www.digikam.org/support). Sjå òg på eventuelle meldingar som digiKam har "
+"skrive på terminalen. "
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:450
 #, kde-format
@@ -26929,9 +26930,9 @@ msgstr ""
 #: core/libs/database/coredb/coredbschemaupdater.cpp:686
 #, kde-format
 msgid ""
-"The database update action cannot be found. Please ensure that the dbconfig."
-"xml file of the current version of digiKam is installed at the correct "
-"place. "
+"The database update action cannot be found. Please ensure that the "
+"dbconfig.xml file of the current version of digiKam is installed at the "
+"correct place. "
 msgstr ""
 "Finn ikkje handlinga for databaseoppdatering. Kontroller at dbconfig.xml-"
 "fila for gjeldande versjon av digiKam er installert på rett stad. "
@@ -27538,7 +27539,7 @@ msgstr "Flytt over →"
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #: core/utilities/facemanagement/dialogs/facetrainingupgradedlg.cpp:85
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:184
 #, kde-format
 msgid "Cancel"
 msgstr "Avbryt"
@@ -27938,8 +27939,8 @@ msgid ""
 "administrator. Look in <b>Requirements</b> tab for details.</p>"
 msgstr ""
 "<p>Vel her korleis kopla til ein ekstern <a href=\"https://no.wikipedia.org/"
-"wiki/MySQL\">MySQL-databasetenar</a> (eller ein <a href=\"https://en."
-"wikipedia.org/wiki/MariaDB\">MariaDB</a>-tenar). Som for SQLite og intern "
+"wiki/MySQL\">MySQL-databasetenar</a> (eller ein <a href=\"https://"
+"en.wikipedia.org/wiki/MariaDB\">MariaDB</a>-tenar). Som for SQLite og intern "
 "MySQL er det tre databasar, éin for alle samlingseigenskapane, éin for "
 "komprimerte miniatyrbilete og éin for metadata for ansiktsgjenkjenning.</"
 "p><p>I motsetning til med SQLite og intern MySQL kan du tilpassa "
@@ -49569,23 +49570,23 @@ msgstr ""
 msgid "Add metadata information"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:55
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
 #, kde-format
 msgctxt "Sequence Number"
 msgid "Number..."
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:57
 #, kde-format
 msgid "Add a sequence number"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:59
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
 #, kde-format
 msgid "Sequence number"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:61
 #, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
@@ -49593,17 +49594,17 @@ msgid ""
 "extension aware, ||re|| = random and extension aware)"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:68
 #, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:70
 #, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:72
 #, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr ""
@@ -55416,72 +55417,72 @@ msgstr "(%1,%2) RGBA:%3,%4,%5,%6"
 msgid "Tools"
 msgstr "Verktøy"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:122
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:106
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:123
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:107
 #, kde-format
 msgid "About this tool..."
 msgstr "Om dette verktøyet …"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:126
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:102
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:127
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:103
 #, kde-format
 msgid "Tool online handbook..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:158
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:159
 #, kde-format
 msgid "Guide:"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:162
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:163
 #, kde-format
 msgid "Set here the color used to draw dashed guide lines."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:167
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:168
 #, kde-format
 msgid "Set here the width in pixels used to draw dashed guide lines."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:175
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:176
 #, kde-format
 msgid "Defaults"
 msgstr "Standardverdiar"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:177
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:178
 #, kde-format
 msgid "Reset all settings to their default values."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:194
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:195
 #, kde-format
 msgctxt "@action: load previously saved filter settings"
 msgid "Load..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:196
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:197
 #, kde-format
 msgid "Load all parameters from settings text file."
 msgstr "Hent inn parametrar frå ei tekstfil."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:198
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:199
 #, kde-format
 msgctxt "@action: save current filter settings"
 msgid "Save As..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:200
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:201
 #, kde-format
 msgid "Save all parameters to settings text file."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:203
 #, kde-format
 msgctxt "@action: try current filter settings"
 msgid "Try"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:204
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:205
 #, kde-format
 msgid "Try all settings."
 msgstr ""
@@ -58919,7 +58920,7 @@ msgstr "Åtferd"
 msgid "Saving Images"
 msgstr ""
 
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:98
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:99
 #, kde-format
 msgid "Reset current tool settings to default values."
 msgstr ""
@@ -61470,18 +61471,18 @@ msgstr ""
 msgid "Use AutoTags Assignment feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:285
+#: core/utilities/setup/downloader/filesdownloader.cpp:278
 #, kde-format
 msgid "All model files were downloaded successfully."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:294
+#: core/utilities/setup/downloader/filesdownloader.cpp:287
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:295
+#: core/utilities/setup/downloader/filesdownloader.cpp:288
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61493,33 +61494,33 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:303
+#: core/utilities/setup/downloader/filesdownloader.cpp:296
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:434
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:465
+#: core/utilities/setup/downloader/filesdownloader.cpp:458
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:472
+#: core/utilities/setup/downloader/filesdownloader.cpp:465
 #, kde-format
 msgid "File open error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:487
+#: core/utilities/setup/downloader/filesdownloader.cpp:480
 #, kde-format
 msgid "File on the server is too large."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:598
+#: core/utilities/setup/downloader/filesdownloader.cpp:591
 #, kde-format
 msgid ""
 "<p>digiKam relies on large binary model files to power features like face "
@@ -61529,7 +61530,7 @@ msgid ""
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:603
+#: core/utilities/setup/downloader/filesdownloader.cpp:596
 #, kde-format
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
@@ -61539,18 +61540,18 @@ msgid ""
 "downloading the files.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:610
+#: core/utilities/setup/downloader/filesdownloader.cpp:603
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:630
+#: core/utilities/setup/downloader/filesdownloader.cpp:623
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:647
+#: core/utilities/setup/downloader/filesdownloader.cpp:640
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""
@@ -62529,9 +62530,9 @@ msgstr ""
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
-"Instead of synchronizing metadata, just schedule it for synchronization."
-"Synchronization can be done later by triggering the apply pending, or at "
-"digikam exit"
+"Instead of synchronizing metadata, just schedule it for "
+"synchronization.Synchronization can be done later by triggering the apply "
+"pending, or at digikam exit"
 msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:152
@@ -64068,11 +64069,11 @@ msgstr ""
 #: core/utilities/setup/setuptemplate.cpp:93
 #, kde-format
 msgid ""
-"<b>Note: These information are used to set <b><a href='https://en.wikipedia."
-"org/wiki/Extensible_Metadata_Platform'>XMP</a></b> and <b><a href='https://"
-"en.wikipedia.org/wiki/IPTC'>IPTC</a></b> tag contents. There is no "
-"limitation with XMP, but note that IPTC text tag sizes are limited. Use "
-"contextual help for details.</b>"
+"<b>Note: These information are used to set <b><a href='https://"
+"en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a></b> and <b><a "
+"href='https://en.wikipedia.org/wiki/IPTC'>IPTC</a></b> tag contents. There "
+"is no limitation with XMP, but note that IPTC text tag sizes are limited. "
+"Use contextual help for details.</b>"
 msgstr ""
 
 #: core/utilities/setup/setuptemplate.cpp:112
