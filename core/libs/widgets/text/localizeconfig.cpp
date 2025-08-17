@@ -224,7 +224,7 @@ LocalizeConfig::LocalizeConfig(QWidget* const parent)
     d->translatorCB->insertItem(DOnlineTranslator::Google,         QLatin1String("Google"));
     d->translatorCB->insertItem(DOnlineTranslator::Yandex,         QLatin1String("Yandex"));
     d->translatorCB->insertItem(DOnlineTranslator::Bing,           QLatin1String("Bing"));
-    d->translatorCB->insertItem(DOnlineTranslator::LibreTranslate, QLatin1String("Libre Translate"));
+//    d->translatorCB->insertItem(DOnlineTranslator::LibreTranslate, QLatin1String("Libre Translate"));
     d->translatorCB->insertItem(DOnlineTranslator::Lingva,         QLatin1String("Lingva"));
 
     d->translatorLabel      = new QLabel(xi18nc("@info", "<para>The translator engine is an online Web-service used to translate "

@@ -96,12 +96,12 @@ int main(int argc, char* argv[])
                           DOnlineTranslator::Bing,
                           DOnlineTranslator::French,
                           DOnlineTranslator::English);
-
+/*
     do_online_translation(QString::fromUtf8("Mon vélo a crevé ce matin sur la route du travail"),
                           DOnlineTranslator::LibreTranslate,
                           DOnlineTranslator::German,
                           DOnlineTranslator::French);
-
+*/
     do_online_translation(QString::fromUtf8("Hier mon réveil a sonné à 5h00 du matin"),
                           DOnlineTranslator::Lingva,
                           DOnlineTranslator::English,

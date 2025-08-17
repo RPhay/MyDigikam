@@ -270,8 +270,8 @@ public:
         Google,
         Yandex,
         Bing,
-        LibreTranslate,
-        Lingva
+        Lingva,
+        LibreTranslate
     };
     Q_ENUM(Engine)
 
