@@ -107,6 +107,6 @@ public:
 };
 
 //! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.
-DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const ImageQualitySettings& s);
+DIGIKAM_GUI_EXPORT QDebug operator<<(QDebug dbg, const ImageQualitySettings& s);
 
 } // namespace Digikam
