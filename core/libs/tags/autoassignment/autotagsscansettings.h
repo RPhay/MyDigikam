@@ -114,6 +114,6 @@ private:
 };
 
 //! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.
-DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const AutotagsScanSettings& s);
+DIGIKAM_GUI_EXPORT QDebug operator<<(QDebug dbg, const AutotagsScanSettings& s);
 
 } // namespace Digikam
