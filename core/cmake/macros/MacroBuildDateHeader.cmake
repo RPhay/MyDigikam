@@ -7,6 +7,8 @@
 
 macro(BUILD_DATE_HEADER)
 
+    message(STATUS "Configuring build header target...")
+
     # Add a custom command to drive the build date script
 
     configure_file("${CMAKE_CURRENT_SOURCE_DIR}/cmake/templates/builddatescript.cmake.in"

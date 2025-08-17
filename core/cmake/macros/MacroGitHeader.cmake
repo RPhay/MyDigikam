@@ -7,6 +7,8 @@
 
 macro(GIT_HEADER)
 
+    message(STATUS "Configuring git header target...")
+
     # We only do this IF we are in a .git dir
 
     find_file(GIT_MARKER entries PATHS ${CMAKE_SOURCE_DIR}/.git)
