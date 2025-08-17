@@ -169,8 +169,6 @@ extern "C"
 #endif
 
 #include "digikam_opencv.h"
-#include "digikam_gitversion.h"
-#include "digikam_builddate.h"
 #include "digikam_version.h"
 
 // NOTE: defined in OpenCV core/private.hpp.

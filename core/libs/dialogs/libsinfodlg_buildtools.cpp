@@ -14,6 +14,11 @@
 
 #include "libsinfodlg_p.h"
 
+// Local includes
+
+#include "digikam_gitversion.h"
+#include "digikam_builddate.h"
+
 namespace Digikam
 {
 
