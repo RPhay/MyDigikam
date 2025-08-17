@@ -53,9 +53,6 @@ target_include_directories(digikam
                            ${DIGIKAM_TARGET_INCLUDES}
 )
 
-add_dependencies(digikam digikam-gitversion)
-add_dependencies(digikam digikam-builddate)
-
 target_link_libraries(digikam
 
                       PUBLIC
