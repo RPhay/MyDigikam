@@ -4,6 +4,7 @@ digiKam 8.8.0 - Release date: 2025-11-xx
 NEW FEATURES:
 
 Bundles:         Update to last ExifTool version 13.33.
+Bundles:         Update Qt6 based Windows installer to last frameworks Qt 6.9.0, and KDE 6.17.0.
 Bundles:         Update Qt6 based Linux AppImage to last frameworks Qt 6.9.1, KDE 6.17.0, ffmpeg 7.1, and OpenCV 4.12.
 Bundles:         Update Qt5 based Linux AppImage to last frameworks Qt 5.15.17, ffmpeg 7.1, and OpenCV 4.12.
 Bundles:         Update Qt6 based MacOS Silicon PKG to last frameworks Qt 6.9.1, KDE 6.17.0 and OpenCV 4.12.
@@ -16,6 +17,7 @@ TagsManager:     Add options to import or export tag-hierarchies to text files.
                  Controlled Vocabulary Keyword Catalogue format is supported (https://www.controlledvocabulary.com/products/index.html).
 Preview:         Add support to the FujiFilm camera focus points.
 ColorManagement: Use monitor color profile set under Windows, macOS, and Wayland.
+ProgressManager: Use native desktop notifier under Linux, macOS, and Windows.
 
 *****************************************************************************************************
 BUGFIXES:
