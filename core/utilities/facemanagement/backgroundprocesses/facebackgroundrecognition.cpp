@@ -189,6 +189,7 @@ bool FaceRecognitionBackgroundController::slotRescan()
 
     catch(const QException& e)
     {
+        Q_UNUSED(e);
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "FaceRecognitionBackgroundController::start: exception";
     }
 
