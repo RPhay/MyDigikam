@@ -116,6 +116,9 @@ add_library(digikamcore
             ${DIGIKAMCORE_OBJECTS}
 )
 
+add_dependencies(digikamcore digikam-gitversion)
+add_dependencies(digikamcore digikam-builddate)
+
 set_target_properties(digikamcore PROPERTIES
                       VERSION ${DIGIKAM_VERSION_SHORT}
                       SOVERSION ${DIGIKAM_VERSION_SHORT}
@@ -130,9 +133,6 @@ target_include_directories(digikamcore
                            PRIVATE
                            ${DIGIKAM_TARGET_INCLUDES}
 )
-
-add_dependencies(digikamcore digikam-gitversion)
-add_dependencies(digikamcore digikam-builddate)
 
 # All codes from this target are exported with digikam_core_export.h header and DIGIKAM_EXPORT macro.
 generate_export_header(digikamcore
