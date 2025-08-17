@@ -44,14 +44,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-15 02:17+0000\n"
-"PO-Revision-Date: 2025-08-09 22:09+0200\n"
+"PO-Revision-Date: 2025-08-16 22:29+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -25178,7 +25178,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Upload comments:"
-msgstr "Ladda upp kommentarer:"
+msgstr "Uppladdningskommentarer:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:404
 #, kde-format
@@ -25187,9 +25187,9 @@ msgid ""
 "This is a place to enter text that will be used as upload comments. The "
 "default of 'Uploaded via digiKam uploader' will be used if empty."
 msgstr ""
-"Det här är en plats att ange text som ska användas som uppladdade "
-"kommentarer. Standardvärdet \"Uppladdat via Digikam-uppladdare\" används om "
-"den är tom."
+"Det här är en plats att ange text som ska användas som "
+"uppladdningskommentarer. Standardvärdet \"Uploaded with digiKam uploader\" "
+"används om den är tom."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:426
 #, kde-format
