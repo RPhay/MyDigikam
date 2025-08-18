@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 02:17+0000\n"
+"POT-Creation-Date: 2025-08-18 02:01+0000\n"
 "PO-Revision-Date: 2025-08-09 08:51+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -30261,19 +30261,19 @@ msgstr ""
 msgid "Items List"
 msgstr "Llista d'elements"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:22
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:27
 #, kde-format
 msgctxt "@title"
 msgid "Build Environment"
 msgstr "Entorn de construcció"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:90
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:95
 #, kde-format
 msgctxt "@info: git revision"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:93
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:98
 #, kde-format
 msgctxt "@info: git branch"
 msgid "Unknown"

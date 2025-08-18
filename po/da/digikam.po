@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 02:17+0000\n"
+"POT-Creation-Date: 2025-08-18 02:01+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -31718,14 +31718,14 @@ msgstr "Version"
 msgid "Items List"
 msgstr "Billedhistorik"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:22
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:27
 #, fuzzy, kde-format
 #| msgid "Profile Version"
 msgctxt "@title"
 msgid "Build Environment"
 msgstr "Profilversion"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:90
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:95
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31733,7 +31733,7 @@ msgctxt "@info: git revision"
 msgid "Unknown"
 msgstr "Ukendt"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:93
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:98
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"

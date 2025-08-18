@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 02:17+0000\n"
+"POT-Creation-Date: 2025-08-18 02:01+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -28929,19 +28929,19 @@ msgstr "<font size=\"5\">%1</font><br><b>版本 %2</b><p>%3</p><p><i>%4</i></p>"
 msgid "Items List"
 msgstr "项目列表"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:22
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:27
 #, kde-format
 msgctxt "@title"
 msgid "Build Environment"
 msgstr "构建环境"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:90
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:95
 #, kde-format
 msgctxt "@info: git revision"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:93
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:98
 #, kde-format
 msgctxt "@info: git branch"
 msgid "Unknown"

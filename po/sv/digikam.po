@@ -43,8 +43,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 02:17+0000\n"
-"PO-Revision-Date: 2025-08-16 22:29+0200\n"
+"POT-Creation-Date: 2025-08-18 02:01+0000\n"
+"PO-Revision-Date: 2025-08-17 12:12+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -23232,7 +23232,7 @@ msgstr "Ta bort konto"
 #, kde-format
 msgctxt "photo permissions"
 msgid "Public"
-msgstr "Öppen"
+msgstr "Offentlig"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:50
 #, kde-format
@@ -23357,7 +23357,7 @@ msgstr "Publiceringsalternativ"
 #, kde-format
 msgctxt "As in accessible for people"
 msgid "Public (anyone can see them)"
-msgstr "Öppen (alla kan se dem)"
+msgstr "Offentlig (alla kan se dem)"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:158
 #, kde-format
@@ -23529,12 +23529,12 @@ msgstr ""
 #, kde-format
 msgctxt "google photos album privacy"
 msgid "Public"
-msgstr "Öppet"
+msgstr "Offentlig"
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:66
 #, kde-format
 msgid "Public album is listed on your public Google Photos page."
-msgstr "Öppna album listas på din öppna Google Foto-sida."
+msgstr "Öppna album listas på din offentliga Google Foto-sida."
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:67
 #, kde-format
@@ -24591,7 +24591,7 @@ msgstr "Fler alternativ"
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:142
 #, kde-format
 msgid "Photos should be taken within"
-msgstr "Foton ska vara tagna med"
+msgstr "Foton ska vara tagna inom"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:135
 #, kde-format
@@ -25701,7 +25701,7 @@ msgstr "Ställ in albumets synlighet"
 #, kde-format
 msgctxt "@label: properties"
 msgid "Public"
-msgstr "Öppen"
+msgstr "Offentlig"
 
 #: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:48
 #, kde-format
@@ -25895,12 +25895,12 @@ msgstr "Säkerhets- och integritetsinställningarna för det nya SmugMug-albumet
 #, kde-format
 msgctxt "smug album privacy"
 msgid "Public"
-msgstr "Öppet"
+msgstr "Offentlig"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:125
 #, kde-format
 msgid "Public album is listed on your public SmugMug page."
-msgstr "Öppna album listas på din öppna SmugMug-sida."
+msgstr "Offentliga album listas på din öppna SmugMug-sida."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:126
 #, kde-format
@@ -29916,19 +29916,19 @@ msgstr ""
 msgid "Items List"
 msgstr "Objektlista"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:22
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:27
 #, kde-format
 msgctxt "@title"
 msgid "Build Environment"
 msgstr "Byggmiljö"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:90
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:95
 #, kde-format
 msgctxt "@info: git revision"
 msgid "Unknown"
 msgstr "Okänd"
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:93
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:98
 #, kde-format
 msgctxt "@info: git branch"
 msgid "Unknown"
