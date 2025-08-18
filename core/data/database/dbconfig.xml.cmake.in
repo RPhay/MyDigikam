@@ -1700,18 +1700,16 @@
                 <statement mode="plain">CREATE TABLE FaceMatrices
                     (id INTEGER PRIMARY KEY AUTO_INCREMENT,
                     identity INTEGER NOT NULL,
-                    removeHash LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+                    removeHash VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
                     embedding BLOB NOT NULL,
-                    CONSTRAINT FaceEmbedding_Identities FOREIGN KEY (identity) REFERENCES Identities (id) ON DELETE CASCADE ON UPDATE CASCADE,
-                    UNIQUE(removeHash(255)))
+                    CONSTRAINT FaceEmbedding_Identities FOREIGN KEY (identity) REFERENCES Identities (id) ON DELETE CASCADE ON UPDATE CASCADE)
                     ENGINE InnoDB;
                 </statement>
             </dbaction>
 
             <dbaction name="RenameFaceDBFaceMatrices_contextcolumn_V5" mode="transaction">
                 <statement mode="plain">ALTER TABLE FaceMatrices
-                                        CHANGE `context` removeHash LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-                                        ADD UNIQUE(removeHash(255));
+                                        CHANGE `context` removeHash VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
                 </statement>
             </dbaction>
 
