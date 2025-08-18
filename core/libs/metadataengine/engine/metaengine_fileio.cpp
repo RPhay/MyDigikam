@@ -361,7 +361,7 @@ bool MetaEngine::save(const QString& imageFilePath, bool setVersion) const
         }
         else
         {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "Will write Metadata to file" << finfo.absoluteFilePath();
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Will write Metadata to file" << finfo.filePath();
             writtenToFile = d->saveToFile(finfo);
         }
 
@@ -371,7 +371,11 @@ bool MetaEngine::save(const QString& imageFilePath, bool setVersion) const
         }
     }
 
-    if (writeToSidecar || (writeToSidecarIfFileNotPossible && !writtenToFile))
+    if (
+        writeToSidecar                                                 ||
+        (writeToSidecarIfFileNotPossible && !writtenToFile)            ||
+        (writeToSidecarIfFileNotPossible && hasSidecar(finfo.filePath()))
+       )
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "Will write XMP sidecar for file" << finfo.fileName();
 

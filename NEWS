@@ -90,7 +90,7 @@ BUGFIXES:
 058 ==> 436526 - Use native Color Management settings from Windows and MacOS.
 059 ==> 508104 - Add Fujifilm focus-point extractor support to digiKam.
 060 ==> 508242 - Crash while needing help about numerotation.
-061 ==> 
+061 ==> 508419 - Race condition with XMP files causes confusing tagging behavior.
 062 ==> 
 063 ==> 
 064 ==> 
