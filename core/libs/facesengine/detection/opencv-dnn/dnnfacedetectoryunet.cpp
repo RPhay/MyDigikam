@@ -218,7 +218,7 @@ cv::UMat DNNFaceDetectorYuNet::callModel(const cv::UMat& inputImage)
 
         catch (const std::string& e)
         {
-            qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e;
+            qCWarning(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << QString::fromStdString(e);
         }
 
         catch (...)
