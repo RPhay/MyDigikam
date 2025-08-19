@@ -277,7 +277,7 @@ void FilesDownloader::slotDownload()
         QMessageBox::information(this, qApp->applicationName(),
                                  i18n("All model files were downloaded successfully."));
 
-        deleteUnusedFiles();
+//        deleteUnusedFiles();
 
         close();
     }
