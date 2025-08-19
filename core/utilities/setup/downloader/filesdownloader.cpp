@@ -277,7 +277,7 @@ void FilesDownloader::slotDownload()
         QMessageBox::information(this, qApp->applicationName(),
                                  i18n("All model files were downloaded successfully."));
 
-//        deleteUnusedFiles();
+        deleteUnusedFiles();
 
         close();
     }
@@ -631,6 +631,17 @@ void FilesDownloader::deleteUnusedFiles() const
 {
     QString path = getFacesEnginePath();
 
+    const QStringList obsoleteList({QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel"),
+                                    QLatin1String("face_detection_yunet_2023mar_int8.onnx"),
+                                    QLatin1String("yolov3-wider_16000.weights"),
+                                    QLatin1String("yolov5n_batch_16_s320.onnx"),
+                                    QLatin1String("yolov5x_batch_16_s320.onnx"),
+                                    QLatin1String("openface_nn4.small2.v1.t7"),
+                                    QLatin1String("shapepredictor.dat"),
+                                    QLatin1String("deploy.prototxt"),
+                                    QLatin1String("yolov3-face.cfg"),
+                                    QLatin1String("resnet50.onnx")});
+
     if (!path.isEmpty())
     {
         // Get a QDir object for the directory
@@ -641,42 +652,25 @@ void FilesDownloader::deleteUnusedFiles() const
         d->progress->setMaximum(dir.entryInfoList(QDir::Files).size());
         d->progress->setValue(0);
 
-        // get a list of all model files regardless if the feature is enabled or not
-
-        QList<DownloadInfo> fileList;
-        fileList << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageFaceDetection)
-                 << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageFaceRecognition)
-                 << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageAesthetics)
-                 << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageAutoRotate)
-                 << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageObjectDetection)
-                 << DNNModelManager::instance()->getDownloadInformation(DNNModelUsage::DNNUsageImageClassification);
-
         // iterate over all files in the directory and remove those that are not in the list
 
         const auto lst = dir.entryInfoList(QDir::Files);
 
         for (const QFileInfo& info : lst)
         {
-            bool found = false;
             d->progress->setValue(d->progress->value() + 1);
 
-            for (const DownloadInfo& dinfo : std::as_const(fileList))
+            for (const QString& obs : std::as_const(obsoleteList))
             {
-                if (info.fileName() == dinfo.name)
+                if (info.fileName() == obs)
                 {
-                    found = true;
+                    QFile::remove(info.filePath());
+
                     break;
                 }
             }
 
-            // delete the file if it was not found in the list
-
-            if (!found)
-            {
-                QFile::remove(info.filePath());
-            }
-
-            QThread::msleep(250);
+            QThread::msleep(200);
         }
     }
 }
