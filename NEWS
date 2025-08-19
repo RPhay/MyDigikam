@@ -92,7 +92,7 @@ BUGFIXES:
 060 ==> 508242 - Crash while needing help about numerotation.
 061 ==> 508419 - Race condition with XMP files causes confusing tagging behavior.
 062 ==> 503370 - "Open in File Manager" opens a wrong folder.
-063 ==> 
+063 ==> 508121 - Face Recognition does not produce any results.
 064 ==> 
 065 ==> 
 066 ==> 
