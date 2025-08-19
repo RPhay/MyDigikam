@@ -33,7 +33,7 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
 #ifdef Q_OS_WIN
 
     Q_UNUSED(screen);
-/*
+
     qCDebug(DIGIKAM_DIMG_LOG) << "ICM Windows: check the monitor profile for screen"
                               << screenNumber;
 
@@ -62,7 +62,7 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
 
         return false;
     }
-*/
+
     /**
      * Get the screen color profile.
      * Unlike Linux/X11, under Windows only the system path to the profile file can be handled,
@@ -70,28 +70,19 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
      */
 
     WCHAR profilePath[MAX_PATH];
-    DISPLAY_DEVICE dd;
-    dd.cb = sizeof(dd);
 
-    if (EnumDisplayDevices(NULL, screenNumber, &dd, EDD_GET_DEVICE_INTERFACE_NAME))
+    if (
+        !GetICMProfile(
+                       hdcScreen,
+                       MAX_PATH * sizeof(WCHAR),
+                       profilePath
+                      )
+       )
     {
-        if (
-            !WcsGetDefaultColorProfile(
-                                       WCS_PROFILE_MANAGEMENT_SCOPE_CURRENT_USER,
-                                       dd.DeviceKey,
-                                       CPT_ICC,
-                                       CPST_RGB_WORKING_SPACE,
-                                       0,
-                                       MAX_PATH * sizeof(WCHAR),
-                                       profilePath
-                                      )
-           )
-        {
             qCWarning(DIGIKAM_DIMG_LOG) << "ICM Windows: cannot get the screen profile path";
-            //ReleaseDC(NULL, hdcScreen);
+            ReleaseDC(NULL, hdcScreen);
 
             return false;
-        }
     }
 
     qCDebug(DIGIKAM_DIMG_LOG) << "ICM Windows: screen profile path:" << QString::fromWCharArray(profilePath);
@@ -103,7 +94,7 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
     if (!profileFile.open(QIODevice::ReadOnly))
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "ICM Windows: cannot open the screen profile file";
-        //ReleaseDC(NULL, hdcScreen);
+        ReleaseDC(NULL, hdcScreen);
 
         return false;
     }
@@ -121,7 +112,7 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
 
     // Free the memory
 
-    //ReleaseDC(NULL, hdcScreen);
+    ReleaseDC(NULL, hdcScreen);
 
     return true;
 
