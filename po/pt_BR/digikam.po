@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-18 02:01+0000\n"
-"PO-Revision-Date: 2025-08-17 20:48-0300\n"
+"PO-Revision-Date: 2025-08-18 15:23-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -1789,25 +1789,25 @@ msgstr "Abre o item selecionado com o aplicativo indicado como padrão."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Image Editor"
-msgstr "Editor de imagem"
+msgstr "Editor de Imagem"
 
 #: core/app/main/digikamapp_setup.cpp:384
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open the image editor."
-msgstr "Abrir o editor de imagens."
+msgstr "Abrir o editor de imagem."
 
 #: core/app/main/digikamapp_setup.cpp:391
 #, kde-format
 msgctxt "@action: setup"
 msgid "Light Table"
-msgstr "Mesa de luz"
+msgstr "Mesa de Luz"
 
 #: core/app/main/digikamapp_setup.cpp:397
 #, kde-format
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
-msgstr "Colocar na mesa de luz"
+msgstr "Colocar na Mesa de Luz"
 
 #: core/app/main/digikamapp_setup.cpp:398
 #, kde-format
@@ -1819,7 +1819,7 @@ msgstr "Colocar os itens selecionados na barra de miniaturas da mesa de luz."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Light Table"
-msgstr "Adicionar à mesa de luz"
+msgstr "Adicionar à Mesa de Luz"
 
 #: core/app/main/digikamapp_setup.cpp:405
 #, kde-format
@@ -1942,7 +1942,7 @@ msgstr "Mover para a Lixeira sem confirmação"
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Albums"
-msgstr "Or&ganizar álbuns"
+msgstr "Or&denar álbuns"
 
 #: core/app/main/digikamapp_setup.cpp:540
 #, kde-format
@@ -3139,7 +3139,7 @@ msgstr "Filtros"
 #: core/app/views/stack/itemiconview_albums.cpp:302
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
-msgstr "Não é possível abrir o álbum raiz. Não é uma localização física."
+msgstr "Não é possível abrir a raiz do álbum. Não é uma localização física."
 
 #: core/app/views/stack/itemiconview_items.cpp:739
 #, kde-format
@@ -3525,8 +3525,9 @@ msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
 "image quality."
 msgstr ""
-"Gerenciador de filas: adicione uma nova ferramenta para atribuir legendas de "
-"seleção automaticamente, analisando a qualidade da imagem."
+"Gerenciador de processamento em lote: adicione uma nova ferramenta para "
+"atribuir legendas de seleção automaticamente, analisando a qualidade da "
+"imagem."
 
 #: core/app/views/stack/welcomepageview.cpp:128
 #, kde-format
@@ -3548,8 +3549,8 @@ msgstr ""
 #, kde-format
 msgid "Queue Manager: add new tool to run G'MIC filters in batch."
 msgstr ""
-"Gerenciador de filas: adiciona uma nova ferramenta para executar filtros "
-"G'MIC em lote."
+"Gerenciador de processamento em lote: adiciona uma nova ferramenta para "
+"executar filtros G'MIC em lote."
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
@@ -3557,8 +3558,8 @@ msgid ""
 "Queue Manager: add new tool to perform auto-rotation based on content "
 "analysis using DNN."
 msgstr ""
-"Gerenciador de filas: adiciona uma nova ferramenta para realizar rotação "
-"automática com base na análise de conteúdo usando DNN."
+"Gerenciador de processamento em lote: adiciona uma nova ferramenta para "
+"realizar rotação automática com base na análise de conteúdo usando DNN."
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
@@ -3578,10 +3579,10 @@ msgid ""
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
 "\">See this GoSC-2023 report for details.</a>"
 msgstr ""
-"Adiciona novas ferramentas de manutenção e gerenciador de filas para "
-"atribuir etiquetas automaticamente a imagens usando o mecanismo de rede "
-"neural de aprendizado profundo.<a href=\"https://community.kde.org/GSoc/2023/"
-"StatusReports/"
+"Adiciona novas ferramentas de manutenção e gerenciador de processamento em "
+"lote para atribuir etiquetas automaticamente a imagens usando o mecanismo de "
+"rede neural de aprendizado profundo.<a href=\"https://community.kde.org/"
+"GSoc/2023/StatusReports/"
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
 "\">Consulte este relatório do GoSC-2023 para obter detalhes.</a>"
 
@@ -4171,7 +4172,7 @@ msgstr "Data/hora de criação"
 #: core/app/views/tableview/tableview_column_item.cpp:132
 #, kde-format
 msgid "Digitization date/time"
-msgstr "Data/hora de digitalização"
+msgstr "Data/hora da digitalização"
 
 #: core/app/views/tableview/tableview_column_item.cpp:80
 #: core/app/views/tableview/tableview_column_item.cpp:137
@@ -8967,8 +8968,8 @@ msgstr "Uma ferramenta para corrigir as distorções das lentes"
 msgctxt "@info"
 msgid "This Image Editor tool can adjust lens distortions from an image."
 msgstr ""
-"Esta ferramenta do editor de imagens pode corrigir distorções da lente em "
-"uma imagem."
+"Esta ferramenta do editor de imagem pode corrigir distorções da lente em uma "
+"imagem."
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:94
 #, kde-format
@@ -12510,7 +12511,7 @@ msgstr "Anúncio de imprensa"
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:125
 #, kde-format
 msgid "Set here the editorial attribute description of content."
-msgstr "Defina aqui a descrição do atributo editorial do conteúdo."
+msgstr "Digite aqui a descrição do atributo editorial do conteúdo."
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:130
 #, kde-format
@@ -12527,7 +12528,7 @@ msgstr[1] "%1 caracteres."
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:139
 #, kde-format
 msgid "Set here the editorial description"
-msgstr "Defina aqui a descrição do editorial"
+msgstr "Digite aqui a descrição do editorial"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:72
 #, kde-format
@@ -12692,7 +12693,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:124
 #, kde-format
 msgid "Custom rendered:"
-msgstr "Desenho personalizado:"
+msgstr "Renderização personalizada:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:126
 #, kde-format
@@ -12722,7 +12723,7 @@ msgstr "Nome (*):"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:83
 #, kde-format
 msgid "Set here the original document name."
-msgstr "Defina aqui o nome do documento original."
+msgstr "Digite aqui o nome do documento original."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:84
 #, kde-format
@@ -12742,7 +12743,7 @@ msgstr "Descrição (*):"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:93
 #, kde-format
 msgid "Set here the image description."
-msgstr "Defina aqui a descrição da imagem."
+msgstr "Digite aqui a descrição da imagem."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:94
 #, kde-format
@@ -12758,7 +12759,7 @@ msgstr "Artista (*):"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:102
 #, kde-format
 msgid "Set here the author's name."
-msgstr "Defina aqui o nome do autor."
+msgstr "Digite aqui o nome do autor."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:103
 #, kde-format
@@ -12772,7 +12773,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:108
 #, kde-format
 msgid "Copyright (*):"
-msgstr "Copyright (*):"
+msgstr "Direitos autorais (*):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:111
 #, kde-format
@@ -12813,17 +12814,18 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:82
 #, kde-format
 msgid "Sync JFIF Comment section"
-msgstr "Sincronizar a seção do comentário JFIF"
+msgstr "Sincronizar com a seção de comentário do JFIF"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:126
 #, kde-format
 msgid "Sync XMP caption"
-msgstr "Sincronizar a descrição XMP"
+msgstr "Sincronizar com a descrição do XMP"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:127
 #, kde-format
 msgid "Sync IPTC caption (warning: limited to 2000 characters)"
-msgstr "Sincronizar a descrição IPTC (atenção: limitado a 2000 caracteres)"
+msgstr ""
+"Sincronizar com a descrição do IPTC (atenção: limitado a 2000 caracteres)"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:134
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:290
@@ -12850,12 +12852,12 @@ msgstr "Subsegundos da criação"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:102
 #, kde-format
 msgid "Sync XMP creation date"
-msgstr "Sincronizar a data de criação XMP"
+msgstr "Sincronizar com a data de criação do XMP"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:103
 #, kde-format
 msgid "Sync IPTC creation date"
-msgstr "Sincronizar a data de criação IPTC"
+msgstr "Sincronizar com a data de criação do IPTC"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:107
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:144
@@ -12917,19 +12919,19 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:149
 #, kde-format
 msgid "Digitization date and time"
-msgstr "Data e hora de digitalização"
+msgstr "Data e hora da digitalização"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:150
 #, kde-format
 msgid "Digitization sub-second"
-msgstr "Subsegundos de digitalização"
+msgstr "Subsegundos da digitalização"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:163
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:117
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:113
 #, kde-format
 msgid "Set digitization date to today"
-msgstr "Definir a data de digitalização como hoje"
+msgstr "Definir a data da digitalização como hoje"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:165
 #, kde-format
@@ -12961,7 +12963,7 @@ msgstr "Fabricante do dispositivo (*):"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:101
 #, kde-format
 msgid "Set here the manufacturer name"
-msgstr "Defina aqui o nome do fabricante"
+msgstr "Digite aqui o nome do fabricante"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:102
 #, kde-format
@@ -12980,7 +12982,7 @@ msgstr "Modelo do dispositivo (*):"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:111
 #, kde-format
 msgid "Set here the model name"
-msgstr "Defina aqui o nome do modelo"
+msgstr "Digite aqui o nome do modelo"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:112
 #, kde-format
@@ -13024,10 +13026,10 @@ msgid ""
 "Exchangeable_image_file_format#MakerNote_data'>Makernotes</a></b> can be "
 "unreadable if you set wrong device manufacturer/model description."
 msgstr ""
-"<b>Aviso:</b> Exif<b><a href='https://en.wikipedia.org/wiki/"
-"Exchangeable_image_file_format#MakerNote_data'>Makernotes</a></b> podem "
-"ficar ilegíveis se você definir uma descrição incorreta do fabricante/modelo "
-"do dispositivo."
+"<b>Aviso:</b> As <b><a href='https://en.wikipedia.org/wiki/"
+"Exchangeable_image_file_format#MakerNote_data'>Notas do fabricante</a></b> "
+"no Exif podem ficar ilegíveis se você definir uma descrição incorreta do "
+"fabricante/modelo do dispositivo."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:137
 #, kde-format
@@ -13146,7 +13148,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:184
 #, kde-format
 msgid "Exposure bias (APEX):"
-msgstr "Desvio de exposição (APEX):"
+msgstr "Compensação de exposição (APEX):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:189
 #, kde-format
@@ -13154,8 +13156,8 @@ msgid ""
 "Set here the exposure bias value (in APEX units) used by camera to take the "
 "picture."
 msgstr ""
-"Defina aqui o valor do desvio de exposição (em unidades APEX), usado pela "
-"câmera para tirar a foto."
+"Defina aqui o valor da compensação de exposição (em unidades APEX), usado "
+"pela câmera para tirar a foto."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:196
 #, kde-format
@@ -13922,7 +13924,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:70
 #, kde-format
 msgid "Headline:"
-msgstr "Destaque:"
+msgstr "Sinopse:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:72
 #, kde-format
@@ -13940,13 +13942,13 @@ msgstr ""
 #, kde-format
 msgctxt "content description"
 msgid "Caption:"
-msgstr "Legenda:"
+msgstr "Descrição:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:86
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:83
 #, kde-format
 msgid "Sync Exif Comment"
-msgstr "Sincronizar o comentário EXIF"
+msgstr "Sincronizar com o comentário do EXIF"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:88
 #, kde-format
@@ -13964,12 +13966,12 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:92
 #, kde-format
 msgid "Caption Writer:"
-msgstr "Escritor da legenda:"
+msgstr "Escritor da descrição:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:95
 #, kde-format
 msgid "Enter the name of the caption author."
-msgstr "Digite o nome do autor da legenda."
+msgstr "Digite o nome do autor da descrição."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:68
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:98
@@ -13982,7 +13984,7 @@ msgstr "Direitos autorais:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:71
 #, kde-format
 msgid "Set here the copyright notice."
-msgstr "Digite aqui a nota de copyright."
+msgstr "Digite aqui a nota de direitos autorais."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:72
 #, kde-format
@@ -13990,8 +13992,8 @@ msgid ""
 "Set here the necessary copyright notice. This field is limited to 128 "
 "characters."
 msgstr ""
-"Defina aqui o aviso de copyright necessário. Este campo é limitado a 128 "
-"caracteres."
+"Defina aqui o aviso de direitos autorais necessário. Este campo é limitado a "
+"128 caracteres."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:77
 #, kde-format
@@ -14002,7 +14004,7 @@ msgstr "Autoria:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:86
 #, kde-format
 msgid "Set here the name of content creator."
-msgstr "Defina aqui o nome do criador do conteúdo."
+msgstr "Digite aqui o nome do criador do conteúdo."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:83
 #, kde-format
@@ -14013,7 +14015,7 @@ msgstr "Título da autoria:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:93
 #, kde-format
 msgid "Set here the title of content creator."
-msgstr "Defina aqui o título do criador do conteúdo."
+msgstr "Digite aqui o título ou cargo do criador do conteúdo."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:89
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:165
@@ -14453,7 +14455,7 @@ msgstr "ID do U.N.O:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:166
 #, kde-format
 msgid "Set here the Unique Name of Object identifier"
-msgstr "Defina aqui o identificador de Nome Único de Objeto"
+msgstr "Digite aqui o identificador de Nome Único de Objeto"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:167
 #, kde-format
@@ -14461,7 +14463,7 @@ msgid ""
 "Set here the Unique Name of Object identifier. This field is limited to 80 "
 "characters."
 msgstr ""
-"Defina aqui o identificador de Nome Único de Objeto (Unique Name of Object, "
+"Digite aqui o identificador de Nome Único de Objeto (Unique Name of Object, "
 "em inglês). Este campo é limitado a 80 caracteres."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:172
@@ -14472,14 +14474,14 @@ msgstr "ID do produto:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:176
 #, kde-format
 msgid "Set here the product identifier"
-msgstr "Defina aqui o identificador do produto"
+msgstr "Digite aqui o identificador do produto"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:177
 #, kde-format
 msgid ""
 "Set here the product identifier. This field is limited to 32 characters."
 msgstr ""
-"Defina aqui o identificador do produto. Este campo é limitado a 32 "
+"Digite aqui o identificador do produto. Este campo é limitado a 32 "
 "caracteres."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:182
@@ -14490,14 +14492,14 @@ msgstr "ID do serviço:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:186
 #, kde-format
 msgid "Set here the service identifier"
-msgstr "Defina aqui identificador de serviço"
+msgstr "Digite aqui o identificador de serviço"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:187
 #, kde-format
 msgid ""
 "Set here the service identifier. This field is limited to 10 characters."
 msgstr ""
-"Defina aqui o identificador do serviço. Este campo é limitado a 10 "
+"Digite aqui o identificador do serviço. Este campo é limitado a 10 "
 "caracteres."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:192
@@ -14508,14 +14510,14 @@ msgstr "ID do envelope:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:196
 #, kde-format
 msgid "Set here the envelope identifier"
-msgstr "Defina aqui o identificador do envelope"
+msgstr "Digite aqui o identificador do envelope"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:197
 #, kde-format
 msgid ""
 "Set here the envelope identifier. This field is limited to 8 characters."
 msgstr ""
-"Defina aqui o identificador do envelope. Este campo é limitado a 8 "
+"Digite aqui o identificador do envelope. Este campo é limitado a 8 "
 "caracteres."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:202
@@ -14623,7 +14625,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:105
 #, kde-format
 msgid "Digitization date"
-msgstr "Data de digitalização"
+msgstr "Data da digitalização"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:106
 #, kde-format
@@ -14662,7 +14664,7 @@ msgstr "Hora de criação"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:130
 #, kde-format
 msgid "Sync Exif creation date"
-msgstr "Sincronizar a data de criação do Exif"
+msgstr "Sincronizar com a data de criação do Exif"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:146
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:136
@@ -14936,7 +14938,7 @@ msgid ""
 "Set here the editorial type description of content. This field is limited to "
 "64 characters."
 msgstr ""
-"Defina aqui a descrição do tipo editorial do conteúdo. Este campo é limitado "
+"Digite aqui a descrição do tipo editorial do conteúdo. Este campo é limitado "
 "a 64 caracteres."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:214
@@ -14947,7 +14949,7 @@ msgstr "Referência:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:217
 #, kde-format
 msgid "Set here the content reference"
-msgstr "Defina aqui a referência de conteúdo"
+msgstr "Digite aqui a referência de conteúdo"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:219
 #, kde-format
@@ -14955,7 +14957,7 @@ msgid ""
 "Set here the original content transmission reference. This field is limited "
 "to 32 characters."
 msgstr ""
-"Defina aqui a referência da transmissão do conteúdo original. Este campo "
+"Digite aqui a referência da transmissão do conteúdo original. Este campo "
 "está limitado a 32 caracteres."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:67
@@ -15024,7 +15026,7 @@ msgstr "Instruções especiais:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:97
 #, kde-format
 msgid "Set here the content instructions"
-msgstr "Defina aqui as instruções do conteúdo"
+msgstr "Digite aqui as instruções do conteúdo"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:98
 #, kde-format
@@ -15148,12 +15150,12 @@ msgstr "Defina aqui a sinopse do conteúdo"
 #, kde-format
 msgctxt "content description"
 msgid "Captions:"
-msgstr "Descrições:"
+msgstr "Descrição:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:77
 #, kde-format
 msgid "Set here the content descriptions."
-msgstr "Defina aqui as descrições do conteúdo"
+msgstr "Digite aqui a descrição do conteúdo"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:79
 #, kde-format
@@ -15163,17 +15165,17 @@ msgstr "Opções padrão de idioma de legendas"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:94
 #, kde-format
 msgid "Set here the name of the caption author."
-msgstr "Defina aqui o nome do autor da legenda."
+msgstr "Digite aqui o nome do autor da descrição."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:99
 #, kde-format
 msgid "Set here the necessary copyright notice."
-msgstr "Defina aqui a nota de copyright necessária."
+msgstr "Defina aqui a nota de direitos autorais necessária."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:101
 #, kde-format
 msgid "Sync Exif Copyright"
-msgstr "Sincronizar o Copyright do Exif"
+msgstr "Sincronizar com os direitos autorais do Exif"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:103
 #: core/libs/template/templatepanel.cpp:152
@@ -15185,7 +15187,7 @@ msgstr "Termos de uso:"
 #, kde-format
 msgid "Set here the instructions on how a resource can be legally used here."
 msgstr ""
-"Defina aqui a lista de instruções de como um recurso pode ser legalmente "
+"Digite aqui a lista de instruções de como um recurso pode ser legalmente "
 "usado."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:85
@@ -15681,13 +15683,13 @@ msgstr "Atributo:"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the editorial attribute description"
-msgstr "Defina aqui a descrição do atributo editorial"
+msgstr "Digite aqui a descrição do atributo editorial"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid "Set here the editorial attribute description of the content."
-msgstr "Defina aqui a descrição do atributo editorial do conteúdo."
+msgstr "Digite aqui a descrição do atributo editorial do conteúdo."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:205
 #, kde-format
@@ -15837,13 +15839,13 @@ msgstr "Referência:"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the content reference"
-msgstr "Defina aqui a referência do conteúdo"
+msgstr "Digite aqui a referência do conteúdo"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:235
 #, kde-format
 msgctxt "@info"
 msgid "Set here the original content transmission reference."
-msgstr "Defina aqui a referência da transmissão do conteúdo original."
+msgstr "Digite aqui a referência da transmissão do conteúdo original."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:65
 #, kde-format
@@ -15854,7 +15856,7 @@ msgstr "Título:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:66
 #, kde-format
 msgid "Set here a shorthand reference for the content."
-msgstr "Defina aqui a referência resumida do conteúdo."
+msgstr "Digite aqui a referência resumida do conteúdo."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:70
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:118
@@ -15880,12 +15882,12 @@ msgstr "Identificadores:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:79
 #, kde-format
 msgid "Set here the strings that identify content that recurs."
-msgstr "Defina aqui as strings que identificam o conteúdo recorrente."
+msgstr "Digite aqui os textos recorrentes que identificam o conteúdo."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:86
 #, kde-format
 msgid "Set here the editorial usage instructions"
-msgstr "Defina aqui as instruções de utilização editorial"
+msgstr "Digite aqui as instruções de utilização editorial"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:87
 #, kde-format
@@ -19634,7 +19636,7 @@ msgstr "O Programa de Manipulação de Imagens da GNU (GIMP)."
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:57
 #, kde-format
 msgid "Caption Type:"
-msgstr "Tipo de legenda:"
+msgstr "Tipo de descrição:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:86
@@ -27334,7 +27336,7 @@ msgstr "O nome do álbum não pode conter o caractere '/'."
 #: core/libs/album/manager/albummanager_palbum.cpp:395
 #, kde-format
 msgid "createPAlbum does not accept the root album as parent."
-msgstr "O createPAlbu não aceita o álbum raiz como pai."
+msgstr "O createPAlbu não aceita a raiz do álbum como pai."
 
 #: core/libs/album/manager/albummanager_palbum.cpp:411
 #, kde-format
@@ -27364,12 +27366,12 @@ msgstr "O álbum não existe"
 #: core/libs/album/manager/albummanager_palbum.cpp:469
 #, kde-format
 msgid "Cannot rename root album"
-msgstr "Não é possível renomear o álbum raiz"
+msgstr "Não é possível renomear a raiz do álbum"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:475
 #, kde-format
 msgid "Cannot rename album root album"
-msgstr "Não é possível renomear o álbum raiz"
+msgstr "Não é possível renomear o raiz do álbum"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:481
 #, kde-format
@@ -27393,7 +27395,7 @@ msgstr "Falha ao renomear o álbum"
 #: core/libs/album/manager/albummanager_palbum.cpp:556
 #, kde-format
 msgid "Cannot edit root album"
-msgstr "Não é possível editar o álbum raiz"
+msgstr "Não é possível editar o raiz do álbum"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:290
 #, kde-format
@@ -29140,7 +29142,7 @@ msgstr "SQLite"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:61
 #, kde-format
 msgid "Mysql Internal"
-msgstr "Interno do MySQL"
+msgstr "MySQL interno"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:66
 #, kde-format
@@ -29167,7 +29169,7 @@ msgid ""
 "collection sizes. This backend is recommend for local collections with more "
 "than 100K items.</p>"
 msgstr ""
-"O backend <p><b>Interno do MySQL</b> é para armazenamento de banco de dados "
+"O backend <p><b>MySQL interno</b> é para armazenamento de banco de dados "
 "local com coleções de grande porte. Este backend é recomendado para coleções "
 "locais com mais de 100 mil itens.</p>"
 
@@ -29199,14 +29201,14 @@ msgstr ""
 "<p>Defina aqui o local onde os arquivos do banco de dados serão armazenados "
 "no seu sistema. Existem quatro bancos de dados: um para as propriedades das "
 "coleções, um para guardar as miniaturas compactadas, um para armazenar os "
-"metadados de reconhecimento de rostos, e um para armazenar impressões "
-"digitais de similaridade.<br>É necessário permissão de escrita para poder "
-"editar as propriedades das imagens.</p><p>Os bancos de dados são os "
-"mecanismos básicos do digiKam. Lembre-se de usar um local com hardware "
-"rápido (como uma unidade SSD ou NVMe) e com espaço livre suficiente, em "
-"especial, para o banco de dados de miniaturas.</p><p>Observação: Não é "
-"possível usar um sistema de arquivos remoto, como o NFS. Por razões de "
-"desempenho, recomenda-se não usar mídia de armazenamento em rede.</p><p></p>"
+"metadados de reconhecimento facial, e um para armazenar impressões digitais "
+"de semelhança.<br>É necessário permissão de escrita para poder editar as "
+"propriedades das imagens.</p><p>Os bancos de dados são mecanismos básicos do "
+"digiKam. Lembre-se de usar um local com hardware rápido (como uma unidade "
+"SSD ou NVMe) e com espaço livre suficiente, em especial, para o banco de "
+"dados de miniaturas.</p><p>Observação: Não é possível usar um sistema de "
+"arquivos remoto, como o NFS. Por razões de desempenho, recomenda-se não usar "
+"mídia de armazenamento em rede.</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
@@ -29232,12 +29234,13 @@ msgid ""
 "before the changes are written to the database. This made database requests "
 "atomic and robust in extensive and critical use cases."
 msgstr ""
-"O 'Write-Ahead Log' é um modo de usar m 'roll-forward journal' que registra "
-"as transações que foram confirmadas, mas ainda não aplicadas aos bancos de "
-"dados. Ele usa um arquivo auxiliar para hospedar estruturas para transações "
-"de recuperação durante uma falha. As alterações são registradas primeiro no "
-"log, antes de serem gravadas no banco de dados. Isso tornou as solicitações "
-"ao banco de dados atômicas e robustas em casos de uso extensos e críticos."
+"O 'Write-Ahead Log' é um modo de usar 'roll-forward journal' que registra as "
+"transações que foram confirmadas, mas ainda não foram aplicadas aos bancos "
+"de dados. Ele usa um arquivo auxiliar para hospedar estruturas para "
+"recuperação das transações em caso de falha. As alterações são registradas "
+"primeiro ne estrutura, antes de serem gravadas no banco de dados. Isso "
+"tornou as solicitações ao banco de dados atômicas e robustas em casos de uso "
+"extensos e críticos."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:131
 #, kde-format
@@ -29549,19 +29552,19 @@ msgstr ""
 "com o SQLite ou o interno do MySQL, serão armazenados três bancos de dados "
 "no servidor remoto: um para as propriedades das coleções, um para armazenar "
 "as miniaturas compactadas e um para guardar os metadados de reconhecimento "
-"de rostos.</p><p>Ao contrário dos servidores SQLite ou interno do MySQL, "
+"de rostos.</p><p>Ao contrário dos servidores SQLite ou do MySQL interno, "
 "pode-se personalizar os nomes dos bancos de dados para simplificar suas "
 "cópias de segurança.</p><p>Os bancos de dados são os mecanismos base do "
 "digiKam. Para evitar problemas de desempenho, lembre-se de usar uma conexão "
 "de rede rápida entre os computadores clientes e servidor. Também se "
-"recomenda que armazenar os arquivos de bancos de dados em hardware rápido "
-"(como <a href=\"https://pt.wikipedia.org/wiki/SSD\">SSD</a>s) com espaço "
-"livre suficiente em disco, especialmente no caso de bancos de dados de "
-"miniaturas, mesmo que os dados estejam compactados com o formato de imagem "
-"por wavelets que é o <a href=\"https://en.wikipedia.org/wiki/"
-"Progressive_Graphics_File\">PGF</a>.</p><p>Os bancos de dados devem ser "
-"previamente criados no servidor remoto pelo administrador. Consulte a aba "
-"<b>Requisitos</b> para obter mais detalhes.</p>"
+"recomenda armazenar os arquivos de bancos de dados em hardware rápido (como "
+"<a href=\"https://pt.wikipedia.org/wiki/SSD\">SSD</a>s) com espaço livre "
+"suficiente em disco, especialmente no caso do bancos de dados de miniaturas, "
+"mesmo que os dados estejam compactados com o formato de imagem por wavelets "
+"que é o <a href=\"https://en.wikipedia.org/wiki/Progressive_Graphics_File"
+"\">PGF</a>.</p><p>Os bancos de dados devem ser previamente criados no "
+"servidor remoto pelo administrador. Consulte a aba <b>Requisitos</b> para "
+"obter mais detalhes.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:359
 #, kde-format
@@ -29621,7 +29624,7 @@ msgstr "O nome do banco de dados de rostos está em branco"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:654
 #, kde-format
 msgid "The similarity database name is empty"
-msgstr "O nome do banco de dados de similaridades está em branco"
+msgstr "O nome do banco de dados de semelhança está em branco"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:716
 #, kde-format
@@ -38597,7 +38600,7 @@ msgstr "ISO %1"
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
-msgstr "Descrições"
+msgstr "Descrição"
 
 #: core/libs/properties/itempropertiessidebardb.cpp:88
 #, kde-format
@@ -40913,12 +40916,12 @@ msgstr ""
 #: core/libs/template/templatepanel.cpp:103
 #, kde-format
 msgid "Authors' Positions:"
-msgstr "Profissão dos autores:"
+msgstr "Cargo dos autores:"
 
 #: core/libs/template/templatepanel.cpp:105
 #, kde-format
 msgid "Enter the job titles of the authors here."
-msgstr "Digite aqui o nome da profissão dos autores."
+msgstr "Digite aqui o título ou cargo dos autores."
 
 #: core/libs/template/templatepanel.cpp:107
 #, kde-format
@@ -40929,7 +40932,7 @@ msgid ""
 "Author field, the Author field must also be filled out.</p><p>With IPTC, "
 "this field is limited to 32 characters.</p>"
 msgstr ""
-"<p>Este campo deverá conter os títulos da profissão dos autores. Alguns "
+"<p>Este campo deverá conter os títulos ou cargos dos autores. Alguns "
 "exemplos podem incluir títulos como: Fotógrafo de equipe, Fotógrafo "
 "comercial independente. Uma vez que esta é uma qualificação para o campo "
 "Autor, este também deverá ser preenchido.</p><p>Com IPTC, este campo está "
@@ -40994,7 +40997,7 @@ msgid ""
 "one copyright string using different languages.</p><p>With IPTC, this field "
 "is limited to 128 characters.</p>"
 msgstr ""
-"<p>As notas de Copyright deverão conter todos os avisos de direitos "
+"<p>As notas de Direitos autorais deverão conter todos os avisos de direitos "
 "necessários para reclamar a propriedade intelectual, devendo identificar os "
 "proprietários atuais dos direitos da fotografia. Normalmente, seria o "
 "fotógrafo, mas se a imagem foi feita por um empregado ou por trabalho "
@@ -43411,8 +43414,8 @@ msgid ""
 "<qt><font color=\"white\"><b>Professional</b> Photo <b>Management</"
 "b><br>with the Power of <b>Open Source</b></font></qt>"
 msgstr ""
-"<qt><font color=\"white\"><b>Gerenciador</b> de fotos <b>profissional</b> "
-"com o poder do <b>Software Livre</b></font></qt>"
+"<qt><font color=\"white\"><b>Gerenciador</b> de fotos <b>profissional</"
+"b><br>com o poder do <b>Software Livre</b></font></qt>"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:51
 #, kde-format
@@ -43539,7 +43542,7 @@ msgid ""
 msgstr ""
 "Ferramenta de exportação UPNP/DLNA e\n"
 "ferramenta de clonagem de recuperação\n"
-"para editor de imagens"
+"para o editor de imagem"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:201
 #, kde-format
@@ -43563,7 +43566,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:219
 #, kde-format
 msgid "Model/View Port of Image Editor Canvas"
-msgstr "Migração do modelo/exibição do editor de imagens"
+msgstr "Migração do modelo/exibição do editor de imagem"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:225
 #: core/utilities/maintenance/main/maintenancedlg.cpp:273
@@ -43652,7 +43655,7 @@ msgstr "Gerenciamento de cor"
 #: core/libs/widgets/mainview/daboutdata.cpp:350
 #, kde-format
 msgid "MySQL interface"
-msgstr "Interface MySQL"
+msgstr "Interface do MySQL"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:355
 #, kde-format
@@ -48293,7 +48296,7 @@ msgstr "Usar definição personalizada"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Informative Provider Reference"
-msgstr "Defina aqui a referência do fornecedor das informações"
+msgstr "Digite aqui a referência do fornecedor das informações"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:164
 #, kde-format
@@ -48305,7 +48308,7 @@ msgstr "Defina aqui o número de referência do assunto"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Name"
-msgstr "Defina aqui o nome do assunto"
+msgstr "Digite aqui o nome do assunto"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:186
 #, kde-format
@@ -48317,7 +48320,7 @@ msgstr "Defina aqui o nome da matéria do assunto"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Detail Name"
-msgstr "Defina aqui o nome do detalhe do assunto"
+msgstr "Digite aqui o nome do detalhe do assunto"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:209
 #, kde-format
@@ -50611,7 +50614,7 @@ msgstr "Genérico"
 #, kde-format
 msgctxt "@title:tab editor plugins list"
 msgid "Image Editor"
-msgstr "Editor de imagem"
+msgstr "Editor de Imagem"
 
 #: core/showfoto/setup/showfotosetupplugins.cpp:74
 #, kde-format
@@ -51349,7 +51352,7 @@ msgstr[1] "Renomear (%1 imagens)"
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:415
 #, kde-format
 msgid "Sort Images"
-msgstr "Organizar imagens"
+msgstr "Ordenar imagens"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:69
 #, kde-format
@@ -52542,14 +52545,14 @@ msgid ""
 "You must select a folder for digiKam to use as the root album. All of your "
 "images will go there."
 msgstr ""
-"Você deve selecionar uma pasta para o digiKam usar como álbum raiz. Todas as "
-"imagens ficarão lá."
+"Você deve selecionar uma pasta para o digiKam usar como raiz do álbum. Todas "
+"as imagens ficarão lá."
 
 #: core/utilities/firstrun/collectionpage.cpp:176
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder?"
-msgstr "Criar a pasta do álbum raiz?"
+msgstr "Criar a pasta raiz do álbum?"
 
 #: core/utilities/firstrun/collectionpage.cpp:177
 #, kde-format
@@ -52564,7 +52567,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder Failed"
-msgstr "A criação da pasta do álbum raiz falhou"
+msgstr "A criação da pasta raiz do álbum falhou"
 
 #: core/utilities/firstrun/collectionpage.cpp:190
 #, kde-format
@@ -52572,8 +52575,8 @@ msgid ""
 "<p>digiKam could not create the folder to use as the root album.<br>Please "
 "select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"<p>O digiKam não pôde criar a pasta para usar como álbum raiz.<br>Selecione "
-"outra localização.</p><p><b>%1</b></p>"
+"<p>O digiKam não pôde criar a pasta para usar como raiz do álbum."
+"<br>Selecione outra localização.</p><p><b>%1</b></p>"
 
 #: core/utilities/firstrun/collectionpage.cpp:215
 #, kde-format
@@ -52699,11 +52702,11 @@ msgid ""
 "quickly, it is often better to use the light table: images can be displayed "
 "side-by-side, and synchronized zooming and panning can be performed.</p></qt>"
 msgstr ""
-"<qt><p><i>Observação:</i> Usar o modo de exibição é sempre mais rápido do "
-"que no editor, principalmente quando quiser verificar uma série de fotos. "
+"<qt><p><i>Observação:</i> Usar o modo de visualização é sempre mais rápido "
+"do que no editor, principalmente quando quiser verificar uma série de fotos. "
 "Entretanto, você não pode alterar ou corrigir a imagem no modo de exibição. "
 "De qualquer forma, se quiser comparar imagens rapidamente, a melhor maneira "
-"é usar a Mesa de Luz. Nessa ferramenta, você pode exibir as imagens lado a "
+"é usar a mesa de luz. Nessa ferramenta, você pode exibir as imagens lado a "
 "lado e efetuar um deslocamento e ampliação sincronizados.</p></qt>"
 
 #: core/utilities/firstrun/previewpage.cpp:52
@@ -52718,7 +52721,7 @@ msgid ""
 "table:</p></qt>"
 msgstr ""
 "<qt><p>Indique aqui como deseja mostrar as imagens no modo de exibição e na "
-"Mesa de Luz:</p></qt>"
+"mesa de luz:</p></qt>"
 
 #: core/utilities/firstrun/previewpage.cpp:69
 #, kde-format
@@ -57184,7 +57187,7 @@ msgstr "Adicionar favorito..."
 #: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:96
 #, kde-format
 msgid "<p>Copyright %1</p>"
-msgstr "<p>Copyright %1</p>"
+msgstr "<p>Direitos autorais %1</p>"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:115
 #, kde-format
@@ -59063,12 +59066,12 @@ msgstr "Abrir com..."
 #: core/utilities/imageeditor/main/imagewindow.cpp:198
 #, kde-format
 msgid "Image Editor - %1"
-msgstr "Editor de imagens - %1"
+msgstr "Editor de Imagem - %1"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:202
 #, kde-format
 msgid "Image Editor"
-msgstr "Editor de imagem"
+msgstr "Editor de Imagem"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:372
 #, kde-format
@@ -59094,7 +59097,7 @@ msgid ""
 "The image editor will be closed."
 msgstr ""
 "Não existe uma imagem no álbum atual para ser exibida.\n"
-"O editor de imagens será fechado."
+"O editor de imagem será fechado."
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:1220
 #, kde-format
@@ -61144,7 +61147,7 @@ msgstr "Recriar impressões digitais"
 #: core/utilities/maintenance/main/maintenancedlg.cpp:150
 #, kde-format
 msgid "Similarity range (in percents): "
-msgstr "Intervalo de similaridade (em porcentagem): "
+msgstr "Intervalo de semelhança (em porcentagem): "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:170
 #, kde-format
@@ -62922,12 +62925,12 @@ msgstr "Retornar itens comentados por"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
 msgid "Headline"
-msgstr "Destaque"
+msgstr "Sinopse"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
 msgid "Return items with the IPTC headline"
-msgstr "Retornar itens com o destaque IPTC"
+msgstr "Retornar itens com a sinopse IPTC"
 
 # A TRADUÇÃO COMO "TÍTULO" NÃO FICA ADEQUADA NO CONTEXTO.
 #: core/utilities/searchwindow/searchfields_createfield.cpp:762
@@ -62978,7 +62981,7 @@ msgstr "Autor"
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
-msgstr "Destaque"
+msgstr "Sinopse"
 
 # A TRADUÇÃO COMO "TÍTULO" NÃO FICA ADEQUADA NO CONTEXTO.
 #: core/utilities/searchwindow/searchfields_createfield.cpp:784
@@ -63604,12 +63607,12 @@ msgstr "Mostrar visualização"
 #: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
 msgid "Start Image Editor"
-msgstr "Iniciar editor de imagem"
+msgstr "Iniciar Editor de Imagem"
 
 #: core/utilities/setup/album/setupalbumview.cpp:186
 #, kde-format
 msgid "Show on Light Table"
-msgstr "Mostrar na mesa de luz"
+msgstr "Mostrar na Mesa de Luz"
 
 #: core/utilities/setup/album/setupalbumview.cpp:187
 #, kde-format
@@ -64467,7 +64470,7 @@ msgstr "Mostrar visualização embutida"
 #: core/utilities/setup/camera/setupcamera.cpp:466
 #, kde-format
 msgid "Start image editor"
-msgstr "Iniciar editor de imagem"
+msgstr "Inicia o editor de imagem"
 
 #: core/utilities/setup/camera/setupcamera.cpp:471
 #, kde-format
@@ -65165,7 +65168,7 @@ msgstr "Opções da ferramenta"
 #: core/utilities/setup/editor/setupeditoriface.cpp:206
 #, kde-format
 msgid "&Restore the settings of the Image Editor tools"
-msgstr "&Restaurar as configurações das ferramentas do Editor de Imagens"
+msgstr "&Restaurar as configurações das ferramentas do Editor de Imagem"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:208
 #, kde-format
@@ -65174,7 +65177,7 @@ msgid ""
 "the last session. Otherwise, the default settings will be used."
 msgstr ""
 "Habilite esta opção para restaurar as configurações das ferramentas do "
-"Editor de Imagens da última sessão. Caso contrário, as configurações padrão "
+"Editor de Imagem da última sessão. Caso contrário, as configurações padrão "
 "serão usadas."
 
 #: core/utilities/setup/editor/setupiofiles.cpp:183
@@ -65210,7 +65213,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
-msgstr "Abrir os arquivos RAW no editor de imagens"
+msgstr "Abrir os arquivos RAW no editor de imagem"
 
 #: core/utilities/setup/editor/setupraw.cpp:109
 #, kde-format
@@ -66423,7 +66426,7 @@ msgid ""
 "image editor always changes the image data during the rotation."
 msgstr ""
 "Observação: essas configurações afetam a visualização do álbum e não o "
-"editor de imagens. O editor de imagens sempre altera os dados da imagem "
+"editor de imagem. O editor de imagem sempre altera os dados da imagem "
 "durante a rotação."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:134
@@ -67042,7 +67045,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:111
 #, kde-format
 msgid "Lower bound for minimum similarity:"
-msgstr "Limite inferior para similaridade mínima:"
+msgstr "Limite inferior para semelhança mínima:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:117
 #, kde-format
@@ -67051,7 +67054,7 @@ msgid ""
 "and duplicates searches. The default value is 40. Selecting a lower value "
 "than 40 can make the search <b>really</b> slow."
 msgstr ""
-"Selecione aqui o limite inferior do limite mínimo de similaridade para "
+"Selecione aqui o limite inferior do limite mínimo de semelhança para "
 "pesquisas difusas e de duplicatas. O valor padrão é 40. Selecionar um valor "
 "menor que 40 pode tornar a busca <b>muito</b> lenta."
 
@@ -67331,7 +67334,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
-msgstr "Editor de imagem"
+msgstr "Editor de Imagem"
 
 #: core/utilities/setup/setup.cpp:158
 #, kde-format
@@ -67340,8 +67343,8 @@ msgid ""
 "Image Editor Settings\n"
 "Customize the image editor settings"
 msgstr ""
-"Configurações do editor de imagens\n"
-"Personaliza as configurações do editor de imagens"
+"Configurações do Editor de Imagem\n"
+"Personaliza as configurações do editor de imagem"
 
 #: core/utilities/setup/setup.cpp:162
 #, kde-format
@@ -67692,7 +67695,7 @@ msgid ""
 "depending on the speed of your computer.</p>"
 msgstr ""
 "<p>Habilite esta opção se quiser usar o seu <b>Perfil de cor do monitor</b> "
-"para mostrar suas imagens na janela do Editor de imagens com uma correção de "
+"para mostrar suas imagens na janela do Editor de Imagem com uma correção de "
 "cores adaptada ao seu monitor. Você pode alterar esta opção a qualquer "
 "momento, na janela Editor. <i>Atenção</i>: Esta opção pode levar algum tempo "
 "para processar a imagem, dependendo da velocidade do seu computador.</p>"
@@ -67941,7 +67944,7 @@ msgstr "Genérico"
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Image Editor"
-msgstr "Editor de imagem"
+msgstr "Editor de Imagem"
 
 #: core/utilities/setup/setupplugins.cpp:80
 #, kde-format
