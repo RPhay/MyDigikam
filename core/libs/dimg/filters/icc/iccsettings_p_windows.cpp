@@ -70,12 +70,11 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
      */
 
     WCHAR profilePath[MAX_PATH];
-    DWORD bytes = MAX_PATH * sizeof(WCHAR);
 
     if (
         !GetICMProfile(
                        hdcScreen,
-                       bytes,
+                       &(DWORD){ MAX_PATH * sizeof(WCHAR) },
                        profilePath
                       )
        )
