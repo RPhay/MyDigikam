@@ -91,6 +91,7 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
             //ReleaseDC(NULL, hdcScreen);
 
             return false;
+        }
     }
 
     qCDebug(DIGIKAM_DIMG_LOG) << "ICM Windows: screen profile path:" << QString::fromWCharArray(profilePath);
