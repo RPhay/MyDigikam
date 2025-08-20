@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-18 02:01+0000\n"
+"POT-Creation-Date: 2025-08-20 02:01+0000\n"
 "PO-Revision-Date: 2025-08-17 12:12+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -64556,7 +64556,7 @@ msgstr "Nedladdningen kräver %1 filer med storlek %2."
 msgid "All files for the selected features were found."
 msgstr "Alla filer för de valda funktionerna hittades."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:640
+#: core/utilities/setup/downloader/filesdownloader.cpp:651
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Rensa bort oanvända AI/DNN-modellfiler..."

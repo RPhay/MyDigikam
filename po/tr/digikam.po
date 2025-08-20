@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-18 02:01+0000\n"
+"POT-Creation-Date: 2025-08-20 02:01+0000\n"
 "PO-Revision-Date: 2025-08-09 21:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -64621,7 +64621,7 @@ msgstr "İndirme, %2 boyutunda %1 dosya gerektiriyor."
 msgid "All files for the selected features were found."
 msgstr "Seçili özellikler için olan bütün dosyalar bulunamadı."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:640
+#: core/utilities/setup/downloader/filesdownloader.cpp:651
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Kullanılmayan AI/DNN Modellerini Temizle…"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-18 02:01+0000\n"
+"POT-Creation-Date: 2025-08-20 02:01+0000\n"
 "PO-Revision-Date: 2025-04-26 10:03+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -61081,7 +61081,7 @@ msgstr ""
 msgid "All files for the selected features were found."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:640
+#: core/utilities/setup/downloader/filesdownloader.cpp:651
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""
