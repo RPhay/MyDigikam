@@ -248,17 +248,20 @@ int layoutMargin()
 
 int dialogExec(QDialog* const dlg)
 {
-    QEventLoop loop;
-
-    QObject::connect(dlg, &QDialog::finished,
-                     &loop, &QEventLoop::quit);
-
-    dlg->open();
-    loop.exec();
-
     if (dlg)
     {
-        return dlg->result();
+        QEventLoop loop;
+
+        QObject::connect(dlg, &QDialog::finished,
+                     &loop, &QEventLoop::quit);
+
+        dlg->open();
+        loop.exec();
+
+        if (dlg)
+        {
+            return dlg->result();
+        }
     }
 
     return QDialog::Rejected;
