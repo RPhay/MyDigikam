@@ -372,6 +372,7 @@ echo -e "\n---------- Copy executables with recursive dependencies in bundle dir
 EXE_FILES="\
 $VCPKG_INSTALL_PREFIX/bin/digikam.exe         \
 $VCPKG_INSTALL_PREFIX/bin/showfoto.exe        \
+$VCPKG_INSTALL_PREFIX/bin/SnoreToast.exe        \
 $VCPKG_INSTALL_PREFIX/tools/ffmpeg/ffmpeg.exe \
 "
 
