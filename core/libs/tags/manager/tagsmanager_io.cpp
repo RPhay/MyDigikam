@@ -108,14 +108,29 @@ void TagsManager::slotWipeAll()
 
     while (child.isValid())
     {
-        TAlbum* const tag = static_cast<TAlbum*>(d->tagMngrView->albumForIndex(child));
+        TAlbum* const rtag = static_cast<TAlbum*>(d->tagMngrView->albumForIndex(child));
 
-        if (
-            (FaceTags::personParentTag() != tag->id()) &&
-            !FaceTags::isSystemPersonTagId(tag->id())
-           )
+        if (FaceTags::personParentTag() == rtag->id())
         {
-            tagList <<  AlbumPointer<TAlbum>(tag);
+            int citer          = 0;
+            QModelIndex person = child;
+            child              = root.model()->index(citer++, 0, person);
+
+            while (child.isValid())
+            {
+                TAlbum* const ctag = static_cast<TAlbum*>(d->tagMngrView->albumForIndex(child));
+
+                if (!FaceTags::isSystemPersonTagId(ctag->id()))
+                {
+                    tagList << AlbumPointer<TAlbum>(ctag);
+                }
+
+                child = root.model()->index(citer++, 0, person);
+            }
+        }
+        else
+        {
+            tagList << AlbumPointer<TAlbum>(rtag);
         }
 
         child = root.model()->index(iter++, 0, root);
