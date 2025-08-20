@@ -73,7 +73,7 @@ GSTalkerBase::GSTalkerBase(QObject* const parent, const QStringList& scope, cons
 
     QSet<QByteArray> scopeba;
 
-    for (const QString& scp : m_scope)
+    for (const QString& scp : std::as_const(m_scope))
     {
         scopeba.insert(scp.toUtf8());
     }
