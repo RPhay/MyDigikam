@@ -607,7 +607,10 @@ void FilesDownloader::slotUpdateDownloadInfo()
 
         while (!dir.isRoot() && !dir.exists())
         {
-            dir.cdUp();
+            if (!dir.cdUp())
+            {
+                qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot change directory up to" << dir;
+            }
         }
 
         QFileInfo info(dir.path());
