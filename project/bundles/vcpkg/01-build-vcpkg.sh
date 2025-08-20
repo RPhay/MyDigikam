@@ -161,6 +161,7 @@ $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install hunspell
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install openal-soft
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install curl
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install glib --recursive
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libsnoretoast
 
 echo -e "\n"
 
