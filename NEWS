@@ -93,7 +93,7 @@ BUGFIXES:
 061 ==> 508419 - Race condition with XMP files causes confusing tagging behavior.
 062 ==> 503370 - "Open in File Manager" opens a wrong folder.
 063 ==> 508121 - Face Recognition does not produce any results.
-064 ==> 
+064 ==> 508464 - Album marked as not available although it is available.
 065 ==> 
 066 ==> 
 067 ==> 
