@@ -415,16 +415,6 @@ QString FaceTags::faceNameForTag(int tagId)
 
 int FaceTags::personParentTag()
 {
-    // Check default.
-
-    QString i18nName = i18nc("People on your photos", "People");
-    int tagId        = TagsCache::instance()->tagForPath(i18nName);
-
-    if (tagId)
-    {
-        return tagId;
-    }
-
     // Employ a heuristic.
 
     QList<int> personTags = allPersonTags();
@@ -465,7 +455,9 @@ int FaceTags::personParentTag()
         }
     }
 
-    // Create default.
+    // Get or create default.
+
+    QString i18nName = i18nc("People on your photos", "People");
 
     return TagsCache::instance()->getOrCreateTag(i18nName);
 }
