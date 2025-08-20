@@ -370,10 +370,10 @@ echo -e "\n---------- Copy executables with recursive dependencies in bundle dir
 # Executables and plugins shared libraries dependencies scan ---------------------------------
 
 EXE_FILES="\
-$VCPKG_INSTALL_PREFIX/bin/digikam.exe         \
-$VCPKG_INSTALL_PREFIX/bin/showfoto.exe        \
-$VCPKG_INSTALL_PREFIX/bin/SnoreToast.exe        \
-$VCPKG_INSTALL_PREFIX/tools/ffmpeg/ffmpeg.exe \
+$VCPKG_INSTALL_PREFIX/bin/digikam.exe                    \
+$VCPKG_INSTALL_PREFIX/bin/showfoto.exe                   \
+$VCPKG_INSTALL_PREFIX/tools/libsnoretoast/snoretoast.exe \
+$VCPKG_INSTALL_PREFIX/tools/ffmpeg/ffmpeg.exe            \
 "
 
 if [[ $DK_QTVERSION = 6 ]] ; then
