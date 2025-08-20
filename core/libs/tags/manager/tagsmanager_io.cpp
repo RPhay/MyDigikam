@@ -106,6 +106,8 @@ void TagsManager::slotWipeAll()
     int iter                = 0;
     QModelIndex child       = root.model()->index(iter++, 0, root);
 
+    QApplication::setOverrideCursor(Qt::WaitCursor);
+
     while (child.isValid())
     {
         TAlbum* const rtag = static_cast<TAlbum*>(d->tagMngrView->albumForIndex(child));
@@ -147,6 +149,8 @@ void TagsManager::slotWipeAll()
             QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(), errMsg);
         }
     }
+
+    QApplication::restoreOverrideCursor();
 
     /**
      * Restore settings after tag deletion
