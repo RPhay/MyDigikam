@@ -68,6 +68,7 @@ bool FaceDb::removeFaceVector(const QString& hash) const
     qCDebug(DIGIKAM_FACEDB_LOG) << "Deleted hash " << hash << " from FaceMatricies";
 
     // TODO: Check query result.
+    Q_UNUSED(query);
 
     return true;
 }
