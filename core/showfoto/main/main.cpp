@@ -226,6 +226,8 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
+    installWindowsDesktopNotifier(app);
+
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("ImageViewer Settings"));
     QString iconTheme         = group.readEntry(QLatin1String("Icon Theme"), QString());

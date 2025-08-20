@@ -488,12 +488,31 @@ void setMacOSEnvironment()
 
 void setWindowsEnvironment(QApplication& app)
 {
-    // michmill - should probably remove QApplication app from function signature and use
-    // QCoreApplication::applicationDirPath() below but I don't have a Windows
-    // machine to test with
-
     qputenv("MAGICK_CODER_MODULE_PATH", app.applicationDirPath().toUtf8());
     qputenv("MAGICK_CODER_FILTER_PATH", app.applicationDirPath().toUtf8());
+
+}
+
+void installWindowsDesktopNotifier(QApplication& app)
+{
+    Q_UNUSED(app);
+
+#ifdef HAVE_KNOTIFICATIONS
+
+#   ifdef Q_OS_WIN
+
+    QProcess proc(&app);
+    proc.start("SnoreToast.exe",
+               { "-install", app.applicationName(), app.applicationFilePath(), app.organizationDomain() });
+    proc.waitForFinished();
+    qCDebug(DIGIKAM_GENERAL_LOG) << proc.exitCode();
+    qCDebug(DIGIKAM_GENERAL_LOG) << qPrintable(proc.readAllStandardOutput());
+    qCDebug(DIGIKAM_GENERAL_LOG) << qPrintable(proc.readAllStandardError());
+
+#   endif
+
+#endif
+
 }
 
 void delayForRemoteDebuging(int delaySecs)

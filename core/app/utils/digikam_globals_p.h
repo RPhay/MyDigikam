@@ -29,6 +29,7 @@
 #include <QImageWriter>
 #include <QByteArray>
 #include <QShortcut>
+#include <QProcess>
 #include <QApplication>
 #include <QStandardPaths>
 #include <QTranslator>
