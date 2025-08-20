@@ -108,7 +108,16 @@ void TagsManager::slotWipeAll()
 
     while (child.isValid())
     {
-        tagList <<  AlbumPointer<TAlbum>(d->tagMngrView->albumForIndex(child));
+        TAlbum* const tag = static_cast<TAlbum*>(d->tagMngrView->albumForIndex(child));
+
+        if (
+            (FaceTags::personParentTag() != tag->id()) &&
+            !FaceTags::isSystemPersonTagId(tag->id())
+           )
+        {
+            tagList <<  AlbumPointer<TAlbum>(tag);
+        }
+
         child = root.model()->index(iter++, 0, root);
     }
 

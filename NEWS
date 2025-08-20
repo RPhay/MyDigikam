@@ -94,7 +94,7 @@ BUGFIXES:
 062 ==> 503370 - "Open in File Manager" opens a wrong folder.
 063 ==> 508121 - Face Recognition does not produce any results.
 064 ==> 508464 - Album marked as not available although it is available.
-065 ==> 
+065 ==> 508500 - Wipe all tags from Database only results in "Cannot delete required face tag" message.
 066 ==> 
 067 ==> 
 068 ==> 
