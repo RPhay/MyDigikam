@@ -222,12 +222,31 @@ bool ShowfotoKineticScroller::eventFilter(QObject* object, QEvent* event)
 
             if (!d->isMoving)
             {
-                QMouseEvent* const mousePress   = new QMouseEvent(QEvent::MouseButtonPress,
-                                                                  d->lastPressPoint, Qt::LeftButton,
-                                                                  Qt::LeftButton, Qt::NoModifier);
-                QMouseEvent* const mouseRelease = new QMouseEvent(QEvent::MouseButtonRelease,
-                                                                  d->lastPressPoint, Qt::LeftButton,
-                                                                  Qt::LeftButton, Qt::NoModifier);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 4, 0))
+
+                QMouseEvent* const mousePress   = new QMouseEvent(QEvent::MouseButtonPress, d->lastPressPoint, QCursor::pos(),
+
+#else
+
+                QMouseEvent* const mousePress   = new QMouseEvent(QEvent::MouseButtonPress, d->lastPressPoint,
+
+#endif
+
+                                                                  Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 4, 0))
+
+                QMouseEvent* const mouseRelease = new QMouseEvent(QEvent::MouseButtonRelease, d->lastPressPoint, QCursor::pos(),
+
+#else
+
+                QMouseEvent* const mouseRelease = new QMouseEvent(QEvent::MouseButtonRelease, d->lastPressPoint,
+
+#endif
+
+                                                                  Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
+
                 d->ignoredMouseActions          = 2;
 
                 QApplication::postEvent(object, mousePress);
