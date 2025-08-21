@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-20 02:01+0000\n"
+"POT-Creation-Date: 2025-08-21 02:08+0000\n"
 "PO-Revision-Date: 2025-08-17 12:12+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -2723,7 +2723,7 @@ msgstr "Starta Digikam med SQLite databasfilen som hittas i katalogen \"dir\""
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Starta Digikam med inställningsfilen \"config\""
 
-#: core/app/main/main.cpp:293
+#: core/app/main/main.cpp:295
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2734,7 +2734,7 @@ msgstr ""
 "tillgängligt. Installera det.\n"
 "Det finns inga installerade databasinsticksprogram på datorn."
 
-#: core/app/main/main.cpp:302
+#: core/app/main/main.cpp:304
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2745,7 +2745,7 @@ msgstr ""
 "tillgängligt. Installera det.\n"
 "Databasinsticksprogram installerade på datorn listas nedan."
 
-#: core/app/main/main.cpp:346
+#: core/app/main/main.cpp:348
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -26715,7 +26715,7 @@ msgid "Auto-rotating: %1\n"
 msgstr "Rotera automatiskt: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
-#: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/libs/tags/autoassignment/autotagsengine.cpp:234
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
@@ -28671,25 +28671,25 @@ msgstr ""
 "att den här versionen av Digikam är för gammal, eller att databasformatet är "
 "för nytt.) Använd den senare versionen av Digikam som du tidigare använt. "
 
-#: core/libs/database/tags/facetags.cpp:420
+#: core/libs/database/tags/facetags.cpp:460
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Personer"
 
-#: core/libs/database/tags/facetags.cpp:485
+#: core/libs/database/tags/facetags.cpp:477
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Okända"
 
-#: core/libs/database/tags/facetags.cpp:507
+#: core/libs/database/tags/facetags.cpp:499
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Obekräftade"
 
-#: core/libs/database/tags/facetags.cpp:529
+#: core/libs/database/tags/facetags.cpp:521
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -39583,47 +39583,47 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Diverse"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:108
+#: core/libs/tags/autoassignment/autotagsengine.cpp:92
 #, kde-format
 msgid "Autotags Assignment"
 msgstr "Automatisk tilldelning av etiketter"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:117
+#: core/libs/tags/autoassignment/autotagsengine.cpp:101
 #, kde-format
 msgid "Scan for objects in album: %1"
 msgstr "Sök efter objekt i album: %1"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:121
+#: core/libs/tags/autoassignment/autotagsengine.cpp:105
 #, kde-format
 msgid "Scan for objects in %1 albums"
 msgstr "Sök efter objekt i %1 album"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:202
+#: core/libs/tags/autoassignment/autotagsengine.cpp:186
 #, kde-format
 msgid "Error starting object detection."
 msgstr "Fel vid start av objektdetektering."
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:217
+#: core/libs/tags/autoassignment/autotagsengine.cpp:201
 #, kde-format
 msgid "Items scanned for objects: %1\n"
 msgstr "Objekt genomsökta efter objekt: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:221
+#: core/libs/tags/autoassignment/autotagsengine.cpp:205
 #, kde-format
 msgid "Item scanned for objects: %1\n"
 msgstr "Objekt genomsökt efter objekt: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:249
+#: core/libs/tags/autoassignment/autotagsengine.cpp:233
 #, kde-format
 msgid "Object Scanning: %1\n"
 msgstr "Objektsökning: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:256
+#: core/libs/tags/autoassignment/autotagsengine.cpp:240
 #, kde-format
 msgid "Found %1 object. Tag: %2"
 msgstr "Hittade %1 objekt. Etikett: %2"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:260
+#: core/libs/tags/autoassignment/autotagsengine.cpp:244
 #, kde-format
 msgid "Found %1 objects. Tags: %2"
 msgstr "Hittade %1 objekt. Etiketter: %2"
@@ -40136,45 +40136,45 @@ msgstr ""
 "metadata till filer.\n"
 "Vill du fortsätta?"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:143
+#: core/libs/tags/manager/tagsmanager_io.cpp:171
 #, kde-format
 msgid "Select a base tag from which the tags should be exported."
 msgstr "Välj en basetikett som etiketterna ska exporteras från."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:153
+#: core/libs/tags/manager/tagsmanager_io.cpp:181
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr "Den valda etiketten är inte en basetikett längst upp i hierarkin."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:161
+#: core/libs/tags/manager/tagsmanager_io.cpp:189
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
 msgstr "Exportera kontrollerad ordförrådsetikettfil"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:162
-#: core/libs/tags/manager/tagsmanager_io.cpp:280
+#: core/libs/tags/manager/tagsmanager_io.cpp:190
+#: core/libs/tags/manager/tagsmanager_io.cpp:308
 #, kde-format
 msgid "Text File (*.txt)"
 msgstr "Textfil (*.txt)"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:260
+#: core/libs/tags/manager/tagsmanager_io.cpp:288
 #, kde-format
 msgid "Select a tag into which the tags should be imported."
 msgstr "Välj en etikett som etiketterna ska importeras till."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:270
+#: core/libs/tags/manager/tagsmanager_io.cpp:298
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
 msgstr "Inga etiketter kan importeras till den valda ansiktsetiketten."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:279
+#: core/libs/tags/manager/tagsmanager_io.cpp:307
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
 msgstr "Importera kontrollerad ordförrådsetikettfil"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:378
+#: core/libs/tags/manager/tagsmanager_io.cpp:406
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -64551,12 +64551,12 @@ msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Nedladdningen kräver %1 filer med storlek %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:623
+#: core/utilities/setup/downloader/filesdownloader.cpp:626
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr "Alla filer för de valda funktionerna hittades."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:651
+#: core/utilities/setup/downloader/filesdownloader.cpp:654
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Rensa bort oanvända AI/DNN-modellfiler..."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 02:17+0000\n"
+"POT-Creation-Date: 2025-08-20 02:01+0000\n"
 "PO-Revision-Date: 2024-03-09 12:45+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -28377,19 +28377,19 @@ msgstr ""
 msgid "Items List"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:22
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:27
 #, kde-format
 msgctxt "@title"
 msgid "Build Environment"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:90
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:95
 #, kde-format
 msgctxt "@info: git revision"
 msgid "Unknown"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg_buildtools.cpp:93
+#: core/libs/dialogs/libsinfodlg_buildtools.cpp:98
 #, kde-format
 msgctxt "@info: git branch"
 msgid "Unknown"
@@ -61873,7 +61873,7 @@ msgstr ""
 msgid "All files for the selected features were found."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:640
+#: core/utilities/setup/downloader/filesdownloader.cpp:651
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""

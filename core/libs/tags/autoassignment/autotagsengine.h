@@ -19,13 +19,12 @@
 
 // Qt includes
 
-#include <QList>
+#include <QString>
 #include <QObject>
 
 // Local includes
 
 #include "maintenancetool.h"
-#include "iteminfo.h"
 #include "mlpipelinepackagenotify.h"
 #include "autotagsscansettings.h"
 
