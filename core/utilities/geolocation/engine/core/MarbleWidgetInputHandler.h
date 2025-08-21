@@ -45,19 +45,19 @@ public:
 
 private Q_SLOTS:
 
-    void installPluginEventFilter(RenderPlugin* renderPlugin) override;
-    void showLmbMenu(int x, int y) override;
-    void showRmbMenu(int x, int y) override;
-    void openItemToolTip() override;
-    void setCursor(const QCursor& cursor) override;
+    void installPluginEventFilter(RenderPlugin* renderPlugin)   override;
+    void showLmbMenu(int x, int y)                              override;
+    void showRmbMenu(int x, int y)                              override;
+    void openItemToolTip()                                      override;
+    void setCursor(const QCursor& cursor)                       override;
 
 private:
 
-    bool handleKeyPress(QKeyEvent* event) override;
-    bool handleTouch(QTouchEvent* event) override;
-    bool handleGesture(QGestureEvent* e) override;
-    AbstractSelectionRubber* selectionRubber() override;
-    bool layersEventFilter(QObject* o, QEvent* e) override;
+    bool handleKeyPress(QKeyEvent* event)                       override;
+    bool handleTouch(QTouchEvent* event)                        override;
+    bool handleGesture(QGestureEvent* e)                        override;
+    AbstractSelectionRubber* selectionRubber()                  override;
+    bool layersEventFilter(QObject* o, QEvent* e)               override;
 
     void handlePinchGesture(QPinchGesture* pinch);
 
@@ -66,7 +66,9 @@ private:
 private:
 
     using MarbleWidgetInputHandlerPrivatePtr = QSharedPointer<MarbleWidgetInputHandlerPrivate>;
+
     MarbleWidgetInputHandlerPrivatePtr d;      // cppcheck-suppress duplInheritedMember
+
     friend class MarbleWidgetInputHandlerPrivate;
 };
 
