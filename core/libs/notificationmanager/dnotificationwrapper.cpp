@@ -78,6 +78,9 @@ void DNotificationWrapper(const QString& eventId, const QString& message,
                           QWidget* const parent, const QString& windowTitle,
                           const QPixmap& pixmap)
 {
+    Q_UNUSED(parent);
+    Q_UNUSED(windowTitle);
+
     QPixmap logoPixmap = pixmap;
 
     if (logoPixmap.isNull())
