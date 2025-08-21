@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-20 02:01+0000\n"
-"PO-Revision-Date: 2025-08-19 09:50-0300\n"
+"POT-Creation-Date: 2025-08-21 02:08+0000\n"
+"PO-Revision-Date: 2025-08-20 12:01-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -2706,7 +2706,7 @@ msgstr ""
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Iniciar o digiKam com o arquivo de configuração \"config\""
 
-#: core/app/main/main.cpp:293
+#: core/app/main/main.cpp:295
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2717,7 +2717,7 @@ msgstr ""
 "Por favor, instale um deles.\n"
 "Não existe um plugin de bancos de dados instalado em seu computador."
 
-#: core/app/main/main.cpp:302
+#: core/app/main/main.cpp:304
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2728,7 +2728,7 @@ msgstr ""
 "Por favor, instale um deles.\n"
 "Os plugins instalados no seu computador são os listados abaixo:"
 
-#: core/app/main/main.cpp:346
+#: core/app/main/main.cpp:348
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -16171,7 +16171,7 @@ msgstr ""
 "REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
-"p, li { espaço em branco: pré-encapsulamento; }\n"
+"p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
 "weight:400; font-style:italic;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
@@ -26898,7 +26898,7 @@ msgid "Auto-rotating: %1\n"
 msgstr "Rotação automática: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
-#: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/libs/tags/autoassignment/autotagsengine.cpp:234
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
@@ -28886,25 +28886,25 @@ msgstr ""
 "formato do banco de dados é muito recente. Por favor, use uma versão mais "
 "recente do digiKam do que a que você usou antes. "
 
-#: core/libs/database/tags/facetags.cpp:420
+#: core/libs/database/tags/facetags.cpp:460
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Pessoas"
 
-#: core/libs/database/tags/facetags.cpp:485
+#: core/libs/database/tags/facetags.cpp:477
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Desconhecidas"
 
-#: core/libs/database/tags/facetags.cpp:507
+#: core/libs/database/tags/facetags.cpp:499
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Sem confirmação"
 
-#: core/libs/database/tags/facetags.cpp:529
+#: core/libs/database/tags/facetags.cpp:521
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -39883,47 +39883,47 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Diversas"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:108
+#: core/libs/tags/autoassignment/autotagsengine.cpp:92
 #, kde-format
 msgid "Autotags Assignment"
 msgstr "Atribuição automática de etiquetas"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:117
+#: core/libs/tags/autoassignment/autotagsengine.cpp:101
 #, kde-format
 msgid "Scan for objects in album: %1"
 msgstr "Procurar por objetos no álbum: %1"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:121
+#: core/libs/tags/autoassignment/autotagsengine.cpp:105
 #, kde-format
 msgid "Scan for objects in %1 albums"
 msgstr "Procurar por objetos em %1 álbuns"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:202
+#: core/libs/tags/autoassignment/autotagsengine.cpp:186
 #, kde-format
 msgid "Error starting object detection."
 msgstr "Erro ao iniciar a detecção de objeto."
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:217
+#: core/libs/tags/autoassignment/autotagsengine.cpp:201
 #, kde-format
 msgid "Items scanned for objects: %1\n"
 msgstr "Itens pesquisados por objetos: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:221
+#: core/libs/tags/autoassignment/autotagsengine.cpp:205
 #, kde-format
 msgid "Item scanned for objects: %1\n"
 msgstr "Item pesquisado por objetos: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:249
+#: core/libs/tags/autoassignment/autotagsengine.cpp:233
 #, kde-format
 msgid "Object Scanning: %1\n"
 msgstr "Pesquisa de objeto: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:256
+#: core/libs/tags/autoassignment/autotagsengine.cpp:240
 #, kde-format
 msgid "Found %1 object. Tag: %2"
 msgstr "%1 objeto encontrado. Etiqueta: %2"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:260
+#: core/libs/tags/autoassignment/autotagsengine.cpp:244
 #, kde-format
 msgid "Found %1 objects. Tags: %2"
 msgstr "%1 objetos encontrados. Etiquetas: %2"
@@ -40436,46 +40436,46 @@ msgstr ""
 "metadados nos arquivos mais tarde.\n"
 "Deseja continuar?"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:143
+#: core/libs/tags/manager/tagsmanager_io.cpp:171
 #, kde-format
 msgid "Select a base tag from which the tags should be exported."
 msgstr "Selecione uma etiqueta base da qual as etiquetas devem ser exportadas."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:153
+#: core/libs/tags/manager/tagsmanager_io.cpp:181
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr "A etiqueta selecionada não é uma etiqueta base no topo da hierarquia."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:161
+#: core/libs/tags/manager/tagsmanager_io.cpp:189
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
 msgstr "Exportar arquivo de etiquetas de vocabulário controlado"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:162
-#: core/libs/tags/manager/tagsmanager_io.cpp:280
+#: core/libs/tags/manager/tagsmanager_io.cpp:190
+#: core/libs/tags/manager/tagsmanager_io.cpp:308
 #, kde-format
 msgid "Text File (*.txt)"
 msgstr "Arquivo texto (*.txt)"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:260
+#: core/libs/tags/manager/tagsmanager_io.cpp:288
 #, kde-format
 msgid "Select a tag into which the tags should be imported."
 msgstr "Selecione uma etiqueta para a qual as etiquetas devem ser importadas."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:270
+#: core/libs/tags/manager/tagsmanager_io.cpp:298
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
 msgstr ""
 "Nenhuma etiqueta pode ser importada para a etiqueta de rosto selecionada."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:279
+#: core/libs/tags/manager/tagsmanager_io.cpp:307
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
 msgstr "Importar arquivo de etiquetas de vocabulário controlado"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:378
+#: core/libs/tags/manager/tagsmanager_io.cpp:406
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -65020,13 +65020,13 @@ msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "O download requer %1 arquivos com tamanho %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:623
+#: core/utilities/setup/downloader/filesdownloader.cpp:626
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""
 "Todos os arquivos para as funcionalidades selecionadas foram encontrados."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:651
+#: core/utilities/setup/downloader/filesdownloader.cpp:654
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr "Limpar os arquivos de modelo AI/DNN não utilizados..."

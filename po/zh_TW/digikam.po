@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-20 02:01+0000\n"
+"POT-Creation-Date: 2025-08-21 02:08+0000\n"
 "PO-Revision-Date: 2025-07-03 23:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2687,7 +2687,7 @@ msgstr "用在目錄 \"dir\" 中找到的 SQLite 資料庫檔案啟動 digikam"
 msgid "Start digikam with the configuration file \"config\""
 msgstr "用設定檔案 \"config\" 啟動 digikam"
 
-#: core/app/main/main.cpp:293
+#: core/app/main/main.cpp:295
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2697,7 +2697,7 @@ msgstr ""
 "無法使用執行時的 Qt SQLite 或 MySQL 資料庫外掛程式。請安裝它。\n"
 "您的電腦上沒有安裝資料庫外掛程式。"
 
-#: core/app/main/main.cpp:302
+#: core/app/main/main.cpp:304
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2707,7 +2707,7 @@ msgstr ""
 "無法使用執行時的 Qt SQLite 或 MySQL 資料庫外掛程式。請安裝它。\n"
 "以下列出您的電腦上安裝的資料庫外掛程式。"
 
-#: core/app/main/main.cpp:346
+#: core/app/main/main.cpp:348
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -26646,7 +26646,7 @@ msgid "Auto-rotating: %1\n"
 msgstr "自動標籤模式："
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
-#: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/libs/tags/autoassignment/autotagsengine.cpp:234
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
@@ -28635,25 +28635,25 @@ msgstr ""
 "要。(這表示這個 digiKam 版本太舊，或者資料庫不是最新的格式) 請使用 digikam 較"
 "新的版本。"
 
-#: core/libs/database/tags/facetags.cpp:420
+#: core/libs/database/tags/facetags.cpp:460
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "人物"
 
-#: core/libs/database/tags/facetags.cpp:485
+#: core/libs/database/tags/facetags.cpp:477
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/libs/database/tags/facetags.cpp:507
+#: core/libs/database/tags/facetags.cpp:499
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "未確認"
 
-#: core/libs/database/tags/facetags.cpp:529
+#: core/libs/database/tags/facetags.cpp:521
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -39467,52 +39467,52 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "其他"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:108
+#: core/libs/tags/autoassignment/autotagsengine.cpp:92
 #, kde-format
 msgid "Autotags Assignment"
 msgstr "自動標籤指派"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:117
+#: core/libs/tags/autoassignment/autotagsengine.cpp:101
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Scan for objects in album: %1"
 msgstr "在相簿 %1 裡掃描臉孔"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:121
+#: core/libs/tags/autoassignment/autotagsengine.cpp:105
 #, fuzzy, kde-format
 #| msgid "Scan for faces in %1 albums"
 msgid "Scan for objects in %1 albums"
 msgstr "在 %1 本相簿裡掃描臉孔"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:202
+#: core/libs/tags/autoassignment/autotagsengine.cpp:186
 #, kde-format
 msgid "Error starting object detection."
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:217
+#: core/libs/tags/autoassignment/autotagsengine.cpp:201
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Items scanned for objects: %1\n"
 msgstr "在相簿 %1 裡掃描臉孔"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:221
+#: core/libs/tags/autoassignment/autotagsengine.cpp:205
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Item scanned for objects: %1\n"
 msgstr "在相簿 %1 裡掃描臉孔"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:249
+#: core/libs/tags/autoassignment/autotagsengine.cpp:233
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Object Scanning: %1\n"
 msgstr "在相簿 %1 裡掃描臉孔"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:256
+#: core/libs/tags/autoassignment/autotagsengine.cpp:240
 #, kde-format
 msgid "Found %1 object. Tag: %2"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:260
+#: core/libs/tags/autoassignment/autotagsengine.cpp:244
 #, kde-format
 msgid "Found %1 objects. Tags: %2"
 msgstr ""
@@ -40009,19 +40009,19 @@ msgstr ""
 "要套用變更到檔案，您必須稍後選擇將中繼資料寫入檔案。\n"
 "您要繼續嗎？"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:143
+#: core/libs/tags/manager/tagsmanager_io.cpp:171
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Select all tags that should be processed."
 msgid "Select a base tag from which the tags should be exported."
 msgstr "選擇要處理的所有標籤。"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:153
+#: core/libs/tags/manager/tagsmanager_io.cpp:181
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:161
+#: core/libs/tags/manager/tagsmanager_io.cpp:189
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Export to Local Storage"
@@ -40029,32 +40029,32 @@ msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
 msgstr "匯出到本機儲存"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:162
-#: core/libs/tags/manager/tagsmanager_io.cpp:280
+#: core/libs/tags/manager/tagsmanager_io.cpp:190
+#: core/libs/tags/manager/tagsmanager_io.cpp:308
 #, fuzzy, kde-format
 #| msgid "XMP text Files (*.xmp)"
 msgid "Text File (*.txt)"
 msgstr "XMP 純文字檔 (*.xmp)"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:260
+#: core/libs/tags/manager/tagsmanager_io.cpp:288
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Select all tags that should be processed."
 msgid "Select a tag into which the tags should be imported."
 msgstr "選擇要處理的所有標籤。"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:270
+#: core/libs/tags/manager/tagsmanager_io.cpp:298
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:279
+#: core/libs/tags/manager/tagsmanager_io.cpp:307
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:378
+#: core/libs/tags/manager/tagsmanager_io.cpp:406
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -64674,13 +64674,13 @@ msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:623
+#: core/utilities/setup/downloader/filesdownloader.cpp:626
 #, fuzzy, kde-format
 #| msgid "All files of the selected features were found."
 msgid "All files for the selected features were found."
 msgstr "所選功能的所有檔案皆已找到。"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:651
+#: core/utilities/setup/downloader/filesdownloader.cpp:654
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""
