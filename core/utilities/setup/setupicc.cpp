@@ -252,7 +252,7 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
     d->defaultInputMissing      = new QRadioButton(i18n("Convert it from default input color space to working space"));
 
     /**
-     * @todo d->defaultWSMissing->setWhatsThis(i18n("<p></p>"));
+     * @todo d->defaultInputMissing->setWhatsThis(i18n("<p></p>"));
      */
 
     vlayMissing->addLayout(hboxMP);
@@ -320,7 +320,11 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
 
     d->monitorProfilesKC           = new IccProfilesComboBox;
     monitorProfiles->setBuddy(d->monitorProfilesKC);
-    d->monitorProfilesKC->setWhatsThis(i18n("<p>Select the color profile for your monitor here.</p>"));
+    d->monitorProfilesKC->setWhatsThis(i18n("<p>If your desktop do not provide a color profile for your screen, "
+                                            "select here the default one. If no profile is set, "
+                                            "sRGB will be used as fail-back. In all cases, the color "
+                                            "management workflow will try to get in first the profile set "
+                                            "for your monitor in your the desktop</p>"));
 
     d->infoMonitorProfiles         = new QPushButton;
     d->infoMonitorProfiles->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
