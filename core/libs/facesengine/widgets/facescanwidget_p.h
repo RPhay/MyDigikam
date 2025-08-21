@@ -21,21 +21,14 @@
 // Qt includes
 
 #include <QApplication>
-#include <QButtonGroup>
-#include <QGroupBox>
-#include <QCheckBox>
-#include <QGridLayout>
-#include <QLabel>
-#include <QMouseEvent>
-#include <QKeyEvent>
 #include <QRadioButton>
-#include <QToolButton>
-#include <QIcon>
+#include <QGridLayout>
 #include <QVBoxLayout>
-#include <QPushButton>
+#include <QCheckBox>
+#include <QLabel>
 #include <QStyle>
+#include <QIcon>
 #include <QList>
-#include <QStandardItemModel>
 
 // KDE includes
 
@@ -44,20 +37,20 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "digikam_config.h"
 #include "digikam_globals.h"
 #include "digikam_opencv.h"
 #include "dlayoutbox.h"
 #include "dnuminput.h"
-#include "digikam_debug.h"
 #include "albummodel.h"
 #include "albumselectors.h"
 #include "albummanager.h"
 #include "squeezedcombobox.h"
 #include "dexpanderbox.h"
 #include "facedbaccess.h"
-#include "facedb.h"
 #include "facesengine.h"
+#include "facedb.h"
 
 namespace Digikam
 {

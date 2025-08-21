@@ -25,8 +25,9 @@
 #include "digikam_opencv.h"
 #include "mlpipelinepackagefoundation.h"
 #include "faceutils.h"
-#include "dimg.h"
 #include "iteminfo.h"
+#include "dimg.h"
+
 
 namespace Digikam
 {

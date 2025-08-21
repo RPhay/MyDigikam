@@ -47,8 +47,8 @@ public:
         SystemSettings system = SystemSettings(qApp->applicationName());
         globalOpenCL          = system.enableOpenCL;
 
-        dnnOpenCL             = system.enableOpenCL &&
-                                system.enableDnnOpenCL;
+        dnnOpenCL             = (system.enableOpenCL &&
+                                 system.enableDnnOpenCL);
     }
 };
 

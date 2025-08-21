@@ -32,7 +32,6 @@
 #include "thumbnailloadthread.h"
 #include "dnnsfaceextractor.h"
 #include "dnnmodelmanager.h"
-#include "coredb.h"
 #include "identityprovider.h"
 
 namespace Digikam

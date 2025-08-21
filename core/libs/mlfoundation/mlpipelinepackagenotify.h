@@ -18,8 +18,9 @@
 // Qt includes
 
 #include <QIcon>
-#include <QExplicitlySharedDataPointer>
 #include <QMetaType>
+#include <QExplicitlySharedDataPointer>
+
 
 // Local includes
 

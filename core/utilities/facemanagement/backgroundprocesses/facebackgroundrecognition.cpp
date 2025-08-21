@@ -17,19 +17,15 @@
 
 // Qt includes
 
+#include <QTimer>
+#include <QThread>          // For QThread::msleep
 #include <QException>
 #include <QCoreApplication> // For QCoreApplication::processEvents
-#include <QThread>          // For QThread::msleep
-#include <QTimer>
-
-// KDE includes
-
-#include <klocalizedstring.h>
 
 // Local includes
 
-#include "applicationsettings.h"
 #include "digikam_debug.h"
+#include "applicationsettings.h"
 #include "facescansettings.h"
 #include "facesengine.h"
 #include "albummanager.h"

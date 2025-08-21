@@ -17,10 +17,10 @@
 
 // Qt includes
 
-#include <QList>
 #include <QSet>
-#include <QElapsedTimer>
+#include <QList>
 #include <QRectF>
+#include <QElapsedTimer>
 
 // KDE includes
 
@@ -33,12 +33,11 @@
 #include "sharedqueue.h"
 #include "collectionmanager.h"
 #include "album.h"
-#include "iteminfo.h"
 #include "coredb.h"
-#include "facescansettings.h"
-#include "dimg.h"
+#include "iteminfo.h"
 #include "previewloadthread.h"
 #include "faceutils.h"
+#include "facescansettings.h"
 #include "facepipelinepackagebase.h"
 #include "thumbnailloadthread.h"
 #include "faceclassifier.h"
