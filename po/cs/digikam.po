@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-21 02:08+0000\n"
+"POT-Creation-Date: 2025-08-22 02:00+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -9846,7 +9846,7 @@ msgid "Energy function"
 msgstr "Energetická funkce"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:387
-#: core/utilities/setup/setupicc.cpp:437
+#: core/utilities/setup/setupicc.cpp:441
 #, kde-format
 msgid "Advanced Settings"
 msgstr "Pokročilá nastavení"
@@ -56623,7 +56623,7 @@ msgstr "a převést do pracovního prostředí"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:373
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:472
-#: core/utilities/setup/setupicc.cpp:713
+#: core/utilities/setup/setupicc.cpp:717
 #, kde-format
 msgid "No Profile Available"
 msgstr "Žádný dostupný profil"
@@ -56673,7 +56673,7 @@ msgstr ""
 "vytvoření tohoto obrázku:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:514
-#: core/utilities/setup/setupicc.cpp:715
+#: core/utilities/setup/setupicc.cpp:719
 #, kde-format
 msgid "No Input Profile Available"
 msgstr "Profil vstupu není dostupný"
@@ -56725,7 +56725,7 @@ msgid "Profile of the output device to simulate:"
 msgstr "Profil výstupního zařízení pro simulaci:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
-#: core/utilities/setup/setupicc.cpp:388
+#: core/utilities/setup/setupicc.cpp:392
 #, kde-format
 msgid ""
 "<p>Select the profile for your output device (usually, your printer). This "
@@ -56761,14 +56761,14 @@ msgid "Highlighting color:"
 msgstr "Barva zvýraznění:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:825
+#: core/utilities/setup/setupicc.cpp:829
 #, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Chyba v profilu"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:825
+#: core/utilities/setup/setupicc.cpp:829
 #, kde-format
 msgid "No profile is selected."
 msgstr "Není vybrán žádný profil."
@@ -65894,10 +65894,14 @@ msgstr "Profil monitoru:"
 
 #: core/utilities/setup/setupicc.cpp:323
 #, kde-format
-msgid "<p>Select the color profile for your monitor here.</p>"
-msgstr "<p>Zde zvolte profil barev pro váš monitor.</p>"
+msgid ""
+"<p>If your desktop do not provide a color profile for your screen, select "
+"here the default one. If no profile is set, sRGB will be used as fail-back. "
+"In all cases, the color management workflow will try to get in first the "
+"profile set for your monitor in your the desktop</p>"
+msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:327
+#: core/utilities/setup/setupicc.cpp:331
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -65906,12 +65910,12 @@ msgstr ""
 "<p>Toto tlačítko můžete použít k získání podrobnějších informací o vybraném "
 "profilu monitoru.</p>"
 
-#: core/utilities/setup/setupicc.cpp:331
+#: core/utilities/setup/setupicc.cpp:335
 #, kde-format
 msgid "Use color managed view in editor"
 msgstr "V editoru použít zobrazení se správou barev"
 
-#: core/utilities/setup/setupicc.cpp:332
+#: core/utilities/setup/setupicc.cpp:336
 #, kde-format
 msgid ""
 "<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
@@ -65925,22 +65929,22 @@ msgstr ""
 "můžete kdykoliv změnit v okně editoru. <i>Pozor</i>: tato funkce může, "
 "zvláště na starších počítačích, vyžadovat delší dobu k zobrazení obrázku.</p>"
 
-#: core/utilities/setup/setupicc.cpp:339
+#: core/utilities/setup/setupicc.cpp:343
 #, kde-format
 msgid "Use color managed view for previews and thumbnails"
 msgstr "Pro náhledy a miniatury použít zobrazení se správou barev"
 
-#: core/utilities/setup/setupicc.cpp:355
+#: core/utilities/setup/setupicc.cpp:359
 #, kde-format
 msgid "Camera and Scanner"
 msgstr "Fotoaparát a skener"
 
-#: core/utilities/setup/setupicc.cpp:360
+#: core/utilities/setup/setupicc.cpp:364
 #, kde-format
 msgid "Default input color profile:"
 msgstr "Výchozí vstupní profil barev:"
 
-#: core/utilities/setup/setupicc.cpp:362
+#: core/utilities/setup/setupicc.cpp:366
 #, kde-format
 msgid ""
 "<p>This is the default color profile for your input device (that is your "
@@ -65953,7 +65957,7 @@ msgstr ""
 "použít profil fotoaparátu. Některé volby se během načítání na tento profil "
 "odvolávají.</p>"
 
-#: core/utilities/setup/setupicc.cpp:369
+#: core/utilities/setup/setupicc.cpp:373
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -65962,17 +65966,17 @@ msgstr ""
 "<p>Toto tlačítko můžete použít k získání podrobnějších informací o vybraném "
 "profilu vstupního zařízení.</p>"
 
-#: core/utilities/setup/setupicc.cpp:380
+#: core/utilities/setup/setupicc.cpp:384
 #, kde-format
 msgid "Printing and Proofing"
 msgstr "Tisk a náhled"
 
-#: core/utilities/setup/setupicc.cpp:385
+#: core/utilities/setup/setupicc.cpp:389
 #, kde-format
 msgid "Output device profile:"
 msgstr "Profil výstupního zařízení:"
 
-#: core/utilities/setup/setupicc.cpp:394
+#: core/utilities/setup/setupicc.cpp:398
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -65981,12 +65985,12 @@ msgstr ""
 "<p>Toto tlačítko můžete použít k získání podrobnějších informací o vybraném "
 "profilu pro softwarový tisk.</p>"
 
-#: core/utilities/setup/setupicc.cpp:405
+#: core/utilities/setup/setupicc.cpp:409
 #, kde-format
 msgid "Color Profiles Repository"
 msgstr "Repozitář profilů barev"
 
-#: core/utilities/setup/setupicc.cpp:410
+#: core/utilities/setup/setupicc.cpp:414
 #, kde-format
 msgid ""
 "digiKam looks for ICC profiles in a number of <a href='default'>default "
@@ -65995,7 +65999,7 @@ msgstr ""
 "digiKam hledá ICC profily v některých  <a href='default'>výchozích umístění</"
 "a>. Zde můžete zvolit další složku:"
 
-#: core/utilities/setup/setupicc.cpp:418
+#: core/utilities/setup/setupicc.cpp:422
 #, kde-format
 msgid ""
 "<p>digiKam searches ICC profiles in default system folders and ships itself "
@@ -66006,12 +66010,12 @@ msgstr ""
 "několik vybraných profilů. Všechny vaše další profily barev uložte do zde "
 "zvoleného adresáře.</p>"
 
-#: core/utilities/setup/setupicc.cpp:441
+#: core/utilities/setup/setupicc.cpp:445
 #, kde-format
 msgid "Use black point compensation"
 msgstr "Použít kompenzaci černého bodu"
 
-#: core/utilities/setup/setupicc.cpp:442
+#: core/utilities/setup/setupicc.cpp:446
 #, kde-format
 msgid ""
 "<p><b>Black Point Compensation</b> is a way to make adjustments between the "
@@ -66022,56 +66026,56 @@ msgstr ""
 "úrovní černé barvy digitálních obrázků a schopností různých digitálních "
 "přístrojů zpracovat černou barvu.</p>"
 
-#: core/utilities/setup/setupicc.cpp:448
+#: core/utilities/setup/setupicc.cpp:452
 #, kde-format
 msgid "Rendering Intents:"
 msgstr "Zobrazovací záměr:"
 
-#: core/utilities/setup/setupicc.cpp:463
+#: core/utilities/setup/setupicc.cpp:467
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Behavior"
 msgstr "Chování"
 
-#: core/utilities/setup/setupicc.cpp:464
+#: core/utilities/setup/setupicc.cpp:468
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Profiles"
 msgstr "Profily"
 
-#: core/utilities/setup/setupicc.cpp:465
+#: core/utilities/setup/setupicc.cpp:469
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Advanced"
 msgstr "Pokročilé"
 
-#: core/utilities/setup/setupicc.cpp:666
+#: core/utilities/setup/setupicc.cpp:670
 #, kde-format
 msgid "Monitor Profile From System Settings"
 msgstr "Profil monitoru z nastavení systému"
 
-#: core/utilities/setup/setupicc.cpp:698
+#: core/utilities/setup/setupicc.cpp:702
 #, kde-format
 msgid "No ICC profiles files found."
 msgstr "Nenalezen žádný soubor s profily ICC."
 
-#: core/utilities/setup/setupicc.cpp:714
+#: core/utilities/setup/setupicc.cpp:718
 #, kde-format
 msgid "No Display Profile Available"
 msgstr "Profil zobrazení není dostupný"
 
-#: core/utilities/setup/setupicc.cpp:716
+#: core/utilities/setup/setupicc.cpp:720
 #, kde-format
 msgid "No Output Profile Available"
 msgstr "Profil výstupu není dostupný"
 
-#: core/utilities/setup/setupicc.cpp:850
+#: core/utilities/setup/setupicc.cpp:854
 #, kde-format
 msgctxt "none of the paths"
 msgid "none"
 msgstr "žádné"
 
-#: core/utilities/setup/setupicc.cpp:859
+#: core/utilities/setup/setupicc.cpp:863
 #, kde-format
 msgid ""
 "On Windows, the default search paths include <ul><li>%1/Windows/System32/"
@@ -66084,7 +66088,7 @@ msgstr ""
 "Windows/Color/</li></ul>Na vašem systému existují a jsou prohledávány tyto "
 "cesty:<ul><li>%3</li></ul>"
 
-#: core/utilities/setup/setupicc.cpp:875
+#: core/utilities/setup/setupicc.cpp:879
 #, kde-format
 msgid ""
 "On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
@@ -66101,7 +66105,7 @@ msgstr ""
 "local/share/icc/</li><li>~/.color/icc/</li></ul>Na vašem systému existují a "
 "budou zahrnuty následující cesty:<ul><li>%2</li></ul>"
 
-#: core/utilities/setup/setupicc.cpp:894
+#: core/utilities/setup/setupicc.cpp:898
 #, kde-format
 msgid ""
 "On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
@@ -66598,6 +66602,9 @@ msgstr "Alba"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovat položky"
+
+#~ msgid "<p>Select the color profile for your monitor here.</p>"
+#~ msgstr "<p>Zde zvolte profil barev pro váš monitor.</p>"
 
 #~ msgid "Build Date: "
 #~ msgstr "Datum sestavení: "

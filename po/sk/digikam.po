@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-21 02:08+0000\n"
+"POT-Creation-Date: 2025-08-22 02:00+0000\n"
 "PO-Revision-Date: 2025-03-30 17:14+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -10136,7 +10136,7 @@ msgid "Energy function"
 msgstr "Kreslenie funkcií"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:387
-#: core/utilities/setup/setupicc.cpp:437
+#: core/utilities/setup/setupicc.cpp:441
 #, kde-format
 msgid "Advanced Settings"
 msgstr "Pokročilé nastavenia"
@@ -59795,7 +59795,7 @@ msgstr "a konvertovať do pracovného prostredia"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:373
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:472
-#: core/utilities/setup/setupicc.cpp:713
+#: core/utilities/setup/setupicc.cpp:717
 #, kde-format
 msgid "No Profile Available"
 msgstr "Nie je dostupný žiaden profil"
@@ -59847,7 +59847,7 @@ msgstr ""
 "vytváraní tohto obrázka:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:514
-#: core/utilities/setup/setupicc.cpp:715
+#: core/utilities/setup/setupicc.cpp:719
 #, fuzzy, kde-format
 msgid "No Input Profile Available"
 msgstr "Žiadna ladiaca informácia nie je k dispozícii"
@@ -59899,7 +59899,7 @@ msgid "Profile of the output device to simulate:"
 msgstr "Nepodarilo sa inicializovať vstupno/výstupné zariadenie"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
-#: core/utilities/setup/setupicc.cpp:388
+#: core/utilities/setup/setupicc.cpp:392
 #, fuzzy, kde-format
 msgid ""
 "<p>Select the profile for your output device (usually, your printer). This "
@@ -59935,7 +59935,7 @@ msgid "Highlighting color:"
 msgstr "Farba zvýraznenia:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:825
+#: core/utilities/setup/setupicc.cpp:829
 #, fuzzy, kde-format
 #| msgid "Profile Error"
 msgctxt "@title:window"
@@ -59943,7 +59943,7 @@ msgid "Profile Error"
 msgstr "Chyba profilu"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:825
+#: core/utilities/setup/setupicc.cpp:829
 #, fuzzy, kde-format
 msgid "No profile is selected."
 msgstr "Žiadna vybraná akcia."
@@ -69485,10 +69485,14 @@ msgstr "Profil monitora:"
 
 #: core/utilities/setup/setupicc.cpp:323
 #, kde-format
-msgid "<p>Select the color profile for your monitor here.</p>"
-msgstr "<p>Tu vyberte profil farieb pre váš monitor.</p>"
+msgid ""
+"<p>If your desktop do not provide a color profile for your screen, select "
+"here the default one. If no profile is set, sRGB will be used as fail-back. "
+"In all cases, the color management workflow will try to get in first the "
+"profile set for your monitor in your the desktop</p>"
+msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:327
+#: core/utilities/setup/setupicc.cpp:331
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -69497,12 +69501,12 @@ msgstr ""
 "<p>Týmto tlačidlom môžete získať podrobné informácie o vybranom profile "
 "monitora.</p>"
 
-#: core/utilities/setup/setupicc.cpp:331
+#: core/utilities/setup/setupicc.cpp:335
 #, fuzzy, kde-format
 msgid "Use color managed view in editor"
 msgstr "Použiť zobrazenie so správou farieb (varovanie: pomalé)"
 
-#: core/utilities/setup/setupicc.cpp:332
+#: core/utilities/setup/setupicc.cpp:336
 #, fuzzy, kde-format
 msgid ""
 "<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
@@ -69516,22 +69520,22 @@ msgstr ""
 "obrázkov. Upozornenie: Vykresľovanie obrázkov na obrazovku s touto voľbou "
 "môže chvíľu trvať, obzvlášť na pomalých počítačoch.</p>"
 
-#: core/utilities/setup/setupicc.cpp:339
+#: core/utilities/setup/setupicc.cpp:343
 #, fuzzy, kde-format
 msgid "Use color managed view for previews and thumbnails"
 msgstr "Použiť zobrazenie so správou farieb (varovanie: pomalé)"
 
-#: core/utilities/setup/setupicc.cpp:355
+#: core/utilities/setup/setupicc.cpp:359
 #, fuzzy, kde-format
 msgid "Camera and Scanner"
 msgstr "Zobrazovať výrobcu a model fotoaparátu"
 
-#: core/utilities/setup/setupicc.cpp:360
+#: core/utilities/setup/setupicc.cpp:364
 #, fuzzy, kde-format
 msgid "Default input color profile:"
 msgstr "Informácie ICC farebného profilu"
 
-#: core/utilities/setup/setupicc.cpp:362
+#: core/utilities/setup/setupicc.cpp:366
 #, kde-format
 msgid ""
 "<p>This is the default color profile for your input device (that is your "
@@ -69544,7 +69548,7 @@ msgstr ""
 "sa odporúča použiť profil fotoaparátu. Niektoré nastavenia sa počas "
 "načítavania na tento profil odvolávajú.</p>"
 
-#: core/utilities/setup/setupicc.cpp:369
+#: core/utilities/setup/setupicc.cpp:373
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -69553,17 +69557,17 @@ msgstr ""
 "<p>Týmto tlačidlom môžete získať podrobné informácie o vybranom vstupnom "
 "profile.</p>"
 
-#: core/utilities/setup/setupicc.cpp:380
+#: core/utilities/setup/setupicc.cpp:384
 #, fuzzy, kde-format
 msgid "Printing and Proofing"
 msgstr "Tlač a export vo verzii 0.4"
 
-#: core/utilities/setup/setupicc.cpp:385
+#: core/utilities/setup/setupicc.cpp:389
 #, fuzzy, kde-format
 msgid "Output device profile:"
 msgstr "Trieda zariadenia ICC profilu"
 
-#: core/utilities/setup/setupicc.cpp:394
+#: core/utilities/setup/setupicc.cpp:398
 #, fuzzy, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -69572,12 +69576,12 @@ msgstr ""
 "<p>Týmto tlačidlom môžete získať podrobné informácie o vybranom profile "
 "pracovnej plochy.</p>"
 
-#: core/utilities/setup/setupicc.cpp:405
+#: core/utilities/setup/setupicc.cpp:409
 #, fuzzy, kde-format
 msgid "Color Profiles Repository"
 msgstr "&Pridať do repository..."
 
-#: core/utilities/setup/setupicc.cpp:410
+#: core/utilities/setup/setupicc.cpp:414
 #, kde-format
 msgid ""
 "digiKam looks for ICC profiles in a number of <a href='default'>default "
@@ -69586,7 +69590,7 @@ msgstr ""
 "digiKam hľadá ICC profily v niektorých  <a href='default'>predvolených "
 "cestách</a>. Tu môžete vybrať ďalší priečinok:"
 
-#: core/utilities/setup/setupicc.cpp:418
+#: core/utilities/setup/setupicc.cpp:422
 #, kde-format
 msgid ""
 "<p>digiKam searches ICC profiles in default system folders and ships itself "
@@ -69597,12 +69601,12 @@ msgstr ""
 "obsahuje niekoľko vybraných profilov. Všetky dodatočné profily farieb uložte "
 "do tu vybraného adresára.</p>"
 
-#: core/utilities/setup/setupicc.cpp:441
+#: core/utilities/setup/setupicc.cpp:445
 #, kde-format
 msgid "Use black point compensation"
 msgstr "Použiť kompenzáciu čierneho bodu"
 
-#: core/utilities/setup/setupicc.cpp:442
+#: core/utilities/setup/setupicc.cpp:446
 #, kde-format
 msgid ""
 "<p><b>Black Point Compensation</b> is a way to make adjustments between the "
@@ -69613,56 +69617,56 @@ msgstr ""
 "čiernej v digitálnych súboroch podľa schopností rôznych digitálnych "
 "zariadení.</p>"
 
-#: core/utilities/setup/setupicc.cpp:448
+#: core/utilities/setup/setupicc.cpp:452
 #, kde-format
 msgid "Rendering Intents:"
 msgstr "Vykresľovacie zámery:"
 
-#: core/utilities/setup/setupicc.cpp:463
+#: core/utilities/setup/setupicc.cpp:467
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Behavior"
 msgstr "Správanie"
 
-#: core/utilities/setup/setupicc.cpp:464
+#: core/utilities/setup/setupicc.cpp:468
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Profiles"
 msgstr "Profily"
 
-#: core/utilities/setup/setupicc.cpp:465
+#: core/utilities/setup/setupicc.cpp:469
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Advanced"
 msgstr "Pokročilé"
 
-#: core/utilities/setup/setupicc.cpp:666
+#: core/utilities/setup/setupicc.cpp:670
 #, kde-format
 msgid "Monitor Profile From System Settings"
 msgstr "Profil monitora zo nastavení systému"
 
-#: core/utilities/setup/setupicc.cpp:698
+#: core/utilities/setup/setupicc.cpp:702
 #, kde-format
 msgid "No ICC profiles files found."
 msgstr "Nenašli sa žiadne súbory s profilmi ICC."
 
-#: core/utilities/setup/setupicc.cpp:714
+#: core/utilities/setup/setupicc.cpp:718
 #, fuzzy, kde-format
 msgid "No Display Profile Available"
 msgstr "Žiadna ladiaca informácia nie je k dispozícii"
 
-#: core/utilities/setup/setupicc.cpp:716
+#: core/utilities/setup/setupicc.cpp:720
 #, fuzzy, kde-format
 msgid "No Output Profile Available"
 msgstr "Žiadna ladiaca informácia nie je k dispozícii"
 
-#: core/utilities/setup/setupicc.cpp:850
+#: core/utilities/setup/setupicc.cpp:854
 #, kde-format
 msgctxt "none of the paths"
 msgid "none"
 msgstr "žiadne"
 
-#: core/utilities/setup/setupicc.cpp:859
+#: core/utilities/setup/setupicc.cpp:863
 #, fuzzy, kde-format
 #| msgid ""
 #| "On Windows, the default search paths include <ul><li>%1/Windows/Spool/"
@@ -69678,7 +69682,7 @@ msgstr ""
 "Windows/Spool/Drivers/Color/</li><li>%2/Windows/Color/</li></ul>Vo vašom "
 "systéme existujú a budú prehľadané tieto cesty:<ul><li>%3</li></ul>"
 
-#: core/utilities/setup/setupicc.cpp:875
+#: core/utilities/setup/setupicc.cpp:879
 #, fuzzy, kde-format
 #| msgid ""
 #| "On Mac OS X, the default search paths include <ul><li>/System/Library/"
@@ -69702,7 +69706,7 @@ msgstr ""
 "share/icc/</li><li>~/.color/icc/</li></ul>Vo vašom systéme existujú a budú "
 "prehľadané nasledujúce cesty:<ul><li>%2</li></ul>"
 
-#: core/utilities/setup/setupicc.cpp:894
+#: core/utilities/setup/setupicc.cpp:898
 #, kde-format
 msgid ""
 "On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
@@ -70202,6 +70206,9 @@ msgstr "Nastavenie albumu spracovaných položiek"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovať položky"
+
+#~ msgid "<p>Select the color profile for your monitor here.</p>"
+#~ msgstr "<p>Tu vyberte profil farieb pre váš monitor.</p>"
 
 #, fuzzy
 #~| msgctxt "@item"

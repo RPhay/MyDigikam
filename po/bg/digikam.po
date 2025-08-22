@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-21 02:08+0000\n"
+"POT-Creation-Date: 2025-08-22 02:00+0000\n"
 "PO-Revision-Date: 2025-05-17 21:36+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -10458,7 +10458,7 @@ msgid "Energy function"
 msgstr "Енергийна функция"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:387
-#: core/utilities/setup/setupicc.cpp:437
+#: core/utilities/setup/setupicc.cpp:441
 #, kde-format
 msgid "Advanced Settings"
 msgstr "Подробни настройки"
@@ -59091,7 +59091,7 @@ msgstr "и след това конвертиране в работно прос
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:373
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:472
-#: core/utilities/setup/setupicc.cpp:713
+#: core/utilities/setup/setupicc.cpp:717
 #, kde-format
 msgid "No Profile Available"
 msgstr "Няма наличен профил"
@@ -59143,7 +59143,7 @@ msgstr ""
 "използвано за създаване на това изображение:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:514
-#: core/utilities/setup/setupicc.cpp:715
+#: core/utilities/setup/setupicc.cpp:719
 #, kde-format
 msgid "No Input Profile Available"
 msgstr "Няма наличен входящ профил"
@@ -59195,7 +59195,7 @@ msgid "Profile of the output device to simulate:"
 msgstr "Профил на изходното устройство за симулиране:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
-#: core/utilities/setup/setupicc.cpp:388
+#: core/utilities/setup/setupicc.cpp:392
 #, kde-format
 msgid ""
 "<p>Select the profile for your output device (usually, your printer). This "
@@ -59232,14 +59232,14 @@ msgid "Highlighting color:"
 msgstr "Цвят на открояване:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:825
+#: core/utilities/setup/setupicc.cpp:829
 #, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Редактор на профили"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:825
+#: core/utilities/setup/setupicc.cpp:829
 #, kde-format
 msgid "No profile is selected."
 msgstr "Не е избран профил."
@@ -68770,10 +68770,14 @@ msgstr "Профил на монитор:"
 
 #: core/utilities/setup/setupicc.cpp:323
 #, kde-format
-msgid "<p>Select the color profile for your monitor here.</p>"
-msgstr "<p> Тук изберете цветовия профил за  монитора.</p>"
+msgid ""
+"<p>If your desktop do not provide a color profile for your screen, select "
+"here the default one. If no profile is set, sRGB will be used as fail-back. "
+"In all cases, the color management workflow will try to get in first the "
+"profile set for your monitor in your the desktop</p>"
+msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:327
+#: core/utilities/setup/setupicc.cpp:331
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -68782,12 +68786,12 @@ msgstr ""
 "<p>Можете да използвате този бутон за по-подробни данни за избрания профил "
 "на монитор.</p>"
 
-#: core/utilities/setup/setupicc.cpp:331
+#: core/utilities/setup/setupicc.cpp:335
 #, kde-format
 msgid "Use color managed view in editor"
 msgstr "Използване на изглед с управлявани цветове в редактора"
 
-#: core/utilities/setup/setupicc.cpp:332
+#: core/utilities/setup/setupicc.cpp:336
 #, kde-format
 msgid ""
 "<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
@@ -68803,23 +68807,23 @@ msgstr ""
 "<i>Предупреждение</i>: Това може да забави изобразяването на изображението в "
 "зависимост от скоростта на вашия компютър.</p>"
 
-#: core/utilities/setup/setupicc.cpp:339
+#: core/utilities/setup/setupicc.cpp:343
 #, kde-format
 msgid "Use color managed view for previews and thumbnails"
 msgstr ""
 "Използвайте изглед, управляван от цветовете, за визуализациите и миниатюрите"
 
-#: core/utilities/setup/setupicc.cpp:355
+#: core/utilities/setup/setupicc.cpp:359
 #, kde-format
 msgid "Camera and Scanner"
 msgstr "Камера и скенер"
 
-#: core/utilities/setup/setupicc.cpp:360
+#: core/utilities/setup/setupicc.cpp:364
 #, kde-format
 msgid "Default input color profile:"
 msgstr "Цветен профил на входа по подразбиране:"
 
-#: core/utilities/setup/setupicc.cpp:362
+#: core/utilities/setup/setupicc.cpp:366
 #, kde-format
 msgid ""
 "<p>This is the default color profile for your input device (that is your "
@@ -68832,7 +68836,7 @@ msgstr ""
 "правилно преобразуване на RAW изображения в 16 бита. Някои от опциите за "
 "поведение при зареждане по-горе се отнасят за този профил.</p>"
 
-#: core/utilities/setup/setupicc.cpp:369
+#: core/utilities/setup/setupicc.cpp:373
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -68841,17 +68845,17 @@ msgstr ""
 "<p>Можете да използвате този бутон за по-подробни данни за избрания входен "
 "профил.</p>"
 
-#: core/utilities/setup/setupicc.cpp:380
+#: core/utilities/setup/setupicc.cpp:384
 #, kde-format
 msgid "Printing and Proofing"
 msgstr "Отпечатване и проверка"
 
-#: core/utilities/setup/setupicc.cpp:385
+#: core/utilities/setup/setupicc.cpp:389
 #, kde-format
 msgid "Output device profile:"
 msgstr "Профил на изходното устройство:"
 
-#: core/utilities/setup/setupicc.cpp:394
+#: core/utilities/setup/setupicc.cpp:398
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -68860,12 +68864,12 @@ msgstr ""
 "<p>Можете да използвате този бутон, за да получите по-подробна информация за "
 "избрания профил за проверка.</p>"
 
-#: core/utilities/setup/setupicc.cpp:405
+#: core/utilities/setup/setupicc.cpp:409
 #, kde-format
 msgid "Color Profiles Repository"
 msgstr "Хранилище за цветови профили"
 
-#: core/utilities/setup/setupicc.cpp:410
+#: core/utilities/setup/setupicc.cpp:414
 #, kde-format
 msgid ""
 "digiKam looks for ICC profiles in a number of <a href='default'>default "
@@ -68874,7 +68878,7 @@ msgstr ""
 "digiKam търси ICC профили в редица  <a href='default'>местоположения по "
 "подразбиране</a>. Можете да посочите допълнителна папка:"
 
-#: core/utilities/setup/setupicc.cpp:418
+#: core/utilities/setup/setupicc.cpp:422
 #, kde-format
 msgid ""
 "<p>digiKam searches ICC profiles in default system folders and ships itself "
@@ -68885,12 +68889,12 @@ msgstr ""
 "няколко избрани профила. Съхранявайте всичките си допълнителни цветови "
 "профили в директорията, зададена тук.</p>"
 
-#: core/utilities/setup/setupicc.cpp:441
+#: core/utilities/setup/setupicc.cpp:445
 #, kde-format
 msgid "Use black point compensation"
 msgstr "Използване на компенсиране на черна точка (BPC)"
 
-#: core/utilities/setup/setupicc.cpp:442
+#: core/utilities/setup/setupicc.cpp:446
 #, kde-format
 msgid ""
 "<p><b>Black Point Compensation</b> is a way to make adjustments between the "
@@ -68901,56 +68905,56 @@ msgstr ""
 "максималните нива на черното във файловете и на възможностите за представяне "
 "на черно на различните цифрови устройства.</p>"
 
-#: core/utilities/setup/setupicc.cpp:448
+#: core/utilities/setup/setupicc.cpp:452
 #, kde-format
 msgid "Rendering Intents:"
 msgstr "Цели на обработката:"
 
-#: core/utilities/setup/setupicc.cpp:463
+#: core/utilities/setup/setupicc.cpp:467
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Behavior"
 msgstr "Поведение"
 
-#: core/utilities/setup/setupicc.cpp:464
+#: core/utilities/setup/setupicc.cpp:468
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Profiles"
 msgstr "Профили"
 
-#: core/utilities/setup/setupicc.cpp:465
+#: core/utilities/setup/setupicc.cpp:469
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Advanced"
 msgstr "Разширени"
 
-#: core/utilities/setup/setupicc.cpp:666
+#: core/utilities/setup/setupicc.cpp:670
 #, kde-format
 msgid "Monitor Profile From System Settings"
 msgstr "Профил на монитора от системните настройки"
 
-#: core/utilities/setup/setupicc.cpp:698
+#: core/utilities/setup/setupicc.cpp:702
 #, kde-format
 msgid "No ICC profiles files found."
 msgstr "Не са намерени файлове с ICC профили."
 
-#: core/utilities/setup/setupicc.cpp:714
+#: core/utilities/setup/setupicc.cpp:718
 #, kde-format
 msgid "No Display Profile Available"
 msgstr "Няма наличен профил на дисплея"
 
-#: core/utilities/setup/setupicc.cpp:716
+#: core/utilities/setup/setupicc.cpp:720
 #, kde-format
 msgid "No Output Profile Available"
 msgstr "Няма наличен изходен профил"
 
-#: core/utilities/setup/setupicc.cpp:850
+#: core/utilities/setup/setupicc.cpp:854
 #, kde-format
 msgctxt "none of the paths"
 msgid "none"
 msgstr "липсва"
 
-#: core/utilities/setup/setupicc.cpp:859
+#: core/utilities/setup/setupicc.cpp:863
 #, kde-format
 msgid ""
 "On Windows, the default search paths include <ul><li>%1/Windows/System32/"
@@ -68963,7 +68967,7 @@ msgstr ""
 "Windows/Color/</li></ul>В момента във вашата система тези пътища съществуват "
 "и са сканирани:<ul><li>%3</li></ul>"
 
-#: core/utilities/setup/setupicc.cpp:875
+#: core/utilities/setup/setupicc.cpp:879
 #, kde-format
 msgid ""
 "On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
@@ -68980,7 +68984,7 @@ msgstr ""
 "color/icc/</li></ul>В момента във вашата система тези пътища съществуват и "
 "са сканирани:<ul><li>%2</li></ul>"
 
-#: core/utilities/setup/setupicc.cpp:894
+#: core/utilities/setup/setupicc.cpp:898
 #, kde-format
 msgid ""
 "On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
@@ -69486,6 +69490,9 @@ msgstr "Елементи на албуми"
 #, kde-format
 msgid "Import Items"
 msgstr "Импортиране на елементи"
+
+#~ msgid "<p>Select the color profile for your monitor here.</p>"
+#~ msgstr "<p> Тук изберете цветовия профил за  монитора.</p>"
 
 #~ msgid "Build Date: "
 #~ msgstr "Дата на изграждане: "

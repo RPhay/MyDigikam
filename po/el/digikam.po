@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-21 02:08+0000\n"
+"POT-Creation-Date: 2025-08-22 02:00+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -10673,7 +10673,7 @@ msgid "Energy function"
 msgstr "Συνάρτηση ενέργειας"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:387
-#: core/utilities/setup/setupicc.cpp:437
+#: core/utilities/setup/setupicc.cpp:441
 #, kde-format
 msgid "Advanced Settings"
 msgstr "Προχωρημένες ρυθμίσεις"
@@ -62352,7 +62352,7 @@ msgstr "και έπειτα μετατροπή στον ενεργό χώρο"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:373
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:472
-#: core/utilities/setup/setupicc.cpp:713
+#: core/utilities/setup/setupicc.cpp:717
 #, kde-format
 msgid "No Profile Available"
 msgstr "Δεν υπάρχει διαθέσιμο προφίλ"
@@ -62404,7 +62404,7 @@ msgstr ""
 "χρησιμοποιήθηκε για τη δημιουργία αυτής της εικόνας:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:514
-#: core/utilities/setup/setupicc.cpp:715
+#: core/utilities/setup/setupicc.cpp:719
 #, kde-format
 msgid "No Input Profile Available"
 msgstr "Δεν υπάρχει διαθέσιμο προφίλ"
@@ -62457,7 +62457,7 @@ msgid "Profile of the output device to simulate:"
 msgstr "Προφίλ της συσκευής εξόδου για προσομοίωση:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
-#: core/utilities/setup/setupicc.cpp:388
+#: core/utilities/setup/setupicc.cpp:392
 #, kde-format
 msgid ""
 "<p>Select the profile for your output device (usually, your printer). This "
@@ -62497,7 +62497,7 @@ msgid "Highlighting color:"
 msgstr "Υπογράμμιση χρώματος:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:825
+#: core/utilities/setup/setupicc.cpp:829
 #, fuzzy, kde-format
 #| msgid "Profile Error"
 msgctxt "@title:window"
@@ -62505,7 +62505,7 @@ msgid "Profile Error"
 msgstr "Σφάλμα προφίλ"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:825
+#: core/utilities/setup/setupicc.cpp:829
 #, kde-format
 msgid "No profile is selected."
 msgstr "Δεν επιλέχθηκε κανένα προφίλ."
@@ -72453,10 +72453,14 @@ msgstr "Προφίλ οθόνης:"
 
 #: core/utilities/setup/setupicc.cpp:323
 #, kde-format
-msgid "<p>Select the color profile for your monitor here.</p>"
-msgstr "<p>Επιλέξτε εδώ το χρωματικό προφίλ για την οθόνη.</p>"
+msgid ""
+"<p>If your desktop do not provide a color profile for your screen, select "
+"here the default one. If no profile is set, sRGB will be used as fail-back. "
+"In all cases, the color management workflow will try to get in first the "
+"profile set for your monitor in your the desktop</p>"
+msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:327
+#: core/utilities/setup/setupicc.cpp:331
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -72465,12 +72469,12 @@ msgstr ""
 "<p>Μπορείτε να χρησιμοποιήσετε αυτό το κουμπί για να λάβετε περισσότερες "
 "πληροφορίες σχετικά με το επιλεγμένο προφίλ οθόνης.</p>"
 
-#: core/utilities/setup/setupicc.cpp:331
+#: core/utilities/setup/setupicc.cpp:335
 #, kde-format
 msgid "Use color managed view in editor"
 msgstr "Χρήση προβολής με διαχείριση χρωμάτων στον επεξεργαστή"
 
-#: core/utilities/setup/setupicc.cpp:332
+#: core/utilities/setup/setupicc.cpp:336
 #, kde-format
 msgid ""
 "<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
@@ -72486,24 +72490,24 @@ msgstr ""
 "επεξεργαστή. <i>Προειδοποίηση</i>: Αυτό μπορεί να επιβραδύνει την αποτύπωση "
 "της εικόνας, ιδίως αν ο υπολογιστής είναι αργός.</p>"
 
-#: core/utilities/setup/setupicc.cpp:339
+#: core/utilities/setup/setupicc.cpp:343
 #, kde-format
 msgid "Use color managed view for previews and thumbnails"
 msgstr ""
 "Χρήση προβολής με διαχείριση χρωμάτων για εικόνες προεπισκόπησης και "
 "επισκόπησης"
 
-#: core/utilities/setup/setupicc.cpp:355
+#: core/utilities/setup/setupicc.cpp:359
 #, kde-format
 msgid "Camera and Scanner"
 msgstr "Κάμερα και σαρωτής"
 
-#: core/utilities/setup/setupicc.cpp:360
+#: core/utilities/setup/setupicc.cpp:364
 #, kde-format
 msgid "Default input color profile:"
 msgstr "Προκαθορισμένο χρωματικό προφίλ εισόδου:"
 
-#: core/utilities/setup/setupicc.cpp:362
+#: core/utilities/setup/setupicc.cpp:366
 #, kde-format
 msgid ""
 "<p>This is the default color profile for your input device (that is your "
@@ -72517,7 +72521,7 @@ msgstr ""
 "Κάποιες από τις παραπάνω επιλογές σχετικά με τη συμπεριφορά φόρτωσης αφορούν "
 "αυτό το προφίλ.</p>"
 
-#: core/utilities/setup/setupicc.cpp:369
+#: core/utilities/setup/setupicc.cpp:373
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -72526,17 +72530,17 @@ msgstr ""
 "<p>Μπορείτε να χρησιμοποιήσετε αυτό το κουμπί για να λάβετε περισσότερες "
 "πληροφορίες σχετικά με το επιλεγμένο προφίλ εισόδου.</p>"
 
-#: core/utilities/setup/setupicc.cpp:380
+#: core/utilities/setup/setupicc.cpp:384
 #, kde-format
 msgid "Printing and Proofing"
 msgstr "Εκτύπωση και εμφάνιση"
 
-#: core/utilities/setup/setupicc.cpp:385
+#: core/utilities/setup/setupicc.cpp:389
 #, kde-format
 msgid "Output device profile:"
 msgstr "Προφίλ συσκευής εξόδου:"
 
-#: core/utilities/setup/setupicc.cpp:394
+#: core/utilities/setup/setupicc.cpp:398
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
@@ -72545,12 +72549,12 @@ msgstr ""
 "<p>Μπορείτε να χρησιμοποιήσετε αυτό το κουμπί για να λάβετε περισσότερες "
 "λεπτομέρειες σχετικά με το επιλεγμένο προφίλ εμφάνισης.</p>"
 
-#: core/utilities/setup/setupicc.cpp:405
+#: core/utilities/setup/setupicc.cpp:409
 #, kde-format
 msgid "Color Profiles Repository"
 msgstr "Αποθετήριο χρωματικών προφίλ"
 
-#: core/utilities/setup/setupicc.cpp:410
+#: core/utilities/setup/setupicc.cpp:414
 #, kde-format
 msgid ""
 "digiKam looks for ICC profiles in a number of <a href='default'>default "
@@ -72560,7 +72564,7 @@ msgstr ""
 "href='default'>προκαθορισμένων θέσεων</a>. Μπορείτε να ορίσετε ένα πρόσθετο "
 "φάκελο:"
 
-#: core/utilities/setup/setupicc.cpp:418
+#: core/utilities/setup/setupicc.cpp:422
 #, kde-format
 msgid ""
 "<p>digiKam searches ICC profiles in default system folders and ships itself "
@@ -72571,12 +72575,12 @@ msgstr ""
 "μεταφέρει το ίδιο λίγα επιλεγμένα προφίλ. Αποθηκεύστε όλα τα επιπλέον "
 "χρωματικά προφίλ στον κατάλογο που ορίζεται εδώ.</p>"
 
-#: core/utilities/setup/setupicc.cpp:441
+#: core/utilities/setup/setupicc.cpp:445
 #, kde-format
 msgid "Use black point compensation"
 msgstr "Χρήση επανόρθωσης μαύρου σημείου"
 
-#: core/utilities/setup/setupicc.cpp:442
+#: core/utilities/setup/setupicc.cpp:446
 #, kde-format
 msgid ""
 "<p><b>Black Point Compensation</b> is a way to make adjustments between the "
@@ -72587,56 +72591,56 @@ msgstr ""
 "επιπέδου του μαύρου ανάμεσα στα ψηφιακά αρχεία και τις δυνατότητες "
 "αποτύπωσης του μαύρου από διάφορες ψηφιακές συσκευές.</p>"
 
-#: core/utilities/setup/setupicc.cpp:448
+#: core/utilities/setup/setupicc.cpp:452
 #, kde-format
 msgid "Rendering Intents:"
 msgstr "Εντάσεις αποτύπωσης:"
 
-#: core/utilities/setup/setupicc.cpp:463
+#: core/utilities/setup/setupicc.cpp:467
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Behavior"
 msgstr "Συμπεριφορά"
 
-#: core/utilities/setup/setupicc.cpp:464
+#: core/utilities/setup/setupicc.cpp:468
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Profiles"
 msgstr "Προφίλ"
 
-#: core/utilities/setup/setupicc.cpp:465
+#: core/utilities/setup/setupicc.cpp:469
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Advanced"
 msgstr "Για προχωρημένους"
 
-#: core/utilities/setup/setupicc.cpp:666
+#: core/utilities/setup/setupicc.cpp:670
 #, kde-format
 msgid "Monitor Profile From System Settings"
 msgstr "Παρακολούθηση προφίλ από τις ρυθμίσεις συστήματος"
 
-#: core/utilities/setup/setupicc.cpp:698
+#: core/utilities/setup/setupicc.cpp:702
 #, kde-format
 msgid "No ICC profiles files found."
 msgstr "Δεν βρέθηκαν αρχεία προφίλ ICC."
 
-#: core/utilities/setup/setupicc.cpp:714
+#: core/utilities/setup/setupicc.cpp:718
 #, kde-format
 msgid "No Display Profile Available"
 msgstr "Δεν υπάρχει διαθέσιμο προφίλ εμφάνισης"
 
-#: core/utilities/setup/setupicc.cpp:716
+#: core/utilities/setup/setupicc.cpp:720
 #, kde-format
 msgid "No Output Profile Available"
 msgstr "Δεν υπάρχει διαθέσιμο προφίλ εξόδου"
 
-#: core/utilities/setup/setupicc.cpp:850
+#: core/utilities/setup/setupicc.cpp:854
 #, kde-format
 msgctxt "none of the paths"
 msgid "none"
 msgstr "Καμία"
 
-#: core/utilities/setup/setupicc.cpp:859
+#: core/utilities/setup/setupicc.cpp:863
 #, fuzzy, kde-format
 msgid ""
 "On Windows, the default search paths include <ul><li>%1/Windows/System32/"
@@ -72650,7 +72654,7 @@ msgstr ""
 "ul>Στο σύστημά σας, τώρα υπάρχουν αυτές οι διαδρομές και σαρώνονται:<ul><li>"
 "%1</li></ul>"
 
-#: core/utilities/setup/setupicc.cpp:875
+#: core/utilities/setup/setupicc.cpp:879
 #, fuzzy, kde-format
 msgid ""
 "On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
@@ -72666,7 +72670,7 @@ msgstr ""
 "ul>Στο σύστημά σας, τώρα υπάρχουν αυτές οι διαδρομές και σαρώνονται:<ul><li>"
 "%1</li></ul>"
 
-#: core/utilities/setup/setupicc.cpp:894
+#: core/utilities/setup/setupicc.cpp:898
 #, kde-format
 msgid ""
 "On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
@@ -73206,6 +73210,9 @@ msgstr "Αντικείμενα λευκώματος"
 #, kde-format
 msgid "Import Items"
 msgstr "Εισαγωγή αντικειμένων"
+
+#~ msgid "<p>Select the color profile for your monitor here.</p>"
+#~ msgstr "<p>Επιλέξτε εδώ το χρωματικό προφίλ για την οθόνη.</p>"
 
 #, fuzzy
 #~| msgid "File Name"
