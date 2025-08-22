@@ -19,8 +19,6 @@ namespace Digikam
 
 IccProfile IccSettings::Private::profileFromDesktop(QWidget* const widget)
 {
-    qCDebug(DIGIKAM_DIMG_LOG) << "ICM Desktop: screen platform is" << qApp->platformName();
-
     QScreen* const screen = qApp->primaryScreen();
 
     if (!screen)
@@ -61,9 +59,6 @@ IccProfile IccSettings::Private::profileFromDesktop(QWidget* const widget)
         if (screenProfiles.contains(screenNumber))
         {
             profile = screenProfiles.value(screenNumber);
-
-            qCDebug(DIGIKAM_DIMG_LOG) << "ICM Desktop: found monitor profile in the cache for screen"
-                                      << screenNumber << ":" << profile.description();
 
             return profile;
         }
@@ -130,6 +125,12 @@ IccProfile IccSettings::Private::profileFromDesktop(QWidget* const widget)
         QMutexLocker lock(&mutex);
         screenProfiles.insert(screenNumber, profile);
     }
+
+    qCDebug(DIGIKAM_DIMG_LOG) << "ICM Desktop: screen platform is :" << qApp->platformName();
+    qCDebug(DIGIKAM_DIMG_LOG) << "ICM Desktop: screen number      :" << screenNumber;
+    QScreen* const actualScreen = qApp->screens().value(screenNumber);
+    qCDebug(DIGIKAM_DIMG_LOG) << "ICM Desktop: screen description :" << actualScreen->name() << "|" << actualScreen->model();
+    qCDebug(DIGIKAM_DIMG_LOG) << "ICM Desktop: prolile description:" << profile.description();
 
     return profile;
 }
