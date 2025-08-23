@@ -27,6 +27,7 @@
 #include "coredbsearchxml.h"
 #include "deletedialog.h"
 #include "itemviewutilities.h"
+#include "itemsortcollator.h"
 #include "dio.h"
 
 namespace Digikam
@@ -36,12 +37,7 @@ class Q_DECL_HIDDEN FindDuplicatesAlbumItem::Private
 {
 public:
 
-    Private()
-    {
-        collator.setNumericMode(true);
-        collator.setIgnorePunctuation(false);
-        collator.setCaseSensitivity(Qt::CaseSensitive);
-    }
+    Private() = default;
 
 public:
 
@@ -49,8 +45,6 @@ public:
 
     SAlbum*   album     = nullptr;
     int       itemCount = 0;
-
-    QCollator collator;
 
     ItemInfo  refImgInfo;
 };
@@ -233,7 +227,9 @@ bool FindDuplicatesAlbumItem::operator<(const QTreeWidgetItem& other) const
     }
     else
     {
-        result = d->collator.compare(text(column), other.text(column));
+        result = ItemSortCollator::instance()->albumCompare(text(column),
+                                                            other.text(column),
+                                                            Qt::CaseSensitive, true);
     }
 
     return (result < 0);

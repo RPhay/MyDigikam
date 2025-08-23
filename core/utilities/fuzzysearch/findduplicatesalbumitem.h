@@ -24,7 +24,6 @@
 
 #include "album.h"
 #include "iteminfo.h"
-#include "thumbnailloadthread.h"
 
 namespace Digikam
 {
