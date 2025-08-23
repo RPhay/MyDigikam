@@ -72,7 +72,7 @@ public:
 
 private:
 
-    void calculateInfosMultithreaded();
+    void calculateInfosMultithreaded(const QList<qlonglong>& deletedImages);
 
 private:
 
