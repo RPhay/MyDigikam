@@ -72,6 +72,10 @@ public:
 
 private:
 
+    void calculateInfosMultithreaded();
+
+private:
+
     class Private;
     Private* const d = nullptr;
 

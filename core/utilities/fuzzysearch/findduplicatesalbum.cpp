@@ -70,8 +70,8 @@ FindDuplicatesAlbum::FindDuplicatesAlbum(QWidget* const parent)
     header()->setSectionResizeMode(FindDuplicatesAlbumItem::REFERENCE_IMAGE, QHeaderView::Interactive);
     header()->setSectionResizeMode(FindDuplicatesAlbumItem::REFERENCE_DATE,  QHeaderView::Interactive);
     header()->setSectionResizeMode(FindDuplicatesAlbumItem::REFERENCE_ALBUM, QHeaderView::Interactive);
-    header()->setSectionResizeMode(FindDuplicatesAlbumItem::RESULT_COUNT,    QHeaderView::ResizeToContents);
-    header()->setSectionResizeMode(FindDuplicatesAlbumItem::AVG_SIMILARITY,  QHeaderView::ResizeToContents);
+    header()->setSectionResizeMode(FindDuplicatesAlbumItem::RESULT_COUNT,    QHeaderView::Interactive);
+    header()->setSectionResizeMode(FindDuplicatesAlbumItem::AVG_SIMILARITY,  QHeaderView::Interactive);
     setWhatsThis(i18n("This shows all found duplicate items."));
 
     connect(d->thumbLoadThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),

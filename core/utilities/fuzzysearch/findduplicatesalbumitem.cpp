@@ -16,7 +16,7 @@
 
 // Qt includes
 
-#include <QCollator>
+#include <QtConcurrentRun>
 #include <QPainter>
 #include <QIcon>
 
@@ -69,7 +69,19 @@ FindDuplicatesAlbumItem::FindDuplicatesAlbumItem(QTreeWidget* const parent, SAlb
             setText(Column::REFERENCE_ALBUM, physicalAlbum->prettyUrl());
         }
 
-        calculateInfos();
+        (void)QtConcurrent::run(
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+                                &FindDuplicatesAlbumItem::calculateInfosMultithreaded, this
+
+#else
+
+                                this, &FindDuplicatesAlbumItem::calculateInfosMultithreaded
+
+#endif
+
+                               );
     }
 
     setThumb(QIcon::fromTheme(QLatin1String("view-preview")).pixmap(parent->iconSize().width(),
@@ -169,7 +181,7 @@ void FindDuplicatesAlbumItem::calculateInfos(const QList<qlonglong>& deletedImag
     }
 
     setText(Column::RESULT_COUNT,   QString::number(d->itemCount));
-    setText(Column::AVG_SIMILARITY, QString::fromLatin1("%1%").arg((int)(avgSim * 100)));
+    setText(Column::AVG_SIMILARITY, QString::number((int)(avgSim * 100)));
 }
 
 int FindDuplicatesAlbumItem::itemCount() const
@@ -233,6 +245,11 @@ bool FindDuplicatesAlbumItem::operator<(const QTreeWidgetItem& other) const
     }
 
     return (result < 0);
+}
+
+void FindDuplicatesAlbumItem::calculateInfosMultithreaded()
+{
+    calculateInfos();
 }
 
 } // namespace Digikam

@@ -105,7 +105,6 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     // --- Duplicates List View
 
     d->listView        = new FindDuplicatesAlbum();
-    d->listView->setSortingEnabled(false);
     d->tab             = new QTabWidget();
 
     // --- Albums Selection
@@ -380,6 +379,7 @@ void FindDuplicatesView::populateTreeView()
         return;
     }
 
+    d->listView->setSortingEnabled(false);
     QElapsedTimer waitCursorTimer;
     waitCursorTimer.start();
 

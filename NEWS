@@ -95,7 +95,7 @@ BUGFIXES:
 063 ==> 508121 - Face Recognition does not produce any results.
 064 ==> 508464 - Album marked as not available although it is available.
 065 ==> 508500 - Wipe all tags from Database only results in "Cannot delete required face tag" message.
-066 ==> 
+066 ==> 508633 - Duplicates freezes, cant sort by Similarity, or resize.
 067 ==> 
 068 ==> 
 069 ==> 
