@@ -65850,6 +65850,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgid "<p>Select the color profile for your monitor here.</p>"
-#~ msgstr "<p>选择显示器的色彩特性文件。</p>"

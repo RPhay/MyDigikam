@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-22 02:00+0000\n"
-"PO-Revision-Date: 2025-08-20 12:01-0300\n"
+"PO-Revision-Date: 2025-08-22 09:46-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -43754,7 +43754,7 @@ msgstr "Informações dos componentes"
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:64
 #, kde-format
 msgid "Supported RAW Cameras"
-msgstr "Câmeras com suporte a RAW"
+msgstr "Câmeras RAW suportadas"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:69
 #, kde-format
@@ -50069,7 +50069,7 @@ msgstr "Efei&tos"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "Configurar"
+msgstr "Configurações"
 
 #: core/showfoto/setup/showfotosetup.cpp:105
 #, kde-format
@@ -67675,6 +67675,11 @@ msgid ""
 "In all cases, the color management workflow will try to get in first the "
 "profile set for your monitor in your the desktop</p>"
 msgstr ""
+"<p>Se a sua área de trabalho não fornecer um perfil de cor para a sua tela, "
+"selecione aqui o perfil padrão. Se nenhum perfil estiver definido, o sRGB "
+"será usado como failback. Em todos os casos, o fluxo de trabalho de "
+"gerenciamento de cor tentará obter primeiro o perfil definido para o seu "
+"monitor na sua área de trabalho</p>"
 
 #: core/utilities/setup/setupicc.cpp:331
 #, kde-format

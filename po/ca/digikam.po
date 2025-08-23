@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-22 02:00+0000\n"
-"PO-Revision-Date: 2025-08-09 08:51+0200\n"
+"PO-Revision-Date: 2025-08-22 14:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -67923,6 +67923,11 @@ msgid ""
 "In all cases, the color management workflow will try to get in first the "
 "profile set for your monitor in your the desktop</p>"
 msgstr ""
+"<p>Si el vostre escriptori no proporciona un perfil de color per a la "
+"pantalla, seleccioneu aquí el predeterminat. Si no s'estableix cap perfil, "
+"s'utilitzarà sRGB com a reserva. En tots els casos, el flux de treball de "
+"gestió del color intentarà obtenir primer el perfil establert del vostre "
+"monitor a l'escriptori</p>"
 
 #: core/utilities/setup/setupicc.cpp:331
 #, kde-format

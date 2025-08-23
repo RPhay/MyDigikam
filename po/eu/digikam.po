@@ -39,14 +39,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-22 02:00+0000\n"
-"PO-Revision-Date: 2025-08-15 01:39+0200\n"
+"PO-Revision-Date: 2025-08-23 00:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -3688,10 +3688,9 @@ msgid "...and much more."
 msgstr "...eta askoz gehiago."
 
 #: core/app/views/stack/welcomepageview.cpp:167
-#, fuzzy, kde-format
-#| msgid "<li>%1</li>\n"
+#, kde-format
 msgid "<li>%1</li><br>"
-msgstr "<li>%1</li>\n"
+msgstr "<li>%1</li><br>"
 
 #: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
@@ -5958,15 +5957,7 @@ msgid "Reduce Texturing"
 msgstr "Murriztu testurizazioa"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Select the filter preset to use for photograph restoration here:</"
-#| "p><p><b>None</b>: Most common values. Puts settings to default.<br/"
-#| "><b>Reduce Uniform Noise</b>: reduce small image artifacts such as sensor "
-#| "noise.<br/><b>Reduce JPEG Artifacts</b>: reduce large image artifacts, "
-#| "such as a JPEG compression mosaic.<br/><b>Reduce Texturing</b>: reduce "
-#| "image artifacts, such as paper texture, or Moire patterns on scanned "
-#| "images.</p>"
+#, kde-format
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
 "p><p><b>None</b>: Most common values. Puts settings to default.<br><b>Reduce "
@@ -5977,10 +5968,10 @@ msgid ""
 msgstr ""
 "<p>Hautatu iragazkiaren aurre-ezarpena argazkia zaharberritzean erabiltzeko:"
 "</p><p><b>Bat ere ez</b>: ohizko balioak. Ezarpenak lehenetsira jartzen ditu."
-"<br/><b>Murriztu zarata uniformea</b>: irudien gauzaki txikiak murrizten "
-"ditu, zarataren sentsorea bezalakoak.<br/><b>Murriztu JPGEren gauzakiak</b>: "
+"<br><b>Murriztu zarata uniformea</b>: irudien gauzaki txikiak murrizten "
+"ditu, zarataren sentsorea bezalakoak.<br><b>Murriztu JPGEren gauzakiak</b>: "
 "irudien gauzaki handiak murrizten ditu, JPEG konpresioko mosaikoa bezalakoak."
-"<br/><b>Murriztu testurizazioa</b>: irudiaren gauzakiak murrizten ditu, "
+"<br><b>Murriztu testurizazioa</b>: irudiaren gauzakiak murrizten ditu, "
 "paperezko testurak bezalakoak, edo Moire ereduak eskaneatutako irudietan.</p>"
 
 #: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:42
@@ -6077,32 +6068,33 @@ msgid ""
 "Select an image or JSON file supported by ExifTool to apply the file "
 "metadata to the images."
 msgstr ""
+"Hautatu ExifTool-ek onartzen duen irudi edo JSON fitxategi bat irudiei "
+"fitxategiaren metadatuak aplikatzeko."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:148
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: No image or JSON file selected."
-msgstr ""
+msgstr "Aplikatu metadatuak: Ez da irudirik edo JSON fitxategirik hautatu."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:156
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: ExifTool is not available."
-msgstr ""
+msgstr "Aplikatu metadatuak: ExifTool ez dago erabilgarri."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: File name not exist in JSON file."
 msgstr ""
+"Aplikatu metadatuak: Fitxategi-izena ez da JSON fitxategian existitzen."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply Metadata Template"
+#, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: ExifTool reported an error."
-msgstr "Ezarri metadatuen txantiloia"
+msgstr "Aplikatu metadatuak: ExifTool-ek errore baten berri eman du."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:42
 #, kde-format
@@ -6210,7 +6202,7 @@ msgid "Color Label:"
 msgstr "Kolore-etiketa:"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:99
-#, fuzzy, kde-format
+#, kde-format
 msgid "Rating:"
 msgstr "Balorazioa:"
 
@@ -6247,9 +6239,7 @@ msgid "Assign Tags"
 msgstr "Esleitu etiketak"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign tags automatically to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically assign tags to images"
 msgstr "Irudiei etiketak automatikoki esleitzeko tresna bat"
@@ -6406,11 +6396,10 @@ msgid "Date"
 msgstr "Data"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
-#, fuzzy, kde-format
-#| msgid "digiKam Properties"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
-msgstr "digiKamen propietateak"
+msgstr "digiKam erabat"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
 #, kde-format
@@ -6556,31 +6545,26 @@ msgstr ""
 "hizkuntza alternatiboetako kateak itzul ditzake.</para>"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@title"
 msgid "Auto-Rotate"
 msgstr "Biratze automatikoa"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign tags automatically to images"
+#, kde-format
 msgctxt "@info"
 msgid "AI tool to automatically rotate images"
-msgstr "Irudiei etiketak automatikoki esleitzeko tresna bat"
+msgstr "Irudiei automatikoki biratzeko AA tresna bat"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:63
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can apply color effects over images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can automatically detect the correct "
 "orientation of an image and rotate the image.</para>"
 msgstr ""
-"<para>Agindu-sorta ilara kudeatzaile tresna honek irudien gainean kolore-"
-"efektuak ezar ditzake.</para>"
+"<para>Agindu-sorta ilara kudeatzeko tresna honek irudi baten orientazio "
+"zuzena antzeman eta irudia biratu dezake.</para>"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, kde-format
@@ -6731,35 +6715,28 @@ msgstr[0] "Ikaragarria (1 pixel)"
 msgstr[1] "Ikaragarria (%1 pixel)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:170
-#, fuzzy, kde-format
-#| msgid "Big (1 pixel)"
-#| msgid_plural "Big (%1 pixels)"
+#, kde-format
 msgid "QXGA (1 pixel)"
 msgid_plural "QXGA (%1 pixels)"
-msgstr[0] "Handia (1 pixel)"
-msgstr[1] "Handia (%1 pixel)"
+msgstr[0] "QXGA (pixel 1)"
+msgstr[1] "QXGA (%1 pixel)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:171
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "QHD (1 pixel)"
 msgid_plural "QHD (%1 pixels)"
-msgstr[0] "Ikaragarria (1 pixel)"
-msgstr[1] "Ikaragarria (%1 pixel)"
+msgstr[0] "QHD (pixel 1)"
+msgstr[1] "QHD (%1 pixel)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:172
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgid "UHD (1 pixel)"
 msgid_plural "UHD (%1 pixels)"
-msgstr[0] "Ikaragarria (1 pixel)"
-msgstr[1] "Ikaragarria (%1 pixel)"
+msgstr[0] "UHD (pixel 1)"
+msgstr[1] "UHD (%1 pixel)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:174
-#, fuzzy, kde-format
-#| msgid "Not enlarge small images"
+#, kde-format
 msgid "Do Not Enlarge Small Images"
 msgstr "Ez handitu irudi txikiak"
 
@@ -6873,13 +6850,7 @@ msgid "HEIF quality:"
 msgstr "HEIF kalitatea:"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
-#| "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-#| "b>: good quality (default)<br/><b>100</b>: high quality (no compression "
-#| "and large file size)</p><p><b>Note: HEIF is not a lossless image "
-#| "compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -6888,9 +6859,9 @@ msgid ""
 "when you use this setting.</b></p>"
 msgstr ""
 "<p>HEIF irudien kalitatearen balioa:</p><p><b>1</b>: kalitate baxua "
-"(konpresio altua eta fitxategi txikiak)<br/><b>50</b>: kalitate ertaina<br/"
-"><b>75</b>: kalitate ona (lehenetsia)<br/><b>100</b>: kalitate handia "
-"(konpresiorik ez eta fitxategi handiak)</p><p><b>Oharra: HEIF ez da "
+"(konpresio altua eta fitxategi txikiak)<br><b>50</b>: kalitate "
+"ertaina<br><b>75</b>: kalitate ona (lehenetsia)<br><b>100</b>: kalitate "
+"handia (konpresiorik ez eta fitxategi handiak)</p><p><b>Oharra: HEIF ez da "
 "galerarik gabeko konpresio-formatu bat ezarpen hau erabiltzen duzunean.</b></"
 "p>"
 
@@ -7018,12 +6989,7 @@ msgid "JPEG quality:"
 msgstr "JPEG kalitatea:"
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The JPEG quality:</p><p><b>1</b>: low quality (high compression and "
-#| "small file size)<br/><b>50</b>: medium quality<br/><b>75</b>: good "
-#| "quality (default)<br/><b>100</b>: high quality (no compression and large "
-#| "file size)</p><p><b>Note: JPEG always uses lossy compression.</b></p>"
+#, kde-format
 msgid ""
 "<p>The JPEG quality:</p><p><b>1</b>: low quality (high compression and small "
 "file size)<br><b>50</b>: medium quality<br><b>75</b>: good quality "
@@ -7031,9 +6997,9 @@ msgid ""
 "p><p><b>Note: JPEG always uses lossy compression.</b></p>"
 msgstr ""
 "<p>JPEG irudien kalitatearen balioa:</p><p><b>1</b>: kalitate baxua "
-"(konpresio altua eta fitxategi txikiak)<br/><b>50</b>: kalitate ertaina<br/"
-"><b>75</b>: kalitate ona (lehenetsia)<br/><b>100</b>: kalitate handia "
-"(konpresiorik ez eta fitxategi handiak)</p><p><b>Oharra: JPEG ez da "
+"(konpresio altua eta fitxategi txikiak)<br><b>50</b>: kalitate "
+"ertaina<br><b>75</b>: kalitate ona (lehenetsia)<br><b>100</b>: kalitate "
+"handia (konpresiorik ez eta fitxategi handiak)</p><p><b>Oharra: JPEG ez da "
 "galerarik gabeko konpresio-formatu bat.</b></p>"
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:79
@@ -7139,13 +7105,7 @@ msgid "JPEG 2000 quality:"
 msgstr "JPEG 2000-ren kalitatea:"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality "
-#| "(high compression and small file size)<br/><b>50</b>: medium quality<br/"
-#| "><b>75</b>: good quality (default)<br/><b>100</b>: high quality (no "
-#| "compression and large file size)</p><p><b>Note: JPEG 2000 is not a "
-#| "lossless image compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -7154,11 +7114,11 @@ msgid ""
 "format when you use this setting.</b></p>"
 msgstr ""
 "<p>JPEG 2000 irudien kalitatearen balioa:</p><p><b>1</b>: kalitate baxua "
-"(konpresio altua eta fitxategi txikiak)<br/><b>50</b>: kalitate ertaina<br/"
-"><b>75</b>: kalitate ona (lehenetsia)<br/><b>100</b>: kalitate handia "
-"(konpresiorik ez eta fitxategi handiak)</p><p><b>Oharra: JPEG 2000 ez da "
-"galerarik gabeko konpresio-formatu bat ezarpen hau erabiltzen duzunean.</b></"
-"p>"
+"(konpresio altua eta fitxategi txikiak)<br><b>50</b>: kalitate "
+"ertaina<br><b>75</b>: kalitate ona (lehenetsia)<br><b>100</b>: kalitate "
+"handia (konpresiorik ez eta fitxategi handiak)</p><p><b>Oharra: JPEG 2000 ez "
+"da galerarik gabeko konpresio-formatu bat ezarpen hau erabiltzen duzunean.</"
+"b></p>"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:81
 #, kde-format
@@ -7257,13 +7217,7 @@ msgid "PGF quality:"
 msgstr "PGF kalitatea:"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "
-#| "compression and large file size)<br/><b>3</b>: good quality (default)<br/"
-#| "><b>6</b>: medium quality<br/><b>9</b>: low quality (high compression and "
-#| "small file size)</p><p><b>Note: PGF is not a lossless image compression "
-#| "format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "
 "compression and large file size)<br><b>3</b>: good quality "
@@ -7272,8 +7226,8 @@ msgid ""
 "compression format when you use this setting.</b></p>"
 msgstr ""
 "<p>PGF irudien kalitatearen balioa:</p><p><b>1</b>: kalitate altua "
-"(konpresio gabea eta fitxategi-tamaina handia)<br/><b>3</b>: kalitate ona "
-"(lehenetsia)<br/><b>6</b>: kalitate ertaina<br/><b>9</b>: kalitate baxua "
+"(konpresio gabea eta fitxategi-tamaina handia)<br><b>3</b>: kalitate ona "
+"(lehenetsia)<br><b>6</b>: kalitate ertaina<br><b>9</b>: kalitate baxua "
 "(konpresio altua eta fitxategi-tamaina txikia)</p><p><b>Oharra: PGF ez da "
 "galerarik gabeko konpresio-formatu bat ezarpen hau erabiltzen duzunean.</b></"
 "p>"
@@ -7316,13 +7270,7 @@ msgid "PNG compression:"
 msgstr "PNG konpresioa:"
 
 #: core/dplugins/dimg/png/dimgpngexportsettings.cpp:64
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The compression value for PNG images:</p><p><b>1</b>: low compression "
-#| "(large file size but short compression duration - default)<br/><b>5</b>: "
-#| "medium compression<br/><b>9</b>: high compression (small file size but "
-#| "long compression duration)</p><p><b>Note: PNG is always a lossless image "
-#| "compression format.</b></p>"
+#, kde-format
 msgid ""
 "<p>The compression value for PNG images:</p><p><b>1</b>: low compression "
 "(large file size but short compression duration - default)<br><b>5</b>: "
@@ -7331,8 +7279,8 @@ msgid ""
 "compression format.</b></p>"
 msgstr ""
 "<p>PNG irudien konpresioaren balioa:</p><p><b>1</b>: konpresio baxua "
-"(fitxategi handia eta konpresioaren iraupen motza)<br/><b>5</b>: konpresio "
-"ertaina<br/><b>9</b>: konpresio handia (fitxategi txikia eta konpresioaren "
+"(fitxategi handia eta konpresioaren iraupen motza)<br><b>5</b>: konpresio "
+"ertaina<br><b>9</b>: konpresio handia (fitxategi txikia eta konpresioaren "
 "iraupen handia)</p><p><b>Oharra: PNG beti galerarik gabeko konpresio-"
 "formatua da.</b></p>"
 
@@ -7389,13 +7337,7 @@ msgid "AVIF quality:"
 msgstr "«AVIF»en kalitatea:"
 
 #: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for AVIF images:</p><p><b>1</b>: low quality (high "
-#| "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-#| "b>: good quality (default)<br/><b>99</b>: high quality (no compression "
-#| "and large file size)</p><p><b>Note: AVIF is not a lossless image "
-#| "compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for AVIF images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -7404,9 +7346,9 @@ msgid ""
 "when you use this setting.</b></p>"
 msgstr ""
 "<p>AVIF irudien kalitatearen balioa:</p><p><b>1</b>: kalitate baxua "
-"(konpresio altua eta fitxategi txikiak)<br/><b>50</b>: kalitate ertaina<br/"
-"><b>75</b>: kalitate ona (lehenetsia)<br/><b>99</b>: kalitate handia "
-"(konpresiorik ez eta fitxategi handiak)</p><p><b>Oharra: AVIF ez da "
+"(konpresio altua eta fitxategi txikiak)<br><b>50</b>: kalitate "
+"ertaina<br><b>75</b>: kalitate ona (lehenetsia)<br><b>99</b>: kalitate "
+"handia (konpresiorik ez eta fitxategi handiak)</p><p><b>Oharra: AVIF ez da "
 "galerarik gabeko konpresio-formatu bat ezarpen hau erabiltzen duzunean.</b></"
 "p>"
 
@@ -7435,13 +7377,7 @@ msgid "JPEG XL quality:"
 msgstr "«JPEG XL»ren kalitatea:"
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for JPEG XL images:</p><p><b>1</b>: low quality "
-#| "(high compression and small file size)<br/><b>50</b>: medium quality<br/"
-#| "><b>75</b>: good quality (default)<br/><b>99</b>: high quality (no "
-#| "compression and large file size)</p><p><b>Note: JPEG XL is not a lossless "
-#| "image compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for JPEG XL images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -7450,11 +7386,11 @@ msgid ""
 "when you use this setting.</b></p>"
 msgstr ""
 "<p>JPEG XL irudien kalitatearen balioa:</p><p><b>1</b>: kalitate baxua "
-"(konpresio altua eta fitxategi txikiak)<br/><b>50</b>: kalitate ertaina<br/"
-"><b>75</b>: kalitate ona (lehenetsia)<br/><b>99</b>: kalitate handia "
-"(konpresiorik ez eta fitxategi handiak)</p><p><b>Oharra: JPEG XL ez da "
-"galerarik gabeko konpresio-formatu bat ezarpen hau erabiltzen duzunean.</b></"
-"p>"
+"(konpresio altua eta fitxategi txikiak)<br><b>50</b>: kalitate "
+"ertaina<br><b>75</b>: kalitate ona (lehenetsia)<br><b>99</b>: kalitate "
+"handia (konpresiorik ez eta fitxategi handiak)</p><p><b>Oharra: JPEG XL ez "
+"da galerarik gabeko konpresio-formatu bat ezarpen hau erabiltzen duzunean.</"
+"b></p>"
 
 #: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:46
 #, kde-format
@@ -7503,13 +7439,7 @@ msgid "WEBP quality:"
 msgstr "«WEBP»ren kalitatea:"
 
 #: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for WEB images:</p><p><b>1</b>: low quality (high "
-#| "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-#| "b>: good quality (default)<br/><b>99</b>: high quality (no compression "
-#| "and large file size)</p><p><b>Note: WEBP is not a lossless image "
-#| "compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for WEBP images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -7518,9 +7448,9 @@ msgid ""
 "when you use this setting.</b></p>"
 msgstr ""
 "<p>WEBP irudien kalitatearen balioa:</p><p><b>1</b>: kalitate baxua "
-"(konpresio altua eta fitxategi txikiak)<br/><b>50</b>: kalitate ertaina<br/"
-"><b>75</b>: kalitate ona (lehenetsia)<br/><b>99</b>: kalitate handia "
-"(konpresiorik ez eta fitxategi handiak)</p><p><b>Oharra: WEBP ez da "
+"(konpresio altua eta fitxategi txikiak)<br><b>50</b>: kalitate "
+"ertaina<br><b>75</b>: kalitate ona (lehenetsia)<br><b>99</b>: kalitate "
+"handia (konpresiorik ez eta fitxategi handiak)</p><p><b>Oharra: WEBP ez da "
 "galerarik gabeko konpresio-formatu bat ezarpen hau erabiltzen duzunean.</b></"
 "p>"
 
@@ -13448,18 +13378,18 @@ msgstr ""
 "prise de vue."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:175
-#, fuzzy, kde-format
+#, kde-format
 msgid "Max. lens aperture (f-number):"
-msgstr "Ouverture d'objectif maximale (f-nombre) :"
+msgstr "Lente-irekiera maximoa (f zenbakia):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:178
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Select here the smallest aperture of the lens used by camera to take the "
 "picture."
 msgstr ""
-"Sélectionnez ici la plus petite ouverture d'objectif utilisée par l'appareil "
-"lors de la prise de vue."
+"Hautatu hemen kamarak argazkia ateratzeko erabiltzen duen lentearen "
+"irekidura txikiena."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:78
 #, kde-format
@@ -15239,10 +15169,9 @@ msgid "Phone:"
 msgstr "Telefonoa:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:113
-#, fuzzy, kde-format
-#| msgid "Set here the contact 'phone number."
+#, kde-format
 msgid "Set here the contact phone number."
-msgstr "Kontatuaren telefono zenbakia hemen ezarri."
+msgstr "Ezarri hemen kontatuaren telefono zenbakia."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:115
 #, kde-format
@@ -15266,25 +15195,24 @@ msgid "Set here the contact postal code."
 msgstr "Kontaktuaren posta-kodea hemen ezarri."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:128
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set here the contact city."
-msgstr "Définissez ici la ville du contact."
+msgstr "Ezarri hemen kontaktuko hiria."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:133
-#, fuzzy, kde-format
-#| msgid "Set here the content provider."
+#, kde-format
 msgid "Set here the contact state/province."
-msgstr "Définissez ici le fournisseur du contact."
+msgstr "Ezarri hemen kontaktuko estatua/probintzia."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:138
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set here the contact country."
-msgstr "Définissez ici le pays du contact."
+msgstr "Ezarri hemen kontaktuaren herrialdea."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:173
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set here the original owner of content."
-msgstr "Définissez ici le propriétaire original du contenu."
+msgstr "Ezarri hemen edukiaren jatorrizko jabea."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:93
 #, kde-format
