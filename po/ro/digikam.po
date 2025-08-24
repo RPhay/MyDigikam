@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-22 02:00+0000\n"
+"POT-Creation-Date: 2025-08-24 01:59+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -3116,7 +3116,7 @@ msgstr ""
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:130
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:149
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:274
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:273
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@info"
@@ -34731,7 +34731,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:90
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:115
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:114
 #, fuzzy, kde-format
 #| msgid "Search in:"
 msgctxt "@title:tab"
@@ -34902,7 +34902,7 @@ msgstr "Selecție"
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:263
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
@@ -53382,83 +53382,83 @@ msgstr "Elemente"
 msgid "This shows all found duplicate items."
 msgstr "Aceasta afișează toate elementele duplicate găsite."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:119
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Reference Image Selection Method"
 msgstr "Nici un element selectat"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:125
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:129
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:128
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected Album as reference"
 msgstr "Pe cale de a șterge albumele alese"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected Album as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:135
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:134
 #, fuzzy, kde-format
 #| msgid "Creation date"
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
 msgstr "Data creării"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:137
 #, fuzzy, kde-format
 #| msgid "Modification"
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
 msgstr "Modificare"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:142
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:141
 #, fuzzy, kde-format
 #| msgid "Remove the current region selection"
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
 msgstr "Șterge selecția curentă de regiune"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:144
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:143
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Reference Album:"
 msgstr "Referință"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Reference"
 msgstr "Referință"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgctxt "@label"
 msgid "Restrict Search to:"
 msgstr "Restaurare"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:178
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Reinițializează conținutul"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:182
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:181
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
 #, fuzzy, kde-format
 #| msgctxt "toggle child and parent tags"
 #| msgid "Both"
@@ -53466,21 +53466,21 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Ambele"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
 #, fuzzy, kde-format
 #| msgid "File does not exist"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Fișierul nu există"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:191
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:190
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Redenumirea albumului a eșuat"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53494,40 +53494,40 @@ msgid ""
 "\"Tags but not albums\": images must be in the selected tags but not albums."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:213
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Similaritate:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:233
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:232
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@label"
 msgid "Limit Search to:"
 msgstr "Ultima căutare"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:237
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:236
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Nici una"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:238
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:237
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Reference Album only"
 msgstr "Referință"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:238
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference Album"
 msgstr "Pe cale de a șterge albumele alese"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:240
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53536,14 +53536,14 @@ msgid ""
 "of reference image, or to exclude the Album of reference image of the search."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:269
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:268
 #, fuzzy, kde-format
 #| msgid "Update fingerprints"
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "Actualizează amprentele"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:271
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -53552,14 +53552,14 @@ msgstr ""
 "Utilizați acest buton pentru a examina albumele selectate pentru elementele "
 "duplicate."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:288
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:287
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Găsește duplicate"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:290
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:289
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -53568,14 +53568,14 @@ msgstr ""
 "Utilizați acest buton pentru a examina albumele selectate pentru elementele "
 "duplicate."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:293
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:292
 #, fuzzy, kde-format
 #| msgid "Remove duplicate words"
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Înlătură cuvintele duplicate"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:295
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:294
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"

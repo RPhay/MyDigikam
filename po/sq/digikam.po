@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-22 02:00+0000\n"
+"POT-Creation-Date: 2025-08-24 01:59+0000\n"
 "PO-Revision-Date: 2023-12-13 03:27-0500\n"
 "Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
 "Language-Team: sq\n"
@@ -2978,7 +2978,7 @@ msgstr ""
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:130
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:149
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:274
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:273
 #, kde-format
 msgctxt "@info"
 msgid "Help"
@@ -33373,7 +33373,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:90
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:115
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:114
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -33540,7 +33540,7 @@ msgstr "Përzgjedhje"
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:263
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
@@ -51411,79 +51411,79 @@ msgstr ""
 msgid "This shows all found duplicate items."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:119
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Reference Image Selection Method"
 msgstr "Zgjidh Imazhet"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:125
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:129
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:128
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected Album as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected Album as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:135
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:134
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
 msgstr "Lidhe"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:137
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
 msgstr "Gjeovendndodhje"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:142
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:141
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:144
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:143
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Reference Album:"
 msgstr "Zgjidh Imazhet"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Reference"
 msgstr "Zgjidh Imazhet"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Restrict Search to:"
 msgstr "Filtri:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:178
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Fshije Kartelën"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:182
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:181
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
 #, fuzzy, kde-format
 #| msgctxt "toggle child and parent tags"
 #| msgid "Both"
@@ -51491,19 +51491,19 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Së bashku"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Skedari nuk ekziston"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:191
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:190
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51517,38 +51517,38 @@ msgid ""
 "\"Tags but not albums\": images must be in the selected tags but not albums."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:213
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:233
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:232
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Limit Search to:"
 msgstr "Kërkime"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:237
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:236
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Asnjë"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:238
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:237
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Reference Album only"
 msgstr "Zgjidh Imazhet"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:238
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference Album"
 msgstr "Fshije Kartelën"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:240
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51557,37 +51557,37 @@ msgid ""
 "of reference image, or to exclude the Album of reference image of the search."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:269
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:268
 #, kde-format
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:271
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:288
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:287
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Zhduke Etiketën"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:290
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:293
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:292
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Zhduke Etiketën"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:295
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-22 02:00+0000\n"
+"POT-Creation-Date: 2025-08-24 01:59+0000\n"
 "PO-Revision-Date: 2025-08-22 14:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2907,7 +2907,7 @@ msgstr ""
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:130
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:149
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:274
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:273
 #, kde-format
 msgctxt "@info"
 msgid "Help"
@@ -35073,7 +35073,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:90
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:115
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:114
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -35267,7 +35267,7 @@ msgstr "Reconeixement"
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:263
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -53144,97 +53144,97 @@ msgstr "Elements"
 msgid "This shows all found duplicate items."
 msgstr "Això mostra tots els elements duplicats trobats."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:119
 #, kde-format
 msgctxt "@info"
 msgid "Reference Image Selection Method"
 msgstr "Mètode de selecció de la imatge de referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:125
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
 msgstr "Més antiga o més gran"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:129
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:128
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected Album as reference"
 msgstr "Prefereix l'àlbum seleccionat com a referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected Album as reference"
 msgstr "Prefereix un altre àlbum en lloc del seleccionat com a referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:135
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:134
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
 msgstr "Prefereix una data de creació més nova"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:137
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
 msgstr "Prefereix una data de modificació més nova"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:142
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:141
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
 msgstr "Selecció del mètode per a la selecció de la imatge de referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:144
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Reference Album:"
 msgstr "Àlbum de referència:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
 #, kde-format
 msgctxt "@title:tab"
 msgid "Reference"
 msgstr "Referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
 #, kde-format
 msgctxt "@label"
 msgid "Restrict Search to:"
 msgstr "Restringeix la cerca a:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:178
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Només la pestanya seleccionada"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:182
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:181
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Un de"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Ambdós"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Àlbums però no etiquetes"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:191
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:190
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Etiquetes però no àlbums"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53259,37 +53259,37 @@ msgstr ""
 "«Etiquetes però no àlbums»: les imatges estaran a les etiquetes "
 "seleccionades però no als àlbums."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:213
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Interval de similitud:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:233
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:232
 #, kde-format
 msgctxt "@label"
 msgid "Limit Search to:"
 msgstr "Limita la cerca a:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:237
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:236
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Cap"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:238
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:237
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Reference Album only"
 msgstr "Només l'àlbum de referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:238
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference Album"
 msgstr "Exclou l'àlbum de referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:240
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53302,13 +53302,13 @@ msgstr ""
 "de la imatge de referència, o per a excloure de la cerca l'àlbum de la "
 "imatge de referència."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:269
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:268
 #, kde-format
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "Actualitza les empremtes digitals"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:271
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
@@ -53316,13 +53316,13 @@ msgstr ""
 "Useu aquest botó per a actualitzar totes les empremtes digitals de les "
 "imatges."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:288
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:287
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Cerca els duplicats"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:290
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
@@ -53330,13 +53330,13 @@ msgstr ""
 "Useu aquest botó per a explorar els àlbums seleccionats per a cercar els "
 "elements duplicats."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:293
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:292
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Elimina els duplicats"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:295
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."

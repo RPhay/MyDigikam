@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-22 02:00+0000\n"
-"PO-Revision-Date: 2025-08-22 09:46-0300\n"
+"POT-Creation-Date: 2025-08-24 01:59+0000\n"
+"PO-Revision-Date: 2025-08-23 14:59-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -622,7 +622,7 @@ msgstr "Inverter seleção"
 #, kde-format
 msgctxt "@action: group items"
 msgid "Group"
-msgstr "Grupo"
+msgstr "Agrupar"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:74
 #, kde-format
@@ -666,19 +666,19 @@ msgstr "Remover do grupo"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected Here"
-msgstr "Agrupar aqui as selecionadas"
+msgstr "Agrupar as selecionadas aqui"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:141
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Time"
-msgstr "Agrupar as selecionadas por Data/Hora"
+msgstr "Agrupar as selecionadas por data e hora"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:146
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Filename"
-msgstr "Agrupar as selecionadas por Nome do arquivo"
+msgstr "Agrupar as selecionadas por nome do arquivo"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:151
 #, kde-format
@@ -1978,7 +1978,7 @@ msgstr "Incluir subárvore do álbum"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
-msgstr "Habilite esta opção para mostrar todos os subálbuns abaixo do atual."
+msgstr "Habilite esta opção para mostrar todos os sub-álbuns abaixo do atual."
 
 #: core/app/main/digikamapp_setup.cpp:573
 #, kde-format
@@ -2901,7 +2901,7 @@ msgstr ""
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:130
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:149
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:274
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:273
 #, kde-format
 msgctxt "@info"
 msgid "Help"
@@ -29975,7 +29975,7 @@ msgid ""
 "deleted permanently as well.</p>"
 msgstr ""
 "<p>Estes álbuns serão <b>excluídos permanentemente</b> do seu disco rígido.</"
-"p><p>Lembre-se de que <b>todos os subálbuns</b> estão incluídos nesta lista "
+"p><p>Lembre-se de que <b>todos os sub-álbuns</b> estão incluídos nesta lista "
 "e também serão excluídos de forma permanente.</p>"
 
 #: core/libs/dialogs/deletedialog.cpp:435
@@ -29985,8 +29985,8 @@ msgid ""
 "are included in this list and will be moved to Trash as well.</p>"
 msgstr ""
 "<p>Estes álbuns serão movidos para a Lixeira.</p><p>Lembre-se de que "
-"<b>todos os subálbuns</b> estão incluídos nesta lista e também serão movidos "
-"para a Lixeira.</p>"
+"<b>todos os sub-álbuns</b> estão incluídos nesta lista e também serão "
+"movidos para a Lixeira.</p>"
 
 #: core/libs/dialogs/deletedialog.cpp:587
 #, kde-format
@@ -34929,7 +34929,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:90
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:115
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:114
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -35123,7 +35123,7 @@ msgstr "Reconhecimento"
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:263
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -51441,7 +51441,7 @@ msgid ""
 "<p>Add a modifier to a renaming option. To activate this button, place the "
 "cursor behind a renaming option or an already assigned modifier.</p>"
 msgstr ""
-"<p>Adicionar um modificador a uma opção de alteração de nomes. Para ativar "
+"<p>Adiciona um modificador a uma opção de alteração de nomes. Para ativar "
 "este botão, coloque o cursor atrás de uma opção de alteração de nomes ou de "
 "um modificador já atribuído.</p>"
 
@@ -52323,37 +52323,37 @@ msgstr "Passo:"
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:98
 #, kde-format
 msgid "Extension aware numbering"
-msgstr "Numeração ciente da extensão"
+msgstr "Numeração com reconhecimento de extensão"
 
 #. i18n: ectx: property (text), widget (QRadioButton, folderAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:105
 #, kde-format
 msgid "Folder aware numbering"
-msgstr "Numeração ciente da pasta"
+msgstr "Numeração com reconhecimento de pastas"
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:112
 #, kde-format
 msgid "File counter aware numbering"
-msgstr "Numeração com conhecimento do contador de arquivos"
+msgstr "Numeração com reconhecimento do contador de arquivos"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:119
 #, kde-format
 msgid "Random text aware numbering"
-msgstr "Numeração com conhecimento de texto aleatório"
+msgstr "Numeração aleatória com reconhecimento de texto"
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
 #, kde-format
 msgid "File counter and extensions aware numbering"
-msgstr "Numeração com conhecimento de contador de arquivos e extensões"
+msgstr "Numeração com reconhecimento de contador de arquivos e extensões"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
 #, kde-format
 msgid "Random text and extensions aware numbering"
-msgstr "Numeração com conhecimento de texto aleatório e extensões"
+msgstr "Numeração aleatória com reconhecimento de texto e extensões"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:68
 #, kde-format
@@ -52929,97 +52929,97 @@ msgstr "Itens"
 msgid "This shows all found duplicate items."
 msgstr "Isto mostra todos os itens duplicados encontrados."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:119
 #, kde-format
 msgctxt "@info"
 msgid "Reference Image Selection Method"
 msgstr "Método de seleção de imagem de referência"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:125
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
 msgstr "Mais antiga ou maior"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:129
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:128
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected Album as reference"
 msgstr "Selecione um álbum como referência"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected Album as reference"
 msgstr "Prefira outro álbum diferente do selecionado como referência"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:135
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:134
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
 msgstr "Prefira a data de criação mais recente"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:137
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
 msgstr "Prefira a data de modificação mais recente"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:142
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:141
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
 msgstr "Selecione o método para seleção da imagem de referência"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:144
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Reference Album:"
 msgstr "Álbum de referência:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
 #, kde-format
 msgctxt "@title:tab"
 msgid "Reference"
 msgstr "Referência"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
 #, kde-format
 msgctxt "@label"
 msgid "Restrict Search to:"
 msgstr "Restrinja a pesquisa a:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:178
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Somente a aba selecionada"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:182
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:181
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Um dos"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Ambos"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Álbuns mas não etiquetas"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:191
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:190
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Etiquetas mas não álbuns"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53043,37 +53043,37 @@ msgstr ""
 "\"Etiquetas mas não álbuns\": as imagens devem estar nas etiquetas "
 "selecionadas, mas não nos álbuns."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:213
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Faixa de semelhança:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:233
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:232
 #, kde-format
 msgctxt "@label"
 msgid "Limit Search to:"
 msgstr "Limitar pesquisa a:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:237
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:236
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Nenhuma"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:238
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:237
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Reference Album only"
 msgstr "Album de referência somente"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:238
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference Album"
 msgstr "Excluir o álbum de referência"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:240
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53086,26 +53086,26 @@ msgstr ""
 "da imagem de referência ou para excluir o álbum da imagem de referência da "
 "pesquisa."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:269
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:268
 #, kde-format
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "Atualizar as impressões digitais"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:271
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr ""
 "Use este botão para atualizar todas as impressões digitais das imagens."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:288
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:287
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Localizar os duplicados"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:290
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
@@ -53113,13 +53113,13 @@ msgstr ""
 "Use este botão para analisar os álbuns selecionados em busca de itens "
 "duplicados."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:293
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:292
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Remover duplicados"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:295
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -60524,13 +60524,13 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Extension-based sub-albums"
-msgstr "Subálbuns baseados na extensão"
+msgstr "Sub-álbuns baseados na extensão"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:99
 #, kde-format
 msgctxt "@option:check"
 msgid "Date-based sub-albums"
-msgstr "Subálbuns baseados na data"
+msgstr "Sub-álbuns baseados na data"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:101
 #, kde-format
@@ -60584,7 +60584,7 @@ msgid ""
 "created file extension-based sub-albums of the destination album. This way, "
 "you can separate JPEG and RAW files as they are downloaded from your camera."
 msgstr ""
-"Habilite esta opção se quiser transferir suas imagens em subálbuns "
+"Habilite esta opção se quiser transferir suas imagens em sub-álbuns "
 "automaticamente criados, baseando-se na extensão do arquivo, dentro do álbum "
 "de destino. Desta forma, você pode separar os arquivos JPEG e RAW enquanto "
 "eles são transferidos da sua câmera."
@@ -60596,7 +60596,7 @@ msgid ""
 "Enable this option if you want to download your pictures into automatically "
 "created file date-based sub-albums of the destination album."
 msgstr ""
-"Habilite esta opção se quiser transferir suas imagens em subálbuns "
+"Habilite esta opção se quiser transferir suas imagens em sub-álbuns "
 "automaticamente criados, baseando-se na data do arquivo, dentro do álbum de "
 "destino."
 
@@ -68380,12 +68380,12 @@ msgstr ""
 #: core/utilities/setup/setuptooltip.cpp:408
 #, kde-format
 msgid "Icon Items"
-msgstr "Itens em miniaturas"
+msgstr "Miniaturas"
 
 #: core/utilities/setup/setuptooltip.cpp:409
 #, kde-format
 msgid "Album Items"
-msgstr "Itens do álbum"
+msgstr "Álbuns"
 
 #: core/utilities/setup/setuptooltip.cpp:410
 #, kde-format
