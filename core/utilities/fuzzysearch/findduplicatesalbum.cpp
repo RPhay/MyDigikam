@@ -154,6 +154,7 @@ void FindDuplicatesAlbum::updateDuplicatesAlbumItems(const QList<SAlbum*>& sAlbu
         if (item && sAlbumsToRebuild.contains(item->album()))
         {
             item->calculateInfos(deletedImages);
+            item->waitForCalculate();
 
             if (item->itemCount() == 1)
             {
