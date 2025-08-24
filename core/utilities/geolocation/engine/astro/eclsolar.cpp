@@ -3288,7 +3288,7 @@ void EclSolar::getLocalDetails(char* otxt)
         caldat(jd, dd, mm, yy, hh);
         dms(hh, deg, mnt, sec);
         sec = 0;
-        i = mnt / eb_cstep;
+        i = (int)(mnt / eb_cstep);
         mnt = i * int(eb_cstep);  // cut to proper time step
         hh = ddd(deg, mnt, sec);
         jdf = ept[nump - 1];

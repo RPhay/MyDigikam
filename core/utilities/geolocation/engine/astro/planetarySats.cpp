@@ -157,23 +157,22 @@ void PlanetarySats::setMJD(int year, int month, int day, int hour, int min, doub
     // set the (MJD-) time currently used for calculations to year, month, day, hour, min, sec
     double jd;
 
-    pls_year = year;
-    pls_month = month;
-    pls_day = day;
-    pls_hour = hour;
+    pls_year   = year;
+    pls_month  = month;
+    pls_day    = day;
+    pls_hour   = hour;
     pls_minute = min;
-    pls_second = sec;
+    pls_second = (int)sec;
 
-    jd = ddd(hour, min, sec);
-    jd = mjd(day, month, year, jd);
+    jd         = ddd(hour, min, sec);
+    jd         = mjd(day, month, year, jd);
 
-    pls_time = jd;
+    pls_time   = jd;
 
     if (pls_del_auto)
     {
         pls_del_tdut = DefTdUt(pls_year);
     }
-
 }
 
 void PlanetarySats::getDatefromMJD(double mjd, int& year, int& month, int& day, int& hour, int& min, double& sec)
