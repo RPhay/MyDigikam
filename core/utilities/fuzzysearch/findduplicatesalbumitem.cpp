@@ -41,12 +41,14 @@ public:
 
 public:
 
-    bool      hasThumb  = false;
+    bool          hasThumb  = false;
 
-    SAlbum*   album     = nullptr;
-    int       itemCount = 0;
+    SAlbum*       album     = nullptr;
+    int           itemCount = 0;
 
-    ItemInfo  refImgInfo;
+    ItemInfo      refImgInfo;
+
+    QFuture<void> calcTask;
 };
 
 FindDuplicatesAlbumItem::FindDuplicatesAlbumItem(QTreeWidget* const parent, SAlbum* const album)
@@ -116,21 +118,26 @@ QList<ItemInfo> FindDuplicatesAlbumItem::duplicatedItems()
 
 void FindDuplicatesAlbumItem::calculateInfos(const QList<qlonglong>& deletedImages)
 {
-    (void)QtConcurrent::run(
+    d->calcTask = QtConcurrent::run(
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                            &FindDuplicatesAlbumItem::calculateInfosMultithreaded, this,
-                            deletedImages
+                                     &FindDuplicatesAlbumItem::calculateInfosMultithreaded, this,
+                                     deletedImages
 
 #else
 
-                            this, &FindDuplicatesAlbumItem::calculateInfosMultithreaded,
-                            deletedImages
+                                     this, &FindDuplicatesAlbumItem::calculateInfosMultithreaded,
+                                     deletedImages
 
 #endif
 
                            );
+}
+
+void FindDuplicatesAlbumItem::waitForCalculate()
+{
+    d->calcTask.waitForFinished();
 }
 
 int FindDuplicatesAlbumItem::itemCount() const

@@ -57,6 +57,11 @@ public:
     void calculateInfos(const QList<qlonglong>& deletedImages = QList<qlonglong>());
 
     /**
+     * @brief Waits until calculateInfos() is finished.
+     */
+    void waitForCalculate();
+
+    /**
      * @return The item count.
      */
     int itemCount()                              const;

@@ -112,6 +112,7 @@ do                                                                              
         {                                                                                                   \
             /* Adding item to listView by creating an item and passing listView as parent */                \
             FindDuplicatesAlbumItem* const item = new FindDuplicatesAlbumItem(&w, salbum);                  \
+            item->waitForCalculate();                                                                       \
             salbum->setExtraData(this, item);                                                               \
             const auto id   = salbum->title().toLongLong();                                                 \
             ItemInfo info(id);                                                                              \
