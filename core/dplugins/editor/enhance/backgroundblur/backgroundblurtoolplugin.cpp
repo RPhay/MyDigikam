@@ -17,6 +17,8 @@
 // Qt includes
 
 #include <QPointer>
+#include <QMessageBox>
+#include <QApplication>
 
 // KDE includes
 
@@ -25,6 +27,7 @@
 // Local includes
 
 #include "editorwindow.h"
+#include "imageiface.h"
 #include "backgroundblurtool.h"
 
 namespace DigikamEditorBackgroundBlurToolPlugin
@@ -104,6 +107,16 @@ void BackgroundBlurToolPlugin::slotBackgroundBlur()
 
     if (editor)
     {
+        ImageIface iface;
+
+        if (iface.selectionRect().isEmpty())
+        {
+            QMessageBox::warning(qApp->activeWindow(), i18n("Background Blur Tool"),
+                                 i18n("You must select before a rectangular area including the subject..."));
+
+            return;
+        }
+
         BackgroundBlurTool* const tool = new BackgroundBlurTool(editor);
         tool->setPlugin(this);
         editor->loadTool(tool);
