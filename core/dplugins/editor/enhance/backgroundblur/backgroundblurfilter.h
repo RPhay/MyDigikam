@@ -25,7 +25,7 @@ using namespace Digikam;
 namespace DigikamEditorBackgroundBlurToolPlugin
 {
 
-class DIGIKAM_EXPORT BackgroundBlurFilter : public DImgThreadedFilter
+class BackgroundBlurFilter : public DImgThreadedFilter
 {
     Q_OBJECT
 
