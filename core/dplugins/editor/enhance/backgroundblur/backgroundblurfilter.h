@@ -35,6 +35,7 @@ public:
     explicit BackgroundBlurFilter(DImg* const orgImage,
                                   const QRect& selection,
                                   int radius = 3,
+                                  int transition = 0,
                                   QObject* const parent = nullptr);
 
     /**
@@ -45,6 +46,7 @@ public:
                                   const DImg& destImage,
                                   const QRect& selection,
                                   int radius = 3,
+                                  int transition = 0,
                                   int progressBegin = 0,
                                   int progressEnd = 100);
 

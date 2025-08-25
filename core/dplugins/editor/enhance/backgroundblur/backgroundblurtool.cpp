@@ -46,12 +46,14 @@ public:
 
 public:
 
-    const QString configGroupName               = QLatin1String("backgroundblur Tool");
-    const QString configRadiusAdjustmentEntry   = QLatin1String("RadiusAdjustment");
+    const QString configGroupName                 = QLatin1String("backgroundblur Tool");
+    const QString configRadiusAdjustmentEntry     = QLatin1String("RadiusAdjustment");
+    const QString configTransitionAdjustmentEntry = QLatin1String("TransitionAdjustment");
 
-    DIntNumInput*        radiusInput            = nullptr;
-    ImageGuideWidget*    previewWidget          = nullptr;
-    EditorToolSettings*  gboxSettings           = nullptr;
+    DIntNumInput*        radiusInput              = nullptr;
+    DIntNumInput*        transitionInput          = nullptr;
+    ImageGuideWidget*    previewWidget            = nullptr;
+    EditorToolSettings*  gboxSettings             = nullptr;
 };
 
 // --------------------------------------------------------
@@ -80,11 +82,23 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
 
     // --------------------------------------------------------
 
+    QLabel* const label2 = new QLabel(i18n("Progressive Transition:"));
+    d->transitionInput   = new DIntNumInput();
+    d->transitionInput->setRange(0, 100, 1);
+    d->transitionInput->setDefaultValue(0);
+    d->transitionInput->setWhatsThis(i18n("A progressive blur transitions of 0 has no effect, "
+                                          "1 and above add a variable blur near to far of the subject."
+                                          "This allow to simulate a depth of field from a lens."));
+
+    // --------------------------------------------------------
+
     const int spacing       = d->gboxSettings->spacingHint();
     QGridLayout* const grid = new QGridLayout();
-    grid->addWidget(label,          0, 0, 1, 2);
-    grid->addWidget(d->radiusInput, 1, 0, 1, 2);
-    grid->setRowStretch(2, 10);
+    grid->addWidget(label,              0, 0, 1, 2);
+    grid->addWidget(d->radiusInput,     1, 0, 1, 2);
+    grid->addWidget(label2,             2, 0, 1, 2);
+    grid->addWidget(d->transitionInput, 3, 0, 1, 2);
+    grid->setRowStretch(4, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
     d->gboxSettings->plainPage()->setLayout(grid);
@@ -98,6 +112,9 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
 
     connect(d->radiusInput, SIGNAL(valueChanged(int)),
             this, SLOT(slotTimer()));
+
+    connect(d->transitionInput, SIGNAL(valueChanged(int)),
+            this, SLOT(slotTimer()));
 }
 
 BackgroundBlurTool::~BackgroundBlurTool()
@@ -110,6 +127,7 @@ void BackgroundBlurTool::readSettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(d->configGroupName);
     d->radiusInput->setValue(group.readEntry(d->configRadiusAdjustmentEntry, d->radiusInput->defaultValue()));
+    d->transitionInput->setValue(group.readEntry(d->configTransitionAdjustmentEntry, d->transitionInput->defaultValue()));
 }
 
 void BackgroundBlurTool::writeSettings()
@@ -117,14 +135,18 @@ void BackgroundBlurTool::writeSettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(d->configGroupName);
     group.writeEntry(d->configRadiusAdjustmentEntry, d->radiusInput->value());
+    group.writeEntry(d->configTransitionAdjustmentEntry, d->transitionInput->value());
     config->sync();
 }
 
 void BackgroundBlurTool::slotResetSettings()
 {
     d->radiusInput->blockSignals(true);
+    d->transitionInput->blockSignals(true);
     d->radiusInput->slotReset();
+    d->transitionInput->slotReset();
     d->radiusInput->blockSignals(false);
+    d->transitionInput->blockSignals(false);
 }
 
 void BackgroundBlurTool::preparePreview()
@@ -136,7 +158,6 @@ void BackgroundBlurTool::preparePreview()
     qDebug() << "Ratio original  :" << (double)iface->originalSize().width() / (double)iface->originalSize().height();
     qDebug() << "Ratio preview   :" << (double)preview.size().width()        / (double)preview.size().height();
 
-
     QRect orgSelection       = iface->selectionRect();
     double xratio            = (double)iface->originalSize().width()  / (double)iface->previewSize().width();
     double yratio            = (double)iface->originalSize().height() / (double)iface->previewSize().height();
@@ -145,7 +166,7 @@ void BackgroundBlurTool::preparePreview()
     selection.setTopLeft(QPoint(orgSelection.topLeft().x() / xratio,         orgSelection.topLeft().y()     / yratio));
     selection.setBottomRight(QPoint(orgSelection.bottomRight().x() / xratio, orgSelection.bottomRight().y() / yratio));
 
-    setFilter(new BackgroundBlurFilter(&preview, selection, d->radiusInput->value(), this));
+    setFilter(new BackgroundBlurFilter(&preview, selection, d->radiusInput->value(), d->transitionInput->value(), this));
 }
 
 void BackgroundBlurTool::setPreviewImage()
@@ -163,7 +184,7 @@ void BackgroundBlurTool::prepareFinal()
 {
     ImageIface iface;
     QRect selection = iface.selectionRect();
-    setFilter(new BackgroundBlurFilter(iface.original(), selection, d->radiusInput->value(), this));
+    setFilter(new BackgroundBlurFilter(iface.original(), selection, d->radiusInput->value(), d->transitionInput->value(), this));
 }
 
 void BackgroundBlurTool::setFinalImage()

@@ -39,7 +39,8 @@ public:
     void applyBackgroundBlur(const cv::Mat& input,
                              cv::Mat& output,
                              const QRect& selection,
-                             int blurIntensity)
+                             int blurIntensity,
+                             int blurTransition)
     {
         try
         {
@@ -86,12 +87,46 @@ public:
             // Blur the background.
 
             cv::Mat blurred;
-            cv::GaussianBlur(input, blurred, cv::Size(0, 0), blurIntensity);
+            cv::GaussianBlur(inputBGR, blurred, cv::Size(0, 0), blurIntensity);
 
-            // Merge back the subject with the background.
+            float transition = blurTransition / 100.0F; // 0 = uniform blur, 1 = max progressive blur.
 
-            input.copyTo(output, mask);
-            blurred.copyTo(output, ~mask);
+            if (transition <= 0.0F)
+            {
+                // Uniform blur.
+
+                inputBGR.copyTo(output, mask);
+                blurred.copyTo(output, ~mask);
+            }
+            else
+            {
+                // Progressive blur.
+                // First compute the map for the progressive blur.
+
+                cv::Mat distanceMap;
+                cv::distanceTransform(~mask, distanceMap, cv::DIST_L2, cv::DIST_MASK_5);
+
+                // Normalize the distance for the progressive effect (0 = near the subject, 1 = far the subject).
+
+                cv::normalize(distanceMap, distanceMap, 0, transition, cv::NORM_MINMAX);
+
+                // Create the result with the progresive blur.
+
+                output = inputBGR.clone();
+
+                for (int y = 0; y < input.rows; y++)
+                {
+                    for (int x = 0; x < input.cols; x++)
+                    {
+                        float alpha = distanceMap.at<float>(y, x);
+
+                        // NOTE: if alpha is near of 1, the blur effect is intensive.
+
+                        output.at<cv::Vec3b>(y, x) = alpha       * blurred.at<cv::Vec3b>(y, x) +
+                                                    (1 - alpha) * inputBGR.at<cv::Vec3b>(y, x);
+                    }
+                }
+            }
 
             // Convert back to the original format if necessary.
 
@@ -120,6 +155,7 @@ public:
 public:
 
     int    radius         = 3;
+    int    transition     = 0;
     QRect  selection;
     int    globalProgress = 0;
 
@@ -136,12 +172,14 @@ BackgroundBlurFilter::BackgroundBlurFilter(QObject* const parent)
 BackgroundBlurFilter::BackgroundBlurFilter(DImg* const orgImage,
                                            const QRect& selection,
                                            int radius,
+                                           int transition,
                                            QObject* const parent)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("BackgroundBlur")),
       d                 (new Private)
 {
-    d->selection = selection;
-    d->radius    = radius;
+    d->selection  = selection;
+    d->radius     = radius;
+    d->transition = transition;
     initFilter();
 }
 
@@ -150,6 +188,7 @@ BackgroundBlurFilter::BackgroundBlurFilter(DImgThreadedFilter* const parentFilte
                        const DImg& destImage,
                        const QRect& selection,
                        int radius,
+                       int transition,
                        int progressBegin,
                        int progressEnd)
     : DImgThreadedFilter(parentFilter,
@@ -160,8 +199,9 @@ BackgroundBlurFilter::BackgroundBlurFilter(DImgThreadedFilter* const parentFilte
                          parentFilter->filterName() + QLatin1String(": BackgroundBlur")),
       d(new Private)
 {
-    d->selection = selection;
-    d->radius    = radius;
+    d->selection  = selection;
+    d->radius     = radius;
+    d->transition = transition;
     this->filterImage();
 }
 
@@ -200,7 +240,7 @@ void BackgroundBlurFilter::filterImage()
 
     cv::Mat input = QtOpenCVImg::image2Mat(m_orgImage);
     cv::Mat output;
-    d->applyBackgroundBlur(input, output, d->selection, d->radius);
+    d->applyBackgroundBlur(input, output, d->selection, d->radius, d->transition);
 
     // FIXME: 16 bits color depth is not yet supported from QImage to DImg.
     m_destImage   = DImg(QtOpenCVImg::mat2Image(output));
@@ -216,14 +256,16 @@ FilterAction BackgroundBlurFilter::filterAction()
     FilterAction action(FilterIdentifier(), CurrentVersion());
     action.setDisplayableName(DisplayableName());
 
-    action.addParameter(QLatin1String("radius"), d->radius);
+    action.addParameter(QLatin1String("radius"),     d->radius);
+    action.addParameter(QLatin1String("transition"), d->transition);
 
     return action;
 }
 
 void BackgroundBlurFilter::readParameters(const FilterAction& action)
 {
-    d->radius = action.parameter(QLatin1String("radius")).toInt();
+    d->radius     = action.parameter(QLatin1String("radius")).toInt();
+    d->transition = action.parameter(QLatin1String("transition")).toInt();
 }
 
 } // namespace DigikamEditorBackgroundBlurToolPlugin
