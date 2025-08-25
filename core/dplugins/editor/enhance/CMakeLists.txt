@@ -14,9 +14,11 @@ add_subdirectory(localcontrast)
 add_subdirectory(noisereduction)
 add_subdirectory(lensdistortion)
 add_subdirectory(healingclone)
+
 if(LensFun_FOUND)
     add_subdirectory(lensautofix)
 endif()
 
 # Not yet finalized
-#add_subdirectory(healingclone)
+#add_subdirectory(backgroundblur)
+
