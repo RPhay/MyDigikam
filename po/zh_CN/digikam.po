@@ -65171,6 +65171,9 @@ msgid ""
 "In all cases, the color management workflow will try to get in first the "
 "profile set for your monitor in your the desktop</p>"
 msgstr ""
+"<p>如果系统桌面环境没有提供屏幕的色彩特性文件，请在此处选择默认特性文件。如果"
+"没有设置特性文件，则将使用 sRGB 作为备用方案。在所有情况下，色彩管理工作流程"
+"都会首先尝试获取桌面环境为显示器设置的特性文件。</p>"
 
 #: core/utilities/setup/setupicc.cpp:331
 #, kde-format
