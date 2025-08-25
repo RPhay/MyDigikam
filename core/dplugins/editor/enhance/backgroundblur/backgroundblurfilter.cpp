@@ -36,20 +36,85 @@ public:
 
     Private() = default;
 
-    void applyBackgroundBlur(const cv::Mat& input, cv::Mat& output, const QRect& selection, int blurIntensity)
+    void applyBackgroundBlur(const cv::Mat& input,
+                             cv::Mat& output,
+                             const QRect& selection,
+                             int blurIntensity)
     {
-        cv::Rect roi(selection.x(), selection.y(), selection.width(), selection.height());
-        cv::Mat mask(input.rows, input.cols, CV_8UC1, cv::GC_PR_BGD);
-        mask(roi) = cv::GC_PR_FGD;
+        try
+        {
+            // Convert image to CV_8UC3 (BGR) if necessary.
 
-        cv::Mat bgModel, fgModel;
-        cv::grabCut(input, mask, roi, bgModel, fgModel, 5, cv::GC_INIT_WITH_RECT);
-        cv::compare(mask, cv::GC_PR_FGD, mask, cv::CMP_EQ);
+            cv::Mat inputBGR;
 
-        cv::Mat blurred;
-        cv::GaussianBlur(input, blurred, cv::Size(0, 0), blurIntensity);
-        input.copyTo(output, mask);
-        blurred.copyTo(output, ~mask);
+            if (input.type() != CV_8UC3)
+            {
+                if      (input.channels() == 1)
+                {
+                    cv::cvtColor(input, inputBGR, cv::COLOR_GRAY2BGR); // Gray scale -> BGR
+                }
+                else if (input.channels() == 4)
+                {
+                    cv::cvtColor(input, inputBGR, cv::COLOR_BGRA2BGR); // RGBA -> BGR
+                }
+                else
+                {
+                    // Not supported case.
+
+                    output = input.clone();
+                    return;
+                }
+            }
+            else
+            {
+                inputBGR = input; // Already the good format.
+            }
+
+            // Init the mask for Grabcut.
+
+            cv::Rect roi(selection.x(), selection.y(), selection.width(), selection.height());
+            cv::Mat mask(input.rows, input.cols, CV_8UC1, cv::GC_PR_BGD);
+            mask(roi) = cv::GC_PR_FGD;
+
+            // Apply GrabCut to inputBGR.
+
+            cv::Mat bgModel;
+            cv::Mat fgModel;
+            cv::grabCut(inputBGR, mask, roi, bgModel, fgModel, 5, cv::GC_INIT_WITH_RECT);
+            cv::compare(mask, cv::GC_PR_FGD, mask, cv::CMP_EQ);
+
+            // Blur the background.
+
+            cv::Mat blurred;
+            cv::GaussianBlur(input, blurred, cv::Size(0, 0), blurIntensity);
+
+            // Merge back the subject with the background.
+
+            input.copyTo(output, mask);
+            blurred.copyTo(output, ~mask);
+
+            // Convert back to the original format if necessary.
+
+            if (input.type() != CV_8UC3)
+            {
+                if      (input.channels() == 1)
+                {
+                    cv::cvtColor(output, output, cv::COLOR_BGR2GRAY);
+                }
+                else if (input.channels() == 4)
+                {
+                    cv::cvtColor(output, output, cv::COLOR_BGR2BGRA);
+                }
+            }
+        }
+        catch (cv::Exception& e)
+        {
+            qCWarning(DIGIKAM_DIMG_LOG) << "BackgroundBlurFilter::applyBackgroundBlur: cv::Exception:" << e.what();
+        }
+        catch (...)
+        {
+            qCWarning(DIGIKAM_DIMG_LOG) << "BackgroundBlurFilter::applyBackgroundBlur: Default exception from OpenCV";
+        }
     }
 
 public:
@@ -130,12 +195,20 @@ void BackgroundBlurFilter::filterImage()
         return;
     }
 
+    qCDebug(DIGIKAM_DIMG_LOG) << "Image Size    :" << m_orgImage.size();
+    qCDebug(DIGIKAM_DIMG_LOG) << "Selection area:" << d->selection;
+
     cv::Mat input = QtOpenCVImg::image2Mat(m_orgImage);
     cv::Mat output;
     d->applyBackgroundBlur(input, output, d->selection, d->radius);
 
     // FIXME: 16 bits color depth is not yet supported from QImage to DImg.
     m_destImage   = DImg(QtOpenCVImg::mat2Image(output));
+
+    if (!m_orgImage.hasAlpha())
+    {
+        m_destImage.removeAlphaChannel();
+    }
 }
 
 FilterAction BackgroundBlurFilter::filterAction()

@@ -63,15 +63,15 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
     setObjectName(QLatin1String("backgroundblur"));
     setToolHelp(QLatin1String("backgroundblur.anchor"));
 
-    d->gboxSettings  = new EditorToolSettings(nullptr);
-    d->previewWidget = new ImageGuideWidget(nullptr, false, ImageGuideWidget::PickColorMode);
+    d->gboxSettings     = new EditorToolSettings(nullptr);
+    d->previewWidget    = new ImageGuideWidget(nullptr, false, ImageGuideWidget::PickColorMode);
     setToolView(d->previewWidget);
-    setPreviewModeMask(PreviewToolBar::NoPreviewMode);
+    setPreviewModeMask(PreviewToolBar::UnSplitPreviewModes);
 
     // --------------------------------------------------------
 
-    QLabel* const label  = new QLabel(i18n("Smoothness:"));
-    d->radiusInput = new DIntNumInput();
+    QLabel* const label = new QLabel(i18n("Smoothness:"));
+    d->radiusInput      = new DIntNumInput();
     d->radiusInput->setRange(0, 100, 1);
     d->radiusInput->setDefaultValue(0);
     d->radiusInput->setWhatsThis(i18n("A smoothness of 0 has no effect, "
@@ -80,9 +80,8 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    const int spacing = d->gboxSettings->spacingHint();
-
-    QGridLayout* const grid = new QGridLayout( );
+    const int spacing       = d->gboxSettings->spacingHint();
+    QGridLayout* const grid = new QGridLayout();
     grid->addWidget(label,          0, 0, 1, 2);
     grid->addWidget(d->radiusInput, 1, 0, 1, 2);
     grid->setRowStretch(2, 10);
@@ -92,7 +91,6 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    setPreviewModeMask(PreviewToolBar::AllPreviewModes);
     setToolSettings(d->gboxSettings);
     setToolView(d->previewWidget);
 
@@ -133,7 +131,16 @@ void BackgroundBlurTool::preparePreview()
 {
     ImageIface* const iface  = d->previewWidget->imageIface();
     DImg preview             = iface->preview();
-    QRect selection          = iface->selectionRect();
+
+    qDebug() << "Original preview:" << preview.size() << preview.bitsDepth() << preview.hasAlpha();
+
+    QRect orgSelection       = iface->selectionRect();
+    double xratio            = iface->originalSize().width()  / iface->previewSize().width();
+    double yratio            = iface->originalSize().height() / iface->previewSize().height();
+
+    QRect selection;
+    selection.setTopLeft(QPoint(orgSelection.x() / xratio, orgSelection.y()      / yratio));
+    selection.setSize(QSize(orgSelection.width() / xratio, orgSelection.height() / yratio));
 
     setFilter(new BackgroundBlurFilter(&preview, selection, d->radiusInput->value(), this));
 }
@@ -142,6 +149,9 @@ void BackgroundBlurTool::setPreviewImage()
 {
     ImageIface* const iface = d->previewWidget->imageIface();
     DImg preview            = filter()->getTargetImage();
+
+    qDebug() << "Target preview  :" << preview.size() << preview.bitsDepth() << preview.hasAlpha();
+
     iface->setPreview(preview);
     d->previewWidget->updatePreview();
 }

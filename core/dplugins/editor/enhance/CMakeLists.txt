@@ -20,5 +20,5 @@ if(LensFun_FOUND)
 endif()
 
 # Not yet finalized
-#add_subdirectory(backgroundblur)
+add_subdirectory(backgroundblur)
 
