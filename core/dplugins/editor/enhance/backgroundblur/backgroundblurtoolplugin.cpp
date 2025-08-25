@@ -50,7 +50,7 @@ QString BackgroundBlurToolPlugin::iid() const
 
 QIcon BackgroundBlurToolPlugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("blurimage"));
+    return QIcon::fromTheme(QLatin1String("blur"));
 }
 
 QString BackgroundBlurToolPlugin::description() const
