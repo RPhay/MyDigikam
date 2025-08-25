@@ -133,14 +133,17 @@ void BackgroundBlurTool::preparePreview()
     DImg preview             = iface->preview();
 
     qDebug() << "Original preview:" << preview.size() << preview.bitsDepth() << preview.hasAlpha();
+    qDebug() << "Ratio original  :" << (double)iface->originalSize().width() / (double)iface->originalSize().height();
+    qDebug() << "Ratio preview   :" << (double)preview.size().width()        / (double)preview.size().height();
+
 
     QRect orgSelection       = iface->selectionRect();
-    double xratio            = iface->originalSize().width()  / iface->previewSize().width();
-    double yratio            = iface->originalSize().height() / iface->previewSize().height();
+    double xratio            = (double)iface->originalSize().width()  / (double)iface->previewSize().width();
+    double yratio            = (double)iface->originalSize().height() / (double)iface->previewSize().height();
 
     QRect selection;
-    selection.setTopLeft(QPoint(orgSelection.x() / xratio, orgSelection.y()      / yratio));
-    selection.setSize(QSize(orgSelection.width() / xratio, orgSelection.height() / yratio));
+    selection.setTopLeft(QPoint(orgSelection.topLeft().x() / xratio,         orgSelection.topLeft().y()     / yratio));
+    selection.setBottomRight(QPoint(orgSelection.bottomRight().x() / xratio, orgSelection.bottomRight().y() / yratio));
 
     setFilter(new BackgroundBlurFilter(&preview, selection, d->radiusInput->value(), this));
 }
