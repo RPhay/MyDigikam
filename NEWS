@@ -96,7 +96,7 @@ BUGFIXES:
 064 ==> 508464 - Album marked as not available although it is available.
 065 ==> 508500 - Wipe all tags from Database only results in "Cannot delete required face tag" message.
 066 ==> 508633 - Duplicates freezes, cant sort by Similarity, or resize.
-067 ==> 
+067 ==> 508645 - Segments of digikam window are repeated on screen.
 068 ==> 
 069 ==> 
 070 ==> 
