@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-24 01:59+0000\n"
-"PO-Revision-Date: 2025-08-23 14:59-0300\n"
+"PO-Revision-Date: 2025-08-24 13:48-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -228,13 +228,13 @@ msgstr "Definir como miniatura do álbum"
 #: core/app/dragdrop/itemdragdrop.cpp:806
 #, kde-format
 msgid "Download From Camera"
-msgstr "Transferir da câmera"
+msgstr "Baixar da câmera"
 
 #: core/app/dragdrop/albumdragdrop.cpp:328
 #: core/app/dragdrop/itemdragdrop.cpp:808
 #, kde-format
 msgid "Download && Delete From Camera"
-msgstr "Transferir e excluir da câmera"
+msgstr "Baixar e excluir da câmera"
 
 #: core/app/dragdrop/importdragdrop.cpp:52
 #: core/showfoto/thumbbar/showfotodragdrophandler.cpp:44
@@ -1480,7 +1480,7 @@ msgstr "Detectando automaticamente a câmera..."
 #: core/app/main/digikamapp_camera.cpp:55
 #, kde-format
 msgid "Opening Download Dialog..."
-msgstr "Abrindo diálogo de transferência..."
+msgstr "Abrindo janela para baixar..."
 
 #: core/app/main/digikamapp_camera.cpp:66
 #, kde-format
@@ -39950,7 +39950,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label with a short translated text about autotags scanning mode"
 msgid "Scan Mode:"
-msgstr "Modo de procura:"
+msgstr "Modo de análise:"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:110
 #, kde-format
@@ -40254,7 +40254,7 @@ msgstr "Editar o título da etiqueta"
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
-msgstr "Restaurar o ícone da etiqueta"
+msgstr "Redefinir o ícone da etiqueta"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
 #: core/libs/tags/manager/tagsmanager_p.cpp:134
@@ -40266,7 +40266,7 @@ msgstr "Inverter seleção"
 #: core/libs/tags/manager/tagsmanager_p.cpp:140
 #, kde-format
 msgid "Expand Tag Tree"
-msgstr "Expandir a árvore da etiqueta"
+msgstr "Expandir a árvore de etiquetas"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
 #: core/libs/tags/manager/tagsmanager_p.cpp:143
@@ -40278,7 +40278,7 @@ msgstr "Recolher a árvore de etiquetas"
 #: core/libs/tags/manager/tagsmanager_p.cpp:146
 #, kde-format
 msgid "Remove Tag from Images"
-msgstr "Remover a etiqueta das imagens"
+msgstr "Remover etiqueta das imagens"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:90
 #, kde-format
@@ -40511,7 +40511,7 @@ msgstr "Sincronizar &exportação"
 #: core/libs/tags/manager/tagsmanager_p.cpp:131
 #, kde-format
 msgid "Mark Unassigned Tags"
-msgstr "Marcar as etiquetas não-atribuídas"
+msgstr "Marcar as etiquetas não atribuídas"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:151
 #, kde-format
@@ -40538,7 +40538,7 @@ msgstr "Editar o título da etiqueta selecionada."
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
-"Restaurar o ícone das etiquetas selecionadas. Funciona com seleção múltipla."
+"Redefine o ícone das etiquetas selecionadas. Funciona com seleção múltipla."
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:163
 #, kde-format
@@ -40575,17 +40575,17 @@ msgstr ""
 #: core/libs/tags/manager/tagsmanager_p.cpp:218
 #, kde-format
 msgid "Write Tags from Database to Image"
-msgstr "Gravar as etiquetas a partir do banco de dados da imagem"
+msgstr "Gravar as etiquetas do banco de dados da imagem"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:221
 #, kde-format
 msgid "Read Tags from Image"
-msgstr "Ler as etiquetas a partir da imagem"
+msgstr "Ler as etiquetas da imagem"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:224
 #, kde-format
 msgid "Wipe all tags from Database only"
-msgstr "Limpar todas as etiquetas apenas do banco de dados"
+msgstr "Limpar todas as etiquetas somente do banco de dados"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:227
 #, kde-format
@@ -58456,7 +58456,7 @@ msgstr "Padrões"
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:178
 #, kde-format
 msgid "Reset all settings to their default values."
-msgstr "Restaurar todas as configurações para os valores padrão."
+msgstr "Redefine todas as configurações para os valores padrão."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:195
 #, kde-format
@@ -59369,7 +59369,7 @@ msgstr "Ocorreu um erro ao obter os metadados de <filename>%1</filename>"
 #: core/utilities/import/main/importui.cpp:2498
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
-msgstr "Ocorreu um erro ao transferir o arquivo <filename>%1</filename>."
+msgstr "Ocorreu um erro ao baixar o arquivo <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:740
 #, kde-kuit-format
@@ -59406,12 +59406,12 @@ msgstr "Ocorreu um erro ao executar o script para <filename>%1</filename>"
 #: core/utilities/import/backend/cameracontroller.cpp:1021
 #, kde-format
 msgid "Failed to download file <b>%1</b>."
-msgstr "Ocorreu um erro ao transferir o arquivo <b>%1</b>."
+msgstr "Ocorreu um erro ao baixar o arquivo <b>%1</b>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1025
 #, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
-msgstr "Ocorreu um erro ao transferir o arquivo <b>%1</b>. Deseja continuar?"
+msgstr "Ocorreu um erro ao baixar o arquivo <b>%1</b>. Deseja continuar?"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1042
 #, kde-kuit-format
@@ -59655,13 +59655,13 @@ msgstr "Este item tem o status de transferência desconhecido"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has never been downloaded"
-msgstr "Este item nunca foi transferido"
+msgstr "Este item nunca foi baixado"
 
 #: core/utilities/import/items/importoverlays.cpp:250
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
-msgstr "Este item já foi transferido"
+msgstr "Este item já foi baixado"
 
 #: core/utilities/import/main/importui.cpp:158
 #, kde-format
@@ -59757,43 +59757,43 @@ msgstr "Selecionar os itens bloqueados"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Download"
-msgstr "Transferir"
+msgstr "Baixar"
 
 #: core/utilities/import/main/importui.cpp:276
 #, kde-format
 msgctxt "@action"
 msgid "Download New"
-msgstr "Transferir novos"
+msgstr "Baixar novos"
 
 #: core/utilities/import/main/importui.cpp:286
 #, kde-format
 msgctxt "@action"
 msgid "Download Selected"
-msgstr "Transferir selecionados"
+msgstr "Baixar selecionados"
 
 #: core/utilities/import/main/importui.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "Download All"
-msgstr "Transferir tudo"
+msgstr "Baixar tudo"
 
 #: core/utilities/import/main/importui.cpp:301
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
-msgstr "Transferir e excluir os novos"
+msgstr "Baixar e excluir os novos"
 
 #: core/utilities/import/main/importui.cpp:309
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
-msgstr "Transferir e excluir os selecionados"
+msgstr "Baixar e excluir os selecionados"
 
 #: core/utilities/import/main/importui.cpp:317
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
-msgstr "Transferir e excluir tudo"
+msgstr "Baixar e excluir tudo"
 
 #: core/utilities/import/main/importui.cpp:324
 #, kde-format
@@ -59811,7 +59811,7 @@ msgstr "Ativar bloqueio"
 #, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
-msgstr "Marcar como transferido"
+msgstr "Marcar como baixado"
 
 #: core/utilities/import/main/importui.cpp:347
 #, kde-format
@@ -60214,7 +60214,7 @@ msgid ""
 "Try Anyway?"
 msgstr ""
 "Não existe espaço livre suficiente no disco do álbum que você selecionou, "
-"para transferir e processar as imagens selecionadas na câmera.\n"
+"para baixar e processar as imagens selecionadas na câmera.\n"
 "\n"
 "Espaço necessário estimado: %1\n"
 "Espaço livre disponível: %2\n"
@@ -60584,10 +60584,10 @@ msgid ""
 "created file extension-based sub-albums of the destination album. This way, "
 "you can separate JPEG and RAW files as they are downloaded from your camera."
 msgstr ""
-"Habilite esta opção se quiser transferir suas imagens em sub-álbuns "
+"Habilite esta opção se quiser baixar suas imagens em sub-álbuns "
 "automaticamente criados, baseando-se na extensão do arquivo, dentro do álbum "
 "de destino. Desta forma, você pode separar os arquivos JPEG e RAW enquanto "
-"eles são transferidos da sua câmera."
+"eles são baixados da sua câmera."
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:129
 #, kde-format
@@ -60596,7 +60596,7 @@ msgid ""
 "Enable this option if you want to download your pictures into automatically "
 "created file date-based sub-albums of the destination album."
 msgstr ""
-"Habilite esta opção se quiser transferir suas imagens em sub-álbuns "
+"Habilite esta opção se quiser baixar suas imagens em sub-álbuns "
 "automaticamente criados, baseando-se na data do arquivo, dentro do álbum de "
 "destino."
 
@@ -62149,7 +62149,7 @@ msgstr "Salvando imagens"
 #: core/utilities/queuemanager/views/toolsettingsview.cpp:99
 #, kde-format
 msgid "Reset current tool settings to default values."
-msgstr "Restaurar as configurações da ferramenta atual para os valores padrão."
+msgstr "Redefine as configurações da ferramenta atual para os valores padrão."
 
 #: core/utilities/queuemanager/views/toolslistview.cpp:53
 #, kde-format
@@ -62366,7 +62366,7 @@ msgstr "Nenhuma avaliação atribuída"
 #: core/utilities/searchwindow/searchfields.cpp:74
 #, kde-format
 msgid "Reset contents"
-msgstr "Restaurar o conteúdo"
+msgstr "Redefinir o conteúdo"
 
 #: core/utilities/searchwindow/searchfields_album.cpp:36
 #, kde-format
