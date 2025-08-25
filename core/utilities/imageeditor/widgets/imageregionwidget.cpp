@@ -47,6 +47,8 @@ public:
 
     Private() = default;
 
+public:
+
     DImg             targetImage;
 
     bool             capturePtMode              = false;
