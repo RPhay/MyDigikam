@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-24 01:59+0000\n"
+"POT-Creation-Date: 2025-08-26 02:00+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -5858,6 +5858,7 @@ msgid ""
 msgstr "เครื่องมือสำหรับเปลี่ยนแปลงเป็นภาพขาวดำ"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:75
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8639,6 +8640,74 @@ msgstr "ภาพนี้ไม่ใช่ภาพที่มีการจ
 msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "ปรับแก้ขอบมืดที่เกิดบนภาพ..."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:217
+#, fuzzy, kde-format
+msgid "Background Blur Filter"
+msgstr "สี&พื้นหลัง:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
+#, fuzzy, kde-format
+msgid ""
+"A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
+"matrix radius that determines how much to blur the background of the subject."
+msgstr ""
+"<p>ค่าความคม 0 หมายถึงไม่ปรับ, ค่า 1 และมากกว่า "
+"จะมีผลกับรัศมีเมตริกซ์ที่ใช้คำนวนว่าจะให้ภาพมีความขนาดไหน"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
+#, fuzzy, kde-format
+msgid "Progressive Transition:"
+msgstr "ข้อมูลผู้ถ่ายภาพ"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#, kde-format
+msgid ""
+"A progressive blur transitions of 0 has no effect, 1 and above add a "
+"variable blur near to far of the subject.This allow to simulate a depth of "
+"field from a lens."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:193
+#, fuzzy, kde-format
+msgid "Background Blur"
+msgstr "สี&พื้นหลัง:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:43
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Background Blur"
+msgstr "สี&พื้นหลัง:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:58
+#, fuzzy, kde-format
+#| msgid "A tool to blur images"
+msgctxt "@info"
+msgid "A tool to blur the background of an image"
+msgstr "เครื่องมือเพิ่มความเบลอให้กับภาพ"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
+#, fuzzy, kde-format
+msgctxt "@info"
+msgid ""
+"This Image Editor tool can blur the background of the subject from an image."
+msgstr "ตัวเลือกนี้ สามารถใช้เพื่อย่อหรือขยายขนาดภาพของส่วนพื้นที่ที่เลือก"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "Background Blur..."
+msgstr "สี&พื้นหลัง:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
+#, fuzzy, kde-format
+msgid "Background Blur Tool"
+msgstr "สี&พื้นหลัง:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
+#, kde-format
+msgid "You must select before a rectangular area including the subject..."
+msgstr ""
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -60533,7 +60602,7 @@ msgstr "ก่อน"
 msgid "After"
 msgstr "หลัง"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:74
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:76
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "

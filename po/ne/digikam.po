@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-24 01:59+0000\n"
+"POT-Creation-Date: 2025-08-26 02:00+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -5639,6 +5639,7 @@ msgid ""
 msgstr "कलरस्पेस"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:75
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8295,6 +8296,76 @@ msgstr "यो मेट्न लागेको वस्तुको सू�
 msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "रातो आँखा सुधार"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:217
+#, fuzzy, kde-format
+msgid "Background Blur Filter"
+msgstr "पृष्ठभूमि रङ:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
+#, fuzzy, kde-format
+msgid ""
+"A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
+"matrix radius that determines how much to blur the background of the subject."
+msgstr ""
+"<p>० महिनपनको कुनै प्रभाव हुँदैन, १ र माथिले छवि कति अस्पष्ट गर्ने गाउस्सियन अस्पष्ट "
+"म्याट्रिक्स रेडियस निर्धारण गर्दछ ।"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
+#, fuzzy, kde-format
+msgid "Progressive Transition:"
+msgstr "फोटोग्राफर सूचना"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#, kde-format
+msgid ""
+"A progressive blur transitions of 0 has no effect, 1 and above add a "
+"variable blur near to far of the subject.This allow to simulate a depth of "
+"field from a lens."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:193
+#, fuzzy, kde-format
+msgid "Background Blur"
+msgstr "पृष्ठभूमि रङ:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:43
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Background Blur"
+msgstr "पृष्ठभूमि रङ:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:58
+#, fuzzy, kde-format
+#| msgid "Color Space"
+msgctxt "@info"
+msgid "A tool to blur the background of an image"
+msgstr "कलरस्पेस"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
+#, fuzzy, kde-format
+msgctxt "@info"
+msgid ""
+"This Image Editor tool can blur the background of the subject from an image."
+msgstr ""
+"यो विकल्प छवि काँटछाँट गर्न प्रयोग गरिन्छ । यो कार्यलाई सक्षम पार्न छविको क्षेत्र चयन "
+"गर्नुहोस् ।"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "Background Blur..."
+msgstr "पृष्ठभूमि रङ:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
+#, fuzzy, kde-format
+msgid "Background Blur Tool"
+msgstr "पृष्ठभूमि रङ:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
+#, kde-format
+msgid "You must select before a rectangular area including the subject..."
+msgstr ""
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -57182,7 +57253,7 @@ msgstr "पहिला"
 msgid "After"
 msgstr "पछि"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:74
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:76
 #, fuzzy, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "

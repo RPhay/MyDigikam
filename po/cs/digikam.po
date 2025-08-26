@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-24 01:59+0000\n"
+"POT-Creation-Date: 2025-08-26 02:00+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -5605,6 +5605,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:75
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8257,6 +8258,86 @@ msgstr ""
 msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Oprava vinětace..."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:217
+#, fuzzy, kde-format
+#| msgid "Background color: "
+msgid "Background Blur Filter"
+msgstr "Barva pozadí: "
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
+#, fuzzy, kde-format
+#| msgid ""
+#| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
+#| "matrix radius that determines how much to blur the image."
+msgid ""
+"A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
+"matrix radius that determines how much to blur the background of the subject."
+msgstr ""
+"Hladkost 0 nemá žádný účinek, hodnoty 1 a vyšší určují poloměr Gaussovské "
+"matice rozostření, na němž závisí míra rozostření obrázku."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
+#, fuzzy, kde-format
+#| msgid "Progress Information"
+msgid "Progressive Transition:"
+msgstr "Informace o průběhu"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#, kde-format
+msgid ""
+"A progressive blur transitions of 0 has no effect, 1 and above add a "
+"variable blur near to far of the subject.This allow to simulate a depth of "
+"field from a lens."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:193
+#, fuzzy, kde-format
+#| msgid "Background color:"
+msgid "Background Blur"
+msgstr "Barva pozadí:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:43
+#, fuzzy, kde-format
+#| msgid "Background color:"
+msgctxt "@title"
+msgid "Background Blur"
+msgstr "Barva pozadí:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:58
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "A tool to blur images"
+msgctxt "@info"
+msgid "A tool to blur the background of an image"
+msgstr "Nástroj pro rozmazání obrázků"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "This image is not color managed."
+msgctxt "@info"
+msgid ""
+"This Image Editor tool can blur the background of the subject from an image."
+msgstr "Tento obrázek není se správou barev."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
+#, fuzzy, kde-format
+#| msgid "Background color:"
+msgctxt "@action"
+msgid "Background Blur..."
+msgstr "Barva pozadí:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
+#, fuzzy, kde-format
+#| msgid "Background color: "
+msgid "Background Blur Tool"
+msgstr "Barva pozadí: "
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
+#, kde-format
+msgid "You must select before a rectangular area including the subject..."
+msgstr ""
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -57614,7 +57695,7 @@ msgstr "Před"
 msgid "After"
 msgstr "Po"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:74
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:76
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
