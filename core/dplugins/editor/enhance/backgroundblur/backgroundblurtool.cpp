@@ -166,7 +166,11 @@ void BackgroundBlurTool::preparePreview()
     selection.setTopLeft(QPoint(orgSelection.topLeft().x() / xratio,         orgSelection.topLeft().y()     / yratio));
     selection.setBottomRight(QPoint(orgSelection.bottomRight().x() / xratio, orgSelection.bottomRight().y() / yratio));
 
-    setFilter(new BackgroundBlurFilter(&preview, selection, d->radiusInput->value(), d->transitionInput->value(), this));
+    setFilter(new BackgroundBlurFilter(&preview,
+                                       selection,
+                                       d->radiusInput->value(),
+                                       d->transitionInput->value(),
+                                       this));
 }
 
 void BackgroundBlurTool::setPreviewImage()
@@ -184,7 +188,11 @@ void BackgroundBlurTool::prepareFinal()
 {
     ImageIface iface;
     QRect selection = iface.selectionRect();
-    setFilter(new BackgroundBlurFilter(iface.original(), selection, d->radiusInput->value(), d->transitionInput->value(), this));
+    setFilter(new BackgroundBlurFilter(iface.original(),
+                                       selection,
+                                       d->radiusInput->value(),
+                                       d->transitionInput->value(),
+                                       this));
 }
 
 void BackgroundBlurTool::setFinalImage()

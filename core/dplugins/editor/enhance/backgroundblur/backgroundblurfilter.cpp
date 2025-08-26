@@ -16,9 +16,7 @@
 
 // Qt includes
 
-#include <QtConcurrentRun>
 #include <QtMath>
-#include <QMutex>
 
 // Local includes
 
@@ -34,7 +32,10 @@ class Q_DECL_HIDDEN BackgroundBlurFilter::Private
 {
 public:
 
-    Private() = default;
+    Private(BackgroundBlurFilter* const dd)
+        : parent(dd)
+    {
+    }
 
     void applyBackgroundBlur(const cv::Mat& input,
                              cv::Mat& output,
@@ -71,11 +72,15 @@ public:
                 inputBGR = input; // Already the good format.
             }
 
+            parent->postProgress(10);
+
             // Init the mask for Grabcut.
 
             cv::Rect roi(selection.x(), selection.y(), selection.width(), selection.height());
             cv::Mat mask(input.rows, input.cols, CV_8UC1, cv::GC_PR_BGD);
             mask(roi) = cv::GC_PR_FGD;
+
+            parent->postProgress(20);
 
             // Apply GrabCut to inputBGR.
 
@@ -84,10 +89,14 @@ public:
             cv::grabCut(inputBGR, mask, roi, bgModel, fgModel, 5, cv::GC_INIT_WITH_RECT);
             cv::compare(mask, cv::GC_PR_FGD, mask, cv::CMP_EQ);
 
+            parent->postProgress(30);
+
             // Blur the background.
 
             cv::Mat blurred;
             cv::GaussianBlur(inputBGR, blurred, cv::Size(0, 0), blurIntensity);
+
+            parent->postProgress(40);
 
             float transition = blurTransition / 100.0F; // 0 = uniform blur, 1 = max progressive blur.
 
@@ -96,7 +105,10 @@ public:
                 // Uniform blur.
 
                 inputBGR.copyTo(output, mask);
+                parent->postProgress(60);
+
                 blurred.copyTo(output, ~mask);
+                parent->postProgress(80);
             }
             else
             {
@@ -114,6 +126,8 @@ public:
 
                 output = inputBGR.clone();
 
+                parent->postProgress(60);
+
                 for (int y = 0; y < input.rows; y++)
                 {
                     for (int x = 0; x < input.cols; x++)
@@ -123,9 +137,11 @@ public:
                         // NOTE: if alpha is near of 1, the blur effect is intensive.
 
                         output.at<cv::Vec3b>(y, x) = alpha       * blurred.at<cv::Vec3b>(y, x) +
-                                                    (1 - alpha) * inputBGR.at<cv::Vec3b>(y, x);
+                                                     (1 - alpha) * inputBGR.at<cv::Vec3b>(y, x);
                     }
                 }
+
+                parent->postProgress(80);
             }
 
             // Convert back to the original format if necessary.
@@ -141,6 +157,8 @@ public:
                     cv::cvtColor(output, output, cv::COLOR_BGR2BGRA);
                 }
             }
+
+            parent->postProgress(90);
         }
         catch (cv::Exception& e)
         {
@@ -154,17 +172,15 @@ public:
 
 public:
 
-    int    radius         = 3;
-    int    transition     = 0;
-    QRect  selection;
-    int    globalProgress = 0;
-
-    QMutex lock;
+    int                   radius         = 3;
+    int                   transition     = 0;
+    QRect                 selection;
+    BackgroundBlurFilter* parent         = nullptr;
 };
 
 BackgroundBlurFilter::BackgroundBlurFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d                 (new Private)
+      d                 (new Private(this))
 {
     initFilter();
 }
@@ -175,7 +191,7 @@ BackgroundBlurFilter::BackgroundBlurFilter(DImg* const orgImage,
                                            int transition,
                                            QObject* const parent)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("BackgroundBlur")),
-      d                 (new Private)
+      d                 (new Private(this))
 {
     d->selection  = selection;
     d->radius     = radius;
@@ -197,7 +213,7 @@ BackgroundBlurFilter::BackgroundBlurFilter(DImgThreadedFilter* const parentFilte
                          progressBegin,
                          progressEnd,
                          parentFilter->filterName() + QLatin1String(": BackgroundBlur")),
-      d(new Private)
+      d(new Private(this))
 {
     d->selection  = selection;
     d->radius     = radius;
