@@ -500,7 +500,7 @@ void installWindowsDesktopNotifier(QApplication& app)
 #ifdef HAVE_KNOTIFICATIONS
 
 #   ifdef Q_OS_WIN
-
+/*
     QProcess proc(&app);
     proc.start(QLatin1String("snoretoast.exe"),
                { QLatin1String("-install"), app.applicationName(), app.applicationFilePath(), app.organizationDomain() });
@@ -508,7 +508,7 @@ void installWindowsDesktopNotifier(QApplication& app)
     qCDebug(DIGIKAM_GENERAL_LOG) << proc.exitCode();
     qCDebug(DIGIKAM_GENERAL_LOG) << proc.readAllStandardOutput();
     qCDebug(DIGIKAM_GENERAL_LOG) << proc.readAllStandardError();
-
+*/
 #   endif
 
 #endif
