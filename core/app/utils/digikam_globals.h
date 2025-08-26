@@ -330,9 +330,4 @@ DIGIKAM_EXPORT void delayForRemoteDebuging(int delaySecs = 30);
  */
 DIGIKAM_EXPORT bool detectKDEDesktopIsRunning();
 
-/**
- * For KNotifications: install link to SnoreToast executable for the desktop notification.
- */
-DIGIKAM_EXPORT void installWindowsDesktopNotifier(QApplication& app);
-
 } // namespace Digikam

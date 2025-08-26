@@ -87,11 +87,11 @@ void DNotificationWrapper(const QString& eventId, const QString& message,
     {
         if (QApplication::applicationName() == QLatin1String("digikam"))
         {
-            logoPixmap = QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(48,48));
+            logoPixmap = QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(48, 48));
         }
         else
         {
-            logoPixmap = QIcon::fromTheme(QLatin1String("showfoto")).pixmap(QSize(48,48));
+            logoPixmap = QIcon::fromTheme(QLatin1String("showfoto")).pixmap(QSize(48, 48));
         }
     }
 

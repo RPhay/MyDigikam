@@ -493,28 +493,6 @@ void setWindowsEnvironment(QApplication& app)
 
 }
 
-void installWindowsDesktopNotifier(QApplication& app)
-{
-    Q_UNUSED(app);
-
-#ifdef HAVE_KNOTIFICATIONS
-
-#   ifdef Q_OS_WIN
-/*
-    QProcess proc(&app);
-    proc.start(QLatin1String("snoretoast.exe"),
-               { QLatin1String("-install"), app.applicationName(), app.applicationFilePath(), app.organizationDomain() });
-    proc.waitForFinished();
-    qCDebug(DIGIKAM_GENERAL_LOG) << proc.exitCode();
-    qCDebug(DIGIKAM_GENERAL_LOG) << proc.readAllStandardOutput();
-    qCDebug(DIGIKAM_GENERAL_LOG) << proc.readAllStandardError();
-*/
-#   endif
-
-#endif
-
-}
-
 void delayForRemoteDebuging(int delaySecs)
 {
     const QByteArray remoteDebug = qgetenv("DIGIKAM_REMOTE_DEBUG");
