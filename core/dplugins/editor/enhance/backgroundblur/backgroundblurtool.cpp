@@ -151,22 +151,21 @@ void BackgroundBlurTool::preparePreview()
 {
     ImageIface* const iface  = d->previewWidget->imageIface();
     DImg preview             = iface->preview();
-
-    qDebug() << "Original preview:" << preview.size() << preview.bitsDepth() << preview.hasAlpha();
-    qDebug() << "Ratio original  :" << (double)iface->originalSize().width() / (double)iface->originalSize().height();
-    qDebug() << "Ratio preview   :" << (double)preview.size().width()        / (double)preview.size().height();
-
     QRect orgSelection       = iface->selectionRect();
-    double xratio            = (double)iface->originalSize().width()  / (double)iface->previewSize().width();
-    double yratio            = (double)iface->originalSize().height() / (double)iface->previewSize().height();
+
+    // Compute the scale factor between original and preview sizes.
+
+    float scaleFactor = static_cast<float>(iface->originalSize().width()) / iface->previewSize().width();
 
     QRect selection;
-    selection.setTopLeft(QPoint(orgSelection.topLeft().x() / xratio,         orgSelection.topLeft().y()     / yratio));
-    selection.setBottomRight(QPoint(orgSelection.bottomRight().x() / xratio, orgSelection.bottomRight().y() / yratio));
+    selection.setTopLeft(QPoint(orgSelection.topLeft().x() / scaleFactor,
+                                orgSelection.topLeft().y() / scaleFactor));
+    selection.setBottomRight(QPoint(orgSelection.bottomRight().x() / scaleFactor,
+                                    orgSelection.bottomRight().y() / scaleFactor));
 
     setFilter(new BackgroundBlurFilter(&preview,
                                        selection,
-                                       d->radiusInput->value(),
+                                       d->radiusInput->value() / scaleFactor,
                                        d->transitionInput->value(),
                                        this));
 }
