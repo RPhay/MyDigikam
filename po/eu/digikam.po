@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-24 01:59+0000\n"
+"POT-Creation-Date: 2025-08-26 02:00+0000\n"
 "PO-Revision-Date: 2025-08-23 00:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -5754,6 +5754,7 @@ msgstr ""
 "pikorra gehi dezake.</p>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:75
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8472,6 +8473,86 @@ msgstr "Irudi honek ez dauka kolore-kudeaketarik."
 msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Binetaren zuzenketa..."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:217
+#, fuzzy, kde-format
+#| msgid "Background color: "
+msgid "Background Blur Filter"
+msgstr "Atzeko planoaren kolorea: "
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
+#, fuzzy, kde-format
+#| msgid ""
+#| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
+#| "matrix radius that determines how much to blur the image."
+msgid ""
+"A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
+"matrix radius that determines how much to blur the background of the subject."
+msgstr ""
+"0 balioko leuntasunak ez du efekturik, 1 eta balio handiagoek irudia zenbat "
+"lausotu behar den zehazten duen Gauss-en lausotze matrizearen erradioa "
+"zehazten du."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
+#, fuzzy, kde-format
+#| msgid "Progress Information"
+msgid "Progressive Transition:"
+msgstr "Aurrerapenaren informazioa"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#, kde-format
+msgid ""
+"A progressive blur transitions of 0 has no effect, 1 and above add a "
+"variable blur near to far of the subject.This allow to simulate a depth of "
+"field from a lens."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:193
+#, fuzzy, kde-format
+#| msgid "Background color:"
+msgid "Background Blur"
+msgstr "Atzeko planoaren kolorea:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:43
+#, fuzzy, kde-format
+#| msgid "Background color:"
+msgctxt "@title"
+msgid "Background Blur"
+msgstr "Atzeko planoaren kolorea:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:58
+#, fuzzy, kde-format
+#| msgid "A tool to blur images"
+msgctxt "@info"
+msgid "A tool to blur the background of an image"
+msgstr "Irudiak lausotzeko tresna"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "This Image Editor tool can adjust the color curves from image."
+msgctxt "@info"
+msgid ""
+"This Image Editor tool can blur the background of the subject from an image."
+msgstr "Irudiak editatzeko tresna honek irudiko kolore-kurbak doi ditzake."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
+#, fuzzy, kde-format
+#| msgid "Background color:"
+msgctxt "@action"
+msgid "Background Blur..."
+msgstr "Atzeko planoaren kolorea:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
+#, fuzzy, kde-format
+#| msgid "Background color: "
+msgid "Background Blur Tool"
+msgstr "Atzeko planoaren kolorea: "
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
+#, kde-format
+msgid "You must select before a rectangular area including the subject..."
+msgstr ""
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -60552,7 +60633,7 @@ msgstr "Hau baina lehen"
 msgid "After"
 msgstr "Honen ondoren"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:74
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:76
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "

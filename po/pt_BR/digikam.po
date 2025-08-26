@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-24 01:59+0000\n"
-"PO-Revision-Date: 2025-08-24 13:48-0300\n"
+"POT-Creation-Date: 2025-08-26 02:00+0000\n"
+"PO-Revision-Date: 2025-08-25 11:57-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -5844,6 +5844,7 @@ msgstr ""
 "adiciona vinhetas às imagens.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:75
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8654,6 +8655,89 @@ msgstr "Esta ferramenta de edição de imagens corrige a vinheta de uma imagem."
 msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Correção de vinheta..."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:217
+#, fuzzy, kde-format
+#| msgid "Background color: "
+msgid "Background Blur Filter"
+msgstr "Cor do plano de fundo: "
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
+#, fuzzy, kde-format
+#| msgid ""
+#| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
+#| "matrix radius that determines how much to blur the image."
+msgid ""
+"A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
+"matrix radius that determines how much to blur the background of the subject."
+msgstr ""
+"Uma suavidade igual a 0 não faz efeito, enquanto 1 ou maior determinam o "
+"raio da matriz do borrão Gaussiano que determina quanto a imagem deverá ser "
+"borrada."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
+#, fuzzy, kde-format
+#| msgid "Progress Information"
+msgid "Progressive Transition:"
+msgstr "Informações do progresso"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#, kde-format
+msgid ""
+"A progressive blur transitions of 0 has no effect, 1 and above add a "
+"variable blur near to far of the subject.This allow to simulate a depth of "
+"field from a lens."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:193
+#, fuzzy, kde-format
+#| msgid "Background color:"
+msgid "Background Blur"
+msgstr "Cor do plano de fundo:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:43
+#, fuzzy, kde-format
+#| msgid "Background color:"
+msgctxt "@title"
+msgid "Background Blur"
+msgstr "Cor do plano de fundo:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:58
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "A tool to blur an image"
+msgctxt "@info"
+msgid "A tool to blur the background of an image"
+msgstr "Uma ferramenta para borrar uma imagem"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "This Image Editor tool can adjust the color curves from image."
+msgctxt "@info"
+msgid ""
+"This Image Editor tool can blur the background of the subject from an image."
+msgstr ""
+"Esta ferramenta de edição de imagens pode ajustar as curvas de cores da "
+"imagem."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
+#, fuzzy, kde-format
+#| msgid "Background color:"
+msgctxt "@action"
+msgid "Background Blur..."
+msgstr "Cor do plano de fundo:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
+#, fuzzy, kde-format
+#| msgid "Background color: "
+msgid "Background Blur Tool"
+msgstr "Cor do plano de fundo: "
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
+#, kde-format
+msgid "You must select before a rectangular area including the subject..."
+msgstr ""
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -21215,7 +21299,7 @@ msgstr ""
 "tr><tr><td>Panorâmica:</td><td>Mova o mouse enquanto pressiona o botão "
 "esquerdo</td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Outros</h1></"
 "b></center></nobr></td></tr><tr><td>Mostrar esta ajuda:</td><td><i>Tecla F1</"
-"i></td></tr></tabela>"
+"i></td></tr></table>"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:138
 #, kde-format
@@ -59200,7 +59284,7 @@ msgstr "Antes"
 msgid "After"
 msgstr "Após"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:74
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:76
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
