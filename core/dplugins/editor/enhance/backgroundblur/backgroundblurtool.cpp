@@ -76,9 +76,8 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
     d->radiusInput      = new DIntNumInput();
     d->radiusInput->setRange(0, 100, 1);
     d->radiusInput->setDefaultValue(0);
-    d->radiusInput->setWhatsThis(i18n("A smoothness of 0 has no effect, "
-                                      "1 and above determine the Gaussian blur matrix radius "
-                                      "that determines how much to blur the background of the subject."));
+    d->radiusInput->setWhatsThis(i18n("Set this value to determine the matrix radius that "
+                                      "determines how much to blur the background around the subject."));
 
     // --------------------------------------------------------
 
@@ -86,8 +85,7 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
     d->transitionInput   = new DIntNumInput();
     d->transitionInput->setRange(0, 100, 1);
     d->transitionInput->setDefaultValue(0);
-    d->transitionInput->setWhatsThis(i18n("A progressive blur transitions of 0 has no effect, "
-                                          "1 and above add a variable blur near to far of the subject."
+    d->transitionInput->setWhatsThis(i18n("Set this value to apply a variable blur near to far of the subject."
                                           "This allow to simulate a depth of field from a lens."));
 
     // --------------------------------------------------------

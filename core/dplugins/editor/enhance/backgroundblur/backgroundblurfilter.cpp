@@ -98,51 +98,38 @@ public:
 
             parent->postProgress(40);
 
-            float transition = blurTransition / 100.0F; // 0 = uniform blur, 1 = max progressive blur.
+            float transition = (blurTransition + 100.0F) / 100.0F;
 
-            if (transition <= 0.0F)
+            // Progressive blur.
+            // First compute the map for the progressive blur.
+
+            cv::Mat distanceMap;
+            cv::distanceTransform(~mask, distanceMap, cv::DIST_L2, cv::DIST_MASK_5);
+
+            // Normalize the distance for the progressive effect (0 = near the subject, 1 = far the subject).
+
+            cv::normalize(distanceMap, distanceMap, 0, transition, cv::NORM_MINMAX);
+
+            // Create the result with the progresive blur.
+
+            output = inputBGR.clone();
+
+            parent->postProgress(60);
+
+            for (int y = 0; y < input.rows; y++)
             {
-                // Uniform blur.
-
-                inputBGR.copyTo(output, mask);
-                parent->postProgress(60);
-
-                blurred.copyTo(output, ~mask);
-                parent->postProgress(80);
-            }
-            else
-            {
-                // Progressive blur.
-                // First compute the map for the progressive blur.
-
-                cv::Mat distanceMap;
-                cv::distanceTransform(~mask, distanceMap, cv::DIST_L2, cv::DIST_MASK_5);
-
-                // Normalize the distance for the progressive effect (0 = near the subject, 1 = far the subject).
-
-                cv::normalize(distanceMap, distanceMap, 0, transition, cv::NORM_MINMAX);
-
-                // Create the result with the progresive blur.
-
-                output = inputBGR.clone();
-
-                parent->postProgress(60);
-
-                for (int y = 0; y < input.rows; y++)
+                for (int x = 0; x < input.cols; x++)
                 {
-                    for (int x = 0; x < input.cols; x++)
-                    {
-                        float alpha = distanceMap.at<float>(y, x);
+                    float alpha = distanceMap.at<float>(y, x);
 
-                        // NOTE: if alpha is near of 1, the blur effect is intensive.
+                    // NOTE: if alpha is near of 1, the blur effect is intensive.
 
-                        output.at<cv::Vec3b>(y, x) = alpha       * blurred.at<cv::Vec3b>(y, x) +
-                                                     (1 - alpha) * inputBGR.at<cv::Vec3b>(y, x);
-                    }
+                    output.at<cv::Vec3b>(y, x) = alpha       * blurred.at<cv::Vec3b>(y, x) +
+                                                 (1 - alpha) * inputBGR.at<cv::Vec3b>(y, x);
                 }
-
-                parent->postProgress(80);
             }
+
+            parent->postProgress(80);
 
             // Convert back to the original format if necessary.
 
