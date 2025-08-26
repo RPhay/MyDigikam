@@ -238,9 +238,6 @@ void BackgroundBlurFilter::filterImage()
         return;
     }
 
-    qCDebug(DIGIKAM_DIMG_LOG) << "Image Size    :" << m_orgImage.size();
-    qCDebug(DIGIKAM_DIMG_LOG) << "Selection area:" << d->selection;
-
     cv::Mat input = QtOpenCVImg::image2Mat(m_orgImage);
     cv::Mat output;
     d->applyBackgroundBlur(input, output, d->selection, d->radius, d->transition);

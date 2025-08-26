@@ -175,8 +175,6 @@ void BackgroundBlurTool::setPreviewImage()
     ImageIface* const iface = d->previewWidget->imageIface();
     DImg preview            = filter()->getTargetImage();
 
-    qDebug() << "Target preview  :" << preview.size() << preview.bitsDepth() << preview.hasAlpha();
-
     iface->setPreview(preview);
     d->previewWidget->updatePreview();
 }
