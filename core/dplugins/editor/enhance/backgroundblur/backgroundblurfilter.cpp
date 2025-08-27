@@ -190,9 +190,9 @@ void BackgroundBlurFilter::filterImage()
 
         postProgress(60);
 
-        for (int y = 0; y < input.rows; y++)
+        for (int y = 0 ; y < input.rows ; y++)
         {
-            for (int x = 0; x < input.cols; x++)
+            for (int x = 0 ; x < input.cols ; x++)
             {
                 float alpha = distanceMap.at<float>(y, x);
 
