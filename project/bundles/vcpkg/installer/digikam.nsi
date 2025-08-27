@@ -307,10 +307,13 @@
         ;Create shortcuts
 
         SetOutPath "$INSTDIR"
-        !include "snorenotify.nsh"
-        !define SnoreToastExe "$INSTDIR\SnoreToast.exe"
-        !insertmacro SnoreShortcut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe" "digiKamProject.digiKamApp"
-        !insertmacro SnoreShortcut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe" "ShowfotoProject.ShowfotoApp"
+        CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
+        CreateShortCut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe"
+        CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe"
+        ;!include "snorenotify.nsh"
+        ;!define SnoreToastExe "$INSTDIR\SnoreToast.exe"
+        ;!insertmacro SnoreShortcut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe" "digiKamProject.digiKamApp"
+        ;!insertmacro SnoreShortcut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe" "ShowfotoProject.ShowfotoApp"
 
         WriteINIStr "$SMPROGRAMS\$StartMenuFolder\The ${MY_PRODUCT} HomePage.url" "InternetShortcut" "URL" "${PRODUCT_HOMEPAGE}"
         WriteINIStr "$SMPROGRAMS\$StartMenuFolder\The ${MY_PRODUCT} HomePage.url" "InternetShortcut" "IconIndex" "12"
