@@ -172,7 +172,7 @@ void BackgroundBlurFilter::filterImage()
 
         postProgress(40);
 
-        float transition = (d->transition + 100.0F) / 100.0F;
+        float transition = (d->transition * 3.0F) / 100.0F;
 
         // Progressive blur.
         // First compute the map for the progressive blur.
@@ -182,7 +182,7 @@ void BackgroundBlurFilter::filterImage()
 
         // Normalize the distance for the progressive effect (0 = near the subject, 1 = far the subject).
 
-        cv::normalize(distanceMap, distanceMap, 0, transition, cv::NORM_MINMAX);
+        cv::normalize(distanceMap, distanceMap, transition, 0, cv::NORM_MINMAX);
 
         // Create the result with the progresive blur.
 
