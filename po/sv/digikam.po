@@ -43,8 +43,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-26 02:00+0000\n"
-"PO-Revision-Date: 2025-08-23 06:54+0200\n"
+"POT-Creation-Date: 2025-08-27 02:07+0000\n"
+"PO-Revision-Date: 2025-08-26 20:53+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -2723,7 +2723,7 @@ msgstr "Starta Digikam med SQLite databasfilen som hittas i katalogen \"dir\""
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Starta Digikam med inställningsfilen \"config\""
 
-#: core/app/main/main.cpp:295
+#: core/app/main/main.cpp:293
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2734,7 +2734,7 @@ msgstr ""
 "tillgängligt. Installera det.\n"
 "Det finns inga installerade databasinsticksprogram på datorn."
 
-#: core/app/main/main.cpp:304
+#: core/app/main/main.cpp:302
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2745,7 +2745,7 @@ msgstr ""
 "tillgängligt. Installera det.\n"
 "Databasinsticksprogram installerade på datorn listas nedan."
 
-#: core/app/main/main.cpp:348
+#: core/app/main/main.cpp:346
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -5860,20 +5860,20 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Blur Image"
-msgstr "Gör bilden suddig"
+msgstr "Gör bilden oskarp"
 
 #: core/dplugins/bqm/enhance/blur/blurplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to blur images"
-msgstr "Ett verktyg som gör bilder suddiga"
+msgstr "Ett verktyg som gör bilder oskarpa"
 
 #: core/dplugins/bqm/enhance/blur/blurplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can blur images.</para>"
 msgstr ""
-"<para>Hanteringsverktyget för bakgrundskö kan göra bilder suddiga.</para>"
+"<para>Hanteringsverktyget för bakgrundskö kan göra bilder oskarpa.</para>"
 
 #: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:42
 #: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:40
@@ -8594,85 +8594,83 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Korrigering av vinjettering..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:217
-#, fuzzy, kde-format
-#| msgid "Background color: "
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:220
+#, kde-format
 msgid "Background Blur Filter"
-msgstr "Bakgrundsfärg: "
+msgstr "Oskärpefilter för bakgrund"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
 #, fuzzy, kde-format
 #| msgid ""
 #| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
-#| "matrix radius that determines how much to blur the image."
+#| "matrix radius that determines how much to blur the background of the "
+#| "subject."
 msgid ""
-"A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
-"matrix radius that determines how much to blur the background of the subject."
+"Set this value to determine the matrix radius that determines how much to "
+"blur the background around the subject."
 msgstr ""
 "Jämnheten 0 ger ingen effekt, 1 och större avgör den Gaussiska oskärpans "
-"matrisradie, som avgör hur mycket oskarpare bilden blir."
+"matrisradie, som avgör hur mycket oskarpare motivets bakgrund blir."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
-#, fuzzy, kde-format
-#| msgid "Progress Information"
-msgid "Progressive Transition:"
-msgstr "Förloppsinformation"
-
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #, kde-format
-msgid ""
-"A progressive blur transitions of 0 has no effect, 1 and above add a "
-"variable blur near to far of the subject.This allow to simulate a depth of "
-"field from a lens."
-msgstr ""
+msgid "Progressive Transition:"
+msgstr "Progressiva övergång:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:193
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
 #, fuzzy, kde-format
-#| msgid "Background color:"
+#| msgid ""
+#| "A progressive blur transitions of 0 has no effect, 1 and above add a "
+#| "variable blur near to far of the subject.This allow to simulate a depth "
+#| "of field from a lens."
+msgid ""
+"Set this value to apply a variable blur near to far of the subject.This "
+"allow to simulate a depth of field from a lens."
+msgstr ""
+"Progressiva övergångar av oskärpa med värdet 0 har ingen effekt, 1 och högre "
+"ger en variabel oskärpa nära och långt bort från motivet. Det gör det "
+"möjligt att simulera ett skärpedjup från ett objektiv."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:196
+#, kde-format
 msgid "Background Blur"
-msgstr "Bakgrundsfärg:"
+msgstr "Bakgrundsoskärpa"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgctxt "@title"
 msgid "Background Blur"
-msgstr "Bakgrundsfärg:"
+msgstr "Bakgrundsoskärpa"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to blur an image"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to blur the background of an image"
-msgstr "Ett verktyg för att göra en bild oskarp"
+msgstr "Ett verktyg för att göra en bilds bakgrund oskarp"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "This Image Editor tool can adjust the color curves from image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image."
-msgstr "Bildredigeringsverktyget kan justera färgkurvor i bilder."
+msgstr ""
+"Bildredigeringsverktyget kan göra motivets bakgrund oskarp för en bild."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgctxt "@action"
 msgid "Background Blur..."
-msgstr "Bakgrundsfärg:"
+msgstr "Bakgrundsoskärpa..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
-#, fuzzy, kde-format
-#| msgid "Background color: "
+#, kde-format
 msgid "Background Blur Tool"
-msgstr "Bakgrundsfärg: "
+msgstr "Oskärpeverktyg för bakgrund"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
 #, kde-format
 msgid "You must select before a rectangular area including the subject..."
-msgstr ""
+msgstr "Först måste ett rektangulärt område som inkluderar motivet väljas..."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -8683,7 +8681,7 @@ msgstr "Gaussisk oskärpa"
 #, kde-format
 msgctxt "@title"
 msgid "Blur"
-msgstr "Suddighet"
+msgstr "Oskärpa"
 
 #: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:55
 #, kde-format
@@ -11292,7 +11290,7 @@ msgid ""
 "To smooth the target image, it will be blurred a little."
 msgstr ""
 "Aktivera alternativet för att behandla den skjuvade bilden med ett "
-"kantutjämningsfilter. För att jämna ut målbilden, görs den något suddig."
+"kantutjämningsfilter. För att jämna ut målbilden, görs den något oskarp."
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:314
 #: core/libs/dimg/filters/transform/shearfilter.cpp:83
@@ -31602,12 +31600,12 @@ msgstr "Filtrets identifierare eller version stöds inte."
 #: core/libs/dimg/filters/fx/blurfilter.cpp:87
 #, kde-format
 msgid "Blur Filter"
-msgstr "Suddighetsfilter"
+msgstr "Oskärpefilter"
 
 #: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
 #, kde-format
 msgid "Blur FX Filter"
-msgstr "Suddighetseffektfilter"
+msgstr "Oskärpeeffektfilter"
 
 #: core/libs/dimg/filters/fx/charcoalfilter.cpp:86
 #, kde-format
@@ -31992,7 +31990,7 @@ msgid ""
 "high value here, or the target image will be completely blurred."
 msgstr ""
 "Det här värdet styr regelbundenheten hos utjämningen av bilden. Använd inte "
-"ett stort värde här, annars blir resultatbilden helt suddig."
+"ett stort värde här, annars blir resultatbilden helt oskarp."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:129
 #, kde-format
@@ -32354,9 +32352,9 @@ msgid ""
 "opposite on high values."
 msgstr ""
 "<b>Funktion</b>: Den här funktionen kombinerar originalets RGB-kanaler med "
-"den suddiga mindre färgmättade bilden. Funktionen används i varje steg av "
-"tonavbildningen. Den kan vara linjär eller en potens. Egentligen ökar "
-"funktionen värdet där både originalet och den suddiga bildens värden är små, "
+"den oskarpa mindre färgmättade bilden. Funktionen används i varje steg av "
+"nyansavbildningen. Den kan vara linjär eller en potens. Egentligen ökar "
+"funktionen värdet där både originalet och den oskarpa bildens värden är små, "
 "och gör det motsatta för stora värden."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:132
@@ -32438,7 +32436,7 @@ msgid ""
 "<b>Blur</b>: How strong the image is blurred before combining with the "
 "original image and with the tonemapping function."
 msgstr ""
-"<b>Oskärpa</b>: Hur mycket bilden görs suddigare innan den kombineras med "
+"<b>Oskärpa</b>: Hur mycket bilden görs oskarpare innan den kombineras med "
 "originalbilden och tonavbildningsfunktionen."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:299
@@ -33220,7 +33218,7 @@ msgid ""
 "The value of the difference between the original and the blur image that is "
 "added back into the original."
 msgstr ""
-"Värdet på skillnaden mellan originalet och den suddiga bilden som adderas "
+"Värdet på skillnaden mellan originalet och den oskarpa bilden som adderas "
 "till originalet."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:181
@@ -33262,7 +33260,7 @@ msgstr ""
 "Det här är radien för den cirkulära faltningen. Det är den viktigaste "
 "parametern för att använda verktyget. För de flesta bilder bör "
 "standardvärdet 1,0 ge bra resultat. Välj ett högre värde om bilden är mycket "
-"suddig."
+"oskarp."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:219
 #, kde-format
@@ -33412,7 +33410,7 @@ msgid ""
 "In order to smooth the target image, it will be blurred a little."
 msgstr ""
 "Aktivera alternativet för att behandla den roterade bilden med ett "
-"kantutjämningsfilter. För att jämna ut resultatbilden, görs den något suddig."
+"kantutjämningsfilter. För att jämna ut resultatbilden, görs den något oskarp."
 
 #: core/libs/dimg/filters/transform/freerotationsettings.cpp:98
 #, kde-format
@@ -35546,7 +35544,7 @@ msgid ""
 "settings from the next <b>Basic Factors</b> tab."
 msgstr ""
 "Detektera om bilden är negativt påverkad med fyra grundfaktorer<br>t.ex. "
-"suddighet, brus, (under, över) exponering, och komprimeringsnivåer.<br>Se "
+"oskärpa, brus, (under, över) exponering, och komprimeringsnivåer.<br>Se "
 "relevanta inställningar under nästa flik <b>Grundfaktorer</b>."
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:165
@@ -35601,13 +35599,13 @@ msgstr "Undre tröskel för att tilldela bilder beteckningen Godkänd"
 #, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Blur"
-msgstr "Suddighet"
+msgstr "Oskärpa"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:220
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
-msgstr "Detekterar hur suddiga bilderna som skickas till den är"
+msgstr "Detekterar hur oskarpa bilderna som skickas till den är"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:223
 #: core/libs/imgqsort/imagequalitywidget.cpp:234
@@ -35621,7 +35619,7 @@ msgstr "Vikt:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
-msgstr "Vikt att tilldela till suddighetsalgoritmen"
+msgstr "Vikt att tilldela till oskärpealgoritmen"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:230
 #, kde-format
@@ -38635,9 +38633,9 @@ msgstr ""
 "<title>Interpolera RGB som fyra färger</title><para>Förval är att anta att "
 "alla gröna bildpunkter är likadana. Om gröna bildpunkter i jämna rader är "
 "känsligare för ultraviolett ljus än udda rader, orsakar skillnaden ett "
-"rutmönster i utdata. Genom att använda detta alternativ löses problemet med "
+"rutmönster i utdata. Genom att använda alternativet löses problemet med "
 "minimal detaljförlust.</para><para>För att sammanfatta, så gör alternativet "
-"bilden något suddigare, men eliminerar falska 2x2 rutmönster med "
+"bilden något oskarpare, men eliminerar falska 2x2 rutmönster med "
 "kvalitetsmetoden VNG, eller labyrinter med kvalitetsmetoden AHD.</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:214

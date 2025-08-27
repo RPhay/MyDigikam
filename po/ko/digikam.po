@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-26 02:00+0000\n"
+"POT-Creation-Date: 2025-08-27 02:07+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2674,7 +2674,7 @@ msgstr ""
 msgid "Start digikam with the configuration file \"config\""
 msgstr "\"config\" 설정 파일을 사용하여 digiKam 시작"
 
-#: core/app/main/main.cpp:295
+#: core/app/main/main.cpp:293
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2685,7 +2685,7 @@ msgstr ""
 "해 주십시오.\n"
 "컴퓨터에 설치된 데이터베이스 플러그인이 없습니다."
 
-#: core/app/main/main.cpp:304
+#: core/app/main/main.cpp:302
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2696,7 +2696,7 @@ msgstr ""
 "해 주십시오.\n"
 "다음 데이터베이스 플러그인이 설치되어 있습니다."
 
-#: core/app/main/main.cpp:348
+#: core/app/main/main.cpp:346
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -8832,7 +8832,7 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "비네팅 보정..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:217
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:220
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur Filter"
@@ -8844,26 +8844,25 @@ msgstr "배경색:"
 #| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
 #| "matrix radius that determines how much to blur the image."
 msgid ""
-"A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
-"matrix radius that determines how much to blur the background of the subject."
+"Set this value to determine the matrix radius that determines how much to "
+"blur the background around the subject."
 msgstr ""
 "부드러운 정도를 0으로 설정하면 효과가 없으며, 1 이상으로 설정하면 가우시안 흐"
 "림 행렬 반지름을 조정하여 이미지 흐림 정도를 조정합니다."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #, fuzzy, kde-format
 msgid "Progressive Transition:"
 msgstr "속성"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
 #, kde-format
 msgid ""
-"A progressive blur transitions of 0 has no effect, 1 and above add a "
-"variable blur near to far of the subject.This allow to simulate a depth of "
-"field from a lens."
+"Set this value to apply a variable blur near to far of the subject.This "
+"allow to simulate a depth of field from a lens."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:193
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:196
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"

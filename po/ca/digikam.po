@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-26 02:00+0000\n"
-"PO-Revision-Date: 2025-08-22 14:52+0200\n"
+"POT-Creation-Date: 2025-08-27 02:07+0000\n"
+"PO-Revision-Date: 2025-08-26 11:43+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2710,7 +2710,7 @@ msgstr ""
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Inicia el digiKam amb el fitxer de configuració «config»"
 
-#: core/app/main/main.cpp:295
+#: core/app/main/main.cpp:293
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2721,7 +2721,7 @@ msgstr ""
 "no està disponible. Si us plau, instal·leu-lo.\n"
 "No hi ha cap connector de base de dades instal·lat a l'ordinador."
 
-#: core/app/main/main.cpp:304
+#: core/app/main/main.cpp:302
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2733,7 +2733,7 @@ msgstr ""
 "Els connectors de base de dades instal·lats al vostre ordinador es llisten a "
 "continuació."
 
-#: core/app/main/main.cpp:348
+#: core/app/main/main.cpp:346
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -8673,87 +8673,85 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Correcció del vinyetatge..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:217
-#, fuzzy, kde-format
-#| msgid "Background color: "
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:220
+#, kde-format
 msgid "Background Blur Filter"
-msgstr "Color de fons: "
+msgstr "Filtre de difuminat del fons"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
 #, fuzzy, kde-format
 #| msgid ""
 #| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
-#| "matrix radius that determines how much to blur the image."
+#| "matrix radius that determines how much to blur the background of the "
+#| "subject."
 msgid ""
-"A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
-"matrix radius that determines how much to blur the background of the subject."
+"Set this value to determine the matrix radius that determines how much to "
+"blur the background around the subject."
 msgstr ""
-"Un suavitzat 0 no té cap efecte, 1 i superiors determinen la matriu de radis "
-"del difuminat gaussià que generaran el difuminat de la imatge."
+"Un suavitzat 0 no té cap efecte, 1 i superiors determinen la matriu de radi "
+"del difuminat gaussià que determina la quantitat de difuminat del fons del "
+"motiu."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
-#, fuzzy, kde-format
-#| msgid "Progress Information"
-msgid "Progressive Transition:"
-msgstr "Informació de l'evolució"
-
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #, kde-format
-msgid ""
-"A progressive blur transitions of 0 has no effect, 1 and above add a "
-"variable blur near to far of the subject.This allow to simulate a depth of "
-"field from a lens."
-msgstr ""
+msgid "Progressive Transition:"
+msgstr "Transició progressiva:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:193
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
 #, fuzzy, kde-format
-#| msgid "Background color:"
+#| msgid ""
+#| "A progressive blur transitions of 0 has no effect, 1 and above add a "
+#| "variable blur near to far of the subject.This allow to simulate a depth "
+#| "of field from a lens."
+msgid ""
+"Set this value to apply a variable blur near to far of the subject.This "
+"allow to simulate a depth of field from a lens."
+msgstr ""
+"Una transició de difuminat progressiu de 0 no té cap efecte, 1 o superior "
+"afegeix un difuminat variable de prop a lluny del motiu. Això permet simular "
+"una profunditat de camp d'una lent."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:196
+#, kde-format
 msgid "Background Blur"
-msgstr "Color de fons:"
+msgstr "Difuminat del fons"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgctxt "@title"
 msgid "Background Blur"
-msgstr "Color de fons:"
+msgstr "Difuminat del fons"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to blur an image"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to blur the background of an image"
-msgstr "Una eina per a difuminar una imatge"
+msgstr "Una eina per a difuminar el fons d'una imatge"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "This Image Editor tool can adjust the color curves from image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image."
 msgstr ""
-"Aquesta eina de l'editor d'imatges pot ajustar les corbes de color d'una "
+"Aquesta eina de l'editor d'imatges pot difuminar el fons del motiu d'una "
 "imatge."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgctxt "@action"
 msgid "Background Blur..."
-msgstr "Color de fons:"
+msgstr "Difuminat del fons..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
-#, fuzzy, kde-format
-#| msgid "Background color: "
+#, kde-format
 msgid "Background Blur Tool"
-msgstr "Color de fons: "
+msgstr "Eina de difuminat del fons"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
 #, kde-format
 msgid "You must select before a rectangular area including the subject..."
-msgstr ""
+msgstr "Cal seleccionar abans una àrea rectangular que inclogui el motiu..."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format

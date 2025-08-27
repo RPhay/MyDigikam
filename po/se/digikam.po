@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-20 02:01+0000\n"
+"POT-Creation-Date: 2025-08-26 02:00+0000\n"
 "PO-Revision-Date: 2007-09-11 22:44+0200\n"
 "Last-Translator: Northern Sami translation team <l10n-no@lister.huftis.org>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -2653,7 +2653,7 @@ msgstr ""
 msgid "Start digikam with the configuration file \"config\""
 msgstr ""
 
-#: core/app/main/main.cpp:293
+#: core/app/main/main.cpp:295
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2661,7 +2661,7 @@ msgid ""
 "There is no database plugin installed on your computer."
 msgstr ""
 
-#: core/app/main/main.cpp:302
+#: core/app/main/main.cpp:304
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2669,7 +2669,7 @@ msgid ""
 "Database plugins installed on your computer are listed below."
 msgstr ""
 
-#: core/app/main/main.cpp:346
+#: core/app/main/main.cpp:348
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2837,7 +2837,7 @@ msgstr ""
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:130
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:149
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:274
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:273
 #, kde-format
 msgctxt "@info"
 msgid "Help"
@@ -5506,6 +5506,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:75
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -7982,6 +7983,71 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr ""
 
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:217
+#, kde-format
+msgid "Background Blur Filter"
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
+#, kde-format
+msgid ""
+"A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
+"matrix radius that determines how much to blur the background of the subject."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
+#, kde-format
+msgid "Progressive Transition:"
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#, kde-format
+msgid ""
+"A progressive blur transitions of 0 has no effect, 1 and above add a "
+"variable blur near to far of the subject.This allow to simulate a depth of "
+"field from a lens."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:193
+#, kde-format
+msgid "Background Blur"
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:43
+#, kde-format
+msgctxt "@title"
+msgid "Background Blur"
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:58
+#, kde-format
+msgctxt "@info"
+msgid "A tool to blur the background of an image"
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
+#, kde-format
+msgctxt "@info"
+msgid ""
+"This Image Editor tool can blur the background of the subject from an image."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
+#, kde-format
+msgctxt "@action"
+msgid "Background Blur..."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
+#, kde-format
+msgid "Background Blur Tool"
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
+#, kde-format
+msgid "You must select before a rectangular area including the subject..."
+msgstr ""
+
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
 msgid "Gaussian Blur"
@@ -9477,7 +9543,7 @@ msgid "Energy function"
 msgstr ""
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:387
-#: core/utilities/setup/setupicc.cpp:437
+#: core/utilities/setup/setupicc.cpp:441
 #, kde-format
 msgid "Advanced Settings"
 msgstr ""
@@ -25027,7 +25093,7 @@ msgid "Auto-rotating: %1\n"
 msgstr ""
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:508
-#: core/libs/tags/autoassignment/autotagsengine.cpp:250
+#: core/libs/tags/autoassignment/autotagsengine.cpp:234
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:182
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:477
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:173
@@ -26791,25 +26857,25 @@ msgid ""
 "recent) Please use the more recent version of digikam that you used before. "
 msgstr ""
 
-#: core/libs/database/tags/facetags.cpp:420
+#: core/libs/database/tags/facetags.cpp:460
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr ""
 
-#: core/libs/database/tags/facetags.cpp:485
+#: core/libs/database/tags/facetags.cpp:477
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr ""
 
-#: core/libs/database/tags/facetags.cpp:507
+#: core/libs/database/tags/facetags.cpp:499
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr ""
 
-#: core/libs/database/tags/facetags.cpp:529
+#: core/libs/database/tags/facetags.cpp:521
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -32309,7 +32375,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:90
 #: core/libs/imgqsort/imagequalitywidget.cpp:61
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:90
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:115
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:114
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
@@ -32470,7 +32536,7 @@ msgstr ""
 #: core/libs/facesengine/widgets/facescanwidget.cpp:212
 #: core/libs/imgqsort/imagequalitywidget.cpp:184
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:177
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:264
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:263
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -36930,47 +36996,47 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:108
+#: core/libs/tags/autoassignment/autotagsengine.cpp:92
 #, kde-format
 msgid "Autotags Assignment"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:117
+#: core/libs/tags/autoassignment/autotagsengine.cpp:101
 #, kde-format
 msgid "Scan for objects in album: %1"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:121
+#: core/libs/tags/autoassignment/autotagsengine.cpp:105
 #, kde-format
 msgid "Scan for objects in %1 albums"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:202
+#: core/libs/tags/autoassignment/autotagsengine.cpp:186
 #, kde-format
 msgid "Error starting object detection."
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:217
+#: core/libs/tags/autoassignment/autotagsengine.cpp:201
 #, kde-format
 msgid "Items scanned for objects: %1\n"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:221
+#: core/libs/tags/autoassignment/autotagsengine.cpp:205
 #, kde-format
 msgid "Item scanned for objects: %1\n"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:249
+#: core/libs/tags/autoassignment/autotagsengine.cpp:233
 #, kde-format
 msgid "Object Scanning: %1\n"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:256
+#: core/libs/tags/autoassignment/autotagsengine.cpp:240
 #, kde-format
 msgid "Found %1 object. Tag: %2"
 msgstr ""
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:260
+#: core/libs/tags/autoassignment/autotagsengine.cpp:244
 #, kde-format
 msgid "Found %1 objects. Tags: %2"
 msgstr ""
@@ -37425,45 +37491,45 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:143
+#: core/libs/tags/manager/tagsmanager_io.cpp:171
 #, kde-format
 msgid "Select a base tag from which the tags should be exported."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:153
+#: core/libs/tags/manager/tagsmanager_io.cpp:181
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:161
+#: core/libs/tags/manager/tagsmanager_io.cpp:189
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:162
-#: core/libs/tags/manager/tagsmanager_io.cpp:280
+#: core/libs/tags/manager/tagsmanager_io.cpp:190
+#: core/libs/tags/manager/tagsmanager_io.cpp:308
 #, kde-format
 msgid "Text File (*.txt)"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:260
+#: core/libs/tags/manager/tagsmanager_io.cpp:288
 #, kde-format
 msgid "Select a tag into which the tags should be imported."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:270
+#: core/libs/tags/manager/tagsmanager_io.cpp:298
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:279
+#: core/libs/tags/manager/tagsmanager_io.cpp:307
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:378
+#: core/libs/tags/manager/tagsmanager_io.cpp:406
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -49385,97 +49451,97 @@ msgstr ""
 msgid "This shows all found duplicate items."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:119
 #, kde-format
 msgctxt "@info"
 msgid "Reference Image Selection Method"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:125
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:129
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:128
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected Album as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected Album as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:135
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:134
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:137
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:142
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:141
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:144
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Reference Album:"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
 #, kde-format
 msgctxt "@title:tab"
 msgid "Reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
 #, kde-format
 msgctxt "@label"
 msgid "Restrict Search to:"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:178
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:182
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:181
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:191
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:190
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -49489,37 +49555,37 @@ msgid ""
 "\"Tags but not albums\": images must be in the selected tags but not albums."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:213
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:233
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:232
 #, kde-format
 msgctxt "@label"
 msgid "Limit Search to:"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:237
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:236
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:238
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:237
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Reference Album only"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:238
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference Album"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:240
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -49528,37 +49594,37 @@ msgid ""
 "of reference image, or to exclude the Album of reference image of the search."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:269
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:268
 #, kde-format
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:271
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:288
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:287
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:290
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:293
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:292
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:295
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -54440,7 +54506,7 @@ msgstr ""
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:373
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:472
-#: core/utilities/setup/setupicc.cpp:713
+#: core/utilities/setup/setupicc.cpp:717
 #, kde-format
 msgid "No Profile Available"
 msgstr ""
@@ -54488,7 +54554,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:514
-#: core/utilities/setup/setupicc.cpp:715
+#: core/utilities/setup/setupicc.cpp:719
 #, kde-format
 msgid "No Input Profile Available"
 msgstr ""
@@ -54540,7 +54606,7 @@ msgid "Profile of the output device to simulate:"
 msgstr ""
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
-#: core/utilities/setup/setupicc.cpp:388
+#: core/utilities/setup/setupicc.cpp:392
 #, kde-format
 msgid ""
 "<p>Select the profile for your output device (usually, your printer). This "
@@ -54571,14 +54637,14 @@ msgid "Highlighting color:"
 msgstr ""
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:825
+#: core/utilities/setup/setupicc.cpp:829
 #, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
 msgstr ""
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
-#: core/utilities/setup/setupicc.cpp:825
+#: core/utilities/setup/setupicc.cpp:829
 #, kde-format
 msgid "No profile is selected."
 msgstr ""
@@ -55394,7 +55460,7 @@ msgstr ""
 msgid "After"
 msgstr ""
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:74
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:76
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
@@ -60758,12 +60824,12 @@ msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:623
+#: core/utilities/setup/downloader/filesdownloader.cpp:626
 #, kde-format
 msgid "All files for the selected features were found."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:651
+#: core/utilities/setup/downloader/filesdownloader.cpp:654
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
 msgstr ""
@@ -63017,22 +63083,26 @@ msgstr ""
 
 #: core/utilities/setup/setupicc.cpp:323
 #, kde-format
-msgid "<p>Select the color profile for your monitor here.</p>"
+msgid ""
+"<p>If your desktop do not provide a color profile for your screen, select "
+"here the default one. If no profile is set, sRGB will be used as fail-back. "
+"In all cases, the color management workflow will try to get in first the "
+"profile set for your monitor in your the desktop</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:327
+#: core/utilities/setup/setupicc.cpp:331
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
 "selected monitor profile.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:331
+#: core/utilities/setup/setupicc.cpp:335
 #, kde-format
 msgid "Use color managed view in editor"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:332
+#: core/utilities/setup/setupicc.cpp:336
 #, kde-format
 msgid ""
 "<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
@@ -63042,22 +63112,22 @@ msgid ""
 "depending on the speed of your computer.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:339
+#: core/utilities/setup/setupicc.cpp:343
 #, kde-format
 msgid "Use color managed view for previews and thumbnails"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:355
+#: core/utilities/setup/setupicc.cpp:359
 #, kde-format
 msgid "Camera and Scanner"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:360
+#: core/utilities/setup/setupicc.cpp:364
 #, kde-format
 msgid "Default input color profile:"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:362
+#: core/utilities/setup/setupicc.cpp:366
 #, kde-format
 msgid ""
 "<p>This is the default color profile for your input device (that is your "
@@ -63066,43 +63136,43 @@ msgid ""
 "behavior above refer to this profile.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:369
+#: core/utilities/setup/setupicc.cpp:373
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
 "selected input profile.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:380
+#: core/utilities/setup/setupicc.cpp:384
 #, kde-format
 msgid "Printing and Proofing"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:385
+#: core/utilities/setup/setupicc.cpp:389
 #, kde-format
 msgid "Output device profile:"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:394
+#: core/utilities/setup/setupicc.cpp:398
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
 "selected proofing profile.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:405
+#: core/utilities/setup/setupicc.cpp:409
 #, kde-format
 msgid "Color Profiles Repository"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:410
+#: core/utilities/setup/setupicc.cpp:414
 #, kde-format
 msgid ""
 "digiKam looks for ICC profiles in a number of <a href='default'>default "
 "locations</a>. You can specify an additional folder:"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:418
+#: core/utilities/setup/setupicc.cpp:422
 #, kde-format
 msgid ""
 "<p>digiKam searches ICC profiles in default system folders and ships itself "
@@ -63110,12 +63180,12 @@ msgid ""
 "directory set here.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:441
+#: core/utilities/setup/setupicc.cpp:445
 #, kde-format
 msgid "Use black point compensation"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:442
+#: core/utilities/setup/setupicc.cpp:446
 #, kde-format
 msgid ""
 "<p><b>Black Point Compensation</b> is a way to make adjustments between the "
@@ -63123,56 +63193,56 @@ msgid ""
 "digital devices.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:448
+#: core/utilities/setup/setupicc.cpp:452
 #, kde-format
 msgid "Rendering Intents:"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:463
+#: core/utilities/setup/setupicc.cpp:467
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Behavior"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:464
+#: core/utilities/setup/setupicc.cpp:468
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Profiles"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:465
+#: core/utilities/setup/setupicc.cpp:469
 #, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Advanced"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:666
+#: core/utilities/setup/setupicc.cpp:670
 #, kde-format
 msgid "Monitor Profile From System Settings"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:698
+#: core/utilities/setup/setupicc.cpp:702
 #, kde-format
 msgid "No ICC profiles files found."
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:714
+#: core/utilities/setup/setupicc.cpp:718
 #, kde-format
 msgid "No Display Profile Available"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:716
+#: core/utilities/setup/setupicc.cpp:720
 #, kde-format
 msgid "No Output Profile Available"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:850
+#: core/utilities/setup/setupicc.cpp:854
 #, kde-format
 msgctxt "none of the paths"
 msgid "none"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:859
+#: core/utilities/setup/setupicc.cpp:863
 #, kde-format
 msgid ""
 "On Windows, the default search paths include <ul><li>%1/Windows/System32/"
@@ -63181,7 +63251,7 @@ msgid ""
 "scanned:<ul><li>%3</li></ul>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:875
+#: core/utilities/setup/setupicc.cpp:879
 #, kde-format
 msgid ""
 "On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
@@ -63192,7 +63262,7 @@ msgid ""
 "exist and are scanned:<ul><li>%2</li></ul>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:894
+#: core/utilities/setup/setupicc.cpp:898
 #, kde-format
 msgid ""
 "On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
