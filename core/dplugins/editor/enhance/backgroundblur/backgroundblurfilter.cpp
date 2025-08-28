@@ -36,8 +36,8 @@ public:
 
 public:
 
-    int                   radius         = 3;
-    int                   transition     = 0;
+    int                   radius     = 3;
+    int                   transition = 0;
     QRect                 selection;
 };
 
@@ -59,17 +59,18 @@ BackgroundBlurFilter::BackgroundBlurFilter(DImg* const orgImage,
     d->selection  = selection;
     d->radius     = radius;
     d->transition = transition;
+
     initFilter();
 }
 
 BackgroundBlurFilter::BackgroundBlurFilter(DImgThreadedFilter* const parentFilter,
-                       const DImg& orgImage,
-                       const DImg& destImage,
-                       const QRect& selection,
-                       int radius,
-                       int transition,
-                       int progressBegin,
-                       int progressEnd)
+                                           const DImg& orgImage,
+                                           const DImg& destImage,
+                                           const QRect& selection,
+                                           int radius,
+                                           int transition,
+                                           int progressBegin,
+                                           int progressEnd)
     : DImgThreadedFilter(parentFilter,
                          orgImage,
                          destImage,
@@ -81,6 +82,7 @@ BackgroundBlurFilter::BackgroundBlurFilter(DImgThreadedFilter* const parentFilte
     d->selection  = selection;
     d->radius     = radius;
     d->transition = transition;
+
     this->filterImage();
 }
 
@@ -198,7 +200,7 @@ void BackgroundBlurFilter::filterImage()
 
                 // NOTE: if alpha is near of 1, the blur effect is intensive.
 
-                output.at<cv::Vec3b>(y, x) = alpha       * blurred.at<cv::Vec3b>(y, x) +
+                output.at<cv::Vec3b>(y, x) = (alpha / 2.0) * blurred.at<cv::Vec3b>(y, x) +
                                              (1 - alpha) * inputBGR.at<cv::Vec3b>(y, x);
             }
         }

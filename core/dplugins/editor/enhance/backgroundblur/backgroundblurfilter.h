@@ -54,7 +54,7 @@ public:
 
     static QString          FilterIdentifier()
     {
-        return QLatin1String("digikam:BackgroundBackgroundBlurFilter");
+        return QLatin1String("digikam:BackgroundBlurFilter");
     }
 
     static QString          DisplayableName();
