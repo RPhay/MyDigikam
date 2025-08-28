@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 02:07+0000\n"
-"PO-Revision-Date: 2025-08-23 17:49+0300\n"
+"POT-Creation-Date: 2025-08-28 02:10+0000\n"
+"PO-Revision-Date: 2025-08-27 09:20+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -8616,30 +8616,24 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Vinyet Düzeltmesi…"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:220
-#, fuzzy, kde-format
-#| msgid "Background color: "
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:96
+#, kde-format
 msgid "Background Blur Filter"
-msgstr "Arka plan rengi: "
+msgstr "Arka Plan Bulanıklığı Süzgeci"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
-#, fuzzy, kde-format
-#| msgid ""
-#| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
-#| "matrix radius that determines how much to blur the image."
+#, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr ""
-"0 pürüzsüzlüğünün hiçbir etkisi yoktur; 1 ve üzeri, görselin ne kadar "
-"bulanıklaştırılacağını belirleyen Gauss bulanıklık matrisi yarıçapını "
-"belirler."
+"Öznenin çevresindeki arka planın ne kadar bulanıklaştırılacağını belirleyen "
+"matris yarıçapını belirlemek için bu değeri ayarlayın."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
-#, fuzzy, kde-format
-#| msgid "Progress Information"
+#, kde-format
 msgid "Progressive Transition:"
-msgstr "İlerleme Bilgisi"
+msgstr "İlerlemeli geçiş:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
 #, kde-format
@@ -8647,55 +8641,51 @@ msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
+"Öznenin yakınından uzağına doğru değişken bir bulanıklık uygulamak için bu "
+"değeri ayarlayın. Bu, bir mercekten olan alan derinliğini benzetmeye olanak "
+"tanır."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:196
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgid "Background Blur"
-msgstr "Arka plan rengi:"
+msgstr "Arka plan bulanıklığı"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgctxt "@title"
 msgid "Background Blur"
-msgstr "Arka plan rengi:"
+msgstr "Arka Plan Bulanıklığı"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to blur an image"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to blur the background of an image"
-msgstr "Bir görseli bulanıklaştırmak için bir araç"
+msgstr "Görselin arka planını bulanıklaştırmak için bir araç"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "This Image Editor tool can adjust the color curves from image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image."
 msgstr ""
-"Bu görsel düzenleyicisi aracı, görseldeki renk eğrilerini ayarlayabilir."
+"Bu görsel düzenleyicisi aracı, görseldeki bir öznenin arka planını "
+"bulanıklaştırabilir."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgctxt "@action"
 msgid "Background Blur..."
-msgstr "Arka plan rengi:"
+msgstr "Arka Plan Bulanıklığı…"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
-#, fuzzy, kde-format
-#| msgid "Background color: "
+#, kde-format
 msgid "Background Blur Tool"
-msgstr "Arka plan rengi: "
+msgstr "Arka Plan Bulanıklığı Aracı"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
 #, kde-format
 msgid "You must select before a rectangular area including the subject..."
-msgstr ""
+msgstr "Öncesinde özneyi içeren bir dörtgen alan seçmelisiniz…"
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format

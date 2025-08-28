@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 02:07+0000\n"
-"PO-Revision-Date: 2025-08-25 11:57-0300\n"
+"POT-Creation-Date: 2025-08-28 02:10+0000\n"
+"PO-Revision-Date: 2025-08-27 11:08-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -8656,30 +8656,24 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Correção de vinheta..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:220
-#, fuzzy, kde-format
-#| msgid "Background color: "
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:96
+#, kde-format
 msgid "Background Blur Filter"
-msgstr "Cor do plano de fundo: "
+msgstr "Filtro de desfoque de plano de fundo"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
-#, fuzzy, kde-format
-#| msgid ""
-#| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
-#| "matrix radius that determines how much to blur the image."
+#, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr ""
-"Uma suavidade igual a 0 não faz efeito, enquanto 1 ou maior determinam o "
-"raio da matriz do borrão Gaussiano que determina quanto a imagem deverá ser "
-"borrada."
+"Defina este valor para determinar o raio da matriz que determina o quanto o "
+"fundo ao redor do objeto deve ser desfocado."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
-#, fuzzy, kde-format
-#| msgid "Progress Information"
+#, kde-format
 msgid "Progressive Transition:"
-msgstr "Informações do progresso"
+msgstr "Transição progressiva:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
 #, kde-format
@@ -8687,56 +8681,50 @@ msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
+"Defina este valor para aplicar um desfoque variável de perto a longe do "
+"objeto. Isso permite simular a profundidade de campo de uma lente."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:196
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgid "Background Blur"
-msgstr "Cor do plano de fundo:"
+msgstr "Desfoque do plano de fundo"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgctxt "@title"
 msgid "Background Blur"
-msgstr "Cor do plano de fundo:"
+msgstr "Desfoque do plano de fundo"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to blur an image"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to blur the background of an image"
-msgstr "Uma ferramenta para borrar uma imagem"
+msgstr "Uma ferramenta para desfocar o plano de fundo de uma imagem"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "This Image Editor tool can adjust the color curves from image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image."
 msgstr ""
-"Esta ferramenta de edição de imagens pode ajustar as curvas de cores da "
+"Esta ferramenta do editor de imagens pode desfocar o fundo do assunto de uma "
 "imagem."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgctxt "@action"
 msgid "Background Blur..."
-msgstr "Cor do plano de fundo:"
+msgstr "Desfoque do plano de fundo..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
-#, fuzzy, kde-format
-#| msgid "Background color: "
+#, kde-format
 msgid "Background Blur Tool"
-msgstr "Cor do plano de fundo: "
+msgstr "Ferramenta de desfoque do plano de fundo"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
 #, kde-format
 msgid "You must select before a rectangular area including the subject..."
-msgstr ""
+msgstr "Você deve selecionar antes uma área retangular incluindo o assunto..."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format

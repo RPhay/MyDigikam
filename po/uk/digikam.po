@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 02:07+0000\n"
-"PO-Revision-Date: 2025-08-26 09:45+0300\n"
+"POT-Creation-Date: 2025-08-28 02:10+0000\n"
+"PO-Revision-Date: 2025-08-27 13:43+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -8743,24 +8743,19 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Виправлення віньєтування…"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:220
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:96
 #, kde-format
 msgid "Background Blur Filter"
 msgstr "Фільтр розмивання тла"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
-#, fuzzy, kde-format
-#| msgid ""
-#| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
-#| "matrix radius that determines how much to blur the background of the "
-#| "subject."
+#, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr ""
-"Значення плавності 0 не матиме наслідків, 1 або більше визначає радіус "
-"матриці Гаусового розмивання, що визначає наскільки значним є розмивання тла "
-"об'єкта."
+"Встановіть це значення для визначення радіуса матриці Гаусового розмивання, "
+"що визначає наскільки значним є розмивання тла навколо об'єкта."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #, kde-format
@@ -8768,18 +8763,14 @@ msgid "Progressive Transition:"
 msgstr "Прогресивний перехід:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
-#, fuzzy, kde-format
-#| msgid ""
-#| "A progressive blur transitions of 0 has no effect, 1 and above add a "
-#| "variable blur near to far of the subject.This allow to simulate a depth "
-#| "of field from a lens."
+#, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
-"Нульові переходи у прогресивному розмиванні не змінюватимуть зображення. "
-"Значення 1 та більші додаватимуть змінне розмивання від близьких до далеких "
-"від об'єкта ділянок. Це надає змогу імітувати глибину поля від об'єктива."
+"Встановіть це значення для застосування змінного розмивання від близьких до "
+"далеких від об'єкта ділянок. Це надає змогу імітувати глибину поля від "
+"об'єктива."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:196
 #, kde-format

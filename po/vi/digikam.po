@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 02:07+0000\n"
+"POT-Creation-Date: 2025-08-28 02:10+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -8326,7 +8326,7 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Sửa chữa sự làm mờ nét ảnh"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:220
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:96
 #, fuzzy, kde-format
 msgid "Background Blur Filter"
 msgstr "Màu &nền:"

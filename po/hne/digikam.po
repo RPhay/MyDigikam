@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 02:07+0000\n"
+"POT-Creation-Date: 2025-08-28 02:10+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -8328,7 +8328,7 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "विगनेटिंग संसोधन..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:220
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:96
 #, fuzzy, kde-format
 msgid "Background Blur Filter"
 msgstr "पिछोत अंगना के रंगः (&B)"

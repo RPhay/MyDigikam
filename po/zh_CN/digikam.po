@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 02:07+0000\n"
+"POT-Creation-Date: 2025-08-28 02:10+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -8247,27 +8247,22 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "暗角调整..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:220
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:96
 #, kde-format
 msgid "Background Blur Filter"
-msgstr ""
+msgstr "背景模糊过滤器"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
-#, fuzzy, kde-format
-#| msgid ""
-#| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
-#| "matrix radius that determines how much to blur the image."
+#, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr ""
-"平滑程度为 0 时不起效果。平滑程度为 1 及以上时该数值用于控制高斯模糊的矩阵半"
-"径，数值越大，模糊效果越强烈。"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #, kde-format
 msgid "Progressive Transition:"
-msgstr ""
+msgstr "渐进式过渡："
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
 #, kde-format
@@ -8279,42 +8274,42 @@ msgstr ""
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:196
 #, kde-format
 msgid "Background Blur"
-msgstr ""
+msgstr "背景模糊"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:43
 #, kde-format
 msgctxt "@title"
 msgid "Background Blur"
-msgstr ""
+msgstr "背景模糊"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "A tool to blur the background of an image"
-msgstr ""
+msgstr "模糊图像背景"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
 #, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image."
-msgstr ""
+msgstr "用于模糊图像中主体周围背景的图像编辑器工具。"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Background Blur..."
-msgstr ""
+msgstr "背景模糊..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
 #, kde-format
 msgid "Background Blur Tool"
-msgstr ""
+msgstr "背景模糊工具"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
 #, kde-format
 msgid "You must select before a rectangular area including the subject..."
-msgstr ""
+msgstr "您必须先选择一个包含主体的矩形区域。"
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format

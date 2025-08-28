@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 02:07+0000\n"
+"POT-Creation-Date: 2025-08-28 02:10+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -8351,7 +8351,7 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:220
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:96
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur Filter"

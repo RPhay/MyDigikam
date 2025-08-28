@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 02:07+0000\n"
-"PO-Revision-Date: 2025-08-27 00:02+0100\n"
+"POT-Creation-Date: 2025-08-28 02:10+0000\n"
+"PO-Revision-Date: 2025-08-27 12:37+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -8686,24 +8686,19 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Corrección del viñeteado…"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:220
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:96
 #, kde-format
 msgid "Background Blur Filter"
 msgstr "Filtro de desenfoque del fondo"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
-#, fuzzy, kde-format
-#| msgid ""
-#| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
-#| "matrix radius that determines how much to blur the background of the "
-#| "subject."
+#, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr ""
-"Una suavidad igual a 0 no tiene efecto, mientras que valores iguales o "
-"mayores a 1 determinan el radio de la matriz de desenfoque gausiano que "
-"determina cuánto se desenfoca el fondo del sujeto."
+"Use este valor para indicar el radio de la matriz que determina la cantidad "
+"de desenfoque del fondo que hay alrededor del sujeto."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #, kde-format
@@ -8711,18 +8706,13 @@ msgid "Progressive Transition:"
 msgstr "Transición progresiva:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
-#, fuzzy, kde-format
-#| msgid ""
-#| "A progressive blur transitions of 0 has no effect, 1 and above add a "
-#| "variable blur near to far of the subject.This allow to simulate a depth "
-#| "of field from a lens."
+#, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
-"Una transición de desenfoque progresiva de 0 no tiene efecto, mientras que "
-"valores iguales o superiores a 1 añaden un desenfoque variable de cerca a "
-"lejos del sujeto. Esto permite simular la profundidad de campo de una lente."
+"Use este valor para aplicar un desenfoque variable de cerca a lejos del "
+"sujeto. Esto permite simular la profundidad de campo de una lente."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:196
 #, kde-format
