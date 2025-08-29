@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-28 02:10+0000\n"
+"POT-Creation-Date: 2025-08-29 02:00+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -8255,7 +8255,7 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:96
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:98
 #, fuzzy, kde-format
 msgid "Background Blur Filter"
 msgstr "पार्श्वभूमी रंग :"

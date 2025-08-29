@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-28 02:10+0000\n"
+"POT-Creation-Date: 2025-08-29 02:00+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -8247,7 +8247,7 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "暗角调整..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:96
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:98
 #, kde-format
 msgid "Background Blur Filter"
 msgstr "背景模糊过滤器"
@@ -8257,7 +8257,7 @@ msgstr "背景模糊过滤器"
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
-msgstr ""
+msgstr "此值控制主体周围背景的模糊程度的矩阵半径。"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #, kde-format
@@ -8269,7 +8269,7 @@ msgstr "渐进式过渡："
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
-msgstr ""
+msgstr "此值控制主体周围由近到远的可变模糊，可用于模拟镜头的景深效果。"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:196
 #, kde-format

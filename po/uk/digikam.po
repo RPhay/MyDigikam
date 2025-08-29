@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-28 02:10+0000\n"
+"POT-Creation-Date: 2025-08-29 02:00+0000\n"
 "PO-Revision-Date: 2025-08-27 13:43+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -8743,7 +8743,7 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Виправлення віньєтування…"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:96
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:98
 #, kde-format
 msgid "Background Blur Filter"
 msgstr "Фільтр розмивання тла"

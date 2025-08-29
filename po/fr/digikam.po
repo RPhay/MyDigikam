@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-28 02:10+0000\n"
-"PO-Revision-Date: 2025-08-23 16:49+0200\n"
+"POT-Creation-Date: 2025-08-29 02:00+0000\n"
+"PO-Revision-Date: 2025-08-27 08:07+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -8806,11 +8806,10 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Correction du vignettage…"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:96
-#, fuzzy, kde-format
-#| msgid "Background color: "
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:98
+#, kde-format
 msgid "Background Blur Filter"
-msgstr "Couleur de fond : "
+msgstr "Filtrage du floutage de l'arrière-plan"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
 #, fuzzy, kde-format
@@ -8826,10 +8825,9 @@ msgstr ""
 "flou à appliquer à l'image."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
-#, fuzzy, kde-format
-#| msgid "Progress Information"
+#, kde-format
 msgid "Progressive Transition:"
-msgstr "Informations de progression"
+msgstr "Transition progressive :"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
 #, kde-format
@@ -8839,53 +8837,48 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:196
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgid "Background Blur"
-msgstr "Couleur de fond :"
+msgstr "Floutage de l'arrière-plan"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgctxt "@title"
 msgid "Background Blur"
-msgstr "Couleur de fond :"
+msgstr "Floutage de l'arrière-plan"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to blur an image"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to blur the background of an image"
-msgstr "Un outil pour flouter une image"
+msgstr "Un outil pour flouter  l'arrière-plan d'une image"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "This Image Editor tool can adjust the color curves from image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image."
 msgstr ""
-"Cet outil d'édition d'image peut ajuster les courbes de couleurs d'une image."
+"Cet outil d'édition d'image peut flouter l'arrière-plan d'un sujet d'une "
+"image."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgctxt "@action"
 msgid "Background Blur..."
-msgstr "Couleur de fond :"
+msgstr "Floutage de l'arrière-plan..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
-#, fuzzy, kde-format
-#| msgid "Background color: "
+#, kde-format
 msgid "Background Blur Tool"
-msgstr "Couleur de fond : "
+msgstr "Outil de floutage de l'arrière-plan"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
 #, kde-format
 msgid "You must select before a rectangular area including the subject..."
 msgstr ""
+"Vous devez faire une sélection avant de le faire pour une zone rectangulaire "
+"incluant le sujet..."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
