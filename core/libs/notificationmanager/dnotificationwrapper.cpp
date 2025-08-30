@@ -79,7 +79,6 @@ void DNotificationWrapper(const QString& eventId, const QString& message,
                           const QPixmap& pixmap)
 {
     Q_UNUSED(parent);
-    Q_UNUSED(eventId);
     Q_UNUSED(windowTitle);
 
     QPixmap logoPixmap = pixmap;
@@ -96,7 +95,7 @@ void DNotificationWrapper(const QString& eventId, const QString& message,
         }
     }
 
-#if defined HAVE_KNOTIFICATIONS && !defined Q_OS_WIN
+#if defined HAVE_KNOTIFICATIONS
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Event is dispatched using KDE desktop notifier";
 
