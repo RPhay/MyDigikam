@@ -44,7 +44,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-29 02:00+0000\n"
-"PO-Revision-Date: 2025-08-26 20:53+0200\n"
+"PO-Revision-Date: 2025-08-29 14:35+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -8600,36 +8600,27 @@ msgid "Background Blur Filter"
 msgstr "Oskärpefilter för bakgrund"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
-#, fuzzy, kde-format
-#| msgid ""
-#| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
-#| "matrix radius that determines how much to blur the background of the "
-#| "subject."
+#, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr ""
-"Jämnheten 0 ger ingen effekt, 1 och större avgör den Gaussiska oskärpans "
-"matrisradie, som avgör hur mycket oskarpare motivets bakgrund blir."
+"Ställ in värdet för att bestämma matrisradien som avgör hur oskarp "
+"bakgrunden omkring motivet ska göras."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #, kde-format
 msgid "Progressive Transition:"
-msgstr "Progressiva övergång:"
+msgstr "Progressiv övergång:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
-#, fuzzy, kde-format
-#| msgid ""
-#| "A progressive blur transitions of 0 has no effect, 1 and above add a "
-#| "variable blur near to far of the subject.This allow to simulate a depth "
-#| "of field from a lens."
+#, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
-"Progressiva övergångar av oskärpa med värdet 0 har ingen effekt, 1 och högre "
-"ger en variabel oskärpa nära och långt bort från motivet. Det gör det "
-"möjligt att simulera ett skärpedjup från ett objektiv."
+"Ställ in värdet för att använda en variabel oskärpa nära och långt bort från "
+"motivet. Det gör det möjligt att simulera skärpedjupet från ett objektiv."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:196
 #, kde-format
@@ -18459,7 +18450,7 @@ msgstr "Gles text. Finn så mycket text som möjligt utan bestämd ordning."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text with OSD."
-msgstr "Gles text med skärmvisning."
+msgstr "Gles text med OSD."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:78
 #, kde-format
