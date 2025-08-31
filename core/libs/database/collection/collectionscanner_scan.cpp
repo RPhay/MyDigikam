@@ -734,6 +734,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
     const QList<ItemScanInfo>& scanInfos = CoreDbAccess().db()->getItemScanInfos(albumID);
     MetaEngineSettingsContainer settings = MetaEngineSettings::instance()->settings();
     QHash<QString, int> fileNameIndexHash;
+    QHash<QString, QFileInfo> nameInfos;
     QSet<qlonglong> itemIdSet;
 
     // create a QHash filename -> index in list
@@ -748,6 +749,11 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
                                                   QDir::Files   |
                                                   QDir::NoDotAndDotDot,
                                                   QDir::Name | QDir::DirsLast);
+
+    for (const QFileInfo& info : std::as_const(list))
+    {
+        nameInfos.insert(info.fileName(), info);
+    }
 
     int counter          = 0;
     bool updateAlbumDate = false;
@@ -804,15 +810,10 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
                         sidecarName = info.completeBaseName() + xmpExt;
                     }
 
-                    for (int i = 0 ; i < list.size() ; ++i)
+                    if (nameInfos.contains(sidecarName))
                     {
-                        if (list.at(i).fileName() == sidecarName)
-                        {
-                            sinfo      = &list.at(i);
-                            hasSidecar = true;
-
-                            break;
-                        }
+                        sinfo      = &nameInfos[sidecarName];
+                        hasSidecar = true;
                     }
                 }
 
