@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-29 02:00+0000\n"
-"PO-Revision-Date: 2025-08-27 11:08-0300\n"
+"PO-Revision-Date: 2025-08-30 16:17-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -1734,7 +1734,7 @@ msgstr "Atribuir etiqueta"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Views"
-msgstr "Exibições"
+msgstr "Vistas"
 
 #: core/app/main/digikamapp_setup.cpp:334
 #, kde-format
@@ -1747,7 +1747,7 @@ msgstr "Miniaturas"
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
-msgstr "Visualizar"
+msgstr "Visualização"
 
 #: core/app/main/digikamapp_setup.cpp:351
 #, kde-format
@@ -1880,7 +1880,7 @@ msgstr "Reler os metadados dos arquivos selecionados"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for Faces"
-msgstr "Procurar por rostos"
+msgstr "Procurar rostos"
 
 #: core/app/main/digikamapp_setup.cpp:468
 #, kde-format
@@ -1898,7 +1898,7 @@ msgstr "Remover todos os rostos"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Similar..."
-msgstr "Encontrar semelhantes..."
+msgstr "Encontrar semelhante..."
 
 #: core/app/main/digikamapp_setup.cpp:481
 #, kde-format
@@ -1948,7 +1948,7 @@ msgstr "Or&denar álbuns"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
-msgstr "Ordenar os álbuns na exibição em árvore."
+msgstr "Ordenar os álbuns na vista em árvore."
 
 #: core/app/main/digikamapp_setup.cpp:559
 #, kde-format
@@ -2020,8 +2020,7 @@ msgctxt "@info: setup"
 msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
 msgstr ""
-"O valor pelo qual são ordenadas as imagens de um álbum na exibição de "
-"miniaturas"
+"O valor pelo qual são ordenadas as imagens de um álbum na vista emminiaturas"
 
 #: core/app/main/digikamapp_setup.cpp:594
 #, kde-format
@@ -2131,8 +2130,7 @@ msgstr "Separar os itens"
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
-msgstr ""
-"As categorias das imagens na exibição de miniaturas que são apresentadas"
+msgstr "As categorias das imagens na vista em miniaturas que são apresentadas"
 
 #: core/app/main/digikamapp_setup.cpp:673
 #, kde-format
@@ -2240,7 +2238,7 @@ msgstr "Pesquisa avançada..."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
-msgstr "Localizar duplicados..."
+msgstr "Localizar duplicatas..."
 
 #: core/app/main/digikamapp_setup.cpp:849
 #, kde-format
@@ -2922,7 +2920,7 @@ msgstr "Legendas"
 #, kde-format
 msgctxt "@label short translated text about the scan for faces"
 msgid "Scan for Faces"
-msgstr "Procurar por rostos"
+msgstr "Procurar rostos"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, kde-format
@@ -11950,7 +11948,7 @@ msgstr "Alvo local ou da web usado pelo Google Earth"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:70
 #, kde-format
 msgid "Web target used by GoogleMaps"
-msgstr "Alvo da Web usado pelo Google Maps"
+msgstr "Alvo da web usado pelo Google Maps"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:71
 #, kde-format
@@ -12224,7 +12222,7 @@ msgstr "Largura da trilha:"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:202
 #, kde-format
 msgid "Track Color:"
-msgstr "Cores trilha:"
+msgstr "Cor da trilha:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:206
 #, kde-format
@@ -17643,7 +17641,7 @@ msgstr "Antigo Autor e Mantenedor"
 #, kde-format
 msgctxt "@action"
 msgid "Create Html gallery..."
-msgstr "Criar Galeria HTML..."
+msgstr "Criar galeria HTML..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:98
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:99
@@ -17861,7 +17859,7 @@ msgstr "Autor: %1<br><br>"
 #, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
-msgstr "Criar Galeria em HTML"
+msgstr "Criar galeria HTML"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
 #, kde-format
@@ -17953,7 +17951,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Create jAlbum Gallery..."
-msgstr "Criar Galeria do jAlbum..."
+msgstr "Criar galeria do jAlbum..."
 
 #: core/dplugins/generic/tools/jalbum/tools/jalbumjar.cpp:38
 #: core/dplugins/generic/tools/jalbum/tools/jalbumjava.cpp:31
@@ -27752,12 +27750,12 @@ msgstr "Recolher todos os álbuns"
 #: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
-msgstr "Localizar duplicados..."
+msgstr "Localizar duplicatas..."
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #, kde-format
 msgid "Scan for Faces"
-msgstr "Procurar por rostos"
+msgstr "Procurar rostos"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:218
 #, kde-format
@@ -27773,7 +27771,7 @@ msgstr "Atualizar"
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
-msgstr "Procurar por rostos"
+msgstr "Procurar rostos"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, kde-format
@@ -35004,7 +35002,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
-msgstr "Procurar em"
+msgstr "Pesquisar em"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:102
 #, kde-format
@@ -35715,13 +35713,13 @@ msgstr "Modo de análise:"
 #, kde-format
 msgctxt "@item: all items to scan with image quality scan"
 msgid "All"
-msgstr "Todos"
+msgstr "Tudo"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:85
 #, kde-format
 msgctxt "@item: image quality scan only non assigned items"
 msgid "Non-Assigned Only"
-msgstr "Somente os não atribuídos"
+msgstr "Não atribuídos somente"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:87
 #, kde-format
@@ -35738,7 +35736,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Low as Rejected"
-msgstr "Baixa como Rejeitada"
+msgstr "Baixa como rejeitada"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:96
 #, kde-format
@@ -35755,7 +35753,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "Medium as Pending"
-msgstr "Média como Pendente"
+msgstr "Média como pendente"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:111
 #, kde-format
@@ -35772,7 +35770,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check with a short translated text"
 msgid "High as Accepted"
-msgstr "Alta como Aceita"
+msgstr "Alta como aceita"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:126
 #, kde-format
@@ -40027,7 +40025,7 @@ msgstr "Modo de análise:"
 #, kde-format
 msgctxt "@item: all items to scan with autotags"
 msgid "All"
-msgstr "Todos"
+msgstr "Tudo"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:111
 #, kde-format
@@ -43638,7 +43636,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:219
 #, kde-format
 msgid "Model/View Port of Image Editor Canvas"
-msgstr "Migração do modelo/exibição do editor de imagem"
+msgstr "Migração do modelo/vista da tela do editor de imagem"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:225
 #: core/utilities/maintenance/main/maintenancedlg.cpp:273
@@ -50970,8 +50968,7 @@ msgstr "Hierarquia:"
 #, kde-format
 msgctxt "@info"
 msgid "The favorite entry hierarchy which must be unique in tree-view"
-msgstr ""
-"A hierarquia de entrada favorita que deve ser única na exibição em árvore"
+msgstr "A hierarquia de entrada favorita que deve ser única na vista em árvore"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:144
 #, kde-format
@@ -51061,7 +51058,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Assign favorite item icon to default in tree-view."
-msgstr "Atribui ícone de item favorito ao padrão na exibição em árvore."
+msgstr "Atribui ícone de item favorito ao padrão na vista em árvore."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:212
 #, kde-format
@@ -52753,7 +52750,7 @@ msgid ""
 "view:</p></qt>"
 msgstr ""
 "<qt><p>Indique como deseja abrir as imagens com o botão esquerdo do mouse na "
-"exibição em ícones:</p></qt>"
+"vista em miniaturas:</p></qt>"
 
 #: core/utilities/firstrun/openfilepage.cpp:70
 #, kde-format
@@ -52792,8 +52789,8 @@ msgid ""
 "<qt><p>Set here how images are displayed in preview mode and on the light "
 "table:</p></qt>"
 msgstr ""
-"<qt><p>Indique aqui como deseja mostrar as imagens no modo de exibição e na "
-"mesa de luz:</p></qt>"
+"<qt><p>Indique aqui como deseja mostrar as imagens no modo de visualização e "
+"na mesa de luz:</p></qt>"
 
 #: core/utilities/firstrun/previewpage.cpp:69
 #, kde-format
@@ -52908,8 +52905,8 @@ msgid ""
 "<qt><p>Set here if you want to show contextual tooltips in icon-view and "
 "folder-view:</p></qt>"
 msgstr ""
-"<qt><p>Indique aqui se deseja mostrar as dicas de contexto na exibição em "
-"ícones e em pastas:</p></qt>"
+"<qt><p>Indique aqui se deseja mostrar as dicas de contexto na vista em "
+"miniaturas em ícones e em pastas:</p></qt>"
 
 #: core/utilities/firstrun/tooltipspage.cpp:69
 #, kde-format
@@ -53016,25 +53013,25 @@ msgstr "Mais antiga ou maior"
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected Album as reference"
-msgstr "Selecione um álbum como referência"
+msgstr "Preferir álbum selecionado como referência"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected Album as reference"
-msgstr "Prefira outro álbum diferente do selecionado como referência"
+msgstr "Preferir outro álbum diferente do selecionado como referência"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:134
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
-msgstr "Prefira a data de criação mais recente"
+msgstr "Prefira data de criação mais recente"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:137
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
-msgstr "Prefira a data de modificação mais recente"
+msgstr "Prefira data de modificação mais recente"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:141
 #, kde-format
@@ -53058,7 +53055,7 @@ msgstr "Referência"
 #, kde-format
 msgctxt "@label"
 msgid "Restrict Search to:"
-msgstr "Restrinja a pesquisa a:"
+msgstr "Restringir a pesquisa a:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:178
 #, kde-format
@@ -53082,13 +53079,13 @@ msgstr "Ambos"
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
-msgstr "Álbuns mas não etiquetas"
+msgstr "Álbuns, mas não etiquetas"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:190
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
-msgstr "Etiquetas mas não álbuns"
+msgstr "Etiquetas, mas não álbuns"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:195
 #, kde-format
@@ -53174,7 +53171,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
-msgstr "Localizar os duplicados"
+msgstr "Localizar duplicatas"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:289
 #, kde-format
@@ -53188,7 +53185,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
-msgstr "Remover duplicados"
+msgstr "Remover duplicatas"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:294
 #, kde-format
@@ -53200,7 +53197,7 @@ msgstr "Use este botão para excluir todas as imagens duplicadas."
 #, kde-format
 msgctxt "Find Duplicates Tab"
 msgid "Duplicates"
-msgstr "Duplicados"
+msgstr "Duplicatas"
 
 #: core/utilities/fuzzysearch/fuzzysearchview.cpp:52
 #, kde-format
@@ -53212,7 +53209,7 @@ msgstr "Imagem"
 #, kde-format
 msgctxt "Sketch Search Tab"
 msgid "Sketch"
-msgstr "Desenho"
+msgstr "Esboço"
 
 #: core/utilities/fuzzysearch/fuzzysearchview.cpp:284
 #, kde-format
@@ -53234,7 +53231,7 @@ msgid ""
 "images.</p>"
 msgstr ""
 "<p>Arraste e solte aqui uma imagem<br/>para efetuar uma pesquisa<br>por "
-"itens similares.</p><p>Você também pode usar o menu de<br>contexto quando "
+"itens semelhantes.</p><p>Você também pode usar o menu de<br>contexto quando "
 "estiver navegando<br>pelas suas imagens.</p>"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
@@ -53369,7 +53366,7 @@ msgid ""
 "will displays the best matches in thumbnail view."
 msgstr ""
 "Você pode fazer aqui um desenho simples do que deseja encontrar, e o digiKam "
-"exibe as melhores ocorrências na área de exibição de miniaturas."
+"exibe as melhores ocorrências na área da vista em miniaturas."
 
 #: core/utilities/fuzzysearch/sketchwidget.cpp:631
 #, kde-format
@@ -56142,7 +56139,7 @@ msgstr "Arquivos de cache do Marble"
 #: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:37
 #, kde-format
 msgid "GPSBabel NMEA File Parser"
-msgstr "Processador do arquivo NMEA do GPSBabel"
+msgstr "Processador de arquivo NMEA do GPSBabel"
 
 #: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
 #, kde-format
@@ -56161,7 +56158,7 @@ msgstr "Arquivos GPSBabel"
 #: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:37
 #, kde-format
 msgid "Gpx File Parser"
-msgstr "Processador de arquivos GPX"
+msgstr "Processador de arquivo GPX"
 
 #: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:52
 #, kde-format
@@ -56178,7 +56175,7 @@ msgstr "Dados GPX"
 #: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:37
 #, kde-format
 msgid "GeoJSON File Parser"
-msgstr "Processador de arquivos GeoJSON"
+msgstr "Processador de arquivo GeoJSON"
 
 #: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:52
 #, kde-format
@@ -56195,7 +56192,7 @@ msgstr "GeoJSON"
 #: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:37
 #, kde-format
 msgid "KML File Parser"
-msgstr "Processador de arquivos KML"
+msgstr "Processador de arquivo KML"
 
 #: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:52
 #, kde-format
@@ -56232,7 +56229,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:37
 #, kde-format
 msgid "Osm File Parser"
-msgstr "Processador de arquivos OSM"
+msgstr "Processador de arquivo OSM"
 
 #: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:52
 #, kde-format
@@ -56250,7 +56247,7 @@ msgstr "Dados do OpenStreetMap"
 #: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:37
 #, kde-format
 msgid "Pn2 File Parser"
-msgstr "Processador de arquivos PN2"
+msgstr "Processador de arquivo PN2"
 
 #: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:52
 #, kde-format
@@ -56268,7 +56265,7 @@ msgstr "PNT compactado"
 #: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:37
 #, kde-format
 msgid "Pnt File Parser"
-msgstr "Processador de arquivos PNT"
+msgstr "Processador de arquivo PNT"
 
 #: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:52
 #, kde-format
@@ -56722,7 +56719,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:276
 #, kde-format
 msgid "Map View"
-msgstr "Visualização do mapa"
+msgstr "Vista do mapa"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:300
 #, kde-format
@@ -57362,7 +57359,7 @@ msgstr "Interpolar"
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:201
 #, kde-format
 msgid "Max. time gap (hh:mm:ss):"
-msgstr "Intervalo máximo da hora (hh:mm:ss):"
+msgstr "Intervalo máximo de tempo (hh:mm:ss):"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:194
 #, kde-format
@@ -57848,7 +57845,7 @@ msgstr "Open Street Map"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:233
 #, kde-format
 msgid "Geonames.org place name (non-US)"
-msgstr "Nome do local no Geonames.org (não-EUA)"
+msgstr "Nome do local no Geonames.org (fora dos EUA)"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
 #, kde-format
@@ -57998,12 +57995,12 @@ msgstr "Diminui o tamanho da miniatura no mapa"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:523
 #, kde-format
 msgid "Remove the current region selection"
-msgstr "Remover a seleção atual da região"
+msgstr "Remover a seleção da região atual"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:531
 #, kde-format
 msgid "Select images by drawing a rectangle"
-msgstr "Selecionar imagens ao desenhar um retângulo"
+msgstr "Selecionar imagens desenhando um retângulo"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:536
 #, kde-format
@@ -59912,7 +59909,7 @@ msgstr "Excluir novos"
 #, kde-format
 msgctxt "@title:group"
 msgid "Views"
-msgstr "Exibições"
+msgstr "Vistas"
 
 #: core/utilities/import/main/importui.cpp:378
 #, kde-format
@@ -59942,7 +59939,7 @@ msgstr "Ordenar iten&s"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
-msgstr "O valor pelo qual são ordenados os itens na exibição de miniaturas"
+msgstr "O valor pelo qual são ordenados os itens na vista em miniaturas"
 
 #: core/utilities/import/main/importui.cpp:413
 #, kde-format
@@ -60014,7 +60011,7 @@ msgstr "A&grupar itens"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
-msgstr "As categorias dos itens na exibição de miniaturas que são apresentadas"
+msgstr "As categorias dos itens na vista em miniaturas que são apresentadas"
 
 #: core/utilities/import/main/importui.cpp:467
 #, kde-format
@@ -61209,12 +61206,12 @@ msgstr "Procurar por itens alterados ou não catalogados (mais rápido)"
 #: core/utilities/maintenance/main/maintenancedlg.cpp:122
 #, kde-format
 msgid "Rebuild Thumbnails"
-msgstr "Recriar miniaturas"
+msgstr "Reconstruir miniaturas"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:137
 #, kde-format
 msgid "Rebuild Finger-prints"
-msgstr "Recriar impressões digitais"
+msgstr "Reconstruir impressões digitais"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:150
 #, kde-format
@@ -61224,7 +61221,7 @@ msgstr "Intervalo de semelhança (em porcentagem): "
 #: core/utilities/maintenance/main/maintenancedlg.cpp:170
 #, kde-format
 msgid "Restriction on duplicates:"
-msgstr "Restrição em duplicados:"
+msgstr "Restrição em duplicatas:"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:174
 #, kde-format
@@ -61483,7 +61480,7 @@ msgstr "Localizar os itens duplicados"
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:181
 #, kde-format
 msgid "Finding Duplicates: %1\n"
-msgstr "Localizando duplicados: %1\n"
+msgstr "Localizando duplicatas: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:186
 #, kde-format
@@ -61500,7 +61497,7 @@ msgstr[1] "%1 itens duplicados"
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:218
 #, kde-format
 msgid "Items scanned for duplicates: %1\n"
-msgstr "Itens localizados como duplicados: %1\n"
+msgstr "Itens localizados como duplicatas: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:222
 #, kde-format
@@ -61510,7 +61507,7 @@ msgstr "Item localizado como duplicado: %1\n"
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
 #, kde-format
 msgid "Duplicates found: %1"
-msgstr "Duplicados encontrados: %1"
+msgstr "Duplicatas encontradas: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:231
 #, kde-format
@@ -61530,22 +61527,22 @@ msgstr ""
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
 #, kde-format
 msgid "Scan for faces in album: %1"
-msgstr "Procurar por rostos no álbum: %1"
+msgstr "Procurar rostos no álbum: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:261
 #, kde-format
 msgid "Scan for faces in %1 albums"
-msgstr "Procurar por rostos em %1 álbuns"
+msgstr "Procurar rostos em %1 álbuns"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:268
 #, kde-format
 msgid "Scan for faces in image: %1"
-msgstr "Procurar por rostos na imagem: %1"
+msgstr "Procurar rostos na imagem: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:272
 #, kde-format
 msgid "Scan for faces in %1 images"
-msgstr "Procurar por rostos em %1 imagens"
+msgstr "Procurar rostos em %1 imagens"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:277
 #, kde-format
@@ -61607,7 +61604,7 @@ msgstr "Impressões digitais"
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:158
 #, kde-format
 msgid "Rebuild Fingerprint: %1\n"
-msgstr "Recriar impressões digitais: %1\n"
+msgstr "Reconstruir impressões digitais: %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:159
 #, kde-format
@@ -62195,7 +62192,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Uses all processors"
-msgstr "Usar todos os núcleos do processador"
+msgstr "Usar todos os processadores"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
 #, kde-format
@@ -63701,13 +63698,13 @@ msgstr "Escolha o que deve acontecer ao clicar em uma miniatura."
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Icon View font:"
-msgstr "Fonte na exibição em miniaturas:"
+msgstr "Fonte na vista em miniaturas:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:191
 #, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr ""
-"Selecione aqui a fonte usada para exibir o texto nas exibições em ícones."
+"Selecione aqui a fonte usada para exibir o texto nas vistas em miniaturas."
 
 # Foi necessário reduzir a tradução porque ela deixava a janela com um tamanho desproporcional. (Alvarenga)
 #: core/utilities/setup/album/setupalbumview.cpp:193
@@ -63735,8 +63732,8 @@ msgstr ""
 "miniaturas poderá ser ampliado para 512x512 pixels.\n"
 "Essa opção irá armazenar mais dados no banco de dados de miniaturas e também "
 "mais memória do sistema. O digiKam precisa ser reiniciado para fazer efeito, "
-"sendo que a opção 'Recriar miniaturas' da ferramenta Manutenção precisa ser "
-"processada em todas as coleções."
+"sendo que a opção 'Reconstruir miniaturas' da ferramenta Manutenção precisa "
+"ser processada em todas as coleções."
 
 #: core/utilities/setup/album/setupalbumview.cpp:229
 #, kde-format
@@ -63747,7 +63744,7 @@ msgstr "Miniaturas"
 #: core/utilities/setup/album/setupalbumview.cpp:236
 #, kde-format
 msgid "Tree View icon size:"
-msgstr "Tamanho dos ícones na exibição em árvore:"
+msgstr "Tamanho dos ícones na vista em árvore:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:243
 #, kde-format
@@ -63756,12 +63753,12 @@ msgid ""
 "digiKam's sidebars."
 msgstr ""
 "Escolha a opção adequada para definir o tamanho em pixels dos ícones na "
-"exibição em árvore na barra lateral do digiKam."
+"vista em árvore na barra lateral do digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:246
 #, kde-format
 msgid "People Tree View icon size:"
-msgstr "Tamanho dos ícones na exibição em árvore de pessoas:"
+msgstr "Tamanho dos ícones na vista em árvore de pessoas:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:254
 #, kde-format
@@ -63769,24 +63766,23 @@ msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's people sidebar."
 msgstr ""
-"Defina esta opção para configurar o tamanho em pixels dos ícones da exibição "
-"em árvore na barra lateral de pessoas do digiKam."
+"Defina esta opção para configurar o tamanho em pixels dos ícones da vista em "
+"árvore na barra lateral de pessoas do digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:257
 #, kde-format
 msgid "Tree View font:"
-msgstr "Fonte na exibição em árvore:"
+msgstr "Fonte na vista em árvore:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:258
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
-msgstr ""
-"Selecione aqui a fonte usada para exibir o texto nas exibições em árvore."
+msgstr "Selecione aqui a fonte usada para exibir o texto nas vistas em árvore."
 
 #: core/utilities/setup/album/setupalbumview.cpp:260
 #, kde-format
 msgid "Show a count of items in Tree Views"
-msgstr "Mostrar a quantidade de itens na exibição em árvore"
+msgstr "Mostrar a quantidade de itens na vista em árvore"
 
 #: core/utilities/setup/album/setupalbumview.cpp:261
 #, kde-format
@@ -63801,7 +63797,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
-msgstr "Exibições em árvore"
+msgstr "Vistas em árvore"
 
 #: core/utilities/setup/album/setupalbumview.cpp:281
 #, kde-format
@@ -64495,7 +64491,7 @@ msgstr "Filtros de importação"
 #: core/utilities/setup/camera/setupcamera.cpp:426
 #, kde-format
 msgid "Icon-View Options"
-msgstr "Opções da exibição em miniaturas"
+msgstr "Opções da vista em miniaturas"
 
 #. i18n("Show ima&ge dimensions"), iconViewGroup);
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
@@ -64548,7 +64544,7 @@ msgstr "Inicia o editor de imagem"
 #, kde-format
 msgid "Select here the font used to display text in Icon Views."
 msgstr ""
-"Selecione aqui a fonte usada para exibir o texto nas exibições em ícones."
+"Selecione aqui a fonte usada para exibir o texto nas vista em miniaturas."
 
 #: core/utilities/setup/camera/setupcamera.cpp:493
 #, kde-format
@@ -66343,7 +66339,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Views"
-msgstr "Exibições"
+msgstr "Vistas"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:31
 #, kde-format
@@ -67244,7 +67240,7 @@ msgstr "Testar compatibilidade de IA com a GPU"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:132
 #, kde-format
 msgid "Download required binary data:"
-msgstr "Baixar os arquivos binários necessários:"
+msgstr "Baixar os dados binários necessários:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:133
 #, kde-format
@@ -67342,7 +67338,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
-msgstr "Exibições"
+msgstr "Vistas"
 
 #: core/utilities/setup/setup.cpp:138
 #, kde-format
@@ -67351,8 +67347,8 @@ msgid ""
 "Application Views Settings\n"
 "Customize the look of the views"
 msgstr ""
-"Configurações das exibições do aplicativo\n"
-"Personaliza a aparência das diversas exibições"
+"Configurações das vistas do aplicativo\n"
+"Personaliza a aparência das diversas vistas"
 
 #: core/utilities/setup/setup.cpp:142
 #, kde-format
@@ -68107,7 +68103,7 @@ msgstr "Defina aqui a fonte usada para exibir o texto nas dicas."
 #, kde-format
 msgid "Show icon-view and thumb-bar items' tool-tips"
 msgstr ""
-"Mostrar dicas nos itens da barra de miniaturas e na exibição em miniaturas"
+"Mostrar dicas nos itens da barra de miniaturas e na vista em miniaturas"
 
 #: core/utilities/setup/setuptooltip.cpp:143
 #, kde-format
@@ -68116,7 +68112,7 @@ msgid ""
 "icon-view or thumb-bar item."
 msgstr ""
 "Selecione esta opção para exibir informações da imagem quando o mouse passar "
-"sobre um item na barra de miniaturas ou exibição em ícones."
+"sobre um item na barra de miniaturas ou vista em miniaturas."
 
 #: core/utilities/setup/setuptooltip.cpp:146
 #, kde-format
@@ -68326,7 +68322,7 @@ msgid ""
 "folder-view item."
 msgstr ""
 "Selecione esta opção para exibir informações do álbum quando o mouse passar "
-"sobre um item na exibição em ícones."
+"sobre um item na vista em pasta."
 
 #: core/utilities/setup/setuptooltip.cpp:304
 #, kde-format
