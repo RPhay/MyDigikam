@@ -164,7 +164,12 @@ void BackgroundBlurFilter::filterImage()
         cv::Mat fgModel;
         cv::grabCut(inputBGR, mask, roi, bgModel, fgModel, 5, cv::GC_INIT_WITH_RECT);
         cv::compare(mask, cv::GC_PR_FGD, mask, cv::CMP_EQ);
+/*
+        // Dilate the mask to bring the blur closer to the subject.
 
+        cv::Mat kernel = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(3, 3));
+        cv::dilate(mask, mask, kernel);
+*/
         postProgress(30);
 
         // Blur the background.
@@ -204,11 +209,12 @@ void BackgroundBlurFilter::filterImage()
             for (int x = 0 ; x < input.cols ; x++)
             {
                 float alpha = distanceMap.at<float>(y, x);
+                float beta  = 1.0F - std::pow(1.0F - alpha, 3.0F);
 
                 // NOTE: if alpha is near of 1, the blur effect is intensive.
 
                 output.at<cv::Vec3b>(y, x) = (alpha / 2.0) * blurred.at<cv::Vec3b>(y, x) +
-                                             (1.0 - alpha) * inputBGR.at<cv::Vec3b>(y, x);
+                                             (1.0 - beta)  * inputBGR.at<cv::Vec3b>(y, x);
             }
         }
 
