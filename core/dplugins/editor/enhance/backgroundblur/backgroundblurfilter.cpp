@@ -179,42 +179,52 @@ void BackgroundBlurFilter::filterImage()
 
         postProgress(40);
 
-        float transition = (d->transition * 4.0F) / 100.0F;
-
-        // Progressive blur.
-        // First compute the map for the progressive blur.
-
-        cv::Mat distanceMap;
-        cv::distanceTransform(~mask,            // input grabCut mask
-                              distanceMap,      // output array
-                              cv::DIST_L2,      // distance type
-                              cv::DIST_MASK_5); // size of mask
-
-        // Normalize the distance for the progressive effect (0 = near the subject, 1 = far the subject).
-
-        cv::normalize(distanceMap,
-                      distanceMap,
-                      transition,
-                      0,
-                      cv::NORM_MINMAX);
-
-        // Create the result with the progresive blur.
-
-        output = inputBGR.clone();
-
-        postProgress(60);
-
-        for (int y = 0 ; y < input.rows ; y++)
+        if (d->transition == 0)
         {
-            for (int x = 0 ; x < input.cols ; x++)
+            // Uniform blur.
+
+            inputBGR.copyTo(output, mask);
+            blurred.copyTo(output, ~mask);
+        }
+        else
+        {
+            float transition = (d->transition * 4.0F) / 100.0F;
+
+            // Progressive blur.
+            // First compute the map for the progressive blur.
+
+            cv::Mat distanceMap;
+            cv::distanceTransform(~mask,            // input grabCut mask
+                                  distanceMap,      // output array
+                                  cv::DIST_L2,      // distance type
+                                  cv::DIST_MASK_5); // size of mask
+
+            // Normalize the distance for the progressive effect (0 = near the subject, 1 = far the subject).
+
+            cv::normalize(distanceMap,
+                          distanceMap,
+                          transition,
+                          0,
+                          cv::NORM_MINMAX);
+
+            // Create the result with the progresive blur.
+
+            output = inputBGR.clone();
+
+            postProgress(60);
+
+            for (int y = 0 ; y < input.rows ; y++)
             {
-                float alpha = distanceMap.at<float>(y, x);
-                float beta  = 1.0F - std::pow(1.0F - alpha, 3.0F);
+                for (int x = 0 ; x < input.cols ; x++)
+                {
+                    float alpha = distanceMap.at<float>(y, x);
+                    float beta  = 1.0F - std::pow(1.0F - alpha, 3.0F);
 
-                // NOTE: if alpha is near of 1, the blur effect is intensive.
+                    // NOTE: if alpha is near of 1, the blur effect is intensive.
 
-                output.at<cv::Vec3b>(y, x) = (alpha / 2.0) * blurred.at<cv::Vec3b>(y, x) +
-                                             (1.0 - beta)  * inputBGR.at<cv::Vec3b>(y, x);
+                    output.at<cv::Vec3b>(y, x) = (alpha / 2.0) * blurred.at<cv::Vec3b>(y, x) +
+                                                 (1.0 - beta)  * inputBGR.at<cv::Vec3b>(y, x);
+                }
             }
         }
 

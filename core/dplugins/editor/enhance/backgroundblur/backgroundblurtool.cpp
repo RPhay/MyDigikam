@@ -83,7 +83,7 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
 
     QLabel* const label2 = new QLabel(i18n("Progressive Transition:"));
     d->transitionInput   = new DIntNumInput();
-    d->transitionInput->setRange(0, 100, 1);
+    d->transitionInput->setRange(1, 100, 1);
     d->transitionInput->setDefaultValue(0);
     d->transitionInput->setWhatsThis(i18n("Set this value to apply a variable blur near to far of the subject."
                                           "This allow to simulate a depth of field from a lens."));
