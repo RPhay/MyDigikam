@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-29 02:00+0000\n"
-"PO-Revision-Date: 2025-08-30 16:17-0300\n"
+"PO-Revision-Date: 2025-08-31 18:59-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -5386,7 +5386,7 @@ msgstr "Script do usuário: Retornou o código de erro %1."
 #, kde-format
 msgctxt "@title"
 msgid "User Shell Script"
-msgstr "Script do shell do usuário"
+msgstr "Script shell do usuário"
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:57
 #, kde-format
@@ -7638,10 +7638,9 @@ msgstr ""
 "por um conversor RAW em um espaço de cor interno de amplo gama, onde ajustes "
 "precisos podem ser feitos antes da conversão para TIFF ou JPEG para "
 "armazenamento, impressão ou manipulação posterior. Isso geralmente codifica "
-"a imagem em um espaço de cores dependente do dispositivo.</"
-"para><para>Consulte a <a href='https://en.wikipedia.org/wiki/"
-"Raw_image_format'>documentação do Arquivo de Imagem RAW</a> para detalhes.</"
-"para>"
+"a imagem em um espaço de cor dependente do dispositivo.</para><para>Consulte "
+"a <a href='https://en.wikipedia.org/wiki/Raw_image_format'>documentação do "
+"Arquivo de Imagem RAW</a> para detalhes.</para>"
 
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:117
 #, kde-format
@@ -32951,7 +32950,7 @@ msgstr "(foi encontrada uma ocorrência exata)"
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
-msgstr "Filtro de correção automática da lente"
+msgstr "Ferramenta de correção automática da lente"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:478
 #, kde-format
@@ -39599,23 +39598,23 @@ msgid ""
 "strong='true'>Custom</emphasis>: use a custom output color space profile.</"
 "item></list></para>"
 msgstr ""
-"<title>Espaço de trabalho</title><para>Selecione aqui o espaço de cores "
-"usado para decodificar os dados RAW.</para><para><list><item><emphasis "
+"<title>Espaço de trabalho</title><para>Selecione aqui o espaço de cor usado "
+"para decodificar os dados RAW.</para><para><list><item><emphasis "
 "strong='true'>RAW (linear)</emphasis>: neste modo, não é usado nenhum espaço "
-"de cores resultante na decodificação do RAW.</item><item><emphasis "
-"strong='true'>sRGB</emphasis>: este espaço de cores é um espaço de cores "
-"RGB, criado em cooperação entre a Hewlett-Packard e a Microsoft, sendo a "
-"melhor escolha para as imagens destinadas à Web e aos retratos fotográficos."
-"</item><item><emphasis strong='true'>RGB da Adobe</emphasis>: este espaço de "
-"cores é um espaço de cores RGB, desenvolvido pela Adobe, que é usado em "
+"de cor resultante na decodificação do RAW.</item><item><emphasis "
+"strong='true'>sRGB</emphasis>: este espaço de cor é um espaço de cor RGB, "
+"criado em cooperação entre a Hewlett-Packard e a Microsoft, sendo a melhor "
+"escolha para as imagens destinadas à Web e aos retratos fotográficos.</"
+"item><item><emphasis strong='true'>RGB da Adobe</emphasis>: este espaço de "
+"cor é um espaço de cor RGB, desenvolvido pela Adobe, que é usado em "
 "aplicativos de fotografia como a publicidade e a arte.</item><item><emphasis "
-"strong='true'>Gama de cores ampla</emphasis>: este espaço de cores é uma "
-"versão expandida do espaço de cores RGB da Adobe.</item><item><emphasis "
-"strong='true'>Pro-Photo</emphasis>: este espaço de cores é um espaço RGB, "
+"strong='true'>Gama de cores ampla</emphasis>: este espaço de cor é uma "
+"versão expandida do espaço de cor RGB da Adobe.</item><item><emphasis "
+"strong='true'>Pro-Photo</emphasis>: este espaço de cor é um espaço RGB, "
 "desenvolvido pela Kodak, que oferece um gamute especialmente grande, "
 "desenhado para ser usado com resultados fotográficos em mente.</"
 "item><item><emphasis strong='true'>Personalizado</emphasis>: usa um perfil "
-"de espaço de cores com resultado personalizado.</item></list></para>"
+"de espaço de cor com resultado personalizado.</item></list></para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:606
 #, kde-format
@@ -39842,7 +39841,7 @@ msgstr "Mesa de Luz"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:197
 #, kde-format
 msgid "Batch Queue Manager"
-msgstr "Gerenciador da fila de lote"
+msgstr "Gerenciador de processamento em lote"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:453
 #, kde-format
@@ -39878,7 +39877,7 @@ msgstr "Adicionando os itens à Mesa de Luz"
 #: core/libs/settings/applicationsettings_miscs.cpp:490
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
-msgstr "Adicionando os itens ao Gerenciador da fila de lote"
+msgstr "Adicionando os itens ao Gerenciador de processamento em lote"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:495
 #, kde-format
@@ -42979,7 +42978,7 @@ msgstr ""
 #: core/libs/widgets/iccprofiles/cietonguewidget.cpp:803
 #, kde-format
 msgid "Uncalibrated color space"
-msgstr "Espaço de cores não calibrado"
+msgstr "Espaço de cor não calibrado"
 
 #: core/libs/widgets/iccprofiles/cietonguewidget.cpp:809
 #, kde-format
@@ -58184,7 +58183,7 @@ msgid ""
 "<p>This image has <b>no information about the color space</b><br>that was "
 "used when creating the image. <br>How do you want to proceed?</p>"
 msgstr ""
-"<p>Esta imagem <b>não tem informações sobre o espaço de cores</b><br>que foi "
+"<p>Esta imagem <b>não tem informações sobre o espaço de cor</b><br>que foi "
 "usado na criação da imagem. <br>Como deseja proceder?</p>"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:217
@@ -61876,8 +61875,8 @@ msgstr "Processamento em andamento"
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr ""
-"O gerenciador da fila de lote está em execução. Deseja cancelar a tarefa "
-"atual?"
+"O gerenciador de processamento em lote está em execução. Deseja cancelar a "
+"tarefa atual?"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:645
 #, kde-format

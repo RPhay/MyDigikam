@@ -2187,7 +2187,7 @@ msgstr "El sentit d'ordenació dels grups d'elements separats"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
-msgstr "Tria-ho tot"
+msgstr "Selecciona-ho tot"
 
 #: core/app/main/digikamapp_setup.cpp:738
 #, kde-format
@@ -8816,7 +8816,7 @@ msgid ""
 "To Continue polygon, either press L or double click\n"
 "To Cancel, press ESC"
 msgstr ""
-"Trieu un polígon amb el llaç.\n"
+"Seleccioneu un polígon amb el llaç.\n"
 "Drecera: L\n"
 "Per a continuar amb el polígon, premeu «L» o feu doble clic\n"
 "Per a cancel·lar, premeu «Esc»"
@@ -9129,7 +9129,8 @@ msgid ""
 "including the eyes to use this option."
 msgstr ""
 "Este filtre es pot utilitzar per a corregir els ulls rojos de les "
-"fotografies. Trieu una àrea que incloga els ulls per a utilitzar esta opció."
+"fotografies. Seleccioneu una àrea que incloga els ulls per a utilitzar esta "
+"opció."
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:117
 #, kde-format
@@ -21413,7 +21414,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Sound Files"
-msgstr "Tria els fitxers de so"
+msgstr "Trieu els fitxers de so"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:419
 #, kde-format
@@ -35797,7 +35798,7 @@ msgstr "Neteja-ho tot"
 #: core/libs/filters/textfilter.cpp:89
 #, kde-format
 msgid "Select All"
-msgstr "Tria-ho tot"
+msgstr "Selecciona-ho tot"
 
 #: core/libs/imgqsort/imagequalitywidget.cpp:66
 #, kde-format
@@ -44174,7 +44175,7 @@ msgstr "Descripció"
 #, kde-format
 msgctxt "@action: metadata selector"
 msgid "Select All"
-msgstr "Tria-ho tot"
+msgstr "Selecciona-ho tot"
 
 #: core/libs/widgets/metadata/config/metadataselector.cpp:281
 #, kde-format
@@ -58958,7 +58959,7 @@ msgstr "Refés"
 #, kde-format
 msgctxt "@action: create a selection containing the full image"
 msgid "Select All"
-msgstr "Tria-ho tot"
+msgstr "Selecciona-ho tot"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:391
 #, kde-format
@@ -60017,7 +60018,7 @@ msgstr "Captura"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
-msgstr "Tria-ho tot"
+msgstr "Selecciona-ho tot"
 
 #: core/utilities/import/main/importui.cpp:240
 #, kde-format
