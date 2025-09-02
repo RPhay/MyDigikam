@@ -119,6 +119,8 @@ void BackgroundBlurFilter::filterImage()
     cv::Mat input = QtOpenCVImg::image2Mat(m_orgImage);
     cv::Mat output;
 
+    postProgress(10);
+
     try
     {
         // Convert image to CV_8UC3 (BGR) if necessary.
@@ -129,55 +131,58 @@ void BackgroundBlurFilter::filterImage()
         {
             if      (input.channels() == 1)
             {
-                cv::cvtColor(input, inputBGR, cv::COLOR_GRAY2BGR); // Gray scale -> BGR
+                cv::cvtColor(input, inputBGR, cv::COLOR_GRAY2BGR);
             }
             else if (input.channels() == 4)
             {
-                cv::cvtColor(input, inputBGR, cv::COLOR_BGRA2BGR); // RGBA -> BGR
+                cv::cvtColor(input, inputBGR, cv::COLOR_BGRA2BGR);
             }
             else
             {
-                // Not supported case.
-
                 output = input.clone();
+
                 return;
             }
         }
         else
         {
-            inputBGR = input; // Already the good format.
+            inputBGR = input;
         }
 
-        postProgress(10);
+        postProgress(20);
 
-        // Init the mask for Grabcut.
+        // Init the mask for GrabCut.
 
         cv::Rect roi(d->selection.x(), d->selection.y(), d->selection.width(), d->selection.height());
         cv::Mat mask(input.rows, input.cols, CV_8UC1, cv::GC_PR_BGD);
         mask(roi) = cv::GC_PR_FGD;
 
-        postProgress(20);
+        postProgress(30);
 
-        // Apply GrabCut to inputBGR.
+        // Apply GrabCut with more iterations for better accuracy.
 
-        cv::Mat bgModel;
-        cv::Mat fgModel;
-        cv::grabCut(inputBGR, mask, roi, bgModel, fgModel, 5, cv::GC_INIT_WITH_RECT);
-        cv::compare(mask, cv::GC_PR_FGD, mask, cv::CMP_EQ);
-/*
-        // Dilate the mask to bring the blur closer to the subject.
+        cv::Mat bgModel, fgModel;
+        cv::grabCut(inputBGR, mask, roi, bgModel, fgModel, 10, cv::GC_INIT_WITH_RECT);
+
+        // Refine the mask: GC_PR_FGD and GC_FGD are considered foreground.
+
+        cv::compare(mask, cv::GC_PR_FGD, mask, cv::CMP_GE);
+
+        postProgress(40);
+
+        // Smooth the mask edges.
 
         cv::Mat kernel = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(3, 3));
-        cv::dilate(mask, mask, kernel);
-*/
-        postProgress(30);
+        cv::morphologyEx(mask, mask, cv::MORPH_CLOSE, kernel); // Close small holes
+
+        postProgress(50);
 
         // Blur the background.
 
         cv::Mat blurred;
         cv::GaussianBlur(inputBGR, blurred, cv::Size(0, 0), d->radius);
 
-        postProgress(40);
+        postProgress(60);
 
         if (d->transition == 0)
         {
@@ -188,42 +193,46 @@ void BackgroundBlurFilter::filterImage()
         }
         else
         {
-            float transition = (d->transition * 4.0F) / 100.0F;
+            // Normalize transition parameter between 0.1 and 2.0 for better control.
+
+            float transition = 0.1F + (d->transition / 100.0F) * 1.9F;
 
             // Progressive blur.
-            // First compute the map for the progressive blur.
 
             cv::Mat distanceMap;
-            cv::distanceTransform(~mask,            // input grabCut mask
-                                  distanceMap,      // output array
-                                  cv::DIST_L2,      // distance type
-                                  cv::DIST_MASK_5); // size of mask
+            cv::distanceTransform(~mask, distanceMap, cv::DIST_L2, cv::DIST_MASK_5);
 
             // Normalize the distance for the progressive effect (0 = near the subject, 1 = far the subject).
 
-            cv::normalize(distanceMap,
-                          distanceMap,
-                          transition,
-                          0,
-                          cv::NORM_MINMAX);
+            cv::normalize(distanceMap, distanceMap, 0, 1, cv::NORM_MINMAX);
 
-            // Create the result with the progresive blur.
+            // Apply a non-linear transformation to the distance map based on transition parameter.
+
+            for (int y = 0 ; y < distanceMap.rows ; y++)
+            {
+                for (int x = 0 ; x < distanceMap.cols ; x++)
+                {
+                    float dist = distanceMap.at<float>(y, x);
+
+                    // Use transition parameter to control the falloff.
+
+                    distanceMap.at<float>(y, x) = std::pow(dist, 1.0F / transition);
+                }
+            }
+
+            // Create the result with the progressive blur.
 
             output = inputBGR.clone();
 
-            postProgress(60);
+            postProgress(70);
 
-            for (int y = 0 ; y < input.rows ; y++)
+            for (int y = 0; y < input.rows; y++)
             {
-                for (int x = 0 ; x < input.cols ; x++)
+                for (int x = 0; x < input.cols; x++)
                 {
                     float alpha = distanceMap.at<float>(y, x);
-                    float beta  = 1.0F - std::pow(1.0F - alpha, 3.0F);
-
-                    // NOTE: if alpha is near of 1, the blur effect is intensive.
-
-                    output.at<cv::Vec3b>(y, x) = (alpha / 2.0) * blurred.at<cv::Vec3b>(y, x) +
-                                                 (1.0 - beta)  * inputBGR.at<cv::Vec3b>(y, x);
+                    output.at<cv::Vec3b>(y, x) = alpha * blurred.at<cv::Vec3b>(y, x) +
+                                                 (1.0F - alpha) * inputBGR.at<cv::Vec3b>(y, x);
                 }
             }
         }
@@ -234,7 +243,7 @@ void BackgroundBlurFilter::filterImage()
 
         if (input.type() != CV_8UC3)
         {
-            if      (input.channels() == 1)
+            if (input.channels() == 1)
             {
                 cv::cvtColor(output, output, cv::COLOR_BGR2GRAY);
             }
@@ -248,15 +257,14 @@ void BackgroundBlurFilter::filterImage()
     }
     catch (cv::Exception& e)
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "BackgroundBlurFilter::applyBackgroundBlur: cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_DIMG_LOG) << "BackgroundBlurFilter::filterImage: cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "BackgroundBlurFilter::applyBackgroundBlur: Default exception from OpenCV";
+        qCWarning(DIGIKAM_DIMG_LOG) << "BackgroundBlurFilter::filterImage: Default exception from OpenCV";
     }
 
-    // FIXME: 16 bits color depth is not yet supported from QImage to DImg.
-    m_destImage   = DImg(QtOpenCVImg::mat2Image(output));
+    m_destImage = DImg(QtOpenCVImg::mat2Image(output));
 
     if (!m_orgImage.hasAlpha())
     {
