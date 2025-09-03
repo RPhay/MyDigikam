@@ -175,6 +175,57 @@ void BackgroundBlurFilter::filterImage()
         cv::Mat kernel = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(3, 3));
         cv::morphologyEx(mask, mask, cv::MORPH_CLOSE, kernel); // Close small holes
 
+        // Expand a little bit the mask to include more pixels near the subject.
+
+        cv::Mat kernelDilate = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(2, 2));
+        cv::dilate(mask, mask, kernel);
+
+        // Convert the mask to BGR to be suitable for the preview.
+
+        cv::Mat maskDisplay;
+        mask.convertTo(maskDisplay, CV_8U, 255);  // Convert to 0-255
+
+        // Create a copy of original.
+
+        cv::Mat overlay = inputBGR.clone();
+
+        // Create an image from the mask using semi-transparent green.
+
+        cv::Mat coloredMask;
+        cv::cvtColor(maskDisplay, coloredMask, cv::COLOR_GRAY2BGR);
+        coloredMask.setTo(cv::Scalar(0, 255, 0), maskDisplay);  // Colorized the mask in green.
+
+        // Apply a transparency to the mask.
+
+        cv::Mat alphaMask;
+        maskDisplay.convertTo(alphaMask, CV_32F, 1.0 / 255.0);  // Convert to  0.0-1.0.
+
+        // Merge the semi-transparent mask over original image.
+
+        for (int y = 0 ; y < inputBGR.rows ; y++)
+        {
+            for (int x = 0 ; x < inputBGR.cols ; x++)
+            {
+                float alpha                = alphaMask.at<float>(y, x);
+                cv::Vec3b& pixel           = overlay.at<cv::Vec3b>(y, x);
+                const cv::Vec3b& maskPixel = coloredMask.at<cv::Vec3b>(y, x);
+
+                // Mix pixels using alpha channel.
+
+                pixel[0] = static_cast<uchar>(alpha * maskPixel[0] + (1.0f - alpha) * pixel[0]);
+                pixel[1] = static_cast<uchar>(alpha * maskPixel[1] + (1.0f - alpha) * pixel[1]);
+                pixel[2] = static_cast<uchar>(alpha * maskPixel[2] + (1.0f - alpha) * pixel[2]);
+            }
+        }
+
+        // Send the signal to render the mask preview in the GUI.
+
+        QImage maskQImage = QtOpenCVImg::mat2Image(overlay);
+        QImage rgbmask    = maskQImage.convertToFormat(QImage::Format_ARGB32)
+                                      .scaled(256, 256, Qt::KeepAspectRatio);
+
+        Q_EMIT signalSegmentedMask(rgbmask);
+
         postProgress(50);
 
         // Blur the background.

@@ -78,6 +78,10 @@ public:
 
     void                    readParameters(const FilterAction& action)        override;
 
+Q_SIGNALS:
+
+    void signalSegmentedMask(const QImage& mask);
+
 private:
 
     void filterImage()                                                        override;

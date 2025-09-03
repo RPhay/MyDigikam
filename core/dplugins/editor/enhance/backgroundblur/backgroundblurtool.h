@@ -35,6 +35,7 @@ public:
 private Q_SLOTS:
 
     void slotResetSettings()    override;
+    void slotPreviewMask(const QImage& mask);
 
 private:
 

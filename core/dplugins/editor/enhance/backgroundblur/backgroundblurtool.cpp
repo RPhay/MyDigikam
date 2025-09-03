@@ -17,6 +17,8 @@
 // Qt includes
 
 #include <QGridLayout>
+#include <QGroupBox>
+#include <QHBoxLayout>
 #include <QLabel>
 #include <QIcon>
 
@@ -54,6 +56,7 @@ public:
     DIntNumInput*        transitionInput          = nullptr;
     ImageGuideWidget*    previewWidget            = nullptr;
     EditorToolSettings*  gboxSettings             = nullptr;
+    QLabel*              maskPreview              = nullptr;
 };
 
 // --------------------------------------------------------
@@ -90,13 +93,25 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
 
     // --------------------------------------------------------
 
+    QGroupBox* const maskGB = new QGroupBox(i18n("Subject Mask"));
+    QGridLayout* const glay = new QGridLayout;
+    d->maskPreview          = new QLabel;
+    d->maskPreview->setFixedSize(256, 256);
+    glay->addWidget(d->maskPreview, 0, 1, 1, 1);
+    glay->setColumnStretch(0, 10);
+    glay->setColumnStretch(2, 10);
+    maskGB->setLayout(glay);
+
+    // --------------------------------------------------------
+
     const int spacing       = d->gboxSettings->spacingHint();
     QGridLayout* const grid = new QGridLayout();
     grid->addWidget(label,              0, 0, 1, 2);
     grid->addWidget(d->radiusInput,     1, 0, 1, 2);
     grid->addWidget(label2,             2, 0, 1, 2);
     grid->addWidget(d->transitionInput, 3, 0, 1, 2);
-    grid->setRowStretch(4, 10);
+    grid->addWidget(maskGB,             4, 0, 1, 2);
+    grid->setRowStretch(5, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
     d->gboxSettings->plainPage()->setLayout(grid);
@@ -163,11 +178,23 @@ void BackgroundBlurTool::preparePreview()
     selection.setBottomRight(QPoint(orgSelection.bottomRight().x() / scaleFactor,
                                     orgSelection.bottomRight().y() / scaleFactor));
 
-    setFilter(new BackgroundBlurFilter(&preview,
-                                       selection,
-                                       d->radiusInput->value() / scaleFactor,
-                                       d->transitionInput->value(),
-                                       this));
+
+    BackgroundBlurFilter* const filter = new BackgroundBlurFilter(&preview,
+                                                                  selection,
+                                                                  d->radiusInput->value() / scaleFactor,
+                                                                  d->transitionInput->value(),
+                                                                  this);
+    connect(filter, SIGNAL(signalSegmentedMask(QImage)),
+            this, SLOT(slotPreviewMask(QImage)));
+
+    setFilter(filter);
+}
+
+void BackgroundBlurTool::slotPreviewMask(const QImage& mask)
+{
+    QPixmap pixmap = QPixmap::fromImage(mask);
+
+    d->maskPreview->setPixmap(pixmap);
 }
 
 void BackgroundBlurTool::setPreviewImage()
