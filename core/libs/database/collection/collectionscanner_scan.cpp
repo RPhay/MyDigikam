@@ -697,9 +697,9 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
         Q_EMIT startScanningAlbum(location.albumRootPath(), album);
     }
 
-    int albumID                          = checkAlbum(location, album);
-    QDateTime albumDateTime              = asDateTimeUTC(QFileInfo(dir.path()).lastModified());
-    QDateTime albumModified              = CoreDbAccess().db()->getAlbumModificationDate(albumID);
+    int albumID             = checkAlbum(location, album);
+    QDateTime albumDateTime = asDateTimeUTC(QFileInfo(dir.path()).lastModified());
+    QDateTime albumModified = CoreDbAccess().db()->getAlbumModificationDate(albumID);
 
     if (checkDate && s_modificationDateEquals(albumDateTime, albumModified))
     {
@@ -818,7 +818,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
                 if (imageId > 0)
                 {
                     ItemInfo itemInfo(imageId);
-                    QDate itemDate    = itemInfo.dateTime().date();
+                    QDate itemDate = itemInfo.dateTime().date();
 
                     if (itemDate.isValid())
                     {
