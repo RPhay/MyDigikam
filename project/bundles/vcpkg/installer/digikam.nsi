@@ -104,6 +104,7 @@
     !include "reboot_required.nsh"
     !include "readme_page.nsh"
     !include "events_functions.nsh"
+    !include "snorenotify.nsh"
 
 ;-------------------------------------------------------------------------------
 ;Interface Configuration
@@ -123,6 +124,11 @@
     !define MUI_FINISHPAGE_RUN_FUNCTION functionFinishRun
     !define MUI_FINISHPAGE_LINK "Visit digiKam project website"
     !define MUI_FINISHPAGE_LINK_LOCATION "https://www.digikam.org"
+
+;-------------------------------------------------------------------------------
+;SnoreToast Configuration
+
+    !define SnoreToastExe "$INSTDIR\SnoreToast.exe"
 
 ;-------------------------------------------------------------------------------
 ;Page Definitions
@@ -307,13 +313,12 @@
         ;Create shortcuts
 
         SetOutPath "$INSTDIR"
-        CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
-        CreateShortCut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe"
-        CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe"
-        ;!include "snorenotify.nsh"
-        ;!define SnoreToastExe "$INSTDIR\SnoreToast.exe"
-        ;!insertmacro SnoreShortcut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe" "digikam"
-        ;!insertmacro SnoreShortcut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe" "showfoto"
+        ;CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
+        ;CreateShortCut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe"
+        ;CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe"
+
+        !insertmacro SnoreShortcut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe" "digikam"
+        !insertmacro SnoreShortcut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe" "showfoto"
 
         WriteINIStr "$SMPROGRAMS\$StartMenuFolder\The ${MY_PRODUCT} HomePage.url" "InternetShortcut" "URL" "${PRODUCT_HOMEPAGE}"
         WriteINIStr "$SMPROGRAMS\$StartMenuFolder\The ${MY_PRODUCT} HomePage.url" "InternetShortcut" "IconIndex" "12"
