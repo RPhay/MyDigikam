@@ -51,9 +51,11 @@ public:
     const QString configGroupName                 = QLatin1String("backgroundblur Tool");
     const QString configRadiusAdjustmentEntry     = QLatin1String("RadiusAdjustment");
     const QString configTransitionAdjustmentEntry = QLatin1String("TransitionAdjustment");
+    const QString configIterationsAdjustmentEntry = QLatin1String("IterationsAdjustment");
 
     DIntNumInput*        radiusInput              = nullptr;
     DIntNumInput*        transitionInput          = nullptr;
+    DIntNumInput*        iterationsInput          = nullptr;
     ImageGuideWidget*    previewWidget            = nullptr;
     EditorToolSettings*  gboxSettings             = nullptr;
     QLabel*              maskPreview              = nullptr;
@@ -86,10 +88,19 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
 
     QLabel* const label2 = new QLabel(i18n("Progressive Transition:"));
     d->transitionInput   = new DIntNumInput();
-    d->transitionInput->setRange(0, 100, 1);
-    d->transitionInput->setDefaultValue(0);
+    d->transitionInput->setRange(1, 100, 1);
+    d->transitionInput->setDefaultValue(1);
     d->transitionInput->setWhatsThis(i18n("Set this value to apply a variable blur near to far of the subject."
                                           "This allow to simulate a depth of field from a lens."));
+
+    // --------------------------------------------------------
+
+    QLabel* const label3 = new QLabel(i18n("Segmentation Iterations:"));
+    d->iterationsInput   = new DIntNumInput();
+    d->iterationsInput->setRange(1, 20, 1);
+    d->iterationsInput->setDefaultValue(10);
+    d->iterationsInput->setWhatsThis(i18n("Set this value to use a number of iterations used by "
+                                          "the segmentation process to isolate more and less the subject."));
 
     // --------------------------------------------------------
 
@@ -113,8 +124,10 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
     grid->addWidget(d->radiusInput,     1, 0, 1, 2);
     grid->addWidget(label2,             2, 0, 1, 2);
     grid->addWidget(d->transitionInput, 3, 0, 1, 2);
-    grid->addWidget(maskGB,             4, 0, 1, 2);
-    grid->setRowStretch(5, 10);
+    grid->addWidget(label3,             4, 0, 1, 2);
+    grid->addWidget(d->iterationsInput, 5, 0, 1, 2);
+    grid->addWidget(maskGB,             6, 0, 1, 2);
+    grid->setRowStretch(7, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
     d->gboxSettings->plainPage()->setLayout(grid);
@@ -131,6 +144,9 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
 
     connect(d->transitionInput, SIGNAL(valueChanged(int)),
             this, SLOT(slotTimer()));
+
+    connect(d->iterationsInput, SIGNAL(valueChanged(int)),
+            this, SLOT(slotTimer()));
 }
 
 BackgroundBlurTool::~BackgroundBlurTool()
@@ -144,6 +160,7 @@ void BackgroundBlurTool::readSettings()
     KConfigGroup group        = config->group(d->configGroupName);
     d->radiusInput->setValue(group.readEntry(d->configRadiusAdjustmentEntry, d->radiusInput->defaultValue()));
     d->transitionInput->setValue(group.readEntry(d->configTransitionAdjustmentEntry, d->transitionInput->defaultValue()));
+    d->iterationsInput->setValue(group.readEntry(d->configIterationsAdjustmentEntry, d->iterationsInput->defaultValue()));
 }
 
 void BackgroundBlurTool::writeSettings()
@@ -152,6 +169,7 @@ void BackgroundBlurTool::writeSettings()
     KConfigGroup group        = config->group(d->configGroupName);
     group.writeEntry(d->configRadiusAdjustmentEntry, d->radiusInput->value());
     group.writeEntry(d->configTransitionAdjustmentEntry, d->transitionInput->value());
+    group.writeEntry(d->configIterationsAdjustmentEntry, d->iterationsInput->value());
     config->sync();
 }
 
@@ -159,10 +177,13 @@ void BackgroundBlurTool::slotResetSettings()
 {
     d->radiusInput->blockSignals(true);
     d->transitionInput->blockSignals(true);
+    d->iterationsInput->blockSignals(true);
     d->radiusInput->slotReset();
     d->transitionInput->slotReset();
+    d->iterationsInput->slotReset();
     d->radiusInput->blockSignals(false);
     d->transitionInput->blockSignals(false);
+    d->iterationsInput->blockSignals(false);
 }
 
 void BackgroundBlurTool::preparePreview()
@@ -186,6 +207,7 @@ void BackgroundBlurTool::preparePreview()
                                                                   selection,
                                                                   d->radiusInput->value() / scaleFactor,
                                                                   d->transitionInput->value(),
+                                                                  d->iterationsInput->value(),
                                                                   this);
     connect(filter, SIGNAL(signalSegmentedMask(QImage)),
             this, SLOT(slotPreviewMask(QImage)));
@@ -217,6 +239,7 @@ void BackgroundBlurTool::prepareFinal()
                                        selection,
                                        d->radiusInput->value(),
                                        d->transitionInput->value(),
+                                       d->iterationsInput->value(),
                                        this));
 }
 

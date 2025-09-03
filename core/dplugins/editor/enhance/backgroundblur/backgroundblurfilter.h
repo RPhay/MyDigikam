@@ -36,6 +36,7 @@ public:
                                   const QRect& selection,
                                   int radius = 3,
                                   int transition = 0,
+                                  int iterations = 10,
                                   QObject* const parent = nullptr);
 
     /**
@@ -47,6 +48,7 @@ public:
                                   const QRect& selection,
                                   int radius = 3,
                                   int transition = 0,
+                                  int iterations = 10,
                                   int progressBegin = 0,
                                   int progressEnd = 100);
 

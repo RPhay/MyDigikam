@@ -36,9 +36,10 @@ public:
 
 public:
 
-    int                   radius     = 3;
-    int                   transition = 0;
-    QRect                 selection;
+    int                   radius     = 3;   ///< Blur effect radius.
+    int                   transition = 0;   ///< Number of blur transitions.
+    int                   iterations = 10;  ///< GrabCut iterations to isolate more and less the subject.
+    QRect                 selection;        ///< suject area previously selected by the user.
 };
 
 BackgroundBlurFilter::BackgroundBlurFilter(QObject* const parent)
@@ -52,6 +53,7 @@ BackgroundBlurFilter::BackgroundBlurFilter(DImg* const orgImage,
                                            const QRect& selection,
                                            int radius,
                                            int transition,
+                                           int iterations,
                                            QObject* const parent)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("BackgroundBlur")),
       d                 (new Private)
@@ -59,6 +61,7 @@ BackgroundBlurFilter::BackgroundBlurFilter(DImg* const orgImage,
     d->selection  = selection;
     d->radius     = radius;
     d->transition = transition;
+    d->iterations = iterations;
 
     initFilter();
 }
@@ -69,6 +72,7 @@ BackgroundBlurFilter::BackgroundBlurFilter(DImgThreadedFilter* const parentFilte
                                            const QRect& selection,
                                            int radius,
                                            int transition,
+                                           int iterations,
                                            int progressBegin,
                                            int progressEnd)
     : DImgThreadedFilter(parentFilter,
@@ -82,6 +86,7 @@ BackgroundBlurFilter::BackgroundBlurFilter(DImgThreadedFilter* const parentFilte
     d->selection  = selection;
     d->radius     = radius;
     d->transition = transition;
+    d->iterations = iterations;
 
     this->filterImage();
 }
@@ -162,7 +167,7 @@ void BackgroundBlurFilter::filterImage()
         // Apply GrabCut with more iterations for better accuracy.
 
         cv::Mat bgModel, fgModel;
-        cv::grabCut(inputBGR, mask, roi, bgModel, fgModel, 10, cv::GC_INIT_WITH_RECT);
+        cv::grabCut(inputBGR, mask, roi, bgModel, fgModel, d->iterations, cv::GC_INIT_WITH_RECT);
 
         // Refine the mask: GC_PR_FGD and GC_FGD are considered foreground.
 
