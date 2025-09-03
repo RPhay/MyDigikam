@@ -94,12 +94,15 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
     // --------------------------------------------------------
 
     QGroupBox* const maskGB = new QGroupBox(i18n("Subject Mask"));
-    QGridLayout* const glay = new QGridLayout;
-    d->maskPreview          = new QLabel;
+    QGridLayout* const glay = new QGridLayout(maskGB);
+    d->maskPreview          = new QLabel(maskGB);
+    d->maskPreview->setWhatsThis(i18n("This view show the segmentation of the subject determined from the "
+                                      "selection. The resulting green mask is superposed to the original image to "
+                                      "see if the subject have been isolated properly by the segmentation process. "
+                                      "The green area is the subject where the blur effect will not applied."));
     d->maskPreview->setFixedSize(256, 256);
-    glay->addWidget(d->maskPreview, 0, 1, 1, 1);
-    glay->setColumnStretch(0, 10);
-    glay->setColumnStretch(2, 10);
+    d->maskPreview->setAlignment(Qt::AlignCenter);
+    glay->addWidget(d->maskPreview, 0, 0, Qt::AlignCenter);
     maskGB->setLayout(glay);
 
     // --------------------------------------------------------
