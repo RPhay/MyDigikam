@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-29 02:00+0000\n"
-"PO-Revision-Date: 2025-09-01 13:48-0300\n"
+"PO-Revision-Date: 2025-09-02 12:00-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -5329,8 +5329,8 @@ msgid ""
 "filenames (with special characters escaped). These would be substituted "
 "before shell execution."
 msgstr ""
-"Indique o script a executar. Use o $INPUT e o $OUTPUT para os nomes dos "
-"arquivos de entrada / saída (caracteres especiais com escape). Estes serão "
+"Digite o script a ser executado. Use o $INPUT e o $OUTPUT para os nomes dos "
+"arquivos de entrada e saída (caracteres especiais com escape). Eles serão "
 "substituídos antes da execução do shell."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:114
@@ -5650,7 +5650,7 @@ msgstr ""
 msgid ""
 "Density of watermark repetition (Disabled in \"Specific Location\" mode)"
 msgstr ""
-"Densidade de repetição da marca d'água (desativada no modo \"Localização "
+"Densidade de repetição da marca d'água (desabilitado no modo \"Localização "
 "específica\")"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:340
@@ -5723,13 +5723,13 @@ msgstr "Centro"
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top center"
-msgstr "Superior esquerdo"
+msgstr "Superior central"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:373
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom center"
-msgstr "Inferior esquerdo"
+msgstr "Inferior central"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:375
 #, kde-format
@@ -6514,7 +6514,7 @@ msgstr "Vídeo"
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
-msgstr "Subtítulo, comentário e descrição"
+msgstr "Título, comentário e descrição"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:217
 #, kde-format
@@ -34075,7 +34075,7 @@ msgstr ""
 #: core/libs/dngwriter/dngsettings.cpp:74
 #, kde-format
 msgid "Embed Original File"
-msgstr "Incorporar arquivo original"
+msgstr "Embutir arquivo original"
 
 #: core/libs/dngwriter/dngsettings.cpp:75
 #, kde-format
