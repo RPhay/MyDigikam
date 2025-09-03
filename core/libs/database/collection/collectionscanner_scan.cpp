@@ -539,27 +539,11 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
     }
 
     QList<AlbumShortInfo> albumList = CoreDbAccess().db()->getAlbumShortInfos();
-    QList<int> toBeDeleted;
-    int counter = 0;
-
-    if (d->wantSignals && d->needTotalFiles)
-    {
-        Q_EMIT totalFilesToScan(albumList.count());
-    }
-
     QList<AlbumShortInfo>::const_iterator it3;
+    QList<int> toBeDeleted;
 
     for (it3 = albumList.constBegin() ; it3 != albumList.constEnd() ; ++it3)
     {
-        ++counter;
-
-        if (d->wantSignals && counter && (counter % 10 == 0))
-        {
-            Q_EMIT scannedFiles(counter);
-
-            counter = 0;
-        }
-
         if (!locationIdsToScan.contains((*it3).albumRootId) || toBeDeleted.contains((*it3).id))
         {
             continue;

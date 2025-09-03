@@ -40,6 +40,10 @@
 #include <QElapsedTimer>
 #include <QScopedPointer>
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 8, 0))
+#   include <QDirListing>
+#endif
+
 // Local includes
 
 #include "drawfiles.h"
