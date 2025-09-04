@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-29 02:00+0000\n"
-"PO-Revision-Date: 2025-09-02 12:00-0300\n"
+"POT-Creation-Date: 2025-09-04 02:00+0000\n"
+"PO-Revision-Date: 2025-09-03 19:32-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -597,7 +597,7 @@ msgstr "Selecionar"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Children"
-msgstr "Crianças"
+msgstr "Filhos"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:106
 #: core/app/items/utils/contextmenuhelper_albums.cpp:116
@@ -749,13 +749,13 @@ msgstr "Excluir etiquetas"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Mark As Face Tag"
-msgstr "Criar etiqueta de rosto"
+msgstr "Marcar como etiqueta de rosto"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:68
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Mark As Face Tags"
-msgstr "Criar etiquetas de rosto"
+msgstr "Marcar como etiquetas de rosto"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:79
 #, kde-format
@@ -5842,7 +5842,7 @@ msgstr ""
 "adiciona vinhetas às imagens.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:75
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:80
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8653,12 +8653,12 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Correção de vinheta..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:98
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:103
 #, kde-format
 msgid "Background Blur Filter"
 msgstr "Filtro de desfoque de plano de fundo"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8667,12 +8667,12 @@ msgstr ""
 "Defina este valor para determinar o raio da matriz que determina o quanto o "
 "fundo ao redor do objeto deve ser desfocado."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
 #, kde-format
 msgid "Progressive Transition:"
 msgstr "Transição progressiva:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
@@ -8681,7 +8681,42 @@ msgstr ""
 "Defina este valor para aplicar um desfoque variável de perto a longe do "
 "objeto. Isso permite simular a profundidade de campo de uma lente."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:196
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:98
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Segmentation mode:"
+msgid "Segmentation Iterations:"
+msgstr "Modo de segmentação:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This value controls the number of iterations to use with the Neon and "
+#| "Find Edges effects."
+msgid ""
+"Set this value to use a number of iterations used by the segmentation "
+"process to isolate more and less the subject."
+msgstr ""
+"Este valor controla o número de iterações usadas com os efeitos de Neon e "
+"Encontrar bordas."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:107
+#, fuzzy, kde-format
+#| msgid "Subjects"
+msgid "Subject Mask"
+msgstr "Assuntos"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#, kde-format
+msgid ""
+"This view show the segmentation of the subject determined from the "
+"selection. The resulting green mask is superposed to the original image to "
+"see if the subject have been isolated properly by the segmentation process. "
+"The green area is the subject where the blur effect will not applied."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:249
 #, kde-format
 msgid "Background Blur"
 msgstr "Desfoque do plano de fundo"
@@ -11628,7 +11663,7 @@ msgstr "Desfazer/refazer"
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
-msgstr "Geocodificação inversa"
+msgstr "Geocodificação reversa"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
 #, kde-format
@@ -23123,7 +23158,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:77
 #, kde-format
 msgid "Select export location..."
-msgstr "Selecionar a localização de exportação..."
+msgstr "Selecionar local para exportação..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:87
 #, kde-format
@@ -23171,7 +23206,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:51
 #, kde-format
 msgid "Select import location..."
-msgstr "Selecionar a localização de importação..."
+msgstr "Selecionar local de importação..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:62
 #, kde-format
@@ -27550,7 +27585,7 @@ msgstr "Não é possível mesclar uma etiqueta de rosto necessária"
 #: core/libs/album/manager/albummanager_talbum.cpp:611
 #, kde-format
 msgid "Only a tag without children can be merged!"
-msgstr "Somente etiquetas sem filhas podem ser mescladas!"
+msgstr "Somente etiquetas sem filhos podem ser mescladas!"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:623
 #, kde-format
@@ -27726,7 +27761,7 @@ msgstr "Álbum das legendas"
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
-msgstr "Expandir os nós selecionados"
+msgstr "Expandir nós selecionados"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:203
 #, kde-format
@@ -27738,7 +27773,7 @@ msgstr "Expandir todos os álbuns"
 #: core/libs/tags/widgets/tagfolderview.cpp:236
 #, kde-format
 msgid "Collapse Selected Recursively"
-msgstr "Recolher as selecionadas recursivamente"
+msgstr "Recolher selecionados recursivamente"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:209
 #, kde-format
@@ -40717,7 +40752,7 @@ msgstr "Nenhum"
 #, kde-format
 msgctxt "toggle child tags"
 msgid "Children"
-msgstr "Filhas"
+msgstr "Filhos"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:75
 #, kde-format
@@ -43192,13 +43227,13 @@ msgstr "A classe do dispositivo do perfil ICC"
 #, kde-format
 msgctxt "@item: icc profile properties"
 msgid "Rendering Intent"
-msgstr "Tentativa de renderização"
+msgstr "Intenção de renderização"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:144
 #, kde-format
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile rendering intent"
-msgstr "A tentativa de renderização do perfil ICC"
+msgstr "A intenção de renderização do perfil ICC"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:145
 #, kde-format
@@ -43657,7 +43692,7 @@ msgstr "Edição de imagens não-destrutiva"
 #: core/libs/widgets/mainview/daboutdata.cpp:243
 #, kde-format
 msgid "Reverse Geo-Coding"
-msgstr "Geolocalização inversa"
+msgstr "Geolocalização reversa"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:249
 #, kde-format
@@ -50367,7 +50402,7 @@ msgstr ""
 #: core/showfoto/setup/showfotosetupmisc.cpp:136
 #, kde-format
 msgid "Reverse ordering"
-msgstr "Ordem inversa"
+msgstr "Ordem reversa"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:137
 #, kde-format
@@ -57587,7 +57622,7 @@ msgstr "Remover velocidade"
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:95
 #, kde-format
 msgid "Look up missing altitude values"
-msgstr "Procurando valores de altitude em falta"
+msgstr "Procurar valores de altitude faltando"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:422
 #, kde-format
@@ -67877,7 +67912,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:452
 #, kde-format
 msgid "Rendering Intents:"
-msgstr "Tentativas de processamento:"
+msgstr "Intenção de renderização:"
 
 #: core/utilities/setup/setupicc.cpp:467
 #, kde-format

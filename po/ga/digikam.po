@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-29 02:00+0000\n"
+"POT-Creation-Date: 2025-09-04 02:00+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -6043,7 +6043,7 @@ msgid ""
 msgstr "Breiseán íomhá digiKam chun braonta báistí a chur le híomhá."
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:75
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:80
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8721,32 +8721,60 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Réamhamharc á fháil..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:98
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:103
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur Filter"
 msgstr "Dath an chúlra:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
 #, fuzzy, kde-format
 msgid "Progressive Transition:"
 msgstr "Taispeáin an fhuinneog mhionsonraithe dul chun cinn"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:196
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:98
+#, fuzzy, kde-format
+#| msgid "Destination:"
+msgid "Segmentation Iterations:"
+msgstr "Ceann Scríbe:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
+#, kde-format
+msgid ""
+"Set this value to use a number of iterations used by the segmentation "
+"process to isolate more and less the subject."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:107
+#, fuzzy, kde-format
+#| msgid "Subjects"
+msgid "Subject Mask"
+msgstr "Ábhair"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#, kde-format
+msgid ""
+"This view show the segmentation of the subject determined from the "
+"selection. The resulting green mask is superposed to the original image to "
+"see if the subject have been isolated properly by the segmentation process. "
+"The green area is the subject where the blur effect will not applied."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:249
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"

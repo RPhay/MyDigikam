@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-29 02:00+0000\n"
-"PO-Revision-Date: 2025-08-27 08:07+0200\n"
+"POT-Creation-Date: 2025-09-04 02:00+0000\n"
+"PO-Revision-Date: 2025-08-28 16:44+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -5963,7 +5963,7 @@ msgstr ""
 "vignettage aux images.</p>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:75
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:80
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8806,37 +8806,71 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Correction du vignettage…"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:98
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:103
 #, kde-format
 msgid "Background Blur Filter"
 msgstr "Filtrage du floutage de l'arrière-plan"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
-#, fuzzy, kde-format
-#| msgid ""
-#| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
-#| "matrix radius that determines how much to blur the image."
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
+#, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr ""
-"Un lissage de 0 n'a aucun effet, une valeur égale ou supérieure à 1 "
-"détermine le rayon de la matrice de flou gaussien et, ainsi, la quantité de "
-"flou à appliquer à l'image."
+"Définissez cette valeur pour déterminer le rayon de matrice déterminant la "
+"quantité de floutage de l’arrière-plan autour du sujet."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
 #, kde-format
 msgid "Progressive Transition:"
 msgstr "Transition progressive :"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
+"Définissez cette valeur pour appliquer un floutage variable de près puis en "
+"s'éloignant du sujet. Cela permet de simuler une profondeur de champ "
+"provenant d’une lentille."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:196
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:98
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Segmentation mode:"
+msgid "Segmentation Iterations:"
+msgstr "Mode de segmentation :"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This value controls the number of iterations to use with the Neon and "
+#| "Find Edges effects."
+msgid ""
+"Set this value to use a number of iterations used by the segmentation "
+"process to isolate more and less the subject."
+msgstr ""
+"Cette valeur contrôle le nombre d'itérations à utiliser avec les effets "
+"« Néon » et « Détecter les contours »"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:107
+#, fuzzy, kde-format
+#| msgid "Subjects"
+msgid "Subject Mask"
+msgstr "Sujets"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#, kde-format
+msgid ""
+"This view show the segmentation of the subject determined from the "
+"selection. The resulting green mask is superposed to the original image to "
+"see if the subject have been isolated properly by the segmentation process. "
+"The green area is the subject where the blur effect will not applied."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:249
 #, kde-format
 msgid "Background Blur"
 msgstr "Floutage de l'arrière-plan"

@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-29 02:00+0000\n"
+"POT-Creation-Date: 2025-09-04 02:00+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -5810,7 +5810,7 @@ msgstr ""
 "<p>このバッチクエリマネージャーは画像に口径食を追加または削除できます。</p>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:75
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:80
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8619,13 +8619,13 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "口径食補正..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:98
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:103
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur Filter"
 msgstr "背景色:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
 #, fuzzy, kde-format
 #| msgid ""
 #| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
@@ -8637,19 +8637,50 @@ msgstr ""
 "値が 0 のときは何も効果はありません。1 以上の値は、写真をどの程度ぼかすかを決"
 "めるガウシアンぼかしの半径を決定します。"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
 #, fuzzy, kde-format
 msgid "Progressive Transition:"
 msgstr "写真の情報"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:196
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:98
+#, fuzzy, kde-format
+#| msgid "Destination:"
+msgid "Segmentation Iterations:"
+msgstr "送り先:"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
+#, fuzzy, kde-format
+#| msgid ""
+#| "This value controls the number of iterations to use with the Neon and "
+#| "Find Edges effects."
+msgid ""
+"Set this value to use a number of iterations used by the segmentation "
+"process to isolate more and less the subject."
+msgstr "この値でネオンとエッジ検出効果に用いる反復回数をコントロールします。"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:107
+#, fuzzy, kde-format
+#| msgid "Subjects"
+msgid "Subject Mask"
+msgstr "サブジェクト"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#, kde-format
+msgid ""
+"This view show the segmentation of the subject determined from the "
+"selection. The resulting green mask is superposed to the original image to "
+"see if the subject have been isolated properly by the segmentation process. "
+"The green area is the subject where the blur effect will not applied."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:249
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"
