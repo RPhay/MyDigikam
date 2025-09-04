@@ -32,6 +32,7 @@
 
 #include "dnuminput.h"
 #include "blurfilter.h"
+#include "dpreviewmanager.h"
 #include "editortoolsettings.h"
 #include "imageiface.h"
 #include "imageguidewidget.h"
@@ -58,7 +59,7 @@ public:
     DIntNumInput*        iterationsInput          = nullptr;
     ImageGuideWidget*    previewWidget            = nullptr;
     EditorToolSettings*  gboxSettings             = nullptr;
-    QLabel*              maskPreview              = nullptr;
+    DPreviewManager*     maskPreview              = nullptr;
 };
 
 // --------------------------------------------------------
@@ -95,7 +96,7 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    QLabel* const label3 = new QLabel(i18n("Segmentation Iterations:"));
+    QLabel* const label3 = new QLabel(i18n("Subject segmentation:"));
     d->iterationsInput   = new DIntNumInput();
     d->iterationsInput->setRange(1, 20, 1);
     d->iterationsInput->setDefaultValue(10);
@@ -104,30 +105,28 @@ BackgroundBlurTool::BackgroundBlurTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    QGroupBox* const maskGB = new QGroupBox(i18n("Subject Mask"));
-    QGridLayout* const glay = new QGridLayout(maskGB);
-    d->maskPreview          = new QLabel(maskGB);
+    QLabel* const maskLbl   = new QLabel(i18n("Subject Mask:"));
+    d->maskPreview          = new DPreviewManager(d->gboxSettings);
+    d->maskPreview->setButtonVisible(false);
+    d->maskPreview->setSelectionAreaPossible(false);
     d->maskPreview->setWhatsThis(i18n("This view show the segmentation of the subject determined from the "
                                       "selection. The resulting green mask is superposed to the original image to "
                                       "see if the subject have been isolated properly by the segmentation process. "
                                       "The green area is the subject where the blur effect will not applied."));
-    d->maskPreview->setFixedSize(256, 256);
-    d->maskPreview->setAlignment(Qt::AlignCenter);
-    glay->addWidget(d->maskPreview, 0, 0, Qt::AlignCenter);
-    maskGB->setLayout(glay);
 
     // --------------------------------------------------------
 
     const int spacing       = d->gboxSettings->spacingHint();
     QGridLayout* const grid = new QGridLayout();
-    grid->addWidget(label,              0, 0, 1, 2);
-    grid->addWidget(d->radiusInput,     1, 0, 1, 2);
-    grid->addWidget(label2,             2, 0, 1, 2);
-    grid->addWidget(d->transitionInput, 3, 0, 1, 2);
-    grid->addWidget(label3,             4, 0, 1, 2);
-    grid->addWidget(d->iterationsInput, 5, 0, 1, 2);
-    grid->addWidget(maskGB,             6, 0, 1, 2);
-    grid->setRowStretch(7, 10);
+    grid->addWidget(label,              0, 0, 1, 1);
+    grid->addWidget(d->radiusInput,     1, 0, 1, 1);
+    grid->addWidget(label2,             2, 0, 1, 1);
+    grid->addWidget(d->transitionInput, 3, 0, 1, 1);
+    grid->addWidget(label3,             4, 0, 1, 1);
+    grid->addWidget(d->iterationsInput, 5, 0, 1, 1);
+    grid->addWidget(maskLbl,            6, 0, 1, 1);
+    grid->addWidget(d->maskPreview,     7, 0, 1, 1);
+    grid->setRowStretch(8, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
     d->gboxSettings->plainPage()->setLayout(grid);
@@ -188,6 +187,8 @@ void BackgroundBlurTool::slotResetSettings()
 
 void BackgroundBlurTool::preparePreview()
 {
+    d->maskPreview->setBusy(true, i18nc("@info", "Processing mask preview..."));
+
     ImageIface* const iface  = d->previewWidget->imageIface();
     DImg preview             = iface->preview();
     QRect orgSelection       = iface->selectionRect();
@@ -217,9 +218,9 @@ void BackgroundBlurTool::preparePreview()
 
 void BackgroundBlurTool::slotPreviewMask(const QImage& mask)
 {
-    QPixmap pixmap = QPixmap::fromImage(mask);
+    d->maskPreview->setImage(mask);
 
-    d->maskPreview->setPixmap(pixmap);
+    qDebug() << "preview mask:" << mask;
 }
 
 void BackgroundBlurTool::setPreviewImage()
@@ -233,6 +234,8 @@ void BackgroundBlurTool::setPreviewImage()
 
 void BackgroundBlurTool::prepareFinal()
 {
+    d->maskPreview->setBusy(true);
+
     ImageIface iface;
     QRect selection = iface.selectionRect();
     setFilter(new BackgroundBlurFilter(iface.original(),

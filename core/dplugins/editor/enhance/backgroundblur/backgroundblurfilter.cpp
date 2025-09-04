@@ -226,8 +226,7 @@ void BackgroundBlurFilter::filterImage()
         // Send the signal to render the mask preview in the GUI.
 
         QImage maskQImage = QtOpenCVImg::mat2Image(overlay);
-        QImage rgbmask    = maskQImage.convertToFormat(QImage::Format_ARGB32)
-                                      .scaled(256, 256, Qt::KeepAspectRatio);
+        QImage rgbmask    = maskQImage.convertToFormat(QImage::Format_ARGB32);
 
         Q_EMIT signalSegmentedMask(rgbmask);
 
