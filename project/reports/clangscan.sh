@@ -29,7 +29,7 @@ checksCPUCores
 
 if ! which scan-build ; then
 
-    if ! which scan-build-17 ; then
+    if ! which scan-build-19 ; then
 
         echo "SCAN-BUILD tool from LLVM is not installed!"
         echo "See https://clang-analyzer.llvm.org/scan-build.html for details."
@@ -37,7 +37,7 @@ if ! which scan-build ; then
 
     else
 
-        SCAN_BUILD_BIN=scan-build-17
+        SCAN_BUILD_BIN=scan-build-19
 
     fi
 
@@ -128,7 +128,7 @@ $SCAN_BUILD_BIN -o $ORIG_WD/$REPORT_DIR \
 
 cd $ORIG_WD
 
-SCAN_BUILD_DIR=$(find ${$ORIG_WD/REPORT_DIR} -maxdepth 1 -not -empty -not -name `basename ${$ORIG_WD/REPORT_DIR}`)
+SCAN_BUILD_DIR=$(find "${ORIG_WD}/${REPORT_DIR}" -maxdepth 1 -not -empty -not -name "$(basename "${ORIG_WD}/${REPORT_DIR}")")
 echo "Clang Report $TITLE is located to $SCAN_BUILD_DIR"
 
 if [[ $1 != "--nowebupdate" ]] ; then
