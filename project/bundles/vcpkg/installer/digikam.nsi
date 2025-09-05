@@ -308,7 +308,6 @@
         ;Add start menu items to All Users
 
         SetShellVarContext all
-        !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
 
         ;Create shortcuts
 
@@ -317,8 +316,19 @@
         ;CreateShortCut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe"
         ;CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe"
 
-        !insertmacro SnoreShortcut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe" "digikam"
-        !insertmacro SnoreShortcut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe" "showfoto"
+        !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
+
+            !insertmacro SnoreShortcut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe" "digikam"
+
+        !insertmacro MUI_STARTMENU_WRITE_END
+
+        !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
+
+            !insertmacro SnoreShortcut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe" "showfoto"
+
+        !insertmacro MUI_STARTMENU_WRITE_END
+
+        !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
 
         WriteINIStr "$SMPROGRAMS\$StartMenuFolder\The ${MY_PRODUCT} HomePage.url" "InternetShortcut" "URL" "${PRODUCT_HOMEPAGE}"
         WriteINIStr "$SMPROGRAMS\$StartMenuFolder\The ${MY_PRODUCT} HomePage.url" "InternetShortcut" "IconIndex" "12"
