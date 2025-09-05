@@ -24,7 +24,6 @@ Function SnoreWinVer
     ${VersionCompare} "6.2" $R0 $R0
     ${If} $R0 == 1
         Push "NotWin8"
-        ${EndIf}
     ${Else}
         Push "AtLeastWin8"
     ${EndIf}
@@ -37,7 +36,6 @@ FunctionEnd
     Pop $0
     ${If} $0 == "AtLeastWin8"
         nsExec::ExecToLog '"${SnoreToastExe}" -install "${path}" "${exe}" "${appID}"'
-        ${EndIf}
     ${Else}
         CreateShortCut "${path}" "${exe}"
     ${EndIf}
