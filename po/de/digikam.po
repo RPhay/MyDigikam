@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-04 02:00+0000\n"
+"POT-Creation-Date: 2025-09-05 02:01+0000\n"
 "PO-Revision-Date: 2025-07-21 23:21+0200\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -5844,7 +5844,7 @@ msgstr ""
 "Bild oder fügt sie hinzu.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:80
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8714,7 +8714,7 @@ msgid "Background Blur Filter"
 msgstr "Hintergrundfarbe: "
 
 # |, no-fancy-quote
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
 #, fuzzy, kde-format
 #| msgid ""
 #| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
@@ -8726,27 +8726,27 @@ msgstr ""
 "Ein Grad von 0 hat keinen Effekt, 1 und höher gibt den Radius des gaußschen "
 "Weichzeichners der Matrix an, die festlegt, wie unscharf das Bild wird."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
 #, fuzzy, kde-format
 #| msgid "Progress Information"
 msgid "Progressive Transition:"
 msgstr "Fortschrittsinformationen"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:98
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Segmentation mode:"
-msgid "Segmentation Iterations:"
-msgstr "Segmentierungsmodus:"
+#| msgctxt "@title"
+#| msgid "Subject Information"
+msgid "Subject segmentation:"
+msgstr "Objektinformation"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -8759,13 +8759,13 @@ msgstr ""
 "Dieser Wert kontrolliert die Anzahl der Wiederholungen für die Effekte "
 "„Neon“ und „Kanten finden“."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:107
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
 #, fuzzy, kde-format
 #| msgid "Subjects"
-msgid "Subject Mask"
+msgid "Subject Mask:"
 msgstr "Themen"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8774,7 +8774,14 @@ msgid ""
 "The green area is the subject where the blur effect will not applied."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:249
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#, fuzzy, kde-format
+#| msgid "Processing Panorama Preview..."
+msgctxt "@info"
+msgid "Processing mask preview..."
+msgstr "Vorbereitung der Panoramavorschau läuft ..."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"
@@ -69642,6 +69649,12 @@ msgstr "Albumeinträge"
 #, kde-format
 msgid "Import Items"
 msgstr "Einträge importieren "
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Segmentation mode:"
+#~ msgid "Segmentation Iterations:"
+#~ msgstr "Segmentierungsmodus:"
 
 #~ msgid "<p>Select the color profile for your monitor here.</p>"
 #~ msgstr "<p>Wählen Sie hier das Farbprofil für Ihren Monitor aus.</p>"

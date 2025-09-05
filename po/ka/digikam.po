@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-04 02:00+0000\n"
+"POT-Creation-Date: 2025-09-05 02:01+0000\n"
 "PO-Revision-Date: 2025-04-26 10:03+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -5515,7 +5515,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:80
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -7998,47 +7998,47 @@ msgstr ""
 msgid "Background Blur Filter"
 msgstr "ფონის ფერი: "
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
 #, fuzzy, kde-format
 #| msgid "Progress Information"
 msgid "Progressive Transition:"
 msgstr "მიმდინარეობის ინფორმაცია"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:98
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Segmentation mode:"
-msgid "Segmentation Iterations:"
-msgstr "სეგმენტაციის რეჟიმი:"
+#| msgctxt "@title"
+#| msgid "Subject Information"
+msgid "Subject segmentation:"
+msgstr "სათაურის ინფორმაცია"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
 #, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:107
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
 #, fuzzy, kde-format
 #| msgid "Subjects"
-msgid "Subject Mask"
+msgid "Subject Mask:"
 msgstr "თემები"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8047,7 +8047,14 @@ msgid ""
 "The green area is the subject where the blur effect will not applied."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:249
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#, fuzzy, kde-format
+#| msgid "Processing..."
+msgctxt "@info"
+msgid "Processing mask preview..."
+msgstr "დამუშავება..."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"
@@ -64126,6 +64133,12 @@ msgstr ""
 #, kde-format
 msgid "Import Items"
 msgstr ""
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Segmentation mode:"
+#~ msgid "Segmentation Iterations:"
+#~ msgstr "სეგმენტაციის რეჟიმი:"
 
 #~ msgid "Build Date: "
 #~ msgstr "აგების თარიღი: "

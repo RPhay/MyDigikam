@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-04 02:00+0000\n"
+"POT-Creation-Date: 2025-09-05 02:01+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -5639,7 +5639,7 @@ msgid ""
 msgstr "कलरस्पेस"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:80
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8302,7 +8302,7 @@ msgstr "रातो आँखा सुधार"
 msgid "Background Blur Filter"
 msgstr "पृष्ठभूमि रङ:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
 #, fuzzy, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8311,36 +8311,36 @@ msgstr ""
 "<p>० महिनपनको कुनै प्रभाव हुँदैन, १ र माथिले छवि कति अस्पष्ट गर्ने गाउस्सियन अस्पष्ट "
 "म्याट्रिक्स रेडियस निर्धारण गर्दछ ।"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
 #, fuzzy, kde-format
 msgid "Progressive Transition:"
 msgstr "फोटोग्राफर सूचना"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:98
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
 #, fuzzy, kde-format
-msgid "Segmentation Iterations:"
-msgstr "वर्णन"
+msgid "Subject segmentation:"
+msgstr "टोन फिल्टर होइन"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
 #, fuzzy, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr "यो विकल्पले हालै चयन गरेको वस्तुसँग सम्पादक खोल्न तपाईँलाई अनुमति दिन्छ ।"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:107
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
 #, fuzzy, kde-format
-msgid "Subject Mask"
+msgid "Subject Mask:"
 msgstr "सेतो सन्तुलन:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8349,7 +8349,13 @@ msgid ""
 "The green area is the subject where the blur effect will not applied."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:249
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#, fuzzy, kde-format
+msgctxt "@info"
+msgid "Processing mask preview..."
+msgstr "फाइल गुण"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, fuzzy, kde-format
 msgid "Background Blur"
 msgstr "पृष्ठभूमि रङ:"
@@ -65849,6 +65855,10 @@ msgstr "एल्बम"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
+
+#, fuzzy
+#~ msgid "Segmentation Iterations:"
+#~ msgstr "वर्णन"
 
 #, fuzzy
 #~ msgid "Build Date: "

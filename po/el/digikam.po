@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-04 02:00+0000\n"
+"POT-Creation-Date: 2025-09-05 02:01+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -5973,7 +5973,7 @@ msgstr ""
 "και ημερομηνίας;"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:80
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8957,7 +8957,7 @@ msgstr "Διόρθωση βινιέτας..."
 msgid "Background Blur Filter"
 msgstr "Χρώμα φόντου:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
 #, fuzzy, kde-format
 #| msgid ""
 #| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
@@ -8969,26 +8969,26 @@ msgstr ""
 "Ομαλότητα ίση με 0 δεν έχει αποτέλεσμα, ενώ 1 και πάνω ορίζει την ακτίνα της "
 "μήτρας του Gaussian θαμπώματος που καθορίζει το βαθμό θαμπώματος της εικόνας."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
 #, fuzzy, kde-format
 #| msgid "Progress Information"
 msgid "Progressive Transition:"
 msgstr "Πληροφορίες προόδου"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:98
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
 #, fuzzy, kde-format
-#| msgid "Destination:"
-msgid "Segmentation Iterations:"
-msgstr "Προορισμός:"
+#| msgid "Metadata Information"
+msgid "Subject segmentation:"
+msgstr "Πληροφορίες μεταδεδομένων"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
 #, fuzzy, kde-format
 #| msgid ""
 #| "This value controls the number of iterations to use with the Neon and "
@@ -9000,13 +9000,13 @@ msgstr ""
 "Αυτή η τιμή ελέγχει τον αριθμό των επαναλήψεων που θα χρησιμοποιηθεί στα εφέ "
 "νέον και εύρεσης άκρων."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:107
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
 #, fuzzy, kde-format
 #| msgid "Subjects"
-msgid "Subject Mask"
+msgid "Subject Mask:"
 msgstr "Θέματα"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -9015,7 +9015,14 @@ msgid ""
 "The green area is the subject where the blur effect will not applied."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:249
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#, fuzzy, kde-format
+#| msgid "Processing..."
+msgctxt "@info"
+msgid "Processing mask preview..."
+msgstr "Επεξεργασία..."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"
@@ -73321,6 +73328,11 @@ msgstr "Αντικείμενα λευκώματος"
 #, kde-format
 msgid "Import Items"
 msgstr "Εισαγωγή αντικειμένων"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Segmentation Iterations:"
+#~ msgstr "Προορισμός:"
 
 #~ msgid "<p>Select the color profile for your monitor here.</p>"
 #~ msgstr "<p>Επιλέξτε εδώ το χρωματικό προφίλ για την οθόνη.</p>"

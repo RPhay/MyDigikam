@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-04 02:00+0000\n"
+"POT-Creation-Date: 2025-09-05 02:01+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -6218,7 +6218,7 @@ msgid ""
 msgstr "Ova slika nije upravljana bojom."
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:80
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -9149,7 +9149,7 @@ msgstr "Korekcija vinjeta..."
 msgid "Background Blur Filter"
 msgstr "Boja pozadine:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
 #, fuzzy, kde-format
 #| msgid ""
 #| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
@@ -9161,26 +9161,26 @@ msgstr ""
 "Glatkoća vrijednosti 0 nema efekta, 1 ili više određuje raspon Gausove "
 "matrice zamućenja koja određuje koliko zamutiti sliku."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
 #, fuzzy, kde-format
 #| msgid "Progress Information"
 msgid "Progressive Transition:"
 msgstr "Informacija o napretku"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:98
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
 #, fuzzy, kde-format
-#| msgid "Destination:"
-msgid "Segmentation Iterations:"
-msgstr "Odredište:"
+#| msgid "Metadata Information"
+msgid "Subject segmentation:"
+msgstr "Informacije meta-podataka"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
 #, fuzzy, kde-format
 #| msgid ""
 #| "This value controls the number of iterations to use with the Neon and "
@@ -9192,13 +9192,13 @@ msgstr ""
 "Ova vrijednosr kontroliše broj iteracija koje se trebaju koristiti sa Neon i "
 "Pronađi ivice efektima."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:107
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
 #, fuzzy, kde-format
 #| msgid "Subjects"
-msgid "Subject Mask"
+msgid "Subject Mask:"
 msgstr "Teme"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -9207,7 +9207,14 @@ msgid ""
 "The green area is the subject where the blur effect will not applied."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:249
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#, fuzzy, kde-format
+#| msgid "Processing..."
+msgctxt "@info"
+msgid "Processing mask preview..."
+msgstr "Obrađujem..."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"
@@ -73586,6 +73593,11 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Uvozni predmeti"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Segmentation Iterations:"
+#~ msgstr "Odredište:"
 
 #~ msgid "<p>Select the color profile for your monitor here.</p>"
 #~ msgstr "<p>Izaberite boju profila za vaš monitor ovdje.</p>"

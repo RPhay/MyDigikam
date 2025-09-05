@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-04 02:00+0000\n"
-"PO-Revision-Date: 2025-08-27 13:32+0200\n"
+"POT-Creation-Date: 2025-09-05 02:01+0000\n"
+"PO-Revision-Date: 2025-09-04 11:08+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -5856,7 +5856,7 @@ msgstr ""
 "les imatges.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:80
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8668,7 +8668,7 @@ msgstr "Correcció del vinyetatge…"
 msgid "Background Blur Filter"
 msgstr "Filtre de difuminat del fons"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8677,12 +8677,12 @@ msgstr ""
 "Establiu este valor per a determinen la matriu del radi de difuminat gaussià "
 "que determina la quantitat de difuminat del fons al voltant del motiu."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
 #, kde-format
 msgid "Progressive Transition:"
 msgstr "Transició progressiva:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
@@ -8691,33 +8691,29 @@ msgstr ""
 "Establiu este valor per a aplicar un difuminat variable de prop a lluny del "
 "motiu. Açò permet simular una profunditat de camp d'una lent."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:98
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Segmentation mode:"
-msgid "Segmentation Iterations:"
-msgstr "Mode de segmentació:"
+#| msgctxt "@title"
+#| msgid "Subject Information"
+msgid "Subject segmentation:"
+msgstr "Informació del motiu"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This value controls the number of iterations to use with the Neon and "
-#| "Find Edges effects."
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
+#, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr ""
-"Este valor controla el nombre d'iteracions que s'utilitzarà amb els efectes "
-"Neó i Troba les vores."
+"Establiu este valor per a utilitzar un nombre d'iteracions utilitzades pel "
+"procés de segmentació per aïllar més o menys el motiu."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:107
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
 #, fuzzy, kde-format
-#| msgid "Subjects"
-msgid "Subject Mask"
-msgstr "Motius"
+#| msgid "Subject Mask"
+msgid "Subject Mask:"
+msgstr "Màscara de motiu"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8725,8 +8721,19 @@ msgid ""
 "see if the subject have been isolated properly by the segmentation process. "
 "The green area is the subject where the blur effect will not applied."
 msgstr ""
+"Esta vista mostra la segmentació del motiu determinat a partir de la "
+"selecció. La màscara verda resultant se superposa a la imatge original per a "
+"veure si el procés de segmentació ha aïllat adequadament el motiu. L'àrea "
+"verda és el motiu a on no s'aplicarà l'efecte difuminat."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:249
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#, fuzzy, kde-format
+#| msgid "Processing Panorama Preview..."
+msgctxt "@info"
+msgid "Processing mask preview..."
+msgstr "S'està processant la vista prèvia del panorama…"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, kde-format
 msgid "Background Blur"
 msgstr "Difuminat del fons"
@@ -68735,3 +68742,6 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
+
+#~ msgid "Segmentation Iterations:"
+#~ msgstr "Iteracions de segmentació:"

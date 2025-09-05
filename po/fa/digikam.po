@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-04 02:00+0000\n"
+"POT-Creation-Date: 2025-09-05 02:01+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -6112,7 +6112,7 @@ msgid ""
 msgstr "فاصله رنگ"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:80
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8815,7 +8815,7 @@ msgstr "اصلاح Vignetting"
 msgid "Background Blur Filter"
 msgstr "رنگ زمینه:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
 #, fuzzy, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8824,24 +8824,24 @@ msgstr ""
 "<p>همواری ۰ اثری ندارد، ۱ و بالاتر از آن، شعاع ماتریس محوی گاوسی را تعیین "
 "می‌کند که معین می‌کند تصویر چقدر لکه‌دار شود."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
 #, fuzzy, kde-format
 msgid "Progressive Transition:"
 msgstr "اطلاعات عکاس"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:98
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
 #, fuzzy, kde-format
-msgid "Segmentation Iterations:"
-msgstr "توصیف:"
+msgid "Subject segmentation:"
+msgstr "پالایه نوفه:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
 #, fuzzy, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
@@ -8850,12 +8850,12 @@ msgstr ""
 "<p>این مقدار تعداد تکرارها برای استفاده با نئون و یافتن جلوه‌های لبه‌ها را "
 "کنترل می‌کند. "
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:107
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
 #, fuzzy, kde-format
-msgid "Subject Mask"
+msgid "Subject Mask:"
 msgstr "فاصله:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8864,7 +8864,14 @@ msgid ""
 "The green area is the subject where the blur effect will not applied."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:249
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#, fuzzy, kde-format
+#| msgid "Processing..."
+msgctxt "@info"
+msgid "Processing mask preview..."
+msgstr "در حال پردازش..."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"
@@ -67263,6 +67270,10 @@ msgstr "آلبومها"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&مرتب‌سازی تصاویر‌"
+
+#, fuzzy
+#~ msgid "Segmentation Iterations:"
+#~ msgstr "توصیف:"
 
 #, fuzzy
 #~| msgid "File Name"

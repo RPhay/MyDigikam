@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-04 02:00+0000\n"
-"PO-Revision-Date: 2025-08-27 13:43+0300\n"
+"POT-Creation-Date: 2025-09-05 02:01+0000\n"
+"PO-Revision-Date: 2025-09-04 08:15+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -5896,7 +5896,7 @@ msgstr ""
 "вилучати з зображень віньєтування або додавати його.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:80
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8748,7 +8748,7 @@ msgstr "Виправлення віньєтування…"
 msgid "Background Blur Filter"
 msgstr "Фільтр розмивання тла"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8757,12 +8757,12 @@ msgstr ""
 "Встановіть це значення для визначення радіуса матриці Гаусового розмивання, "
 "що визначає наскільки значним є розмивання тла навколо об'єкта."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
 #, kde-format
 msgid "Progressive Transition:"
 msgstr "Прогресивний перехід:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
@@ -8772,33 +8772,29 @@ msgstr ""
 "далеких від об'єкта ділянок. Це надає змогу імітувати глибину поля від "
 "об'єктива."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:98
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Segmentation mode:"
-msgid "Segmentation Iterations:"
-msgstr "Режим поділу:"
+#| msgctxt "@title"
+#| msgid "Subject Information"
+msgid "Subject segmentation:"
+msgstr "Відомості щодо призначення"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This value controls the number of iterations to use with the Neon and "
-#| "Find Edges effects."
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
+#, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr ""
-"Це значення керує кількістю ітерацій під час використання ефектів Неон і "
-"Пошук країв."
+"Встановіть значення, яке буде використано як кількість ітерацій у процесі "
+"поділу, для ізоляції більшої або меншої частини об'єкта."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:107
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
 #, fuzzy, kde-format
-#| msgid "Subjects"
-msgid "Subject Mask"
-msgstr "Теми"
+#| msgid "Subject Mask"
+msgid "Subject Mask:"
+msgstr "Маскування об'єкта"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8806,8 +8802,19 @@ msgid ""
 "see if the subject have been isolated properly by the segmentation process. "
 "The green area is the subject where the blur effect will not applied."
 msgstr ""
+"На цій панелі перегляду показано поділ об'єкта на основі позначеного. "
+"Отриману зелену маску буде накладено на початкове зображення, щоб ви могли "
+"переконатися, що об'єкт було належним чином ізольовано у процесі поділу. "
+"Зелена область позначає об'єкт, до якого буде застосовано ефект розмивання."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:249
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#, fuzzy, kde-format
+#| msgid "Processing Panorama Preview..."
+msgctxt "@info"
+msgid "Processing mask preview..."
+msgstr "Обробка попереднього перегляду панорами…"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, kde-format
 msgid "Background Blur"
 msgstr "Розмивання тла"
@@ -68953,6 +68960,11 @@ msgstr "Пункти альбомів"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпортовані пункти"
+
+#~| msgctxt "@label"
+#~| msgid "Segmentation mode:"
+#~ msgid "Segmentation Iterations:"
+#~ msgstr "Ітерацій для поділу:"
 
 #~ msgid "<p>Select the color profile for your monitor here.</p>"
 #~ msgstr "<p>Тут ви можете вибрати профіль кольорів вашого монітора.</p>"

@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-04 02:00+0000\n"
-"PO-Revision-Date: 2025-08-27 12:58+0200\n"
+"POT-Creation-Date: 2025-09-05 02:01+0000\n"
+"PO-Revision-Date: 2025-09-04 17:10+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -5894,7 +5894,7 @@ msgstr ""
 "vignetteringen van afbeeldingen.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:80
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8708,7 +8708,7 @@ msgstr "Vignettering correctie..."
 msgid "Background Blur Filter"
 msgstr "Achtergrond vervaagfilter: "
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8717,12 +8717,12 @@ msgstr ""
 "Zet deze waarde om te se matrixstraal te bepalen die bepaalt hoeveel te "
 "vervagen in de achtergrond rond het onderwerp."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
 #, kde-format
 msgid "Progressive Transition:"
 msgstr "Progressieve overgang:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
@@ -8731,33 +8731,29 @@ msgstr ""
 "Zet deze waarde om een variabele vervaging dichtbij tot ver van het "
 "onderwerp toe te passen. Dit biedt het simuleren van diepte met een lens."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:98
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Segmentation mode:"
-msgid "Segmentation Iterations:"
-msgstr "Segmentatiemodus:"
+#| msgctxt "@title"
+#| msgid "Subject Information"
+msgid "Subject segmentation:"
+msgstr "Onderwerpinformatie"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This value controls the number of iterations to use with the Neon and "
-#| "Find Edges effects."
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
+#, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr ""
-"Deze waarde bepaalt het aantal herhalingen dat zal worden gebruikt bij de "
-"effecten 'neon' en 'randen zoeken'."
+"Zet deze waarde om een aantal iteraties te gebruiken gebruikt door het "
+"segmentatieproces om meer en minder onderwerpen te isoleren."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:107
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
 #, fuzzy, kde-format
-#| msgid "Subjects"
-msgid "Subject Mask"
-msgstr "Onderwerpen"
+#| msgid "Subject Mask"
+msgid "Subject Mask:"
+msgstr "Onderwerpmasker"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8765,8 +8761,20 @@ msgid ""
 "see if the subject have been isolated properly by the segmentation process. "
 "The green area is the subject where the blur effect will not applied."
 msgstr ""
+"Deze weergave toont de segmentatie van het onderwerp bepaald uit de "
+"selectie. Het resulterende groene masker wordt gesuperponeerd op de "
+"originele afbeelding om te zien of het onderwerp juist is geïsoleerd door "
+"het segmentatieproces. Het groene gebied is het onderwerp waarop het "
+"vervagingseffect niet wordt toegepast."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:249
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#, fuzzy, kde-format
+#| msgid "Processing Panorama Preview..."
+msgctxt "@info"
+msgid "Processing mask preview..."
+msgstr "Bezig met de bewerking van het voorbeeld..."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, kde-format
 msgid "Background Blur"
 msgstr "Achtergrondvervaging"
@@ -68614,6 +68622,11 @@ msgstr "Album-items"
 #, kde-format
 msgid "Import Items"
 msgstr "Items importeren"
+
+#~| msgctxt "@label"
+#~| msgid "Segmentation mode:"
+#~ msgid "Segmentation Iterations:"
+#~ msgstr "Iteraties van segmentatie:"
 
 #~ msgid "<p>Select the color profile for your monitor here.</p>"
 #~ msgstr "<p>Selecteer hier het kleurprofiel voor uw monitor.</p>"

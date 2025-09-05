@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-04 02:00+0000\n"
-"PO-Revision-Date: 2025-08-27 07:09+0200\n"
+"POT-Creation-Date: 2025-09-05 02:01+0000\n"
+"PO-Revision-Date: 2025-09-04 06:51+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -47,7 +47,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -5873,7 +5873,7 @@ msgstr ""
 "slikam.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:80
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -8642,7 +8642,7 @@ msgstr "Popravek vinjetiranja..."
 msgid "Background Blur Filter"
 msgstr "Filter zameglitve ozadja"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
@@ -8651,12 +8651,12 @@ msgstr ""
 "To vrednost nastavite za določitev polmera matrike, ki določa, koliko naj se "
 "zamegli ozadje okoli motiva."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:89
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
 #, kde-format
 msgid "Progressive Transition:"
 msgstr "Postopni prehod:"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
@@ -8665,33 +8665,29 @@ msgstr ""
 "Nastavite to vrednost, da uporabite spremenljivo zameglitev od blizu do "
 "daleč od motiva. To omogoča simulacijo globinske ostrine objektiva."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:98
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Segmentation mode:"
-msgid "Segmentation Iterations:"
-msgstr "Način segmentacije:"
+#| msgctxt "@title"
+#| msgid "Subject Information"
+msgid "Subject segmentation:"
+msgstr "Informacije o subjektu"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This value controls the number of iterations to use with the Neon and "
-#| "Find Edges effects."
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
+#, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr ""
-"Ta vrednost nadzira število ponovitev, ki bodo uporabljene z učinki Neon in "
-"najdi robove."
+"To vrednost nastavite tako, da postopek segmentacije uporabi določeno "
+"število iteracij za izolacijo večjega in manjšega kosa motiva."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:107
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
 #, fuzzy, kde-format
-#| msgid "Subjects"
-msgid "Subject Mask"
-msgstr "Zadeve"
+#| msgid "Subject Mask"
+msgid "Subject Mask:"
+msgstr "Maska motiva"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:110
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
 msgid ""
 "This view show the segmentation of the subject determined from the "
@@ -8699,8 +8695,19 @@ msgid ""
 "see if the subject have been isolated properly by the segmentation process. "
 "The green area is the subject where the blur effect will not applied."
 msgstr ""
+"Ta pogled prikazuje segmentacijo motiva, določeno na podlagi izbire. Nastala "
+"zelena maska ​​se prekrije z izvirno sliko, da se preveri, ali je bil motiv s "
+"postopkom segmentacije pravilno izoliran. Zeleno območje predstavlja motiv, "
+"kjer učinek zameglitve ne bo uporabljen."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:249
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#, fuzzy, kde-format
+#| msgid "Processing Panorama Preview..."
+msgctxt "@info"
+msgid "Processing mask preview..."
+msgstr "Obdelovanje predogleda panorame..."
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, kde-format
 msgid "Background Blur"
 msgstr "Zameglitev ozadja"
@@ -68147,6 +68154,9 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Predmeti uvoza"
+
+#~ msgid "Segmentation Iterations:"
+#~ msgstr "Iteracije segmentacije:"
 
 #~ msgid "<p>Select the color profile for your monitor here.</p>"
 #~ msgstr "<p>Tukaj izberite barvni profil za vaš zaslon.</p>"
