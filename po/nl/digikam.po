@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-05 02:01+0000\n"
-"PO-Revision-Date: 2025-09-04 17:10+0200\n"
+"PO-Revision-Date: 2025-09-05 16:06+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -8732,11 +8732,9 @@ msgstr ""
 "onderwerp toe te passen. Dit biedt het simuleren van diepte met een lens."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject segmentation:"
-msgstr "Onderwerpinformatie"
+msgstr "Onderwerpsegmentatie"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
 #, kde-format
@@ -8748,10 +8746,9 @@ msgstr ""
 "segmentatieproces om meer en minder onderwerpen te isoleren."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
-#, fuzzy, kde-format
-#| msgid "Subject Mask"
+#, kde-format
 msgid "Subject Mask:"
-msgstr "Onderwerpmasker"
+msgstr "Onderwerpmasker:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
@@ -8768,11 +8765,10 @@ msgstr ""
 "vervagingseffect niet wordt toegepast."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
-#, fuzzy, kde-format
-#| msgid "Processing Panorama Preview..."
+#, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
-msgstr "Bezig met de bewerking van het voorbeeld..."
+msgstr "Voorbeeld van bewerkingsmasker..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, kde-format

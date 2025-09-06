@@ -8272,28 +8272,21 @@ msgid ""
 msgstr "此值控制主体周围由近到远的可变模糊，可用于模拟镜头的景深效果。"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject segmentation:"
-msgstr "主题信息"
+msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This value controls the number of iterations to use with the Neon and "
-#| "Find Edges effects."
+#, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
-msgstr "此数值用于控制霓虹灯和边缘检测/查找边缘特效的迭代次数。"
+msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
-#, fuzzy, kde-format
-#| msgid "Subjects"
+#, kde-format
 msgid "Subject Mask:"
-msgstr "主题"
+msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
@@ -8305,11 +8298,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
-#, fuzzy, kde-format
-#| msgid "Processing Panorama Preview..."
+#, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
-msgstr "正在处理全景图预览..."
+msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, kde-format
@@ -65958,9 +65950,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "Segmentation mode:"
-#~ msgid "Segmentation Iterations:"
-#~ msgstr "分页模式："

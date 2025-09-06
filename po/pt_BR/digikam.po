@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-05 02:01+0000\n"
-"PO-Revision-Date: 2025-09-04 05:14-0300\n"
+"PO-Revision-Date: 2025-09-05 06:34-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -8353,7 +8353,7 @@ msgstr "Espaço de cor atual:"
 #: core/libs/dimg/filters/icc/icctransformfilter.cpp:50
 #, kde-format
 msgid "Color Profile Conversion"
-msgstr "Conversão de perfis de cores"
+msgstr "Conversão de perfis de cor"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:61
 #, kde-format
@@ -8682,11 +8682,9 @@ msgstr ""
 "objeto. Isso permite simular a profundidade de campo de uma lente."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject segmentation:"
-msgstr "Informações do assunto"
+msgstr "Segmentação do assunto:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
 #, kde-format
@@ -8698,10 +8696,9 @@ msgstr ""
 "segmentação para isolar mais ou menos o assunto."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
-#, fuzzy, kde-format
-#| msgid "Subject Mask"
+#, kde-format
 msgid "Subject Mask:"
-msgstr "Máscara do assunto"
+msgstr "Máscara do assunto:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
@@ -8718,11 +8715,10 @@ msgstr ""
 "será aplicado."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
-#, fuzzy, kde-format
-#| msgid "Processing Panorama Preview..."
+#, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
-msgstr "Processando a visualização da panorâmica..."
+msgstr "Processando a visualização da máscara..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, kde-format
@@ -39606,7 +39602,7 @@ msgstr "RGB da Adobe"
 #, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Wide Gamut"
-msgstr "Gama de cores ampla"
+msgstr "Gamute de cor amplo"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:568
 #, kde-format
@@ -39651,7 +39647,7 @@ msgstr ""
 "item><item><emphasis strong='true'>RGB da Adobe</emphasis>: este espaço de "
 "cor é um espaço de cor RGB, desenvolvido pela Adobe, que é usado em "
 "aplicativos de fotografia como a publicidade e a arte.</item><item><emphasis "
-"strong='true'>Gama de cores ampla</emphasis>: este espaço de cor é uma "
+"strong='true'>Gamute de cor amplo</emphasis>: este espaço de cor é uma "
 "versão expandida do espaço de cor RGB da Adobe.</item><item><emphasis "
 "strong='true'>Pro-Photo</emphasis>: este espaço de cor é um espaço RGB, "
 "desenvolvido pela Kodak, que oferece um gamute especialmente grande, "
@@ -58387,7 +58383,7 @@ msgstr "Prova de monitor ativada"
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:75
 #, kde-format
 msgid "Enable soft-proofing color managed view"
-msgstr "Habilitar a visão de gerenciamento de cores com prova de monitor"
+msgstr "Habilitar a visão de gerenciamento de cor com prova de monitor"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:76
 #, kde-format
@@ -58397,7 +58393,7 @@ msgstr "Prova de monitor desativada"
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:77
 #, kde-format
 msgid "Disable soft-proofing color managed view"
-msgstr "Desabilitar a visão de gerenciamento de cores com prova de monitor"
+msgstr "Desabilitar a visão de gerenciamento de cor com prova de monitor"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:84
 #, kde-format
@@ -58428,8 +58424,8 @@ msgid ""
 "<p>Press this button to get detailed information about the selected proofing "
 "profile.</p>"
 msgstr ""
-"<p>Pressione este botão para obter informações mais detalhadas sobre o "
-"perfil de análise selecionado.</p>"
+"<p>Pressione este botão para obter informações mais detalhadas sobre a prova "
+"de monitor selecionada.</p>"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:117
 #, kde-format
@@ -58439,7 +58435,7 @@ msgstr "Intenção de renderização:"
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:122
 #, kde-format
 msgid "Highlight out-of-gamut colors"
-msgstr "Destacar as cores fora da gama de cores"
+msgstr "Destacar as cores fora do gamute de cor"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:123
 #, kde-format
@@ -58844,19 +58840,19 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
-msgstr "Visualização do gerenciamento de cores"
+msgstr "Visualização do gerenciamento de cor"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:478
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
-msgstr "Opções de prova do monitor..."
+msgstr "Opções de prova de monitor..."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:483
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
-msgstr "Visualização de prova do monitor"
+msgstr "Visualização de prova de monitor"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:491
 #, kde-format
@@ -59008,7 +59004,7 @@ msgid ""
 msgstr ""
 "Não foi possível abrir o perfil do espaço de trabalho indicado (\"%1\"). "
 "Nenhuma transformação de cor será aplicada. Verifique as configurações do "
-"gerenciamento de cores na configuração do digiKam."
+"gerenciamento de cor na configuração do digiKam."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1644
 #, kde-format
@@ -61092,7 +61088,7 @@ msgstr "Ajustar à &janela"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:195
 #, kde-format
 msgid "Color-Managed View"
-msgstr "Visualização de gerenciamento de cores"
+msgstr "Visualização de gerenciamento de cor"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, kde-format
@@ -67757,19 +67753,19 @@ msgstr "Perguntar pelo perfil de entrada"
 #: core/utilities/setup/setupicc.cpp:284
 #, kde-format
 msgid "Automatic color correction"
-msgstr "Correção de cores automática"
+msgstr "Correção de cor automática"
 
 #. i18n("<p></p>"));
 #.
 #: core/utilities/setup/setupicc.cpp:290
 #, kde-format
 msgid "Convert it from the default input profile"
-msgstr "Convertê-la a partir do perfil de entrada padrão"
+msgstr "Convertê-la do perfil de entrada padrão"
 
 #: core/utilities/setup/setupicc.cpp:314
 #, kde-format
 msgid "Color Managed View"
-msgstr "Visualização do gerenciamento de cores"
+msgstr "Visualização do gerenciamento de cor"
 
 #: core/utilities/setup/setupicc.cpp:319
 #, kde-format
@@ -67802,7 +67798,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:335
 #, kde-format
 msgid "Use color managed view in editor"
-msgstr "Usar a visualização com gerenciamento de cores no editor"
+msgstr "Usar exibição com gerenciamento de cor no editor"
 
 #: core/utilities/setup/setupicc.cpp:336
 #, kde-format
@@ -67822,8 +67818,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:343
 #, kde-format
 msgid "Use color managed view for previews and thumbnails"
-msgstr ""
-"Usar a exibição com gerenciamento de cores nas visualizações e miniaturas"
+msgstr "Usar exibição com gerenciamento de cor nas visualizações e miniaturas"
 
 #: core/utilities/setup/setupicc.cpp:359
 #, kde-format
@@ -67860,7 +67855,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:384
 #, kde-format
 msgid "Printing and Proofing"
-msgstr "Impressão e análise"
+msgstr "Impressão e prova de monitor"
 
 #: core/utilities/setup/setupicc.cpp:389
 #, kde-format
@@ -67873,13 +67868,13 @@ msgid ""
 "<p>You can use this button to get more detailed information about the "
 "selected proofing profile.</p>"
 msgstr ""
-"<p>Você pode usar este botão para obter informações mais detalhadas sobre o "
-"perfil de análise selecionado.</p>"
+"<p>Você pode usar este botão para obter informações mais detalhadas sobre a "
+"prova de monitor selecionada.</p>"
 
 #: core/utilities/setup/setupicc.cpp:409
 #, kde-format
 msgid "Color Profiles Repository"
-msgstr "Repositório de perfis de cores"
+msgstr "Repositório de perfis de cor"
 
 #: core/utilities/setup/setupicc.cpp:414
 #, kde-format

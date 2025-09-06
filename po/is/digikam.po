@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-05 02:01+0000\n"
-"PO-Revision-Date: 2025-07-29 15:40+0000\n"
+"PO-Revision-Date: 2025-09-05 16:22+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3538,16 +3538,13 @@ msgstr ""
 "Magnvinnslustjóri: Bætt við verkfæri til að keyra G'MIC-síur í magnvinnslu."
 
 #: core/app/views/stack/welcomepageview.cpp:131
-#, fuzzy, kde-format
-#| msgid ""
-#| "Queue Manager: add new tool to assign rating, pick, and color labels in "
-#| "batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to perform auto-rotation based on content "
 "analysis using DNN."
 msgstr ""
-"Magnvinnslustjóri: Bætt við verkfæri til að úthluta einkunnum, sérmerkingum "
-"og litmerkjum í magnvinnslu."
+"Magnvinnslustjóri: Bætt við verkfæri til að framkvæma sjálfvirkan snúning í "
+"magnvinnslu út frá greiningu efnis með DNN."
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
@@ -3626,6 +3623,8 @@ msgstr "Nýr valkostur til að skanna mynd í ræsingu og þekkja andlit."
 #, kde-format
 msgid "New option to turn on/off OpenCL support with face management."
 msgstr ""
+"Nýr valkostur til að virkja eða slökkva á stuðningi OpenCL við umsýslu "
+"andlitsgagna."
 
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
@@ -7421,13 +7420,7 @@ msgid "AVIF quality:"
 msgstr "AVIF gæði:"
 
 #: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for AVIF images:</p><p><b>1</b>: low quality (high "
-#| "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-#| "b>: good quality (default)<br/><b>99</b>: high quality (no compression "
-#| "and large file size)</p><p><b>Note: AVIF is not a lossless image "
-#| "compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for AVIF images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -7436,10 +7429,10 @@ msgid ""
 "when you use this setting.</b></p>"
 msgstr ""
 "<p>Gæði AVIF  mynda:</p><p><b>1</b>: lág gæði (mikil þjöppun og litlar "
-"skrár)<br/><b>50</b>: meðal gæði<br/><b>75</b>: góð gæði (sjálfgefið)<br/"
-"><b>99</b>: há gæði (engin þjöppun og stórar skrár)</p><p><b>Athugið: AVIF "
-"er ekki taplaust (lossless) myndþjöppunarsnið þegar þessi stilling er valin."
-"</b></p>"
+"skrár)<br><b>50</b>: meðal gæði<br><b>75</b>: góð gæði "
+"(sjálfgefið)<br><b>99</b>: há gæði (engin þjöppun og stórar skrár)</"
+"p><p><b>Athugaðu: AVIF er ekki taplaust (lossless) myndþjöppunarsnið þegar "
+"þessi stilling er valin.</b></p>"
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:62
 #, kde-format
@@ -7461,13 +7454,7 @@ msgid "JPEG XL quality:"
 msgstr "JPEG XL gæði:"
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for JPEG XL images:</p><p><b>1</b>: low quality "
-#| "(high compression and small file size)<br/><b>50</b>: medium quality<br/"
-#| "><b>75</b>: good quality (default)<br/><b>99</b>: high quality (no "
-#| "compression and large file size)</p><p><b>Note: JPEG XL is not a lossless "
-#| "image compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for JPEG XL images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -7476,10 +7463,10 @@ msgid ""
 "when you use this setting.</b></p>"
 msgstr ""
 "<p>Gæði JPEG XL mynda:</p><p><b>1</b>: lág gæði (mikil þjöppun og litlar "
-"skrár)<br/><b>50</b>: meðal gæði<br/><b>75</b>: góð gæði (sjálfgefið)<br/"
-"><b>99</b>: há gæði (engin þjöppun og stórar skrár)</p><p><b>Athugið: JPEG "
-"XL er ekki taplaust (lossless) myndþjöppunarsnið þegar þessi stilling er "
-"valin.</b></p>"
+"skrár)<br><b>50</b>: meðal gæði<br><b>75</b>: góð gæði "
+"(sjálfgefið)<br><b>99</b>: há gæði (engin þjöppun og stórar skrár)</"
+"p><p><b>Athugaðu: JPEG XL er ekki taplaust (lossless) myndþjöppunarsnið "
+"þegar þessi stilling er valin.</b></p>"
 
 #: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:46
 #, kde-format
@@ -7532,13 +7519,7 @@ msgid "WEBP quality:"
 msgstr "WEBP gæði:"
 
 #: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for WEB images:</p><p><b>1</b>: low quality (high "
-#| "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
-#| "b>: good quality (default)<br/><b>99</b>: high quality (no compression "
-#| "and large file size)</p><p><b>Note: WEBP is not a lossless image "
-#| "compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for WEBP images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br><b>50</b>: medium quality<br><b>75</b>: "
@@ -7547,10 +7528,10 @@ msgid ""
 "when you use this setting.</b></p>"
 msgstr ""
 "<p>Gæði WEB-mynda:</p><p><b>1</b>: lág gæði (mikil þjöppun og litlar "
-"skrár)<br/><b>50</b>: meðal gæði<br/><b>75</b>: góð gæði (sjálfgefið)<br/"
-"><b>99</b>: há gæði (engin þjöppun og stórar skrár)</p><p><b>Athugið: WEBP  "
-"er ekki taplaust (lossless) myndþjöppunarsnið þegar þessi stilling er valin."
-"</b></p>"
+"skrár)<br><b>50</b>: meðal gæði<br><b>75</b>: góð gæði "
+"(sjálfgefið)<br><b>99</b>: há gæði (engin þjöppun og stórar skrár)</"
+"p><p><b>Athugaðu: WEBP er ekki taplaust (lossless) myndþjöppunarsnið þegar "
+"þessi stilling er valin.</b></p>"
 
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:43
 #, kde-format
@@ -8578,28 +8559,23 @@ msgid "Vignetting Correction..."
 msgstr "Laga linsuskyggingu í hornum..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:103
-#, fuzzy, kde-format
-#| msgid "Background color: "
+#, kde-format
 msgid "Background Blur Filter"
-msgstr "Litur bakgrunns:"
+msgstr "Sía fyrir móðun bakgrunns"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
-#| "matrix radius that determines how much to blur the image."
+#, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr ""
-"Mjúkleiki með gildið 0 hefur engin áhrif, yfir 1 ákveður Gauss fylkisradíus "
-"sem aftur hefur áhrif á hve mikið myndin er mýkt (sett í móðu ef of mikið)."
+"Stilltu þetta gildi til að ákveða fylkisradíusinn sem aftur hefur áhrif á "
+"hve mikið bakgrunnur myndar er mýktur í kringum viðfangsefnið."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
-#, fuzzy, kde-format
-#| msgid "Progress Information"
+#, kde-format
 msgid "Progressive Transition:"
-msgstr "Upplýsingar um framvindu"
+msgstr "Vaxandi (progressive) stöðuskipti:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
 #, kde-format
@@ -8607,32 +8583,27 @@ msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
+"Stilltu þetta gildi til að setja breytilega móðun milli nær og fjær miðað "
+"við viðfangsefnið. Þetta hermir eftir dýptasviði linsu."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject segmentation:"
-msgstr "Upplýsingar um viðfangsefni"
+msgstr "Uppskiptingar viðfangsefnis:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This value controls the number of iterations to use with the Neon and "
-#| "Find Edges effects."
+#, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr ""
-"Þetta gildi stýrir fjölda endurtekninga til að nota við keyrslu Neon og "
-"Finna brúnir forritlinganna."
+"Stilltu þetta gildi til að stýra fjölda ítrekana við upphlutun myndefnisins "
+"og þannig einangra viðfangsefnið meira eða minna."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
-#, fuzzy, kde-format
-#| msgid "Subjects"
+#, kde-format
 msgid "Subject Mask:"
-msgstr "Viðfangsefni"
+msgstr "Maski viðfangsefnis:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
@@ -8644,59 +8615,50 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
-#, fuzzy, kde-format
-#| msgid "Processing Panorama Preview..."
+#, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
-msgstr "Vinn forskoðun víðmyndar..."
+msgstr "Vinn forskoðun maska..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgid "Background Blur"
-msgstr "Litur bakgrunns:"
+msgstr "Móðun bakgrunns"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgctxt "@title"
 msgid "Background Blur"
-msgstr "Litur bakgrunns:"
+msgstr "Móðun bakgrunns"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to blur an image"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to blur the background of an image"
-msgstr "Verkfæri til að móða myndir"
+msgstr "Verkfæri til að móða bakgrunn myndar"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "This Image Editor tool can adjust the color curves from image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image."
-msgstr "Þetta myndvinnsluverkfæri getur lagað litferla í myndum."
+msgstr "Þetta myndvinnsluverkfæri getur bakgrunn viðfangsefnis í myndum."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgctxt "@action"
 msgid "Background Blur..."
-msgstr "Litur bakgrunns:"
+msgstr "Móðun bakgrunns..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
-#, fuzzy, kde-format
-#| msgid "Background color: "
+#, kde-format
 msgid "Background Blur Tool"
-msgstr "Litur bakgrunns:"
+msgstr "Verkfæri fyrir móðun bakgrunns"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
 #, kde-format
 msgid "You must select before a rectangular area including the subject..."
-msgstr ""
+msgstr "Áður verður þú að velja ferhyrnt svæði sem innifelur viðfangsefnið..."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -8817,16 +8779,7 @@ msgstr ""
 "Flýtilykill: CTRL+Y"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:191
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>How To Use:<br/><br/>* Press <b>s</b> to switch to source-selection "
-#| "mode, and select source point on image.<br/>* Press <b>s</b> again and "
-#| "start cloning.<br/>* Press <b>[</b> and <b>]</b> to change brush size.<br/"
-#| ">* Press <b>CTRL+Mousewheel</b> to zoom in/out.<br/>* Press <b>m</b> to "
-#| "pan the image if image is larger than viewport.<br/>* Press <b>l</b> to "
-#| "start lasso mode. Start drawing lasso boundary either continuously or "
-#| "discretely, then double-click or press l again to close the boundary.<br/"
-#| ">* Inside lasso mode, you can clone only inside the lasso region.</p>"
+#, kde-format
 msgid ""
 "<p>How To Use:<br><br>* Press <b>s</b> to switch to source-selection mode, "
 "and select source point on image.<br>* Press <b>s</b> again and start "
@@ -8837,15 +8790,15 @@ msgid ""
 "click or press l again to close the boundary.<br>* Inside lasso mode, you "
 "can clone only inside the lasso region.</p>"
 msgstr ""
-"<p>Notkun:<br/><br/>* Ýta á <b>s</b> til að skipta yfir í val á upptökum og "
-"velja síðan upprunapunkt á mynd.<br/>* Ýta á <b>s</b> aftur og byrja að "
-"klóna.<br/>* Ýta á <b>[</b> og <b>]</b> til að breyta stærð pensils.<br/>* "
-"Ýta á <b>CTRL+músarhjól</b> til að renna að eða frá.<br/>* Ýta á <b>m</b> "
-"til að hliðra myndinni ef hún er stærri en vinnsluglugginn.<br/>* Ýta á "
-"<b>l</b> til að fara í valsnöruham. Byrjaðu að teikna jaðar utan um myndval, "
-"annað hvort samfellt eða með bútum, síðan skal tvísmella eða ýta aftur á 'l' "
-"til að loka jaðri myndvalsins.<br/>* Þegar verið er í valsnöruham er "
-"einungis klónað það sem er innan myndvalsins.</p>"
+"<p>Notkun:<br><br>* Ýta á <b>s</b> til að skipta yfir í val á upptökum og "
+"velja síðan upprunapunkt á mynd.<br>* Ýta á <b>s</b> aftur og byrja að klóna."
+"<br>* Ýta á <b>[</b> og <b>]</b> til að breyta stærð pensils.<br>* Ýta á "
+"<b>CTRL+músarhjól</b> til að renna að eða frá.<br>* Ýta á <b>m</b> til að "
+"hliðra myndinni ef hún er stærri en vinnsluglugginn.<br>* Ýta á <b>l</b> til "
+"að fara í valsnöruham. Byrjaðu að teikna jaðar utan um myndval, annað hvort "
+"samfellt eða með bútum, síðan skal tvísmella eða ýta aftur á 'l' til að loka "
+"jaðri myndvalsins.<br>* Þegar verið er í valsnöruham er einungis klónað það "
+"sem er innan myndvalsins.</p>"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:324
 #, kde-format
@@ -9115,15 +9068,7 @@ msgid "Custom"
 msgstr "Sérsniðið"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:130
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Select the filter preset to use for photograph restoration here:</"
-#| "p><p><b>Reduce Uniform Noise</b>: reduce small image artifacts such as "
-#| "sensor noise.<br/><b>Reduce JPEG Artifacts</b>: reduce large image "
-#| "artifacts, such as a JPEG compression mosaic.<br/><b>Reduce Texturing</"
-#| "b>: reduce image artifacts, such as paper texture, or Moire patterns on "
-#| "scanned images.<br/><b>Custom</b>: Puts settings to most common values, "
-#| "fully customizable.</p>"
+#, kde-format
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
 "p><p><b>Reduce Uniform Noise</b>: reduce small image artifacts such as "
@@ -9135,11 +9080,11 @@ msgid ""
 msgstr ""
 "<p>Veldu hér forstillta síu til að nota við hreinsun myndar:</p><p><b>Minnka "
 "reglubundar truflanir</b>: fækkar smáum aukaatriðum eins og til dæmis "
-"truflunum í myndflögu.</p><p><b>Minnka JPEG aukamyndanir</b>: Minnkar stærri "
-"truflanir eins og JPEG þjöppunarmósaík.</p><p><b>Minnka mynstur</b>: minnkar "
-"myndtruflanir á borð við pappírsáferð og Moire mynstur í skönnuðum myndum.</"
-"p><p><b>Sérsniðið</b>: Setur stillingar á algengustu gildin, hægt að "
-"sérsníða til fulls.</p>"
+"truflunum í myndflögu.<br><b>Minnka JPEG aukamyndanir</b>: Minnkar stærri "
+"truflanir eins og JPEG þjöppunarmósaík.<br><b>Minnka mynstur</b>: minnkar "
+"myndtruflanir á borð við pappírsáferð og Moire mynstur í skönnuðum myndum."
+"<br><b>Sérsniðið</b>: Setur stillingar á algengustu gildin, hægt að sérsníða "
+"til fulls.</p>"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:321
 #, kde-format
@@ -10458,18 +10403,14 @@ msgid "Adjust"
 msgstr "Laga"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:175
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Correct the rotation of your images automatically by assigning two "
-#| "points in the preview widget and clicking <i>Adjust</i>.<br/>You can "
-#| "either adjust horizontal or vertical lines.</p>"
+#, kde-format
 msgid ""
 "<p>Correct the rotation of your images automatically by assigning two points "
 "in the preview widget and clicking <i>Adjust</i>.<br>You can either adjust "
 "horizontal or vertical lines.</p>"
 msgstr ""
 "<p>Lagfæra sjálfvirkt snúning mynda með því að merkja tvo punkta í "
-"forskoðunarglugganum og smella síðan á <i>Laga</i>.<br/>Þú getur bæði gert "
+"forskoðunarglugganum og smella síðan á <i>Laga</i>.<br>Þú getur bæði gert "
 "þetta út frá láréttum og lóðréttum línum.</p>"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:197
@@ -11742,20 +11683,7 @@ msgid "A tool to edit items geolocation"
 msgstr "Verkfæri til að breyta hnattstaðsetningu atriða"
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to change geolocation information from items.\n"
-#| "\n"
-#| "This tool can edit GPS data, manually or over a map. Reverse geo-coding "
-#| "is also available through web services.\n"
-#| "\n"
-#| "This tool has also an export function to KML to store map traces in "
-#| "Google format.\n"
-#| "\n"
-#| "Finally, this tool is able to read a GPS trace from a device to "
-#| "synchronize geo-location of items if you camera do not have an embedded "
-#| "GPS device."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to change geolocation information from items."
@@ -11765,17 +11693,13 @@ msgid ""
 "this tool is able to read a GPS trace from a device to synchronize geo-"
 "location of items if you camera do not have an embedded GPS device."
 msgstr ""
-"Þetta verkfæri gerir kleift að breyta hnattstaðsetningarupplýsingum.\n"
-"\n"
-"Þetta verkfæri getur meðhöndlað GPS-gögn, handvirkt eða á landakorti. "
-"Afturvirk hnattstaðsetningarkóðun (reverse geo-coding) er einnig í boði í "
-"gegnum vefþjónustur.\n"
-"\n"
-"Þetta verkfæri getur einnig flutt út í KML til að geyma kortaferla á Google-"
-"sniði.\n"
-"\n"
-"Að lokum, þetta verkfæri getur einnig lesið GPS-ferla úr tækjum og samstillt "
-"hnattstaðsetningu atriða ef myndavél er ekki með innbyggt GPS-tæki."
+"Þetta verkfæri gerir kleift að breyta hnattstaðsetningarupplýsingum."
+"<br><br>Þetta verkfæri getur meðhöndlað GPS-gögn, handvirkt eða á "
+"landakorti. Afturvirk hnattstaðsetningarkóðun (reverse geo-coding) er einnig "
+"í boði í gegnum vefþjónustur.<br><br>Þetta verkfæri getur einnig flutt út í "
+"KML til að geyma kortaferla á Google-sniði.<br><br>Að lokum, þetta verkfæri "
+"getur einnig lesið GPS-ferla úr tækjum og samstillt hnattstaðsetningu atriða "
+"ef myndavél er ekki með innbyggt GPS-tæki."
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:103
 #, kde-format
@@ -15126,16 +15050,7 @@ msgid "A tool to edit items metadata"
 msgstr "Verkfæri til að breyta lýsigögnum atriða"
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to changes plenty of metadata from items.\n"
-#| "\n"
-#| "Most common Exif, Iptc, and Xmp tags used in photography are listed for "
-#| "editing with standardized values.\n"
-#| "\n"
-#| "For photo agencies, pre-configured subjects can be used to describe the "
-#| "items contents based on Iptc reference codes."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to changes plenty of metadata from items.<br><br>Most "
@@ -15143,14 +15058,11 @@ msgid ""
 "with standardized values.<br><br>For photo agencies, pre-configured subjects "
 "can be used to describe the items contents based on Iptc reference codes."
 msgstr ""
-"Þetta verkfæri gerir notendum kleift að breyta mörgum lýsigögnum úr "
-"atriðum.\n"
-"\n"
-"Algengustu EXIF-, IPTC- og XMP-merki sem notuð eru í ljósmyndun eru talin "
-"upp til vinnslu með stöðluðum gildum.\n"
-"\n"
-"Ljósmyndaumboðsskrifstofur geta notað forstillt viðfangsefni til að lýsa "
-"efni mynda/myndskeiða byggt á IPTC-tilvísanakóðum."
+"Þetta verkfæri gerir notendum kleift að breyta mörgum lýsigögnum í atriðum."
+"<br><br>Algengustu EXIF-, IPTC- og XMP-merki sem notuð eru í ljósmyndun eru "
+"talin upp til vinnslu með stöðluðum gildum."
+"<br><br>Ljósmyndaumboðsskrifstofur geta notað forstillt viðfangsefni til að "
+"lýsa efni mynda/myndskeiða byggt á IPTC-tilvísanakóðum."
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:101
 #, kde-format
@@ -16422,36 +16334,29 @@ msgid "Select Calendar Data File"
 msgstr "Veldu dagatalsskrá"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:202
-#, fuzzy, kde-format
-#| msgid "No valid images selected for months<br/>Click Back to select images"
+#, kde-format
 msgid "No valid images selected for months<br>Click Back to select images"
 msgstr ""
-"Engar gildar myndskrár hafa verði valdar fyrir mánuðina<br/>Smelltu á 'Til "
+"Engar gildar myndskrár hafa verði valdar fyrir mánuðina<br>Smelltu á 'Til "
 "baka' til að velja myndir"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:217
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please note that you are making a calendar for<br/>the current year or a "
-#| "year in the past."
+#, kde-format
 msgid ""
 "Please note that you are making a calendar for<br>the current year or a year "
 "in the past."
 msgstr ""
-"Athugaðu að þú ert að búa til dagatal fyrir árið sem er núna<br/>eða ár sem "
+"Athugaðu að þú ert að búa til dagatal fyrir árið sem er núna<br>eða ár sem "
 "er þegar liðið."
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Click Next to start Printing<br/><br/>Following months will be printed "
-#| "for year %1:<br/>"
+#, kde-format
 msgid ""
 "Click Next to start Printing<br><br>Following months will be printed for "
 "year %1:<br>"
 msgstr ""
-"Smelltu á 'Næsta' til að hefja prentun<br/><br/>Eftirfarandi mánuðir verða "
-"prentaðir fyrir árið %1:<br/>"
+"Smelltu á 'Næsta' til að hefja prentun<br><br>Eftirfarandi mánuðir verða "
+"prentaðir fyrir árið %1:<br>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:275
 #, kde-format
@@ -16595,12 +16500,7 @@ msgid "A tool to batch convert RAW camera images to DNG"
 msgstr "Tól til að breyta mörgum RAW ljósmyndum í DNG"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert RAW images data to DNG "
-#| "format.</p><p>The Digital Negative is a lossless RAW image format created "
-#| "by Adobe.</p><p>See details about this format from <a href='https://en."
-#| "wikipedia.org/wiki/Digital_Negative'>this page</a>.</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Generic tool can convert RAW images data to DNG format.<br><br>The "
@@ -16608,9 +16508,8 @@ msgid ""
 "details on this wikipedia entry about this format: %1"
 msgstr ""
 "<p>Þetta verkfæri magnvinnslustjórans getur umbreytt gögnum RAW-mynda yfir á "
-"DNG-snið.</p><p>Digital Negative sniðið er taplaust RAW-myndasnið frá Adobe."
-"</p><p>Skoðaðu nánari upplýsingar um þetta myndasnið á <a href='https://en."
-"wikipedia.org/wiki/Digital_Negative'>þessari síðu</a>.</p>"
+"DNG-snið.<br><br>Digital Negative sniðið er taplaust RAW-myndasnið frá Adobe."
+"<br><br>Skoðaðu nánari upplýsingar um þetta myndasnið á: %1"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:107
 #, kde-format
@@ -18405,19 +18304,7 @@ msgid "A tool to export items as MJPEG Stream"
 msgstr "Verkfæri til að flytja atriði út sem MJPEG-streymi"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:84
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool allows users to share items on the local network through a "
-#| "MJPEG Stream server.</p><p>Items to share can be selected one by one or "
-#| "by group through a selection of albums.</p><p>Motion JPEG is a video "
-#| "compression format in which each video frame or interlaced field of a "
-#| "digital video sequence is compressed separately as a JPEG image. MJPEG "
-#| "streams is a standard which allows network clients to be connected "
-#| "without additional module. Most major web browsers and players support "
-#| "MJPEG stream.</p><p>To access to stream from your browser, use http://"
-#| "address:port as url, with address the MJPEG address, and port the MJPEG "
-#| "port set in config dialog. More than one computer can be connected to the "
-#| "MJPEG server at the same time.</p>"
+#, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a "
 "MJPEG Stream server.</p><p>Items to share can be selected one by one or by "
@@ -18432,16 +18319,16 @@ msgid ""
 "same time.</p>"
 msgstr ""
 "<p>Þetta verkfæri gerir notendum kleift að deila efni um staðarnetið í "
-"gegnum vafra. </p><p>Atriðin sem á að vinna er hægt að velja eitt og eitt "
-"eða í hópum með því að velja möppur.</p><p>Motion JPEG er þjöppunarsnið "
-"fyrir myndskeið þar sem hverjum ramma myndskeiðs er þjappað sérstaklega sem "
-"JPEG-mynd. MJPEG-streymi er staðall sem gerir netbiðlurum kleift aðtengjast "
-"án nokkurra viðbótarhugbúnaðareininga. Flestir algengustu vafrar og "
-"myndspilarar styðja MJPEG-streymi. </p><p>Til að skoða streymi úr vafranum "
-"þínum, skaltu einfaldlega setja inn slóðina http://vistfang:gátt, þar sem "
-"vistfangið er IP-tala MJPEG-þjónsins og gáttin er sú gátt sem stillt er í "
-"þessum uppsetningarglugga. Fleiri en ein tölva geta tengst MJPEG-þjóninum á "
-"sama tíma.</p>"
+"gegnum MJPEG-streymisþjón. </p><p>Atriðin sem á að vinna er hægt að velja "
+"eitt og eitt eða í hópum með því að velja möppur.</p><p>Motion JPEG er "
+"þjöppunarsnið fyrir myndskeið þar sem hverjum ramma myndskeiðs er þjappað "
+"sérstaklega sem JPEG-mynd. MJPEG-streymi er staðall sem gerir netbiðlurum "
+"kleift að tengjast án nokkurra viðbótarhugbúnaðareininga. Flestir algengustu "
+"vafrar og myndspilarar styðja MJPEG-streymi. </p><p>Til að skoða streymi úr "
+"vafranum þínum, skaltu einfaldlega setja inn slóðina http://vistfang:gátt, "
+"þar sem vistfangið er IP-vistfang MJPEG-þjónsins og gáttin er sú gátt sem "
+"stillt er í þessum uppsetningarglugga. Fleiri en ein tölva geta tengst MJPEG-"
+"þjóninum á sama tíma.</p>"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:101
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
@@ -18605,12 +18492,7 @@ msgid "&Start OCR"
 msgstr "Ræ&sa OCR-ljóslestur"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:152
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid ""
-#| "This tool use the %1 open-source engine to perform Optical Characters "
-#| "Recognition. Tesseract program and the desired languages modules must be "
-#| "installed on your system."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "This tool uses the %1 open-source engine to perform Optical Characters "
@@ -20664,18 +20546,14 @@ msgstr "<p>Ný þjöppun JPEG mynda sem á að senda:</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:175
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:137
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><b>1</b>: very high compression<br/><b>25</b>: high compression<br/"
-#| "><b>50</b>: medium compression<br/><b>75</b>: low compression (default "
-#| "value)<br/><b>100</b>: no compression</p>"
+#, kde-format
 msgid ""
 "<p><b>1</b>: very high compression<br><b>25</b>: high compression<br><b>50</"
 "b>: medium compression<br><b>75</b>: low compression (default "
 "value)<br><b>100</b>: no compression</p>"
 msgstr ""
-"<p><b>1</b>: mjög mikil þjöppun<br/><b>25</b>: mikil þjöppun<br/><b>50</b>: "
-"meðalþjöppun<br/><b>75</b>: lítil þjöppun (sjálfgefið)<br/><b>100</b>: engin "
+"<p><b>1</b>: mjög mikil þjöppun<br><b>25</b>: mikil þjöppun<br><b>50</b>: "
+"meðalþjöppun<br><b>75</b>: lítil þjöppun (sjálfgefið)<br><b>100</b>: engin "
 "þjöppun</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
@@ -22955,12 +22833,7 @@ msgid "Use the album path of the items in the target"
 msgstr "Nota slóð möppu atriðanna í úttakinu"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: "
-#| "very high compression<br/><b>25</b>: high compression<br/><b>50</b>: "
-#| "medium compression<br/><b>75</b>: low compression (default value)<br/"
-#| "><b>100</b>: no compression</p>"
+#, kde-format
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
 "high compression<br><b>25</b>: high compression<br><b>50</b>: medium "
@@ -22968,8 +22841,8 @@ msgid ""
 "compression</p>"
 msgstr ""
 "<p>Nýtt þjöppunargildi JPEG-mynda sem á að senda:</p><p><b>1</b>: mjög mikil "
-"þjöppun<br/><b>25</b>: mikil þjöppun<br/><b>50</b>: meðalþjöppun<br/><b>75</"
-"b>: lítil þjöppun (sjálfgefið)<br/><b>100</b>: engin þjöppun</p>"
+"þjöppun<br><b>25</b>: mikil þjöppun<br><b>50</b>: meðalþjöppun<br><b>75</b>: "
+"lítil þjöppun (sjálfgefið)<br><b>100</b>: engin þjöppun</p>"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, kde-format
@@ -27093,34 +26966,25 @@ msgstr ""
 "áður en þú ræsir digiKam aftur."
 
 #: core/libs/album/manager/albummanager_database.cpp:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
-#| "on your system.<br/> Please choose the most appropriate  option to handle "
-#| "this situation:</p>"
+#, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br>(%2)</p><p> is currently not found on "
 "your system.<br> Please choose the most appropriate  option to handle this "
 "situation:</p>"
 msgstr ""
-"<p>Myndasafnið </p><p><b>%1</b><br/>(%2)</p><p> finnst ekki í augnablikinu á "
+"<p>Myndasafnið </p><p><b>%1</b><br>(%2)</p><p> finnst ekki í augnablikinu á "
 "kerfinu þínu.<br/> Veldu viðeigandi aðgerð fyrir slík tilfelli:</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:329
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The collection is still available, but the identifier changed.<br/"
-#| ">This can be caused by restoring a backup, changing the partition layout "
-#| "or the file system settings.<br/>The collection is now located at this "
-#| "place:</p>"
+#, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br>This "
 "can be caused by restoring a backup, changing the partition layout or the "
 "file system settings.<br>The collection is now located at this place:</p>"
 msgstr ""
-"<p>Myndasafnið er tiltækt, en auðkennið breyttist.<br/>Þetta getur komið "
-"fyrir þegar endurheimt er frá öriggisafritun, við breytingar á disksneiðum "
-"eða á stillingum skráakerfis.<br/>Myndasafnið er núna staðsett hér:</p>"
+"<p>Myndasafnið er tiltækt, en auðkennið breyttist.<br>Þetta getur komið "
+"fyrir þegar endurheimt er úr öryggisafritum, við breytingar á disksneiðum "
+"eða á stillingum skráakerfis.<br>Myndasafnið er núna staðsett hér:</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:348
 #, kde-format
@@ -28026,12 +27890,10 @@ msgid "All albums"
 msgstr "Öll albúm"
 
 #: core/libs/album/widgets/albumselectors.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive album selection."
+#, kde-format
 msgctxt "@info"
 msgid "Toggle recursive album selection."
-msgstr "Velja líka undirmöppur."
+msgstr "Víxla af/á að velja líka undirmöppur."
 
 #: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
@@ -28058,12 +27920,10 @@ msgid "All tags"
 msgstr "Öll merki"
 
 #: core/libs/album/widgets/albumselectors.cpp:241
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Recursive tags selection."
+#, kde-format
 msgctxt "@info"
 msgid "Toggle recursive tags selection."
-msgstr "Velja líka undirmerki."
+msgstr "Víxla af/á að velja líka undirmerki."
 
 #: core/libs/album/widgets/albumselectors.cpp:253
 #, kde-format
@@ -30114,17 +29974,13 @@ msgid "Build Environment"
 msgstr "Byggingarumhverfi"
 
 #: core/libs/dialogs/libsinfodlg_buildtools.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: git revision"
 msgid "Unknown"
 msgstr "Óþekkt"
 
 #: core/libs/dialogs/libsinfodlg_buildtools.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: git branch"
 msgid "Unknown"
 msgstr "Óþekkt"
@@ -30148,9 +30004,7 @@ msgid "Libraries"
 msgstr "Aðgerðasöfn"
 
 #: core/libs/dialogs/libsinfodlg_libraries.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: libx265 version"
 msgid "Unknown"
 msgstr "Óþekkt"
@@ -40284,11 +40138,9 @@ msgid "Tags Manager"
 msgstr "Merkjastjórnun"
 
 #: core/libs/tags/manager/tagsmanager_gui.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@info: search text bar"
-#| msgid "Search in Favorites..."
+#, kde-format
 msgid "Search for tags..."
-msgstr "Leita í eftirlætum..."
+msgstr "Leita að merkjum..."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:26
 #, kde-format
@@ -40325,49 +40177,42 @@ msgstr ""
 "Viltu halda áfram?"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all tags that should be processed."
+#, kde-format
 msgid "Select a base tag from which the tags should be exported."
-msgstr "Veldu öll merki sem á að vinna með."
+msgstr "Veldu grunnmerki sem á að flytja merkin út úr."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:181
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
-msgstr ""
+msgstr "Valið merki er ekki grunnmerki efst í stigskipaninni."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Local Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
-msgstr "Flytja út á staðværa geymslu"
+msgstr "Flytja út merkjaskrá með stöðluðum orðaforða (Controlled Vocabulary)"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:190
 #: core/libs/tags/manager/tagsmanager_io.cpp:308
-#, fuzzy, kde-format
-#| msgid "XMP text Files (*.xmp)"
+#, kde-format
 msgid "Text File (*.txt)"
-msgstr "XMP textaskrár (*.xmp)"
+msgstr "Textaskrá (*.txt)"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:288
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all tags that should be processed."
+#, kde-format
 msgid "Select a tag into which the tags should be imported."
-msgstr "Veldu öll merki sem á að vinna með."
+msgstr "Veldu merki sem á að flytja merkin inn í."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:298
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
-msgstr ""
+msgstr "Engin merki er hægt að flytja inn í valið andlitsmerki."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:307
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
-msgstr ""
+msgstr "Flytja inn merkjaskrá með stöðluðum orðaforða (Controlled Vocabulary)"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:406
 #, kde-format
@@ -40377,16 +40222,13 @@ msgstr[0] "Viltu fjarlægja valda merkið af öllum myndum?"
 msgstr[1] "Viltu fjarlægja völdu merkin af öllum myndum?"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add New Tag"
+#, kde-format
 msgctxt "@action: button"
 msgid "Add Tag"
-msgstr "Bæta við nýju merki"
+msgstr "Bæta við merki"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:93
-#, fuzzy, kde-format
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action: button"
 msgid "Remove Tag"
 msgstr "Fjarlægja merki"
@@ -40480,16 +40322,14 @@ msgid "Wipe all tags from Database only"
 msgstr "Hreinsa öll merki aðeins úr gagnagrunni"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:227
-#, fuzzy, kde-format
-#| msgid "Edit title from selected tag."
+#, kde-format
 msgid "Export tags to a file from selected tag"
-msgstr "Breyta heiti á völdu merki."
+msgstr "Flytja merki út í skrá frá völdu merki"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:230
-#, fuzzy, kde-format
-#| msgid "Import all tags from a file to restore a backup."
+#, kde-format
 msgid "Import tags from a file to selected tag"
-msgstr "Flytja öll merki inn úr skrá til að endurheimta öryggisafrit."
+msgstr "Flytja merki úr skrá inn í valið merki"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:232
 #, kde-format
@@ -49941,27 +49781,21 @@ msgid "Editor Window"
 msgstr "Myndvinnslugluggi"
 
 #: core/showfoto/setup/showfotosetup.cpp:106
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></"
-#| "qt>"
+#, kde-format
 msgid ""
 "<qt>Editor Window Settings<br><i>Customize editor window behavior</i></qt>"
 msgstr ""
-"<qt>Stillingar myndvinnsluglugga<br/><i>Sérsniðin hegðun "
+"<qt>Stillingar myndvinnsluglugga<br><i>Sérsniðin hegðun "
 "myndvinnsluforrritsins</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:112
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
-#| "images and metadata</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br><i>Setup relations between "
 "images and metadata</i></qt>"
 msgstr ""
-"<qt>Stjórnun ígræddra myndupplýsinga<br/><i>Setur upp vensl milli mynda og "
-"lýsigagna (lýsigagna)</i></qt>"
+"<qt>Stjórnun ígræddra myndupplýsinga<br><i>Setur upp vensl milli mynda og "
+"lýsigagna</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
@@ -49969,16 +49803,13 @@ msgid "Tool Tip"
 msgstr "Vísbendingar verkfæra"
 
 #: core/showfoto/setup/showfotosetup.cpp:118
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
-#| "information in tool-tips</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br><i>Customize "
 "information in tool-tips</i></qt>"
 msgstr ""
-"<qt>Stillingar vísbendinga á atriðum á smámyndastiku og möppusýn<br/"
-"><i>Sérsníður upplýsingar sem birtast í vísbendingum</i></qt>"
+"<qt>Stillingar vísbendinga á atriðum á smámyndastiku og "
+"möppusýn<br><i>Sérsníður upplýsingar sem birtast í vísbendingum</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:123
 #, kde-format
@@ -49986,28 +49817,21 @@ msgid "RAW Decoding"
 msgstr "RAW afkóðun"
 
 #: core/showfoto/setup/showfotosetup.cpp:124
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
-#| "settings</i></qt>"
+#, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br><i>Customize default RAW decoding "
 "settings</i></qt>"
 msgstr ""
-"<qt>Stillingar afkóðunar RAW-skráa<br/><i>Sérsníða stillingar við afkóðun "
-"RAW-skráa</i></qt>"
+"<qt>Stillingar afkóðunar RAW-skráa<br><i>Sérsníða stillingar við afkóðun RAW-"
+"skráa</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:130
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Settings for Color Management<br/><i>Customize color management "
-#| "settings</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Settings for Color Management<br><i>Customize color management settings</"
 "i></qt>"
 msgstr ""
-"<qt>Stillingar litastýringar<br/><i>Sérsníða stillingar litastýringar</i></"
-"qt>"
+"<qt>Stillingar litastýringar<br><i>Sérsníða stillingar litastýringar</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
@@ -50015,16 +49839,13 @@ msgid "Save Images"
 msgstr "Vista myndir"
 
 #: core/showfoto/setup/showfotosetup.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Settings for Saving Image Files<br/><i>Set default configuration used "
-#| "to save images</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr ""
-"<qt>Stillingar fyrir vistun myndskráa<br/><i>Setur sjálfgefnar stillingar "
-"sem notaðar eru við vistun myndskráa</i></qt>"
+"<qt>Stillingar fyrir vistun myndskráa<br><i>Setur sjálfgefnar stillingar sem "
+"notaðar eru við vistun myndskráa</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
 #, kde-format
@@ -50048,15 +49869,12 @@ msgid "Plugins"
 msgstr "Viðbætur"
 
 #: core/showfoto/setup/showfotosetup.cpp:151
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
-#| "accessible from application</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br><i>Set which plugins will be "
 "accessible from application</i></qt>"
 msgstr ""
-"<qt>Stillingar viðbóta í aðalviðmóti<br/><i>Stilltu hvaða viðbætur eru "
+"<qt>Stillingar viðbóta í aðalviðmóti<br><i>Stilltu hvaða viðbætur eru "
 "aðgengilegar úr forritinu</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:156
@@ -50066,15 +49884,12 @@ msgid "Miscellaneous"
 msgstr "Ýmislegt"
 
 #: core/showfoto/setup/showfotosetup.cpp:157
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
-#| "of Showfoto</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br><i>Customize behavior of the other parts of "
 "Showfoto</i></qt>"
 msgstr ""
-"<qt>Ýmsar stillingar<br/><i>Sérsníddu hegðun annarra hluta Showfoto</i></qt>"
+"<qt>Ýmsar stillingar<br><i>Sérsníddu hegðun annarra hluta Showfoto</i></qt>"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:84
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:102
@@ -51426,16 +51241,12 @@ msgid "Default Value"
 msgstr "Sjálfgefið gildi"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:48
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set a default value for empty strings.<br/>When applied to a renaming "
-#| "option, an empty string will be replaced by the value you specify here.</"
-#| "p>"
+#, kde-format
 msgid ""
 "<p>Set a default value for empty strings.<br>When applied to a renaming "
 "option, an empty string will be replaced by the value you specify here.</p>"
 msgstr ""
-"<p>Settu hér sjálfgefið gildi fyrir auða strengi.<br/>Þegar þetta er notað "
+"<p>Settu hér sjálfgefið gildi fyrir auða strengi.<br>Þegar þetta er notað "
 "sem möguleiki við endurnefningu, verður auðum textastrengjum skipt út fyrir "
 "það sem þú tilgreinir hérna.</p>"
 
@@ -52392,11 +52203,7 @@ msgid "/Pictures"
 msgstr "/Myndir"
 
 #: core/utilities/firstrun/collectionpage.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Please enter a location where you keep your images.</p> <p>You can "
-#| "choose any local folder, even one that already contains images.<br/> More "
-#| "folders can be added later under the <i>Settings</i> menu. </p> "
+#, kde-format
 msgid ""
 "<p>Please enter a location where you keep your images.</p> <p>You can choose "
 "any local folder, even one that already contains images.<br> More folders "
@@ -52404,7 +52211,7 @@ msgid ""
 msgstr ""
 "<p>Settu inn staðinn þar sem þú vilt geyma myndirnar þínar.</p> <p>Þú getur "
 "valið hvaða möppu sem er á tölvunni þinni, líka einhverja sem inniheldur "
-"myndir nú þegar.<br/> Fleiri möppum má bæta við síðar með því að fara í "
+"myndir nú þegar.<br> Fleiri möppum má bæta við síðar með því að fara í "
 "<i>Stillingar</i> valmyndina. </p> "
 
 #: core/utilities/firstrun/collectionpage.cpp:85
@@ -52448,16 +52255,13 @@ msgid "Create Root Album Folder Failed"
 msgstr "Mistókst að búa til grunnmöppu"
 
 #: core/utilities/firstrun/collectionpage.cpp:190
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>digiKam could not create the folder to use as the root album.\n"
-#| "Please select a different location.</p><p><b>%1</b></p>"
+#, kde-format
 msgid ""
 "<p>digiKam could not create the folder to use as the root album.<br>Please "
 "select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"<qt>DigiKam gat ekki búið til möppuna til að nota hana sem grunnalbúm. Veldu "
-"aðra staðsetningu.<p><b>%1</b></p></qt>"
+"<qt>DigiKam gat ekki búið til möppuna til að nota hana sem grunnalbúm."
+"<br>Veldu aðra staðsetningu.<p><b>%1</b></p></qt>"
 
 #: core/utilities/firstrun/collectionpage.cpp:215
 #, kde-format
@@ -52758,17 +52562,7 @@ msgstr ""
 "að nota digiKam fljótt og vel.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br/><p>You can ignore the following if you use digiKam for the first "
-#| "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files "
-#| "from digiKam 4 are not migrated. The old database can still be used, you "
-#| "just need to choose the same locations for collections and database in "
-#| "the following dialogs. It is recommended to create a backup of your "
-#| "database before proceeding.</p><p>The new location for configuration "
-#| "files is %1 (old %2). There are unresolved problems reported when re-"
-#| "using old configuration files, so it is not recommended to do it for the "
-#| "moment, and at your own risk.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><br><p>You can ignore the following if you use digiKam for the first "
 "time:</p><p><b>Transition from digiKam 4</b></p><p>Configuration files from "
@@ -52780,12 +52574,12 @@ msgid ""
 "files, so it is not recommended to do it for the moment, and at your own "
 "risk.</p></qt>"
 msgstr ""
-"<qt><br/><p>Þú mátt sleppa eftirfarandi ef þú hefur aldrei notað digiKam "
-"áður:</p><p><b>Millifærsla úr digiKam 4</b></p><p>Stillingaskrár úr digiKam "
-"4 yfirfærast ekki. Hægt er að nota gamla gagnagrunninn, þú þarft bara að "
-"velja sömu staðsetningu fyrir söfn og gagnagrunn í gluggunum sem koma hér á "
-"eftir. Mælt er með því að tekið sé öryggisafrit af gagnagrunninum þínum áður "
-"en haldið er áfram.</p><p>Nýja staðsetningin fyrir stillingaskrárnar er %1 "
+"<qt><br><p>Þú mátt sleppa eftirfarandi ef þú hefur aldrei notað digiKam áður:"
+"</p><p><b>Millifærsla úr digiKam 4</b></p><p>Stillingaskrár úr digiKam 4 "
+"yfirfærast ekki. Hægt er að nota gamla gagnagrunninn, þú þarft bara að velja "
+"sömu staðsetningu fyrir söfn og gagnagrunn í gluggunum sem koma hér á eftir. "
+"Mælt er með því að tekið sé öryggisafrit af gagnagrunninum þínum áður en "
+"haldið er áfram.</p><p>Nýja staðsetningin fyrir stillingaskrárnar er %1 "
 "(gamla var %2). Það eru ennþá óleyst vandamál ef notaðar eru gamlar "
 "stillingaskrár, þannig að ekki er mælt með því að slíkt sé gert, og er það "
 "þá alfarið á eigin ábyrgð.</p></qt>"
@@ -53036,19 +52830,15 @@ msgstr ""
 "fyrst."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Drag & drop an image here<br/>to perform similar<br/>items search.</"
-#| "p><p>You can also use the context menu<br/>when browsing through<br/>your "
-#| "images.</p>"
+#, kde-format
 msgid ""
 "<p>Drag & drop an image here<br>to perform similar<br>items search.</"
 "p><p>You can also use the context menu<br>when browsing through<br>your "
 "images.</p>"
 msgstr ""
-"<p>Dragðu & slepptu mynd hér<br/>til að framkvæma leit<br/>að svipuðum "
-"atriðum.</p><p>Þú getur líka notað samhengisvalmyndina<br/> (hægrismella) "
-"þegar þú flettir í gegnum<br/> myndirnar þínar.</p>"
+"<p>Dragðu & slepptu mynd hér<br>til að framkvæma leit<br>að svipuðum atriðum."
+"</p><p>Þú getur líka notað samhengisvalmyndina<br> (hægrismella) þegar þú "
+"flettir í gegnum<br> myndirnar þínar.</p>"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:38
 #, kde-format
@@ -57958,28 +57748,22 @@ msgid "%1 - %2"
 msgstr "%1 - %2"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:204
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This image has an <b>embedded color profile</b><br/> which does not "
-#| "match your working space color profile.<br/>How do you want to proceed?</"
-#| "p>"
+#, kde-format
 msgid ""
 "<p>This image has an <b>embedded color profile</b><br> which does not match "
 "your working space color profile.<br>How do you want to proceed?</p>"
 msgstr ""
-"<p>Þessari mynd hefur verið úthlutað litasniði sem ekki virðist passa við "
-"sjálfgefið litasnið vinnurýmisins.</p><p>Hvernig viltu halda áfram?</p>"
+"<p>Þessari mynd hefur verið úthlutað <b>ívöfðu litasniði</b><br> sem ekki "
+"virðist passa við sjálfgefið litasnið vinnurýmisins.<br>Hvernig viltu halda "
+"áfram?</p>"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This image has <b>no information about the color space</b><br/>that "
-#| "was used when creating the image. <br/>How do you want to proceed?</p>"
+#, kde-format
 msgid ""
 "<p>This image has <b>no information about the color space</b><br>that was "
 "used when creating the image. <br>How do you want to proceed?</p>"
 msgstr ""
-"<p>Þessi mynd hefur <b>engar upplýsingar um litrýmd</b><br/>þá sem notuð var "
+"<p>Þessi mynd hefur <b>engar upplýsingar um litrýmd</b><br>þá sem notuð var "
 "við gerð hennar. <br/>Hvernig viltu halda áfram?</p>"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:217
@@ -59316,47 +59100,21 @@ msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "Mistókst að víxla læsingu á skránni <b>%1</b>. Viltu halda áfram?"
 
 #: core/utilities/import/backend/gpcamera.cpp:1616
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br><br>"
-msgstr ""
-"Titill: \"%1\"\n"
-"Gerð: \"%2\"\n"
-"Gátt: \"%3\"\n"
-"Slóð: \"%4\"\n"
-"\n"
+msgstr "Titill: \"%1<br>Gerð: \"%2<br>Gátt: \"%3<br>Slóð: \"%4<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1623
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete Directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "Directories: \"%6\"<br><br>"
 msgstr ""
-"Smámyndir: \"%1\"\n"
-"Ná í mynd: \"%2\"\n"
-"Eyða hlutum: \"%3\"\n"
-"Senda hluti: \"%4\"\n"
-"Búa til möppur: \"%5\"\n"
-"Eyða möppum: \"%6\"\n"
-"\n"
+"Smámyndir: \"%1\"<br>Ná í mynd: \"%2\"<br>Eyða hlutum: \"%3\"<br>Senda "
+"hluti: \"%4\"<br>Búa til möppur: \"%5\"<br>Eyða möppum: \"%6\"<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
@@ -59381,67 +59139,34 @@ msgid "no"
 msgstr "nei"
 
 #: core/utilities/import/backend/umscamera.cpp:566
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
-#| "disk card readers.\n"
-#| "\n"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and Flash "
 "disk card readers.<br><br>"
 msgstr ""
 "\"Tengdar myndavélar\" rekill fyrir USB/IEEE1394 geymslumiðilsmyndavélar og "
-"Flash minniskortalesara.\n"
-"\n"
+"Flash minniskortalesara.<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:573
-#, fuzzy, kde-format
-#| msgctxt "@info List of device properties"
-#| msgid ""
-#| "Title: \"%1\"\n"
-#| "Model: \"%2\"\n"
-#| "Port: \"%3\"\n"
-#| "Path: \"%4\"\n"
-#| "UUID: \"%5\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of device properties"
 msgid ""
 "Title: \"%1\"<br>Model: \"%2\"<br>Port: \"%3\"<br>Path: \"%4\"<br>UUID: "
 "\"%5\"<br><br>"
 msgstr ""
-"Titill: \"%1\"\n"
-"Gerð: \"%2\"\n"
-"Gátt: \"%3\"\n"
-"Slóð: \"%4\"\n"
-"UUID: \"%5\"\n"
-"\n"
+"Titill: \"%1<br>Gerð: \"%2<br>Gátt: \"%3<br>Slóð: \"%4<br>UUID: \"%5<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "@info List of supported device operations"
-#| msgid ""
-#| "Thumbnails: \"%1\"\n"
-#| "Capture image: \"%2\"\n"
-#| "Delete items: \"%3\"\n"
-#| "Upload items: \"%4\"\n"
-#| "Create directories: \"%5\"\n"
-#| "Delete directories: \"%6\"\n"
-#| "\n"
+#, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
 "Thumbnails: \"%1\"<br>Capture image: \"%2\"<br>Delete items: "
 "\"%3\"<br>Upload items: \"%4\"<br>Create directories: \"%5\"<br>Delete "
 "directories: \"%6\"<br><br>"
 msgstr ""
-"Smámyndir: \"%1\"\n"
-"Ná í mynd: \"%2\"\n"
-"Eyða hlutum: \"%3\"\n"
-"Senda hluti: \"%4\"\n"
-"Búa til möppur: \"%5\"\n"
-"Eyða möppum: \"%6\"\n"
-"\n"
+"Smámyndir: \"%1\"<br>Ná í mynd: \"%2\"<br>Eyða hlutum: \"%3\"<br>Senda "
+"hluti: \"%4\"<br>Búa til möppur: \"%5\"<br>Eyða möppum: \"%6\"<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:587
 #: core/utilities/import/backend/umscamera.cpp:588
@@ -59477,18 +59202,7 @@ msgstr ""
 "leiðbeiningunum."
 
 #: core/utilities/import/backend/umscamera.cpp:606
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The \"Mounted Camera\" driver is a simple interface to a camera disk "
-#| "mounted locally on your system.\n"
-#| "\n"
-#| "It does not use libgphoto2 drivers.\n"
-#| "\n"
-#| "To report any problems with this driver, please contact the digiKam team "
-#| "at:\n"
-#| "\n"
-#| "https://www.digikam.org/?q=contact"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The \"Mounted Camera\" driver is a simple interface to a camera disk mounted "
@@ -59497,14 +59211,10 @@ msgid ""
 "<br><br>https://www.digikam.org/support/contact/"
 msgstr ""
 "Rekillinn fyrir \"Tengdar myndavélar\" er einfalt viðmót fyrir myndavélar "
-"sem tengdar eru staðvært í skráakerfi tölvunnar þinnar.\n"
-"\n"
-"Það notar enga libgphoto2 rekla.\n"
-"\n"
-"Til að tilkynna vandamál með þennan rekil, hafðu samband við digiKam teymið "
-"hjá:\n"
-"\n"
-"https://www.digikam.org/?q=contact"
+"sem tengdar eru staðvært í skráakerfi tölvunnar þinnar.<br><br>Það notar "
+"enga libgphoto2 rekla.<br><br>Til að tilkynna vandamál með þennan rekil "
+"skaltu hafa samband við digiKam teymið á:<br><br>https://www.digikam.org/?"
+"q=contact"
 
 #: core/utilities/import/dialogs/camerafolderdialog.cpp:62
 #, kde-format
@@ -64746,20 +64456,19 @@ msgstr "Opna staðværu möppuna sem notuð er til að geyma gagnaskrárnar."
 #: core/utilities/setup/downloader/filesdownloader.cpp:163
 #, kde-format
 msgid "Location of the face management model files:"
-msgstr ""
+msgstr "Staðsetning líkanaskráa til umsýslu andlita:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:171
-#, fuzzy, kde-format
-#| msgid "Use Face Management feature"
+#, kde-format
 msgctxt "@title:window"
 msgid "Face Management Model Target"
-msgstr "Nota eiginleikann til umsýslu andlita"
+msgstr "Ákvörðunarstaður líkana til umsýslu andlita"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:172
-#, fuzzy, kde-format
-#| msgid "Sets the target address to copy the items to."
+#, kde-format
 msgid "Sets the target address to download the face management model files to."
-msgstr "Veldu úttaksvistfangið sem senda á atriðin til."
+msgstr ""
+"Veldu úttaksvistfangið þar sem vista skal líkanaskrár andlitsgagnakerfis."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, kde-format
@@ -64854,15 +64563,7 @@ msgstr ""
 "rauð augu krefst uppsetningar á líkanaskrám fyrir andlitaumsýslu.</p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:596
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path"
-#| msgid ""
-#| "<p>Some required files are missing. Click “Download” to start installing "
-#| "the necessary model files. If you close this dialog you will be prompted "
-#| "again the next time you launch digiKam. The selected features will not "
-#| "function without these files.</p><p>The files will be downloaded to \"<i>"
-#| "%1</i>\".</p><p><b>You must restart digiKam after successfully "
-#| "downloading the files.</b></p>"
+#, kde-format
 msgid ""
 "<p>Some required files are missing. Click “Download” to start installing the "
 "necessary model files. If you close this dialog you will be prompted again "
@@ -64873,9 +64574,8 @@ msgstr ""
 "<p>Einhverjar þessara skráa fundust ekki. Smelltu á 'Sækja' til að byrja að "
 "sækja nauðsynlegar skrár. Þú getur hætt við þetta ferli, næst þegar digiKam "
 "ræsist mun þessi gluggi birtast aftur. Valdir eiginleikar munu ekki virka án "
-"þessara skráa.</p><p>Skránum verður hlaðið yfir í \"<i>%1</i>\".</"
-"p><p><b>Eftir að búið er að sækja skrárnar þarftu að endurræsa digiKam.</b></"
-"p>"
+"þessara skráa.</p><p><b>Eftir að búið er að sækja skrárnar þarftu að "
+"endurræsa digiKam.</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:603
 #, kde-format
@@ -66435,25 +66135,19 @@ msgstr ""
 "Viltu prófa kerfið þitt núna?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Start"
 msgstr "Byrja"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Begin test"
+#, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Begin test"
 msgstr "Byrja prófun"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Testing..."
+#, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Testing..."
 msgstr "Prófa..."
@@ -66482,16 +66176,13 @@ msgstr ""
 "skjákortsörgjörva til að keyra AI-gervigreindarlíkön."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:225
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Close"
 msgstr "Loka"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Close the test dialog"
+#, kde-format
 msgctxt "@action:button start the AI GUP test"
 msgid "Close the test dialog"
 msgstr "Hreinsa prófunargluggann"
@@ -67516,6 +67207,10 @@ msgid ""
 "In all cases, the color management workflow will try to get in first the "
 "profile set for your monitor in your the desktop</p>"
 msgstr ""
+"<p>Ef skjáborðsumhverfið þitt býður ekki upp á litasnið fyrir skjáinn, "
+"skaltu velja hér sjálfgefið litasnið. Ef ekkert litasnið er sett, verður "
+"sRGB notað til vara. Í öllum tilfellum mun litstýringarkerfið reyna að nota "
+"á skjáborðið fyrsta litasniðið sem stillt er fyrir skjáinn</p>"
 
 #: core/utilities/setup/setupicc.cpp:331
 #, kde-format

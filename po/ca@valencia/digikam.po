@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-05 02:01+0000\n"
-"PO-Revision-Date: 2025-09-04 11:08+0200\n"
+"PO-Revision-Date: 2025-09-05 09:34+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -8692,11 +8692,9 @@ msgstr ""
 "motiu. Açò permet simular una profunditat de camp d'una lent."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject segmentation:"
-msgstr "Informació del motiu"
+msgstr "Segmentació del motiu:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
 #, kde-format
@@ -8708,10 +8706,9 @@ msgstr ""
 "procés de segmentació per aïllar més o menys el motiu."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
-#, fuzzy, kde-format
-#| msgid "Subject Mask"
+#, kde-format
 msgid "Subject Mask:"
-msgstr "Màscara de motiu"
+msgstr "Màscara del motiu:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
@@ -8727,11 +8724,10 @@ msgstr ""
 "verda és el motiu a on no s'aplicarà l'efecte difuminat."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
-#, fuzzy, kde-format
-#| msgid "Processing Panorama Preview..."
+#, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
-msgstr "S'està processant la vista prèvia del panorama…"
+msgstr "S'està processant la vista prèvia de la màscara…"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, kde-format
@@ -68742,6 +68738,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgid "Segmentation Iterations:"
-#~ msgstr "Iteracions de segmentació:"

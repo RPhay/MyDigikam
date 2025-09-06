@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-05 02:01+0000\n"
-"PO-Revision-Date: 2025-09-04 08:15+0300\n"
+"PO-Revision-Date: 2025-09-05 09:10+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -8773,11 +8773,9 @@ msgstr ""
 "об'єктива."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject segmentation:"
-msgstr "Відомості щодо призначення"
+msgstr "Сегментація об'єкта:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
 #, kde-format
@@ -8789,10 +8787,9 @@ msgstr ""
 "поділу, для ізоляції більшої або меншої частини об'єкта."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
-#, fuzzy, kde-format
-#| msgid "Subject Mask"
+#, kde-format
 msgid "Subject Mask:"
-msgstr "Маскування об'єкта"
+msgstr "Маска об'єкта:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
@@ -8808,11 +8805,10 @@ msgstr ""
 "Зелена область позначає об'єкт, до якого буде застосовано ефект розмивання."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
-#, fuzzy, kde-format
-#| msgid "Processing Panorama Preview..."
+#, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
-msgstr "Обробка попереднього перегляду панорами…"
+msgstr "Обробка попереднього перегляду маски…"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, kde-format

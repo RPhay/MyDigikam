@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-05 02:01+0000\n"
-"PO-Revision-Date: 2025-09-04 14:20+0300\n"
+"PO-Revision-Date: 2025-09-05 09:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -8646,11 +8646,9 @@ msgstr ""
 "tanır."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject segmentation:"
-msgstr "Konu Bilgisi"
+msgstr "Konu bölütlemesi:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
 #, kde-format
@@ -8662,10 +8660,9 @@ msgstr ""
 "tarafından kullanılan yineleme değerini burada ayarlayın."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
-#, fuzzy, kde-format
-#| msgid "Subject Mask"
+#, kde-format
 msgid "Subject Mask:"
-msgstr "Konu Maskesi"
+msgstr "Konu maskesi:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
@@ -8681,11 +8678,10 @@ msgstr ""
 "alan, öznede bulanıklaştırma efektinin uygulanmayacağı kısımdır."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
-#, fuzzy, kde-format
-#| msgid "Processing Panorama Preview..."
+#, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
-msgstr "Panorama önizlemesi işleniyor…"
+msgstr "Maske önizlemesi işleniyor…"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, kde-format

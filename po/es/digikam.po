@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-05 02:01+0000\n"
-"PO-Revision-Date: 2025-09-04 17:57+0100\n"
+"PO-Revision-Date: 2025-09-06 01:12+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -8715,11 +8715,9 @@ msgstr ""
 "sujeto. Esto permite simular la profundidad de campo de una lente."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject segmentation:"
-msgstr "Información sobre el asunto"
+msgstr "Segmentación del sujeto:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
 #, kde-format
@@ -8731,10 +8729,9 @@ msgstr ""
 "de segmentación para aislar más o menos al sujeto."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
-#, fuzzy, kde-format
-#| msgid "Subject Mask"
+#, kde-format
 msgid "Subject Mask:"
-msgstr "Máscara del sujeto"
+msgstr "Máscara del sujeto:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
@@ -8751,11 +8748,10 @@ msgstr ""
 "el efecto de desenfoque."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
-#, fuzzy, kde-format
-#| msgid "Processing Panorama Preview..."
+#, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
-msgstr "Procesando vista previa del panorama…"
+msgstr "Procesando vista previa de la máscara…"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, kde-format
@@ -13478,7 +13474,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option"
 msgid "Subject distance type:"
-msgstr "Tipo de distancia al motivo:"
+msgstr "Tipo de distancia al sujeto:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:281
 #, kde-format
@@ -13511,8 +13507,8 @@ msgid ""
 "Select here the type of distance between the subject and the image input "
 "equipment."
 msgstr ""
-"Seleccione aquí el tipo de distancia entre el motivo y el equipo con el que "
-"se tomó la imagen."
+"Seleccione aquí el tipo de distancia entre el sujeto y el equipo con el que "
+"se ha tomado la imagen."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:83
 #, kde-format
@@ -13997,7 +13993,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:69
 #, kde-format
 msgid "Identify subject of content (3 chars max):"
-msgstr "Identificación del tema del contenido (máx 3 carac.):"
+msgstr "Identificación del sujeto del contenido (máx 3 carac.):"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:75
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:73
@@ -14255,7 +14251,7 @@ msgstr "Créditos"
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Subjects"
-msgstr "Asuntos"
+msgstr "Sujetos"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:108
 #, kde-format
@@ -14334,14 +14330,14 @@ msgstr "Guardar información sobre los derechos de autor del elemento"
 #, kde-format
 msgctxt "@title"
 msgid "Subject Information"
-msgstr "Información sobre el asunto"
+msgstr "Información sobre el sujeto"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:208
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:208
 #, kde-format
 msgctxt "@title"
 msgid "Record subject information about the item"
-msgstr "Guardar información sobre el tema del elemento"
+msgstr "Guardar información sobre el sujeto del elemento"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:212
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:212
@@ -15220,7 +15216,7 @@ msgstr ""
 "Introduzca aquí la referencia informativa del proveedor (I.P.R.). I.P.R es "
 "un nombre registrado en la IPTC/NAA, que identifica al proveedor y que "
 "suministra un indicador del contenido. El valor predeterminado para el I.P."
-"R. es «IPTC» se se usa un Código de Referencia. Este campo está limitado a "
+"R. es «IPTC» se se usa un código de referencia. Este campo está limitado a "
 "32 caracteres."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:45
@@ -15235,13 +15231,13 @@ msgid ""
 "standard reference code is used, these lists are the English language "
 "reference versions. This field is limited to 8 digit code."
 msgstr ""
-" Introduzca aquí el número de referencia del tema. Proporciona un código "
-"numérico del tema además de la materia del tema y nombres detallados del "
-"tema en el idioma del servicio. La referencia del tema es un número en el "
-"intervalo de 01000000 a 17999999 y representa la referencia de un tema a "
-"nivel internacional con independencia del idioma. Un tema se identifica por "
-"su número de referencia y los correspondientes nombres se toman de una lista "
-"estándar proporcionada por IPTC/NAA. Si se usa un código de referencia "
+"Introduzca aquí el número de referencia del sujeto. Proporciona un código "
+"numérico del sujeto además de la materia del sujeto y nombres detallados del "
+"sujeto en el idioma del servicio. La referencia del sujeto es un número en "
+"el intervalo de 01000000 a 17999999 y representa la referencia de un sujeto "
+"a nivel internacional con independencia del idioma. Un sujeto se identifica "
+"por su número de referencia y los correspondientes nombres se toman de una "
+"lista estándar proporcionada por IPTC/NAA. Si se usa un código de referencia "
 "estándar, esta lista contiene las versiones de referencia en inglés. Este "
 "campo está limitado a un código de 8 dígitos."
 
@@ -15251,7 +15247,7 @@ msgid ""
 "Enter here the Subject Name. English language is used if you selected a "
 "standard IPTC/NAA reference code. This field is limited to 64 characters."
 msgstr ""
-"Introduzca aquí el nombre del tema. Se usa el inglés si ha seleccionado un "
+"Introduzca aquí el nombre del sujeto. Se usa el inglés si ha seleccionado un "
 "código de referencia IPTC/NAA estándar. Este campo está limitado a 64 "
 "caracteres."
 
@@ -15261,9 +15257,9 @@ msgid ""
 "Enter here the Subject Matter Name. English language is used if you selected "
 "a standard IPTC/NAA reference code. This field is limited to 64 characters."
 msgstr ""
-"Introduzca aquí un nombre de tema nuevo. Se usa el inglés si ha seleccionado "
-"un código de referencia IPTC/NAA estándar. Este campo está limitado a 64 "
-"caracteres."
+"Introduzca aquí el nombre de la materia del sujeto. Se usa el inglés si ha "
+"seleccionado un código de referencia IPTC/NAA estándar. Este campo está "
+"limitado a 64 caracteres."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:71
 #, kde-format
@@ -15271,7 +15267,7 @@ msgid ""
 "Enter here the Subject Detail Name. English language is used if you selected "
 "a standard IPTC/NAA reference code. This field is limited to 64 characters."
 msgstr ""
-"Introduzca aquí un nombre de detalle del tema nuevo. Se usa el inglés si ha "
+"Introduzca aquí un nombre de detalle del sujeto. Se usa el inglés si ha "
 "seleccionado un código de referencia IPTC/NAA estándar. Este campo está "
 "limitado a 64 caracteres."
 
@@ -15299,7 +15295,7 @@ msgstr ""
 "Esta herramienta permite al usuario modificar gran cantidad de metadatos de "
 "los elementos.<br><br>La mayoría de las etiquetas Exif, Iptc y Xmp que se "
 "usan en fotografía se listan para su edición con valores estandarizados."
-"<br><br>Las agencias fotográficas pueden usar temas preconfigurados para "
+"<br><br>Las agencias fotográficas pueden usar sujetos preconfigurados para "
 "describir el contenido de elementos basados en códigos de referencias Iptc."
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:101
@@ -15483,7 +15479,7 @@ msgstr "Créditos"
 #, kde-format
 msgctxt "@item"
 msgid "Subjects"
-msgstr "Asuntos"
+msgstr "Sujetos"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:109
 #, kde-format
@@ -16091,13 +16087,13 @@ msgid ""
 "standard reference code is used, these lists are the English language "
 "reference versions. This field is limited to 8 digit code."
 msgstr ""
-" Introduzca aquí el número de referencia del tema. Proporciona un código "
-"numérico del tema además de la materia del tema y nombres detallados del "
-"tema en el idioma del servicio. La referencia del tema es un número en el "
-"intervalo de 01000000 a 17999999 y representa la referencia de un tema a "
-"nivel internacional con independencia del idioma. Un tema se identifica por "
-"su número de referencia y los correspondientes nombres se toman de una lista "
-"estándar proporcionada por XMP/NAA. Si se usa un código de referencia "
+"Introduzca aquí el número de referencia del sujeto. Proporciona un código "
+"numérico del sujeto además de la materia del sujeto y nombres detallados del "
+"sujeto en el idioma del servicio. La referencia del sujeto es un número en "
+"el intervalo de 01000000 a 17999999 y representa la referencia de un sujeto "
+"a nivel internacional con independencia del idioma. Un sujeto se identifica "
+"por su número de referencia y los correspondientes nombres se toman de una "
+"lista estándar proporcionada por XMP/NAA. Si se usa un código de referencia "
 "estándar, esta lista contiene las versiones de referencia en inglés. Este "
 "campo está limitado a un código de 8 dígitos."
 
@@ -16107,7 +16103,7 @@ msgid ""
 "Enter here the Subject Name. English language is used if you selected a "
 "standard XMP/NAA reference code."
 msgstr ""
-"Introduzca aquí el nombre del tema. Se usa el inglés si ha seleccionado un "
+"Introduzca aquí el nombre del sujeto. Se usa el inglés si ha seleccionado un "
 "código de referencia XMP/NAA estándar."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpsubjects.cpp:69
@@ -16116,8 +16112,8 @@ msgid ""
 "Enter here the Subject Matter Name. English language is used if you selected "
 "a standard XMP/NAA reference code."
 msgstr ""
-"Introduzca aquí el contenido del tema. Se usará el inglés si ha seleccionado "
-"un código de referencia XMP/NAA estándar."
+"Introduzca aquí el nombre de la materia del sujeto. Se usará el inglés si ha "
+"seleccionado un código de referencia XMP/NAA estándar."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpsubjects.cpp:73
 #, kde-format
@@ -16125,7 +16121,7 @@ msgid ""
 "Enter here the Subject Detail Name. English language is used if you selected "
 "a standard XMP/NAA reference code."
 msgstr ""
-"Introduzca aquí el nombre detallado del tema. Se usará el inglés si ha "
+"Introduzca aquí el nombre detallado del sujeto. Se usará el inglés si ha "
 "seleccionado un código de referencia XMP/NAA estándar."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:96
@@ -17194,7 +17190,7 @@ msgid ""
 msgstr ""
 "<p>Esta herramienta permite al usuario combinar imágenes para horquillado "
 "para crear una foto en pseudo HDR.</p><p>Para crear una imagen de alto rango "
-"dinámico necesita usar imágenes con el mismo motivo obtenidas con un trípode "
+"dinámico necesita usar imágenes con el mismo sujeto obtenidas con un trípode "
 "y con diferentes ajustes de exposición.</p><p>Para crear una imagen con "
 "mejores resultados, puede usar imágenes RAW en lugar de JPEG, donde la "
 "profundidad de colores es mayor y están mejor preparadas para combinar unos "
@@ -17324,7 +17320,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "At least 2 images from the same subject must be added to the stack."
-msgstr "Debe añadir al menos 2 imágenes del mismo motivo a la pila."
+msgstr "Debe añadir al menos 2 imágenes del mismo sujeto a la pila."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:70
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:69
@@ -33140,7 +33136,7 @@ msgstr "Objetivo: %1"
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
-msgstr "Distancia al motivo: <numid>%1</numid>"
+msgstr "Distancia al sujeto: <numid>%1</numid>"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:484
 #, kde-format
@@ -41082,10 +41078,10 @@ msgid ""
 "content. The default value for the I.P.R is \"XMP\" if a standard Reference "
 "Code is used."
 msgstr ""
-"Indique aquí la Referencia Informativa del Suministrador. Un R.I.S. es un "
+"Indique aquí la referencia informativa del suministrador. Un R.I.S. es un "
 "nombre registrado en XMP/NAA, que identifica el suministrador que ofrece un "
 "indicador para su contenido. El valor por omisión para una R.I.S. es «XMP» "
-"si se encontró un código estándar de referencia."
+"si se usa un código estándar de referencia."
 
 #: core/libs/template/subjectedit.cpp:53
 #, kde-format
@@ -41099,15 +41095,15 @@ msgid ""
 "standard reference code is used, these lists are the English language "
 "reference versions. This field is limited to 8 digit code."
 msgstr ""
-"Indique aquí el Número de Referencia del Asunto. Contiene un código numérico "
-"que indica el nombre del Asunto más el tema del Asunto y el Detalle en la "
-"lengua del servicio. La Referencia del Asunto es un número perteneciente al "
+"Indique aquí el número de referencia del sujeto. Contiene un código numérico "
+"que indica el nombre del sujeto más el tema del sujeto y el detalle en el "
+"idioma del servicio. La referencia del sujeto es un número perteneciente al "
 "intervalo de 01000000 a 17999999 y representa una referencia internacional "
-"independiente de la lengua para un determinado asunto. Un Asunto se "
-"identifica por su Número de Referencia y los Nombres correspondientes "
-"retirados de una lista estándar definida por XMP/NAA. Se se usa un código de "
-"referencia, estas listas son las versiones de referencia para lengua "
-"inglesa. Este campo está limitado a un código de 8 dígitos en ASCII."
+"independiente de la lengua para un determinado sujeto. Un sujeto se "
+"identifica por su número de referencia y los nombres correspondientes "
+"tomados de una lista estándar definida por XMP/NAA. Si se usa un código de "
+"referencia, estas listas son las versiones de referencia para el idioma "
+"inglés. Este campo está limitado a un código de 8 dígitos en ASCII."
 
 #: core/libs/template/subjectedit.cpp:66
 #, kde-format
@@ -41115,8 +41111,8 @@ msgid ""
 "Enter the Subject Name here. English language is used if you selected a "
 "standard XMP/NAA reference code."
 msgstr ""
-"Indique aquí el nombre del Asunto. Se usa la lengua inglesa si seleccionó un "
-"código estándar de referencia del XMP/NAA."
+"Indique aquí el nombre del sujeto. Se usa el idioma inglés si había "
+"seleccionado un código estándar de referencia del XMP/NAA."
 
 #: core/libs/template/subjectedit.cpp:70
 #, kde-format
@@ -41124,8 +41120,8 @@ msgid ""
 "Enter the Subject Matter Name here. English language is used if you selected "
 "a standard XMP/NAA reference code."
 msgstr ""
-"Indique aquí el nombre de la materia del asunto. Se usa la lengua Inglesa si "
-"seleccionó un código estándar de referencia del XMP/NAA."
+"Indique aquí el nombre de la materia del sujeto. Se usa el idioma inglés si "
+"había seleccionado un código estándar de referencia del XMP/NAA."
 
 #: core/libs/template/subjectedit.cpp:74
 #, kde-format
@@ -41133,8 +41129,8 @@ msgid ""
 "Enter the Subject Detail Name here. English language is used if you selected "
 "a standard XMP/NAA reference code."
 msgstr ""
-"Indique aquí el nombre del detalle del asunto. Se usa la lengua inglesa si "
-"seleccionó un código estándar de referencia del XMP/NAA."
+"Indique aquí el nombre del detalle del sujeto. Se usa el idioma inglés si "
+"había seleccionado un código estándar de referencia del XMP/NAA."
 
 #: core/libs/template/templatelist.cpp:70
 #, kde-format
@@ -41554,7 +41550,7 @@ msgstr ""
 #: core/libs/template/templateviewer.cpp:195
 #, kde-format
 msgid "Subjects"
-msgstr "Asuntos"
+msgstr "Sujetos"
 
 #: core/libs/template/templateselector.cpp:60
 #, kde-format
@@ -48571,7 +48567,7 @@ msgstr "Desconocido"
 #, kde-format
 msgctxt "@title: subject widget"
 msgid "Use structured definition of the subject matter:"
-msgstr "Usar la definición estructurada del asunto:"
+msgstr "Usar la definición estructurada de la materia del sujeto:"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:126
 #, kde-format
@@ -48601,25 +48597,25 @@ msgstr "Defina aquí la referencia informativa del proveedor"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Reference Number"
-msgstr "Defina aquí el número de referencia del asunto"
+msgstr "Defina aquí el número de referencia del sujeto"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:175
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Name"
-msgstr "Defina aquí el nombre del asunto"
+msgstr "Defina aquí el nombre del sujeto"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:186
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Matter Name"
-msgstr "Defina aquí el nombre de la materia del asunto"
+msgstr "Defina aquí el nombre de la materia del sujeto"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:197
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Detail Name"
-msgstr "Defina aquí el nombre del detalle del asunto"
+msgstr "Defina aquí el nombre del detalle del sujeto"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:209
 #, kde-format
@@ -48645,7 +48641,7 @@ msgstr "Nombre:"
 #, kde-format
 msgctxt "@label: subject properties"
 msgid "Matter:"
-msgstr "Asunto:"
+msgstr "Materia:"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:213
 #, kde-format
@@ -63138,12 +63134,12 @@ msgstr "Método para determinar la exposición"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:617
 #, kde-format
 msgid "Subject Distance"
-msgstr "Distancia al objetivo"
+msgstr "Distancia al sujeto"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:604
 #, kde-format
 msgid "Distance of the subject from the lens"
-msgstr "Distancia del motivo desde el objetivo"
+msgstr "Distancia del sujeto desde la lente"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:605
 #, kde-format
@@ -68724,8 +68720,3 @@ msgstr "Elementos del álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementos importados"
-
-#~| msgctxt "@label"
-#~| msgid "Segmentation mode:"
-#~ msgid "Segmentation Iterations:"
-#~ msgstr "Iteraciones de segmentación:"
