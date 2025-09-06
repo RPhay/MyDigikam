@@ -99,7 +99,7 @@ BUGFIXES:
 067 ==> 508645 - Segments of digikam window are repeated on screen.
 068 ==> 501767 - Right-Click & 'Open With...' shows apps multiple times.
 069 ==> 509074 - HEIF/HEIC files not being displayed in Thumbnails.
-070 ==> 
+070 ==> 387323 - Printing assistant keeps resetting page layout & no way to specify spacing between images.
 071 ==> 
 072 ==> 
 073 ==> 
