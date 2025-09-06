@@ -5,7 +5,7 @@
 | Gitlab Builds | [![Gitlab Builds Status](https://invent.kde.org/graphics/digikam/badges/master/pipeline.svg)](https://invent.kde.org/graphics/digikam/-/pipelines)                                                      |
 | Coverity Scan | [![Coverity Scan Status](https://scan.coverity.com/projects/285/badge.svg)](https://scan.coverity.com/projects/digikam)                                                                                 |
 
-If you are reading this on Github, be aware that this is just a mirror. Our real code repository [is located here](https://invent.kde.org/graphics/digikam)
+If you are reading this on Github, be aware that this is an out-dated mirror. Our real code repository [is located here](https://invent.kde.org/graphics/digikam)
 
 Developers, if you want to contribute, see the online [API documentation here](https://files.kde.org/digikam/api/)
 
