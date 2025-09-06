@@ -218,9 +218,14 @@ void BackgroundBlurTool::preparePreview()
 
 void BackgroundBlurTool::slotPreviewMask(const QImage& mask)
 {
-    d->maskPreview->setImage(mask);
+    if (mask.isNull())
+    {
+        d->maskPreview->setText(i18n("Error while processing image..."));
 
-    qDebug() << "preview mask:" << mask;
+        return;
+    }
+
+    d->maskPreview->setImage(mask);
 }
 
 void BackgroundBlurTool::setPreviewImage()

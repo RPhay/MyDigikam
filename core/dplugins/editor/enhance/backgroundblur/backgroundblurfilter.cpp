@@ -313,10 +313,14 @@ void BackgroundBlurFilter::filterImage()
     catch (cv::Exception& e)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "BackgroundBlurFilter::filterImage: cv::Exception:" << e.what();
+
+        Q_EMIT signalSegmentedMask(QImage());
     }
     catch (...)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "BackgroundBlurFilter::filterImage: Default exception from OpenCV";
+
+        Q_EMIT signalSegmentedMask(QImage());
     }
 
     m_destImage = DImg(QtOpenCVImg::mat2Image(output));
