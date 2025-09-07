@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-29 02:00+0000\n"
+"POT-Creation-Date: 2025-09-05 02:01+0000\n"
 "PO-Revision-Date: 2007-09-11 22:44+0200\n"
 "Last-Translator: Northern Sami translation team <l10n-no@lister.huftis.org>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -5506,7 +5506,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:75
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:81
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
@@ -7983,31 +7983,63 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:98
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:103
 #, kde-format
 msgid "Background Blur Filter"
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:79
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
 #, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:84
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
 #, kde-format
 msgid "Progressive Transition:"
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:88
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
 #, kde-format
 msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:196
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
+#, kde-format
+msgid "Subject segmentation:"
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
+#, kde-format
+msgid ""
+"Set this value to use a number of iterations used by the segmentation "
+"process to isolate more and less the subject."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
+#, kde-format
+msgid "Subject Mask:"
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
+#, kde-format
+msgid ""
+"This view show the segmentation of the subject determined from the "
+"selection. The resulting green mask is superposed to the original image to "
+"see if the subject have been isolated properly by the segmentation process. "
+"The green area is the subject where the blur effect will not applied."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
+#, kde-format
+msgctxt "@info"
+msgid "Processing mask preview..."
+msgstr ""
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
 #, kde-format
 msgid "Background Blur"
 msgstr ""

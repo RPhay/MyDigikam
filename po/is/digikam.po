@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-05 02:01+0000\n"
+"POT-Creation-Date: 2025-09-07 01:58+0000\n"
 "PO-Revision-Date: 2025-09-05 16:22+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -8620,7 +8620,14 @@ msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Vinn forskoðun maska..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Error processing XML file"
+msgid "Error while processing image..."
+msgstr "Villa við meðhöndlun XML skrár"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
 #, kde-format
 msgid "Background Blur"
 msgstr "Móðun bakgrunns"

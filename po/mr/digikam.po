@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-05 02:01+0000\n"
+"POT-Creation-Date: 2025-09-07 01:58+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -8313,7 +8313,13 @@ msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "प्रतिमा छापा"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
+#, fuzzy, kde-format
+#| msgid "Print Image"
+msgid "Error while processing image..."
+msgstr "प्रतिमा छापा"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
 #, fuzzy, kde-format
 msgid "Background Blur"
 msgstr "पार्श्वभूमी रंग :"

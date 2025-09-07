@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-05 02:01+0000\n"
+"POT-Creation-Date: 2025-09-07 01:58+0000\n"
 "PO-Revision-Date: 2024-11-16 08:32+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -8522,7 +8522,13 @@ msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Memroses..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
+#, fuzzy, kde-format
+#| msgid "Error opening input file"
+msgid "Error while processing image..."
+msgstr "Error membuka file input"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"

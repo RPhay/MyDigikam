@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-05 02:01+0000\n"
+"POT-Creation-Date: 2025-09-07 01:58+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -8900,7 +8900,14 @@ msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "파노라마 미리 보기를 처리하는 중..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Error processing XML file"
+msgid "Error while processing image..."
+msgstr "XML 파일 처리 오류"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"

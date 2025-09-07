@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-05 02:01+0000\n"
+"POT-Creation-Date: 2025-09-07 01:58+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -8862,7 +8862,14 @@ msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "Bi to arbeiden..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
+#, fuzzy, kde-format
+#| msgid "Error loading GPX file"
+#| msgid_plural "Error loading GPX files"
+msgid "Error while processing image..."
+msgstr "Fehler bi't Laden vun GPX-Datei"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background Blur"

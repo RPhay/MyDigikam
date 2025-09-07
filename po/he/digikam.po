@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-05 02:01+0000\n"
-"PO-Revision-Date: 2025-08-29 08:10+0300\n"
+"POT-Creation-Date: 2025-09-07 01:58+0000\n"
+"PO-Revision-Date: 2025-09-06 10:53+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -591,12 +591,10 @@ msgid "All Tags"
 msgstr "כל התוויות"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "select tags menu"
-#| msgid "Select"
+#, kde-format
 msgctxt "@action: select tags menu"
 msgid "Select"
-msgstr "בחרו"
+msgstr "בחירה"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:105
 #: core/app/items/utils/contextmenuhelper_albums.cpp:115
@@ -8271,7 +8269,12 @@ msgctxt "@info"
 msgid "Processing mask preview..."
 msgstr "קובצי תמונת"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:252
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
+#, fuzzy, kde-format
+msgid "Error while processing image..."
+msgstr "שגיאה בעת שמירת הקובץ"
+
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
 #, fuzzy, kde-format
 msgid "Background Blur"
 msgstr "צבע &רקע:"
@@ -57887,10 +57890,10 @@ msgstr ""
 "ודלוקה. האם אתם מעוניינים לנסות שוב?"
 
 #: core/utilities/import/main/importui.cpp:1195
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
-msgstr "בחרו תמונה להעברה"
+msgstr "בחירת תמונה להעלאה"
 
 #: core/utilities/import/main/importui.cpp:1230
 #, fuzzy, kde-format
@@ -57916,10 +57919,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/import/main/importui.cpp:1289
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
-msgstr "הקובץ קיים"
+msgstr "הקובץ כבר קיים"
 
 #: core/utilities/import/main/importui.cpp:1358
 #, kde-format
@@ -58004,17 +58007,16 @@ msgstr[1] ""
 "האם אתם בטוחים?"
 
 #: core/utilities/import/main/importui.cpp:1999
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "אזהרה"
 
 #: core/utilities/import/main/importui.cpp:2043
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
-msgstr "אין מספיק מקום פנוי בדיסק הקשיח"
+msgstr "אין מספיק מקום פנוי בכונן"
 
 #: core/utilities/import/main/importui.cpp:2044
 #, fuzzy, kde-format
@@ -58044,11 +58046,10 @@ msgstr[0] "לא נבחרו תמונות"
 msgstr[1] "לא נבחרו תמונות"
 
 #: core/utilities/import/main/importui.cpp:2331
-#, fuzzy, kde-format
-#| msgid " (%1 of %2)"
+#, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
-msgstr " (%1 of %2)"
+msgstr "„%1” (%2 מתוך %3)"
 
 #: core/utilities/import/main/importui.cpp:2348
 #, fuzzy, kde-format
@@ -58064,9 +58065,9 @@ msgid "Skipped file <filename>%1</filename>"
 msgstr "כישלון בעת העתקת הקובץ \"%1\" מהמחשב למצלמה."
 
 #: core/utilities/import/main/importui.cpp:2455
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
-msgstr "כישלון בעת העתקת הקובץ \"%1\" מהמחשב למצלמה."
+msgstr "שם הקובץ השתנה לשם<filename>%1</filename>"
 
 #: core/utilities/import/main/importui.cpp:2478
 #, fuzzy, kde-kuit-format
@@ -58082,16 +58083,16 @@ msgid ""
 msgstr ""
 
 #: core/utilities/import/main/importui.cpp:2563
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
-msgstr "הועתקו למחשב:"
+msgstr "הורדת התמונות הסתיימה"
 
 #: core/utilities/import/main/importui.cpp:2589
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
-msgstr "קובץ בעל שם דומה (%1) קיים בתיקייה %2"
+msgstr "כבר קיים קובץ באותו השם („%1”) בתיקייה „%2”."
 
 #: core/utilities/import/main/importui.cpp:2602
 #, fuzzy, kde-format
@@ -58578,9 +58579,9 @@ msgid "Execute script for image:"
 msgstr ""
 
 #: core/utilities/import/widgets/scriptingsettings.cpp:76
-#, fuzzy, kde-format
+#, kde-format
 msgid "No script selected"
-msgstr "%1 תוויות נבחרו"
+msgstr "לא נבחר סקריפט"
 
 #: core/utilities/import/widgets/scriptingsettings.cpp:87
 #, fuzzy, kde-format
