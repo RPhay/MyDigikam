@@ -265,7 +265,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     // --- Bottom View Buttons
 
     DHBox* const hbox     = new DHBox();
-    d->updateFingerPrtBtn = new QPushButton(i18nc("@action", "Update fingerprints"), hbox);
+    d->updateFingerPrtBtn = new QPushButton(i18nc("@action", "Update all fingerprints"), hbox);
     d->updateFingerPrtBtn->setIcon(QIcon::fromTheme(QLatin1String("run-build")));
     d->updateFingerPrtBtn->setWhatsThis(i18nc("@info", "Use this button to update all image fingerprints."));
 
