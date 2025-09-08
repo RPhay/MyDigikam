@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-07 01:58+0000\n"
+"POT-Creation-Date: 2025-09-08 02:32+0000\n"
 "PO-Revision-Date: 2023-12-13 03:27-0500\n"
 "Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
 "Language-Team: sq\n"
@@ -51666,10 +51666,11 @@ msgid ""
 msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Selection"
 msgctxt "@action"
-msgid "Update fingerprints"
-msgstr ""
+msgid "Update all fingerprints"
+msgstr "Përzgjedhje"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, kde-format

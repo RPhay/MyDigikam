@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-07 01:58+0000\n"
+"POT-Creation-Date: 2025-09-08 02:32+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -51201,9 +51201,11 @@ msgid ""
 msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Update fingerprints"
 msgctxt "@action"
-msgid "Update fingerprints"
+msgid "Update all fingerprints"
 msgstr "Znovu vytvořit otisky"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270

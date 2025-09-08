@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-07 01:58+0000\n"
-"PO-Revision-Date: 2025-09-05 16:22+0000\n"
+"POT-Creation-Date: 2025-09-08 02:32+0000\n"
+"PO-Revision-Date: 2025-09-07 16:45+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3582,7 +3582,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
 msgid "New G'MIC generic plugin working as layer mode from a stack of images."
-msgstr ""
+msgstr "Ný almenn G'MIC-viðbót sem vinnur með stafla af myndum í lagaham."
 
 #: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
@@ -8613,6 +8613,10 @@ msgid ""
 "see if the subject have been isolated properly by the segmentation process. "
 "The green area is the subject where the blur effect will not applied."
 msgstr ""
+"Þessi sýn birtir uppskiptingu viðfangsefnisins sem ákvarðað var með valinu. "
+"Útkoman er grænn maski sem lagður er yfir upprunalegu myndina til að geta "
+"skoðað hvort uppskiptingin hafi náð að einangra viðfangsefnið svo viðunandi "
+"sé. Græna svæðið táknar viðfangsefnið og þá það svæði sem ekki verður móskað."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
 #, kde-format
@@ -8621,11 +8625,9 @@ msgid "Processing mask preview..."
 msgstr "Vinn forskoðun maska..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Error processing XML file"
+#, kde-format
 msgid "Error while processing image..."
-msgstr "Villa við meðhöndlun XML skrár"
+msgstr "Villa við vinnslu myndar..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
 #, kde-format
@@ -52772,9 +52774,11 @@ msgstr ""
 " viðmiðunarmyndar, eða að útiloka albúm viðmiðunarmyndar frá leitinni."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Update fingerprints"
 msgctxt "@action"
-msgid "Update fingerprints"
+msgid "Update all fingerprints"
 msgstr "Uppfæra fingraför"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270

@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-07 01:58+0000\n"
-"PO-Revision-Date: 2025-09-05 07:01+0200\n"
+"POT-Creation-Date: 2025-09-08 02:32+0000\n"
+"PO-Revision-Date: 2025-09-07 08:40+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -8704,11 +8704,9 @@ msgid "Processing mask preview..."
 msgstr "Predogled obdelave maske..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Error processing XML file"
+#, kde-format
 msgid "Error while processing image..."
-msgstr "Napaka pri obdelovanju datoteke XML"
+msgstr "Napaka pri obdelovanju slike..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
 #, kde-format
@@ -52963,9 +52961,11 @@ msgstr ""
 "referenčne slike ali izključite album referenčne slike iskanja."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Update fingerprints"
 msgctxt "@action"
-msgid "Update fingerprints"
+msgid "Update all fingerprints"
 msgstr "Posodobi prstne odtise"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-07 01:58+0000\n"
-"PO-Revision-Date: 2025-09-05 09:10+0300\n"
+"POT-Creation-Date: 2025-09-08 02:32+0000\n"
+"PO-Revision-Date: 2025-09-07 14:35+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -8811,11 +8811,9 @@ msgid "Processing mask preview..."
 msgstr "Обробка попереднього перегляду маски…"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Error processing XML file"
+#, kde-format
 msgid "Error while processing image..."
-msgstr "Помилка під час обробки файла XML"
+msgstr "Помилка під час обробки зображення…"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
 #, kde-format
@@ -53572,9 +53570,11 @@ msgstr ""
 "еталонного зображення або виключення альбому еталонного зображення з пошуку."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Update fingerprints"
 msgctxt "@action"
-msgid "Update fingerprints"
+msgid "Update all fingerprints"
 msgstr "Оновити відбитки"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270

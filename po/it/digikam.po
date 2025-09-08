@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-07 01:58+0000\n"
-"PO-Revision-Date: 2025-08-23 20:08+0200\n"
+"POT-Creation-Date: 2025-09-08 02:32+0000\n"
+"PO-Revision-Date: 2025-08-31 00:14+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -8712,28 +8712,23 @@ msgid "Vignetting Correction..."
 msgstr "Correzione della vignettatura..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:103
-#, fuzzy, kde-format
-#| msgid "Background color: "
+#, kde-format
 msgid "Background Blur Filter"
-msgstr "Colore di sfondo: "
+msgstr "Filtro sfocatura sfondo"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
-#| "matrix radius that determines how much to blur the image."
+#, kde-format
 msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr ""
-"Una smussatura di 0 non ha effetto, 1 e oltre determina il raggio della "
-"matrice di sfocatura gaussiana che determina quanto sfocare l'immagine."
+"Imposta questo valore per determinare il raggio della matrice di sfocatura "
+"dello sfondo attorno al soggetto."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:90
-#, fuzzy, kde-format
-#| msgid "Progress Information"
+#, kde-format
 msgid "Progressive Transition:"
-msgstr "Informazioni dell'avanzamento"
+msgstr "Transizione progressiva:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:94
 #, kde-format
@@ -8741,6 +8736,9 @@ msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
+"Imposta questo valore per applicare una sfocatura variabile progressiva "
+"partendo dal soggetto. Permette di simulare una profondità di campo da un "
+"obbiettivo."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
 #, fuzzy, kde-format
@@ -8792,54 +8790,46 @@ msgid "Error while processing image..."
 msgstr "Errore nell'elaborazione del file XML"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgid "Background Blur"
-msgstr "Colore di sfondo:"
+msgstr "Sfocatura sfondo"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgctxt "@title"
 msgid "Background Blur"
-msgstr "Colore di sfondo:"
+msgstr "Sfocatura sfondo"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to blur an image"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to blur the background of an image"
-msgstr "Strumento per sfocare un'immagine"
+msgstr "Strumento per sfocare lo sfondo di un'immagine"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "This Image Editor tool can adjust the color curves from image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can blur the background of the subject from an image."
 msgstr ""
-"Questo strumento dell'editor delle immagini può regolare le curve dei colori "
-"dall'immagine."
+"Questo strumento dell'editor delle immagini può sfocare lo sfondo del "
+"soggetto da un'immagine."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:94
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgctxt "@action"
 msgid "Background Blur..."
-msgstr "Colore di sfondo:"
+msgstr "Sfocatura sfondo..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:114
-#, fuzzy, kde-format
-#| msgid "Background color: "
+#, kde-format
 msgid "Background Blur Tool"
-msgstr "Colore di sfondo: "
+msgstr "Strumento Sfocatura sfondo"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtoolplugin.cpp:115
 #, kde-format
 msgid "You must select before a rectangular area including the subject..."
-msgstr ""
+msgstr "Devi prima selezionare un'area rettangolare che includa il soggetto..."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -53420,9 +53410,11 @@ msgstr ""
 "riferimento della ricerca."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Update fingerprints"
 msgctxt "@action"
-msgid "Update fingerprints"
+msgid "Update all fingerprints"
 msgstr "Aggiorna codici di controllo"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270

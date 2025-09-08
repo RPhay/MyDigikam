@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-07 01:58+0000\n"
-"PO-Revision-Date: 2025-09-05 09:34+0200\n"
+"POT-Creation-Date: 2025-09-08 02:32+0000\n"
+"PO-Revision-Date: 2025-09-07 10:54+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -8730,11 +8730,9 @@ msgid "Processing mask preview..."
 msgstr "S'està processant la vista prèvia de la màscara…"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Error processing XML file"
+#, kde-format
 msgid "Error while processing image..."
-msgstr "S'ha produït un error en processar el fitxer en XML"
+msgstr "S'ha produït un error en processar una imatge…"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
 #, kde-format
@@ -53414,9 +53412,11 @@ msgstr ""
 "imatge de referència."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Update fingerprints"
 msgctxt "@action"
-msgid "Update fingerprints"
+msgid "Update all fingerprints"
 msgstr "Actualitza les empremtes digitals"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270
