@@ -25,7 +25,6 @@ Name[sl]=Medijski predvajalnik VLC
 Name[sv]=VLC mediaspelare
 Name[tr]=VLC Ortam Oynatıcısı
 Name[uk]=Мультимедійний програвач VLC
-Name[x-test]=xxVLC media playerxx
 Name[zh_CN]=VLC 媒体播放器
 Name[zh_TW]=VLC 媒體播放器
 X-Exec=vlc.exe %f

@@ -25,7 +25,6 @@ Name[sl]=XnView MP
 Name[sv]=XnView MP
 Name[tr]=XnView MP
 Name[uk]=XnView MP
-Name[x-test]=xxXnView MPxx
 Name[zh_CN]=XnView MP
 Name[zh_TW]=XnView MP
 X-Exec=%ProgramFiles%/XnViewMP/xnviewmp.exe %f

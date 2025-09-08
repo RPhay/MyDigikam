@@ -54,7 +54,6 @@ Name[tr]=FotoGöster
 Name[ug]=showFoto
 Name[uk]=showFoto
 Name[vi]=showFoto
-Name[x-test]=xxshowFotoxx
 Name[zh_CN]=showFoto
 Name[zh_TW]=showFoto
 X-Exec=%ProgramFiles%/digiKam/showfoto.exe %f

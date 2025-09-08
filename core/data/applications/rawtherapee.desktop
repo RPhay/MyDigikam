@@ -25,7 +25,6 @@ Name[sl]=RawTherapee
 Name[sv]=RawTherapee
 Name[tr]=RawTherapee
 Name[uk]=RawTherapee
-Name[x-test]=xxRawTherapeexx
 Name[zh_CN]=RawTherapee
 Name[zh_TW]=RawTherapee
 X-Exec=rawtherapee.exe %f

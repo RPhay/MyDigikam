@@ -25,7 +25,6 @@ Name[sl]=Windows Media Player
 Name[sv]=Windows mediaspelare
 Name[tr]=Windows Media Player
 Name[uk]=Windows Media Player
-Name[x-test]=xxWindows Media Playerxx
 Name[zh_CN]=Windows 媒体播放器
 Name[zh_TW]=Windows 媒體播放器
 X-Exec=wmplayer.exe %f

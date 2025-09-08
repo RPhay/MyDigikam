@@ -25,7 +25,6 @@ Name[sl]=Darktable
 Name[sv]=Darktable
 Name[tr]=Darktable
 Name[uk]=Darktable
-Name[x-test]=xxDarktablexx
 Name[zh_CN]=Darktable
 Name[zh_TW]=Darktable
 X-Exec=darktable.exe %f
