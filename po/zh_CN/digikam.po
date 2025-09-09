@@ -8309,7 +8309,7 @@ msgstr "正在处理蒙版预览..."
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
 #, kde-format
 msgid "Error while processing image..."
-msgstr ""
+msgstr "处理图像时发生错误..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
 #, kde-format
@@ -51288,12 +51288,10 @@ msgstr ""
 "像相册。"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Update fingerprints"
+#, kde-format
 msgctxt "@action"
 msgid "Update all fingerprints"
-msgstr "更新图像指纹"
+msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, kde-format

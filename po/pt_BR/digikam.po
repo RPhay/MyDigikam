@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-08 02:32+0000\n"
-"PO-Revision-Date: 2025-09-05 06:34-0300\n"
+"PO-Revision-Date: 2025-09-08 19:33-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -7816,7 +7816,7 @@ msgstr "Selecione aqui o valor de intensidade máximo de saída do histograma."
 #: core/libs/dimg/filters/curves/curvesbox.cpp:159
 #, kde-format
 msgid "All channels shadow tone color picker"
-msgstr "Extrator de cor do tom de sombra de todos os canais"
+msgstr "Seletor de cor de tons de sombra de todos os canais"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
 #, kde-format
@@ -7833,7 +7833,7 @@ msgstr ""
 #: core/libs/dimg/filters/curves/curvesbox.cpp:167
 #, kde-format
 msgid "All channels middle tone color picker"
-msgstr "Extrator de cor de tons intermediários de todos os canais"
+msgstr "Seletor de cor de tons intermediários de todos os canais"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:230
 #, kde-format
@@ -7850,7 +7850,7 @@ msgstr ""
 #: core/libs/dimg/filters/curves/curvesbox.cpp:175
 #, kde-format
 msgid "All channels highlight tone color picker"
-msgstr "Extrator de cor dos tons claros de todos os canais"
+msgstr "Seletor de cor de tons claros de todos os canais"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:238
 #, kde-format
@@ -8198,7 +8198,7 @@ msgstr ""
 #: core/dplugins/editor/colors/film/filmtool.cpp:206
 #, kde-format
 msgid "White point color picker"
-msgstr "Extractor de cor do ponto branco"
+msgstr "Seletor de cor do ponto branco"
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:207
 #, kde-format
@@ -8721,11 +8721,9 @@ msgid "Processing mask preview..."
 msgstr "Processando a visualização da máscara..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Error processing XML file"
+#, kde-format
 msgid "Error while processing image..."
-msgstr "Erro ao processar o arquivo XML"
+msgstr "Erro ao processar imagem..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
 #, kde-format
@@ -30863,7 +30861,7 @@ msgstr "<b>Kodak HIE</b>:<p>Simula o filme infravermelho Kodak HIE.</p>"
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:219
 #, kde-format
 msgid "No Lens Filter"
-msgstr "Sem filtro de lentes"
+msgstr "Sem filtro de lente"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:220
 #, kde-format
@@ -30871,7 +30869,7 @@ msgid ""
 "<b>No Lens Filter</b>:<p>Do not apply a lens filter when rendering the image."
 "</p>"
 msgstr ""
-"<b>Sem filtro de lentes</b>:<p>Não aplicar um filtro de lentes no "
+"<b>Sem filtro de lente</b>:<p>Não aplicar um filtro de lentes no "
 "processamento da imagem.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:223
@@ -30986,7 +30984,7 @@ msgstr "Força:"
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:267
 #, kde-format
 msgid "Here, set the strength adjustment of the lens filter."
-msgstr "Defina aqui o ajuste de potência do filtro de lentes."
+msgstr "Defina aqui o ajuste de potência do filtro de lente."
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:278
 #, kde-format
@@ -31086,7 +31084,7 @@ msgstr ""
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:357
 #, kde-format
 msgid "Lens Filters"
-msgstr "Filtros de lentes"
+msgstr "Filtros de lente"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:359
 #, kde-format
@@ -31350,7 +31348,7 @@ msgstr "Defina aqui o ajuste da cor amarelo/azul da imagem."
 #: core/libs/dimg/filters/curves/curvesbox.cpp:127
 #, kde-format
 msgid "Curve free mode"
-msgstr "Modo livre da curva"
+msgstr "Modo livre de curva"
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:128
 #, kde-format
@@ -31360,7 +31358,7 @@ msgstr "Com este botão, pode desenhar a sua curva à vontade com o mouse."
 #: core/libs/dimg/filters/curves/curvesbox.cpp:134
 #, kde-format
 msgid "Curve smooth mode"
-msgstr "Modo suave da curva"
+msgstr "Modo suavização de curva"
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:135
 #, kde-format
@@ -31500,7 +31498,7 @@ msgstr "Sólida"
 #, kde-format
 msgctxt "beveled border type"
 msgid "Beveled"
-msgstr "Em relevo"
+msgstr "Chanfrado"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:107
 #, kde-format
@@ -31782,14 +31780,14 @@ msgstr "Defina aqui o tipo de textura para aplicar na imagem."
 #, kde-format
 msgctxt "@label"
 msgid "Relief:"
-msgstr "Intensidade:"
+msgstr "Relevo:"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:100
 #, kde-format
 msgctxt "@info"
 msgid "Set here the relief gain used to merge texture and image."
 msgstr ""
-"Defina aqui o ganho de intensidade, usado para mesclar a textura e a imagem."
+"Defina aqui o ganho de relevo, usado para mesclar a textura e a imagem."
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:387
 #, kde-format
@@ -32567,7 +32565,7 @@ msgstr "Defina aqui o ajuste de saturação da imagem."
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:95
 #, kde-format
 msgid "Vibrance:"
-msgstr "Vibração:"
+msgstr "Vibrância:"
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:100
 #, kde-format
@@ -32575,8 +32573,8 @@ msgid ""
 "Set here the vibrance adjustment of the image.Vibrance performs selective "
 "saturation on less saturated colors and avoiding skin tones."
 msgstr ""
-"Defina aqui o ajuste da vibração da imagem. A vibração aplica uma saturação "
-"seletiva nas cores menos saturadas, evitando os tons de pele."
+"Defina aqui o ajuste da vibrância da imagem. A vibrância aplica uma "
+"saturação seletiva nas cores menos saturadas, evitando os tons de pele."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:103
 #, kde-format
@@ -33804,7 +33802,7 @@ msgstr "Lâmpada de 200W"
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Sunrise"
-msgstr "Nascer do Sol"
+msgstr "Nascer do sol"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:165
 #, kde-format
@@ -33956,7 +33954,7 @@ msgstr "nenhum valor definido"
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Temperature tone color picker."
-msgstr "Extrator de cor do tom da temperatura."
+msgstr "Seletor de cor de tom da temperatura."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:198
 #, kde-format
@@ -34036,7 +34034,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Exposure Compensation"
-msgstr "Correção da exposição"
+msgstr "Compensação da exposição"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:250
 #, kde-format
@@ -34070,7 +34068,7 @@ msgstr "Defina aqui o valor de compensação de exposição em E.V."
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Fine:"
-msgstr "Fino:"
+msgstr "Fina:"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:267
 #, kde-format
@@ -53200,12 +53198,10 @@ msgstr ""
 "pesquisa."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Update fingerprints"
+#, kde-format
 msgctxt "@action"
 msgid "Update all fingerprints"
-msgstr "Atualizar as impressões digitais"
+msgstr "Atualizar todas as impressões digitais"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, kde-format
@@ -59313,7 +59309,7 @@ msgstr "Antes"
 #: core/utilities/imageeditor/widgets/imageregionitem.cpp:303
 #, kde-format
 msgid "After"
-msgstr "Após"
+msgstr "Depois"
 
 #: core/utilities/imageeditor/widgets/imageregionwidget.cpp:76
 #, kde-format

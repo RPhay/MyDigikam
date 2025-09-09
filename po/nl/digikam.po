@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-08 02:32+0000\n"
-"PO-Revision-Date: 2025-09-05 16:06+0200\n"
+"PO-Revision-Date: 2025-09-08 21:52+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -8771,11 +8771,9 @@ msgid "Processing mask preview..."
 msgstr "Voorbeeld van bewerkingsmasker..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Error processing XML file"
+#, kde-format
 msgid "Error while processing image..."
-msgstr "Fout bij verwerken van XML-bestand"
+msgstr "Fout bij verwerken van afbeelding..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
 #, kde-format
@@ -53314,12 +53312,10 @@ msgstr ""
 "te sluiten bij het zoeken."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Update fingerprints"
+#, kde-format
 msgctxt "@action"
 msgid "Update all fingerprints"
-msgstr "Vingerafdrukken opwaarderen"
+msgstr "Alle vingerafdrukken bijwerken"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, kde-format

@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-08 02:32+0000\n"
-"PO-Revision-Date: 2025-09-07 14:35+0300\n"
+"PO-Revision-Date: 2025-09-08 16:01+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -53570,12 +53570,10 @@ msgstr ""
 "еталонного зображення або виключення альбому еталонного зображення з пошуку."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Update fingerprints"
+#, kde-format
 msgctxt "@action"
 msgid "Update all fingerprints"
-msgstr "Оновити відбитки"
+msgstr "Оновити усі відбитки"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, kde-format

@@ -44,7 +44,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-08 02:32+0000\n"
-"PO-Revision-Date: 2025-08-29 14:35+0200\n"
+"PO-Revision-Date: 2025-09-08 21:05+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -8623,30 +8623,23 @@ msgstr ""
 "motivet. Det gör det möjligt att simulera skärpedjupet från ett objektiv."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Subject Information"
+#, kde-format
 msgid "Subject segmentation:"
-msgstr "Rubrikinformation"
+msgstr "Motivsegmentering:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This value controls the number of iterations to use with the Neon and "
-#| "Find Edges effects."
+#, kde-format
 msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr ""
-"Värdet styr antal upprepningar att använda med effekterna Neon och Hitta "
-"kanter."
+"Ange värdet för att använda ett antal iterationer som används av "
+"segmenteringsprocessen för att isolera mer och mindre av motivet."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:108
-#, fuzzy, kde-format
-#| msgid "Subjects"
+#, kde-format
 msgid "Subject Mask:"
-msgstr "Motiv"
+msgstr "Motivmask:"
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:112
 #, kde-format
@@ -8656,20 +8649,21 @@ msgid ""
 "see if the subject have been isolated properly by the segmentation process. "
 "The green area is the subject where the blur effect will not applied."
 msgstr ""
+"Vyn visar segmenteringen av motivet som bestämts från markeringen. Den "
+"resulterande gröna masken läggs ovanpå originalbilden för att se om motivet "
+"har isolerats korrekt av segmenteringsprocessen. Det gröna området är "
+"motivet där oskärpeeffekten inte används."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:190
-#, fuzzy, kde-format
-#| msgid "Processing Panorama Preview..."
+#, kde-format
 msgctxt "@info"
 msgid "Processing mask preview..."
-msgstr "Behandlar förhandsgranskning av panorama..."
+msgstr "Behandlar maskförhandsgranskning..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Error processing XML file"
+#, kde-format
 msgid "Error while processing image..."
-msgstr "Fel vid behandling av XML-fil"
+msgstr "Fel vid behandling av bild..."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:257
 #, kde-format
@@ -52829,12 +52823,10 @@ msgstr ""
 "sökningen."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:268
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Update fingerprints"
+#, kde-format
 msgctxt "@action"
 msgid "Update all fingerprints"
-msgstr "Uppdatera fingeravtryck"
+msgstr "Uppdatera alla fingeravtryck"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, kde-format
