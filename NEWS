@@ -26,6 +26,7 @@ TagsManager:     Add options to import or export tag-hierarchies to text files.
 Preview:         Add support to the FujiFilm camera focus points.
 ColorManagement: Use monitor color profile set under Windows, macOS, and Wayland.
 ProgressManager: Use native desktop notifier under Linux, macOS, and Windows.
+Editor:          New enhance tool to blur progressively the background of a subject from a photo 
 
 *****************************************************************************************************
 BUGFIXES:
@@ -101,7 +102,7 @@ BUGFIXES:
 069 ==> 509074 - HEIF/HEIC files not being displayed in Thumbnails.
 070 ==> 387323 - Printing assistant keeps resetting page layout & no way to specify spacing between images.
 071 ==> 509213 - "Update Fingerprints" updates all images instead of selected album.
-072 ==> 
+072 ==> 508606 - Add new tool to generate blur background of a photo.
 073 ==> 
 074 ==> 
 075 ==> 

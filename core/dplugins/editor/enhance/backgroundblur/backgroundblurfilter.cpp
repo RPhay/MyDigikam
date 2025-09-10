@@ -121,13 +121,35 @@ void BackgroundBlurFilter::filterImage()
         return;
     }
 
-    cv::Mat input = QtOpenCVImg::image2Mat(m_orgImage);
-    cv::Mat output;
-
-    postProgress(10);
+    bool is16Bit = m_orgImage.sixteenBit();
+    cv::Mat input;
 
     try
     {
+        if (is16Bit)
+        {
+            // Convert image from 16 bits to 8 bits for grabCut as this one do not support 16 bits.
+
+            DImg img8Bit = m_orgImage;
+            img8Bit.convertToEightBit();
+            input        = QtOpenCVImg::image2Mat(img8Bit);
+        }
+        else
+        {
+            input        = QtOpenCVImg::image2Mat(m_orgImage);
+        }
+
+        if (input.empty())
+        {
+            qCWarning(DIGIKAM_DIMG_LOG) << "Failed to convert image to cv::Mat";
+            m_destImage = m_orgImage;
+
+            return;
+        }
+
+        cv::Mat output;
+        postProgress(10);
+
         // Convert image to CV_8UC3 (BGR) if necessary.
 
         cv::Mat inputBGR;
@@ -144,7 +166,8 @@ void BackgroundBlurFilter::filterImage()
             }
             else
             {
-                output = input.clone();
+                qCWarning(DIGIKAM_DIMG_LOG) << "Unsupported image format";
+                m_destImage = m_orgImage;
 
                 return;
             }
@@ -161,7 +184,6 @@ void BackgroundBlurFilter::filterImage()
         cv::Rect roi(d->selection.x(), d->selection.y(), d->selection.width(), d->selection.height());
         cv::Mat mask(input.rows, input.cols, CV_8UC1, cv::GC_PR_BGD);
         mask(roi) = cv::GC_PR_FGD;
-
         postProgress(30);
 
         // Apply GrabCut with more iterations for better accuracy.
@@ -172,25 +194,24 @@ void BackgroundBlurFilter::filterImage()
         // Refine the mask: GC_PR_FGD and GC_FGD are considered foreground.
 
         cv::compare(mask, cv::GC_PR_FGD, mask, cv::CMP_GE);
-
         postProgress(40);
 
         // Smooth the mask edges.
 
-        cv::Mat kernel = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(3, 3));
-        cv::morphologyEx(mask, mask, cv::MORPH_CLOSE, kernel); // Close small holes
+        cv::Mat kernelClose = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(3, 3));
+        cv::morphologyEx(mask, mask, cv::MORPH_CLOSE, kernelClose);
 
-        // Expand a little bit the mask to include more pixels near the subject.
+        // Dilate the mask slightly to include more pixels near the subject.
 
         cv::Mat kernelDilate = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(2, 2));
-        cv::dilate(mask, mask, kernel);
+        cv::dilate(mask, mask, kernelDilate);
 
         // Convert the mask to BGR to be suitable for the preview.
 
         cv::Mat maskDisplay;
-        mask.convertTo(maskDisplay, CV_8U, 255);  // Convert to 0-255
+        mask.convertTo(maskDisplay, CV_8U, 255);
 
-        // Create a copy of original.
+        // Create a copy of original for preview.
 
         cv::Mat overlay = inputBGR.clone();
 
@@ -198,12 +219,12 @@ void BackgroundBlurFilter::filterImage()
 
         cv::Mat coloredMask;
         cv::cvtColor(maskDisplay, coloredMask, cv::COLOR_GRAY2BGR);
-        coloredMask.setTo(cv::Scalar(0, 255, 0), maskDisplay);  // Colorized the mask in green.
+        coloredMask.setTo(cv::Scalar(0, 255, 0), maskDisplay);
 
         // Apply a transparency to the mask.
 
         cv::Mat alphaMask;
-        maskDisplay.convertTo(alphaMask, CV_32F, 1.0 / 255.0);  // Convert to  0.0-1.0.
+        maskDisplay.convertTo(alphaMask, CV_32F, 1.0/255.0);
 
         // Merge the semi-transparent mask over original image.
 
@@ -215,8 +236,6 @@ void BackgroundBlurFilter::filterImage()
                 cv::Vec3b& pixel           = overlay.at<cv::Vec3b>(y, x);
                 const cv::Vec3b& maskPixel = coloredMask.at<cv::Vec3b>(y, x);
 
-                // Mix pixels using alpha channel.
-
                 pixel[0] = static_cast<uchar>(alpha * maskPixel[0] + (1.0f - alpha) * pixel[0]);
                 pixel[1] = static_cast<uchar>(alpha * maskPixel[1] + (1.0f - alpha) * pixel[1]);
                 pixel[2] = static_cast<uchar>(alpha * maskPixel[2] + (1.0f - alpha) * pixel[2]);
@@ -226,9 +245,8 @@ void BackgroundBlurFilter::filterImage()
         // Send the signal to render the mask preview in the GUI.
 
         QImage maskQImage = QtOpenCVImg::mat2Image(overlay);
-        QImage rgbmask    = maskQImage.convertToFormat(QImage::Format_ARGB32);
 
-        Q_EMIT signalSegmentedMask(rgbmask);
+        Q_EMIT signalSegmentedMask(maskQImage.convertToFormat(QImage::Format_ARGB32));
 
         postProgress(50);
 
@@ -236,7 +254,6 @@ void BackgroundBlurFilter::filterImage()
 
         cv::Mat blurred;
         cv::GaussianBlur(inputBGR, blurred, cv::Size(0, 0), d->radius);
-
         postProgress(60);
 
         if (d->transition == 0)
@@ -256,9 +273,6 @@ void BackgroundBlurFilter::filterImage()
 
             cv::Mat distanceMap;
             cv::distanceTransform(~mask, distanceMap, cv::DIST_L2, cv::DIST_MASK_5);
-
-            // Normalize the distance for the progressive effect (0 = near the subject, 1 = far the subject).
-
             cv::normalize(distanceMap, distanceMap, 0, 1, cv::NORM_MINMAX);
 
             // Apply a non-linear transformation to the distance map based on transition parameter.
@@ -268,9 +282,6 @@ void BackgroundBlurFilter::filterImage()
                 for (int x = 0 ; x < distanceMap.cols ; x++)
                 {
                     float dist = distanceMap.at<float>(y, x);
-
-                    // Use transition parameter to control the falloff.
-
                     distanceMap.at<float>(y, x) = std::pow(dist, 1.0F / transition);
                 }
             }
@@ -278,14 +289,13 @@ void BackgroundBlurFilter::filterImage()
             // Create the result with the progressive blur.
 
             output = inputBGR.clone();
-
             postProgress(70);
 
-            for (int y = 0; y < input.rows; y++)
+            for (int y = 0 ; y < inputBGR.rows ; y++)
             {
-                for (int x = 0; x < input.cols; x++)
+                for (int x = 0 ; x < inputBGR.cols ; x++)
                 {
-                    float alpha = distanceMap.at<float>(y, x);
+                    float alpha                = distanceMap.at<float>(y, x);
                     output.at<cv::Vec3b>(y, x) = alpha * blurred.at<cv::Vec3b>(y, x) +
                                                  (1.0F - alpha) * inputBGR.at<cv::Vec3b>(y, x);
                 }
@@ -296,16 +306,20 @@ void BackgroundBlurFilter::filterImage()
 
         // Convert back to the original format if necessary.
 
-        if (input.type() != CV_8UC3)
+        if (is16Bit)
         {
-            if (input.channels() == 1)
-            {
-                cv::cvtColor(output, output, cv::COLOR_BGR2GRAY);
-            }
-            else if (input.channels() == 4)
-            {
-                cv::cvtColor(output, output, cv::COLOR_BGR2BGRA);
-            }
+            DImg output8Bit(QtOpenCVImg::mat2Image(output));
+            m_destImage = output8Bit;
+            m_destImage.convertToSixteenBit();
+        }
+        else
+        {
+            m_destImage = DImg(QtOpenCVImg::mat2Image(output));
+        }
+
+        if (!m_orgImage.hasAlpha())
+        {
+            m_destImage.removeAlphaChannel();
         }
 
         postProgress(90);
@@ -313,21 +327,12 @@ void BackgroundBlurFilter::filterImage()
     catch (cv::Exception& e)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "BackgroundBlurFilter::filterImage: cv::Exception:" << e.what();
-
-        Q_EMIT signalSegmentedMask(QImage());
+        m_destImage = m_orgImage;
     }
     catch (...)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "BackgroundBlurFilter::filterImage: Default exception from OpenCV";
-
-        Q_EMIT signalSegmentedMask(QImage());
-    }
-
-    m_destImage = DImg(QtOpenCVImg::mat2Image(output));
-
-    if (!m_orgImage.hasAlpha())
-    {
-        m_destImage.removeAlphaChannel();
+        m_destImage = m_orgImage;
     }
 }
 
