@@ -51291,7 +51291,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Update all fingerprints"
-msgstr ""
+msgstr "更新所有指纹"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:270
 #, kde-format

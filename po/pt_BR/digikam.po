@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-08 02:32+0000\n"
-"PO-Revision-Date: 2025-09-08 19:33-0300\n"
+"PO-Revision-Date: 2025-09-09 13:05-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -5863,13 +5863,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Blur Image"
-msgstr "Borrar imagem"
+msgstr "Desfocar imagem"
 
 #: core/dplugins/bqm/enhance/blur/blurplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to blur images"
-msgstr "Uma ferramenta para borrar as imagens"
+msgstr "Uma ferramenta para desfocar as imagens"
 
 #: core/dplugins/bqm/enhance/blur/blurplugin.cpp:62
 #, kde-kuit-format
@@ -6037,19 +6037,19 @@ msgstr "Visite o site da biblioteca CImg"
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:126
 #, kde-format
 msgid "Reduce Uniform Noise"
-msgstr "Reduzir o ruído uniforme"
+msgstr "Redução de ruído uniforme"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:59
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:127
 #, kde-format
 msgid "Reduce JPEG Artifacts"
-msgstr "Reduzir artefatos JPEG"
+msgstr "Redução de artefatos JPEG"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:128
 #, kde-format
 msgid "Reduce Texturing"
-msgstr "Reduzir texturização"
+msgstr "Redução de texturização"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:61
 #, kde-format
@@ -8776,13 +8776,13 @@ msgstr "Borrão Gaussiano"
 #, kde-format
 msgctxt "@title"
 msgid "Blur"
-msgstr "Borrar"
+msgstr "Desfocar"
 
 #: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to blur an image"
-msgstr "Uma ferramenta para borrar uma imagem"
+msgstr "Uma ferramenta para desfocar uma imagem"
 
 #: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:60
 #, kde-format
@@ -8794,7 +8794,7 @@ msgstr "Esta ferramenta de edição de imagens pode desfocar uma imagem."
 #, kde-format
 msgctxt "@action"
 msgid "Blur..."
-msgstr "Borrar..."
+msgstr "Desfocar..."
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:113
 #, kde-format
@@ -9051,7 +9051,7 @@ msgstr "Este valor redimensiona o tamanho da imagem total."
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:132
 #, kde-format
 msgid "Brighten:"
-msgstr "Iluminar:"
+msgstr "Brilho:"
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:138
 #, kde-format
@@ -9275,14 +9275,14 @@ msgstr "Nitidez"
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:276
 #, kde-format
 msgid "Unsharp Mask"
-msgstr "Máscara não nítida"
+msgstr "Máscara de nitidez"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:285
 #: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:117
 #, kde-format
 msgid "Refocus"
-msgstr "Nova focagem"
+msgstr "Refocalizar"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:40
 #, kde-format
@@ -32183,12 +32183,12 @@ msgstr "Ruído da luminância"
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:284
 #, kde-format
 msgid "Chrominance Blue Noise"
-msgstr "Adicionar ruído azul de crominância"
+msgstr "Ruído de crominância de azul"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:287
 #, kde-format
 msgid "Chrominance Red Noise"
-msgstr "Ruído vermelho de crominância"
+msgstr "Ruído de crominância de vermelho"
 
 #: core/libs/dimg/filters/fx/invertfilter.cpp:55
 #, kde-format
@@ -32711,7 +32711,7 @@ msgstr "<b>Potência</b>: Com que potência o efeito é aplicado."
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:280
 #, kde-format
 msgid "Blur:"
-msgstr "Borrar:"
+msgstr "Desfoque:"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:192
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:223
@@ -32722,8 +32722,8 @@ msgid ""
 "<b>Blur</b>: How strong the image is blurred before combining with the "
 "original image and with the tonemapping function."
 msgstr ""
-"<b>Borrar</b>: Quão forte é o borrão aplicado à imagem, antes da combinação "
-"com a imagem original e com a função de mapeamento de tons."
+"<b>Desfocar</b>: Quão forte é o desfoque aplicado à imagem, antes da "
+"combinação com a imagem original e com a função de mapeamento de tons."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:299
 #, kde-format
@@ -32829,7 +32829,7 @@ msgstr ""
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:107
 #, kde-format
 msgid "Feather:"
-msgstr "Pena:"
+msgstr "Esmaecimento:"
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:112
 #, kde-format
@@ -32973,22 +32973,22 @@ msgstr "Distância do objeto (m):"
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:718
 #, kde-format
 msgid "(no metadata available)"
-msgstr "(nenhum metadados disponível)"
+msgstr "(nenhum metadado disponível)"
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:725
 #, kde-format
 msgid "(no match found)"
-msgstr "(nenhuma ocorrência encontrada)"
+msgstr "(nenhuma correspondência encontrada)"
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:732
 #, kde-format
 msgid "(partial match found)"
-msgstr "(foi encontrada uma ocorrência parcial)"
+msgstr "(correspondência parcial encontrada)"
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:739
 #, kde-format
 msgid "(exact match found)"
-msgstr "(foi encontrada uma ocorrência exata)"
+msgstr "(correspondência exata encontrada)"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:125
 #, kde-format
@@ -33370,7 +33370,7 @@ msgstr ""
 #: core/libs/dimg/filters/nr/nrsettings.cpp:95
 #, kde-format
 msgid "Estimate Noise"
-msgstr "Ruído estimado"
+msgstr "Estimar ruído"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:96
 #, kde-format
@@ -33404,12 +33404,12 @@ msgstr "Luminância"
 #: core/libs/dimg/filters/nr/nrsettings.cpp:191
 #, kde-format
 msgid "Chrominance Blue"
-msgstr "Azul de crominância"
+msgstr "Crominância de azul"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:195
 #, kde-format
 msgid "Chrominance Red"
-msgstr "Vermelho de crominância"
+msgstr "Crominância de vermelho"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:349
 #, kde-format
@@ -33474,12 +33474,12 @@ msgstr "Método:"
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:112
 #, kde-format
 msgid "Simple sharp"
-msgstr "Nítido simples"
+msgstr "Nitidez simples"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:113
 #, kde-format
 msgid "Unsharp mask"
-msgstr "Máscara não nítida"
+msgstr "Máscara de nitidez"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:122
 #, kde-format
@@ -33507,8 +33507,8 @@ msgid ""
 "Radius value is the Gaussian blur matrix radius value used to determines how "
 "much to blur the image."
 msgstr ""
-"O valor do raio é o raio gaussiano da matriz do borrão que determina quanto "
-"se deverá borrar a imagem."
+"O valor do raio é o raio gaussiano da matriz do desfoque que determina "
+"quanto se deverá desfocar a imagem."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:173
 #, kde-format
@@ -33639,39 +33639,39 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
-msgstr "Arquivo de configurações de nova focagem de fotografia a carregar"
+msgstr "Arquivo de configurações de refocalizar da fotografia a carregar"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:505
 #, kde-format
 msgid "\"%1\" is not a Photograph Refocus settings text file."
 msgstr ""
-"O \"%1\" não é um arquivo de texto de configurações de nova focagem de "
+"O \"%1\" não é um arquivo de texto de configurações de refocalizar da "
 "fotografia."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:528
 #, kde-format
 msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr ""
-"Não é possível carregar as configurações do arquivo de texto de nova focagem "
-"de fotografia."
+"Não é possível carregar as configurações do arquivo de texto de refocalizar "
+"da fotografia."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:536
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
-msgstr "Arquivo de configurações de nova focagem de fotografia a salvar"
+msgstr "Arquivo de configurações de refocalizar da fotografia a salvar"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:566
 #, kde-format
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr ""
-"Não é possível salvar as configurações no arquivo de texto de nova focagem "
-"de fotografia."
+"Não é possível salvar as configurações no arquivo de texto de refocalizar da "
+"fotografia."
 
 #: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:68
 #, kde-format
 msgid "Unsharp Mask Tool"
-msgstr "Filtro de máscara não nítida"
+msgstr "Ferramente de máscara de nitidez"
 
 #: core/libs/dimg/filters/transform/contentawarefilter.cpp:214
 #, kde-format
@@ -41859,13 +41859,13 @@ msgstr "Trocar de baixo para cima"
 #, kde-format
 msgctxt "Transition: BlurIn"
 msgid "Blur In"
-msgstr "Borrar para dentro"
+msgstr "Desfocar para dentro"
 
 #: core/libs/transitionmngr/transitionmngr.cpp:126
 #, kde-format
 msgctxt "Transition: BlurOut"
 msgid "Blur Out"
-msgstr "Borrar para fora"
+msgstr "Desfocar para fora"
 
 #: core/libs/transitionmngr/transitionmngr.cpp:127
 #, kde-format

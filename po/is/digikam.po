@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-08 02:32+0000\n"
-"PO-Revision-Date: 2025-09-08 08:22+0000\n"
+"PO-Revision-Date: 2025-09-09 10:20+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -1774,7 +1774,7 @@ msgstr "Tafla"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open..."
-msgstr "Opna..."
+msgstr "Opna til breytinga..."
 
 #: core/app/main/digikamapp_setup.cpp:370
 #, kde-format
@@ -3201,7 +3201,7 @@ msgstr "Hjálp"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr "Hjálp á netinu um ruslafötuna"
+msgstr "Hjálp á netinu um ruslmöppuna"
 
 #: core/app/views/stack/trashview.cpp:117
 #, kde-format
@@ -37512,7 +37512,7 @@ msgstr "<li>sérmerking</li>"
 #, kde-format
 msgctxt "@info"
 msgid "<li>color label</li>"
-msgstr "<li>litamerking</li>"
+msgstr "<li>litmerking</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:353
 #, kde-format
