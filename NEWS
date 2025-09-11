@@ -103,7 +103,7 @@ BUGFIXES:
 070 ==> 387323 - Printing assistant keeps resetting page layout & no way to specify spacing between images.
 071 ==> 509213 - "Update Fingerprints" updates all images instead of selected album.
 072 ==> 508606 - Add new tool to generate blur background of a photo.
-073 ==> 
+073 ==> 509375 - Rating an image is counter intuitive in some situations.
 074 ==> 
 075 ==> 
 076 ==> 
