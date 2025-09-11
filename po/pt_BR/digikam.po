@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-08 02:32+0000\n"
-"PO-Revision-Date: 2025-09-09 13:05-0300\n"
+"PO-Revision-Date: 2025-09-10 13:14-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -5856,8 +5856,8 @@ msgid ""
 "matrix radius that determines how much to blur the image."
 msgstr ""
 "Uma suavidade igual a 0 não faz efeito, enquanto 1 ou maior determinam o "
-"raio da matriz do borrão Gaussiano que determina quanto a imagem deverá ser "
-"borrada."
+"raio da matriz do desfoque Gaussiano que determina quanto a imagem deverá "
+"ser desfocada."
 
 #: core/dplugins/bqm/enhance/blur/blurplugin.cpp:42
 #, kde-format
@@ -6143,13 +6143,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Film Grain"
-msgstr "Grão de filme"
+msgstr "Granulação de filme"
 
 #: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to add film grain"
-msgstr "Uma ferramenta para adicionar grão de filme"
+msgstr "Uma ferramenta para adicionar granulação de filme"
 
 #: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:62
 #, kde-kuit-format
@@ -8770,7 +8770,7 @@ msgstr "Você deve selecionar antes uma área retangular incluindo o assunto..."
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
 msgid "Gaussian Blur"
-msgstr "Borrão Gaussiano"
+msgstr "Desfoque Gaussiano"
 
 #: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:40
 #, kde-format
@@ -9460,52 +9460,52 @@ msgstr "Imprimir imagem..."
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:87
 #, kde-format
 msgid "This is the preview of the blur effect applied to the photograph."
-msgstr "Esta é a visualização do efeito de borrão aplicado na fotografia."
+msgstr "Esta é a visualização do efeito de desfoque aplicado na fotografia."
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:94
 #, kde-format
 msgid "Zoom Blur"
-msgstr "Borrão por ampliação"
+msgstr "Desfoque de zoom"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:95
 #, kde-format
 msgid "Radial Blur"
-msgstr "Borrão radial"
+msgstr "Desfoque radial"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:96
 #, kde-format
 msgid "Far Blur"
-msgstr "Borrão distante"
+msgstr "Desfoque distante"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:97
 #, kde-format
 msgid "Motion Blur"
-msgstr "Borrão por movimento"
+msgstr "Desfoque por movimento"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:98
 #, kde-format
 msgid "Softener Blur"
-msgstr "Borrão suave"
+msgstr "Desfoque suave"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:99
 #, kde-format
 msgid "Shake Blur"
-msgstr "Borrão por agitação"
+msgstr "Desfoque por agitação"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:100
 #, kde-format
 msgid "Focus Blur"
-msgstr "Borrão de foco"
+msgstr "Desfoque do foco"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:101
 #, kde-format
 msgid "Smart Blur"
-msgstr "Borrão inteligente"
+msgstr "Desfoque inteligente"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:102
 #, kde-format
 msgid "Frost Glass"
-msgstr "Vidro gelado"
+msgstr "Vidro fosco"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:103
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:82
@@ -9537,28 +9537,29 @@ msgid ""
 "rectangular cells and then recreates it by filling those cells with average "
 "pixel value.</p>"
 msgstr ""
-"<p>Selecione aqui o efeito de borrão para aplicar na imagem.</p><p><b>Borrão "
-"de ampliação</b>: borra a imagem ao longo de linhas radiais, partindo de um "
-"determinado ponto central. Isto simula o borrão de ampliação de uma câmera.</"
-"p><p><b>Borrão radial</b>: borra a imagem, rotacionando os pixels em torno "
-"do ponto central indicado. Isto simula o borrão de uma câmera em rotação.</"
-"p><p><b>Borrão distante</b>: borra a imagem usando pixels distantes. Isto "
-"simula o borrão de uma câmera com lentes fora de foco.</p><p><b>Borrão de "
-"movimento</b>: borra a imagem, movendo os pixels horizontalmente. Isto "
-"simula o borrão de uma câmera em movimento linear.</p><p><b>Borrão suave</"
-"b>: borra suavemente a imagem nos tons mais escuros e mais fortemente nos "
-"tons mais claros. Isto dá às fotografias um efeito de foco brilhante e de "
-"sonho (efeito de Hamilton). É ideal para criar retratos românticos, "
-"fotografias fascinantes ou para adicionar um brilho quente e sutil. </"
-"p><p><b>Borrão por agitação</b>: borra a imagem movendo aleatoriamente os "
-"pixels, simulando o borrão de uma câmera em movimento arbitrário.</"
-"p><p><b>Borrão do foco</b>: borra os cantos da imagem para reproduzir a "
-"distorção por astigmatismo de uma lente.</p><p><b>Borrão inteligente</b>: "
-"encontra os contornos das cor na sua imagem e os borra sem turvar o resto da "
-"imagem.</p><p><b>Vidro gelado</b>: borra a imagem, simulando a filtragem de "
-"dispersão de luz através de um vidro gelado.</p><p><b>Mosaico</b>: divide a "
-"fotografia em células retangulares e depois volta a criá-la, preenchendo "
-"essas células com o valor médio do pixel.</p>"
+"<p>Selecione aqui o efeito de desfoque para aplicar na imagem.</"
+"p><p><b>Desfoque de zoom</b>: desfoca a imagem ao longo de linhas radiais, "
+"partindo de um  determinado ponto central. Isto simula o desfoque de zoom de "
+"uma câmera.</p><p><b>Desfoque radial</b>: desfoca a imagem, rotacionando os "
+"pixels em torno  do ponto central indicado. Isto simula o desfoque de uma "
+"câmera em rotação.</p><p><b>Desfoque distante</b>: desfoca a imagem usando "
+"pixels distantes. Isto simula o desfoque de uma câmera com lentes fora de "
+"foco.</p><p><b>Desfoque de movimento</b>: desfoca a imagem, movendo os "
+"pixels horizontalmente. Isto simula o desfoque de uma câmera em movimento "
+"linear.</p><p><b>Desfoque suave</b>: desfoca suavemente a imagem nos tons "
+"mais escuros e mais fortemente nos tons mais claros. Isto dá às fotografias "
+"um efeito de foco brilhante e de sonho (efeito de Hamilton). É ideal para "
+"criar retratos românticos, fotografias fascinantes ou para adicionar um "
+"brilho quente e sutil. </p><p><b>Desfoque por agitação</b>: desfoca a imagem "
+"movendo aleatoriamente os pixels, simulando o desfoque de uma câmera em "
+"movimento aleatório.</p><p><b>Desfoque do foco</b>: desfoca os cantos da "
+"imagem para reproduzir a distorção por astigmatismo de uma lente.</"
+"p><p><b>Desfoque inteligente</b>: encontra os contornos das cor na sua "
+"imagem e os desfoca sem turvar o resto da imagem.</p><p><b>Vidro fosco</b>: "
+"desfoca a imagem, simulando a filtragem de dispersão de luz através de um "
+"vidro fosco.</p><p><b>Mosaico</b>: divide a fotografia em células "
+"retangulares e depois volta a criá-la, preenchendo essas células com o valor "
+"médio do pixel.</p>"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:129
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:111
@@ -9569,7 +9570,7 @@ msgstr "Distância:"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:133
 #, kde-format
 msgid "Set here the blur distance in pixels."
-msgstr "Defina aqui a distância do borrão em pixels."
+msgstr "Defina aqui a distância do desfoque em pixels."
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:135
 #, kde-format
@@ -9585,13 +9586,13 @@ msgstr "Este valor controla o nível a usar com o efeito atual."
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:376
 #, kde-format
 msgid "Blur Effects"
-msgstr "Efeitos de borrão"
+msgstr "Efeitos de desfoque"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Blur Effects"
-msgstr "Efeitos de borrão"
+msgstr "Efeitos de desfoque"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtoolplugin.cpp:55
 #, kde-format
@@ -9611,7 +9612,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Blur Effects..."
-msgstr "Efeitos de borrão..."
+msgstr "Efeitos de desfoque..."
 
 #: core/dplugins/editor/filters/charcoal/charcoaltool.cpp:66
 #: core/dplugins/editor/filters/charcoal/charcoaltool.cpp:179
@@ -9634,7 +9635,7 @@ msgstr ""
 #, kde-format
 msgctxt "smoothing value of the pencil"
 msgid "Smooth:"
-msgstr "Suavizar:"
+msgstr "Suavização:"
 
 #: core/dplugins/editor/filters/charcoal/charcoaltool.cpp:93
 #, kde-format
@@ -9807,7 +9808,7 @@ msgstr "Coordenadas não polares"
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:112
 #, kde-format
 msgid "Tile"
-msgstr "Ladrilho"
+msgstr "Mosaico"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:114
 #, kde-format
@@ -9954,7 +9955,7 @@ msgstr "Relevo..."
 #: core/dplugins/editor/filters/filmgrain/filmgraintool.cpp:140
 #, kde-format
 msgid "Film Grain"
-msgstr "Grão de filme"
+msgstr "Granulação de filme"
 
 #: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:55
 #, kde-format
@@ -9974,7 +9975,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Add Film Grain..."
-msgstr "Adicionar grão de filme..."
+msgstr "Adicionar granulação de filme..."
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:78
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:261
@@ -9992,7 +9993,7 @@ msgstr ""
 #, kde-format
 msgctxt "value of smoothing effect"
 msgid "Smooth:"
-msgstr "Suavizar:"
+msgstr "Suavização:"
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:90
 #, kde-format
@@ -10238,7 +10239,7 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:240
 #, kde-format
 msgid "Preservation weight mask:"
-msgstr "Máscara do peso de preservação:"
+msgstr "Máscara de preservação de peso:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:245
 #, kde-format
@@ -10256,12 +10257,12 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:251
 #, kde-format
 msgid "Erase mask:"
-msgstr "Máscara de limpeza:"
+msgstr "Apagar máscara:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:256
 #, kde-format
 msgid "Erase mask"
-msgstr "Máscara de limpeza"
+msgstr "Apagar máscara"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:257
 #, kde-format
@@ -10328,7 +10329,7 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:312
 #, kde-format
 msgid "Overall rigidity of the seams:"
-msgstr "Rigidez global das linhas:"
+msgstr "Rigidez geral das costuras:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:316
 #, kde-format
@@ -10341,13 +10342,13 @@ msgid ""
 "coordinate between each two successive points, elevated to the power of 1.5, "
 "and summed up for the whole seam."
 msgstr ""
-"Use este valor para dar um peso negativo às linhas que não são retas. Poderá "
-"ser útil para evitar distorções em alguns casos, ou para evitar desníveis "
-"pela remoção de pixels (é melhor usar valores baixos, nesse caso). Esta "
-"configuração aplica-se à camada selecionada inteira, caso não seja usada "
-"nenhuma máscara de rigidez. Observação: o peso é proporcional à diferença da "
-"coordenada transversal entre dois pontos sucessivos, elevada à potência 1,5, "
-"somando o valor da linha."
+"Use este valor para dar um peso negativo às costuras que não são retas. "
+"Poderá ser útil para evitar distorções em alguns casos, ou para evitar "
+"desníveis pela remoção de pixels (é melhor usar valores baixos, nesse caso). "
+"Esta configuração aplica-se à camada selecionada inteira, caso não seja "
+"usada nenhuma máscara de rigidez. Observação: o peso é proporcional à "
+"diferença da coordenada transversal entre dois pontos sucessivos, elevada à "
+"potência 1,5, somando o valor da linha."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:325
 #, kde-format
@@ -10367,9 +10368,9 @@ msgid ""
 "setting."
 msgstr ""
 "Esta opção permite-lhe escolher o passo transversal máximo que os pixels nas "
-"linhas poderão ter. No algoritmo normal, correspondente ao valor padrão do "
+"costuras poderão ter. No algoritmo normal, correspondente ao valor padrão do "
 "passo = 1, cada pixel numa linha pode ser desviado, no máximo, de um pixel "
-"em relação aos seus vizinhos. Isto implica que as linhas podem formar um "
+"em relação aos seus vizinhos. Isto implica que as costuras podem formar um "
 "ângulo máximo de 45 graus em relação à sua linha base. Se aumentar o valor "
 "do passo, poderá ultrapassar este limite, mas poderá levar à introdução "
 "artefatos. Para balancear essa situação, você pode usar a configuração de "
@@ -10406,7 +10407,7 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:355
 #, kde-format
 msgid "Resize Order:"
-msgstr "Ordem de dimensionamento:"
+msgstr "Ordem de redimensionamento:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:357
 #, kde-format
@@ -10720,7 +10721,7 @@ msgstr "Ajuste de perspectiva"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1087
 #, kde-format
 msgid "Aspect Ratio Crop"
-msgstr "Corte proporcional"
+msgstr "Recorte proporcional"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:151
 #, kde-format
@@ -10816,9 +10817,9 @@ msgid ""
 "photographic paper.</p><p>The <b>Current Aspect Ratio</b> takes aspect ratio "
 "from the currently opened image.</p>"
 msgstr ""
-"<p>Selecione a proporção a ser usada para o corte. A ferramenta Corte "
+"<p>Selecione a proporção a ser usada para o corte. A ferramenta Recorte "
 "proporcional usa uma proporção relativa. Isso significa que é não importa se "
-"você usar centímetros oupolegadas e não especificar o tamanho físico.</"
+"você usar centímetros ou polegadas e não especificar o tamanho físico.</"
 "p><p>Você pode ver abaixo uma lista de correspondência de tamanhos de papel "
 "fotográfico tradicionais e a proporção de corte:</p><p><b>2:3</b>: 10x15cm, "
 "20x30cm, 30x45cm, 4x6\", 8x12\", 12x18\", 16x24\", 20x30\"</p><p><b>3:4</b>: "
@@ -10927,7 +10928,7 @@ msgstr "Triângulos harmoniosos"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
 #, kde-format
 msgid "Golden Mean"
-msgstr "Média dourada"
+msgstr "Proporção áurea"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:364
 #, kde-format
@@ -10952,47 +10953,47 @@ msgstr ""
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:371
 #, kde-format
 msgid "Golden sections"
-msgstr "Seções douradas"
+msgstr "Seções áureas"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:372
 #, kde-format
 msgid "Enable this option to show golden sections."
-msgstr "Habilite esta opção para mostrar as seções douradas."
+msgstr "Habilite esta opção para mostrar as seções áureas."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:374
 #, kde-format
 msgid "Golden spiral sections"
-msgstr "Seções da espiral dourada"
+msgstr "Seções espirais áureas"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:375
 #, kde-format
 msgid "Enable this option to show golden spiral sections."
-msgstr "Habilite esta opção para mostrar as seções espirais douradas."
+msgstr "Habilite esta opção para mostrar as seções espirais áureas."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:377
 #, kde-format
 msgid "Golden spiral"
-msgstr "Espiral dourada"
+msgstr "Espiral áurea"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:378
 #, kde-format
 msgid "Enable this option to show a golden spiral guide."
-msgstr "Habilite esta opção para mostrar uma guia espiral dourada."
+msgstr "Habilite esta opção para mostrar uma guia espiral áurea."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:380
 #, kde-format
 msgid "Golden triangles"
-msgstr "Triângulos dourados"
+msgstr "Triângulos áureos"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:381
 #, kde-format
 msgid "Enable this option to show golden triangles."
-msgstr "Habilite esta opção para mostrar os triângulos dourados."
+msgstr "Habilite esta opção para mostrar os triângulos áureos."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:383
 #, kde-format
 msgid "Flip horizontally"
-msgstr "Virar horizontalmente"
+msgstr "Inverter horizontalmente"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:384
 #, kde-format
@@ -11002,7 +11003,7 @@ msgstr "Habilite esta opção para virar as guias na horizontal."
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:386
 #, kde-format
 msgid "Flip vertically"
-msgstr "Virar verticalmente"
+msgstr "Inverter verticalmente"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:387
 #, kde-format
@@ -11040,7 +11041,7 @@ msgstr "Personalizada"
 #, kde-format
 msgctxt "@title"
 msgid "Aspect Ratio Crop"
-msgstr "Corte proporcional"
+msgstr "Recorte proporcional"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptoolplugin.cpp:55
 #, kde-format
@@ -11060,7 +11061,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Aspect Ratio Crop..."
-msgstr "Corte proporcional..."
+msgstr "Recorte proporcional..."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:302
 #, kde-format
@@ -31882,12 +31883,12 @@ msgstr "O identificador ou a versão do filtro não são suportados"
 #: core/libs/dimg/filters/fx/blurfilter.cpp:87
 #, kde-format
 msgid "Blur Filter"
-msgstr "Filtro de borrão"
+msgstr "Filtro de desfoque"
 
 #: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
 #, kde-format
 msgid "Blur FX Filter"
-msgstr "Filtro FX de borrão"
+msgstr "Filtro FX de desfoque"
 
 #: core/libs/dimg/filters/fx/charcoalfilter.cpp:86
 #, kde-format
@@ -32076,7 +32077,7 @@ msgstr "Efeito de relevo"
 #: core/libs/dimg/filters/fx/filmgrainfilter.cpp:106
 #, kde-format
 msgid "Film Grain Effect"
-msgstr "Efeito de grão de filme"
+msgstr "Efeito de granulação de filme"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:116
 #, kde-format
@@ -32337,22 +32338,22 @@ msgstr "Defina aqui a precisão da função Gaussiana."
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:181
 #, kde-format
 msgid "Tile size:"
-msgstr "Tamanho do ladrilho:"
+msgstr "Tamanho do mosaico:"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:184
 #, kde-format
 msgid "Sets the tile size."
-msgstr "Define o tamanho do ladrilho."
+msgstr "Define o tamanho do mosaico."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:186
 #, kde-format
 msgid "Tile border:"
-msgstr "Borda do ladrilho:"
+msgstr "Borda do mosaico:"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:189
 #, kde-format
 msgid "Sets the size of each tile border."
-msgstr "Define o tamanho de cada uma das bordas do ladrilho."
+msgstr "Define o tamanho de cada uma das bordas do mosaico."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:191
 #, kde-format
@@ -33614,10 +33615,10 @@ msgid ""
 "filter parameters."
 msgstr ""
 "Este é a nitidez para a convolução Gaussiana. Use este parâmetro quando o "
-"seu borrão é do tipo Gaussiano. Na maioria dos casos, você deverá configurar "
-"o valor deste parâmetro igual a 0, porque ele gera artefatos incômodos. "
-"Quando você usar valores diferentes de zero, pode ter de aumentar também os "
-"parâmetros de correlação e/ou filtro de ruído."
+"seu desfoque é do tipo Gaussiano. Na maioria dos casos, você deverá "
+"configurar o valor deste parâmetro igual a 0, porque ele gera artefatos "
+"incômodos. Quando você usar valores diferentes de zero, pode ter de aumentar "
+"também os parâmetros de correlação e/ou filtro de ruído."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:250
 #, kde-format
@@ -58863,7 +58864,7 @@ msgstr "Visualização de prova de monitor"
 #, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
-msgstr "Recortar à seleção"
+msgstr "Recortar para seleção"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:494
 #, kde-format
